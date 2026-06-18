@@ -1,7 +1,8 @@
 // ============================================================
-// Données centrales du site David Lesage
-// David Lesage est la MARQUE-MÈRE ; Neotone, Handpan Studio,
-// les Cours et les micros sont ses univers.
+// Données centrales NEUTRES du site David Lesage.
+// Libellés de navigation / footer / crédibilité → src/i18n/dict.ts.
+// David Lesage est la MARQUE-MÈRE ; Neotone, Handpan Studio, les
+// Cours et les micros sont ses univers.
 // ============================================================
 
 export const site = {
@@ -24,39 +25,31 @@ export const site = {
   },
 }
 
-// Menu principal (8 entrées max — cf. document directeur)
+// Clé de libellé (→ dict.common.nav) + chemin neutre (sera localisé via localizePath)
 export const nav = [
-  { label: 'Accueil', href: '/' },
-  { label: 'Le Neotone', href: '/le-neotone' },
-  { label: 'Boutique', href: '/boutique' },
-  { label: 'Cours', href: '/cours' },
-  { label: 'Handpan Studio', href: '/handpan-studio' },
-  { label: 'Showroom', href: '/showroom' },
-  { label: 'À propos', href: '/a-propos' },
-  { label: 'Contact', href: '/contact' },
-]
+  { key: 'home', href: '/' },
+  { key: 'neotone', href: '/le-neotone' },
+  { key: 'shop', href: '/boutique' },
+  { key: 'lessons', href: '/cours' },
+  { key: 'studio', href: '/handpan-studio' },
+  { key: 'showroom', href: '/showroom' },
+  { key: 'about', href: '/a-propos' },
+  { key: 'contact', href: '/contact' },
+] as const
 
 export const footerNav = [
-  { label: 'Newsletter', href: '/handpan-studio#liste-attente' },
-  { label: 'FAQ', href: '/le-neotone#faq' },
-  { label: 'Mentions légales', href: '/mentions-legales' },
-]
+  { key: 'newsletter', href: '/handpan-studio#liste-attente' },
+  { key: 'faq', href: '/le-neotone#faq' },
+  { key: 'legal', href: '/mentions-legales' },
+] as const
 
-// Les 7 degrés ChromaKeys (couleur + émotion)
+// Les 7 degrés ChromaKeys — couleurs neutres (émotions via dict.common.emotions)
 export const chromaKeys = [
-  { degree: 'I', emotion: 'Équilibre', color: 'var(--color-chroma-1)' },
-  { degree: 'II', emotion: 'Élan', color: 'var(--color-chroma-2)' },
-  { degree: 'III', emotion: 'Aventure', color: 'var(--color-chroma-3)' },
-  { degree: 'IV', emotion: 'Détente', color: 'var(--color-chroma-4)' },
-  { degree: 'V', emotion: 'Tension', color: 'var(--color-chroma-5)' },
-  { degree: 'VI', emotion: 'Nostalgie', color: 'var(--color-chroma-6)' },
-  { degree: 'VII', emotion: 'Mystère', color: 'var(--color-chroma-7)' },
-]
-
-// Bandeau crédibilité
-export const credentials = [
-  'Conservatoire national',
-  'Prix de batterie',
-  'Ambassadeur certifié Neotone',
-  'Showroom Paris 20ᵉ',
+  { degree: 'I', color: 'var(--color-chroma-1)' },
+  { degree: 'II', color: 'var(--color-chroma-2)' },
+  { degree: 'III', color: 'var(--color-chroma-3)' },
+  { degree: 'IV', color: 'var(--color-chroma-4)' },
+  { degree: 'V', color: 'var(--color-chroma-5)' },
+  { degree: 'VI', color: 'var(--color-chroma-6)' },
+  { degree: 'VII', color: 'var(--color-chroma-7)' },
 ]

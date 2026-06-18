@@ -1,0 +1,83 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { site } from '@/data/site'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import { localBusinessLdJson, breadcrumbLdJson } from '@/lib/ldJson'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const sh = t.showroom
+const L = (p: string) => localizePath(p, lang)
+const eventIcons = ['lucide:presentation', 'lucide:hand', 'lucide:graduation-cap']
+
+const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: sh.heroTitle, url: L('/showroom') }])]
+---
+
+<Layout title={sh.title} description={sh.description} ldJSON={ld}>
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <video class="absolute inset-0 h-full w-full object-cover opacity-35" autoplay muted loop playsinline poster="/images/localisation-showroom-poster.webp"><source src="/images/localisation-showroom.mp4" type="video/mp4" /></video>
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/50"></div>
+    <div class="relative mx-auto max-w-4xl px-4 py-24 text-center">
+      <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{sh.heroEyebrow}</p>
+      <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-6xl">{sh.heroTitle}</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-cream/80">{sh.heroLead}</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <Button href={`mailto:${site.emailNeotone}?subject=Showroom`} variant="primary">{sh.ctaBook}</Button>
+        <Button href="#agenda" variant="light">{sh.ctaNext}</Button>
+      </div>
+    </div>
+  </section>
+
+  <Section tone="cream-deep">
+    <div class="rounded-card border border-copper/30 bg-cream p-8 md:p-12">
+      <p class="inline-flex items-center gap-2 rounded-full bg-rust/15 px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-rust">{sh.exclBadge}</p>
+      <h2 class="mt-5 font-display text-3xl font-700 md:text-4xl">{sh.exclTitle}</h2>
+      <p class="mt-4 max-w-2xl text-lg text-ink-soft/90">{sh.exclText}</p>
+      <ul class="mt-6 grid gap-3 md:grid-cols-3">
+        {sh.exclArgs.map((a) => <li class="flex gap-3 rounded-xl bg-cream-deep/60 p-4 text-sm font-600"><Icon name="lucide:check" class="mt-0.5 h-5 w-5 shrink-0 text-copper" /> {a}</li>)}
+      </ul>
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHeading eyebrow={sh.eventsEyebrow} title={sh.eventsTitle} />
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {sh.events.map((e, i) => (
+        <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6"><Icon name={eventIcons[i]} class="h-7 w-7 text-copper" /><h3 class="mt-3 font-display text-xl font-700">{e.t}</h3><p class="mt-2 flex-1 text-ink-soft/85">{e.d}</p><p class="mt-4 font-700 text-rust">{e.price}</p></div>
+      ))}
+    </div>
+    <p class="mt-6 text-center text-sm text-ink-soft/70">{sh.booking} <a href={`mailto:${site.emailNeotone}`} class="font-700 text-rust underline">{site.emailNeotone}</a></p>
+  </Section>
+
+  <Section tone="cream-deep" id="agenda">
+    <SectionHeading eyebrow={sh.agendaEyebrow} title={sh.agendaTitle} intro={sh.agendaIntro} />
+    <div class="mx-auto mt-8 max-w-xl rounded-card border border-dashed border-ink/20 bg-cream p-10 text-center">
+      <Icon name="lucide:calendar-clock" class="mx-auto h-10 w-10 text-copper" />
+      <p class="mt-4 text-lg font-600 text-ink-soft">{sh.agendaEmpty}</p>
+      <div class="mt-6"><Button href={L('/handpan-studio') + '#liste-attente'} variant="primary">{sh.agendaCta}</Button></div>
+    </div>
+  </Section>
+
+  <Section id="acces">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <SectionHeading align="left" eyebrow={sh.accessEyebrow} title={sh.accessTitle} />
+        <p class="mt-4 text-lg font-600">{site.address}</p>
+        <div class="mt-4"><Button href={site.mapsUrl} variant="ghost" external>{sh.accessMaps}</Button></div>
+        <div class="mt-8 space-y-4">
+          {sh.access.map((a) => (
+            <div class="flex gap-4 rounded-card border border-ink/10 bg-cream-deep/40 p-4"><span class="text-2xl" aria-hidden="true">{a.icon}</span><div><p class="font-700">{a.t}</p><p class="text-sm text-ink-soft/85">{a.d}</p></div></div>
+          ))}
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-card"><img src="/images/localisation-showroom-poster.webp" width="720" height="720" alt={sh.heroTitle} class="h-full w-full object-cover" loading="lazy" /></div>
+    </div>
+  </Section>
+</Layout>

@@ -1,0 +1,22 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import { getDict } from '@/i18n/dict'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const lg = t.legal
+---
+
+<Layout title={lg.title} description={lg.description}>
+  <Section width="narrow">
+    <h1 class="font-display text-3xl font-700">{lg.h1}</h1>
+    <div class="mt-8 space-y-6 text-ink-soft/90">
+      {lg.blocks.map((b) => (
+        <div><h2 class="font-display text-xl font-700">{b.h}</h2><p class="mt-2">{b.p}</p></div>
+      ))}
+    </div>
+  </Section>
+</Layout>

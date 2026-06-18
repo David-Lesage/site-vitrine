@@ -1,0 +1,162 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import Calculator from '@/components/Calculator.astro'
+import { Icon } from 'astro-icon/components'
+import { models, woods, woodNames, modelImages, specIcons, includedIcons } from '@/data/neotone'
+import { site } from '@/data/site'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import { faqLdJson, productLdJson, breadcrumbLdJson } from '@/lib/ldJson'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const n = t.neotone
+const d = t.data
+const L = (p: string) => localizePath(p, lang)
+const modelLabels: Record<string, string> = { one: 'Neotone¹', mutant: 'Neotone¹ Mutant' }
+
+const ld = [
+  breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: n.heroEyebrow, url: L('/le-neotone') }]),
+  faqLdJson(d.faq),
+  productLdJson({ name: 'Neotone¹', description: 'Handpan numérique professionnel 10 notes', price: 1990, image: '/images/neotone-1-edition.webp' }),
+  productLdJson({ name: 'Neotone¹ Mutant', description: 'Handpan numérique professionnel 19 notes avec écran LCD', price: 3150, image: '/images/neotone-mutant-edition.webp' }),
+]
+---
+
+<Layout title={n.title} description={n.description} ldJSON={ld}>
+  <Section tone="ink" class="!py-20">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{n.heroEyebrow}</p>
+        <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">{n.heroTitle}</h1>
+        <p class="mt-5 text-lg text-cream/80" set:html={n.heroLead}></p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <Button href="#calculateur" variant="primary">{n.ctaCalc}</Button>
+          <Button href={L('/showroom')} variant="light">{n.ctaShowroom}</Button>
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-card bg-cream/5 p-8"><img src="/images/neotone-1-edition.webp" width="670" height="653" alt="Neotone¹" class="mx-auto max-h-80 object-contain" loading="eager" /></div>
+    </div>
+  </Section>
+
+  <Section id="modeles">
+    <SectionHeading eyebrow={n.modelsEyebrow} title={n.modelsTitle} intro={n.modelsIntro} />
+    <div class="mt-12 grid gap-8 md:grid-cols-2">
+      {models.map((m) => (
+        <div class="flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+          <div class="aspect-[4/3] bg-ink/5 p-6"><img src={modelImages[m.id].src} width={modelImages[m.id].w} height={modelImages[m.id].h} alt={modelLabels[m.id]} class="h-full w-full object-contain" loading="lazy" /></div>
+          <div class="flex flex-1 flex-col p-6">
+            <div class="flex items-baseline justify-between">
+              <h3 class="font-display text-2xl font-700">{modelLabels[m.id]}</h3>
+              <span class="rounded-full bg-copper/15 px-3 py-1 text-xs font-700 text-copper">{d.modelNotes[m.id]}</span>
+            </div>
+            <p class="mt-1 text-ink-soft/80">{d.modelTaglines[m.id]}</p>
+            <ul class="mt-4 flex-1 space-y-2 text-sm text-ink-soft/90">
+              {d.modelFeatures[m.id].map((f) => <li class="flex gap-2"><Icon name="lucide:check" class="mt-0.5 h-4 w-4 shrink-0 text-copper" /> {f}</li>)}
+            </ul>
+            <p class="mt-5 font-display text-lg font-700">{n.fromPrice} {m.fromPrice.toLocaleString(lang === 'en' ? 'en-GB' : 'fr-FR')} € HT</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section tone="cream-deep" id="bois">
+    <SectionHeading eyebrow={n.woodsEyebrow} title={n.woodsTitle} intro={n.woodsIntro} />
+    <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-5">
+      {woods.map((w) => (
+        <figure class="overflow-hidden rounded-card border border-ink/10 bg-cream">
+          <img src={w.img} width="570" height="420" alt={woodNames[w.key][lang]} class="aspect-square w-full object-cover" loading="lazy" />
+          <figcaption class="p-3 text-center"><p class="font-display font-700">{woodNames[w.key][lang]}</p><p class="text-xs text-ink-soft/70">{d.woodSupplements[w.key]}</p></figcaption>
+        </figure>
+      ))}
+    </div>
+  </Section>
+
+  <Section id="technologie">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div class="aspect-[4/3] overflow-hidden rounded-card"><img src="/images/interieur-1.webp" width="1080" height="1440" alt={n.techTitle} class="h-full w-full object-cover" loading="lazy" /></div>
+      <div>
+        <SectionHeading align="left" eyebrow={n.techEyebrow} title={n.techTitle} />
+        <p class="mt-5 text-lg text-ink-soft/90">{n.techText}</p>
+      </div>
+    </div>
+    <h3 class="mt-16 text-center font-display text-2xl font-700">{n.specsTitle}</h3>
+    <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {d.specs.map((s, i) => (
+        <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+          <Icon name={specIcons[i]} class="h-7 w-7 text-copper" />
+          <h4 class="mt-3 font-display text-lg font-700">{s.title}</h4>
+          <ul class="mt-3 space-y-1.5 text-sm text-ink-soft/85">{s.items.map((it) => <li>· {it}</li>)}</ul>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section tone="ink">
+    <SectionHeading tone="light" eyebrow={n.stageEyebrow} title={n.stageTitle} intro={n.stageIntro} />
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {n.stage.map((b) => (
+        <div class="rounded-card border border-cream/10 bg-cream/5 p-6"><h3 class="font-display text-xl font-700 text-cream">{b.t}</h3><p class="mt-3 text-cream/75">{b.d}</p></div>
+      ))}
+    </div>
+  </Section>
+
+  <Section id="comparatif">
+    <SectionHeading eyebrow={n.compEyebrow} title={n.compTitle} intro={n.compIntro} />
+    <div class="mx-auto mt-10 max-w-4xl space-y-4">
+      {d.comparatif.map((row) => (
+        <div class="grid gap-px overflow-hidden rounded-card border border-ink/10 md:grid-cols-2">
+          <div class="flex gap-3 bg-cream-deep/60 p-5"><Icon name="lucide:x" class="mt-0.5 h-5 w-5 shrink-0 text-rust" /><p class="text-sm text-ink-soft/85">{row.aco}</p></div>
+          <div class="flex gap-3 bg-copper/10 p-5"><Icon name="lucide:check" class="mt-0.5 h-5 w-5 shrink-0 text-copper" /><p class="text-sm font-600 text-ink">{row.neo}</p></div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section tone="cream-deep" id="calculateur">
+    <SectionHeading eyebrow={n.calcEyebrow} title={n.calcTitle} intro={n.calcIntro} />
+    <div class="mt-10"><Calculator lang={lang} /></div>
+    <p class="mx-auto mt-6 max-w-3xl text-center text-xs text-ink-soft/70">{n.calcDisclaimer}</p>
+  </Section>
+
+  <Section id="procedure">
+    <SectionHeading eyebrow={n.procEyebrow} title={n.procTitle} intro={n.procIntro} />
+    <ol class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {d.procedure.map((step, i) => (
+        <li class="rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+          <span class="grid h-9 w-9 place-items-center rounded-full bg-rust font-display text-lg font-700 text-cream">{i + 1}</span>
+          <h3 class="mt-4 font-display text-lg font-700">{step.title}</h3>
+          <p class="mt-2 text-sm text-ink-soft/85">{step.text}</p>
+        </li>
+      ))}
+    </ol>
+  </Section>
+
+  <Section tone="cream-deep">
+    <SectionHeading eyebrow={n.inclEyebrow} title={n.inclTitle} />
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {d.included.map((it, i) => (
+        <div class="rounded-card border border-ink/10 bg-cream p-6 text-center"><Icon name={includedIcons[i]} class="mx-auto h-8 w-8 text-copper" /><h3 class="mt-3 font-display text-lg font-700">{it.title}</h3><p class="mt-2 text-sm text-ink-soft/85">{it.text}</p></div>
+      ))}
+    </div>
+  </Section>
+
+  <Section id="faq">
+    <SectionHeading eyebrow={n.faqEyebrow} title={n.faqTitle} />
+    <div class="mx-auto mt-10 max-w-3xl space-y-3">
+      {d.faq.map((item) => (
+        <details class="group rounded-card border border-ink/10 bg-cream-deep/40 p-5">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-lg font-600 marker:content-none">{item.q}<Icon name="lucide:chevron-down" class="h-5 w-5 shrink-0 text-copper transition-transform group-open:rotate-180" /></summary>
+          <p class="mt-3 text-ink-soft/85">{item.a}</p>
+        </details>
+      ))}
+    </div>
+    <p class="mt-8 text-center text-ink-soft/85">{n.faqOutro} <a href={`mailto:${site.emailNeotone}`} class="font-700 text-rust underline">{site.emailNeotone}</a></p>
+  </Section>
+</Layout>

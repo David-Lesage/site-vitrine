@@ -1,12 +1,35 @@
 ---
-import { models, countries, woods, woodLabels } from '@/data/neotone'
+import { models, countries, woods, woodNames } from '@/data/neotone'
 import { site } from '@/data/site'
+import { getDict } from '@/i18n/dict'
+import type { Lang } from '@/i18n/config'
+
+interface Props {
+  lang: Lang
+}
+const { lang } = Astro.props
+const t = getDict(lang)
+const c = t.data.calc
+
+const modelLabels: Record<string, string> = { one: 'Neotone¹', mutant: 'Neotone¹ Mutant' }
 
 // Données injectées côté client
 const calcData = {
-  models: Object.fromEntries(models.map((m) => [m.id, { label: m.label, woods: m.woods }])),
-  woodLabels,
-  countries: Object.fromEntries(countries.map((c) => [c.code, { name: c.name, vat: c.vat, eu: c.eu, note: c.note || '' }])),
+  models: Object.fromEntries(models.map((m) => [m.id, { label: modelLabels[m.id], woods: m.woods }])),
+  woodLabels: Object.fromEntries(woods.map((w) => [w.key, woodNames[w.key][lang]])),
+  countries: Object.fromEntries(countries.map((co) => [co.code, { name: co.name[lang], vat: co.vat, eu: co.eu, note: co.note ? co.note[lang] : '' }])),
+  i18n: {
+    discountLabel: c.discountLabel,
+    vat: c.vat,
+    finalTTC: c.finalTTC,
+    finalIncluded: c.finalIncluded,
+    finalShowroom: c.finalShowroom,
+    finalB2B: c.finalB2B,
+    finalB2BNote: c.finalB2BNote,
+    finalExtUE: c.finalExtUE,
+    finalExtUENote: c.finalExtUENote,
+    b2bNote: c.b2bNote,
+  },
 }
 ---
 
@@ -14,70 +37,66 @@ const calcData = {
   <div class="grid lg:grid-cols-5">
     <!-- Contrôles -->
     <div class="space-y-8 p-6 lg:col-span-3 lg:p-8">
-      <!-- Mode d'achat -->
       <fieldset>
-        <legend class="text-xs font-700 uppercase tracking-widest text-copper">Comment veux-tu recevoir ton Neotone ?</legend>
-        <div class="mt-3 grid gap-3 sm:grid-cols-2" role="radiogroup" aria-label="Mode d'achat">
+        <legend class="text-xs font-700 uppercase tracking-widest text-copper">{c.modeQuestion}</legend>
+        <div class="mt-3 grid gap-3 sm:grid-cols-2" role="radiogroup" aria-label={c.modeQuestion}>
           <button type="button" class="calc-mode rounded-xl border-2 border-copper bg-copper/10 p-4 text-left" data-mode="online" aria-checked="true" role="radio">
-            <span class="block font-700">📦 Je me fais livrer</span>
-            <span class="block text-sm text-ink-soft/80">Livraison mondiale incluse · remise 5 %</span>
+            <span class="block font-700">{c.modeOnline}</span>
+            <span class="block text-sm text-ink-soft/80">{c.modeOnlineSub}</span>
           </button>
           <button type="button" class="calc-mode rounded-xl border-2 border-ink/15 p-4 text-left" data-mode="showroom" aria-checked="false" role="radio">
-            <span class="block font-700">🏠 Je viens au showroom ★</span>
-            <span class="block text-sm text-ink-soft/80">Paris 20ᵉ · remise 7 % · sans délai</span>
+            <span class="block font-700">{c.modeShowroom}</span>
+            <span class="block text-sm text-ink-soft/80">{c.modeShowroomSub}</span>
           </button>
         </div>
       </fieldset>
 
-      <!-- Modèle -->
       <fieldset>
-        <legend class="text-xs font-700 uppercase tracking-widest text-copper">1 · Choisis ton modèle</legend>
-        <div class="mt-3 grid gap-3 sm:grid-cols-2" role="radiogroup" aria-label="Modèle">
+        <legend class="text-xs font-700 uppercase tracking-widest text-copper">{c.step1}</legend>
+        <div class="mt-3 grid gap-3 sm:grid-cols-2" role="radiogroup" aria-label={c.step1}>
           {models.map((m, i) => (
             <button type="button" class:list={['calc-model rounded-xl border-2 p-4 text-left', i === 0 ? 'border-copper bg-copper/10' : 'border-ink/15']} data-model={m.id} aria-checked={i === 0 ? 'true' : 'false'} role="radio">
-              <span class="block font-display text-lg font-700">{m.label}</span>
-              <span class="block text-sm text-ink-soft/80">{m.notesLabel}</span>
+              <span class="block font-display text-lg font-700">{modelLabels[m.id]}</span>
+              <span class="block text-sm text-ink-soft/80">{t.data.modelNotes[m.id]}</span>
             </button>
           ))}
         </div>
       </fieldset>
 
-      <!-- Bois -->
       <fieldset>
-        <legend class="text-xs font-700 uppercase tracking-widest text-copper">2 · Choisis ton bois</legend>
-        <div class="mt-3 flex flex-wrap gap-2" role="radiogroup" aria-label="Bois">
+        <legend class="text-xs font-700 uppercase tracking-widest text-copper">{c.step2}</legend>
+        <div class="mt-3 flex flex-wrap gap-2" role="radiogroup" aria-label={c.step2}>
           {woods.map((w, i) => (
             <button type="button" class:list={['calc-wood rounded-full border-2 px-4 py-2 text-sm font-600', i === 0 ? 'border-copper bg-copper/10' : 'border-ink/15']} data-wood={w.key} aria-checked={i === 0 ? 'true' : 'false'} role="radio">
-              {woodLabels[w.key]}
+              {woodNames[w.key][lang]}
             </button>
           ))}
         </div>
       </fieldset>
 
-      <!-- Pays -->
       <fieldset>
-        <legend class="text-xs font-700 uppercase tracking-widest text-copper">3 · Ton pays de livraison</legend>
-        <label class="sr-only" for="calc-country">Pays</label>
+        <legend class="text-xs font-700 uppercase tracking-widest text-copper">{c.step3}</legend>
+        <label class="sr-only" for="calc-country">{c.step3}</label>
         <select id="calc-country" class="mt-3 w-full rounded-xl border-2 border-ink/15 bg-cream px-4 py-3 font-600 focus:border-copper focus:outline-none">
-          {countries.map((c) => (
-            <option value={c.code}>{c.name}{c.eu ? ` — TVA ${c.vat.toString().replace('.', ',')} %` : ' — sans TVA UE'}</option>
+          {countries.map((co) => (
+            <option value={co.code}>{co.name[lang]}{co.eu ? ` — ${c.vatStd} ${co.vat.toString().replace('.', ',')} %` : ` — ${c.noVat}`}</option>
           ))}
         </select>
         <label class="mt-3 flex items-start gap-3 text-sm text-ink-soft/85">
           <input type="checkbox" id="calc-b2b" class="mt-1" />
-          <span>J’ai un numéro de TVA intracommunautaire (B2B) — la TVA est récupérable (autoliquidation), tu paies le prix HT.</span>
+          <span>{c.b2b}</span>
         </label>
       </fieldset>
     </div>
 
     <!-- Récapitulatif -->
     <div class="bg-ink p-6 text-cream lg:col-span-2 lg:p-8">
-      <p class="text-xs font-700 uppercase tracking-widest text-gold">Récapitulatif</p>
+      <p class="text-xs font-700 uppercase tracking-widest text-gold">{c.recap}</p>
       <p id="calc-selection" class="mt-2 font-display text-xl font-700"></p>
       <dl class="mt-6 space-y-3 text-sm">
-        <div class="flex justify-between gap-4"><dt class="text-cream/70">Prix public HT (envoi compris)</dt><dd id="calc-base" class="font-600"></dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-cream/70">{c.basePrice}</dt><dd id="calc-base" class="font-600"></dd></div>
         <div class="flex justify-between gap-4"><dt id="calc-discount-label" class="text-cream/70"></dt><dd id="calc-discount" class="font-600 text-gold"></dd></div>
-        <div class="flex justify-between gap-4 border-t border-cream/15 pt-3"><dt class="text-cream/70">Sous-total HT</dt><dd id="calc-subtotal" class="font-600"></dd></div>
+        <div class="flex justify-between gap-4 border-t border-cream/15 pt-3"><dt class="text-cream/70">{c.subtotal}</dt><dd id="calc-subtotal" class="font-600"></dd></div>
         <div id="calc-vat-wrap" class="flex justify-between gap-4"><dt id="calc-vat-label" class="text-cream/70"></dt><dd id="calc-vat" class="font-600"></dd></div>
       </dl>
       <div class="mt-6 border-t border-cream/15 pt-5">
@@ -86,11 +105,11 @@ const calcData = {
         <p id="calc-final-note" class="mt-1 text-xs text-cream/60"></p>
       </div>
       <p class="mt-4 inline-flex items-center gap-2 rounded-lg bg-rust/20 px-3 py-2 text-sm text-gold">
-        Tu économises <span id="calc-savings" class="font-700"></span>
+        {c.savings} <span id="calc-savings" class="font-700"></span>
       </p>
       <p id="calc-extra-note" class="mt-4 text-xs leading-relaxed text-cream/55"></p>
-      <a href={`mailto:${site.emailNeotone}?subject=Mon%20code%20de%20remise%20Neotone`} class="mt-6 block rounded-full bg-rust px-5 py-3 text-center font-700 text-cream transition-colors hover:bg-copper">
-        Obtenir mon code de remise
+      <a href={`mailto:${site.emailNeotone}?subject=Neotone`} class="mt-6 block rounded-full bg-rust px-5 py-3 text-center font-700 text-cream transition-colors hover:bg-copper">
+        {c.getCode}
       </a>
     </div>
   </div>
@@ -102,9 +121,11 @@ const calcData = {
   const dataEl = document.getElementById('calc-data')
   if (dataEl) {
     const DATA = JSON.parse(dataEl.textContent || '{}')
+    const L = DATA.i18n
     const state = { model: 'one', wood: 'frene', country: 'FR', b2b: false, mode: 'online' }
+    const locale = document.documentElement.lang === 'en' ? 'en-GB' : 'fr-FR'
 
-    const fmtEUR = (n: number) => new Intl.NumberFormat('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n) + ' €'
+    const fmtEUR = (n: number) => new Intl.NumberFormat(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n) + ' €'
     const fmtVAT = (v: number) => (v === Math.floor(v) ? v + ' %' : v.toString().replace('.', ',') + ' %')
     const $ = (id: string) => document.getElementById(id)
 
@@ -128,32 +149,30 @@ const calcData = {
       const r = compute()
       $('calc-selection')!.textContent = `${DATA.models[state.model].label} — ${DATA.woodLabels[state.wood]}`
       $('calc-base')!.textContent = fmtEUR(r.basePrice)
-      $('calc-discount-label')!.textContent = `Remise ambassadeur −${Math.round(r.discountRate * 100)} %`
+      $('calc-discount-label')!.textContent = `${L.discountLabel} −${Math.round(r.discountRate * 100)} %`
       $('calc-discount')!.textContent = '− ' + fmtEUR(r.discount)
       $('calc-subtotal')!.textContent = fmtEUR(r.subtotalHT)
 
       const vatWrap = $('calc-vat-wrap')!
       if (r.country.eu && !state.b2b) {
         vatWrap.style.display = ''
-        $('calc-vat-label')!.textContent = `TVA ${r.country.name} ${fmtVAT(r.vatRate)}`
+        $('calc-vat-label')!.textContent = `${L.vat} ${r.country.name} ${fmtVAT(r.vatRate)}`
         $('calc-vat')!.textContent = fmtEUR(r.vatAmount)
-        $('calc-final-label')!.textContent = 'Prix final TTC à payer'
-        $('calc-final-note')!.textContent = 'Livraison mondiale incluse · Garantie 6 ans'
+        $('calc-final-label')!.textContent = L.finalTTC
+        $('calc-final-note')!.textContent = L.finalIncluded
         $('calc-extra-note')!.innerHTML = ''
       } else if (state.b2b) {
         vatWrap.style.display = 'none'
-        $('calc-final-label')!.textContent = 'Prix HT à payer (autoliquidation)'
-        $('calc-final-note')!.textContent = 'TVA récupérable · n° de TVA intracommunautaire requis'
-        $('calc-extra-note')!.innerHTML = 'Autoliquidation de la TVA : tu déclares et récupères la TVA dans ton pays. Numéro de TVA intracommunautaire valide requis.'
+        $('calc-final-label')!.textContent = L.finalB2B
+        $('calc-final-note')!.textContent = L.finalB2BNote
+        $('calc-extra-note')!.innerHTML = L.b2bNote
       } else {
         vatWrap.style.display = 'none'
-        $('calc-final-label')!.textContent = 'Prix HT à payer · hors UE'
-        $('calc-final-note')!.textContent = 'Sans TVA UE · frais de douane locaux à ta charge'
+        $('calc-final-label')!.textContent = L.finalExtUE
+        $('calc-final-note')!.textContent = L.finalExtUENote
         $('calc-extra-note')!.innerHTML = r.country.note || ''
       }
-      if (state.mode === 'showroom') {
-        $('calc-final-note')!.textContent = 'Retrait au showroom · Paris 20ᵉ · aucun délai, aucun frais d’envoi'
-      }
+      if (state.mode === 'showroom') $('calc-final-note')!.textContent = L.finalShowroom
 
       const finalEl = $('calc-final')!
       finalEl.classList.remove('price-update')
@@ -183,15 +202,8 @@ const calcData = {
     bindGroup('.calc-model', 'model', 'model')
     bindGroup('.calc-wood', 'wood', 'wood')
 
-    ;($('calc-country') as HTMLSelectElement).addEventListener('change', (e) => {
-      state.country = (e.target as HTMLSelectElement).value
-      render()
-    })
-    ;($('calc-b2b') as HTMLInputElement).addEventListener('change', (e) => {
-      state.b2b = (e.target as HTMLInputElement).checked
-      render()
-    })
-
+    ;($('calc-country') as HTMLSelectElement).addEventListener('change', (e) => { state.country = (e.target as HTMLSelectElement).value; render() })
+    ;($('calc-b2b') as HTMLInputElement).addEventListener('change', (e) => { state.b2b = (e.target as HTMLInputElement).checked; render() })
     render()
   }
 </script>

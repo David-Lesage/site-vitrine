@@ -1,0 +1,84 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { categoryIds, products } from '@/data/shop'
+import { site } from '@/data/site'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import { itemListLdJson, breadcrumbLdJson } from '@/lib/ldJson'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const s = t.shop
+const L = (p: string) => localizePath(p, lang)
+const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
+const eur = (n: number) => n.toLocaleString(lang === 'en' ? 'en-GB' : 'fr-FR') + ' €'
+const productCopy = s.products as Record<string, { name: string; description: string }>
+const categoryCopy = s.categories as Record<string, { label: string; blurb: string }>
+const pName = (id: string) => productCopy[id]
+const catInfo = (id: string) => categoryCopy[id]
+
+const ld = [
+  itemListLdJson(products.filter((p) => p.active).map((p) => ({ name: pName(p.id).name, url: p.url, image: p.image }))),
+  breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: s.eyebrow, url: L('/boutique') }]),
+]
+---
+
+<Layout title={s.title} description={s.description} ldJSON={ld}>
+  <Section tone="ink" class="!py-16">
+    <SectionHeading level={1} tone="light" eyebrow={s.eyebrow} title={s.title2} intro={s.intro} />
+  </Section>
+
+  {!snipcartKey && <div class="bg-gold/20 px-4 py-3 text-center text-sm text-ink-soft">⚙️ {s.keyNotice}</div>}
+
+  {categoryIds.map((catId) => {
+    const cat = catInfo(catId)
+    const items = products.filter((p) => p.category === catId)
+    return (
+      <Section id={catId}>
+        <SectionHeading align="left" eyebrow={cat.label} title={cat.label} intro={cat.blurb} />
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((p) => {
+            const info = pName(p.id)
+            return (
+              <div id={p.id} class="flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+                <div class="aspect-square bg-ink/5 p-6"><img src={p.image} width={p.imgW} height={p.imgH} alt={info.name} class="h-full w-full object-contain" loading="lazy" /></div>
+                <div class="flex flex-1 flex-col p-6">
+                  <h3 class="font-display text-xl font-700">{info.name}</h3>
+                  <p class="mt-2 flex-1 text-sm text-ink-soft/85">{info.description}</p>
+                  <div class="mt-4 flex items-center justify-between">
+                    {p.mode !== 'soon' ? <span class="font-display text-lg font-700">{p.mode === 'quote' ? s.from : ''}{eur(p.price)}</span> : <span class="text-sm font-600 text-ink-soft/60">{s.soon}</span>}
+                  </div>
+                  <div class="mt-4">
+                    {p.mode === 'cart' && snipcartKey && (
+                      <button class="snipcart-add-item w-full rounded-full bg-rust px-5 py-3 font-700 text-cream transition-colors hover:bg-copper" data-item-id={p.id} data-item-name={info.name} data-item-price={p.price} data-item-url="/boutique" data-item-description={info.description} data-item-image={p.image}>{s.addCart}</button>
+                    )}
+                    {p.mode === 'cart' && !snipcartKey && (
+                      <a href={`mailto:${site.email}?subject=${encodeURIComponent(info.name)}`} class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{s.orderEmail}</a>
+                    )}
+                    {p.mode === 'quote' && <a href={L('/le-neotone') + '#calculateur'} class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{s.calcOrder}</a>}
+                    {p.mode === 'soon' && <span class="block w-full rounded-full border border-ink/15 px-5 py-3 text-center font-600 text-ink-soft/50">{s.soonLong}</span>}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </Section>
+    )
+  })}
+
+  <Section tone="cream-deep">
+    <div class="rounded-card border border-ink/10 bg-cream p-8 text-center">
+      <Icon name="lucide:messages-square" class="mx-auto h-9 w-9 text-copper" />
+      <h2 class="mt-4 font-display text-2xl font-700">{s.adviceTitle}</h2>
+      <p class="mx-auto mt-3 max-w-xl text-ink-soft/85">{s.adviceText}</p>
+      <div class="mt-6"><Button href={L('/contact')} variant="primary">{s.adviceCta}</Button></div>
+    </div>
+  </Section>
+</Layout>

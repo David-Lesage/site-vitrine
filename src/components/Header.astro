@@ -1,77 +1,71 @@
 ---
-import { nav, site } from '@/data/site'
-const path = Astro.url.pathname
-const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href))
+import { nav } from '@/data/site'
+import { getDict } from '@/i18n/dict'
+import { localizePath, unlocalizePath } from '@/i18n/utils'
+import type { Lang } from '@/i18n/config'
+import LanguageSwitcher from '@/components/LanguageSwitcher.astro'
+
+interface Props {
+  lang: Lang
+}
+const { lang } = Astro.props
+const t = getDict(lang)
+const basePath = unlocalizePath(Astro.url.pathname)
+const isActive = (href: string) => (href === '/' ? basePath === '/' : basePath.startsWith(href))
 const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
+const navLabel = (key: string) => (t.common.nav as Record<string, string>)[key]
 ---
 
 <header class="sticky top-0 z-50 border-b border-ink/10 bg-cream/90 backdrop-blur-md">
   <div class="chroma-bar h-1 w-full"></div>
-  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-8" aria-label="Navigation principale">
-    <a href="/" class="group flex flex-col leading-none" aria-label="David Lesage — accueil">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-8" aria-label={navLabel('home')}>
+    <a href={localizePath('/', lang)} class="group flex flex-col leading-none" aria-label={`David Lesage — ${navLabel('home')}`}>
       <span class="font-display text-xl font-700 tracking-tight text-ink">David Lesage</span>
-      <span class="text-[0.65rem] font-600 uppercase tracking-[0.18em] text-copper">Musique visible</span>
+      <span class="text-[0.65rem] font-600 uppercase tracking-[0.18em] text-copper">{t.common.brandSub}</span>
     </a>
 
-    <ul class="hidden items-center gap-1 lg:flex">
+    <ul class="hidden items-center gap-1 xl:flex">
       {nav.map((item) => (
         <li>
           <a
-            href={item.href}
-            class:list={[
-              'rounded-full px-3 py-2 text-sm font-600 transition-colors hover:bg-ink/5',
-              isActive(item.href) ? 'text-rust' : 'text-ink-soft',
-            ]}
+            href={localizePath(item.href, lang)}
+            class:list={['rounded-full px-3 py-2 text-sm font-600 transition-colors hover:bg-ink/5', isActive(item.href) ? 'text-rust' : 'text-ink-soft']}
             aria-current={isActive(item.href) ? 'page' : undefined}
           >
-            {item.label}
+            {navLabel(item.key)}
           </a>
         </li>
       ))}
     </ul>
 
     <div class="flex items-center gap-2">
+      <LanguageSwitcher lang={lang} />
       {snipcartKey && (
-        <button class="snipcart-checkout relative rounded-full p-2 text-ink-soft hover:bg-ink/5" aria-label="Voir mon panier">
+        <button class="snipcart-checkout relative rounded-full p-2 text-ink-soft hover:bg-ink/5" aria-label="Panier">
           <span aria-hidden="true">🛒</span>
           <span class="snipcart-items-count absolute -right-0.5 -top-0.5 grid h-4 min-w-4 place-items-center rounded-full bg-rust px-1 text-[0.6rem] font-700 text-cream"></span>
         </button>
       )}
-      <a
-        href="/showroom"
-        class="hidden rounded-full bg-rust px-4 py-2 text-sm font-700 text-cream shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-copper md:inline-block"
-      >
-        Venir l'essayer à Paris
+      <a href={localizePath('/showroom', lang)} class="hidden rounded-full bg-rust px-4 py-2 text-sm font-700 text-cream shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-copper lg:inline-block">
+        {t.common.headerCta}
       </a>
-      <button
-        id="burger"
-        class="rounded-lg p-2 text-ink lg:hidden"
-        aria-label="Ouvrir le menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
+      <button id="burger" class="rounded-lg p-2 text-ink xl:hidden" aria-label={navLabel('home')} aria-expanded="false" aria-controls="mobile-menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </nav>
 
-  <div id="mobile-menu" class="hidden border-t border-ink/10 bg-cream lg:hidden">
+  <div id="mobile-menu" class="hidden border-t border-ink/10 bg-cream xl:hidden">
     <ul class="mx-auto flex max-w-7xl flex-col px-4 py-2">
       {nav.map((item) => (
         <li>
-          <a
-            href={item.href}
-            class:list={[
-              'block rounded-lg px-3 py-3 text-base font-600',
-              isActive(item.href) ? 'text-rust' : 'text-ink-soft',
-            ]}
-          >
-            {item.label}
+          <a href={localizePath(item.href, lang)} class:list={['block rounded-lg px-3 py-3 text-base font-600', isActive(item.href) ? 'text-rust' : 'text-ink-soft']}>
+            {navLabel(item.key)}
           </a>
         </li>
       ))}
       <li class="px-3 py-3">
-        <a href="/showroom" class="block rounded-full bg-rust px-4 py-3 text-center font-700 text-cream">Venir l'essayer à Paris</a>
+        <a href={localizePath('/showroom', lang)} class="block rounded-full bg-rust px-4 py-3 text-center font-700 text-cream">{t.common.headerCta}</a>
       </li>
     </ul>
   </div>

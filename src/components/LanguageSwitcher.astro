@@ -1,0 +1,67 @@
+---
+import { allLanguages, type Lang } from '@/i18n/config'
+import { unlocalizePath, localizePath } from '@/i18n/utils'
+
+interface Props {
+  lang: Lang
+}
+const { lang } = Astro.props
+// Chemin neutre de la page courante (sans préfixe de langue)
+const basePath = unlocalizePath(Astro.url.pathname)
+const current = allLanguages.find((l) => l.code === lang)!
+---
+
+<div class="relative" data-lang-switcher>
+  <button
+    type="button"
+    class="flex items-center gap-1.5 rounded-full border border-ink/15 px-3 py-2 text-sm font-600 hover:bg-ink/5"
+    aria-haspopup="true"
+    aria-expanded="false"
+    data-lang-toggle
+  >
+    <span aria-hidden="true">{current.flag}</span>
+    <span class="uppercase">{current.code}</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" /></svg>
+  </button>
+  <ul
+    class="absolute right-0 z-50 mt-2 hidden min-w-44 overflow-hidden rounded-xl border border-ink/10 bg-cream shadow-lg"
+    data-lang-menu
+  >
+    {allLanguages.map((l) => (
+      <li>
+        {l.active ? (
+          <a
+            href={localizePath(basePath, l.code as Lang)}
+            class:list={['flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-ink/5', l.code === lang ? 'font-700 text-rust' : 'text-ink-soft']}
+            hreflang={l.code}
+          >
+            <span aria-hidden="true">{l.flag}</span> {l.label}
+          </a>
+        ) : (
+          <span class="flex items-center justify-between gap-2 px-4 py-2.5 text-sm text-ink/35" title="Bientôt disponible">
+            <span><span aria-hidden="true">{l.flag}</span> {l.label}</span>
+            <span class="rounded-full bg-ink/5 px-1.5 py-0.5 text-[0.6rem] font-600 uppercase">bientôt</span>
+          </span>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  document.querySelectorAll('[data-lang-switcher]').forEach((root) => {
+    const toggle = root.querySelector('[data-lang-toggle]') as HTMLButtonElement
+    const menu = root.querySelector('[data-lang-menu]') as HTMLElement
+    toggle?.addEventListener('click', (e) => {
+      e.stopPropagation()
+      const open = menu.classList.toggle('hidden') === false
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false')
+    })
+    document.addEventListener('click', (e) => {
+      if (!root.contains(e.target as Node)) {
+        menu.classList.add('hidden')
+        toggle?.setAttribute('aria-expanded', 'false')
+      }
+    })
+  })
+</script>

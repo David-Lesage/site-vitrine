@@ -1,0 +1,122 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { site } from '@/data/site'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import { personLdJson } from '@/lib/ldJson'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const h = t.home
+const L = (p: string) => localizePath(p, lang)
+const universMeta = [
+  { img: '/images/neotone-1-edition.webp', w: 670, h: 653, icon: 'lucide:disc-3', href: '/le-neotone' },
+  { img: '/images/constel-mains.webp', w: 1400, h: 1008, icon: 'lucide:graduation-cap', href: '/cours' },
+  { img: '/images/app-logique.webp', w: 1100, h: 1327, icon: 'lucide:sparkles', href: '/handpan-studio' },
+]
+---
+
+<Layout title={h.title} description={h.description} ldJSON={personLdJson()}>
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <div class="absolute inset-0">
+      <img src="/images/hero-david.webp" width="2400" height="1351" alt="" class="h-full w-full object-cover opacity-40" loading="eager" fetchpriority="high" />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/40"></div>
+    </div>
+    <div class="relative mx-auto max-w-5xl px-4 py-24 text-center lg:py-32">
+      <p class="inline-flex items-center gap-2 rounded-full border border-cream/20 bg-cream/5 px-4 py-1.5 text-xs font-600 uppercase tracking-[0.2em] text-gold">{h.heroEyebrow}</p>
+      <h1 class="mt-6 font-display text-4xl font-700 leading-[1.05] md:text-6xl">{h.heroTitleA} <span class="text-gradient-brand">{h.heroTitleHighlight}</span> {h.heroTitleB}</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-cream/80 md:text-xl">{h.heroLead}</p>
+      <div class="mt-9 flex flex-wrap justify-center gap-3">
+        <Button href={L('/showroom')} variant="primary">{h.ctaShowroom}</Button>
+        <Button href={L('/handpan-studio')} variant="light">{h.ctaMethod}</Button>
+      </div>
+      <div class="chroma-bar mx-auto mt-12 h-1.5 w-48 rounded-full"></div>
+    </div>
+  </section>
+
+  <div class="border-b border-ink/10 bg-cream-deep">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-4 py-5 text-sm font-600 text-ink-soft lg:px-8">
+      {t.common.credentials.map((c) => (
+        <span class="inline-flex items-center gap-2"><Icon name="lucide:badge-check" class="h-4 w-4 text-copper" /> {c}</span>
+      ))}
+    </div>
+  </div>
+
+  <Section>
+    <SectionHeading eyebrow={h.universEyebrow} title={h.universHeading} intro={h.universIntro} />
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {h.univers.map((u, i) => (
+        <a href={L(universMeta[i].href)} class="group flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40 transition-all hover:-translate-y-1 hover:shadow-xl">
+          <div class="aspect-[4/3] overflow-hidden bg-ink/5">
+            <img src={universMeta[i].img} width={universMeta[i].w} height={universMeta[i].h} alt={u.title} class="h-full w-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <div class="flex items-center gap-2 text-copper"><Icon name={universMeta[i].icon} class="h-5 w-5" /><span class="text-xs font-700 uppercase tracking-widest">{u.sub}</span></div>
+            <h3 class="mt-2 font-display text-2xl font-700">{u.title}</h3>
+            <p class="mt-2 flex-1 text-ink-soft/85">{u.text}</p>
+            <span class="mt-4 inline-flex items-center gap-1 font-700 text-rust transition-all group-hover:gap-2">{u.cta} →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div class="aspect-[4/3] overflow-hidden rounded-card"><img src="/images/hero-david.jpg" width="2400" height="1350" alt="David Lesage" class="h-full w-full object-cover object-top" loading="lazy" /></div>
+      <div>
+        <SectionHeading align="left" eyebrow={h.whyEyebrow} title={h.whyTitle} />
+        <div class="mt-5 space-y-4 text-lg text-ink-soft/90"><p>{h.whyP1}</p><p>{h.whyP2}</p></div>
+        <div class="mt-7"><Button href={L('/a-propos')} variant="ghost">{h.whyCta}</Button></div>
+      </div>
+    </div>
+  </Section>
+
+  <Section tone="ink">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <p class="inline-flex items-center gap-2 rounded-full bg-rust/20 px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-gold">{h.showroomBadge}</p>
+        <h2 class="mt-5 font-display text-3xl font-700 leading-tight md:text-4xl">{h.showroomTitle}</h2>
+        <p class="mt-5 text-lg text-cream/80">{h.showroomText}</p>
+        <ul class="mt-6 space-y-3 text-cream/90">
+          {h.showroomArgs.map((a) => <li class="flex gap-3"><Icon name="lucide:check" class="mt-1 h-5 w-5 shrink-0 text-gold" /> {a}</li>)}
+        </ul>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <Button href={L('/showroom')} variant="primary">{h.showroomCta1}</Button>
+          <Button href={L('/showroom') + '#agenda'} variant="light">{h.showroomCta2}</Button>
+        </div>
+      </div>
+      <div class="aspect-video overflow-hidden rounded-card">
+        <video class="h-full w-full object-cover" autoplay muted loop playsinline poster="/images/localisation-showroom-poster.webp"><source src="/images/localisation-showroom.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <div class="rounded-card border border-ink/10 bg-cream-deep/50 p-8 text-center md:p-14">
+      <SectionHeading eyebrow={h.communityEyebrow} title={h.communityTitle} intro={h.communityIntro} />
+      <form class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row" name="newsletter" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <label class="sr-only" for="nl-email">Email</label>
+        <input id="nl-email" type="email" name="email" required placeholder={h.communityPlaceholder} class="flex-1 rounded-full border border-ink/20 bg-cream px-5 py-3 text-ink placeholder:text-ink/40 focus:border-copper focus:outline-none" />
+        <button type="submit" class="rounded-full bg-rust px-6 py-3 font-700 text-cream transition-colors hover:bg-copper">{h.communityButton}</button>
+      </form>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
+    <SectionHeading eyebrow={h.proofEyebrow} title={h.proofTitle} intro={h.proofIntro} />
+    <div class="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
+      {['sa-play', 'sa-couleur', 'sa-creation'].map((v) => (
+        <video class="aspect-[3/4] w-full rounded-card object-cover shadow-md" muted loop playsinline autoplay poster={`/images/${v}-poster.webp`}><source src={`/images/${v}.mp4`} type="video/mp4" /></video>
+      ))}
+    </div>
+    <div class="mt-8 text-center"><Button href={site.social.youtube} variant="ghost" external>{h.proofCta}</Button></div>
+  </Section>
+</Layout>

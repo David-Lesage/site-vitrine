@@ -67,6 +67,26 @@ Tout le contenu éditable est centralisé :
 Le **calculateur de prix** (`src/components/Calculator.astro`) applique la remise
 (−5 % en ligne / −7 % showroom), la TVA 2026 par pays, et l'autoliquidation B2B.
 
+## Multilingue (i18n)
+
+- **FR** (par défaut) à la racine, **EN** sous `/en` — routing natif Astro (`astro.config.mjs` → `i18n`).
+- Sélecteur de langue dans le header. FR + EN actifs ; **DE/ES/IT/PT** affichés « bientôt ».
+- `hreflang` (fr / en / x-default) injecté par `SEO.astro`, sitemap localisé.
+
+Architecture :
+- `src/i18n/config.ts` — langues, langues actives, OG locales.
+- `src/i18n/utils.ts` — `getLang`, `localizePath`, `unlocalizePath`.
+- `src/i18n/dict.ts` (FR) + `src/i18n/en.ts` (EN) — **tout le contenu texte**, même forme typée.
+- `src/data/*` — données **neutres** (prix, TVA, images, icônes, codes pays).
+- `src/components/pages/*.astro` — une vue par page, recevant `lang`.
+- `src/pages/<slug>.astro` (FR) + `src/pages/en/<slug>.astro` (EN) — routes fines.
+
+**Ajouter une langue** (ex. DE) :
+1. Créer `src/i18n/de.ts` (copier `en.ts`, traduire) + ajouter les libellés `de` dans `src/data/neotone.ts` (noms/notes pays, bois).
+2. Ajouter `'de'` à `locales` (`astro.config.mjs`) et à `activeLangs` + `de` dans `htmlLang`/`ogLocale` (`config.ts`).
+3. Passer `active: true` sur la ligne `de` de `allLanguages`.
+4. Créer les routes `src/pages/de/<slug>.astro`.
+
 ## SEO
 
 Outillage repris de la stack Cap-go, en version épurée :

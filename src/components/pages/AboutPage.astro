@@ -1,0 +1,67 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { site } from '@/data/site'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import { personLdJson } from '@/lib/ldJson'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const a = t.about
+const L = (p: string) => localizePath(p, lang)
+const pillarIcons = ['lucide:eye', 'lucide:heart-handshake', 'lucide:award']
+---
+
+<Layout title={a.title} description={a.description} ldJSON={personLdJson()}>
+  <Section tone="ink" class="!py-20">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{a.heroEyebrow}</p>
+        <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">{a.heroTitle}</h1>
+        <p class="mt-5 text-lg text-cream/80">{a.heroLead}</p>
+      </div>
+      <div class="aspect-[4/3] overflow-hidden rounded-card"><img src="/images/hero-david.jpg" width="2400" height="1350" alt="David Lesage" class="h-full w-full object-cover object-top" loading="eager" /></div>
+    </div>
+  </Section>
+
+  <Section>
+    <div class="mx-auto max-w-3xl">
+      <SectionHeading align="left" eyebrow={a.storyEyebrow} title={a.storyTitle} />
+      <div class="mt-6 space-y-4 text-lg text-ink-soft/90">{a.story.map((p) => <p>{p}</p>)}</div>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
+    <SectionHeading eyebrow={a.visionEyebrow} title={a.visionTitle} intro={a.visionIntro} />
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {a.pillars.map((c, i) => (
+        <div class="rounded-card border border-ink/10 bg-cream p-6"><Icon name={pillarIcons[i]} class="h-7 w-7 text-copper" /><h3 class="mt-3 font-display text-xl font-700">{c.t}</h3><p class="mt-2 text-ink-soft/85">{c.d}</p></div>
+      ))}
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHeading eyebrow={a.proofsEyebrow} title={a.proofsTitle} />
+    <div class="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-3">
+      {t.common.credentials.map((c) => (
+        <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-cream-deep/50 px-4 py-2 font-600"><Icon name="lucide:badge-check" class="h-4 w-4 text-copper" /> {c}</span>
+      ))}
+    </div>
+  </Section>
+
+  <Section tone="ink">
+    <div class="mx-auto max-w-3xl text-center">
+      <SectionHeading tone="light" eyebrow={a.collabEyebrow} title={a.collabTitle} intro={a.collabIntro} />
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <Button href={L('/contact')} variant="primary">{a.collabCta1}</Button>
+        <Button href={`mailto:${site.email}?subject=Collaboration`} variant="light">{a.collabCta2}</Button>
+      </div>
+    </div>
+  </Section>
+</Layout>

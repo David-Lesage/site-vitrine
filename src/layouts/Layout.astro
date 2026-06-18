@@ -3,6 +3,9 @@ import '@/styles/global.css'
 import SEO from '@/components/SEO.astro'
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
+import { getLang } from '@/i18n/utils'
+import { getDict } from '@/i18n/dict'
+import { htmlLang } from '@/i18n/config'
 
 interface Props {
   title?: string
@@ -14,15 +17,16 @@ interface Props {
 }
 
 const { title, description, image, ldJSON, ogType, keywords } = Astro.props
+const lang = getLang(Astro.url)
+const t = getDict(lang)
 
-// Clé publique Snipcart (à renseigner via la variable d'env PUBLIC_SNIPCART_KEY).
 const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang={htmlLang[lang]}>
   <head>
-    <SEO title={title} description={description} image={image} ldJSON={ldJSON} ogType={ogType} keywords={keywords} />
+    <SEO title={title} description={description} image={image} ldJSON={ldJSON} ogType={ogType} keywords={keywords} lang={lang} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,12 +37,12 @@ const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
     {snipcartKey && <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css" />}
   </head>
   <body class="flex min-h-screen flex-col">
-    <a href="#main" class="skip-link">Aller au contenu</a>
-    <Header />
+    <a href="#main" class="skip-link">{t.common.skip}</a>
+    <Header lang={lang} />
     <main id="main" class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
 
     {snipcartKey && (
       <>
