@@ -1,0 +1,15 @@
+{
+  "distPath": "./dist",
+  "baseUrl": "https://www.lesagedavid.fr",
+  "languages": ["fr"],
+  "defaultLanguage": "fr",
+  "rules": {
+    "disabled": ["SEO00223", "SEO01174"],
+    "severityOverrides": {},
+    "thresholdOverrides": {}
+  },
+  "exclusions": [],
+  "failOn": ["error"],
+  "maxIssues": 0,
+  "outputFormat": "console"
+}

@@ -1,0 +1,154 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { chromaKeys } from '@/data/site'
+
+const modes = [
+  { t: 'Logique', d: 'Le cœur de l’app. Joue les 7 accords de n’importe quelle gamme, construis tes enchaînements, suis les accords des morceaux que tu aimes.', img: '/images/app-logique.webp', w: 1100, h: 1327 },
+  { t: 'Atlas Sonore', d: 'Explore les gammes du monde entier — Japon, Orient, Afrique, musiques celtiques… Écoute-les, apprends-les, voyage.', img: '/images/app-atlas.webp', w: 1100, h: 1202 },
+  { t: 'Création', d: 'Compose tes propres gammes sur mesure, note par note et couleur par couleur, puis garde-les dans ta bibliothèque.', img: '/images/app-creation.webp', w: 1100, h: 1109 },
+  { t: 'MIDI Connect', d: 'Le pont entre ton Neotone et l’app : ton jeu réel s’affiche en temps réel sur le handpan virtuel, et l’app valide tes exercices.', img: '/images/app-midi.webp', w: 1100, h: 1041 },
+]
+
+const constellations = [
+  { t: 'Polygone', d: 'La forme fermée d’un accord : toutes ses notes reliées. Tu reconnais l’accord d’un coup d’œil, à sa forme.', img: '/images/constel-polygone-thumb.webp', w: 1047, h: 963 },
+  { t: 'Ouvert', d: 'Un tracé ouvert qui suit le chemin des notes — idéal pour visualiser un déplacement de main.', img: '/images/constel-ouvert-thumb.webp', w: 1045, h: 944 },
+  { t: 'Mains', d: 'Le tracé pensé pour le geste : quelle main, quelle note. Tu lis directement ton jeu.', img: '/images/constel-mains-thumb.webp', w: 1020, h: 954 },
+]
+---
+
+<Layout
+  title="Handpan Studio — la musique devient visible | David Lesage"
+  description="Handpan Studio, l’application imaginée par David Lesage : couleurs (ChromaKeys), Constellations d’accords et émotions transforment ta façon d’apprendre et de jouer le handpan, acoustique comme Neotone."
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <div class="chroma-bar absolute inset-x-0 top-0 h-1.5"></div>
+    <div class="mx-auto max-w-4xl px-4 py-24 text-center lg:py-28">
+      <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">L’application — un projet original de David Lesage</p>
+      <h1 class="mt-5 font-display text-4xl font-700 leading-tight md:text-6xl">Handpan Studio<br /><span class="text-gradient-brand">La musique devient visible</span></h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-cream/80">Une approche visuelle de la musique — par les couleurs, les émotions et la géométrie — pour comprendre, mémoriser et jouer le handpan. Sur handpan acoustique comme sur Neotone.</p>
+      <div class="mt-9"><Button href="#liste-attente" variant="primary">Rejoindre la liste d’attente</Button></div>
+    </div>
+  </section>
+
+  <!-- LE PROBLÈME -->
+  <Section>
+    <SectionHeading eyebrow="Le constat" title="Le handpan n’a pas de notation visuelle" />
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+        <span class="font-display text-3xl font-700 text-copper">01</span>
+        <h3 class="mt-2 font-display text-xl font-700">Aucune notation ne montre l’instrument</h3>
+        <p class="mt-2 text-ink-soft/85">C’est un instrument magnifique — mais comment l’écrire ? On apprend d’oreille, par imitation, et passé les premières mélodies on rejoue les mêmes schémas : l’instrument devient une zone de confort dont on ne sort plus.</p>
+      </div>
+      <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+        <span class="font-display text-3xl font-700 text-copper">02</span>
+        <h3 class="mt-2 font-display text-xl font-700">Sur un handpan électronique, les repères s’effacent</h3>
+        <p class="mt-2 text-ink-soft/85">Le Neotone change de gamme à l’infini — une force, mais un piège : les notes sous tes doigts ne sont jamais les mêmes deux fois. Aucun point fixe — le cerveau sature, comme s’il fallait réapprendre l’instrument à chaque gamme.</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- LA SOLUTION : CHROMAKEYS -->
+  <Section tone="ink">
+    <SectionHeading tone="light" eyebrow="Couleurs & géométrie" title="Et si on rendait l’invisible visible ?" intro="Plutôt que les noms de notes — qui changent en permanence — l’application montre la <strong>structure</strong> de la musique. Les 7 degrés reçoivent chacun une couleur fixe, du rouge au violet, et chaque accord dessine une forme géométrique lumineuse." />
+    <div class="mt-10 grid grid-cols-7 gap-2 md:gap-4">
+      {chromaKeys.map((c) => (
+        <div class="rounded-xl p-3 text-center text-ink" style={`background:${c.color}`}>
+          <p class="font-display text-lg font-700">{c.degree}</p>
+          <p class="text-xs font-600">{c.emotion}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 text-center text-lg font-display font-600 text-gold">Ce qui était invisible devient visible.</p>
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <figure class="overflow-hidden rounded-card border border-cream/10"><img src="/images/invisible-visible.webp" width="1500" height="1213" alt="Le chaos cognitif devient un paysage lisible" class="w-full object-cover" loading="lazy" /></figure>
+      <figure class="overflow-hidden rounded-card border border-cream/10"><img src="/images/constel-polygone.webp" width="1400" height="992" alt="Constellation d’accord sur le handpan" class="w-full object-cover" loading="lazy" /></figure>
+    </div>
+  </Section>
+
+  <!-- CONSTELLATIONS -->
+  <Section>
+    <SectionHeading eyebrow="Le langage des Constellations" title="La nouvelle tablature visuelle du handpan" intro="Au-delà des couleurs ChromaKeys, Handpan Studio relie les notes d’un accord : il dessine une figure lumineuse — une constellation. Trois façons de la tracer." />
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {constellations.map((c) => (
+        <figure class="overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+          <img src={c.img} width={c.w} height={c.h} alt={`Tracé ${c.t}`} class="aspect-square w-full object-cover" loading="lazy" />
+          <figcaption class="p-5"><p class="font-display text-lg font-700">{c.t}</p><p class="mt-1 text-sm text-ink-soft/85">{c.d}</p></figcaption>
+        </figure>
+      ))}
+    </div>
+  </Section>
+
+  <!-- DEGRÉS & ÉMOTIONS -->
+  <Section tone="cream-deep">
+    <SectionHeading eyebrow="Degrés & émotions" title="Chaque degré devient une émotion" intro="Jouer un enchaînement, c’est raconter une histoire : quitter la maison, partir à l’aventure, traverser une tension, puis revenir. On ne mémorise plus des règles abstraites — on ressent, et on voit." />
+    <div class="mx-auto mt-10 flex max-w-3xl flex-wrap justify-center gap-3">
+      {chromaKeys.map((c) => (
+        <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-cream px-4 py-2 font-600">
+          <span class="h-3 w-3 rounded-full" style={`background:${c.color}`}></span>
+          {c.degree} · {c.emotion}
+        </span>
+      ))}
+    </div>
+  </Section>
+
+  <!-- 4 MODES -->
+  <Section>
+    <SectionHeading eyebrow="L’app, en quatre modes" title="Le compagnon idéal de ton instrument" intro="Toute la méthode tient dans une seule application web." />
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {modes.map((m) => (
+        <div class="flex gap-5 rounded-card border border-ink/10 bg-cream-deep/40 p-5">
+          <img src={m.img} width={m.w} height={m.h} alt={m.t} class="h-24 w-24 shrink-0 rounded-xl object-cover" loading="lazy" />
+          <div><h3 class="font-display text-xl font-700">{m.t}</h3><p class="mt-1 text-sm text-ink-soft/85">{m.d}</p></div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- VERSIONS -->
+  <Section tone="ink">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="rounded-card border border-cream/10 bg-cream/5 p-7">
+        <h3 class="font-display text-2xl font-700 text-cream">Version handpan acoustique</h3>
+        <p class="mt-3 text-cream/75">Handpan Studio fonctionne aussi avec ton handpan acoustique. Il te manque des notes pour aller plus loin ? C’est exactement là que le Neotone ouvre le champ infini des gammes.</p>
+        <div class="mt-5"><Button href="/le-neotone" variant="light">Découvrir le Neotone</Button></div>
+      </div>
+      <div class="rounded-card border border-cream/10 bg-cream/5 p-7">
+        <h3 class="font-display text-2xl font-700 text-cream">Version Neotone</h3>
+        <p class="mt-3 text-cream/75">Relie ton Neotone à l’app via MIDI : ton jeu s’affiche en temps réel sur le handpan virtuel, et l’app valide tes exercices d’accords et de gammes. Intégration MIDI temps réel.</p>
+        <div class="mt-5"><Button href="/le-neotone#technologie" variant="ghost" class="!border-cream/30 !text-cream hover:!bg-cream/10">Voir le MIDI du Neotone</Button></div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- HISTOIRE INVENTEUR -->
+  <Section>
+    <div class="mx-auto max-w-3xl">
+      <SectionHeading align="left" eyebrow="L’histoire — par David Lesage" title="L’outil que j’aurais rêvé qu’on m’enseigne, enfant" />
+      <div class="mt-6 space-y-4 text-lg text-ink-soft/90">
+        <p>En découvrant le handpan, j’ai retrouvé le mur de mon enfance : aucune méthode, et la difficulté d’organiser visuellement les chemins de notes. Puis, avec le Neotone, une nouvelle difficulté : les notes changent de place à chaque gamme.</p>
+        <p>Alors j’ai créé l’outil que j’aurais rêvé qu’on me donne : une approche visuelle de l’harmonie, par les couleurs, les formes et les émotions — pour comprendre, mémoriser, et enfin chanter en m’accompagnant au handpan.</p>
+        <p>C’est la suite logique de <strong>Now Groove</strong>, ma méthode de rythme (2021) qui rend le rythme accessible par des émoticônes visuelles. Handpan Studio fait pareil pour l’harmonie : un outil pensé par un musicien, pour hisser le handpan au rang d’instrument d’accompagnement — comme la guitare ou le piano.</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- LISTE D'ATTENTE -->
+  <Section tone="cream-deep" id="liste-attente">
+    <div class="mx-auto max-w-2xl rounded-card border border-ink/10 bg-cream p-8 text-center md:p-12">
+      <Icon name="lucide:bell" class="mx-auto h-9 w-9 text-copper" />
+      <h2 class="mt-4 font-display text-2xl font-700 md:text-3xl">Je veux être informé dès la sortie de l’app</h2>
+      <p class="mt-3 text-ink-soft/85">L’application sera bientôt disponible. Laisse ton e-mail : tu seras prévenu·e en avant-première, sans spam.</p>
+      <form class="mx-auto mt-7 flex max-w-md flex-col gap-3 sm:flex-row" name="liste-attente" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="liste-attente" />
+        <label class="sr-only" for="wl-email">Adresse email</label>
+        <input id="wl-email" type="email" name="email" required placeholder="ton@email.fr" class="flex-1 rounded-full border border-ink/20 bg-cream px-5 py-3 focus:border-copper focus:outline-none" />
+        <button type="submit" class="rounded-full bg-rust px-6 py-3 font-700 text-cream hover:bg-copper">Rejoindre</button>
+      </form>
+    </div>
+  </Section>
+</Layout>

@@ -1,0 +1,93 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { categories, products } from '@/data/shop'
+import { site } from '@/data/site'
+import { itemListLdJson, breadcrumbLdJson } from '@/lib/ldJson'
+
+const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
+const eur = (n: number) => n.toLocaleString('fr-FR') + ' €'
+
+const ld = [
+  itemListLdJson(products.filter((p) => p.active).map((p) => ({ name: p.name, url: p.url, image: p.image }))),
+  breadcrumbLdJson([
+    { name: 'Accueil', url: '/' },
+    { name: 'Boutique', url: '/boutique' },
+  ]),
+]
+---
+
+<Layout
+  title="Boutique — instruments choisis par David Lesage"
+  description="Une sélection d’instruments et d’accessoires d’exception, testés et choisis par David Lesage : handpans numériques Neotone et micros Hisong."
+  ldJSON={ld}
+>
+  <Section tone="ink" class="!py-16">
+    <SectionHeading level={1} tone="light" eyebrow="Boutique" title="Une sélection testée et choisie par moi" intro="Des instruments et accessoires d’exception. Le Neotone, vu son processus d’achat spécifique, se commande en demande de code de remise ; les accessoires sont en achat direct." />
+  </Section>
+
+  {!snipcartKey && (
+    <div class="bg-gold/20 px-4 py-3 text-center text-sm text-ink-soft">
+      ⚙️ Paiement en ligne désactivé : renseigne <code class="font-700">PUBLIC_SNIPCART_KEY</code> dans <code class="font-700">.env</code> pour activer le panier Snipcart.
+    </div>
+  )}
+
+  {categories.map((cat) => {
+    const items = products.filter((p) => p.category === cat.id)
+    return (
+      <Section id={cat.id}>
+        <SectionHeading align="left" eyebrow={cat.label} title={cat.label} intro={cat.blurb} />
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((p) => (
+            <div id={p.id} class="flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+              <div class="aspect-square bg-ink/5 p-6"><img src={p.image} width={p.imgW} height={p.imgH} alt={p.name} class="h-full w-full object-contain" loading="lazy" /></div>
+              <div class="flex flex-1 flex-col p-6">
+                <h3 class="font-display text-xl font-700">{p.name}</h3>
+                <p class="mt-2 flex-1 text-sm text-ink-soft/85">{p.description}</p>
+                <div class="mt-4 flex items-center justify-between">
+                  {p.mode !== 'soon' ? <span class="font-display text-lg font-700">{p.mode === 'quote' ? 'dès ' : ''}{eur(p.price)}</span> : <span class="text-sm font-600 text-ink-soft/60">Bientôt</span>}
+                </div>
+                <div class="mt-4">
+                  {p.mode === 'cart' && snipcartKey && (
+                    <button
+                      class="snipcart-add-item w-full rounded-full bg-rust px-5 py-3 font-700 text-cream transition-colors hover:bg-copper"
+                      data-item-id={p.id}
+                      data-item-name={p.name}
+                      data-item-price={p.price}
+                      data-item-url="/boutique"
+                      data-item-description={p.description}
+                      data-item-image={p.image}
+                    >
+                      Ajouter au panier
+                    </button>
+                  )}
+                  {p.mode === 'cart' && !snipcartKey && (
+                    <a href={`mailto:${site.email}?subject=Commande%20${encodeURIComponent(p.name)}`} class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">Commander par email</a>
+                  )}
+                  {p.mode === 'quote' && (
+                    <a href="/le-neotone#calculateur" class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">Calculer mon prix & commander</a>
+                  )}
+                  {p.mode === 'soon' && (
+                    <span class="block w-full rounded-full border border-ink/15 px-5 py-3 text-center font-600 text-ink-soft/50">Bientôt disponible</span>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+    )
+  })}
+
+  <Section tone="cream-deep">
+    <div class="rounded-card border border-ink/10 bg-cream p-8 text-center">
+      <Icon name="lucide:messages-square" class="mx-auto h-9 w-9 text-copper" />
+      <h2 class="mt-4 font-display text-2xl font-700">Besoin d’un conseil avant d’acheter ?</h2>
+      <p class="mx-auto mt-3 max-w-xl text-ink-soft/85">Je réponds personnellement. Dis-moi ton projet, je t’aide à choisir le bon instrument.</p>
+      <div class="mt-6"><Button href="/contact" variant="primary">Me faire conseiller</Button></div>
+    </div>
+  </Section>
+</Layout>

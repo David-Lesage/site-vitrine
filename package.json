@@ -1,0 +1,30 @@
+{
+  "name": "david-lesage-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "build:seo": "astro build && bun run seo:check",
+    "preview": "astro preview",
+    "check": "astro check",
+    "seo:check": "seo-checker",
+    "seo:check:report": "seo-checker --report seo-report.txt",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.3.1",
+    "astro": "^6.4.8",
+    "astro-icon": "^1.1.5",
+    "tailwindcss": "^4.3.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@capgo/seo-checker": "^0.0.13",
+    "@iconify-json/lucide": "^1.2.0",
+    "typescript": "^5.7.0"
+  }
+}

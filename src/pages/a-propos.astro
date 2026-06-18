@@ -1,0 +1,78 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { site, credentials } from '@/data/site'
+import { personLdJson } from '@/lib/ldJson'
+---
+
+<Layout
+  title="À propos — David Lesage, musicien-inventeur"
+  description="Mon histoire explique ma mission : rendre la musique visible parce que le solfège a failli me la faire abandonner. Batterie à 4 ans, autodidacte, Conservatoire, le déclic handpan et l’invention de mes outils."
+  ldJSON={personLdJson()}
+>
+  <Section tone="ink" class="!py-20">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">À propos</p>
+        <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">Rendre la musique visible, parce que le solfège a failli me la faire abandonner</h1>
+        <p class="mt-5 text-lg text-cream/80">Je suis David Lesage : musicien, pédagogue et inventeur. Je crée les outils que j’aurais rêvé qu’on me donne — pour que personne n’abandonne la musique faute de la voir.</p>
+      </div>
+      <div class="aspect-[4/3] overflow-hidden rounded-card"><img src="/images/hero-david.jpg" width="2400" height="1350" alt="David Lesage" class="h-full w-full object-cover object-top" loading="eager" /></div>
+    </div>
+  </Section>
+
+  <!-- HISTOIRE -->
+  <Section>
+    <div class="mx-auto max-w-3xl">
+      <SectionHeading align="left" eyebrow="Mon histoire" title="De la batterie au handpan, par un long détour" />
+      <div class="mt-6 space-y-4 text-lg text-ink-soft/90">
+        <p>J’ai commencé la musique à 4 ans, à la batterie. Mais dès mon premier cours, on m’a imposé la lecture de partitions — un langage qui n’avait, pour moi, aucun lien avec mon envie de jouer. J’ai tout arrêté pour apprendre en autodidacte, à l’oreille.</p>
+        <p>Plus tard, au Conservatoire national, le solfège m’a de nouveau mis en difficulté. J’en suis sorti avec un prix de batterie mention très bien… mais découragé par une pédagogie de l’harmonie qui ne me parlait pas.</p>
+        <p>En découvrant le handpan, j’ai retrouvé le même mur : aucune méthode, et la difficulté d’organiser visuellement les chemins de notes. J’ai eu jusqu’à trois handpans pour couvrir les notes du piano — avant de rencontrer le Neotone. Et là, une nouvelle difficulté : les notes changent de place à chaque gamme.</p>
+        <p>Alors j’ai créé l’outil que j’aurais rêvé qu’on me donne enfant : une approche visuelle de l’harmonie, par les couleurs, les formes et les émotions — pour comprendre, mémoriser, et enfin chanter en m’accompagnant au handpan.</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- VISION -->
+  <Section tone="cream-deep">
+    <SectionHeading eyebrow="Ma vision pédagogique" title="Le handpan, un instrument d’accompagnement à part entière" intro="Avec cette approche, le handpan prend enfin sa place aux côtés de la guitare et du piano. Grâce aux « 4 Magiques » (I-IV-V-VI), n’importe qui peut accompagner les morceaux qu’il aime en quelques minutes, tout en abordant la théorie comme un jeu." />
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {[
+        { i: 'lucide:eye', t: 'Visible', d: 'La couleur, la géométrie et l’émotion remplacent le jargon. On voit la musique avant de la nommer.' },
+        { i: 'lucide:heart-handshake', t: 'Accessible', d: 'Tutoiement, simplicité, chaleur. De l’enfant curieux au musicien confirmé — je réponds personnellement.' },
+        { i: 'lucide:award', t: 'Exigeante', d: 'Conservatoire, qualité studio, ambassadeur certifié : la preuve technique rassure, jamais elle n’intimide.' },
+      ].map((c) => (
+        <div class="rounded-card border border-ink/10 bg-cream p-6">
+          <Icon name={c.i} class="h-7 w-7 text-copper" />
+          <h3 class="mt-3 font-display text-xl font-700">{c.t}</h3>
+          <p class="mt-2 text-ink-soft/85">{c.d}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- PREUVES -->
+  <Section>
+    <SectionHeading eyebrow="Mes preuves" title="Crédibilité & parcours" />
+    <div class="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-3">
+      {credentials.map((c) => (
+        <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-cream-deep/50 px-4 py-2 font-600"><Icon name="lucide:badge-check" class="h-4 w-4 text-copper" /> {c}</span>
+      ))}
+    </div>
+  </Section>
+
+  <!-- COLLABORATIONS -->
+  <Section tone="ink">
+    <div class="mx-auto max-w-3xl text-center">
+      <SectionHeading tone="light" eyebrow="Collaborations & presse" title="Tu as un projet ? Parlons-en." intro="Pédagogie musicale, handpan, mes outils — ou tout autre projet, même hors Neotone. Marques, organisateurs, médias, collaborateurs : la porte est ouverte." />
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <Button href="/contact" variant="primary">Travaillons ensemble</Button>
+        <Button href={`mailto:${site.email}?subject=Collaboration`} variant="light">Me contacter</Button>
+      </div>
+    </div>
+  </Section>
+</Layout>

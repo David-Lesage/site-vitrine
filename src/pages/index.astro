@@ -1,0 +1,187 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { site, credentials } from '@/data/site'
+import { personLdJson } from '@/lib/ldJson'
+
+const univers = [
+  {
+    title: 'Le matériel',
+    sub: 'Neotone & micros',
+    text: 'Le meilleur handpan numérique du monde, accompagné personnellement — de l’essai au déballage.',
+    href: '/le-neotone',
+    cta: 'Découvrir le Neotone',
+    img: '/images/neotone-1-edition.webp',
+    w: 670, h: 653,
+    icon: 'lucide:disc-3',
+  },
+  {
+    title: 'Les cours',
+    sub: 'Visio & présentiel',
+    text: 'Apprends le handpan autrement : par les couleurs, les formes et les émotions. Partout dans le monde, ou à Paris.',
+    href: '/cours',
+    cta: 'Voir les cours',
+    img: '/images/constel-mains.webp',
+    w: 1400, h: 1008,
+    icon: 'lucide:graduation-cap',
+  },
+  {
+    title: 'Handpan Studio',
+    sub: 'L’application',
+    text: 'L’app qui rend la musique visible — couleurs, géométrie et émotions transforment ta façon d’apprendre et de jouer.',
+    href: '/handpan-studio',
+    cta: 'Découvrir l’app',
+    img: '/images/app-logique.webp',
+    w: 1100, h: 1327,
+    icon: 'lucide:sparkles',
+  },
+]
+---
+
+<Layout
+  title="David Lesage — Rendre la musique visible et accessible"
+  description="Musicien, pédagogue et inventeur. Je rends la musique visible et accessible par les couleurs, la géométrie et les émotions. Découvre le Neotone, ma méthode, et viens le tester à Paris."
+  ldJSON={personLdJson()}
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <div class="absolute inset-0">
+      <img src="/images/hero-david.webp" width="2400" height="1351" alt="" class="h-full w-full object-cover opacity-40" loading="eager" fetchpriority="high" />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/40"></div>
+    </div>
+    <div class="relative mx-auto max-w-5xl px-4 py-24 text-center lg:py-32">
+      <p class="inline-flex items-center gap-2 rounded-full border border-cream/20 bg-cream/5 px-4 py-1.5 text-xs font-600 uppercase tracking-[0.2em] text-gold">
+        Musicien · Pédagogue · Inventeur
+      </p>
+      <h1 class="mt-6 font-display text-4xl font-700 leading-[1.05] md:text-6xl">
+        Je rends la musique <span class="text-gradient-brand">visible</span> et accessible à tous
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-cream/80 md:text-xl">
+        Par les couleurs, la géométrie et les émotions. De l’enfant curieux au musicien confirmé — je t’accompagne personnellement.
+      </p>
+      <div class="mt-9 flex flex-wrap justify-center gap-3">
+        <Button href="/showroom" variant="primary">Venir l'essayer à Paris</Button>
+        <Button href="/handpan-studio" variant="light">Découvrir ma méthode</Button>
+      </div>
+      <div class="chroma-bar mx-auto mt-12 h-1.5 w-48 rounded-full"></div>
+    </div>
+  </section>
+
+  <!-- BANDEAU CRÉDIBILITÉ -->
+  <div class="border-b border-ink/10 bg-cream-deep">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-4 py-5 text-sm font-600 text-ink-soft lg:px-8">
+      {credentials.map((c) => (
+        <span class="inline-flex items-center gap-2">
+          <Icon name="lucide:badge-check" class="h-4 w-4 text-copper" />
+          {c}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- 3 UNIVERS -->
+  <Section>
+    <SectionHeading
+      eyebrow="Trois univers, une seule vision"
+      title="Le matériel, les cours et l’application"
+      intro="Tout part d’une même idée : rendre la musique compréhensible, mémorisable et jouable par tous."
+    />
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {univers.map((u) => (
+        <a href={u.href} class="group flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40 transition-all hover:-translate-y-1 hover:shadow-xl">
+          <div class="aspect-[4/3] overflow-hidden bg-ink/5">
+            <img src={u.img} width={u.w} height={u.h} alt={u.title} class="h-full w-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <div class="flex items-center gap-2 text-copper">
+              <Icon name={u.icon} class="h-5 w-5" />
+              <span class="text-xs font-700 uppercase tracking-widest">{u.sub}</span>
+            </div>
+            <h3 class="mt-2 font-display text-2xl font-700">{u.title}</h3>
+            <p class="mt-2 flex-1 text-ink-soft/85">{u.text}</p>
+            <span class="mt-4 inline-flex items-center gap-1 font-700 text-rust group-hover:gap-2 transition-all">{u.cta} →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <!-- POURQUOI MOI -->
+  <Section tone="cream-deep">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div class="aspect-[4/3] overflow-hidden rounded-card">
+        <img src="/images/hero-david.jpg" width="2400" height="1350" alt="David Lesage, musicien et inventeur" class="h-full w-full object-cover object-top" loading="lazy" />
+      </div>
+      <div>
+        <SectionHeading align="left" eyebrow="Pourquoi moi" title="L’outil que j’aurais rêvé qu’on m’enseigne, enfant" />
+        <div class="mt-5 space-y-4 text-lg text-ink-soft/90">
+          <p>J’ai commencé la batterie à 4 ans. Dès le premier cours, on m’a imposé le solfège — un langage déconnecté de mon envie de jouer. J’ai tout arrêté pour apprendre à l’oreille, en autodidacte.</p>
+          <p>Au Conservatoire, j’en suis ressorti avec un prix de batterie mention très bien… mais découragé par une pédagogie de l’harmonie qui ne me parlait pas. Alors j’ai créé l’outil qui m’a manqué : une approche visuelle de la musique.</p>
+        </div>
+        <div class="mt-7">
+          <Button href="/a-propos" variant="ghost">Lire mon histoire</Button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- SHOWROOM -->
+  <Section tone="ink">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <p class="inline-flex items-center gap-2 rounded-full bg-rust/20 px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-gold">★ Première mondiale</p>
+        <h2 class="mt-5 font-display text-3xl font-700 leading-tight md:text-4xl">Le seul endroit au monde pour tester et repartir avec ton Neotone</h2>
+        <p class="mt-5 text-lg text-cream/80">À Paris 20ᵉ, viens essayer les instruments, rencontrer la communauté, et repars le jour même avec ton handpan — sans aucun délai de fabrication, au meilleur prix du marché (−7 %).</p>
+        <ul class="mt-6 space-y-3 text-cream/90">
+          <li class="flex gap-3"><Icon name="lucide:check" class="mt-1 h-5 w-5 shrink-0 text-gold" /> 7 % de remise — le meilleur prix (contre 5 % en ligne)</li>
+          <li class="flex gap-3"><Icon name="lucide:check" class="mt-1 h-5 w-5 shrink-0 text-gold" /> Aucun délai de fabrication ni d’attente</li>
+          <li class="flex gap-3"><Icon name="lucide:check" class="mt-1 h-5 w-5 shrink-0 text-gold" /> Stock ultra limité — quelques instruments disponibles</li>
+        </ul>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <Button href="/showroom" variant="primary">Réserver ma venue au showroom</Button>
+          <Button href="/showroom#agenda" variant="light">Voir le prochain showcase</Button>
+        </div>
+      </div>
+      <div class="aspect-video overflow-hidden rounded-card">
+        <video class="h-full w-full object-cover" autoplay muted loop playsinline poster="/images/localisation-showroom-poster.webp">
+          <source src="/images/localisation-showroom.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </Section>
+
+  <!-- COMMUNAUTÉ / NEWSLETTER -->
+  <Section>
+    <div class="rounded-card border border-ink/10 bg-cream-deep/50 p-8 text-center md:p-14">
+      <SectionHeading
+        eyebrow="La communauté"
+        title="Rejoins le mouvement de la musique visible"
+        intro="Sois prévenu·e des prochains showcases à Paris et de la sortie de Handpan Studio. Pas de spam — juste l’essentiel."
+      />
+      <form class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row" name="newsletter" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <label class="sr-only" for="nl-email">Adresse email</label>
+        <input id="nl-email" type="email" name="email" required placeholder="ton@email.fr" class="flex-1 rounded-full border border-ink/20 bg-cream px-5 py-3 text-ink placeholder:text-ink/40 focus:border-copper focus:outline-none" />
+        <button type="submit" class="rounded-full bg-rust px-6 py-3 font-700 text-cream transition-colors hover:bg-copper">Rejoindre</button>
+      </form>
+    </div>
+  </Section>
+
+  <!-- PREUVE SOCIALE / VIDÉOS -->
+  <Section tone="cream-deep">
+    <SectionHeading eyebrow="Le son d’abord" title="Voir et entendre l’instrument vivre" intro="Des vidéos de jeu sur scène, en studio et en exploration sonore." />
+    <div class="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
+      {['sa-play', 'sa-couleur', 'sa-creation'].map((v) => (
+        <video class="aspect-[3/4] w-full rounded-card object-cover shadow-md" muted loop playsinline autoplay poster={`/images/${v}-poster.webp`}>
+          <source src={`/images/${v}.mp4`} type="video/mp4" />
+        </video>
+      ))}
+    </div>
+    <div class="mt-8 text-center">
+      <Button href={site.social.youtube} variant="ghost" external>Voir mes démos sur YouTube</Button>
+    </div>
+  </Section>
+</Layout>

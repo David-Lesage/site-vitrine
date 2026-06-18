@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   Charte David Lesage
+   Palette artisanale & premium (bois / handpan) + ChromaKeys
+   ============================================================ */
+@theme {
+  /* Couleurs de marque */
+  --color-cream: #f4ebd9;
+  --color-cream-deep: #ece0c7;
+  --color-ink: #1f1611;
+  --color-ink-soft: #3a2c22;
+  --color-copper: #b8722f;
+  --color-copper-light: #cf8c45;
+  --color-gold: #c8a866;
+  --color-rust: #8a3a1f;
+
+  /* ChromaKeys — les 7 degrés, du rouge au violet (identité Handpan Studio) */
+  --color-chroma-1: #e2403a; /* I  — Équilibre  (rouge)   */
+  --color-chroma-2: #e87a2c; /* II — Élan       (orange)  */
+  --color-chroma-3: #e8c33a; /* III— Aventure   (jaune)   */
+  --color-chroma-4: #4caf6d; /* IV — Détente    (vert)    */
+  --color-chroma-5: #3aa0d8; /* V  — Tension    (bleu)    */
+  --color-chroma-6: #4156b8; /* VI — Nostalgie  (indigo)  */
+  --color-chroma-7: #8e4fc4; /* VII— Mystère    (violet)  */
+
+  /* Typographies */
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  /* Rayons */
+  --radius-card: 1.25rem;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+::selection {
+  background-color: var(--color-copper);
+  color: var(--color-cream);
+}
+
+/* Lien d'évitement (accessibilité) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 0.5rem 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Dégradé de marque réutilisable */
+.text-gradient-brand {
+  background: linear-gradient(120deg, var(--color-rust), var(--color-copper) 55%, var(--color-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Bande ChromaKeys décorative */
+.chroma-bar {
+  background: linear-gradient(
+    90deg,
+    var(--color-chroma-1),
+    var(--color-chroma-2),
+    var(--color-chroma-3),
+    var(--color-chroma-4),
+    var(--color-chroma-5),
+    var(--color-chroma-6),
+    var(--color-chroma-7)
+  );
+}
+
+/* Animation prix calculateur */
+@keyframes pricePop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+.price-update {
+  animation: pricePop 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .price-update { animation: none; }
+}

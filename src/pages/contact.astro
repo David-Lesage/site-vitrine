@@ -1,0 +1,67 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import { Icon } from 'astro-icon/components'
+import { site } from '@/data/site'
+
+const coords = [
+  { icon: 'lucide:mail', t: 'Email — réponse rapide', v: site.email, href: `mailto:${site.email}` },
+  { icon: 'lucide:phone', t: 'Téléphone', v: site.phone, href: `tel:${site.phoneHref}` },
+  { icon: 'lucide:map-pin', t: 'Showroom · sur rendez-vous', v: site.address, href: site.mapsUrl },
+]
+---
+
+<Layout
+  title="Contact — David Lesage, musicien & pédagogue"
+  description="Je réponds personnellement à chaque message — un musicien, pas un service client. Pour ton achat, tes cours, l’app ou une collaboration : écris-moi."
+>
+  <Section tone="ink" class="!py-16">
+    <SectionHeading level={1} tone="light" eyebrow="Contact" title="Une question ? Parlons-en." intro="Je réponds personnellement à chaque message — je ne suis pas un service client, mais un musicien qui joue le Neotone au quotidien. Pour choisir ton modèle, ton bois, ou organiser ta venue : écris-moi." />
+  </Section>
+
+  <Section>
+    <div class="grid gap-10 lg:grid-cols-2">
+      <!-- Coordonnées -->
+      <div>
+        <div class="space-y-4">
+          {coords.map((c) => (
+            <a href={c.href} class="flex items-center gap-4 rounded-card border border-ink/10 bg-cream-deep/40 p-5 transition-colors hover:bg-cream-deep">
+              <Icon name={c.icon} class="h-7 w-7 text-copper" />
+              <div><p class="text-sm font-700 uppercase tracking-wide text-ink-soft/60">{c.t}</p><p class="font-display text-lg font-700">{c.v}</p></div>
+            </a>
+          ))}
+        </div>
+        <div class="mt-6 flex gap-3">
+          <a href={site.social.instagram} class="rounded-full border border-ink/15 px-4 py-2 text-sm font-600 hover:bg-ink/5" target="_blank" rel="noopener">Instagram</a>
+          <a href={site.social.facebook} class="rounded-full border border-ink/15 px-4 py-2 text-sm font-600 hover:bg-ink/5" target="_blank" rel="noopener">Facebook</a>
+          <a href={site.social.youtube} class="rounded-full border border-ink/15 px-4 py-2 text-sm font-600 hover:bg-ink/5" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <form class="rounded-card border border-ink/10 bg-cream-deep/40 p-6 md:p-8" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="grid gap-4">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="block"><span class="text-sm font-600">Nom & prénom</span><input type="text" name="name" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream px-4 py-3 focus:border-copper focus:outline-none" /></label>
+            <label class="block"><span class="text-sm font-600">Email</span><input type="email" name="email" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream px-4 py-3 focus:border-copper focus:outline-none" /></label>
+          </div>
+          <label class="block"><span class="text-sm font-600">Sujet</span>
+            <select name="subject" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream px-4 py-3 focus:border-copper focus:outline-none">
+              <option>Achat d’un Neotone</option>
+              <option>Cours</option>
+              <option>Handpan Studio</option>
+              <option>Collaboration</option>
+              <option>Presse</option>
+              <option>Autre</option>
+            </select>
+          </label>
+          <label class="block"><span class="text-sm font-600">Message</span><textarea name="message" rows="5" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream px-4 py-3 focus:border-copper focus:outline-none"></textarea></label>
+          <button type="submit" class="rounded-full bg-rust px-6 py-3 font-700 text-cream transition-colors hover:bg-copper">M’écrire</button>
+          <p class="text-xs text-ink-soft/60">Formulaire compatible Netlify Forms. Sinon, écris-moi directement à {site.email}.</p>
+        </div>
+      </form>
+    </div>
+  </Section>
+</Layout>

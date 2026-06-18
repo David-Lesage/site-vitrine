@@ -1,0 +1,113 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { site } from '@/data/site'
+import { localBusinessLdJson, breadcrumbLdJson } from '@/lib/ldJson'
+
+const ld = [
+  localBusinessLdJson(),
+  breadcrumbLdJson([
+    { name: 'Accueil', url: '/' },
+    { name: 'Showroom', url: '/showroom' },
+  ]),
+]
+
+const acces = [
+  { icon: '🚌', t: 'Bus', d: 'Lignes 26 et 64 — arrêt Orteaux, à 3 min à pied (≈ 250 m). Ligne 76 — arrêt Bagnolet-Orteaux.' },
+  { icon: '🚇', t: 'Métro', d: 'Ligne 9 — Maraîchers (5-7 min) ou Buzenval (10 min). Ligne 2 — Alexandre Dumas (10 min).' },
+  { icon: '🚊', t: 'Tramway', d: 'Ligne T3b — station Marie de Miribel (12 min à pied).' },
+]
+const evenements = [
+  { icon: 'lucide:presentation', t: 'Showcase de présentation', d: 'Événements de présentation des Neotone par David Lesage, avec test des instruments sur place.', price: 'Public · Gratuit' },
+  { icon: 'lucide:hand', t: 'Démonstration privée', d: 'Une session privée sur demande pour découvrir l’instrument en profondeur.', price: '1h30 · 50 €' },
+  { icon: 'lucide:graduation-cap', t: 'Cours présentiel', d: 'Avec David Lesage : créer tes gammes, maîtriser l’interface, jouer morceaux et techniques.', price: '1h · 50 € · 1h30 · 70 €' },
+]
+---
+
+<Layout
+  title="Showroom & Événements — Paris 20ᵉ | David Lesage"
+  description="Le seul endroit au monde pour tester et repartir avec ton Neotone le jour même. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : showcases gratuits, démonstrations privées et cours."
+  ldJSON={ld}
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <video class="absolute inset-0 h-full w-full object-cover opacity-35" autoplay muted loop playsinline poster="/images/localisation-showroom-poster.webp">
+      <source src="/images/localisation-showroom.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/50"></div>
+    <div class="relative mx-auto max-w-4xl px-4 py-24 text-center">
+      <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">Le lieu · Paris 20ᵉ</p>
+      <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-6xl">Showroom David Lesage</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-cream/80">Le seul endroit au monde où tu peux toucher, tester et repartir avec un Neotone — et rencontrer une communauté.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <Button href={`mailto:${site.emailNeotone}?subject=R%C3%A9server%20ma%20venue%20au%20showroom`} variant="primary">Réserver ma venue</Button>
+        <Button href="#agenda" variant="light">Voir le prochain showcase</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXCLUSIVITÉ -->
+  <Section tone="cream-deep">
+    <div class="rounded-card border border-copper/30 bg-cream p-8 md:p-12">
+      <p class="inline-flex items-center gap-2 rounded-full bg-rust/15 px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-rust">★ Première mondiale</p>
+      <h2 class="mt-5 font-display text-3xl font-700 md:text-4xl">Repars avec ton Neotone¹, le jour même</h2>
+      <p class="mt-4 max-w-2xl text-lg text-ink-soft/90">Pour la première fois au monde, tu peux acheter ton Neotone directement au showroom de Paris et l’emporter immédiatement — sans aucun délai de fabrication.</p>
+      <ul class="mt-6 grid gap-3 md:grid-cols-3">
+        {['7 % de remise — le meilleur prix du marché (contre 5 % en ligne)', 'Aucun délai de fabrication ni d’attente', 'Stock ultra limité — quelques instruments disponibles'].map((a) => (
+          <li class="flex gap-3 rounded-xl bg-cream-deep/60 p-4 text-sm font-600"><Icon name="lucide:check" class="mt-0.5 h-5 w-5 shrink-0 text-copper" /> {a}</li>
+        ))}
+      </ul>
+    </div>
+  </Section>
+
+  <!-- CE QU'ON Y VIT / ÉVÉNEMENTS -->
+  <Section>
+    <SectionHeading eyebrow="Ce qu’on y vit" title="Tester, rencontrer, repartir avec" />
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {evenements.map((e) => (
+        <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+          <Icon name={e.icon} class="h-7 w-7 text-copper" />
+          <h3 class="mt-3 font-display text-xl font-700">{e.t}</h3>
+          <p class="mt-2 flex-1 text-ink-soft/85">{e.d}</p>
+          <p class="mt-4 font-700 text-rust">{e.price}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 text-center text-sm text-ink-soft/70">Prise de rendez-vous sur réservation par email : <a href={`mailto:${site.emailNeotone}`} class="font-700 text-rust underline">{site.emailNeotone}</a></p>
+  </Section>
+
+  <!-- AGENDA -->
+  <Section tone="cream-deep" id="agenda">
+    <SectionHeading eyebrow="Agenda" title="Calendrier des showcases publics gratuits" intro="Les prochaines dates arrivent. Inscris-toi à la communauté pour être prévenu·e en priorité." />
+    <div class="mx-auto mt-8 max-w-xl rounded-card border border-dashed border-ink/20 bg-cream p-10 text-center">
+      <Icon name="lucide:calendar-clock" class="mx-auto h-10 w-10 text-copper" />
+      <p class="mt-4 text-lg font-600 text-ink-soft">Prochaines dates en préparation</p>
+      <div class="mt-6"><Button href="/handpan-studio#liste-attente" variant="primary">Être prévenu·e des prochains showcases</Button></div>
+    </div>
+  </Section>
+
+  <!-- ACCÈS -->
+  <Section id="acces">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <SectionHeading align="left" eyebrow="Comment venir" title="Accès au showroom" />
+        <p class="mt-4 text-lg font-600">{site.address}</p>
+        <div class="mt-4"><Button href={site.mapsUrl} variant="ghost" external>Voir sur Google Maps →</Button></div>
+        <div class="mt-8 space-y-4">
+          {acces.map((a) => (
+            <div class="flex gap-4 rounded-card border border-ink/10 bg-cream-deep/40 p-4">
+              <span class="text-2xl" aria-hidden="true">{a.icon}</span>
+              <div><p class="font-700">{a.t}</p><p class="text-sm text-ink-soft/85">{a.d}</p></div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-card">
+        <img src="/images/localisation-showroom-poster.webp" width="720" height="720" alt="Le showroom, Paris 20ᵉ" class="h-full w-full object-cover" loading="lazy" />
+      </div>
+    </div>
+  </Section>
+</Layout>

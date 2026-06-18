@@ -1,0 +1,69 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { site } from '@/data/site'
+
+const formules = [
+  { title: 'Cours particulier · 1h', price: '50 €', text: 'Visio ou présentiel à Paris. Créer tes gammes sur mesure, maîtriser l’interface Neotone, jouer morceaux et techniques.', icon: 'lucide:user' },
+  { title: 'Cours particulier · 1h30', price: '70 €', text: 'Le format idéal pour aller plus loin : harmonie, accompagnement, conseils de scène et de studio.', icon: 'lucide:user' },
+  { title: 'Workshop de groupe', price: 'Sur demande', text: 'Sessions collectives en petit comité, dans une ambiance conviviale. Format et lieu sur demande.', icon: 'lucide:users' },
+]
+---
+
+<Layout
+  title="Cours de handpan — visio & présentiel à Paris | David Lesage"
+  description="Apprends le handpan autrement : par les couleurs, les formes et les émotions. Cours particuliers en visio partout dans le monde ou en présentiel à Paris, et workshops de groupe."
+>
+  <Section tone="ink" class="!py-16">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">Les cours</p>
+        <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">Apprends le handpan autrement</h1>
+        <p class="mt-5 text-lg text-cream/80">Par les couleurs, les formes et les émotions. En visio partout dans le monde, ou en présentiel à Paris. Une méthode visuelle, pensée par un musicien qui joue au quotidien.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <Button href="#formules" variant="primary">Réserver un cours</Button>
+          <Button href={`mailto:${site.email}?subject=Demande%20de%20workshop`} variant="light">Demander un workshop</Button>
+        </div>
+      </div>
+      <div class="aspect-[4/3] overflow-hidden rounded-card"><img src="/images/constel-mains.webp" width="1400" height="1008" alt="Apprentissage visuel du handpan" class="h-full w-full object-cover" loading="lazy" /></div>
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHeading eyebrow="Ma promesse pédagogique" title="La méthode visuelle, en cours" intro="J’utilise Handpan Studio en cours : couleurs, constellations et émotions rendent l’harmonie claire et mémorisable — quel que soit ton niveau, de l’enfant curieux au musicien confirmé." />
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {[
+        { i: 'lucide:eye', t: 'Comprendre', d: 'Vois la structure de la musique au lieu de la subir : chaque accord devient une forme et une couleur.' },
+        { i: 'lucide:brain', t: 'Mémoriser', d: 'Tu retiens par la forme et l’émotion, pas par cœur. Les repères restent stables d’une gamme à l’autre.' },
+        { i: 'lucide:music', t: 'Jouer & s’accompagner', d: 'Le handpan devient un vrai instrument d’accompagnement — chante sur les morceaux que tu aimes.' },
+      ].map((c) => (
+        <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+          <Icon name={c.i} class="h-7 w-7 text-copper" />
+          <h3 class="mt-3 font-display text-xl font-700">{c.t}</h3>
+          <p class="mt-2 text-ink-soft/85">{c.d}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section tone="cream-deep" id="formules">
+    <SectionHeading eyebrow="Formules & tarifs" title="Choisis ton format" />
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {formules.map((f) => (
+        <div class="flex flex-col rounded-card border border-ink/10 bg-cream p-6">
+          <Icon name={f.icon} class="h-7 w-7 text-copper" />
+          <h3 class="mt-3 font-display text-xl font-700">{f.title}</h3>
+          <p class="mt-2 flex-1 text-ink-soft/85">{f.text}</p>
+          <p class="mt-4 font-display text-2xl font-700 text-rust">{f.price}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-10 text-center">
+      <Button href={`mailto:${site.email}?subject=R%C3%A9servation%20d%27un%20cours`} variant="primary">Réserver un cours</Button>
+      <p class="mt-3 text-sm text-ink-soft/70">Prise de rendez-vous par email. Le présentiel à Paris est un pont naturel vers le showroom et les showcases.</p>
+    </div>
+  </Section>
+</Layout>

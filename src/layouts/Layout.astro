@@ -1,0 +1,50 @@
+---
+import '@/styles/global.css'
+import SEO from '@/components/SEO.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  ldJSON?: unknown | unknown[]
+  ogType?: string
+  keywords?: string
+}
+
+const { title, description, image, ldJSON, ogType, keywords } = Astro.props
+
+// Clé publique Snipcart (à renseigner via la variable d'env PUBLIC_SNIPCART_KEY).
+const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <SEO title={title} description={description} image={image} ldJSON={ldJSON} ogType={ogType} keywords={keywords} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    {snipcartKey && <link rel="preconnect" href="https://app.snipcart.com" />}
+    {snipcartKey && <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css" />}
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <a href="#main" class="skip-link">Aller au contenu</a>
+    <Header />
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+
+    {snipcartKey && (
+      <>
+        <div hidden id="snipcart" data-api-key={snipcartKey} data-config-modal-style="side"></div>
+        <script is:inline src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js" defer></script>
+      </>
+    )}
+  </body>
+</html>

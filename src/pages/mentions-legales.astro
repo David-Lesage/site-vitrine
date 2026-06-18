@@ -1,0 +1,29 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import { site } from '@/data/site'
+---
+
+<Layout title="Mentions légales — David Lesage" description="Mentions légales et conditions du site David Lesage : éditeur, hébergement, propriété intellectuelle, prix et TVA. Showroom 29 rue des Orteaux, Paris 20ᵉ.">
+  <Section width="narrow">
+    <h1 class="font-display text-3xl font-700">Mentions légales du site David Lesage</h1>
+    <div class="mt-8 space-y-6 text-ink-soft/90">
+      <div>
+        <h2 class="font-display text-xl font-700">Éditeur</h2>
+        <p class="mt-2">David Lesage — musicien, pédagogue et inventeur. Showroom : {site.address}.<br />Email : {site.email} · Téléphone : {site.phone}.</p>
+      </div>
+      <div>
+        <h2 class="font-display text-xl font-700">Hébergement</h2>
+        <p class="mt-2">Site statique généré avec Astro. Hébergement à préciser lors de la mise en ligne.</p>
+      </div>
+      <div>
+        <h2 class="font-display text-xl font-700">Propriété intellectuelle</h2>
+        <p class="mt-2">Les contenus, textes, photographies et vidéos de ce site sont la propriété de leurs auteurs respectifs. Les photographies et spécifications produit Neotone proviennent de la documentation officielle Soundventure Ltd. David Lesage est ambassadeur indépendant Neotone.</p>
+      </div>
+      <div>
+        <h2 class="font-display text-xl font-700">Prix & TVA</h2>
+        <p class="mt-2">Tous les prix affichés sont indicatifs et peuvent évoluer sans préavis. Les taux de TVA appliqués par le calculateur sont les taux standards en vigueur en 2026 ; les frais de douane hors UE restent à la charge de l’acheteur.</p>
+      </div>
+    </div>
+  </Section>
+</Layout>
