@@ -1,0 +1,7 @@
+# Déploiement Netlify (alternative à Vercel)
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+[build.environment]
+  # SITE_URL = "https://www.lesagedavid.fr"  # à activer quand le domaine est branché
