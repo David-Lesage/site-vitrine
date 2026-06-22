@@ -18,7 +18,7 @@ export interface Product {
   // libellé du bouton pour les produits 'link'
   linkLabel?: 'buy' | 'listen' | 'discover' | 'order'
   // pastille (plateforme / statut) pour les produits 'link' → dict.shop.linkTags
-  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand'
+  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour'
   // prix indicatif affiché tel quel (produits externes), ex. "299 €"
   priceLabel?: string
 }
@@ -29,9 +29,10 @@ export const products: Product[] = [
   { id: 'neotone-one', price: 1990, image: '/images/neotone-1-edition.webp', imgW: 670, imgH: 653, url: '/le-neotone', category: 'handpans', active: true, mode: 'quote' },
   { id: 'neotone-mutant', price: 3150, image: '/images/neotone-mutant-edition.webp', imgW: 670, imgH: 614, url: '/le-neotone', category: 'handpans', active: true, mode: 'quote' },
   // Instruments d'exception — joués / créés / recommandés par David (Linktree)
-  { id: 'yishama', price: 0, image: '/images/prod-yishama.png', imgW: 766, imgH: 766, url: 'https://www.yishama.com/aff/27', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'yishama' },
-  { id: 'calebasse', price: 0, image: '/images/prod-calebasse.jpeg', imgW: 1000, imgH: 1000, url: 'mailto:contact@lesagedavid.fr?subject=Calebasse%20signature%20David%20Lesage%20%E2%80%94%20commande', category: 'instruments', active: true, mode: 'link', linkLabel: 'order', tagKey: 'nowgroove', priceLabel: '520 €' },
-  { id: 'gonilele', price: 0, image: '/images/prod-gonilele.jpeg', imgW: 1000, imgH: 1000, url: 'https://photos.app.goo.gl/ZyaodbX52XePqCb6A', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'ondemand', priceLabel: '2 700 €' },
+  { id: 'yishama', price: 0, image: '/images/prod-yishama.png', imgW: 766, imgH: 766, url: 'https://www.yishama.com/?wpam_id=40', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'yishama' },
+  { id: 'gonilele', price: 0, image: '/images/prod-gonilele.jpeg', imgW: 1000, imgH: 1000, url: 'mailto:contact@lesagedavid.fr?subject=NGoni%20l%C3%A9l%C3%A9%20%E2%80%94%20harpe%20Gonil%C3%A9l%C3%A9%20(commande)', category: 'instruments', active: true, mode: 'link', linkLabel: 'order', tagKey: 'maisongoni', priceLabel: 'dès 440 €' },
+  { id: 'calebasse', price: 0, image: '/images/prod-calebasse.jpeg', imgW: 1000, imgH: 1000, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/formation-de-rythme-now-groove-david-lesage', category: 'instruments', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'nowgroove', priceLabel: '520 €' },
+  { id: 'tambour', price: 0, image: '/images/prod-tambour.jpg', imgW: 480, imgH: 360, url: 'https://www.facebook.com/profile.php?id=100075977844059', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'tambour' },
   // Micros
   { id: 'micro-hisong', price: 0, image: '/images/prod-micro-hisong.webp', imgW: 1400, imgH: 1400, url: 'https://hisong.io/DAVID-LESAGE-SAVE-5', category: 'micros', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'hisong', priceLabel: '299 €' },
   { id: 'micro-muling', price: 0, image: '/images/favicon.png', imgW: 128, imgH: 128, url: '/boutique', category: 'micros', active: false, mode: 'soon' },
