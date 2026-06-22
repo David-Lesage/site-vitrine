@@ -3,6 +3,8 @@ import Layout from '@/layouts/Layout.astro'
 import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
+import Carousel from '@/components/Carousel.astro'
+import Lightbox from '@/components/Lightbox.astro'
 import { Icon } from 'astro-icon/components'
 import { categoryIds, products } from '@/data/shop'
 import { site } from '@/data/site'
@@ -40,7 +42,7 @@ const ld = [
 
   {categoryIds.map((catId) => {
     const cat = catInfo(catId)
-    const items = products.filter((p) => p.category === catId)
+    const items = products.filter((p) => p.category === catId && (p.active || p.mode === 'soon'))
     return (
       <Section id={catId}>
         <SectionHeading align="left" eyebrow={cat.label} title={cat.label} intro={cat.blurb} />
@@ -49,7 +51,11 @@ const ld = [
             const info = pName(p.id)
             return (
               <div id={p.id} class="flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-                <div class="aspect-square bg-ink/5 p-6"><img src={p.image} width={p.imgW} height={p.imgH} alt={info.name} class="h-full w-full object-contain" loading="lazy" /></div>
+                {p.images && p.images.length > 1 ? (
+                  <div class="p-3"><Carousel id={`shop-${p.id}`} slides={p.images.map((src) => ({ src }))} alt={info.name} /></div>
+                ) : (
+                  <div class="aspect-square bg-ink/5 p-6"><img src={p.image} width={p.imgW} height={p.imgH} alt={info.name} class="h-full w-full object-contain" loading="lazy" /></div>
+                )}
                 <div class="flex flex-1 flex-col p-6">
                   <h3 class="font-display text-xl font-700">{info.name}</h3>
                   <p class="mt-2 flex-1 text-sm text-ink-soft/85">{info.description}</p>
@@ -87,4 +93,6 @@ const ld = [
       <div class="mt-6"><Button href={L('/contact')} variant="primary">{s.adviceCta}</Button></div>
     </div>
   </Section>
+
+  <Lightbox />
 </Layout>
