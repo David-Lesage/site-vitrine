@@ -11,6 +11,9 @@ export const site = {
   positioning:
     'David Lesage — le musicien-inventeur qui rend la musique visible et accessible à tous, par les couleurs, la géométrie et les émotions.',
   url: 'https://www.lesagedavid.fr',
+  // Lien direct vers l'application Handpan Studio. La connexion, le choix de
+  // l'abonnement et le paiement (Stripe) se font directement dans l'app.
+  appUrl: 'https://neotone-studio-delta.vercel.app',
   email: 'contact@lesagedavid.fr',
   emailNeotone: 'neotone@lesagedavid.fr',
   phone: '+33 6 10 73 31 52',
@@ -38,7 +41,7 @@ export const nav = [
 ] as const
 
 export const footerNav = [
-  { key: 'newsletter', href: '/handpan-studio#liste-attente' },
+  { key: 'newsletter', href: '/#communaute' },
   { key: 'faq', href: '/le-neotone#faq' },
   { key: 'legal', href: '/mentions-legales' },
 ] as const
