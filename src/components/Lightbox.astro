@@ -1,0 +1,179 @@
+---
+// Lightbox plein écran partagée + logique des carrousels de la page.
+// À inclure UNE fois par page contenant des <Carousel />.
+---
+
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Fermer">×</button>
+  <button class="lightbox-nav lightbox-prev" type="button" aria-label="Photo précédente">‹</button>
+  <button class="lightbox-nav lightbox-next" type="button" aria-label="Photo suivante">›</button>
+  <div class="lightbox-content"><img class="lightbox-img" src="" alt="" /></div>
+  <div class="lightbox-caption">1 / 1</div>
+</div>
+
+<script>
+  // ============ CARROUSELS ============
+  document.querySelectorAll<HTMLElement>('.carousel').forEach(initCarousel)
+
+  function initCarousel(carousel: HTMLElement) {
+    const track = carousel.querySelector<HTMLElement>('.carousel-track')!
+    const slides = Array.from(carousel.querySelectorAll<HTMLElement>('.carousel-slide'))
+    const dots = Array.from(carousel.querySelectorAll<HTMLElement>('.carousel-dot'))
+    const counter = carousel.querySelector<HTMLElement>('.carousel-counter')
+    const scope = carousel.parentElement || carousel
+    const prevBtn = scope.querySelector<HTMLElement>('.carousel-prev')
+    const nextBtn = scope.querySelector<HTMLElement>('.carousel-next')
+    const total = slides.length
+    let currentIndex = 0
+    let touchStartX = 0
+
+    function goTo(i: number) {
+      currentIndex = (i + total) % total
+      track.style.transform = 'translateX(-' + currentIndex * 100 + '%)'
+      dots.forEach((d, idx) => d.classList.toggle('is-active', idx === currentIndex))
+      if (counter) counter.textContent = currentIndex + 1 + ' / ' + total
+    }
+
+    // Démo auto : au premier passage à l'écran, défile une fois puis s'arrête.
+    const HINT_START_DELAY = 3000
+    const HINT_STEP = 3000
+    let hintTimer: ReturnType<typeof setTimeout> | null = null
+    let hintStarted = false, hintPaused = false, hintDone = false, hintStep = 0
+    let hintObserver: IntersectionObserver | null = null
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    let pauseBtn: HTMLButtonElement | null = null
+    if (!reduceMotion && total > 1) {
+      pauseBtn = document.createElement('button')
+      pauseBtn.className = 'carousel-pause'
+      pauseBtn.type = 'button'
+      pauseBtn.setAttribute('aria-label', 'Mettre en pause le défilement automatique')
+      pauseBtn.innerHTML =
+        '<svg class="cp-ic cp-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>' +
+        '<svg class="cp-ic cp-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>'
+      carousel.appendChild(pauseBtn)
+    }
+    function setPaused(p: boolean) {
+      if (!pauseBtn) return
+      pauseBtn.classList.toggle('is-paused', p)
+      pauseBtn.setAttribute('aria-label', p ? 'Reprendre le défilement automatique' : 'Mettre en pause le défilement automatique')
+    }
+    function clearHintTimer() { if (hintTimer) { clearTimeout(hintTimer); hintTimer = null } }
+    function endHint() {
+      hintDone = true; hintPaused = false
+      clearHintTimer()
+      if (hintObserver) { hintObserver.disconnect(); hintObserver = null }
+      if (pauseBtn) pauseBtn.classList.remove('is-visible')
+    }
+    function scheduleNext(delay: number) {
+      clearHintTimer()
+      hintTimer = setTimeout(() => {
+        if (hintDone || hintPaused) return
+        hintStep++
+        goTo(currentIndex + 1)
+        if (hintStep >= total) { endHint(); return }
+        scheduleNext(HINT_STEP)
+      }, delay)
+    }
+    function startHint() {
+      if (hintStarted || hintDone || total <= 1 || reduceMotion) return
+      hintStarted = true
+      if (pauseBtn) { pauseBtn.classList.add('is-visible'); setPaused(false) }
+      scheduleNext(HINT_START_DELAY)
+    }
+    function togglePause() {
+      if (hintDone || !hintStarted) return
+      if (hintPaused) { hintPaused = false; setPaused(false); scheduleNext(HINT_STEP) }
+      else { hintPaused = true; clearHintTimer(); setPaused(true) }
+    }
+    pauseBtn && pauseBtn.addEventListener('click', (e) => { e.stopPropagation(); togglePause() })
+    prevBtn && prevBtn.addEventListener('click', (e) => { e.stopPropagation(); endHint(); goTo(currentIndex - 1) })
+    nextBtn && nextBtn.addEventListener('click', (e) => { e.stopPropagation(); endHint(); goTo(currentIndex + 1) })
+    dots.forEach((dot, i) => dot.addEventListener('click', (e) => { e.stopPropagation(); endHint(); goTo(i) }))
+    carousel.addEventListener('pointerdown', (e) => { if (!(e.target as HTMLElement).closest('.carousel-pause')) endHint() }, { passive: true })
+    carousel.addEventListener('touchstart', (e) => { if (!(e.target as HTMLElement).closest('.carousel-pause')) endHint(); touchStartX = e.touches[0].clientX }, { passive: true })
+    carousel.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX
+      if (Math.abs(diff) > 40) goTo(diff > 0 ? currentIndex + 1 : currentIndex - 1)
+    })
+    slides.forEach((slide, idx) => slide.addEventListener('click', () => openLightbox(carousel.dataset.carousel || '', idx)))
+    goTo(0)
+    if (!reduceMotion && total > 1) {
+      if ('IntersectionObserver' in window) {
+        hintObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!hintDone && entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+              if (hintObserver) { hintObserver.disconnect(); hintObserver = null }
+              startHint()
+            }
+          })
+        }, { threshold: [0, 0.3, 0.6, 1] })
+        hintObserver.observe(carousel)
+      } else {
+        hintTimer = setTimeout(startHint, 1200)
+      }
+    }
+  }
+
+  // ============ LIGHTBOX ============
+  const lightbox = document.getElementById('lightbox')
+  const lbImg = lightbox?.querySelector<HTMLImageElement>('.lightbox-img') || null
+  const lbCaption = lightbox?.querySelector<HTMLElement>('.lightbox-caption') || null
+  const lbClose = lightbox?.querySelector<HTMLElement>('.lightbox-close') || null
+  const lbPrev = lightbox?.querySelector<HTMLElement>('.lightbox-prev') || null
+  const lbNext = lightbox?.querySelector<HTMLElement>('.lightbox-next') || null
+  let currentSet: HTMLImageElement[] = []
+  let currentIdx = 0
+  let lastFocused: HTMLElement | null = null
+
+  function openLightbox(carouselId: string, idx: number) {
+    if (!lightbox) return
+    const carousel = document.querySelector('.carousel[data-carousel="' + carouselId + '"]')
+    if (!carousel) return
+    lastFocused = document.activeElement as HTMLElement
+    currentSet = Array.from(carousel.querySelectorAll<HTMLImageElement>('.carousel-slide img'))
+    currentIdx = idx
+    showImage()
+    lightbox.classList.add('is-open')
+    lightbox.setAttribute('aria-hidden', 'false')
+    document.body.style.overflow = 'hidden'
+    setTimeout(() => lbClose?.focus(), 50)
+  }
+  function showImage() {
+    const img = currentSet[currentIdx]
+    if (!img || !lbImg) return
+    lbImg.src = img.currentSrc || img.src
+    lbImg.alt = img.alt || ''
+    const single = currentSet.length <= 1
+    if (lbPrev) lbPrev.style.display = single ? 'none' : ''
+    if (lbNext) lbNext.style.display = single ? 'none' : ''
+    if (lbCaption) {
+      lbCaption.style.display = single ? 'none' : ''
+      if (!single) lbCaption.textContent = currentIdx + 1 + ' / ' + currentSet.length
+    }
+  }
+  function closeLightbox() {
+    if (!lightbox) return
+    lightbox.classList.remove('is-open')
+    lightbox.setAttribute('aria-hidden', 'true')
+    document.body.style.overflow = ''
+    if (lbImg) lbImg.src = ''
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus()
+  }
+  function navLightbox(dir: number) {
+    currentIdx = (currentIdx + dir + currentSet.length) % currentSet.length
+    showImage()
+  }
+  if (lightbox) {
+    lbClose?.addEventListener('click', closeLightbox)
+    lbPrev?.addEventListener('click', (e) => { e.stopPropagation(); navLightbox(-1) })
+    lbNext?.addEventListener('click', (e) => { e.stopPropagation(); navLightbox(1) })
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox() })
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('is-open')) return
+      if (e.key === 'Escape') closeLightbox()
+      else if (e.key === 'ArrowLeft') navLightbox(-1)
+      else if (e.key === 'ArrowRight') navLightbox(1)
+    })
+  }
+</script>

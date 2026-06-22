@@ -1,0 +1,73 @@
+---
+// Grille de clips vidéo (poster + lecture inline au survol/visibilité) ;
+// clic → lecture plein écran dans un lightbox vidéo partagé.
+interface Item { src: string; poster: string; t: string; d: string }
+interface Props { items: Item[] }
+const { items } = Astro.props
+---
+
+<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  {items.map((v) => (
+    <figure class="app-clip group overflow-hidden rounded-card border border-cream/10 bg-cream/5">
+      <div class="relative aspect-[4/3] cursor-zoom-in overflow-hidden">
+        <video class="h-full w-full object-cover" muted loop playsinline preload="none" poster={v.poster}>
+          <source src={v.src} type="video/mp4" />
+        </video>
+        <span class="pointer-events-none absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-ink/70 text-cream backdrop-blur-sm transition-transform group-hover:scale-110">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+        </span>
+      </div>
+      <figcaption class="p-4">
+        <p class="font-display font-700 text-cream">{v.t}</p>
+        <p class="mt-1 text-sm text-cream/70">{v.d}</p>
+      </figcaption>
+    </figure>
+  ))}
+</div>
+
+<div id="video-lightbox" class="vlightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="vlightbox-close" type="button" aria-label="Fermer la vidéo">×</button>
+  <video class="vlightbox-video" controls playsinline loop></video>
+</div>
+
+<script>
+  const clips = document.querySelectorAll<HTMLVideoElement>('.app-clip video')
+  const lb = document.getElementById('video-lightbox')
+  if (clips.length && lb) {
+    const lbVideo = lb.querySelector<HTMLVideoElement>('.vlightbox-video')!
+    const closeBtn = lb.querySelector<HTMLElement>('.vlightbox-close')!
+
+    function openVlb(src: string) {
+      lbVideo.src = src
+      lb!.classList.add('is-open')
+      lb!.setAttribute('aria-hidden', 'false')
+      document.body.style.overflow = 'hidden'
+      lbVideo.play?.().catch(() => {})
+    }
+    function closeVlb() {
+      lb!.classList.remove('is-open')
+      lb!.setAttribute('aria-hidden', 'true')
+      document.body.style.overflow = ''
+      lbVideo.pause?.()
+      lbVideo.removeAttribute('src')
+      lbVideo.load?.()
+    }
+    clips.forEach((v) => v.addEventListener('click', () => openVlb(v.currentSrc || v.src)))
+    closeBtn.addEventListener('click', closeVlb)
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeVlb() })
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('is-open')) closeVlb() })
+
+    // Lecture/pause automatique des aperçus selon la visibilité
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((en) => {
+          const v = en.target as HTMLVideoElement
+          if (en.isIntersecting) v.play?.().catch(() => {})
+          else v.pause?.()
+        }),
+        { threshold: 0.35 }
+      )
+      clips.forEach((v) => io.observe(v))
+    }
+  }
+</script>

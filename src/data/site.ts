@@ -46,6 +46,29 @@ export const footerNav = [
   { key: 'legal', href: '/mentions-legales' },
 ] as const
 
+// Prochains showcases publics gratuits (dates neutres, ISO).
+// Le libellé / lieu traduit vient de dict.showroom.agenda*.
+export const agendaEvents = [
+  { date: '2026-06-27', start: '11:00', end: '13:00' },
+  { date: '2026-07-19', start: '16:30', end: '18:30' },
+] as const
+
+// Démos vidéo de l'app Handpan Studio (src + poster). Ordre = dict.studio.videos
+export const studioVideos: { src: string; poster: string }[] = [
+  { src: '/images/sa-1-tonalite.mp4', poster: '/images/sa-1-tonalite-poster.webp' },
+  { src: '/images/sa-ecouter.mp4', poster: '/images/sa-ecouter-poster.webp' },
+  { src: '/images/sa-oeil1.mp4', poster: '/images/sa-oeil1-poster.webp' },
+  { src: '/images/sa-bonus.mp4', poster: '/images/sa-bonus-poster.webp' },
+  { src: '/images/sa-styles.mp4', poster: '/images/sa-styles-poster.webp' },
+  { src: '/images/sa-transposer.mp4', poster: '/images/sa-transposer-poster.webp' },
+  { src: '/images/sa-couleur.mp4', poster: '/images/sa-couleur-poster.webp' },
+  { src: '/images/sa-doigte.mp4', poster: '/images/sa-doigte-poster.webp' },
+  { src: '/images/sa-play.mp4', poster: '/images/sa-play-poster.webp' },
+  { src: '/images/sa-learn.mp4', poster: '/images/sa-learn-poster.webp' },
+  { src: '/images/sa-atlas.mp4', poster: '/images/sa-atlas-poster.webp' },
+  { src: '/images/sa-creation.mp4', poster: '/images/sa-creation-poster.webp' },
+]
+
 // Les 7 degrés ChromaKeys — couleurs neutres (émotions via dict.common.emotions)
 export const chromaKeys = [
   { degree: 'I', color: 'var(--color-chroma-1)' },

@@ -4,10 +4,11 @@ import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
 import { Icon } from 'astro-icon/components'
-import { site } from '@/data/site'
+import { site, agendaEvents } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { localBusinessLdJson, breadcrumbLdJson } from '@/lib/ldJson'
+import { showroomVisitMailto, privateSessionMailto, eventMailto } from '@/lib/booking'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -16,20 +17,33 @@ const t = getDict(lang)
 const sh = t.showroom
 const L = (p: string) => localizePath(p, lang)
 const eventIcons = ['lucide:presentation', 'lucide:hand', 'lucide:graduation-cap']
+const locale = lang === 'en' ? 'en-GB' : 'fr-FR'
+
+// Prochaines dates formatées + lien de réservation pré-rempli par date
+const agenda = agendaEvents.map((e) => {
+  const d = new Date(e.date + 'T12:00:00')
+  const dateLong = new Intl.DateTimeFormat(locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(d)
+  const day = new Intl.DateTimeFormat(locale, { day: 'numeric' }).format(d)
+  const month = new Intl.DateTimeFormat(locale, { month: 'short' }).format(d).replace('.', '')
+  const time = sh.agendaEventTime.replace('{start}', e.start).replace('{end}', e.end)
+  return { dateLong, day, month, time, href: eventMailto(lang, dateLong) }
+})
+const visitHref = showroomVisitMailto(lang)
+const privateHref = privateSessionMailto(lang)
 
 const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: sh.heroTitle, url: L('/showroom') }])]
 ---
 
 <Layout title={sh.title} description={sh.description} ldJSON={ld}>
   <section class="relative overflow-hidden bg-ink text-cream">
-    <video class="absolute inset-0 h-full w-full object-cover opacity-35" autoplay muted loop playsinline poster="/images/localisation-showroom-poster.webp"><source src="/images/localisation-showroom.mp4" type="video/mp4" /></video>
-    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/50"></div>
+    <video class="absolute inset-0 h-full w-full object-cover opacity-65" autoplay muted loop playsinline poster="/images/localisation-showroom-poster.webp"><source src="/images/localisation-showroom.mp4" type="video/mp4" /></video>
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/30"></div>
     <div class="relative mx-auto max-w-4xl px-4 py-24 text-center">
       <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{sh.heroEyebrow}</p>
       <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-6xl">{sh.heroTitle}</h1>
       <p class="mx-auto mt-5 max-w-2xl text-lg text-cream/80">{sh.heroLead}</p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <Button href={`mailto:${site.emailNeotone}?subject=Showroom`} variant="primary">{sh.ctaBook}</Button>
+        <Button href={visitHref} variant="primary">{sh.ctaBook}</Button>
         <Button href="#agenda" variant="light">{sh.ctaNext}</Button>
       </div>
     </div>
@@ -53,15 +67,39 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
         <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6"><Icon name={eventIcons[i]} class="h-7 w-7 text-copper" /><h3 class="mt-3 font-display text-xl font-700">{e.t}</h3><p class="mt-2 flex-1 text-ink-soft/85">{e.d}</p><p class="mt-4 font-700 text-rust">{e.price}</p></div>
       ))}
     </div>
-    <p class="mt-6 text-center text-sm text-ink-soft/70">{sh.booking} <a href={`mailto:${site.emailNeotone}`} class="font-700 text-rust underline">{site.emailNeotone}</a></p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <Button href={visitHref} variant="primary">{sh.bookVisitCta}</Button>
+      <Button href={privateHref} variant="ghost">{sh.bookPrivateCta}</Button>
+    </div>
+    <p class="mt-4 text-center text-sm text-ink-soft/70">{sh.booking} <a href={`mailto:${site.emailNeotone}`} class="font-700 text-rust underline">{site.emailNeotone}</a></p>
   </Section>
 
   <Section tone="cream-deep" id="agenda">
     <SectionHeading eyebrow={sh.agendaEyebrow} title={sh.agendaTitle} intro={sh.agendaIntro} />
-    <div class="mx-auto mt-8 max-w-xl rounded-card border border-dashed border-ink/20 bg-cream p-10 text-center">
-      <Icon name="lucide:calendar-clock" class="mx-auto h-10 w-10 text-copper" />
-      <p class="mt-4 text-lg font-600 text-ink-soft">{sh.agendaEmpty}</p>
-      <div class="mt-6"><Button href={L('/') + '#communaute'} variant="primary">{sh.agendaCta}</Button></div>
+    <div class="mx-auto mt-10 max-w-2xl space-y-4">
+      {agenda.map((e) => (
+        <div class="flex flex-col items-center gap-5 rounded-card border border-copper/30 bg-cream p-5 sm:flex-row sm:items-center sm:text-left">
+          <div class="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-ink text-cream">
+            <span class="font-display text-3xl font-700 leading-none">{e.day}</span>
+            <span class="text-xs font-600 uppercase tracking-widest text-gold">{e.month}</span>
+          </div>
+          <div class="flex-1 text-center sm:text-left">
+            <p class="inline-flex items-center gap-2 rounded-full bg-rust/15 px-3 py-1 text-xs font-700 uppercase tracking-widest text-rust">{sh.agendaEventTag}</p>
+            <h3 class="mt-2 font-display text-xl font-700">{sh.agendaEventTitle}</h3>
+            <p class="mt-1 text-sm text-ink-soft/85 first-letter:uppercase">{e.dateLong} · {e.time}</p>
+            <p class="mt-1 text-sm text-ink-soft/70">{site.address}</p>
+          </div>
+          <a href={e.href} class="block w-full shrink-0 rounded-full bg-rust px-5 py-3 text-center font-700 text-cream transition-colors hover:bg-copper sm:w-auto">{sh.agendaBookCta}</a>
+        </div>
+      ))}
+    </div>
+    <div class="mx-auto mt-8 max-w-2xl rounded-card border border-ink/10 bg-cream-deep/50 p-6 text-center">
+      <h3 class="font-display text-lg font-700">{sh.agendaMoreTitle}</h3>
+      <p class="mx-auto mt-2 max-w-md text-sm text-ink-soft/85">{sh.agendaMoreText}</p>
+      <div class="mt-5 flex flex-wrap justify-center gap-3">
+        <Button href={privateHref} variant="primary">{sh.bookPrivateCta}</Button>
+        <Button href={L('/') + '#communaute'} variant="ghost">{sh.agendaCta}</Button>
+      </div>
     </div>
   </Section>
 

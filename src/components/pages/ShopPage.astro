@@ -52,7 +52,9 @@ const ld = [
                   <h3 class="font-display text-xl font-700">{info.name}</h3>
                   <p class="mt-2 flex-1 text-sm text-ink-soft/85">{info.description}</p>
                   <div class="mt-4 flex items-center justify-between">
-                    {p.mode !== 'soon' ? <span class="font-display text-lg font-700">{p.mode === 'quote' ? s.from : ''}{eur(p.price)}</span> : <span class="text-sm font-600 text-ink-soft/60">{s.soon}</span>}
+                    {p.mode === 'soon' && <span class="text-sm font-600 text-ink-soft/60">{s.soon}</span>}
+                    {(p.mode === 'cart' || p.mode === 'quote') && <span class="font-display text-lg font-700">{p.mode === 'quote' ? s.from : ''}{eur(p.price)}</span>}
+                    {p.mode === 'link' && <span class="inline-flex items-center gap-1.5 rounded-full bg-copper/15 px-3 py-1 text-xs font-700 text-copper">{p.linkLabel === 'listen' ? s.linkStreaming : s.linkExternal}</span>}
                   </div>
                   <div class="mt-4">
                     {p.mode === 'cart' && snipcartKey && (
@@ -62,6 +64,7 @@ const ld = [
                       <a href={`mailto:${site.email}?subject=${encodeURIComponent(info.name)}`} class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{s.orderEmail}</a>
                     )}
                     {p.mode === 'quote' && <a href={L('/le-neotone') + '#calculateur'} class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{s.calcOrder}</a>}
+                    {p.mode === 'link' && <a href={p.url} target="_blank" rel="noopener" class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{p.linkLabel === 'listen' ? s.listenCta : s.buyCta}</a>}
                     {p.mode === 'soon' && <span class="block w-full rounded-full border border-ink/15 px-5 py-3 text-center font-600 text-ink-soft/50">{s.soonLong}</span>}
                   </div>
                 </div>

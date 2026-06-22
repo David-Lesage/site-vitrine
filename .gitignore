@@ -7,3 +7,7 @@ dist/
 
 # npm artifact (ce projet utilise bun)
 package-lock.json
+.vercel
+
+# Config locale Claude (preview)
+.claude/

@@ -1,0 +1,93 @@
+---
+// Modal plein écran détaillant une essence de bois (vue dessus / dessous).
+// Données injectées côté client. Inclure une fois sur la page des essences.
+import { woods, woodNames, woodDetails } from '@/data/neotone'
+import { getDict } from '@/i18n/dict'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const n = t.neotone
+const d = t.data
+
+const woodData = Object.fromEntries(
+  woods.map((w) => [
+    w.key,
+    {
+      name: woodNames[w.key][lang],
+      en: d.woodEnNames[w.key],
+      supp: d.woodSupplements[w.key],
+      desc: d.woodDescriptions[w.key],
+      imgTop: woodDetails[w.key].imgTop,
+      imgBottom: woodDetails[w.key].imgBottom,
+    },
+  ])
+)
+const labels = { eyebrow: n.woodModalEyebrow, top: n.woodModalViewTop, bottom: n.woodModalViewBottom }
+---
+
+<div id="wood-modal" class="wood-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="wood-modal-title">
+  <div class="wood-modal-content">
+    <button class="wood-modal-close" type="button" aria-label="Fermer">×</button>
+    <div class="wood-modal-eyebrow">{labels.eyebrow}</div>
+    <h3 class="wood-modal-title" id="wood-modal-title">…</h3>
+    <div class="wood-modal-en" id="wood-modal-en">…</div>
+    <span class="wood-modal-supp" id="wood-modal-supp">…</span>
+    <p class="wood-modal-desc" id="wood-modal-desc">…</p>
+    <div class="wood-modal-images">
+      <figure><img id="wood-modal-img-top" src="" alt="" loading="lazy" /><figcaption>{labels.top}</figcaption></figure>
+      <figure><img id="wood-modal-img-bottom" src="" alt="" loading="lazy" /><figcaption>{labels.bottom}</figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="wood-data" set:html={JSON.stringify(woodData)}></script>
+
+<script>
+  const dataEl = document.getElementById('wood-data')
+  const modal = document.getElementById('wood-modal')
+  if (dataEl && modal) {
+    const woods = JSON.parse(dataEl.textContent || '{}')
+    const elTitle = document.getElementById('wood-modal-title')!
+    const elEn = document.getElementById('wood-modal-en')!
+    const elSupp = document.getElementById('wood-modal-supp')!
+    const elDesc = document.getElementById('wood-modal-desc')!
+    const elImgTop = document.getElementById('wood-modal-img-top') as HTMLImageElement
+    const elImgBottom = document.getElementById('wood-modal-img-bottom') as HTMLImageElement
+    const closeBtn = modal.querySelector<HTMLElement>('.wood-modal-close')!
+    let lastFocused: HTMLElement | null = null
+
+    function openWood(key: string) {
+      const w = woods[key]
+      if (!w) return
+      lastFocused = document.activeElement as HTMLElement
+      elTitle.textContent = w.name
+      elEn.textContent = w.en
+      elSupp.textContent = w.supp
+      elDesc.textContent = w.desc
+      elImgTop.src = w.imgTop
+      elImgTop.alt = w.name
+      elImgBottom.src = w.imgBottom
+      elImgBottom.alt = w.name
+      modal!.classList.add('is-open')
+      modal!.setAttribute('aria-hidden', 'false')
+      document.body.style.overflow = 'hidden'
+      setTimeout(() => closeBtn.focus(), 50)
+    }
+    function closeWood() {
+      modal!.classList.remove('is-open')
+      modal!.setAttribute('aria-hidden', 'true')
+      document.body.style.overflow = ''
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus()
+    }
+    document.querySelectorAll<HTMLElement>('.wood-card[data-wood]').forEach((card) => {
+      card.addEventListener('click', () => openWood(card.dataset.wood || ''))
+    })
+    closeBtn.addEventListener('click', closeWood)
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeWood() })
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeWood()
+    })
+  }
+</script>

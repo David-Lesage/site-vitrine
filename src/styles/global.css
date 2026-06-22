@@ -107,3 +107,458 @@ h1, h2, h3, h4, .font-display {
   html { scroll-behavior: auto; }
   .price-update { animation: none; }
 }
+
+/* ============================================================
+   CARROUSEL MODÈLES (porté de l'ancien site, tokens harmonisés)
+   ============================================================ */
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-cream-deep);
+}
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+  position: relative;
+}
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* Visuels larges (écran, connectique) : on épouse l'image */
+.carousel-slide.is-wide img {
+  width: 88%;
+  height: auto;
+  max-height: 88%;
+  object-fit: contain;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: rgba(31, 22, 17, 0.72);
+  color: #fff;
+  border: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.15s ease;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.carousel-btn:hover { background: var(--color-ink); transform: translateY(-50%) scale(1.08); }
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+.carousel-counter {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(31, 22, 17, 0.72);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.carousel-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+  max-width: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.carousel-dot:hover { background: rgba(255, 255, 255, 0.75); }
+.carousel-dot.is-active { background: #fff; transform: scale(1.35); }
+.carousel-pause {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(31, 22, 17, 0.72);
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.carousel-pause.is-visible { display: flex; }
+.carousel-pause:hover { background: var(--color-ink); transform: scale(1.08); }
+.carousel-pause .cp-ic { width: 15px; height: 15px; fill: currentColor; display: none; }
+.carousel-pause .cp-pause { display: block; }
+.carousel-pause.is-paused .cp-pause { display: none; }
+.carousel-pause.is-paused .cp-play { display: block; }
+
+/* ============================================================
+   LIGHTBOX (plein écran image)
+   ============================================================ */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(15, 10, 7, 0.94);
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3vw, 40px);
+  animation: lbFadeIn 0.25s ease;
+}
+@keyframes lbFadeIn { from { opacity: 0; } to { opacity: 1; } }
+.lightbox.is-open { display: flex; }
+.lightbox-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.2s ease;
+  z-index: 10001;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.lightbox-close:hover { background: rgba(255, 255, 255, 0.22); transform: rotate(90deg); }
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+  z-index: 10001;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.lightbox-nav:hover { background: rgba(255, 255, 255, 0.24); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+.lightbox-caption {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 16px;
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  z-index: 10001;
+}
+@media (max-width: 600px) {
+  .carousel-btn { width: 32px; height: 32px; font-size: 1.25rem; }
+  .lightbox-nav { width: 42px; height: 42px; font-size: 1.5rem; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+}
+
+/* ============================================================
+   ESSENCES DE BOIS — disques cliquables + modal détail
+   ============================================================ */
+.wood-card {
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+}
+.wood-card:focus-visible { outline: 2px solid var(--color-copper); outline-offset: 4px; border-radius: 8px; }
+.wood-card-disc {
+  width: 100%;
+  aspect-ratio: 570 / 420;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  overflow: hidden;
+  background: var(--color-cream-deep);
+  position: relative;
+  box-shadow: 0 12px 30px rgba(31, 22, 17, 0.18), 0 30px 50px rgba(31, 22, 17, 0.1);
+  transition: transform 0.4s ease;
+}
+.wood-card:hover .wood-card-disc { transform: translateY(-6px) rotate(2deg); }
+.wood-card-disc::after {
+  content: attr(data-cta);
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: rgba(31, 22, 17, 0.82);
+  color: #fff;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 3px 10px rgba(31, 22, 17, 0.35);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.wood-card:hover .wood-card-disc::after { background: var(--color-copper); transform: translateX(-50%) translateY(-3px); }
+.wood-card:hover .wood-card-disc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(31, 22, 17, 0.45) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.wood-card-disc img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.wood-card h4 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; margin-bottom: 4px; }
+.wood-card-sub {
+  font-size: 0.82rem;
+  color: var(--color-copper);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.wood-card-supp { font-size: 0.85rem; color: var(--color-ink-soft); }
+.wood-card-supp strong { color: var(--color-ink); }
+
+.wood-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(31, 22, 17, 0.82);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3vw, 32px);
+  animation: woodFadeIn 0.25s ease;
+}
+@keyframes woodFadeIn { from { opacity: 0; } to { opacity: 1; } }
+.wood-modal.is-open { display: flex; }
+.wood-modal-content {
+  background: var(--color-cream);
+  border-radius: var(--radius-card);
+  max-width: 1180px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+  padding: clamp(28px, 4vw, 48px);
+  animation: woodSlideUp 0.3s ease;
+}
+@keyframes woodSlideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.wood-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--color-ink);
+  color: #fff;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.wood-modal-close:hover { background: var(--color-rust); transform: rotate(90deg); }
+.wood-modal-eyebrow {
+  color: var(--color-copper);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.wood-modal-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.1; margin-bottom: 4px; color: var(--color-ink); }
+.wood-modal-en { color: var(--color-ink-soft); font-size: 1rem; margin-bottom: 18px; font-style: italic; }
+.wood-modal-supp { display: inline-block; background: var(--color-ink); color: #fff; padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; margin-bottom: 22px; }
+.wood-modal-desc { color: var(--color-ink-soft); margin-bottom: 26px; line-height: 1.65; font-size: 1rem; }
+.wood-modal-images { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.wood-modal-images figure { margin: 0; }
+.wood-modal-images img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-card);
+  display: block;
+  background: var(--color-cream-deep);
+}
+.wood-modal-images figcaption { font-size: 0.8rem; color: var(--color-ink-soft); text-align: center; margin-top: 8px; }
+@media (max-width: 640px) { .wood-modal-images { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   LIGHTBOX VIDÉO (démos de l'app)
+   ============================================================ */
+.vlightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(15, 10, 7, 0.94);
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3vw, 40px);
+  animation: lbFadeIn 0.25s ease;
+}
+.vlightbox.is-open { display: flex; }
+.vlightbox-video {
+  max-width: 95vw;
+  max-height: 88vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  background: #000;
+}
+.vlightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.2s ease;
+  z-index: 10001;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.vlightbox-close:hover { background: rgba(255, 255, 255, 0.22); transform: rotate(90deg); }
+
+/* ============================================================
+   HERO — décorations typographiques (« rendre la musique visible »)
+   ============================================================ */
+.deco-word { white-space: nowrap; }
+/* lettre « i » sans point + petite note de musique à la place du point */
+.i-note { position: relative; display: inline-block; }
+.i-note-svg {
+  position: absolute;
+  left: 50%;
+  top: -0.46em;
+  width: 0.52em;
+  height: 0.52em;
+  transform: translateX(-50%) rotate(-8deg);
+}
+/* glyphes remplaçant un « o » (handpan-triangle, smileys) */
+.glyph-o {
+  display: inline-block;
+  width: 0.86em;
+  height: 0.86em;
+  vertical-align: -0.08em;
+  margin: 0 0.01em;
+}
+
+/* Disques de sélection de bois dans le calculateur */
+.calc-wood-disc {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  background: var(--color-cream-deep);
+}
+.calc-wood-disc img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.calc-wood[aria-checked='true'] .calc-wood-disc { border-color: var(--color-copper); }
+.calc-wood:hover .calc-wood-disc { transform: translateY(-2px); }

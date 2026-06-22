@@ -4,8 +4,11 @@ import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
 import Calculator from '@/components/Calculator.astro'
+import Carousel from '@/components/Carousel.astro'
+import Lightbox from '@/components/Lightbox.astro'
+import WoodModal from '@/components/WoodModal.astro'
 import { Icon } from 'astro-icon/components'
-import { models, woods, woodNames, modelImages, specIcons, includedIcons } from '@/data/neotone'
+import { models, woods, woodNames, modelCarousels, specIcons, includedIcons } from '@/data/neotone'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
@@ -49,8 +52,8 @@ const ld = [
     <div class="mt-12 grid gap-8 md:grid-cols-2">
       {models.map((m) => (
         <div class="flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-          <div class="aspect-[4/3] bg-ink/5 p-6"><img src={modelImages[m.id].src} width={modelImages[m.id].w} height={modelImages[m.id].h} alt={modelLabels[m.id]} class="h-full w-full object-contain" loading="lazy" /></div>
-          <div class="flex flex-1 flex-col p-6">
+          <div class="p-4"><Carousel id={m.id} slides={modelCarousels[m.id]} alt={modelLabels[m.id]} /></div>
+          <div class="flex flex-1 flex-col p-6 pt-2">
             <div class="flex items-baseline justify-between">
               <h3 class="font-display text-2xl font-700">{modelLabels[m.id]}</h3>
               <span class="rounded-full bg-copper/15 px-3 py-1 text-xs font-700 text-copper">{d.modelNotes[m.id]}</span>
@@ -68,15 +71,21 @@ const ld = [
 
   <Section tone="cream-deep" id="bois">
     <SectionHeading eyebrow={n.woodsEyebrow} title={n.woodsTitle} intro={n.woodsIntro} />
-    <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-5">
+    <div class="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
       {woods.map((w) => (
-        <figure class="overflow-hidden rounded-card border border-ink/10 bg-cream">
-          <img src={w.img} width="570" height="420" alt={woodNames[w.key][lang]} class="aspect-square w-full object-cover" loading="lazy" />
-          <figcaption class="p-3 text-center"><p class="font-display font-700">{woodNames[w.key][lang]}</p><p class="text-xs text-ink-soft/70">{d.woodSupplements[w.key]}</p></figcaption>
-        </figure>
+        <button type="button" class="wood-card" data-wood={w.key} aria-label={`${n.woodCardCta} — ${woodNames[w.key][lang]}`}>
+          <span class="wood-card-disc block" data-cta={n.woodCardCta}>
+            <img src={w.img} width="570" height="420" alt={woodNames[w.key][lang]} loading="lazy" />
+          </span>
+          <h4>{woodNames[w.key][lang]}</h4>
+          <div class="wood-card-sub">{d.woodEnNames[w.key]}</div>
+          <div class="wood-card-supp" set:html={d.woodSupplements[w.key].replace(/(\+\d+\s?€[^,]*)/, '<strong>$1</strong>')}></div>
+        </button>
       ))}
     </div>
   </Section>
+
+  <WoodModal lang={lang} />
 
   <Section id="technologie">
     <div class="grid items-center gap-10 lg:grid-cols-2">
@@ -159,4 +168,6 @@ const ld = [
     </div>
     <p class="mt-8 text-center text-ink-soft/85">{n.faqOutro} <a href={`mailto:${site.emailNeotone}`} class="font-700 text-rust underline">{site.emailNeotone}</a></p>
   </Section>
+
+  <Lightbox />
 </Layout>

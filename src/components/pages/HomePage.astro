@@ -8,6 +8,7 @@ import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { personLdJson } from '@/lib/ldJson'
+import { decorateWord, decorateSentence } from '@/lib/heroDeco'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -15,6 +16,20 @@ const { lang } = Astro.props
 const t = getDict(lang)
 const h = t.home
 const L = (p: string) => localizePath(p, lang)
+
+// Hero illustré : « Visible » arc-en-ciel, points des i en notes,
+// « couleurs » multicolore, « géométrie » (handpan), « émotions » (smileys).
+const musicWord = lang === 'en' ? 'music' : 'musique'
+const colorWord = lang === 'en' ? 'colours' : 'couleurs'
+const geoWord = lang === 'en' ? 'geometry' : 'géométrie'
+const emoWord = lang === 'en' ? 'emotions' : 'émotions'
+const heroTitleAHtml = decorateSentence(h.heroTitleA, [{ word: musicWord, opts: { noteOnI: true } }])
+const heroHighlightHtml = decorateWord(h.heroTitleHighlight, { rainbow: true, noteOnI: true, bold: true })
+const heroLeadHtml = decorateSentence(h.heroLead, [
+  { word: colorWord, opts: { rainbow: true, bold: true } },
+  { word: geoWord, opts: { bold: true, oGlyph: 'handpan' } },
+  { word: emoWord, opts: { bold: true, oGlyph: 'faces' } },
+])
 const universMeta = [
   { img: '/images/neotone-1-edition.webp', w: 670, h: 653, icon: 'lucide:disc-3', href: '/le-neotone' },
   { img: '/images/constel-mains.webp', w: 1400, h: 1008, icon: 'lucide:graduation-cap', href: '/cours' },
@@ -24,19 +39,27 @@ const universMeta = [
 
 <Layout title={h.title} description={h.description} ldJSON={personLdJson()}>
   <section class="relative overflow-hidden bg-ink text-cream">
+    <!-- Photo de David + handpan, pleinement visible à droite -->
     <div class="absolute inset-0">
-      <img src="/images/hero-david.webp" width="2400" height="1351" alt="" class="h-full w-full object-cover opacity-40" loading="eager" fetchpriority="high" />
-      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/40"></div>
+      <img src="/images/hero-david.webp" width="2400" height="1351" alt="" class="h-full w-full object-cover object-[75%_center]" loading="eager" fetchpriority="high" />
+      <!-- Dégradé horizontal : zone opaque à gauche (texte lisible), image révélée à droite -->
+      <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-transparent md:via-ink/70 md:to-ink/0"></div>
+      <!-- Renfort vertical léger pour mobile -->
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-transparent md:hidden"></div>
     </div>
-    <div class="relative mx-auto max-w-5xl px-4 py-24 text-center lg:py-32">
-      <p class="inline-flex items-center gap-2 rounded-full border border-cream/20 bg-cream/5 px-4 py-1.5 text-xs font-600 uppercase tracking-[0.2em] text-gold">{h.heroEyebrow}</p>
-      <h1 class="mt-6 font-display text-4xl font-700 leading-[1.05] md:text-6xl">{h.heroTitleA} <span class="text-gradient-brand">{h.heroTitleHighlight}</span> {h.heroTitleB}</h1>
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-cream/80 md:text-xl">{h.heroLead}</p>
-      <div class="mt-9 flex flex-wrap justify-center gap-3">
-        <Button href={L('/showroom')} variant="primary">{h.ctaShowroom}</Button>
-        <Button href={L('/handpan-studio')} variant="light">{h.ctaMethod}</Button>
+    <!-- Filet arc-en-ciel ChromaKeys : « rendre la musique visible » -->
+    <div class="chroma-bar absolute inset-x-0 top-0 h-1"></div>
+    <div class="relative mx-auto max-w-7xl px-4 py-24 lg:px-8 lg:py-36">
+      <div class="max-w-xl text-center md:text-left">
+        <p class="inline-flex items-center gap-2 rounded-full border border-cream/20 bg-cream/5 px-4 py-1.5 text-xs font-600 uppercase tracking-[0.2em] text-gold">{h.heroEyebrow}</p>
+        <h1 class="mt-6 font-display text-4xl font-700 leading-[1.05] md:text-6xl"><span set:html={heroTitleAHtml}></span> <span set:html={heroHighlightHtml}></span> {h.heroTitleB}</h1>
+        <p class="mt-6 text-lg text-cream/85 md:text-xl" set:html={heroLeadHtml}></p>
+        <div class="mt-9 flex flex-wrap justify-center gap-3 md:justify-start">
+          <Button href={L('/showroom')} variant="primary">{h.ctaShowroom}</Button>
+          <Button href={L('/handpan-studio')} variant="light">{h.ctaMethod}</Button>
+        </div>
+        <div class="chroma-bar mx-auto mt-12 h-1.5 w-48 rounded-full md:mx-0"></div>
       </div>
-      <div class="chroma-bar mx-auto mt-12 h-1.5 w-48 rounded-full"></div>
     </div>
   </section>
 

@@ -3,8 +3,9 @@ import Layout from '@/layouts/Layout.astro'
 import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
+import VideoGrid from '@/components/VideoGrid.astro'
 import { Icon } from 'astro-icon/components'
-import { chromaKeys, site } from '@/data/site'
+import { chromaKeys, site, studioVideos } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
@@ -51,7 +52,7 @@ const constelImgs = [
     <SectionHeading tone="light" eyebrow={st.chromaEyebrow} title={st.chromaTitle} intro={st.chromaIntro} />
     <div class="mt-10 grid grid-cols-7 gap-2 md:gap-4">
       {chromaKeys.map((ck, i) => (
-        <div class="rounded-xl p-3 text-center text-ink" style={`background:${ck.color}`}><p class="font-display text-lg font-700">{ck.degree}</p><p class="text-xs font-600">{emotions[i]}</p></div>
+        <div class="rounded-xl p-3 text-center text-ink" style={`background:${ck.color}`}><p class="font-display text-xl font-700">{ck.degree}</p><p class="text-xs font-700">{emotions[i]}</p></div>
       ))}
     </div>
     <p class="mt-6 text-center font-display text-lg font-600 text-gold">{st.chromaPunch}</p>
@@ -77,7 +78,7 @@ const constelImgs = [
     <SectionHeading eyebrow={st.degEyebrow} title={st.degTitle} intro={st.degIntro} />
     <div class="mx-auto mt-10 flex max-w-3xl flex-wrap justify-center gap-3">
       {chromaKeys.map((ck, i) => (
-        <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-cream px-4 py-2 font-600"><span class="h-3 w-3 rounded-full" style={`background:${ck.color}`}></span>{ck.degree} · {emotions[i]}</span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-cream px-4 py-2 font-700"><span class="h-3 w-3 rounded-full" style={`background:${ck.color}`}></span>{ck.degree} · {emotions[i]}</span>
       ))}
     </div>
   </Section>
@@ -102,6 +103,13 @@ const constelImgs = [
     <div class="mx-auto max-w-3xl">
       <SectionHeading align="left" eyebrow={st.storyEyebrow} title={st.storyTitle} />
       <div class="mt-6 space-y-4 text-lg text-ink-soft/90"><p>{st.storyP1}</p><p>{st.storyP2}</p><p set:html={st.storyP3}></p></div>
+    </div>
+  </Section>
+
+  <Section tone="ink" id="videos">
+    <SectionHeading tone="light" eyebrow={st.videosEyebrow} title={st.videosTitle} intro={st.videosIntro} />
+    <div class="mt-10">
+      <VideoGrid items={st.videos.map((v, i) => ({ ...v, src: studioVideos[i].src, poster: studioVideos[i].poster }))} />
     </div>
   </Section>
 

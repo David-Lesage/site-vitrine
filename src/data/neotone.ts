@@ -34,6 +34,47 @@ export const modelImages: Record<ModelId, { src: string; w: number; h: number }>
   mutant: { src: '/images/neotone-mutant-edition.webp', w: 670, h: 614 },
 }
 
+// Photos défilantes (carrousel) par modèle. `wide` = visuel large (écran, connectique)
+// affiché en `contain` au lieu de `cover`. Ordre repris de l'ancien site.
+export const modelCarousels: Record<ModelId, { src: string; wide?: boolean }[]> = {
+  one: [
+    { src: '/images/neotone1-1.jpg' },
+    { src: '/images/neotone1-2.jpg' },
+    { src: '/images/neotone1-3.jpg' },
+    { src: '/images/neotone1-6.jpg' },
+    { src: '/images/neotone1-5.jpg' },
+    { src: '/images/neotone1-4.jpg' },
+    { src: '/images/neotone1-7.jpg' },
+    { src: '/images/neotone1-8.jpg' },
+    { src: '/images/neotone1-9.jpg' },
+    { src: '/images/neotone1-10.jpg' },
+  ],
+  mutant: [
+    { src: '/images/mutant-0.jpg' },
+    { src: '/images/mutant-1.jpg' },
+    { src: '/images/mutant-2.jpg' },
+    { src: '/images/mutant-ecran.avif', wide: true },
+    { src: '/images/mutant-connectique.avif', wide: true },
+    { src: '/images/mutant-3.jpg' },
+    { src: '/images/mutant-4.jpg' },
+    { src: '/images/mutant-5.jpg' },
+    { src: '/images/mutant-6.jpg' },
+    { src: '/images/mutant-9.jpg' },
+    { src: '/images/mutant-10.jpg' },
+    { src: '/images/mutant-11.jpg' },
+    { src: '/images/mutant-8.jpg' },
+  ],
+}
+
+// Photos détaillées (vue dessus / dessous) ouvertes au clic sur une essence.
+export const woodDetails: Record<WoodKey, { imgTop: string; imgBottom: string }> = {
+  frene: { imgTop: '/images/frene-01.avif', imgBottom: '/images/frene-02.avif' },
+  chene: { imgTop: '/images/chene-01.avif', imgBottom: '/images/chene-02.avif' },
+  acajou: { imgTop: '/images/acajou-01.avif', imgBottom: '/images/acajou-02.avif' },
+  cerisier: { imgTop: '/images/cerisier-01.avif', imgBottom: '/images/cerisier-02.avif' },
+  noyer: { imgTop: '/images/noyer-01.avif', imgBottom: '/images/noyer-02.avif' },
+}
+
 // Icônes des cartes specs / inclus (ordre = dict.data.specs / dict.data.included)
 export const specIcons = ['lucide:music', 'lucide:circle-dot', 'lucide:battery-charging', 'lucide:cable', 'lucide:settings', 'lucide:ruler']
 export const includedIcons = ['lucide:briefcase', 'lucide:globe', 'lucide:shield-check', 'lucide:plug']

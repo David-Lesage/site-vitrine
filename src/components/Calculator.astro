@@ -65,10 +65,11 @@ const calcData = {
 
       <fieldset>
         <legend class="text-xs font-700 uppercase tracking-widest text-copper">{c.step2}</legend>
-        <div class="mt-3 flex flex-wrap gap-2" role="radiogroup" aria-label={c.step2}>
+        <div class="mt-3 flex flex-wrap gap-4" role="radiogroup" aria-label={c.step2}>
           {woods.map((w, i) => (
-            <button type="button" class:list={['calc-wood rounded-full border-2 px-4 py-2 text-sm font-600', i === 0 ? 'border-copper bg-copper/10' : 'border-ink/15']} data-wood={w.key} aria-checked={i === 0 ? 'true' : 'false'} role="radio">
-              {woodNames[w.key][lang]}
+            <button type="button" class="calc-wood flex flex-col items-center gap-1.5" data-wood={w.key} aria-checked={i === 0 ? 'true' : 'false'} role="radio">
+              <span class="calc-wood-disc"><img src={w.img} width="570" height="420" alt={woodNames[w.key][lang]} loading="lazy" /></span>
+              <span class="text-xs font-600">{woodNames[w.key][lang]}</span>
             </button>
           ))}
         </div>
