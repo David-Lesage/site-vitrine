@@ -1,0 +1,170 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import Carousel from '@/components/Carousel.astro'
+import Lightbox from '@/components/Lightbox.astro'
+import { Icon } from 'astro-icon/components'
+import {
+  gonilelePhotos, gonileleUnboxingId, gonileleVideos, gonilelePrices,
+  gonileleAccordageImg, gonilelePayment, gonileleContact,
+} from '@/data/gonilele'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const g = t.gonilele
+const L = (p: string) => localizePath(p, lang)
+const eur = (n: number) => n.toLocaleString(lang === 'en' ? 'en-GB' : 'fr-FR') + ' €'
+const vt = g.videoTitles as Record<string, string>
+
+const orderHref = `mailto:${gonileleContact.email}?subject=${encodeURIComponent(
+  lang === 'en' ? 'Gonilélé harp — order' : 'Harpe Gonilélé — commande'
+)}&body=${encodeURIComponent(
+  (lang === 'en'
+    ? ['Hi David,', '', 'I’d like to order a Gonilélé harp:', '• Version (10 strings / 12 strings + pickup): ', '• Cover (+€40) / Tuner (+€10): ', '• Pickup in Paris or shipping (+€25): ', '', 'My details:', '• Full name: ', '• Phone: ', '', 'Thank you!']
+    : ['Bonjour David,', '', 'Je souhaite commander une harpe Gonilélé :', '• Version (10 cordes / 12 cordes + micro) : ', '• Housse (+40 €) / Accordeur (+10 €) : ', '• Retrait à Paris ou envoi (+25 €) : ', '', 'Mes coordonnées :', '• Nom et prénom : ', '• Téléphone : ', '', 'Merci !']
+  ).join('\n')
+)}`
+
+const coursesHref = 'https://www.helloasso.com/associations/resonances-productions/boutiques/cours-prive-et-stages-avec-david-lesage'
+
+const priceRows = [
+  { label: g.priceRows.cordes10, value: eur(gonilelePrices.cordes10), strong: true },
+  { label: g.priceRows.cordes12, value: eur(gonilelePrices.cordes12), strong: true },
+  { label: g.priceRows.housse, value: eur(gonilelePrices.housse), opt: true },
+  { label: g.priceRows.accordeur, value: eur(gonilelePrices.accordeur), opt: true },
+  { label: g.priceRows.envoi, value: eur(gonilelePrices.envoi), opt: true },
+]
+---
+
+<Layout title={g.title} description={g.description}>
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <div class="chroma-bar absolute inset-x-0 top-0 h-1"></div>
+    <div class="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-24">
+      <a href={L('/boutique') + '#instruments'} class="text-sm font-600 text-cream/70 hover:text-gold">{g.back}</a>
+      <div class="mt-6 grid items-center gap-10 lg:grid-cols-2">
+        <div>
+          <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{g.eyebrow}</p>
+          <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">{g.heroTitle}</h1>
+          <p class="mt-5 text-lg text-cream/85">{g.heroLead}</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <Button href={orderHref} variant="primary">{g.ctaOrder}</Button>
+            <Button href="#videos" variant="light">{g.ctaVideos}</Button>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-card border border-cream/10">
+          <img src={gonilelePhotos[0]} width="800" height="1000" alt={g.heroTitle} class="h-full w-full object-cover" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Section>
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <SectionHeading align="left" eyebrow={g.eyebrow} title={g.whatTitle} />
+        <p class="mt-5 text-lg text-ink-soft/90">{g.whatText}</p>
+      </div>
+      <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-7">
+        <Icon name="lucide:badge-check" class="h-8 w-8 text-copper" />
+        <h3 class="mt-3 font-display text-xl font-700">{g.ambassadorTitle}</h3>
+        <p class="mt-3 text-ink-soft/90">{g.ambassadorText}</p>
+        <a href="https://lamaisondungoni.com/" target="_blank" rel="noopener" class="mt-4 inline-block font-700 text-rust underline">lamaisondungoni.com</a>
+      </div>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
+    <SectionHeading eyebrow={g.eyebrow} title={g.photosTitle} />
+    <div class="mx-auto mt-10 max-w-2xl"><Carousel id="gonilele-page" slides={gonilelePhotos.map((src) => ({ src }))} alt={g.heroTitle} /></div>
+  </Section>
+
+  <Section tone="ink" id="videos">
+    <SectionHeading tone="light" eyebrow={g.eyebrow} title={g.unboxingTitle} intro={g.unboxingText} />
+    <div class="mx-auto mt-8 max-w-3xl overflow-hidden rounded-card border border-cream/10">
+      <div class="relative aspect-video">
+        <iframe class="absolute inset-0 h-full w-full" src={`https://www.youtube-nocookie.com/embed/${gonileleUnboxingId}`} title={g.unboxingTitle} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <h3 class="mt-14 text-center font-display text-2xl font-700 text-cream">{g.videosTitle}</h3>
+    <p class="mx-auto mt-3 max-w-2xl text-center text-cream/75">{g.videosIntro}</p>
+    <div class="mt-8 flex snap-x gap-5 overflow-x-auto pb-4 [scrollbar-width:thin]">
+      {gonileleVideos.map((v) => (
+        <a href={`https://www.youtube.com/watch?v=${v.id}`} target="_blank" rel="noopener" class="group block w-72 shrink-0 snap-start overflow-hidden rounded-card border border-cream/10 bg-cream/5">
+          <div class="relative aspect-video overflow-hidden">
+            <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} width="480" height="360" alt={vt[v.key]} class="h-full w-full object-cover transition-transform group-hover:scale-105" loading="lazy" />
+            <span class="absolute inset-0 grid place-items-center">
+              <span class="grid h-12 w-12 place-items-center rounded-full bg-rust/90 text-cream"><svg viewBox="0 0 24 24" class="h-5 w-5 fill-current"><path d="M8 5v14l11-7z"></path></svg></span>
+            </span>
+          </div>
+          <p class="p-4 text-sm font-600 text-cream">{vt[v.key]}</p>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
+    <div class="grid items-start gap-10 lg:grid-cols-2">
+      <div>
+        <SectionHeading align="left" eyebrow={g.eyebrow} title={g.pricesTitle} />
+        <dl class="mt-8 divide-y divide-ink/10 rounded-card border border-ink/10 bg-cream">
+          {priceRows.map((r) => (
+            <div class="flex items-center justify-between gap-4 px-5 py-4">
+              <dt class="font-600">{r.label}{r.opt && <span class="ml-2 rounded-full bg-ink/5 px-2 py-0.5 text-xs text-ink-soft/70">{g.priceOption}</span>}</dt>
+              <dd class:list={['font-display', r.strong ? 'text-xl font-700' : 'font-600 text-ink-soft/90']}>{r.value}</dd>
+            </div>
+          ))}
+        </dl>
+        <div class="mt-6"><Button href={orderHref} variant="primary">{g.ctaOrder}</Button></div>
+      </div>
+      <div class="rounded-card border border-ink/10 bg-cream p-6">
+        <h3 class="font-display text-xl font-700">{g.tuningTitle}</h3>
+        <p class="mt-3 text-ink-soft/90">{g.tuningText}</p>
+        <figure class="mt-5 overflow-hidden rounded-xl border border-ink/10 bg-cream-deep/40">
+          <img src={gonileleAccordageImg} width="900" height="1200" alt={g.tuningTitle} class="mx-auto max-h-[420px] w-auto object-contain" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <SectionHeading align="left" eyebrow={g.eyebrow} title={g.orderTitle} />
+        <p class="mt-5 text-ink-soft/90">{g.orderText}</p>
+        <ul class="mt-6 space-y-3">
+          <li class="flex items-center gap-3"><Icon name="lucide:phone" class="h-5 w-5 text-copper" /><a href={`tel:${gonileleContact.phoneHref}`} class="font-600 hover:text-rust">{gonileleContact.phone}</a></li>
+          <li class="flex items-center gap-3"><Icon name="lucide:mail" class="h-5 w-5 text-copper" /><a href={`mailto:${gonileleContact.email}`} class="font-600 hover:text-rust">{gonileleContact.email}</a></li>
+          <li class="flex items-center gap-3"><Icon name="lucide:map-pin" class="h-5 w-5 text-copper" /><span class="font-600">{gonileleContact.address}</span></li>
+          <li class="flex items-center gap-3"><Icon name="lucide:truck" class="h-5 w-5 text-copper" /><span class="text-ink-soft/85">{g.contactShipping}</span></li>
+        </ul>
+      </div>
+      <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-7">
+        <h3 class="font-display text-xl font-700">{g.paymentTitle}</h3>
+        <p class="mt-3 text-ink-soft/90">{g.paymentText}</p>
+        <dl class="mt-5 space-y-2 text-sm">
+          <div><dt class="text-xs font-700 uppercase tracking-widest text-copper">{g.paymentIban}</dt><dd class="font-mono font-600">{gonilelePayment.iban}</dd></div>
+          <div><dt class="text-xs font-700 uppercase tracking-widest text-copper">{g.paymentBic}</dt><dd class="font-mono font-600">{gonilelePayment.bic}</dd></div>
+        </dl>
+        <p class="mt-4 text-xs text-ink-soft/70">{gonilelePayment.assoc}</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
+    <div class="mx-auto max-w-2xl rounded-card border border-ink/10 bg-cream p-8 text-center">
+      <Icon name="lucide:graduation-cap" class="mx-auto h-9 w-9 text-copper" />
+      <h2 class="mt-4 font-display text-2xl font-700">{g.coursesTitle}</h2>
+      <p class="mt-3 text-ink-soft/85">{g.coursesText}</p>
+      <div class="mt-6"><Button href={coursesHref} external variant="primary">{g.coursesCta}</Button></div>
+    </div>
+  </Section>
+
+  <Lightbox />
+</Layout>
