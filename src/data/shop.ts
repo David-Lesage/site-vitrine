@@ -20,7 +20,7 @@ export interface Product {
   // libellé du bouton pour les produits 'link'
   linkLabel?: 'buy' | 'listen' | 'discover' | 'order'
   // pastille (plateforme / statut) pour les produits 'link' → dict.shop.linkTags
-  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify'
+  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited'
   // prix indicatif affiché tel quel (produits externes), ex. "299 €"
   priceLabel?: string
   // plusieurs photos → carrousel + plein écran sur la fiche (sinon `image` seule)
@@ -33,12 +33,11 @@ export const products: Product[] = [
   { id: 'neotone-one', price: 1990, image: '/images/neotone-1-edition.webp', imgW: 670, imgH: 653, url: '/le-neotone', category: 'handpans', active: true, mode: 'quote', images: modelCarousels.one.map((s) => s.src) },
   { id: 'neotone-mutant', price: 3150, image: '/images/neotone-mutant-edition.webp', imgW: 670, imgH: 614, url: '/le-neotone', category: 'handpans', active: true, mode: 'quote', images: modelCarousels.mutant.map((s) => s.src) },
   // Instruments d'exception — joués / créés / recommandés par David (Linktree)
-  { id: 'yishama', price: 0, image: '/images/prod-yishama.png', imgW: 766, imgH: 766, url: 'https://www.yishama.com/?wpam_id=40', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'yishama' },
+  { id: 'yishama', price: 0, image: '/images/prod-yishama.png', imgW: 766, imgH: 766, url: 'https://www.yishama.com/?wpam_id=40', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'yishama', images: ['/images/prod-yishama.png', '/images/prod-yishama-2.jpg', '/images/prod-yishama-3.jpg', '/images/prod-yishama-4.jpg'] },
   { id: 'gonilele', price: 0, image: '/images/prod-gonilele-2.jpg', imgW: 562, imgH: 1000, url: '/gonilele', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'maisongoni', priceLabel: 'dès 440 €', images: ['/images/prod-gonilele-2.jpg', '/images/prod-gonilele-4.jpg', '/images/prod-gonilele-5.jpg', '/images/prod-gonilele.jpeg', '/images/prod-gonilele-3.jpg'] },
   { id: 'calebasse', price: 0, image: '/images/prod-calebasse.jpeg', imgW: 1000, imgH: 1000, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/formation-de-rythme-now-groove-david-lesage', category: 'instruments', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'nowgroove', priceLabel: '149 €', images: ['/images/prod-calebasse.jpeg', '/images/prod-calebasse-2.jpg', '/images/prod-calebasse-3.jpg', '/images/prod-calebasse-4.jpg'] },
-  // Housse de calebasse haut de gamme (pré-vente HelloAsso). Photos à fournir
-  // par David (HelloAsso bloque la récupération auto) → active dès qu'elles sont là.
-  { id: 'housse', price: 0, image: '/images/prod-housse-1.jpg', imgW: 1000, imgH: 1000, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/pres-vente-housse-calebasse-now-groove-by-david-lesage', category: 'instruments', active: false, mode: 'link', linkLabel: 'buy', tagKey: 'nowgroove', images: ['/images/prod-housse-1.jpg', '/images/prod-housse-2.jpg', '/images/prod-housse-3.jpg'] },
+  // Housse de calebasse Now Groove — pré-vente HelloAsso, édition limitée faite main
+  { id: 'housse', price: 0, image: '/images/prod-housse-1.jpg', imgW: 1000, imgH: 1000, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/pres-vente-housse-calebasse-now-groove-by-david-lesage', category: 'instruments', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'limited', priceLabel: '99 €', images: ['/images/prod-housse-1.jpg', '/images/prod-housse-2.jpg', '/images/prod-housse-3.jpg', '/images/prod-housse-4.jpg'] },
   { id: 'tambour', price: 0, image: '/images/prod-tambour.jpg', imgW: 480, imgH: 360, url: 'https://www.facebook.com/profile.php?id=100075977844059', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'tambour' },
   // Micros
   { id: 'micro-hisong', price: 0, image: '/images/prod-micro-hisong.webp', imgW: 1400, imgH: 1400, url: 'https://hisong.io/DAVID-LESAGE-SAVE-5', category: 'micros', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'hisong', priceLabel: '299 €' },
@@ -49,7 +48,6 @@ export const products: Product[] = [
   // Album de reprises. Visuel temporaire (pochette Spotify) → remplacer par
   // l'artwork officiel « COVER » (public/images/prod-cover.jpg) fourni par David.
   { id: 'cover', price: 0, image: '/images/prod-cover.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/artist/7zEAQJbalBFj8XNHrcqdbK', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },
-  { id: 'streaming', price: 0, image: '/images/prod-streaming.jpg', imgW: 675, imgH: 900, url: 'https://music.imusician.pro/artist/GtChl4dcIh/releases', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'streaming' },
   // Formations & cours — séparé de la musique
   { id: 'now-groove', price: 0, image: '/images/prod-nowgroove.jpg', imgW: 919, imgH: 1300, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/formation-de-rythme-now-groove-david-lesage', category: 'formations', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'helloasso' },
   { id: 'cours-prives', price: 0, image: '/images/prod-cours-stages.jpg', imgW: 371, imgH: 371, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/cours-prive-et-stages-avec-david-lesage', category: 'formations', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'helloasso', priceLabel: '50 €/h · 70 €/1h30' },
