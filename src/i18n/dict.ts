@@ -158,7 +158,7 @@ const fr = {
       'yishama': { name: 'Handpan Yishama d’exception', description: 'L’un des meilleurs fabricants de handpan au monde (Israël / Hongrie). Facture artisanale, instruments jusqu’à 19 notes aux basses profondes et aigus brillants. Je le représente avec fierté en tant qu’ambassadeur.' },
       'gonilele': { name: 'Harpe Gonilélé · La Maison du Ngoni', description: 'Harpe-luth de voyage créée par Joris Feuillâtre. Je suis ambassadeur de La Maison du Ngoni. 10 cordes (440 €) ou 12 cordes avec micro intégré (520 €). Photos, vidéos, déballage et commande sur la fiche dédiée.' },
       'calebasse': { name: 'Kit de Calebasse David Lesage Signature', description: 'Kit complet : calebasse de 45 à 50 cm (rare en Europe), finie à la main par Kamou (Djoliba Percussion) et gravée au laser du logo Now Groove, avec son tapis et ses shakers. Une batterie organique au son naturel.' },
-      'housse': { name: 'Housse de calebasse Now Groove', description: 'Housse-sac à dos haut de gamme pensée et designée par David Lesage : fonction tapis intégrée, sangles détachables, poche de rangement (œufs, accessoires & méthode), intérieur velours. ✋ Édition spéciale fabriquée à la main, en série ultra limitée.' },
+      'housse': { name: 'Housse de calebasse Now Groove by David Lesage', description: 'Housse-sac à dos haut de gamme pensée et designée par David Lesage : fonction tapis intégrée, sangles détachables, poche de rangement (œufs, accessoires & méthode), intérieur velours. ✋ Édition spéciale fabriquée à la main, en série ultra limitée.' },
       'tambour': { name: 'Tambour chamanique · L’Âme du Tambour', description: 'Tambour-cadre artisanal de Julien (L’Âme du Tambour) — un fabricant aligné, passionné et intègre. Profite de −5 % avec le code David-Tambour.' },
       'micro-hisong': { name: 'Micro Hisong AirStudio S1', description: 'Le premier studio mobile tout-en-un : micro studio, retours intra sans fil, interface audio et boîtier de charge. Parfait pour capter handpan, voix et instruments. −5 % avec mon code.' },
       'micro-muling': { name: 'Micro Muling', description: 'Bientôt disponible.' },
@@ -179,7 +179,7 @@ const fr = {
     heroTitle: 'La Harpe Gonilélé',
     heroLead:
       'Une harpe-luth de voyage à l’âme envoûtante, façonnée à la main par Joris Feuillâtre. Je suis fier d’en être l’ambassadeur — découvre l’instrument, écoute-le, et repars avec le tien.',
-    ctaOrder: 'Commander ma Gonilélé',
+    ctaOrder: 'Commander mon Gonilélé',
     ctaVideos: 'Voir les vidéos',
     whatTitle: 'Qu’est-ce que le Gonilélé ?',
     whatText:
