@@ -142,6 +142,7 @@ const fr = {
     calcOrder: 'Calculer mon prix & commander',
     linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée' },
     linkCtas: { buy: 'Voir l’offre →', listen: 'Écouter →', discover: 'Découvrir →', order: 'Commander →' },
+    watchDemo: 'Voir ma démo vidéo',
     adviceTitle: 'Besoin d’un conseil avant d’acheter ?',
     adviceText: 'Je réponds personnellement. Dis-moi ton projet, je t’aide à choisir le bon instrument.',
     adviceCta: 'Me faire conseiller',

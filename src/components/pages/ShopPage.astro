@@ -57,7 +57,13 @@ const ld = [
                 )}
                 <div class="flex flex-1 flex-col p-6">
                   <h3 class="font-display text-xl font-700">{info.name}</h3>
-                  <p class="mt-2 flex-1 text-sm text-ink-soft/85">{info.description}</p>
+                  <p class="mt-2 text-sm text-ink-soft/85">{info.description}</p>
+                  {p.videoUrl && (
+                    <a href={p.videoUrl} target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-2 self-start text-sm font-700 text-rust hover:underline">
+                      <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>{s.watchDemo}
+                    </a>
+                  )}
+                  <div class="flex-1"></div>
                   <div class="mt-4 flex flex-wrap items-center justify-between gap-2">
                     {p.mode === 'soon' && <span class="text-sm font-600 text-ink-soft/60">{s.soon}</span>}
                     {(p.mode === 'cart' || p.mode === 'quote') && <span class="font-display text-lg font-700">{p.mode === 'quote' ? s.from : ''}{eur(p.price)}</span>}

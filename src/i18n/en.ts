@@ -136,6 +136,7 @@ export const en: Dict = {
     calcOrder: 'Calculate my price & order',
     linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition' },
     linkCtas: { buy: 'See offer →', listen: 'Listen →', discover: 'Discover →', order: 'Order →' },
+    watchDemo: 'Watch my demo video',
     adviceTitle: 'Need advice before buying?',
     adviceText: 'I answer personally. Tell me your project, I’ll help you choose the right instrument.',
     adviceCta: 'Get my advice',

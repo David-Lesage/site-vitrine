@@ -4,8 +4,8 @@
 // ============================================================
 
 export const gonilelePhotos = [
-  '/images/prod-gonilele-2.jpg',
   '/images/prod-gonilele-4.jpg',
+  '/images/prod-gonilele-2.jpg',
   '/images/prod-gonilele-5.jpg',
   '/images/prod-gonilele-6.jpg',
   '/images/prod-gonilele.jpeg',

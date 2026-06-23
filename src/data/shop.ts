@@ -25,6 +25,8 @@ export interface Product {
   priceLabel?: string
   // plusieurs photos → carrousel + plein écran sur la fiche (sinon `image` seule)
   images?: string[]
+  // lien vidéo de démo (YouTube) → bouton « Voir la démo » sur la fiche
+  videoUrl?: string
 }
 
 export const categoryIds = ['handpans', 'instruments', 'micros', 'musique', 'formations'] as const
@@ -34,13 +36,13 @@ export const products: Product[] = [
   { id: 'neotone-mutant', price: 3150, image: '/images/neotone-mutant-edition.webp', imgW: 670, imgH: 614, url: '/le-neotone', category: 'handpans', active: true, mode: 'quote', images: modelCarousels.mutant.map((s) => s.src) },
   // Instruments d'exception — joués / créés / recommandés par David (Linktree)
   { id: 'yishama', price: 0, image: '/images/prod-yishama.png', imgW: 766, imgH: 766, url: 'https://www.yishama.com/?wpam_id=40', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'yishama', images: ['/images/prod-yishama.png', '/images/prod-yishama-2.jpg', '/images/prod-yishama-3.jpg', '/images/prod-yishama-4.jpg'] },
-  { id: 'gonilele', price: 0, image: '/images/prod-gonilele-2.jpg', imgW: 562, imgH: 1000, url: '/gonilele', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'maisongoni', priceLabel: 'dès 440 €', images: ['/images/prod-gonilele-2.jpg', '/images/prod-gonilele-4.jpg', '/images/prod-gonilele-5.jpg', '/images/prod-gonilele.jpeg', '/images/prod-gonilele-3.jpg'] },
+  { id: 'gonilele', price: 0, image: '/images/prod-gonilele-4.jpg', imgW: 1000, imgH: 1100, url: '/gonilele', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'maisongoni', priceLabel: 'dès 440 €', images: ['/images/prod-gonilele-4.jpg', '/images/prod-gonilele-2.jpg', '/images/prod-gonilele-5.jpg', '/images/prod-gonilele.jpeg', '/images/prod-gonilele-3.jpg'] },
   { id: 'calebasse', price: 0, image: '/images/prod-calebasse.jpeg', imgW: 1000, imgH: 1000, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/formation-de-rythme-now-groove-david-lesage', category: 'instruments', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'nowgroove', priceLabel: '149 €', images: ['/images/prod-calebasse.jpeg', '/images/prod-calebasse-2.jpg', '/images/prod-calebasse-3.jpg', '/images/prod-calebasse-4.jpg'] },
   // Housse de calebasse Now Groove — pré-vente HelloAsso, édition limitée faite main
   { id: 'housse', price: 0, image: '/images/prod-housse-1.jpg', imgW: 1000, imgH: 1000, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/pres-vente-housse-calebasse-now-groove-by-david-lesage', category: 'instruments', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'limited', priceLabel: '99 €', images: ['/images/prod-housse-1.jpg', '/images/prod-housse-2.jpg', '/images/prod-housse-3.jpg', '/images/prod-housse-4.jpg'] },
   { id: 'tambour', price: 0, image: '/images/prod-tambour.jpg', imgW: 480, imgH: 360, url: 'https://www.facebook.com/profile.php?id=100075977844059', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'tambour' },
   // Micros
-  { id: 'micro-hisong', price: 0, image: '/images/prod-micro-hisong.webp', imgW: 1400, imgH: 1400, url: 'https://hisong.io/DAVID-LESAGE-SAVE-5', category: 'micros', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'hisong', priceLabel: '299 €' },
+  { id: 'micro-hisong', price: 0, image: '/images/prod-micro-hisong.webp', imgW: 1400, imgH: 1400, url: 'https://hisong.io/DAVID-LESAGE-SAVE-5', category: 'micros', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'hisong', priceLabel: '299 €', images: ['/images/prod-micro-hisong.webp', '/images/prod-hisong-2.jpg', '/images/prod-hisong-3.jpg', '/images/prod-hisong-4.jpg'], videoUrl: 'https://www.youtube.com/watch?v=B_7ZvlpHUsE' },
   { id: 'micro-muling', price: 0, image: '/images/favicon.png', imgW: 128, imgH: 128, url: '/boutique', category: 'micros', active: false, mode: 'soon' },
   // Musique — albums & écoute en streaming (Spotify / plateformes)
   { id: 'phoenix-opus1', price: 0, image: '/images/prod-phoenix-opus1.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/album/3sxUqtH3uKf7pceIJ0j5l5', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },
