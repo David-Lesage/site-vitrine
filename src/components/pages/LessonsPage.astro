@@ -16,43 +16,86 @@ const l = t.lessons
 const L = (p: string) => localizePath(p, lang)
 const pillarIcons = ['lucide:eye', 'lucide:brain', 'lucide:music']
 const formulaIcons = ['lucide:user', 'lucide:user', 'lucide:users']
+// Trois univers d'apprentissage (indexé sur l.universes)
+const universeMeta = [
+  { img: '/images/constel-mains.webp', icon: 'lucide:disc-3', href: L('/handpan-studio') },
+  { img: '/images/prod-nowgroove.jpg', icon: 'lucide:drum', href: L('/boutique') + '#formations' },
+  { img: '/images/prod-gonilele-4.jpg', icon: 'lucide:music-2', href: L('/gonilele') },
+]
+const workshopsUrl = 'https://sites.google.com/lesagedavid.fr/now-groove/ateliers'
+const schoolEmail = 'School@lesagedavid.fr'
 ---
 
 <Layout title={l.title} description={l.description}>
-  <Section tone="ink" class="!py-16">
-    <div class="grid items-center gap-10 lg:grid-cols-2">
-      <div>
-        <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{l.heroEyebrow}</p>
-        <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">{l.heroTitle}</h1>
-        <p class="mt-5 text-lg text-cream/80">{l.heroLead}</p>
+  <!-- Bandeau Now Music Academy -->
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <div class="absolute inset-0">
+      <img src="/images/hero-david.webp" width="2400" height="1351" alt="" class="h-full w-full object-cover object-[70%_center]" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-transparent md:via-ink/70 md:to-ink/10"></div>
+    </div>
+    <div class="chroma-bar absolute inset-x-0 top-0 h-1"></div>
+    <div class="relative mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-28">
+      <div class="max-w-xl">
+        <p class="text-xs font-700 uppercase tracking-[0.25em] text-gold">{l.heroEyebrow}</p>
+        <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-6xl">{l.heroTitle}</h1>
+        <p class="mt-5 text-lg text-cream/85">{l.heroLead}</p>
         <div class="mt-8 flex flex-wrap gap-3">
           <Button href="#formules" variant="primary">{l.ctaBook}</Button>
-          <Button href={`mailto:${site.email}?subject=Workshop`} variant="light">{l.ctaWorkshop}</Button>
+          <Button href="#ateliers" variant="light">{l.ctaWorkshop}</Button>
         </div>
       </div>
-      <div class="aspect-[4/3] overflow-hidden rounded-card"><img src="/images/constel-mains.webp" width="1400" height="1008" alt={l.heroTitle} class="h-full w-full object-cover" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <Section>
+    <SectionHeading eyebrow={l.universesEyebrow} title={l.universesTitle} />
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {l.universes.map((u, i) => (
+        <a href={universeMeta[i].href} class="group flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40 transition-shadow hover:shadow-md">
+          <div class="aspect-[4/3] overflow-hidden"><img src={universeMeta[i].img} width="800" height="600" alt={u.t} class="h-full w-full object-cover transition-transform group-hover:scale-105" loading="lazy" /></div>
+          <div class="flex flex-1 flex-col p-6">
+            <Icon name={universeMeta[i].icon} class="h-7 w-7 text-copper" />
+            <h3 class="mt-3 font-display text-xl font-700">{u.t}</h3>
+            <p class="mt-2 flex-1 text-ink-soft/85">{u.d}</p>
+            <span class="mt-4 inline-flex items-center gap-1 font-700 text-rust group-hover:underline">{u.cta} →</span>
+          </div>
+        </a>
+      ))}
     </div>
   </Section>
 
-  <Section>
+  <Section tone="cream-deep">
     <SectionHeading eyebrow={l.promiseEyebrow} title={l.promiseTitle} intro={l.promiseIntro} />
     <div class="mt-10 grid gap-6 md:grid-cols-3">
       {l.pillars.map((c, i) => (
-        <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-6"><Icon name={pillarIcons[i]} class="h-7 w-7 text-copper" /><h3 class="mt-3 font-display text-xl font-700">{c.t}</h3><p class="mt-2 text-ink-soft/85">{c.d}</p></div>
+        <div class="rounded-card border border-ink/10 bg-cream p-6"><Icon name={pillarIcons[i]} class="h-7 w-7 text-copper" /><h3 class="mt-3 font-display text-xl font-700">{c.t}</h3><p class="mt-2 text-ink-soft/85">{c.d}</p></div>
       ))}
     </div>
   </Section>
 
-  <Section tone="cream-deep" id="formules">
+  <Section id="formules">
     <SectionHeading eyebrow={l.formulasEyebrow} title={l.formulasTitle} />
     <div class="mt-10 grid gap-6 md:grid-cols-3">
       {l.formulas.map((f, i) => (
-        <div class="flex flex-col rounded-card border border-ink/10 bg-cream p-6"><Icon name={formulaIcons[i]} class="h-7 w-7 text-copper" /><h3 class="mt-3 font-display text-xl font-700">{f.title}</h3><p class="mt-2 flex-1 text-ink-soft/85">{f.text}</p><p class="mt-4 font-display text-2xl font-700 text-rust">{f.price}</p></div>
+        <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6"><Icon name={formulaIcons[i]} class="h-7 w-7 text-copper" /><h3 class="mt-3 font-display text-xl font-700">{f.title}</h3><p class="mt-2 flex-1 text-ink-soft/85">{f.text}</p><p class="mt-4 font-display text-2xl font-700 text-rust">{f.price}</p></div>
       ))}
     </div>
     <div class="mt-10 text-center">
-      <Button href={`mailto:${site.email}?subject=Reservation`} variant="primary">{l.ctaBook}</Button>
+      <Button href={`mailto:${site.email}?subject=Reservation%20cours`} variant="primary">{l.ctaBook}</Button>
       <p class="mt-3 text-sm text-ink-soft/70">{l.footnote}</p>
+    </div>
+  </Section>
+
+  <Section tone="ink" id="ateliers">
+    <SectionHeading tone="light" eyebrow={l.workshopsEyebrow} title={l.workshopsTitle} intro={l.workshopsIntro} />
+    <div class="mx-auto mt-8 max-w-2xl rounded-card border border-cream/10 bg-cream/5 p-8 text-center">
+      <Icon name="lucide:calendar-clock" class="mx-auto h-10 w-10 text-gold" />
+      <p class="mt-4 text-lg font-600 text-cream/90">{l.workshopsEmpty}</p>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <Button href={workshopsUrl} external variant="primary">{l.workshopsCta}</Button>
+        <Button href={`mailto:${schoolEmail}?subject=Atelier%20de%20rythme%20calebasse`} variant="light">{l.ctaBook}</Button>
+      </div>
+      <p class="mt-5 text-sm text-cream/60">{l.workshopsContact} <a href={`mailto:${schoolEmail}`} class="font-700 text-gold underline">{schoolEmail}</a></p>
     </div>
   </Section>
 </Layout>
