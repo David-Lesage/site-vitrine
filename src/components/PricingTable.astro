@@ -4,7 +4,7 @@
 import Button from '@/components/Button.astro'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
-import { formatAmount, fetchPricesAtBuild, SUPABASE_ANON_KEY, GET_PRICES_URL, type PlanId } from '@/lib/prices'
+import { formatAmount, fetchPricesAtBuild, type PlanId } from '@/lib/prices'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -44,16 +44,13 @@ const signupUrl = site.appUrl + '?signup=1'
 </div>
 <p class="mt-6 text-center text-xs text-ink-soft/65">{t.priceNote}</p>
 
-<script define:vars={{ url: GET_PRICES_URL, key: SUPABASE_ANON_KEY, locale }}>
-  // Rafraîchit les montants en direct depuis Stripe (actif dès que l'origine
-  // du site est autorisée côté CORS de l'Edge Function). Échec silencieux.
+<script define:vars={{ locale }}>
+  // Rafraîchit les montants en direct depuis Stripe via la route serverless
+  // same-origin /api/prices (pas de contrainte CORS). Échec silencieux : on
+  // garde alors les montants figés au build.
   ;(async () => {
     try {
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: { apikey: key, Authorization: 'Bearer ' + key, 'Content-Type': 'application/json' },
-        body: '{}',
-      })
+      const res = await fetch('/api/prices', { headers: { Accept: 'application/json' } })
       if (!res.ok) return
       const data = await res.json()
       const fmt = (p) => {
