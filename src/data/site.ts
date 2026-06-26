@@ -13,7 +13,7 @@ export const site = {
   url: 'https://www.lesagedavid.fr',
   // Lien direct vers l'application Handpan Studio. La connexion, le choix de
   // l'abonnement et le paiement (Stripe) se font directement dans l'app.
-  appUrl: 'https://neotone-studio-delta.vercel.app',
+  appUrl: 'https://play.handpanstudio.app',
   email: 'contact@lesagedavid.fr',
   emailNeotone: 'neotone@lesagedavid.fr',
   phone: '+33 6 10 73 31 52',

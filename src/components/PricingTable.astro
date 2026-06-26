@@ -16,7 +16,7 @@ const prices = await fetchPricesAtBuild()
 const period: Record<PlanId, string> = { monthly: t.pricePerMonth, annual: t.pricePerYear, lifetime: t.priceOnce }
 const badge: Record<PlanId, string | null> = { monthly: null, annual: t.pricePopular, lifetime: t.priceMax }
 const tiers: PlanId[] = ['monthly', 'annual', 'lifetime']
-const signupUrl = site.appUrl + '?signup=1'
+const signupUrl = site.appUrl
 ---
 
 <div class="grid gap-6 lg:grid-cols-4">
