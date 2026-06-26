@@ -3,5 +3,18 @@
   "framework": "astro",
   "installCommand": "bun install",
   "buildCommand": "bun run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "^(www\\.)?(handpanstudio\\.app|handpan-studio\\.app|neotone-studio\\.app|neotonestudio\\.app)$"
+        }
+      ],
+      "destination": "/handpan-studio",
+      "permanent": false
+    }
+  ]
 }
