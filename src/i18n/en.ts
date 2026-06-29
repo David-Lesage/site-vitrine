@@ -347,7 +347,7 @@ export const en: Dict = {
     },
     priceTiers: {
       monthly: { name: 'Studio monthly', blurb: 'The whole studio, month by month. No commitment, stop whenever you want.' },
-      annual: { name: 'Studio yearly', blurb: 'A full year of access, two months free compared to monthly.' },
+      annual: { name: 'Studio yearly', blurb: 'A full year of access — about three months free compared to monthly.' },
       lifetime: { name: 'Studio for life', blurb: 'A single payment, lifetime access. Founder offer, limited quantity.' },
     },
     priceNote: 'Amounts synced live with Stripe. Studio unlocks the entire creation workshop.',

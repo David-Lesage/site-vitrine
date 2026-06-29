@@ -353,7 +353,7 @@ const fr = {
     },
     priceTiers: {
       monthly: { name: 'Studio mensuel', blurb: 'Tout le studio, mois par mois. Sans engagement, tu arrêtes quand tu veux.' },
-      annual: { name: 'Studio annuel', blurb: 'Un an d’accès complet, deux mois offerts par rapport au mensuel.' },
+      annual: { name: 'Studio annuel', blurb: 'Un an d’accès complet — environ trois mois offerts par rapport au mensuel.' },
       lifetime: { name: 'Studio à vie', blurb: 'Un seul paiement, accès à vie. Offre fondateur, en quantité limitée.' },
     },
     priceNote: 'Montants synchronisés en direct avec Stripe. Le Studio débloque tout l’atelier de création.',
