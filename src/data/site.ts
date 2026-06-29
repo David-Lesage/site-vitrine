@@ -49,7 +49,6 @@ export const footerNav = [
 // Prochains showcases publics gratuits (dates neutres, ISO).
 // Le libellé / lieu traduit vient de dict.showroom.agenda*.
 export const agendaEvents = [
-  { date: '2026-06-27', start: '11:00', end: '13:00' },
   { date: '2026-07-19', start: '16:30', end: '18:30' },
 ] as const
 

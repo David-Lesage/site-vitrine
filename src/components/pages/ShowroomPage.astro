@@ -74,7 +74,20 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
     <p class="mt-4 text-center text-sm text-ink-soft/70">{sh.booking} <a href={`mailto:${site.emailNeotone}`} class="font-700 text-rust underline">{site.emailNeotone}</a></p>
   </Section>
 
-  <Section tone="cream-deep" id="agenda">
+  <Section tone="cream-deep">
+    <SectionHeading eyebrow={sh.programEyebrow} title={sh.programTitle} intro={sh.programIntro} />
+    <ol class="mx-auto mt-10 max-w-2xl space-y-4">
+      {sh.program.map((s, i) => (
+        <li class="flex gap-5 rounded-card border border-ink/10 bg-cream p-5">
+          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink font-display text-lg font-700 text-cream">{i + 1}</span>
+          <div><h3 class="font-display text-lg font-700">{s.t}</h3><p class="mt-1 text-ink-soft/85">{s.d}</p></div>
+        </li>
+      ))}
+    </ol>
+    <p class="mx-auto mt-6 max-w-2xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm font-600 text-ink-soft/90">{sh.programNote}</p>
+  </Section>
+
+  <Section id="agenda">
     <SectionHeading eyebrow={sh.agendaEyebrow} title={sh.agendaTitle} intro={sh.agendaIntro} />
     <div class="mx-auto mt-10 max-w-2xl space-y-4">
       {agenda.map((e) => (

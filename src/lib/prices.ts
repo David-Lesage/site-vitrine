@@ -1,5 +1,5 @@
 // ============================================================
-// Tarifs « contribution » de Handpan Studio, résolus DYNAMIQUEMENT
+// Tarifs Studio de Handpan Studio, résolus DYNAMIQUEMENT
 // depuis Stripe via l'Edge Function publique get-prices de l'app
 // Neotone Studio. Dès qu'un prix change dans Stripe, l'affichage suit.
 //
@@ -25,11 +25,12 @@ export interface PriceInfo {
 }
 export type PriceMap = Record<PlanId, PriceInfo>
 
-// Valeurs de repli si la récupération échoue au build (montants au 22/06/2026).
+// Valeurs de repli si la récupération échoue au build (montants au 29/06/2026 ;
+// la vraie source de vérité reste Stripe via /api/prices).
 export const FALLBACK_PRICES: PriceMap = {
-  monthly: { amount: 10, currency: 'eur', interval: 'month' },
-  annual: { amount: 80, currency: 'eur', interval: 'year' },
-  lifetime: { amount: 300, currency: 'eur', interval: null },
+  monthly: { amount: 9.9, currency: 'eur', interval: 'month' },
+  annual: { amount: 89, currency: 'eur', interval: 'year' },
+  lifetime: { amount: 249, currency: 'eur', interval: null },
 }
 
 export function formatAmount(p: PriceInfo | undefined, locale = 'fr-FR'): string {

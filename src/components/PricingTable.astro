@@ -1,5 +1,5 @@
 ---
-// Grille de contributions (gratuit + mensuel / annuel / à vie).
+// Grille d'accès Découverte / Studio (gratuit + mensuel / annuel / à vie).
 // Montants figés au build depuis Stripe, puis rafraîchis en direct côté client.
 import Button from '@/components/Button.astro'
 import { site } from '@/data/site'
@@ -28,7 +28,7 @@ const signupUrl = site.appUrl
     <div class="mt-6"><Button href={signupUrl} external variant="ghost" class="w-full justify-center">{t.priceFreeCta}</Button></div>
   </div>
 
-  <!-- Contributions -->
+  <!-- Studio : mensuel / annuel / à vie -->
   {tiers.map((plan) => (
     <div class:list={['relative flex flex-col rounded-card border p-6', plan === 'annual' ? 'border-copper bg-cream shadow-sm' : 'border-ink/10 bg-cream-deep/40']}>
       {badge[plan] && <span class="absolute -top-3 left-6 rounded-full bg-rust px-3 py-1 text-xs font-700 text-cream">{badge[plan]}</span>}
