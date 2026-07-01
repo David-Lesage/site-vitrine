@@ -52,6 +52,13 @@ export const agendaEvents = [
   { date: '2026-07-19', start: '16:30', end: '18:30' },
 ] as const
 
+// Playlist YouTube « Neotone » (toutes les vidéos liées à l'instrument).
+export const neotonePlaylist = 'https://www.youtube.com/playlist?list=PLns6mQWNwwnS43kRc2dps9asOshpfQ2Ka'
+
+// Vidéos mises en avant sur l'accueil (ids YouTube). Titres → dict.home.proofVideos (même ordre).
+// 1) performance musicale · 2) pourquoi un handpan électronique · 3) tuto créer une gamme
+export const homeVideos = ['KNQc6jCs0VE', 'v87I0csinRY', 'zWqXGlHb2wI'] as const
+
 // Démos vidéo de l'app Handpan Studio (src + poster). Ordre = dict.studio.videos
 export const studioVideos: { src: string; poster: string }[] = [
   { src: '/images/sa-1-tonalite.mp4', poster: '/images/sa-1-tonalite-poster.webp' },

@@ -66,8 +66,9 @@ export const en: Dict = {
     communityButton: 'Join',
     proofEyebrow: 'Sound first',
     proofTitle: 'See and hear the instrument come alive',
-    proofIntro: 'Performance videos on stage, in the studio and in sonic exploration.',
-    proofCta: 'Watch my demos on YouTube',
+    proofIntro: 'I play, I demonstrate, I teach — the Neotone on video. My full playlist is right below.',
+    proofVideos: ['Musical performance on the Neotone', 'Why an electronic handpan?', 'Create your scale — tutorial'],
+    proofCta: 'See the full Neotone playlist',
   },
   neotone: {
     title: 'The Neotone — best digital handpan | David Lesage',

@@ -72,8 +72,9 @@ const fr = {
     communityButton: 'Rejoindre',
     proofEyebrow: 'Le son d’abord',
     proofTitle: 'Voir et entendre l’instrument vivre',
-    proofIntro: 'Des vidéos de jeu sur scène, en studio et en exploration sonore.',
-    proofCta: 'Voir mes démos sur YouTube',
+    proofIntro: 'Je joue, je démontre, je transmets — le Neotone en vidéo. Ma playlist complète juste en dessous.',
+    proofVideos: ['Performance musicale au Neotone', 'Pourquoi un handpan électronique ?', 'Créer sa gamme — tutoriel'],
+    proofCta: 'Voir toute la playlist Neotone',
   },
   neotone: {
     title: 'Le Neotone — meilleur handpan numérique | David Lesage',

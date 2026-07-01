@@ -4,7 +4,8 @@ import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
 import { Icon } from 'astro-icon/components'
-import { site } from '@/data/site'
+import YouTube from '@/components/YouTube.astro'
+import { site, homeVideos, neotonePlaylist } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { personLdJson } from '@/lib/ldJson'
@@ -132,11 +133,14 @@ const universMeta = [
 
   <Section tone="cream-deep">
     <SectionHeading eyebrow={h.proofEyebrow} title={h.proofTitle} intro={h.proofIntro} />
-    <div class="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
-      {['sa-play', 'sa-couleur', 'sa-creation'].map((v) => (
-        <video class="aspect-[3/4] w-full rounded-card object-cover shadow-md" muted loop playsinline autoplay poster={`/images/${v}-poster.webp`}><source src={`/images/${v}.mp4`} type="video/mp4" /></video>
+    <div class="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
+      {homeVideos.map((id, i) => (
+        <figure class="m-0">
+          <YouTube id={id} title={h.proofVideos[i]} />
+          <figcaption class="mt-3 text-sm font-600 text-ink-soft/85">{h.proofVideos[i]}</figcaption>
+        </figure>
       ))}
     </div>
-    <div class="mt-8 text-center"><Button href={site.social.youtube} variant="ghost" external>{h.proofCta}</Button></div>
+    <div class="mt-8 text-center"><Button href={neotonePlaylist} variant="ghost" external>{h.proofCta}</Button></div>
   </Section>
 </Layout>
