@@ -153,7 +153,7 @@ export const en: Dict = {
       formations: { label: 'Lessons & workshops', blurb: 'Learn with me through private lessons and workshops, in person or online.' },
     },
     products: {
-      'handpan-studio': { name: 'Handpan Studio · the app', description: 'My teaching app: colours, geometry and emotions make music visible. Free to start, then Studio from €9.90/month — unlock creation, saving and watermark-free PDF/PNG export.' },
+      'handpan-studio': { name: 'Handpan Studio · the app', description: 'My teaching app: colours, geometry and emotions make music visible. Free to start, then Studio from €9.90/month — unlock creation, saving and PDF/PNG export of your scores.' },
       'neotone-one': { name: 'Neotone¹', description: 'Digital handpan, 10 notes, all the scales, studio quality. Supported purchase: personal discount code + 6-year warranty.' },
       'neotone-mutant': { name: 'Neotone¹ Mutant', description: 'Digital handpan, 19 notes with LCD screen, maximum expression. Supported purchase: discount code + 6-year warranty.' },
       'yishama': { name: 'Yishama exceptional handpan', description: 'One of the best handpan makers in the world (Israel / Hungary). Artisan craftsmanship, instruments up to 19 notes with deep basses and bright highs. I proudly represent them as an ambassador.' },
@@ -343,7 +343,7 @@ export const en: Dict = {
     priceEyebrow: 'Pricing',
     priceTitle: 'Discovery, or Studio',
     priceIntro:
-      'Start for free with Discovery. Upgrade to Studio to unlock the electronic Neotone mode (MIDI), advanced creation, saving and watermark-free PDF/PNG export.',
+      'Start for free with Discovery. Upgrade to Studio to unlock the electronic Neotone mode (MIDI), advanced creation, saving and PDF/PNG export of your scores.',
     priceCta: 'Upgrade to Studio',
     priceFreeCta: 'Start for free',
     pricePopular: 'Most chosen',
@@ -354,12 +354,12 @@ export const en: Dict = {
     priceFree: {
       name: 'Discovery',
       price: 'Free',
-      blurb: 'Create your account and discover the visual approach: visualise and play in acoustic mode, for free.',
+      blurb: 'Create your account and discover the visual approach: visualise, play and export your scores in acoustic mode, for free.',
     },
     priceTiers: {
-      monthly: { name: 'Studio monthly', blurb: 'Unlock the electronic mode (Neotone/MIDI), advanced creation, saving and watermark-free export — month by month, no commitment.' },
-      annual: { name: 'Studio yearly', blurb: 'A full year of access: electronic mode (Neotone/MIDI), advanced creation, saving and watermark-free export. About three months free compared to monthly.' },
-      lifetime: { name: 'Studio for life', blurb: 'A single payment, lifetime access: electronic mode (Neotone/MIDI), advanced creation, saving and watermark-free export. Founder offer, limited quantity.' },
+      monthly: { name: 'Studio monthly', blurb: 'Unlock the electronic mode (Neotone/MIDI), advanced creation, saving and export — month by month, no commitment.' },
+      annual: { name: 'Studio yearly', blurb: 'A full year of access: electronic mode (Neotone/MIDI), advanced creation, saving and export. About three months free compared to monthly.' },
+      lifetime: { name: 'Studio for life', blurb: 'A single payment, lifetime access: electronic mode (Neotone/MIDI), advanced creation, saving and export. Founder offer, limited quantity.' },
     },
     priceNote: 'Amounts synced live with Stripe. Studio unlocks the entire creation workshop.',
     videosEyebrow: 'The app in motion',
