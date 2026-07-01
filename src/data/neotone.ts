@@ -29,10 +29,6 @@ export const models: { id: ModelId; fromPrice: number; woods: Record<WoodKey, nu
   { id: 'mutant', fromPrice: 3150, woods: { frene: 3150, chene: 3150, acajou: 3240, cerisier: 3240, noyer: 3340 } },
 ]
 
-export const modelImages: Record<ModelId, { src: string; w: number; h: number }> = {
-  one: { src: '/images/neotone-1-edition.webp', w: 670, h: 653 },
-  mutant: { src: '/images/neotone-mutant-edition.webp', w: 670, h: 614 },
-}
 
 // Photos défilantes (carrousel) par modèle. `wide` = visuel large (écran, connectique)
 // affiché en `contain` au lieu de `cover`. Ordre repris de l'ancien site.
