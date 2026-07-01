@@ -36,6 +36,7 @@ const ld = [
 <Layout title={s.title} description={s.description} ldJSON={ld}>
   <Section tone="ink" class="!py-16">
     <SectionHeading level={1} tone="light" eyebrow={s.eyebrow} title={s.title2} intro={s.intro} />
+    <p class="mx-auto mt-6 max-w-2xl text-center text-cream/75">{s.ambassadorText}</p>
   </Section>
 
 
@@ -43,7 +44,7 @@ const ld = [
     const cat = catInfo(catId)
     const items = products.filter((p) => p.category === catId && (p.active || p.mode === 'soon'))
     return (
-      <Section id={catId}>
+      <Section id={catId} class="!py-10 lg:!py-12">
         <SectionHeading align="left" eyebrow={cat.label} title={cat.label} intro={cat.blurb} />
         <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((p) => {
