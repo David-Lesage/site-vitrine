@@ -94,10 +94,25 @@ const constelImgs = [
   </Section>
 
   <Section tone="ink">
-    <div class="grid gap-6 md:grid-cols-2">
-      <div class="rounded-card border border-cream/10 bg-cream/5 p-7"><h3 class="font-display text-2xl font-700 text-cream">{st.versionAcoTitle}</h3><p class="mt-3 text-cream/75">{st.versionAcoText}</p><div class="mt-5"><Button href={site.appUrl} external variant="light">{st.versionAcoCta}</Button></div></div>
-      <div class="rounded-card border border-cream/10 bg-cream/5 p-7"><h3 class="font-display text-2xl font-700 text-cream">{st.versionNeoTitle}</h3><p class="mt-3 text-cream/75">{st.versionNeoText}</p><div class="mt-5"><Button href={L('/le-neotone') + '#technologie'} variant="ghost" class="!border-cream/30 !text-cream hover:!bg-cream/10">{st.versionNeoCta}</Button></div></div>
+    <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{st.versionAcoEyebrow}</p>
+        <h3 class="mt-4 font-display text-3xl font-700 leading-tight text-cream md:text-4xl">{st.versionAcoTitle}</h3>
+        <p class="mt-4 text-cream/75">{st.versionAcoText}</p>
+        <ul class="mt-6 space-y-3">
+          {st.versionAcoBullets.map((b) => (
+            <li class="flex gap-3 text-cream/85"><span class="mt-1 text-gold">✦</span><span>{b}</span></li>
+          ))}
+        </ul>
+        <div class="mt-7"><Button href={site.appUrl} external variant="light">{st.versionAcoCta}</Button></div>
+      </div>
+      <figure class="m-0">
+        <img src="/images/app-acoustique.jpg" width="1634" height="902" alt={st.versionAcoCaption} class="w-full rounded-card border border-cream/10 shadow-lg" loading="lazy" />
+        <figcaption class="mt-3 text-center text-sm text-cream/55">{st.versionAcoCaption}</figcaption>
+      </figure>
     </div>
+
+    <div class="mt-8 rounded-card border border-cream/10 bg-cream/5 p-7"><h3 class="font-display text-2xl font-700 text-cream">{st.versionNeoTitle}</h3><p class="mt-3 max-w-2xl text-cream/75">{st.versionNeoText}</p><div class="mt-5"><Button href={L('/le-neotone') + '#technologie'} variant="ghost" class="!border-cream/30 !text-cream hover:!bg-cream/10">{st.versionNeoCta}</Button></div></div>
   </Section>
 
   <Section>
