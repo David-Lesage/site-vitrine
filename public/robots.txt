@@ -1,3 +1,24 @@
+# David Lesage — Musique visible (handpan / Neotone / Handpan Studio)
 User-agent: *
 Allow: /
+
+# Moteurs de réponse IA explicitement bienvenus (référencement génératif / AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://www.lesagedavid.fr/sitemap-index.xml

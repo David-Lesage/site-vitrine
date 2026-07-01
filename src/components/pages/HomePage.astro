@@ -8,7 +8,7 @@ import YouTube from '@/components/YouTube.astro'
 import { site, homeVideos, neotonePlaylist } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
-import { personLdJson } from '@/lib/ldJson'
+import { personLdJson, websiteLdJson, videoLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -35,7 +35,7 @@ const universMeta = [
 ]
 ---
 
-<Layout title={h.title} description={h.description} ldJSON={personLdJson()}>
+<Layout title={h.title} description={h.description} ldJSON={[personLdJson(), websiteLdJson(), ...videoLdJson(homeVideos.map((id, i) => ({ id, name: h.proofVideos[i] })))]}>
   <section class="relative overflow-hidden bg-ink text-cream">
     <!-- Photo de David + handpan, pleinement visible à droite -->
     <div class="absolute inset-0">

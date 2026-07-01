@@ -7,6 +7,7 @@ import { Icon } from 'astro-icon/components'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
+import { courseLdJson, breadcrumbLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -26,7 +27,7 @@ const workshopsUrl = 'https://sites.google.com/lesagedavid.fr/now-groove/atelier
 const schoolEmail = 'School@lesagedavid.fr'
 ---
 
-<Layout title={l.title} description={l.description}>
+<Layout title={l.title} description={l.description} ldJSON={[courseLdJson({ name: l.heroTitle, description: l.description, url: '/cours' }), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: t.common.nav.lessons, url: L('/cours') }])]}>
   <!-- Bandeau Now Music Academy -->
   <section class="relative overflow-hidden bg-ink text-cream">
     <div class="absolute inset-0">

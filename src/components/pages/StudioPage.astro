@@ -9,6 +9,7 @@ import { Icon } from 'astro-icon/components'
 import { chromaKeys, site, studioVideos } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
+import { softwareAppLdJson, breadcrumbLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -30,7 +31,7 @@ const constelImgs = [
 ]
 ---
 
-<Layout title={st.title} description={st.description}>
+<Layout title={st.title} description={st.description} ldJSON={[softwareAppLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: t.common.nav.studio, url: L('/handpan-studio') }])]}>
   <section class="relative overflow-hidden bg-ink text-cream">
     <div class="chroma-bar absolute inset-x-0 top-0 h-1.5"></div>
     <div class="mx-auto max-w-4xl px-4 py-24 text-center lg:py-28">
