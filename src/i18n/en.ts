@@ -515,7 +515,7 @@ export const en: Dict = {
     modelFeatures: {
       one: [
         '9 main notes + ding + dome (10 playing zones)',
-        '9 onboard scales via dedicated keys · unlimited over wifi',
+        'Up to 9 scales loaded offline (dedicated keys) · unlimited when online',
         'Unlimited custom scale creation via web interface',
         'Multifunction ding: switch scale · built-in recorder',
         'Full MIDI control (in / out)',
@@ -526,7 +526,7 @@ export const en: Dict = {
       ],
       mutant: [
         '9 note slots with extension zones = 19 notes per scale',
-        '18 onboard scales via dedicated keys · unlimited over wifi',
+        'Up to 18 scales loaded offline (dedicated keys) · unlimited when online',
         'Unlimited custom scale creation via web interface',
         'Built-in backlit LCD screen',
         'Multifunction ding: switch scale · built-in recorder',
@@ -539,7 +539,7 @@ export const en: Dict = {
     },
     specs: [
       { title: 'Studio audio quality', items: ['48 kHz / 32 bit · 24-bit / 384 kHz DAC', 'Signal-to-noise ratio: 112 dB', 'Audio latency: 5 ms', '1,300 studio samples per scale', 'Notes: 7 nuances × 10–15 velocities'] },
-      { title: '6 scales included + unlimited', items: ['B-Amara · C-Aegean · C# Pygmy', 'D-Kurd · F#2 Pygmy · G-Romanian Hijaz', 'Unlimited custom scale creation', '5 MAG Instruments scales, 1 Yishama scale'] },
+      { title: '7 official scales included (+ unlimited via the app)', items: ['Official scales from MAG Instruments & Yishama handpans', 'E.g. B-Amara · C-Aegean · C# Pygmy · D-Kurd · F#2 Pygmy · G-Romanian Hijaz…', 'Create your own scales, with no limit', 'Scales shared freely by the community'] },
       { title: '8-hour battery', items: ['Built-in Li-Ion 7.4 V · 7,800 mAh battery', '8 hours of continuous playing', 'Full charge: 4 hours', '12 V power adapter included'] },
       { title: 'Full MIDI in/out', items: ['MIDI controller (out) + MIDI sound module (in)', '6 body zones + 18 pads + Ding + Dome', 'MIDI notes assignable per zone', 'Compatible with MIDI standards'] },
       { title: 'Pro connectivity', items: ['Unbalanced line outputs (R/L)', 'Headphone output · MIDI in/out', '1 pedal input (volume or expression)', 'Mono (1 jack) or stereo (2 jacks)', 'WiFi · settings, scale creation'] },

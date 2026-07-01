@@ -523,7 +523,7 @@ const fr = {
     modelFeatures: {
       one: [
         '9 notes principales + ding + dome (10 zones de jeu)',
-        '9 gammes embarquées via touches dédiées · illimitées en wifi',
+        'Jusqu’à 9 gammes chargées hors-ligne (touches dédiées) · illimité une fois connecté',
         'Création de gammes personnalisées illimitées via interface web',
         'Ding multifonction : changer de gamme · enregistreur intégré',
         'Contrôle MIDI complet (in / out)',
@@ -534,7 +534,7 @@ const fr = {
       ],
       mutant: [
         '9 emplacements de notes avec zones d’extension = 19 notes par gamme',
-        '18 gammes embarquées via touches dédiées · illimitées en wifi',
+        'Jusqu’à 18 gammes chargées hors-ligne (touches dédiées) · illimité une fois connecté',
         'Création de gammes personnalisées illimitées via interface web',
         'Écran LCD rétroéclairé intégré',
         'Ding multifonction : changer de gamme · enregistreur intégré',
@@ -547,7 +547,7 @@ const fr = {
     },
     specs: [
       { title: 'Qualité audio studio', items: ['48 kHz / 32 bit · DAC 24 bits / 384 kHz', 'Rapport signal/bruit : 112 dB', 'Latence audio : 5 ms', '1 300 échantillons studio par gamme', 'Notes : 7 nuances × 10–15 vélocités'] },
-      { title: '6 gammes incluses + illimitées', items: ['B-Amara · C-Aegean · C# Pygmy', 'D-Kurd · F#2 Pygmy · G-Romanian Hijaz', 'Création de gammes personnalisées illimitées', '5 gammes MAG Instruments, 1 gamme Yishama'] },
+      { title: '7 gammes officielles incluses (+ illimitées via l’app)', items: ['Gammes officielles issues de handpans MAG Instruments & Yishama', 'Ex. : B-Amara · C-Aegean · C# Pygmy · D-Kurd · F#2 Pygmy · G-Romanian Hijaz…', 'Crée tes propres gammes, sans aucune limite', 'Gammes partagées gratuitement par la communauté'] },
       { title: 'Batterie 8 heures', items: ['Batterie Li-Ion 7,4 V · 7 800 mAh intégrée', '8 heures d’autonomie en jeu continu', 'Charge complète : 4 heures', 'Adaptateur secteur 12 V fourni'] },
       { title: 'MIDI in/out complet', items: ['Contrôleur MIDI (out) + module sonore MIDI (in)', '6 zones du corps + 18 pads + Ding + Dome', 'Notes MIDI assignables par zone', 'Compatible standards MIDI'] },
       { title: 'Connectique pro', items: ['Sorties ligne (R/L) asymétriques', 'Sortie casque · MIDI in/out', '1 entrée pédale (volume ou expression)', 'Mono (1 jack) ou stéréo (2 jacks)', 'WiFi · réglages, création de gammes'] },
