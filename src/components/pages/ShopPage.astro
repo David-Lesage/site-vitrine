@@ -44,7 +44,10 @@ const ld = [
     const cat = catInfo(catId)
     const items = products.filter((p) => p.category === catId && (p.active || p.mode === 'soon'))
     return (
-      <Section id={catId} class="!py-10 lg:!py-12">
+      <Section id={catId} tone={catId === 'creations' ? 'cream-deep' : 'cream'} class="!py-10 lg:!py-12">
+        {catId === 'creations' && (
+          <span class="mb-4 inline-flex items-center gap-2 rounded-full bg-copper/15 px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-copper"><Icon name="lucide:sparkles" class="h-4 w-4" /> {s.creationsBadge}</span>
+        )}
         <SectionHeading align="left" eyebrow={cat.label} title={cat.label} intro={cat.blurb} />
         <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((p) => {

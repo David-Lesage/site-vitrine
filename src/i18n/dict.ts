@@ -140,6 +140,7 @@ const fr = {
     soonLong: 'Bientôt disponible',
     addCart: 'Ajouter au panier',
     orderEmail: 'Commander par email',
+    creationsBadge: 'Signature David Lesage',
     calcOrder: 'Calculer mon prix & commander',
     linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: 'Muling' },
     linkCtas: { buy: 'Voir l’offre →', listen: 'Écouter →', discover: 'Découvrir →', order: 'Commander →', interested: 'Ce micro m’intéresse →' },
@@ -150,10 +151,11 @@ const fr = {
     categories: {
       handpans: { label: 'Handpans numériques', blurb: 'Les Neotone, sélectionnés et accompagnés par David.' },
       app: { label: 'Application', blurb: 'Handpan Studio — l’app pédagogique qui rend la musique visible.' },
-      instruments: { label: 'Instruments d’exception', blurb: 'Je collabore avec des fabricants d’exception dont je représente fièrement la qualité. À travers moi, profite de coupons de réduction, de démonstrations — et de certains instruments que je revends.' },
+      creations: { label: 'Mes créations · Now Groove', blurb: 'Créées par moi : ma méthode de rythme Now Groove, la calebasse signature et sa housse faite main.' },
+      instruments: { label: 'Instruments d’exception', blurb: 'Je collabore avec des fabricants d’exception dont je représente fièrement la qualité. À travers moi, profite de coupons de réduction et de démonstrations lors de mes showcases.' },
       micros: { label: 'Micros', blurb: 'Captation pour handpan acoustique, voix et gong.' },
       musique: { label: 'Musique', blurb: 'Mes albums et mes reprises, à écouter en streaming sur toutes les plateformes.' },
-      formations: { label: 'Formations & cours', blurb: 'Apprends avec moi : ma méthode de rythme Now Groove et mes cours particuliers & stages.' },
+      formations: { label: 'Cours & stages', blurb: 'Apprends avec moi en cours particuliers et en stages, en présentiel ou à distance.' },
     },
     products: {
       'handpan-studio': { name: 'Handpan Studio · l’application', description: 'Mon application pédagogique : couleurs, géométrie et émotions rendent la musique visible. Découverte gratuite, puis Studio à partir de 9,90 €/mois — débloque la création, la sauvegarde et l’export.' },

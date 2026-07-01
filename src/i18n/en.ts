@@ -134,6 +134,7 @@ export const en: Dict = {
     soonLong: 'Coming soon',
     addCart: 'Add to cart',
     orderEmail: 'Order by email',
+    creationsBadge: 'David Lesage signature',
     calcOrder: 'Calculate my price & order',
     linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: 'Muling' },
     linkCtas: { buy: 'See offer →', listen: 'Listen →', discover: 'Discover →', order: 'Order →', interested: 'I’m interested →' },
@@ -144,10 +145,11 @@ export const en: Dict = {
     categories: {
       handpans: { label: 'Digital handpans', blurb: 'The Neotone instruments, selected and supported by David.' },
       app: { label: 'App', blurb: 'Handpan Studio — the teaching app that makes music visible.' },
-      instruments: { label: 'Exceptional instruments', blurb: 'I work with outstanding makers whose quality I’m proud to represent. Through me, enjoy discount coupons, demos — and some instruments I resell directly.' },
+      creations: { label: 'My creations · Now Groove', blurb: 'Created by me: my Now Groove rhythm method, the signature calabash and its handmade cover.' },
+      instruments: { label: 'Exceptional instruments', blurb: 'I work with outstanding makers whose quality I’m proud to represent. Through me, enjoy discount coupons and demos at my showcases.' },
       micros: { label: 'Microphones', blurb: 'Pickup for acoustic handpan, voice and gong.' },
       musique: { label: 'Music', blurb: 'My albums and covers, to stream on every platform.' },
-      formations: { label: 'Courses & training', blurb: 'Learn with me: my Now Groove rhythm method and my private lessons & workshops.' },
+      formations: { label: 'Lessons & workshops', blurb: 'Learn with me through private lessons and workshops, in person or online.' },
     },
     products: {
       'handpan-studio': { name: 'Handpan Studio · the app', description: 'My teaching app: colours, geometry and emotions make music visible. Free to start, then Studio from €9.90/month — unlock creation, saving and export.' },
