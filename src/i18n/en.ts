@@ -26,7 +26,7 @@ export const en: Dict = {
       rights: 'Independent Neotone ambassador · All prices are indicative and may change without notice.',
     },
     skip: 'Skip to content',
-    credentials: ['National Conservatory', 'Drums award', 'Certified Neotone ambassador', 'Showroom Paris 20th'],
+    credentials: ['Conservatory award', 'The Voice · Season 11', 'Neotone · Yishama · Maison du Ngoni ambassador', 'Showroom Paris 20th'],
     emotions: ['Balance', 'Momentum', 'Adventure', 'Calm', 'Tension', 'Nostalgia', 'Mystery'],
   },
   home: {

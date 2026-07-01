@@ -32,7 +32,7 @@ const fr = {
       rights: 'Ambassadeur indépendant Neotone · Tous les prix sont indicatifs et peuvent évoluer sans préavis.',
     },
     skip: 'Aller au contenu',
-    credentials: ['Conservatoire national', 'Prix de batterie', 'Ambassadeur certifié Neotone', 'Showroom Paris 20ᵉ'],
+    credentials: ['Prix du Conservatoire', 'The Voice · Saison 11', 'Ambassadeur Neotone · Yishama · Maison du Ngoni', 'Showroom Paris 20ᵉ'],
     emotions: ['Équilibre', 'Élan', 'Aventure', 'Détente', 'Tension', 'Nostalgie', 'Mystère'],
   },
   home: {
