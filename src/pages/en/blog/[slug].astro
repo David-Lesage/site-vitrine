@@ -1,0 +1,140 @@
+---
+import { getCollection, render } from 'astro:content'
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import Button from '@/components/Button.astro'
+import YouTube from '@/components/YouTube.astro'
+import { localizePath } from '@/i18n/utils'
+import { articleLdJson, breadcrumbLdJson, videoLdJson } from '@/lib/ldJson'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (e) => e.data.lang === 'en' && !e.data.draft)
+  return posts.map((post) => ({
+    params: { slug: post.data.permalink },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+const d = post.data
+const url = `/en/blog/${post.data.permalink}`
+
+const dateFmt = new Intl.DateTimeFormat('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
+const iso = (date: Date) => date.toISOString()
+
+const ldJSON: unknown[] = [
+  articleLdJson({
+    title: d.title,
+    description: d.description,
+    url,
+    image: d.cover,
+    datePublished: iso(d.pubDate),
+    dateModified: d.updatedDate ? iso(d.updatedDate) : undefined,
+  }),
+  breadcrumbLdJson([
+    { name: 'Home', url: '/en' },
+    { name: 'Blog', url: '/en/blog' },
+    { name: d.title, url },
+  ]),
+]
+if (d.youtubeId) ldJSON.push(...videoLdJson([{ id: d.youtubeId, name: d.title, description: d.description }]))
+---
+
+<Layout title={`${d.title} · David Lesage`} description={d.description} image={d.cover} ogType="article" ldJSON={ldJSON}>
+  <Section width="narrow">
+    <nav aria-label="Breadcrumb" class="text-sm text-ink-soft/70">
+      <a href={localizePath('/', 'en')} class="hover:text-rust">Home</a>
+      <span class="mx-1.5">/</span>
+      <a href={localizePath('/blog', 'en')} class="hover:text-rust">Blog</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-ink-soft">{d.title}</span>
+    </nav>
+
+    <header class="mt-6">
+      <div class="flex flex-wrap items-center gap-2 text-xs font-600 uppercase tracking-[0.12em] text-copper">
+        {d.tags.map((tag) => <span class="rounded-full bg-ink/5 px-3 py-1">{tag}</span>)}
+        <time datetime={iso(d.pubDate)} class="text-ink-soft/70">{dateFmt.format(d.pubDate)}</time>
+      </div>
+      <h1 class="mt-4 font-display text-3xl font-700 leading-tight text-ink md:text-4xl">{d.title}</h1>
+      <p class="mt-4 text-lg leading-relaxed text-ink-soft/85">{d.description}</p>
+    </header>
+
+    <img
+      src={d.cover}
+      alt={d.title}
+      width="768"
+      height="432"
+      class="mt-8 aspect-[16/9] w-full rounded-card object-cover shadow-sm"
+    />
+
+    {d.youtubeId && (
+      <div class="mt-8">
+        <YouTube id={d.youtubeId} title={d.title} />
+      </div>
+    )}
+
+    <div class="prose-blog mt-10">
+      <Content />
+    </div>
+
+    <div class="mt-14 rounded-card border border-ink/10 bg-cream-deep p-8 text-center shadow-sm">
+      <p class="font-display text-xl font-700 text-ink">Ready to make your colours sing?</p>
+      <p class="mt-2 text-ink-soft/85">Try the app for free, or discover the electronic Neotone handpan.</p>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <Button href={localizePath('/handpan-studio', 'en')} variant="primary">Discover Handpan Studio</Button>
+        <Button href={localizePath('/le-neotone', 'en')} variant="ghost">The Neotone</Button>
+      </div>
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .prose-blog :global(h2) {
+    font-family: var(--font-display, inherit);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-ink);
+  }
+  .prose-blog :global(h3) {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-ink);
+  }
+  .prose-blog :global(p) {
+    margin-top: 1rem;
+    line-height: 1.75;
+    color: color-mix(in srgb, var(--color-ink) 85%, transparent);
+  }
+  .prose-blog :global(ul),
+  .prose-blog :global(ol) {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    line-height: 1.75;
+    color: color-mix(in srgb, var(--color-ink) 85%, transparent);
+  }
+  .prose-blog :global(ul) { list-style: disc; }
+  .prose-blog :global(ol) { list-style: decimal; }
+  .prose-blog :global(li) { margin-top: 0.4rem; }
+  .prose-blog :global(li)::marker { color: var(--color-copper); }
+  .prose-blog :global(a) {
+    color: var(--color-rust);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .prose-blog :global(a:hover) { color: var(--color-copper); }
+  .prose-blog :global(strong) { color: var(--color-ink); font-weight: 700; }
+  .prose-blog :global(blockquote) {
+    margin-top: 1.5rem;
+    border-left: 3px solid var(--color-copper);
+    padding-left: 1.25rem;
+    font-style: italic;
+    color: color-mix(in srgb, var(--color-ink) 75%, transparent);
+  }
+</style>

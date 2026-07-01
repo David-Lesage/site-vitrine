@@ -35,6 +35,7 @@ export const nav = [
   { key: 'shop', href: '/boutique' },
   { key: 'lessons', href: '/cours' },
   { key: 'studio', href: '/handpan-studio' },
+  { key: 'blog', href: '/blog' },
   { key: 'showroom', href: '/showroom' },
   { key: 'about', href: '/a-propos' },
   { key: 'contact', href: '/contact' },

@@ -1,0 +1,64 @@
+---
+import { getCollection, render } from 'astro:content'
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import { localizePath } from '@/i18n/utils'
+import { breadcrumbLdJson } from '@/lib/ldJson'
+
+const lang = 'fr' as const
+const posts = (await getCollection('blog', (e) => e.data.lang === lang && !e.data.draft)).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+)
+
+const dateFmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+const title = 'Blog handpan — apprendre par les couleurs · David Lesage'
+const description =
+  'Le blog de David Lesage : méthode ChromaKeys, handpan électronique Neotone, création de gammes et conseils pour apprendre le handpan autrement, sans solfège.'
+
+const ldJSON = breadcrumbLdJson([
+  { name: 'Accueil', url: '/' },
+  { name: 'Blog', url: '/blog' },
+])
+---
+
+<Layout title={title} description={description} ldJSON={ldJSON}>
+  <Section>
+    <SectionHeading
+      eyebrow="Blog"
+      title="Apprendre le handpan, autrement"
+      intro="Couleurs, formes et émotions : la méthode de David Lesage, le handpan électronique Neotone et des tutoriels pour progresser à ton rythme."
+      align="center"
+    />
+
+    <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <article class="group flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <a href={localizePath(`/blog/${post.data.permalink}`, lang)} class="block">
+            <img
+              src={post.data.cover}
+              alt={post.data.title}
+              width="480"
+              height="300"
+              loading="lazy"
+              class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105"
+            />
+          </a>
+          <div class="flex flex-1 flex-col p-6">
+            <div class="flex flex-wrap items-center gap-2 text-xs font-600 uppercase tracking-[0.12em] text-copper">
+              {post.data.tags.slice(0, 1).map((tag) => <span>{tag}</span>)}
+              <span class="text-ink-soft/60">· {dateFmt.format(post.data.pubDate)}</span>
+            </div>
+            <h2 class="mt-3 font-display text-xl font-700 leading-snug text-ink">
+              <a href={localizePath(`/blog/${post.data.permalink}`, lang)} class="transition-colors group-hover:text-rust">
+                {post.data.title}
+              </a>
+            </h2>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-ink-soft/85">{post.data.description}</p>
+            <span class="mt-4 text-sm font-700 text-rust">Lire l'article →</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </Section>
+</Layout>

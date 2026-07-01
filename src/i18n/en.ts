@@ -9,6 +9,7 @@ export const en: Dict = {
       shop: 'Shop',
       lessons: 'Lessons',
       studio: 'Handpan Studio',
+      blog: 'Blog',
       showroom: 'Showroom',
       about: 'About',
       contact: 'Contact',

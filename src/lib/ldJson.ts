@@ -187,6 +187,31 @@ export function itemListLdJson(items: { name: string; url: string; image: string
   }
 }
 
+// Article de blog (schema.org Article) — auteur/éditeur = entité David Lesage
+export function articleLdJson(p: {
+  title: string
+  description: string
+  url: string
+  image: string
+  datePublished: string
+  dateModified?: string
+}) {
+  const url = new URL(p.url, site.url).toString()
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: p.title,
+    description: p.description,
+    image: [new URL(p.image, site.url).toString()],
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    datePublished: p.datePublished,
+    dateModified: p.dateModified || p.datePublished,
+    author: { '@id': `${site.url}/#david-lesage`, '@type': 'Person', name: 'David Lesage', url: site.url },
+    publisher: { '@id': `${site.url}/#david-lesage`, '@type': 'Person', name: 'David Lesage', url: site.url },
+  }
+}
+
 export function breadcrumbLdJson(trail: { name: string; url: string }[]) {
   return {
     '@context': 'https://schema.org',

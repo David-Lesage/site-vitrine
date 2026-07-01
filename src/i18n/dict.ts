@@ -15,6 +15,7 @@ const fr = {
       shop: 'Boutique',
       lessons: 'Cours',
       studio: 'Handpan Studio',
+      blog: 'Blog',
       showroom: 'Showroom',
       about: 'À propos',
       contact: 'Contact',
