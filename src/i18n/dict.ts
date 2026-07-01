@@ -324,7 +324,7 @@ const fr = {
     versionAcoCta: 'Ouvrir l’application',
     versionNeoTitle: 'Version Neotone',
     versionNeoText: 'Relie ton Neotone à l’app via MIDI : ton jeu s’affiche en temps réel sur le handpan virtuel, et l’app valide tes exercices d’accords et de gammes. Intégration MIDI temps réel.',
-    versionNeoCta: 'Voir le MIDI du Neotone',
+    versionNeoCta: 'Découvrir le Neotone',
     storyEyebrow: 'L’histoire — par David Lesage',
     storyTitle: 'L’outil que j’aurais rêvé qu’on m’enseigne, enfant',
     storyP1: 'En découvrant le handpan, j’ai retrouvé le mur de mon enfance : aucune méthode, et la difficulté d’organiser visuellement les chemins de notes. Puis, avec le Neotone, une nouvelle difficulté : les notes changent de place à chaque gamme.',

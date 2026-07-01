@@ -318,7 +318,7 @@ export const en: Dict = {
     versionAcoCta: 'Open the app',
     versionNeoTitle: 'Neotone version',
     versionNeoText: 'Link your Neotone to the app via MIDI: your playing appears live on the virtual handpan, and the app validates your chord and scale exercises. Real-time MIDI integration.',
-    versionNeoCta: 'See the Neotone’s MIDI',
+    versionNeoCta: 'Discover the Neotone',
     storyEyebrow: 'The story — by David Lesage',
     storyTitle: 'The tool I wish I’d been taught as a child',
     storyP1: 'When I discovered the handpan, I hit the wall of my childhood again: no method, and the difficulty of visually organising the paths of notes. Then, with the Neotone, a new difficulty: the notes change place with every scale.',
