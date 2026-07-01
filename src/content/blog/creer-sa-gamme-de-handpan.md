@@ -6,7 +6,6 @@ cover: "/images/app-creation.webp"
 tags: ["gammes", "tutoriel"]
 lang: "fr"
 permalink: "creer-sa-gamme-de-handpan"
-youtubeId: "zWqXGlHb2wI"
 draft: false
 ---
 

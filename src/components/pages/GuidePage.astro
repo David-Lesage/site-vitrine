@@ -1,0 +1,168 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import { Icon } from 'astro-icon/components'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import { articleLdJson, breadcrumbLdJson, faqLdJson } from '@/lib/ldJson'
+import type { Lang } from '@/i18n/config'
+import { getGuide } from '@/data/guides'
+
+interface Props {
+  lang: Lang
+  guideKey: 'learn' | 'vsAcoustic' | 'chooseHandpan'
+}
+const { lang, guideKey } = Astro.props
+const t = getDict(lang)
+const g = getGuide(lang, guideKey)
+const L = (p: string) => localizePath(p, lang)
+// Localise un lien interne (chemin neutre) ; laisse les URL absolues telles quelles.
+const href = (link: { href: string; external?: boolean }) =>
+  link.external || /^https?:\/\//.test(link.href) ? link.href : L(link.href)
+
+// Les liens internes du corps sont écrits en chemins neutres ('/handpan-studio').
+// En EN on les préfixe automatiquement pour rester dans la bonne langue.
+const localizeHtml = (html: string) =>
+  lang === 'fr' ? html : html.replace(/href="(\/[^"]*)"/g, (_m, p) => `href="${L(p)}"`)
+
+const ld = [
+  articleLdJson({
+    title: g.title,
+    description: g.description,
+    url: L('/' + g.slug),
+    image: '/images/hero-david.jpg',
+    datePublished: g.datePublished,
+    dateModified: g.dateModified,
+  }),
+  breadcrumbLdJson([
+    { name: t.common.nav.home, url: L('/') },
+    { name: g.breadcrumbLabel, url: L('/' + g.slug) },
+  ]),
+  faqLdJson(g.faq),
+]
+---
+
+<Layout title={g.title} description={g.description} keywords={g.keywords} ldJSON={ld} ogType="article">
+  <!-- Héros -->
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <div class="chroma-bar absolute inset-x-0 top-0 h-1"></div>
+    <div class="mx-auto max-w-4xl px-4 py-20 lg:px-8 lg:py-28">
+      <nav aria-label="breadcrumb" class="text-xs text-cream/60">
+        <a href={L('/')} class="hover:text-gold">{t.common.nav.home}</a>
+        <span class="mx-2">/</span>
+        <span class="text-cream/80">{g.breadcrumbLabel}</span>
+      </nav>
+      <p class="mt-6 text-xs font-700 uppercase tracking-[0.25em] text-gold">{g.eyebrow}</p>
+      <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">
+        <Fragment set:html={g.h1} />
+      </h1>
+      <p class="mt-6 max-w-3xl border-l-2 border-gold/60 pl-5 text-lg leading-relaxed text-cream/90">
+        {g.leadAnswer}
+      </p>
+    </div>
+  </section>
+
+  <!-- Corps -->
+  <Section width="narrow">
+    <div class="space-y-14">
+      {g.sections.map((s) => (
+        <article id={s.id} class="scroll-mt-24">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-copper/10">
+              <Icon name={s.icon} class="h-5 w-5 text-copper" />
+            </span>
+            <h2 class="font-display text-2xl font-700 leading-tight md:text-3xl">{s.heading}</h2>
+          </div>
+          <div class="mt-5 space-y-4">
+            {s.blocks.map((b) => {
+              if (b.kind === 'p') return <p class="text-lg leading-relaxed text-ink-soft/90 [&_a]:font-600 [&_a]:text-rust [&_a]:underline [&_a]:decoration-copper/40 [&_a]:underline-offset-2 hover:[&_a]:decoration-copper" set:html={localizeHtml(b.html)} />
+              if (b.kind === 'ul') return (
+                <ul class="space-y-2.5">
+                  {b.items.map((it) => (
+                    <li class="flex gap-3 text-lg leading-relaxed text-ink-soft/90">
+                      <Icon name="lucide:check" class="mt-1.5 h-4 w-4 shrink-0 text-copper" />
+                      <span>{it}</span>
+                    </li>
+                  ))}
+                </ul>
+              )
+              return (
+                <div class="overflow-x-auto rounded-card border border-ink/10">
+                  <table class="w-full border-collapse text-left text-sm">
+                    <thead>
+                      <tr class="bg-cream-deep/60">
+                        {b.head.map((h, i) => (
+                          <th class:list={['px-4 py-3 font-display font-700', i === 0 ? '' : 'text-ink']}>{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {b.rows.map((row) => (
+                        <tr class="border-t border-ink/10 align-top">
+                          {row.map((cell, i) => (
+                            <td class:list={['px-4 py-3', i === 0 ? 'font-600 text-ink' : 'text-ink-soft/90']}>{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )
+            })}
+          </div>
+        </article>
+      ))}
+
+      <!-- Maillage interne visible -->
+      <aside class="rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+        <p class="font-display text-lg font-700">{g.relatedHeading}</p>
+        <ul class="mt-4 space-y-2">
+          {g.related.map((r) => (
+            <li>
+              <a
+                href={href(r)}
+                class="inline-flex items-center gap-2 font-600 text-rust hover:underline"
+                {...(r.external ? { target: '_blank', rel: 'noopener' } : {})}
+              >
+                <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                {r.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    </div>
+  </Section>
+
+  <!-- FAQ -->
+  <Section tone="cream-deep" width="narrow" id="faq">
+    <SectionHeading eyebrow="FAQ" title={g.faqHeading} align="left" />
+    <div class="mt-8 space-y-3">
+      {g.faq.map((item) => (
+        <details class="group rounded-card border border-ink/10 bg-cream p-5">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-lg font-600 marker:content-none">
+            {item.q}
+            <Icon name="lucide:chevron-down" class="h-5 w-5 shrink-0 text-copper transition-transform group-open:rotate-180" />
+          </summary>
+          <p class="mt-3 leading-relaxed text-ink-soft/90">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </Section>
+
+  <!-- CTA final -->
+  <Section tone="ink">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="font-display text-3xl font-700 leading-tight md:text-4xl">{g.cta.heading}</h2>
+      <p class="mt-4 text-lg text-cream/85">{g.cta.text}</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <Button href={href(g.cta.primary)} external={g.cta.primary.external} variant="primary">{g.cta.primary.label}</Button>
+        {g.cta.secondary && (
+          <Button href={href(g.cta.secondary)} external={g.cta.secondary.external} variant="light">{g.cta.secondary.label}</Button>
+        )}
+      </div>
+    </div>
+  </Section>
+</Layout>

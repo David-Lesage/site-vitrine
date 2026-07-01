@@ -42,6 +42,9 @@ export const nav = [
 ] as const
 
 export const footerNav = [
+  { key: 'learnHandpan', href: '/apprendre-le-handpan' },
+  { key: 'electricVsAcoustic', href: '/handpan-electronique-vs-acoustique' },
+  { key: 'chooseHandpan', href: '/quel-handpan-choisir' },
   { key: 'newsletter', href: '/#communaute' },
   { key: 'faq', href: '/le-neotone#faq' },
   { key: 'legal', href: '/mentions-legales' },
