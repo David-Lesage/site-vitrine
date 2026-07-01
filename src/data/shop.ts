@@ -33,7 +33,7 @@ export const categoryIds = ['handpans', 'app', 'creations', 'instruments', 'micr
 
 export const products: Product[] = [
   // Application Handpan Studio — produit phare digital
-  { id: 'handpan-studio', price: 0, image: '/images/app-logique.webp', imgW: 1100, imgH: 1327, url: '/handpan-studio', category: 'app', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'app', priceLabel: 'Gratuit · Studio dès 9,90 €/mois', images: ['/images/app-logique.webp', '/images/app-atlas.webp', '/images/app-creation.webp', '/images/app-midi.webp', '/images/constel-polygone.webp'] },
+  { id: 'handpan-studio', price: 0, image: '/images/app-logique.webp', imgW: 1100, imgH: 1327, url: '/handpan-studio', category: 'app', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'app', priceLabel: 'Version gratuite ou Studio dès 9,90 €/mois', images: ['/images/app-logique.webp', '/images/app-atlas.webp', '/images/app-creation.webp', '/images/app-midi.webp', '/images/constel-polygone.webp'] },
   { id: 'neotone-one', price: 1990, image: '/images/neotone1-1.jpg', imgW: 670, imgH: 653, url: '/le-neotone', category: 'handpans', active: true, mode: 'quote', images: modelCarousels.one.map((s) => s.src) },
   { id: 'neotone-mutant', price: 3150, image: '/images/mutant-0.jpg', imgW: 670, imgH: 614, url: '/le-neotone', category: 'handpans', active: true, mode: 'quote', images: modelCarousels.mutant.map((s) => s.src) },
   // Instruments d'exception — joués / créés / recommandés par David (Linktree)
