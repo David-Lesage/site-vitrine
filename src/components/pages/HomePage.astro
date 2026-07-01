@@ -31,9 +31,9 @@ const heroLeadHtml = decorateSentence(h.heroLead, [
   { word: emoWord, opts: { bold: true, oGlyph: 'faces' } },
 ])
 const universMeta = [
-  { img: '/images/neotone-1-cutout.webp', w: 670, h: 653, icon: 'lucide:disc-3', href: '/le-neotone' },
-  { img: '/images/constel-mains.webp', w: 1400, h: 1008, icon: 'lucide:graduation-cap', href: '/cours' },
-  { img: '/images/app-logique.webp', w: 1100, h: 1327, icon: 'lucide:sparkles', href: '/handpan-studio' },
+  { img: '/images/neotone-mutant-noyer.webp', w: 600, h: 600, icon: 'lucide:disc-3', href: '/le-neotone', fit: 'contain' },
+  { img: '/images/prod-cours-stages.jpg', w: 375, h: 375, icon: 'lucide:graduation-cap', href: '/cours', fit: 'cover-top' },
+  { img: '/images/app-acoustique.jpg', w: 1634, h: 902, icon: 'lucide:sparkles', href: '/handpan-studio', fit: 'cover' },
 ]
 ---
 
@@ -76,8 +76,8 @@ const universMeta = [
     <div class="mt-12 grid gap-6 md:grid-cols-3">
       {h.univers.map((u, i) => (
         <a href={L(universMeta[i].href)} class="group flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40 transition-all hover:-translate-y-1 hover:shadow-xl">
-          <div class="aspect-[4/3] overflow-hidden bg-ink/5">
-            <img src={universMeta[i].img} width={universMeta[i].w} height={universMeta[i].h} alt={u.title} class="h-full w-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          <div class="aspect-video overflow-hidden bg-ink/5">
+            <img src={universMeta[i].img} width={universMeta[i].w} height={universMeta[i].h} alt={u.title} class:list={['h-full w-full transition-transform duration-500 group-hover:scale-105', universMeta[i].fit === 'contain' ? 'object-contain p-5' : universMeta[i].fit === 'cover-top' ? 'object-cover object-top' : 'object-cover']} loading="lazy" />
           </div>
           <div class="flex flex-1 flex-col p-6">
             <div class="flex items-center gap-2 text-copper"><Icon name={universMeta[i].icon} class="h-5 w-5" /><span class="text-xs font-700 uppercase tracking-widest">{u.sub}</span></div>

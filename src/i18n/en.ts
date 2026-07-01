@@ -44,7 +44,7 @@ export const en: Dict = {
     universEyebrow: 'Three worlds, one vision',
     universIntro: 'It all starts from a single idea: make music understandable, memorable and playable by everyone.',
     univers: [
-      { sub: 'Neotone & microphones', title: 'The gear', text: 'The best digital handpan in the world, with personal guidance — from the trial to unboxing.', cta: 'Discover the Neotone' },
+      { sub: 'Neotone & Mutant', title: 'Instruments & Microphones', text: 'The best digital handpan in the world, with personal guidance — from the trial to unboxing.', cta: 'Discover the Neotone' },
       { sub: 'Online & in person', title: 'The lessons', text: 'Learn the handpan differently: through colours, shapes and emotions. Anywhere in the world, or in Paris.', cta: 'See the lessons' },
       { sub: 'The app', title: 'Handpan Studio', text: 'The app that makes music visible — colours, geometry and emotions transform the way you learn and play.', cta: 'Discover the app' },
     ],

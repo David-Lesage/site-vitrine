@@ -50,7 +50,7 @@ const fr = {
     universEyebrow: 'Trois univers, une seule vision',
     universIntro: 'Tout part d’une même idée : rendre la musique compréhensible, mémorisable et jouable par tous.',
     univers: [
-      { sub: 'Neotone & micros', title: 'Le matériel', text: 'Le meilleur handpan numérique du monde, accompagné personnellement — de l’essai au déballage.', cta: 'Découvrir le Neotone' },
+      { sub: 'Neotone & Mutant', title: 'Les instruments & Micros', text: 'Le meilleur handpan numérique du monde, accompagné personnellement — de l’essai au déballage.', cta: 'Découvrir le Neotone' },
       { sub: 'Visio & présentiel', title: 'Les cours', text: 'Apprends le handpan autrement : par les couleurs, les formes et les émotions. Partout dans le monde, ou à Paris.', cta: 'Voir les cours' },
       { sub: 'L’application', title: 'Handpan Studio', text: 'L’app qui rend la musique visible — couleurs, géométrie et émotions transforment ta façon d’apprendre et de jouer.', cta: 'Découvrir l’app' },
     ],
