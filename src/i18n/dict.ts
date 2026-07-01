@@ -36,9 +36,9 @@ const fr = {
     emotions: ['Équilibre', 'Élan', 'Aventure', 'Détente', 'Tension', 'Nostalgie', 'Mystère'],
   },
   home: {
-    title: 'David Lesage — Rendre la musique visible et accessible',
+    title: 'Apprendre le handpan autrement — David Lesage',
     description:
-      'Musicien, pédagogue et inventeur. Je rends la musique visible et accessible par les couleurs, la géométrie et les émotions. Découvre le Neotone, ma méthode, et viens le tester à Paris.',
+      'Le handpan électronique Neotone et ma méthode par les couleurs : apprends le handpan autrement, avec Handpan Studio. Viens l’essayer à Paris.',
     heroEyebrow: 'Musicien · Pédagogue · Inventeur',
     heroTitleA: 'Je rends la musique',
     heroTitleHighlight: 'visible',
@@ -77,11 +77,11 @@ const fr = {
     proofCta: 'Voir toute la playlist Neotone',
   },
   neotone: {
-    title: 'Le Neotone — meilleur handpan numérique | David Lesage',
+    title: 'Neotone — handpan électronique & numérique | David Lesage',
     description:
       'Le Neotone, accompagné par David Lesage : −5 % en ligne (−7 % au showroom), garantie 6 ans, calculateur de prix par pays et accompagnement humain de l’essai au déballage.',
     heroEyebrow: 'Le matériel · Handpan numérique',
-    heroTitle: 'Le meilleur handpan numérique au monde',
+    heroTitle: 'Le Neotone, le meilleur handpan électronique au monde',
     heroLead:
       'En passant par moi, ambassadeur officiel Neotone, tu obtiens <strong class="text-cream">−5 % en ligne</strong> (ou <strong class="text-cream">−7 % au showroom</strong>), la <strong class="text-cream">garantie 6 ans</strong> et un accompagnement personnel — de l’essai jusqu’au déballage.',
     ctaCalc: 'Calculer mon prix',
@@ -92,7 +92,7 @@ const fr = {
     fromPrice: 'À partir de',
     woodsEyebrow: 'Les bois premium',
     woodsTitle: 'Cinq essences, cinq caractères',
-    woodsIntro: 'Le frêne naturel est inclus dans le prix de base. Quatre autres essences nobles sont disponibles en option — chacune avec sa teinte et son caractère.',
+    woodsIntro: 'Le frêne et le chêne sont inclus dans le prix de base. Trois autres essences nobles sont disponibles en option — chacune avec sa teinte et son caractère.',
     woodCardCta: 'Voir le détail',
     woodModalEyebrow: 'Essence de bois',
     woodModalViewTop: 'Vue du dessus',
@@ -128,7 +128,7 @@ const fr = {
     faqOutro: 'As-tu d’autres questions ? Écris-moi à',
   },
   shop: {
-    title: 'Boutique — instruments choisis par David Lesage',
+    title: 'Boutique handpan — Neotone, micros & accessoires',
     description:
       'Une sélection d’instruments et d’accessoires d’exception, testés et choisis par David Lesage : handpans numériques Neotone et micros Hisong.',
     eyebrow: 'Boutique',
@@ -159,7 +159,7 @@ const fr = {
       formations: { label: 'Cours & stages', blurb: 'Apprends avec moi en cours particuliers et en stages, en présentiel ou à distance.' },
     },
     products: {
-      'handpan-studio': { name: 'Handpan Studio · l’application', description: 'Mon application pédagogique : couleurs, géométrie et émotions rendent la musique visible. Découverte gratuite, puis Studio à partir de 9,90 €/mois — débloque la création, la sauvegarde et l’export.' },
+      'handpan-studio': { name: 'Handpan Studio · l’application', description: 'Mon application pédagogique : couleurs, géométrie et émotions rendent la musique visible. Découverte gratuite, puis Studio à partir de 9,90 €/mois — débloque la création, la sauvegarde et l’export PDF/PNG de tes partitions.' },
       'neotone-one': { name: 'Neotone¹', description: 'Handpan numérique 10 notes, toutes les gammes, qualité studio. Achat accompagné : code de remise nominatif + garantie 6 ans.' },
       'neotone-mutant': { name: 'Neotone¹ Mutant', description: 'Handpan numérique 19 notes avec écran LCD, l’expression maximale. Achat accompagné : code de remise + garantie 6 ans.' },
       'yishama': { name: 'Handpan Yishama d’exception', description: 'L’un des meilleurs fabricants de handpan au monde (Israël / Hongrie). Facture artisanale, instruments jusqu’à 19 notes aux basses profondes et aigus brillants. Je le représente avec fierté en tant qu’ambassadeur.' },
@@ -237,11 +237,11 @@ const fr = {
     coursesCta: 'Réserver un cours',
   },
   lessons: {
-    title: 'Cours de musique — handpan, rythme & gonilélé | David Lesage',
+    title: 'Cours de handpan à Paris & en ligne | David Lesage',
     description:
       'Now Music Academy : apprends le handpan, le rythme à la calebasse (Now Groove) et la harpe gonilélé — par les couleurs, les formes et les émotions. Visio dans le monde entier ou présentiel à Paris, et ateliers de groupe.',
     heroEyebrow: 'Now Music Academy',
-    heroTitle: 'Apprends la musique autrement',
+    heroTitle: 'Cours de handpan : apprends autrement',
     heroLead: 'Handpan, rythme à la calebasse et harpe gonilélé — par les couleurs, les formes et les émotions. En visio partout dans le monde, ou en présentiel à Paris.',
     ctaBook: 'Réserver un cours',
     ctaWorkshop: 'Voir les ateliers',
@@ -276,9 +276,9 @@ const fr = {
     footnote: 'Prise de rendez-vous par email. Le présentiel à Paris est un pont naturel vers le showroom et les showcases.',
   },
   studio: {
-    title: 'Handpan Studio — la musique devient visible | David Lesage',
+    title: 'Handpan Studio — l’app pour apprendre le handpan',
     description:
-      'Handpan Studio, l’application imaginée par David Lesage : couleurs (ChromaKeys), Constellations d’accords et émotions transforment ta façon d’apprendre et de jouer le handpan, acoustique comme Neotone.',
+      'Apprendre le handpan par les couleurs (ChromaKeys) : tablature visuelle, Constellations d’accords et émotions, sur handpan acoustique ou Neotone.',
     heroEyebrow: 'L’application — un projet original de David Lesage',
     heroTitleA: 'Handpan Studio',
     heroTitleB: 'La musique devient visible',
@@ -294,7 +294,7 @@ const fr = {
     chromaEyebrow: 'Couleurs & géométrie',
     chromaTitle: 'Et si on rendait l’invisible visible ?',
     chromaIntro:
-      'Plutôt que les noms de notes — qui changent en permanence — l’application montre la <strong>structure</strong> de la musique. Les 7 degrés reçoivent chacun une couleur fixe, du rouge au violet, et chaque accord dessine une forme géométrique lumineuse.',
+      'Plutôt que les noms de notes — qui changent en permanence — l’application montre la <strong>structure</strong> de la musique. Les 7 degrés reçoivent chacun une couleur fixe, du rouge au violet : c’est le système ChromaKeys. Et chaque accord dessine une forme géométrique lumineuse.',
     chromaPunch: 'Ce qui était invisible devient visible.',
     constelEyebrow: 'Le langage des Constellations',
     constelTitle: 'La nouvelle tablature visuelle du handpan',
@@ -349,7 +349,7 @@ const fr = {
     priceEyebrow: 'Tarifs',
     priceTitle: 'Découverte, ou Studio',
     priceIntro:
-      'Commence gratuitement avec la Découverte. Passe au Studio pour créer tes gammes, les sauvegarder, exporter sans filigrane et connecter ton Neotone en MIDI.',
+      'Commence gratuitement avec la Découverte. Passe au Studio pour débloquer le mode électronique Neotone (MIDI), la création avancée, la sauvegarde et l’export PDF/PNG de tes partitions.',
     priceCta: 'Je passe au Studio',
     priceFreeCta: 'Commencer gratuitement',
     pricePopular: 'Le plus choisi',
@@ -360,12 +360,12 @@ const fr = {
     priceFree: {
       name: 'Découverte',
       price: 'Gratuit',
-      blurb: 'Crée ton compte gratuit et découvre l’approche visuelle de Handpan Studio — un avant-goût de la méthode.',
+      blurb: 'Crée ton compte et découvre l’approche visuelle : visualise et joue en mode acoustique, gratuitement.',
     },
     priceTiers: {
-      monthly: { name: 'Studio mensuel', blurb: 'Tout le studio, mois par mois. Sans engagement, tu arrêtes quand tu veux.' },
-      annual: { name: 'Studio annuel', blurb: 'Un an d’accès complet — environ trois mois offerts par rapport au mensuel.' },
-      lifetime: { name: 'Studio à vie', blurb: 'Un seul paiement, accès à vie. Offre fondateur, en quantité limitée.' },
+      monthly: { name: 'Studio mensuel', blurb: 'Débloque le mode électronique (Neotone/MIDI), la création avancée, la sauvegarde et l’export — mois par mois, sans engagement.' },
+      annual: { name: 'Studio annuel', blurb: 'Un an d’accès complet : mode électronique (Neotone/MIDI), création avancée, sauvegarde et export. Environ trois mois offerts par rapport au mensuel.' },
+      lifetime: { name: 'Studio à vie', blurb: 'Un seul paiement, accès à vie : mode électronique (Neotone/MIDI), création avancée, sauvegarde et export. Offre fondateur, en quantité limitée.' },
     },
     priceNote: 'Montants synchronisés en direct avec Stripe. Le Studio débloque tout l’atelier de création.',
     videosEyebrow: 'L’app en mouvement',
@@ -379,7 +379,7 @@ const fr = {
       { t: 'Styles de tracé', d: 'Une même Constellation, trois façons de la lire : Polygone, Ouvert ou Mains.' },
       { t: 'Transposer', d: 'Déplace la note d’ancrage (C → F) : la forme de l’accord reste à la même place.' },
       { t: 'Couleur ↔ chakra', d: 'Chaque degré porte la couleur de son chakra.' },
-      { t: 'Doigtés', d: 'L’app propose un doigté main gauche / main droite pour chaque accord.' },
+      { t: 'Doigtés', d: 'L’app propose un doigté suggéré main gauche / main droite.' },
       { t: 'Jouer les accords', d: 'Lance la lecture : chaque degré s’illumine à son tour et son accord s’épanouit.' },
       { t: 'Apprentissage interactif', d: 'Le handpan devient une surface guidée : touche une note colorée.' },
       { t: 'Atlas Sonore', d: 'Feuillette une bibliothèque de gammes du monde.' },
@@ -387,7 +387,7 @@ const fr = {
     ],
   },
   showroom: {
-    title: 'Showroom & Événements — Paris 20ᵉ | David Lesage',
+    title: 'Essayer un handpan à Paris — Showroom | David Lesage',
     description:
       'Le seul endroit au monde pour tester et repartir avec ton Neotone le jour même. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : showcases gratuits, démonstrations privées et cours.',
     heroEyebrow: 'Le lieu · Paris 20ᵉ',

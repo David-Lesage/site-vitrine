@@ -30,9 +30,9 @@ export const en: Dict = {
     emotions: ['Balance', 'Momentum', 'Adventure', 'Calm', 'Tension', 'Nostalgia', 'Mystery'],
   },
   home: {
-    title: 'David Lesage — Making music visible and accessible',
+    title: 'Learn the Handpan Visually — David Lesage',
     description:
-      'Musician, teacher and inventor. I make music visible and accessible through colours, geometry and emotions. Discover the Neotone, my method, and come try it in Paris.',
+      'The Neotone electronic handpan and my colour-based method: learn the handpan differently, with Handpan Studio. Come try it in Paris.',
     heroEyebrow: 'Musician · Teacher · Inventor',
     heroTitleA: 'I make music',
     heroTitleHighlight: 'visible',
@@ -71,11 +71,11 @@ export const en: Dict = {
     proofCta: 'See the full Neotone playlist',
   },
   neotone: {
-    title: 'The Neotone — best digital handpan | David Lesage',
+    title: 'Neotone — electronic & digital handpan | David Lesage',
     description:
       'The Neotone, with David Lesage: −5% online (−7% at the showroom), 6-year warranty, a price calculator by country and human support from trial to unboxing.',
     heroEyebrow: 'The gear · Digital handpan',
-    heroTitle: 'The best digital handpan in the world',
+    heroTitle: 'The Neotone, the world’s best electronic handpan',
     heroLead:
       'Through me, official Neotone ambassador, you get <strong class="text-cream">−5% online</strong> (or <strong class="text-cream">−7% at the showroom</strong>), the <strong class="text-cream">6-year warranty</strong> and personal support — from the trial to unboxing.',
     ctaCalc: 'Calculate my price',
@@ -86,7 +86,7 @@ export const en: Dict = {
     fromPrice: 'From',
     woodsEyebrow: 'Premium woods',
     woodsTitle: 'Five woods, five characters',
-    woodsIntro: 'Natural ash is included in the base price. Four other noble woods are available as an option — each with its own hue and character.',
+    woodsIntro: 'Ash and oak are included in the base price. Three other noble woods are available as an option — each with its own hue and character.',
     woodCardCta: 'See details',
     woodModalEyebrow: 'Wood essence',
     woodModalViewTop: 'Top view',
@@ -122,7 +122,7 @@ export const en: Dict = {
     faqOutro: 'Any other questions? Write to me at',
   },
   shop: {
-    title: 'Shop — instruments chosen by David Lesage',
+    title: 'Handpan Shop — Neotone, mics & accessories',
     description:
       'A selection of exceptional instruments and accessories, tested and chosen by David Lesage: Neotone digital handpans and Hisong microphones.',
     eyebrow: 'Shop',
@@ -153,7 +153,7 @@ export const en: Dict = {
       formations: { label: 'Lessons & workshops', blurb: 'Learn with me through private lessons and workshops, in person or online.' },
     },
     products: {
-      'handpan-studio': { name: 'Handpan Studio · the app', description: 'My teaching app: colours, geometry and emotions make music visible. Free to start, then Studio from €9.90/month — unlock creation, saving and export.' },
+      'handpan-studio': { name: 'Handpan Studio · the app', description: 'My teaching app: colours, geometry and emotions make music visible. Free to start, then Studio from €9.90/month — unlock creation, saving and PDF/PNG export of your scores.' },
       'neotone-one': { name: 'Neotone¹', description: 'Digital handpan, 10 notes, all the scales, studio quality. Supported purchase: personal discount code + 6-year warranty.' },
       'neotone-mutant': { name: 'Neotone¹ Mutant', description: 'Digital handpan, 19 notes with LCD screen, maximum expression. Supported purchase: discount code + 6-year warranty.' },
       'yishama': { name: 'Yishama exceptional handpan', description: 'One of the best handpan makers in the world (Israel / Hungary). Artisan craftsmanship, instruments up to 19 notes with deep basses and bright highs. I proudly represent them as an ambassador.' },
@@ -172,7 +172,7 @@ export const en: Dict = {
     },
   },
   gonilele: {
-    title: 'Gonilélé harp — La Maison du Ngoni | David Lesage',
+    title: 'Gonilélé travel harp — La Maison du Ngoni | David Lesage',
     description:
       'The Gonilélé (NGoni lélé) travel harp-lute by La Maison du Ngoni, presented by David Lesage, ambassador. Photos, videos, unboxing, pricing and ordering.',
     back: '← Back to the shop',
@@ -231,11 +231,11 @@ export const en: Dict = {
     coursesCta: 'Book a lesson',
   },
   lessons: {
-    title: 'Music lessons — handpan, rhythm & gonilélé | David Lesage',
+    title: 'Handpan Lessons in Paris & Online | David Lesage',
     description:
       'Now Music Academy: learn the handpan, calabash rhythm (Now Groove) and the gonilélé harp — through colours, shapes and emotions. Online worldwide or in person in Paris, plus group workshops.',
     heroEyebrow: 'Now Music Academy',
-    heroTitle: 'Learn music differently',
+    heroTitle: 'Handpan lessons: learn differently',
     heroLead: 'Handpan, calabash rhythm and gonilélé harp — through colours, shapes and emotions. Online anywhere in the world, or in person in Paris.',
     ctaBook: 'Book a lesson',
     ctaWorkshop: 'See the workshops',
@@ -270,9 +270,9 @@ export const en: Dict = {
     footnote: 'Booking by email. In-person lessons in Paris are a natural bridge to the showroom and showcases.',
   },
   studio: {
-    title: 'Handpan Studio — music becomes visible | David Lesage',
+    title: 'Handpan Studio — the app to learn handpan',
     description:
-      'Handpan Studio, the app conceived by David Lesage: colours (ChromaKeys), chord Constellations and emotions transform the way you learn and play the handpan, acoustic and Neotone alike.',
+      'Learn the handpan through colours (ChromaKeys): visual tablature, chord Constellations and emotions, on acoustic handpan or Neotone.',
     heroEyebrow: 'The app — an original project by David Lesage',
     heroTitleA: 'Handpan Studio',
     heroTitleB: 'Music becomes visible',
@@ -288,7 +288,7 @@ export const en: Dict = {
     chromaEyebrow: 'Colours & geometry',
     chromaTitle: 'What if we made the invisible visible?',
     chromaIntro:
-      'Instead of note names — which change constantly — the app shows the <strong>structure</strong> of music. The 7 degrees each receive a fixed colour, from red to violet, and every chord draws a glowing geometric shape.',
+      'Instead of note names — which change constantly — the app shows the <strong>structure</strong> of music. The 7 degrees each receive a fixed colour, from red to violet: this is the ChromaKeys system. And every chord draws a glowing geometric shape.',
     chromaPunch: 'What was invisible becomes visible.',
     constelEyebrow: 'The language of Constellations',
     constelTitle: 'The handpan’s new visual tablature',
@@ -343,7 +343,7 @@ export const en: Dict = {
     priceEyebrow: 'Pricing',
     priceTitle: 'Discovery, or Studio',
     priceIntro:
-      'Start for free with Discovery. Upgrade to Studio to create your own scales, save them, export without a watermark and connect your Neotone over MIDI.',
+      'Start for free with Discovery. Upgrade to Studio to unlock the electronic Neotone mode (MIDI), advanced creation, saving and PDF/PNG export of your scores.',
     priceCta: 'Upgrade to Studio',
     priceFreeCta: 'Start for free',
     pricePopular: 'Most chosen',
@@ -354,12 +354,12 @@ export const en: Dict = {
     priceFree: {
       name: 'Discovery',
       price: 'Free',
-      blurb: 'Create your free account and discover Handpan Studio’s visual approach — a taste of the method.',
+      blurb: 'Create your account and discover the visual approach: visualise and play in acoustic mode, for free.',
     },
     priceTiers: {
-      monthly: { name: 'Studio monthly', blurb: 'The whole studio, month by month. No commitment, stop whenever you want.' },
-      annual: { name: 'Studio yearly', blurb: 'A full year of access — about three months free compared to monthly.' },
-      lifetime: { name: 'Studio for life', blurb: 'A single payment, lifetime access. Founder offer, limited quantity.' },
+      monthly: { name: 'Studio monthly', blurb: 'Unlock the electronic mode (Neotone/MIDI), advanced creation, saving and export — month by month, no commitment.' },
+      annual: { name: 'Studio yearly', blurb: 'A full year of access: electronic mode (Neotone/MIDI), advanced creation, saving and export. About three months free compared to monthly.' },
+      lifetime: { name: 'Studio for life', blurb: 'A single payment, lifetime access: electronic mode (Neotone/MIDI), advanced creation, saving and export. Founder offer, limited quantity.' },
     },
     priceNote: 'Amounts synced live with Stripe. Studio unlocks the entire creation workshop.',
     videosEyebrow: 'The app in motion',
@@ -373,7 +373,7 @@ export const en: Dict = {
       { t: 'Drawing styles', d: 'One Constellation, three ways to read it: Polygon, Open or Hands.' },
       { t: 'Transpose', d: 'Move the anchor note (C → F): the chord shape stays in place.' },
       { t: 'Colour ↔ chakra', d: 'Each degree carries the colour of its chakra.' },
-      { t: 'Fingerings', d: 'The app suggests a left-hand / right-hand fingering for each chord.' },
+      { t: 'Fingerings', d: 'The app suggests a left-hand / right-hand fingering.' },
       { t: 'Play the chords', d: 'Hit play: each degree lights up in turn and its chord blooms.' },
       { t: 'Interactive learning', d: 'The handpan becomes a guided surface: touch a coloured note.' },
       { t: 'Sound Atlas', d: 'Browse a library of scales from around the world.' },
@@ -381,7 +381,7 @@ export const en: Dict = {
     ],
   },
   showroom: {
-    title: 'Showroom & Events — Paris 20th | David Lesage',
+    title: 'Try a Handpan in Paris — Showroom | David Lesage',
     description:
       'The only place in the world to test and walk away with your Neotone the same day. David Lesage Showroom, 29 rue des Orteaux, Paris 20th: free showcases, private demonstrations and lessons.',
     heroEyebrow: 'The space · Paris 20th',
