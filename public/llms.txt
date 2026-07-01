@@ -17,6 +17,12 @@
 - [Boutique](https://www.lesagedavid.fr/boutique) : Neotone, application, mes créations Now Groove, instruments d'exception et micros.
 - [Showroom Paris 20ᵉ](https://www.lesagedavid.fr/showroom) : essayer et repartir avec un Neotone le jour même.
 
+## Guides & blog (pour approfondir)
+- [Apprendre le handpan — guide débutant](https://www.lesagedavid.fr/apprendre-le-handpan) : par où commencer, la méthode par les couleurs, sans solfège.
+- [Handpan électronique vs acoustique — comparatif](https://www.lesagedavid.fr/handpan-electronique-vs-acoustique) : différences (son, casque, gammes, MIDI, prix) et pour qui.
+- [Quel handpan choisir ?](https://www.lesagedavid.fr/quel-handpan-choisir) : notes, gamme (D Kurd conseillée), budget, où essayer.
+- [Blog](https://www.lesagedavid.fr/blog) : articles sur la méthode ChromaKeys, les Constellations, l'Atlas de gammes, les 7 émotions, le mode acoustique gratuit, créer sa gamme, pourquoi un handpan électronique.
+
 ## Définitions
 - **ChromaKeys** : chaque note reçoit une couleur fixe, du rouge au violet, pour voir la structure de la musique.
 - **Constellation** : chaque accord dessine une forme géométrique reliant ses notes — une tablature visuelle du handpan.
