@@ -126,6 +126,19 @@ export function videoLdJson(videos: { id: string; name: string; description?: st
   }))
 }
 
+// Vidéos self-hostées (.mp4 + poster) → VideoObject (schema.org)
+export function videoObjectsLocal(videos: { name: string; description: string; thumbnail: string; contentUrl: string }[]) {
+  return videos.map((v) => ({
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: v.name,
+    description: v.description || v.name,
+    thumbnailUrl: [new URL(v.thumbnail, site.url).toString()],
+    contentUrl: new URL(v.contentUrl, site.url).toString(),
+    publisher: { '@id': `${site.url}/#david-lesage` },
+  }))
+}
+
 export function faqLdJson(items: { q: string; a: string }[]) {
   return {
     '@context': 'https://schema.org',

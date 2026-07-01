@@ -7,7 +7,7 @@ import { Icon } from 'astro-icon/components'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
-import { courseLdJson, breadcrumbLdJson } from '@/lib/ldJson'
+import { courseLdJson, breadcrumbLdJson, faqLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -27,7 +27,7 @@ const workshopsUrl = 'https://sites.google.com/lesagedavid.fr/now-groove/atelier
 const schoolEmail = 'School@lesagedavid.fr'
 ---
 
-<Layout title={l.title} description={l.description} ldJSON={[courseLdJson({ name: l.heroTitle, description: l.description, url: '/cours' }), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: t.common.nav.lessons, url: L('/cours') }])]}>
+<Layout title={l.title} description={l.description} ldJSON={[courseLdJson({ name: l.heroTitle, description: l.description, url: '/cours' }), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: t.common.nav.lessons, url: L('/cours') }]), faqLdJson(l.faq)]}>
   <!-- Bandeau Now Music Academy -->
   <section class="relative overflow-hidden bg-ink text-cream">
     <div class="absolute inset-0">
@@ -97,6 +97,18 @@ const schoolEmail = 'School@lesagedavid.fr'
         <Button href={`mailto:${schoolEmail}?subject=Atelier%20de%20rythme%20calebasse`} variant="light">{l.ctaBook}</Button>
       </div>
       <p class="mt-5 text-sm text-cream/60">{l.workshopsContact} <a href={`mailto:${schoolEmail}`} class="font-700 text-gold underline">{schoolEmail}</a></p>
+    </div>
+  </Section>
+
+  <Section id="faq">
+    <SectionHeading eyebrow={l.faqEyebrow} title={l.faqTitle} />
+    <div class="mx-auto mt-10 max-w-3xl space-y-3">
+      {l.faq.map((item) => (
+        <details class="group rounded-card border border-ink/10 bg-cream-deep/40 p-5">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-lg font-600 marker:content-none">{item.q}<Icon name="lucide:chevron-down" class="h-5 w-5 shrink-0 text-copper transition-transform group-open:rotate-180" /></summary>
+          <p class="mt-3 text-ink-soft/85">{item.a}</p>
+        </details>
+      ))}
     </div>
   </Section>
 </Layout>
