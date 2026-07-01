@@ -8,7 +8,6 @@ import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { personLdJson } from '@/lib/ldJson'
-import { decorateWord, decorateSentence } from '@/lib/heroDeco'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -17,19 +16,17 @@ const t = getDict(lang)
 const h = t.home
 const L = (p: string) => localizePath(p, lang)
 
-// Hero illustré : « Visible » arc-en-ciel, points des i en notes,
-// « couleurs » multicolore, « géométrie » (handpan), « émotions » (smileys).
-const musicWord = lang === 'en' ? 'music' : 'musique'
+// Hero épuré (premium) : le mot-clé en dégradé de marque, les 3 piliers
+// en gras doré. Plus de glyphes (notes / smileys / handpan sur les lettres).
 const colorWord = lang === 'en' ? 'colours' : 'couleurs'
 const geoWord = lang === 'en' ? 'geometry' : 'géométrie'
 const emoWord = lang === 'en' ? 'emotions' : 'émotions'
-const heroTitleAHtml = decorateSentence(h.heroTitleA, [{ word: musicWord, opts: { noteOnI: true } }])
-const heroHighlightHtml = decorateWord(h.heroTitleHighlight, { rainbow: true, noteOnI: true, bold: true })
-const heroLeadHtml = decorateSentence(h.heroLead, [
-  { word: colorWord, opts: { rainbow: true, bold: true } },
-  { word: geoWord, opts: { bold: true, oGlyph: 'handpan' } },
-  { word: emoWord, opts: { bold: true, oGlyph: 'faces' } },
-])
+const emphasize = (text: string, words: string[]) =>
+  words.reduce((acc, w) => {
+    const i = acc.indexOf(w)
+    return i === -1 ? acc : `${acc.slice(0, i)}<strong class="font-600 text-gold">${w}</strong>${acc.slice(i + w.length)}`
+  }, text)
+const heroLeadHtml = emphasize(h.heroLead, [colorWord, geoWord, emoWord])
 const universMeta = [
   { img: '/images/neotone-mutant-noyer.webp', w: 600, h: 600, icon: 'lucide:disc-3', href: '/le-neotone', fit: 'contain' },
   { img: '/images/prod-cours-stages.jpg', w: 375, h: 375, icon: 'lucide:graduation-cap', href: '/cours', fit: 'cover-top' },
@@ -52,7 +49,7 @@ const universMeta = [
     <div class="relative mx-auto max-w-7xl px-4 py-24 lg:px-8 lg:py-36">
       <div class="max-w-xl text-center md:text-left">
         <p class="inline-flex items-center gap-2 rounded-full border border-cream/20 bg-cream/5 px-4 py-1.5 text-xs font-600 uppercase tracking-[0.2em] text-gold">{h.heroEyebrow}</p>
-        <h1 class="mt-6 font-display text-4xl font-700 leading-[1.05] md:text-6xl"><span set:html={heroTitleAHtml}></span> <span set:html={heroHighlightHtml}></span> {h.heroTitleB}</h1>
+        <h1 class="mt-6 font-display text-4xl font-700 leading-[1.05] md:text-6xl">{h.heroTitleA} <span class="text-gradient-brand">{h.heroTitleHighlight}</span> {h.heroTitleB}</h1>
         <p class="mt-6 text-lg text-cream/85 md:text-xl" set:html={heroLeadHtml}></p>
         <div class="mt-9 flex flex-wrap justify-center gap-3 md:justify-start">
           <Button href={L('/showroom')} variant="primary">{h.ctaShowroom}</Button>
