@@ -2,7 +2,7 @@
 title: "L'éditeur de partition : joue tes chansons au handpan"
 description: "Le Mode Chanson affiche les paroles avec les diagrammes d'accords ancrés au-dessus des mots. Joue Hallelujah ou Let It Be au handpan, sans solfège."
 pubDate: 2026-08-15
-cover: "/images/constel-mains.webp"
+cover: "/images/blog-partition-hallelujah.webp"
 tags: ["partition", "chansons", "accompagnement"]
 lang: "fr"
 permalink: "editeur-de-partition-handpan"
