@@ -35,10 +35,13 @@ In acoustic mode, **creating** coloured layouts and **exporting** your visuals a
 
 Many acoustic handpans have **bottom notes** — the notes under the instrument, around the lower opening. Handpan Studio supports them and lets you choose **how to display them**, depending on how you picture your pan:
 
-![Bottom notes shown as a star around the pan, or the bottom shell displayed beside it, in Handpan Studio](/images/blog-bottom-notes.svg)
+**Star display** (*Notepan* style) — the bottom notes appear as a ring around the main pan, handy to see everything at a glance:
 
-- **As a star around** (*Notepan* style): the bottom notes appear as a ring around the main pan — handy to see everything at a glance.
-- **The bottom shell beside it** (*Yishama* style): the underside is drawn as a second pan set alongside — closer to the instrument's physical reality.
+![Handpan Studio — 20-note D Kurd, bottom notes shown as a star around the pan](/images/blog-bottom-etoile.webp)
+
+**Two-shell display** (*Yishama* style) — the underside is drawn as a second pan set alongside, closer to the instrument's physical reality:
+
+![Handpan Studio — 20-note D Kurd, the bottom shell displayed beside the pan](/images/blog-bottom-coques.webp)
 
 On a rich scale like a **20-note D Kurd**, these two views make all the difference for finding your way around — just pick whichever speaks to you.
 

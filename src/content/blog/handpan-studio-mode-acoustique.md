@@ -35,10 +35,13 @@ En mode acoustique, la **création** de dispositions colorées et l'**export** d
 
 Beaucoup de handpans acoustiques ont des **bottom notes** — les notes situées sous l'instrument, autour du trou du dessous. Handpan Studio les prend en charge et te laisse choisir **comment les afficher**, selon ta façon de te représenter ton pan :
 
-![Les bottom notes en étoile autour du pan, ou la coque du dessous présentée à côté, dans Handpan Studio](/images/blog-bottom-notes.svg)
+**Affichage en étoile** (façon *Notepan*) — les notes du dessous s'affichent en couronne autour du pan principal, pratique pour tout voir d'un seul coup d'œil :
 
-- **En étoile autour** (façon *Notepan*) : les notes du dessous s'affichent en couronne autour du pan principal — pratique pour tout voir d'un seul coup d'œil.
-- **La coque du dessous à côté** (façon *Yishama*) : le dessous est représenté comme un second pan posé à côté — plus fidèle à la réalité physique de l'instrument.
+![Handpan Studio — D Kurd 20 notes, les notes du dessous affichées en étoile autour du pan](/images/blog-bottom-etoile.webp)
+
+**Affichage 2 coques** (façon *Yishama*) — le dessous est représenté comme un second pan posé à côté, plus fidèle à la réalité physique de l'instrument :
+
+![Handpan Studio — D Kurd 20 notes, la coque du dessous présentée à côté](/images/blog-bottom-coques.webp)
 
 Sur une gamme riche comme un **D Kurd 20 notes**, ces deux vues changent tout pour se repérer : choisis simplement celle qui te parle le plus.
 
