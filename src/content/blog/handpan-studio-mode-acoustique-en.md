@@ -31,6 +31,17 @@ The app shows you the chords of your scale as **Constellations** — those geome
 
 In acoustic mode, **creating** coloured layouts and **exporting** your visuals are free (exports always carry a discreet watermark). You can compose your own reading of a scale and keep it in front of you. To go further, discover how [scale creation](/blog/creer-sa-gamme-de-handpan) works.
 
+## Bottom notes: two displays to choose from
+
+Many acoustic handpans have **bottom notes** — the notes under the instrument, around the lower opening. Handpan Studio supports them and lets you choose **how to display them**, depending on how you picture your pan:
+
+![Bottom notes shown as a star around the pan, or the bottom shell displayed beside it, in Handpan Studio](/images/blog-bottom-notes.svg)
+
+- **As a star around** (*Notepan* style): the bottom notes appear as a ring around the main pan — handy to see everything at a glance.
+- **The bottom shell beside it** (*Yishama* style): the underside is drawn as a second pan set alongside — closer to the instrument's physical reality.
+
+On a rich scale like a **20-note D Kurd**, these two views make all the difference for finding your way around — just pick whichever speaks to you.
+
 ## Free now, more later if you want
 
 Acoustic mode gives you the essentials at no cost: visualise, learn, create, export. Saving your personal library and the advanced functions belong to the Studio version, but nothing forces you into it to get started. You can experience real progress while staying on the free tier.

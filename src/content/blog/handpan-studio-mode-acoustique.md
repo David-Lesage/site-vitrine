@@ -31,6 +31,17 @@ L'app te montre les accords de ta gamme sous forme de **Constellations** — ces
 
 En mode acoustique, la **création** de dispositions colorées et l'**export** de tes visuels sont gratuits (l'export porte toujours un discret filigrane). Tu peux composer ta propre lecture de gamme et la garder sous les yeux. Pour aller plus loin, découvre comment fonctionne la [création de gamme](/blog/creer-sa-gamme-de-handpan).
 
+## Les bottom notes : deux affichages au choix
+
+Beaucoup de handpans acoustiques ont des **bottom notes** — les notes situées sous l'instrument, autour du trou du dessous. Handpan Studio les prend en charge et te laisse choisir **comment les afficher**, selon ta façon de te représenter ton pan :
+
+![Les bottom notes en étoile autour du pan, ou la coque du dessous présentée à côté, dans Handpan Studio](/images/blog-bottom-notes.svg)
+
+- **En étoile autour** (façon *Notepan*) : les notes du dessous s'affichent en couronne autour du pan principal — pratique pour tout voir d'un seul coup d'œil.
+- **La coque du dessous à côté** (façon *Yishama*) : le dessous est représenté comme un second pan posé à côté — plus fidèle à la réalité physique de l'instrument.
+
+Sur une gamme riche comme un **D Kurd 20 notes**, ces deux vues changent tout pour se repérer : choisis simplement celle qui te parle le plus.
+
 ## Gratuit maintenant, plus tard si tu veux
 
 Le mode acoustique te donne l'essentiel sans rien débourser : visualiser, apprendre, créer, exporter. La sauvegarde de ta bibliothèque personnelle et les fonctions avancées relèvent de la version Studio, mais rien ne t'y oblige pour commencer. Tu peux vivre une vraie progression en restant en gratuit.
