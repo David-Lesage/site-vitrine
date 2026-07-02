@@ -2,7 +2,7 @@
 title: "Create and export your chord diagrams as PDF"
 description: "Each chord drawn as a colourful mini-handpan: notes, play order, suggested fingering. Export your chord diagrams as printable PDF or PNG."
 pubDate: 2026-08-19
-cover: "/images/constel-polygone.webp"
+cover: "/images/blog-diagrammes-accords.webp"
 tags: ["diagrams", "chords", "pdf"]
 lang: "en"
 permalink: "diagrammes-accords-handpan-pdf"
