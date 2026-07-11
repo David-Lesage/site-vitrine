@@ -31,6 +31,8 @@ Designed for this, Logic Mode lets you **accompany most well-known songs the way
 
 This is where it gets magical: Logic Mode is **ideal for accompanying a singer**. You lay the chords, someone sings over them, and the handpan becomes the harmonic setting for the voice. The [Song Mode](/handpan-studio) goes further with songs featuring lyrics and chord diagrams, ready to accompany you.
 
+![A song displayed with its chord diagrams anchored on the lyrics](/images/blog-partition-hallelujah.webp)
+
 ### Composing from your emotions
 
 Accompaniment is just one door. Once you've learned the colours, you can **compose**: start from an emotion and let the sequence of colours draw your own progression. A suggested fingering can help you chain notes cleanly — a help for the gesture, reliable mostly in electronic Logic Mode, never a rigid instruction.

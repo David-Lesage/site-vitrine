@@ -31,6 +31,8 @@ Conçu pour cet usage, le Mode Logique te laisse **accompagner la plupart des mo
 
 C'est là que ça devient magique : le Mode Logique est **idéal pour accompagner un chanteur ou une chanteuse**. Tu poses les accords, quelqu'un chante par-dessus, et le handpan devient l'écrin harmonique de la voix. Le [Mode Chanson](/handpan-studio) va plus loin en proposant des morceaux avec paroles et diagrammes d'accords, prêts à t'accompagner.
 
+![Chanson affichée avec ses diagrammes d'accords ancrés sur les paroles](/images/blog-partition-hallelujah.webp)
+
 ### Composer à partir de tes émotions
 
 L'accompagnement n'est qu'une porte. Une fois les couleurs apprises, tu peux **composer** : partir d'une émotion et laisser la suite des couleurs dessiner ta propre progression. Un doigté suggéré peut t'aider à enchaîner proprement — c'est une aide au geste, fiable surtout en Mode Logique électronique, jamais une consigne rigide.

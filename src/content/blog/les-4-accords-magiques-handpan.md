@@ -26,6 +26,8 @@ Dans le Mode Logique, chaque degré porte une couleur et une émotion stables, c
 - Le degré **VI** — la teinte nostalgique, douce-amère.
 - Le degré **IV** — l'ouverture, le grand espace.
 
+![Quatre accords en diagrammes mini-handpan colorés](/images/blog-diagrammes-accords.webp)
+
 Tu n'as plus à retenir des noms d'accords ni des positions abstraites. Tu suis une suite de couleurs, et la boucle magique tourne sous tes mains. C'est le même geste que celui décrit dans [Accompagner des chansons au handpan](/blog/accompagner-des-chansons-au-handpan) : enchaîner des accords comme le ferait un guitariste.
 
 ### Varier l'ordre, changer d'ambiance

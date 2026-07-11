@@ -23,13 +23,19 @@ Handpan Studio te laisse choisir **comment** ce dessin apparaît, selon ce que t
 
 Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée — un triangle pour trois notes, un quadrilatère pour quatre, etc. C'est la vue la plus « d'un coup d'œil » : tu reconnais l'accord comme tu reconnaîtrais un logo. Idéal pour mémoriser un accord et le retrouver instantanément ailleurs sur le pan, car la même forme se déplace en gardant sa silhouette.
 
+![Constellation en mode Polygone : la forme fermée de l'accord](/images/constel-polygone.webp)
+
 ### L'Ouvert : le chemin des notes
 
 Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à l'autre, dans l'ordre où tu les joues. C'est la vue du geste. Tu ne vois plus seulement quel accord tu joues, mais comment ta main le parcourt — parfait pour travailler un arpège ou une phrase mélodique et sentir la direction du mouvement.
 
+![Constellation en mode Ouvert : le chemin des notes](/images/constel-ouvert.webp)
+
 ### Les Mains : qui joue quoi
 
 Le mode **Mains** colore le tracé selon la main qui joue chaque note. D'un regard, tu sais ce que fait la gauche et ce que fait la droite. C'est un repère précieux quand un accord se répartit entre les deux mains, ou quand tu veux équilibrer ton jeu sans te crisper.
+
+![Constellation en mode Mains : quelle main joue quelle note](/images/constel-mains.webp)
 
 ## Passer d'un tracé à l'autre
 

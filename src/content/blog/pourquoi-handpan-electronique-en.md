@@ -31,6 +31,8 @@ An acoustic handpan is tuned once and for all: one scale, one key. The Neotone c
 
 Over **MIDI**, the Neotone drives any music software. It becomes an expressive controller for composing, layering sounds or playing virtual instruments — all while keeping the natural gesture of the handpan.
 
+![The Neotone used as a MIDI controller in Handpan Studio](/images/app-midi.webp)
+
 ## Who is the Neotone for?
 
 - **The beginner** who wants to learn without buying several pans in different keys.

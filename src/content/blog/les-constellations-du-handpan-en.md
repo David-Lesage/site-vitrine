@@ -23,13 +23,19 @@ Handpan Studio lets you choose **how** that drawing appears, depending on what y
 
 **Polygon** mode links every note of the chord into a closed figure — a triangle for three notes, a quadrilateral for four, and so on. It's the most "at a glance" view: you recognise the chord the way you'd recognise a logo. Ideal for memorising a chord and finding it instantly elsewhere on the pan, since the same shape moves around while keeping its silhouette.
 
+![Constellation in Polygon mode: the closed shape of the chord](/images/constel-polygone.webp)
+
 ### The Open trace: the path of the notes
 
 **Open** mode doesn't close the figure: it draws the **path** from one note to the next, in the order you play them. It's the view of the gesture. You no longer just see which chord you're playing, but how your hand travels through it — perfect for working on an arpeggio or a melodic phrase and feeling the direction of the movement.
 
+![Constellation in Open mode: the path of the notes](/images/constel-ouvert.webp)
+
 ### Hands: who plays what
 
 **Hands** mode colours the trace according to which hand plays each note. At a glance, you know what the left hand does and what the right hand does. It's a precious cue when a chord splits between both hands, or when you want to balance your playing without tensing up.
+
+![Constellation in Hands mode: which hand plays which note](/images/constel-mains.webp)
 
 ## Switching between traces
 

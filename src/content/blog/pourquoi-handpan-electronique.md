@@ -31,6 +31,8 @@ Un handpan acoustique est accordé une fois pour toutes : une gamme, une tonalit
 
 En **MIDI**, le Neotone pilote n'importe quel logiciel de musique. Il devient un contrôleur expressif pour composer, superposer des sons ou jouer des instruments virtuels — tout en gardant le geste naturel du handpan.
 
+![Le Neotone utilisé comme contrôleur MIDI dans Handpan Studio](/images/app-midi.webp)
+
 ## Pour qui est fait le Neotone ?
 
 - **Le débutant** qui veut apprendre sans se ruiner en plusieurs pans de tonalités différentes.
