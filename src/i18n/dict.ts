@@ -151,7 +151,7 @@ const fr = {
     orderEmail: 'Commander par email',
     creationsBadge: 'Signature David Lesage',
     calcOrder: 'Calculer mon prix & commander',
-    linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: 'Muling' },
+    linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: 'Muling', onesec: 'J’utilise vraiment' },
     linkCtas: { buy: 'Voir l’offre →', listen: 'Écouter →', discover: 'Découvrir →', order: 'Commander →', interested: 'Ce micro m’intéresse →' },
     watchDemo: 'Voir ma démo vidéo',
     adviceTitle: 'Besoin d’un conseil avant d’acheter ?',
@@ -165,6 +165,7 @@ const fr = {
       micros: { label: 'Micros', blurb: 'Captation pour handpan acoustique, voix et gong.' },
       musique: { label: 'Musique', blurb: 'Mes albums et mes reprises, à écouter en streaming sur toutes les plateformes.' },
       formations: { label: 'Cours & stages', blurb: 'Apprends avec moi en cours particuliers et en stages, en présentiel ou à distance.' },
+      outils: { label: 'Mes outils du quotidien', blurb: 'Au-delà de la musique : les outils que j’utilise vraiment pour rester concentré, présent et créatif.' },
     },
     products: {
       'handpan-studio': { name: 'Handpan Studio · l’application', description: 'Mon application pédagogique : couleurs, géométrie et émotions rendent la musique visible. Découverte gratuite, puis Studio à partir de 9,90 €/mois — débloque la création, la sauvegarde et l’export PDF/PNG de tes partitions.' },
@@ -183,6 +184,7 @@ const fr = {
       'now-groove': { name: 'Now Groove — méthode de rythme', description: 'Ma formation pour apprendre le rythme autrement, par des émoticônes visuelles. Accessible à tous, du débutant au musicien confirmé.' },
       'cours-prives': { name: 'Cours privés & stages', description: 'Cours particuliers et stages avec moi — handpan, rythme et voix. En présentiel à Paris ou à distance.' },
       'streaming': { name: 'Ma musique en streaming', description: 'Retrouve mes compositions et reprises sur Spotify, Apple Music, Deezer et toutes les plateformes.' },
+      'onesec': { name: 'one sec — reprendre le contrôle de son temps d’écran', description: 'L’app qui m’aide vraiment à ne pas me perdre dans le scroll. Avant d’ouvrir une appli happante (réseaux sociaux…), one sec impose une courte pause — le temps d’une respiration — et l’envie compulsive retombe. C’est simple, et pour moi c’est l’une des rares choses qui a réellement fonctionné. Approche validée par la science (études avec l’Institut Max Planck). Gratuite pour l’essentiel ; profite de −30 % sur Premium via mon lien.' },
     },
   },
   gonilele: {

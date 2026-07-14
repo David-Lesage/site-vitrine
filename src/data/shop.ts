@@ -20,7 +20,7 @@ export interface Product {
   // libellé du bouton pour les produits 'link'
   linkLabel?: 'buy' | 'listen' | 'discover' | 'order' | 'interested'
   // pastille (plateforme / statut) pour les produits 'link' → dict.shop.linkTags
-  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling'
+  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec'
   // prix indicatif affiché tel quel (produits externes), ex. "299 €"
   priceLabel?: string
   // plusieurs photos → carrousel + plein écran sur la fiche (sinon `image` seule)
@@ -29,7 +29,7 @@ export interface Product {
   videoUrls?: string[]
 }
 
-export const categoryIds = ['handpans', 'app', 'creations', 'instruments', 'micros', 'musique', 'formations'] as const
+export const categoryIds = ['handpans', 'app', 'creations', 'instruments', 'micros', 'musique', 'formations', 'outils'] as const
 
 export const products: Product[] = [
   // Application Handpan Studio — produit phare digital
@@ -56,4 +56,6 @@ export const products: Product[] = [
   { id: 'cover', price: 0, image: '/images/prod-cover.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/artist/7zEAQJbalBFj8XNHrcqdbK', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },
   // Cours & stages
   { id: 'cours-prives', price: 0, image: '/images/prod-cours-stages.jpg', imgW: 371, imgH: 371, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/cours-prive-et-stages-avec-david-lesage', category: 'formations', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'helloasso', priceLabel: '50 €/h · 70 €/1h30' },
+  // Mes outils du quotidien — recommandation perso (lien d'affiliation)
+  { id: 'onesec', price: 0, image: '/images/prod-onesec-1.webp', imgW: 1464, imgH: 1731, url: 'https://web.one-sec.app/store?deal=david30', category: 'outils', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'onesec', priceLabel: 'Gratuit · −30 % sur Premium avec mon lien', images: ['/images/prod-onesec-1.webp', '/images/prod-onesec-2.webp', '/images/prod-onesec-3.webp'] },
 ]

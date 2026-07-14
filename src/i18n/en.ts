@@ -145,7 +145,7 @@ export const en: Dict = {
     orderEmail: 'Order by email',
     creationsBadge: 'David Lesage signature',
     calcOrder: 'Calculate my price & order',
-    linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: 'Muling' },
+    linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: 'Muling', onesec: 'I actually use it' },
     linkCtas: { buy: 'See offer →', listen: 'Listen →', discover: 'Discover →', order: 'Order →', interested: 'I’m interested →' },
     watchDemo: 'Watch my demo video',
     adviceTitle: 'Need advice before buying?',
@@ -159,6 +159,7 @@ export const en: Dict = {
       micros: { label: 'Microphones', blurb: 'Pickup for acoustic handpan, voice and gong.' },
       musique: { label: 'Music', blurb: 'My albums and covers, to stream on every platform.' },
       formations: { label: 'Lessons & workshops', blurb: 'Learn with me through private lessons and workshops, in person or online.' },
+      outils: { label: 'My everyday tools', blurb: 'Beyond music: the tools I actually use to stay focused, present and creative.' },
     },
     products: {
       'handpan-studio': { name: 'Handpan Studio · the app', description: 'My teaching app: colours, geometry and emotions make music visible. Free to start, then Studio from €9.90/month — unlock creation, saving and PDF/PNG export of your scores.' },
@@ -177,6 +178,7 @@ export const en: Dict = {
       'now-groove': { name: 'Now Groove — rhythm method', description: 'My course to learn rhythm differently, through visual emoticons. For everyone, from beginner to seasoned musician.' },
       'cours-prives': { name: 'Private lessons & workshops', description: 'One-to-one lessons and workshops with me — handpan, rhythm and voice. In person in Paris or online.' },
       'streaming': { name: 'My music on streaming', description: 'Find my compositions and covers on Spotify, Apple Music, Deezer and all platforms.' },
+      'onesec': { name: 'one sec — take back control of your screen time', description: 'The app that genuinely helps me not get lost in the scroll. Before you open a grabby app (social media…), one sec adds a short pause — the length of a breath — and the compulsive urge fades. It’s simple, and for me it’s one of the very few things that actually worked. A science-backed approach (studies with the Max Planck Institute). Free for the essentials; get −30% off Premium through my link.' },
     },
   },
   gonilele: {
