@@ -631,6 +631,16 @@ const fr = {
       { title: 'Garantie 6 ans', text: 'Réparation + transport inclus.' },
       { title: 'Chargeur secteur fourni', text: 'Chargeur 12 V standard livré (prise selon le pays de livraison).' },
     ],
+    extrasEyebrow: 'À prévoir en plus',
+    extrasTitle: 'Ce qu’il te faudra investir en supplément',
+    extrasIntro: 'Le Neotone est complet, mais pour l’entendre et l’exploiter à fond, prévois ce petit matériel selon ton usage.',
+    extrasSpeakerCta: 'Lire : bien se placer dans le son',
+    extras: [
+      { title: 'Un casque ou des oreillettes', text: 'Pour jouer en silence, la nuit ou en appartement. Idéalement un casque avec prise jack 6,35 mm (ou un adaptateur).' },
+      { title: 'Un câble jack', text: 'Un câble jack mono (1 sortie) ou stéréo (2 sorties) pour relier le Neotone à ton enceinte ou ta table de mixage.' },
+      { title: 'Une enceinte', text: 'Indispensable pour diffuser le son. Mon conseil : la Bose S1 Pro+, autonome (8 h de batterie), redoutable en jam comme sur scène.' },
+      { title: 'Un câble MIDI → USB', text: 'Un câble MIDI vers USB (ou USB-A vers USB-C) si tu veux piloter un logiciel de musique (DAW : Logic Pro, Ableton Live…).' },
+    ],
     calc: {
       modeQuestion: 'Comment veux-tu recevoir ton Neotone ?',
       modeOnline: '📦 Je me fais livrer',

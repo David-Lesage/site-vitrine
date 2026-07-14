@@ -623,6 +623,16 @@ export const en: Dict = {
       { title: '6-year warranty', text: 'Repair + transport included.' },
       { title: 'Power charger included', text: 'Standard 12 V charger included (plug according to delivery country).' },
     ],
+    extrasEyebrow: 'To budget on top',
+    extrasTitle: 'What you’ll need to invest in on top',
+    extrasIntro: 'The Neotone is complete, but to hear it and get the most out of it, plan for this small extra gear depending on your use.',
+    extrasSpeakerCta: 'Read: getting the sound right around you',
+    extras: [
+      { title: 'Headphones or earbuds', text: 'To play silently, at night or in a flat. Ideally headphones with a 6.35 mm jack (or an adapter).' },
+      { title: 'A jack cable', text: 'A mono (1 output) or stereo (2 outputs) jack cable to connect the Neotone to your speaker or mixer.' },
+      { title: 'A speaker', text: 'Essential to project the sound. My pick: the Bose S1 Pro+, self-powered (8 h battery), superb in a jam or on stage.' },
+      { title: 'A MIDI → USB cable', text: 'A MIDI-to-USB cable (or USB-A to USB-C) if you want to drive music software (DAW: Logic Pro, Ableton Live…).' },
+    ],
     calc: {
       modeQuestion: 'How would you like to receive your Neotone?',
       modeOnline: '📦 Have it delivered',

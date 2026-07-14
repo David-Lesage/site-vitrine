@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="system-ui, sans-serif">
+  <rect width="1200" height="700" fill="#f4eee1"/>
+  <line x1="80" y1="560" x2="1120" y2="560" stroke="#d8cbb2" stroke-width="3"/>
+
+  <!-- colonne L1 : line array vertical, derriere (gauche) -->
+  <rect x="235" y="150" width="30" height="360" rx="12" fill="#2a2320"/>
+  <g fill="#3a3330" stroke="#c8792e" stroke-width="1.5">
+    <circle cx="250" cy="185" r="9"/><circle cx="250" cy="215" r="9"/><circle cx="250" cy="245" r="9"/>
+    <circle cx="250" cy="275" r="9"/><circle cx="250" cy="305" r="9"/><circle cx="250" cy="335" r="9"/>
+    <circle cx="250" cy="365" r="9"/><circle cx="250" cy="395" r="9"/>
+  </g>
+  <rect x="205" y="500" width="90" height="55" rx="10" fill="#2a2320"/>
+  <text x="250" y="620" fill="#2a2320" font-size="24" font-weight="700" text-anchor="middle">Bose L1 · colonne</text>
+  <text x="250" y="650" fill="#6b5d47" font-size="20" text-anchor="middle">derrière toi, son enveloppant</text>
+
+  <!-- diffusion verticale large (line array) -->
+  <g fill="none" stroke="#c8792e" stroke-width="4" stroke-linecap="round" opacity="0.8">
+    <path d="M300 200 A 260 260 0 0 1 300 500"/>
+    <path d="M350 180 A 320 320 0 0 1 350 520" opacity="0.6"/>
+    <path d="M400 165 A 380 380 0 0 1 400 535" opacity="0.4"/>
+  </g>
+  <path d="M470 340 L 660 340" stroke="#c14a32" stroke-width="5" stroke-linecap="round"/>
+  <path d="M660 340 l -22 -13 v 26 z" fill="#c14a32"/>
+  <text x="470" y="322" fill="#c14a32" font-size="25" font-weight="700">Un mur de son derrière toi</text>
+
+  <!-- joueur (identique) -->
+  <g>
+    <rect x="740" y="470" width="120" height="16" rx="6" fill="#8a7860"/>
+    <line x1="755" y1="486" x2="745" y2="558" stroke="#8a7860" stroke-width="7"/>
+    <line x1="845" y1="486" x2="855" y2="558" stroke="#8a7860" stroke-width="7"/>
+    <path d="M770 470 q 30 -70 55 -120" fill="none" stroke="#2a2320" stroke-width="26" stroke-linecap="round"/>
+    <circle cx="835" cy="300" r="34" fill="#2a2320"/>
+    <path d="M812 360 q 40 20 70 30" fill="none" stroke="#2a2320" stroke-width="18" stroke-linecap="round"/>
+    <path d="M775 468 q 60 30 120 20" fill="none" stroke="#2a2320" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <text x="835" y="235" fill="#2a2320" font-size="24" font-weight="700" text-anchor="middle">Toi</text>
+  <g transform="translate(905 380)">
+    <ellipse cx="0" cy="0" rx="60" ry="26" fill="#1f2a44" stroke="#c8792e" stroke-width="3"/>
+    <circle cx="0" cy="0" r="9" fill="#2f6bd8"/>
+    <circle cx="-32" cy="-6" r="5" fill="#e0402b"/><circle cx="32" cy="-6" r="5" fill="#4caf6d"/>
+    <circle cx="-16" cy="9" r="5" fill="#f1c62f"/><circle cx="16" cy="9" r="5" fill="#8a49b8"/>
+  </g>
+  <text x="905" y="440" fill="#6b5d47" font-size="20" font-weight="700" text-anchor="middle">Neotone</text>
+
+  <text x="600" y="70" fill="#2a2320" font-size="34" font-weight="800" text-anchor="middle">Le système L1 : une colonne derrière toi</text>
+  <text x="600" y="108" fill="#6b5d47" font-size="22" text-anchor="middle">le son se diffuse tout en hauteur — tu es totalement enveloppé</text>
+</svg>
