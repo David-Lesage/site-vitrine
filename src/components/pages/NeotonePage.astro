@@ -136,11 +136,25 @@ const ld = [
 
   <Section id="procedure">
     <SectionHeading eyebrow={n.procEyebrow} title={n.procTitle} intro={n.procIntro} />
-    <ol class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <p class="mt-3 text-center font-display text-lg font-700 text-rust md:whitespace-nowrap">{n.procHighlight}</p>
+
+    <h3 class="mt-12 flex items-center gap-2 font-display text-xl font-700"><Icon name="lucide:globe" class="h-6 w-6 text-copper" />{n.procOnlineTitle}</h3>
+    <ol class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {d.procedure.map((step, i) => (
         <li class="rounded-card border border-ink/10 bg-cream-deep/40 p-6">
           <span class="grid h-9 w-9 place-items-center rounded-full bg-rust font-display text-lg font-700 text-cream">{i + 1}</span>
-          <h3 class="mt-4 font-display text-lg font-700">{step.title}</h3>
+          <h4 class="mt-4 font-display text-lg font-700">{step.title}</h4>
+          <p class="mt-2 text-sm text-ink-soft/85">{step.text}</p>
+        </li>
+      ))}
+    </ol>
+
+    <h3 class="mt-12 flex items-center gap-2 font-display text-xl font-700"><Icon name="lucide:map-pin" class="h-6 w-6 text-copper" />{n.procShowroomTitle}</h3>
+    <ol class="mt-6 grid gap-6 md:grid-cols-3">
+      {d.procedureShowroom.map((step, i) => (
+        <li class="rounded-card border border-copper/25 bg-copper/5 p-6">
+          <span class="grid h-9 w-9 place-items-center rounded-full bg-copper font-display text-lg font-700 text-cream">{i + 1}</span>
+          <h4 class="mt-4 font-display text-lg font-700">{step.title}</h4>
           <p class="mt-2 text-sm text-ink-soft/85">{step.text}</p>
         </li>
       ))}
@@ -162,6 +176,26 @@ const ld = [
       <h2 class="mt-4 font-display text-2xl font-700 text-cream md:text-3xl">{n.bridgeTitle}</h2>
       <p class="mx-auto mt-4 max-w-2xl text-cream/75">{n.bridgeText}</p>
       <div class="mt-7"><Button href={L('/handpan-studio')} variant="light">{n.bridgeCta}</Button></div>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
+    <SectionHeading eyebrow={n.trustEyebrow} title={n.trustTitle} />
+    <div class="mt-10 grid items-center gap-8 lg:grid-cols-2">
+      <div class="space-y-4 text-ink-soft/90">
+        <p>{n.trustP1}</p>
+        <p>{n.trustP2}</p>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <figure class="overflow-hidden rounded-card shadow-md">
+          <img src="/images/prod-neotone-hongrie-equipe.webp" width="821" height="1026" alt="David Lesage avec l’équipe Neotone dans l’atelier en Hongrie" class="aspect-[4/5] w-full object-cover" loading="lazy" />
+          <figcaption class="bg-cream px-3 py-2 text-xs text-ink-soft/75">{n.trustCaption2}</figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-card shadow-md">
+          <img src="/images/prod-neotone-hongrie-debug.webp" width="821" height="1026" alt="David Lesage en session de test et de debug avec l’équipe Neotone" class="aspect-[4/5] w-full object-cover" loading="lazy" />
+          <figcaption class="bg-cream px-3 py-2 text-xs text-ink-soft/75">{n.trustCaption1}</figcaption>
+        </figure>
+      </div>
     </div>
   </Section>
 
