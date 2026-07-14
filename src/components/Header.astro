@@ -14,6 +14,8 @@ const basePath = unlocalizePath(Astro.url.pathname)
 const isActive = (href: string) => (href === '/' ? basePath === '/' : basePath.startsWith(href))
 const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
 const navLabel = (key: string) => (t.common.nav as Record<string, string>)[key]
+// 7 couleurs des chakras (rouge → violet) pour mettre en avant Handpan Studio
+const chakra = ['#e0402b', '#ef8a2a', '#f1c62f', '#4caf6d', '#39a0dd', '#3a4fa6', '#8a49b8']
 ---
 
 <header class="sticky top-0 z-50 border-b border-ink/10 bg-cream/90 backdrop-blur-md">
@@ -29,10 +31,15 @@ const navLabel = (key: string) => (t.common.nav as Record<string, string>)[key]
         <li>
           <a
             href={localizePath(item.href, lang)}
-            class:list={['rounded-full px-3 py-2 text-sm font-600 transition-colors hover:bg-ink/5', isActive(item.href) ? 'text-rust' : 'text-ink-soft']}
+            class:list={['rounded-full px-3 py-2 text-sm font-600 transition-colors hover:bg-ink/5', isActive(item.href) ? 'text-rust' : 'text-ink-soft', item.key === 'studio' ? 'flex flex-col items-center gap-1' : '']}
             aria-current={isActive(item.href) ? 'page' : undefined}
           >
             {navLabel(item.key)}
+            {item.key === 'studio' && (
+              <span class="flex gap-[3px]" aria-hidden="true">
+                {chakra.map((c) => <span class="h-1.5 w-1.5 rounded-full" style={`background:${c}`}></span>)}
+              </span>
+            )}
           </a>
         </li>
       ))}
@@ -59,8 +66,13 @@ const navLabel = (key: string) => (t.common.nav as Record<string, string>)[key]
     <ul class="mx-auto flex max-w-7xl flex-col px-4 py-2">
       {nav.map((item) => (
         <li>
-          <a href={localizePath(item.href, lang)} class:list={['block rounded-lg px-3 py-3 text-base font-600', isActive(item.href) ? 'text-rust' : 'text-ink-soft']}>
+          <a href={localizePath(item.href, lang)} class:list={['flex items-center gap-2 rounded-lg px-3 py-3 text-base font-600', isActive(item.href) ? 'text-rust' : 'text-ink-soft']}>
             {navLabel(item.key)}
+            {item.key === 'studio' && (
+              <span class="flex gap-[3px]" aria-hidden="true">
+                {chakra.map((c) => <span class="h-1.5 w-1.5 rounded-full" style={`background:${c}`}></span>)}
+              </span>
+            )}
           </a>
         </li>
       ))}
