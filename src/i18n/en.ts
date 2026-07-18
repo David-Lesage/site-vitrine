@@ -130,6 +130,7 @@ export const en: Dict = {
     extrasTitle: 'What you’ll need to buy on top',
     extrasIntro: 'The Neotone is complete, but to hear it and get the most out of it, plan for this small extra gear depending on your use.',
     extrasSpeakerCta: 'Read: getting the sound right around you',
+    extrasHeadphonesCta: 'Read: which headphones to choose',
     bridgeEyebrow: 'Your Neotone + the visual method',
     bridgeTitle: 'Learn through colours and shapes',
     bridgeText: 'With Handpan Studio, you learn through colours and shapes — on your Neotone just as on an acoustic handpan.',

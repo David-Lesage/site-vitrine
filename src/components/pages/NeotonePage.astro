@@ -182,7 +182,7 @@ const ld = [
     <SectionHeading eyebrow={n.extrasEyebrow} title={n.extrasTitle} intro={n.extrasIntro} />
     <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {d.extras.map((it, i) => (
-        <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6 text-center"><Icon name={extrasIcons[i]} class="mx-auto h-8 w-8 text-copper" /><h3 class="mt-3 font-display text-lg font-700">{it.title}</h3><p class="mt-2 text-sm text-ink-soft/85">{it.text}</p>{i === 2 && <a href={L('/blog/etre-bien-dans-le-son-neotone')} class="mt-3 text-sm font-700 text-rust underline">{n.extrasSpeakerCta}</a>}</div>
+        <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6 text-center"><Icon name={extrasIcons[i]} class="mx-auto h-8 w-8 text-copper" /><h3 class="mt-3 font-display text-lg font-700">{it.title}</h3><p class="mt-2 text-sm text-ink-soft/85">{it.text}</p>{i === 0 && <a href={L('/blog/quel-casque-choisir-neotone')} class="mt-3 text-sm font-700 text-rust underline">{n.extrasHeadphonesCta}</a>}{i === 2 && <a href={L('/blog/etre-bien-dans-le-son-neotone')} class="mt-3 text-sm font-700 text-rust underline">{n.extrasSpeakerCta}</a>}</div>
       ))}
     </div>
   </Section>

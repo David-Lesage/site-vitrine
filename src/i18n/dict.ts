@@ -136,6 +136,7 @@ const fr = {
     extrasTitle: 'Ce qu’il faudra acheter en plus',
     extrasIntro: 'Le Neotone est complet, mais pour l’entendre et l’exploiter à fond, prévois ce petit matériel selon ton usage.',
     extrasSpeakerCta: 'Lire : bien se placer dans le son',
+    extrasHeadphonesCta: 'Lire : quel casque choisir',
     bridgeEyebrow: 'Ton Neotone + la méthode visuelle',
     bridgeTitle: 'Apprends par les couleurs et les formes',
     bridgeText: 'Avec Handpan Studio, tu apprends par les couleurs et les formes — sur ton Neotone comme sur un handpan acoustique.',
