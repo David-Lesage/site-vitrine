@@ -78,6 +78,16 @@ if (d.youtubeId) ldJSON.push(...videoLdJson([{ id: d.youtubeId, name: d.title, d
       <Content />
     </div>
 
+    <script>
+      // External links inside an article open in a new tab: the visitor keeps the site open.
+      document.querySelectorAll<HTMLAnchorElement>('.prose-blog a[href^="http"]').forEach((a) => {
+        if (a.hostname && a.hostname !== window.location.hostname) {
+          a.target = '_blank'
+          a.rel = 'noopener'
+        }
+      })
+    </script>
+
     <div class="mt-14 rounded-card border border-ink/10 bg-cream-deep p-8 text-center shadow-sm">
       <p class="font-display text-xl font-700 text-ink">Ready to make your colours sing?</p>
       <p class="mt-2 text-ink-soft/85">Try the app for free, or discover the electronic Neotone handpan.</p>

@@ -1,0 +1,71 @@
+---
+title: "Setup nomade : Neotone + Bose S1 Pro+, le combo du musicien autonome"
+description: "Jouer partout sans prise de courant : le Neotone et la Bose S1 Pro+ forment un setup 100 % sur batterie, monté en une minute. Matériel, budget et liens d'achat."
+pubDate: 2026-07-17
+cover: "/images/blog-setup-nomade.svg"
+tags: ["neotone", "matériel", "son"]
+lang: "fr"
+permalink: "setup-nomade-neotone-bose-s1"
+draft: false
+---
+
+Jouer sur une plage au coucher du soleil, en forêt, sur une terrasse ou dans une salle — sans chercher une prise, sans ingénieur du son, sans un coffre rempli de matériel. C'est exactement ce que permet le duo **[Neotone](/le-neotone) + Bose S1 Pro+** : deux appareils sur batterie, un câble entre les deux, et tu es autonome. Voici le setup que j'utilise vraiment, avec les liens pour chaque élément.
+
+![Le combo nomade autonome : Neotone + Bose S1 Pro+ + un câble jack](/images/blog-setup-nomade.svg)
+
+## Pourquoi ce duo fonctionne si bien
+
+Un handpan acoustique est déjà nomade — mais il ne joue qu'une gamme, et il est vite couvert dès qu'il y a du monde. Un setup électronique classique, lui, demande du courant. Le combo Neotone + S1 Pro+ règle les deux problèmes d'un coup :
+
+- **Tout est sur batterie.** Le Neotone tient environ 8 h de jeu, la S1 Pro+ jusqu'à 11 h annoncées par Bose (compte plutôt 8 h à bon volume). Tu peux jouer une journée entière sans prise.
+- **Un seul câble.** Une sortie jack du Neotone vers une entrée de l'enceinte, et c'est réglé. Pas de table de mixage, pas de multiprise.
+- **Installé en une minute.** Tu poses l'enceinte, tu branches, tu joues. C'est ce qui fait qu'on sort l'instrument… au lieu de renoncer.
+- **Toutes les gammes dans un seul instrument.** Là où il faudrait 10 handpans acoustiques, le Neotone te suit partout avec l'ensemble de tes gammes.
+- **Pas de Larsen.** Contrairement à un handpan acoustique sonorisé par un micro, tu peux monter le volume sans accrochage.
+
+## Le cœur du setup
+
+### 1. Le Neotone
+
+C'est l'instrument. Le **Neotone¹** (10 notes) ou le **Mutant** (19 notes), au choix — tous deux autonomes sur batterie, avec sortie casque et sorties ligne. Je suis ambassadeur officiel : en passant par moi tu as **−5 % en ligne (ou −7 % au showroom)**, la garantie 6 ans et un accompagnement de l'essai jusqu'au déballage.
+
+### 2. La Bose S1 Pro+
+
+C'est elle qui te rend audible. Compacte, robuste, sur batterie, avec une petite table de mixage intégrée. Elle sert à la fois d'enceinte de diffusion **et** de retour personnel — ce qui est capital : place-la **derrière toi, à hauteur de tête** pour être vraiment *dans* le son. J'explique précisément ce placement dans [mon conseil pour être bien dans le son](/blog/etre-bien-dans-le-son-neotone).
+
+### 3. Le câble jack
+
+Un simple câble jack 6,35 mm mono (ou deux pour la stéréo). C'est le seul lien entre les deux appareils.
+
+## Les options, selon ton usage
+
+- **Un casque** — pour jouer en silence la nuit, en van ou à l'hôtel. Le Neotone a une sortie casque dédiée : voir [jouer et chanter au casque](/blog/jouer-et-chanter-au-casque-neotone).
+- **Le caisson Bose Sub1** — si tu veux de vraies basses profondes en petit concert. Attention : il pèse **16 kg**, donc il sort du registre « nomade léger ». Réserve-le aux dates où tu viens en voiture.
+- **Un micro** — si tu chantes ou si tu veux aussi capter un handpan acoustique, le **Hisong AirStudio S1** se branche sur la S1 Pro+ et transforme le setup en mini-studio mobile.
+
+## Le budget, sans mauvaise surprise
+
+| Élément | Prix indicatif |
+|---|---|
+| Neotone¹ (10 notes) | à partir de 1 990 € |
+| Neotone¹ Mutant (19 notes) | à partir de 3 150 € |
+| Bose S1 Pro+ | 799,95 € |
+| Câble jack 6,35 mm | 15 à 30 € |
+| **Option** — caisson Bose Sub1 | 990 € |
+| **Option** — micro Hisong AirStudio S1 | 319 à 426 € TTC |
+
+Un setup complet Neotone¹ + S1 Pro+ + câble revient donc autour de **2 800 €** — l'équivalent d'un bon handpan acoustique unique, mais avec toutes les gammes, l'autonomie totale et la sonorisation incluse.
+
+## Où acheter chaque élément
+
+- **Neotone¹ / Neotone¹ Mutant** → [ma page Neotone](/le-neotone) (code de remise −5 %, garantie 6 ans, accompagnement personnel). Tu peux aussi [venir l'essayer à Paris](/showroom) et repartir avec le jour même.
+- **Bose S1 Pro+** → [page officielle Bose](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html)
+- **Caisson Bose Sub1** (option) → [page officielle Bose](https://www.bose.fr/p/portable-pa/sub1-powered-bass-module/SUB1-SPEAKERBASSMOD.html)
+- **Micro Hisong AirStudio S1** (option) → [via mon lien partenaire](https://hisong.io/DAVID-LESAGE-SAVE-5) — attention, les prix y sont affichés hors taxes : les détails sont dans [ma boutique](/boutique).
+- **Câble jack, casque, câble MIDI-USB** → chez n'importe quel revendeur audio sérieux, par exemple [Thomann](https://www.thomann.de/fr/search_dir.html?sw=cable+jack+6.3).
+
+## Et la méthode dans tout ça ?
+
+Le matériel ne fait pas la musique. Ce setup prend tout son sens avec une façon d'apprendre qui va vite : les couleurs et les formes. [Handpan Studio](/handpan-studio) t'accompagne sur ton Neotone comme sur un handpan acoustique — et si tu veux être guidé, [mes cours](/cours) sont là pour ça.
+
+Le vrai luxe du musicien nomade, ce n'est pas d'avoir beaucoup de matériel. C'est de pouvoir **poser son sac n'importe où et jouer dans les deux minutes**.
