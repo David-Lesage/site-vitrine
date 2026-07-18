@@ -1,0 +1,67 @@
+---
+// Lecteur vidéo YouTube en modale : le visiteur reste sur le site.
+// S'ouvre au clic sur tout élément portant [data-video-id].
+// À inclure UNE fois par page contenant de tels boutons.
+---
+
+<div
+  id="video-modal"
+  class="fixed inset-0 z-[100] hidden items-center justify-center bg-ink/90 p-4 backdrop-blur-sm"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+>
+  <button
+    class="vm-close absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-cream/15 text-3xl leading-none text-cream transition hover:bg-cream/25"
+    type="button"
+    aria-label="Fermer la vidéo"
+  >×</button>
+  <div class="vm-inner relative aspect-video w-full max-w-5xl overflow-hidden rounded-card bg-black shadow-2xl"></div>
+</div>
+
+<script>
+  const modal = document.getElementById('video-modal')
+  const inner = modal?.querySelector<HTMLElement>('.vm-inner') || null
+  const closeBtn = modal?.querySelector<HTMLElement>('.vm-close') || null
+  let lastFocused: HTMLElement | null = null
+
+  function openVideo(id: string, title: string) {
+    if (!modal || !inner || !id) return
+    lastFocused = document.activeElement as HTMLElement
+    const iframe = document.createElement('iframe')
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`
+    iframe.title = title || 'Vidéo'
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen'
+    iframe.setAttribute('allowfullscreen', '')
+    iframe.className = 'absolute inset-0 h-full w-full border-0'
+    inner.replaceChildren(iframe)
+    modal.classList.remove('hidden')
+    modal.classList.add('flex')
+    modal.setAttribute('aria-hidden', 'false')
+    document.body.style.overflow = 'hidden'
+    setTimeout(() => closeBtn?.focus(), 50)
+  }
+
+  function closeVideo() {
+    if (!modal || !inner) return
+    inner.replaceChildren() // stoppe la lecture
+    modal.classList.add('hidden')
+    modal.classList.remove('flex')
+    modal.setAttribute('aria-hidden', 'true')
+    document.body.style.overflow = ''
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus()
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-video-id]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault()
+      openVideo(el.getAttribute('data-video-id') || '', el.getAttribute('data-video-title') || '')
+    })
+  })
+
+  closeBtn?.addEventListener('click', closeVideo)
+  modal?.addEventListener('click', (e) => { if (e.target === modal) closeVideo() })
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) closeVideo()
+  })
+</script>
