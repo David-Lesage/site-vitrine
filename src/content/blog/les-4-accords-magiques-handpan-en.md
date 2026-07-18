@@ -26,7 +26,7 @@ In Logic Mode, each degree carries a stable colour and emotion, as explained in 
 - Degree **VI** — the nostalgic, bittersweet tint.
 - Degree **IV** — openness, the wide space.
 
-![Four chords shown as coloured mini-handpan diagrams](/images/blog-diagrammes-accords.webp)
+![Four chords shown as coloured mini-handpan diagrams](/images/blog-grille-accords-familles.webp)
 
 You no longer have to remember chord names or abstract positions. You follow a sequence of colours, and the magic loop turns under your hands. It's the same gesture described in [Accompanying songs on handpan](/blog/accompagner-des-chansons-au-handpan): chaining chords the way a guitarist would.
 
