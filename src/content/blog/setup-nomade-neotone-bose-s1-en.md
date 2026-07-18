@@ -2,7 +2,7 @@
 title: "Nomad setup: Neotone + Bose S1 Pro+, the self-sufficient musician's combo"
 description: "Play anywhere with no mains power: the Neotone and the Bose S1 Pro+ make a 100% battery-powered setup, up and running in one minute. Gear, budget and buying links."
 pubDate: 2026-07-17
-cover: "/images/blog-setup-nomade.svg"
+cover: "/images/blog-setup-nomade.webp"
 tags: ["neotone", "gear", "sound"]
 lang: "en"
 permalink: "setup-nomade-neotone-bose-s1"
@@ -11,7 +11,7 @@ draft: false
 
 Playing on a beach at sunset, in a forest, on a terrace or in a venue — without hunting for a power socket, without a sound engineer, without a car boot full of gear. That's exactly what the **[Neotone](/le-neotone) + Bose S1 Pro+** duo makes possible: two battery-powered devices, one cable between them, and you're self-sufficient. Here's the setup I actually use, with links for every item.
 
-![The self-sufficient nomad combo: Neotone + Bose S1 Pro+ + one jack cable](/images/blog-setup-nomade.svg)
+![The self-sufficient nomad combo: Neotone + Bose S1 Pro+ + one angled jack cable](/images/blog-setup-nomade.webp)
 
 ## Why this duo works so well
 
@@ -33,9 +33,9 @@ This is the instrument. The **Neotone¹** (10 notes) or the **Mutant** (19 notes
 
 This is what makes you audible. Compact, sturdy, battery-powered, with a small built-in mixer. It works both as a front-of-house speaker **and** as your personal monitor — which is crucial: place it **behind you, at head height** to be truly *inside* the sound. I explain that placement precisely in [my advice for being fully in the sound](/blog/etre-bien-dans-le-son-neotone).
 
-### 3. The jack cable
+### 3. The jack cable — angled, and that matters
 
-A simple 6.35 mm mono jack cable (or two for stereo). It's the only link between the two devices.
+A simple 6.35 mm mono jack cable (or two for stereo). It's the only link between the two devices. But one detail matters a lot: choose a cable with an **angled connector** on the instrument side, like [this Ernie Ball cable](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm). Why? Because with a straight jack sticking out under the instrument, **you can't rest the Neotone on the floor**: it's a daily annoyance, and it can damage the connector. The angled plug runs along the body of the instrument — you put your Neotone down wherever you like, without thinking about it.
 
 ## Options, depending on your use
 
@@ -50,7 +50,7 @@ A simple 6.35 mm mono jack cable (or two for stereo). It's the only link between
 | Neotone¹ (10 notes) | from €1,990 |
 | Neotone¹ Mutant (19 notes) | from €3,150 |
 | Bose S1 Pro+ | €799.95 |
-| 6.35 mm jack cable | €15 to €30 |
+| Angled 6.35 mm jack cable | €15 to €30 |
 | **Option** — Bose Sub1 subwoofer | €990 |
 | **Option** — Hisong AirStudio S1 mic | €319 to €426 incl. VAT |
 
@@ -62,7 +62,8 @@ A complete Neotone¹ + S1 Pro+ + cable setup therefore comes to around **€2,80
 - **Bose S1 Pro+** → [official Bose page](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html)
 - **Bose Sub1 subwoofer** (option) → [official Bose page](https://www.bose.fr/p/portable-pa/sub1-powered-bass-module/SUB1-SPEAKERBASSMOD.html)
 - **Hisong AirStudio S1 mic** (option) → [via my partner link](https://hisong.io/DAVID-LESAGE-SAVE-5) — careful, prices there are shown excluding tax: the details are in [my shop](/boutique).
-- **Jack cable, headphones, MIDI-USB cable** → from any serious audio retailer, for example [Thomann](https://www.thomann.de/fr/search_dir.html?sw=cable+jack+6.3).
+- **Angled jack cable** → for example [this Ernie Ball cable at Thomann](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm) (angled connector on the instrument side, essential to rest the handpan on the floor).
+- **Headphones, MIDI-USB cable** → from any serious audio retailer, for example [Thomann](https://www.thomann.de/fr/search_dir.html?sw=cable+jack+6.3).
 
 ## And what about the method?
 

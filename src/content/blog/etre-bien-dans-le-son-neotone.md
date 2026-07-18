@@ -48,6 +48,7 @@ Casque **et** enceinte ne s'opposent pas : le casque pour l'intimité et la pré
 - **Le volume** se règle sur le Neotone : monte-le jusqu'à sentir le son te porter, sans saturer l'enceinte.
 - **Pas de Larsen** à craindre : contrairement à un micro sur un handpan acoustique, le Neotone est électronique, tu peux pousser le niveau sans accrochage.
 - **En stéréo** (deux jacks, deux enceintes), place-les légèrement derrière toi de chaque côté : l'immersion est encore plus belle.
+- **Choisis des câbles jack coudés** côté instrument (comme [ce câble Ernie Ball](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm)) : avec un jack droit, impossible de poser le Neotone au sol — c'est pénible et ça peut abîmer la connectique.
 
 ## En résumé
 

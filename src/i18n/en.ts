@@ -633,7 +633,7 @@ export const en: Dict = {
     ],
     extras: [
       { title: 'Headphones or earbuds', text: 'To play silently, at night or in a flat. Ideally headphones with a 6.35 mm jack (or an adapter).' },
-      { title: 'A jack cable', text: 'A mono (1 output) or stereo (2 outputs) jack cable to connect the Neotone to your speaker or mixer.' },
+      { title: 'An angled jack cable', text: 'A mono (1 output) or stereo (2 outputs) jack cable to connect the Neotone to your speaker. Important: choose an angled connector on the instrument side — that’s what lets you rest the handpan on the floor without damaging the connector.' },
       { title: 'A speaker', text: 'Essential to project the sound. My pick: the Bose S1 Pro+, self-powered (8 h battery), superb in a jam or for small concerts (with the Sub 1 subwoofer as an option if you want real bass, deep and warm).' },
       { title: 'A MIDI → USB cable', text: 'A MIDI-to-USB cable (or USB-A to USB-C) if you want to drive music software (DAW: Logic Pro, Ableton Live…).' },
     ],

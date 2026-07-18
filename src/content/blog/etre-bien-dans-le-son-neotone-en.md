@@ -48,6 +48,7 @@ Headphones **and** speaker aren't rivals: headphones for intimacy and precision,
 - **Volume** is set on the Neotone: bring it up until the sound carries you, without saturating the speaker.
 - **No feedback** to fear: unlike a mic on an acoustic handpan, the Neotone is electronic, so you can push the level with no howl.
 - **In stereo** (two jacks, two speakers), place them slightly behind you on each side: the immersion is even better.
+- **Choose angled jack cables** on the instrument side (like [this Ernie Ball cable](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm)): with a straight jack you can't rest the Neotone on the floor — it's a hassle and it can damage the connector.
 
 ## In short
 

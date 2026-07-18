@@ -2,7 +2,7 @@
 title: "Setup nomade : Neotone + Bose S1 Pro+, le combo du musicien autonome"
 description: "Jouer partout sans prise de courant : le Neotone et la Bose S1 Pro+ forment un setup 100 % sur batterie, monté en une minute. Matériel, budget et liens d'achat."
 pubDate: 2026-07-17
-cover: "/images/blog-setup-nomade.svg"
+cover: "/images/blog-setup-nomade.webp"
 tags: ["neotone", "matériel", "son"]
 lang: "fr"
 permalink: "setup-nomade-neotone-bose-s1"
@@ -11,7 +11,7 @@ draft: false
 
 Jouer sur une plage au coucher du soleil, en forêt, sur une terrasse ou dans une salle — sans chercher une prise, sans ingénieur du son, sans un coffre rempli de matériel. C'est exactement ce que permet le duo **[Neotone](/le-neotone) + Bose S1 Pro+** : deux appareils sur batterie, un câble entre les deux, et tu es autonome. Voici le setup que j'utilise vraiment, avec les liens pour chaque élément.
 
-![Le combo nomade autonome : Neotone + Bose S1 Pro+ + un câble jack](/images/blog-setup-nomade.svg)
+![Le combo nomade autonome : Neotone + Bose S1 Pro+ + un câble jack coudé](/images/blog-setup-nomade.webp)
 
 ## Pourquoi ce duo fonctionne si bien
 
@@ -33,9 +33,9 @@ C'est l'instrument. Le **Neotone¹** (10 notes) ou le **Mutant** (19 notes), au 
 
 C'est elle qui te rend audible. Compacte, robuste, sur batterie, avec une petite table de mixage intégrée. Elle sert à la fois d'enceinte de diffusion **et** de retour personnel — ce qui est capital : place-la **derrière toi, à hauteur de tête** pour être vraiment *dans* le son. J'explique précisément ce placement dans [mon conseil pour être bien dans le son](/blog/etre-bien-dans-le-son-neotone).
 
-### 3. Le câble jack
+### 3. Le câble jack — coudé, c'est important
 
-Un simple câble jack 6,35 mm mono (ou deux pour la stéréo). C'est le seul lien entre les deux appareils.
+Un simple câble jack 6,35 mm mono (ou deux pour la stéréo). C'est le seul lien entre les deux appareils. Mais un détail compte énormément : prends un câble avec un **connecteur coudé** côté instrument, comme [ce câble Ernie Ball](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm). Pourquoi ? Parce qu'avec un jack droit qui dépasse sous l'instrument, **impossible de poser le Neotone au sol** : c'est pénible au quotidien, et ça peut abîmer la connectique. Le coudé longe le corps de l'instrument — tu poses ton Neotone où tu veux, sans y penser.
 
 ## Les options, selon ton usage
 
@@ -50,7 +50,7 @@ Un simple câble jack 6,35 mm mono (ou deux pour la stéréo). C'est le seul lie
 | Neotone¹ (10 notes) | à partir de 1 990 € |
 | Neotone¹ Mutant (19 notes) | à partir de 3 150 € |
 | Bose S1 Pro+ | 799,95 € |
-| Câble jack 6,35 mm | 15 à 30 € |
+| Câble jack 6,35 mm coudé | 15 à 30 € |
 | **Option** — caisson Bose Sub1 | 990 € |
 | **Option** — micro Hisong AirStudio S1 | 319 à 426 € TTC |
 
@@ -62,7 +62,8 @@ Un setup complet Neotone¹ + S1 Pro+ + câble revient donc autour de **2 800 €
 - **Bose S1 Pro+** → [page officielle Bose](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html)
 - **Caisson Bose Sub1** (option) → [page officielle Bose](https://www.bose.fr/p/portable-pa/sub1-powered-bass-module/SUB1-SPEAKERBASSMOD.html)
 - **Micro Hisong AirStudio S1** (option) → [via mon lien partenaire](https://hisong.io/DAVID-LESAGE-SAVE-5) — attention, les prix y sont affichés hors taxes : les détails sont dans [ma boutique](/boutique).
-- **Câble jack, casque, câble MIDI-USB** → chez n'importe quel revendeur audio sérieux, par exemple [Thomann](https://www.thomann.de/fr/search_dir.html?sw=cable+jack+6.3).
+- **Câble jack coudé** → par exemple [ce câble Ernie Ball chez Thomann](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm) (connecteur coudé côté instrument, indispensable pour poser le handpan au sol).
+- **Casque, câble MIDI-USB** → chez n'importe quel revendeur audio sérieux, par exemple [Thomann](https://www.thomann.de/fr/search_dir.html?sw=cable+jack+6.3).
 
 ## Et la méthode dans tout ça ?
 
