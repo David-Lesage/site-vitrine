@@ -25,11 +25,13 @@
   const closeBtn = modal?.querySelector<HTMLElement>('.vm-close') || null
   let lastFocused: HTMLElement | null = null
 
-  function openVideo(id: string, title: string) {
-    if (!modal || !inner || !id) return
+  function openVideo(id: string, title: string, list: string) {
+    if (!modal || !inner || (!id && !list)) return
     lastFocused = document.activeElement as HTMLElement
     const iframe = document.createElement('iframe')
-    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`
+    iframe.src = list
+      ? `https://www.youtube-nocookie.com/embed/videoseries?list=${list}&autoplay=1`
+      : `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`
     iframe.title = title || 'Vidéo'
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen'
     iframe.setAttribute('allowfullscreen', '')
@@ -52,10 +54,14 @@
     if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus()
   }
 
-  document.querySelectorAll<HTMLElement>('[data-video-id]').forEach((el) => {
+  document.querySelectorAll<HTMLElement>('[data-video-id], [data-video-list]').forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault()
-      openVideo(el.getAttribute('data-video-id') || '', el.getAttribute('data-video-title') || '')
+      openVideo(
+        el.getAttribute('data-video-id') || '',
+        el.getAttribute('data-video-title') || '',
+        el.getAttribute('data-video-list') || ''
+      )
     })
   })
 

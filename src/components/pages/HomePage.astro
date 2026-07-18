@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
+import VideoModal from '@/components/VideoModal.astro'
 import { Icon } from 'astro-icon/components'
 import YouTube from '@/components/YouTube.astro'
 import { site, homeVideos, neotonePlaylist } from '@/data/site'
@@ -16,6 +17,8 @@ const { lang } = Astro.props
 const t = getDict(lang)
 const h = t.home
 const L = (p: string) => localizePath(p, lang)
+// Identifiant de la playlist YouTube, pour l'ouvrir dans la modale (le visiteur reste sur le site)
+const playlistId = (neotonePlaylist.match(/list=([\w-]+)/) || [])[1] || ''
 
 // Hero épuré (premium) : le mot-clé en dégradé de marque, les 3 piliers
 // en gras doré. Plus de glyphes (notes / smileys / handpan sur les lettres).
@@ -141,6 +144,9 @@ const universMeta = [
         </figure>
       ))}
     </div>
-    <div class="mt-8 text-center"><Button href={neotonePlaylist} variant="ghost" external>{h.proofCta}</Button></div>
+    <div class="mt-8 text-center">
+      <button type="button" data-video-list={playlistId} data-video-title={h.proofCta} class="inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-700 text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-ink/5">{h.proofCta}</button>
+    </div>
   </Section>
+  <VideoModal />
 </Layout>
