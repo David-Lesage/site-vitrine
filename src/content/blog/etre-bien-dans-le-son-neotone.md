@@ -19,9 +19,7 @@ L'idée, c'est de recréer la sensation acoustique : **que le son t'arrive, t'en
 
 ## Place ton enceinte derrière toi, à hauteur de tête
 
-Mon réglage préféré, et de loin : **l'enceinte derrière toi, surélevée au niveau de la tête**, orientée vers l'avant par-dessus ton épaule.
-
-![Schéma : place l'enceinte derrière toi, à hauteur de tête, pour sentir le son arriver de l'arrière](/images/blog-son-neotone-schema.svg)
+Mon réglage préféré, et de loin : **l'enceinte derrière toi, surélevée au niveau de la tête**, orientée vers l'avant par-dessus ton épaule — exactement comme sur le schéma en haut de cet article.
 
 Ce qui se passe alors :
 

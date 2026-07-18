@@ -231,8 +231,8 @@ const fr = {
     videoTitles: {
       extrait: 'Extrait — le Gonilélé présenté',
       uneAme: '« Une âme » — apprendre le Gonilélé',
-      uneAmeExtrait: '« Une âme » — extrait au Gonilélé',
-      rencontre: 'Rencontre avec le N’Goni',
+      rappelle: '« Rappelle-moi la beauté » — au Gonilélé',
+      kothbiro: '« Kothbiro » — au Gonilélé (432 Hz)',
       sonoriser: 'Sonoriser ton Gonilélé facilement',
       amplifier: 'Amplifier ton Gonilélé',
     },

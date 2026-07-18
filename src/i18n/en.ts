@@ -225,8 +225,8 @@ export const en: Dict = {
     videoTitles: {
       extrait: 'Excerpt — the Gonilélé presented',
       uneAme: '“Une âme” — learning the Gonilélé',
-      uneAmeExtrait: '“Une âme” — Gonilélé excerpt',
-      rencontre: 'Meeting the N’Goni',
+      rappelle: '“Rappelle-moi la beauté” — on the Gonilélé',
+      kothbiro: '“Kothbiro” — on the Gonilélé (432 Hz)',
       sonoriser: 'Easily mic your Gonilélé',
       amplifier: 'Amplify your Gonilélé',
     },

@@ -19,9 +19,7 @@ The idea is to recreate the acoustic feeling: **let the sound reach you, surroun
 
 ## Place your speaker behind you, at head height
 
-My favourite setup, by far: **the speaker behind you, raised to head height**, aimed forward over your shoulder.
-
-![Diagram: place the speaker behind you, at head height, so you feel the sound arriving from behind](/images/blog-son-neotone-schema.svg)
+My favourite setup, by far: **the speaker behind you, raised to head height**, aimed forward over your shoulder — exactly as shown in the diagram at the top of this article.
 
 What happens then:
 

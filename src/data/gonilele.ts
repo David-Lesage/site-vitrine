@@ -19,8 +19,8 @@ export const gonileleUnboxingId = 'N-BTeDi81VI'
 export const gonileleVideos: { id: string; key: string }[] = [
   { id: '6fHa6__psT0', key: 'extrait' },
   { id: 'aXfJI1eKyT4', key: 'uneAme' },
-  { id: 'a63dDGWZohs', key: 'uneAmeExtrait' },
-  { id: 'lewR2Fga2UM', key: 'rencontre' },
+  { id: 'MvfffvT2xso', key: 'rappelle' },
+  { id: 'tsIkVKVxDAg', key: 'kothbiro' },
   { id: 'Ptvh8paylOQ', key: 'sonoriser' },
   { id: '_v1WfCLkgPU', key: 'amplifier' },
 ]
