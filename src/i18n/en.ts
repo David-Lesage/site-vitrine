@@ -158,6 +158,10 @@ export const en: Dict = {
     calcOrder: 'Calculate my price & order',
     linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: 'Muling', onesec: 'I actually use it' },
     linkCtas: { buy: 'See offer →', listen: 'Listen →', discover: 'Discover →', order: 'Order →', interested: 'I’m interested →' },
+    priceNotes: {
+      hisong:
+        '<strong>Heads-up:</strong> the prices shown on Hisong’s site are <strong>excluding tax</strong>. <strong>VAT</strong> (20% in France) and <strong>shipping</strong> — which varies with the carrier you choose — are added at checkout.<br><br><strong>The good news: discounts stack.</strong> My <strong>−5%</strong> code + the <strong>VIP10</strong> code (−10% on your first order, applied automatically), and sometimes exceptional promos of 15 to 20%.<br><br><strong>A concrete example:</strong> the Musician kit at €265.95 excl. tax comes to about <strong>€227 excl. tax</strong> after both discounts, i.e. roughly <strong>€273 incl. VAT</strong>. The Master kit (€354.95 excl. tax) comes to about <strong>€364 incl. VAT</strong>. Shipping on top.',
+    },
     watchDemo: 'Watch my demo video',
     adviceTitle: 'Need advice before buying?',
     adviceText: 'I answer personally. Tell me your project, I’ll help you choose the right instrument.',
@@ -181,7 +185,7 @@ export const en: Dict = {
       'calebasse': { name: 'David Lesage Signature Calabash Kit', description: 'Complete kit: a calabash 45 to 50 cm (rare in Europe), hand-finished by Kamou (Djoliba Percussion) and laser-engraved with the Now Groove logo, with its mat and shakers. An organic drum with a natural sound.' },
       'housse': { name: 'Now Groove calabash cover by David Lesage', description: 'A premium backpack cover designed by David Lesage: integrated mat function, detachable straps, storage pocket (eggs, accessories & method), velvet lining. ✋ Special handmade edition, ultra-limited series.' },
       'tambour': { name: 'Shamanic frame drum · L’Âme du Tambour', description: 'A handcrafted frame drum by Julien (L’Âme du Tambour) — an aligned, passionate and honest maker. Enjoy −5% with the code David-Tambour.' },
-      'micro-hisong': { name: 'Hisong AirStudio S1 microphone', description: 'The first all-in-one mobile studio (mic, wireless in-ears, audio interface, charging case). Perfect for voice, acoustic handpan and gonilélé — a true portable studio. Live demos and on-the-spot purchase at my Paris showcases. −5% with my code.' },
+      'micro-hisong': { name: 'Hisong AirStudio S1 microphone', description: 'The first all-in-one mobile studio (mic, wireless in-ears, audio interface, charging case). Perfect for voice, acoustic handpan and gonilélé — a true portable studio. Three kits to choose from: Musician 4-in-1 (€265.95), Creator 5-in-1 (€309.95) and Master 6-in-1 (€354.95). Live demos and on-the-spot purchase at my Paris showcases. −5% with my code.' },
       'micro-muling': { name: 'Muling MP1 microphone + HMP-2 preamp', description: 'The MP1 is a contact-condenser microphone made for the acoustic handpan. It comes with the HMP-2 preamp, which hosts up to two MP1 mics — for a clear, precise stereo capture with no feedback. Perfect for stage and recording. (Partnership with the maker in progress — email me to be kept posted.)' },
       'phoenix-opus1': { name: 'The Phoenix Alliance — Opus I', description: 'My original album, first opus — a journey blending handpan, voice and organic textures. Stream it on Spotify and every platform.' },
       'phoenix-opus2': { name: 'The Phoenix Alliance — Opus II', description: 'The second opus — the journey continues. Stream it on Spotify and every platform.' },

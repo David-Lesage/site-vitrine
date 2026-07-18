@@ -24,6 +24,7 @@ const productCopy = s.products as Record<string, { name: string; description: st
 const categoryCopy = s.categories as Record<string, { label: string; blurb: string }>
 const linkTags = s.linkTags as Record<string, string>
 const linkCtas = s.linkCtas as Record<string, string>
+const priceNotes = s.priceNotes as Record<string, string>
 const pName = (id: string) => productCopy[id]
 const catInfo = (id: string) => categoryCopy[id]
 
@@ -74,6 +75,9 @@ const ld = [
                     {p.mode === 'link' && p.priceLabel && <span class="font-display text-lg font-700">{p.priceLabel}</span>}
                     {p.mode === 'link' && p.tagKey && <span class="inline-flex items-center gap-1.5 rounded-full bg-copper/15 px-3 py-1 text-xs font-700 text-copper">{linkTags[p.tagKey]}</span>}
                   </div>
+                  {p.priceNoteKey && (
+                    <div class="mt-3 rounded-lg border border-copper/30 bg-copper/5 p-3 text-xs leading-relaxed text-ink-soft/90" set:html={priceNotes[p.priceNoteKey]} />
+                  )}
                   <div class="mt-4">
                     {p.mode === 'cart' && snipcartKey && (
                       <button class="snipcart-add-item w-full rounded-full bg-rust px-5 py-3 font-700 text-cream transition-colors hover:bg-copper" data-item-id={p.id} data-item-name={info.name} data-item-price={p.price} data-item-url="/boutique" data-item-description={info.description} data-item-image={p.image}>{s.addCart}</button>
