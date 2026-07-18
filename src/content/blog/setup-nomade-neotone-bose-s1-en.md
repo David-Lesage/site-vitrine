@@ -11,8 +11,6 @@ draft: false
 
 Playing on a beach at sunset, in a forest, on a terrace or in a venue — without hunting for a power socket, without a sound engineer, without a car boot full of gear. That's exactly what the **[Neotone](/le-neotone) + Bose S1 Pro+** duo makes possible: two battery-powered devices, one cable between them, and you're self-sufficient. Here's the setup I actually use, with links for every item.
 
-![The self-sufficient nomad combo: Neotone + Bose S1 Pro+ + one angled jack cable](/images/blog-setup-nomade.webp)
-
 ## Why this duo works so well
 
 An acoustic handpan is already nomadic — but it only plays one scale, and it gets drowned out as soon as there are people around. A classic electronic setup, on the other hand, needs mains power. The Neotone + S1 Pro+ combo solves both at once:
@@ -31,9 +29,13 @@ This is the instrument. The **Neotone¹** (10 notes) or the **Mutant** (19 notes
 
 ### 2. The Bose S1 Pro+
 
+![The Bose S1 Pro+ in its tilted monitor position](/images/prod-bose-s1pro.webp)
+
 This is what makes you audible. Compact, sturdy, battery-powered, with a small built-in mixer. It works both as a front-of-house speaker **and** as your personal monitor — which is crucial: place it **behind you, at head height** to be truly *inside* the sound. I explain that placement precisely in [my advice for being fully in the sound](/blog/etre-bien-dans-le-son-neotone).
 
 ### 3. The jack cable — angled, and that matters
+
+![Ernie Ball 6.35 mm jack cable with an angled connector](/images/prod-cable-jack-coude.webp)
 
 A simple 6.35 mm mono jack cable (or two for stereo). It's the only link between the two devices. But one detail matters a lot: choose a cable with an **angled connector** on the instrument side, like [this Ernie Ball cable](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm). Why? Because with a straight jack sticking out under the instrument, **you can't rest the Neotone on the floor**: it's a daily annoyance, and it can damage the connector. The angled plug runs along the body of the instrument — you put your Neotone down wherever you like, without thinking about it.
 

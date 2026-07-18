@@ -11,8 +11,6 @@ draft: false
 
 Jouer sur une plage au coucher du soleil, en forêt, sur une terrasse ou dans une salle — sans chercher une prise, sans ingénieur du son, sans un coffre rempli de matériel. C'est exactement ce que permet le duo **[Neotone](/le-neotone) + Bose S1 Pro+** : deux appareils sur batterie, un câble entre les deux, et tu es autonome. Voici le setup que j'utilise vraiment, avec les liens pour chaque élément.
 
-![Le combo nomade autonome : Neotone + Bose S1 Pro+ + un câble jack coudé](/images/blog-setup-nomade.webp)
-
 ## Pourquoi ce duo fonctionne si bien
 
 Un handpan acoustique est déjà nomade — mais il ne joue qu'une gamme, et il est vite couvert dès qu'il y a du monde. Un setup électronique classique, lui, demande du courant. Le combo Neotone + S1 Pro+ règle les deux problèmes d'un coup :
@@ -31,9 +29,13 @@ C'est l'instrument. Le **Neotone¹** (10 notes) ou le **Mutant** (19 notes), au 
 
 ### 2. La Bose S1 Pro+
 
+![La Bose S1 Pro+ en position moniteur inclinée](/images/prod-bose-s1pro.webp)
+
 C'est elle qui te rend audible. Compacte, robuste, sur batterie, avec une petite table de mixage intégrée. Elle sert à la fois d'enceinte de diffusion **et** de retour personnel — ce qui est capital : place-la **derrière toi, à hauteur de tête** pour être vraiment *dans* le son. J'explique précisément ce placement dans [mon conseil pour être bien dans le son](/blog/etre-bien-dans-le-son-neotone).
 
 ### 3. Le câble jack — coudé, c'est important
+
+![Câble jack 6,35 mm Ernie Ball avec connecteur coudé](/images/prod-cable-jack-coude.webp)
 
 Un simple câble jack 6,35 mm mono (ou deux pour la stéréo). C'est le seul lien entre les deux appareils. Mais un détail compte énormément : prends un câble avec un **connecteur coudé** côté instrument, comme [ce câble Ernie Ball](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm). Pourquoi ? Parce qu'avec un jack droit qui dépasse sous l'instrument, **impossible de poser le Neotone au sol** : c'est pénible au quotidien, et ça peut abîmer la connectique. Le coudé longe le corps de l'instrument — tu poses ton Neotone où tu veux, sans y penser.
 

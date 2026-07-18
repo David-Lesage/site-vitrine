@@ -2,7 +2,7 @@
 title: "Les Constellations : voir un accord comme une forme"
 description: "Dans Handpan Studio, un accord devient un dessin. Découvre les 3 façons de tracer une Constellation : Polygone, Ouvert et Mains."
 pubDate: 2026-07-02
-cover: "/images/constel-polygone.webp"
+cover: "/images/blog-constellations-3-traces.webp"
 tags: ["méthode", "accords"]
 lang: "fr"
 permalink: "les-constellations-du-handpan"

@@ -2,7 +2,7 @@
 title: "Constellations: seeing a chord as a shape"
 description: "In Handpan Studio, a chord becomes a drawing. Discover the 3 ways to trace a Constellation: Polygon, Open and Hands."
 pubDate: 2026-07-02
-cover: "/images/constel-polygone.webp"
+cover: "/images/blog-constellations-3-traces.webp"
 tags: ["method", "chords"]
 lang: "en"
 permalink: "les-constellations-du-handpan"
