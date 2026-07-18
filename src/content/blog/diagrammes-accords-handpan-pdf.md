@@ -2,7 +2,7 @@
 title: "Créer et exporter tes diagrammes d'accords en PDF"
 description: "Chaque accord dessiné comme un mini-handpan coloré : notes, ordre de jeu, doigté suggéré. Exporte tes diagrammes d'accords en PDF ou PNG imprimable."
 pubDate: 2026-08-19
-cover: "/images/blog-diagrammes-accords.webp"
+cover: "/images/blog-grille-accords-familles.webp"
 tags: ["diagrammes", "accords", "pdf"]
 lang: "fr"
 permalink: "diagrammes-accords-handpan-pdf"
@@ -20,7 +20,17 @@ Un accord noté sur une portée classique ne te dit pas *où poser tes mains* su
 - **Le doigté suggéré** — quelle main pour quelle note, particulièrement fiable en Mode Logique électronique ;
 - **Une légende** — accords, degrés et émotions associés, pour comprendre ce que tu joues.
 
-D'un simple regard, tu passes du nom d'un accord à un geste concret sur l'instrument. C'est le pont entre la théorie et tes mains.
+![Diagramme de l'accord Gm renversé : trois notes bleues reliées sur le mini-handpan](/images/blog-grille-accords-zoom.webp)
+
+D'un simple regard, tu passes du nom d'un accord à un geste concret sur l'instrument — ici l'accord **Gm** (renversé) : trois notes reliées, une forme reconnaissable. C'est le pont entre la théorie et tes mains.
+
+## Toute ta gamme, classée par familles
+
+La **Grille d'accords** de l'app va plus loin qu'un accord isolé : elle liste **tous les accords jouables sur ta gamme**, classés par familles — majeurs, mineurs, majeurs 7, mineurs 7, 7ᵉ, diminués — avec la mention « renversé » quand l'accord se joue dans un autre ordre. Voici l'export réel d'un **D Minor / Kurd 10** :
+
+![Export réel de la grille d'accords d'un D Minor Kurd 10 : la roue de la gamme avec ses notes colorées](/images/blog-grille-accords-roue.webp)
+
+En un document, tu sais exactement ce que ton handpan sait jouer. C'est ta carte d'identité harmonique.
 
 ## Réviser et transmettre
 
@@ -38,7 +48,9 @@ Tu choisis d'exporter tes diagrammes **isolément** — un fichier par accord, o
 
 ### Imprimable et éco-encre
 
-Active le **Mode Éco-Encre** avant d'imprimer : fond blanc, encre économisée, diagrammes toujours nets. Tes fiches d'accords sortent propres sur papier ordinaire, prêtes à poser sur le pupitre.
+Active le **Mode Éco-Encre** avant d'imprimer : fond blanc, encre économisée, diagrammes toujours nets — c'est exactement le rendu des exports montrés dans cet article. Tes fiches d'accords sortent propres sur papier ordinaire, prêtes à poser sur le pupitre :
+
+![Page complète de la grille d'accords exportée en PDF : roue de la gamme et accords classés par familles, signée Handpan Studio](/images/blog-grille-accords-dkurd.webp)
 
 ### Filigrane et gratuité
 

@@ -2,7 +2,7 @@
 title: "Create and export your chord diagrams as PDF"
 description: "Each chord drawn as a colourful mini-handpan: notes, play order, suggested fingering. Export your chord diagrams as printable PDF or PNG."
 pubDate: 2026-08-19
-cover: "/images/blog-diagrammes-accords.webp"
+cover: "/images/blog-grille-accords-familles.webp"
 tags: ["diagrams", "chords", "pdf"]
 lang: "en"
 permalink: "diagrammes-accords-handpan-pdf"
@@ -20,7 +20,17 @@ A chord written on a classical staff doesn't tell you *where to place your hands
 - **A suggested fingering** — which hand for which note, especially reliable in electronic Logic Mode;
 - **A legend** — chords, degrees and associated emotions, so you understand what you're playing.
 
-At a single glance, you move from a chord's name to a concrete gesture on the instrument. It's the bridge between theory and your hands.
+![Diagram of the inverted Gm chord: three blue notes linked on the mini-handpan](/images/blog-grille-accords-zoom.webp)
+
+At a single glance, you move from a chord's name to a concrete gesture on the instrument — here the **Gm** chord (inverted): three linked notes, a recognisable shape. It's the bridge between theory and your hands.
+
+## Your whole scale, sorted by families
+
+The app's **Chord Grid** goes beyond a single chord: it lists **every chord playable on your scale**, sorted by families — majors, minors, major 7, minor 7, 7th, diminished — with an "inverted" note when the chord is played in another order. Here is the real export of a **D Minor / Kurd 10**:
+
+![Real export of a D Minor Kurd 10 chord grid: the scale wheel with its colour-coded notes](/images/blog-grille-accords-roue.webp)
+
+In one document, you know exactly what your handpan can play. It's your harmonic identity card.
 
 ## Review and pass on
 
@@ -38,7 +48,9 @@ You choose to export your diagrams **on their own** — one file per chord, or a
 
 ### Printable and ink-saving
 
-Turn on **Ink-Saver Mode** before printing: white background, ink saved, diagrams still crisp. Your chord cards come out clean on plain paper, ready to place on the stand.
+Turn on **Ink-Saver Mode** before printing: white background, ink saved, diagrams still crisp — exactly the look of the exports shown in this article. Your chord cards come out clean on plain paper, ready to place on the stand:
+
+![Full page of the chord grid exported as PDF: scale wheel and chords sorted by families, signed Handpan Studio](/images/blog-grille-accords-dkurd.webp)
 
 ### Watermark and free access
 
