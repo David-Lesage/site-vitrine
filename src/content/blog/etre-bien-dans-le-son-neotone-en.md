@@ -39,7 +39,7 @@ The column spreads the sound **over the full height**, very evenly: wherever you
 
 ## Headphones: your intimate bubble
 
-The other, complementary option is **headphones** (plugged into the Neotone's headphone output). There you're in a total bubble: perfect at night, in a flat, on tour, or to record yourself with no ambient noise. I talk about it in the article [playing and singing with headphones](/blog/jouer-et-chanter-au-casque-neotone).
+The other, complementary option is **headphones** (plugged into the Neotone's headphone output). There you're in a total bubble: perfect at night, in a flat, on tour, or to record yourself with no ambient noise. I talk about it in the article [playing with headphones](/blog/jouer-et-chanter-au-casque-neotone).
 
 Headphones **and** speaker aren't rivals: headphones for intimacy and precision, the speaker behind you to feel the sound physically.
 

@@ -43,7 +43,7 @@ A simple 6.35 mm mono jack cable (or two for stereo). It's the only link between
 
 ## Options, depending on your use
 
-- **Headphones** — to play silently at night, in a van or at a hotel. The Neotone has a dedicated headphone output: see [playing and singing with headphones](/blog/jouer-et-chanter-au-casque-neotone).
+- **Headphones** — to play silently at night, in a van or at a hotel. The Neotone has a dedicated headphone output: see [playing with headphones](/blog/jouer-et-chanter-au-casque-neotone).
 - **The Bose Sub1 subwoofer** — if you want real deep bass for small concerts. Careful: it weighs **16 kg**, so it leaves the "light nomad" category. Keep it for dates you drive to.
 - **A microphone** — if you sing, or want to capture an acoustic handpan too, the **Hisong AirStudio S1** plugs into the S1 Pro+ and turns the setup into a mobile mini-studio.
 

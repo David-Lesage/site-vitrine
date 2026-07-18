@@ -39,7 +39,7 @@ La colonne diffuse le son **tout en hauteur**, de façon très homogène : où q
 
 ## Le casque : ta bulle intime
 
-L'autre option, complémentaire, c'est le **casque** (branché sur la sortie casque du Neotone). Là, tu es dans une bulle totale : parfait la nuit, en appartement, en tournée, ou pour t'enregistrer sans bruit autour. J'en parle dans l'article [jouer et chanter au casque](/blog/jouer-et-chanter-au-casque-neotone).
+L'autre option, complémentaire, c'est le **casque** (branché sur la sortie casque du Neotone). Là, tu es dans une bulle totale : parfait la nuit, en appartement, en tournée, ou pour t'enregistrer sans bruit autour. J'en parle dans l'article [jouer au casque](/blog/jouer-et-chanter-au-casque-neotone).
 
 Casque **et** enceinte ne s'opposent pas : le casque pour l'intimité et la précision, l'enceinte derrière toi pour vivre le son physiquement.
 

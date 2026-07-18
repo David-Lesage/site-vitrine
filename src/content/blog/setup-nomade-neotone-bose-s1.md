@@ -43,7 +43,7 @@ Un simple câble jack 6,35 mm mono (ou deux pour la stéréo). C'est le seul lie
 
 ## Les options, selon ton usage
 
-- **Un casque** — pour jouer en silence la nuit, en van ou à l'hôtel. Le Neotone a une sortie casque dédiée : voir [jouer et chanter au casque](/blog/jouer-et-chanter-au-casque-neotone).
+- **Un casque** — pour jouer en silence la nuit, en van ou à l'hôtel. Le Neotone a une sortie casque dédiée : voir [jouer au casque](/blog/jouer-et-chanter-au-casque-neotone).
 - **Le caisson Bose Sub1** — si tu veux de vraies basses profondes en petit concert. Attention : il pèse **16 kg**, donc il sort du registre « nomade léger ». Réserve-le aux dates où tu viens en voiture.
 - **Un micro** — si tu chantes ou si tu veux aussi capter un handpan acoustique, le **Hisong AirStudio S1** se branche sur la S1 Pro+ et transforme le setup en mini-studio mobile.
 
