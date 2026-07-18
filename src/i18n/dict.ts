@@ -642,7 +642,7 @@ const fr = {
     extras: [
       { title: 'Un casque ou des oreillettes', text: 'Pour jouer en silence, la nuit ou en appartement. Idéalement un casque avec prise jack 6,35 mm (ou un adaptateur).' },
       { title: 'Un câble jack coudé', text: 'Un câble jack mono (1 sortie) ou stéréo (2 sorties) pour relier le Neotone à ton enceinte. Important : prends un connecteur coudé côté instrument — c’est ce qui permet de poser le handpan au sol sans abîmer la connectique.' },
-      { title: 'Une enceinte', text: 'Indispensable pour diffuser le son. Mon conseil : la Bose S1 Pro+, autonome (8 h de batterie), redoutable en jam ou pour des petits concerts (avec le caisson Sub 1 en option si tu veux de vraies basses, profondes et chaleureuses).' },
+      { title: 'Une enceinte', text: 'Indispensable pour diffuser le son. Mon conseil : la Bose S1 Pro+ (≈ 599 €), autonome (8 h de batterie), redoutable en jam ou pour des petits concerts — avec plus de basses que l’ancienne S1 Pro, un émetteur sans fil en option, et le caisson Sub 1 si tu veux de vraies basses profondes et chaleureuses.' },
       { title: 'Un câble MIDI → USB', text: 'Un câble MIDI vers USB (ou USB-A vers USB-C) si tu veux piloter un logiciel de musique (DAW : Logic Pro, Ableton Live…).' },
     ],
     calc: {

@@ -27,7 +27,7 @@ What happens then:
 - **At head height**, you hear it like a personal stage monitor, clear and present, without cranking the volume.
 - You keep your hands and attention on the instrument, not on "can I hear myself?".
 
-My speaker for this is the **Bose S1 Pro+**: self-powered (about 8 h of battery), compact, it sits on a stand and travels anywhere — perfect in a jam, a lesson, on stage. It's the one I recommend among the gear to plan for around the [Neotone](/le-neotone#extras).
+My speaker for this is the **Bose S1 Pro+** (≈ **€599** at retailers — [official Bose page](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html), and also check [second-hand listings on Leboncoin](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B)): self-powered (about 8 h of battery), compact, it sits on a stand and travels anywhere — perfect in a jam, a lesson, on stage. Mind the model: the **Pro+** has **more bass** than the older S1 Pro. You can even **get rid of the cable** with the optional [Bose wireless instrument transmitter](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) (≈ €168), sometimes sold as a [speaker + transmitter combo at ≈ €759](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html). It's the one I recommend among the gear to plan for around the [Neotone](/le-neotone#extras).
 
 ## Going further: the Bose L1 system
 

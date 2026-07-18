@@ -31,7 +31,9 @@ C'est l'instrument. Le **Neotone¹** (10 notes) ou le **Mutant** (19 notes), au 
 
 ![La Bose S1 Pro+ en position moniteur inclinée](/images/prod-bose-s1pro.webp)
 
-C'est elle qui te rend audible. Compacte, robuste, sur batterie, avec une petite table de mixage intégrée. Elle sert à la fois d'enceinte de diffusion **et** de retour personnel — ce qui est capital : place-la **derrière toi, à hauteur de tête** pour être vraiment *dans* le son. J'explique précisément ce placement dans [mon conseil pour être bien dans le son](/blog/etre-bien-dans-le-son-neotone).
+C'est elle qui te rend audible. Compacte, robuste, sur batterie, avec une petite table de mixage intégrée — comptez ≈ **599 €** chez les revendeurs ([site officiel Bose](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html), et regarde aussi [les annonces Leboncoin](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B) en occasion). Prends bien le modèle **Pro+** : il a **davantage de basses** que l'ancien S1 Pro. Elle sert à la fois d'enceinte de diffusion **et** de retour personnel — ce qui est capital : place-la **derrière toi, à hauteur de tête** pour être vraiment *dans* le son. J'explique précisément ce placement dans [mon conseil pour être bien dans le son](/blog/etre-bien-dans-le-son-neotone).
+
+Envie de zéro câble ? Un [émetteur sans fil Bose en option](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) (≈ 168 €) relie le Neotone à l'enceinte sans fil — parfois vendu en [combo enceinte + émetteur à ≈ 759 €](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html).
 
 ### 3. Le câble jack — coudé, c'est important
 
@@ -51,17 +53,19 @@ Un simple câble jack 6,35 mm mono (ou deux pour la stéréo). C'est le seul lie
 |---|---|
 | Neotone¹ (10 notes) | à partir de 1 990 € |
 | Neotone¹ Mutant (19 notes) | à partir de 3 150 € |
-| Bose S1 Pro+ | 799,95 € |
+| Bose S1 Pro+ | ≈ 599 € |
 | Câble jack 6,35 mm coudé | 15 à 30 € |
+| **Option** — émetteur sans fil Bose | ≈ 168 € (ou combo enceinte + émetteur ≈ 759 €) |
 | **Option** — caisson Bose Sub1 | 990 € |
 | **Option** — micro Hisong AirStudio S1 | 319 à 426 € TTC |
 
-Un setup complet Neotone¹ + S1 Pro+ + câble revient donc autour de **2 800 €** — l'équivalent d'un bon handpan acoustique unique, mais avec toutes les gammes, l'autonomie totale et la sonorisation incluse.
+Un setup complet Neotone¹ + S1 Pro+ + câble revient donc autour de **2 600 €** — l'équivalent d'un bon handpan acoustique unique, mais avec toutes les gammes, l'autonomie totale et la sonorisation incluse.
 
 ## Où acheter chaque élément
 
 - **Neotone¹ / Neotone¹ Mutant** → [ma page Neotone](/le-neotone) (code de remise −5 %, garantie 6 ans, accompagnement personnel). Tu peux aussi [venir l'essayer à Paris](/showroom) et repartir avec le jour même.
-- **Bose S1 Pro+** → [page officielle Bose](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html)
+- **Bose S1 Pro+** → [page officielle Bose](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html) (≈ 599 € chez les revendeurs) — pense aussi aux [annonces Leboncoin](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B) en occasion.
+- **Émetteur sans fil Bose** (option zéro câble) → [Woodbrass, ≈ 168 €](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) · [combo enceinte + émetteur ≈ 759 € chez SonoVente](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html)
 - **Caisson Bose Sub1** (option) → [page officielle Bose](https://www.bose.fr/p/portable-pa/sub1-powered-bass-module/SUB1-SPEAKERBASSMOD.html)
 - **Micro Hisong AirStudio S1** (option) → [via mon lien partenaire](https://hisong.io/DAVID-LESAGE-SAVE-5) — attention, les prix y sont affichés hors taxes : les détails sont dans [ma boutique](/boutique).
 - **Câble jack coudé** → par exemple [ce câble Ernie Ball chez Thomann](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm) (connecteur coudé côté instrument, indispensable pour poser le handpan au sol).
