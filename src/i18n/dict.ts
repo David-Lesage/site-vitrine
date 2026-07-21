@@ -241,9 +241,18 @@ const fr = {
     orderWip:
       '⚙️ La procédure de commande est en cours de finalisation avec le fabricant. En attendant, écris-moi : je réponds personnellement et je te tiens informé·e dès que tout est calé.',
     ctaContact: 'Écris-moi pour ce micro',
-    makerTitle: 'Le fabricant',
-    makerText: 'Le micro Muling est développé par Liron Man. Retrouve la gamme complète sur son site officiel.',
-    makerCta: 'Voir le site du fabricant',
+    specsTitle: 'La capsule MP-1 en détail',
+    specsIntro: 'Les caractéristiques techniques de la capsule de contact MP-1, telles que constatées en test réel.',
+    specs: [
+      { t: 'Fixation aimantée', d: 'La capsule se pose et se retire par aimant : installation immédiate, tenue parfaitement sûre sur l’instrument.' },
+      { t: 'Minuscule', d: 'La taille d’un bout de doigt — elle se fait totalement oublier, visuellement comme au jeu.' },
+      { t: 'Corps métallique', d: 'Châssis en métal noir et rouge : une finition solide et agréable en main.' },
+      { t: 'Alimentation fantôme requise', d: 'La MP-1 est une capsule à condensateur : elle a besoin d’une alimentation fantôme. Un adaptateur est fourni — jack 6,35 mm côté capsule, XLR de l’autre, à brancher sur une table de mixage ou directement sur une enceinte qui délivre le fantôme.' },
+      { t: 'Isolation très élevée', d: 'La captation se fait par contact : les bruits extérieurs et les autres instruments ne passent quasiment pas — précieux en jam et sur scène.' },
+      { t: 'Son transparent', d: 'Un rendu fidèle et neutre, qui restitue particulièrement bien les aigus et les basses. Idéal si tu veux le son de ton handpan, sans coloration.' },
+    ],
+    specsCaution: 'Bon à savoir : le câble de la MP-1 est solidaire de la capsule (non détachable). En cas de dommage, il faut passer par un technicien ou remplacer l’ensemble — un point à garder en tête pour le transport.',
+    specsSource: 'Caractéristiques relevées lors d’un test comparatif indépendant en conditions réelles, recoupées avec ma propre utilisation.',
     relatedTitle: 'Et si tu joues sur un handpan électronique ?',
     relatedText:
       'Le Neotone n’a pas besoin de micro : il se branche directement en jack. Si tu hésites entre acoustique et électronique, mon comparatif t’aidera à choisir.',

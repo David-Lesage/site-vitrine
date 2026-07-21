@@ -7,7 +7,7 @@ import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
 import YouTube from '@/components/YouTube.astro'
 import { Icon } from 'astro-icon/components'
-import { mulingPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox, mulingMakerUrl } from '@/data/muling'
+import { mulingPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox } from '@/data/muling'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
@@ -80,14 +80,30 @@ const ld = [
     </div>
   </Section>
 
-  <Section>
+  <Section id="specs">
+    <SectionHeading title={m.specsTitle} intro={m.specsIntro} />
+    <div class="mx-auto mt-10 max-w-4xl">
+      <div class="grid gap-5 sm:grid-cols-2">
+        {m.specs.map((sp) => (
+          <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-5">
+            <h3 class="flex items-center gap-2 font-display text-lg font-700"><Icon name="lucide:check" class="h-5 w-5 shrink-0 text-copper" />{sp.t}</h3>
+            <p class="mt-2 text-sm text-ink-soft/85">{sp.d}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 rounded-lg border border-copper/25 bg-copper/5 p-4 text-sm text-ink-soft/90">{m.specsCaution}</p>
+      <p class="mt-3 text-xs text-ink-soft/60">{m.specsSource}</p>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
     <SectionHeading title={m.photosTitle} intro={m.photosIntro} />
     <div class="mx-auto mt-10 max-w-3xl">
       <Carousel id="muling-photos" slides={mulingPhotos.map((src) => ({ src }))} alt={m.heroTitle} />
     </div>
   </Section>
 
-  <Section tone="cream-deep" id="commande">
+  <Section id="commande">
     <SectionHeading title={m.priceTitle} />
     <div class="mx-auto mt-10 max-w-3xl space-y-6">
       <div class="flex flex-wrap items-baseline justify-between gap-3 rounded-card border border-copper/30 bg-copper/5 p-6">
@@ -103,11 +119,6 @@ const ld = [
         <div class="mt-6"><Button href={contactHref} variant="primary">{m.ctaContact}</Button></div>
       </div>
 
-      <div class="rounded-card border border-ink/10 bg-cream p-6">
-        <h3 class="font-display text-xl font-700">{m.makerTitle}</h3>
-        <p class="mt-3 text-ink-soft/85">{m.makerText}</p>
-        <a href={mulingMakerUrl} target="_blank" rel="noopener" class="mt-4 inline-block font-700 text-rust underline">{m.makerCta}</a>
-      </div>
     </div>
   </Section>
 

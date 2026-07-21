@@ -235,9 +235,18 @@ export const en: Dict = {
     orderWip:
       '⚙️ The ordering procedure is being finalised with the maker. In the meantime, write to me: I answer personally and I’ll keep you posted as soon as everything is settled.',
     ctaContact: 'Write to me about this mic',
-    makerTitle: 'The maker',
-    makerText: 'The Muling microphone is developed by Liron Man. Find the full range on his official site.',
-    makerCta: 'Visit the maker’s site',
+    specsTitle: 'The MP-1 capsule in detail',
+    specsIntro: 'The technical characteristics of the MP-1 contact capsule, as observed in real-world testing.',
+    specs: [
+      { t: 'Magnetic mount', d: 'The capsule attaches and detaches magnetically: instant setup, perfectly secure hold on the instrument.' },
+      { t: 'Tiny', d: 'The size of a fingertip — you forget it’s there, visually and while playing.' },
+      { t: 'Metal body', d: 'Black and red metal chassis: a solid, pleasant finish in the hand.' },
+      { t: 'Phantom power required', d: 'The MP-1 is a condenser capsule: it needs phantom power. An adapter is included — 6.35 mm jack on the capsule side, XLR on the other, into a mixer or straight into a speaker that supplies phantom power.' },
+      { t: 'Very high isolation', d: 'Capture happens by contact: outside noise and other instruments barely get through — invaluable in a jam and on stage.' },
+      { t: 'Transparent sound', d: 'A faithful, neutral rendering that reproduces highs and lows particularly well. Ideal if you want your handpan’s sound, uncoloured.' },
+    ],
+    specsCaution: 'Worth knowing: the MP-1’s cable is permanently attached to the capsule (not detachable). If damaged, you’ll need a technician or a full replacement — something to keep in mind when travelling.',
+    specsSource: 'Characteristics noted during an independent real-world comparison test, cross-checked with my own use.',
     relatedTitle: 'What if you play an electronic handpan?',
     relatedText:
       'The Neotone needs no microphone: it plugs straight in with a jack. If you’re hesitating between acoustic and electronic, my comparison will help you choose.',

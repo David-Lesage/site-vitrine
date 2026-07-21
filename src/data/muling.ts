@@ -23,6 +23,3 @@ export const mulingVideoId = 'ENArz99dyTQ'
 // Prix annoncé par le fabricant, en dollars (conversion indicative)
 export const mulingPriceUsd = 299
 export const mulingPriceEurApprox = 261
-
-// Site officiel du fabricant
-export const mulingMakerUrl = 'https://www.lironmanmusic.com/muling'
