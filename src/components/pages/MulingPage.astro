@@ -57,20 +57,27 @@ const ld = [
           </div>
         </div>
         <div class="overflow-hidden rounded-card shadow-md">
-          <img src={mulingHero} width="1500" height="1500" alt={m.heroTitle} class="aspect-square w-full bg-cream object-contain" loading="eager" />
+          <img src={mulingHero} width="1200" height="1600" alt={m.heroTitle} class="aspect-[4/3] w-full object-cover" loading="eager" />
         </div>
       </div>
     </div>
   </section>
 
-  <Section id="video">
+  <Section id="photos">
+    <SectionHeading title={m.photosTitle} intro={m.photosIntro} />
+    <div class="mx-auto mt-10 max-w-3xl">
+      <Carousel id="muling-photos" slides={mulingPhotos.map((src) => ({ src }))} alt={m.heroTitle} />
+    </div>
+  </Section>
+
+  <Section tone="cream-deep" id="video">
     <SectionHeading eyebrow={m.eyebrow} title={m.videoTitle} intro={m.videoIntro} />
     <div class="mx-auto mt-10 max-w-3xl">
       <YouTube id={mulingVideoId} title={m.videoTitle} />
     </div>
   </Section>
 
-  <Section tone="cream-deep">
+  <Section>
     <SectionHeading title={m.whyTitle} intro={m.whyText} />
     <div class="mt-10 grid gap-6 md:grid-cols-3">
       {m.whyPoints.map((p) => (
@@ -83,7 +90,7 @@ const ld = [
     </div>
   </Section>
 
-  <Section id="contenu">
+  <Section tone="cream-deep" id="contenu">
     <SectionHeading title={m.boxTitle} intro={m.boxIntro} />
     <div class="mt-10 grid items-center gap-8 lg:grid-cols-2">
       <Carousel id="muling-box" slides={mulingBoxPhotos.map((src) => ({ src }))} alt={m.boxTitle} />
@@ -98,7 +105,7 @@ const ld = [
     </div>
   </Section>
 
-  <Section tone="cream-deep" id="specs">
+  <Section id="specs">
     <SectionHeading title={m.specsTitle} intro={m.specsIntro} />
     <div class="mx-auto mt-10 max-w-4xl">
       <div class="grid gap-5 sm:grid-cols-2">
@@ -114,7 +121,7 @@ const ld = [
     </div>
   </Section>
 
-  <Section id="preampli">
+  <Section tone="cream-deep" id="preampli">
     <SectionHeading title={m.preampTitle} intro={m.preampIntro} />
     <div class="mt-10 grid items-start gap-8 lg:grid-cols-2">
       <Carousel id="muling-preamp" slides={mulingPreampPhotos.map((src) => ({ src }))} alt={m.preampTitle} />
@@ -141,7 +148,7 @@ const ld = [
     </div>
   </Section>
 
-  <Section tone="cream-deep" id="alimentation">
+  <Section id="alimentation">
     <SectionHeading title={m.powerTitle} intro={m.powerIntro} />
     <div class="mt-10 grid gap-6 lg:grid-cols-2">
       <div class="overflow-hidden rounded-card border border-ink/10 bg-cream">
@@ -160,13 +167,6 @@ const ld = [
       </div>
     </div>
     <p class="mx-auto mt-8 max-w-3xl rounded-card border border-rust/30 bg-rust/10 p-5 text-center font-600 text-rust">{m.powerWarning}</p>
-  </Section>
-
-  <Section>
-    <SectionHeading title={m.photosTitle} intro={m.photosIntro} />
-    <div class="mx-auto mt-10 max-w-3xl">
-      <Carousel id="muling-photos" slides={mulingPhotos.map((src) => ({ src }))} alt={m.heroTitle} />
-    </div>
   </Section>
 
   <Section tone="cream-deep" id="manuel">

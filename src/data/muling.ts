@@ -4,14 +4,18 @@
 // Textes traduits dans src/i18n/dict.ts / en.ts (clé `muling`).
 // ============================================================
 
-// Visuel d'ouverture : le set complet (préampli + 2 capsules)
-export const mulingHero = '/images/muling-produit-officiel.webp'
+// Visuel d'ouverture : David en condition réelle, micro monté sur le handpan
+export const mulingHero = '/images/prod-muling-9.jpg'
 
-// Photos personnelles de David — le set en situation
+// Galerie principale — le set en images, puis David en situation de jeu
 export const mulingPhotos = [
-  '/images/muling-sur-handpan.webp',
+  '/images/muling-produit-officiel.webp',
   '/images/muling-capsules-handpan.webp',
+  '/images/prod-muling-10.jpg',
+  '/images/muling-sur-handpan.webp',
   '/images/muling-setup.webp',
+  '/images/prod-muling-7.jpg',
+  '/images/prod-muling-8.jpg',
   '/images/prod-muling-2.jpg',
   '/images/prod-muling-1.jpg',
   '/images/prod-muling-3.jpg',
