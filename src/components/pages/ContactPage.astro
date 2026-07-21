@@ -38,8 +38,7 @@ const coords = [
         </div>
       </div>
 
-      <form class="rounded-card border border-ink/10 bg-cream-deep/40 p-6 md:p-8" name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
+      <form id="contact-form" class="rounded-card border border-ink/10 bg-cream-deep/40 p-6 md:p-8" name="contact" data-to={site.email}>
         <div class="grid gap-4">
           <div class="grid gap-4 sm:grid-cols-2">
             <label class="block"><span class="text-sm font-600">{ct.form.name}</span><input type="text" name="name" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream px-4 py-3 focus:border-copper focus:outline-none" /></label>
@@ -57,4 +56,19 @@ const coords = [
       </form>
     </div>
   </Section>
+
+  <script>
+    // Le site est statique (Vercel) : pas de traitement POST côté serveur.
+    // À l'envoi, on ouvre le logiciel de mail avec un message déjà rédigé.
+    const form = document.getElementById('contact-form') as HTMLFormElement | null
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const data = new FormData(form)
+      const get = (k: string) => String(data.get(k) || '').trim()
+      const to = form.dataset.to || ''
+      const subject = `${get('subject')} — ${get('name')}`
+      const body = [get('message'), '', '—', get('name'), get('email')].join('\n')
+      window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    })
+  </script>
 </Layout>

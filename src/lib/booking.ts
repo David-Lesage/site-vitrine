@@ -6,9 +6,46 @@
 import { site } from '@/data/site'
 import type { Lang } from '@/i18n/config'
 
-function mailto(subject: string, lines: (string | null)[]): string {
+function mailto(subject: string, lines: (string | null)[], to: string = site.emailNeotone): string {
   const body = lines.filter((l): l is string => l !== null).join('\n')
-  return `mailto:${site.emailNeotone}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+}
+
+// Inscription à la liste des showcases — solution simple : email pré-rempli
+// vers David (en attendant un vrai outil de collecte type Brevo).
+export function newsletterMailto(lang: Lang): string {
+  if (lang === 'en') {
+    return mailto(
+      'Keep me posted about the next showcases',
+      [
+        'Hi David,',
+        '',
+        'I’d like to be kept posted about your next showcases in Paris and about Handpan Studio.',
+        '',
+        'My details:',
+        '• Full name: ',
+        '• City / country: ',
+        '',
+        'Thanks!',
+      ],
+      site.email,
+    )
+  }
+  return mailto(
+    'Je veux être tenu au courant des prochains showcases',
+    [
+      'Bonjour David,',
+      '',
+      'Je souhaite être tenu·e au courant de tes prochains showcases à Paris et des nouveautés de Handpan Studio.',
+      '',
+      'Mes coordonnées :',
+      '• Nom et prénom : ',
+      '• Ville / pays : ',
+      '',
+      'Merci !',
+    ],
+    site.email,
+  )
 }
 
 // Réservation d'une venue au showroom (Paris 20ᵉ)

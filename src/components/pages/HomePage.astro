@@ -4,6 +4,7 @@ import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
 import VideoModal from '@/components/VideoModal.astro'
+import { newsletterMailto } from '@/lib/booking'
 import { Icon } from 'astro-icon/components'
 import YouTube from '@/components/YouTube.astro'
 import { site, homeVideos, neotonePlaylist } from '@/data/site'
@@ -125,12 +126,10 @@ const universMeta = [
   <Section id="communaute">
     <div class="rounded-card border border-ink/10 bg-cream-deep/50 p-8 text-center md:p-14">
       <SectionHeading eyebrow={h.communityEyebrow} title={h.communityTitle} intro={h.communityIntro} />
-      <form class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row" name="newsletter" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="newsletter" />
-        <label class="sr-only" for="nl-email">Email</label>
-        <input id="nl-email" type="email" name="email" required placeholder={h.communityPlaceholder} class="flex-1 rounded-full border border-ink/20 bg-cream px-5 py-3 text-ink placeholder:text-ink/40 focus:border-copper focus:outline-none" />
-        <button type="submit" class="rounded-full bg-rust px-6 py-3 font-700 text-cream transition-colors hover:bg-copper">{h.communityButton}</button>
-      </form>
+      <div class="mt-8 flex flex-col items-center gap-3">
+        <a href={newsletterMailto(lang)} class="rounded-full bg-rust px-8 py-4 font-700 text-cream shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-copper">{h.communityButton}</a>
+        <p class="text-sm text-ink-soft/70">{h.communityNote}</p>
+      </div>
     </div>
   </Section>
 
