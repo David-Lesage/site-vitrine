@@ -8,7 +8,17 @@ interface Props {
 const { lang } = Astro.props
 // Chemin neutre de la page courante (sans préfixe de langue)
 const basePath = unlocalizePath(Astro.url.pathname)
-const current = allLanguages.find((l) => l.code === lang)!
+
+// Pages traduites en chinois (traduction partielle : Muling est un fabricant
+// chinois). À supprimer le jour où le chinois couvrira tout le site.
+const zhPages = ['/micro-muling']
+const zhEntry = { code: 'zh', label: '中文', flag: '🇨🇳', active: true }
+const hasZh = zhPages.includes(basePath)
+const isZh = Astro.url.pathname.startsWith('/zh/')
+
+const langs = hasZh ? [...allLanguages, zhEntry] : allLanguages
+const current = isZh ? zhEntry : allLanguages.find((l) => l.code === lang)!
+const hrefFor = (code: string) => (code === 'zh' ? `/zh${basePath}` : localizePath(basePath, code as Lang))
 ---
 
 <div class="relative" data-lang-switcher>
@@ -27,12 +37,13 @@ const current = allLanguages.find((l) => l.code === lang)!
     class="absolute right-0 z-50 mt-2 hidden min-w-44 overflow-hidden rounded-xl border border-ink/10 bg-cream shadow-lg"
     data-lang-menu
   >
-    {allLanguages.map((l) => (
+    {langs.map((l) => (
       <li>
         {l.active ? (
           <a
-            href={localizePath(basePath, l.code as Lang)}
-            class:list={['flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-ink/5', l.code === lang ? 'font-700 text-rust' : 'text-ink-soft']}
+            href={hrefFor(l.code)}
+            data-lang-pick={l.code}
+            class:list={['flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-ink/5', l.code === current.code ? 'font-700 text-rust' : 'text-ink-soft']}
             hreflang={l.code}
           >
             <span aria-hidden="true">{l.flag}</span> {l.label}
@@ -62,6 +73,15 @@ const current = allLanguages.find((l) => l.code === lang)!
         menu.classList.add('hidden')
         toggle?.setAttribute('aria-expanded', 'false')
       }
+    })
+    // Un choix explicite de langue est mémorisé : la détection automatique
+    // ne doit plus jamais le contredire lors des visites suivantes.
+    root.querySelectorAll('[data-lang-pick]').forEach((link) => {
+      link.addEventListener('click', () => {
+        try {
+          localStorage.setItem('pref-lang', link.getAttribute('data-lang-pick') || '')
+        } catch {}
+      })
     })
   })
 </script>

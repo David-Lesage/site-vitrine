@@ -11,22 +11,27 @@ import {
   mulingPhotos, mulingPreampPhotos, mulingBoxPhotos, mulingPowerPhotos,
   mulingDiagram, mulingManualPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox,
 } from '@/data/muling'
+import { mulingZh } from '@/data/muling-zh'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { breadcrumbLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
-interface Props { lang: Lang }
+// `zh` n'existe que pour CETTE page (Muling est un fabricant chinois) :
+// les textes viennent d'un fichier dédié, la navigation retombe sur l'anglais.
+type PageLang = Lang | 'zh'
+interface Props { lang: PageLang }
 const { lang } = Astro.props
-const t = getDict(lang)
-const m = t.muling
-const L = (p: string) => localizePath(p, lang)
+const baseLang: Lang = lang === 'zh' ? 'en' : lang
+const t = getDict(baseLang)
+const m = lang === 'zh' ? mulingZh : t.muling
+const L = (p: string) => localizePath(p, baseLang)
 
 const contactHref = `mailto:${site.email}?subject=${encodeURIComponent(
-  lang === 'en' ? 'Muling microphone — I’m interested' : 'Micro Muling — je suis intéressé(e)',
+  baseLang === 'en' ? 'Muling microphone — I’m interested' : 'Micro Muling — je suis intéressé(e)',
 )}&body=${encodeURIComponent(
-  (lang === 'en'
+  (baseLang === 'en'
     ? ['Hi David,', '', 'I’m interested in the Muling microphone for acoustic handpan.', '', 'My details:', '• Full name: ', '• Country: ', '• My handpan (maker / scale): ', '', 'Thanks!']
     : ['Bonjour David,', '', 'Je suis intéressé·e par le micro Muling pour handpan acoustique.', '', 'Mes coordonnées :', '• Nom et prénom : ', '• Pays : ', '• Mon handpan (fabricant / gamme) : ', '', 'Merci !']
   ).join('\n'),
@@ -41,7 +46,7 @@ const ld = [
 ]
 ---
 
-<Layout title={m.title} description={m.description} ldJSON={ld}>
+<Layout title={m.title} description={m.description} ldJSON={ld} htmlLangOverride={lang === 'zh' ? 'zh-Hans' : undefined}>
   <section class="relative overflow-hidden bg-ink text-cream">
     <div class="chroma-bar absolute inset-x-0 top-0 h-1"></div>
     <div class="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-24">
@@ -130,7 +135,7 @@ const ld = [
 
     <div class="mx-auto mt-12 max-w-4xl">
       <h3 class="text-center font-display text-xl font-700">{m.preampDiagramTitle}</h3>
-      <img src={mulingDiagram[lang]} width="1500" height="960" alt={m.preampDiagramAlt} class="mt-5 w-full rounded-card border border-ink/10 bg-cream shadow-sm" loading="lazy" />
+      <img src={mulingDiagram[baseLang]} width="1500" height="960" alt={m.preampDiagramAlt} class="mt-5 w-full rounded-card border border-ink/10 bg-cream shadow-sm" loading="lazy" />
     </div>
 
     <div class="mx-auto mt-10 max-w-3xl rounded-card border border-rust/25 bg-rust/5 p-6">

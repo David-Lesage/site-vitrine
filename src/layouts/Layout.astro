@@ -14,9 +14,12 @@ interface Props {
   ldJSON?: unknown | unknown[]
   ogType?: string
   keywords?: string
+  // Pages traduites hors dictionnaire principal (ex. /zh/micro-muling) :
+  // force l'attribut lang du <html> sans toucher au routage i18n.
+  htmlLangOverride?: string
 }
 
-const { title, description, image, ldJSON, ogType, keywords } = Astro.props
+const { title, description, image, ldJSON, ogType, keywords, htmlLangOverride } = Astro.props
 const lang = getLang(Astro.url)
 const t = getDict(lang)
 
@@ -24,9 +27,35 @@ const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
 ---
 
 <!doctype html>
-<html lang={htmlLang[lang]}>
+<html lang={htmlLangOverride || htmlLang[lang]}>
   <head>
     <SEO title={title} description={description} image={image} ldJSON={ldJSON} ogType={ogType} keywords={keywords} lang={lang} />
+    <script is:inline>
+      // Détection de la langue du visiteur, avec garde-fous :
+      // — jamais si l'utilisateur a déjà choisi une langue (localStorage) ;
+      // — jamais deux fois dans la même session (anti-boucle) ;
+      // — jamais depuis une page déjà localisée (/en, /zh) ;
+      // — les francophones restent sur la version française (par défaut).
+      ;(function () {
+        try {
+          if (localStorage.getItem('pref-lang')) return
+          if (sessionStorage.getItem('lang-auto')) return
+          var path = location.pathname
+          if (/^\/(en|zh)(\/|$)/.test(path)) return
+          var nav = navigator.languages && navigator.languages.length ? navigator.languages[0] : navigator.language
+          var code = (nav || '').toLowerCase()
+          if (!code || code.indexOf('fr') === 0) return
+          // Le chinois n'existe que sur la page Muling ; ailleurs → anglais.
+          var zhPages = ['/micro-muling']
+          var target =
+            code.indexOf('zh') === 0 && zhPages.indexOf(path.replace(/\/$/, '')) !== -1
+              ? '/zh' + path.replace(/\/$/, '')
+              : '/en' + (path === '/' ? '' : path)
+          sessionStorage.setItem('lang-auto', '1')
+          location.replace(target)
+        } catch (e) {}
+      })()
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

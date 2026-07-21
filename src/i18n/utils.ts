@@ -15,9 +15,15 @@ export function localizePath(path: string, lang: Lang): string {
   return `/${lang}${clean === '/' ? '' : clean}`
 }
 
+// Langues partiellement traduites : pas de dictionnaire complet, mais quelques
+// pages dédiées (ex. /zh/micro-muling). Leur préfixe doit tout de même être
+// reconnu pour que le sélecteur de langue génère des liens corrects.
+export const partialLangs = ['zh'] as const
+
 // Retire le préfixe de langue d'un chemin → chemin « neutre » ('/en/showroom' → '/showroom')
 export function unlocalizePath(pathname: string): string {
   const parts = pathname.split('/').filter(Boolean)
-  if (parts[0] && (activeLangs as string[]).includes(parts[0])) parts.shift()
+  const known = [...(activeLangs as string[]), ...(partialLangs as readonly string[])]
+  if (parts[0] && known.includes(parts[0])) parts.shift()
   return '/' + parts.join('/')
 }
