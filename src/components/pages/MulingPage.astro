@@ -8,7 +8,7 @@ import Lightbox from '@/components/Lightbox.astro'
 import YouTube from '@/components/YouTube.astro'
 import { Icon } from 'astro-icon/components'
 import {
-  mulingHero, mulingPhotos, mulingPreampPhotos, mulingBoxPhotos, mulingPowerPhotos,
+  mulingPhotos, mulingPreampPhotos, mulingBoxPhotos, mulingPowerPhotos,
   mulingDiagram, mulingManualPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox,
 } from '@/data/muling'
 import { site } from '@/data/site'
@@ -56,19 +56,12 @@ const ld = [
             <Button href="#video" variant="light">{m.ctaVideo}</Button>
           </div>
         </div>
-        <div class="overflow-hidden rounded-card shadow-md">
-          <img src={mulingHero} width="1200" height="1600" alt={m.heroTitle} class="aspect-[4/3] w-full object-cover" loading="eager" />
+        <div class="rounded-card shadow-md">
+          <Carousel id="muling-photos" slides={mulingPhotos.map((src) => ({ src }))} alt={m.heroTitle} />
         </div>
       </div>
     </div>
   </section>
-
-  <Section id="photos">
-    <SectionHeading title={m.photosTitle} intro={m.photosIntro} />
-    <div class="mx-auto mt-10 max-w-3xl">
-      <Carousel id="muling-photos" slides={mulingPhotos.map((src) => ({ src }))} alt={m.heroTitle} />
-    </div>
-  </Section>
 
   <Section tone="cream-deep" id="video">
     <SectionHeading eyebrow={m.eyebrow} title={m.videoTitle} intro={m.videoIntro} />

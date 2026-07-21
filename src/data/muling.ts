@@ -4,11 +4,9 @@
 // Textes traduits dans src/i18n/dict.ts / en.ts (clé `muling`).
 // ============================================================
 
-// Visuel d'ouverture : David en condition réelle, micro monté sur le handpan
-export const mulingHero = '/images/prod-muling-9.jpg'
-
-// Galerie principale — le set en images, puis David en situation de jeu
+// Galerie du héros — David en condition de jeu d'abord, puis le matériel
 export const mulingPhotos = [
+  '/images/prod-muling-9.jpg',
   '/images/muling-produit-officiel.webp',
   '/images/muling-capsules-handpan.webp',
   '/images/prod-muling-10.jpg',
