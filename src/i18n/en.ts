@@ -202,6 +202,47 @@ export const en: Dict = {
       'onesec': { name: 'one sec — take back control of your screen time', description: 'The app that genuinely helps me not get lost in the scroll. Before you open a grabby app (social media…), one sec adds a short pause — the length of a breath — and the compulsive urge fades. It’s simple, and for me it’s one of the very few things that actually worked. A science-backed approach (studies with the Max Planck Institute). Free for the essentials; get −30% off Premium through my link.' },
     },
   },
+  muling: {
+    title: 'Muling microphone for acoustic handpan | David Lesage',
+    description:
+      'The Muling microphone for acoustic handpan, tested and presented by David Lesage: clear, precise capture with no feedback. Full video review, photos and ordering.',
+    back: '← Back to the shop',
+    eyebrow: 'Microphone for acoustic handpan',
+    heroTitle: 'The Muling microphone',
+    heroLead:
+      'A microphone designed specifically for the acoustic handpan: clear, precise and faithful capture, with no feedback — on stage as in recording. I tested it thoroughly, here is my full review.',
+    ctaInterested: 'I’m interested in this mic',
+    ctaVideo: 'Watch my full review',
+    videoTitle: 'My full video review',
+    videoIntro: 'I walk you through the mic in detail: setup, resulting sound, comparisons and use cases.',
+    photosTitle: 'The mic in pictures',
+    photosIntro: 'My own photos of the microphone and how it mounts on the instrument.',
+    whyTitle: 'Why I recommend it',
+    whyText:
+      'Amplifying an acoustic handpan is a real challenge: general-purpose mics capture the harmonics poorly, and feedback lurks as soon as you turn up. The Muling is built for this specific instrument — it captures the sound at the source, keeps the richness of the harmonics and lets you push the level with no howl. That’s what convinced me to represent it.',
+    whyPoints: [
+      { t: 'Built for handpan', d: 'A contact microphone designed for the handpan’s shell and harmonics, not a general-purpose mic repurposed.' },
+      { t: 'No feedback', d: 'Capture happens in contact with the instrument: you raise the volume on stage without fearing howl.' },
+      { t: 'Stage and studio', d: 'Faithful enough for recording, sturdy and practical enough for live.' },
+    ],
+    priceTitle: 'Price and ordering',
+    priceLabel: 'Maker’s price',
+    priceNote:
+      'Price announced by the maker in dollars; the euro conversion is indicative and depends on the day’s rate. Shipping and any customs fees on top.',
+    orderTitle: 'How to order',
+    orderText:
+      'The maker doesn’t offer online payment for France yet: orders go through me. Write to me, I’ll put you in touch and support you until your mic arrives.',
+    orderWip:
+      '⚙️ The ordering procedure is being finalised with the maker. In the meantime, write to me: I answer personally and I’ll keep you posted as soon as everything is settled.',
+    ctaContact: 'Write to me about this mic',
+    makerTitle: 'The maker',
+    makerText: 'The Muling microphone is developed by Liron Man. Find the full range on his official site.',
+    makerCta: 'Visit the maker’s site',
+    relatedTitle: 'What if you play an electronic handpan?',
+    relatedText:
+      'The Neotone needs no microphone: it plugs straight in with a jack. If you’re hesitating between acoustic and electronic, my comparison will help you choose.',
+    relatedCta: 'Discover the Neotone',
+  },
   gonilele: {
     title: 'Gonilélé travel harp — La Maison du Ngoni | David Lesage',
     description:

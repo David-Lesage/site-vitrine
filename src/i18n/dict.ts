@@ -208,6 +208,47 @@ const fr = {
       'onesec': { name: 'one sec — reprendre le contrôle de son temps d’écran', description: 'L’app qui m’aide vraiment à ne pas me perdre dans le scroll. Avant d’ouvrir une appli happante (réseaux sociaux…), one sec impose une courte pause — le temps d’une respiration — et l’envie compulsive retombe. C’est simple, et pour moi c’est l’une des rares choses qui a réellement fonctionné. Approche validée par la science (études avec l’Institut Max Planck). Gratuite pour l’essentiel ; profite de −30 % sur Premium via mon lien.' },
     },
   },
+  muling: {
+    title: 'Micro Muling pour handpan acoustique | David Lesage',
+    description:
+      'Le micro Muling pour handpan acoustique, testé et présenté par David Lesage : captation claire et précise, sans Larsen. Vidéo de test complet, photos et commande.',
+    back: '← Retour à la boutique',
+    eyebrow: 'Micro pour handpan acoustique',
+    heroTitle: 'Le micro Muling',
+    heroLead:
+      'Un micro conçu spécifiquement pour le handpan acoustique : une captation claire, précise et fidèle, sans Larsen — sur scène comme en enregistrement. Je l’ai testé en profondeur, voici mon retour complet.',
+    ctaInterested: 'Ce micro m’intéresse',
+    ctaVideo: 'Voir mon test complet',
+    videoTitle: 'Mon test complet en vidéo',
+    videoIntro: 'Je te présente le micro en détail : installation, son obtenu, comparaisons et cas d’usage.',
+    photosTitle: 'Le micro en images',
+    photosIntro: 'Mes photos personnelles du micro et de son installation sur l’instrument.',
+    whyTitle: 'Pourquoi je le recommande',
+    whyText:
+      'Sonoriser un handpan acoustique est un vrai défi : les micros généralistes captent mal les harmoniques, et le Larsen guette dès qu’on monte le volume. Le Muling est pensé pour cet instrument précis — il capte le son à la source, garde la richesse des harmoniques et te laisse pousser le niveau sans accrochage. C’est ce qui m’a convaincu de le représenter.',
+    whyPoints: [
+      { t: 'Conçu pour le handpan', d: 'Un micro de contact pensé pour la caisse et les harmoniques du handpan, pas un micro généraliste détourné.' },
+      { t: 'Sans Larsen', d: 'La captation se fait au contact de l’instrument : tu montes le volume sur scène sans redouter l’accrochage.' },
+      { t: 'Scène et studio', d: 'Assez fidèle pour l’enregistrement, assez robuste et pratique pour le live.' },
+    ],
+    priceTitle: 'Prix et commande',
+    priceLabel: 'Prix fabricant',
+    priceNote:
+      'Prix annoncé par le fabricant en dollars ; la conversion en euros est indicative et dépend du taux du jour. Frais de port et éventuels frais de douane en supplément.',
+    orderTitle: 'Comment commander',
+    orderText:
+      'Le fabricant ne propose pas encore de paiement en ligne pour la France : la commande passe par moi. Écris-moi, je te mets en relation et je t’accompagne jusqu’à la réception de ton micro.',
+    orderWip:
+      '⚙️ La procédure de commande est en cours de finalisation avec le fabricant. En attendant, écris-moi : je réponds personnellement et je te tiens informé·e dès que tout est calé.',
+    ctaContact: 'Écris-moi pour ce micro',
+    makerTitle: 'Le fabricant',
+    makerText: 'Le micro Muling est développé par Liron Man. Retrouve la gamme complète sur son site officiel.',
+    makerCta: 'Voir le site du fabricant',
+    relatedTitle: 'Et si tu joues sur un handpan électronique ?',
+    relatedText:
+      'Le Neotone n’a pas besoin de micro : il se branche directement en jack. Si tu hésites entre acoustique et électronique, mon comparatif t’aidera à choisir.',
+    relatedCta: 'Découvrir le Neotone',
+  },
   gonilele: {
     title: 'Harpe Gonilélé — La Maison du Ngoni | David Lesage',
     description:
