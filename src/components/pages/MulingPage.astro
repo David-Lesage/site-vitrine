@@ -7,7 +7,10 @@ import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
 import YouTube from '@/components/YouTube.astro'
 import { Icon } from 'astro-icon/components'
-import { mulingPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox } from '@/data/muling'
+import {
+  mulingHero, mulingPhotos, mulingPreampPhotos, mulingBoxPhotos, mulingPowerPhotos,
+  mulingDiagram, mulingManualPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox,
+} from '@/data/muling'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
@@ -54,7 +57,7 @@ const ld = [
           </div>
         </div>
         <div class="overflow-hidden rounded-card shadow-md">
-          <img src={mulingPhotos[0]} width="1200" height="1200" alt={m.heroTitle} class="w-full object-cover" loading="eager" />
+          <img src={mulingHero} width="1500" height="1500" alt={m.heroTitle} class="aspect-square w-full bg-cream object-contain" loading="eager" />
         </div>
       </div>
     </div>
@@ -80,7 +83,22 @@ const ld = [
     </div>
   </Section>
 
-  <Section id="specs">
+  <Section id="contenu">
+    <SectionHeading title={m.boxTitle} intro={m.boxIntro} />
+    <div class="mt-10 grid items-center gap-8 lg:grid-cols-2">
+      <Carousel id="muling-box" slides={mulingBoxPhotos.map((src) => ({ src }))} alt={m.boxTitle} />
+      <div>
+        <ul class="space-y-2.5">
+          {m.boxItems.map((it) => (
+            <li class="flex gap-3 text-ink-soft/90"><Icon name="lucide:check" class="mt-1 h-5 w-5 shrink-0 text-copper" />{it}</li>
+          ))}
+        </ul>
+        <p class="mt-6 rounded-lg border border-copper/25 bg-copper/5 p-4 text-sm text-ink-soft/90">{m.boxNote}</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep" id="specs">
     <SectionHeading title={m.specsTitle} intro={m.specsIntro} />
     <div class="mx-auto mt-10 max-w-4xl">
       <div class="grid gap-5 sm:grid-cols-2">
@@ -96,10 +114,67 @@ const ld = [
     </div>
   </Section>
 
-  <Section tone="cream-deep">
+  <Section id="preampli">
+    <SectionHeading title={m.preampTitle} intro={m.preampIntro} />
+    <div class="mt-10 grid items-start gap-8 lg:grid-cols-2">
+      <Carousel id="muling-preamp" slides={mulingPreampPhotos.map((src) => ({ src }))} alt={m.preampTitle} />
+      <div class="space-y-4">
+        {m.preampFeatures.map((f) => (
+          <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-5">
+            <h3 class="font-display text-lg font-700">{f.t}</h3>
+            <p class="mt-1.5 text-sm text-ink-soft/85">{f.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mx-auto mt-12 max-w-4xl">
+      <h3 class="text-center font-display text-xl font-700">{m.preampDiagramTitle}</h3>
+      <img src={mulingDiagram[lang]} width="1500" height="960" alt={m.preampDiagramAlt} class="mt-5 w-full rounded-card border border-ink/10 bg-cream shadow-sm" loading="lazy" />
+    </div>
+
+    <div class="mx-auto mt-10 max-w-3xl rounded-card border border-rust/25 bg-rust/5 p-6">
+      <h3 class="flex items-center gap-2 font-display text-lg font-700 text-rust"><Icon name="lucide:alert-triangle" class="h-5 w-5" />{m.preampWarnTitle}</h3>
+      <ul class="mt-3 space-y-2">
+        {m.preampWarns.map((w) => <li class="text-sm text-ink-soft/90">• {w}</li>)}
+      </ul>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep" id="alimentation">
+    <SectionHeading title={m.powerTitle} intro={m.powerIntro} />
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      <div class="overflow-hidden rounded-card border border-ink/10 bg-cream">
+        <img src="/images/muling-preampli-ouvert-pile.webp" width="1500" height="1561" alt={m.powerBattery.t} class="aspect-[4/3] w-full object-cover" loading="lazy" />
+        <div class="p-6">
+          <h3 class="font-display text-lg font-700">{m.powerBattery.t}</h3>
+          <p class="mt-2 text-sm text-ink-soft/85">{m.powerBattery.d}</p>
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-card border border-ink/10 bg-cream">
+        <img src={mulingPowerPhotos[0]} width="1500" height="2666" alt={m.powerMains.t} class="aspect-[4/3] w-full object-cover" loading="lazy" />
+        <div class="p-6">
+          <h3 class="font-display text-lg font-700">{m.powerMains.t}</h3>
+          <p class="mt-2 text-sm text-ink-soft/85">{m.powerMains.d}</p>
+        </div>
+      </div>
+    </div>
+    <p class="mx-auto mt-8 max-w-3xl rounded-card border border-rust/30 bg-rust/10 p-5 text-center font-600 text-rust">{m.powerWarning}</p>
+  </Section>
+
+  <Section>
     <SectionHeading title={m.photosTitle} intro={m.photosIntro} />
     <div class="mx-auto mt-10 max-w-3xl">
       <Carousel id="muling-photos" slides={mulingPhotos.map((src) => ({ src }))} alt={m.heroTitle} />
+    </div>
+  </Section>
+
+  <Section tone="cream-deep" id="manuel">
+    <SectionHeading title={m.manualTitle} intro={m.manualIntro} />
+    <div class="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2">
+      {mulingManualPhotos.map((src, i) => (
+        <img src={src} width="1500" height="2666" alt={`${m.manualTitle} — ${i + 1}`} class="w-full rounded-card border border-ink/10 bg-cream shadow-sm" loading="lazy" />
+      ))}
     </div>
   </Section>
 
