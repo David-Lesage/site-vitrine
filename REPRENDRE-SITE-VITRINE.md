@@ -56,8 +56,14 @@ git push origin HEAD                            # séparé, ne déploie pas
 - **Base CRM** : pipeline `status`, horodatage automatique (`replied_at` / `attended_at`),
   relance manuelle (`follow_up_at` + note), policies admin (`is_site_admin()`), et deux vues
   `site_lead_tasks` / `site_lead_event_roster`.
-- **App (dépôt voisin) v83** : panneau « Comptes & accès » avec colonnes triables + fenêtre
-  élargie. Commité et poussé, **PAS déployé** (voir file d'attente).
+- **Formulaire = déclaration d'intention** (site ET écran de connexion de l'app, identiques) :
+  casquettes cumulables (`roles[]`), chacune annonçant sa contrepartie ; sous-questions ciblées
+  (objectif perso, nombre d'élèves, fiche fabricant) ; encadré d'engagement d'honnêteté.
+  `usage_type` est DÉRIVÉE des casquettes côté serveur, et une sous-réponse dont la casquette
+  n'est pas déclarée est **ignorée** — impossible de gonfler son profil depuis le navigateur.
+  Deal fabricant gravé : catalogue de l'app, apport d'affaires, pourcentage, prix de mise en relation.
+- **App v83/v84/v85 déployée** : colonnes triables + panneau élargi dans « Comptes & accès »,
+  formulaire refondu sur l'écran de connexion. EF `app-lead` v4, `site-lead` v9.
 
 ### 🔴 À FAIRE — bloqué sur David
 - **Donner les prochaines dates de showcase.** La seule date de `src/data/site.ts` →
@@ -68,9 +74,8 @@ git push origin HEAD                            # séparé, ne déploie pas
 - **Blog phase 2** : ~12 captures d'écran de l'app à faire par David pour enrichir les articles.
 
 ### File d'attente
-1. **Déployer l'app** (v83) — ⚠️ `vite.config.ts` et `.claude/launch.json` sont modifiés non
-   commités par la session app : un `npx vercel --prod` embarquerait ces changements.
-   Demander le feu vert explicite de David et vérifier `git rev-list --left-right --count origin/master...HEAD` = `0 0`.
+1. **Le filigrane sur les exports gratuits est PROMIS dans le formulaire** — il doit exister
+   dans l'app avant l'ouverture au public, sinon la promesse est fausse.
 2. **Écran CRM dans le dashboard** — spec complète dans
    `~/CLAUDE/NEOTONE STUDIO/NEOTONE 1er mai 2026/BRIEF-crm-contacts-site.md`
    (4 écrans : boîte de réception, fiche contact, mes tâches, avant un showcase).
@@ -98,3 +103,8 @@ git push origin HEAD                            # séparé, ne déploie pas
 - Découvert au passage que le site n'avait pas été redéployé depuis les commits de l'autre
   session : la prod tournait sur un build antérieur. Déployé.
 - App v83 : tri par colonnes et panneau élargi dans « Comptes & accès ».
+- Formulaire refondu en déclaration d'intention (site + app), migration `site_leads_declared_intent`,
+  `site-lead` v9 et `app-lead` v4. **Piège rencontré** : `app-lead` v4 a été déployée avant le
+  redéploiement Vercel de l'app → toute inscription depuis `play.*` a été rejetée en
+  `400 invalid_roles` pendant l'intervalle. RÈGLE : quand une Edge Function durcit son contrat,
+  déployer le CLIENT (Vercel) AVANT, ou dans la minute qui suit.
