@@ -22,7 +22,7 @@ const b = getDict(lang).common.beta
   <p class="mt-3 text-ink-soft/90">{b.wish}</p>
   <div class="mt-8 rounded-card border border-ink/10 bg-cream p-5 md:p-6">
     <h3 class="font-display text-lg font-700">{b.formTitle}</h3>
-    <form id="beta-form" class="mt-4 grid gap-3" data-lang={lang} data-redirect={lang === 'en' ? '/en/blog' : '/blog'} novalidate>
+    <form id="beta-form" class="mt-4 grid gap-3" data-lang={lang} data-roles-required={b.formRolesRequired} data-redirect={lang === 'en' ? '/en/blog' : '/blog'} novalidate>
       <div class="grid gap-3 sm:grid-cols-2">
         <label class="block">
           <span class="text-sm font-600">{b.formFirst}</span>
@@ -62,19 +62,33 @@ const b = getDict(lang).common.beta
         </div>
       </fieldset>
 
+      <!--
+        Déclaration d'intention. Cases à COCHER : une même personne peut être
+        joueuse, prof ET fabricante. Chaque case annonce sa contrepartie AVANT
+        la question — c'est ce qui rend la réponse honnête facile à donner.
+      -->
       <fieldset class="mt-2">
         <legend class="text-sm font-600">{b.formUsage}</legend>
-        <div class="mt-2 flex flex-wrap gap-2">
-          {[['personal', b.formUsagePersonal], ['teacher', b.formUsageTeacher], ['both', b.formUsageBoth], ['maker', b.formUsageMaker]].map(([v, label]) => (
-            <label class="cursor-pointer">
-              <input type="radio" name="usageType" value={v} required class="peer sr-only" />
-              <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
+        <p class="mt-1 text-xs text-ink-soft/70">{b.formUsageHint}</p>
+        <div class="mt-3 grid gap-2">
+          {[
+            ['personal', b.formUsagePersonal, b.formUsagePersonalDeal],
+            ['teacher', b.formUsageTeacher, b.formUsageTeacherDeal],
+            ['maker', b.formUsageMaker, b.formUsageMakerDeal],
+            ['other', b.formUsageOther, ''],
+          ].map(([v, label, deal]) => (
+            <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-ink/15 bg-cream-deep/25 p-3.5 transition-colors has-[:checked]:border-rust has-[:checked]:bg-rust/5 hover:bg-ink/5">
+              <input type="checkbox" name="roles" value={v} class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+              <span>
+                <span class="block text-sm font-600">{label}</span>
+                {deal && <span class="mt-1 block text-xs leading-relaxed text-ink-soft/70">{deal}</span>}
+              </span>
             </label>
           ))}
         </div>
       </fieldset>
 
-      <!-- Sous-question : visible + obligatoire uniquement si « À titre personnel » -->
+      <!-- Sous-question : visible + obligatoire uniquement si « Pour moi » -->
       <fieldset data-sub="personalGoal" class="ml-0 hidden border-l-2 border-copper/30 pl-4 sm:ml-2">
         <legend class="text-sm font-600">{b.formPersonalGoal}</legend>
         <div class="mt-2 flex flex-wrap gap-2">
@@ -85,6 +99,55 @@ const b = getDict(lang).common.beta
             </label>
           ))}
         </div>
+      </fieldset>
+
+      <!-- Sous-question prof : dimensionne la Licence Enseignant, en un clic -->
+      <fieldset data-sub="studentCount" class="ml-0 hidden border-l-2 border-copper/30 pl-4 sm:ml-2">
+        <legend class="text-sm font-600">{b.formStudentCount}</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {[['none', b.formStudentCountNone], ['1-5', b.formStudentCount1], ['6-20', b.formStudentCount6], ['20+', b.formStudentCount20]].map(([v, label]) => (
+            <label class="cursor-pointer">
+              <input type="radio" name="studentCount" value={v} class="peer sr-only" />
+              <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <!-- Fiche fabricant : ce qui alimente le catalogue de mise en relation -->
+      <fieldset data-sub="maker" data-partial class="ml-0 hidden border-l-2 border-copper/30 pl-4 sm:ml-2">
+        <legend class="text-sm font-600">{b.formMakerLegend}</legend>
+        <p class="mt-1 text-xs text-ink-soft/70">{b.formMakerHint}</p>
+
+        <label class="mt-3 block">
+          <span class="text-sm font-600">{b.formMakerCountry}</span>
+          <input type="text" name="makerCountry" data-required maxlength="80" placeholder={b.formMakerCountryPlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
+        </label>
+
+        <p class="mt-3 text-sm font-600">{b.formMakerNotes}</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {[['9-', b.formMakerNotes9], ['10-13', b.formMakerNotes10], ['14-17', b.formMakerNotes14], ['18+', b.formMakerNotes18], ['varies', b.formMakerNotesVaries]].map(([v, label]) => (
+            <label class="cursor-pointer">
+              <input type="radio" name="makerMaxNotes" data-required value={v} class="peer sr-only" />
+              <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
+            </label>
+          ))}
+        </div>
+
+        <p class="mt-3 text-sm font-600">{b.formMakerMetals}</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {[['nitrided', b.formMakerMetalNitrided], ['stainless', b.formMakerMetalStainless], ['ember', b.formMakerMetalEmber], ['other', b.formMakerMetalOther]].map(([v, label]) => (
+            <label class="cursor-pointer">
+              <input type="checkbox" name="makerMetals" value={v} class="peer sr-only" />
+              <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
+            </label>
+          ))}
+        </div>
+
+        <label class="mt-3 block">
+          <span class="text-sm font-600">{b.formMakerPricing}</span>
+          <textarea name="makerPricing" rows="2" maxlength="1000" placeholder={b.formMakerPricingPlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea>
+        </label>
       </fieldset>
 
       <label class="mt-2 flex cursor-pointer items-start gap-3 rounded-xl border border-copper/25 bg-copper/5 p-4">
@@ -103,6 +166,16 @@ const b = getDict(lang).common.beta
         <span class="text-sm text-ink-soft/90">{b.formShowcase}</span>
       </label>
 
+      <!-- L'accord, en clair — pas des CGU. Case obligatoire. -->
+      <div class="mt-2 rounded-xl border border-ink/15 bg-cream-deep/40 p-4">
+        <p class="text-sm font-700">{b.formPledgeTitle}</p>
+        <p class="mt-1.5 text-xs leading-relaxed text-ink-soft/80">{b.formPledgeText}</p>
+        <label class="mt-3 flex cursor-pointer items-start gap-3">
+          <input type="checkbox" name="pledgeHonest" required class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+          <span class="text-sm font-600">{b.formPledgeCheck}</span>
+        </label>
+      </div>
+
       <button type="submit" data-sending={b.formSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{b.formSubmit}</button>
       <p data-beta-error class="hidden text-sm font-600 text-rust">{b.formError}</p>
       <p class="text-xs text-ink-soft/70">{b.formPrivacy}</p>
@@ -119,20 +192,33 @@ const b = getDict(lang).common.beta
   const sub = (name: string) => form?.querySelector(`[data-sub="${name}"]`) as HTMLFieldSetElement | null
   const radios = (name: string) => Array.from(form?.querySelectorAll(`input[name="${name}"]`) || []) as HTMLInputElement[]
   const checked = (name: string) => radios(name).find((r) => r.checked)?.value || ''
+  /** Casquettes cochées : une personne peut être joueuse, prof ET fabricante. */
+  const roles = () => radios('roles').filter((r) => r.checked).map((r) => r.value)
 
-  function toggleSub(name: string, show: boolean) {
+  function toggleSub(name: string, show: boolean, required = true) {
     const fs = sub(name)
     if (!fs) return
     fs.classList.toggle('hidden', !show)
-    radios(name).forEach((r) => {
-      r.required = show
-      if (!show) r.checked = false
+    // On ne rend obligatoires que les champs marqués `data-required` quand le
+    // bloc en contient (fiche fabricant) ; sinon tous les champs du bloc.
+    const scoped = Array.from(fs.querySelectorAll('input, textarea')) as (HTMLInputElement | HTMLTextAreaElement)[]
+    scoped.forEach((el) => {
+      const mustFill = required && (!fs.hasAttribute('data-partial') || el.hasAttribute('data-required'))
+      el.required = mustFill
+      if (!show) {
+        el.required = false
+        if (el instanceof HTMLInputElement && (el.type === 'radio' || el.type === 'checkbox')) el.checked = false
+        else el.value = ''
+      }
     })
   }
 
   function syncConditionals() {
+    const r = roles()
     toggleSub('handpanType', checked('hasHandpan') === 'yes')
-    toggleSub('personalGoal', checked('usageType') === 'personal')
+    toggleSub('personalGoal', r.includes('personal'))
+    toggleSub('studentCount', r.includes('teacher'))
+    toggleSub('maker', r.includes('maker'))
     // Motivation obligatoire dès que la personne veut devenir bêta-testeur.
     const wantsBeta = (form?.querySelector('input[name="wantsBeta"]') as HTMLInputElement | null)?.checked === true
     const motivation = form?.querySelector('textarea[name="motivation"]') as HTMLTextAreaElement | null
@@ -152,6 +238,17 @@ const b = getDict(lang).common.beta
     const get = (k: string) => String(data.get(k) || '').trim()
     if (!get('email') || !form.reportValidity()) return
 
+    // Au moins une casquette : `required` sur une case à cocher ne sait pas
+    // exprimer « au moins une du groupe », on le vérifie donc à la main.
+    const rolesEl = radios('roles')
+    const firstRole = rolesEl[0]
+    if (!rolesEl.some((r) => r.checked)) {
+      firstRole?.setCustomValidity(form.dataset.rolesRequired || '')
+      firstRole?.reportValidity()
+      return
+    }
+    firstRole?.setCustomValidity('')
+
     const label = btn.textContent
     btn.disabled = true
     btn.textContent = btn.getAttribute('data-sending') || '…'
@@ -167,8 +264,16 @@ const b = getDict(lang).common.beta
           email: get('email'),
           hasHandpan: get('hasHandpan'),
           handpanType: get('handpanType'),
-          usageType: get('usageType'),
+          // `usage_type` est DÉRIVÉ des casquettes côté serveur : on n'envoie plus
+          // de valeur unique, seulement la déclaration complète.
+          roles: data.getAll('roles').map(String),
           personalGoal: get('personalGoal'),
+          studentCount: get('studentCount'),
+          makerCountry: get('makerCountry'),
+          makerMaxNotes: get('makerMaxNotes'),
+          makerMetals: data.getAll('makerMetals').map(String),
+          makerPricing: get('makerPricing'),
+          pledgeHonest: data.get('pledgeHonest') !== null,
           motivation: get('motivation'),
           wantsBeta: data.get('wantsBeta') !== null,
           wantsShowcase: data.get('wantsShowcase') !== null,

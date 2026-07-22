@@ -49,6 +49,27 @@ const ALLOWED_USAGE = ['personal', 'teacher', 'both', 'maker'];
 const ALLOWED_HANDPAN_TYPE = ['acoustic', 'electronic', 'both'];
 const ALLOWED_PERSONAL_GOAL = ['learn', 'compose'];
 
+// Déclaration d'intention (22/07/2026) — casquettes MULTIPLES.
+const ALLOWED_ROLES = ['personal', 'teacher', 'maker', 'other'];
+const ALLOWED_STUDENT_COUNT = ['none', '1-5', '6-20', '20+'];
+const ALLOWED_MAKER_MAX_NOTES = ['9-', '10-13', '14-17', '18+', 'varies'];
+const ALLOWED_MAKER_METALS = ['nitrided', 'stainless', 'ember', 'other'];
+
+/**
+ * Résume les casquettes en UNE valeur `usage_type`, la colonne historique.
+ * On la garde renseignée pour ne rien casser (lignes existantes, dashboard) :
+ * `roles` porte la vérité complète, `usage_type` en est le raccourci.
+ * Ordre de priorité = du plus engageant au moins engageant.
+ */
+function deriveUsageType(roles: string[]): string | null {
+    const has = (r: string) => roles.includes(r);
+    if (has('teacher') && has('personal')) return 'both'; // sens historique de 'both'
+    if (has('teacher')) return 'teacher';
+    if (has('maker')) return 'maker';
+    if (has('personal')) return 'personal';
+    return null;
+}
+
 const SOURCE_LABELS: Record<string, { fr: string; en: string }> = {
     'showroom-visit': { fr: 'Venue au showroom (Paris 20ᵉ)', en: 'Showroom visit (Paris 20th)' },
     'private-session': { fr: 'Rendez-vous individuel (cours / démonstration privée)', en: 'Individual appointment (lesson / private demo)' },
@@ -64,7 +85,16 @@ const PROFILE_LABELS: Record<string, string> = {
     yes: 'oui', no: 'non', planning: 'bientôt',
     acoustic: 'acoustique', electronic: 'électronique', both: 'les deux',
     personal: 'à titre personnel', teacher: 'prof (outil pédagogique)', maker: 'fabricant de handpan',
+    other: 'autre / ne sait pas encore',
     learn: 'apprendre à jouer', compose: 'composer / créer des gammes',
+    none: 'aucun élève pour l’instant', '1-5': '1 à 5 élèves', '6-20': '6 à 20 élèves', '20+': 'plus de 20 élèves',
+    '9-': '9 notes ou moins', '10-13': '10 à 13 notes', '14-17': '14 à 17 notes',
+    '18+': '18 notes et plus', varies: 'variable selon les gammes',
+};
+
+/** Métaux — table séparée : la clé `other` entre en collision avec la casquette « autre ». */
+const METAL_LABELS: Record<string, string> = {
+    nitrided: 'acier nitruré', stainless: 'inox', ember: 'ember steel', other: 'autre',
 };
 
 function sourceLabel(src: string, lang: string): string {
@@ -272,9 +302,39 @@ Deno.serve(async (req) => {
         const page = String(body.page ?? '').trim().slice(0, 200);
 
         const hasHandpan = ALLOWED_HAS_HANDPAN.includes(String(body.hasHandpan ?? '')) ? String(body.hasHandpan) : null;
-        const usageType = ALLOWED_USAGE.includes(String(body.usageType ?? '')) ? String(body.usageType) : null;
         const motivation = String(body.motivation ?? '').trim().slice(0, 2000) || null;
         const wantsShowcase = body.wantsShowcase === true;
+
+        // --- Déclaration d'intention (casquettes multiples) ---
+        const rawRoles = Array.isArray(body.roles) ? body.roles.map(String) : [];
+        const roles = [...new Set(rawRoles.filter((r) => ALLOWED_ROLES.includes(r)))];
+        // `usage_type` reste renseignée : soit dérivée des casquettes (nouveau
+        // formulaire), soit reprise telle quelle (anciens appelants pas encore migrés).
+        const usageType = roles.length
+            ? deriveUsageType(roles)
+            : (ALLOWED_USAGE.includes(String(body.usageType ?? '')) ? String(body.usageType) : null);
+
+        const isTeacher = roles.includes('teacher') || usageType === 'teacher' || usageType === 'both';
+        const isMaker = roles.includes('maker') || usageType === 'maker';
+        const isPersonal = roles.includes('personal') || usageType === 'personal' || usageType === 'both';
+
+        const rawStudentCount = String(body.studentCount ?? '').trim();
+        const studentCount =
+            isTeacher && ALLOWED_STUDENT_COUNT.includes(rawStudentCount) ? rawStudentCount : null;
+
+        // Fiche fabricant — alimente le catalogue de l'app (mise en relation).
+        const makerCountry = isMaker ? String(body.makerCountry ?? '').trim().slice(0, 80) || null : null;
+        const rawMaxNotes = String(body.makerMaxNotes ?? '').trim();
+        const makerMaxNotes =
+            isMaker && ALLOWED_MAKER_MAX_NOTES.includes(rawMaxNotes) ? rawMaxNotes : null;
+        const rawMetals = Array.isArray(body.makerMetals) ? body.makerMetals.map(String) : [];
+        const metals = isMaker
+            ? [...new Set(rawMetals.filter((m) => ALLOWED_MAKER_METALS.includes(m)))]
+            : [];
+        const makerMetals = metals.length ? metals : null;
+        const makerPricing = isMaker ? String(body.makerPricing ?? '').trim().slice(0, 1000) || null : null;
+
+        const pledgeHonest = body.pledgeHonest === true;
 
         // Sous-questions du formulaire enrichi (22/07/2026). Mêmes allowlists que
         // `app-lead`. Différence assumée : ici on NE REJETTE PAS une réponse
@@ -286,7 +346,7 @@ Deno.serve(async (req) => {
             hasHandpan === 'yes' && ALLOWED_HANDPAN_TYPE.includes(rawHandpanType) ? rawHandpanType : null;
         const rawPersonalGoal = String(body.personalGoal ?? '').trim();
         const personalGoal =
-            usageType === 'personal' && ALLOWED_PERSONAL_GOAL.includes(rawPersonalGoal) ? rawPersonalGoal : null;
+            isPersonal && ALLOWED_PERSONAL_GOAL.includes(rawPersonalGoal) ? rawPersonalGoal : null;
         const wantsBeta = body.wantsBeta === true;
 
         // Champs « demande de réservation »
@@ -315,7 +375,14 @@ Deno.serve(async (req) => {
             has_handpan: hasHandpan,
             handpan_type: handpanType,
             usage_type: usageType,
+            roles: roles.length ? roles : null,
             personal_goal: personalGoal,
+            student_count: studentCount,
+            maker_country: makerCountry,
+            maker_max_notes: makerMaxNotes,
+            maker_metals: makerMetals,
+            maker_pricing: makerPricing,
+            pledge_honest: pledgeHonest,
             wants_beta: wantsBeta,
             motivation,
             phone,
@@ -403,8 +470,18 @@ Deno.serve(async (req) => {
                             Téléphone: phone,
                             'Joue déjà': hasHandpan ? PROFILE_LABELS[hasHandpan] ?? hasHandpan : null,
                             'Type de handpan': handpanType ? PROFILE_LABELS[handpanType] ?? handpanType : null,
-                            Usage: usageType ? PROFILE_LABELS[usageType] ?? usageType : null,
+                            'Déclare être': roles.length
+                                ? roles.map((r) => PROFILE_LABELS[r] ?? r).join(' + ')
+                                : (usageType ? PROFILE_LABELS[usageType] ?? usageType : null),
                             Objectif: personalGoal ? PROFILE_LABELS[personalGoal] ?? personalGoal : null,
+                            Élèves: studentCount ? PROFILE_LABELS[studentCount] ?? studentCount : null,
+                            'Fabrique à': makerCountry,
+                            'Notes max': makerMaxNotes ? PROFILE_LABELS[makerMaxNotes] ?? makerMaxNotes : null,
+                            // `other` existe aussi comme casquette : on n'utilise donc PAS
+                            // PROFILE_LABELS ici, sinon un métal « autre » afficherait
+                            // « autre / ne sait pas encore ».
+                            Métaux: makerMetals ? makerMetals.map((m) => METAL_LABELS[m] ?? m).join(', ') : null,
+                            'Gammes / tarifs': makerPricing,
                             Motivation: motivation,
                             'Date visée': eventDate,
                             Personnes: peopleCount,

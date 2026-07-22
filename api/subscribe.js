@@ -40,9 +40,20 @@ export default async function handler(req, res) {
         hasHandpan: body.hasHandpan,
         // Sous-question : type de handpan possédé (si hasHandpan = 'yes')
         handpanType: body.handpanType,
+        // Déclaration d'intention : casquettes multiples. `usage_type` en est
+        // dérivé côté serveur ; `usageType` reste transmis pour les anciens appels.
         usageType: body.usageType,
-        // Sous-question : objectif (si usageType = 'personal')
+        roles: body.roles,
+        pledgeHonest: body.pledgeHonest === true,
+        // Sous-question : objectif (si la casquette « pour moi » est cochée)
         personalGoal: body.personalGoal,
+        // Sous-question prof : dimensionne la Licence Enseignant
+        studentCount: body.studentCount,
+        // Fiche fabricant — alimente le catalogue de mise en relation
+        makerCountry: body.makerCountry,
+        makerMaxNotes: body.makerMaxNotes,
+        makerMetals: body.makerMetals,
+        makerPricing: body.makerPricing,
         motivation: body.motivation,
         // Candidature bêta-testeur explicite (motivation obligatoire côté site)
         wantsBeta: body.wantsBeta === true,
