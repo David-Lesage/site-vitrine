@@ -17,6 +17,8 @@
 //
 // v7 (22/07/2026) : accepte les champs du formulaire enrichi
 // (handpanType / personalGoal / wantsBeta, et usage_type = 'maker').
+// v8 (22/07/2026) : notifie David pour une candidature bêta-testeur, avec le
+// profil complet dans l'email. Une simple inscription ne notifie rien.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -55,6 +57,14 @@ const SOURCE_LABELS: Record<string, { fr: string; en: string }> = {
     'beta-waitlist': { fr: 'Liste d’attente application', en: 'App waiting list' },
     'app-login': { fr: 'Liste d’attente (écran de connexion)', en: 'Waiting list (login screen)' },
     showcase: { fr: 'Groupe showcases', en: 'Showcase group' },
+};
+
+/** Libellés lisibles des réponses du formulaire, pour la notification à David. */
+const PROFILE_LABELS: Record<string, string> = {
+    yes: 'oui', no: 'non', planning: 'bientôt',
+    acoustic: 'acoustique', electronic: 'électronique', both: 'les deux',
+    personal: 'à titre personnel', teacher: 'prof (outil pédagogique)', maker: 'fabricant de handpan',
+    learn: 'apprendre à jouer', compose: 'composer / créer des gammes',
 };
 
 function sourceLabel(src: string, lang: string): string {
@@ -369,8 +379,10 @@ Deno.serve(async (req) => {
                 try { await client.close(); } catch { /* ignore */ }
             }
 
-            // Notification à David — uniquement pour les demandes qui attendent une réponse.
-            if (isBooking) {
+            // Notification à David — UNIQUEMENT pour ce qui attend une réponse de sa part :
+            // une demande de réservation, ou une candidature bêta-testeur. Une simple
+            // inscription à la liste d'attente ne déclenche RIEN (sinon la boîte déborde).
+            if (isBooking || wantsBeta) {
                 const notifier = new SMTPClient({
                     connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } },
                 });
@@ -379,12 +391,21 @@ Deno.serve(async (req) => {
                         from,
                         to: ADMIN_EMAIL,
                         replyTo: email,
-                        subject: `[Site] ${sourceLabel(source, 'fr')} — ${firstName} ${lastName}`.trim(),
+                        subject: (wantsBeta && !isBooking
+                            ? `[Bêta] Candidature — ${firstName} ${lastName}`
+                            : `[Site] ${sourceLabel(source, 'fr')} — ${firstName} ${lastName}`).trim(),
                         html: adminNotifyHtml({
-                            Motif: sourceLabel(source, 'fr'),
+                            Motif: wantsBeta && !isBooking
+                                ? 'Candidature bêta-testeur'
+                                : sourceLabel(source, 'fr'),
                             Nom: `${firstName} ${lastName}`.trim() || null,
                             Email: email,
                             Téléphone: phone,
+                            'Joue déjà': hasHandpan ? PROFILE_LABELS[hasHandpan] ?? hasHandpan : null,
+                            'Type de handpan': handpanType ? PROFILE_LABELS[handpanType] ?? handpanType : null,
+                            Usage: usageType ? PROFILE_LABELS[usageType] ?? usageType : null,
+                            Objectif: personalGoal ? PROFILE_LABELS[personalGoal] ?? personalGoal : null,
+                            Motivation: motivation,
                             'Date visée': eventDate,
                             Personnes: peopleCount,
                             Message: message,

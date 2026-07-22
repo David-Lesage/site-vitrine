@@ -54,7 +54,7 @@ export const en: Dict = {
       formHandpanTypeBoth: 'Both',
       formUsage: 'How do you plan to use the app?',
       formUsagePersonal: 'For myself',
-      formUsageTeacher: 'I’m a teacher and I give lessons',
+      formUsageTeacher: 'I teach — I want to use it as a teaching tool for my lessons (building exercises, scores…)',
       formUsageBoth: 'Both',
       formUsageMaker: 'I’m a handpan maker',
       formPersonalGoal: 'What for?',

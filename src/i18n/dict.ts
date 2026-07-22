@@ -62,7 +62,7 @@ const fr = {
       formHandpanTypeBoth: 'Les deux',
       formUsage: 'Comment comptes-tu utiliser l’application ?',
       formUsagePersonal: 'À titre personnel',
-      formUsageTeacher: 'Je suis professeur et je donne des cours',
+      formUsageTeacher: 'Je suis prof — je veux l’utiliser comme outil pédagogique pour mes cours (créer des exercices, des partitions…)',
       formUsageBoth: 'Les deux',
       formUsageMaker: 'Je suis fabricant de handpan',
       formPersonalGoal: 'Pour quoi faire ?',
