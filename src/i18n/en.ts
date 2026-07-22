@@ -615,7 +615,7 @@ export const en: Dict = {
       { q: 'Does Handpan Studio work on an acoustic handpan?', a: 'Yes, the acoustic mode is free. You visualise your scale in colours and learn your chords directly on your own acoustic instrument.' },
       { q: 'What are ChromaKeys?', a: 'They are the method’s colour system: each note is given a fixed colour. This lets you see the structure of the music at a glance, with no music theory required.' },
       { q: 'What is a chord Constellation?', a: 'It is the method’s visual tablature: each chord draws a geometric shape connecting its notes. You recognise and memorise your chords by their shape.' },
-      { q: 'Is Handpan Studio free?', a: 'The Discovery version is free: acoustic mode to visualise, play, create and export your scores. Studio starts at €9.90/month (€89/year · €249 lifetime) for the electronic Neotone/MIDI mode, advanced creation and cloud saving.' },
+      { q: 'Is Handpan Studio free?', a: 'Handpan Studio bundles a lot of features, and it’s your use that decides what’s free and what isn’t. Learning the handpan on your own, on your own acoustic instrument, is free: seeing your scale in colour, recognising your chords, playing, creating and exporting your scores. What goes beyond your personal practice is paid: the electronic Neotone/MIDI mode, advanced creation, cloud saving. And if you use it as a working tool in lessons you charge for, that’s a Teacher Licence — with the student space, the exercises and watermark-free scores that come with it. Up-to-date prices are just below.' },
     ],
   },
   showroom: {
