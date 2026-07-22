@@ -38,8 +38,14 @@ export default async function handler(req, res) {
         firstName: body.firstName,
         lastName: body.lastName,
         hasHandpan: body.hasHandpan,
+        // Sous-question : type de handpan possédé (si hasHandpan = 'yes')
+        handpanType: body.handpanType,
         usageType: body.usageType,
+        // Sous-question : objectif (si usageType = 'personal')
+        personalGoal: body.personalGoal,
         motivation: body.motivation,
+        // Candidature bêta-testeur explicite (motivation obligatoire côté site)
+        wantsBeta: body.wantsBeta === true,
         wantsShowcase: body.wantsShowcase === true,
         // Demandes de réservation (showroom, showcase, rendez-vous privé)
         phone: body.phone,

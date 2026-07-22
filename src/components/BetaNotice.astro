@@ -42,7 +42,20 @@ const b = getDict(lang).common.beta
         <div class="mt-2 flex flex-wrap gap-2">
           {[['yes', b.formHandpanYes], ['no', b.formHandpanNo], ['planning', b.formHandpanPlanning]].map(([v, label]) => (
             <label class="cursor-pointer">
-              <input type="radio" name="hasHandpan" value={v} class="peer sr-only" />
+              <input type="radio" name="hasHandpan" value={v} required class="peer sr-only" />
+              <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <!-- Sous-question : visible + obligatoire uniquement si « Oui » -->
+      <fieldset data-sub="handpanType" class="ml-0 hidden border-l-2 border-copper/30 pl-4 sm:ml-2">
+        <legend class="text-sm font-600">{b.formHandpanType}</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {[['acoustic', b.formHandpanTypeAcoustic], ['electronic', b.formHandpanTypeElectronic], ['both', b.formHandpanTypeBoth]].map(([v, label]) => (
+            <label class="cursor-pointer">
+              <input type="radio" name="handpanType" value={v} class="peer sr-only" />
               <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
             </label>
           ))}
@@ -52,22 +65,40 @@ const b = getDict(lang).common.beta
       <fieldset class="mt-2">
         <legend class="text-sm font-600">{b.formUsage}</legend>
         <div class="mt-2 flex flex-wrap gap-2">
-          {[['personal', b.formUsagePersonal], ['teacher', b.formUsageTeacher], ['both', b.formUsageBoth]].map(([v, label]) => (
+          {[['personal', b.formUsagePersonal], ['teacher', b.formUsageTeacher], ['both', b.formUsageBoth], ['maker', b.formUsageMaker]].map(([v, label]) => (
             <label class="cursor-pointer">
-              <input type="radio" name="usageType" value={v} class="peer sr-only" />
+              <input type="radio" name="usageType" value={v} required class="peer sr-only" />
               <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
             </label>
           ))}
         </div>
       </fieldset>
 
+      <!-- Sous-question : visible + obligatoire uniquement si « À titre personnel » -->
+      <fieldset data-sub="personalGoal" class="ml-0 hidden border-l-2 border-copper/30 pl-4 sm:ml-2">
+        <legend class="text-sm font-600">{b.formPersonalGoal}</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {[['learn', b.formPersonalGoalLearn], ['compose', b.formPersonalGoalCompose]].map(([v, label]) => (
+            <label class="cursor-pointer">
+              <input type="radio" name="personalGoal" value={v} class="peer sr-only" />
+              <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <label class="mt-2 flex cursor-pointer items-start gap-3 rounded-xl border border-copper/25 bg-copper/5 p-4">
+        <input type="checkbox" name="wantsBeta" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+        <span class="text-sm text-ink-soft/90">{b.formBeta}</span>
+      </label>
+
       <label class="mt-2 block">
-        <span class="text-sm font-600">{b.formMotivation}</span>
+        <span data-motivation-label class="text-sm font-600" data-label-default={b.formMotivation} data-label-beta={b.formMotivationBeta}>{b.formMotivation}</span>
         <span class="mt-1 block text-xs text-ink-soft/70">{b.formMotivationHint}</span>
         <textarea name="motivation" rows="3" placeholder={b.formMotivationPlaceholder} class="mt-2 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea>
       </label>
 
-      <label class="mt-1 flex cursor-pointer items-start gap-3 rounded-xl border border-copper/25 bg-copper/5 p-4">
+      <label class="mt-1 flex cursor-pointer items-start gap-3 rounded-xl border border-ink/10 bg-cream-deep/30 p-4">
         <input type="checkbox" name="wantsShowcase" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
         <span class="text-sm text-ink-soft/90">{b.formShowcase}</span>
       </label>
@@ -81,6 +112,38 @@ const b = getDict(lang).common.beta
 
 <script>
   const form = document.getElementById('beta-form') as HTMLFormElement | null
+
+  // ---- Sous-questions conditionnelles ---------------------------------
+  // Une sous-question masquée ne doit JAMAIS rester `required` (le navigateur
+  // refuserait de valider un champ invisible).
+  const sub = (name: string) => form?.querySelector(`[data-sub="${name}"]`) as HTMLFieldSetElement | null
+  const radios = (name: string) => Array.from(form?.querySelectorAll(`input[name="${name}"]`) || []) as HTMLInputElement[]
+  const checked = (name: string) => radios(name).find((r) => r.checked)?.value || ''
+
+  function toggleSub(name: string, show: boolean) {
+    const fs = sub(name)
+    if (!fs) return
+    fs.classList.toggle('hidden', !show)
+    radios(name).forEach((r) => {
+      r.required = show
+      if (!show) r.checked = false
+    })
+  }
+
+  function syncConditionals() {
+    toggleSub('handpanType', checked('hasHandpan') === 'yes')
+    toggleSub('personalGoal', checked('usageType') === 'personal')
+    // Motivation obligatoire dès que la personne veut devenir bêta-testeur.
+    const wantsBeta = (form?.querySelector('input[name="wantsBeta"]') as HTMLInputElement | null)?.checked === true
+    const motivation = form?.querySelector('textarea[name="motivation"]') as HTMLTextAreaElement | null
+    if (motivation) motivation.required = wantsBeta
+    const label = form?.querySelector('[data-motivation-label]') as HTMLElement | null
+    if (label) label.textContent = (wantsBeta ? label.dataset.labelBeta : label.dataset.labelDefault) || label.textContent
+  }
+
+  form?.addEventListener('change', syncConditionals)
+  syncConditionals()
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault()
     const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement
@@ -103,8 +166,11 @@ const b = getDict(lang).common.beta
           lastName: get('lastName'),
           email: get('email'),
           hasHandpan: get('hasHandpan'),
+          handpanType: get('handpanType'),
           usageType: get('usageType'),
+          personalGoal: get('personalGoal'),
           motivation: get('motivation'),
+          wantsBeta: data.get('wantsBeta') !== null,
           wantsShowcase: data.get('wantsShowcase') !== null,
           source: 'beta-waitlist',
           lang: form.dataset.lang || 'fr',

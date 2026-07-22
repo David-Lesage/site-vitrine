@@ -1,0 +1,69 @@
+---
+// Synchronise le site avec l'interrupteur « accès public » de l'application
+// (table Supabase `public.app_public_config`, clé `app_public_access`).
+//
+// Le site est statique : la lecture se fait côté client au chargement.
+// - État rendu par défaut = `site.appPublicAccess` (false = fermé) → pas de
+//   flash d'un bloc « c'est ouvert » qui serait faux.
+// - Si la lecture réussit, on applique la valeur de la base (dans les deux sens).
+// - Si elle échoue, on garde l'état du build. Jamais d'ouverture accidentelle.
+//
+// Conventions de balisage utilisées dans les pages :
+//   [data-when="open"]   → visible uniquement quand l'app est ouverte
+//   [data-when="closed"] → visible uniquement pendant la bêta fermée
+//   [data-app-cta]       → bouton dont le href + le libellé changent selon l'état
+import { APP_CONFIG_ENDPOINT, APP_CONFIG_KEY, appOpenAtBuild } from '@/lib/appAccess'
+---
+
+<style is:global>
+  /* État par défaut = fermé (aucune classe sur <html>). */
+  [data-when='open'] {
+    display: none;
+  }
+  html.app-open [data-when='open'] {
+    display: revert;
+  }
+  html.app-open [data-when='closed'] {
+    display: none;
+  }
+</style>
+
+<script is:inline define:vars={{ buildOpen: appOpenAtBuild }}>
+  // Synchrone, avant le premier rendu : pas de flash si le repli est « ouvert ».
+  if (buildOpen) document.documentElement.classList.add('app-open')
+</script>
+
+<script define:vars={{ endpoint: APP_CONFIG_ENDPOINT, key: APP_CONFIG_KEY, buildOpen: appOpenAtBuild }}>
+  const applyState = (open) => {
+    document.documentElement.classList.toggle('app-open', open)
+    document.querySelectorAll('[data-app-cta]').forEach((el) => {
+      const href = el.getAttribute(open ? 'data-open-href' : 'data-closed-href')
+      const label = el.getAttribute(open ? 'data-open-label' : 'data-closed-label')
+      if (href) el.setAttribute('href', href)
+      if (label) el.textContent = label
+      if (open) {
+        el.setAttribute('target', '_blank')
+        el.setAttribute('rel', 'noopener')
+      } else {
+        el.removeAttribute('target')
+        el.removeAttribute('rel')
+      }
+    })
+  }
+
+  ;(async () => {
+    try {
+      const res = await fetch(endpoint, {
+        headers: { apikey: key, Authorization: 'Bearer ' + key, Accept: 'application/json' },
+      })
+      if (!res.ok) return // repli : on garde l'état du build
+      const rows = await res.json()
+      const value = Array.isArray(rows) && rows.length ? rows[0].value : null
+      // On n'ouvre que sur un vrai booléen `true` (ou "true"). Tout le reste = fermé.
+      const open = value === true || value === 'true'
+      if (open !== buildOpen) applyState(open)
+    } catch {
+      /* réseau / CORS : on garde l'état du build (fermé par défaut) */
+    }
+  })()
+</script>

@@ -14,10 +14,15 @@ export const site = {
   // Lien direct vers l'application Handpan Studio. La connexion, le choix de
   // l'abonnement et le paiement (Stripe) se font directement dans l'app.
   appUrl: 'https://play.handpanstudio.app',
-  // ⚙️ INTERRUPTEUR — accès public à l'application.
-  // false = phase de bêta fermée : tous les boutons du site qui menaient à
-  // l'app renvoient vers l'encadré d'explication (#acces) au lieu de l'ouvrir.
-  // Pour rouvrir l'app au public : repasser cette valeur à true, c'est tout.
+  // ⚙️ INTERRUPTEUR — accès public à l'application. C'est désormais le REPLI.
+  // La source de vérité est la table Supabase `public.app_public_config`
+  // (clé `app_public_access`), pilotée par le back-office de l'app : le site la
+  // lit côté client au chargement (voir `src/lib/appAccess.ts` +
+  // `src/components/AppAccessSync.astro`) — un seul interrupteur pour les deux.
+  // Cette valeur sert quand la lecture échoue (réseau / CORS). La garder à
+  // `false` : ainsi une panne ne peut jamais « ouvrir » le site par accident.
+  // false = bêta fermée : les boutons qui menaient à l'app renvoient vers
+  // l'encadré d'explication + liste d'attente (#acces, en bas de page).
   appPublicAccess: false,
   email: 'contact@lesagedavid.fr',
   phone: '+33 6 10 73 31 52',

@@ -4,8 +4,10 @@ interface Props {
   class?: string
   tone?: 'cream' | 'cream-deep' | 'ink'
   width?: 'default' | 'narrow' | 'wide'
+  /** Attributs libres (ex. data-when="open") posés sur le <section>. */
+  [key: string]: unknown
 }
-const { id, class: cls = '', tone = 'cream', width = 'default' } = Astro.props
+const { id, class: cls = '', tone = 'cream', width = 'default', ...rest } = Astro.props
 const toneCls = {
   cream: 'bg-cream text-ink',
   'cream-deep': 'bg-cream-deep text-ink',
@@ -18,7 +20,7 @@ const widthCls = {
 }[width]
 ---
 
-<section id={id} class:list={['scroll-mt-24', toneCls]}>
+<section id={id} class:list={['scroll-mt-24', toneCls]} {...rest}>
   <div class:list={['mx-auto px-4 py-16 lg:px-8 lg:py-24', widthCls, cls]}>
     <slot />
   </div>
