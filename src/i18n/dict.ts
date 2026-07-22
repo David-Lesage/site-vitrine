@@ -37,6 +37,15 @@ const fr = {
     },
     skip: 'Aller au contenu',
     credentials: ['Prix du Conservatoire', 'The Voice · Saison 11', 'Ambassadeur Neotone · Yishama · Maison du Ngoni', 'Showroom Paris 20ᵉ'],
+    beta: {
+      badge: 'Accès limité',
+      title: 'L’application n’est pas encore ouverte au grand public',
+      text: 'Handpan Studio est actuellement utilisée par un petit groupe de bêta-testeurs, le temps de peaufiner l’expérience.',
+      wish: 'Tu souhaites devenir bêta-testeur ? Écris-moi en me disant en quelques mots pourquoi l’application t’intéresse et comment tu comptes l’utiliser — je lis et je réponds personnellement.',
+      reassure: 'Dans tous les cas, ton inscription est bien prise en compte : tu seras automatiquement prévenu·e dès que tu pourras l’utiliser.',
+      cta: 'Demander à devenir bêta-testeur',
+      more: 'Accès à l’application',
+    },
     emotions: ['Équilibre', 'Élan', 'Aventure', 'Détente', 'Tension', 'Nostalgie', 'Mystère'],
   },
   home: {

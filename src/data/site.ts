@@ -14,6 +14,11 @@ export const site = {
   // Lien direct vers l'application Handpan Studio. La connexion, le choix de
   // l'abonnement et le paiement (Stripe) se font directement dans l'app.
   appUrl: 'https://play.handpanstudio.app',
+  // ⚙️ INTERRUPTEUR — accès public à l'application.
+  // false = phase de bêta fermée : tous les boutons du site qui menaient à
+  // l'app renvoient vers l'encadré d'explication (#acces) au lieu de l'ouvrir.
+  // Pour rouvrir l'app au public : repasser cette valeur à true, c'est tout.
+  appPublicAccess: false,
   email: 'contact@lesagedavid.fr',
   emailNeotone: 'neotone@lesagedavid.fr',
   phone: '+33 6 10 73 31 52',

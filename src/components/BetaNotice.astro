@@ -1,0 +1,33 @@
+---
+// Encadré affiché tant que `site.appPublicAccess` est à false : explique que
+// l'application est en bêta fermée et propose de candidater par email.
+// Ancre #acces — c'est la cible de tous les anciens boutons « ouvrir l'app ».
+import { Icon } from 'astro-icon/components'
+import { site } from '@/data/site'
+import { getDict } from '@/i18n/dict'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const b = getDict(lang).common.beta
+
+const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(
+  lang === 'en' ? 'Handpan Studio — beta tester application' : 'Handpan Studio — demande de bêta-test',
+)}&body=${encodeURIComponent(
+  (lang === 'en'
+    ? ['Hi David,', '', 'I’d like to become a Handpan Studio beta tester.', '', 'Why the app interests me:', '', 'How I plan to use it:', '', 'My handpan (or Neotone):', '', 'My name:', '', 'Thanks!']
+    : ['Bonjour David,', '', 'Je souhaite devenir bêta-testeur de Handpan Studio.', '', 'Pourquoi l’application m’intéresse :', '', 'Comment je compte l’utiliser :', '', 'Mon handpan (ou Neotone) :', '', 'Mon nom :', '', 'Merci !']
+  ).join('\n'),
+)}`
+---
+
+<div id="acces" class="mx-auto max-w-3xl scroll-mt-28 rounded-card border border-copper/30 bg-copper/5 p-6 md:p-8">
+  <span class="inline-flex items-center gap-2 rounded-full bg-copper/15 px-3 py-1 text-xs font-700 uppercase tracking-widest text-copper">
+    <Icon name="lucide:lock" class="h-3.5 w-3.5" />{b.badge}
+  </span>
+  <h2 class="mt-4 font-display text-2xl font-700 text-ink">{b.title}</h2>
+  <p class="mt-3 text-ink-soft/90">{b.text}</p>
+  <p class="mt-3 text-ink-soft/90">{b.wish}</p>
+  <p class="mt-4 rounded-lg border border-ink/10 bg-cream p-4 text-sm font-600 text-ink">{b.reassure}</p>
+  <a href={mailHref} class="mt-6 inline-block rounded-full bg-rust px-6 py-3 font-700 text-cream shadow-sm transition-colors hover:bg-copper">{b.cta}</a>
+</div>

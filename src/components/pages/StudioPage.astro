@@ -5,6 +5,7 @@ import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
 import VideoGrid from '@/components/VideoGrid.astro'
 import PricingTable from '@/components/PricingTable.astro'
+import BetaNotice from '@/components/BetaNotice.astro'
 import { Icon } from 'astro-icon/components'
 import { chromaKeys, site, studioVideos } from '@/data/site'
 import { getDict } from '@/i18n/dict'
@@ -16,6 +17,9 @@ interface Props { lang: Lang }
 const { lang } = Astro.props
 const t = getDict(lang)
 const st = t.studio
+// Bêta fermée : les boutons « ouvrir l'app » pointent vers l'encadré #acces.
+const appOpen = site.appPublicAccess
+const appHref = appOpen ? site.appUrl : '#acces'
 const L = (p: string) => localizePath(p, lang)
 const emotions = t.common.emotions
 const modeImgs = [
@@ -47,9 +51,15 @@ const ld = [
       <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{st.heroEyebrow}</p>
       <h1 class="mt-5 font-display text-4xl font-700 leading-tight md:text-6xl">{st.heroTitleA}<br /><span class="text-gradient-brand">{st.heroTitleB}</span></h1>
       <p class="mx-auto mt-6 max-w-2xl text-lg text-cream/80">{st.heroLead}</p>
-      <div class="mt-9"><Button href={site.appUrl} external variant="primary">{st.ctaOpen}</Button></div>
+      <div class="mt-9"><Button href={appHref} external={appOpen} variant="primary">{appOpen ? st.ctaOpen : t.common.beta.more}</Button></div>
     </div>
   </section>
+
+  {!appOpen && (
+    <Section tone="cream-deep" class="!py-10 lg:!py-12">
+      <BetaNotice lang={lang} />
+    </Section>
+  )}
 
   <Section>
     <SectionHeading eyebrow={st.problemEyebrow} title={st.problemTitle} />
@@ -114,7 +124,7 @@ const ld = [
             <li class="flex gap-3 text-cream/85"><span class="mt-1 text-gold">✦</span><span>{b}</span></li>
           ))}
         </ul>
-        <div class="mt-7"><Button href={site.appUrl} external variant="light">{st.versionAcoCta}</Button></div>
+        <div class="mt-7"><Button href={appHref} external={appOpen} variant="light">{appOpen ? st.versionAcoCta : t.common.beta.more}</Button></div>
       </div>
       <figure class="m-0">
         <img src="/images/app-acoustique.jpg" width="1634" height="902" alt={st.versionAcoCaption} class="w-full rounded-card border border-cream/10 shadow-lg" loading="lazy" />
@@ -162,7 +172,7 @@ const ld = [
       <Icon name="lucide:sparkles" class="mx-auto h-9 w-9 text-copper" />
       <h2 class="mt-4 font-display text-2xl font-700 md:text-3xl">{st.waitTitle}</h2>
       <p class="mt-3 text-ink-soft/85">{st.waitText}</p>
-      <div class="mt-7"><Button href={site.appUrl} external variant="primary">{st.waitButton}</Button></div>
+      <div class="mt-7"><Button href={appHref} external={appOpen} variant="primary">{appOpen ? st.waitButton : t.common.beta.more}</Button></div>
     </div>
   </Section>
 

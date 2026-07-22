@@ -31,6 +31,15 @@ export const en: Dict = {
     },
     skip: 'Skip to content',
     credentials: ['Conservatory award', 'The Voice · Season 11', 'Neotone · Yishama · Maison du Ngoni ambassador', 'Showroom Paris 20th'],
+    beta: {
+      badge: 'Limited access',
+      title: 'The app is not open to the public yet',
+      text: 'Handpan Studio is currently used by a small group of beta testers, while we fine-tune the experience.',
+      wish: 'Would you like to become a beta tester? Write to me and tell me in a few words why the app interests you and how you plan to use it — I read and answer personally.',
+      reassure: 'Either way, your sign-up is recorded: you’ll automatically be notified as soon as you can use it.',
+      cta: 'Apply to become a beta tester',
+      more: 'Access to the app',
+    },
     emotions: ['Balance', 'Momentum', 'Adventure', 'Calm', 'Tension', 'Nostalgia', 'Mystery'],
   },
   home: {
