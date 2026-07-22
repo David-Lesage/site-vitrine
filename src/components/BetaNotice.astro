@@ -1,24 +1,16 @@
 ---
 // Encadré affiché tant que `site.appPublicAccess` est à false : explique que
-// l'application est en bêta fermée et propose de candidater par email.
+// l'application est en bêta fermée et recueille les inscriptions.
 // Ancre #acces — c'est la cible de tous les anciens boutons « ouvrir l'app ».
+// Un SEUL appel à l'action : le formulaire (le champ « motivation » remplace
+// l'ancien lien mailto de candidature bêta-testeur).
 import { Icon } from 'astro-icon/components'
-import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const b = getDict(lang).common.beta
-
-const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(
-  lang === 'en' ? 'Handpan Studio — beta tester application' : 'Handpan Studio — demande de bêta-test',
-)}&body=${encodeURIComponent(
-  (lang === 'en'
-    ? ['Hi David,', '', 'I’d like to become a Handpan Studio beta tester.', '', 'Why the app interests me:', '', 'How I plan to use it:', '', 'My handpan (or Neotone):', '', 'My name:', '', 'Thanks!']
-    : ['Bonjour David,', '', 'Je souhaite devenir bêta-testeur de Handpan Studio.', '', 'Pourquoi l’application m’intéresse :', '', 'Comment je compte l’utiliser :', '', 'Mon handpan (ou Neotone) :', '', 'Mon nom :', '', 'Merci !']
-  ).join('\n'),
-)}`
 ---
 
 <div id="acces" class="mx-auto max-w-3xl scroll-mt-28 rounded-card border border-copper/30 bg-copper/5 p-6 md:p-8">
@@ -28,8 +20,6 @@ const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(
   <h2 class="mt-4 font-display text-2xl font-700 text-ink">{b.title}</h2>
   <p class="mt-3 text-ink-soft/90">{b.text}</p>
   <p class="mt-3 text-ink-soft/90">{b.wish}</p>
-  <a href={mailHref} class="mt-5 inline-block rounded-full border border-rust/40 px-6 py-3 font-700 text-rust transition-colors hover:bg-rust/10">{b.cta}</a>
-
   <div class="mt-8 rounded-card border border-ink/10 bg-cream p-5 md:p-6">
     <h3 class="font-display text-lg font-700">{b.formTitle}</h3>
     <form id="beta-form" class="mt-4 grid gap-3" data-lang={lang} data-redirect={lang === 'en' ? '/en/blog' : '/blog'} novalidate>
@@ -47,6 +37,41 @@ const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(
         <span class="text-sm font-600">{b.formEmail}</span>
         <input type="email" name="email" autocomplete="email" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
       </label>
+      <fieldset class="mt-2">
+        <legend class="text-sm font-600">{b.formHandpan}</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {[['yes', b.formHandpanYes], ['no', b.formHandpanNo], ['planning', b.formHandpanPlanning]].map(([v, label]) => (
+            <label class="cursor-pointer">
+              <input type="radio" name="hasHandpan" value={v} class="peer sr-only" />
+              <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <fieldset class="mt-2">
+        <legend class="text-sm font-600">{b.formUsage}</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {[['personal', b.formUsagePersonal], ['teacher', b.formUsageTeacher], ['both', b.formUsageBoth]].map(([v, label]) => (
+            <label class="cursor-pointer">
+              <input type="radio" name="usageType" value={v} class="peer sr-only" />
+              <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <label class="mt-2 block">
+        <span class="text-sm font-600">{b.formMotivation}</span>
+        <span class="mt-1 block text-xs text-ink-soft/70">{b.formMotivationHint}</span>
+        <textarea name="motivation" rows="3" placeholder={b.formMotivationPlaceholder} class="mt-2 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea>
+      </label>
+
+      <label class="mt-1 flex cursor-pointer items-start gap-3 rounded-xl border border-copper/25 bg-copper/5 p-4">
+        <input type="checkbox" name="wantsShowcase" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+        <span class="text-sm text-ink-soft/90">{b.formShowcase}</span>
+      </label>
+
       <button type="submit" data-sending={b.formSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{b.formSubmit}</button>
       <p data-beta-error class="hidden text-sm font-600 text-rust">{b.formError}</p>
       <p class="text-xs text-ink-soft/70">{b.formPrivacy}</p>
@@ -77,6 +102,10 @@ const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(
           firstName: get('firstName'),
           lastName: get('lastName'),
           email: get('email'),
+          hasHandpan: get('hasHandpan'),
+          usageType: get('usageType'),
+          motivation: get('motivation'),
+          wantsShowcase: data.get('wantsShowcase') !== null,
           source: 'beta-waitlist',
           lang: form.dataset.lang || 'fr',
           page: location.pathname,
