@@ -34,13 +34,12 @@ export const en: Dict = {
     beta: {
       badge: 'Limited access',
       title: 'The app is not open to the public yet',
-      text: 'Handpan Studio is currently used by a small group of beta testers, while we fine-tune the experience.',
+      text: 'Handpan Studio is currently used by a small group of beta testers, while we fine-tune the experience. They get free access, in exchange for their feedback.',
       wish: 'Would you like to become a beta tester? Tick the box in the form and tell me in a few words why the app interests you and how you plan to use it — I read and answer personally.',
       more: 'Access to the app',
       ctaWaitlist: 'Join the waiting list',
-      ctaBeta: 'Apply for beta access',
       priceClosedNote:
-        'These will be the prices at public launch. Today access is not open to everyone yet: it is reserved for beta testers who commit to supporting the development of the app. Tell me below why it interests you — I answer personally.',
+        'These prices are indicative: they will be the ones at public launch. The whole app — including the free Discovery plan — isn’t open yet: no plan is accessible today. It is used by a small group of beta testers, who get free access in exchange for their feedback. The waiting list is the only way in for now, whichever plan you may want at launch. Would you like to be one of the beta testers? Tell me below why the app interests you — I read and answer personally.',
       formTitle: 'Get notified when it opens',
       formFirst: 'First name',
       formLast: 'Last name',
@@ -62,7 +61,7 @@ export const en: Dict = {
       formPersonalGoalLearn: 'Learn to play',
       formPersonalGoalCompose: 'Compose, create my own scales',
       formShowcase: 'I’d like to hear about the next free showcases in Paris',
-      formBeta: 'I’d like to become a beta tester — early access to the app, committing to support its development (regular feedback).',
+      formBeta: 'I’d like to become a beta tester — early, free access to the app, in exchange for my regular feedback.',
       formMotivation: 'Why does the app interest you? (optional)',
       formMotivationBeta: 'Why would you like to become a beta tester?',
       formMotivationHint: 'Tell me in a few words why it interests you and how you plan to use it: your answer counts as an application to join the beta testers. I read everything, personally.',
@@ -553,7 +552,7 @@ export const en: Dict = {
     priceFree: {
       name: 'Discovery',
       price: 'Free',
-      blurb: 'Create your account and discover the visual approach: visualise, play and export your scores in acoustic mode, for free.',
+      blurb: 'A free account to discover the visual approach: visualise, play and export your scores in acoustic mode, at no cost.',
     },
     priceTiers: {
       monthly: { name: 'Studio monthly', blurb: 'Unlock the electronic mode (Neotone/MIDI), advanced creation, saving and export — month by month, no commitment.' },

@@ -40,15 +40,14 @@ const fr = {
     beta: {
       badge: 'Accès limité',
       title: 'L’application n’est pas encore ouverte au grand public',
-      text: 'Handpan Studio est actuellement utilisée par un petit groupe de bêta-testeurs, le temps de peaufiner l’expérience.',
+      text: 'Handpan Studio est actuellement utilisée par un petit groupe de bêta-testeurs, le temps de peaufiner l’expérience. Ils y ont accès gratuitement, en échange de leurs retours.',
       wish: 'Tu souhaites devenir bêta-testeur ? Coche la case dans le formulaire et dis-moi en quelques mots pourquoi l’application t’intéresse et comment tu comptes l’utiliser — je lis et je réponds personnellement.',
       more: 'Accès à l’application',
       // Libellés des boutons pendant la bêta fermée (les prix restent affichés,
       // mais on ne promet pas un accès immédiat).
       ctaWaitlist: 'Rejoindre la liste d’attente',
-      ctaBeta: 'Demander un accès bêta-testeur',
       priceClosedNote:
-        'Ces tarifs seront ceux de l’ouverture publique. Aujourd’hui, l’accès n’est pas encore ouvert à tous : il est réservé aux bêta-testeurs engagés à soutenir le développement de l’application. Dis-moi ci-dessous pourquoi elle t’intéresse — je réponds personnellement.',
+        'Ces tarifs sont donnés à titre indicatif : ce seront ceux de l’ouverture publique. L’application entière — formule Découverte gratuite comprise — n’est pas encore ouverte : aucune formule n’est accessible aujourd’hui. Elle est utilisée par un petit groupe de bêta-testeurs, qui y ont accès gratuitement en échange de leurs retours. La liste d’attente est la seule porte d’entrée pour l’instant, quelle que soit la formule qui t’intéressera à l’ouverture. Envie de faire partie des bêta-testeurs ? Dis-moi ci-dessous pourquoi l’application t’intéresse — je lis et je réponds personnellement.',
       formTitle: 'Être prévenu·e de l’ouverture',
       formFirst: 'Prénom',
       formLast: 'Nom',
@@ -70,7 +69,7 @@ const fr = {
       formPersonalGoalLearn: 'Apprendre à jouer',
       formPersonalGoalCompose: 'Composer, créer mes gammes',
       formShowcase: 'Je souhaite être informé·e des prochains showcases gratuits à Paris',
-      formBeta: 'Je souhaite devenir bêta-testeur — accès anticipé à l’application, en m’engageant à soutenir son développement (retours réguliers).',
+      formBeta: 'Je souhaite devenir bêta-testeur — accès anticipé et gratuit à l’application, en échange de mes retours réguliers.',
       formMotivation: 'Pourquoi l’application t’intéresse ? (facultatif)',
       formMotivationBeta: 'Pourquoi souhaites-tu devenir bêta-testeur ?',
       formMotivationHint: 'Dis-moi en quelques mots pourquoi elle t’intéresse et comment tu comptes l’utiliser : ta réponse vaut candidature pour rejoindre les bêta-testeurs. Je lis tout, personnellement.',
@@ -561,7 +560,7 @@ const fr = {
     priceFree: {
       name: 'Découverte',
       price: 'Gratuit',
-      blurb: 'Crée ton compte et découvre l’approche visuelle : visualise, joue et exporte tes partitions en mode acoustique, gratuitement.',
+      blurb: 'Un compte gratuit pour découvrir l’approche visuelle : visualise, joue et exporte tes partitions en mode acoustique, sans rien payer.',
     },
     priceTiers: {
       monthly: { name: 'Studio mensuel', blurb: 'Débloque le mode électronique (Neotone/MIDI), la création avancée, la sauvegarde et l’export — mois par mois, sans engagement.' },

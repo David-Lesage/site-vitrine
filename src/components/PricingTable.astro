@@ -20,8 +20,11 @@ const tiers: PlanId[] = ['monthly', 'annual', 'lifetime']
 // #acces (liste d'attente / candidature bêta) au lieu d'ouvrir l'application.
 // Le script AppAccessSync peut rebasculer ces boutons en accès direct.
 const cta = getDict(lang).common.beta
+// Bêta fermée : UNE SEULE porte d'entrée pour toutes les formules (gratuite
+// comprise) → même libellé, même cible #acces. En état ouvert, chaque bouton
+// retrouve son libellé et sa destination d'origine.
 const freeCta = appCta(t.priceFreeCta, cta.ctaWaitlist)
-const planCta = appCta(t.priceCta, cta.ctaBeta)
+const planCta = appCta(t.priceCta, cta.ctaWaitlist)
 ---
 
 <div class="grid gap-6 lg:grid-cols-4">
