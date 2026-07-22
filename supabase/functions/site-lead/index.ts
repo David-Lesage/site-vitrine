@@ -447,9 +447,10 @@ Deno.serve(async (req) => {
             }
 
             // Notification à David — UNIQUEMENT pour ce qui attend une réponse de sa part :
-            // une demande de réservation, ou une candidature bêta-testeur. Une simple
-            // inscription à la liste d'attente ne déclenche RIEN (sinon la boîte déborde).
-            if (isBooking || wantsBeta) {
+            // une demande de réservation, une candidature bêta-testeur, ou un FABRICANT
+            // qui se déclare (c'est un partenaire potentiel : il ne doit jamais dormir
+            // dans le dashboard). Une simple inscription ne déclenche RIEN.
+            if (isBooking || wantsBeta || isMaker) {
                 const notifier = new SMTPClient({
                     connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } },
                 });
@@ -458,13 +459,21 @@ Deno.serve(async (req) => {
                         from,
                         to: ADMIN_EMAIL,
                         replyTo: email,
-                        subject: (wantsBeta && !isBooking
-                            ? `[Bêta] Candidature — ${firstName} ${lastName}`
-                            : `[Site] ${sourceLabel(source, 'fr')} — ${firstName} ${lastName}`).trim(),
+                        // Un fabricant passe devant : c'est la demande la plus rare et la
+                        // plus stratégique. Son pays figure dans l'objet pour situer d'un
+                        // coup d'œil (le catalogue se choisit d'abord sur la localisation).
+                        subject: (
+                            isBooking ? `[Site] ${sourceLabel(source, 'fr')} — ${firstName} ${lastName}`
+                            : isMaker ? `[Fabricant] ${firstName} ${lastName}${makerCountry ? ` — ${makerCountry}` : ''}`
+                            : `[Bêta] Candidature — ${firstName} ${lastName}`
+                        ).trim(),
                         html: adminNotifyHtml({
-                            Motif: wantsBeta && !isBooking
-                                ? 'Candidature bêta-testeur'
-                                : sourceLabel(source, 'fr'),
+                            Motif: isBooking
+                                ? sourceLabel(source, 'fr')
+                                : [
+                                    isMaker ? 'Fabricant de handpan — fiche catalogue' : null,
+                                    wantsBeta ? 'Candidature bêta-testeur' : null,
+                                  ].filter(Boolean).join(' · ') || sourceLabel(source, 'fr'),
                             Nom: `${firstName} ${lastName}`.trim() || null,
                             Email: email,
                             Téléphone: phone,
