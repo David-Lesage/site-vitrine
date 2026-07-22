@@ -6,7 +6,7 @@
 import { site } from '@/data/site'
 import type { Lang } from '@/i18n/config'
 
-function mailto(subject: string, lines: (string | null)[], to: string = site.emailNeotone): string {
+function mailto(subject: string, lines: (string | null)[], to: string = site.email): string {
   const body = lines.filter((l): l is string => l !== null).join('\n')
   return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 }

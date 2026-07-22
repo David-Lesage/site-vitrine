@@ -41,6 +41,11 @@ export default async function handler(req, res) {
         usageType: body.usageType,
         motivation: body.motivation,
         wantsShowcase: body.wantsShowcase === true,
+        // Demandes de réservation (showroom, showcase, rendez-vous privé)
+        phone: body.phone,
+        message: body.message,
+        peopleCount: body.peopleCount,
+        eventDate: body.eventDate,
         source: body.source || 'beta-waitlist',
         lang: body.lang || 'fr',
         page: body.page,

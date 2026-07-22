@@ -8,28 +8,40 @@ import { site, agendaEvents } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { localBusinessLdJson, breadcrumbLdJson } from '@/lib/ldJson'
-import { showroomVisitMailto, privateSessionMailto, eventMailto } from '@/lib/booking'
+import BookingForm from '@/components/BookingForm.astro'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const t = getDict(lang)
 const sh = t.showroom
+const bk = t.booking
 const L = (p: string) => localizePath(p, lang)
 const eventIcons = ['lucide:presentation', 'lucide:hand', 'lucide:graduation-cap']
 const locale = lang === 'en' ? 'en-GB' : 'fr-FR'
 
-// Prochaines dates formatées + lien de réservation pré-rempli par date
-const agenda = agendaEvents.map((e) => {
-  const d = new Date(e.date + 'T12:00:00')
-  const dateLong = new Intl.DateTimeFormat(locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(d)
-  const day = new Intl.DateTimeFormat(locale, { day: 'numeric' }).format(d)
-  const month = new Intl.DateTimeFormat(locale, { month: 'short' }).format(d).replace('.', '')
-  const time = sh.agendaEventTime.replace('{start}', e.start).replace('{end}', e.end)
-  return { dateLong, day, month, time, href: eventMailto(lang, dateLong) }
-})
-const visitHref = showroomVisitMailto(lang)
-const privateHref = privateSessionMailto(lang)
+// Seules les dates À VENIR sont affichées : une date passée dans le calendrier
+// donnait l'impression d'un agenda mort. Le tri se fait au build, et un second
+// filtre côté client (voir <script> plus bas) protège d'une page mise en cache.
+const todayIso = new Date().toISOString().slice(0, 10)
+const agenda = agendaEvents
+  .filter((e) => e.date >= todayIso)
+  .slice()
+  .sort((a, b) => a.date.localeCompare(b.date))
+  .map((e) => {
+    const d = new Date(e.date + 'T12:00:00')
+    const dateLong = new Intl.DateTimeFormat(locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(d)
+    const day = new Intl.DateTimeFormat(locale, { day: 'numeric' }).format(d)
+    const month = new Intl.DateTimeFormat(locale, { month: 'short' }).format(d).replace('.', '')
+    const time = sh.agendaEventTime.replace('{start}', e.start).replace('{end}', e.end)
+    return { iso: e.date, dateLong, day, month, time }
+  })
+const next = agenda[0]
+const agendaCount = (agenda.length > 1 ? sh.agendaCountPlural : sh.agendaCount).replace('{n}', String(agenda.length))
+
+// Attributs communs aux déclencheurs de la modale de réservation.
+const visitAttrs = { 'data-booking': 'showroom-visit', 'data-title': bk.visitTitle, 'data-intro': bk.visitIntro }
+const privateAttrs = { 'data-booking': 'private-session', 'data-title': bk.privateTitle, 'data-intro': bk.privateIntro }
 
 const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: sh.heroTitle, url: L('/showroom') }])]
 ---
@@ -43,9 +55,29 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
       <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-6xl">{sh.heroTitle}</h1>
       <p class="mx-auto mt-5 max-w-2xl text-lg text-cream/80">{sh.heroLead}</p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <Button href={visitHref} variant="primary">{sh.ctaBook}</Button>
+        <Button href="#agenda" variant="primary" {...visitAttrs}>{sh.ctaBook}</Button>
         <Button href="#agenda" variant="light">{sh.ctaNext}</Button>
       </div>
+
+      {next && (
+        <a
+          href="#agenda"
+          data-next-banner
+          data-event-iso={next.iso}
+          class="mx-auto mt-10 flex max-w-xl flex-col items-center gap-4 rounded-card border border-gold/40 bg-cream/10 p-5 text-left backdrop-blur-sm transition-colors hover:bg-cream/20 sm:flex-row"
+        >
+          <div class="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-gold text-ink">
+            <span class="font-display text-2xl font-700 leading-none">{next.day}</span>
+            <span class="text-[10px] font-700 uppercase tracking-widest">{next.month}</span>
+          </div>
+          <div class="flex-1 text-center sm:text-left">
+            <p class="text-xs font-700 uppercase tracking-widest text-gold">{sh.agendaNextLabel}</p>
+            <p class="mt-1 font-600 text-cream first-letter:uppercase">{next.dateLong} · {next.time}</p>
+            <p class="text-sm text-cream/70">{sh.agendaSeats}</p>
+          </div>
+          <span class="shrink-0 rounded-full bg-cream px-5 py-2.5 text-sm font-700 text-ink">{sh.agendaBookCta}</span>
+        </a>
+      )}
     </div>
   </section>
 
@@ -68,10 +100,10 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
       ))}
     </div>
     <div class="mt-8 flex flex-wrap justify-center gap-3">
-      <Button href={visitHref} variant="primary">{sh.bookVisitCta}</Button>
-      <Button href={privateHref} variant="ghost">{sh.bookPrivateCta}</Button>
+      <Button href="#agenda" variant="primary" {...visitAttrs}>{sh.bookVisitCta}</Button>
+      <Button href="#agenda" variant="ghost" {...privateAttrs}>{sh.bookPrivateCta}</Button>
     </div>
-    <p class="mt-4 text-center text-sm text-ink-soft/70">{sh.booking} <a href={`mailto:${site.emailNeotone}`} class="font-700 text-rust underline">{site.emailNeotone}</a></p>
+    <p class="mt-4 text-center text-sm text-ink-soft/70">{sh.booking} <a href={`mailto:${site.email}`} class="font-700 text-rust underline">{site.email}</a></p>
   </Section>
 
   <Section tone="cream-deep">
@@ -87,30 +119,69 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
     <p class="mx-auto mt-6 max-w-2xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm font-600 text-ink-soft/90">{sh.programNote}</p>
   </Section>
 
-  <Section id="agenda">
-    <SectionHeading eyebrow={sh.agendaEyebrow} title={sh.agendaTitle} intro={sh.agendaIntro} />
-    <div class="mx-auto mt-10 max-w-2xl space-y-4">
-      {agenda.map((e) => (
-        <div class="flex flex-col items-center gap-5 rounded-card border border-copper/30 bg-cream p-5 sm:flex-row sm:items-center sm:text-left">
-          <div class="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-ink text-cream">
-            <span class="font-display text-3xl font-700 leading-none">{e.day}</span>
-            <span class="text-xs font-600 uppercase tracking-widest text-gold">{e.month}</span>
+  <Section id="agenda" tone="cream-deep">
+    <div class="mx-auto max-w-3xl rounded-card border-2 border-copper/40 bg-cream p-6 shadow-lg md:p-10">
+      <div class="text-center">
+        <p class="inline-flex items-center gap-2 rounded-full bg-rust px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-cream">
+          <Icon name="lucide:calendar-days" class="h-4 w-4" />
+          {sh.agendaEyebrow}
+        </p>
+        <h2 class="mt-4 font-display text-3xl font-700 md:text-4xl">{sh.agendaTitle}</h2>
+        <p class="mx-auto mt-3 max-w-xl text-ink-soft/85">{sh.agendaIntro}</p>
+        {agenda.length > 0 && (
+          <p data-agenda-count class="mt-4 inline-block rounded-full bg-gold/20 px-4 py-1 text-sm font-700 text-ink">{agendaCount}</p>
+        )}
+      </div>
+
+      <div data-agenda-list class="mt-8 space-y-4">
+        {agenda.map((e) => (
+          <div
+            data-event-iso={e.iso}
+            class="flex flex-col items-center gap-5 rounded-card border border-copper/30 bg-cream-deep/50 p-5 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:text-left"
+          >
+            <div class="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-ink text-cream">
+              <span class="font-display text-3xl font-700 leading-none">{e.day}</span>
+              <span class="text-xs font-600 uppercase tracking-widest text-gold">{e.month}</span>
+            </div>
+            <div class="flex-1 text-center sm:text-left">
+              <p class="inline-flex items-center gap-2 rounded-full bg-rust/15 px-3 py-1 text-xs font-700 uppercase tracking-widest text-rust">{sh.agendaEventTag}</p>
+              <h3 class="mt-2 font-display text-xl font-700">{sh.agendaEventTitle}</h3>
+              <p class="mt-1 text-sm font-600 text-ink-soft first-letter:uppercase">{e.dateLong} · {e.time}</p>
+              <p class="mt-1 text-sm text-ink-soft/70">{site.address}</p>
+            </div>
+            <button
+              type="button"
+              data-booking="showcase-booking"
+              data-event-date={e.iso}
+              data-title={bk.showcaseTitle}
+              data-intro={bk.showcaseIntro}
+              class="block w-full shrink-0 rounded-full bg-rust px-5 py-3 text-center font-700 text-cream transition-colors hover:bg-copper sm:w-auto"
+            >{sh.agendaBookCta}</button>
           </div>
-          <div class="flex-1 text-center sm:text-left">
-            <p class="inline-flex items-center gap-2 rounded-full bg-rust/15 px-3 py-1 text-xs font-700 uppercase tracking-widest text-rust">{sh.agendaEventTag}</p>
-            <h3 class="mt-2 font-display text-xl font-700">{sh.agendaEventTitle}</h3>
-            <p class="mt-1 text-sm text-ink-soft/85 first-letter:uppercase">{e.dateLong} · {e.time}</p>
-            <p class="mt-1 text-sm text-ink-soft/70">{site.address}</p>
-          </div>
-          <a href={e.href} class="block w-full shrink-0 rounded-full bg-rust px-5 py-3 text-center font-700 text-cream transition-colors hover:bg-copper sm:w-auto">{sh.agendaBookCta}</a>
+        ))}
+      </div>
+
+      <div data-agenda-empty class:list={['mt-8 rounded-card border border-dashed border-copper/40 bg-cream-deep/40 p-6 text-center', agenda.length > 0 && 'hidden']}>
+        <Icon name="lucide:calendar-clock" class="mx-auto h-8 w-8 text-copper" />
+        <h3 class="mt-3 font-display text-xl font-700">{sh.agendaEmpty}</h3>
+        <p class="mx-auto mt-2 max-w-md text-sm text-ink-soft/85">{sh.agendaEmptyText}</p>
+        <div class="mt-5">
+          <Button
+            href="#agenda"
+            variant="primary"
+            data-booking="showcase-waitlist"
+            data-title={sh.agendaEmptyCta}
+            data-intro={sh.agendaEmptyText}
+          >{sh.agendaEmptyCta}</Button>
         </div>
-      ))}
+      </div>
     </div>
-    <div class="mx-auto mt-8 max-w-2xl rounded-card border border-ink/10 bg-cream-deep/50 p-6 text-center">
+
+    <div class="mx-auto mt-8 max-w-3xl rounded-card border border-ink/10 bg-cream/70 p-6 text-center">
       <h3 class="font-display text-lg font-700">{sh.agendaMoreTitle}</h3>
       <p class="mx-auto mt-2 max-w-md text-sm text-ink-soft/85">{sh.agendaMoreText}</p>
       <div class="mt-5 flex flex-wrap justify-center gap-3">
-        <Button href={privateHref} variant="primary">{sh.bookPrivateCta}</Button>
+        <Button href="#agenda" variant="primary" {...privateAttrs}>{sh.bookPrivateCta}</Button>
         <Button href={L('/') + '#communaute'} variant="ghost">{sh.agendaCta}</Button>
       </div>
     </div>
@@ -131,4 +202,29 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
       <div class="overflow-hidden rounded-card"><img src="/images/localisation-showroom-poster.webp" width="720" height="720" alt={sh.heroTitle} class="h-full w-full object-cover" loading="lazy" /></div>
     </div>
   </Section>
+
+  <BookingForm lang={lang} />
 </Layout>
+
+<script>
+  // Filet de sécurité : la page est statique, donc une date déjà passée pourrait
+  // rester affichée si le site n'a pas été rebuildé. On la retire à l'affichage,
+  // et on bascule sur l'état « prochaines dates en préparation » s'il ne reste rien.
+  const today = new Date().toISOString().slice(0, 10)
+  const list = document.querySelector('[data-agenda-list]')
+  const empty = document.querySelector('[data-agenda-empty]')
+  const count = document.querySelector('[data-agenda-count]')
+  const banner = document.querySelector('[data-next-banner]')
+
+  list?.querySelectorAll<HTMLElement>('[data-event-iso]').forEach((card) => {
+    if ((card.dataset.eventIso || '') < today) card.remove()
+  })
+  if (banner instanceof HTMLElement && (banner.dataset.eventIso || '') < today) banner.remove()
+
+  const remaining = list?.querySelectorAll('[data-event-iso]').length ?? 0
+  if (remaining === 0) {
+    empty?.classList.remove('hidden')
+    count?.remove()
+    banner?.remove()
+  }
+</script>

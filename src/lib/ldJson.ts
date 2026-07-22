@@ -160,7 +160,7 @@ export function localBusinessLdJson() {
     image: new URL('/images/localisation-showroom-poster.webp', site.url).toString(),
     url: new URL('/showroom', site.url).toString(),
     telephone: site.phone,
-    email: site.emailNeotone,
+    email: site.email,
     priceRange: '€€€',
     address: {
       '@type': 'PostalAddress',

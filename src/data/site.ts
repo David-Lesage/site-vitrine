@@ -20,7 +20,6 @@ export const site = {
   // Pour rouvrir l'app au public : repasser cette valeur à true, c'est tout.
   appPublicAccess: false,
   email: 'contact@lesagedavid.fr',
-  emailNeotone: 'neotone@lesagedavid.fr',
   phone: '+33 6 10 73 31 52',
   phoneHref: '+33610733152',
   address: '29 rue des Orteaux, 75020 Paris',
