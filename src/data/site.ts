@@ -61,8 +61,19 @@ export const footerNav = [
 
 // Prochains showcases publics gratuits (dates neutres, ISO).
 // Le libellé / lieu traduit vient de dict.showroom.agenda*.
+//
+// ⚠️ SOURCE DE VÉRITÉ = l'agenda Google « Le Nid » (partagé avec Iris).
+// Seuls les événements intitulés « Showcase » y sont repris ici : les workshops,
+// concerts, résidences et rendez-vous mensuels ne vont PAS sur le site.
+// La copie est MANUELLE : une date ajoutée ou déplacée dans l'agenda n'apparaît
+// qu'après édition de ce fichier + redéploiement. Dernière synchro : 01/08/2026.
+// Les dates passées disparaissent toutes seules (filtre dans ShowroomPage.astro).
 export const agendaEvents = [
-  { date: '2026-07-19', start: '16:30', end: '18:30' },
+  { date: '2026-08-23', start: '16:00', end: '19:00' },
+  { date: '2026-09-19', start: '16:00', end: '19:00' },
+  { date: '2026-10-18', start: '16:00', end: '19:00' },
+  { date: '2026-11-14', start: '16:00', end: '19:00' },
+  { date: '2026-12-05', start: '15:00', end: '18:00' },
 ] as const
 
 // Playlist YouTube « Neotone » (toutes les vidéos liées à l'instrument).

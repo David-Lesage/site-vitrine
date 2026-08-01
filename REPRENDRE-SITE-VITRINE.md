@@ -66,9 +66,6 @@ git push origin HEAD                            # séparé, ne déploie pas
   formulaire refondu sur l'écran de connexion. EF `app-lead` v4, `site-lead` v9.
 
 ### 🔴 À FAIRE — bloqué sur David
-- **Donner les prochaines dates de showcase.** La seule date de `src/data/site.ts` →
-  `agendaEvents` est le **19/07/2026, déjà passée**. Le calendrier affiche donc l'état vide.
-  Ajouter une date = éditer ce fichier **+ redéployer** (elles ne sont pas en base).
 - **Photos Muling** : 11 images produit (`HMP2详情01-10`, `HMP2主图01`) à récupérer.
   ⛔ EXCLURE `德国帐户.png` et `香港帐户.jpg` — coordonnées bancaires.
 - **Blog phase 2** : ~12 captures d'écran de l'app à faire par David pour enrichir les articles.
@@ -83,6 +80,17 @@ git push origin HEAD                            # séparé, ne déploie pas
    au lieu du code — chantier proposé, pas validé.
 4. **Brevo** : centralisation des contacts + newsletter RGPD (en attente que David ait du temps).
 
+### Agenda des showcases — synchro MANUELLE
+`src/data/site.ts` → `agendaEvents`. **Source de vérité = l'agenda Google « Le Nid »**
+(partagé avec Iris, `iris.chasles@gmail.com`) :
+`30716d7f4373d33769612165eb0607e5b33fd533b984df2df61fe9518ab32eae@group.calendar.google.com`
+Accessible via les outils Google Calendar (`list_events`).
+**Seuls les événements intitulés « Showcase » vont sur le site** — pas les workshops
+(yoga, calebasse), concerts, résidences, ni les « Rdv mensuel au Nid ».
+⚠️ La copie est manuelle : une date ajoutée/déplacée dans l'agenda n'apparaît qu'après
+édition du fichier + redéploiement. Dernière synchro : **01/08/2026** (5 dates jusqu'au 05/12).
+Les dates passées disparaissent seules (filtre build + client dans `ShowroomPage.astro`).
+
 ### Identifiants utiles (rien de secret ici)
 - Supabase : projet **`zqcuhnjjrgmybftppkcl`** (Handpan Studio). Clé publiable du site dans `api/subscribe.js`.
 - EF `site-lead` : `verify_jwt = false`, protégée par `SITE_LEAD_TOKEN` (Vercel + Supabase).
@@ -91,6 +99,11 @@ git push origin HEAD                            # séparé, ne déploie pas
 ---
 
 ## Journal
+
+### 01/08/2026
+- Agenda des showcases synchronisé depuis le calendrier Google « Le Nid » : 5 dates
+  (23/08, 19/09, 18/10, 14/11 à 16h–19h ; 05/12 à 15h–18h). Les 17 autres événements du
+  calendrier (workshops, concerts, résidences, rdv mensuels) sont volontairement exclus.
 
 ### 22/07/2026
 - CRM des demandes de réservation construit de bout en bout et déployé ; calendrier des
