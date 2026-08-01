@@ -11,6 +11,7 @@ import { site, homeVideos, neotonePlaylist } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { personLdJson, websiteLdJson, videoLdJson } from '@/lib/ldJson'
+import { upcomingShowcases } from '@/lib/agenda'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -18,6 +19,8 @@ const { lang } = Astro.props
 const t = getDict(lang)
 const h = t.home
 const L = (p: string) => localizePath(p, lang)
+// Prochaines dates de showcase (mêmes données que la page showroom, via @/lib/agenda)
+const showcases = upcomingShowcases(lang)
 // Identifiant de la playlist YouTube, pour l'ouvrir dans la modale (le visiteur reste sur le site)
 const playlistId = (neotonePlaylist.match(/list=([\w-]+)/) || [])[1] || ''
 
@@ -112,6 +115,30 @@ const universMeta = [
         <ul class="mt-6 space-y-3 text-cream/90">
           {h.showroomArgs.map((a) => <li class="flex gap-3"><Icon name="lucide:check" class="mt-1 h-5 w-5 shrink-0 text-gold" /> {a}</li>)}
         </ul>
+
+        {/* Dates réelles des prochains showcases. Sans elles, la section promettait
+            un événement sans jamais dire quand — le visiteur devait changer de page. */}
+        <div data-home-agenda class="mt-8 rounded-card border border-gold/30 bg-cream/5 p-5">
+          <p class="flex items-center gap-2 text-xs font-700 uppercase tracking-widest text-gold">
+            <Icon name="lucide:calendar-days" class="h-4 w-4" />
+            {h.showroomDatesTitle}
+          </p>
+          <ul data-home-agenda-list class="mt-4 space-y-2">
+            {showcases.map((e) => (
+              <li data-event-iso={e.iso} class="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-cream/10 pb-2 last:border-0 last:pb-0">
+                <span class="font-600 text-cream first-letter:uppercase">{e.short}</span>
+                <span class="text-sm text-cream/70">{e.start} – {e.end}</span>
+              </li>
+            ))}
+          </ul>
+          <p data-home-agenda-empty class:list={['text-sm text-cream/70', showcases.length > 0 && 'hidden']}>
+            {h.showroomDatesEmpty}
+          </p>
+          {showcases.length > 0 && (
+            <p class="mt-3 text-xs text-cream/60">{h.showroomDatesNote}</p>
+          )}
+        </div>
+
         <div class="mt-8 flex flex-wrap gap-3">
           <Button href={L('/showroom')} variant="primary">{h.showroomCta1}</Button>
           <Button href={L('/showroom') + '#agenda'} variant="light">{h.showroomCta2}</Button>
@@ -149,3 +176,21 @@ const universMeta = [
   </Section>
   <VideoModal />
 </Layout>
+
+<script>
+  // Filet de sécurité (même logique que la page showroom) : la page est statique,
+  // donc une date déjà passée pourrait rester affichée si le site n'a pas été
+  // rebuildé depuis. On la retire, et on bascule sur le message d'attente s'il
+  // ne reste plus rien.
+  const today = new Date().toISOString().slice(0, 10)
+  const list = document.querySelector('[data-home-agenda-list]')
+  const empty = document.querySelector('[data-home-agenda-empty]')
+
+  list?.querySelectorAll<HTMLElement>('[data-event-iso]').forEach((row) => {
+    if ((row.dataset.eventIso || '') < today) row.remove()
+  })
+
+  if (!list?.querySelectorAll('[data-event-iso]').length) {
+    empty?.classList.remove('hidden')
+  }
+</script>

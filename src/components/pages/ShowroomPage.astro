@@ -4,10 +4,11 @@ import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
 import { Icon } from 'astro-icon/components'
-import { site, agendaEvents } from '@/data/site'
+import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { localBusinessLdJson, breadcrumbLdJson } from '@/lib/ldJson'
+import { upcomingShowcases } from '@/lib/agenda'
 import BookingForm from '@/components/BookingForm.astro'
 import type { Lang } from '@/i18n/config'
 
@@ -18,24 +19,16 @@ const sh = t.showroom
 const bk = t.booking
 const L = (p: string) => localizePath(p, lang)
 const eventIcons = ['lucide:presentation', 'lucide:hand', 'lucide:graduation-cap']
-const locale = lang === 'en' ? 'en-GB' : 'fr-FR'
 
 // Seules les dates À VENIR sont affichées : une date passée dans le calendrier
-// donnait l'impression d'un agenda mort. Le tri se fait au build, et un second
-// filtre côté client (voir <script> plus bas) protège d'une page mise en cache.
-const todayIso = new Date().toISOString().slice(0, 10)
-const agenda = agendaEvents
-  .filter((e) => e.date >= todayIso)
-  .slice()
-  .sort((a, b) => a.date.localeCompare(b.date))
-  .map((e) => {
-    const d = new Date(e.date + 'T12:00:00')
-    const dateLong = new Intl.DateTimeFormat(locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(d)
-    const day = new Intl.DateTimeFormat(locale, { day: 'numeric' }).format(d)
-    const month = new Intl.DateTimeFormat(locale, { month: 'short' }).format(d).replace('.', '')
-    const time = sh.agendaEventTime.replace('{start}', e.start).replace('{end}', e.end)
-    return { iso: e.date, dateLong, day, month, time }
-  })
+// donnait l'impression d'un agenda mort. Le tri se fait au build (voir
+// `upcomingShowcases`), et un filet côté client (<script> plus bas) protège
+// d'une page mise en cache.
+const agenda = upcomingShowcases(lang).map((e) => ({
+  ...e,
+  dateLong: e.long,
+  time: sh.agendaEventTime.replace('{start}', e.start).replace('{end}', e.end),
+}))
 const next = agenda[0]
 const agendaCount = (agenda.length > 1 ? sh.agendaCountPlural : sh.agendaCount).replace('{n}', String(agenda.length))
 
