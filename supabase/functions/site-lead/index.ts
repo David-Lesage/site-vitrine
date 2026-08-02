@@ -24,6 +24,8 @@
 // v10 (22/07/2026) : un FABRICANT qui se déclare notifie David.
 // v11 (01/08/2026) : rendez-vous individuels — type de séance (tarif annoncé
 //      côté site) et CRÉNEAUX PROPOSÉS par la personne. Elle propose, David valide.
+// v12 (02/08/2026) : format (présentiel / visio, COURS uniquement) et instruments
+//      à préparer pour une démonstration privée.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -62,8 +64,13 @@ const ALLOWED_MAKER_METALS = ['nitrided', 'stainless', 'ember', 'other'];
 
 // Rendez-vous individuels. ⚠ Doit rester aligné sur `sessionTypes` de
 // src/data/site.ts (site vitrine) — c'est LÀ que vivent les tarifs.
-const ALLOWED_SESSION_TYPE = ['demo', 'lesson-60', 'lesson-90'];
+const ALLOWED_SESSION_TYPE = ['onboarding', 'demo', 'lesson-60', 'lesson-90'];
 const SLOT_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/;
+// La visio ne concerne QUE les cours : une démonstration se fait au showroom,
+// on vient y toucher les instruments.
+const REMOTE_SESSION_TYPES = ['onboarding', 'lesson-60', 'lesson-90'];
+const ALLOWED_SESSION_FORMAT = ['in-person', 'remote'];
+const ALLOWED_INSTRUMENTS = ['neotone', 'calebasse', 'gonilele', 'mic-hisong', 'mic-muling'];
 
 /**
  * Résume les casquettes en UNE valeur `usage_type`, la colonne historique.
@@ -98,7 +105,11 @@ const PROFILE_LABELS: Record<string, string> = {
     other: 'autre / ne sait pas encore',
     learn: 'apprendre à jouer', compose: 'composer / créer des gammes',
     none: 'aucun élève pour l’instant', '1-5': '1 à 5 élèves', '6-20': '6 à 20 élèves', '20+': 'plus de 20 élèves',
-    demo: 'Démonstration privée', 'lesson-60': 'Cours présentiel (1h)', 'lesson-90': 'Cours présentiel (1h30)',
+    onboarding: 'Prise en main du Neotone (1h)',
+    demo: 'Démonstration privée', 'lesson-60': 'Cours (1h)', 'lesson-90': 'Cours (1h30)',
+    'in-person': 'en présentiel (showroom)', remote: 'en visio',
+    neotone: 'Neotone', calebasse: 'Calebasse', gonilele: 'Gonilélé',
+    'mic-hisong': 'Micro Hisong', 'mic-muling': 'Micro Muling',
     '9-': '9 notes ou moins', '10-13': '10 à 13 notes', '14-17': '14 à 17 notes',
     '18+': '18 notes et plus', varies: 'variable selon les gammes',
 };
@@ -220,6 +231,8 @@ function bookingHtml(
     message: string | null,
     sessionType: string | null,
     preferredSlots: string[] | null,
+    sessionFormat: string | null,
+    instruments: string[] | null,
 ): string {
     const en = lang === 'en';
     const base = en ? `${SITE}/en` : SITE;
@@ -237,6 +250,8 @@ function bookingHtml(
         when: 'Date',
         yourMsg: 'Your message',
         kindOf: 'Appointment',
+        format: 'Format',
+        instruments: 'Instruments',
         slots: 'Slots you suggested',
         termsTitle: 'How it works',
         terms1: 'I reply personally to confirm the slot I keep.',
@@ -255,6 +270,8 @@ function bookingHtml(
         when: 'Date',
         yourMsg: 'Ton message',
         kindOf: 'Rendez-vous',
+        format: 'Format',
+        instruments: 'Instruments',
         slots: 'Créneaux que tu proposes',
         termsTitle: 'Comment ça se passe',
         terms1: 'Je te réponds personnellement pour confirmer le créneau que je retiens.',
@@ -282,6 +299,8 @@ function bookingHtml(
           <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
             ${row(t.kind, esc(sourceLabel(src, lang)))}
             ${sessionType ? row(t.kindOf, esc(PROFILE_LABELS[sessionType] ?? sessionType)) : ''}
+            ${sessionFormat ? row(t.format, esc(PROFILE_LABELS[sessionFormat] ?? sessionFormat)) : ''}
+            ${instruments?.length ? row(t.instruments, esc(instruments.map((i) => PROFILE_LABELS[i] ?? i).join(', '))) : ''}
             ${dateLabel ? row(t.when, `<span style="text-transform:capitalize;">${esc(dateLabel)}</span>`) : ''}
             ${preferredSlots?.length
                 ? row(t.slots, preferredSlots.map((s) => `<span style="text-transform:capitalize;">${esc(slotLabel(s, lang))}</span>`).join('<br />'))
@@ -410,6 +429,22 @@ Deno.serve(async (req) => {
         const slots = [...new Set(rawSlots.filter((s) => SLOT_RE.test(s)))].slice(0, 3).sort();
         const preferredSlots = slots.length ? slots : null;
 
+        // Format : pertinent seulement pour un COURS. Pour une démonstration on
+        // force `in-person` — elle ne peut pas se tenir en visio.
+        const rawFormat = String(body.sessionFormat ?? '').trim();
+        const sessionFormat = sessionType
+            ? (REMOTE_SESSION_TYPES.includes(sessionType)
+                ? (ALLOWED_SESSION_FORMAT.includes(rawFormat) ? rawFormat : null)
+                : 'in-person')
+            : null;
+
+        // Instruments à préparer : uniquement pour une démonstration privée.
+        const rawInstruments = Array.isArray(body.instruments) ? body.instruments.map(String) : [];
+        const picked = sessionType && !REMOTE_SESSION_TYPES.includes(sessionType)
+            ? [...new Set(rawInstruments.filter((i) => ALLOWED_INSTRUMENTS.includes(i)))]
+            : [];
+        const instruments = picked.length ? picked : null;
+
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
 
         const isBooking = BOOKING_SOURCES.includes(source);
@@ -443,6 +478,8 @@ Deno.serve(async (req) => {
             people_count: peopleCount,
             event_date: eventDate,
             session_type: sessionType,
+            session_format: sessionFormat,
+            instruments,
             preferred_slots: preferredSlots,
         };
 
@@ -490,7 +527,7 @@ Deno.serve(async (req) => {
                         ? (lang === 'en' ? 'David Lesage — your request is received ✨' : 'David Lesage — ta demande est bien reçue ✨')
                         : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨'),
                     html: isBooking
-                        ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots)
+                        ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots, sessionFormat, instruments)
                         : confirmationHtml(firstName, lang, wantsShowcase),
                 });
                 emailSent = true;
@@ -548,6 +585,10 @@ Deno.serve(async (req) => {
                             'Gammes / tarifs': makerPricing,
                             Motivation: motivation,
                             'Rendez-vous': sessionType ? PROFILE_LABELS[sessionType] ?? sessionType : null,
+                            Format: sessionFormat ? PROFILE_LABELS[sessionFormat] ?? sessionFormat : null,
+                            'Instruments à préparer': instruments
+                                ? instruments.map((i) => PROFILE_LABELS[i] ?? i).join(', ')
+                                : null,
                             'Créneaux proposés': preferredSlots?.length
                                 ? preferredSlots.map((s) => slotLabel(s, 'fr')).join(' · ')
                                 : null,

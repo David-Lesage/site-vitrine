@@ -28,10 +28,14 @@ export function sessionDetails(id: SessionTypeId): string {
  * Options du menu déroulant du formulaire : « Démonstration privée — 1h30 · 50 € ».
  * `names` vient de dict.booking.sessionTypeNames (clé = `kind`).
  */
-export function sessionOptions(names: Record<string, string>): { id: SessionTypeId; label: string }[] {
+export function sessionOptions(
+  names: Record<string, string>,
+  recommendedSuffix = '',
+): { id: SessionTypeId; label: string; recommended: boolean }[] {
   return sessionTypes.map((s) => ({
     id: s.id,
-    label: `${names[s.kind] ?? s.kind} — ${sessionDetails(s.id)}`,
+    label: `${names[s.kind] ?? s.kind} — ${sessionDetails(s.id)}${s.recommended && recommendedSuffix ? ` ${recommendedSuffix}` : ''}`,
+    recommended: s.recommended,
   }))
 }
 

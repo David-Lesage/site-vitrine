@@ -8,18 +8,22 @@
 // Inclure UNE fois par page contenant de tels boutons.
 import { getDict } from '@/i18n/dict'
 import { sessionOptions } from '@/lib/sessions'
+import { sessionTypes, demoInstruments } from '@/data/site'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const bk = getDict(lang).booking
 // Tarifs affichés dans le menu : construits depuis site.ts, jamais recopiés.
-const sessions = sessionOptions(bk.sessionTypeNames)
+const sessions = sessionOptions(bk.sessionTypeNames, bk.sessionTypeRecommended)
 const slots = [1, 2, 3]
+// Types de rendez-vous acceptant la visio (les cours) — lu par le script.
+const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(',')
 ---
 
 <div
   id="booking-modal"
+  data-remote-ids={remoteIds}
   class="fixed inset-0 z-[100] hidden items-start justify-center overflow-y-auto bg-ink/80 p-4 py-10 backdrop-blur-sm"
   role="dialog"
   aria-modal="true"
@@ -69,7 +73,36 @@ const slots = [1, 2, 3]
           <option value="">{bk.sessionTypeChoose}</option>
           {sessions.map((s) => <option value={s.id}>{s.label}</option>)}
         </select>
+        <span class="mt-2 block rounded-lg bg-gold/10 px-3 py-2 text-xs leading-relaxed text-ink-soft/85">{bk.sessionTypeHint}</span>
       </label>
+
+      {/* Démonstration privée : on vient TOUCHER les instruments, donc au showroom
+          uniquement. Savoir lesquels permet à David de les préparer. */}
+      <fieldset data-bk-instruments class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
+        <legend class="px-1 text-sm font-600">{bk.instrumentsLabel}</legend>
+        <p class="text-xs text-ink-soft/70">{bk.instrumentsHint}</p>
+        <div class="mt-3 grid gap-2 sm:grid-cols-2">
+          {demoInstruments.map((id) => (
+            <label class="flex cursor-pointer items-center gap-2.5 rounded-lg bg-cream px-3 py-2 text-sm">
+              <input type="checkbox" name="instruments" value={id} class="h-4 w-4 shrink-0 accent-rust" />
+              {bk.instrumentNames[id]}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      {/* Cours seulement : une démonstration ne se fait pas en visio. */}
+      <fieldset data-bk-format class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
+        <legend class="px-1 text-sm font-600">{bk.formatLabel}</legend>
+        <div class="mt-2 grid gap-2 sm:grid-cols-2">
+          {[['in-person', bk.formatInPerson], ['remote', bk.formatRemote]].map(([v, label]) => (
+            <label class="flex cursor-pointer items-center gap-2.5 rounded-lg bg-cream px-3 py-2 text-sm">
+              <input type="radio" name="sessionFormat" value={v} class="h-4 w-4 shrink-0 accent-rust" />
+              {label}
+            </label>
+          ))}
+        </div>
+      </fieldset>
 
       {/* Créneaux proposés par la personne : c'est elle qui propose, David valide. */}
       <fieldset data-bk-slots class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
@@ -126,6 +159,12 @@ const slots = [1, 2, 3]
   const slotsEl = modal?.querySelector('[data-bk-slots]') as HTMLElement
   const slotsErrEl = modal?.querySelector('[data-bk-slots-error]') as HTMLElement
   const termsEl = modal?.querySelector('[data-bk-terms]') as HTMLElement
+  const instrumentsEl = modal?.querySelector('[data-bk-instruments]') as HTMLElement
+  const formatEl = modal?.querySelector('[data-bk-format]') as HTMLElement
+  const sessionSelect = modal?.querySelector('select[name="sessionType"]') as HTMLSelectElement | null
+  // Types acceptant la visio (les cours) — la liste vient de site.ts via un
+  // attribut de données : une expression Astro ne s'interpole pas dans un <script>.
+  const REMOTE_IDS = (modal?.dataset.remoteIds || '').split(',').filter(Boolean)
   const errEl = modal?.querySelector('[data-bk-error]') as HTMLElement
   let lastFocused: HTMLElement | null = null
 
@@ -139,6 +178,21 @@ const slots = [1, 2, 3]
       if (!show) f.value = ''
     })
   }
+
+  /**
+   * Les deux sous-questions du rendez-vous individuel s'excluent :
+   *  · démonstration privée → quels instruments préparer (au showroom, forcément) ;
+   *  · cours               → présentiel ou visio.
+   * Tant que rien n'est choisi, aucune des deux ne s'affiche.
+   */
+  function syncSessionBlocks() {
+    const paid = sessionEl && !sessionEl.classList.contains('hidden')
+    const id = paid ? (sessionSelect?.value || '') : ''
+    toggleBlock(instrumentsEl, !!id && !REMOTE_IDS.includes(id))
+    toggleBlock(formatEl, REMOTE_IDS.includes(id))
+  }
+
+  sessionSelect?.addEventListener('change', syncSessionBlocks)
 
   function open(trigger: HTMLElement) {
     if (!modal || !form) return
@@ -159,6 +213,7 @@ const slots = [1, 2, 3]
     toggleBlock(slotsEl, needsSlots)
     termsEl?.classList.toggle('hidden', !isPaid)
     slotsErrEl?.classList.add('hidden')
+    syncSessionBlocks()
 
     // On ne peut pas proposer un créneau dans le passé.
     const today = new Date().toISOString().slice(0, 10)
@@ -231,6 +286,8 @@ const slots = [1, 2, 3]
           peopleCount: get('peopleCount') ? Number(get('peopleCount')) : null,
           eventDate: get('eventDate') || null,
           sessionType: get('sessionType') || null,
+          sessionFormat: get('sessionFormat') || null,
+          instruments: data.getAll('instruments').map(String),
           preferredSlots,
           source,
           lang: form.dataset.lang || 'fr',

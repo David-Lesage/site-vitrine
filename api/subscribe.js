@@ -66,6 +66,8 @@ export default async function handler(req, res) {
         peopleCount: body.peopleCount,
         eventDate: body.eventDate,
         sessionType: body.sessionType,
+        sessionFormat: body.sessionFormat,
+        instruments: body.instruments,
         preferredSlots: body.preferredSlots,
         source: body.source || 'beta-waitlist',
         lang: body.lang || 'fr',

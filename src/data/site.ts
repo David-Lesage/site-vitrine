@@ -81,13 +81,24 @@ export const agendaEvents = [
 // formulaire de réservation : changer un prix ICI le change partout.
 // (Rien à voir avec les prix de l'app, qui viennent de Stripe.)
 // `kind` → libellé traduit (dict.booking.sessionTypeNames) · `price` en euros TTC.
+// `remote` : la visio n'a de sens que pour un COURS. Une démonstration privée
+// suppose de toucher les instruments — elle est forcément au showroom.
+// `recommended` : mis en avant dans le formulaire. La prise en main répond au
+// moment où l'on décroche — juste après l'achat, face à une interface inconnue.
+// ⚠️ Son tarif (1h · 50 €) est aligné sur un cours d'1h : à ajuster ici si David
+// veut un prix d'accompagnement différent.
 export const sessionTypes = [
-  { id: 'demo', kind: 'demo', minutes: 90, price: 50 },
-  { id: 'lesson-60', kind: 'lesson', minutes: 60, price: 50 },
-  { id: 'lesson-90', kind: 'lesson', minutes: 90, price: 70 },
+  { id: 'onboarding', kind: 'onboarding', minutes: 60, price: 50, remote: true, recommended: true },
+  { id: 'demo', kind: 'demo', minutes: 90, price: 50, remote: false, recommended: false },
+  { id: 'lesson-60', kind: 'lesson', minutes: 60, price: 50, remote: true, recommended: false },
+  { id: 'lesson-90', kind: 'lesson', minutes: 90, price: 70, remote: true, recommended: false },
 ] as const
 
 export type SessionTypeId = (typeof sessionTypes)[number]['id']
+
+// Instruments qu'on peut venir découvrir en démonstration privée. Savoir lesquels
+// à l'avance permet à David de les préparer avant la venue.
+export const demoInstruments = ['neotone', 'calebasse', 'gonilele', 'mic-hisong', 'mic-muling'] as const
 
 // Playlist YouTube « Neotone » (toutes les vidéos liées à l'instrument).
 export const neotonePlaylist = 'https://www.youtube.com/playlist?list=PLns6mQWNwwnS43kRc2dps9asOshpfQ2Ka'
