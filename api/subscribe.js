@@ -59,10 +59,14 @@ export default async function handler(req, res) {
         wantsBeta: body.wantsBeta === true,
         wantsShowcase: body.wantsShowcase === true,
         // Demandes de réservation (showroom, showcase, rendez-vous privé)
+        // ⚠️ Ce relais filtre par liste EXPLICITE : tout champ ajouté au formulaire
+        // doit être ajouté ICI aussi, sinon il est jeté en silence (déjà arrivé).
         phone: body.phone,
         message: body.message,
         peopleCount: body.peopleCount,
         eventDate: body.eventDate,
+        sessionType: body.sessionType,
+        preferredSlots: body.preferredSlots,
         source: body.source || 'beta-waitlist',
         lang: body.lang || 'fr',
         page: body.page,

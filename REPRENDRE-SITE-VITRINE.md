@@ -91,6 +91,17 @@ Accessible via les outils Google Calendar (`list_events`).
 édition du fichier + redéploiement. Dernière synchro : **01/08/2026** (5 dates jusqu'au 05/12).
 Les dates passées disparaissent seules (filtre build + client dans `ShowroomPage.astro`).
 
+### Rendez-vous individuels — tarifs et créneaux
+**Les tarifs vivent dans `src/data/site.ts` → `sessionTypes`** (demo 1h30/50 €, cours 1h/50 €,
+cours 1h30/70 €). Changer un prix LÀ le change partout : cartes de la page showroom ET options
+du formulaire (via `src/lib/sessions.ts`). Ne jamais les recoder ailleurs.
+La personne **propose jusqu'à 3 créneaux** (`preferred_slots`), David en confirme un.
+Conditions annoncées dans le formulaire ET rappelées dans l'email d'accusé : le rendez-vous
+devient ferme au règlement, reportable jusqu'à 24 h avant.
+⚠️ **Le règlement n'est PAS automatisé** : aucun lien de paiement n'est envoyé, David encaisse
+à la main. À brancher sur Stripe si le volume augmente.
+⚠️ Le cas « annulation à moins de 24 h » n'est volontairement PAS écrit (David ne l'a pas tranché).
+
 ### Identifiants utiles (rien de secret ici)
 - Supabase : projet **`zqcuhnjjrgmybftppkcl`** (Handpan Studio). Clé publiable du site dans `api/subscribe.js`.
 - EF `site-lead` : `verify_jwt = false`, protégée par `SITE_LEAD_TOKEN` (Vercel + Supabase).
@@ -99,6 +110,17 @@ Les dates passées disparaissent seules (filtre build + client dans `ShowroomPag
 ---
 
 ## Journal
+
+### 02/08/2026
+- Formulaire de RDV individuel : tarif annoncé avant l'envoi (menu déroulant), la personne
+  propose jusqu'à 3 créneaux, conditions de règlement et de report affichées + rappelées par email.
+  Migration `site_leads_session_and_slots`, `site-lead` v11.
+- Tarifs centralisés dans `site.ts` (`sessionTypes`) + `lib/sessions.ts` : les cartes de la page
+  showroom et le formulaire lisent la même source.
+- **Piège re-rencontré** : `api/subscribe.js` filtre par liste EXPLICITE. Les nouveaux champs
+  partaient du formulaire et l'EF les acceptait, mais le relais Vercel les jetait → `null` en base.
+  RÈGLE : tout champ ajouté au formulaire doit être ajouté DANS LES TROIS (formulaire, relais, EF),
+  et vérifié en base par un test de bout en bout avant de conclure.
 
 ### 01/08/2026
 - Agenda des showcases synchronisé depuis le calendrier Google « Le Nid » : 5 dates

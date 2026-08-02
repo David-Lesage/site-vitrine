@@ -19,6 +19,11 @@
 // (handpanType / personalGoal / wantsBeta, et usage_type = 'maker').
 // v8 (22/07/2026) : notifie David pour une candidature bêta-testeur, avec le
 // profil complet dans l'email. Une simple inscription ne notifie rien.
+// v9 (22/07/2026) : déclaration d'intention — casquettes multiples (`roles`),
+//      fiche prof et fiche fabricant, engagement d'honnêteté.
+// v10 (22/07/2026) : un FABRICANT qui se déclare notifie David.
+// v11 (01/08/2026) : rendez-vous individuels — type de séance (tarif annoncé
+//      côté site) et CRÉNEAUX PROPOSÉS par la personne. Elle propose, David valide.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -55,6 +60,11 @@ const ALLOWED_STUDENT_COUNT = ['none', '1-5', '6-20', '20+'];
 const ALLOWED_MAKER_MAX_NOTES = ['9-', '10-13', '14-17', '18+', 'varies'];
 const ALLOWED_MAKER_METALS = ['nitrided', 'stainless', 'ember', 'other'];
 
+// Rendez-vous individuels. ⚠ Doit rester aligné sur `sessionTypes` de
+// src/data/site.ts (site vitrine) — c'est LÀ que vivent les tarifs.
+const ALLOWED_SESSION_TYPE = ['demo', 'lesson-60', 'lesson-90'];
+const SLOT_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/;
+
 /**
  * Résume les casquettes en UNE valeur `usage_type`, la colonne historique.
  * On la garde renseignée pour ne rien casser (lignes existantes, dashboard) :
@@ -88,6 +98,7 @@ const PROFILE_LABELS: Record<string, string> = {
     other: 'autre / ne sait pas encore',
     learn: 'apprendre à jouer', compose: 'composer / créer des gammes',
     none: 'aucun élève pour l’instant', '1-5': '1 à 5 élèves', '6-20': '6 à 20 élèves', '20+': 'plus de 20 élèves',
+    demo: 'Démonstration privée', 'lesson-60': 'Cours présentiel (1h)', 'lesson-90': 'Cours présentiel (1h30)',
     '9-': '9 notes ou moins', '10-13': '10 à 13 notes', '14-17': '14 à 17 notes',
     '18+': '18 notes et plus', varies: 'variable selon les gammes',
 };
@@ -191,6 +202,15 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
 `);
 }
 
+/** « dimanche 23 août 2026 à 14:30 » — un créneau proposé, en clair. */
+function slotLabel(slot: string, lang: string): string {
+    const [d, t] = slot.split('T');
+    const date = new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'fr-FR',
+        { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+        .format(new Date(d + 'T12:00:00'));
+    return `${date} ${lang === 'en' ? 'at' : 'à'} ${t}`;
+}
+
 /** Accusé de réception d'une DEMANDE DE RÉSERVATION. David répond personnellement. */
 function bookingHtml(
     firstName: string,
@@ -198,6 +218,8 @@ function bookingHtml(
     src: string,
     eventDate: string | null,
     message: string | null,
+    sessionType: string | null,
+    preferredSlots: string[] | null,
 ): string {
     const en = lang === 'en';
     const base = en ? `${SITE}/en` : SITE;
@@ -214,6 +236,12 @@ function bookingHtml(
         kind: 'Reason',
         when: 'Date',
         yourMsg: 'Your message',
+        kindOf: 'Appointment',
+        slots: 'Slots you suggested',
+        termsTitle: 'How it works',
+        terms1: 'I reply personally to confirm the slot I keep.',
+        terms2: 'The appointment is firm once paid: payment is what reserves your slot and commits us both.',
+        terms3: 'Something came up? The appointment can be rescheduled up to 24 h beforehand.',
         h2: 'While you wait',
         p2: 'The showroom is at <strong>29 rue des Orteaux, Paris 20th</strong>. You’ll be able to try the electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the microphones, the <strong>Gonilélé</strong> African harp and the <strong>Handpan Studio</strong> app.',
         cta: 'See the showroom page',
@@ -226,6 +254,12 @@ function bookingHtml(
         kind: 'Motif',
         when: 'Date',
         yourMsg: 'Ton message',
+        kindOf: 'Rendez-vous',
+        slots: 'Créneaux que tu proposes',
+        termsTitle: 'Comment ça se passe',
+        terms1: 'Je te réponds personnellement pour confirmer le créneau que je retiens.',
+        terms2: 'Le rendez-vous devient ferme au règlement : c’est lui qui réserve ton créneau et nous engage tous les deux.',
+        terms3: 'Un empêchement ? Le rendez-vous est reportable jusqu’à 24 h avant.',
         h2: 'En attendant',
         p2: 'Le showroom se trouve au <strong>29 rue des Orteaux, Paris 20ᵉ</strong>. Tu pourras y essayer le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les micros, la harpe africaine <strong>Gonilélé</strong> et l’application <strong>Handpan Studio</strong>.',
         cta: 'Voir la page du showroom',
@@ -247,10 +281,22 @@ function bookingHtml(
           <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.recap}</h2>
           <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
             ${row(t.kind, esc(sourceLabel(src, lang)))}
+            ${sessionType ? row(t.kindOf, esc(PROFILE_LABELS[sessionType] ?? sessionType)) : ''}
             ${dateLabel ? row(t.when, `<span style="text-transform:capitalize;">${esc(dateLabel)}</span>`) : ''}
+            ${preferredSlots?.length
+                ? row(t.slots, preferredSlots.map((s) => `<span style="text-transform:capitalize;">${esc(slotLabel(s, lang))}</span>`).join('<br />'))
+                : ''}
             ${message ? row(t.yourMsg, esc(message).replace(/\n/g, '<br />')) : ''}
           </table>
         </td></tr>
+
+        ${preferredSlots?.length ? `
+        <tr><td style="padding:20px 28px 4px;border-top:1px solid #f0f1f3;">
+          <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.termsTitle}</h2>
+          <ol style="margin:0;padding-left:18px;color:#374151;font-size:14px;line-height:1.7;">
+            <li>${t.terms1}</li><li>${t.terms2}</li><li>${t.terms3}</li>
+          </ol>
+        </td></tr>` : ''}
 
         <tr><td style="padding:24px 28px 4px;border-top:1px solid #f0f1f3;">
           <h2 style="margin:0 0 8px;font-size:17px;color:#111827;">${t.h2}</h2>
@@ -357,6 +403,13 @@ Deno.serve(async (req) => {
         const rawDate = String(body.eventDate ?? '').trim();
         const eventDate = /^\d{4}-\d{2}-\d{2}$/.test(rawDate) ? rawDate : null;
 
+        // Rendez-vous individuel : type de séance + créneaux proposés (3 max).
+        const rawSession = String(body.sessionType ?? '').trim();
+        const sessionType = ALLOWED_SESSION_TYPE.includes(rawSession) ? rawSession : null;
+        const rawSlots = Array.isArray(body.preferredSlots) ? body.preferredSlots.map(String) : [];
+        const slots = [...new Set(rawSlots.filter((s) => SLOT_RE.test(s)))].slice(0, 3).sort();
+        const preferredSlots = slots.length ? slots : null;
+
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
 
         const isBooking = BOOKING_SOURCES.includes(source);
@@ -389,6 +442,8 @@ Deno.serve(async (req) => {
             message,
             people_count: peopleCount,
             event_date: eventDate,
+            session_type: sessionType,
+            preferred_slots: preferredSlots,
         };
 
         // Upsert d'une ligne pour UNE source donnée (index unique lower(email)+source).
@@ -435,7 +490,7 @@ Deno.serve(async (req) => {
                         ? (lang === 'en' ? 'David Lesage — your request is received ✨' : 'David Lesage — ta demande est bien reçue ✨')
                         : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨'),
                     html: isBooking
-                        ? bookingHtml(firstName, lang, source, eventDate, message)
+                        ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots)
                         : confirmationHtml(firstName, lang, wantsShowcase),
                 });
                 emailSent = true;
@@ -492,6 +547,10 @@ Deno.serve(async (req) => {
                             Métaux: makerMetals ? makerMetals.map((m) => METAL_LABELS[m] ?? m).join(', ') : null,
                             'Gammes / tarifs': makerPricing,
                             Motivation: motivation,
+                            'Rendez-vous': sessionType ? PROFILE_LABELS[sessionType] ?? sessionType : null,
+                            'Créneaux proposés': preferredSlots?.length
+                                ? preferredSlots.map((s) => slotLabel(s, 'fr')).join(' · ')
+                                : null,
                             'Date visée': eventDate,
                             Personnes: peopleCount,
                             Message: message,

@@ -76,6 +76,19 @@ export const agendaEvents = [
   { date: '2026-12-05', start: '15:00', end: '18:00' },
 ] as const
 
+// Rendez-vous individuels au showroom — SOURCE DE VÉRITÉ DES TARIFS.
+// Alimente à la fois les cartes « Testez, rencontrez, repartez avec » et le
+// formulaire de réservation : changer un prix ICI le change partout.
+// (Rien à voir avec les prix de l'app, qui viennent de Stripe.)
+// `kind` → libellé traduit (dict.booking.sessionTypeNames) · `price` en euros TTC.
+export const sessionTypes = [
+  { id: 'demo', kind: 'demo', minutes: 90, price: 50 },
+  { id: 'lesson-60', kind: 'lesson', minutes: 60, price: 50 },
+  { id: 'lesson-90', kind: 'lesson', minutes: 90, price: 70 },
+] as const
+
+export type SessionTypeId = (typeof sessionTypes)[number]['id']
+
 // Playlist YouTube « Neotone » (toutes les vidéos liées à l'instrument).
 export const neotonePlaylist = 'https://www.youtube.com/playlist?list=PLns6mQWNwwnS43kRc2dps9asOshpfQ2Ka'
 
