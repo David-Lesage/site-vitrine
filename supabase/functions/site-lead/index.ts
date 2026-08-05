@@ -26,6 +26,8 @@
 //      côté site) et CRÉNEAUX PROPOSÉS par la personne. Elle propose, David valide.
 // v12 (02/08/2026) : format (présentiel / visio, COURS uniquement) et instruments
 //      à préparer pour une démonstration privée.
+// v13 (02/08/2026) : demande de CODE DE REMISE Neotone — modèle visé et pays de
+//      livraison, soit exactement ce que Neotone réclame à David pour sa commission.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -36,7 +38,7 @@ const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
 // Sources qui correspondent à une DEMANDE DE RÉSERVATION (David doit répondre).
-const BOOKING_SOURCES = ['showroom-visit', 'private-session', 'showcase-booking', 'showcase-waitlist'];
+const BOOKING_SOURCES = ['showroom-visit', 'private-session', 'showcase-booking', 'showcase-waitlist', 'neotone-discount'];
 
 function json(body: unknown, status = 200): Response {
     return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
@@ -64,11 +66,12 @@ const ALLOWED_MAKER_METALS = ['nitrided', 'stainless', 'ember', 'other'];
 
 // Rendez-vous individuels. ⚠ Doit rester aligné sur `sessionTypes` de
 // src/data/site.ts (site vitrine) — c'est LÀ que vivent les tarifs.
-const ALLOWED_SESSION_TYPE = ['onboarding', 'demo', 'lesson-60', 'lesson-90'];
+const ALLOWED_SESSION_TYPE = ['onboarding-60', 'onboarding-90', 'demo', 'lesson-60', 'lesson-90'];
+const ALLOWED_NEOTONE_MODEL = ['one', 'mutant', 'undecided'];
 const SLOT_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/;
 // La visio ne concerne QUE les cours : une démonstration se fait au showroom,
 // on vient y toucher les instruments.
-const REMOTE_SESSION_TYPES = ['onboarding', 'lesson-60', 'lesson-90'];
+const REMOTE_SESSION_TYPES = ['onboarding-60', 'onboarding-90', 'lesson-60', 'lesson-90'];
 const ALLOWED_SESSION_FORMAT = ['in-person', 'remote'];
 const ALLOWED_INSTRUMENTS = ['neotone', 'calebasse', 'gonilele', 'mic-hisong', 'mic-muling'];
 
@@ -94,6 +97,7 @@ const SOURCE_LABELS: Record<string, { fr: string; en: string }> = {
     'showcase-waitlist': { fr: 'Alerte prochaines dates de showcase', en: 'Alert for upcoming showcase dates' },
     'beta-waitlist': { fr: 'Liste d’attente application', en: 'App waiting list' },
     'app-login': { fr: 'Liste d’attente (écran de connexion)', en: 'Waiting list (login screen)' },
+    'neotone-discount': { fr: 'Demande de code de remise Neotone (−5 %)', en: 'Neotone discount code request (−5%)' },
     showcase: { fr: 'Groupe showcases', en: 'Showcase group' },
 };
 
@@ -105,7 +109,8 @@ const PROFILE_LABELS: Record<string, string> = {
     other: 'autre / ne sait pas encore',
     learn: 'apprendre à jouer', compose: 'composer / créer des gammes',
     none: 'aucun élève pour l’instant', '1-5': '1 à 5 élèves', '6-20': '6 à 20 élèves', '20+': 'plus de 20 élèves',
-    onboarding: 'Prise en main du Neotone (1h)',
+    'onboarding-60': 'Prise en main du Neotone (1h)', 'onboarding-90': 'Prise en main du Neotone (1h30)',
+    one: 'Neotone¹ (10 notes)', mutant: 'Neotone¹ Mutant (19 notes)', undecided: 'ne sait pas encore',
     demo: 'Démonstration privée', 'lesson-60': 'Cours (1h)', 'lesson-90': 'Cours (1h30)',
     'in-person': 'en présentiel (showroom)', remote: 'en visio',
     neotone: 'Neotone', calebasse: 'Calebasse', gonilele: 'Gonilélé',
@@ -233,6 +238,7 @@ function bookingHtml(
     preferredSlots: string[] | null,
     sessionFormat: string | null,
     instruments: string[] | null,
+    neotoneModel: string | null,
 ): string {
     const en = lang === 'en';
     const base = en ? `${SITE}/en` : SITE;
@@ -250,6 +256,7 @@ function bookingHtml(
         when: 'Date',
         yourMsg: 'Your message',
         kindOf: 'Appointment',
+        model: 'Model',
         format: 'Format',
         instruments: 'Instruments',
         slots: 'Slots you suggested',
@@ -270,6 +277,7 @@ function bookingHtml(
         when: 'Date',
         yourMsg: 'Ton message',
         kindOf: 'Rendez-vous',
+        model: 'Modèle',
         format: 'Format',
         instruments: 'Instruments',
         slots: 'Créneaux que tu proposes',
@@ -298,6 +306,7 @@ function bookingHtml(
           <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.recap}</h2>
           <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
             ${row(t.kind, esc(sourceLabel(src, lang)))}
+            ${neotoneModel ? row(t.model, esc(PROFILE_LABELS[neotoneModel] ?? neotoneModel)) : ''}
             ${sessionType ? row(t.kindOf, esc(PROFILE_LABELS[sessionType] ?? sessionType)) : ''}
             ${sessionFormat ? row(t.format, esc(PROFILE_LABELS[sessionFormat] ?? sessionFormat)) : ''}
             ${instruments?.length ? row(t.instruments, esc(instruments.map((i) => PROFILE_LABELS[i] ?? i).join(', '))) : ''}
@@ -445,6 +454,11 @@ Deno.serve(async (req) => {
             : [];
         const instruments = picked.length ? picked : null;
 
+        // Demande de code de remise Neotone.
+        const rawModel = String(body.neotoneModel ?? '').trim();
+        const neotoneModel = ALLOWED_NEOTONE_MODEL.includes(rawModel) ? rawModel : null;
+        const country = String(body.country ?? '').trim().slice(0, 80) || null;
+
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
 
         const isBooking = BOOKING_SOURCES.includes(source);
@@ -477,6 +491,8 @@ Deno.serve(async (req) => {
             message,
             people_count: peopleCount,
             event_date: eventDate,
+            neotone_model: neotoneModel,
+            country,
             session_type: sessionType,
             session_format: sessionFormat,
             instruments,
@@ -527,7 +543,7 @@ Deno.serve(async (req) => {
                         ? (lang === 'en' ? 'David Lesage — your request is received ✨' : 'David Lesage — ta demande est bien reçue ✨')
                         : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨'),
                     html: isBooking
-                        ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots, sessionFormat, instruments)
+                        ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots, sessionFormat, instruments, neotoneModel)
                         : confirmationHtml(firstName, lang, wantsShowcase),
                 });
                 emailSent = true;
@@ -584,6 +600,8 @@ Deno.serve(async (req) => {
                             Métaux: makerMetals ? makerMetals.map((m) => METAL_LABELS[m] ?? m).join(', ') : null,
                             'Gammes / tarifs': makerPricing,
                             Motivation: motivation,
+                            'Modèle visé': neotoneModel ? PROFILE_LABELS[neotoneModel] ?? neotoneModel : null,
+                            'Pays de livraison': country,
                             'Rendez-vous': sessionType ? PROFILE_LABELS[sessionType] ?? sessionType : null,
                             Format: sessionFormat ? PROFILE_LABELS[sessionFormat] ?? sessionFormat : null,
                             'Instruments à préparer': instruments

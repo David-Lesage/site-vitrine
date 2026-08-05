@@ -85,10 +85,11 @@ export const agendaEvents = [
 // suppose de toucher les instruments — elle est forcément au showroom.
 // `recommended` : mis en avant dans le formulaire. La prise en main répond au
 // moment où l'on décroche — juste après l'achat, face à une interface inconnue.
-// ⚠️ Son tarif (1h · 50 €) est aligné sur un cours d'1h : à ajuster ici si David
-// veut un prix d'accompagnement différent.
 export const sessionTypes = [
-  { id: 'onboarding', kind: 'onboarding', minutes: 60, price: 50, remote: true, recommended: true },
+  { id: 'onboarding-60', kind: 'onboarding', minutes: 60, price: 50, remote: true, recommended: true },
+  // `recommended` uniquement sur la 1ʳᵉ : c'est la porte d'entrée, et répéter
+  // l'étoile sur les deux lignes la rendrait invisible.
+  { id: 'onboarding-90', kind: 'onboarding', minutes: 90, price: 70, remote: true, recommended: false },
   { id: 'demo', kind: 'demo', minutes: 90, price: 50, remote: false, recommended: false },
   { id: 'lesson-60', kind: 'lesson', minutes: 60, price: 50, remote: true, recommended: false },
   { id: 'lesson-90', kind: 'lesson', minutes: 90, price: 70, remote: true, recommended: false },

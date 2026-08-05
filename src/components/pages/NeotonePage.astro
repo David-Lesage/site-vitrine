@@ -4,6 +4,7 @@ import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
 import Calculator from '@/components/Calculator.astro'
+import BookingForm from '@/components/BookingForm.astro'
 import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
 import WoodModal from '@/components/WoodModal.astro'
@@ -230,4 +231,7 @@ const ld = [
   </Section>
 
   <Lightbox />
+
+  {/* Modale de demande de code de remise (déclencheurs [data-booking]) */}
+  <BookingForm lang={lang} />
 </Layout>

@@ -312,6 +312,20 @@ const fr = {
     sessionType: 'Quel rendez-vous souhaites-tu ?',
     sessionTypeChoose: 'Choisis…',
     sessionTypeNames: { onboarding: 'Prise en main du Neotone', demo: 'Démonstration privée', lesson: 'Cours de musique' },
+    // Demande de code de remise Neotone. Ces informations sont exactement celles
+    // que Neotone réclame à David pour enregistrer la vente et sa commission.
+    discountTitle: 'Obtenir mon code de remise Neotone',
+    discountIntro: 'Un code nominatif de −5 % en ligne, que je demande pour toi auprès de Neotone. Réponse personnelle sous 24 à 48 h.',
+    discountModel: 'Quel modèle t’intéresse ?',
+    discountModelChoose: 'Choisis…',
+    discountModelNames: {
+      one: 'Neotone¹ — 10 notes',
+      mutant: 'Neotone¹ Mutant — 19 notes',
+      undecided: 'Je ne sais pas encore — aide-moi à choisir',
+    },
+    discountCountry: 'Pays de livraison',
+    discountCountryPlaceholder: 'France, Belgique, Suisse…',
+    discountNote: 'Ces informations me servent uniquement à demander ton code auprès de Neotone.',
     sessionTypeRecommended: '★ conseillé au démarrage',
     sessionTypeHint: 'Tu viens de recevoir ton Neotone et tu te sens un peu perdu·e ? La prise en main est faite pour ça : on démarre ensemble, on règle l’instrument et on prend l’interface en main — sans t’engager dans des cours de musique.',
     slotsTitle: 'Tes disponibilités',

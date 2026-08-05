@@ -65,6 +65,8 @@ export default async function handler(req, res) {
         message: body.message,
         peopleCount: body.peopleCount,
         eventDate: body.eventDate,
+        neotoneModel: body.neotoneModel,
+        country: body.country,
         sessionType: body.sessionType,
         sessionFormat: body.sessionFormat,
         instruments: body.instruments,

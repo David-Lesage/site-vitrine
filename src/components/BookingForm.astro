@@ -76,6 +76,25 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
         <span class="mt-2 block rounded-lg bg-gold/10 px-3 py-2 text-xs leading-relaxed text-ink-soft/85">{bk.sessionTypeHint}</span>
       </label>
 
+      {/* Demande de code de remise Neotone : modèle + pays de livraison, ce que
+          Neotone réclame à David pour enregistrer la vente. */}
+      <div data-bk-discount class="grid gap-3">
+        <label class="block">
+          <span class="text-sm font-600">{bk.discountModel}</span>
+          <select name="neotoneModel" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none">
+            <option value="">{bk.discountModelChoose}</option>
+            {(['one', 'mutant', 'undecided'] as const).map((id) => (
+              <option value={id}>{bk.discountModelNames[id]}</option>
+            ))}
+          </select>
+        </label>
+        <label class="block">
+          <span class="text-sm font-600">{bk.discountCountry}</span>
+          <input type="text" name="country" autocomplete="country-name" placeholder={bk.discountCountryPlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
+        </label>
+        <p class="text-xs text-ink-soft/70">{bk.discountNote}</p>
+      </div>
+
       {/* Démonstration privée : on vient TOUCHER les instruments, donc au showroom
           uniquement. Savoir lesquels permet à David de les préparer. */}
       <fieldset data-bk-instruments class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
@@ -159,6 +178,7 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
   const slotsEl = modal?.querySelector('[data-bk-slots]') as HTMLElement
   const slotsErrEl = modal?.querySelector('[data-bk-slots-error]') as HTMLElement
   const termsEl = modal?.querySelector('[data-bk-terms]') as HTMLElement
+  const discountEl = modal?.querySelector('[data-bk-discount]') as HTMLElement
   const instrumentsEl = modal?.querySelector('[data-bk-instruments]') as HTMLElement
   const formatEl = modal?.querySelector('[data-bk-format]') as HTMLElement
   const sessionSelect = modal?.querySelector('select[name="sessionType"]') as HTMLSelectElement | null
@@ -207,9 +227,11 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
     //  · showroom-visit / private-session → c'est la personne qui propose ses créneaux ;
     //  · private-session seul est payant → type de rendez-vous (avec tarif) + conditions.
     const isPaid = source === 'private-session'
+    const isDiscount = source === 'neotone-discount'
     const needsSlots = isPaid || source === 'showroom-visit'
     toggleBlock(peopleEl, source === 'showcase-booking')
     toggleBlock(sessionEl, isPaid)
+    toggleBlock(discountEl, isDiscount)
     toggleBlock(slotsEl, needsSlots)
     termsEl?.classList.toggle('hidden', !isPaid)
     slotsErrEl?.classList.add('hidden')
@@ -285,6 +307,8 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
           message: get('message'),
           peopleCount: get('peopleCount') ? Number(get('peopleCount')) : null,
           eventDate: get('eventDate') || null,
+          neotoneModel: get('neotoneModel') || null,
+          country: get('country') || null,
           sessionType: get('sessionType') || null,
           sessionFormat: get('sessionFormat') || null,
           instruments: data.getAll('instruments').map(String),
