@@ -93,6 +93,46 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
           <input type="text" name="country" autocomplete="country-name" placeholder={bk.discountCountryPlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
         </label>
         <p class="text-xs text-ink-soft/70">{bk.discountNote}</p>
+
+        <label class="block">
+          <span class="text-sm font-600">{bk.discoveryLabel}</span>
+          <select name="discoveryChannel" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none">
+            <option value="">{bk.discoveryChoose}</option>
+            {(['youtube', 'instagram', 'facebook', 'showcase', 'word-of-mouth', 'search', 'neotone-site', 'other'] as const).map((id) => (
+              <option value={id}>{bk.discoveryNames[id]}</option>
+            ))}
+          </select>
+        </label>
+
+        {/* Questions facultatives : créer du lien, pas filtrer. Aucune n'est `required`. */}
+        <fieldset class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
+          <legend class="px-1 text-sm font-600">{bk.curiousTitle}</legend>
+          <p class="text-xs text-ink-soft/70">{bk.curiousHint}</p>
+          <label class="mt-3 block">
+            <span class="text-xs font-600 text-ink-soft/80">{bk.playingSinceLabel}</span>
+            <select name="playingSince" class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2 text-sm focus:border-copper focus:outline-none">
+              <option value="">{bk.playingSinceChoose}</option>
+              {(['none', 'under-1', '1-3', 'over-3'] as const).map((id) => (
+                <option value={id}>{bk.playingSinceNames[id]}</option>
+              ))}
+            </select>
+          </label>
+          <label class="mt-3 block">
+            <span class="text-xs font-600 text-ink-soft/80">{bk.dreamLabel}</span>
+            <input type="text" name="dream" placeholder={bk.dreamPlaceholder} class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2 text-sm focus:border-copper focus:outline-none" />
+          </label>
+        </fieldset>
+
+        {/* Ce qui se passe après l'envoi — annoncé AVANT, pour qu'il n'y ait
+            aucune surprise : c'est Neotone qui reprend la main. */}
+        <div class="rounded-xl border border-copper/25 bg-copper/5 p-4">
+          <p class="text-sm font-700">{bk.discountNextTitle}</p>
+          <ol class="mt-2 space-y-1.5 text-xs leading-relaxed text-ink-soft/85">
+            <li class="flex gap-2"><span aria-hidden="true" class="text-copper">1.</span><span set:html={bk.discountNext1} /></li>
+            <li class="flex gap-2"><span aria-hidden="true" class="text-copper">2.</span><span set:html={bk.discountNext2} /></li>
+            <li class="flex gap-2"><span aria-hidden="true" class="text-copper">3.</span><span set:html={bk.discountNext3} /></li>
+          </ol>
+        </div>
       </div>
 
       {/* Démonstration privée : on vient TOUCHER les instruments, donc au showroom
@@ -150,7 +190,8 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
       </div>
 
       <label class="block">
-        <span class="text-sm font-600">{bk.message}</span>
+        <span class="text-sm font-600" data-bk-message-label data-default={bk.message} data-free={bk.freeMessageLabel}>{bk.message}</span>
+        <span data-bk-message-hint class="mt-1 hidden block text-xs text-ink-soft/70">{bk.freeMessageHint}</span>
         <textarea name="message" rows="3" placeholder={bk.messagePlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea>
       </label>
 
@@ -232,6 +273,13 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
     toggleBlock(peopleEl, source === 'showcase-booking')
     toggleBlock(sessionEl, isPaid)
     toggleBlock(discountEl, isDiscount)
+    // « Sans limite de caractère » : on agrandit visiblement la zone de texte et on
+    // annonce qu'on lit tout, pour que la personne ose écrire.
+    const msgEl = form.querySelector('textarea[name="message"]') as HTMLTextAreaElement | null
+    if (msgEl) msgEl.rows = isDiscount ? 8 : 3
+    const msgLabel = modal?.querySelector('[data-bk-message-label]') as HTMLElement | null
+    if (msgLabel) msgLabel.textContent = (isDiscount ? msgLabel.dataset.free : msgLabel.dataset.default) || msgLabel.textContent
+    modal?.querySelector('[data-bk-message-hint]')?.classList.toggle('hidden', !isDiscount)
     toggleBlock(slotsEl, needsSlots)
     termsEl?.classList.toggle('hidden', !isPaid)
     slotsErrEl?.classList.add('hidden')
@@ -308,6 +356,9 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
           peopleCount: get('peopleCount') ? Number(get('peopleCount')) : null,
           eventDate: get('eventDate') || null,
           neotoneModel: get('neotoneModel') || null,
+          discoveryChannel: get('discoveryChannel') || null,
+          playingSince: get('playingSince') || null,
+          dream: get('dream') || null,
           country: get('country') || null,
           sessionType: get('sessionType') || null,
           sessionFormat: get('sessionFormat') || null,

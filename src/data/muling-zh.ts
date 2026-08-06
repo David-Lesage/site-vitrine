@@ -51,6 +51,7 @@ export const mulingZh = {
     '2 个布质收纳袋',
     '1 把用于打开前级的螺丝刀（更换电池用）',
     '4 片自粘固定贴片',
+    '理线扣（wire clips）',
     '厂家说明书',
   ],
   boxNote: '一套即可覆盖两台手碟：每台乐器安装一个拾音头，两路信号在前级中混合。如果只有一台手碟，也可以同时安装两个拾音头，获得更均衡的拾音效果。',
@@ -71,6 +72,34 @@ export const mulingZh = {
   ],
   preampDiagramTitle: '所有旋钮与接口说明',
   preampDiagramAlt: 'HMP-2 前级标注图：输入、音量、SHAPE 旋钮、供电与输出',
+  dangerTitle: '首次连接前请务必阅读',
+  dangers: [
+    '<strong>切勿</strong>将无源拾音器接入 CH1 输入。',
+    '如需在 H1 上使用无源拾音器，CH2 通道必须置于 <strong>OFF</strong>。',
+    '电源适配器必须为<strong>中心负极</strong>。极性接反会造成设备不可逆损坏。',
+  ],
+  makerEyebrow: '制造商',
+  makerTitle: '沐铃乐器 Muling Musical Instruments',
+  makerIntro:
+    '<strong>惠州市沐铃乐器有限公司</strong>（Muling Musical Instruments Co., Ltd.）是一家中国原声乐器拾音器制造商，位于广东省惠州市。公司由<strong>莫测</strong>先生于 2016 年创立，并由他主导产品设计。',
+  makerBlocks: [
+    {
+      t: '设计者莫测',
+      d: '莫测先生自 1980 年代起弹奏吉他，1990 年代担任吉他教师，1999 年转向拾音器设计。他先后为一家韩国制造商及 LSM 担任设计师，之后创立了自己的品牌。据厂方介绍，其三项首创包括：首款内置屏幕的拾音器、首款压电与麦克风结合的拾音器，以及 OPUS 系列——据其所述，2001 至 2010 年间年产量超过 80,000 套。',
+    },
+    {
+      t: '标志',
+      d: 'Muling 的标志由中国传统思想中的三个符号构成：<strong>阴阳</strong>、<strong>天圆地方</strong>与<strong>五行</strong>。其寓意是乐器、拾音器与演奏者本为一体。',
+    },
+    {
+      t: '产品线',
+      d: 'Muling 拥有三个面向弦乐器的产品系列，另有专为手碟开发的产品线——包括本页介绍的 HMP-2 套装——以及定制签名款拾音器。',
+    },
+  ],
+  makerLinksTitle: '制造商官方网站',
+  makerSiteLabel: '官方网站',
+  makerProductLabel: '厂方 HMP-2 产品页',
+  makerZhNote: '中文网站',
   powerTitle: '供电方式：电池或电源适配器',
   powerIntro: '前级有两种供电方式，可根据使用场景选择。',
   powerBattery: {

@@ -9,8 +9,7 @@ import YouTube from '@/components/YouTube.astro'
 import { Icon } from 'astro-icon/components'
 import {
   mulingPhotos, mulingPreampPhotos, mulingBoxPhotos, mulingPowerPhotos,
-  mulingDiagram, mulingManualPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox,
-} from '@/data/muling'
+  mulingDiagram, mulingManualPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox, mulingLinks } from '@/data/muling'
 import { mulingZh } from '@/data/muling-zh'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
@@ -165,6 +164,54 @@ const ld = [
       </div>
     </div>
     <p class="mx-auto mt-8 max-w-3xl rounded-card border border-rust/30 bg-rust/10 p-5 text-center font-600 text-rust">{m.powerWarning}</p>
+
+    {/* Avertissements CONSTRUCTEUR : risque de destruction matérielle, pas de
+        simples conseils. D'où le traitement visuel volontairement distinct. */}
+    <div class="mx-auto mt-6 max-w-3xl rounded-card border-2 border-rust bg-rust/5 p-6">
+      <p class="flex items-center gap-2 font-display text-lg font-700 text-rust">
+        <Icon name="lucide:triangle-alert" class="h-6 w-6 shrink-0" />
+        {m.dangerTitle}
+      </p>
+      <ul class="mt-4 space-y-3">
+        {m.dangers.map((d) => (
+          <li class="flex gap-3 text-sm leading-relaxed text-ink-soft">
+            <span aria-hidden="true" class="mt-0.5 font-700 text-rust">•</span>
+            <span set:html={d} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Section>
+
+  {/* § 5 du brief — section « Le fabricant ». Dans le flux principal, juste avant
+      le prix : c'est la contribution la plus visible pour le partenaire. */}
+  <Section id="fabricant">
+    <SectionHeading eyebrow={m.makerEyebrow} title={m.makerTitle} />
+    <div class="mx-auto mt-8 max-w-3xl">
+      <p class="text-lg leading-relaxed text-ink-soft/90" set:html={m.makerIntro} />
+      <div class="mt-8 space-y-5">
+        {m.makerBlocks.map((b) => (
+          <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+            <h3 class="font-display text-lg font-700">{b.t}</h3>
+            <p class="mt-2 leading-relaxed text-ink-soft/85" set:html={b.d} />
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 rounded-card border border-copper/25 bg-copper/5 p-5">
+        <p class="text-sm font-700">{m.makerLinksTitle}</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li>
+            <a href={mulingLinks.site} target="_blank" rel="noopener noreferrer" hreflang="zh" class="font-600 text-rust underline">{m.makerSiteLabel}</a>
+            <span class="text-ink-soft/60"> — {m.makerZhNote}</span>
+          </li>
+          <li>
+            <a href={mulingLinks.product} target="_blank" rel="noopener noreferrer" hreflang="zh" class="font-600 text-rust underline">{m.makerProductLabel}</a>
+            <span class="text-ink-soft/60"> — {m.makerZhNote}</span>
+          </li>
+          <li><a href={mulingLinks.instagram} target="_blank" rel="noopener noreferrer" class="font-600 text-rust underline">Instagram @mulingpickup</a></li>
+        </ul>
+      </div>
+    </div>
   </Section>
 
   <Section tone="cream-deep" id="manuel">

@@ -28,6 +28,8 @@
 //      à préparer pour une démonstration privée.
 // v13 (02/08/2026) : demande de CODE DE REMISE Neotone — modèle visé et pays de
 //      livraison, soit exactement ce que Neotone réclame à David pour sa commission.
+// v14 (05/08/2026) : canal de découverte + deux réponses facultatives, et message
+//      libre porté à 20 000 caractères (« sans limite » côté visiteur).
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -68,6 +70,8 @@ const ALLOWED_MAKER_METALS = ['nitrided', 'stainless', 'ember', 'other'];
 // src/data/site.ts (site vitrine) — c'est LÀ que vivent les tarifs.
 const ALLOWED_SESSION_TYPE = ['onboarding-60', 'onboarding-90', 'demo', 'lesson-60', 'lesson-90'];
 const ALLOWED_NEOTONE_MODEL = ['one', 'mutant', 'undecided'];
+const ALLOWED_DISCOVERY = ['youtube', 'instagram', 'facebook', 'showcase', 'word-of-mouth', 'search', 'neotone-site', 'other'];
+const ALLOWED_PLAYING_SINCE = ['none', 'under-1', '1-3', 'over-3'];
 const SLOT_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/;
 // La visio ne concerne QUE les cours : une démonstration se fait au showroom,
 // on vient y toucher les instruments.
@@ -111,6 +115,9 @@ const PROFILE_LABELS: Record<string, string> = {
     none: 'aucun élève pour l’instant', '1-5': '1 à 5 élèves', '6-20': '6 à 20 élèves', '20+': 'plus de 20 élèves',
     'onboarding-60': 'Prise en main du Neotone (1h)', 'onboarding-90': 'Prise en main du Neotone (1h30)',
     one: 'Neotone¹ (10 notes)', mutant: 'Neotone¹ Mutant (19 notes)', undecided: 'ne sait pas encore',
+    youtube: 'YouTube', instagram: 'Instagram', facebook: 'Facebook', showcase: 'un showcase / un événement',
+    'word-of-mouth': 'bouche-à-oreille', search: 'recherche internet', 'neotone-site': 'le site de Neotone',
+    'under-1': 'moins d’un an', '1-3': 'entre 1 et 3 ans', 'over-3': 'plus de 3 ans',
     demo: 'Démonstration privée', 'lesson-60': 'Cours (1h)', 'lesson-90': 'Cours (1h30)',
     'in-person': 'en présentiel (showroom)', remote: 'en visio',
     neotone: 'Neotone', calebasse: 'Calebasse', gonilele: 'Gonilélé',
@@ -243,6 +250,7 @@ function bookingHtml(
     const en = lang === 'en';
     const base = en ? `${SITE}/en` : SITE;
     const hi = firstName ? `${en ? 'Hi' : 'Bonjour'} ${esc(firstName)},` : (en ? 'Hi,' : 'Bonjour,');
+    const isDiscount = src === 'neotone-discount';
     const dateLabel = eventDate
         ? new Intl.DateTimeFormat(en ? 'en-GB' : 'fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
             .format(new Date(eventDate + 'T12:00:00'))
@@ -425,7 +433,9 @@ Deno.serve(async (req) => {
 
         // Champs « demande de réservation »
         const phone = String(body.phone ?? '').trim().slice(0, 40) || null;
-        const message = String(body.message ?? '').trim().slice(0, 4000) || null;
+        // 20 000 caractères : côté visiteur c'est « sans limite », côté serveur ça
+        // reste borné pour ne pas laisser passer n'importe quoi.
+        const message = String(body.message ?? '').trim().slice(0, 20000) || null;
         const rawPeople = Number(body.peopleCount);
         const peopleCount = Number.isFinite(rawPeople) && rawPeople > 0 ? Math.min(Math.round(rawPeople), 50) : null;
         const rawDate = String(body.eventDate ?? '').trim();
@@ -458,6 +468,11 @@ Deno.serve(async (req) => {
         const rawModel = String(body.neotoneModel ?? '').trim();
         const neotoneModel = ALLOWED_NEOTONE_MODEL.includes(rawModel) ? rawModel : null;
         const country = String(body.country ?? '').trim().slice(0, 80) || null;
+        const rawDiscovery = String(body.discoveryChannel ?? '').trim();
+        const discoveryChannel = ALLOWED_DISCOVERY.includes(rawDiscovery) ? rawDiscovery : null;
+        const rawPlaying = String(body.playingSince ?? '').trim();
+        const playingSince = ALLOWED_PLAYING_SINCE.includes(rawPlaying) ? rawPlaying : null;
+        const dream = String(body.dream ?? '').trim().slice(0, 300) || null;
 
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
 
@@ -493,6 +508,9 @@ Deno.serve(async (req) => {
             event_date: eventDate,
             neotone_model: neotoneModel,
             country,
+            discovery_channel: discoveryChannel,
+            playing_since: playingSince,
+            dream,
             session_type: sessionType,
             session_format: sessionFormat,
             instruments,
@@ -602,6 +620,9 @@ Deno.serve(async (req) => {
                             Motivation: motivation,
                             'Modèle visé': neotoneModel ? PROFILE_LABELS[neotoneModel] ?? neotoneModel : null,
                             'Pays de livraison': country,
+                            'M’a découvert par': discoveryChannel ? PROFILE_LABELS[discoveryChannel] ?? discoveryChannel : null,
+                            'Joue depuis': playingSince ? PROFILE_LABELS[playingSince] ?? playingSince : null,
+                            'Rêve de jouer': dream,
                             'Rendez-vous': sessionType ? PROFILE_LABELS[sessionType] ?? sessionType : null,
                             Format: sessionFormat ? PROFILE_LABELS[sessionFormat] ?? sessionFormat : null,
                             'Instruments à préparer': instruments

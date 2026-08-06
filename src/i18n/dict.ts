@@ -326,6 +326,38 @@ const fr = {
     discountCountry: 'Pays de livraison',
     discountCountryPlaceholder: 'France, Belgique, Suisse…',
     discountNote: 'Ces informations me servent uniquement à demander ton code auprès de Neotone.',
+    // Ce qui se passe APRÈS l'envoi : annoncé avant, et rappelé dans l'email.
+    discountNextTitle: 'Ce qui se passe ensuite',
+    discountNext1: 'Je lis ton message personnellement — je réponds à tout le monde.',
+    discountNext2: 'Dans les 24 h qui suivent ma lecture, <strong>Neotone te contacte directement</strong> et te transmet ton code de réduction.',
+    discountNext3: 'C’est ensuite Neotone qui prend la suite des opérations : commande, paiement, livraison. Je reste disponible si tu as besoin de moi.',
+    // Questions « pour créer du lien » — aucune n'est obligatoire.
+    discoveryLabel: 'Comment m’as-tu découvert comme ambassadeur Neotone ?',
+    discoveryChoose: 'Choisis…',
+    discoveryNames: {
+      youtube: 'YouTube',
+      instagram: 'Instagram',
+      facebook: 'Facebook',
+      showcase: 'Un showcase ou un événement',
+      'word-of-mouth': 'Bouche-à-oreille',
+      search: 'Une recherche sur internet',
+      'neotone-site': 'Le site de Neotone',
+      other: 'Autrement',
+    },
+    curiousTitle: 'Deux questions, juste par curiosité',
+    curiousHint: 'Aucune obligation de répondre — c’est pour faire connaissance.',
+    playingSinceLabel: 'Le handpan et toi, ça dure depuis combien de temps ?',
+    playingSinceChoose: 'Choisis…',
+    playingSinceNames: {
+      none: 'Je n’en joue pas encore',
+      'under-1': 'Moins d’un an',
+      '1-3': 'Entre 1 et 3 ans',
+      'over-3': 'Plus de 3 ans',
+    },
+    dreamLabel: 'Ce que tu rêves de jouer',
+    dreamPlaceholder: 'Un morceau, une ambiance, un projet…',
+    freeMessageLabel: 'Ton message',
+    freeMessageHint: 'Prends la place que tu veux — je lis tout.',
     sessionTypeRecommended: '★ conseillé au démarrage',
     sessionTypeHint: 'Tu viens de recevoir ton Neotone et tu te sens un peu perdu·e ? La prise en main est faite pour ça : on démarre ensemble, on règle l’instrument et on prend l’interface en main — sans t’engager dans des cours de musique.',
     slotsTitle: 'Tes disponibilités',
@@ -410,6 +442,7 @@ const fr = {
       '2 pochettes de rangement en tissu',
       '1 tournevis pour ouvrir le préampli (accès à la pile)',
       '4 pastilles adhésives de fixation',
+      'Des attaches de câble (wire clips)',
       'Le manuel du constructeur',
     ],
     boxNote: 'Un set suffit pour deux handpans : une capsule par instrument, les deux mixées dans le préampli. Sur un seul handpan, tu peux poser les deux capsules pour une captation plus équilibrée.',
@@ -432,6 +465,39 @@ const fr = {
     ],
     preampDiagramTitle: 'Toutes les commandes expliquées',
     preampDiagramAlt: 'Schéma annoté du préampli HMP-2 : entrées, volumes, réglage SHAPE, alimentation et sortie',
+    // § 3.3 du brief : avertissements CONSTRUCTEUR. Ce ne sont pas des conseils
+    // de confort — une inversion de polarité détruit l'appareil. D'où le
+    // traitement visuel distinct dans MulingPage.astro.
+    dangerTitle: 'À lire avant le premier branchement',
+    dangers: [
+      'Ne branche <strong>jamais</strong> un capteur passif sur l’entrée CH1.',
+      'Pour utiliser un capteur passif type H1, le canal CH2 doit impérativement être sur <strong>OFF</strong>.',
+      'L’alimentation secteur doit être à <strong>polarité centrale négative</strong>. Une inversion de polarité détruit l’appareil de façon irréversible.',
+    ],
+    // Section « Le fabricant » (§ 5.1). Les revendications du fabricant sont
+    // ATTRIBUÉES explicitement — ne jamais les reformuler en affirmation directe.
+    makerEyebrow: 'Le fabricant',
+    makerTitle: 'Muling Musical Instruments',
+    makerIntro:
+      '<strong>Muling Musical Instruments Co., Ltd.</strong> (惠州市沐铃乐器有限公司) est un fabricant chinois de micros pour instruments acoustiques, installé à Huizhou, dans la province du Guangdong. L’entreprise a été fondée en 2016 par <strong>Mò Cè</strong> (莫测), qui en signe la conception des produits.',
+    makerBlocks: [
+      {
+        t: 'Mò Cè (莫测), le concepteur',
+        d: 'Guitariste depuis les années 1980, professeur de guitare dans les années 1990, Mò Cè bascule en 1999 vers la conception de micros. Il travaille d’abord comme designer pour un fabricant coréen, puis pour LSM, avant de fonder sa propre marque. Le fabricant revendique trois premières à son actif : le premier micro à écran intégré, le premier micro combinant piézo et microphone, et la série OPUS, produite selon lui à plus de 80 000 ensembles par an entre 2001 et 2010.',
+      },
+      {
+        t: 'Le logo',
+        d: 'Le logo Muling est construit sur trois symboles de la pensée chinoise classique : le <strong>yin-yang</strong>, le <strong>ciel rond et la terre carrée</strong> (天圆地方), et les <strong>cinq éléments</strong> (五行). Une manière de dire que l’instrument, le capteur et le musicien forment un même ensemble.',
+      },
+      {
+        t: 'La gamme',
+        d: 'Muling développe trois familles de produits pour instruments à cordes, auxquelles s’ajoutent une gamme dédiée au handpan — dont le set HMP-2 présenté sur cette page — et des micros signature réalisés sur mesure.',
+      },
+    ],
+    makerLinksTitle: 'Le fabricant en ligne',
+    makerSiteLabel: 'Site officiel',
+    makerProductLabel: 'La page du HMP-2 chez le fabricant',
+    makerZhNote: 'site en chinois',
     powerTitle: 'L’alimentation : pile ou secteur',
     powerIntro: 'Le préampli fonctionne de deux façons, à toi de choisir selon le contexte.',
     powerBattery: {

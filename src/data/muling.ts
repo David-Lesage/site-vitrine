@@ -61,3 +61,15 @@ export const mulingVideoId = 'ENArz99dyTQ'
 // Prix annoncé par le fabricant, en dollars (conversion indicative)
 export const mulingPriceUsd = 299
 export const mulingPriceEurApprox = 261
+
+// Liens officiels Muling (§ 6 du brief).
+// ⚠️ mulingsound.com est servi en HTTP et son certificat TLS ne correspond pas au
+// domaine : un lien https:// échoue. On garde donc http:// volontairement.
+// ⚠️ NE JAMAIS lier vers lironmanmusic.com — distributeur d'une autre zone, et
+// c'est précisément la confusion que cette page doit dissiper.
+export const mulingLinks = {
+  site: 'http://www.mulingsound.com',
+  product: 'http://www.mulingsound.com/h-pd-1064.html',
+  instagram: 'https://instagram.com/mulingpickup',
+  taobao: 'https://moguitar.taobao.com',
+}
