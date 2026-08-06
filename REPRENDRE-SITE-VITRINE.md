@@ -102,6 +102,30 @@ devient ferme au règlement, reportable jusqu'à 24 h avant.
 à la main. À brancher sur Stripe si le volume augmente.
 ⚠️ Le cas « annulation à moins de 24 h » n'est volontairement PAS écrit (David ne l'a pas tranché).
 
+### ⚠️ MARQUE « HANDPAN STUDIO » — déposée par le studio d'Amsterdam
+Vérifié dans TMview le 06/08/2026 : **« HANDPAN STUDIO » est une marque de l'Union
+européenne ENREGISTRÉE** — EUIPO n° **018962523**, déposée le **12/12/2023** par
+**Handpan Studio V.O.F.** (Amsterdam), classes **15, 35, 37, 40, 41, 42**
+(instruments de musique, commerce, enseignement, services logiciels).
+Conséquence : le renommage envisagé « Play Handpan Studio » CONSERVE l'élément dominant
+de leur marque — décision de David en attente (avis d'un conseil en PI recommandé,
+ou accord amiable : ils sont ambassadeurs Neotone comme lui). NE PAS lancer le
+renommage massif ni le SEO sur « handpan studio » avant cette décision.
+Domaines achetés en réserve : playhandpan.app · playhandpanstudio.app · playneotone.app
+(gérés sur OVH, manager.eu.ovhcloud.com).
+
+### Dashboard ventes / affiliations — matière réunie, spec à écrire
+- **Google Sheet Soundventure** (ambassadeur) accessible et lu : contrat du 01/11/2024
+  (fin prévue 01/11/2025 — à clarifier, sans doute renouvelé côté Airtable), ~25 prospects
+  avec nom, email, tél, Instagram, date, code coupon DLes_*, % remises, date de vente,
+  prix TTC/HT, commission (~5 % HT ≈ 162–167 €/instrument), statut de paiement.
+  ⚠️ Le Sheet contient l'IBAN de David : EXCLURE les lignes bancaires de tout import.
+- **Règles de commission** : Neotone 5 % du HT (facture mensuelle envoyée par eux à
+  contact@) · Hisong 25 % via Shopify Collabs (automatique) · Muling : rien en place
+  (ils veulent des virements — c'est le dashboard qui doit combler) · Yishama : 0 vente.
+- Facturation Neotone : manuelle via un facturier Google Sheet.
+- Reste à trancher : dashboard dans l'app (recommandé) — et écrire la spec AVANT de coder.
+
 ### Identifiants utiles (rien de secret ici)
 - Supabase : projet **`zqcuhnjjrgmybftppkcl`** (Handpan Studio). Clé publiable du site dans `api/subscribe.js`.
 - EF `site-lead` : `verify_jwt = false`, protégée par `SITE_LEAD_TOKEN` (Vercel + Supabase).
@@ -110,6 +134,12 @@ devient ferme au règlement, reportable jusqu'à 24 h avant.
 ---
 
 ## Journal
+
+### 06/08/2026
+- Formulaire code Neotone : téléphone sans « facultatif », champ réseaux sociaux (v15).
+- Page Muling : section fabricant FR/EN/ZH + avertissements constructeur (brief du 05/08).
+- **Découverte : « HANDPAN STUDIO » = marque UE enregistrée (018962523) par le studio
+  d'Amsterdam** → renommage suspendu à la décision de David (voir section dédiée).
 
 ### 02/08/2026
 - Formulaire de RDV individuel : tarif annoncé avant l'envoi (menu déroulant), la personne
