@@ -114,7 +114,15 @@ renommage massif ni le SEO sur « handpan studio » avant cette décision.
 Domaines achetés en réserve : playhandpan.app · playhandpanstudio.app · playneotone.app
 (gérés sur OVH, manager.eu.ovhcloud.com).
 
-### Dashboard ventes / affiliations — matière réunie, spec à écrire
+### Dashboard ventes / affiliations — FONDATIONS FAITES (06/08)
+Table `affiliate_sales` + `neotone_coupon_pool`, vues `affiliate_revenue` et
+`affiliate_tasks`, RLS admin (insert/update/delete permis, contrairement à site_leads).
+**Sheet Soundventure importé** : 33 lignes (22 ventes payées = 66 443 € CA Neotone,
+3 497 € commissions Résonances), 3 leads, 8 sans suite, 47 codes libres.
+Écrans à construire côté app : spec complète dans
+`NEOTONE STUDIO/NEOTONE 1er mai 2026/BRIEF-dashboard-ventes.md`.
+
+### (archive) matière réunie avant les fondations
 - **Google Sheet Soundventure** (ambassadeur) accessible et lu : contrat du 01/11/2024
   (fin prévue 01/11/2025 — à clarifier, sans doute renouvelé côté Airtable), ~25 prospects
   avec nom, email, tél, Instagram, date, code coupon DLes_*, % remises, date de vente,
@@ -134,6 +142,11 @@ Domaines achetés en réserve : playhandpan.app · playhandpanstudio.app · play
 ---
 
 ## Journal
+
+### 06/08/2026 (suite)
+- Dashboard ventes : fondations en base + import du Sheet Soundventure (22 ventes,
+  66 443 € CA / 3 497 € commissions) + brief des 4 écrans pour la session app.
+  Décision : dashboard DANS L'APP. Marque : David en parle avec Yannick.
 
 ### 06/08/2026
 - Formulaire code Neotone : téléphone sans « facultatif », champ réseaux sociaux (v15).
