@@ -56,7 +56,7 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
           <input type="email" name="email" autocomplete="email" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
         </label>
         <label class="block">
-          <span class="text-sm font-600">{bk.phone}</span>
+          <span class="text-sm font-600" data-bk-phone-label data-default={bk.phone} data-plain={bk.phonePlain}>{bk.phone}</span>
           <input type="tel" name="phone" autocomplete="tel" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
         </label>
       </div>
@@ -93,6 +93,12 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
           <input type="text" name="country" autocomplete="country-name" placeholder={bk.discountCountryPlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
         </label>
         <p class="text-xs text-ink-soft/70">{bk.discountNote}</p>
+
+        <label class="block">
+          <span class="text-sm font-600">{bk.socialLabel}</span>
+          <span class="mt-0.5 block text-xs text-ink-soft/70">{bk.socialHint}</span>
+          <input type="text" name="socialAccount" placeholder={bk.socialPlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
+        </label>
 
         <label class="block">
           <span class="text-sm font-600">{bk.discoveryLabel}</span>
@@ -280,6 +286,9 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
     const msgLabel = modal?.querySelector('[data-bk-message-label]') as HTMLElement | null
     if (msgLabel) msgLabel.textContent = (isDiscount ? msgLabel.dataset.free : msgLabel.dataset.default) || msgLabel.textContent
     modal?.querySelector('[data-bk-message-hint]')?.classList.toggle('hidden', !isDiscount)
+    // Neotone a besoin du téléphone pour émettre le code : pas de « facultatif » ici.
+    const phoneLabel = modal?.querySelector('[data-bk-phone-label]') as HTMLElement | null
+    if (phoneLabel) phoneLabel.textContent = (isDiscount ? phoneLabel.dataset.plain : phoneLabel.dataset.default) || phoneLabel.textContent
     toggleBlock(slotsEl, needsSlots)
     termsEl?.classList.toggle('hidden', !isPaid)
     slotsErrEl?.classList.add('hidden')
@@ -356,6 +365,7 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
           peopleCount: get('peopleCount') ? Number(get('peopleCount')) : null,
           eventDate: get('eventDate') || null,
           neotoneModel: get('neotoneModel') || null,
+          socialAccount: get('socialAccount') || null,
           discoveryChannel: get('discoveryChannel') || null,
           playingSince: get('playingSince') || null,
           dream: get('dream') || null,

@@ -326,6 +326,11 @@ const fr = {
     discountCountry: 'Pays de livraison',
     discountCountryPlaceholder: 'France, Belgique, Suisse…',
     discountNote: 'Ces informations me servent uniquement à demander ton code auprès de Neotone.',
+    // Pour une demande de code : Neotone a besoin du téléphone → pas de « facultatif ».
+    phonePlain: 'Téléphone',
+    socialLabel: 'Ton compte réseaux sociaux',
+    socialHint: 'Instagram de préférence — sinon Facebook, YouTube ou ton site perso.',
+    socialPlaceholder: '@toncompte ou un lien',
     // Ce qui se passe APRÈS l'envoi : annoncé avant, et rappelé dans l'email.
     discountNextTitle: 'Ce qui se passe ensuite',
     discountNext1: 'Je lis ton message personnellement — je réponds à tout le monde.',

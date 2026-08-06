@@ -66,6 +66,7 @@ export default async function handler(req, res) {
         peopleCount: body.peopleCount,
         eventDate: body.eventDate,
         neotoneModel: body.neotoneModel,
+        socialAccount: body.socialAccount,
         discoveryChannel: body.discoveryChannel,
         playingSince: body.playingSince,
         dream: body.dream,

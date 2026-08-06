@@ -473,6 +473,7 @@ Deno.serve(async (req) => {
         const rawPlaying = String(body.playingSince ?? '').trim();
         const playingSince = ALLOWED_PLAYING_SINCE.includes(rawPlaying) ? rawPlaying : null;
         const dream = String(body.dream ?? '').trim().slice(0, 300) || null;
+        const socialAccount = String(body.socialAccount ?? '').trim().slice(0, 200) || null;
 
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
 
@@ -508,6 +509,7 @@ Deno.serve(async (req) => {
             event_date: eventDate,
             neotone_model: neotoneModel,
             country,
+            social_account: socialAccount,
             discovery_channel: discoveryChannel,
             playing_since: playingSince,
             dream,
@@ -620,6 +622,7 @@ Deno.serve(async (req) => {
                             Motivation: motivation,
                             'Modèle visé': neotoneModel ? PROFILE_LABELS[neotoneModel] ?? neotoneModel : null,
                             'Pays de livraison': country,
+                            'Réseaux sociaux': socialAccount,
                             'M’a découvert par': discoveryChannel ? PROFILE_LABELS[discoveryChannel] ?? discoveryChannel : null,
                             'Joue depuis': playingSince ? PROFILE_LABELS[playingSince] ?? playingSince : null,
                             'Rêve de jouer': dream,
