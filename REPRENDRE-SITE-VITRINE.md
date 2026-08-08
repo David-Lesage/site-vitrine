@@ -29,6 +29,34 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 08/08/2026 (voir aussi la section 22/07 plus bas, toujours valable)
+
+### Commande Muling — vrai formulaire déployé
+`/micro-muling` a un formulaire de commande en 3 étapes (composant `MulingOrderForm.astro`,
+Edge Functions `muling-order` v1 + `muling-claim-payment` v1) :
+1. Coordonnées + adresse + quantité → ligne dans `affiliate_sales` (`partner='muling'`,
+   devise USD, prix -5% appliqué). 3 emails partent (client, David, **Muling à chaque
+   commande**).
+2. Écran de paiement : **IBAN de Muling affiché** (dérogation assumée à la règle « pas
+   d'IBAN sur la page de vente », validée par David le 08/08 pour ce cas précis) + dépôt
+   d'une preuve de virement (image/PDF, 5 Mo max) dans le bucket privé `muling-proofs`.
+3. Écran de remerciement — Muling reprend la main pour l'expédition.
+
+Le fabricant n'a plus AUCUN lien cliquable sur `/micro-muling` (David : éviter l'achat en
+direct). Prix remisé mis en avant partout (hero, prix, boutique).
+
+**Accès partenaire (RLS backend fait, UI à construire côté app)** : table
+`partner_accounts` + vue `partner_orders` + `my_partner_scope()` — un partenaire connecté
+ne voit que ses propres lignes, écriture limitée à `fulfillment_status`/`tracking_number`/
+`admin_note`. Brief pour l'écran :
+`NEOTONE STUDIO/NEOTONE 1er mai 2026/BRIEF-partenaire-muling-dashboard.md`.
+⚠️ Compte Muling (`85846599@qq.com`) **pas encore créé** dans Supabase Auth — procédure
+dans le brief.
+
+Reliquat sans conséquence : un fichier de test (68 octets) reste dans le bucket
+`muling-proofs` — la suppression directe des objets Storage est bloquée par Supabase
+(protection anti-perte), la ligne `affiliate_sales` associée, elle, est bien supprimée.
+
 ## ÉTAT ACTUEL — 22/07/2026
 
 ### Déploiement
