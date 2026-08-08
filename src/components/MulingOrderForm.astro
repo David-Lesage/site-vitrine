@@ -6,7 +6,7 @@
 //   2. Coordonnées bancaires Muling + dépôt de preuve (→ api/muling-claim)
 //   3. Merci — Muling prend le relais pour l'expédition et le suivi.
 import { getDict } from '@/i18n/dict'
-import { mulingBankDetails, mulingDiscountCode, mulingDiscountPct, mulingPriceEur, mulingDiscountedPriceEur } from '@/data/muling'
+import { mulingBankDetails, mulingCompanyContact, mulingDiscountCode, mulingDiscountPct, mulingPriceEur, mulingDiscountedPriceEur } from '@/data/muling'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -186,11 +186,23 @@ const MULING_EMAIL = '85846599@qq.com'
     }).join('')
     const win = window.open('', '_blank', 'width=560,height=640')
     if (!win) return
+    // Coordonnées de MULING (pas de David) : c'est Muling qu'on doit pouvoir
+    // joindre au sujet du virement. Dupliqué depuis src/data/muling.ts
+    // (mulingCompanyContact) car un <script> Astro n'a pas accès au
+    // frontmatter — les DEUX doivent changer ensemble (David, 08/08/2026).
     win.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>Muling — coordonnées de paiement</title>
 <style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;padding:32px;color:#1a1a1a;}
-h1{font-size:18px;margin:0 0 20px;}table{border-collapse:collapse;width:100%;}</style></head>
+h1{font-size:18px;margin:0 0 20px;}table{border-collapse:collapse;width:100%;}
+h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding-top:16px;}
+.contact td{padding:4px 0;font-size:13px;}.contact td:first-child{color:#666;width:190px;}</style></head>
 <body><h1>Coordonnées de paiement — Muling</h1><table>${rows}</table>
-<p style="margin-top:24px;font-size:12px;color:#777;">David Lesage · lesagedavid.fr</p></body></html>`)
+<h2>Coordonnées</h2>
+<table class="contact">
+  <tr><td>Service d'assistance téléphonique</td><td>0752-3261101 / 13680810660</td></tr>
+  <tr><td>Adresse électronique de l'entreprise</td><td>85846599@qq.com</td></tr>
+  <tr><td>Adresse de l'entreprise</td><td>Muling Musical Instruments, Bâtiment A, Jinjiang International, Danshui Town, Huiyang District, Huizhou City, Guangdong Province</td></tr>
+</table>
+</body></html>`)
     win.document.close()
     win.focus()
     window.setTimeout(() => win.print(), 300)

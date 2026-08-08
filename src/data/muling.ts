@@ -94,3 +94,13 @@ export const mulingBankDetails = {
   bank: 'Banking Circle S.A. — succursale allemande',
   address: 'Maximilianstraße 54, 80538 München, Allemagne',
 }
+
+// Coordonnées de l'ENTREPRISE Muling (Chine) — distinctes de l'adresse de la
+// banque ci-dessus. Utilisées sur le PDF téléchargeable des informations de
+// paiement : la personne doit pouvoir joindre Muling directement, pas David
+// (David, 08/08/2026 : « ne met pas mon site met le mail de Muling »).
+export const mulingCompanyContact = {
+  phone: '0752-3261101 / 13680810660',
+  email: '85846599@qq.com',
+  address: 'Muling Musical Instruments, Bâtiment A, Jinjiang International, Danshui Town, Huiyang District, Huizhou City, Guangdong Province',
+}
