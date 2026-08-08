@@ -20,18 +20,14 @@
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
+import { corsHeadersFor, jsonResponse } from '../_shared/cors.ts';
 
-const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const ALLOWED_LOCALES = ['fr', 'en', 'zh'];
 // Où atterrit la personne après avoir cliqué le lien d'invitation. L'app doit
 // détecter `type=invite` dans l'URL et proposer un écran « choisis ton mot de
 // passe » (supabase.auth.updateUser({ password })) — voir le brief associé.
 const APP_URL = 'https://play.handpanstudio.app/';
-
-function json(body: unknown, status = 200): Response {
-    return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
-}
 
 function inviteEmailHtml(partnerName: string, actionLink: string, locale: string): string {
     const name = partnerName;
@@ -73,12 +69,12 @@ function inviteEmailHtml(partnerName: string, actionLink: string, locale: string
 }
 
 Deno.serve(async (req) => {
-    if (req.method === 'OPTIONS') return new Response('ok', { headers: JSON_HEADERS });
-    if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
+    if (req.method === 'OPTIONS') return new Response("ok", { headers: corsHeadersFor(req) });
+    if (req.method !== 'POST') return jsonResponse(req, { error: 'Method not allowed' }, 405);
 
     try {
         const authHeader = req.headers.get('Authorization') ?? '';
-        if (!authHeader) return json({ error: 'Unauthorized' }, 401);
+        if (!authHeader) return jsonResponse(req, { error: 'Unauthorized' }, 401);
 
         const SUPABASE_URL = Deno.env.get('SUPABASE_URL') ?? '';
         const ANON_KEY = Deno.env.get('SUPABASE_ANON_KEY') ?? '';
@@ -92,15 +88,15 @@ Deno.serve(async (req) => {
             auth: { persistSession: false, autoRefreshToken: false },
         });
         const { data: isAdmin, error: adminErr } = await asUser.rpc('is_site_admin');
-        if (adminErr || isAdmin !== true) return json({ error: 'Forbidden' }, 403);
+        if (adminErr || isAdmin !== true) return jsonResponse(req, { error: 'Forbidden' }, 403);
 
         const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
         const email = String(body.email ?? '').trim().toLowerCase();
         const partner = String(body.partner ?? '').trim();
         const locale = String(body.locale ?? 'en').trim();
 
-        if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
-        if (!ALLOWED_LOCALES.includes(locale)) return json({ error: 'invalid_locale' }, 400);
+        if (!EMAIL_RE.test(email)) return jsonResponse(req, { error: 'invalid_email' }, 400);
+        if (!ALLOWED_LOCALES.includes(locale)) return jsonResponse(req, { error: 'invalid_locale' }, 400);
 
         const admin = createClient(SUPABASE_URL, SERVICE_KEY, {
             auth: { persistSession: false, autoRefreshToken: false },
@@ -112,7 +108,7 @@ Deno.serve(async (req) => {
         const { data: profile, error: profileErr } = await admin
             .from('partner_profiles').select('display_name').eq('partner', partner).maybeSingle();
         if (profileErr) throw profileErr;
-        if (!profile) return json({ error: 'invalid_partner' }, 400);
+        if (!profile) return jsonResponse(req, { error: 'invalid_partner' }, 400);
 
         // generateLink (et non inviteUserByEmail) : on garde la main sur
         // l'email envoyé — même infra SMTP que le reste du site, pas de
@@ -155,9 +151,9 @@ Deno.serve(async (req) => {
             }
         }
 
-        return json({ ok: true, userId, emailSent, actionLink: linkData.properties.action_link });
+        return jsonResponse(req, { ok: true, userId, emailSent, actionLink: linkData.properties.action_link });
     } catch (err) {
         console.error('invite-partner error:', err);
-        return json({ error: err instanceof Error ? err.message : 'server_error' }, 500);
+        return jsonResponse(req, { error: err instanceof Error ? err.message : 'server_error' }, 500);
     }
 });

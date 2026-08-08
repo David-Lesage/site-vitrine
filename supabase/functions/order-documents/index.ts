@@ -13,24 +13,20 @@
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
+import { corsHeadersFor, jsonResponse } from '../_shared/cors.ts';
 
-const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const MAX_BYTES = 8 * 1024 * 1024;
 const ALLOWED_TYPES: Record<string, string> = {
     'image/png': 'png', 'image/jpeg': 'jpg', 'application/pdf': 'pdf',
 };
 
-function json(body: unknown, status = 200): Response {
-    return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
-}
-
 Deno.serve(async (req) => {
-    if (req.method === 'OPTIONS') return new Response('ok', { headers: JSON_HEADERS });
-    if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
+    if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeadersFor(req) });
+    if (req.method !== 'POST') return jsonResponse(req, { error: 'Method not allowed' }, 405);
 
     try {
         const authHeader = req.headers.get('Authorization') ?? '';
-        if (!authHeader) return json({ error: 'Unauthorized' }, 401);
+        if (!authHeader) return jsonResponse(req, { error: 'Unauthorized' }, 401);
 
         const SUPABASE_URL = Deno.env.get('SUPABASE_URL') ?? '';
         const ANON_KEY = Deno.env.get('SUPABASE_ANON_KEY') ?? '';
@@ -46,7 +42,7 @@ Deno.serve(async (req) => {
 
         const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
         const saleId = String(body.saleId ?? '').trim();
-        if (!saleId) return json({ error: 'missing_sale_id' }, 400);
+        if (!saleId) return jsonResponse(req, { error: 'missing_sale_id' }, 400);
 
         const { data: isAdmin } = await asUser.rpc('is_site_admin');
         let role: 'admin' | 'partner';
@@ -54,7 +50,7 @@ Deno.serve(async (req) => {
             role = 'admin';
         } else {
             const { data: order } = await asUser.from('partner_orders').select('id').eq('id', saleId).maybeSingle();
-            if (!order) return json({ error: 'not_found' }, 404);
+            if (!order) return jsonResponse(req, { error: 'not_found' }, 404);
             role = 'partner';
         }
 
@@ -71,7 +67,7 @@ Deno.serve(async (req) => {
                 const { data: signed } = await admin.storage.from('order-documents').createSignedUrl(d.file_path, 300);
                 return { ...d, url: signed?.signedUrl ?? null };
             }));
-            return json({ ok: true, docs: withUrls });
+            return jsonResponse(req, { ok: true, docs: withUrls });
         }
 
         if (action === 'upload') {
@@ -79,10 +75,10 @@ Deno.serve(async (req) => {
             const fileType = String(body.fileType ?? '');
             const label = body.label ? String(body.label).slice(0, 200) : null;
             const ext = ALLOWED_TYPES[fileType];
-            if (!fileBase64 || !ext) return json({ error: 'invalid_file_type' }, 400);
-            if (fileBase64.length > MAX_BYTES * 1.4) return json({ error: 'file_too_large' }, 400);
+            if (!fileBase64 || !ext) return jsonResponse(req, { error: 'invalid_file_type' }, 400);
+            if (fileBase64.length > MAX_BYTES * 1.4) return jsonResponse(req, { error: 'file_too_large' }, 400);
             const bytes = Uint8Array.from(atob(fileBase64), (c) => c.charCodeAt(0));
-            if (bytes.byteLength > MAX_BYTES) return json({ error: 'file_too_large' }, 400);
+            if (bytes.byteLength > MAX_BYTES) return jsonResponse(req, { error: 'file_too_large' }, 400);
 
             const path = `${saleId}/${role}-${Date.now()}.${ext}`;
             const { error: upErr } = await admin.storage.from('order-documents').upload(path, bytes, {
@@ -96,12 +92,12 @@ Deno.serve(async (req) => {
             if (insErr) throw insErr;
 
             const { data: signed } = await admin.storage.from('order-documents').createSignedUrl(path, 300);
-            return json({ ok: true, doc: { ...doc, url: signed?.signedUrl ?? null } });
+            return jsonResponse(req, { ok: true, doc: { ...doc, url: signed?.signedUrl ?? null } });
         }
 
-        return json({ error: 'invalid_action' }, 400);
+        return jsonResponse(req, { error: 'invalid_action' }, 400);
     } catch (err) {
         console.error('order-documents error:', err);
-        return json({ error: err instanceof Error ? err.message : 'server_error' }, 500);
+        return jsonResponse(req, { error: err instanceof Error ? err.message : 'server_error' }, 500);
     }
 });

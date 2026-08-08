@@ -10,20 +10,15 @@
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
-
-const JSON_HEADERS = { 'Content-Type': 'application/json' };
-
-function json(body: unknown, status = 200): Response {
-    return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
-}
+import { corsHeadersFor, jsonResponse } from '../_shared/cors.ts';
 
 Deno.serve(async (req) => {
-    if (req.method === 'OPTIONS') return new Response('ok', { headers: JSON_HEADERS });
-    if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
+    if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeadersFor(req) });
+    if (req.method !== 'POST') return jsonResponse(req, { error: 'Method not allowed' }, 405);
 
     try {
         const authHeader = req.headers.get('Authorization') ?? '';
-        if (!authHeader) return json({ error: 'Unauthorized' }, 401);
+        if (!authHeader) return jsonResponse(req, { error: 'Unauthorized' }, 401);
 
         const SUPABASE_URL = Deno.env.get('SUPABASE_URL') ?? '';
         const ANON_KEY = Deno.env.get('SUPABASE_ANON_KEY') ?? '';
@@ -38,7 +33,7 @@ Deno.serve(async (req) => {
 
         const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
         const saleId = String(body.saleId ?? '').trim();
-        if (!saleId) return json({ error: 'missing_sale_id' }, 400);
+        if (!saleId) return jsonResponse(req, { error: 'missing_sale_id' }, 400);
 
         const { data: order, error: orderErr } = await asUser
             .from('partner_orders')
@@ -46,7 +41,7 @@ Deno.serve(async (req) => {
             .eq('id', saleId)
             .maybeSingle();
         if (orderErr) throw orderErr;
-        if (!order) return json({ error: 'not_found' }, 404);
+        if (!order) return jsonResponse(req, { error: 'not_found' }, 404);
 
         const admin = createClient(SUPABASE_URL, SERVICE_KEY, {
             auth: { persistSession: false, autoRefreshToken: false },
@@ -57,16 +52,16 @@ Deno.serve(async (req) => {
             .eq('id', saleId)
             .maybeSingle();
         if (fetchErr) throw fetchErr;
-        if (!sale?.payment_proof_path) return json({ error: 'no_proof' }, 404);
+        if (!sale?.payment_proof_path) return jsonResponse(req, { error: 'no_proof' }, 404);
 
         const { data: signed, error: signErr } = await admin.storage
             .from('muling-proofs')
             .createSignedUrl(sale.payment_proof_path, 300); // 5 min
         if (signErr) throw signErr;
 
-        return json({ ok: true, url: signed.signedUrl });
+        return jsonResponse(req, { ok: true, url: signed.signedUrl });
     } catch (err) {
         console.error('partner-proof-url error:', err);
-        return json({ error: err instanceof Error ? err.message : 'server_error' }, 500);
+        return jsonResponse(req, { error: err instanceof Error ? err.message : 'server_error' }, 500);
     }
 });
