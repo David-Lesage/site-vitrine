@@ -23,7 +23,6 @@ import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-const ALLOWED_PARTNERS = ['neotone', 'hisong', 'muling', 'yishama'];
 const ALLOWED_LOCALES = ['fr', 'en', 'zh'];
 // Où atterrit la personne après avoir cliqué le lien d'invitation. L'app doit
 // détecter `type=invite` dans l'URL et proposer un écran « choisis ton mot de
@@ -34,12 +33,8 @@ function json(body: unknown, status = 200): Response {
     return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
 }
 
-const PARTNER_NAMES: Record<string, string> = {
-    neotone: 'Neotone', hisong: 'Hisong', muling: 'Muling', yishama: 'Yishama',
-};
-
-function inviteEmailHtml(partner: string, actionLink: string, locale: string): string {
-    const name = PARTNER_NAMES[partner] ?? partner;
+function inviteEmailHtml(partnerName: string, actionLink: string, locale: string): string {
+    const name = partnerName;
     const zh = locale === 'zh';
     const en = locale === 'en' || zh; // le chinois n'a pas de gabarit dédié : anglais + note
     const t = en ? {
@@ -105,12 +100,19 @@ Deno.serve(async (req) => {
         const locale = String(body.locale ?? 'en').trim();
 
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
-        if (!ALLOWED_PARTNERS.includes(partner)) return json({ error: 'invalid_partner' }, 400);
         if (!ALLOWED_LOCALES.includes(locale)) return json({ error: 'invalid_locale' }, 400);
 
         const admin = createClient(SUPABASE_URL, SERVICE_KEY, {
             auth: { persistSession: false, autoRefreshToken: false },
         });
+
+        // Marque validée EN BASE (partner_profiles), plus par une liste figée
+        // dans le code : ajouter un partenaire ne demande plus de redéployer
+        // cette fonction (David, 08/08/2026).
+        const { data: profile, error: profileErr } = await admin
+            .from('partner_profiles').select('display_name').eq('partner', partner).maybeSingle();
+        if (profileErr) throw profileErr;
+        if (!profile) return json({ error: 'invalid_partner' }, 400);
 
         // generateLink (et non inviteUserByEmail) : on garde la main sur
         // l'email envoyé — même infra SMTP que le reste du site, pas de
@@ -142,8 +144,8 @@ Deno.serve(async (req) => {
             try {
                 await c.send({
                     from, to: email,
-                    subject: locale === 'fr' ? `Invitation — dashboard ${PARTNER_NAMES[partner]}` : `Invitation — ${PARTNER_NAMES[partner]} dashboard`,
-                    html: inviteEmailHtml(partner, linkData.properties.action_link, locale),
+                    subject: locale === 'fr' ? `Invitation — dashboard ${profile.display_name}` : `Invitation — ${profile.display_name} dashboard`,
+                    html: inviteEmailHtml(profile.display_name, linkData.properties.action_link, locale),
                 });
                 emailSent = true;
             } catch (e) {
