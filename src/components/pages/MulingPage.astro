@@ -10,8 +10,8 @@ import { Icon } from 'astro-icon/components'
 import MulingOrderForm from '@/components/MulingOrderForm.astro'
 import {
   mulingPhotos, mulingPreampPhotos, mulingBoxPhotos, mulingPowerPhotos,
-  mulingDiagram, mulingManualPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox, mulingLinks,
-  mulingDiscountCode, mulingDiscountPct, mulingDiscountedPriceUsd } from '@/data/muling'
+  mulingDiagram, mulingManualPhotos, mulingVideoId, mulingPriceEur, mulingLinks,
+  mulingDiscountCode, mulingDiscountPct, mulingDiscountedPriceEur } from '@/data/muling'
 import { mulingZh } from '@/data/muling-zh'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
@@ -230,7 +230,7 @@ const ld = [
       <div class="rounded-card border border-copper/30 bg-copper/5 p-6">
         <div class="flex flex-wrap items-baseline justify-between gap-3">
           <span class="font-600 text-ink-soft">{m.priceLabel}</span>
-          <span class="font-display text-2xl font-700 text-ink-soft/60 line-through">{mulingPriceUsd} USD</span>
+          <span class="font-display text-2xl font-700 text-ink-soft/60 line-through">{mulingPriceEur} €</span>
         </div>
         {lang !== 'zh' && (
           <div class="mt-3 flex flex-wrap items-baseline justify-between gap-3 border-t border-copper/20 pt-3">
@@ -238,7 +238,7 @@ const ld = [
               <Icon name="lucide:badge-percent" class="h-5 w-5" />
               {m.priceDiscountLabel}
             </span>
-            <span class="font-display text-3xl font-700 text-ink">{mulingDiscountedPriceUsd} USD</span>
+            <span class="font-display text-3xl font-700 text-ink">{mulingDiscountedPriceEur} €</span>
           </div>
         )}
       </div>

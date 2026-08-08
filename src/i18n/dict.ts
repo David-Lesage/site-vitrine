@@ -418,16 +418,17 @@ const fr = {
     priceTitle: 'Prix et commande',
     priceLabel: 'Prix fabricant',
     priceNote:
-      'Prix annoncé par le fabricant en dollars ; la conversion en euros est indicative et dépend du taux du jour. Frais de port et éventuels frais de douane en supplément.',
+      'Frais de port et éventuels frais de douane en supplément.',
     priceDiscountLabel: 'En passant par moi',
     priceDiscountNote: 'Code {code} — {pct} % de réduction sur le prix fabricant, réservé aux commandes passées via ce formulaire.',
     orderTitle: 'Commander mon micro',
     orderText:
-      'Le fabricant n’a pas encore de paiement en ligne pour la France : je te mets en relation directement. Remplis le formulaire, je valide ta demande et je te transmets les coordonnées pour régler Muling — je reste à tes côtés jusqu’à la réception de ton micro.',
+      'Le fabricant n’a pas encore de paiement en ligne pour la France : je te mets en relation directement. Remplis le formulaire, tu obtiens aussitôt les coordonnées pour régler Muling, qui prend ensuite le relais jusqu’à la réception de ton micro.',
     ctaContact: 'Commander mon micro',
     // Formulaire de commande (source `muling-order` du BookingForm)
     mulingOrderTitle: 'Commander le micro Muling',
-    mulingOrderIntro: 'Code {code} appliqué — {pct} % de réduction sur le prix fabricant. Je transmets ta demande à Muling et je reviens vers toi avec les coordonnées de paiement.',
+    mulingOrderIntro: 'Code {code} appliqué — {pct} % de réduction sur le prix fabricant. Voici les coordonnées de paiement ; Muling prend ensuite le relais directement avec toi pour la suite.',
+    mulingOrderPriceLine: 'Prix fabricant {base} € − {pct} % = {final} €',
     mulingQuantity: 'Combien de micros ?',
     mulingCountry: 'Pays de livraison',
     mulingAddress: 'Adresse',
@@ -444,7 +445,8 @@ const fr = {
     mulingBankBank: 'Banque',
     mulingBankRef: 'Libellé du virement',
     mulingBankSepaOnly: '⚠️ Ce compte n’accepte que les virements SEPA en euros — pas de virement SWIFT / international.',
-    mulingBankNext: 'Une fois le virement fait, garde une preuve de paiement — je te recontacte pour la confirmer avec Muling.',
+    mulingBankNotified: 'Muling a été prévenu de ta commande à son adresse officielle ({email}), avec toutes les informations — c’est eux qui assurent l’envoi et le suivi.',
+    mulingBankNext: 'Une fois le virement fait, garde une preuve de paiement (capture d’écran ou PDF) et dépose-la ici. Muling va te recontacter pour confirmer sa réception et te transmettre les informations concernant le suivi d’envoi.',
     // Dépôt de preuve + étape finale
     mulingProofLabel: 'Dépose ta preuve de virement',
     mulingProofHint: 'Capture d’écran ou PDF de ton virement (5 Mo maximum).',

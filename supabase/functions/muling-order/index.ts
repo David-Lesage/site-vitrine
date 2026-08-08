@@ -3,7 +3,7 @@
 // Commande du micro Muling (formulaire dédié /micro-muling, PAS BookingForm
 // générique) — écrit dans public.affiliate_sales (partner='muling'), PAS
 // dans site_leads : ce n'est pas un lead, c'est une commande avec adresse
-// de livraison, quantité et devise USD.
+// de livraison, quantité et prix fixe en euros.
 //
 // Distincte de site-lead pour ne pas alourdir une fonction déjà volumineuse
 // avec un modèle de données et des destinataires d'email différents (Muling
@@ -25,11 +25,15 @@ const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 // ⚠️ Dupliqué depuis src/data/muling.ts — les DEUX doivent changer ensemble.
-const PRICE_USD = 299;
+// Prix en euros (David, 08/08/2026) : cohérent avec le compte bancaire de
+// Muling, qui n'accepte que des virements SEPA en euros.
+const PRICE_EUR = 258;
 const DISCOUNT_PCT = 5;
 const DISCOUNT_CODE = 'David-Lesage-5';
-const DISCOUNTED_PRICE_USD = Math.round(PRICE_USD * (1 - DISCOUNT_PCT / 100) * 100) / 100;
-const COMMISSION_PER_UNIT_USD = 100; // accord de principe du 22/07/2026 avec Muling
+// Valeur LITTÉRALE donnée par David (258 × 0,95 = 245,10 €, pas 246,50 € —
+// écart assumé, voir le commentaire dans src/data/muling.ts).
+const DISCOUNTED_PRICE_EUR = 246.50;
+const COMMISSION_PER_UNIT_EUR = 100; // accord de principe du 22/07/2026 avec Muling (en USD à l'origine, non re-négocié en EUR)
 const BANK = {
     beneficiary: 'HuiZhou Muling Musical Instruments Co Ltd',
     iban: 'DE17 2022 0800 0047 4167 62',
@@ -89,7 +93,7 @@ function clientEmailHtml(lang: string, firstName: string, ref: string, total: nu
             ${row('Beneficiary', esc(BANK.beneficiary))}
             ${row('IBAN', esc(BANK.iban))}
             ${row('BIC', esc(BANK.bic))}
-            ${row(en ? 'Amount' : 'Montant', `${total} USD`)}
+            ${row(en ? 'Amount' : 'Montant', `${total} EUR`)}
             ${row(en ? 'Reference' : 'Référence', esc(ref))}
           </table>
           <p style="margin:12px 0 0;color:#6b7280;font-size:12px;">${t.p2}</p>
@@ -155,9 +159,9 @@ Deno.serve(async (req) => {
             { auth: { persistSession: false, autoRefreshToken: false } },
         );
 
-        const priceOriginal = PRICE_USD * quantity;
-        const priceDiscounted = DISCOUNTED_PRICE_USD * quantity;
-        const commission = COMMISSION_PER_UNIT_USD * quantity;
+        const priceOriginal = PRICE_EUR * quantity;
+        const priceDiscounted = DISCOUNTED_PRICE_EUR * quantity;
+        const commission = COMMISSION_PER_UNIT_EUR * quantity;
 
         const { data: ins, error } = await admin.from('affiliate_sales').insert({
             partner: 'muling',
@@ -170,7 +174,7 @@ Deno.serve(async (req) => {
             price_original_eur: priceOriginal,
             price_discounted_eur: priceDiscounted,
             commission_eur: commission,
-            currency: 'USD',
+            currency: 'EUR',
             status: 'lead',
             fulfillment_status: 'new',
             consent_at: new Date().toISOString(),
@@ -178,7 +182,11 @@ Deno.serve(async (req) => {
         }).select('id').single();
         if (error) throw error;
         const saleId = ins!.id as string;
-        const ref = `${(lastName || firstName || 'CMD').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 12)}-${saleId.slice(0, 8).toUpperCase()}`;
+        // « RESONANCE » (Résonances Productions), pas le nom du client : le
+        // libellé de virement doit rester générique et reconnaissable côté
+        // Muling, quel que soit le client (David, 08/08/2026).
+        const ref = `RESONANCE-${saleId.slice(0, 8).toUpperCase()}`;
+        await admin.from('affiliate_sales').update({ order_ref: ref }).eq('id', saleId);
 
         let emailSent = false;
         const host = Deno.env.get('SMTP_HOST') ?? '';
@@ -202,17 +210,17 @@ Deno.serve(async (req) => {
             await send(ADMIN_EMAIL, email, `[Muling] Nouvelle commande — ${firstName} ${lastName}`.trim(), adminHtml({
                 Nom: `${firstName} ${lastName}`.trim() || null, Email: email, Téléphone: phone,
                 Quantité: quantity, Pays: country, Adresse: `${address}, ${postalCode} ${city}`,
-                'Montant (USD)': priceDiscounted, Référence: ref, Message: message, Page: page || null, Langue: lang,
+                'Montant (EUR)': priceDiscounted, Référence: ref, Message: message, Page: page || null, Langue: lang,
             }));
 
             await send(MULING_EMAIL, ADMIN_EMAIL, `New order — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(), mulingHtml({
                 Name: `${firstName} ${lastName}`.trim() || null, Email: email, Phone: phone,
                 Quantity: quantity, Country: country, Address: `${address}, ${postalCode} ${city}`,
-                'Amount (USD)': priceDiscounted, Reference: ref,
+                'Amount (EUR)': priceDiscounted, Reference: ref,
             }));
         }
 
-        return json({ ok: true, saleId, ref, emailSent, amount: priceDiscounted, currency: 'USD' });
+        return json({ ok: true, saleId, ref, emailSent, amount: priceDiscounted, currency: 'EUR' });
     } catch (err) {
         console.error('muling-order error:', err);
         return json({ error: err instanceof Error ? err.message : 'server_error' }, 500);

@@ -58,13 +58,17 @@ export const mulingManualPhotos = ['/images/muling-manuel-1.webp', '/images/muli
 // Vidéo de démo / test complet par David
 export const mulingVideoId = 'ENArz99dyTQ'
 
-// Prix annoncé par le fabricant, en dollars (conversion indicative)
-export const mulingPriceUsd = 299
-export const mulingPriceEurApprox = 261
-// Code de réduction offert en passant par David — 5 % sur le prix fabricant.
+// Prix en euros fixe (David, 08/08/2026) — remplace l'ancien affichage en
+// dollars. Cohérent avec le compte bancaire de Muling, qui n'accepte QUE des
+// virements SEPA en euros (cf. mulingBankDetails ci-dessous).
+// ⚠️ mulingDiscountedPriceEur est une valeur LITTÉRALE donnée par David
+// (246,50 €), pas calculée : 258 × 0,95 = 245,10 €, soit 1,40 € d'écart avec
+// le prix qu'il a demandé. Il l'a peut-être établi autrement (conversion USD
+// distincte, arrondi commercial…) — à confirmer avec lui si ça compte.
+export const mulingPriceEur = 258
 export const mulingDiscountCode = 'David-Lesage-5'
 export const mulingDiscountPct = 5
-export const mulingDiscountedPriceUsd = Math.round(mulingPriceUsd * (1 - mulingDiscountPct / 100) * 100) / 100
+export const mulingDiscountedPriceEur = 246.50
 
 // Liens officiels Muling (§ 6 du brief initial).
 // ⚠️ mulingsound.com est servi en HTTP et son certificat TLS ne correspond pas au

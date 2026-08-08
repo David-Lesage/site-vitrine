@@ -57,7 +57,8 @@ Deno.serve(async (req) => {
         );
 
         const { data: sale, error: fetchErr } = await admin
-            .from('affiliate_sales').select('id, email, customer_name, quantity, price_discounted_eur')
+            .from('affiliate_sales')
+            .select('id, email, phone, customer_name, quantity, price_discounted_eur, order_ref, shipping_address, shipping_city, shipping_postal_code, shipping_country')
             .eq('id', saleId).eq('partner', 'muling').maybeSingle();
         if (fetchErr) throw fetchErr;
         // L'email doit correspondre à celui de la commande : preuve suffisante
@@ -97,10 +98,29 @@ Deno.serve(async (req) => {
                 finally { try { await c.close(); } catch { /* ignore */ } }
             };
             const name = sale.customer_name ?? email;
+            const addr = [sale.shipping_address, sale.shipping_postal_code, sale.shipping_city, sale.shipping_country]
+                .filter(Boolean).join(', ');
+
             await send(ADMIN_EMAIL, `[Muling] Preuve de virement déposée — ${name}`,
-                `${name} (${email}) déclare avoir payé sa commande (${sale.quantity}x, ${sale.price_discounted_eur} USD). Preuve dans le dashboard.`);
-            await send(MULING_EMAIL, `Payment proof submitted — ${name}`,
-                `${name} (${email}) has submitted proof of payment for their order (${sale.quantity}x HMP-2, ${sale.price_discounted_eur} USD). Available in the shared dashboard.`);
+                `${name} (${email}) déclare avoir payé sa commande (${sale.quantity}x, ${sale.price_discounted_eur} EUR, réf. ${sale.order_ref ?? saleId}). Preuve dans le dashboard.`);
+
+            // Email complet à Muling — mêmes informations qu'à la commande, pour
+            // qu'ils n'aient pas besoin de recroiser avec leur premier email
+            // (David, 08/08/2026 : « toutes les infos de la nouvelle commande »).
+            await send(MULING_EMAIL, `Payment proof submitted — ${name} (${sale.order_ref ?? saleId})`,
+                [
+                    `${name} has submitted proof of payment for their order.`,
+                    '',
+                    `Name: ${name}`,
+                    `Email: ${email}`,
+                    sale.phone ? `Phone: ${sale.phone}` : null,
+                    `Quantity: ${sale.quantity}x HMP-2`,
+                    `Amount: ${sale.price_discounted_eur} EUR`,
+                    `Reference: ${sale.order_ref ?? saleId}`,
+                    addr ? `Shipping address: ${addr}` : null,
+                    '',
+                    'Proof of payment is available in the shared dashboard.',
+                ].filter((l) => l !== null).join('\n'));
         }
 
         return json({ ok: true });
