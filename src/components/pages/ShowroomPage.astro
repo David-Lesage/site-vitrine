@@ -9,7 +9,7 @@ import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { localBusinessLdJson, breadcrumbLdJson } from '@/lib/ldJson'
 import { upcomingShowcases } from '@/lib/agenda'
-import { priceForKind } from '@/lib/sessions'
+import { priceForKind, priceGrid } from '@/lib/sessions'
 import BookingForm from '@/components/BookingForm.astro'
 import type { Lang } from '@/i18n/config'
 
@@ -24,6 +24,9 @@ const eventIcons = ['lucide:presentation', 'lucide:compass', 'lucide:hand', 'luc
 // formulaire de réservation — impossible qu'elles annoncent deux prix différents.
 // La 1ʳᵉ carte (showcase gratuit) garde son libellé traduit.
 const eventPrices = [sh.events[0].price, priceForKind('onboarding'), priceForKind('demo'), priceForKind('lesson')]
+// La grille du rendez-vous individuel (« 1h · 50 € — 1h30 · 70 € »), annoncée
+// telle quelle dans le bloc #agenda et dans la modale de réservation.
+const grid = priceGrid()
 // La prise en main est mise en avant : c'est le moment où quelqu'un qui vient
 // d'acheter décroche ou s'attache.
 const eventHighlight = 1
@@ -186,9 +189,20 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
       </div>
     </div>
 
-    <div class="mx-auto mt-8 max-w-3xl rounded-card border border-ink/10 bg-cream/70 p-6 text-center">
+    {/* Le rendez-vous individuel, en clair : ce pour quoi on peut venir (tout
+        instrument de la boutique, un micro, ou simplement un accompagnement),
+        le tarif, et le cadre d'annulation. C'est ici qu'atterrit le bouton
+        « Réserver un RDV VIP » de l'email de confirmation (#agenda). */}
+    <div class="mx-auto mt-8 max-w-3xl rounded-card border border-copper/30 bg-cream/70 p-6 text-center md:p-8">
       <h3 class="font-display text-lg font-700">{sh.agendaMoreTitle}</h3>
       <p class="mx-auto mt-2 max-w-md text-sm text-ink-soft/85">{sh.agendaMoreText}</p>
+      <p class="mx-auto mt-4 max-w-2xl text-sm text-ink-soft/85">{bk.vipScope}</p>
+      <div class="mx-auto mt-5 flex max-w-md flex-col items-center gap-1 rounded-xl bg-gold/15 px-5 py-4">
+        <span class="text-[11px] font-700 uppercase tracking-widest text-ink-soft/70">{bk.vipPriceLabel}</span>
+        <span class="font-display text-xl font-700 text-rust">{grid}</span>
+        <span class="text-xs text-ink-soft/70">{bk.vipPriceNote}</span>
+      </div>
+      <p class="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-ink-soft/70">{bk.vipPolicyShort}</p>
       <div class="mt-5 flex flex-wrap justify-center gap-3">
         <Button href="#agenda" variant="primary" {...privateAttrs}>{sh.bookPrivateCta}</Button>
         <Button href={L('/') + '#communaute'} variant="ghost">{sh.agendaCta}</Button>

@@ -306,12 +306,18 @@ const fr = {
     visitTitle: 'Réserver ma venue au showroom',
     visitIntro: 'Paris 20ᵉ, sur rendez-vous. Dis-moi tes disponibilités, je te propose un créneau.',
     privateTitle: 'Réserver un rendez-vous individuel',
-    privateIntro: 'Une démonstration privée pour découvrir les instruments au showroom, ou un cours — en présentiel à Paris ou en visio. Sur mesure, je t’accompagne.',
-    // Rendez-vous individuels — les TARIFS viennent de site.ts (sessionTypes),
-    // jamais d'ici : ces libellés ne portent que les noms.
+    privateIntro: 'Un moment en tête-à-tête, au showroom de Paris 20ᵉ ou en visio : découvrir un instrument, prendre en main celui que tu viens d’acheter, ou avancer sur ta pratique — quel que soit ton niveau.',
+    // Rendez-vous individuel (« RDV VIP ») — bloc affiché AVANT le formulaire :
+    // ce qu'on peut y faire, le tarif, et le cadre en cas d'annulation. Le tarif
+    // n'est PAS écrit ici : il est calculé depuis site.ts (voir `priceGrid`).
+    vipTitle: 'Un rendez-vous rien que pour toi',
+    vipScope: 'Tu choisis ce qu’on en fait : découvrir et essayer n’importe quel instrument de la boutique (Neotone, handpans acoustiques, Gonilélé, calebasse…), tester un micro pour handpan (Hisong, set Muling), ou simplement être accompagné·e en tête-à-tête — que tu débutes complètement, que tu cherches encore ce qui te correspond, ou que tu veuilles creuser un point précis. Que tu prennes 1h ou 1h30, dis-moi juste ce qui t’amène : je prépare tout pour toi.',
+    vipPriceLabel: 'Tarif',
+    vipPriceNote: 'Un seul tarif, quel que soit ce pour quoi tu viens.',
+    vipPolicyShort: 'Annulation à moins de 24 h : le règlement reste acquis — ce créneau t’était réservé — mais le rendez-vous est reportable dans les 3 mois.',
     sessionType: 'Quel rendez-vous souhaites-tu ?',
     sessionTypeChoose: 'Choisis…',
-    sessionTypeNames: { onboarding: 'Prise en main du Neotone', demo: 'Démonstration privée', lesson: 'Cours de musique' },
+    sessionTypeNames: { onboarding: 'Prise en main de mon instrument', demo: 'Découverte des instruments (démonstration privée)', lesson: 'Cours ou accompagnement individuel' },
     // Demande de code de remise Neotone. Ces informations sont exactement celles
     // que Neotone réclame à David pour enregistrer la vente et sa commission.
     discountTitle: 'Obtenir mon code de remise Neotone',
@@ -364,7 +370,7 @@ const fr = {
     freeMessageLabel: 'Ton message',
     freeMessageHint: 'Prends la place que tu veux — je lis tout.',
     sessionTypeRecommended: '★ conseillé au démarrage',
-    sessionTypeHint: 'Tu viens de recevoir ton Neotone et tu te sens un peu perdu·e ? La prise en main est faite pour ça : on démarre ensemble, on règle l’instrument et on prend l’interface en main — sans t’engager dans des cours de musique.',
+    sessionTypeHint: 'Tu viens de recevoir ton instrument — Neotone, handpan acoustique, micro — et tu te sens un peu perdu·e ? La prise en main est faite pour ça : on démarre ensemble, on règle tout et on prend les commandes en main — sans t’engager dans des cours de musique.',
     slotsTitle: 'Tes disponibilités',
     slotsHint: 'Propose-moi jusqu’à 3 créneaux qui t’arrangent — je te confirme celui que je retiens.',
     slotLabel: 'Créneau {n}',
@@ -374,7 +380,8 @@ const fr = {
     termsTitle: 'Comment ça se passe',
     terms1: 'Tu me proposes tes créneaux. Je te réponds personnellement pour confirmer celui que je retiens.',
     terms2: 'Je t’envoie le lien de paiement dans ma réponse : c’est le règlement qui réserve ton créneau et nous engage tous les deux.',
-    terms3: 'Un empêchement ? Le rendez-vous est reportable jusqu’à 24 h avant. Passé ce délai, le règlement reste dû : j’ai déjà bloqué ce créneau pour toi dans mon agenda.',
+    terms3: 'Un empêchement ? Jusqu’à 24 h avant, on décale ton rendez-vous sans aucun souci — tu m’écris, et c’est tout.',
+    terms4: 'À moins de 24 h, le règlement reste acquis : j’avais bloqué ce créneau rien que pour toi, et je ne peux plus le proposer à quelqu’un d’autre. Mais tu ne perds pas ton rendez-vous pour autant — on le reporte à une autre date, dans les 3 mois. On a tous des imprévus, ça fait partie de la vie : c’est simplement la valeur de l’engagement qu’on prend l’un envers l’autre.',
     // Démonstration privée : au showroom uniquement (on vient toucher les instruments).
     instrumentsLabel: 'Quels instruments veux-tu découvrir ?',
     instrumentsHint: 'Coche ce qui t’intéresse — je les prépare pour ta venue.',
@@ -808,9 +815,9 @@ const fr = {
     eventsHighlight: 'Le plus demandé au démarrage',
     events: [
       { t: 'Showcase de présentation', d: 'Événements de présentation des Neotone par David Lesage, avec test des instruments sur place.', price: 'Public · Gratuit' },
-      { t: 'Prise en main du Neotone', d: 'Tu viens de recevoir ton instrument ? On le règle ensemble et on prend l’interface en main, pas à pas. En présentiel ou en visio.', price: '' },
-      { t: 'Démonstration privée', d: 'Une session privée au showroom pour découvrir en profondeur le Neotone, la calebasse, le Gonilélé ou les micros.', price: '1h30 · 50 €' },
-      { t: 'Cours de musique', d: 'Avec David Lesage : créer tes gammes, jouer morceaux et techniques. En présentiel ou en visio.', price: '1h · 50 € · 1h30 · 70 €' },
+      { t: 'Prise en main de ton instrument', d: 'Tu viens de recevoir ton Neotone, ton handpan ou ton micro ? On règle tout ensemble et on prend les commandes en main, pas à pas. En présentiel ou en visio.', price: '' },
+      { t: 'Découverte des instruments', d: 'Une session privée au showroom pour essayer en profondeur tout ce qui t’intéresse : Neotone, handpans acoustiques, calebasse, Gonilélé, micros Hisong et Muling.', price: '' },
+      { t: 'Cours ou accompagnement individuel', d: 'Avec David Lesage, quel que soit ton niveau : créer tes gammes, jouer morceaux et techniques, ou simplement y voir clair sur ce que tu cherches. En présentiel ou en visio.', price: '' },
     ],
     programEyebrow: 'Le déroulé',
     programTitle: 'Au programme d’une session',
@@ -841,8 +848,8 @@ const fr = {
     agendaEventTag: 'Public · Gratuit',
     agendaEventTime: 'de {start} à {end}',
     agendaBookCta: 'Réserver ma place',
-    agendaMoreTitle: 'Tu ne peux pas venir à ces dates ?',
-    agendaMoreText: 'Réserve une démonstration privée ou une venue individuelle au showroom, à un autre moment qui te convient.',
+    agendaMoreTitle: 'Tu ne peux pas venir — ou tu préfères un moment rien que pour toi ?',
+    agendaMoreText: 'Réserve un rendez-vous individuel avec moi, à un autre moment qui te convient.',
     accessEyebrow: 'Comment venir',
     accessTitle: 'Accès au showroom',
     accessMaps: 'Voir sur Google Maps →',
@@ -996,7 +1003,7 @@ const fr = {
       { title: 'Règle le solde et reçois ton Neotone', text: 'Dès que ton instrument est prêt, tu es notifié par email. Tu règles le solde puis l’instrument t’est expédié avec sa facture, partout dans le monde.' },
     ],
     procedureShowroom: [
-      { title: 'Prends rendez-vous avec moi', text: 'Deux options : viens à l’une de mes dates de showcase publiques (une par mois), ou réserve un rendez-vous privé d’une heure rien que pour toi (50 €).' },
+      { title: 'Prends rendez-vous avec moi', text: 'Deux options : viens à l’une de mes dates de showcase publiques (une par mois), ou réserve un rendez-vous individuel rien que pour toi — 1h · 50 € ou 1h30 · 70 €.' },
       { title: 'Essaie les deux modèles en vrai', text: 'Sur place, tu prends le temps de tester le Neotone¹ et le Mutant, de comparer les bois, et de me poser toutes tes questions.' },
       { title: 'Repars avec ton instrument le jour même', text: 'Tu profites de la remise showroom (−7 %) et tu repars directement avec ton Neotone — sans délai de fabrication.' },
     ],

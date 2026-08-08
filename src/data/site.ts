@@ -85,12 +85,18 @@ export const agendaEvents = [
 // suppose de toucher les instruments — elle est forcément au showroom.
 // `recommended` : mis en avant dans le formulaire. La prise en main répond au
 // moment où l'on décroche — juste après l'achat, face à une interface inconnue.
+//
+// ⚠ GRILLE UNIQUE, annoncée partout (site + email) : 1h = 50 €, 1h30 = 70 €,
+// quel que soit le motif du rendez-vous. Ne pas introduire de durée/tarif qui
+// sorte de cette grille sans mettre à jour la copie (dict.booking.vip*,
+// showroom.agendaMore*, email `site-lead`).
 export const sessionTypes = [
   { id: 'onboarding-60', kind: 'onboarding', minutes: 60, price: 50, remote: true, recommended: true },
   // `recommended` uniquement sur la 1ʳᵉ : c'est la porte d'entrée, et répéter
   // l'étoile sur les deux lignes la rendrait invisible.
   { id: 'onboarding-90', kind: 'onboarding', minutes: 90, price: 70, remote: true, recommended: false },
-  { id: 'demo', kind: 'demo', minutes: 90, price: 50, remote: false, recommended: false },
+  { id: 'demo-60', kind: 'demo', minutes: 60, price: 50, remote: false, recommended: false },
+  { id: 'demo-90', kind: 'demo', minutes: 90, price: 70, remote: false, recommended: false },
   { id: 'lesson-60', kind: 'lesson', minutes: 60, price: 50, remote: true, recommended: false },
   { id: 'lesson-90', kind: 'lesson', minutes: 90, price: 70, remote: true, recommended: false },
 ] as const

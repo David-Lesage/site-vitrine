@@ -30,6 +30,13 @@
 //      livraison, soit exactement ce que Neotone réclame à David pour sa commission.
 // v14 (05/08/2026) : canal de découverte + deux réponses facultatives, et message
 //      libre porté à 20 000 caractères (« sans limite » côté visiteur).
+// v15 (08/08/2026) : RDV VIP — l'email « tu es sur la liste » annonce le tarif
+//      en clair (1h = 50 €, 1h30 = 70 €) et porte un bouton vers
+//      /showroom#agenda ; le rendez-vous n'est plus limité au Neotone (tout
+//      instrument de la boutique, micros, ou simple accompagnement) ; cadre
+//      d'annulation explicite (24 h, report possible dans les 3 mois) ;
+//      la découverte privée existe désormais en 1h et en 1h30 (`demo-60` /
+//      `demo-90`, l'ancien `demo` restant accepté).
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -68,7 +75,9 @@ const ALLOWED_MAKER_METALS = ['nitrided', 'stainless', 'ember', 'other'];
 
 // Rendez-vous individuels. ⚠ Doit rester aligné sur `sessionTypes` de
 // src/data/site.ts (site vitrine) — c'est LÀ que vivent les tarifs.
-const ALLOWED_SESSION_TYPE = ['onboarding-60', 'onboarding-90', 'demo', 'lesson-60', 'lesson-90'];
+// 'demo' (sans durée) est l'ANCIEN identifiant : conservé pour ne pas rejeter
+// une page encore en cache qui l'enverrait, et pour les lignes déjà en base.
+const ALLOWED_SESSION_TYPE = ['onboarding-60', 'onboarding-90', 'demo-60', 'demo-90', 'demo', 'lesson-60', 'lesson-90'];
 const ALLOWED_NEOTONE_MODEL = ['one', 'mutant', 'undecided'];
 const ALLOWED_DISCOVERY = ['youtube', 'instagram', 'facebook', 'showcase', 'word-of-mouth', 'search', 'neotone-site', 'other'];
 const ALLOWED_PLAYING_SINCE = ['none', 'under-1', '1-3', 'over-3'];
@@ -113,12 +122,15 @@ const PROFILE_LABELS: Record<string, string> = {
     other: 'autre / ne sait pas encore',
     learn: 'apprendre à jouer', compose: 'composer / créer des gammes',
     none: 'aucun élève pour l’instant', '1-5': '1 à 5 élèves', '6-20': '6 à 20 élèves', '20+': 'plus de 20 élèves',
-    'onboarding-60': 'Prise en main du Neotone (1h)', 'onboarding-90': 'Prise en main du Neotone (1h30)',
+    'onboarding-60': 'Prise en main de l’instrument (1h)', 'onboarding-90': 'Prise en main de l’instrument (1h30)',
     one: 'Neotone¹ (10 notes)', mutant: 'Neotone¹ Mutant (19 notes)', undecided: 'ne sait pas encore',
     youtube: 'YouTube', instagram: 'Instagram', facebook: 'Facebook', showcase: 'un showcase / un événement',
     'word-of-mouth': 'bouche-à-oreille', search: 'recherche internet', 'neotone-site': 'le site de Neotone',
     'under-1': 'moins d’un an', '1-3': 'entre 1 et 3 ans', 'over-3': 'plus de 3 ans',
-    demo: 'Démonstration privée', 'lesson-60': 'Cours (1h)', 'lesson-90': 'Cours (1h30)',
+    // 'demo' seul = ancien identifiant (1h30), gardé pour les lignes déjà en base.
+    demo: 'Découverte des instruments (1h30)',
+    'demo-60': 'Découverte des instruments (1h)', 'demo-90': 'Découverte des instruments (1h30)',
+    'lesson-60': 'Cours / accompagnement (1h)', 'lesson-90': 'Cours / accompagnement (1h30)',
     'in-person': 'en présentiel (showroom)', remote: 'en visio',
     neotone: 'Neotone', calebasse: 'Calebasse', gonilele: 'Gonilélé',
     'mic-hisong': 'Micro Hisong', 'mic-muling': 'Micro Muling',
@@ -155,8 +167,12 @@ ${inner}
 
 /**
  * Email de confirmation (liste d'attente). Ordre voulu par David : d'abord
- * l'application, puis le blog, puis les showcases, puis le RDV privé.
- * Aucun prix en dur : on renvoie vers la page du site, qui fait foi.
+ * l'application, puis le blog, puis les showcases, puis le RDV VIP.
+ *
+ * ⚠ TARIFS EN DUR (`privPrice`) : une Edge Function ne peut pas importer
+ * src/data/site.ts. La grille annoncée ici doit rester IDENTIQUE à
+ * `sessionTypes` du site (1h = 50 €, 1h30 = 70 €) — si un prix bouge là-bas,
+ * le changer ici aussi.
  */
 function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolean): string {
     const en = lang === 'en';
@@ -172,8 +188,10 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
         h2show: 'Come and try everything in Paris — for free',
         p3: 'Once a month I host a <strong>free showcase in Paris</strong> (booking required). I present the electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, <strong>handpan microphones</strong>, the <strong>Gonilélé</strong> African harp, the <strong>calabash</strong> — and of course the app. You play, you listen, you ask anything.',
         ctaShow: 'See the next showcases',
-        h2priv: 'Rather have me all to yourself?',
-        p4: 'If the dates don’t suit you, I also offer a <strong>private, tailor-made session</strong>: we take the time, I guide you personally according to your level and your project. Details and booking on the same page.',
+        h2priv: 'Rather have a moment just for you?',
+        p4: 'I also offer <strong>individual appointments</strong>, at the Paris 20th showroom or online — and you decide what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply get one-to-one guidance — whether you’re a complete beginner, still working out what suits you, or want to dig into one specific thing. Just tell me what you’re coming for.',
+        privPrice: '<strong>1h — €50</strong> · <strong>1h30 — €70</strong> — one single price, whatever you’re coming for.',
+        ctaPriv: 'Book a VIP appointment with David',
         sign: 'See you soon,<br />David Lesage',
         foot: 'You are receiving this email because you signed up on lesagedavid.fr.',
         showNote: 'You asked to be kept posted about the showcases — you will receive the dates.',
@@ -186,8 +204,10 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
         h2show: 'Viens tout essayer à Paris — gratuitement',
         p3: 'Une fois par mois, j’anime un <strong>showcase gratuit à Paris</strong> (sur réservation). J’y présente le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les <strong>micros pour handpan</strong>, la harpe africaine <strong>Gonilélé</strong>, la <strong>calebasse</strong> — et bien sûr l’application. Tu joues, tu écoutes, tu poses toutes tes questions.',
         ctaShow: 'Voir les prochains showcases',
-        h2priv: 'Tu préfères m’avoir rien que pour toi ?',
-        p4: 'Si les dates ne te conviennent pas, je propose aussi un <strong>rendez-vous privé, sur mesure</strong> : on prend le temps, je t’accompagne personnellement selon ton niveau et ton projet. Tarif et réservation sur la même page.',
+        h2priv: 'Envie d’un moment rien que pour toi ?',
+        p4: 'Je propose aussi des <strong>rendez-vous individuels</strong>, au showroom de Paris 20ᵉ ou en visio — et c’est toi qui choisis ce qu’on en fait : découvrir et essayer n’importe quel instrument de la boutique (Neotone, handpans acoustiques, Gonilélé, calebasse…), tester un micro pour handpan (Hisong, set Muling), ou simplement être accompagné·e en tête-à-tête — que tu débutes complètement, que tu cherches encore ce qui te correspond, ou que tu veuilles creuser un point précis. Dis-moi juste ce qui t’amène.',
+        privPrice: '<strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong> — un seul tarif, quel que soit ce pour quoi tu viens.',
+        ctaPriv: 'Réserver un RDV VIP avec David',
         sign: 'À très vite,<br />David Lesage',
         foot: 'Tu reçois cet email parce que tu t’es inscrit·e sur lesagedavid.fr.',
         showNote: 'Tu as demandé à être tenu·e au courant des showcases — tu recevras les dates.',
@@ -215,7 +235,9 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
 
         <tr><td style="padding:24px 28px 8px;border-top:1px solid #f0f1f3;">
           <h2 style="margin:0 0 8px;font-size:17px;color:#111827;">${t.h2priv}</h2>
-          <p style="margin:0;color:#374151;font-size:15px;line-height:1.6;">${t.p4}</p>
+          <p style="margin:0 0 12px;color:#374151;font-size:15px;line-height:1.6;">${t.p4}</p>
+          <p style="margin:0 0 16px;padding:12px 14px;background:#faf5ef;border:1px solid #e7d9c6;border-radius:10px;color:#374151;font-size:15px;line-height:1.6;">${t.privPrice}</p>
+          ${btn(`${base}/showroom#agenda`, t.ctaPriv)}
         </td></tr>
 
         <tr><td style="padding:20px 28px 28px;border-top:1px solid #f0f1f3;">
@@ -269,9 +291,11 @@ function bookingHtml(
         instruments: 'Instruments',
         slots: 'Slots you suggested',
         termsTitle: 'How it works',
+        priceNote: 'Price: <strong>1h — €50</strong> · <strong>1h30 — €70</strong> — one single price, whatever you’re coming for.',
         terms1: 'I reply personally to confirm the slot I keep.',
         terms2: 'The appointment is firm once paid: payment is what reserves your slot and commits us both.',
-        terms3: 'Something came up? The appointment can be rescheduled up to 24 h beforehand.',
+        terms3: 'Something came up? Up to 24 h beforehand, we move your appointment — no problem at all.',
+        terms4: 'Less than 24 h beforehand, the payment stays with me: that slot had been set aside just for you. But you don’t lose your appointment — we reschedule it within 3 months. We all have things come up, that’s life: it’s simply about the value of the commitment we make to each other.',
         h2: 'While you wait',
         p2: 'The showroom is at <strong>29 rue des Orteaux, Paris 20th</strong>. You’ll be able to try the electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the microphones, the <strong>Gonilélé</strong> African harp and the <strong>Handpan Studio</strong> app.',
         cta: 'See the showroom page',
@@ -290,9 +314,11 @@ function bookingHtml(
         instruments: 'Instruments',
         slots: 'Créneaux que tu proposes',
         termsTitle: 'Comment ça se passe',
+        priceNote: 'Tarif : <strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong> — un seul tarif, quel que soit ce pour quoi tu viens.',
         terms1: 'Je te réponds personnellement pour confirmer le créneau que je retiens.',
         terms2: 'Le rendez-vous devient ferme au règlement : c’est lui qui réserve ton créneau et nous engage tous les deux.',
-        terms3: 'Un empêchement ? Le rendez-vous est reportable jusqu’à 24 h avant.',
+        terms3: 'Un empêchement ? Jusqu’à 24 h avant, on décale ton rendez-vous sans aucun souci.',
+        terms4: 'À moins de 24 h, le règlement reste acquis : ce créneau avait été bloqué rien que pour toi. Mais tu ne perds pas ton rendez-vous — on le reporte à une autre date, dans les 3 mois. On a tous des imprévus, ça fait partie de la vie : c’est simplement la valeur de l’engagement qu’on prend l’un envers l’autre.',
         h2: 'En attendant',
         p2: 'Le showroom se trouve au <strong>29 rue des Orteaux, Paris 20ᵉ</strong>. Tu pourras y essayer le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les micros, la harpe africaine <strong>Gonilélé</strong> et l’application <strong>Handpan Studio</strong>.',
         cta: 'Voir la page du showroom',
@@ -329,8 +355,9 @@ function bookingHtml(
         ${preferredSlots?.length ? `
         <tr><td style="padding:20px 28px 4px;border-top:1px solid #f0f1f3;">
           <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.termsTitle}</h2>
+          <p style="margin:0 0 12px;padding:10px 12px;background:#faf5ef;border:1px solid #e7d9c6;border-radius:10px;color:#374151;font-size:14px;line-height:1.6;">${t.priceNote}</p>
           <ol style="margin:0;padding-left:18px;color:#374151;font-size:14px;line-height:1.7;">
-            <li>${t.terms1}</li><li>${t.terms2}</li><li>${t.terms3}</li>
+            <li>${t.terms1}</li><li>${t.terms2}</li><li>${t.terms3}</li><li>${t.terms4}</li>
           </ol>
         </td></tr>` : ''}
 

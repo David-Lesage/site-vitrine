@@ -46,3 +46,19 @@ export function priceForKind(kind: string): string {
     .map((s) => sessionDetails(s.id))
     .join(' · ')
 }
+
+/**
+ * La GRILLE du rendez-vous individuel, indépendante du motif : « 1h · 50 € —
+ * 1h30 · 70 € ». C'est ce qu'on annonce en clair dans la modale de réservation,
+ * sur la page showroom et dans l'email — un seul tarif possible par durée.
+ * Déduite de `sessionTypes` : impossible d'annoncer un prix que le formulaire
+ * ne pratique pas.
+ */
+export function priceGrid(): string {
+  const byDuration = new Map<number, number>()
+  for (const s of sessionTypes) byDuration.set(s.minutes, s.price)
+  return [...byDuration.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([minutes, price]) => `${durationLabel(minutes)} · ${priceLabel(price)}`)
+    .join(' — ')
+}

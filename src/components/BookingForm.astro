@@ -7,7 +7,7 @@
 // S'ouvre en modale au clic sur n'importe quel élément [data-booking="<source>"].
 // Inclure UNE fois par page contenant de tels boutons.
 import { getDict } from '@/i18n/dict'
-import { sessionOptions } from '@/lib/sessions'
+import { sessionOptions, priceGrid } from '@/lib/sessions'
 import { sessionTypes, demoInstruments } from '@/data/site'
 import type { Lang } from '@/i18n/config'
 
@@ -16,6 +16,8 @@ const { lang } = Astro.props
 const bk = getDict(lang).booking
 // Tarifs affichés dans le menu : construits depuis site.ts, jamais recopiés.
 const sessions = sessionOptions(bk.sessionTypeNames, bk.sessionTypeRecommended)
+// « 1h · 50 € — 1h30 · 70 € » : la grille annoncée en clair dans la modale.
+const grid = priceGrid()
 const slots = [1, 2, 3]
 // Types de rendez-vous acceptant la visio (les cours) — lu par le script.
 const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(',')
@@ -34,6 +36,21 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
 
     <h2 class="pr-8 font-display text-2xl font-700" data-bk-title>{bk.defaultTitle}</h2>
     <p class="mt-2 text-sm text-ink-soft/85" data-bk-intro>{bk.defaultIntro}</p>
+
+    {/* Rendez-vous individuel : ce qu'on peut venir y faire (n'importe quel
+        instrument de la boutique, un micro, ou simplement un accompagnement)
+        et le TARIF, écrits noir sur blanc avant de remplir quoi que ce soit.
+        Le tarif vient de site.ts via `priceGrid()` : la modale ne peut pas
+        annoncer un prix que le formulaire ne pratique pas. */}
+    <div data-bk-vip class="mt-4 hidden rounded-xl border border-copper/25 bg-copper/5 p-4">
+      <p class="text-sm font-700">{bk.vipTitle}</p>
+      <p class="mt-1.5 text-xs leading-relaxed text-ink-soft/85">{bk.vipScope}</p>
+      <div class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <span class="text-[11px] font-700 uppercase tracking-widest text-ink-soft/70">{bk.vipPriceLabel}</span>
+        <span class="font-display text-lg font-700 text-rust">{grid}</span>
+      </div>
+      <p class="mt-1 text-xs text-ink-soft/70">{bk.vipPriceNote}</p>
+    </div>
 
     <form id="booking-form" class="mt-5 grid gap-3" data-lang={lang} novalidate>
       <input type="hidden" name="source" value="showroom-visit" />
@@ -185,13 +202,16 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
         <p data-bk-slots-error class="mt-2 hidden text-sm font-600 text-rust">{bk.slotsRequired}</p>
       </fieldset>
 
-      {/* Conditions : annoncées avant l'envoi, et rappelées dans l'email d'accusé. */}
+      {/* Conditions : annoncées avant l'envoi, et rappelées dans l'email d'accusé.
+          Les points 3 et 4 posent le cadre d'annulation — dit clairement, et
+          avec bienveillance : on a tous des imprévus. */}
       <div data-bk-terms class="rounded-xl border border-copper/25 bg-copper/5 p-4">
         <p class="text-sm font-700">{bk.termsTitle}</p>
         <ul class="mt-2 space-y-1.5 text-xs leading-relaxed text-ink-soft/85">
           <li class="flex gap-2"><span aria-hidden="true" class="text-copper">1.</span>{bk.terms1}</li>
           <li class="flex gap-2"><span aria-hidden="true" class="text-copper">2.</span>{bk.terms2}</li>
           <li class="flex gap-2"><span aria-hidden="true" class="text-copper">3.</span>{bk.terms3}</li>
+          <li class="flex gap-2"><span aria-hidden="true" class="text-copper">4.</span>{bk.terms4}</li>
         </ul>
       </div>
 
@@ -225,6 +245,7 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
   const slotsEl = modal?.querySelector('[data-bk-slots]') as HTMLElement
   const slotsErrEl = modal?.querySelector('[data-bk-slots-error]') as HTMLElement
   const termsEl = modal?.querySelector('[data-bk-terms]') as HTMLElement
+  const vipEl = modal?.querySelector('[data-bk-vip]') as HTMLElement
   const discountEl = modal?.querySelector('[data-bk-discount]') as HTMLElement
   const instrumentsEl = modal?.querySelector('[data-bk-instruments]') as HTMLElement
   const formatEl = modal?.querySelector('[data-bk-format]') as HTMLElement
@@ -272,10 +293,14 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
     // Chaque motif n'expose que ce qui le concerne :
     //  · showcase-booking → la date est fixée, on demande juste le nombre de personnes ;
     //  · showroom-visit / private-session → c'est la personne qui propose ses créneaux ;
-    //  · private-session seul est payant → type de rendez-vous (avec tarif) + conditions.
+    //  · private-session seul expose le MENU des motifs (avec son tarif détaillé).
+    // Les deux rendez-vous individuels (venue au showroom ET rendez-vous
+    // individuel) sont payants : ils annoncent tous deux la grille tarifaire,
+    // ce qu'on peut venir y faire, et le cadre d'annulation.
     const isPaid = source === 'private-session'
     const isDiscount = source === 'neotone-discount'
-    const needsSlots = isPaid || source === 'showroom-visit'
+    const isVip = isPaid || source === 'showroom-visit'
+    const needsSlots = isVip
     toggleBlock(peopleEl, source === 'showcase-booking')
     toggleBlock(sessionEl, isPaid)
     toggleBlock(discountEl, isDiscount)
@@ -290,7 +315,9 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
     const phoneLabel = modal?.querySelector('[data-bk-phone-label]') as HTMLElement | null
     if (phoneLabel) phoneLabel.textContent = (isDiscount ? phoneLabel.dataset.plain : phoneLabel.dataset.default) || phoneLabel.textContent
     toggleBlock(slotsEl, needsSlots)
-    termsEl?.classList.toggle('hidden', !isPaid)
+    // Blocs purement informatifs (aucun champ) → simple affichage/masquage.
+    vipEl?.classList.toggle('hidden', !isVip)
+    termsEl?.classList.toggle('hidden', !isVip)
     slotsErrEl?.classList.add('hidden')
     syncSessionBlocks()
 
