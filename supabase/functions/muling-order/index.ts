@@ -21,6 +21,7 @@ import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
 
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 const MULING_EMAIL = '85846599@qq.com';
+const DASHBOARD_URL = 'https://play.handpanstudio.app/';
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -105,22 +106,14 @@ function clientEmailHtml(lang: string, firstName: string, ref: string, total: nu
 `);
 }
 
-function adminHtml(f: Record<string, string | number | null>): string {
-    return shell(`
-        <tr><td style="padding:26px 28px 6px;"><div style="font-size:20px;font-weight:700;color:#111827;">Nouvelle commande Muling</div></td></tr>
-        <tr><td style="padding:8px 28px 26px;"><table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
-          ${Object.entries(f).map(([k, v]) => (v === null || v === '' ? '' : row(k, esc(String(v))))).join('')}
-        </table></td></tr>
-`);
-}
-
 function mulingHtml(f: Record<string, string | number | null>): string {
     return shell(`
         <tr><td style="padding:26px 28px 6px;"><div style="font-size:20px;font-weight:700;color:#111827;">New order via David Lesage</div></td></tr>
         <tr><td style="padding:8px 28px 20px;"><table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
           ${Object.entries(f).map(([k, v]) => (v === null || v === '' ? '' : row(k, esc(String(v))))).join('')}
         </table></td></tr>
-        <tr><td style="padding:0 28px 26px;"><p style="margin:0;color:#6b7280;font-size:13px;">Discount code ${esc(DISCOUNT_CODE)} applied (${DISCOUNT_PCT}% off) — as agreed. I will confirm once the customer sends proof of payment.</p></td></tr>
+        <tr><td style="padding:0 28px 12px;"><p style="margin:0;color:#6b7280;font-size:13px;">Discount code ${esc(DISCOUNT_CODE)} applied (${DISCOUNT_PCT}% off) — as agreed. Please confirm receipt, payment and shipping in the dashboard once you have them.</p></td></tr>
+        <tr><td style="padding:0 28px 26px;"><a href="${DASHBOARD_URL}" style="display:inline-block;background:#b4462a;color:#ffffff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 22px;border-radius:999px;">Open the dashboard</a></td></tr>
 `);
 }
 
@@ -142,6 +135,7 @@ Deno.serve(async (req) => {
         const city = String(body.city ?? '').trim().slice(0, 120) || null;
         const postalCode = String(body.postalCode ?? '').trim().slice(0, 20) || null;
         const message = String(body.message ?? '').trim().slice(0, 4000) || null;
+        const deliveryNote = String(body.deliveryNote ?? '').trim().slice(0, 1000) || null;
         const lang = String(body.lang ?? 'fr').trim().slice(0, 5);
         const page = String(body.page ?? '').trim().slice(0, 200);
         const consent = body.consent === true;
@@ -179,6 +173,7 @@ Deno.serve(async (req) => {
             fulfillment_status: 'new',
             consent_at: new Date().toISOString(),
             admin_note: message,
+            delivery_note: deliveryNote,
         }).select('id').single();
         if (error) throw error;
         const saleId = ins!.id as string;
@@ -196,26 +191,23 @@ Deno.serve(async (req) => {
         const port = Number(Deno.env.get('SMTP_PORT') ?? '465');
 
         if (host && user && pass && from) {
-            const send = async (to: string, replyTo: string | undefined, subject: string, html: string) => {
+            const send = async (to: string, cc: string | string[] | undefined, replyTo: string | undefined, subject: string, html: string) => {
                 const c = new SMTPClient({ connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } } });
-                try { await c.send({ from, to, replyTo, subject, html }); return true; }
+                try { await c.send({ from, to, cc, replyTo, subject, html }); return true; }
                 catch (e) { console.error('muling-order mail error:', e); return false; }
                 finally { try { await c.close(); } catch { /* ignore */ } }
             };
 
-            emailSent = await send(email, ADMIN_EMAIL,
+            emailSent = await send(email, undefined, ADMIN_EMAIL,
                 lang === 'fr' ? 'David Lesage — ta commande Muling' : 'David Lesage — your Muling order',
                 clientEmailHtml(lang, firstName, ref, priceDiscounted, quantity));
 
-            await send(ADMIN_EMAIL, email, `[Muling] Nouvelle commande — ${firstName} ${lastName}`.trim(), adminHtml({
-                Nom: `${firstName} ${lastName}`.trim() || null, Email: email, Téléphone: phone,
-                Quantité: quantity, Pays: country, Adresse: `${address}, ${postalCode} ${city}`,
-                'Montant (EUR)': priceDiscounted, Référence: ref, Message: message, Page: page || null, Langue: lang,
-            }));
-
-            await send(MULING_EMAIL, ADMIN_EMAIL, `New order — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(), mulingHtml({
+            // Un seul email à Muling, David en copie — toutes les infos de la
+            // commande + lien de connexion au dashboard (David, 08/08/2026).
+            await send(MULING_EMAIL, ADMIN_EMAIL, ADMIN_EMAIL, `New order — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(), mulingHtml({
                 Name: `${firstName} ${lastName}`.trim() || null, Email: email, Phone: phone,
                 Quantity: quantity, Country: country, Address: `${address}, ${postalCode} ${city}`,
+                'Delivery note': deliveryNote,
                 'Amount (EUR)': priceDiscounted, Reference: ref,
             }));
         }

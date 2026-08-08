@@ -59,6 +59,9 @@ const MULING_EMAIL = '85846599@qq.com'
           <label class="block"><span class="text-sm font-600">{mu.mulingPostalCode}</span>
             <input type="text" name="postalCode" autocomplete="postal-code" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
         </div>
+        <label class="block"><span class="text-sm font-600">{mu.mulingDeliveryNote}</span>
+          <span class="mt-0.5 block text-xs text-ink-soft/70">{mu.mulingDeliveryNoteHint}</span>
+          <textarea name="deliveryNote" rows="2" placeholder={mu.mulingDeliveryNotePlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea></label>
         <label class="block"><span class="text-sm font-600">{bk.message}</span>
           <textarea name="message" rows="2" placeholder={bk.messagePlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea></label>
 
@@ -168,7 +171,8 @@ const MULING_EMAIL = '85846599@qq.com'
         body: JSON.stringify({
           firstName: get('firstName'), lastName: get('lastName'), email: get('email'), phone: get('phone'),
           quantity: Number(get('quantity')) || 1, country: get('country'), address: get('address'),
-          city: get('city'), postalCode: get('postalCode'), message: get('message'), consent: true,
+          city: get('city'), postalCode: get('postalCode'), message: get('message'),
+          deliveryNote: get('deliveryNote'), consent: true,
           lang: document.documentElement.lang || 'fr', page: location.pathname,
         }),
       })

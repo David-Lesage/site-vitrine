@@ -19,6 +19,7 @@ import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
 
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 const MULING_EMAIL = '85846599@qq.com';
+const DASHBOARD_URL = 'https://play.handpanstudio.app/';
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const MAX_BYTES = 6 * 1024 * 1024; // ~5 Mo de fichier réel une fois décodé
 const ALLOWED_TYPES: Record<string, string> = {
@@ -91,9 +92,9 @@ Deno.serve(async (req) => {
         const from = Deno.env.get('SMTP_FROM') ?? user;
         const port = Number(Deno.env.get('SMTP_PORT') ?? '465');
         if (host && user && pass && from) {
-            const send = async (to: string, subject: string, text: string) => {
+            const send = async (to: string, cc: string | undefined, subject: string, text: string) => {
                 const c = new SMTPClient({ connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } } });
-                try { await c.send({ from, to, subject, content: text }); }
+                try { await c.send({ from, to, cc, subject, content: text }); }
                 catch (e) { console.error('muling-claim mail error:', e); }
                 finally { try { await c.close(); } catch { /* ignore */ } }
             };
@@ -101,13 +102,9 @@ Deno.serve(async (req) => {
             const addr = [sale.shipping_address, sale.shipping_postal_code, sale.shipping_city, sale.shipping_country]
                 .filter(Boolean).join(', ');
 
-            await send(ADMIN_EMAIL, `[Muling] Preuve de virement déposée — ${name}`,
-                `${name} (${email}) déclare avoir payé sa commande (${sale.quantity}x, ${sale.price_discounted_eur} EUR, réf. ${sale.order_ref ?? saleId}). Preuve dans le dashboard.`);
-
-            // Email complet à Muling — mêmes informations qu'à la commande, pour
-            // qu'ils n'aient pas besoin de recroiser avec leur premier email
-            // (David, 08/08/2026 : « toutes les infos de la nouvelle commande »).
-            await send(MULING_EMAIL, `Payment proof submitted — ${name} (${sale.order_ref ?? saleId})`,
+            // Un seul email à Muling, David en copie — mêmes infos qu'à la
+            // commande + lien de connexion au dashboard (David, 08/08/2026).
+            await send(MULING_EMAIL, ADMIN_EMAIL, `Payment proof submitted — ${name} (${sale.order_ref ?? saleId})`,
                 [
                     `${name} has submitted proof of payment for their order.`,
                     '',
@@ -120,6 +117,7 @@ Deno.serve(async (req) => {
                     addr ? `Shipping address: ${addr}` : null,
                     '',
                     'Proof of payment is available in the shared dashboard.',
+                    `Dashboard: ${DASHBOARD_URL}`,
                 ].filter((l) => l !== null).join('\n'));
         }
 
