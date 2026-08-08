@@ -7,9 +7,11 @@ import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
 import YouTube from '@/components/YouTube.astro'
 import { Icon } from 'astro-icon/components'
+import MulingOrderForm from '@/components/MulingOrderForm.astro'
 import {
   mulingPhotos, mulingPreampPhotos, mulingBoxPhotos, mulingPowerPhotos,
-  mulingDiagram, mulingManualPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox, mulingLinks } from '@/data/muling'
+  mulingDiagram, mulingManualPhotos, mulingVideoId, mulingPriceUsd, mulingPriceEurApprox, mulingLinks,
+  mulingDiscountCode, mulingDiscountPct, mulingDiscountedPriceUsd } from '@/data/muling'
 import { mulingZh } from '@/data/muling-zh'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
@@ -55,8 +57,13 @@ const ld = [
           <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{m.eyebrow}</p>
           <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">{m.heroTitle}</h1>
           <p class="mt-5 text-lg text-cream/85">{m.heroLead}</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <Button href={contactHref} variant="primary">{m.ctaInterested}</Button>
+          {/* Avantage -5% mis en avant dès le hero (David, 08/08/2026) */}
+          <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-gold/20 px-4 py-1.5 text-sm font-700 text-gold">
+            <Icon name="lucide:badge-percent" class="h-4 w-4" />
+            {(lang === 'zh' ? `通过我购买享 ${mulingDiscountPct}% 折扣` : baseLang === 'en' ? `${mulingDiscountPct}% off, ordering through me` : `−${mulingDiscountPct} % en passant par moi`)}
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <Button href="#commande" variant="primary" data-open-muling-order={lang !== 'zh' ? '' : undefined}>{m.ctaInterested}</Button>
             <Button href="#video" variant="light">{m.ctaVideo}</Button>
           </div>
         </div>
@@ -197,17 +204,11 @@ const ld = [
           </div>
         ))}
       </div>
+      {/* Volontairement PAS de lien vers mulingsound.com ici (David, 08/08/2026) :
+          le client commande via ce site, pas en direct chez le fabricant. */}
       <div class="mt-8 rounded-card border border-copper/25 bg-copper/5 p-5">
         <p class="text-sm font-700">{m.makerLinksTitle}</p>
         <ul class="mt-3 space-y-2 text-sm">
-          <li>
-            <a href={mulingLinks.site} target="_blank" rel="noopener noreferrer" hreflang="zh" class="font-600 text-rust underline">{m.makerSiteLabel}</a>
-            <span class="text-ink-soft/60"> — {m.makerZhNote}</span>
-          </li>
-          <li>
-            <a href={mulingLinks.product} target="_blank" rel="noopener noreferrer" hreflang="zh" class="font-600 text-rust underline">{m.makerProductLabel}</a>
-            <span class="text-ink-soft/60"> — {m.makerZhNote}</span>
-          </li>
           <li><a href={mulingLinks.instagram} target="_blank" rel="noopener noreferrer" class="font-600 text-rust underline">Instagram @mulingpickup</a></li>
         </ul>
       </div>
@@ -226,17 +227,35 @@ const ld = [
   <Section id="commande">
     <SectionHeading title={m.priceTitle} />
     <div class="mx-auto mt-10 max-w-3xl space-y-6">
-      <div class="flex flex-wrap items-baseline justify-between gap-3 rounded-card border border-copper/30 bg-copper/5 p-6">
-        <span class="font-600 text-ink-soft">{m.priceLabel}</span>
-        <span class="font-display text-2xl font-700 text-ink">{mulingPriceUsd} USD <span class="text-lg font-600 text-ink-soft/70">(≈ {mulingPriceEurApprox} €)</span></span>
+      <div class="rounded-card border border-copper/30 bg-copper/5 p-6">
+        <div class="flex flex-wrap items-baseline justify-between gap-3">
+          <span class="font-600 text-ink-soft">{m.priceLabel}</span>
+          <span class="font-display text-2xl font-700 text-ink-soft/60 line-through">{mulingPriceUsd} USD</span>
+        </div>
+        {lang !== 'zh' && (
+          <div class="mt-3 flex flex-wrap items-baseline justify-between gap-3 border-t border-copper/20 pt-3">
+            <span class="inline-flex items-center gap-2 font-700 text-rust">
+              <Icon name="lucide:badge-percent" class="h-5 w-5" />
+              {m.priceDiscountLabel}
+            </span>
+            <span class="font-display text-3xl font-700 text-ink">{mulingDiscountedPriceUsd} USD</span>
+          </div>
+        )}
       </div>
-      <p class="text-sm text-ink-soft/75">{m.priceNote}</p>
+      {lang !== 'zh' ? (
+        <p class="text-sm text-ink-soft/75">{m.priceDiscountNote.replace('{code}', mulingDiscountCode).replace('{pct}', String(mulingDiscountPct))} {m.priceNote}</p>
+      ) : (
+        <p class="text-sm text-ink-soft/75">{m.priceNote}</p>
+      )}
 
-      <div class="rounded-card border border-ink/10 bg-cream p-6">
+      <div id="commande" class="scroll-mt-24 rounded-card border border-ink/10 bg-cream p-6">
         <h3 class="font-display text-xl font-700">{m.orderTitle}</h3>
         <p class="mt-3 text-ink-soft/85">{m.orderText}</p>
-        <p class="mt-4 rounded-lg border border-rust/25 bg-rust/5 p-4 text-sm font-600 text-rust">{m.orderWip}</p>
-        <div class="mt-6"><Button href={contactHref} variant="primary">{m.ctaContact}</Button></div>
+        {lang !== 'zh' ? (
+          <div class="mt-6"><Button href="#commande" variant="primary" data-open-muling-order="">{m.ctaContact}</Button></div>
+        ) : (
+          <div class="mt-6"><Button href={contactHref} variant="primary">{m.ctaContact}</Button></div>
+        )}
       </div>
 
     </div>
@@ -251,4 +270,5 @@ const ld = [
   </Section>
 
   <Lightbox />
+  {lang !== 'zh' && <MulingOrderForm lang={baseLang} />}
 </Layout>

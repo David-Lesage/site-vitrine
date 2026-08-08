@@ -1,0 +1,226 @@
+---
+// Formulaire de commande dédié au micro Muling (/micro-muling). Distinct de
+// BookingForm.astro : ce n'est pas un lead, c'est une commande avec adresse
+// de livraison — 3 étapes dans une seule modale :
+//   1. Coordonnées + adresse + quantité (→ api/muling-order)
+//   2. Coordonnées bancaires Muling + dépôt de preuve (→ api/muling-claim)
+//   3. Merci — Muling prend le relais pour l'expédition et le suivi.
+import { getDict } from '@/i18n/dict'
+import { mulingBankDetails, mulingDiscountCode, mulingDiscountPct } from '@/data/muling'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const d = getDict(lang)
+// `bk` = champs génériques du formulaire (booking) ; `mu` = textes spécifiques
+// à la commande Muling (muling) — les deux vivent dans des objets i18n distincts.
+const bk = d.booking
+const mu = d.muling
+---
+
+<div id="muling-modal" class="fixed inset-0 z-[100] hidden items-start justify-center overflow-y-auto bg-ink/80 p-4 py-10 backdrop-blur-sm" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="relative w-full max-w-lg rounded-card bg-cream p-6 shadow-2xl md:p-8">
+    <button class="mo-close absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full text-2xl leading-none text-ink-soft hover:bg-ink/5" type="button" aria-label={bk.close}>×</button>
+
+    <!-- Étape 1 : commande -->
+    <div data-mo-step="order">
+      <h2 class="pr-8 font-display text-2xl font-700">{mu.mulingOrderTitle}</h2>
+      <p class="mt-2 text-sm text-ink-soft/85">{mu.mulingOrderIntro.replace('{code}', mulingDiscountCode).replace('{pct}', String(mulingDiscountPct))}</p>
+
+      <form id="muling-order-form" class="mt-5 grid gap-3" novalidate>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="block"><span class="text-sm font-600">{bk.first}</span>
+            <input type="text" name="firstName" autocomplete="given-name" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+          <label class="block"><span class="text-sm font-600">{bk.last}</span>
+            <input type="text" name="lastName" autocomplete="family-name" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="block"><span class="text-sm font-600">{bk.email}</span>
+            <input type="email" name="email" autocomplete="email" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+          <label class="block"><span class="text-sm font-600">{bk.phonePlain}</span>
+            <input type="tel" name="phone" autocomplete="tel" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+        </div>
+        <label class="block"><span class="text-sm font-600">{mu.mulingQuantity}</span>
+          <input type="number" name="quantity" min="1" max="20" value="1" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+        <label class="block"><span class="text-sm font-600">{mu.mulingCountry}</span>
+          <input type="text" name="country" autocomplete="country-name" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+        <label class="block"><span class="text-sm font-600">{mu.mulingAddress}</span>
+          <input type="text" name="address" autocomplete="street-address" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="block"><span class="text-sm font-600">{mu.mulingCity}</span>
+            <input type="text" name="city" autocomplete="address-level2" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+          <label class="block"><span class="text-sm font-600">{mu.mulingPostalCode}</span>
+            <input type="text" name="postalCode" autocomplete="postal-code" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+        </div>
+        <label class="block"><span class="text-sm font-600">{bk.message}</span>
+          <textarea name="message" rows="2" placeholder={bk.messagePlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea></label>
+
+        <label class="mt-1 flex cursor-pointer items-start gap-3 rounded-xl border border-ink/10 bg-cream-deep/30 p-4">
+          <input type="checkbox" name="consent" required class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+          <span class="text-sm text-ink-soft/90">{mu.mulingConsent}</span>
+        </label>
+        <p data-mo-consent-error class="hidden text-sm font-600 text-rust">{mu.mulingConsentRequired}</p>
+
+        <button type="submit" data-sending={mu.mulingOrderSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{mu.mulingOrderSubmit}</button>
+        <p data-mo-order-error class="hidden text-sm font-600 text-rust">{mu.mulingOrderError}</p>
+      </form>
+    </div>
+
+    <!-- Étape 2 : paiement + preuve -->
+    <div data-mo-step="pay" class="hidden">
+      <h2 class="pr-8 font-display text-2xl font-700">{mu.mulingBankTitle}</h2>
+      <p class="mt-2 text-sm text-ink-soft/85">{mu.mulingBankIntro}</p>
+
+      <dl class="mt-5 space-y-2 rounded-xl border border-copper/25 bg-copper/5 p-4 text-sm">
+        <div class="flex justify-between gap-4"><dt class="text-ink-soft/70">{mu.mulingBankBeneficiary}</dt><dd class="text-right font-600">{mulingBankDetails.beneficiary}</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-soft/70">{mu.mulingBankIban}</dt><dd class="text-right font-600" data-mo-iban>{mulingBankDetails.iban}</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-soft/70">{mu.mulingBankBic}</dt><dd class="text-right font-600">{mulingBankDetails.bic}</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-soft/70">{mu.mulingBankBank}</dt><dd class="text-right font-600">{mulingBankDetails.bank}</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-soft/70">{mu.priceLabel}</dt><dd class="text-right font-700" data-mo-amount>—</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-soft/70">{mu.mulingBankRef}</dt><dd class="text-right font-700" data-mo-ref>—</dd></div>
+      </dl>
+      <p class="mt-3 text-xs font-600 text-rust">{mu.mulingBankSepaOnly}</p>
+      <p class="mt-4 text-sm text-ink-soft/85">{mu.mulingBankNext}</p>
+
+      <form id="muling-claim-form" class="mt-5 grid gap-3" novalidate>
+        <label class="block">
+          <span class="text-sm font-600">{mu.mulingProofLabel}</span>
+          <span class="mt-0.5 block text-xs text-ink-soft/70">{mu.mulingProofHint}</span>
+          <input type="file" name="proof" accept="image/png,image/jpeg,application/pdf" required class="mt-2 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 text-sm focus:border-copper focus:outline-none" />
+        </label>
+        <button type="submit" data-sending={mu.mulingProofSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{mu.mulingProofButton}</button>
+        <p data-mo-proof-error data-invalid-type={mu.mulingProofInvalidType} data-too-large={mu.mulingProofTooLarge} data-error-text={mu.mulingProofError} class="hidden text-sm font-600 text-rust"></p>
+      </form>
+    </div>
+
+    <!-- Étape 3 : merci -->
+    <div data-mo-step="thanks" class="hidden py-6 text-center">
+      <p class="font-display text-xl font-700 text-ink">{mu.mulingThankYouTitle}</p>
+      <p class="mt-3 text-ink-soft/85">{mu.mulingThankYouText}</p>
+      <button type="button" class="mo-close mt-6 rounded-full bg-rust px-6 py-3 font-700 text-cream hover:bg-copper">{bk.successClose}</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('muling-modal')
+  const orderForm = document.getElementById('muling-order-form') as HTMLFormElement | null
+  const claimForm = document.getElementById('muling-claim-form') as HTMLFormElement | null
+  const steps = { order: 'order', pay: 'pay', thanks: 'thanks' } as const
+  let currentSaleId: string | null = null
+  let currentEmail = ''
+  let lastFocused: HTMLElement | null = null
+
+  function showStep(step: keyof typeof steps) {
+    modal?.querySelectorAll('[data-mo-step]').forEach((el) => el.classList.toggle('hidden', el.getAttribute('data-mo-step') !== step))
+  }
+
+  function open() {
+    if (!modal) return
+    lastFocused = document.activeElement as HTMLElement
+    orderForm?.reset()
+    claimForm?.reset()
+    currentSaleId = null
+    showStep('order')
+    modal.classList.remove('hidden'); modal.classList.add('flex')
+    modal.setAttribute('aria-hidden', 'false')
+    document.body.style.overflow = 'hidden'
+  }
+  function close() {
+    if (!modal) return
+    modal.classList.add('hidden'); modal.classList.remove('flex')
+    modal.setAttribute('aria-hidden', 'true')
+    document.body.style.overflow = ''
+    if (lastFocused?.focus) lastFocused.focus()
+  }
+
+  document.querySelectorAll('[data-open-muling-order]').forEach((el) => el.addEventListener('click', (e) => { e.preventDefault(); open() }))
+  modal?.querySelectorAll('.mo-close').forEach((b) => b.addEventListener('click', close))
+  modal?.addEventListener('click', (e) => { if (e.target === modal) close() })
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) close() })
+
+  orderForm?.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    if (!orderForm.reportValidity()) return
+    const data = new FormData(orderForm)
+    const get = (k: string) => String(data.get(k) || '').trim()
+    const consentErr = modal?.querySelector('[data-mo-consent-error]')
+    const orderErr = modal?.querySelector('[data-mo-order-error]')
+    consentErr?.classList.add('hidden'); orderErr?.classList.add('hidden')
+    if (data.get('consent') !== 'on') { consentErr?.classList.remove('hidden'); return }
+
+    const btn = orderForm.querySelector('button[type="submit"]') as HTMLButtonElement
+    const label = btn.textContent
+    btn.disabled = true
+    btn.textContent = btn.dataset.sending || label
+    try {
+      const r = await fetch('/api/muling-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: get('firstName'), lastName: get('lastName'), email: get('email'), phone: get('phone'),
+          quantity: Number(get('quantity')) || 1, country: get('country'), address: get('address'),
+          city: get('city'), postalCode: get('postalCode'), message: get('message'), consent: true,
+          lang: document.documentElement.lang || 'fr', page: location.pathname,
+        }),
+      })
+      const json = await r.json().catch(() => ({}))
+      if (!r.ok) throw new Error(json.error || 'failed')
+      currentSaleId = json.saleId
+      currentEmail = get('email')
+      const amount = json.amount ?? '—'
+      modal?.querySelectorAll('[data-mo-amount]').forEach((el) => { el.textContent = `${amount} ${json.currency || 'EUR'}` })
+      modal?.querySelectorAll('[data-mo-ref]').forEach((el) => { el.textContent = json.ref || '—' })
+      showStep('pay')
+    } catch {
+      orderErr?.classList.remove('hidden')
+    } finally {
+      btn.disabled = false
+      btn.textContent = label
+    }
+  })
+
+  claimForm?.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    const fileInput = claimForm.querySelector('input[name="proof"]') as HTMLInputElement
+    const file = fileInput.files?.[0]
+    const errEl = modal?.querySelector('[data-mo-proof-error]') as HTMLElement
+    errEl?.classList.add('hidden')
+    if (!file || !currentSaleId) return
+
+    const ALLOWED = ['image/png', 'image/jpeg', 'application/pdf']
+    if (!ALLOWED.includes(file.type)) {
+      errEl.textContent = errEl.dataset.invalidType || 'Format non accepté.'
+      errEl.classList.remove('hidden'); return
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      errEl.textContent = errEl.dataset.tooLarge || 'Fichier trop volumineux.'
+      errEl.classList.remove('hidden'); return
+    }
+
+    const btn = claimForm.querySelector('button[type="submit"]') as HTMLButtonElement
+    const label = btn.textContent
+    btn.disabled = true
+    try {
+      const base64 = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => resolve(String(reader.result).split(',')[1] || '')
+        reader.onerror = reject
+        reader.readAsDataURL(file)
+      })
+      const r = await fetch('/api/muling-claim', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ saleId: currentSaleId, email: currentEmail, fileBase64: base64, fileType: file.type, lang: document.documentElement.lang || 'fr' }),
+      })
+      if (!r.ok) throw new Error('failed')
+      showStep('thanks')
+    } catch {
+      errEl.textContent = errEl.dataset.errorText || 'Le dépôt a échoué.'
+      errEl.classList.remove('hidden')
+    } finally {
+      btn.disabled = false
+      btn.textContent = label
+    }
+  })
+</script>

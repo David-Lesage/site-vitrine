@@ -30,6 +30,8 @@ const priceNotes = s.priceNotes as Record<string, string>
 const ytId = (u: string) => (u.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{6,})/) || [])[1] || ''
 const pName = (id: string) => productCopy[id]
 const catInfo = (id: string) => categoryCopy[id]
+const hrefFor = (p: (typeof products)[number]) => (p.url.startsWith('/') ? L(p.url) : p.url)
+const isExternal = (p: (typeof products)[number]) => !(p.url.startsWith('/') || p.url.startsWith('mailto:'))
 
 const ld = [
   itemListLdJson(products.filter((p) => p.active).map((p) => ({ name: pName(p.id).name, url: p.url, image: p.image }))),
@@ -58,11 +60,27 @@ const ld = [
             const info = pName(p.id)
             return (
               <div id={p.id} class="flex scroll-mt-28 flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-                {p.images && p.images.length > 1 ? (
-                  <div class="p-3"><Carousel id={`shop-${p.id}`} slides={p.images.map((src) => ({ src }))} alt={info.name} /></div>
-                ) : (
-                  <div class="aspect-square bg-ink/5 p-6"><img src={p.image} width={p.imgW} height={p.imgH} alt={info.name} class="h-full w-full object-contain" loading="lazy" /></div>
-                )}
+                <div class="relative">
+                  {p.images && p.images.length > 1 ? (
+                    <div class="p-3"><Carousel id={`shop-${p.id}`} slides={p.images.map((src) => ({ src }))} alt={info.name} /></div>
+                  ) : (
+                    <div class="aspect-square bg-ink/5 p-6"><img src={p.image} width={p.imgW} height={p.imgH} alt={info.name} class="h-full w-full object-contain" loading="lazy" /></div>
+                  )}
+                  {/* Bouton + réduction remontés SUR l'image (David, 08/08/2026) : sur les
+                      cartes à long carrousel + description, le CTA du bas passait inaperçu. */}
+                  {p.mode === 'link' && (
+                    <a
+                      href={hrefFor(p)}
+                      target={isExternal(p) ? '_blank' : undefined}
+                      rel={isExternal(p) ? 'noopener' : undefined}
+                      class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-cream px-3.5 py-2 text-xs font-700 text-ink shadow-md transition-colors hover:bg-copper hover:text-cream"
+                    >
+                      {p.tagKey && <span class="text-copper">{linkTags[p.tagKey]}</span>}
+                      {p.tagKey && '·'}
+                      {linkCtas[p.linkLabel || 'buy']}
+                    </a>
+                  )}
+                </div>
                 <div class="flex flex-1 flex-col p-6">
                   <h3 class="font-display text-xl font-700">{info.name}</h3>
                   <p class="mt-2 text-sm text-ink-soft/85" set:html={info.description} />

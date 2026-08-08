@@ -61,8 +61,12 @@ export const mulingVideoId = 'ENArz99dyTQ'
 // Prix annoncé par le fabricant, en dollars (conversion indicative)
 export const mulingPriceUsd = 299
 export const mulingPriceEurApprox = 261
+// Code de réduction offert en passant par David — 5 % sur le prix fabricant.
+export const mulingDiscountCode = 'David-Lesage-5'
+export const mulingDiscountPct = 5
+export const mulingDiscountedPriceUsd = Math.round(mulingPriceUsd * (1 - mulingDiscountPct / 100) * 100) / 100
 
-// Liens officiels Muling (§ 6 du brief).
+// Liens officiels Muling (§ 6 du brief initial).
 // ⚠️ mulingsound.com est servi en HTTP et son certificat TLS ne correspond pas au
 // domaine : un lien https:// échoue. On garde donc http:// volontairement.
 // ⚠️ NE JAMAIS lier vers lironmanmusic.com — distributeur d'une autre zone, et
@@ -72,4 +76,17 @@ export const mulingLinks = {
   product: 'http://www.mulingsound.com/h-pd-1064.html',
   instagram: 'https://instagram.com/mulingpickup',
   taobao: 'https://moguitar.taobao.com',
+}
+
+// Coordonnées bancaires Muling — affichées UNIQUEMENT sur l'écran de
+// confirmation, après soumission du formulaire de commande. Un seul endroit
+// à modifier si elles changent (demande explicite de David, 08/08/2026 —
+// dérogation à sa règle habituelle « pas d'IBAN sur la page de vente »,
+// pour ce partenaire précis et ce seul écran).
+export const mulingBankDetails = {
+  beneficiary: 'HuiZhou Muling Musical Instruments Co Ltd',
+  iban: 'DE17 2022 0800 0047 4167 62',
+  bic: 'SXPYDEHH',
+  bank: 'Banking Circle S.A. — succursale allemande',
+  address: 'Maximilianstraße 54, 80538 München, Allemagne',
 }
