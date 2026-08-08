@@ -181,7 +181,11 @@ Deno.serve(async (req) => {
         // libellé de virement doit rester générique et reconnaissable côté
         // Muling, quel que soit le client (David, 08/08/2026).
         const ref = `RESONANCE-${saleId.slice(0, 8).toUpperCase()}`;
-        await admin.from('affiliate_sales').update({ order_ref: ref }).eq('id', saleId);
+        const { error: refErr } = await admin.from('affiliate_sales').update({ order_ref: ref }).eq('id', saleId);
+        // Ne bloque pas la commande pour ça (le client a déjà sa référence), mais
+        // ne le laisse plus JAMAIS passer sous silence — c'est ce qui a masqué le
+        // bug du trigger le 08/08/2026 (order_ref resté null en base).
+        if (refErr) console.error('muling-order: échec écriture order_ref:', refErr);
 
         let emailSent = false;
         const host = Deno.env.get('SMTP_HOST') ?? '';

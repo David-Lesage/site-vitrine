@@ -100,7 +100,7 @@ const MULING_EMAIL = '85846599@qq.com'
           <input type="file" name="proof" accept="image/png,image/jpeg,application/pdf" required class="mt-2 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 text-sm focus:border-copper focus:outline-none" />
         </label>
         <button type="submit" data-sending={mu.mulingProofSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{mu.mulingProofButton}</button>
-        <p data-mo-proof-error data-invalid-type={mu.mulingProofInvalidType} data-too-large={mu.mulingProofTooLarge} data-error-text={mu.mulingProofError} class="hidden text-sm font-600 text-rust"></p>
+        <p data-mo-proof-error data-missing={mu.mulingProofMissing} data-invalid-type={mu.mulingProofInvalidType} data-too-large={mu.mulingProofTooLarge} data-error-text={mu.mulingProofError} class="hidden text-sm font-600 text-rust"></p>
       </form>
     </div>
 
@@ -198,7 +198,11 @@ const MULING_EMAIL = '85846599@qq.com'
     const file = fileInput.files?.[0]
     const errEl = modal?.querySelector('[data-mo-proof-error]') as HTMLElement
     errEl?.classList.add('hidden')
-    if (!file || !currentSaleId) return
+    if (!currentSaleId) return
+    if (!file) {
+      errEl.textContent = errEl.dataset.missing || 'Dépose une preuve de virement avant de continuer.'
+      errEl.classList.remove('hidden'); return
+    }
 
     const ALLOWED = ['image/png', 'image/jpeg', 'application/pdf']
     if (!ALLOWED.includes(file.type)) {

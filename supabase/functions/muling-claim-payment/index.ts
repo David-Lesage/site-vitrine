@@ -101,10 +101,11 @@ Deno.serve(async (req) => {
             const name = sale.customer_name ?? email;
             const addr = [sale.shipping_address, sale.shipping_postal_code, sale.shipping_city, sale.shipping_country]
                 .filter(Boolean).join(', ');
+            const ref = sale.order_ref ?? saleId;
 
             // Un seul email à Muling, David en copie — mêmes infos qu'à la
             // commande + lien de connexion au dashboard (David, 08/08/2026).
-            await send(MULING_EMAIL, ADMIN_EMAIL, `Payment proof submitted — ${name} (${sale.order_ref ?? saleId})`,
+            await send(MULING_EMAIL, ADMIN_EMAIL, `Payment proof submitted — ${name} (${ref})`,
                 [
                     `${name} has submitted proof of payment for their order.`,
                     '',
@@ -113,12 +114,48 @@ Deno.serve(async (req) => {
                     sale.phone ? `Phone: ${sale.phone}` : null,
                     `Quantity: ${sale.quantity}x HMP-2`,
                     `Amount: ${sale.price_discounted_eur} EUR`,
-                    `Reference: ${sale.order_ref ?? saleId}`,
+                    `Reference: ${ref}`,
                     addr ? `Shipping address: ${addr}` : null,
                     '',
                     'Proof of payment is available in the shared dashboard.',
                     `Dashboard: ${DASHBOARD_URL}`,
                 ].filter((l) => l !== null).join('\n'));
+
+            // Confirmation au CLIENT — preuve écrite pour lui que son dépôt a
+            // bien été reçu et transmis (David, 08/08/2026 : « qu'elle ait
+            // aussi une preuve »). Pas de cc ici, c'est un email personnel.
+            const fr = lang === 'fr';
+            await send(email, undefined,
+                fr ? `Ta preuve de virement est bien reçue — réf. ${ref}` : `Your proof of payment was received — ref. ${ref}`,
+                (fr ? [
+                    `Bonjour ${name},`,
+                    '',
+                    'C’est confirmé : ta preuve de virement a bien été reçue et transmise à Muling, avec toutes les infos de ta commande.',
+                    '',
+                    `Quantité : ${sale.quantity}x HMP-2`,
+                    `Montant : ${sale.price_discounted_eur} EUR`,
+                    `Référence : ${ref}`,
+                    '',
+                    'Muling va vérifier la réception du virement et te recontacter directement pour la suite (expédition et suivi de commande).',
+                    'Garde cet email comme preuve de ta démarche.',
+                    '',
+                    'Merci,',
+                    'David Lesage',
+                ] : [
+                    `Hi ${name},`,
+                    '',
+                    'Confirmed: your proof of payment has been received and sent to Muling, along with your full order details.',
+                    '',
+                    `Quantity: ${sale.quantity}x HMP-2`,
+                    `Amount: ${sale.price_discounted_eur} EUR`,
+                    `Reference: ${ref}`,
+                    '',
+                    'Muling will check the transfer and get in touch with you directly for the next steps (shipping and tracking).',
+                    'Keep this email as proof of your submission.',
+                    '',
+                    'Thank you,',
+                    'David Lesage',
+                ]).join('\n'));
         }
 
         return json({ ok: true });
