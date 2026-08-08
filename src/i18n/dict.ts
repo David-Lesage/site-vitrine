@@ -245,8 +245,10 @@ const fr = {
     orderEmail: 'Commander par email',
     creationsBadge: 'Signature David Lesage',
     calcOrder: 'Calculer mon prix & commander',
-    linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: '−5 % via moi', onesec: 'J’utilise vraiment' },
+    linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: '−5 % via moi', onesec: 'J’utilise vraiment', oko: '−10 % avec mon code' },
     linkCtas: { buy: 'Voir l’offre →', listen: 'Écouter →', discover: 'Découvrir →', order: 'Commander →', interested: 'Ce micro m’intéresse →' },
+    copyCode: 'Copier le code',
+    codeCopied: 'Copié !',
     priceNotes: {
       hisong:
         '<strong>⚠️ Mise en garde :</strong> sur le site Hisong, les prix sont affichés <strong>hors taxes</strong> (265,95 € à 354,95 € HT). La <strong>TVA de 20 %</strong> s’ajoute au moment du paiement. Les prix ci-dessus sont donc les <strong>vrais prix TTC</strong> — pour t’éviter toute mauvaise surprise.<br><br><strong>Bonne nouvelle, les remises se cumulent :</strong><br>— mon code <strong>−5 %</strong><br>— le code <strong>VIP10</strong> : −10 % sur la 1ʳᵉ commande (appliqué automatiquement)<br>— parfois des promotions exceptionnelles de 15 à 20 %<br><br><strong>Frais de port :</strong> à partir de <strong>11,95 €</strong> en France — c’est toi qui choisis le transporteur au moment du paiement.<br><br><strong>Exemple concret :</strong><br>— kit Musicien : ≈ <strong>273 € TTC</strong> après les deux remises, soit ≈ <strong>285 € port compris</strong><br>— kit Master : ≈ <strong>364 € TTC</strong>, soit ≈ <strong>376 € port compris</strong>',
@@ -283,6 +285,7 @@ const fr = {
       'cours-prives': { name: 'Cours privés & stages', description: 'Cours particuliers et stages avec moi — handpan, rythme et voix. En présentiel à Paris ou à distance.' },
       'streaming': { name: 'Ma musique en streaming', description: 'Retrouve mes compositions et reprises sur Spotify, Apple Music, Deezer et toutes les plateformes.' },
       'onesec': { name: 'one sec — reprendre le contrôle de son temps d’écran', description: 'L’app qui m’aide vraiment à ne pas me perdre dans le scroll. Avant d’ouvrir une appli happante (réseaux sociaux…), one sec impose une courte pause — le temps d’une respiration — et l’envie compulsive retombe. C’est simple, et pour moi c’est l’une des rares choses qui a réellement fonctionné. Approche validée par la science (études avec l’Institut Max Planck). Gratuite pour l’essentiel ; profite de −30 % sur Premium via mon lien.' },
+      'oko': { name: 'Gourde filtrante ÖKO', description: 'La gourde que j’emmène partout, tout le temps, en tant que musicien en déplacement — l’eau est la chose la plus importante qui soit. Filtration instantanée sans attente ni électricité, testée en laboratoire indépendant accrédité COFRAC sur plus de 200 contaminants. Je suis heureux de représenter un produit idéal pour tous les voyageurs. Profite de −10 % avec mon code.' },
     },
   },
   booking: {

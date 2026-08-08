@@ -20,9 +20,11 @@ export interface Product {
   // libellé du bouton pour les produits 'link'
   linkLabel?: 'buy' | 'listen' | 'discover' | 'order' | 'interested'
   // pastille (plateforme / statut) pour les produits 'link' → dict.shop.linkTags
-  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec'
+  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec' | 'oko'
   // prix indicatif affiché tel quel (produits externes), ex. "299 €"
   priceLabel?: string
+  // code de réduction affiché avec un bouton « copier » (produits externes, lien d'affiliation)
+  discountCode?: string
   // encart d'explication du prix (TVA, remises cumulables, port) → dict.shop.priceNotes
   priceNoteKey?: 'hisong'
   // plusieurs photos → carrousel + plein écran sur la fiche (sinon `image` seule)
@@ -60,4 +62,6 @@ export const products: Product[] = [
   { id: 'cours-prives', price: 0, image: '/images/prod-cours-stages.jpg', imgW: 371, imgH: 371, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/cours-prive-et-stages-avec-david-lesage', category: 'formations', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'helloasso', priceLabel: '50 €/h · 70 €/1h30' },
   // Mes outils du quotidien — recommandation perso (lien d'affiliation)
   { id: 'onesec', price: 0, image: '/images/prod-onesec-1.webp', imgW: 1464, imgH: 1731, url: 'https://web.one-sec.app/store?deal=david30', category: 'outils', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'onesec', priceLabel: 'Gratuit · −30 % sur Premium avec mon lien', images: ['/images/prod-onesec-1.webp', '/images/prod-onesec-2.webp', '/images/prod-onesec-3.webp'] },
+  // Gourde filtrante ÖKO — recommandation perso (lien d'affiliation), musicien en déplacement
+  { id: 'oko', price: 0, image: '/images/prod-oko-1.jpg', imgW: 1600, imgH: 1600, url: 'https://okoeurope.com/products/gourde-filtrante?ref=DAVIDOKO', category: 'outils', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'oko', priceLabel: 'dès 63 €', discountCode: 'DAVIDOKO', videoUrls: ['https://www.youtube.com/watch?v=yHKnJPz9TkQ'], images: ['/images/prod-oko-1.jpg', '/images/prod-oko-2.jpg', '/images/prod-oko-3.jpg', '/images/prod-oko-4.jpg', '/images/prod-oko-5.jpg'] },
 ]

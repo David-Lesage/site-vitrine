@@ -1,21 +1,39 @@
 // =============================================================================
 // Edge Function : invite-partner
-// Crée (ou retrouve) un compte Supabase Auth pour un partenaire (ex. Muling),
-// l'associe à sa marque dans `partner_accounts`, et lui envoie un email
-// d'invitation avec un lien pour DÉFINIR SON PROPRE MOT DE PASSE — David ne
-// choisit ni ne connaît jamais ce mot de passe, conformément aux règles de
-// sécurité (jamais de mot de passe géré à la place d'un tiers).
+// Gestion des ACCÈS au dashboard partenaire (Muling & co).
 //
-// ⚠️ Action SENSIBLE — protégée par une vraie authentification, PAS par le
+// Trois actions, toutes réservées aux admins :
+//   • `invite` (défaut)  crée/retrouve un compte Supabase Auth, l'associe à sa
+//                        marque dans `partner_accounts`, et envoie l'email
+//                        d'invitation avec un lien pour DÉFINIR SON PROPRE mot
+//                        de passe — David ne choisit ni ne connaît jamais ce
+//                        mot de passe (règle de sécurité : jamais de mot de
+//                        passe géré à la place d'un tiers).
+//   • `list`             renvoie tous les accès partenaires existants, avec
+//                        l'email résolu via l'Admin API (partner_accounts n'a
+//                        PAS de colonne email), la date de création du compte
+//                        et sa dernière connexion.
+//   • `revoke`           RETIRE l'accès : supprime UNIQUEMENT la ligne
+//                        `partner_accounts`. Le compte auth, lui, n'est JAMAIS
+//                        supprimé (principe du dépôt, cf. admin-users :
+//                        « AUCUNE suppression de compte (jamais) »). Sans ligne
+//                        partner_accounts, `fetchPartnerAccount()` renvoie null
+//                        dans auth/gate.ts → la personne n'est plus routée vers
+//                        le dashboard partenaire, et `my_partner_scope()` ne
+//                        renvoie plus rien → la vue `partner_orders` est vide.
+//
+// ⚠️ Actions SENSIBLES — protégées par une vraie authentification, PAS par le
 // jeton partagé SITE_LEAD_TOKEN des autres fonctions : l'appelant doit être
-// connecté ET admin (`public.is_site_admin()`), vérifié ICI, côté serveur,
-// avant toute création de compte.
+// connecté ET admin (`public.is_site_admin()`), vérifié ICI, côté serveur.
 //
-// Appelée depuis le dashboard admin de l'app (bouton « Inviter un
-// partenaire ») avec le JWT de l'admin connecté :
-//   supabase.functions.invoke('invite-partner', { body: { email, partner, locale } })
+// Appelée depuis le dashboard admin de l'app avec le JWT de l'admin connecté :
+//   supabase.functions.invoke('invite-partner', { body: { action, … } })
 //
-// v1 (08/08/2026).
+// v3 (08/08/2026) : en-têtes CORS via _shared/cors.ts (l'appel depuis le
+// navigateur échouait sans ça : « Failed to send a request to the Edge Function »).
+// v4 (08/08/2026) : ajout de `list` et `revoke` (David : « je veux pouvoir en
+// tant qu'admin révoquer un accès au dashboard »). `action` absent = `invite`,
+// donc les appels existants continuent de marcher à l'identique.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -28,6 +46,43 @@ const ALLOWED_LOCALES = ['fr', 'en', 'zh'];
 // détecter `type=invite` dans l'URL et proposer un écran « choisis ton mot de
 // passe » (supabase.auth.updateUser({ password })) — voir le brief associé.
 const APP_URL = 'https://play.handpanstudio.app/';
+
+type AuthUser = {
+    id: string;
+    email?: string;
+    created_at?: string;
+    last_sign_in_at?: string;
+};
+
+/**
+ * Tous les comptes auth (l'Admin API ne filtre pas côté serveur → pagination).
+ * Même motif que `resolveUserId` dans supabase/functions/admin-users/index.ts.
+ */
+async function listAuthUsers(admin: ReturnType<typeof createClient>): Promise<AuthUser[]> {
+    const users: AuthUser[] = [];
+    let page = 1;
+    const perPage = 1000;
+    while (true) {
+        const { data, error } = await admin.auth.admin.listUsers({ page, perPage });
+        if (error) throw error;
+        const batch = (data?.users ?? []) as AuthUser[];
+        users.push(...batch);
+        if (batch.length < perPage) break;
+        page += 1;
+        if (page > 50) break; // garde-fou
+    }
+    return users;
+}
+
+/** Résout l'id auth d'un email (insensible à la casse), ou null. */
+async function resolveUserId(
+    admin: ReturnType<typeof createClient>,
+    email: string
+): Promise<string | null> {
+    const target = email.toLowerCase();
+    const users = await listAuthUsers(admin);
+    return users.find((u) => (u.email ?? '').toLowerCase() === target)?.id ?? null;
+}
 
 function inviteEmailHtml(partnerName: string, actionLink: string, locale: string): string {
     const name = partnerName;
@@ -91,16 +146,116 @@ Deno.serve(async (req) => {
         if (adminErr || isAdmin !== true) return jsonResponse(req, { error: 'Forbidden' }, 403);
 
         const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
+        // `action` absent = `invite` : les appels historiques (email/partner/locale
+        // sans action) gardent EXACTEMENT le même comportement.
+        const action = String(body.action ?? 'invite').trim() || 'invite';
+
+        const admin = createClient(SUPABASE_URL, SERVICE_KEY, {
+            auth: { persistSession: false, autoRefreshToken: false },
+        });
+
+        // === LIST — tous les accès partenaires en place ========================
+        // `partner_accounts` n'a pas d'email : on le résout via l'Admin API, et
+        // on en profite pour remonter création + dernière connexion (utile pour
+        // repérer un compte jamais utilisé, ex. une adresse mal tapée).
+        if (action === 'list') {
+            const { data: accRows, error: accErr } = await admin
+                .from('partner_accounts')
+                .select('user_id, partner, locale, created_at');
+            if (accErr) throw accErr;
+
+            const users = await listAuthUsers(admin);
+            const byId = new Map<string, AuthUser>();
+            for (const u of users) byId.set(u.id, u);
+
+            const accounts = ((accRows ?? []) as Array<{
+                user_id: string; partner: string; locale: string; created_at: string | null;
+            }>).map((a) => {
+                const u = byId.get(a.user_id);
+                return {
+                    user_id: a.user_id,
+                    partner: a.partner,
+                    locale: a.locale,
+                    // Date d'octroi de l'accès (ligne partner_accounts), pas du compte auth.
+                    granted_at: a.created_at,
+                    email: u?.email ?? '',
+                    // `orphan` : ligne partner_accounts sans compte auth correspondant.
+                    orphan: !u,
+                    accountCreatedAt: u?.created_at ?? null,
+                    lastSignIn: u?.last_sign_in_at ?? null,
+                };
+            });
+
+            accounts.sort(
+                (a, b) => a.partner.localeCompare(b.partner) || a.email.localeCompare(b.email)
+            );
+            return jsonResponse(req, { accounts });
+        }
+
+        // === REVOKE — retirer l'accès au dashboard partenaire ==================
+        // Supprime UNIQUEMENT la ligne `partner_accounts`. Le compte auth reste
+        // intact : on ne supprime JAMAIS de compte dans ce dépôt.
+        if (action === 'revoke') {
+            const rawEmail = String(body.email ?? '').trim().toLowerCase();
+            let userId = String(body.user_id ?? '').trim();
+
+            if (!userId && !rawEmail) {
+                return jsonResponse(req, { error: 'user_id ou email requis.' }, 400);
+            }
+            if (!userId) {
+                const found = await resolveUserId(admin, rawEmail);
+                if (!found) return jsonResponse(req, { error: 'Aucun compte avec cet email.' }, 404);
+                userId = found;
+            }
+
+            // On relit la ligne AVANT de la supprimer : ça permet de renvoyer la
+            // marque exacte à afficher dans le message de confirmation, et de
+            // distinguer « déjà révoqué » d'une vraie suppression.
+            const { data: existing, error: exErr } = await admin
+                .from('partner_accounts')
+                .select('user_id, partner, locale')
+                .eq('user_id', userId)
+                .maybeSingle();
+            if (exErr) throw exErr;
+            if (!existing) {
+                return jsonResponse(req, { error: 'Ce compte n’a aucun accès partenaire.' }, 404);
+            }
+
+            const { error: delErr } = await admin
+                .from('partner_accounts')
+                .delete()
+                .eq('user_id', userId);
+            if (delErr) throw delErr;
+
+            // Email renvoyé pour l'affichage — résolu seulement si on ne l'avait pas.
+            let email = rawEmail;
+            if (!email) {
+                const users = await listAuthUsers(admin);
+                email = users.find((u) => u.id === userId)?.email ?? '';
+            }
+
+            return jsonResponse(req, {
+                ok: true,
+                revoked: true,
+                user_id: userId,
+                email,
+                partner: (existing as { partner: string }).partner,
+                // Rappel explicite : le compte auth n'a PAS été touché.
+                authAccountKept: true,
+            });
+        }
+
+        // === INVITE (défaut) — comportement historique inchangé ================
+        if (action !== 'invite') {
+            return jsonResponse(req, { error: `Action inconnue : ${action}` }, 400);
+        }
+
         const email = String(body.email ?? '').trim().toLowerCase();
         const partner = String(body.partner ?? '').trim();
         const locale = String(body.locale ?? 'en').trim();
 
         if (!EMAIL_RE.test(email)) return jsonResponse(req, { error: 'invalid_email' }, 400);
         if (!ALLOWED_LOCALES.includes(locale)) return jsonResponse(req, { error: 'invalid_locale' }, 400);
-
-        const admin = createClient(SUPABASE_URL, SERVICE_KEY, {
-            auth: { persistSession: false, autoRefreshToken: false },
-        });
 
         // Marque validée EN BASE (partner_profiles), plus par une liste figée
         // dans le code : ajouter un partenaire ne demande plus de redéployer

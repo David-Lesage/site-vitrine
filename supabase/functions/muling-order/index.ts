@@ -169,6 +169,7 @@ Deno.serve(async (req) => {
             price_discounted_eur: priceDiscounted,
             commission_eur: commission,
             currency: 'EUR',
+            lang,
             status: 'lead',
             fulfillment_status: 'new',
             consent_at: new Date().toISOString(),

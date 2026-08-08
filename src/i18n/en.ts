@@ -237,8 +237,10 @@ export const en: Dict = {
     orderEmail: 'Order by email',
     creationsBadge: 'David Lesage signature',
     calcOrder: 'Calculate my price & order',
-    linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: '−5% through me', onesec: 'I actually use it' },
+    linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: '−5% through me', onesec: 'I actually use it', oko: '−10% with my code' },
     linkCtas: { buy: 'See offer →', listen: 'Listen →', discover: 'Discover →', order: 'Order →', interested: 'I’m interested →' },
+    copyCode: 'Copy code',
+    codeCopied: 'Copied!',
     priceNotes: {
       hisong:
         '<strong>⚠️ Heads-up:</strong> on Hisong’s site, prices are shown <strong>excluding tax</strong> (€265.95 to €354.95 excl.). <strong>20% VAT</strong> is added at checkout. The prices above are therefore the <strong>real incl.-VAT prices</strong> — so you get no bad surprise.<br><br><strong>The good news: discounts stack.</strong><br>— my <strong>−5%</strong> code<br>— the <strong>VIP10</strong> code: −10% on your first order (applied automatically)<br>— sometimes exceptional promos of 15 to 20%<br><br><strong>Shipping:</strong> from <strong>€11.95</strong> in France — you choose the carrier at checkout.<br><br><strong>A concrete example:</strong><br>— Musician kit: ≈ <strong>€273 incl. VAT</strong> after both discounts, i.e. ≈ <strong>€285 shipping included</strong><br>— Master kit: ≈ <strong>€364 incl. VAT</strong>, i.e. ≈ <strong>€376 shipping included</strong>',
@@ -275,6 +277,7 @@ export const en: Dict = {
       'cours-prives': { name: 'Private lessons & workshops', description: 'One-to-one lessons and workshops with me — handpan, rhythm and voice. In person in Paris or online.' },
       'streaming': { name: 'My music on streaming', description: 'Find my compositions and covers on Spotify, Apple Music, Deezer and all platforms.' },
       'onesec': { name: 'one sec — take back control of your screen time', description: 'The app that genuinely helps me not get lost in the scroll. Before you open a grabby app (social media…), one sec adds a short pause — the length of a breath — and the compulsive urge fades. It’s simple, and for me it’s one of the very few things that actually worked. A science-backed approach (studies with the Max Planck Institute). Free for the essentials; get −30% off Premium through my link.' },
+      'oko': { name: 'ÖKO filtering bottle', description: 'The bottle I take everywhere, all the time, as a musician on the road — water is the single most important thing there is. Instant filtration with no wait and no electricity, tested by an independent COFRAC-accredited lab against 200+ contaminants. I’m glad to represent a product that’s perfect for every traveller. Enjoy −10% with my code.' },
     },
   },
   booking: {
