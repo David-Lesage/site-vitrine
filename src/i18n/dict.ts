@@ -245,7 +245,7 @@ const fr = {
     orderEmail: 'Commander par email',
     creationsBadge: 'Signature David Lesage',
     calcOrder: 'Calculer mon prix & commander',
-    linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: '−5 % via moi', onesec: 'J’utilise vraiment', oko: '−10 % avec mon code' },
+    linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: '−5 % via moi', onesec: 'J’utilise vraiment', oko: '−10 % avec mon code', structured: 'J’utilise vraiment' },
     linkCtas: { buy: 'Voir l’offre →', listen: 'Écouter →', discover: 'Découvrir →', order: 'Commander →', interested: 'Ce micro m’intéresse →' },
     copyCode: 'Copier le code',
     codeCopied: 'Copié !',
@@ -286,6 +286,7 @@ const fr = {
       'streaming': { name: 'Ma musique en streaming', description: 'Retrouve mes compositions et reprises sur Spotify, Apple Music, Deezer et toutes les plateformes.' },
       'onesec': { name: 'one sec — reprendre le contrôle de son temps d’écran', description: 'L’app qui m’aide vraiment à ne pas me perdre dans le scroll. Avant d’ouvrir une appli happante (réseaux sociaux…), one sec impose une courte pause — le temps d’une respiration — et l’envie compulsive retombe. C’est simple, et pour moi c’est l’une des rares choses qui a réellement fonctionné. Approche validée par la science (études avec l’Institut Max Planck). Gratuite pour l’essentiel ; profite de −30 % sur Premium via mon lien.' },
       'oko': { name: 'Gourde filtrante ÖKO', description: 'La gourde que j’emmène partout, tout le temps, en tant que musicien en déplacement — l’eau est la chose la plus importante qui soit. Filtration instantanée sans attente ni électricité, testée en laboratoire indépendant accrédité COFRAC sur plus de 200 contaminants. Je suis heureux de représenter un produit idéal pour tous les voyageurs. Profite de −10 % avec mon code.' },
+      'structured': { name: 'Structured — planning quotidien', description: 'L’app que j’utilise pour organiser mes journées de musicien-entrepreneur, entre concerts, ateliers et développement de projets. Une timeline visuelle claire au lieu d’une liste de tâches qui s’accumule. Pas encore de programme d’affiliation avec eux, je le partage simplement parce que je m’en sers vraiment.' },
     },
   },
   booking: {

@@ -237,7 +237,7 @@ export const en: Dict = {
     orderEmail: 'Order by email',
     creationsBadge: 'David Lesage signature',
     calcOrder: 'Calculate my price & order',
-    linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: '−5% through me', onesec: 'I actually use it', oko: '−10% with my code' },
+    linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: '−5% through me', onesec: 'I actually use it', oko: '−10% with my code', structured: 'I actually use it' },
     linkCtas: { buy: 'See offer →', listen: 'Listen →', discover: 'Discover →', order: 'Order →', interested: 'I’m interested →' },
     copyCode: 'Copy code',
     codeCopied: 'Copied!',
@@ -278,6 +278,7 @@ export const en: Dict = {
       'streaming': { name: 'My music on streaming', description: 'Find my compositions and covers on Spotify, Apple Music, Deezer and all platforms.' },
       'onesec': { name: 'one sec — take back control of your screen time', description: 'The app that genuinely helps me not get lost in the scroll. Before you open a grabby app (social media…), one sec adds a short pause — the length of a breath — and the compulsive urge fades. It’s simple, and for me it’s one of the very few things that actually worked. A science-backed approach (studies with the Max Planck Institute). Free for the essentials; get −30% off Premium through my link.' },
       'oko': { name: 'ÖKO filtering bottle', description: 'The bottle I take everywhere, all the time, as a musician on the road — water is the single most important thing there is. Instant filtration with no wait and no electricity, tested by an independent COFRAC-accredited lab against 200+ contaminants. I’m glad to represent a product that’s perfect for every traveller. Enjoy −10% with my code.' },
+      'structured': { name: 'Structured — daily planner', description: 'The app I use to organise my days as a musician-entrepreneur, between concerts, workshops and project development. A clear visual timeline instead of a to-do list that keeps piling up. No affiliate program with them yet — I just share it because I genuinely use it.' },
     },
   },
   booking: {

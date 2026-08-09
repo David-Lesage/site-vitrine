@@ -20,7 +20,7 @@ export interface Product {
   // libellé du bouton pour les produits 'link'
   linkLabel?: 'buy' | 'listen' | 'discover' | 'order' | 'interested'
   // pastille (plateforme / statut) pour les produits 'link' → dict.shop.linkTags
-  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec' | 'oko'
+  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec' | 'oko' | 'structured'
   // prix indicatif affiché tel quel (produits externes), ex. "299 €"
   priceLabel?: string
   // code de réduction affiché avec un bouton « copier » (produits externes, lien d'affiliation)
@@ -64,4 +64,6 @@ export const products: Product[] = [
   { id: 'onesec', price: 0, image: '/images/prod-onesec-1.webp', imgW: 1464, imgH: 1731, url: 'https://web.one-sec.app/store?deal=david30', category: 'outils', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'onesec', priceLabel: 'Gratuit · −30 % sur Premium avec mon lien', images: ['/images/prod-onesec-1.webp', '/images/prod-onesec-2.webp', '/images/prod-onesec-3.webp'] },
   // Gourde filtrante ÖKO — recommandation perso (lien d'affiliation), musicien en déplacement
   { id: 'oko', price: 0, image: '/images/prod-oko-1.png', imgW: 768, imgH: 768, url: 'https://okoeurope.com/products/gourde-filtrante?ref=DAVIDOKO', category: 'outils', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'oko', priceLabel: 'dès 63 €', discountCode: 'DAVIDOKO', videoUrls: ['https://www.youtube.com/watch?v=yHKnJPz9TkQ'], images: ['/images/prod-oko-1.png', '/images/prod-oko-2.webp', '/images/prod-oko-3.webp', '/images/prod-oko-4.webp', '/images/prod-oko-5.webp', '/images/prod-oko-6.webp'] },
+  // Structured — recommandation perso, pas encore de programme d'affiliation (David, 09/08/2026)
+  { id: 'structured', price: 0, image: '/images/prod-structured-1.png', imgW: 1200, imgH: 630, url: 'https://structured.app/', category: 'outils', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'structured' },
 ]
