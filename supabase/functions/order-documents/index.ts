@@ -11,11 +11,16 @@
 // L'appartenance de la commande à l'appelant est VÉRIFIÉE CÔTÉ SERVEUR : admin
 // via is_site_admin(), partenaire via partner_orders (RLS my_partner_scope()).
 // v3 (08/08/2026) : action `notifyShipment` — confirmation d'expédition au CLIENT.
+// v4 (09/08/2026) : objet via `mailSubject()` + corps en base64 via `htmlPart()`
+//      — deux bugs distincts de denomailer 1.6.0 (en-tête coupé, `=` échappé en
+//      `=3d` minuscule). ENJEU RÉEL ICI : le lien de facture signé contient
+//      `?token=…` ; un `=` mal décodé cassait le téléchargement. Cf. _shared/mail.ts.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
 import { corsHeadersFor, jsonResponse } from '../_shared/cors.ts';
+import { htmlPart, mailSubject } from '../_shared/mail.ts';
 
 const MAX_BYTES = 8 * 1024 * 1024;
 const ALLOWED_TYPES: Record<string, string> = {
@@ -280,8 +285,8 @@ Deno.serve(async (req) => {
                     to: customerEmail,
                     cc,
                     replyTo: ADMIN_EMAIL,
-                    subject: shipmentSubject(lang, ref),
-                    html: shipmentHtml(lang, firstName, ref, tracking, signed.signedUrl),
+                    subject: mailSubject(shipmentSubject(lang, ref)),
+                    mimeContent: [htmlPart(shipmentHtml(lang, firstName, ref, tracking, signed.signedUrl))],
                 });
             } catch (e) {
                 console.error('order-documents notifyShipment mail error:', e);

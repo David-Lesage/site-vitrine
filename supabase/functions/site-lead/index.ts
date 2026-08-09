@@ -37,10 +37,23 @@
 //      d'annulation explicite (24 h, report possible dans les 3 mois) ;
 //      la découverte privée existe désormais en 1h et en 1h30 (`demo-60` /
 //      `demo-90`, l'ancien `demo` restant accepté).
+// v16 (09/08/2026) : CORRECTIF EMAIL BRUT. Les notifications de lead arrivaient
+//      chez David en source MIME non décodée (`<!doctype html>`, `=3d`,
+//      frontières visibles). Cause : denomailer 1.6.0 insère un saut de ligne
+//      souple `=\r\n` tous les 74 caractères DANS l'en-tête `Subject:` dès que
+//      celui-ci contient un caractère non-ASCII — ce CRLF termine le bloc
+//      d'en-têtes et fait basculer `Content-Type` et le HTML dans le corps.
+//      Tout `subject:` passe désormais par `mailSubject()` (_shared/mail.ts).
+// v17 (09/08/2026) : CORRECTIF CORPS. SECOND bug, indépendant, de la même lib :
+//      `quotedPrintableEncode()` échappe `=` en `=3d` MINUSCULE, alors que la
+//      RFC 2045 §6.7 impose des hexadécimaux MAJUSCULES. Symptôme observé : la
+//      balise `<meta name="viewport">` arrivait mutilée. Les corps partent
+//      désormais en base64 via `htmlPart()` — plus de quoted-printable du tout.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
+import { htmlPart, mailSubject } from '../_shared/mail.ts';
 
 const SITE = 'https://lesagedavid.fr';
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
@@ -586,12 +599,12 @@ Deno.serve(async (req) => {
                 await client.send({
                     from,
                     to: email,
-                    subject: isBooking
+                    subject: mailSubject(isBooking
                         ? (lang === 'en' ? 'David Lesage — your request is received ✨' : 'David Lesage — ta demande est bien reçue ✨')
-                        : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨'),
-                    html: isBooking
+                        : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨')),
+                    mimeContent: [htmlPart(isBooking
                         ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots, sessionFormat, instruments, neotoneModel)
-                        : confirmationHtml(firstName, lang, wantsShowcase),
+                        : confirmationHtml(firstName, lang, wantsShowcase))],
                 });
                 emailSent = true;
                 await admin.from('site_leads').update({ confirm_sent_at: new Date().toISOString() }).eq('id', leadId);
@@ -617,12 +630,12 @@ Deno.serve(async (req) => {
                         // Un fabricant passe devant : c'est la demande la plus rare et la
                         // plus stratégique. Son pays figure dans l'objet pour situer d'un
                         // coup d'œil (le catalogue se choisit d'abord sur la localisation).
-                        subject: (
+                        subject: mailSubject((
                             isBooking ? `[Site] ${sourceLabel(source, 'fr')} — ${firstName} ${lastName}`
                             : isMaker ? `[Fabricant] ${firstName} ${lastName}${makerCountry ? ` — ${makerCountry}` : ''}`
                             : `[Bêta] Candidature — ${firstName} ${lastName}`
-                        ).trim(),
-                        html: adminNotifyHtml({
+                        ).trim()),
+                        mimeContent: [htmlPart(adminNotifyHtml({
                             Motif: isBooking
                                 ? sourceLabel(source, 'fr')
                                 : [
@@ -666,7 +679,7 @@ Deno.serve(async (req) => {
                             Message: message,
                             Page: page || null,
                             Langue: lang,
-                        }),
+                        }))],
                     });
                 } catch (notifyErr) {
                     console.error('site-lead notify error:', notifyErr);

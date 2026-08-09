@@ -12,10 +12,18 @@
 // donc c'est une vérification suffisante pour ce volume de commandes.
 //
 // v1 (08/08/2026).
+// v2 (09/08/2026) : objets d'email passés par `mailSubject()` — denomailer 1.6.0
+//      coupait l'en-tête `Subject:` avec un `=\r\n` dès qu'il dépassait 74
+//      caractères encodés, ce qui faisait basculer tous les en-têtes suivants
+//      dans le corps (email affiché en source MIME brute). Cf. _shared/mail.ts.
+// v3 (09/08/2026) : corps envoyé en base64 via `textPart()` — même lib, SECOND
+//      bug indépendant : `quotedPrintableEncode()` échappe `=` en `=3d`
+//      MINUSCULE, interdit par la RFC 2045 §6.7. Cf. _shared/mail.ts.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
+import { mailSubject, textPart } from '../_shared/mail.ts';
 
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 const MULING_EMAIL = '85846599@qq.com';
@@ -94,7 +102,7 @@ Deno.serve(async (req) => {
         if (host && user && pass && from) {
             const send = async (to: string, cc: string | undefined, subject: string, text: string) => {
                 const c = new SMTPClient({ connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } } });
-                try { await c.send({ from, to, cc, subject, content: text }); }
+                try { await c.send({ from, to, cc, subject: mailSubject(subject), mimeContent: [textPart(text)] }); }
                 catch (e) { console.error('muling-claim mail error:', e); }
                 finally { try { await c.close(); } catch { /* ignore */ } }
             };

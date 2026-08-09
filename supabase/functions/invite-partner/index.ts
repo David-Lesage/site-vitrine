@@ -34,11 +34,17 @@
 // v4 (08/08/2026) : ajout de `list` et `revoke` (David : « je veux pouvoir en
 // tant qu'admin révoquer un accès au dashboard »). `action` absent = `invite`,
 // donc les appels existants continuent de marcher à l'identique.
+// v5 (09/08/2026) : objet via `mailSubject()` + corps en base64 via `htmlPart()`
+//      — deux bugs distincts de denomailer 1.6.0 (en-tête `Subject:` coupé par un
+//      `=\r\n`, et `=` échappé en `=3d` MINUSCULE, interdit RFC 2045 §6.7).
+//      Le lien d'invitation est une URL à `?token=…` : un `=` mal décodé la
+//      cassait. Cf. _shared/mail.ts.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
 import { corsHeadersFor, jsonResponse } from '../_shared/cors.ts';
+import { htmlPart, mailSubject } from '../_shared/mail.ts';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const ALLOWED_LOCALES = ['fr', 'en', 'zh'];
@@ -295,8 +301,8 @@ Deno.serve(async (req) => {
             try {
                 await c.send({
                     from, to: email,
-                    subject: locale === 'fr' ? `Invitation — dashboard ${profile.display_name}` : `Invitation — ${profile.display_name} dashboard`,
-                    html: inviteEmailHtml(profile.display_name, linkData.properties.action_link, locale),
+                    subject: mailSubject(locale === 'fr' ? `Invitation — dashboard ${profile.display_name}` : `Invitation — ${profile.display_name} dashboard`),
+                    mimeContent: [htmlPart(inviteEmailHtml(profile.display_name, linkData.properties.action_link, locale))],
                 });
                 emailSent = true;
             } catch (e) {

@@ -29,6 +29,52 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 09/08/2026 — 🐞 CORRIGÉ : emails reçus en source MIME brute
+
+**Symptôme** : la notification « Rendez-vous individuel » arrivait chez David en source MIME
+non décodée (`<!doctype html>`, `lang=3d"fr"`, `=e2=80=94`, frontières `--attachment100`
+visibles comme du texte).
+
+**Vraie cause** (ce n'était NI le HTML sans partie texte, NI la version de denomailer —
+1.6.0 est la dernière publiée) : **denomailer 1.6.0 casse l'en-tête `Subject:`**.
+`quotedPrintableEncodeInline()` enveloppe l'objet dans `=?utf-8?Q?…?=` puis lui applique
+`quotedPrintableEncode()`, qui insère un **saut de ligne souple `=\r\n` tous les 74
+caractères — à l'intérieur de l'en-tête**. Ce CRLF, suivi d'une ligne qui ne commence pas
+par une espace, **termine le bloc d'en-têtes** (RFC 5322 §2.2.3) : `MIME-Version`,
+`Content-Type: multipart/…`, les frontières et le HTML encodé basculent dans le CORPS.
+
+Déclencheur double : objet **non-ASCII** ET **> 74 caractères** une fois encodé. D'où le
+piège qui a fait perdre du temps : le formulaire « rejoindre l'app » marchait très bien
+(`Handpan Studio — tu es sur la liste ✨` = 53 car.) alors que c'est **exactement la même
+fonction, la même lib et le même appel `.send()`** — seul l'objet, qui embarque le nom du
+visiteur, dépassait la limite. `muling-claim-payment` n'envoie que du TEXTE brut et était
+touché pareil : ce n'était donc pas un problème de HTML.
+
+**Correctif** : `supabase/functions/_shared/mail.ts` → `mailSubject()`. denomailer ne
+réécrit pas un objet déjà 100 % ASCII qui ne commence pas par `=?` : on encode donc
+nous-mêmes en mots encodés **RFC 2047 base64** (accents et emoji conservés), avec repli en
+ASCII pur en dernier recours. **Tout `subject:` passé à `.send()` doit traverser
+`mailSubject()`** — c'est la règle à ne pas oublier en ajoutant un email.
+
+Vérifié par un test réel : 6 des 16 objets réels du dépôt étaient cassés AVANT, 0 après
+(harnais qui importe le VRAI encodeur de denomailer). Envoi de bout en bout via
+`lesagedavid.fr/api/subscribe` → email reçu et rendu en HTML propre, accents corrects.
+Ligne de test supprimée de `site_leads`.
+
+Les **5** Edge Functions qui envoient des emails sont corrigées et redéployées :
+`site-lead` (v17), `muling-claim-payment` (v5), `muling-order`, `invite-partner`,
+`order-documents`. Toutes sont passées à la disposition imbriquée `<slug>/index.ts` +
+`_shared/`. ⚠️ `verify_jwt` à préserver : **false** pour `site-lead`, `muling-order`,
+`muling-claim-payment` ; **true** pour `invite-partner`, `order-documents`.
+
+**Reste à faire (non bloquant)** : denomailer encode aussi le CORPS en quoted-printable
+avec des hexadécimaux **minuscules** (`=3d`), ce que la RFC 2045 §6.7 interdit. Impact
+constaté aujourd'hui : cosmétique (balise `<meta viewport>` légèrement abîmée). Risque réel
+en revanche sur une URL contenant `?token=…` (email d'expédition `order-documents`).
+Parade propre : passer les corps en `mimeContent` base64 plutôt qu'en `html:` / `content:`.
+
+---
+
 ## ÉTAT ACTUEL — 08/08/2026 (voir aussi la section 22/07 plus bas, toujours valable)
 
 ### Commande Muling — vrai formulaire déployé

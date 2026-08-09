@@ -14,10 +14,15 @@
 // verify_jwt = false (visiteur non connecté).
 //
 // v1 (08/08/2026).
+// v2 (09/08/2026) : objet via `mailSubject()` + corps en base64 via `htmlPart()`
+//      — deux bugs distincts de denomailer 1.6.0 (en-tête `Subject:` coupé par un
+//      `=\r\n`, et `=` échappé en `=3d` MINUSCULE, interdit RFC 2045 §6.7).
+//      Cf. _shared/mail.ts.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
+import { htmlPart, mailSubject } from '../_shared/mail.ts';
 
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 const MULING_EMAIL = '85846599@qq.com';
@@ -198,7 +203,7 @@ Deno.serve(async (req) => {
         if (host && user && pass && from) {
             const send = async (to: string, cc: string | string[] | undefined, replyTo: string | undefined, subject: string, html: string) => {
                 const c = new SMTPClient({ connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } } });
-                try { await c.send({ from, to, cc, replyTo, subject, html }); return true; }
+                try { await c.send({ from, to, cc, replyTo, subject: mailSubject(subject), mimeContent: [htmlPart(html)] }); return true; }
                 catch (e) { console.error('muling-order mail error:', e); return false; }
                 finally { try { await c.close(); } catch { /* ignore */ } }
             };
