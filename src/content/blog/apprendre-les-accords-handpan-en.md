@@ -3,6 +3,7 @@ title: "Learn your chords step by step: the guided mode"
 description: "In Handpan Studio, your handpan becomes a guided surface: the app lights up the coloured note to play and walks you through, chord after chord, with sound and visual feedback."
 pubDate: 2026-08-11
 cover: "/images/app-logique.webp"
+category: "logique"
 tags: ["method", "chords", "learning"]
 lang: "en"
 permalink: "apprendre-les-accords-handpan"

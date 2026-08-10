@@ -3,6 +3,7 @@ title: "Les 4 accords magiques au handpan"
 description: "Une poignée d'accords derrière des milliers de chansons. Découvre les 4 accords magiques et joue-les au handpan avec le Mode Logique."
 pubDate: 2026-07-26
 cover: "/images/constel-polygone.webp"
+category: "logique"
 tags: ["accords", "accompagnement"]
 lang: "fr"
 permalink: "les-4-accords-magiques-handpan"

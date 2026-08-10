@@ -3,6 +3,7 @@ title: "Jouer avec les émotions : les 7 degrés colorés"
 description: "Le Mode Logique de Handpan Studio associe chaque degré à une couleur et une émotion. Construis une progression d'accords et raconte une histoire."
 pubDate: 2026-07-10
 cover: "/images/app-logique.webp"
+category: "methode"
 tags: ["méthode", "émotions"]
 lang: "fr"
 permalink: "handpan-emotions-degres"

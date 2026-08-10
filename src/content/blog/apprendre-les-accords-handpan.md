@@ -3,6 +3,7 @@ title: "Apprendre tes accords pas à pas : le mode guidé"
 description: "Dans Handpan Studio, le handpan devient une surface guidée : l'app allume la note colorée à jouer et t'accompagne, accord après accord, avec un retour sonore et visuel."
 pubDate: 2026-08-11
 cover: "/images/app-logique.webp"
+category: "logique"
 tags: ["méthode", "accords", "apprentissage"]
 lang: "fr"
 permalink: "apprendre-les-accords-handpan"

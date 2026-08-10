@@ -3,6 +3,7 @@ title: "Playing with emotions: the 7 coloured degrees"
 description: "Handpan Studio's Logic Mode ties each degree to a colour and an emotion. Build a chord progression and tell a story."
 pubDate: 2026-07-10
 cover: "/images/app-logique.webp"
+category: "methode"
 tags: ["method", "emotions"]
 lang: "en"
 permalink: "handpan-emotions-degres"

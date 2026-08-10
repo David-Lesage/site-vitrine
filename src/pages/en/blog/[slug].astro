@@ -6,6 +6,7 @@ import Button from '@/components/Button.astro'
 import YouTube from '@/components/YouTube.astro'
 import { localizePath } from '@/i18n/utils'
 import { articleLdJson, breadcrumbLdJson, videoLdJson } from '@/lib/ldJson'
+import { categoryLabel } from '@/lib/blogCategories'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (e) => e.data.lang === 'en' && !e.data.draft)
@@ -53,6 +54,12 @@ if (d.youtubeId) ldJSON.push(...videoLdJson([{ id: d.youtubeId, name: d.title, d
 
     <header class="mt-6">
       <div class="flex flex-wrap items-center gap-2 text-xs font-600 uppercase tracking-[0.12em] text-copper">
+        <a
+          href={`${localizePath('/blog', 'en')}?c=${d.category}`}
+          class="rounded-full bg-copper/15 px-3 py-1 transition-colors hover:bg-copper hover:text-cream"
+        >
+          {categoryLabel(d.category, 'en')}
+        </a>
         {d.tags.map((tag) => <span class="rounded-full bg-ink/5 px-3 py-1">{tag}</span>)}
         <time datetime={iso(d.pubDate)} class="text-ink-soft/70">{dateFmt.format(d.pubDate)}</time>
       </div>

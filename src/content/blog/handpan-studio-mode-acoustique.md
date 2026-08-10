@@ -3,6 +3,7 @@ title: "Utiliser Handpan Studio sur ton handpan acoustique (gratuit)"
 description: "Le mode acoustique de Handpan Studio visualise TA gamme en couleurs sur ton propre handpan et t'apprend des accords. Gratuit, sans Neotone."
 pubDate: 2026-07-14
 cover: "/images/app-acoustique.jpg"
+category: "acoustique"
 tags: ["acoustique", "débuter"]
 lang: "fr"
 permalink: "handpan-studio-mode-acoustique"

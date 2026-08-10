@@ -3,6 +3,7 @@ title: "The 4 magic chords on handpan"
 description: "A handful of chords behind thousands of songs. Discover the 4 magic chords and play them on handpan with Logic Mode."
 pubDate: 2026-07-26
 cover: "/images/constel-polygone.webp"
+category: "logique"
 tags: ["chords", "accompaniment"]
 lang: "en"
 permalink: "les-4-accords-magiques-handpan"

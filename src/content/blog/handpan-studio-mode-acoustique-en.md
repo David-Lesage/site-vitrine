@@ -3,6 +3,7 @@ title: "Using Handpan Studio on your acoustic handpan (free)"
 description: "Handpan Studio's acoustic mode shows YOUR scale in colour on your own handpan and teaches you chords. Free, no Neotone needed."
 pubDate: 2026-07-14
 cover: "/images/app-acoustique.jpg"
+category: "acoustique"
 tags: ["acoustic", "getting started"]
 lang: "en"
 permalink: "handpan-studio-mode-acoustique"

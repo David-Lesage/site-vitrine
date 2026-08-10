@@ -3,6 +3,7 @@ title: "Jouer au casque avec le Neotone : ta bulle immersive"
 description: "Le Neotone, handpan électronique, se joue au casque : sans déranger personne, dans un son stéréo spatialisé d'une pureté totale. L'atout discret de l'électronique."
 pubDate: 2026-08-03
 cover: "/images/neotone-hero-david.webp"
+category: "neotone"
 tags: ["neotone", "son"]
 lang: "fr"
 permalink: "jouer-et-chanter-au-casque-neotone"

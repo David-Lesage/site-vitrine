@@ -3,6 +3,7 @@ title: "Keep and share your chords: the score editor"
 description: "Export your progressions and visual scores as PDF or PNG to review, keep or pass on. Handpan Studio's visual score editor."
 pubDate: 2026-08-07
 cover: "/images/app-creation.webp"
+category: "partitions"
 tags: ["score", "tools"]
 lang: "en"
 permalink: "exporter-ses-partitions-handpan"

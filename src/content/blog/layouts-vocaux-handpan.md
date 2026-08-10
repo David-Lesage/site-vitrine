@@ -3,6 +3,7 @@ title: "Les layouts vocaux : accompagner chaque voix"
 description: "Profond, Brillant, Ample : trois dispositions du Mode Logique qui adaptent les accords à la tessiture du chanteur pour que la voix se pose."
 pubDate: 2026-07-22
 cover: "/images/invisible-visible.webp"
+category: "chant"
 tags: ["chant", "accompagnement"]
 lang: "fr"
 permalink: "layouts-vocaux-handpan"

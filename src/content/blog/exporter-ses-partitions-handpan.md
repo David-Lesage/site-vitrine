@@ -3,6 +3,7 @@ title: "Garder et partager tes accords : l'éditeur de partition"
 description: "Exporte tes progressions et partitions visuelles en PDF ou PNG pour réviser, garder ou transmettre. L'éditeur de partition de Handpan Studio."
 pubDate: 2026-08-07
 cover: "/images/app-creation.webp"
+category: "partitions"
 tags: ["partition", "outils"]
 lang: "fr"
 permalink: "exporter-ses-partitions-handpan"

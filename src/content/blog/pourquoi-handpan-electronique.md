@@ -4,6 +4,7 @@ description: "Casque de nuit, gammes infinies, effets, MIDI, qualité studio : d
 pubDate: 2026-06-22
 updatedDate: 2026-06-22
 cover: "/images/neotone-hero-david.webp"
+category: "neotone"
 tags: ["neotone", "électronique"]
 lang: "fr"
 permalink: "pourquoi-handpan-electronique"

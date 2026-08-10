@@ -3,6 +3,7 @@ title: "The Sound Atlas: travelling through the world's scales"
 description: "Handpan Studio's Atlas lets you roam handpan scales from around the world, hear them and see them in colour. A sonic journey."
 pubDate: 2026-07-06
 cover: "/images/blog-atlas-destinations.webp"
+category: "gammes"
 tags: ["scales", "atlas"]
 lang: "en"
 permalink: "atlas-des-gammes-de-handpan"

@@ -3,6 +3,7 @@ title: "Vocal layouts: accompanying every voice"
 description: "Deep, Bright, Wide: three Logic Mode layouts that adapt the chords to the singer's range so the voice settles naturally."
 pubDate: 2026-07-22
 cover: "/images/invisible-visible.webp"
+category: "chant"
 tags: ["singing", "accompaniment"]
 lang: "en"
 permalink: "layouts-vocaux-handpan"

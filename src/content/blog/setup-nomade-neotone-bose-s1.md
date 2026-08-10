@@ -3,6 +3,7 @@ title: "Setup nomade : Neotone + Bose S1 Pro+, le combo du musicien autonome"
 description: "Jouer partout sans prise de courant : le Neotone et la Bose S1 Pro+ forment un setup 100 % sur batterie, monté en une minute. Matériel, budget et liens d'achat."
 pubDate: 2026-07-17
 cover: "/images/blog-setup-nomade.webp"
+category: "neotone"
 tags: ["neotone", "matériel", "son"]
 lang: "fr"
 permalink: "setup-nomade-neotone-bose-s1"

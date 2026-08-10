@@ -3,6 +3,7 @@ title: "My advice for being fully in the sound with a Neotone"
 description: "The Neotone has no built-in speaker: where should you place yours to be truly in the sound? My advice — behind you, at head height — with diagrams."
 pubDate: 2026-07-16
 cover: "/images/blog-son-neotone-schema.svg"
+category: "neotone"
 tags: ["neotone", "sound", "gear"]
 lang: "en"
 permalink: "etre-bien-dans-le-son-neotone"

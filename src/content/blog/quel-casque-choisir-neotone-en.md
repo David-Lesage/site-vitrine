@@ -3,6 +3,7 @@ title: "Which headphones for playing the Neotone?"
 description: "Open-back headphones at home, in-ears on stage: my real listening setup with the Neotone — Beyerdynamic DT-990 Pro, KZ ZS12 Pro X in-ears and X-vive U4 wireless, with prices and links."
 pubDate: 2026-07-19
 cover: "/images/blog-casque-neotone.webp"
+category: "neotone"
 tags: ["neotone", "gear", "sound"]
 lang: "en"
 permalink: "quel-casque-choisir-neotone"

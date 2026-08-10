@@ -3,6 +3,7 @@ title: "Improve Handpan Studio with me: the feedback feature"
 description: "Handpan Studio evolves thanks to you: from inside the app, send a bug, an idea, a question or a thought in one click. Every message is read and shapes what comes next."
 pubDate: 2026-08-23
 cover: "/images/app-logique.webp"
+category: "communaute"
 tags: ["community", "feedback"]
 lang: "en"
 permalink: "feedback-ameliorer-handpan-studio"

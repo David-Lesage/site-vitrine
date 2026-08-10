@@ -4,6 +4,7 @@ description: "Night headphones, endless scales, effects, MIDI, studio quality: d
 pubDate: 2026-06-22
 updatedDate: 2026-06-22
 cover: "/images/neotone-hero-david.webp"
+category: "neotone"
 tags: ["neotone", "electronic"]
 lang: "en"
 permalink: "pourquoi-handpan-electronique"

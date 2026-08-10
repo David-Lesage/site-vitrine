@@ -3,6 +3,7 @@ title: "Accompagner des chansons au handpan, comme une guitare"
 description: "Le Mode Logique fait passer le handpan d'un instrument de nappes méditatives à un vrai instrument d'accompagnement de chansons, sans solfège."
 pubDate: 2026-07-18
 cover: "/images/app-logique.webp"
+category: "logique"
 tags: ["méthode", "accompagnement"]
 lang: "fr"
 permalink: "accompagner-des-chansons-au-handpan"

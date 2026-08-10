@@ -3,6 +3,7 @@ title: "Quel casque choisir pour jouer avec le Neotone ?"
 description: "Casque ouvert à la maison, intras sur scène : mon setup d'écoute réel avec le Neotone — Beyerdynamic DT-990 Pro, intras KZ ZS12 Pro X et sans-fil X-vive U4, avec prix et liens."
 pubDate: 2026-07-19
 cover: "/images/blog-casque-neotone.webp"
+category: "neotone"
 tags: ["neotone", "matériel", "son"]
 lang: "fr"
 permalink: "quel-casque-choisir-neotone"

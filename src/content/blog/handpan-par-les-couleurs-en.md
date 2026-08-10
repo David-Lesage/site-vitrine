@@ -3,6 +3,7 @@ title: "Playing handpan by colours: the ChromaKeys method"
 description: "Learn handpan without music theory using ChromaKeys: every note becomes a colour, every chord a shape. David Lesage's visual method to progress fast."
 pubDate: 2026-06-15
 cover: "/images/constel-polygone.webp"
+category: "methode"
 tags: ["method", "getting started"]
 lang: "en"
 permalink: "handpan-par-les-couleurs"

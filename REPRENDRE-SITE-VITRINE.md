@@ -29,6 +29,53 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 10/08/2026 — Blog : 7 nouveaux articles + filtre par catégorie
+
+**Contexte** : le blog n'avait plus bougé depuis le 19/07/2026 (dernière vague d'écriture,
+`git log src/content/blog/`), alors que l'app a livré ~80 entrées de changelog depuis.
+Deux chantiers livrés d'un coup.
+
+### 1. Filtre par sujet sur la liste du blog
+- Nouveau champ **`category`** dans le schéma (`src/content.config.ts`) — **obligatoire** :
+  un article sans catégorie fait échouer le build (voulu, plutôt qu'une mauvaise case en silence).
+- Taxonomie + libellés FR/EN dans **`src/lib/blogCategories.ts`** (8 catégories, slugs neutres) :
+  `methode` · `logique` · `acoustique` · `gammes` · `partitions` · `chant` · `neotone` · `communaute`.
+- UI : **`src/components/BlogFilter.astro`** (puces `rounded-full` du design system, compteurs,
+  `aria-pressed`, lien profond `?c=<slug>`, masquage en `style.display` — PAS la classe `.hidden`,
+  qui perdrait contre l'utilitaire `flex` des cartes).
+- Les **40 articles existants ont été rétro-catégorisés** un par un (pas deviné depuis le titre).
+- La carte de liste affiche désormais le **libellé de catégorie** au lieu du 1er tag ; la page
+  d'article affiche une puce catégorie **cliquable** vers `/blog?c=<slug>` (+ ses tags).
+- Les `tags` restent libres et ne servent PAS au filtre.
+
+### 2. Sept nouveaux articles (FR + EN = 14 fichiers)
+Couvrent ce qui a été livré dans l'app depuis le 20/07, **hors expérimental** :
+éditeur de mélodies · Bibliothèque musicale + synchro cloud · barre d'accompagnement + batteur ·
+mode Hybride / 2 handpans · les 3 nuances du mineur · Jam Rapide · la partition qui se joue (Pupitre, ×N).
+Dates de publication : 27/08 → 20/09 (la cadence du blog date en avance ; le dernier article
+existant est daté du 23/08).
+
+**🚫 Volontairement PAS écrits** (vérifié dans `auth/capabilities.ts` + `labo/feature-status.ts`
+de l'app) : **Chanter & Jouer** (`cap.singplay` n'est PAS dans les droits Studio — seulement
+prof/élève/admin, statut `lab`), Mode Scène (`lab`), Pluie de notes (`lab`), coques sur mesure
+(`lab`), Mode Enseignant, Labo, dashboards admin/partenaires, bêta fermée. Règle à garder :
+**avant d'écrire sur une fonction, vérifier son statut réel dans le dépôt de l'app.**
+
+### Point à surveiller
+La couverture de l'article Hybride réutilise `/images/blog-bottom-coques.webp` (deux coques
+côte à côte, capture réelle mais issue de l'affichage « bottom notes »). À remplacer par une
+vraie capture du bandeau 🌗 Hybride quand David en aura une.
+
+### ⚠️ node_modules local était cassé
+Le nettoyage des fichiers `Icon` (artefacts iCloud, commit `ac760cf`) a supprimé **tous** les
+fichiers dont le nom commence par `icon` dans `node_modules` (APFS insensible à la casse) →
+le build échouait. Réparé par `rm -rf node_modules && npm install --no-package-lock`, puis
+`npm install --no-save --no-package-lock vite@7.3.5 @tailwindcss/vite@4.3.1 tailwindcss@4.3.1`
+pour retrouver les versions de `bun.lock` (npm résolvait vite 8 → incompatible avec Tailwind).
+`package.json` et `bun.lock` n'ont PAS été touchés. Si ça recasse : refaire ces deux commandes.
+
+---
+
 ## ÉTAT ACTUEL — 09/08/2026 — 🐞 CORRIGÉ : emails reçus en source MIME brute
 
 **Symptôme** : la notification « Rendez-vous individuel » arrivait chez David en source MIME
@@ -216,6 +263,13 @@ Table `affiliate_sales` + `neotone_coupon_pool`, vues `affiliate_revenue` et
 ---
 
 ## Journal
+
+### 10/08/2026
+- Blog : filtre par catégorie (8 sujets, FR/EN, lien profond `?c=`) + 40 articles existants
+  rétro-catégorisés + 7 nouveaux articles bilingues sur les fonctions livrées depuis le 19/07.
+- Écarté volontairement du blog : tout ce qui est `experimental` / `lab` côté app
+  (Chanter & Jouer, Mode Scène, Pluie de notes, coques sur mesure, Enseignant, Labo, admin).
+- Réparation de `node_modules` (fichiers `icon*` supprimés par le nettoyage iCloud).
 
 ### 06/08/2026 (suite)
 - Dashboard ventes : fondations en base + import du Sheet Soundventure (22 ventes,

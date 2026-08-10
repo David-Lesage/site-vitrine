@@ -3,6 +3,7 @@ title: "Le handpan par les couleurs : la méthode ChromaKeys"
 description: "Apprends le handpan sans solfège grâce aux ChromaKeys : chaque note devient une couleur, chaque accord une forme. La méthode visuelle de David Lesage pour progresser vite."
 pubDate: 2026-06-15
 cover: "/images/constel-polygone.webp"
+category: "methode"
 tags: ["méthode", "débuter"]
 lang: "fr"
 permalink: "handpan-par-les-couleurs"

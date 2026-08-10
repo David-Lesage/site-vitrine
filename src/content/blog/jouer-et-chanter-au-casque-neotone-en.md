@@ -3,6 +3,7 @@ title: "Playing the Neotone with headphones: your immersive bubble"
 description: "The Neotone, an electronic handpan, plays through headphones: disturbing no one, in spatialised stereo sound of total purity. The discreet strength of electronic."
 pubDate: 2026-08-03
 cover: "/images/neotone-hero-david.webp"
+category: "neotone"
 tags: ["neotone", "sound"]
 lang: "en"
 permalink: "jouer-et-chanter-au-casque-neotone"

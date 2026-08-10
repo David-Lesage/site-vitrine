@@ -3,6 +3,7 @@ title: "Accompanying songs on handpan, like a guitar"
 description: "Logic Mode turns the handpan from a meditative drone instrument into a real song-accompaniment instrument, no music theory needed."
 pubDate: 2026-07-18
 cover: "/images/app-logique.webp"
+category: "logique"
 tags: ["method", "accompaniment"]
 lang: "en"
 permalink: "accompagner-des-chansons-au-handpan"

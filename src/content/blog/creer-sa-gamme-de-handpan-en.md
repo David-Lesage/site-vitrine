@@ -3,6 +3,7 @@ title: "How to create your own handpan scale (tutorial)"
 description: "Understand what a handpan scale is and learn to build your own, for free, in Handpan Studio's acoustic mode — then share it with the community."
 pubDate: 2026-06-29
 cover: "/images/app-creation.webp"
+category: "gammes"
 tags: ["scales", "tutorial"]
 lang: "en"
 permalink: "creer-sa-gamme-de-handpan"

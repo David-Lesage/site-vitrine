@@ -3,6 +3,7 @@ title: "Améliore Handpan Studio avec moi : la fonction feedback"
 description: "Handpan Studio évolue grâce à toi : depuis l'app, envoie un bug, une idée, une question ou un avis en un clic. Chaque message est lu et oriente les prochaines nouveautés."
 pubDate: 2026-08-23
 cover: "/images/app-logique.webp"
+category: "communaute"
 tags: ["communauté", "feedback"]
 lang: "fr"
 permalink: "feedback-ameliorer-handpan-studio"

@@ -3,6 +3,7 @@ title: "Mon conseil pour être bien dans le son avec un Neotone"
 description: "Le Neotone n'a pas de haut-parleur : où placer ton enceinte pour être vraiment dans le son ? Mon conseil — derrière toi, à hauteur de tête — schémas à l'appui."
 pubDate: 2026-07-16
 cover: "/images/blog-son-neotone-schema.svg"
+category: "neotone"
 tags: ["neotone", "son", "matériel"]
 lang: "fr"
 permalink: "etre-bien-dans-le-son-neotone"

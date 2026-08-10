@@ -3,6 +3,7 @@ title: "Transposer pour chanter dans ta tonalité"
 description: "Ta voix ne tombe pas juste avec le handpan ? Déplace la note d'ancrage d'un geste et change de tonalité pour chanter dans ta hauteur."
 pubDate: 2026-07-30
 cover: "/images/app-atlas.webp"
+category: "chant"
 tags: ["chant", "astuce"]
 lang: "fr"
 permalink: "transposer-pour-chanter-handpan"

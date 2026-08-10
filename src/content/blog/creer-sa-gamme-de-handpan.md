@@ -3,6 +3,7 @@ title: "Comment créer sa gamme de handpan (tutoriel)"
 description: "Comprends ce qu'est une gamme de handpan et apprends à créer la tienne, gratuitement, dans le mode acoustique de Handpan Studio — puis à la partager avec la communauté."
 pubDate: 2026-06-29
 cover: "/images/app-creation.webp"
+category: "gammes"
 tags: ["gammes", "tutoriel"]
 lang: "fr"
 permalink: "creer-sa-gamme-de-handpan"

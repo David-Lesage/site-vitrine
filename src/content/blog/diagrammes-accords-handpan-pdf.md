@@ -3,6 +3,7 @@ title: "Créer et exporter tes diagrammes d'accords en PDF"
 description: "Chaque accord dessiné comme un mini-handpan coloré : notes, ordre de jeu, doigté suggéré. Exporte tes diagrammes d'accords en PDF ou PNG imprimable."
 pubDate: 2026-08-19
 cover: "/images/blog-grille-accords-familles.webp"
+category: "partitions"
 tags: ["diagrammes", "accords", "pdf"]
 lang: "fr"
 permalink: "diagrammes-accords-handpan-pdf"
