@@ -50,7 +50,10 @@ const ASCII_FOLD: Record<string, string> = {
 function asciiFold(s: string): string {
     const folded = s
         .normalize('NFKD')
-        .replace(/[̀-ͯ]/g, '') // accents combinants : é → e, ç → c
+        // \u0300-\u036f = marques diacritiques combinantes. Écrites en ESCAPES et non
+        // en caractères littéraux : un signe combinant nu dans une source est invisible
+        // dans un éditeur et ne survit pas à tous les copier-coller.
+        .replace(/[\u0300-\u036f]/g, '') // accents combinants : é → e, ç → c
         .replace(/[^\x20-\x7E]/g, (c) => ASCII_FOLD[c] ?? '')
         .replace(/ {2,}/g, ' ')
         .trim();

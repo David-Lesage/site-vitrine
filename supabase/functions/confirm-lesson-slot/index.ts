@@ -18,17 +18,40 @@
 // texte libre — beaucoup de pièces fragiles pour le même résultat. Un lien signé
 // donne le même geste (« je réponds depuis ma boîte mail »), en fiable.
 //
+// ── POURQUOI DU TEXTE BRUT ET PAS DU HTML (correctif 10/08/2026) ─────────────
+// La passerelle des Edge Functions RÉÉCRIT toute réponse `text/html` en
+// `content-type: text/plain` (+ `X-Content-Type-Options: nosniff` et une CSP
+// `default-src 'none'; sandbox`) sur le domaine partagé *.supabase.co — mesure
+// anti-hameçonnage : personne ne doit pouvoir servir une page depuis ce domaine.
+// Vérifié sur TROIS fonctions indépendantes (celle-ci, `google-calendar`, et
+// `unsubscribe-updates` qui est en production depuis juillet).
+//
+// Conséquence observée en vrai : le `charset=utf-8` de notre en-tête disparaît
+// avec le type, le navigateur retombe sur du Latin-1, et David a lu
+// « CrÃ©neau dÃ©jÃ  confirmÃ© ». Le HTML lui-même n'était de toute façon plus
+// interprété (affiché en texte).
+//
+// On ne se bat donc pas contre la passerelle : on renvoie du TEXTE BRUT propre,
+// avec DEUX ceintures pour l'encodage —
+//   1. `Content-Type: text/plain; charset=utf-8` (type déjà « plain » : la
+//      passerelle n'a plus de raison de le réécrire, le charset survit) ;
+//   2. un BOM UTF-8 en tête de corps, qui force le navigateur en UTF-8 même si
+//      un intermédiaire venait à retirer le charset (priorité n°1 de l'algorithme
+//      de détection d'encodage HTML5).
+//
 // ── SÉCURITÉ ─────────────────────────────────────────────────────────────────
 //   • verify_jwt = false : le lien est cliqué depuis une boîte mail, sans session.
 //     La preuve d'autorisation EST le jeton signé HMAC (voir _shared/lesson-token.ts),
 //     lié à un cours + un créneau + une date d'expiration.
-//   • Aucune donnée n'est acceptée depuis l'URL en dehors du jeton : ni identifiant
-//     de cours en clair, ni date modifiable.
-//   • Écriture ATOMIQUE conditionnée à `status = 'proposed'` : deux clics (deux
-//     onglets, deux liens) ne peuvent pas confirmer deux fois ni envoyer deux emails.
-//   • Les robots d'analyse de liens de certaines messageries suivent les URL d'un
-//     email : les requêtes HEAD et celles qui s'annoncent comme pré-chargement
-//     sont servies SANS RIEN ÉCRIRE.
+//   • Aucune donnée n'est acceptée depuis l'URL en dehors du jeton.
+//   • Écriture ATOMIQUE conditionnée à `status = 'proposed'` : deux requêtes
+//     concurrentes ne peuvent ni confirmer deux fois ni envoyer deux emails.
+//   • Requêtes HEAD et pré-chargements annoncés : servis SANS AUCUNE écriture.
+//   • IDEMPOTENCE (correctif 10/08/2026) : recliquer LE MÊME lien réaffiche la
+//     page de succès (sans rien réécrire ni renvoyer d'email) au lieu d'un
+//     inquiétant « déjà confirmé ». Un lien d'email est cliqué deux fois plus
+//     souvent qu'on ne le croit — relance, aperçu de la messagerie, ou
+//     simplement quelqu'un qui recharge la page.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -38,41 +61,46 @@ import { verifySlotToken } from '../_shared/lesson-token.ts';
 
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 
+/**
+ * BOM UTF-8 : seconde ceinture d'encodage (cf. en-tête de fichier).
+ * Écrit en ESCAPE et non en caractère littéral : un BOM nu dans une source est
+ * invisible dans un éditeur et ne survit pas à tous les copier-coller.
+ */
+const BOM = '\uFEFF';
+
+const RULE = '─'.repeat(46);
+
 function esc(s: unknown): string {
     return String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!));
 }
 
 // -----------------------------------------------------------------------------
-// Pages de retour (ce que David voit après son clic)
+// Page de retour (ce que David voit après son clic) — TEXTE BRUT, UTF-8
 // -----------------------------------------------------------------------------
 
-type PageTone = 'ok' | 'info' | 'error';
+function page(icon: string, title: string, lines: string[], status = 200): Response {
+    const body =
+        BOM +
+        `${icon}  ${title.toUpperCase()}\n` +
+        `${RULE}\n\n` +
+        lines.filter(Boolean).join('\n\n') +
+        `\n\n${RULE}\n` +
+        `Tu peux fermer cette page.\n` +
+        `Le cours reste modifiable dans l'application :\n` +
+        `🎓 Enseignement → 📅 Agenda\n`;
 
-function page(tone: PageTone, title: string, message: string, extra = '', status = 200): Response {
-    const icon = tone === 'ok' ? '✅' : tone === 'info' ? 'ℹ️' : '⚠️';
-    const accent = tone === 'ok' ? '#15803d' : tone === 'info' ? '#b45309' : '#b91c1c';
-    return new Response(
-        `<!doctype html><html lang="fr"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)}</title></head>
-<body style="margin:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-  <div style="max-width:560px;margin:56px auto;padding:0 16px;">
-    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:30px;text-align:center;">
-      <div style="font-size:44px;line-height:1;">${icon}</div>
-      <h1 style="font-size:21px;margin:14px 0 10px;color:${accent};">${esc(title)}</h1>
-      <p style="color:#374151;font-size:15px;line-height:1.65;margin:0;">${message}</p>
-      ${extra}
-      <p style="color:#9ca3af;font-size:12px;margin:24px 0 0;line-height:1.5;">
-        Tu peux fermer cette page. Le cours reste modifiable dans l'application,
-        onglet <strong>🎓 Enseignement → 📅 Agenda</strong>.
-      </p>
-    </div>
-  </div>
-</body></html>`,
-        { status, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } },
-    );
+    return new Response(body, {
+        status,
+        headers: {
+            // Type DÉJÀ « plain » : la passerelle Supabase ne le réécrit pas, donc
+            // le charset survit. Le BOM couvre le cas où il sauterait quand même.
+            'Content-Type': 'text/plain; charset=utf-8',
+            'Cache-Control': 'no-store',
+        },
+    });
 }
 
-/** « jeudi 13 août 2026 à 14:30 » (heure de Paris — celle du cours). */
+/** « samedi 22 août 2026 à 18:00 » (heure de Paris — celle du cours). */
 function frDateTime(iso: string): string {
     const d = new Date(iso);
     if (Number.isNaN(d.getTime())) return iso;
@@ -92,7 +120,8 @@ function enDateTime(iso: string): string {
 }
 
 // -----------------------------------------------------------------------------
-// Email de confirmation envoyé à l'élève
+// Email de confirmation envoyé à l'élève (HTML : là, pas de passerelle qui
+// réécrit quoi que ce soit — c'est du MIME, encodé par _shared/mail.ts)
 // -----------------------------------------------------------------------------
 
 function studentHtml(
@@ -184,6 +213,13 @@ interface LessonRow {
     source_ref: string | null;
 }
 
+const COLS = 'id, status, starts_at, duration_min, mode, location, title, student_name, student_email, source_ref';
+
+/** Deux instants à la minute près = le même créneau. */
+function sameSlot(a: string | null, b: string): boolean {
+    return Boolean(a) && Math.abs(new Date(a as string).getTime() - new Date(b).getTime()) < 60_000;
+}
+
 Deno.serve(async (req) => {
     const url = new URL(req.url);
 
@@ -195,24 +231,22 @@ Deno.serve(async (req) => {
         (req.headers.get('sec-purpose') ?? '').toLowerCase().includes('prefetch');
 
     if (req.method !== 'GET' && req.method !== 'HEAD') {
-        return page('error', 'Méthode non autorisée', 'Ce lien s’ouvre depuis un email.', '', 405);
+        return page('⚠️', 'Méthode non autorisée', ['Ce lien s’ouvre depuis un email.'], 405);
     }
 
     try {
         const token = url.searchParams.get('t') ?? '';
         const payload = await verifySlotToken(token);
         if (!payload) {
-            return page(
-                'error',
-                'Lien invalide ou expiré',
-                'Ce lien de confirmation n’est plus valable. Ouvre l’application (<strong>🎓 Enseignement → 📅 Agenda</strong>) pour retenir un créneau.',
-                '', 400,
-            );
+            return page('⚠️', 'Lien invalide ou expiré', [
+                'Ce lien de confirmation n’est plus valable.',
+                'Ouvre l’application pour retenir un créneau à la main.',
+            ], 400);
         }
 
         if (prefetch) {
             // Réponse neutre, sans écriture : un robot ne doit jamais confirmer.
-            return page('info', 'Prêt à confirmer', 'Ouvre ce lien pour confirmer le créneau.');
+            return page('🔗', 'Prêt à confirmer', ['Ouvre ce lien dans ton navigateur pour confirmer le créneau.']);
         }
 
         const admin = createClient(
@@ -221,10 +255,8 @@ Deno.serve(async (req) => {
             { auth: { persistSession: false, autoRefreshToken: false } },
         );
 
-        const COLS = 'id, status, starts_at, duration_min, mode, location, title, student_name, student_email, source_ref';
-
-        // 1) Écriture ATOMIQUE : ne bascule QUE depuis `proposed`. Deux clics
-        //    concurrents ⇒ un seul gagne, donc un seul email à l'élève.
+        // 1) Écriture ATOMIQUE : ne bascule QUE depuis `proposed`. Deux requêtes
+        //    concurrentes ⇒ une seule gagne, donc un seul email à l'élève.
         const { data: updated, error: updErr } = await admin
             .from('lessons')
             .update({ starts_at: payload.slotIso, status: 'confirmed' })
@@ -235,31 +267,40 @@ Deno.serve(async (req) => {
 
         if (updErr) {
             console.error('confirm-lesson-slot update error:', updErr);
-            return page('error', 'Confirmation impossible', 'Une erreur technique est survenue. Réessaie dans un instant, ou passe par l’application.', '', 500);
+            return page('⚠️', 'Confirmation impossible', [
+                'Une erreur technique est survenue.',
+                'Réessaie dans un instant, ou passe par l’application.',
+            ], 500);
         }
 
         // 2) Rien mis à jour : soit le cours n'existe plus, soit il n'est plus
-        //    « à traiter » (déjà confirmé / annulé / terminé). On relit pour le dire.
+        //    « à traiter ». On relit pour dire précisément où on en est.
         if (!updated) {
             const { data: current } = await admin.from('lessons').select(COLS).eq('id', payload.lessonId).maybeSingle();
             const lesson = current as LessonRow | null;
             if (!lesson) {
-                return page('error', 'Demande introuvable', 'Cette demande de cours n’existe plus.', '', 404);
+                return page('⚠️', 'Demande introuvable', ['Cette demande de cours n’existe plus.'], 404);
             }
             if (lesson.status === 'confirmed') {
-                const same = lesson.starts_at && Math.abs(new Date(lesson.starts_at).getTime() - new Date(payload.slotIso).getTime()) < 60_000;
-                return page(
-                    'info',
-                    same ? 'Créneau déjà confirmé' : 'Un autre créneau est déjà confirmé',
-                    same
-                        ? `Ce cours est déjà confirmé pour le <strong style="text-transform:capitalize;">${esc(frDateTime(lesson.starts_at as string))}</strong>. ${lesson.student_name ? esc(lesson.student_name) + ' a' : 'La personne a'} déjà été prévenu·e — rien n’a été renvoyé.`
-                        : `Ce cours a déjà été confirmé pour le <strong style="text-transform:capitalize;">${esc(frDateTime(lesson.starts_at as string))}</strong>. Pour changer de date, passe par l’application : la personne serait sinon prévenue deux fois.`,
-                );
+                const who = lesson.student_name || lesson.student_email || 'La personne';
+                // MÊME créneau que ce lien : le lien a DÉJÀ fait son travail.
+                // On réaffiche donc un succès, pas une alerte (idempotence).
+                if (sameSlot(lesson.starts_at, payload.slotIso)) {
+                    return page('✅', 'Créneau confirmé', [
+                        frDateTime(lesson.starts_at as string),
+                        `${who} a bien été prévenu·e par email.`,
+                        '(Ce lien avait déjà été utilisé — rien n’a été renvoyé.)',
+                    ]);
+                }
+                return page('ℹ️', 'Un autre créneau est déjà confirmé', [
+                    `Ce cours est confirmé pour le ${frDateTime(lesson.starts_at as string)}.`,
+                    'Pour changer de date, passe par l’application : sinon la personne serait prévenue deux fois.',
+                ]);
             }
             if (lesson.status === 'cancelled') {
-                return page('info', 'Cours annulé', 'Cette demande a été annulée. Rien n’a été modifié.');
+                return page('ℹ️', 'Cours annulé', ['Cette demande a été annulée. Rien n’a été modifié.']);
             }
-            return page('info', 'Cours déjà terminé', 'Ce cours est marqué comme terminé. Rien n’a été modifié.');
+            return page('ℹ️', 'Cours déjà terminé', ['Ce cours est marqué comme terminé. Rien n’a été modifié.']);
         }
 
         const lesson = updated as LessonRow;
@@ -308,18 +349,15 @@ Deno.serve(async (req) => {
             }
         }
 
-        const who = lesson.student_name || lesson.student_email || 'la personne';
-        const extra = `<p style="margin:18px 0 0;padding:12px 14px;background:#faf5ef;border:1px solid #e7d9c6;border-radius:10px;color:#374151;font-size:15px;line-height:1.6;text-transform:capitalize;">${esc(frDateTime(payload.slotIso))}</p>`;
-        return page(
-            'ok',
-            'Créneau confirmé',
+        const who = lesson.student_name || lesson.student_email || 'La personne';
+        return page('✅', 'Créneau confirmé', [
+            frDateTime(payload.slotIso),
             mailed
-                ? `<strong>${esc(who)}</strong> vient d’être prévenu·e par email du créneau retenu.`
-                : `Le créneau est enregistré. ⚠️ L’email de confirmation n’a pas pu partir : préviens <strong>${esc(who)}</strong> toi-même.`,
-            extra,
-        );
+                ? `${who} vient d’être prévenu·e par email.`
+                : `⚠️ L’email de confirmation n’a pas pu partir : préviens ${who} toi-même.`,
+        ]);
     } catch (err) {
         console.error('confirm-lesson-slot error:', err);
-        return page('error', 'Erreur', 'Une erreur inattendue est survenue.', '', 500);
+        return page('⚠️', 'Erreur', ['Une erreur inattendue est survenue.'], 500);
     }
 });
