@@ -56,11 +56,16 @@
 //      reste envoyé exactement comme avant, RIEN n'est retiré. Le prof
 //      destinataire est résolu par `resolve_booking_teacher(slug)` : aucun UUID
 //      en dur, un 2ᵉ prof n'aura qu'à envoyer son `teacherSlug`.
+// v19 (10/08/2026) : CONFIRMER UN CRÉNEAU DEPUIS L'EMAIL. La notification à
+//      David porte désormais un BOUTON PAR CRÉNEAU proposé. Un clic confirme le
+//      cours ET envoie l'email de confirmation à la personne, sans ouvrir l'app
+//      (Edge Function `confirm-lesson-slot` + jeton signé _shared/lesson-token.ts).
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
 import { htmlPart, mailSubject } from '../_shared/mail.ts';
+import { canSignSlotTokens, signSlotToken } from '../_shared/lesson-token.ts';
 
 const SITE = 'https://lesagedavid.fr';
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
@@ -445,8 +450,12 @@ function bookingHtml(
 `);
 }
 
-/** Notification interne à David : tout ce qu'il faut pour rappeler la personne. */
-function adminNotifyHtml(f: Record<string, string | number | null>): string {
+/**
+ * Notification interne à David : tout ce qu'il faut pour rappeler la personne.
+ * `extraHtml` = bloc optionnel ajouté APRÈS le tableau (v19 : les boutons
+ * « Confirmer ce créneau »).
+ */
+function adminNotifyHtml(f: Record<string, string | number | null>, extraHtml = ''): string {
     const row = (k: string, v: string | number | null) =>
         v === null || v === '' ? '' :
         `<tr><td style="padding:5px 0;color:#6b7280;font-size:13px;width:130px;vertical-align:top;">${k}</td><td style="padding:5px 0;color:#111827;font-size:14px;">${esc(String(v))}</td></tr>`;
@@ -455,12 +464,64 @@ function adminNotifyHtml(f: Record<string, string | number | null>): string {
         <tr><td style="padding:26px 28px 6px;">
           <div style="font-size:20px;font-weight:700;color:#111827;">Nouvelle demande — ${esc(String(f.Motif ?? ''))}</div>
         </td></tr>
-        <tr><td style="padding:8px 28px 26px;">
+        <tr><td style="padding:8px 28px ${extraHtml ? '10px' : '26px'};">
           <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
             ${Object.entries(f).map(([k, v]) => row(k, v)).join('')}
           </table>
         </td></tr>
+        ${extraHtml}
 `);
+}
+
+/**
+ * v19 — CONFIRMER UN CRÉNEAU DEPUIS L'EMAIL, EN UN CLIC.
+ *
+ * David voulait « répondre au mail pour valider une des disponibilités ». Lire
+ * une vraie réponse écrite supposerait de RECEVOIR des emails (IMAP ou entrant
+ * webhook) puis d'en extraire l'intention en texte libre : beaucoup de pièces
+ * fragiles. Un bouton par créneau donne le même geste, en fiable.
+ *
+ * Chaque bouton porte un jeton signé HMAC lié à CE cours et à CE créneau
+ * (_shared/lesson-token.ts) et pointe vers l'Edge Function `confirm-lesson-slot`,
+ * qui confirme le cours et prévient la personne par email.
+ *
+ * Rend '' si on n'a pas de quoi signer : l'email part alors comme avant.
+ */
+async function slotConfirmBlockHtml(lessonId: string | null, slots: string[]): Promise<string> {
+    if (!lessonId || !slots.length || !canSignSlotTokens()) return '';
+    const base = (Deno.env.get('SUPABASE_URL') ?? '').replace(/\/$/, '');
+    if (!base) return '';
+
+    const buttons: string[] = [];
+    for (const slot of slots) {
+        const token = await signSlotToken(lessonId, slot);
+        if (!token) continue;
+        const href = `${base}/functions/v1/confirm-lesson-slot?t=${encodeURIComponent(token)}`;
+        buttons.push(
+            `<tr><td style="padding:4px 0;">
+               <a href="${esc(href)}" style="display:block;background:#b4462a;color:#ffffff;text-decoration:none;font-weight:600;font-size:15px;padding:13px 18px;border-radius:10px;text-align:center;text-transform:capitalize;">✅ ${esc(slotLabel(slot, 'fr'))}</a>
+             </td></tr>`,
+        );
+    }
+    if (!buttons.length) return '';
+
+    return `
+        <tr><td style="padding:6px 28px 26px;">
+          <div style="padding:14px 16px;background:#faf5ef;border:1px solid #e7d9c6;border-radius:12px;">
+            <div style="font-size:16px;font-weight:700;color:#111827;margin-bottom:6px;">Confirmer un créneau en un clic</div>
+            <p style="margin:0 0 12px;color:#374151;font-size:14px;line-height:1.6;">
+              Choisis l'un des créneaux proposés : le cours passe en « confirmé » dans ton agenda,
+              et la personne reçoit aussitôt un email de confirmation. Pas besoin d'ouvrir l'application.
+            </p>
+            <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
+              ${buttons.join('')}
+            </table>
+            <p style="margin:12px 0 0;color:#9ca3af;font-size:12px;line-height:1.5;">
+              Un seul créneau peut être confirmé : le premier clic gagne. Pour changer ensuite,
+              passe par 🎓 Enseignement → 📅 Agenda.
+            </p>
+          </div>
+        </td></tr>`;
 }
 
 Deno.serve(async (req) => {
@@ -654,6 +715,10 @@ Deno.serve(async (req) => {
         // retient ensuite LE créneau d'un clic (l'UI écrit starts_at + confirmed).
         // JAMAIS BLOQUANT : si quoi que ce soit échoue ici, le lead est déjà
         // enregistré et les emails partent quand même — on ne perd pas un contact.
+        // Repris plus bas par la notification à David (boutons « Confirmer ce créneau »).
+        let confirmLessonId: string | null = null;
+        let confirmSlots: string[] = [];
+
         if (LESSON_SOURCES.includes(source)) {
             try {
                 const { data: teacherId } = await admin.rpc('resolve_booking_teacher', { p_slug: teacherSlug });
@@ -700,9 +765,13 @@ Deno.serve(async (req) => {
                         .maybeSingle();
                     if (already?.id) {
                         await admin.from('lessons').update(lessonRow).eq('id', already.id);
+                        confirmLessonId = already.id as string;
                     } else {
-                        await admin.from('lessons').insert(lessonRow);
+                        const { data: created } = await admin
+                            .from('lessons').insert(lessonRow).select('id').single();
+                        confirmLessonId = (created?.id as string) ?? null;
                     }
+                    confirmSlots = slotIso;
                 }
             } catch (lessonErr) {
                 console.error('site-lead lesson error:', lessonErr);
@@ -805,7 +874,7 @@ Deno.serve(async (req) => {
                             Message: message,
                             Page: page || null,
                             Langue: lang,
-                        }))],
+                        }, await slotConfirmBlockHtml(confirmLessonId, confirmSlots)))],
                     });
                 } catch (notifyErr) {
                     console.error('site-lead notify error:', notifyErr);
