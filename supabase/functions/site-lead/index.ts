@@ -49,6 +49,13 @@
 //      RFC 2045 §6.7 impose des hexadécimaux MAJUSCULES. Symptôme observé : la
 //      balise `<meta name="viewport">` arrivait mutilée. Les corps partent
 //      désormais en base64 via `htmlPart()` — plus de quoted-printable du tout.
+// v18 (10/08/2026) : AGENDA DU MODE ENSEIGNANT. Une demande de rendez-vous
+//      individuel crée AUSSI une ligne `public.lessons` en statut `proposed`
+//      (migration 0037 de l'app), pour que la demande atterrisse directement
+//      dans l'espace enseignant de Handpan Studio — l'email de notification
+//      reste envoyé exactement comme avant, RIEN n'est retiré. Le prof
+//      destinataire est résolu par `resolve_booking_teacher(slug)` : aucun UUID
+//      en dur, un 2ᵉ prof n'aura qu'à envoyer son `teacherSlug`.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -155,6 +162,57 @@ const PROFILE_LABELS: Record<string, string> = {
 const METAL_LABELS: Record<string, string> = {
     nitrided: 'acier nitruré', stainless: 'inox', ember: 'ember steel', other: 'autre',
 };
+
+// =============================================================================
+// AGENDA DU MODE ENSEIGNANT (v18) — une demande de RDV devient un cours proposé
+// =============================================================================
+// Sources qui correspondent à une demande de COURS / SÉANCE individuelle, donc à
+// une ligne `public.lessons`. Volontairement étroit : une venue au showroom ou
+// une place de showcase n'est pas un cours et n'a rien à faire dans l'agenda
+// pédagogique. Pour en ajouter une plus tard : une entrée ici suffit.
+const LESSON_SOURCES = ['private-session'];
+
+/** Fuseau de référence des créneaux saisis sur le site (heure de Paris). */
+const SITE_TIME_ZONE = 'Europe/Paris';
+
+/** Décalage (minutes) d'un fuseau à un instant donné. */
+function tzOffsetMinutes(date: Date, timeZone: string): number {
+    const dtf = new Intl.DateTimeFormat('en-US', {
+        timeZone, hourCycle: 'h23',
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+    });
+    const parts = dtf.formatToParts(date);
+    const get = (t: string) => Number(parts.find((p) => p.type === t)?.value ?? '0');
+    const asUTC = Date.UTC(get('year'), get('month') - 1, get('day'), get('hour'), get('minute'), get('second'));
+    return (asUTC - date.getTime()) / 60000;
+}
+
+/**
+ * « 2026-08-23T14:30 » (heure de Paris, tel que saisi sur le site) → ISO UTC.
+ * Sans cette conversion, Deno interpréterait la chaîne dans le fuseau du serveur
+ * (UTC) et le rendez-vous se retrouverait décalé d'une à deux heures.
+ */
+function siteSlotToIso(slot: string): string | null {
+    const naive = new Date(slot + ':00Z');
+    if (Number.isNaN(naive.getTime())) return null;
+    const off1 = tzOffsetMinutes(naive, SITE_TIME_ZONE);
+    let real = new Date(naive.getTime() - off1 * 60000);
+    // Un créneau posé juste au changement d'heure peut changer de décalage :
+    // seconde passe avec l'instant corrigé.
+    const off2 = tzOffsetMinutes(real, SITE_TIME_ZONE);
+    if (off2 !== off1) real = new Date(naive.getTime() - off2 * 60000);
+    return real.toISOString();
+}
+
+/** Durée d'une séance déduite de son identifiant (`lesson-90` → 90 min). */
+function sessionDuration(sessionType: string | null): number {
+    if (!sessionType) return 60;
+    if (sessionType.endsWith('-90')) return 90;
+    if (sessionType.endsWith('-60')) return 60;
+    if (sessionType === 'demo') return 90; // ancien identifiant, 1h30
+    return 60;
+}
 
 function sourceLabel(src: string, lang: string): string {
     const l = SOURCE_LABELS[src];
@@ -422,6 +480,10 @@ Deno.serve(async (req) => {
         const source = String(body.source ?? 'beta-waitlist').trim().slice(0, 60) || 'beta-waitlist';
         const lang = String(body.lang ?? 'fr').trim().slice(0, 5);
         const page = String(body.page ?? '').trim().slice(0, 200);
+        // Agenda enseignant (v18) : à quel PROF adresser la demande ? Le formulaire
+        // du site n'envoie rien aujourd'hui → prof par défaut de la plateforme.
+        // Le jour où un autre prof a son propre formulaire, il envoie son slug.
+        const teacherSlug = String(body.teacherSlug ?? '').trim().toLowerCase().slice(0, 40) || null;
 
         const hasHandpan = ALLOWED_HAS_HANDPAN.includes(String(body.hasHandpan ?? '')) ? String(body.hasHandpan) : null;
         const motivation = String(body.motivation ?? '').trim().slice(0, 2000) || null;
@@ -582,6 +644,70 @@ Deno.serve(async (req) => {
         const leadId = await upsert(source);
         // Case cochée -> groupe showcase ciblable séparément.
         if (wantsShowcase) await upsert('showcase');
+
+        // --- AGENDA DU MODE ENSEIGNANT (v18) ----------------------------------
+        // Une demande de rendez-vous individuel devient AUSSI un cours `proposed`
+        // dans l'espace enseignant de l'app (public.lessons, migration 0037).
+        // UNE SEULE LIGNE par demande : tous les créneaux candidats vivent dans
+        // `proposed_slots`, et `starts_at` est pré-rempli avec le plus tôt d'entre
+        // eux pour que la demande apparaisse déjà dans le calendrier. Le prof
+        // retient ensuite LE créneau d'un clic (l'UI écrit starts_at + confirmed).
+        // JAMAIS BLOQUANT : si quoi que ce soit échoue ici, le lead est déjà
+        // enregistré et les emails partent quand même — on ne perd pas un contact.
+        if (LESSON_SOURCES.includes(source)) {
+            try {
+                const { data: teacherId } = await admin.rpc('resolve_booking_teacher', { p_slug: teacherSlug });
+                if (teacherId) {
+                    const slotIso = (preferredSlots ?? [])
+                        .map(siteSlotToIso)
+                        .filter((s): s is string => Boolean(s));
+                    const noteLines = [
+                        sessionType ? `Séance demandée : ${PROFILE_LABELS[sessionType] ?? sessionType}` : null,
+                        sessionFormat ? `Format : ${PROFILE_LABELS[sessionFormat] ?? sessionFormat}` : null,
+                        playingSince ? `Joue depuis : ${PROFILE_LABELS[playingSince] ?? playingSince}` : null,
+                        dream ? `Rêve de jouer : ${dream}` : null,
+                        discoveryChannel ? `M'a découvert par : ${PROFILE_LABELS[discoveryChannel] ?? discoveryChannel}` : null,
+                        message ? `\nMessage :\n${message}` : null,
+                        `\n(Demande reçue via le site — ${sourceLabel(source, 'fr')})`,
+                    ].filter(Boolean);
+
+                    const lessonRow = {
+                        teacher_id: teacherId,
+                        student_name: `${firstName} ${lastName}`.trim() || null,
+                        student_email: email,
+                        student_phone: phone,
+                        title: sessionType ? (PROFILE_LABELS[sessionType] ?? sessionType) : 'Demande de cours',
+                        lesson_type: (peopleCount ?? 1) > 1 ? 'group' : 'private',
+                        mode: sessionFormat === 'remote' ? 'video' : 'in_person',
+                        status: 'proposed',
+                        starts_at: slotIso[0] ?? null,
+                        duration_min: sessionDuration(sessionType),
+                        proposed_slots: slotIso.length ? slotIso : null,
+                        participants: Math.max(1, Math.min(200, peopleCount ?? 1)),
+                        note: noteLines.join('\n'),
+                        source: 'site-form',
+                        source_ref: leadId ?? null,
+                    };
+
+                    // Une 2ᵉ soumission pour la MÊME demande met à jour la
+                    // proposition existante au lieu d'en créer un doublon.
+                    const { data: already } = await admin
+                        .from('lessons')
+                        .select('id')
+                        .eq('source_ref', leadId ?? '')
+                        .eq('status', 'proposed')
+                        .limit(1)
+                        .maybeSingle();
+                    if (already?.id) {
+                        await admin.from('lessons').update(lessonRow).eq('id', already.id);
+                    } else {
+                        await admin.from('lessons').insert(lessonRow);
+                    }
+                }
+            } catch (lessonErr) {
+                console.error('site-lead lesson error:', lessonErr);
+            }
+        }
 
         // --- Emails (silencieux si SMTP non configuré) ---
         let emailSent = false;
