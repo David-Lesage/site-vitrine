@@ -29,6 +29,57 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 11/08/2026 (nuit) — ⚖️ « Le monde du ET » + URL `/handpan-compagnon`
+
+Quatre chantiers livrés et déployés d'un seul bloc (build + commit + `vercel --prod`).
+
+### 1. Équilibre acoustique ↔ électronique (accueil)
+Consigne de David : *« pas de compétition, de la complétion, deux univers qui co-existent
+(le monde du ET) »*. Neotone était partout, Yishama nulle part sur l'accueil.
+- Nouvelle section **`#instruments`** — « Acoustique **et** électronique » : deux cartes
+  **strictement symétriques** (Yishama / Neotone), **même séance photo**
+  (`yishama-hero-david.webp` / `neotone-hero-david.webp`), même gabarit, même nombre de
+  puces, CTA jumeaux → `/yishama` et `/le-neotone`, badge « ET » au centre.
+- Bandeau **« trait d'union »** : l'app parle les deux langues (mode acoustique, mode
+  électronique, **🎯 Compléter**, mode **Hybride**) = la complétion réellement livrée.
+- La 1ʳᵉ carte du trio ne pointe plus vers `/le-neotone` mais vers `#instruments`, avec un
+  visuel **split** acoustique | électronique.
+- Vidéos de l'accueil : 1 Yishama (`Zp_zaqsRBCg`) + 2 Neotone, et **deux boutons de playlist
+  identiques**. 🚨 Ne pas remettre trois vidéos Neotone.
+- Meta description accueil rééquilibrée.
+
+### 2. Showroom rééquilibré — sans surcorriger
+Consigne : Yishama en avant, **« pas plus que Neotone »**. Nouvelle section `#deux-univers`
+(expérience, pas achat) : deux cartes symétriques + **note franche** disant la seule
+asymétrie réelle (*seul le Neotone est en stock, les Yishama sont mes instruments
+personnels*). Le bloc « Repars avec ton Neotone le jour même » est **inchangé** (fait
+commercial). Hero, `program` et `events` nomment désormais les Yishama.
+
+### 3. Page `/yishama` — passage sensible réécrit
+« On m'a donné les instruments, pas la méthode » pouvait se lire comme un **reproche aux
+fabricants**. Réécrit (clés `bridgeTitle`, `bridgeP1` + nouvelles `bridgeP1b` / `bridgeP1c`) :
+la cause est la **nature de l'instrument** — XXIᵉ siècle, en évolution, autant de handpans que
+de gammes/dispositions, souvent **modal** (force ET limite), plus le fait que David vient de la
+**batterie**. Le vécu est conservé, et il amène logiquement l'app. 🚨 Ne pas revenir à l'ancienne
+formulation.
+
+### 4. 🔗 URL : `/handpan-studio` → **`/handpan-compagnon`** (FR + EN)
+Décision de David (11/08). Ce qui a bougé : les fichiers `src/pages/handpan-compagnon.astro` +
+`src/pages/en/…`, la nav (`data/site.ts`), les CTA, `guides.ts`, `shop.ts` (`url` seulement — l'`id`
+`handpan-studio` reste, c'est une clé i18n), `llms.txt`, `README.md`.
+**N'ONT PAS bougé** : `play.handpanstudio.app`, les apex, les clés i18n, les slugs de blog
+(`/blog/handpan-studio-mode-acoustique`), et **tout `src/content/blog/`**.
+Redirections dans **`vercel.json`** : `/handpan-studio` et `/en/handpan-studio` (+ variantes avec
+slash) en **301 explicite** (`statusCode: 301` — sans ça Vercel renvoie un 308) ; la redirection
+des **apex** (`handpanstudio.app`…) pointe désormais sur `/handpan-compagnon`.
+Vérifié **en production** : nouvelles URLs 200 · anciennes 301 sans boucle · apex →
+`/handpan-compagnon` · un article de blog qui pointe encore vers l'ancien chemin arrive bien sur
+la page · sitemap ne liste que la nouvelle URL.
+🚨 Les ~54 articles de blog gardent leurs liens `/handpan-studio` **volontairement** : c'est le 301
+qui les fait vivre. Si un jour le blog est repris, refaire cette vérification.
+
+---
+
 ## ÉTAT ACTUEL — 11/08/2026 (soir) — 🏷️ L'app s'appelle « Handpan Compagnon » (nom TEMPORAIRE)
 
 **Décision de David** (elle lève le blocage écrit plus bas, section « MARQUE HANDPAN STUDIO ») :
