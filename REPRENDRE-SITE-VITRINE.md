@@ -29,6 +29,53 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 11/08/2026 — Nouvelle page `/yishama` (récit + 2 handpans acoustiques)
+
+**Demande de David** : une page dédiée à Yishama, sur le modèle de `/le-neotone`, mais dont le
+**centre de gravité est le récit personnel avec Yonathan** (« c'est surtout mon histoire avec eux
+et avec Yonathan qui compte »), pas la fiche produit.
+
+### Ce qui a été livré
+- **`src/pages/yishama.astro`** + **`src/pages/en/yishama.astro`** (wrappers) →
+  **`src/components/pages/YishamaPage.astro`** (11 sections).
+- **`src/data/yishama.ts`** — données neutres : notes exactes des 2 instruments, ids vidéo,
+  playlist, liens, clés des 3 aciers. **Chaque donnée y est sourcée en commentaire.**
+- **`src/components/MetalModal.astro`** — équivalent de `WoodModal` pour les 3 aciers Yishama
+  (nitruré / inox / Ember). **Sans photo** : pas de cliché fiable par acier → disque dessiné en
+  CSS (`.metal-card-disc` / `.metal-disc` dans `global.css`), plutôt qu'illustrer un métal par un autre.
+- i18n : bloc `yishama.*` dans `dict.ts` + `en.ts`, plus `data.metal*` et `data.yishamaVideos`.
+- Navigation : entrée **`yishama`** ajoutée dans `src/data/site.ts` (`nav`) → 10 entrées.
+  ⚠️ Il a fallu ajouter `whitespace-nowrap` + `px-2.5` aux liens du header (`Header.astro`) :
+  à 10 entrées, les libellés en deux mots passaient à la ligne au point de rupture `xl`.
+- Liens croisés : depuis `/le-neotone` (section « Gage de confiance », où Yonathan est déjà cité)
+  et depuis `/handpan-studio` (bloc mode acoustique).
+
+### Sources (tout est vérifié — ne rien ajouter qui ne le soit pas)
+`~/CLAUDE/Projects/Marketing/Recit-Yishama-entretien-David.md` (récit de David),
+`Analyse-globale-dossier-Yishama.md` (chronologie), `Analyse-2-handpans-David-degres-jouables.md`
+(notes + calcul chromatique), `Yishama-fil-complet-WhatsApp.md` (citations de Yonathan),
+l'ancien site Wix `batdav.wixsite.com/david-lesage/ambassadeur` (mots publics de David + photos),
+et `yishama.com` (aciers, format, gravure laser, devise).
+
+### 🚫 Volontairement HORS de la page (à ne pas rajouter)
+Montants (valeur des instruments, devis 15 handpans), clauses du « Yonathan contract » et de la
+lettre d'intention côté engagements, facturation / valeur déclarée en douane, santé et vie privée
+de David comme de Yonathan, emails restés sans réponse, friction Mag Instruments, et le conflit de
+nom avec le revendeur européen « Handpan Studio » cité dans leur newsletter du 20/12/2025.
+La page dit **« ambassadeur et affilié »**, jamais « partenariat officiel » : rien n'est signé.
+
+### ⚠️ Restes à faire / à valider par David
+- **« 5 octaves »** : non vérifié dans les sources primaires (elles disent « le plus grand ambitus
+  possible »). **Non publié.** Si David confirme un chiffre, l'ajouter dans `yishama.whyP3`.
+- **Aucune photo à plat du dessus/dessous des 2 instruments** n'existe. La page utilise ce qui
+  existe vraiment (portrait studio, selfie avec Yonathan et Andréa, image de la vidéo *Shape of My
+  Heart* où les deux pans sont visibles). Si David les photographie, elles serviront aussi à créer
+  les layouts dédiés dans l'app.
+- Ember Steel : Yishama ne le décrit pas dans son comparatif → la page le dit franchement plutôt
+  que d'inventer. À enrichir s'ils publient quelque chose.
+
+---
+
 ## ÉTAT ACTUEL — 10/08/2026 — Blog : 7 nouveaux articles + filtre par catégorie
 
 **Contexte** : le blog n'avait plus bougé depuis le 19/07/2026 (dernière vague d'écriture,

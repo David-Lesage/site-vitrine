@@ -41,6 +41,8 @@ export const site = {
 export const nav = [
   { key: 'home', href: '/' },
   { key: 'neotone', href: '/le-neotone' },
+  // Mes deux handpans acoustiques Yishama + l'histoire avec Yonathan.
+  { key: 'yishama', href: '/yishama' },
   { key: 'shop', href: '/boutique' },
   { key: 'lessons', href: '/cours' },
   { key: 'studio', href: '/handpan-studio' },

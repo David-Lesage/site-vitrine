@@ -31,7 +31,10 @@ const chakra = ['#e0402b', '#ef8a2a', '#f1c62f', '#4caf6d', '#39a0dd', '#3a4fa6'
         <li>
           <a
             href={localizePath(item.href, lang)}
-            class:list={['rounded-full px-3 py-2 text-sm font-600 transition-colors hover:bg-ink/5', isActive(item.href) ? 'text-rust' : 'text-ink-soft', item.key === 'studio' ? 'flex flex-col items-center gap-1' : '']}
+            {/* `whitespace-nowrap` + padding resserré au point de rupture xl :
+                depuis l'ajout de « Yishama » (10 entrées), les libellés en deux
+                mots passaient à la ligne et déformaient la barre. */}
+            class:list={['whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-600 transition-colors hover:bg-ink/5', isActive(item.href) ? 'text-rust' : 'text-ink-soft', item.key === 'studio' ? 'flex flex-col items-center gap-1' : '']}
             aria-current={isActive(item.href) ? 'page' : undefined}
           >
             {navLabel(item.key)}

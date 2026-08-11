@@ -125,6 +125,12 @@ const ld = [
           ))}
         </ul>
         <div class="mt-7"><Button {...acoCta.attrs} variant="light">{acoCta.label}</Button></div>
+        {/* Passerelle vers le récit d'origine : l'app est née de mes deux Yishama. */}
+        <p class="mt-5">
+          <a href={L('/yishama')} class="inline-flex items-center gap-1.5 text-sm font-700 text-gold underline underline-offset-4 hover:text-cream">
+            {st.versionAcoYishamaLink} <span aria-hidden="true">→</span>
+          </a>
+        </p>
       </div>
       <figure class="m-0">
         <img src="/images/app-acoustique.jpg" width="1634" height="902" alt={st.versionAcoCaption} class="w-full rounded-card border border-cream/10 shadow-lg" loading="lazy" />

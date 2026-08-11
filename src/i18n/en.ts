@@ -6,6 +6,7 @@ export const en: Dict = {
     nav: {
       home: 'Home',
       neotone: 'The Neotone',
+      yishama: 'Yishama',
       shop: 'Shop',
       lessons: 'Lessons',
       studio: 'Handpan Studio',
@@ -216,10 +217,167 @@ export const en: Dict = {
     trustP1: 'I’ve travelled several times to the workshops in Hungary. I personally know Csaba and Norbert — the two friends behind the Neotone — as well as the whole team: Gergely, Dániel and the craftsmen at MAG Instruments, and Yonathan from Yishama.',
     trustP2: 'I’ve been an official beta tester for the brand since 2023. Since the very first Neotone¹, I’ve reported and helped fix thousands of bugs and suggested countless improvements. Buying through me isn’t just buying from a reseller: it’s buying from someone who lives the instrument from the inside and helps it evolve.',
     trustCaption1: 'A testing and debugging session with the team, at the workshop.',
+    trustYishamaLink: 'My story with Yonathan and my two Yishama handpans',
     trustCaption2: 'With the Neotone team during one of my visits to Hungary.',
     faqEyebrow: 'FAQ',
     faqTitle: 'Every answer before you take the plunge',
     faqOutro: 'Any other questions? Write to me at',
+  },
+  yishama: {
+    title: 'My Yishama handpans — two instruments for one voice | David Lesage',
+    description:
+      'The story of how I met Yonathan and Yishama: two acoustic 18-note handpans tuned to 432 Hz, custom-designed to accompany my voice — and what they ended up producing.',
+    heroEyebrow: 'My acoustic instruments',
+    heroTitle: 'Yishama — two handpans born of a chance meeting',
+    heroLead:
+      'Two 18-note instruments, tuned to <strong class="text-cream">432 Hz</strong>, designed with <strong class="text-cream">Yonathan</strong> for one reason only: so that I could sing and accompany myself. Here is their story — and what they taught me.',
+    heroCtaVideo: 'Listen to Shape of My Heart',
+    heroCtaStory: 'Read the story',
+    heroImgAlt: 'David Lesage holding one of his two Yishama handpans, bottom notes visible',
+
+    metEyebrow: 'Naxos, Greece · 2022',
+    metTitle: 'A man met by chance, the day after a concert',
+    metP1:
+      'I had played a handpan-and-voice concert the evening before. The next day I ran into a man down by the harbour. I had no idea who he was. Someone explained: one of the finest handpan makers in the world.',
+    metP2:
+      'I told him about the dream I had been carrying for years: “a handpan piano”. To sing, to play covers, to accompany my own voice — without going round in circles inside a single mode.',
+    metP3:
+      'He listened for a long time, calmly. He did not try to sell me anything. He even told me that, given how percussive my playing is, he was not sure his instruments would suit me.',
+    metP4:
+      'That day, on that small island, I discovered the international handpan world: instruments with notes on top and underneath, deep basses, a level of craft I had not even suspected existed.',
+    metQuote:
+      'When I met Yonathan, the CEO of Yishama, and Andréa his wife, I immediately felt the delicacy and the depth of the person in front of me.',
+    metQuoteSource: 'What I wrote at the time, on my old website',
+    metPhotoAlt: 'David Lesage with Yonathan and Andréa of Yishama',
+    metPhotoCaption: 'With Yonathan and Andréa — the beginning of a long story.',
+
+    roomEyebrow: 'HUG Festival, Hungary',
+    roomTitle: 'He came up to my room with a pencil',
+    roomP1:
+      'A few months later, at the HUG festival in Hungary, Yonathan came up to my room with Andréa. He started asking me questions. And drawing.',
+    roomP2:
+      'I understood very little of it — I have no engineering background. I only knew what I wanted to <em>hear</em>. He translated that into dimples, thicknesses, octaves. Only one technical thing mattered to me: as many domed notes as possible underneath, like little dings — they speak far more easily than dimpled ones.',
+    roomP3:
+      'For everything else, I handed him my complete trust. That is when he decided to make me an ambassador for his brand. But before that, he had taken a genuine, sincere interest in me. Then he welcomed me into his home in Budapest before I caught my flight.',
+    roomAside:
+      'Months earlier he had already sent me the link to their <em>Virtual Pantam</em>: “build the instrument you dream of in the app, then send me the link to what you designed”. We passed those links back and forth for weeks.',
+
+    whyEyebrow: 'The reason it exists',
+    whyTitle: 'Why two handpans — and why these two',
+    whyIntro: 'They are not two instruments side by side. They are one system in two pieces, built around a voice.',
+    whyP1:
+      'The handpan is a beautiful, stubborn instrument. A scale is a choice — and therefore a renunciation. Nine or ten notes, and there will always be that <strong>one</strong> missing note that would make the chord you dream of playable.',
+    whyP2:
+      'For a singer it is worse. Accompanying a voice needs <strong>root basses</strong>: without them you play inversions, and the voice loses the ground under its feet. I wanted to rest my singing on the lowest note of each chord, then climb the arpeggio — D3-F♯3-A3 sitting on a D2, B♭2-D3-F3-B♭3.',
+    whyP3:
+      'My request fitted into one sentence: two instruments that, together, give me every sharp and every flat. So I could sing in any key, with the root of every chord down in the bass.',
+    whyQuote:
+      'My dream is to be able to sing and accompany myself easily on the handpan in every key, across the widest possible range, without being limited by missing notes.',
+    whyQuoteSource: 'Letter of intent — 22 November 2022',
+    why432Title: 'And why 432 Hz',
+    why432Text:
+      'I am fascinated by the effect of vibration on water and on the body — cymatics. That is why I asked Yonathan for a tuning based on A = 432 Hz. He replied that it was possible, but that he had to be certain <em>before</em> starting to tune: on a handpan, that choice cannot be undone.',
+
+    insEyebrow: 'The two instruments',
+    insTitle: 'Eighteen notes each, delivered in May 2023',
+    insIntro:
+      'They arrived in secured wooden crates, travel cases included — almost exactly on my birthday.',
+    insDing: 'Ding',
+    insTop: 'Top',
+    insBottom: 'Bottom',
+    insNotes: 'notes',
+    insTuning: 'Tuned to 432 Hz',
+    insFootnote:
+      'These are one-off pieces: the names are my own working labels, not Yishama catalogue models. Each instrument on its own gives all seven degrees of its scale, with the root available in the bass.',
+
+    pairEyebrow: 'Together',
+    pairTitle: 'A chromatic handpan, in two pieces',
+    pairIntro:
+      'Separately, each covers its own scale. Together, their 36 notes cover all twelve semitones — without exception.',
+    pairP1:
+      'All 24 major and minor chords become playable, and <strong>every one of them has its root down in the bass</strong>. Which is exactly what I had asked for: never again being forced into an inversion for want of a bass note.',
+    pairP2:
+      'Yonathan built, without either of us ever calling it that, a chromatic handpan in two pieces. He designed them as one system: he removed a note from the first because I already had it on the second — to free up room for another.',
+    pairHonest:
+      'One honest caveat: this describes the <em>availability of the notes</em>, not yet the fluidity of the gesture. Moving from one pan to the other mid-chord is still gymnastics. That is precisely the problem that ended up producing my app.',
+    pairFactLabels: { notes: 'notes in total', keys: 'keys', chords: 'major & minor chords', tuning: 'tuning' },
+    pairPhotoAlt: 'David Lesage playing his two Yishama handpans side by side',
+    pairPhotoCaption: 'The two instruments side by side — still from the Shape of My Heart cover.',
+
+    metalEyebrow: 'The metal',
+    metalTitle: 'Three steels, three voices',
+    metalIntro:
+      'At Yishama the metal is not a finishing detail: it is the first choice, the one that decides timbre, sustain and upkeep. Three families are offered — click for the detail.',
+    metalCardCta: 'See the detail',
+    metalModalEyebrow: 'Build steel',
+    metalModalClose: 'Close',
+    metalLabelSound: 'The sound',
+    metalLabelCare: 'Upkeep',
+    metalLabelBest: 'Best for',
+    metalSource:
+      'Source: Yishama’s own article “Nitrided handpan vs stainless handpan”, and their catalogue. The price of a Yishama varies with the scale, the number of notes, the bottom notes and the material type.',
+    metalNote:
+      'Since 2021, every Yishama carries a laser engraving inside: serial number, scale name, and material type with its thickness.',
+
+    makerEyebrow: 'The maker',
+    makerTitle: 'Who Yishama are',
+    makerIntro:
+      'An Israeli workshop, also present in Hungary, among the finest handpan makers in the world.',
+    makerP1:
+      '“Yishama” comes from the Hebrew (יִשָּׁמַע) and means <em>to be heard</em>. Their stated intention: to create a sound sculpture that offers the individual a unique experience of self-exploration through sound, beat and harmony. Their motto fits on one line: “At Yishama, we strive for quality and passion.”',
+    makerP2:
+      'Yonathan and his team build instruments with very deep basses and sparkling highs. When I heard Kabeção, Nadishana, David Kuckhermann, Alexandre Lora and Flavio Salvaje play on them, I understood that these were the instruments I wanted to work with.',
+    makerFactsTitle: 'What they say themselves',
+    makerFacts: [
+      { t: 'Every instrument is signed', d: 'Since 2021, a laser engraving inside gives the serial number, the scale name and the material with its thickness.' },
+      { t: 'The format', d: 'Around 55 cm across the outer rim, 28 cm from the port to the top of the ding, and 4.4 kg on most models.' },
+      { t: 'The first retuning is free', d: 'With proper playing technique a Yishama stays in tune for years. The first retuning is free of charge — only shipping is at your expense.' },
+      { t: 'Every piece is unique', d: 'No waiting time announced in advance: the work is handmade and made to measure. They do occasionally keep instruments available immediately.' },
+    ],
+    makerCta: 'Discover Yishama handpans',
+    makerDisclosure:
+      'Full disclosure: I am a Yishama ambassador and affiliate. If you go through my link I earn a commission — it changes nothing about your price. I only represent makers whose work I genuinely love.',
+
+    videosEyebrow: 'In music',
+    videosTitle: 'What I recorded with them',
+    videosIntro:
+      'A Sting cover, a prayer, a Hungarian folk song, some French rap. All played on the two Yishamas, at 432 Hz.',
+    videosFeaturedLabel: 'The video that moved Yonathan',
+    videosFeaturedTitle: 'Shape of My Heart — Sting',
+    videosFeaturedText:
+      'When I sent it to him he replied: “wow wow wow very very beautiful! […] your voice is incredible, touch my heart very much! I would love to share this with our Yishama audience.”',
+    videosPlaylistCta: 'See the whole Yishama playlist',
+    videosWatch: 'Watch',
+
+    bridgeEyebrow: 'What those two pans produced',
+    bridgeTitle: 'I was given the instruments, not the method',
+    bridgeP1:
+      'I was happy and completely lost. Two magnificent, very complex instruments, delivered with no manual. As if I had been handed two spaceships without being taught to fly them.',
+    bridgeP2:
+      'In August 2023 I started a document to work out, at last, how to build my chords across the two pans. Coloured cards, one colour per note. <strong>That document became Handpan Studio.</strong>',
+    bridgeP3:
+      'The strangest part is that the original question came from him. Back in August 2022, Yonathan wrote to me about the “chromatic, singer-composer” instrument: “try to play some songs in the app on that scale, so we understand which notes you’re missing — and we can find a way to add them.” Three years later, the app answers that question, for everyone.',
+    bridgeAppTitle: 'What the app does today for an acoustic handpan',
+    bridgeAppIntro: 'Everything below is free, and needs no electronic instrument.',
+    bridgeApp: [
+      { t: 'Your scale, in colour', d: 'You pick your instrument: the app draws your shell with your real notes, each dressed in its colour. The screen becomes a mirror of your pan.' },
+      { t: '440 / 432 Hz tuning', d: 'One setting tunes the app to your handpan — so that what you hear on screen rings true against what you have in your hands.' },
+      { t: '🎯 Complete your scale', d: 'The app compares your real notes with what the chords require, and tells you exactly which ones are missing — then which second handpan would supply them, and how many songs that would unlock.' },
+      { t: 'Hybrid mode', d: 'As soon as a second pan is there, both shells appear side by side and each chord is drawn straddling the two, with playing order and hands. Exactly my gymnastics problem — solved on screen.' },
+    ],
+    bridgeSignature:
+      'My two custom scales are in the app, badged “✨ David Lesage Signature”. You can load them, listen to them and see what they allow, even without having them under your hands.',
+    bridgeHonest:
+      'To be honest about it: the app does not listen to you. It does not guess your scale through the microphone — you choose it, or you build your shell note by note. From there, it reasons about your real notes.',
+    bridgeCta: 'Discover Handpan Studio',
+    bridgeCtaBlog: 'Read: using the app on your acoustic handpan',
+
+    endEyebrow: 'And now',
+    endTitle: 'Making the handpan a real accompaniment instrument',
+    endText:
+      'My dream has not changed: to raise the handpan to the rank of the guitar or the piano for accompanying a voice. These two instruments showed me it was possible — and forced me to invent the method that was missing. That is the road I am still on, without setting acoustic and electronic against each other.',
+    endCtaShowroom: 'Come and hear them at the showroom',
+    endCtaYishama: 'Discover Yishama',
   },
   shop: {
     title: 'Handpan Shop — Neotone, mics & accessories',
@@ -704,6 +862,7 @@ export const en: Dict = {
     ],
     versionAcoCaption: 'Acoustic mode: Handpan Studio’s visual approach, on your own handpan.',
     versionAcoCta: 'Open the app',
+    versionAcoYishamaLink: 'Where this approach came from: my two Yishama handpans',
     versionNeoTitle: 'Neotone version',
     versionNeoText: 'Link your Neotone to the app via MIDI: your playing appears live on the virtual handpan, and the app guides you through your chords and scales. Real-time MIDI integration.',
     versionNeoCta: 'Discover the Neotone',
@@ -911,6 +1070,47 @@ export const en: Dict = {
       noyer:
         'A dark wood with deep chocolate nuances, sometimes marbled with lighter veins. Walnut is the most contrasted of the five, perfect for an unapologetically high-end look. Often requested for visual productions or stage setups where the instrument is in the spotlight.',
     },
+    // ── Yishama steels (/yishama page). Taken from Yishama's own
+    // article and catalogue. What Yishama does not say, we do not say.
+    metalNames: { nitrure: 'Nitrided steel', inox: 'Stainless steel', ember: 'Ember Steel' },
+    metalEnNames: { nitrure: 'Acier nitruré', inox: 'Inox', ember: 'Ember steel' },
+    metalTags: { nitrure: 'Bright and powerful', inox: 'Warm, long sustain', ember: 'In the Yishama catalogue' },
+    metalDescriptions: {
+      nitrure:
+        'It starts with cold-rolled steel with a low carbon content — usually DC04 — sent to a specialist facility for nitriding. The process hardens the steel and creates a protective layer on its surface. This is the historic handpan steel.',
+      inox:
+        'Stainless steel does not rust. That is its first quality, but not the most interesting one: above all it gives a very different timbre, rounder, with a far longer tail of sound than nitrided.',
+      ember:
+        'A stainless steel developed specifically for the handpan, which Yishama offers in its catalogue alongside nitrided and standard stainless. Yishama does not compare it to the other two in their article: rather than summarise what they do not write, the best thing is to hear it — ask them for a sound sample, or come and listen at the showroom.',
+    },
+    metalSound: {
+      nitrure:
+        'A more ceramic, almost clay-like sound. The high frequencies are amplified with great volume — Yishama write that it can be heard miles away.',
+      inox:
+        'A very warm and soft tone, with an abundance of sustain, longer than on nitrided. The amplified frequencies sit rather at the lower end of the spectrum.',
+      ember: 'Not detailed by Yishama in their material comparison.',
+    },
+    metalCare: {
+      nitrure:
+        'Needs more care than stainless: regular cleaning and oiling. To be avoided at the beach, despite the nitriding layer.',
+      inox:
+        'Rust-resistant: cleaning and oiling can be less frequent, though still recommended. On the other hand it is very sensitive to heat — in direct sunlight it can temporarily go out of tune.',
+      ember: 'A stainless steel: the same general precautions as standard stainless.',
+    },
+    metalBest: {
+      nitrure: 'Outdoors, busking, anything that has to carry far without amplification.',
+      inox: 'Indoors, concerts, the studio — rather than street playing.',
+      ember: 'Worth hearing before deciding.',
+    },
+    // EN titles of the Yishama videos (same order as `videos` in data/yishama.ts)
+    yishamaVideos: [
+      'The very first meeting with the instrument',
+      'What I love about my Yishama — the logic of the scale',
+      'Fallin’ — Alicia Keys cover',
+      'Copier-Coller — Bigflo & Oli cover',
+      'Ave Maria, jazz style',
+      'Rózsa — Hungarian traditional song',
+    ],
     modelTaglines: { one: 'The essentials, no screen', mutant: 'Maximum expression, with LCD screen' },
     modelNotes: { one: '10 notes · no screen', mutant: '19 notes · LCD screen' },
     modelFeatures: {

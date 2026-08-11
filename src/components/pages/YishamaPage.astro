@@ -1,0 +1,372 @@
+---
+// Page /yishama — mes deux handpans acoustiques Yishama.
+//
+// Structure inspirée de NeotonePage (hero → sections → pont → CTA),
+// mais le centre de gravité est DIFFÉRENT : ici c'est un récit, pas
+// une fiche produit. Pas de calculateur, pas de grille tarifaire,
+// pas de modèles à comparer — Yishama ne vend pas via moi, je suis
+// affilié. Le seul emprunt direct au Neotone est le sélecteur
+// cliquable (bois → aciers), parce que Yishama propose réellement
+// trois métaux.
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import MetalModal from '@/components/MetalModal.astro'
+import VideoModal from '@/components/VideoModal.astro'
+import { Icon } from 'astro-icon/components'
+import {
+  metals,
+  instruments,
+  pairFacts,
+  videos,
+  featuredVideo,
+  yishamaUrl,
+  yishamaPlaylist,
+  yishamaPlaylistUrl,
+} from '@/data/yishama'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import { breadcrumbLdJson, videoLdJson } from '@/lib/ldJson'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const y = t.yishama
+const d = t.data
+const L = (p: string) => localizePath(p, lang)
+
+const factLabels = y.pairFactLabels as Record<string, string>
+const makerIcons = ['lucide:stamp', 'lucide:ruler', 'lucide:wrench', 'lucide:sparkles']
+const appIcons = ['lucide:palette', 'lucide:audio-waveform', 'lucide:target', 'lucide:columns-2']
+
+const ld = [
+  breadcrumbLdJson([
+    { name: t.common.nav.home, url: L('/') },
+    { name: t.common.nav.yishama, url: L('/yishama') },
+  ]),
+  videoLdJson([{ id: featuredVideo, name: y.videosFeaturedTitle, description: y.videosIntro }]),
+]
+---
+
+<Layout title={y.title} description={y.description} image="/images/yishama-hero-david.webp" ldJSON={ld}>
+  {/* ───────────── HERO ───────────── */}
+  <Section tone="ink" class="!py-20">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{y.heroEyebrow}</p>
+        <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">{y.heroTitle}</h1>
+        <p class="mt-5 text-lg text-cream/80" set:html={y.heroLead}></p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <button
+            type="button"
+            data-video-id={featuredVideo}
+            data-video-title={y.videosFeaturedTitle}
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-rust px-6 py-3 text-sm font-700 text-cream shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-copper"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+            {y.heroCtaVideo}
+          </button>
+          <Button href="#rencontre" variant="light">{y.heroCtaStory}</Button>
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-card shadow-md">
+        <img src="/images/yishama-hero-david.webp" width="1800" height="1200" alt={y.heroImgAlt} class="w-full object-cover" loading="eager" />
+      </div>
+    </div>
+  </Section>
+
+  {/* ───────────── 1. LA RENCONTRE ───────────── */}
+  <Section id="rencontre">
+    <div class="grid items-start gap-12 lg:grid-cols-[1.15fr_1fr]">
+      <div>
+        <SectionHeading align="left" eyebrow={y.metEyebrow} title={y.metTitle} />
+        <div class="mt-6 space-y-4 text-lg leading-relaxed text-ink-soft/90">
+          <p>{y.metP1}</p>
+          <p>{y.metP2}</p>
+          <p class="border-l-4 border-copper/40 pl-5 font-600 text-ink">{y.metP3}</p>
+          <p>{y.metP4}</p>
+        </div>
+      </div>
+      <figure class="lg:sticky lg:top-28">
+        <div class="overflow-hidden rounded-card shadow-md">
+          <img src="/images/yishama-david-yonathan-andrea.webp" width="1440" height="1440" alt={y.metPhotoAlt} class="w-full object-cover" loading="lazy" />
+        </div>
+        <figcaption class="mt-3 text-sm text-ink-soft/75">{y.metPhotoCaption}</figcaption>
+        <blockquote class="mt-6 rounded-card border border-copper/25 bg-copper/5 p-6">
+          <p class="font-display text-lg leading-snug text-ink">« {y.metQuote} »</p>
+          <footer class="mt-3 text-xs font-700 uppercase tracking-[0.14em] text-copper">{y.metQuoteSource}</footer>
+        </blockquote>
+      </figure>
+    </div>
+  </Section>
+
+  {/* ───────────── 2. LA CHAMBRE DU FESTIVAL ───────────── */}
+  <Section tone="cream-deep">
+    <div class="mx-auto max-w-3xl">
+      <SectionHeading align="left" eyebrow={y.roomEyebrow} title={y.roomTitle} />
+      <div class="mt-6 space-y-4 text-lg leading-relaxed text-ink-soft/90">
+        <p>{y.roomP1}</p>
+        <p set:html={y.roomP2}></p>
+        <p>{y.roomP3}</p>
+      </div>
+      <aside class="mt-8 flex gap-4 rounded-card border border-ink/10 bg-cream p-6">
+        <Icon name="lucide:link" class="mt-1 h-5 w-5 shrink-0 text-copper" />
+        <p class="text-sm leading-relaxed text-ink-soft/85" set:html={y.roomAside}></p>
+      </aside>
+    </div>
+  </Section>
+
+  {/* ───────────── 3. LA RAISON D'ÊTRE ───────────── */}
+  <Section id="pourquoi">
+    <SectionHeading eyebrow={y.whyEyebrow} title={y.whyTitle} intro={y.whyIntro} />
+    <div class="mx-auto mt-10 max-w-3xl space-y-5 text-lg leading-relaxed text-ink-soft/90">
+      <p set:html={y.whyP1}></p>
+      <p set:html={y.whyP2}></p>
+      <p set:html={y.whyP3}></p>
+    </div>
+    <blockquote class="mx-auto mt-10 max-w-3xl rounded-card border border-rust/25 bg-rust/5 p-8 text-center">
+      <p class="font-display text-xl leading-snug text-ink md:text-2xl">« {y.whyQuote} »</p>
+      <footer class="mt-4 text-xs font-700 uppercase tracking-[0.14em] text-rust">{y.whyQuoteSource}</footer>
+    </blockquote>
+    <div class="mx-auto mt-10 flex max-w-3xl gap-4 rounded-card border border-ink/10 bg-cream-deep/50 p-6">
+      <Icon name="lucide:waves" class="mt-1 h-6 w-6 shrink-0 text-copper" />
+      <div>
+        <h3 class="font-display text-lg font-700">{y.why432Title}</h3>
+        <p class="mt-2 text-ink-soft/85" set:html={y.why432Text}></p>
+      </div>
+    </div>
+  </Section>
+
+  {/* ───────────── 4. LES DEUX INSTRUMENTS ───────────── */}
+  <Section tone="cream-deep" id="instruments">
+    <SectionHeading eyebrow={y.insEyebrow} title={y.insTitle} intro={y.insIntro} />
+    <div class="mt-12 grid gap-8 md:grid-cols-2">
+      {instruments.map((ins) => (
+        <div class="flex flex-col rounded-card border border-ink/10 bg-cream p-7">
+          <div class="flex items-baseline justify-between gap-3">
+            <h3 class="font-display text-2xl font-700">{ins.name}</h3>
+            <span class="rounded-full bg-copper/15 px-3 py-1 text-xs font-700 text-copper">
+              {ins.top.length + ins.bottom.length} {y.insNotes}
+            </span>
+          </div>
+          <p class="mt-1 text-sm font-600 uppercase tracking-[0.12em] text-ink-soft/60">
+            {y.insDing} {ins.ding} · {y.insTuning}
+          </p>
+
+          <p class="mt-6 text-xs font-700 uppercase tracking-[0.14em] text-copper">{y.insTop} · {ins.top.length}</p>
+          <ul class="mt-2 flex flex-wrap gap-1.5">
+            {ins.top.map((n, i) => (
+              <li class:list={['rounded-md px-2 py-1 font-mono text-sm', i === 0 ? 'bg-ink text-cream font-700' : 'bg-cream-deep text-ink-soft']}>{n}</li>
+            ))}
+          </ul>
+
+          <p class="mt-6 text-xs font-700 uppercase tracking-[0.14em] text-copper">{y.insBottom} · {ins.bottom.length}</p>
+          <ul class="mt-2 flex flex-wrap gap-1.5">
+            {ins.bottom.map((n) => (
+              <li class="rounded-md border border-ink/10 bg-cream px-2 py-1 font-mono text-sm text-ink-soft">{n}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <p class="mx-auto mt-8 max-w-3xl text-center text-sm text-ink-soft/70">{y.insFootnote}</p>
+  </Section>
+
+  {/* ───────────── 5. ENSEMBLE : LE CHROMATIQUE ───────────── */}
+  <Section tone="ink" id="ensemble">
+    <SectionHeading tone="light" eyebrow={y.pairEyebrow} title={y.pairTitle} intro={y.pairIntro} />
+
+    <div class="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-4 lg:grid-cols-4">
+      {pairFacts.map((f) => (
+        <div class="rounded-card border border-cream/10 bg-cream/5 p-5 text-center">
+          <p class="font-display text-3xl font-700 text-gold">{f.value}</p>
+          <p class="mt-1 text-xs font-600 uppercase tracking-[0.1em] text-cream/65">{factLabels[f.key]}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 grid items-center gap-10 lg:grid-cols-2">
+      <figure>
+        <div class="overflow-hidden rounded-card shadow-md">
+          <img src="/images/yishama-deux-pans-shape.webp" width="2048" height="1152" alt={y.pairPhotoAlt} class="w-full object-cover" loading="lazy" />
+        </div>
+        <figcaption class="mt-3 text-sm text-cream/60">{y.pairPhotoCaption}</figcaption>
+      </figure>
+      <div class="space-y-5 text-lg leading-relaxed text-cream/80">
+        <p set:html={y.pairP1}></p>
+        <p>{y.pairP2}</p>
+        <p class="rounded-card border border-cream/10 bg-cream/5 p-5 text-base text-cream/70" set:html={y.pairHonest}></p>
+      </div>
+    </div>
+  </Section>
+
+  {/* ───────────── 6. LES MÉTAUX ───────────── */}
+  <Section id="metaux">
+    <SectionHeading eyebrow={y.metalEyebrow} title={y.metalTitle} intro={y.metalIntro} />
+    <div class="mx-auto mt-12 grid max-w-4xl gap-x-8 gap-y-10 sm:grid-cols-3">
+      {metals.map((m) => (
+        <button type="button" class="wood-card" data-metal={m.key} aria-label={`${y.metalCardCta} — ${d.metalNames[m.key]}`}>
+          <span class="metal-card-disc block" data-cta={y.metalCardCta} style={`background:${m.grad}`}></span>
+          <h4>{d.metalNames[m.key]}</h4>
+          <div class="wood-card-sub">{d.metalEnNames[m.key]}</div>
+          <div class="wood-card-supp">{d.metalTags[m.key]}</div>
+        </button>
+      ))}
+    </div>
+    <p class="mx-auto mt-10 flex max-w-3xl items-start gap-3 rounded-card border border-ink/10 bg-cream-deep/50 p-5 text-sm text-ink-soft/85">
+      <Icon name="lucide:scan-line" class="mt-0.5 h-5 w-5 shrink-0 text-copper" />
+      <span>{y.metalNote}</span>
+    </p>
+  </Section>
+
+  <MetalModal lang={lang} />
+
+  {/* ───────────── 7. QUI EST YISHAMA ───────────── */}
+  <Section tone="cream-deep" id="fabricant">
+    <SectionHeading eyebrow={y.makerEyebrow} title={y.makerTitle} intro={y.makerIntro} />
+    <div class="mx-auto mt-10 grid max-w-5xl items-start gap-10 lg:grid-cols-[1fr_auto]">
+      <div class="space-y-5 text-lg leading-relaxed text-ink-soft/90">
+        <p set:html={y.makerP1}></p>
+        <p>{y.makerP2}</p>
+      </div>
+      <img
+        src="/images/yishama-collab-emblem.webp"
+        width="1080"
+        height="1080"
+        alt="Yishama × David Lesage — Artiste Collaboration"
+        class="mx-auto w-40 shrink-0 rounded-full bg-cream shadow-md lg:w-52"
+        loading="lazy"
+      />
+    </div>
+
+    <h3 class="mt-14 text-center font-display text-2xl font-700">{y.makerFactsTitle}</h3>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {y.makerFacts.map((f, i) => (
+        <div class="rounded-card border border-ink/10 bg-cream p-6">
+          <Icon name={makerIcons[i]} class="h-7 w-7 text-copper" />
+          <h4 class="mt-3 font-display text-lg font-700">{f.t}</h4>
+          <p class="mt-2 text-sm text-ink-soft/85">{f.d}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 text-center">
+      <Button href={yishamaUrl} variant="primary" external>{y.makerCta}</Button>
+      <p class="mx-auto mt-5 max-w-2xl text-xs leading-relaxed text-ink-soft/70">{y.makerDisclosure}</p>
+    </div>
+  </Section>
+
+  {/* ───────────── 8. LES VIDÉOS ───────────── */}
+  <Section tone="ink" id="videos">
+    <SectionHeading tone="light" eyebrow={y.videosEyebrow} title={y.videosTitle} intro={y.videosIntro} />
+
+    <div class="mt-12 grid items-center gap-8 lg:grid-cols-2">
+      <button
+        type="button"
+        data-video-id={featuredVideo}
+        data-video-title={y.videosFeaturedTitle}
+        class="group relative block w-full overflow-hidden rounded-card border border-cream/10 shadow-md"
+        aria-label={`${y.videosWatch} — ${y.videosFeaturedTitle}`}
+      >
+        <img src={`https://img.youtube.com/vi/${featuredVideo}/maxresdefault.jpg`} alt="" class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        <span class="absolute inset-0 grid place-items-center bg-ink/25 transition-colors group-hover:bg-ink/15">
+          <span class="flex h-16 w-16 items-center justify-center rounded-full bg-cream/95 shadow-lg transition-transform group-hover:scale-110">
+            <svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-rust" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+          </span>
+        </span>
+      </button>
+      <div>
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{y.videosFeaturedLabel}</p>
+        <h3 class="mt-3 font-display text-2xl font-700 text-cream">{y.videosFeaturedTitle}</h3>
+        <p class="mt-4 text-cream/75">{y.videosFeaturedText}</p>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {videos.map((id, i) => (
+        <button
+          type="button"
+          data-video-id={id}
+          data-video-title={d.yishamaVideos[i]}
+          class="group overflow-hidden rounded-card border border-cream/10 bg-cream/5 text-left"
+          aria-label={`${y.videosWatch} — ${d.yishamaVideos[i]}`}
+        >
+          <span class="relative block overflow-hidden">
+            <img src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`} alt="" class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            <span class="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-ink/70 text-cream backdrop-blur-sm transition-transform group-hover:scale-110">
+              <svg viewBox="0 0 24 24" class="ml-0.5 h-4 w-4 fill-current" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+            </span>
+          </span>
+          <span class="block p-4 text-sm font-600 text-cream/90">{d.yishamaVideos[i]}</span>
+        </button>
+      ))}
+    </div>
+
+    <div class="mt-10 text-center">
+      <button
+        type="button"
+        data-video-list={yishamaPlaylist}
+        data-video-title={y.videosPlaylistCta}
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-cream px-6 py-3 text-sm font-700 text-ink shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-cream-deep"
+      >
+        {y.videosPlaylistCta}
+      </button>
+      <p class="mt-3 text-xs text-cream/50">
+        <a href={yishamaPlaylistUrl} class="underline hover:text-cream/80" target="_blank" rel="noopener">YouTube ↗</a>
+      </p>
+    </div>
+  </Section>
+
+  {/* ───────────── 9. LE PONT VERS HANDPAN STUDIO ───────────── */}
+  <Section id="handpan-studio">
+    <SectionHeading eyebrow={y.bridgeEyebrow} title={y.bridgeTitle} />
+    <div class="mx-auto mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-ink-soft/90">
+      <p>{y.bridgeP1}</p>
+      <p set:html={y.bridgeP2}></p>
+      <p>{y.bridgeP3}</p>
+    </div>
+
+    <div class="mt-14 rounded-card border border-copper/25 bg-copper/5 p-8 md:p-10">
+      <h3 class="font-display text-2xl font-700">{y.bridgeAppTitle}</h3>
+      <p class="mt-2 text-ink-soft/85">{y.bridgeAppIntro}</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        {y.bridgeApp.map((b, i) => (
+          <div class="rounded-card border border-ink/10 bg-cream p-6">
+            <Icon name={appIcons[i]} class="h-7 w-7 text-copper" />
+            <h4 class="mt-3 font-display text-lg font-700">{b.t}</h4>
+            <p class="mt-2 text-sm text-ink-soft/85">{b.d}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-8 flex items-start gap-3 rounded-card bg-cream p-5 text-sm text-ink-soft/90">
+        <Icon name="lucide:sparkles" class="mt-0.5 h-5 w-5 shrink-0 text-copper" />
+        <span set:html={y.bridgeSignature}></span>
+      </p>
+      <p class="mt-4 flex items-start gap-3 text-sm text-ink-soft/70">
+        <Icon name="lucide:info" class="mt-0.5 h-5 w-5 shrink-0 text-ink-soft/50" />
+        <span>{y.bridgeHonest}</span>
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <Button href={L('/handpan-studio')} variant="primary">{y.bridgeCta}</Button>
+        <Button href={L('/blog/handpan-studio-mode-acoustique')} variant="ghost">{y.bridgeCtaBlog}</Button>
+      </div>
+    </div>
+  </Section>
+
+  {/* ───────────── 10. ET MAINTENANT ───────────── */}
+  <Section tone="cream-deep">
+    <div class="mx-auto max-w-3xl rounded-card border border-ink/10 bg-cream p-8 text-center md:p-10">
+      <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{y.endEyebrow}</p>
+      <h2 class="mt-4 font-display text-2xl font-700 md:text-3xl">{y.endTitle}</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-ink-soft/85">{y.endText}</p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <Button href={L('/showroom')} variant="primary">{y.endCtaShowroom}</Button>
+        <Button href={yishamaUrl} variant="ghost" external>{y.endCtaYishama}</Button>
+      </div>
+    </div>
+  </Section>
+
+  <VideoModal />
+</Layout>

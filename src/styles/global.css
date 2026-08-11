@@ -482,6 +482,93 @@ h1, h2, h3, h4, .font-display {
 @media (max-width: 640px) { .wood-modal-images { grid-template-columns: 1fr; } }
 
 /* ============================================================
+   MÉTAUX YISHAMA — disques cliquables + détail (page /yishama)
+   Même grammaire visuelle que les essences de bois du Neotone,
+   mais le disque est dessiné en CSS : je n'ai pas de photo fiable
+   par acier, et illustrer un métal par un autre serait faux.
+   ============================================================ */
+.metal-card-disc {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(31, 22, 17, 0.2), 0 30px 50px rgba(31, 22, 17, 0.12);
+  transition: transform 0.4s ease;
+}
+.wood-card:hover .metal-card-disc { transform: translateY(-6px) rotate(2deg); }
+.metal-card-disc::before,
+.metal-disc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 52%, rgba(0, 0, 0, 0.3) 0 9%, transparent 10%),
+    radial-gradient(circle at 50% 19%, rgba(0, 0, 0, 0.24) 0 6%, transparent 7%),
+    radial-gradient(circle at 23% 37%, rgba(0, 0, 0, 0.24) 0 6%, transparent 7%),
+    radial-gradient(circle at 77% 37%, rgba(0, 0, 0, 0.24) 0 6%, transparent 7%),
+    radial-gradient(circle at 30% 73%, rgba(0, 0, 0, 0.22) 0 5.5%, transparent 6.5%),
+    radial-gradient(circle at 70% 73%, rgba(0, 0, 0, 0.22) 0 5.5%, transparent 6.5%),
+    radial-gradient(circle at 34% 24%, rgba(255, 255, 255, 0.3), transparent 46%);
+  pointer-events: none;
+}
+.metal-card-disc::after {
+  content: attr(data-cta);
+  position: absolute;
+  left: 50%;
+  bottom: 9%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: rgba(31, 22, 17, 0.82);
+  color: #fff;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 3px 10px rgba(31, 22, 17, 0.35);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.wood-card:hover .metal-card-disc::after { background: var(--color-copper); transform: translateX(-50%) translateY(-3px); }
+
+.metal-modal-head { display: flex; align-items: center; gap: 22px; margin-bottom: 22px; }
+.metal-modal-head .wood-modal-supp { margin-bottom: 0; }
+.metal-disc {
+  display: block;
+  flex: 0 0 auto;
+  width: clamp(84px, 14vw, 132px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(31, 22, 17, 0.24);
+}
+@media (max-width: 560px) { .metal-modal-head { flex-direction: column; align-items: flex-start; gap: 16px; } }
+
+.metal-facts { display: grid; gap: 14px; margin: 0 0 22px; }
+@media (min-width: 768px) { .metal-facts { grid-template-columns: repeat(3, 1fr); } }
+.metal-facts > div {
+  background: var(--color-cream-deep);
+  border-radius: var(--radius-card);
+  padding: 16px 18px;
+}
+.metal-facts dt {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+  margin-bottom: 6px;
+}
+.metal-facts dd { margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--color-ink-soft); }
+.metal-modal-source { font-size: 0.78rem; color: var(--color-ink-soft); opacity: 0.75; margin: 0; }
+
+/* ============================================================
    LIGHTBOX VIDÉO (démos de l'app)
    ============================================================ */
 .vlightbox {
