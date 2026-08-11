@@ -29,6 +29,64 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 11/08/2026 (soir) — 🏷️ L'app s'appelle « Handpan Compagnon » (nom TEMPORAIRE)
+
+**Décision de David** (elle lève le blocage écrit plus bas, section « MARQUE HANDPAN STUDIO ») :
+l'app s'affiche désormais **« Handpan Compagnon »**. C'est **un nom d'attente**, pas le nom
+définitif — « en attendant de trouver le bon ». Déployé en prod le 11/08.
+
+### Règle de ce renommage : NOM D'AFFICHAGE UNIQUEMENT
+Rien d'autre n'a bougé, et rien d'autre ne doit bouger tant que le nom n'est pas arrêté :
+- **Aucune URL / route / slug / domaine** : la page reste **`/handpan-studio`** (+ `/en/handpan-studio`),
+  l'app reste sur **`play.handpanstudio.app`**, les apex ne changent pas. Motif : le nom est
+  provisoire, et churner les URLs casserait deux fois les liens entrants, les 14 articles du
+  10/08 et le SEO.
+- **Aucun renommage de fichier, de composant, d'image ni de CLÉ i18n.** `handpanStudio.*`,
+  `nav.studio`, `dict.studio.*` gardent leurs noms — seules les **valeurs** changent.
+- Un remplacement `Handpan Studio` → `Handpan Compagnon` (avec l'espace, sensible à la casse)
+  est **sûr** : il ne touche ni `handpan-studio` (slugs) ni `handpanstudio.app` (domaine).
+
+### Ce qui a été renommé (fait, en prod)
+`src/i18n/dict.ts` + `src/i18n/en.ts` (FR et EN — pas d'autre locale : `src/pages/zh/` ne
+contient que `micro-muling.astro`, sans occurrence), page `/handpan-studio`, accueil, header/nav,
+footer, CTA, `src/data/guides.ts` · `site.ts` · `shop.ts` · `yishama.ts`,
+`src/lib/ldJson.ts` (JSON-LD : `knowsAbout`, `alternateName`, `SoftwareApplication.name`),
+`SEO.astro` (meta keywords), `YishamaPage.astro`, `blog/[slug].astro` (le bouton CTA),
+`public/llms.txt`, `public/robots.txt`, `README.md`, `CLAUDE.md`.
+Aussi : les 2 commentaires de code qui disaient encore **« Neotone Studio »** (`src/lib/prices.ts`,
+`api/prices.js`). ⚠️ **« Neotone » seul ne se renomme JAMAIS** — c'est le handpan électronique
+de Soundventure, une vraie marque partenaire.
+
+### 🚫 Volontairement PAS renommé
+- **Tout `src/content/blog/`** (40 anciens articles + les 14 du 10/08, FR et EN) — **~200 occurrences
+  laissées en « Handpan Studio »**. Décision explicite de David le 11/08 : *« ne change pas tout dans
+  le blog, le nom n'est pas encore arrêté, juste sur les pages principales. »* Le corps des articles
+  sera repris **quand le nom définitif sera choisi**, pas avant. Conséquence assumée : sur une page
+  d'article, la nav et le bouton disent « Handpan Compagnon » et le texte dit « Handpan Studio ».
+- `specs/Note-modifications-site.md` (« Nom de marque inchangé pour l'instant : Handpan Studio ») —
+  spec datée, archive d'une décision passée.
+- Les sections datées de CE fichier plus bas — elles racontent l'historique, y compris le conflit
+  de marque. À lire comme telles.
+
+### ⚠️ Header : la barre de nav était DÉJÀ trop large à 1280 px
+Mesuré (10 entrées, FR, au point de rupture `xl` = 1280 px, largeur utile 1216 px) :
+**avant** le renommage la barre demandait déjà **1231 px** (−15 px, cassé depuis l'ajout de
+Yishama le 11/08 au matin) ; **après**, 1268 px (−52 px). Corrigé dans `Header.astro` en resserrant
+les liens : **`px-2.5` → `px-2`** et **`gap-1` → `gap-0`** sur l'`ul` → **1192 px** (marge **+24 px**
+en FR, **+66 px** en EN). Vérifié dans un iframe à viewport réel 1280 / 1366 / 1440 : une seule ligne,
+**30 px de dégagement** entre la dernière entrée et le bloc de droite, `scrollWidth == clientWidth`.
+🚨 **Une 11ᵉ entrée de nav, ou un libellé plus long, repassera en négatif.** Refaire la mesure avant
+d'en ajouter une — ou passer le point de rupture au-dessus de `xl`.
+
+### À faire quand le nom définitif sera trouvé
+1. Reprendre le blog (`src/content/blog/`, FR + EN) — le gros du volume est là.
+2. Reprendre `specs/`, et décider si les URLs/domaines suivent enfin (là seulement ça vaut le coût SEO).
+3. Aligner **l'app** : son propre nom, et surtout le **filigrane d'export** (« créé avec Handpan
+   Studio by David Lesage ») — il est décrit dans les articles de blog, donc les deux doivent bouger
+   ensemble pour rester vrais.
+
+---
+
 ## ÉTAT ACTUEL — 11/08/2026 — Nouvelle page `/yishama` (récit + 2 handpans acoustiques)
 
 **Demande de David** : une page dédiée à Yishama, sur le modèle de `/le-neotone`, mais dont le
@@ -270,7 +328,7 @@ devient ferme au règlement, reportable jusqu'à 24 h avant.
 à la main. À brancher sur Stripe si le volume augmente.
 ⚠️ Le cas « annulation à moins de 24 h » n'est volontairement PAS écrit (David ne l'a pas tranché).
 
-### ⚠️ MARQUE « HANDPAN STUDIO » — déposée par le studio d'Amsterdam
+### ⚠️ MARQUE « HANDPAN STUDIO » — déposée par le studio d'Amsterdam (⬆️ TRANCHÉ le 11/08 : voir tout en haut)
 Vérifié dans TMview le 06/08/2026 : **« HANDPAN STUDIO » est une marque de l'Union
 européenne ENREGISTRÉE** — EUIPO n° **018962523**, déposée le **12/12/2023** par
 **Handpan Studio V.O.F.** (Amsterdam), classes **15, 35, 37, 40, 41, 42**
