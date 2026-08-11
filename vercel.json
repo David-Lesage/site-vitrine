@@ -19,22 +19,22 @@
     {
       "source": "/handpan-studio",
       "destination": "/handpan-compagnon",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/handpan-studio/",
       "destination": "/handpan-compagnon",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/en/handpan-studio",
       "destination": "/en/handpan-compagnon",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/en/handpan-studio/",
       "destination": "/en/handpan-compagnon",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }
