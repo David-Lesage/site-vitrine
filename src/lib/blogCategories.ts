@@ -2,7 +2,7 @@ import type { Lang } from '@/i18n/config'
 
 /**
  * Taxonomie du blog — « type de sujet » calqué sur les vraies zones de l'app
- * Handpan Studio (+ le matériel Neotone, qui n'est pas une zone de l'app mais
+ * Handpan Compagnon (+ le matériel Neotone, qui n'est pas une zone de l'app mais
  * un vrai sujet du blog).
  *
  * Les slugs sont NEUTRES en langue (ils servent d'identifiant technique et de

@@ -18,7 +18,7 @@ export function personLdJson() {
       'Handpan',
       'Handpan électronique',
       'Neotone',
-      'Handpan Studio',
+      'Handpan Compagnon',
       'Apprentissage du handpan par les couleurs et les formes',
       'Pédagogie musicale visuelle',
       'ChromaKeys',
@@ -51,7 +51,7 @@ export function websiteLdJson() {
     '@type': 'WebSite',
     '@id': `${site.url}/#website`,
     name: 'David Lesage — Musique visible',
-    alternateName: ['David Lesage', 'Handpan Studio', 'Neotone'],
+    alternateName: ['David Lesage', 'Handpan Compagnon', 'Neotone'],
     url: site.url,
     description: site.positioning,
     inLanguage: ['fr', 'en'],
@@ -59,12 +59,12 @@ export function websiteLdJson() {
   }
 }
 
-// L'application Handpan Studio (crucial pour les recherches « app handpan » / IA)
+// L'application Handpan Compagnon (crucial pour les recherches « app handpan » / IA)
 export function softwareAppLdJson() {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Handpan Studio',
+    name: 'Handpan Compagnon',
     applicationCategory: 'MultimediaApplication',
     applicationSubCategory: 'Music education',
     operatingSystem: 'Web (navigateur)',

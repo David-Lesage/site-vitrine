@@ -1,5 +1,5 @@
 // Fonction serverless Vercel (runtime Node) — relaie en direct les tarifs Stripe
-// depuis l'Edge Function publique get-prices de l'app Neotone Studio.
+// depuis l'Edge Function publique get-prices de l'app Handpan Compagnon.
 // Appelée côté serveur → pas de contrainte CORS. Le navigateur interroge cette
 // route en same-origin (/api/prices) → les prix se mettent à jour automatiquement
 // quand un prix change dans Stripe (dans la limite du cache CDN ci-dessous).

@@ -1,6 +1,6 @@
-# CLAUDE.md — Site vitrine David Lesage / Handpan Studio
+# CLAUDE.md — Site vitrine David Lesage / Handpan Compagnon
 
-Site vitrine (Astro + Tailwind v4) de l'écosystème David Lesage : l'instrument **Neotone**, les **cours**, la **boutique**, et l'app **Handpan Studio**. Multilingue FR (racine) + EN (`/en`).
+Site vitrine (Astro + Tailwind v4) de l'écosystème David Lesage : l'instrument **Neotone**, les **cours**, la **boutique**, et l'app **Handpan Compagnon**. Multilingue FR (racine) + EN (`/en`).
 
 ## Chantier en cours (prioritaire)
 **Passer le discours « contribution » → freemium clair Découverte (gratuit) + Studio (payant).**

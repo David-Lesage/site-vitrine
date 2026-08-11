@@ -1,4 +1,4 @@
-# David Lesage — Musique visible (handpan / Neotone / Handpan Studio)
+# David Lesage — Musique visible (handpan / Neotone / Handpan Compagnon)
 User-agent: *
 Allow: /
 

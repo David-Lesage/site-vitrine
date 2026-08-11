@@ -34,7 +34,7 @@ bun run check      # vérification de types Astro
 | Le Neotone | `/le-neotone` | Modèles, bois, specs, comparatif, **calculateur de prix**, procédure, FAQ |
 | Boutique | `/boutique` | Catégories WooCommerce-like : handpans (devis) + micros (panier Snipcart) |
 | Cours | `/cours` | Méthode visuelle, formules & tarifs, workshops |
-| Handpan Studio | `/handpan-studio` | ChromaKeys, Constellations, émotions, 4 modes, liste d'attente |
+| Handpan Compagnon | `/handpan-studio` | ChromaKeys, Constellations, émotions, 4 modes, liste d'attente |
 | Showroom | `/showroom` | Paris 20ᵉ, exclusivité jour-même, agenda, accès |
 | À propos | `/a-propos` | Histoire, vision, preuves, collaborations |
 | Contact | `/contact` | Coordonnées + formulaire (Netlify Forms compatible) |

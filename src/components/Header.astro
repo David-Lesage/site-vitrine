@@ -14,7 +14,7 @@ const basePath = unlocalizePath(Astro.url.pathname)
 const isActive = (href: string) => (href === '/' ? basePath === '/' : basePath.startsWith(href))
 const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
 const navLabel = (key: string) => (t.common.nav as Record<string, string>)[key]
-// 7 couleurs des chakras (rouge → violet) pour mettre en avant Handpan Studio
+// 7 couleurs des chakras (rouge → violet) pour mettre en avant Handpan Compagnon
 const chakra = ['#e0402b', '#ef8a2a', '#f1c62f', '#4caf6d', '#39a0dd', '#3a4fa6', '#8a49b8']
 ---
 
@@ -26,15 +26,21 @@ const chakra = ['#e0402b', '#ef8a2a', '#f1c62f', '#4caf6d', '#39a0dd', '#3a4fa6'
       <span class="text-[0.65rem] font-600 uppercase tracking-[0.18em] text-copper">{t.common.brandSub}</span>
     </a>
 
-    <ul class="hidden items-center gap-1 xl:flex">
+    <ul class="hidden items-center gap-0 xl:flex">
       {nav.map((item) => (
         <li>
           <a
             href={localizePath(item.href, lang)}
             {/* `whitespace-nowrap` + padding resserré au point de rupture xl :
                 depuis l'ajout de « Yishama » (10 entrées), les libellés en deux
-                mots passaient à la ligne et déformaient la barre. */}
-            class:list={['whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-600 transition-colors hover:bg-ink/5', isActive(item.href) ? 'text-rust' : 'text-ink-soft', item.key === 'studio' ? 'flex flex-col items-center gap-1' : '']}
+                mots passaient à la ligne et déformaient la barre.
+                Resserré à nouveau (px-2, gap-0 sur l'ul) le 11/08/2026 : le
+                libellé « Handpan Compagnon » est plus long que « Handpan
+                Studio ». Mesuré à 1280 px (le point de rupture xl) : la barre
+                demandait 1268 px pour 1216 px disponibles ; elle en demande
+                1192 après resserrage (24 px de marge en FR, 66 px en EN).
+                Ne pas rallonger un libellé de nav sans refaire cette mesure. */}
+            class:list={['whitespace-nowrap rounded-full px-2 py-2 text-sm font-600 transition-colors hover:bg-ink/5', isActive(item.href) ? 'text-rust' : 'text-ink-soft', item.key === 'studio' ? 'flex flex-col items-center gap-1' : '']}
             aria-current={isActive(item.href) ? 'page' : undefined}
           >
             {navLabel(item.key)}

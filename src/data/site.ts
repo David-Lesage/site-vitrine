@@ -1,7 +1,7 @@
 // ============================================================
 // Données centrales NEUTRES du site David Lesage.
 // Libellés de navigation / footer / crédibilité → src/i18n/dict.ts.
-// David Lesage est la MARQUE-MÈRE ; Neotone, Handpan Studio, les
+// David Lesage est la MARQUE-MÈRE ; Neotone, Handpan Compagnon, les
 // Cours et les micros sont ses univers.
 // ============================================================
 
@@ -11,7 +11,7 @@ export const site = {
   positioning:
     'David Lesage — le musicien-inventeur qui rend la musique visible et accessible à tous, par les couleurs, la géométrie et les émotions.',
   url: 'https://www.lesagedavid.fr',
-  // Lien direct vers l'application Handpan Studio. La connexion, le choix de
+  // Lien direct vers l'application Handpan Compagnon. La connexion, le choix de
   // l'abonnement et le paiement (Stripe) se font directement dans l'app.
   appUrl: 'https://play.handpanstudio.app',
   // ⚙️ INTERRUPTEUR — accès public à l'application. C'est désormais le REPLI.
@@ -116,7 +116,7 @@ export const neotonePlaylist = 'https://www.youtube.com/playlist?list=PLns6mQWNw
 // 1) performance musicale · 2) pourquoi un handpan électronique · 3) tuto créer une gamme
 export const homeVideos = ['KNQc6jCs0VE', 'v87I0csinRY', 'zWqXGlHb2wI'] as const
 
-// Démos vidéo de l'app Handpan Studio (src + poster). Ordre = dict.studio.videos
+// Démos vidéo de l'app Handpan Compagnon (src + poster). Ordre = dict.studio.videos
 export const studioVideos: { src: string; poster: string }[] = [
   { src: '/images/sa-1-tonalite.mp4', poster: '/images/sa-1-tonalite-poster.webp' },
   { src: '/images/sa-ecouter.mp4', poster: '/images/sa-ecouter-poster.webp' },
