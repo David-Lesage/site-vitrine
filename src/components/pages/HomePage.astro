@@ -8,6 +8,7 @@ import { newsletterMailto } from '@/lib/booking'
 import { Icon } from 'astro-icon/components'
 import YouTube from '@/components/YouTube.astro'
 import { site, homeVideos, neotonePlaylist } from '@/data/site'
+import { yishamaPlaylist } from '@/data/yishama'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { personLdJson, websiteLdJson, videoLdJson } from '@/lib/ldJson'
@@ -35,10 +36,23 @@ const emphasize = (text: string, words: string[]) =>
     return i === -1 ? acc : `${acc.slice(0, i)}<strong class="font-600 text-gold">${w}</strong>${acc.slice(i + w.length)}`
   }, text)
 const heroLeadHtml = emphasize(h.heroLead, [colorWord, geoWord, emoWord])
+// ⚖️ La 1ʳᵉ carte ne pointe plus vers /le-neotone mais vers la section
+// « deux univers » (#instruments) : sur l'accueil, aucun des deux mondes
+// n'entre par la grande porte avant l'autre. Son visuel est volontairement
+// SPLIT (acoustique | électronique), les deux moitiés à 50 %.
 const universMeta = [
-  { img: '/images/neotone-mutant-noyer.webp', w: 600, h: 600, icon: 'lucide:disc-3', href: '/le-neotone', fit: 'contain' },
+  { img: '/images/yishama-hero-david.webp', img2: '/images/neotone-hero-david.webp', w: 1800, h: 1200, icon: 'lucide:disc-3', href: '#instruments', fit: 'split' },
   { img: '/images/prod-cours-stages.jpg', w: 375, h: 375, icon: 'lucide:graduation-cap', href: '/cours', fit: 'cover-top' },
-  { img: '/images/app-acoustique.jpg', w: 1634, h: 902, icon: 'lucide:sparkles', href: '/handpan-studio', fit: 'cover' },
+  { img: '/images/app-acoustique.jpg', w: 1634, h: 902, icon: 'lucide:sparkles', href: '/handpan-compagnon', fit: 'cover' },
+]
+// Les ancres de la page courante ne se localisent pas (`/en/#…` inutile).
+const href = (p: string) => (p.startsWith('#') ? p : L(p))
+// Les deux univers : même gabarit, même ordre de lecture, seuls l'accent
+// et la destination changent. Acoustique en premier UNIQUEMENT parce que
+// c'est l'ordre du titre « Acoustique et électronique ».
+const duoMeta = [
+  { img: '/images/yishama-hero-david.webp', icon: 'lucide:circle-dot', href: '/yishama', accent: 'text-copper', ring: 'border-copper/30', chip: 'bg-copper/10 text-copper' },
+  { img: '/images/neotone-hero-david.webp', icon: 'lucide:audio-waveform', href: '/le-neotone', accent: 'text-rust', ring: 'border-rust/30', chip: 'bg-rust/10 text-rust' },
 ]
 ---
 
@@ -61,7 +75,7 @@ const universMeta = [
         <p class="mt-6 text-lg text-cream/85 md:text-xl" set:html={heroLeadHtml}></p>
         <div class="mt-9 flex flex-wrap justify-center gap-3 md:justify-start">
           <Button href={L('/showroom')} variant="primary">{h.ctaShowroom}</Button>
-          <Button href={L('/handpan-studio')} variant="light">{h.ctaMethod}</Button>
+          <Button href={L('/handpan-compagnon')} variant="light">{h.ctaMethod}</Button>
         </div>
         <div class="chroma-bar mx-auto mt-12 h-1.5 w-48 rounded-full md:mx-0"></div>
       </div>
@@ -80,9 +94,17 @@ const universMeta = [
     <SectionHeading eyebrow={h.universEyebrow} title={h.universHeading} intro={h.universIntro} />
     <div class="mt-12 grid gap-6 md:grid-cols-3">
       {h.univers.map((u, i) => (
-        <a href={L(universMeta[i].href)} class="group flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40 transition-all hover:-translate-y-1 hover:shadow-xl">
+        <a href={href(universMeta[i].href)} class="group flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40 transition-all hover:-translate-y-1 hover:shadow-xl">
           <div class="aspect-video overflow-hidden bg-ink/5">
+            {universMeta[i].fit === 'split' ? (
+              <div class="flex h-full w-full">
+                <img src={universMeta[i].img} width={universMeta[i].w} height={universMeta[i].h} alt="" class="h-full w-1/2 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <span class="w-px shrink-0 bg-gold/70" aria-hidden="true"></span>
+                <img src={universMeta[i].img2} width={universMeta[i].w} height={universMeta[i].h} alt={u.title} class="h-full w-1/2 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+              </div>
+            ) : (
             <img src={universMeta[i].img} width={universMeta[i].w} height={universMeta[i].h} alt={u.title} class:list={['h-full w-full transition-transform duration-500 group-hover:scale-105', universMeta[i].fit === 'contain' ? 'object-contain p-5' : universMeta[i].fit === 'cover-top' ? 'object-cover object-top' : 'object-cover']} loading="lazy" />
+            )}
           </div>
           <div class="flex flex-1 flex-col p-6">
             <div class="flex items-center gap-2 text-copper"><Icon name={universMeta[i].icon} class="h-5 w-5" /><span class="text-xs font-700 uppercase tracking-widest">{u.sub}</span></div>
@@ -95,7 +117,63 @@ const universMeta = [
     </div>
   </Section>
 
-  <Section tone="cream-deep">
+  {/* ⚖️ « Le monde du ET » — acoustique ET électronique, à poids strictement
+      égal : même image (même séance photo), même gabarit de carte, même
+      nombre de puces, CTA jumeaux. Ne JAMAIS agrandir, avancer ou enrichir
+      un côté plus que l'autre : c'est le fond du propos (complétion, pas
+      compétition). Le bandeau final est le trait d'union réel — l'app, avec
+      son mode acoustique, son mode électronique, « 🎯 Compléter » et Hybride. */}
+  <Section id="instruments" tone="cream-deep">
+    <div class="text-center">
+      <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{h.duoEyebrow}</p>
+      <h2 class="mt-3 font-display text-3xl font-700 leading-tight md:text-4xl">
+        {h.duoTitleA} <span class="text-gradient-brand">{h.duoTitleAnd}</span> {h.duoTitleB}
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-ink-soft/85">{h.duoIntro}</p>
+      <div class="chroma-bar mx-auto mt-6 h-1 w-32 rounded-full"></div>
+    </div>
+
+    <div class="mt-12 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-4">
+      {h.duo.map((d, i) => (
+        <Fragment>
+          {i === 1 && (
+            <div class="flex items-center justify-center md:flex-col" aria-hidden="true">
+              <span class="h-px flex-1 bg-ink/15 md:h-full md:w-px md:flex-1"></span>
+              <span class="mx-4 my-0 grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold/50 bg-cream font-display text-sm font-700 uppercase tracking-widest text-copper shadow-sm md:mx-0 md:my-4">{h.duoTitleAnd}</span>
+              <span class="h-px flex-1 bg-ink/15 md:h-full md:w-px md:flex-1"></span>
+            </div>
+          )}
+          <a href={L(duoMeta[i].href)} class:list={['group flex flex-col overflow-hidden rounded-card border bg-cream transition-all hover:-translate-y-1 hover:shadow-xl', duoMeta[i].ring]}>
+            <div class="aspect-[3/2] overflow-hidden bg-ink/5">
+              <img src={duoMeta[i].img} width="1800" height="1200" alt={d.alt} class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-6 md:p-8">
+              <p class:list={['inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[11px] font-700 uppercase tracking-widest', duoMeta[i].chip]}>
+                <Icon name={duoMeta[i].icon} class="h-4 w-4" /> {d.sub}
+              </p>
+              <h3 class="mt-4 font-display text-2xl font-700">{d.title}</h3>
+              <p class="mt-3 text-ink-soft/85">{d.text}</p>
+              <ul class="mt-5 space-y-2 text-sm text-ink-soft/85">
+                {d.points.map((p) => (
+                  <li class="flex gap-2"><Icon name="lucide:check" class:list={['mt-0.5 h-4 w-4 shrink-0', duoMeta[i].accent]} /> {p}</li>
+                ))}
+              </ul>
+              <span class:list={['mt-6 inline-flex items-center gap-1 font-700 transition-all group-hover:gap-2', duoMeta[i].accent]}>{d.cta} →</span>
+            </div>
+          </a>
+        </Fragment>
+      ))}
+    </div>
+
+    <div class="mt-10 rounded-card border border-gold/40 bg-cream p-6 text-center md:p-8">
+      <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{h.duoBridgeEyebrow}</p>
+      <h3 class="mt-3 font-display text-2xl font-700">{h.duoBridgeTitle}</h3>
+      <p class="mx-auto mt-4 max-w-3xl text-ink-soft/85">{h.duoBridgeText}</p>
+      <div class="mt-6"><Button href={L('/handpan-compagnon')} variant="primary">{h.duoBridgeCta}</Button></div>
+    </div>
+  </Section>
+
+  <Section>
     <div class="grid items-center gap-10 lg:grid-cols-2">
       <div class="aspect-[4/3] overflow-hidden rounded-card"><img src="/images/hero-david.jpg" width="2400" height="1350" alt="David Lesage" class="h-full w-full object-cover object-top" loading="lazy" /></div>
       <div>
@@ -170,7 +248,10 @@ const universMeta = [
         </figure>
       ))}
     </div>
-    <div class="mt-8 text-center">
+    {/* Deux playlists, deux boutons identiques : le son acoustique et le son
+        électronique s'ouvrent de la même façon, sans hiérarchie. */}
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <button type="button" data-video-list={yishamaPlaylist} data-video-title={h.proofCtaYishama} class="inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-700 text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-ink/5">{h.proofCtaYishama}</button>
       <button type="button" data-video-list={playlistId} data-video-title={h.proofCta} class="inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-700 text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-ink/5">{h.proofCta}</button>
     </div>
   </Section>

@@ -20,6 +20,13 @@ const sh = t.showroom
 const bk = t.booking
 const L = (p: string) => localizePath(p, lang)
 const eventIcons = ['lucide:presentation', 'lucide:compass', 'lucide:hand', 'lucide:graduation-cap']
+// Les deux univers essayables sur place — mêmes accents que sur l'accueil,
+// mêmes destinations. L'ordre suit le titre (acoustique puis électronique)
+// et n'exprime aucune préférence.
+const duoMeta = [
+  { icon: 'lucide:circle-dot', href: '/yishama', accent: 'text-copper', ring: 'border-copper/30', chip: 'bg-copper/10 text-copper' },
+  { icon: 'lucide:audio-waveform', href: '/le-neotone', accent: 'text-rust', ring: 'border-rust/30', chip: 'bg-rust/10 text-rust' },
+]
 // Les 3 cartes payantes affichent le tarif de site.ts (sessionTypes), comme le
 // formulaire de réservation — impossible qu'elles annoncent deux prix différents.
 // La 1ʳᵉ carte (showcase gratuit) garde son libellé traduit.
@@ -84,6 +91,42 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
       )}
     </div>
   </section>
+
+  {/* ⚖️ « Le monde du ET », version showroom : ici on ne vend pas un choix,
+      on fait ESSAYER. Les deux cartes sont strictement symétriques (même
+      gabarit, même nombre de puces, même CTA) — mettre Yishama en avant,
+      mais jamais plus que Neotone. La note du bas dit franchement la seule
+      asymétrie réelle : seul le Neotone est en stock. */}
+  <Section id="deux-univers">
+    <SectionHeading eyebrow={sh.duoEyebrow} title={sh.duoTitle} intro={sh.duoIntro} />
+    <div class="mt-10 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-4">
+      {sh.duo.map((d, i) => (
+        <Fragment>
+          {i === 1 && (
+            <div class="flex items-center justify-center md:flex-col" aria-hidden="true">
+              <span class="h-px flex-1 bg-ink/15 md:h-full md:w-px md:flex-1"></span>
+              <span class="mx-4 grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold/50 bg-cream font-display text-sm font-700 uppercase tracking-widest text-copper shadow-sm md:mx-0 md:my-4">{lang === 'en' ? 'and' : 'et'}</span>
+              <span class="h-px flex-1 bg-ink/15 md:h-full md:w-px md:flex-1"></span>
+            </div>
+          )}
+          <div class:list={['flex flex-col rounded-card border bg-cream-deep/40 p-6 md:p-8', duoMeta[i].ring]}>
+            <p class:list={['inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[11px] font-700 uppercase tracking-widest', duoMeta[i].chip]}>
+              <Icon name={duoMeta[i].icon} class="h-4 w-4" /> {d.sub}
+            </p>
+            <h3 class="mt-4 font-display text-2xl font-700">{d.title}</h3>
+            <p class="mt-3 text-ink-soft/85">{d.text}</p>
+            <ul class="mt-5 flex-1 space-y-2 text-sm text-ink-soft/85">
+              {d.points.map((p) => (
+                <li class="flex gap-2"><Icon name="lucide:check" class:list={['mt-0.5 h-4 w-4 shrink-0', duoMeta[i].accent]} /> {p}</li>
+              ))}
+            </ul>
+            <a href={L(duoMeta[i].href)} class:list={['mt-6 inline-flex items-center gap-1 font-700 transition-all hover:gap-2', duoMeta[i].accent]}>{d.cta} →</a>
+          </div>
+        </Fragment>
+      ))}
+    </div>
+    <p class="mx-auto mt-8 max-w-3xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm text-ink-soft/85">{sh.duoNote}</p>
+  </Section>
 
   <Section tone="cream-deep">
     <div class="rounded-card border border-copper/30 bg-cream p-8 md:p-12">

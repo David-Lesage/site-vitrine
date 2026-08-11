@@ -324,6 +324,11 @@ const ld = [
     <SectionHeading eyebrow={y.bridgeEyebrow} title={y.bridgeTitle} />
     <div class="mx-auto mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-ink-soft/90">
       <p>{y.bridgeP1}</p>
+      {/* Le « pourquoi » : ce n'est pas un manque du fabricant, c'est la nature
+          d'un instrument jeune, varié et modal. C'est aussi ce qui explique
+          pourquoi j'ai fini par construire l'outil moi-même. */}
+      <p set:html={y.bridgeP1b}></p>
+      <p set:html={y.bridgeP1c}></p>
       <p set:html={y.bridgeP2}></p>
       <p>{y.bridgeP3}</p>
     </div>
@@ -349,7 +354,7 @@ const ld = [
         <span>{y.bridgeHonest}</span>
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <Button href={L('/handpan-studio')} variant="primary">{y.bridgeCta}</Button>
+        <Button href={L('/handpan-compagnon')} variant="primary">{y.bridgeCta}</Button>
         <Button href={L('/blog/handpan-studio-mode-acoustique')} variant="ghost">{y.bridgeCtaBlog}</Button>
       </div>
     </div>

@@ -45,7 +45,7 @@ export const nav = [
   { key: 'yishama', href: '/yishama' },
   { key: 'shop', href: '/boutique' },
   { key: 'lessons', href: '/cours' },
-  { key: 'studio', href: '/handpan-studio' },
+  { key: 'studio', href: '/handpan-compagnon' },
   { key: 'blog', href: '/blog' },
   { key: 'showroom', href: '/showroom' },
   { key: 'about', href: '/a-propos' },
@@ -113,8 +113,11 @@ export const demoInstruments = ['neotone', 'calebasse', 'gonilele', 'mic-hisong'
 export const neotonePlaylist = 'https://www.youtube.com/playlist?list=PLns6mQWNwwnS43kRc2dps9asOshpfQ2Ka'
 
 // Vidéos mises en avant sur l'accueil (ids YouTube). Titres → dict.home.proofVideos (même ordre).
-// 1) performance musicale · 2) pourquoi un handpan électronique · 3) tuto créer une gamme
-export const homeVideos = ['KNQc6jCs0VE', 'v87I0csinRY', 'zWqXGlHb2wI'] as const
+// 1) performance au Neotone (électronique) · 2) Shape of My Heart sur les deux
+// Yishama (acoustique — même id que `featuredVideo` de data/yishama.ts) ·
+// 3) tuto créer une gamme. ⚖️ Équilibre acoustique/électronique voulu ici :
+// ne pas remettre trois vidéos Neotone.
+export const homeVideos = ['KNQc6jCs0VE', 'Zp_zaqsRBCg', 'zWqXGlHb2wI'] as const
 
 // Démos vidéo de l'app Handpan Compagnon (src + poster). Ordre = dict.studio.videos
 export const studioVideos: { src: string; poster: string }[] = [

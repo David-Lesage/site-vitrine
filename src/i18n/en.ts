@@ -108,7 +108,7 @@ export const en: Dict = {
   home: {
     title: 'Learn the Handpan Visually — David Lesage',
     description:
-      'The Neotone electronic handpan and my colour-based method: learn the handpan differently, with Handpan Compagnon. Come try it in Paris.',
+      'The Yishama acoustic handpan, the Neotone electronic handpan and my colour-based method: learn the handpan differently, with Handpan Compagnon. Come try them in Paris.',
     heroEyebrow: 'Musician · Teacher · Inventor',
     heroTitleA: 'I make music',
     heroTitleHighlight: 'visible',
@@ -117,13 +117,44 @@ export const en: Dict = {
     ctaShowroom: 'Come try it in Paris',
     ctaMethod: 'Discover my learning app',
     universHeading: 'The gear, the lessons and the app',
-    universEyebrow: 'Three worlds, one vision',
+    universEyebrow: 'One vision, several paths',
     universIntro: 'It all starts from a single idea: make music understandable, memorable and playable by everyone.',
     univers: [
-      { sub: 'Neotone & Mutant', title: 'Instruments & Microphones', text: 'The best digital handpan in the world, with personal guidance — from the trial to unboxing.', cta: 'Discover the Neotone' },
+      { sub: 'Acoustic & electronic', title: 'Instruments & microphones', text: 'A Yishama acoustic handpan, a Neotone electronic handpan, microphones — two worlds I stand behind equally.', cta: 'See both worlds' },
       { sub: 'Online & in person', title: 'The lessons', text: 'Learn the handpan differently: through colours, shapes and emotions. Anywhere in the world, or in Paris.', cta: 'See the lessons' },
       { sub: 'The app', title: 'Handpan Compagnon', text: 'The app that makes music visible — colours, geometry and emotions transform the way you learn and play.', cta: 'Discover the app' },
     ],
+
+    // « Le monde du ET » — see the French dictionary for the editorial rule.
+    // Strict symmetry between the two cards: no ranking, no bigger side.
+    duoEyebrow: 'The world of AND',
+    duoTitleA: 'Acoustic',
+    duoTitleAnd: 'and',
+    duoTitleB: 'electronic',
+    duoIntro: 'Not competition: completion. Two worlds that coexist — I play both, and neither replaces the other.',
+    duo: [
+      {
+        sub: 'Acoustic handpan · Yishama',
+        title: 'Metal that breathes',
+        text: 'Two 18-note instruments tuned to 432 Hz, designed with Yonathan so I could sing and accompany myself. The sound comes straight out of the steel — nothing between it and you.',
+        points: ['The timbre and overtones of hammered steel', 'No cable, no battery: it plays anywhere, instantly', 'I am a Yishama ambassador and affiliate'],
+        cta: 'My story with Yishama',
+        alt: 'David Lesage holding one of his Yishama acoustic handpans',
+      },
+      {
+        sub: 'Electronic handpan · Neotone',
+        title: 'A keyboard of scales',
+        text: 'The electronic handpan built by Soundventure, which I have beta-tested since 2023. Every scale in a single instrument, on headphones as well as on stage.',
+        points: ['Every scale in a single instrument', 'Adjustable volume, headphone play, built-in recorder', 'I am an official Neotone ambassador'],
+        cta: 'Discover the Neotone',
+        alt: 'David Lesage with two Neotone electronic handpans',
+      },
+    ],
+    duoBridgeEyebrow: 'The bridge',
+    duoBridgeTitle: 'My app speaks both languages',
+    duoBridgeText: 'Handpan Compagnon has an acoustic mode and an electronic mode. When your acoustic scale is no longer enough, the “🎯 Complete” feature tells you exactly which notes you are missing — and what a second acoustic handpan, or a Neotone, would bring. Hybrid mode then draws your chords across both shells. Completion, not competition.',
+    duoBridgeCta: 'Discover Handpan Compagnon',
+
     whyEyebrow: 'Why me',
     whyTitle: 'The tool I wish I’d been taught as a child',
     whyP1: 'I started drums at age 4. From the very first lesson, sheet music was forced on me — a language disconnected from my desire to play. I quit everything to learn by ear, self-taught.',
@@ -146,10 +177,11 @@ export const en: Dict = {
     communityButton: 'Keep me posted about the next showcases',
     communityNote: 'Your mail app opens with a message already written — you just hit send.',
     proofEyebrow: 'Sound first',
-    proofTitle: 'See and hear the instrument come alive',
-    proofIntro: 'I play, I demonstrate, I teach — the Neotone on video. My full playlist is right below.',
-    proofVideos: ['Musical performance on the Neotone', 'Why an electronic handpan?', 'Create your scale — tutorial'],
+    proofTitle: 'See and hear the instruments come alive',
+    proofIntro: 'I play, I demonstrate, I teach — acoustic and electronic, on video. Both full playlists are right below.',
+    proofVideos: ['Musical performance on the Neotone', 'Shape of My Heart — on my two Yishamas', 'Create your scale — tutorial'],
     proofCta: 'See the full Neotone playlist',
+    proofCtaYishama: 'See the full Yishama playlist',
   },
   neotone: {
     title: 'Neotone — electronic & digital handpan | David Lesage',
@@ -350,9 +382,16 @@ export const en: Dict = {
     videosWatch: 'Watch',
 
     bridgeEyebrow: 'What those two pans produced',
-    bridgeTitle: 'I was given the instruments, not the method',
+    // ⚠️ Sensitive passage (11/08/2026) — see the French dictionary for the
+    // reasoning: the cause is the nature of a young, still-evolving, mostly
+    // modal instrument, never a maker's omission.
+    bridgeTitle: 'Nobody could have handed me the method — it did not exist',
     bridgeP1:
-      'I was happy and completely lost. Two magnificent, very complex instruments, delivered with no manual. As if I had been handed two spaceships without being taught to fly them.',
+      'I was happy and completely lost. Two magnificent, very complex instruments, delivered with no manual. As if I had been handed two spaceships — except the flight manual was written nowhere, for nobody.',
+    bridgeP1b:
+      'The handpan is a <strong>21st-century</strong> instrument, still evolving fast: it has neither the centuries of piano teaching behind it, nor those of the guitar. And it cannot even have <em>one</em> method — there are as many handpans as there are scales, note layouts and note counts. What holds true on one instrument no longer holds on the next. That is nobody’s oversight: it is the youth of a living instrument.',
+    bridgeP1c:
+      'On top of that comes the very thing that makes it magical: the handpan is most often a <strong>modal</strong> instrument. That is a strength, and a wonderful way in — especially if you have never played music, you get a beautiful result almost straight away, with no theory. But you also go round in circles very fast. And the moment you are a professional musician expecting chromatic freedom, or you want to sing real songs over it — my case — it becomes very complex, very quickly. I came from drums, a purely rhythmic instrument: I had no grounding in harmony to fall back on.',
     bridgeP2:
       'In August 2023 I started a document to work out, at last, how to build my chords across the two pans. Coloured cards, one colour per note. <strong>That document became Handpan Compagnon.</strong>',
     bridgeP3:
@@ -935,23 +974,48 @@ export const en: Dict = {
   showroom: {
     title: 'Try a Handpan in Paris — Showroom | David Lesage',
     description:
-      'The only place in the world to test and walk away with your Neotone the same day. David Lesage Showroom, 29 rue des Orteaux, Paris 20th: free showcases, private demonstrations and lessons.',
+      'Try both worlds of the handpan in Paris: my Yishama acoustic handpans and the Neotone electronic handpan. David Lesage Showroom, 29 rue des Orteaux, Paris 20th: free showcases, private demonstrations and lessons.',
     heroEyebrow: 'The space · Paris 20th',
     heroTitle: 'David Lesage Showroom',
-    heroLead: 'The only place in the world where you can touch, test and walk away with a Neotone — and meet a community.',
+    heroLead: 'A place where acoustic and electronic are played side by side: my Yishama handpans and the Neotone, in your hands the same afternoon — and a community to meet.',
     ctaBook: 'Book my visit',
     ctaNext: 'See the next showcase',
     exclBadge: '★ World first',
     exclTitle: 'Walk away with your Neotone¹, the same day',
     exclText: 'For the first time in the world, you can buy your Neotone directly at the Paris showroom and take it home immediately — with no manufacturing wait.',
     exclArgs: ['7% discount — the best price on the market (vs. 5% online)', 'No manufacturing delay, no waiting', 'Very limited stock — only a few instruments available'],
+
+    // « The world of AND », showroom edition: here it is an EXPERIENCE, not a
+    // purchase decision. Strict parity both ways — feature Yishama, but never
+    // MORE than Neotone (David's explicit instruction, 11/08).
+    duoEyebrow: 'On site · both worlds',
+    duoTitle: 'Acoustic and electronic, the same afternoon',
+    duoIntro: 'The showroom is not here to make you pick a side. Both worlds live next to each other: you hear them, you play them, you feel the difference in your hands. Not competition — completion.',
+    duo: [
+      {
+        sub: 'Acoustic · Yishama',
+        title: 'My two Yishama handpans',
+        text: 'My personal instruments are here. You play them, you compare them, and you hear what hammered steel does in a room — unamplified first, then miked.',
+        points: ['Two 18-note instruments, tuned to 432 Hz', 'Miked with the Hisong and Muling microphones'],
+        cta: 'My story with Yishama',
+      },
+      {
+        sub: 'Electronic · Neotone',
+        title: 'Both Neotone',
+        text: 'One on a speaker, one on headphones. You move from one scale to the next, try the effects and the recorder — for as long as you need.',
+        points: ['Every scale in a single instrument', 'One on a speaker, one on headphones, effects included'],
+        cta: 'Discover the Neotone',
+      },
+    ],
+    duoNote: 'To be clear: only the Neotone is in stock here — it is the only one you can take home the same day. The Yishamas are my personal instruments: they are here to be heard and played, and if you want your own, I point you to the workshop (I am an ambassador and affiliate).',
+
     eventsEyebrow: 'What you experience',
     eventsTitle: 'Test, meet, walk away with',
     eventsHighlight: 'Most asked for at the start',
     events: [
       { t: 'Presentation showcase', d: 'Neotone presentation events by David Lesage, with hands-on testing of the instruments on site.', price: 'Public · Free' },
       { t: 'Getting started with your instrument', d: 'Just received your Neotone, your handpan or your microphone? We set everything up together and walk through the controls, step by step. In person or online.', price: '' },
-      { t: 'Discovering the instruments', d: 'A private session at the showroom to try in depth whatever interests you: Neotone, acoustic handpans, calabash, Gonilélé, Hisong and Muling microphones.', price: '' },
+      { t: 'Discovering the instruments', d: 'A private session at the showroom to try in depth whatever interests you: Yishama acoustic handpans, Neotone, calabash, Gonilélé, Hisong and Muling microphones.', price: '' },
       { t: 'Lesson or one-to-one guidance', d: 'With David Lesage, whatever your level: create your scales, play pieces and techniques, or simply get clear on what you’re looking for. In person or online.', price: '' },
     ],
     programEyebrow: 'How it unfolds',
@@ -960,9 +1024,9 @@ export const en: Dict = {
     program: [
       { t: 'The Neotone, live', d: 'I play for you: the raw sound, then with effects (octaver, reverb, looper) and singing along — the interface projected on screen.' },
       { t: 'Handpan Compagnon, the app that makes music visible', d: 'A live demo: the colours, the chord constellations, and how you learn by seeing music instead of decoding sheet music.' },
-      { t: 'Acoustic sound & microphones', d: 'My acoustic handpans, miked with the Hisong and Muling microphones — to compare and hear the difference.' },
+      { t: 'Acoustic sound & microphones', d: 'My two Yishama acoustic handpans, miked with the Hisong and Muling microphones — to compare and hear the difference.' },
       { t: 'Your questions', d: 'An open exchange: I answer everyone, from the curious beginner to the seasoned musician.' },
-      { t: 'Your turn to play', d: 'Try both Neotone — one on a speaker, one on headphones — and take your time to feel the instrument.' },
+      { t: 'Your turn to play', d: 'Try both Neotone — one on a speaker, one on headphones — and my two Yishama acoustic handpans. Take your time to feel each instrument.' },
     ],
     programNote: 'Children welcome, under their parents’ responsibility. The demonstration, talk and Q&A part can feel a little long for younger ones, so consider bringing a quiet activity, or a second adult to take over if needed.',
     booking: 'Appointments by email reservation:',
