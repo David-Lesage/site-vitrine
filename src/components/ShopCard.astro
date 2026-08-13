@@ -1,0 +1,122 @@
+---
+// Carte produit de la boutique. Extraite de ShopPage.astro (13/08/2026) pour
+// pouvoir rendre la même carte dans plusieurs grilles (ex. les deux colonnes
+// « Acoustique ET Électronique » de la catégorie Handpan) sans dupliquer le
+// markup — donc sans risque de divergence entre les deux univers.
+import Carousel from '@/components/Carousel.astro'
+import { Icon } from 'astro-icon/components'
+import type { Product } from '@/data/shop'
+import { site } from '@/data/site'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang; product: Product }
+const { lang, product: p } = Astro.props
+const t = getDict(lang)
+const s = t.shop
+const L = (path: string) => localizePath(path, lang)
+const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
+const eur = (n: number) => n.toLocaleString(lang === 'en' ? 'en-GB' : 'fr-FR') + ' €'
+const productCopy = s.products as Record<string, { name: string; description: string }>
+const linkTags = s.linkTags as Record<string, string>
+const linkCtas = s.linkCtas as Record<string, string>
+const priceNotes = s.priceNotes as Record<string, string>
+const ytId = (u: string) => (u.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{6,})/) || [])[1] || ''
+const info = productCopy[p.id]
+const isExternal = !(p.url.startsWith('/') || p.url.startsWith('mailto:'))
+const href = p.url.startsWith('/') ? L(p.url) : p.url
+---
+
+<div id={p.id} class="flex scroll-mt-28 flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+  <div class="relative">
+    {p.images && p.images.length > 1 ? (
+      <div class="p-3"><Carousel id={`shop-${p.id}`} slides={p.images.map((src) => ({ src }))} alt={info.name} /></div>
+    ) : (
+      <div class="aspect-square bg-ink/5 p-6"><img src={p.image} width={p.imgW} height={p.imgH} alt={info.name} class="h-full w-full object-contain" loading="lazy" /></div>
+    )}
+    {/* Bouton + réduction remontés SUR l'image (David, 08/08/2026) : sur les
+        cartes à long carrousel + description, le CTA du bas passait inaperçu. */}
+    {p.mode === 'link' && (
+      <a
+        href={href}
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener' : undefined}
+        class="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-cream px-3.5 py-2 text-xs font-700 text-ink shadow-md transition-colors hover:bg-copper hover:text-cream"
+      >
+        {p.tagKey && <span class="text-copper">{linkTags[p.tagKey]}</span>}
+        {p.tagKey && '·'}
+        {linkCtas[p.linkLabel || 'buy']}
+      </a>
+    )}
+  </div>
+  <div class="flex flex-1 flex-col p-6">
+    <h3 class="font-display text-xl font-700">{info.name}</h3>
+    <p class="mt-2 text-sm text-ink-soft/85" set:html={info.description} />
+    {/* Aperçu cliquable (miniature YouTube + bouton lecture) plutôt qu'un
+        simple lien texte, qui passait inaperçu (David, 09/08/2026). */}
+    {p.videoUrls && p.videoUrls.map((v, vi) => (
+      <button
+        type="button"
+        data-video-id={ytId(v)}
+        data-video-title={`${info.name} — ${s.watchDemo}`}
+        class="group relative mt-3 block w-full overflow-hidden rounded-xl border border-ink/10"
+        aria-label={`${s.watchDemo}${p.videoUrls!.length > 1 ? ` ${vi + 1}` : ''}`}
+      >
+        <img
+          src={`https://img.youtube.com/vi/${ytId(v)}/hqdefault.jpg`}
+          alt=""
+          class="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 flex items-center justify-center bg-ink/25 transition-colors group-hover:bg-ink/35">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-cream/95 shadow-lg transition-transform group-hover:scale-110">
+            <svg viewBox="0 0 24 24" class="ml-0.5 h-5 w-5 fill-rust" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+          </span>
+        </div>
+        <span class="absolute bottom-2 left-3 rounded-full bg-ink/65 px-2.5 py-1 text-xs font-700 text-cream">
+          {s.watchDemo}{p.videoUrls!.length > 1 ? ` ${vi + 1}` : ''}
+        </span>
+      </button>
+    ))}
+    {/* Pas de ressort `flex-1` ici (13/08/2026) : il poussait le CTA tout en bas
+        de la carte la plus haute de la rangée, créant un grand vide sur les
+        cartes courtes (ex. micro Muling) — le bouton « Découvrir » passait alors
+        inaperçu. Les cartes sont désormais alignées EN HAUT (items-start côté
+        grille) et chaque CTA suit directement son contenu. */}
+    <div class="mt-4 flex flex-wrap items-center justify-between gap-2">
+      {p.mode === 'soon' && <span class="text-sm font-600 text-ink-soft/60">{s.soon}</span>}
+      {(p.mode === 'cart' || p.mode === 'quote') && <span class="font-display text-lg font-700">{p.mode === 'quote' ? s.from : ''}{eur(p.price)}</span>}
+      {p.mode === 'link' && p.priceLabel && <span class="font-display text-lg font-700">{p.priceLabel}</span>}
+      {p.mode === 'link' && p.tagKey && <span class="inline-flex items-center gap-1.5 rounded-full bg-copper/15 px-3 py-1 text-xs font-700 text-copper">{linkTags[p.tagKey]}</span>}
+    </div>
+    {p.priceNoteKey && (
+      <div class="mt-3 rounded-lg border border-copper/30 bg-copper/5 p-3 text-xs leading-relaxed text-ink-soft/90" set:html={priceNotes[p.priceNoteKey]} />
+    )}
+    {p.discountCode && (
+      <div class="mt-3 flex items-center justify-between gap-2 rounded-lg border border-copper/30 bg-copper/5 px-3 py-2 text-sm">
+        <span class="text-ink-soft/85">{s.copyCode} : <strong class="font-700 text-ink">{p.discountCode}</strong></span>
+        <button
+          type="button"
+          class="shop-copy-code shrink-0 rounded-full bg-copper/15 px-3 py-1.5 text-xs font-700 text-copper transition-colors hover:bg-copper hover:text-cream"
+          data-code={p.discountCode}
+          data-copy-label={s.copyCode}
+          data-copied-label={s.codeCopied}
+        >
+          {s.copyCode}
+        </button>
+      </div>
+    )}
+    <div class="mt-4">
+      {p.mode === 'cart' && snipcartKey && (
+        <button class="snipcart-add-item w-full rounded-full bg-rust px-5 py-3 font-700 text-cream transition-colors hover:bg-copper" data-item-id={p.id} data-item-name={info.name} data-item-price={p.price} data-item-url="/boutique" data-item-description={info.description} data-item-image={p.image}>{s.addCart}</button>
+      )}
+      {p.mode === 'cart' && !snipcartKey && (
+        <a href={`mailto:${site.email}?subject=${encodeURIComponent(info.name)}`} class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{s.orderEmail}</a>
+      )}
+      {p.mode === 'quote' && <a href={L('/le-neotone') + '#calculateur'} class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{s.calcOrder}</a>}
+      {p.mode === 'link' && <a href={href} target={isExternal ? '_blank' : undefined} rel="noopener" class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{linkCtas[p.linkLabel || 'buy']}</a>}
+      {p.mode === 'soon' && <span class="block w-full rounded-full border border-ink/15 px-5 py-3 text-center font-600 text-ink-soft/50">{s.soonLong}</span>}
+    </div>
+  </div>
+</div>

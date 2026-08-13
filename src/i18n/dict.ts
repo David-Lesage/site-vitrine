@@ -476,7 +476,7 @@ const fr = {
     adviceText: 'Je réponds personnellement. Dis-moi ton projet, je t’aide à choisir le bon instrument.',
     adviceCta: 'Me faire conseiller',
     categories: {
-      handpans: { label: 'Handpans numériques', blurb: 'Les Neotone, sélectionnés et accompagnés par David.' },
+      handpans: { label: 'Handpan', blurb: 'Deux univers qui se complètent, jamais qui s’opposent : l’acoustique ET l’électronique. Choisis par ton oreille, pas par une hiérarchie.' },
       app: { label: 'Application', blurb: 'Handpan Compagnon — l’app pédagogique qui rend la musique visible.' },
       creations: { label: 'Mes créations · Now Groove', blurb: 'Créées par moi : ma méthode de rythme Now Groove, la calebasse signature et sa housse faite main.' },
       instruments: { label: 'Instruments d’exception', blurb: 'Je collabore avec des fabricants d’exception dont je représente fièrement la qualité. À travers moi, profite de coupons de réduction et de démonstrations lors de mes showcases.' },
@@ -485,6 +485,15 @@ const fr = {
       formations: { label: 'Cours & stages', blurb: 'Apprends avec moi en cours particuliers et en stages, en présentiel ou à distance.' },
       outils: { label: 'Mes outils du quotidien', blurb: 'Au-delà de la musique : les outils que j’utilise vraiment pour rester concentré, présent et créatif.' },
     },
+    // Sous-catégories (un seul niveau) — voir data/shop.ts → categorySubs.
+    subcategories: {
+      acoustique: { label: 'Acoustique', blurb: 'Le métal, la main, le souffle de la pièce.', more: 'Tout savoir sur les handpans Yishama →' },
+      electronique: { label: 'Électronique', blurb: 'Toutes les gammes, le casque, la scène.', more: 'Tout savoir sur le Neotone →' },
+    },
+    subNavLabel: 'Deux univers :',
+    // Asymétrie réelle assumée : je ne vends pas les deux de la même façon.
+    handpanNote: 'La seule différence réelle : le <strong>Neotone</strong> (fabriqué par Soundventure) se commande via mon calculateur, avec code de remise nominatif et garantie 6 ans. Pour <strong>Yishama</strong>, je suis ambassadeur et affilié — la commande se fait sur leur site, mon lien te suit. Deux façons d’acheter, une seule exigence de qualité.',
+    handpanBridge: 'Le trait d’union entre les deux : Handpan Compagnon →',
     products: {
       'handpan-studio': { name: 'Handpan Compagnon · l’application', description: 'Mon application pédagogique : couleurs, géométrie et émotions rendent la musique visible. Découverte gratuite, puis Studio à partir de 9,90 €/mois — débloque la création, la sauvegarde et l’export PDF/PNG de tes partitions.' },
       'neotone-one': { name: 'Neotone¹', description: 'Handpan numérique 10 notes, toutes les gammes, qualité studio. Achat accompagné : code de remise nominatif + garantie 6 ans.' },

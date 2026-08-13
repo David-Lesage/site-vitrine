@@ -29,6 +29,47 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 13/08/2026 — Boutique : catégorie « Handpan » (Acoustique ET Électronique)
+
+Livré + déployé. Suite directe du « monde du ET » (accueil `#instruments`, showroom `#deux-univers`).
+
+### Ce qui change
+- L'onglet boutique **« Handpans numériques » → « Handpan »** (FR) / « Handpan » (EN).
+- **Sous-catégories** (un seul niveau, nouveau champ `sub` sur `Product` +
+  `categorySubs` dans `src/data/shop.ts`) : `acoustique` **ET** `electronique`.
+- **Yishama remonte** de la catégorie « Instruments d'exception » vers **`handpans` /
+  `acoustique`**, côte à côte avec les 2 Neotone (`electronique`) — demande de David.
+  « Instruments d'exception » garde Gonilélé + tambour chamanique.
+- Rendu : sous-menu de pastilles (ancres) + **deux colonnes de largeur identique séparées
+  par le rond « ET »**, exactement le langage visuel de l'accueil et du showroom
+  (acoustique = cuivre/`circle-dot`, électronique = rouille/`audio-waveform`).
+  Chaque colonne se termine par un encart « Tout savoir sur… » collé en bas (`mt-auto`)
+  → les deux univers finissent à la **même hauteur** (mesuré : 1778 px = 1778 px)
+  malgré 1 produit d'un côté et 2 de l'autre.
+- **Asymétrie commerciale préservée** (`shop.handpanNote`) : Neotone (fabriqué par
+  Soundventure) = calculateur + code de remise nominatif + garantie 6 ans ; Yishama =
+  **ambassadeur et affilié**, commande sur leur site via mon lien. Rien de « signé »,
+  aucun partenariat officiel annoncé. Lien pont vers `/handpan-compagnon`.
+
+### Bug de mise en page corrigé au passage
+La carte **micro Muling** avait un grand vide qui repoussait le bouton « Découvrir » en bas.
+Cause : le ressort `flex-1` dans la carte + l'étirement de la grille alignaient tous les CTA
+sur la carte la plus haute de la rangée. Correctif : ressort supprimé, grilles produits en
+`items-start` → chaque CTA suit son contenu, cartes alignées **en haut**. Vide résiduel sous
+le CTA Muling : 25 px (padding), au lieu de plusieurs centaines.
+
+### Fichiers touchés
+`src/data/shop.ts` · `src/components/pages/ShopPage.astro` ·
+**`src/components/ShopCard.astro` (nouveau — carte produit extraite, pour ne pas dupliquer
+le markup entre la grille classique et les deux colonnes)** · `src/i18n/dict.ts` ·
+`src/i18n/en.ts`. Nouvelles clés i18n : `shop.subcategories`, `shop.subNavLabel`,
+`shop.handpanNote`, `shop.handpanBridge`. Aucune URL/route/slug modifiée.
+
+Vérifié : `astro build` propre (87 pages), FR + EN, desktop + 375 px (aucun débordement,
+le sous-menu ne déborde pas), bons produits sous chaque sous-onglet.
+
+---
+
 ## ÉTAT ACTUEL — 11/08/2026 (nuit) — ⚖️ « Le monde du ET » + URL `/handpan-compagnon`
 
 Quatre chantiers livrés et déployés d'un seul bloc (build + commit + `vercel --prod`).

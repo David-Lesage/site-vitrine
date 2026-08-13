@@ -447,7 +447,7 @@ export const en: Dict = {
     adviceText: 'I answer personally. Tell me your project, I’ll help you choose the right instrument.',
     adviceCta: 'Get my advice',
     categories: {
-      handpans: { label: 'Digital handpans', blurb: 'The Neotone instruments, selected and supported by David.' },
+      handpans: { label: 'Handpan', blurb: 'Two worlds that complete each other, never compete: acoustic AND electronic. Choose with your ears, not with a hierarchy.' },
       app: { label: 'App', blurb: 'Handpan Compagnon — the teaching app that makes music visible.' },
       creations: { label: 'My creations · Now Groove', blurb: 'Created by me: my Now Groove rhythm method, the signature calabash and its handmade cover.' },
       instruments: { label: 'Exceptional instruments', blurb: 'I work with outstanding makers whose quality I’m proud to represent. Through me, enjoy discount coupons and demos at my showcases.' },
@@ -456,6 +456,13 @@ export const en: Dict = {
       formations: { label: 'Lessons & workshops', blurb: 'Learn with me through private lessons and workshops, in person or online.' },
       outils: { label: 'My everyday tools', blurb: 'Beyond music: the tools I actually use to stay focused, present and creative.' },
     },
+    subcategories: {
+      acoustique: { label: 'Acoustic', blurb: 'The steel, the hand, the breath of the room.', more: 'All about Yishama handpans →' },
+      electronique: { label: 'Electronic', blurb: 'Every scale, headphones, the stage.', more: 'All about the Neotone →' },
+    },
+    subNavLabel: 'Two worlds:',
+    handpanNote: 'The one real difference: the <strong>Neotone</strong> (built by Soundventure) is ordered through my calculator, with a personal discount code and a 6-year warranty. For <strong>Yishama</strong>, I am an ambassador and affiliate — you order on their site and my link follows you. Two ways to buy, one standard of quality.',
+    handpanBridge: 'What links the two: Handpan Compagnon →',
     products: {
       'handpan-studio': { name: 'Handpan Compagnon · the app', description: 'My teaching app: colours, geometry and emotions make music visible. Free to start, then Studio from €9.90/month — unlock creation, saving and PDF/PNG export of your scores.' },
       'neotone-one': { name: 'Neotone¹', description: 'Digital handpan, 10 notes, all the scales, studio quality. Supported purchase: personal discount code + 6-year warranty.' },

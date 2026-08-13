@@ -14,6 +14,10 @@ export interface Product {
   imgH: number
   url: string
   category: string
+  // sous-catégorie optionnelle (un seul niveau d'imbrication), traduite dans
+  // dict.shop.subcategories. Utilisée par la catégorie « handpans » :
+  // 'acoustique' (Yishama) ET 'electronique' (Neotone).
+  sub?: string
   active: boolean
   // 'link' = produit acheté/écouté sur une plateforme externe (HelloAsso, streaming…)
   mode: 'cart' | 'quote' | 'soon' | 'link'
@@ -35,13 +39,24 @@ export interface Product {
 
 export const categoryIds = ['handpans', 'app', 'creations', 'instruments', 'micros', 'musique', 'formations', 'outils'] as const
 
+// Sous-catégories : UN seul niveau, uniquement pour les catégories listées ici.
+// ⚖️ Ordre volontaire — acoustique EN PREMIER, comme sur l'accueil (#instruments)
+// et le showroom (#deux-univers) : « pas de compétition, de la complétion ».
+// Ne jamais donner plus de place à un univers qu'à l'autre.
+export const categorySubs: Record<string, readonly string[]> = {
+  handpans: ['acoustique', 'electronique'],
+}
+
 export const products: Product[] = [
   // Application Handpan Compagnon — produit phare digital
   { id: 'handpan-studio', price: 0, image: '/images/app-logique.webp', imgW: 1100, imgH: 1327, url: '/handpan-compagnon', category: 'app', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'app', priceLabel: 'Version gratuite ou Studio dès 9,90 €/mois', images: ['/images/app-logique.webp', '/images/app-atlas.webp', '/images/app-creation.webp', '/images/app-midi.webp', '/images/constel-polygone.webp'] },
-  { id: 'neotone-one', price: 1990, image: '/images/neotone1-1.jpg', imgW: 670, imgH: 653, url: '/le-neotone', category: 'handpans', active: true, mode: 'quote', images: modelCarousels.one.map((s) => s.src) },
-  { id: 'neotone-mutant', price: 3150, image: '/images/mutant-0.jpg', imgW: 670, imgH: 614, url: '/le-neotone', category: 'handpans', active: true, mode: 'quote', images: modelCarousels.mutant.map((s) => s.src) },
-  // Instruments d'exception — joués / créés / recommandés par David (Linktree)
-  { id: 'yishama', price: 0, image: '/images/prod-yishama.png', imgW: 766, imgH: 766, url: 'https://www.yishama.com/?wpam_id=40', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'yishama', images: ['/images/prod-yishama.png', '/images/prod-yishama-2.jpg', '/images/prod-yishama-3.jpg', '/images/prod-yishama-4.jpg'] },
+  { id: 'neotone-one', price: 1990, image: '/images/neotone1-1.jpg', imgW: 670, imgH: 653, url: '/le-neotone', category: 'handpans', sub: 'electronique', active: true, mode: 'quote', images: modelCarousels.one.map((s) => s.src) },
+  { id: 'neotone-mutant', price: 3150, image: '/images/mutant-0.jpg', imgW: 670, imgH: 614, url: '/le-neotone', category: 'handpans', sub: 'electronique', active: true, mode: 'quote', images: modelCarousels.mutant.map((s) => s.src) },
+  // ⚖️ Yishama vit dans la catégorie « handpans », sous-catégorie ACOUSTIQUE, à
+  // égalité avec les Neotone (13/08/2026, demande de David : « faites remonter
+  // Yishama, côte à côte aux Neotone »). Photos = visuels marketing Yishama,
+  // PAS les instruments personnels de David.
+  { id: 'yishama', price: 0, image: '/images/prod-yishama.png', imgW: 766, imgH: 766, url: 'https://www.yishama.com/?wpam_id=40', category: 'handpans', sub: 'acoustique', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'yishama', images: ['/images/prod-yishama.png', '/images/prod-yishama-2.jpg', '/images/prod-yishama-3.jpg', '/images/prod-yishama-4.jpg'] },
   { id: 'gonilele', price: 0, image: '/images/prod-gonilele-4.jpg', imgW: 1000, imgH: 1100, url: '/gonilele', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'maisongoni', priceLabel: 'dès 440 €', images: ['/images/prod-gonilele-4.jpg', '/images/prod-gonilele-2.jpg', '/images/prod-gonilele-5.jpg', '/images/prod-gonilele.jpeg', '/images/prod-gonilele-3.jpg'] },
   { id: 'tambour', price: 0, image: '/images/prod-tambour.jpg', imgW: 480, imgH: 360, url: 'https://www.facebook.com/profile.php?id=100075977844059', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'tambour' },
   // ── Mes créations Now Groove (David Lesage) : méthode + calebasse signature + housse ──
