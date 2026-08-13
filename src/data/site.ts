@@ -33,7 +33,10 @@ export const site = {
     instagram: 'https://www.instagram.com/neotone.digitalhandpan/',
     facebook: 'https://www.facebook.com/people/Neotone-Digital-Handpan/',
     linktree: 'https://linktr.ee/David.Lesage.Artiste',
-    youtube: 'https://www.youtube.com/@DavidLesageMusique',
+    // ⚠️ Vérifié le 13/08/2026 : @DavidLesageMusique renvoyait un 404
+    // (lien mort dans le footer, les réseaux ET le JSON-LD `sameAs`).
+    // La vraie chaîne est @DavidLesageArtiste (HTTP 200).
+    youtube: 'https://www.youtube.com/@DavidLesageArtiste',
   },
 }
 
