@@ -27,8 +27,13 @@ export function personLdJson() {
       'Calebasse',
     ],
     knowsLanguage: ['fr', 'en'],
-    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Conservatoire national de région' },
-    award: ['Prix de batterie du Conservatoire (mention très bien)', 'The Voice — Saison 11 (France)'],
+    // ⚠️ Personne réelle : ne lister ici que des faits sourcés.
+    // « The Voice » n'est PAS une récompense — David a passé les auditions à
+    // l'aveugle de la saison 11 (TF1, 2022). Le déclarer en `award` était faux :
+    // c'est désormais une `performerIn`, et le prix du Conservatoire reste seul.
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Conservatoire de Toulouse' },
+    award: ['Prix de batterie du Conservatoire de Toulouse (mention très bien)'],
+    performerIn: { '@type': 'TVEpisode', name: 'The Voice — saison 11, auditions à l’aveugle (TF1, 2022)' },
     hasOccupation: [
       { '@type': 'Occupation', name: 'Musicien' },
       { '@type': 'Occupation', name: 'Professeur de handpan' },

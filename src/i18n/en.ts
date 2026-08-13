@@ -1066,21 +1066,106 @@ export const en: Dict = {
       { icon: '🚊', t: 'Tram', d: 'Line T3b — Marie de Miribel stop (12 min walk).' },
     ],
   },
+  // ⚠️ Voir le commentaire de `about` dans dict.ts : personne réelle,
+  // chaque fait est sourcé, et rien de privé n'entre ici.
   about: {
-    title: 'About — David Lesage, musician-inventor',
+    title: 'About — David Lesage, musician, teacher and inventor',
     description:
-      'My story explains my mission: to make music visible because sheet music nearly made me give it up. Drums at 4, self-taught, the Conservatory, the handpan spark and the invention of my tools.',
+      'A trained drummer who became a handpan player and singer: the Conservatory, The Voice, Naxos and the international handpan scene, two custom instruments with no manual — and the tools I ended up building.',
     heroEyebrow: 'About',
-    heroTitle: 'Making music visible, because sheet music nearly made me give it up',
-    heroLead: 'I’m David Lesage: musician, teacher and inventor. I create the tools I wish I’d been given — so no one gives up music for lack of seeing it.',
+    heroTitle: 'I come from rhythm. Harmony, I had to make visible before I could reach it.',
+    heroLead:
+      'I’m David Lesage: a trained drummer turned handpan player, singer, teacher — and tool builder. Here is the real path, with its detours, its encounters, and what they ended up producing.',
+    heroImgAlt: 'David Lesage, musician',
+    heroCtaStory: 'Read the story',
+    heroCtaToday: 'What I do today',
+
     storyEyebrow: 'My story',
     storyTitle: 'From drums to handpan, by a long detour',
-    story: [
-      'I started music at 4, on drums. But from my very first lesson, reading sheet music was forced on me — a language that had, for me, no link to my desire to play. I quit everything to learn self-taught, by ear.',
-      'Later, at the National Conservatory, music theory tripped me up again. I left with a drums award, highest honours… yet discouraged by a theory of harmony that didn’t speak to me.',
-      'When I discovered the handpan, I hit the same wall: no method, and the difficulty of visually organising the paths of notes. I had up to three handpans to cover the notes of the piano — before meeting the Neotone. And there, a new difficulty: the notes change place with every scale.',
-      'So I built the tool I wish I’d been given as a child: a visual approach to harmony, through colours, shapes and emotions — to understand, memorise, and finally sing while accompanying myself on the handpan.',
+    storyIntro:
+      'I rarely tell all of this in one go. But it’s this path — not a bright idea scribbled on a napkin — that explains the tools I build today.',
+
+    chapters: [
+      {
+        eyebrow: 'The beginning',
+        title: 'Drums at 4, and a language that didn’t speak to me',
+        paras: [
+          'I started music at 4, on drums. From my very first lesson, reading sheet music was forced on me — a language that had, for me, no link to my desire to play. I quit, and learned self-taught, by ear.',
+          'I came back through the front door: a music and dance baccalaureate at Lycée Saint-Sernin in Toulouse, a spell at the Marciac jazz college where I discovered vocal improvisation, then a drums award with highest honours at the Toulouse Conservatory. I left with the diploma — and discouraged by a way of teaching harmony that still hadn’t spoken to me.',
+          'This is the part I want to say plainly, because it explains all the rest: I come from a purely rhythmic world. Rhythm, I know in my body. Harmony, I didn’t — I had no solid theoretical foundation, and for years I couldn’t even name what I was missing.',
+        ],
+      },
+      {
+        eyebrow: 'The detours',
+        title: 'Ten years spent bridging worlds that weren’t talking to each other',
+        paras: [
+          'Meanwhile I did a lot of things that seemed to have nothing in common. I started bands, learned video shooting and editing, joined Thierry Vanoffe’s team in 2017 as a trainer and video creator for the Numéricoach channel, then co-founded Aora Mana in 2020 — one of the first virtual-reality platforms for initiatory journeys, drone and 360° camera in hand.',
+          'In February 2022 I sang in the blind auditions of The Voice on TF1, season 11, with an African song: <em>Koth Biro</em>.',
+          'For a long time I experienced all this as scattering myself. I eventually understood it was the opposite: my job is to build bridges. Between one maker and another, between an intuition and an object that works, between a theory and something you can actually see.',
+        ],
+      },
+      {
+        eyebrow: 'Passing it on',
+        title: 'My first method came from something missing, not from an idea',
+        paras: [
+          'On the calabash, I was missing the snare and the hi-hat. I solved it with plastic eggs — a workaround that became a way of playing, then a way of teaching.',
+          'It became Now Groove (2021): a rhythm method built on call-and-response and visual emoticons, which holds up with fifty people in the same room. Already the same idea as today — replace vocabulary with something you can see.',
+          'In 2018 I also entered the world of the ngoni with La Maison du Ngoni, whose ambassador I am: I pass on Joris Feuillâtre’s gonilélé harp. My lessons and workshops run under Now Music Academy, carried by the Résonances Productions association.',
+        ],
+      },
+      {
+        eyebrow: 'Naxos, Greece · June 2022',
+        title: 'The concert that took me into the handpan world',
+        paras: [
+          'I play the HONA Festival, in Agia Anna. When I arrive I’m nobody: the stage is tiny, the sound system is bad, there’s no monitor. But I offer something people hadn’t seen — I sing, I play three handpans at once, and I handle percussion with both feet and hands.',
+          'The next day I run into a man on the harbour. I don’t know who he is; I’m told he’s one of the best handpan makers in the world. It’s Yonathan, from Yishama. He listens to me at length, calmly, and doesn’t try to sell me his instruments.',
+          'That same summer, the very first beta Neotone is put in my hands. A month later I play the HUG festival in Hungary, stop by the workshop, and leave with a beta Neotone and a clear commitment: report the bugs and help the instrument evolve. I’ve done it ever since — thousands of reports later, I personally know Csaba, Norbert and the Soundventure team in Budapest.',
+        ],
+      },
+      {
+        eyebrow: 'May 2023 → August 2023',
+        title: 'Two magnificent instruments, and no manual',
+        paras: [
+          'In May 2023 I receive the two handpans Yonathan designed for me: eighteen notes each, tuned to 432 Hz, built for one thing only — so I could sing while accompanying myself, in any key.',
+          'And then, the truth. Nobody had hidden the method from me: it didn’t exist. The handpan is a 21st-century instrument, still evolving, often modal, and there are almost as many note layouts as there are instruments. With my drummer’s background, I was alone in front of two splendid machines.',
+          'In August 2023 I opened a document — just to be able to see which chords I could play on my own instruments. A few months later, Yonathan suggested I turn it into a little chord booklet, for myself. I made the booklet. It became an application.',
+        ],
+      },
     ],
+
+    quoteNaxos: 'At that moment, I had no idea I was walking into an extremely private circle of the international handpan world.',
+    quoteNaxosSource: 'How I tell that concert',
+    quoteShips: 'It was as if I had two spaceships, but didn’t know how to fly them.',
+    quoteShipsSource: 'My two Yishamas, the first months',
+
+    linkYishama: 'My story with Yonathan and my two Yishamas',
+    linkApp: 'Discover Handpan Compagnon',
+
+    todayEyebrow: 'Today · Paris 20th',
+    todayTitle: 'Musician, teacher, and tool builder',
+    todayIntro:
+      'I’m a French performing-arts freelancer, based in Paris. I opened Le Nid, my showroom in the 20th: a place to come and touch, try, listen — and walk away with your Neotone the same day. My two Yishamas are there too, not for sale, just to be played.',
+    today: [
+      { t: 'I play', d: 'Handpan, voice, calabash and ngoni on stage. Two recorded opuses under the title L’Alliance du Phoenix, and free showcases at Le Nid almost every month.' },
+      { t: 'I teach', d: 'Now Music Academy: handpan, calabash rhythm and gonilélé harp, over video anywhere in the world or in person in Paris. I answer personally.' },
+      { t: 'I build', d: 'Handpan Compagnon makes harmony visible through colours, shapes and emotions. Guso Facile does the same for the paperwork of freelance performers in France.' },
+      { t: 'I bridge', d: 'Neotone beta-tester, Yishama ambassador and affiliate, La Maison du Ngoni ambassador: I genuinely use what I present — and I say so when something isn’t perfect.' },
+    ],
+
+    milestonesEyebrow: 'Landmarks',
+    milestonesTitle: 'A few dated landmarks',
+    milestones: [
+      { y: '2013', t: 'Drums award, highest honours — Toulouse Conservatory.' },
+      { y: '2018', t: 'I enter the world of the ngoni with La Maison du Ngoni.' },
+      { y: '2021', t: 'Now Groove — my visual rhythm method on the calabash.' },
+      { y: 'Feb. 2022', t: 'Blind auditions of The Voice, season 11 (TF1).' },
+      { y: 'June 2022', t: 'HONA Festival, Naxos. Meeting Yonathan (Yishama), first beta Neotone in hand.' },
+      { y: 'July 2022', t: 'HUG Festival, Hungary. I leave the workshop with a beta Neotone.' },
+      { y: 'May 2023', t: 'I receive my two Yishama handpans: 18 notes each, 432 Hz.' },
+      { y: 'Aug. 2023', t: 'The document that would become Handpan Compagnon.' },
+      { y: 'Today', t: 'Le Nid, Paris 20th — lessons, try-outs and showcases.' },
+    ],
+
     visionEyebrow: 'My teaching vision',
     visionTitle: 'The handpan, a full-fledged accompaniment instrument',
     visionIntro:
@@ -1088,11 +1173,24 @@ export const en: Dict = {
     pillars: [
       { t: 'Visible', d: 'Colour, geometry and emotion replace jargon. You see music before naming it.' },
       { t: 'Accessible', d: 'Warmth, simplicity, a personal tone. From the curious child to the seasoned musician — I answer personally.' },
-      { t: 'Demanding', d: 'Conservatory, studio quality, certified ambassador: the technical proof reassures, never intimidates.' },
+      { t: 'Honest', d: 'Conservatory, stage, years of beta-testing: the technical proof reassures, never intimidates — and I say plainly what I don’t know.' },
     ],
-    proofsEyebrow: 'My credentials',
+
+    proofsEyebrow: 'My landmarks',
     proofsTitle: 'Credibility & background',
-    collabEyebrow: 'Collaborations & press',
+    proofsIntro: 'Nothing more than what is true — and checkable.',
+    proofs: [
+      'Drums award · Toulouse Conservatory',
+      'The Voice season 11 · blind auditions (TF1, 2022)',
+      'French performing-arts freelancer',
+      'Neotone beta-tester (Soundventure, Budapest)',
+      'Yishama ambassador and affiliate',
+      'La Maison du Ngoni ambassador',
+      'Le Nid · showroom, Paris 20th',
+      'L’Alliance du Phoenix · Opus I & II',
+    ],
+
+    collabEyebrow: 'Collaborations',
     collabTitle: 'Got a project? Let’s talk.',
     collabIntro: 'Music education, handpan, my tools — or any other project, even beyond Neotone. Brands, organisers, media, collaborators: the door is open.',
     collabCta1: 'Let’s work together',

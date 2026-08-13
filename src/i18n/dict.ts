@@ -1122,21 +1122,120 @@ const fr = {
       { icon: '🚊', t: 'Tramway', d: 'Ligne T3b — station Marie de Miribel (12 min à pied).' },
     ],
   },
+  // ============================================================
+  // Page /a-propos — biographie de David Lesage.
+  // ⚠️ PERSONNE RÉELLE. Chaque fait écrit ici est SOURCÉ :
+  // parcours Conservatoire / Bac TMD / Marciac (ancien site Wix,
+  // page « parcours »), The Voice saison 11 (auditions à l'aveugle
+  // diffusées le 12/02/2022, TF1 — source tierce), Naxos / HONA
+  // festival juin 2022 et HUG Hongrie juillet 2022 (récits d'entretien
+  // Marketing/Recit-Mag + Recit-Yishama), les 2 Yishama reçus en
+  // mai 2023 et le document d'août 2023 devenu l'app (mêmes récits),
+  // Now Groove 2021, album L'Alliance du Phoenix (HelloAsso),
+  // Le Nid 29 rue des Orteaux (site.ts).
+  // 🚫 NE JAMAIS AJOUTER ICI : santé, psychothérapie, diagnostics,
+  // famille, finances personnelles, vie privée, profils de personnalité.
+  // 🚫 Ne pas dater le début du bêta-test Neotone tant que David n'a
+  // pas tranché (l'ancien Wix dit 2021, /le-neotone dit 2023).
+  // ============================================================
   about: {
-    title: 'À propos — David Lesage, musicien-inventeur',
+    title: 'À propos — David Lesage, musicien, pédagogue et inventeur',
     description:
-      'Mon histoire explique ma mission : rendre la musique visible parce que le solfège a failli me la faire abandonner. Batterie à 4 ans, autodidacte, Conservatoire, le déclic handpan et l’invention de mes outils.',
+      'Batteur de formation devenu joueur de handpan et chanteur : le Conservatoire, The Voice, Naxos et la scène internationale du handpan, deux instruments sur mesure sans mode d’emploi — et les outils que j’ai fini par construire.',
     heroEyebrow: 'À propos',
-    heroTitle: 'Rendre la musique visible, parce que le solfège a failli me la faire abandonner',
-    heroLead: 'Je suis David Lesage : musicien, pédagogue et inventeur. Je crée les outils que j’aurais rêvé qu’on me donne — pour que personne n’abandonne la musique faute de la voir.',
+    heroTitle: 'Je viens du rythme. L’harmonie, j’ai dû me la rendre visible pour l’atteindre.',
+    heroLead:
+      'Je suis David Lesage : batteur de formation devenu joueur de handpan, chanteur, pédagogue — et constructeur d’outils. Voici le chemin réel, avec ses détours, ses rencontres, et ce qu’elles ont fini par produire.',
+    heroImgAlt: 'David Lesage, musicien',
+    heroCtaStory: 'Lire l’histoire',
+    heroCtaToday: 'Ce que je fais aujourd’hui',
+
     storyEyebrow: 'Mon histoire',
     storyTitle: 'De la batterie au handpan, par un long détour',
-    story: [
-      'J’ai commencé la musique à 4 ans, à la batterie. Mais dès mon premier cours, on m’a imposé la lecture de partitions — un langage qui n’avait, pour moi, aucun lien avec mon envie de jouer. J’ai tout arrêté pour apprendre en autodidacte, à l’oreille.',
-      'Plus tard, au Conservatoire national, le solfège m’a de nouveau mis en difficulté. J’en suis sorti avec un prix de batterie mention très bien… mais découragé par une pédagogie de l’harmonie qui ne me parlait pas.',
-      'En découvrant le handpan, j’ai retrouvé le même mur : aucune méthode, et la difficulté d’organiser visuellement les chemins de notes. J’ai eu jusqu’à trois handpans pour couvrir les notes du piano — avant de rencontrer le Neotone. Et là, une nouvelle difficulté : les notes changent de place à chaque gamme.',
-      'Alors j’ai créé l’outil que j’aurais rêvé qu’on me donne enfant : une approche visuelle de l’harmonie, par les couleurs, les formes et les émotions — pour comprendre, mémoriser, et enfin chanter en m’accompagnant au handpan.',
+    storyIntro:
+      'Je raconte rarement tout ça en entier. Mais c’est ce parcours-là — et pas une bonne idée sur un coin de table — qui explique les outils que je construis aujourd’hui.',
+
+    chapters: [
+      {
+        eyebrow: 'Les débuts',
+        title: 'La batterie à 4 ans, et un langage qui ne me parlait pas',
+        paras: [
+          'J’ai commencé la musique à 4 ans, à la batterie. Dès mon premier cours, on m’a imposé la lecture de partitions — un langage qui n’avait, pour moi, aucun lien avec mon envie de jouer. J’ai tout arrêté, et j’ai appris en autodidacte, à l’oreille.',
+          'J’y suis revenu par la grande porte : un bac TMD au lycée Saint-Sernin à Toulouse, un passage au collège de jazz de Marciac où je découvre l’improvisation vocale, puis un prix de batterie mention très bien au Conservatoire de Toulouse. J’en suis sorti diplômé — et découragé par une pédagogie de l’harmonie qui, elle, ne m’avait toujours pas parlé.',
+          'C’est le point que je tiens à dire franchement, parce qu’il explique tout le reste : je viens d’un monde purement rythmique. Le rythme, je le sais dans le corps. L’harmonie, non — je n’avais pas de base théorique solide, et pendant des années je n’ai même pas su nommer ce qui me manquait.',
+        ],
+      },
+      {
+        eyebrow: 'Les détours',
+        title: 'Dix ans à faire des ponts entre des mondes qui ne se parlaient pas',
+        paras: [
+          'Entre-temps, j’ai fait beaucoup de choses qui n’avaient l’air de rien avoir en commun. J’ai monté des groupes, appris la captation et le montage vidéo, rejoint en 2017 l’équipe de Thierry Vanoffe comme formateur et créateur des vidéos de la chaîne Numéricoach, puis co-fondé en 2020 Aora Mana — l’une des premières plateformes de voyages initiatiques en réalité virtuelle, drone et caméra 360° à la main.',
+          'En février 2022, je passe les auditions à l’aveugle de The Voice sur TF1, saison 11, avec un chant africain : <em>Koth Biro</em>.',
+          'Longtemps, j’ai vécu cette accumulation comme de la dispersion. J’ai fini par comprendre que c’était l’inverse : mon métier, c’est de faire des ponts. Entre un fabricant et un autre, entre une intuition et un objet qui marche, entre une théorie et quelque chose qu’on peut voir.',
+        ],
+      },
+      {
+        eyebrow: 'Transmettre',
+        title: 'Ma première méthode est née d’un manque, pas d’une idée',
+        paras: [
+          'À la calebasse, il me manquait la caisse claire et le charley. J’ai résolu le manque avec des œufs en plastique — un bricolage qui est devenu une façon de jouer, puis une façon d’enseigner.',
+          'C’est devenu Now Groove (2021) : une méthode de rythme par appels-réponses et émoticônes visuelles, qui tient debout avec cinquante personnes dans la même salle. Déjà la même idée qu’aujourd’hui — remplacer le vocabulaire par quelque chose qu’on voit.',
+          'En 2018, j’entre aussi dans le monde du ngoni avec La Maison du Ngoni, dont je suis ambassadeur : je transmets la harpe gonilélé de Joris Feuillâtre. Mes cours et mes ateliers tournent sous Now Music Academy, portée par l’association Résonances Productions.',
+        ],
+      },
+      {
+        eyebrow: 'Naxos, Grèce · juin 2022',
+        title: 'Le concert qui m’a fait entrer dans le monde du handpan',
+        paras: [
+          'Je joue au HONA Festival, à Agia Anna. Quand j’arrive, je ne suis personne : la scène est minuscule, la sono est mauvaise, il n’y a pas de retour. Mais je propose quelque chose qu’on n’avait pas vu — je chante, je joue trois handpans en même temps, et je fais les percussions aux pieds et aux mains.',
+          'Le lendemain, je croise un homme sur le port. Je ne sais pas qui c’est ; on m’explique que c’est l’un des meilleurs fabricants de handpan au monde. C’est Yonathan, de Yishama. Il m’écoute longuement, calmement, et n’essaie pas de me vendre ses instruments.',
+          'Ce même été, on met entre mes mains le tout premier Neotone en version bêta. Un mois plus tard je joue au festival HUG en Hongrie, je passe par l’atelier, et je repars avec un Neotone bêta et un engagement clair : remonter les bugs et aider à faire évoluer l’instrument. Je le fais depuis — des milliers de retours plus tard, je connais personnellement Csaba, Norbert et l’équipe de Soundventure à Budapest.',
+        ],
+      },
+      {
+        eyebrow: 'Mai 2023 → août 2023',
+        title: 'Deux instruments magnifiques, et aucun mode d’emploi',
+        paras: [
+          'En mai 2023, je reçois les deux handpans que Yonathan a dessinés pour moi : dix-huit notes chacun, accordés en 432 Hz, pensés pour une seule chose — que je puisse chanter en m’accompagnant, dans n’importe quelle tonalité.',
+          'Et là, la vérité. Personne ne m’avait caché la méthode : elle n’existait pas. Le handpan est un instrument du XXIᵉ siècle, encore en pleine évolution, souvent modal, et il y a presque autant de dispositions de notes que d’instruments. Avec mon bagage de batteur, j’étais seul devant deux machines splendides.',
+          'En août 2023, j’ouvre un document — juste pour arriver à voir quels accords je peux faire sur mes propres instruments. Quelques mois plus tard, Yonathan me suggère d’en faire un petit livret d’accords, pour moi. J’ai fait le livret. Il est devenu une application.',
+        ],
+      },
     ],
+
+    quoteNaxos: 'À ce moment-là, je ne réalise pas que je rentre dans un cercle ultra-privé du monde du handpan international.',
+    quoteNaxosSource: 'Ce que je raconte de ce concert',
+    quoteShips: 'C’est comme si j’avais deux vaisseaux spatiaux, mais que je ne savais pas les piloter.',
+    quoteShipsSource: 'Mes deux Yishama, les premiers mois',
+
+    linkYishama: 'Mon histoire avec Yonathan et mes deux Yishama',
+    linkApp: 'Découvrir Handpan Compagnon',
+
+    todayEyebrow: 'Aujourd’hui · Paris 20ᵉ',
+    todayTitle: 'Musicien, prof, et constructeur d’outils',
+    todayIntro:
+      'Je suis intermittent du spectacle, installé à Paris. J’ai ouvert Le Nid, mon showroom du 20ᵉ : un lieu où l’on peut venir toucher, essayer, écouter — et repartir avec son Neotone le jour même. Mes deux Yishama y sont aussi, pas à vendre, juste pour être joués.',
+    today: [
+      { t: 'Je joue', d: 'Handpan, voix, calebasse et ngoni sur scène. Deux opus enregistrés sous le titre L’Alliance du Phoenix, et des showcases gratuits au Nid presque chaque mois.' },
+      { t: 'J’enseigne', d: 'Now Music Academy : handpan, rythme à la calebasse et harpe gonilélé, en visio partout dans le monde ou en présentiel à Paris. Je réponds personnellement.' },
+      { t: 'Je construis', d: 'Handpan Compagnon rend l’harmonie visible par les couleurs, les formes et les émotions. Guso Facile fait la même chose pour l’administratif des intermittents.' },
+      { t: 'Je fais le pont', d: 'Bêta-testeur Neotone, ambassadeur et affilié Yishama, ambassadeur La Maison du Ngoni : je teste vraiment ce que je présente, et je le dis quand ce n’est pas parfait.' },
+    ],
+
+    milestonesEyebrow: 'Repères',
+    milestonesTitle: 'Quelques jalons datés',
+    milestones: [
+      { y: '2013', t: 'Prix de batterie, mention très bien — Conservatoire de Toulouse.' },
+      { y: '2018', t: 'J’entre dans le monde du ngoni avec La Maison du Ngoni.' },
+      { y: '2021', t: 'Now Groove — ma méthode de rythme visuelle à la calebasse.' },
+      { y: 'Févr. 2022', t: 'Auditions à l’aveugle de The Voice, saison 11 (TF1).' },
+      { y: 'Juin 2022', t: 'HONA Festival, Naxos. Rencontre avec Yonathan (Yishama), premier Neotone bêta en main.' },
+      { y: 'Juil. 2022', t: 'Festival HUG, Hongrie. Je repars de l’atelier avec un Neotone bêta.' },
+      { y: 'Mai 2023', t: 'Je reçois mes deux handpans Yishama : 18 notes chacun, 432 Hz.' },
+      { y: 'Août 2023', t: 'Le document qui deviendra Handpan Compagnon.' },
+      { y: 'Aujourd’hui', t: 'Le Nid, Paris 20ᵉ — cours, essais et showcases.' },
+    ],
+
     visionEyebrow: 'Ma vision pédagogique',
     visionTitle: 'Le handpan, un instrument d’accompagnement à part entière',
     visionIntro:
@@ -1144,11 +1243,24 @@ const fr = {
     pillars: [
       { t: 'Visible', d: 'La couleur, la géométrie et l’émotion remplacent le jargon. On voit la musique avant de la nommer.' },
       { t: 'Accessible', d: 'Tutoiement, simplicité, chaleur. De l’enfant curieux au musicien confirmé — je réponds personnellement.' },
-      { t: 'Exigeante', d: 'Conservatoire, qualité studio, ambassadeur certifié : la preuve technique rassure, jamais elle n’intimide.' },
+      { t: 'Honnête', d: 'Conservatoire, scène, bêta-test au long cours : la preuve technique rassure, jamais elle n’intimide — et je dis franchement ce que je ne sais pas.' },
     ],
-    proofsEyebrow: 'Mes preuves',
+
+    proofsEyebrow: 'Mes repères',
     proofsTitle: 'Crédibilité & parcours',
-    collabEyebrow: 'Collaborations & presse',
+    proofsIntro: 'Rien de plus que ce qui est vrai — et vérifiable.',
+    proofs: [
+      'Prix de batterie · Conservatoire de Toulouse',
+      'The Voice saison 11 · auditions à l’aveugle (TF1, 2022)',
+      'Intermittent du spectacle',
+      'Bêta-testeur Neotone (Soundventure, Budapest)',
+      'Ambassadeur et affilié Yishama',
+      'Ambassadeur La Maison du Ngoni',
+      'Le Nid · showroom, Paris 20ᵉ',
+      'L’Alliance du Phoenix · Opus I & II',
+    ],
+
+    collabEyebrow: 'Collaborations',
     collabTitle: 'Tu as un projet ? Parlons-en.',
     collabIntro: 'Pédagogie musicale, handpan, mes outils — ou tout autre projet, même hors Neotone. Marques, organisateurs, médias, collaborateurs : la porte est ouverte.',
     collabCta1: 'Travaillons ensemble',
