@@ -69,6 +69,10 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
         <Button href="#agenda" variant="primary" {...visitAttrs}>{sh.ctaBook}</Button>
         <Button href="#agenda" variant="light">{sh.ctaNext}</Button>
       </div>
+      {/* ⚠️ « Réserver ma venue » laissait croire à une visite gratuite : le
+          créneau individuel est PAYANT. Le tarif affiché vient de `priceGrid()`
+          (donc de site.ts) — jamais écrit en dur, jamais différent du formulaire. */}
+      <p class="mx-auto mt-4 max-w-xl text-sm text-cream/70">{sh.ctaBookNote.replace('{grid}', grid)}</p>
 
       {next && (
         <a

@@ -534,8 +534,8 @@ const fr = {
     successText: 'Tu vas recevoir un email de confirmation. Je te réponds personnellement, très vite.',
     successClose: 'Fermer',
     close: 'Fermer',
-    visitTitle: 'Réserver ma venue au showroom',
-    visitIntro: 'Paris 20ᵉ, sur rendez-vous. Dis-moi tes disponibilités, je te propose un créneau.',
+    visitTitle: 'Réserver mon créneau au showroom (payant)',
+    visitIntro: 'Paris 20ᵉ, sur rendez-vous. C’est un créneau individuel payant — un seul tarif, quel que soit ce pour quoi tu viens. Dis-moi tes disponibilités, je te propose un créneau.',
     privateTitle: 'Réserver un rendez-vous individuel',
     privateIntro: 'Un moment en tête-à-tête, au showroom de Paris 20ᵉ ou en visio : découvrir un instrument, prendre en main celui que tu viens d’acheter, ou avancer sur ta pratique — quel que soit ton niveau.',
     // Rendez-vous individuel (« RDV VIP ») — bloc affiché AVANT le formulaire :
@@ -1033,14 +1033,15 @@ const fr = {
     title: 'Essayer un handpan à Paris — Showroom | David Lesage',
     description:
       'Essaie les deux univers du handpan à Paris : mes handpans acoustiques Yishama et le handpan électronique Neotone. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : showcases gratuits, démonstrations privées et cours.',
-    heroEyebrow: 'Le lieu · Paris 20ᵉ',
+    heroEyebrow: 'Le Nid · Paris 20ᵉ',
     heroTitle: 'Showroom David Lesage',
     heroLead: 'Un lieu où l’acoustique et l’électronique se jouent côte à côte : mes handpans Yishama et les Neotone, sous tes mains le même après-midi — et une communauté à rencontrer.',
-    ctaBook: 'Réserver ma venue',
+    ctaBook: 'Réserver un créneau (payant)',
+    ctaBookNote: 'Créneau individuel payant : {grid}. Les showcases publics, eux, sont gratuits et sur simple inscription.',
     ctaNext: 'Voir le prochain showcase',
     exclBadge: '★ Première mondiale',
     exclTitle: 'Repars avec ton Neotone¹, le jour même',
-    exclText: 'Pour la première fois au monde, tu peux acheter ton Neotone directement au showroom de Paris et l’emporter immédiatement — sans aucun délai de fabrication.',
+    exclText: 'Je l’assume : Le Nid est le premier lieu au monde où ces instruments sont en vente en direct, sur place. Concrètement, ça veut dire que tu peux acheter ton Neotone¹ ici même et l’emporter immédiatement — sans aucun délai de fabrication. Mes handpans Yishama, eux, ne sont pas à vendre : ce sont mes instruments personnels, ils sont là pour être entendus et joués.',
     exclArgs: ['7 % de remise — le meilleur prix du marché (contre 5 % en ligne)', 'Aucun délai de fabrication ni d’attente', 'Stock ultra limité — quelques instruments disponibles'],
 
     // ── « Le monde du ET » version showroom : ici, ce n'est pas un choix
@@ -1093,7 +1094,7 @@ const fr = {
     ],
     programNote: 'Enfants bienvenus, sous la responsabilité de leurs parents. L’aspect démonstration, conférence et questions-réponses peut être un peu long pour les plus jeunes : prévoyez si besoin une activité calme, ou le relais d’un autre adulte.',
     booking: 'Prise de rendez-vous sur réservation par email :',
-    bookVisitCta: 'Réserver ma venue au showroom',
+    bookVisitCta: 'Réserver mon créneau au showroom (payant)',
     bookPrivateCta: 'Réserver un rendez-vous individuel',
     agendaEyebrow: 'Agenda',
     agendaTitle: 'Calendrier des showcases publics gratuits',
