@@ -85,7 +85,27 @@ const ld = [
               ))}
             </nav>
 
-            <div class="mt-8 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-4">
+            {/* 🎯 Boutique : les 3 handpans sur UNE SEULE ligne (demande David).
+                Chaque carte garde sa pastille d'univers (acoustique / électronique)
+                pour ne pas perdre la lecture « monde du ET ». Le rond « ET » et les
+                deux colonnes restent en revanche intacts sur l'accueil (#instruments)
+                et le showroom (#deux-univers) — ici c'est une grille produit. */}
+            <div class="mt-8 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {subs.flatMap((sub) =>
+                items.filter((p) => p.sub === sub).map((p, i) => (
+                  <div id={i === 0 ? `${catId}-${sub}` : undefined} class="flex h-full flex-col scroll-mt-28">
+                    <p class:list={['mb-3 inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[11px] font-700 uppercase tracking-widest', subMeta[sub].chip]}>
+                      <Icon name={subMeta[sub].icon} class="h-4 w-4" /> {subCopy[sub].label}
+                    </p>
+                    <ShopCard lang={lang} product={p} />
+                  </div>
+                )),
+              )}
+            </div>
+
+            {/* Le « ET » reste ici, sous la ligne produits : deux portes d'entrée
+                de poids égal vers les deux univers. */}
+            <div class="mt-10 grid items-stretch gap-4 md:grid-cols-[1fr_auto_1fr]">
               {subs.map((sub, i) => (
                 <Fragment>
                   {i === 1 && (
@@ -95,15 +115,9 @@ const ld = [
                       <span class="h-px flex-1 bg-ink/15 md:h-full md:w-px md:flex-1"></span>
                     </div>
                   )}
-                  <div id={`${catId}-${sub}`} class="flex h-full flex-col scroll-mt-28">
-                    <p class:list={['inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[11px] font-700 uppercase tracking-widest', subMeta[sub].chip]}>
-                      <Icon name={subMeta[sub].icon} class="h-4 w-4" /> {subCopy[sub].label}
-                    </p>
-                    <p class="mt-3 text-sm text-ink-soft/85">{subCopy[sub].blurb}</p>
-                    <div class="mt-5 grid items-start gap-6">
-                      {items.filter((p) => p.sub === sub).map((p) => <ShopCard lang={lang} product={p} />)}
-                    </div>
-                    <div class="mt-auto pt-6">
+                  <div class="flex h-full flex-col">
+                    <p class="text-sm text-ink-soft/85">{subCopy[sub].blurb}</p>
+                    <div class="mt-auto pt-4">
                       <a
                         href={L(subMeta[sub].href)}
                         class:list={['flex items-center gap-1 rounded-card border bg-cream px-5 py-4 text-sm font-700 transition-all hover:gap-2 hover:shadow-md', subMeta[sub].ring, subMeta[sub].accent]}

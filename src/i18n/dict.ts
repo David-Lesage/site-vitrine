@@ -476,7 +476,7 @@ const fr = {
     adviceText: 'Je réponds personnellement. Dis-moi ton projet, je t’aide à choisir le bon instrument.',
     adviceCta: 'Me faire conseiller',
     categories: {
-      handpans: { label: 'Handpan', blurb: 'Deux univers qui se complètent, jamais qui s’opposent : l’acoustique ET l’électronique. Choisis par ton oreille, pas par une hiérarchie.' },
+      handpans: { label: 'Handpan', blurb: 'Deux univers qui se complètent.' },
       app: { label: 'Application', blurb: 'Handpan Compagnon — l’app pédagogique qui rend la musique visible.' },
       creations: { label: 'Mes créations · Now Groove', blurb: 'Créées par moi : ma méthode de rythme Now Groove, la calebasse signature et sa housse faite main.' },
       instruments: { label: 'Instruments d’exception', blurb: 'Je collabore avec des fabricants d’exception dont je représente fièrement la qualité. À travers moi, profite de coupons de réduction et de démonstrations lors de mes showcases.' },

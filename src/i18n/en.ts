@@ -447,7 +447,7 @@ export const en: Dict = {
     adviceText: 'I answer personally. Tell me your project, I’ll help you choose the right instrument.',
     adviceCta: 'Get my advice',
     categories: {
-      handpans: { label: 'Handpan', blurb: 'Two worlds that complete each other, never compete: acoustic AND electronic. Choose with your ears, not with a hierarchy.' },
+      handpans: { label: 'Handpan', blurb: 'Two worlds that complete each other.' },
       app: { label: 'App', blurb: 'Handpan Compagnon — the teaching app that makes music visible.' },
       creations: { label: 'My creations · Now Groove', blurb: 'Created by me: my Now Groove rhythm method, the signature calabash and its handmade cover.' },
       instruments: { label: 'Exceptional instruments', blurb: 'I work with outstanding makers whose quality I’m proud to represent. Through me, enjoy discount coupons and demos at my showcases.' },
