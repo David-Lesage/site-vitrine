@@ -29,6 +29,60 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 13/08/2026 (soir) — 👤 Page `/a-propos` réécrite (biographie réelle)
+
+Commits `abec9d6` + `520c7c8`, **déployés et vérifiés en prod** (FR + EN, 200).
+Demande de David : *« la page est très pauvre et incomplète et même légèrement inexacte,
+fait des recherches sur moi sur le net et complète cette histoire de façon plus réaliste »*.
+
+### 🚨 RÈGLE ABSOLUE POSÉE SUR CETTE PAGE (à ne jamais enfreindre)
+`/a-propos` est la biographie d'une **personne réelle**. Un commentaire en tête du bloc
+`about` de `dict.ts` liste **la source de chaque fait**. Deux interdits gravés :
+1. **Rien d'inventé** : pas de date, de prix, de récompense ni de « collaboration » non sourcés.
+   Un lien d'**ambassadeur/affilié** ne se transforme jamais en « partenariat ».
+2. **Rien du tiers PRIVÉ du « Book »** (carnet privé) : ni santé, ni psychothérapie, ni
+   diagnostic, ni ASPI, ni famille, ni finances personnelles, ni Ennéagramme / Human Design /
+   numérologie — **même de façon oblique ou reformulée**. Vérifié après déploiement par un
+   scan de la page en prod : 0 occurrence sur 17 termes sensibles testés.
+
+### Ce qui change
+Le récit passe de 4 paragraphes à **5 chapitres datés** (les débuts · les détours ·
+Now Groove / La Maison du Ngoni · Naxos juin 2022 · mai→août 2023), + **frise de 9 jalons**,
++ section **« aujourd'hui »** (jouer / enseigner / construire / faire le pont), + repères.
+Composants réutilisés tels quels (`Section`, `SectionHeading`, `Button`) — rien de nouveau.
+
+### Corrections d'exactitude (l'ancienne page était fausse sur ces points)
+- « Conservatoire **national** » → **Conservatoire de Toulouse** (+ bac TMD Saint-Sernin,
+  collège de jazz de Marciac). Corrigé aussi dans `personLdJson` (`alumniOf`).
+- **« ambassadeur certifié »** (mot non sourcé, personne ne l'a « certifié ») → supprimé.
+- **« The Voice · Saison 11 » présenté comme une récompense** → formulé exactement :
+  *auditions à l'aveugle, TF1, 2022*. En JSON-LD, retiré de `award` → passé en `performerIn`.
+- 🔗 **Lien YouTube mort** : `@DavidLesageMusique` renvoyait **404** (footer + réseaux +
+  `sameAs` du JSON-LD, donc tout le site). Vrai compte = **`@DavidLesageArtiste`** (200).
+  Corrigé dans `src/data/site.ts`.
+
+### ⚠️ Choix technique à connaître
+La page n'utilise plus `common.credentials` (partagée avec l'**accueil**) mais sa propre liste
+**`about.proofs`**. Motif : rendre `/a-propos` exacte **sans** toucher l'accueil.
+🚨 **`common.credentials` affiche donc TOUJOURS « The Voice · Saison 11 » en preuve sur
+l'accueil** — formulation que cette page a justement jugée trompeuse. À trancher avec David.
+
+### ⚠️ Restes à faire / à valider par David (rien de bloquant, mais non tranché)
+- **Date de début du bêta-test Neotone : 3 versions incompatibles** — l'ancien Wix dit *2021*,
+  `/le-neotone` dit *« depuis 2023 »*, les récits d'entretien datent l'instrument bêta de
+  **l'été 2022** (Naxos juin, atelier juillet). La page `/a-propos` **ne donne volontairement
+  aucune année de départ**. À trancher, puis aligner `/le-neotone`.
+- **La Maison du Ngoni : 2018 ou 2023 ?** `/gonilele` affirme « je collabore avec Joris
+  Feuillâtre **depuis 2018** », une autre source situe l'entrée en 2018 mais la collaboration
+  en 2023. La page dit « en 2018 j'entre dans le monde du ngoni » (sûr) sans dater la collab.
+- **Duo Solune** (avec Iris) : projet artistique public, **volontairement absent** de la page —
+  il engage une autre personne. À rajouter seulement si David le demande.
+- **Guso Facile** est cité comme outil ; vérifier avec David qu'il veut le rendre public ici.
+- Aucune photo nouvelle : la page réutilise `hero-david.jpg`. Pas de visuel de scène
+  (Naxos / HUG) dans `public/images/` — si David en fournit, le chapitre Naxos les mérite.
+
+---
+
 ## ÉTAT ACTUEL — 13/08/2026 — Boutique : catégorie « Handpan » (Acoustique ET Électronique)
 
 Livré + déployé. Suite directe du « monde du ET » (accueil `#instruments`, showroom `#deux-univers`).
