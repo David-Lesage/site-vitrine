@@ -113,7 +113,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Non. Le handpan se prête merveilleusement à l’apprentissage à l’oreille. Les notes sont déjà accordées ensemble : tu ne peux pas vraiment « faire faux ». J’ai moi-même quitté le Conservatoire découragé par le solfège avant de tout réapprendre à l’oreille — et c’est cette conviction qui a donné naissance à ma méthode. Le solfège pourra t’intéresser plus tard, par curiosité, mais il n’est jamais un prérequis pour commencer.',
+            html: 'Non. Le handpan se prête merveilleusement à l’apprentissage à l’oreille. Les notes sont déjà accordées ensemble : tu ne peux pas vraiment « faire faux ». J’ai moi-même eu 7h30 de cours de solfège par semaine, dans 4 niveaux différents, pour « rattraper mon retard » : je ne sais toujours pas lire la musique, et j’ai tout appris à l’oreille. Le solfège pourra t’intéresser plus tard, par curiosité, mais il n’est jamais un prérequis pour commencer.',
           },
         ],
       },
@@ -164,7 +164,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Les deux se jouent exactement pareil, avec les mains. Le handpan acoustique offre une résonance et un contact physique inimitables. Le <a href="/le-neotone">handpan électronique Neotone</a>, lui, se joue au casque (idéal en appartement, la nuit), change de gamme en un geste et se branche à ton ordinateur. Pour un débutant, l’électronique lève deux freins majeurs : le bruit et le budget d’un seul instrument figé sur une seule gamme. J’explore ce choix en détail dans mon guide <a href="/handpan-electronique-vs-acoustique">handpan électronique vs acoustique</a>.',
+            html: 'Les deux se jouent exactement pareil, avec les mains. Le handpan acoustique offre une résonance et un contact physique inimitables. Le <a href="/le-neotone">handpan électronique Neotone</a>, lui, se joue au casque (idéal en appartement, la nuit) <em>ou</em> à l’extérieur avec un ampli type Bose S1 : ce n’est pas seulement un instrument pour jouer au casque. Il change aussi de gamme en un geste et se branche à ton ordinateur. Pour un débutant, l’électronique lève deux freins majeurs : le bruit et le budget d’un seul instrument figé sur une seule gamme. J’explore ce choix en détail dans mon guide <a href="/handpan-electronique-vs-acoustique">handpan électronique vs acoustique</a>.',
           },
         ],
       },
@@ -242,7 +242,7 @@ const fr: GuidesByLang = {
     eyebrow: 'Comparatif',
     h1: 'Handpan électronique vs acoustique : lequel choisir ?',
     leadAnswer:
-      'Un handpan acoustique offre une résonance organique et un contact physique uniques, mais reste figé sur une seule gamme et se joue à voix haute. Un handpan électronique comme le Neotone se joue au casque, change de gamme instantanément, ajoute des effets et se branche en MIDI — au prix d’un son amplifié plutôt que naturel.',
+      'Un handpan acoustique offre une résonance organique et un contact physique uniques, mais reste figé sur une seule gamme et se joue à voix haute. Un handpan électronique comme le Neotone se joue au casque ou amplifié (ampli type Bose S1, y compris en extérieur), change de gamme instantanément, ajoute des effets et se branche en MIDI — au prix d’un son amplifié plutôt que naturel.',
     sections: [
       {
         id: 'differences',
@@ -256,7 +256,7 @@ const fr: GuidesByLang = {
           {
             kind: 'ul',
             items: [
-              'Son : l’acoustique résonne dans l’air, riche et vivant ; l’électronique produit un signal que tu écoutes au casque ou sur enceinte, avec une justesse parfaite.',
+              'Son : l’acoustique résonne dans l’air, riche et vivant ; l’électronique produit un signal que tu écoutes au casque, sur enceinte ou sur un ampli en extérieur, avec une justesse parfaite.',
               'Casque / nuit : seul l’électronique se joue en silence, un vrai atout en appartement ou tard le soir.',
               'Gammes : l’acoustique est figé sur une gamme ; le Neotone en embarque des dizaines et en change en un geste.',
               'Effets : réverbération, delay, sons alternatifs… l’électronique ouvre un terrain sonore que l’acoustique ne connaît pas.',
@@ -274,7 +274,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Le handpan <strong>acoustique</strong> est fait pour toi si tu cherches la vibration physique, le jeu en extérieur ou en cercle, et que tu es attaché à une gamme précise que tu joues à voix haute. Le handpan <strong>électronique Neotone</strong> te convient si tu vis en appartement, joues souvent au casque, veux explorer de nombreuses gammes sans multiplier les instruments, enregistres ta musique ou aimes les effets. Beaucoup de joueurs finissent par avoir les deux — ils sont complémentaires, pas concurrents.',
+            html: 'Le handpan <strong>acoustique</strong> est fait pour toi si tu cherches la vibration physique, le jeu en extérieur ou en cercle, et que tu es attaché à une gamme précise que tu joues à voix haute. Le handpan <strong>électronique Neotone</strong> te convient si tu vis en appartement, joues souvent au casque, veux explorer de nombreuses gammes sans multiplier les instruments, enregistres ta musique ou aimes les effets — sachant qu’il se joue aussi à l’extérieur avec un ampli type Bose S1. Beaucoup de joueurs finissent par avoir les deux — ils sont complémentaires, pas concurrents.',
           },
         ],
       },
@@ -320,11 +320,11 @@ const fr: GuidesByLang = {
     faq: [
       {
         q: 'Le handpan électronique sonne-t-il comme un vrai handpan ?',
-        a: 'Le Neotone reproduit fidèlement le timbre du handpan, avec en plus une justesse parfaite et des effets. Le toucher est identique. Ce qui change, c’est la résonance dans l’air d’un acoustique, remplacée ici par une écoute au casque ou sur enceinte.',
+        a: 'Le Neotone reproduit fidèlement le timbre du handpan, avec en plus une justesse parfaite et des effets. Le toucher est identique. Ce qui change, c’est la résonance dans l’air d’un acoustique, remplacée ici par une écoute au casque, sur enceinte ou sur ampli.',
       },
       {
         q: 'Peut-on jouer du handpan électronique au casque ?',
-        a: 'Oui, c’est l’un de ses grands atouts. Le Neotone se joue entièrement au casque, sans déranger personne — idéal en appartement, la nuit, ou pour s’enregistrer proprement.',
+        a: 'Oui, c’est l’un de ses grands atouts. Le Neotone se joue entièrement au casque, sans déranger personne — idéal en appartement, la nuit, ou pour s’enregistrer proprement. Mais ce n’est pas seulement un instrument pour jouer au casque : tu peux aussi jouer à l’extérieur avec un ampli type Bose S1.',
       },
       {
         q: 'Un handpan électronique peut-il changer de gamme ?',
@@ -359,7 +359,7 @@ const fr: GuidesByLang = {
     eyebrow: 'Guide d’achat',
     h1: 'Quel handpan choisir quand on débute ?',
     leadAnswer:
-      'Pour un premier handpan, choisis un instrument de 8 ou 9 notes dans une gamme accessible comme le D Kurd, la plus polyvalente pour débuter. Décide ensuite entre acoustique (vibration naturelle) et électronique (casque, gammes multiples), essaie-le si possible avant d’acheter, et privilégie un instrument bien accordé plutôt que le moins cher.',
+      'Le prix d’un handpan correct est autour de 1500 € selon moi. Le D Kurd (ré mineur) reste la gamme la plus accessible pour un premier instrument acoustique. Mais rapidement tu en achètes un deuxième, car tu tourneras en rond avec une seule gamme — et c’est là que la question d’un Neotone peut se poser. Essaie avant d’acheter si tu le peux, et privilégie un instrument bien accordé plutôt que le moins cher.',
     sections: [
       {
         id: 'nombre-notes',
@@ -368,7 +368,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Pour débuter, un handpan de <strong>8 ou 9 notes</strong> (un ding + 7 ou 8 notes autour) est idéal : assez pour jouer de vraies mélodies, sans te noyer sous les possibilités. Les instruments à 10 notes ou plus, ou avec des notes sous la coque (« bottom notes »), s’adressent aux joueurs plus avancés. Côté électronique, le <a href="/le-neotone">Neotone</a> existe en 10 notes et le Mutant en 19 notes : tu commences simple et tu gardes de la marge pour progresser.',
+            html: 'Un handpan acoustique se compose d’un ding et de notes disposées autour : les modèles courants vont de 8 à 10 notes, et certains ajoutent des notes sous la coque (« bottom notes »). Côté électronique, le <a href="/le-neotone">Neotone</a> existe en 10 notes et le Mutant en 19 notes.',
           },
         ],
       },
@@ -390,7 +390,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Question clé, que je détaille dans mon comparatif <a href="/handpan-electronique-vs-acoustique">handpan électronique vs acoustique</a>. En résumé : l’acoustique pour la vibration physique et le jeu en extérieur ; l’électronique (Neotone) pour le casque, les gammes multiples, les effets et l’enregistrement. Si tu vis en appartement ou hésites encore sur la gamme, l’électronique t’évite de te tromper et de racheter.',
+            html: 'Question clé, que je détaille dans mon comparatif <a href="/handpan-electronique-vs-acoustique">handpan électronique vs acoustique</a>. En résumé : l’acoustique pour la vibration physique et le jeu en extérieur sans matériel ; l’électronique (Neotone) pour le casque, les gammes multiples, les effets et l’enregistrement — et pour l’extérieur aussi, avec un ampli type Bose S1. Si tu vis en appartement ou hésites encore sur la gamme, l’électronique t’évite de te tromper et de racheter.',
           },
         ],
       },
@@ -401,7 +401,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Méfie-toi des instruments très bon marché : sous un certain prix, l’accordage est souvent approximatif et l’instrument sonnera faux — le pire départ possible. Un handpan de facture sérieuse représente un vrai investissement, mais il tient dans le temps et te donne envie de jouer. Un Neotone se situe dans une fourchette comparable à un bon acoustique, tout en remplaçant plusieurs gammes. Regarde aussi la <a href="/boutique">boutique</a> pour les accessoires (housse, support) qui protègent ton instrument.',
+            html: 'Le prix d’un handpan correct est autour de <strong>1500 €</strong> selon moi. Méfie-toi des instruments très bon marché : sous un certain prix, l’accordage est souvent approximatif et l’instrument sonnera faux — le pire départ possible. Mais prévois aussi la suite : rapidement tu en achètes un deuxième, car tu tourneras en rond avec une seule gamme. C’est là que la question d’un <a href="/le-neotone">Neotone</a> peut se poser. Tout dépend de ce que tu recherches : si tu veux chanter et t’accompagner dans toutes les tonalités et tessitures, c’est clairement le plus adapté. Ou de te faire un handpan pour chanteur·se sur mesure. Regarde aussi la <a href="/boutique">boutique</a> pour les accessoires (housse, support) qui protègent ton instrument.',
           },
         ],
       },
@@ -426,7 +426,6 @@ const fr: GuidesByLang = {
             items: [
               'Acheter le moins cher : un instrument mal accordé dégoûte plus qu’il ne motive.',
               'Choisir une gamme rare « parce qu’elle est belle » sur une vidéo : le D Kurd t’ouvre bien plus de morceaux et de tutoriels.',
-              'Prendre trop de notes d’emblée : 8–9 notes suffisent largement pour débuter.',
               'Négliger la housse et le support : ils protègent un instrument coûteux et améliorent ton confort de jeu.',
               'Acheter sans avoir essayé, quand un showroom est accessible : le ressenti sous les doigts est décisif.',
             ],
@@ -449,11 +448,11 @@ const fr: GuidesByLang = {
       },
       {
         q: 'Combien de notes pour un premier handpan ?',
-        a: 'Un handpan de 8 ou 9 notes est idéal pour débuter : assez pour jouer de vraies mélodies, sans complexité inutile. Les modèles à 10 notes et plus conviennent mieux une fois les bases acquises.',
+        a: 'Les handpans acoustiques courants vont de 8 à 10 notes, parfois plus avec des notes sous la coque. Le nombre de notes compte moins que la gamme : sur un acoustique elle est définitive, et c’est elle qui décide de ce que tu pourras jouer.',
       },
       {
         q: 'Combien coûte un bon handpan ?',
-        a: 'Un handpan de facture sérieuse représente un investissement notable. Méfie-toi des prix très bas : en dessous d’un certain seuil, l’accordage est souvent mauvais. Un Neotone électronique se situe dans une fourchette comparable, tout en remplaçant plusieurs gammes.',
+        a: 'Le prix d’un handpan correct est autour de 1500 € selon moi. Méfie-toi des prix très bas : en dessous d’un certain seuil, l’accordage est souvent mauvais. Prévois aussi qu’un deuxième instrument arrive vite, parce qu’on tourne en rond avec une seule gamme — c’est là que la question d’un Neotone peut se poser.',
       },
       {
         q: 'Où essayer un handpan avant d’acheter ?',
@@ -506,7 +505,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'No. The handpan lends itself wonderfully to learning by ear. The notes are already tuned together: you can’t really “play a wrong note”. I myself left the Conservatory discouraged by music theory before relearning everything by ear — and that conviction gave birth to my method. Music theory may interest you later, out of curiosity, but it’s never a prerequisite to begin.',
+            html: 'No. The handpan lends itself wonderfully to learning by ear. The notes are already tuned together: you can’t really “play a wrong note”. I myself had 7.5 hours of music-theory class a week, across 4 different levels, to “catch up”: I still can’t read music, and I learned everything by ear. Music theory may interest you later, out of curiosity, but it’s never a prerequisite to begin.',
           },
         ],
       },
@@ -557,7 +556,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Both are played exactly the same way, with your hands. An acoustic handpan offers an inimitable resonance and physical contact. The <a href="/le-neotone">electronic Neotone handpan</a> can be played on headphones (perfect in a flat, at night), changes scale in a single gesture and connects to your computer. For a beginner, going electronic removes two major hurdles: noise, and the cost of a single instrument locked to one scale. I explore this choice in detail in my <a href="/handpan-electronique-vs-acoustique">electronic vs acoustic handpan</a> guide.',
+            html: 'Both are played exactly the same way, with your hands. An acoustic handpan offers an inimitable resonance and physical contact. The <a href="/le-neotone">electronic Neotone handpan</a> can be played on headphones (perfect in a flat, at night) <em>or</em> outdoors through an amp such as a Bose S1: it isn’t only a headphone instrument. It also changes scale in a single gesture and connects to your computer. For a beginner, going electronic removes two major hurdles: noise, and the cost of a single instrument locked to one scale. I explore this choice in detail in my <a href="/handpan-electronique-vs-acoustique">electronic vs acoustic handpan</a> guide.',
           },
         ],
       },
@@ -632,7 +631,7 @@ const en: GuidesByLang = {
     eyebrow: 'Comparison',
     h1: 'Electronic vs acoustic handpan: which one to choose?',
     leadAnswer:
-      'An acoustic handpan offers a unique organic resonance and physical contact, but stays locked to a single scale and plays out loud. An electronic handpan like the Neotone plays on headphones, changes scale instantly, adds effects and connects over MIDI — at the cost of an amplified rather than natural sound.',
+      'An acoustic handpan offers a unique organic resonance and physical contact, but stays locked to a single scale and plays out loud. An electronic handpan like the Neotone plays on headphones or amplified (an amp such as a Bose S1, outdoors included), changes scale instantly, adds effects and connects over MIDI — at the cost of an amplified rather than natural sound.',
     sections: [
       {
         id: 'differences',
@@ -646,7 +645,7 @@ const en: GuidesByLang = {
           {
             kind: 'ul',
             items: [
-              'Sound: acoustic resonates in the air, rich and alive; electronic produces a signal you hear on headphones or speakers, with perfect tuning.',
+              'Sound: acoustic resonates in the air, rich and alive; electronic produces a signal you hear on headphones, speakers or an outdoor amp, with perfect tuning.',
               'Headphones / night: only the electronic can be played silently, a real asset in a flat or late at night.',
               'Scales: acoustic is locked to one scale; the Neotone holds dozens and switches in a single gesture.',
               'Effects: reverb, delay, alternative sounds… electronic opens a sonic playground the acoustic doesn’t have.',
@@ -664,7 +663,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'The <strong>acoustic</strong> handpan is for you if you crave physical vibration, outdoor or circle playing, and are attached to one specific scale played out loud. The <strong>electronic Neotone</strong> suits you if you live in a flat, often play on headphones, want to explore many scales without owning many instruments, record your music or enjoy effects. Many players end up owning both — they’re complementary, not rivals.',
+            html: 'The <strong>acoustic</strong> handpan is for you if you crave physical vibration, outdoor or circle playing, and are attached to one specific scale played out loud. The <strong>electronic Neotone</strong> suits you if you live in a flat, often play on headphones, want to explore many scales without owning many instruments, record your music or enjoy effects — and it also plays outdoors through an amp such as a Bose S1. Many players end up owning both — they’re complementary, not rivals.',
           },
         ],
       },
@@ -710,11 +709,11 @@ const en: GuidesByLang = {
     faq: [
       {
         q: 'Does an electronic handpan sound like a real handpan?',
-        a: 'The Neotone faithfully reproduces the handpan timbre, with perfect tuning and effects on top. The touch is identical. What changes is the in-air resonance of an acoustic, replaced here by listening on headphones or speakers.',
+        a: 'The Neotone faithfully reproduces the handpan timbre, with perfect tuning and effects on top. The touch is identical. What changes is the in-air resonance of an acoustic, replaced here by listening on headphones, speakers or an amp.',
       },
       {
         q: 'Can you play an electronic handpan on headphones?',
-        a: 'Yes, it’s one of its greatest strengths. The Neotone plays entirely on headphones without disturbing anyone — perfect in a flat, at night, or to record cleanly.',
+        a: 'Yes, it’s one of its greatest strengths. The Neotone plays entirely on headphones without disturbing anyone — perfect in a flat, at night, or to record cleanly. But it isn’t only a headphone instrument: you can also play outdoors through an amp such as a Bose S1.',
       },
       {
         q: 'Can an electronic handpan change scale?',
@@ -746,7 +745,7 @@ const en: GuidesByLang = {
     eyebrow: 'Buying guide',
     h1: 'Which handpan should you choose as a beginner?',
     leadAnswer:
-      'For a first handpan, choose an 8- or 9-note instrument in an accessible scale like the D Kurd, the most versatile to start with. Then decide between acoustic (natural vibration) and electronic (headphones, multiple scales), try it before buying if you can, and favour a well-tuned instrument over the cheapest one.',
+      'In my opinion a decent handpan costs around €1500. The D Kurd (D minor) remains the most accessible scale for a first acoustic instrument. But you soon buy a second one, because you go round in circles with a single scale — and that’s where a Neotone can come into the picture. Try before you buy if you can, and favour a well-tuned instrument over the cheapest one.',
     sections: [
       {
         id: 'nombre-notes',
@@ -755,7 +754,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'To start, a handpan with <strong>8 or 9 notes</strong> (one ding plus 7 or 8 notes around it) is ideal: enough to play real melodies without drowning in options. Instruments with 10 notes or more, or with bottom notes, are aimed at more advanced players. On the electronic side, the <a href="/le-neotone">Neotone</a> comes in a 10-note model and the Mutant in 19 notes: you start simple and keep room to grow.',
+            html: 'An acoustic handpan has a ding and notes laid out around it: common models run from 8 to 10 notes, and some add notes under the shell (“bottom notes”). On the electronic side, the <a href="/le-neotone">Neotone</a> comes in a 10-note model and the Mutant in 19 notes.',
           },
         ],
       },
@@ -777,7 +776,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'A key question, which I detail in my <a href="/handpan-electronique-vs-acoustique">electronic vs acoustic handpan</a> comparison. In short: acoustic for physical vibration and outdoor play; electronic (Neotone) for headphones, multiple scales, effects and recording. If you live in a flat or are still unsure about the scale, electronic saves you from choosing wrong and buying twice.',
+            html: 'A key question, which I detail in my <a href="/handpan-electronique-vs-acoustique">electronic vs acoustic handpan</a> comparison. In short: acoustic for physical vibration and outdoor play with no gear; electronic (Neotone) for headphones, multiple scales, effects and recording — and outdoors too, with an amp such as a Bose S1. If you live in a flat or are still unsure about the scale, electronic saves you from choosing wrong and buying twice.',
           },
         ],
       },
@@ -813,7 +812,6 @@ const en: GuidesByLang = {
             items: [
               'Buying the cheapest: a poorly tuned instrument puts you off more than it motivates you.',
               'Choosing a rare scale “because it sounds beautiful” in a video: D Kurd opens far more songs and tutorials.',
-              'Getting too many notes at once: 8–9 notes are plenty to begin.',
               'Neglecting the bag and stand: they protect a costly instrument and improve your playing comfort.',
               'Buying without trying when a showroom is within reach: the feel under your fingers is decisive.',
             ],
@@ -836,11 +834,11 @@ const en: GuidesByLang = {
       },
       {
         q: 'How many notes for a first handpan?',
-        a: 'An 8- or 9-note handpan is ideal to start: enough for real melodies without needless complexity. Models with 10 notes and more are better once the basics are in place.',
+        a: 'Common acoustic handpans run from 8 to 10 notes, sometimes more with bottom notes. The note count matters less than the scale: on an acoustic it’s permanent, and it decides what you’ll be able to play.',
       },
       {
         q: 'How much does a good handpan cost?',
-        a: 'A properly made handpan is a notable investment. Be wary of very low prices: below a certain point, tuning is often poor. An electronic Neotone sits in a comparable range while replacing several scales.',
+        a: 'In my opinion a decent handpan costs around €1500. Be wary of very low prices: below a certain point, tuning is often poor. Also plan for a second instrument arriving soon, because you go round in circles with a single scale — that’s where a Neotone can come into the picture.',
       },
       {
         q: 'Where can you try a handpan before buying?',

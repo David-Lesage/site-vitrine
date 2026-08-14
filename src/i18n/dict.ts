@@ -295,7 +295,7 @@ const fr = {
     metEyebrow: 'Naxos, Grèce · 2022',
     metTitle: 'Un homme croisé par hasard, le lendemain d’un concert',
     metP1:
-      'J’avais donné un concert handpan et voix la veille au soir. Le lendemain, je croise un homme sur le port. Je ne sais pas qui il est. On m’explique que c’est l’un des meilleurs fabricants de handpan au monde.',
+      'J’avais donné un concert handpan et voix la veille au soir. Le lendemain, je croise un homme au bar extérieur du festival. Je ne sais pas qui il est. On m’explique que c’est l’un des meilleurs fabricants de handpan au monde.',
     metP2:
       'Je lui raconte mon rêve, celui que je porte depuis des années : « un piano de handpan ». Pouvoir chanter, jouer des reprises, accompagner ma voix — sans tourner en rond dans un seul mode.',
     metP3:
@@ -1137,15 +1137,33 @@ const fr = {
   // famille, finances personnelles, vie privée, profils de personnalité.
   // 🚫 Ne pas dater le début du bêta-test Neotone tant que David n'a
   // pas tranché (l'ancien Wix dit 2021, /le-neotone dit 2023).
+  //
+  // ⚠️ RÈGLE ABSOLUE (rappel de David, 14/08/2026) : n'écrire ICI que
+  // des faits sourcés ou des formulations qu'il a lui-même fournies.
+  // INTERDIT : improviser une opinion, une préférence, un conseil ou une
+  // interprétation émotionnelle à la 1re personne en son nom. En cas de
+  // trou, écrire du factuel neutre — ou laisser le trou et le lui dire.
+  //
+  // Corrections apportées par David le 14/08/2026 :
+  // - ngoni 2018 = le N'Goni de son thérapeute Fred Hervaud (détail qu'il
+  //   rend public lui-même) ; la collaboration avec Joris = 2023.
+  // - rencontre avec Yonathan : au BAR EXTÉRIEUR du festival (pas au port).
+  // - scolarité : collège de Marciac D'ABORD, PUIS le lycée (bac TMD =
+  //   Technique de Musique et de Danse, équivalent sport-études musique).
+  // - solfège : 7h30/semaine sur 4 niveaux ; il ne sait toujours pas lire.
+  // - Aora Mana : cadreur / réalisateur / monteur VR 360° / pilote de drone
+  //   — il n'en est PAS co-fondateur.
+  // - origine du « pont technique » : formateur Google + sonorisation et
+  //   parc informatique du Salon Santé Nature à Toulouse.
   // ============================================================
   about: {
     title: 'À propos — David Lesage, musicien, pédagogue et inventeur',
     description:
       'Batteur de formation devenu joueur de handpan et chanteur : le Conservatoire, The Voice, Naxos et la scène internationale du handpan, deux instruments sur mesure sans mode d’emploi — et les outils que j’ai fini par construire.',
     heroEyebrow: 'À propos',
-    heroTitle: 'Je viens du rythme. L’harmonie, j’ai dû me la rendre visible pour l’atteindre.',
+    heroTitle: 'Batteur de formation, joueur de handpan, chanteur — et constructeur d’outils',
     heroLead:
-      'Je suis David Lesage : batteur de formation devenu joueur de handpan, chanteur, pédagogue — et constructeur d’outils. Voici le chemin réel, avec ses détours, ses rencontres, et ce qu’elles ont fini par produire.',
+      'Je suis David Lesage : batteur de formation devenu joueur de handpan, chanteur, pédagogue — et constructeur d’outils. Voici mon parcours, dans l’ordre, avec ses dates.',
     heroImgAlt: 'David Lesage, musicien',
     heroCtaStory: 'Lire l’histoire',
     heroCtaToday: 'Ce que je fais aujourd’hui',
@@ -1153,34 +1171,34 @@ const fr = {
     storyEyebrow: 'Mon histoire',
     storyTitle: 'De la batterie au handpan, par un long détour',
     storyIntro:
-      'Je raconte rarement tout ça en entier. Mais c’est ce parcours-là — et pas une bonne idée sur un coin de table — qui explique les outils que je construis aujourd’hui.',
+      'Les étapes, les rencontres et les dates qui mènent aux instruments que je joue et aux outils que je construis.',
 
     chapters: [
       {
         eyebrow: 'Les débuts',
-        title: 'La batterie à 4 ans, et un langage qui ne me parlait pas',
+        title: 'La batterie à 4 ans, puis le solfège',
         paras: [
-          'J’ai commencé la musique à 4 ans, à la batterie. Dès mon premier cours, on m’a imposé la lecture de partitions — un langage qui n’avait, pour moi, aucun lien avec mon envie de jouer. J’ai tout arrêté, et j’ai appris en autodidacte, à l’oreille.',
-          'J’y suis revenu par la grande porte : un bac TMD au lycée Saint-Sernin à Toulouse, un passage au collège de jazz de Marciac où je découvre l’improvisation vocale, puis un prix de batterie mention très bien au Conservatoire de Toulouse. J’en suis sorti diplômé — et découragé par une pédagogie de l’harmonie qui, elle, ne m’avait toujours pas parlé.',
-          'C’est le point que je tiens à dire franchement, parce qu’il explique tout le reste : je viens d’un monde purement rythmique. Le rythme, je le sais dans le corps. L’harmonie, non — je n’avais pas de base théorique solide, et pendant des années je n’ai même pas su nommer ce qui me manquait.',
+          'J’ai commencé la musique à 4 ans, à la batterie. Dès mon premier cours, on m’a imposé la lecture de partitions. J’ai tout arrêté, et j’ai appris en autodidacte, à l’oreille.',
+          'J’y suis revenu par les études, dans cet ordre : d’abord quatre ans au collège de jazz de Marciac — la section jazz adossée au festival, parrainée par Wynton Marsalis —, où je découvre l’improvisation vocale ; ensuite le lycée, avec un bac <strong>TMD — Technique de Musique et de Danse</strong>, au lycée Saint-Sernin à Toulouse. C’est l’équivalent d’un sport-études, mais musique/études — on parle aussi d’horaires aménagés. Puis quatre ans au Conservatoire de Toulouse, dont je sors en 2013 avec un prix de batterie mention très bien.',
+          'Pour « rattraper mon retard », j’ai eu 7h30 de cours de solfège par semaine, dans 4 niveaux différents. Je ne sais toujours pas lire la musique… tellement la pédagogie était déconnectée de la sensation et du sens, avec une approche uniquement tournée vers la musique classique.',
         ],
       },
       {
         eyebrow: 'Les détours',
-        title: 'Dix ans à faire des ponts entre des mondes qui ne se parlaient pas',
+        title: 'Vidéo, formation, réalité virtuelle',
         paras: [
-          'Entre-temps, j’ai fait beaucoup de choses qui n’avaient l’air de rien avoir en commun. J’ai monté des groupes, appris la captation et le montage vidéo, rejoint en 2017 l’équipe de Thierry Vanoffe comme formateur et créateur des vidéos de la chaîne Numéricoach, puis co-fondé en 2020 Aora Mana — l’une des premières plateformes de voyages initiatiques en réalité virtuelle, drone et caméra 360° à la main.',
-          'En février 2022, je passe les auditions à l’aveugle de The Voice sur TF1, saison 11, avec un chant africain : <em>Koth Biro</em>.',
-          'Longtemps, j’ai vécu cette accumulation comme de la dispersion. J’ai fini par comprendre que c’était l’inverse : mon métier, c’est de faire des ponts. Entre un fabricant et un autre, entre une intuition et un objet qui marche, entre une théorie et quelque chose qu’on peut voir.',
+          'J’ai monté des groupes, appris la captation et le montage vidéo, rejoint en 2017 l’équipe de Thierry Vanoffe comme formateur et créateur des vidéos de la chaîne Numéricoach, puis travaillé à partir de 2020 sur Aora Mana — l’une des premières plateformes de voyages initiatiques en réalité virtuelle — comme cadreur, réalisateur, monteur en réalité virtuelle 360° et pilote de drone.',
+          'Je passe les auditions à l’aveugle de The Voice sur TF1, saison 11, avec un chant africain : <em>Koth Biro</em> — enregistrées le 21 décembre 2021, diffusées le 12 février 2022. À la suite de l’émission, je suis invité pour un concert solo en Côte d’Ivoire.',
+          'En travaillant en tant que formateur Google, je réalise à quel point je suis doué pour trouver des solutions techniques et technologiques aux problèmes des gens. Mais déjà bien avant ça, je m’occupais de la sonorisation des conférences du Salon Santé Nature à Toulouse et de leur parc informatique. J’ai toujours aidé les gens à trouver des astuces et solutions à leurs problèmes informatiques.',
         ],
       },
       {
         eyebrow: 'Transmettre',
-        title: 'Ma première méthode est née d’un manque, pas d’une idée',
+        title: 'La calebasse, Now Groove et le ngoni',
         paras: [
           'À la calebasse, il me manquait la caisse claire et le charley. J’ai résolu le manque avec des œufs en plastique — un bricolage qui est devenu une façon de jouer, puis une façon d’enseigner.',
-          'C’est devenu Now Groove (2021) : une méthode de rythme par appels-réponses et émoticônes visuelles, qui tient debout avec cinquante personnes dans la même salle. Déjà la même idée qu’aujourd’hui — remplacer le vocabulaire par quelque chose qu’on voit.',
-          'En 2018, j’entre aussi dans le monde du ngoni avec La Maison du Ngoni, dont je suis ambassadeur : je transmets la harpe gonilélé de Joris Feuillâtre. Mes cours et mes ateliers tournent sous Now Music Academy, portée par l’association Résonances Productions.',
+          'C’est devenu Now Groove (2021) : une méthode de rythme par appels-réponses et émoticônes visuelles, qui tient debout avec cinquante personnes dans la même salle.',
+          'En 2018, alors que je suis dévasté par une rupture amoureuse, mon thérapeute Fred Hervaud me remet entre les mains son propre N’Goni : c’est ma rencontre avec l’instrument. En 2023 commence ma collaboration avec Joris Feuillâtre, autour de la harpe gonilélé, que je transmets aujourd’hui comme ambassadeur de La Maison du Ngoni. Mes cours et mes ateliers tournent sous Now Music Academy, portée par l’association Résonances Productions.',
         ],
       },
       {
@@ -1188,7 +1206,7 @@ const fr = {
         title: 'Le concert qui m’a fait entrer dans le monde du handpan',
         paras: [
           'Je joue au HONA Festival, à Agia Anna. Quand j’arrive, je ne suis personne : la scène est minuscule, la sono est mauvaise, il n’y a pas de retour. Mais je propose quelque chose qu’on n’avait pas vu — je chante, je joue trois handpans en même temps, et je fais les percussions aux pieds et aux mains.',
-          'Le lendemain, je croise un homme sur le port. Je ne sais pas qui c’est ; on m’explique que c’est l’un des meilleurs fabricants de handpan au monde. C’est Yonathan, de Yishama. Il m’écoute longuement, calmement, et n’essaie pas de me vendre ses instruments.',
+          'Le lendemain, je croise un homme au bar extérieur du festival. Je ne sais pas qui c’est ; on m’explique que c’est l’un des meilleurs fabricants de handpan au monde. C’est Yonathan, de Yishama. Il m’écoute longuement, calmement, et n’essaie pas de me vendre ses instruments.',
           'Ce même été, on met entre mes mains le tout premier Neotone en version bêta. Un mois plus tard je joue au festival HUG en Hongrie, je passe par l’atelier, et je repars avec un Neotone bêta et un engagement clair : remonter les bugs et aider à faire évoluer l’instrument. Je le fais depuis — des milliers de retours plus tard, je connais personnellement Csaba, Norbert et l’équipe de Soundventure à Budapest.',
         ],
       },
@@ -1197,7 +1215,7 @@ const fr = {
         title: 'Deux instruments magnifiques, et aucun mode d’emploi',
         paras: [
           'En mai 2023, je reçois les deux handpans que Yonathan a dessinés pour moi : dix-huit notes chacun, accordés en 432 Hz, pensés pour une seule chose — que je puisse chanter en m’accompagnant, dans n’importe quelle tonalité.',
-          'Et là, la vérité. Personne ne m’avait caché la méthode : elle n’existait pas. Le handpan est un instrument du XXIᵉ siècle, encore en pleine évolution, souvent modal, et il y a presque autant de dispositions de notes que d’instruments. Avec mon bagage de batteur, j’étais seul devant deux machines splendides.',
+          'Il n’existait pas de méthode. Le handpan est un instrument du XXIᵉ siècle, encore en pleine évolution, souvent modal, et il y a presque autant de dispositions de notes que d’instruments.',
           'En août 2023, j’ouvre un document — juste pour arriver à voir quels accords je peux faire sur mes propres instruments. Quelques mois plus tard, Yonathan me suggère d’en faire un petit livret d’accords, pour moi. J’ai fait le livret. Il est devenu une application.',
         ],
       },
@@ -1214,23 +1232,24 @@ const fr = {
     todayEyebrow: 'Aujourd’hui · Paris 20ᵉ',
     todayTitle: 'Musicien, prof, et constructeur d’outils',
     todayIntro:
-      'Je suis intermittent du spectacle, installé à Paris. J’ai ouvert Le Nid, mon showroom du 20ᵉ : un lieu où l’on peut venir toucher, essayer, écouter — et repartir avec son Neotone le jour même. Mes deux Yishama y sont aussi, pas à vendre, juste pour être joués.',
+      'Je suis intermittent du spectacle, installé à Paris. Le Nid, au 29 rue des Orteaux dans le 20ᵉ, est le lieu que je porte avec Iris Chasles : un lieu à taille humaine, dans l’est parisien, où l’on reçoit en petit comité. Cinq propositions s’y croisent — concerts, workshop de rythme à la calebasse, cours individuels, atelier de yoga et accompagnement psycho-corporel —, auxquelles s’ajoutent les présentations d’instruments, gratuites et sur inscription. On peut y toucher, essayer, écouter, et repartir avec son Neotone le jour même. Mes deux Yishama y sont aussi, pas à vendre, juste pour être joués. Le programme complet est publié par l’association Résonances Productions.',
     today: [
-      { t: 'Je joue', d: 'Handpan, voix, calebasse et ngoni sur scène. Deux opus enregistrés sous le titre L’Alliance du Phoenix, et des showcases gratuits au Nid presque chaque mois.' },
+      { t: 'Je joue', d: 'Handpan, voix, calebasse et ngoni sur scène : 112 dates recensées de 2009 à 2026, dans 7 pays — dont 21 à Jazz in Marciac, deux éditions du Sziget à Budapest, l’Everness Festival en Hongrie et une première partie d’Amadou &amp; Mariam. Deux opus enregistrés sous le titre L’Alliance du Phoenix, et des showcases gratuits au Nid presque chaque mois.' },
       { t: 'J’enseigne', d: 'Now Music Academy : handpan, rythme à la calebasse et harpe gonilélé, en visio partout dans le monde ou en présentiel à Paris. Je réponds personnellement.' },
       { t: 'Je construis', d: 'Handpan Compagnon rend l’harmonie visible par les couleurs, les formes et les émotions. Guso Facile fait la même chose pour l’administratif des intermittents.' },
-      { t: 'Je fais le pont', d: 'Bêta-testeur Neotone, ambassadeur et affilié Yishama, ambassadeur La Maison du Ngoni : je teste vraiment ce que je présente, et je le dis quand ce n’est pas parfait.' },
+      { t: 'Je fais le pont', d: 'Bêta-testeur Neotone (Soundventure, Budapest), ambassadeur et affilié Yishama, ambassadeur La Maison du Ngoni.' },
     ],
 
     milestonesEyebrow: 'Repères',
     milestonesTitle: 'Quelques jalons datés',
     milestones: [
       { y: '2013', t: 'Prix de batterie, mention très bien — Conservatoire de Toulouse.' },
-      { y: '2018', t: 'J’entre dans le monde du ngoni avec La Maison du Ngoni.' },
+      { y: '2018', t: 'Je découvre le ngoni — celui de mon thérapeute, Fred Hervaud.' },
       { y: '2021', t: 'Now Groove — ma méthode de rythme visuelle à la calebasse.' },
-      { y: 'Févr. 2022', t: 'Auditions à l’aveugle de The Voice, saison 11 (TF1).' },
+      { y: 'Févr. 2022', t: 'The Voice saison 11 (TF1) : audition à l’aveugle enregistrée le 21/12/2021, diffusée le 12/02/2022. Puis un concert solo en Côte d’Ivoire.' },
       { y: 'Juin 2022', t: 'HONA Festival, Naxos. Rencontre avec Yonathan (Yishama), premier Neotone bêta en main.' },
       { y: 'Juil. 2022', t: 'Festival HUG, Hongrie. Je repars de l’atelier avec un Neotone bêta.' },
+      { y: '2023', t: 'Début de ma collaboration avec Joris Feuillâtre (harpe gonilélé).' },
       { y: 'Mai 2023', t: 'Je reçois mes deux handpans Yishama : 18 notes chacun, 432 Hz.' },
       { y: 'Août 2023', t: 'Le document qui deviendra Handpan Compagnon.' },
       { y: 'Aujourd’hui', t: 'Le Nid, Paris 20ᵉ — cours, essais et showcases.' },
@@ -1243,20 +1262,24 @@ const fr = {
     pillars: [
       { t: 'Visible', d: 'La couleur, la géométrie et l’émotion remplacent le jargon. On voit la musique avant de la nommer.' },
       { t: 'Accessible', d: 'Tutoiement, simplicité, chaleur. De l’enfant curieux au musicien confirmé — je réponds personnellement.' },
-      { t: 'Honnête', d: 'Conservatoire, scène, bêta-test au long cours : la preuve technique rassure, jamais elle n’intimide — et je dis franchement ce que je ne sais pas.' },
+      { t: 'Vérifiable', d: 'Conservatoire de Toulouse, scène, bêta-test Neotone au long cours : des repères datés, que chacun peut vérifier.' },
     ],
 
     proofsEyebrow: 'Mes repères',
     proofsTitle: 'Crédibilité & parcours',
-    proofsIntro: 'Rien de plus que ce qui est vrai — et vérifiable.',
+    proofsIntro: 'Des repères datés et vérifiables.',
     proofs: [
-      'Prix de batterie · Conservatoire de Toulouse',
-      'The Voice saison 11 · auditions à l’aveugle (TF1, 2022)',
+      'Prix de batterie mention très bien · Conservatoire de Toulouse (2013)',
+      'Collège de jazz de Marciac · quatre ans',
+      'Ambitus vocal de cinq octaves',
+      'The Voice saison 11 · audition à l’aveugle (TF1, 12/02/2022)',
+      '112 dates de scène recensées · 2009–2026, 7 pays',
       'Intermittent du spectacle',
       'Bêta-testeur Neotone (Soundventure, Budapest)',
       'Ambassadeur et affilié Yishama',
       'Ambassadeur La Maison du Ngoni',
-      'Le Nid · showroom, Paris 20ᵉ',
+      'Le Nid · 29 rue des Orteaux, Paris 20ᵉ',
+      'Résonances Productions · association loi 1901',
       'L’Alliance du Phoenix · Opus I & II',
     ],
 
