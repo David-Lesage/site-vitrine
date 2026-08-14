@@ -768,7 +768,7 @@ export const en: Dict = {
       'The Gonilélé (or NGoni lélé) is a West African harp-lute, reimagined as a travel version by Joris Feuillâtre of La Maison du Ngoni. A calabash body, a noble-wood neck, strings tuned to a pentatonic scale: it embodies the union of masculine and feminine, connected to the divine. An intuitive, meditative and deep instrument, for beginners and seasoned musicians alike.',
     ambassadorTitle: 'Ambassador of La Maison du Ngoni',
     ambassadorText:
-      'I’ve worked with Joris Feuillâtre since 2018. The Gonilélé has accompanied me through major moments of my life — so it’s only natural that I now represent La Maison du Ngoni and pass this instrument on around me.',
+      'I’ve worked with Joris Feuillâtre since 2023. The Gonilélé has accompanied me through major moments of my life — so it’s only natural that I now represent La Maison du Ngoni and pass this instrument on around me.',
     photosTitle: 'The instrument in pictures',
     unboxingTitle: 'Discovery & unboxing',
     unboxingText: 'I walk you through the Gonilélé in detail, from unboxing to first notes.',
