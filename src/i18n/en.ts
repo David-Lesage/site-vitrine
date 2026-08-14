@@ -1091,7 +1091,7 @@ export const en: Dict = {
         title: 'Drums at 4, then music theory',
         paras: [
           'I started music at 4, on drums. From my very first lesson, reading sheet music was forced on me. I quit, and learned self-taught, by ear.',
-          'I came back to it through school, in this order: first four years at the Marciac jazz college — the jazz section attached to the festival, sponsored by Wynton Marsalis — where I discovered vocal improvisation; then the lycée, with a <strong>TMD baccalaureate — Technique de Musique et de Danse</strong> — at Lycée Saint-Sernin in Toulouse. It is the equivalent of a sport-study programme, but music/study — also called adapted timetables. Then four years at the Toulouse Conservatory, which I left in 2013 with a drums award, highest honours.',
+          'I came back to it through school, in this order: first four years at the Marciac jazz college — the jazz section attached to the festival, sponsored by Wynton Marsalis — where I discovered vocal improvisation; then the lycée, with a <strong>TMD baccalaureate — Technique de Musique et de Danse</strong> — obtained in 2012 at Lycée Saint-Sernin in Toulouse. It is the equivalent of a sport-study programme, but music/study — also called adapted timetables. Then four years at the Toulouse Conservatory, which I left in 2013 with a drums award, highest honours.',
           'To “catch up”, I had 7.5 hours of music-theory class a week, across 4 different levels. I still can’t read music… that’s how disconnected the teaching was from sensation and from meaning, with an approach turned solely towards classical music.',
         ],
       },
@@ -1101,16 +1101,25 @@ export const en: Dict = {
         paras: [
           'I started bands, learned video shooting and editing, joined Thierry Vanoffe’s team in 2017 as a trainer and video creator for the Numéricoach channel, then from 2020 worked on Aora Mana — one of the first virtual-reality platforms for initiatory journeys — as camera operator, director, 360° virtual-reality editor and drone pilot.',
           'I sang in the blind auditions of The Voice on TF1, season 11, with an African song: <em>Koth Biro</em> — recorded on 21 December 2021, broadcast on 12 February 2022. After the show, I was invited for a solo concert in Côte d’Ivoire.',
-          'Working as a Google trainer, I realised how good I am at finding technical and technological solutions to people’s problems. But well before that, I was already handling the sound for the conferences of the Salon Santé Nature in Toulouse, and their IT equipment. I have always helped people find tricks and solutions to their computer problems.',
+          'Working as a Google trainer, I realised how good I am at finding technical and technological solutions to people’s problems. But well before that, I was already handling the sound for the conferences of the Salon Santé Nature, in Flourens — the fair moved venue several times —, and their IT equipment. I have always helped people find tricks and solutions to their computer problems.',
         ],
       },
       {
         eyebrow: 'Passing it on',
         title: 'The calabash, Now Groove and the ngoni',
         paras: [
+          'I have played the calabash, as a percussion instrument, since 2012.',
           'On the calabash, I was missing the snare and the hi-hat. I solved it with plastic eggs — a workaround that became a way of playing, then a way of teaching.',
           'It became Now Groove (2021): a rhythm method built on call-and-response and visual emoticons, which holds up with fifty people in the same room.',
           'In 2018, while I was devastated by a break-up, my therapist Fred Hervaud placed his own N’Goni in my hands: that is how I met the instrument. In 2023 my collaboration with Joris Feuillâtre began, around the gonilélé harp, which I pass on today as an ambassador of La Maison du Ngoni. My lessons and workshops run under Now Music Academy, carried by the Résonances Productions association.',
+        ],
+      },
+      {
+        eyebrow: 'Singing',
+        title: 'Marie-Christine Reculard and holistic singing',
+        paras: [
+          'Marie-Christine Reculard is my singing teacher. She created <em>Le Chant Holistique</em> (holistic singing), which she describes on her site as “une méthode unique de chant thérapeutique et énergétique par la voix, les couleurs, les voyelles sacrées, les mantras, le yoga et les techniques de respirations” — a singing method working through the voice, colours, sacred vowels, mantras, yoga and breathing techniques. Her site: <a href="https://www.mariechristinereculard.com/" target="_blank" rel="noopener" class="underline">mariechristinereculard.com</a>.',
+          'Her method inspired me, notably for a “Sing &amp; Play” mode — singing while accompanying yourself on the handpan — that I am working on for Handpan Compagnon. It is still at lab stage: it is not available in the app today.',
         ],
       },
       {
@@ -1144,7 +1153,7 @@ export const en: Dict = {
     todayEyebrow: 'Today · Paris 20th',
     todayTitle: 'Musician, teacher, and tool builder',
     todayIntro:
-      'I’m a French performing-arts freelancer, based in Paris. Le Nid, at 29 rue des Orteaux in the 20th, is the place I run with Iris Chasles: a human-sized venue in eastern Paris, where we welcome people in small numbers. Five strands meet there — concerts, a calabash rhythm workshop, individual lessons, a yoga class and psycho-corporeal support — plus the instrument presentations, free and by registration. You can touch, try, listen, and walk away with your Neotone the same day. My two Yishamas are there too, not for sale, just to be played. The full programme is published by the Résonances Productions association.',
+      'I’m a French performing-arts freelancer, based in Paris. Le Nid, at 29 rue des Orteaux in the 20th, is the place I run with Iris Chasles, opened on 13 March 2026: a human-sized venue in eastern Paris, where we welcome people in small numbers. Five strands meet there — concerts, a calabash rhythm workshop, individual lessons, a yoga class and psycho-corporeal support — plus the instrument presentations, free and by registration. You can touch, try, listen, and walk away with your Neotone the same day. My two Yishamas are there too, not for sale, just to be played. The full programme is published by the Résonances Productions association.',
     today: [
       { t: 'I play', d: 'Handpan, voice, calabash and ngoni on stage: 112 logged dates from 2009 to 2026, in 7 countries — including 21 at Jazz in Marciac, two editions of Sziget in Budapest, the Everness Festival in Hungary and a support slot for Amadou &amp; Mariam. Two recorded opuses under the title L’Alliance du Phoenix, and free showcases at Le Nid almost every month.' },
       { t: 'I teach', d: 'Now Music Academy: handpan, calabash rhythm and gonilélé harp, over video anywhere in the world or in person in Paris. I answer personally.' },
@@ -1155,6 +1164,8 @@ export const en: Dict = {
     milestonesEyebrow: 'Landmarks',
     milestonesTitle: 'A few dated landmarks',
     milestones: [
+      { y: '2012', t: 'TMD baccalaureate — Technique de Musique et de Danse, Lycée Saint-Sernin, Toulouse.' },
+      { y: '2012', t: 'I take up the calabash, as a percussion instrument.' },
       { y: '2013', t: 'Drums award, highest honours — Toulouse Conservatory.' },
       { y: '2018', t: 'I discover the ngoni — my therapist Fred Hervaud’s own instrument.' },
       { y: '2021', t: 'Now Groove — my visual rhythm method on the calabash.' },
@@ -1164,6 +1175,7 @@ export const en: Dict = {
       { y: '2023', t: 'My collaboration with Joris Feuillâtre begins (gonilélé harp).' },
       { y: 'May 2023', t: 'I receive my two Yishama handpans: 18 notes each, 432 Hz.' },
       { y: 'Aug. 2023', t: 'The document that would become Handpan Compagnon.' },
+      { y: '13 March 2026', t: 'Le Nid opens, 29 rue des Orteaux, Paris 20th.' },
       { y: 'Today', t: 'Le Nid, Paris 20th — lessons, try-outs and showcases.' },
     ],
 

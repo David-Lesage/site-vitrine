@@ -1154,7 +1154,24 @@ const fr = {
   // - Aora Mana : cadreur / réalisateur / monteur VR 360° / pilote de drone
   //   — il n'en est PAS co-fondateur.
   // - origine du « pont technique » : formateur Google + sonorisation et
-  //   parc informatique du Salon Santé Nature à Toulouse.
+  //   parc informatique du Salon Santé Nature (à Flourens ; le salon a
+  //   changé plusieurs fois de lieu — correction de David du 14/08/2026,
+  //   ce n'était PAS Toulouse).
+  //
+  // Corrections complémentaires de David (14/08/2026, 2e passe) :
+  // - CALEBASSE = 2012 (il en joue comme percussion depuis 2012) ;
+  //   NGONI = 2018 (celui de Fred Hervaud). Les deux sont vrais et
+  //   distincts : ne JAMAIS les confondre (la phrase du site Résonances
+  //   est ambiguë parce que le ngoni est fabriqué avec une calebasse).
+  // - Bac TMD = 2012 (tranche le conflit 2010 / 2012).
+  // - Le Nid : ouverture le 13 mars 2026.
+  // - Marie-Christine Reculard = sa professeure de chant. PERSONNE RÉELLE :
+  //   la description de sa méthode est citée VERBATIM de son site officiel
+  //   https://www.mariechristinereculard.com/ — ne rien inventer, ne rien
+  //   interpréter. Le lien entre sa méthode et le mode « Chanter & Jouer »
+  //   est le propos de David lui-même.
+  // ⚠️ « Chanter & Jouer » N'EST PAS accessible publiquement (capacité de
+  //   laboratoire dans l'app) : ne jamais l'annoncer comme disponible.
   // ============================================================
   about: {
     title: 'À propos — David Lesage, musicien, pédagogue et inventeur',
@@ -1179,7 +1196,7 @@ const fr = {
         title: 'La batterie à 4 ans, puis le solfège',
         paras: [
           'J’ai commencé la musique à 4 ans, à la batterie. Dès mon premier cours, on m’a imposé la lecture de partitions. J’ai tout arrêté, et j’ai appris en autodidacte, à l’oreille.',
-          'J’y suis revenu par les études, dans cet ordre : d’abord quatre ans au collège de jazz de Marciac — la section jazz adossée au festival, parrainée par Wynton Marsalis —, où je découvre l’improvisation vocale ; ensuite le lycée, avec un bac <strong>TMD — Technique de Musique et de Danse</strong>, au lycée Saint-Sernin à Toulouse. C’est l’équivalent d’un sport-études, mais musique/études — on parle aussi d’horaires aménagés. Puis quatre ans au Conservatoire de Toulouse, dont je sors en 2013 avec un prix de batterie mention très bien.',
+          'J’y suis revenu par les études, dans cet ordre : d’abord quatre ans au collège de jazz de Marciac — la section jazz adossée au festival, parrainée par Wynton Marsalis —, où je découvre l’improvisation vocale ; ensuite le lycée, avec un bac <strong>TMD — Technique de Musique et de Danse</strong>, obtenu en 2012 au lycée Saint-Sernin à Toulouse. C’est l’équivalent d’un sport-études, mais musique/études — on parle aussi d’horaires aménagés. Puis quatre ans au Conservatoire de Toulouse, dont je sors en 2013 avec un prix de batterie mention très bien.',
           'Pour « rattraper mon retard », j’ai eu 7h30 de cours de solfège par semaine, dans 4 niveaux différents. Je ne sais toujours pas lire la musique… tellement la pédagogie était déconnectée de la sensation et du sens, avec une approche uniquement tournée vers la musique classique.',
         ],
       },
@@ -1189,16 +1206,25 @@ const fr = {
         paras: [
           'J’ai monté des groupes, appris la captation et le montage vidéo, rejoint en 2017 l’équipe de Thierry Vanoffe comme formateur et créateur des vidéos de la chaîne Numéricoach, puis travaillé à partir de 2020 sur Aora Mana — l’une des premières plateformes de voyages initiatiques en réalité virtuelle — comme cadreur, réalisateur, monteur en réalité virtuelle 360° et pilote de drone.',
           'Je passe les auditions à l’aveugle de The Voice sur TF1, saison 11, avec un chant africain : <em>Koth Biro</em> — enregistrées le 21 décembre 2021, diffusées le 12 février 2022. À la suite de l’émission, je suis invité pour un concert solo en Côte d’Ivoire.',
-          'En travaillant en tant que formateur Google, je réalise à quel point je suis doué pour trouver des solutions techniques et technologiques aux problèmes des gens. Mais déjà bien avant ça, je m’occupais de la sonorisation des conférences du Salon Santé Nature à Toulouse et de leur parc informatique. J’ai toujours aidé les gens à trouver des astuces et solutions à leurs problèmes informatiques.',
+          'En travaillant en tant que formateur Google, je réalise à quel point je suis doué pour trouver des solutions techniques et technologiques aux problèmes des gens. Mais déjà bien avant ça, je m’occupais de la sonorisation des conférences du Salon Santé Nature, à Flourens — le salon a changé plusieurs fois d’endroit —, et de leur parc informatique. J’ai toujours aidé les gens à trouver des astuces et solutions à leurs problèmes informatiques.',
         ],
       },
       {
         eyebrow: 'Transmettre',
         title: 'La calebasse, Now Groove et le ngoni',
         paras: [
+          'Je joue de la calebasse, comme instrument de percussion, depuis 2012.',
           'À la calebasse, il me manquait la caisse claire et le charley. J’ai résolu le manque avec des œufs en plastique — un bricolage qui est devenu une façon de jouer, puis une façon d’enseigner.',
           'C’est devenu Now Groove (2021) : une méthode de rythme par appels-réponses et émoticônes visuelles, qui tient debout avec cinquante personnes dans la même salle.',
           'En 2018, alors que je suis dévasté par une rupture amoureuse, mon thérapeute Fred Hervaud me remet entre les mains son propre N’Goni : c’est ma rencontre avec l’instrument. En 2023 commence ma collaboration avec Joris Feuillâtre, autour de la harpe gonilélé, que je transmets aujourd’hui comme ambassadeur de La Maison du Ngoni. Mes cours et mes ateliers tournent sous Now Music Academy, portée par l’association Résonances Productions.',
+        ],
+      },
+      {
+        eyebrow: 'Le chant',
+        title: 'Marie-Christine Reculard et le chant holistique',
+        paras: [
+          'Marie-Christine Reculard est ma professeure de chant. Elle a créé <em>Le Chant Holistique</em>, qu’elle décrit sur son site comme « une méthode unique de chant thérapeutique et énergétique par la voix, les couleurs, les voyelles sacrées, les mantras, le yoga et les techniques de respirations ». Son site : <a href="https://www.mariechristinereculard.com/" target="_blank" rel="noopener" class="underline">mariechristinereculard.com</a>.',
+          'Sa méthode m’a inspiré, notamment pour un mode « Chanter & Jouer » — chanter en s’accompagnant au handpan — sur lequel je travaille pour Handpan Compagnon. Il est encore au stade de laboratoire : il n’est pas accessible dans l’application aujourd’hui.',
         ],
       },
       {
@@ -1232,7 +1258,7 @@ const fr = {
     todayEyebrow: 'Aujourd’hui · Paris 20ᵉ',
     todayTitle: 'Musicien, prof, et constructeur d’outils',
     todayIntro:
-      'Je suis intermittent du spectacle, installé à Paris. Le Nid, au 29 rue des Orteaux dans le 20ᵉ, est le lieu que je porte avec Iris Chasles : un lieu à taille humaine, dans l’est parisien, où l’on reçoit en petit comité. Cinq propositions s’y croisent — concerts, workshop de rythme à la calebasse, cours individuels, atelier de yoga et accompagnement psycho-corporel —, auxquelles s’ajoutent les présentations d’instruments, gratuites et sur inscription. On peut y toucher, essayer, écouter, et repartir avec son Neotone le jour même. Mes deux Yishama y sont aussi, pas à vendre, juste pour être joués. Le programme complet est publié par l’association Résonances Productions.',
+      'Je suis intermittent du spectacle, installé à Paris. Le Nid, au 29 rue des Orteaux dans le 20ᵉ, est le lieu que je porte avec Iris Chasles, ouvert le 13 mars 2026 : un lieu à taille humaine, dans l’est parisien, où l’on reçoit en petit comité. Cinq propositions s’y croisent — concerts, workshop de rythme à la calebasse, cours individuels, atelier de yoga et accompagnement psycho-corporel —, auxquelles s’ajoutent les présentations d’instruments, gratuites et sur inscription. On peut y toucher, essayer, écouter, et repartir avec son Neotone le jour même. Mes deux Yishama y sont aussi, pas à vendre, juste pour être joués. Le programme complet est publié par l’association Résonances Productions.',
     today: [
       { t: 'Je joue', d: 'Handpan, voix, calebasse et ngoni sur scène : 112 dates recensées de 2009 à 2026, dans 7 pays — dont 21 à Jazz in Marciac, deux éditions du Sziget à Budapest, l’Everness Festival en Hongrie et une première partie d’Amadou &amp; Mariam. Deux opus enregistrés sous le titre L’Alliance du Phoenix, et des showcases gratuits au Nid presque chaque mois.' },
       { t: 'J’enseigne', d: 'Now Music Academy : handpan, rythme à la calebasse et harpe gonilélé, en visio partout dans le monde ou en présentiel à Paris. Je réponds personnellement.' },
@@ -1243,6 +1269,8 @@ const fr = {
     milestonesEyebrow: 'Repères',
     milestonesTitle: 'Quelques jalons datés',
     milestones: [
+      { y: '2012', t: 'Bac TMD — Technique de Musique et de Danse, lycée Saint-Sernin, Toulouse.' },
+      { y: '2012', t: 'Je commence la calebasse, comme instrument de percussion.' },
       { y: '2013', t: 'Prix de batterie, mention très bien — Conservatoire de Toulouse.' },
       { y: '2018', t: 'Je découvre le ngoni — celui de mon thérapeute, Fred Hervaud.' },
       { y: '2021', t: 'Now Groove — ma méthode de rythme visuelle à la calebasse.' },
@@ -1252,6 +1280,7 @@ const fr = {
       { y: '2023', t: 'Début de ma collaboration avec Joris Feuillâtre (harpe gonilélé).' },
       { y: 'Mai 2023', t: 'Je reçois mes deux handpans Yishama : 18 notes chacun, 432 Hz.' },
       { y: 'Août 2023', t: 'Le document qui deviendra Handpan Compagnon.' },
+      { y: '13 mars 2026', t: 'Ouverture du Nid, 29 rue des Orteaux, Paris 20ᵉ.' },
       { y: 'Aujourd’hui', t: 'Le Nid, Paris 20ᵉ — cours, essais et showcases.' },
     ],
 
