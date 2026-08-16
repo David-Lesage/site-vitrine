@@ -87,6 +87,11 @@
 //      DE DÉBUT est ferme (la date, elle, se choisit), annonce la durée réelle
 //      (~2h de programme, plutôt 3h avec les échanges) et invite — facultatif —
 //      à apporter quelque chose à partager.
+// v23 (16/08/2026) : CORRECTIF du repli de v22. Un champ `upcomingEvents` ABSENT
+//      et un tableau VIDE donnaient tous les deux `[]` : le repli sur EVENT_HOURS
+//      se déclenchait donc AUSSI quand le site disait « il n'y a aucune date »,
+//      rendant le cas vide inatteignable et pouvant annoncer une date que
+//      /showroom n'affiche plus. On teste désormais la PRÉSENCE du champ.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -683,7 +688,14 @@ Deno.serve(async (req) => {
         // ici quand même — une date mal formée ou déjà passée produirait un lien
         // d'inscription mort, ce qui est pire que pas de lien du tout.
         const todayIso = new Date().toISOString().slice(0, 10);
-        const rawUpcoming = Array.isArray(body.upcomingEvents) ? body.upcomingEvents : [];
+        // ⚠ `hasUpcomingField` et NON `rawUpcoming.length` : un champ ABSENT et un
+        // tableau VIDE donnent tous les deux `[]`, alors qu'ils veulent dire deux
+        // choses opposées — « je ne sais pas » (vieille page en cache, il faut le
+        // repli) contre « il n'y a rien de prévu » (information vraie, à annoncer
+        // telle quelle). Les confondre rendait le cas « aucune date » INATTEIGNABLE
+        // et pouvait annoncer une date d'EVENT_HOURS que le site n'affiche plus.
+        const hasUpcomingField = Array.isArray(body.upcomingEvents);
+        const rawUpcoming = hasUpcomingField ? body.upcomingEvents as unknown[] : [];
         let upcomingEvents: UpcomingEvent[] = rawUpcoming
             .map((e) => (e && typeof e === 'object' ? e as Record<string, unknown> : {}))
             .map((e) => ({
@@ -699,8 +711,9 @@ Deno.serve(async (req) => {
         // encore le champ) : plutôt que d'annoncer « aucune date » à quelqu'un
         // alors que l'agenda du site en affiche, on retombe sur la table de
         // _shared/showcase-email.ts. Si le site a envoyé une liste VIDE, en
-        // revanche, c'est une vraie information : il n'y a rien de prévu.
-        if (!upcomingEvents.length && !rawUpcoming.length) upcomingEvents = fallbackUpcoming(todayIso);
+        // revanche, c'est une vraie information : il n'y a rien de prévu, et
+        // l'email le dit honnêtement au lieu d'inventer une date.
+        if (!hasUpcomingField) upcomingEvents = fallbackUpcoming(todayIso);
 
         // Grille tarifaire du rendez-vous individuel, CALCULÉE par le site
         // (priceGrid(), alimenté par `sessionTypes` de src/data/site.ts). Une
