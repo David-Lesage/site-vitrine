@@ -65,6 +65,12 @@ export default async function handler(req, res) {
         message: body.message,
         peopleCount: body.peopleCount,
         eventDate: body.eventDate,
+        // Horaires de la séance de showcase réservée (issus de `agendaEvents`)
+        // et grille tarifaire du RDV individuel (issue de `priceGrid()`) :
+        // l'email de confirmation ne recopie aucun horaire ni aucun prix.
+        eventStart: body.eventStart,
+        eventEnd: body.eventEnd,
+        priceGrid: body.priceGrid,
         neotoneModel: body.neotoneModel,
         socialAccount: body.socialAccount,
         discoveryChannel: body.discoveryChannel,

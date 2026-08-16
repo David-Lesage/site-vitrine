@@ -11,8 +11,16 @@ function mailto(subject: string, lines: (string | null)[], to: string = site.ema
   return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 }
 
-// Inscription à la liste des showcases — solution simple : email pré-rempli
-// vers David (en attendant un vrai outil de collecte type Brevo).
+// ⚠️ N'EST PLUS LE CHEMIN PRINCIPAL — REPLI SANS JAVASCRIPT (16/08/2026).
+// C'était l'inscription à la liste des showcases par email pré-rempli. Problème :
+// ça ouvre le logiciel de mail du visiteur, donc la demande n'existe QUE dans la
+// boîte de David et n'est enregistrée NULLE PART. Une personne réelle a écrit le
+// 16/08/2026 avec l'objet ci-dessous, au mot près, sans jamais apparaître dans
+// `site_leads`.
+// Le bouton de la page d'accueil porte désormais `data-booking="showcase-waitlist"` :
+// avec JS, `BookingForm` intercepte le clic → Edge Function `site-lead` → base.
+// Ce `mailto:` reste le `href` de repli si le JS ne s'exécute pas — donc AUCUNE
+// régression pour le visiteur. Ne le remettre comme chemin principal nulle part.
 export function newsletterMailto(lang: Lang): string {
   if (lang === 'en') {
     return mailto(

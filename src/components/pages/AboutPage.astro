@@ -12,8 +12,9 @@ import Layout from '@/layouts/Layout.astro'
 import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
+import BookingForm from '@/components/BookingForm.astro'
 import { Icon } from 'astro-icon/components'
-import { site } from '@/data/site'
+import { site, SITE_LEAD_KNOWS_CONTACT_SOURCES } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { personLdJson } from '@/lib/ldJson'
@@ -24,6 +25,17 @@ const { lang } = Astro.props
 const t = getDict(lang)
 const a = t.about
 const L = (p: string) => localizePath(p, lang)
+
+// Voir SITE_LEAD_KNOWS_CONTACT_SOURCES (src/data/site.ts) : sans l'Edge Function
+// à jour, ce bouton reste le `mailto:` d'aujourd'hui.
+const bookingAttrs = SITE_LEAD_KNOWS_CONTACT_SOURCES
+  ? {
+      'data-booking': 'contact',
+      'data-title': a.collabCta2,
+      'data-intro': a.collabIntro,
+      'data-prefill': t.booking.collabPrefill,
+    }
+  : {}
 
 const pillarIcons = ['lucide:eye', 'lucide:heart-handshake', 'lucide:award']
 const todayIcons = ['lucide:music', 'lucide:graduation-cap', 'lucide:wrench', 'lucide:link']
@@ -151,8 +163,13 @@ const todayIcons = ['lucide:music', 'lucide:graduation-cap', 'lucide:wrench', 'l
       <SectionHeading tone="light" eyebrow={a.collabEyebrow} title={a.collabTitle} intro={a.collabIntro} />
       <div class="mt-8 flex flex-wrap justify-center gap-3">
         <Button href={L('/contact')} variant="primary">{a.collabCta1}</Button>
-        <Button href={`mailto:${site.email}?subject=Collaboration`} variant="light">{a.collabCta2}</Button>
+        {/* Proposition de collaboration : ENREGISTRÉE en base (source `contact`).
+            L'ancien `mailto:` restait dans la boîte de David — une marque ou un
+            organisateur qui écrivait n'apparaissait nulle part. Le `href` est
+            conservé en repli si le JS ne s'exécute pas. */}
+        <Button href={`mailto:${site.email}?subject=Collaboration`} {...bookingAttrs} variant="light">{a.collabCta2}</Button>
       </div>
     </div>
   </Section>
+  <BookingForm lang={lang} />
 </Layout>

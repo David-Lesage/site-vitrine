@@ -507,6 +507,18 @@ export const en: Dict = {
     visitIntro: 'Paris 20th, by appointment. This is a paid one-to-one slot — one single price, whatever you’re coming for. Tell me when you’re available and I’ll suggest a slot.',
     privateTitle: 'Book an individual appointment',
     privateIntro: 'One-to-one time, at the Paris 20th showroom or online: discover an instrument, get started with the one you’ve just bought, or move your playing forward — whatever your level.',
+    // ── Reasons wired to THIS SAME form from other pages (16/08/2026).
+    // They replace old `mailto:` links (a 19/07/2026 stop-gap) that opened the
+    // visitor's mail client: the request then only existed in David's inbox and
+    // left NO trace in the database. Real prospects were lost that way.
+    newsTitle: 'Get notified about the next showcases',
+    newsIntro: 'Leave me your email: I’ll let you know as soon as the dates of the next free showcases in Paris are set. No spam — unsubscribe whenever you like.',
+    contactTitle: 'Write to me',
+    contactIntro: 'Tell me what brings you here — I read and answer every message personally.',
+    goniTitle: 'Order a Gonilélé harp',
+    goniIntro: 'Tell me which version you’re interested in and your options: I’ll reply personally with the summary and the details.',
+    goniPrefill: 'Version (10 strings / 12 strings + pickup):\nCover (+€40) / Tuner (+€10):\nPickup in Paris or shipping (+€25):',
+    collabPrefill: 'My project in a few lines:',
     vipTitle: 'An appointment just for you',
     vipScope: 'You decide what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply get one-to-one guidance — whether you’re a complete beginner, still working out what suits you, or want to dig into one specific thing. Whether you take 1h or 1h30, just tell me what you’re coming for: I’ll have everything ready.',
     vipPriceLabel: 'Price',
@@ -1231,7 +1243,7 @@ export const en: Dict = {
     h1: 'Legal notice of the David Lesage website',
     blocks: [
       { h: 'Publisher', p: 'David Lesage — musician, teacher and inventor. Showroom: 29 rue des Orteaux, 75020 Paris. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52.' },
-      { h: 'Hosting', p: 'Static site generated with Astro. Hosting to be specified at launch.' },
+      { h: 'Hosting', p: 'Static site generated with Astro, hosted by Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, United States — vercel.com. Domain name managed by OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.' },
       { h: 'Intellectual property', p: 'The content, texts, photographs and videos on this site are the property of their respective authors. The Neotone product photographs and specifications come from the official Soundventure Ltd documentation. David Lesage is an independent Neotone ambassador.' },
       { h: 'Prices & VAT', p: 'All displayed prices are indicative and may change without notice. The VAT rates applied by the calculator are the standard 2026 rates; customs fees outside the EU remain the buyer’s responsibility.' },
     ],

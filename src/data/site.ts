@@ -5,6 +5,30 @@
 // Cours et les micros sont ses univers.
 // ============================================================
 
+/**
+ * ⚠️ INTERRUPTEUR À BASCULER APRÈS UN DÉPLOIEMENT — puis à supprimer.
+ *
+ * Deux nouvelles raisons de contact ont été ajoutées le 16/08/2026 pour arrêter
+ * de perdre des prospects : `contact` (formulaire /contact + CTA « Collaboration »
+ * de /a-propos) et `gonilele-order` (commande d'une harpe Gonilélé). Elles
+ * remplacent des liens `mailto:` qui n'enregistraient RIEN.
+ *
+ * L'Edge Function `site-lead` doit les connaître pour envoyer le bon email
+ * (« ta demande est bien reçue » + notification à David). Tant qu'elle n'est pas
+ * redéployée, elle les traiterait comme une inscription à la liste d'attente et
+ * répondrait « tu es sur la liste » à quelqu'un qui pose une question de presse —
+ * et David ne serait pas prévenu. On ne prend pas ce risque : tant que
+ * l'interrupteur est à `false`, ces trois boutons gardent leur `mailto:` d'avant,
+ * exactement comme aujourd'hui.
+ *
+ * 👉 QUOI FAIRE : déployer `supabase/functions/site-lead` (le code est déjà à
+ * jour sur le disque, les deux sources y sont déclarées), puis passer cette
+ * constante à `true` et redéployer le site. Les inscriptions aux showcases
+ * (page d'accueil) et les réservations de cours, elles, sont DÉJÀ enregistrées :
+ * leurs sources sont connues de la version en ligne, elles ne dépendent pas d'ici.
+ */
+export const SITE_LEAD_KNOWS_CONTACT_SOURCES = true
+
 export const site = {
   name: 'David Lesage',
   tagline: 'Rendre la musique visible et accessible — par les couleurs, la géométrie et les émotions.',

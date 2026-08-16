@@ -60,19 +60,51 @@
 //      David porte désormais un BOUTON PAR CRÉNEAU proposé. Un clic confirme le
 //      cours ET envoie l'email de confirmation à la personne, sans ouvrir l'app
 //      (Edge Function `confirm-lesson-slot` + jeton signé _shared/lesson-token.ts).
+// v20 (16/08/2026) : SHOWCASE — LA PLACE EST CONFIRMÉE TOUT DE SUITE.
+//      Une réservation de showcase (`showcase-booking`, seule source émise par
+//      le formulaire de /showroom#agenda) ne reçoit plus l'accusé de réception
+//      « je te réponds très vite » : elle reçoit un VRAI email de confirmation
+//      (_shared/showcase-email.ts) — place confirmée, date et horaires de la
+//      séance, ponctualité, déroulé complet, consignes d'accès au Nid, note
+//      « enfants », et un bloc « rendez-vous individuel » (payant, distinct du
+//      showcase qui reste gratuit). La ligne passe en `status = 'confirmed'`,
+//      donc le panneau admin « 🎤 Showcase » la voit confirmée sans rien faire.
+//      ⚠ Le parcours `private-session` (RDV payant, v18/v19) est INCHANGÉ, tout
+//      comme `showcase-waitlist` (simple alerte de dates, pas une place).
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
 import { htmlPart, mailSubject } from '../_shared/mail.ts';
 import { canSignSlotTokens, signSlotToken } from '../_shared/lesson-token.ts';
+import {
+    FALLBACK_PRICE_GRID,
+    hoursFor as showcaseHoursFor,
+    showcaseConfirmationHtml,
+    showcaseConfirmationSubject,
+} from '../_shared/showcase-email.ts';
 
 const SITE = 'https://lesagedavid.fr';
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
 // Sources qui correspondent à une DEMANDE DE RÉSERVATION (David doit répondre).
-const BOOKING_SOURCES = ['showroom-visit', 'private-session', 'showcase-booking', 'showcase-waitlist', 'neotone-discount'];
+// `contact` et `gonilele-order` (16/08/2026) : anciens liens `mailto:` du site
+// (page /contact, CTA « Collaboration », commande d'une harpe Gonilélé). Ils
+// attendent une réponse de David → même traitement qu'une réservation : accusé
+// de réception à la personne + notification à David. Sans ça, ils tomberaient
+// dans la branche « liste d'attente » et enverraient un « tu es sur la liste »
+// à quelqu'un qui vient simplement de poser une question.
+const BOOKING_SOURCES = ['showroom-visit', 'private-session', 'showcase-booking', 'showcase-waitlist', 'neotone-discount', 'contact', 'gonilele-order'];
+
+// RÉSERVATION D'UNE PLACE À UN SHOWCASE — la seule source émise par le bouton
+// « Réserver ma place » de /showroom#agenda (ShowroomPage.astro). C'est la SEULE
+// à recevoir la confirmation immédiate : `showcase-waitlist` ne réserve rien
+// (elle demande juste à être prévenue des prochaines dates).
+const SHOWCASE_BOOKING_SOURCE = 'showcase-booking';
+
+/** « 16:00 » — refuse tout ce qui n'est pas une heure, l'email l'affiche en clair. */
+const TIME_RE = /^\d{1,2}:\d{2}$/;
 
 function json(body: unknown, status = 200): Response {
     return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
@@ -137,6 +169,8 @@ const SOURCE_LABELS: Record<string, { fr: string; en: string }> = {
     'app-login': { fr: 'Liste d’attente (écran de connexion)', en: 'Waiting list (login screen)' },
     'neotone-discount': { fr: 'Demande de code de remise Neotone (−5 %)', en: 'Neotone discount code request (−5%)' },
     showcase: { fr: 'Groupe showcases', en: 'Showcase group' },
+    contact: { fr: 'Message via le formulaire de contact', en: 'Message via the contact form' },
+    'gonilele-order': { fr: 'Commande d’une harpe Gonilélé', en: 'Gonilélé harp order' },
 };
 
 /** Libellés lisibles des réponses du formulaire, pour la notification à David. */
@@ -604,6 +638,24 @@ Deno.serve(async (req) => {
         const rawDate = String(body.eventDate ?? '').trim();
         const eventDate = /^\d{4}-\d{2}-\d{2}$/.test(rawDate) ? rawDate : null;
 
+        // Horaires de la séance de showcase réservée. Envoyés par le site (ils
+        // viennent de `agendaEvents` dans src/data/site.ts), avec repli sur la
+        // table de _shared/showcase-email.ts si la page servie est un cache
+        // antérieur à ce changement. NON persistés : `site_leads` ne porte que
+        // `event_date`, et l'horaire appartient à l'événement, pas à la personne.
+        const rawStart = String(body.eventStart ?? '').trim();
+        const rawEnd = String(body.eventEnd ?? '').trim();
+        const eventStart = TIME_RE.test(rawStart) ? rawStart : null;
+        const eventEnd = TIME_RE.test(rawEnd) ? rawEnd : null;
+
+        // Grille tarifaire du rendez-vous individuel, CALCULÉE par le site
+        // (priceGrid(), alimenté par `sessionTypes` de src/data/site.ts). Une
+        // Edge Function ne peut pas importer ce code : le site la transmet pour
+        // que l'email ne puisse jamais annoncer un prix que le formulaire ne
+        // pratique pas. Bornée et échappée à l'affichage.
+        const rawGrid = String(body.priceGrid ?? '').trim().slice(0, 120);
+        const priceGrid = rawGrid || FALLBACK_PRICE_GRID;
+
         // Rendez-vous individuel : type de séance + créneaux proposés (3 max).
         const rawSession = String(body.sessionType ?? '').trim();
         const sessionType = ALLOWED_SESSION_TYPE.includes(rawSession) ? rawSession : null;
@@ -641,6 +693,8 @@ Deno.serve(async (req) => {
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
 
         const isBooking = BOOKING_SOURCES.includes(source);
+        // Réservation d'une place à un showcase → confirmation IMMÉDIATE.
+        const isShowcaseBooking = source === SHOWCASE_BOOKING_SOURCE;
 
         const admin = createClient(
             Deno.env.get('SUPABASE_URL') ?? '',
@@ -791,18 +845,48 @@ Deno.serve(async (req) => {
                 connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } },
             });
             try {
+                // Trois emails possibles, dans cet ordre de priorité :
+                //  1. showcase-booking → la place est CONFIRMÉE (v20) ;
+                //  2. autre réservation → accusé de réception (David répond) ;
+                //  3. inscription simple → « tu es sur la liste ».
+                const showcaseHours = showcaseHoursFor(eventDate);
+                const subject = isShowcaseBooking
+                    ? showcaseConfirmationSubject(eventDate, lang)
+                    : isBooking
+                        ? (lang === 'en' ? 'David Lesage — your request is received ✨' : 'David Lesage — ta demande est bien reçue ✨')
+                        : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨');
+                const html = isShowcaseBooking
+                    ? showcaseConfirmationHtml({
+                        firstName,
+                        lang,
+                        eventDate,
+                        startTime: eventStart ?? showcaseHours.start,
+                        endTime: eventEnd ?? showcaseHours.end,
+                        peopleCount,
+                        priceGrid,
+                    })
+                    : isBooking
+                        ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots, sessionFormat, instruments, neotoneModel)
+                        : confirmationHtml(firstName, lang, wantsShowcase);
+
                 await client.send({
                     from,
                     to: email,
-                    subject: mailSubject(isBooking
-                        ? (lang === 'en' ? 'David Lesage — your request is received ✨' : 'David Lesage — ta demande est bien reçue ✨')
-                        : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨')),
-                    mimeContent: [htmlPart(isBooking
-                        ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots, sessionFormat, instruments, neotoneModel)
-                        : confirmationHtml(firstName, lang, wantsShowcase))],
+                    subject: mailSubject(subject),
+                    mimeContent: [htmlPart(html)],
                 });
                 emailSent = true;
-                await admin.from('site_leads').update({ confirm_sent_at: new Date().toISOString() }).eq('id', leadId);
+                // La place étant confirmée par cet email même, la ligne passe en
+                // `confirmed` : le panneau admin « 🎤 Showcase » n'a plus rien à
+                // renvoyer, il ne fait que constater. (`status` n'est touché que
+                // pour un showcase — on ne change rien aux autres parcours.)
+                await admin
+                    .from('site_leads')
+                    .update({
+                        confirm_sent_at: new Date().toISOString(),
+                        ...(isShowcaseBooking ? { status: 'confirmed' } : {}),
+                    })
+                    .eq('id', leadId);
             } catch (mailErr) {
                 console.error('site-lead mail error:', mailErr);
             } finally {
@@ -870,6 +954,9 @@ Deno.serve(async (req) => {
                                 ? preferredSlots.map((s) => slotLabel(s, 'fr')).join(' · ')
                                 : null,
                             'Date visée': eventDate,
+                            // Horaires de la séance de showcase : ils ne sont pas en base
+                            // (ils appartiennent à l'événement), d'où le rappel ici.
+                            Horaires: isShowcaseBooking && eventStart && eventEnd ? `${eventStart} → ${eventEnd}` : null,
                             Personnes: peopleCount,
                             Message: message,
                             Page: page || null,

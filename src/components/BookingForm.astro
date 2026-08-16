@@ -26,6 +26,7 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
 <div
   id="booking-modal"
   data-remote-ids={remoteIds}
+  data-price-grid={grid}
   class="fixed inset-0 z-[100] hidden items-start justify-center overflow-y-auto bg-ink/80 p-4 py-10 backdrop-blur-sm"
   role="dialog"
   aria-modal="true"
@@ -55,6 +56,10 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
     <form id="booking-form" class="mt-5 grid gap-3" data-lang={lang} novalidate>
       <input type="hidden" name="source" value="showroom-visit" />
       <input type="hidden" name="eventDate" value="" />
+      {/* Horaires de la séance de showcase choisie (issus de `agendaEvents`) :
+          l'email de confirmation les annonce en clair, sans les recopier. */}
+      <input type="hidden" name="eventStart" value="" />
+      <input type="hidden" name="eventEnd" value="" />
 
       <div class="grid gap-3 sm:grid-cols-2">
         <label class="block">
@@ -288,6 +293,8 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
     const source = trigger.getAttribute('data-booking') || 'showroom-visit'
     ;(form.elements.namedItem('source') as HTMLInputElement).value = source
     ;(form.elements.namedItem('eventDate') as HTMLInputElement).value = trigger.getAttribute('data-event-date') || ''
+    ;(form.elements.namedItem('eventStart') as HTMLInputElement).value = trigger.getAttribute('data-event-start') || ''
+    ;(form.elements.namedItem('eventEnd') as HTMLInputElement).value = trigger.getAttribute('data-event-end') || ''
     if (titleEl) titleEl.textContent = trigger.getAttribute('data-title') || titleEl.textContent
     if (introEl) introEl.textContent = trigger.getAttribute('data-intro') || introEl.textContent
     // Chaque motif n'expose que ce qui le concerne :
@@ -308,6 +315,17 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
     // annonce qu'on lit tout, pour que la personne ose écrire.
     const msgEl = form.querySelector('textarea[name="message"]') as HTMLTextAreaElement | null
     if (msgEl) msgEl.rows = isDiscount ? 8 : 3
+    // Message PRÉ-REMPLI (`data-prefill`) : reprend la petite liste de questions
+    // qu'un ancien lien `mailto:` glissait dans le corps de l'email (commande
+    // Gonilélé, collaboration…). Sans ça, brancher ces boutons sur ce formulaire
+    // ferait PERDRE de l'information à David, pas seulement le lien mailto.
+    // On ne réécrit QUE ce qu'on a nous-même déposé : ce que la personne a tapé
+    // est intouchable, même si elle change de motif sans fermer la modale.
+    if (msgEl) {
+      const prefill = (trigger.getAttribute('data-prefill') || '').replace(/\\n/g, '\n')
+      if (msgEl.value === (form.dataset.bkPrefill || '')) msgEl.value = prefill
+      form.dataset.bkPrefill = prefill
+    }
     const msgLabel = modal?.querySelector('[data-bk-message-label]') as HTMLElement | null
     if (msgLabel) msgLabel.textContent = (isDiscount ? msgLabel.dataset.free : msgLabel.dataset.default) || msgLabel.textContent
     modal?.querySelector('[data-bk-message-hint]')?.classList.toggle('hidden', !isDiscount)
@@ -352,6 +370,22 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
     if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) close()
   })
 
+  // LIEN PROFOND `?rdv=prive` — ouvre directement le formulaire de RENDEZ-VOUS
+  // INDIVIDUEL. C'est la cible du bouton « Réserver un rendez-vous individuel »
+  // des emails : sans ça, le lien ne faisait que défiler jusqu'à #agenda et la
+  // personne devait retrouver le bon bouton elle-même.
+  // On réutilise le déclencheur DÉJÀ présent sur la page (`open()` inchangé) :
+  // aucun chemin de code spécifique, donc aucun risque pour le parcours payant.
+  try {
+    if (new URLSearchParams(location.search).get('rdv') === 'prive') {
+      const trigger = document.querySelector<HTMLElement>('[data-booking="private-session"]')
+      if (trigger) {
+        document.getElementById('agenda')?.scrollIntoView()
+        open(trigger)
+      }
+    }
+  } catch { /* URL exotique : on ne casse jamais la page pour ça */ }
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault()
     if (!form.reportValidity()) return
@@ -391,6 +425,11 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
           message: get('message'),
           peopleCount: get('peopleCount') ? Number(get('peopleCount')) : null,
           eventDate: get('eventDate') || null,
+          eventStart: get('eventStart') || null,
+          eventEnd: get('eventEnd') || null,
+          // Grille tarifaire du RDV individuel, calculée par priceGrid() au build :
+          // l'email ne peut donc pas annoncer un prix différent du formulaire.
+          priceGrid: modal?.dataset.priceGrid || null,
           neotoneModel: get('neotoneModel') || null,
           socialAccount: get('socialAccount') || null,
           discoveryChannel: get('discoveryChannel') || null,

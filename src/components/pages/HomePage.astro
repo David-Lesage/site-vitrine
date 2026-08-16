@@ -4,6 +4,7 @@ import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
 import VideoModal from '@/components/VideoModal.astro'
+import BookingForm from '@/components/BookingForm.astro'
 import { newsletterMailto } from '@/lib/booking'
 import { Icon } from 'astro-icon/components'
 import YouTube from '@/components/YouTube.astro'
@@ -232,7 +233,13 @@ const duoMeta = [
     <div class="rounded-card border border-ink/10 bg-cream-deep/50 p-8 text-center md:p-14">
       <SectionHeading eyebrow={h.communityEyebrow} title={h.communityTitle} intro={h.communityIntro} />
       <div class="mt-8 flex flex-col items-center gap-3">
-        <a href={newsletterMailto(lang)} class="rounded-full bg-rust px-8 py-4 font-700 text-cream shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-copper">{h.communityButton}</a>
+        {/* ⚠️ NE PAS remettre un `mailto:` ici. Ce bouton ouvrait le logiciel de
+            mail du visiteur (`newsletterMailto`) : la demande n'existait alors que
+            dans la boîte de David, jamais en base. Au moins une personne réelle a
+            écrit avec l'objet pré-rempli de ce bouton sans jamais apparaître dans
+            `site_leads` (16/08/2026). Il passe désormais par le formulaire
+            `BookingForm` → Edge Function `site-lead` → table `site_leads`. */}
+        <a href={newsletterMailto(lang)} data-booking="showcase-waitlist" data-title={t.booking.newsTitle} data-intro={t.booking.newsIntro} class="rounded-full bg-rust px-8 py-4 font-700 text-cream shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-copper">{h.communityButton}</a>
         <p class="text-sm text-ink-soft/70">{h.communityNote}</p>
       </div>
     </div>
@@ -256,6 +263,8 @@ const duoMeta = [
     </div>
   </Section>
   <VideoModal />
+  {/* Formulaire d'inscription aux showcases (section #communaute). */}
+  <BookingForm lang={lang} />
 </Layout>
 
 <script>

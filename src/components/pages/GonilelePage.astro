@@ -6,12 +6,14 @@ import Button from '@/components/Button.astro'
 import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
 import VideoModal from '@/components/VideoModal.astro'
+import BookingForm from '@/components/BookingForm.astro'
 import YouTube from '@/components/YouTube.astro'
 import { Icon } from 'astro-icon/components'
 import {
   gonilelePhotos, gonileleUnboxingId, gonileleVideos, gonilelePrices,
   gonileleAccordageImg, gonilelePayment, gonileleContact,
 } from '@/data/gonilele'
+import { SITE_LEAD_KNOWS_CONTACT_SOURCES } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
@@ -23,6 +25,18 @@ const g = t.gonilele
 const L = (p: string) => localizePath(p, lang)
 const eur = (n: number) => n.toLocaleString(lang === 'en' ? 'en-GB' : 'fr-FR') + ' €'
 const vt = g.videoTitles as Record<string, string>
+
+// Tant que l'Edge Function ne connaît pas `gonilele-order`, on n'ajoute AUCUN
+// attribut : le bouton reste le lien `mailto:` d'aujourd'hui (voir le commentaire
+// de SITE_LEAD_KNOWS_CONTACT_SOURCES dans src/data/site.ts).
+const bookingAttrs = SITE_LEAD_KNOWS_CONTACT_SOURCES
+  ? {
+      'data-booking': 'gonilele-order',
+      'data-title': t.booking.goniTitle,
+      'data-intro': t.booking.goniIntro,
+      'data-prefill': t.booking.goniPrefill,
+    }
+  : {}
 
 const orderHref = `mailto:${gonileleContact.email}?subject=${encodeURIComponent(
   lang === 'en' ? 'Gonilélé harp — order' : 'Harpe Gonilélé — commande'
@@ -55,7 +69,7 @@ const priceRows = [
           <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">{g.heroTitle}</h1>
           <p class="mt-5 text-lg text-cream/85">{g.heroLead}</p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <Button href={orderHref} variant="primary">{g.ctaOrder}</Button>
+            <Button href={orderHref} {...bookingAttrs} variant="primary">{g.ctaOrder}</Button>
             <Button href="#videos" variant="light">{g.ctaVideos}</Button>
           </div>
         </div>
@@ -121,7 +135,7 @@ const priceRows = [
             </div>
           ))}
         </dl>
-        <div class="mt-6"><Button href={orderHref} variant="primary">{g.ctaOrder}</Button></div>
+        <div class="mt-6"><Button href={orderHref} {...bookingAttrs} variant="primary">{g.ctaOrder}</Button></div>
       </div>
       <div class="rounded-card border border-ink/10 bg-cream p-6">
         <h3 class="font-display text-xl font-700">{g.tuningTitle}</h3>
@@ -168,4 +182,9 @@ const priceRows = [
 
   <Lightbox />
   <VideoModal />
+  {/* Commande d'une harpe Gonilélé : la demande est ENREGISTRÉE en base
+      (source `gonilele-order`) au lieu de partir dans un `mailto:` que rien
+      ne traçait. Le `href` reste le mailto d'origine : repli si le JS ne
+      s'exécute pas, donc aucune régression visible. */}
+  <BookingForm lang={lang} />
 </Layout>

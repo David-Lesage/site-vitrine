@@ -538,6 +538,19 @@ const fr = {
     visitIntro: 'Paris 20ᵉ, sur rendez-vous. C’est un créneau individuel payant — un seul tarif, quel que soit ce pour quoi tu viens. Dis-moi tes disponibilités, je te propose un créneau.',
     privateTitle: 'Réserver un rendez-vous individuel',
     privateIntro: 'Un moment en tête-à-tête, au showroom de Paris 20ᵉ ou en visio : découvrir un instrument, prendre en main celui que tu viens d’acheter, ou avancer sur ta pratique — quel que soit ton niveau.',
+    // ── Motifs branchés sur CE MÊME formulaire depuis d'autres pages (16/08/2026).
+    // Ils remplacent d'anciens liens `mailto:` (rustine du 19/07/2026) qui
+    // ouvraient le logiciel de mail du visiteur : la demande n'existait alors que
+    // dans la boîte de David et ne laissait AUCUNE trace en base. Des prospects
+    // réels ont été perdus comme ça — voir REPRENDRE-SITE-VITRINE.md.
+    newsTitle: 'Être prévenu·e des prochains showcases',
+    newsIntro: 'Laisse-moi ton email : je te préviens dès que les dates des prochains showcases gratuits à Paris sont fixées. Pas de spam — tu te désinscris quand tu veux.',
+    contactTitle: 'M’écrire',
+    contactIntro: 'Dis-moi ce qui t’amène — je lis et je réponds personnellement à chaque message.',
+    goniTitle: 'Commander une harpe Gonilélé',
+    goniIntro: 'Dis-moi la version qui t’intéresse et tes options : je te réponds personnellement avec le récapitulatif et les modalités.',
+    goniPrefill: 'Version (10 cordes / 12 cordes + micro) :\nHousse (+40 €) / Accordeur (+10 €) :\nRetrait à Paris ou envoi (+25 €) :',
+    collabPrefill: 'Mon projet en quelques lignes :',
     // Rendez-vous individuel (« RDV VIP ») — bloc affiché AVANT le formulaire :
     // ce qu'on peut y faire, le tarif, et le cadre en cas d'annulation. Le tarif
     // n'est PAS écrit ici : il est calculé depuis site.ts (voir `priceGrid`).
@@ -1336,7 +1349,7 @@ const fr = {
     h1: 'Mentions légales du site David Lesage',
     blocks: [
       { h: 'Éditeur', p: 'David Lesage — musicien, pédagogue et inventeur. Showroom : 29 rue des Orteaux, 75020 Paris. Email : contact@lesagedavid.fr · Téléphone : +33 6 10 73 31 52.' },
-      { h: 'Hébergement', p: 'Site statique généré avec Astro. Hébergement à préciser lors de la mise en ligne.' },
+      { h: 'Hébergement', p: 'Site statique généré avec Astro, hébergé par Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis — vercel.com. Nom de domaine géré par OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.' },
       { h: 'Propriété intellectuelle', p: 'Les contenus, textes, photographies et vidéos de ce site sont la propriété de leurs auteurs respectifs. Les photographies et spécifications produit Neotone proviennent de la documentation officielle Soundventure Ltd. David Lesage est ambassadeur indépendant Neotone.' },
       { h: 'Prix & TVA', p: 'Tous les prix affichés sont indicatifs et peuvent évoluer sans préavis. Les taux de TVA appliqués par le calculateur sont les taux standards en vigueur en 2026 ; les frais de douane hors UE restent à la charge de l’acheteur.' },
     ],
