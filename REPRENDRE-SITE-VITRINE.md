@@ -29,6 +29,72 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 16/08/2026 — 🖼️ Image d'aperçu de lien (Open Graph) adaptative par page
+
+Demande de David : *« est-ce qu'en fonction des pages qui sont partagées il est possible
+d'avoir une image d'aperçu différente qui soit cohérente avec la page, quand on partage
+un lien dans WhatsApp par exemple ? J'aimerais que ce soit adaptatif. »*
+
+### 1. 🐞 Bug corrigé : les dimensions annoncées étaient FAUSSES
+
+`SEO.astro` écrivait en dur `og:image:width=1200` / `og:image:height=630` — faux pour
+**toutes** les images réellement utilisées (`hero-david.jpg` = 2400×1350, les covers
+d'articles = 1200×1708, 1600×900, 720×720…). WhatsApp/Facebook/LinkedIn se servent de
+ces valeurs pour réserver la place de l'aperçu **avant** de télécharger l'image : une
+image carrée annoncée en 1200×630 s'affichait rognée.
+
+Choix retenu : **mesurer le fichier au moment du build**, pas le supprimer ni le figer.
+Nouveau `src/lib/imageSize.ts` — lecture des en-têtes JPEG / PNG / WebP / GIF, **zéro
+dépendance npm ajoutée** (bun.lock gelé). Si le format n'est pas mesurable (SVG) ou si
+le fichier est absent, les deux balises ne sont **pas écrites du tout** (elles sont
+optionnelles ; les plateformes mesurent alors elles-mêmes) et un avertissement sort
+pendant le build. Ajout au passage de `og:image:secure_url` et `og:image:type`.
+
+### 2. Une image cohérente par page
+
+Toutes les images d'aperçu sont des **JPEG** (WhatsApp est capricieux avec le WebP) et
+des recadrages de **vraies photos déjà présentes** dans `public/images/` — rien de
+généré, rien de téléchargé. Convention de nommage : `og-<page>.jpg`.
+
+| Page (FR **et** EN, même composant) | Image |
+|---|---|
+| `/` + `/blog`, `/contact`, `/mentions-legales`, `/showroom` (défaut) | `og-accueil.jpg` (1200×630) |
+| `/a-propos`, `/cours` | `og-david.jpg` (1200×630) |
+| `/le-neotone` | `og-le-neotone.jpg` (1200×630) |
+| `/yishama` | `og-yishama.jpg` (1200×630) — remplace le `.webp` |
+| `/boutique` | `og-boutique.jpg` (1200×630) |
+| `/handpan-compagnon` | `og-handpan-compagnon.jpg` (1200×662) |
+| `/micro-muling` (+ `/zh`) | `og-micro-muling.jpg` (1200×674) |
+| `/apprendre-le-handpan` | `og-apprendre-le-handpan.jpg` (1200×630) |
+| `/gonilele` | `prod-gonilele-3.jpg` (1000×878, tel quel) |
+
+Le **défaut** de `SEO.astro` est passé de `hero-david.jpg` (2400×1350, 673 Ko) à
+`og-accueil.jpg` : toutes les pages sans image dédiée s'améliorent d'un coup.
+
+### ⚠️ Manque de vraies photos (à demander à David)
+
+- **`/showroom`** — aucune photo du Nid (Paris 20ᵉ) dans le dépôt, seulement la carte
+  Google (`localisation-showroom-poster.webp`, 720×720). Reste sur le défaut.
+- **`/quel-handpan-choisir`** et **`/handpan-electronique-vs-acoustique`** — il faudrait
+  une photo montrant plusieurs handpans / un acoustique et un Neotone côte à côte.
+- **`/cours`** — `prod-cours-stages.jpg` serait parfait (David assis avec son handpan)
+  mais fait **371×371** : inutilisable en aperçu. Une version ≥1200 px serait idéale.
+- **`/gonilele`** — la plus belle photo (`prod-gonilele-3.jpg`) est presque carrée et
+  ne fait que 1000 px : la recadrer en paysage couperait des harpes. Une photo paysage
+  ≥1200 px des Gonilélé serait un vrai gain.
+- 🐞 **Article `etre-bien-dans-le-son-neotone`** : sa `cover` est un **SVG**
+  (`blog-son-neotone-schema.svg`) — aucun scraper d'aperçu (WhatsApp, Facebook,
+  LinkedIn) ne lit le SVG, donc **cet article n'a pas d'aperçu**. À convertir en
+  JPEG/PNG un jour (hors périmètre ici : on ne touche pas aux articles).
+
+### Fichiers touchés
+
+`src/lib/imageSize.ts` (nouveau), `src/components/SEO.astro`,
+`src/components/pages/{Home,About,Lessons,Neotone,Yishama,Muling,Studio,Shop,Gonilele,Guide}Page.astro`,
+`public/images/og-*.jpg` (8 nouveaux fichiers).
+
+---
+
 ## ÉTAT ACTUEL — 13/08/2026 (soir) — 👤 Page `/a-propos` réécrite (biographie réelle)
 
 Commits `abec9d6` + `520c7c8`, **déployés et vérifiés en prod** (FR + EN, 200).

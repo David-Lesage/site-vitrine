@@ -57,7 +57,7 @@ const duoMeta = [
 ]
 ---
 
-<Layout title={h.title} description={h.description} ldJSON={[personLdJson(), websiteLdJson(), ...videoLdJson(homeVideos.map((id, i) => ({ id, name: h.proofVideos[i] })))]}>
+<Layout title={h.title} description={h.description} image="/images/og-accueil.jpg" ldJSON={[personLdJson(), websiteLdJson(), ...videoLdJson(homeVideos.map((id, i) => ({ id, name: h.proofVideos[i] })))]}>
   <section class="relative overflow-hidden bg-ink text-cream">
     <!-- Photo de David + handpan, pleinement visible à droite -->
     <div class="absolute inset-0">

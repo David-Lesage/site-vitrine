@@ -27,12 +27,21 @@ const href = (link: { href: string; external?: boolean }) =>
 const localizeHtml = (html: string) =>
   lang === 'fr' ? html : html.replace(/href="(\/[^"]*)"/g, (_m, p) => `href="${L(p)}"`)
 
+// Image d'aperçu (WhatsApp / Facebook / LinkedIn) propre à chaque guide.
+// « Apprendre le handpan » = la méthode ChromaKeys → la roue de couleurs de l'app.
+// Les deux autres guides n'ont pas encore de photo dédiée : ils gardent l'image
+// par défaut du site (portrait de David) — voir SEO.astro.
+const guideImages: Partial<Record<Props['guideKey'], string>> = {
+  learn: '/images/og-apprendre-le-handpan.jpg',
+}
+const ogImage = guideImages[guideKey] ?? '/images/og-accueil.jpg'
+
 const ld = [
   articleLdJson({
     title: g.title,
     description: g.description,
     url: L('/' + g.slug),
-    image: '/images/hero-david.jpg',
+    image: ogImage,
     datePublished: g.datePublished,
     dateModified: g.dateModified,
   }),
@@ -44,7 +53,7 @@ const ld = [
 ]
 ---
 
-<Layout title={g.title} description={g.description} keywords={g.keywords} ldJSON={ld} ogType="article">
+<Layout title={g.title} description={g.description} image={ogImage} keywords={g.keywords} ldJSON={ld} ogType="article">
   <!-- Héros -->
   <section class="relative overflow-hidden bg-ink text-cream">
     <div class="chroma-bar absolute inset-x-0 top-0 h-1"></div>

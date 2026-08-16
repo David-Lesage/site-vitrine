@@ -2,6 +2,7 @@
 import { site } from '@/data/site'
 import { ogLocale, activeLangs, type Lang } from '@/i18n/config'
 import { localizePath, unlocalizePath } from '@/i18n/utils'
+import { publicImageSize, imageMimeType } from '@/lib/imageSize'
 
 interface Props {
   title?: string
@@ -16,7 +17,9 @@ interface Props {
 const {
   title = `${site.name} — Musicien, pédagogue & inventeur`,
   description = site.tagline,
-  image = '/images/hero-david.jpg',
+  // Image d'aperçu par défaut : recadrage 1200×630 de la photo de David
+  // (og-accueil.jpg). Chaque page peut passer la sienne via `image`.
+  image = '/images/og-accueil.jpg',
   ldJSON,
   ogType = 'website',
   keywords = 'David Lesage, handpan, handpan numérique, Neotone, Handpan Compagnon, cours de handpan, showroom Paris, pédagogie musicale visuelle, ChromaKeys',
@@ -25,6 +28,10 @@ const {
 
 const canonical = new URL(Astro.url.pathname, site.url).toString()
 const imageUrl = new URL(image, site.url).toString()
+// Dimensions RÉELLES du fichier, mesurées au build (cf. src/lib/imageSize.ts).
+// Si on ne sait pas mesurer (SVG, image distante), on n'écrit pas les balises.
+const imageSize = publicImageSize(image)
+const imageType = imageMimeType(image)
 const graphs = ldJSON ? (Array.isArray(ldJSON) ? ldJSON : [ldJSON]) : []
 
 // Alternates hreflang pour chaque langue active
@@ -71,8 +78,10 @@ const desc = clampDescription(description)
 <meta property="og:title" content={title} />
 <meta property="og:description" content={desc} />
 <meta property="og:image" content={imageUrl} />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+<meta property="og:image:secure_url" content={imageUrl} />
+{imageType && <meta property="og:image:type" content={imageType} />}
+{imageSize && <meta property="og:image:width" content={String(imageSize.width)} />}
+{imageSize && <meta property="og:image:height" content={String(imageSize.height)} />}
 <meta property="og:image:alt" content={title} />
 
 <!-- Twitter -->

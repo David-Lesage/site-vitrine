@@ -28,7 +28,7 @@ const workshopsUrl = 'https://sites.google.com/lesagedavid.fr/now-groove/atelier
 const schoolEmail = 'School@lesagedavid.fr'
 ---
 
-<Layout title={l.title} description={l.description} ldJSON={[courseLdJson({ name: l.heroTitle, description: l.description, url: '/cours' }), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: t.common.nav.lessons, url: L('/cours') }]), faqLdJson(l.faq)]}>
+<Layout title={l.title} description={l.description} image="/images/og-david.jpg" ldJSON={[courseLdJson({ name: l.heroTitle, description: l.description, url: '/cours' }), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: t.common.nav.lessons, url: L('/cours') }]), faqLdJson(l.faq)]}>
   <!-- Bandeau Now Music Academy -->
   <section class="relative overflow-hidden bg-ink text-cream">
     <div class="absolute inset-0">
