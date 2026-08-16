@@ -71,6 +71,10 @@ export default async function handler(req, res) {
         eventStart: body.eventStart,
         eventEnd: body.eventEnd,
         priceGrid: body.priceGrid,
+        // Dates de showcase à venir (issues d'`agendaEvents`) : l'email de la
+        // LISTE D'ATTENTE les liste avec un lien d'inscription par date, plutôt
+        // que d'obliger David à les recopier à la main dans une réponse.
+        upcomingEvents: body.upcomingEvents,
         neotoneModel: body.neotoneModel,
         socialAccount: body.socialAccount,
         discoveryChannel: body.discoveryChannel,

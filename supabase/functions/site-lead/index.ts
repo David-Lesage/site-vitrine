@@ -71,6 +71,22 @@
 //      donc le panneau admin « 🎤 Showcase » la voit confirmée sans rien faire.
 //      ⚠ Le parcours `private-session` (RDV payant, v18/v19) est INCHANGÉ, tout
 //      comme `showcase-waitlist` (simple alerte de dates, pas une place).
+// v21 (16/08/2026) : `contact` et `gonilele-order` rejoignent BOOKING_SOURCES —
+//      les derniers boutons `mailto:` du site (formulaire /contact, CTA
+//      « Collaboration » de /a-propos, commande d'une harpe Gonilélé) passent
+//      enfin par la base au lieu d'ouvrir le logiciel de mail du visiteur.
+// v22 (16/08/2026) : LISTE D'ATTENTE SHOWCASE — L'EMAIL DONNE LES DATES.
+//      Demande de David : quelqu'un qui laisse son email sur la page d'accueil
+//      doit recevoir AUTOMATIQUEMENT toutes les dates de showcase à venir, avec
+//      un lien d'inscription par date. `showcase-waitlist` ne reçoit donc plus
+//      l'accusé de réception générique mais `showcaseDatesHtml()`, alimenté par
+//      `upcomingEvents` (envoyé par le site depuis `agendaEvents`, la même
+//      source que l'agenda de /showroom). Cas vide traité honnêtement : « aucune
+//      date pour l'instant, je t'écris dès qu'il y en a une ». David reste
+//      notifié. L'email de confirmation dit par ailleurs désormais que l'HEURE
+//      DE DÉBUT est ferme (la date, elle, se choisit), annonce la durée réelle
+//      (~2h de programme, plutôt 3h avec les échanges) et invite — facultatif —
+//      à apporter quelque chose à partager.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -79,9 +95,13 @@ import { htmlPart, mailSubject } from '../_shared/mail.ts';
 import { canSignSlotTokens, signSlotToken } from '../_shared/lesson-token.ts';
 import {
     FALLBACK_PRICE_GRID,
+    fallbackUpcoming,
     hoursFor as showcaseHoursFor,
     showcaseConfirmationHtml,
     showcaseConfirmationSubject,
+    showcaseDatesHtml,
+    showcaseDatesSubject,
+    type UpcomingEvent,
 } from '../_shared/showcase-email.ts';
 
 const SITE = 'https://lesagedavid.fr';
@@ -102,6 +122,14 @@ const BOOKING_SOURCES = ['showroom-visit', 'private-session', 'showcase-booking'
 // à recevoir la confirmation immédiate : `showcase-waitlist` ne réserve rien
 // (elle demande juste à être prévenue des prochaines dates).
 const SHOWCASE_BOOKING_SOURCE = 'showcase-booking';
+
+// LISTE D'ATTENTE SHOWCASE (v22) — la personne ne réserve pas une place, elle
+// demande à connaître les dates. Elle reçoit donc l'email qui LISTE les dates à
+// venir avec un lien de réservation par date (_shared/showcase-email.ts), et
+// non l'accusé de réception « je te réponds très vite » : les dates sont
+// publiques et déjà affichées sur /showroom, David n'a pas à les recopier à la
+// main. Il reste notifié (la source est dans BOOKING_SOURCES).
+const SHOWCASE_WAITLIST_SOURCE = 'showcase-waitlist';
 
 /** « 16:00 » — refuse tout ce qui n'est pas une heure, l'email l'affiche en clair. */
 const TIME_RE = /^\d{1,2}:\d{2}$/;
@@ -407,7 +435,7 @@ function bookingHtml(
         terms3: 'Something came up? Up to 24 h beforehand, we move your appointment — no problem at all.',
         terms4: 'Less than 24 h beforehand, the payment stays with me: that slot had been set aside just for you. But you don’t lose your appointment — we reschedule it within 3 months. We all have things come up, that’s life: it’s simply about the value of the commitment we make to each other.',
         h2: 'While you wait',
-        p2: 'The showroom is at <strong>29 rue des Orteaux, Paris 20th</strong>. You’ll be able to try the electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the microphones, the <strong>Gonilélé</strong> African harp and the <strong>Handpan Studio</strong> app.',
+        p2: 'The showroom is at <strong>29 rue des Orteaux, Paris 20th</strong>. You’ll be able to try the electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the microphones, the <strong>Gonilélé</strong> African harp and the <strong>Handpan Compagnon</strong> app.',
         cta: 'See the showroom page',
         sign: 'See you soon,<br />David Lesage',
         foot: 'You are receiving this email because you sent a request on lesagedavid.fr.',
@@ -430,7 +458,7 @@ function bookingHtml(
         terms3: 'Un empêchement ? Jusqu’à 24 h avant, on décale ton rendez-vous sans aucun souci.',
         terms4: 'À moins de 24 h, le règlement reste acquis : ce créneau avait été bloqué rien que pour toi. Mais tu ne perds pas ton rendez-vous — on le reporte à une autre date, dans les 3 mois. On a tous des imprévus, ça fait partie de la vie : c’est simplement la valeur de l’engagement qu’on prend l’un envers l’autre.',
         h2: 'En attendant',
-        p2: 'Le showroom se trouve au <strong>29 rue des Orteaux, Paris 20ᵉ</strong>. Tu pourras y essayer le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les micros, la harpe africaine <strong>Gonilélé</strong> et l’application <strong>Handpan Studio</strong>.',
+        p2: 'Le showroom se trouve au <strong>29 rue des Orteaux, Paris 20ᵉ</strong>. Tu pourras y essayer le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les micros, la harpe africaine <strong>Gonilélé</strong> et l’application <strong>Handpan Compagnon</strong>.',
         cta: 'Voir la page du showroom',
         sign: 'À très vite,<br />David Lesage',
         foot: 'Tu reçois cet email parce que tu as envoyé une demande sur lesagedavid.fr.',
@@ -648,6 +676,32 @@ Deno.serve(async (req) => {
         const eventStart = TIME_RE.test(rawStart) ? rawStart : null;
         const eventEnd = TIME_RE.test(rawEnd) ? rawEnd : null;
 
+        // DATES DE SHOWCASE À VENIR (v22) — pour l'email de la liste d'attente.
+        // Envoyées par le site, calculées depuis `agendaEvents` (src/data/site.ts),
+        // soit la MÊME source que l'agenda affiché sur /showroom : l'email ne peut
+        // donc pas annoncer une date que la page ne montre pas. On revalide tout
+        // ici quand même — une date mal formée ou déjà passée produirait un lien
+        // d'inscription mort, ce qui est pire que pas de lien du tout.
+        const todayIso = new Date().toISOString().slice(0, 10);
+        const rawUpcoming = Array.isArray(body.upcomingEvents) ? body.upcomingEvents : [];
+        let upcomingEvents: UpcomingEvent[] = rawUpcoming
+            .map((e) => (e && typeof e === 'object' ? e as Record<string, unknown> : {}))
+            .map((e) => ({
+                date: String(e.date ?? '').trim(),
+                start: String(e.start ?? '').trim(),
+                end: String(e.end ?? '').trim(),
+            }))
+            .filter((e) => /^\d{4}-\d{2}-\d{2}$/.test(e.date) && TIME_RE.test(e.start) && TIME_RE.test(e.end))
+            .filter((e) => e.date >= todayIso)
+            .sort((a, b) => a.date.localeCompare(b.date))
+            .slice(0, 12);
+        // Page servie depuis un cache ANTÉRIEUR à ce changement (elle n'envoie pas
+        // encore le champ) : plutôt que d'annoncer « aucune date » à quelqu'un
+        // alors que l'agenda du site en affiche, on retombe sur la table de
+        // _shared/showcase-email.ts. Si le site a envoyé une liste VIDE, en
+        // revanche, c'est une vraie information : il n'y a rien de prévu.
+        if (!upcomingEvents.length && !rawUpcoming.length) upcomingEvents = fallbackUpcoming(todayIso);
+
         // Grille tarifaire du rendez-vous individuel, CALCULÉE par le site
         // (priceGrid(), alimenté par `sessionTypes` de src/data/site.ts). Une
         // Edge Function ne peut pas importer ce code : le site la transmet pour
@@ -695,6 +749,8 @@ Deno.serve(async (req) => {
         const isBooking = BOOKING_SOURCES.includes(source);
         // Réservation d'une place à un showcase → confirmation IMMÉDIATE.
         const isShowcaseBooking = source === SHOWCASE_BOOKING_SOURCE;
+        // Liste d'attente showcase → email listant les dates à venir (v22).
+        const isShowcaseWaitlist = source === SHOWCASE_WAITLIST_SOURCE;
 
         const admin = createClient(
             Deno.env.get('SUPABASE_URL') ?? '',
@@ -845,16 +901,19 @@ Deno.serve(async (req) => {
                 connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } },
             });
             try {
-                // Trois emails possibles, dans cet ordre de priorité :
-                //  1. showcase-booking → la place est CONFIRMÉE (v20) ;
-                //  2. autre réservation → accusé de réception (David répond) ;
-                //  3. inscription simple → « tu es sur la liste ».
+                // Quatre emails possibles, dans cet ordre de priorité :
+                //  1. showcase-booking  → la place est CONFIRMÉE (v20) ;
+                //  2. showcase-waitlist → les DATES à venir + un lien par date (v22) ;
+                //  3. autre réservation → accusé de réception (David répond) ;
+                //  4. inscription simple → « tu es sur la liste ».
                 const showcaseHours = showcaseHoursFor(eventDate);
                 const subject = isShowcaseBooking
                     ? showcaseConfirmationSubject(eventDate, lang)
-                    : isBooking
-                        ? (lang === 'en' ? 'David Lesage — your request is received ✨' : 'David Lesage — ta demande est bien reçue ✨')
-                        : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨');
+                    : isShowcaseWaitlist
+                        ? showcaseDatesSubject(upcomingEvents.length, lang)
+                        : isBooking
+                            ? (lang === 'en' ? 'David Lesage — your request is received ✨' : 'David Lesage — ta demande est bien reçue ✨')
+                            : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨');
                 const html = isShowcaseBooking
                     ? showcaseConfirmationHtml({
                         firstName,
@@ -865,9 +924,11 @@ Deno.serve(async (req) => {
                         peopleCount,
                         priceGrid,
                     })
-                    : isBooking
-                        ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots, sessionFormat, instruments, neotoneModel)
-                        : confirmationHtml(firstName, lang, wantsShowcase);
+                    : isShowcaseWaitlist
+                        ? showcaseDatesHtml({ firstName, lang, events: upcomingEvents })
+                        : isBooking
+                            ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots, sessionFormat, instruments, neotoneModel)
+                            : confirmationHtml(firstName, lang, wantsShowcase);
 
                 await client.send({
                     from,

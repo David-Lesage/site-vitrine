@@ -9,6 +9,7 @@
 import { getDict } from '@/i18n/dict'
 import { sessionOptions, priceGrid } from '@/lib/sessions'
 import { sessionTypes, demoInstruments } from '@/data/site'
+import { upcomingShowcases } from '@/lib/agenda'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -21,12 +22,23 @@ const grid = priceGrid()
 const slots = [1, 2, 3]
 // Types de rendez-vous acceptant la visio (les cours) — lu par le script.
 const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(',')
+// Dates de showcase à venir, transmises à l'Edge Function pour l'email de la
+// LISTE D'ATTENTE (il les liste avec un lien d'inscription par date). Calculées
+// depuis `agendaEvents` via `upcomingShowcases()` — exactement la même source
+// que l'agenda affiché sur /showroom, donc l'email ne peut pas le contredire.
+// ⚠ Filtrage « à venir » fait au BUILD (site statique) : l'Edge Function
+// refiltre côté serveur, une page servie d'un cache ne peut pas produire un
+// lien vers une date déjà passée.
+const upcoming = JSON.stringify(
+  upcomingShowcases(lang).map((e) => ({ date: e.iso, start: e.start, end: e.end })),
+)
 ---
 
 <div
   id="booking-modal"
   data-remote-ids={remoteIds}
   data-price-grid={grid}
+  data-upcoming={upcoming}
   class="fixed inset-0 z-[100] hidden items-start justify-center overflow-y-auto bg-ink/80 p-4 py-10 backdrop-blur-sm"
   role="dialog"
   aria-modal="true"
@@ -258,6 +270,12 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
   // Types acceptant la visio (les cours) — la liste vient de site.ts via un
   // attribut de données : une expression Astro ne s'interpole pas dans un <script>.
   const REMOTE_IDS = (modal?.dataset.remoteIds || '').split(',').filter(Boolean)
+
+  // Dates de showcase à venir, posées au build dans `data-upcoming`. Même raison
+  // que ci-dessus : une expression Astro ne s'interpole pas dans un <script>.
+  // Un JSON cassé ne doit jamais empêcher une réservation → repli sur [].
+  let upcoming: { date: string; start: string; end: string }[] = []
+  try { upcoming = JSON.parse(modal?.dataset.upcoming || '[]') } catch { upcoming = [] }
   const errEl = modal?.querySelector('[data-bk-error]') as HTMLElement
   let lastFocused: HTMLElement | null = null
 
@@ -377,12 +395,32 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
   // On réutilise le déclencheur DÉJÀ présent sur la page (`open()` inchangé) :
   // aucun chemin de code spécifique, donc aucun risque pour le parcours payant.
   try {
-    if (new URLSearchParams(location.search).get('rdv') === 'prive') {
+    const params = new URLSearchParams(location.search)
+
+    if (params.get('rdv') === 'prive') {
       const trigger = document.querySelector<HTMLElement>('[data-booking="private-session"]')
       if (trigger) {
         document.getElementById('agenda')?.scrollIntoView()
         open(trigger)
       }
+    }
+
+    // LIEN PROFOND `?showcase=AAAA-MM-JJ` — cible des boutons « Réserver cette
+    // date » de l'email envoyé à la liste d'attente. On réutilise le bouton DÉJÀ
+    // présent dans l'agenda pour cette date : la modale s'ouvre donc avec la
+    // date, les horaires et le titre exacts, sans aucun code parallèle.
+    // Si la date n'existe plus sur la page (showcase passé, agenda modifié), on
+    // ne laisse PAS la personne devant une ancre morte : on ouvre la liste
+    // d'attente pour qu'elle soit prévenue des prochaines dates.
+    const wanted = params.get('showcase')
+    if (wanted) {
+      document.getElementById('agenda')?.scrollIntoView()
+      const exact = document.querySelector<HTMLElement>(
+        `[data-booking="showcase-booking"][data-event-date="${CSS.escape(wanted)}"]`,
+      )
+      const fallback = document.querySelector<HTMLElement>('[data-booking="showcase-waitlist"]')
+      const trigger = exact || fallback
+      if (trigger) open(trigger)
     }
   } catch { /* URL exotique : on ne casse jamais la page pour ça */ }
 
@@ -430,6 +468,11 @@ const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(','
           // Grille tarifaire du RDV individuel, calculée par priceGrid() au build :
           // l'email ne peut donc pas annoncer un prix différent du formulaire.
           priceGrid: modal?.dataset.priceGrid || null,
+          // Dates de showcase à venir — l'email de la LISTE D'ATTENTE les liste
+          // avec un lien d'inscription par date. Toujours transmis (même vide :
+          // une liste vide est une information, « aucune date prévue »), l'Edge
+          // Function ne s'en sert que pour `showcase-waitlist`.
+          upcomingEvents: upcoming,
           neotoneModel: get('neotoneModel') || null,
           socialAccount: get('socialAccount') || null,
           discoveryChannel: get('discoveryChannel') || null,

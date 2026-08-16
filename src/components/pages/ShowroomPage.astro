@@ -222,6 +222,26 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
         ))}
       </div>
 
+      {/* À SAVOIR AVANT DE VENIR — les trois règles pratiques (16/08/2026).
+          Elles ne vivaient que dans l'email de confirmation, donc seules les
+          personnes DÉJÀ inscrites les lisaient. Placées ici, juste sous les
+          dates : l'horaire ferme se voit AVANT de réserver, pas après. */}
+      <div class="mx-auto mt-8 max-w-2xl space-y-3">
+        <p class="text-center text-xs font-700 uppercase tracking-widest text-ink-soft/60">{sh.agendaRulesTitle}</p>
+        <div class="rounded-card border border-gold/50 bg-gold/10 p-5">
+          <p class="font-display text-base font-700">⏱ {sh.agendaRuleTimeTitle}</p>
+          <p class="mt-1.5 text-sm leading-relaxed text-ink-soft/85">{sh.agendaRuleTime}</p>
+        </div>
+        <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-5">
+          <p class="font-display text-base font-700">{sh.agendaRuleDurationTitle}</p>
+          <p class="mt-1.5 text-sm leading-relaxed text-ink-soft/85">{sh.agendaRuleDuration}</p>
+        </div>
+        <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-5">
+          <p class="font-display text-base font-700">🧁 {sh.agendaRuleShareTitle}</p>
+          <p class="mt-1.5 text-sm leading-relaxed text-ink-soft/85">{sh.agendaRuleShare}</p>
+        </div>
+      </div>
+
       <div data-agenda-empty class:list={['mt-8 rounded-card border border-dashed border-copper/40 bg-cream-deep/40 p-6 text-center', agenda.length > 0 && 'hidden']}>
         <Icon name="lucide:calendar-clock" class="mx-auto h-8 w-8 text-copper" />
         <h3 class="mt-3 font-display text-xl font-700">{sh.agendaEmpty}</h3>

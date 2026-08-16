@@ -1123,6 +1123,21 @@ const fr = {
     agendaEventTitle: 'Showcase Neotone — découverte & essai',
     agendaEventTag: 'Public · Gratuit',
     agendaEventTime: 'de {start} à {end}',
+    // ── « À savoir avant de venir » (16/08/2026).
+    // Ces trois règles ne vivaient que dans l'email de confirmation : quelqu'un
+    // qui hésite encore, lui, ne les voyait NULLE PART. Elles sont maintenant
+    // sur la page, avant même de réserver. Mots de David : l'horaire est ferme
+    // (« "viens quand tu veux" c'est pour dire "à la DATE que tu veux" »), la
+    // durée réelle tourne autour de 3h avec les discussions, et l'invitation à
+    // apporter quelque chose reste FACULTATIVE — un esprit de partage, pas une
+    // condition d'entrée.
+    agendaRulesTitle: 'À savoir avant de venir',
+    agendaRuleTimeTitle: 'La date, tu la choisis — l’heure de début, non',
+    agendaRuleTime: 'La session commence à l’heure, par une présentation. Arriver en retard, c’est rater des infos et obliger tout le groupe à repartir en arrière. Si tu arrives en avance, tu peux attendre en bas dans la cour — aucun souci.',
+    agendaRuleDurationTitle: 'Compte large sur ta soirée',
+    agendaRuleDuration: 'Le programme dure environ 2h — dans les faits, ça tourne plutôt autour de 3h, parce que les discussions continuent bien après.',
+    agendaRuleShareTitle: 'Apporte quelque chose à partager, si le cœur t’en dit',
+    agendaRuleShare: 'Un jus de fruit, un gâteau, quelque chose à faire passer. Totalement facultatif, jamais une condition pour venir — c’est simplement dans un esprit de partage, pour que le moment soit convivial.',
     agendaBookCta: 'Réserver ma place',
     agendaMoreTitle: 'Tu ne peux pas venir — ou tu préfères un moment rien que pour toi ?',
     agendaMoreText: 'Réserve un rendez-vous individuel avec moi, à un autre moment qui te convient.',

@@ -1066,6 +1066,16 @@ export const en: Dict = {
     agendaEventTitle: 'Neotone showcase — discover & try',
     agendaEventTag: 'Public · Free',
     agendaEventTime: 'from {start} to {end}',
+    // ── “Good to know before you come” (16/08/2026). Until now these three
+    // rules only existed in the confirmation email — someone still hesitating
+    // never saw them. They now sit on the page, before booking.
+    agendaRulesTitle: 'Good to know before you come',
+    agendaRuleTimeTitle: 'You choose the date — the start time is firm',
+    agendaRuleTime: 'The session starts on time, with a presentation. Arriving late means missing information, and the whole group has to be brought back up to speed. If you arrive early, you can wait downstairs in the courtyard — no problem at all.',
+    agendaRuleDurationTitle: 'Allow plenty of time',
+    agendaRuleDuration: 'The programme runs about 2h — in practice it usually stretches closer to 3h, because the conversations keep going well past the end.',
+    agendaRuleShareTitle: 'Bring something to share, if you feel like it',
+    agendaRuleShare: 'A fruit juice, a cake, anything to pass around. Entirely optional, never a condition for coming — simply in a spirit of sharing, to make the moment warmer.',
     agendaBookCta: 'Reserve my spot',
     agendaMoreTitle: 'Can’t make these dates — or would you rather have a moment just for you?',
     agendaMoreText: 'Book an individual appointment with me, at another time that suits you.',
