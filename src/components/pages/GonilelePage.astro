@@ -71,6 +71,13 @@ const priceRows = [
           <div class="mt-8 flex flex-wrap gap-3">
             <Button href={orderHref} {...bookingAttrs} variant="primary">{g.ctaOrder}</Button>
             <Button href="#videos" variant="light">{g.ctaVideos}</Button>
+            <Button
+              href={`${L('/showroom')}?rdv=prive#agenda`}
+              data-booking="private-session"
+              data-title={t.booking.privateTitle}
+              data-intro={t.booking.privateIntro}
+              variant="light"
+            >{g.ctaLesson}</Button>
           </div>
         </div>
         <div class="overflow-hidden rounded-card border border-cream/10">

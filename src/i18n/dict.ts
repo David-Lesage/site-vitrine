@@ -827,6 +827,7 @@ const fr = {
       'Une harpe-luth de voyage à l’âme envoûtante, façonnée à la main par Joris Feuillâtre. Je suis fier d’en être l’ambassadeur — découvre l’instrument, écoute-le, et repars avec le tien.',
     ctaOrder: 'Commander mon Gonilélé',
     ctaVideos: 'Voir les vidéos',
+    ctaLesson: 'Prendre un cours',
     whatTitle: 'Qu’est-ce que le Gonilélé ?',
     whatText:
       'Le Gonilélé (ou NGoni lélé) est une harpe-luth ouest-africaine revisitée en version voyage par Joris Feuillâtre, de La Maison du Ngoni. Caisse en calebasse, manche en bois noble, cordes accordées en gamme pentatonique : il incarne l’alliance du masculin et du féminin, connectée au divin. Un instrument intuitif, méditatif et profond, accessible aux débutants comme aux musiciens confirmés.',
