@@ -880,7 +880,7 @@ const fr = {
     description:
       'Now Music Academy : apprends le handpan, le rythme à la calebasse (Now Groove) et la harpe gonilélé — par les couleurs, les formes et les émotions. Visio dans le monde entier ou présentiel à Paris, et ateliers de groupe.',
     heroEyebrow: 'Now Music Academy',
-    heroTitle: 'Cours de handpan : apprends autrement',
+    heroTitle: 'Apprendre par une approche holistique de la musique',
     heroLead: 'Handpan, rythme à la calebasse et harpe gonilélé — par les couleurs, les formes et les émotions. En visio partout dans le monde, ou en présentiel à Paris.',
     ctaBook: 'Réserver un cours',
     ctaWorkshop: 'Voir les ateliers',

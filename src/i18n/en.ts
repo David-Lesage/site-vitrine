@@ -828,7 +828,7 @@ export const en: Dict = {
     description:
       'Now Music Academy: learn the handpan, calabash rhythm (Now Groove) and the gonilélé harp — through colours, shapes and emotions. Online worldwide or in person in Paris, plus group workshops.',
     heroEyebrow: 'Now Music Academy',
-    heroTitle: 'Handpan lessons: learn differently',
+    heroTitle: 'Learning through a holistic approach to music',
     heroLead: 'Handpan, calabash rhythm and gonilélé harp — through colours, shapes and emotions. Online anywhere in the world, or in person in Paris.',
     ctaBook: 'Book a lesson',
     ctaWorkshop: 'See the workshops',
