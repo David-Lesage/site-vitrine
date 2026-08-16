@@ -84,6 +84,12 @@ export default async function handler(req, res) {
         sessionType: body.sessionType,
         sessionFormat: body.sessionFormat,
         instruments: body.instruments,
+        // Showcase : « pour quel(s) instrument(s) viens-tu ? » (17/08/2026).
+        // Champ DISTINCT d'`instruments` ci-dessus — voir src/data/site.ts.
+        showcaseInterests: body.showcaseInterests,
+        // Acceptation des conditions générales (case obligatoire de tous les
+        // formulaires). L'horodatage est posé par l'Edge Function, pas ici.
+        termsAccepted: body.termsAccepted === true,
         preferredSlots: body.preferredSlots,
         source: body.source || 'beta-waitlist',
         lang: body.lang || 'fr',

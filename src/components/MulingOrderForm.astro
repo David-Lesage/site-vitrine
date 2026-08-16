@@ -6,6 +6,7 @@
 //   2. Coordonnées bancaires Muling + dépôt de preuve (→ api/muling-claim)
 //   3. Merci — Muling prend le relais pour l'expédition et le suivi.
 import { getDict } from '@/i18n/dict'
+import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import { mulingBankDetails, mulingCompanyContact, mulingDiscountCode, mulingDiscountPct, mulingPriceEur, mulingDiscountedPriceEur } from '@/data/muling'
 import type { Lang } from '@/i18n/config'
 
@@ -70,6 +71,16 @@ const MULING_EMAIL = '85846599@qq.com'
           <span class="text-sm text-ink-soft/90">{mu.mulingConsent}</span>
         </label>
         <p data-mo-consent-error class="hidden text-sm font-600 text-rust">{mu.mulingConsentRequired}</p>
+
+        {/* DEUX cases obligatoires, et elles ne disent PAS la même chose — ne
+            jamais les fusionner :
+             · celle du dessus = transmission des coordonnées à un TIERS (Muling,
+               en Chine), sans quoi la commande ne peut pas être expédiée ;
+             · celle-ci = conditions générales du site, communes à tous les
+               formulaires.
+            Enregistrées dans deux colonnes distinctes d'`affiliate_sales`
+            (`consent_at` et `terms_accepted_at`). */}
+        <TermsCheckbox lang={lang} />
 
         <button type="submit" data-sending={mu.mulingOrderSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{mu.mulingOrderSubmit}</button>
         <p data-mo-order-error class="hidden text-sm font-600 text-rust">{mu.mulingOrderError}</p>
@@ -231,6 +242,10 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
           quantity: Number(get('quantity')) || 1, country: get('country'), address: get('address'),
           city: get('city'), postalCode: get('postalCode'), message: get('message'),
           deliveryNote: get('deliveryNote'), consent: true,
+          // Conditions générales du site — distinctes du consentement de
+          // transmission à Muling ci-dessus (`consent`). Case obligatoire,
+          // bloquée en amont par `reportValidity()`.
+          termsAccepted: data.get('termsAccepted') !== null,
           lang: document.documentElement.lang || 'fr', page: location.pathname,
         }),
       })

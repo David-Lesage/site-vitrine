@@ -37,6 +37,19 @@ const fr = {
       rights: 'Ambassadeur indépendant Neotone · Tous les prix sont indicatifs et peuvent évoluer sans préavis.',
     },
     skip: 'Aller au contenu',
+    // ── CONDITIONS GÉNÉRALES — case obligatoire de TOUS les formulaires ───────
+    // (17/08/2026) Un seul texte, un seul lien, partout : réservation, contact,
+    // liste d'attente, commande Muling. Rendu par src/components/TermsCheckbox.astro.
+    // `check` contient `{link}` : le composant y insère le lien vers
+    // /conditions-generales (localisé). Ne pas retirer le marqueur.
+    // 🚧 La page /conditions-generales RESTE À CRÉER (contenu juridique traité
+    // à part avec David) — jusque-là, le lien pointe sur une page absente.
+    terms: {
+      check: 'J’accepte les {link}',
+      link: 'conditions générales',
+      hint: 'Elles disent comment j’utilise tes coordonnées, ce à quoi tu t’engages en réservant, et comment te désinscrire quand tu veux.',
+      required: 'Pour continuer, tu dois accepter les conditions générales.',
+    },
     credentials: ['Prix du Conservatoire', 'The Voice · Saison 11', 'Ambassadeur Neotone · Yishama · Maison du Ngoni', 'Showroom Paris 20ᵉ'],
     beta: {
       badge: 'Accès limité',
@@ -642,6 +655,22 @@ const fr = {
     formatRemote: 'En visio',
     showcaseTitle: 'Réserver ma place au showcase',
     showcaseIntro: 'Showcase public gratuit au showroom de Paris 20ᵉ. Réservation conseillée, les places sont limitées.',
+    // ── SHOWCASE : « pour quel(s) instrument(s) viens-tu ? » (17/08/2026) ─────
+    // Posée UNIQUEMENT sur une réservation de showcase. Facultative : elle sert
+    // à préparer la séance et à cibler les emails ensuite, pas à filtrer.
+    // Ajouter une option : voir `showcaseInterests` dans src/data/site.ts.
+    // 🚧 Pas d'entrée « Autre » ni de champ libre (David, 17/08/2026) : le champ
+    // « Ton message » du formulaire couvre déjà ce besoin.
+    showcaseInterestsLabel: 'Pour quel(s) instrument(s) viens-tu ?',
+    showcaseInterestsHint: 'Coche tout ce qui t’intéresse — je les prépare pour la séance. Un détail à préciser ? Dis-le-moi dans ton message plus bas.',
+    showcaseInterestNames: {
+      all: 'Tous',
+      handpan: 'Handpan',
+      mic: 'Micro (Muling et/ou Hisong)',
+      calebasse: 'Calebasse',
+      gonilele: 'Gonilélé (harpe africaine)',
+      meet: 'Te rencontrer',
+    },
   },
   muling: {
     title: 'Micro Muling pour handpan acoustique | David Lesage',
@@ -1050,8 +1079,16 @@ const fr = {
     heroEyebrow: 'Le Nid · Paris 20ᵉ',
     heroTitle: 'Showroom David Lesage',
     heroLead: 'Un lieu où l’acoustique et l’électronique se jouent côte à côte : mes handpans Yishama et les Neotone, sous tes mains le même après-midi — et une communauté à rencontrer.',
-    ctaBook: 'Réserver un créneau (payant)',
-    ctaBookNote: 'Créneau individuel payant : {grid}. Les showcases publics, eux, sont gratuits et sur simple inscription.',
+    // ⚠️ Hero du showroom (16/08/2026) : ce CTA est l'OPTION, pas l'entrée.
+    // Il est affiché SOUS la date du prochain showcase gratuit, en bouton
+    // secondaire. Le libellé dit « individuel privé » pour qu'on comprenne
+    // immédiatement que ce n'est pas le showcase public gratuit.
+    ctaBook: 'Réserver un créneau individuel privé (payant)',
+    // « sur simple inscription » minimisait la réservation : elle est obligatoire.
+    ctaBookNote: 'Créneau individuel payant : {grid}. Les showcases publics, eux, sont gratuits — nombre de places limitées · réservation nécessaire.',
+    // ⓘ Plus affichée depuis le 17/08/2026 : quand il n'y a plus de date, le hero
+    // montre le bloc « prochaines dates en préparation » (agendaEmpty*) au lieu de
+    // ce simple bouton. Clé conservée si David veut le remettre.
     ctaNext: 'Voir le prochain showcase',
     exclBadge: '★ Première mondiale',
     exclTitle: 'Repars avec ton Neotone¹, le jour même',
@@ -1112,14 +1149,22 @@ const fr = {
     bookPrivateCta: 'Réserver un rendez-vous individuel',
     agendaEyebrow: 'Agenda',
     agendaTitle: 'Calendrier des showcases publics gratuits',
-    agendaIntro: 'Présentation des Neotone par David Lesage, avec test des instruments sur place. Entrée libre et gratuite — réservation conseillée.',
+    // 🚨 RÉSERVATION OBLIGATOIRE (tranché par David le 17/08/2026) : « la
+    // réservation est obligatoire, je veux savoir qui vient et récupérer les
+    // infos des gens ». La page disait encore « Entrée libre — réservation
+    // conseillée », ce qui laissait croire qu'on pouvait passer sans prévenir.
+    // ⚠️ Le showcase reste GRATUIT : c'est la RÉSERVATION qui devient
+    // nécessaire, jamais l'entrée qui devient payante. Ne pas réintroduire
+    // « entrée libre », « réservation conseillée » ni « sans inscription ».
+    agendaIntro: 'Présentation des Neotone par David Lesage, avec test des instruments sur place. Gratuit — nombre de places limitées · réservation nécessaire.',
     agendaEmpty: 'Prochaines dates en préparation',
     agendaEmptyText: 'Les prochaines dates sont en cours de calage. Laisse-moi ton email : tu seras prévenu·e en premier, avant l’annonce publique.',
     agendaEmptyCta: 'Me prévenir de la prochaine date',
     agendaNextLabel: 'Prochain showcase gratuit',
     agendaCount: '{n} date à venir',
     agendaCountPlural: '{n} dates à venir',
-    agendaSeats: 'Entrée libre · places limitées',
+    // Mots de David (16/08/2026), affichés sous la date dans le hero.
+    agendaSeats: 'Gratuit sur réservation · places limitées',
     agendaCta: 'Être prévenu·e des prochains showcases',
     agendaEventTitle: 'Showcase Neotone — découverte & essai',
     agendaEventTag: 'Public · Gratuit',

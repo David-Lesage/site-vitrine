@@ -6,6 +6,7 @@
 // l'ancien lien mailto de candidature bêta-testeur).
 import { Icon } from 'astro-icon/components'
 import { getDict } from '@/i18n/dict'
+import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -176,6 +177,12 @@ const b = getDict(lang).common.beta
         </label>
       </div>
 
+      {/* Conditions générales — case obligatoire, la MÊME que sur tous les
+          formulaires du site. Distincte de l'engagement d'honnêteté ci-dessus :
+          celui-ci porte sur la sincérité des déclarations, celle-là sur le cadre
+          d'utilisation des coordonnées. Les deux sont obligatoires. */}
+      <TermsCheckbox lang={lang} class="mt-2" />
+
       <button type="submit" data-sending={b.formSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{b.formSubmit}</button>
       <p data-beta-error class="hidden text-sm font-600 text-rust">{b.formError}</p>
       <p class="text-xs text-ink-soft/70">{b.formPrivacy}</p>
@@ -274,6 +281,8 @@ const b = getDict(lang).common.beta
           makerMetals: data.getAll('makerMetals').map(String),
           makerPricing: get('makerPricing'),
           pledgeHonest: data.get('pledgeHonest') !== null,
+          // Conditions générales — case obligatoire (bloquée par reportValidity).
+          termsAccepted: data.get('termsAccepted') !== null,
           motivation: get('motivation'),
           wantsBeta: data.get('wantsBeta') !== null,
           wantsShowcase: data.get('wantsShowcase') !== null,

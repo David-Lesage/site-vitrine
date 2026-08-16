@@ -92,6 +92,19 @@
 //      se déclenchait donc AUSSI quand le site disait « il n'y a aucune date »,
 //      rendant le cas vide inatteignable et pouvant annoncer une date que
 //      /showroom n'affiche plus. On teste désormais la PRÉSENCE du champ.
+// v24 (17/08/2026) : CONDITIONS GÉNÉRALES + INSTRUMENTS DU SHOWCASE.
+//      · `termsAccepted` → `terms_accepted_at` (date SERVEUR) + `terms_version`.
+//        La case est obligatoire côté navigateur ; ici on enregistre, on ne
+//        rejette pas (même arbitrage que les sous-questions : ne jamais perdre
+//        un contact sur un 400). Une ligne sans `terms_accepted_at` = un
+//        consentement non prouvé, pas une erreur.
+//      · `showcaseInterests` → `showcase_instruments`, accepté UNIQUEMENT pour
+//        `showcase-booking`. Colonne DISTINCTE d'`instruments`, qui est ignorée
+//        dès que `sessionType` est vide — toujours le cas pour un showcase.
+//      ⚠ Nécessite les colonnes `terms_accepted_at`, `terms_version` et
+//      `showcase_instruments` sur `public.site_leads` (ADD COLUMN nullable
+//      appliqué le 17/08/2026). Sans elles, l'insert lève une erreur → 500 →
+//      le visiteur voit un échec et le lead est perdu. Colonnes AVANT déploiement.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -178,6 +191,22 @@ const REMOTE_SESSION_TYPES = ['onboarding-60', 'onboarding-90', 'lesson-60', 'le
 const ALLOWED_SESSION_FORMAT = ['in-person', 'remote'];
 const ALLOWED_INSTRUMENTS = ['neotone', 'calebasse', 'gonilele', 'mic-hisong', 'mic-muling'];
 
+// SHOWCASE (17/08/2026) — « pour quel(s) instrument(s) viens-tu ? ».
+// ⚠ Liste et colonne DISTINCTES d'ALLOWED_INSTRUMENTS ci-dessus : `instruments`
+// est ignorée dès que `sessionType` est vide, ce qui est TOUJOURS le cas pour un
+// showcase (il n'a pas de type de séance). Les deux questions ne peuvent donc
+// pas partager une colonne.
+// Doit rester alignée sur `showcaseInterests` de src/data/site.ts.
+// 🚧 'atlas' (pieds Atlas) volontairement absent : partenariat non signé.
+const ALLOWED_SHOWCASE_INTERESTS = ['all', 'handpan', 'mic', 'calebasse', 'gonilele', 'meet'];
+
+// CONDITIONS GÉNÉRALES (17/08/2026) — case obligatoire sur tous les formulaires.
+// La coche seule ne prouve rien : ce qui est opposable, c'est l'horodatage
+// serveur + la VERSION du texte accepté. Changer cette valeur le jour où les
+// conditions générales sont modifiées (et ne jamais la changer rétroactivement :
+// les lignes déjà en base portent la version qu'elles ont réellement acceptée).
+const TERMS_VERSION = '2026-08-17';
+
 /**
  * Résume les casquettes en UNE valeur `usage_type`, la colonne historique.
  * On la garde renseignée pour ne rien casser (lignes existantes, dashboard) :
@@ -228,6 +257,21 @@ const PROFILE_LABELS: Record<string, string> = {
     'mic-hisong': 'Micro Hisong', 'mic-muling': 'Micro Muling',
     '9-': '9 notes ou moins', '10-13': '10 à 13 notes', '14-17': '14 à 17 notes',
     '18+': '18 notes et plus', varies: 'variable selon les gammes',
+};
+
+/**
+ * Instruments d'un SHOWCASE — table séparée de PROFILE_LABELS à dessein : les
+ * clés y sont courtes et génériques (`all`, `mic`, `meet`, `handpan`) et
+ * entreraient tôt ou tard en collision avec une autre question (c'est exactement
+ * ce qui est arrivé à `other` entre les métaux et les casquettes).
+ */
+const SHOWCASE_INTEREST_LABELS: Record<string, string> = {
+    all: 'tous les instruments',
+    handpan: 'handpan',
+    mic: 'micro (Muling / Hisong)',
+    calebasse: 'calebasse',
+    gonilele: 'Gonilélé (harpe africaine)',
+    meet: 'me rencontrer',
 };
 
 /** Métaux — table séparée : la clé `other` entre en collision avec la casquette « autre ». */
@@ -746,6 +790,26 @@ Deno.serve(async (req) => {
             : [];
         const instruments = picked.length ? picked : null;
 
+        // SHOWCASE — instruments pour lesquels la personne vient (17/08/2026).
+        // Accepté UNIQUEMENT pour `showcase-booking` : ailleurs, la question
+        // n'est pas posée, donc une valeur qui arriverait quand même vient d'un
+        // appel forgé ou d'une page en cache — on la jette.
+        const rawShowcaseInterests = Array.isArray(body.showcaseInterests) ? body.showcaseInterests.map(String) : [];
+        const pickedShowcase = source === SHOWCASE_BOOKING_SOURCE
+            ? [...new Set(rawShowcaseInterests.filter((i) => ALLOWED_SHOWCASE_INTERESTS.includes(i)))]
+            : [];
+        const showcaseInterests = pickedShowcase.length ? pickedShowcase : null;
+
+        // CONDITIONS GÉNÉRALES — la case est obligatoire côté navigateur ; ici
+        // on ENREGISTRE le consentement (date serveur + version du texte), ce
+        // qui est la seule chose opposable. On ne rejette PAS une demande sans
+        // consentement : `site-lead` est la porte d'entrée publique du site et
+        // perdre un contact coûte plus cher qu'une case manquante (même
+        // arbitrage que les sous-questions plus haut). Une ligne sans
+        // `terms_accepted_at` est simplement une ligne sans consentement prouvé.
+        const termsAccepted = body.termsAccepted === true;
+        const termsAcceptedAt = termsAccepted ? new Date().toISOString() : null;
+
         // Demande de code de remise Neotone.
         const rawModel = String(body.neotoneModel ?? '').trim();
         const neotoneModel = ALLOWED_NEOTONE_MODEL.includes(rawModel) ? rawModel : null;
@@ -802,6 +866,9 @@ Deno.serve(async (req) => {
             session_type: sessionType,
             session_format: sessionFormat,
             instruments,
+            showcase_instruments: showcaseInterests,
+            terms_accepted_at: termsAcceptedAt,
+            terms_version: termsAccepted ? TERMS_VERSION : null,
             preferred_slots: preferredSlots,
         };
 
@@ -1024,6 +1091,10 @@ Deno.serve(async (req) => {
                             'Instruments à préparer': instruments
                                 ? instruments.map((i) => PROFILE_LABELS[i] ?? i).join(', ')
                                 : null,
+                            // Showcase : ce pour quoi la personne vient (17/08/2026).
+                            'Vient pour': showcaseInterests
+                                ? showcaseInterests.map((i) => SHOWCASE_INTEREST_LABELS[i] ?? i).join(', ')
+                                : null,
                             'Créneaux proposés': preferredSlots?.length
                                 ? preferredSlots.map((s) => slotLabel(s, 'fr')).join(' · ')
                                 : null,
@@ -1035,6 +1106,10 @@ Deno.serve(async (req) => {
                             Message: message,
                             Page: page || null,
                             Langue: lang,
+                            // Trace du consentement, visible sans ouvrir la base.
+                            'Conditions générales': termsAcceptedAt
+                                ? `acceptées le ${termsAcceptedAt.slice(0, 10)} (version ${TERMS_VERSION})`
+                                : '⚠️ non acceptées',
                         }, await slotConfirmBlockHtml(confirmLessonId, confirmSlots)))],
                     });
                 } catch (notifyErr) {

@@ -136,6 +136,29 @@ export type SessionTypeId = (typeof sessionTypes)[number]['id']
 // à l'avance permet à David de les préparer avant la venue.
 export const demoInstruments = ['neotone', 'calebasse', 'gonilele', 'mic-hisong', 'mic-muling'] as const
 
+// ── SHOWCASE : « pour quel(s) instrument(s) viens-tu ? » (17/08/2026) ─────────
+// Question posée UNIQUEMENT sur la réservation d'un showcase public
+// (`source === 'showcase-booking'`). Choix MULTIPLES, tous facultatifs.
+//
+// ⚠️ Volontairement DISTINCT de `demoInstruments` ci-dessus (colonne
+// `site_leads.instruments`) : côté serveur, `instruments` est ignorée dès que
+// `sessionType` est vide — ce qui est TOUJOURS le cas pour un showcase. Les deux
+// listes ne se mélangent donc jamais : showcase → `showcase_instruments`,
+// démonstration privée → `instruments`.
+//
+// AJOUTER UNE OPTION = 3 gestes, rien de plus :
+//   1. l'id ici ;
+//   2. son libellé dans `booking.showcaseInterestNames` (dict.ts ET en.ts — le
+//      build échoue si l'un des deux manque) ;
+//   3. le même id dans `ALLOWED_SHOWCASE_INTERESTS` de
+//      supabase/functions/site-lead/index.ts (allowlist serveur).
+// Le relais api/subscribe.js et la colonne en base n'ont rien à changer.
+//
+// 🚧 « Pieds Atlas » (`atlas`) : PAS ajouté pour l'instant — partenariat en
+// cours, non signé. L'afficher publierait un partenariat qui n'existe pas
+// encore. À insérer ici le jour où David le confirme.
+export const showcaseInterests = ['all', 'handpan', 'mic', 'calebasse', 'gonilele', 'meet'] as const
+
 // Playlist YouTube « Neotone » (toutes les vidéos liées à l'instrument).
 export const neotonePlaylist = 'https://www.youtube.com/playlist?list=PLns6mQWNwwnS43kRc2dps9asOshpfQ2Ka'
 

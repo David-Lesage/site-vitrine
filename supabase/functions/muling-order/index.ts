@@ -144,6 +144,15 @@ Deno.serve(async (req) => {
         const lang = String(body.lang ?? 'fr').trim().slice(0, 5);
         const page = String(body.page ?? '').trim().slice(0, 200);
         const consent = body.consent === true;
+        // CONDITIONS GÉNÉRALES du site (17/08/2026) — case obligatoire commune à
+        // tous les formulaires, DISTINCTE de `consent` ci-dessus (transmission
+        // des coordonnées à Muling, un tiers en Chine). Deux consentements, deux
+        // colonnes : `terms_accepted_at` et `consent_at`. Comme partout, on
+        // enregistre sans rejeter — la commande d'un client ne doit pas se
+        // perdre sur une case ; c'est le navigateur qui la rend obligatoire.
+        // ⚠ Nécessite `affiliate_sales.terms_accepted_at` (ADD COLUMN nullable,
+        // appliqué le 17/08/2026) : sans elle, l'insert lève une erreur → 500.
+        const termsAcceptedAt = body.termsAccepted === true ? new Date().toISOString() : null;
 
         const rawQty = Number(body.quantity);
         const quantity = Number.isFinite(rawQty) && rawQty > 0 ? Math.min(Math.round(rawQty), 20) : 1;
@@ -178,6 +187,7 @@ Deno.serve(async (req) => {
             status: 'lead',
             fulfillment_status: 'new',
             consent_at: new Date().toISOString(),
+            terms_accepted_at: termsAcceptedAt,
             admin_note: message,
             delivery_note: deliveryNote,
         }).select('id').single();

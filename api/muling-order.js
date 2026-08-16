@@ -39,7 +39,15 @@ export default async function handler(req, res) {
         postalCode: body.postalCode,
         quantity: body.quantity,
         message: body.message,
+        // 🐞 17/08/2026 : `deliveryNote` était envoyé par le formulaire et attendu
+        // par l'Edge Function, mais ce relais — qui filtre par liste EXPLICITE —
+        // ne le transmettait pas. `affiliate_sales.delivery_note` était donc
+        // toujours vide. Exactement le piège documenté dans subscribe.js.
+        deliveryNote: body.deliveryNote,
         consent: true,
+        // Conditions générales du site — DISTINCT de `consent` ci-dessus, qui est
+        // l'accord de transmission des coordonnées à Muling (tiers, Chine).
+        termsAccepted: body.termsAccepted === true,
         lang: body.lang || 'fr',
         page: body.page,
       }),

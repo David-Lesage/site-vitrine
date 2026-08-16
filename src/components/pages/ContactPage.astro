@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import { Icon } from 'astro-icon/components'
+import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import { site, SITE_LEAD_KNOWS_CONTACT_SOURCES } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import type { Lang } from '@/i18n/config'
@@ -63,6 +64,8 @@ const coords = [
             </select>
           </label>
           <label class="block"><span class="text-sm font-600">{ct.form.message}</span><textarea name="message" rows="5" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream px-4 py-3 focus:border-copper focus:outline-none"></textarea></label>
+          {/* Conditions générales — même case, mêmes mots que partout ailleurs. */}
+          <TermsCheckbox lang={lang} />
           <button type="submit" class="rounded-full bg-rust px-6 py-3 font-700 text-cream transition-colors hover:bg-copper disabled:opacity-60">{ct.form.submit}</button>
           <p data-ct-error class="hidden text-sm font-600 text-rust">{bk.error}</p>
           <p class="text-xs text-ink-soft/60">{ct.form.note} {site.email}.</p>
@@ -137,6 +140,9 @@ const coords = [
             // message, ce qui le rend visible dans la notification ET dans les
             // exports, sans migration de schéma.
             message: [`[${get('subject')}]`, get('message')].filter(Boolean).join(' '),
+            // Case obligatoire des conditions générales (bloquée en amont par
+            // `reportValidity()`) : le serveur en fait l'horodatage opposable.
+            termsAccepted: data.get('termsAccepted') !== null,
             source: 'contact',
             lang: form.dataset.lang || 'fr',
             page: location.pathname,

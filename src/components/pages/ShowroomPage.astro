@@ -65,34 +65,81 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
       <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{sh.heroEyebrow}</p>
       <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-6xl">{sh.heroTitle}</h1>
       <p class="mx-auto mt-5 max-w-2xl text-lg text-cream/80">{sh.heroLead}</p>
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <Button href="#agenda" variant="primary" {...visitAttrs}>{sh.ctaBook}</Button>
-        <Button href="#agenda" variant="light">{sh.ctaNext}</Button>
-      </div>
-      {/* ⚠️ « Réserver ma venue » laissait croire à une visite gratuite : le
-          créneau individuel est PAYANT. Le tarif affiché vient de `priceGrid()`
-          (donc de site.ts) — jamais écrit en dur, jamais différent du formulaire. */}
-      <p class="mx-auto mt-4 max-w-xl text-sm text-cream/70">{sh.ctaBookNote.replace('{grid}', grid)}</p>
-
+      {/* 🚦 ORDRE DE LECTURE DU HERO — 16/08/2026, demande explicite de David.
+          AVANT : le bouton « Réserver un créneau (payant) » était le tout premier
+          élément après le titre. Sur mobile (une seule colonne) il arrivait donc
+          avant toute autre information : « ça freine les gens dès le démarrage et
+          ça porte à confusion dès le départ ».
+          MAINTENANT : (1) la DATE du prochain showcase GRATUIT — l'entrée
+          principale — puis (2) le créneau individuel privé payant, en dessous,
+          visuellement secondaire (bouton contour, pas plein).
+          🚨 Ne jamais remonter le CTA payant au-dessus de la date. */}
       {next && (
         <a
           href="#agenda"
           data-next-banner
           data-event-iso={next.iso}
-          class="mx-auto mt-10 flex max-w-xl flex-col items-center gap-4 rounded-card border border-gold/40 bg-cream/10 p-5 text-left backdrop-blur-sm transition-colors hover:bg-cream/20 sm:flex-row"
+          class="mx-auto mt-9 flex max-w-2xl flex-col items-center gap-4 rounded-card border-2 border-gold/60 bg-cream/15 p-5 text-left shadow-lg backdrop-blur-sm transition-colors hover:bg-cream/25 sm:flex-row sm:p-6"
         >
-          <div class="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-gold text-ink">
-            <span class="font-display text-2xl font-700 leading-none">{next.day}</span>
+          <div class="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-gold text-ink">
+            <span class="font-display text-3xl font-700 leading-none">{next.day}</span>
             <span class="text-[10px] font-700 uppercase tracking-widest">{next.month}</span>
           </div>
           <div class="flex-1 text-center sm:text-left">
             <p class="text-xs font-700 uppercase tracking-widest text-gold">{sh.agendaNextLabel}</p>
-            <p class="mt-1 font-600 text-cream first-letter:uppercase">{next.dateLong} · {next.time}</p>
-            <p class="text-sm text-cream/70">{sh.agendaSeats}</p>
+            <p class="mt-1 font-display text-xl font-700 leading-snug text-cream first-letter:uppercase">{next.dateLong}</p>
+            <p class="text-sm text-cream/80">{next.time}</p>
+            <p class="mt-1.5 text-sm font-700 text-gold">{sh.agendaSeats}</p>
           </div>
-          <span class="shrink-0 rounded-full bg-cream px-5 py-2.5 text-sm font-700 text-ink">{sh.agendaBookCta}</span>
+          <span class="w-full shrink-0 rounded-full bg-cream px-5 py-2.5 text-center text-sm font-700 text-ink sm:w-auto">{sh.agendaBookCta}</span>
         </a>
       )}
+
+      {/* AUCUNE DATE PROGRAMMÉE (17/08/2026, mots de David) — s'affiche À LA PLACE
+          de la carte de date, et TOUJOURS AVANT le CTA payant : quelqu'un qui
+          arrive hors saison de showcase doit d'abord lire que le gratuit revient,
+          pas se faire proposer un rendez-vous payant.
+          Deux cas couverts : liste vide au BUILD (`next` indéfini) et suppression
+          CÔTÉ CLIENT de la bannière par le filet en bas de page (page en cache).
+          Pas de `flex` sur ce conteneur : `hidden` et `flex` sont deux utilitaires
+          `display` et le masquage perdrait.
+          La capture de coordonnées réutilise le mécanisme DÉJÀ en place —
+          `data-booking="showcase-waitlist"` → modale BookingForm → /api/subscribe
+          → EF `site-lead`. Rien à brancher côté backend.
+          🚧 MANQUE : le lien d'abonnement au Google Agenda public « Le Nid ».
+          Aucune URL d'abonnement publique n'existe dans ce dépôt et on n'en invente
+          pas. Quand David la fournira : l'ajouter dans `src/data/site.ts`, avec son
+          libellé dans les deux dicos, et l'afficher ici en lien secondaire. */}
+      <div
+        data-next-fallback
+        class:list={['mx-auto mt-9 max-w-2xl rounded-card border-2 border-gold/60 bg-cream/15 p-6 text-center shadow-lg backdrop-blur-sm', next && 'hidden']}
+      >
+        <Icon name="lucide:calendar-clock" class="mx-auto h-8 w-8 text-gold" />
+        <p class="mt-3 font-display text-xl font-700 text-cream">{sh.agendaEmpty}</p>
+        <p class="mx-auto mt-2 max-w-md text-sm text-cream/80">{sh.agendaEmptyText}</p>
+        <div class="mt-5">
+          <Button
+            href="#agenda"
+            variant="light"
+            data-booking="showcase-waitlist"
+            data-title={sh.agendaEmptyCta}
+            data-intro={sh.agendaEmptyText}
+          >{sh.agendaEmptyCta}</Button>
+        </div>
+      </div>
+
+      {/* SECONDAIRE — l'option payante. ⚠️ « Réserver ma venue » laissait croire à
+          une visite gratuite : le créneau individuel est PAYANT, et le tarif vient
+          de `priceGrid()` (donc de site.ts) — jamais écrit en dur, jamais
+          différent du formulaire. */}
+      <div class="mx-auto mt-8 max-w-xl border-t border-cream/15 pt-7">
+        <a
+          href="#agenda"
+          {...visitAttrs}
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-cream/40 px-6 py-3 text-sm font-700 text-cream transition-all duration-200 hover:-translate-y-0.5 hover:bg-cream/10"
+        >{sh.ctaBook}</a>
+        <p class="mx-auto mt-3 max-w-xl text-sm text-cream/60">{sh.ctaBookNote.replace('{grid}', grid)}</p>
+      </div>
     </div>
   </section>
 
@@ -307,16 +354,23 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
   const empty = document.querySelector('[data-agenda-empty]')
   const count = document.querySelector('[data-agenda-count]')
   const banner = document.querySelector('[data-next-banner]')
+  // Repli du hero : si la date mise en avant disparaît, le hero ne doit pas se
+  // retrouver avec le seul CTA PAYANT en tête (cf. commentaire du hero).
+  const fallback = document.querySelector('[data-next-fallback]')
 
   list?.querySelectorAll<HTMLElement>('[data-event-iso]').forEach((card) => {
     if ((card.dataset.eventIso || '') < today) card.remove()
   })
-  if (banner instanceof HTMLElement && (banner.dataset.eventIso || '') < today) banner.remove()
+  if (banner instanceof HTMLElement && (banner.dataset.eventIso || '') < today) {
+    banner.remove()
+    fallback?.classList.remove('hidden')
+  }
 
   const remaining = list?.querySelectorAll('[data-event-iso]').length ?? 0
   if (remaining === 0) {
     empty?.classList.remove('hidden')
     count?.remove()
     banner?.remove()
+    fallback?.classList.remove('hidden')
   }
 </script>

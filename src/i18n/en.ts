@@ -31,6 +31,15 @@ export const en: Dict = {
       rights: 'Independent Neotone ambassador · All prices are indicative and may change without notice.',
     },
     skip: 'Skip to content',
+    // ── TERMS & CONDITIONS — mandatory checkbox on EVERY form (see dict.ts) ───
+    // `check` must keep the `{link}` marker: TermsCheckbox.astro injects the
+    // link to /en/conditions-generales there.
+    terms: {
+      check: 'I accept the {link}',
+      link: 'terms and conditions',
+      hint: 'They explain how I use your details, what you commit to when booking, and how to unsubscribe whenever you want.',
+      required: 'To continue, you need to accept the terms and conditions.',
+    },
     credentials: ['Conservatory award', 'The Voice · Season 11', 'Neotone · Yishama · Maison du Ngoni ambassador', 'Showroom Paris 20th'],
     beta: {
       badge: 'Limited access',
@@ -600,6 +609,19 @@ export const en: Dict = {
     formatRemote: 'Online',
     showcaseTitle: 'Reserve my spot at the showcase',
     showcaseIntro: 'Free public showcase at the Paris 20th showroom. Booking recommended — seats are limited.',
+    // Showcase only — "which instrument(s) are you coming for?" (see dict.ts).
+    // Optional on purpose. No "Other" option and no free-text field: the
+    // existing message box already covers it (David, 17/08/2026).
+    showcaseInterestsLabel: 'Which instrument(s) are you coming for?',
+    showcaseInterestsHint: 'Tick everything you’re interested in — I’ll have them ready for the session. Something specific? Tell me in your message below.',
+    showcaseInterestNames: {
+      all: 'All of them',
+      handpan: 'Handpan',
+      mic: 'Microphone (Muling and/or Hisong)',
+      calebasse: 'Calabash',
+      gonilele: 'Gonilélé (African harp)',
+      meet: 'Meeting you',
+    },
   },
   muling: {
     title: 'Muling microphone for acoustic handpan | David Lesage',
@@ -998,8 +1020,11 @@ export const en: Dict = {
     heroEyebrow: 'Le Nid · Paris 20th',
     heroTitle: 'David Lesage Showroom',
     heroLead: 'A place where acoustic and electronic are played side by side: my Yishama handpans and the Neotone, in your hands the same afternoon — and a community to meet.',
-    ctaBook: 'Book a slot (paid)',
-    ctaBookNote: 'Paid one-to-one slot: {grid}. Public showcases, on the other hand, are free — just sign up.',
+    // See dict.ts: this CTA is the OPTION, shown BELOW the next free showcase.
+    ctaBook: 'Book a private one-to-one slot (paid)',
+    // "just sign up" played the booking down: it is required.
+    ctaBookNote: 'Paid one-to-one slot: {grid}. Public showcases, on the other hand, are free — limited places · booking required.',
+    // ⓘ No longer rendered since 17/08/2026 — see dict.ts.
     ctaNext: 'See the next showcase',
     exclBadge: '★ World first',
     exclTitle: 'Walk away with your Neotone¹, the same day',
@@ -1055,14 +1080,17 @@ export const en: Dict = {
     bookPrivateCta: 'Book an individual appointment',
     agendaEyebrow: 'Agenda',
     agendaTitle: 'Calendar of free public showcases',
-    agendaIntro: 'Neotone presentation by David Lesage, with instruments to try on site. Free entry — booking recommended.',
+    // 🚨 See dict.ts: booking is MANDATORY (David, 17/08/2026). The showcase
+    // stays FREE — it is the booking that becomes required, never the entry
+    // that becomes paid. Do not reintroduce "free entry" / "booking recommended".
+    agendaIntro: 'Neotone presentation by David Lesage, with instruments to try on site. Free — limited places · booking required.',
     agendaEmpty: 'Upcoming dates in preparation',
     agendaEmptyText: 'The next dates are being finalised. Leave me your email and you’ll be the first to know, before the public announcement.',
     agendaEmptyCta: 'Notify me of the next date',
     agendaNextLabel: 'Next free showcase',
     agendaCount: '{n} upcoming date',
     agendaCountPlural: '{n} upcoming dates',
-    agendaSeats: 'Free entry · limited seats',
+    agendaSeats: 'Free, booking required · limited places',
     agendaCta: 'Get notified about upcoming showcases',
     agendaEventTitle: 'Neotone showcase — discover & try',
     agendaEventTag: 'Public · Free',

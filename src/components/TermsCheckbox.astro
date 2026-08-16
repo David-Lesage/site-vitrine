@@ -1,0 +1,52 @@
+---
+// Case « J'accepte les conditions générales » — OBLIGATOIRE, sur TOUS les
+// formulaires du site (17/08/2026).
+//
+// Pourquoi un composant plutôt que quatre copies : les conditions générales sont
+// LES MÊMES partout (décision de David) et la case doit être opposable, donc son
+// texte et son lien ne doivent jamais diverger d'un formulaire à l'autre.
+// Utilisée par : BookingForm.astro (6 pages), ContactPage.astro, BetaNotice.astro,
+// MulingOrderForm.astro.
+//
+// Côté serveur, la case fait écrire `terms_accepted_at` (horodatage) et
+// `terms_version` : c'est ça qui rend le consentement opposable, pas la coche.
+// ⚠️ Règle des TROIS écritures : formulaire → api/*.js → Edge Function.
+//
+// 🚧 La page `/conditions-generales` (+ `/en/…`) N'EXISTE PAS ENCORE : son
+// contenu juridique est traité séparément avec David. Le lien est déjà posé sur
+// la route prévue pour n'avoir rien à rechercher le jour où la page arrive.
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import type { Lang } from '@/i18n/config'
+
+interface Props {
+  lang: Lang
+  /** Nom du champ envoyé. Un seul formulaire par page → le défaut suffit. */
+  name?: string
+  /** Classes du conteneur, pour coller au gabarit du formulaire hôte. */
+  class?: string
+}
+const { lang, name = 'termsAccepted', class: klass = '' } = Astro.props
+const t = getDict(lang).common.terms
+const href = localizePath('/conditions-generales', lang)
+// `check` porte le marqueur `{link}` : on coupe autour pour insérer un vrai lien
+// (pas de set:html — le libellé reste du texte, seul le lien est du markup).
+const [before, after] = t.check.split('{link}')
+---
+
+<div class={`rounded-xl border border-copper/25 bg-copper/5 p-4 ${klass}`.trim()} data-terms-block>
+  <label class="flex cursor-pointer items-start gap-3">
+    <input type="checkbox" name={name} required class="mt-0.5 h-5 w-5 shrink-0 accent-rust" data-terms-check />
+    <span class="text-sm font-600 text-ink">
+      {before}<a
+        href={href}
+        target="_blank"
+        rel="noopener"
+        class="underline decoration-copper/50 underline-offset-2 hover:text-rust"
+        onclick="event.stopPropagation()"
+      >{t.link}</a>{after}
+      <span aria-hidden="true" class="text-rust"> *</span>
+    </span>
+  </label>
+  <p class="mt-2 pl-8 text-xs leading-relaxed text-ink-soft/75">{t.hint}</p>
+</div>

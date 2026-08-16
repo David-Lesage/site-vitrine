@@ -7,8 +7,9 @@
 // S'ouvre en modale au clic sur n'importe quel élément [data-booking="<source>"].
 // Inclure UNE fois par page contenant de tels boutons.
 import { getDict } from '@/i18n/dict'
+import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import { sessionOptions, priceGrid } from '@/lib/sessions'
-import { sessionTypes, demoInstruments } from '@/data/site'
+import { sessionTypes, demoInstruments, showcaseInterests } from '@/data/site'
 import { upcomingShowcases } from '@/lib/agenda'
 import type { Lang } from '@/i18n/config'
 
@@ -99,6 +100,25 @@ const upcoming = JSON.stringify(
         <span class="text-sm font-600">{bk.people}</span>
         <input type="number" name="peopleCount" min="1" max="20" value="1" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
       </label>
+
+      {/* SHOWCASE UNIQUEMENT — « pour quel(s) instrument(s) viens-tu ? ».
+          Choix multiples, aucun obligatoire : ça sert à David pour préparer la
+          séance et pour cibler ses emails ensuite, pas à filtrer l'inscription.
+          ⚠️ Champ et colonne DISTINCTS du fieldset `instruments` plus bas : ce
+          dernier est ignoré côté serveur dès que `sessionType` est vide, ce qui
+          est toujours le cas pour un showcase. Options : src/data/site.ts. */}
+      <fieldset data-bk-showcase-interests class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
+        <legend class="px-1 text-sm font-600">{bk.showcaseInterestsLabel}</legend>
+        <p class="text-xs text-ink-soft/70">{bk.showcaseInterestsHint}</p>
+        <div class="mt-3 grid gap-2 sm:grid-cols-2">
+          {showcaseInterests.map((id) => (
+            <label class="flex cursor-pointer items-center gap-2.5 rounded-lg bg-cream px-3 py-2 text-sm">
+              <input type="checkbox" name="showcaseInterests" value={id} class="h-4 w-4 shrink-0 accent-rust" />
+              {bk.showcaseInterestNames[id]}
+            </label>
+          ))}
+        </div>
+      </fieldset>
 
       {/* Type de rendez-vous — le tarif est visible AVANT l'envoi, pas découvert après. */}
       <label class="block" data-bk-session>
@@ -238,6 +258,11 @@ const upcoming = JSON.stringify(
         <textarea name="message" rows="3" placeholder={bk.messagePlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea>
       </label>
 
+      {/* Conditions générales — case OBLIGATOIRE, identique sur tous les
+          formulaires du site. Volontairement placée juste avant le bouton :
+          c'est le dernier geste avant l'envoi. */}
+      <TermsCheckbox lang={lang} class="mt-1" />
+
       <button type="submit" data-sending={bk.sending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{bk.submit}</button>
       <p data-bk-error class="hidden text-sm font-600 text-rust">{bk.error}</p>
       <p class="text-xs text-ink-soft/70">{bk.privacy}</p>
@@ -265,6 +290,8 @@ const upcoming = JSON.stringify(
   const vipEl = modal?.querySelector('[data-bk-vip]') as HTMLElement
   const discountEl = modal?.querySelector('[data-bk-discount]') as HTMLElement
   const instrumentsEl = modal?.querySelector('[data-bk-instruments]') as HTMLElement
+  // Showcase uniquement — « pour quel(s) instrument(s) viens-tu ? » (17/08/2026)
+  const showcaseInterestsEl = modal?.querySelector('[data-bk-showcase-interests]') as HTMLElement
   const formatEl = modal?.querySelector('[data-bk-format]') as HTMLElement
   const sessionSelect = modal?.querySelector('select[name="sessionType"]') as HTMLSelectElement | null
   // Types acceptant la visio (les cours) — la liste vient de site.ts via un
@@ -280,13 +307,26 @@ const upcoming = JSON.stringify(
   let lastFocused: HTMLElement | null = null
 
   // Un bloc masqué ne doit jamais participer à l'envoi : on désactive ses champs
-  // (sinon une valeur invisible partirait quand même) et on les vide.
+  // (sinon une valeur invisible partirait quand même) et on les remet à zéro.
+  //
+  // 🐞 CORRIGÉ le 17/08/2026 — « remettre à zéro » n'est PAS `value = ''`.
+  // Sur une case à cocher ou un bouton radio, `value` n'est pas ce que la
+  // personne a saisi : c'est l'IDENTIFIANT de l'option (`neotone`, `gonilele`,
+  // `in-person`…). L'écraser détruisait donc l'option elle-même, définitivement
+  // — et `syncSessionBlocks()` masque ces blocs à CHAQUE ouverture de la modale.
+  // Conséquence réelle en production : les instruments cochés pour une
+  // démonstration privée partaient en chaînes vides, l'Edge Function les
+  // rejetait par allowlist, et RIEN n'était enregistré. Ce qu'il faut remettre à
+  // zéro sur une case, c'est `checked`.
   function toggleBlock(el: HTMLElement | null, show: boolean) {
     if (!el) return
     el.classList.toggle('hidden', !show)
     el.querySelectorAll<HTMLInputElement | HTMLSelectElement>('input, select').forEach((f) => {
       f.disabled = !show
-      if (!show) f.value = ''
+      if (!show) {
+        if (f instanceof HTMLInputElement && (f.type === 'checkbox' || f.type === 'radio')) f.checked = false
+        else f.value = ''
+      }
     })
   }
 
@@ -326,7 +366,11 @@ const upcoming = JSON.stringify(
     const isDiscount = source === 'neotone-discount'
     const isVip = isPaid || source === 'showroom-visit'
     const needsSlots = isVip
-    toggleBlock(peopleEl, source === 'showcase-booking')
+    const isShowcase = source === 'showcase-booking'
+    toggleBlock(peopleEl, isShowcase)
+    // La question « pour quel(s) instrument(s) ? » n'a de sens que pour une
+    // place de showcase : ailleurs, c'est le motif lui-même qui la porte.
+    toggleBlock(showcaseInterestsEl, isShowcase)
     toggleBlock(sessionEl, isPaid)
     toggleBlock(discountEl, isDiscount)
     // « Sans limite de caractère » : on agrandit visiblement la zone de texte et on
@@ -482,6 +526,12 @@ const upcoming = JSON.stringify(
           sessionType: get('sessionType') || null,
           sessionFormat: get('sessionFormat') || null,
           instruments: data.getAll('instruments').map(String),
+          // Showcase : instruments pour lesquels la personne vient. Champ et
+          // colonne distincts d'`instruments` ci-dessus (voir data/site.ts).
+          showcaseInterests: data.getAll('showcaseInterests').map(String),
+          // Consentement aux conditions générales (case obligatoire) : c'est le
+          // serveur qui l'horodate, le navigateur n'envoie que le fait.
+          termsAccepted: data.get('termsAccepted') !== null,
           preferredSlots,
           source,
           lang: form.dataset.lang || 'fr',
