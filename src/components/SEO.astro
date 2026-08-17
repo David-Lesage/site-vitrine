@@ -65,12 +65,16 @@ const desc = clampDescription(description)
 <link rel="canonical" href={canonical} />
 {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
 <link rel="alternate" hreflang="x-default" href={alternates.find((a) => a.lang === 'fr')?.href} />
-<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-{/* favicon.svg / favicon.png = handpan cuivre (fichiers de référence conservés sous
-    favicon-handpan.*). Le symbole du logo « moulinet » a été mis de côté sous
-    favicon-logo-moulinet.* / apple-touch-icon-moulinet.png : il attend le choix de David. */}
-<link rel="icon" type="image/png" href="/images/favicon.png" />
-<link rel="apple-touch-icon" href="/images/favicon.png" />
+{/* Favicon = le logotype noir de David (choix du 17/08/2026), recadré sur le cercle.
+    Plus de version SVG : le logotype est une image, pas une forme géométrique — la
+    déclarer en SVG obligerait à un tracé approximatif. `/favicon.ico` est à la RACINE
+    et déclaré en premier : c'est celui que Google cherche pour l'afficher dans ses
+    résultats, et son absence était la raison du globe générique.
+    Anciens fichiers conservés : favicon-handpan.* (handpan cuivre) et
+    favicon-logo-moulinet.* (symbole de l'ancien logo). */}
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="/images/favicon.png" sizes="512x512" />
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" sizes="180x180" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Open Graph -->
