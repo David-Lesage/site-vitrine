@@ -28,6 +28,16 @@
 //      ⚠ Nécessite `affiliate_sales.terms_version` (text), `news_opt_in`
 //      (boolean) et `news_opt_in_at` (timestamptz) — ADD COLUMN nullable appliqué
 //      le 17/08/2026. Sans elles, l'insert lève une erreur → 500 → commande perdue.
+// v4 (17/08/2026) : 🐞 LIEN REPRENABLE. L'email disait « reviens sur l'écran de
+//      confirmation » — or cet écran n'existait que dans l'onglet ouvert au
+//      moment de la commande (état du composant `MulingOrderForm.astro`).
+//      Onglet fermé = plus aucun moyen de signaler son virement. Constaté sur
+//      une vraie commande du 14/08/2026, restée `payment_claimed_at IS NULL`
+//      trois jours plus tard faute de chemin de retour. L'email porte désormais
+//      un bouton vers `/micro-muling?commande=<saleId>` (FR) ou
+//      `/en/micro-muling?commande=<saleId>` (EN), qui rouvre cet écran à tout
+//      moment, sans session. Le lien seul ne déclenche rien : l'email de la
+//      commande est redemandé et vérifié par `muling-claim-payment`.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -37,6 +47,13 @@ import { htmlPart, mailSubject } from '../_shared/mail.ts';
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 const MULING_EMAIL = '85846599@qq.com';
 const DASHBOARD_URL = 'https://play.handpanstudio.app/';
+const SITE_URL = 'https://www.lesagedavid.fr';
+// Lien REPRENABLE vers l'écran « je signale mon virement » (v4, 17/08/2026).
+// Il rouvre l'étape 2 du formulaire à tout moment, dans n'importe quel
+// navigateur, sans session. Le lien seul ne déclenche RIEN : la personne doit
+// saisir l'email de la commande, que `muling-claim-payment` compare.
+const claimUrl = (lang: string, saleId: string) =>
+    `${SITE_URL}${lang === 'fr' ? '' : '/en'}/micro-muling?commande=${saleId}`;
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -85,7 +102,7 @@ ${inner}
 const row = (k: string, v: string) =>
     `<tr><td style="padding:4px 0;color:#6b7280;font-size:13px;width:130px;vertical-align:top;">${k}</td><td style="padding:4px 0;color:#111827;font-size:14px;">${v}</td></tr>`;
 
-function clientEmailHtml(lang: string, firstName: string, ref: string, total: number, quantity: number): string {
+function clientEmailHtml(lang: string, firstName: string, ref: string, total: number, quantity: number, saleId: string): string {
     const en = lang !== 'fr';
     const hi = firstName ? `${en ? 'Hi' : 'Bonjour'} ${esc(firstName)},` : (en ? 'Hi,' : 'Bonjour,');
     const t = en ? {
@@ -93,16 +110,24 @@ function clientEmailHtml(lang: string, firstName: string, ref: string, total: nu
         p1: 'Thanks for your order — I’ve passed it on to Muling. Here are your payment details, for your records (you’ll also find them on the confirmation screen).',
         pay: 'Payment details',
         p2: 'Payment in euros, SEPA transfer only — this account does not accept international/SWIFT wires.',
-        p3: 'Once you’ve paid, come back to the confirmation screen and let me know — I’ll follow up with Muling for shipping.',
+        // 🐞 v4 : ce paragraphe renvoyait vers « l'écran de confirmation », qui
+        // n'existait que dans l'onglet ouvert au moment de la commande. Fermer
+        // l'onglet = plus aucun moyen de signaler son virement. D'où le lien.
+        p3: 'Once you’ve paid, come back to this screen to let me know and upload your proof of payment — I’ll follow up with Muling for shipping. Keep this email: the link works at any time.',
+        cta: 'I’ve made the transfer',
+        p4: 'You’ll be asked for the email address of this order — it’s what identifies it.',
         sign: 'Thank you,<br />David Lesage',
     } : {
         title: 'Ta commande est en route ✨',
         p1: 'Merci pour ta commande — je l’ai transmise à Muling. Voici tes informations de paiement, pour archive (tu les retrouves aussi sur l’écran de confirmation).',
         pay: 'Coordonnées de paiement',
         p2: 'Paiement en euros, par virement SEPA uniquement — ce compte n’accepte pas les virements internationaux/SWIFT.',
-        p3: 'Une fois le virement fait, reviens sur l’écran de confirmation pour me le signaler — je fais le lien avec Muling pour l’expédition.',
+        p3: 'Une fois le virement fait, reviens sur cet écran pour me le signaler et déposer ta preuve de virement — je fais le lien avec Muling pour l’expédition. Garde cet email : le lien fonctionne à tout moment.',
+        cta: 'J’ai effectué le virement',
+        p4: 'On te redemandera l’adresse email de cette commande — c’est elle qui l’identifie.',
         sign: 'Merci,<br />David Lesage',
     };
+    const link = claimUrl(lang, saleId);
     return shell(`
         <tr><td style="padding:28px 28px 4px;">
           <div style="font-size:21px;font-weight:700;color:#111827;">${t.title}</div>
@@ -122,6 +147,8 @@ function clientEmailHtml(lang: string, firstName: string, ref: string, total: nu
         </td></tr>
         <tr><td style="padding:20px 28px 28px;border-top:1px solid #f0f1f3;">
           <p style="margin:0;color:#374151;font-size:14px;line-height:1.6;">${t.p3}</p>
+          <p style="margin:18px 0 0;"><a href="${link}" style="display:inline-block;background:#b4462a;color:#ffffff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 26px;border-radius:999px;">${t.cta}</a></p>
+          <p style="margin:10px 0 0;color:#6b7280;font-size:12px;line-height:1.5;">${t.p4}<br /><span style="word-break:break-all;">${esc(link)}</span></p>
           <p style="margin:16px 0 0;color:#9ca3af;font-size:12px;">${t.sign}</p>
         </td></tr>
 `);
@@ -246,7 +273,7 @@ Deno.serve(async (req) => {
 
             emailSent = await send(email, undefined, ADMIN_EMAIL,
                 lang === 'fr' ? 'David Lesage — ta commande Muling' : 'David Lesage — your Muling order',
-                clientEmailHtml(lang, firstName, ref, priceDiscounted, quantity));
+                clientEmailHtml(lang, firstName, ref, priceDiscounted, quantity, saleId));
 
             // Un seul email à Muling, David en copie — toutes les infos de la
             // commande + lien de connexion au dashboard (David, 08/08/2026).

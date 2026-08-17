@@ -5,6 +5,19 @@
 //   1. Coordonnées + adresse + quantité (→ api/muling-order)
 //   2. Coordonnées bancaires Muling + dépôt de preuve (→ api/muling-claim)
 //   3. Merci — Muling prend le relais pour l'expédition et le suivi.
+//
+// RETOUR PAR LIEN (17/08/2026) — l'étape 2 n'existait QUE dans la foulée de
+// l'étape 1 (état du composant). Qui fermait l'onglet n'avait plus aucun moyen
+// de signaler son virement : constaté sur une vraie commande restée avec
+// `payment_claimed_at IS NULL` trois jours après. La page accepte donc
+// `?commande=<uuid>` (lien mis dans l'email de commande) et rouvre l'étape 2.
+// ⚠️ SÉCURITÉ : l'identifiant dans l'URL ne prouve RIEN à lui seul.
+//   · Aucune donnée personnelle n'est affichée (ni nom, ni adresse, ni
+//     téléphone, ni montant) — l'URL peut être transférée ou traîner dans une
+//     boîte mail. Seule la référence s'affiche, et elle se DÉDUIT de l'id.
+//   · La personne doit saisir l'email de la commande ; c'est l'Edge Function
+//     `muling-claim-payment` qui le compare (404 sinon). Rien n'est déclenché
+//     par le lien seul.
 import { getDict } from '@/i18n/dict'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
@@ -24,6 +37,11 @@ const priceLine = mu.mulingOrderPriceLine
   .replace('{pct}', String(mulingDiscountPct))
   .replace('{final}', fmtEur(mulingDiscountedPriceEur))
 const MULING_EMAIL = '85846599@qq.com'
+// Retour par lien : on ne connaît PAS le montant de la commande (le récupérer
+// exigerait une route qui exposerait la commande à partir du seul identifiant
+// — exclu). On rappelle donc le prix unitaire, déjà public sur la page, et on
+// renvoie à l'email de commande pour le montant exact.
+const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(mulingDiscountedPriceEur))
 ---
 
 <div id="muling-modal" class="fixed inset-0 z-[100] hidden items-start justify-center overflow-y-auto bg-ink/80 p-4 py-10 backdrop-blur-sm" role="dialog" aria-modal="true" aria-hidden="true">
@@ -97,15 +115,22 @@ const MULING_EMAIL = '85846599@qq.com'
     <div data-mo-step="pay" class="hidden">
       <h2 class="pr-8 font-display text-2xl font-700">{mu.mulingBankTitle}</h2>
       <p class="mt-2 text-sm text-ink-soft/85">{mu.mulingBankIntro}</p>
+      {/* Visible UNIQUEMENT quand la page est ouverte par le lien de l'email :
+          le texte est un gabarit, la référence y est injectée par le script à
+          partir de l'identifiant présent dans l'URL (aucune requête serveur). */}
+      <p data-mo-resume-intro data-tpl={mu.mulingResumeIntro} class="mt-3 hidden rounded-lg border border-copper/25 bg-copper/5 p-3 text-sm text-ink-soft/90"></p>
 
       <dl class="mo-bank-dl mt-5 space-y-2 rounded-xl border border-copper/25 bg-copper/5 p-4 text-sm">
         <div class="flex items-center justify-between gap-3"><dt class="text-ink-soft/70">{mu.mulingBankBeneficiary}</dt><dd class="flex items-center gap-2 text-right font-600"><span data-mo-copy-val>{mulingBankDetails.beneficiary}</span><button type="button" class="mo-copy" title={mu.mulingCopyLine} aria-label={mu.mulingCopyLine} data-copied-label={mu.mulingCopiedLine}>📋</button></dd></div>
         <div class="flex items-center justify-between gap-3"><dt class="text-ink-soft/70">{mu.mulingBankIban}</dt><dd class="flex items-center gap-2 text-right font-600" data-mo-iban><span data-mo-copy-val>{mulingBankDetails.iban}</span><button type="button" class="mo-copy" title={mu.mulingCopyLine} aria-label={mu.mulingCopyLine} data-copied-label={mu.mulingCopiedLine}>📋</button></dd></div>
         <div class="flex items-center justify-between gap-3"><dt class="text-ink-soft/70">{mu.mulingBankBic}</dt><dd class="flex items-center gap-2 text-right font-600"><span data-mo-copy-val>{mulingBankDetails.bic}</span><button type="button" class="mo-copy" title={mu.mulingCopyLine} aria-label={mu.mulingCopyLine} data-copied-label={mu.mulingCopiedLine}>📋</button></dd></div>
         <div class="flex items-center justify-between gap-3"><dt class="text-ink-soft/70">{mu.mulingBankBank}</dt><dd class="flex items-center gap-2 text-right font-600"><span data-mo-copy-val>{mulingBankDetails.bank}</span><button type="button" class="mo-copy" title={mu.mulingCopyLine} aria-label={mu.mulingCopyLine} data-copied-label={mu.mulingCopiedLine}>📋</button></dd></div>
-        <div class="flex items-center justify-between gap-3"><dt class="text-ink-soft/70">{mu.mulingBankAmountLabel}</dt><dd class="flex items-center gap-2 text-right font-700"><span data-mo-copy-val data-mo-amount>—</span><button type="button" class="mo-copy" title={mu.mulingCopyLine} aria-label={mu.mulingCopyLine} data-copied-label={mu.mulingCopiedLine}>📋</button></dd></div>
+        <div data-mo-amount-row class="flex items-center justify-between gap-3"><dt class="text-ink-soft/70">{mu.mulingBankAmountLabel}</dt><dd class="flex items-center gap-2 text-right font-700"><span data-mo-copy-val data-mo-amount>—</span><button type="button" class="mo-copy" title={mu.mulingCopyLine} aria-label={mu.mulingCopyLine} data-copied-label={mu.mulingCopiedLine}>📋</button></dd></div>
         <div class="flex items-center justify-between gap-3"><dt class="text-ink-soft/70">{mu.mulingBankRef}</dt><dd class="flex items-center gap-2 text-right font-700"><span data-mo-copy-val data-mo-ref>—</span><button type="button" class="mo-copy" title={mu.mulingCopyLine} aria-label={mu.mulingCopyLine} data-copied-label={mu.mulingCopiedLine}>📋</button></dd></div>
       </dl>
+      {/* Remplace la ligne « Montant à virer » en retour par lien : on ne peut
+          pas connaître le montant sans exposer la commande. */}
+      <p data-mo-resume-amount class="mt-2 hidden text-sm font-600 text-rust">{resumeAmountNote}</p>
       <p class="mt-2 text-sm font-600 text-rust">{mu.mulingBankAdvantagePrefix}{priceLine}</p>
       <button type="button" data-mo-download-pdf class="mt-3 text-sm font-600 text-copper underline decoration-copper/40 underline-offset-2 hover:text-rust">{mu.mulingDownloadPdf}</button>
       <p class="mt-3 text-xs font-600 text-rust">{mu.mulingBankSepaOnly}</p>
@@ -113,13 +138,23 @@ const MULING_EMAIL = '85846599@qq.com'
       <p class="mt-3 text-sm text-ink-soft/85">{mu.mulingBankNext}</p>
 
       <form id="muling-claim-form" class="mt-5 grid gap-3" novalidate>
+        {/* Retour par lien uniquement. Dans le parcours normal l'email vient
+            du formulaire de commande — le redemander n'aurait aucun sens.
+            Pas d'attribut `required` : le champ est masqué la plupart du temps
+            et un champ masqué obligatoire bloquerait la validation native ;
+            la vérification se fait dans le script, et surtout côté serveur. */}
+        <label data-mo-resume-email-field class="hidden">
+          <span class="text-sm font-600">{mu.mulingResumeEmailLabel}</span>
+          <span class="mt-0.5 block text-xs text-ink-soft/70">{mu.mulingResumeEmailHint}</span>
+          <input type="email" name="resumeEmail" autocomplete="email" class="mt-2 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
+        </label>
         <label class="block">
           <span class="text-sm font-600">{mu.mulingProofLabel}</span>
           <span class="mt-0.5 block text-xs text-ink-soft/70">{mu.mulingProofHint}</span>
           <input type="file" name="proof" accept="image/png,image/jpeg,application/pdf" required class="mt-2 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 text-sm focus:border-copper focus:outline-none" />
         </label>
         <button type="submit" data-sending={mu.mulingProofSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{mu.mulingProofButton}</button>
-        <p data-mo-proof-error data-missing={mu.mulingProofMissing} data-invalid-type={mu.mulingProofInvalidType} data-too-large={mu.mulingProofTooLarge} data-error-text={mu.mulingProofError} class="hidden text-sm font-600 text-rust"></p>
+        <p data-mo-proof-error data-missing={mu.mulingProofMissing} data-invalid-type={mu.mulingProofInvalidType} data-too-large={mu.mulingProofTooLarge} data-error-text={mu.mulingProofError} data-email-missing={mu.mulingResumeEmailMissing} data-email-mismatch={mu.mulingResumeMismatch} class="hidden text-sm font-600 text-rust"></p>
       </form>
     </div>
 
@@ -140,21 +175,64 @@ const MULING_EMAIL = '85846599@qq.com'
   let currentSaleId: string | null = null
   let currentEmail = ''
   let lastFocused: HTMLElement | null = null
+  // Retour par lien (?commande=<uuid>) : l'étape 2 est rouverte sans être
+  // passée par l'étape 1, donc sans connaître ni l'email ni le montant.
+  let resumeMode = false
+  const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
   function showStep(step: keyof typeof steps) {
     modal?.querySelectorAll('[data-mo-step]').forEach((el) => el.classList.toggle('hidden', el.getAttribute('data-mo-step') !== step))
   }
 
-  function open() {
+  // Bascule tout ce qui distingue les deux façons d'arriver sur l'étape 2.
+  function setResumeMode(on: boolean) {
+    resumeMode = on
+    const emailField = modal?.querySelector('[data-mo-resume-email-field]')
+    emailField?.classList.toggle('hidden', !on)
+    emailField?.classList.toggle('block', on)
+    modal?.querySelector('[data-mo-resume-intro]')?.classList.toggle('hidden', !on)
+    modal?.querySelector('[data-mo-resume-amount]')?.classList.toggle('hidden', !on)
+    // Le montant réel est inconnu en retour par lien : mieux vaut ne rien
+    // afficher qu'un « — » ou un chiffre faux à recopier dans un virement.
+    modal?.querySelector('[data-mo-amount-row]')?.classList.toggle('hidden', on)
+  }
+
+  function show() {
     if (!modal) return
     lastFocused = document.activeElement as HTMLElement
-    orderForm?.reset()
-    claimForm?.reset()
-    currentSaleId = null
-    showStep('order')
     modal.classList.remove('hidden'); modal.classList.add('flex')
     modal.setAttribute('aria-hidden', 'false')
     document.body.style.overflow = 'hidden'
+  }
+
+  function open() {
+    if (!modal) return
+    orderForm?.reset()
+    claimForm?.reset()
+    currentSaleId = null
+    currentEmail = ''
+    setResumeMode(false)
+    showStep('order')
+    show()
+  }
+
+  // Ouverture depuis le lien de l'email de commande. Aucune requête réseau :
+  // la référence se déduit de l'identifiant, exactement comme `muling-order`
+  // la fabrique (`RESONANCE-` + 8 premiers caractères, en majuscules).
+  function openFromLink(saleId: string) {
+    if (!modal) return
+    claimForm?.reset()
+    currentSaleId = saleId
+    currentEmail = ''
+    const ref = `RESONANCE-${saleId.slice(0, 8).toUpperCase()}`
+    modal.querySelectorAll('[data-mo-ref]').forEach((el) => { el.textContent = ref })
+    const intro = modal.querySelector('[data-mo-resume-intro]') as HTMLElement | null
+    if (intro) intro.textContent = (intro.dataset.tpl || '').replace('{ref}', ref)
+    setResumeMode(true)
+    showStep('pay')
+    show()
+    ;(modal.querySelector('input[name="resumeEmail"]') as HTMLInputElement | null)?.focus()
   }
   function close() {
     if (!modal) return
@@ -165,6 +243,15 @@ const MULING_EMAIL = '85846599@qq.com'
   }
 
   document.querySelectorAll('[data-open-muling-order]').forEach((el) => el.addEventListener('click', (e) => { e.preventDefault(); open() }))
+
+  // Lien reprenable : /micro-muling?commande=<uuid> (et /en/micro-muling?…).
+  // `order` est accepté en alias pour un lien rédigé en anglais. Un identifiant
+  // mal formé n'ouvre rien du tout — la page reste la page produit.
+  {
+    const params = new URLSearchParams(location.search)
+    const linkedId = (params.get('commande') || params.get('order') || '').trim()
+    if (UUID_RE.test(linkedId)) openFromLink(linkedId)
+  }
   modal?.querySelectorAll('.mo-close').forEach((b) => b.addEventListener('click', close))
   modal?.addEventListener('click', (e) => { if (e.target === modal) close() })
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) close() })
@@ -280,6 +367,22 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
     const errEl = modal?.querySelector('[data-mo-proof-error]') as HTMLElement
     errEl?.classList.add('hidden')
     if (!currentSaleId) return
+
+    // En retour par lien, l'email n'a pas été saisi à l'étape 1 : il est
+    // redemandé ici. Ce contrôle-ci n'est qu'un confort d'affichage — la vraie
+    // vérification est celle de l'Edge Function, qui compare avec la commande.
+    if (resumeMode) {
+      const emailInput = claimForm.querySelector('input[name="resumeEmail"]') as HTMLInputElement | null
+      const typed = (emailInput?.value || '').trim()
+      if (!EMAIL_RE.test(typed)) {
+        errEl.textContent = errEl.dataset.emailMissing || 'Indique l’email utilisé lors de la commande.'
+        errEl.classList.remove('hidden')
+        emailInput?.focus()
+        return
+      }
+      currentEmail = typed
+    }
+
     if (!file) {
       errEl.textContent = errEl.dataset.missing || 'Dépose une preuve de virement avant de continuer.'
       errEl.classList.remove('hidden'); return
@@ -310,6 +413,14 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ saleId: currentSaleId, email: currentEmail, fileBase64: base64, fileType: file.type, lang: document.documentElement.lang || 'fr' }),
       })
+      // 404 = commande introuvable OU email qui ne correspond pas (le serveur
+      // ne distingue pas les deux, volontairement). Le dire clairement, sinon
+      // la personne croit à une panne et abandonne.
+      if (r.status === 404) {
+        errEl.textContent = errEl.dataset.emailMismatch || 'Cet email ne correspond pas à cette commande.'
+        errEl.classList.remove('hidden')
+        return
+      }
       if (!r.ok) throw new Error('failed')
       showStep('thanks')
     } catch {

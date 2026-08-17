@@ -701,6 +701,15 @@ export const en: Dict = {
     mulingProofMissing: 'Upload proof of your transfer (image or PDF) before continuing.',
     mulingProofInvalidType: 'Format not accepted — upload an image (JPG, PNG) or a PDF.',
     mulingProofTooLarge: 'The file is over 5 MB — reduce it and try again.',
+    // Coming back from the email link (?commande=<id>) — see dict.ts for the
+    // full rationale. Nothing personal is shown here: only the reference,
+    // derived from the id already present in the URL.
+    mulingResumeIntro: 'You’re back to report the transfer for order {ref}. Confirm the email address you used when ordering, then upload your proof of payment.',
+    mulingResumeEmailLabel: 'Email used when ordering',
+    mulingResumeEmailHint: 'It is what identifies your order — no personal information is shown on this page until it has been verified.',
+    mulingResumeEmailMissing: 'Enter the email address you used when ordering.',
+    mulingResumeAmountNote: 'The exact amount of your order is in your confirmation email ({unit} € per mic).',
+    mulingResumeMismatch: 'This email address does not match this order. Use exactly the one you gave when ordering, or write to me at contact@lesagedavid.fr.',
     mulingThankYouTitle: 'Thank you, all noted ✨',
     mulingThankYouText: 'Your proof of payment has been received and sent to Muling with all your order details. You’ll get a confirmation email at this address to keep as proof — Muling will contact you directly for shipping and tracking.',
     mulingOrderSending: 'Sending…',

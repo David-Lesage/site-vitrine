@@ -29,6 +29,57 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 17/08/2026 — 🔗 Lien reprenable « je signale mon virement » (Muling)
+
+**⚠️ COMMITÉ, PAS DÉPLOYÉ** (ni Vercel, ni Edge Function) — voir « Reste à faire ».
+
+### Le bug (constaté sur une vraie cliente)
+L'email de commande Muling disait *« reviens sur l'écran de confirmation »* — or cet écran
+n'existait **que dans l'onglet ouvert au moment de la commande** (état du composant
+`MulingOrderForm.astro`). Onglet fermé = **plus aucun chemin** pour signaler son virement.
+Résultat réel : commande du 14/08 (`d438aa30-…`, `RESONANCE-D438AA30`) toujours
+`payment_claimed_at IS NULL` trois jours après — pas un oubli, une impasse.
+
+### La correction
+`/micro-muling?commande=<uuid>` (et `/en/micro-muling?commande=<uuid>`) **rouvre l'étape 2**
+directement : coordonnées bancaires, PDF, dépôt de preuve. Page statique → fonctionne des
+semaines plus tard, navigateur neuf, sans session. L'email de commande porte désormais un
+bouton **« J'ai effectué le virement »** (FR/EN) + l'URL en clair sous le bouton.
+
+**Choix : pas de route dédiée.** Le composant `MulingOrderForm.astro` possède déjà
+l'affichage bancaire, l'export PDF et le formulaire de preuve ; une page à part aurait
+dupliqué tout ça (ou imposé une extraction risquée), et `/micro-muling` existe déjà en
+FR/EN/ZH avec le composant monté. Le lien tombe donc sur la page produit, modale ouverte.
+
+### Sécurité — ce qui a été volontairement NON fait
+- **Aucune donnée personnelle affichée** avant vérification : ni nom, ni adresse, ni
+  téléphone, ni **montant**. Seule la **référence** s'affiche, et elle est **déduite** de
+  l'identifiant déjà présent dans l'URL (`RESONANCE-` + 8 premiers caractères en majuscules
+  — vérifié conforme sur les 4 commandes réelles en base). **Zéro requête** à l'ouverture.
+- **Aucune route nouvelle** exposant une commande à partir du seul identifiant.
+- Le montant exact étant inconnu, la ligne « Montant à virer » est **masquée** en retour par
+  lien et remplacée par « le montant exact figure dans ton email de confirmation ».
+  Mieux vaut rien qu'un chiffre faux recopié dans un virement.
+- L'email de la commande est **redemandé** et comparé côté serveur par
+  `muling-claim-payment` (inchangée). **Le lien seul ne déclenche rien.** 404 → message
+  explicite « cette adresse ne correspond pas à cette commande ».
+
+### Fichiers touchés
+`src/components/MulingOrderForm.astro` · `src/i18n/dict.ts` · `src/i18n/en.ts`
+(6 clés ajoutées, aucune supprimée) · `supabase/functions/muling-order/index.ts` (v4).
+Aucune dépendance npm, aucune colonne en base, aucune modification de
+`muling-claim-payment` ni de `api/muling-claim.js`.
+
+### Reste à faire (aucun test n'a rien déclenché en prod)
+1. `npx vite build`… → ici c'est **`npx astro build` + `npx vercel --prod --yes`** pour que
+   la page accepte le paramètre.
+2. **Redéployer l'EF `muling-order`** (`verify_jwt: false`) pour que les prochains emails
+   portent le bouton. Déployée en v9 le 17/08 à 03:35 = v3 du fichier ; **v4 en attente**.
+3. **URL à envoyer à Anne** (ne marchera qu'après l'étape 1) :
+   `https://www.lesagedavid.fr/micro-muling?commande=d438aa30-cc80-493e-b5d3-96c32a740c18`
+
+---
+
 ## ÉTAT ACTUEL — 16/08/2026 — 🖼️ Image d'aperçu de lien (Open Graph) adaptative par page
 
 Demande de David : *« est-ce qu'en fonction des pages qui sont partagées il est possible

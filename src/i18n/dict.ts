@@ -753,6 +753,19 @@ const fr = {
     mulingProofMissing: 'Dépose une preuve de virement (image ou PDF) avant de continuer.',
     mulingProofInvalidType: 'Format non accepté — dépose une image (JPG, PNG) ou un PDF.',
     mulingProofTooLarge: 'Le fichier dépasse 5 Mo — réduis-le et réessaie.',
+    // RETOUR PAR LIEN (17/08/2026) — l'écran de confirmation n'existait qu'une
+    // fois, juste après l'envoi du formulaire : qui fermait l'onglet n'avait
+    // plus AUCUN moyen de signaler son virement. Ces textes servent quand la
+    // page est ouverte avec ?commande=<id> (lien envoyé dans l'email).
+    // ⚠️ Rien de personnel ne s'affiche ici : ni nom, ni adresse, ni téléphone,
+    // ni montant — seulement la référence, qui se déduit de l'identifiant déjà
+    // présent dans l'URL. C'est l'email saisi ci-dessous que le serveur vérifie.
+    mulingResumeIntro: 'Tu reviens signaler le virement de ta commande {ref}. Confirme l’adresse email utilisée lors de la commande, puis dépose ta preuve de virement.',
+    mulingResumeEmailLabel: 'Email utilisé lors de la commande',
+    mulingResumeEmailHint: 'C’est lui qui identifie ta commande — aucune information personnelle n’est affichée sur cette page tant qu’il n’a pas été vérifié.',
+    mulingResumeEmailMissing: 'Indique l’adresse email utilisée lors de la commande.',
+    mulingResumeAmountNote: 'Le montant exact de ta commande figure dans ton email de confirmation ({unit} € par micro).',
+    mulingResumeMismatch: 'Cette adresse email ne correspond pas à cette commande. Utilise exactement celle indiquée lors de la commande, ou écris-moi à contact@lesagedavid.fr.',
     mulingThankYouTitle: 'Merci, c’est noté ✨',
     mulingThankYouText: 'Ta preuve de virement est bien reçue et transmise à Muling avec toutes les infos de ta commande. Tu vas recevoir un email de confirmation à cette adresse, à garder comme preuve — Muling va te recontacter directement pour l’expédition et le suivi.',
     mulingOrderSending: 'Envoi…',
