@@ -1,0 +1,45 @@
+---
+// Case « Je veux être informé·e des prochaines dates et des nouveautés » —
+// FACULTATIVE, jamais pré-cochée, sur TOUS les formulaires du site (17/08/2026).
+//
+// POURQUOI ELLE EXISTE, ET POURQUOI ELLE EST SÉPARÉE DE TermsCheckbox :
+// accepter les conditions générales ne vaut PAS accord pour recevoir de la
+// prospection. Le consentement à être informé doit être donné à part, être
+// FACULTATIF (aucun `required`), et ne jamais être pré-coché — sans quoi la
+// liste de contacts n'est pas utilisable pour annoncer une nouveauté.
+// Conséquence directe : cette case ne bloque JAMAIS l'envoi du formulaire.
+//
+// ⚠️ Ne jamais lui ajouter `required`, `checked`, ni un pré-cochage en script.
+//
+// Côté serveur, elle fait écrire DEUX colonnes (modèle de `terms_accepted_at`) :
+// `news_opt_in` (état courant) et `news_opt_in_at` (horodatage serveur du
+// consentement). ⚠️ Règle des TROIS écritures : formulaire → api/*.js → Edge
+// Function — et la colonne doit exister en base, sinon l'insert lève un 500 et
+// le lead est perdu.
+//
+// Utilisée par : BookingForm.astro (6 pages), ContactPage.astro,
+// BetaNotice.astro, MulingOrderForm.astro.
+import { getDict } from '@/i18n/dict'
+import type { Lang } from '@/i18n/config'
+
+interface Props {
+  lang: Lang
+  /** Nom du champ envoyé. Un seul formulaire par page → le défaut suffit. */
+  name?: string
+  /** Classes du conteneur, pour coller au gabarit du formulaire hôte. */
+  class?: string
+}
+const { lang, name = 'newsOptIn', class: klass = '' } = Astro.props
+const t = getDict(lang).common.news
+---
+
+<div class={`rounded-xl border border-ink/15 bg-cream-deep/30 p-4 ${klass}`.trim()} data-news-block>
+  <label class="flex cursor-pointer items-start gap-3">
+    <input type="checkbox" name={name} class="mt-0.5 h-5 w-5 shrink-0 accent-rust" data-news-check />
+    <span class="text-sm font-600 text-ink">
+      {t.check}
+      <span class="ml-1 whitespace-nowrap rounded-full bg-ink/10 px-2 py-0.5 text-[11px] font-600 uppercase tracking-wide text-ink-soft/80">{t.optional}</span>
+    </span>
+  </label>
+  <p class="mt-2 pl-8 text-xs leading-relaxed text-ink-soft/75">{t.hint}</p>
+</div>

@@ -86,6 +86,11 @@ export const footerNav = [
   { key: 'newsletter', href: '/#communaute' },
   { key: 'faq', href: '/le-neotone#faq' },
   { key: 'legal', href: '/mentions-legales' },
+  // Conditions générales (17/08/2026) — c'est le texte que la case obligatoire
+  // des 4 formulaires fait accepter : il doit être atteignable depuis TOUTES
+  // les pages, pas seulement depuis un formulaire. Le slug n'est pas traduit :
+  // la version EN vit sur /en/conditions-generales (convention du site).
+  { key: 'terms', href: '/conditions-generales' },
 ] as const
 
 // Prochains showcases publics gratuits (dates neutres, ISO).

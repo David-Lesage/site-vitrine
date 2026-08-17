@@ -48,6 +48,9 @@ export default async function handler(req, res) {
         // Conditions générales du site — DISTINCT de `consent` ci-dessus, qui est
         // l'accord de transmission des coordonnées à Muling (tiers, Chine).
         termsAccepted: body.termsAccepted === true,
+        // Consentement FACULTATIF aux nouveautés (3ᵉ case du formulaire, jamais
+        // pré-cochée) — encore un consentement distinct des deux du dessus.
+        newsOptIn: body.newsOptIn === true,
         lang: body.lang || 'fr',
         page: body.page,
       }),

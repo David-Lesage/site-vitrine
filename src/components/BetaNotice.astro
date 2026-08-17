@@ -7,6 +7,7 @@
 import { Icon } from 'astro-icon/components'
 import { getDict } from '@/i18n/dict'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
+import NewsCheckbox from '@/components/NewsCheckbox.astro'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -162,6 +163,17 @@ const b = getDict(lang).common.beta
         <textarea name="motivation" rows="3" placeholder={b.formMotivationPlaceholder} class="mt-2 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea>
       </label>
 
+      {/* ⚠️ `wantsShowcase` : NE PAS SUPPRIMER, NE PAS FUSIONNER avec la case
+          « nouveautés » plus bas. Ce n'est pas un doublon, les deux ne font pas
+          le même travail :
+           · celle-ci est un CIBLAGE — cochée, elle fait créer par `site-lead`
+             une SECONDE ligne `site_leads` de source `showcase` (upsert('showcase')),
+             qui est le groupe « gens à prévenir des dates parisiennes ». C'est
+             ce qui permet d'écrire aux seuls concernés, sans arroser la liste ;
+           · celle du dessous est le CONSENTEMENT lui-même (`news_opt_in` +
+             horodatage), commun aux 4 formulaires du site.
+          Les deux sont facultatives et indépendantes : quelqu'un peut vouloir les
+          dates de showcase sans vouloir le reste, et l'inverse. */}
       <label class="mt-1 flex cursor-pointer items-start gap-3 rounded-xl border border-ink/10 bg-cream-deep/30 p-4">
         <input type="checkbox" name="wantsShowcase" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
         <span class="text-sm text-ink-soft/90">{b.formShowcase}</span>
@@ -182,6 +194,12 @@ const b = getDict(lang).common.beta
           celui-ci porte sur la sincérité des déclarations, celle-là sur le cadre
           d'utilisation des coordonnées. Les deux sont obligatoires. */}
       <TermsCheckbox lang={lang} class="mt-2" />
+
+      {/* Nouveautés — case FACULTATIVE, jamais pré-cochée, la MÊME que sur les
+          trois autres formulaires. Elle porte le consentement à recevoir de la
+          prospection ; `wantsShowcase` plus haut ne dit QUE le sujet qui
+          intéresse la personne (cf. le commentaire à côté). */}
+      <NewsCheckbox lang={lang} />
 
       <button type="submit" data-sending={b.formSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{b.formSubmit}</button>
       <p data-beta-error class="hidden text-sm font-600 text-rust">{b.formError}</p>
@@ -283,6 +301,9 @@ const b = getDict(lang).common.beta
           pledgeHonest: data.get('pledgeHonest') !== null,
           // Conditions générales — case obligatoire (bloquée par reportValidity).
           termsAccepted: data.get('termsAccepted') !== null,
+          // Nouveautés — case FACULTATIVE (distincte de `wantsShowcase`, qui ne
+          // dit que le SUJET). Envoyée même à false : un refus est une réponse.
+          newsOptIn: data.get('newsOptIn') !== null,
           motivation: get('motivation'),
           wantsBeta: data.get('wantsBeta') !== null,
           wantsShowcase: data.get('wantsShowcase') !== null,

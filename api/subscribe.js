@@ -90,6 +90,11 @@ export default async function handler(req, res) {
         // Acceptation des conditions générales (case obligatoire de tous les
         // formulaires). L'horodatage est posé par l'Edge Function, pas ici.
         termsAccepted: body.termsAccepted === true,
+        // Consentement FACULTATIF à recevoir les nouveautés (seconde case, jamais
+        // pré-cochée). Séparé de `termsAccepted` : accepter les conditions
+        // générales ne vaut pas accord pour recevoir de la prospection.
+        // Relayé même à false — un refus est une réponse, pas une absence.
+        newsOptIn: body.newsOptIn === true,
         preferredSlots: body.preferredSlots,
         source: body.source || 'beta-waitlist',
         lang: body.lang || 'fr',

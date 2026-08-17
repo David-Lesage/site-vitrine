@@ -7,6 +7,7 @@
 //   3. Merci — Muling prend le relais pour l'expédition et le suivi.
 import { getDict } from '@/i18n/dict'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
+import NewsCheckbox from '@/components/NewsCheckbox.astro'
 import { mulingBankDetails, mulingCompanyContact, mulingDiscountCode, mulingDiscountPct, mulingPriceEur, mulingDiscountedPriceEur } from '@/data/muling'
 import type { Lang } from '@/i18n/config'
 
@@ -81,6 +82,11 @@ const MULING_EMAIL = '85846599@qq.com'
             Enregistrées dans deux colonnes distinctes d'`affiliate_sales`
             (`consent_at` et `terms_accepted_at`). */}
         <TermsCheckbox lang={lang} />
+
+        {/* TROISIÈME case, et la seule FACULTATIVE des trois : les nouveautés.
+            Les deux du dessus sont obligatoires et nécessaires à la commande ;
+            celle-ci ne conditionne rien et n'est jamais pré-cochée. */}
+        <NewsCheckbox lang={lang} />
 
         <button type="submit" data-sending={mu.mulingOrderSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{mu.mulingOrderSubmit}</button>
         <p data-mo-order-error class="hidden text-sm font-600 text-rust">{mu.mulingOrderError}</p>
@@ -246,6 +252,8 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
           // transmission à Muling ci-dessus (`consent`). Case obligatoire,
           // bloquée en amont par `reportValidity()`.
           termsAccepted: data.get('termsAccepted') !== null,
+          // Nouveautés — case FACULTATIVE. Envoyée même à false.
+          newsOptIn: data.get('newsOptIn') !== null,
           lang: document.documentElement.lang || 'fr', page: location.pathname,
         }),
       })

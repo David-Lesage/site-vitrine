@@ -18,6 +18,16 @@
 //      — deux bugs distincts de denomailer 1.6.0 (en-tête `Subject:` coupé par un
 //      `=\r\n`, et `=` échappé en `=3d` MINUSCULE, interdit RFC 2045 §6.7).
 //      Cf. _shared/mail.ts.
+// v3 (17/08/2026) : 🐞 `terms_version` MANQUANTE. La v2 enregistrait bien
+//      `terms_accepted_at` mais PAS la version du texte accepté, contrairement à
+//      `site-lead` : une commande de micro n'aurait jamais su à quelles
+//      conditions générales elle correspondait, ce qui vide l'horodatage de sa
+//      valeur (c'est le COUPLE date + version qui est opposable). Corrigé avec la
+//      MÊME valeur que site-lead. Ajout au passage du consentement FACULTATIF aux
+//      nouveautés (`news_opt_in` / `news_opt_in_at`), la 3ᵉ case du formulaire.
+//      ⚠ Nécessite `affiliate_sales.terms_version` (text), `news_opt_in`
+//      (boolean) et `news_opt_in_at` (timestamptz) — ADD COLUMN nullable appliqué
+//      le 17/08/2026. Sans elles, l'insert lève une erreur → 500 → commande perdue.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -40,6 +50,12 @@ const DISCOUNT_CODE = 'David-Lesage-5';
 // écart assumé, voir le commentaire dans src/data/muling.ts).
 const DISCOUNTED_PRICE_EUR = 246.50;
 const COMMISSION_PER_UNIT_EUR = 100; // accord de principe du 22/07/2026 avec Muling (en USD à l'origine, non re-négocié en EUR)
+// CONDITIONS GÉNÉRALES — ⚠️ DOIT rester STRICTEMENT ÉGALE à TERMS_VERSION dans
+// supabase/functions/site-lead/index.ts (et à `terms.version` de src/i18n/dict.ts) :
+// deux valeurs différentes rendraient impossible de savoir quel texte une
+// personne a réellement accepté selon le formulaire qu'elle a rempli.
+const TERMS_VERSION = '2026-08-17';
+
 const BANK = {
     beneficiary: 'HuiZhou Muling Musical Instruments Co Ltd',
     iban: 'DE17 2022 0800 0047 4167 62',
@@ -152,7 +168,14 @@ Deno.serve(async (req) => {
         // perdre sur une case ; c'est le navigateur qui la rend obligatoire.
         // ⚠ Nécessite `affiliate_sales.terms_accepted_at` (ADD COLUMN nullable,
         // appliqué le 17/08/2026) : sans elle, l'insert lève une erreur → 500.
-        const termsAcceptedAt = body.termsAccepted === true ? new Date().toISOString() : null;
+        const termsAccepted = body.termsAccepted === true;
+        const termsAcceptedAt = termsAccepted ? new Date().toISOString() : null;
+
+        // NOUVEAUTÉS (v3) — 3ᵉ case du formulaire, la seule FACULTATIVE : elle
+        // ne conditionne pas la commande et n'est jamais pré-cochée. C'est elle,
+        // et pas l'acceptation des conditions générales, qui autorise à écrire à
+        // cette personne pour autre chose que sa commande.
+        const newsOptIn = body.newsOptIn === true;
 
         const rawQty = Number(body.quantity);
         const quantity = Number.isFinite(rawQty) && rawQty > 0 ? Math.min(Math.round(rawQty), 20) : 1;
@@ -188,6 +211,9 @@ Deno.serve(async (req) => {
             fulfillment_status: 'new',
             consent_at: new Date().toISOString(),
             terms_accepted_at: termsAcceptedAt,
+            terms_version: termsAccepted ? TERMS_VERSION : null,
+            news_opt_in: newsOptIn,
+            news_opt_in_at: newsOptIn ? new Date().toISOString() : null,
             admin_note: message,
             delivery_note: deliveryNote,
         }).select('id').single();

@@ -105,6 +105,16 @@
 //      `showcase_instruments` sur `public.site_leads` (ADD COLUMN nullable
 //      appliqué le 17/08/2026). Sans elles, l'insert lève une erreur → 500 →
 //      le visiteur voit un échec et le lead est perdu. Colonnes AVANT déploiement.
+// v25 (17/08/2026) : CONSENTEMENT AUX NOUVEAUTÉS, SÉPARÉ ET FACULTATIF.
+//      Une case « J'accepte les conditions générales » ne vaut PAS accord pour
+//      recevoir de la prospection : les 4 formulaires portent désormais une
+//      SECONDE case, facultative et jamais pré-cochée (NewsCheckbox.astro), qui
+//      écrit `news_opt_in` (état courant, false compris) et `news_opt_in_at`
+//      (date de l'accord). Sans elle, la base de contacts n'est pas utilisable
+//      pour annoncer une nouveauté. La notification à David affiche la réponse.
+//      ⚠ Nécessite `news_opt_in` (boolean) et `news_opt_in_at` (timestamptz) sur
+//      `public.site_leads` — ADD COLUMN nullable appliqué le 17/08/2026. Mêmes
+//      conséquences qu'en v24 si les colonnes manquent : 500 et lead perdu.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -810,6 +820,18 @@ Deno.serve(async (req) => {
         const termsAccepted = body.termsAccepted === true;
         const termsAcceptedAt = termsAccepted ? new Date().toISOString() : null;
 
+        // NOUVEAUTÉS (v25) — consentement FACULTATIF, case séparée et jamais
+        // pré-cochée. Accepter les conditions générales ne vaut PAS accord pour
+        // recevoir de la prospection : c'est cette valeur-là, et elle seule, qui
+        // autorise à écrire à quelqu'un pour autre chose que sa demande.
+        // `news_opt_in` porte l'ÉTAT COURANT (false compris : un refus est une
+        // information), `news_opt_in_at` la date à laquelle l'accord a été donné.
+        // ⚠ `false` est bien écrit lors d'une seconde soumission (le patch de
+        // `upsert()` ne saute que null / '') : un consentement peut donc se
+        // retirer en renvoyant le formulaire sans cocher — jamais l'inverse.
+        const newsOptIn = body.newsOptIn === true;
+        const newsOptInAt = newsOptIn ? new Date().toISOString() : null;
+
         // Demande de code de remise Neotone.
         const rawModel = String(body.neotoneModel ?? '').trim();
         const neotoneModel = ALLOWED_NEOTONE_MODEL.includes(rawModel) ? rawModel : null;
@@ -869,6 +891,8 @@ Deno.serve(async (req) => {
             showcase_instruments: showcaseInterests,
             terms_accepted_at: termsAcceptedAt,
             terms_version: termsAccepted ? TERMS_VERSION : null,
+            news_opt_in: newsOptIn,
+            news_opt_in_at: newsOptInAt,
             preferred_slots: preferredSlots,
         };
 
@@ -1110,6 +1134,11 @@ Deno.serve(async (req) => {
                             'Conditions générales': termsAcceptedAt
                                 ? `acceptées le ${termsAcceptedAt.slice(0, 10)} (version ${TERMS_VERSION})`
                                 : '⚠️ non acceptées',
+                            // Savoir tout de suite si on a le droit de réécrire
+                            // à cette personne pour autre chose que sa demande.
+                            'Recevoir les nouveautés': newsOptInAt
+                                ? `oui — accord donné le ${newsOptInAt.slice(0, 10)}`
+                                : 'non (case facultative laissée décochée)',
                         }, await slotConfirmBlockHtml(confirmLessonId, confirmSlots)))],
                     });
                 } catch (notifyErr) {

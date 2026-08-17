@@ -28,6 +28,7 @@ export const en: Dict = {
       newsletter: 'Newsletter',
       faq: 'FAQ',
       legal: 'Legal notice',
+      terms: 'Terms & conditions',
       rights: 'Independent Neotone ambassador · All prices are indicative and may change without notice.',
     },
     skip: 'Skip to content',
@@ -39,6 +40,14 @@ export const en: Dict = {
       link: 'terms and conditions',
       hint: 'They explain how I use your details, what you commit to when booking, and how to unsubscribe whenever you want.',
       required: 'To continue, you need to accept the terms and conditions.',
+    },
+    // ── NEWS OPT-IN — OPTIONAL checkbox on every form (see dict.ts) ───────────
+    // Must stay separate from `terms`: accepting the terms is not consent to
+    // receive news. Optional, never pre-ticked, never blocking.
+    news: {
+      check: 'I’d like to hear about upcoming dates and what’s new',
+      optional: 'optional',
+      hint: 'New showcase dates, the app opening up, new instruments. I write rarely, and you unsubscribe in one click. If you leave it unticked, I only write to you about your request.',
     },
     credentials: ['Conservatory award', 'The Voice · Season 11', 'Neotone · Yishama · Maison du Ngoni ambassador', 'Showroom Paris 20th'],
     beta: {
@@ -1309,6 +1318,17 @@ export const en: Dict = {
         items: [] as string[],
       },
       {
+        // Faithful translation of the FR block — David's own statement of
+        // 17/08/2026. Do not add any legal relationship that isn't sourced.
+        h: 'My role, and who receives the money',
+        p: 'Better said upfront, it avoids misunderstandings: this site presents instruments built by partners — Neotone, Yishama, the microphones, the Gonilélé harps. I act as a demonstrator, and I am not paid directly by those sales.',
+        items: [
+          'These are affiliate partnerships: they do generate a commission, and it is the association Résonances Productions (a French “association loi 1901”) that receives it, not me personally.',
+          'It changes nothing in what I tell you about an instrument: I answer as a musician who plays these instruments every day, and I would rather tell you an instrument isn’t right for you than sell it to you.',
+          'No payment is taken on this site, nor by me. Purchases happen elsewhere: on the HelloAsso shop of Résonances Productions, inside the app for its subscription, or directly with the manufacturer for a Muling microphone.',
+        ],
+      },
+      {
         h: 'What you give me, form by form',
         p: 'Nothing is collected behind your back: it all comes from what you type yourself. Optional fields stay empty if you leave them alone.',
         items: [
@@ -1316,7 +1336,7 @@ export const en: Dict = {
           'Contact: name, email, subject, message.',
           'App waiting list: first name, last name, email, whether you already own a handpan and which kind, the role or roles you declare (for yourself, to teach, to build), your goal, your number of students and — if you build handpans — your country, the number of notes you produce, the metals you work with and how you set your prices. Plus your motivation, if you apply as a beta tester.',
           'Muling microphone order: first name, last name, email, phone, quantity, full delivery address, instructions for the courier, message, and then the proof of payment you upload (image or PDF).',
-          'In every case, three things are added automatically: the site language, the page your request came from, and the date and time you accepted these terms, along with their version number.',
+          'In every case, a few things are added automatically: the site language, the page your request came from, the date and time you accepted these terms along with their version number, and — if you ticked the second, optional box — the date you agreed to receive my news.',
         ],
       },
       {
@@ -1325,13 +1345,17 @@ export const en: Dict = {
         items: [
           'Answer you. That is what every form exists for: I read and I reply personally.',
           'Organise what you asked for: confirming a slot, preparing the instruments for your visit, passing an order along. A one-to-one appointment request also creates a proposed lesson in my schedule, inside the app.',
-          'Keep you posted about what’s new: a new showcase date, the app opening up, a new instrument. In other words, I may write to you about something other than your original request. I write rarely, and I target: depending on which door you came in through and what you said you were interested in, you don’t get the same thing as everyone else. You can stop it whenever you want, with no explanation needed.',
+          'Keep you posted about what’s new — but only if you ticked the second box on the form, the optional one, which is never pre-ticked: a new showcase date, the app opening up, a new instrument. If you leave it unticked, I only write to you about your request, and nothing else. If you tick it, I write rarely, and I target: depending on which door you came in through and what you said you were interested in, you don’t get the same thing as everyone else. You can stop it whenever you want, with no explanation needed.',
         ],
       },
       {
         h: 'On what basis',
-        p: 'On your consent: the “I accept the terms and conditions” box you tick before sending a form. It is mandatory, and the date you accepted is recorded together with the version number of this page — that is what makes it possible to know later exactly which text you had in front of you. For a microphone order, your delivery details are also quite simply necessary for the parcel to be shipped. You can withdraw your consent at any time: it does not undo what has already been done, but it stops everything from then on.',
-        items: [] as string[],
+        p: 'On your consent — and there are two boxes, because there are two different things. You can withdraw either one at any time: it does not undo what has already been done, but it stops everything from then on.',
+        items: [
+          'The “I accept the terms and conditions” box is mandatory: without it I cannot handle your request. The date you accepted is recorded together with the version number of this page — that is what makes it possible to know later exactly which text you had in front of you.',
+          'The “I’d like to hear about upcoming dates and what’s new” box is optional, and it is never pre-ticked. It conditions nothing: your form goes through exactly the same if you leave it empty. Accepting the terms is not agreeing to receive my news — that is why there are two boxes and not one.',
+          'For a microphone order, your delivery details are also quite simply necessary for the parcel to be shipped.',
+        ],
       },
       {
         h: 'The tools your data passes through',
@@ -1342,7 +1366,7 @@ export const en: Dict = {
           'The contact@lesagedavid.fr mailbox — that is where notifications arrive and where I reply to you. It is hosted by Google.',
           'Google Fonts and YouTube thumbnails — the site loads its typefaces and the video thumbnails from Google’s servers. None of your answers are passed to them, but your browser’s IP address is.',
           'YouTube — a video only loads if you click on it, and it goes through youtube-nocookie.com. As long as you don’t click, nothing leaves.',
-          'Muling Musical Instruments Co., Ltd. (China) — only if you order a microphone: the manufacturer ships it, so it receives your name and address. A dedicated checkbox asks you explicitly before sending.',
+          'Muling Musical Instruments Co., Ltd. (China) — only if you order a microphone: the manufacturer ships it, so your order is emailed to it, at a Chinese address. That message contains your name, email, phone, the quantity ordered, your country, your full address, your delivery instructions, the amount and the order reference. A dedicated checkbox asks you explicitly before sending. The fact that the bank transfer goes to a German account changes nothing here: this information does travel to China.',
           'OVH — the lesagedavid.fr domain name.',
           'HelloAsso — some products, lessons and workshops are bought on the HelloAsso shop of Résonances Productions. By clicking, you leave this site: HelloAsso’s own policy then applies, and nothing you type over there goes through here.',
           'Stripe — the site reads the app’s displayed prices there, and nothing else: no personal data is sent to it from this site. The subscription and its payment happen inside the app, on its own site.',
@@ -1355,12 +1379,17 @@ export const en: Dict = {
           'The server functions that relay the forms run in the United States, at Vercel.',
           'My mailbox is hosted by Google, a US company — so are the emails we exchange.',
           'Typefaces and video thumbnails are loaded from Google servers.',
-          'For a microphone order only, your name and delivery address go to China, to the manufacturer.',
+          // ⚠️ Verified in supabase/functions/muling-order/index.ts (MULING_EMAIL
+          // = a QQ/Tencent address in China). The money and the data do NOT take
+          // the same route — never imply nothing leaves Europe.
+          'For a microphone order only, your order travels to China by email, to the manufacturer: name, email, phone, quantity, country, full address, delivery instructions, amount and reference. It is what makes shipping possible. Don’t confuse this with the payment, which stays in Europe: these are two different routes.',
         ],
       },
       {
         h: 'How long I keep all this',
-        p: 'Three years after our last exchange. And the clock resets to zero at every new interaction: you write to me, you book, you order, you reply or you click in one of my emails, and the three years start again. If nothing happens for three years, your information is deleted. You can of course ask for it to be deleted long before that — see below.',
+        // ⚠️ Do NOT bring back “or you click in one of my emails”: there is no
+        // click tracking at all (see the cookies section), and David wants none.
+        p: 'Three years after our last exchange. And the clock resets to zero at every new exchange: you write to me, you reply to me, you book, you order, and the three years start again. If nothing happens for three years, your information is deleted. You can of course ask for it to be deleted long before that — see below.',
         items: [] as string[],
       },
       {
@@ -1398,7 +1427,7 @@ export const en: Dict = {
       },
       {
         h: 'Appointments, showcases and orders',
-        p: 'No payment happens on this site. A one-to-one appointment is paid through the link I send you in my reply: payment is what reserves your slot and commits us both. Up to 24 h beforehand we move it with no problem at all; less than 24 h beforehand the payment stays with me, but you don’t lose your appointment — we reschedule it within 3 months. Showcases are free, by reservation, with a limited number of seats. A Muling microphone order is paid by bank transfer directly to the manufacturer, who then handles shipping and tracking.',
+        p: 'No payment happens on this site. A one-to-one appointment is paid through the link I send you in my reply: payment is what reserves your slot and commits us both. Up to 24 h beforehand we move it with no problem at all; less than 24 h beforehand the payment stays with me, but you don’t lose your appointment — we reschedule it within 3 months. Showcases are free, by reservation, with a limited number of seats. A Muling microphone order is paid by bank transfer, to an account located in Germany, directly to the manufacturer: you make the transfer yourself, and neither this site nor I take that payment. The manufacturer then handles shipping and tracking.',
         items: [] as string[],
       },
       {

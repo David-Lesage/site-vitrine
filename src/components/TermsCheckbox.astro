@@ -12,9 +12,10 @@
 // `terms_version` : c'est ça qui rend le consentement opposable, pas la coche.
 // ⚠️ Règle des TROIS écritures : formulaire → api/*.js → Edge Function.
 //
-// 🚧 La page `/conditions-generales` (+ `/en/…`) N'EXISTE PAS ENCORE : son
-// contenu juridique est traité séparément avec David. Le lien est déjà posé sur
-// la route prévue pour n'avoir rien à rechercher le jour où la page arrive.
+// ⚠️ NE PAS CONFONDRE avec NewsCheckbox.astro, posée juste en dessous d'elle
+// sur les quatre formulaires : celle-ci est OBLIGATOIRE et porte le cadre
+// d'utilisation ; l'autre est FACULTATIVE et porte le seul consentement à
+// recevoir des nouveautés. Les fusionner viderait le second de sa valeur.
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'

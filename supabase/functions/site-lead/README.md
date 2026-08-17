@@ -26,6 +26,25 @@ Différence assumée : `app-lead` **rejette** (400) une réponse incohérente ; 
 la **met à null**. C'est la porte d'entrée publique du site — perdre un contact sur un 400
 coûterait plus cher qu'une sous-réponse manquante.
 
+## Les deux consentements (17/08/2026) — ne jamais les fusionner
+
+Tous les formulaires du site portent **deux** cases, et elles ne disent pas la même chose :
+
+| Case | Obligatoire ? | Champ envoyé | Colonnes écrites |
+|---|---|---|---|
+| J'accepte les conditions générales | **oui** | `termsAccepted` | `terms_accepted_at` + `terms_version` |
+| Je veux être informé des prochaines dates et des nouveautés | **non**, jamais pré-cochée | `newsOptIn` | `news_opt_in` + `news_opt_in_at` |
+
+Accepter les conditions générales ne vaut **pas** accord pour recevoir de la prospection :
+c'est `news_opt_in` — et lui seul — qui autorise à écrire à quelqu'un pour autre chose que
+sa demande. Fusionner les deux cases viderait la seconde de sa valeur juridique.
+
+`false` est bien enregistré (ce n'est pas la même chose qu'une absence de réponse), et une
+seconde soumission sans cocher **retire** le consentement : ça échoue dans le bon sens.
+
+⚠️ `TERMS_VERSION` doit rester identique dans les **trois** endroits : ici,
+`muling-order/index.ts`, et `terms.version` de `src/i18n/dict.ts` / `en.ts`.
+
 ## Déployer
 
 Pas de CLI configurée ici : le déploiement passe par l'outil Supabase MCP

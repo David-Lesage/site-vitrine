@@ -34,6 +34,7 @@ const fr = {
       newsletter: 'Newsletter',
       faq: 'FAQ',
       legal: 'Mentions légales',
+      terms: 'Conditions générales',
       rights: 'Ambassadeur indépendant Neotone · Tous les prix sont indicatifs et peuvent évoluer sans préavis.',
     },
     skip: 'Aller au contenu',
@@ -42,13 +43,21 @@ const fr = {
     // liste d'attente, commande Muling. Rendu par src/components/TermsCheckbox.astro.
     // `check` contient `{link}` : le composant y insère le lien vers
     // /conditions-generales (localisé). Ne pas retirer le marqueur.
-    // 🚧 La page /conditions-generales RESTE À CRÉER (contenu juridique traité
-    // à part avec David) — jusque-là, le lien pointe sur une page absente.
     terms: {
       check: 'J’accepte les {link}',
       link: 'conditions générales',
       hint: 'Elles disent comment j’utilise tes coordonnées, ce à quoi tu t’engages en réservant, et comment te désinscrire quand tu veux.',
       required: 'Pour continuer, tu dois accepter les conditions générales.',
+    },
+    // ── ÊTRE INFORMÉ DES NOUVEAUTÉS — case FACULTATIVE de tous les formulaires ─
+    // (17/08/2026) SÉPARÉE de `terms` juste au-dessus, et elle doit le rester :
+    // accepter les conditions générales n'est PAS un accord pour recevoir de la
+    // prospection. Facultative, jamais pré-cochée, jamais bloquante.
+    // Rendue par src/components/NewsCheckbox.astro.
+    news: {
+      check: 'Je veux être informé·e des prochaines dates et des nouveautés',
+      optional: 'facultatif',
+      hint: 'Nouvelles dates de showcase, ouverture de l’application, nouveaux instruments. J’écris peu, et tu te désinscris en un clic. Si tu ne coches pas, je ne t’écris que pour ta demande.',
     },
     credentials: ['Prix du Conservatoire', 'The Voice · Saison 11', 'Ambassadeur Neotone · Yishama · Maison du Ngoni', 'Showroom Paris 20ᵉ'],
     beta: {
@@ -1436,14 +1445,31 @@ const fr = {
   //    localStorage sert UNIQUEMENT à mémoriser la langue (Layout.astro).
   //  · Google Fonts + i.ytimg.com chargés à l'affichage → Layout.astro,
   //    YouTube.astro (vérifiés présents dans le HTML de production).
-  //  · Muling (Chine) destinataire → MULING_EMAIL dans muling-order/index.ts.
+  //  · Muling (Chine) destinataire → MULING_EMAIL = '85846599@qq.com' (QQ /
+  //    Tencent, Chine) dans muling-order/index.ts ; les champs listés dans la
+  //    page sont EXACTEMENT ceux de `mulingHtml()` (nom, email, téléphone,
+  //    quantité, pays, adresse, consigne de livraison, montant, référence — le
+  //    message libre n'y est PAS, il ne part qu'en `admin_note`).
+  //  · Paiement Muling en Allemagne → `BANK` du même fichier : IBAN DE17…,
+  //    BIC SXPYDEHH, « Banking Circle S.A. — succursale allemande », bénéficiaire
+  //    = le fabricant lui-même. Argent et données ne suivent PAS le même chemin.
+  //  · Rôle de démonstrateur + affiliation perçue par Résonances Productions →
+  //    mots de David du 17/08/2026 (voir le commentaire de la section). Le
+  //    « association loi 1901 » vient du bloc `showroom` de ce fichier, déjà
+  //    publié. Ne rien affirmer de plus sur le lien juridique : rien d'autre
+  //    n'est sourcé.
   //  · Stripe = lecture des tarifs seulement → api/prices.js, src/lib/prices.ts.
   //  · Lien de désinscription → Edge Function `unsubscribe-updates` ACTIVE.
   //  · Snipcart est dans le code mais DÉSACTIVÉ en production (aucune clé
   //    PUBLIC_SNIPCART_KEY) → volontairement non cité, aucun paiement sur le site.
-  // ⚠️ `version` DOIT rester égal à TERMS_VERSION dans site-lead/index.ts :
-  //    c'est ce couple qui permet de savoir quel texte chaque personne a accepté.
-  //    Changer le texte → changer les DEUX, jamais un seul.
+  // ⚠️ `version` DOIT rester égal à TERMS_VERSION dans site-lead/index.ts ET
+  //    dans muling-order/index.ts (les TROIS) : c'est ce couple qui permet de
+  //    savoir quel texte chaque personne a accepté. Changer le texte → changer
+  //    les trois, jamais un seul.
+  //    (17/08/2026 : la version n'a PAS été incrémentée en ajoutant la case
+  //    facultative « nouveautés » — ce texte-ci n'a jamais été mis en ligne, donc
+  //    personne n'a accepté la version antérieure. À la prochaine modification
+  //    après déploiement, incrémenter.)
   terms: {
     title: 'Conditions générales — David Lesage',
     description:
@@ -1461,6 +1487,22 @@ const fr = {
         items: [] as string[],
       },
       {
+        // ⚠️ MOTS DE DAVID (17/08/2026), à ne pas « améliorer » : « c'est
+        // résonances productions qui reçoit les fonds, David est un
+        // démonstrateur, je ne suis pas directement rémunéré. Résonances reçoit
+        // cet argent, c'est du partenariat d'affiliation. »
+        // « association loi 1901 » est repris du bloc `showroom` de ce même
+        // fichier (déjà publié sur le site) — aucun autre lien juridique entre
+        // David et l'association n'est affirmé ici, parce qu'aucun n'est sourcé.
+        h: 'Mon rôle, et qui perçoit l’argent',
+        p: 'Autant le dire d’emblée, ça évite les malentendus : je présente sur ce site des instruments fabriqués par des partenaires — Neotone, Yishama, les micros, les harpes Gonilélé. J’interviens comme démonstrateur, et je ne suis pas rémunéré directement par ces ventes.',
+        items: [
+          'Ces partenariats sont des partenariats d’affiliation : ils donnent lieu à une rémunération, et c’est l’association Résonances Productions (association loi 1901) qui la perçoit, pas moi à titre personnel.',
+          'Ça ne change rien à ce que je te dis d’un instrument : je te réponds en musicien qui joue ces instruments au quotidien, et je préfère te dire qu’un instrument ne te convient pas plutôt que de te le vendre.',
+          'Aucun paiement n’est encaissé sur ce site, ni par moi. Les achats se font ailleurs : sur la boutique HelloAsso de Résonances Productions, dans l’application pour son abonnement, ou directement auprès du fabricant pour un micro Muling.',
+        ],
+      },
+      {
         h: 'Ce que tu me donnes, formulaire par formulaire',
         p: 'Rien n’est collecté à ton insu : tout vient de ce que tu écris toi-même. Les champs facultatifs restent vides si tu n’y touches pas.',
         items: [
@@ -1468,7 +1510,7 @@ const fr = {
           'Contact : nom et prénom, email, sujet, message.',
           'Liste d’attente de l’application : prénom, nom, email, si tu as déjà un handpan et lequel, la ou les casquettes que tu déclares (pour toi, pour enseigner, pour fabriquer), ton objectif, ton nombre d’élèves et — si tu fabriques des handpans — ton pays, le nombre de notes que tu produis, les métaux que tu travailles et ta façon de fixer tes prix. Plus ta motivation, si tu candidates comme bêta-testeur.',
           'Commande du micro Muling : prénom, nom, email, téléphone, quantité, adresse de livraison complète, consignes pour le livreur, message, puis la preuve de virement que tu déposes (image ou PDF).',
-          'Dans tous les cas s’ajoutent automatiquement : la langue du site, la page d’où part ta demande, et la date et l’heure auxquelles tu as accepté ces conditions, avec leur numéro de version.',
+          'Dans tous les cas s’ajoutent automatiquement : la langue du site, la page d’où part ta demande, la date et l’heure auxquelles tu as accepté ces conditions avec leur numéro de version, et — si tu as coché la seconde case, celle qui est facultative — la date à laquelle tu as accepté de recevoir mes nouveautés.',
         ],
       },
       {
@@ -1477,13 +1519,17 @@ const fr = {
         items: [
           'Te répondre. C’est la raison d’être de chaque formulaire : je lis et je réponds personnellement.',
           'Organiser ce que tu as demandé : confirmer un créneau, préparer les instruments pour ta venue, faire suivre une commande. Une demande de rendez-vous individuel crée aussi une proposition de cours dans mon agenda, à l’intérieur de l’application.',
-          'Te tenir au courant de mes nouveautés : une nouvelle date de showcase, l’ouverture de l’application, un nouvel instrument. Autrement dit, il peut m’arriver de t’écrire pour autre chose que ta demande de départ. J’écris peu, et je cible : selon la porte par laquelle tu es entré et selon ce que tu as déclaré t’intéresser, tu ne reçois pas la même chose que quelqu’un d’autre. Tu peux dire stop quand tu veux, sans avoir à te justifier.',
+          'Te tenir au courant de mes nouveautés — mais seulement si tu as coché la seconde case du formulaire, celle qui est facultative et qui n’est jamais cochée d’avance : une nouvelle date de showcase, l’ouverture de l’application, un nouvel instrument. Si tu ne la coches pas, je ne t’écris que pour ta demande, et rien d’autre. Si tu la coches, j’écris peu, et je cible : selon la porte par laquelle tu es entré et selon ce que tu as déclaré t’intéresser, tu ne reçois pas la même chose que quelqu’un d’autre. Tu peux dire stop quand tu veux, sans avoir à te justifier.',
         ],
       },
       {
         h: 'Sur quelle base',
-        p: 'Sur ton consentement : la case « J’accepte les conditions générales » que tu coches avant d’envoyer un formulaire. Elle est obligatoire, et la date de ton acceptation est enregistrée avec le numéro de version de cette page — c’est ce qui permet de savoir plus tard quel texte exactement tu avais sous les yeux. Pour une commande de micro, tes coordonnées de livraison sont en plus tout simplement nécessaires pour que le colis parte. Tu peux retirer ton consentement à tout moment : ça n’annule pas ce qui a déjà été fait, mais ça arrête tout pour la suite.',
-        items: [] as string[],
+        p: 'Sur ton consentement — et il y a deux cases, parce qu’il y a deux choses différentes. Tu peux retirer l’un comme l’autre à tout moment : ça n’annule pas ce qui a déjà été fait, mais ça arrête tout pour la suite.',
+        items: [
+          'La case « J’accepte les conditions générales » est obligatoire : sans elle je ne peux pas traiter ta demande. La date de ton acceptation est enregistrée avec le numéro de version de cette page — c’est ce qui permet de savoir plus tard quel texte exactement tu avais sous les yeux.',
+          'La case « Je veux être informé·e des prochaines dates et des nouveautés » est facultative, et elle n’est jamais cochée d’avance. Elle ne conditionne rien : ton formulaire part exactement pareil si tu la laisses vide. Accepter les conditions générales ne vaut pas accord pour recevoir mes nouveautés — c’est pour ça que ce sont deux cases et non une.',
+          'Pour une commande de micro, tes coordonnées de livraison sont en plus tout simplement nécessaires pour que le colis parte.',
+        ],
       },
       {
         h: 'Les outils qui voient passer tes données',
@@ -1494,7 +1540,7 @@ const fr = {
           'La messagerie contact@lesagedavid.fr — c’est là qu’arrivent les notifications et que je te réponds. Elle est hébergée chez Google.',
           'Google Fonts et les vignettes YouTube — le site charge ses polices d’écriture et les miniatures des vidéos depuis les serveurs de Google. Aucune de tes réponses ne leur est transmise, mais l’adresse IP de ton navigateur, oui.',
           'YouTube — une vidéo ne se charge que si tu cliques dessus, et elle passe par youtube-nocookie.com. Tant que tu ne cliques pas, rien ne part.',
-          'Muling Musical Instruments Co., Ltd. (Chine) — uniquement si tu commandes un micro : c’est le fabricant qui expédie, il reçoit donc ton nom et ton adresse. Une case dédiée te le demande explicitement avant l’envoi.',
+          'Muling Musical Instruments Co., Ltd. (Chine) — uniquement si tu commandes un micro : c’est le fabricant qui expédie, ta commande lui est donc envoyée par email, à une adresse chinoise. Ce message contient ton nom, ton email, ton téléphone, la quantité commandée, ton pays, ton adresse complète, tes consignes de livraison, le montant et la référence de commande. Une case dédiée te le demande explicitement avant l’envoi. Le fait que le virement, lui, parte sur un compte allemand n’y change rien : ces informations partent bien en Chine.',
           'OVH — le nom de domaine lesagedavid.fr.',
           'HelloAsso — certains produits, cours et stages s’achètent sur la boutique HelloAsso de Résonances Productions. En cliquant, tu quittes ce site : c’est alors la politique de HelloAsso qui s’applique, et rien de ce que tu saisis là-bas ne passe par ici.',
           'Stripe — le site y lit les tarifs affichés de l’application, et rien d’autre : aucune donnée personnelle ne lui est envoyée depuis ce site. L’abonnement et son paiement se font dans l’application, sur son propre site.',
@@ -1507,12 +1553,21 @@ const fr = {
           'Les fonctions serveur qui relaient les formulaires s’exécutent aux États-Unis, chez Vercel.',
           'Ma messagerie est hébergée chez Google, société américaine — donc les emails que nous échangeons aussi.',
           'Les polices d’écriture et les vignettes vidéo sont chargées depuis des serveurs de Google.',
-          'Pour une commande de micro uniquement, ton nom et ton adresse de livraison partent en Chine, chez le fabricant.',
+          // ⚠️ Vérifié dans supabase/functions/muling-order/index.ts : MULING_EMAIL
+          // = 85846599@qq.com (QQ / Tencent, Chine) et `mulingHtml()` liste
+          // exactement ces champs. Le compte bancaire est allemand (BANK.iban =
+          // DE17…), mais l'argent et les données ne suivent PAS le même chemin :
+          // ne jamais laisser entendre que rien ne sort d'Europe.
+          'Pour une commande de micro uniquement, ta commande part en Chine, par email, chez le fabricant : nom, email, téléphone, quantité, pays, adresse complète, consignes de livraison, montant et référence. C’est indispensable pour qu’il puisse t’expédier le colis. Attention à ne pas confondre avec le paiement, qui lui reste en Europe : ce sont deux chemins différents.',
         ],
       },
       {
         h: 'Combien de temps je garde tout ça',
-        p: 'Trois ans après notre dernier échange. Et le compteur repart de zéro à chaque nouvelle interaction : tu m’écris, tu réserves, tu commandes, tu réponds ou tu cliques dans un de mes emails, et les trois ans recommencent. Si plus rien ne se passe pendant trois ans, tes informations sont effacées. Tu peux évidemment demander leur effacement bien avant — voir plus bas.',
+        // ⚠️ Ne PAS réintroduire « ou tu cliques dans un de mes emails » : aucun
+        // suivi de clic n'existe (aucun pixel, aucun lien tracé — cf. la section
+        // « Cookies et mesure d'audience »), et David n'en veut pas. La règle
+        // est bien 3 ans après le dernier ÉCHANGE, ça c'est sa décision.
+        p: 'Trois ans après notre dernier échange. Et le compteur repart de zéro à chaque nouvel échange : tu m’écris, tu me réponds, tu réserves, tu commandes, et les trois ans recommencent. Si plus rien ne se passe pendant trois ans, tes informations sont effacées. Tu peux évidemment demander leur effacement bien avant — voir plus bas.',
         items: [] as string[],
       },
       {
@@ -1550,7 +1605,7 @@ const fr = {
       },
       {
         h: 'Rendez-vous, showcases et commandes',
-        p: 'Aucun paiement ne se fait sur ce site. Un rendez-vous individuel se règle par le lien que je t’envoie dans ma réponse : c’est le règlement qui réserve ton créneau et nous engage tous les deux. Jusqu’à 24 h avant, on le décale sans aucun souci ; à moins de 24 h, le règlement reste acquis mais tu ne perds pas ton rendez-vous — on le reporte dans les 3 mois. Les showcases sont gratuits, sur réservation, avec un nombre de places limité. Une commande de micro Muling se règle par virement directement au fabricant, qui assure ensuite l’expédition et le suivi.',
+        p: 'Aucun paiement ne se fait sur ce site. Un rendez-vous individuel se règle par le lien que je t’envoie dans ma réponse : c’est le règlement qui réserve ton créneau et nous engage tous les deux. Jusqu’à 24 h avant, on le décale sans aucun souci ; à moins de 24 h, le règlement reste acquis mais tu ne perds pas ton rendez-vous — on le reporte dans les 3 mois. Les showcases sont gratuits, sur réservation, avec un nombre de places limité. Une commande de micro Muling se règle par virement bancaire, sur un compte situé en Allemagne, directement auprès du fabricant : c’est toi qui fais la démarche, à ton initiative, et ni ce site ni moi n’encaissons ce paiement. Le fabricant assure ensuite l’expédition et le suivi.',
         items: [] as string[],
       },
       {

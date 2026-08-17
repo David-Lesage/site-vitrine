@@ -8,6 +8,7 @@
 // Inclure UNE fois par page contenant de tels boutons.
 import { getDict } from '@/i18n/dict'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
+import NewsCheckbox from '@/components/NewsCheckbox.astro'
 import { sessionOptions, priceGrid } from '@/lib/sessions'
 import { sessionTypes, demoInstruments, showcaseInterests } from '@/data/site'
 import { upcomingShowcases } from '@/lib/agenda'
@@ -262,6 +263,12 @@ const upcoming = JSON.stringify(
           formulaires du site. Volontairement placée juste avant le bouton :
           c'est le dernier geste avant l'envoi. */}
       <TermsCheckbox lang={lang} class="mt-1" />
+
+      {/* Nouveautés — case FACULTATIVE, jamais pré-cochée, juste sous la case
+          obligatoire. Accepter les conditions générales ne vaut pas accord pour
+          recevoir de la prospection : c'est CETTE case-là qui le dit, et elle
+          ne bloque jamais l'envoi. */}
+      <NewsCheckbox lang={lang} />
 
       <button type="submit" data-sending={bk.sending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{bk.submit}</button>
       <p data-bk-error class="hidden text-sm font-600 text-rust">{bk.error}</p>
@@ -532,6 +539,9 @@ const upcoming = JSON.stringify(
           // Consentement aux conditions générales (case obligatoire) : c'est le
           // serveur qui l'horodate, le navigateur n'envoie que le fait.
           termsAccepted: data.get('termsAccepted') !== null,
+          // Nouveautés (case FACULTATIVE) : toujours envoyé, y compris à false —
+          // un refus est une information, pas une absence de réponse.
+          newsOptIn: data.get('newsOptIn') !== null,
           preferredSlots,
           source,
           lang: form.dataset.lang || 'fr',
