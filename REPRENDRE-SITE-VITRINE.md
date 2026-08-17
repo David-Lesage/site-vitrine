@@ -29,9 +29,51 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 17/08/2026 (matin) — 🏛️ Identification légale de Résonances Productions (CG)
+
+Commit `e6df505`, **poussé et déployé en prod** (FR + EN, 200, vérifié à l'écran).
+
+### Ce qui a été ajouté
+La page `/conditions-generales` disait déjà que les partenariats d'affiliation sont perçus par
+**l'association Résonances Productions**, sans aucune identification. Trois puces dans la
+section **« Mon rôle, et qui perçoit l'argent »** (FR `dict.ts` / EN `en.ts`, bloc `terms`
+uniquement) :
+1. l'existante, complétée en « association loi 1901 **à but non lucratif** » ;
+2. **l'identification** : déclarée à la sous-préfecture de **Pamiers**, publiée au **JO des
+   associations le 28/10/2017** — **RNA W092002501** · **SIRET 919 514 075 00010** · **APE
+   9001Z** (arts du spectacle vivant) · siège **2 impasse des Bleuets, 09600 Aigues-Vives** ·
+   correspondance **29 rue des Orteaux, 75020 Paris** · **contact@resonancesproductions.org** ;
+3. une puce qui **lève l'ambiguïté** : cette identification dit qui perçoit l'argent, **et rien
+   de plus** — l'éditeur du site reste **David Lesage, personne physique**.
+
+**Source unique** : `https://www.resonancesproductions.org/association` (page publique de
+l'association), transmise par David. **Rien d'autre n'a été déduit** : pas de n° de TVA, pas de
+nom de dirigeant, pas d'autre date. Sourcé en commentaire dans les deux dictionnaires.
+
+### 🚨 Ce qui n'a PAS bougé, et pourquoi
+- **`mentions-legales` (bloc `legal`) : pas touché.** C'est elle qui porte l'identité de
+  l'éditeur, donc elle dépend de l'arbitrage **en attente avec Yannick** : *« le site doit-il
+  être édité au nom de l'association ou de David ? »*. Ajouter une identification ≠ transférer
+  une responsabilité.
+- **Aucun lien juridique affirmé** entre David et l'association (ni mandat, ni représentation,
+  ni gérance, ni « sa structure ») — aucun n'est sourcé.
+- **`terms.version` reste `2026-08-17`** (= `TERMS_VERSION` dans `supabase/functions/site-lead/`) :
+  la page a été publiée le jour même, et c'est un **complément d'identification**, pas un
+  changement d'engagement. Personne n'a accepté un texte contradictoire.
+- **Aucune Edge Function redéployée, aucune donnée touchée en base** (que du texte de site).
+
+Vérifié : `astro build` (89 pages), rendu réel FR + EN en **375 px** (et 320 px) et en desktop —
+`scrollWidth == clientWidth`, aucun débordement des identifiants longs (SIRET, RNA, courriel) —
+puis en **production** sur les deux URLs.
+
+---
+
 ## ÉTAT ACTUEL — 17/08/2026 — 🔗 Lien reprenable « je signale mon virement » (Muling)
 
-**⚠️ COMMITÉ, PAS DÉPLOYÉ** (ni Vercel, ni Edge Function) — voir « Reste à faire ».
+**⚠️ Vercel : DÉPLOYÉ depuis le 17/08 (matin)** — emporté par le déploiement des CG ci-dessus.
+Le lien `/micro-muling?commande=<uuid>` répond 200 en prod, l'URL pour Anne est donc utilisable.
+**⚠️ L'Edge Function `muling-order` v4 reste, elle, NON déployée** (point 2 ci-dessous) : les
+prochains emails de commande ne porteront le bouton qu'après son redéploiement.
 
 ### Le bug (constaté sur une vraie cliente)
 L'email de commande Muling disait *« reviens sur l'écran de confirmation »* — or cet écran
