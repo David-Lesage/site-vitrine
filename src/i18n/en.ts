@@ -1287,6 +1287,136 @@ export const en: Dict = {
       { h: 'Prices & VAT', p: 'All displayed prices are indicative and may change without notice. The VAT rates applied by the calculator are the standard 2026 rates; customs fees outside the EU remain the buyer’s responsibility.' },
     ],
   },
+  // ── TERMS & CONDITIONS (page /en/conditions-generales) ────────────────────
+  // 🚨 Legal page published in a real person's name. Full translation of the FR
+  // block — never a summary. Sources for every factual claim are listed in the
+  // comment above the `terms` block in dict.ts. ⚠️ `version` must stay equal to
+  // TERMS_VERSION in supabase/functions/site-lead/index.ts.
+  terms: {
+    title: 'Terms & conditions — David Lesage',
+    description:
+      'Terms and conditions of the David Lesage website: what the forms collect, why, with which tools, how long it is kept, and how to exercise your rights.',
+    h1: 'Terms & conditions',
+    versionLabel: 'Version',
+    version: '2026-08-17',
+    updatedLabel: 'Last updated',
+    updated: '17 August 2026',
+    lead: 'This page says plainly what happens when you fill in a form on this site: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. No jargon. If anything is unclear, write to me — I’m the one reading.',
+    sections: [
+      {
+        h: 'Who is responsible',
+        p: 'David Lesage — musician, teacher and inventor. Showroom: 29 rue des Orteaux, 75020 Paris. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52. There is no marketing department behind this site: I decide what gets collected, I read it, and I answer you myself.',
+        items: [] as string[],
+      },
+      {
+        h: 'What you give me, form by form',
+        p: 'Nothing is collected behind your back: it all comes from what you type yourself. Optional fields stay empty if you leave them alone.',
+        items: [
+          'Booking (showroom visit, seat at a showcase, one-to-one appointment, Neotone discount code request): first name, last name, email, phone if you give it, number of people, target date, up to three time slots you propose, type and format of the session (in person or online), instruments you want to discover, Neotone model you have in mind, country, social media account, how you found me, how long you have been playing, what you would like to achieve, and your message.',
+          'Contact: name, email, subject, message.',
+          'App waiting list: first name, last name, email, whether you already own a handpan and which kind, the role or roles you declare (for yourself, to teach, to build), your goal, your number of students and — if you build handpans — your country, the number of notes you produce, the metals you work with and how you set your prices. Plus your motivation, if you apply as a beta tester.',
+          'Muling microphone order: first name, last name, email, phone, quantity, full delivery address, instructions for the courier, message, and then the proof of payment you upload (image or PDF).',
+          'In every case, three things are added automatically: the site language, the page your request came from, and the date and time you accepted these terms, along with their version number.',
+        ],
+      },
+      {
+        h: 'What I do with it',
+        p: 'Three things, not one more.',
+        items: [
+          'Answer you. That is what every form exists for: I read and I reply personally.',
+          'Organise what you asked for: confirming a slot, preparing the instruments for your visit, passing an order along. A one-to-one appointment request also creates a proposed lesson in my schedule, inside the app.',
+          'Keep you posted about what’s new: a new showcase date, the app opening up, a new instrument. In other words, I may write to you about something other than your original request. I write rarely, and I target: depending on which door you came in through and what you said you were interested in, you don’t get the same thing as everyone else. You can stop it whenever you want, with no explanation needed.',
+        ],
+      },
+      {
+        h: 'On what basis',
+        p: 'On your consent: the “I accept the terms and conditions” box you tick before sending a form. It is mandatory, and the date you accepted is recorded together with the version number of this page — that is what makes it possible to know later exactly which text you had in front of you. For a microphone order, your delivery details are also quite simply necessary for the parcel to be shipped. You can withdraw your consent at any time: it does not undo what has already been done, but it stops everything from then on.',
+        items: [] as string[],
+      },
+      {
+        h: 'The tools your data passes through',
+        p: 'I never sell or rent any data, to anyone. Here is the complete list of the services actually involved.',
+        items: [
+          'Supabase — the database where your answers are stored, and the storage space for payment proofs. The project is hosted in Ireland, inside the European Union.',
+          'Vercel — the site’s host. The small server functions that relay the forms run in the United States.',
+          'The contact@lesagedavid.fr mailbox — that is where notifications arrive and where I reply to you. It is hosted by Google.',
+          'Google Fonts and YouTube thumbnails — the site loads its typefaces and the video thumbnails from Google’s servers. None of your answers are passed to them, but your browser’s IP address is.',
+          'YouTube — a video only loads if you click on it, and it goes through youtube-nocookie.com. As long as you don’t click, nothing leaves.',
+          'Muling Musical Instruments Co., Ltd. (China) — only if you order a microphone: the manufacturer ships it, so it receives your name and address. A dedicated checkbox asks you explicitly before sending.',
+          'OVH — the lesagedavid.fr domain name.',
+          'HelloAsso — some products, lessons and workshops are bought on the HelloAsso shop of Résonances Productions. By clicking, you leave this site: HelloAsso’s own policy then applies, and nothing you type over there goes through here.',
+          'Stripe — the site reads the app’s displayed prices there, and nothing else: no personal data is sent to it from this site. The subscription and its payment happen inside the app, on its own site.',
+        ],
+      },
+      {
+        h: 'What leaves the European Union',
+        p: 'Let’s be straight about it: part of the journey happens outside Europe. The database itself stays in Ireland.',
+        items: [
+          'The server functions that relay the forms run in the United States, at Vercel.',
+          'My mailbox is hosted by Google, a US company — so are the emails we exchange.',
+          'Typefaces and video thumbnails are loaded from Google servers.',
+          'For a microphone order only, your name and delivery address go to China, to the manufacturer.',
+        ],
+      },
+      {
+        h: 'How long I keep all this',
+        p: 'Three years after our last exchange. And the clock resets to zero at every new interaction: you write to me, you book, you order, you reply or you click in one of my emails, and the three years start again. If nothing happens for three years, your information is deleted. You can of course ask for it to be deleted long before that — see below.',
+        items: [] as string[],
+      },
+      {
+        h: 'Cookies and analytics',
+        p: 'This site sets no cookies. It uses no analytics tool, no advertising pixel, no tracker — which is why there is no banner to accept when you arrive. The only thing your browser remembers locally is the language you chose: it never leaves your device.',
+        items: [] as string[],
+      },
+      {
+        h: 'Your rights, and how to use them',
+        p: 'One move is enough: write to contact@lesagedavid.fr. No form to fill in, no proof to provide unless I have a serious doubt about your identity. I reply personally, within one month at most.',
+        items: [
+          'Access — know exactly what I hold about you; I can send you a copy.',
+          'Rectification — correct anything wrong or out of date.',
+          'Erasure — delete everything.',
+          'Objection — refuse a use, in particular the news emails.',
+          'Portability — get back what you gave me, in a file you can reuse elsewhere.',
+          'Restriction — ask for your information to be set aside while we settle a disagreement.',
+          'Withdrawal of consent — at any time, with no explanation needed.',
+        ],
+      },
+      {
+        h: 'Stopping my emails',
+        p: 'Every news email contains an unsubscribe link: one click and it’s done. Otherwise, a single line to contact@lesagedavid.fr is enough — “stop” does the job perfectly, and you owe me no explanation. It cancels neither an appointment nor an order in progress: the messages needed to follow up your request keep coming.',
+        items: [] as string[],
+      },
+      {
+        h: 'If you disagree with me',
+        p: 'You can lodge a complaint with the CNIL, the French data protection authority: CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 — www.cnil.fr. But write to me first if you like: it’s faster, and I’d rather sort things out directly.',
+        items: [] as string[],
+      },
+      {
+        h: 'Security',
+        p: 'The site is served over HTTPS end to end. The database can only be reached with dedicated credentials, and its access rules mean only my administrator account can read the requests. Payment proofs uploaded with an order go into a private storage space, never a public one. No banking details are ever entered on this site: no payment is taken here.',
+        items: [] as string[],
+      },
+      {
+        h: 'Appointments, showcases and orders',
+        p: 'No payment happens on this site. A one-to-one appointment is paid through the link I send you in my reply: payment is what reserves your slot and commits us both. Up to 24 h beforehand we move it with no problem at all; less than 24 h beforehand the payment stays with me, but you don’t lose your appointment — we reschedule it within 3 months. Showcases are free, by reservation, with a limited number of seats. A Muling microphone order is paid by bank transfer directly to the manufacturer, who then handles shipping and tracking.',
+        items: [] as string[],
+      },
+      {
+        h: 'The site’s content',
+        p: 'Texts, photographs and videos belong to their respective authors. The details — publisher, hosting, intellectual property, prices and VAT — are on the Legal notice page.',
+        items: [] as string[],
+      },
+      {
+        h: 'If these terms change',
+        p: 'This page carries a version number and a date. When the text changes, the version changes with it, and the new one applies to forms sent afterwards. What you accepted stays recorded with its own number: we will always know which text you had in front of you that day.',
+        items: [] as string[],
+      },
+    ],
+    contactTitle: 'A question about this page?',
+    contactText: 'Write to contact@lesagedavid.fr. I answer personally, and I much prefer a question asked too early to a doubt kept to yourself.',
+    contactCta: 'Write to me',
+    legalLink: 'See the legal notice',
+  },
   data: {
     woodSupplements: {
       frene: 'Included in the base price',

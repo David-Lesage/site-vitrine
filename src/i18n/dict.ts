@@ -1415,6 +1415,160 @@ const fr = {
       { h: 'Prix & TVA', p: 'Tous les prix affichés sont indicatifs et peuvent évoluer sans préavis. Les taux de TVA appliqués par le calculateur sont les taux standards en vigueur en 2026 ; les frais de douane hors UE restent à la charge de l’acheteur.' },
     ],
   },
+  // ── CONDITIONS GÉNÉRALES (page /conditions-generales) ─────────────────────
+  // 🚨 PAGE JURIDIQUE PUBLIÉE AU NOM D'UNE PERSONNE RÉELLE. Même règle que la
+  // page /a-propos : rien d'inventé, chaque affirmation est vérifiable dans le
+  // dépôt ou dans les faits. Sources de chaque affirmation, vérifiées le
+  // 17/08/2026 :
+  //  · Identité de l'éditeur → recopiée MOT POUR MOT du bloc `legal` ci-dessus
+  //    (aucun SIRET ni forme juridique n'y figure : ne PAS en inventer un).
+  //  · Données collectées → BookingForm.astro, ContactPage.astro,
+  //    BetaNotice.astro, MulingOrderForm.astro + l'objet `profile` de
+  //    supabase/functions/site-lead/index.ts.
+  //  · Supabase hébergé en Irlande → projet zqcuhnjjrgmybftppkcl, région
+  //    `eu-west-1` (API Supabase).
+  //  · Fonctions serveur aux États-Unis → en-tête `x-vercel-id: lhr1::iad1::…`
+  //    sur https://www.lesagedavid.fr/api/subscribe (iad1 = Washington).
+  //  · Messagerie chez Google → MX de lesagedavid.fr = aspmx.l.google.com,
+  //    SPF `include:_spf.google.com`.
+  //  · Aucun cookie / aucune mesure d'audience → aucun `set-cookie` en prod,
+  //    aucune occurrence de @vercel/analytics, gtag, fbq, matomo… dans le dépôt.
+  //    localStorage sert UNIQUEMENT à mémoriser la langue (Layout.astro).
+  //  · Google Fonts + i.ytimg.com chargés à l'affichage → Layout.astro,
+  //    YouTube.astro (vérifiés présents dans le HTML de production).
+  //  · Muling (Chine) destinataire → MULING_EMAIL dans muling-order/index.ts.
+  //  · Stripe = lecture des tarifs seulement → api/prices.js, src/lib/prices.ts.
+  //  · Lien de désinscription → Edge Function `unsubscribe-updates` ACTIVE.
+  //  · Snipcart est dans le code mais DÉSACTIVÉ en production (aucune clé
+  //    PUBLIC_SNIPCART_KEY) → volontairement non cité, aucun paiement sur le site.
+  // ⚠️ `version` DOIT rester égal à TERMS_VERSION dans site-lead/index.ts :
+  //    c'est ce couple qui permet de savoir quel texte chaque personne a accepté.
+  //    Changer le texte → changer les DEUX, jamais un seul.
+  terms: {
+    title: 'Conditions générales — David Lesage',
+    description:
+      'Conditions générales du site David Lesage : ce que je collecte dans les formulaires, pourquoi, avec quels outils, combien de temps je le garde, et comment exercer tes droits.',
+    h1: 'Conditions générales',
+    versionLabel: 'Version',
+    version: '2026-08-17',
+    updatedLabel: 'Dernière mise à jour',
+    updated: '17 août 2026',
+    lead: 'Cette page dit en clair ce qui se passe quand tu remplis un formulaire sur ce site : ce que je collecte, pourquoi, avec quels outils, combien de temps je le garde, et comment tu reprends la main quand tu veux. Pas de jargon. Si quelque chose n’est pas clair, écris-moi — c’est moi qui lis.',
+    sections: [
+      {
+        h: 'Qui est responsable',
+        p: 'David Lesage — musicien, pédagogue et inventeur. Showroom : 29 rue des Orteaux, 75020 Paris. Email : contact@lesagedavid.fr · Téléphone : +33 6 10 73 31 52. Il n’y a pas de service marketing derrière ce site : c’est moi qui décide de ce qui est collecté, moi qui le lis, et moi qui te réponds.',
+        items: [] as string[],
+      },
+      {
+        h: 'Ce que tu me donnes, formulaire par formulaire',
+        p: 'Rien n’est collecté à ton insu : tout vient de ce que tu écris toi-même. Les champs facultatifs restent vides si tu n’y touches pas.',
+        items: [
+          'Réservation (venue au showroom, place à un showcase, rendez-vous individuel, demande de code de remise Neotone) : prénom, nom, email, téléphone si tu le donnes, nombre de personnes, date visée, jusqu’à trois créneaux que tu proposes, type et format de séance (sur place ou en visio), instruments que tu veux découvrir, modèle Neotone envisagé, pays, compte de réseau social, comment tu m’as connu, depuis quand tu joues, ce que tu aimerais réussir, et ton message.',
+          'Contact : nom et prénom, email, sujet, message.',
+          'Liste d’attente de l’application : prénom, nom, email, si tu as déjà un handpan et lequel, la ou les casquettes que tu déclares (pour toi, pour enseigner, pour fabriquer), ton objectif, ton nombre d’élèves et — si tu fabriques des handpans — ton pays, le nombre de notes que tu produis, les métaux que tu travailles et ta façon de fixer tes prix. Plus ta motivation, si tu candidates comme bêta-testeur.',
+          'Commande du micro Muling : prénom, nom, email, téléphone, quantité, adresse de livraison complète, consignes pour le livreur, message, puis la preuve de virement que tu déposes (image ou PDF).',
+          'Dans tous les cas s’ajoutent automatiquement : la langue du site, la page d’où part ta demande, et la date et l’heure auxquelles tu as accepté ces conditions, avec leur numéro de version.',
+        ],
+      },
+      {
+        h: 'Ce que j’en fais',
+        p: 'Trois choses, pas une de plus.',
+        items: [
+          'Te répondre. C’est la raison d’être de chaque formulaire : je lis et je réponds personnellement.',
+          'Organiser ce que tu as demandé : confirmer un créneau, préparer les instruments pour ta venue, faire suivre une commande. Une demande de rendez-vous individuel crée aussi une proposition de cours dans mon agenda, à l’intérieur de l’application.',
+          'Te tenir au courant de mes nouveautés : une nouvelle date de showcase, l’ouverture de l’application, un nouvel instrument. Autrement dit, il peut m’arriver de t’écrire pour autre chose que ta demande de départ. J’écris peu, et je cible : selon la porte par laquelle tu es entré et selon ce que tu as déclaré t’intéresser, tu ne reçois pas la même chose que quelqu’un d’autre. Tu peux dire stop quand tu veux, sans avoir à te justifier.',
+        ],
+      },
+      {
+        h: 'Sur quelle base',
+        p: 'Sur ton consentement : la case « J’accepte les conditions générales » que tu coches avant d’envoyer un formulaire. Elle est obligatoire, et la date de ton acceptation est enregistrée avec le numéro de version de cette page — c’est ce qui permet de savoir plus tard quel texte exactement tu avais sous les yeux. Pour une commande de micro, tes coordonnées de livraison sont en plus tout simplement nécessaires pour que le colis parte. Tu peux retirer ton consentement à tout moment : ça n’annule pas ce qui a déjà été fait, mais ça arrête tout pour la suite.',
+        items: [] as string[],
+      },
+      {
+        h: 'Les outils qui voient passer tes données',
+        p: 'Je ne vends ni ne loue aucune donnée, à personne, jamais. Voici la liste complète des services qui interviennent réellement.',
+        items: [
+          'Supabase — la base de données où tes réponses sont enregistrées, et l’espace de stockage des preuves de virement. Le projet est hébergé en Irlande, dans l’Union européenne.',
+          'Vercel — l’hébergeur du site. Les petites fonctions serveur qui relaient les formulaires s’exécutent aux États-Unis.',
+          'La messagerie contact@lesagedavid.fr — c’est là qu’arrivent les notifications et que je te réponds. Elle est hébergée chez Google.',
+          'Google Fonts et les vignettes YouTube — le site charge ses polices d’écriture et les miniatures des vidéos depuis les serveurs de Google. Aucune de tes réponses ne leur est transmise, mais l’adresse IP de ton navigateur, oui.',
+          'YouTube — une vidéo ne se charge que si tu cliques dessus, et elle passe par youtube-nocookie.com. Tant que tu ne cliques pas, rien ne part.',
+          'Muling Musical Instruments Co., Ltd. (Chine) — uniquement si tu commandes un micro : c’est le fabricant qui expédie, il reçoit donc ton nom et ton adresse. Une case dédiée te le demande explicitement avant l’envoi.',
+          'OVH — le nom de domaine lesagedavid.fr.',
+          'HelloAsso — certains produits, cours et stages s’achètent sur la boutique HelloAsso de Résonances Productions. En cliquant, tu quittes ce site : c’est alors la politique de HelloAsso qui s’applique, et rien de ce que tu saisis là-bas ne passe par ici.',
+          'Stripe — le site y lit les tarifs affichés de l’application, et rien d’autre : aucune donnée personnelle ne lui est envoyée depuis ce site. L’abonnement et son paiement se font dans l’application, sur son propre site.',
+        ],
+      },
+      {
+        h: 'Ce qui sort de l’Union européenne',
+        p: 'Autant le dire franchement : une partie du chemin passe hors d’Europe. La base de données, elle, reste en Irlande.',
+        items: [
+          'Les fonctions serveur qui relaient les formulaires s’exécutent aux États-Unis, chez Vercel.',
+          'Ma messagerie est hébergée chez Google, société américaine — donc les emails que nous échangeons aussi.',
+          'Les polices d’écriture et les vignettes vidéo sont chargées depuis des serveurs de Google.',
+          'Pour une commande de micro uniquement, ton nom et ton adresse de livraison partent en Chine, chez le fabricant.',
+        ],
+      },
+      {
+        h: 'Combien de temps je garde tout ça',
+        p: 'Trois ans après notre dernier échange. Et le compteur repart de zéro à chaque nouvelle interaction : tu m’écris, tu réserves, tu commandes, tu réponds ou tu cliques dans un de mes emails, et les trois ans recommencent. Si plus rien ne se passe pendant trois ans, tes informations sont effacées. Tu peux évidemment demander leur effacement bien avant — voir plus bas.',
+        items: [] as string[],
+      },
+      {
+        h: 'Cookies et mesure d’audience',
+        p: 'Ce site ne dépose aucun cookie. Il n’utilise aucun outil de mesure d’audience, aucun pixel publicitaire, aucun traceur — c’est pour ça qu’il n’y a pas de bandeau à accepter en arrivant. La seule chose que ton navigateur retient localement, c’est la langue que tu as choisie : elle ne quitte jamais ton appareil.',
+        items: [] as string[],
+      },
+      {
+        h: 'Tes droits, et comment les exercer',
+        p: 'Un seul geste suffit : écris à contact@lesagedavid.fr. Pas de formulaire à remplir, pas de justificatif à fournir tant que je n’ai pas de doute sérieux sur ton identité. Je te réponds personnellement, dans un délai d’un mois au maximum.',
+        items: [
+          'Accès — savoir exactement ce que j’ai sur toi ; je peux t’en envoyer la copie.',
+          'Rectification — corriger une information fausse ou dépassée.',
+          'Effacement — tout supprimer.',
+          'Opposition — refuser un usage, en particulier les emails de nouveautés.',
+          'Portabilité — récupérer ce que tu m’as donné dans un fichier réutilisable ailleurs.',
+          'Limitation — demander que tes informations soient mises de côté le temps qu’on règle un désaccord.',
+          'Retrait du consentement — à tout moment, sans avoir à te justifier.',
+        ],
+      },
+      {
+        h: 'Ne plus recevoir mes emails',
+        p: 'Chaque email de nouveautés contient un lien de désinscription : un clic, c’est réglé. Sinon, une ligne à contact@lesagedavid.fr suffit — « stop » fait très bien l’affaire, et tu n’as rien à justifier. Ça n’annule ni un rendez-vous ni une commande en cours : les messages nécessaires au suivi de ta demande, eux, continuent de partir.',
+        items: [] as string[],
+      },
+      {
+        h: 'Si tu n’es pas d’accord avec moi',
+        p: 'Tu peux introduire une réclamation auprès de la CNIL, l’autorité française de protection des données : CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 — www.cnil.fr. Mais écris-moi d’abord si tu veux : c’est plus rapide, et je préfère régler les choses directement.',
+        items: [] as string[],
+      },
+      {
+        h: 'Sécurité',
+        p: 'Le site est servi en HTTPS de bout en bout. La base de données n’est accessible qu’avec des identifiants dédiés, et ses règles d’accès font que seul mon compte administrateur peut lire les demandes. Les preuves de virement déposées lors d’une commande vont dans un espace de stockage privé, jamais public. Aucune donnée bancaire ne se saisit sur ce site : aucun paiement n’y est encaissé.',
+        items: [] as string[],
+      },
+      {
+        h: 'Rendez-vous, showcases et commandes',
+        p: 'Aucun paiement ne se fait sur ce site. Un rendez-vous individuel se règle par le lien que je t’envoie dans ma réponse : c’est le règlement qui réserve ton créneau et nous engage tous les deux. Jusqu’à 24 h avant, on le décale sans aucun souci ; à moins de 24 h, le règlement reste acquis mais tu ne perds pas ton rendez-vous — on le reporte dans les 3 mois. Les showcases sont gratuits, sur réservation, avec un nombre de places limité. Une commande de micro Muling se règle par virement directement au fabricant, qui assure ensuite l’expédition et le suivi.',
+        items: [] as string[],
+      },
+      {
+        h: 'Les contenus du site',
+        p: 'Textes, photographies et vidéos appartiennent à leurs auteurs respectifs. Le détail — éditeur, hébergement, propriété intellectuelle, prix et TVA — est sur la page Mentions légales.',
+        items: [] as string[],
+      },
+      {
+        h: 'Si ces conditions changent',
+        p: 'Cette page porte un numéro de version et une date. Quand le texte change, la version change avec lui, et la nouvelle s’applique aux formulaires envoyés ensuite. Ce que tu as accepté, toi, reste enregistré avec son propre numéro : on saura toujours quel texte tu avais sous les yeux ce jour-là.',
+        items: [] as string[],
+      },
+    ],
+    contactTitle: 'Une question sur cette page ?',
+    contactText: 'Écris-moi à contact@lesagedavid.fr. Je réponds personnellement, et je préfère largement une question posée trop tôt à un doute gardé pour soi.',
+    contactCta: 'M’écrire',
+    legalLink: 'Voir les mentions légales',
+  },
   // Données produit traduisibles (prose). Les valeurs numériques restent dans src/data.
   data: {
     woodSupplements: {
