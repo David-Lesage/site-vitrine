@@ -1480,6 +1480,11 @@ const fr = {
     updatedLabel: 'Dernière mise à jour',
     updated: '17 août 2026',
     lead: 'Cette page dit en clair ce qui se passe quand tu remplis un formulaire sur ce site : ce que je collecte, pourquoi, avec quels outils, combien de temps je le garde, et comment tu reprends la main quand tu veux. Pas de jargon. Si quelque chose n’est pas clair, écris-moi — c’est moi qui lis.',
+    // Mention voulue par David (17/08/2026) : le dispositif se construit, le texte suivra.
+    // Ne pas la retirer sans son accord — elle est là pour ne pas faire passer un cadre
+    // en cours d’installation pour un cadre définitif.
+    inProgress:
+      'Ce document accompagne la mise en place d’un écosystème encore en construction — le site, l’application, le showroom et les partenariats avec les fabricants s’installent progressivement. Il évoluera donc au fil de cette mise en place. La version en vigueur est celle indiquée ci-dessus, et c’est celle que tu acceptes en cochant la case d’un formulaire.',
     sections: [
       {
         h: 'Qui est responsable',

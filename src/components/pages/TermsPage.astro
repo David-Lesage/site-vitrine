@@ -41,6 +41,13 @@ const legalHref = localizePath('/mentions-legales', lang)
 
     <p class="mt-6 text-lg leading-relaxed text-ink-soft">{cg.lead}</p>
 
+    {/* Mention « écosystème en construction » voulue par David (17/08/2026) : ce cadre
+        s'installe en même temps que le site, l'app et les partenariats. Encadré et non
+        fondu dans le texte, pour qu'on ne puisse pas le lire comme un cadre définitif. */}
+    <p class="mt-6 rounded-lg border border-copper/30 bg-copper/5 px-5 py-4 leading-relaxed text-ink-soft">
+      {cg.inProgress}
+    </p>
+
     <div class="mt-12 space-y-10 text-ink-soft/90">
       {cg.sections.map((s) => (
         <div>

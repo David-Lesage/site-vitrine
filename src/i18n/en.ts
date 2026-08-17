@@ -1311,6 +1311,8 @@ export const en: Dict = {
     updatedLabel: 'Last updated',
     updated: '17 August 2026',
     lead: 'This page says plainly what happens when you fill in a form on this site: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. No jargon. If anything is unclear, write to me — I’m the one reading.',
+    inProgress:
+      'This document accompanies an ecosystem still being built — the site, the app, the showroom and the partnerships with instrument makers are being set up step by step. It will therefore change as that setup progresses. The version in force is the one shown above, and that is the one you accept when you tick the box on a form.',
     sections: [
       {
         h: 'Who is responsible',
