@@ -1331,10 +1331,20 @@ export const en: Dict = {
       {
         // Faithful translation of the FR block — David's own statement of
         // 17/08/2026. Do not add any legal relationship that isn't sourced.
+        //
+        // (17/08/2026) Association identification added. Single source:
+        // https://www.resonancesproductions.org/association (the association's
+        // own public page). Nothing else inferred: no VAT number, no officer
+        // name, no other date. French identifiers (RNA, SIRET, APE) keep their
+        // French labels — they have no English equivalent — with a short gloss.
+        // 🚨 The site's publisher REMAINS David Lesage, as a natural person
+        // (see "Who is responsible" above and the Legal notice page).
         h: 'My role, and who receives the money',
         p: 'Better said upfront, it avoids misunderstandings: this site presents instruments built by partners — Neotone, Yishama, the microphones, the Gonilélé harps. I act as a demonstrator, and I am not paid directly by those sales.',
         items: [
-          'These are affiliate partnerships: they do generate a commission, and it is the association Résonances Productions (a French “association loi 1901”) that receives it, not me personally.',
+          'These are affiliate partnerships: they do generate a commission, and it is the association Résonances Productions (a French non-profit “association loi 1901”) that receives it, not me personally.',
+          'So that you know exactly who that is, here is its official identification: Résonances Productions, a French non-profit association under the 1901 law, registered with the sub-prefecture of Pamiers and published in the Journal officiel des associations (the French official gazette) on 28 October 2017 — RNA no. W092002501 (national register of associations), SIRET 919 514 075 00010 (French business identification number), APE code 9001Z (performing arts). Registered office: 2 impasse des Bleuets, 09600 Aigues-Vives, France. Correspondence address: 29 rue des Orteaux, 75020 Paris, France. Email: contact@resonancesproductions.org.',
+          'This identification says who receives that money, and nothing more: the publisher of this site is David Lesage, as a natural person — he is the one responsible for this page and for your data, as stated just above and on the Legal notice page.',
           'It changes nothing in what I tell you about an instrument: I answer as a musician who plays these instruments every day, and I would rather tell you an instrument isn’t right for you than sell it to you.',
           'No payment is taken on this site, nor by me. Purchases happen elsewhere: on the HelloAsso shop of Résonances Productions, inside the app for its subscription, or directly with the manufacturer for a Muling microphone.',
         ],

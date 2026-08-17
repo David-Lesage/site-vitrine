@@ -1512,10 +1512,22 @@ const fr = {
         // « association loi 1901 » est repris du bloc `showroom` de ce même
         // fichier (déjà publié sur le site) — aucun autre lien juridique entre
         // David et l'association n'est affirmé ici, parce qu'aucun n'est sourcé.
+        //
+        // (17/08/2026) IDENTIFICATION DE L'ASSOCIATION ajoutée. Source unique :
+        // https://www.resonancesproductions.org/association (page publique de
+        // l'association), transmise par David. Rien d'autre n'a été déduit :
+        // pas de n° de TVA, pas de nom de dirigeant, pas d'autre date.
+        // 🚨 L'ÉDITEUR DU SITE RESTE DAVID LESAGE, personne physique (voir la
+        // section « Qui est responsable » ci-dessus et la page Mentions
+        // légales). La question « éditer le site au nom de l'association ? »
+        // est en attente d'arbitrage — ajouter une identification n'est PAS
+        // transférer une responsabilité. Ne pas modifier ce point sans David.
         h: 'Mon rôle, et qui perçoit l’argent',
         p: 'Autant le dire d’emblée, ça évite les malentendus : je présente sur ce site des instruments fabriqués par des partenaires — Neotone, Yishama, les micros, les harpes Gonilélé. J’interviens comme démonstrateur, et je ne suis pas rémunéré directement par ces ventes.',
         items: [
-          'Ces partenariats sont des partenariats d’affiliation : ils donnent lieu à une rémunération, et c’est l’association Résonances Productions (association loi 1901) qui la perçoit, pas moi à titre personnel.',
+          'Ces partenariats sont des partenariats d’affiliation : ils donnent lieu à une rémunération, et c’est l’association Résonances Productions (association loi 1901 à but non lucratif) qui la perçoit, pas moi à titre personnel.',
+          'Pour que tu saches précisément de qui il s’agit, voici son identification : Résonances Productions, association loi 1901 à but non lucratif, déclarée à la sous-préfecture de Pamiers et publiée au Journal officiel des associations le 28 octobre 2017 — n° RNA W092002501, SIRET 919 514 075 00010, code APE 9001Z (arts du spectacle vivant). Siège social : 2 impasse des Bleuets, 09600 Aigues-Vives. Adresse de correspondance : 29 rue des Orteaux, 75020 Paris. Courriel : contact@resonancesproductions.org.',
+          'Cette identification dit qui perçoit ces sommes, et rien de plus : l’éditeur de ce site est David Lesage, personne physique — c’est lui le responsable de cette page et de tes données, comme indiqué juste au-dessus et sur les mentions légales.',
           'Ça ne change rien à ce que je te dis d’un instrument : je te réponds en musicien qui joue ces instruments au quotidien, et je préfère te dire qu’un instrument ne te convient pas plutôt que de te le vendre.',
           'Aucun paiement n’est encaissé sur ce site, ni par moi. Les achats se font ailleurs : sur la boutique HelloAsso de Résonances Productions, dans l’application pour son abonnement, ou directement auprès du fabricant pour un micro Muling.',
         ],
