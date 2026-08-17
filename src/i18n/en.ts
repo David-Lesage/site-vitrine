@@ -1625,6 +1625,12 @@ export const en: Dict = {
       basePrice: 'Public price excl. VAT (shipping included)',
       subtotal: 'Subtotal excl. VAT',
       savings: 'You save',
+      // Intra-EU B2B case: the total shown is NOT a pure discount — it adds the
+      // discount (a real gain) to the VAT that is not invoiced (cash flow, not a gain:
+      // a VAT-registered buyer would reclaim it anyway). Hence the separate label + note.
+      savingsB2B: 'You don’t pay upfront',
+      savingsB2BNote:
+        'That is {discountRate} discount + {vatRate} VAT on the base price — the gap with the catalogue price incl. VAT ({catalog}). Only the {discount} discount is a real gain: the VAT is simply never advanced (reverse charge), and you would reclaim it anyway.',
       getCode: 'Get my discount code',
       discountLabel: 'Ambassador discount',
       vat: 'VAT',

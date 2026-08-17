@@ -29,9 +29,75 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 17/08/2026 — 🌓 Lisibilité des voiles de hero (bug Brave iOS) — ⚠️ NON DÉPLOYÉ
+## ÉTAT ACTUEL — 17/08/2026 (après-midi) — 🧮 Calculateur : la TVA non facturée entre dans « tu économises »
 
-Commité en local, **ni poussé ni déployé** (David veut regarder avant).
+Demande de David : *« quand la personne coche la case TVA intracommunautaire, dans "tu
+économises" il faut rajouter l'économie de la TVA… ça fait −27 % »*.
+
+### La formule retenue (une seule règle, les 3 cas en découlent)
+**« Tu économises » = prix catalogue du pays − prix réellement payé.** Le prix catalogue
+est le prix public **TTC** dans l'UE, **HT** hors UE :
+
+| cas | référence | payé | écart |
+|---|---|---|---|
+| UE, particulier | (1+v)·P | (1+v)·(P−remise) | remise × (1+v) — **inchangé** |
+| UE, **B2B** | (1+v)·P | P−remise | **remise + v·P** — nouveau |
+| hors UE (coché ou non) | P | P−remise | remise — **inchangé** |
+
+Contrôle de David (base 100 €, showroom 7 %, FR) : 120 − 93 = **27 €**, soit **7 € de remise
++ 20 € de TVA** contenue dans le prix catalogue. Les deux termes sont exacts **par rapport à
+cette référence** (ne pas les confondre avec « 20 % de 93 € = 18,60 € », qui répond à une
+autre question). Le **pourcentage** est exprimé sur la **même base que la remise déjà
+affichée** — le prix HT : 7 % + 20 % = **27 %**. C'est ce qui rend « 537,30 € (−27 %) »
+cohérent avec la ligne « Remise ambassadeur −7 % » juste au-dessus.
+⚠️ `0.07 * 100` vaut `7.000000000000001` en flottant → `Math.round` obligatoire (c'était le
+bug attrapé au premier test).
+
+### 🚨 L'honnêteté commerciale — décision qui appartient à David
+Pour un assujetti la TVA **n'est pas une économie** : il la récupère de toute façon. Le vrai
+avantage est de **ne pas l'avancer**. Donc, en B2B UE uniquement :
+- le libellé change : **« Tu ne débourses pas »** (pas « Tu économises »),
+- une note sous le badge sépare les deux natures : *« Soit 7 % de remise + 20 % de TVA du prix
+  de base — l'écart avec le prix catalogue TTC (2 388,00 €). Seule la remise de 139,30 € est
+  un gain réel : la TVA, tu ne l'avances pas (autoliquidation), et tu la récupérerais de
+  toute façon. »*
+
+**C'est une proposition, pas un arbitrage technique** : David peut vouloir une formule plus
+vendeuse (ou plus sobre). Le montant et le pourcentage, eux, ne doivent pas bouger.
+
+### Fichiers touchés (aucun autre composant)
+`src/components/Calculator.astro` · `src/i18n/dict.ts` · `src/i18n/en.ts`
+(2 clés ajoutées de chaque côté : `calc.savingsB2B`, `calc.savingsB2BNote` ; aucune supprimée).
+Aucune dépendance, aucune Edge Function, aucune donnée en base.
+
+### Vérifié (mesures réelles, FR + EN, 375 px et 1280 px)
+`astro build` 89 pages. Neotone¹ frêne 1 990 € HT :
+showroom FR B2B **537,30 € (−27 %)** · showroom DE 19 % B2B 517,40 € (−26 %) ·
+en ligne FR B2B 497,50 € (−25 %) · en ligne FI 25,5 % B2B 606,95 € (−30,5 %) ·
+en ligne FR particulier **119,40 €** (inchangé) · Suisse hors UE, cochée **ou** décochée,
+**99,50 €** avec le libellé « Tu économises » (inchangé). `scrollWidth == clientWidth`,
+badge sur une ligne, note en 4 lignes à 375 px, contraste ≈ 5,3:1 (cream/55 sur ink).
+⚠️ Les captures d'écran de l'extension Chrome revenaient blanches (fenêtre Chrome pas au
+premier plan) — la vérification est donc **par mesure DOM/layout**, pas à l'œil.
+
+---
+
+## ÉTAT ACTUEL — 17/08/2026 — 🖼️ Favicon : retour au handpan cuivre
+
+Le commit `5c59c3b` avait installé le symbole du logo « moulinet » **sans validation de
+David** (il a depuis fourni un autre logo). Remis en état, **sans rien supprimer** :
+`favicon.svg` / `favicon.png` = handpan cuivre (copie de `favicon-handpan.*`) ; le moulinet
+est conservé sous **`favicon-logo-moulinet.svg` / `.png`** et **`apple-touch-icon-moulinet.png`** ;
+`favicon-alt-clair.*` (badge blanc) reste là, inutilisé. `SEO.astro` est revenu aux deux
+lignes d'avant `5c59c3b` (plus de `sizes="512x512"`, qui était faux — le handpan fait
+128×128 — et `apple-touch-icon` repointe sur `favicon.png`).
+👉 Quand David aura tranché le logo : réactiver en renommant, ne pas repartir de zéro.
+
+---
+
+## ÉTAT ACTUEL — 17/08/2026 — 🌓 Lisibilité des voiles de hero (bug Brave iOS)
+
+Commité en local (`61bb937`), **déployé le 17/08 après-midi** avec le calculateur.
 
 ### Le bug
 Sur iPhone, le titre de l'accueil est parfait dans Chrome et **illisible dans Brave** : le voile

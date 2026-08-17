@@ -30,6 +30,9 @@ const calcData = {
     finalExtUE: c.finalExtUE,
     finalExtUENote: c.finalExtUENote,
     b2bNote: c.b2bNote,
+    savings: c.savings,
+    savingsB2B: c.savingsB2B,
+    savingsB2BNote: c.savingsB2BNote,
   },
 }
 ---
@@ -106,9 +109,13 @@ const calcData = {
         <p id="calc-final" class="mt-1 font-display text-4xl font-700"></p>
         <p id="calc-final-note" class="mt-1 text-xs text-cream/60"></p>
       </div>
-      <p class="mt-4 inline-flex items-center gap-2 rounded-lg bg-rust/20 px-3 py-2 text-sm text-gold">
-        {c.savings} <span id="calc-savings" class="font-700"></span>
+      <p class="mt-4 inline-flex max-w-full flex-wrap items-center gap-x-2 rounded-lg bg-rust/20 px-3 py-2 text-sm text-gold">
+        <span id="calc-savings-label">{c.savings}</span> <span id="calc-savings" class="font-700"></span>
       </p>
+      {/* Note affichée UNIQUEMENT en B2B intracommunautaire : elle sépare la remise
+          (gain réel) de la TVA non facturée (non avancée, mais récupérable de toute
+          façon) — sans quoi le montant total se lirait comme une pure réduction. */}
+      <p id="calc-savings-note" class="mt-2 text-xs leading-relaxed text-cream/55"></p>
       <p id="calc-extra-note" class="mt-4 text-xs leading-relaxed text-cream/55"></p>
       {/* Ouvre le formulaire de demande de code (modale BookingForm) au lieu d'un
           mailto : la demande est enregistrée et David reçoit tout ce que Neotone
@@ -150,8 +157,25 @@ const calcData = {
         vatAmount = subtotalHT * (vatRate / 100)
         finalTTC = subtotalHT + vatAmount
       }
-      const savings = country.eu && !state.b2b ? discount * (1 + vatRate / 100) : discount
-      return { basePrice, discount, discountRate, subtotalHT, vatRate, vatAmount, finalTTC, savings, country }
+      // « Tu économises » = toujours l'écart avec le PRIX CATALOGUE que paierait un
+      // particulier du même pays (base HT + TVA locale s'il y en a une).
+      //   · UE, particulier : (1+v)P − (1+v)(P−remise) = remise × (1+v)   ← inchangé
+      //   · UE, B2B         : (1+v)P − (P−remise)      = remise + v×P     ← ajout
+      //   · hors UE         : P − (P−remise)           = remise           ← inchangé
+      // Les deux composantes du cas B2B sont exactes vis-à-vis de cette référence :
+      // la remise (remise) et la TVA contenue dans le prix catalogue (v×P). Elles
+      // n'ont PAS la même nature (voir savingsB2BNote) — d'où la note en dessous.
+      const catalogTTC = country.eu ? basePrice * (1 + country.vat / 100) : basePrice
+      const b2bEU = country.eu && state.b2b
+      const savingsVat = b2bEU ? basePrice * (country.vat / 100) : 0
+      const savings = country.eu && !state.b2b ? discount * (1 + vatRate / 100) : discount + savingsVat
+      // Exprimé sur la même base que la remise déjà affichée (le prix HT de base) :
+      // 7 % de remise + 20 % de TVA = 27 %.
+      // Math.round : 0.07 * 100 vaut 7.000000000000001 en flottant (déjà arrondi
+      // ailleurs pour l'étiquette « Remise −7 % »).
+      const discountPct = Math.round(discountRate * 100)
+      const savingsRate = discountPct + (b2bEU ? country.vat : 0)
+      return { basePrice, discount, discountRate, discountPct, subtotalHT, vatRate, vatAmount, finalTTC, savings, savingsRate, catalogTTC, b2bEU, country }
     }
 
     function render() {
@@ -188,7 +212,22 @@ const calcData = {
       void finalEl.offsetWidth
       finalEl.textContent = fmtEUR(r.finalTTC)
       finalEl.classList.add('price-update')
-      $('calc-savings')!.textContent = fmtEUR(r.savings)
+      const savingsNote = $('calc-savings-note')!
+      if (r.b2bEU) {
+        $('calc-savings-label')!.textContent = L.savingsB2B
+        $('calc-savings')!.textContent = `${fmtEUR(r.savings)} (−${fmtVAT(r.savingsRate)})`
+        savingsNote.style.display = ''
+        savingsNote.textContent = L.savingsB2BNote
+          .replace('{discountRate}', fmtVAT(r.discountPct))
+          .replace('{vatRate}', fmtVAT(r.country.vat))
+          .replace('{catalog}', fmtEUR(r.catalogTTC))
+          .replace('{discount}', fmtEUR(r.discount))
+      } else {
+        $('calc-savings-label')!.textContent = L.savings
+        $('calc-savings')!.textContent = fmtEUR(r.savings)
+        savingsNote.style.display = 'none'
+        savingsNote.textContent = ''
+      }
     }
 
     function bindGroup(selector: string, key: 'model' | 'wood' | 'mode', attr: string) {

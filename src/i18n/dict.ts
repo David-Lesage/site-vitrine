@@ -1816,6 +1816,13 @@ const fr = {
       basePrice: 'Prix public HT (envoi compris)',
       subtotal: 'Sous-total HT',
       savings: 'Tu économises',
+      // Cas B2B intracommunautaire : le total affiché n'est PAS une réduction pure —
+      // il additionne la remise (gain réel) et la TVA non facturée (trésorerie, pas un
+      // gain : l'assujetti la récupérerait de toute façon). Le libellé et la note
+      // ci-dessous existent pour ne pas faire passer l'un pour l'autre.
+      savingsB2B: 'Tu ne débourses pas',
+      savingsB2BNote:
+        'Soit {discountRate} de remise + {vatRate} de TVA du prix de base — l’écart avec le prix catalogue TTC ({catalog}). Seule la remise de {discount} est un gain réel : la TVA, tu ne l’avances pas (autoliquidation), et tu la récupérerais de toute façon.',
       getCode: 'Obtenir mon code de remise',
       discountLabel: 'Remise ambassadeur',
       vat: 'TVA',
