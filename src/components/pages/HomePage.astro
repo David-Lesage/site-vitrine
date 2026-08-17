@@ -62,10 +62,13 @@ const duoMeta = [
     <!-- Photo de David + handpan, pleinement visible à droite -->
     <div class="absolute inset-0">
       <img src="/images/hero-david.webp" width="2400" height="1351" alt="" class="h-full w-full object-cover object-[75%_center]" loading="eager" fetchpriority="high" />
-      <!-- Dégradé horizontal : zone opaque à gauche (texte lisible), image révélée à droite -->
-      <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-transparent md:via-ink/70 md:to-ink/0"></div>
-      <!-- Renfort vertical léger pour mobile -->
-      <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-transparent md:hidden"></div>
+      {/* Dégradé horizontal : zone opaque à gauche (texte lisible), image révélée
+          à droite. 🚨 `veil-hero-x` (global.css) et non `bg-gradient-to-r` : le
+          dégradé Tailwind v4 disparaît en silence sur les moteurs qui ignorent
+          « in oklab » ou @property, et le titre devient illisible. */}
+      <div class="veil-hero-x absolute inset-0"></div>
+      {/* Renfort vertical léger pour mobile (même raison) */}
+      <div class="veil-hero-bottom absolute inset-0"></div>
     </div>
     <!-- Filet arc-en-ciel ChromaKeys : « rendre la musique visible » -->
     <div class="chroma-bar absolute inset-x-0 top-0 h-1"></div>

@@ -60,7 +60,10 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
 <Layout title={sh.title} description={sh.description} ldJSON={ld}>
   <section class="relative overflow-hidden bg-ink text-cream">
     <video class="absolute inset-0 h-full w-full object-cover opacity-65" autoplay muted loop playsinline poster="/images/localisation-showroom-poster.webp"><source src="/images/localisation-showroom.mp4" type="video/mp4" /></video>
-    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/30"></div>
+    {/* 🚨 `veil-hero-y` (global.css) et non `bg-gradient-to-t` : le dégradé
+        Tailwind v4 disparaît en silence sur les moteurs qui ignorent « in oklab »
+        ou @property, et le texte crème se retrouve nu sur la vidéo. */}
+    <div class="veil-hero-y absolute inset-0"></div>
     <div class="relative mx-auto max-w-4xl px-4 py-24 text-center">
       <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{sh.heroEyebrow}</p>
       <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-6xl">{sh.heroTitle}</h1>

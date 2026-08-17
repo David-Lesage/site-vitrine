@@ -29,6 +29,57 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 17/08/2026 — 🌓 Lisibilité des voiles de hero (bug Brave iOS) — ⚠️ NON DÉPLOYÉ
+
+Commité en local, **ni poussé ni déployé** (David veut regarder avant).
+
+### Le bug
+Sur iPhone, le titre de l'accueil est parfait dans Chrome et **illisible dans Brave** : le voile
+sombre par-dessus la photo **n'apparaît pas**, le texte crème se retrouve sur un mur blanc.
+
+### La cause, établie
+Tailwind v4 compile `bg-gradient-to-r from-ink via-ink/85 …` en
+`--tw-gradient-position: to right in oklab` + `background-image: linear-gradient(var(--tw-gradient-stops))`,
+**sans aucun repli** — contrairement aux opacités (`bg-cream/90` sort bien en `#f4ebd9e6` AVANT sa
+variante `color-mix`, sous `@supports`). Vérifié sur les 69 utilitaires d'opacité du bundle : **toutes**
+ont un repli hex. Le dégradé est donc le **seul** mécanisme sans filet.
+Prouvé en simulant les deux pannes possibles dans le navigateur :
+- « in oklab » non supporté dans un dégradé → `background-image` calculé = **`none`** ;
+- `@property` non supporté (`var(--tw-gradient-from-position)` sans valeur) → **stops tous transparents**.
+Dans les deux cas **le voile disparaît en silence**. C'est exactement le symptôme.
+❓ Ce qui **n'est pas** établi : pourquoi Brave iOS précisément (même WebKit que Chrome iOS).
+Piste non vérifiable sans le téléphone : **le « Night mode » de Brave** (Réglages → Apparence),
+qui expliquerait aussi l'en-tête crème vu « brun translucide ». **À vérifier sur l'iPhone de David.**
+
+### Le correctif
+`src/styles/global.css` : 4 classes de voile en **CSS ancien** (rgba littéral, ni `color-mix`, ni
+`@property`, ni `oklab`) — `.veil-hero-x`, `.veil-hero-x-soft`, `.veil-hero-bottom`, `.veil-hero-y` —
+qui remplacent les `bg-gradient-to-*` dans `HomePage.astro:66`, `LessonsPage.astro:36`,
+`ShowroomPage.astro:63`. 🚨 **Ne jamais re-tailwindiser ces règles.**
+Aussi : `color-scheme: light` sur `html`, et `color: transparent` de `.text-gradient-brand` mis sous
+`@supports (background-clip: text)` (sinon un mot du `<h1>` peut devenir invisible ; repli = cuivre).
+
+### Renforts assumés (mesurés, pas à l'œil)
+Le voile horizontal tombait à 0 à droite : sur mobile le texte occupe TOUTE la largeur et finissait
+sur le visage éclairé. Contrastes mesurés à 375 px sur les pixels réels des glyphes :
+
+| | avant | après | seuil AA |
+|---|---|---|---|
+| Accueil — eyebrow doré | 1,02:1 | **4,74:1** | 4,5 |
+| Accueil — `<h1>` | 1,31:1 | **8,21:1** | 3 |
+| Cours — eyebrow | 1,3:1 | **5,39:1** | 4,5 |
+| Showroom — chapô | 3,97:1 | **5,79:1** | 4,5 |
+
+Mobile : fin du dégradé 0 → **0,78**. Showroom : haut du voile 0,30 → **0,60**.
+**Le rendu de bureau n'a pas changé.**
+
+### ⚠️ Reste en dessous d'AA
+`ShowroomPage` — eyebrow **doré 12 px** sur la vidéo à 375 px : **3,84:1** (p95 5,14) pour 4,5 requis.
+Le doré sur vidéo claire plafonne ; conforme = voile quasi opaque (la vidéo ne se verrait plus) ou
+eyebrow crème au lieu de doré → **décision de charte, à trancher par David**.
+
+---
+
 ## ÉTAT ACTUEL — 17/08/2026 (matin) — 🏛️ Identification légale de Résonances Productions (CG)
 
 Commit `e6df505`, **poussé et déployé en prod** (FR + EN, 200, vérifié à l'écran).

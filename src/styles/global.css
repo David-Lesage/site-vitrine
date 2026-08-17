@@ -36,6 +36,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  /* Le site n'a qu'un seul thème (clair). On le déclare aussi en CSS et pas
+     seulement via <meta name="color-scheme"> : certains navigateurs mobiles
+     n'honorent que la propriété CSS avant de décider d'appliquer un
+     assombrissement automatique. */
+  color-scheme: light;
 }
 
 body {
@@ -71,12 +76,137 @@ h1, h2, h3, h4, .font-display {
   left: 0;
 }
 
-/* Dégradé de marque réutilisable */
+/* Dégradé de marque réutilisable.
+   ⚠️ `color: transparent` n'est posé QUE si le navigateur sait découper un
+   fond sur le texte. Sans ce garde-fou, un moteur qui ignore
+   `background-clip: text` afficherait un mot du <h1> totalement invisible
+   (accueil, page Studio). Repli : le mot s'affiche en cuivre plein. */
 .text-gradient-brand {
+  color: var(--color-copper);
   background: linear-gradient(120deg, var(--color-rust), var(--color-copper) 55%, var(--color-gold));
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .text-gradient-brand {
+    color: transparent;
+  }
+}
+
+/* ============================================================
+   VOILES DE LISIBILITÉ — texte posé sur une photo ou une vidéo
+   ------------------------------------------------------------
+   🚨 Ces règles sont écrites en CSS « ancien » À DESSEIN : couleurs
+   littérales en rgba(), aucune propriété personnalisée, aucun
+   color-mix(), aucune interpolation « in oklab ».
+
+   POURQUOI (bug réel, constaté par David sur Brave iOS le 17/08/2026 :
+   titre d'accueil illisible dans Brave, parfait dans Chrome).
+   Tailwind v4 compile `bg-gradient-to-r from-ink via-ink/85 …` en :
+       --tw-gradient-position: to right in oklab;
+       background-image: linear-gradient(var(--tw-gradient-stops));
+   SANS aucun repli — contrairement aux opacités `bg-cream/90`, qui
+   sortent bien, elles, en `#f4ebd9e6` avant leur variante color-mix().
+   Deux pannes suffisent donc à faire disparaître le voile EN SILENCE :
+     1. le moteur ignore l'interpolation « in oklab » dans un dégradé
+        → `linear-gradient()` invalide → background-image: none ;
+     2. le moteur ignore `@property` → `var(--tw-gradient-from-position)`
+        n'a aucune valeur → même résultat.
+   Vérifié en simulant les deux pannes : dans les deux cas le voile
+   tombe à `none` et le texte crème se retrouve nu sur la photo claire.
+
+   Un voile dont dépend la LISIBILITÉ d'un texte ne doit jamais reposer
+   sur une fonctionnalité CSS récente. NE PAS re-tailwindiser ces règles.
+   Les valeurs reproduisent à l'identique les anciennes classes (aucun
+   changement visuel) ; chaque règle cite celle qu'elle remplace.
+   ============================================================ */
+
+/* Accueil — remplace `bg-gradient-to-r from-ink via-ink/85 to-transparent
+   md:via-ink/70 md:to-ink/0` (HomePage.astro).
+
+   📱 MOBILE : le voile ne descend plus jusqu'à 0 à droite (0,78 au lieu de 0).
+   Le dégradé « photo révélée à droite » est une composition de BUREAU : en
+   dessous de 768 px le texte est centré et occupe TOUTE la largeur, il finissait
+   donc sur le visage éclairé de la photo. Mesuré à 375 px, sur les pixels réels
+   des glyphes : eyebrow doré 1,02:1 · titre 1,31:1 (WCAG AA demande 4,5:1 et
+   3:1). Avec 0,78 : eyebrow 4,74:1 · titre 8,21:1 · chapô 8,17:1 — tout passe AA.
+   C'est le minimum testé qui y arrive (0,70 laissait l'eyebrow à 4,0:1).
+   ⚠️ Le rendu de BUREAU n'a pas bougé (voir la règle min-width: 768px). */
+.veil-hero-x {
+  background-image: linear-gradient(
+    to right,
+    rgba(31, 22, 17, 0.95) 0%,
+    rgba(31, 22, 17, 0.85) 50%,
+    rgba(31, 22, 17, 0.78) 100%
+  );
+}
+@media (min-width: 768px) {
+  .veil-hero-x {
+    background-image: linear-gradient(
+      to right,
+      rgba(31, 22, 17, 1) 0%,
+      rgba(31, 22, 17, 0.7) 50%,
+      rgba(31, 22, 17, 0) 100%
+    );
+  }
+}
+
+/* Cours — remplace `bg-gradient-to-r from-ink via-ink/85 to-transparent
+   md:via-ink/70 md:to-ink/10` (LessonsPage.astro).
+   Même correction mobile que `.veil-hero-x` ci-dessus, même raison. */
+.veil-hero-x-soft {
+  background-image: linear-gradient(
+    to right,
+    rgba(31, 22, 17, 0.95) 0%,
+    rgba(31, 22, 17, 0.85) 50%,
+    rgba(31, 22, 17, 0.78) 100%
+  );
+}
+@media (min-width: 768px) {
+  .veil-hero-x-soft {
+    background-image: linear-gradient(
+      to right,
+      rgba(31, 22, 17, 1) 0%,
+      rgba(31, 22, 17, 0.7) 50%,
+      rgba(31, 22, 17, 0.1) 100%
+    );
+  }
+}
+
+/* Accueil, renfort bas sur mobile — remplace
+   `bg-gradient-to-t from-ink/85 via-transparent to-transparent md:hidden` */
+.veil-hero-bottom {
+  background-image: linear-gradient(
+    to top,
+    rgba(31, 22, 17, 0.85) 0%,
+    rgba(31, 22, 17, 0) 50%,
+    rgba(31, 22, 17, 0) 100%
+  );
+}
+@media (min-width: 768px) {
+  .veil-hero-bottom {
+    display: none;
+  }
+}
+
+/* Showroom (texte centré sur une vidéo) — remplace
+   `bg-gradient-to-t from-ink via-ink/70 to-ink/30` (ShowroomPage.astro).
+
+   Haut du voile renforcé : 0,30 → 0,60 (et 0,70 → 0,78 au milieu). Le texte du
+   hero commence tout en haut, là où le voile était le plus faible et où la vidéo
+   (déjà à `opacity-65`) est claire. Mesuré à 375 px sur les pixels réels :
+   titre 4,44 → 7,50:1 · chapô 3,97 → 5,79:1 (AA 4,5 atteint) · eyebrow doré
+   2,21 → 3,84:1 (p5 5,14). ⚠️ L'eyebrow doré 12 px reste sous 4,5:1 sur ses
+   pixels les plus clairs : le rendre conforme demanderait un voile quasi opaque
+   (la vidéo ne se verrait plus) ou un eyebrow crème au lieu de doré — décision
+   de charte, à trancher par David. La vidéo reste bien visible à 0,60. */
+.veil-hero-y {
+  background-image: linear-gradient(
+    to top,
+    rgba(31, 22, 17, 1) 0%,
+    rgba(31, 22, 17, 0.78) 50%,
+    rgba(31, 22, 17, 0.6) 100%
+  );
 }
 
 /* Bande ChromaKeys décorative */
