@@ -1095,12 +1095,18 @@ const fr = {
     ],
   },
   showroom: {
-    title: 'Essayer un handpan à Paris — Showroom | David Lesage',
+    title: 'Essayer handpan, Gonilélé et micros à Paris — Showroom | David Lesage',
     description:
-      'Essaie les deux univers du handpan à Paris : mes handpans acoustiques Yishama et le handpan électronique Neotone. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : showcases gratuits, démonstrations privées et cours.',
+      'Essaie tous mes instruments à Paris : le handpan électronique Neotone, mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : showcases gratuits, démonstrations privées et cours.',
     heroEyebrow: 'Le Nid · Paris 20ᵉ',
     heroTitle: 'Showroom David Lesage',
-    heroLead: 'Un lieu où l’acoustique et l’électronique se jouent côte à côte : mes handpans Yishama et les Neotone, sous tes mains le même après-midi — et une communauté à rencontrer.',
+    // 🚨 OUVERTURE DU DISCOURS (18/08/2026, demande explicite de David).
+    // Un visiteur joueur de N'Goni a réservé un showcase : il venait pour le
+    // GONILÉLÉ, et la page ne parlait que du Neotone et des Yishama — il
+    // pouvait croire qu'il s'était trompé d'événement. Le Neotone reste le
+    // FER DE LANCE (« un showcase Neotone, il n'y en a pas d'autre, c'est
+    // très attractif ») : on ÉLARGIT, on ne remplace pas par une liste plate.
+    heroLead: 'Le Neotone en tête d’affiche — et avec lui tout ce que je joue : mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Tu les entends, tu les joues, le même après-midi.',
     // ⚠️ Hero du showroom (16/08/2026) : ce CTA est l'OPTION, pas l'entrée.
     // Il est affiché SOUS la date du prochain showcase gratuit, en bouton
     // secondaire. Le libellé dit « individuel privé » pour qu'on comprenne
@@ -1125,8 +1131,12 @@ const fr = {
     // et sont sonorisés par les micros Hisong/Muling (voir `program`) ; les
     // 2 Neotone sont essayables, l'un sur enceinte, l'autre au casque.
     // Seul le Neotone est en stock : c'est dit franchement dans `duoNote`.
-    duoEyebrow: 'Sur place · les deux univers',
-    duoTitle: 'Acoustique et électronique, le même après-midi',
+    // ⚠️ Le bloc « duo » traite du HANDPAN uniquement (acoustique / électronique).
+    // Depuis le 18/08/2026 il est suivi du bloc `also*` (Gonilélé, calebasse,
+    // micros) : le titre le dit maintenant, sinon on laisserait croire que le
+    // showroom se résume à ces deux univers.
+    duoEyebrow: 'Sur place · les deux univers du handpan',
+    duoTitle: 'Handpan acoustique et électronique, le même après-midi',
     duoIntro: 'Le showroom n’est pas là pour te faire choisir un camp. Les deux univers y vivent côte à côte : tu les entends, tu les joues, tu sens la différence dans tes mains. Pas de compétition — de la complétion.',
     duo: [
       {
@@ -1146,11 +1156,44 @@ const fr = {
     ],
     duoNote: 'Pour être clair : seul le Neotone est en stock ici — c’est le seul que tu peux emporter le jour même. Les Yishama sont mes instruments personnels : ils sont là pour être entendus et joués, et si tu veux le tien, je t’oriente vers l’atelier (je suis ambassadeur et affilié).',
 
+    // ── ET PAS SEULEMENT LE HANDPAN (18/08/2026) ───────────────────────────
+    // Faits STRICTEMENT sourcés ailleurs sur le site :
+    //  • Gonilélé → `gonilele.whatText` (harpe-luth ouest-africaine, version
+    //    voyage de Joris Feuillâtre / La Maison du Ngoni, caisse en calebasse,
+    //    manche en bois noble, gamme pentatonique) ;
+    //  • calebasse → `shop.products.calebasse` + `about` (percussion depuis 2012,
+    //    méthode de rythme Now Groove) ;
+    //  • micros → `shop.products['micro-hisong']` et `['micro-muling']`.
+    // 🚧 INCONNU, DONC NON ÉCRIT : combien de Gonilélé / de calebasses sont
+    // disponibles à l'essai sur place. Ne pas inventer un nombre (les Yishama
+    // et les Neotone, eux, sont chiffrés parce que c'est écrit ailleurs).
+    alsoEyebrow: 'Sur place · et pas seulement le handpan',
+    alsoTitle: 'Le reste de ce que je joue est là aussi',
+    alsoIntro: 'Le Neotone est la tête d’affiche du showcase — mais tu n’es pas obligé·e de venir pour lui. Ces instruments-là sont sortis eux aussi, et tu peux les prendre en main au même titre que les handpans.',
+    also: [
+      {
+        title: 'La harpe Gonilélé',
+        text: 'La harpe-luth ouest-africaine de La Maison du Ngoni, en version voyage : caisse en calebasse, manche en bois noble, cordes accordées en gamme pentatonique. Intuitive et méditative — on l’aborde sans rien connaître.',
+        cta: 'Découvrir le Gonilélé',
+      },
+      {
+        title: 'La calebasse',
+        text: 'Je joue de la calebasse comme instrument de percussion depuis 2012. C’est aussi le cœur de ma méthode de rythme Now Groove : une batterie organique au son naturel, avec son tapis et ses shakers.',
+        cta: 'Voir le kit calebasse',
+      },
+      {
+        title: 'Les micros pour handpan',
+        text: 'Le Hisong AirStudio S1 et le set Muling (MP1 + préampli HMP-2). On les branche sur mes handpans acoustiques et tu entends en direct, d’une oreille à l’autre, ce que chacun change.',
+        cta: 'Voir les micros',
+      },
+    ],
+    alsoNote: 'Tu viens pour l’un d’eux en particulier ? Coche-le au moment de réserver ta place : je le prépare pour la séance.',
+
     eventsEyebrow: 'Ce qu’on y vit',
     eventsTitle: 'Tester, rencontrer, repartir avec',
     eventsHighlight: 'Le plus demandé au démarrage',
     events: [
-      { t: 'Showcase de présentation', d: 'Événements de présentation des Neotone par David Lesage, avec test des instruments sur place.', price: 'Public · Gratuit' },
+      { t: 'Showcase Neotone & découverte des instruments', d: 'Le rendez-vous public et gratuit du Nid : David Lesage présente les Neotone — puis tout est essayable sur place, handpans acoustiques Yishama, harpe africaine Gonilélé, calebasse et micros pour handpan.', price: 'Public · Gratuit' },
       { t: 'Prise en main de ton instrument', d: 'Tu viens de recevoir ton Neotone, ton handpan ou ton micro ? On règle tout ensemble et on prend les commandes en main, pas à pas. En présentiel ou en visio.', price: '' },
       { t: 'Découverte des instruments', d: 'Une session privée au showroom pour essayer en profondeur tout ce qui t’intéresse : handpans acoustiques Yishama, Neotone, calebasse, Gonilélé, micros Hisong et Muling.', price: '' },
       { t: 'Cours ou accompagnement individuel', d: 'Avec David Lesage, quel que soit ton niveau : créer tes gammes, jouer morceaux et techniques, ou simplement y voir clair sur ce que tu cherches. En présentiel ou en visio.', price: '' },
@@ -1158,12 +1201,18 @@ const fr = {
     programEyebrow: 'Le déroulé',
     programTitle: 'Au programme d’une session',
     programIntro: 'Chaque session dure environ 2h : un temps d’écoute, de démonstration et d’échange — puis le moment où c’est toi qui joues.',
+    // 🚫 TEXTES DE DAVID — NE PAS REFORMULER les étapes existantes. Le 18/08/2026
+    // il a demandé de COMPLÉTER le déroulé avec le Gonilélé et la calebasse :
+    // l'étape 4 est un AJOUT, et la dernière étape reçoit une phrase de plus.
+    // Les mots d'origine sont intacts. Ce déroulé doit rester identique à celui
+    // de l'email de confirmation (`supabase/functions/_shared/showcase-email.ts`).
     program: [
       { t: 'Le Neotone en live', d: 'Je joue devant vous : le son brut, puis avec effets (octaver, réverbe, looper) et au chant — l’interface projetée à l’écran.' },
       { t: 'Handpan Compagnon, l’app qui rend la musique visible', d: 'Démonstration en direct : les couleurs, les constellations d’accords, et comment on apprend en voyant la musique plutôt qu’en déchiffrant des partitions.' },
       { t: 'Le son acoustique & les micros', d: 'Mes deux handpans acoustiques Yishama, sonorisés par les micros Hisong et Muling — pour comparer et entendre la différence.' },
+      { t: 'Le Gonilélé et la calebasse', d: 'La harpe africaine Gonilélé et la calebasse sont sorties elles aussi : je les joue, j’explique comment on les aborde — et si tu es venu·e pour elles, tu es exactement au bon endroit.' },
       { t: 'Vos questions', d: 'Un temps d’échange ouvert : je réponds à tout le monde, du curieux débutant au musicien confirmé.' },
-      { t: 'À votre tour de jouer', d: 'Essayez les deux Neotone — l’un sur enceinte, l’autre au casque — et mes deux handpans acoustiques Yishama. Prenez le temps de ressentir chaque instrument.' },
+      { t: 'À votre tour de jouer', d: 'Essayez les deux Neotone — l’un sur enceinte, l’autre au casque — et mes deux handpans acoustiques Yishama. Prenez le temps de ressentir chaque instrument. Le Gonilélé et la calebasse sont là aussi : prenez-les en main.' },
     ],
     programNote: 'Enfants bienvenus, sous la responsabilité de leurs parents. L’aspect démonstration, conférence et questions-réponses peut être un peu long pour les plus jeunes : prévoyez si besoin une activité calme, ou le relais d’un autre adulte.',
     booking: 'Prise de rendez-vous sur réservation par email :',
@@ -1178,7 +1227,7 @@ const fr = {
     // ⚠️ Le showcase reste GRATUIT : c'est la RÉSERVATION qui devient
     // nécessaire, jamais l'entrée qui devient payante. Ne pas réintroduire
     // « entrée libre », « réservation conseillée » ni « sans inscription ».
-    agendaIntro: 'Présentation des Neotone par David Lesage, avec test des instruments sur place. Gratuit — nombre de places limitées · réservation nécessaire.',
+    agendaIntro: 'Présentation des Neotone par David Lesage — et découverte de tout ce qui se joue au Nid : handpans acoustiques Yishama, harpe africaine Gonilélé, calebasse, micros pour handpan. Tout est essayable sur place. Gratuit — nombre de places limitées · réservation nécessaire.',
     agendaEmpty: 'Prochaines dates en préparation',
     agendaEmptyText: 'Les prochaines dates sont en cours de calage. Laisse-moi ton email : tu seras prévenu·e en premier, avant l’annonce publique.',
     agendaEmptyCta: 'Me prévenir de la prochaine date',
@@ -1188,7 +1237,7 @@ const fr = {
     // Mots de David (16/08/2026), affichés sous la date dans le hero.
     agendaSeats: 'Gratuit sur réservation · places limitées',
     agendaCta: 'Être prévenu·e des prochains showcases',
-    agendaEventTitle: 'Showcase Neotone — découverte & essai',
+    agendaEventTitle: 'Showcase Neotone — et tous les instruments à essayer',
     agendaEventTag: 'Public · Gratuit',
     agendaEventTime: 'de {start} à {end}',
     // ── « À savoir avant de venir » (16/08/2026).

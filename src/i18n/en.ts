@@ -1032,12 +1032,15 @@ export const en: Dict = {
     ],
   },
   showroom: {
-    title: 'Try a Handpan in Paris — Showroom | David Lesage',
+    title: 'Try a Handpan, a Gonilélé, a Mic in Paris — Showroom | David Lesage',
     description:
-      'Try both worlds of the handpan in Paris: my Yishama acoustic handpans and the Neotone electronic handpan. David Lesage Showroom, 29 rue des Orteaux, Paris 20th: free showcases, private demonstrations and lessons.',
+      'Try every instrument I play, in Paris: the Neotone electronic handpan, my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. David Lesage Showroom, 29 rue des Orteaux, Paris 20th: free showcases, private demonstrations and lessons.',
     heroEyebrow: 'Le Nid · Paris 20th',
     heroTitle: 'David Lesage Showroom',
-    heroLead: 'A place where acoustic and electronic are played side by side: my Yishama handpans and the Neotone, in your hands the same afternoon — and a community to meet.',
+    // 🚨 See dict.ts: opened up on 18/08/2026 at David's explicit request. The
+    // Neotone stays the headline act — we WIDEN, we do not replace it with a
+    // flat list where everything weighs the same.
+    heroLead: 'The Neotone as the headline act — and with it everything else I play: my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. You hear them, you play them, the same afternoon.',
     // See dict.ts: this CTA is the OPTION, shown BELOW the next free showcase.
     ctaBook: 'Book a private one-to-one slot (paid)',
     // "just sign up" played the booking down: it is required.
@@ -1052,8 +1055,10 @@ export const en: Dict = {
     // « The world of AND », showroom edition: here it is an EXPERIENCE, not a
     // purchase decision. Strict parity both ways — feature Yishama, but never
     // MORE than Neotone (David's explicit instruction, 11/08).
-    duoEyebrow: 'On site · both worlds',
-    duoTitle: 'Acoustic and electronic, the same afternoon',
+    // ⚠️ See dict.ts: this block is about the HANDPAN only. It is followed by
+    // the `also*` block (Gonilélé, calabash, microphones) since 18/08/2026.
+    duoEyebrow: 'On site · both handpan worlds',
+    duoTitle: 'Acoustic and electronic handpan, the same afternoon',
     duoIntro: 'The showroom is not here to make you pick a side. Both worlds live next to each other: you hear them, you play them, you feel the difference in your hands. Not competition — completion.',
     duo: [
       {
@@ -1073,11 +1078,37 @@ export const en: Dict = {
     ],
     duoNote: 'To be clear: only the Neotone is in stock here — it is the only one you can take home the same day. The Yishamas are my personal instruments: they are here to be heard and played, and if you want your own, I point you to the workshop (I am an ambassador and affiliate).',
 
+    // ── AND NOT ONLY THE HANDPAN (18/08/2026) ──────────────────────────────
+    // Facts sourced strictly from elsewhere on the site — see dict.ts for the
+    // list of sources. 🚧 NOT WRITTEN because unknown: how many Gonilélé /
+    // calabashes are available to try on site. Do not invent a number.
+    alsoEyebrow: 'On site · and not only the handpan',
+    alsoTitle: 'Everything else I play is here too',
+    alsoIntro: 'The Neotone is the headline act of the showcase — but you don’t have to come for it. These instruments are out on the floor too, and you can pick them up just like the handpans.',
+    also: [
+      {
+        title: 'The Gonilélé harp',
+        text: 'The West African harp-lute from La Maison du Ngoni, in its travel version: a calabash body, a noble-wood neck, strings tuned to a pentatonic scale. Intuitive and meditative — you can approach it knowing nothing at all.',
+        cta: 'Discover the Gonilélé',
+      },
+      {
+        title: 'The calabash',
+        text: 'I have played the calabash as a percussion instrument since 2012. It is also the heart of my Now Groove rhythm method: an organic drum kit with a natural sound, with its mat and its shakers.',
+        cta: 'See the calabash kit',
+      },
+      {
+        title: 'The handpan microphones',
+        text: 'The Hisong AirStudio S1 and the Muling set (MP1 + HMP-2 preamp). We plug them into my acoustic handpans and you hear, live and one after the other, what each of them changes.',
+        cta: 'See the microphones',
+      },
+    ],
+    alsoNote: 'Coming for one of them in particular? Tick it when you book your spot: I’ll have it ready for the session.',
+
     eventsEyebrow: 'What you experience',
     eventsTitle: 'Test, meet, walk away with',
     eventsHighlight: 'Most asked for at the start',
     events: [
-      { t: 'Presentation showcase', d: 'Neotone presentation events by David Lesage, with hands-on testing of the instruments on site.', price: 'Public · Free' },
+      { t: 'Neotone showcase & instrument discovery', d: 'The free public gathering at Le Nid: David Lesage presents the Neotone — then everything is there to be tried, Yishama acoustic handpans, Gonilélé African harp, calabash and handpan microphones.', price: 'Public · Free' },
       { t: 'Getting started with your instrument', d: 'Just received your Neotone, your handpan or your microphone? We set everything up together and walk through the controls, step by step. In person or online.', price: '' },
       { t: 'Discovering the instruments', d: 'A private session at the showroom to try in depth whatever interests you: Yishama acoustic handpans, Neotone, calabash, Gonilélé, Hisong and Muling microphones.', price: '' },
       { t: 'Lesson or one-to-one guidance', d: 'With David Lesage, whatever your level: create your scales, play pieces and techniques, or simply get clear on what you’re looking for. In person or online.', price: '' },
@@ -1085,12 +1116,16 @@ export const en: Dict = {
     programEyebrow: 'How it unfolds',
     programTitle: 'What happens in a session',
     programIntro: 'Each session lasts about 2 hours: a time to listen, watch demos and talk — then the moment when you get to play.',
+    // 🚫 See dict.ts: David's own words. Step 4 is an ADDITION (18/08/2026) and
+    // the last step gained one sentence — nothing was rewritten. This run-through
+    // must stay identical to the one in the confirmation email.
     program: [
       { t: 'The Neotone, live', d: 'I play for you: the raw sound, then with effects (octaver, reverb, looper) and singing along — the interface projected on screen.' },
       { t: 'Handpan Compagnon, the app that makes music visible', d: 'A live demo: the colours, the chord constellations, and how you learn by seeing music instead of decoding sheet music.' },
       { t: 'Acoustic sound & microphones', d: 'My two Yishama acoustic handpans, miked with the Hisong and Muling microphones — to compare and hear the difference.' },
+      { t: 'The Gonilélé and the calabash', d: 'The Gonilélé African harp and the calabash are out on the floor too: I play them, I explain how you get started with them — and if that is what you came for, you are exactly in the right place.' },
       { t: 'Your questions', d: 'An open exchange: I answer everyone, from the curious beginner to the seasoned musician.' },
-      { t: 'Your turn to play', d: 'Try both Neotone — one on a speaker, one on headphones — and my two Yishama acoustic handpans. Take your time to feel each instrument.' },
+      { t: 'Your turn to play', d: 'Try both Neotone — one on a speaker, one on headphones — and my two Yishama acoustic handpans. Take your time to feel each instrument. The Gonilélé and the calabash are there too: pick them up.' },
     ],
     programNote: 'Children welcome, under their parents’ responsibility. The demonstration, talk and Q&A part can feel a little long for younger ones, so consider bringing a quiet activity, or a second adult to take over if needed.',
     booking: 'Appointments by email reservation:',
@@ -1101,7 +1136,7 @@ export const en: Dict = {
     // 🚨 See dict.ts: booking is MANDATORY (David, 17/08/2026). The showcase
     // stays FREE — it is the booking that becomes required, never the entry
     // that becomes paid. Do not reintroduce "free entry" / "booking recommended".
-    agendaIntro: 'Neotone presentation by David Lesage, with instruments to try on site. Free — limited places · booking required.',
+    agendaIntro: 'Neotone presentation by David Lesage — and a chance to discover everything else played at Le Nid: Yishama acoustic handpans, Gonilélé African harp, calabash, handpan microphones. All of it there to be tried. Free — limited places · booking required.',
     agendaEmpty: 'Upcoming dates in preparation',
     agendaEmptyText: 'The next dates are being finalised. Leave me your email and you’ll be the first to know, before the public announcement.',
     agendaEmptyCta: 'Notify me of the next date',
@@ -1110,7 +1145,7 @@ export const en: Dict = {
     agendaCountPlural: '{n} upcoming dates',
     agendaSeats: 'Free, booking required · limited places',
     agendaCta: 'Get notified about upcoming showcases',
-    agendaEventTitle: 'Neotone showcase — discover & try',
+    agendaEventTitle: 'Neotone showcase — and every instrument to try',
     agendaEventTag: 'Public · Free',
     agendaEventTime: 'from {start} to {end}',
     // ── “Good to know before you come” (16/08/2026). Until now these three

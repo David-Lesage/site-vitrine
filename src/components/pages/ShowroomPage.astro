@@ -27,6 +27,19 @@ const duoMeta = [
   { icon: 'lucide:circle-dot', href: '/yishama', accent: 'text-copper', ring: 'border-copper/30', chip: 'bg-copper/10 text-copper' },
   { icon: 'lucide:audio-waveform', href: '/le-neotone', accent: 'text-rust', ring: 'border-rust/30', chip: 'bg-rust/10 text-rust' },
 ]
+// 🚨 « ET PAS SEULEMENT LE HANDPAN » (18/08/2026, demande de David).
+// Un joueur de N'Goni a réservé un showcase : il venait pour le GONILÉLÉ, et
+// la page n'en parlait nulle part — il pouvait croire s'être trompé
+// d'événement. Ce bloc s'ajoute APRÈS le duo handpan, sans lui prendre sa
+// place : le Neotone reste le fer de lance, on élargit seulement.
+// Destinations : la harpe a sa fiche dédiée ; la calebasse et les micros
+// vivent dans la boutique (ancres `#creations` et `#micros` = `Section id`
+// de ShopPage, alimentées par les catégories de src/data/shop.ts).
+const alsoMeta = [
+  { icon: 'lucide:music-2', href: '/gonilele' },
+  { icon: 'lucide:drum', href: '/boutique#creations' },
+  { icon: 'lucide:mic', href: '/boutique#micros' },
+]
 // Les 3 cartes payantes affichent le tarif de site.ts (sessionTypes), comme le
 // formulaire de réservation — impossible qu'elles annoncent deux prix différents.
 // La 1ʳᵉ carte (showcase gratuit) garde son libellé traduit.
@@ -180,6 +193,31 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
       ))}
     </div>
     <p class="mx-auto mt-8 max-w-3xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm text-ink-soft/85">{sh.duoNote}</p>
+
+    {/* ── ET PAS SEULEMENT LE HANDPAN — Gonilélé, calebasse, micros.
+        Volontairement dans la MÊME section que le duo handpan, et sous un
+        filet de séparation : ça se lit comme « … et il y a aussi ça »,
+        jamais comme un quatrième univers concurrent du Neotone.
+        Cartes plus sobres que celles du duo (une seule colonne de texte,
+        pas de puces) : l'attractivité du Neotone n'est pas diluée. */}
+    <div class="mt-14 border-t border-ink/10 pt-12">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.alsoEyebrow}</p>
+        <h2 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.alsoTitle}</h2>
+        <p class="mt-3 text-ink-soft/85">{sh.alsoIntro}</p>
+      </div>
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        {sh.also.map((a, i) => (
+          <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+            <Icon name={alsoMeta[i].icon} class="h-7 w-7 text-copper" />
+            <h3 class="mt-3 font-display text-lg font-700">{a.title}</h3>
+            <p class="mt-2 flex-1 text-sm text-ink-soft/85">{a.text}</p>
+            <a href={L(alsoMeta[i].href)} class="mt-5 inline-flex items-center gap-1 text-sm font-700 text-copper transition-all hover:gap-2">{a.cta} →</a>
+          </div>
+        ))}
+      </div>
+      <p class="mx-auto mt-6 max-w-2xl text-center text-sm text-ink-soft/70">{sh.alsoNote}</p>
+    </div>
   </Section>
 
   <Section tone="cream-deep">

@@ -18,6 +18,23 @@
 // bloc « rendez-vous individuel » sont ses mots, validés tels quels (16/08/2026).
 // Toute réécriture doit venir de lui.
 //
+// Révision du 18/08/2026, demandée par David : LE GONILÉLÉ DANS LE DÉROULÉ.
+//   Un visiteur joueur de N'Goni a réservé un showcase — il venait manifestement
+//   pour le Gonilélé (harpe africaine). Or l'email ne le nommait NULLE PART dans
+//   le déroulé : il n'apparaissait que tout en bas, dans le bloc qui vend le
+//   rendez-vous individuel PAYANT. Quelqu'un venu pour lui pouvait croire qu'il
+//   s'était trompé d'événement, ou qu'il fallait payer pour le voir.
+//   Trois ajouts, STRICTEMENT ADDITIFS (aucun mot de David réécrit) :
+//     • `programWhat` — la liste de ce qui est sorti ce jour-là, affichée juste
+//       sous l'intro du déroulé. Ce n'est pas une nouvelle formulation : c'est la
+//       clé `what` de l'email « dates de showcase » plus bas, déjà validée ;
+//     • une 4ᵉ étape « Le Gonilélé et la calebasse » dans `program` ;
+//     • une phrase de plus à la fin de « À votre tour de jouer ».
+//   ⚠️ L'équilibre reste le même : le showcase gratuit se suffit à lui-même, le
+//   bloc « rendez-vous individuel » n'a pas bougé et reste après le déroulé.
+//   Le même déroulé existe sur /showroom (`showroom.program` des deux dicos) :
+//   les deux doivent rester identiques.
+//
 // Révision du 16/08/2026 (soir), demandée par David lui-même :
 //   • « viens quand tu veux » voulait dire « à la DATE que tu veux » — sur
 //     l'HORAIRE il est ferme, et ça doit être clair. D'où le bloc en tête de la
@@ -148,12 +165,14 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         share: 'A fruit juice, a cake, anything to pass around — <strong>entirely optional</strong>, and never a condition for coming. It is simply in a spirit of sharing: it makes the moment warmer for everyone.',
         programTitle: 'What happens during a session',
         programIntro: 'The programme runs about <strong>2h</strong> — and in practice we usually stay closer to <strong>3h</strong>, carried along by the conversations: a time for listening, for demonstration and for exchange — then the moment when it’s your turn to play.',
+        programWhat: 'The electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the <strong>handpan microphones</strong>, the <strong>Gonilélé</strong> African harp, the <strong>calabash</strong> — and the <strong>Handpan Compagnon</strong> app, which makes music visible. Whichever of them brought you here, it will be out on the floor.',
         program: [
             ['The Neotone live', 'I play in front of you: the raw sound, then with effects (octaver, reverb, looper) and with singing — the interface projected on the screen.'],
             ['Handpan Compagnon, the app that makes music visible', 'Live demonstration: the colours, the chord constellations, and how you learn by seeing music rather than deciphering sheet music.'],
             ['The acoustic sound &amp; the microphones', 'My two Yishama acoustic handpans, amplified by the Hisong and Muling microphones — to compare and hear the difference.'],
+            ['The Gonilélé and the calabash', 'The Gonilélé African harp and the calabash are out on the floor too: I play them, I explain how you get started with them — and if that is what you came for, you are exactly in the right place.'],
             ['Your questions', 'An open time for exchange: I answer everyone, from the curious beginner to the seasoned musician.'],
-            ['Your turn to play', 'Try both Neotone — one on a speaker, one on headphones — and my two Yishama acoustic handpans. Take the time to feel each instrument.'],
+            ['Your turn to play', 'Try both Neotone — one on a speaker, one on headphones — and my two Yishama acoustic handpans. Take the time to feel each instrument. The Gonilélé and the calabash are there too: pick them up.'],
         ],
         accessTitle: 'Getting in',
         access: [
@@ -194,12 +213,14 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         share: 'Un jus de fruit, un gâteau, quelque chose à faire passer — <strong>totalement facultatif</strong>, et jamais une condition pour venir. C’est simplement dans un esprit de partage : ça rend le moment plus convivial pour tout le monde.',
         programTitle: 'Au programme d’une session',
         programIntro: 'Le programme dure environ <strong>2h</strong> — et en pratique on reste plutôt <strong>3h</strong>, portés par les échanges : un temps d’écoute, de démonstration et d’échange — puis le moment où c’est toi qui joues.',
+        programWhat: 'Le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les <strong>micros pour handpan</strong>, la harpe africaine <strong>Gonilélé</strong>, la <strong>calebasse</strong> — et l’application <strong>Handpan Compagnon</strong>, qui rend la musique visible. Quel que soit celui qui t’amène, il sera sorti.',
         program: [
             ['Le Neotone en live', 'Je joue devant vous : le son brut, puis avec effets (octaver, réverbe, looper) et au chant — l’interface projetée à l’écran.'],
             ['Handpan Compagnon, l’app qui rend la musique visible', 'Démonstration en direct : les couleurs, les constellations d’accords, et comment on apprend en voyant la musique plutôt qu’en déchiffrant des partitions.'],
             ['Le son acoustique &amp; les micros', 'Mes deux handpans acoustiques Yishama, sonorisés par les micros Hisong et Muling — pour comparer et entendre la différence.'],
+            ['Le Gonilélé et la calebasse', 'La harpe africaine Gonilélé et la calebasse sont sorties elles aussi : je les joue, j’explique comment on les aborde — et si tu es venu·e pour elles, tu es exactement au bon endroit.'],
             ['Vos questions', 'Un temps d’échange ouvert : je réponds à tout le monde, du curieux débutant au musicien confirmé.'],
-            ['À votre tour de jouer', 'Essayez les deux Neotone — l’un sur enceinte, l’autre au casque — et mes deux handpans acoustiques Yishama. Prenez le temps de ressentir chaque instrument.'],
+            ['À votre tour de jouer', 'Essayez les deux Neotone — l’un sur enceinte, l’autre au casque — et mes deux handpans acoustiques Yishama. Prenez le temps de ressentir chaque instrument. Le Gonilélé et la calebasse sont là aussi : prenez-les en main.'],
         ],
         accessTitle: 'Pour entrer',
         access: [
@@ -273,6 +294,7 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         <tr><td style="padding:22px 28px 4px;border-top:1px solid #f0f1f3;">
           <h2 style="margin:0 0 6px;font-size:17px;color:#111827;">${t.programTitle}</h2>
           <p style="margin:0 0 10px;color:#374151;font-size:14px;line-height:1.7;">${t.programIntro}</p>
+          <p style="margin:0 0 12px;padding:10px 12px;background:#faf5ef;border:1px solid #e7d9c6;border-radius:10px;color:#374151;font-size:14px;line-height:1.7;">🎶 ${t.programWhat}</p>
           <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">${programList}</table>
         </td></tr>
 
