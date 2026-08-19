@@ -18,6 +18,39 @@
 // bloc « rendez-vous individuel » sont ses mots, validés tels quels (16/08/2026).
 // Toute réécriture doit venir de lui.
 //
+// Révision du 18/08/2026 (soir), demandée par David — TROIS AJOUTS :
+//   1. « ET PARFOIS, ÇA VA PLUS LOIN » (`bonusTitle` / `bonus`). Ses mots :
+//      « selon le public intéressé, démo de Gonilélé EN SITUATION (utilisation
+//      d'effets et de la pédale d'octaver sur sono Bose professionnelle en
+//      condition concert) ainsi que de la calebasse et même tambour chamanique
+//      "l'Âme du tambour" ».
+//      🚨 « SELON LE PUBLIC INTÉRESSÉ » EST ESSENTIEL : ce n'est PAS
+//      systématique et ça ne doit JAMAIS être promis comme acquis — quelqu'un
+//      venu exprès pour le tambour et reparti sans l'avoir vu serait plus déçu
+//      que s'il n'en avait jamais entendu parler. Ne pas transformer cette
+//      possibilité en programme.
+//      🚫 NE RIEN INVENTER : « l'Âme du tambour » est un NOM PROPRE donné tel
+//      quel (aucune origine, matière ni fabricant connus) ; « sono Bose
+//      professionnelle en condition concert » et « pédale d'octaver » sont ses
+//      termes (aucun modèle précis) ; aucun nombre d'instruments n'est avancé.
+//      Le même texte vit sur /showroom (`showroom.programBonus` des deux dicos).
+//   2. LE CODE DU PORTAIL N'APPARAÎT PLUS QU'UNE FOIS. Il était écrit à la fois
+//      dans la liste « Pour entrer » et dans l'encadré qui le met en valeur.
+//      L'encadré est gardé (c'est la présentation lisible), la liste n'y renvoie
+//      plus que par « indiqué juste en dessous ». La consigne « garder ce code
+//      pour toi : c'est un lieu de vie partagé » est CONSERVÉE — c'est une
+//      consigne, pas une redite.
+//   3. « SI TU AS UN EMPÊCHEMENT » (`troubleTitle` / `trouble1..3`). 🚫 MOTS DE
+//      DAVID, ne pas reformuler en langage marketing (seules la ponctuation et
+//      la mise en forme sont de nous). Placée APRÈS les infos pratiques et
+//      AVANT le bloc du rendez-vous payant : la personne vient de réserver, le
+//      ton d'accueil reste en tête de message.
+//      ❓ À CONFIRMER PAR DAVID : son bouton (« prends un nouveau rdv ») mène
+//      ici vers UNE AUTRE DATE DE SHOWCASE (gratuit, /showroom#agenda), pas vers
+//      le rendez-vous individuel payant — mettre un bouton payant dans un
+//      message qui parle d'engagement moral reviendrait à monnayer un
+//      désistement. Le rendez-vous payant garde son bloc dédié, plus bas.
+//
 // Révision du 18/08/2026, demandée par David : LE GONILÉLÉ DANS LE DÉROULÉ.
 //   Un visiteur joueur de N'Goni a réservé un showcase — il venait manifestement
 //   pour le Gonilélé (harpe africaine). Or l'email ne le nommait NULLE PART dans
@@ -165,6 +198,13 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         share: 'A fruit juice, a cake, anything to pass around — <strong>entirely optional</strong>, and never a condition for coming. It is simply in a spirit of sharing: it makes the moment warmer for everyone.',
         programTitle: 'What happens during a session',
         programIntro: 'The programme runs about <strong>2h</strong> — and in practice we usually stay closer to <strong>3h</strong>, carried along by the conversations: a time for listening, for demonstration and for exchange — then the moment when it’s your turn to play.',
+        bonusTitle: 'And sometimes it goes further',
+        bonus: 'Depending on who is there and what they are interested in, the session can open up further: a demo of the Gonilélé <strong>in a live setting</strong> — with the effects and the octaver pedal, on a <strong>professional Bose PA in concert conditions</strong> —, the calabash, and even the shamanic drum “l’Âme du tambour”. It is <strong>not systematic</strong>: it depends on the people there that evening and on what interests them. Tell me what draws you, I take it into account.',
+        troubleTitle: 'If something comes up',
+        trouble1: 'Let me know. Free does not mean without value — quite the opposite — and the value of a commitment is a value I hold. I hope you do too!',
+        trouble2: 'So if for any reason you are not coming, let me know, and as early as possible. Because it has consequences: it can change how I organise things, and it can stop someone else from coming.',
+        trouble3: 'If you are postponing your visit, book another date.',
+        troubleCta: 'Choose another date',
         programWhat: 'The electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the <strong>handpan microphones</strong>, the <strong>Gonilélé</strong> African harp, the <strong>calabash</strong> — and the <strong>Handpan Compagnon</strong> app, which makes music visible. Whichever of them brought you here, it will be out on the floor.',
         program: [
             ['The Neotone live', 'I play in front of you: the raw sound, then with effects (octaver, reverb, looper) and with singing — the interface projected on the screen.'],
@@ -176,7 +216,9 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         ],
         accessTitle: 'Getting in',
         access: [
-            'The gate code is <strong>AB0569</strong>',
+            // ⚠️ The code itself is NOT repeated here (18/08/2026): it appears
+            // once only, in the highlighted box right below this list.
+            'Enter the gate code (shown just below)',
             'At the back of the courtyard, green door, then <strong>3rd floor</strong>',
             'Le Nid is a “Temple” — <strong>shoes off before coming in</strong>',
             'Phone on <strong>silent / airplane mode</strong>',
@@ -213,6 +255,13 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         share: 'Un jus de fruit, un gâteau, quelque chose à faire passer — <strong>totalement facultatif</strong>, et jamais une condition pour venir. C’est simplement dans un esprit de partage : ça rend le moment plus convivial pour tout le monde.',
         programTitle: 'Au programme d’une session',
         programIntro: 'Le programme dure environ <strong>2h</strong> — et en pratique on reste plutôt <strong>3h</strong>, portés par les échanges : un temps d’écoute, de démonstration et d’échange — puis le moment où c’est toi qui joues.',
+        bonusTitle: 'Et parfois, ça va plus loin',
+        bonus: 'Selon le public intéressé, la séance peut s’ouvrir davantage : une démo du Gonilélé <strong>en situation</strong> — avec les effets et la pédale d’octaver, sur <strong>sono Bose professionnelle en condition concert</strong> —, la calebasse, et même le tambour chamanique « l’Âme du tambour ». Ce n’est <strong>pas systématique</strong> : ça dépend des personnes présentes ce soir-là et de ce qui les intéresse. Dis-moi ce qui t’attire, j’en tiens compte.',
+        troubleTitle: 'Si tu as un empêchement',
+        trouble1: 'Préviens-moi. Gratuit ne veut pas dire sans valeur, c’est même tout le contraire, et la valeur de l’engagement est une valeur que je porte — j’espère que toi aussi !',
+        trouble2: 'Donc si pour X raison tu ne viens pas, préviens-moi, et le plus tôt possible. Car cela a des conséquences : ça peut changer mon organisation, empêcher quelqu’un d’autre de venir.',
+        trouble3: 'Si tu reportes ta venue, prends un nouveau rendez-vous.',
+        troubleCta: 'Choisir une autre date',
         programWhat: 'Le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les <strong>micros pour handpan</strong>, la harpe africaine <strong>Gonilélé</strong>, la <strong>calebasse</strong> — et l’application <strong>Handpan Compagnon</strong>, qui rend la musique visible. Quel que soit celui qui t’amène, il sera sorti.',
         program: [
             ['Le Neotone en live', 'Je joue devant vous : le son brut, puis avec effets (octaver, réverbe, looper) et au chant — l’interface projetée à l’écran.'],
@@ -224,7 +273,9 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         ],
         accessTitle: 'Pour entrer',
         access: [
-            'Le code du portail = <strong>AB0569</strong>',
+            // ⚠️ Le code n'est PAS répété ici (18/08/2026) : il n'apparaît plus
+            // qu'une seule fois, dans l'encadré juste sous cette liste.
+            'Tape le code du portail (indiqué juste en dessous)',
             'Au fond de la cour, porte verte, puis <strong>3e étage</strong>',
             'Le Nid est un « Temple » — <strong>on se déchausse avant d’entrer</strong>',
             'Portable en mode <strong>silencieux / avion</strong>',
@@ -296,6 +347,9 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
           <p style="margin:0 0 10px;color:#374151;font-size:14px;line-height:1.7;">${t.programIntro}</p>
           <p style="margin:0 0 12px;padding:10px 12px;background:#faf5ef;border:1px solid #e7d9c6;border-radius:10px;color:#374151;font-size:14px;line-height:1.7;">🎶 ${t.programWhat}</p>
           <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">${programList}</table>
+          <p style="margin:14px 0 0;padding:12px 14px;background:#ffffff;border:1px dashed #e7d9c6;border-radius:10px;color:#374151;font-size:14px;line-height:1.7;">
+            <strong style="color:#111827;">✨ ${t.bonusTitle}</strong><br />${t.bonus}
+          </p>
         </td></tr>
 
         <tr><td style="padding:22px 28px 4px;border-top:1px solid #f0f1f3;">
@@ -317,6 +371,14 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         <tr><td style="padding:22px 28px 4px;border-top:1px solid #f0f1f3;">
           <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.kidsTitle}</h2>
           <p style="margin:0;color:#374151;font-size:14px;line-height:1.7;">${t.kids}</p>
+        </td></tr>
+
+        <tr><td style="padding:22px 28px 4px;border-top:1px solid #f0f1f3;">
+          <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.troubleTitle}</h2>
+          <p style="margin:0;color:#374151;font-size:14px;line-height:1.7;">${t.trouble1}</p>
+          <p style="margin:8px 0 0;color:#374151;font-size:14px;line-height:1.7;">${t.trouble2}</p>
+          <p style="margin:8px 0 0;color:#374151;font-size:14px;line-height:1.7;">${t.trouble3}</p>
+          <div style="margin-top:14px;">${btn(`${base}/showroom#agenda`, t.troubleCta, false)}</div>
         </td></tr>
 
         <tr><td style="padding:22px 28px 8px;border-top:1px solid #f0f1f3;">

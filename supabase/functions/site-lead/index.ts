@@ -115,6 +115,17 @@
 //      ⚠ Nécessite `news_opt_in` (boolean) et `news_opt_in_at` (timestamptz) sur
 //      `public.site_leads` — ADD COLUMN nullable appliqué le 17/08/2026. Mêmes
 //      conséquences qu'en v24 si les colonnes manquent : 500 et lead perdu.
+// v26 (18/08/2026) : FORMULAIRE DE RENDEZ-VOUS SIMPLIFIÉ CÔTÉ SITE.
+//      Le site ne pose plus UN menu mélangeant motif et durée, mais deux
+//      questions (motif : cours ou démonstration privée ; puis durée : 1h ou
+//      1h30) — et RECOMPOSE `sessionType` (« lesson-90 », « demo-60 »…) avant
+//      l'envoi. 🔑 AUCUN changement de contrat ici : les identifiants reçus sont
+//      exactement ceux d'ALLOWED_SESSION_TYPE, aucun champ ni colonne ajoutés.
+//      Le motif `onboarding-*` n'est plus proposé sur le site (la prise en main
+//      est rattachée aux cours) mais RESTE accepté : des lignes en base le
+//      portent, et une page servie d'un cache peut encore l'envoyer.
+//      Seul vrai changement de comportement : `instruments` n'est plus jeté pour
+//      un COURS EN PRÉSENTIEL (voir le commentaire à l'endroit du filtrage).
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -793,9 +804,17 @@ Deno.serve(async (req) => {
                 : 'in-person')
             : null;
 
-        // Instruments à préparer : uniquement pour une démonstration privée.
+        // Instruments à préparer (v26, 18/08/2026) — la question est désormais
+        // posée pour les DEUX motifs du formulaire (cours ET démonstration
+        // privée) : on peut très bien vouloir prendre en main un instrument
+        // pendant un cours au showroom. Seul le format compte : en VISIO, il n'y
+        // a rien à préparer, donc rien à enregistrer.
+        // ⚠ Strictement ADDITIF : `sessionFormat` vaut toujours 'in-person' pour
+        // une démonstration (forcé juste au-dessus), donc ce cas est inchangé ;
+        // un cours en présentiel conserve maintenant ses instruments au lieu de
+        // les perdre. Aucune donnée n'est retenue en MOINS qu'avant.
         const rawInstruments = Array.isArray(body.instruments) ? body.instruments.map(String) : [];
-        const picked = sessionType && !REMOTE_SESSION_TYPES.includes(sessionType)
+        const picked = sessionType && sessionFormat !== 'remote'
             ? [...new Set(rawInstruments.filter((i) => ALLOWED_INSTRUMENTS.includes(i)))]
             : [];
         const instruments = picked.length ? picked : null;

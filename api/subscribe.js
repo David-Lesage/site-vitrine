@@ -81,6 +81,11 @@ export default async function handler(req, res) {
         playingSince: body.playingSince,
         dream: body.dream,
         country: body.country,
+        // `sessionType` = « <motif>-<durée> » (`lesson-90`, `demo-60`…).
+        // Depuis le 18/08/2026, le formulaire pose DEUX questions (motif, puis
+        // durée) et recompose cet identifiant avant l'envoi : la DURÉE voyage
+        // donc dans ce champ-là, il n'y en a pas d'autre à relayer et rien à
+        // ajouter en base (colonne `session_type`, déjà existante).
         sessionType: body.sessionType,
         sessionFormat: body.sessionFormat,
         instruments: body.instruments,

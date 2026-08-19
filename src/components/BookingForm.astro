@@ -9,7 +9,7 @@
 import { getDict } from '@/i18n/dict'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
-import { sessionOptions, priceGrid } from '@/lib/sessions'
+import { durationLabel, priceLabel, priceGrid } from '@/lib/sessions'
 import { sessionTypes, demoInstruments, showcaseInterests } from '@/data/site'
 import { upcomingShowcases } from '@/lib/agenda'
 import type { Lang } from '@/i18n/config'
@@ -17,13 +17,43 @@ import type { Lang } from '@/i18n/config'
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const bk = getDict(lang).booking
-// Tarifs affichés dans le menu : construits depuis site.ts, jamais recopiés.
-const sessions = sessionOptions(bk.sessionTypeNames, bk.sessionTypeRecommended)
+// ── DEUX MENUS AU LIEU D'UN (18/08/2026, demande de David) ───────────────────
+// Avant : UN menu « Quel rendez-vous ? » qui mélangeait le motif ET la durée
+// (« Cours ou accompagnement individuel — 1h30 · 70 € »), soit 6 lignes.
+// Maintenant, ses mots : « Garder le formulaire avec le menu déroulant "Quel
+// rendez-vous souhaites-tu ?", le simplifier : 1 - Prendre un cours avec David.
+// 2 - Démo privée et tester un instrument. Puis le choix du ou des instruments.
+// Puis la durée (1h ou 1h30). »
+//
+// 🔑 AUCUN NOUVEAU CHAMP, AUCUNE NOUVELLE COLONNE : l'identifiant envoyé au
+// serveur reste `sessionType` = « <motif>-<durée> » (`lesson-90`, `demo-60`…),
+// exactement ceux de `sessionTypes` et de l'allowlist `ALLOWED_SESSION_TYPE` de
+// l'Edge Function. Il est simplement RECOMPOSÉ à l'envoi à partir des deux
+// menus (voir le <script> en bas). La durée était donc déjà en base, sous
+// `session_type` — rien à migrer.
+//
+// ⚠️ Le motif `onboarding` (« prise en main ») n'est PLUS proposé : c'est un
+// accompagnement, il est rattaché aux COURS. Il reste dans `sessionTypes`
+// (tarif de la carte « Prise en main de ton instrument » sur /showroom) et dans
+// l'allowlist serveur (lignes déjà en base, pages encore en cache).
+const KIND_ORDER = ['lesson', 'demo'] as const
+const kinds = KIND_ORDER.map((k) => ({ id: k, label: bk.sessionTypeNames[k] }))
+// Durées proposées + tarifs : déduits de `sessionTypes`, jamais recopiés — la
+// modale ne peut pas annoncer un prix que le formulaire ne pratique pas.
+const durations = [...new Map(sessionTypes.map((s) => [s.minutes, s.price])).entries()]
+  .sort((a, b) => a[0] - b[0])
+  .map(([minutes, price], i, all) => ({
+    value: String(minutes),
+    // ★ sur la plus longue : c'est celle que David conseille pour une prise en main.
+    label: `${durationLabel(minutes)} · ${priceLabel(price)}${i === all.length - 1 && bk.sessionTypeRecommended ? ` ${bk.sessionTypeRecommended}` : ''}`,
+  }))
 // « 1h · 50 € — 1h30 · 70 € » : la grille annoncée en clair dans la modale.
 const grid = priceGrid()
 const slots = [1, 2, 3]
-// Types de rendez-vous acceptant la visio (les cours) — lu par le script.
-const remoteIds = sessionTypes.filter((s) => s.remote).map((s) => s.id).join(',')
+// Motifs acceptant la visio (les cours) — lu par le script. On raisonne
+// désormais par MOTIF et non par identifiant complet : la durée n'a aucune
+// influence sur le fait qu'une séance puisse se tenir à distance.
+const remoteKinds = [...new Set(sessionTypes.filter((s) => s.remote).map((s) => s.kind))].join(',')
 // Dates de showcase à venir, transmises à l'Edge Function pour l'email de la
 // LISTE D'ATTENTE (il les liste avec un lien d'inscription par date). Calculées
 // depuis `agendaEvents` via `upcomingShowcases()` — exactement la même source
@@ -38,7 +68,7 @@ const upcoming = JSON.stringify(
 
 <div
   id="booking-modal"
-  data-remote-ids={remoteIds}
+  data-remote-kinds={remoteKinds}
   data-price-grid={grid}
   data-upcoming={upcoming}
   class="fixed inset-0 z-[100] hidden items-start justify-center overflow-y-auto bg-ink/80 p-4 py-10 backdrop-blur-sm"
@@ -121,12 +151,14 @@ const upcoming = JSON.stringify(
         </div>
       </fieldset>
 
-      {/* Type de rendez-vous — le tarif est visible AVANT l'envoi, pas découvert après. */}
+      {/* MOTIF du rendez-vous — deux choix, ni plus ni moins (voir l'en-tête).
+          ⚠️ Le champ s'appelle `sessionKind` : `sessionType` (motif + durée) est
+          recomposé à l'envoi. Ne pas renommer sans lire le <script> en bas. */}
       <label class="block" data-bk-session>
         <span class="text-sm font-600">{bk.sessionType}</span>
-        <select name="sessionType" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none">
+        <select name="sessionKind" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none">
           <option value="">{bk.sessionTypeChoose}</option>
-          {sessions.map((s) => <option value={s.id}>{s.label}</option>)}
+          {kinds.map((k) => <option value={k.id}>{k.label}</option>)}
         </select>
         <span class="mt-2 block rounded-lg bg-gold/10 px-3 py-2 text-xs leading-relaxed text-ink-soft/85">{bk.sessionTypeHint}</span>
       </label>
@@ -196,8 +228,26 @@ const upcoming = JSON.stringify(
         </div>
       </div>
 
-      {/* Démonstration privée : on vient TOUCHER les instruments, donc au showroom
-          uniquement. Savoir lesquels permet à David de les préparer. */}
+      {/* Cours seulement : une démonstration ne se fait pas en visio.
+          ⚠️ Placé AVANT les instruments (18/08/2026) : pour un cours, la question
+          des instruments à préparer ne se pose que si on se voit au showroom. */}
+      <fieldset data-bk-format class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
+        <legend class="px-1 text-sm font-600">{bk.formatLabel}</legend>
+        <div class="mt-2 grid gap-2 sm:grid-cols-2">
+          {[['in-person', bk.formatInPerson], ['remote', bk.formatRemote]].map(([v, label]) => (
+            <label class="flex cursor-pointer items-center gap-2.5 rounded-lg bg-cream px-3 py-2 text-sm">
+              <input type="radio" name="sessionFormat" value={v} class="h-4 w-4 shrink-0 accent-rust" />
+              {label}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      {/* Quels instruments préparer. Posé pour les DEUX motifs depuis le
+          18/08/2026 (« puis le choix du ou des instruments ») : on vient les
+          TOUCHER, donc la question disparaît si la personne choisit la visio.
+          ⚠️ Côté serveur, `instruments` n'est retenu que si `sessionType` est
+          renseigné et que le format n'est pas « remote » — d'où le masquage. */}
       <fieldset data-bk-instruments class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
         <legend class="px-1 text-sm font-600">{bk.instrumentsLabel}</legend>
         <p class="text-xs text-ink-soft/70">{bk.instrumentsHint}</p>
@@ -211,18 +261,19 @@ const upcoming = JSON.stringify(
         </div>
       </fieldset>
 
-      {/* Cours seulement : une démonstration ne se fait pas en visio. */}
-      <fieldset data-bk-format class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
-        <legend class="px-1 text-sm font-600">{bk.formatLabel}</legend>
-        <div class="mt-2 grid gap-2 sm:grid-cols-2">
-          {[['in-person', bk.formatInPerson], ['remote', bk.formatRemote]].map(([v, label]) => (
-            <label class="flex cursor-pointer items-center gap-2.5 rounded-lg bg-cream px-3 py-2 text-sm">
-              <input type="radio" name="sessionFormat" value={v} class="h-4 w-4 shrink-0 accent-rust" />
-              {label}
-            </label>
-          ))}
-        </div>
-      </fieldset>
+      {/* DURÉE (18/08/2026) — 1h ou 1h30, avec son tarif. Dernière question du
+          rendez-vous, comme David l'a décrite. Les valeurs sont des MINUTES :
+          elles forment la seconde moitié de `sessionType` (`lesson-90`…). */}
+      <div data-bk-duration class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
+        <label class="block">
+          <span class="text-sm font-600">{bk.durationLabel}</span>
+          <select name="sessionDuration" required class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none">
+            <option value="">{bk.sessionTypeChoose}</option>
+            {durations.map((d) => <option value={d.value}>{d.label}</option>)}
+          </select>
+        </label>
+        <p class="mt-2 rounded-lg bg-gold/10 px-3 py-2 text-xs leading-relaxed text-ink-soft/85">{bk.durationHint}</p>
+      </div>
 
       {/* Créneaux proposés par la personne : c'est elle qui propose, David valide. */}
       <fieldset data-bk-slots class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
@@ -300,10 +351,13 @@ const upcoming = JSON.stringify(
   // Showcase uniquement — « pour quel(s) instrument(s) viens-tu ? » (17/08/2026)
   const showcaseInterestsEl = modal?.querySelector('[data-bk-showcase-interests]') as HTMLElement
   const formatEl = modal?.querySelector('[data-bk-format]') as HTMLElement
-  const sessionSelect = modal?.querySelector('select[name="sessionType"]') as HTMLSelectElement | null
-  // Types acceptant la visio (les cours) — la liste vient de site.ts via un
+  // Durée du rendez-vous (18/08/2026) — bloc distinct du motif : c'est la
+  // dernière question posée, après les instruments.
+  const durationEl = modal?.querySelector('[data-bk-duration]') as HTMLElement
+  const kindSelect = modal?.querySelector('select[name="sessionKind"]') as HTMLSelectElement | null
+  // Motifs acceptant la visio (les cours) — la liste vient de site.ts via un
   // attribut de données : une expression Astro ne s'interpole pas dans un <script>.
-  const REMOTE_IDS = (modal?.dataset.remoteIds || '').split(',').filter(Boolean)
+  const REMOTE_KINDS = (modal?.dataset.remoteKinds || '').split(',').filter(Boolean)
 
   // Dates de showcase à venir, posées au build dans `data-upcoming`. Même raison
   // que ci-dessus : une expression Astro ne s'interpole pas dans un <script>.
@@ -338,19 +392,29 @@ const upcoming = JSON.stringify(
   }
 
   /**
-   * Les deux sous-questions du rendez-vous individuel s'excluent :
-   *  · démonstration privée → quels instruments préparer (au showroom, forcément) ;
-   *  · cours               → présentiel ou visio.
-   * Tant que rien n'est choisi, aucune des deux ne s'affiche.
+   * Le rendez-vous individuel se remplit dans l'ORDRE DEMANDÉ PAR DAVID :
+   *   motif → (cours : présentiel ou visio) → instruments → durée.
+   *  · cours  → présentiel ou visio ; une démonstration, elle, se fait forcément
+   *    au showroom (on vient toucher les instruments) ;
+   *  · instruments → dès qu'un motif est choisi, SAUF si la personne a demandé
+   *    la visio : cocher des instruments qu'on ne touchera pas n'a pas de sens,
+   *    et le serveur ne les enregistrerait pas ;
+   *  · durée → dès qu'un motif est choisi.
+   * Tant qu'aucun motif n'est choisi, rien de tout ça ne s'affiche.
    */
   function syncSessionBlocks() {
     const paid = sessionEl && !sessionEl.classList.contains('hidden')
-    const id = paid ? (sessionSelect?.value || '') : ''
-    toggleBlock(instrumentsEl, !!id && !REMOTE_IDS.includes(id))
-    toggleBlock(formatEl, REMOTE_IDS.includes(id))
+    const kind = paid ? (kindSelect?.value || '') : ''
+    toggleBlock(formatEl, REMOTE_KINDS.includes(kind))
+    // Lu APRÈS le basculement ci-dessus : masquer le bloc décoche ses boutons.
+    const format = (modal?.querySelector('input[name="sessionFormat"]:checked') as HTMLInputElement | null)?.value || ''
+    toggleBlock(instrumentsEl, !!kind && format !== 'remote')
+    toggleBlock(durationEl, !!kind)
   }
 
-  sessionSelect?.addEventListener('change', syncSessionBlocks)
+  kindSelect?.addEventListener('change', syncSessionBlocks)
+  // « Visio » retire la question des instruments, « présentiel » la ramène.
+  modal?.querySelectorAll('input[name="sessionFormat"]').forEach((r) => r.addEventListener('change', syncSessionBlocks))
 
   function open(trigger: HTMLElement) {
     if (!modal || !form) return
@@ -489,6 +553,16 @@ const upcoming = JSON.stringify(
       .filter(([d, t]) => d && t)
       .map(([d, t]) => `${d}T${t}`)
 
+    // `sessionType` = « <motif>-<durée> » (`lesson-90`, `demo-60`…). Recomposé
+    // ici à partir des deux menus : c'est l'identifiant que connaissent
+    // `sessionTypes` (site.ts) ET l'allowlist de l'Edge Function. Aucun des deux
+    // menus rempli à moitié ne produit d'identifiant — les deux sont `required`
+    // quand ils sont visibles, donc ce cas ne se présente que si le bloc est
+    // masqué (tous les autres motifs du formulaire), et vaut alors `null`.
+    const sessionKind = get('sessionKind')
+    const sessionMinutes = get('sessionDuration')
+    const sessionType = sessionKind && sessionMinutes ? `${sessionKind}-${sessionMinutes}` : null
+
     const source = get('source')
     if (source === 'private-session' && preferredSlots.length === 0) {
       slotsErrEl?.classList.remove('hidden')
@@ -530,7 +604,7 @@ const upcoming = JSON.stringify(
           playingSince: get('playingSince') || null,
           dream: get('dream') || null,
           country: get('country') || null,
-          sessionType: get('sessionType') || null,
+          sessionType,
           sessionFormat: get('sessionFormat') || null,
           instruments: data.getAll('instruments').map(String),
           // Showcase : instruments pour lesquels la personne vient. Champ et

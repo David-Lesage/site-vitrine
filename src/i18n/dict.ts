@@ -214,7 +214,12 @@ const fr = {
     communityIntro: 'Sois prévenu·e des prochains showcases à Paris et de la sortie de Handpan Compagnon. Pas de spam — juste l’essentiel.',
     communityPlaceholder: 'ton@email.fr',
     communityButton: 'Préviens-moi des prochains showcases',
-    communityNote: 'Ton logiciel de mail s’ouvre avec un message déjà rédigé — tu n’as plus qu’à l’envoyer.',
+    // 🚨 CORRIGÉ le 18/08/2026 — la phrase précédente (« Ton logiciel de mail
+    // s'ouvre avec un message déjà rédigé ») était FAUSSE depuis le 16/08 : le
+    // bouton ouvre le formulaire `BookingForm` → `site-lead` → `site_leads`
+    // (le `mailto:` n'est plus qu'un repli si JavaScript ne s'exécute pas).
+    // Décrire ce qui se passe RÉELLEMENT, et ce que la personne reçoit.
+    communityNote: 'Un court formulaire s’ouvre : tu laisses ton nom et ton email, et tu reçois aussitôt les prochaines dates par email.',
     proofEyebrow: 'Le son d’abord',
     proofTitle: 'Voir et entendre les instruments vivre',
     proofIntro: 'Je joue, je démontre, je transmets — l’acoustique et l’électronique en vidéo. Mes deux playlists complètes juste en dessous.',
@@ -583,7 +588,13 @@ const fr = {
     vipPolicyShort: 'Annulation à moins de 24 h : le règlement reste acquis — ce créneau t’était réservé — mais le rendez-vous est reportable dans les 3 mois.',
     sessionType: 'Quel rendez-vous souhaites-tu ?',
     sessionTypeChoose: 'Choisis…',
-    sessionTypeNames: { onboarding: 'Prise en main de mon instrument', demo: 'Découverte des instruments (démonstration privée)', lesson: 'Cours ou accompagnement individuel' },
+    // ⚠️ DEUX MOTIFS SEULEMENT (18/08/2026, mots de David : « 1 - Prendre un
+    // cours avec David. 2 - Démo privée et tester un instrument »). La clé
+    // `onboarding` est CONSERVÉE (elle reste dans `sessionTypes` de site.ts, et
+    // d'anciennes lignes en base portent `onboarding-60/-90`) mais elle n'est
+    // PLUS proposée dans le menu : la prise en main est rattachée aux cours,
+    // c'est un accompagnement. Voir `sessionTypeHint` juste en dessous.
+    sessionTypeNames: { onboarding: 'Prise en main de mon instrument', demo: 'Démo privée et tester un instrument', lesson: 'Prendre un cours avec David' },
     // Demande de code de remise Neotone. Ces informations sont exactement celles
     // que Neotone réclame à David pour enregistrer la vente et sa commission.
     discountTitle: 'Obtenir mon code de remise Neotone',
@@ -635,8 +646,15 @@ const fr = {
     dreamPlaceholder: 'Un morceau, une ambiance, un projet…',
     freeMessageLabel: 'Ton message',
     freeMessageHint: 'Prends la place que tu veux — je lis tout.',
+    // Suffixe de l'option 1h30 du menu des DURÉES (plus du menu des motifs).
     sessionTypeRecommended: '★ conseillé au démarrage',
-    sessionTypeHint: 'Tu viens de recevoir ton instrument — Neotone, handpan acoustique, micro — et tu te sens un peu perdu·e ? La prise en main est faite pour ça : on démarre ensemble, on règle tout et on prend les commandes en main — sans t’engager dans des cours de musique.',
+    sessionTypeHint: 'Tu viens de recevoir ton instrument — Neotone, handpan acoustique, micro — et tu te sens un peu perdu·e ? C’est un cours : choisis « Prendre un cours avec David », on démarre ensemble, on règle tout et on prend les commandes en main — sans t’engager dans la durée.',
+    // ── DURÉE (18/08/2026, mots de David) : « Puis la durée (1h ou 1h30). Pour
+    // une prise en main la durée conseillée c'est 1h30 », « je te donne toutes
+    // les clés pour être autonome ». Les durées et les tarifs ne sont PAS écrits
+    // ici : ils viennent de `sessionTypes` (src/data/site.ts).
+    durationLabel: 'Combien de temps veux-tu qu’on prenne ?',
+    durationHint: 'Pour une prise en main, la durée conseillée c’est 1h30 : je te donne toutes les clés pour être autonome.',
     slotsTitle: 'Tes disponibilités',
     slotsHint: 'Propose-moi jusqu’à 3 créneaux qui t’arrangent — je te confirme celui que je retiens.',
     slotLabel: 'Créneau {n}',
@@ -1214,8 +1232,31 @@ const fr = {
       { t: 'Vos questions', d: 'Un temps d’échange ouvert : je réponds à tout le monde, du curieux débutant au musicien confirmé.' },
       { t: 'À votre tour de jouer', d: 'Essayez les deux Neotone — l’un sur enceinte, l’autre au casque — et mes deux handpans acoustiques Yishama. Prenez le temps de ressentir chaque instrument. Le Gonilélé et la calebasse sont là aussi : prenez-les en main.' },
     ],
+    // ── DÉMO EN SITUATION (18/08/2026, mots de David) — ⚠️ « SELON LE PUBLIC
+    // INTÉRESSÉ » : ce n'est PAS systématique, et ça ne doit jamais être promis
+    // comme acquis. Quelqu'un qui viendrait exprès pour le tambour et repartirait
+    // sans l'avoir vu serait plus déçu que s'il n'en avait jamais entendu parler.
+    // 🚫 NE RIEN INVENTER : « l'Âme du tambour » est un NOM PROPRE donné tel quel
+    // par David (aucune origine, matière ni fabricant connus — ne pas en écrire) ;
+    // « sono Bose professionnelle en condition concert » et « pédale d'octaver »
+    // sont ses termes, aucun modèle précis n'est connu ; aucun nombre
+    // d'instruments disponibles n'est avancé.
+    // Ce texte doit rester IDENTIQUE à celui de l'email de confirmation
+    // (`supabase/functions/_shared/showcase-email.ts`, clés `bonusTitle`/`bonus`).
+    programBonusTitle: 'Et parfois, ça va plus loin',
+    programBonus: 'Selon le public intéressé, la séance peut s’ouvrir davantage : une démo du Gonilélé en situation — avec les effets et la pédale d’octaver, sur sono Bose professionnelle en condition concert —, la calebasse, et même le tambour chamanique « l’Âme du tambour ». Ce n’est pas systématique : ça dépend des personnes présentes ce soir-là et de ce qui les intéresse. Dis-moi ce qui t’attire, j’en tiens compte.',
     programNote: 'Enfants bienvenus, sous la responsabilité de leurs parents. L’aspect démonstration, conférence et questions-réponses peut être un peu long pour les plus jeunes : prévoyez si besoin une activité calme, ou le relais d’un autre adulte.',
-    booking: 'Prise de rendez-vous sur réservation par email :',
+    // 🚨 PLUS AUCUNE ADRESSE EMAIL AFFICHÉE ICI (18/08/2026, demande de David :
+    // « je ne veux plus que les gens voient mon email, je veux qu'ils
+    // remplissent le formulaire pour que tout soit tracé »). Une demande écrite
+    // en direct dans une boîte mail ne laisse AUCUNE trace en base — c'est
+    // exactement ce qui a fait perdre des prospects (voir REPRENDRE-SITE-VITRINE.md).
+    // Ne pas réintroduire de `mailto:` ni d'adresse en clair sur cette page.
+    booking: 'Prise de rendez-vous uniquement par le formulaire : tu le remplis, ta demande m’arrive et je te réponds personnellement.',
+    // ⚠️ `bookVisitCta` n'est PLUS affiché (18/08/2026) : la page portait DEUX
+    // boutons côte à côte (« Réserver mon créneau au showroom (payant) » et
+    // « Réserver un rendez-vous individuel ») qui ouvraient le même formulaire.
+    // Clé conservée, pas supprimée — à retrancher seulement sur décision de David.
     bookVisitCta: 'Réserver mon créneau au showroom (payant)',
     bookPrivateCta: 'Réserver un rendez-vous individuel',
     agendaEyebrow: 'Agenda',

@@ -193,7 +193,10 @@ export const en: Dict = {
     communityIntro: 'Be notified about upcoming showcases in Paris and the release of Handpan Compagnon. No spam — just the essentials.',
     communityPlaceholder: 'your@email.com',
     communityButton: 'Keep me posted about the next showcases',
-    communityNote: 'Your mail app opens with a message already written — you just hit send.',
+    // 🚨 FIXED on 18/08/2026 — the previous sentence (“Your mail app opens…”)
+    // had been FALSE since 16/08: the button opens the `BookingForm` modal →
+    // `site-lead` → `site_leads` (the `mailto:` is only a no-JavaScript fallback).
+    communityNote: 'A short form opens: leave your name and email, and you get the next dates by email straight away.',
     proofEyebrow: 'Sound first',
     proofTitle: 'See and hear the instruments come alive',
     proofIntro: 'I play, I demonstrate, I teach — acoustic and electronic, on video. Both full playlists are right below.',
@@ -544,7 +547,11 @@ export const en: Dict = {
     vipPolicyShort: 'Cancelling less than 24 h beforehand: the payment stays with me — that slot was held for you — but the appointment can be rescheduled within 3 months.',
     sessionType: 'Which appointment would you like?',
     sessionTypeChoose: 'Choose…',
-    sessionTypeNames: { onboarding: 'Getting started with my instrument', demo: 'Discovering the instruments (private demo)', lesson: 'Lesson or one-to-one guidance' },
+    // ⚠️ TWO REASONS ONLY (18/08/2026) — see the comment in dict.ts. The
+    // `onboarding` key is kept (older rows in the database carry
+    // `onboarding-60/-90`) but is no longer offered: getting started with an
+    // instrument is now part of the lessons.
+    sessionTypeNames: { onboarding: 'Getting started with my instrument', demo: 'Private demo and trying an instrument', lesson: 'Take a lesson with David' },
     discountTitle: 'Get my Neotone discount code',
     discountIntro: 'A personal −5% online code, which I request for you from Neotone. Personal reply within 24 to 48 h.',
     discountModel: 'Which model are you interested in?',
@@ -591,8 +598,14 @@ export const en: Dict = {
     dreamPlaceholder: 'A piece, a mood, a project…',
     freeMessageLabel: 'Your message',
     freeMessageHint: 'Take all the space you want — I read everything.',
+    // Suffix of the 1h30 option in the DURATION menu (no longer the reason menu).
     sessionTypeRecommended: '★ recommended at the start',
-    sessionTypeHint: 'Just received your instrument — Neotone, acoustic handpan, microphone — and feeling a bit lost? That’s exactly what the getting-started session is for: we set everything up together and walk through the controls — without committing to music lessons.',
+    sessionTypeHint: 'Just received your instrument — Neotone, acoustic handpan, microphone — and feeling a bit lost? That’s a lesson: pick “Take a lesson with David”, we set everything up together and walk through the controls — without committing to anything long-term.',
+    // ── DURATION (18/08/2026, David’s words): “1h or 1h30. For getting started
+    // the recommended length is 1h30”, “I give you all the keys to be
+    // autonomous”. Durations and prices come from `sessionTypes` (src/data/site.ts).
+    durationLabel: 'How long would you like us to take?',
+    durationHint: 'For getting started with an instrument, the recommended length is 1h30: I give you all the keys to be autonomous.',
     slotsTitle: 'Your availability',
     slotsHint: 'Suggest up to 3 slots that suit you — I’ll confirm the one I keep.',
     slotLabel: 'Slot {n}',
@@ -1127,8 +1140,19 @@ export const en: Dict = {
       { t: 'Your questions', d: 'An open exchange: I answer everyone, from the curious beginner to the seasoned musician.' },
       { t: 'Your turn to play', d: 'Try both Neotone — one on a speaker, one on headphones — and my two Yishama acoustic handpans. Take your time to feel each instrument. The Gonilélé and the calabash are there too: pick them up.' },
     ],
+    // ── DEMO IN A LIVE SETTING (18/08/2026, David’s words) — ⚠️ “DEPENDING ON
+    // WHO IS INTERESTED”: this is NOT systematic and must never be promised as a
+    // given. 🚫 INVENT NOTHING: “l’Âme du tambour” is a proper name given as is
+    // (no origin, material or maker known); “professional Bose PA in concert
+    // conditions” and “octaver pedal” are his terms, no specific model is known;
+    // no number of available instruments is stated.
+    // Must stay identical to the confirmation email (`showcase-email.ts`).
+    programBonusTitle: 'And sometimes it goes further',
+    programBonus: 'Depending on who is there and what they are interested in, the session can open up further: a demo of the Gonilélé in a live setting — with the effects and the octaver pedal, on a professional Bose PA in concert conditions —, the calabash, and even the shamanic drum “l’Âme du tambour”. It is not systematic: it depends on the people there that evening and on what interests them. Tell me what draws you, I take it into account.',
     programNote: 'Children welcome, under their parents’ responsibility. The demonstration, talk and Q&A part can feel a little long for younger ones, so consider bringing a quiet activity, or a second adult to take over if needed.',
-    booking: 'Appointments by email reservation:',
+    // 🚨 NO EMAIL ADDRESS SHOWN HERE ANY MORE (18/08/2026) — see dict.ts.
+    booking: 'Appointments are booked through the form only: you fill it in, your request reaches me, and I reply personally.',
+    // ⚠️ `bookVisitCta` is no longer displayed (18/08/2026) — kept, not deleted.
     bookVisitCta: 'Book my showroom slot (paid)',
     bookPrivateCta: 'Book an individual appointment',
     agendaEyebrow: 'Agenda',

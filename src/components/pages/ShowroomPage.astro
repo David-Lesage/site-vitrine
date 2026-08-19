@@ -64,7 +64,17 @@ const next = agenda[0]
 const agendaCount = (agenda.length > 1 ? sh.agendaCountPlural : sh.agendaCount).replace('{n}', String(agenda.length))
 
 // Attributs communs aux déclencheurs de la modale de réservation.
-const visitAttrs = { 'data-booking': 'showroom-visit', 'data-title': bk.visitTitle, 'data-intro': bk.visitIntro }
+// 🚨 UN SEUL PARCOURS PAYANT (18/08/2026, demande de David : « on voit qu'il y a
+// 2 boutons […] ça fait doublon et j'ai l'impression que ça mène au même
+// formulaire »). C'était vrai à moitié, et c'est ça qui était trompeur : les
+// deux ouvraient bien le même formulaire, mais `showroom-visit` n'affichait PAS
+// le menu des motifs — on ne pouvait donc pas dire pourquoi on venait.
+// Les deux déclencheurs pointent désormais sur `private-session`, le parcours
+// COMPLET (motif → format → instruments → durée). Seuls les titres de la modale
+// diffèrent, selon l'endroit d'où l'on clique.
+// La source `showroom-visit` reste connue de l'Edge Function (lignes déjà en
+// base, pages encore en cache) : rien à retirer côté serveur.
+const visitAttrs = { 'data-booking': 'private-session', 'data-title': bk.visitTitle, 'data-intro': bk.visitIntro }
 const privateAttrs = { 'data-booking': 'private-session', 'data-title': bk.privateTitle, 'data-intro': bk.privateIntro }
 
 const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: sh.heroTitle, url: L('/showroom') }])]
@@ -246,11 +256,16 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
         </div>
       ))}
     </div>
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
-      <Button href="#agenda" variant="primary" {...visitAttrs}>{sh.bookVisitCta}</Button>
-      <Button href="#agenda" variant="ghost" {...privateAttrs}>{sh.bookPrivateCta}</Button>
+    {/* 🚨 UN SEUL BOUTON (18/08/2026) — il y en avait deux côte à côte
+        (« Réserver mon créneau au showroom (payant) » / « Réserver un
+        rendez-vous individuel ») qui ouvraient le même formulaire.
+        🚨 ET PLUS D'ADRESSE EMAIL EN CLAIR : « je ne veux plus que les gens
+        voient mon email, je veux qu'ils remplissent le formulaire pour que tout
+        soit tracé ». Ne pas réintroduire de `mailto:` ici. */}
+    <div class="mt-8 flex justify-center">
+      <Button href="#agenda" variant="primary" {...privateAttrs}>{sh.bookPrivateCta}</Button>
     </div>
-    <p class="mt-4 text-center text-sm text-ink-soft/70">{sh.booking} <a href={`mailto:${site.email}`} class="font-700 text-rust underline">{site.email}</a></p>
+    <p class="mx-auto mt-4 max-w-xl text-center text-sm text-ink-soft/70">{sh.booking}</p>
   </Section>
 
   <Section tone="cream-deep">
@@ -263,6 +278,15 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
         </li>
       ))}
     </ol>
+    {/* « Et parfois, ça va plus loin » (18/08/2026) — la démo en situation.
+        ⚠️ SELON LE PUBLIC INTÉRESSÉ, jamais promis : voir le commentaire de
+        `programBonus` dans dict.ts. Volontairement présenté comme une ouverture
+        possible, pas comme une étape du déroulé — d'où le bloc à part, APRÈS la
+        liste numérotée, et non une 7ᵉ étape. */}
+    <div class="mx-auto mt-6 max-w-2xl rounded-card border border-copper/30 bg-cream p-5">
+      <p class="font-display text-base font-700">✨ {sh.programBonusTitle}</p>
+      <p class="mt-1.5 text-sm leading-relaxed text-ink-soft/85">{sh.programBonus}</p>
+    </div>
     <p class="mx-auto mt-6 max-w-2xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm font-600 text-ink-soft/90">{sh.programNote}</p>
   </Section>
 
