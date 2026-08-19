@@ -29,6 +29,81 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 19/08/2026 — 📸 Droit à l'image : photos **et** vidéos, avec « visage flouté »
+
+**⚠️ COMMITÉ EN LOCAL, PAS DÉPLOYÉ.** Ni `vercel --prod`, ni `git push`, ni redéploiement de
+l'Edge Function `site-lead`. Les **colonnes en base sont déjà là** (c'est l'ordre correct :
+colonnes AVANT déploiement, sinon 500 et lead perdu).
+
+### La demande de David (ses mots)
+« Ajoute cette mention pour le formulaire, précise photo **et** vidéo, et précise dans la case
+la possibilité de dire "oui mais visage flouté". » Contexte : il photographie et filme ses
+showcases puis publie sur le site ; faute de savoir qui accepte, il floute **tous** les visages
+par précaution et se prive des vraies photos de groupe, bien plus chaleureuses.
+
+### La forme retenue — trois boutons radio, AUCUN coché
+Un consentement ne se présume jamais : pas d'option pré-sélectionnée, pas de `required`.
+Radios plutôt que menu déroulant parce que les **trois options sont visibles d'un coup d'œil**
+— c'est comme ça que la personne découvre qu'elle peut demander le floutage, ce qui est
+précisément le point de la demande. Options : `yes` · `blurred` · `no`.
+**Absence de réponse = refus**, dit à la personne dans le formulaire, appliqué dans le code, et
+écrit dans le `COMMENT ON COLUMN`.
+
+### Où la question s'affiche (et où surtout pas)
+`IMAGE_CONSENT_SOURCES = ['showcase-booking', 'private-session', 'showroom-visit']` — les
+motifs d'une **venue physique** dans un lieu où David photographie. Exclus : `showcase-waitlist`
+(on demande des dates, on ne vient pas), `neotone-discount`, `contact`, `gonilele-order`,
+`beta-waitlist`. **Et jamais en visio** : choisir « En visio » masque le bloc en direct.
+⚠️ La liste doit rester **identique** dans `BookingForm.astro` et dans l'Edge Function.
+
+### Les trois écritures + la base (le piège déjà tombé deux fois)
+| Surface | Ce qui a été fait |
+|---|---|
+| `src/components/BookingForm.astro` | fieldset `data-bk-image`, `toggleBlock`, reset à chaque ouverture, `imageConsent` dans le payload |
+| `api/subscribe.js` | `imageConsent` ajouté à l'allowlist du relais |
+| `supabase/functions/site-lead/index.ts` | v27 : `ALLOWED_IMAGE_CONSENT`, `IMAGE_CONSENT_SOURCES`, `profile.image_consent` / `image_consent_at`, ligne dans `adminNotifyHtml` |
+| `public.site_leads` | ✅ **déjà appliqué** : `image_consent` (text) + `image_consent_at` (timestamptz), nullable, avec `COMMENT ON COLUMN` |
+
+SQL appliqué (migration `site_leads_image_consent`, 19/08/2026) : `add column if not exists`
+sur les deux colonnes + les deux `comment on column`. **Aucun DROP, aucun ALTER TYPE, aucun
+NOT NULL, aucune donnée existante touchée.**
+
+### Détail qui a été attrapé au test réseau
+La réponse **ne survit pas** à la fermeture de la modale (reset dans `open()`, pas dans
+`syncSessionBlocks()`) : sinon un « oui » donné pour un showcase repartait tout seul avec une
+demande de rendez-vous ouverte deux minutes plus tard. Les autres champs, eux, restent remplis.
+
+### Conditions générales — mention ajoutée, VERSION NON INCRÉMENTÉE
+`terms.version` reste **`2026-08-17`** dans `dict.ts` / `en.ts` et `TERMS_VERSION` reste
+`'2026-08-17'` dans `site-lead` et `muling-order`. Trois ajouts (FR + EN) :
+« Ce que tu me donnes » (ce qui est collecté), « Ce que j'en fais » (la finalité — le compte
+annoncé passe de « Trois choses » à « Quatre choses »), « Sur quelle base » (facultatif, absence
+= refus, retour en arrière par `contact@lesagedavid.fr`).
+🅨 **À trancher par David** : c'est un **ajout de finalité**, ce qui plaide pour passer en
+`2026-08-19`. Argument contre : la page est en ligne depuis le 17/08 et des gens ont pu accepter
+la version courante — incrémenter ne les rend pas non-consentants (leur ligne garde sa propre
+version), mais ça crée deux textes en circulation le même jour. **Rien n'a été incrémenté sans
+son accord.** Si oui : changer la version aux **trois** endroits (`dict.ts`, `en.ts`,
+`site-lead/index.ts`) + `muling-order/index.ts`, et la date `updated`.
+
+### Vérifié
+`npx astro build` 89 pages · `deno check site-lead/index.ts` OK · les **6 pages** qui montent
+le formulaire testées (`/`, `/a-propos`, `/gonilele`, `/cours`, `/le-neotone`, `/showroom`) :
+le bloc n'apparaît **que** sur `showcase-booking` et `private-session`, radios **désactivées**
+partout ailleurs, **aucun champ `required` invisible**. Payload intercepté (fetch stubbé, rien
+n'est parti en base — 0 ligne de test vérifiée en SQL) : `blurred` part quand elle est choisie,
+`null` quand rien n'est coché, `null` sur un motif non concerné, `null` en visio. Rendu FR + EN,
+1280 px et gabarit 375 px (panneau à 343 px) : aucun débordement horizontal.
+
+### À faire au prochain déploiement (ORDRE IMPOSÉ)
+1. colonnes en base — ✅ déjà fait ;
+2. redéployer l'Edge Function **`site-lead`** depuis `supabase/functions/site-lead/index.ts`
+   (outil MCP `deploy_edge_function`, `verify_jwt: false`) ;
+3. `npx vite build`/`npx astro build` puis `npx vercel --prod --yes` ;
+4. test de bout en bout (curl du README) sur un motif concerné, puis **supprimer la ligne**.
+
+---
+
 ## ÉTAT ACTUEL — 17/08/2026 (après-midi) — 🧮 Calculateur : la TVA non facturée entre dans « tu économises »
 
 Demande de David : *« quand la personne coche la case TVA intracommunautaire, dans "tu

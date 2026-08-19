@@ -100,6 +100,12 @@ export default async function handler(req, res) {
         // générales ne vaut pas accord pour recevoir de la prospection.
         // Relayé même à false — un refus est une réponse, pas une absence.
         newsOptIn: body.newsOptIn === true,
+        // DROIT À L'IMAGE (19/08/2026) — photos ET vidéos publiées sur le site.
+        // 'yes' | 'blurred' | 'no', ou absent/null. ⚠️ Relayé TEL QUEL : c'est
+        // l'Edge Function qui valide par allowlist ET qui vérifie que le motif
+        // pose bien la question. `null` = pas de réponse = pas d'accord, jamais
+        // l'inverse.
+        imageConsent: body.imageConsent,
         preferredSlots: body.preferredSlots,
         source: body.source || 'beta-waitlist',
         lang: body.lang || 'fr',

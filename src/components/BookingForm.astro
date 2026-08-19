@@ -310,6 +310,44 @@ const upcoming = JSON.stringify(
         <textarea name="message" rows="3" placeholder={bk.messagePlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea>
       </label>
 
+      {/* DROIT À L'IMAGE — photos ET vidéos (19/08/2026, demande de David).
+          Trois réponses possibles, dont « oui mais visage flouté » : David
+          photographie et filme ses showcases et en publie une partie sur le
+          site ; sans cette question il floute tout par précaution et se prive
+          des vraies photos de groupe.
+
+          🔑 FORME RETENUE — TROIS BOUTONS RADIO, AUCUN `checked`, PAS DE
+          `required`. Un consentement ne se présume jamais : une option
+          pré-sélectionnée (ou un menu déroulant dont on ne voit pas les
+          options) ferait passer un défaut pour une réponse. Les trois options
+          sont visibles d'un coup d'œil, donc la personne DÉCOUVRE qu'elle peut
+          demander le floutage — c'est précisément la demande de David.
+          L'absence de réponse est traitée comme un REFUS, jamais comme un
+          accord : c'est dit à la personne (`imageNone`), c'est ce que fait
+          l'Edge Function (rien d'enregistré → `image_consent` NULL), et c'est
+          écrit dans le COMMENT ON COLUMN de la base.
+
+          ⚠️ Bloc masqué ET désactivé par `toggleBlock()` sur les motifs qui ne
+          sont pas une venue physique : rien ne part alors dans l'envoi. Voir
+          IMAGE_CONSENT_SOURCES dans le <script> en bas. */}
+      <fieldset data-bk-image class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
+        <legend class="px-1 text-sm font-600">{bk.imageTitle}</legend>
+        <p class="text-sm font-600 text-ink">
+          {bk.imageQuestion}
+          <span class="ml-1 whitespace-nowrap rounded-full bg-ink/10 px-2 py-0.5 text-[11px] font-600 uppercase tracking-wide text-ink-soft/80">{bk.imageOptional}</span>
+        </p>
+        <p class="mt-1 text-xs leading-relaxed text-ink-soft/75">{bk.imageWhy}</p>
+        <div class="mt-3 grid gap-2">
+          {[['yes', bk.imageYes], ['blurred', bk.imageBlurred], ['no', bk.imageNo]].map(([v, label]) => (
+            <label class="flex cursor-pointer items-start gap-2.5 rounded-lg bg-cream px-3 py-2 text-sm">
+              <input type="radio" name="imageConsent" value={v} class="mt-0.5 h-4 w-4 shrink-0 accent-rust" />
+              {label}
+            </label>
+          ))}
+        </div>
+        <p class="mt-2 text-xs leading-relaxed text-ink-soft/75">{bk.imageNone}</p>
+      </fieldset>
+
       {/* Conditions générales — case OBLIGATOIRE, identique sur tous les
           formulaires du site. Volontairement placée juste avant le bouton :
           c'est le dernier geste avant l'envoi. */}
@@ -354,7 +392,27 @@ const upcoming = JSON.stringify(
   // Durée du rendez-vous (18/08/2026) — bloc distinct du motif : c'est la
   // dernière question posée, après les instruments.
   const durationEl = modal?.querySelector('[data-bk-duration]') as HTMLElement
+  // Droit à l'image — photos ET vidéos (19/08/2026).
+  const imageEl = modal?.querySelector('[data-bk-image]') as HTMLElement
   const kindSelect = modal?.querySelector('select[name="sessionKind"]') as HTMLSelectElement | null
+
+  // MOTIFS QUI POSENT LA QUESTION DU DROIT À L'IMAGE.
+  // Critère : la personne VIENT PHYSIQUEMENT dans un lieu où David photographie
+  // et filme. Elle n'a aucun sens ailleurs — commander un micro, demander un
+  // code de remise ou écrire un message ne met personne devant un objectif, et
+  // poser la question quand même reviendrait à collecter un consentement dont
+  // on n'a pas l'usage.
+  //  · showcase-booking → le showcase au showroom : c'est LE cas d'usage (les
+  //    photos de groupe que David s'interdit aujourd'hui) ;
+  //  · private-session  → rendez-vous individuel au showroom (cours ou démo) ;
+  //  · showroom-visit   → ancien motif de venue au showroom : plus aucun bouton
+  //    ne l'émet, mais il reste la valeur par défaut du champ caché et des
+  //    lignes en base le portent. L'inclure coûte zéro et évite un trou.
+  // EXCLUS volontairement : showcase-waitlist (on demande des DATES, on ne vient
+  // pas), neotone-discount, contact, gonilele-order, beta-waitlist.
+  // ⚠️ Cette liste doit rester IDENTIQUE à IMAGE_CONSENT_SOURCES de
+  // supabase/functions/site-lead/index.ts, qui rejette la valeur ailleurs.
+  const IMAGE_CONSENT_SOURCES = ['showcase-booking', 'private-session', 'showroom-visit']
   // Motifs acceptant la visio (les cours) — la liste vient de site.ts via un
   // attribut de données : une expression Astro ne s'interpole pas dans un <script>.
   const REMOTE_KINDS = (modal?.dataset.remoteKinds || '').split(',').filter(Boolean)
@@ -410,6 +468,12 @@ const upcoming = JSON.stringify(
     const format = (modal?.querySelector('input[name="sessionFormat"]:checked') as HTMLInputElement | null)?.value || ''
     toggleBlock(instrumentsEl, !!kind && format !== 'remote')
     toggleBlock(durationEl, !!kind)
+    // Droit à l'image : uniquement si la personne vient sur place. Recalculé
+    // ici (et pas seulement à l'ouverture) parce qu'un cours EN VISIO ne met
+    // personne devant un objectif — la question disparaît alors, et le bloc
+    // masqué est désactivé, donc rien ne part dans l'envoi.
+    const source = (form?.elements.namedItem('source') as HTMLInputElement | null)?.value || ''
+    toggleBlock(imageEl, IMAGE_CONSENT_SOURCES.includes(source) && format !== 'remote')
   }
 
   kindSelect?.addEventListener('change', syncSessionBlocks)
@@ -470,6 +534,15 @@ const upcoming = JSON.stringify(
     vipEl?.classList.toggle('hidden', !isVip)
     termsEl?.classList.toggle('hidden', !isVip)
     slotsErrEl?.classList.add('hidden')
+    // DROIT À L'IMAGE : la réponse ne survit JAMAIS à la fermeture de la modale.
+    // Les autres champs, eux, restent remplis — c'est confortable et sans
+    // conséquence. Un consentement, non : sinon un « oui » donné pour un
+    // showcase repartirait tout seul avec une demande de rendez-vous ouverte
+    // deux minutes plus tard, sans que personne ne l'ait choisi pour celle-là.
+    // ⚠️ Ici et NULLE PART ailleurs : `syncSessionBlocks()` s'exécute à chaque
+    // changement de motif ou de format, et effacerait la réponse en cours de
+    // saisie (`toggleBlock` ne décoche, lui, que ce qu'il masque).
+    modal?.querySelectorAll<HTMLInputElement>('input[name="imageConsent"]').forEach((r) => { r.checked = false })
     syncSessionBlocks()
 
     // On ne peut pas proposer un créneau dans le passé.
@@ -616,6 +689,13 @@ const upcoming = JSON.stringify(
           // Nouveautés (case FACULTATIVE) : toujours envoyé, y compris à false —
           // un refus est une information, pas une absence de réponse.
           newsOptIn: data.get('newsOptIn') !== null,
+          // DROIT À L'IMAGE — 'yes' | 'blurred' | 'no', ou `null`.
+          // `null` couvre DEUX cas qui appellent la même conduite : la question
+          // n'a pas été posée (bloc masqué → radios désactivées → FormData ne
+          // les voit pas), ou elle l'a été et personne n'a répondu. Dans les
+          // deux cas : PAS d'accord, donc on ne publie rien. Un `null` ne doit
+          // JAMAIS être relu comme un oui.
+          imageConsent: String(data.get('imageConsent') || '') || null,
           preferredSlots,
           source,
           lang: form.dataset.lang || 'fr',

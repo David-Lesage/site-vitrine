@@ -42,6 +42,27 @@ sa demande. Fusionner les deux cases viderait la seconde de sa valeur juridique.
 `false` est bien enregistré (ce n'est pas la même chose qu'une absence de réponse), et une
 seconde soumission sans cocher **retire** le consentement : ça échoue dans le bon sens.
 
+## Le droit à l'image (19/08/2026) — un troisième consentement, à part
+
+| Question | Obligatoire ? | Champ envoyé | Colonnes écrites |
+|---|---|---|---|
+| Est-ce que je peux te publier en photo **et** en vidéo ? | **non**, sans valeur par défaut | `imageConsent` | `image_consent` + `image_consent_at` |
+
+Trois réponses : `yes` · `blurred` (« oui, mais visage flouté ») · `no`. Rendue par
+**trois boutons radio dont aucun n'est coché** — une option pré-sélectionnée ferait passer
+un défaut pour un consentement.
+
+🚨 **`image_consent` NULL ne vaut JAMAIS accord.** NULL veut dire « question jamais posée »
+(toutes les lignes antérieures au 19/08/2026, et tous les motifs qui ne l'affichent pas) ou
+« posée, pas répondue ». Les deux appellent la même conduite : ne rien publier où la
+personne est reconnaissable. C'est écrit dans le `COMMENT ON COLUMN` et dans le code.
+
+Posée **uniquement** sur `showcase-booking`, `private-session` et `showroom-visit` — les
+motifs d'une venue physique dans un lieu où David photographie — et jamais pour un cours en
+visio. `IMAGE_CONSENT_SOURCES` doit rester identique ici et dans `BookingForm.astro` ; une
+valeur reçue sur un autre motif est jetée. `image_consent_at` est posé pour les **trois**
+réponses, refus compris : c'est la date qui rend la réponse opposable.
+
 ⚠️ `TERMS_VERSION` doit rester identique dans les **trois** endroits : ici,
 `muling-order/index.ts`, et `terms.version` de `src/i18n/dict.ts` / `en.ts`.
 

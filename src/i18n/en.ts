@@ -644,6 +644,19 @@ export const en: Dict = {
       gonilele: 'Gonilélé (African harp)',
       meet: 'Meeting you',
     },
+    // ── IMAGE RIGHTS — photos AND videos (19/08/2026) — see dict.ts ───────────
+    // THREE radio buttons, NONE pre-selected: consent is never presumed.
+    // No answer = refusal (`imageNone` says so), never an agreement.
+    // Only shown for the reasons where the person physically comes to a place
+    // David photographs — see IMAGE_CONSENT_SOURCES in BookingForm.astro.
+    imageTitle: 'Photos and videos',
+    imageQuestion: 'May I publish photos and videos of you?',
+    imageWhy: 'I photograph and film these moments, and publish some of it on this site to show the place and the atmosphere.',
+    imageOptional: 'optional',
+    imageYes: 'Yes — photos and videos, face included',
+    imageBlurred: 'Yes, but with my face blurred',
+    imageNo: 'No — please don’t publish me',
+    imageNone: 'You don’t have to answer: without an answer, I publish nothing where you can be recognised. And you can change your mind any time, by writing to contact@lesagedavid.fr.',
   },
   muling: {
     title: 'Muling microphone for acoustic handpan | David Lesage',
@@ -1454,6 +1467,8 @@ export const en: Dict = {
         p: 'Nothing is collected behind your back: it all comes from what you type yourself. Optional fields stay empty if you leave them alone.',
         items: [
           'Booking (showroom visit, seat at a showcase, one-to-one appointment, Neotone discount code request): first name, last name, email, phone if you give it, number of people, target date, up to three time slots you propose, type and format of the session (in person or online), instruments you want to discover, Neotone model you have in mind, country, social media account, how you found me, how long you have been playing, what you would like to achieve, and your message.',
+          // Image rights (19/08/2026) — see the `booking` block of this file.
+          'If you book an in-person visit (a seat at a showcase, a one-to-one appointment at the showroom), one optional question is added: may I publish photos and videos of you? Three possible answers — yes; yes, but with my face blurred; no. None is pre-selected, and your answer is recorded with its date.',
           'Contact: name, email, subject, message.',
           'App waiting list: first name, last name, email, whether you already own a handpan and which kind, the role or roles you declare (for yourself, to teach, to build), your goal, your number of students and — if you build handpans — your country, the number of notes you produce, the metals you work with and how you set your prices. Plus your motivation, if you apply as a beta tester.',
           'Muling microphone order: first name, last name, email, phone, quantity, full delivery address, instructions for the courier, message, and then the proof of payment you upload (image or PDF).',
@@ -1462,11 +1477,16 @@ export const en: Dict = {
       },
       {
         h: 'What I do with it',
-        p: 'Three things, not one more.',
+        // ⚠️ The count announced here must follow the number of items below.
+        // Raised to four on 19/08/2026 with image rights.
+        p: 'Four things, not one more.',
         items: [
           'Answer you. That is what every form exists for: I read and I reply personally.',
           'Organise what you asked for: confirming a slot, preparing the instruments for your visit, passing an order along. A one-to-one appointment request also creates a proposed lesson in my schedule, inside the app.',
           'Keep you posted about what’s new — but only if you ticked the second box on the form, the optional one, which is never pre-ticked: a new showcase date, the app opening up, a new instrument. If you leave it unticked, I only write to you about your request, and nothing else. If you tick it, I write rarely, and I target: depending on which door you came in through and what you said you were interested in, you don’t get the same thing as everyone else. You can stop it whenever you want, with no explanation needed.',
+          // Image rights (19/08/2026). Describes ONLY what the form actually
+          // does: three answers, none by default, no answer treated as a refusal.
+          'Show the place and the atmosphere. I photograph and film the showcases and the showroom, and publish some of it on this site and on my social media. A photo or a video in which you are recognisable is only published if you answered “yes” — or “yes, but with my face blurred”, in which case your face is blurred. If you answered “no”, or did not answer at all, I publish nothing in which you can be recognised.',
         ],
       },
       {
@@ -1475,6 +1495,7 @@ export const en: Dict = {
         items: [
           'The “I accept the terms and conditions” box is mandatory: without it I cannot handle your request. The date you accepted is recorded together with the version number of this page — that is what makes it possible to know later exactly which text you had in front of you.',
           'The “I’d like to hear about upcoming dates and what’s new” box is optional, and it is never pre-ticked. It conditions nothing: your form goes through exactly the same if you leave it empty. Accepting the terms is not agreeing to receive my news — that is why there are two boxes and not one.',
+          'The question “may I publish photos and videos of you?” is optional too, and none of its three answers is pre-selected. Not answering counts as a refusal: without a clear “yes”, I publish nothing in which you can be recognised. You can change your answer whenever you like — a line to contact@lesagedavid.fr is enough, and I take down or blur the photo or video concerned.',
           'For a microphone order, your delivery details are also quite simply necessary for the parcel to be shipped.',
         ],
       },
