@@ -11,6 +11,9 @@ import { localBusinessLdJson, breadcrumbLdJson } from '@/lib/ldJson'
 import { upcomingShowcases } from '@/lib/agenda'
 import { priceForKind, priceGrid } from '@/lib/sessions'
 import BookingForm from '@/components/BookingForm.astro'
+import Carousel from '@/components/Carousel.astro'
+import Lightbox from '@/components/Lightbox.astro'
+import { showroomGallery, showroomPhotos } from '@/data/showroom'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -78,6 +81,26 @@ const visitAttrs = { 'data-booking': 'private-session', 'data-title': bk.visitTi
 const privateAttrs = { 'data-booking': 'private-session', 'data-title': bk.privateTitle, 'data-intro': bk.privateIntro }
 
 const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: sh.heroTitle, url: L('/showroom') }])]
+
+// 📷 CARROUSEL « En images » — la liste des photos vit dans `src/data/showroom.ts`
+// (mode d'emploi complet en haut de ce fichier : ajouter une photo = 3 étapes).
+// Le texte alternatif est cherché par `id` dans les dicos ; s'il manque, on
+// retombe sur un libellé générique plutôt que de casser le build.
+const galleryAlt = sh.galleryAlt as Record<string, string | undefined>
+const gallerySlides = showroomGallery.map((p) => ({
+  src: p.src,
+  w: p.w,
+  h: p.h,
+  // `wide` = image affichée ENTIÈRE (object-fit: contain) : indispensable ici,
+  // le carrousel mélange des photos paysage et portrait — en `cover` les
+  // portraits seraient rognés de moitié.
+  wide: true,
+  alt: galleryAlt[p.id] ?? sh.galleryAltFallback,
+}))
+const carouselLabels =
+  lang === 'en'
+    ? { prev: 'Previous photo', next: 'Next photo', photo: 'Photo', photosOf: 'Photos of' }
+    : undefined
 ---
 
 <Layout title={sh.title} description={sh.description} ldJSON={ld}>
@@ -169,6 +192,32 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
     </div>
   </section>
 
+  {/* 📷 LE LIEU (19/08/2026) — la page racontait le showroom sans jamais le
+      MONTRER : un visiteur ne savait ni à quoi ressemble l'endroit, ni ce qui
+      s'y passe. Cette vue d'ensemble arrive donc TOUT DE SUITE après le hero,
+      avant le moindre argumentaire : elle prouve que le lieu vit.
+      🚨 Les visages du public sont floutés à la source par David (seul le sien
+      est net, au centre) — ne jamais republier une version non floutée, et
+      n'appliquer AUCUN filtre de netteté sur cette image.
+      ⓘ Une variante au cadrage resserré existe :
+      `/images/showroom-vue-ensemble-resserre.webp` (2000×826). */}
+  <Section id="le-lieu">
+    <SectionHeading eyebrow={sh.lieuEyebrow} title={sh.lieuTitle} intro={sh.lieuIntro} />
+    <figure class="mt-10 overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+      {/* Seule image chargée en `eager` de la page : c'est la première visible. */}
+      <img
+        src={showroomPhotos.vueEnsemble.src}
+        width={showroomPhotos.vueEnsemble.w}
+        height={showroomPhotos.vueEnsemble.h}
+        alt={sh.photoAlt.vueEnsemble}
+        loading="eager"
+        decoding="async"
+        class="block h-auto w-full"
+      />
+      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.vueEnsemble}</figcaption>
+    </figure>
+  </Section>
+
   {/* ⚖️ « Le monde du ET », version showroom : ici on ne vend pas un choix,
       on fait ESSAYER. Les deux cartes sont strictement symétriques (même
       gabarit, même nombre de puces, même CTA) — mettre Yishama en avant,
@@ -176,6 +225,20 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
       asymétrie réelle : seul le Neotone est en stock. */}
   <Section id="deux-univers">
     <SectionHeading eyebrow={sh.duoEyebrow} title={sh.duoTitle} intro={sh.duoIntro} />
+    {/* Les DEUX univers sur la même photo, installés côte à côte : c'est
+        exactement ce que les deux cartes ci-dessous décrivent en mots. */}
+    <figure class="mx-auto mt-10 max-w-4xl overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+      <img
+        src={showroomPhotos.instruments.src}
+        width={showroomPhotos.instruments.w}
+        height={showroomPhotos.instruments.h}
+        alt={sh.photoAlt.instruments}
+        loading="lazy"
+        decoding="async"
+        class="block h-auto w-full"
+      />
+      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.instruments}</figcaption>
+    </figure>
     <div class="mt-10 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-4">
       {sh.duo.map((d, i) => (
         <Fragment>
@@ -216,6 +279,23 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
         <h2 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.alsoTitle}</h2>
         <p class="mt-3 text-ink-soft/85">{sh.alsoIntro}</p>
       </div>
+      {/* 🎼 LA SEULE IMAGE DU GONILÉLÉ DE LA PAGE (19/08/2026). Ce bloc venait
+          d'être ajouté (un joueur de N'Goni avait réservé sans savoir qu'on en
+          parlait ici) et n'avait AUCUNE illustration : on annonçait un
+          instrument que personne ne pouvait se représenter.
+          Format portrait → largeur bridée, sinon elle écrase les 3 cartes. */}
+      <figure class="mx-auto mt-8 max-w-xs overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40 sm:max-w-sm">
+        <img
+          src={showroomPhotos.gonilele.src}
+          width={showroomPhotos.gonilele.w}
+          height={showroomPhotos.gonilele.h}
+          alt={sh.photoAlt.gonilele}
+          loading="lazy"
+          decoding="async"
+          class="block h-auto w-full"
+        />
+        <figcaption class="px-4 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.gonilele}</figcaption>
+      </figure>
       <div class="mt-8 grid gap-5 md:grid-cols-3">
         {sh.also.map((a, i) => (
           <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6">
@@ -270,6 +350,19 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
 
   <Section tone="cream-deep">
     <SectionHeading eyebrow={sh.programEyebrow} title={sh.programTitle} intro={sh.programIntro} />
+    {/* Le moment « présentation / démonstration » du déroulé, en image. */}
+    <figure class="mx-auto mt-10 max-w-3xl overflow-hidden rounded-card border border-ink/10 bg-cream">
+      <img
+        src={showroomPhotos.presentation.src}
+        width={showroomPhotos.presentation.w}
+        height={showroomPhotos.presentation.h}
+        alt={sh.photoAlt.presentation}
+        loading="lazy"
+        decoding="async"
+        class="block h-auto w-full"
+      />
+      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.presentation}</figcaption>
+    </figure>
     <ol class="mx-auto mt-10 max-w-2xl space-y-4">
       {sh.program.map((s, i) => (
         <li class="flex gap-5 rounded-card border border-ink/10 bg-cream p-5">
@@ -391,6 +484,19 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
     </div>
   </Section>
 
+  {/* 📷 CARROUSEL « En images » — le reste des photos, celles qui ne portent pas
+      un argument à elles seules mais qui donnent la matière du lieu.
+      👉 POUR EN AJOUTER UNE : tout est expliqué en haut de `src/data/showroom.ts`.
+      Composant réutilisé tel quel (Carousel + Lightbox), comme sur les pages
+      Neotone, Muling, Gonilélé et Boutique : swipe au doigt, flèches, points,
+      et plein écran au clic. `<Lightbox />` est inclus une seule fois, plus bas. */}
+  <Section id="en-images" tone="cream-deep">
+    <SectionHeading eyebrow={sh.galleryEyebrow} title={sh.galleryTitle} intro={sh.galleryIntro} />
+    <div class="mx-auto mt-10 max-w-2xl">
+      <Carousel id="showroom-gallery" slides={gallerySlides} alt={sh.heroTitle} labels={carouselLabels} />
+    </div>
+  </Section>
+
   <Section id="acces">
     <div class="grid gap-10 lg:grid-cols-2">
       <div>
@@ -408,6 +514,8 @@ const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, 
   </Section>
 
   <BookingForm lang={lang} />
+  {/* Une seule fois par page : porte la lightbox ET la logique des carrousels. */}
+  <Lightbox />
 </Layout>
 
 <script>

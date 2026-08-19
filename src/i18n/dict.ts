@@ -1207,6 +1207,50 @@ const fr = {
     ],
     alsoNote: 'Tu viens pour l’un d’eux en particulier ? Coche-le au moment de réserver ta place : je le prépare pour la séance.',
 
+    // ── 📷 PHOTOS DU LIEU (19/08/2026) — la page décrivait le showroom sans
+    // jamais le MONTRER : on ne savait pas à quoi ressemble l'endroit ni ce
+    // qui s'y passe. Les textes alternatifs décrivent ce qu'on VOIT (accessibilité
+    // + référencement) : ne pas les remplacer par « photo du showroom ».
+    // 🚨 Les visages du public sont floutés à la source par David. Toute nouvelle
+    // photo doit l'être aussi.
+    lieuEyebrow: 'Le lieu · Le Nid',
+    lieuTitle: 'À quoi ça ressemble, un soir de showcase',
+    lieuIntro: 'Un appartement-atelier du 20ᵉ, du parquet, des guirlandes, et tout le monde assis en cercle autour des instruments. On est une quinzaine, pas plus.',
+    photoAlt: {
+      vueEnsemble:
+        'Vue d’ensemble d’un showcase au Nid : David Lesage assis au centre du cercle, handpans sur pieds derrière lui, le public assis à même le parquet, murs tendus de guirlandes lumineuses et rosace suspendue.',
+      instruments:
+        'Les instruments installés au showroom avant l’arrivée du public : deux handpans acoustiques Yishama sur trépieds, deux handpans électroniques Neotone avec leur écran, une calebasse posée sur un tapis rouge, le tout sur parquet ancien.',
+      presentation:
+        'David Lesage, micro en main, présente les instruments du showroom : les Neotone et les handpans Yishama alignés derrière lui, sous la rosace du mur.',
+      gonilele:
+        'David Lesage tient le Gonilélé, la harpe africaine à calebasse, et montre le micro Hisong AirStudio S1 qui sert à la sonoriser.',
+    },
+    photoCaption: {
+      vueEnsemble: 'Un showcase au Nid — public assis en cercle, instruments au centre.',
+      instruments: 'Ce qui t’attend en arrivant : Neotone, Yishama, calebasse, prêts à être joués.',
+      presentation: 'Le temps de présentation, avant que tu prennes les baguettes.',
+      gonilele: 'Le Gonilélé, la harpe africaine à calebasse — et le micro qui la sonorise.',
+    },
+    galleryEyebrow: 'En images',
+    galleryTitle: 'Le showroom, en photos',
+    galleryIntro: 'Fais glisser du doigt, ou clique sur une photo pour l’agrandir.',
+    galleryAltFallback: 'Photo du showroom David Lesage — Le Nid, Paris 20ᵉ.',
+    galleryAlt: {
+      demoNeotone1:
+        'David Lesage debout en démonstration : il tient un handpan électronique Neotone face au public assis, devant le mur de guirlandes lumineuses.',
+      demoNeotone2:
+        'Vue plus large de la démonstration du Neotone : David Lesage debout au centre de la pièce, les spectateurs assis en cercle sur le parquet.',
+      gonileleMicro:
+        'Le Gonilélé posé à plat, cordes vers le haut, à côté de la boîte du micro Hisong AirStudio S1 et de sa capsule sur socle.',
+      yishamaMicros:
+        'Un handpan Yishama vu de dessus, deux capsules de micro posées sur le dôme et quatre boîtes de micros Hisong AirStudio S1 disposées autour.',
+      tabletteAccords:
+        'Tablette montée au-dessus d’un handpan : l’application Handpan Compagnon affiche les sept accords de la gamme D Kurd 18 en constellations colorées.',
+      handpanTablette:
+        'Un handpan Yishama sur son trépied, la tablette fixée sur un bras juste au-dessus : les constellations d’accords s’affichent dans l’axe de l’instrument.',
+    },
+
     eventsEyebrow: 'Ce qu’on y vit',
     eventsTitle: 'Tester, rencontrer, repartir avec',
     eventsHighlight: 'Le plus demandé au démarrage',

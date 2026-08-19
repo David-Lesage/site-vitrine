@@ -1,28 +1,42 @@
 ---
 // Carrousel d'images avec navigation, points, démo automatique et ouverture
 // en plein écran (lightbox). Inclure <Lightbox /> une fois par page.
-interface Slide { src: string; wide?: boolean }
-interface Props { id: string; slides: Slide[]; alt: string }
-const { id, slides, alt } = Astro.props
+// `alt`, `w` et `h` sont OPTIONNELS par diapositive : sans eux le composant se
+// comporte exactement comme avant (alt générique « <alt> — n »). Les renseigner
+// donne un texte alternatif utile et réserve la place de l'image au chargement.
+interface Slide { src: string; wide?: boolean; alt?: string; w?: number; h?: number }
+// `labels` permet de traduire les libellés d'accessibilité (page EN). Défauts FR
+// = comportement historique des pages qui n'en passent pas.
+interface Props {
+  id: string
+  slides: Slide[]
+  alt: string
+  labels?: { prev?: string; next?: string; photo?: string; photosOf?: string }
+}
+const { id, slides, alt, labels } = Astro.props
 const total = slides.length
+const lPrev = labels?.prev ?? 'Photo précédente'
+const lNext = labels?.next ?? 'Photo suivante'
+const lPhoto = labels?.photo ?? 'Photo'
+const lPhotosOf = labels?.photosOf ?? 'Photos'
 ---
 
 <div class="model-photo relative">
-  <button class="carousel-btn carousel-prev" type="button" aria-label="Photo précédente">‹</button>
+  <button class="carousel-btn carousel-prev" type="button" aria-label={lPrev}>‹</button>
   <div class="carousel" data-carousel={id}>
     <div class="carousel-track">
       {slides.map((s, i) => (
         <div class:list={['carousel-slide', s.wide && 'is-wide']}>
-          <img src={s.src} alt={`${alt} — ${i + 1}`} loading="lazy" />
+          <img src={s.src} alt={s.alt ?? `${alt} — ${i + 1}`} width={s.w} height={s.h} loading="lazy" />
         </div>
       ))}
     </div>
     <div class="carousel-counter">1 / {total}</div>
-    <div class="carousel-dots" role="tablist" aria-label={`Photos ${alt}`}>
+    <div class="carousel-dots" role="tablist" aria-label={`${lPhotosOf} ${alt}`}>
       {slides.map((_, i) => (
-        <button class:list={['carousel-dot', i === 0 && 'is-active']} type="button" data-slide={i} aria-label={`Photo ${i + 1}`}></button>
+        <button class:list={['carousel-dot', i === 0 && 'is-active']} type="button" data-slide={i} aria-label={`${lPhoto} ${i + 1}`}></button>
       ))}
     </div>
   </div>
-  <button class="carousel-btn carousel-next" type="button" aria-label="Photo suivante">›</button>
+  <button class="carousel-btn carousel-next" type="button" aria-label={lNext}>›</button>
 </div>

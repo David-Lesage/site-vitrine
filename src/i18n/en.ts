@@ -1117,6 +1117,47 @@ export const en: Dict = {
     ],
     alsoNote: 'Coming for one of them in particular? Tick it when you book your spot: I’ll have it ready for the session.',
 
+    // ── 📷 See dict.ts (19/08/2026): the page described the showroom without ever
+    // SHOWING it. Alt texts describe what is actually VISIBLE (accessibility + SEO):
+    // do not replace them with “showroom photo”.
+    lieuEyebrow: 'The place · Le Nid',
+    lieuTitle: 'What a showcase evening looks like',
+    lieuIntro: 'A workshop-flat in the 20th arrondissement: bare wood floors, fairy lights, and everyone sitting in a circle around the instruments. Fifteen of us, no more.',
+    photoAlt: {
+      vueEnsemble:
+        'Wide view of a showcase at Le Nid: David Lesage sitting at the centre of the circle, handpans on stands behind him, the audience seated on the wooden floor, walls hung with fairy lights and a rosette above.',
+      instruments:
+        'The instruments set up at the showroom before the audience arrives: two Yishama acoustic handpans on tripods, two Neotone electronic handpans with their screen, a calabash resting on a red mat, all on an old wooden floor.',
+      presentation:
+        'David Lesage, microphone in hand, introduces the showroom instruments: the Neotone and the Yishama handpans lined up behind him, under the wall rosette.',
+      gonilele:
+        'David Lesage holding the Gonilélé, the African calabash harp, showing the Hisong AirStudio S1 microphone used to amplify it.',
+    },
+    photoCaption: {
+      vueEnsemble: 'A showcase at Le Nid — audience in a circle, instruments at the centre.',
+      instruments: 'What waits for you on arrival: Neotone, Yishama, calabash, ready to be played.',
+      presentation: 'The introduction, before you pick up the mallets yourself.',
+      gonilele: 'The Gonilélé, the African calabash harp — and the mic that amplifies it.',
+    },
+    galleryEyebrow: 'In pictures',
+    galleryTitle: 'The showroom, in photos',
+    galleryIntro: 'Swipe with your finger, or click a photo to enlarge it.',
+    galleryAltFallback: 'Photo of the David Lesage showroom — Le Nid, Paris 20th.',
+    galleryAlt: {
+      demoNeotone1:
+        'David Lesage standing during a demonstration: he holds a Neotone electronic handpan facing the seated audience, in front of the wall of fairy lights.',
+      demoNeotone2:
+        'Wider view of the Neotone demonstration: David Lesage standing at the centre of the room, the audience seated in a circle on the wooden floor.',
+      gonileleMicro:
+        'The Gonilélé lying flat, strings up, next to the box of the Hisong AirStudio S1 microphone and its capsule on a stand.',
+      yishamaMicros:
+        'A Yishama handpan seen from above, two microphone capsules resting on the dome and four Hisong AirStudio S1 microphone boxes laid out around it.',
+      tabletteAccords:
+        'A tablet mounted above a handpan: the Handpan Compagnon app shows the seven chords of the D Kurd 18 scale as coloured constellations.',
+      handpanTablette:
+        'A Yishama handpan on its tripod with the tablet fixed on an arm just above it: the chord constellations appear in line with the instrument.',
+    },
+
     eventsEyebrow: 'What you experience',
     eventsTitle: 'Test, meet, walk away with',
     eventsHighlight: 'Most asked for at the start',
