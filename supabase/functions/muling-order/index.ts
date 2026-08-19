@@ -71,7 +71,7 @@ const COMMISSION_PER_UNIT_EUR = 100; // accord de principe du 22/07/2026 avec Mu
 // supabase/functions/site-lead/index.ts (et à `terms.version` de src/i18n/dict.ts) :
 // deux valeurs différentes rendraient impossible de savoir quel texte une
 // personne a réellement accepté selon le formulaire qu'elle a rempli.
-const TERMS_VERSION = '2026-08-17';
+const TERMS_VERSION = '2026-08-19';
 
 const BANK = {
     beneficiary: 'HuiZhou Muling Musical Instruments Co Ltd',

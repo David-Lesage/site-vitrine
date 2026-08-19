@@ -29,7 +29,66 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 19/08/2026 — 📸 Droit à l'image : photos **et** vidéos, avec « visage flouté »
+## ÉTAT ACTUEL — 19/08/2026 (soir) — 📸 Droit à l'image : DANS LES CONDITIONS GÉNÉRALES, PAS DANS LE FORMULAIRE
+
+**✅ DÉPLOYÉ EN PRODUCTION** (site Vercel + Edge Functions `site-lead` et `muling-order`).
+
+### La décision de David (ses mots, 19/08 au soir) — elle ANNULE la forme du commit `db75892`
+« oui publie, et ajoute aux conditions générales **sans rajouter de boutons supplémentaires** ;
+les gens sont censés lire, s'ils ne le font pas c'est leur responsabilité, mais je n'ai pas envie
+d'alourdir le formulaire. Dans le texte, précise que ce qui m'importe ce n'est pas le visage
+spécifiquement de la personne, mais de **montrer l'ambiance générale du lieu et de ce qui s'y
+partage, pour donner envie à d'autres de venir**. »
+
+### Ce qui a été RETIRÉ (les trois boutons radio de `db75892`)
+`BookingForm.astro`, `api/subscribe.js` et `supabase/functions/site-lead/index.ts` ont été
+**remis à l'identique de `c194117`** (`git checkout db75892^ -- …`) : plus de fieldset
+`data-bk-image`, plus de `IMAGE_CONSENT_SOURCES`, plus de champ `imageConsent` dans le payload
+ni dans l'allowlist du relais, plus de ligne « Droit à l'image » dans `adminNotifyHtml`. Les
+clés i18n `imageTitle/imageQuestion/imageWhy/imageOptional/imageYes/imageBlurred/imageNo/
+imageNone` ont été supprimées de `dict.ts` et `en.ts` (bloc `booking`).
+⚠️ Le « reset à l'ouverture de la modale » de `db75892` ne concernait QUE les radios
+`imageConsent` : il disparaît avec elles, il n'y avait pas de correction distincte à garder.
+
+### ⚠️ LES COLONNES EN BASE RESTENT (interdiction de DROP)
+`public.site_leads.image_consent` (text) et `image_consent_at` (timestamptz) **existent
+toujours**, nullable, avec leur `COMMENT ON COLUMN`. Elles resteront **vides** : plus rien ne
+les écrit. **NE JAMAIS faire de `DROP COLUMN`** — elles resserviront telles quelles si David
+change d'avis. Une colonne vide ne coûte rien.
+
+### Ce qui a été AJOUTÉ : une section dédiée dans les conditions générales
+Nouvelle section **« Photos et vidéos prises sur place »** (FR) / **« Photos and videos taken on
+the premises »** (EN), insérée entre « Ce que j'en fais » et « Sur quelle base ». Elle porte
+l'intention de David en tête (l'ambiance du lieu, pas le visage), puis quatre points : floutage
+par défaut, opposition sur simple demande (sur place ou `contact@lesagedavid.fr`, avant comme
+après publication), possibilité de dire oui, changement d'avis à tout moment.
+Corollaires : l'item « droit à l'image » de « Ce que tu me donnes » a été **retiré** (plus rien
+n'est collecté) ; « Ce que j'en fais » est **repassé de quatre à trois** items ; l'item de
+« Sur quelle base » qui décrivait les trois boutons est remplacé par un renvoi honnête (« ne
+passe par aucune case de ce formulaire »).
+🚨 Règle de rédaction : **ne jamais réécrire ici qu'un consentement est recueilli au formulaire**
+— il ne l'est plus.
+
+### `TERMS_VERSION` = `2026-08-19` (validée par David)
+Changée aux **quatre** endroits : `src/i18n/dict.ts` (`version` + `updated: '19 août 2026'`),
+`src/i18n/en.ts` (`version` + `updated: '19 August 2026'`),
+`supabase/functions/site-lead/index.ts`, `supabase/functions/muling-order/index.ts`.
+`grep -rn "2026-08-17"` ne renvoie plus rien hors journal de ce fichier.
+
+### Vérifié
+`npx astro build` 89 pages · `deno check` OK sur les deux Edge Functions ·
+`grep -r "imageConsent\|data-bk-image" dist/` = **0 occurrence** sur les 89 pages construites
+(donc aucun des 6 motifs n'affiche la question, FR comme EN) · modale `showcase-booking` ouverte
+à 375 px : aucune mention photo/vidéo, aucun débordement · `/conditions-generales` et
+`/en/conditions-generales` à 375 px et en desktop : version `2026-08-19` affichée, nouvelle
+section lisible, `scrollWidth == innerWidth`.
+
+---
+
+## HISTORIQUE — 19/08/2026 (après-midi) — 📸 Droit à l'image, VERSION ABANDONNÉE (trois boutons radio)
+
+> ⚠️ Conservé pour mémoire : cette forme a été RETIRÉE le soir même (voir l'état actuel
+> ci-dessus). Ne pas la réimplémenter sans une demande explicite de David.
 
 **⚠️ COMMITÉ EN LOCAL, PAS DÉPLOYÉ.** Ni `vercel --prod`, ni `git push`, ni redéploiement de
 l'Edge Function `site-lead`. Les **colonnes en base sont déjà là** (c'est l'ordre correct :

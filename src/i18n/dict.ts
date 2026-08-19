@@ -698,28 +698,6 @@ const fr = {
       gonilele: 'Gonilélé (harpe africaine)',
       meet: 'Te rencontrer',
     },
-    // ── DROIT À L'IMAGE — photos ET vidéos (19/08/2026, demande de David) ─────
-    // Ses mots : « Ajoute cette mention pour le formulaire, précise photo ET
-    // vidéo, et précise dans la case la possibilité de dire "oui mais visage
-    // flouté". » Pourquoi : il photographie et filme ses showcases puis en
-    // publie une partie sur le site ; aujourd'hui il floute TOUS les visages par
-    // précaution, ce qui le prive des vraies photos de groupe. Cette question
-    // lui dit, personne par personne, ce qu'il a le droit de publier.
-    //
-    // ⚠️ TROIS boutons radio, AUCUN pré-coché : un consentement ne se présume
-    // jamais. Absence de réponse = refus (`imageNone` le dit à la personne),
-    // jamais un accord — même règle côté base (colonne `image_consent` NULL).
-    // ⚠️ Question posée UNIQUEMENT sur les motifs où la personne vient
-    // physiquement dans un lieu où David photographie : voir
-    // IMAGE_CONSENT_SOURCES dans BookingForm.astro ET dans l'Edge Function.
-    imageTitle: 'Photos et vidéos',
-    imageQuestion: 'Est-ce que je peux te publier en photo et en vidéo ?',
-    imageWhy: 'Je photographie et je filme ces moments, et j’en publie une partie sur ce site pour montrer le lieu et l’ambiance.',
-    imageOptional: 'facultatif',
-    imageYes: 'Oui — photos et vidéos, visage compris',
-    imageBlurred: 'Oui, mais avec mon visage flouté',
-    imageNo: 'Non — ne me publie pas',
-    imageNone: 'Tu n’es pas obligé·e de répondre : sans réponse, je ne publie rien où l’on te reconnaît. Et tu peux changer d’avis quand tu veux, en m’écrivant à contact@lesagedavid.fr.',
   },
   muling: {
     title: 'Micro Muling pour handpan acoustique | David Lesage',
@@ -1645,9 +1623,9 @@ const fr = {
       'Conditions générales du site David Lesage : ce que je collecte dans les formulaires, pourquoi, avec quels outils, combien de temps je le garde, et comment exercer tes droits.',
     h1: 'Conditions générales',
     versionLabel: 'Version',
-    version: '2026-08-17',
+    version: '2026-08-19',
     updatedLabel: 'Dernière mise à jour',
-    updated: '17 août 2026',
+    updated: '19 août 2026',
     lead: 'Cette page dit en clair ce qui se passe quand tu remplis un formulaire sur ce site : ce que je collecte, pourquoi, avec quels outils, combien de temps je le garde, et comment tu reprends la main quand tu veux. Pas de jargon. Si quelque chose n’est pas clair, écris-moi — c’est moi qui lis.',
     // Mention voulue par David (17/08/2026) : le dispositif se construit, le texte suivra.
     // Ne pas la retirer sans son accord — elle est là pour ne pas faire passer un cadre
@@ -1693,8 +1671,6 @@ const fr = {
         p: 'Rien n’est collecté à ton insu : tout vient de ce que tu écris toi-même. Les champs facultatifs restent vides si tu n’y touches pas.',
         items: [
           'Réservation (venue au showroom, place à un showcase, rendez-vous individuel, demande de code de remise Neotone) : prénom, nom, email, téléphone si tu le donnes, nombre de personnes, date visée, jusqu’à trois créneaux que tu proposes, type et format de séance (sur place ou en visio), instruments que tu veux découvrir, modèle Neotone envisagé, pays, compte de réseau social, comment tu m’as connu, depuis quand tu joues, ce que tu aimerais réussir, et ton message.',
-          // Droit à l'image (19/08/2026) — voir le bloc `booking` de ce fichier.
-          'Si tu réserves une venue sur place (place à un showcase, rendez-vous individuel au showroom), une question facultative s’ajoute : est-ce que je peux te publier en photo et en vidéo ? Trois réponses possibles — oui ; oui, mais visage flouté ; non. Aucune n’est cochée d’avance, et ta réponse est enregistrée avec sa date.',
           'Contact : nom et prénom, email, sujet, message.',
           'Liste d’attente de l’application : prénom, nom, email, si tu as déjà un handpan et lequel, la ou les casquettes que tu déclares (pour toi, pour enseigner, pour fabriquer), ton objectif, ton nombre d’élèves et — si tu fabriques des handpans — ton pays, le nombre de notes que tu produis, les métaux que tu travailles et ta façon de fixer tes prix. Plus ta motivation, si tu candidates comme bêta-testeur.',
           'Commande du micro Muling : prénom, nom, email, téléphone, quantité, adresse de livraison complète, consignes pour le livreur, message, puis la preuve de virement que tu déposes (image ou PDF).',
@@ -1704,16 +1680,35 @@ const fr = {
       {
         h: 'Ce que j’en fais',
         // ⚠️ Le compte annoncé ici doit suivre le nombre d'items ci-dessous.
-        // Passé à quatre le 19/08/2026 avec le droit à l'image.
-        p: 'Quatre choses, pas une de plus.',
+        p: 'Trois choses, pas une de plus.',
         items: [
           'Te répondre. C’est la raison d’être de chaque formulaire : je lis et je réponds personnellement.',
           'Organiser ce que tu as demandé : confirmer un créneau, préparer les instruments pour ta venue, faire suivre une commande. Une demande de rendez-vous individuel crée aussi une proposition de cours dans mon agenda, à l’intérieur de l’application.',
           'Te tenir au courant de mes nouveautés — mais seulement si tu as coché la seconde case du formulaire, celle qui est facultative et qui n’est jamais cochée d’avance : une nouvelle date de showcase, l’ouverture de l’application, un nouvel instrument. Si tu ne la coches pas, je ne t’écris que pour ta demande, et rien d’autre. Si tu la coches, j’écris peu, et je cible : selon la porte par laquelle tu es entré et selon ce que tu as déclaré t’intéresser, tu ne reçois pas la même chose que quelqu’un d’autre. Tu peux dire stop quand tu veux, sans avoir à te justifier.',
-          // Droit à l'image (19/08/2026). ⚠️ Ne décrit QUE ce que fait réellement
-          // le formulaire : trois réponses, aucune par défaut, et l'absence de
-          // réponse traitée comme un refus. Ne rien promettre de plus.
-          'Montrer le lieu et l’ambiance. Je photographie et je filme les showcases et le showroom, et j’en publie une partie sur ce site et sur mes réseaux. Une photo ou une vidéo où l’on te reconnaît n’est publiée que si tu as répondu « oui » — ou « oui, mais visage flouté », et dans ce cas ton visage est flouté. Si tu as répondu « non », ou si tu n’as pas répondu du tout, je ne publie rien où l’on te reconnaît.',
+        ],
+      },
+      {
+        // ── PHOTOS ET VIDÉOS SUR PLACE (19/08/2026) ────────────────────────────
+        // 🚨 DÉCISION DE DAVID, ses mots : « ajoute aux conditions générales SANS
+        // RAJOUTER DE BOUTONS SUPPLÉMENTAIRES ; les gens sont censés lire, s'ils
+        // ne le font pas c'est leur responsabilité, mais je n'ai pas envie
+        // d'alourdir le formulaire. » Les trois boutons radio « droit à l'image »
+        // ont donc été RETIRÉS du formulaire — ne rien écrire ici qui laisse
+        // croire qu'un consentement est recueilli à l'inscription.
+        // 🚨 SON INTENTION, ses mots, c'est le cœur du message et il ne doit pas
+        // être noyé dans du juridique : « ce qui m'importe ce n'est pas le visage
+        // spécifiquement de la personne, mais de MONTRER L'AMBIANCE GÉNÉRALE DU
+        // LIEU ET DE CE QUI S'Y PARTAGE, POUR DONNER ENVIE À D'AUTRES DE VENIR. »
+        // ⚠️ Le floutage par défaut n'est pas une promesse commerciale : c'est ce
+        // que David fait RÉELLEMENT aujourd'hui faute de savoir qui accepte.
+        // Ne rien ajouter ici qui ne soit pas vrai dans les faits.
+        h: 'Photos et vidéos prises sur place',
+        p: 'Je photographie et je filme ce qui se passe ici : les showcases, les rendez-vous au showroom, les instruments qui passent de main en main. J’en publie une partie sur ce site et sur mes réseaux. Ce qui m’importe, ce n’est pas ton visage en particulier : c’est de montrer l’ambiance générale du lieu et de ce qui s’y partage, pour donner envie à d’autres de venir.',
+        items: [
+          'Par défaut, je floute les visages. C’est ce que je fais aujourd’hui : tant que quelqu’un ne m’a pas dit qu’il était d’accord, je ne le publie pas de façon reconnaissable.',
+          'Tu peux me dire non, et tu n’as rien à justifier : un mot sur place suffit, ou un email à contact@lesagedavid.fr. Avant comme après la publication — si une photo ou une vidéo est déjà en ligne, je la retire ou je te floute.',
+          'Tu peux aussi me dire oui, si tu veux bien apparaître à visage découvert : dis-le-moi sur place ou par email. C’est ce qui me permet de publier de vraies images de groupe plutôt que des visages effacés.',
+          'Dans les deux cas, tu peux changer d’avis quand tu veux, dans un sens comme dans l’autre.',
         ],
       },
       {
@@ -1722,7 +1717,12 @@ const fr = {
         items: [
           'La case « J’accepte les conditions générales » est obligatoire : sans elle je ne peux pas traiter ta demande. La date de ton acceptation est enregistrée avec le numéro de version de cette page — c’est ce qui permet de savoir plus tard quel texte exactement tu avais sous les yeux.',
           'La case « Je veux être informé·e des prochaines dates et des nouveautés » est facultative, et elle n’est jamais cochée d’avance. Elle ne conditionne rien : ton formulaire part exactement pareil si tu la laisses vide. Accepter les conditions générales ne vaut pas accord pour recevoir mes nouveautés — c’est pour ça que ce sont deux cases et non une.',
-          'La question « est-ce que je peux te publier en photo et en vidéo ? » est facultative elle aussi, et aucune des trois réponses n’est cochée d’avance. Ne pas répondre vaut refus : sans un « oui » clair, je ne publie rien où l’on te reconnaît. Tu peux revenir sur ta réponse quand tu veux — un mot à contact@lesagedavid.fr suffit, et je retire ou je floute la photo ou la vidéo concernée.',
+          // Droit à l'image (19/08/2026) : décision de David — AUCUN bouton
+          // supplémentaire dans le formulaire. Il ne faut donc surtout pas
+          // écrire ici qu'un consentement est recueilli à l'inscription : il ne
+          // l'est pas. On renvoie à la section dédiée, qui dit la vraie règle
+          // (floutage par défaut + opposition sur simple demande).
+          'Les photos et les vidéos prises sur place ne passent par aucune case de ce formulaire : la règle est le floutage par défaut, et il te suffit de me le dire pour t’y opposer. C’est la section « Photos et vidéos prises sur place » qui la décrit.',
           'Pour une commande de micro, tes coordonnées de livraison sont en plus tout simplement nécessaires pour que le colis parte.',
         ],
       },

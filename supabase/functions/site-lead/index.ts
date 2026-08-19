@@ -126,26 +126,22 @@
 //      portent, et une page servie d'un cache peut encore l'envoyer.
 //      Seul vrai changement de comportement : `instruments` n'est plus jeté pour
 //      un COURS EN PRÉSENTIEL (voir le commentaire à l'endroit du filtrage).
-// v27 (19/08/2026) : DROIT À L'IMAGE — PHOTOS **ET** VIDÉOS.
-//      Demande de David : il photographie et filme ses showcases puis en publie
-//      une partie sur le site ; faute de savoir qui accepte, il floute TOUS les
-//      visages par précaution et se prive des vraies photos de groupe. Le
-//      formulaire pose donc une question à TROIS réponses — oui / oui mais
-//      visage flouté / non — et écrit `image_consent` + `image_consent_at`.
-//      · Facultative et SANS valeur par défaut (trois boutons radio, aucun
-//        coché) : un consentement ne se présume jamais.
-//      · 🚨 `image_consent` NULL = question jamais posée (toutes les lignes
-//        antérieures) ou posée sans réponse. Dans les deux cas : PAS d'accord.
-//        Ne jamais relire ce NULL comme un oui, ici ou dans un futur outil.
-//      · Posée UNIQUEMENT sur les motifs d'une venue physique
-//        (IMAGE_CONSENT_SOURCES) et jamais en visio : ailleurs la valeur est
-//        jetée, exactement comme `showcaseInterests`.
-//      · La notification à David affiche la réponse, datée — c'est là qu'il la
-//        lit avant de publier.
-//      ⚠ Nécessite `image_consent` (text) et `image_consent_at` (timestamptz)
-//      sur `public.site_leads` — ADD COLUMN nullable appliqué le 19/08/2026.
-//      Mêmes conséquences qu'en v24/v25 si les colonnes manquent : 500, et le
-//      lead est perdu. Colonnes AVANT déploiement.
+// v27 (19/08/2026) : DROIT À L'IMAGE — TRAITÉ PAR LES CONDITIONS GÉNÉRALES,
+//      PAS PAR LE FORMULAIRE. Une question à trois boutons radio avait été
+//      construite puis RETIRÉE le jour même sur décision de David : « ajoute aux
+//      conditions générales SANS rajouter de boutons supplémentaires… je n'ai
+//      pas envie d'alourdir le formulaire. » Aucun champ `imageConsent` n'est
+//      donc reçu, ni relayé par api/subscribe.js.
+//      ⚠ Les colonnes `image_consent` / `image_consent_at` EXISTENT toujours sur
+//      `public.site_leads` (nullable, ajoutées le 19/08/2026) et restent vides.
+//      NE PAS les supprimer : elles resserviront si David change d'avis, et un
+//      DROP COLUMN est interdit ici. Une colonne vide ne coûte rien.
+//      🚨 `image_consent` NULL ne vaudra JAMAIS accord — la règle réelle est
+//      écrite dans les conditions générales : floutage des visages par défaut,
+//      opposition (ou accord) sur simple demande à David ou par email.
+//      TERMS_VERSION passée à '2026-08-19' : ajout d'une finalité, validé par
+//      David. À garder identique dans muling-order/index.ts et dans
+//      `terms.version` de src/i18n/dict.ts et src/i18n/en.ts.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -241,37 +237,12 @@ const ALLOWED_INSTRUMENTS = ['neotone', 'calebasse', 'gonilele', 'mic-hisong', '
 // 🚧 'atlas' (pieds Atlas) volontairement absent : partenariat non signé.
 const ALLOWED_SHOWCASE_INTERESTS = ['all', 'handpan', 'mic', 'calebasse', 'gonilele', 'meet'];
 
-// DROIT À L'IMAGE (v27, 19/08/2026) — photos ET vidéos publiées sur le site.
-// Trois réponses possibles, dont « oui mais visage flouté » : David photographie
-// et filme ses showcases et en publie une partie ; sans cette réponse il floute
-// tout par précaution et se prive des vraies photos de groupe.
-// 🚨 L'ABSENCE DE VALEUR NE VAUT JAMAIS ACCORD. `image_consent` NULL signifie
-// « question jamais posée » (toutes les lignes antérieures au 19/08/2026, et
-// tous les motifs qui ne l'affichent pas) OU « posée, pas répondue ». Les deux
-// appellent la même conduite : ne rien publier où l'on reconnaît la personne.
-// Ne jamais transformer ce NULL en défaut permissif, ici ou ailleurs.
-const ALLOWED_IMAGE_CONSENT = ['yes', 'blurred', 'no'];
-
-// Motifs qui POSENT la question : ceux où la personne vient physiquement dans un
-// lieu où David photographie. Ailleurs (message de contact, commande Gonilélé,
-// code de remise, liste d'attente), la question n'est pas affichée — une valeur
-// qui arriverait quand même vient d'un appel forgé ou d'une page en cache, on la
-// jette. ⚠ Doit rester IDENTIQUE à IMAGE_CONSENT_SOURCES de BookingForm.astro.
-const IMAGE_CONSENT_SOURCES = ['showcase-booking', 'private-session', 'showroom-visit'];
-
-/** Libellés de la réponse au droit à l'image, pour la notification à David. */
-const IMAGE_CONSENT_LABELS: Record<string, string> = {
-    yes: '✅ OUI — photos et vidéos publiables, visage compris',
-    blurred: '🌫️ OUI, MAIS VISAGE FLOUTÉ',
-    no: '⛔ NON — ne rien publier',
-};
-
 // CONDITIONS GÉNÉRALES (17/08/2026) — case obligatoire sur tous les formulaires.
 // La coche seule ne prouve rien : ce qui est opposable, c'est l'horodatage
 // serveur + la VERSION du texte accepté. Changer cette valeur le jour où les
 // conditions générales sont modifiées (et ne jamais la changer rétroactivement :
 // les lignes déjà en base portent la version qu'elles ont réellement acceptée).
-const TERMS_VERSION = '2026-08-17';
+const TERMS_VERSION = '2026-08-19';
 
 /**
  * Résume les casquettes en UNE valeur `usage_type`, la colonne historique.
@@ -896,21 +867,6 @@ Deno.serve(async (req) => {
         const newsOptIn = body.newsOptIn === true;
         const newsOptInAt = newsOptIn ? new Date().toISOString() : null;
 
-        // DROIT À L'IMAGE (v27) — photos ET vidéos. Question FACULTATIVE, sans
-        // valeur par défaut côté formulaire (trois boutons radio, aucun coché).
-        // Retenue seulement si le motif la pose réellement (même arbitrage que
-        // `showcaseInterests`). L'horodatage est posé pour les TROIS réponses,
-        // refus compris : c'est la date qui rend la réponse opposable le jour
-        // où David veut publier une photo.
-        // 🚨 `imageConsent` null ⇒ AUCUN accord. Ne jamais écrire ici un repli
-        // du genre `?? 'yes'` : un consentement ne se présume pas.
-        const rawImageConsent = String(body.imageConsent ?? '').trim();
-        const imageConsent =
-            IMAGE_CONSENT_SOURCES.includes(source) && ALLOWED_IMAGE_CONSENT.includes(rawImageConsent)
-                ? rawImageConsent
-                : null;
-        const imageConsentAt = imageConsent ? new Date().toISOString() : null;
-
         // Demande de code de remise Neotone.
         const rawModel = String(body.neotoneModel ?? '').trim();
         const neotoneModel = ALLOWED_NEOTONE_MODEL.includes(rawModel) ? rawModel : null;
@@ -972,15 +928,6 @@ Deno.serve(async (req) => {
             terms_version: termsAccepted ? TERMS_VERSION : null,
             news_opt_in: newsOptIn,
             news_opt_in_at: newsOptInAt,
-            // Droit à l'image (v27). ⚠ NULL = question jamais posée OU pas de
-            // réponse — dans les deux cas : pas d'accord, on ne publie pas.
-            // Le `upsert()` plus bas ne réécrit jamais une colonne avec null,
-            // donc une réponse déjà donnée ne peut pas être effacée par une
-            // seconde demande sur un motif qui ne pose pas la question ; en
-            // revanche un « no » écrase bien un ancien « yes » — ça échoue dans
-            // le bon sens, exactement comme `news_opt_in`.
-            image_consent: imageConsent,
-            image_consent_at: imageConsentAt,
             preferred_slots: preferredSlots,
         };
 
@@ -1227,17 +1174,6 @@ Deno.serve(async (req) => {
                             'Recevoir les nouveautés': newsOptInAt
                                 ? `oui — accord donné le ${newsOptInAt.slice(0, 10)}`
                                 : 'non (case facultative laissée décochée)',
-                            // DROIT À L'IMAGE (v27) — c'est ICI que David le lit,
-                            // avant de publier une photo ou une vidéo.
-                            // Ligne affichée seulement si le motif pose la question
-                            // (`row()` masque les valeurs nulles) ; s'il la pose et
-                            // que personne n'a répondu, on l'écrit noir sur blanc
-                            // plutôt que de laisser un blanc ambigu.
-                            'Droit à l’image': IMAGE_CONSENT_SOURCES.includes(source)
-                                ? (imageConsent
-                                    ? `${IMAGE_CONSENT_LABELS[imageConsent] ?? imageConsent} — répondu le ${imageConsentAt!.slice(0, 10)}`
-                                    : '❔ aucune réponse — ne rien publier où on la reconnaît')
-                                : null,
                         }, await slotConfirmBlockHtml(confirmLessonId, confirmSlots)))],
                     });
                 } catch (notifyErr) {

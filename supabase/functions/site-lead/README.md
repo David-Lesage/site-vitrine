@@ -42,29 +42,33 @@ sa demande. Fusionner les deux cases viderait la seconde de sa valeur juridique.
 `false` est bien enregistré (ce n'est pas la même chose qu'une absence de réponse), et une
 seconde soumission sans cocher **retire** le consentement : ça échoue dans le bon sens.
 
-## Le droit à l'image (19/08/2026) — un troisième consentement, à part
+## Le droit à l'image (19/08/2026) — PAS de troisième consentement
 
-| Question | Obligatoire ? | Champ envoyé | Colonnes écrites |
-|---|---|---|---|
-| Est-ce que je peux te publier en photo **et** en vidéo ? | **non**, sans valeur par défaut | `imageConsent` | `image_consent` + `image_consent_at` |
+Une question à trois boutons radio (`imageConsent` : `yes` / `blurred` / `no`) a été
+construite le 19/08/2026, puis **retirée le jour même** sur décision de David :
 
-Trois réponses : `yes` · `blurred` (« oui, mais visage flouté ») · `no`. Rendue par
-**trois boutons radio dont aucun n'est coché** — une option pré-sélectionnée ferait passer
-un défaut pour un consentement.
+> « ajoute aux conditions générales **sans rajouter de boutons supplémentaires** ; les gens
+> sont censés lire, s'ils ne le font pas c'est leur responsabilité, mais je n'ai pas envie
+> d'alourdir le formulaire. »
 
-🚨 **`image_consent` NULL ne vaut JAMAIS accord.** NULL veut dire « question jamais posée »
-(toutes les lignes antérieures au 19/08/2026, et tous les motifs qui ne l'affichent pas) ou
-« posée, pas répondue ». Les deux appellent la même conduite : ne rien publier où la
-personne est reconnaissable. C'est écrit dans le `COMMENT ON COLUMN` et dans le code.
+Conséquences, à ne pas défaire par erreur :
 
-Posée **uniquement** sur `showcase-booking`, `private-session` et `showroom-visit` — les
-motifs d'une venue physique dans un lieu où David photographie — et jamais pour un cours en
-visio. `IMAGE_CONSENT_SOURCES` doit rester identique ici et dans `BookingForm.astro` ; une
-valeur reçue sur un autre motif est jetée. `image_consent_at` est posé pour les **trois**
-réponses, refus compris : c'est la date qui rend la réponse opposable.
+- **Aucun champ `imageConsent`** n'est envoyé par `BookingForm.astro`, ni relayé par
+  `api/subscribe.js`, ni lu ici. Ne pas le réintroduire sans une demande explicite de David.
+- ⚠️ **Les colonnes `image_consent` et `image_consent_at` existent toujours** sur
+  `public.site_leads` (text + timestamptz, nullable, ajoutées le 19/08/2026). Elles restent
+  **vides**. 🚨 **NE PAS les supprimer** : un `DROP COLUMN` est interdit ici, et elles
+  resserviront telles quelles si David change d'avis. Une colonne vide ne coûte rien.
+- 🚨 Un `image_consent` NULL **ne vaudra jamais accord**. La règle réelle est désormais
+  écrite dans les **conditions générales** (section « Photos et vidéos prises sur place » de
+  `src/i18n/dict.ts` / `en.ts`) : David floute les visages par défaut, et il suffit de le lui
+  dire sur place ou d'écrire à `contact@lesagedavid.fr` pour s'y opposer — ou pour accepter
+  d'apparaître à visage découvert — avant comme après publication.
 
 ⚠️ `TERMS_VERSION` doit rester identique dans les **trois** endroits : ici,
 `muling-order/index.ts`, et `terms.version` de `src/i18n/dict.ts` / `en.ts`.
+Valeur en vigueur : **`2026-08-19`** (l'ajout de la finalité « photos et vidéos » aux
+conditions générales, validé par David).
 
 ## Déployer
 
