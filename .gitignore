@@ -11,3 +11,6 @@ package-lock.json
 
 # Config locale Claude (preview)
 .claude/
+
+# Sauvegarde locale des médias avant recadrage (titre app) — hors dépôt
+_medias-originaux-avec-titre/
