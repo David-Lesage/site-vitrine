@@ -277,6 +277,16 @@ const fr = {
     procHighlight: 'En venant au showroom à Paris, tu repars avec ton instrument le jour même — sans aucun délai de fabrication.',
     procOnlineTitle: 'En ligne — livraison mondiale',
     procShowroomTitle: 'En présentiel — Paris 20ᵉ',
+    // 🎬 Visite du showroom en vidéo (identifiant YouTube dans NeotonePage.astro).
+    // ⚠️ Ne rien ajouter ici sur ce que la vidéo montre : personne n'a validé un
+    // descriptif plan par plan. On s'en tient au fait établi — une visite de mon
+    // showroom parisien, le Neotone au centre.
+    procShowroomVideoEyebrow: 'La visite en vidéo',
+    procShowroomVideoTitle: 'À quoi ressemble l’endroit où tu viens l’essayer',
+    procShowroomVideoText:
+      'Avant de faire le déplacement, tu peux déjà voir où tu mets les pieds : je t’emmène faire le tour de mon showroom, à Paris, avec le Neotone au centre.',
+    procShowroomVideoAudio:
+      'Elle existe aussi en anglais : si tu préfères, choisis la piste anglaise dans les paramètres (⚙) du lecteur, ligne « Piste audio ».',
     inclEyebrow: 'Tout inclus dans le prix',
     inclTitle: 'Ce que tu reçois',
     extrasEyebrow: 'À prévoir en plus',

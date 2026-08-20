@@ -8,6 +8,7 @@ import BookingForm from '@/components/BookingForm.astro'
 import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
 import WoodModal from '@/components/WoodModal.astro'
+import YouTube from '@/components/YouTube.astro'
 import { Icon } from 'astro-icon/components'
 import { models, woods, woodNames, modelCarousels, specIcons, includedIcons, extrasIcons } from '@/data/neotone'
 import { site } from '@/data/site'
@@ -23,6 +24,34 @@ const n = t.neotone
 const d = t.data
 const L = (p: string) => localizePath(p, lang)
 const modelLabels: Record<string, string> = { one: 'Neotone¹', mutant: 'Neotone¹ Mutant' }
+
+// ── 🎬 VISITE DU SHOWROOM EN VIDÉO ────────────────────────────────────────
+// « David Lesage Showroom - Neotone Hub Paris » (chaîne @DavidLesageArtiste,
+// donc une vidéo de David lui-même). Elle vit dans la section #procedure, juste
+// sous les 3 étapes « En présentiel — Paris 20ᵉ » : c'est le seul endroit de la
+// page où on demande au visiteur de se déplacer, et c'est là que la question
+// « ça ressemble à quoi, chez toi ? » se pose vraiment.
+//
+// 🇬🇧 La vidéo porte DEUX pistes audio (relevé sur YouTube le 20/08/2026) :
+//    « Français (FR) original » et « Anglais (US) ». La bascule n'est pas
+//    toujours automatique selon le pays du visiteur → les deux dictionnaires
+//    l'annoncent explicitement (clé `procShowroomVideoAudio`). Ne pas retirer
+//    cette mention : des emails partent vers des anglophones.
+//
+// 🚫 PAS DE DONNÉES STRUCTURÉES POUR CETTE VIDÉO — deux raisons :
+//    1. `videoObjectsLocal()` (src/lib/ldJson.ts) résout `contentUrl` contre
+//       notre domaine et nous déclare éditeur du fichier : faux ici, la vidéo
+//       est hébergée par YouTube. Le bon helper serait `videoLdJson()` (il émet
+//       bien l'URL youtube.com + l'embed), et David EST l'éditeur — mais…
+//    2. …la vidéo est **non répertoriée** sur YouTube (`isUnlisted: true`,
+//       vérifié le 20/08/2026) : la déclarer à Google n'apporte rien tant
+//       qu'elle n'est pas publique, et il manquerait `uploadDate`, que
+//       `videoLdJson()` n'émet pas.
+//    ➜ Le jour où David la passe en publique : ajouter
+//       `videoLdJson([{ id: showroomTourVideoId, name: n.procShowroomVideoTitle,
+//       description: n.procShowroomVideoText }])` au tableau `ld` ci-dessous.
+//       Date de mise en ligne relevée sur YouTube : 2026-03-02. Durée : 2 min 35.
+const showroomTourVideoId = 'Vlzo3KbpPjw'
 
 // Petits logos handpan pour le comparatif : acoustique (métal monochrome) vs électronique (couleurs ChromaKeys)
 const acoGlyph = `<svg viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-7 shrink-0 text-ink-soft/60" aria-hidden="true"><ellipse cx="14" cy="13" rx="12" ry="9" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="1.4"/><circle cx="14" cy="13" r="2.6" fill="currentColor"/><circle cx="14" cy="6.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="7.5" cy="10.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="20.5" cy="10.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="9.5" cy="17.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="18.5" cy="17.5" r="1.5" fill="currentColor" fill-opacity="0.6"/></svg>`
@@ -168,6 +197,27 @@ const ld = [
         </li>
       ))}
     </ol>
+
+    {/* 🎬 La preuve de l'étape « viens l'essayer » : le lieu, en vidéo.
+        Volontairement sobre (pas de section pleine largeur, pas de fond) — la
+        page vend l'instrument, la vidéo n'est qu'une réponse à « c'est où ? ». */}
+    <div class="mx-auto mt-14 max-w-3xl">
+      <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{n.procShowroomVideoEyebrow}</p>
+      <h4 class="mt-3 font-display text-xl font-700">{n.procShowroomVideoTitle}</h4>
+      <p class="mt-3 text-ink-soft/85">{n.procShowroomVideoText}</p>
+      <div class="mt-6">
+        <YouTube id={showroomTourVideoId} title={n.procShowroomVideoTitle} />
+      </div>
+      <p class="mt-4 flex items-start gap-2 text-sm text-ink-soft/75">
+        <Icon name="lucide:languages" class="mt-0.5 h-4 w-4 shrink-0 text-copper" />
+        <span>{n.procShowroomVideoAudio}</span>
+      </p>
+      <p class="mt-6">
+        <a href={L('/showroom')} class="inline-flex items-center gap-1.5 font-700 text-rust underline underline-offset-4 hover:text-copper">
+          {n.ctaShowroom} <span aria-hidden="true">→</span>
+        </a>
+      </p>
+    </div>
   </Section>
 
   <Section tone="cream-deep">

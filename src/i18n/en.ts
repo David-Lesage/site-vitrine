@@ -254,6 +254,15 @@ export const en: Dict = {
     procHighlight: 'By coming to the showroom in Paris, you walk away with your instrument the same day — with no manufacturing wait at all.',
     procOnlineTitle: 'Online — worldwide delivery',
     procShowroomTitle: 'In person — Paris (20th)',
+    // 🎬 Showroom tour video (YouTube id lives in NeotonePage.astro).
+    // ⚠️ The original audio is French; an English track exists on the same video.
+    // Say so explicitly — YouTube does not always switch to it on its own.
+    procShowroomVideoEyebrow: 'The tour, on video',
+    procShowroomVideoTitle: 'A look around the place where you’d try it',
+    procShowroomVideoText:
+      'Before you travel, you can already see where you’re heading: I take you around my showroom in Paris, with the Neotone at the centre of it.',
+    procShowroomVideoAudio:
+      'It’s filmed in French, but there’s an English audio track: pick it in the player settings (⚙), under “Audio track”.',
     inclEyebrow: 'All included in the price',
     inclTitle: 'What you receive',
     extrasEyebrow: 'To budget on top',
