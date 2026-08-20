@@ -1798,9 +1798,16 @@ const fr = {
         'David Lesage, micro en main, présente les instruments du showroom : les Neotone et les handpans Yishama alignés derrière lui, sous la rosace du mur.',
       gonilele:
         'David Lesage tient le Gonilélé, la harpe africaine à calebasse, et montre le micro Hisong AirStudio S1 qui sert à la sonoriser.',
+      // 📷 AJOUTÉE le 20/08/2026 — la MÊME pièce que `vueEnsemble`, mais VIDE et
+      //    en plein jour. Les deux photos sont volontairement côte à côte : la
+      //    première prouve que l'événement existe, celle-ci répond à la question
+      //    que personne ne pose à voix haute (« je débarque où, exactement ? »).
+      grandePiece:
+        'La grande pièce du showroom en journée, avant l’arrivée du public : parquet ancien, canapé bas et coussins posés à même le sol, un handpan acoustique sur son trépied au fond, une guitare accrochée au mur, des plantes et des tapis de sol roulés dans un panier.',
     },
     photoCaption: {
       vueEnsemble: 'Un showcase au Nid — public assis en cercle, instruments au centre.',
+      grandePiece: 'La même pièce en journée, avant que tout soit installé.',
       instruments: 'Ce qui t’attend en arrivant : Neotone, Yishama, calebasse, prêts à être joués.',
       // 🚨 CORRIGÉ le 20/08/2026 (David) — la version précédente disait
       //    « avant que tu prennes les baguettes ». Un handpan se joue AUX
@@ -1827,6 +1834,15 @@ const fr = {
         'Tablette montée au-dessus d’un handpan : l’application Handpan Compagnon affiche les sept accords de la gamme D Kurd 18 en constellations colorées.',
       handpanTablette:
         'Un handpan Yishama sur son trépied, la tablette fixée sur un bras juste au-dessus : les constellations d’accords s’affichent dans l’axe de l’instrument.',
+      // 📷 AJOUTÉES le 20/08/2026 (dossier `~/Desktop/photos-showroom`).
+      //    Fichiers créés : showroom-salon-instruments.webp, showroom-sono-bose.webp.
+      salonInstruments:
+        'Le coin salon du showroom : un handpan acoustique posé au sol près de la table basse, un handpan électronique Neotone en bois avec son casque sur les coussins, un grand canapé orange, un bouquet de fleurs et le mur de guirlandes lumineuses au fond.',
+      // ⚠️ Le modèle exact du Neotone n'est PAS nommé ici : sur la photo, ni
+      //    l'écran ni le nombre de notes ne sont vérifiables — on ne tranche pas
+      //    entre Neotone¹ et Mutant dans un texte alternatif.
+      sonoBose:
+        'Un handpan électronique Neotone en bois posé sur son trépied, à côté de la sonorisation du showroom : une colonne Bose L1 Model II et sa console de mixage T8S posée sur les caissons.',
     },
 
     eventsEyebrow: 'Ce qu’on y vit',

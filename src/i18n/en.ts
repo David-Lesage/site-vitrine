@@ -1564,9 +1564,14 @@ export const en: Dict = {
         'David Lesage, microphone in hand, introduces the showroom instruments: the Neotone and the Yishama handpans lined up behind him, under the wall rosette.',
       gonilele:
         'David Lesage holding the Gonilélé, the African calabash harp, showing the Hisong AirStudio S1 microphone used to amplify it.',
+      // 📷 Added 20/08/2026 — see dict.ts: the SAME room as `vueEnsemble`, but
+      //    empty and in daylight. The two photos sit side by side on purpose.
+      grandePiece:
+        'The main room of the showroom in daylight, before the audience arrives: old wooden floor, a low sofa and cushions on the floor, an acoustic handpan on its tripod at the far end, a guitar hanging on the wall, plants and rolled-up floor mats in a basket.',
     },
     photoCaption: {
       vueEnsemble: 'A showcase at Le Nid — audience in a circle, instruments at the centre.',
+      grandePiece: 'The same room in daylight, before everything is set up.',
       instruments: 'What waits for you on arrival: Neotone, Yishama, calabash, ready to be played.',
       // 🚨 Fixed 20/08/2026 (David): the previous line said “before you pick
       //    up the mallets”. A handpan is played WITH THE HANDS, and no
@@ -1591,6 +1596,12 @@ export const en: Dict = {
         'A tablet mounted above a handpan: the Handpan Compagnon app shows the seven chords of the D Kurd 18 scale as coloured constellations.',
       handpanTablette:
         'A Yishama handpan on its tripod with the tablet fixed on an arm just above it: the chord constellations appear in line with the instrument.',
+      // 📷 Added 20/08/2026 — see dict.ts.
+      salonInstruments:
+        'The lounge corner of the showroom: an acoustic handpan on the floor beside the coffee table, a wooden Neotone electronic handpan with its headphones on the cushions, a large orange sofa, a bunch of flowers and the wall of fairy lights at the back.',
+      // ⚠️ The exact Neotone model is deliberately NOT named — see dict.ts.
+      sonoBose:
+        'A wooden Neotone electronic handpan on its tripod, next to the showroom PA: a Bose L1 Model II tower with its T8S mixing console sitting on the bass modules.',
     },
 
     eventsEyebrow: 'What you experience',

@@ -46,10 +46,27 @@ export interface ShowroomPhoto {
 //    ci-dessous suffit à la réafficher. Le compteur du carrousel se recalcule
 //    tout seul (« 1 / 5 »), il n'y a rien d'autre à toucher.
 //    { id: 'demoNeotone1', src: '/images/showroom-demo-neotone-1.webp', w: 1800, h: 831 },
+//
+// ➕ 20/08/2026 — DEUX PHOTOS AJOUTÉES depuis `~/Desktop/photos-showroom`.
+//    Le dossier contenait 19 fichiers ; la comparaison a été faite PAR CONTENU
+//    (empreinte perceptuelle), pas par nom — les noms changent à l'intégration.
+//    · 9 y étaient déjà sous un nom `showroom-*` ;
+//    · 3 y étaient déjà sous un nom `prod-*` (prod-muling-3, prod-muling-2 /
+//      muling-capsules-handpan, prod-hisong-7) — les deux dernières sont même
+//      DÉJÀ affichées sur cette page, dans le carrousel `showroomAlsoGallery` ;
+//    · 5 étaient réellement nouvelles, 2 seulement ont été retenues ici
+//      (le détail de ce qui a été écarté est dans le rapport à David).
 export const showroomGallery: ShowroomPhoto[] = [
   { id: 'demoNeotone2', src: '/images/showroom-demo-neotone-2.webp', w: 1800, h: 830 },
+  // Le coin salon : c'est la photo qui dit « on s'assoit, l'instrument est à
+  // portée de main » — elle vaut tous les paragraphes sur l'ambiance.
+  { id: 'salonInstruments', src: '/images/showroom-salon-instruments.webp', w: 1800, h: 1012 },
   { id: 'gonileleMicro', src: '/images/showroom-gonilele-micro-hisong.webp', w: 1000, h: 1778 },
   { id: 'yishamaMicros', src: '/images/showroom-yishama-micros-hisong.webp', w: 1000, h: 1778 },
+  // La sono : elle illustre littéralement « sono Bose professionnelle en
+  // condition concert » de `programBonus` — jusqu'ici la phrase n'avait
+  // aucune image pour la soutenir.
+  { id: 'sonoBose', src: '/images/showroom-sono-bose.webp', w: 1800, h: 1012 },
   { id: 'tabletteAccords', src: '/images/showroom-tablette-accords.webp', w: 960, h: 1706 },
   { id: 'handpanTablette', src: '/images/showroom-handpan-tablette.webp', w: 1100, h: 1955 },
 ]
@@ -62,6 +79,11 @@ export const showroomPhotos = {
    *  (2000×826) — le haut de la scène seulement. À échanger ici si David
    *  la préfère. Les visages du public sont floutés à la source sur les deux. */
   vueEnsemble: { src: '/images/showroom-vue-ensemble.webp', w: 2000, h: 903 },
+  /** 20/08/2026 — la MÊME pièce, vide et en plein jour. Volontairement affichée
+   *  à côté de `vueEnsemble` : l'une prouve que l'événement existe, l'autre
+   *  répond à « je débarque où, exactement ? ». Source :
+   *  `~/Desktop/photos-showroom/plan large sur la grande piece du showroom.jpg`. */
+  grandePiece: { src: '/images/showroom-grande-piece.webp', w: 1800, h: 1012 },
   instruments: { src: '/images/showroom-instruments.webp', w: 1800, h: 1012 },
   presentation: { src: '/images/showroom-david-presentation.webp', w: 1800, h: 1012 },
   gonilele: { src: '/images/showroom-david-gonilele.webp', w: 1100, h: 1956 },

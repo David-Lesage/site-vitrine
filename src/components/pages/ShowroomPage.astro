@@ -17,6 +17,46 @@ import { showroomGallery, showroomAlsoGallery, showroomPhotos } from '@/data/sho
 import { atlasProPhotos, atlasAllPhotos, atlasProHeightSquare } from '@/data/atlas'
 import type { Lang } from '@/i18n/config'
 
+// ════════════════════════════════════════════════════════════════════════════
+// 🎯 CETTE PAGE A UN SEUL OBJECTIF : L'INSCRIPTION À UNE DATE DE SHOWCASE
+//    (gratuite). Tout le reste lui est subordonné. Mots de David, 20/08/2026 :
+//    « La finalité c'est qu'elle s'inscrive à une date, c'est le seul objectif. »
+//
+// 📐 ORDRE DES SECTIONS — refondu le 20/08/2026. Chaque section répond à UNE
+//    question du visiteur, dans l'ordre où elle se pose :
+//
+//    1. HERO ...................... « c'est quoi, c'est quand, c'est gratuit ? »
+//    2. #le-lieu (+ l'accès) ...... « je débarque où, et j'y arrive comment ? »
+//    3. #agenda ................... « je m'inscris. »            ← LE BUT
+//    4. programme ................. « qu'est-ce que je vais y faire ? »
+//    5. #deux-univers ............. « qu'est-ce que je vais pouvoir toucher ? »
+//    6. #en-images ................ « je vais me sentir comment ? »
+//    7. rappel de la date ......... « bon, j'y vais. »            ← LE BUT (2)
+//    8. exclusivité ............... « et si je veux repartir avec ? »
+//    9. #individuel ............... « et si je ne peux pas venir ? »
+//
+// 🚨 CE QUI A CHANGÉ, ET POURQUOI (ne pas défaire sans relire ceci) :
+//    · L'AGENDA EST REMONTÉ de la 7ᵉ à la 3ᵉ position. Il était derrière CINQ
+//      sections d'argumentaire : quelqu'un qui arrivait déjà décidé (lien
+//      d'email, Facebook, bouche-à-oreille) devait traverser toute la page
+//      avant de trouver un bouton. Sur mobile, c'était quatre écrans.
+//    · L'ACCÈS EST REMONTÉ du bas de page juste sous « le lieu ». « C'est où
+//      dans Paris ? » est un frein dur, il se levait après la décision.
+//    · LE CRÉNEAU PAYANT NE PARAÎT PLUS QU'UNE FOIS, tout en bas (#individuel).
+//      Avant, il apparaissait TROIS fois — dont un bouton PLEIN (le plus
+//      voyant de la page) et un prix de 50 € dans le hero, avant même que la
+//      gratuité du showcase soit établie. David a tranché : « ça va trop
+//      freiner les gens dès le démarrage et ça porte à confusion ».
+//    · « CE QU'ON Y VIT » (4 formats) ET LE BLOC RDV INDIVIDUEL SONT FUSIONNÉS :
+//      ils répondaient tous les deux à « et si je ne peux pas venir / je veux
+//      plus », à trois sections d'écart, avec le même bouton.
+//    · L'EXCLUSIVITÉ (« repars avec ton Neotone ») EST DESCENDUE après la
+//      décision : c'est un argument d'ACHAT, pas de VENUE. Placé en 4ᵉ position
+//      il transformait un événement gratuit en tunnel de vente.
+//    · UN RAPPEL DE LA DATE EST AJOUTÉ au milieu de la page (7). On ne se
+//      décide pas tous au même endroit ; la date doit revenir.
+// ════════════════════════════════════════════════════════════════════════════
+
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const t = getDict(lang)
@@ -77,7 +117,9 @@ const alsoMeta = [
 // La 1ʳᵉ carte (showcase gratuit) garde son libellé traduit.
 const eventPrices = [sh.events[0].price, priceForKind('onboarding'), priceForKind('demo'), priceForKind('lesson')]
 // La grille du rendez-vous individuel (« 1h · 50 € — 1h30 · 70 € »), annoncée
-// telle quelle dans le bloc #agenda et dans la modale de réservation.
+// UNIQUEMENT dans le bloc #individuel (bas de page) et dans la modale.
+// 🚨 Elle n'apparaît plus dans le hero : c'était le PREMIER prix lisible de la
+//    page, sur une page dont l'objet est un événement GRATUIT.
 const grid = priceGrid()
 // La prise en main est mise en avant : c'est le moment où quelqu'un qui vient
 // d'acheter décroche ou s'attache.
@@ -94,19 +136,32 @@ const agenda = upcomingShowcases(lang).map((e) => ({
 }))
 const next = agenda[0]
 const agendaCount = (agenda.length > 1 ? sh.agendaCountPlural : sh.agendaCount).replace('{n}', String(agenda.length))
+// Attributs du bouton qui ouvre DIRECTEMENT la modale sur la prochaine date.
+// Utilisés par le rappel de milieu de page : au lieu de renvoyer le visiteur
+// remonter jusqu'à l'agenda, on lui ouvre le formulaire sur place.
+const nextBookAttrs = next
+  ? {
+      'data-booking': 'showcase-booking',
+      'data-event-date': next.iso,
+      'data-event-start': next.start,
+      'data-event-end': next.end,
+      'data-title': bk.showcaseTitle,
+      'data-intro': bk.showcaseIntro,
+    }
+  : {}
 
-// Attributs communs aux déclencheurs de la modale de réservation.
+// Attributs du déclencheur de la modale de réservation PAYANTE.
 // 🚨 UN SEUL PARCOURS PAYANT (18/08/2026, demande de David : « on voit qu'il y a
 // 2 boutons […] ça fait doublon et j'ai l'impression que ça mène au même
-// formulaire »). C'était vrai à moitié, et c'est ça qui était trompeur : les
-// deux ouvraient bien le même formulaire, mais `showroom-visit` n'affichait PAS
-// le menu des motifs — on ne pouvait donc pas dire pourquoi on venait.
-// Les deux déclencheurs pointent désormais sur `private-session`, le parcours
-// COMPLET (motif → format → instruments → durée). Seuls les titres de la modale
-// diffèrent, selon l'endroit d'où l'on clique.
+// formulaire »), et depuis le 20/08/2026 UN SEUL ENDROIT SUR LA PAGE : le bloc
+// #individuel, tout en bas. `private-session` est le parcours COMPLET
+// (motif → format → instruments → durée).
 // La source `showroom-visit` reste connue de l'Edge Function (lignes déjà en
 // base, pages encore en cache) : rien à retirer côté serveur.
-const visitAttrs = { 'data-booking': 'private-session', 'data-title': bk.visitTitle, 'data-intro': bk.visitIntro }
+// ⓘ Les clés `booking.visitTitle` / `booking.visitIntro` ne sont PLUS utilisées
+//   sur cette page depuis que le hero ne déclenche plus la modale payante
+//   (c'est un simple lien vers #individuel). Elles restent dans les deux
+//   dictionnaires — aucune clé supprimée.
 const privateAttrs = { 'data-booking': 'private-session', 'data-title': bk.privateTitle, 'data-intro': bk.privateIntro }
 
 const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: sh.heroTitle, url: L('/showroom') }])]
@@ -156,6 +211,7 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
 ---
 
 <Layout title={sh.title} description={sh.description} ldJSON={ld}>
+  {/* ═══ 1. HERO — « c'est quoi · c'est quand · c'est gratuit » ═══════════ */}
   <section class="relative overflow-hidden bg-ink text-cream">
     <video class="absolute inset-0 h-full w-full object-cover opacity-65" autoplay muted loop playsinline poster="/images/localisation-showroom-poster.webp"><source src="/images/localisation-showroom.mp4" type="video/mp4" /></video>
     {/* 🚨 `veil-hero-y` (global.css) et non `bg-gradient-to-t` : le dégradé
@@ -166,15 +222,20 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
       <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{sh.heroEyebrow}</p>
       <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-6xl">{sh.heroTitle}</h1>
       <p class="mx-auto mt-5 max-w-2xl text-lg text-cream/80">{sh.heroLead}</p>
-      {/* 🚦 ORDRE DE LECTURE DU HERO — 16/08/2026, demande explicite de David.
-          AVANT : le bouton « Réserver un créneau (payant) » était le tout premier
-          élément après le titre. Sur mobile (une seule colonne) il arrivait donc
-          avant toute autre information : « ça freine les gens dès le démarrage et
-          ça porte à confusion dès le départ ».
-          MAINTENANT : (1) la DATE du prochain showcase GRATUIT — l'entrée
-          principale — puis (2) le créneau individuel privé payant, en dessous,
-          visuellement secondaire (bouton contour, pas plein).
-          🚨 Ne jamais remonter le CTA payant au-dessus de la date. */}
+      {/* 🚦 ORDRE DE LECTURE DU HERO — 16/08/2026, demande explicite de David,
+          renforcée le 20/08/2026.
+          AVANT (16/08) : le bouton « Réserver un créneau (payant) » était le
+          tout premier élément après le titre — « ça freine les gens dès le
+          démarrage et ça porte à confusion dès le départ ».
+          ÉTAPE 1 (16/08) : la DATE d'abord, le CTA payant en dessous en bouton
+          contour, avec son tarif.
+          ÉTAPE 2 (20/08) : le CTA payant N'EST PLUS UN BOUTON ET N'AFFICHE PLUS
+          DE PRIX. C'était encore le premier montant lisible de la page (50 €),
+          sur une page dont l'objet est un événement GRATUIT — exactement la
+          confusion que David veut éviter. Il ne reste qu'un lien discret vers
+          #individuel, où le tarif, le périmètre et l'annulation sont expliqués.
+          🚨 Ne jamais remonter le CTA payant au-dessus de la date, et ne jamais
+             réintroduire un prix dans le hero. */}
       {next && (
         <a
           href="#agenda"
@@ -197,7 +258,7 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
       )}
 
       {/* AUCUNE DATE PROGRAMMÉE (17/08/2026, mots de David) — s'affiche À LA PLACE
-          de la carte de date, et TOUJOURS AVANT le CTA payant : quelqu'un qui
+          de la carte de date, et TOUJOURS AVANT le lien payant : quelqu'un qui
           arrive hors saison de showcase doit d'abord lire que le gratuit revient,
           pas se faire proposer un rendez-vous payant.
           Deux cas couverts : liste vide au BUILD (`next` indéfini) et suppression
@@ -229,260 +290,101 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         </div>
       </div>
 
-      {/* SECONDAIRE — l'option payante. ⚠️ « Réserver ma venue » laissait croire à
-          une visite gratuite : le créneau individuel est PAYANT, et le tarif vient
-          de `priceGrid()` (donc de site.ts) — jamais écrit en dur, jamais
-          différent du formulaire. */}
-      <div class="mx-auto mt-8 max-w-xl border-t border-cream/15 pt-7">
-        <a
-          href="#agenda"
-          {...visitAttrs}
-          class="inline-flex items-center justify-center gap-2 rounded-full border border-cream/40 px-6 py-3 text-sm font-700 text-cream transition-all duration-200 hover:-translate-y-0.5 hover:bg-cream/10"
-        >{sh.ctaBook}</a>
-        <p class="mx-auto mt-3 max-w-xl text-sm text-cream/60">{sh.ctaBookNote.replace('{grid}', grid)}</p>
-      </div>
+      {/* L'OPTION PAYANTE, EN LIEN DISCRET — voir le commentaire du hero.
+          Simple ancre vers #individuel : elle n'ouvre PAS la modale (un clic
+          suffirait alors à mettre un tarif devant quelqu'un qui n'a pas encore
+          lu que le showcase est gratuit). Le tarif vient de `priceGrid()` et
+          n'est affiché QUE dans le bloc de destination. */}
+      <p class="mt-7 text-sm text-cream/55">
+        <a href="#individuel" class="underline decoration-cream/30 underline-offset-4 transition-colors hover:text-cream/80">{sh.ctaBook}</a>
+      </p>
     </div>
   </section>
 
-  {/* 📷 LE LIEU (19/08/2026) — la page racontait le showroom sans jamais le
-      MONTRER : un visiteur ne savait ni à quoi ressemble l'endroit, ni ce qui
-      s'y passe. Cette vue d'ensemble arrive donc TOUT DE SUITE après le hero,
-      avant le moindre argumentaire : elle prouve que le lieu vit.
+  {/* ═══ 2. LE LIEU ET L'ACCÈS — « je débarque où, et j'y arrive comment ? »
+      📍 L'ACCÈS A ÉTÉ REMONTÉ ICI le 20/08/2026 (il fermait la page).
+      Raison : « c'est où dans Paris, et est-ce que c'est loin » est un frein
+      DUR — il se levait après la décision, donc trop tard pour ceux qu'il
+      arrêtait. Fusionné dans la même section que le lieu parce que c'est la
+      même question posée deux fois (« à quoi ça ressemble » / « comment j'y
+      vais »), et parce que le bas de page répétait le POSTER DE LA VIDÉO du
+      hero : la même image, deux fois sur la page.
+      🔗 `id="acces"` est conservé (sur le sous-bloc) : les anciens liens
+         /showroom#acces continuent de tomber au bon endroit.
       🚨 Les visages du public sont floutés à la source par David (seul le sien
       est net, au centre) — ne jamais republier une version non floutée, et
-      n'appliquer AUCUN filtre de netteté sur cette image.
-      ⓘ Une variante au cadrage resserré existe :
-      `/images/showroom-vue-ensemble-resserre.webp` (2000×826). */}
+      n'appliquer AUCUN filtre de netteté sur ces images. */}
   <Section id="le-lieu">
     <SectionHeading eyebrow={sh.lieuEyebrow} title={sh.lieuTitle} intro={sh.lieuIntro} />
-    <figure class="mt-10 overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-      {/* Seule image chargée en `eager` de la page : c'est la première visible. */}
-      <img
-        src={showroomPhotos.vueEnsemble.src}
-        width={showroomPhotos.vueEnsemble.w}
-        height={showroomPhotos.vueEnsemble.h}
-        alt={sh.photoAlt.vueEnsemble}
-        loading="eager"
-        decoding="async"
-        class="block h-auto w-full"
-      />
-      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.vueEnsemble}</figcaption>
-    </figure>
-  </Section>
-
-  {/* ⚖️ « Le monde du ET », version showroom : ici on ne vend pas un choix,
-      on fait ESSAYER. Les deux cartes sont strictement symétriques (même
-      gabarit, même nombre de puces, même CTA) — mettre Yishama en avant,
-      mais jamais plus que Neotone. La note du bas dit franchement la seule
-      asymétrie réelle : seul le Neotone est en stock. */}
-  <Section id="deux-univers">
-    <SectionHeading eyebrow={sh.duoEyebrow} title={sh.duoTitle} intro={sh.duoIntro} />
-    {/* Les DEUX univers sur la même photo, installés côte à côte : c'est
-        exactement ce que les deux cartes ci-dessous décrivent en mots. */}
-    <figure class="mx-auto mt-10 max-w-4xl overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-      <img
-        src={showroomPhotos.instruments.src}
-        width={showroomPhotos.instruments.w}
-        height={showroomPhotos.instruments.h}
-        alt={sh.photoAlt.instruments}
-        loading="lazy"
-        decoding="async"
-        class="block h-auto w-full"
-      />
-      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.instruments}</figcaption>
-    </figure>
-    <div class="mt-10 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-4">
-      {sh.duo.map((d, i) => (
-        <Fragment>
-          {i === 1 && (
-            <div class="flex items-center justify-center md:flex-col" aria-hidden="true">
-              <span class="h-px flex-1 bg-ink/15 md:h-full md:w-px md:flex-1"></span>
-              <span class="mx-4 grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold/50 bg-cream font-display text-sm font-700 uppercase tracking-widest text-copper shadow-sm md:mx-0 md:my-4">{lang === 'en' ? 'and' : 'et'}</span>
-              <span class="h-px flex-1 bg-ink/15 md:h-full md:w-px md:flex-1"></span>
-            </div>
-          )}
-          <div class:list={['flex flex-col rounded-card border bg-cream-deep/40 p-6 md:p-8', duoMeta[i].ring]}>
-            <p class:list={['inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[11px] font-700 uppercase tracking-widest', duoMeta[i].chip]}>
-              <Icon name={duoMeta[i].icon} class="h-4 w-4" /> {d.sub}
-            </p>
-            <h3 class="mt-4 font-display text-2xl font-700">{d.title}</h3>
-            <p class="mt-3 text-ink-soft/85">{d.text}</p>
-            <ul class="mt-5 flex-1 space-y-2 text-sm text-ink-soft/85">
-              {d.points.map((p) => (
-                <li class="flex gap-2"><Icon name="lucide:check" class:list={['mt-0.5 h-4 w-4 shrink-0', duoMeta[i].accent]} /> {p}</li>
-              ))}
-            </ul>
-            <a href={L(duoMeta[i].href)} class:list={['mt-6 inline-flex items-center gap-1 font-700 transition-all hover:gap-2', duoMeta[i].accent]}>{d.cta} →</a>
-          </div>
-        </Fragment>
-      ))}
+    {/* DEUX PHOTOS, PAS UNE (20/08/2026) : la vue d'ensemble prouve que
+        l'événement EXISTE (du monde, un cercle, un soir) ; la grande pièce vide
+        répond à la question que personne ne pose à voix haute — « je débarque
+        où, exactement ? ». C'est ce doute-là qui coûte des inscriptions.
+        ⓘ Une variante au cadrage resserré de la 1ʳᵉ existe :
+        `/images/showroom-vue-ensemble-resserre.webp` (2000×826). */}
+    {/* 📐 `items-start` : les deux photos n'ont pas le même rapport (2000×903
+        et 1800×1012). Sans lui, la grille étire les deux <figure> à la même
+        hauteur et la plus large se retrouve avec 110 px de vide sous sa
+        légende. */}
+    <div class="mt-10 grid items-start gap-6 lg:grid-cols-2">
+      <figure class="overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+        {/* Seule image chargée en `eager` de la page : c'est la première visible. */}
+        <img
+          src={showroomPhotos.vueEnsemble.src}
+          width={showroomPhotos.vueEnsemble.w}
+          height={showroomPhotos.vueEnsemble.h}
+          alt={sh.photoAlt.vueEnsemble}
+          loading="eager"
+          decoding="async"
+          class="block h-auto w-full"
+        />
+        <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.vueEnsemble}</figcaption>
+      </figure>
+      <figure class="overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+        <img
+          src={showroomPhotos.grandePiece.src}
+          width={showroomPhotos.grandePiece.w}
+          height={showroomPhotos.grandePiece.h}
+          alt={sh.photoAlt.grandePiece}
+          loading="lazy"
+          decoding="async"
+          class="block h-auto w-full"
+        />
+        <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.grandePiece}</figcaption>
+      </figure>
     </div>
-    <p class="mx-auto mt-8 max-w-3xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm text-ink-soft/85">{sh.duoNote}</p>
 
-    {/* ── ET PAS SEULEMENT LE HANDPAN — Gonilélé, calebasse, micros.
-        Volontairement dans la MÊME section que le duo handpan, et sous un
-        filet de séparation : ça se lit comme « … et il y a aussi ça »,
-        jamais comme un quatrième univers concurrent du Neotone.
-        Cartes plus sobres que celles du duo (une seule colonne de texte,
-        pas de puces) : l'attractivité du Neotone n'est pas diluée. */}
-    <div class="mt-14 border-t border-ink/10 pt-12">
-      <div class="mx-auto max-w-2xl text-center">
-        <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.alsoEyebrow}</p>
-        <h2 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.alsoTitle}</h2>
-        <p class="mt-3 text-ink-soft/85">{sh.alsoIntro}</p>
-      </div>
-      {/* 🎠 LE CARROUSEL DES AUTRES INSTRUMENTS (20/08/2026, demande de David).
-          AVANT : une figure isolée du Gonilélé (max-w-xs), et RIEN pour la
-          calebasse ni pour les deux micros — trois cartes de texte annonçaient
-          des objets que personne ne pouvait se représenter.
-          MAINTENANT : un carrousel (le même composant que « En images » et que
-          /pieds-atlas), qui OUVRE sur cette même photo du Gonilélé au showroom.
-          ➡️ Rien n'est perdu et le Gonilélé n'est pas montré deux fois.
-          📐 `max-w-lg` : le carrousel est carré (aspect-ratio 1/1, global.css).
-             Sans bride, il ferait 1152 px de haut au bureau et repousserait les
-             trois cartes hors de l'écran.
-          🖐️ Défilement au doigt + plein écran au clic : c'est <Lightbox />,
-             inclus UNE SEULE FOIS en bas de page — ne pas en rajouter ici. */}
-      <div class="mx-auto mt-8 max-w-lg">
-        {/* 🚫 PAS DE PHRASE « fais glisser du doigt » ICI : le carrousel
-            « En images », plus bas sur la MÊME page, porte déjà exactement
-            cette consigne (`galleryIntro`). La répéter à 2 000 px d'écart, ce
-            serait le doublon que David reproche. Les flèches, les points et la
-            démo automatique du composant suffisent. */}
-        <Carousel id="showroom-also" slides={alsoSlides} alt={sh.alsoTitle} labels={carouselLabels} />
-      </div>
-      <div class="mt-8 grid gap-5 md:grid-cols-3">
-        {sh.also.map((a, i) => (
-          <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6">
-            <Icon name={alsoMeta[i].icon} class="h-7 w-7 text-copper" />
-            <h3 class="mt-3 font-display text-lg font-700">{a.title}</h3>
-            <p class="mt-2 flex-1 text-sm text-ink-soft/85">{a.text}</p>
-            <a href={L(alsoMeta[i].href)} class="mt-5 inline-flex items-center gap-1 text-sm font-700 text-copper transition-all hover:gap-2">{a.cta} →</a>
-          </div>
-        ))}
-      </div>
-      <p class="mx-auto mt-6 max-w-2xl text-center text-sm text-ink-soft/70">{sh.alsoNote}</p>
-
-      {/* ── 🦵 LES PIEDS ATLAS (20/08/2026) ─────────────────────────────────
-          Partenariat d'affiliation validé : Atlas envoie deux pieds de
-          démonstration, ils seront donc réellement sur place — d'où leur
-          place dans « et pas seulement le handpan ».
-          ⚠️ VOLONTAIREMENT SOUS `alsoNote` : la note promet « coche-le au
-          moment de réserver », ce qui n'est vrai que pour les 3 instruments
-          au-dessus. Les pieds ne sont PAS une case du formulaire (aucune
-          colonne ne les attend en base — règle des trois écritures). Pour les
-          y ajouter un jour : formulaire → api/subscribe.js → site-lead + colonne.
-          Encadré plutôt que 4ᵉ carte : ce n'est pas un instrument, et le
-          Neotone ne doit pas perdre de place au profit d'un accessoire. */}
-      <div class="mt-12 rounded-card border border-copper/30 bg-cream p-6 md:p-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.atlasEyebrow}</p>
-          <h3 class="mt-3 font-display text-xl font-700 md:text-2xl">{sh.atlasTitle}</h3>
-          <p class="mt-3 text-sm text-ink-soft/85">{sh.atlasIntro}</p>
+    {/* ── COMMENT VENIR — sous un filet, dans la même section. */}
+    <div id="acces" class="mt-14 scroll-mt-24 border-t border-ink/10 pt-12">
+      <div class="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+        <div>
+          <SectionHeading align="left" eyebrow={sh.accessEyebrow} title={sh.accessTitle} />
+          <p class="mt-4 text-lg font-600">{site.address}</p>
+          <div class="mt-4"><Button href={site.mapsUrl} variant="ghost" external>{sh.accessMaps}</Button></div>
         </div>
-        {/* 🎠 LES MÊMES CARROUSELS QUE /pieds-atlas (20/08/2026, David : « les
-            photos des pieds sont trop petites […] il faudrait utiliser les
-            mêmes carrousels que la page qui leur est dédiée »).
-            AVANT : une vignette fixe par modèle, haute de 224 px — on voyait un
-            pied, jamais le produit (repli, sac, tête, réglage de hauteur).
-            MAINTENANT : le composant <Carousel>, avec les mêmes diapositives et
-            le même ordre que la fiche dédiée (jeux construits en haut de ce
-            fichier). Défilement au doigt, flèches, points, et plein écran au
-            clic via <Lightbox /> — inclus une seule fois en bas de page.
-            📐 Plus de `bg-white` autour : les photos produit sont détourées sur
-               blanc et remplissent maintenant tout le cadre carré du carrousel,
-               il n'y a plus de rectangle blanc à masquer. */}
-        <div class="mt-8 grid gap-6 sm:grid-cols-2">
-          {sh.atlasModels.map((m, i) => (
-            <div class="overflow-hidden rounded-xl border border-ink/10 bg-cream-deep/40 p-4">
-              <Carousel id={atlasCarousels[i].id} slides={atlasCarousels[i].slides} alt={m.name} labels={carouselLabels} />
-              <div class="mt-4">
-                <p class="font-display text-lg font-700">{m.name}</p>
-                <p class="mt-1 text-sm text-ink-soft/85">{m.text}</p>
-              </div>
-            </div>
+        <div class="space-y-4">
+          {sh.access.map((a) => (
+            <div class="flex gap-4 rounded-card border border-ink/10 bg-cream-deep/40 p-4"><span class="text-2xl" aria-hidden="true">{a.icon}</span><div><p class="font-700">{a.t}</p><p class="text-sm text-ink-soft/85">{a.d}</p></div></div>
           ))}
         </div>
-        <p class="mt-6 text-center">
-          <a href={L('/pieds-atlas')} class="inline-flex items-center gap-1 text-sm font-700 text-copper transition-all hover:gap-2">{sh.atlasCta} →</a>
-        </p>
       </div>
     </div>
   </Section>
 
-  <Section tone="cream-deep">
-    <div class="rounded-card border border-copper/30 bg-cream p-8 md:p-12">
-      <p class="inline-flex items-center gap-2 rounded-full bg-rust/15 px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-rust">{sh.exclBadge}</p>
-      <h2 class="mt-5 font-display text-3xl font-700 md:text-4xl">{sh.exclTitle}</h2>
-      <p class="mt-4 max-w-2xl text-lg text-ink-soft/90">{sh.exclText}</p>
-      <ul class="mt-6 grid gap-3 md:grid-cols-3">
-        {sh.exclArgs.map((a) => <li class="flex gap-3 rounded-xl bg-cream-deep/60 p-4 text-sm font-600"><Icon name="lucide:check" class="mt-0.5 h-5 w-5 shrink-0 text-copper" /> {a}</li>)}
-      </ul>
-    </div>
-  </Section>
-
-  <Section>
-    <SectionHeading eyebrow={sh.eventsEyebrow} title={sh.eventsTitle} />
-    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {sh.events.map((e, i) => (
-        <div class:list={['flex flex-col rounded-card p-6', i === eventHighlight ? 'border-2 border-copper/50 bg-cream shadow-md' : 'border border-ink/10 bg-cream-deep/40']}>
-          {i === eventHighlight && (
-            <p class="mb-3 inline-flex w-fit items-center rounded-full bg-gold/25 px-3 py-1 text-[11px] font-700 uppercase tracking-widest text-ink">{sh.eventsHighlight}</p>
-          )}
-          <Icon name={eventIcons[i]} class="h-7 w-7 text-copper" />
-          <h3 class="mt-3 font-display text-xl font-700">{e.t}</h3>
-          <p class="mt-2 flex-1 text-ink-soft/85">{e.d}</p>
-          <p class="mt-4 font-700 text-rust">{eventPrices[i]}</p>
-        </div>
-      ))}
-    </div>
-    {/* 🚨 UN SEUL BOUTON (18/08/2026) — il y en avait deux côte à côte
-        (« Réserver mon créneau au showroom (payant) » / « Réserver un
-        rendez-vous individuel ») qui ouvraient le même formulaire.
-        🚨 ET PLUS D'ADRESSE EMAIL EN CLAIR : « je ne veux plus que les gens
-        voient mon email, je veux qu'ils remplissent le formulaire pour que tout
-        soit tracé ». Ne pas réintroduire de `mailto:` ici. */}
-    <div class="mt-8 flex justify-center">
-      <Button href="#agenda" variant="primary" {...privateAttrs}>{sh.bookPrivateCta}</Button>
-    </div>
-    <p class="mx-auto mt-4 max-w-xl text-center text-sm text-ink-soft/70">{sh.booking}</p>
-  </Section>
-
-  <Section tone="cream-deep">
-    <SectionHeading eyebrow={sh.programEyebrow} title={sh.programTitle} intro={sh.programIntro} />
-    {/* Le moment « présentation / démonstration » du déroulé, en image. */}
-    <figure class="mx-auto mt-10 max-w-3xl overflow-hidden rounded-card border border-ink/10 bg-cream">
-      <img
-        src={showroomPhotos.presentation.src}
-        width={showroomPhotos.presentation.w}
-        height={showroomPhotos.presentation.h}
-        alt={sh.photoAlt.presentation}
-        loading="lazy"
-        decoding="async"
-        class="block h-auto w-full"
-      />
-      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.presentation}</figcaption>
-    </figure>
-    <ol class="mx-auto mt-10 max-w-2xl space-y-4">
-      {sh.program.map((s, i) => (
-        <li class="flex gap-5 rounded-card border border-ink/10 bg-cream p-5">
-          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink font-display text-lg font-700 text-cream">{i + 1}</span>
-          <div><h3 class="font-display text-lg font-700">{s.t}</h3><p class="mt-1 text-ink-soft/85">{s.d}</p></div>
-        </li>
-      ))}
-    </ol>
-    {/* « Et parfois, ça va plus loin » (18/08/2026) — la démo en situation.
-        ⚠️ SELON LE PUBLIC INTÉRESSÉ, jamais promis : voir le commentaire de
-        `programBonus` dans dict.ts. Volontairement présenté comme une ouverture
-        possible, pas comme une étape du déroulé — d'où le bloc à part, APRÈS la
-        liste numérotée, et non une 7ᵉ étape. */}
-    <div class="mx-auto mt-6 max-w-2xl rounded-card border border-copper/30 bg-cream p-5">
-      <p class="font-display text-base font-700">✨ {sh.programBonusTitle}</p>
-      <p class="mt-1.5 text-sm leading-relaxed text-ink-soft/85">{sh.programBonus}</p>
-    </div>
-    <p class="mx-auto mt-6 max-w-2xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm font-600 text-ink-soft/90">{sh.programNote}</p>
-  </Section>
-
+  {/* ═══ 3. L'AGENDA — « je m'inscris. » ══════════════════════════════════
+      🎯 C'EST LA SECTION QUI PORTE L'OBJECTIF DE LA PAGE. Remontée le
+      20/08/2026 de la 7ᵉ à la 3ᵉ position : elle était derrière le duo
+      d'instruments, le bloc « et pas seulement le handpan », les pieds Atlas,
+      l'exclusivité commerciale et les quatre formats de session. Quelqu'un qui
+      arrivait DÉJÀ DÉCIDÉ devait traverser tout ça pour trouver un bouton.
+      ⚠️ LE BLOC PAYANT QUI SUIVAIT CETTE SECTION A ÉTÉ DÉPLACÉ EN BAS DE PAGE
+         (#individuel) : proposer un rendez-vous à 50 € juste sous le bouton
+         « Réserver ma place » gratuit, c'était mettre les deux en concurrence
+         au moment exact de la décision.
+      ⓘ L'email de confirmation renvoie ici (`/showroom#agenda`) pour les dates
+        gratuites, et `?rdv=prive#agenda` pour le rendez-vous payant — ce
+        dernier ouvre la modale TOUT SEUL (BookingForm lit le paramètre), il ne
+        dépend donc pas de l'endroit où vit le bloc payant. */}
   <Section id="agenda" tone="cream-deep">
     <div class="mx-auto max-w-3xl rounded-card border-2 border-copper/40 bg-cream p-6 shadow-lg md:p-10">
       <div class="text-center">
@@ -562,30 +464,201 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         </div>
       </div>
     </div>
+  </Section>
 
-    {/* Le rendez-vous individuel, en clair : ce pour quoi on peut venir (tout
-        instrument de la boutique, un micro, ou simplement un accompagnement),
-        le tarif, et le cadre d'annulation. C'est ici qu'atterrit le bouton
-        « Réserver un RDV VIP » de l'email de confirmation (#agenda). */}
-    <div class="mx-auto mt-8 max-w-3xl rounded-card border border-copper/30 bg-cream/70 p-6 text-center md:p-8">
-      <h3 class="font-display text-lg font-700">{sh.agendaMoreTitle}</h3>
-      <p class="mx-auto mt-2 max-w-md text-sm text-ink-soft/85">{sh.agendaMoreText}</p>
-      <p class="mx-auto mt-4 max-w-2xl text-sm text-ink-soft/85">{bk.vipScope}</p>
-      <div class="mx-auto mt-5 flex max-w-md flex-col items-center gap-1 rounded-xl bg-gold/15 px-5 py-4">
-        <span class="text-[11px] font-700 uppercase tracking-widest text-ink-soft/70">{bk.vipPriceLabel}</span>
-        <span class="font-display text-xl font-700 text-rust">{grid}</span>
-        <span class="text-xs text-ink-soft/70">{bk.vipPriceNote}</span>
+  {/* ═══ 4. LE DÉROULÉ — « qu'est-ce que je vais y faire ? » ═══════════════
+      Première question de quelqu'un qui n'a pas réservé tout de suite. Elle
+      passe AVANT le catalogue d'instruments : on se demande d'abord comment se
+      passe l'après-midi, ensuite ce qu'on pourra toucher.
+      📐 Section passée en fond `cream` (elle était en `cream-deep`) pour ne pas
+         enchaîner deux fonds sombres avec l'agenda qui la précède désormais ;
+         les cartes internes passent donc de `bg-cream` à `bg-cream-deep/40`,
+         c'est le couple de contraste utilisé partout ailleurs sur fond crème. */}
+  <Section>
+    <SectionHeading eyebrow={sh.programEyebrow} title={sh.programTitle} intro={sh.programIntro} />
+    {/* Le moment « présentation / démonstration » du déroulé, en image. */}
+    <figure class="mx-auto mt-10 max-w-3xl overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+      <img
+        src={showroomPhotos.presentation.src}
+        width={showroomPhotos.presentation.w}
+        height={showroomPhotos.presentation.h}
+        alt={sh.photoAlt.presentation}
+        loading="lazy"
+        decoding="async"
+        class="block h-auto w-full"
+      />
+      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.presentation}</figcaption>
+    </figure>
+    <ol class="mx-auto mt-10 max-w-2xl space-y-4">
+      {sh.program.map((s, i) => (
+        <li class="flex gap-5 rounded-card border border-ink/10 bg-cream-deep/40 p-5">
+          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink font-display text-lg font-700 text-cream">{i + 1}</span>
+          <div><h3 class="font-display text-lg font-700">{s.t}</h3><p class="mt-1 text-ink-soft/85">{s.d}</p></div>
+        </li>
+      ))}
+    </ol>
+    {/* « Et parfois, ça va plus loin » (18/08/2026) — la démo en situation.
+        ⚠️ SELON LE PUBLIC INTÉRESSÉ, jamais promis : voir le commentaire de
+        `programBonus` dans dict.ts. Volontairement présenté comme une ouverture
+        possible, pas comme une étape du déroulé — d'où le bloc à part, APRÈS la
+        liste numérotée, et non une 7ᵉ étape. */}
+    <div class="mx-auto mt-6 max-w-2xl rounded-card border border-copper/30 bg-cream-deep/40 p-5">
+      <p class="font-display text-base font-700">✨ {sh.programBonusTitle}</p>
+      <p class="mt-1.5 text-sm leading-relaxed text-ink-soft/85">{sh.programBonus}</p>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm font-600 text-ink-soft/90">{sh.programNote}</p>
+  </Section>
+
+  {/* ═══ 5. LES INSTRUMENTS — « qu'est-ce que je vais pouvoir toucher ? » ══
+      ⚖️ « Le monde du ET », version showroom : ici on ne vend pas un choix,
+      on fait ESSAYER. Les deux cartes sont strictement symétriques (même
+      gabarit, même nombre de puces, même CTA) — mettre Yishama en avant,
+      mais jamais plus que Neotone. La note du bas dit franchement la seule
+      asymétrie réelle : seul le Neotone est en stock.
+      📐 Section descendue de la 3ᵉ à la 5ᵉ position le 20/08/2026 : c'est la
+         plus longue de la page (duo + autres instruments + pieds Atlas ≈ trois
+         écrans sur mobile) et elle s'intercalait entre le hero et la moindre
+         possibilité de réserver. Son contenu interne n'a PAS bougé. */}
+  <Section id="deux-univers">
+    <SectionHeading eyebrow={sh.duoEyebrow} title={sh.duoTitle} intro={sh.duoIntro} />
+    {/* Les DEUX univers sur la même photo, installés côte à côte : c'est
+        exactement ce que les deux cartes ci-dessous décrivent en mots. */}
+    <figure class="mx-auto mt-10 max-w-4xl overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+      <img
+        src={showroomPhotos.instruments.src}
+        width={showroomPhotos.instruments.w}
+        height={showroomPhotos.instruments.h}
+        alt={sh.photoAlt.instruments}
+        loading="lazy"
+        decoding="async"
+        class="block h-auto w-full"
+      />
+      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.instruments}</figcaption>
+    </figure>
+    <div class="mt-10 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-4">
+      {sh.duo.map((d, i) => (
+        <Fragment>
+          {i === 1 && (
+            <div class="flex items-center justify-center md:flex-col" aria-hidden="true">
+              <span class="h-px flex-1 bg-ink/15 md:h-full md:w-px md:flex-1"></span>
+              <span class="mx-4 grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold/50 bg-cream font-display text-sm font-700 uppercase tracking-widest text-copper shadow-sm md:mx-0 md:my-4">{lang === 'en' ? 'and' : 'et'}</span>
+              <span class="h-px flex-1 bg-ink/15 md:h-full md:w-px md:flex-1"></span>
+            </div>
+          )}
+          <div class:list={['flex flex-col rounded-card border bg-cream-deep/40 p-6 md:p-8', duoMeta[i].ring]}>
+            <p class:list={['inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[11px] font-700 uppercase tracking-widest', duoMeta[i].chip]}>
+              <Icon name={duoMeta[i].icon} class="h-4 w-4" /> {d.sub}
+            </p>
+            <h3 class="mt-4 font-display text-2xl font-700">{d.title}</h3>
+            <p class="mt-3 text-ink-soft/85">{d.text}</p>
+            <ul class="mt-5 flex-1 space-y-2 text-sm text-ink-soft/85">
+              {d.points.map((p) => (
+                <li class="flex gap-2"><Icon name="lucide:check" class:list={['mt-0.5 h-4 w-4 shrink-0', duoMeta[i].accent]} /> {p}</li>
+              ))}
+            </ul>
+            <a href={L(duoMeta[i].href)} class:list={['mt-6 inline-flex items-center gap-1 font-700 transition-all hover:gap-2', duoMeta[i].accent]}>{d.cta} →</a>
+          </div>
+        </Fragment>
+      ))}
+    </div>
+    <p class="mx-auto mt-8 max-w-3xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm text-ink-soft/85">{sh.duoNote}</p>
+
+    {/* ── ET PAS SEULEMENT LE HANDPAN — Gonilélé, calebasse, micros.
+        Volontairement dans la MÊME section que le duo handpan, et sous un
+        filet de séparation : ça se lit comme « … et il y a aussi ça »,
+        jamais comme un quatrième univers concurrent du Neotone.
+        Cartes plus sobres que celles du duo (une seule colonne de texte,
+        pas de puces) : l'attractivité du Neotone n'est pas diluée. */}
+    <div class="mt-14 border-t border-ink/10 pt-12">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.alsoEyebrow}</p>
+        <h2 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.alsoTitle}</h2>
+        <p class="mt-3 text-ink-soft/85">{sh.alsoIntro}</p>
       </div>
-      <p class="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-ink-soft/70">{bk.vipPolicyShort}</p>
-      <div class="mt-5 flex flex-wrap justify-center gap-3">
-        <Button href="#agenda" variant="primary" {...privateAttrs}>{sh.bookPrivateCta}</Button>
-        <Button href={L('/') + '#communaute'} variant="ghost">{sh.agendaCta}</Button>
+      {/* 🎠 LE CARROUSEL DES AUTRES INSTRUMENTS (20/08/2026, demande de David).
+          AVANT : une figure isolée du Gonilélé (max-w-xs), et RIEN pour la
+          calebasse ni pour les deux micros — trois cartes de texte annonçaient
+          des objets que personne ne pouvait se représenter.
+          MAINTENANT : un carrousel (le même composant que « En images » et que
+          /pieds-atlas), qui OUVRE sur cette même photo du Gonilélé au showroom.
+          ➡️ Rien n'est perdu et le Gonilélé n'est pas montré deux fois.
+          📐 `max-w-lg` : le carrousel est carré (aspect-ratio 1/1, global.css).
+             Sans bride, il ferait 1152 px de haut au bureau et repousserait les
+             trois cartes hors de l'écran.
+          🖐️ Défilement au doigt + plein écran au clic : c'est <Lightbox />,
+             inclus UNE SEULE FOIS en bas de page — ne pas en rajouter ici. */}
+      <div class="mx-auto mt-8 max-w-lg">
+        {/* 🚫 PAS DE PHRASE « fais glisser du doigt » ICI : le carrousel
+            « En images », plus bas sur la MÊME page, porte déjà exactement
+            cette consigne (`galleryIntro`). La répéter, ce serait le doublon
+            que David reproche. Les flèches, les points et la démo automatique
+            du composant suffisent. */}
+        <Carousel id="showroom-also" slides={alsoSlides} alt={sh.alsoTitle} labels={carouselLabels} />
+      </div>
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        {sh.also.map((a, i) => (
+          <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+            <Icon name={alsoMeta[i].icon} class="h-7 w-7 text-copper" />
+            <h3 class="mt-3 font-display text-lg font-700">{a.title}</h3>
+            <p class="mt-2 flex-1 text-sm text-ink-soft/85">{a.text}</p>
+            <a href={L(alsoMeta[i].href)} class="mt-5 inline-flex items-center gap-1 text-sm font-700 text-copper transition-all hover:gap-2">{a.cta} →</a>
+          </div>
+        ))}
+      </div>
+      <p class="mx-auto mt-6 max-w-2xl text-center text-sm text-ink-soft/70">{sh.alsoNote}</p>
+
+      {/* ── 🦵 LES PIEDS ATLAS (20/08/2026) ─────────────────────────────────
+          Partenariat d'affiliation validé : Atlas envoie deux pieds de
+          démonstration, ils seront donc réellement sur place — d'où leur
+          place dans « et pas seulement le handpan ».
+          ⚠️ VOLONTAIREMENT SOUS `alsoNote` : la note promet « coche-le au
+          moment de réserver », ce qui n'est vrai que pour les 3 instruments
+          au-dessus. Les pieds ne sont PAS une case du formulaire (aucune
+          colonne ne les attend en base — règle des trois écritures). Pour les
+          y ajouter un jour : formulaire → api/subscribe.js → site-lead + colonne.
+          Encadré plutôt que 4ᵉ carte : ce n'est pas un instrument, et le
+          Neotone ne doit pas perdre de place au profit d'un accessoire. */}
+      <div class="mt-12 rounded-card border border-copper/30 bg-cream p-6 md:p-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.atlasEyebrow}</p>
+          <h3 class="mt-3 font-display text-xl font-700 md:text-2xl">{sh.atlasTitle}</h3>
+          <p class="mt-3 text-sm text-ink-soft/85">{sh.atlasIntro}</p>
+        </div>
+        {/* 🎠 LES MÊMES CARROUSELS QUE /pieds-atlas (20/08/2026, David : « les
+            photos des pieds sont trop petites […] il faudrait utiliser les
+            mêmes carrousels que la page qui leur est dédiée »).
+            AVANT : une vignette fixe par modèle, haute de 224 px — on voyait un
+            pied, jamais le produit (repli, sac, tête, réglage de hauteur).
+            MAINTENANT : le composant <Carousel>, avec les mêmes diapositives et
+            le même ordre que la fiche dédiée (jeux construits en haut de ce
+            fichier). Défilement au doigt, flèches, points, et plein écran au
+            clic via <Lightbox /> — inclus une seule fois en bas de page.
+            📐 Plus de `bg-white` autour : les photos produit sont détourées sur
+               blanc et remplissent maintenant tout le cadre carré du carrousel,
+               il n'y a plus de rectangle blanc à masquer. */}
+        <div class="mt-8 grid gap-6 sm:grid-cols-2">
+          {sh.atlasModels.map((m, i) => (
+            <div class="overflow-hidden rounded-xl border border-ink/10 bg-cream-deep/40 p-4">
+              <Carousel id={atlasCarousels[i].id} slides={atlasCarousels[i].slides} alt={m.name} labels={carouselLabels} />
+              <div class="mt-4">
+                <p class="font-display text-lg font-700">{m.name}</p>
+                <p class="mt-1 text-sm text-ink-soft/85">{m.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="mt-6 text-center">
+          <a href={L('/pieds-atlas')} class="inline-flex items-center gap-1 text-sm font-700 text-copper transition-all hover:gap-2">{sh.atlasCta} →</a>
+        </p>
       </div>
     </div>
   </Section>
 
-  {/* 📷 CARROUSEL « En images » — le reste des photos, celles qui ne portent pas
-      un argument à elles seules mais qui donnent la matière du lieu.
+  {/* ═══ 6. EN IMAGES — « je vais me sentir comment ? » ════════════════════
+      📷 Le reste des photos, celles qui ne portent pas un argument à elles
+      seules mais qui donnent la matière du lieu. Dernière levée de doute avant
+      le rappel de la date qui suit immédiatement : montrer l'ambiance rassure
+      plus que n'importe quel paragraphe.
       👉 POUR EN AJOUTER UNE : tout est expliqué en haut de `src/data/showroom.ts`.
       Composant réutilisé tel quel (Carousel + Lightbox), comme sur les pages
       Neotone, Muling, Gonilélé et Boutique : swipe au doigt, flèches, points,
@@ -597,20 +670,125 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
     </div>
   </Section>
 
-  <Section id="acces">
-    <div class="grid gap-10 lg:grid-cols-2">
-      <div>
-        <SectionHeading align="left" eyebrow={sh.accessEyebrow} title={sh.accessTitle} />
-        <p class="mt-4 text-lg font-600">{site.address}</p>
-        <div class="mt-4"><Button href={site.mapsUrl} variant="ghost" external>{sh.accessMaps}</Button></div>
-        <div class="mt-8 space-y-4">
-          {sh.access.map((a) => (
-            <div class="flex gap-4 rounded-card border border-ink/10 bg-cream-deep/40 p-4"><span class="text-2xl" aria-hidden="true">{a.icon}</span><div><p class="font-700">{a.t}</p><p class="text-sm text-ink-soft/85">{a.d}</p></div></div>
-          ))}
+  {/* ═══ 7. RAPPEL DE LA DATE — « bon, j'y vais. » ═════════════════════════
+      AJOUTÉ le 20/08/2026. On ne se décide pas tous au même endroit : certains
+      réservent sur la date du hero, d'autres après avoir vu les photos. La date
+      revient donc ici, à mi-parcours, JUSTE APRÈS la galerie.
+      🖱️ Le bouton OUVRE DIRECTEMENT la modale sur la prochaine date
+         (`nextBookAttrs`, mêmes attributs que les cartes de l'agenda) : pas de
+         remontée de page, pas de clic perdu.
+      🚫 AUCUN TEXTE NOUVEAU N'A ÉTÉ INVENTÉ pour ce bloc : il n'utilise que des
+         clés déjà écrites et validées (`agendaNextLabel`, `agendaSeats`,
+         `agendaBookCta`).
+      🧹 Il disparaît tout seul si la date est passée ou s'il n'y en a plus
+         (attribut `data-next-reminder`, filet <script> en bas de page). */}
+  {next && (
+    <section data-next-reminder data-event-iso={next.iso} class="bg-ink text-cream">
+      <div class="mx-auto max-w-3xl px-4 py-14 lg:px-8 lg:py-16">
+        <div class="flex flex-col items-center gap-5 rounded-card border-2 border-gold/60 bg-cream/10 p-5 text-center sm:flex-row sm:p-6 sm:text-left">
+          <div class="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-gold text-ink">
+            <span class="font-display text-3xl font-700 leading-none">{next.day}</span>
+            <span class="text-[10px] font-700 uppercase tracking-widest">{next.month}</span>
+          </div>
+          <div class="flex-1">
+            <p class="text-xs font-700 uppercase tracking-widest text-gold">{sh.agendaNextLabel}</p>
+            <p class="mt-1 font-display text-xl font-700 leading-snug text-cream first-letter:uppercase">{next.dateLong}</p>
+            <p class="text-sm text-cream/80">{next.time}</p>
+            <p class="mt-1.5 text-sm font-700 text-gold">{sh.agendaSeats}</p>
+          </div>
+          <button
+            type="button"
+            {...nextBookAttrs}
+            class="block w-full shrink-0 rounded-full bg-cream px-5 py-3 text-center font-700 text-ink shadow-md transition-colors hover:bg-cream-deep sm:w-auto"
+          >{sh.agendaBookCta}</button>
         </div>
       </div>
-      <div class="overflow-hidden rounded-card"><img src="/images/localisation-showroom-poster.webp" width="720" height="720" alt={sh.heroTitle} class="h-full w-full object-cover" loading="lazy" /></div>
+    </section>
+  )}
+
+  {/* ═══ 8. L'EXCLUSIVITÉ — « et si je veux repartir avec ? » ══════════════
+      📉 DESCENDUE de la 4ᵉ à la 8ᵉ position le 20/08/2026. C'est un argument
+      d'ACHAT (remise 7 %, stock limité, repartir le jour même), pas un argument
+      de VENUE. Placé avant l'agenda, il transformait l'annonce d'un événement
+      gratuit en tunnel de vente — c'est le pire frein possible sur une page dont
+      le seul objectif est une inscription gratuite.
+      Ici, après la décision, il se lit pour ce qu'il est : un bonus pour qui est
+      déjà convaincu de venir. */}
+  <Section tone="cream-deep">
+    <div class="rounded-card border border-copper/30 bg-cream p-8 md:p-12">
+      <p class="inline-flex items-center gap-2 rounded-full bg-rust/15 px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-rust">{sh.exclBadge}</p>
+      <h2 class="mt-5 font-display text-3xl font-700 md:text-4xl">{sh.exclTitle}</h2>
+      <p class="mt-4 max-w-2xl text-lg text-ink-soft/90">{sh.exclText}</p>
+      <ul class="mt-6 grid gap-3 md:grid-cols-3">
+        {sh.exclArgs.map((a) => <li class="flex gap-3 rounded-xl bg-cream-deep/60 p-4 text-sm font-600"><Icon name="lucide:check" class="mt-0.5 h-5 w-5 shrink-0 text-copper" /> {a}</li>)}
+      </ul>
     </div>
+  </Section>
+
+  {/* ═══ 9. « ET SI JE NE PEUX PAS VENIR ? » — le rendez-vous individuel ═══
+      🔗 FUSION DE DEUX BLOCS (20/08/2026) qui vivaient à trois sections d'écart
+      et répondaient à la MÊME question :
+        · « Ce qu'on y vit » (4 formats, 3 payants) + un bouton PLEIN
+          « Réserver un rendez-vous individuel » — c'était le bouton le plus
+          voyant de toute la page, et il était PAYANT, placé AVANT l'agenda ;
+        · le bloc « Tu ne peux pas venir… » qui suivait l'agenda, avec le même
+          bouton, le même tarif et la même modale.
+      Ils sont désormais un seul bloc, en toute fin de page. Le créneau payant
+      reste parfaitement accessible (David le vend) mais il ne croise plus
+      jamais l'inscription gratuite.
+      🚨 PAS D'ADRESSE EMAIL EN CLAIR ICI (18/08/2026) : « je ne veux plus que
+         les gens voient mon email, je veux qu'ils remplissent le formulaire
+         pour que tout soit tracé ». Ne pas réintroduire de `mailto:`.
+      🔗 `id="individuel"` est la cible du lien discret du hero. */}
+  <Section id="individuel">
+    <SectionHeading eyebrow={sh.eventsEyebrow} title={sh.eventsTitle} />
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {sh.events.map((e, i) => (
+        <div class:list={['flex flex-col rounded-card p-6', i === eventHighlight ? 'border-2 border-copper/50 bg-cream shadow-md' : 'border border-ink/10 bg-cream-deep/40']}>
+          {i === eventHighlight && (
+            <p class="mb-3 inline-flex w-fit items-center rounded-full bg-gold/25 px-3 py-1 text-[11px] font-700 uppercase tracking-widest text-ink">{sh.eventsHighlight}</p>
+          )}
+          <Icon name={eventIcons[i]} class="h-7 w-7 text-copper" />
+          <h3 class="mt-3 font-display text-xl font-700">{e.t}</h3>
+          <p class="mt-2 flex-1 text-ink-soft/85">{e.d}</p>
+          <p class="mt-4 font-700 text-rust">{eventPrices[i]}</p>
+        </div>
+      ))}
+    </div>
+
+    {/* Le rendez-vous individuel, en clair : ce pour quoi on peut venir (tout
+        instrument de la boutique, un micro, ou simplement un accompagnement),
+        le tarif, et le cadre d'annulation. C'est ici qu'atterrit le bouton
+        « Réserver un RDV VIP » de l'email de confirmation — via `?rdv=prive`,
+        qui ouvre la modale tout seul (BookingForm lit le paramètre). */}
+    <div class="mx-auto mt-12 max-w-3xl rounded-card border border-copper/30 bg-cream-deep/40 p-6 text-center md:p-8">
+      <h3 class="font-display text-xl font-700">{sh.agendaMoreTitle}</h3>
+      <p class="mx-auto mt-2 max-w-md text-sm text-ink-soft/85">{sh.agendaMoreText}</p>
+      <p class="mx-auto mt-4 max-w-2xl text-sm text-ink-soft/85">{bk.vipScope}</p>
+      <div class="mx-auto mt-5 flex max-w-md flex-col items-center gap-1 rounded-xl bg-gold/15 px-5 py-4">
+        <span class="text-[11px] font-700 uppercase tracking-widest text-ink-soft/70">{bk.vipPriceLabel}</span>
+        <span class="font-display text-xl font-700 text-rust">{grid}</span>
+        <span class="text-xs text-ink-soft/70">{bk.vipPriceNote}</span>
+      </div>
+      <p class="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-ink-soft/70">{bk.vipPolicyShort}</p>
+      <div class="mt-5 flex flex-wrap justify-center gap-3">
+        <Button href="#individuel" variant="primary" {...privateAttrs}>{sh.bookPrivateCta}</Button>
+        <Button href={L('/') + '#communaute'} variant="ghost">{sh.agendaCta}</Button>
+      </div>
+      <p class="mx-auto mt-5 max-w-xl text-sm text-ink-soft/70">{sh.booking}</p>
+    </div>
+
+    {/* 🚨 LA DERNIÈRE PHRASE DE LA PAGE REDIT LA GRATUITÉ. C'est volontaire :
+        on vient d'afficher un tarif, et le seul objectif de la page reste
+        l'inscription GRATUITE. `ctaBookNote` (mots de David) porte exactement
+        les deux informations — « Les showcases publics, eux, sont gratuits —
+        nombre de places limitées · réservation nécessaire » — et le lien
+        ramène aux dates. Ne pas retirer ce filet. */}
+    <p class="mx-auto mt-8 max-w-2xl text-center text-sm text-ink-soft/75">
+      {sh.ctaBookNote.replace('{grid}', grid)}
+      {' '}
+      <a href="#agenda" class="font-700 text-copper underline underline-offset-4 hover:text-rust">{sh.agendaBookCta} →</a>
+    </p>
   </Section>
 
   <BookingForm lang={lang} />
@@ -627,8 +805,12 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
   const empty = document.querySelector('[data-agenda-empty]')
   const count = document.querySelector('[data-agenda-count]')
   const banner = document.querySelector('[data-next-banner]')
+  // Rappel de milieu de page (20/08/2026) : il affiche LA MÊME date que la
+  // bannière du hero, il doit donc disparaître dans exactement les mêmes cas —
+  // sinon la page annoncerait encore une date morte à mi-parcours.
+  const reminder = document.querySelector('[data-next-reminder]')
   // Repli du hero : si la date mise en avant disparaît, le hero ne doit pas se
-  // retrouver avec le seul CTA PAYANT en tête (cf. commentaire du hero).
+  // retrouver avec le seul lien PAYANT en tête (cf. commentaire du hero).
   const fallback = document.querySelector('[data-next-fallback]')
 
   list?.querySelectorAll<HTMLElement>('[data-event-iso]').forEach((card) => {
@@ -638,12 +820,14 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
     banner.remove()
     fallback?.classList.remove('hidden')
   }
+  if (reminder instanceof HTMLElement && (reminder.dataset.eventIso || '') < today) reminder.remove()
 
   const remaining = list?.querySelectorAll('[data-event-iso]').length ?? 0
   if (remaining === 0) {
     empty?.classList.remove('hidden')
     count?.remove()
     banner?.remove()
+    reminder?.remove()
     fallback?.classList.remove('hidden')
   }
 </script>
