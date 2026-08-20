@@ -23,15 +23,17 @@ export function getLang(url: URL): Lang {
 // sélecteur de langue et hreflang (unlocalizePath), canonical, og:url, sitemap.
 // ============================================================
 export const translatedSlugs: Record<string, Partial<Record<string, string>>> = {
-  // L'app : « handpan-app » est ce qu'un anglophone cherche, et surtout cette
-  // adresse ne contient PAS le nom de l'app (encore provisoire) — elle survivra
-  // au futur changement de nom.
-  '/handpan-compagnon': { en: '/handpan-app' },
+  // ⚠️ L'app n'est PLUS une exception (20/08/2026) : son slug français est
+  // devenu `/handpan-app` lui aussi. Les deux langues partagent donc la même
+  // adresse — « handpan-app » est ce qu'un anglophone cherche, et surtout cette
+  // adresse ne contient PAS le nom de l'app (encore provisoire) : elle survivra
+  // au futur changement de nom. Rien à déclarer ici, `localizePath` renvoie
+  // `/handpan-app` en FR et `/en/handpan-app` en EN sans mapping.
   // Les pieds : « pied » ne veut rien dire en anglais, le mot est « stand ».
   '/pieds-atlas': { en: '/handpan-stands' },
 }
 
-// Index inverse : 'en:/handpan-app' → '/handpan-compagnon'
+// Index inverse : 'en:/handpan-stands' → '/pieds-atlas'
 const neutralSlugs: Record<string, string> = Object.entries(translatedSlugs).reduce(
   (acc, [neutral, byLang]) => {
     for (const [lang, slug] of Object.entries(byLang)) acc[`${lang}:${slug}`] = neutral
@@ -43,7 +45,7 @@ const neutralSlugs: Record<string, string> = Object.entries(translatedSlugs).red
 // Préfixe une route interne pour la langue courante, en appliquant le slug
 // traduit s'il y en a un. Les suffixes (#ancre, ?query) sont préservés.
 // localizePath('/showroom', 'en') → '/en/showroom' ; ('/showroom', 'fr') → '/showroom'
-// localizePath('/handpan-compagnon#acces', 'en') → '/en/handpan-app#acces'
+// localizePath('/pieds-atlas#modeles', 'en') → '/en/handpan-stands#modeles'
 export function localizePath(path: string, lang: Lang): string {
   const clean = path.startsWith('/') ? path : `/${path}`
   const cut = clean.search(/[?#]/)
@@ -61,7 +63,7 @@ export const partialLangs = ['zh'] as const
 
 // Retire le préfixe de langue d'un chemin → chemin « neutre » ('/en/showroom' → '/showroom').
 // Rétablit aussi le slug français d'une page au slug traduit
-// ('/en/handpan-app' → '/handpan-compagnon'), pour que le sélecteur de langue
+// ('/en/handpan-stands' → '/pieds-atlas'), pour que le sélecteur de langue
 // et les balises hreflang retrouvent bien la page équivalente.
 export function unlocalizePath(pathname: string): string {
   const parts = pathname.split('/').filter(Boolean)

@@ -44,7 +44,7 @@ const heroLeadHtml = emphasize(h.heroLead, [colorWord, geoWord, emoWord])
 const universMeta = [
   { img: '/images/yishama-hero-david.webp', img2: '/images/neotone-hero-david.webp', w: 1800, h: 1200, icon: 'lucide:disc-3', href: '#instruments', fit: 'split' },
   { img: '/images/prod-cours-stages.jpg', w: 375, h: 375, icon: 'lucide:graduation-cap', href: '/cours', fit: 'cover-top' },
-  { img: '/images/app-acoustique.jpg', w: 1634, h: 802, icon: 'lucide:sparkles', href: '/handpan-compagnon', fit: 'cover' },
+  { img: '/images/app-acoustique.jpg', w: 1634, h: 802, icon: 'lucide:sparkles', href: '/handpan-app', fit: 'cover' },
 ]
 // Les ancres de la page courante ne se localisent pas (`/en/#…` inutile).
 const href = (p: string) => (p.startsWith('#') ? p : L(p))
@@ -79,7 +79,7 @@ const duoMeta = [
         <p class="mt-6 text-lg text-cream/85 md:text-xl" set:html={heroLeadHtml}></p>
         <div class="mt-9 flex flex-wrap justify-center gap-3 md:justify-start">
           <Button href={L('/showroom')} variant="primary">{h.ctaShowroom}</Button>
-          <Button href={L('/handpan-compagnon')} variant="light">{h.ctaMethod}</Button>
+          <Button href={L('/handpan-app')} variant="light">{h.ctaMethod}</Button>
         </div>
         <div class="chroma-bar mx-auto mt-12 h-1.5 w-48 rounded-full md:mx-0"></div>
       </div>
@@ -173,7 +173,7 @@ const duoMeta = [
       <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{h.duoBridgeEyebrow}</p>
       <h3 class="mt-3 font-display text-2xl font-700">{h.duoBridgeTitle}</h3>
       <p class="mx-auto mt-4 max-w-3xl text-ink-soft/85">{h.duoBridgeText}</p>
-      <div class="mt-6"><Button href={L('/handpan-compagnon')} variant="primary">{h.duoBridgeCta}</Button></div>
+      <div class="mt-6"><Button href={L('/handpan-app')} variant="primary">{h.duoBridgeCta}</Button></div>
     </div>
   </Section>
 

@@ -22,7 +22,7 @@ const L = (p: string) => localizePath(p, lang)
 const href = (link: { href: string; external?: boolean }) =>
   link.external || /^https?:\/\//.test(link.href) ? link.href : L(link.href)
 
-// Les liens internes du corps sont écrits en chemins neutres ('/handpan-compagnon').
+// Les liens internes du corps sont écrits en chemins neutres ('/handpan-app').
 // En EN on les préfixe automatiquement pour rester dans la bonne langue.
 const localizeHtml = (html: string) =>
   lang === 'fr' ? html : html.replace(/href="(\/[^"]*)"/g, (_m, p) => `href="${L(p)}"`)

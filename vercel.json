@@ -13,17 +13,27 @@
           "value": "^(www\\.)?(handpanstudio\\.app|handpan-studio\\.app|neotone-studio\\.app|neotonestudio\\.app)$"
         }
       ],
-      "destination": "/handpan-compagnon",
+      "destination": "/handpan-app",
       "permanent": false
     },
     {
       "source": "/handpan-studio",
-      "destination": "/handpan-compagnon",
+      "destination": "/handpan-app",
       "statusCode": 301
     },
     {
       "source": "/handpan-studio/",
-      "destination": "/handpan-compagnon",
+      "destination": "/handpan-app",
+      "statusCode": 301
+    },
+    {
+      "source": "/handpan-compagnon",
+      "destination": "/handpan-app",
+      "statusCode": 301
+    },
+    {
+      "source": "/handpan-compagnon/",
+      "destination": "/handpan-app",
       "statusCode": 301
     },
     {

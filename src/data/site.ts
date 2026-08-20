@@ -72,7 +72,7 @@ export const nav = [
   { key: 'yishama', href: '/yishama' },
   { key: 'shop', href: '/boutique' },
   { key: 'lessons', href: '/cours' },
-  { key: 'studio', href: '/handpan-compagnon' },
+  { key: 'studio', href: '/handpan-app' },
   { key: 'blog', href: '/blog' },
   { key: 'showroom', href: '/showroom' },
   { key: 'about', href: '/a-propos' },

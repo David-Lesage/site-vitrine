@@ -29,6 +29,47 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 20/08/2026 (soir) — 🔗 URL FR de l'app : `/handpan-compagnon` → **`/handpan-app`**
+
+**Statut : ✅ FAIT + DÉPLOYÉ.** Aucun contenu rédactionnel touché — le titre de la page
+affiche toujours « Handpan Compagnon » (c'est le nom actuel de l'app). **Seule l'adresse change.**
+
+**Pourquoi.** L'ancienne adresse contenait le nom de l'app, qui n'est PAS définitif
+(« Handpan Compagnon » est temporaire ; « Handpan Studio » / « Neotone Studio » sont écartés
+pour raisons de marque). `handpan-app` survivra au prochain changement de nom. Bénéfice
+secondaire : FR et EN partagent désormais **le même slug**, ce qui **supprime une exception**
+dans `src/i18n/utils.ts`.
+
+**Ce qui a bougé**
+- `src/pages/handpan-compagnon.astro` → **`src/pages/handpan-app.astro`** (`git mv`).
+  L'anglais était déjà `src/pages/en/handpan-app.astro` (inchangé).
+- `src/i18n/utils.ts` : l'entrée `'/handpan-compagnon': { en: '/handpan-app' }` est
+  **retirée** de `translatedSlugs`. Elle n'a plus d'objet : sans mapping, `localizePath`
+  renvoie `/handpan-app` en FR et `/en/handpan-app` en EN, et `unlocalizePath('/en/handpan-app')`
+  redonne `/handpan-app`. Vérifié dans `dist/` : sélecteur de langue, hreflang, canonical et
+  `og:url` sont corrects des deux côtés.
+  ⚠️ **`'/pieds-atlas': { en: '/handpan-stands' }` reste** — c'est la seule exception restante.
+- Liens internes réécrits en chemin neutre `/handpan-app` : `HomePage`, `AboutPage`,
+  `ShopPage`, `LessonsPage`, `YishamaPage`, `StudioPage` (fil d'Ariane), `GuidePage`
+  (commentaire), `src/data/site.ts` (nav + pied de page), `src/data/shop.ts`,
+  `src/data/guides.ts` (FR + EN), `src/pages/blog/[slug].astro`, `src/pages/en/blog/[slug].astro`,
+  `public/llms.txt`, `README.md`.
+- `vercel.json` : 301 ajoutés pour `/handpan-compagnon` et `/handpan-compagnon/`.
+  **Chaînes de redirection évitées** — `/handpan-studio`, `/handpan-studio/` et la redirection
+  par host des apex (`handpanstudio.app`…) pointaient sur `/handpan-compagnon`, elles pointent
+  maintenant **directement** sur `/handpan-app`. Plus aucune destination n'est elle-même une source.
+
+**Coordination.** `src/components/pages/NeotonePage.astro` (CTA pont vers l'app, en bas de
+`/le-neotone`) était **modifié non commité par une autre session** (intégration de la vidéo
+YouTube du showroom) pendant ce chantier → laissé de côté. Cette session a commité (`d3f254c`)
+avant la fin, le lien a donc pu être repris lui aussi : plus **aucune** occurrence de
+`/handpan-compagnon` dans `src/` ni dans `dist/`.
+
+**Image OG inchangée** : `/images/og-handpan-compagnon.jpg` garde son nom de fichier (c'est un
+asset, pas une URL publique indexée).
+
+---
+
 ## ÉTAT ACTUEL — 20/08/2026 (soir) — 🎯 `/showroom` : REFONTE DE L'ORDRE DES SECTIONS
 
 **Statut : ✅ COMMITÉ EN LOCAL (`d33d04a`) — ⛔ PAS DÉPLOYÉ, PAS ENCORE VU PAR DAVID.**
