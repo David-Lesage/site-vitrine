@@ -24,7 +24,7 @@ export interface Product {
   // libellé du bouton pour les produits 'link'
   linkLabel?: 'buy' | 'listen' | 'discover' | 'order' | 'interested'
   // pastille (plateforme / statut) pour les produits 'link' → dict.shop.linkTags
-  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec' | 'oko' | 'structured'
+  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec' | 'oko' | 'structured' | 'atlas'
   // prix indicatif affiché tel quel (produits externes), ex. "299 €"
   priceLabel?: string
   // code de réduction affiché avec un bouton « copier » (produits externes, lien d'affiliation)
@@ -37,7 +37,7 @@ export interface Product {
   videoUrls?: string[]
 }
 
-export const categoryIds = ['handpans', 'app', 'creations', 'instruments', 'micros', 'musique', 'formations', 'outils'] as const
+export const categoryIds = ['handpans', 'app', 'creations', 'instruments', 'micros', 'accessoires', 'musique', 'formations', 'outils'] as const
 
 // Sous-catégories : UN seul niveau, uniquement pour les catégories listées ici.
 // ⚖️ Ordre volontaire — acoustique EN PREMIER, comme sur l'accueil (#instruments)
@@ -67,6 +67,17 @@ export const products: Product[] = [
   // Micros
   { id: 'micro-hisong', price: 0, image: '/images/prod-micro-hisong.webp', imgW: 1400, imgH: 1400, url: 'https://hisong.io/DAVID-LESAGE-SAVE-5', category: 'micros', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'hisong', priceLabel: '319 € – 426 € TTC', priceNoteKey: 'hisong', images: ['/images/prod-micro-hisong.webp', '/images/prod-hisong-7.jpg', '/images/prod-hisong-3.jpg', '/images/prod-hisong-2.jpg', '/images/prod-hisong-4.jpg', '/images/prod-hisong-5.jpg', '/images/prod-hisong-6.jpg'], videoUrls: ['https://www.youtube.com/watch?v=B_7ZvlpHUsE', 'https://youtu.be/rx8ZZcL7Nog'] },
   { id: 'micro-muling', price: 0, image: '/images/prod-muling-2.jpg', imgW: 1200, imgH: 1200, url: '/micro-muling', category: 'micros', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'muling', priceLabel: '246,50 € au lieu de 258 €', videoUrls: ['https://youtu.be/ENArz99dyTQ'], images: ['/images/prod-muling-2.jpg', '/images/prod-muling-1.jpg', '/images/prod-muling-3.jpg', '/images/prod-muling-4.jpg', '/images/prod-muling-5.jpg', '/images/prod-muling-6.jpg', '/images/prod-muling-7.jpg', '/images/prod-muling-8.jpg', '/images/prod-muling-9.jpg', '/images/prod-muling-10.jpg'] },
+  // ── Accessoires — les pieds de handpan Atlas (fabricant italien).
+  // 🤝 Partenariat d'affiliation validé le 20/08/2026 : avant cette date, la
+  // marque était volontairement absente du site. Atlas envoie deux pieds de
+  // démonstration pour les showcases.
+  // 🚧 `url` pointe sur la fiche du site (et pas sur atlashandpan.com) parce
+  // que le lien d'affiliation n'existe pas encore : c'est la page dédiée qui
+  // porte les liens d'achat, via `atlasLink()` de src/data/atlas.ts. Quand le
+  // code arrivera, ajouter ici `discountCode: '…'` si Atlas en fournit un —
+  // et rien d'autre : ne pas remplacer `url` par un lien externe, la fiche
+  // dédiée est ce qui explique la différence entre les deux modèles.
+  { id: 'atlas', price: 0, image: '/images/prod-atlas-pro-1.webp', imgW: 1120, imgH: 1400, url: '/pieds-atlas', category: 'accessoires', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'atlas', priceLabel: 'Atlas Pro 215 € · Atlas All 230 €', images: ['/images/prod-atlas-pro-1.webp', '/images/prod-atlas-all-1.webp', '/images/prod-atlas-pro-6.webp', '/images/prod-atlas-all-2.webp', '/images/prod-atlas-pro-3.webp'] },
   // Musique — albums & écoute en streaming (Spotify / plateformes)
   { id: 'phoenix-opus1', price: 0, image: '/images/prod-phoenix-opus1.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/album/3sxUqtH3uKf7pceIJ0j5l5', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },
   { id: 'phoenix-opus2', price: 0, image: '/images/prod-phoenix-opus2.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/album/19JuVzKWNd5xUMquLvLSm1', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },

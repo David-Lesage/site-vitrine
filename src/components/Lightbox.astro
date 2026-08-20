@@ -1,12 +1,30 @@
 ---
 // Lightbox plein écran partagée + logique des carrousels de la page.
 // À inclure UNE fois par page contenant des <Carousel />.
+//
+// 🖼️ DEPUIS LE 20/08/2026, elle gère AUSSI les images hors carrousel :
+//    toute <img data-lb="groupe"> devient cliquable et s'ouvre en plein écran,
+//    avec navigation ‹ › entre les images qui partagent le même `data-lb`.
+//    Ajout purement ADDITIF : aucune page existante n'utilise `data-lb`, donc
+//    le comportement des carrousels (Neotone, Muling, Gonilélé, boutique,
+//    showroom) est strictement inchangé. Ne pas poser `data-lb` sur une image
+//    DE carrousel : elle est déjà gérée, ça la brancherait deux fois.
+
+interface Props {
+  /** Libellés d'accessibilité traduisibles. Défauts = FR (comportement historique). */
+  labels?: { close?: string; prev?: string; next?: string; zoom?: string }
+}
+const { labels } = Astro.props
+const lClose = labels?.close ?? 'Fermer'
+const lPrev = labels?.prev ?? 'Photo précédente'
+const lNext = labels?.next ?? 'Photo suivante'
+const lZoom = labels?.zoom ?? 'Agrandir'
 ---
 
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="Fermer">×</button>
-  <button class="lightbox-nav lightbox-prev" type="button" aria-label="Photo précédente">‹</button>
-  <button class="lightbox-nav lightbox-next" type="button" aria-label="Photo suivante">›</button>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" data-zoom-label={lZoom}>
+  <button class="lightbox-close" type="button" aria-label={lClose}>×</button>
+  <button class="lightbox-nav lightbox-prev" type="button" aria-label={lPrev}>‹</button>
+  <button class="lightbox-nav lightbox-next" type="button" aria-label={lNext}>›</button>
   <div class="lightbox-content"><img class="lightbox-img" src="" alt="" /></div>
   <div class="lightbox-caption">1 / 1</div>
 </div>
@@ -122,16 +140,15 @@
   const lbClose = lightbox?.querySelector<HTMLElement>('.lightbox-close') || null
   const lbPrev = lightbox?.querySelector<HTMLElement>('.lightbox-prev') || null
   const lbNext = lightbox?.querySelector<HTMLElement>('.lightbox-next') || null
+  const lbZoomLabel = lightbox?.getAttribute('data-zoom-label') || ''
   let currentSet: HTMLImageElement[] = []
   let currentIdx = 0
   let lastFocused: HTMLElement | null = null
 
-  function openLightbox(carouselId: string, idx: number) {
-    if (!lightbox) return
-    const carousel = document.querySelector('.carousel[data-carousel="' + carouselId + '"]')
-    if (!carousel) return
+  function openSet(imgs: HTMLImageElement[], idx: number) {
+    if (!lightbox || !imgs.length) return
     lastFocused = document.activeElement as HTMLElement
-    currentSet = Array.from(carousel.querySelectorAll<HTMLImageElement>('.carousel-slide img'))
+    currentSet = imgs
     currentIdx = idx
     showImage()
     lightbox.classList.add('is-open')
@@ -139,6 +156,44 @@
     document.body.style.overflow = 'hidden'
     setTimeout(() => lbClose?.focus(), 50)
   }
+
+  function openLightbox(carouselId: string, idx: number) {
+    const carousel = document.querySelector('.carousel[data-carousel="' + carouselId + '"]')
+    if (!carousel) return
+    openSet(Array.from(carousel.querySelectorAll<HTMLImageElement>('.carousel-slide img')), idx)
+  }
+
+  // ============ IMAGES HORS CARROUSEL ============
+  // `data-lb` = nom du groupe : les images d'un même groupe se parcourent avec
+  // ‹ ›. Souris, doigt (le clic couvre le tap) et clavier (Entrée / Espace).
+  // La lightbox affiche `img.currentSrc || img.src`, donc TOUJOURS le fichier
+  // pleine définition, jamais la taille d'affichage. Et `.lightbox-img` n'a que
+  // des `max-width/max-height` : une image plus petite que l'écran (la photo du
+  // Everness Festival, 900×600) n'est jamais agrandie au-delà de sa définition.
+  const lbGroups = new Map<string, HTMLImageElement[]>()
+  document.querySelectorAll<HTMLImageElement>('img[data-lb]').forEach((img) => {
+    if (img.closest('.carousel')) return
+    const g = img.dataset.lb || '_'
+    if (!lbGroups.has(g)) lbGroups.set(g, [])
+    lbGroups.get(g)!.push(img)
+  })
+  lbGroups.forEach((set) => {
+    set.forEach((img, i) => {
+      img.classList.add('is-zoomable')
+      img.setAttribute('role', 'button')
+      img.setAttribute('tabindex', '0')
+      if (!img.getAttribute('aria-label')) {
+        img.setAttribute('aria-label', (img.alt ? img.alt + ' — ' : '') + (lbZoomLabel || 'Agrandir'))
+      }
+      img.addEventListener('click', () => openSet(set, i))
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault()
+          openSet(set, i)
+        }
+      })
+    })
+  })
   function showImage() {
     const img = currentSet[currentIdx]
     if (!img || !lbImg) return

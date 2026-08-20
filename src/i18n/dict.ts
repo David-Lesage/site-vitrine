@@ -490,7 +490,7 @@ const fr = {
     orderEmail: 'Commander par email',
     creationsBadge: 'Signature David Lesage',
     calcOrder: 'Calculer mon prix & commander',
-    linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: '−5 % via moi', onesec: 'J’utilise vraiment', oko: '−10 % avec mon code', structured: 'J’utilise vraiment' },
+    linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: '−5 % via moi', onesec: 'J’utilise vraiment', oko: '−10 % avec mon code', structured: 'J’utilise vraiment', atlas: 'Partenaire Atlas' },
     linkCtas: { buy: 'Voir l’offre →', listen: 'Écouter →', discover: 'Découvrir →', order: 'Commander →', interested: 'Ce micro m’intéresse →' },
     copyCode: 'Copier le code',
     codeCopied: 'Copié !',
@@ -508,6 +508,10 @@ const fr = {
       creations: { label: 'Mes créations · Now Groove', blurb: 'Créées par moi : ma méthode de rythme Now Groove, la calebasse signature et sa housse faite main.' },
       instruments: { label: 'Instruments d’exception', blurb: 'Je collabore avec des fabricants d’exception dont je représente fièrement la qualité. À travers moi, profite de coupons de réduction et de démonstrations lors de mes showcases.' },
       micros: { label: 'Micros', blurb: 'Captation pour handpan acoustique, voix et gong.' },
+      // Accessoires (20/08/2026) — nouvelle catégorie créée pour les pieds Atlas.
+      // Elle n'existait pas : les pieds n'avaient leur place ni dans « Micros »
+      // ni dans « Mes outils du quotidien » (qui parle d'apps, pas de musique).
+      accessoires: { label: 'Accessoires', blurb: 'Ce qui tient l’instrument et ce qui le transporte. Testé au showroom avant d’être mis ici.' },
       musique: { label: 'Musique', blurb: 'Mes albums et mes reprises, à écouter en streaming sur toutes les plateformes.' },
       formations: { label: 'Cours & stages', blurb: 'Apprends avec moi en cours particuliers et en stages, en présentiel ou à distance.' },
       outils: { label: 'Mes outils du quotidien', blurb: 'Au-delà de la musique : les outils que j’utilise vraiment pour rester concentré, présent et créatif.' },
@@ -532,6 +536,7 @@ const fr = {
       'tambour': { name: 'Tambour chamanique · L’Âme du Tambour', description: 'Tambour-cadre artisanal de Julien (L’Âme du Tambour) — un fabricant aligné, passionné et intègre. Profite de −5 % avec le code David-Tambour.' },
       'micro-hisong': { name: 'Micro Hisong AirStudio S1', description: 'Le premier studio mobile tout-en-un (micro, retours intra sans fil, interface audio, boîtier de charge). Idéal pour la voix, le handpan acoustique et le gonilélé — un véritable studio portatif.<br><br><strong>Trois kits au choix</strong> (prix TTC, TVA 20 % incluse) :<br>1 — Musicien 4-en-1 · <strong>319 € TTC</strong> <span class="text-ink-soft/60">(265,95 € HT)</span><br>2 — Créateur 5-en-1 · <strong>372 € TTC</strong> <span class="text-ink-soft/60">(309,95 € HT)</span><br>3 — Master 6-en-1 · <strong>426 € TTC</strong> <span class="text-ink-soft/60">(354,95 € HT)</span><br><br><strong>Mon conseil :</strong> si tu veux utiliser le micro pour <strong>jouer en live</strong>, il te faut le <strong>kit 6-en-1 (Master)</strong>.<br><br>Démonstrations et achat en direct à mes showcases à Paris.' },
       'micro-muling': { name: 'Micro Muling MP1 + préampli HMP-2', description: 'Le MP1 est un micro contact-condensateur conçu pour le handpan acoustique. Fourni avec le préampli HMP-2, qui accueille jusqu’à deux micros MP1 — pour une captation stéréo, claire et précise, sans Larsen. Idéal pour la scène et l’enregistrement. (Contractualisation en cours avec le fabricant : écris-moi pour être tenu au courant.)' },
+      'atlas': { name: 'Pieds de handpan Atlas — Pro & All', description: 'Les trépieds magnétiques du fabricant italien Atlas. Le handpan se pose sur un disque flottant à huit aimants protégés, sans vis ni sangle. Deux modèles : l’<strong>Atlas Pro</strong> en aluminium, télescopique, 1,8 kg, sac de transport inclus (215 €) ; l’<strong>Atlas All</strong> en bois, dont la tête se coince entre les jambes pour jouer assis, avant de recevoir pieds et rallonges pour jouer debout (230 €). Je suis partenaire de la marque — les deux seront à essayer au showroom.' },
       'phoenix-opus1': { name: 'L’Alliance du Phoenix — Opus I', description: 'Mon album original, premier opus — un voyage entre handpan, voix et textures organiques. À écouter sur Spotify et toutes les plateformes.' },
       'phoenix-opus2': { name: 'L’Alliance du Phoenix — Opus II', description: 'Le second opus — la suite du voyage musical. À écouter sur Spotify et toutes les plateformes.' },
       'cover': { name: 'Reprises — David Lesage', description: 'Mes reprises revisitées au handpan et à la voix (Shape of My Heart, Imagine, Ave Maria…). À écouter sur Spotify.' },
@@ -945,6 +950,385 @@ const fr = {
       'Je donne des cours particuliers de Gonilélé (et plus) en visio ou en présentiel à Paris : 50 €/h ou 70 €/1h30.',
     coursesCta: 'Réserver un cours',
   },
+  // ============================================================
+  // PIEDS ATLAS (20/08/2026) — page /pieds-atlas
+  //
+  // 🚨 CHAQUE CHIFFRE DE CE BLOC EST RELEVÉ SUR LES FICHES OFFICIELLES ATLAS
+  //    (voir l'en-tête de src/data/atlas.ts pour les trois URL et la liste de
+  //    ce qu'Atlas NE dit PAS). Rien n'a été déduit ni arrondi. Si un chiffre
+  //    change ici, il doit changer dans `atlasSpecs` — et inversement.
+  //
+  // ⚠️ DAVID N'A PAS ENCORE REÇU LES PIEDS (ils arrivent en démonstration).
+  //    Donc : AUCUN avis d'usage, aucun « je les ai testés », aucun ressenti
+  //    sonore. On présente ce que le produit FAIT, et on annonce que le test
+  //    arrive. Ne pas « réchauffer » ces textes avec une expérience qui n'a
+  //    pas eu lieu — ça se verrait.
+  //
+  // ⚠️ AUCUNE PROMESSE ACOUSTIQUE. Atlas n'annonce nulle part que le pied
+  //    améliore le son, et un avis client de leur propre page dit le
+  //    contraire. Ne pas écrire « le son s'ouvre », « ça résonne mieux »…
+  // ============================================================
+  atlas: {
+    title: 'Pieds de handpan Atlas — Atlas Pro & Atlas All | David Lesage',
+    description:
+      'Les trépieds magnétiques Atlas pour handpan, fabriqués en Italie : Atlas Pro en aluminium (250 €) et Atlas All en bois (270 €). Caractéristiques, photos et essai à Paris avec David Lesage, partenaire de la marque.',
+    back: '← Retour à la boutique',
+    eyebrow: 'Partenaire · Atlas Handpan',
+    // Légendes du diptyque du hero : elles disent ce que MONTRE l'image
+    // (deux hauteurs), pas seulement ce qu'est le produit.
+    heroProCaption: 'Aluminium — le même pied, déployé et replié',
+    heroAllCaption: 'Bois — sans puis avec ses rallonges',
+    heightCm: '{n} cm',
+    heroTitle: 'Les pieds Atlas',
+    heroLead:
+      'Atlas fabrique en Italie des trépieds pour handpan. L’instrument n’est ni vissé ni sanglé : il se pose sur un disque flottant tenu par des aimants. Je viens de devenir partenaire de la marque, et deux modèles arrivent au showroom — l’Atlas Pro et l’Atlas All.',
+    ctaModels: 'Voir les deux modèles',
+    ctaSite: 'Le site d’Atlas',
+    ctaTry: 'Venir les essayer à Paris',
+
+    whyTitle: 'À quoi ça sert, concrètement',
+    whyText:
+      'Un pied change deux choses très simples : tu peux jouer debout, et tu n’as plus l’instrument en équilibre sur les jambes. Au showroom, mes handpans sont déjà sur trépieds — c’est ce qui permet de les faire passer de main en main sans les reposer à chaque fois. Ce qu’Atlas fait différemment, c’est la fixation : un disque flottant à huit aimants anti-rayures, sans vis ni sangle à serrer sur le métal.',
+    whyPoints: [
+      {
+        // ✅ CORRIGÉ le 20/08/2026 : la FAQ d'Atlas annonce TROIS positions pour
+        // la gamme en bois (« on your lap, seated, or standing »). L'Atlas Pro,
+        // lui, n'est annoncé que pour deux — l'asymétrie est volontaire et sourcée.
+        t: 'Sur les genoux, assis, debout',
+        d: 'Atlas annonce trois positions de jeu pour sa gamme en bois : l’instrument sur les genoux, assis sur une chaise, ou debout. L’Atlas Pro, lui, est annoncé pour deux — assis et debout.',
+      },
+      {
+        // ✅ CORRIGÉ le 20/08/2026 : la FAQ répond « The magnets scratch? » par
+        // « No, the 8 magnets are safely covered and placed under the spots where
+        // the handpan touches the Atlas body. » L'info existe, elle répond à une
+        // vraie objection d'acheteur — donc elle est écrite.
+        t: 'Une fixation magnétique',
+        d: 'Le handpan repose sur un disque flottant à huit aimants. Atlas précise qu’ils sont protégés et placés sous les points où l’instrument touche le support : rien ne vient pincer, serrer ni frotter le métal.',
+      },
+      {
+        t: 'Fabriqué en Italie',
+        d: 'Atlas est une petite maison italienne, basée à Conegliano en Vénétie. Les deux pieds y sont conçus et fabriqués.',
+      },
+    ],
+
+    // ── 🎤 LE RÉCIT DE DAVID — « je joue debout » (20/08/2026) ───────────────
+    //
+    // ✅ CETTE SECTION EST LA SEULE DE LA PAGE OÙ DAVID PARLE EN SON NOM PLEIN.
+    //    C'est de l'expérience RÉELLEMENT VÉCUE : des années de scène debout,
+    //    quatre pieds différents essayés. Il n'a donc PAS à s'excuser ni à se
+    //    justifier ici — registre : conviction assumée. Ne pas réintroduire de
+    //    formules défensives (« je préfère ne pas me prononcer », « un avis que
+    //    je n'ai pas encore »…) : elles affaiblissent une parole qui fait
+    //    autorité, et David l'a explicitement demandé.
+    //
+    // 🚨 LA SEULE LIGNE À NE PAS FRANCHIR : ne JAMAIS écrire ni laisser
+    //    entendre qu'il a DÉJÀ UTILISÉ les pieds Atlas. Pas de « je les ai
+    //    testés », pas de « à l'usage », aucun détail sensoriel qu'il ne peut
+    //    pas connaître (poids ressenti, bruit du réglage, tenue réelle). Il
+    //    juge une CONCEPTION — ce qu'un professionnel fait légitimement — et il
+    //    annonce qu'il vérifiera. C'est le seul mensonge possible ici.
+    //
+    // 🚨 LES CONCURRENTS SONT NOMMÉS : tout est au TÉMOIGNAGE PERSONNEL
+    //    (« mon S Pan », « le mien »), jamais en jugement général sur le
+    //    produit. Sur une page où David touche une commission pour un produit
+    //    concurrent, un jugement général serait qualifiable de DÉNIGREMENT
+    //    (concurrence déloyale). Ce n'est pas du confort de style : c'est ce
+    //    qui le protège. Ne jamais transformer « la pièce de mon S Pan a
+    //    cassé » en « le S Pan est fragile ». Aucune comparaison de prix.
+    //    Jacomina Kistemaker : David n'en dit aucun mal — ne rien lui inventer.
+    storyEyebrow: 'Mon expérience',
+    storyTitle: 'Pourquoi je joue debout',
+    storyIntro:
+      'Depuis que je joue du handpan, j’ai toujours joué debout. D’abord parce que je suis chanteur, et que c’est pour moi la meilleure position pour chanter librement. Ensuite parce que je suis multi-instrumentiste : j’ai une pédale de kick électronique au pied et plusieurs instruments autour de moi. Et parce que c’est, de loin, la posture la plus équilibrante pour le corps. Un pied de handpan n’est donc pas un accessoire dans mon métier : c’est ce qui rend ma façon de jouer possible.',
+    storyVoiceTitle: 'Deux handpans, un kick, un N’Goni, une calebasse — et je chante',
+    storyVoiceText:
+      'C’est le dispositif que j’emmène sur scène, et c’est celui de mon audition à l’aveugle de The Voice. Tout est debout, tout est à portée de main, et rien ne tient si les instruments ne sont pas à la bonne hauteur. C’est très concret : quelques centimètres de trop et je ne chante plus juste, quelques centimètres de moins et je ne peux plus atteindre mes basses.',
+    storyVoiceCta: 'Voir mon parcours',
+    storyStandsTitle: 'Les pieds que j’ai usés avant Atlas',
+    storyStandsIntro:
+      'J’en ai essayé plusieurs, et j’ai fini par les user pour de bon. Je parle ici de MES exemplaires et de MON usage — la scène, les déplacements, plusieurs dizaines de dates par an :',
+    storyStands: [
+      {
+        t: 'Jacomina Kistemaker',
+        d: 'J’ai deux de ses modèles. C’est une fabricante que je respecte, et ses pieds m’ont accompagné longtemps.',
+      },
+      {
+        t: 'Meinl',
+        d: 'Le mien est solide, vraiment. Mais il est trop lourd pour que je le transporte : quand je pars jouer, c’est un critère qui décide de tout.',
+      },
+      {
+        t: 'S Pan',
+        d: 'C’est mon choix jusqu’à aujourd’hui, et il a de vraies qualités : léger, facile à transporter. Sur le mien, ce sont les systèmes de glissement et les pièces imprimées en 3D qui ont fini par lâcher — l’une d’elles a cassé avec le temps. Je me suis aussi demandé si le principe de la ventouse n’absorbait pas une partie de la vibration : c’est une question que je me pose, pas une mesure que j’ai faite.',
+      },
+    ],
+    storyConclusionTitle: 'Pourquoi Atlas, maintenant',
+    storyConclusion:
+      'Au vu de tout ce que j’ai essayé, c’est le premier concept qui répond à chacun des problèmes que j’ai rencontrés : une fixation magnétique au lieu d’une ventouse, un Atlas Pro entièrement en aluminium — jambes télescopiques comprises — et 1,8 kg qui partent dans leur sac. Je suis convaincu, et je les attends avec impatience. Je les reçois dans quelques jours, et je le vérifierai devant vous.',
+    storyBridge:
+      'Et il y a une ironie que j’aime bien : le même pied ouvre la posture inverse de la mienne. Sa tête permet de jouer assis, sans poser l’instrument sur les jambes — ce que je n’ai jamais pratiqué, et que je vais découvrir.',
+    storyBridgeCta: 'La tête du pied',
+    // 🖼️ LÉGENDES VISIBLES des photos de la section #debout (pas des `alt`).
+    //    Elles disent ce que la photo PROUVE, pas ce qu'elle montre.
+    // 🚨 storyFestivalCaption : la marque des pieds n'y est PAS nommée, et ne
+    //    doit jamais l'être — voir le commentaire de `alt.stageFestival`.
+    storyPlateauCaption:
+      'Mon plateau installé, avant un concert dans une salle en Suisse. Un pied de handpan ne vit jamais seul : il tient au milieu de tout le reste, et c’est lui qui fixe la hauteur de tout.',
+    storyFestivalCaption:
+      'Everness Festival, Hongrie : debout derrière mes deux handpans acoustiques — sur les pieds que j’utilisais alors.',
+    storyStandsPhotoCaption:
+      'Mon dispositif de scène vu de près : trois instruments, trois pieds différents, et autant de hauteurs à régler avant de jouer.',
+
+    partnerTitle: 'Pourquoi j’en parle maintenant',
+    partnerText:
+      'Le partenariat avec Atlas vient d’être validé : je suis désormais affilié à la marque, et ils m’envoient deux pieds de démonstration pour mes showcases. Tant que rien n’était signé, je préférais ne rien annoncer ici — c’est fait, donc j’en parle.',
+    // 🚧 Cette phrase disparaît le jour où `ATLAS_AFFILIATE_URL` est renseigné
+    //    dans src/data/atlas.ts (la page bascule alors sur le lien de suivi).
+    //    Tant qu'elle est affichée, elle dit la vérité : les boutons envoient
+    //    simplement sur la fiche officielle, sans rien tracer.
+    affiliateNote:
+      'Mon lien de suivi n’est pas encore en place : pour l’instant, les boutons t’emmènent directement sur la fiche officielle d’Atlas.',
+
+    // ✅ REGISTRE AJUSTÉ le 20/08/2026 à la demande de David : c'est une
+    //    PROMESSE DE VÉRIFICATION PUBLIQUE, pas une réserve sur son jugement.
+    //    L'ancienne version (« plutôt que de te vendre un avis que je n'ai pas
+    //    encore ») le faisait douter de lui alors qu'il a essayé quatre pieds.
+    //    Ce qui reste non négociable : le fait qu'il ne les a PAS ENCORE REÇUS
+    //    est écrit noir sur blanc. C'est la seule chose qu'on ne peut pas taire.
+    testTitle: 'Ce que je vérifierai devant vous',
+    testText:
+      'Je les reçois dans quelques jours. Ce que j’avance sur cette page, je l’avance en connaissance de cause : j’ai usé quatre pieds différents sur scène, et je sais exactement ce que je cherche. Ce que je n’ai pas encore, c’est le terrain — alors dès que les deux pieds sont au showroom, je filme ma propre démonstration, je la mets ici, et je vous dis ce que ça donne.',
+    // `videoSectionTitle` = titre de la SECTION ; `videoTitle` = ce qui est
+    // écrit DANS le cadre réservé (demande de David : le rectangle porte
+    // « Démonstration par David Lesage » et la mention « À venir »).
+    videoSectionTitle: 'La démonstration en vidéo',
+    videoTitle: 'Démonstration par David Lesage',
+    videoSoon: 'À venir',
+    videoNote: 'Je filme dès que les deux pieds sont arrivés au showroom — c’est une question de jours.',
+
+    modelsTitle: 'Deux modèles',
+    modelsIntro:
+      'Les deux font le même travail — tenir le handpan sur un disque magnétique flottant. Ils ne le font pas avec les mêmes matériaux, ni sur la même plage de hauteur. Voici ce qu’annonce le fabricant, sans rien ajouter.',
+    // Libellés des lignes de caractéristiques. Les valeurs de PRIX, HAUTEUR et
+    // POIDS sont construites par la page depuis `atlasPrices` / `atlasSpecs`
+    // (src/data/atlas.ts) : impossible que le FR et l'EN affichent deux nombres
+    // différents. Les autres valeurs (matériaux, fixation, positions) sont des
+    // phrases traduites ci-dessous — si l'une contient un nombre (« 8 aimants »,
+    // « 41 cm »), il doit rester identique à celui d'`atlasSpecs`.
+    specs: {
+      price: 'Prix annoncé',
+      height: 'Hauteur',
+      weight: 'Poids',
+      material: 'Matériaux',
+      mount: 'Fixation',
+      positions: 'Positions de jeu',
+      bag: 'Transport',
+      body: 'Tête Atlas Body',
+      bodyOption: 'Tête Atlas Body',
+    },
+    heightValue: 'de {min} cm à {max} cm',
+    weightValue: '{w} kg',
+    // {date} est remplacé par la page depuis `ATLAS_PRICES_READ_AT`.
+    priceNote: 'Prix TTC relevés sur le site d’Atlas le {date}, pendant une promotion. Le prix qui fait foi reste celui affiché chez Atlas au moment de ta commande — frais de port en plus.',
+    priceRegular: 'prix habituel',
+    pro: {
+      name: 'Atlas Pro',
+      tagline: 'Aluminium, télescopique, sac fourni',
+      text:
+        'Le modèle en aluminium. Ses trois pieds télescopiques se règlent en continu et indépendamment les uns des autres, un système d’ouverture rapide permet de le monter et de le replier en quelques secondes, et la structure se referme sur elle-même pour le transport. Atlas annonce 1,8 kg, et le sac Atlas Bag est fourni avec.',
+      material: 'Aluminium léger, pieds télescopiques',
+      mount: 'Disque flottant, 8 aimants anti-rayures',
+      positions: 'Assis ou debout, réglage en continu',
+      bag: 'Sac de transport Atlas Bag inclus',
+      body: 'Partie bois non comprise',
+      cta: 'Voir l’Atlas Pro sur le site d’Atlas',
+    },
+    all: {
+      name: 'Atlas All',
+      tagline: 'Bois, modulable par rallonges',
+      text:
+        'Le modèle en bois. Son corps principal est imprimé en 3D et repose sur une base en bois munie d’une pointe anti-basculement. Les pieds font 41 cm et se rallongent de 10 cm ; en vissant les trois rallonges de 41 cm, on passe de la position assise à la position debout.',
+      material: 'Corps imprimé en 3D ; base, rallonges et pieds en bois',
+      mount: 'Disque flottant, 8 aimants anti-rayures',
+      positions: 'Sur les genoux, assis (sans rallonges) ou debout (avec rallonges)',
+      cta: 'Voir l’Atlas All sur le site d’Atlas',
+      body: 'Incluse — c’est la pièce de base de la gamme',
+      // 🚧 Pas de ligne « Poids » ni « Transport » pour l'Atlas All : Atlas ne
+      //    donne NI son poids, NI l'essence du bois, NI l'existence d'un sac
+      //    pour ce modèle (le sac n'est explicitement inclus qu'avec le Pro).
+      //    Ne pas remplir ces lignes tant qu'Atlas ne l'a pas confirmé.
+    },
+
+
+    // ── 🪑 LA TÊTE DU PIED — « on achète plus qu'un pied » (20/08/2026) ──────
+    // Ajouté à la demande de David : l'argument manquait complètement.
+    //
+    // 🚨 TOUT CE BLOC EST ATTRIBUÉ À ATLAS. David n'a TOUJOURS PAS reçu les pieds :
+    //    il ne peut confirmer aucun ressenti sonore. Les tournures « Atlas écrit /
+    //    Atlas annonce / c'est ce que la conception vise » ne sont pas de la
+    //    prudence décorative — c'est la seule chose qui sépare une information
+    //    rapportée d'un mensonge. Ne les retirer QUE le jour où David a testé.
+    //
+    // 🚨 L'INCLUSION EST LE POINT LE PLUS DANGEREUX DE LA PAGE.
+    //    Le Body est INCLUS dans l'Atlas All (pièce de base de la gamme bois),
+    //    et Atlas n'annonce RIEN DE TEL pour l'Atlas Pro (ligne aluminium
+    //    distincte, deux positions seulement). Écrire « inclus » pour le Pro
+    //    ferait passer David pour un menteur auprès d'un partenaire tout neuf.
+    //    Source complète : `ATLAS_BODY_STATUS` dans src/data/atlas.ts.
+    headEyebrow: 'La tête du pied',
+    headTitle: 'Un pied — mais pas seulement un pied',
+    headIntro:
+      'La partie haute du support, celle qu’Atlas appelle l’Atlas Body, n’est pas qu’une pièce à visser sur des jambes. Serrée entre les cuisses, elle tient le handpan au-dessus de toi pendant que tu joues assis sur une chaise ou un canapé — sans pieds, sans trépied, et sans poser l’instrument sur tes jambes.',
+    headPoints: [
+      {
+        t: 'L’instrument ne repose plus sur toi',
+        d: 'C’est la tête qui porte le handpan, pas tes cuisses. Atlas annonce trois positions de jeu pour sa gamme en bois : sur les genoux, assis, debout.',
+      },
+      {
+        t: 'Les notes du dessous restent accessibles',
+        d: 'L’instrument est décollé de ton corps. Atlas met en avant qu’on n’est plus gêné pour atteindre les notes — ce qui compte surtout si ton handpan a des notes en dessous.',
+      },
+      {
+        t: 'Une tête ajourée',
+        d: 'La couronne est creuse et ouverte. Atlas explique que cette forme creuse laisse le son circuler sans obstacle.',
+      },
+    ],
+    headAcousticTitle: 'Ce qu’Atlas dit du son',
+    headAcousticText:
+      'Atlas écrit que son support « est né de la quête d’un meilleur son », qu’il « n’absorbe pas les vibrations et augmente la résonance », et que « sa forme creuse permet au son de circuler sans obstacles ». Sur la tête seule, ils ajoutent qu’elle améliore le contrôle de l’instrument « sans entraver les vibrations ».',
+    // La séparation des voix RESTE (c'est Atlas qui parle du son, pas David),
+    // mais sans formule d'excuse : il annonce simplement qu'il tranchera.
+    headAcousticNote:
+      'Ce sont leurs mots, pas les miens : sur le son, je ne reprends l’affirmation de personne sans l’avoir entendue. Les pieds arrivent dans quelques jours — je vous dirai ce que j’entends.',
+    headIncludedTitle: 'Incluse, ou à acheter en plus ?',
+    headIncluded: [
+      {
+        t: 'Atlas All — incluse',
+        d: 'La gamme en bois est modulaire : la tête est la pièce de base, on y visse les pieds pour obtenir l’Atlas Short, puis les rallonges pour l’Atlas All. En prenant l’Atlas All, tu as bien les trois positions.',
+      },
+      {
+        t: 'Atlas Pro — la partie bois n’est pas comprise',
+        d: 'Marco Agri, le créateur d’Atlas, me l’a confirmé directement : « atlas pro doesn’t come with the wood part ». Le Pro se règle de la position assise à la position debout, mais il n’embarque pas la tête en bois, celle qui sert au jeu sur les genoux. Autant le savoir avant de commander qu’à l’ouverture du carton.',
+      },
+      {
+        t: 'Atlas Body — la tête seule',
+        d: 'Atlas la référence aussi séparément (140 €, habituellement 165 €). C’est ce qu’on regarde quand on ne veut que le jeu sur les genoux, ou quand on veut faire évoluer une gamme bois : le kit pieds + rallonges (90 €) la transforme en Atlas Short, puis en Atlas All.',
+      },
+    ],
+    // ── 🚧 SECTION SUSCEPTIBLE D'ÉVOLUER — VÉRIFIER AVANT PUBLICATION ───────
+    //    David a signalé à Marco Agri qu'un possesseur d'Atlas Pro qui achète
+    //    un Atlas Body se retrouverait avec des pièces en double. Marco y
+    //    réfléchit et pourrait faire évoluer l'offre (partie bois seule, ou
+    //    pack Pro + bois).
+    //    ⛔️ CETTE DISCUSSION EST PRIVÉE ET EN COURS : ne JAMAIS écrire sur la
+    //       page la moindre critique du découpage de la gamme (« mal découpée »,
+    //       « il manque un pack », la remarque sur les doublons). Le partenariat
+    //       a deux jours, et la page décrirait une stratégie au lieu de décrire
+    //       un produit. Elle serait aussi périmée dès la réponse de Marco.
+    //    ⛔️ NE PAS PRÉSENTER l'achat d'un Atlas Body comme LE complément d'un
+    //       Pro : ce serait recommander de payer des doublons. Ce qui est dit,
+    //       c'est ce qui est vrai et utile : les pièces sont compatibles, donc
+    //       qui possède DÉJÀ un All/Short réutilise sa partie bois sur un Pro.
+    //    ✅ RÉDIGÉ POUR SURVIVRE À UN CHANGEMENT D'OFFRE : « aujourd'hui »,
+    //       « à ce jour ». Si Atlas sort un pack, le texte devient incomplet,
+    //       jamais faux. À revérifier sur atlashandpan.com + réponse de Marco.
+    //
+    // ── ✅ SOURCE DE PREMIÈRE MAIN — Marco Agri, créateur d'Atlas (20/08/2026)
+    //    Message direct à David. C'est CE QU'IL A ÉCRIT, mot pour mot :
+    //      « you would need also the wood part, you can have it with atlas
+    //        body, or with your previous all or short. all parts are fully
+    //        compatible with the others. but atlas pro doesn't come with the
+    //        wood part. »
+    //    ⚠️ NE RIEN EXTRAPOLER AU-DELÀ DE CES TROIS PHRASES. Marco ne dit rien
+    //       du montage, du temps de bascule, ni de la stabilité de la
+    //       combinaison Pro + Body. Ne pas l'inventer.
+    headCompatTitle: 'Toutes les pièces sont compatibles entre elles',
+    headCompatText:
+      'C’est l’autre chose que Marco Agri m’a confirmée : « all parts are fully compatible with the others ». La conséquence la plus utile : si tu possèdes déjà un Atlas All ou un Atlas Short, tu as déjà la partie bois — elle se remonte telle quelle sur un Atlas Pro, rien n’est perdu. Et si tu pars de zéro en voulant les trois positions d’emblée, c’est l’Atlas All qui les donne aujourd’hui.',
+    headCompatSource: 'Marco Agri, créateur d’Atlas — message du 20 août 2026',
+    headCta: 'Voir l’Atlas Body sur le site d’Atlas',
+
+    buyTitle: 'Où les commander',
+    buyText:
+      'La commande se fait sur le site d’Atlas. Ils annoncent environ 12 € de frais de port pour l’Europe, et le retour est gratuit sous 14 jours, avec l’étiquette de renvoi fournie dans le carton.',
+    buyNote:
+      'Le délai de livraison et la durée de garantie ne sont pas précisés sur leur site : demande-les-leur avant de commander, ou écris-moi et je pose la question pour toi.',
+
+    showroomTitle: 'Les essayer avant d’acheter',
+    showroomText:
+      'Les deux pieds seront au showroom, à Paris 20ᵉ, avec les handpans. Tu pourras poser un instrument dessus, régler la hauteur, jouer debout, et voir lequel des deux te correspond — sans rien acheter.',
+
+    alt: {
+      // 📷 Photos de scène de David — HangAout 2021, dossier COM de David.
+      //    Aucun public reconnaissable dessus (vérifié) : il est seul en scène.
+      stageStanding:
+        'David Lesage debout sur scène sous les projecteurs, derrière ses deux handpans montés sur pieds, entouré de ses stands, de ses pédales et d’une calebasse posée sur le tapis rouge.',
+      stageStands:
+        'Gros plan sur le dispositif de scène de David Lesage : trois handpans posés sur des pieds en bois et en métal à hauteur de mains, un pupitre et un ordinateur portable, câbles et pédales au sol.',
+      // 📷 Photo de festival — David seul en scène, plein air, ses DEUX handpans
+      //    acoustiques sur SES pieds d'alors. ⚠️ Ne JAMAIS nommer la marque de
+      //    ces pieds dans la légende ni dans l'alt : montrer du doigt le produit
+      //    d'un concurrent sur une page rémunérée à la commission, c'est du
+      //    dénigrement. On dit « les pieds que j'utilisais alors », point.
+      //    ⚠️ Source en 900×600 seulement : ne jamais l'afficher en grand.
+      // ℹ️ LIEU DONNÉ PAR DAVID : Everness Festival, Hongrie. C'est TOUT ce
+      //    qu'il a donné — ni année, ni nom de scène, ni taille du public.
+      //    Ne rien ajouter autour : lui demander plutôt que de déduire.
+      stageFestival:
+        'David Lesage seul sur la scène du Everness Festival, en Hongrie : debout pieds nus derrière ses deux handpans acoustiques montés sur des trépieds noirs, sous des faisceaux de lumière verte et rouge, devant une grande toile tissée multicolore ; une demi-sphère de calebasse est posée au sol devant lui.',
+      // 📷 Photo prise par David lui-même, avant un concert dans une salle en
+      //    Suisse : son plateau installé et vide. Montre qu'un pied de handpan
+      //    n'existe pas seul, il fait partie d'une installation.
+      stagePlateau:
+        'Le plateau de David Lesage installé et encore vide avant un concert, vu depuis sa place : un handpan posé sur un trépied noir au centre de tapis persans, une calebasse, un djembé, une pédale de kick au sol, une console de commande, deux ordinateurs portables ouverts et une enceinte de retour, face à une grande salle parquetée aux colonnes blanches.',
+      allHeightLow:
+        'Le trépied Atlas All en bois clair sans ses rallonges, sur fond blanc : les trois jambes courtes vissées sous la tête noire, en position basse.',
+      allHeightHigh:
+        'Le même trépied Atlas All en bois clair équipé de ses rallonges, sur fond blanc : les jambes sont deux fois plus longues, en position haute.',
+      proTwoHeights:
+        'Deux trépieds Atlas Pro côte à côte sur fond gris : celui de gauche est déployé en position haute et porte un handpan en acier, celui de droite est réglé en position basse, pieds resserrés.',
+      bodySeated:
+        'Une personne assise sur un canapé joue d’un handpan tenu par l’Atlas Body coincé entre ses cuisses : l’instrument est décollé de ses jambes.',
+      bodySide:
+        'Vue de côté du même jeu assis : le handpan repose sur la tête Atlas Body, qui le maintient au-dessus des jambes de la personne.',
+      bodyAlone:
+        'L’Atlas Body seul sur fond gris : la couronne noire ajourée, ses aimants ronds en couronne et sa tige de centrage en bois, posée sur sa base en bois tourné.',
+      proOpen:
+        'Le trépied Atlas Pro déplié sur fond blanc : couronne noire ajourée en aluminium traversée d’une tige de centrage en bois clair, et trois pieds écartés.',
+      proHigh:
+        'Le trépied Atlas Pro réglé en position haute, ses trois pieds télescopiques entièrement sortis.',
+      proDisc:
+        'Gros plan sur la tête de l’Atlas Pro : la couronne noire porte huit aimants métalliques ronds groupés par deux, et la tige de centrage en bois clair passe au milieu.',
+      proLock:
+        'Gros plan sur le système de blocage d’un pied télescopique de l’Atlas Pro : la bague métallique de serrage rapide.',
+      proClosed:
+        'L’Atlas Pro replié : les trois pieds rassemblés le long du corps, prêt à être rangé.',
+      proBag:
+        'L’Atlas Pro replié posé à côté de son sac de transport Atlas Bag, en toile noire marquée du logo Atlas.',
+      proParts:
+        'L’Atlas Pro séparé en deux parties : la tête magnétique d’un côté, le bloc des trois pieds télescopiques de l’autre.',
+      allPlaying:
+        'Un musicien joue debout sur un handpan posé sur le trépied Atlas All, dans un salon : les trois pieds en bois clair sont déployés en position haute.',
+      allHigh:
+        'Le trépied Atlas All monté avec ses rallonges, en position debout : longs pieds en bois clair et tête noire.',
+      allLow:
+        'Le trépied Atlas All sans ses rallonges, en position basse, celle qui sert à jouer assis.',
+      allBody:
+        'Le corps principal de l’Atlas All : la couronne noire ajourée et sa tige en bois, posées sur la base en bois tourné.',
+      allDisc:
+        'Le disque flottant de l’Atlas All vu de dessus : une couronne noire portant huit aimants ronds groupés par deux, et la tige de centrage en bois clair au milieu.',
+      allScrew:
+        'Deux mains vissent une rallonge en bois de l’Atlas All sur un pied, l’insert fileté métallique est visible.',
+      allWood:
+        'Les pièces en bois de l’Atlas All posées à plat : les pieds et les rallonges avec leurs embouts noirs.',
+    },
+    heightFigureCaption:
+      'Le même pied, photographié deux fois : à gauche déployé au maximum, avec un handpan dessus ; à droite replié au minimum. Toute la plage 51 → 109 cm sur une seule image.',
+    photosPro: 'L’Atlas Pro en images',
+    photosAll: 'L’Atlas All en images',
+    carousel: { prev: 'Photo précédente', next: 'Photo suivante', photo: 'Photo', photosOf: 'Photos' },
+    // Libellés de la lightbox plein écran (toutes les photos de la page s'y ouvrent).
+    lightbox: { close: 'Fermer', zoom: 'Agrandir la photo' },
+  },
   lessons: {
     title: 'Cours de handpan à Paris & en ligne | David Lesage',
     description:
@@ -1206,6 +1590,34 @@ const fr = {
       },
     ],
     alsoNote: 'Tu viens pour l’un d’eux en particulier ? Coche-le au moment de réserver ta place : je le prépare pour la séance.',
+
+    // ── 🦵 LES PIEDS ATLAS (20/08/2026) ────────────────────────────────────
+    // Partenariat d'affiliation validé avec Atlas (fabricant italien) : ils
+    // envoient DEUX pieds de démonstration, ils seront donc RÉELLEMENT sur
+    // place — c'est ce qui leur donne leur place dans « et pas seulement le
+    // handpan ». Avant la signature, la marque était volontairement absente
+    // du site.
+    // ⚠️ PLACÉ APRÈS `alsoNote` VOLONTAIREMENT : cette note promet « coche-le
+    //    au moment de réserver », ce qui n'est vrai que pour les 3 instruments
+    //    au-dessus. Les pieds ne sont PAS une case du formulaire (aucune
+    //    colonne ne les attend en base — règle des trois écritures). Ne pas
+    //    déplacer ce bloc au-dessus de la note sans ajouter la case partout.
+    // 🚨 Chiffres relevés sur les fiches officielles Atlas (voir src/data/atlas.ts).
+    // ⚠️ David ne les a pas encore reçus : aucun avis d'usage ici non plus.
+    atlasEyebrow: 'Nouveau · Partenaire Atlas',
+    atlasTitle: 'Et de quoi poser ton handpan',
+    atlasIntro: 'Atlas fabrique en Italie des trépieds pour handpan : l’instrument se pose sur un disque flottant tenu par huit aimants anti-rayures, sans vis ni sangle à serrer sur le métal. Je viens de devenir partenaire de la marque, qui m’envoie ses deux modèles en démonstration. Ils seront là, avec les handpans — tu pourras poser un instrument dessus et régler la hauteur toi-même.',
+    atlasModels: [
+      {
+        name: 'Atlas Pro',
+        text: 'En aluminium, 1,8 kg. Ses pieds télescopiques se règlent en continu de 51 à 109 cm, il se replie en quelques secondes et voyage dans son sac, fourni avec.',
+      },
+      {
+        name: 'Atlas All',
+        text: 'En bois, de 50 à 96 cm. Sa tête se coince entre les jambes pour jouer assis sans poser l’instrument sur les cuisses ; on y visse ensuite les pieds et les rallonges pour jouer debout.',
+      },
+    ],
+    atlasCta: 'Tout savoir sur les pieds Atlas',
 
     // ── 📷 PHOTOS DU LIEU (19/08/2026) — la page décrivait le showroom sans
     // jamais le MONTRER : on ne savait pas à quoi ressemble l'endroit ni ce

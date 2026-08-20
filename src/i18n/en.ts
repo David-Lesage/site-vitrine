@@ -455,7 +455,7 @@ export const en: Dict = {
     orderEmail: 'Order by email',
     creationsBadge: 'David Lesage signature',
     calcOrder: 'Calculate my price & order',
-    linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: '−5% through me', onesec: 'I actually use it', oko: '−10% with my code', structured: 'I actually use it' },
+    linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: '−5% through me', onesec: 'I actually use it', oko: '−10% with my code', structured: 'I actually use it', atlas: 'Atlas partner' },
     linkCtas: { buy: 'See offer →', listen: 'Listen →', discover: 'Discover →', order: 'Order →', interested: 'I’m interested →' },
     copyCode: 'Copy code',
     codeCopied: 'Copied!',
@@ -472,7 +472,9 @@ export const en: Dict = {
       app: { label: 'App', blurb: 'Handpan Compagnon — the teaching app that makes music visible.' },
       creations: { label: 'My creations · Now Groove', blurb: 'Created by me: my Now Groove rhythm method, the signature calabash and its handmade cover.' },
       instruments: { label: 'Exceptional instruments', blurb: 'I work with outstanding makers whose quality I’m proud to represent. Through me, enjoy discount coupons and demos at my showcases.' },
+      // Accessories (20/08/2026) — new category created for the Atlas stands.
       micros: { label: 'Microphones', blurb: 'Pickup for acoustic handpan, voice and gong.' },
+      accessoires: { label: 'Accessories', blurb: 'What holds the instrument up, and what carries it. Tried at the showroom before it lands here.' },
       musique: { label: 'Music', blurb: 'My albums and covers, to stream on every platform.' },
       formations: { label: 'Lessons & workshops', blurb: 'Learn with me through private lessons and workshops, in person or online.' },
       outils: { label: 'My everyday tools', blurb: 'Beyond music: the tools I actually use to stay focused, present and creative.' },
@@ -495,6 +497,7 @@ export const en: Dict = {
       'tambour': { name: 'Shamanic frame drum · L’Âme du Tambour', description: 'A handcrafted frame drum by Julien (L’Âme du Tambour) — an aligned, passionate and honest maker. Enjoy −5% with the code David-Tambour.' },
       'micro-hisong': { name: 'Hisong AirStudio S1 microphone', description: 'The first all-in-one mobile studio (mic, wireless in-ears, audio interface, charging case). Perfect for voice, acoustic handpan and gonilélé — a true portable studio.<br><br><strong>Three kits to choose from</strong> (prices incl. 20% VAT):<br>1 — Musician 4-in-1 · <strong>€319 incl. VAT</strong> <span class="text-ink-soft/60">(€265.95 excl.)</span><br>2 — Creator 5-in-1 · <strong>€372 incl. VAT</strong> <span class="text-ink-soft/60">(€309.95 excl.)</span><br>3 — Master 6-in-1 · <strong>€426 incl. VAT</strong> <span class="text-ink-soft/60">(€354.95 excl.)</span><br><br><strong>My advice:</strong> if you want to use the mic to <strong>play live</strong>, you need the <strong>6-in-1 (Master) kit</strong>.<br><br>Live demos and on-the-spot purchase at my Paris showcases.' },
       'micro-muling': { name: 'Muling MP1 microphone + HMP-2 preamp', description: 'The MP1 is a contact-condenser microphone made for the acoustic handpan. It comes with the HMP-2 preamp, which hosts up to two MP1 mics — for a clear, precise stereo capture with no feedback. Perfect for stage and recording. (Partnership with the maker in progress — email me to be kept posted.)' },
+      'atlas': { name: 'Atlas handpan stands — Pro & All', description: 'The magnetic tripods from the Italian maker Atlas. The handpan rests on a floating disc with eight covered magnets, with nothing screwed or strapped on. Two models: the <strong>Atlas Pro</strong> in aluminium, telescopic, 1.8 kg, carrying bag included (€215); the <strong>Atlas All</strong> in wood, whose head is held between your legs to play seated, before taking legs and extensions to play standing (€230). I am a partner of the brand — both will be at the showroom to try.' },
       'phoenix-opus1': { name: 'The Phoenix Alliance — Opus I', description: 'My original album, first opus — a journey blending handpan, voice and organic textures. Stream it on Spotify and every platform.' },
       'phoenix-opus2': { name: 'The Phoenix Alliance — Opus II', description: 'The second opus — the journey continues. Stream it on Spotify and every platform.' },
       'cover': { name: 'Covers — David Lesage', description: 'My covers reimagined on handpan and voice (Shape of My Heart, Imagine, Ave Maria…). Listen on Spotify.' },
@@ -877,6 +880,280 @@ export const en: Dict = {
       'I give private Gonilélé lessons (and more) online or in person in Paris: €50/h or €70/1h30.',
     coursesCta: 'Book a lesson',
   },
+  // ============================================================
+  // ATLAS STANDS (20/08/2026) — /en/pieds-atlas
+  // Same rules as dict.ts: every figure comes from the official Atlas product
+  // pages (see src/data/atlas.ts). David has NOT received the stands yet —
+  // no hands-on opinion, no “I tested them”, and NO acoustic claim (Atlas
+  // never makes one, and one of their own customer reviews denies it).
+  // ============================================================
+  atlas: {
+    title: 'Atlas handpan stands — Atlas Pro & Atlas All | David Lesage',
+    description:
+      'The Atlas magnetic handpan stands, made in Italy: Atlas Pro in aluminium (€250) and Atlas All in wood (€270). Specifications, photos, and a chance to try them in Paris with David Lesage, a partner of the brand.',
+    back: '← Back to the shop',
+    eyebrow: 'Partner · Atlas Handpan',
+    heroProCaption: 'Aluminium — the same stand, extended and folded',
+    heroAllCaption: 'Wood — without then with its extensions',
+    heightCm: '{n} cm',
+    heroTitle: 'The Atlas stands',
+    heroLead:
+      'Atlas builds handpan tripods in Italy. The instrument is neither screwed down nor strapped in: it rests on a floating disc held by magnets. I have just become a partner of the brand, and two models are on their way to the showroom — the Atlas Pro and the Atlas All.',
+    ctaModels: 'See both models',
+    ctaSite: 'Atlas’s website',
+    ctaTry: 'Come and try them in Paris',
+
+    whyTitle: 'What it actually does',
+    whyText:
+      'A stand changes two very simple things: you can play standing up, and the instrument is no longer balanced on your legs. At the showroom my handpans are already on tripods — that is what lets me pass them from hand to hand without setting them down every time. What Atlas does differently is the mount: a floating disc with eight scratch-resistant magnets, with nothing screwed or strapped onto the metal.',
+    whyPoints: [
+      {
+        t: 'On your lap, seated, standing',
+        d: 'Atlas advertises three playing positions for its wooden range: the instrument on your lap, seated on a chair, or standing. The Atlas Pro is advertised for two — seated and standing.',
+      },
+      {
+        t: 'A magnetic mount',
+        d: 'The handpan rests on a floating disc with eight magnets. Atlas states that they are covered and placed under the spots where the instrument touches the stand: nothing pinches, clamps or rubs the metal.',
+      },
+      {
+        t: 'Made in Italy',
+        d: 'Atlas is a small Italian workshop based in Conegliano, in the Veneto. Both stands are designed and built there.',
+      },
+    ],
+
+    // ── 🎤 DAVID'S OWN STORY — « I play standing » (20/08/2026) ──────────────
+    // ✅ The one section where David speaks fully in his own name: real, lived
+    //    experience (years on stage standing, four different stands owned).
+    //    Register: assumed conviction. Do NOT reintroduce defensive hedging.
+    // 🚨 NEVER write or imply he has ALREADY USED the Atlas stands. He judges a
+    //    DESIGN and announces he will verify. That is the only possible lie here.
+    // 🚨 Competitors are named: everything stays PERSONAL TESTIMONY (« my S Pan »,
+    //    « mine »), never a general verdict on the product — on a page where
+    //    David earns a commission, a general verdict could be denigration.
+    //    No price comparisons. Nothing negative invented about Jacomina Kistemaker.
+    storyEyebrow: 'My own experience',
+    storyTitle: 'Why I play standing up',
+    storyIntro:
+      'Ever since I started playing the handpan, I have played standing. First because I am a singer, and for me that is the best position to sing freely. Then because I am a multi-instrumentalist: I have an electronic kick pedal at my foot and several instruments around me. And because it is by far the most balancing posture for the body. A handpan stand is not an accessory in my line of work: it is what makes my way of playing possible.',
+    storyVoiceTitle: 'Two handpans, a kick pedal, an N’Goni, a calabash — and I sing',
+    storyVoiceText:
+      'That is the setup I take on stage, and the one I used for my blind audition on The Voice. Everything stands, everything is within reach, and none of it holds together if the instruments are not at the right height. It is very concrete: a few centimetres too high and my singing goes off, a few too low and I can no longer reach my bass notes.',
+    storyVoiceCta: 'See my background',
+    storyStandsTitle: 'The stands I wore out before Atlas',
+    storyStandsIntro:
+      'I have tried several, and I ended up wearing them out for good. I am talking about MY units and MY use — the stage, the travelling, several dozen dates a year:',
+    storyStands: [
+      {
+        t: 'Jacomina Kistemaker',
+        d: 'I own two of her models. She is a maker I respect, and her stands served me for a long time.',
+      },
+      {
+        t: 'Meinl',
+        d: 'Mine is solid, genuinely so. But it is too heavy for me to carry around: when I leave to play, that is the criterion that decides everything.',
+      },
+      {
+        t: 'S Pan',
+        d: 'It has been my choice until today, and it has real qualities: light, easy to carry. On mine, it was the sliding systems and the 3D-printed parts that eventually gave up — one of them broke over time. I also wondered whether the suction-cup principle absorbed part of the vibration: that is a question I ask myself, not a measurement I made.',
+      },
+    ],
+    storyConclusionTitle: 'Why Atlas, now',
+    storyConclusion:
+      'Given everything I have tried, this is the first design that answers every single problem I have run into: a magnetic mount instead of a suction cup, an Atlas Pro made entirely of aluminium — telescopic legs included — and 1.8 kg that go away in their bag. I am convinced, and I am looking forward to them. They arrive in a few days, and I will check it in front of you.',
+    storyBridge:
+      'And there is an irony I rather like: the same stand opens up the posture opposite to mine. Its head lets you play seated, without resting the instrument on your legs — something I have never done, and am about to discover.',
+    storyBridgeCta: 'The head of the stand',
+    // 🖼️ Visible captions for the photos in the #debout section (not alt text).
+    // 🚨 storyFestivalCaption never names the brand of the old stands.
+    storyPlateauCaption:
+      'My stage set up, before a concert in a hall in Switzerland. A handpan stand never lives on its own: it holds in the middle of everything else, and it is the thing that sets the height for all of it.',
+    storyFestivalCaption:
+      'Everness Festival, Hungary: standing behind my two acoustic handpans — on the stands I was using then.',
+    storyStandsPhotoCaption:
+      'My stage setup close up: three instruments, three different stands, and just as many heights to set before playing.',
+
+    partnerTitle: 'Why I am talking about them now',
+    partnerText:
+      'The partnership with Atlas has just been confirmed: I am now an affiliate of the brand, and they are sending me two demonstration stands for my showcases. As long as nothing was signed I preferred not to announce anything here — now it is done, so I am saying it.',
+    // 🚧 This sentence disappears the day `ATLAS_AFFILIATE_URL` is filled in
+    //    in src/data/atlas.ts (the page then switches to the tracking link).
+    affiliateNote:
+      'My tracking link is not in place yet: for now, the buttons take you straight to the official Atlas product page.',
+
+    testTitle: 'What I will check in front of you',
+    testText:
+      'They arrive in a few days. What I claim on this page, I claim knowingly: I have worn out four different stands on stage, and I know exactly what I am looking for. What I do not have yet is the field test — so as soon as the two stands are at the showroom, I will film my own demonstration, put it here, and tell you how it goes.',
+    videoSectionTitle: 'The video demonstration',
+    videoTitle: 'Demonstration by David Lesage',
+    videoSoon: 'Coming soon',
+    videoNote: 'I will film it as soon as the two stands reach the showroom — a matter of days.',
+
+    modelsTitle: 'Two models',
+    modelsIntro:
+      'Both do the same job — holding the handpan on a floating magnetic disc. They do not do it with the same materials, nor over the same height range. Here is what the maker states, with nothing added.',
+    specs: {
+      price: 'Listed price',
+      height: 'Height',
+      weight: 'Weight',
+      material: 'Materials',
+      mount: 'Mount',
+      positions: 'Playing positions',
+      bag: 'Carrying',
+      body: 'Atlas Body head',
+      bodyOption: 'Atlas Body head',
+    },
+    heightValue: '{min} cm to {max} cm',
+    weightValue: '{w} kg',
+    priceNote: 'Prices read on Atlas’s website on {date}, during a sale. The price that counts is the one shown by Atlas when you order — shipping is extra.',
+    priceRegular: 'usual price',
+    pro: {
+      name: 'Atlas Pro',
+      tagline: 'Aluminium, telescopic, bag included',
+      text:
+        'The aluminium model. Its three telescopic legs adjust continuously and independently of one another, a quick-opening system lets you set it up and fold it away in a few seconds, and the structure closes in on itself for transport. Atlas states 1.8 kg, and the Atlas Bag is included.',
+      material: 'Lightweight aluminium, telescopic legs',
+      mount: 'Floating disc, 8 scratch-resistant magnets',
+      positions: 'Seated or standing, continuous adjustment',
+      bag: 'Atlas Bag carrying bag included',
+      body: 'Wooden part not included',
+      cta: 'See the Atlas Pro on Atlas’s website',
+    },
+    all: {
+      name: 'Atlas All',
+      tagline: 'Wood, modular with extensions',
+      text:
+        'The wooden model. Its main body is 3D-printed and sits on a wooden base fitted with an anti-tip pin. The legs are 41 cm long and extend by 10 cm; screwing on the three 41 cm extensions takes it from the seated position to the standing one.',
+      material: '3D-printed body; wooden base, extensions and legs',
+      mount: 'Floating disc, 8 scratch-resistant magnets',
+      positions: 'On your lap, seated (without extensions) or standing (with extensions)',
+      cta: 'See the Atlas All on Atlas’s website',
+      body: 'Included — it is the core module of the range',
+      // 🚧 No “Weight” or “Carrying” row for the Atlas All: Atlas gives neither
+      //    its weight, nor the wood species, nor whether a bag exists for it.
+    },
+
+
+    // ── 🪑 THE HEAD OF THE STAND (20/08/2026) ───────────────────────────────
+    // 🚨 Everything here is ATTRIBUTED TO ATLAS. David still has not received
+    //    the stands and cannot confirm any sound impression.
+    // 🚨 The Body is INCLUDED in the Atlas All, and Atlas claims NOTHING of the
+    //    sort for the Atlas Pro. See `ATLAS_BODY_STATUS` in src/data/atlas.ts.
+    headEyebrow: 'The head of the stand',
+    headTitle: 'A stand — but not only a stand',
+    headIntro:
+      'The upper part of the support, the one Atlas calls the Atlas Body, is not just a piece to screw legs onto. Held between your thighs, it carries the handpan above you while you play seated on a chair or a sofa — no legs, no tripod, and without resting the instrument on your lap.',
+    headPoints: [
+      {
+        t: 'The instrument no longer rests on you',
+        d: 'The head carries the handpan, not your thighs. Atlas advertises three playing positions for its wooden range: on your lap, seated, standing.',
+      },
+      {
+        t: 'The bottom notes stay reachable',
+        d: 'The instrument is lifted off your body. Atlas emphasises that nothing gets in the way when you reach for the notes — which matters most if your handpan has bottom notes.',
+      },
+      {
+        t: 'An open, hollow head',
+        d: 'The crown is hollow and openwork. Atlas explains that this hollow shape lets the sound circulate without obstacles.',
+      },
+    ],
+    headAcousticTitle: 'What Atlas says about the sound',
+    headAcousticText:
+      'Atlas writes that its stand “was born from the search for a better sound for your handpan”, that it “does not absorb vibrations and increases resonance”, and that “its hollow shape allows the sound to circulate without obstacles”. About the head alone, they add that it improves control of the instrument “without obstructing vibrations”.',
+    headAcousticNote:
+      'Those are their words, not mine: when it comes to sound, I do not repeat anyone’s claim before hearing it myself. The stands arrive in a few days — I will tell you what I hear.',
+    headIncludedTitle: 'Included, or bought on top?',
+    headIncluded: [
+      {
+        t: 'Atlas All — included',
+        d: 'The wooden range is modular: the head is the core part, you screw the legs onto it to get the Atlas Short, then the extensions for the Atlas All. Buying the Atlas All does give you all three positions.',
+      },
+      {
+        t: 'Atlas Pro — the wooden part is not included',
+        d: 'Marco Agri, the creator of Atlas, confirmed it to me directly: “atlas pro doesn’t come with the wood part”. The Pro adjusts from the seated to the standing position, but it does not carry the wooden head, the one used for playing on your lap. Better to know before ordering than when opening the box.',
+      },
+      {
+        t: 'Atlas Body — the head on its own',
+        d: 'Atlas also lists it separately (€140, usually €165). It is what you look at if you only want lap playing, or if you want to grow a wooden set: the legs + extensions kit (€90) turns it into an Atlas Short, then an Atlas All.',
+      },
+    ],
+    headCompatTitle: 'All the parts are fully compatible',
+    headCompatText:
+      'That is the other thing Marco Agri confirmed to me: “all parts are fully compatible with the others”. The most useful consequence: if you already own an Atlas All or an Atlas Short, you already have the wooden part — it fits straight onto an Atlas Pro, nothing is wasted. And if you are starting from scratch and want all three positions from the outset, the Atlas All is what gives them today.',
+    headCompatSource: 'Marco Agri, creator of Atlas — message of 20 August 2026',
+    headCta: 'See the Atlas Body on Atlas’s website',
+
+    buyTitle: 'Where to order them',
+    buyText:
+      'Orders go through the Atlas website. They state around €12 shipping for Europe, and returns are free within 14 days, with the return label supplied in the box.',
+    buyNote:
+      'Delivery times and warranty length are not stated on their site: ask them before ordering, or write to me and I will ask on your behalf.',
+
+    showroomTitle: 'Try them before you buy',
+    showroomText:
+      'Both stands will be at the showroom in Paris 20th, alongside the handpans. You can put an instrument on one, set the height, play standing, and see which of the two suits you — without buying anything.',
+
+    alt: {
+      stageStanding:
+        'David Lesage standing on stage under the spotlights, behind his two handpans mounted on stands, surrounded by his stands, his pedals and a calabash resting on the red carpet.',
+      stageStands:
+        'Close-up of David Lesage’s stage setup: three handpans resting on wooden and metal stands at hand height, a music stand and a laptop, cables and pedals on the floor.',
+      // 🚨 NEVER name the brand of the stands in this caption or alt text — see
+      //    the French file. Pointing at a competitor's product on a commission-
+      //    paid page would be denigration. « the stands I was using then ».
+      //    ⚠️ Source is only 900×600: never display it large.
+      // ℹ️ Location given by David: Everness Festival, Hungary. That is ALL he
+      //    gave — no year, no stage name, no audience size. Invent nothing.
+      stageFestival:
+        'David Lesage alone on the stage of the Everness Festival in Hungary: standing barefoot behind his two acoustic handpans mounted on black tripods, under green and red light beams, in front of a large multicoloured woven backdrop; a calabash half-sphere rests on the floor in front of him.',
+      stagePlateau:
+        'David Lesage’s stage set up and still empty before a concert, seen from his own position: a handpan resting on a black tripod at the centre of Persian rugs, a calabash, a djembe, a kick pedal on the floor, a control console, two open laptops and a monitor speaker, facing a large parquet hall with white columns.',
+      allHeightLow:
+        'The Atlas All tripod in light wood without its extensions, on a white background: the three short legs screwed under the black head, in the low position.',
+      allHeightHigh:
+        'The same Atlas All tripod fitted with its extensions, on a white background: the legs are twice as long, in the high position.',
+      proTwoHeights:
+        'Two Atlas Pro tripods side by side on a grey background: the left one extended to its high position carrying a steel handpan, the right one set low with its legs drawn in.',
+      bodySeated:
+        'A person seated on a sofa plays a handpan held by the Atlas Body gripped between their thighs: the instrument is lifted clear of their legs.',
+      bodySide:
+        'Side view of the same seated position: the handpan rests on the Atlas Body head, which holds it above the player’s legs.',
+      bodyAlone:
+        'The Atlas Body on its own against a grey background: the black openwork crown, its ring of round magnets and its wooden centring rod, on its turned wooden base.',
+      proOpen:
+        'The Atlas Pro tripod unfolded against a white background: a black openwork aluminium crown with a light wooden centring rod through it, and three splayed legs.',
+      proHigh:
+        'The Atlas Pro tripod set to its high position, its three telescopic legs fully extended.',
+      proDisc:
+        'Close-up of the Atlas Pro head: the black crown carries eight round metal magnets arranged in pairs, with the light wooden centring rod running through the middle.',
+      proLock:
+        'Close-up of the locking system on one of the Atlas Pro’s telescopic legs: the metal quick-clamp collar.',
+      proClosed:
+        'The Atlas Pro folded up: the three legs gathered along the body, ready to be put away.',
+      proBag:
+        'The folded Atlas Pro next to its Atlas Bag carrying case, in black fabric marked with the Atlas logo.',
+      proParts:
+        'The Atlas Pro separated into two parts: the magnetic head on one side, the block of three telescopic legs on the other.',
+      allPlaying:
+        'A musician plays standing at a handpan resting on the Atlas All tripod, in a living room: the three light wooden legs are extended to the high position.',
+      allHigh:
+        'The Atlas All tripod assembled with its extensions, in the standing position: long light wooden legs and a black head.',
+      allLow:
+        'The Atlas All tripod without its extensions, in the low position used for playing seated.',
+      allBody:
+        'The main body of the Atlas All: the black openwork crown and its wooden rod, resting on the turned wooden base.',
+      allDisc:
+        'The floating disc of the Atlas All seen from above: a black crown carrying eight round magnets arranged in pairs, with the light wooden centring rod in the middle.',
+      allScrew:
+        'Two hands screwing a wooden Atlas All extension onto a leg, with the metal threaded insert visible.',
+      allWood:
+        'The wooden parts of the Atlas All laid flat: the legs and the extensions with their black feet.',
+    },
+    heightFigureCaption:
+      'The same stand, photographed twice: on the left extended to its maximum with a handpan on it; on the right folded down to its minimum. The whole 51 → 109 cm range in a single picture.',
+    photosPro: 'The Atlas Pro in pictures',
+    photosAll: 'The Atlas All in pictures',
+    carousel: { prev: 'Previous photo', next: 'Next photo', photo: 'Photo', photosOf: 'Photos of' },
+    lightbox: { close: 'Close', zoom: 'Enlarge photo' },
+  },
   lessons: {
     title: 'Handpan Lessons in Paris & Online | David Lesage',
     description:
@@ -1116,6 +1393,30 @@ export const en: Dict = {
       },
     ],
     alsoNote: 'Coming for one of them in particular? Tick it when you book your spot: I’ll have it ready for the session.',
+
+    // ── 🦵 THE ATLAS STANDS (20/08/2026) ───────────────────────────────────
+    // Affiliate partnership confirmed with Atlas (Italian maker): they are
+    // sending TWO demonstration stands, so they will genuinely be on site.
+    // ⚠️ Deliberately placed AFTER `alsoNote`: that note promises “tick it when
+    //    you book”, which is only true for the three instruments above — the
+    //    stands are NOT a checkbox on the booking form (no column expects them
+    //    in the database; see the rule of three writes).
+    // 🚨 Figures taken from the official Atlas pages (see src/data/atlas.ts).
+    // ⚠️ David has not received them yet: no hands-on opinion here either.
+    atlasEyebrow: 'New · Atlas partner',
+    atlasTitle: 'And something to put your handpan on',
+    atlasIntro: 'Atlas builds handpan tripods in Italy: the instrument rests on a floating disc held by eight scratch-resistant magnets, with nothing screwed or strapped onto the metal. I have just become a partner of the brand, and they are sending me both models as demonstration stands. They will be here alongside the handpans — you can set an instrument on one and adjust the height yourself.',
+    atlasModels: [
+      {
+        name: 'Atlas Pro',
+        text: 'Aluminium, 1.8 kg. Its telescopic legs adjust continuously from 51 to 109 cm, it folds away in seconds and travels in its bag, which is included.',
+      },
+      {
+        name: 'Atlas All',
+        text: 'Wood, from 50 to 96 cm. Its head is held between your legs to play seated without resting the instrument on your thighs; you then screw on the legs and extensions to play standing.',
+      },
+    ],
+    atlasCta: 'Everything about the Atlas stands',
 
     // ── 📷 See dict.ts (19/08/2026): the page described the showroom without ever
     // SHOWING it. Alt texts describe what is actually VISIBLE (accessibility + SEO):

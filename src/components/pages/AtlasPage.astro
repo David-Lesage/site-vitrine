@@ -1,0 +1,653 @@
+---
+// ============================================================
+// PAGE PRODUIT — LES PIEDS ATLAS (/pieds-atlas et /en/pieds-atlas)
+//
+// Bâtie sur le MÊME gabarit que les autres fiches produit du site
+// (GonilelePage, MulingPage) : hero sombre + fil d'Ariane vers la boutique,
+// sections alternées cream / cream-deep / ink, <Carousel> + <Lightbox> pour
+// les photos, données neutres dans src/data/atlas.ts, prose dans src/i18n.
+//
+// 🚨 CE QUI NE DOIT PAS BOUGER SANS SOURCE :
+//    · tous les chiffres viennent des fiches officielles Atlas (voir l'en-tête
+//      de src/data/atlas.ts, qui liste aussi ce qu'Atlas ne dit PAS) ;
+//    · David n'a pas encore reçu les pieds → aucun avis d'usage sur la page ;
+//    · aucune promesse acoustique : Atlas n'en fait pas.
+//
+// 🚧 DEUX EMPLACEMENTS RÉSERVÉS, tous deux pilotés depuis src/data/atlas.ts :
+//    · la vidéo de démonstration de David  → `atlasDemoVideoId`
+//    · le lien d'affiliation               → `ATLAS_AFFILIATE_URL`
+// ============================================================
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import Carousel from '@/components/Carousel.astro'
+import Lightbox from '@/components/Lightbox.astro'
+import YouTube from '@/components/YouTube.astro'
+import { Icon } from 'astro-icon/components'
+import {
+  atlasProPhotos, atlasAllPhotos, atlasBodyPhotos, atlasProHeightPhoto, atlasAllHeightPhotos, atlasAllHeightPct,
+  atlasPrices, atlasRegularPrices, atlasSpecs, ATLAS_PRICES_READ_AT, ATLAS_SALE_ON,
+  atlasProUrl, atlasAllUrl, atlasBodyUrl, atlasSite, atlasLink, atlasDemoVideoId,
+  atlasTheVoiceVideoId,
+  ATLAS_AFFILIATE_URL, ATLAS_BODY_STATUS, type AtlasPhoto,
+} from '@/data/atlas'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import { breadcrumbLdJson } from '@/lib/ldJson'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const a = t.atlas
+const L = (p: string) => localizePath(p, lang)
+const locale = lang === 'en' ? 'en-GB' : 'fr-FR'
+const eur = (n: number) => n.toLocaleString(locale) + ' €'
+const alt = a.alt as Record<string, string>
+
+// Les photos passent au carrousel avec leur VRAI texte alternatif et leurs
+// dimensions : la place est réservée au chargement, la page ne saute pas.
+const slides = (photos: AtlasPhoto[]) => photos.map((p) => ({ src: p.src, alt: alt[p.id], w: p.w, h: p.h }))
+const carouselLabels = a.carousel
+
+// Valeurs chiffrées construites depuis src/data/atlas.ts : le FR et l'EN ne
+// peuvent pas afficher deux nombres différents.
+const height = (min: number, max: number) => a.heightValue.replace('{min}', String(min)).replace('{max}', String(max))
+const weight = (w: number) => a.weightValue.replace('{w}', w.toLocaleString(locale))
+
+// 💶 Le PRIX sort du tableau de caractéristiques : il a son propre bloc, parce
+// qu'une promotion est en cours et qu'un prix barré demande du balisage (<s>),
+// pas une chaîne de caractères. `ATLAS_SALE_ON` pilote l'affichage du prix barré.
+const priceNote = a.priceNote.replace(
+  '{date}',
+  new Date(ATLAS_PRICES_READ_AT).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' }),
+)
+
+const proRows = [
+  { t: a.specs.height, d: height(atlasSpecs.pro.heightMinCm, atlasSpecs.pro.heightMaxCm) },
+  { t: a.specs.weight, d: weight(atlasSpecs.pro.weightKg) },
+  { t: a.specs.material, d: a.pro.material },
+  { t: a.specs.mount, d: a.pro.mount },
+  { t: a.specs.positions, d: a.pro.positions },
+  { t: a.specs.bag, d: a.pro.bag },
+  // ⚠️ LIGNE DÉLIBÉRÉMENT PRÉSENTE : le créateur d'Atlas a confirmé que la
+  // partie bois n'est PAS comprise avec le Pro. La mettre dans le tableau, à
+  // côté du prix, c'est ce qui évite qu'un acheteur le découvre au colis.
+  { t: a.specs.bodyOption, d: a.pro.body },
+]
+// 🚧 L'Atlas All n'a NI ligne « Poids » NI ligne « Transport » : Atlas ne donne
+// ni son poids, ni l'essence du bois, ni l'existence d'un sac pour ce modèle.
+// Ne pas ajouter ces lignes tant qu'Atlas ne les a pas confirmées à David.
+// ✅ En revanche il A une ligne « Tête Atlas Body → incluse », et le Pro ne l'a
+// PAS : cette asymétrie est voulue et sourcée (voir ATLAS_BODY_STATUS).
+const allRows = [
+  { t: a.specs.height, d: height(atlasSpecs.all.heightMinCm, atlasSpecs.all.heightMaxCm) },
+  { t: a.specs.material, d: a.all.material },
+  { t: a.specs.mount, d: a.all.mount },
+  { t: a.specs.positions, d: a.all.positions },
+  ...(ATLAS_BODY_STATUS.includedInAll ? [{ t: a.specs.body, d: a.all.body }] : []),
+]
+
+const models = [
+  { key: 'pro', copy: a.pro, rows: proRows, photos: atlasProPhotos, href: atlasLink(atlasProUrl), icon: 'lucide:ruler',
+    price: atlasPrices.pro, was: atlasRegularPrices.pro, figure: atlasProHeightPhoto },
+  { key: 'all', copy: a.all, rows: allRows, photos: atlasAllPhotos, href: atlasLink(atlasAllUrl), icon: 'lucide:trees',
+    price: atlasPrices.all, was: atlasRegularPrices.all, figure: null },
+]
+
+const whyIcons = ['lucide:move-vertical', 'lucide:magnet', 'lucide:map-pin']
+const headIcons = ['lucide:armchair', 'lucide:hand', 'lucide:wind']
+const storyStandIcons = ['lucide:heart-handshake', 'lucide:weight', 'lucide:unlink']
+// Les 3 cartes « incluse / non annoncé / vendue à part » : le vert de la 1ʳᵉ et
+// le neutre de la 2ᵉ ne sont PAS décoratifs — ils disent au premier coup d'œil
+// que l'Atlas All l'a et que le Pro ne l'a pas annoncé. Ne pas uniformiser.
+const includedStyle = ['border-copper/40 bg-copper/5', 'border-ink/15 bg-cream', 'border-ink/10 bg-cream']
+const includedIcons = ['lucide:check-circle-2', 'lucide:circle-slash', 'lucide:shopping-bag']
+const includedAccent = ['text-copper', 'text-ink-soft/50', 'text-ink-soft/70']
+
+const ld = [
+  breadcrumbLdJson([
+    { name: t.common.nav.home, url: L('/') },
+    { name: t.common.nav.shop, url: L('/boutique') },
+    { name: a.heroTitle, url: L('/pieds-atlas') },
+  ]),
+]
+---
+
+<Layout title={a.title} description={a.description} image="/images/prod-atlas-all-1.webp" ldJSON={ld}>
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <div class="chroma-bar absolute inset-x-0 top-0 h-1"></div>
+    <div class="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-24">
+      <a href={L('/boutique') + '#accessoires'} class="text-sm font-600 text-cream/70 hover:text-gold">{a.back}</a>
+      {/* 🖼️ DIPTYQUE — LES DEUX PIEDS, CHACUN À SES DEUX HAUTEURS.
+          Demandes successives de David : (1) voir les DEUX modèles sans
+          défiler, (2) voir sur chaque photo le même pied haut ET bas.
+          ⚠️ `order-1 lg:order-2` : à 375 px les images passent AVANT le texte,
+             sinon les pieds tombent sous la ligne de flottaison. Ne pas
+             réinverser. Les cartes s'empilent sous 640 px pour que chaque pied
+             reste lisible ; côte à côte au-delà.
+          ⚠️ ASYMÉTRIE DE CONTENU VOULUE : le Pro a UNE photo (deux pieds réels
+             dans un même cliché), le All en a DEUX (cette photo n'existe pas
+             chez Atlas, et la composer aurait faussé le rapport de hauteurs —
+             la mesure est dans src/data/atlas.ts). Les hauteurs réelles sont
+             donc ÉCRITES sous chaque image du All : c'est le texte qui porte
+             la comparaison. Ne pas fusionner les deux mises en page.
+          📐 EN REVANCHE LE CADRE EST IDENTIQUE (David, 20/08/2026 : « il faut
+             que l'espace hauteur et largeur de chaque photo soient identiques,
+             sinon ce n'est pas équilibré pour l'œil »). Les deux zones image
+             partagent EXACTEMENT la même hauteur (`h-44 sm:h-56 lg:h-72`) et le
+             même fond blanc ; la grille étire les deux figures à la même
+             hauteur, donc les deux légendes tombent sur la même ligne. Si tu
+             changes une de ces trois valeurs, change LES DEUX cartes.
+             ⚠️ Jamais d'étirement : les deux images restent en `object-contain`,
+             c'est l'échelle qui s'ajuste, pas les proportions. */}
+      <div class="mt-6 grid items-center gap-10 lg:grid-cols-2">
+        <div class="order-1 lg:order-2">
+          <div class="grid gap-3 sm:grid-cols-2 sm:gap-4">
+            {/* Atlas Pro — un seul cliché, les deux hauteurs dedans. */}
+            <figure class="overflow-hidden rounded-card border border-cream/15 bg-cream/5">
+              {/* ⚠️ FLEX ET PAS GRID — piège vérifié dans le navigateur le
+                  20/08/2026 : avec `grid place-items-center`, la hauteur en %
+                  de l'image se résout contre la ZONE de grille (indéfinie, car
+                  l'item n'est pas étiré) → `h-full` était ignoré, l'image
+                  reprenait sa taille naturelle et DÉBORDAIT du cadre (467 px
+                  dans une boîte de 288, rognée par `overflow-hidden`). En flex,
+                  le bloc conteneur de l'image est le conteneur flex, qui a bien
+                  une hauteur définie : `h-full` fonctionne. C'est la même
+                  raison qui fait marcher les pourcentages de la carte All. */}
+              <div class="flex h-44 items-center justify-center bg-white p-2 sm:h-56 sm:p-3 lg:h-72">
+                <img
+                  src={atlasProHeightPhoto.src}
+                  width={atlasProHeightPhoto.w}
+                  height={atlasProHeightPhoto.h}
+                  alt={alt[atlasProHeightPhoto.id]}
+                  loading="eager"
+                  decoding="async"
+                  data-lb="atlas-hero"
+                  class="h-full w-auto object-contain"
+                />
+              </div>
+              <figcaption class="px-3 py-2.5 text-center">
+                <p class="font-display text-sm font-700 text-cream sm:text-base">{a.pro.name}</p>
+                <p class="mt-0.5 text-[11px] leading-tight text-cream/65 sm:text-xs">{a.heroProCaption}</p>
+              </figcaption>
+            </figure>
+
+            {/* Atlas All — deux clichés distincts, chacun étiqueté de sa
+                hauteur réelle. L'étiquette n'est pas décorative : c'est elle
+                qui empêche de lire une comparaison métrique dans deux photos
+                qui n'ont pas été prises dans les mêmes conditions. */}
+            <figure class="overflow-hidden rounded-card border border-cream/15 bg-cream/5">
+              {/* ⚠️ LES DEUX PIEDS SONT AFFICHÉS AU VRAI RAPPORT 50/96, pas à la
+                  même hauteur CSS. Sans ce calcul (`atlasAllHeightPct`), les
+                  deux photos s'affichaient à taille identique alors que leurs
+                  étiquettes annonçaient 50 cm et 96 cm : l'image démentait le
+                  texte. `items-end` pose les deux pieds sur la même ligne de
+                  sol, sans quoi la comparaison ne se lit pas. */}
+              <div class="flex h-44 items-end justify-center gap-4 bg-white p-2 sm:h-56 sm:p-3 lg:h-72">
+                {atlasAllHeightPhotos.map((it, i) => (
+                  <div class="flex h-full flex-col items-center justify-end">
+                    {/* Zone image = hauteur de la boîte MOINS la ligne
+                        d'étiquette, sinon le pied haut (100 %) déborde et se
+                        fait rogner la tête. */}
+                    <div class="flex h-[calc(100%-1.35rem)] items-end">
+                      <img
+                        src={it.photo.src}
+                        width={it.photo.w}
+                        height={it.photo.h}
+                        alt={alt[it.photo.id]}
+                        loading="eager"
+                        decoding="async"
+                        data-lb="atlas-hero"
+                        class="w-auto object-contain"
+                        style={`height:${atlasAllHeightPct[i].toFixed(1)}%`}
+                      />
+                    </div>
+                    <span class="mt-1 flex h-[1.1rem] shrink-0 items-center rounded-full bg-ink/8 px-2 text-[10px] font-700 tracking-wide text-ink-soft/80 sm:text-[11px]">
+                      {a.heightCm.replace('{n}', String(it.cm))}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <figcaption class="px-3 py-2.5 text-center">
+                <p class="font-display text-sm font-700 text-cream sm:text-base">{a.all.name}</p>
+                <p class="mt-0.5 text-[11px] leading-tight text-cream/65 sm:text-xs">{a.heroAllCaption}</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="order-2 lg:order-1">
+          <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{a.eyebrow}</p>
+          <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">{a.heroTitle}</h1>
+          <p class="mt-5 text-lg text-cream/85">{a.heroLead}</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <Button href="#modeles" variant="primary">{a.ctaModels}</Button>
+            <Button href={L('/showroom')} variant="light">{a.ctaTry}</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Section>
+    <SectionHeading eyebrow={a.eyebrow} title={a.whyTitle} intro={a.whyText} />
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {a.whyPoints.map((p, i) => (
+        <div class="rounded-card border border-ink/10 bg-cream-deep/40 p-6">
+          <Icon name={whyIcons[i]} class="h-8 w-8 text-copper" />
+          <h3 class="mt-3 font-display text-lg font-700">{p.t}</h3>
+          <p class="mt-2 text-sm text-ink-soft/85">{p.d}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  {/* ── PARTENARIAT + TEST À VENIR ─────────────────────────────────────────
+      Les deux vont ENSEMBLE et ne doivent pas être séparés : on annonce
+      l'affiliation (donc l'intérêt de David à ce que tu achètes) dans le
+      même souffle que le fait qu'il n'a pas encore essayé les pieds. */}
+  {/* ── 🎤 LE RÉCIT DE DAVID — « pourquoi je joue debout » (20/08/2026) ─────
+      Placée juste APRÈS le « pourquoi un pied » général et JUSTE AVANT le
+      partenariat + « ce que je vérifierai devant vous » : les deux sections se
+      répondent volontairement (il affirme sa conviction, puis il annonce la
+      vérification). Ne pas les séparer, l'enchaînement fait tout.
+
+      ✅ SEULE SECTION OÙ DAVID PARLE EN SON NOM PLEIN — expérience vécue,
+         registre affirmé. Ne pas y remettre de prudence défensive.
+      🚨 NE JAMAIS laisser entendre qu'il a déjà utilisé les pieds Atlas.
+      🚨 CONCURRENTS = témoignage personnel uniquement (voir dict.ts). */}
+  <Section id="debout">
+    <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_1fr]">
+      <div>
+        <SectionHeading align="left" eyebrow={a.storyEyebrow} title={a.storyTitle} />
+        <p class="mt-5 text-lg text-ink-soft/90">{a.storyIntro}</p>
+      </div>
+      <figure class="overflow-hidden rounded-card border border-ink/10 bg-ink">
+        <img
+          src="/images/david-scene-debout-1.webp"
+          width="1600"
+          height="856"
+          alt={alt.stageStanding}
+          loading="lazy"
+          decoding="async"
+          data-lb="atlas-scene"
+          class="block h-auto w-full"
+        />
+      </figure>
+    </div>
+
+    {/* 📷 LE PLATEAU INSTALLÉ — photo prise par David lui-même avant un concert.
+        Elle est ici pour UNE raison précise : elle montre qu'un pied de handpan
+        n'existe jamais seul, il tient au milieu d'une installation entière.
+        Elle prolonge donc la dernière phrase de `storyIntro` (« ce qui rend ma
+        façon de jouer possible »). Ne pas la déplacer dans une galerie : hors de
+        cet enchaînement, elle ne dit plus rien. Source 1400×1050, affichée à
+        896 px max (max-w-4xl). */}
+    <figure class="mx-auto mt-10 max-w-4xl overflow-hidden rounded-card border border-ink/10 bg-ink">
+      <img
+        src="/images/david-scene-plateau.webp"
+        width="1400"
+        height="1050"
+        alt={alt.stagePlateau}
+        loading="lazy"
+        decoding="async"
+        data-lb="atlas-scene"
+        class="block h-auto w-full"
+      />
+      <figcaption class="border-t border-cream/10 px-4 py-3 text-sm text-cream/75">
+        {a.storyPlateauCaption}
+      </figcaption>
+    </figure>
+
+    {/* 🎬 « THE VOICE » — LA VIDÉO OFFICIELLE, TROUVÉE LE 20/08/2026.
+        Identifiant `_v60Ow5_axY`, piloté depuis src/data/atlas.ts (lire l'avis
+        de droits qui l'accompagne). C'est la chaîne TF1 qui l'a publiée :
+        l'INTÉGRER est l'usage prévu, ré-afficher des CAPTURES de l'émission ne
+        l'est pas — c'est pourquoi il n'y a ici aucune image fixe de The Voice.
+
+        🚫 NE PAS ajouter de photo à côté de la vidéo : la vignette de <YouTube />
+        montre déjà David debout derrière ses deux handpans avec le N'Goni. Une
+        capture de la même scène juste à côté ferait doublon. La vidéo EST
+        l'illustration de ce paragraphe.
+        La page parle des pieds Atlas, pas du parcours de David : la vidéo reste
+        dans une colonne (≈ 45 % de la largeur au bureau), jamais pleine largeur.
+
+        Le `&&` reste : si l'identifiant repasse à `null`, le texte se remet tout
+        seul sur une colonne étroite, sans trou dans la grille. */}
+    <div class:list={['mt-12 grid items-center gap-8', atlasTheVoiceVideoId ? 'lg:grid-cols-[1fr_1.05fr]' : 'max-w-3xl']}>
+      {atlasTheVoiceVideoId && (
+        <YouTube id={atlasTheVoiceVideoId} title={a.storyVoiceTitle} />
+      )}
+      <div>
+        <h3 class="font-display text-2xl font-700">{a.storyVoiceTitle}</h3>
+        <p class="mt-4 text-ink-soft/90">{a.storyVoiceText}</p>
+        <div class="mt-6"><Button href={L('/a-propos')} variant="ghost">{a.storyVoiceCta}</Button></div>
+      </div>
+    </div>
+
+    {/* Les pieds déjà essayés — TÉMOIGNAGE PERSONNEL, jamais un verdict
+        général sur le produit d'un tiers (cf. commentaire dans dict.ts). */}
+    <div class="mt-12">
+      <h3 class="font-display text-2xl font-700">{a.storyStandsTitle}</h3>
+      <p class="mt-3 max-w-3xl text-ink-soft/85">{a.storyStandsIntro}</p>
+
+      {/* 📷 LES PIEDS D'AVANT, EN IMAGE — les deux photos sont ici et nulle part
+          ailleurs, parce que c'est LE seul endroit de la page où l'on parle des
+          pieds que David utilisait avant Atlas.
+          · à gauche, en grand : le Everness Festival (Hongrie — lieu donné par
+            David, sans année ni autre détail : ne rien inventer autour), ses
+            deux handpans acoustiques sur SES pieds d'alors ;
+          · à droite, plus petite : le gros plan de son dispositif, trois
+            instruments sur trois pieds différents.
+          🚨 LA MARQUE DES PIEDS N'EST NOMMÉE NI DANS LA LÉGENDE NI DANS L'ALT.
+             Le texte des trois cartes ci-dessous nomme les fabricants, mais au
+             témoignage personnel. Montrer du doigt le produit d'un concurrent
+             sur une page rémunérée à la commission serait du dénigrement : la
+             légende dit « les pieds que j'utilisais alors », et c'est tout.
+          ⚠️ La photo de festival est en 900×600 : la colonne de gauche la sert à
+             ≈ 780 px au bureau. NE JAMAIS l'agrandir au-delà de 900 px, et ne
+             pas la ré-encoder (elle est déjà en WebP, 93 Ko). */}
+      <div class="mt-7 grid items-start gap-6 lg:grid-cols-[1.85fr_1fr]">
+        <figure class="overflow-hidden rounded-card border border-ink/10 bg-ink">
+          <img
+            src="/images/david-scene-festival.webp"
+            width="900"
+            height="600"
+            alt={alt.stageFestival}
+            loading="lazy"
+            decoding="async"
+            data-lb="atlas-scene"
+            class="block h-auto w-full"
+          />
+          <figcaption class="border-t border-cream/10 px-4 py-3 text-sm text-cream/75">
+            {a.storyFestivalCaption}
+          </figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-card border border-ink/10 bg-ink">
+          <img
+            src="/images/david-scene-debout-2.webp"
+            width="1100"
+            height="1085"
+            alt={alt.stageStands}
+            loading="lazy"
+            decoding="async"
+            data-lb="atlas-scene"
+            class="block h-auto w-full"
+          />
+          <figcaption class="border-t border-cream/10 px-4 py-3 text-sm text-cream/75">
+            {a.storyStandsPhotoCaption}
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        {a.storyStands.map((st, i) => (
+          <div class="flex flex-col rounded-card border border-ink/10 bg-cream p-6">
+            <Icon name={storyStandIcons[i]} class="h-7 w-7 text-ink-soft/55" />
+            <h4 class="mt-3 font-display text-lg font-700">{st.t}</h4>
+            <p class="mt-2 flex-1 text-sm text-ink-soft/85">{st.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-5 lg:grid-cols-[1.3fr_1fr]">
+      <div class="rounded-card border border-copper/35 bg-copper/5 p-6 md:p-7">
+        <Icon name="lucide:target" class="h-8 w-8 text-copper" />
+        <h3 class="mt-3 font-display text-xl font-700">{a.storyConclusionTitle}</h3>
+        <p class="mt-3 text-ink-soft/90">{a.storyConclusion}</p>
+      </div>
+      <div class="rounded-card border border-ink/10 bg-cream p-6 md:p-7">
+        <Icon name="lucide:armchair" class="h-7 w-7 text-ink-soft/55" />
+        <p class="mt-3 text-sm text-ink-soft/85">{a.storyBridge}</p>
+        <div class="mt-4"><Button href="#tete" variant="ghost">{a.storyBridgeCta}</Button></div>
+      </div>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
+    <div class="grid items-start gap-10 lg:grid-cols-2">
+      <div>
+        <SectionHeading align="left" eyebrow={a.eyebrow} title={a.partnerTitle} />
+        <p class="mt-5 text-ink-soft/90">{a.partnerText}</p>
+        {/* 🚧 Note affichée UNIQUEMENT tant que le lien d'affiliation est vide.
+            Le jour où `ATLAS_AFFILIATE_URL` est renseigné dans data/atlas.ts,
+            elle disparaît toute seule — rien d'autre à modifier ici. */}
+        {!ATLAS_AFFILIATE_URL && (
+          <p class="mt-5 rounded-lg border border-copper/30 bg-copper/5 p-4 text-sm text-ink-soft/85">{a.affiliateNote}</p>
+        )}
+        <div class="mt-6"><Button href={atlasLink(atlasSite)} external variant="ghost">{a.ctaSite}</Button></div>
+      </div>
+      <div class="rounded-card border border-ink/10 bg-cream p-7">
+        <Icon name="lucide:hourglass" class="h-8 w-8 text-copper" />
+        <h3 class="mt-3 font-display text-xl font-700">{a.testTitle}</h3>
+        <p class="mt-3 text-ink-soft/90">{a.testText}</p>
+      </div>
+    </div>
+  </Section>
+
+  {/* ── 🎬 DÉMONSTRATION VIDÉO PAR DAVID ───────────────────────────────────
+      TANT QUE `atlasDemoVideoId` VAUT `null` : cadre 16/9 assumé, au format
+      des autres vidéos du site, portant « Démonstration par David Lesage » et
+      la mention « À venir ». Ce n'est PAS une image cassée : rien n'est chargé.
+      POUR METTRE LA VRAIE VIDÉO : une seule ligne à changer, dans
+      src/data/atlas.ts → `export const atlasDemoVideoId = 'IDYOUTUBE'`.
+      Le composant <YouTube /> prend alors la place du cadre, à l'identique
+      des vidéos de la page Gonilélé et de la page Muling. Rien à toucher ici. */}
+  <Section tone="ink" id="demo">
+    <SectionHeading tone="light" eyebrow={a.eyebrow} title={a.videoSectionTitle} intro={a.videoNote} />
+    <div class="mx-auto mt-10 max-w-3xl">
+      {atlasDemoVideoId ? (
+        <YouTube id={atlasDemoVideoId} title={a.videoTitle} />
+      ) : (
+        <div class="relative grid aspect-video w-full place-items-center rounded-card border-2 border-dashed border-cream/25 bg-cream/5 px-6 text-center">
+          <div>
+            <span class="mx-auto grid h-16 w-16 place-items-center rounded-full border border-cream/25 bg-cream/10">
+              <Icon name="lucide:video" class="h-7 w-7 text-gold" />
+            </span>
+            <p class="mt-5 font-display text-xl font-700 text-cream md:text-2xl">{a.videoTitle}</p>
+            <p class="mt-3 inline-flex items-center gap-2 rounded-full bg-gold/20 px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-gold">
+              <Icon name="lucide:clock" class="h-4 w-4" /> {a.videoSoon}
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  </Section>
+
+  {/* ── LES DEUX MODÈLES ───────────────────────────────────────────────────
+      Deux colonnes de POIDS ÉGAL : ni le Pro ni le All n'est présenté comme
+      « le bon choix ». David n'a pas encore essayé les deux — il ne peut donc
+      pas trancher, et la page ne tranche pas à sa place. */}
+  <Section id="modeles">
+    <SectionHeading title={a.modelsTitle} intro={a.modelsIntro} />
+    <div class="mt-12 grid items-start gap-10 lg:grid-cols-2">
+      {models.map((m) => (
+        <article class="flex h-full flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6 lg:p-7">
+          <div class="flex items-center gap-3">
+            <Icon name={m.icon} class="h-7 w-7 shrink-0 text-copper" />
+            <div>
+              <h3 class="font-display text-2xl font-700">{m.copy.name}</h3>
+              <p class="text-sm font-600 text-copper">{m.copy.tagline}</p>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <Carousel id={`atlas-${m.key}`} slides={slides(m.photos)} alt={m.copy.name} labels={carouselLabels} />
+          </div>
+
+          {/* 💶 BLOC PRIX — promotion en cours au moment du relevé.
+              Le prix barré n'apparaît QUE si `ATLAS_SALE_ON` est vrai (data/atlas.ts) :
+              le jour où la promo s'arrête, on repasse le drapeau à false et le
+              barré disparaît sans toucher au gabarit. */}
+          <div class="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="font-display text-3xl font-700 text-ink">{eur(m.price)}</span>
+            {ATLAS_SALE_ON && m.was > m.price && (
+              <Fragment>
+                <s class="font-display text-lg font-600 text-ink-soft/45">{eur(m.was)}</s>
+                <span class="rounded-full bg-copper/15 px-2.5 py-0.5 text-[11px] font-700 uppercase tracking-widest text-copper">{a.priceRegular}</span>
+              </Fragment>
+            )}
+          </div>
+
+          <p class="mt-5 text-ink-soft/90">{m.copy.text}</p>
+
+          <dl class="mt-6 divide-y divide-ink/10 rounded-card border border-ink/10 bg-cream">
+            {m.rows.map((r) => (
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-5 py-3">
+                <dt class="text-xs font-700 uppercase tracking-widest text-ink-soft/60">{r.t}</dt>
+                <dd class="text-right text-sm font-600">{r.d}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="mt-3 text-xs text-ink-soft/70">{priceNote}</p>
+
+          {/* 📏 LA PHOTO DES DEUX HAUTEURS (repérée par David sur le site d'Atlas).
+              Placée JUSTE SOUS le tableau, donc juste sous la ligne « Hauteur » :
+              c'est là qu'elle sert de preuve. Elle a une VRAIE légende visible,
+              pas seulement un `alt` — ce qu'elle démontre (une même référence
+              réglée à deux hauteurs) ne se devine pas en la regardant vite. */}
+          {m.figure && (
+            <figure class="mt-6 overflow-hidden rounded-card border border-ink/10 bg-white">
+              <img
+                src={m.figure.src}
+                width={m.figure.w}
+                height={m.figure.h}
+                alt={alt[m.figure.id]}
+                loading="lazy"
+                decoding="async"
+                data-lb={`atlas-fig-${m.key}`}
+                class="mx-auto block h-auto w-full max-w-xs object-contain"
+              />
+              <figcaption class="border-t border-ink/10 bg-cream-deep/40 px-4 py-3 text-sm text-ink-soft/85">
+                {a.heightFigureCaption}
+              </figcaption>
+            </figure>
+          )}
+
+          <div class="mt-auto pt-6">
+            {/* 🚧 `atlasLink()` renvoie la fiche officielle tant que
+                `ATLAS_AFFILIATE_URL` est vide (src/data/atlas.ts). Aucun
+                paramètre de suivi n'est ajouté à l'URL : il n'y en a pas
+                encore, et on n'en invente pas. */}
+            <Button href={m.href} external variant="primary" class="w-full">{m.copy.cta}</Button>
+          </div>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  {/* ── 🪑 LA TÊTE DU PIED — « on achète plus qu'un pied » (20/08/2026) ─────
+      Demandé par David : l'argument manquait entièrement. Placé APRÈS les deux
+      modèles, parce qu'il ne se comprend qu'une fois qu'on sait que la gamme
+      bois est modulaire.
+      🚨 DEUX RÈGLES QUI NE SE NÉGOCIENT PAS DANS CE BLOC :
+      1. Tout est ATTRIBUÉ à Atlas (« Atlas écrit », « Atlas annonce »). David
+         n'a pas reçu les pieds : aucun ressenti sonore ne peut être le sien.
+      2. L'inclusion est dite modèle par modèle. Le Body est inclus dans l'Atlas
+         All, et Atlas n'annonce RIEN de tel pour le Pro. Écrire « inclus » pour
+         le Pro serait le mensonge le plus coûteux de la page : le client le
+         découvrirait au moment de payer, et c'est David qui en répondrait
+         devant un partenaire tout neuf. Source : ATLAS_BODY_STATUS. */}
+  <Section tone="cream-deep" id="tete">
+    <SectionHeading eyebrow={a.headEyebrow} title={a.headTitle} intro={a.headIntro} />
+
+    <div class="mt-10 grid items-center gap-8 lg:grid-cols-2">
+      <figure class="overflow-hidden rounded-card border border-ink/10 bg-cream">
+        <img
+          src={atlasBodyPhotos[0].src}
+          width={atlasBodyPhotos[0].w}
+          height={atlasBodyPhotos[0].h}
+          alt={alt[atlasBodyPhotos[0].id]}
+          loading="lazy"
+          decoding="async"
+          data-lb="atlas-tete"
+          class="block h-auto w-full"
+        />
+      </figure>
+      <div class="grid gap-4">
+        {a.headPoints.map((pt, i) => (
+          <div class="rounded-card border border-ink/10 bg-cream p-5">
+            <Icon name={headIcons[i]} class="h-7 w-7 text-copper" />
+            <h3 class="mt-2 font-display text-lg font-700">{pt.t}</h3>
+            <p class="mt-1.5 text-sm text-ink-soft/85">{pt.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-10 grid items-start gap-8 lg:grid-cols-[1.2fr_1fr]">
+      {/* Les affirmations acoustiques d'Atlas, entre guillemets et signées.
+          ⚠️ Ne PAS laisser cet encart déteindre en promesse générale : c'est
+          Atlas qui parle, et `headAcousticNote` le referme explicitement. */}
+      <div class="rounded-card border border-copper/30 bg-cream p-6 md:p-7">
+        <Icon name="lucide:audio-lines" class="h-8 w-8 text-copper" />
+        <h3 class="mt-3 font-display text-xl font-700">{a.headAcousticTitle}</h3>
+        <p class="mt-3 text-ink-soft/90">{a.headAcousticText}</p>
+        <p class="mt-4 rounded-lg bg-ink/5 p-4 text-sm text-ink-soft/85">{a.headAcousticNote}</p>
+      </div>
+      <figure class="overflow-hidden rounded-card border border-ink/10 bg-white">
+        <img
+          src={atlasBodyPhotos[2].src}
+          width={atlasBodyPhotos[2].w}
+          height={atlasBodyPhotos[2].h}
+          alt={alt[atlasBodyPhotos[2].id]}
+          loading="lazy"
+          decoding="async"
+          data-lb="atlas-tete"
+          class="mx-auto block h-auto w-full max-w-[280px]"
+        />
+      </figure>
+    </div>
+
+    {/* La réponse « incluse ou pas » — la question qui décide de l'achat. */}
+    <div class="mt-12">
+      <h3 class="text-center font-display text-2xl font-700">{a.headIncludedTitle}</h3>
+      <div class="mt-6 grid gap-5 md:grid-cols-3">
+        {a.headIncluded.map((it, i) => (
+          <div class:list={['flex flex-col rounded-card border p-6', includedStyle[i]]}>
+            <Icon name={includedIcons[i]} class:list={['h-7 w-7', includedAccent[i]]} />
+            <h4 class="mt-3 font-display text-lg font-700">{it.t}</h4>
+            <p class="mt-2 flex-1 text-sm text-ink-soft/85">{it.d}</p>
+          </div>
+        ))}
+      </div>
+      {/* ✅ SOURCE DE PREMIÈRE MAIN : le créateur d'Atlas lui-même. C'est plus
+          solide que n'importe quelle lecture de fiche produit — et c'est ce qui
+          empêche le lecteur de conclure à tort que le Pro est un cul-de-sac. */}
+      <div class="mt-8 rounded-card border border-copper/30 bg-copper/5 p-6 md:p-7">
+        <Icon name="lucide:puzzle" class="h-8 w-8 text-copper" />
+        <h4 class="mt-3 font-display text-xl font-700">{a.headCompatTitle}</h4>
+        <p class="mt-3 text-ink-soft/90">{a.headCompatText}</p>
+        <p class="mt-4 text-xs font-600 uppercase tracking-widest text-ink-soft/55">{a.headCompatSource}</p>
+      </div>
+      <p class="mt-8 text-center">
+        <Button href={atlasLink(atlasBodyUrl)} external variant="ghost">{a.headCta}</Button>
+      </p>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
+    <div class="grid items-start gap-10 lg:grid-cols-2">
+      <div>
+        <SectionHeading align="left" eyebrow={a.eyebrow} title={a.buyTitle} />
+        <p class="mt-5 text-ink-soft/90">{a.buyText}</p>
+        {/* 🚧 Ce qu'Atlas ne dit pas (délai, garantie) est annoncé comme
+            inconnu, pas comblé par une estimation. */}
+        <p class="mt-5 rounded-lg border border-copper/30 bg-copper/5 p-4 text-sm text-ink-soft/85">{a.buyNote}</p>
+      </div>
+      <div class="rounded-card border border-ink/10 bg-cream p-7">
+        <Icon name="lucide:hand-metal" class="h-8 w-8 text-copper" />
+        <h3 class="mt-3 font-display text-xl font-700">{a.showroomTitle}</h3>
+        <p class="mt-3 text-ink-soft/90">{a.showroomText}</p>
+        <div class="mt-6"><Button href={L('/showroom')} variant="primary">{a.ctaTry}</Button></div>
+      </div>
+    </div>
+  </Section>
+
+  {/* 🖼️ UNE SEULE lightbox pour toute la page : les carrousels y envoient leurs
+      diapositives, et les images hors carrousel via `data-lb` (hero, figure des
+      deux hauteurs, tête Atlas Body, photos de scène de David). */}
+  <Lightbox labels={{ close: a.lightbox.close, prev: a.carousel.prev, next: a.carousel.next, zoom: a.lightbox.zoom }} />
+</Layout>

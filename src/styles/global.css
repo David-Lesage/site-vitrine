@@ -393,6 +393,11 @@ h1, h2, h3, h4, .font-display {
   align-items: center;
   justify-content: center;
 }
+/* Images hors carrousel rendues cliquables par <Lightbox /> (data-lb). La
+   classe est posée par le script : sans JS, l'image reste une image normale. */
+.is-zoomable { cursor: zoom-in; }
+.is-zoomable:focus-visible { outline: 3px solid rgba(198, 124, 78, 0.9); outline-offset: 3px; }
+
 .lightbox-img {
   max-width: 100%;
   max-height: 92vh;

@@ -14,6 +14,7 @@ import BookingForm from '@/components/BookingForm.astro'
 import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
 import { showroomGallery, showroomPhotos } from '@/data/showroom'
+import { atlasProPhotos, atlasAllPhotos } from '@/data/atlas'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -23,6 +24,12 @@ const sh = t.showroom
 const bk = t.booking
 const L = (p: string) => localizePath(p, lang)
 const eventIcons = ['lucide:presentation', 'lucide:compass', 'lucide:hand', 'lucide:graduation-cap']
+// Pieds Atlas — MÊME ORDRE que `sh.atlasModels` (Pro puis All). Deux prises de
+// vue produit sur fond blanc, pour que les deux vignettes se ressemblent ;
+// les textes alternatifs sont ceux de la fiche dédiée (`atlas.alt`), jamais
+// réécrits ici, pour qu'ils ne divergent pas entre les deux pages.
+const atlasShowroomPhotos = [atlasProPhotos[0], atlasAllPhotos[1]]
+const atlasAlt = t.atlas.alt as Record<string, string>
 // Les deux univers essayables sur place — mêmes accents que sur l'accueil,
 // mêmes destinations. L'ordre suit le titre (acoustique puis électronique)
 // et n'exprime aucune préférence.
@@ -307,6 +314,54 @@ const carouselLabels =
         ))}
       </div>
       <p class="mx-auto mt-6 max-w-2xl text-center text-sm text-ink-soft/70">{sh.alsoNote}</p>
+
+      {/* ── 🦵 LES PIEDS ATLAS (20/08/2026) ─────────────────────────────────
+          Partenariat d'affiliation validé : Atlas envoie deux pieds de
+          démonstration, ils seront donc réellement sur place — d'où leur
+          place dans « et pas seulement le handpan ».
+          ⚠️ VOLONTAIREMENT SOUS `alsoNote` : la note promet « coche-le au
+          moment de réserver », ce qui n'est vrai que pour les 3 instruments
+          au-dessus. Les pieds ne sont PAS une case du formulaire (aucune
+          colonne ne les attend en base — règle des trois écritures). Pour les
+          y ajouter un jour : formulaire → api/subscribe.js → site-lead + colonne.
+          Encadré plutôt que 4ᵉ carte : ce n'est pas un instrument, et le
+          Neotone ne doit pas perdre de place au profit d'un accessoire. */}
+      <div class="mt-12 rounded-card border border-copper/30 bg-cream p-6 md:p-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.atlasEyebrow}</p>
+          <h3 class="mt-3 font-display text-xl font-700 md:text-2xl">{sh.atlasTitle}</h3>
+          <p class="mt-3 text-sm text-ink-soft/85">{sh.atlasIntro}</p>
+        </div>
+        <div class="mt-8 grid gap-5 sm:grid-cols-2">
+          {sh.atlasModels.map((m, i) => (
+            <div class="overflow-hidden rounded-xl border border-ink/10 bg-cream-deep/40">
+              {/* Panneau image en HAUT et en pleine largeur, pas une vignette
+                  latérale (corrigé le 20/08/2026) : en 80 × 128 px, l'Atlas All
+                  — bois clair sur fond blanc — devenait littéralement invisible.
+                  `bg-white` parce que les deux photos produit sont détourées sur
+                  blanc : un fond cream aurait dessiné un rectangle blanc autour. */}
+              <div class="grid place-items-center bg-white p-3">
+                <img
+                  src={atlasShowroomPhotos[i].src}
+                  width={atlasShowroomPhotos[i].w}
+                  height={atlasShowroomPhotos[i].h}
+                  alt={atlasAlt[atlasShowroomPhotos[i].id]}
+                  loading="lazy"
+                  decoding="async"
+                  class="h-56 w-auto object-contain"
+                />
+              </div>
+              <div class="p-4">
+                <p class="font-display text-lg font-700">{m.name}</p>
+                <p class="mt-1 text-sm text-ink-soft/85">{m.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="mt-6 text-center">
+          <a href={L('/pieds-atlas')} class="inline-flex items-center gap-1 text-sm font-700 text-copper transition-all hover:gap-2">{sh.atlasCta} →</a>
+        </p>
+      </div>
     </div>
   </Section>
 
