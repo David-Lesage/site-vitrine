@@ -72,7 +72,7 @@ export const ATLAS_AFFILIATE_URL = ''
 // ⚠️ Les textes `promoTitle` / `promoText` / `promoDisclosure` sont rédigés pour
 //    rester VRAIS le jour de l'activation : ils ne promettent aucun montant, et
 //    ils disent que David touche une commission. Ne pas les « vendre » plus.
-export const ATLAS_PROMO_ACTIVE = false
+export const ATLAS_PROMO_ACTIVE = true
 export const ATLAS_DISCOUNT_CODE = 'DAVID-ATLAS'
 
 // Fiches officielles (repli tant que le lien d'affiliation n'existe pas).

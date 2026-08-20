@@ -1185,7 +1185,7 @@ export const en: Dict = {
     //    write here an amount that the code would let the reader "guess".
     promoTitle: 'My code at Atlas',
     promoText:
-      'Atlas has given me a discount code in my name. You enter it at checkout, on their website — whether you order online or after coming to try them at the showroom.',
+      'Here is my code, to enter at checkout on the Atlas website — whether you order online or after coming to try them at the showroom.',
     promoDisclosure:
       'I am an Atlas affiliate: when an order goes through this code, I earn a commission. It adds nothing to what you pay, and it changes nothing about what I wrote above.',
 

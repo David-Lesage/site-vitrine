@@ -1369,7 +1369,7 @@ const fr = {
     //    écrire ici de montant que le code laisserait « deviner ».
     promoTitle: 'Mon code chez Atlas',
     promoText:
-      'Atlas m’a attribué un code de réduction à mon nom. Tu le saisis au moment du paiement, sur leur site — que tu commandes en ligne ou après être venu les essayer au showroom.',
+      'Voici mon code, à saisir au moment du paiement sur le site d’Atlas — que tu commandes en ligne ou après être venu les essayer au showroom.',
     promoDisclosure:
       'Je suis affilié à Atlas : quand une commande passe par ce code, je touche une commission. Ça ne t’ajoute rien à payer, et ça ne change rien à ce que je t’ai écrit plus haut.',
 
