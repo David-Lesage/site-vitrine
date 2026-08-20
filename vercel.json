@@ -28,12 +28,32 @@
     },
     {
       "source": "/en/handpan-studio",
-      "destination": "/en/handpan-compagnon",
+      "destination": "/en/handpan-app",
       "statusCode": 301
     },
     {
       "source": "/en/handpan-studio/",
-      "destination": "/en/handpan-compagnon",
+      "destination": "/en/handpan-app",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/handpan-compagnon",
+      "destination": "/en/handpan-app",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/handpan-compagnon/",
+      "destination": "/en/handpan-app",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pieds-atlas",
+      "destination": "/en/handpan-stands",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pieds-atlas/",
+      "destination": "/en/handpan-stands",
       "statusCode": 301
     }
   ]
