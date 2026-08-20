@@ -29,6 +29,89 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 20/08/2026 (soir) — 🎯 `/showroom` : REFONTE DE L'ORDRE DES SECTIONS
+
+**Statut : ✅ COMMITÉ EN LOCAL (`d33d04a`) — ⛔ PAS DÉPLOYÉ, PAS ENCORE VU PAR DAVID.**
+C'est une refonte visible de la page la plus stratégique : elle attend sa validation.
+Pour la lui montrer : `cd ~/CLAUDE/site-vitrine && npx astro build && (cd dist && python3 -m http.server 8791)`
+puis `http://localhost:8791/showroom/` (EN : `/en/showroom/`).
+
+Fichiers touchés : `src/components/pages/ShowroomPage.astro` (réécrit), `src/data/showroom.ts`,
+`src/i18n/dict.ts`, `src/i18n/en.ts`, + 3 images `public/images/showroom-*.webp` (nouvelles).
+
+### 🎯 LE PRINCIPE (mots de David, 20/08/2026)
+> « La finalité c'est qu'elle s'inscrive à une date, c'est le seul objectif. »
+
+Tout le reste de la page est subordonné à ça. L'ordre des sections suit désormais l'ordre
+dans lequel les freins se posent, et **la date + le bouton reviennent** au fil de la page.
+
+| # | Section | Question du visiteur | Avant |
+|---|---|---|---|
+| 1 | hero | c'est quoi · c'est quand · c'est gratuit | 1 |
+| 2 | `#le-lieu` **+ l'accès** | je débarque où, et j'y arrive comment | 2 + **9** |
+| 3 | **`#agenda`** ← l'objectif | je m'inscris | **7** |
+| 4 | le déroulé | qu'est-ce que je vais y faire | 6 |
+| 5 | `#deux-univers` | qu'est-ce que je vais pouvoir toucher | 3 |
+| 6 | `#en-images` | je vais me sentir comment | 8 |
+| 7 | **rappel de la date** ← l'objectif (2) | bon, j'y vais | *(nouveau)* |
+| 8 | exclusivité Neotone | et si je veux repartir avec | 4 |
+| 9 | **`#individuel`** | et si je ne peux pas venir | 5 + fin de 7 |
+
+### 🚨 CE QU'IL NE FAUT PAS DÉFAIRE
+- **Le créneau payant n'apparaît plus qu'UNE fois, tout en bas.** Avant il apparaissait
+  **trois** fois, dont un bouton PLEIN (le plus voyant de la page) placé AVANT l'agenda, et
+  un tarif de 50 € dans le hero. Mesuré sur le build : **plus aucun `€` avant `#agenda`**.
+  Le hero ne garde qu'un **lien souligné** vers `#individuel` (plus de bouton, plus de prix).
+- **L'agenda est à 2 533 px à 375 px de large** (≈ 3 écrans), contre ≈ 11 500 px avant.
+- **Le rappel de milieu de page** (`[data-next-reminder]`) n'utilise **aucun texte nouveau** :
+  seulement `agendaNextLabel` / `agendaSeats` / `agendaBookCta`. Son bouton **ouvre
+  directement la modale** sur la prochaine date (vérifié : `eventDate=2026-08-23`, 16:00–19:00).
+  Il est supprimé par le filet `<script>` dans exactement les mêmes cas que la bannière du hero.
+- **Fusion** de « Ce qu'on y vit » (4 formats) et du bloc « Tu ne peux pas venir… » : ils
+  répondaient à la même question à trois sections d'écart, avec le même bouton et le même tarif.
+- **La dernière phrase de la page redit la gratuité** (`ctaBookNote`, mots de David) + un lien
+  vers `#agenda`. Ne pas la retirer : elle vient juste après un tarif affiché.
+- `bk.visitTitle` / `bk.visitIntro` **ne sont plus affichées** (le hero n'ouvre plus la modale
+  payante). **Les clés restent dans les deux dicos** — aucune clé i18n supprimée (`git diff`
+  des dicos = purement additif, vérifié).
+- `id="acces"` est conservé sur le sous-bloc : les anciens liens `/showroom#acces` marchent.
+- L'email de confirmation renvoie sur `/showroom#agenda` (dates gratuites) et
+  `?rdv=prive#agenda` (payant) — ce dernier **ouvre la modale tout seul** (BookingForm lit le
+  paramètre), il ne dépend donc pas de l'endroit où vit le bloc payant.
+
+### 📷 PHOTOS — 19 fichiers dans `~/Desktop/photos-showroom`, 3 ajoutées
+Comparaison faite **par contenu** (empreinte perceptuelle dHash+aHash), pas par nom.
+- **9 y étaient déjà** sous un nom `showroom-*` ; **3 y étaient déjà** sous un nom `prod-*`
+  (`prod-muling-3`, `prod-muling-2`/`muling-capsules-handpan`, `prod-hisong-7`) — les deux
+  dernières sont même **déjà affichées** sur la page, dans le carrousel `showroomAlsoGallery`.
+- **3 ajoutées** : `showroom-grande-piece.webp` (à côté de la vue d'ensemble, dans `#le-lieu`),
+  `showroom-salon-instruments.webp` et `showroom-sono-bose.webp` (carrousel « En images »,
+  qui passe de 5 à **7** diapositives). Toutes en 1800 px de large, WebP q82.
+- **4 écartées** : la « bras ouvert présente » (c'est une **vignette vidéo** : titre incrusté
+  + incrustation d'un visage en bas à droite, 1280×712 flou) ; `IMG_2471` et `IMG_2477`
+  (redondantes avec `IMG_2478` et « plan large ») ; la variante « V2 » de la sono (penchée).
+
+### ✅ VÉRIFIÉ (rendu réel, pas seulement `astro build`)
+Serveur local sur `dist/`, **mesure du DOM dans une iframe** (la capture de l'extension était
+de nouveau capricieuse — écran blanc sur onglet en arrière-plan) + captures via une iframe
+pleine hauteur clippée, méthode qui, elle, peint correctement.
+- **FR et EN, 375 px et 1280 px** : même ordre de sections, `body.scrollWidth == clientWidth`
+  (aucun débordement), 4 carrousels (`1/5`, `1/8`, `1/7`, **`1/7`**), **un seul** déclencheur
+  `private-session` par page, **aucun `€` avant `#agenda`**, « gratuit » lisible 2× avant l'agenda.
+- **Au doigt** : le carrousel « En images » passe `1/7 → 2/7`. **Au clic** : la lightbox s'ouvre
+  sur la BONNE diapositive (`showroom-salon-instruments.webp`) et se ferme (`aria-hidden=true`).
+- **Le bouton du rappel** ouvre la modale « Réserver ma place au showcase » pré-remplie.
+- 🐞 Corrigé en cours de route : les deux photos de `#le-lieu` n'ont pas le même rapport
+  (2000×903 / 1800×1012) — sans `items-start` la grille les étirait à la même hauteur et
+  laissait 110 px de vide sous la première légende.
+
+### ⚠️ À SIGNALER À DAVID
+Le `mailto:contact@lesagedavid.fr` du **pied de page** est présent sur TOUTES les pages du site
+(il n'a pas été introduit ici). Sa règle « aucune adresse email en clair » visait le bloc de
+réservation du showroom, qui est propre. À trancher s'il veut l'étendre au footer.
+
+---
+
 ## ÉTAT ACTUEL — 20/08/2026 (fin de nuit) — 🎠 Showroom : 3 carrousels + 2 bugs de texte/photo
 
 **Statut : ✅ COMMITÉ, POUSSÉ ET DÉPLOYÉ EN PRODUCTION.** Cinq corrections demandées par David,
