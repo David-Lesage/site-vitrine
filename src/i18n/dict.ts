@@ -1656,7 +1656,7 @@ const fr = {
     // pouvait croire qu'il s'était trompé d'événement. Le Neotone reste le
     // FER DE LANCE (« un showcase Neotone, il n'y en a pas d'autre, c'est
     // très attractif ») : on ÉLARGIT, on ne remplace pas par une liste plate.
-    heroLead: 'Le Neotone en tête d’affiche — et avec lui tout ce que je joue : mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Tu les entends, tu les joues, le même après-midi.',
+    heroLead: 'Le Neotone en tête d’affiche — et avec lui tout ce que je joue : mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Tu les entends, tu les joues, le même jour.',
     // ⚠️ Hero du showroom (16/08/2026) : ce CTA est l'OPTION, pas l'entrée.
     // Il est affiché SOUS la date du prochain showcase gratuit, en bouton
     // secondaire. Le libellé dit « individuel privé » pour qu'on comprenne
@@ -1686,7 +1686,11 @@ const fr = {
     // micros) : le titre le dit maintenant, sinon on laisserait croire que le
     // showroom se résume à ces deux univers.
     duoEyebrow: 'Sur place · les deux univers du handpan',
-    duoTitle: 'Handpan acoustique et électronique, le même après-midi',
+    // 🚨 « le même APRÈS-MIDI » → « le même JOUR » le 21/08/2026, comme dans
+    //    `heroLead` : un showcase peut se tenir le matin, l'après-midi ou le
+    //    soir. Substitution minimale — la promesse (tout essayer en une fois)
+    //    est intacte, seule l'heure implicite disparaît.
+    duoTitle: 'Handpan acoustique et électronique, le même jour',
     duoIntro: 'Le showroom n’est pas là pour te faire choisir un camp. Les deux univers y vivent côte à côte : tu les entends, tu les joues, tu sens la différence dans tes mains. Pas de compétition — de la complétion.',
     duo: [
       {
@@ -1797,9 +1801,24 @@ const fr = {
     // 🚨 Les visages du public sont floutés à la source par David. Toute nouvelle
     // photo doit l'être aussi.
     lieuEyebrow: 'Le lieu · Le Nid',
-    lieuTitle: 'À quoi ça ressemble, un soir de showcase',
+    // 🚨 CORRIGÉ le 21/08/2026 (David) — la version précédente disait « un SOIR
+    //    de showcase ». C'était FAUX : les showcases peuvent avoir lieu le matin
+    //    ou l'après-midi, et les dates réelles de l'agenda le prouvent déjà.
+    //    Reformulation validée par David, SANS horaire. Ne réintroduire aucun
+    //    moment de la journée dans les textes de cette page : l'heure exacte est
+    //    portée par l'agenda (`agendaEventTime`), et par lui seul.
+    lieuTitle: 'À quoi ça ressemble, un showcase au Nid',
     lieuIntro: 'Un appartement-atelier du 20ᵉ, du parquet, des guirlandes, et tout le monde assis en cercle autour des instruments. On est une quinzaine, pas plus.',
     photoAlt: {
+      // 🚧 PHOTO DE REPLI — 21/08/2026. Le fichier est une VIGNETTE VIDÉO : le
+      //    titre « David Lesage Showroom » est incrusté en dur dans l'image et
+      //    ne peut pas en être retiré. Il est donc décrit dans le texte
+      //    alternatif — une personne qui écoute la page doit savoir qu'un texte
+      //    est écrit dessus. Quand David fournira une vraie photo (voir
+      //    `showroomPhotos.accueil`, src/data/showroom.ts), supprimer la
+      //    dernière phrase entre parenthèses.
+      accueil:
+        'David Lesage, bras ouverts, accueille debout au milieu de la grande pièce du showroom : parquet ancien, murs blancs sous charpente, rosace au mur, un handpan sur son trépied derrière lui, des coussins et un canapé bas au fond. (Le titre « David Lesage Showroom » est incrusté sur l’image.)',
       vueEnsemble:
         'Vue d’ensemble d’un showcase au Nid : David Lesage assis au centre du cercle, handpans sur pieds derrière lui, le public assis à même le parquet, murs tendus de guirlandes lumineuses et rosace suspendue.',
       instruments:
@@ -1892,7 +1911,7 @@ const fr = {
     // Ce texte doit rester IDENTIQUE à celui de l'email de confirmation
     // (`supabase/functions/_shared/showcase-email.ts`, clés `bonusTitle`/`bonus`).
     programBonusTitle: 'Et parfois, ça va plus loin',
-    programBonus: 'Selon le public intéressé, la séance peut s’ouvrir davantage : une démo du Gonilélé en situation — avec les effets et la pédale d’octaver, sur sono Bose professionnelle en condition concert —, la calebasse, et même le tambour chamanique « l’Âme du tambour ». Ce n’est pas systématique : ça dépend des personnes présentes ce soir-là et de ce qui les intéresse. Dis-moi ce qui t’attire, j’en tiens compte.',
+    programBonus: 'Selon le public intéressé, la séance peut s’ouvrir davantage : une démo du Gonilélé en situation — avec les effets et la pédale d’octaver, sur sono Bose professionnelle en condition concert —, la calebasse, et même le tambour chamanique « l’Âme du tambour ». Ce n’est pas systématique : ça dépend des personnes présentes ce jour-là et de ce qui les intéresse. Dis-moi ce qui t’attire, j’en tiens compte.',
     programNote: 'Enfants bienvenus, sous la responsabilité de leurs parents. L’aspect démonstration, conférence et questions-réponses peut être un peu long pour les plus jeunes : prévoyez si besoin une activité calme, ou le relais d’un autre adulte.',
     // 🚨 PLUS AUCUNE ADRESSE EMAIL AFFICHÉE ICI (18/08/2026, demande de David :
     // « je ne veux plus que les gens voient mon email, je veux qu'ils
@@ -1940,7 +1959,9 @@ const fr = {
     agendaRulesTitle: 'À savoir avant de venir',
     agendaRuleTimeTitle: 'La date, tu la choisis — l’heure de début, non',
     agendaRuleTime: 'La session commence à l’heure, par une présentation. Arriver en retard, c’est rater des infos et obliger tout le groupe à repartir en arrière. Si tu arrives en avance, tu peux attendre en bas dans la cour — aucun souci.',
-    agendaRuleDurationTitle: 'Compte large sur ta soirée',
+    // 🚨 « ta soirée » → « ton temps » le 21/08/2026 : même correction que
+    //    `lieuTitle`, un showcase n'est pas forcément le soir.
+    agendaRuleDurationTitle: 'Compte large sur ton temps',
     agendaRuleDuration: 'Le programme dure environ 2h — dans les faits, ça tourne plutôt autour de 3h, parce que les discussions continuent bien après.',
     agendaRuleShareTitle: 'Apporte quelque chose à partager, si le cœur t’en dit',
     agendaRuleShare: 'Un jus de fruit, un gâteau, quelque chose à faire passer. Totalement facultatif, jamais une condition pour venir — c’est simplement dans un esprit de partage, pour que le moment soit convivial.',

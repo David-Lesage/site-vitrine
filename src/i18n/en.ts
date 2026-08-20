@@ -1455,7 +1455,7 @@ export const en: Dict = {
     // 🚨 See dict.ts: opened up on 18/08/2026 at David's explicit request. The
     // Neotone stays the headline act — we WIDEN, we do not replace it with a
     // flat list where everything weighs the same.
-    heroLead: 'The Neotone as the headline act — and with it everything else I play: my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. You hear them, you play them, the same afternoon.',
+    heroLead: 'The Neotone as the headline act — and with it everything else I play: my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. You hear them, you play them, the same day.',
     // See dict.ts: this CTA is the OPTION, shown BELOW the next free showcase.
     ctaBook: 'Book a private one-to-one slot (paid)',
     // "just sign up" played the booking down: it is required.
@@ -1473,7 +1473,8 @@ export const en: Dict = {
     // ⚠️ See dict.ts: this block is about the HANDPAN only. It is followed by
     // the `also*` block (Gonilélé, calabash, microphones) since 18/08/2026.
     duoEyebrow: 'On site · both handpan worlds',
-    duoTitle: 'Acoustic and electronic handpan, the same afternoon',
+    // 🚨 “the same AFTERNOON” → “the same DAY” on 21/08/2026 — see dict.ts.
+    duoTitle: 'Acoustic and electronic handpan, the same day',
     duoIntro: 'The showroom is not here to make you pick a side. Both worlds live next to each other: you hear them, you play them, you feel the difference in your hands. Not competition — completion.',
     duo: [
       {
@@ -1562,9 +1563,18 @@ export const en: Dict = {
     // SHOWING it. Alt texts describe what is actually VISIBLE (accessibility + SEO):
     // do not replace them with “showroom photo”.
     lieuEyebrow: 'The place · Le Nid',
-    lieuTitle: 'What a showcase evening looks like',
+    // 🚨 Fixed 21/08/2026 — see dict.ts: showcases can be held in the morning
+    //    or the afternoon, so “evening” was simply wrong. No time of day in the
+    //    page copy: the actual hour lives in the agenda, and nowhere else.
+    lieuTitle: 'What a showcase at Le Nid looks like',
     lieuIntro: 'A workshop-flat in the 20th arrondissement: bare wood floors, fairy lights, and everyone sitting in a circle around the instruments. Fifteen of us, no more.',
     photoAlt: {
+      // 🚧 Fallback photo — see dict.ts: the file is a VIDEO THUMBNAIL, the
+      //    title “David Lesage Showroom” is burnt into the image and cannot be
+      //    removed. It is therefore described in the alt text. Drop the last
+      //    sentence once David supplies a clean photo.
+      accueil:
+        'David Lesage, arms open, welcoming you from the middle of the showroom’s main room: old wooden floor, white walls under the roof beams, a wall rosette, a handpan on its tripod behind him, cushions and a low sofa at the far end. (The words “David Lesage Showroom” are burnt into the image.)',
       vueEnsemble:
         'Wide view of a showcase at Le Nid: David Lesage sitting at the centre of the circle, handpans on stands behind him, the audience seated on the wooden floor, walls hung with fairy lights and a rosette above.',
       instruments:
@@ -1644,7 +1654,7 @@ export const en: Dict = {
     // no number of available instruments is stated.
     // Must stay identical to the confirmation email (`showcase-email.ts`).
     programBonusTitle: 'And sometimes it goes further',
-    programBonus: 'Depending on who is there and what they are interested in, the session can open up further: a demo of the Gonilélé in a live setting — with the effects and the octaver pedal, on a professional Bose PA in concert conditions —, the calabash, and even the shamanic drum “l’Âme du tambour”. It is not systematic: it depends on the people there that evening and on what interests them. Tell me what draws you, I take it into account.',
+    programBonus: 'Depending on who is there and what they are interested in, the session can open up further: a demo of the Gonilélé in a live setting — with the effects and the octaver pedal, on a professional Bose PA in concert conditions —, the calabash, and even the shamanic drum “l’Âme du tambour”. It is not systematic: it depends on the people there that day and on what interests them. Tell me what draws you, I take it into account.',
     programNote: 'Children welcome, under their parents’ responsibility. The demonstration, talk and Q&A part can feel a little long for younger ones, so consider bringing a quiet activity, or a second adult to take over if needed.',
     // 🚨 NO EMAIL ADDRESS SHOWN HERE ANY MORE (18/08/2026) — see dict.ts.
     booking: 'Appointments are booked through the form only: you fill it in, your request reaches me, and I reply personally.',

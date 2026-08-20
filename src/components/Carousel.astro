@@ -7,13 +7,30 @@
 interface Slide { src: string; wide?: boolean; alt?: string; w?: number; h?: number }
 // `labels` permet de traduire les libellés d'accessibilité (page EN). Défauts FR
 // = comportement historique des pages qui n'en passent pas.
+// `eager` (21/08/2026) — À N'ACTIVER QUE POUR UN CARROUSEL AU-DESSUS DE LA
+// LIGNE DE FLOTTAISON (aujourd'hui : celui d'ouverture de /showroom).
+// Additif, par défaut `false` : tous les carrousels existants gardent
+// exactement le comportement `lazy` d'avant, rien à revérifier ailleurs.
+// POURQUOI TOUTES LES DIAPOSITIVES ET PAS SEULEMENT LA PREMIÈRE : les
+// suivantes sont hors cadre (le rail est translaté, le cadre est en
+// `overflow: hidden`), donc `loading="lazy"` ne les demande QUE lorsqu'elles
+// entrent — or la démo automatique démarre au bout de 3 s. En haut de page,
+// ça se verrait : le carrousel avancerait sur un cadre vide le temps du
+// téléchargement. Les suivantes sont donc chargées elles aussi, mais en
+// `fetchpriority="low"` : elles ne disputent rien à la première, qui est le
+// LCP de la page et reste seule en `high`.
+// ⓘ `decoding="async"` a été ajouté à TOUTES les diapositives au passage :
+//    c'est le réglage déjà utilisé partout ailleurs sur le site pour les
+//    images, il ne change rien à ce qui est affiché (le décodage sort
+//    seulement du fil principal). Aucun autre carrousel n'est modifié.
 interface Props {
   id: string
   slides: Slide[]
   alt: string
   labels?: { prev?: string; next?: string; photo?: string; photosOf?: string }
+  eager?: boolean
 }
-const { id, slides, alt, labels } = Astro.props
+const { id, slides, alt, labels, eager = false } = Astro.props
 const total = slides.length
 const lPrev = labels?.prev ?? 'Photo précédente'
 const lNext = labels?.next ?? 'Photo suivante'
@@ -27,7 +44,15 @@ const lPhotosOf = labels?.photosOf ?? 'Photos'
     <div class="carousel-track">
       {slides.map((s, i) => (
         <div class:list={['carousel-slide', s.wide && 'is-wide']}>
-          <img src={s.src} alt={s.alt ?? `${alt} — ${i + 1}`} width={s.w} height={s.h} loading="lazy" />
+          <img
+            src={s.src}
+            alt={s.alt ?? `${alt} — ${i + 1}`}
+            width={s.w}
+            height={s.h}
+            loading={eager ? 'eager' : 'lazy'}
+            fetchpriority={eager ? (i === 0 ? 'high' : 'low') : undefined}
+            decoding="async"
+          />
         </div>
       ))}
     </div>

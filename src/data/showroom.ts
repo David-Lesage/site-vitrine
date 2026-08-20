@@ -74,6 +74,20 @@ export const showroomGallery: ShowroomPhoto[] = [
 // ── Photos placées EN DUR dans la page (hors carrousel), les plus fortes.
 // Leur texte alternatif vit dans `showroom.photoAlt` (dict.ts + en.ts).
 export const showroomPhotos = {
+  /** 🚧 IMAGE DE REPLI — 21/08/2026. C'est une VIGNETTE VIDÉO YouTube :
+   *  le titre « David Lesage Showroom » est incrusté en dur dans le pixel.
+   *  Impossible à retirer sans détruire l'image ; sur cette page il se lit
+   *  comme une bannière, David l'accepte en attendant mieux.
+   *  ✂️ CE QUI A ÉTÉ FAIT : l'original fait 1280×712 et portait en plus une
+   *  INCRUSTATION DE VISAGE (facecam) dans le coin inférieur droit — elle
+   *  trahissait la capture vidéo. Les 64 px de droite ont été rognés
+   *  (1280 → 1216) : la facecam disparaît, David et la pièce sont intacts.
+   *  Original conservé hors dépôt dans `_medias-originaux-avec-titre/`.
+   *  👉 QUAND DAVID FOURNIRA UNE VRAIE PHOTO : écraser le fichier
+   *     `public/images/showroom-accueil-bras-ouverts.webp`, corriger `w`/`h`
+   *     ci-dessous, et retirer la mention du titre incrusté dans
+   *     `showroom.photoAlt.accueil` (dict.ts + en.ts). Rien d'autre à toucher. */
+  accueil: { src: '/images/showroom-accueil-bras-ouverts.webp', w: 1216, h: 712 },
   /** Vue d'ensemble d'un showcase — cadrage LARGE (celui en ligne).
    *  Variante resserrée disponible : `/images/showroom-vue-ensemble-resserre.webp`
    *  (2000×826) — le haut de la scène seulement. À échanger ici si David
@@ -88,6 +102,45 @@ export const showroomPhotos = {
   presentation: { src: '/images/showroom-david-presentation.webp', w: 1800, h: 1012 },
   gonilele: { src: '/images/showroom-david-gonilele.webp', w: 1100, h: 1956 },
 } as const
+
+// ============================================================
+// 🎠 CARROUSEL D'OUVERTURE — TOUT EN HAUT DE /showroom (21/08/2026)
+//
+// David : « il faudrait simplement intégrer un gros carrousel tout en haut qui
+// fait défiler les photos du lieu. »
+//
+// 🚨 CE N'EST PAS UNE GALERIE DÉCORATIVE, C'EST UNE SÉQUENCE. Chaque photo
+//    répond à UNE question muette, dans l'ordre où elle se pose :
+//      1. `accueil`      → « qui est-ce, et où est-ce que je vais ? »
+//                          David bras ouverts, debout au milieu de la pièce.
+//      2. `vueEnsemble`  → « est-ce que je vais m'y retrouver tout seul ? »
+//                          le cercle, du monde assis par terre, David au centre.
+//      3. `presentation` → « qu'est-ce que je vais y faire ? »
+//                          le temps de présentation, tous les instruments derrière.
+//      4. `grandePiece`  → « c'est grand comment ? »
+//                          la même pièce, vide et en plein jour.
+//
+// ⛔ NE PAS Y AJOUTER DE PHOTO SANS RAISON NARRATIVE. Une 5ᵉ image « parce
+//    qu'elle est belle » casse la séquence et repousse l'agenda (voir plus bas).
+//    Le reste des photos a déjà sa place : carrousel « En images » (section 6).
+//
+// 📏 CONTRAINTE DE HAUTEUR — la plus importante de la page. L'agenda a été
+//    remonté à ~2 500 px du haut sur mobile le 20/08/2026 ; ce carrousel ne
+//    doit pas défaire ce gain. D'où un cadre 16/10 sur mobile (≈ 234 px de
+//    haut à 375 px de large) et 16/9 au bureau, et non une bannière plein
+//    écran. Les réglages sont dans `global.css`, classe `.hero-carousel`.
+//
+// 🖼️ Les textes alternatifs sont ceux, DÉJÀ ÉCRITS, de `showroom.photoAlt`
+//    (dict.ts + en.ts) : la clé `id` ci-dessous EST la clé du dictionnaire.
+//    Aucun alt n'est réécrit ici, pour qu'ils ne divergent pas d'une section
+//    à l'autre de la même page.
+// ============================================================
+export const showroomHeroGallery: ShowroomPhoto[] = [
+  { id: 'accueil', src: showroomPhotos.accueil.src, w: showroomPhotos.accueil.w, h: showroomPhotos.accueil.h },
+  { id: 'vueEnsemble', src: showroomPhotos.vueEnsemble.src, w: showroomPhotos.vueEnsemble.w, h: showroomPhotos.vueEnsemble.h },
+  { id: 'presentation', src: showroomPhotos.presentation.src, w: showroomPhotos.presentation.w, h: showroomPhotos.presentation.h },
+  { id: 'grandePiece', src: showroomPhotos.grandePiece.src, w: showroomPhotos.grandePiece.w, h: showroomPhotos.grandePiece.h },
+]
 
 // ============================================================
 // 🎠 CARROUSEL « LE RESTE DE CE QUE JE JOUE EST LÀ AUSSI »

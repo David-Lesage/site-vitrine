@@ -473,6 +473,33 @@ h1, h2, h3, h4, .font-display {
   .lightbox-next { right: 8px; }
 }
 
+/* ── CARROUSEL D'OUVERTURE DE /showroom (21/08/2026) ───────────────────────
+   Le carrousel générique est CARRÉ (aspect-ratio 1/1) : c'est un cadre de
+   fiche produit, pas une bande d'ouverture. En haut de /showroom, un carré
+   ferait 375 px de haut sur mobile et repousserait d'autant l'agenda — la
+   seule chose que cette page doit faire atteindre vite.
+   🚨 CONTRAINTE : l'agenda a été remonté à ~2 500 px du haut sur mobile le
+      20/08/2026. Ce bloc ne doit rien lui reprendre au-delà de sa propre
+      hauteur. D'où 16/10 sur mobile (≈ 234 px à 375 px de large), 16/9 au
+      bureau — pas de plein écran, pas de 100vh.
+   📐 16/10 et 16/9 sont choisis pour ÉPOUSER les photos (1,71 · 1,78 · 1,78) :
+      trois des quatre ne sont donc presque pas rognées. Seule la vue
+      d'ensemble (2,21, panoramique) perd un peu de ses bords — David reste au
+      centre, le cercle reste lisible. Ne pas passer en 21/9 : la photo
+      d'accueil y perdrait le haut de la tête de David.
+   Mobile : plein cadre, sans arrondi (bande pleine largeur, sous l'en-tête).
+   ≥ 640 px : redevient une carte arrondie, comme le reste du site. */
+.hero-carousel .carousel {
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+}
+@media (min-width: 640px) {
+  .hero-carousel .carousel {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-card);
+  }
+}
+
 /* ============================================================
    ESSENCES DE BOIS — disques cliquables + modal détail
    ============================================================ */

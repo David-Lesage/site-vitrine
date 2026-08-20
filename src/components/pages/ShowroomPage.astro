@@ -13,7 +13,7 @@ import { priceForKind, priceGrid } from '@/lib/sessions'
 import BookingForm from '@/components/BookingForm.astro'
 import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
-import { showroomGallery, showroomAlsoGallery, showroomPhotos } from '@/data/showroom'
+import { showroomGallery, showroomAlsoGallery, showroomHeroGallery, showroomPhotos } from '@/data/showroom'
 import { atlasProPhotos, atlasAllPhotos, atlasProHeightSquare } from '@/data/atlas'
 import type { Lang } from '@/i18n/config'
 
@@ -25,6 +25,7 @@ import type { Lang } from '@/i18n/config'
 // 📐 ORDRE DES SECTIONS — refondu le 20/08/2026. Chaque section répond à UNE
 //    question du visiteur, dans l'ordre où elle se pose :
 //
+//    0. CARROUSEL D'OUVERTURE ..... « à quoi ça ressemble, là-bas ? »  (21/08)
 //    1. HERO ...................... « c'est quoi, c'est quand, c'est gratuit ? »
 //    2. #le-lieu (+ l'accès) ...... « je débarque où, et j'y arrive comment ? »
 //    3. #agenda ................... « je m'inscris. »            ← LE BUT
@@ -198,6 +199,23 @@ const carouselLabels =
 //   perdue, elle a rejoint le carrousel — donc le Gonilélé n'apparaît pas deux
 //   fois dans la même section. Son alt reste `photoAlt.gonilele`.
 const alsoAlt = sh.alsoAlt as Record<string, string | undefined>
+// 🎠 CARROUSEL D'OUVERTURE (21/08/2026, David : « il faudrait simplement
+// intégrer un gros carrousel tout en haut qui fait défiler les photos du
+// lieu »). LA SÉQUENCE ET SA RAISON D'ÊTRE SONT DOCUMENTÉES DANS
+// `showroomHeroGallery` (src/data/showroom.ts) : quatre photos, quatre
+// questions muettes, dans l'ordre. Ce n'est pas une galerie décorative.
+// 🖼️ `cover` (donc PAS `wide`) : on veut une bande pleine, sans bandes vides
+//    autour des images — les quatre photos sont toutes en paysage et de
+//    rapports proches, le cadre les épouse (voir `.hero-carousel`, global.css).
+// 🔤 Les alt viennent de `sh.photoAlt`, sous la même clé que l'`id` : ce sont
+//    les textes déjà écrits pour ces mêmes photos ailleurs sur la page.
+const heroAlt = sh.photoAlt as Record<string, string | undefined>
+const heroSlides = showroomHeroGallery.map((p) => ({
+  src: p.src,
+  w: p.w,
+  h: p.h,
+  alt: heroAlt[p.id] ?? sh.galleryAltFallback,
+}))
 const alsoSlides = showroomAlsoGallery.map((p) => ({
   src: p.src,
   w: p.w,
@@ -211,6 +229,44 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
 ---
 
 <Layout title={sh.title} description={sh.description} ldJSON={ld}>
+  {/* ═══ 0. LE LIEU, TOUT DE SUITE — le carrousel d'ouverture ═════════════
+      21/08/2026, mots de David : « il faudrait simplement intégrer un gros
+      carrousel tout en haut qui fait défiler les photos du lieu. »
+
+      🚨 CE N'EST PAS UNE GALERIE, C'EST UNE SÉQUENCE — quatre photos, quatre
+         questions muettes, dans cet ordre exact (détail dans
+         `showroomHeroGallery`, src/data/showroom.ts) :
+           qui est-ce et où je vais · est-ce que j'y serai seul ·
+           qu'est-ce que je vais y faire · à quoi ressemble le lieu.
+         N'y ajouter aucune photo « parce qu'elle est belle ».
+
+      📐 POURQUOI ICI ET PAS DANS LE HERO : le fond du hero est une VIDÉO DE
+         CARTE (Google Earth qui zoome sur l'adresse), pas des photos — les
+         deux ne se doublonnent pas, ils se complètent. Et posé au-dessus, le
+         carrousel garde au hero son ordre de lecture, documenté plus bas et
+         plusieurs fois corrigé par David (date d'abord, jamais de prix).
+
+      🚨 CONTRAINTE DE HAUTEUR, LA PLUS IMPORTANTE DE LA PAGE : l'agenda a été
+         remonté à ~2 500 px du haut sur mobile le 20/08/2026. Mesure du
+         21/08 : le carrousel ne l'a repoussé que de ~190 px (2 533 → 2 723 px
+         à 375 px de large), parce qu'il est bridé en 16/10 sur mobile
+         (`.hero-carousel`, global.css) ET que le hero a rendu 48 px de son
+         rembourrage haut (`pt-12 md:pt-24` au lieu de `py-24`) — il n'a plus
+         besoin d'autant de noir avant le titre, l'image le précède.
+         👉 Si tu grossis ce carrousel, remesure : au-delà de ~600 px de
+            décalage, l'agenda repasse hors de portée et le gain du 20/08 est
+            perdu.
+
+      🖐️ Défilement au doigt, flèches, points, démo automatique et plein écran
+         au clic : tout vient de <Carousel> + <Lightbox /> (incluse UNE seule
+         fois, en bas de page). Fond `bg-ink` : le bloc et le hero sombre qui
+         suit ne font qu'un seul aplat. */}
+  <div class="hero-carousel bg-ink sm:px-4 sm:pt-4 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      <Carousel id="showroom-hero" slides={heroSlides} alt={sh.heroTitle} labels={carouselLabels} eager />
+    </div>
+  </div>
+
   {/* ═══ 1. HERO — « c'est quoi · c'est quand · c'est gratuit » ═══════════ */}
   <section class="relative overflow-hidden bg-ink text-cream">
     <video class="absolute inset-0 h-full w-full object-cover opacity-65" autoplay muted loop playsinline poster="/images/localisation-showroom-poster.webp"><source src="/images/localisation-showroom.mp4" type="video/mp4" /></video>
@@ -218,7 +274,11 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         Tailwind v4 disparaît en silence sur les moteurs qui ignorent « in oklab »
         ou @property, et le texte crème se retrouve nu sur la vidéo. */}
     <div class="veil-hero-y absolute inset-0"></div>
-    <div class="relative mx-auto max-w-4xl px-4 py-24 text-center">
+    {/* `pt-12 md:pt-24` (21/08/2026) : le carrousel d'ouverture précède
+        maintenant le hero, il n'y a plus besoin de 96 px de noir avant le
+        surtitre sur mobile — et ces 48 px rendus compensent en partie la
+        hauteur du carrousel dans la course de l'agenda vers le haut. */}
+    <div class="relative mx-auto max-w-4xl px-4 pb-24 pt-12 text-center md:pt-24">
       <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{sh.heroEyebrow}</p>
       <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-6xl">{sh.heroTitle}</h1>
       <p class="mx-auto mt-5 max-w-2xl text-lg text-cream/80">{sh.heroLead}</p>
@@ -317,24 +377,47 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
   <Section id="le-lieu">
     <SectionHeading eyebrow={sh.lieuEyebrow} title={sh.lieuTitle} intro={sh.lieuIntro} />
     {/* DEUX PHOTOS, PAS UNE (20/08/2026) : la vue d'ensemble prouve que
-        l'événement EXISTE (du monde, un cercle, un soir) ; la grande pièce vide
+        l'événement EXISTE (du monde, un cercle, des instruments) ; la grande pièce vide
         répond à la question que personne ne pose à voix haute — « je débarque
         où, exactement ? ». C'est ce doute-là qui coûte des inscriptions.
         ⓘ Une variante au cadrage resserré de la 1ʳᵉ existe :
         `/images/showroom-vue-ensemble-resserre.webp` (2000×826). */}
-    {/* 📐 `items-start` : les deux photos n'ont pas le même rapport (2000×903
-        et 1800×1012). Sans lui, la grille étire les deux <figure> à la même
-        hauteur et la plus large se retrouve avec 110 px de vide sous sa
-        légende. */}
+    {/* 📐 DEUX BLOCS DE MÊME HAUTEUR (corrigé le 21/08/2026, David : « les deux
+        photos côte à côte sont décalées »).
+        LE PROBLÈME : les fichiers n'ont pas le même rapport — 2000×903 (2,21,
+        panoramique) et 1800×1012 (1,78). Affichées à hauteur libre dans une
+        grille `items-start`, la première finissait ~110 px plus courte que la
+        seconde : le bas de sa légende flottait dans le vide, et les deux
+        titres de légende n'étaient pas sur la même ligne.
+        LA CORRECTION : la photo de DROITE est RECADRÉE — pas déformée — au
+        rapport de celle de gauche (`aspect-[2000/903]` + `object-cover`).
+        Elle perd ~10 % en haut (poutres du plafond) et ~10 % en bas (parquet
+        au premier plan) : rien d'informatif, la pièce reste entière.
+        🚫 Ne pas « corriger » en enlevant `object-cover` pour remettre une
+           hauteur libre : le décalage revient aussitôt.
+        ⓘ AUCUN FICHIER N'A ÉTÉ RE-ENCODÉ : `showroom-grande-piece.webp` sert
+          aussi, non rogné, dans le carrousel d'ouverture — le recadrage est
+          purement d'affichage, il n'appartient qu'à cette grille.
+        💡 REDONDANCE ASSUMÉE, À TRANCHER PAR DAVID : ces deux photos sont
+           aussi les diapositives 2 et 4 du carrousel d'ouverture, ~300 px plus
+           haut. Elles sont gardées ici parce qu'elles portent des LÉGENDES que
+           le carrousel n'affiche pas. Si David préfère, ce bloc de deux figures
+           peut disparaître entièrement (le titre et l'intro de la section
+           suffisent) : c'est ~450 px de gagnés sur mobile, et l'agenda
+           redescend sous sa position d'avant le carrousel.
+        ⚡ `loading="eager"` A QUITTÉ CE BLOC le 21/08/2026 : la première image
+           visible de la page est désormais la 1ʳᵉ diapositive du carrousel
+           d'ouverture (prop `eager` du composant), plus celle-ci. Cette photo
+           est maintenant à ~1 470 px du haut sur mobile : la charger en
+           priorité, c'est retarder celle que le visiteur voit vraiment. */}
     <div class="mt-10 grid items-start gap-6 lg:grid-cols-2">
       <figure class="overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-        {/* Seule image chargée en `eager` de la page : c'est la première visible. */}
         <img
           src={showroomPhotos.vueEnsemble.src}
           width={showroomPhotos.vueEnsemble.w}
           height={showroomPhotos.vueEnsemble.h}
           alt={sh.photoAlt.vueEnsemble}
-          loading="eager"
+          loading="lazy"
           decoding="async"
           class="block h-auto w-full"
         />
@@ -348,7 +431,7 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
           alt={sh.photoAlt.grandePiece}
           loading="lazy"
           decoding="async"
-          class="block h-auto w-full"
+          class="block aspect-[2000/903] w-full object-cover"
         />
         <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.grandePiece}</figcaption>
       </figure>
@@ -469,7 +552,10 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
   {/* ═══ 4. LE DÉROULÉ — « qu'est-ce que je vais y faire ? » ═══════════════
       Première question de quelqu'un qui n'a pas réservé tout de suite. Elle
       passe AVANT le catalogue d'instruments : on se demande d'abord comment se
-      passe l'après-midi, ensuite ce qu'on pourra toucher.
+      passe la séance, ensuite ce qu'on pourra toucher.
+      🚨 21/08/2026 : ce commentaire disait « l'après-midi » — un showcase peut
+         se tenir le matin, l'après-midi ou le soir. Aucun texte de cette page
+         ne fixe de moment de la journée ; seul l'agenda porte l'heure.
       📐 Section passée en fond `cream` (elle était en `cream-deep`) pour ne pas
          enchaîner deux fonds sombres avec l'agenda qui la précède désormais ;
          les cartes internes passent donc de `bg-cream` à `bg-cream-deep/40`,
