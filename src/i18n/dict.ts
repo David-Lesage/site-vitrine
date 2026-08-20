@@ -984,11 +984,18 @@ const fr = {
       'Atlas fabrique en Italie des trépieds pour handpan. L’instrument n’est ni vissé ni sanglé : il se pose sur un disque flottant tenu par des aimants. Je viens de devenir partenaire de la marque, et deux modèles arrivent au showroom — l’Atlas Pro et l’Atlas All.',
     ctaModels: 'Voir les deux modèles',
     ctaSite: 'Le site d’Atlas',
-    ctaTry: 'Venir les essayer à Paris',
+    // 🎯 L'ACTION PRINCIPALE DE TOUTE LA PAGE (20/08/2026, cap de David).
+    //    Avant : les boutons principaux envoyaient sur les fiches d'Atlas.
+    //    Maintenant : l'essai au showroom est le bouton plein, l'achat en ligne
+    //    est le lien discret. Ne pas ré-inverser sans une demande de David.
+    ctaTry: 'Venir les essayer au showroom',
+    ctaTryModel: 'L’essayer au showroom',
+    heroTryNote:
+      'Les deux modèles seront au showroom, à Paris 20ᵉ, avec les handpans. Tu poses un instrument dessus, tu règles la hauteur, tu joues — et tu sais.',
 
-    whyTitle: 'À quoi ça sert, concrètement',
+    whyTitle: 'Ce qu’Atlas fait différemment',
     whyText:
-      'Un pied change deux choses très simples : tu peux jouer debout, et tu n’as plus l’instrument en équilibre sur les jambes. Au showroom, mes handpans sont déjà sur trépieds — c’est ce qui permet de les faire passer de main en main sans les reposer à chaque fois. Ce qu’Atlas fait différemment, c’est la fixation : un disque flottant à huit aimants anti-rayures, sans vis ni sangle à serrer sur le métal.',
+      'Ce qui distingue Atlas, c’est la fixation. L’instrument n’est ni vissé ni sanglé : il se pose sur un disque flottant tenu par huit aimants anti-rayures. Au showroom, mes handpans sont déjà sur trépieds — c’est ce qui permet de les faire passer de main en main sans les reposer à chaque fois.',
     whyPoints: [
       {
         // ✅ CORRIGÉ le 20/08/2026 : la FAQ d'Atlas annonce TROIS positions pour
@@ -1008,6 +1015,29 @@ const fr = {
       {
         t: 'Fabriqué en Italie',
         d: 'Atlas est une petite maison italienne, basée à Conegliano en Vénétie. Les deux pieds y sont conçus et fabriqués.',
+      },
+    ],
+
+    // ── LES TROIS QUESTIONS QU'ON SE POSE AVANT DE COMMANDER (20/08/2026) ────
+    // Ajoutées après lecture de la page d'un autre ambassadeur d'Atlas : elles
+    // répondent à des objections réelles d'acheteur qui manquaient ici.
+    // 🚨 CHAQUE PHRASE EST SOURCÉE et ATTRIBUÉE (FAQ officielle d'Atlas,
+    //    /pages/discover-all-features, relevée le 20/08/2026) — voir le bloc
+    //    « CE QU'ATLAS CONFIRME » de src/data/atlas.ts. Rien n'est endossé par
+    //    David : il n'a pas encore reçu les pieds. Ne pas retirer les « Atlas
+    //    annonce / Atlas indique » tant que ce n'est pas le cas.
+    solutionFacts: [
+      {
+        t: 'Compatible avec ton handpan',
+        d: 'Atlas annonce un support conçu pour tous les handpans et testé avec de nombreux fabricants, et des aimants compatibles acier nitruré, inox et Ember Steel.',
+      },
+      {
+        t: 'Ça ne bascule pas, et ça se rattrape',
+        d: 'Atlas indique une goupille de sécurité anti-basculement, un collier de centrage en caoutchouc amovible, et des pieds réglables par vissage — de quoi rattraper un sol qui n’est pas plat.',
+      },
+      {
+        t: 'Quatorze jours pour changer d’avis',
+        d: 'Atlas annonce le retour gratuit sous quatorze jours, l’étiquette de renvoi étant fournie dans le carton. Et si tu peux passer au showroom, tu auras tranché avant même de commander.',
       },
     ],
 
@@ -1061,9 +1091,15 @@ const fr = {
         d: 'C’est mon choix jusqu’à aujourd’hui, et il a de vraies qualités : léger, facile à transporter. Sur le mien, ce sont les systèmes de glissement et les pièces imprimées en 3D qui ont fini par lâcher — l’une d’elles a cassé avec le temps. Je me suis aussi demandé si le principe de la ventouse n’absorbait pas une partie de la vibration : c’est une question que je me pose, pas une mesure que j’ai faite.',
       },
     ],
+    // ── LES TROIS ÉTAPES DU RÉCIT (20/08/2026) ──────────────────────────────
+    // La page est un tunnel : mon expérience → le problème → la solution →
+    // viens l'essayer. Ces trois surtitres sont ce qui rend la marche visible.
+    problemEyebrow: 'Le problème',
+    solutionEyebrow: 'La solution',
+    tryEyebrow: 'La suite',
     storyConclusionTitle: 'Pourquoi Atlas, maintenant',
     storyConclusion:
-      'Au vu de tout ce que j’ai essayé, c’est le premier concept qui répond à chacun des problèmes que j’ai rencontrés : une fixation magnétique au lieu d’une ventouse, un Atlas Pro entièrement en aluminium — jambes télescopiques comprises — et 1,8 kg qui partent dans leur sac. Je suis convaincu, et je les attends avec impatience. Je les reçois dans quelques jours, et je le vérifierai devant vous.',
+      'Au vu de tout ce que j’ai essayé, c’est le premier concept qui répond à chacun des problèmes que j’ai rencontrés : une fixation magnétique au lieu d’une ventouse, un Atlas Pro entièrement en aluminium — jambes télescopiques comprises — et 1,8 kg qui partent dans leur sac. Je suis convaincu, et je les attends avec impatience.',
     storyBridge:
       'Et il y a une ironie que j’aime bien : le même pied ouvre la posture inverse de la mienne. Sa tête permet de jouer assis, sans poser l’instrument sur les jambes — ce que je n’ai jamais pratiqué, et que je vais découvrir.',
     storyBridgeCta: 'La tête du pied',
@@ -1073,8 +1109,14 @@ const fr = {
     //    doit jamais l'être — voir le commentaire de `alt.stageFestival`.
     storyPlateauCaption:
       'Mon plateau installé, avant un concert dans une salle en Suisse. Un pied de handpan ne vit jamais seul : il tient au milieu de tout le reste, et c’est lui qui fixe la hauteur de tout.',
+    // 🔗 MAILLAGE : le jeton {yishama} devient un lien vers /yishama (ou
+    //    /en/yishama) — il est remplacé par `mesh()` dans AtlasPage.astro, la
+    //    légende est donc rendue en `set:html`. Ne PAS écrire d'URL ici.
+    //    David, 20/08/2026 : « fais en sorte que le mot Yishama renvoie vers la
+    //    page de mon site dédiée, pour faire un maillage ». Les handpans SONT
+    //    des Yishama : les nommer est un fait, pas un ajout commercial.
     storyFestivalCaption:
-      'Everness Festival, Hongrie : debout derrière mes deux handpans acoustiques — sur les pieds que j’utilisais alors.',
+      'Everness Festival, Hongrie : debout derrière mes deux handpans acoustiques {yishama} — sur les pieds que j’utilisais alors.',
     storyStandsPhotoCaption:
       'Mon dispositif de scène vu de près : trois instruments, trois pieds différents, et autant de hauteurs à régler avant de jouer.',
 
@@ -1088,22 +1130,37 @@ const fr = {
     affiliateNote:
       'Mon lien de suivi n’est pas encore en place : pour l’instant, les boutons t’emmènent directement sur la fiche officielle d’Atlas.',
 
-    // ✅ REGISTRE AJUSTÉ le 20/08/2026 à la demande de David : c'est une
-    //    PROMESSE DE VÉRIFICATION PUBLIQUE, pas une réserve sur son jugement.
-    //    L'ancienne version (« plutôt que de te vendre un avis que je n'ai pas
-    //    encore ») le faisait douter de lui alors qu'il a essayé quatre pieds.
-    //    Ce qui reste non négociable : le fait qu'il ne les a PAS ENCORE REÇUS
-    //    est écrit noir sur blanc. C'est la seule chose qu'on ne peut pas taire.
+    // ── 🗑️ RETIRÉES DE LA PAGE LE 20/08/2026 — DÉCISION EXPLICITE DE DAVID ──
+    //    Ces deux clés ne sont PLUS AFFICHÉES : la carte « Ce que je vérifierai
+    //    devant vous » a été supprimée d'AtlasPage.astro. Ses mots :
+    //      « personne ne va vraiment aller sur mon site d'ici que j'aie reçu
+    //        les pieds, donc supprime cette phrase, ça n'a aucun sens. Je
+    //        prends cette responsabilité. J'anticipe, j'ai confiance, je suis
+    //        engagé. […] je n'ai pas besoin d'avoir toutes les garanties pour
+    //        me lancer. »
+    //    Les clés sont CONSERVÉES (aucune clé i18n n'est supprimée sans accord)
+    //    et le texte reste ici, prêt à être remis en une ligne si David change
+    //    d'avis. Ne pas les réutiliser ailleurs sans le lui demander.
+    // 🚨 CE QUE CETTE SUPPRESSION N'AUTORISE PAS : elle ne lève RIEN. Toujours
+    //    interdit partout sur la page — « je les ai testés », « à l'usage »,
+    //    « après plusieurs concerts avec », et tout détail sensoriel que David
+    //    ne peut pas connaître (poids ressenti, bruit du réglage, tenue sous
+    //    les mains, comparaison de stabilité vécue). Sa conviction et son
+    //    analyse : oui. Une expérience qu'il n'a pas encore : jamais.
     testTitle: 'Ce que je vérifierai devant vous',
     testText:
       'Je les reçois dans quelques jours. Ce que j’avance sur cette page, je l’avance en connaissance de cause : j’ai usé quatre pieds différents sur scène, et je sais exactement ce que je cherche. Ce que je n’ai pas encore, c’est le terrain — alors dès que les deux pieds sont au showroom, je filme ma propre démonstration, je la mets ici, et je vous dis ce que ça donne.',
     // `videoSectionTitle` = titre de la SECTION ; `videoTitle` = ce qui est
     // écrit DANS le cadre réservé (demande de David : le rectangle porte
     // « Démonstration par David Lesage » et la mention « À venir »).
+    // ✅ DEPUIS LA SUPPRESSION CI-DESSUS, C'EST CE CADRE QUI PORTE SEUL
+    //    l'information « la démonstration arrive » — sans la justifier.
+    // ⏳ `videoNote` ne dit plus « c'est une question de jours » : une promesse
+    //    datée devient fausse toute seule au bout d'une semaine.
     videoSectionTitle: 'La démonstration en vidéo',
     videoTitle: 'Démonstration par David Lesage',
     videoSoon: 'À venir',
-    videoNote: 'Je filme dès que les deux pieds sont arrivés au showroom — c’est une question de jours.',
+    videoNote: 'Je filme ma propre démonstration dès que les deux pieds sont au showroom, et je la mets ici.',
 
     modelsTitle: 'Deux modèles',
     modelsIntro:
@@ -1197,8 +1254,12 @@ const fr = {
       'Atlas écrit que son support « est né de la quête d’un meilleur son », qu’il « n’absorbe pas les vibrations et augmente la résonance », et que « sa forme creuse permet au son de circuler sans obstacles ». Sur la tête seule, ils ajoutent qu’elle améliore le contrôle de l’instrument « sans entraver les vibrations ».',
     // La séparation des voix RESTE (c'est Atlas qui parle du son, pas David),
     // mais sans formule d'excuse : il annonce simplement qu'il tranchera.
+    // ⏳ « Les pieds arrivent dans quelques jours » retiré le 20/08/2026 : même
+    //    raison que la carte supprimée plus haut — une échéance datée devient
+    //    fausse toute seule. La SÉPARATION DES VOIX, elle, ne bouge pas : c'est
+    //    Atlas qui parle du son, pas David, et il annonce qu'il tranchera.
     headAcousticNote:
-      'Ce sont leurs mots, pas les miens : sur le son, je ne reprends l’affirmation de personne sans l’avoir entendue. Les pieds arrivent dans quelques jours — je vous dirai ce que j’entends.',
+      'Ce sont leurs mots, pas les miens : sur le son, je ne reprends l’affirmation de personne sans l’avoir entendue. Je vous dirai ce que j’entends.',
     headIncludedTitle: 'Incluse, ou à acheter en plus ?',
     headIncluded: [
       {
@@ -1256,8 +1317,55 @@ const fr = {
     showroomTitle: 'Les essayer avant d’acheter',
     showroomText:
       'Les deux pieds seront au showroom, à Paris 20ᵉ, avec les handpans. Tu pourras poser un instrument dessus, régler la hauteur, jouer debout, et voir lequel des deux te correspond — sans rien acheter.',
+    // Les trois raisons de venir, en une ligne chacune. Elles doivent rester
+    // des FAITS vérifiables sur place, jamais des promesses commerciales.
+    showroomPoints: [
+      'Les deux modèles côte à côte, pas deux photos',
+      'Un handpan posé dessus : tu règles la hauteur toi-même, assis puis debout',
+      'Sans rien acheter — tu repars avec ton avis, pas avec un carton',
+    ],
+    showroomAgendaCta: 'Voir les prochaines dates',
+
+    // ── 📷 LÉGENDE DE LA PHOTO DU SHOWROOM (ajoutée le 20/08/2026) ───────────
+    // 🔗 {neotone} devient un lien vers /le-neotone (remplacé par `mesh()` dans
+    //    AtlasPage.astro). « Yishama » reste en TEXTE SIMPLE ici : il est déjà
+    //    lié plus haut, dans `storyFestivalCaption`. Un lien par destination.
+    // 🚨 CETTE LÉGENDE NE DIT PAS que les pieds Atlas sont sur la photo — ils
+    //    ne sont pas encore arrivés. Elle décrit l'installation ACTUELLE et
+    //    annonce que les Atlas y prendront leur place. Ne jamais la réécrire au
+    //    passé ni au présent d'usage. Aucune marque de pied n'y est nommée.
+    showroomPhotoCaption:
+      'Le showroom installé avant un showcase : mes deux handpans acoustiques Yishama et mes deux handpans électroniques {neotone}, chacun sur son pied — quatre instruments, quatre pieds différents. C’est là que les deux Atlas prendront leur place, et c’est là que tu pourras les essayer.',
+
+    // ── 🎟️ LE CODE DE RÉDUCTION — TEXTES PRÊTS, BLOC ÉTEINT ────────────────
+    // ⛔️ RIEN DE CE QUI SUIT N'EST AFFICHÉ tant que `ATLAS_PROMO_ACTIVE` vaut
+    //    `false` dans src/data/atlas.ts. Au 20/08/2026 le code N'EXISTE PAS
+    //    encore chez Atlas : l'afficher ferait saisir aux visiteurs un code qui
+    //    serait refusé au paiement.
+    // ✅ CES PHRASES SONT ÉCRITES POUR RESTER VRAIES LE JOUR DE L'ACTIVATION :
+    //    aucun montant ni pourcentage n'est annoncé, et la commission de David
+    //    est dite, pas cachée. Si Atlas confirme un pourcentage, c'est ICI qu'on
+    //    l'ajoute — pas ailleurs.
+    // 🏷️ Le code lui-même (`DAVID-ATLAS`, src/data/atlas.ts) a été choisi le
+    //    20/08/2026 pour la même raison : il n'annonce aucun chiffre. Ne pas
+    //    écrire ici de montant que le code laisserait « deviner ».
+    promoTitle: 'Mon code chez Atlas',
+    promoText:
+      'Atlas m’a attribué un code de réduction à mon nom. Tu le saisis au moment du paiement, sur leur site — que tu commandes en ligne ou après être venu les essayer au showroom.',
+    promoDisclosure:
+      'Je suis affilié à Atlas : quand une commande passe par ce code, je touche une commission. Ça ne t’ajoute rien à payer, et ça ne change rien à ce que je t’ai écrit plus haut.',
 
     alt: {
+      // 📷 Photo du showroom (Le Nid, Paris 20ᵉ) — le MÊME fichier que celui de
+      //    /showroom (`showroomPhotos.instruments`, 1800×1012). Réutilisé tel
+      //    quel : ni copie ni ré-encodage.
+      // 🚨 AUCUNE MARQUE DE PIED N'EST NOMMÉE ICI (même règle que
+      //    `stageFestival`) : on décrit la matière et la forme, pas le
+      //    fabricant. Les INSTRUMENTS, eux, sont nommés — ce sont ceux de
+      //    David, et c'est ce que la photo prouve.
+      // 🚨 Ne PAS y faire figurer les pieds Atlas : ils ne sont pas dessus.
+      showroomInstruments:
+        'Le showroom de David Lesage installé avant un showcase : deux handpans électroniques Neotone à couronne lumineuse montés sur trépieds noirs près d’un kit de percussions électroniques, et deux handpans acoustiques Yishama en acier, l’un sur un trépied en bois, l’autre sur un pied métallique ; une demi-sphère de calebasse posée sur un tapis rouge au premier plan, parquet ancien, guirlandes lumineuses et rosace au mur.',
       // 📷 Photos de scène de David — HangAout 2021, dossier COM de David.
       //    Aucun public reconnaissable dessus (vérifié) : il est seul en scène.
       stageStanding:
@@ -1321,6 +1429,14 @@ const fr = {
       allWood:
         'Les pièces en bois de l’Atlas All posées à plat : les pieds et les rallonges avec leurs embouts noirs.',
     },
+    // 🚧 CLÉ CONSERVÉE, PLUS AFFICHÉE (20/08/2026). La photo « deux hauteurs »
+    //    est passée DANS le carrousel de l'Atlas Pro (demande de David :
+    //    « intègre cette photo dans le carrousel, optimise l'espace »), et un
+    //    carrousel n'a pas de légende par diapositive. Ce que la photo démontre
+    //    est déjà écrit deux fois ailleurs : dans `heroProCaption` (« le même
+    //    pied, déployé et replié ») et dans la ligne « Hauteur » du tableau.
+    //    Ne pas supprimer la clé : elle resservira telle quelle si David veut
+    //    revoir une légende visible.
     heightFigureCaption:
       'Le même pied, photographié deux fois : à gauche déployé au maximum, avec un handpan dessus ; à droite replié au minimum. Toute la plage 51 → 109 cm sur une seule image.',
     photosPro: 'L’Atlas Pro en images',

@@ -5,6 +5,11 @@
 // ============================================================
 
 import { modelCarousels } from './neotone'
+// 🎟️ Le code de réduction Atlas est piloté par UN SEUL interrupteur, dans
+// src/data/atlas.ts. Tant que `ATLAS_PROMO_ACTIVE` est `false`, la carte Atlas
+// de la boutique n'affiche AUCUN code — parce que le code n'existe pas encore
+// chez Atlas et qu'un code refusé au paiement coûterait la confiance du client.
+import { ATLAS_PROMO_ACTIVE, ATLAS_DISCOUNT_CODE } from './atlas'
 
 export interface Product {
   id: string
@@ -74,10 +79,11 @@ export const products: Product[] = [
   // 🚧 `url` pointe sur la fiche du site (et pas sur atlashandpan.com) parce
   // que le lien d'affiliation n'existe pas encore : c'est la page dédiée qui
   // porte les liens d'achat, via `atlasLink()` de src/data/atlas.ts. Quand le
-  // code arrivera, ajouter ici `discountCode: '…'` si Atlas en fournit un —
-  // et rien d'autre : ne pas remplacer `url` par un lien externe, la fiche
+  // code arrivera, il suffit de passer `ATLAS_PROMO_ACTIVE` à `true` dans
+  // src/data/atlas.ts : la pastille « copier le code » apparaît ici toute seule
+  // — et rien d'autre : ne pas remplacer `url` par un lien externe, la fiche
   // dédiée est ce qui explique la différence entre les deux modèles.
-  { id: 'atlas', price: 0, image: '/images/prod-atlas-pro-1.webp', imgW: 1120, imgH: 1400, url: '/pieds-atlas', category: 'accessoires', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'atlas', priceLabel: 'Atlas Pro 215 € · Atlas All 230 €', images: ['/images/prod-atlas-pro-1.webp', '/images/prod-atlas-all-1.webp', '/images/prod-atlas-pro-6.webp', '/images/prod-atlas-all-2.webp', '/images/prod-atlas-pro-3.webp'] },
+  { id: 'atlas', price: 0, image: '/images/prod-atlas-pro-1.webp', imgW: 1120, imgH: 1400, url: '/pieds-atlas', category: 'accessoires', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'atlas', priceLabel: 'Atlas Pro 215 € · Atlas All 230 €', ...(ATLAS_PROMO_ACTIVE ? { discountCode: ATLAS_DISCOUNT_CODE } : {}), images: ['/images/prod-atlas-pro-1.webp', '/images/prod-atlas-all-1.webp', '/images/prod-atlas-pro-6.webp', '/images/prod-atlas-all-2.webp', '/images/prod-atlas-pro-3.webp'] },
   // Musique — albums & écoute en streaming (Spotify / plateformes)
   { id: 'phoenix-opus1', price: 0, image: '/images/prod-phoenix-opus1.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/album/3sxUqtH3uKf7pceIJ0j5l5', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },
   { id: 'phoenix-opus2', price: 0, image: '/images/prod-phoenix-opus2.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/album/19JuVzKWNd5xUMquLvLSm1', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },

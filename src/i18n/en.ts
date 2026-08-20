@@ -901,11 +901,18 @@ export const en: Dict = {
       'Atlas builds handpan tripods in Italy. The instrument is neither screwed down nor strapped in: it rests on a floating disc held by magnets. I have just become a partner of the brand, and two models are on their way to the showroom — the Atlas Pro and the Atlas All.',
     ctaModels: 'See both models',
     ctaSite: 'Atlas’s website',
-    ctaTry: 'Come and try them in Paris',
+    // 🎯 THE PRIMARY ACTION OF THE WHOLE PAGE (20/08/2026, David's call).
+    //    Before: the main buttons sent people to Atlas's product pages.
+    //    Now: trying them at the showroom is the solid button, buying online is
+    //    the quiet link. Do not swap them back without David asking.
+    ctaTry: 'Come and try them at the showroom',
+    ctaTryModel: 'Try this one at the showroom',
+    heroTryNote:
+      'Both models will be at the showroom, in Paris 20ᵉ, alongside the handpans. You put an instrument on one, set the height, play — and you know.',
 
-    whyTitle: 'What it actually does',
+    whyTitle: 'What Atlas does differently',
     whyText:
-      'A stand changes two very simple things: you can play standing up, and the instrument is no longer balanced on your legs. At the showroom my handpans are already on tripods — that is what lets me pass them from hand to hand without setting them down every time. What Atlas does differently is the mount: a floating disc with eight scratch-resistant magnets, with nothing screwed or strapped onto the metal.',
+      'What sets Atlas apart is the mount. The instrument is neither screwed down nor strapped in: it rests on a floating disc held by eight scratch-resistant magnets. At the showroom my handpans are already on tripods — that is what lets me pass them from hand to hand without setting them down every time.',
     whyPoints: [
       {
         t: 'On your lap, seated, standing',
@@ -918,6 +925,25 @@ export const en: Dict = {
       {
         t: 'Made in Italy',
         d: 'Atlas is a small Italian workshop based in Conegliano, in the Veneto. Both stands are designed and built there.',
+      },
+    ],
+
+    // ── THE THREE QUESTIONS YOU ASK BEFORE ORDERING (20/08/2026) ────────────
+    // 🚨 Every sentence is SOURCED and ATTRIBUTED (Atlas's official FAQ,
+    //    /pages/discover-all-features, read on 20/08/2026). Nothing is endorsed
+    //    by David: he has not received the stands yet. Keep the “Atlas states”.
+    solutionFacts: [
+      {
+        t: 'It fits your handpan',
+        d: 'Atlas states that the stand is designed for every handpan and tested with many makers, and that the magnets work with nitrided steel, stainless steel and Ember Steel.',
+      },
+      {
+        t: 'It will not tip, and you can correct the ground',
+        d: 'Atlas lists an anti-tip safety pin, a removable rubber centring collar, and legs adjustable by screwing — enough to make up for a floor that is not flat.',
+      },
+      {
+        t: 'Fourteen days to change your mind',
+        d: 'Atlas states free returns within fourteen days, with the return label supplied in the box. And if you can make it to the showroom, you will have decided before you even order.',
       },
     ],
 
@@ -956,18 +982,28 @@ export const en: Dict = {
         d: 'It has been my choice until today, and it has real qualities: light, easy to carry. On mine, it was the sliding systems and the 3D-printed parts that eventually gave up — one of them broke over time. I also wondered whether the suction-cup principle absorbed part of the vibration: that is a question I ask myself, not a measurement I made.',
       },
     ],
+    // ── THE THREE STEPS OF THE STORY (20/08/2026) ───────────────────────────
+    // The page is a funnel: my experience → the problem → the solution → come
+    // and try them. These three eyebrows are what makes the step visible.
+    problemEyebrow: 'The problem',
+    solutionEyebrow: 'The solution',
+    tryEyebrow: 'What happens next',
     storyConclusionTitle: 'Why Atlas, now',
     storyConclusion:
-      'Given everything I have tried, this is the first design that answers every single problem I have run into: a magnetic mount instead of a suction cup, an Atlas Pro made entirely of aluminium — telescopic legs included — and 1.8 kg that go away in their bag. I am convinced, and I am looking forward to them. They arrive in a few days, and I will check it in front of you.',
+      'Given everything I have tried, this is the first design that answers every single problem I have run into: a magnetic mount instead of a suction cup, an Atlas Pro made entirely of aluminium — telescopic legs included — and 1.8 kg that go away in their bag. I am convinced, and I am looking forward to them.',
     storyBridge:
       'And there is an irony I rather like: the same stand opens up the posture opposite to mine. Its head lets you play seated, without resting the instrument on your legs — something I have never done, and am about to discover.',
     storyBridgeCta: 'The head of the stand',
     // 🖼️ Visible captions for the photos in the #debout section (not alt text).
     // 🚨 storyFestivalCaption never names the brand of the old stands.
+    // 🔗 MESH: the {yishama} token becomes a link to /en/yishama — it is
+    //    replaced by `mesh()` in AtlasPage.astro, so the caption is rendered
+    //    with `set:html`. Never write a URL here. The handpans ARE Yishama
+    //    instruments: naming them is a fact, not a sales addition.
     storyPlateauCaption:
       'My stage set up, before a concert in a hall in Switzerland. A handpan stand never lives on its own: it holds in the middle of everything else, and it is the thing that sets the height for all of it.',
     storyFestivalCaption:
-      'Everness Festival, Hungary: standing behind my two acoustic handpans — on the stands I was using then.',
+      'Everness Festival, Hungary: standing behind my two {yishama} acoustic handpans — on the stands I was using then.',
     storyStandsPhotoCaption:
       'My stage setup close up: three instruments, three different stands, and just as many heights to set before playing.',
 
@@ -979,13 +1015,31 @@ export const en: Dict = {
     affiliateNote:
       'My tracking link is not in place yet: for now, the buttons take you straight to the official Atlas product page.',
 
+    // ── 🗑️ REMOVED FROM THE PAGE ON 20/08/2026 — DAVID'S EXPLICIT DECISION ──
+    //    These two keys are NO LONGER DISPLAYED: the "What I will check in
+    //    front of you" card was deleted from AtlasPage.astro. His words (FR):
+    //      « personne ne va vraiment aller sur mon site d'ici que j'aie reçu
+    //        les pieds, donc supprime cette phrase, ça n'a aucun sens. Je
+    //        prends cette responsabilité. »
+    //    The keys are KEPT (no i18n key is ever dropped without approval) and
+    //    the copy stays here, ready to be put back in one line.
+    // 🚨 WHAT THIS DELETION DOES NOT ALLOW: it lifts nothing. Still forbidden
+    //    everywhere on the page — "I tested them", "in use", "after several
+    //    gigs with them", and any sensory detail David cannot know (felt
+    //    weight, sound of the adjustment, real grip, lived stability
+    //    comparison). His conviction and his analysis: yes. An experience he
+    //    has not had yet: never.
     testTitle: 'What I will check in front of you',
     testText:
       'They arrive in a few days. What I claim on this page, I claim knowingly: I have worn out four different stands on stage, and I know exactly what I am looking for. What I do not have yet is the field test — so as soon as the two stands are at the showroom, I will film my own demonstration, put it here, and tell you how it goes.',
+    // ✅ Since that deletion, this reserved frame carries the "the demo is
+    //    coming" information on its own — without justifying it.
+    // ⏳ `videoNote` no longer says "a matter of days": a dated promise turns
+    //    false all by itself after a week.
     videoSectionTitle: 'The video demonstration',
     videoTitle: 'Demonstration by David Lesage',
     videoSoon: 'Coming soon',
-    videoNote: 'I will film it as soon as the two stands reach the showroom — a matter of days.',
+    videoNote: 'I will film my own demonstration as soon as the two stands are at the showroom, and put it here.',
 
     modelsTitle: 'Two models',
     modelsIntro:
@@ -1058,8 +1112,12 @@ export const en: Dict = {
     headAcousticTitle: 'What Atlas says about the sound',
     headAcousticText:
       'Atlas writes that its stand “was born from the search for a better sound for your handpan”, that it “does not absorb vibrations and increases resonance”, and that “its hollow shape allows the sound to circulate without obstacles”. About the head alone, they add that it improves control of the instrument “without obstructing vibrations”.',
+    // ⏳ "The stands arrive in a few days" removed on 20/08/2026: same reason
+    //    as the deleted card above — a dated deadline turns false on its own.
+    //    The SEPARATION OF VOICES does not move: Atlas talks about the sound,
+    //    not David, and he announces that he will settle it himself.
     headAcousticNote:
-      'Those are their words, not mine: when it comes to sound, I do not repeat anyone’s claim before hearing it myself. The stands arrive in a few days — I will tell you what I hear.',
+      'Those are their words, not mine: when it comes to sound, I do not repeat anyone’s claim before hearing it myself. I will tell you what I hear.',
     headIncludedTitle: 'Included, or bought on top?',
     headIncluded: [
       {
@@ -1090,8 +1148,52 @@ export const en: Dict = {
     showroomTitle: 'Try them before you buy',
     showroomText:
       'Both stands will be at the showroom in Paris 20th, alongside the handpans. You can put an instrument on one, set the height, play standing, and see which of the two suits you — without buying anything.',
+    // The three reasons to come, one line each. They must stay FACTS you can
+    // check on the spot, never sales promises.
+    showroomPoints: [
+      'Both models side by side, not two photographs',
+      'A handpan on top: you set the height yourself, seated then standing',
+      'Without buying anything — you leave with your own opinion, not a box',
+    ],
+    showroomAgendaCta: 'See the next dates',
+
+    // ── 📷 CAPTION OF THE SHOWROOM PHOTO (added 20/08/2026) ─────────────────
+    // 🔗 {neotone} becomes a link to /en/le-neotone (replaced by `mesh()` in
+    //    AtlasPage.astro). "Yishama" stays PLAIN TEXT here: it is already
+    //    linked further up, in `storyFestivalCaption`. One link per target.
+    // 🚨 THIS CAPTION DOES NOT SAY that the Atlas stands are in the photo —
+    //    they have not arrived yet. It describes the CURRENT setup and says
+    //    the Atlas stands will take their place there. Never rewrite it in the
+    //    past tense. No stand brand is named in it.
+    showroomPhotoCaption:
+      'The showroom set up before a showcase: my two Yishama acoustic handpans and my two {neotone} electronic handpans, each on its own stand — four instruments, four different stands. This is where the two Atlas stands will take their place, and where you will be able to try them.',
+
+    // ── 🎟️ THE DISCOUNT CODE — COPY READY, BLOCK SWITCHED OFF ──────────────
+    // ⛔️ NONE of this is displayed while `ATLAS_PROMO_ACTIVE` is `false` in
+    //    src/data/atlas.ts. As of 20/08/2026 the code DOES NOT EXIST yet at
+    //    Atlas: showing it would have visitors type a code that gets refused.
+    // ✅ These sentences are written to STAY TRUE on the day it is switched on:
+    //    no amount and no percentage are announced, and David's commission is
+    //    stated, not hidden.
+    // 🏷️ The code itself (`DAVID-ATLAS`, src/data/atlas.ts) was chosen on
+    //    20/08/2026 for the same reason: it announces no figure at all. Never
+    //    write here an amount that the code would let the reader "guess".
+    promoTitle: 'My code at Atlas',
+    promoText:
+      'Atlas has given me a discount code in my name. You enter it at checkout, on their website — whether you order online or after coming to try them at the showroom.',
+    promoDisclosure:
+      'I am an Atlas affiliate: when an order goes through this code, I earn a commission. It adds nothing to what you pay, and it changes nothing about what I wrote above.',
 
     alt: {
+      // 📷 Showroom photo (Le Nid, Paris 20th) — the SAME file as the one on
+      //    /showroom (`showroomPhotos.instruments`, 1800×1012). Reused as is:
+      //    no copy, no re-encoding.
+      // 🚨 NO STAND BRAND IS NAMED HERE (same rule as `stageFestival`): we
+      //    describe material and shape, never the maker. The INSTRUMENTS are
+      //    named — they are David's, and that is what the photo proves.
+      // 🚨 Do NOT list the Atlas stands: they are not in this photo.
+      showroomInstruments:
+        'David Lesage’s showroom set up before a showcase: two Neotone electronic handpans with a lit rim, on black tripods next to an electronic drum kit, and two Yishama acoustic steel handpans, one on a wooden tripod, the other on a metal stand; a calabash half-sphere resting on a red mat in the foreground, old wooden floor, fairy lights and a rosette on the wall.',
       stageStanding:
         'David Lesage standing on stage under the spotlights, behind his two handpans mounted on stands, surrounded by his stands, his pedals and a calabash resting on the red carpet.',
       stageStands:
@@ -1147,6 +1249,12 @@ export const en: Dict = {
       allWood:
         'The wooden parts of the Atlas All laid flat: the legs and the extensions with their black feet.',
     },
+    // 🚧 KEY KEPT, NO LONGER DISPLAYED (20/08/2026). The “two heights” photo has
+    //    moved INTO the Atlas Pro carousel (David: “put that photo in the
+    //    carousel, save the space”), and a carousel has no per-slide caption.
+    //    What the photo proves is already written twice elsewhere: in
+    //    `heroProCaption` and in the “Height” row of the table. Do not delete
+    //    the key — it comes straight back if David wants a visible caption.
     heightFigureCaption:
       'The same stand, photographed twice: on the left extended to its maximum with a handpan on it; on the right folded down to its minimum. The whole 51 → 109 cm range in a single picture.',
     photosPro: 'The Atlas Pro in pictures',

@@ -29,7 +29,186 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 20/08/2026 — 🦵 Pieds ATLAS : page produit + showroom (⚠️ NON DÉPLOYÉ)
+## ÉTAT ACTUEL — 20/08/2026 (nuit) — 🔄 Pieds ATLAS : REFONTE EN TUNNEL, destination = le SHOWROOM
+
+**Statut : ✅ VALIDÉ PAR DAVID, COMMITÉ ET DÉPLOYÉ EN PRODUCTION le 20/08/2026 (nuit).**
+Fichiers touchés : `src/components/pages/AtlasPage.astro` (réécrit), `src/data/atlas.ts`,
+`src/data/shop.ts`, `src/i18n/dict.ts`, `src/i18n/en.ts`, + `public/images/prod-atlas-pro-8-carre.webp`
+(nouveau).
+
+### 🔁 5ᵉ PASSAGE (20/08/2026, nuit) — les 4 derniers ajustements avant publication
+
+**1. 🗑️ LA SECTION DE RÉSERVE EST SUPPRIMÉE — décision assumée de David.**
+La carte « Ce que je vérifierai devant vous » (`testTitle` / `testText`) ne s'affiche plus.
+Ses mots : *« personne ne va vraiment aller sur mon site d'ici que j'aie reçu les pieds, donc
+supprime cette phrase, ça n'a aucun sens. Je prends cette responsabilité. J'anticipe, j'ai
+confiance, je suis engagé. »*
+- **Les deux clés i18n RESTENT** dans `dict.ts` et `en.ts` (aucune clé supprimée), marquées
+  « retirée de la page » : une ligne à remettre dans `AtlasPage.astro` si David change d'avis.
+- 🚨 **CE QUE CETTE SUPPRESSION N'AUTORISE PAS** : elle ne lève RIEN. Toujours interdit —
+  « je les ai testés », « à l'usage », « après plusieurs concerts avec », et tout détail
+  sensoriel que David ne peut pas connaître (poids ressenti, bruit du réglage, tenue sous les
+  mains, comparaison de stabilité vécue). Sa conviction et son analyse : oui. Une expérience
+  qu'il n'a pas encore : jamais.
+- **Trois autres phrases nettoyées, pour la même raison** (des ÉCHÉANCES DATÉES qui deviennent
+  fausses toutes seules, et qui répétaient la carte supprimée) :
+  | Clé | Avant → après |
+  |---|---|
+  | `storyConclusion` | supprimé « Je les reçois dans quelques jours, et je le vérifierai devant vous. » (reprise mot pour mot de la carte) — la conviction reste : « Je suis convaincu, et je les attends avec impatience. » |
+  | `headAcousticNote` | « Les pieds arrivent dans quelques jours — je vous dirai ce que j'entends. » → « Je vous dirai ce que j'entends. » (la séparation des voix ne bouge PAS) |
+  | `videoNote` | supprimé « c'est une question de jours » |
+  ➡️ **Aucune phrase restante n'est devenue trompeuse** : la page ne laisse nulle part entendre
+  qu'il a utilisé les pieds. Ce qui porte l'honnêteté désormais : `partnerText` (« ils m'envoient
+  deux pieds de démonstration »), le heros (« deux modèles arrivent au showroom ») et surtout le
+  **cadre vidéo « Démonstration par David Lesage · À venir »**, qui dit que la démo arrive sans
+  avoir à se justifier. **Ce cadre ne se retire pas.**
+- **📐 Le trou de mise en page est recomposé** : la 2ᵉ colonne libérée est occupée par
+  l'emplacement vidéo (qui vivait en dessous, centré). Grille toujours à 2 colonnes pleines au
+  bureau, `lg:items-center` parce que le texte fait 258 px contre 423 px pour le cadre 16/9 —
+  alignés en haut ils laissaient 165 px de vide sombre. **Mesuré : 588 px / 588 px.**
+
+**2. 🔗 MAILLAGE INTERNE Yishama / Neotone** — demande de David.
+Helper `mesh()` en haut d'`AtlasPage.astro` : les dictionnaires portent un **jeton**
+`{yishama}` / `{neotone}`, remplacé par un lien construit avec `L()`. Donc `/yishama` en FR et
+`/en/yishama` en EN **sans URL dans les fichiers i18n**. Les deux légendes sont rendues en
+`set:html`.
+- **`storyFestivalCaption` (#probleme)** : les handpans sont désormais **nommés** — « mes deux
+  handpans acoustiques **Yishama** » → lien `/yishama`. 🚨 La marque des **PIEDS** n'y est
+  toujours pas nommée (« sur les pieds que j'utilisais alors »).
+- **`showroomPhotoCaption` (#essayer)** : « mes deux handpans électroniques **Neotone** » →
+  lien `/le-neotone`. « Yishama » y reste en **texte simple** : déjà lié plus haut.
+- ⚠️ **UN SEUL LIEN PAR DESTINATION SUR LA PAGE** — mesuré dans le rendu : exactement 2 liens de
+  maillage dans le `<main>` (FR et EN). Un semis de liens nuit à la lecture ET au référencement.
+  **Ne pas réécrire une phrase juste pour y caser un lien.**
+
+**3. 📷 PHOTO DU SHOWROOM AJOUTÉE — `showroom-instruments.webp`, dans `#essayer`.**
+Fichier **réutilisé tel quel** (il sert déjà sur `/showroom`, `showroomPhotos.instruments`,
+1800×1012) : ni copie, ni ré-encodage. Nouvelle clé `alt.showroomInstruments` (FR + EN),
+`data-lb="atlas-showroom"`. Rendu mesuré : 895 px au bureau, 342 px à 375 px.
+**Pourquoi `#essayer` et pas `#probleme` ni l'ouverture** : (a) c'était la seule section du
+tunnel sans image, alors que c'est celle qui demande de se déplacer — la photo rend le lieu
+réel ; (b) elle démontre l'argument (quatre instruments, quatre pieds différents, tous montés) ;
+(c) la mettre dans `#probleme` aurait montré du doigt les pieds qu'il utilise **aujourd'hui**,
+juste à côté du paragraphe qui nomme leurs fabricants — exactement le dénigrement que toute la
+page évite.
+🚨 **La légende ne dit PAS que les pieds Atlas sont dessus** (ils ne sont pas arrivés) : elle
+décrit l'installation ACTUELLE et annonce que les Atlas y prendront leur place. **Aucune marque
+de pied n'est nommée**, ni dans la légende ni dans l'`alt`.
+
+**4. 🏷️ LE CODE DE RÉDUCTION EST RENOMMÉ : `LESAGE-10` → `DAVID-ATLAS`.**
+Raison de David : *« comme ça, ça ne fait aucune promesse »*. `LESAGE-10` laissait lire un montant
+(10 % ? 10 € ?) qu'aucune source ne confirme ; `DAVID-ATLAS` identifie seulement la provenance.
+**L'interrupteur reste `ATLAS_PROMO_ACTIVE = false`.** Occurrences nettoyées : `src/data/atlas.ts`
+(constante + commentaire d'activation), commentaires `promoText` de `dict.ts` et `en.ts`.
+✅ Vérifié sur le build : `grep -rl "DAVID-ATLAS\|LESAGE-10" dist/` → **0 fichier**.
+Aucun pourcentage n'est annoncé nulle part (`promoText`, `promoDisclosure`, `shop.linkTags.atlas`
+= « Partenaire Atlas »).
+
+### 🎯 LE CAP, SES MOTS — la page renvoyait tout chez Atlas
+> « C'est pas mal, mais pour le moment ça me dessert, car ça renvoie tout vers le site d'Atlas, et moi
+> ce que je veux c'est que les gens viennent l'essayer au showroom. »
+> « Globalement la façon dont les images sont organisées, ça fait brouillon. La photo du Hangout
+> apparaît 2 fois, c'est inutile. »
+
+**INVERSION FAITE, ET ELLE NE DOIT PAS ÊTRE RÉ-INVERSÉE :** tous les boutons pleins (rust) de la page
+pointent désormais sur **`/showroom#agenda`** ; les fiches officielles d'Atlas sont devenues des
+**liens soulignés discrets**. Mesuré sur le rendu : 4 liens `#agenda`, dont 3 en bouton plein
+(hero, Atlas Pro, Atlas All) + 1 dans la section finale ; **0 bouton plein vers atlashandpan.com**.
+🚨 **Raison commerciale À NE JAMAIS ÉCRIRE SUR LA PAGE** : David négocie avec Atlas une commission
+plus élevée sur les ventes conclues en showcase physique qu'en ligne (comme avec Neotone). La page ne
+parle jamais de sa marge. Ne pas ajouter « soutiens-moi en achetant par mon lien », etc.
+ℹ️ Vérifié : `/showroom#agenda` fonctionne (saut d'ancre à 8783 px, `#agenda` sous l'en-tête).
+
+### La nouvelle structure — un tunnel en 8 sections
+`hero` → **`#debout` mon expérience** → **`#probleme` les pieds que j'ai usés** → **`#solution` pourquoi
+Atlas** → partenariat + « je ne les ai pas encore reçus » + emplacement vidéo (fusionnés) → `#modeles`
+→ `#tete` → **`#essayer` venir les essayer** (+ « où les commander » en carte discrète dessous).
+- L'ancienne section « À quoi ça sert, concrètement » a été **absorbée dans `#solution`** : elle vivait
+  AVANT le récit et faisait doublon avec lui.
+- Les deux anciennes sections « partenariat + test » et « la vidéo » sont **fusionnées** (« je filme dès
+  que je les ai » était écrit deux fois). 🚨 Ces trois éléments (affiliation · pas encore reçus ·
+  emplacement vidéo) **ne se séparent plus et ne se retirent pas** : c'est l'honnêteté du site.
+
+### 🖼️ Images : 3 retirées, 1 déplacée — plus AUCUN doublon (mesuré : 0)
+| Fichier | Sort | Pourquoi |
+|---|---|---|
+| `david-scene-debout-2.webp` | **retirée** | 🐞 le bug signalé par David : c'est le **même cliché** que `debout-1` (même concert, même geste), recadré carré |
+| `david-scene-plateau.webp` | **retirée** | démontrait « un pied vit au milieu d'une installation » — ce que `debout-1` montre déjà, avec David en train de jouer |
+| `prod-atlas-body-3.webp` | **retirée** | la tête seule sur fond gris, juste sous la photo du jeu assis : même pièce, même section, deux fois |
+| `prod-atlas-pro-8-*` (deux hauteurs) | **déplacée dans le carrousel Pro** | demande de David : « intègre cette photo dans le carrousel, optimise l'espace » |
+> Les 3 fichiers retirés **restent dans `public/images/`** et **toutes leurs clés i18n restent** dans les
+> deux dictionnaires (`storyPlateauCaption`, `storyStandsPhotoCaption`, `heightFigureCaption`,
+> `alt.stagePlateau`, `alt.stageStands`, `alt.bodyAlone`) : rien à réécrire pour en remettre une.
+> **0 clé i18n supprimée** (vérifié par diff des clés FR et EN contre `HEAD`).
+
+### 📐 L'ÉQUILIBRE DES DEUX COLONNES — le défaut de la capture de David est corrigé
+La figure « deux hauteurs » allongeait la SEULE colonne Atlas Pro, d'où un grand vide sous le tableau
+du All. Elle est passée en **2ᵉ diapositive du carrousel Pro**. **Mesuré dans le navigateur : les deux
+`<article>` font exactement 1350 px.** Ne pas ajouter d'élément à une seule des deux colonnes.
+🚨 **POURQUOI UN NOUVEAU FICHIER `prod-atlas-pro-8-carre.webp` (1170×1170)** : `.carousel` est en
+`aspect-ratio: 1/1` + `object-fit: cover`. Le 720×1170 y perdait 38 % de hauteur — handpan coupé en haut
+ET embouts coupés en bas, c'est-à-dire exactement ce que la photo démontre. `wide: true` (contain)
+aurait laissé son fond blanc dessiner un rectangle sur le cream-deep du carrousel. Repli : la même image
+**recentrée sur un carré blanc pur**. Si `prod-atlas-pro-8-fond-blanc.webp` change, **regénérer** celle-ci.
+
+### 🎟️ LE CODE `DAVID-ATLAS` — CONSTRUIT, FINI, ET VOLONTAIREMENT ÉTEINT
+> ⚠️ Renommé le 20/08/2026 (nuit) : il s'appelait `LESAGE-10`. Voir le 5ᵉ passage plus haut.
+🚨 **CE CODE N'EXISTE PAS ENCORE CHEZ ATLAS.** L'afficher enverrait des visiteurs saisir un code qui
+serait refusé au paiement. Il est donc derrière un interrupteur, dans `src/data/atlas.ts` :
+```ts
+export const ATLAS_PROMO_ACTIVE = false        // ← l'interrupteur
+export const ATLAS_DISCOUNT_CODE = 'DAVID-ATLAS'
+```
+- **Voir le rendu en local** : passer à `true`, `npm run dev`, bas de `/pieds-atlas` — puis **remettre
+  `false`**. (Rendu vérifié : encadré or, code en gros, bouton « Copier le code », phrase de
+  transparence.)
+- **Activer pour de bon** : vérifier le code réellement créé par Atlas, le recopier dans
+  `ATLAS_DISCOUNT_CODE`, passer le drapeau à `true`. **Un seul geste suffit** : `src/data/shop.ts`
+  importe les deux constantes, donc la pastille « copier le code » apparaît aussi toute seule sur la
+  carte Atlas de la boutique. **Ne pas ajouter de `discountCode:` à la main dans `shop.ts`.**
+- **Aucun pourcentage n'est annoncé** et il ne faut pas en inventer. Les textes `promoTitle` / `promoText` / `promoDisclosure` sont écrits pour
+  **rester vrais le jour de l'activation** — ils disent la commission, ils ne promettent aucun montant.
+- ✅ Vérifié sur le build : **`DAVID-ATLAS` n'apparaît dans AUCUNE des 91 pages** de `dist/`.
+
+### Les arguments repris de la page de Warren Shanti (ambassadeur Atlas), reformulés
+Sa page est plus sobre que la nôtre — c'est la leçon principale. Trois de ses arguments manquaient ici ;
+ils sont devenus la bande `solutionFacts`, **sourcés sur la FAQ officielle d'Atlas et attribués**
+(« Atlas annonce / Atlas indique »), jamais endossés par David qui n'a pas les pieds :
+**compatibilité** (tous handpans, acier nitruré / inox / Ember Steel) · **stabilité** (goupille
+anti-basculement, collier de centrage caoutchouc, pieds réglables par vissage — rattrape un sol non
+plat) · **retour gratuit sous 14 jours**, qui ramène au showroom. Aucune phrase n'est recopiée de chez
+lui. Ses autres arguments (jeu assis, notes du dessous, résonance, Made in Italy) étaient déjà là.
+
+### Vérifié
+`npx astro build` 91 pages · **0 doublon d'image** et **0 `undefined`** sur les deux pages ·
+`scrollWidth == innerWidth` en **375 px** (contrôlé dans une iframe de 375, seule façon fiable : la
+fenêtre du Mac ne descend pas sous ~1730 px de viewport) et au bureau · **FR et EN** rendus et clés
+présentes des deux côtés · hero à 375 px : les images restent AVANT le texte (`order-1`).
+⚠️ **PIÈGE D'OUTILLAGE À NE PAS REDÉCOUVRIR** : dans l'extension Chrome, un onglet **en arrière-plan**
+(`visibilityState: "hidden"`) fige le rendu (« aplats blancs en profondeur de page ») ET bloque le
+`scroll-behavior: smooth`, donc les sauts d'ancre semblent ne pas marcher. **Ce ne sont pas des bugs du
+site.** Contournements utilisés : lire le DOM en JS, forcer `scrollBehavior='auto'`, et isoler une
+section (`document.body.innerHTML=''` + clone) pour la faire peindre en haut de l'écran.
+
+### 🖼️ Planche avant / après (deux pages VIVANTES côte à côte)
+`/private/tmp/claude-501/-Users-davidlesage-CLAUDE/37f157af-8d30-4ed8-8a04-1aa5ce6288de/scratchpad/planche-atlas/`
+→ lancer **`./lancer-la-planche.sh`** (démarre 3 serveurs : 4401 = build du commit `558d1fa` = ce qui
+est en ligne, 4402 = la proposition, 4403 = la planche) puis `http://localhost:4403/`.
+Boutons « aller à » par section, bascule 375 px / bureau, bascule FR / EN, et sous les deux colonnes le
+tableau des changements + les vignettes des images retirées. ⚠️ Dossier temporaire : à copier ailleurs
+s'il faut le garder.
+
+### Ce qui reste à faire
+- ✅ FAIT : relecture de David, commit, `git push`, `npx vercel --prod --yes`.
+- Demander à Atlas : le **lien d'affiliation** (`ATLAS_AFFILIATE_URL`), le **vrai code de réduction**,
+  le **kit média** (les visuels actuels viennent de leurs fiches produit), et les infos manquantes
+  (poids du All, essence du bois, poids maxi supporté, garantie, délais, fin de la promo).
+- Filmer la démonstration de David quand les pieds arrivent → `atlasDemoVideoId`.
+- Vérifier le crédit photographe des photos de scène (dossier HangAout 2021, sans photographe nommé).
+
+---
+
+## HISTORIQUE — 20/08/2026 — 🦵 Pieds ATLAS : page produit + showroom (⚠️ NON DÉPLOYÉ)
 
 **Statut : construit et vérifié en local, `npx astro build` OK. RIEN N'EST DÉPLOYÉ, rien n'est commité côté prod.**
 

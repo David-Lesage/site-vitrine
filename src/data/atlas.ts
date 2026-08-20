@@ -17,27 +17,63 @@
 
 // ── 🚧 AFFILIATION — LE SEUL ENDROIT À MODIFIER QUAND LE CODE ARRIVERA ─────
 //
-// David n'a PAS encore reçu son code / lien d'affiliation Atlas (20/08/2026).
-// Tant que les deux constantes ci-dessous sont vides, tous les boutons de la
-// page pointent vers la fiche officielle Atlas, sans aucun paramètre ajouté —
-// c'est volontaire : on n'invente pas d'URL de tracking.
+// David n'a PAS encore reçu son lien d'affiliation Atlas (20/08/2026).
+// Tant que `ATLAS_AFFILIATE_URL` est vide, tous les boutons de la page pointent
+// vers la fiche officielle Atlas, sans aucun paramètre ajouté — c'est
+// volontaire : on n'invente pas d'URL de tracking.
+// (Le code de réduction, lui, a son propre interrupteur juste en dessous.)
 //
 // QUAND ATLAS TRANSMET LES ÉLÉMENTS :
 //   1. `ATLAS_AFFILIATE_URL` = le lien COMPLET fourni par Atlas (celui qui
 //      trace la vente). Ex. 'https://atlashandpan.com/?ref=xxxx'.
 //      → dès qu'il est rempli, `atlasLink()` l'utilise partout à la place des
 //        fiches officielles. Ne pas fabriquer ce lien : le copier tel quel.
-//   2. `ATLAS_DISCOUNT_CODE` = le code de réduction affiché au visiteur, s'il
-//      y en a un (bouton « copier le code », comme pour ÖKO).
-//      → renseigner AUSSI `discountCode: '…'` sur le produit `atlas` de
-//        src/data/shop.ts, et la pastille `shop.linkTags.atlas` des DEUX
-//        dictionnaires (dict.ts + en.ts) si le pourcentage doit s'y afficher.
-//   3. Si la remise a un pourcentage annoncé, l'écrire dans `atlas.discountNote`
-//      (dict.ts + en.ts). Tant qu'on ne le connaît pas, la page n'annonce
-//      AUCUNE remise — mieux vaut rien que faux.
+//   2. Le CODE DE RÉDUCTION ne se règle plus ici : il a son propre bloc
+//      juste en dessous (`ATLAS_PROMO_ACTIVE` / `ATLAS_DISCOUNT_CODE`), qui
+//      pilote À LA FOIS la page /pieds-atlas et la carte Atlas de la boutique.
+//      Ne PAS ajouter de `discountCode:` à la main dans src/data/shop.ts : il
+//      s'y ajoute tout seul quand l'interrupteur passe à `true`.
 //
 export const ATLAS_AFFILIATE_URL = ''
-export const ATLAS_DISCOUNT_CODE = ''
+
+// ── 🎟️ CODE DE RÉDUCTION — CONSTRUIT, PRÊT, MAIS VOLONTAIREMENT ÉTEINT ─────
+//
+// 🚨 AU 20/08/2026, CE CODE N'EXISTE PAS ENCORE CHEZ ATLAS.
+//    Il est écrit ici pour que le bloc soit fini et visible en local, PAS pour
+//    être publié. L'afficher aujourd'hui enverrait des visiteurs saisir un code
+//    qui serait REFUSÉ au paiement : David promettrait une remise imaginaire à
+//    des gens qui viennent de lui faire confiance. C'est le seul vrai risque de
+//    cette page, et c'est pour ça qu'il y a un interrupteur.
+//
+// ▶️ POUR VOIR LE RENDU EN LOCAL (sans rien publier) :
+//      passer `ATLAS_PROMO_ACTIVE` à `true`, lancer `npm run dev`, regarder
+//      /pieds-atlas (bloc « Mon code chez Atlas », en bas de page) — puis
+//      REMETTRE `false` avant de committer.
+//
+// ✅ POUR L'ACTIVER POUR DE BON, LE JOUR OÙ ATLAS CONFIRME LE CODE :
+//      1. vérifier le code réellement créé par Atlas et le recopier dans
+//         `ATLAS_DISCOUNT_CODE` (il peut être différent de `DAVID-ATLAS`) ;
+//      2. passer `ATLAS_PROMO_ACTIVE` à `true`. C'est tout : le bloc apparaît
+//         sur /pieds-atlas ET la pastille « copier le code » apparaît sur la
+//         carte Atlas de la boutique (src/data/shop.ts lit les deux constantes).
+//      3. si — et seulement si — Atlas annonce un POURCENTAGE, l'écrire dans
+//         `atlas.promoText` (dict.ts + en.ts) et dans `shop.linkTags.atlas`.
+//         Tant qu'il n'est pas confirmé, la page dit « une réduction » sans
+//         chiffre : mieux vaut rien que faux.
+//
+// 🏷️ POURQUOI `DAVID-ATLAS` ET PLUS `LESAGE-10` (David, 20/08/2026) :
+//    « comme ça, ça ne fait aucune promesse ». `LESAGE-10` laissait lire un
+//    montant (10 % ? 10 € ?) qu'AUCUNE source ne confirme — le visiteur aurait
+//    déduit une remise que Marco n'a jamais annoncée. `DAVID-ATLAS` n'annonce
+//    rien : il identifie seulement la provenance de la commande. Si un jour un
+//    code chiffré est proposé, ne le recopier ici QUE si le chiffre est écrit
+//    noir sur blanc par Atlas.
+//
+// ⚠️ Les textes `promoTitle` / `promoText` / `promoDisclosure` sont rédigés pour
+//    rester VRAIS le jour de l'activation : ils ne promettent aucun montant, et
+//    ils disent que David touche une commission. Ne pas les « vendre » plus.
+export const ATLAS_PROMO_ACTIVE = false
+export const ATLAS_DISCOUNT_CODE = 'DAVID-ATLAS'
 
 // Fiches officielles (repli tant que le lien d'affiliation n'existe pas).
 export const atlasSite = 'https://atlashandpan.com/en'
@@ -221,6 +257,29 @@ export const atlasAllPhotos: AtlasPhoto[] = [
 //       mesure, jamais la taille apparente.
 export const atlasProHeightPhoto: AtlasPhoto = {
   id: 'proTwoHeights', src: '/images/prod-atlas-pro-8-fond-blanc.webp', w: 720, h: 1170,
+}
+
+// 🔲 LA MÊME PHOTO, MISE AU CARRÉ POUR LE CARROUSEL (20/08/2026).
+//
+// David : « au lieu d'ajouter une deuxième image en dessous du carrousel,
+// intègre cette photo dans le carrousel, optimise l'espace ». Elle ne vit donc
+// plus en figure sous le bloc Atlas Pro : elle est devenue une DIAPOSITIVE.
+//
+// ⚠️ POURQUOI UN FICHIER SÉPARÉ, ET PAS LE 720×1170 DIRECTEMENT :
+//    `.carousel` est en `aspect-ratio: 1/1` et `.carousel-slide img` est en
+//    `object-fit: cover` (src/styles/global.css). Une image de 720×1170 y serait
+//    rognée de 38 % en hauteur — donc handpan coupé en haut ET embouts coupés en
+//    bas : exactement les deux extrémités qui font la démonstration des deux
+//    hauteurs. L'option `wide: true` (contain à 88 %) laisserait, elle, le fond
+//    blanc de la photo dessiner un rectangle sur le fond cream-deep du carrousel
+//    — le défaut que David avait déjà signalé sur le hero.
+//    ➡️ Repli retenu : la même image RECENTRÉE sur un carré blanc pur de
+//       1170 × 1170 (marges blanches à gauche et à droite). En `cover`, elle
+//       remplit exactement la case sans perdre un pixel du sujet.
+//    Générée depuis `prod-atlas-pro-8-fond-blanc.webp` — si celle-ci change,
+//    REGÉNÉRER celle-ci (coins vérifiés à 255,255,255 après génération).
+export const atlasProHeightSquare: AtlasPhoto = {
+  id: 'proTwoHeights', src: '/images/prod-atlas-pro-8-carre.webp', w: 1170, h: 1170,
 }
 
 // 🪑 L'ATLAS BODY — la tête seule, celle qui se coince entre les jambes.
