@@ -335,6 +335,42 @@ const ld = [
       </figure>
     </div>
 
+    {/* 📷 LE SHOWROOM, DANS LA SECTION « POURQUOI JE JOUE DEBOUT » — photo
+        choisie par David le 20/08/2026 : « cette photo avec les 2 Yishama sur
+        pied est aussi intéressante ».
+
+        POURQUOI ICI, ET PAS DANS #probleme NI DANS #solution :
+        1. #probleme nomme les fabricants des pieds que David a usés (Jacomina
+           Kistemaker, Meinl, S Pan). Y poser une photo des pieds qu'il utilise
+           AUJOURD'HUI, c'est exactement le dénigrement que toute la page évite —
+           c'est déjà la raison qui a envoyé la photo du showroom dans #essayer.
+        2. #solution s'appelle « Pourquoi Atlas, maintenant ». Les pieds visibles
+           sur cette photo ne SONT PAS des Atlas (ils ne sont pas arrivés) : la
+           section les ferait lire comme tels. C'est le seul mensonge possible.
+        3. Ici, elle démontre quelque chose que la photo au-dessus ne démontre
+           pas : celle-là prouve le jeu debout EN CONCERT, sous les projecteurs.
+           Celle-ci prouve que ce n'est pas une posture de scène — dans sa propre
+           pièce aussi, les instruments vivent montés sur pieds, à hauteur de jeu.
+           C'est le pas qui manquait avant « les pieds que j'ai usés ».
+        ♻️ Fichier RÉUTILISÉ TEL QUEL : /images/prod-muling-10.jpg (1200×675), il
+           sert déjà sur /micro-muling (`mulingPhotos`). Ni copie, ni ré-encodage.
+        📐 `max-w-3xl` : la source fait 1200 px de large, on ne la sert jamais
+           au-delà. `data-lb="atlas-scene"` = même groupe de lightbox que les
+           deux photos de scène, on navigue de l'une à l'autre au clavier. */}
+    <figure class="mx-auto mt-12 max-w-3xl overflow-hidden rounded-card border border-ink/10 bg-ink">
+      <img
+        src="/images/prod-muling-10.jpg"
+        width="1200"
+        height="675"
+        alt={alt.showroomYishama}
+        loading="lazy"
+        decoding="async"
+        data-lb="atlas-scene"
+        class="block h-auto w-full"
+      />
+      <figcaption class="border-t border-cream/10 px-4 py-3 text-sm leading-relaxed text-cream/75">{a.storyShowroomCaption}</figcaption>
+    </figure>
+
     {/* 🗑️ PHOTO RETIRÉE — `david-scene-plateau.webp` (le plateau installé avant
         un concert en Suisse). Elle démontrait « un pied vit au milieu d'une
         installation entière » — mais la photo ci-dessus le montre DÉJÀ, et en

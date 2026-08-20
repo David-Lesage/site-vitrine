@@ -1000,6 +1000,11 @@ export const en: Dict = {
     //    replaced by `mesh()` in AtlasPage.astro, so the caption is rendered
     //    with `set:html`. Never write a URL here. The handpans ARE Yishama
     //    instruments: naming them is a fact, not a sales addition.
+    // 🖼️ Showroom photo in #debout (20/08/2026) — see dict.ts for why it sits
+    //    here and not in #probleme or #solution. No stand brand is ever named,
+    //    and nothing suggests the Atlas stands are in the picture.
+    storyShowroomCaption:
+      'Same thing at the showroom: my two Yishama acoustic handpans stay mounted on their stands, at playing height, ready to be played. A handpan stand isn’t an accessory you get out for concerts — it’s what the instrument lives on.',
     storyPlateauCaption:
       'My stage set up, before a concert in a hall in Switzerland. A handpan stand never lives on its own: it holds in the middle of everything else, and it is the thing that sets the height for all of it.',
     storyFestivalCaption:
@@ -1192,6 +1197,9 @@ export const en: Dict = {
       //    describe material and shape, never the maker. The INSTRUMENTS are
       //    named — they are David's, and that is what the photo proves.
       // 🚨 Do NOT list the Atlas stands: they are not in this photo.
+      // 📷 /images/prod-muling-10.jpg — reused from /micro-muling, in #debout.
+      showroomYishama:
+        'David Lesage at the Le Nid showroom in Paris: behind him, two Yishama steel acoustic handpans, each mounted on its own black tripod on a woven mat, in a large white room with lit archways and a pale wooden floor.',
       showroomInstruments:
         'David Lesage’s showroom set up before a showcase: two Neotone electronic handpans with a lit rim, on black tripods next to an electronic drum kit, and two Yishama acoustic steel handpans, one on a wooden tripod, the other on a metal stand; a calabash half-sphere resting on a red mat in the foreground, old wooden floor, fairy lights and a rosette on the wall.',
       stageStanding:
@@ -1502,6 +1510,21 @@ export const en: Dict = {
     ],
     alsoNote: 'Coming for one of them in particular? Tick it when you book your spot: I’ll have it ready for the session.',
 
+    // ── 🎠 “The rest of what I play” carousel (20/08/2026) — see dict.ts.
+    //    Files are REUSED as-is from the dedicated pages; ids must match
+    //    `showroomAlsoGallery` in src/data/showroom.ts.
+    alsoAlt: {
+      gonileleProduit:
+        'The Gonilélé harp leaning against a tree trunk: a round calabash body covered with skin, a long carved light-wood neck and ten strings running up to the tuners.',
+      calebasse:
+        'The Now Groove calabash kit: a calabash half-sphere resting upside down on a wide skin mat, with two blue egg-shaped shakers.',
+      hisong:
+        'An acoustic handpan on a mat, next to the Hisong AirStudio S1 microphone on its stand, its earbuds, and the tablet showing the microphone settings app.',
+      muling:
+        'The underside of an acoustic handpan fitted with the Muling set: two red contact capsules stuck to the shell, cabled to the HMP-2 preamp lying on the floor.',
+    },
+
+
     // ── 🦵 THE ATLAS STANDS (20/08/2026) ───────────────────────────────────
     // Affiliate partnership confirmed with Atlas (Italian maker): they are
     // sending TWO demonstration stands, so they will genuinely be on site.
@@ -1545,7 +1568,10 @@ export const en: Dict = {
     photoCaption: {
       vueEnsemble: 'A showcase at Le Nid — audience in a circle, instruments at the centre.',
       instruments: 'What waits for you on arrival: Neotone, Yishama, calabash, ready to be played.',
-      presentation: 'The introduction, before you pick up the mallets yourself.',
+      // 🚨 Fixed 20/08/2026 (David): the previous line said “before you pick
+      //    up the mallets”. A handpan is played WITH THE HANDS, and no
+      //    mallets are used at the showcases. Do not reintroduce them.
+      presentation: 'The introduction, before you put your hands on the instruments.',
       gonilele: 'The Gonilélé, the African calabash harp — and the mic that amplifies it.',
     },
     galleryEyebrow: 'In pictures',

@@ -1107,6 +1107,24 @@ const fr = {
     //    Elles disent ce que la photo PROUVE, pas ce qu'elle montre.
     // 🚨 storyFestivalCaption : la marque des pieds n'y est PAS nommée, et ne
     //    doit jamais l'être — voir le commentaire de `alt.stageFestival`.
+    // 🖼️ PHOTO DU SHOWROOM DANS #debout (20/08/2026, photo choisie par David :
+    //    « cette photo avec les 2 Yishama sur pied est aussi intéressante »).
+    //    ♻️ Fichier RÉUTILISÉ TEL QUEL : /images/prod-muling-10.jpg (1200×675),
+    //       il sert déjà sur /micro-muling. Ni copie, ni ré-encodage.
+    //    POURQUOI #debout ET PAS #probleme : #probleme nomme les fabricants des
+    //    pieds que David a usés ; y poser une photo des pieds qu'il utilise
+    //    AUJOURD'HUI, c'est le dénigrement que toute la page évite (même
+    //    raisonnement que pour la photo de #essayer). Et pas #solution non plus :
+    //    les pieds visibles ici ne sont PAS des Atlas, la section « Pourquoi
+    //    Atlas » les ferait lire comme tels.
+    //    CE QU'ELLE DÉMONTRE ICI : la photo de scène juste au-dessus prouve le
+    //    jeu debout EN CONCERT ; celle-ci prouve que ce n'est pas une posture de
+    //    scène — dans sa propre pièce aussi, les instruments vivent montés sur
+    //    pieds, à hauteur de jeu.
+    // 🚨 AUCUNE MARQUE DE PIED N'EST NOMMÉE, et rien ne laisse entendre que des
+    //    Atlas sont sur la photo (ils ne sont pas arrivés).
+    storyShowroomCaption:
+      'Au showroom, c’est pareil : mes deux handpans acoustiques Yishama restent montés sur leurs pieds, à hauteur de jeu, prêts à être joués. Un pied de handpan n’est pas un accessoire qu’on sort pour les concerts — c’est ce sur quoi l’instrument vit.',
     storyPlateauCaption:
       'Mon plateau installé, avant un concert dans une salle en Suisse. Un pied de handpan ne vit jamais seul : il tient au milieu de tout le reste, et c’est lui qui fixe la hauteur de tout.',
     // 🔗 MAILLAGE : le jeton {yishama} devient un lien vers /yishama (ou
@@ -1364,6 +1382,10 @@ const fr = {
       //    fabricant. Les INSTRUMENTS, eux, sont nommés — ce sont ceux de
       //    David, et c'est ce que la photo prouve.
       // 🚨 Ne PAS y faire figurer les pieds Atlas : ils ne sont pas dessus.
+      // 📷 /images/prod-muling-10.jpg — RÉUTILISÉE de /micro-muling, section
+      //    #debout. Même règle : les INSTRUMENTS sont nommés, les PIEDS jamais.
+      showroomYishama:
+        'David Lesage au showroom du Nid, à Paris : derrière lui, deux handpans acoustiques Yishama en acier, chacun monté sur son trépied noir sur un tapis tressé, dans une grande pièce blanche aux arches éclairées et au parquet clair.',
       showroomInstruments:
         'Le showroom de David Lesage installé avant un showcase : deux handpans électroniques Neotone à couronne lumineuse montés sur trépieds noirs près d’un kit de percussions électroniques, et deux handpans acoustiques Yishama en acier, l’un sur un trépied en bois, l’autre sur un pied métallique ; une demi-sphère de calebasse posée sur un tapis rouge au premier plan, parquet ancien, guirlandes lumineuses et rosace au mur.',
       // 📷 Photos de scène de David — HangAout 2021, dossier COM de David.
@@ -1707,6 +1729,29 @@ const fr = {
     ],
     alsoNote: 'Tu viens pour l’un d’eux en particulier ? Coche-le au moment de réserver ta place : je le prépare pour la séance.',
 
+    // ── 🎠 CARROUSEL « LE RESTE DE CE QUE JE JOUE » (20/08/2026, demande de
+    //    David : « il faudrait créer un carrousel où on voit des images de
+    //    calebasse / micro Hisong / micro Muling / Gonilélé »).
+    //    Les fichiers sont RÉUTILISÉS TELS QUELS depuis les pages dédiées
+    //    (/gonilele, /micro-muling, la boutique) : aucun nouveau fichier,
+    //    aucun ré-encodage. La liste vit dans `showroomAlsoGallery`
+    //    (src/data/showroom.ts) ; chaque `id` doit avoir sa clé ICI et dans en.ts.
+    //    ⓘ La 1ʳᵉ diapositive est la photo du Gonilélé au showroom, qui était
+    //      avant une figure isolée au-dessus des cartes : elle n'est pas perdue,
+    //      elle a juste rejoint le carrousel (son alt reste `photoAlt.gonilele`
+    //      et sa légende `photoCaption.gonilele` reste dans les deux dicos).
+    alsoAlt: {
+      gonileleProduit:
+        'La harpe Gonilélé posée contre le tronc d’un arbre : caisse ronde en calebasse tendue de peau, long manche en bois clair sculpté et dix cordes tendues vers les mécaniques.',
+      calebasse:
+        'Le kit calebasse Now Groove : une demi-sphère de calebasse posée à l’envers sur un large tapis de peau, avec deux shakers bleus en forme d’œuf.',
+      hisong:
+        'Un handpan acoustique posé sur un tapis, à côté du micro Hisong AirStudio S1 sur son socle, de ses écouteurs et de la tablette qui affiche l’application de réglage du micro.',
+      muling:
+        'Le dessous d’un handpan acoustique équipé du set Muling : deux capsules de contact rouges collées sur la caisse, reliées par leurs câbles au préampli HMP-2 posé au sol.',
+    },
+
+
     // ── 🦵 LES PIEDS ATLAS (20/08/2026) ────────────────────────────────────
     // Partenariat d'affiliation validé avec Atlas (fabricant italien) : ils
     // envoient DEUX pieds de démonstration, ils seront donc RÉELLEMENT sur
@@ -1757,7 +1802,12 @@ const fr = {
     photoCaption: {
       vueEnsemble: 'Un showcase au Nid — public assis en cercle, instruments au centre.',
       instruments: 'Ce qui t’attend en arrivant : Neotone, Yishama, calebasse, prêts à être joués.',
-      presentation: 'Le temps de présentation, avant que tu prennes les baguettes.',
+      // 🚨 CORRIGÉ le 20/08/2026 (David) — la version précédente disait
+      //    « avant que tu prennes les baguettes ». Un handpan se joue AUX
+      //    MAINS, et aucune baguette ne circule pendant les showcases :
+      //    la phrase était fausse. Ne pas réintroduire de baguette/mailloche
+      //    dans les textes du showroom.
+      presentation: 'Le temps de présentation, avant que tu poses les mains sur les instruments.',
       gonilele: 'Le Gonilélé, la harpe africaine à calebasse — et le micro qui la sonorise.',
     },
     galleryEyebrow: 'En images',

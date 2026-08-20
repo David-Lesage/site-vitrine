@@ -13,8 +13,8 @@ import { priceForKind, priceGrid } from '@/lib/sessions'
 import BookingForm from '@/components/BookingForm.astro'
 import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
-import { showroomGallery, showroomPhotos } from '@/data/showroom'
-import { atlasProPhotos, atlasAllPhotos } from '@/data/atlas'
+import { showroomGallery, showroomAlsoGallery, showroomPhotos } from '@/data/showroom'
+import { atlasProPhotos, atlasAllPhotos, atlasProHeightSquare } from '@/data/atlas'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -24,12 +24,34 @@ const sh = t.showroom
 const bk = t.booking
 const L = (p: string) => localizePath(p, lang)
 const eventIcons = ['lucide:presentation', 'lucide:compass', 'lucide:hand', 'lucide:graduation-cap']
-// Pieds Atlas — MÊME ORDRE que `sh.atlasModels` (Pro puis All). Deux prises de
-// vue produit sur fond blanc, pour que les deux vignettes se ressemblent ;
-// les textes alternatifs sont ceux de la fiche dédiée (`atlas.alt`), jamais
+// 🦵 PIEDS ATLAS — LES MÊMES CARROUSELS QUE /pieds-atlas (20/08/2026).
+// David : « les photos des pieds sont trop petites sur la page showroom, ils ne
+// sont pas bien mis en valeur, il faudrait utiliser les mêmes carrousels que la
+// page qui leur est dédiée. »
+// AVANT : deux vignettes fixes (une photo par modèle), hautes de 224 px.
+// MAINTENANT : deux <Carousel>, avec EXACTEMENT les mêmes diapositives, dans le
+// même ordre, que les carrousels de la fiche dédiée (AtlasPage.astro) — Pro =
+// photo de couverture, puis la vue carrée « deux hauteurs », puis le reste ;
+// All = ses sept photos. Si tu changes l'un, change l'autre : c'est le même
+// produit, il ne doit pas se raconter en deux jeux d'images différents.
+// ⚠️ Les `id` de carrousel sont préfixés `showroom-` : ils doivent rester
+//    uniques dans la page (le script du carrousel les indexe par `data-carousel`).
+// Les textes alternatifs restent ceux de la fiche dédiée (`atlas.alt`), jamais
 // réécrits ici, pour qu'ils ne divergent pas entre les deux pages.
-const atlasShowroomPhotos = [atlasProPhotos[0], atlasAllPhotos[1]]
 const atlasAlt = t.atlas.alt as Record<string, string>
+const atlasSlides = (photos: { id: string; src: string; w: number; h: number }[]) =>
+  photos.map((p) => ({ src: p.src, alt: atlasAlt[p.id], w: p.w, h: p.h }))
+const atlasCarousels = [
+  {
+    id: 'showroom-atlas-pro',
+    slides: [
+      atlasSlides(atlasProPhotos)[0],
+      { src: atlasProHeightSquare.src, alt: atlasAlt[atlasProHeightSquare.id], w: atlasProHeightSquare.w, h: atlasProHeightSquare.h },
+      ...atlasSlides(atlasProPhotos).slice(1),
+    ],
+  },
+  { id: 'showroom-atlas-all', slides: atlasSlides(atlasAllPhotos) },
+]
 // Les deux univers essayables sur place — mêmes accents que sur l'accueil,
 // mêmes destinations. L'ordre suit le titre (acoustique puis électronique)
 // et n'exprime aucune préférence.
@@ -108,6 +130,29 @@ const carouselLabels =
   lang === 'en'
     ? { prev: 'Previous photo', next: 'Next photo', photo: 'Photo', photosOf: 'Photos of' }
     : undefined
+
+// 🎠 CARROUSEL « Le reste de ce que je joue est là aussi » (20/08/2026, David :
+// « il faudrait créer un carrousel où on voit des images de calebasse / micro
+// Hisong / micro Muling / Gonilélé »). La section annonçait ces instruments EN
+// MOTS : seule la harpe avait une image, et les micros et la calebasse
+// n'existaient nulle part en photo sur la page.
+// Le CHOIX des cinq visuels et la raison de chacun sont documentés dans
+// `showroomAlsoGallery` (src/data/showroom.ts). Tous les fichiers sont
+// réutilisés tels quels depuis les pages dédiées.
+// ⓘ La 1ʳᵉ diapositive est l'ancienne figure isolée du Gonilélé : elle n'est pas
+//   perdue, elle a rejoint le carrousel — donc le Gonilélé n'apparaît pas deux
+//   fois dans la même section. Son alt reste `photoAlt.gonilele`.
+const alsoAlt = sh.alsoAlt as Record<string, string | undefined>
+const alsoSlides = showroomAlsoGallery.map((p) => ({
+  src: p.src,
+  w: p.w,
+  h: p.h,
+  // `wide` (object-fit: contain) comme le carrousel « En images » : la série
+  // mélange portrait (harpe, micro Hisong), carré (calebasse) et paysage
+  // (Muling). En `cover`, la calebasse et le préampli seraient coupés.
+  wide: true,
+  alt: (p.id === 'gonileleShowroom' ? sh.photoAlt.gonilele : alsoAlt[p.id]) ?? sh.galleryAltFallback,
+}))
 ---
 
 <Layout title={sh.title} description={sh.description} ldJSON={ld}>
@@ -286,23 +331,26 @@ const carouselLabels =
         <h2 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.alsoTitle}</h2>
         <p class="mt-3 text-ink-soft/85">{sh.alsoIntro}</p>
       </div>
-      {/* 🎼 LA SEULE IMAGE DU GONILÉLÉ DE LA PAGE (19/08/2026). Ce bloc venait
-          d'être ajouté (un joueur de N'Goni avait réservé sans savoir qu'on en
-          parlait ici) et n'avait AUCUNE illustration : on annonçait un
-          instrument que personne ne pouvait se représenter.
-          Format portrait → largeur bridée, sinon elle écrase les 3 cartes. */}
-      <figure class="mx-auto mt-8 max-w-xs overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40 sm:max-w-sm">
-        <img
-          src={showroomPhotos.gonilele.src}
-          width={showroomPhotos.gonilele.w}
-          height={showroomPhotos.gonilele.h}
-          alt={sh.photoAlt.gonilele}
-          loading="lazy"
-          decoding="async"
-          class="block h-auto w-full"
-        />
-        <figcaption class="px-4 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.gonilele}</figcaption>
-      </figure>
+      {/* 🎠 LE CARROUSEL DES AUTRES INSTRUMENTS (20/08/2026, demande de David).
+          AVANT : une figure isolée du Gonilélé (max-w-xs), et RIEN pour la
+          calebasse ni pour les deux micros — trois cartes de texte annonçaient
+          des objets que personne ne pouvait se représenter.
+          MAINTENANT : un carrousel (le même composant que « En images » et que
+          /pieds-atlas), qui OUVRE sur cette même photo du Gonilélé au showroom.
+          ➡️ Rien n'est perdu et le Gonilélé n'est pas montré deux fois.
+          📐 `max-w-lg` : le carrousel est carré (aspect-ratio 1/1, global.css).
+             Sans bride, il ferait 1152 px de haut au bureau et repousserait les
+             trois cartes hors de l'écran.
+          🖐️ Défilement au doigt + plein écran au clic : c'est <Lightbox />,
+             inclus UNE SEULE FOIS en bas de page — ne pas en rajouter ici. */}
+      <div class="mx-auto mt-8 max-w-lg">
+        {/* 🚫 PAS DE PHRASE « fais glisser du doigt » ICI : le carrousel
+            « En images », plus bas sur la MÊME page, porte déjà exactement
+            cette consigne (`galleryIntro`). La répéter à 2 000 px d'écart, ce
+            serait le doublon que David reproche. Les flèches, les points et la
+            démo automatique du composant suffisent. */}
+        <Carousel id="showroom-also" slides={alsoSlides} alt={sh.alsoTitle} labels={carouselLabels} />
+      </div>
       <div class="mt-8 grid gap-5 md:grid-cols-3">
         {sh.also.map((a, i) => (
           <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6">
@@ -332,26 +380,23 @@ const carouselLabels =
           <h3 class="mt-3 font-display text-xl font-700 md:text-2xl">{sh.atlasTitle}</h3>
           <p class="mt-3 text-sm text-ink-soft/85">{sh.atlasIntro}</p>
         </div>
-        <div class="mt-8 grid gap-5 sm:grid-cols-2">
+        {/* 🎠 LES MÊMES CARROUSELS QUE /pieds-atlas (20/08/2026, David : « les
+            photos des pieds sont trop petites […] il faudrait utiliser les
+            mêmes carrousels que la page qui leur est dédiée »).
+            AVANT : une vignette fixe par modèle, haute de 224 px — on voyait un
+            pied, jamais le produit (repli, sac, tête, réglage de hauteur).
+            MAINTENANT : le composant <Carousel>, avec les mêmes diapositives et
+            le même ordre que la fiche dédiée (jeux construits en haut de ce
+            fichier). Défilement au doigt, flèches, points, et plein écran au
+            clic via <Lightbox /> — inclus une seule fois en bas de page.
+            📐 Plus de `bg-white` autour : les photos produit sont détourées sur
+               blanc et remplissent maintenant tout le cadre carré du carrousel,
+               il n'y a plus de rectangle blanc à masquer. */}
+        <div class="mt-8 grid gap-6 sm:grid-cols-2">
           {sh.atlasModels.map((m, i) => (
-            <div class="overflow-hidden rounded-xl border border-ink/10 bg-cream-deep/40">
-              {/* Panneau image en HAUT et en pleine largeur, pas une vignette
-                  latérale (corrigé le 20/08/2026) : en 80 × 128 px, l'Atlas All
-                  — bois clair sur fond blanc — devenait littéralement invisible.
-                  `bg-white` parce que les deux photos produit sont détourées sur
-                  blanc : un fond cream aurait dessiné un rectangle blanc autour. */}
-              <div class="grid place-items-center bg-white p-3">
-                <img
-                  src={atlasShowroomPhotos[i].src}
-                  width={atlasShowroomPhotos[i].w}
-                  height={atlasShowroomPhotos[i].h}
-                  alt={atlasAlt[atlasShowroomPhotos[i].id]}
-                  loading="lazy"
-                  decoding="async"
-                  class="h-56 w-auto object-contain"
-                />
-              </div>
-              <div class="p-4">
+            <div class="overflow-hidden rounded-xl border border-ink/10 bg-cream-deep/40 p-4">
+              <Carousel id={atlasCarousels[i].id} slides={atlasCarousels[i].slides} alt={m.name} labels={carouselLabels} />
+              <div class="mt-4">
                 <p class="font-display text-lg font-700">{m.name}</p>
                 <p class="mt-1 text-sm text-ink-soft/85">{m.text}</p>
               </div>

@@ -37,8 +37,16 @@ export interface ShowroomPhoto {
   h: number
 }
 
+// 🗑️ DIAPOSITIVE RETIRÉE le 20/08/2026 (David) — `showroom-demo-neotone-1.webp`.
+//    C'était le MÊME instant que `showroom-demo-neotone-2.webp` (même démo,
+//    même geste, cadrage un peu plus serré), en plus terne. « Dans le carrousel
+//    il y a deux fois la même photo, enlève la 1/6, elle est plus terne. »
+//    ⚠️ Le FICHIER reste dans public/images/ et son texte alternatif reste dans
+//    les deux dictionnaires (`galleryAlt.demoNeotone1`) : remettre la ligne
+//    ci-dessous suffit à la réafficher. Le compteur du carrousel se recalcule
+//    tout seul (« 1 / 5 »), il n'y a rien d'autre à toucher.
+//    { id: 'demoNeotone1', src: '/images/showroom-demo-neotone-1.webp', w: 1800, h: 831 },
 export const showroomGallery: ShowroomPhoto[] = [
-  { id: 'demoNeotone1', src: '/images/showroom-demo-neotone-1.webp', w: 1800, h: 831 },
   { id: 'demoNeotone2', src: '/images/showroom-demo-neotone-2.webp', w: 1800, h: 830 },
   { id: 'gonileleMicro', src: '/images/showroom-gonilele-micro-hisong.webp', w: 1000, h: 1778 },
   { id: 'yishamaMicros', src: '/images/showroom-yishama-micros-hisong.webp', w: 1000, h: 1778 },
@@ -58,3 +66,41 @@ export const showroomPhotos = {
   presentation: { src: '/images/showroom-david-presentation.webp', w: 1800, h: 1012 },
   gonilele: { src: '/images/showroom-david-gonilele.webp', w: 1100, h: 1956 },
 } as const
+
+// ============================================================
+// 🎠 CARROUSEL « LE RESTE DE CE QUE JE JOUE EST LÀ AUSSI »
+//    (/showroom · section `also`) — ajouté le 20/08/2026.
+//
+// David : « il faudrait créer un carrousel où on voit des images de calebasse /
+// micro Hisong / micro Muling / Gonilélé, tu peux aller chercher des images
+// spécifiques sur les pages du site qui leur sont dédiées. »
+//
+// ♻️ TOUS CES FICHIERS SONT RÉUTILISÉS TELS QUELS — aucun nouveau fichier,
+//    aucun ré-encodage. Ils servent déjà sur /gonilele, /micro-muling et la
+//    boutique (src/data/gonilele.ts, src/data/muling.ts, src/data/shop.ts).
+//
+// 🎯 POURQUOI CES CINQ-LÀ, ET PAS LES VINGT AUTRES (une ou deux par instrument) :
+//    · `showroom-david-gonilele` — la SEULE prise au showroom : David tient le
+//      Gonilélé et montre le micro. Elle était une figure isolée au-dessus des
+//      cartes ; elle ouvre maintenant le carrousel, en plus grand.
+//    · `prod-gonilele-4`   — l'instrument ENTIER, lisible d'un coup d'œil
+//      (c'est déjà la couverture boutique). Les autres sont des détails.
+//    · `prod-calebasse`    — le kit complet : calebasse, tapis de peau, shakers.
+//      (`prod-calebasse-2` en est un doublon exact — ne pas ajouter les deux.)
+//    · `prod-hisong-7`     — photo de David : handpan + micro sur socle +
+//      tablette de réglage. Les autres visuels Hisong sont des visuels
+//      publicitaires de la marque, avec du texte anglais incrusté : inutilisables
+//      sur une page bilingue.
+//    · `prod-muling-2`     — on voit CE QU'EST le set : les capsules sur la
+//      caisse et le préampli au bout du câble. C'est le seul qui l'explique.
+//
+// 👉 POUR EN AJOUTER UNE : une ligne ici (dimensions RÉELLES obligatoires) +
+//    la clé de même `id` dans `showroom.alsoAlt` de dict.ts ET de en.ts.
+// ============================================================
+export const showroomAlsoGallery: ShowroomPhoto[] = [
+  { id: 'gonileleShowroom', src: '/images/showroom-david-gonilele.webp', w: 1100, h: 1956 },
+  { id: 'gonileleProduit', src: '/images/prod-gonilele-4.jpg', w: 820, h: 1100 },
+  { id: 'calebasse', src: '/images/prod-calebasse.jpeg', w: 1000, h: 1000 },
+  { id: 'hisong', src: '/images/prod-hisong-7.jpg', w: 731, h: 1300 },
+  { id: 'muling', src: '/images/prod-muling-2.jpg', w: 1200, h: 675 },
+]

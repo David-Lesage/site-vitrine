@@ -29,6 +29,90 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 20/08/2026 (fin de nuit) — 🎠 Showroom : 3 carrousels + 2 bugs de texte/photo
+
+**Statut : ✅ COMMITÉ, POUSSÉ ET DÉPLOYÉ EN PRODUCTION.** Cinq corrections demandées par David,
+toutes sur `/showroom` sauf la dernière (`/pieds-atlas`).
+Fichiers touchés : `src/components/pages/ShowroomPage.astro`, `src/components/pages/AtlasPage.astro`,
+`src/data/showroom.ts`, `src/i18n/dict.ts`, `src/i18n/en.ts`. **Aucun fichier image créé, aucun
+ré-encodage, aucune dépendance.**
+
+**1. 🐞 Légende absurde corrigée** — `showroom.photoCaption.presentation`.
+« Le temps de présentation, avant que tu prennes **les baguettes**. » → « …avant que tu **poses les
+mains sur les instruments**. » (EN : « …before you **put your hands on the instruments**. »)
+Ses mots : *« cette phrase n'a aucun sens, personne ne va utiliser des baguettes pendant mes
+showrooms »* — un handpan se joue AUX MAINS. `grep -rn "baguette" src/` : les deux seules autres
+occurrences (`guides.ts` FR/EN) disent justement « on en joue **sans** baguette » → correctes,
+laissées telles quelles. ⚠️ Ne jamais réintroduire baguette / mailloche / mallet dans les textes
+du showroom.
+
+**2. 🦵 Les pieds Atlas ont les MÊMES CARROUSELS que leur page dédiée.**
+Ses mots : *« les photos des pieds sont trop petites sur la page showroom, ils ne sont pas bien mis
+en valeur, il faudrait utiliser les mêmes carrousels que la page qui leur est dédiée. »*
+AVANT : deux vignettes fixes de 224 px (une photo par modèle). MAINTENANT : deux `<Carousel>` avec
+**exactement les mêmes diapositives et le même ordre** que `/pieds-atlas` — Pro = 8 photos (couverture,
+la vue carrée « deux hauteurs », puis le reste), All = 7 photos. Les jeux sont construits en haut de
+`ShowroomPage.astro` (`atlasCarousels`) ; les `alt` restent ceux de `t.atlas.alt`, jamais réécrits.
+🚨 **Si tu changes un carrousel Atlas, change l'autre** : même produit, il ne doit pas se raconter en
+deux jeux d'images différents.
+📐 Mesuré : 530 × 530 px au bureau (contre 224 px avant), 261 × 261 px à 375 px ; les deux cartes
+font exactement la même hauteur (671 px / 671 px au bureau, 442 / 442 à 375 px).
+
+**3. 🎠 Un carrousel pour « Le reste de ce que je joue est là aussi ».**
+Ses mots : *« il faudrait créer un carrousel où on voit des images de calebasse / micro Hisong /
+micro Muling / Gonilélé. »* La section annonçait ces instruments en MOTS : seule la harpe avait une
+image, la calebasse et les deux micros n'existaient nulle part en photo sur la page.
+Liste + justification de chaque visuel : `showroomAlsoGallery` dans `src/data/showroom.ts`.
+5 diapositives, toutes **réutilisées telles quelles** :
+`showroom-david-gonilele.webp` · `prod-gonilele-4.jpg` · `prod-calebasse.jpeg` · `prod-hisong-7.jpg` ·
+`prod-muling-2.jpg`. Alts FR + EN sous `showroom.alsoAlt`.
+⚠️ **L'ANCIENNE FIGURE ISOLÉE DU GONILÉLÉ A ÉTÉ FONDUE DANS LE CARROUSEL** (elle en est la 1ʳᵉ
+diapositive, en 512 px au lieu de 320) : rien n'est perdu, et le Gonilélé n'apparaît pas deux fois
+dans la même section. Son `alt` reste `photoAlt.gonilele` ; `photoCaption.gonilele` reste dans les
+deux dicos (plus affichée — une ligne à remettre si David la veut).
+🚫 **Pas de phrase « fais glisser du doigt » sous ce carrousel** : `galleryIntro` la dit déjà plus
+bas sur la même page, ça aurait été le doublon que David reproche.
+
+**4. 🐞 Doublon retiré du carrousel `#agenda`** — `showroom-demo-neotone-1.webp`.
+Ses mots : *« dans le carrousel il y a deux fois la même photo, enlève la 1/6, elle est plus terne. »*
+Même instant que `showroom-demo-neotone-2.webp`. La ligne est **commentée** dans `showroomGallery`,
+le **fichier reste** dans `public/images/` et `galleryAlt.demoNeotone1` reste dans les deux dicos.
+✅ Compteur vérifié dans le rendu : « **1 / 5** » (FR et EN).
+
+**5. 📷 `prod-muling-10.jpg` ajoutée sur `/pieds-atlas`, dans `#debout`.**
+Ses mots : *« cette photo avec les 2 Yishama sur pied est aussi intéressante. »* Fichier **réutilisé
+tel quel** (1200 × 675, il sert déjà sur `/micro-muling`) — ni copie, ni ré-encodage.
+**POURQUOI `#debout` ET PAS `#probleme` NI `#solution`** (le raisonnement est aussi écrit en
+commentaire dans `AtlasPage.astro` et dans `dict.ts`) :
+- **pas `#probleme`** : cette section nomme les fabricants des pieds que David a usés (Jacomina
+  Kistemaker, Meinl, S Pan). Y poser une photo des pieds qu'il utilise AUJOURD'HUI, c'est exactement
+  le dénigrement que toute la page évite — c'est déjà ce qui avait envoyé `showroom-instruments.webp`
+  dans `#essayer`.
+- **pas `#solution`** : la section s'appelle « Pourquoi Atlas, maintenant ». Les pieds visibles sur
+  la photo **ne sont pas des Atlas** (ils ne sont pas arrivés) : la section les ferait lire comme tels.
+- **`#debout` : elle démontre ce que la photo au-dessus ne démontre pas.** Celle-là prouve le jeu
+  debout EN CONCERT, sous les projecteurs ; celle-ci prouve que ce n'est pas une posture de scène —
+  dans sa propre pièce aussi, les instruments vivent montés sur pieds, à hauteur de jeu. C'est la
+  marche qui manquait avant « les pieds que j'ai usés ».
+Nouvelles clés : `atlas.storyShowroomCaption` (légende) et `atlas.alt.showroomYishama`, FR + EN.
+`data-lb="atlas-scene"` → même groupe de lightbox que les deux photos de scène (3 images, navigation
+‹ ›). 🚨 **Aucune marque de pied n'est nommée**, ni dans la légende ni dans l'`alt`, et rien ne
+laisse entendre que des Atlas sont dessus.
+
+### ✅ CE QUI A ÉTÉ VÉRIFIÉ (rendu réel, pas seulement `astro build`)
+Serveur local sur `dist/`, **mesure du DOM dans une iframe** de 375 px et 1280 px (la capture d'écran
+de l'extension était de nouveau capricieuse — onglet en arrière-plan, `innerWidth: 0`, rendu figé) :
+- **FR et EN, 375 px et 1280 px** : 4 carrousels par page, compteurs `1/5`, `1/8`, `1/7`, `1/5`,
+  points de navigation 5 / 8 / 7 / 5, `body.scrollWidth == clientWidth` (aucun débordement horizontal).
+- **Au doigt** : `touchstart/touchmove/touchend` simulés → le carrousel « also » passe 1/5 → 2/5 puis
+  revient à 1/5 ; les deux carrousels Atlas avancent aussi. **Au clic** : la lightbox s'ouvre sur la
+  BONNE diapositive (`3 / 8`, `3 / 7`), ‹ › navigue, × ferme (`aria-hidden` repasse à `true`).
+- **Règles du chantier re-vérifiées sur le build** : `grep -rl "DAVID-ATLAS\|LESAGE-10" dist/` → 0
+  fichier (`ATLAS_PROMO_ACTIVE` toujours `false`) ; 4 liens `/showroom#agenda` sur `/pieds-atlas` ;
+  aucun `baguette`/`mallet` dans les 4 pages touchées ; aucune clé i18n supprimée.
+
+---
+
 ## ÉTAT ACTUEL — 20/08/2026 (nuit) — 🔄 Pieds ATLAS : REFONTE EN TUNNEL, destination = le SHOWROOM
 
 **Statut : ✅ VALIDÉ PAR DAVID, COMMITÉ ET DÉPLOYÉ EN PRODUCTION le 20/08/2026 (nuit).**
