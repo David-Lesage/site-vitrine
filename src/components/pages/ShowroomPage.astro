@@ -31,17 +31,45 @@ import type { Lang } from '@/i18n/config'
 //    3. #agenda ................... « je m'inscris. »            ← LE BUT
 //    4. le déroulé ................ « comment ça se PASSE ? »
 //    5. #deux-univers ............. « qu'est-ce qu'il Y A, sur place ? »
-//    6. #en-images ................ « je vais me sentir comment ? »
-//    7. rappel de la date ......... « bon, j'y vais. »            ← LE BUT (2)
-//    8. exclusivité ............... « et si je veux repartir avec ? »
-//    9. #individuel ............... « et si je ne peux pas venir ? »
+//       └─ 4ᵉ chapitre : « En images » (ancre `#en-images` conservée)
+//    6. rappel de la date ......... « bon, j'y vais. »            ← LE BUT (2)
+//    7. exclusivité ............... « et si je veux repartir avec ? »
+//    8. #individuel ............... « et si je ne peux pas venir ? »
+//
+// ════════════════════════════════════════════════════════════════════════════
+// 🖼️ 21/08/2026 (soir) — « EN IMAGES » N'EST PLUS UNE SECTION, C'EST UN
+//    CHAPITRE. Mot de David : « ce que je trouve un peu bordélique, c'est le
+//    côté plusieurs endroits. "Le showroom, en photos" fait un peu doublon
+//    avec le carrousel du début, non ? »
+//
+//    ⚖️ VÉRIFIÉ AVANT DE CODER — LA CAUSE N'ÉTAIT PAS CELLE QU'ON CROIT.
+//       Les deux carrousels n'ont AUCUNE photo en commun :
+//         · ouverture (4) = LE LIEU ET LES GENS (accueil, vue d'ensemble,
+//           présentation, grande pièce) ;
+//         · « En images » (7) = LES INSTRUMENTS ET LE MATÉRIEL (micros Hisong,
+//           Yishama micré, sono Bose, tablette, coin salon, démo).
+//       Le doublon était dans le TITRE — « Le showroom, en photos » annonçait
+//       ce que le haut de page montre déjà — pas dans le contenu.
+//
+//    ✅ CE QUI A ÉTÉ FAIT : la galerie descend d'un cran dans la hiérarchie et
+//       rejoint la section qu'elle illustre (5, les instruments), en 4ᵉ
+//       chapitre, avec le MÊME gabarit que les trois autres (eyebrow copper ·
+//       h3 · intro · filet au-dessus). Son titre dit maintenant ce qu'on y
+//       voit. Une section = un sujet : la page passe de 10 blocs à 9, et plus
+//       aucun bloc n'annonce « des photos du showroom ».
+//       🔗 L'ANCRE `#en-images` EST CONSERVÉE, posée sur le chapitre : rien
+//          dans ce dépôt n'y pointait, mais un lien partagé hors dépôt
+//          continue de tomber sur les photos. `#agenda` et `#acces` (cibles
+//          du site de l'association) sont intacts.
+//       📏 L'agenda ne bouge PAS d'un pixel : il est AVANT cette section.
 //
 // ════════════════════════════════════════════════════════════════════════════
 // 🧲 21/08/2026 — LE RASSEMBLEMENT. Mots de David : « il y en a un peu partout
 //    dans tous les sens […] il y a besoin de rassembler les choses entre elles. »
 //    L'ORDRE des sections n'a PAS bougé : c'est la HIÉRARCHIE qui a changé.
 //
-//    ① UNE SEULE SECTION D'INSTRUMENTS (5), TROIS CHAPITRES.
+//    ① UNE SEULE SECTION D'INSTRUMENTS (5), TROIS CHAPITRES — QUATRE DEPUIS
+//       LE SOIR DU 21/08/2026 (la galerie « En images » les a rejoints).
 //       Avant, quatre blocs « eyebrow + titre + intro » de MÊME poids visuel
 //       s'enchaînaient sur le même sujet : le déroulé, « Handpan acoustique et
 //       électronique », « Le reste de ce que je joue est là aussi », et les
@@ -714,9 +742,12 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         sur le même sujet, dans la même section : le lecteur ne savait plus s'il
         changeait de chapitre ou de page.
         MAINTENANT : `onsiteTitle` est LE titre (<h2>), et les trois anciens
-        titres sont ses trois chapitres (<h3>), avec le MÊME gabarit de
-        sous-titre tous les trois — repris à l'identique trois fois plus bas
-        (eyebrow copper · h3 · intro), pour qu'aucun ne prenne le pas.
+        titres sont ses chapitres (<h3>), avec le MÊME gabarit de sous-titre
+        pour tous — repris à l'identique plus bas (eyebrow copper · h3 ·
+        intro), pour qu'aucun ne prenne le pas.
+        ➕ 21/08/2026 (soir) : un QUATRIÈME chapitre les a rejoints, la galerie
+           « En images », qui était encore la section 6 le matin même. Même
+           gabarit, même filet — voir son commentaire, en bas de la section.
         🚫 Ne pas remettre `duoTitle` en <SectionHeading> : ça recréerait deux
            titres de section pour un seul sujet.
         🔗 `id="deux-univers"` est CONSERVÉ (des commentaires de ShopPage.astro
@@ -725,7 +756,7 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
     <SectionHeading eyebrow={sh.onsiteEyebrow} title={sh.onsiteTitle} />
     {/* 📷 LA SEULE PHOTO DE LA SECTION, ET LA SEULE DE LA PAGE QUI N'EST DANS
         AUCUN CARROUSEL. Elle montre tout le matériel installé avant l'arrivée
-        du public : c'est littéralement le sommaire en image des trois chapitres
+        du public : c'est littéralement le sommaire en image des chapitres
         qui suivent. Elle est remontée sous le titre de section (elle ouvrait
         déjà le duo) — sa légende, « Ce qui t'attend en arrivant », vaut
         maintenant pour la section entière. */}
@@ -742,7 +773,7 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
       <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.instruments}</figcaption>
     </figure>
 
-    {/* ═══ CHAPITRE 1/3 — LE HANDPAN, SES DEUX UNIVERS ═══════════════════
+    {/* ═══ CHAPITRE 1/4 — LE HANDPAN, SES DEUX UNIVERS ═══════════════════
         ⚖️ « Le monde du ET », version showroom : ici on ne vend pas un choix,
         on fait ESSAYER. Les deux cartes sont strictement symétriques (même
         gabarit, même nombre de puces, même CTA) — mettre Yishama en avant,
@@ -789,7 +820,7 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
       <p class="mx-auto mt-8 max-w-3xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm text-ink-soft/85">{sh.duoNote}</p>
     </div>
 
-    {/* ═══ CHAPITRE 2/3 — ET PAS SEULEMENT LE HANDPAN ════════════════════
+    {/* ═══ CHAPITRE 2/4 — ET PAS SEULEMENT LE HANDPAN ════════════════════
         Gonilélé, calebasse, micros. Sous un filet de séparation : ça se lit
         comme « … et il y a aussi ça », jamais comme un univers concurrent du
         Neotone. Cartes plus sobres que celles du duo (une seule colonne de
@@ -817,10 +848,10 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
              inclus UNE SEULE FOIS en bas de page — ne pas en rajouter ici. */}
       <div class="mx-auto mt-8 max-w-lg">
         {/* 🚫 PAS DE PHRASE « fais glisser du doigt » ICI : le carrousel
-            « En images », plus bas sur la MÊME page, porte déjà exactement
-            cette consigne (`galleryIntro`). La répéter, ce serait le doublon
-            que David reproche. Les flèches, les points et la démo automatique
-            du composant suffisent. */}
+            « En images », deux chapitres plus bas dans la MÊME section, porte
+            déjà exactement cette consigne (`galleryIntro`). La répéter, ce
+            serait le doublon que David reproche. Les flèches, les points et la
+            démo automatique du composant suffisent. */}
         <Carousel id="showroom-also" slides={alsoSlides} alt={sh.alsoTitle} labels={carouselLabels} />
       </div>
       <div class="mt-8 grid gap-5 md:grid-cols-3">
@@ -837,7 +868,7 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
       <p class="mx-auto mt-6 max-w-2xl text-center text-sm text-ink-soft/70">{sh.alsoNote}</p>
     </div>
 
-    {/* ═══ CHAPITRE 3/3 — 🦵 LES PIEDS ATLAS (20/08/2026) ═════════════════
+    {/* ═══ CHAPITRE 3/4 — 🦵 LES PIEDS ATLAS (20/08/2026) ═════════════════
         Partenariat d'affiliation validé : Atlas envoie deux pieds de
         démonstration, ils seront donc réellement sur place — d'où leur place
         dans cette section.
@@ -889,28 +920,50 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         </p>
       </div>
     </div>
-  </Section>
 
-  {/* ═══ 6. EN IMAGES — « je vais me sentir comment ? » ════════════════════
-      📷 Le reste des photos, celles qui ne portent pas un argument à elles
-      seules mais qui donnent la matière du lieu. Dernière levée de doute avant
-      le rappel de la date qui suit immédiatement : montrer l'ambiance rassure
-      plus que n'importe quel paragraphe.
-      👉 POUR EN AJOUTER UNE : tout est expliqué en haut de `src/data/showroom.ts`.
-      Composant réutilisé tel quel (Carousel + Lightbox), comme sur les pages
-      Neotone, Muling, Gonilélé et Boutique : swipe au doigt, flèches, points,
-      et plein écran au clic. `<Lightbox />` est inclus une seule fois, plus bas. */}
-  <Section id="en-images" tone="cream-deep">
-    <SectionHeading eyebrow={sh.galleryEyebrow} title={sh.galleryTitle} intro={sh.galleryIntro} />
-    <div class="mx-auto mt-10 max-w-2xl">
-      <Carousel id="showroom-gallery" slides={gallerySlides} alt={sh.heroTitle} labels={carouselLabels} />
+    {/* ═══ CHAPITRE 4/4 — 📷 EN IMAGES : LES MÊMES CHOSES, DE PLUS PRÈS ═══
+        🧲 21/08/2026 (soir) — C'ÉTAIT LA SECTION 6, C'EST DEVENU UN CHAPITRE.
+           Le raisonnement complet est en haut de ce fichier ; en deux lignes :
+           ses sept photos montrent LES INSTRUMENTS ET LE MATÉRIEL (micros
+           Hisong, Yishama micré, sono Bose, tablette, coin salon, démo) —
+           c'est-à-dire, exactement, le sujet des trois chapitres au-dessus.
+           Elles appartiennent donc ici. Son ancien titre, « Le showroom, en
+           photos », annonçait au contraire ce que le carrousel d'OUVERTURE
+           montre déjà (le lieu et les gens) : c'est ce TITRE qui faisait
+           doublon, pas les images — aucune photo n'est commune aux deux
+           carrousels.
+        🔗 `id="en-images"` EST CONSERVÉ (avec `scroll-mt-24`, comme `#acces`) :
+           un lien partagé hors dépôt continue de tomber sur les photos.
+        📐 MÊME GABARIT QUE LES TROIS AUTRES CHAPITRES — filet, `mt-14 pt-12`,
+           eyebrow copper, <h3>, intro. C'est ce qui fait qu'il se lit comme la
+           suite de la section et pas comme une nouvelle page.
+        🚫 Ne pas lui redonner un <SectionHeading> (<h2>) : ça recréerait un
+           deuxième titre de section pour un seul sujet — la faute corrigée le
+           matin même sur `duoTitle`.
+        🖐️ Composant réutilisé tel quel (Carousel + Lightbox), comme sur les
+           pages Neotone, Muling, Gonilélé et Boutique : swipe au doigt,
+           flèches, points, démo automatique, plein écran au clic. `<Lightbox />`
+           est inclus UNE SEULE FOIS, en bas de page — ne pas en rajouter ici.
+        👉 POUR AJOUTER UNE PHOTO : tout est expliqué en haut de
+           `src/data/showroom.ts` (fichier WebP + ligne dans `showroomGallery`
+           + texte alternatif dans les DEUX dictionnaires). */}
+    <div id="en-images" class="mt-14 scroll-mt-24 border-t border-ink/10 pt-12">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.galleryEyebrow}</p>
+        <h3 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.galleryTitle}</h3>
+        <p class="mt-3 text-ink-soft/85">{sh.galleryIntro}</p>
+      </div>
+      <div class="mx-auto mt-8 max-w-2xl">
+        <Carousel id="showroom-gallery" slides={gallerySlides} alt={sh.heroTitle} labels={carouselLabels} />
+      </div>
     </div>
   </Section>
 
-  {/* ═══ 7. RAPPEL DE LA DATE — « bon, j'y vais. » ═════════════════════════
+  {/* ═══ 6. RAPPEL DE LA DATE — « bon, j'y vais. » ═════════════════════════
       AJOUTÉ le 20/08/2026. On ne se décide pas tous au même endroit : certains
       réservent sur la date du hero, d'autres après avoir vu les photos. La date
-      revient donc ici, à mi-parcours, JUSTE APRÈS la galerie.
+      revient donc ici, à mi-parcours, JUSTE APRÈS la galerie — qui est devenue
+      le dernier chapitre de la section précédente (21/08/2026, soir).
       🖱️ Le bouton OUVRE DIRECTEMENT la modale sur la prochaine date
          (`nextBookAttrs`, mêmes attributs que les cartes de l'agenda) : pas de
          remontée de page, pas de clic perdu.
@@ -943,7 +996,7 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
     </section>
   )}
 
-  {/* ═══ 8. L'EXCLUSIVITÉ — « et si je veux repartir avec ? » ══════════════
+  {/* ═══ 7. L'EXCLUSIVITÉ — « et si je veux repartir avec ? » ══════════════
       📉 DESCENDUE de la 4ᵉ à la 8ᵉ position le 20/08/2026. C'est un argument
       d'ACHAT (remise 7 %, stock limité, repartir le jour même), pas un argument
       de VENUE. Placé avant l'agenda, il transformait l'annonce d'un événement
@@ -987,7 +1040,7 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
     </div>
   </Section>
 
-  {/* ═══ 9. « ET SI JE NE PEUX PAS VENIR ? » — le rendez-vous individuel ═══
+  {/* ═══ 8. « ET SI JE NE PEUX PAS VENIR ? » — le rendez-vous individuel ═══
       🔗 FUSION DE DEUX BLOCS (20/08/2026) qui vivaient à trois sections d'écart
       et répondaient à la MÊME question :
         · « Ce qu'on y vit » (4 formats, 3 payants) + un bouton PLEIN

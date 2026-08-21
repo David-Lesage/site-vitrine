@@ -29,7 +29,75 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 21/08/2026 (nuit) — 🧲 `/showroom` : LE RASSEMBLEMENT
+## ÉTAT ACTUEL — 21/08/2026 (soir) — 🖼️ `/showroom` : « EN IMAGES » DEVIENT UN CHAPITRE
+
+**Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (rendu réel FR+EN, 375 px et bureau).**
+
+**La demande (mots de David).** « Ce que je trouve un peu bordélique, c'est le côté plusieurs
+endroits. "Le showroom, en photos" fait un peu doublon avec le carrousel du début, non ? »
+
+**⚖️ LA CAUSE N'ÉTAIT PAS CELLE QU'ON CROIT — vérifié avant de coder.** Les deux carrousels
+n'ont **aucune photo en commun** : celui d'ouverture (4) montre **le lieu et les gens**
+(`accueil`, `vueEnsemble`, `presentation`, `grandePiece`) ; « En images » (7) montre **les
+instruments et le matériel** (micros Hisong, Yishama micré, sono Bose, tablette, coin salon,
+démo). Le doublon était dans le **TITRE** — « Le showroom, en photos » annonçait ce que le haut
+de page montre déjà — pas dans le contenu.
+
+**🛠️ CE QUI A ÉTÉ FAIT**
+
+| # | Geste | Effet |
+|---|---|---|
+| ① | La galerie n'est plus la **section 6** : elle est le **4ᵉ chapitre** de `#deux-univers` (« Tout ce que tu peux essayer sur place »), même gabarit que les 3 autres (filet · eyebrow copper · `<h3>` · intro) | **10 blocs → 9**, un `<h2>` en moins |
+| ② | **Titre refait, FR et EN** : « Le showroom, en photos » → **« Les instruments et le matériel, de plus près »** / « The showroom, in photos » → **« The instruments and the gear, up close »** | plus aucun bloc n'annonce « des photos du showroom » |
+| ③ | **Ordre du carrousel** : `demoNeotone2` (David en démo devant le public = photo de LIEU) n'est plus la **couverture**, elle passe **en dernier** ; `salonInstruments` prend la couverture | la 1ʳᵉ image dit « instruments », plus « ambiance » |
+| ④ | `onsiteTitle` **réexaminé et conservé** : les 7 photos montrent ce qui s'essaie sur place, elles n'élargissent pas le sujet | aucune formule validée retouchée |
+
+**🔗 L'ANCRE `#en-images` EST CONSERVÉE**, posée sur le `<div>` du chapitre avec `scroll-mt-24`.
+Rien dans le dépôt n'y pointait (seulement des commentaires), mais un lien partagé hors dépôt
+continue de tomber sur les photos. Vérifié au rendu : `#en-images`, `#agenda` et `#acces`
+atterrissent tous les trois au même décalage (176 px). **`#agenda` et `#acces` intacts** — ce
+sont les cibles du site de l'association.
+
+**📊 CHIFFRES (mesure DOM en iframe, `dist/` servi en local)**
+
+| | avant | après |
+|---|---|---|
+| `#agenda` à 375 px (FR) | 2 437 px | **2 433 px** (inchangé — la galerie est APRÈS l'agenda) |
+| `#agenda` à 375 px (EN) | 2 467 px | **2 462 px** |
+| hauteur totale 375 px (FR / EN) | 18 156 / 17 938 px | **18 090 / 17 802 px** |
+| hauteur totale 1280 px (FR / EN) | — | 13 481 / 13 274 px |
+| blocs de page | 10 | **9** |
+| `<h2>` | 9 | **8** |
+| `<h3>` | 18 | **19** (le chapitre) |
+| carrousels | 5 | **5** (mêmes `id`) |
+| photos de la galerie servies | 7 | **7** (toutes en 200, alt distincts FR et EN) |
+| `€` avant `#agenda` | non | **non** |
+| `mailto:` dans `<main>` | 0 | **0** |
+| débordement horizontal | non | **non** (4 combinaisons) |
+
+**✅ TESTÉ AU RENDU** (FR et EN) : lightbox au clic (ouvre la bonne image, « 3 / 7 », se ferme),
+défilement **au doigt** (`touchstart`/`touchend` → 1/7 → 2/7), flèche suivante, et les 4 photos
+du carrousel d'ouverture **inchangées**.
+
+**🚨 CE QU'IL NE FAUT PAS DÉFAIRE**
+- **Aucune photo ni aucune légende perdue.** Le carrousel n'affiche pas de légende (le composant
+  ne rend que l'`alt`) : il n'y avait donc pas de `figcaption` à sauver. Les 7 `galleryAlt`
+  FR + EN sont intactes.
+- **Aucune clé i18n supprimée.** Seules deux VALEURS changent : `galleryTitle` (FR) et
+  `galleryTitle` (EN). `galleryEyebrow` (« En images » / « In pictures ») est conservé — c'est
+  lui qui a donné l'ancre.
+- **Ne pas redonner un `<SectionHeading>` (`<h2>`) au chapitre** : ce serait recréer deux titres
+  de section pour un seul sujet, la faute corrigée le matin même sur `duoTitle`.
+
+**⚠️ COLLISION DE SESSIONS (à savoir).** Pendant ce chantier, une **autre session** a commité
+`b13d69e` (« Le nom de l'app devient "Handpan Companion" en anglais ») avec un `git add` large :
+elle a **emporté au passage la modification de `src/i18n/en.ts`** faite ici (le nouveau
+`galleryTitle` anglais). Rien n'est perdu — c'est commité et poussé — mais le titre EN de la
+galerie vit sous **son** message de commit, pas sous le nôtre.
+
+---
+
+## 21/08/2026 (nuit) — 🧲 `/showroom` : LE RASSEMBLEMENT
 
 **Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (rendu réel FR+EN, 375 px et 1280 px).**
 
@@ -268,10 +336,12 @@ dans lequel les freins se posent, et **la date + le bouton reviennent** au fil d
 | 3 | **`#agenda`** ← l'objectif | je m'inscris | **7** |
 | 4 | le déroulé | qu'est-ce que je vais y faire | 6 |
 | 5 | `#deux-univers` | qu'est-ce que je vais pouvoir toucher | 3 |
-| 6 | `#en-images` | je vais me sentir comment | 8 |
-| 7 | **rappel de la date** ← l'objectif (2) | bon, j'y vais | *(nouveau)* |
-| 8 | exclusivité Neotone | et si je veux repartir avec | 4 |
-| 9 | **`#individuel`** | et si je ne peux pas venir | 5 + fin de 7 |
+| 6 | **rappel de la date** ← l'objectif (2) | bon, j'y vais | *(nouveau)* |
+| 7 | exclusivité Neotone | et si je veux repartir avec | 4 |
+| 8 | **`#individuel`** | et si je ne peux pas venir | 5 + fin de 7 |
+
+> ⚠️ Tableau à jour du **soir du 21/08** : `#en-images` n'est plus une section, c'est le 4ᵉ
+> chapitre de `#deux-univers` (voir l'ÉTAT ACTUEL en haut). La page compte 9 blocs, plus 10.
 
 ### 🚨 CE QU'IL NE FAUT PAS DÉFAIRE
 - **Le créneau payant n'apparaît plus qu'UNE fois, tout en bas.** Avant il apparaissait

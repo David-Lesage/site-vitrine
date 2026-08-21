@@ -1702,6 +1702,13 @@ const fr = {
     // page perdait.
     // 🔤 Aucun fait nouveau : « Tout est essayable sur place » est déjà écrit
     //    par David dans `agendaIntro`.
+    // ➕ 21/08/2026 (soir) — LA SECTION A GAGNÉ UN 4ᵉ CHAPITRE (la galerie
+    //    « En images », `galleryTitle` plus bas). Le titre ci-dessous a été
+    //    RÉEXAMINÉ à cette occasion et DÉLIBÉRÉMENT CONSERVÉ : les sept photos
+    //    ajoutées montrent les instruments, les micros, la sono et la tablette
+    //    — tout ce qui se joue et s'essaie sur place. Elles n'élargissent donc
+    //    pas le sujet de la section, elles le montrent. Changer ce titre
+    //    reviendrait à retoucher une formule validée sans rien y gagner.
     onsiteEyebrow: 'Sur place',
     onsiteTitle: 'Tout ce que tu peux essayer sur place',
 
@@ -1894,8 +1901,23 @@ const fr = {
       presentation: 'Le temps de présentation, avant que tu poses les mains sur les instruments.',
       gonilele: 'Le Gonilélé, la harpe africaine à calebasse — et le micro qui la sonorise.',
     },
+    // ── 🖼️ LE CARROUSEL « EN IMAGES » — 21/08/2026 (soir).
+    // David : « "Le showroom, en photos" fait un peu doublon avec le carrousel
+    // du début, non ? »
+    // ⚖️ Vérification faite : les deux carrousels n'ont AUCUNE photo en commun.
+    //    Celui d'ouverture montre LE LIEU ET LES GENS ; celui-ci montre LES
+    //    INSTRUMENTS ET LE MATÉRIEL (micros Hisong, Yishama micré, sono Bose,
+    //    tablette, coin salon, démo). Le doublon était donc dans le TITRE, qui
+    //    annonçait « des photos du showroom » quatre écrans après en avoir déjà
+    //    montré. Le titre dit maintenant ce qu'on VOIT vraiment.
+    // 📍 La galerie n'est plus une section : c'est le 4ᵉ chapitre de « Tout ce
+    //    que tu peux essayer sur place » (`onsiteTitle`). D'où un titre qui se
+    //    lit comme la SUITE de cette section (« de plus près »), et non comme
+    //    l'annonce d'une nouvelle page.
+    // 🔤 `galleryEyebrow` (« En images ») est conservé tel quel : il sert de
+    //    repère de chapitre, et c'est le mot qui a donné l'ancre `#en-images`.
     galleryEyebrow: 'En images',
-    galleryTitle: 'Le showroom, en photos',
+    galleryTitle: 'Les instruments et le matériel, de plus près',
     galleryIntro: 'Fais glisser du doigt, ou clique sur une photo pour l’agrandir.',
     galleryAltFallback: 'Photo du showroom David Lesage — Le Nid, Paris 20ᵉ.',
     galleryAlt: {

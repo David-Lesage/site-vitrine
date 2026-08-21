@@ -96,10 +96,43 @@ export interface ShowroomPhoto {
 //      DÉJÀ affichées sur cette page, dans le carrousel `showroomAlsoGallery` ;
 //    · 5 étaient réellement nouvelles, 2 seulement ont été retenues ici
 //      (le détail de ce qui a été écarté est dans le rapport à David).
+//
+// ════════════════════════════════════════════════════════════════════════════
+// 🔀 21/08/2026 — CE CARROUSEL A CHANGÉ DE MAISON, ET DE PREMIÈRE DIAPOSITIVE.
+//
+//    OÙ IL VIT MAINTENANT. Il n'ouvre plus une section à lui (« Le showroom,
+//    en photos », `#en-images`) : il est devenu le 4ᵉ chapitre de la section
+//    des instruments (« Tout ce que tu peux essayer sur place »,
+//    `#deux-univers`). Mot de David : « "Le showroom, en photos" fait un peu
+//    doublon avec le carrousel du début, non ? » — il avait raison sur la
+//    perception, mais AUCUNE photo n'était commune aux deux : le carrousel
+//    d'ouverture montre LE LIEU ET LES GENS, celui-ci montre LES INSTRUMENTS
+//    ET LE MATÉRIEL. C'est le TITRE qui annonçait deux fois la même chose,
+//    pas les images. Le titre a donc changé, et les photos ont rejoint la
+//    section dont elles parlent. AUCUNE PHOTO N'A ÉTÉ RETIRÉE : elles sont
+//    toujours les sept, avec leurs sept textes alternatifs.
+//
+//    POURQUOI L'ORDRE A BOUGÉ. La 1ʳᵉ diapositive est la COUVERTURE : c'est
+//    elle qu'on voit sans toucher au carrousel, et c'est elle qui dit de quoi
+//    la série parle. C'était `demoNeotone2` — David debout en démonstration
+//    devant le public : une photo de LIEU ET D'AMBIANCE, exactement ce que le
+//    carrousel d'ouverture montre déjà. En couverture d'une série d'instruments,
+//    elle recréait à elle seule l'impression de doublon.
+//    Elle n'est PAS supprimée et ne peut pas rejoindre le carrousel d'ouverture
+//    (figé à quatre photos, séquence documentée plus bas) : elle passe en
+//    DERNIÈRE position, où elle se lit pour ce qu'elle est — « et voilà ce que
+//    ça donne quand on joue », après avoir vu le matériel.
+//    `salonInstruments` prend la couverture : handpan acoustique au sol,
+//    Neotone et son casque sur les coussins — deux instruments dans le cadre,
+//    en paysage (donc il remplit le carré du carrousel, là où les portraits
+//    laissent deux bandes vides).
+//    ↩️ POUR REVENIR À L'ORDRE D'AVANT : remonter la ligne `demoNeotone2` en
+//       tête de la liste. Rien d'autre — le compteur « 1 / 7 » se recalcule.
+// ════════════════════════════════════════════════════════════════════════════
 export const showroomGallery: ShowroomPhoto[] = [
-  { id: 'demoNeotone2', src: '/images/showroom-demo-neotone-2.webp', w: 1800, h: 830 },
   // Le coin salon : c'est la photo qui dit « on s'assoit, l'instrument est à
   // portée de main » — elle vaut tous les paragraphes sur l'ambiance.
+  // 🖼️ COUVERTURE depuis le 21/08/2026 (voir l'encadré ci-dessus).
   { id: 'salonInstruments', src: '/images/showroom-salon-instruments.webp', w: 1800, h: 1012 },
   { id: 'gonileleMicro', src: '/images/showroom-gonilele-micro-hisong.webp', w: 1000, h: 1778 },
   { id: 'yishamaMicros', src: '/images/showroom-yishama-micros-hisong.webp', w: 1000, h: 1778 },
@@ -109,6 +142,9 @@ export const showroomGallery: ShowroomPhoto[] = [
   { id: 'sonoBose', src: '/images/showroom-sono-bose.webp', w: 1800, h: 1012 },
   { id: 'tabletteAccords', src: '/images/showroom-tablette-accords.webp', w: 960, h: 1706 },
   { id: 'handpanTablette', src: '/images/showroom-handpan-tablette.webp', w: 1100, h: 1955 },
+  // 🎬 LA DERNIÈRE, ET C'EST VOULU : la seule de la série où l'instrument est
+  // JOUÉ, devant du monde. Elle clôt la visite du matériel au lieu de l'ouvrir.
+  { id: 'demoNeotone2', src: '/images/showroom-demo-neotone-2.webp', w: 1800, h: 830 },
 ]
 
 // ── Photos placées EN DUR dans la page (hors carrousel), les plus fortes.
