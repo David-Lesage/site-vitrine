@@ -1465,7 +1465,7 @@ export const en: Dict = {
     ctaNext: 'See the next showcase',
     exclBadge: '★ World first',
     exclTitle: 'Walk away with your Neotone¹, the same day',
-    exclText: 'I’ll own this claim: Le Nid is the first place in the world where these instruments are sold directly, on site. In practice, that means you can buy your Neotone¹ right here and take it home immediately — with no manufacturing wait. My Yishama handpans are not for sale: they are my personal instruments, there to be heard and played.',
+    exclText: 'I’ll own this claim: as far as I know, Le Nid is the first place in the world where these instruments can be <em>tried</em> and bought directly, on site. In practice, that means you can buy your Neotone¹ right here and take it home immediately — with no manufacturing wait. My Yishama handpans are not for sale: they are my personal instruments, there to be heard and played.',
     exclArgs: ['7% discount — the best price on the market (vs. 5% online)', 'No manufacturing delay, no waiting', 'Very limited stock — only a few instruments available'],
     // 🇫🇷 PENDING CLAIM — WRITTEN, PLACED, NOT PUBLISHED.
     // Only rendered when `FRANCE_EXCLUSIVITY_ACTIVE` is `true`

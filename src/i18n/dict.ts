@@ -1676,7 +1676,7 @@ const fr = {
     ctaNext: 'Voir le prochain showcase',
     exclBadge: '★ Première mondiale',
     exclTitle: 'Repars avec ton Neotone¹, le jour même',
-    exclText: 'Je l’assume : Le Nid est le premier lieu au monde où ces instruments sont en vente en direct, sur place. Concrètement, ça veut dire que tu peux acheter ton Neotone¹ ici même et l’emporter immédiatement — sans aucun délai de fabrication. Mes handpans Yishama, eux, ne sont pas à vendre : ce sont mes instruments personnels, ils sont là pour être entendus et joués.',
+    exclText: 'Je l’assume : à ma connaissance, Le Nid est le premier lieu au monde où ces instruments s’essaient <em>et</em> s’achètent en direct, sur place. Concrètement, ça veut dire que tu peux acheter ton Neotone¹ ici même et l’emporter immédiatement — sans aucun délai de fabrication. Mes handpans Yishama, eux, ne sont pas à vendre : ce sont mes instruments personnels, ils sont là pour être entendus et joués.',
     exclArgs: ['7 % de remise — le meilleur prix du marché (contre 5 % en ligne)', 'Aucun délai de fabrication ni d’attente', 'Stock ultra limité — quelques instruments disponibles'],
     // 🇫🇷 REVENDICATION EN ATTENTE — ÉCRITE, PLACÉE, PAS PUBLIÉE.
     // Ne s'affiche QUE si `FRANCE_EXCLUSIVITY_ACTIVE` vaut `true`
