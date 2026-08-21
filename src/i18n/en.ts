@@ -565,7 +565,8 @@ export const en: Dict = {
     // instrument is now part of the lessons.
     sessionTypeNames: { onboarding: 'Getting started with my instrument', demo: 'Private demo and trying an instrument', lesson: 'Take a lesson with David' },
     discountTitle: 'Get my Neotone discount code',
-    discountIntro: 'A personal −5% online code, which I request for you from Neotone. Personal reply within 24 to 48 h.',
+    // ⚠️ ALWAYS BOTH RATES (21/08/2026) — see the comment in dict.ts.
+    discountIntro: 'A personal code that I request for you from Neotone: −5% online, −7% if you come and try it at the showroom. Personal reply within 24 to 48 h.',
     discountModel: 'Which model are you interested in?',
     discountModelChoose: 'Choose…',
     discountModelNames: {

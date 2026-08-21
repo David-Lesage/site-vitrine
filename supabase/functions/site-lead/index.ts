@@ -266,7 +266,12 @@ const SOURCE_LABELS: Record<string, { fr: string; en: string }> = {
     'showcase-waitlist': { fr: 'Alerte prochaines dates de showcase', en: 'Alert for upcoming showcase dates' },
     'beta-waitlist': { fr: 'Liste d’attente application', en: 'App waiting list' },
     'app-login': { fr: 'Liste d’attente (écran de connexion)', en: 'Waiting list (login screen)' },
-    'neotone-discount': { fr: 'Demande de code de remise Neotone (−5 %)', en: 'Neotone discount code request (−5%)' },
+    // ⚠️ DEUX TAUX (21/08/2026) : ce libellé part dans l'email de confirmation
+    // du visiteur (ligne « Motif »). La demande peut venir du calculateur en
+    // mode « en ligne » (−5 %) OU « showroom » (−7 %) — n'en annoncer qu'un
+    // rendait l'email faux une fois sur deux. Identique à `booking.discountIntro`
+    // des dictionnaires du site.
+    'neotone-discount': { fr: 'Demande de code de remise Neotone (−5 % en ligne, −7 % au showroom)', en: 'Neotone discount code request (−5% online, −7% at the showroom)' },
     showcase: { fr: 'Groupe showcases', en: 'Showcase group' },
     contact: { fr: 'Message via le formulaire de contact', en: 'Message via the contact form' },
     'gonilele-order': { fr: 'Commande d’une harpe Gonilélé', en: 'Gonilélé harp order' },

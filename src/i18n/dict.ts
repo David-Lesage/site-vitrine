@@ -613,7 +613,13 @@ const fr = {
     // Demande de code de remise Neotone. Ces informations sont exactement celles
     // que Neotone réclame à David pour enregistrer la vente et sa commission.
     discountTitle: 'Obtenir mon code de remise Neotone',
-    discountIntro: 'Un code nominatif de −5 % en ligne, que je demande pour toi auprès de Neotone. Réponse personnelle sous 24 à 48 h.',
+    // ⚠️ DEUX TAUX, TOUJOURS LES DEUX (21/08/2026). La modale s'ouvre depuis le
+    // calculateur, qui peut être en mode « en ligne » (−5 %) OU « showroom »
+    // (−7 %) : annoncer un seul taux rendait le message faux une fois sur deux.
+    // Citer les deux reste exact quel que soit le mode choisi. Les taux sont
+    // ceux du calculateur (`Calculator.astro`, source de vérité) : ne pas les
+    // modifier ici sans les modifier là-bas.
+    discountIntro: 'Un code nominatif que je demande pour toi auprès de Neotone : −5 % en ligne, −7 % si tu viens l’essayer au showroom. Réponse personnelle sous 24 à 48 h.',
     discountModel: 'Quel modèle t’intéresse ?',
     discountModelChoose: 'Choisis…',
     discountModelNames: {
