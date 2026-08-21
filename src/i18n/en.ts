@@ -1467,13 +1467,35 @@ export const en: Dict = {
     exclTitle: 'Walk away with your Neotone¹, the same day',
     exclText: 'I’ll own this claim: Le Nid is the first place in the world where these instruments are sold directly, on site. In practice, that means you can buy your Neotone¹ right here and take it home immediately — with no manufacturing wait. My Yishama handpans are not for sale: they are my personal instruments, there to be heard and played.',
     exclArgs: ['7% discount — the best price on the market (vs. 5% online)', 'No manufacturing delay, no waiting', 'Very limited stock — only a few instruments available'],
+    // 🇫🇷 PENDING CLAIM — WRITTEN, PLACED, NOT PUBLISHED.
+    // Only rendered when `FRANCE_EXCLUSIVITY_ACTIVE` is `true`
+    // (src/data/showroom.ts) — today `false`. Full rationale, and the warning
+    // that the page ALREADY claims « first place in the WORLD », live next to
+    // that switch. Do not turn it on without David's explicit confirmation.
+    franceClaim: 'The only place in France where these instruments can be tried and bought directly.',
+
+    // ── 🧲 ONE SINGLE SECTION FOR THE INSTRUMENTS (21/08/2026) ──────────────
+    // David: "they're all over the place, things need to be gathered
+    // together". Three heading blocks of equal visual weight used to follow
+    // one another on the same subject, plus a fourth for the Atlas stands.
+    // Now: ONE section title (below), and the three former titles become its
+    // three chapters (`duoTitle`, `alsoTitle`, `atlasTitle`, as <h3>). The
+    // RUN OF THE SESSION stays a separate section: it tells what HAPPENS, not
+    // what is there — the distinction the page had lost.
+    // 🔤 No new fact: "All of it there to be tried" is already David's own
+    //    wording in `agendaIntro`.
+    onsiteEyebrow: 'On site',
+    onsiteTitle: 'Everything you can try on site',
 
     // « The world of AND », showroom edition: here it is an EXPERIENCE, not a
     // purchase decision. Strict parity both ways — feature Yishama, but never
     // MORE than Neotone (David's explicit instruction, 11/08).
     // ⚠️ See dict.ts: this block is about the HANDPAN only. It is followed by
     // the `also*` block (Gonilélé, calabash, microphones) since 18/08/2026.
-    duoEyebrow: 'On site · both handpan worlds',
+    // ✂️ "On site · " dropped (21/08/2026): it is now the eyebrow of the PARENT
+    //    section (`onsiteEyebrow`), so repeating it in each of its three
+    //    chapters wrote it three times in the same screen.
+    duoEyebrow: 'Both handpan worlds',
     // 🚨 “the same AFTERNOON” → “the same DAY” on 21/08/2026 — see dict.ts.
     duoTitle: 'Acoustic and electronic handpan, the same day',
     duoIntro: 'The showroom is not here to make you pick a side. Both worlds live next to each other: you hear them, you play them, you feel the difference in your hands. Not competition — completion.',
@@ -1499,7 +1521,8 @@ export const en: Dict = {
     // Facts sourced strictly from elsewhere on the site — see dict.ts for the
     // list of sources. 🚧 NOT WRITTEN because unknown: how many Gonilélé /
     // calabashes are available to try on site. Do not invent a number.
-    alsoEyebrow: 'On site · and not only the handpan',
+    // ✂️ "On site · " dropped, same reason as `duoEyebrow` above.
+    alsoEyebrow: 'And not only the handpan',
     alsoTitle: 'Everything else I play is here too',
     alsoIntro: 'The Neotone is the headline act of the showcase — but you don’t have to come for it. These instruments are out on the floor too, and you can pick them up just like the handpans.',
     also: [
@@ -1589,6 +1612,11 @@ export const en: Dict = {
       grandePiece:
         'The main room of the showroom in daylight, before the audience arrives: old wooden floor, a low sofa and cushions on the floor, an acoustic handpan on its tripod at the far end, a guitar hanging on the wall, plants and rolled-up floor mats in a basket.',
     },
+    // 🚨 TWO CAPTIONS ARE NO LONGER RENDERED (21/08/2026) — keys KEPT:
+    //    `grandePiece` and `presentation`. Their PHOTOS are still on screen —
+    //    they are slides 3 and 4 of the opening carousel. They were being shown
+    //    TWICE on the same page. `vueEnsemble` is kept as a figure: it is the
+    //    page's only proof that the event exists and draws people.
     photoCaption: {
       vueEnsemble: 'A showcase at Le Nid — audience in a circle, instruments at the centre.',
       grandePiece: 'The same room in daylight, before everything is set up.',
@@ -1624,9 +1652,24 @@ export const en: Dict = {
         'A wooden Neotone electronic handpan on its tripod, next to the showroom PA: a Bose L1 Model II tower with its T8S mixing console sitting on the bass modules.',
     },
 
+    // ⓘ `eventsEyebrow` / `eventsTitle` ARE NO LONGER RENDERED (21/08/2026) —
+    //    keys KEPT, nothing deleted. The bottom section only holds the PAID
+    //    one-to-one option, so it now carries David's own words:
+    //    `agendaMoreTitle` as its title, `agendaMoreText` as its intro, under
+    //    the `individualEyebrow` eyebrow.
     eventsEyebrow: 'What you experience',
     eventsTitle: 'Test, meet, walk away with',
+    // Eyebrow of the bottom section — says what it really is: the PAID,
+    // one-to-one, by-appointment slot. The only one on the whole page.
+    individualEyebrow: 'One-to-one · by appointment',
     eventsHighlight: 'Most asked for at the start',
+    // 🚨 THE 1st ENTRY IS NO LONGER RENDERED (21/08/2026) — key KEPT.
+    //    The page renders `events.slice(1)`, i.e. the three PAID formats only.
+    //    It described the free public showcase in the middle of three paid
+    //    cards, at the very bottom of a page that has been about that showcase
+    //    since its first screen — and it was the page's 6th enumeration of the
+    //    instruments. See the French dictionary for the full reasoning and for
+    //    how to bring it back.
     events: [
       { t: 'Neotone showcase & instrument discovery', d: 'The free public gathering at Le Nid: David Lesage presents the Neotone — then everything is there to be tried, Yishama acoustic handpans, Gonilélé African harp, calabash and handpan microphones.', price: 'Public · Free' },
       { t: 'Getting started with your instrument', d: 'Just received your Neotone, your handpan or your microphone? We set everything up together and walk through the controls, step by step. In person or online.', price: '' },
@@ -1676,7 +1719,17 @@ export const en: Dict = {
     agendaCountPlural: '{n} upcoming dates',
     agendaSeats: 'Free, booking required · limited places',
     agendaCta: 'Get notified about upcoming showcases',
+    // 🚨 RENDERED ONCE ONLY SINCE 21/08/2026, ABOVE THE LIST.
+    //    It used to be the <h3> of EACH of the five agenda rows: five rows,
+    //    the same title five times, the same tag five times, the same address
+    //    five times — and the only thing that actually differed, THE DATE, was
+    //    small text underneath. Now each row's heading IS its date, and this
+    //    shared label is written once, with the address, above the list.
+    //    🚫 Do not put it back inside the loop.
     agendaEventTitle: 'Neotone showcase — and every instrument to try',
+    // ⓘ `agendaEventTag` is no longer rendered per row — key kept. Free-ness is
+    //    already stated three times around the list (`agendaTitle`,
+    //    `agendaIntro`, `agendaSeats`).
     agendaEventTag: 'Public · Free',
     agendaEventTime: 'from {start} to {end}',
     // ── “Good to know before you come” (16/08/2026). Until now these three

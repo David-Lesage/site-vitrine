@@ -25,6 +25,13 @@ export interface ShowcaseDate {
   short: string
   start: string
   end: string
+  /**
+   * 🏷️ Libellé FACULTATIF qui distingue CETTE date des autres (« Spécial
+   * débutants », « avec une invitée »…). Vide sur les cinq dates actuelles :
+   * seul David possède cette information, on n'en invente aucune.
+   * Mode d'emploi complet dans `agendaEvents` (src/data/site.ts).
+   */
+  note?: string
 }
 
 /** Showcases À VENIR uniquement, du plus proche au plus lointain. */
@@ -48,6 +55,7 @@ export function upcomingShowcases(lang: Lang): ShowcaseDate[] {
         short: fmt(d, { weekday: 'short', day: 'numeric', month: 'long' }).replace('.', ''),
         start: e.start,
         end: e.end,
+        note: e.note,
       }
     })
 }

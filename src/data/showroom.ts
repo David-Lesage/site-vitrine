@@ -28,6 +28,46 @@
 //    comme sur la page Gonilélé.
 // ============================================================
 
+// ════════════════════════════════════════════════════════════════════════════
+// 🇫🇷 REVENDICATION « LE SEUL LIEU EN FRANCE » — ÉCRITE, PLACÉE, ÉTEINTE
+//    (21/08/2026 — même dispositif que `ATLAS_PROMO_ACTIVE`, src/data/atlas.ts)
+//
+// D'OÙ ÇA VIENT. La phrase « le seul lieu en France où ces instruments
+// s'essaient et s'achètent en direct » a été RETIRÉE du site de l'association
+// Résonances Productions, au motif qu'elle serait reprise ici. Vérification
+// faite : elle n'existe nulle part dans ce dépôt. Elle est donc tombée entre
+// les deux sites. David l'aurait validée mot pour mot le 16/08/2026.
+//
+// 🚨 POURQUOI ELLE N'EST PAS PUBLIÉE AUJOURD'HUI. C'est une revendication
+//    d'EXCLUSIVITÉ (« le seul en France »). Si elle est inexacte, ce n'est pas
+//    une maladresse de rédaction : c'est de la publicité trompeuse. Et elle
+//    est INVÉRIFIABLE depuis ce dépôt — aucune source du site ne l'établit.
+//    Elle attend donc une confirmation explicite de David.
+//
+// ⚠️ À LIRE AVANT D'ACTIVER — LA PAGE PORTE DÉJÀ UNE REVENDICATION PLUS FORTE.
+//    `showroom.exclBadge` dit « ★ Première mondiale » et `showroom.exclText`
+//    dit « Le Nid est le PREMIER LIEU AU MONDE où ces instruments sont en
+//    vente en direct, sur place ». Publier les deux, c'est dire deux fois la
+//    même chose à deux échelles différentes — et la plus petite (France)
+//    affaiblit mécaniquement la plus grande (monde) : un lecteur qui lit les
+//    deux se demande laquelle est vraie.
+//    👉 RECOMMANDATION : n'en garder qu'UNE. Soit la mondiale (déjà en ligne),
+//       soit celle-ci — auquel cas c'est `exclText` qu'il faut corriger, pas
+//       seulement cet interrupteur qu'il faut allumer.
+//    👉 Ce que celle-ci apporte de neuf, et que la mondiale ne dit pas :
+//       « s'ESSAIENT » — l'essai, qui est le sujet même de cette page.
+//
+// ✅ POUR L'ACTIVER, LE JOUR OÙ DAVID CONFIRME :
+//      1. passer `FRANCE_EXCLUSIVITY_ACTIVE` à `true` ;
+//      2. relire `showroom.exclText` (dict.ts + en.ts) pour choisir entre
+//         « premier au monde » et « seul en France » — ne pas laisser les deux ;
+//      3. rebuild + redéploiement (rien d'autre à toucher).
+//    La phrase elle-même vit dans les deux dictionnaires, clé
+//    `showroom.franceClaim` — traduite, prête, jamais rendue tant que
+//    l'interrupteur est à `false`.
+// ════════════════════════════════════════════════════════════════════════════
+export const FRANCE_EXCLUSIVITY_ACTIVE = false
+
 export interface ShowroomPhoto {
   /** Clé du texte alternatif dans `showroom.galleryAlt` (dict.ts + en.ts). */
   id: string

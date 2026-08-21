@@ -102,13 +102,43 @@ export const footerNav = [
 // La copie est MANUELLE : une date ajoutée ou déplacée dans l'agenda n'apparaît
 // qu'après édition de ce fichier + redéploiement. Dernière synchro : 01/08/2026.
 // Les dates passées disparaissent toutes seules (filtre dans ShowroomPage.astro).
-export const agendaEvents = [
+//
+// ── 🏷️ CHAMP `note` — FACULTATIF, VIDE AUJOURD'HUI (21/08/2026) ─────────────
+//
+// LE PROBLÈME CONSTATÉ : les cinq lignes de l'agenda portaient EXACTEMENT le
+// même titre (« Showcase Neotone — et tous les instruments à essayer »), le même
+// tag « Public · Gratuit » et la même adresse. Cinq fois de suite. Rien ne
+// distinguait une ligne d'une autre : le visiteur ne lisait qu'une répétition,
+// et la seule information réellement différente — LA DATE — était en petit,
+// sous le titre. La page a été corrigée : la DATE est maintenant le titre de
+// chaque ligne, et le titre commun + l'adresse ne sont écrits qu'UNE fois,
+// au-dessus de la liste.
+//
+// 🚧 CE QUI MANQUE, ET QUE SEUL DAVID PEUT ÉCRIRE : de quoi distinguer les
+//    dates PAR LEUR CONTENU (une invitée, un instrument mis en avant ce jour-là,
+//    une séance « spécial débutants »…). Aucune de ces informations n'existe
+//    dans ce dépôt ni dans l'agenda Google recopié ici — on ne l'invente pas.
+//
+// ✅ QUAND DAVID VOUDRA DIFFÉRENCIER UNE DATE : ajouter `note: '…'` sur la
+//    ligne concernée, et c'est tout. Le libellé s'affiche sous la date, en
+//    pastille dorée, UNIQUEMENT sur les dates qui en portent un — les autres
+//    ne changent pas d'aspect.
+//      { date: '2026-10-18', start: '16:00', end: '19:00', note: 'Spécial débutants' },
+//    ⚠️ Le texte est écrit TEL QUEL, dans les deux langues (ce champ n'est pas
+//       traduit) : n'y mettre qu'un mot ou deux, compréhensibles des deux côtés,
+//       ou prévoir `noteEn:` le jour où une date mérite deux formulations.
+export const agendaEvents: readonly {
+  date: string
+  start: string
+  end: string
+  note?: string
+}[] = [
   { date: '2026-08-23', start: '16:00', end: '19:00' },
   { date: '2026-09-19', start: '16:00', end: '19:00' },
   { date: '2026-10-18', start: '16:00', end: '19:00' },
   { date: '2026-11-14', start: '16:00', end: '19:00' },
   { date: '2026-12-05', start: '15:00', end: '18:00' },
-] as const
+]
 
 // Rendez-vous individuels au showroom — SOURCE DE VÉRITÉ DES TARIFS.
 // Alimente à la fois les cartes « Testez, rencontrez, repartez avec » et le

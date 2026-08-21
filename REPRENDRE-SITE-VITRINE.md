@@ -29,6 +29,133 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 21/08/2026 (nuit) — 🧲 `/showroom` : LE RASSEMBLEMENT
+
+**Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (rendu réel FR+EN, 375 px et 1280 px).**
+
+**La demande (mots de David).** « Je veux qu'on revienne à la page du showcase et à
+l'organisation globale de l'agencement de la page et des photos. […] optimise pour que tout
+soit cohérent, car là il y en a un peu partout dans tous les sens. **Il y a besoin de
+rassembler les choses entre elles.** »
+
+⚠️ **Ce n'était PAS un nouvel ordre de sections.** L'ordre du 20/08 est intact. Ce qui a changé,
+c'est la **hiérarchie** : ce qui parle du même sujet est désormais sous un seul titre.
+
+### 🔎 CE QUI ÉTAIT ÉPARPILLÉ (analyse, avant de coder)
+
+1. **La liste des instruments était énumérée SIX fois** : `heroLead`, `agendaIntro`, les
+   étapes 1-4 du déroulé, le duo, « le reste de ce que je joue », et `events[0]` tout en bas.
+2. **Quatre blocs « eyebrow + titre + intro » de MÊME poids visuel s'enchaînaient** sur le même
+   sujet : le déroulé, « Handpan acoustique et électronique », « Le reste de ce que je joue est
+   là aussi », les pieds Atlas. Quatre repères concurrents = plus de repère.
+3. **Trois des quatre photos du carrousel d'ouverture étaient RE-AFFICHÉES en figures isolées**
+   plus bas (`vueEnsemble`, `presentation`, `grandePiece`). C'est ça, « des photos partout ».
+4. **Les cinq lignes de l'agenda portaient le même `<h3>`**, le même tag et la même adresse.
+5. **La section du bas s'appelait « Ce qu'on y vit · Tester, rencontrer, repartir avec »** alors
+   qu'elle ne contient que l'option PAYANTE — et son titre doublonnait « Au programme d'une
+   session ». Elle contenait en plus une carte décrivant le showcase GRATUIT au milieu de trois
+   cartes payantes.
+6. Redondance repérée mais **VOLONTAIREMENT NON TOUCHÉE** : « les Yishama sont mes instruments
+   personnels, pas à vendre » est dit 3× (`duo[0].text`, `duoNote`, `exclText`). Non corrigé :
+   `exclText` est le seul endroit qu'un lecteur arrivant directement sur l'offre commerciale
+   lira. Le retirer créerait un malentendu de vente. À trancher par David.
+
+### 🛠️ CE QUI A ÉTÉ FAIT
+
+| # | Regroupement | Effet |
+|---|---|---|
+| ① | `#deux-univers` = **UNE section, TROIS chapitres** (`onsiteTitle` en `<h2>` ; duo / also / Atlas en `<h3>`, même gabarit tous les trois, séparés par un filet) | 4 repères → 1 |
+| ② | **Le déroulé reste séparé** du catalogue : « ce qui se PASSE » (4) ≠ « ce qu'il Y A » (5). Texte des 6 étapes **intouché** (mots de David + parité avec l'email) | la distinction redevient lisible |
+| ③ | **Figures en doublon supprimées** : `grandePiece` (`#le-lieu`) et `presentation` (déroulé). Il reste 2 figures sur la page | 4 figures → 2, −248 px avant l'agenda |
+| ④ | **Agenda : la DATE est le titre de chaque ligne.** Titre commun + adresse écrits UNE fois au-dessus. Pastille « Prochain showcase gratuit » sur la 1ʳᵉ ligne | 5 titres identiques → 5 dates distinctes |
+| ⑤ | **Section du bas** = `individualEyebrow` + `agendaMoreTitle` + **3 cartes payantes** (`events.slice(1)`) ; le `<h3>` interne qui répétait le titre est retiré | 2 titres → 1, 1 énumération en moins |
+| ⑥ | Hiérarchie `<h4>` pour les cartes sous les chapitres `<h3>` | 18 `<h3>`, **tous distincts** |
+
+### 📊 CHIFFRES (mesure DOM en iframe, `dist/` servi en local)
+
+| | avant | après |
+|---|---|---|
+| `#agenda` à 375 px | 2 681 px | **2 433 px** (−248, il REMONTE) |
+| hauteur totale 375 px | 19 369 px | **18 054 px** (−1 315) |
+| mots | 2 101 | **1 963** (−138) |
+| figures isolées | 4 | **2** |
+| `<h3>` / distincts | 23 / 19 | **18 / 18** |
+| `<h2>` | 10 | **9** |
+| carrousels | 5 | 5 (inchangé) |
+| `€` avant `#agenda` | non | **non** |
+| déclencheurs payants | 1 | **1** |
+| `#agenda` · `#acces` | présents | **présents** |
+
+EN : `#agenda` à 2 462 px, 18 054/17 831 px de haut, mêmes compteurs. Aucun débordement
+horizontal (`scrollWidth == clientWidth`) sur les 4 combinaisons.
+
+### 🚨 CE QU'IL NE FAUT PAS DÉFAIRE
+
+- **AUCUNE CLÉ i18n SUPPRIMÉE.** Seules deux VALEURS ont été raccourcies : `duoEyebrow` et
+  `alsoEyebrow` perdent leur préfixe « Sur place · » (devenu l'eyebrow de la section parente).
+  Les clés qui ne sont plus RENDUES sont conservées et commentées : `eventsEyebrow`,
+  `eventsTitle`, `events[0]`, `agendaEventTag`, `photoCaption.grandePiece`,
+  `photoCaption.presentation`.
+- **Ne pas remettre `agendaEventTitle` dans la boucle de l'agenda** : c'est ce qui rendait les
+  cinq lignes indiscernables.
+- **Ne pas remettre `duoTitle` en `<SectionHeading>`** : ça recrée deux titres de section pour
+  un seul sujet.
+- 🐞 **PIÈGE TAILWIND ATTRAPÉ AU RENDU** (pas au build) : la 1ʳᵉ version rendait la pastille
+  « Prochain showcase gratuit » sur toutes les lignes en la masquant avec `hidden` → elle
+  s'affichait sur DEUX lignes. `hidden` et `inline-flex` sont deux utilitaires `display` de la
+  même couche, `inline-flex` gagnait. **Solution :** la pastille n'est rendue que sur la 1ʳᵉ
+  ligne, et le filet `<script>` la RECOPIE dans `[data-badges]` de la première ligne restante si
+  des dates dépassées sont supprimées. Testé en simulation : elle passe bien au 19 septembre.
+  🚫 Ne jamais masquer par classe `display` dans ce dépôt.
+- Vérifié au clic : les 3 parcours de réservation marchent (ligne d'agenda → « Réserver ma place
+  au showcase » sur `2026-08-23` ; rappel de milieu de page → même modale ; `#individuel` →
+  « Réserver un rendez-vous individuel »). Aucun `mailto:` dans `<main>`.
+
+### 🏷️ NOUVEAU : DIFFÉRENCIER LES DATES PAR LEUR CONTENU (structure prête, vide)
+
+`agendaEvents` (src/data/site.ts) accepte un champ **`note?: string`** facultatif, **vide sur
+les cinq dates**. Aucune information permettant de distinguer les séances n'existe dans ce dépôt
+ni dans l'agenda Google — **on n'en invente pas**. Le jour où David en a une :
+```ts
+{ date: '2026-10-18', start: '16:00', end: '19:00', note: 'Spécial débutants' },
+```
+→ la pastille dorée apparaît toute seule sous la date, uniquement sur cette ligne.
+⚠️ Le texte n'est pas traduit : un ou deux mots lisibles dans les deux langues, ou ajouter
+`noteEn:` le jour où c'est nécessaire.
+
+### 🇫🇷 REVENDICATION « LE SEUL LIEU EN FRANCE » — ÉCRITE, PLACÉE, **ÉTEINTE**
+
+La phrase « **le seul lieu en France où ces instruments s'essaient et s'achètent en direct** »
+a été retirée du site de Résonances Productions au motif qu'elle serait reprise ici.
+**Vérification : elle n'existait nulle part dans ce dépôt.** Elle est tombée entre les deux sites.
+
+- **Interrupteur** : `FRANCE_EXCLUSIVITY_ACTIVE = false` (src/data/showroom.ts), même dispositif
+  que `ATLAS_PROMO_ACTIVE`. Le texte vit dans les deux dicos, clé `showroom.franceClaim`.
+- **Emplacement retenu** : dans le bloc **exclusivité** (section 8), sous `exclArgs` — c'est le
+  seul bloc du site qui parle d'ACHETER SUR PLACE, et la phrase dit « s'essaient ET s'achètent ».
+  Plus haut (hero, agenda), elle transformerait un événement gratuit en argument commercial.
+- 🚨 **NE PAS L'ALLUMER SANS CONFIRMATION DE DAVID** : c'est une revendication d'exclusivité,
+  invérifiable depuis ce dépôt ; fausse, elle serait de la publicité trompeuse.
+- ⚠️ **ET SURTOUT** : `exclText` revendique **DÉJÀ** « le **premier lieu au monde** où ces
+  instruments sont en vente en direct » (+ `exclBadge` « ★ Première mondiale »). Les deux se
+  recouvrent à deux échelles ; publier les deux affaiblit la plus forte. **N'en garder qu'une** —
+  si c'est celle-ci, c'est `exclText` qu'il faut corriger, pas seulement l'interrupteur.
+
+### 💸 BLOG — les deux taux Neotone (tâche annexe, validée par David)
+
+`setup-nomade-neotone-bose-s1.md` **et** `-en.md`, **ligne 67** (le récapitulatif « Où acheter
+chaque élément ») : « code de remise −5 % » puis, phrase suivante, « viens l'essayer à Paris ».
+Corrigé dans le ton de l'article :
+> FR — « (code de remise **−5 % en ligne**, garantie 6 ans…). Tu peux aussi venir l'essayer à
+> Paris : **la remise monte à −7 % au showroom**, et tu repars avec le jour même. »
+> EN — « (−5% discount code **online**…). You can also come and try it in Paris: **the discount
+> goes up to −7% at the showroom**, and you leave with it the same day. »
+
+ⓘ **La ligne 29 des deux articles était déjà correcte** (« −5 % en ligne (ou −7 % au showroom) »).
+`grep` sur `5 %` / `5%` dans `src/content/blog/` : **aucun autre article concerné**.
+
+---
+
 ## ÉTAT ACTUEL — 21/08/2026 — 💸 Code de remise Neotone : les DEUX taux, partout
 
 **Statut : ✅ COMMITÉ (`2591c5b`), POUSSÉ, DÉPLOYÉ (Vercel + EF `site-lead` v27), VÉRIFIÉ EN PROD.**

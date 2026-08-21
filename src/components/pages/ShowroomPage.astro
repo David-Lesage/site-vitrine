@@ -13,7 +13,7 @@ import { priceForKind, priceGrid } from '@/lib/sessions'
 import BookingForm from '@/components/BookingForm.astro'
 import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
-import { showroomGallery, showroomAlsoGallery, showroomHeroGallery, showroomPhotos } from '@/data/showroom'
+import { showroomGallery, showroomAlsoGallery, showroomHeroGallery, showroomPhotos, FRANCE_EXCLUSIVITY_ACTIVE } from '@/data/showroom'
 import { atlasProPhotos, atlasAllPhotos, atlasProHeightSquare } from '@/data/atlas'
 import type { Lang } from '@/i18n/config'
 
@@ -29,12 +29,59 @@ import type { Lang } from '@/i18n/config'
 //    1. HERO ...................... « c'est quoi, c'est quand, c'est gratuit ? »
 //    2. #le-lieu (+ l'accès) ...... « je débarque où, et j'y arrive comment ? »
 //    3. #agenda ................... « je m'inscris. »            ← LE BUT
-//    4. programme ................. « qu'est-ce que je vais y faire ? »
-//    5. #deux-univers ............. « qu'est-ce que je vais pouvoir toucher ? »
+//    4. le déroulé ................ « comment ça se PASSE ? »
+//    5. #deux-univers ............. « qu'est-ce qu'il Y A, sur place ? »
 //    6. #en-images ................ « je vais me sentir comment ? »
 //    7. rappel de la date ......... « bon, j'y vais. »            ← LE BUT (2)
 //    8. exclusivité ............... « et si je veux repartir avec ? »
 //    9. #individuel ............... « et si je ne peux pas venir ? »
+//
+// ════════════════════════════════════════════════════════════════════════════
+// 🧲 21/08/2026 — LE RASSEMBLEMENT. Mots de David : « il y en a un peu partout
+//    dans tous les sens […] il y a besoin de rassembler les choses entre elles. »
+//    L'ORDRE des sections n'a PAS bougé : c'est la HIÉRARCHIE qui a changé.
+//
+//    ① UNE SEULE SECTION D'INSTRUMENTS (5), TROIS CHAPITRES.
+//       Avant, quatre blocs « eyebrow + titre + intro » de MÊME poids visuel
+//       s'enchaînaient sur le même sujet : le déroulé, « Handpan acoustique et
+//       électronique », « Le reste de ce que je joue est là aussi », et les
+//       pieds Atlas. Quatre repères concurrents = plus de repère du tout.
+//       Maintenant : la section 5 porte UN titre (`onsiteTitle`) et ses trois
+//       chapitres sont en <h3>, avec le MÊME gabarit tous les trois.
+//
+//    ② LE DÉROULÉ RESTE SÉPARÉ DU CATALOGUE (4 ≠ 5).
+//       « Au programme d'une session » raconte ce qui SE PASSE (dans quel
+//       ordre, combien de temps, ce qu'on fait). La section 5 dit ce qu'il Y A.
+//       C'est la distinction que la page avait perdue : les deux se
+//       ressemblaient parce que les deux énuméraient les mêmes instruments.
+//       🚫 Le texte des 6 étapes est INTOUCHABLE : ce sont les mots de David et
+//          il doit rester identique à l'email de confirmation
+//          (supabase/functions/_shared/showcase-email.ts). On sépare les blocs,
+//          on ne réécrit pas les étapes.
+//
+//    ③ LES PHOTOS SONT REGROUPÉES, PLUS DE DOUBLON.
+//       Trois des quatre photos du carrousel d'ouverture étaient RE-AFFICHÉES
+//       en figures isolées plus bas (`vueEnsemble`, `presentation`,
+//       `grandePiece`). Il ne reste qu'UNE figure avant l'agenda (`vueEnsemble`,
+//       la seule preuve « il y a du monde ») et UNE dans la section 5
+//       (`instruments`, la seule photo qui n'est dans aucun carrousel).
+//       Surfaces photo restantes, chacune avec un rôle distinct :
+//         carrousel d'ouverture = LE LIEU · figure `vueEnsemble` = LA PREUVE ·
+//         figure `instruments` = CE QUI EST INSTALLÉ · carrousel `also` = LES
+//         AUTRES INSTRUMENTS · 2 carrousels Atlas = LE PRODUIT PARTENAIRE ·
+//         carrousel « En images » = LA MATIÈRE DU LIEU.
+//
+//    ④ L'AGENDA : LA DATE EST DEVENUE LE TITRE DE CHAQUE LIGNE.
+//       Les cinq lignes portaient le même <h3>, le même tag et la même adresse.
+//       Détail et mode d'emploi : `agendaEventTitle` (dict.ts) et `agendaEvents`
+//       (src/data/site.ts, champ `note` facultatif).
+//
+//    ⑤ LA SECTION DU BAS DIT ENFIN CE QU'ELLE EST.
+//       « Ce qu'on y vit · Tester, rencontrer, repartir avec » + 4 cartes dont
+//       une gratuite → `individualEyebrow` + `agendaMoreTitle` + 3 cartes
+//       payantes. Un seul titre au lieu de deux, une énumération d'instruments
+//       en moins, et plus de pastille « Gratuit » perdue dans des tarifs.
+// ════════════════════════════════════════════════════════════════════════════
 //
 // 🚨 CE QUI A CHANGÉ, ET POURQUOI (ne pas défaire sans relire ceci) :
 //    · L'AGENDA EST REMONTÉ de la 7ᵉ à la 3ᵉ position. Il était derrière CINQ
@@ -64,7 +111,9 @@ const t = getDict(lang)
 const sh = t.showroom
 const bk = t.booking
 const L = (p: string) => localizePath(p, lang)
-const eventIcons = ['lucide:presentation', 'lucide:compass', 'lucide:hand', 'lucide:graduation-cap']
+// 🎫 Icônes des TROIS formats payants (section 9). L'icône `lucide:presentation`
+// a disparu avec la carte du showcase gratuit — voir `paidEvents` plus bas.
+const eventIcons = ['lucide:compass', 'lucide:hand', 'lucide:graduation-cap']
 // 🦵 PIEDS ATLAS — LES MÊMES CARROUSELS QUE /pieds-atlas (20/08/2026).
 // David : « les photos des pieds sont trop petites sur la page showroom, ils ne
 // sont pas bien mis en valeur, il faudrait utiliser les mêmes carrousels que la
@@ -113,18 +162,29 @@ const alsoMeta = [
   { icon: 'lucide:drum', href: '/boutique#creations' },
   { icon: 'lucide:mic', href: '/boutique#micros' },
 ]
+// 🎫 LES TROIS FORMATS PAYANTS — et eux seuls (21/08/2026).
+// `sh.events[0]` est la carte du SHOWCASE PUBLIC GRATUIT : elle n'est plus
+// rendue. Elle décrivait, tout en bas de page et au milieu de trois cartes
+// payantes, l'événement dont la page entière parle depuis son premier écran —
+// avec, au passage, la 6ᵉ énumération des instruments de la page. Et sa
+// pastille « Gratuit » était le seul libellé non tarifaire d'une rangée de
+// prix : exactement la confusion gratuit/payant que David fait retirer depuis
+// le 16/08. La clé reste dans les deux dictionnaires (rien n'est supprimé) ;
+// le mode d'emploi pour la remettre est écrit au-dessus de `events` (dict.ts).
+const paidEvents = sh.events.slice(1)
 // Les 3 cartes payantes affichent le tarif de site.ts (sessionTypes), comme le
 // formulaire de réservation — impossible qu'elles annoncent deux prix différents.
-// La 1ʳᵉ carte (showcase gratuit) garde son libellé traduit.
-const eventPrices = [sh.events[0].price, priceForKind('onboarding'), priceForKind('demo'), priceForKind('lesson')]
+const eventPrices = [priceForKind('onboarding'), priceForKind('demo'), priceForKind('lesson')]
 // La grille du rendez-vous individuel (« 1h · 50 € — 1h30 · 70 € »), annoncée
 // UNIQUEMENT dans le bloc #individuel (bas de page) et dans la modale.
 // 🚨 Elle n'apparaît plus dans le hero : c'était le PREMIER prix lisible de la
 //    page, sur une page dont l'objet est un événement GRATUIT.
 const grid = priceGrid()
 // La prise en main est mise en avant : c'est le moment où quelqu'un qui vient
-// d'acheter décroche ou s'attache.
-const eventHighlight = 1
+// d'acheter décroche ou s'attache. Elle est passée de l'indice 1 à l'indice 0
+// le 21/08/2026 avec le retrait de la carte du showcase gratuit — c'est
+// TOUJOURS la même carte (« Prise en main de ton instrument »).
+const eventHighlight = 0
 
 // Seules les dates À VENIR sont affichées : une date passée dans le calendrier
 // donnait l'impression d'un agenda mort. Le tri se fait au build (voir
@@ -382,60 +442,43 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         où, exactement ? ». C'est ce doute-là qui coûte des inscriptions.
         ⓘ Une variante au cadrage resserré de la 1ʳᵉ existe :
         `/images/showroom-vue-ensemble-resserre.webp` (2000×826). */}
-    {/* 📐 DEUX BLOCS DE MÊME HAUTEUR (corrigé le 21/08/2026, David : « les deux
-        photos côte à côte sont décalées »).
-        LE PROBLÈME : les fichiers n'ont pas le même rapport — 2000×903 (2,21,
-        panoramique) et 1800×1012 (1,78). Affichées à hauteur libre dans une
-        grille `items-start`, la première finissait ~110 px plus courte que la
-        seconde : le bas de sa légende flottait dans le vide, et les deux
-        titres de légende n'étaient pas sur la même ligne.
-        LA CORRECTION : la photo de DROITE est RECADRÉE — pas déformée — au
-        rapport de celle de gauche (`aspect-[2000/903]` + `object-cover`).
-        Elle perd ~10 % en haut (poutres du plafond) et ~10 % en bas (parquet
-        au premier plan) : rien d'informatif, la pièce reste entière.
-        🚫 Ne pas « corriger » en enlevant `object-cover` pour remettre une
-           hauteur libre : le décalage revient aussitôt.
-        ⓘ AUCUN FICHIER N'A ÉTÉ RE-ENCODÉ : `showroom-grande-piece.webp` sert
-          aussi, non rogné, dans le carrousel d'ouverture — le recadrage est
-          purement d'affichage, il n'appartient qu'à cette grille.
-        💡 REDONDANCE ASSUMÉE, À TRANCHER PAR DAVID : ces deux photos sont
-           aussi les diapositives 2 et 4 du carrousel d'ouverture, ~300 px plus
-           haut. Elles sont gardées ici parce qu'elles portent des LÉGENDES que
-           le carrousel n'affiche pas. Si David préfère, ce bloc de deux figures
-           peut disparaître entièrement (le titre et l'intro de la section
-           suffisent) : c'est ~450 px de gagnés sur mobile, et l'agenda
-           redescend sous sa position d'avant le carrousel.
-        ⚡ `loading="eager"` A QUITTÉ CE BLOC le 21/08/2026 : la première image
-           visible de la page est désormais la 1ʳᵉ diapositive du carrousel
-           d'ouverture (prop `eager` du composant), plus celle-ci. Cette photo
-           est maintenant à ~1 470 px du haut sur mobile : la charger en
-           priorité, c'est retarder celle que le visiteur voit vraiment. */}
-    <div class="mt-10 grid items-start gap-6 lg:grid-cols-2">
-      <figure class="overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-        <img
-          src={showroomPhotos.vueEnsemble.src}
-          width={showroomPhotos.vueEnsemble.w}
-          height={showroomPhotos.vueEnsemble.h}
-          alt={sh.photoAlt.vueEnsemble}
-          loading="lazy"
-          decoding="async"
-          class="block h-auto w-full"
-        />
-        <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.vueEnsemble}</figcaption>
-      </figure>
-      <figure class="overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-        <img
-          src={showroomPhotos.grandePiece.src}
-          width={showroomPhotos.grandePiece.w}
-          height={showroomPhotos.grandePiece.h}
-          alt={sh.photoAlt.grandePiece}
-          loading="lazy"
-          decoding="async"
-          class="block aspect-[2000/903] w-full object-cover"
-        />
-        <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.grandePiece}</figcaption>
-      </figure>
-    </div>
+    {/* 📷 UNE SEULE PHOTO ICI (21/08/2026) — LE DOUBLON EST PARTI.
+        AVANT : DEUX figures côte à côte, `vueEnsemble` et `grandePiece`.
+        Or ce sont exactement les diapositives 2 et 4 du carrousel d'ouverture,
+        à ~1 100 px au-dessus. La page montrait donc les mêmes images deux fois
+        en moins de deux écrans — c'est précisément le « photos un peu partout »
+        que David décrit. Une redondance déjà signalée ici la veille et laissée
+        « à trancher » : elle est tranchée.
+
+        POURQUOI C'EST `vueEnsemble` QUI RESTE, et pas l'autre : c'est la seule
+        image de toute la page qui prouve que L'ÉVÉNEMENT EXISTE ET QU'IL Y A DU
+        MONDE (un cercle, des gens assis, des instruments au centre). C'est
+        aussi la seule qui illustre littéralement le titre de la section
+        (« À quoi ça ressemble, un showcase au Nid ») et son intro (« tout le
+        monde assis en cercle […] on est une quinzaine »). `grandePiece` montre
+        la pièce VIDE : le carrousel d'ouverture le fait déjà, en 4ᵉ position.
+
+        ⓘ Rien n'est perdu : le FICHIER `showroom-grande-piece.webp` reste
+          affiché (carrousel d'ouverture) et sa légende reste dans les deux
+          dictionnaires (`photoCaption.grandePiece`) — aucune clé supprimée.
+        📏 Gain mesuré sur mobile (375 px) : ~240 px retirés AVANT l'agenda.
+        ⚡ `loading="lazy"` : la première image visible de la page est la 1ʳᵉ
+           diapositive du carrousel d'ouverture (prop `eager` du composant).
+           Celle-ci est à ~1 470 px du haut sur mobile.
+        🚫 Ne pas remettre une seconde figure ici sans remesurer la position de
+           `#agenda` : c'est la contrainte la plus dure de la page. */}
+    <figure class="mx-auto mt-10 max-w-4xl overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+      <img
+        src={showroomPhotos.vueEnsemble.src}
+        width={showroomPhotos.vueEnsemble.w}
+        height={showroomPhotos.vueEnsemble.h}
+        alt={sh.photoAlt.vueEnsemble}
+        loading="lazy"
+        decoding="async"
+        class="block h-auto w-full"
+      />
+      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.vueEnsemble}</figcaption>
+    </figure>
 
     {/* ── COMMENT VENIR — sous un filet, dans la même section. */}
     <div id="acces" class="mt-14 scroll-mt-24 border-t border-ink/10 pt-12">
@@ -482,8 +525,24 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         )}
       </div>
 
-      <div data-agenda-list class="mt-8 space-y-4">
-        {agenda.map((e) => (
+      {/* ═══ CE QUI EST COMMUN AUX CINQ DATES, ÉCRIT UNE SEULE FOIS ══════════
+          🚨 CORRECTION DU 21/08/2026 — LE PROBLÈME LE PLUS VISIBLE DE LA PAGE.
+          AVANT : chaque ligne de l'agenda portait le MÊME <h3> (« Showcase
+          Neotone — et tous les instruments à essayer »), le MÊME tag
+          « Public · Gratuit » et la MÊME adresse. Cinq fois de suite. Le
+          visiteur ne lisait pas cinq dates : il lisait cinq fois la même
+          phrase. Et la seule information qui changeait réellement — LA DATE —
+          était en petit texte gris, SOUS le titre.
+          MAINTENANT : ce qui est commun est écrit ici, une fois. Ce qui
+          distingue est dans la ligne. */}
+      <p class="mx-auto mt-6 max-w-xl text-center text-sm text-ink-soft/70">
+        <span class="font-600 text-ink-soft">{sh.agendaEventTitle}</span>
+        <span class="mx-1.5 text-ink-soft/40">·</span>
+        {site.address}
+      </p>
+
+      <div data-agenda-list class="mt-6 space-y-4">
+        {agenda.map((e, i) => (
           <div
             data-event-iso={e.iso}
             class="flex flex-col items-center gap-5 rounded-card border border-copper/30 bg-cream-deep/50 p-5 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:text-left"
@@ -493,10 +552,48 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
               <span class="text-xs font-600 uppercase tracking-widest text-gold">{e.month}</span>
             </div>
             <div class="flex-1 text-center sm:text-left">
-              <p class="inline-flex items-center gap-2 rounded-full bg-rust/15 px-3 py-1 text-xs font-700 uppercase tracking-widest text-rust">{sh.agendaEventTag}</p>
-              <h3 class="mt-2 font-display text-xl font-700">{sh.agendaEventTitle}</h3>
-              <p class="mt-1 text-sm font-600 text-ink-soft first-letter:uppercase">{e.dateLong} · {e.time}</p>
-              <p class="mt-1 text-sm text-ink-soft/70">{site.address}</p>
+              {/* 🗓️ LA DATE EST LE TITRE DE LA LIGNE. C'est la seule chose qui
+                  différencie une ligne d'une autre, elle doit donc être ce
+                  qu'on lit en premier et en plus gros.
+                  `first-letter:uppercase` : Intl rend « samedi 23 août 2026 »
+                  en minuscule en français. */}
+              <h3 class="font-display text-xl font-700 first-letter:uppercase">{e.dateLong}</h3>
+              {/* L'HORAIRE change réellement d'une date à l'autre (la séance de
+                  décembre commence à 15h et non 16h) : c'est une vraie
+                  différence, elle reste sur la ligne. */}
+              <p class="mt-1 text-sm font-600 text-ink-soft">{e.time}</p>
+              {/* 🏷️ MARQUEURS FACULTATIFS — aucun contenu inventé.
+                  · « Prochain showcase gratuit » (`agendaNextLabel`, texte déjà
+                    écrit et validé) n'apparaît QUE sur la 1ʳᵉ ligne : c'est un
+                    fait, pas une promesse, et il donne enfin un repère à l'œil.
+                  · `e.note` est le champ FACULTATIF de `agendaEvents`
+                    (src/data/site.ts), vide sur les cinq dates actuelles :
+                    seul David peut dire ce qui distingue une séance d'une
+                    autre. Le jour où il l'écrit, ça s'affiche ici tout seul. */}
+              {/* 🐞 PIÈGE TAILWIND ÉVITÉ ICI (attrapé au rendu le 21/08/2026).
+                  1ʳᵉ tentative : rendre la pastille sur TOUTES les lignes et la
+                  masquer avec `hidden` partout sauf la première. Résultat à
+                  l'écran : elle s'affichait sur DEUX lignes. `hidden` et
+                  `inline-flex` sont deux utilitaires `display` de la MÊME
+                  couche — c'est l'ordre dans la feuille compilée qui tranche,
+                  et `inline-flex` gagnait. Le même piège est déjà documenté
+                  plus haut, sur le repli du hero.
+                  ✅ SOLUTION RETENUE : la pastille n'est rendue QUE sur la 1ʳᵉ
+                  ligne. Si le filet <script> de bas de page supprime des dates
+                  dépassées (page servie depuis un cache), il RECOPIE la
+                  pastille dans `[data-badges]` de la première ligne restante.
+                  🚫 Ne pas revenir à un masquage par classe `display`. */}
+              <div
+                data-badges
+                class:list={['flex flex-wrap items-center justify-center gap-2 sm:justify-start', (i === 0 || e.note) && 'mt-2']}
+              >
+                {i === 0 && (
+                  <span data-next-badge class="inline-flex items-center rounded-full bg-rust/15 px-3 py-1 text-[11px] font-700 uppercase tracking-widest text-rust">{sh.agendaNextLabel}</span>
+                )}
+                {e.note && (
+                  <span class="inline-flex items-center rounded-full bg-gold/25 px-3 py-1 text-[11px] font-700 uppercase tracking-widest text-ink">{e.note}</span>
+                )}
+              </div>
             </div>
             <button
               type="button"
@@ -549,32 +646,35 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
     </div>
   </Section>
 
-  {/* ═══ 4. LE DÉROULÉ — « qu'est-ce que je vais y faire ? » ═══════════════
-      Première question de quelqu'un qui n'a pas réservé tout de suite. Elle
-      passe AVANT le catalogue d'instruments : on se demande d'abord comment se
-      passe la séance, ensuite ce qu'on pourra toucher.
-      🚨 21/08/2026 : ce commentaire disait « l'après-midi » — un showcase peut
-         se tenir le matin, l'après-midi ou le soir. Aucun texte de cette page
-         ne fixe de moment de la journée ; seul l'agenda porte l'heure.
-      📐 Section passée en fond `cream` (elle était en `cream-deep`) pour ne pas
-         enchaîner deux fonds sombres avec l'agenda qui la précède désormais ;
-         les cartes internes passent donc de `bg-cream` à `bg-cream-deep/40`,
-         c'est le couple de contraste utilisé partout ailleurs sur fond crème. */}
+  {/* ═══ 4. LE DÉROULÉ — « comment ça se PASSE ? » ════════════════════════
+      🧲 C'EST LA MOITIÉ « TEMPS » DE LA PAGE, et elle est maintenant SEULE de
+      son espèce. La section 5 qui la suit est la moitié « OBJETS ». Cette
+      séparation est la demande du 21/08/2026 : « Au programme d'une session »
+      racontait le déroulé ET énumérait les instruments, exactement comme les
+      deux sections suivantes — trois blocs se ressemblaient donc sans qu'on
+      sache lequel lisait quoi.
+      👉 CE QUI APPARTIENT ICI : la durée, l'ordre des moments, ce qu'on fait,
+         qui parle, ce qui est facultatif. Rien d'autre.
+      👉 CE QUI APPARTIENT À LA SECTION 5 : la liste des instruments, leurs
+         descriptions, leurs photos, les liens vers leurs fiches.
+      🚫 LE TEXTE DES 6 ÉTAPES EST INTOUCHABLE : ce sont les mots de David, et
+         il doit rester IDENTIQUE à celui de l'email de confirmation
+         (`supabase/functions/_shared/showcase-email.ts`). Les étapes nomment
+         donc encore des instruments — c'est normal, elles racontent ce qui se
+         passe avec eux. On sépare les BLOCS, on ne réécrit pas les étapes.
+      📐 Fond `cream` (elle était en `cream-deep`) pour ne pas enchaîner deux
+         fonds sombres avec l'agenda qui la précède ; les cartes internes
+         passent donc en `bg-cream-deep/40`, le couple de contraste utilisé
+         partout ailleurs sur fond crème.
+      📷 21/08/2026 — LA PHOTO « présentation » A ÉTÉ RETIRÉE D'ICI. C'était la
+         3ᵉ diapositive du carrousel d'ouverture, ré-affichée une deuxième fois
+         sur la même page. Le fichier reste à l'écran (dans le carrousel) et sa
+         légende reste dans les deux dictionnaires
+         (`photoCaption.presentation`) — aucune clé supprimée. Une liste
+         numérotée de 6 étapes n'avait de toute façon pas besoin d'une
+         illustration : elle se lit, elle ne se regarde pas. */}
   <Section>
     <SectionHeading eyebrow={sh.programEyebrow} title={sh.programTitle} intro={sh.programIntro} />
-    {/* Le moment « présentation / démonstration » du déroulé, en image. */}
-    <figure class="mx-auto mt-10 max-w-3xl overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-      <img
-        src={showroomPhotos.presentation.src}
-        width={showroomPhotos.presentation.w}
-        height={showroomPhotos.presentation.h}
-        alt={sh.photoAlt.presentation}
-        loading="lazy"
-        decoding="async"
-        class="block h-auto w-full"
-      />
-      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.presentation}</figcaption>
-    </figure>
     <ol class="mx-auto mt-10 max-w-2xl space-y-4">
       {sh.program.map((s, i) => (
         <li class="flex gap-5 rounded-card border border-ink/10 bg-cream-deep/40 p-5">
@@ -606,9 +706,29 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
          écrans sur mobile) et elle s'intercalait entre le hero et la moindre
          possibilité de réserver. Son contenu interne n'a PAS bougé. */}
   <Section id="deux-univers">
-    <SectionHeading eyebrow={sh.duoEyebrow} title={sh.duoTitle} intro={sh.duoIntro} />
-    {/* Les DEUX univers sur la même photo, installés côte à côte : c'est
-        exactement ce que les deux cartes ci-dessous décrivent en mots. */}
+    {/* 🧲 UN SEUL TITRE POUR TOUS LES INSTRUMENTS (21/08/2026).
+        AVANT : `duoTitle` (« Handpan acoustique et électronique, le même
+        jour ») servait de titre de section, puis `alsoTitle` (« Le reste de ce
+        que je joue est là aussi ») ouvrait un DEUXIÈME bloc de titre de même
+        poids, puis les pieds Atlas un TROISIÈME. Trois repères de même niveau,
+        sur le même sujet, dans la même section : le lecteur ne savait plus s'il
+        changeait de chapitre ou de page.
+        MAINTENANT : `onsiteTitle` est LE titre (<h2>), et les trois anciens
+        titres sont ses trois chapitres (<h3>), avec le MÊME gabarit de
+        sous-titre tous les trois — repris à l'identique trois fois plus bas
+        (eyebrow copper · h3 · intro), pour qu'aucun ne prenne le pas.
+        🚫 Ne pas remettre `duoTitle` en <SectionHeading> : ça recréerait deux
+           titres de section pour un seul sujet.
+        🔗 `id="deux-univers"` est CONSERVÉ (des commentaires de ShopPage.astro
+           et de src/data/shop.ts y renvoient, et l'ancre peut avoir été
+           partagée). Ne pas le renommer. */}
+    <SectionHeading eyebrow={sh.onsiteEyebrow} title={sh.onsiteTitle} />
+    {/* 📷 LA SEULE PHOTO DE LA SECTION, ET LA SEULE DE LA PAGE QUI N'EST DANS
+        AUCUN CARROUSEL. Elle montre tout le matériel installé avant l'arrivée
+        du public : c'est littéralement le sommaire en image des trois chapitres
+        qui suivent. Elle est remontée sous le titre de section (elle ouvrait
+        déjà le duo) — sa légende, « Ce qui t'attend en arrivant », vaut
+        maintenant pour la section entière. */}
     <figure class="mx-auto mt-10 max-w-4xl overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
       <img
         src={showroomPhotos.instruments.src}
@@ -621,7 +741,20 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
       />
       <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.instruments}</figcaption>
     </figure>
-    <div class="mt-10 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-4">
+
+    {/* ═══ CHAPITRE 1/3 — LE HANDPAN, SES DEUX UNIVERS ═══════════════════
+        ⚖️ « Le monde du ET », version showroom : ici on ne vend pas un choix,
+        on fait ESSAYER. Les deux cartes sont strictement symétriques (même
+        gabarit, même nombre de puces, même CTA) — mettre Yishama en avant,
+        mais jamais plus que Neotone. `duoNote` dit franchement la seule
+        asymétrie réelle : seul le Neotone est en stock. */}
+    <div class="mt-14">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.duoEyebrow}</p>
+        <h3 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.duoTitle}</h3>
+        <p class="mt-3 text-ink-soft/85">{sh.duoIntro}</p>
+      </div>
+      <div class="mt-10 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-4">
       {sh.duo.map((d, i) => (
         <Fragment>
           {i === 1 && (
@@ -635,7 +768,13 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
             <p class:list={['inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[11px] font-700 uppercase tracking-widest', duoMeta[i].chip]}>
               <Icon name={duoMeta[i].icon} class="h-4 w-4" /> {d.sub}
             </p>
-            <h3 class="mt-4 font-display text-2xl font-700">{d.title}</h3>
+            {/* 📐 <h4> ET `text-xl` DEPUIS LE 21/08/2026 (c'était <h3>
+                `text-2xl`) : le titre du CHAPITRE au-dessus est maintenant le
+                <h3>. Deux <h3> l'un dans l'autre, à la même taille sur mobile,
+                c'était deux fois le même niveau — donc plus de niveau du tout.
+                La taille du texte suit le niveau, sinon la correction ne se
+                voit pas. */}
+            <h4 class="mt-4 font-display text-xl font-700">{d.title}</h4>
             <p class="mt-3 text-ink-soft/85">{d.text}</p>
             <ul class="mt-5 flex-1 space-y-2 text-sm text-ink-soft/85">
               {d.points.map((p) => (
@@ -647,18 +786,21 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         </Fragment>
       ))}
     </div>
-    <p class="mx-auto mt-8 max-w-3xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm text-ink-soft/85">{sh.duoNote}</p>
+      <p class="mx-auto mt-8 max-w-3xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm text-ink-soft/85">{sh.duoNote}</p>
+    </div>
 
-    {/* ── ET PAS SEULEMENT LE HANDPAN — Gonilélé, calebasse, micros.
-        Volontairement dans la MÊME section que le duo handpan, et sous un
-        filet de séparation : ça se lit comme « … et il y a aussi ça »,
-        jamais comme un quatrième univers concurrent du Neotone.
-        Cartes plus sobres que celles du duo (une seule colonne de texte,
-        pas de puces) : l'attractivité du Neotone n'est pas diluée. */}
+    {/* ═══ CHAPITRE 2/3 — ET PAS SEULEMENT LE HANDPAN ════════════════════
+        Gonilélé, calebasse, micros. Sous un filet de séparation : ça se lit
+        comme « … et il y a aussi ça », jamais comme un univers concurrent du
+        Neotone. Cartes plus sobres que celles du duo (une seule colonne de
+        texte, pas de puces) : l'attractivité du Neotone n'est pas diluée.
+        📐 21/08/2026 : le titre est passé de <h2> à <h3> et son gabarit est
+           désormais IDENTIQUE à celui du chapitre 1 — c'était le deuxième
+           « titre de section » de la même section. */}
     <div class="mt-14 border-t border-ink/10 pt-12">
       <div class="mx-auto max-w-2xl text-center">
         <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.alsoEyebrow}</p>
-        <h2 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.alsoTitle}</h2>
+        <h3 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.alsoTitle}</h3>
         <p class="mt-3 text-ink-soft/85">{sh.alsoIntro}</p>
       </div>
       {/* 🎠 LE CARROUSEL DES AUTRES INSTRUMENTS (20/08/2026, demande de David).
@@ -685,30 +827,39 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         {sh.also.map((a, i) => (
           <div class="flex flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6">
             <Icon name={alsoMeta[i].icon} class="h-7 w-7 text-copper" />
-            <h3 class="mt-3 font-display text-lg font-700">{a.title}</h3>
+            {/* <h4> : sous le <h3> du chapitre — voir les cartes du duo. */}
+            <h4 class="mt-3 font-display text-lg font-700">{a.title}</h4>
             <p class="mt-2 flex-1 text-sm text-ink-soft/85">{a.text}</p>
             <a href={L(alsoMeta[i].href)} class="mt-5 inline-flex items-center gap-1 text-sm font-700 text-copper transition-all hover:gap-2">{a.cta} →</a>
           </div>
         ))}
       </div>
       <p class="mx-auto mt-6 max-w-2xl text-center text-sm text-ink-soft/70">{sh.alsoNote}</p>
+    </div>
 
-      {/* ── 🦵 LES PIEDS ATLAS (20/08/2026) ─────────────────────────────────
-          Partenariat d'affiliation validé : Atlas envoie deux pieds de
-          démonstration, ils seront donc réellement sur place — d'où leur
-          place dans « et pas seulement le handpan ».
-          ⚠️ VOLONTAIREMENT SOUS `alsoNote` : la note promet « coche-le au
-          moment de réserver », ce qui n'est vrai que pour les 3 instruments
-          au-dessus. Les pieds ne sont PAS une case du formulaire (aucune
-          colonne ne les attend en base — règle des trois écritures). Pour les
-          y ajouter un jour : formulaire → api/subscribe.js → site-lead + colonne.
-          Encadré plutôt que 4ᵉ carte : ce n'est pas un instrument, et le
-          Neotone ne doit pas perdre de place au profit d'un accessoire. */}
-      <div class="mt-12 rounded-card border border-copper/30 bg-cream p-6 md:p-8">
+    {/* ═══ CHAPITRE 3/3 — 🦵 LES PIEDS ATLAS (20/08/2026) ═════════════════
+        Partenariat d'affiliation validé : Atlas envoie deux pieds de
+        démonstration, ils seront donc réellement sur place — d'où leur place
+        dans cette section.
+        ⚠️ TOUJOURS APRÈS `alsoNote` : cette note promet « coche-le au moment de
+        réserver », ce qui n'est vrai que pour les 3 instruments du chapitre 2.
+        Les pieds ne sont PAS une case du formulaire (aucune colonne ne les
+        attend en base — règle des trois écritures). Pour les y ajouter un
+        jour : formulaire → api/subscribe.js → site-lead + colonne.
+        📐 21/08/2026 : ce bloc était IMBRIQUÉ dans le chapitre « et pas
+           seulement le handpan », ce qui lui donnait un 4ᵉ niveau de titre
+           dans une section qui en avait déjà trois. Il est maintenant un
+           chapitre à part entière, au même niveau que les deux autres, avec
+           le même filet et le même gabarit de sous-titre.
+        🎨 L'encadré `bg-cream` est CONSERVÉ, et c'est volontaire : ce n'est
+           pas un instrument mais un ACCESSOIRE PARTENAIRE — le cadre le dit
+           sans avoir à l'écrire, et le Neotone ne perd pas sa place. */}
+    <div class="mt-14 border-t border-ink/10 pt-12">
+      <div class="rounded-card border border-copper/30 bg-cream p-6 md:p-8">
         <div class="mx-auto max-w-2xl text-center">
           <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.atlasEyebrow}</p>
-          <h3 class="mt-3 font-display text-xl font-700 md:text-2xl">{sh.atlasTitle}</h3>
-          <p class="mt-3 text-sm text-ink-soft/85">{sh.atlasIntro}</p>
+          <h3 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.atlasTitle}</h3>
+          <p class="mt-3 text-ink-soft/85">{sh.atlasIntro}</p>
         </div>
         {/* 🎠 LES MÊMES CARROUSELS QUE /pieds-atlas (20/08/2026, David : « les
             photos des pieds sont trop petites […] il faudrait utiliser les
@@ -808,6 +959,31 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
       <ul class="mt-6 grid gap-3 md:grid-cols-3">
         {sh.exclArgs.map((a) => <li class="flex gap-3 rounded-xl bg-cream-deep/60 p-4 text-sm font-600"><Icon name="lucide:check" class="mt-0.5 h-5 w-5 shrink-0 text-copper" /> {a}</li>)}
       </ul>
+
+      {/* ═══ 🇫🇷 EMPLACEMENT RÉSERVÉ — « le seul lieu en France » ═══════════
+          🚨 CETTE PHRASE N'EST PAS PUBLIÉE. Elle ne s'affiche que si
+             `FRANCE_EXCLUSIVITY_ACTIVE` vaut `true` (src/data/showroom.ts) —
+             aujourd'hui `false`. Même dispositif que le code promo Atlas.
+
+          POURQUOI ICI, ET NULLE PART AILLEURS SUR LA PAGE : c'est le seul
+          bloc de tout le site qui parle d'ACHETER SUR PLACE. La phrase dit
+          « s'essaient ET s'achètent en direct » — sa moitié « acheter » n'a de
+          sens qu'à cet endroit. Plus haut (hero, agenda), elle transformerait
+          l'annonce d'un événement gratuit en argument commercial, ce que David
+          fait retirer de cette page depuis le 16/08.
+
+          ⚠️ AVANT DE L'ALLUMER — LIRE `exclText`, JUSTE AU-DESSUS : il
+             revendique DÉJÀ « le premier lieu AU MONDE où ces instruments sont
+             en vente en direct ». Les deux revendications se recouvrent, à
+             deux échelles différentes. Publier les deux affaiblit la plus
+             forte. Le raisonnement complet et la marche à suivre sont écrits
+             au-dessus de l'interrupteur, dans src/data/showroom.ts. */}
+      {FRANCE_EXCLUSIVITY_ACTIVE && (
+        <p class="mt-6 flex items-start gap-3 rounded-xl border border-gold/50 bg-gold/10 p-4 font-display text-base font-700 md:text-lg">
+          <Icon name="lucide:map-pin" class="mt-1 h-5 w-5 shrink-0 text-copper" />
+          {sh.franceClaim}
+        </p>
+      )}
     </div>
   </Section>
 
@@ -825,11 +1001,26 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
       🚨 PAS D'ADRESSE EMAIL EN CLAIR ICI (18/08/2026) : « je ne veux plus que
          les gens voient mon email, je veux qu'ils remplissent le formulaire
          pour que tout soit tracé ». Ne pas réintroduire de `mailto:`.
-      🔗 `id="individuel"` est la cible du lien discret du hero. */}
+      🔗 `id="individuel"` est la cible du lien discret du hero.
+
+      🧲 21/08/2026 — LA SECTION DIT ENFIN CE QU'ELLE EST. Deux corrections :
+        · SON TITRE. Elle s'appelait « Ce qu'on y vit · Tester, rencontrer,
+          repartir avec » — un titre qui décrit la page ENTIÈRE, et qui
+          doublonnait avec « Au programme d'une session ». Elle porte désormais
+          les mots de David qui étaient déjà dans le bloc du dessous
+          (`agendaMoreTitle` / `agendaMoreText`), promus en titre et intro de
+          section : le <h3> qui les portait est retiré, ils ne sont donc PAS
+          écrits deux fois.
+        · SES CARTES. Elles étaient quatre, dont la PREMIÈRE décrivait le
+          showcase public GRATUIT — au milieu de trois cartes payantes, tout en
+          bas d'une page qui ne parle que de ce showcase depuis son premier
+          écran, avec au passage la 6ᵉ énumération des instruments. Il en reste
+          TROIS, toutes payantes (`paidEvents`). La grille passe donc de
+          `lg:grid-cols-4` à `md:grid-cols-3`. */}
   <Section id="individuel">
-    <SectionHeading eyebrow={sh.eventsEyebrow} title={sh.eventsTitle} />
-    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {sh.events.map((e, i) => (
+    <SectionHeading eyebrow={sh.individualEyebrow} title={sh.agendaMoreTitle} intro={sh.agendaMoreText} />
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+      {paidEvents.map((e, i) => (
         <div class:list={['flex flex-col rounded-card p-6', i === eventHighlight ? 'border-2 border-copper/50 bg-cream shadow-md' : 'border border-ink/10 bg-cream-deep/40']}>
           {i === eventHighlight && (
             <p class="mb-3 inline-flex w-fit items-center rounded-full bg-gold/25 px-3 py-1 text-[11px] font-700 uppercase tracking-widest text-ink">{sh.eventsHighlight}</p>
@@ -847,10 +1038,13 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         le tarif, et le cadre d'annulation. C'est ici qu'atterrit le bouton
         « Réserver un RDV VIP » de l'email de confirmation — via `?rdv=prive`,
         qui ouvre la modale tout seul (BookingForm lit le paramètre). */}
+    {/* ⓘ `agendaMoreTitle` / `agendaMoreText` NE SONT PLUS ICI (21/08/2026) :
+        ils sont devenus le titre et l'intro de la section, juste au-dessus.
+        Les laisser aux deux endroits, c'était poser la même question deux fois
+        à 900 px d'écart. Ce bloc commence donc directement par le PÉRIMÈTRE
+        (`vipScope`) — ce pour quoi on peut venir. */}
     <div class="mx-auto mt-12 max-w-3xl rounded-card border border-copper/30 bg-cream-deep/40 p-6 text-center md:p-8">
-      <h3 class="font-display text-xl font-700">{sh.agendaMoreTitle}</h3>
-      <p class="mx-auto mt-2 max-w-md text-sm text-ink-soft/85">{sh.agendaMoreText}</p>
-      <p class="mx-auto mt-4 max-w-2xl text-sm text-ink-soft/85">{bk.vipScope}</p>
+      <p class="mx-auto max-w-2xl text-sm text-ink-soft/85">{bk.vipScope}</p>
       <div class="mx-auto mt-5 flex max-w-md flex-col items-center gap-1 rounded-xl bg-gold/15 px-5 py-4">
         <span class="text-[11px] font-700 uppercase tracking-widest text-ink-soft/70">{bk.vipPriceLabel}</span>
         <span class="font-display text-xl font-700 text-rust">{grid}</span>
@@ -899,9 +1093,24 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
   // retrouver avec le seul lien PAYANT en tête (cf. commentaire du hero).
   const fallback = document.querySelector('[data-next-fallback]')
 
+  // 🏷️ La pastille « Prochain showcase gratuit » n'est rendue QUE sur la 1ʳᵉ
+  // ligne. On garde donc sa copie AVANT le nettoyage : si c'est justement cette
+  // ligne-là qui est dépassée et supprimée, il faut pouvoir la redonner à la
+  // première ligne restante. (Masquer/afficher par classe ne marche pas ici :
+  // `hidden` perd contre `inline-flex`, voir le commentaire dans la boucle.)
+  const nextBadgeHtml = list?.querySelector('[data-next-badge]')?.outerHTML || ''
+
   list?.querySelectorAll<HTMLElement>('[data-event-iso]').forEach((card) => {
     if ((card.dataset.eventIso || '') < today) card.remove()
   })
+
+  if (nextBadgeHtml && list && !list.querySelector('[data-next-badge]')) {
+    const holder = list.querySelector('[data-badges]')
+    if (holder) {
+      holder.insertAdjacentHTML('afterbegin', nextBadgeHtml)
+      holder.classList.add('mt-2')
+    }
+  }
   if (banner instanceof HTMLElement && (banner.dataset.eventIso || '') < today) {
     banner.remove()
     fallback?.classList.remove('hidden')

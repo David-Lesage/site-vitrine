@@ -1678,6 +1678,32 @@ const fr = {
     exclTitle: 'Repars avec ton Neotone¹, le jour même',
     exclText: 'Je l’assume : Le Nid est le premier lieu au monde où ces instruments sont en vente en direct, sur place. Concrètement, ça veut dire que tu peux acheter ton Neotone¹ ici même et l’emporter immédiatement — sans aucun délai de fabrication. Mes handpans Yishama, eux, ne sont pas à vendre : ce sont mes instruments personnels, ils sont là pour être entendus et joués.',
     exclArgs: ['7 % de remise — le meilleur prix du marché (contre 5 % en ligne)', 'Aucun délai de fabrication ni d’attente', 'Stock ultra limité — quelques instruments disponibles'],
+    // 🇫🇷 REVENDICATION EN ATTENTE — ÉCRITE, PLACÉE, PAS PUBLIÉE.
+    // Ne s'affiche QUE si `FRANCE_EXCLUSIVITY_ACTIVE` vaut `true`
+    // (src/data/showroom.ts) — aujourd'hui `false`. Le mode d'emploi, la raison
+    // de l'extinction et l'avertissement « la page revendique DÉJÀ le premier
+    // lieu AU MONDE » sont écrits en entier au-dessus de cet interrupteur.
+    // 🚫 Ne pas l'allumer sans confirmation explicite de David : « le seul en
+    //    France » est invérifiable depuis ce dépôt, et faux il serait trompeur.
+    franceClaim: 'Le seul lieu en France où ces instruments s’essaient et s’achètent en direct.',
+
+    // ── 🧲 UNE SEULE SECTION POUR LES INSTRUMENTS (21/08/2026) ──────────────
+    // Mots de David : « il y en a un peu partout dans tous les sens, il y a
+    // besoin de rassembler les choses entre elles ».
+    // AVANT : trois blocs de titre de MÊME POIDS VISUEL s'enchaînaient — le
+    // déroulé, « Handpan acoustique et électronique », « Le reste de ce que je
+    // joue est là aussi » — plus un quatrième pour les pieds Atlas. Quatre
+    // eyebrow + titre + intro à la suite, tous sur le même sujet : le lecteur
+    // ne voyait plus une progression, il voyait un empilement.
+    // MAINTENANT : UN seul titre de section (ci-dessous), et les trois anciens
+    // titres deviennent ses trois chapitres (`duoTitle`, `alsoTitle`,
+    // `atlasTitle`, en <h3>). Le DÉROULÉ, lui, reste une section à part : il
+    // raconte ce qui se PASSE, pas ce qu'il y a — c'est la distinction que la
+    // page perdait.
+    // 🔤 Aucun fait nouveau : « Tout est essayable sur place » est déjà écrit
+    //    par David dans `agendaIntro`.
+    onsiteEyebrow: 'Sur place',
+    onsiteTitle: 'Tout ce que tu peux essayer sur place',
 
     // ── « Le monde du ET » version showroom : ici, ce n'est pas un choix
     // d'achat mais une EXPÉRIENCE — les deux univers se jouent sur place.
@@ -1691,7 +1717,11 @@ const fr = {
     // Depuis le 18/08/2026 il est suivi du bloc `also*` (Gonilélé, calebasse,
     // micros) : le titre le dit maintenant, sinon on laisserait croire que le
     // showroom se résume à ces deux univers.
-    duoEyebrow: 'Sur place · les deux univers du handpan',
+    // ✂️ « Sur place · les deux univers du handpan » → « Les deux univers du
+    //    handpan » (21/08/2026) : « Sur place » est devenu l'eyebrow de la
+    //    section PARENTE (`onsiteEyebrow`). Le répéter dans chacun de ses trois
+    //    chapitres, c'était l'écrire trois fois dans le même écran.
+    duoEyebrow: 'Les deux univers du handpan',
     // 🚨 « le même APRÈS-MIDI » → « le même JOUR » le 21/08/2026, comme dans
     //    `heroLead` : un showcase peut se tenir le matin, l'après-midi ou le
     //    soir. Substitution minimale — la promesse (tout essayer en une fois)
@@ -1727,7 +1757,9 @@ const fr = {
     // 🚧 INCONNU, DONC NON ÉCRIT : combien de Gonilélé / de calebasses sont
     // disponibles à l'essai sur place. Ne pas inventer un nombre (les Yishama
     // et les Neotone, eux, sont chiffrés parce que c'est écrit ailleurs).
-    alsoEyebrow: 'Sur place · et pas seulement le handpan',
+    // ✂️ « Sur place · et pas seulement le handpan » → sans « Sur place · »,
+    //    même raison que `duoEyebrow` ci-dessus.
+    alsoEyebrow: 'Et pas seulement le handpan',
     alsoTitle: 'Le reste de ce que je joue est là aussi',
     alsoIntro: 'Le Neotone est la tête d’affiche du showcase — mais tu n’es pas obligé·e de venir pour lui. Ces instruments-là sont sortis eux aussi, et tu peux les prendre en main au même titre que les handpans.',
     also: [
@@ -1840,6 +1872,16 @@ const fr = {
       grandePiece:
         'La grande pièce du showroom en journée, avant l’arrivée du public : parquet ancien, canapé bas et coussins posés à même le sol, un handpan acoustique sur son trépied au fond, une guitare accrochée au mur, des plantes et des tapis de sol roulés dans un panier.',
     },
+    // 🚨 DEUX LÉGENDES NE SONT PLUS AFFICHÉES (21/08/2026) — clés CONSERVÉES :
+    //    `grandePiece` et `presentation`. Leurs PHOTOS, elles, restent bien à
+    //    l'écran : ce sont les diapositives 3 et 4 du carrousel d'ouverture.
+    //    POURQUOI : ces deux photos étaient montrées DEUX FOIS sur la même page
+    //    — une fois dans le carrousel du haut, une fois en figure isolée
+    //    quelques centaines de pixels plus bas. Idem pour `vueEnsemble`, qui
+    //    elle est conservée en figure (c'est la seule preuve « l'événement
+    //    existe, il y a du monde » de toute la page).
+    //    👉 POUR LES REMETTRE : les <figure> supprimées sont documentées à leur
+    //       emplacement d'origine dans ShowroomPage.astro.
     photoCaption: {
       vueEnsemble: 'Un showcase au Nid — public assis en cercle, instruments au centre.',
       grandePiece: 'La même pièce en journée, avant que tout soit installé.',
@@ -1880,9 +1922,34 @@ const fr = {
         'Un handpan électronique Neotone en bois posé sur son trépied, à côté de la sonorisation du showroom : une colonne Bose L1 Model II et sa console de mixage T8S posée sur les caissons.',
     },
 
+    // ⓘ `eventsEyebrow` et `eventsTitle` NE SONT PLUS AFFICHÉS depuis le
+    //    21/08/2026 — clés CONSERVÉES, rien n'est supprimé.
+    //    POURQUOI : la section du bas s'appelait « Ce qu'on y vit · Tester,
+    //    rencontrer, repartir avec » alors qu'elle ne contient QUE l'option
+    //    payante en individuel. Deux titres se disputaient donc le même sujet
+    //    (« Au programme d'une session » racontait déjà ce qu'on y vit), et
+    //    celui-ci ne décrivait pas son propre contenu. La section porte
+    //    maintenant les mots de David : `agendaMoreTitle` en titre,
+    //    `agendaMoreText` en intro, sous l'eyebrow `individualEyebrow`.
     eventsEyebrow: 'Ce qu’on y vit',
     eventsTitle: 'Tester, rencontrer, repartir avec',
+    // Eyebrow de la section du bas — dit ce qu'elle est vraiment : le créneau
+    // PAYANT, en tête-à-tête, sur rendez-vous. Le seul de toute la page.
+    individualEyebrow: 'En individuel · sur rendez-vous',
     eventsHighlight: 'Le plus demandé au démarrage',
+    // 🚨 LA 1ʳᵉ ENTRÉE N'EST PLUS AFFICHÉE (21/08/2026) — clé CONSERVÉE.
+    //    La page rend désormais `events.slice(1)`, c'est-à-dire les TROIS
+    //    formats payants seulement.
+    //    POURQUOI : cette carte décrivait le showcase public gratuit… au milieu
+    //    de trois cartes payantes, tout en bas d'une page qui ne parle QUE de ce
+    //    showcase depuis son premier écran. C'était la 6ᵉ énumération des
+    //    instruments de la page (après `heroLead`, `agendaIntro`, le déroulé,
+    //    le duo et « le reste de ce que je joue »), et la seule pastille
+    //    « Gratuit » perdue dans une rangée de tarifs — exactement la confusion
+    //    gratuit/payant que David fait retirer depuis le 16/08.
+    //    👉 POUR LA REMETTRE : rendre `sh.events` au lieu de `sh.events.slice(1)`
+    //       dans ShowroomPage.astro, et remettre `sh.events[0].price` en tête de
+    //       `eventPrices` + `eventHighlight` à 1. Rien d'autre.
     events: [
       { t: 'Showcase Neotone & découverte des instruments', d: 'Le rendez-vous public et gratuit du Nid : David Lesage présente les Neotone — puis tout est essayable sur place, handpans acoustiques Yishama, harpe africaine Gonilélé, calebasse et micros pour handpan.', price: 'Public · Gratuit' },
       { t: 'Prise en main de ton instrument', d: 'Tu viens de recevoir ton Neotone, ton handpan ou ton micro ? On règle tout ensemble et on prend les commandes en main, pas à pas. En présentiel ou en visio.', price: '' },
@@ -1951,7 +2018,21 @@ const fr = {
     // Mots de David (16/08/2026), affichés sous la date dans le hero.
     agendaSeats: 'Gratuit sur réservation · places limitées',
     agendaCta: 'Être prévenu·e des prochains showcases',
+    // 🚨 AFFICHÉ UNE SEULE FOIS DEPUIS LE 21/08/2026, AU-DESSUS DE LA LISTE.
+    //    AVANT : ce titre était le <h3> de CHACUNE des cinq lignes de l'agenda.
+    //    Cinq lignes, cinq fois le même titre, cinq fois le même tag, cinq fois
+    //    la même adresse — et la seule chose qui changeait vraiment, la DATE,
+    //    était en petit texte en dessous. David : « il y en a un peu partout
+    //    dans tous les sens ». MAINTENANT : le titre de chaque ligne EST sa
+    //    date (« samedi 23 août 2026 »), et ce libellé commun ne s'écrit
+    //    qu'une fois, avec l'adresse, juste au-dessus de la liste.
+    //    🚫 Ne pas le remettre dans la boucle : c'est ce qui rendait les cinq
+    //       lignes indiscernables.
     agendaEventTitle: 'Showcase Neotone — et tous les instruments à essayer',
+    // ⓘ `agendaEventTag` n'est PLUS affiché sur chaque ligne — clé conservée.
+    //    La gratuité est déjà dite trois fois autour de la liste :
+    //    `agendaTitle` (« showcases publics GRATUITS »), `agendaIntro`
+    //    (« Gratuit — nombre de places limitées ») et `agendaSeats`.
     agendaEventTag: 'Public · Gratuit',
     agendaEventTime: 'de {start} à {end}',
     // ── « À savoir avant de venir » (16/08/2026).
