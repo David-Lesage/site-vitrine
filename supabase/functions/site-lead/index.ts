@@ -526,7 +526,7 @@ function bookingHtml(
         terms3: 'Something came up? Up to 24 h beforehand, we move your appointment — no problem at all.',
         terms4: 'Less than 24 h beforehand, the payment stays with me: that slot had been set aside just for you. But you don’t lose your appointment — we reschedule it within 3 months. We all have things come up, that’s life: it’s simply about the value of the commitment we make to each other.',
         h2: 'While you wait',
-        p2: 'The showroom is at <strong>29 rue des Orteaux, Paris 20th</strong>. You’ll be able to try the electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the microphones, the <strong>Gonilélé</strong> African harp and the <strong>Handpan Compagnon</strong> app.',
+        p2: 'The showroom is at <strong>29 rue des Orteaux, Paris 20th</strong>. You’ll be able to try the electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the microphones, the <strong>Gonilélé</strong> African harp and the <strong>Handpan Companion</strong> app.',
         cta: 'See the showroom page',
         sign: 'See you soon,<br />David Lesage',
         foot: 'You are receiving this email because you sent a request on lesagedavid.fr.',

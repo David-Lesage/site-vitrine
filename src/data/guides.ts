@@ -563,11 +563,11 @@ const en: GuidesByLang = {
       {
         id: 'outil',
         icon: 'lucide:sparkles',
-        heading: 'Which tool to learn with: Handpan Compagnon',
+        heading: 'Which tool to learn with: Handpan Companion',
         blocks: [
           {
             kind: 'p',
-            html: 'To apply the method, I built <a href="/handpan-app">Handpan Compagnon</a>, the app that makes music visible. It shows your notes in colours, draws chords as shapes, offers an atlas of world scales and lets you create your own. The <strong>Discovery version is free</strong> in acoustic mode; the <strong>Studio plan (from €9.90)</strong> unlocks the electronic mode, saving and advanced creation. It’s the ideal companion to practise on your own, at your own pace.',
+            html: 'To apply the method, I built <a href="/handpan-app">Handpan Companion</a>, the app that makes music visible. It shows your notes in colours, draws chords as shapes, offers an atlas of world scales and lets you create your own. The <strong>Discovery version is free</strong> in acoustic mode; the <strong>Studio plan (from €9.90)</strong> unlocks the electronic mode, saving and advanced creation. It’s the ideal companion to practise on your own, at your own pace.',
           },
         ],
       },
@@ -585,7 +585,7 @@ const en: GuidesByLang = {
     ],
     relatedHeading: 'Go further',
     related: [
-      { href: '/handpan-app', label: 'Discover the Handpan Compagnon app' },
+      { href: '/handpan-app', label: 'Discover the Handpan Companion app' },
       { href: '/cours', label: 'Take handpan lessons' },
       { href: '/le-neotone', label: 'The electronic Neotone handpan' },
       { href: '/blog/handpan-par-les-couleurs', label: 'Article: the handpan through colours' },
@@ -603,11 +603,11 @@ const en: GuidesByLang = {
       },
       {
         q: 'Can you learn the handpan alone, without a teacher?',
-        a: 'Yes. Many start on their own, by ear, with a visual tool like Handpan Compagnon. A teacher remains valuable to correct posture, gesture and rhythm and to progress faster — but isn’t essential to begin.',
+        a: 'Yes. Many start on their own, by ear, with a visual tool like Handpan Companion. A teacher remains valuable to correct posture, gesture and rhythm and to progress faster — but isn’t essential to begin.',
       },
       {
         q: 'Do you need to buy a handpan to learn?',
-        a: 'Not necessarily at the very start: the free Discovery version of Handpan Compagnon lets you practise in acoustic mode. To truly play with your hands, an acoustic handpan or an electronic Neotone soon becomes essential.',
+        a: 'Not necessarily at the very start: the free Discovery version of Handpan Companion lets you practise in acoustic mode. To truly play with your hands, an acoustic handpan or an electronic Neotone soon becomes essential.',
       },
     ],
     cta: {
@@ -694,7 +694,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'There’s no “best” in absolute terms: there’s the right instrument for your life. If silence, scale versatility and digital creation matter, the <a href="/le-neotone">Neotone</a> is unbeatable. If acoustic vibration and shared playing come first, a traditional handpan will delight you. And to practise both worlds before buying, the <a href="/handpan-app">Handpan Compagnon</a> app offers a free acoustic mode and an electronic mode. I’ve also written a dedicated article: <a href="/blog/pourquoi-handpan-electronique">why I chose the electronic handpan</a>.',
+            html: 'There’s no “best” in absolute terms: there’s the right instrument for your life. If silence, scale versatility and digital creation matter, the <a href="/le-neotone">Neotone</a> is unbeatable. If acoustic vibration and shared playing come first, a traditional handpan will delight you. And to practise both worlds before buying, the <a href="/handpan-app">Handpan Companion</a> app offers a free acoustic mode and an electronic mode. I’ve also written a dedicated article: <a href="/blog/pourquoi-handpan-electronique">why I chose the electronic handpan</a>.',
           },
         ],
       },
@@ -702,7 +702,7 @@ const en: GuidesByLang = {
     relatedHeading: 'Go further',
     related: [
       { href: '/le-neotone', label: 'Discover the electronic Neotone handpan' },
-      { href: '/handpan-app', label: 'The Handpan Compagnon app (acoustic + electronic)' },
+      { href: '/handpan-app', label: 'The Handpan Companion app (acoustic + electronic)' },
       { href: '/blog/pourquoi-handpan-electronique', label: 'Article: why the electronic handpan' },
     ],
     faqHeading: 'Frequently asked questions',
@@ -717,7 +717,7 @@ const en: GuidesByLang = {
       },
       {
         q: 'Can an electronic handpan change scale?',
-        a: 'Yes. Where an acoustic handpan is locked to one scale, the Neotone holds dozens and lets you switch instantly, or even create your own in Handpan Compagnon.',
+        a: 'Yes. Where an acoustic handpan is locked to one scale, the Neotone holds dozens and lets you switch instantly, or even create your own in Handpan Companion.',
       },
       {
         q: 'Electronic or acoustic: which to start with?',
@@ -726,7 +726,7 @@ const en: GuidesByLang = {
     ],
     cta: {
       heading: 'Want to try the electronic handpan?',
-      text: 'Discover the Neotone, or try both modes in the Handpan Compagnon app.',
+      text: 'Discover the Neotone, or try both modes in the Handpan Companion app.',
       primary: { href: '/le-neotone', label: 'Discover the Neotone' },
       secondary: { href: '/handpan-app#acces', label: 'Access to the app' },
     },
