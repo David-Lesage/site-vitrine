@@ -29,6 +29,54 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 21/08/2026 — 💸 Code de remise Neotone : les DEUX taux, partout
+
+**Statut : ✅ COMMITÉ (`2591c5b`), POUSSÉ, DÉPLOYÉ (Vercel + EF `site-lead` v27), VÉRIFIÉ EN PROD.**
+
+**Le bug (constaté par David).** La modale « Obtenir mon code de remise Neotone » annonçait
+**−5 % en dur**, alors qu'elle s'ouvre depuis le calculateur de `/le-neotone` — qui a **deux
+modes** : *en ligne* (−5 %) et *showroom* (−7 %). Une personne en mode showroom lisait donc
+un taux faux. Mêmes mots de David : « le message indique 5 % même si la personne a coché la
+case 7 %, du coup c'est incohérent ».
+
+**Deux endroits, pas un** (le second n'avait pas été repéré par David) :
+1. `src/i18n/dict.ts` + `src/i18n/en.ts` → **`booking.discountIntro`** (texte de la modale) ;
+2. `supabase/functions/site-lead/index.ts` → **`SOURCE_LABELS['neotone-discount']`**, qui
+   portait `(−5 %)` et part **dans l'email de confirmation du visiteur** (ligne « Motif »)
+   ainsi que dans l'objet de la notification à David.
+
+**Formulation retenue — citer les deux taux** (exact quel que soit le mode coché, et le
+chiffre reste un argument de vente) :
+> FR — « Un code nominatif que je demande pour toi auprès de Neotone : −5 % en ligne, −7 %
+> si tu viens l'essayer au showroom. Réponse personnelle sous 24 à 48 h. »
+> EN — « A personal code that I request for you from Neotone: −5% online, −7% if you come and
+> try it at the showroom. Personal reply within 24 to 48 h. »
+
+### 🚨 CE QU'IL NE FAUT PAS DÉFAIRE
+- **`Calculator.astro` est la SOURCE DE VÉRITÉ des taux** (`0.07` showroom / `0.05` en ligne).
+  Il est correct et n'a pas été touché. Ne jamais changer un taux dans un dico sans le changer là.
+- **Ne pas « simplifier » en ne gardant qu'un taux** : le message redeviendrait faux une fois
+  sur deux. Le `data-intro` du bouton est rendu **au build** (statique) — il ne peut pas
+  connaître le mode choisi au moment du clic.
+- **Aucune clé i18n supprimée** ; diff purement rédactionnel (3 fichiers, +15/−3).
+- Les autres mentions d'un taux unique restantes sont **correctes** car liées à un canal
+  précis : `showroomText` / `showroomArgs` / `exclArgs` / `modeShowroomSub` (−7 %, contexte
+  showroom, et deux d'entre elles citent déjà « contre 5 % en ligne »), `modeOnlineSub` (−5 %,
+  contexte en ligne). Les `−5 %` de **Hisong**, **Muling** et **L'Âme du Tambour** sont
+  d'autres partenaires — rien à voir avec Neotone.
+
+**Reste ouvert (non traité, hors périmètre).** L'article de blog
+`src/content/blog/setup-nomade-neotone-bose-s1.md` (+ sa version `-en`) annonce
+« code de remise −5 % » puis propose dans la phrase suivante de venir essayer à Paris :
+exact pour l'achat en ligne, mais incomplet. À arbitrer avec David.
+
+**Option écartée (à ressortir si David préfère).** Rendre le taux **dynamique** : le
+calculateur connaît son mode, un `data-intro` réécrit au clic afficherait le bon taux (−5 %
+ou −7 %). Écarté pour l'instant : plus de code pour un gain nul en exactitude, et la modale
+s'ouvrirait un jour d'ailleurs que du calculateur → risque de réintroduire un taux faux.
+
+---
+
 ## ÉTAT ACTUEL — 20/08/2026 (soir) — 🔗 URL FR de l'app : `/handpan-compagnon` → **`/handpan-app`**
 
 **Statut : ✅ FAIT + DÉPLOYÉ.** Aucun contenu rédactionnel touché — le titre de la page
