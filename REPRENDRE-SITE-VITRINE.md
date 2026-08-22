@@ -29,7 +29,98 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 21/08/2026 (soir) — 🖼️ `/showroom` : « EN IMAGES » DEVIENT UN CHAPITRE
+## ÉTAT ACTUEL — 22/08/2026 (soir) — 🎯 `/handpan-app` : L'ACOUSTIQUE PASSE DEVANT
+
+**Statut : ✅ COMMITÉ (`89922a6`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN PROD (FR+EN, 375 px et 1280 px).**
+
+**⚠️ CE N'ÉTAIT PAS UNE INTUITION — C'ÉTAIT UN PROSPECT PERDU.** David a contacté les
+ambassadeurs Neotone. L'un d'eux a répondu qu'il n'était **pas intéressé parce qu'il donne des
+cours sur handpan ACOUSTIQUE**. Mots de David : « Il n'a donc même pas vu que l'appli
+fonctionne pour les handpans acoustiques. Sur le site, il n'est pas assez mis en avant le fait
+que l'app est valable autant pour les handpans électroniques qu'acoustiques. »
+
+### 🔎 DIAGNOSTIC (mesuré, pas supposé — DOM en iframe, `dist/` servi en local)
+
+1. **Le mot « acoustique » n'existait qu'à 535 px** (375 px de large, FR) — la **dernière ligne**
+   du chapô du hero, en fin de phrase, après une phrase abstraite. Puis **plus rien jusqu'à
+   6 638 px**, soit la **7ᵉ section sur 13**. EN : 507 px, puis 6 546 px.
+2. **La section acoustique était formulée EN CREUX** : « **Pas de Neotone ?** Ton handpan
+   acoustique suffit ». Elle posait l'acoustique comme le cas par défaut de celui qui n'a pas
+   « le vrai produit » — exactement le message qui fait s'auto-exclure un prof d'acoustique.
+3. **Ni le `<title>` ni le `<h1>` ne portaient le mot.** Titre : « Handpan Compagnon — l'app pour
+   apprendre le handpan ». Le composant s'appelle toujours `StudioPage`, l'app s'est longtemps
+   appelée « Neotone Studio », et la page vit dans un site dont le produit phare est le Neotone.
+4. **La 2ᵉ section (« Le constat ») était à moitié Neotone** (card 02 : « Sur un handpan
+   électronique, les repères s'effacent ») — l'accumulation renforçait la lecture « accessoire ».
+5. **Les autres surfaces** : carte d'accueil « L'application » (aucun instrument nommé) ;
+   fiche boutique (aucune mention d'acoustique). En revanche `llms.txt`, la FAQ (2 questions
+   acoustiques, en tête) et `guides.ts` disaient déjà juste.
+
+### 🛠️ CE QUI A ÉTÉ FAIT
+
+| # | Geste | Fichier |
+|---|---|---|
+| ① | **Hero : deux pastilles sous le `<h1>`**, acoustique en 1ʳᵉ position et en doré (`heroBadges`) | `StudioPage.astro`, `dict.ts`, `en.ts` |
+| ② | **Chapô réécrit** : commence par « Sur n'importe quel handpan : ton handpan acoustique d'abord… » | `dict.ts`, `en.ts` |
+| ③ | **Le bloc acoustique remonte en 2ᵉ position** (était 7ᵉ/13), passe de `tone="ink"` à `cream-deep` (le hero est déjà sombre), et devient **« Fait d'abord pour ton handpan acoustique »** sous l'eyebrow « Sur quel handpan ça marche ? ». `<h3>` → `<h2>` | `StudioPage.astro` |
+| ④ | **Photo de PREUVE** : `showroom-handpan-tablette.webp`, déjà dans le dépôt (galerie showroom) — **un handpan acoustique Yishama sur son trépied, l'app affichant ses accords au-dessus**. Cadrée `aspect-[3/4] object-top` | `StudioPage.astro` |
+| ⑤ | **Emplacement vidéo « À venir »** calqué EXACTEMENT sur `/pieds-atlas`, placé au plus près de l'argument acoustique | `site.ts`, `StudioPage.astro` |
+| ⑥ | **`<title>`, description, JSON-LD, `llms.txt`, carte d'accueil, fiche boutique** : « handpan acoustique » passe devant | `dict.ts`, `en.ts`, `ldJson.ts`, `llms.txt` |
+| ⑦ | Section « L'histoire » passée en `cream-deep` : le bloc acoustique parti, trois sections claires se suivaient | `StudioPage.astro` |
+
+### 🎬 LA VIDÉO — UNE SEULE LIGNE À CHANGER
+
+```ts
+// src/data/site.ts
+export const studioAcousticDemoVideoId: string | null = null  // ← mettre 'ABCdef123'
+```
+Tant que c'est `null` : cadre 16/9 en pointillés, « Démonstration sur handpan acoustique — par
+David Lesage » + badge « À venir » + note. Dès qu'un identifiant YouTube est posé, le composant
+`<YouTube />` prend la place. **Rien d'autre à toucher.** Ancre : `#demo-acoustique`.
+
+### 📊 CHIFFRES — POSITION DU MOT « ACOUSTIQUE » (mesure DOM en iframe)
+
+| | avant | après |
+|---|---|---|
+| **FR, 375 px — 1ʳᵉ occurrence** | **535 px** (fin du chapô) | **427 px** (pastille du hero) |
+| FR, 375 px — 2ᵉ occurrence | 6 638 px | **548 px** |
+| FR, 375 px — titre de section acoustique | 6 708 px | **1 052 px** (−5 656) |
+| **EN, 375 px — 1ʳᵉ occurrence** | **507 px** | **427 px** |
+| EN, 375 px — 2ᵉ occurrence | 6 546 px | **520 px** |
+| EN, 375 px — titre de section acoustique | 6 616 px | **1 004 px** |
+| FR, 1280 px — 1ʳᵉ occurrence | 455 px | **405 px** |
+| occurrences dans la page (FR / EN) | 11 / 11 | **14 / 14** |
+| hauteur totale 375 px (FR / EN) | 22 606 / 21 884 px | 23 579 / 22 814 px |
+| débordement horizontal (4 combinaisons) | non | **non** |
+
+### 🚨 CE QU'IL NE FAUT PAS DÉFAIRE
+
+- **Équilibre, pas renversement.** La carte « Version Neotone » est restée **dans le même bloc**,
+  juste sous l'acoustique ; le Neotone garde sa place dans le `<title>`, le hero (2ᵉ pastille),
+  le « constat » et le mode MIDI Connect. Ne pas transformer ça en page anti-Neotone.
+- **Aucune clé i18n supprimée.** Ajoutées : `heroBadges`, `versionAcoPhotoCaption`,
+  `demoVideoEyebrow/Title/Soon/Note` (FR + EN). Modifiées : `title`, `description`, `heroLead`,
+  `versionAcoEyebrow/Title/Text`, `univers[2]`, `products['handpan-studio']`.
+- **Aucune fonctionnalité inventée.** Les 3 puces acoustiques sont celles qui existaient déjà ;
+  « le mode acoustique est gratuit » est repris **mot pour mot de la FAQ de la page**.
+- **La photo n'est pas une illustration, c'est la preuve.** Son alt était déjà écrit dans le
+  dépôt (`showroom.galleryAlt.handpanTablette`) : « Un handpan **Yishama** sur son trépied, la
+  tablette fixée sur un bras juste au-dessus ». Yishama = les handpans **acoustiques** de David.
+- **URLs inchangées** : `/handpan-app` et `/en/handpan-app`. Le composant s'appelle toujours
+  `StudioPage.astro` (renommer le fichier serait un chantier séparé, sans gain visible).
+
+### 📷 PHOTOS QUI MANQUENT ENCORE (à demander à David)
+
+1. **Un joueur d'acoustique QUI N'EST PAS DAVID**, l'app posée devant lui — c'est la preuve
+   sociale qui manque le plus (paysage, pour le 2ᵉ bloc, à la place de la capture d'écran).
+2. **Un gros plan mains + pan acoustique + écran dans le même cadre** — aujourd'hui la photo
+   montre le dispositif, pas le geste. Emplacement : à côté des 3 puces.
+3. **Un handpan acoustique d'une AUTRE marque que Yishama** — la page ne prouve l'acoustique
+   que sur les instruments personnels de David.
+4. **Un cours en situation sur acoustique** (le cas exact de l'ambassadeur) — pour `/cours`.
+5. Optionnel : **acoustique + Neotone côte à côte avec l'app** — l'image du « ET ».
+
+## 22/08/2026 (soir) — 🖼️ `/showroom` : « EN IMAGES » DEVIENT UN CHAPITRE (21/08)
 
 **Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (rendu réel FR+EN, 375 px et bureau).**
 
