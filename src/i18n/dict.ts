@@ -152,7 +152,9 @@ const fr = {
     univers: [
       { sub: 'Acoustique & électronique', title: 'Les instruments & micros', text: 'Un handpan acoustique Yishama, un handpan électronique Neotone, des micros — deux univers que j’accompagne à égalité.', cta: 'Voir les deux univers' },
       { sub: 'Visio & présentiel', title: 'Les cours', text: 'Apprends le handpan autrement : par les couleurs, les formes et les émotions. Partout dans le monde, ou à Paris.', cta: 'Voir les cours' },
-      { sub: 'L’application', title: 'Handpan Compagnon', text: 'L’app qui rend la musique visible — couleurs, géométrie et émotions transforment ta façon d’apprendre et de jouer.', cta: 'Découvrir l’app' },
+      // ⚖️ 22/08/2026 : la carte ne disait pas sur QUEL instrument l'app marche.
+      // Un prof de handpan acoustique a cru qu'elle était réservée au Neotone.
+      { sub: 'Acoustique & Neotone', title: 'Handpan Compagnon', text: 'L’app qui rend la musique visible sur ton handpan acoustique comme sur le Neotone — couleurs, géométrie et émotions.', cta: 'Découvrir l’app' },
     ],
 
     // ============================================================
@@ -536,7 +538,7 @@ const fr = {
     handpanNote: 'La seule différence réelle : le <strong>Neotone</strong> (fabriqué par Soundventure) se commande via mon calculateur, avec code de remise nominatif et garantie 6 ans. Pour <strong>Yishama</strong>, je suis ambassadeur et affilié — la commande se fait sur leur site, mon lien te suit. Deux façons d’acheter, une seule exigence de qualité.',
     handpanBridge: 'Le trait d’union entre les deux : Handpan Compagnon →',
     products: {
-      'handpan-studio': { name: 'Handpan Compagnon · l’application', description: 'Mon application pédagogique : couleurs, géométrie et émotions rendent la musique visible. Découverte gratuite, puis Studio à partir de 9,90 €/mois — débloque la création, la sauvegarde et l’export PDF/PNG de tes partitions.' },
+      'handpan-studio': { name: 'Handpan Compagnon · l’application', description: 'Mon application pédagogique, sur handpan acoustique comme sur Neotone : couleurs, géométrie et émotions rendent la musique visible. Découverte gratuite en mode acoustique, puis Studio à partir de 9,90 €/mois — débloque la création, la sauvegarde et l’export PDF/PNG de tes partitions.' },
       'neotone-one': { name: 'Neotone¹', description: 'Handpan numérique 10 notes, toutes les gammes, qualité studio. Achat accompagné : code de remise nominatif + garantie 6 ans.' },
       'neotone-mutant': { name: 'Neotone¹ Mutant', description: 'Handpan numérique 19 notes avec écran LCD, l’expression maximale. Achat accompagné : code de remise + garantie 6 ans.' },
       'yishama': { name: 'Handpan Yishama d’exception', description: 'L’un des meilleurs fabricants de handpan au monde (Israël / Hongrie). Facture artisanale, instruments jusqu’à 19 notes aux basses profondes et aigus brillants. Je le représente avec fierté en tant qu’ambassadeur.' },
@@ -1530,13 +1532,25 @@ const fr = {
     ],
   },
   studio: {
-    title: 'Handpan Compagnon — l’app pour apprendre le handpan',
+    // 🚨 22/08/2026 — POSITIONNEMENT CORRIGÉ SUR RETOUR TERRAIN.
+    // Un ambassadeur Neotone contacté par David a répondu qu'il n'était pas
+    // intéressé « parce qu'il donne des cours sur handpan ACOUSTIQUE » : il
+    // n'avait pas vu que l'app marchait sur son instrument. Le mot
+    // « acoustique » n'apparaissait qu'à la DERNIÈRE ligne du chapô, puis plus
+    // rien avant 6 638 px (mesuré à 375 px). L'acoustique est désormais dans le
+    // titre SEO, la description, les pastilles du hero et la 2ᵉ section.
+    // ⚖️ ÉQUILIBRE, PAS RENVERSEMENT : le Neotone reste le fer de lance de
+    //    l'écosystème et garde sa place dans le titre, le hero et la page.
+    title: 'Handpan Compagnon — l’app du handpan acoustique et du Neotone',
     description:
-      'Apprendre le handpan par les couleurs (ChromaKeys) : tablature visuelle, Constellations d’accords et émotions, sur handpan acoustique ou Neotone.',
+      'Sur n’importe quel handpan acoustique — et sur le Neotone. Apprends par les couleurs (ChromaKeys), les Constellations d’accords et les émotions, sans solfège.',
     heroEyebrow: 'L’application — un projet original de David Lesage',
     heroTitleA: 'Handpan Compagnon',
     heroTitleB: 'La musique devient visible',
-    heroLead: 'Une approche visuelle de la musique — par les couleurs, les émotions et la géométrie — pour comprendre, mémoriser et jouer le handpan. Sur handpan acoustique comme sur Neotone.',
+    heroLead: 'Sur n’importe quel handpan : ton handpan acoustique d’abord, le Neotone électronique aussi. Une approche visuelle de la musique — par les couleurs, les émotions et la géométrie — pour comprendre, mémoriser et jouer.',
+    // Pastilles affichées juste sous le titre, avant le chapô : la réponse
+    // « sur quel instrument ça marche ? » se lit sans lire une phrase.
+    heroBadges: ['Tout handpan acoustique', 'Handpan électronique Neotone'],
     ctaWait: 'Rejoindre la liste d’attente',
     ctaOpen: 'Ouvrir l’application',
     problemEyebrow: 'Le constat',
@@ -1570,20 +1584,37 @@ const fr = {
       { t: 'Création', d: 'Compose tes propres gammes sur mesure, note par note et couleur par couleur, puis garde-les dans ta bibliothèque.' },
       { t: 'MIDI Connect', d: 'Le pont entre ton Neotone et l’app : ton jeu réel s’affiche en temps réel sur le handpan virtuel, et l’app te guide dans tes accords et tes gammes.' },
     ],
-    versionAcoEyebrow: 'Mode acoustique',
-    versionAcoTitle: 'Pas de Neotone ? Ton handpan acoustique suffit',
-    versionAcoText: 'Handpan Compagnon n’est pas réservé au Neotone. Active le mode acoustique et retrouve toute l’approche visuelle — couleurs, constellations et émotions — posée directement sur ton propre instrument. Tu vois enfin la musique que tu joues.',
+    versionAcoEyebrow: 'Sur quel handpan ça marche ?',
+    // ⚠️ L'ancien titre était « Pas de Neotone ? Ton handpan acoustique suffit ».
+    // Formulé en creux, il posait l'acoustique comme le cas par défaut de celui
+    // qui n'a pas « le vrai produit ». C'est exactement ce qui a fait
+    // s'auto-exclure un prof de handpan acoustique. Affirmatif désormais.
+    versionAcoTitle: 'Fait d’abord pour ton handpan acoustique',
+    versionAcoText: 'Toute l’approche visuelle — couleurs, constellations et émotions — se pose directement sur ton propre handpan acoustique. Tu vois enfin la musique que tu joues, sur ton instrument, avec ta gamme. Le mode acoustique est gratuit : le Neotone n’est pas nécessaire pour commencer.',
     versionAcoBullets: [
       'Ta gamme s’affiche en couleurs sur la photo de ton handpan.',
       'Apprends de nouveaux accords et progressions, guidé pas à pas.',
       'Explore un atlas de gammes par émotion — et imagine la tienne, sur mesure.',
     ],
     versionAcoCaption: 'Le mode acoustique : l’approche visuelle de Handpan Compagnon, sur ton propre handpan.',
+    // 📷 La photo de PREUVE (déjà dans le dépôt, `showroom-handpan-tablette.webp`,
+    //    utilisée aussi dans la galerie du showroom) : un handpan acoustique
+    //    Yishama, l'app affichant ses accords juste au-dessus. Rien d'inventé :
+    //    l'alt de la galerie décrit déjà exactement cette scène.
+    versionAcoPhotoCaption: 'Au showroom : mon handpan acoustique Yishama sur son trépied, l’application au-dessus, ses accords en constellations.',
     versionAcoCta: 'Ouvrir l’application',
     versionAcoYishamaLink: 'D’où vient cette approche : mes deux handpans Yishama',
     versionNeoTitle: 'Version Neotone',
     versionNeoText: 'Relie ton Neotone à l’app via MIDI : ton jeu s’affiche en temps réel sur le handpan virtuel, et l’app te guide dans tes accords et tes gammes. Intégration MIDI temps réel.',
     versionNeoCta: 'Découvrir le Neotone',
+    // 🎬 Emplacement vidéo « À venir » — même dispositif que /pieds-atlas.
+    //    Piloté par `studioAcousticDemoVideoId` (src/data/site.ts), à `null`.
+    //    `demoVideoTitle` = ce qui est écrit DANS le cadre ; `demoVideoEyebrow`
+    //    = l'intitulé au-dessus. Rien à changer ici pour publier la vidéo.
+    demoVideoEyebrow: 'La démonstration en vidéo',
+    demoVideoTitle: 'Démonstration sur handpan acoustique — par David Lesage',
+    demoVideoSoon: 'À venir',
+    demoVideoNote: 'Je filme la démonstration sur mon propre handpan acoustique, et je la mets ici.',
     storyEyebrow: 'L’histoire — par David Lesage',
     storyTitle: 'L’outil que j’aurais rêvé qu’on m’enseigne, enfant',
     storyP1: 'En découvrant le handpan, j’ai retrouvé le mur de mon enfance : aucune méthode, et la difficulté d’organiser visuellement les chemins de notes. Puis, avec le Neotone, une nouvelle difficulté : les notes changent de place à chaque gamme.',

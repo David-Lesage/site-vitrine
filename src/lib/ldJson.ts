@@ -75,7 +75,9 @@ export function softwareAppLdJson() {
     operatingSystem: 'Web (navigateur)',
     url: 'https://play.handpanstudio.app',
     description:
-      'Application web d’apprentissage du handpan qui rend la musique visible : chaque note a une couleur (ChromaKeys) et chaque accord dessine une forme (Constellation). Fonctionne sur handpan électronique Neotone comme sur handpan acoustique.',
+      // ⚖️ 22/08/2026 : l'ordre est inversé (acoustique d'abord). Un prof de
+      // handpan acoustique s'était cru exclu par le discours du site.
+      'Application web d’apprentissage du handpan qui rend la musique visible : chaque note a une couleur (ChromaKeys) et chaque accord dessine une forme (Constellation). Fonctionne sur n’importe quel handpan acoustique comme sur le handpan électronique Neotone.',
     inLanguage: ['fr', 'en'],
     author: { '@id': `${site.url}/#david-lesage` },
     creator: { '@id': `${site.url}/#david-lesage` },

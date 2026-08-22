@@ -220,6 +220,20 @@ export const studioVideos: { src: string; poster: string }[] = [
   { src: '/images/sa-creation.mp4', poster: '/images/sa-creation-poster.webp' },
 ]
 
+// ── 🎬 DÉMONSTRATION SUR HANDPAN ACOUSTIQUE — EMPLACEMENT RÉSERVÉ ──────────
+//
+// Même dispositif que `atlasDemoVideoId` (src/data/atlas.ts) : David filmera
+// sa démonstration sur son propre handpan acoustique. Tant que la constante
+// vaut `null`, /handpan-app affiche un cadre 16/9 en pointillés
+// « Démonstration sur handpan acoustique — par David Lesage · À venir »
+// (rien de cassé, rien de vide, aucune image chargée).
+//
+// POUR METTRE LA VRAIE VIDÉO EN LIGNE : une seule ligne à changer ici →
+//   export const studioAcousticDemoVideoId: string | null = 'ABCdef123'
+// (l'identifiant est ce qui suit `watch?v=` ou `youtu.be/` dans l'URL).
+// Le composant <YouTube /> prend alors automatiquement la place du cadre.
+export const studioAcousticDemoVideoId: string | null = null
+
 // Les 7 degrés ChromaKeys — couleurs neutres (émotions via dict.common.emotions)
 export const chromaKeys = [
   { degree: 'I', color: 'var(--color-chroma-1)' },
