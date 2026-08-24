@@ -10,7 +10,7 @@ permalink: "setup-nomade-neotone-bose-s1"
 draft: false
 ---
 
-Playing on a beach at sunset, in a forest, on a terrace or in a venue — without hunting for a power socket, without a sound engineer, without a car boot full of gear. That's exactly what the **[Neotone](/le-neotone) + Bose S1 Pro+** duo makes possible: two battery-powered devices, one cable between them, and you're self-sufficient. Here's the setup I actually use, with links for every item.
+Playing on a beach at sunset, in a forest, on a terrace or in a venue — without hunting for a power socket, without a sound engineer, without a car boot full of gear. That's exactly what the **[Neotone](/en/le-neotone) + Bose S1 Pro+** duo makes possible: two battery-powered devices, one cable between them, and you're self-sufficient. Here's the setup I actually use, with links for every item.
 
 ## Why this duo works so well
 
@@ -32,7 +32,7 @@ This is the instrument. The **Neotone¹** (10 notes) or the **Mutant** (19 notes
 
 ![The Bose S1 Pro+ in its tilted monitor position](/images/prod-bose-s1pro.webp)
 
-This is what makes you audible. Compact, sturdy, battery-powered, with a small built-in mixer — expect ≈ **€599** at retailers ([official Bose page](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html), and also check [second-hand listings on Leboncoin](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B)). Make sure you get the **Pro+** model: it has **more bass** than the older S1 Pro. It works both as a front-of-house speaker **and** as your personal monitor — which is crucial: place it **behind you, at head height** to be truly *inside* the sound. I explain that placement precisely in [my advice for being fully in the sound](/blog/etre-bien-dans-le-son-neotone).
+This is what makes you audible. Compact, sturdy, battery-powered, with a small built-in mixer — expect ≈ **€599** at retailers ([official Bose page](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html), and also check [second-hand listings on Leboncoin](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B)). Make sure you get the **Pro+** model: it has **more bass** than the older S1 Pro. It works both as a front-of-house speaker **and** as your personal monitor — which is crucial: place it **behind you, at head height** to be truly *inside* the sound. I explain that placement precisely in [my advice for being fully in the sound](/en/blog/etre-bien-dans-le-son-neotone).
 
 Want zero cables? An optional [Bose wireless instrument transmitter](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) (≈ €168) links the Neotone to the speaker wirelessly — sometimes sold as a [speaker + transmitter combo at ≈ €759](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html).
 
@@ -44,7 +44,7 @@ A simple 6.35 mm mono jack cable (or two for stereo). It's the only link between
 
 ## Options, depending on your use
 
-- **Headphones** — to play silently at night, in a van or at a hotel. The Neotone has a dedicated headphone output: see [playing with headphones](/blog/jouer-et-chanter-au-casque-neotone).
+- **Headphones** — to play silently at night, in a van or at a hotel. The Neotone has a dedicated headphone output: see [playing with headphones](/en/blog/jouer-et-chanter-au-casque-neotone).
 - **The Bose Sub1 subwoofer** — if you want real deep bass for small concerts. Careful: it weighs **16 kg**, so it leaves the "light nomad" category. Keep it for dates you drive to.
 - **A microphone** — if you sing, or want to capture an acoustic handpan too, the **Hisong AirStudio S1** plugs into the S1 Pro+ and turns the setup into a mobile mini-studio.
 
@@ -64,16 +64,16 @@ A complete Neotone¹ + S1 Pro+ + cable setup therefore comes to around **€2,60
 
 ## Where to buy each item
 
-- **Neotone¹ / Neotone¹ Mutant** → [my Neotone page](/le-neotone) (−5% discount code online, 6-year warranty, personal support). You can also [come and try it in Paris](/showroom): the discount goes up to −7% at the showroom, and you leave with it the same day.
+- **Neotone¹ / Neotone¹ Mutant** → [my Neotone page](/en/le-neotone) (−5% discount code online, 6-year warranty, personal support). You can also [come and try it in Paris](/en/showroom): the discount goes up to −7% at the showroom, and you leave with it the same day.
 - **Bose S1 Pro+** → [official Bose page](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html) (≈ €599 at retailers) — also worth checking [Leboncoin second-hand listings](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B).
 - **Bose wireless transmitter** (zero-cable option) → [Woodbrass, ≈ €168](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) · [speaker + transmitter combo ≈ €759 at SonoVente](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html)
 - **Bose Sub1 subwoofer** (option) → [official Bose page](https://www.bose.fr/p/portable-pa/sub1-powered-bass-module/SUB1-SPEAKERBASSMOD.html)
-- **Hisong AirStudio S1 mic** (option) → [via my partner link](https://hisong.io/DAVID-LESAGE-SAVE-5) — careful, prices there are shown excluding tax: the details are in [my shop](/boutique).
+- **Hisong AirStudio S1 mic** (option) → [via my partner link](https://hisong.io/DAVID-LESAGE-SAVE-5) — careful, prices there are shown excluding tax: the details are in [my shop](/en/boutique).
 - **Angled jack cable** → for example [this Ernie Ball cable at Thomann](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm) (angled connector on the instrument side, essential to rest the handpan on the floor).
 - **Headphones, MIDI-USB cable** → from any serious audio retailer, for example [Thomann](https://www.thomann.de/fr/search_dir.html?sw=cable+jack+6.3).
 
 ## And what about the method?
 
-Gear doesn't make the music. This setup makes full sense with a way of learning that gets you playing fast: colours and shapes. [Handpan Constellation Studio](/handpan-studio) supports you on your Neotone just as on an acoustic handpan — and if you'd like guidance, [my lessons](/cours) are there for that.
+Gear doesn't make the music. This setup makes full sense with a way of learning that gets you playing fast: colours and shapes. [Handpan Constellation Studio](/en/handpan-app) supports you on your Neotone just as on an acoustic handpan — and if you'd like guidance, [my lessons](/en/cours) are there for that.
 
 The real luxury of the nomad musician isn't owning a lot of gear. It's being able to **drop your bag anywhere and be playing within two minutes**.

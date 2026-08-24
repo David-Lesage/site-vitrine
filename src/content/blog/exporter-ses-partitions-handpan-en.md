@@ -10,7 +10,7 @@ permalink: "exporter-ses-partitions-handpan"
 draft: false
 ---
 
-[Handpan Constellation Studio's](/handpan-studio) visual score editor lets you export your chords and scores as **PDF or PNG**. A lovely progression found tonight no longer vanishes: you keep it as an image, review it tomorrow, pass it on to someone. One file, and your idea becomes a document you own.
+[Handpan Constellation Studio's](/en/handpan-app) visual score editor lets you export your chords and scores as **PDF or PNG**. A lovely progression found tonight no longer vanishes: you keep it as an image, review it tomorrow, pass it on to someone. One file, and your idea becomes a document you own.
 
 ## The drama of the idea that flies away
 
@@ -28,7 +28,7 @@ With the score in front of you, you no longer have to rebuild your idea from scr
 
 ### Pass it on to someone
 
-A PDF is shareable. You can send your progression to a friend who plays, a singer you accompany, a student, a teacher. The visual score, with its colours inherited from [Logic Mode](/blog/handpan-emotions-degres), reads without music theory: whoever receives it sees at once the chords and emotions to chain.
+A PDF is shareable. You can send your progression to a friend who plays, a singer you accompany, a student, a teacher. The visual score, with its colours inherited from [Logic Mode](/en/blog/handpan-emotions-degres), reads without music theory: whoever receives it sees at once the chords and emotions to chain.
 
 ### A watermark, a signature
 
@@ -38,4 +38,4 @@ Every export discreetly carries the note "created with Handpan Constellation Stu
 
 Creating and exporting your scores in acoustic mode is **free**; the Studio version adds cloud saving to find your creations everywhere. Either way, your ideas no longer fly away.
 
-Want guidance to compose and keep your progressions? [David Lesage's lessons](/cours) take you by the hand. Open [Handpan Constellation Studio](/handpan-studio) and export your first score — the one you'll find again tomorrow.
+Want guidance to compose and keep your progressions? [David Lesage's lessons](/en/cours) take you by the hand. Open [Handpan Constellation Studio](/en/handpan-app) and export your first score — the one you'll find again tomorrow.

@@ -10,7 +10,7 @@ permalink: "transposer-pour-chanter-handpan"
 draft: false
 ---
 
-Transposing means shifting your handpan's anchor note to change key in a single move. If a song is too high or too low for your voice, you don't have to strain: in [Handpan Constellation Studio](/handpan-studio), you slide the whole thing to your natural pitch, and everything falls into place — accompaniment and singing in **your** key.
+Transposing means shifting your handpan's anchor note to change key in a single move. If a song is too high or too low for your voice, you don't have to strain: in [Handpan Constellation Studio](/en/handpan-app), you slide the whole thing to your natural pitch, and everything falls into place — accompaniment and singing in **your** key.
 
 ## The real problem: your voice has its pitch
 
@@ -20,7 +20,7 @@ On an acoustic handpan, the key is fixed: it's tuned once and for all. You can't
 
 ## One move, a new key
 
-In Handpan Constellation Studio, **shifting the anchor note is enough to change key**. You move the reference point, and the whole layout follows: the chords, colours and emotions stay identical, only the pitch changes. The [Logic Mode](/blog/handpan-emotions-degres) grammar is preserved — you find your degree I, your V, your VI in exactly the same place under your fingers, but in a new key.
+In Handpan Constellation Studio, **shifting the anchor note is enough to change key**. You move the reference point, and the whole layout follows: the chords, colours and emotions stay identical, only the pitch changes. The [Logic Mode](/en/blog/handpan-emotions-degres) grammar is preserved — you find your degree I, your V, your VI in exactly the same place under your fingers, but in a new key.
 
 In practice: you sing a phrase, it's too high, you drop the anchor a few notches, you try again. In seconds, you find the pitch where your voice settles effortlessly. The song sits right, and so does the accompaniment.
 
@@ -30,10 +30,10 @@ Many people believe they "sing off-key" when they're simply singing in a key tha
 
 ### Transposition and layout: the winning duo
 
-Transposition sets the **pitch**; the vocal layout sets the **shape** of the accompaniment around the voice. Together they mould the song around you: you pick a [vocal layout](/blog/layouts-vocaux-handpan) suited to your range, then transpose until it lands just right. That's the full setup for accompanying your own singing.
+Transposition sets the **pitch**; the vocal layout sets the **shape** of the accompaniment around the voice. Together they mould the song around you: you pick a [vocal layout](/en/blog/layouts-vocaux-handpan) suited to your range, then transpose until it lands just right. That's the full setup for accompanying your own singing.
 
 ## Sing at your own pitch
 
 There's no reason to twist your voice to fit a key that isn't yours. Move the anchor, find your pitch, and let the song come to you.
 
-Want guidance to accompany your own singing? [David Lesage's lessons](/cours) take you by the hand. Open [Handpan Constellation Studio](/handpan-studio) and transpose your first song into your key.
+Want guidance to accompany your own singing? [David Lesage's lessons](/en/cours) take you by the hand. Open [Handpan Constellation Studio](/en/handpan-app) and transpose your first song into your key.

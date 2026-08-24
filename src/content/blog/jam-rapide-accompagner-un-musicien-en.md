@@ -10,7 +10,7 @@ permalink: "jam-rapide-accompagner-un-musicien"
 draft: false
 ---
 
-[Handpan Constellation Studio's](/en/handpan-studio) **Quick Jam** (⚡ *Jam Rapide* in the app, still labelled in French) turns a line thrown across the room — "we're in G minor, I-IV-V on the verse" — into a ready-to-play score, with named sections and diagrams in the right order. Three clicks. About as long as the guitarist needs to finish tuning.
+[Handpan Constellation Studio's](/en/handpan-app) **Quick Jam** (⚡ *Jam Rapide* in the app, still labelled in French) turns a line thrown across the room — "we're in G minor, I-IV-V on the verse" — into a ready-to-play score, with named sections and diagrams in the right order. Three clicks. About as long as the guitarist needs to finish tuning.
 
 ## The scene every handpan player knows
 
@@ -44,4 +44,4 @@ The last jam reflex: someone sings, and the key is too high. The **♭ / ♯** b
 
 The resulting score isn't a dead end: it opens full screen on the **music stand** (*Pupitre*), it prints, it stays in your pieces and it plays back chord by chord — that's the subject of [Your score comes alive](/en/blog/ta-partition-prend-vie).
 
-Next time someone calls a key over their shoulder, open [Handpan Constellation Studio](/en/handpan-studio) and make it playable before the first verse is over. And if you'd like to learn to hear those progressions instead of typing them, my [handpan lessons](/en/cours) start right there.
+Next time someone calls a key over their shoulder, open [Handpan Constellation Studio](/en/handpan-app) and make it playable before the first verse is over. And if you'd like to learn to hear those progressions instead of typing them, my [handpan lessons](/en/cours) start right there.

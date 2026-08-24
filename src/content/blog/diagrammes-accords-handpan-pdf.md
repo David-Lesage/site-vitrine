@@ -10,7 +10,7 @@ permalink: "diagrammes-accords-handpan-pdf"
 draft: false
 ---
 
-Dans [Handpan Constellation Studio](/handpan-studio), chaque accord se dessine comme un **mini-handpan coloré** : les notes de l'accord sont mises en couleur, l'ordre de jeu est numéroté, et un doigté est suggéré. Tu exportes ces diagrammes en **PDF ou PNG** imprimables pour réviser à ton rythme ou les transmettre — un langage visuel qui se lit sans solfège.
+Dans [Handpan Constellation Studio](/handpan-app), chaque accord se dessine comme un **mini-handpan coloré** : les notes de l'accord sont mises en couleur, l'ordre de jeu est numéroté, et un doigté est suggéré. Tu exportes ces diagrammes en **PDF ou PNG** imprimables pour réviser à ton rythme ou les transmettre — un langage visuel qui se lit sans solfège.
 
 ## Un accord, un mini-handpan
 
@@ -59,4 +59,4 @@ Chaque export porte discrètement la mention « créé avec Handpan Constellatio
 
 ## Tes accords, sur papier
 
-Ouvre [Handpan Constellation Studio](/handpan-studio), compose une progression, et exporte tes premiers diagrammes d'accords en PDF. Tu tiendras entre les mains une fiche claire, colorée, prête à réviser — et prête à offrir.
+Ouvre [Handpan Constellation Studio](/handpan-app), compose une progression, et exporte tes premiers diagrammes d'accords en PDF. Tu tiendras entre les mains une fiche claire, colorée, prête à réviser — et prête à offrir.

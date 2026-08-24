@@ -10,13 +10,13 @@ permalink: "layouts-vocaux-handpan"
 draft: false
 ---
 
-Vocal layouts are three settings of [Handpan Constellation Studio's Logic Mode](/handpan-studio) that rearrange the chords' layout and voicing to match the singer's range. Deep, Bright, Wide: each places the notes differently so the voice settles naturally above your accompaniment, instead of fighting it.
+Vocal layouts are three settings of [Handpan Constellation Studio's Logic Mode](/en/handpan-app) that rearrange the chords' layout and voicing to match the singer's range. Deep, Bright, Wide: each places the notes differently so the voice settles naturally above your accompaniment, instead of fighting it.
 
 ## Why a layout changes everything for the voice
 
 When you accompany someone singing, it's not only the chord that matters — it's **where** it sounds. A chord placed too high clashes with a high voice; placed too low, it leaves a low voice with no support. The same chord, played with a different voicing, can either wrap around the voice or trample it.
 
-That's exactly what the vocal layouts fix. They keep the same colours, the same emotions — the grammar described in [Playing with emotions](/blog/handpan-emotions-degres) — but reorganise how the accompaniment occupies the sound space, leaving room for the voice.
+That's exactly what the vocal layouts fix. They keep the same colours, the same emotions — the grammar described in [Playing with emotions](/en/blog/handpan-emotions-degres) — but reorganise how the accompaniment occupies the sound space, leaving room for the voice.
 
 ## The three presets
 
@@ -38,4 +38,4 @@ There's no right or wrong choice: there's the layout that lets **your** voice br
 
 And if your key doesn't sit right with your voice, transposition lets you shift the whole thing in one move to sing at your natural pitch. Layouts adapt the shape, transposition adapts the pitch: together, they mould the accompaniment around you.
 
-Want guidance to accompany your voice? [David Lesage's lessons](/cours) take you by the hand. Open [Handpan Constellation Studio](/handpan-studio), try the three layouts, and let your voice find its place.
+Want guidance to accompany your voice? [David Lesage's lessons](/en/cours) take you by the hand. Open [Handpan Constellation Studio](/en/handpan-app), try the three layouts, and let your voice find its place.

@@ -14,7 +14,7 @@ Handpan Constellation Studio n'est pas une app figée : c'est un **projet vivant
 
 ## Un retour en un clic, sans quitter l'app
 
-Ouvre le menu d'aide de [Handpan Constellation Studio](/handpan-studio), clique sur **« Un retour ? »**, et une petite fenêtre te demande simplement : *« Que veux-tu nous dire ? »*. Tu choisis ce qui correspond le mieux :
+Ouvre le menu d'aide de [Handpan Constellation Studio](/handpan-app), clique sur **« Un retour ? »**, et une petite fenêtre te demande simplement : *« Que veux-tu nous dire ? »*. Tu choisis ce qui correspond le mieux :
 
 - 🐞 **Signaler un bug** — « quelque chose ne marche pas ».
 - 💡 **Proposer une idée** — « une fonctionnalité à ajouter ».
@@ -39,4 +39,4 @@ Envoyer un retour, ce n'est pas « faire un ticket » : c'est **participer**. En
 
 ## À toi de jouer
 
-La prochaine fois qu'une idée te traverse en jouant — « et si on pouvait faire ça ? » — ne la garde pas pour toi. Ouvre [Handpan Constellation Studio](/handpan-studio), clique sur « Un retour ? », et dis-le-moi. Et si tu veux échanger de vive voix, mes [cours de handpan](/cours) sont aussi un endroit où tes retours nourrissent la pédagogie.
+La prochaine fois qu'une idée te traverse en jouant — « et si on pouvait faire ça ? » — ne la garde pas pour toi. Ouvre [Handpan Constellation Studio](/handpan-app), clique sur « Un retour ? », et dis-le-moi. Et si tu veux échanger de vive voix, mes [cours de handpan](/cours) sont aussi un endroit où tes retours nourrissent la pédagogie.

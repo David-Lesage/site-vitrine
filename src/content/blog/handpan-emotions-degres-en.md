@@ -10,13 +10,13 @@ permalink: "handpan-emotions-degres"
 draft: false
 ---
 
-Handpan Constellation Studio's [Logic Mode](/handpan-studio) treats music as a language of emotions. Each degree of a scale — the seven steps that make it up — gets a colour and an emotional tone: balance, momentum, gentle tension, coming home. You no longer choose notes, you choose what you want people to feel. And a sequence of degrees becomes a story.
+Handpan Constellation Studio's [Logic Mode](/en/handpan-app) treats music as a language of emotions. Each degree of a scale — the seven steps that make it up — gets a colour and an emotional tone: balance, momentum, gentle tension, coming home. You no longer choose notes, you choose what you want people to feel. And a sequence of degrees becomes a story.
 
 ## Seven degrees, seven emotions
 
 In a scale, every note plays a role. The first degree is the anchor, the place where things "settle". The fifth creates momentum, the urge to go further. The sixth brings a nostalgic tint, the seventh a tension that calls for resolution. These roles are universal: they exist in almost all the music you love, even if you've never put words to them.
 
-Logic Mode makes these roles **visible** by giving them a stable colour, following the **ChromaKeys** logic described in [Playing handpan by colours](/blog/handpan-par-les-couleurs). Degree I always keeps its hue, whatever your scale. You learn a grammar of emotions once and for all.
+Logic Mode makes these roles **visible** by giving them a stable colour, following the **ChromaKeys** logic described in [Playing handpan by colours](/en/blog/handpan-par-les-couleurs). Degree I always keeps its hue, whatever your scale. You learn a grammar of emotions once and for all.
 
 ## Building a chord progression
 
@@ -34,6 +34,6 @@ In electronic Logic Mode, the app can offer you a **suggested fingering** to cha
 
 ## From emotion to a piece
 
-Once you feel how the degrees talk to each other, everything opens up. You can visualise your chords as Constellations, switch scales through the [Sound Atlas](/blog/atlas-des-gammes-de-handpan), or bring these colours onto an [electronic Neotone handpan](/le-neotone) where screen and instrument speak the same language.
+Once you feel how the degrees talk to each other, everything opens up. You can visualise your chords as Constellations, switch scales through the [Sound Atlas](/en/blog/atlas-des-gammes-de-handpan), or bring these colours onto an [electronic Neotone handpan](/en/le-neotone) where screen and instrument speak the same language.
 
-Want to be guided step by step through this grammar of emotions? [David Lesage's lessons](/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/handpan-studio) and compose your first phrase — not with notes, but with emotions.
+Want to be guided step by step through this grammar of emotions? [David Lesage's lessons](/en/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/en/handpan-app) and compose your first phrase — not with notes, but with emotions.

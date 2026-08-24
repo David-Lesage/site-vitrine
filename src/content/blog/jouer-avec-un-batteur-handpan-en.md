@@ -10,7 +10,7 @@ permalink: "jouer-avec-un-batteur-handpan"
 draft: false
 ---
 
-In [Handpan Constellation Studio](/en/handpan-studio), an **accompaniment bar** (*barre d'accompagnement*) lets you loop a chord — or a whole chord sequence — at the tempo you choose. The app plays, you sing. You don't need to be able to play the chord to put your voice on top of it: in fact, the other way round works better.
+In [Handpan Constellation Studio](/en/handpan-app), an **accompaniment bar** (*barre d'accompagnement*) lets you loop a chord — or a whole chord sequence — at the tempo you choose. The app plays, you sing. You don't need to be able to play the chord to put your voice on top of it: in fact, the other way round works better.
 
 ## The block: singing needs two free hands
 
@@ -44,4 +44,4 @@ Grooves and MIDI recording belong to the **Studio** version; they're at their be
 
 It's the advice I repeat most often in lessons: loop the chord, close your eyes, and **sing before you can play**. Your voice understands harmony long before your hands do. When you finally place your fingers on the right notes, you'll simply be joining something you already know.
 
-Open [Handpan Constellation Studio](/en/handpan-studio), click a chord, let it turn — and listen to what comes out of you. If you'd like to work on this together, my [handpan lessons](/en/cours) start exactly there.
+Open [Handpan Constellation Studio](/en/handpan-app), click a chord, let it turn — and listen to what comes out of you. If you'd like to work on this together, my [handpan lessons](/en/cours) start exactly there.

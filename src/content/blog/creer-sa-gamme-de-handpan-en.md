@@ -24,7 +24,7 @@ A scale is the "character" of your pan: a central note (the **ding**) surrounded
 
 ## Create your scale in Handpan Constellation Studio (acoustic mode, free)
 
-1. **Open acoustic mode.** The Discovery version of [Handpan Constellation Studio](/en/handpan-studio) is free and enough to build a scale.
+1. **Open acoustic mode.** The Discovery version of [Handpan Constellation Studio](/en/handpan-app) is free and enough to build a scale.
 2. **Choose your tonic.** It sets the overall colour and acts as the central note.
 3. **Add your notes.** Place the degrees around the ding; the screen shows them in colour and draws chord Constellations in real time.
 4. **Listen and adjust.** Play your layout, move or replace the notes that don't speak to you. Your ear decides, your eye confirms.

@@ -10,7 +10,7 @@ permalink: "apprendre-les-accords-handpan"
 draft: false
 ---
 
-Learning a chord on the handpan means knowing which notes to play, in what order and with which hand. The **guided learning mode** in [Handpan Constellation Studio](/handpan-studio) turns your instrument into a lit-up surface: the app highlights the **coloured note** to touch, you play it, and you move on to the next one — the chord is learned through gesture, without reading a single note of music theory.
+Learning a chord on the handpan means knowing which notes to play, in what order and with which hand. The **guided learning mode** in [Handpan Constellation Studio](/en/handpan-app) turns your instrument into a lit-up surface: the app highlights the **coloured note** to touch, you play it, and you move on to the next one — the chord is learned through gesture, without reading a single note of music theory.
 
 ## The real block when starting out with chords
 
@@ -28,14 +28,14 @@ You move at **your own pace**, as many times as you like. It's not a timed exam:
 
 ## Why it works: colour + movement
 
-Our brain remembers what it **sees** and what it **does** far better than what it reads. By linking each note to a fixed colour (the [ChromaKeys](/blog/handpan-par-les-couleurs)) and each chord to a shape, the guided mode engages your visual memory **and** your muscle memory. You don't "revise" a chord: you **feel** it under your fingers until it becomes a reflex.
+Our brain remembers what it **sees** and what it **does** far better than what it reads. By linking each note to a fixed colour (the [ChromaKeys](/en/blog/handpan-par-les-couleurs)) and each chord to a shape, the guided mode engages your visual memory **and** your muscle memory. You don't "revise" a chord: you **feel** it under your fingers until it becomes a reflex.
 
 An honest note: the app also offers a **suggested fingering** (which hand for which note) — a genuine help, especially reliable in the Neotone's electronic Logic mode.
 
 ## From single chords to accompaniment
 
-Learning a chord is only the first step. Once you have a few chords in hand, you can string them together and **accompany real songs** — that's the whole point of the [Logic mode and its 7 coloured degrees](/blog/handpan-emotions-degres), designed to play like a guitarist or pianist. The guided mode is the on-ramp: it puts the right gestures in your hands before you tell your own stories.
+Learning a chord is only the first step. Once you have a few chords in hand, you can string them together and **accompany real songs** — that's the whole point of the [Logic mode and its 7 coloured degrees](/en/blog/handpan-emotions-degres), designed to play like a guitarist or pianist. The guided mode is the on-ramp: it puts the right gestures in your hands before you tell your own stories.
 
 ## Where to start
 
-Open [Handpan Constellation Studio](/handpan-studio) in acoustic mode (free), pick a simple chord, and let it guide you note by note. In a few minutes you'll play your first chord — and you'll understand why seeing music changes everything. Want to go further with human guidance? Discover [my handpan lessons](/cours).
+Open [Handpan Constellation Studio](/en/handpan-app) in acoustic mode (free), pick a simple chord, and let it guide you note by note. In a few minutes you'll play your first chord — and you'll understand why seeing music changes everything. Want to go further with human guidance? Discover [my handpan lessons](/en/cours).

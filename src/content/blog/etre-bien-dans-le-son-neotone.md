@@ -53,4 +53,4 @@ Casque **et** enceinte ne s'opposent pas : le casque pour l'intimité et la pré
 
 ## En résumé
 
-Le meilleur son avec un Neotone ne coûte pas cher en matériel — il tient surtout à un **bon placement** : mets ton enceinte **derrière toi, à hauteur de tête**, et tu passeras de « j'entends ma musique » à « je suis dans ma musique ». Pour voir le reste du matériel utile, c'est sur la page du [Neotone](/le-neotone#extras) ; et pour apprendre à jouer par les couleurs, direction [Handpan Constellation Studio](/handpan-studio).
+Le meilleur son avec un Neotone ne coûte pas cher en matériel — il tient surtout à un **bon placement** : mets ton enceinte **derrière toi, à hauteur de tête**, et tu passeras de « j'entends ma musique » à « je suis dans ma musique ». Pour voir le reste du matériel utile, c'est sur la page du [Neotone](/le-neotone#extras) ; et pour apprendre à jouer par les couleurs, direction [Handpan Constellation Studio](/handpan-app).

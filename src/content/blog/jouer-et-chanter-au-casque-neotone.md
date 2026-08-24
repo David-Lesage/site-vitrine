@@ -34,10 +34,10 @@ C'est le pendant intime du [placement d'enceinte que je recommande](/blog/etre-b
 
 ### La méthode voyage avec l'instrument
 
-Le Neotone n'est pas qu'un handpan silencieux : il porte toute l'approche de [Handpan Constellation Studio](/handpan-studio). Le [Mode Logique](/blog/handpan-emotions-degres) et ses sept accords colorés, la création de gammes, la transposition — tout est là, écran et instrument parlant la même langue. Ta séance nocturne a exactement les mêmes outils que de jour.
+Le Neotone n'est pas qu'un handpan silencieux : il porte toute l'approche de [Handpan Constellation Studio](/handpan-app). Le [Mode Logique](/blog/handpan-emotions-degres) et ses sept accords colorés, la création de gammes, la transposition — tout est là, écran et instrument parlant la même langue. Ta séance nocturne a exactement les mêmes outils que de jour.
 
 ### Le bon moment, enfin disponible
 
 L'électronique ne remplace pas la magie de l'acoustique : elle l'étend à des moments qui lui étaient fermés. La nuit, en déplacement, dans une chambre d'hôtel — le Neotone rend le jeu possible là où l'acoustique se tait. Et souvent, ce sont ces moments volés qui font les plus belles séances.
 
-Curieux de l'instrument qui rend tout ça possible ? Découvre le [Neotone](/le-neotone), et laisse-toi guider par les [cours de David Lesage](/cours). Ouvre [Handpan Constellation Studio](/handpan-studio) et joue ta première boucle, ce soir, sans déranger personne.
+Curieux de l'instrument qui rend tout ça possible ? Découvre le [Neotone](/le-neotone), et laisse-toi guider par les [cours de David Lesage](/cours). Ouvre [Handpan Constellation Studio](/handpan-app) et joue ta première boucle, ce soir, sans déranger personne.

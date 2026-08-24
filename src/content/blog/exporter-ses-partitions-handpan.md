@@ -10,7 +10,7 @@ permalink: "exporter-ses-partitions-handpan"
 draft: false
 ---
 
-L'éditeur de partition visuelle de [Handpan Constellation Studio](/handpan-studio) te laisse exporter tes accords et tes partitions en **PDF ou PNG**. Une belle progression trouvée ce soir ne s'évapore plus : tu la gardes en image, tu la révises demain, tu la transmets à quelqu'un. Un fichier, et ton idée devient un document que tu possèdes.
+L'éditeur de partition visuelle de [Handpan Constellation Studio](/handpan-app) te laisse exporter tes accords et tes partitions en **PDF ou PNG**. Une belle progression trouvée ce soir ne s'évapore plus : tu la gardes en image, tu la révises demain, tu la transmets à quelqu'un. Un fichier, et ton idée devient un document que tu possèdes.
 
 ## Le drame de l'idée qui s'envole
 
@@ -38,4 +38,4 @@ Chaque export porte discrètement la mention « créé avec Handpan Constellatio
 
 Créer et exporter tes partitions en mode acoustique est **gratuit** ; la version Studio ajoute la sauvegarde cloud pour retrouver tes créations partout. Dans tous les cas, tes idées ne s'envolent plus.
 
-Envie d'être guidé pour composer et garder tes progressions ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-studio) et exporte ta première partition — celle que tu retrouveras demain.
+Envie d'être guidé pour composer et garder tes progressions ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-app) et exporte ta première partition — celle que tu retrouveras demain.

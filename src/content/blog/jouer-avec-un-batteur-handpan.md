@@ -10,7 +10,7 @@ permalink: "jouer-avec-un-batteur-handpan"
 draft: false
 ---
 
-Dans [Handpan Constellation Studio](/handpan-studio), une **barre d'accompagnement** te laisse mettre un accord en boucle — ou toute une suite d'accords — au tempo que tu choisis. L'app joue, toi tu chantes. Tu n'as pas besoin de savoir jouer l'accord pour poser ta voix dessus : c'est même l'inverse qui marche le mieux.
+Dans [Handpan Constellation Studio](/handpan-app), une **barre d'accompagnement** te laisse mettre un accord en boucle — ou toute une suite d'accords — au tempo que tu choisis. L'app joue, toi tu chantes. Tu n'as pas besoin de savoir jouer l'accord pour poser ta voix dessus : c'est même l'inverse qui marche le mieux.
 
 ## Le blocage : chanter demande deux mains libres
 
@@ -44,4 +44,4 @@ Les grooves et l'enregistrement MIDI relèvent de la version **Studio** ; ils de
 
 C'est le conseil que je répète le plus souvent en cours : mets l'accord en boucle, ferme les yeux, et **chante avant de savoir jouer**. Ta voix comprend l'harmonie bien avant tes mains. Quand tu poseras enfin les doigts sur les bonnes notes, tu ne feras que rejoindre quelque chose que tu connais déjà.
 
-Ouvre [Handpan Constellation Studio](/handpan-studio), clique un accord, laisse-le tourner — et écoute ce qui sort de toi. Si tu veux qu'on travaille ça ensemble, mes [cours de handpan](/cours) partent exactement de là.
+Ouvre [Handpan Constellation Studio](/handpan-app), clique un accord, laisse-le tourner — et écoute ce qui sort de toi. Si tu veux qu'on travaille ça ensemble, mes [cours de handpan](/cours) partent exactement de là.

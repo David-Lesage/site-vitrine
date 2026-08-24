@@ -10,7 +10,7 @@ permalink: "editeur-de-melodies-handpan"
 draft: false
 ---
 
-L'éditeur de mélodies de [Handpan Constellation Studio](/handpan-studio) te donne ce qui manquait entre tes mains et ta mémoire : ton pan en haut, une **timeline** en dessous. Tu cliques une note du pan, elle se pose sur la ligne du temps. Tu écoutes, tu déplaces, tu mets en boucle, et tu exportes en `.mid`. Une mélodie qui existait ce soir existe encore demain matin.
+L'éditeur de mélodies de [Handpan Constellation Studio](/handpan-app) te donne ce qui manquait entre tes mains et ta mémoire : ton pan en haut, une **timeline** en dessous. Tu cliques une note du pan, elle se pose sur la ligne du temps. Tu écoutes, tu déplaces, tu mets en boucle, et tu exportes en `.mid`. Une mélodie qui existait ce soir existe encore demain matin.
 
 ## Une mélodie ne se note pas, au handpan
 
@@ -47,4 +47,4 @@ Dans les deux sens, le pont MIDI reste ouvert : importe un fichier `.mid`, expor
 
 L'éditeur s'ouvre depuis la **Bibliothèque musicale**, et il charge ta gamme du moment — ou n'importe quelle gamme de l'Atlas, transposable. C'est une fonction **Studio**, comme la sauvegarde de tes créations.
 
-Ta prochaine mélodie mérite mieux que ta mémoire de demain matin. Ouvre [Handpan Constellation Studio](/handpan-studio), pose trois notes, et regarde-les tourner en boucle. Et si tu veux être guidé pour composer, mes [cours de handpan](/cours) sont faits pour ça.
+Ta prochaine mélodie mérite mieux que ta mémoire de demain matin. Ouvre [Handpan Constellation Studio](/handpan-app), pose trois notes, et regarde-les tourner en boucle. Et si tu veux être guidé pour composer, mes [cours de handpan](/cours) sont faits pour ça.

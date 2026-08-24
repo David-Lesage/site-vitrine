@@ -29,6 +29,54 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 25/08/2026 — ✨ « CONSTELLATION » RESTAURÉ + 🇬🇧 LES LIENS EN RESTENT EN EN
+
+**Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (build + rendu 375 px / 1280 px, FR + EN).**
+
+### A · « Constellation » n'est pas le nom du produit — c'est le CONCEPT
+
+Correction d'une erreur d'interprétation de la veille (`2c78bdd`) : croyant à un télescopage
+entre le nom de l'app et le mot « Constellation », un agent avait **effacé le concept pour
+protéger le nom**. David a tranché : *« le terme constellation dans le blog décrit pas seulement
+l'app mais le concept de chemin de notes qui forme les accords »*. Le concept est **antérieur et
+supérieur** au nom du produit. Les deux coexistent dans la même phrase — **on ne fuit pas la
+répétition, c'est le vocabulaire de David.**
+
+Trois passages restaurés dans `les-constellations-du-handpan[-en].md` :
+- **`description`** : « … Découvre les 3 façons de **tracer une Constellation** : Polygone, Ouvert
+  et Mains. » (142 car. FR / 130 EN — sous la limite des ~160).
+- **Chapô** : la définition recommence par le terme défini — « **Une Constellation, c'est** un
+  accord que tu vois plutôt qu'un accord que tu comptes. » / « **A Constellation is** a chord you
+  see rather than a chord you count. »
+- **Lien du chapô** : reporte le **nom complet** (« Handpan Constellation Studio »), plus « l'app ».
+
+Quatrième passage, `handpan-par-les-couleurs[-en].md` : la phrase avait été **coupée en deux**
+pour éloigner « Constellations » du nom. Version d'origine restaurée telle quelle (nom mis à
+jour) : « … elle affiche ton pan en couleurs, **dessine les Constellations en temps réel**, et te
+guide pas à pas — la version Découverte est gratuite. » Une seule phrase, trois verbes, un rythme.
+
+### B · Un anglophone ne tombe plus sur une page française
+
+**148 liens internes corrigés** dans les 54 articles — **101 en EN, 47 en FR** :
+- EN : tout chemin FR reçoit son préfixe (`/cours` → `/en/cours`, `/blog/X` → `/en/blog/X`,
+  `/showroom`, `/boutique`, `/le-neotone#extras`…). Les 27 articles EN ont tous un homologue FR
+  au **même permalink**, donc aucun lien mort.
+- FR **et** EN : `/handpan-studio` (ancienne adresse **redirigée en 301**) remplacée par sa
+  destination finale `/handpan-app` / `/en/handpan-app` → **un saut de redirection en moins**.
+- **Mapping utilisé, pas deviné** : `src/i18n/utils.ts` (`translatedSlugs`). En pratique aucun
+  article ne liait `/pieds-atlas` ni `/handpan-compagnon` — le mapping n'a rien eu à traduire.
+- **Aucun lien `/images/...` touché**, aucun slug, aucun nom de fichier, aucune `pubDate`.
+
+**Vérification sur le `dist/`, pas sur les sources** : 27 pages EN et 27 pages FR balayées,
+**0 lien fautif** hors sélecteur de langue (`data-lang-pick`, qui doit précisément pointer vers
+l'autre langue). 0 occurrence de `/handpan-studio` restante dans les pages de blog construites.
+Rendu mesuré en iframe (375 px + 1280 px) sur 4 articles : aucun débordement horizontal, aucune
+image cassée.
+
+⚠️ **Le point « liens EN vers pages FR » listé en “Restes connus” du 24/08 est donc RÉGLÉ.**
+
+---
+
 ## ÉTAT ACTUEL — 24/08/2026 — 🏷️ NOM DÉFINITIF DE L'APP + ☎️ TÉLÉPHONE OBLIGATOIRE AU SHOWCASE
 
 **Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN PROD (FR + EN, 375 px et 1280 px).**

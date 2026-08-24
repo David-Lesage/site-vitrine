@@ -10,7 +10,7 @@ permalink: "apprendre-les-accords-handpan"
 draft: false
 ---
 
-Apprendre un accord au handpan, c'est savoir quelles notes jouer, dans quel ordre et avec quelle main. Le **mode d'apprentissage guidé** de [Handpan Constellation Studio](/handpan-studio) transforme ton instrument en surface éclairée : l'application allume la **note colorée** à toucher, tu la joues, et tu passes à la suivante — l'accord s'apprend par le geste, sans lire une seule note de solfège.
+Apprendre un accord au handpan, c'est savoir quelles notes jouer, dans quel ordre et avec quelle main. Le **mode d'apprentissage guidé** de [Handpan Constellation Studio](/handpan-app) transforme ton instrument en surface éclairée : l'application allume la **note colorée** à toucher, tu la joues, et tu passes à la suivante — l'accord s'apprend par le geste, sans lire une seule note de solfège.
 
 ## Le vrai blocage quand on débute les accords
 
@@ -38,4 +38,4 @@ Apprendre un accord n'est qu'une première marche. Une fois quelques accords en 
 
 ## Par où commencer
 
-Ouvre [Handpan Constellation Studio](/handpan-studio) en mode acoustique (gratuit), choisis un accord simple, et laisse-toi guider note après note. En quelques minutes, tu joueras ton premier accord — et tu comprendras pourquoi voir la musique change tout. Envie d'aller plus loin avec un accompagnement humain ? Découvre [mes cours de handpan](/cours).
+Ouvre [Handpan Constellation Studio](/handpan-app) en mode acoustique (gratuit), choisis un accord simple, et laisse-toi guider note après note. En quelques minutes, tu joueras ton premier accord — et tu comprendras pourquoi voir la musique change tout. Envie d'aller plus loin avec un accompagnement humain ? Découvre [mes cours de handpan](/cours).

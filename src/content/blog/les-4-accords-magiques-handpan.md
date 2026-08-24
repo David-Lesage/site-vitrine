@@ -10,7 +10,7 @@ permalink: "les-4-accords-magiques-handpan"
 draft: false
 ---
 
-Les « 4 accords magiques » sont une petite suite d'accords qui revient dans des milliers de chansons populaires. Au handpan, le [Mode Logique de Handpan Constellation Studio](/handpan-studio) te les met sous les mains en couleurs : quatre degrés, quatre émotions, et tout un pan de musique qui s'ouvre — sans lire une seule note.
+Les « 4 accords magiques » sont une petite suite d'accords qui revient dans des milliers de chansons populaires. Au handpan, le [Mode Logique de Handpan Constellation Studio](/handpan-app) te les met sous les mains en couleurs : quatre degrés, quatre émotions, et tout un pan de musique qui s'ouvre — sans lire une seule note.
 
 ## Pourquoi quatre accords suffisent
 
@@ -43,4 +43,4 @@ Pour que la boucle tourne sans accroc, l'app peut te proposer un **doigté sugg�
 
 Quatre couleurs, une boucle, et voilà de quoi accompagner une infinité de chansons — ou composer les tiennes. Si tu veux chanter par-dessus, pense à choisir un layout vocal adapté à ta voix et à transposer dans ta tonalité.
 
-Envie d'être guidé pas à pas ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-studio) et fais tourner ta première boucle magique.
+Envie d'être guidé pas à pas ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-app) et fais tourner ta première boucle magique.

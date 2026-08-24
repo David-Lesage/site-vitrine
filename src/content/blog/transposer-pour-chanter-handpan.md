@@ -10,7 +10,7 @@ permalink: "transposer-pour-chanter-handpan"
 draft: false
 ---
 
-Transposer, c'est déplacer la note d'ancrage de ton handpan pour changer de tonalité d'un seul geste. Si une chanson est trop haute ou trop basse pour ta voix, tu n'as pas à forcer : dans [Handpan Constellation Studio](/handpan-studio), tu glisses l'ensemble vers ta hauteur naturelle, et tout retombe juste — accompagnement et chant dans **ta** tonalité.
+Transposer, c'est déplacer la note d'ancrage de ton handpan pour changer de tonalité d'un seul geste. Si une chanson est trop haute ou trop basse pour ta voix, tu n'as pas à forcer : dans [Handpan Constellation Studio](/handpan-app), tu glisses l'ensemble vers ta hauteur naturelle, et tout retombe juste — accompagnement et chant dans **ta** tonalité.
 
 ## Le vrai problème : ta voix a sa hauteur
 
@@ -36,4 +36,4 @@ La transposition règle la **hauteur** ; le layout vocal règle la **forme** de 
 
 Il n'y a aucune raison de tordre ta voix pour rentrer dans une tonalité qui n'est pas la tienne. Déplace l'ancrage, trouve ta hauteur, et laisse la chanson venir à toi.
 
-Envie d'être guidé pour t'accompagner au chant ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-studio) et transpose ta première chanson dans ta tonalité.
+Envie d'être guidé pour t'accompagner au chant ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-app) et transpose ta première chanson dans ta tonalité.

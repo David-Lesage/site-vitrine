@@ -1,6 +1,6 @@
 ---
 title: "Les Constellations : voir un accord comme une forme"
-description: "Dans Handpan Constellation Studio, un accord devient un dessin. Découvre les 3 façons de le tracer : Polygone, Ouvert et Mains."
+description: "Dans Handpan Constellation Studio, un accord devient un dessin. Découvre les 3 façons de tracer une Constellation : Polygone, Ouvert et Mains."
 pubDate: 2026-07-02
 cover: "/images/blog-constellations-3-traces.webp"
 category: "methode"
@@ -10,7 +10,7 @@ permalink: "les-constellations-du-handpan"
 draft: false
 ---
 
-Un accord que tu vois plutôt qu'un accord que tu comptes : voilà ce qu'est une Constellation. Dans [l'app](/handpan-studio), les notes qui sonnent ensemble se relient par des traits lumineux et forment une figure reconnaissable. Ton œil retient un dessin, ta main le rejoue. L'app propose trois façons de tracer cette forme : le Polygone, l'Ouvert et les Mains.
+Une Constellation, c'est un accord que tu vois plutôt qu'un accord que tu comptes. Dans [Handpan Constellation Studio](/handpan-app), les notes qui sonnent ensemble se relient par des traits lumineux et forment une figure reconnaissable. Ton œil retient un dessin, ta main le rejoue. L'app propose trois façons de tracer cette forme : le Polygone, l'Ouvert et les Mains.
 
 ## Pourquoi une forme plutôt qu'une liste
 
@@ -44,4 +44,4 @@ Le vrai confort, c'est de pouvoir basculer entre ces trois vues sur la même Con
 
 Et si tu veux inventer tes propres accords colorés, l'app te laisse composer librement : lis [Créer sa gamme de handpan](/blog/creer-sa-gamme-de-handpan) pour voir comment la création fonctionne (gratuite en mode acoustique, l'export porte un filigrane).
 
-Les Constellations rendent visible ce qui, d'habitude, reste abstrait. Tu ne « sais » plus un accord : tu le **vois**. Ouvre [Handpan Constellation Studio](/handpan-studio) et regarde ton premier triangle s'allumer.
+Les Constellations rendent visible ce qui, d'habitude, reste abstrait. Tu ne « sais » plus un accord : tu le **vois**. Ouvre [Handpan Constellation Studio](/handpan-app) et regarde ton premier triangle s'allumer.

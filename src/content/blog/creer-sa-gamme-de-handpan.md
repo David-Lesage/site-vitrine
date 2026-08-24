@@ -24,7 +24,7 @@ Une gamme, c'est le « caractère » de ton pan : une note centrale (le **ding**
 
 ## Créer sa gamme dans Handpan Constellation Studio (mode acoustique, gratuit)
 
-1. **Ouvre le mode acoustique.** La version Découverte de [Handpan Constellation Studio](/handpan-studio) est gratuite et suffit pour créer une gamme.
+1. **Ouvre le mode acoustique.** La version Découverte de [Handpan Constellation Studio](/handpan-app) est gratuite et suffit pour créer une gamme.
 2. **Choisis ta tonique.** Elle fixe la couleur d'ensemble et sert de note centrale.
 3. **Ajoute tes notes.** Place les degrés autour du ding ; l'écran les affiche en couleurs et dessine les Constellations d'accords en temps réel.
 4. **Écoute et ajuste.** Joue ta disposition, déplace ou remplace les notes qui ne te parlent pas. Ton oreille tranche, ton œil confirme.

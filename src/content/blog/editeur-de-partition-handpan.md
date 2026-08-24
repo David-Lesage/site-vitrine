@@ -10,7 +10,7 @@ permalink: "editeur-de-partition-handpan"
 draft: false
 ---
 
-Le **Mode Chanson** de l'éditeur de partition visuelle de [Handpan Constellation Studio](/handpan-studio) affiche les paroles avec les **diagrammes d'accords ancrés au-dessus des mots** — comme une grille d'accords de guitare, mais en mini-handpans colorés. Tu vois où changer d'accord, tu chantes, tu joues. Aucun solfège requis : les couleurs te guident.
+Le **Mode Chanson** de l'éditeur de partition visuelle de [Handpan Constellation Studio](/handpan-app) affiche les paroles avec les **diagrammes d'accords ancrés au-dessus des mots** — comme une grille d'accords de guitare, mais en mini-handpans colorés. Tu vois où changer d'accord, tu chantes, tu joues. Aucun solfège requis : les couleurs te guident.
 
 ## Chanter et jouer en même temps
 
@@ -44,4 +44,4 @@ Une fois l'affichage réglé, tu exportes en **PDF ou PNG** — les diagrammes p
 
 ## Ta chanson, à ta portée
 
-Créer et exporter en mode acoustique est **gratuit** ; la version Studio ajoute la sauvegarde cloud pour retrouver tes chansons partout. Ouvre [Handpan Constellation Studio](/handpan-studio), charge *Hallelujah* ou *Let It Be* en Mode Chanson, et joue ta première chanson dès ce soir.
+Créer et exporter en mode acoustique est **gratuit** ; la version Studio ajoute la sauvegarde cloud pour retrouver tes chansons partout. Ouvre [Handpan Constellation Studio](/handpan-app), charge *Hallelujah* ou *Let It Be* en Mode Chanson, et joue ta première chanson dès ce soir.

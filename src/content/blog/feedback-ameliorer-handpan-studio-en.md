@@ -14,7 +14,7 @@ Handpan Constellation Studio isn't a frozen app: it's a **living project** that 
 
 ## Feedback in one click, without leaving the app
 
-Open the help menu in [Handpan Constellation Studio](/handpan-studio), click **"Feedback"**, and a small window simply asks: *"What would you like to tell us?"*. You choose what fits best:
+Open the help menu in [Handpan Constellation Studio](/en/handpan-app), click **"Feedback"**, and a small window simply asks: *"What would you like to tell us?"*. You choose what fits best:
 
 - 🐞 **Report a bug** — "something isn't working".
 - 💡 **Suggest an idea** — "a feature to add".
@@ -35,8 +35,8 @@ New scales, new modes and new features arrive regularly, and are included. The a
 
 ## A community, not a catalogue
 
-Sending feedback isn't "filing a ticket": it's **taking part**. By sharing what you feel, you shape a unique teaching tool built to make music visible and accessible. That's exactly the spirit of the [colour-and-shape method](/blog/handpan-par-les-couleurs): together, we build the tool we all wish we'd had as children.
+Sending feedback isn't "filing a ticket": it's **taking part**. By sharing what you feel, you shape a unique teaching tool built to make music visible and accessible. That's exactly the spirit of the [colour-and-shape method](/en/blog/handpan-par-les-couleurs): together, we build the tool we all wish we'd had as children.
 
 ## Your turn
 
-Next time an idea crosses your mind while playing — "what if it could do that?" — don't keep it to yourself. Open [Handpan Constellation Studio](/handpan-studio), click "Feedback", and tell me. And if you'd rather talk it through, my [handpan lessons](/cours) are another place where your feedback feeds the teaching.
+Next time an idea crosses your mind while playing — "what if it could do that?" — don't keep it to yourself. Open [Handpan Constellation Studio](/en/handpan-app), click "Feedback", and tell me. And if you'd rather talk it through, my [handpan lessons](/en/cours) are another place where your feedback feeds the teaching.

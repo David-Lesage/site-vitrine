@@ -10,13 +10,13 @@ permalink: "diagrammes-accords-handpan-pdf"
 draft: false
 ---
 
-In [Handpan Constellation Studio](/handpan-studio), each chord is drawn as a **colourful mini-handpan**: the chord's notes are colour-coded, the play order is numbered, and a fingering is suggested. You export these diagrams as printable **PDF or PNG** to review at your own pace or pass them on — a visual language that reads without music theory.
+In [Handpan Constellation Studio](/en/handpan-app), each chord is drawn as a **colourful mini-handpan**: the chord's notes are colour-coded, the play order is numbered, and a fingering is suggested. You export these diagrams as printable **PDF or PNG** to review at your own pace or pass them on — a visual language that reads without music theory.
 
 ## One chord, one mini-handpan
 
 A chord written on a classical staff doesn't tell you *where to place your hands* on your instrument. Handpan Constellation Studio's chord diagram answers exactly that. Each chord becomes an image of your handpan, with:
 
-- **Colour-coded notes** — the ChromaKeys colours inherited from [the constellations of the handpan](/blog/les-constellations-du-handpan), to recognise the chord at a glance;
+- **Colour-coded notes** — the ChromaKeys colours inherited from [the constellations of the handpan](/en/blog/les-constellations-du-handpan), to recognise the chord at a glance;
 - **A numbered play order** — you see which note to strike first, then the next;
 - **A suggested fingering** — which hand for which note, especially reliable in electronic Logic Mode;
 - **A legend** — chords, degrees and associated emotions, so you understand what you're playing.
@@ -55,8 +55,8 @@ Turn on **Ink-Saver Mode** before printing: white background, ink saved, diagram
 
 ### Watermark and free access
 
-Every export discreetly carries the note "created with Handpan Constellation Studio by David Lesage" — a signature that accompanies your document without spoiling it. Creating and exporting your diagrams in acoustic mode is **free**; the Studio version adds cloud saving. For export logic in the broader sense, the article on [keeping and sharing your chords](/blog/exporter-ses-partitions-handpan) rounds out the picture.
+Every export discreetly carries the note "created with Handpan Constellation Studio by David Lesage" — a signature that accompanies your document without spoiling it. Creating and exporting your diagrams in acoustic mode is **free**; the Studio version adds cloud saving. For export logic in the broader sense, the article on [keeping and sharing your chords](/en/blog/exporter-ses-partitions-handpan) rounds out the picture.
 
 ## Your chords, on paper
 
-Open [Handpan Constellation Studio](/handpan-studio), compose a progression, and export your first chord diagrams as PDF. You'll hold a clear, colourful card in your hands — ready to review, and ready to give away.
+Open [Handpan Constellation Studio](/en/handpan-app), compose a progression, and export your first chord diagrams as PDF. You'll hold a clear, colourful card in your hands — ready to review, and ready to give away.

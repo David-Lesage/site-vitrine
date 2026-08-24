@@ -10,7 +10,7 @@ permalink: "layouts-vocaux-handpan"
 draft: false
 ---
 
-Les layouts vocaux sont trois réglages du [Mode Logique de Handpan Constellation Studio](/handpan-studio) qui réarrangent la disposition et le voicing des accords selon la tessiture du chanteur. Profond, Brillant, Ample : chacun place les notes différemment pour que la voix se pose naturellement au-dessus de ton accompagnement, sans jamais lutter contre lui.
+Les layouts vocaux sont trois réglages du [Mode Logique de Handpan Constellation Studio](/handpan-app) qui réarrangent la disposition et le voicing des accords selon la tessiture du chanteur. Profond, Brillant, Ample : chacun place les notes différemment pour que la voix se pose naturellement au-dessus de ton accompagnement, sans jamais lutter contre lui.
 
 ## Pourquoi un layout change tout pour la voix
 
@@ -38,4 +38,4 @@ Il n'y a pas de bon ou de mauvais choix : il y a le layout qui laisse **ta** voi
 
 Et si ta tonalité ne tombe pas juste avec ta voix, la transposition te laisse déplacer l'ensemble d'un geste pour chanter dans ta hauteur naturelle. Les layouts adaptent la forme, la transposition adapte la hauteur : ensemble, ils moulent l'accompagnement autour de toi.
 
-Envie d'être guidé pour accompagner ta voix ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-studio), essaie les trois layouts, et laisse ta voix trouver sa place.
+Envie d'être guidé pour accompagner ta voix ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-app), essaie les trois layouts, et laisse ta voix trouver sa place.

@@ -10,7 +10,7 @@ permalink: "les-4-accords-magiques-handpan"
 draft: false
 ---
 
-The "4 magic chords" are a short chord sequence that recurs in thousands of popular songs. On the handpan, [Handpan Constellation Studio's Logic Mode](/handpan-studio) puts them under your hands in colour: four degrees, four emotions, and a whole swath of music opening up — without reading a single note.
+The "4 magic chords" are a short chord sequence that recurs in thousands of popular songs. On the handpan, [Handpan Constellation Studio's Logic Mode](/en/handpan-app) puts them under your hands in colour: four degrees, four emotions, and a whole swath of music opening up — without reading a single note.
 
 ## Why four chords are enough
 
@@ -20,7 +20,7 @@ You already know this sequence by heart, even without realising it: your ear has
 
 ## Playing them on handpan in colour
 
-In Logic Mode, each degree carries a stable colour and emotion, as explained in [Playing with emotions: the 7 coloured degrees](/blog/handpan-emotions-degres). The four magic chords then become four colours to chain:
+In Logic Mode, each degree carries a stable colour and emotion, as explained in [Playing with emotions: the 7 coloured degrees](/en/blog/handpan-emotions-degres). The four magic chords then become four colours to chain:
 
 - Degree **I** — the anchor, "home".
 - Degree **V** — momentum, the urge to go further.
@@ -29,7 +29,7 @@ In Logic Mode, each degree carries a stable colour and emotion, as explained in 
 
 ![Four chords shown as coloured mini-handpan diagrams](/images/blog-grille-accords-familles.webp)
 
-You no longer have to remember chord names or abstract positions. You follow a sequence of colours, and the magic loop turns under your hands. It's the same gesture described in [Accompanying songs on handpan](/blog/accompagner-des-chansons-au-handpan): chaining chords the way a guitarist would.
+You no longer have to remember chord names or abstract positions. You follow a sequence of colours, and the magic loop turns under your hands. It's the same gesture described in [Accompanying songs on handpan](/en/blog/accompagner-des-chansons-au-handpan): chaining chords the way a guitarist would.
 
 ### Vary the order, change the mood
 
@@ -43,4 +43,4 @@ To keep the loop running without a hitch, the app can offer a **suggested finger
 
 Four colours, one loop, and there you have enough to accompany endless songs — or compose your own. If you want to sing over them, remember to pick a vocal layout suited to your voice and to transpose into your key.
 
-Want to be guided step by step? [David Lesage's lessons](/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/handpan-studio) and spin your first magic loop.
+Want to be guided step by step? [David Lesage's lessons](/en/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/en/handpan-app) and spin your first magic loop.

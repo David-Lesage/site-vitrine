@@ -10,7 +10,7 @@ permalink: "atlas-des-gammes-de-handpan"
 draft: false
 ---
 
-L'Atlas Sonore de [Handpan Constellation Studio](/handpan-studio) est une carte des gammes du handpan que tu peux explorer comme un voyageur. Chaque gamme y est classée, écoutable en un clic et affichée en couleurs sur un pan. Tu parcours des ambiances venues de cultures et de pays différents, tu compares, tu ressens — avant même de savoir en nommer une seule note.
+L'Atlas Sonore de [Handpan Constellation Studio](/handpan-app) est une carte des gammes du handpan que tu peux explorer comme un voyageur. Chaque gamme y est classée, écoutable en un clic et affichée en couleurs sur un pan. Tu parcours des ambiances venues de cultures et de pays différents, tu compares, tu ressens — avant même de savoir en nommer une seule note.
 
 ## Pourquoi un Atlas plutôt qu'une liste
 
@@ -36,4 +36,4 @@ Chaque gamme s'affiche sur un pan avec les **ChromaKeys** : chaque note, sa coul
 
 Une fois qu'une gamme te plaît, tu ne restes pas spectateur. Tu peux la visualiser, repérer ses accords sous forme de Constellations, et commencer à jouer avec les couleurs comme repères. Et si l'envie te prend de composer la tienne, la [création de gamme](/blog/creer-sa-gamme-de-handpan) est là (gratuite en mode acoustique, l'export porte un filigrane).
 
-L'Atlas n'est pas un catalogue : c'est une invitation au voyage. Ouvre [Handpan Constellation Studio](/handpan-studio), choisis un continent sonore, et laisse ton oreille décider où poser tes mains.
+L'Atlas n'est pas un catalogue : c'est une invitation au voyage. Ouvre [Handpan Constellation Studio](/handpan-app), choisis un continent sonore, et laisse ton oreille décider où poser tes mains.
