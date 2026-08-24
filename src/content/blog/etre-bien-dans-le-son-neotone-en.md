@@ -53,4 +53,4 @@ Headphones **and** speaker aren't rivals: headphones for intimacy and precision,
 
 ## In short
 
-The best sound with a Neotone doesn't cost much in gear — it mostly comes down to **good placement**: put your speaker **behind you, at head height**, and you'll go from "I hear my music" to "I'm inside my music". To see the rest of the useful gear, head to the [Neotone](/le-neotone#extras) page; and to learn to play through colours, go to [Handpan Studio](/handpan-studio).
+The best sound with a Neotone doesn't cost much in gear — it mostly comes down to **good placement**: put your speaker **behind you, at head height**, and you'll go from "I hear my music" to "I'm inside my music". To see the rest of the useful gear, head to the [Neotone](/le-neotone#extras) page; and to learn to play through colours, go to [Handpan Constellation Studio](/handpan-studio).

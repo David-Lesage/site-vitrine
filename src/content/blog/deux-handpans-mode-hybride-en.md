@@ -1,6 +1,6 @@
 ---
 title: "Two handpans that become one: Hybrid mode"
-description: "When a second handpan joins the first, Handpan Studio draws each chord across both — and tells you what that duo really unlocks."
+description: "When a second handpan joins the first, Handpan Constellation Studio draws each chord across both — and tells you what that duo really unlocks."
 pubDate: 2026-09-08
 cover: "/images/blog-bottom-coques.webp"
 category: "acoustique"
@@ -10,7 +10,7 @@ permalink: "deux-handpans-mode-hybride"
 draft: false
 ---
 
-Many players end up owning **two handpans** — and playing them as two separate instruments. [Handpan Studio's](/en/handpan-studio) acoustic mode looks at them differently: it lays both shells side by side and draws each chord **across the two of them**, with the play order and the hands. They're no longer two pans. They're one instrument.
+Many players end up owning **two handpans** — and playing them as two separate instruments. [Handpan Constellation Studio's](/en/handpan-studio) acoustic mode looks at them differently: it lays both shells side by side and draws each chord **across the two of them**, with the play order and the hands. They're no longer two pans. They're one instrument.
 
 ## There's always a note missing
 
@@ -49,4 +49,4 @@ Two details are worth their weight in gold before ordering anything:
 
 Acoustic mode, "Complete" and the key wheel are **free**; permanently registering your two-handpan setup is part of the Studio version. And if the second pan becomes a real desire, the app tells you exactly which notes to ask for — whether you go for a [Neotone](/en/le-neotone) or an acoustic instrument.
 
-Open [Handpan Studio](/en/handpan-studio), load your scale and see what you're really missing. It's often less than you think. And to explore all this together, my [handpan lessons](/en/cours) are open.
+Open [Handpan Constellation Studio](/en/handpan-studio), load your scale and see what you're really missing. It's often less than you think. And to explore all this together, my [handpan lessons](/en/cours) are open.

@@ -1,6 +1,6 @@
 ---
 title: "The music library: what if your scale told you what to play?"
-description: "Songs to accompany, handpan pieces, your own compositions: Handpan Studio's library tells you which ones your scale can actually play."
+description: "Songs to accompany, handpan pieces, your own compositions: Handpan Constellation Studio's library tells you which ones your scale can actually play."
 pubDate: 2026-08-31
 cover: "/images/blog-partition-hallelujah.webp"
 category: "communaute"
@@ -10,7 +10,7 @@ permalink: "bibliotheque-musicale-handpan"
 draft: false
 ---
 
-[Handpan Studio's](/en/handpan-studio) **music library** (*Bibliothèque musicale* in the app, still labelled in French) gathers in one place the songs you can accompany, the handpan pieces and your own compositions. But its real talent lies elsewhere: it looks at **your** scale and tells you, piece by piece, what your instrument can play — and what it can't.
+[Handpan Constellation Studio's](/en/handpan-studio) **music library** (*Bibliothèque musicale* in the app, still labelled in French) gathers in one place the songs you can accompany, the handpan pieces and your own compositions. But its real talent lies elsewhere: it looks at **your** scale and tells you, piece by piece, what your instrument can play — and what it can't.
 
 ## The question everyone asks
 
@@ -46,4 +46,4 @@ That online backup is part of the **Studio** version; receiving and viewing shar
 
 A handpan library doesn't really exist anywhere else yet. This one fills up gradually, with the scores each of us places, corrects and shares — in the same collaborative spirit as the [feedback feature](/en/blog/feedback-ameliorer-handpan-studio).
 
-Open [Handpan Studio](/en/handpan-studio), load your scale, and go see what it already knows how to play. You may be surprised. And if you'd like us to explore that repertoire together, my [handpan lessons](/en/cours) are there for that.
+Open [Handpan Constellation Studio](/en/handpan-studio), load your scale, and go see what it already knows how to play. You may be surprised. And if you'd like us to explore that repertoire together, my [handpan lessons](/en/cours) are there for that.

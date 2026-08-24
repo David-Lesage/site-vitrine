@@ -1,6 +1,6 @@
 ---
 title: "The Sound Atlas: travelling through the world's scales"
-description: "Handpan Studio's Atlas lets you roam handpan scales from around the world, hear them and see them in colour. A sonic journey."
+description: "Handpan Constellation Studio's Atlas lets you roam handpan scales from around the world, hear them and see them in colour. A sonic journey."
 pubDate: 2026-07-06
 cover: "/images/blog-atlas-destinations.webp"
 category: "gammes"
@@ -10,7 +10,7 @@ permalink: "atlas-des-gammes-de-handpan"
 draft: false
 ---
 
-The Sound Atlas in [Handpan Studio](/handpan-studio) is a map of handpan scales you can explore like a traveller. Every scale is sorted, playable in one click and shown in colour on a pan. You roam through moods from different cultures and countries, you compare, you feel — before you can even name a single note.
+The Sound Atlas in [Handpan Constellation Studio](/handpan-studio) is a map of handpan scales you can explore like a traveller. Every scale is sorted, playable in one click and shown in colour on a pan. You roam through moods from different cultures and countries, you compare, you feel — before you can even name a single note.
 
 ## Why an Atlas instead of a list
 
@@ -26,7 +26,7 @@ Each scale carries an emotional colour: bright, melancholic, mysterious, soothin
 
 ### Listen before you choose
 
-With one click, you hear the scale sound. No need to own it or imagine it: Handpan Studio plays it for you. That's precious when you're hesitating before buying an acoustic handpan, or before loading a scale onto your [electronic Neotone handpan](/le-neotone).
+With one click, you hear the scale sound. No need to own it or imagine it: Handpan Constellation Studio plays it for you. That's precious when you're hesitating before buying an acoustic handpan, or before loading a scale onto your [electronic Neotone handpan](/le-neotone).
 
 ### See the scale in colour
 
@@ -36,4 +36,4 @@ Every scale appears on a pan with the **ChromaKeys**: each note, its colour. You
 
 Once a scale wins you over, you don't stay a spectator. You can visualise it, spot its chords as Constellations, and start playing with colours as your cues. And if you feel like composing your own, [scale creation](/blog/creer-sa-gamme-de-handpan) is right there (free in acoustic mode, exports carry a watermark).
 
-The Atlas isn't a catalogue: it's an invitation to travel. Open [Handpan Studio](/handpan-studio), choose a sonic continent, and let your ear decide where to place your hands.
+The Atlas isn't a catalogue: it's an invitation to travel. Open [Handpan Constellation Studio](/handpan-studio), choose a sonic continent, and let your ear decide where to place your hands.

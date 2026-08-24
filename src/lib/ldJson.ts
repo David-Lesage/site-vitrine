@@ -70,6 +70,15 @@ export function softwareAppLdJson() {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'Handpan Constellation Studio',
+    // 🔎 24/08/2026 : continuité SEO. Les noms précédents ont été indexés par
+    // Google ; `alternateName` les rattache à la même app sans rien afficher
+    // au visiteur. Ne jamais les remettre dans du texte visible.
+    alternateName: [
+      'Handpan Compagnon',
+      'Handpan Companion',
+      'Handpan Studio',
+      'Neotone Studio',
+    ],
     applicationCategory: 'MultimediaApplication',
     applicationSubCategory: 'Music education',
     operatingSystem: 'Web (navigateur)',

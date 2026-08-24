@@ -50,4 +50,4 @@ To cut the last cable between me and my monitor mix, I use the **X-vive U4** sys
 
 Just starting out? Begin simply with the headphones you already own (a 6.35 mm jack adapter if needed): the joy of headphone playing is immediate. The day you step on stage, in-ears + wireless are life-changing.
 
-For the rest of the gear (speaker, cables, MIDI), see [the complete nomad setup](/blog/setup-nomade-neotone-bose-s1) and [what to plan for around the Neotone](/le-neotone#extras). And to learn to play through colours, head to [Handpan Studio](/handpan-studio).
+For the rest of the gear (speaker, cables, MIDI), see [the complete nomad setup](/blog/setup-nomade-neotone-bose-s1) and [what to plan for around the Neotone](/le-neotone#extras). And to learn to play through colours, head to [Handpan Constellation Studio](/handpan-studio).

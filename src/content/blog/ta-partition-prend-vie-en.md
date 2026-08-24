@@ -10,7 +10,7 @@ permalink: "ta-partition-prend-vie"
 draft: false
 ---
 
-Until now, [Handpan Studio's](/en/handpan-studio) visual score was there to **keep** and to **pass on**: you exported it as a [PDF](/en/blog/exporter-ses-partitions-handpan), printed it, sent it. It can now do one more thing, and it's the one that changes daily practice: it **plays itself**. The current diagram lights up, the page scrolls on its own, and all you have to do is follow.
+Until now, [Handpan Constellation Studio's](/en/handpan-studio) visual score was there to **keep** and to **pass on**: you exported it as a [PDF](/en/blog/exporter-ses-partitions-handpan), printed it, sent it. It can now do one more thing, and it's the one that changes daily practice: it **plays itself**. The current diagram lights up, the page scrolls on its own, and all you have to do is follow.
 
 ## Reading a score already means doing two jobs
 
@@ -48,4 +48,4 @@ One last point, and it matters: shared scores keep track of **who contributed wh
 
 Exports made without Studio access carry a discreet "free version" watermark; everything else — player, music stand, repeats — stays under your fingers.
 
-Open [Handpan Studio](/en/handpan-studio), load a song and press ▶. Watch it light up chord after chord: that's the moment a score stops being a document. And if you'd like us to work through a piece together, my [handpan lessons](/en/cours) are made for that.
+Open [Handpan Constellation Studio](/en/handpan-studio), load a song and press ▶. Watch it light up chord after chord: that's the moment a score stops being a document. And if you'd like us to work through a piece together, my [handpan lessons](/en/cours) are made for that.

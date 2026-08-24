@@ -10,7 +10,7 @@ permalink: "jouer-avec-un-batteur-handpan"
 draft: false
 ---
 
-In [Handpan Studio](/en/handpan-studio), an **accompaniment bar** (*barre d'accompagnement*) lets you loop a chord — or a whole chord sequence — at the tempo you choose. The app plays, you sing. You don't need to be able to play the chord to put your voice on top of it: in fact, the other way round works better.
+In [Handpan Constellation Studio](/en/handpan-studio), an **accompaniment bar** (*barre d'accompagnement*) lets you loop a chord — or a whole chord sequence — at the tempo you choose. The app plays, you sing. You don't need to be able to play the chord to put your voice on top of it: in fact, the other way round works better.
 
 ## The block: singing needs two free hands
 
@@ -34,7 +34,7 @@ That bar exists both on the acoustic mode's chord grid and on the [Logic Mode](/
 
 Once the loop is running, something is still missing: a **living pulse**. A metronome tells the time; a drummer makes you want to play.
 
-Handpan Studio offers twelve accompaniment grooves — pop, funk, reggae, bossa, 6/8… — with their automatic fills. You can use them to warm up, but above all to **record over**: on playback the groove stays an independent track you can mute with one click 🔇, and it follows your piece's tempo. It even travels into the MIDI file when you export your recording.
+Handpan Constellation Studio offers twelve accompaniment grooves — pop, funk, reggae, bossa, 6/8… — with their automatic fills. You can use them to warm up, but above all to **record over**: on playback the groove stays an independent track you can mute with one click 🔇, and it follows your piece's tempo. It even travels into the MIDI file when you export your recording.
 
 You can also play over an imported MIDI track or audio file — handy for practising a song you love before accompanying it for real.
 
@@ -44,4 +44,4 @@ Grooves and MIDI recording belong to the **Studio** version; they're at their be
 
 It's the advice I repeat most often in lessons: loop the chord, close your eyes, and **sing before you can play**. Your voice understands harmony long before your hands do. When you finally place your fingers on the right notes, you'll simply be joining something you already know.
 
-Open [Handpan Studio](/en/handpan-studio), click a chord, let it turn — and listen to what comes out of you. If you'd like to work on this together, my [handpan lessons](/en/cours) start exactly there.
+Open [Handpan Constellation Studio](/en/handpan-studio), click a chord, let it turn — and listen to what comes out of you. If you'd like to work on this together, my [handpan lessons](/en/cours) start exactly there.

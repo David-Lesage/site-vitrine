@@ -74,6 +74,6 @@ A complete Neotone¹ + S1 Pro+ + cable setup therefore comes to around **€2,60
 
 ## And what about the method?
 
-Gear doesn't make the music. This setup makes full sense with a way of learning that gets you playing fast: colours and shapes. [Handpan Studio](/handpan-studio) supports you on your Neotone just as on an acoustic handpan — and if you'd like guidance, [my lessons](/cours) are there for that.
+Gear doesn't make the music. This setup makes full sense with a way of learning that gets you playing fast: colours and shapes. [Handpan Constellation Studio](/handpan-studio) supports you on your Neotone just as on an acoustic handpan — and if you'd like guidance, [my lessons](/cours) are there for that.
 
 The real luxury of the nomad musician isn't owning a lot of gear. It's being able to **drop your bag anywhere and be playing within two minutes**.

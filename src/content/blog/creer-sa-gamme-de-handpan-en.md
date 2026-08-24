@@ -1,6 +1,6 @@
 ---
 title: "How to create your own handpan scale (tutorial)"
-description: "Understand what a handpan scale is and learn to build your own, for free, in Handpan Studio's acoustic mode — then share it with the community."
+description: "Understand what a handpan scale is and learn to build your own, for free, in Handpan Constellation Studio's acoustic mode — then share it with the community."
 pubDate: 2026-06-29
 cover: "/images/app-creation.webp"
 category: "gammes"
@@ -10,7 +10,7 @@ permalink: "creer-sa-gamme-de-handpan"
 draft: false
 ---
 
-Creating your own handpan scale means choosing the set of notes that will make up your instrument — their order, their number and the emotion they carry. In the **Handpan Studio** app you can do it for free, draw your layout in colour, hear it live, then save it and share it with the community. This tutorial shows you how.
+Creating your own handpan scale means choosing the set of notes that will make up your instrument — their order, their number and the emotion they carry. In the **Handpan Constellation Studio** app you can do it for free, draw your layout in colour, hear it live, then save it and share it with the community. This tutorial shows you how.
 
 ## What is a handpan scale?
 
@@ -22,9 +22,9 @@ A scale is the "character" of your pan: a central note (the **ding**) surrounded
 - **The degrees** are the notes built around it; in colours (ChromaKeys), each keeps a stable hue.
 - **The intervals** — the gaps between notes — decide whether the scale sounds joyful, dark or contemplative.
 
-## Create your scale in Handpan Studio (acoustic mode, free)
+## Create your scale in Handpan Constellation Studio (acoustic mode, free)
 
-1. **Open acoustic mode.** The Discovery version of [Handpan Studio](/en/handpan-studio) is free and enough to build a scale.
+1. **Open acoustic mode.** The Discovery version of [Handpan Constellation Studio](/en/handpan-studio) is free and enough to build a scale.
 2. **Choose your tonic.** It sets the overall colour and acts as the central note.
 3. **Add your notes.** Place the degrees around the ding; the screen shows them in colour and draws chord Constellations in real time.
 4. **Listen and adjust.** Play your layout, move or replace the notes that don't speak to you. Your ear decides, your eye confirms.

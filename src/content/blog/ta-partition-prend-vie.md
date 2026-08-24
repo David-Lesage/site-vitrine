@@ -10,7 +10,7 @@ permalink: "ta-partition-prend-vie"
 draft: false
 ---
 
-Jusqu'ici, la partition visuelle de [Handpan Studio](/handpan-studio) servait à **garder** et à **transmettre** : on l'exportait en [PDF](/blog/exporter-ses-partitions-handpan), on l'imprimait, on l'envoyait. Elle sait maintenant faire une chose de plus, et c'est celle qui change le travail quotidien : elle **se joue**. Le diagramme en cours s'illumine, la page défile toute seule, et tu n'as plus qu'à suivre.
+Jusqu'ici, la partition visuelle de [Handpan Constellation Studio](/handpan-studio) servait à **garder** et à **transmettre** : on l'exportait en [PDF](/blog/exporter-ses-partitions-handpan), on l'imprimait, on l'envoyait. Elle sait maintenant faire une chose de plus, et c'est celle qui change le travail quotidien : elle **se joue**. Le diagramme en cours s'illumine, la page défile toute seule, et tu n'as plus qu'à suivre.
 
 ## Lire une partition, c'est déjà travailler à deux choses
 
@@ -48,4 +48,4 @@ Dernier point, et il compte : les partitions partagées gardent la trace de **qu
 
 Les exports réalisés sans accès Studio portent un discret filigrane « version gratuite » ; tout le reste — lecteur, Pupitre, répétitions — reste sous tes doigts.
 
-Ouvre [Handpan Studio](/handpan-studio), charge une chanson et appuie sur ▶. Regarde-la s'allumer accord après accord : c'est le moment où une partition cesse d'être un document. Et si tu veux qu'on déchiffre un morceau ensemble, mes [cours de handpan](/cours) sont faits pour ça.
+Ouvre [Handpan Constellation Studio](/handpan-studio), charge une chanson et appuie sur ▶. Regarde-la s'allumer accord après accord : c'est le moment où une partition cesse d'être un document. Et si tu veux qu'on déchiffre un morceau ensemble, mes [cours de handpan](/cours) sont faits pour ça.

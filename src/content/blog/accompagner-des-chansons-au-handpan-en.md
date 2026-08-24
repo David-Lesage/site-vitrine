@@ -10,7 +10,7 @@ permalink: "accompagner-des-chansons-au-handpan"
 draft: false
 ---
 
-Yes, you can accompany songs on the handpan just as you would on guitar or piano. [Handpan Studio's Logic Mode](/handpan-studio) lays seven coloured chords — one per degree, one per emotion — under your hands. You chain chords instead of hunting for isolated notes, and the meditative instrument becomes an accompaniment partner, without a single line of music theory.
+Yes, you can accompany songs on the handpan just as you would on guitar or piano. [Handpan Constellation Studio's Logic Mode](/handpan-studio) lays seven coloured chords — one per degree, one per emotion — under your hands. You chain chords instead of hunting for isolated notes, and the meditative instrument becomes an accompaniment partner, without a single line of music theory.
 
 ## The block: "the handpan only does drones"
 
@@ -42,4 +42,4 @@ Accompaniment is just one door. Once you've learned the colours, you can **compo
 
 That's the whole shift this approach offers: pulling the handpan out of its "niche meditative instrument" box to make it an accessible accompaniment instrument, on par with a guitar. No music theory, no years of study — just colours, emotions, and the desire to carry a song.
 
-Want to be guided through this approach? [David Lesage's lessons](/cours) take you by the hand, at your own pace. Open [Handpan Studio](/handpan-studio) and lay down your first chord sequence — the song is waiting for its accompaniment.
+Want to be guided through this approach? [David Lesage's lessons](/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/handpan-studio) and lay down your first chord sequence — the song is waiting for its accompaniment.

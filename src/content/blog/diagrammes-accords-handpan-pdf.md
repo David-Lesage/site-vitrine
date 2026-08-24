@@ -10,11 +10,11 @@ permalink: "diagrammes-accords-handpan-pdf"
 draft: false
 ---
 
-Dans [Handpan Studio](/handpan-studio), chaque accord se dessine comme un **mini-handpan coloré** : les notes de l'accord sont mises en couleur, l'ordre de jeu est numéroté, et un doigté est suggéré. Tu exportes ces diagrammes en **PDF ou PNG** imprimables pour réviser à ton rythme ou les transmettre — un langage visuel qui se lit sans solfège.
+Dans [Handpan Constellation Studio](/handpan-studio), chaque accord se dessine comme un **mini-handpan coloré** : les notes de l'accord sont mises en couleur, l'ordre de jeu est numéroté, et un doigté est suggéré. Tu exportes ces diagrammes en **PDF ou PNG** imprimables pour réviser à ton rythme ou les transmettre — un langage visuel qui se lit sans solfège.
 
 ## Un accord, un mini-handpan
 
-Un accord noté sur une portée classique ne te dit pas *où poser tes mains* sur ton instrument. Le diagramme d'accord de Handpan Studio répond exactement à cette question. Chaque accord devient une image de ton handpan, avec :
+Un accord noté sur une portée classique ne te dit pas *où poser tes mains* sur ton instrument. Le diagramme d'accord de Handpan Constellation Studio répond exactement à cette question. Chaque accord devient une image de ton handpan, avec :
 
 - **Les notes colorées** — les couleurs ChromaKeys héritées des [constellations du handpan](/blog/les-constellations-du-handpan), pour reconnaître l'accord d'un coup d'œil ;
 - **L'ordre de jeu numéroté** — tu vois quelle note frapper en premier, puis la suivante ;
@@ -51,12 +51,12 @@ Tu choisis d'exporter tes diagrammes **isolément** — un fichier par accord, o
 
 Active le **Mode Éco-Encre** avant d'imprimer : fond blanc, encre économisée, diagrammes toujours nets — c'est exactement le rendu des exports montrés dans cet article. Tes fiches d'accords sortent propres sur papier ordinaire, prêtes à poser sur le pupitre :
 
-![Page complète de la grille d'accords exportée en PDF : roue de la gamme et accords classés par familles, signée Handpan Studio](/images/blog-grille-accords-dkurd.webp)
+![Page complète de la grille d'accords exportée en PDF : roue de la gamme et accords classés par familles, signée Handpan Constellation Studio](/images/blog-grille-accords-dkurd.webp)
 
 ### Filigrane et gratuité
 
-Chaque export porte discrètement la mention « créé avec Handpan Studio by David Lesage » — une signature qui accompagne ton document sans l'abîmer. Créer et exporter tes diagrammes en mode acoustique est **gratuit** ; la version Studio ajoute la sauvegarde cloud. Pour la logique d'export au sens large, l'article [garder et partager tes accords](/blog/exporter-ses-partitions-handpan) complète le tableau.
+Chaque export porte discrètement la mention « créé avec Handpan Constellation Studio by David Lesage » — une signature qui accompagne ton document sans l'abîmer. Créer et exporter tes diagrammes en mode acoustique est **gratuit** ; la version Studio ajoute la sauvegarde cloud. Pour la logique d'export au sens large, l'article [garder et partager tes accords](/blog/exporter-ses-partitions-handpan) complète le tableau.
 
 ## Tes accords, sur papier
 
-Ouvre [Handpan Studio](/handpan-studio), compose une progression, et exporte tes premiers diagrammes d'accords en PDF. Tu tiendras entre les mains une fiche claire, colorée, prête à réviser — et prête à offrir.
+Ouvre [Handpan Constellation Studio](/handpan-studio), compose une progression, et exporte tes premiers diagrammes d'accords en PDF. Tu tiendras entre les mains une fiche claire, colorée, prête à réviser — et prête à offrir.

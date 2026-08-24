@@ -1,6 +1,6 @@
 ---
 title: "Jouer avec les émotions : les 7 degrés colorés"
-description: "Le Mode Logique de Handpan Studio associe chaque degré à une couleur et une émotion. Construis une progression d'accords et raconte une histoire."
+description: "Le Mode Logique de Handpan Constellation Studio associe chaque degré à une couleur et une émotion. Construis une progression d'accords et raconte une histoire."
 pubDate: 2026-07-10
 cover: "/images/app-logique.webp"
 category: "methode"
@@ -10,7 +10,7 @@ permalink: "handpan-emotions-degres"
 draft: false
 ---
 
-Le Mode Logique de [Handpan Studio](/handpan-studio) traite la musique comme un langage d'émotions. Chaque degré d'une gamme — les sept marches qui la composent — reçoit une couleur et une couleur émotionnelle : équilibre, élan, tension douce, retour à la maison. Tu ne choisis plus des notes, tu choisis ce que tu veux faire ressentir. Et une suite de degrés devient une histoire.
+Le Mode Logique de [Handpan Constellation Studio](/handpan-studio) traite la musique comme un langage d'émotions. Chaque degré d'une gamme — les sept marches qui la composent — reçoit une couleur et une couleur émotionnelle : équilibre, élan, tension douce, retour à la maison. Tu ne choisis plus des notes, tu choisis ce que tu veux faire ressentir. Et une suite de degrés devient une histoire.
 
 ## Sept degrés, sept émotions
 
@@ -36,4 +36,4 @@ En Mode Logique électronique, l'app peut te proposer un **doigté suggéré** p
 
 Une fois que tu sens comment les degrés dialoguent, tout s'ouvre. Tu peux visualiser tes accords en Constellations, changer de gamme via l'[Atlas Sonore](/blog/atlas-des-gammes-de-handpan), ou porter ces couleurs sur un [handpan électronique Neotone](/le-neotone) où écran et instrument parlent la même langue.
 
-Envie d'être guidé pas à pas dans cette grammaire des émotions ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Studio](/handpan-studio) et compose ta première phrase — non pas avec des notes, mais avec des émotions.
+Envie d'être guidé pas à pas dans cette grammaire des émotions ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-studio) et compose ta première phrase — non pas avec des notes, mais avec des émotions.

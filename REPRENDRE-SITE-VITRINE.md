@@ -55,7 +55,69 @@ les deux gabarits `pages/blog/[slug].astro` (libellé codé en dur), `public/llm
 | **`/images/og-handpan-compagnon.jpg`** (6 réf. dans `dist/`) | c'est un **nom de fichier**, pas du texte lu. Le renommer casserait les aperçus déjà en cache chez Facebook/LinkedIn/WhatsApp. |
 | **Clé i18n `nav.studio`**, id produit **`handpan-studio`**, composant **`StudioPage.astro`** | identifiants manipulés par le code. On renomme ce que le visiteur LIT. |
 | Valeurs de `source` en base (`showcase-booking`…), zones de `blogCategories`, classes CSS | idem — des lignes existent déjà en base avec ces valeurs. |
-| Les **54 articles de blog** (`src/content/blog/`) | ils disent « Handpan Studio » / « Neotone Studio », jamais « Handpan Compagnon » — décision déjà prise le 10/08 de ne pas les toucher. |
+| Les **54 articles de blog** (`src/content/blog/`) | ~~ils disent « Handpan Studio », jamais « Handpan Compagnon » — décision du 10/08 de ne pas les toucher.~~ **REVU LE 24/08 (voir section ci-dessous) : les 54 articles sont renommés.** |
+
+---
+
+## ÉTAT ACTUEL — 24/08/2026 (soir) — 📝 LE BLOG SUIT LE NOM + 🔎 CONTINUITÉ SEO
+
+**Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ.**
+
+### A · Les 54 articles disent « Handpan Constellation Studio »
+
+**158 occurrences** de « Handpan Studio » remplacées dans les **54 articles** (27 FR + 27 EN —
+tous en contenaient au moins une) : **132 dans le corps** (dont **8 `alt` d'images**),
+**4 `title`**, **22 `description`**. Il en reste **156** après les réécritures de télescopage
+ci-dessous. Relues une par une : **aucune** ne désignait un studio d'enregistrement
+(les « qualité studio », « mini-studio », « in the studio » sont en minuscule et intacts).
+La **version payante « Studio »** (« la version Studio », « fonction Studio ») reste « Studio » :
+c'est un nom de palier, pas le nom du produit.
+
+**4 titres raccourcis** (le nom coûte +11 caractères, Google coupe à ~60) :
+- « Utiliser Handpan Studio sur ton handpan acoustique (gratuit) » → **« Handpan Constellation
+  Studio sur ton handpan acoustique »** (55) — « gratuit » vit déjà dans la `description`.
+- « Using Handpan Studio on your acoustic handpan (free) » → **« Handpan Constellation Studio on
+  your acoustic handpan (free) »** (60).
+- « Améliore Handpan Studio avec moi : la fonction feedback » → **« Améliore Handpan Constellation
+  Studio : la fonction feedback »** (60).
+- « Improve Handpan Studio with me: the feedback feature » → **« Improve Handpan Constellation
+  Studio: the feedback feature »** (58).
+
+**3 phrases × 2 langues réécrites** parce que le produit et la fonction se télescopaient
+(« Handpan Constellation Studio dessine les Constellations ») : le chapô et la `description` de
+`les-constellations-du-handpan`, et le paragraphe app de `handpan-par-les-couleurs`. Dans le
+chapô des deux articles Constellations, le lien pointe désormais vers « l'app » / « the app » —
+le nom complet reste présent plus bas dans le même article.
+
+**Rien d'autre n'a bougé** : aucun `slug`, aucun `permalink`, aucun nom de fichier, aucune
+`pubDate`. Les liens `/handpan-studio` des articles restent : `vercel.json` les redirige déjà
+en 301 vers `/handpan-app`.
+
+### B · `alternateName` dans le JSON-LD de l'app
+
+`softwareAppLdJson()` (`src/lib/ldJson.ts`) déclare maintenant les 4 anciens noms indexés par
+Google — **« Handpan Compagnon », « Handpan Companion », « Handpan Studio », « Neotone Studio »** —
+pour que les recherches sur ces noms mènent toujours à l'app. **Invisible pour le visiteur** :
+vérifié, aucun de ces noms n'apparaît dans le texte rendu (hors `<script>`). Les 203 blocs
+`ld+json` du site parsent sans erreur.
+
+**Seules occurrences de « Handpan Studio » seul dans `dist/`** : `dist/handpan-app/index.html`
+et `dist/en/handpan-app/index.html`, dans `alternateName` — c'est exactement le but.
+S'y ajoutent, hors texte, les identifiants inchangés : l'URL `/handpan-studio` (redirigée),
+le slug `handpan-studio-mode-acoustique`, `feedback-ameliorer-handpan-studio`,
+`og-handpan-compagnon.jpg`, la clé `nav.studio` et l'id produit `handpan-studio`.
+
+### ⚠️ Restes connus (pas traités, pré-existants)
+
+- **Descriptions SEO longues** : 4 dépassaient déjà 170 caractères avant le renommage
+  (`feedback-ameliorer-handpan-studio` FR/EN, `apprendre-les-accords-handpan` FR/EN, jusqu'à
+  189). 7 autres passent de ~148-153 à ~157-164 à cause des +11 caractères. Aucune n'a été
+  retouchée — chantier « descriptions SEO » à part, s'il a lieu.
+- **6 titres dépassaient déjà 60 caractères** sans contenir le nom (`Setup nomade…` 68,
+  `Nomad setup…` 73, `Ta partition prend vie…` 66, …) — non liés au renommage, laissés tels quels.
+- `les-constellations-du-handpan-en.md` et quelques autres articles EN pointent vers
+  `/handpan-studio` (chemin FR) au lieu de `/en/handpan-studio`. Le 301 rattrape, mais l'anglophone
+  atterrit sur la page FR. **Pré-existant, non corrigé** (ce serait toucher des URLs).
 
 ### ⚠️ LE PIÈGE QU'ON A ATTRAPÉ : LA BARRE DE NAVIGATION CASSAIT
 

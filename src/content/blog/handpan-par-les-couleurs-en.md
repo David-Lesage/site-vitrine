@@ -32,7 +32,7 @@ When several notes sound together, their colours connect into a **Constellation*
 2. **Play simple shapes.** Begin with two- or three-note Constellations: your ear confirms what your eye suggests.
 3. **Let emotion lead.** Each colour carries an emotional tone (balance, momentum, nostalgia…). Choose the feeling first, and the note follows.
 
-The easiest way in is to see those colours and shapes live on a screen, aligned with your instrument. That's exactly what the [Handpan Studio app](/en/handpan-studio) does: it shows your pan in colour, draws Constellations in real time and guides you step by step — the Discovery version is free.
+The easiest way in is to see those colours and shapes live on a screen, aligned with your instrument. That's exactly what the [Handpan Constellation Studio app](/en/handpan-studio) does: it shows your pan in colour and guides you step by step. Chords are traced live, in the very shape you have just discovered — the Discovery version is free.
 
 ## And if you play an electronic handpan
 

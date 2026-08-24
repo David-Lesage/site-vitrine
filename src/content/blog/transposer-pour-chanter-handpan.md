@@ -10,7 +10,7 @@ permalink: "transposer-pour-chanter-handpan"
 draft: false
 ---
 
-Transposer, c'est déplacer la note d'ancrage de ton handpan pour changer de tonalité d'un seul geste. Si une chanson est trop haute ou trop basse pour ta voix, tu n'as pas à forcer : dans [Handpan Studio](/handpan-studio), tu glisses l'ensemble vers ta hauteur naturelle, et tout retombe juste — accompagnement et chant dans **ta** tonalité.
+Transposer, c'est déplacer la note d'ancrage de ton handpan pour changer de tonalité d'un seul geste. Si une chanson est trop haute ou trop basse pour ta voix, tu n'as pas à forcer : dans [Handpan Constellation Studio](/handpan-studio), tu glisses l'ensemble vers ta hauteur naturelle, et tout retombe juste — accompagnement et chant dans **ta** tonalité.
 
 ## Le vrai problème : ta voix a sa hauteur
 
@@ -20,7 +20,7 @@ Sur un handpan acoustique, la tonalité est figée : elle est accordée une fois
 
 ## Un geste, une nouvelle tonalité
 
-Dans Handpan Studio, **déplacer la note d'ancrage suffit à changer de tonalité**. Tu décales le point de référence, et toute la disposition suit : les accords, les couleurs, les émotions restent identiques, seule la hauteur change. La grammaire du [Mode Logique](/blog/handpan-emotions-degres) est préservée — tu retrouves ton degré I, ton V, ton VI exactement au même endroit sous tes doigts, mais dans une nouvelle tonalité.
+Dans Handpan Constellation Studio, **déplacer la note d'ancrage suffit à changer de tonalité**. Tu décales le point de référence, et toute la disposition suit : les accords, les couleurs, les émotions restent identiques, seule la hauteur change. La grammaire du [Mode Logique](/blog/handpan-emotions-degres) est préservée — tu retrouves ton degré I, ton V, ton VI exactement au même endroit sous tes doigts, mais dans une nouvelle tonalité.
 
 Concrètement : tu chantes une phrase, c'est trop haut, tu descends l'ancrage de quelques crans, tu réessaies. En quelques secondes, tu trouves la hauteur où ta voix se pose sans effort. La chanson tombe juste, l'accompagnement aussi.
 
@@ -36,4 +36,4 @@ La transposition règle la **hauteur** ; le layout vocal règle la **forme** de 
 
 Il n'y a aucune raison de tordre ta voix pour rentrer dans une tonalité qui n'est pas la tienne. Déplace l'ancrage, trouve ta hauteur, et laisse la chanson venir à toi.
 
-Envie d'être guidé pour t'accompagner au chant ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Studio](/handpan-studio) et transpose ta première chanson dans ta tonalité.
+Envie d'être guidé pour t'accompagner au chant ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-studio) et transpose ta première chanson dans ta tonalité.

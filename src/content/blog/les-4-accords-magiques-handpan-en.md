@@ -10,7 +10,7 @@ permalink: "les-4-accords-magiques-handpan"
 draft: false
 ---
 
-The "4 magic chords" are a short chord sequence that recurs in thousands of popular songs. On the handpan, [Handpan Studio's Logic Mode](/handpan-studio) puts them under your hands in colour: four degrees, four emotions, and a whole swath of music opening up — without reading a single note.
+The "4 magic chords" are a short chord sequence that recurs in thousands of popular songs. On the handpan, [Handpan Constellation Studio's Logic Mode](/handpan-studio) puts them under your hands in colour: four degrees, four emotions, and a whole swath of music opening up — without reading a single note.
 
 ## Why four chords are enough
 
@@ -43,4 +43,4 @@ To keep the loop running without a hitch, the app can offer a **suggested finger
 
 Four colours, one loop, and there you have enough to accompany endless songs — or compose your own. If you want to sing over them, remember to pick a vocal layout suited to your voice and to transpose into your key.
 
-Want to be guided step by step? [David Lesage's lessons](/cours) take you by the hand, at your own pace. Open [Handpan Studio](/handpan-studio) and spin your first magic loop.
+Want to be guided step by step? [David Lesage's lessons](/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/handpan-studio) and spin your first magic loop.

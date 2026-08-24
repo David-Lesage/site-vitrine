@@ -10,7 +10,7 @@ permalink: "editeur-de-partition-handpan"
 draft: false
 ---
 
-The **Song Mode** in [Handpan Studio's](/handpan-studio) visual score editor shows lyrics with **chord diagrams anchored above the words** — like a guitar chord chart, but with colourful mini-handpans. You see where the chord changes, you sing, you play. No music theory required: the colours guide you.
+The **Song Mode** in [Handpan Constellation Studio's](/handpan-studio) visual score editor shows lyrics with **chord diagrams anchored above the words** — like a guitar chord chart, but with colourful mini-handpans. You see where the chord changes, you sing, you play. No music theory required: the colours guide you.
 
 ## Sing and play at the same time
 
@@ -40,8 +40,8 @@ Before printing, turn on **Ink-Saver Mode**: the background goes white, ink savi
 
 ### Export and keep
 
-Once the display is set, you export as **PDF or PNG** — the diagrams can also go out as separate files in a ZIP. Every export discreetly carries the note "created with Handpan Studio by David Lesage". For everything about formats and export logic, the article on [keeping and sharing your chords](/blog/exporter-ses-partitions-handpan) gets straight to the point.
+Once the display is set, you export as **PDF or PNG** — the diagrams can also go out as separate files in a ZIP. Every export discreetly carries the note "created with Handpan Constellation Studio by David Lesage". For everything about formats and export logic, the article on [keeping and sharing your chords](/blog/exporter-ses-partitions-handpan) gets straight to the point.
 
 ## Your song, within reach
 
-Creating and exporting in acoustic mode is **free**; the Studio version adds cloud saving to find your songs everywhere. Open [Handpan Studio](/handpan-studio), load *Hallelujah* or *Let It Be* in Song Mode, and play your first song tonight.
+Creating and exporting in acoustic mode is **free**; the Studio version adds cloud saving to find your songs everywhere. Open [Handpan Constellation Studio](/handpan-studio), load *Hallelujah* or *Let It Be* in Song Mode, and play your first song tonight.

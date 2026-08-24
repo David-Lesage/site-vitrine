@@ -1,6 +1,6 @@
 ---
 title: "Learn your chords step by step: the guided mode"
-description: "In Handpan Studio, your handpan becomes a guided surface: the app lights up the coloured note to play and walks you through, chord after chord, with sound and visual feedback."
+description: "In Handpan Constellation Studio, your handpan becomes a guided surface: the app lights up the coloured note to play and walks you through, chord after chord, with sound and visual feedback."
 pubDate: 2026-08-11
 cover: "/images/app-logique.webp"
 category: "logique"
@@ -10,7 +10,7 @@ permalink: "apprendre-les-accords-handpan"
 draft: false
 ---
 
-Learning a chord on the handpan means knowing which notes to play, in what order and with which hand. The **guided learning mode** in [Handpan Studio](/handpan-studio) turns your instrument into a lit-up surface: the app highlights the **coloured note** to touch, you play it, and you move on to the next one — the chord is learned through gesture, without reading a single note of music theory.
+Learning a chord on the handpan means knowing which notes to play, in what order and with which hand. The **guided learning mode** in [Handpan Constellation Studio](/handpan-studio) turns your instrument into a lit-up surface: the app highlights the **coloured note** to touch, you play it, and you move on to the next one — the chord is learned through gesture, without reading a single note of music theory.
 
 ## The real block when starting out with chords
 
@@ -38,4 +38,4 @@ Learning a chord is only the first step. Once you have a few chords in hand, you
 
 ## Where to start
 
-Open [Handpan Studio](/handpan-studio) in acoustic mode (free), pick a simple chord, and let it guide you note by note. In a few minutes you'll play your first chord — and you'll understand why seeing music changes everything. Want to go further with human guidance? Discover [my handpan lessons](/cours).
+Open [Handpan Constellation Studio](/handpan-studio) in acoustic mode (free), pick a simple chord, and let it guide you note by note. In a few minutes you'll play your first chord — and you'll understand why seeing music changes everything. Want to go further with human guidance? Discover [my handpan lessons](/cours).

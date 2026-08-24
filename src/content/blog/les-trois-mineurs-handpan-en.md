@@ -10,7 +10,7 @@ permalink: "les-trois-mineurs-handpan"
 draft: false
 ---
 
-"Sad" (*Triste*), in [Handpan Studio's](/en/handpan-studio) [Logic Mode](/en/blog/handpan-emotions-degres), is no longer a single colour. That button now hides **three shades of minor** — natural 🌙, harmonic 🔥, melodic 🎷 — and it only takes two or four notes rising by a semitone to move from one to the next. The chord shapes themselves don't budge.
+"Sad" (*Triste*), in [Handpan Constellation Studio's](/en/handpan-studio) [Logic Mode](/en/blog/handpan-emotions-degres), is no longer a single colour. That button now hides **three shades of minor** — natural 🌙, harmonic 🔥, melodic 🎷 — and it only takes two or four notes rising by a semitone to move from one to the next. The chord shapes themselves don't budge.
 
 ## Minor isn't an emotion, it's a family
 
@@ -46,4 +46,4 @@ The shades live in a small menu that unfolds under the **Sad** button, at **Musi
 
 One important, deliberate caveat: **it's for the electronic handpan only**. On an acoustic handpan the notes are physically hammered into steel; no app will raise a pad by a semitone. You need a [Neotone](/en/le-neotone) to hear the shade change under your hands. In acoustic mode the app keeps showing correct degrees in major, natural minor and harmonic minor — it describes what your instrument can do, without promising the impossible.
 
-Open [Handpan Studio](/en/handpan-studio), switch to Sad, and slide the minor from one face to another. You'll hear three musics inside a single instrument. And if you'd like to understand what you're hearing, my [handpan lessons](/en/cours) explain it all without music theory.
+Open [Handpan Constellation Studio](/en/handpan-studio), switch to Sad, and slide the minor from one face to another. You'll hear three musics inside a single instrument. And if you'd like to understand what you're hearing, my [handpan lessons](/en/cours) explain it all without music theory.

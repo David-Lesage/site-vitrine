@@ -1,6 +1,6 @@
 ---
 title: "Compose your melody note by note: the melody editor"
-description: "Drop your handpan's notes onto a timeline, listen, loop, speed up — and export as .mid. Handpan Studio's melody editor."
+description: "Drop your handpan's notes onto a timeline, listen, loop, speed up — and export as .mid. Handpan Constellation Studio's melody editor."
 pubDate: 2026-08-27
 cover: "/images/app-creation.webp"
 category: "partitions"
@@ -10,7 +10,7 @@ permalink: "editeur-de-melodies-handpan"
 draft: false
 ---
 
-[Handpan Studio's](/en/handpan-studio) melody editor (*Éditeur de mélodies* in the app, still labelled in French) gives you what was missing between your hands and your memory: your pan on top, a **timeline** underneath. Click a note on the pan and it lands on the time line. You listen, you move things around, you loop, and you export as `.mid`. A melody that existed tonight still exists tomorrow morning.
+[Handpan Constellation Studio's](/en/handpan-studio) melody editor (*Éditeur de mélodies* in the app, still labelled in French) gives you what was missing between your hands and your memory: your pan on top, a **timeline** underneath. Click a note on the pan and it lands on the time line. You listen, you move things around, you loop, and you export as `.mid`. A melody that existed tonight still exists tomorrow morning.
 
 ## On the handpan, a melody doesn't get written down
 
@@ -47,4 +47,4 @@ Either way the MIDI bridge stays open: import a `.mid` file, export yours, take 
 
 The editor opens from the **music library** (*Bibliothèque musicale*), and it loads your current scale — or any scale from the Atlas, transposable. It's a **Studio** feature, like saving your creations.
 
-Your next melody deserves better than your memory tomorrow morning. Open [Handpan Studio](/en/handpan-studio), drop three notes, and watch them loop. And if you'd like to be guided while composing, my [handpan lessons](/en/cours) are made for that.
+Your next melody deserves better than your memory tomorrow morning. Open [Handpan Constellation Studio](/en/handpan-studio), drop three notes, and watch them loop. And if you'd like to be guided while composing, my [handpan lessons](/en/cours) are made for that.

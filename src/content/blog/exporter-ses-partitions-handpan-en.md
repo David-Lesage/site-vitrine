@@ -1,6 +1,6 @@
 ---
 title: "Keep and share your chords: the score editor"
-description: "Export your progressions and visual scores as PDF or PNG to review, keep or pass on. Handpan Studio's visual score editor."
+description: "Export your progressions and visual scores as PDF or PNG to review, keep or pass on. Handpan Constellation Studio's visual score editor."
 pubDate: 2026-08-07
 cover: "/images/app-creation.webp"
 category: "partitions"
@@ -10,7 +10,7 @@ permalink: "exporter-ses-partitions-handpan"
 draft: false
 ---
 
-[Handpan Studio's](/handpan-studio) visual score editor lets you export your chords and scores as **PDF or PNG**. A lovely progression found tonight no longer vanishes: you keep it as an image, review it tomorrow, pass it on to someone. One file, and your idea becomes a document you own.
+[Handpan Constellation Studio's](/handpan-studio) visual score editor lets you export your chords and scores as **PDF or PNG**. A lovely progression found tonight no longer vanishes: you keep it as an image, review it tomorrow, pass it on to someone. One file, and your idea becomes a document you own.
 
 ## The drama of the idea that flies away
 
@@ -32,10 +32,10 @@ A PDF is shareable. You can send your progression to a friend who plays, a singe
 
 ### A watermark, a signature
 
-Every export discreetly carries the note "created with Handpan Studio by David Lesage". This watermark doesn't spoil your score: it accompanies it like a signature, and recalls where the tool comes from as your document travels.
+Every export discreetly carries the note "created with Handpan Constellation Studio by David Lesage". This watermark doesn't spoil your score: it accompanies it like a signature, and recalls where the tool comes from as your document travels.
 
 ## From idea to document
 
 Creating and exporting your scores in acoustic mode is **free**; the Studio version adds cloud saving to find your creations everywhere. Either way, your ideas no longer fly away.
 
-Want guidance to compose and keep your progressions? [David Lesage's lessons](/cours) take you by the hand. Open [Handpan Studio](/handpan-studio) and export your first score — the one you'll find again tomorrow.
+Want guidance to compose and keep your progressions? [David Lesage's lessons](/cours) take you by the hand. Open [Handpan Constellation Studio](/handpan-studio) and export your first score — the one you'll find again tomorrow.

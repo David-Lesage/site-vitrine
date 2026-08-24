@@ -1,6 +1,6 @@
 ---
 title: "Deux handpans qui n'en font qu'un : le mode Hybride"
-description: "Quand un second handpan rejoint le premier, Handpan Studio dessine l'accord à cheval sur les deux — et te dit ce que ce duo débloque vraiment."
+description: "Quand un second handpan rejoint le premier, Handpan Constellation Studio dessine l'accord à cheval sur les deux — et te dit ce que ce duo débloque vraiment."
 pubDate: 2026-09-08
 cover: "/images/blog-bottom-coques.webp"
 category: "acoustique"
@@ -10,7 +10,7 @@ permalink: "deux-handpans-mode-hybride"
 draft: false
 ---
 
-Beaucoup de joueurs finissent par avoir **deux handpans** — et les jouent comme deux instruments séparés. Le mode acoustique de [Handpan Studio](/handpan-studio) les regarde autrement : il pose les deux coques côte à côte et dessine chaque accord **à cheval sur les deux**, avec l'ordre de jeu et les mains. Ce ne sont plus deux pans. C'est un instrument.
+Beaucoup de joueurs finissent par avoir **deux handpans** — et les jouent comme deux instruments séparés. Le mode acoustique de [Handpan Constellation Studio](/handpan-studio) les regarde autrement : il pose les deux coques côte à côte et dessine chaque accord **à cheval sur les deux**, avec l'ordre de jeu et les mains. Ce ne sont plus deux pans. C'est un instrument.
 
 ## Il manque toujours une note
 
@@ -49,4 +49,4 @@ Deux détails valent de l'or avant de commander quoi que ce soit :
 
 Le mode acoustique, « Compléter » et la roue de tonalité sont **gratuits** ; enregistrer durablement ta configuration à deux handpans fait partie de la version Studio. Et si le second pan devient une vraie envie, l'app te dit exactement quelles notes demander — que tu partes sur un [Neotone](/le-neotone) ou sur un instrument acoustique.
 
-Ouvre [Handpan Studio](/handpan-studio), charge ta gamme et regarde ce qu'il te manque vraiment. Souvent, c'est moins que tu ne crois. Et pour explorer tout ça à deux, mes [cours de handpan](/cours) sont ouverts.
+Ouvre [Handpan Constellation Studio](/handpan-studio), charge ta gamme et regarde ce qu'il te manque vraiment. Souvent, c'est moins que tu ne crois. Et pour explorer tout ça à deux, mes [cours de handpan](/cours) sont ouverts.

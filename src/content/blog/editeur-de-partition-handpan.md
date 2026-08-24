@@ -10,7 +10,7 @@ permalink: "editeur-de-partition-handpan"
 draft: false
 ---
 
-Le **Mode Chanson** de l'éditeur de partition visuelle de [Handpan Studio](/handpan-studio) affiche les paroles avec les **diagrammes d'accords ancrés au-dessus des mots** — comme une grille d'accords de guitare, mais en mini-handpans colorés. Tu vois où changer d'accord, tu chantes, tu joues. Aucun solfège requis : les couleurs te guident.
+Le **Mode Chanson** de l'éditeur de partition visuelle de [Handpan Constellation Studio](/handpan-studio) affiche les paroles avec les **diagrammes d'accords ancrés au-dessus des mots** — comme une grille d'accords de guitare, mais en mini-handpans colorés. Tu vois où changer d'accord, tu chantes, tu joues. Aucun solfège requis : les couleurs te guident.
 
 ## Chanter et jouer en même temps
 
@@ -40,8 +40,8 @@ Avant d'imprimer, active le **Mode Éco-Encre** : le fond passe en blanc, l'éco
 
 ### Exporter et garder
 
-Une fois l'affichage réglé, tu exportes en **PDF ou PNG** — les diagrammes peuvent aussi partir en fichiers séparés dans un ZIP. Chaque export porte discrètement la mention « créé avec Handpan Studio by David Lesage ». Pour tout ce qui touche aux formats et à la logique d'export, l'article [garder et partager tes accords](/blog/exporter-ses-partitions-handpan) va droit au but.
+Une fois l'affichage réglé, tu exportes en **PDF ou PNG** — les diagrammes peuvent aussi partir en fichiers séparés dans un ZIP. Chaque export porte discrètement la mention « créé avec Handpan Constellation Studio by David Lesage ». Pour tout ce qui touche aux formats et à la logique d'export, l'article [garder et partager tes accords](/blog/exporter-ses-partitions-handpan) va droit au but.
 
 ## Ta chanson, à ta portée
 
-Créer et exporter en mode acoustique est **gratuit** ; la version Studio ajoute la sauvegarde cloud pour retrouver tes chansons partout. Ouvre [Handpan Studio](/handpan-studio), charge *Hallelujah* ou *Let It Be* en Mode Chanson, et joue ta première chanson dès ce soir.
+Créer et exporter en mode acoustique est **gratuit** ; la version Studio ajoute la sauvegarde cloud pour retrouver tes chansons partout. Ouvre [Handpan Constellation Studio](/handpan-studio), charge *Hallelujah* ou *Let It Be* en Mode Chanson, et joue ta première chanson dès ce soir.

@@ -10,7 +10,7 @@ permalink: "jam-rapide-accompagner-un-musicien"
 draft: false
 ---
 
-Le **Jam Rapide** de [Handpan Studio](/handpan-studio) transforme une phrase lancée en l'air — « on est en sol mineur, I-IV-V au couplet » — en une partition prête à jouer, sections nommées et diagrammes dans le bon ordre. Trois clics. Le temps que le guitariste finisse d'accorder.
+Le **Jam Rapide** de [Handpan Constellation Studio](/handpan-studio) transforme une phrase lancée en l'air — « on est en sol mineur, I-IV-V au couplet » — en une partition prête à jouer, sections nommées et diagrammes dans le bon ordre. Trois clics. Le temps que le guitariste finisse d'accorder.
 
 ## La scène que tout joueur de handpan a vécue
 
@@ -44,4 +44,4 @@ Dernier réflexe de jam : quelqu'un chante, et la tonalité est trop haute. Les 
 
 La partition obtenue n'est pas un cul-de-sac : elle s'ouvre en plein écran sur le **Pupitre**, s'imprime, se garde dans tes morceaux et s'écoute accord par accord — c'est le sujet de l'article [Ta partition prend vie](/blog/ta-partition-prend-vie).
 
-La prochaine fois qu'on te lance une tonalité par-dessus l'épaule, ouvre [Handpan Studio](/handpan-studio) et rends-la jouable avant la fin du premier couplet. Et si tu veux apprendre à entendre ces enchaînements sans les taper, mes [cours de handpan](/cours) commencent par là.
+La prochaine fois qu'on te lance une tonalité par-dessus l'épaule, ouvre [Handpan Constellation Studio](/handpan-studio) et rends-la jouable avant la fin du premier couplet. Et si tu veux apprendre à entendre ces enchaînements sans les taper, mes [cours de handpan](/cours) commencent par là.

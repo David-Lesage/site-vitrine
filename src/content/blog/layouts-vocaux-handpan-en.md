@@ -10,7 +10,7 @@ permalink: "layouts-vocaux-handpan"
 draft: false
 ---
 
-Vocal layouts are three settings of [Handpan Studio's Logic Mode](/handpan-studio) that rearrange the chords' layout and voicing to match the singer's range. Deep, Bright, Wide: each places the notes differently so the voice settles naturally above your accompaniment, instead of fighting it.
+Vocal layouts are three settings of [Handpan Constellation Studio's Logic Mode](/handpan-studio) that rearrange the chords' layout and voicing to match the singer's range. Deep, Bright, Wide: each places the notes differently so the voice settles naturally above your accompaniment, instead of fighting it.
 
 ## Why a layout changes everything for the voice
 
@@ -38,4 +38,4 @@ There's no right or wrong choice: there's the layout that lets **your** voice br
 
 And if your key doesn't sit right with your voice, transposition lets you shift the whole thing in one move to sing at your natural pitch. Layouts adapt the shape, transposition adapts the pitch: together, they mould the accompaniment around you.
 
-Want guidance to accompany your voice? [David Lesage's lessons](/cours) take you by the hand. Open [Handpan Studio](/handpan-studio), try the three layouts, and let your voice find its place.
+Want guidance to accompany your voice? [David Lesage's lessons](/cours) take you by the hand. Open [Handpan Constellation Studio](/handpan-studio), try the three layouts, and let your voice find its place.

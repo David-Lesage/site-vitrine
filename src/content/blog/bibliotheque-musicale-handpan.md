@@ -1,6 +1,6 @@
 ---
 title: "La Bibliothèque musicale : et si ta gamme te disait quoi jouer ?"
-description: "Chansons à accompagner, morceaux de handpan, tes compositions : la Bibliothèque de Handpan Studio te dit lesquels ta gamme sait vraiment jouer."
+description: "Chansons à accompagner, morceaux de handpan, tes compositions : la Bibliothèque de Handpan Constellation Studio te dit lesquels ta gamme sait vraiment jouer."
 pubDate: 2026-08-31
 cover: "/images/blog-partition-hallelujah.webp"
 category: "communaute"
@@ -10,7 +10,7 @@ permalink: "bibliotheque-musicale-handpan"
 draft: false
 ---
 
-La **Bibliothèque musicale** de [Handpan Studio](/handpan-studio) rassemble au même endroit les chansons à accompagner, les morceaux de handpan et tes propres compositions. Mais son vrai talent est ailleurs : elle regarde **ta** gamme et te dit, morceau par morceau, ce que ton instrument sait jouer — et ce qu'il ne sait pas.
+La **Bibliothèque musicale** de [Handpan Constellation Studio](/handpan-studio) rassemble au même endroit les chansons à accompagner, les morceaux de handpan et tes propres compositions. Mais son vrai talent est ailleurs : elle regarde **ta** gamme et te dit, morceau par morceau, ce que ton instrument sait jouer — et ce qu'il ne sait pas.
 
 ## La question que tout le monde se pose
 
@@ -46,4 +46,4 @@ Cette sauvegarde en ligne fait partie de la version **Studio** ; recevoir et con
 
 Une bibliothèque de handpan n'existe pas encore vraiment ailleurs. Celle-ci se remplit au fur et à mesure, avec les partitions que chacun place, corrige et partage — dans le même esprit collaboratif que la [fonction feedback](/blog/feedback-ameliorer-handpan-studio).
 
-Ouvre [Handpan Studio](/handpan-studio), charge ta gamme, et va voir ce qu'elle sait déjà jouer. Tu risques d'être surpris. Et si tu veux qu'on défriche ce répertoire ensemble, mes [cours de handpan](/cours) sont là pour ça.
+Ouvre [Handpan Constellation Studio](/handpan-studio), charge ta gamme, et va voir ce qu'elle sait déjà jouer. Tu risques d'être surpris. Et si tu veux qu'on défriche ce répertoire ensemble, mes [cours de handpan](/cours) sont là pour ça.

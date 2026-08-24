@@ -34,10 +34,10 @@ It's the intimate counterpart of [the speaker placement I recommend](/blog/etre-
 
 ### The method travels with the instrument
 
-The Neotone isn't just a silent handpan: it carries the whole [Handpan Studio](/handpan-studio) approach. The [Logic Mode](/blog/handpan-emotions-degres) and its seven coloured chords, scale creation, transposition — everything is there, screen and instrument speaking the same language. Your night session has exactly the same tools as daytime.
+The Neotone isn't just a silent handpan: it carries the whole [Handpan Constellation Studio](/handpan-studio) approach. The [Logic Mode](/blog/handpan-emotions-degres) and its seven coloured chords, scale creation, transposition — everything is there, screen and instrument speaking the same language. Your night session has exactly the same tools as daytime.
 
 ### The right moment, finally available
 
 Electronic doesn't replace the magic of acoustic: it extends it to moments that were closed to it. At night, on the road, in a hotel room — the Neotone makes playing possible where acoustic must stay silent. And often, those stolen moments make the most beautiful sessions.
 
-Curious about the instrument that makes all this possible? Discover the [Neotone](/le-neotone), and let [David Lesage's lessons](/cours) guide you. Open [Handpan Studio](/handpan-studio) and play your first loop, tonight, disturbing no one.
+Curious about the instrument that makes all this possible? Discover the [Neotone](/le-neotone), and let [David Lesage's lessons](/cours) guide you. Open [Handpan Constellation Studio](/handpan-studio) and play your first loop, tonight, disturbing no one.

@@ -10,7 +10,7 @@ permalink: "les-trois-mineurs-handpan"
 draft: false
 ---
 
-« Triste », dans le [Mode Logique](/blog/handpan-emotions-degres) de [Handpan Studio](/handpan-studio), n'est plus une seule couleur. Sous ce bouton se cachent désormais **trois nuances de mineur** — naturel 🌙, harmonique 🔥, mélodique 🎷 — et il suffit de deux ou quatre notes qui montent d'un demi-ton pour passer de l'une à l'autre. Les formes d'accords, elles, ne bougent pas.
+« Triste », dans le [Mode Logique](/blog/handpan-emotions-degres) de [Handpan Constellation Studio](/handpan-studio), n'est plus une seule couleur. Sous ce bouton se cachent désormais **trois nuances de mineur** — naturel 🌙, harmonique 🔥, mélodique 🎷 — et il suffit de deux ou quatre notes qui montent d'un demi-ton pour passer de l'une à l'autre. Les formes d'accords, elles, ne bougent pas.
 
 ## Le mineur n'est pas une émotion, c'est une famille
 
@@ -46,4 +46,4 @@ Les nuances vivent dans un petit menu déplié sous le bouton **Triste**, au niv
 
 Une réserve importante et assumée : **c'est réservé au handpan électronique**. Sur un handpan acoustique, les notes sont physiquement martelées dans l'acier ; aucune application ne fera monter un pad d'un demi-ton. Il faut un [Neotone](/le-neotone) pour entendre la nuance changer sous tes mains. En acoustique, l'app continue d'afficher les degrés justes en majeur, mineur naturel et mineur harmonique — elle décrit ce que ton instrument sait faire, sans promettre l'impossible.
 
-Ouvre [Handpan Studio](/handpan-studio), passe en Triste, et fais glisser le mineur d'un visage à l'autre. Tu vas entendre trois musiques dans un seul instrument. Et si tu veux comprendre ce que tu entends, mes [cours de handpan](/cours) t'expliquent tout ça sans solfège.
+Ouvre [Handpan Constellation Studio](/handpan-studio), passe en Triste, et fais glisser le mineur d'un visage à l'autre. Tu vas entendre trois musiques dans un seul instrument. Et si tu veux comprendre ce que tu entends, mes [cours de handpan](/cours) t'expliquent tout ça sans solfège.

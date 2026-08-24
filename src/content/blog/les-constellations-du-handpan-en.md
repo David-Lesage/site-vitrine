@@ -1,6 +1,6 @@
 ---
 title: "Constellations: seeing a chord as a shape"
-description: "In Handpan Studio, a chord becomes a drawing. Discover the 3 ways to trace a Constellation: Polygon, Open and Hands."
+description: "In Handpan Constellation Studio, a chord becomes a drawing. Discover the 3 ways to trace it: Polygon, Open and Hands."
 pubDate: 2026-07-02
 cover: "/images/blog-constellations-3-traces.webp"
 category: "methode"
@@ -10,13 +10,13 @@ permalink: "les-constellations-du-handpan"
 draft: false
 ---
 
-A Constellation is a chord you see rather than a chord you count. In [Handpan Studio](/handpan-studio), the notes that sound together link up with glowing lines and form a recognisable figure. Your eye keeps a drawing, your hand replays it. The app offers three ways to trace that shape: Polygon, Open and Hands.
+A chord you see rather than a chord you count: that is what a Constellation is. In [the app](/handpan-studio), the notes that sound together link up with glowing lines and form a recognisable figure. Your eye keeps a drawing, your hand replays it. The app offers three ways to trace that shape: Polygon, Open and Hands.
 
 ## Why a shape instead of a list
 
 Memorising "D, F, A" means translating every single time. Memorising a triangle sitting at a precise spot on your pan does not: your brain loves shapes. That's the heart of the ChromaKeys method, which you can explore in [Playing handpan by colours](/blog/handpan-par-les-couleurs). The Constellation is simply the next step: when several colours meet, they draw something.
 
-Handpan Studio lets you choose **how** that drawing appears, depending on what you want to understand: the overall shape of the chord, the order in which you play the notes, or how they split between your two hands.
+Handpan Constellation Studio lets you choose **how** that drawing appears, depending on what you want to understand: the overall shape of the chord, the order in which you play the notes, or how they split between your two hands.
 
 ## The 3 Constellation traces
 
@@ -44,4 +44,4 @@ The real comfort is being able to flip between these three views on the same Con
 
 And if you want to invent your own coloured chords, the app lets you compose freely: read [Create your own handpan scale](/blog/creer-sa-gamme-de-handpan) to see how creation works (free in acoustic mode, exports carry a watermark).
 
-Constellations make visible what usually stays abstract. You no longer "know" a chord: you **see** it. Open [Handpan Studio](/handpan-studio) and watch your first triangle light up.
+Constellations make visible what usually stays abstract. You no longer "know" a chord: you **see** it. Open [Handpan Constellation Studio](/handpan-studio) and watch your first triangle light up.

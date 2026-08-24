@@ -1,6 +1,6 @@
 ---
 title: "Playing with emotions: the 7 coloured degrees"
-description: "Handpan Studio's Logic Mode ties each degree to a colour and an emotion. Build a chord progression and tell a story."
+description: "Handpan Constellation Studio's Logic Mode ties each degree to a colour and an emotion. Build a chord progression and tell a story."
 pubDate: 2026-07-10
 cover: "/images/app-logique.webp"
 category: "methode"
@@ -10,7 +10,7 @@ permalink: "handpan-emotions-degres"
 draft: false
 ---
 
-Handpan Studio's [Logic Mode](/handpan-studio) treats music as a language of emotions. Each degree of a scale — the seven steps that make it up — gets a colour and an emotional tone: balance, momentum, gentle tension, coming home. You no longer choose notes, you choose what you want people to feel. And a sequence of degrees becomes a story.
+Handpan Constellation Studio's [Logic Mode](/handpan-studio) treats music as a language of emotions. Each degree of a scale — the seven steps that make it up — gets a colour and an emotional tone: balance, momentum, gentle tension, coming home. You no longer choose notes, you choose what you want people to feel. And a sequence of degrees becomes a story.
 
 ## Seven degrees, seven emotions
 
@@ -36,4 +36,4 @@ In electronic Logic Mode, the app can offer you a **suggested fingering** to cha
 
 Once you feel how the degrees talk to each other, everything opens up. You can visualise your chords as Constellations, switch scales through the [Sound Atlas](/blog/atlas-des-gammes-de-handpan), or bring these colours onto an [electronic Neotone handpan](/le-neotone) where screen and instrument speak the same language.
 
-Want to be guided step by step through this grammar of emotions? [David Lesage's lessons](/cours) take you by the hand, at your own pace. Open [Handpan Studio](/handpan-studio) and compose your first phrase — not with notes, but with emotions.
+Want to be guided step by step through this grammar of emotions? [David Lesage's lessons](/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/handpan-studio) and compose your first phrase — not with notes, but with emotions.

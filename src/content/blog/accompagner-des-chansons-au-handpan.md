@@ -10,7 +10,7 @@ permalink: "accompagner-des-chansons-au-handpan"
 draft: false
 ---
 
-Oui, on peut accompagner des chansons au handpan comme on le ferait à la guitare ou au piano. Le [Mode Logique de Handpan Studio](/handpan-studio) pose sept accords colorés — un par degré, un par émotion — sous tes mains. Tu enchaînes des accords au lieu de chercher des notes isolées, et l'instrument méditatif devient un partenaire d'accompagnement, sans une ligne de solfège.
+Oui, on peut accompagner des chansons au handpan comme on le ferait à la guitare ou au piano. Le [Mode Logique de Handpan Constellation Studio](/handpan-studio) pose sept accords colorés — un par degré, un par émotion — sous tes mains. Tu enchaînes des accords au lieu de chercher des notes isolées, et l'instrument méditatif devient un partenaire d'accompagnement, sans une ligne de solfège.
 
 ## Le blocage : « le handpan ne fait que des nappes »
 
@@ -42,4 +42,4 @@ L'accompagnement n'est qu'une porte. Une fois les couleurs apprises, tu peux **c
 
 C'est tout le déplacement que propose cette approche : sortir le handpan de sa case « instrument méditatif de niche » pour en faire un instrument d'accompagnement accessible, au même titre qu'une guitare. Sans solfège, sans années de théorie — juste des couleurs, des émotions, et l'envie de porter une chanson.
 
-Envie d'être guidé dans cette approche ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Studio](/handpan-studio) et pose ta première suite d'accords — la chanson attend son accompagnement.
+Envie d'être guidé dans cette approche ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-studio) et pose ta première suite d'accords — la chanson attend son accompagnement.
