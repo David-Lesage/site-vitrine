@@ -29,6 +29,123 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 24/08/2026 — 🏷️ NOM DÉFINITIF DE L'APP + ☎️ TÉLÉPHONE OBLIGATOIRE AU SHOWCASE
+
+**Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN PROD (FR + EN, 375 px et 1280 px).**
+
+### A · L'application s'appelle « Handpan Constellation Studio »
+
+David a tranché. **Nom identique dans les deux langues** — il est déjà en anglais, il ne se
+traduit pas. La distinction FR « Handpan Compagnon » / EN « Handpan Companion » mise en place
+le 22/08 (`b13d69e`) **disparaît** : c'est une simplification, pas une couche de plus.
+
+**21 fichiers, 0 occurrence de l'ancien nom dans `dist/`** (vérifié par `grep`), 557 occurrences
+du nouveau. Dictionnaires FR + EN, `data/site.ts`, `data/shop.ts`, `data/guides.ts` (sections FR
+**et** EN), `lib/ldJson.ts`, `lib/booking.ts`, `lib/prices.ts`, `lib/appAccess.ts`,
+`lib/blogCategories.ts`, `components/Header.astro`, `components/SEO.astro`, `styles/global.css`,
+les deux gabarits `pages/blog/[slug].astro` (libellé codé en dur), `public/llms.txt`,
+`public/robots.txt`, `api/prices.js`, et les emails de `supabase/functions/site-lead/index.ts`
++ `_shared/showcase-email.ts`.
+
+### 🚨 CE QUI N'A PAS BOUGÉ — ET POURQUOI
+
+| Laissé tel quel | Raison |
+|---|---|
+| **URLs `/handpan-app` et `/en/handpan-app`** | choisies pour survivre aux changements de nom. Aucune redirection créée. |
+| **`/images/og-handpan-compagnon.jpg`** (6 réf. dans `dist/`) | c'est un **nom de fichier**, pas du texte lu. Le renommer casserait les aperçus déjà en cache chez Facebook/LinkedIn/WhatsApp. |
+| **Clé i18n `nav.studio`**, id produit **`handpan-studio`**, composant **`StudioPage.astro`** | identifiants manipulés par le code. On renomme ce que le visiteur LIT. |
+| Valeurs de `source` en base (`showcase-booking`…), zones de `blogCategories`, classes CSS | idem — des lignes existent déjà en base avec ces valeurs. |
+| Les **54 articles de blog** (`src/content/blog/`) | ils disent « Handpan Studio » / « Neotone Studio », jamais « Handpan Compagnon » — décision déjà prise le 10/08 de ne pas les toucher. |
+
+### ⚠️ LE PIÈGE QU'ON A ATTRAPÉ : LA BARRE DE NAVIGATION CASSAIT
+
+« Handpan Constellation Studio » fait **28 caractères contre 17**. Mesuré à 1280 px (le point de
+rupture `xl`), en **FR** : la liste de nav passait de 782 à **835 px**, le logo « David Lesage »
+**passait à la ligne** et la barre grandissait de **75 à 106 px de haut**. Un vrai débordement,
+pas une marge serrée. (EN passait, FR non — le FR a des libellés plus longs.)
+
+**Corrigé sans raccourcir le nom** : `px-2` → `px-1.5` sur les liens de nav, et `gap-4` →
+`gap-2` sur le `<nav>`. Le `gap` ne coûte rien visuellement — avec `justify-between` c'est un
+espacement **minimum**, il ne joue qu'au moment où ça coince. Résultat mesuré : liste à 795 px,
+barre à 75 px, **31 px de marge en FR, 73 px en EN**. La 11ᵉ entrée de nav est désormais
+impossible sans refaire cette mesure (le commentaire dans `Header.astro` le dit).
+
+### ✍️ LES 3 PHRASES RÉÉCRITES (le mot « constellation » désignait déjà une FONCTION)
+
+1. **`studio.constelIntro`** (FR + EN) — disait « Handpan Constellation Studio relie les notes
+   d'un accord : il dessine une constellation ». Le nom du produit avalait le nom de la
+   fonctionnalité. Devenu : « **l'application** relie les notes d'un accord : elle dessine une
+   figure lumineuse — une **constellation d'accord** ». La fonction est nommée, le produit sort
+   de la phrase.
+2. **`lessons.promiseIntro`** (FR + EN) — « couleurs, constellations et émotions » →
+   « couleurs, **constellations d'accords** et émotions ».
+3. **`studio.title`** (FR + EN) — le titre SEO passait de 60 à **71 caractères** (Google en
+   coupe ~60). Raccourci : « Handpan Constellation Studio — handpan acoustique & Neotone »
+   (59) / « … — acoustic handpan & Neotone » (56). **« handpan acoustique » reste devant**,
+   conformément au chantier du 22/08.
+
+**« compagnon » comme MOT COMMUN : relu, gardé, pas remplacé** — `studio.modesTitle` (« Le
+compagnon idéal de ton instrument ») et `guides.ts` (« C'est le compagnon idéal pour
+s'exercer »), FR + EN. Ces phrases lisent **mieux** qu'avant : elles ne se cognent plus au nom
+du produit.
+
+### B · Le téléphone devient obligatoire — POUR LE SHOWCASE SEULEMENT
+
+Demande de David : « dans le formulaire du site pour l'inscription au showcase, je veux que le
+numéro de la personne soit obligatoire ».
+
+`BookingForm.astro` est partagé par **6 pages et 8 motifs**. Le téléphone n'est obligatoire que
+pour **`showcase-booking`** : `phoneInput.required = isShowcase`, remis à `false` à **chaque**
+ouverture (sinon un motif garderait la contrainte du précédent dans la même page).
+
+**🚨 LE PIÈGE ÉVITÉ VOLONTAIREMENT** : un champ `required` **masqué** bloque `reportValidity()`
+sans afficher le moindre message — le visiteur clique et rien ne se passe. C'est pour ça que le
+téléphone n'est **jamais** passé dans `toggleBlock()` : il reste toujours à l'écran, seul
+l'attribut `required` bascule. Le message du navigateur a donc toujours un champ visible sur
+lequel se poser.
+
+**Raison affichée sous le champ** (`booking.phoneWhyShowcase`, FR + EN) : un showcase est une
+date fixe, à une heure fixe, dans un lieu physique — un imprévu de dernière minute se prévient
+par téléphone. Le libellé perd son « (facultatif) ».
+
+**Aucune migration** : la colonne `phone` de `site_leads` existe (`text`, nullable — vérifié par
+requête sur le projet `zqcuhnjjrgmybftppkcl`) et l'Edge Function la transmet déjà. Elle **reste
+nullable** en base : les autres motifs ont légitimement des lignes sans téléphone.
+
+### ✅ TEST DES 8 MOTIFS (DOM en iframe, `fetch` intercepté DANS l'iframe — rien n'est parti en base)
+
+| motif | `required` | libellé | raison affichée | champ requis INVISIBLE |
+|---|---|---|---|---|
+| `showcase-booking` | **oui** | Téléphone | **oui** | aucun |
+| `showcase-waitlist` | non | Téléphone (facultatif) | non | aucun |
+| `showroom-visit` | non | Téléphone (facultatif) | non | aucun |
+| `private-session` | non | Téléphone (facultatif) | non | aucun |
+| `neotone-discount` | non | Téléphone *(déjà sans « facultatif »)* | non | aucun |
+| `contact` | non | Téléphone (facultatif) | non | aucun |
+| `gonilele-order` | non | Téléphone (facultatif) | non | aucun |
+| `beta-waitlist` | *sans objet* | — | — | formulaire séparé (`BetaNotice.astro`), aucun champ téléphone |
+
+Vérifié **en FR et en EN**, et en **aller-retour** (contact → showcase → contact) : la contrainte
+ne fuit pas d'un motif à l'autre. Pour `showcase-booking`, téléphone vide → `checkValidity()`
+faux et **le seul bloquant est le champ téléphone, visible**. Rempli → envoi OK, `phone` bien
+présent dans le payload.
+
+### 🔁 REDÉPLOIEMENT EDGE FUNCTION
+
+`site-lead` redéployée (elle contient le nom dans ses emails ET importe
+`_shared/showcase-email.ts`, le seul autre fichier modifié). `deno check` OK sur les deux.
+Les 6 autres EF ne mentionnent pas le nom.
+
+### ❓ À TRANCHER PAR DAVID (rien n'est bloqué)
+
+- **Continuité SEO** : « Handpan Compagnon » a été indexé. On pourrait le garder comme
+  `alternateName` dans le JSON-LD (c'est exactement à ça que sert ce champ). Non fait, parce que
+  la consigne était que l'ancien nom disparaisse **partout**.
+- **`og-handpan-compagnon.jpg`** : renommer un jour, avec l'ancien nom conservé en copie pour ne
+  pas casser les aperçus déjà partagés.
+
+---
+
 ## ÉTAT ACTUEL — 22/08/2026 (soir) — 🎯 `/handpan-app` : L'ACOUSTIQUE PASSE DEVANT
 
 **Statut : ✅ COMMITÉ (`89922a6`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN PROD (FR+EN, 375 px et 1280 px).**

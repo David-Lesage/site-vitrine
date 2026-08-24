@@ -9,7 +9,7 @@ export const en: Dict = {
       yishama: 'Yishama',
       shop: 'Shop',
       lessons: 'Lessons',
-      studio: 'Handpan Companion',
+      studio: 'Handpan Constellation Studio',
       blog: 'Blog',
       showroom: 'Showroom',
       about: 'About',
@@ -53,7 +53,7 @@ export const en: Dict = {
     beta: {
       badge: 'Limited access',
       title: 'The app is not open to the public yet',
-      text: 'Handpan Companion is currently used by a small group of beta testers, while we fine-tune the experience. They get free access, in exchange for their feedback.',
+      text: 'Handpan Constellation Studio is currently used by a small group of beta testers, while we fine-tune the experience. They get free access, in exchange for their feedback.',
       wish: 'Would you like to become a beta tester? Tick the box in the form and tell me in a few words why the app interests you and how you plan to use it — I read and answer personally.',
       more: 'Access to the app',
       ctaWaitlist: 'Join the waiting list',
@@ -71,7 +71,7 @@ export const en: Dict = {
       formHandpanTypeAcoustic: 'Acoustic',
       formHandpanTypeElectronic: 'Electronic',
       formHandpanTypeBoth: 'Both',
-      formUsage: 'What will you use Handpan Companion for?',
+      formUsage: 'What will you use Handpan Constellation Studio for?',
       formUsageHint: 'Tick everything that applies. What you declare here decides your access — if several boxes apply, the most committing one counts.',
       formUsagePersonal: 'For myself — learning, playing, composing',
       formUsagePersonalDeal: 'Free. Your creations stay yours; exports carry a watermark.',
@@ -126,7 +126,7 @@ export const en: Dict = {
   home: {
     title: 'Learn the Handpan Visually — David Lesage',
     description:
-      'The Yishama acoustic handpan, the Neotone electronic handpan and my colour-based method: learn the handpan differently, with Handpan Companion. Come try them in Paris.',
+      'The Yishama acoustic handpan, the Neotone electronic handpan and my colour-based method: learn the handpan differently, with Handpan Constellation Studio. Come try them in Paris.',
     heroEyebrow: 'Musician · Teacher · Inventor',
     heroTitleA: 'I make music',
     heroTitleHighlight: 'visible',
@@ -141,7 +141,7 @@ export const en: Dict = {
       { sub: 'Acoustic & electronic', title: 'Instruments & microphones', text: 'A Yishama acoustic handpan, a Neotone electronic handpan, microphones — two worlds I stand behind equally.', cta: 'See both worlds' },
       { sub: 'Online & in person', title: 'The lessons', text: 'Learn the handpan differently: through colours, shapes and emotions. Anywhere in the world, or in Paris.', cta: 'See the lessons' },
       // ⚖️ 22/08/2026 — see dict.ts: the card never said which instrument.
-      { sub: 'Acoustic & Neotone', title: 'Handpan Companion', text: 'The app that makes music visible on your acoustic handpan as much as on the Neotone — colours, geometry and emotions.', cta: 'Discover the app' },
+      { sub: 'Acoustic & Neotone', title: 'Handpan Constellation Studio', text: 'The app that makes music visible on your acoustic handpan as much as on the Neotone — colours, geometry and emotions.', cta: 'Discover the app' },
     ],
 
     // « Le monde du ET » — see the French dictionary for the editorial rule.
@@ -171,8 +171,8 @@ export const en: Dict = {
     ],
     duoBridgeEyebrow: 'The bridge',
     duoBridgeTitle: 'My app speaks both languages',
-    duoBridgeText: 'Handpan Companion has an acoustic mode and an electronic mode. When your acoustic scale is no longer enough, the “🎯 Complete” feature tells you exactly which notes you are missing — and what a second acoustic handpan, or a Neotone, would bring. Hybrid mode then draws your chords across both shells. Completion, not competition.',
-    duoBridgeCta: 'Discover Handpan Companion',
+    duoBridgeText: 'Handpan Constellation Studio has an acoustic mode and an electronic mode. When your acoustic scale is no longer enough, the “🎯 Complete” feature tells you exactly which notes you are missing — and what a second acoustic handpan, or a Neotone, would bring. Hybrid mode then draws your chords across both shells. Completion, not competition.',
+    duoBridgeCta: 'Discover Handpan Constellation Studio',
 
     whyEyebrow: 'Why me',
     whyTitle: 'The tool I wish I’d been taught as a child',
@@ -191,7 +191,7 @@ export const en: Dict = {
     showroomDatesAll: 'See the full agenda',
     communityEyebrow: 'The community',
     communityTitle: 'Join the visible-music movement',
-    communityIntro: 'Be notified about upcoming showcases in Paris and the release of Handpan Companion. No spam — just the essentials.',
+    communityIntro: 'Be notified about upcoming showcases in Paris and the release of Handpan Constellation Studio. No spam — just the essentials.',
     communityPlaceholder: 'your@email.com',
     communityButton: 'Keep me posted about the next showcases',
     // 🚨 FIXED on 18/08/2026 — the previous sentence (“Your mail app opens…”)
@@ -273,7 +273,7 @@ export const en: Dict = {
     extrasHeadphonesCta: 'Read: which headphones to choose',
     bridgeEyebrow: 'Your Neotone + the visual method',
     bridgeTitle: 'Learn through colours and shapes',
-    bridgeText: 'With Handpan Companion, you learn through colours and shapes — on your Neotone just as on an acoustic handpan.',
+    bridgeText: 'With Handpan Constellation Studio, you learn through colours and shapes — on your Neotone just as on an acoustic handpan.',
     bridgeCta: 'Discover the method',
     trustEyebrow: 'A token of trust',
     trustTitle: 'I personally know the people who make your Neotone',
@@ -424,7 +424,7 @@ export const en: Dict = {
     bridgeP1c:
       'On top of that comes the very thing that makes it magical: the handpan is most often a <strong>modal</strong> instrument. That is a strength, and a wonderful way in — especially if you have never played music, you get a beautiful result almost straight away, with no theory. But you also go round in circles very fast. And the moment you are a professional musician expecting chromatic freedom, or you want to sing real songs over it — my case — it becomes very complex, very quickly. I came from drums, a purely rhythmic instrument: I had no grounding in harmony to fall back on.',
     bridgeP2:
-      'In August 2023 I started a document to work out, at last, how to build my chords across the two pans. Coloured cards, one colour per note. <strong>That document became Handpan Companion.</strong>',
+      'In August 2023 I started a document to work out, at last, how to build my chords across the two pans. Coloured cards, one colour per note. <strong>That document became Handpan Constellation Studio.</strong>',
     bridgeP3:
       'The strangest part is that the original question came from him. Back in August 2022, Yonathan wrote to me about the “chromatic, singer-composer” instrument: “try to play some songs in the app on that scale, so we understand which notes you’re missing — and we can find a way to add them.” Three years later, the app answers that question, for everyone.',
     bridgeAppTitle: 'What the app does today for an acoustic handpan',
@@ -439,7 +439,7 @@ export const en: Dict = {
       'My two custom scales are in the app, badged “✨ David Lesage Signature”. You can load them, listen to them and see what they allow, even without having them under your hands.',
     bridgeHonest:
       'To be honest about it: the app does not listen to you. It does not guess your scale through the microphone — you choose it, or you build your shell note by note. From there, it reasons about your real notes.',
-    bridgeCta: 'Discover Handpan Companion',
+    bridgeCta: 'Discover Handpan Constellation Studio',
     bridgeCtaBlog: 'Read: using the app on your acoustic handpan',
 
     endEyebrow: 'And now',
@@ -479,7 +479,7 @@ export const en: Dict = {
     adviceCta: 'Get my advice',
     categories: {
       handpans: { label: 'Handpan', blurb: 'Two worlds that complete each other.' },
-      app: { label: 'App', blurb: 'Handpan Companion — the teaching app that makes music visible.' },
+      app: { label: 'App', blurb: 'Handpan Constellation Studio — the teaching app that makes music visible.' },
       creations: { label: 'My creations · Now Groove', blurb: 'Created by me: my Now Groove rhythm method, the signature calabash and its handmade cover.' },
       instruments: { label: 'Exceptional instruments', blurb: 'I work with outstanding makers whose quality I’m proud to represent. Through me, enjoy discount coupons and demos at my showcases.' },
       // Accessories (20/08/2026) — new category created for the Atlas stands.
@@ -495,9 +495,9 @@ export const en: Dict = {
     },
     subNavLabel: 'Two worlds:',
     handpanNote: 'The one real difference: the <strong>Neotone</strong> (built by Soundventure) is ordered through my calculator, with a personal discount code and a 6-year warranty. For <strong>Yishama</strong>, I am an ambassador and affiliate — you order on their site and my link follows you. Two ways to buy, one standard of quality.',
-    handpanBridge: 'What links the two: Handpan Companion →',
+    handpanBridge: 'What links the two: Handpan Constellation Studio →',
     products: {
-      'handpan-studio': { name: 'Handpan Companion · the app', description: 'My teaching app, on acoustic handpan as much as on the Neotone: colours, geometry and emotions make music visible. Free to start in acoustic mode, then Studio from €9.90/month — unlock creation, saving and PDF/PNG export of your scores.' },
+      'handpan-studio': { name: 'Handpan Constellation Studio · the app', description: 'My teaching app, on acoustic handpan as much as on the Neotone: colours, geometry and emotions make music visible. Free to start in acoustic mode, then Studio from €9.90/month — unlock creation, saving and PDF/PNG export of your scores.' },
       'neotone-one': { name: 'Neotone¹', description: 'Digital handpan, 10 notes, all the scales, studio quality. Supported purchase: personal discount code + 6-year warranty.' },
       'neotone-mutant': { name: 'Neotone¹ Mutant', description: 'Digital handpan, 19 notes with LCD screen, maximum expression. Supported purchase: discount code + 6-year warranty.' },
       'yishama': { name: 'Yishama exceptional handpan', description: 'One of the best handpan makers in the world (Israel / Hungary). Artisan craftsmanship, instruments up to 19 notes with deep basses and bright highs. I proudly represent them as an ambassador.' },
@@ -579,6 +579,8 @@ export const en: Dict = {
     discountCountryPlaceholder: 'France, Belgium, Switzerland…',
     discountNote: 'I only use these details to request your code from Neotone.',
     phonePlain: 'Phone',
+    // Showcase only (24/08/2026) — see the French dictionary for the reasoning.
+    phoneWhyShowcase: 'Required for a showcase: it’s a fixed date, and if anything comes up at the last minute on either side, I need to be able to reach you straight away.',
     socialLabel: 'Your social media account',
     socialHint: 'Instagram preferred — otherwise Facebook, YouTube or your own website.',
     socialPlaceholder: '@yourhandle or a link',
@@ -1305,7 +1307,7 @@ export const en: Dict = {
     workshopsContact: 'Questions & sign-ups:',
     promiseEyebrow: 'My teaching promise',
     promiseTitle: 'The visual method, in lessons',
-    promiseIntro: 'I use Handpan Companion in lessons: colours, constellations and emotions make harmony clear and memorable — whatever your level, from curious child to seasoned musician.',
+    promiseIntro: 'I use Handpan Constellation Studio in lessons: colours, chord constellations and emotions make harmony clear and memorable — whatever your level, from curious child to seasoned musician.',
     pillars: [
       { t: 'Understand', d: 'See the structure of music instead of enduring it: each chord becomes a shape and a colour.' },
       { t: 'Memorise', d: 'You remember through shape and emotion, not by rote. The bearings stay stable from one scale to the next.' },
@@ -1333,11 +1335,11 @@ export const en: Dict = {
     // "an accessory of the Neotone". Acoustic is now in the SEO title, the
     // description, the hero badges and the second section — without demoting
     // the Neotone, which stays the flagship of the ecosystem.
-    title: 'Handpan Companion — the app for acoustic handpan and Neotone',
+    title: 'Handpan Constellation Studio — acoustic handpan & Neotone',
     description:
       'On any acoustic handpan — and on the Neotone. Learn through colours (ChromaKeys), chord Constellations and emotions, with no music theory.',
     heroEyebrow: 'The app — an original project by David Lesage',
-    heroTitleA: 'Handpan Companion',
+    heroTitleA: 'Handpan Constellation Studio',
     heroTitleB: 'Music becomes visible',
     heroLead: 'On any handpan: your acoustic handpan first, the electronic Neotone too. A visual approach to music — through colours, emotions and geometry — to understand, memorise and play.',
     // Badges shown right under the title, before the lead: "which instrument
@@ -1358,7 +1360,7 @@ export const en: Dict = {
     chromaPunch: 'What was invisible becomes visible.',
     constelEyebrow: 'The language of Constellations',
     constelTitle: 'The handpan’s new visual tablature',
-    constelIntro: 'Beyond the ChromaKeys colours, Handpan Companion links the notes of a chord: it draws a glowing figure — a constellation. Three ways to trace it.',
+    constelIntro: 'Beyond the ChromaKeys colours, the app links the notes of a chord: it draws a glowing figure — a <strong>chord constellation</strong>. Three ways to trace it.',
     constellations: [
       { t: 'Polygon', d: 'The closed shape of a chord: all its notes linked. You recognise the chord at a glance, by its shape.' },
       { t: 'Open', d: 'An open trace that follows the path of the notes — ideal for visualising a hand movement.' },
@@ -1386,7 +1388,7 @@ export const en: Dict = {
       'Learn new chords and progressions, guided step by step.',
       'Explore an atlas of scales by emotion — and imagine your own, custom-made.',
     ],
-    versionAcoCaption: 'Acoustic mode: Handpan Companion’s visual approach, on your own handpan.',
+    versionAcoCaption: 'Acoustic mode: Handpan Constellation Studio’s visual approach, on your own handpan.',
     // 📷 The proof photo already in the repo (`showroom-handpan-tablette.webp`,
     //    also used in the showroom gallery): an acoustic Yishama handpan with
     //    the app above it. Nothing invented — the gallery alt already says it.
@@ -1406,14 +1408,14 @@ export const en: Dict = {
     storyTitle: 'The tool I wish I’d been taught as a child',
     storyP1: 'When I discovered the handpan, I hit the wall of my childhood again: no method, and the difficulty of visually organising the paths of notes. Then, with the Neotone, a new difficulty: the notes change place with every scale.',
     storyP2: 'So I built the tool I wish I’d been given: a visual approach to harmony, through colours, shapes and emotions — to understand, memorise, and finally sing while accompanying myself on the handpan.',
-    storyP3: 'It’s the logical follow-up to <strong>Now Groove</strong>, my rhythm method (2021) that makes rhythm accessible through visual emoticons. Handpan Companion does the same for harmony: a tool designed by a musician, to raise the handpan to the rank of an accompaniment instrument — like the guitar or the piano.',
+    storyP3: 'It’s the logical follow-up to <strong>Now Groove</strong>, my rhythm method (2021) that makes rhythm accessible through visual emoticons. Handpan Constellation Studio does the same for harmony: a tool designed by a musician, to raise the handpan to the rank of an accompaniment instrument — like the guitar or the piano.',
     waitTitle: 'The app is available',
     waitText: 'Create your free account (first name, last name, email) to get started, right in your browser. By continuing, you accept the Terms and the privacy policy. Choosing your plan and secure payment happen inside the app.',
     waitButton: 'Open the app',
     contribEyebrow: 'A living community',
     contribTitle: 'You’re not downloading an app — you’re joining a living project',
     contribIntro:
-      'Handpan Companion evolves constantly, shaped by the people who use it. Your feedback, sent in one click from the app, is read and directly shapes what comes next.',
+      'Handpan Constellation Studio evolves constantly, shaped by the people who use it. Your feedback, sent in one click from the app, is read and directly shapes what comes next.',
     contribCards: [
       { t: 'Constantly evolving', d: 'New features, scales and modes ship regularly, and they’re included. The app you use today will be even richer tomorrow.' },
       { t: 'Your feedback shapes the app', d: 'Straight from the app, you send your ideas and feedback in one click. Every message is read and steers the next updates.' },
@@ -1442,7 +1444,7 @@ export const en: Dict = {
     },
     priceNote: 'Amounts synced live with Stripe. Studio unlocks the entire creation workshop.',
     videosEyebrow: 'The app in motion',
-    videosTitle: 'See Handpan Companion in action',
+    videosTitle: 'See Handpan Constellation Studio in action',
     videosIntro: 'Twelve video demos of the app — tap a thumbnail to play it full screen.',
     videos: [
       { t: 'Choose the key', d: 'Set an anchor note (here C) and the 7 coloured degrees appear.' },
@@ -1459,13 +1461,13 @@ export const en: Dict = {
       { t: 'Creation', d: 'Compose your own scale on the chromatic wheel.' },
     ],
     faqEyebrow: 'FAQ',
-    faqTitle: 'The questions people ask me about Handpan Companion',
+    faqTitle: 'The questions people ask me about Handpan Constellation Studio',
     faq: [
-      { q: 'Do I need a Neotone to use Handpan Companion?', a: 'No. Handpan Companion works on any acoustic handpan, in the free acoustic mode, just as it does on the electronic Neotone handpan. You do not need the electronic instrument to get started.' },
-      { q: 'Does Handpan Companion work on an acoustic handpan?', a: 'Yes, the acoustic mode is free. You visualise your scale in colours and learn your chords directly on your own acoustic instrument.' },
+      { q: 'Do I need a Neotone to use Handpan Constellation Studio?', a: 'No. Handpan Constellation Studio works on any acoustic handpan, in the free acoustic mode, just as it does on the electronic Neotone handpan. You do not need the electronic instrument to get started.' },
+      { q: 'Does Handpan Constellation Studio work on an acoustic handpan?', a: 'Yes, the acoustic mode is free. You visualise your scale in colours and learn your chords directly on your own acoustic instrument.' },
       { q: 'What are ChromaKeys?', a: 'They are the method’s colour system: each note is given a fixed colour. This lets you see the structure of the music at a glance, with no music theory required.' },
       { q: 'What is a chord Constellation?', a: 'It is the method’s visual tablature: each chord draws a geometric shape connecting its notes. You recognise and memorise your chords by their shape.' },
-      { q: 'Is Handpan Companion free?', a: 'Handpan Companion bundles a lot of features, and it’s your use that decides what’s free and what isn’t. Learning the handpan on your own, on your own acoustic instrument, is free: seeing your scale in colour, recognising your chords, playing, creating and exporting your scores. What goes beyond your personal practice is paid: the electronic Neotone/MIDI mode, advanced creation, cloud saving. And if you use it as a working tool in lessons you charge for, that’s a Teacher Licence — with the student space, the exercises and watermark-free scores that come with it. Up-to-date prices are just below.' },
+      { q: 'Is Handpan Constellation Studio free?', a: 'Handpan Constellation Studio bundles a lot of features, and it’s your use that decides what’s free and what isn’t. Learning the handpan on your own, on your own acoustic instrument, is free: seeing your scale in colour, recognising your chords, playing, creating and exporting your scores. What goes beyond your personal practice is paid: the electronic Neotone/MIDI mode, advanced creation, cloud saving. And if you use it as a working tool in lessons you charge for, that’s a Teacher Licence — with the student space, the exercises and watermark-free scores that come with it. Up-to-date prices are just below.' },
     ],
   },
   showroom: {
@@ -1674,7 +1676,7 @@ export const en: Dict = {
       yishamaMicros:
         'A Yishama handpan seen from above, two microphone capsules resting on the dome and four Hisong AirStudio S1 microphone boxes laid out around it.',
       tabletteAccords:
-        'A tablet mounted above a handpan: the Handpan Companion app shows the seven chords of the D Kurd 18 scale as coloured constellations.',
+        'A tablet mounted above a handpan: the Handpan Constellation Studio app shows the seven chords of the D Kurd 18 scale as coloured constellations.',
       handpanTablette:
         'A Yishama handpan on its tripod with the tablet fixed on an arm just above it: the chord constellations appear in line with the instrument.',
       // 📷 Added 20/08/2026 — see dict.ts.
@@ -1717,7 +1719,7 @@ export const en: Dict = {
     // must stay identical to the one in the confirmation email.
     program: [
       { t: 'The Neotone, live', d: 'I play for you: the raw sound, then with effects (octaver, reverb, looper) and singing along — the interface projected on screen.' },
-      { t: 'Handpan Companion, the app that makes music visible', d: 'A live demo: the colours, the chord constellations, and how you learn by seeing music instead of decoding sheet music.' },
+      { t: 'Handpan Constellation Studio, the app that makes music visible', d: 'A live demo: the colours, the chord constellations, and how you learn by seeing music instead of decoding sheet music.' },
       { t: 'Acoustic sound & microphones', d: 'My two Yishama acoustic handpans, miked with the Hisong and Muling microphones — to compare and hear the difference.' },
       { t: 'The Gonilélé and the calabash', d: 'The Gonilélé African harp and the calabash are out on the floor too: I play them, I explain how you get started with them — and if that is what you came for, you are exactly in the right place.' },
       { t: 'Your questions', d: 'An open exchange: I answer everyone, from the curious beginner to the seasoned musician.' },
@@ -1840,7 +1842,7 @@ export const en: Dict = {
         title: 'Marie-Christine Reculard and holistic singing',
         paras: [
           'Marie-Christine Reculard is my singing teacher. She created <em>Le Chant Holistique</em> (holistic singing), which she describes on her site as “une méthode unique de chant thérapeutique et énergétique par la voix, les couleurs, les voyelles sacrées, les mantras, le yoga et les techniques de respirations” — a singing method working through the voice, colours, sacred vowels, mantras, yoga and breathing techniques. Her site: <a href="https://www.mariechristinereculard.com/" target="_blank" rel="noopener" class="underline">mariechristinereculard.com</a>.',
-          'Her method inspired me, notably for a “Sing &amp; Play” mode — singing while accompanying yourself on the handpan — that I am working on for Handpan Companion. It is still at lab stage: it is not available in the app today.',
+          'Her method inspired me, notably for a “Sing &amp; Play” mode — singing while accompanying yourself on the handpan — that I am working on for Handpan Constellation Studio. It is still at lab stage: it is not available in the app today.',
         ],
       },
       {
@@ -1869,7 +1871,7 @@ export const en: Dict = {
     quoteShipsSource: 'My two Yishamas, the first months',
 
     linkYishama: 'My story with Yonathan and my two Yishamas',
-    linkApp: 'Discover Handpan Companion',
+    linkApp: 'Discover Handpan Constellation Studio',
 
     todayEyebrow: 'Today · Paris 20th',
     todayTitle: 'Musician, teacher, and tool builder',
@@ -1878,7 +1880,7 @@ export const en: Dict = {
     today: [
       { t: 'I play', d: 'Handpan, voice, calabash and ngoni on stage: 112 logged dates from 2009 to 2026, in 7 countries — including 21 at Jazz in Marciac, two editions of Sziget in Budapest, the Everness Festival in Hungary and a support slot for Amadou &amp; Mariam. Two recorded opuses under the title L’Alliance du Phoenix, and free showcases at Le Nid almost every month.' },
       { t: 'I teach', d: 'Now Music Academy: handpan, calabash rhythm and gonilélé harp, over video anywhere in the world or in person in Paris. I answer personally.' },
-      { t: 'I build', d: 'Handpan Companion makes harmony visible through colours, shapes and emotions. Guso Facile does the same for the paperwork of freelance performers in France.' },
+      { t: 'I build', d: 'Handpan Constellation Studio makes harmony visible through colours, shapes and emotions. Guso Facile does the same for the paperwork of freelance performers in France.' },
       { t: 'I bridge', d: 'Neotone beta-tester (Soundventure, Budapest), Yishama ambassador and affiliate, La Maison du Ngoni ambassador.' },
     ],
 
@@ -1895,7 +1897,7 @@ export const en: Dict = {
       { y: 'July 2022', t: 'HUG Festival, Hungary. I leave the workshop with a beta Neotone.' },
       { y: '2023', t: 'My collaboration with Joris Feuillâtre begins (gonilélé harp).' },
       { y: 'May 2023', t: 'I receive my two Yishama handpans: 18 notes each, 432 Hz.' },
-      { y: 'Aug. 2023', t: 'The document that would become Handpan Companion.' },
+      { y: 'Aug. 2023', t: 'The document that would become Handpan Constellation Studio.' },
       { y: '13 March 2026', t: 'Le Nid opens, 29 rue des Orteaux, Paris 20th.' },
       { y: 'Today', t: 'Le Nid, Paris 20th — lessons, try-outs and showcases.' },
     ],
@@ -1943,7 +1945,7 @@ export const en: Dict = {
     intro: 'I answer every message personally — I’m not a customer-service desk, but a musician who plays the Neotone every day. To choose your model, your wood, or arrange your visit: write to me.',
     coords: { email: 'Email — quick reply', phone: 'Phone', showroom: 'Showroom · by appointment' },
     form: { name: 'Full name', email: 'Email', subject: 'Subject', message: 'Message', submit: 'Write to me', note: 'Or write to me directly at' },
-    subjects: ['Buying a Neotone', 'Lessons', 'Handpan Companion', 'Collaboration', 'Press', 'Other'],
+    subjects: ['Buying a Neotone', 'Lessons', 'Handpan Constellation Studio', 'Collaboration', 'Press', 'Other'],
   },
   legal: {
     title: 'Legal notice & terms — David Lesage',

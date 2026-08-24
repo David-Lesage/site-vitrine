@@ -1,7 +1,7 @@
 // ============================================================
-// Tarifs Studio de Handpan Compagnon, résolus DYNAMIQUEMENT
+// Tarifs Studio de Handpan Constellation Studio, résolus DYNAMIQUEMENT
 // depuis Stripe via l'Edge Function publique get-prices de l'app
-// Handpan Compagnon. Dès qu'un prix change dans Stripe, l'affichage suit.
+// Handpan Constellation Studio. Dès qu'un prix change dans Stripe, l'affichage suit.
 //
 // - À la compilation (SSG) : on récupère les montants et on les fige
 //   dans le HTML → corrects à chaque déploiement, sans JS.

@@ -7,7 +7,7 @@
 // ⚠️ SOURCES — tout ici est vérifié, rien n'est inventé :
 //  · Notes des 2 pans : relevé de David (« The missing part of the
 //    handpan player ») recoupé note à note avec les données de
-//    l'app Handpan Compagnon (`acoustic/yishama-data.ts`).
+//    l'app Handpan Constellation Studio (`acoustic/yishama-data.ts`).
 //  · 432 Hz : demandé par David, confirmé par Yhonatan avant
 //    l'accordage (échanges d'octobre 2022).
 //  · Vidéos : chaîne YouTube @DavidLesageArtiste (titres vérifiés

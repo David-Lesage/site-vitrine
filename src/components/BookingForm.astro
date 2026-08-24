@@ -121,9 +121,17 @@ const upcoming = JSON.stringify(
           <span class="text-sm font-600">{bk.email}</span>
           <input type="email" name="email" autocomplete="email" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
         </label>
+        {/* ⚠️ Le téléphone n'est OBLIGATOIRE que pour `showcase-booking`
+            (24/08/2026). Il n'est jamais masqué : c'est volontaire. Un champ
+            `required` invisible bloque l'envoi sans afficher le moindre
+            message — le visiteur clique et rien ne se passe. Ici le champ est
+            toujours à l'écran, seul l'attribut `required` bascule (voir
+            `open()` dans le <script>), donc le message du navigateur a
+            toujours un champ visible sur lequel se poser. */}
         <label class="block">
           <span class="text-sm font-600" data-bk-phone-label data-default={bk.phone} data-plain={bk.phonePlain}>{bk.phone}</span>
           <input type="tel" name="phone" autocomplete="tel" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
+          <span data-bk-phone-why class="mt-1 hidden block text-xs leading-relaxed text-ink-soft/70">{bk.phoneWhyShowcase}</span>
         </label>
       </div>
 
@@ -462,9 +470,23 @@ const upcoming = JSON.stringify(
     const msgLabel = modal?.querySelector('[data-bk-message-label]') as HTMLElement | null
     if (msgLabel) msgLabel.textContent = (isDiscount ? msgLabel.dataset.free : msgLabel.dataset.default) || msgLabel.textContent
     modal?.querySelector('[data-bk-message-hint]')?.classList.toggle('hidden', !isDiscount)
-    // Neotone a besoin du téléphone pour émettre le code : pas de « facultatif » ici.
+    // TÉLÉPHONE — deux motifs le réclament, pour deux raisons différentes :
+    //  · `neotone-discount` : Neotone a besoin du numéro pour émettre le code
+    //    → le libellé perd son « (facultatif) », mais le champ reste libre ;
+    //  · `showcase-booking` (24/08/2026) : il devient VRAIMENT OBLIGATOIRE —
+    //    un showcase est une date fixe, David doit pouvoir prévenir en cas
+    //    d'imprévu de dernière minute. La raison s'affiche sous le champ.
+    // ⚠️ Ailleurs (contact, liste d'attente, remise Neotone, commande
+    //    Gonilélé, venue au showroom, rendez-vous individuel) il RESTE
+    //    facultatif : `required` est remis à `false` à chaque ouverture, sinon
+    //    un motif garderait la contrainte du précédent dans la même page.
+    // ⚠️ Le champ n'est jamais masqué : un `required` invisible bloquerait
+    //    l'envoi sans message affichable.
+    const phoneInput = form.querySelector('input[name="phone"]') as HTMLInputElement | null
+    if (phoneInput) phoneInput.required = isShowcase
     const phoneLabel = modal?.querySelector('[data-bk-phone-label]') as HTMLElement | null
-    if (phoneLabel) phoneLabel.textContent = (isDiscount ? phoneLabel.dataset.plain : phoneLabel.dataset.default) || phoneLabel.textContent
+    if (phoneLabel) phoneLabel.textContent = (isDiscount || isShowcase ? phoneLabel.dataset.plain : phoneLabel.dataset.default) || phoneLabel.textContent
+    modal?.querySelector('[data-bk-phone-why]')?.classList.toggle('hidden', !isShowcase)
     toggleBlock(slotsEl, needsSlots)
     // Blocs purement informatifs (aucun champ) → simple affichage/masquage.
     vipEl?.classList.toggle('hidden', !isVip)

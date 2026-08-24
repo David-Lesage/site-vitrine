@@ -1,5 +1,5 @@
 // ============================================================
-// Accès public à l'application Handpan Compagnon — source unique.
+// Accès public à l'application Handpan Constellation Studio — source unique.
 //
 // L'interrupteur « officiel » vit désormais dans Supabase :
 //   table `public.app_public_config`, ligne `key = 'app_public_access'`,

@@ -28,7 +28,7 @@ export function newsletterMailto(lang: Lang): string {
       [
         'Hi David,',
         '',
-        'I’d like to be kept posted about your next showcases in Paris and about Handpan Compagnon.',
+        'I’d like to be kept posted about your next showcases in Paris and about Handpan Constellation Studio.',
         '',
         'My details:',
         '• Full name: ',
@@ -44,7 +44,7 @@ export function newsletterMailto(lang: Lang): string {
     [
       'Bonjour David,',
       '',
-      'Je souhaite être tenu·e au courant de tes prochains showcases à Paris et des nouveautés de Handpan Compagnon.',
+      'Je souhaite être tenu·e au courant de tes prochains showcases à Paris et des nouveautés de Handpan Constellation Studio.',
       '',
       'Mes coordonnées :',
       '• Nom et prénom : ',
