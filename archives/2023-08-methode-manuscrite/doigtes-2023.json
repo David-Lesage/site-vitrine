@@ -1,0 +1,163 @@
+{
+  "_README": "Doigtés relevés du document « David Lesage Scale Methode » (Google Slides, créé le 04/08/2023). Extraction du 27/08/2026 par croisement systématique du texte du Slides ET du rendu image de chaque diapositive. En cas de désaccord texte/image, l'image fait foi et l'écart est documenté dans `note`. AUCUN doigté n'a été déduit, complété ou inventé : ce qui manque au document manque ici.",
+
+  "source": {
+    "titre": "David Lesage Scale Methode",
+    "driveFileId": "1ihAENHVlc0RhzM_CG7Vv1uE_TytM61xMYHBSdug3Qik",
+    "creeLe": "2023-08-04T09:19:16.890Z",
+    "diapositives": 21,
+    "pdfLocal": "methode-manuscrite-2023-08-04.pdf",
+    "imagesLocales": "pages/slide-NN.png",
+    "extraitLe": "2026-08-27"
+  },
+
+  "conventions": {
+    "hands": "L = main gauche, R = main droite.",
+    "alignement": "hands[i] est la main qui frappe notes[i].",
+    "direction": "Sens de lecture de `notes`. Toutes les entrées sont normalisées grave→aigu sauf mention contraire.",
+    "notation": "Notes normalisées vers la notation de src/data/yishama.ts (bémols : B♭). L'écriture d'origine du document (A#) est conservée dans `verbatim` / `note`.",
+    "lectureDesPiles": "Sur chaque diapo, la pile de notes colorée à gauche se lit du BAS vers le HAUT (grave→aigu) : la flèche rouge pointe vers le haut et la case du bas est encadrée en noir gras (note de départ). Règle validée sur la diapo 6, où la pile lue bas→haut redonne exactement la chaîne « R L L R L R L » écrite en titre."
+  },
+
+  "instruments": {
+    "dkurd18": {
+      "ding": "D3",
+      "top": ["D3", "A3", "B♭3", "C4", "D4", "E4", "F4", "G4", "A4", "C5", "D5", "B♭5"],
+      "bottom": ["B♭2", "C3", "F3", "G3", "F5", "G5"]
+    },
+    "e18": {
+      "ding": "E3",
+      "top": ["E3", "G♯3", "B3", "C♯4", "D♯4", "E4", "F♯4", "G♯4", "A4", "B4", "C♯5", "D♯5", "E5"],
+      "bottom": ["A2", "B2", "C♯3", "D♯3", "F♯3"]
+    }
+  },
+
+  "chords": [
+    {
+      "slide": 5,
+      "pan": "dkurd18",
+      "panSource": "déduit — aucun cartouche d'instrument sur cette diapo ; la coque dessinée est centrée sur le ding D3 et porte F5/G5/B♭2/C3/F3/G3 en notes du dessous, ce qui correspond au D Kurd 18.",
+      "chord": "Do Majeur (CM)",
+      "notes": null,
+      "notesVerbatim": ["C5", "G4", "E4 (note manquante)", "C5", "G4", "E4", "C4", "G3", "E3", "C2"],
+      "direction": "ambigu",
+      "hands": null,
+      "handsReturn": null,
+      "missing": ["E4"],
+      "verbatim": "Les mains jouent en alternance Droite / Gauche",
+      "confidence": "à vérifier",
+      "note": "INEXPLOITABLE EN L'ÉTAT — 4 problèmes. (1) Aucun doigté par note : la diapo ne porte ni badge L/R sur le dessin ni chaîne de lettres, seulement la mention générique « alternance Droite / Gauche ». (2) La pile compte 10 cases et n'est pas monotone : lue bas→haut elle donne C2, E3, G3, C4, E4, G4, C5, puis à nouveau E4(manquante), G4, C5 — le sens de lecture est donc indéterminable. (3) C2 n'existe sur AUCUN des deux instruments (le plus grave du D Kurd est B♭2, celui du E 18 est A2). (4) La case noire est étiquetée « E4 (note manquante) » alors que E4 existe bel et bien sur le D Kurd ; en revanche E3, présent dans la pile, n'existe PAS sur le D Kurd. HYPOTHÈSE À FAIRE CONFIRMER PAR DAVID (non appliquée ici) : la note réellement manquante serait E3, et c'est précisément ce que la diapo 6 résout en allant chercher E3 sur le ding du E 18 — ce qui ferait de cette paire de diapos l'acte de naissance du mode hybride. Notes surlignées sur la coque (6) : C3, G3, C4, E4, G4, C5."
+    },
+    {
+      "slide": 6,
+      "pan": "hybride",
+      "panSource": "explicite — les deux coques sont dessinées et surlignées, avec des flèches passant de l'une à l'autre.",
+      "chord": "Do Majeur (CM)",
+      "notes": ["C3", "E3", "G3", "C4", "E4", "G4", "C5"],
+      "notesPan": {
+        "C3": "dkurd18",
+        "E3": "e18",
+        "G3": "dkurd18",
+        "C4": "dkurd18",
+        "E4": "dkurd18",
+        "G4": "dkurd18",
+        "C5": "dkurd18"
+      },
+      "direction": "grave→aigu",
+      "hands": ["R", "L", "L", "R", "L", "R", "L"],
+      "handsReturn": null,
+      "missing": [],
+      "verbatim": "Ordre des mains spécifique : « R L L R L R L » — cartouche gauche : « Ordre des notes et des mains »",
+      "confidence": "à vérifier",
+      "note": "ENTRÉE LA PLUS SOLIDE DU DOCUMENT, avec UNE réserve ponctuelle. Deux sources textuelles indépendantes concordent parfaitement : la colonne L/R du tableau de gauche (lue bas→haut : C3=R, E3=L, G3=L, C4=R, E4=L, G4=R, C5=L) et la chaîne « R L L R L R L » du titre. Les 7 notes existent, 7 notes pour 7 mains. RÉSERVE : sur le dessin, le badge accolé à C5 se lit « R » alors que les deux sources textuelles donnent « L ». Le badge en question chevauche le rayon D3–C5 et son ancrage est incertain ; j'ai retenu la valeur textuelle (2 sources contre 1) sans trancher. À confirmer par David en jouant l'accord : la dernière note (C5) se frappe-t-elle main gauche ou main droite ? Tous les autres badges du dessin (E3=L, G3=L, C4=R, E4=L, G4=R, C3=R) confirment le tableau."
+    },
+    {
+      "slide": 7,
+      "pan": "dkurd18",
+      "panSource": "explicite — cartouche « Handpan - D kurd - David » en bas à gauche.",
+      "chord": "Ré mineur (Dm)",
+      "notes": ["D3", "F3", "A3", "D4", "F4", "A4", "D5"],
+      "direction": "grave→aigu",
+      "hands": ["L", "R", "L", "L", "R", "L", "R"],
+      "handsReturn": ["R", "L", "R", "L", "L", "R"],
+      "missing": [],
+      "verbatim": "Ordre des mains spécifique — Allez: Grave → Aigue : L R L L R L — Retour: Grave → Aigue : R L R L L R",
+      "confidence": "à vérifier",
+      "note": "Les 7 mains de `hands` viennent des badges du DESSIN, qui sont complets et sans ambiguïté (D3=L, F3=R, A3=L, D4=L, F4=R, A4=L, D5=R). Le tableau « Allez » n'en donne que 6 (L R L L R L) : ce sont exactement les 6 premières du dessin, la 7e case (D5=R) manque au tableau — le tableau est tronqué d'une colonne, pas contradictoire. ÉCART TEXTE/IMAGE : la pile de gauche écrit « A3 » en 6e position alors que le dessin surligne clairement A4 (ellipse bleue en haut à gauche, distincte du A3 bleu en bas) ; l'image l'emporte, j'ai retenu A4. `handsReturn` est recopié tel quel mais sa ligne est étiquetée « Retour: Grave → Aigue », soit le même sens que l'aller — probablement une coquille pour « Aigue → Grave » (la diapo 11 écrit bien « Aigue → Grave »). Ne pas appliquer le retour sans que David tranche ce sens."
+    },
+    {
+      "slide": 8,
+      "pan": "dkurd18",
+      "panSource": "explicite — cartouche « Handpan - D kurd - David » en bas à gauche.",
+      "chord": "Fa Majeur (F)",
+      "notes": ["F3", "A3", "C4", "F4", "A4", "C5", "F5"],
+      "direction": "grave→aigu",
+      "hands": ["R", "L", "R", "L", "R", "L", "R"],
+      "handsReturn": null,
+      "missing": [],
+      "verbatim": "Les mains jouent en alternance Droite / Gauche — « R L R L »",
+      "confidence": "à vérifier",
+      "note": "Les 7 mains viennent des badges du DESSIN, complets (F3=R, A3=L, C4=R, F4=L, A4=R, C5=L, F5=R) — soit une alternance stricte démarrant à droite, cohérente avec le motif « R L R L » du titre (qui n'est qu'un motif de 4 lettres, pas une séquence de 7). ÉCART TEXTE/IMAGE SUR DEUX NOTES : la pile de gauche écrit C3 et C4 là où le dessin surligne C4 et C5. Le dessin donne un arpège F-A-C strictement ascendant (F3 A3 C4 F4 A4 C5 F5) ; la pile donnerait F3 A3 C3 F4 A4 C4 F5, qui n'est pas ascendant alors que la diapo annonce grave→aigu. L'image l'emporte. À confirmer par David, car les deux versions sont jouables sur l'instrument."
+    },
+    {
+      "slide": 9,
+      "pan": "dkurd18",
+      "panSource": "explicite — cartouche « Handpan - D kurd - David » en bas à gauche.",
+      "chord": "Sol mineur (Gm)",
+      "notes": ["G3", "B♭3", "D4", "G4", "B♭5", "D5", "G5"],
+      "direction": "grave→aigu (annoncé ; non respecté par B♭5, voir note)",
+      "hands": null,
+      "handsReturn": null,
+      "missing": [],
+      "verbatim": "Les mains jouent en alternance Gauche / Droite",
+      "confidence": "à vérifier",
+      "note": "AUCUN DOIGTÉ EXPLOITABLE : la diapo ne porte aucun badge L/R sur le dessin et aucune chaîne de lettres — seulement la mention générique « alternance Gauche / Droite ». Les 7 notes de la pile sont sûres et existent toutes sur le D Kurd. DEUX OBSERVATIONS : (1) B♭5 (932 Hz) rompt l'ordre ascendant en se plaçant entre G4 et D5 — ce n'est pas nécessairement une erreur, le D Kurd n'a pas de B♭4 et B♭5 est le seul si bémol disponible dans cette région ; c'est peut-être un choix de voicing assumé. (2) C4 est surligné en ROUGE VIF sur la coque alors que C4 n'appartient pas à Sol mineur et n'apparaît ni dans la pile ni dans la grille chromatique de la diapo : très probablement un résidu de copier-coller de la diapo 8 (Fa Majeur), où C4 était rouge. Ne pas l'intégrer à l'accord."
+    },
+    {
+      "slide": 10,
+      "pan": "dkurd18",
+      "panSource": "explicite — cartouche « Handpan - D kurd - David » en bas à gauche.",
+      "chord": "La mineur (Am)",
+      "notes": ["A3", "C4", "E4", "A4", "C5"],
+      "direction": "grave→aigu",
+      "hands": ["L", "R", "R", "L"],
+      "handsReturn": ["R", "L", "R", "R"],
+      "missing": [],
+      "verbatim": "Ordre des mains spécifique — Allez: Grave → Aigue : L R R L — Retour: Grave → Aigue : R L R R",
+      "confidence": "à vérifier",
+      "note": "DOIGTÉ INCOMPLET : 5 notes, seulement 4 mains. Le tableau est tronqué d'une colonne (même défaut qu'aux diapos 7 et 11), et contrairement à la diapo 7 le dessin ne porte AUCUN badge L/R permettant de récupérer la 5e main. La main de la dernière note (C5) est donc inconnue — elle n'a pas été devinée. `hands` couvre A3, C4, E4, A4 ; C5 reste à renseigner par David. Comme en diapo 7, la ligne « Retour » est étiquetée « Grave → Aigue » comme l'aller, sens probablement erroné."
+    },
+    {
+      "slide": 11,
+      "pan": "dkurd18",
+      "panSource": "explicite — cartouche « Handpan - D kurd - David » en bas à gauche.",
+      "chord": "Si b Majeur (Bb)",
+      "notes": ["B♭2", "D3", "F3", "B♭3", "D4", "F4", "B♭5"],
+      "direction": "grave→aigu",
+      "hands": ["L", "R", "R", "L", "R", "L"],
+      "handsReturn": ["R", "L", "R", "L", "L", "L"],
+      "missing": [],
+      "verbatim": "Ordre des mains spécifique — Allez: Grave → Aigue : L R R L R L — Retour: Aigue → Grave : R L R L L L",
+      "confidence": "à vérifier",
+      "note": "DOIGTÉ INCOMPLET : 7 notes, seulement 6 mains. Tableau tronqué d'une colonne et aucun badge L/R sur le dessin pour récupérer la 7e — la main de la dernière note (B♭5) est inconnue et n'a pas été devinée. `hands` couvre B♭2, D3, F3, B♭3, D4, F4. Les 7 notes sont sûres et existent toutes sur le D Kurd ; l'ordre est strictement ascendant (B♭4 n'existe pas sur l'instrument, d'où le saut F4 → B♭5). C'est la SEULE diapo dont la ligne Retour est correctement étiquetée « Aigue → Grave »."
+    }
+  ],
+
+  "horsPerimetre": [
+    {
+      "slides": [19, 20],
+      "sujet": "Halo — Beyoncé",
+      "contenu": "Grille d'accords A / Bm / F♯m / D reportée sur les deux coques, avec les notes composant chaque accord (A : E4 C♯4 A3 · Bm : F♯ D B · F♯m : C♯ A F♯ · D : A F♯ D) et des trajectoires colorées d'une coque à l'autre.",
+      "pourquoiExclu": "Aucune indication de main (L/R) ni d'ordre de frappe : ce sont des cartographies d'accords pour un morceau, pas des doigtés. Rien à implémenter ici.",
+      "reserve": "Le titre et le nom d'artiste apparaissent en clair sur ces deux visuels — à arbitrer avant toute publication."
+    }
+  ],
+
+  "nonCouvertParLeDocument": {
+    "e18": "AUCUN accord n'est documenté sur le E 18 seul. Le E 18 n'apparaît que dans les cartographies de notes (diapos 2, 3, 4, 14, 15, 21) et comme fournisseur du E3 dans l'accord hybride de la diapo 6. Zéro doigté propre à cet instrument.",
+    "dkurd18": "6 accords seulement : Do M (diapo 5, inexploitable), Ré m, Fa M, Sol m (sans doigté), La m, Si♭ M.",
+    "hybride": "1 seul accord : Do M (diapo 6).",
+    "doigtsPrecis": "Le document ne nomme JAMAIS les doigts (pouce, index…) — uniquement la main. Cette information est entièrement à produire par David.",
+    "manquantsEvidents": "Aucun accord de 7e, aucun renversement, aucune gamme complète, aucun accord en Mi/La/Si/Do♯ etc. Le document couvre 6 accords sur les 24 annoncés comme possibles par la paire (cf. pairFacts dans src/data/yishama.ts)."
+  }
+}
