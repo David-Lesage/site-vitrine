@@ -29,7 +29,144 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 27/08/2026 (3ᵉ passe) — 📄 LA PAGE 4 D'AOÛT 2023 : LA PREUVE SOUS LA PHRASE
+## ÉTAT ACTUEL — 27/08/2026 (4ᵉ passe) — 🔴🟡 LES CHROMAKEYS ONT DEUX VISIONS, ET C'EST ÉCRIT
+
+**Statut : ✅ COMMITÉ (`1a0d8ed`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, build 93 pages).**
+
+- 🇫🇷 https://www.lesagedavid.fr/blog/les-deux-visions-chromakeys
+- 🇬🇧 https://www.lesagedavid.fr/en/blog/les-deux-visions-chromakeys
+
+**Demande de David** : « Vas-y, **écris un article de blog dédié** et **illustre-le en prenant
+des captures de l'app**. » Sujet tranché par lui :
+
+> « Le concept de ChromaKeys a **deux fonctions**. Soit on pense en terme du **mode chakras**
+> (un DO est toujours rouge), soit on pense en terme de **degré** […] deux vérités qui sont
+> vraies selon comment on va penser les choses […] **il faut le rendre explicite sinon ça peut
+> porter à confusion**. »
+
+### 🎯 LE CADRAGE, À NE JAMAIS PERDRE
+
+**L'article existe parce qu'une EXPLICATION MANQUE, pas parce qu'une ERREUR doit être
+corrigée.** 🚫 Ne jamais présenter l'une des deux visions comme la bonne et l'autre comme un
+abus de langage. Toute reprise de ce chantier repart de là.
+
+### 🕶️ L'IMAGE EST CELLE DE L'APP — NE PAS EN INVENTER UNE AUTRE
+
+L'app dit déjà tout, 4ᵉ écran du paradoxe du cadre (`acoustic/duo-paradox.ts`, clés
+`ac.duo_paradox.*`, **lecture seule**) : **« Deux lunettes, une seule roue de couleurs »**,
+couleur = note (« Quelle note est-ce ? » → *je joue, je repère*) / couleur = rôle (« À quoi
+elle sert ? » → *je comprends, je compose*), et la chute **« Savoir laquelle porter, c'est ça,
+l'apprentissage. »** L'article **développe** cette image, il ne la remplace pas.
+🚫 **Ne jamais lui substituer une autre métaphore** dans une future réécriture.
+
+**Autres verbatims de l'app repris tels quels** (`translations.ts`, lecture seule) :
+`singplay.ckmode.note.why` « Un Do est toujours rouge, où qu'il soit. » ·
+`singplay.ckmode.role.title` « […] en Ré, c'est le Ré qui devient rouge, parce que son rôle est
+d'être le premier degré. »
+
+### 🔑 LE PIVOT DE L'ARTICLE — le piège du do
+
+**En do, les deux visions tombent sur le MÊME rouge** (le do est rouge parce que c'est un do,
+et parce que c'est le premier degré). C'est **exactement pour ça que personne ne voit qu'il y
+en a deux**. En mi, le voile se lève : lunette note → le mi est jaune ; lunette rôle → le mi
+est rouge. 👉 C'est le paragraphe qui fait comprendre l'article ; **ne pas le couper**.
+
+### 🎨 CE QUI A ÉTÉ VÉRIFIÉ — ET LA CORRECTION QUE ÇA APPORTE À LA 3ᵉ PASSE
+
+🚨 **LA 3ᵉ PASSE (juste en dessous) SE TROMPE SUR DEUX COULEURS.** Elle écrit que l'app a
+« corrigé » 2023 : sol cyan → bleu `#2563EB`, la bleu → violet `#7C3AED`. **C'est vrai d'UNE
+table de l'app, et FAUX de ce que l'écran affiche.** Vérifié **dans l'app en fonctionnement**
+le 27/08 (variables CSS `--chakra-*` lues dans le navigateur) :
+
+| | sol | sol♯ | la | la♯ | si |
+|---|---|---|---|---|---|
+| **app EN LIGNE** (`--chakra-*`, ce que montrent les pastilles) | `#0EA5E9` **cyan** | `#38BDF8` | `#0806FF` **bleu** | `#5050FF` | `#EB00FF` magenta |
+| **table TS** `melody/melody-model.ts:315` (éditeur de mélodies) | `#2563EB` bleu | `#3B82F6` | `#7C3AED` violet | `#8B5CF6` | `#D946EF` fuchsia |
+
+👉 **Deux tables de couleurs de notes coexistent dans l'app** et divergent sur sol/sol♯/la/la♯/si.
+🚫 **Ne plus écrire publiquement « sol est passé au bleu, la au violet ».** Sur l'écran de
+l'utilisateur, **sol est cyan et la est bleu** — c'est-à-dire **exactement la palette manuscrite
+d'août 2023**, slot pour slot.
+📮 **À signaler à la session Handpan Studio** (dépôt de l'app, hors périmètre du site).
+
+✅ **Ce qui tient, en revanche, et qui explique mécaniquement toute la confusion** : à l'origine
+**il n'y avait qu'un seul arc-en-ciel**. En 2023 il nommait les **notes** ; aujourd'hui la même
+séquence (rouge · orange · jaune · vert · **cyan** · **bleu** · magenta, doublon cyan-puis-bleu
+compris) sert aux **degrés**, côté app (`constants.ts:210 EMOTIONAL_DEGREE_COLORS`) **comme côté
+site** (`global.css:19-25 --color-chroma-1..7`, consommées par `site.ts:238` indexées `I…VII`).
+👉 Les variables du site sont donc **une palette de degrés correcte, mal étiquetée
+« ChromaKeys »**. Le contenu est juste ; c'est le mot qui est de trop. **Non corrigé.**
+
+### 📄 L'AUDIT — `audits/AUDIT-CHROMAKEYS-2026-08-27.md` (dossier `audits/` CRÉÉ ce jour)
+
+⛔ **LISTE DE TRAVAIL, RIEN N'EST APPLIQUÉ.** David a demandé un article, pas une réécriture du
+site. Une correction non demandée dans 4 articles aurait été un débordement.
+
+Contenu : décompte refait (**67** occurrences dans `src/` + `public/` — l'écart avec les 75 d'un
+audit antérieur vient du périmètre), les **4 phrases en sens « degré »** (`dict.ts:1734` /
+`en.ts:1472` · `guides.ts:127` / `:519` · `handpan-emotions-degres.md:19` + `-en` ·
+`creer-sa-gamme-de-handpan.md:22` + `-en`), les **3 contradictions visibles par un lecteur**
+(① `/handpan-app` se contredit entre son corps et **sa propre FAQ** `dict.ts:1879` — la plus
+coûteuse ; ② `/apprendre-le-handpan`, `guides.ts:127` vs `:132`, **5 lignes d'écart** ;
+③ `handpan-par-les-couleurs.md:24` sous le sous-titre `:23` « Chaque note, une couleur »), et
+l'ordre de correction proposé.
+
+✅ **Vérifié : aucun slug/permalink/URL ne contient « chroma », et AUCUN signal SEO n'est en sens
+degré** (`ldJson.ts:89/94`, `llms.txt:6/27` sont en sens NOTE). **Rien ne presse.**
+
+🧭 **Le témoin de style pour toute correction future** : `editeur-de-melodies-handpan.md:32` —
+« deux logiques de couleur cohabitent : ChromaKeys (la couleur suit la note) ou degré (la couleur
+suit le rôle harmonique) ». Nommer les deux, ne trancher ni l'une ni l'autre.
+
+### 📸 CAPTURES : NON — ET POURQUOI C'EST LA BONNE DÉCISION
+
+- **Navigateur intégré** → `play.handpanstudio.app` renvoie l'écran de connexion → **arrêt
+  immédiat, aucun identifiant saisi.**
+- **Chrome de David**, onglet d'**arrière-plan** (jamais mis au premier plan) : session ouverte,
+  l'app **observée** — c'est de là que viennent toutes les vérifications de couleurs ci-dessus.
+  Tous les réglages touchés (mode couleur, onglet actif, bascule « Par rôle / Par note », tracé
+  de l'Accord 1) ont été **remis dans leur état d'origine** avant fermeture. **Rien créé, rien
+  enregistré, rien supprimé.**
+- 🚨 **NOUVEAU PIÈGE D'OUTILLAGE — l'outil de capture du navigateur NE PRODUIT PAS DE FICHIER.**
+  `save_to_disk: true` ne renvoie aucun chemin et n'écrit rien (vérifié : ni `~/Downloads`, ni
+  `/tmp`, ni le scratchpad). L'image n'existe que dans la conversation. **Sans fichier, pas de
+  `.webp` dans `public/images/`.** Contournements écartés : pas de `<canvas>` ni de `html2canvas`
+  dans l'app (rendu 100 % DOM), donc pas de `toDataURL()` possible.
+  👉 **Conséquence pour les prochaines sessions : une capture d'app = David la prend, ou on
+  trouve un autre canal. Ne pas repartir dans cette impasse.**
+- ⛔ **Aucune illustration fabriquée** — pas de schéma imitant l'app, pas de maquette.
+  Image d'en-tête = **une vraie capture déjà au dépôt**, `/images/app-hybride-deux-gammes.webp`
+  (elle montre justement, sur le MÊME écran, les pastilles en couleurs de NOTE et les 7 degrés
+  en couleurs de DEGRÉ). **Aucune image inline** dans l'article.
+  ⚠️ Rappel : cette image est sous **dette assumée** (le crédit Yishama n'y est pas visible) ;
+  quand elle sera remplacée, l'en-tête de cet article suivra automatiquement.
+
+### 🔗 LIENS — et le seul lien qui MANQUE
+
+L'article pointe vers `handpan-par-les-couleurs` (2×), `handpan-emotions-degres`,
+`editeur-de-melodies-handpan` et `/yishama`, en FR comme en EN (vérifié en rendu réel).
+❗ **Le lien retour depuis `handpan-par-les-couleurs` n'a PAS été posé** : ç'aurait été modifier
+un article existant, ce qui était explicitement hors périmètre. **À proposer à David** — c'est
+l'article le plus proche, et c'est celui où le lecteur se perd en premier (contradiction ③).
+
+### 📌 Détails du fichier
+
+`pubDate: 2026-09-24` — le blog suit un calendrier éditorial tous les ~4 jours qui court déjà
+jusqu'au 20/09 ; 24/09 place l'article **en tête des deux index** (tri par date décroissante,
+les dates futures ne sont PAS filtrées). `category: methode`, `permalink` partagé
+`les-deux-visions-chromakeys`, hreflang FR/EN/x-default vérifiés dans le HTML produit.
+⚠️ **Pas de tableau markdown dans un article** : `prose-blog` ne style que h2/h3/p/ul/ol/li/a/
+strong/blockquote — **une table s'afficherait nue**. Le template blog n'a **ni `<Lightbox />`
+ni style de `<figure>`** : poser une image inline dans un article demanderait de toucher
+`src/pages/blog/[slug].astro`, ce qui n'a pas été fait.
+
+---
+
+## 27/08/2026 (3ᵉ passe) — 📄 LA PAGE 4 D'AOÛT 2023 : LA PREUVE SOUS LA PHRASE
+
+> ⚠️ **Sa section « CHROMAKEYS : CE QUI EST VÉRIFIÉ » ci-dessous est PARTIELLEMENT FAUSSE** —
+> voir la 4ᵉ passe : sur l'écran de l'app, **sol est encore cyan et la encore bleu**. La
+> « correction » bleu/violet ne concerne que la table TS de l'éditeur de mélodies.
 
 **Statut : ✅ COMMITÉ (`4111052`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, build 91 pages).**
 
