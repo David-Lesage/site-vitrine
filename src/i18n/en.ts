@@ -1313,6 +1313,14 @@ export const en: Dict = {
       { t: 'Memorise', d: 'You remember through shape and emotion, not by rote. The bearings stay stable from one scale to the next.' },
       { t: 'Play & accompany', d: 'The handpan becomes a true accompaniment instrument — sing over the songs you love.' },
     ],
+    // 📷 27/08/2026 — the photo that proves `promiseIntro`. See the long note
+    //    in dict.ts (FR). A real lesson: a STUDENT's hand (not David's), the
+    //    app open in front of them in Logic mode. "Logic mode" is the app's own
+    //    mode name (studio.modes[0]), not Logic Pro.
+    methodPhotoAlt: 'During a lesson: a student’s hand playing a wooden Neotone, with the laptop right beside showing Handpan Constellation Studio in Logic mode — the circle of degrees in colour, one degree’s explanation bubble open on screen.',
+    methodPhotoCaption: 'In a lesson, I keep Logic mode open in front of the student: one degree at a time, explained on screen while they play.',
+    // Lightbox labels: the lesson photo opens full screen.
+    lightbox: { close: 'Close', zoom: 'Enlarge photo' },
     formulasEyebrow: 'Formats & pricing',
     formulasTitle: 'Choose your format',
     formulas: [

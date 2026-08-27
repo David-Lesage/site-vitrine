@@ -4,6 +4,7 @@ import Section from '@/components/Section.astro'
 import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
 import BookingForm from '@/components/BookingForm.astro'
+import Lightbox from '@/components/Lightbox.astro'
 import { Icon } from 'astro-icon/components'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
@@ -71,7 +72,20 @@ const schoolEmail = 'School@lesagedavid.fr'
 
   <Section tone="cream-deep">
     <SectionHeading eyebrow={l.promiseEyebrow} title={l.promiseTitle} intro={l.promiseIntro} />
-    <div class="mt-10 grid gap-6 md:grid-cols-3">
+    {/* 📷 27/08/2026 — LA PREUVE DE LA PROMESSE, POSÉE JUSTE APRÈS ELLE.
+        `promiseIntro` dit « J'utilise Handpan Constellation Studio en cours » ;
+        la section ne montrait que trois cartes de texte. La photo arrive donc
+        AVANT les trois piliers : on affirme, on prouve, puis on explique.
+        C'est la seule photo du site d'un COURS RÉEL — la main d'un ÉLÈVE sur le
+        Neotone, l'app ouverte en mode Logique avec l'explication d'un degré.
+        ⚠️ Photo quasi carrée (1800×1930) : `max-w-2xl` l'empêche d'écraser la
+        section. Aucun recadrage — le nom « Handpan Constellation Studio » est
+        lisible à l'écran, c'est ce qui l'empêche de vieillir. */}
+    <figure class="mx-auto mt-10 max-w-2xl">
+      <img src="/images/app-cours-mode-logique.webp" width="1800" height="1930" alt={l.methodPhotoAlt} data-lb="cours-methode" class="w-full rounded-card border border-ink/10 shadow-lg" loading="lazy" />
+      <figcaption class="mt-3 text-center text-sm text-ink-soft/70">{l.methodPhotoCaption}</figcaption>
+    </figure>
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
       {l.pillars.map((c, i) => (
         <div class="rounded-card border border-ink/10 bg-cream p-6"><Icon name={pillarIcons[i]} class="h-7 w-7 text-copper" /><h3 class="mt-3 font-display text-xl font-700">{c.t}</h3><p class="mt-2 text-ink-soft/85">{c.d}</p></div>
       ))}
@@ -119,6 +133,9 @@ const schoolEmail = 'School@lesagedavid.fr'
       ))}
     </div>
   </Section>
+  {/* La photo du cours (data-lb="cours-methode") s'ouvre en plein écran. */}
+  <Lightbox labels={{ close: l.lightbox.close, zoom: l.lightbox.zoom }} />
+
   {/* Réservation de cours (section #formules) — enregistre la demande en base. */}
   <BookingForm lang={lang} />
 </Layout>

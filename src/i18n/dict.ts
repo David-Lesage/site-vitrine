@@ -1522,6 +1522,22 @@ const fr = {
       { t: 'Mémoriser', d: 'Tu retiens par la forme et l’émotion, pas par cœur. Les repères restent stables d’une gamme à l’autre.' },
       { t: 'Jouer & s’accompagner', d: 'Le handpan devient un vrai instrument d’accompagnement — chante sur les morceaux que tu aimes.' },
     ],
+    // 📷 27/08/2026 — LA PHOTO QUI PROUVE `promiseIntro`. Jusqu'ici, « j'utilise
+    //    Handpan Constellation Studio en cours » était une phrase sans image :
+    //    la section n'avait que trois cartes de texte. La photo montre un COURS
+    //    RÉEL — la main d'un ÉLÈVE (pas celle de David), l'app ouverte devant
+    //    lui en mode Logique. C'est la première preuve du site qu'un autre que
+    //    David se sert de l'application (point n°1 de la liste « photos qui
+    //    manquent » du 22/08) ET le point n°4 (« un cours en situation »).
+    //    ⚠️ Aucun visage sur la photo : une main et un avant-bras. Ne pas la
+    //    recadrer — l'écran y affiche le nom actuel « Handpan Constellation
+    //    Studio », c'est ce qui l'empêche de vieillir.
+    //    `methodPhotoAlt` = accessibilité + référencement (décrire ce qu'on voit) ;
+    //    `methodPhotoCaption` = la légende visible, à la première personne.
+    methodPhotoAlt: 'En cours : la main d’un élève joue sur un Neotone en bois, et juste à côté l’ordinateur affiche Handpan Constellation Studio en mode Logique — le cercle des degrés en couleurs, la bulle d’explication d’un degré ouverte à l’écran.',
+    methodPhotoCaption: 'En cours, je laisse le mode Logique ouvert devant l’élève : un degré à la fois, expliqué à l’écran pendant qu’il joue.',
+    // Libellés de la lightbox : la photo du cours s'ouvre en plein écran.
+    lightbox: { close: 'Fermer', zoom: 'Agrandir la photo' },
     formulasEyebrow: 'Formules & tarifs',
     formulasTitle: 'Choisis ton format',
     formulas: [

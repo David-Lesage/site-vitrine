@@ -29,7 +29,88 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 27/08/2026 — ⚖️ `/handpan-app` : LE MONDE DU « ET », PAS CELUI DU « OU »
+## ÉTAT ACTUEL — 27/08/2026 (soir) — 📷 `/cours` : LA PREMIÈRE PHOTO D'UN COURS RÉEL
+
+**Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (build 91 pages + rendu réel 375 px et 1280 px, FR + EN).**
+
+⚠️ **Les garde-fous de `/handpan-app` restent INTÉGRALEMENT ceux de la section juste en dessous**
+(équilibre acoustique / Neotone, aucun « d'abord », « acoustique » très haut). Ce chantier-ci
+**n'a pas touché `/handpan-app`** — vérifié : « acoustique » toujours à **421 px** (375 px, FR),
+« Neotone » à 462 px, zéro « d'abord », aucune image ajoutée sur cette page.
+
+### 📸 LA PHOTO
+
+`public/images/app-cours-mode-logique.webp` — **1800×1930, 155 Ko**, redimensionnement
+proportionnel pur depuis 2358×2527 (**aucun recadrage**, aucune déformation). Original conservé
+hors dépôt : `_medias-originaux-avec-titre/app-cours-mode-logique-source.jpg`.
+
+Ce qu'on y voit : **la main et l'avant-bras d'un ÉLÈVE** (pas David) jouant sur le **Neotone**
+en bois ; à gauche, le MacBook sur pied affichant **Handpan Constellation Studio en mode
+Logique** — le cercle des degrés en couleurs, une **bulle d'explication ouverte** ; au fond,
+enceinte Bose, tablette sur bras, fenêtre sur la verdure.
+✅ **Aucun visage** → pas de question de droit à l'image.
+✅ L'écran affiche le **nom actuel** de l'app → la photo ne vieillira pas avec le renommage.
+🚫 **Ne jamais la recadrer** : c'est ce nom lisible qui la date correctement.
+
+### 🎯 POURQUOI `/cours` ET PAS `/handpan-app` (le raisonnement, à ne pas refaire à l'envers)
+
+La photo apporte trois choses : **preuve sociale** (quelqu'un d'autre que David), **contexte
+d'apprentissage**, **mode Logique en action**.
+
+- ✅ **`/cours`, section « La méthode visuelle, en cours »** : `promiseIntro` affirme depuis
+  toujours « **J'utilise Handpan Constellation Studio en cours** » — et la section ne montrait
+  que **trois cartes de texte**. La photo est littéralement cette phrase prouvée. C'est aussi le
+  point **n°4** de la liste « photos qui manquent » du 22/08 (« un cours en situation »), et la
+  **première preuve du site** qu'un autre que David se sert de l'app (point n°1).
+  Placée **entre le chapô et les trois piliers** : on affirme → on prouve → on explique.
+- ❌ **`/handpan-app` : écartée volontairement.** Elle y aurait servi le point n°1 (preuve
+  sociale), mais elle montre un **Neotone** — et le compte de photos d'instrument de la page
+  vient d'être équilibré à **1 acoustique / 1 Neotone** après **trois** formulations
+  successives. L'ajouter le ferait passer à **1 / 2** et rouvrirait un équilibre à peine
+  refermé. De plus, la liste du 22/08 demande pour cette page une preuve sociale **sur
+  instrument acoustique** (point n°1) : la place reste réservée à cette photo-là, encore
+  manquante.
+
+### 🛠️ CE QUI A ÉTÉ FAIT
+
+| # | Geste | Fichier |
+|---|---|---|
+| ① | Photo convertie en WebP 1800×1930 (`cwebp -q 84`), `width`/`height` explicites, `loading="lazy"`, `data-lb="cours-methode"` | `public/images/` |
+| ② | `<figure class="mx-auto mt-10 max-w-2xl">` insérée après `SectionHeading`, avant la grille des 3 piliers (qui passe de `mt-10` à `mt-12`) | `LessonsPage.astro` |
+| ③ | **`<Lightbox />` ajoutée à `/cours`** (elle n'y était pas) — la photo s'ouvre en plein écran. Groupe d'une seule image : le composant masque tout seul ‹ › et le compteur | `LessonsPage.astro` |
+| ④ | Clés i18n **ajoutées** (aucune supprimée, vérifié par diff) : `lessons.methodPhotoAlt`, `lessons.methodPhotoCaption`, `lessons.lightbox` | `dict.ts`, `en.ts` |
+
+### ✍️ L'`alt` ET LA LÉGENDE
+
+- **`alt` FR** (accessibilité **et** référencement — on décrit ce qu'on voit vraiment) :
+  « En cours : la main d'un élève joue sur un Neotone en bois, et juste à côté l'ordinateur
+  affiche Handpan Constellation Studio en mode Logique — le cercle des degrés en couleurs, la
+  bulle d'explication d'un degré ouverte à l'écran. »
+- **Légende FR** (voix de David, 1ʳᵉ personne, dit ce que la photo prouve sans surjouer) :
+  « En cours, je laisse le mode Logique ouvert devant l'élève : un degré à la fois, expliqué à
+  l'écran pendant qu'il joue. »
+- **EN** : « Logic mode » = le nom du mode dans l'app (`studio.modes[0]`), **pas** Logic Pro —
+  c'est noté en commentaire dans `en.ts` pour qu'un futur passage ne le « corrige » pas.
+
+### 📊 MESURES (DOM en iframe, `dist/` servi en local)
+
+| | FR 375 px | EN 375 px | FR 1280 px | EN 1280 px |
+|---|---|---|---|---|
+| Photo rendue | 343×368 | 343×368 | 672×720 | 672×720 |
+| Haut de la photo | 2 870 px | 2 846 px | 1 906 px | 1 906 px |
+| Débordement horizontal | non | non | non | non |
+
+Rapport rendu = 1800/1930 exactement → **aucune déformation**. `/handpan-app` inchangée
+(421 px / 462 px, cf. plus haut).
+
+⚠️ **PIÈGE D'OUTILLAGE RECONFIRMÉ** : dans l'extension Chrome, l'onglet est en
+`visibilityState:"hidden"` → **les images `loading="lazy"` ne se chargent jamais**
+(`complete:false`, `naturalWidth:0`). Ce n'est pas un bug du site. Contournement utilisé :
+forcer `img.loading='eager'; img.src=img.src` avant de mesurer/capturer.
+
+---
+
+## 27/08/2026 (matin) — ⚖️ `/handpan-app` : LE MONDE DU « ET », PAS CELUI DU « OU »
 
 **Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (build + rendu réel 375 px et 1280 px, FR + EN).**
 
