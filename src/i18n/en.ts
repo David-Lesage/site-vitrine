@@ -350,6 +350,19 @@ export const en: Dict = {
     insBottom: 'Bottom',
     insNotes: 'notes',
     insTuning: 'Tuned to 432 Hz',
+    // 🖋️ AUTHORSHIP CREDIT (27/08/2026, David's request) — see the long note
+    // in dict.ts (key `insCredit`). The two scales are not his: Yonathan
+    // thought them out and designed them, made to measure. The credit must be
+    // readable EVERYWHERE the scales appear, spelled out, never in small print.
+    // ⚠️ Never attach it to the Now Groove creations (`shop.creationsBadge`,
+    // calabash kit): those are hand-finished by Kamou (Djoliba Percussion).
+    //
+    // ⚠️ SPELLING — BOTH FORMS ARE DELIBERATE, DO NOT UNIFY:
+    //  · “Yonathan” = the familiar form David uses throughout his story.
+    //  · “Yhonatan Ale-Yahav” = the full official name of Yishama's founder/CEO;
+    //    this is the form that carries the credit, and only this one.
+    insCredit:
+      'Made by Yishama — designed by <strong>Yhonatan Ale-Yahav</strong>. These two scales are in no catalogue: he is the one who thought them out and designed them for me, made to measure.',
     insFootnote:
       'These are one-off pieces: the names are my own working labels, not Yishama catalogue models. Each instrument on its own gives all seven degrees of its scale, with the root available in the bass.',
 
@@ -435,8 +448,10 @@ export const en: Dict = {
       { t: '🎯 Complete your scale', d: 'The app compares your real notes with what the chords require, and tells you exactly which ones are missing — then which second handpan would supply them, and how many songs that would unlock.' },
       { t: 'Hybrid mode', d: 'As soon as a second pan is there, both shells appear side by side and each chord is drawn straddling the two, with playing order and hands. Exactly my gymnastics problem — solved on screen.' },
     ],
+    // 🖋️ The app badge carries MY name — the sentence has to say who designed
+    // them. See the “AUTHORSHIP CREDIT” note above (key `insCredit`).
     bridgeSignature:
-      'My two custom scales are in the app, badged “✨ David Lesage Signature”. You can load them, listen to them and see what they allow, even without having them under your hands.',
+      'My two custom scales are in the app, badged “✨ David Lesage Signature”. The badge carries my name, but the scales are <strong>Made by Yishama — designed by Yhonatan Ale-Yahav</strong>. You can load them, listen to them and see what they allow, even without having them under your hands.',
     bridgeHonest:
       'To be honest about it: the app does not listen to you. It does not guess your scale through the microphone — you choose it, or you build your shell note by note. From there, it reasons about your real notes.',
     bridgeCta: 'Discover Handpan Constellation Studio',

@@ -38,6 +38,22 @@ export const videos = ['KI3-L5tvOso', 'wms1TpzaTYA', 'WYVtBfoz7T8', '2kVSLdpzt_M
  * `top` inclut le ding en [0]. `bottom` = notes du dessous.
  * Les noms sont les libellés de travail de David (ce ne sont pas
  * des modèles du catalogue Yishama).
+ *
+ * 🖋️ PATERNITÉ (27/08/2026) : ces deux gammes ont été PENSÉES ET CONÇUES
+ * pour David, sur mesure, par Yhonatan Ale-Yahav (Yishama). Le crédit
+ * « Made by Yishama — conçues par Yhonatan Ale-Yahav » doit accompagner
+ * les gammes partout où elles apparaissent (site + application). Le texte
+ * affiché vit dans src/i18n/dict.ts + en.ts, clés `yishama.insCredit` et
+ * `yishama.bridgeSignature`.
+ * ⚠️ Ne JAMAIS étendre ce crédit aux créations Now Groove (kit de calebasse
+ * « David Lesage Signature ») : elles sont finies à la main par Kamou
+ * (Djoliba Percussion). Même mot « Signature », facteur différent.
+ *
+ * ⚠️ ORTHOGRAPHE — LA COEXISTENCE DES DEUX GRAPHIES EST VOULUE :
+ *  · « Yonathan » = forme familière, employée dans tout le récit de David
+ *    (~22 occurrences FR / ~20 EN). Ne pas la « corriger ».
+ *  · « Yhonatan Ale-Yahav » = nom officiel complet du fondateur/CEO de
+ *    Yishama, réservé au crédit de paternité.
  */
 export const instruments: { id: string; name: string; ding: string; top: string[]; bottom: string[] }[] = [
   {

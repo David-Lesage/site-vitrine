@@ -383,6 +383,20 @@ const fr = {
     insBottom: 'Dessous',
     insNotes: 'notes',
     insTuning: 'Accordés en 432 Hz',
+    // 🖋️ CRÉDIT DE PATERNITÉ (27/08/2026, demande de David) — les deux gammes
+    // ne sont pas les miennes : c'est Yonathan qui les a pensées et conçues,
+    // sur mesure. Le crédit doit se lire PARTOUT où les gammes apparaissent,
+    // en toutes lettres, et jamais en petit. ⚠️ Ne PAS le coller sur les
+    // créations Now Groove (`shop.creationsBadge`, kit de calebasse) : elles
+    // sont finies à la main par Kamou (Djoliba Percussion) — autre facteur.
+    //
+    // ⚠️ ORTHOGRAPHE — LES DEUX GRAPHIES SONT VOULUES, NE PAS UNIFORMISER :
+    //  · « Yonathan » = la forme familière, celle que David emploie dans tout
+    //    son récit (et dans toute cette page). On la garde telle quelle.
+    //  · « Yhonatan Ale-Yahav » = le nom officiel complet du fondateur/CEO de
+    //    Yishama. C'est cette forme-là, et elle seule, qui porte le crédit.
+    insCredit:
+      'Made by Yishama — conçues par <strong>Yhonatan Ale-Yahav</strong>. Ces deux gammes ne sont dans aucun catalogue : c’est lui qui les a pensées et conçues pour moi, sur mesure.',
     insFootnote:
       'Ce sont des pièces uniques : leurs noms sont mes libellés de travail, pas des modèles du catalogue Yishama. Chaque instrument, seul, donne les sept degrés de sa gamme avec la fondamentale disponible dans le grave.',
 
@@ -472,8 +486,10 @@ const fr = {
       { t: '🎯 Compléter ta gamme', d: 'L’app compare tes notes réelles avec ce que demandent les accords, et te dit exactement lesquelles te manquent — puis quel second handpan les apporterait, et combien de morceaux ça débloquerait.' },
       { t: 'Le mode Hybride', d: 'Dès qu’un second pan est là, les deux coques s’affichent côte à côte et chaque accord se trace à cheval sur les deux, avec l’ordre de jeu et les mains. Exactement mon problème de gymnastique — résolu à l’écran.' },
     ],
+    // 🖋️ Le badge de l'app porte MON nom — la phrase doit dire qui les a
+    // conçues. Voir la note « CRÉDIT DE PATERNITÉ » plus haut (clé insCredit).
     bridgeSignature:
-      'Mes deux gammes sur mesure sont dans l’application, badgées « ✨ Signature David Lesage ». Tu peux les charger, les écouter et voir ce qu’elles permettent, même sans les avoir sous les mains.',
+      'Mes deux gammes sur mesure sont dans l’application, badgées « ✨ Signature David Lesage ». Le badge porte mon nom, mais les gammes sont <strong>Made by Yishama — conçues par Yhonatan Ale-Yahav</strong>. Tu peux les charger, les écouter et voir ce qu’elles permettent, même sans les avoir sous les mains.',
     bridgeHonest:
       'À dire honnêtement : l’app ne t’écoute pas. Elle ne devine pas ta gamme au micro — tu la choisis, ou tu construis ta coque note par note. À partir de là, elle raisonne sur tes notes réelles.',
     bridgeCta: 'Découvrir Handpan Constellation Studio',

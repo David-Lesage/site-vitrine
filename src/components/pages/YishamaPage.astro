@@ -142,6 +142,18 @@ const ld = [
   {/* ───────────── 4. LES DEUX INSTRUMENTS ───────────── */}
   <Section tone="cream-deep" id="instruments">
     <SectionHeading eyebrow={y.insEyebrow} title={y.insTitle} intro={y.insIntro} />
+
+    {/* 🖋️ CRÉDIT DE PATERNITÉ — demande de David (27/08/2026). Les deux gammes
+        ont été pensées et conçues pour lui par Yhonatan Ale-Yahav (Yishama).
+        Ce n'est pas une mention légale à caser en petit : elle se lit AVANT les
+        deux cartes, en toutes lettres, une seule fois pour les deux (les
+        répéter dans chaque carte reviendrait à l'écrire deux fois dans le même
+        écran). Texte : `yishama.insCredit` (FR + EN). */}
+    <p class="mx-auto mt-8 flex max-w-2xl items-start gap-3 rounded-card border border-copper/30 bg-cream p-5 text-base leading-relaxed text-ink-soft/90">
+      <Icon name="lucide:stamp" class="mt-0.5 h-5 w-5 shrink-0 text-copper" />
+      <span set:html={y.insCredit}></span>
+    </p>
+
     <div class="mt-12 grid gap-8 md:grid-cols-2">
       {instruments.map((ins) => (
         <div class="flex flex-col rounded-card border border-ink/10 bg-cream p-7">
