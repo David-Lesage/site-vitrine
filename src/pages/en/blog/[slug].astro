@@ -4,6 +4,11 @@ import Layout from '@/layouts/Layout.astro'
 import Section from '@/components/Section.astro'
 import Button from '@/components/Button.astro'
 import YouTube from '@/components/YouTube.astro'
+// 🖼️ Since 27/08/2026: articles may contain <figure> blocks with
+//    <img data-lb data-lb-wide>. The lightbox is therefore included on EVERY
+//    article — with no `data-lb` image it stays invisible and inert (the
+//    <div id="lightbox"> is hidden by default). Strictly additive.
+import Lightbox from '@/components/Lightbox.astro'
 import { localizePath } from '@/i18n/utils'
 import { articleLdJson, breadcrumbLdJson, videoLdJson } from '@/lib/ldJson'
 import { categoryLabel } from '@/lib/blogCategories'
@@ -104,6 +109,8 @@ if (d.youtubeId) ldJSON.push(...videoLdJson([{ id: d.youtubeId, name: d.title, d
       </div>
     </div>
   </Section>
+
+  <Lightbox labels={{ close: 'Close', prev: 'Previous image', next: 'Next image', zoom: 'Enlarge screenshot' }} />
 </Layout>
 
 <style>
@@ -154,4 +161,81 @@ if (d.youtubeId) ldJSON.push(...videoLdJson([{ id: d.youtubeId, name: d.title, d
     font-style: italic;
     color: color-mix(in srgb, var(--color-ink) 75%, transparent);
   }
+
+  /* ════════ 🖼️ IMAGES LÉGENDÉES DANS UN ARTICLE — ajouté le 27/08/2026 ════════
+     Le gabarit du blog n'avait AUCUN style de <figure> : une image posée dans un
+     `.md` s'affichait nue, pleine largeur, sans légende distincte. Le vocabulaire
+     visuel repris ici est celui, déjà déployé, de `/yishama` et `/cours` — coins
+     `rounded-card`, filet `border-ink/10`, ombre portée, légende centrée en
+     `text-sm text-ink-soft/70`. Rien n'est inventé.
+     ⚠️ Strictement ADDITIF : aucun autre article ne contient de <figure>, leur
+     rendu est donc inchangé (vérifié article par article le 27/08/2026). */
+  .prose-blog :global(figure) {
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+  .prose-blog :global(figure img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-card);
+    border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+    box-shadow: 0 18px 40px -22px rgba(31, 22, 17, 0.55);
+  }
+  .prose-blog :global(figcaption) {
+    margin-top: 0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: color-mix(in srgb, var(--color-ink-soft) 78%, transparent);
+  }
+  /* 🔍 La ligne « clique pour agrandir » est une LIGNE À PART, jamais un bout de
+     légende : la légende est la voix de David, on n'y colle pas un mode d'emploi.
+     (Même règle que `insAppZoomHint` sur /yishama.) */
+  .prose-blog :global(.figure-hint) {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: color-mix(in srgb, var(--color-ink-soft) 62%, transparent);
+  }
+  .prose-blog :global(.figure-hint svg) {
+    width: 0.9rem;
+    height: 0.9rem;
+    flex: none;
+    color: var(--color-copper);
+  }
+
+  /* ════════ 📊 TABLEAUX — ajouté le 27/08/2026 ════════
+     `prose-blog` ne stylait pas les tableaux alors que QUATRE articles en
+     contiennent déjà (`setup-nomade-neotone-bose-s1` et `quel-casque-choisir-neotone`,
+     FR + EN) : colonnes collées, aucune séparation, en-tête indistinct.
+     Le texte des cellules revient à la ligne (pas de défilement horizontal) :
+     ces tableaux sont des tableaux de PRIX, pas de données larges, et une page
+     qui déborde latéralement sur un téléphone est pire qu'une cellule haute. */
+  .prose-blog :global(table) {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: color-mix(in srgb, var(--color-ink) 85%, transparent);
+  }
+  .prose-blog :global(thead) { background: var(--color-cream-deep); }
+  .prose-blog :global(th) {
+    text-align: left;
+    font-weight: 700;
+    color: var(--color-ink);
+    padding: 0.6rem 0.75rem;
+    border-bottom: 2px solid color-mix(in srgb, var(--color-copper) 45%, transparent);
+  }
+  .prose-blog :global(td) {
+    padding: 0.6rem 0.75rem;
+    vertical-align: top;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+  }
+  .prose-blog :global(tbody tr:last-child td) { border-bottom: 0; }
 </style>

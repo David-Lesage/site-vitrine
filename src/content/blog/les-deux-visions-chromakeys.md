@@ -55,7 +55,35 @@ La lunette « rôle » donne une couleur à ces **places**, pas aux notes. Et l�
 - Si ta gamme est en **mi**, c'est le **mi** qui devient rouge — parce que son rôle est d'être le premier degré.
 - En ré, c'est le ré qui devient rouge. En sol, le sol. La couleur suit la **fonction**, pas le nom.
 
+<figure>
+  <img
+    src="/images/blog-chromakeys-degres-e18-logique.webp"
+    width="2000"
+    height="1233"
+    alt="Handpan Constellation Studio, onglet Logique, vue Étoile : la gamme E 18 — David Lesage Signature. L'accord I, « I ÉQUILIBRE E », est allumé — le ding E3 au centre, puis E4, B3 et G♯3 sont tous les quatre en rouge et reliés par un tracé ; toutes les autres notes de la coque (F♯3, B4, A4, C♯5, G♯4, D♯5, E5, F♯4, C♯3, D♯4, C♯4, D♯3, B2, A2) restent grises. En bas de l'écran, les sept cartes d'accords, chacune dans la couleur de son degré : I Équilibre E rouge, II Élan F♯m orange, III Aventure G♯m jaune, IV Détente A vert, V Tension B cyan, VI Nostalgie C♯m bleu, VII Mystère D♯° magenta."
+    data-lb="chromakeys-degres-logique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Ma gamme E 18 dans l'application, premier degré allumé : c'est le <strong>mi</strong> qui est rouge — le ding E3, et avec lui E4, B3 et G♯3. Aucun do n'est rouge à cet écran. En bas, les sept degrés, chacun dans sa couleur.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
 C'est la lunette de la **grammaire**. Elle ne te dit pas où tu es, elle te dit *ce que tu es en train de faire*. C'est celle du Mode Logique, et c'est elle qui porte les émotions dont je parle dans [Jouer avec les émotions : les 7 degrés colorés](/blog/handpan-emotions-degres).
+
+<figure>
+  <img
+    src="/images/blog-chromakeys-degres-e18-partition.webp"
+    width="2000"
+    height="1524"
+    alt="L'Éditeur de Partition Visuelle de Handpan Constellation Studio, en mode « Séquence d'accords ». La planche exportable s'intitule « E 18 — DAVID LESAGE SIGNATURE » et porte, juste en dessous, la ligne « Made by Yishama Pantam - Yhonatan Ale-Yahav ». Les sept accords de la gamme sont dessinés chacun sur sa propre coque, dans la couleur de son degré, avec les notes qui le composent écrites dessous : E rouge (E – G♯ – B), F♯m orange (F♯ – A – C♯), G♯m jaune (G♯ – B – D♯), A vert (A – C♯ – E), B cyan (B – D♯ – F♯), C♯m bleu (C♯ – E – G♯), D♯ magenta (D♯ – F♯ – A). Le ding E3, au centre de chaque coque, change de couleur d'un accord à l'autre : rouge dans E, vert dans A, bleu dans C♯m. À gauche, le panneau de réglages : Mode, Mise en page, Style (texture Handpan Acoustique, contour des notes doré, tracé de l'accord « Ouvert »), Contenu, Diagrammes."
+    data-lb="chromakeys-degres-partition"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>La même logique, imprimable : les sept accords de mon E 18, chacun dans la couleur de son degré. Le ding, au centre, est toujours le même mi — rouge dans l'accord de E, vert dans celui de A, bleu dans C♯m. La couleur suit le rôle, pas le nom. Et sous le titre, l'application imprime « Made by Yishama Pantam - Yhonatan Ale-Yahav » : le crédit de mes gammes les suit jusque sur la partition.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Le piège : en do, les deux lunettes disent la même chose
 
@@ -67,6 +95,28 @@ Change de tonalité, et le voile se lève d'un coup. Prends un pan en **mi** :
 
 - Lunette **note** : le mi est **jaune** (c'est un mi, il est jaune partout et depuis toujours), et le rouge, lui, est allé se poser sur le do.
 - Lunette **rôle** : le mi est **rouge** (c'est le premier degré, la maison), et il n'y a plus une seule note rouge « parce que c'est un do ».
+
+<!-- 📸 PLACE RÉSERVÉE — CAPTURE « CHAKRAS » (couleur = NOTE), pas encore fournie par David.
+     C'est ICI qu'elle va, et nulle part ailleurs : juste après les deux puces qui opposent
+     la lunette note et la lunette rôle sur le MÊME pan en mi.
+     CE QU'ELLE DOIT MONTRER : le même écran que la capture juste au-dessus (Handpan
+     Constellation Studio, onglet Logique, vue Étoile, gamme E 18 — David Lesage Signature),
+     mais avec « Couleur notes » réglé sur CHAKRAS : le mi y est JAUNE, et c'est le do
+     (C♯3/C♯4/C♯5 → les do, s'il y en a) qui porte le rouge. Le contraste avec l'image
+     précédente EST la démonstration de l'article.
+     QUAND ELLE ARRIVE (3 gestes, pas plus) :
+       1. `cwebp -q 92 -sharp_yuv -resize 2000 0 <source> -o public/images/blog-chromakeys-notes-e18-chakras.webp`
+          (aucun recadrage : le titre de l'app en haut date la capture) ; original dans
+          `_medias-originaux-avec-titre/blog-chromakeys-notes-e18-chakras-source.jpg`.
+       2. Remplacer ce commentaire par une <figure> copiée sur celles ci-dessus, avec les
+          vraies dimensions dans width/height, `loading="lazy"`, `data-lb-wide`.
+       3. Choix à faire à ce moment-là : lui donner `data-lb="chromakeys-degres-logique"`
+          — le MÊME groupe que la capture « degré » — pour qu'on bascule de l'une à l'autre
+          avec les flèches ‹ › de la lightbox. C'est tout l'intérêt : deux lunettes, un seul
+          écran. (Le groupe crée alors un compteur « 1 / 2 », comportement normal.)
+     ⛔ NE JAMAIS la fabriquer : ni montage, ni recolorisation, ni schéma imitant l'app.
+        L'article se lit et se comprend entièrement sans elle — aucune phrase ne pointe vers
+        une image absente. Tant qu'elle n'est pas là, on ne touche à rien. -->
 
 Même instrument, même écran, même roue de couleurs. Deux images différentes, et **aucune des deux ne ment**. C'est exactement pour ça qu'il faut savoir laquelle on a sur le nez.
 
