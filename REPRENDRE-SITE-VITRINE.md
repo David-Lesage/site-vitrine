@@ -29,7 +29,114 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 27/08/2026 (4ᵉ passe) — 🔴🟡 LES CHROMAKEYS ONT DEUX VISIONS, ET C'EST ÉCRIT
+## ÉTAT ACTUEL — 27/08/2026 (5ᵉ passe) — 🖼️ LE GABARIT DU BLOG SAIT ENFIN PORTER UNE IMAGE
+
+**Statut : ✅ COMMITÉ (`ce62fe3`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, build 93 pages).**
+
+- 🇫🇷 https://www.lesagedavid.fr/blog/les-deux-visions-chromakeys
+- 🇬🇧 https://www.lesagedavid.fr/en/blog/les-deux-visions-chromakeys
+
+**Demande de David** : illustrer l'article ChromaKeys avec les captures de l'app qu'il vient de
+fournir. **Il en a fourni DEUX sur trois** — la troisième (« Chakras », couleur = note) manque
+encore, et **c'est assumé** : sa place est réservée, rien n'a été fabriqué.
+
+### 🧰 LE TRAVAIL DE FOND — CE QUI SERVIRA À TOUS LES ARTICLES SUIVANTS
+
+Le constat du 27/08 (4ᵉ passe) était juste : `src/pages/blog/[slug].astro` n'avait **ni
+`<Lightbox />`, ni style de `<figure>`/`<figcaption>`, ni style de tableau**. C'est réparé une
+fois pour toutes, **dans les deux gabarits** (`src/pages/blog/[slug].astro` **et**
+`src/pages/en/blog/[slug].astro` — ils sont jumeaux, toute modification va dans les deux).
+
+| # | Ajout | Détail |
+|---|---|---|
+| ① | `<figure>` / `<figcaption>` / `.figure-hint` stylés | Vocabulaire visuel **repris tel quel** de `/yishama` et `/cours` : `rounded-card`, filet `ink/12`, ombre portée, légende centrée `0.9rem` en `ink-soft/78`, ligne d'aide `0.78rem` avec picto cuivré. Rien d'inventé. |
+| ② | `<Lightbox />` sur **tous** les articles | Avec le second état **`data-lb-wide`**. Sans image marquée `data-lb`, elle reste invisible et inerte. |
+| ③ | **Tableaux** stylés | Il y en a **vraiment** : `setup-nomade-neotone-bose-s1` et `quel-casque-choisir-neotone`, **FR + EN** — ils s'affichaient **nus**. En-tête sur `cream-deep`, filet cuivré, séparateurs de lignes, texte qui revient à la ligne (**pas** de défilement horizontal : ce sont des tableaux de prix, et une page qui déborde sur un téléphone est pire qu'une cellule haute). |
+| ④ | `astro.config.mjs` — les **commentaires HTML** d'un `.md` ne partent plus en prod | Petit plugin rehype **local, ZÉRO dépendance npm**. Sans lui, la note de chantier qui réserve la place d'une image (chemins de fichiers, commande `cwebp`) partait **telle quelle dans le HTML public**. Vérifié : 0 occurrence en ligne. |
+
+⚠️ **Le build affiche un avertissement de dépréciation** : `markdown.rehypePlugins` est déprécié
+dans cette version d'Astro (« pass them to `unified({...})` from `@astrojs/markdown-remark` »).
+**Ça fonctionne, c'est vérifié en prod** — mais si un jour ça casse, c'est là qu'il faut regarder.
+
+### 🚫 CE QUI N'A **PAS** ÉTÉ TOUCHÉ, ET LA PREUVE
+
+- **Aucun autre article** que `les-deux-visions-chromakeys(-en)`. Les 4 phrases « degré » et les 3
+  contradictions de `audits/AUDIT-CHROMAKEYS-2026-08-27.md` **attendent toujours David**.
+- **Les images markdown existantes** (`![...](...)` dans `les-constellations-du-handpan`,
+  `diagrammes-accords-handpan-pdf`, etc.) ne sont **pas** dans des `<figure>` → la nouvelle règle
+  ne les atteint pas. Vérifié en rendu : rayon `0px`, pas cliquables, 343 px, comme avant.
+- 🔬 **Preuve de non-régression, mesurée et pas promise** : `dist/` construit **avant** et **après**
+  (via `git stash`), puis diff du corps `.prose-blog` de **10 pages d'article** — 5 articles × 2
+  langues, dont **un avec tableau** (`setup-nomade…`), **un avec images markdown**
+  (`les-constellations…`) et **un sans image** (`handpan-par-les-couleurs`), plus
+  `quel-casque-choisir-neotone` et `diagrammes-accords-handpan-pdf` :
+  **`IDENTIQUE` sur les 10, octet pour octet.** Le diff global ne montre que **56 fichiers** (les
+  28 articles × 2 langues), et **aucune autre page du site** ; sur un article non touché la seule
+  différence est **le CSS ajouté (inerte sans `<figure>` ni `<table>`) + le `<div id="lightbox">`**.
+
+### 📸 LES DEUX IMAGES — OÙ, ET POURQUOI LÀ
+
+Conversion `cwebp -q 92 -sharp_yuv -resize 2000 0`, **aucun recadrage** (le titre de l'app date la
+capture, et sur la B le crédit Yishama doit rester). Originaux hors dépôt dans
+`_medias-originaux-avec-titre/` (suffixe `-source.jpg`).
+🔬 **Sans-perte testé et écarté ici** (contrairement au schéma manuscrit de la 3ᵉ passe) : 616 Ko
+et 929 Ko en `-lossless`, contre **132 Ko et 212 Ko** en `-q 92 -sharp_yuv`. Ces captures ont un
+fond photographique (la texture du pan) : le sans-perte n'y gagne rien. **Toujours mesurer.**
+
+**Les deux vont dans la MÊME section, `## Lunette 2 — le degré`.** C'est voulu : c'est la seule
+section de l'article où la couleur suit le rôle, et David a dit de la B « **photo pour illustrer le
+rôle en tant que degré** ».
+
+| | Fichier | Où exactement | Ce que ça prouve |
+|---|---|---|---|
+| **A** | `public/images/blog-chromakeys-degres-e18-logique.webp` **2000×1233, 132 Ko** | **juste après les 3 puces** de la règle (« si ta gamme est en mi, c'est le mi qui devient rouge ») | La règle **en image, sur l'instrument** : onglet Logique, vue Étoile, E 18, accord I allumé — **E3 (ding), E4, B3 et G♯3 en rouge**, tout le reste gris, et les 7 cartes de degrés en bas. **Aucun do n'est rouge.** |
+| **B** | `public/images/blog-chromakeys-degres-e18-partition.webp` **2000×1524, 212 Ko** | **en fin de section**, après le paragraphe « lunette de la grammaire » | L'Éditeur de Partition Visuelle : les 7 accords chacun dans la couleur de son degré. 👉 **Le clou** : le **même ding E3** est **rouge dans E, vert dans A, bleu dans C♯m**. La couleur suit le **rôle**, pas le nom. |
+
+🖋️ **LE CRÉDIT YISHAMA EST DANS LE DOCUMENT EXPORTÉ.** Sur la planche B, sous
+« **E 18 — DAVID LESAGE SIGNATURE** », l'app imprime **« Made by Yishama Pantam - Yhonatan
+Ale-Yahav »**. C'est dit **sobrement** dans l'`alt` **et** dans la légende (« le crédit de mes
+gammes les suit jusque sur la partition »). ⚠️ La ligne dit **« Yishama Pantam »**, pas « Yishama »
+seul : **ne jamais la raccourcir**. Et ça n'annule PAS la dette de
+`app-hybride-deux-gammes.webp` (2ᵉ passe) : sur CETTE capture-là, le crédit n'est toujours pas visible.
+
+### 📍 LA PLACE RÉSERVÉE POUR LA CAPTURE « CHAKRAS » — L'ENDROIT EXACT
+
+**Section `## Le piège : en do, les deux lunettes disent la même chose`, immédiatement après les
+deux puces qui opposent la lunette note et la lunette rôle** (dernière puce : « … et il n'y a plus
+une seule note rouge “parce que c'est un do” »). Un commentaire de ~18 lignes est là, **en FR et en
+EN**, qui dit ce que l'image doit montrer, la commande `cwebp` à lancer, le nom de fichier prévu
+(`blog-chromakeys-notes-e18-chakras.webp`) et **la décision à prendre à ce moment-là** : lui donner
+`data-lb="chromakeys-degres-logique"` — **le même groupe que la capture A** — pour qu'on bascule de
+l'une à l'autre avec les flèches ‹ › de la lightbox. *Deux lunettes, un seul écran.*
+✅ **L'article se lit complet sans elle** : aucune phrase du type « comme tu le vois ci-dessous ».
+🙈 Ces commentaires **ne sortent pas en prod** (voir ④ ci-dessus) — vérifié en ligne.
+
+### 🔍 L'AGRANDISSEMENT — MESURÉ EN PROD, PAS PROMIS
+
+| état (375 px) | largeur | |
+|---|---|---|
+| dans la page | **343 px** | image A rendue 343×212, image B 343×262 |
+| lightbox « ajustée » | **343 px** | **gain ZÉRO** — le constat d'hier se reconfirme une 3ᵉ fois |
+| lightbox **taille réelle** (un 2ᵉ clic sur l'image) | **2000 px** | **×5,83**, défilement X (2000/343) **et** Y (1233/747) |
+
+✅ **Vérifié en capture réelle à 375 px**, en taille réelle : on lit nettement `E3`, `E4`, `B3`,
+`G♯3`, `F♯3`, `B4`, `A4`, `C♯5`, `G♯4`, `E5`, `D♯5`, `C♯4`, `A2` et l'étiquette
+« E 18 — David Lesage Signature ». La ligne d'aide est donc honnête.
+Desktop 1280 : **704×435** et **704×537** — rapports 1,6184 et 1,3110 pour des sources à 1,6221 et
+1,3123 : **aucune déformation**. Aucun débordement horizontal, FR ni EN, 375 px ni 1280 px.
+
+### ⚠️ DEUX FICHIERS PIÈGES DANS `_medias-originaux-avec-titre/`
+
+`chromakeys-e18-mode-chakras.png` et `chromakeys-e18-mode-degres.png` (1100×1100, déposés le
+27/08 à 06:31) **NE SONT PAS des captures de l'app** : ce sont des rendus ratés d'une tentative
+antérieure (pastilles toutes grises, badges numérotés incohérents, aucune couleur de chakra).
+🚫 **Ne JAMAIS les publier ni les prendre pour la capture « Chakras » manquante.** Ils sont laissés
+en place (dossier hors dépôt) parce qu'on ne supprime pas les étapes de recherche — mais ils sont
+inutilisables. La vraie capture Chakras **n'existe pas encore**.
+
+---
+
+## 27/08/2026 (4ᵉ passe) — 🔴🟡 LES CHROMAKEYS ONT DEUX VISIONS, ET C'EST ÉCRIT
 
 **Statut : ✅ COMMITÉ (`1a0d8ed`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, build 93 pages).**
 
