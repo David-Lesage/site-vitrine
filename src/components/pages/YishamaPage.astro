@@ -406,6 +406,68 @@ const ld = [
       <p set:html={y.bridgeP1b}></p>
       <p set:html={y.bridgeP1c}></p>
       <p set:html={y.bridgeP2}></p>
+    </div>
+
+    {/* 📄 LE DOCUMENT D'AOÛT 2023 — LA PIÈCE, PAS L'ILLUSTRATION (27/08/2026).
+
+        POURQUOI ICI, ET PAS EN SECTION 4 « Les deux instruments ».
+        `bridgeP2`, juste au-dessus, est la phrase la plus forte de la page :
+        « En août 2023, j'ai commencé un document […] Des cartes colorées, une
+        note par couleur. Ce document est devenu Handpan Constellation Studio. »
+        Jusqu'ici c'était une AFFIRMATION SANS PREUVE. Cette image EST ce
+        document — elle transforme la phrase en pièce à conviction, et elle
+        montre littéralement les « cartes colorées, une note par couleur » que
+        la phrase annonce. Aucun autre endroit du site ne fait ça.
+
+        La section 4 avait été envisagée (l'effet avant/après avec la capture
+        de l'app `app-hybride-deux-gammes.webp`, qui montre les deux mêmes
+        instruments calculés en 2026). Écartée pour deux raisons :
+        ① en section 4 l'image serait REDONDANTE — mêmes pans, mêmes notes que
+           la capture juste à côté ; le lecteur n'apprendrait que « c'est plus
+           vieux ». Ici elle est la seule preuve d'une affirmation ;
+        ② la section 4 est déjà la plus chargée de la page (encadré de crédit à
+           deux paragraphes + 2 cartes de gammes + note de bas de section +
+           grande capture + ligne d'aide) : une seconde grande image dense en
+           aurait fait un mur. La section 9, elle, est un bloc de CINQ
+           paragraphes d'affilée sans aucune image — c'est elle qui avait
+           besoin d'une respiration.
+        L'avant/après n'est pas perdu : il est porté par la légende, pas par
+        l'adjacence physique.
+
+        ⚠️ GROUPE DE LIGHTBOX SÉPARÉ (`yishama-methode-2023`), volontairement
+        PAS `yishama-app`. Les regrouper aurait donné des flèches ‹ › entre les
+        deux images — mais la lightbox n'affiche aucun texte : on sauterait d'un
+        écran d'app à un schéma manuscrit sans explication. Le récit a besoin de
+        la légende, il ne passe pas par la navigation. Ça évite aussi de changer
+        le comportement, déjà vérifié et déployé, de l'image de la section 4
+        (aujourd'hui seule dans son groupe, donc sans flèches ni compteur).
+
+        🚫 NE JAMAIS RECADRER NI « NETTOYER » CETTE IMAGE. Le fichier est la
+        page 4 telle quelle (WebP SANS PERTE 1800×1013, conversion pure du PNG
+        d'archive, aucun redimensionnement) : les fautes du bandeau, les
+        pastilles de travers et les cases pâles font partie de la pièce. Le
+        sans-perte n'est pas un luxe ici : les couleurs SONT le sujet, et une
+        compression avec perte les aurait altérées (elle pesait d'ailleurs deux
+        fois plus lourd sur ce type d'aplats). */}
+    <figure class="mx-auto mt-10 max-w-4xl">
+      <img
+        src="/images/methode-2023-cartographie-notes.webp"
+        width="1800"
+        height="1013"
+        alt={y.bridgeDocAlt}
+        data-lb="yishama-methode-2023"
+        data-lb-wide
+        class="w-full rounded-card border border-ink/10 shadow-lg"
+        loading="lazy"
+      />
+      <figcaption class="mx-auto mt-3 max-w-3xl text-center text-sm text-ink-soft/70">{y.bridgeDocCaption}</figcaption>
+      <p class="mt-2 flex items-center justify-center gap-2 text-xs text-ink-soft/60">
+        <Icon name="lucide:maximize-2" class="h-3.5 w-3.5 shrink-0 text-copper" />
+        {y.bridgeDocZoomHint}
+      </p>
+    </figure>
+
+    <div class="mx-auto mt-10 max-w-3xl space-y-5 text-lg leading-relaxed text-ink-soft/90">
       <p>{y.bridgeP3}</p>
     </div>
 
@@ -450,10 +512,16 @@ const ld = [
   </Section>
 
   <VideoModal />
-  {/* La capture de l'app (data-lb="yishama-app") s'ouvre en plein écran : c'est
-      une interface dense, les noms de notes ne se lisent qu'agrandis — surtout
-      sur mobile. Groupe d'une seule image : la lightbox masque d'elle-même les
-      flèches ‹ › et le compteur. La photo de la section « Ensemble » reste
-      volontairement SANS `data-lb` (elle n'a rien à faire lire de près). */}
+  {/* DEUX images de la page s'ouvrent en plein écran, chacune SEULE dans son
+      groupe (la lightbox masque alors d'elle-même les flèches ‹ › et le
+      compteur), et toutes deux en `data-lb-wide` — ce sont des documents
+      DENSES, dont le contenu ne se lit qu'en taille réelle :
+        · `yishama-app`            — la capture de l'app (section 4) ;
+        · `yishama-methode-2023`   — la page 4 du document d'août 2023
+                                     (section 9). Voir le commentaire posé
+                                     au-dessus de sa <figure> : le groupe est
+                                     séparé exprès, ne pas les fusionner.
+      La photo de la section « Ensemble » reste volontairement SANS `data-lb`
+      (elle n'a rien à faire lire de près). */}
   <Lightbox labels={{ close: y.lightbox.close, zoom: y.lightbox.zoom }} />
 </Layout>

@@ -491,6 +491,38 @@ export const en: Dict = {
       'On top of that comes the very thing that makes it magical: the handpan is most often a <strong>modal</strong> instrument. That is a strength, and a wonderful way in — especially if you have never played music, you get a beautiful result almost straight away, with no theory. But you also go round in circles very fast. And the moment you are a professional musician expecting chromatic freedom, or you want to sing real songs over it — my case — it becomes very complex, very quickly. I came from drums, a purely rhythmic instrument: I had no grounding in harmony to fall back on.',
     bridgeP2:
       'In August 2023 I started a document to work out, at last, how to build my chords across the two pans. Coloured cards, one colour per note. <strong>That document became Handpan Constellation Studio.</strong>',
+    // 📄 PAGE 4 OF THE AUGUST 2023 DOCUMENT (added 27/08/2026) — see the long
+    // note in dict.ts for the full reasoning. Two things must survive any
+    // future rewrite of these three keys:
+    //
+    // 🚨 1. DO NOT FIX THE SPELLING OF THE TITLE QUOTED IN `bridgeDocAlt`.
+    // “Complete handpan Maping of placment of notes on the handpans by type of
+    // note” is what David wrote by hand in 2023. “Maping”, “placment” and the
+    // singular “handpan” are the ORIGINAL mistakes: this is an archive piece,
+    // its spelling is part of it. “(original spelling)” is there so readers do
+    // not take them for a site typo — not as a licence to clean them up.
+    //
+    // 🎨 2. THE CHROMAKEYS CLAIM IS DELIBERATELY LIMITED TO THE *RULE*.
+    // Verified 27/08/2026 against the app's own table
+    // (`melody/melody-model.ts`, “colour = absolute note”): the rule is
+    // identical — colour follows the note NAME, not the octave and not the
+    // scale — and 5 of the 7 hues match (C red, D orange, E yellow, F green,
+    // B magenta), sharps taking a lighter shade of their neighbour in both.
+    // BUT two moved: G was cyan in 2023 and is blue today (#2563EB); A was
+    // blue and is violet (#7C3AED). So the caption says “one colour per note,
+    // whatever the octave”, which is exact — never “the same colours as
+    // today”, which would be false.
+    bridgeDocAlt:
+      'A page from a document made by hand in August 2023, titled “Complete handpan Maping of placment of notes on the handpans by type of note” / “Cartographie complète du placement des notes sur les handpan par type de notes” (original spelling). On the left, the shell of the E 18 on an ochre background, its ding E3 at the centre and all its notes around it as coloured pads; on the right, the shell of the D Kurd 18 on a cream background, its ding D3 at the centre, its notes laid out the same way, the bottom notes included. Below, a four-octave chromatic grid from C2 to B5: the cells for the notes actually owned are filled in with colour, the rest left pale. Each note name has its own colour, the same in every octave: C red, D orange, E yellow, F green, G cyan, A blue, B magenta. On the right, a small “Reminder / Rappel” table gives the French note names: C = Do, D = Ré, E = Mi…',
+    bridgeDocCaption:
+      'August 2023, page 4 out of 21 in that document: my two pans drawn by hand with every one of their notes, and underneath the four octaves where I coloured in the ones I actually owned. One colour per note, whatever the octave — that is already the ChromaKeys rule of the app, three years before it. I never finished it: I stopped along the way because it was too complex for me to take in, my level of music theory was too weak to understand and model all of it properly.',
+    // ⚠️ Help line kept separate from the caption, as with the app screenshot
+    // in section 4: the caption is David's voice, not a set of instructions.
+    // It is needed — this is the densest image on the site (a 48-cell grid plus
+    // some thirty pads) and it is only ~343 px wide on a phone.
+    bridgeDocZoomHint:
+      'Dense image: open it, then click it again for full size — that is where the note names and the grid become readable.',
+
     bridgeP3:
       'The strangest part is that the original question came from him. Back in August 2022, Yonathan wrote to me about the “chromatic, singer-composer” instrument: “try to play some songs in the app on that scale, so we understand which notes you’re missing — and we can find a way to add them.” Three years later, the app answers that question, for everyone.',
     bridgeAppTitle: 'What the app does today for an acoustic handpan',

@@ -547,6 +547,58 @@ const fr = {
       'S’y ajoute ce qui fait sa magie : le handpan est le plus souvent un instrument <strong>modal</strong>. C’est une force, et une porte d’entrée merveilleuse — surtout quand on n’a jamais fait de musique, on obtient un résultat beau presque tout de suite, sans théorie. Mais on tourne aussi en rond très vite. Et dès qu’on est musicien professionnel, qu’on attend du chromatique, ou qu’on veut chanter de vraies chansons par-dessus — mon cas — ça devient très complexe, très vite. Moi, je venais de la batterie, un instrument purement rythmique : je n’avais aucune base d’harmonie sur laquelle m’appuyer.',
     bridgeP2:
       'En août 2023, j’ai commencé un document pour voir, enfin, comment composer mes accords sur mes deux pans. Des cartes colorées, une note par couleur. <strong>Ce document est devenu Handpan Constellation Studio.</strong>',
+    // 📄 LA PAGE 4 DU DOCUMENT D'AOÛT 2023 (ajoutée le 27/08/2026)
+    // Source : `archives/2023-08-methode-manuscrite/pages/slide-04.png`, page 4
+    // des 21 diapositives de « David Lesage Scale Methode », créé le 04/08/2023
+    // et resté INACHEVÉ (la diapo 12 est noire et vide).
+    //
+    // 🚨 NE PAS CORRIGER L'ORTHOGRAPHE DU TITRE CITÉ DANS `bridgeDocAlt`.
+    // Le bandeau de la page dit, de la main de David en 2023 : « Complete
+    // handpan Maping of placment of notes on the handpans by type of note ».
+    // « Maping », « placment » et « handpan » au singulier sont les fautes
+    // D'ORIGINE : c'est un document d'archive, son orthographe fait partie de
+    // la pièce. La mention « (orthographe d'origine) » est là pour qu'on ne
+    // les prenne pas pour une coquille du site — elle ne les autorise pas à
+    // être « nettoyées ».
+    //
+    // 🎨 LA CORRESPONDANCE AVEC LES CHROMAKEYS — CE QUI EST VÉRIFIÉ, ET CE QUI
+    // NE L'EST PAS. Vérifié le 27/08/2026, image ouverte, table de l'app lue :
+    //   · LA RÈGLE est identique. En 2023 comme aujourd'hui, la couleur suit le
+    //     NOM de la note, pas l'octave et pas la gamme (E3, E4 et E5 sont
+    //     jaunes sur les deux coques ; C3, C4, C5 rouges). C'est exactement ce
+    //     que fait `CHROMAKEYS` dans l'app (`melody/melody-model.ts`), indexée
+    //     sur la classe de note : « couleur = note absolue ».
+    //   · MÊME RÈGLE POUR LES ALTÉRATIONS : le dièse prend une version plus
+    //     claire de la couleur de sa voisine (C# rouge délavé, D# orange pâle,
+    //     F# vert pâle) — l'app fait pareil (C
+    //     #DC2626 / C# #EF4444, D #EA580C / D# #F97316, F #16A34A / F# #22C55E).
+    //   · 5 TEINTES SUR 7 SONT LES MÊMES : do rouge, ré orange, mi jaune, fa
+    //     vert, si magenta.
+    //   · ⚠️ 2 ONT BOUGÉ DEPUIS : sol était CYAN en 2023, il est BLEU dans
+    //     l'app (#2563EB) ; la était BLEU en 2023, il est VIOLET (#7C3AED).
+    // 👉 D'où la formulation de `bridgeDocCaption` : elle affirme la RÈGLE
+    // (« une couleur par note, quelle que soit l'octave »), qui est exacte au
+    // mot près, et n'affirme PAS que chaque teinte de 2023 est celle
+    // d'aujourd'hui — parce que deux ne le sont pas. Ne pas « améliorer » cette
+    // phrase en « les mêmes couleurs qu'aujourd'hui » : ce serait faux.
+    //
+    // 🗣️ La dernière phrase de la légende est la FORMULATION DE DAVID sur la
+    // raison de l'abandon (« trop complexe pour moi à appréhender », « mon
+    // niveau de théorie musicale était trop faible pour pouvoir tout bien
+    // comprendre et modéliser »). Ne pas la reformuler en quelque chose de plus
+    // flatteur ou de plus héroïque : cette honnêteté-là est sa marque.
+    bridgeDocAlt:
+      'Page d’un document fait à la main en août 2023, intitulée « Complete handpan Maping of placment of notes on the handpans by type of note » / « Cartographie complète du placement des notes sur les handpan par type de notes » (orthographe d’origine). À gauche, la coque du E 18 sur fond ocre, son ding E3 au centre et toutes ses notes autour en pastilles colorées ; à droite, la coque du D Kurd 18 sur fond crème, son ding D3 au centre, ses notes disposées de la même façon, celles du dessous comprises. En bas, une grille chromatique de quatre octaves, de C2 à B5 : les cases des notes réellement possédées sont coloriées, les autres restent pâles. Chaque nom de note a sa couleur, la même à toutes les octaves : do en rouge, ré en orange, mi en jaune, fa en vert, sol en cyan, la en bleu, si en magenta. À droite, un petit tableau « Reminder / Rappel » donne l’équivalence C = Do, D = Ré, E = Mi…',
+    bridgeDocCaption:
+      'Août 2023, la page 4 sur les 21 de ce document : mes deux pans dessinés à la main avec toutes leurs notes, et en dessous les quatre octaves où je coloriais celles que je possédais vraiment. Une couleur par note, quelle que soit l’octave — c’est déjà la règle des ChromaKeys de l’application, trois ans avant elle. Je ne l’ai jamais fini : je me suis arrêté en chemin car c’était trop complexe pour moi à appréhender, mon niveau de théorie musicale était trop faible pour pouvoir tout bien comprendre et modéliser.',
+    // ⚠️ Ligne d'aide séparée de la légende, comme pour la capture de l'app en
+    // section 4 : la légende est la voix de David, on n'y colle pas un mode
+    // d'emploi. Elle est indispensable ici — c'est l'image la plus DENSE du
+    // site (48 cases de grille + une trentaine de pastilles) et elle ne fait
+    // que ~343 px de large sur un téléphone.
+    bridgeDocZoomHint:
+      'Image dense : ouvre-la, puis clique dessus à nouveau pour la taille réelle — c’est là que les noms de notes et la grille se lisent.',
+
     bridgeP3:
       'Le plus troublant, c’est que la question de départ venait de lui. Dès août 2022, Yonathan m’écrivait à propos de l’instrument « chromatique, chanteur-compositeur » : « essaie de jouer des morceaux dans l’app sur cette gamme, pour qu’on comprenne quelles notes te manquent — et qu’on trouve un moyen de les ajouter. » Trois ans plus tard, l’application répond à cette question, pour tout le monde.',
     bridgeAppTitle: 'Ce que l’app fait aujourd’hui pour un handpan acoustique',
