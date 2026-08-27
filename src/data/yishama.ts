@@ -39,12 +39,20 @@ export const videos = ['KI3-L5tvOso', 'wms1TpzaTYA', 'WYVtBfoz7T8', '2kVSLdpzt_M
  * Les noms sont les libellés de travail de David (ce ne sont pas
  * des modèles du catalogue Yishama).
  *
- * 🖋️ PATERNITÉ (27/08/2026) : ces deux gammes ont été PENSÉES ET CONÇUES
- * pour David, sur mesure, par Yhonatan Ale-Yahav (Yishama). Le crédit
- * « Made by Yishama — conçues par Yhonatan Ale-Yahav » doit accompagner
- * les gammes partout où elles apparaissent (site + application). Le texte
- * affiché vit dans src/i18n/dict.ts + en.ts, clés `yishama.insCredit` et
- * `yishama.bridgeSignature`.
+ * 🖋️ PATERNITÉ (27/08/2026, corrigée le même jour) — LA VÉRITÉ EST EN TROIS
+ * TEMPS, ne jamais la rabattre sur un seul nom :
+ *  ① le POURQUOI est de David : « mon cahier des charges est celui d'un
+ *     chanteur qui souhaite s'accompagner au handpan comme un guitariste ou un
+ *     pianiste le ferait. Tout est parti de là. » ;
+ *  ② la CONTRAINTE est de David aussi : tous les accords, toutes les tonalités,
+ *     la fondamentale de chaque accord en note basse, et un ding ;
+ *  ③ la SOLUTION est de Yhonatan Ale-Yahav (Yishama) : « je ne savais pas
+ *     comment cela allait être possible, c'est l'intelligence de Yonathan qui a
+ *     permis cela. » David a conçu en partie, il n'a PAS réalisé.
+ * Le crédit « Made by Yishama — conçues par Yhonatan Ale-Yahav » doit
+ * accompagner les gammes partout où elles apparaissent (site + application).
+ * Le texte affiché vit dans src/i18n/dict.ts + en.ts, clés `yishama.insCredit`,
+ * `yishama.insCreditBrief` et `yishama.bridgeSignature`.
  * ⚠️ Ne JAMAIS étendre ce crédit aux créations Now Groove (kit de calebasse
  * « David Lesage Signature ») : elles sont finies à la main par Kamou
  * (Djoliba Percussion). Même mot « Signature », facteur différent.

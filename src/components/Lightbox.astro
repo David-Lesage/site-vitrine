@@ -199,6 +199,14 @@ const lZoom = labels?.zoom ?? 'Agrandir'
     if (!img || !lbImg) return
     lbImg.src = img.currentSrc || img.src
     lbImg.alt = img.alt || ''
+    // 🔍 IMAGE DENSE (`data-lb-wide`) — voir le bloc « IMAGES DENSES » de
+    // global.css. Une capture d'interface affichée « ajustée à l'écran » sur un
+    // téléphone fait la même taille que dans la page : la lightbox n'apporte
+    // rien. Ces images gagnent un second état (taille réelle + défilement),
+    // atteint par un clic sur l'image. On repart TOUJOURS de l'état ajusté.
+    lbImg.classList.toggle('is-wide', img.hasAttribute('data-lb-wide'))
+    lightbox?.classList.remove('is-zoomed')
+    if (lightbox) lightbox.scrollTop = 0
     const single = currentSet.length <= 1
     if (lbPrev) lbPrev.style.display = single ? 'none' : ''
     if (lbNext) lbNext.style.display = single ? 'none' : ''
@@ -210,6 +218,7 @@ const lZoom = labels?.zoom ?? 'Agrandir'
   function closeLightbox() {
     if (!lightbox) return
     lightbox.classList.remove('is-open')
+    lightbox.classList.remove('is-zoomed')
     lightbox.setAttribute('aria-hidden', 'true')
     document.body.style.overflow = ''
     if (lbImg) lbImg.src = ''
@@ -220,6 +229,26 @@ const lZoom = labels?.zoom ?? 'Agrandir'
     showImage()
   }
   if (lightbox) {
+    // Clic sur l'image : bascule ajusté ↔ taille réelle, UNIQUEMENT pour les
+    // images marquées `data-lb-wide`. Sans ce marqueur, le clic sur l'image
+    // reste sans effet — exactement le comportement historique (seul le clic
+    // sur le fond ferme la lightbox, et il est géré plus bas).
+    const lbContent = lightbox.querySelector<HTMLElement>('.lightbox-content')
+    lbImg?.addEventListener('click', (e) => {
+      if (!lbImg.classList.contains('is-wide')) return
+      e.stopPropagation()
+      const zoomed = lightbox.classList.toggle('is-zoomed')
+      // En taille réelle sur un téléphone, on voit 343 px sur 2000 : sans
+      // recentrage on atterrirait dans le coin haut-gauche, c'est-à-dire dans
+      // le vide. On se place donc au CENTRE de l'image — là où sont les deux
+      // coques et les notes, ce qu'on vient précisément chercher.
+      if (zoomed && lbContent) {
+        requestAnimationFrame(() => {
+          lbContent.scrollLeft = (lbContent.scrollWidth - lbContent.clientWidth) / 2
+          lbContent.scrollTop = (lbContent.scrollHeight - lbContent.clientHeight) / 2
+        })
+      }
+    })
     lbClose?.addEventListener('click', closeLightbox)
     lbPrev?.addEventListener('click', (e) => { e.stopPropagation(); navLightbox(-1) })
     lbNext?.addEventListener('click', (e) => { e.stopPropagation(); navLightbox(1) })

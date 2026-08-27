@@ -383,12 +383,50 @@ const fr = {
     insBottom: 'Dessous',
     insNotes: 'notes',
     insTuning: 'Accordés en 432 Hz',
-    // 🖋️ CRÉDIT DE PATERNITÉ (27/08/2026, demande de David) — les deux gammes
-    // ne sont pas les miennes : c'est Yonathan qui les a pensées et conçues,
-    // sur mesure. Le crédit doit se lire PARTOUT où les gammes apparaissent,
-    // en toutes lettres, et jamais en petit. ⚠️ Ne PAS le coller sur les
-    // créations Now Groove (`shop.creationsBadge`, kit de calebasse) : elles
-    // sont finies à la main par Kamou (Djoliba Percussion) — autre facteur.
+    // 🖋️ CRÉDIT DE PATERNITÉ (27/08/2026, demande de David) — le crédit doit se
+    // lire PARTOUT où les gammes apparaissent, en toutes lettres, jamais en
+    // petit. ⚠️ Ne PAS le coller sur les créations Now Groove
+    // (`shop.creationsBadge`, kit de calebasse) : elles sont finies à la main
+    // par Kamou (Djoliba Percussion) — autre facteur.
+    //
+    // ⚠️ CORRIGÉ LE 27/08/2026 (même jour, après relecture de David) — LA
+    // VÉRITÉ EST EN DEUX TEMPS, NE JAMAIS LA RABATTRE SUR UN SEUL NOM :
+    //  · la première version disait « conçue par David en collaboration avec
+    //    Yishama » → trop David ;
+    //  · la deuxième (commit b3de5b1) disait « c'est LUI qui les a pensées et
+    //    conçues pour moi » → trop Yonathan, ça effaçait la part de David.
+    // Ses mots : « moi j'ai posé le CAHIER DES CHARGES […] donc si, j'ai bien
+    // conçu en partie mais PAS RÉALISÉ ; je ne savais pas comment cela allait
+    // être possible, c'est l'intelligence de Yonathan qui a permis cela. »
+    // Donc : David pose la commande et la contrainte, Yhonatan trouve la
+    // solution. Le cahier des charges lui-même (tous les accords, toutes les
+    // tonalités, la fondamentale en note basse, un ding) fait PARTIE du crédit :
+    // ne pas le raccourcir jusqu'à le perdre.
+    //
+    // 🧭 ET LE CRÉDIT SE LIT EN TROIS TEMPS, DANS CET ORDRE (complément de
+    // David, 27/08/2026) — le premier temps est celui qui donne son sens aux
+    // deux autres, ne jamais le couper :
+    //  ① POURQUOI  — « mon cahier des charges est celui d'un chanteur qui
+    //    souhaite s'accompagner au handpan comme un guitariste ou un pianiste
+    //    le ferait. TOUT EST PARTI DE LÀ. »
+    //  ② CE QUE ÇA IMPOSE — tous les accords, toutes les tonalités, la
+    //    fondamentale de chaque accord en note basse, et un ding.
+    //  ③ QUI L'A RENDU POSSIBLE — Yhonatan.
+    //
+    // 🔁 ÉCHO VOULU AVEC LA FIN DE PAGE, SANS DOUBLON — `yishama.endText` ferme
+    // la page sur le même rêve trois ans plus tard (« hisser le handpan au rang
+    // de la guitare ou du piano pour accompagner une voix »). Le crédit l'ouvre
+    // du côté du GESTE DU MUSICIEN (« comme un guitariste ou un pianiste le
+    // ferait »), `endText` le referme du côté du RANG DE L'INSTRUMENT. C'est ce
+    // décalage qui fait la boucle. ⚠️ Ne pas réécrire `endText`, ne pas le
+    // déplacer, et ne pas aligner les deux formulations : identiques, elles se
+    // marcheraient dessus et l'effet tomberait.
+    //
+    // Découpé en deux clés pour ne pas faire un pavé sur mobile :
+    //  · `insCredit`      = la ligne de crédit — c'est la partie la plus
+    //    visible, et c'est là que le NOM de Yhonatan doit rester ;
+    //  · `insCreditBrief` = les trois temps, dans les mots de David.
+    // Les deux restent VISIBLES (pas de « lire la suite »).
     //
     // ⚠️ ORTHOGRAPHE — LES DEUX GRAPHIES SONT VOULUES, NE PAS UNIFORMISER :
     //  · « Yonathan » = la forme familière, celle que David emploie dans tout
@@ -396,9 +434,42 @@ const fr = {
     //  · « Yhonatan Ale-Yahav » = le nom officiel complet du fondateur/CEO de
     //    Yishama. C'est cette forme-là, et elle seule, qui porte le crédit.
     insCredit:
-      'Made by Yishama — conçues par <strong>Yhonatan Ale-Yahav</strong>. Ces deux gammes ne sont dans aucun catalogue : c’est lui qui les a pensées et conçues pour moi, sur mesure.',
+      'Made by Yishama — conçues par <strong>Yhonatan Ale-Yahav</strong>. Ces deux gammes ne sont dans aucun catalogue : elles ont été faites sur mesure.',
+    insCreditBrief:
+      'Le cahier des charges est de moi, et c’est celui d’un chanteur : pouvoir m’accompagner au handpan comme un guitariste ou un pianiste le ferait. Donc pouvoir jouer tous les accords, dans toutes les tonalités, avec la fondamentale de chaque accord en note basse — et un ding. Je ne savais pas comment ça pouvait être possible. C’est l’intelligence de Yonathan qui l’a permis.',
     insFootnote:
       'Ce sont des pièces uniques : leurs noms sont mes libellés de travail, pas des modèles du catalogue Yishama. Chaque instrument, seul, donne les sept degrés de sa gamme avec la fondamentale disponible dans le grave.',
+
+    // 📸 LA CAPTURE DE L'APPLICATION (ajoutée le 27/08/2026) — les deux gammes
+    // ci-dessus, vues dans Handpan Constellation Studio, onglet Logique, mode
+    // Hybride. C'est la seule page du site où ces deux gammes sont nommées et
+    // détaillées note à note : l'image y montre exactement les mêmes notes,
+    // dessinées sur les deux coques.
+    //  · `insAppAlt`     = accessibilité ET référencement — « E 18 » et
+    //    « D Kurd 18 » n'apparaissent presque nulle part ailleurs sur le site.
+    //  · `insAppCaption` = la légende visible, à la première personne.
+    //
+    // 🚨 DETTE ASSUMÉE — CAPTURE À REMPLACER (notée le 27/08/2026)
+    // Sur cette capture, le nom des deux gammes est écrit CINQ fois, toujours
+    // « David Lesage Signature » : la mention « Made by Yishama » n'était pas
+    // encore affichée dans l'application au moment de la capture (la session
+    // Handpan Studio est en train de l'ajouter côté app).
+    // 👉 Dès que l'app affiche le crédit Yishama : refaire la capture et
+    //    remplacer `public/images/app-hybride-deux-gammes.webp`.
+    // 👉 D'ici là, ni la légende ni l'`alt` ne doivent laisser entendre que le
+    //    crédit est visible à l'écran — il ne l'est pas encore.
+    insAppAlt:
+      'Capture de Handpan Constellation Studio, onglet Logique en mode Hybride : mes deux handpans Yishama dessinés côte à côte, toutes leurs notes affichées en pastilles de couleur — à gauche le E 18 (ding E3), à droite le D Kurd 18 (ding D3), notes du dessous comprises. Le bandeau du haut annonce 6 accords avec le E 18, 6 avec le D Kurd 18 et 24 avec les deux réunis. En dessous, les sept degrés de l’union : I Équilibre E, II Élan F♯m, III Aventure G♯m, IV Détente A, V Tension B, VI Nostalgie C♯m, VII Mystère D♯°.',
+    insAppCaption:
+      'Mes deux gammes réunies dans mon application : six accords avec l’une, six avec l’autre — et vingt-quatre quand elles jouent ensemble. C’est ce chiffre-là qui dit que Yonathan ne m’a pas fabriqué deux instruments, mais un système.',
+    // ⚠️ Ligne d'aide SÉPARÉE de la légende, et non fondue dedans : la légende
+    // est la voix de David, pas un mode d'emploi. Elle est nécessaire — c'est
+    // une capture d'interface de 2000 px : même en pleine largeur d'écran, les
+    // noms de notes sur les deux coques ne se lisent pas sans agrandir, et sur
+    // un téléphone l'image ne fait que ~340 px de large.
+    insAppZoomHint: 'Écran dense : ouvre la capture, puis clique dessus à nouveau pour la taille réelle — c’est là que les noms de notes se lisent.',
+    // Libellés de la lightbox : la capture s'ouvre en plein écran.
+    lightbox: { close: 'Fermer', zoom: 'Agrandir la capture' },
 
     pairEyebrow: 'Ensemble',
     pairTitle: 'Un handpan chromatique, en deux pièces',
@@ -488,8 +559,11 @@ const fr = {
     ],
     // 🖋️ Le badge de l'app porte MON nom — la phrase doit dire qui les a
     // conçues. Voir la note « CRÉDIT DE PATERNITÉ » plus haut (clé insCredit).
+    // Version courte du même partage en deux temps : le cahier des charges est
+    // de David, la réalisation est de Yhonatan. Elle peut rester courte, mais
+    // elle ne doit pas contredire la version longue.
     bridgeSignature:
-      'Mes deux gammes sur mesure sont dans l’application, badgées « ✨ Signature David Lesage ». Le badge porte mon nom, mais les gammes sont <strong>Made by Yishama — conçues par Yhonatan Ale-Yahav</strong>. Tu peux les charger, les écouter et voir ce qu’elles permettent, même sans les avoir sous les mains.',
+      'Mes deux gammes sur mesure sont dans l’application, badgées « ✨ Signature David Lesage ». Le badge porte mon nom : le cahier des charges est de moi, mais les gammes sont <strong>Made by Yishama — conçues par Yhonatan Ale-Yahav</strong>. Tu peux les charger, les écouter et voir ce qu’elles permettent, même sans les avoir sous les mains.',
     bridgeHonest:
       'À dire honnêtement : l’app ne t’écoute pas. Elle ne devine pas ta gamme au micro — tu la choisis, ou tu construis ta coque note par note. À partir de là, elle raisonne sur tes notes réelles.',
     bridgeCta: 'Découvrir Handpan Constellation Studio',

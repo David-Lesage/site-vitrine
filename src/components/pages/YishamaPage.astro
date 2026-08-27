@@ -14,6 +14,7 @@ import SectionHeading from '@/components/SectionHeading.astro'
 import Button from '@/components/Button.astro'
 import MetalModal from '@/components/MetalModal.astro'
 import VideoModal from '@/components/VideoModal.astro'
+import Lightbox from '@/components/Lightbox.astro'
 import { Icon } from 'astro-icon/components'
 import {
   metals,
@@ -143,16 +144,36 @@ const ld = [
   <Section tone="cream-deep" id="instruments">
     <SectionHeading eyebrow={y.insEyebrow} title={y.insTitle} intro={y.insIntro} />
 
-    {/* 🖋️ CRÉDIT DE PATERNITÉ — demande de David (27/08/2026). Les deux gammes
-        ont été pensées et conçues pour lui par Yhonatan Ale-Yahav (Yishama).
-        Ce n'est pas une mention légale à caser en petit : elle se lit AVANT les
-        deux cartes, en toutes lettres, une seule fois pour les deux (les
-        répéter dans chaque carte reviendrait à l'écrire deux fois dans le même
-        écran). Texte : `yishama.insCredit` (FR + EN). */}
-    <p class="mx-auto mt-8 flex max-w-2xl items-start gap-3 rounded-card border border-copper/30 bg-cream p-5 text-base leading-relaxed text-ink-soft/90">
-      <Icon name="lucide:stamp" class="mt-0.5 h-5 w-5 shrink-0 text-copper" />
-      <span set:html={y.insCredit}></span>
-    </p>
+    {/* 🖋️ CRÉDIT DE PATERNITÉ — demande de David (27/08/2026). Ce n'est pas une
+        mention légale à caser en petit : elle se lit AVANT les deux cartes, en
+        toutes lettres, une seule fois pour les deux (la répéter dans chaque
+        carte reviendrait à l'écrire deux fois dans le même écran).
+
+        ⚠️ NE JAMAIS RABATTRE CE CRÉDIT SUR UN SEUL NOM — il se lit en TROIS
+        temps : ① pourquoi (un chanteur qui veut s'accompagner comme un
+        guitariste ou un pianiste le ferait — tout est parti de là), ② ce que ça
+        impose (tous les accords, toutes les tonalités, la fondamentale de
+        chaque accord en note basse, un ding), ③ qui l'a rendu possible
+        (Yhonatan). David a posé la commande et la contrainte ; Yhonatan a
+        trouvé la solution.
+
+        D'où les deux textes ci-dessous, dans le MÊME encadré et tous les deux
+        visibles (pas de « lire la suite ») : `yishama.insCredit` = la ligne de
+        crédit — c'est la partie la plus visible, et c'est là que le NOM de
+        Yhonatan doit rester ; `yishama.insCreditBrief` = les trois temps dans
+        les mots de David. Le second est en `text-sm` : c'est ce qui empêche
+        l'encadré de devenir un pavé à 375 px.
+
+        🔁 Le temps ① fait écho à la FIN de la page (`yishama.endText`, section
+        10) sans la répéter : ici c'est le geste du musicien, là-bas le rang de
+        l'instrument. Ne pas aligner les deux formulations. */}
+    <div class="mx-auto mt-8 flex max-w-2xl items-start gap-3 rounded-card border border-copper/30 bg-cream p-5">
+      <Icon name="lucide:stamp" class="mt-1 h-5 w-5 shrink-0 text-copper" />
+      <div>
+        <p class="text-base leading-relaxed text-ink-soft/90" set:html={y.insCredit}></p>
+        <p class="mt-3 border-t border-copper/15 pt-3 text-sm leading-relaxed text-ink-soft/80" set:html={y.insCreditBrief}></p>
+      </div>
+    </div>
 
     <div class="mt-12 grid gap-8 md:grid-cols-2">
       {instruments.map((ins) => (
@@ -184,6 +205,49 @@ const ld = [
       ))}
     </div>
     <p class="mx-auto mt-8 max-w-3xl text-center text-sm text-ink-soft/70">{y.insFootnote}</p>
+
+    {/* 📸 LES DEUX GAMMES VUES DANS L'APPLICATION (capture du 27/08/2026).
+        Placée EN FIN DE SECTION, après les deux cartes et leur note de bas de
+        section, et surtout PAS entre le crédit et les cartes : le crédit doit
+        rester collé au titre, il se lit AVANT les gammes (cf. handoff 27/08).
+        L'ordre de lecture voulu est donc : titre → crédit → les notes en
+        toutes lettres → les mêmes notes dessinées sur les deux coques. La
+        légende (6 + 6 → 24) sert aussi de marche vers la section « Ensemble »
+        juste en dessous, qui développe les 24 accords.
+
+        ⚠️ DETTE ASSUMÉE — CAPTURE À REMPLACER (notée le 27/08/2026)
+        Sur cette capture, le nom des deux gammes apparaît cinq fois et il est
+        écrit « David Lesage Signature » — la mention « Made by Yishama »
+        n'était PAS encore affichée dans l'application au moment de la capture.
+        La session Handpan Studio est en train de l'ajouter côté app.
+        👉 Dès que l'app affiche le crédit Yishama : refaire la capture (même
+        écran, onglet Logique en mode Hybride) et remplacer
+        `public/images/app-hybride-deux-gammes.webp`.
+        👉 D'ici là, ne JAMAIS écrire dans la légende ou l'`alt` que le crédit
+        est visible à l'écran : il ne l'est pas encore. */}
+    <figure class="mx-auto mt-12 max-w-4xl">
+      <img
+        src="/images/app-hybride-deux-gammes.webp"
+        width="2000"
+        height="1275"
+        alt={y.insAppAlt}
+        data-lb="yishama-app"
+        data-lb-wide
+        class="w-full rounded-card border border-ink/10 shadow-lg"
+        loading="lazy"
+      />
+      <figcaption class="mt-3 text-center text-sm text-ink-soft/70">{y.insAppCaption}</figcaption>
+      {/* 🔍 L'invitation à agrandir est une LIGNE À PART, pas un bout de légende :
+          la légende est la voix de David, on n'y colle pas un mode d'emploi.
+          Et elle est indispensable — mesuré le 27/08/2026 : l'image ne fait que
+          343 px de large à 375 px de viewport (et ~896 px sur grand écran),
+          pour une capture de 2000 px. Les noms de notes ne se lisent QUE dans
+          la lightbox. */}
+      <p class="mt-2 flex items-center justify-center gap-2 text-xs text-ink-soft/60">
+        <Icon name="lucide:maximize-2" class="h-3.5 w-3.5 shrink-0 text-copper" />
+        {y.insAppZoomHint}
+      </p>
+    </figure>
   </Section>
 
   {/* ───────────── 5. ENSEMBLE : LE CHROMATIQUE ───────────── */}
@@ -386,4 +450,10 @@ const ld = [
   </Section>
 
   <VideoModal />
+  {/* La capture de l'app (data-lb="yishama-app") s'ouvre en plein écran : c'est
+      une interface dense, les noms de notes ne se lisent qu'agrandis — surtout
+      sur mobile. Groupe d'une seule image : la lightbox masque d'elle-même les
+      flèches ‹ › et le compteur. La photo de la section « Ensemble » reste
+      volontairement SANS `data-lb` (elle n'a rien à faire lire de près). */}
+  <Lightbox labels={{ close: y.lightbox.close, zoom: y.lightbox.zoom }} />
 </Layout>

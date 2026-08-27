@@ -351,20 +351,73 @@ export const en: Dict = {
     insNotes: 'notes',
     insTuning: 'Tuned to 432 Hz',
     // 🖋️ AUTHORSHIP CREDIT (27/08/2026, David's request) — see the long note
-    // in dict.ts (key `insCredit`). The two scales are not his: Yonathan
-    // thought them out and designed them, made to measure. The credit must be
-    // readable EVERYWHERE the scales appear, spelled out, never in small print.
-    // ⚠️ Never attach it to the Now Groove creations (`shop.creationsBadge`,
-    // calabash kit): those are hand-finished by Kamou (Djoliba Percussion).
+    // in dict.ts (key `insCredit`). The credit must be readable EVERYWHERE the
+    // scales appear, spelled out, never in small print. ⚠️ Never attach it to
+    // the Now Groove creations (`shop.creationsBadge`, calabash kit): those are
+    // hand-finished by Kamou (Djoliba Percussion).
+    //
+    // ⚠️ CORRECTED 27/08/2026 (same day, after David re-read it) — THE TRUTH
+    // HAS TWO HALVES, NEVER COLLAPSE IT ONTO ONE NAME: David wrote the BRIEF
+    // (every chord, in every key, the root of each chord as a bass note, and a
+    // ding); Yhonatan found the solution. His words: “I did design it in part
+    // but did not build it; I had no idea how it could be possible, it is
+    // Yonathan's intelligence that made it happen.” The brief itself is PART of
+    // the credit — do not shorten it away.
+    //
+    // 🧭 THE CREDIT READS IN THREE BEATS, IN THIS ORDER (David's addition,
+    // 27/08/2026) — the first one is what gives the other two their meaning:
+    //  ① WHY — “my brief is that of a singer who wants to accompany himself on
+    //    handpan the way a guitarist or a pianist would. It all started there.”
+    //  ② WHAT IT FORCES — every chord, every key, the root of each chord as a
+    //    bass note, and a ding.
+    //  ③ WHO MADE IT POSSIBLE — Yhonatan.
+    //
+    // 🔁 DELIBERATE ECHO WITH THE END OF THE PAGE, NOT A DUPLICATE —
+    // `yishama.endText` closes the page on the same dream three years later.
+    // The credit opens on the MUSICIAN'S GESTURE, `endText` closes on the
+    // INSTRUMENT'S RANK. ⚠️ Do not rewrite or move `endText`, and do not align
+    // the two wordings: identical, they would cancel each other out.
+    //
+    // Split across two keys so it is not a wall of text on mobile:
+    //  · `insCredit`      = the credit line — the most visible part, and where
+    //    Yhonatan's NAME must stay;
+    //  · `insCreditBrief` = the three beats, in David's own words.
+    // Both stay VISIBLE (no “read more”).
     //
     // ⚠️ SPELLING — BOTH FORMS ARE DELIBERATE, DO NOT UNIFY:
     //  · “Yonathan” = the familiar form David uses throughout his story.
     //  · “Yhonatan Ale-Yahav” = the full official name of Yishama's founder/CEO;
     //    this is the form that carries the credit, and only this one.
     insCredit:
-      'Made by Yishama — designed by <strong>Yhonatan Ale-Yahav</strong>. These two scales are in no catalogue: he is the one who thought them out and designed them for me, made to measure.',
+      'Made by Yishama — designed by <strong>Yhonatan Ale-Yahav</strong>. These two scales are in no catalogue: they were made to measure.',
+    insCreditBrief:
+      'The brief was mine, and it was a singer’s brief: to accompany myself on handpan the way a guitarist or a pianist would. So: every chord, in every key, with the root of each chord available as a bass note — and a ding. I had no idea how that could be possible. Yonathan’s intelligence is what made it happen.',
     insFootnote:
       'These are one-off pieces: the names are my own working labels, not Yishama catalogue models. Each instrument on its own gives all seven degrees of its scale, with the root available in the bass.',
+
+    // 📸 THE APP SCREENSHOT (added 27/08/2026) — see the long note in dict.ts
+    // (keys `insAppAlt` / `insAppCaption`). The screenshot is of the FRENCH
+    // interface, so the degree names stay in French in the alt text: an `alt`
+    // describes what is actually on screen, it does not translate it.
+    //
+    // 🚨 KNOWN DEBT — SCREENSHOT TO BE REPLACED (noted 27/08/2026)
+    // On this screenshot the two scale names read “David Lesage Signature”
+    // five times over: the “Made by Yishama” credit was not yet displayed in
+    // the app when it was taken. Replace the image once the app shows it.
+    // Until then, neither the caption nor the alt may suggest the credit is
+    // visible on screen — it is not.
+    insAppAlt:
+      'Screenshot of Handpan Constellation Studio, Logic tab in Hybrid mode: my two Yishama handpans drawn side by side, every note shown as a coloured pad — the E 18 on the left (ding E3), the D Kurd 18 on the right (ding D3), bottom notes included. The banner at the top reads 6 chords with the E 18, 6 with the D Kurd 18 and 24 with both together. Below, the seven degrees of the union (French interface): I Équilibre E, II Élan F♯m, III Aventure G♯m, IV Détente A, V Tension B, VI Nostalgie C♯m, VII Mystère D♯°.',
+    insAppCaption:
+      'My two scales brought together in my own app: six chords with one, six with the other — and twenty-four once they play together. That number is what says Yonathan did not build me two instruments, but one system.',
+    // ⚠️ Help line kept SEPARATE from the caption, not folded into it: the
+    // caption is David's voice, not a set of instructions. It is needed — this
+    // is a 2000 px interface screenshot: even at full desktop width the note
+    // names on the two shells cannot be read without enlarging, and on a phone
+    // the image is only ~340 px wide.
+    insAppZoomHint: 'Dense screen: open the screenshot, then click it again for full size — that is where the note names become readable.',
+    // Lightbox labels: the screenshot opens full screen.
+    lightbox: { close: 'Close', zoom: 'Enlarge screenshot' },
 
     pairEyebrow: 'Together',
     pairTitle: 'A chromatic handpan, in two pieces',
@@ -449,9 +502,11 @@ export const en: Dict = {
       { t: 'Hybrid mode', d: 'As soon as a second pan is there, both shells appear side by side and each chord is drawn straddling the two, with playing order and hands. Exactly my gymnastics problem — solved on screen.' },
     ],
     // 🖋️ The app badge carries MY name — the sentence has to say who designed
-    // them. See the “AUTHORSHIP CREDIT” note above (key `insCredit`).
+    // them. See the “AUTHORSHIP CREDIT” note above (key `insCredit`). Short
+    // version of the same two-halves split: the brief is David's, the making is
+    // Yhonatan's. It may stay short, but it must not contradict the long one.
     bridgeSignature:
-      'My two custom scales are in the app, badged “✨ David Lesage Signature”. The badge carries my name, but the scales are <strong>Made by Yishama — designed by Yhonatan Ale-Yahav</strong>. You can load them, listen to them and see what they allow, even without having them under your hands.',
+      'My two custom scales are in the app, badged “✨ David Lesage Signature”. The badge carries my name: the brief was mine, but the scales are <strong>Made by Yishama — designed by Yhonatan Ale-Yahav</strong>. You can load them, listen to them and see what they allow, even without having them under your hands.',
     bridgeHonest:
       'To be honest about it: the app does not listen to you. It does not guess your scale through the microphone — you choose it, or you build your shell note by note. From there, it reasons about your real notes.',
     bridgeCta: 'Discover Handpan Constellation Studio',

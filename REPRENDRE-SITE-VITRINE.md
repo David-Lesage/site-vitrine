@@ -29,6 +29,132 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 27/08/2026 (nuit, 2ᵉ passe) — 📸 LES DEUX GAMMES DANS L'APP + LE CRÉDIT CORRIGÉ EN TROIS TEMPS
+
+**Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (build 91 pages, rendu réel 375 px FR + EN).**
+
+Deux chantiers dans le **même déploiement** : la capture de mes deux gammes réunies dans l'app,
+et la **correction du crédit Yishama** posé quelques heures plus tôt (`b3de5b1`) — qui était faux.
+
+---
+
+### 🚨 1. LE CRÉDIT ÉTAIT INEXACT — IL SE LIT EN TROIS TEMPS
+
+`b3de5b1` disait « **c'est lui** qui les a pensées et conçues pour moi » → **trop Yonathan, ça
+effaçait la part de David**. (La version d'encore avant, « conçue par David en collaboration avec
+Yishama », était l'excès inverse.) Mots de David :
+
+> « moi j'ai posé le **cahier des charges** […] donc si, j'ai bien conçu en partie mais **pas
+> réalisé** ; je ne savais pas comment cela allait être possible, **c'est l'intelligence de
+> Yonathan qui a permis cela**. »
+> « mon cahier des charges est celui d'un **chanteur qui souhaite s'accompagner au handpan comme
+> un guitariste ou un pianiste le ferait**. **Tout est parti de là.** »
+
+**L'ordre officiel, à ne jamais casser :**
+| # | Temps | Contenu |
+|---|---|---|
+| ① | **POURQUOI** | un chanteur qui veut s'accompagner comme un guitariste ou un pianiste — *tout est parti de là* |
+| ② | **CE QUE ÇA IMPOSE** | tous les accords, toutes les tonalités, la fondamentale de chaque accord en note basse, **et un ding** |
+| ③ | **QUI L'A RENDU POSSIBLE** | Yhonatan Ale-Yahav |
+
+**Découpé en deux clés** pour ne pas faire un pavé à 375 px, dans **le même encadré**, les deux
+**toujours visibles** (pas de « lire la suite ») :
+- `yishama.insCredit` → la ligne de crédit. **C'est là que le nom de Yhonatan doit rester** :
+  c'est la partie la plus visible, et c'est l'objet même de la demande de David.
+- `yishama.insCreditBrief` → **nouvelle clé**, les trois temps dans les mots de David.
+- `yishama.bridgeSignature` → adaptée en cohérence : « Le badge porte mon nom : **le cahier des
+  charges est de moi**, mais les gammes sont Made by Yishama — conçues par Yhonatan Ale-Yahav ».
+
+🔁 **BOUCLE VOULUE AVEC LA FIN DE PAGE — NE PAS ALIGNER LES DEUX FORMULATIONS.**
+`yishama.endText` (§ 10) ferme déjà la page sur le même rêve : « hisser le handpan au rang de la
+guitare ou du piano pour accompagner une voix ». Le crédit l'**ouvre** du côté du **geste du
+musicien** (« comme un guitariste ou un pianiste **le ferait** »), `endText` le **referme** du côté
+du **rang de l'instrument**. C'est le décalage qui fait la boucle. **Ne pas réécrire `endText`, ne
+pas le déplacer, ne pas uniformiser les deux phrases** — identiques, l'effet tombe.
+
+Mesures FR à 375 px : titre bas **5685** → encadré **5850–6275** (h. 425) → cartes **6322**.
+Le crédit se lit toujours **avant** les gammes. EN : encadré h. 353. Desktop 1280 : h. 233.
+
+---
+
+### 📸 2. LA CAPTURE DES DEUX GAMMES RÉUNIES
+
+`public/images/app-hybride-deux-gammes.webp` — **2000×1275, 131 Ko** (`cwebp -q 88 -resize 2000 0`),
+réduction proportionnelle pure depuis 2400×1529, **aucun recadrage**. Original hors dépôt :
+`_medias-originaux-avec-titre/app-hybride-deux-gammes-source.jpg`.
+
+Ce qu'on y voit : **Handpan Constellation Studio**, onglet **Logique**, mode **Hybride** — mes deux
+coques côte à côte avec toutes leurs notes en pastilles (E 18 ding E3 à gauche, D Kurd 18 ding D3 à
+droite, notes du dessous comprises), le bandeau « **6** avec E 18 · **6** avec D Kurd 18 · **24
+avec les deux** », les sept degrés de l'union et l'Atelier d'accords.
+🚫 **Ne jamais la recadrer** : le titre « Handpan Constellation Studio » en haut date la capture.
+
+**Où, et pourquoi là** : `/yishama` § 4 « Les deux instruments », **en fin de section**, après les
+deux cartes et la note de bas de section — et **surtout pas** entre le crédit et les cartes (le
+crédit doit rester collé au titre, il se lit AVANT les gammes). Ordre voulu :
+**titre → crédit → les notes en toutes lettres → les mêmes notes dessinées sur les deux coques.**
+C'est la **seule page du site** où ces deux gammes sont nommées et détaillées note à note. La
+légende (6 + 6 → 24) sert de marche vers la section « Ensemble » juste en dessous.
+
+Clés ajoutées : `yishama.insAppAlt`, `yishama.insAppCaption`, `yishama.insAppZoomHint`,
+`yishama.lightbox`. **`<Lightbox />` ajoutée à `/yishama`** (elle n'y était pas).
+
+---
+
+### 🚨 3. DETTE ASSUMÉE — CAPTURE À REMPLACER
+
+Sur cette capture, le nom des deux gammes apparaît **cinq fois**, toujours en « **David Lesage
+Signature** », **jamais « Made by Yishama »** : l'app n'affichait pas encore le crédit au moment de
+la capture (la session Handpan Studio est en train de l'ajouter côté app).
+
+👉 **Dès que l'app affiche le crédit Yishama : refaire la capture** (même écran, onglet Logique en
+mode Hybride) et **remplacer `public/images/app-hybride-deux-gammes.webp`**.
+👉 D'ici là, **ni la légende ni l'`alt` ne doivent laisser croire que le crédit est visible à
+l'écran** — il ne l'est pas.
+La dette est écrite **dans le code** à trois endroits : `YishamaPage.astro` (au-dessus de la
+`<figure>`), `dict.ts` et `en.ts` (au-dessus de `insAppAlt`).
+
+---
+
+### 🔍 4. LA LIGHTBOX NE SUFFISAIT PAS — NOUVEAU `data-lb-wide`
+
+**Constat mesuré, pas supposé** : à 375 px, l'image fait **343 px** dans la page… et la lightbox
+l'affichait **aussi à 343 px** (`max-width: 100%` dans un conteneur `95vw`). **Gain zéro.** Écrire
+« agrandis pour lire » aurait été un mensonge.
+
+Ajout **strictement additif** (même méthode que `data-lb` le 20/08) :
+- `<img data-lb-wide>` → la lightbox pose `is-wide` sur `.lightbox-img` ;
+- **un clic / tap sur l'image** bascule `is-zoomed` : l'image passe en **taille réelle (2000 px)**,
+  `.lightbox-content` défile dans les deux sens, et **la vue est recentrée** sur le milieu de
+  l'image (sans ça on atterrit dans le coin haut-gauche, c'est-à-dire dans le vide) ;
+- un second clic revient à l'ajusté ; la fermeture remet toujours à zéro.
+
+✅ **Vérifié sans régression** : `/cours` (image `data-lb` sans `data-lb-wide`) → clic sur l'image
+sans effet, comme avant. `/le-neotone` (carrousel) → lightbox ouverte, ‹ ›, compteur « 1 / 10 »,
+aucun zoom. Fichiers partagés touchés : `src/components/Lightbox.astro`, `src/styles/global.css`.
+
+### 📱 LA VÉRITÉ SUR LA LISIBILITÉ À 375 px
+- **Dans la page : ILLISIBLE comme donnée.** À 343 px pour une capture de 2000 px (÷5,8), on lit le
+  titre de l'app et les sept pastilles d'accords (E, F♯m, G♯m, A, B, C♯m, D♯°) — **rien d'autre**.
+  Ni les noms de notes sur les coques, ni le bandeau. Elle y fonctionne comme **image**, pas comme
+  tableau de données. C'est assumé.
+- **Dans la lightbox en taille réelle : PARFAITEMENT LISIBLE.** Vérifié en capture : D♯3, G3, A4,
+  D5, F4, F5, D4, A♯3, A♯2, A2, « 24 avec les deux », les cartes de degrés. C'est ce qui rend la
+  ligne `insAppZoomHint` honnête (« ouvre la capture, puis clique dessus à nouveau pour la taille
+  réelle »).
+- La ligne d'aide est **détachée de la légende** : la légende est la voix de David, on n'y colle
+  pas un mode d'emploi.
+
+### ⚠️ LIMITE D'OUTILLAGE RENCONTRÉE (à savoir pour la prochaine session)
+Dans le navigateur intégré, les **captures d'écran en largeur desktop après un défilement JS**
+reviennent **blanches** (le pane se met en « hidden », le rendu n'est plus peint) — alors que le DOM
+est correct. Contournements : **mesurer via JS** (`getBoundingClientRect`) plutôt que de croire un
+écran blanc, et **vérifier visuellement en preset `mobile`**, où la capture fonctionne. Ne pas
+conclure « la page est cassée » sur une capture blanche : vérifier `innerWidth` — s'il vaut **0**,
+le pane est masqué, pas la page.
+
+---
+
 ## ÉTAT ACTUEL — 27/08/2026 (nuit) — 🖋️ MES GAMMES PORTENT LE NOM DE CELUI QUI LES A CONÇUES
 
 **Statut : ✅ COMMITÉ (`b3de5b1`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, build 91 pages).**

@@ -406,6 +406,34 @@ h1, h2, h3, h4, .font-display {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   user-select: none;
 }
+/* 🔍 IMAGES DENSES — `data-lb-wide` (ajouté le 27/08/2026)
+   Une capture d'interface de 2000 px ne se lit PAS « ajustée à l'écran ». Mesuré
+   sur /yishama : à 375 px de viewport, la lightbox affichait l'image à 343 px —
+   exactement sa taille dans la page, soit zéro gain. Ces images-là reçoivent donc
+   un SECOND état : un clic (ou un tap) sur l'image passe en taille réelle, avec
+   défilement dans les deux sens ; un second clic revient à l'ajusté.
+   ⚠️ Strictement ADDITIF : sans l'attribut `data-lb-wide`, rien ne change — toutes
+   les photos du site (Neotone, Muling, Gonilélé, boutique, showroom, /cours)
+   restent en mode « ajusté à l'écran », clic sur l'image sans effet comme avant. */
+.lightbox-img.is-wide { cursor: zoom-in; }
+.lightbox.is-zoomed .lightbox-content {
+  overflow: auto;
+  width: 100%;
+  max-width: 100%;
+  height: 92vh;
+  align-items: flex-start;
+  justify-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+}
+.lightbox.is-zoomed .lightbox-img {
+  max-width: none;
+  max-height: none;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  cursor: zoom-out;
+}
+
 .lightbox-close {
   position: fixed;
   top: 20px;
