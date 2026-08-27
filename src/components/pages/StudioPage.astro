@@ -9,6 +9,7 @@ import BetaNotice from '@/components/BetaNotice.astro'
 import AppAccessSync from '@/components/AppAccessSync.astro'
 import { Icon } from 'astro-icon/components'
 import YouTube from '@/components/YouTube.astro'
+import Lightbox from '@/components/Lightbox.astro'
 import { chromaKeys, studioVideos, studioAcousticDemoVideoId } from '@/data/site'
 import { appCta } from '@/lib/appAccess'
 import { getDict } from '@/i18n/dict'
@@ -83,44 +84,111 @@ const ld = [
          plus lisible entre la dernière ligne du chapô (535 px à 375 px) et
          6 638 px. Un ambassadeur Neotone, prof de handpan ACOUSTIQUE, a
          répondu à David qu'il n'était pas concerné. Il l'était.
-      ⚖️ ÉQUILIBRE, PAS RENVERSEMENT : la carte Neotone reste dans le même
-         bloc, juste en dessous — le Neotone garde ses fonctions propres
-         (MIDI temps réel) et reste le fer de lance de l'écosystème.
-      🎨 Le ton passe de `ink` à `cream-deep` : le hero est déjà `bg-ink`,
-         deux blocs sombres collés se seraient fondus en un seul.
+         ⚠️ NE PAS REDESCENDRE CE BLOC : sa position (2ᵉ) est l'acquis.
+
+      ⚖️ RÉÉCRIT LE 27/08/2026 — LE MONDE DU « ET », PAS CELUI DU « OU ».
+         Le titre du 22/08 (« Fait d'abord pour ton handpan acoustique ») a été
+         rejeté par David : « C'est trop rude. Ça met dès le départ une dynamique
+         d'opposition […] Ma posture c'est celle de l'unification et de la
+         cohabitation. L'application est pensée et conçue pour l'un comme pour
+         l'autre, elle n'est pas exclusive à l'un ou à l'autre, mais elle ne
+         permet pas les mêmes choses. »
+         👉 D'où la structure : un chapô commun, une CITATION de David en
+         exergue, DEUX photos strictement à égalité (mêmes dimensions, même
+         cadrage, mêmes classes), DEUX cartes strictement à égalité (même fond,
+         même accent copper, même icône de pastille que le hero, lien secondaire
+         aligné en bas par `mt-auto`), puis UN SEUL CTA commun aux deux mondes.
+         🚫 Ne jamais réintroduire de hiérarchie : ni « d'abord acoustique », ni
+         « d'abord Neotone ». Pas de « mieux », « vrai handpan », « version
+         simple ». Le petit monde du handpan juge déjà assez : cette page apaise.
+
+      🎨 Le ton reste `cream-deep` : le hero est déjà `bg-ink`, deux blocs
+         sombres collés se seraient fondus en un seul.
       🎬 L'emplacement vidéo « À venir » vit ICI, au plus près de l'argument
          acoustique — pas en bas de page. Une seule ligne à changer dans
          src/data/site.ts (`studioAcousticDemoVideoId`) pour le remplacer. */}
   <Section tone="cream-deep" id="acoustique">
-    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-      <div>
-        <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{st.versionAcoEyebrow}</p>
-        <h2 class="mt-4 font-display text-3xl font-700 leading-tight md:text-4xl">{st.versionAcoTitle}</h2>
-        <p class="mt-4 text-ink-soft/85">{st.versionAcoText}</p>
-        <ul class="mt-6 space-y-3">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{st.versionAcoEyebrow}</p>
+      <h2 class="mt-4 font-display text-3xl font-700 leading-tight md:text-4xl"><Fragment set:html={st.versionAcoTitle} /></h2>
+      <p class="mt-5 text-lg leading-relaxed text-ink-soft/85">{st.versionAcoText}</p>
+    </div>
+
+    {/* 🗣️ LA PAROLE DE DAVID, CITÉE — pas paraphrasée. Deux phrases, une seule
+        citation : la première nomme la différence entre les deux mondes, la
+        seconde la résout sans désigner de gagnant. Règle du projet : ses mots
+        ne se réécrivent jamais. */}
+    <blockquote class="mx-auto mt-12 max-w-3xl rounded-card border border-copper/25 bg-copper/5 p-8 text-center">
+      <p class="font-display text-xl leading-snug text-ink md:text-2xl">« {st.duoQuote1}</p>
+      <p class="mt-4 font-display text-xl leading-snug text-ink md:text-2xl">{st.duoQuote2} »</p>
+      <footer class="mt-6 text-xs font-700 uppercase tracking-[0.14em] text-copper">{st.duoQuoteSource}</footer>
+    </blockquote>
+
+    {/* 📷 L'IMAGE DU « ET » — deux photos RÉELLES, côte à côte, à égalité stricte.
+        Mêmes dimensions sources (1100×1955), même rapport d'origine (≈9/16) donc
+        MÊME recadrage 3/4 depuis le haut : aucune n'est étirée, aucune ne domine.
+        À 375 px elles s'empilent, dans l'ordre acoustique puis Neotone —
+        symétrique en traitement, pas en hiérarchie.
+        ⚠️ Si l'une des deux est remplacée un jour, garder les mêmes dimensions
+        et les mêmes classes, sinon l'égalité visuelle saute. */}
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      <figure class="m-0">
+        <img src="/images/showroom-handpan-tablette.webp" width="1100" height="1955" alt={st.versionAcoPhotoCaption} data-lb="app-deux-mondes" class="aspect-[3/4] w-full rounded-card border border-ink/10 object-cover object-top shadow-lg" loading="lazy" />
+        <figcaption class="mt-3 text-center text-sm text-ink-soft/70">{st.duoPhotoAco}</figcaption>
+      </figure>
+      <figure class="m-0">
+        <img src="/images/app-neotone-tablette.webp" width="1100" height="1955" alt={st.versionNeoPhotoCaption} data-lb="app-deux-mondes" class="aspect-[3/4] w-full rounded-card border border-ink/10 object-cover object-top shadow-lg" loading="lazy" />
+        <figcaption class="mt-3 text-center text-sm text-ink-soft/70">{st.duoPhotoNeo}</figcaption>
+      </figure>
+    </div>
+
+    {/* ⚖️ LES DEUX CARTES — strictement identiques en style. Même fond, même
+        bordure, même accent `copper`, même taille de titre, même liste à puces,
+        même lien secondaire poussé en bas (`mt-auto`) pour qu'ils s'alignent.
+        Les icônes reprennent celles des pastilles du hero. */}
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      <div class="flex flex-col rounded-card border border-ink/10 bg-cream p-7">
+        <span class="grid h-11 w-11 place-items-center rounded-full border border-copper/25 bg-copper/10">
+          <Icon name="lucide:circle-dot" class="h-5 w-5 text-copper" />
+        </span>
+        <h3 class="mt-4 font-display text-2xl font-700">{st.duoAcoTitle}</h3>
+        <p class="mt-3 text-ink-soft/85">{st.duoAcoText}</p>
+        <ul class="mt-5 space-y-3">
           {st.versionAcoBullets.map((b) => (
             <li class="flex gap-3 text-ink-soft/90"><span class="mt-1 text-copper">✦</span><span>{b}</span></li>
           ))}
         </ul>
-        <div class="mt-7"><Button {...acoCta.attrs} variant="primary">{acoCta.label}</Button></div>
         {/* Passerelle vers le récit d'origine : l'app est née de mes deux Yishama. */}
-        <p class="mt-5">
+        <p class="mt-auto pt-6">
           <a href={L('/yishama')} class="inline-flex items-center gap-1.5 text-sm font-700 text-copper underline underline-offset-4 hover:text-rust">
             {st.versionAcoYishamaLink} <span aria-hidden="true">→</span>
           </a>
         </p>
       </div>
-      {/* 📷 LA PREUVE, pas une illustration : photo réelle du showroom, déjà
-          dans le dépôt (galerie /showroom). Un handpan ACOUSTIQUE Yishama sur
-          son trépied, l'app au-dessus. Cadrée en 3/4 depuis le haut : le
-          recadrage ne coupe que le bas du trépied. */}
-      <figure class="m-0">
-        <img src="/images/showroom-handpan-tablette.webp" width="1100" height="1955" alt={st.versionAcoPhotoCaption} class="aspect-[3/4] w-full rounded-card border border-ink/10 object-cover object-top shadow-lg" loading="lazy" />
-        <figcaption class="mt-3 text-center text-sm text-ink-soft/70">{st.versionAcoPhotoCaption}</figcaption>
-      </figure>
+
+      <div class="flex flex-col rounded-card border border-ink/10 bg-cream p-7">
+        <span class="grid h-11 w-11 place-items-center rounded-full border border-copper/25 bg-copper/10">
+          <Icon name="lucide:audio-waveform" class="h-5 w-5 text-copper" />
+        </span>
+        <h3 class="mt-4 font-display text-2xl font-700">{st.versionNeoTitle}</h3>
+        <p class="mt-3 text-ink-soft/85">{st.versionNeoText}</p>
+        <ul class="mt-5 space-y-3">
+          {st.versionNeoBullets.map((b) => (
+            <li class="flex gap-3 text-ink-soft/90"><span class="mt-1 text-copper">✦</span><span>{b}</span></li>
+          ))}
+        </ul>
+        <p class="mt-auto pt-6">
+          <a href={L('/le-neotone')} class="inline-flex items-center gap-1.5 text-sm font-700 text-copper underline underline-offset-4 hover:text-rust">
+            {st.versionNeoCta} <span aria-hidden="true">→</span>
+          </a>
+        </p>
+      </div>
     </div>
 
-    <div class="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start">
+    {/* UN SEUL bouton pour les deux mondes : c'est la même application. */}
+    <div class="mt-10 text-center"><Button {...acoCta.attrs} variant="primary">{acoCta.label}</Button></div>
+
+    <div class="mt-16 grid gap-10 lg:grid-cols-2 lg:items-start">
       <figure class="m-0">
         <img src="/images/app-acoustique.jpg" width="1634" height="802" alt={st.versionAcoCaption} class="w-full rounded-card border border-ink/10 shadow-sm" loading="lazy" />
         <figcaption class="mt-3 text-sm text-ink-soft/70">{st.versionAcoCaption}</figcaption>
@@ -146,14 +214,6 @@ const ld = [
         </div>
         <p class="mt-4 text-sm text-ink-soft/75">{st.demoVideoNote}</p>
       </div>
-    </div>
-
-    {/* ⚖️ Le Neotone garde sa carte, dans le MÊME bloc : la page dit « les
-        deux », pas « l'un contre l'autre ». */}
-    <div class="mt-12 rounded-card border border-ink/10 bg-cream p-7">
-      <h3 class="font-display text-2xl font-700">{st.versionNeoTitle}</h3>
-      <p class="mt-3 max-w-2xl text-ink-soft/85">{st.versionNeoText}</p>
-      <div class="mt-5"><Button href={L('/le-neotone')} variant="ghost">{st.versionNeoCta}</Button></div>
     </div>
   </Section>
 
@@ -273,6 +333,9 @@ const ld = [
   <Section data-when="closed">
     <BetaNotice lang={lang} />
   </Section>
+
+  {/* Les deux photos du duo (data-lb="app-deux-mondes") s'ouvrent en plein écran. */}
+  <Lightbox labels={{ close: st.lightbox.close, prev: st.lightbox.prev, next: st.lightbox.next, zoom: st.lightbox.zoom }} />
 
   <AppAccessSync />
 </Layout>

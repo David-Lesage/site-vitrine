@@ -1341,7 +1341,10 @@ export const en: Dict = {
     heroEyebrow: 'The app — an original project by David Lesage',
     heroTitleA: 'Handpan Constellation Studio',
     heroTitleB: 'Music becomes visible',
-    heroLead: 'On any handpan: your acoustic handpan first, the electronic Neotone too. A visual approach to music — through colours, emotions and geometry — to understand, memorise and play.',
+    // ⚠️ 27/08/2026 — "first" removed here too: same hierarchy problem as the section title.
+    //    Acoustic is still NAMED FIRST in the sentence (the 22/08 gain), but "as much as" puts
+    //    both instruments on the same level.
+    heroLead: 'On any handpan: your acoustic handpan as much as the electronic Neotone. A visual approach to music — through colours, emotions and geometry — to understand, memorise and play.',
     // Badges shown right under the title, before the lead: "which instrument
     // does this work on?" is answered without reading a sentence.
     heroBadges: ['Any acoustic handpan', 'Neotone electronic handpan'],
@@ -1379,25 +1382,49 @@ export const en: Dict = {
       { t: 'MIDI Connect', d: 'The bridge between your Neotone and the app: your real playing appears live on the virtual handpan, and the app guides you through your chords and scales.' },
     ],
     versionAcoEyebrow: 'Which handpan does it work on?',
-    // ⚠️ The old title was "No Neotone? Your acoustic handpan is enough" —
-    // phrased as a fallback for people who don't own "the real product".
-    versionAcoTitle: 'Built first for your acoustic handpan',
-    versionAcoText: 'The whole visual approach — colours, constellations and emotions — maps straight onto your own acoustic handpan. You finally see the music you play, on your instrument, in your scale. The acoustic mode is free: you don’t need a Neotone to get started.',
+    // ⚠️ TWO SUCCESSIVE FIXES — see the French file for the full history.
+    //    1. "No Neotone? Your acoustic handpan is enough" — phrased as a fallback for people
+    //       who don't own "the real product".
+    //    2. "Built first for your acoustic handpan" (22/08) — fixed that, but created the
+    //       opposite hierarchy. David: "it sets up a dynamic of opposition from the start,
+    //       whereas my whole message rests on the world of AND, not the world of OR".
+    //    3. ✅ CURRENT (27/08): both worlds on strictly equal footing, naming what the app
+    //       reveals in each. The word "acoustic" must stay in this title.
+    versionAcoTitle: 'Built for your acoustic handpan <span class="text-copper">and</span> for the Neotone',
+    versionAcoText: 'The app is exclusive to neither one nor the other: it is designed and built for both. But it doesn’t allow the same things on each — and that is exactly what makes both of them interesting. On an acoustic handpan, the frame is already there: the app makes it visible. On the Neotone, everything becomes possible: the app provides the frame. One app, two ways of revealing.',
+    // 🗣️ PULL QUOTE — David's own words. Both sentences form the quotation: the first
+    //    names the difference, the second resolves it without taking sides.
+    duoQuote1: 'Electronics offers everything and reveals nothing; an acoustic imposes a frame — and a frame is something you explore.',
+    duoQuote2: 'A frame you understand makes you freer than an infinite space where you lose yourself.',
+    duoQuoteSource: 'David Lesage',
+    duoAcoTitle: 'On an acoustic handpan',
+    duoAcoText: 'Your instrument has its notes, its scale, its outlines: the frame is already there. The app makes it visible, and what looked like a constraint becomes ground to explore. The acoustic mode is free: you don’t need a Neotone to get started.',
     versionAcoBullets: [
       'Your scale appears in colour on a photo of your handpan.',
       'Learn new chords and progressions, guided step by step.',
       'Explore an atlas of scales by emotion — and imagine your own, custom-made.',
     ],
     versionAcoCaption: 'Acoustic mode: Handpan Constellation Studio’s visual approach, on your own handpan.',
-    // 📷 The proof photo already in the repo (`showroom-handpan-tablette.webp`,
-    //    also used in the showroom gallery): an acoustic Yishama handpan with
-    //    the app above it. Nothing invented — the gallery alt already says it.
+    // 📷 THE TWO PHOTOS — THE PICTURE OF "AND". Same framing, same dimensions
+    //    (1100×1955), same treatment: neither dominates. Real photos, not illustrations.
+    //    `versionAcoPhotoCaption` / `versionNeoPhotoCaption` are the descriptive alts;
+    //    `duoPhotoAco` / `duoPhotoNeo` are the short, symmetrical visible captions.
     versionAcoPhotoCaption: 'At the showroom: my acoustic Yishama handpan on its stand, the app above it, its chords drawn as constellations.',
+    versionNeoPhotoCaption: 'My wooden Neotone, the tablet clamped on an arm just above it, a song’s score with its chords drawn as constellations.',
+    duoPhotoAco: 'My acoustic Yishama handpan, and the app.',
+    duoPhotoNeo: 'My Neotone, and the app.',
     versionAcoCta: 'Open the app',
     versionAcoYishamaLink: 'Where this approach came from: my two Yishama handpans',
-    versionNeoTitle: 'Neotone version',
-    versionNeoText: 'Link your Neotone to the app via MIDI: your playing appears live on the virtual handpan, and the app guides you through your chords and scales. Real-time MIDI integration.',
+    versionNeoTitle: 'On the Neotone',
+    versionNeoText: 'Every scale in a single instrument: everything becomes possible. That is exactly where a frame becomes necessary — otherwise you get lost in the infinite. The app provides the frame the instrument no longer sets.',
+    versionNeoBullets: [
+      'Link your Neotone to the app via MIDI: your playing appears live on the virtual handpan.',
+      'Change scale as often as you like: the colours of the 7 degrees never move.',
+      'The app guides you through your chords and scales — on the one you have just loaded.',
+    ],
     versionNeoCta: 'Discover the Neotone',
+    // Lightbox labels: both photos of the pair open full screen.
+    lightbox: { close: 'Close', prev: 'Previous photo', next: 'Next photo', zoom: 'Enlarge photo' },
     // 🎬 "Coming soon" video slot — same mechanism as /pieds-atlas.
     //    Driven by `studioAcousticDemoVideoId` (src/data/site.ts), set to null.
     demoVideoEyebrow: 'The video demonstration',

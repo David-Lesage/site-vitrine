@@ -1554,7 +1554,11 @@ const fr = {
     heroEyebrow: 'L’application — un projet original de David Lesage',
     heroTitleA: 'Handpan Constellation Studio',
     heroTitleB: 'La musique devient visible',
-    heroLead: 'Sur n’importe quel handpan : ton handpan acoustique d’abord, le Neotone électronique aussi. Une approche visuelle de la musique — par les couleurs, les émotions et la géométrie — pour comprendre, mémoriser et jouer.',
+    // ⚠️ 27/08/2026 — « d’abord » retiré ici AUSSI. Le mot créait la même hiérarchie que
+    //    dans le titre de la 2ᵉ section, rejetée par David (« le monde du ET, pas le monde du
+    //    OU »). L’acoustique reste NOMMÉE EN PREMIER dans la phrase — c’est l’acquis du 22/08 —
+    //    mais « autant que » met les deux instruments au même niveau.
+    heroLead: 'Sur n’importe quel handpan : ton handpan acoustique autant que le Neotone électronique. Une approche visuelle de la musique — par les couleurs, les émotions et la géométrie — pour comprendre, mémoriser et jouer.',
     // Pastilles affichées juste sous le titre, avant le chapô : la réponse
     // « sur quel instrument ça marche ? » se lit sans lire une phrase.
     heroBadges: ['Tout handpan acoustique', 'Handpan électronique Neotone'],
@@ -1592,28 +1596,59 @@ const fr = {
       { t: 'MIDI Connect', d: 'Le pont entre ton Neotone et l’app : ton jeu réel s’affiche en temps réel sur le handpan virtuel, et l’app te guide dans tes accords et tes gammes.' },
     ],
     versionAcoEyebrow: 'Sur quel handpan ça marche ?',
-    // ⚠️ L'ancien titre était « Pas de Neotone ? Ton handpan acoustique suffit ».
-    // Formulé en creux, il posait l'acoustique comme le cas par défaut de celui
-    // qui n'a pas « le vrai produit ». C'est exactement ce qui a fait
-    // s'auto-exclure un prof de handpan acoustique. Affirmatif désormais.
-    versionAcoTitle: 'Fait d’abord pour ton handpan acoustique',
-    versionAcoText: 'Toute l’approche visuelle — couleurs, constellations et émotions — se pose directement sur ton propre handpan acoustique. Tu vois enfin la musique que tu joues, sur ton instrument, avec ta gamme. Le mode acoustique est gratuit : le Neotone n’est pas nécessaire pour commencer.',
+    // ⚠️ HISTORIQUE DE CE TITRE — deux corrections successives, ne pas en faire une troisième
+    //    à l'aveugle.
+    //    1. « Pas de Neotone ? Ton handpan acoustique suffit » : formulé en creux, il posait
+    //       l'acoustique comme le cas par défaut de celui qui n'a pas « le vrai produit ».
+    //       C'est ce qui a fait s'auto-exclure un ambassadeur prof de handpan acoustique.
+    //    2. « Fait d'abord pour ton handpan acoustique » (22/08) : corrigeait le premier
+    //       problème mais créait une hiérarchie inverse. David : « C'est trop rude. Ça met dès
+    //       le départ une dynamique d'opposition, alors que tout mon message repose sur le monde
+    //       du ET et pas le monde du OU. Ma posture c'est celle de l'unification et de la
+    //       cohabitation. »
+    //    3. ✅ ACTUEL (27/08) : les deux mondes à ÉGALITÉ STRICTE, et on nomme ce que l'app
+    //       révèle dans chacun. Ni « d'abord acoustique », ni « d'abord Neotone ».
+    //       ⚠️ Le mot « acoustique » doit rester dans ce titre : c'est lui qui, placé en 2ᵉ
+    //       section, a réglé le problème de l'ambassadeur (6 708 px → ~1 050 px à 375 px).
+    versionAcoTitle: 'Pensée pour ton handpan acoustique <span class="text-copper">et</span> pour le Neotone',
+    versionAcoText: 'L’application n’est exclusive ni à l’un ni à l’autre : elle est pensée et conçue pour les deux. Mais elle n’y permet pas les mêmes choses — et c’est justement ce qui rend les deux intéressants. Sur un handpan acoustique, le cadre est déjà là : l’app le rend visible. Sur le Neotone, tout devient possible : l’app pose le cadre. Une seule application, deux façons de révéler.',
+    // 🗣️ EXERGUE — MOTS DE DAVID, VERBATIM. Règle du projet : « Les mots de David sont
+    //    verbatim : ils ne se paraphrasent pas, ils se citent. » Source :
+    //    editorial/MATIERE-PHILOSOPHIE-23-08-2026.md (projet app, lecture seule).
+    //    Les DEUX phrases forment la citation : la première nomme la différence, la seconde
+    //    la résout sans prendre parti. Ne jamais en réécrire une seule.
+    duoQuote1: 'L’électronique offre tout et ne révèle rien ; l’acoustique impose un cadre — et un cadre, ça s’explore.',
+    duoQuote2: 'Un cadre qu’on comprend rend plus libre qu’un espace infini où l’on se perd.',
+    duoQuoteSource: 'David Lesage',
+    duoAcoTitle: 'Sur un handpan acoustique',
+    duoAcoText: 'Ton instrument a ses notes, sa gamme, ses contours : le cadre est déjà là. L’app le rend visible, et ce qui ressemblait à une contrainte devient un terrain à explorer. Le mode acoustique est gratuit : le Neotone n’est pas nécessaire pour commencer.',
     versionAcoBullets: [
       'Ta gamme s’affiche en couleurs sur la photo de ton handpan.',
       'Apprends de nouveaux accords et progressions, guidé pas à pas.',
       'Explore un atlas de gammes par émotion — et imagine la tienne, sur mesure.',
     ],
     versionAcoCaption: 'Le mode acoustique : l’approche visuelle de Handpan Constellation Studio, sur ton propre handpan.',
-    // 📷 La photo de PREUVE (déjà dans le dépôt, `showroom-handpan-tablette.webp`,
-    //    utilisée aussi dans la galerie du showroom) : un handpan acoustique
-    //    Yishama, l'app affichant ses accords juste au-dessus. Rien d'inventé :
-    //    l'alt de la galerie décrit déjà exactement cette scène.
+    // 📷 LES DEUX PHOTOS — L'IMAGE DU « ET ». Même cadrage, mêmes dimensions
+    //    (1100×1955), même traitement : aucune ne domine. Ce sont deux photos RÉELLES,
+    //    pas des illustrations. `versionAcoPhotoCaption` et `versionNeoPhotoCaption` servent
+    //    d'`alt` (descriptifs) ; `duoPhotoAco` / `duoPhotoNeo` sont les légendes visibles,
+    //    volontairement courtes et symétriques.
     versionAcoPhotoCaption: 'Au showroom : mon handpan acoustique Yishama sur son trépied, l’application au-dessus, ses accords en constellations.',
+    versionNeoPhotoCaption: 'Mon Neotone en bois, la tablette fixée sur un bras juste au-dessus, la partition d’un morceau et ses accords en constellations.',
+    duoPhotoAco: 'Mon handpan acoustique Yishama, et l’app.',
+    duoPhotoNeo: 'Mon Neotone, et l’app.',
     versionAcoCta: 'Ouvrir l’application',
     versionAcoYishamaLink: 'D’où vient cette approche : mes deux handpans Yishama',
-    versionNeoTitle: 'Version Neotone',
-    versionNeoText: 'Relie ton Neotone à l’app via MIDI : ton jeu s’affiche en temps réel sur le handpan virtuel, et l’app te guide dans tes accords et tes gammes. Intégration MIDI temps réel.',
+    versionNeoTitle: 'Sur le Neotone',
+    versionNeoText: 'Toutes les gammes dans un seul instrument : tout devient possible. C’est précisément là qu’un cadre devient nécessaire — sinon on se perd dans l’infini. L’app pose le cadre que l’instrument, lui, ne pose plus.',
+    versionNeoBullets: [
+      'Relie ton Neotone à l’app en MIDI : ton jeu s’affiche en temps réel sur le handpan virtuel.',
+      'Change de gamme autant que tu veux : les couleurs des 7 degrés, elles, ne bougent jamais.',
+      'L’app te guide dans tes accords et tes gammes — sur celle que tu viens de charger.',
+    ],
     versionNeoCta: 'Découvrir le Neotone',
+    // Libellés de la lightbox : les deux photos du duo s'ouvrent en plein écran.
+    lightbox: { close: 'Fermer', prev: 'Photo précédente', next: 'Photo suivante', zoom: 'Agrandir la photo' },
     // 🎬 Emplacement vidéo « À venir » — même dispositif que /pieds-atlas.
     //    Piloté par `studioAcousticDemoVideoId` (src/data/site.ts), à `null`.
     //    `demoVideoTitle` = ce qui est écrit DANS le cadre ; `demoVideoEyebrow`

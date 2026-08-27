@@ -29,6 +29,98 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 27/08/2026 — ⚖️ `/handpan-app` : LE MONDE DU « ET », PAS CELUI DU « OU »
+
+**Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (build + rendu réel 375 px et 1280 px, FR + EN).**
+
+### 🚨 LA DEMANDE — DAVID REJETTE LE TITRE DU 22/08
+
+« Fait d'abord pour ton handpan acoustique » (posé le 22/08 pour réparer l'auto-exclusion d'un
+ambassadeur prof d'acoustique) a créé **la hiérarchie inverse**. Mots de David :
+
+> « C'est trop rude. Ça met dès le départ une dynamique d'opposition, alors que mon approche est
+> tout à fait différente : **tout mon message repose sur le monde du ET et pas le monde du OU**.
+> Dans le petit monde du handpan il y a beaucoup de personnes en réaction, avec l'arrivée du
+> handpan électronique, beaucoup de jugement et de peurs. **Ma posture c'est celle de
+> l'unification et de la cohabitation.** Ce qui est important de dire, c'est que cette application
+> est pensée et conçue pour l'un comme pour l'autre, **elle n'est pas exclusive à l'un ou à
+> l'autre, mais elle ne permet pas les mêmes choses**. Et c'est là que ça devient hyper
+> intéressant de nommer **ce qu'elle vient soutenir et révéler dans un monde comme dans l'autre**. »
+
+⚠️ **DEUX CORRECTIONS SUCCESSIVES, NE PAS EN FAIRE UNE TROISIÈME À L'AVEUGLE.** Le pendule est
+allé « acoustique en creux » → « acoustique d'abord ». Il est maintenant **à l'équilibre** :
+ni « d'abord acoustique », ni « d'abord Neotone ». L'historique complet est écrit en commentaire
+au-dessus de `versionAcoTitle` dans `src/i18n/dict.ts` — le lire avant de retoucher ce titre.
+
+### 🛠️ CE QUI A ÉTÉ FAIT (2ᵉ section de `/handpan-app`, `id="acoustique"`)
+
+| # | Geste | Fichier |
+|---|---|---|
+| ① | **Titre** : « Fait d'abord pour ton handpan acoustique » → **« Pensée pour ton handpan acoustique ET pour le Neotone »**, le « et » en `text-copper` (rendu via `set:html`) | `dict.ts`, `en.ts` |
+| ② | **Chapô commun** qui nomme ce que l'app révèle **des deux côtés** : « L'application n'est exclusive ni à l'un ni à l'autre […] Sur un handpan acoustique, le cadre est déjà là : l'app le rend visible. Sur le Neotone, tout devient possible : l'app pose le cadre. Une seule application, deux façons de révéler. » | `dict.ts`, `en.ts` |
+| ③ | **Citation de David en exergue** (`duoQuote1` + `duoQuote2`, une seule citation, une seule attribution) — voir ci-dessous | `dict.ts`, `en.ts`, `StudioPage.astro` |
+| ④ | **DEUX photos côte à côte, à égalité stricte** : `showroom-handpan-tablette.webp` (Yishama acoustique) + **`app-neotone-tablette.webp` (NOUVEAU)**. Mêmes dimensions **1100×1955**, même rapport source (≈9/16), donc **même recadrage `aspect-[3/4] object-top`** — aucun étirement. `data-lb="app-deux-mondes"` → lightbox | `StudioPage.astro`, `public/images/` |
+| ⑤ | **DEUX cartes à égalité stricte** : « Sur un handpan acoustique » / « Sur le Neotone ». Même fond `bg-cream`, même bordure, même accent `copper`, mêmes icônes que les pastilles du hero, 3 puces chacune, lien secondaire aligné en bas (`mt-auto`) | `StudioPage.astro` |
+| ⑥ | **UN SEUL CTA** (« Ouvrir l'application ») centré sous les deux cartes : c'est la même app | `StudioPage.astro` |
+| ⑦ | L'ancienne carte « Version Neotone » (paragraphe seul, en bas de section) **disparaît** — elle est devenue la carte 2, à égalité | `StudioPage.astro` |
+| ⑧ | **`heroLead` : « d'abord » retiré aussi** — « ton handpan acoustique **autant que** le Neotone électronique ». Même problème, même page, deux écrans plus haut. L'acoustique reste **nommée en premier** dans la phrase (acquis du 22/08) | `dict.ts`, `en.ts` |
+| ⑨ | `<Lightbox />` ajoutée à la page (elle n'y était pas) + libellés i18n `studio.lightbox` | `StudioPage.astro`, `dict.ts`, `en.ts` |
+
+### 🗣️ LA CITATION EN EXERGUE — MOTS DE DAVID, VERBATIM
+
+> « L'électronique offre tout et ne révèle rien ; l'acoustique impose un cadre — et un cadre, ça s'explore.
+> Un cadre qu'on comprend rend plus libre qu'un espace infini où l'on se perd. » — **David Lesage**
+
+**Deux phrases, UNE citation, UNE attribution** : la première nomme la différence entre les deux
+mondes, **la seconde la résout sans désigner de gagnant** — c'est elle qui empêche l'exergue de
+prendre parti. Source : `NEOTONE STUDIO/NEOTONE 1er mai 2026/editorial/MATIERE-PHILOSOPHIE-23-08-2026.md`
+(**autre projet, LECTURE SEULE**). Règle en tête de ce fichier : *« Les mots de David sont
+verbatim : ils ne se paraphrasent pas, ils se citent. »* — **ne jamais réécrire une de ces phrases.**
+
+### 📊 CHIFFRES (DOM mesuré en iframe, `dist/` servi en local)
+
+| | FR 375 px | EN 375 px | FR 1280 px |
+|---|---|---|---|
+| 1ʳᵉ occurrence de « acoustique » | **421 px** | **421 px** | 397 px |
+| 1ʳᵉ occurrence de « Neotone » (hors barre de nav) | **462 px** | **462 px** | 397 px (même pastille) |
+| Titre `<h2>` de la section (contient **les deux mots**) | **1 015 px** | **967 px** | 895 px |
+| Les 2 photos | 343×457 **chacune** | 343×457 **chacune** | 596×795 **chacune**, même `y` |
+| Les 2 cartes | 343 px de large chacune | idem | 596×470 **chacune**, même `y` |
+| Débordement horizontal | non | non | non |
+
+**41 px séparent les deux mots** à 375 px (les deux pastilles du hero) : ils apparaissent
+pratiquement au même niveau, bien avant le premier scroll. Le titre de section reste à ~1 000 px
+(il était à **6 708 px** avant le 22/08) — **l'acquis de l'ambassadeur est intact**.
+
+### 🚨 CE QU'IL NE FAUT PAS DÉFAIRE
+
+- **Égalité stricte, pas équilibre approximatif.** Les deux photos ont les **mêmes dimensions**
+  (1100×1955) et **les mêmes classes** ; les deux cartes ont le **même style** et un seul CTA
+  commun. Remplacer une photo par une autre dimension casserait l'égalité visuelle.
+- **Aucun mot de jugement.** Pas de « mieux », « supérieur », « vrai handpan », « version
+  dégradée/simple ». David décrit un milieu qui juge déjà : la page apaise.
+- **Aucune fonctionnalité inventée.** Les 3 puces acoustiques sont celles d'avant, inchangées.
+  Les 3 puces Neotone sont dérivées de faits déjà écrits sur le site (`versionNeoText` MIDI temps
+  réel, `modes[3]` MIDI Connect, `problem2Text` + `chromaIntro` pour les couleurs fixes des 7 degrés).
+- **Aucune clé i18n supprimée** (vérifié par diff). Ajoutées : `duoQuote1/2`, `duoQuoteSource`,
+  `duoAcoTitle`, `duoAcoText`, `duoPhotoAco`, `duoPhotoNeo`, `versionNeoPhotoCaption`,
+  `versionNeoBullets`, `lightbox`. Modifiées : `heroLead`, `versionAcoTitle`, `versionAcoText`,
+  `versionNeoTitle`, `versionNeoText`.
+- **URLs inchangées**, aucune dépendance npm, aucune donnée en base.
+- La **rangée capture d'écran + emplacement vidéo « À venir »** (`#demo-acoustique`) est conservée
+  telle quelle, sous les deux cartes. Toujours une seule ligne à changer :
+  `studioAcousticDemoVideoId` dans `src/data/site.ts`.
+
+### 📷 PHOTO AJOUTÉE
+
+`public/images/app-neotone-tablette.webp` — **1100×1955, 93 Ko**, redimensionnement proportionnel
+pur (source 2031×3610, **même rapport que la photo acoustique**, donc aucune déformation, aucun
+recadrage à la conversion). Le Neotone en bois au premier plan, l'iPad sur bras affichant une
+partition et ses constellations d'accords. ✅ C'était le point 5 de la liste « photos qui
+manquent » du 22/08 : *« acoustique + Neotone côte à côte avec l'app — l'image du "ET" »*.
+
+---
+
 ## ÉTAT ACTUEL — 25/08/2026 — ✨ « CONSTELLATION » RESTAURÉ + 🇬🇧 LES LIENS EN RESTENT EN EN
 
 **Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (build + rendu 375 px / 1280 px, FR + EN).**
