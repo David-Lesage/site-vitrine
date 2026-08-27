@@ -29,7 +29,137 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 27/08/2026 (nuit, 2ᵉ passe) — 📸 LES DEUX GAMMES DANS L'APP + LE CRÉDIT CORRIGÉ EN TROIS TEMPS
+## ÉTAT ACTUEL — 27/08/2026 (3ᵉ passe) — 📄 LA PAGE 4 D'AOÛT 2023 : LA PREUVE SOUS LA PHRASE
+
+**Statut : ✅ COMMITÉ (`4111052`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, build 91 pages).**
+
+**Demande de David** : « Sur le site, sur la page Yishama, tu peux peut-être déjà publier **la
+page 4 du Google Slide**, qui montre **les 2 handpans et toutes les notes qui les composent** ? »
+
+`public/images/methode-2023-cartographie-notes.webp` — **1800×1013, 92 Ko, WebP SANS PERTE**,
+conversion pure de `archives/2023-08-methode-manuscrite/pages/slide-04.png` (déjà au dépôt) :
+**aucun recadrage, aucun redimensionnement, aucune retouche**.
+🔬 **Le sans-perte n'est pas un luxe ici** : les couleurs SONT le sujet de la page, et sur ce type
+d'aplats + texte net le sans-perte est **deux fois plus léger** que le `-q 90` avec perte (92 Ko
+contre 184 Ko). Mesuré, pas supposé. Toujours tester `cwebp -lossless` sur un schéma / une capture
+vectorielle avant de partir sur `-q`.
+
+### 🎯 OÙ, ET POURQUOI LÀ — SECTION 9, PAS SECTION 4
+
+Placée **section 9 « La méthode, personne ne pouvait me la donner »**, immédiatement **après
+`bridgeP2`** et avant `bridgeP3`.
+
+`bridgeP2` dit depuis toujours : « En août 2023, j'ai commencé un document […] Des cartes
+colorées, **une note par couleur**. **Ce document est devenu Handpan Constellation Studio.** »
+C'était **la plus forte affirmation de la page, et elle n'avait aucune preuve**. L'image EST ce
+document : elle transforme la phrase en pièce à conviction, et elle montre littéralement les
+« cartes colorées » qu'elle annonce.
+
+**La section 4 a été envisagée et écartée** (l'effet avant/après avec `app-hybride-deux-gammes.webp`,
+les deux mêmes instruments calculés en 2026) :
+- ① en section 4 elle serait **redondante** — mêmes pans, mêmes notes que la capture juste à côté ;
+  le lecteur n'apprendrait que « c'est plus vieux ». En section 9 elle est **la seule preuve** ;
+- ② la section 4 est **déjà la plus chargée** de la page (encadré de crédit à 2 paragraphes + 2
+  cartes de gammes + note de bas de section + grande capture + ligne d'aide) : une **seconde**
+  grande image dense en aurait fait un mur. La section 9 était **cinq paragraphes d'affilée sans
+  aucune image**.
+
+👉 L'avant/après n'est pas perdu : il est porté **par la légende**, pas par l'adjacence physique.
+⚠️ **Le crédit Yishama reste collé au titre et AVANT les cartes** — vérifié en prod (titre §4
+23658 → crédit 24897 → cartes 25710 → capture app 30542). Section 4 **non touchée**.
+
+### 🎨 CHROMAKEYS : CE QUI EST VÉRIFIÉ, ET LES DEUX COULEURS QUI ONT BOUGÉ
+
+Vérification faite **avant** d'écrire la légende (image ouverte + table de l'app lue) — c'est une
+affirmation vérifiable, pas une jolie phrase.
+
+Source de vérité côté app : **`NEOTONE STUDIO/NEOTONE 1er mai 2026/melody/melody-model.ts:315`**,
+`export const CHROMAKEYS`, commentée « **couleur = note absolue** » (lecture seule, rien touché).
+
+| | 2023 (slide 4) | App aujourd'hui | |
+|---|---|---|---|
+| **La règle** | couleur = **nom de note**, ni l'octave ni la gamme (E3, E4, E5 jaunes sur les 2 coques ; C3/C4/C5 rouges) | idem, table indexée sur la classe de note | ✅ **identique** |
+| **Altérations** | le dièse = version plus claire de sa voisine (C# rouge délavé, D# orange pâle, F# vert pâle) | C `#DC2626` / C# `#EF4444`, D `#EA580C` / D# `#F97316`, F `#16A34A` / F# `#22C55E` | ✅ **même règle** |
+| do · ré · mi · fa · si | rouge · orange · jaune · vert · magenta | idem | ✅ **5 teintes sur 7** |
+| **sol** | **cyan** | **bleu** `#2563EB` | ⚠️ **a bougé** |
+| **la** | **bleu** | **violet** `#7C3AED` | ⚠️ **a bougé** |
+
+👉 **D'où la formulation de la légende** : elle affirme **la RÈGLE** (« une couleur par note, quelle
+que soit l'octave — c'est déjà la règle des ChromaKeys de l'application »), exacte au mot près, et
+**n'affirme PAS que chaque teinte de 2023 est celle d'aujourd'hui**, parce que deux ne le sont pas.
+🚫 **Ne jamais « améliorer » cette phrase en « les mêmes couleurs qu'aujourd'hui » : ce serait faux.**
+
+⚠️ **Incohérence de vocabulaire repérée au passage (pas corrigée, à arbitrer par David)** :
+`src/styles/global.css` définit `--color-chroma-1..7` en les commentant « **ChromaKeys — les 7
+degrés** ». Or dans l'app, **ChromaKeys = couleur de la NOTE** et le **degré** est l'AUTRE logique
+de couleur (les deux cohabitent — c'est écrit dans `blog/editeur-de-melodies-handpan.md`). Les
+variables du site sont donc la palette **des degrés**, mal nommée « ChromaKeys ». Fichier partagé,
+non touché dans ce lot.
+
+### ✍️ LÉGENDE, `alt`, ET LES FAUTES QU'ON NE CORRIGE PAS
+
+Clés **ajoutées** (aucune supprimée, vérifié par diff) : `yishama.bridgeDocAlt`,
+`bridgeDocCaption`, `bridgeDocZoomHint` — dans `dict.ts` **et** `en.ts`.
+
+- **Légende FR** (voix de David, 1ʳᵉ personne, date située) : « Août 2023, la page 4 sur les 21 de
+  ce document : mes deux pans dessinés à la main avec toutes leurs notes, et en dessous les quatre
+  octaves où je coloriais celles que je possédais vraiment. Une couleur par note, quelle que soit
+  l'octave — c'est déjà la règle des ChromaKeys de l'application, trois ans avant elle. Je ne l'ai
+  jamais fini : je me suis arrêté en chemin car c'était trop complexe pour moi à appréhender, mon
+  niveau de théorie musicale était trop faible pour pouvoir tout bien comprendre et modéliser. »
+- 🗣️ **La dernière phrase est la FORMULATION DE DAVID** sur l'abandon. **Ne pas la reformuler en
+  quelque chose de plus flatteur ou de plus héroïque** : cette honnêteté-là est sa marque.
+- 🚨 **L'`alt` cite le bandeau AVEC SES FAUTES D'ORIGINE** — « Complete handpan **Maping** of
+  **placment** of notes on the **handpan**s by type of note ». C'est un document d'archive, son
+  orthographe fait partie de la pièce. La mention « (orthographe d'origine) » est là pour qu'on ne
+  les prenne pas pour une coquille du site — **elle ne les autorise pas à être « nettoyées »**.
+  Un commentaire le dit dans `dict.ts` et `en.ts`.
+
+### 🔍 L'AGRANDISSEMENT — MESURÉ, PAS PROMIS
+
+`data-lb="yishama-methode-2023"` + **`data-lb-wide`**. **Groupe SÉPARÉ de `yishama-app`, exprès** :
+les regrouper aurait donné des flèches ‹ › entre les deux images, mais **la lightbox n'affiche
+aucun texte** — on sauterait d'un écran d'app à un schéma manuscrit sans explication. Ça évite
+aussi de changer le comportement déjà déployé de l'image de la section 4 (seule dans son groupe,
+donc sans flèches ni compteur).
+
+| état | largeur | |
+|---|---|---|
+| dans la page (375 px) | **343 px** | |
+| lightbox « ajustée » | **343 px** | **gain ZÉRO** — reconfirme le constat du 27/08 |
+| lightbox **taille réelle** | **1800 px** | **×5,25**, défilement X **et** Y |
+
+✅ **Vérifié en capture réelle à 375 px** : en taille réelle on lit nettement `G3`, `A4`, `F4`,
+`D4`, `Bb2`, `F#5`, `G5`, `G#5`, `F#4`, `G4`, `G#4`. La ligne `bridgeDocZoomHint` est donc honnête.
+
+### 📱 LA VÉRITÉ SUR LA LISIBILITÉ À 375 px
+
+- **Dans la page : partiellement lisible.** 343×194 pour une source de 1800×1013 (÷5,25). Les
+  **grosses pastilles des coques se lisent** (E3, D3, A4, E4, F4, D4, C4, B3, Bb2). En revanche la
+  **grille chromatique de 48 cases** et le **bandeau de titre** ne se lisent PAS. C'est l'image la
+  plus dense du site — elle y fonctionne comme **image**, pas comme tableau de données. Assumé,
+  et c'est précisément pourquoi `data-lb-wide` était obligatoire ici.
+- Desktop 1280 : **896×505**, légende 768 px sur 4 lignes. Rapport rendu 1,7738 ≈ source 1,7769
+  (arrondi au pixel) → **aucune déformation**. Aucun débordement horizontal, FR ni EN.
+
+### 🚨 NOUVEAU PIÈGE D'OUTILLAGE — `requestAnimationFrame` NE SE DÉCLENCHE PAS EN ONGLET MASQUÉ
+
+Extension du piège déjà connu (« les images `lazy` ne se chargent pas en onglet masqué »). Dans le
+navigateur intégré, `document.hidden === true` **même après `tabs_select`**, et par conséquent :
+- **`requestAnimationFrame` ne se déclenche JAMAIS** → le **recentrage automatique** de la lightbox
+  en taille réelle (qui est dans un `rAF`) **ne s'exécute pas**. `scrollLeft` reste à 0.
+  **Ce n'est PAS un bug du site.** Vérifié en reproduisant à la main le calcul du `rAF` : il tombe
+  bien au centre (`scrollLeft` 729 sur 1457 max, `scrollTop` 133 sur 266 max), et la capture prise
+  à cette position montre exactement le milieu des deux coques.
+- **`scroll-behavior: smooth` est aussi piloté par rAF** → `window.scrollTo()` **ne bouge pas** et
+  `scrollY` reste à 0. Contournement : `document.documentElement.style.scrollBehavior = 'auto'`
+  **avant** de scroller. (C'est ce qui donnait l'illusion d'une page figée.)
+- 🔁 Reconfirmé : **capture desktop après défilement JS = image crème vide** alors que le DOM est
+  bon. Mesurer en JS, et vérifier le visuel en preset **`mobile`**, où la capture fonctionne.
+
+---
+
+## 27/08/2026 (nuit, 2ᵉ passe) — 📸 LES DEUX GAMMES DANS L'APP + LE CRÉDIT CORRIGÉ EN TROIS TEMPS
 
 **Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (build 91 pages, rendu réel 375 px FR + EN).**
 
