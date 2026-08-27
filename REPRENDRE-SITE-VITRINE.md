@@ -87,7 +87,7 @@ cellules de 436, donc 85 px de vide de chaque côté sous des carrées pleine la
 
 | | 375 px | 1280 px |
 |---|---|---|
-| **hauteur totale de la section** | **2 800 px** | 3 364 px |
+| **hauteur totale de la section** | **2 800 px** (FR) · **2 639 px** (EN, légendes plus courtes) | 3 364 px |
 | détail | titre+chapô 295 · ① 993 · ② 865 · ③ 297 · ligne d'aide 39 (+ marges et `py-16`) | colonne 672 px |
 | photos 1 & 2 | 164×344 chacune | 324×683 |
 | photos 3 & 4 | 164×164 / 164×161 | 324×324 / 324×319 |
@@ -95,6 +95,12 @@ cellules de 436, donc 85 px de vide de chaque côté sous des carrées pleine la
 | docs 6 & 7 | 164×228 / 149×230 | 287×400 / 259×400 |
 | photo 8 | 343×163 | 672×319 |
 | débordement horizontal | **aucun** (`scrollWidth` = 375) | **aucun** |
+
+✅ **REVÉRIFIÉ EN LIGNE APRÈS DÉPLOIEMENT** (pas seulement en local) : `/yishama/` et `/en/yishama/`
+en 200, **les 8 images en 200**, les 8 chargées (`complete && naturalWidth > 0`), aucun débordement
+horizontal, section à **2 800 px** en FR, lightbox **« 1 / 8 »** en FR et **« 6 / 8 »** en EN avec
+*Previous photo* / *Next photo*, et le certificat qui passe de **343×479 ajusté à 1431×2000 en
+taille réelle** — en production.
 
 ✅ **Aucune déformation** : rapport affiché vs rapport source vérifié image par image à 1280 px —
 0,4744/0,4725 · 0,999/0,999 · 1,015/1,0151 · 1,6429/1,6461 · 0,7169/0,7155 · 0,6468/0,645 ·
