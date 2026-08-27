@@ -29,6 +29,70 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 27/08/2026 (nuit) — 🖋️ MES GAMMES PORTENT LE NOM DE CELUI QUI LES A CONÇUES
+
+**Statut : ✅ COMMITÉ (`b3de5b1`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, build 91 pages).**
+
+**La demande de David (mots exacts)** : « Sur l'app et dans le site il y a mes 2 gammes David
+Lesage Signature mais je voudrais ajouter **made by Yishama, conçus par Yhonatan Ale-Yahav** car
+c'est **lui qui les a pensées / conçues pour moi sur mesure** et je veux que ça soit écrit
+**partout où mes gammes apparaissent**. »
+C'est une **attribution de paternité créative**, pas une mention légale : elle se lit, elle n'est
+jamais reléguée en petit. (La partie **app** est traitée par la session Handpan Studio — le site
+ne touche pas à `NEOTONE STUDIO/`.)
+
+### La formulation officielle (identique site + app)
+- **FR** : `Made by Yishama — conçues par Yhonatan Ale-Yahav`  (sujet = *les gammes* → **conçues**)
+- **EN** : `Made by Yishama — designed by Yhonatan Ale-Yahav`
+
+### Où le crédit a été posé
+| Endroit | Fichier | Clé / élément |
+|---|---|---|
+| `/yishama` § « Les deux instruments » — **entre le titre et les 2 cartes de gammes** | `src/components/pages/YishamaPage.astro` + `dict.ts` / `en.ts` | **nouvelle clé `yishama.insCredit`** (encadré cuivré, icône `lucide:stamp`, `max-w-2xl`, `bg-cream` sur section `cream-deep`) |
+| `/yishama` § « Ce que ces deux pans ont produit » — la phrase du badge de l'app | `dict.ts` / `en.ts` | `yishama.bridgeSignature` réécrite : « Le badge porte mon nom, **mais les gammes sont Made by Yishama — conçues par Yhonatan Ale-Yahav** » |
+| Source de vérité technique | `src/data/yishama.ts` | bloc de commentaire « 🖋️ PATERNITÉ » au-dessus de `instruments` |
+
+Rendu vérifié en ligne : `https://www.lesagedavid.fr/yishama/` et `/en/yishama/`.
+Mesures FR (1620 px) : titre bas **3809 px** → crédit **3916–4035 px** → grille des cartes **4083 px**.
+Le crédit est donc **lu avant** les gammes, pas après.
+
+### 🚨 LES DEUX PIÈGES — À NE JAMAIS OUBLIER
+1. **Deux choses différentes portent le nom « Signature David Lesage »** :
+   - ✅ **les 2 gammes** `D Kurd 18` / `E 18` (les handpans Yishama sur mesure) → **crédit Yishama** ;
+   - ❌ **les créations Now Groove** — `shop.creationsBadge` (`dict.ts`) et le **Kit de Calebasse
+     David Lesage Signature** — finies à la main par **Kamou (Djoliba Percussion)**. **Jamais** de
+     crédit Yishama dessus : ce serait une fausse attribution. (Dans l'app, un 3ᵉ objet porte encore
+     ce nom : la *disposition* de notes « David Lesage Signature ».)
+2. **Orthographe : les deux graphies coexistent VOLONTAIREMENT, ne pas « uniformiser »** :
+   - **« Yonathan »** = forme familière, employée dans tout le récit de David (~22 occurrences FR,
+     ~20 EN, toute la page `/yishama`) — **on n'y touche pas** ;
+   - **« Yhonatan Ale-Yahav »** = nom officiel complet du fondateur/CEO de Yishama, **réservé au
+     crédit de paternité** (source : `AUDIT-CONTENU-2026-08-13.md:313` + commentaires de
+     `src/data/yishama.ts`).
+   Un commentaire le dit explicitement dans `dict.ts`, `en.ts` et `data/yishama.ts`.
+
+### Où le crédit n'a **PAS** été posé, et pourquoi
+- **`/handpan-app` (StudioPage)** — la page ne nomme jamais les 2 gammes de David (elle parle du
+  handpan **du lecteur**). Rien à créditer → **page non touchée**, ses garde-fous au pixel intacts.
+- **`/boutique`** — la fiche `yishama` (`data/shop.ts`) présente **le catalogue du fabricant**
+  (visuels marketing Yishama), pas les 2 gammes personnelles de David. Yishama y est déjà le
+  vendeur : ajouter « made by Yishama » serait un pléonasme.
+- **`/showroom` (bloc `duo`)** — présente les **instruments physiques à essayer**, pas les gammes ;
+  « Yishama » est déjà le sur-titre de la carte. Et la consigne de **parité stricte avec Neotone**
+  (`dict.ts`, commentaire ⚖️ au-dessus de `duoEyebrow`) interdit de donner plus de poids visuel à
+  Yishama : rallonger sa puce aurait cassé cette règle. La carte renvoie vers `/yishama`.
+- **Accueil (`home.duo`) et `/a-propos`** — le texte dit déjà « dessinés **avec Yonathan** » /
+  « les deux handpans que **Yonathan a dessinés pour moi** » : la paternité y est déjà écrite, dans
+  les mots de David. On n'y superpose pas une seconde formulation.
+- **Le reste de `/yishama`** — la page raconte Yonathan pendant ~40 paragraphes ; répéter la
+  mention l'aurait transformée en notice juridique. **Deux occurrences sur la page**, très
+  éloignées (§ 4 et § 8) : c'est voulu.
+- **Textes alternatifs d'images** (ex. `dict.ts` alt citant « la gamme D Kurd 18 ») — un `alt`
+  décrit ce qu'on voit, il n'est pas un support de crédit.
+- **Blog / guides** — vérifié : **aucun article ni guide ne cite `D Kurd 18` ou `E 18`**.
+
+---
+
 ## ÉTAT ACTUEL — 27/08/2026 (soir) — 📷 `/cours` : LA PREMIÈRE PHOTO D'UN COURS RÉEL
 
 **Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ (build 91 pages + rendu réel 375 px et 1280 px, FR + EN).**
