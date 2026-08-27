@@ -341,6 +341,85 @@ export const en: Dict = {
     why432Text:
       'I am fascinated by the effect of vibration on water and on the body — cymatics. That is why I asked Yonathan for a tuning based on A = 432 Hz. He replied that it was possible, but that he had to be certain <em>before</em> starting to tune: on a handpan, that choice cannot be undone.',
 
+    // ═══════════════════════════════════════════════════════════════════
+    // 📦 THE DELIVERY — MAY 2023 (section added 27/08/2026)
+    // ═══════════════════════════════════════════════════════════════════
+    // Eight of David's own photographs, supplied by him for this page.
+    // See the long note in dict.ts (key `recEyebrow`) for the full
+    // reasoning. In short:
+    //  · the page already ASSERTED the arrival without ever showing it
+    //    (`insTitle`, `insIntro`) — the photographs turn the claim into a
+    //    document;
+    //  · section 4 is LOCKED (the Yishama credit must stay glued to the
+    //    heading and be read BEFORE the scale cards) and is already the
+    //    heaviest section of the page;
+    //  · chronologically the arrival belongs after the brief (§ 3) and
+    //    before the note-by-note anatomy (§ 4).
+    // ⚠️ `insIntro` was NOT rewritten: “almost exactly on my birthday” was
+    //    already there, and this section makes it precise rather than
+    //    contradicting it (delivery the day before, birthday the day after).
+    //
+    // 🖋️ THE HANDWRITTEN SIGNATURE ON THE CERTIFICATE IS THE DOCUMENTARY
+    // PROOF OF THE “Yhonatan Ale-Yahav” spelling (see the note on
+    // `insCredit` below). It is no longer an internal convention: it is
+    // what the maker writes by hand.
+    //
+    // 🚫 NO CROPPING, NO RETOUCHING. Photo 1 is blurred, dark and noisy:
+    // it is a document, not a catalogue image. The caption owns that fact
+    // rather than apologising for it. The certificate's identification
+    // number 483 stays visible — David sent it knowingly for this page.
+    //
+    // ⚠️ NOTHING IS INVENTED ABOUT WHAT HE FELT. The only added facts (May
+    // 2023, the delivery, the birthday the next day) are his own.
+    recEyebrow: 'May 2023',
+    recTitle: 'The day they arrived',
+    recIntro:
+      'I have no careful picture of that moment. I have the ones I took on my phone, in the order it happened: the van, the crate, the case, the instrument — then the letter, and the next day.',
+
+    recCaption1:
+      'May 2023, at dusk. The van is still outside the house and the two crates are already in. The photo is blurred and dark: I am keeping it exactly as it is — that was the face I had.',
+    recCaption2:
+      'Under the cardboard and the polystyrene packing, a plywood crate closed with screws. On the lid, an envelope sealed with red wax. Through the gap you can already make out the red trim of the case.',
+    recCaption3:
+      'The hard case set down on the floor: matt black camouflage, a quilted spiral, red trim along the edge, and the Yishama badge in the middle.',
+    recCaption4:
+      'The zip open, and the metal. The ding at the centre with its rings, the notes all around. The drawing Yonathan had started in my room had become an object.',
+
+    recPapersLead: 'Inside the crate there were papers too.',
+    recCaption5:
+      'The same envelope as in the crate photo, this time opened — the wax seal beside the certificate.',
+    recCaption6:
+      'The certificate for the E 18, signed by hand by Yhonatan Ale-Yahav: the scale, the steel, the eighteen notes, the dimensions, the weight, the identification number. Yishama calls it “E Major 18”; on this page, E 18 is my own working label.',
+    recCaption7: 'The back of the certificate: the Yishama logo, on the same textured paper.',
+
+    recNextDayLead: 'And the next day was my birthday.',
+    recCaption8:
+      'The two pans set up on their stands, the tablet above them, the open upright piano frame behind. Twenty-four hours after the van.',
+
+    recZoomHint:
+      'Click any photo to open it full screen, then use ‹ › to move between the eight. The certificate can only be read enlarged.',
+
+    // 🔤 `alt` — accessibility AND search. They describe what is actually
+    // visible, including the word YISHAMA on the box and on the case badge.
+    // The certificate is printed in English, so its wording is quoted as
+    // printed: an `alt` describes, it does not translate.
+    recAlt1:
+      'A blurred photograph taken at dusk: David Lesage in extreme close-up, mouth wide open and eyes wide. Behind him, two large delivery boxes stacked up; the lower one carries the Yishama logo and the word YISHAMA in large letters, along with its shipping labels. Beyond the glass door, the white delivery van is still parked outside the house.',
+    recAlt2:
+      'Looking down into the opened box: white polystyrene packing and, inside it, a pale plywood crate closed with screws visible at the corners. On the lid, slipped into a protective plastic sleeve, a kraft envelope sealed with red wax. Through the gap under the lid, the black case and its red trim can be glimpsed.',
+    recAlt3:
+      'The handpan hard case seen from above on a pale wooden floor: matt black camouflage fabric, a wide raised quilted spiral, a rectangular badge reading YISHAMA at the centre, red trim along the edge and a zip running around the rim.',
+    recAlt4:
+      'The case open: inside, the handpan, its metal catching a warm golden and bronze light. At the centre, the ding and its concentric rings; all around, the note fields, both dimpled and domed.',
+    recAlt5:
+      'On a wooden work surface: the kraft envelope, now opened, with its red wax seal stamped with a monogram, lying beside the certificate of authenticity printed on textured paper.',
+    recAlt6:
+      'The Yishama certificate of authenticity, full page. It reads: Certificate of Authenticity, Owner David Lesage, Year 2023, Scale E Major 18, Steel Type Stainless Steel, Notes (A B C♯ D♯) E / (F♯) G♯ B C♯ D♯ E F♯ G♯ A B C♯ D♯ E, Dimensions 53 × 53 × 28 cm, Weight 4.4 kg, the line “designed and produced at YISHAMA Workshop, Isfiya / ISRAËL”, the handwritten signature of Yhonatan Ale-Yahav and identification number 483.',
+    recAlt7:
+      'The back of the certificate: the Yishama logo — a golden flourish — above the word YISHAMA in capitals, on textured paper, with the address WWW.YISHAMA.COM at the foot of the page.',
+    recAlt8:
+      'David Lesage smiling, head tilted, in full daylight. In front of him, his two Yishama handpans in dark grey metal, each on its stand; behind, a tablet on an articulated arm, the frame of an open upright piano showing its strings and action, a painting of an orange Flower of Life, electronic pads and a pedalboard.',
+
     insEyebrow: 'The two instruments',
     insTitle: 'Eighteen notes each, delivered in May 2023',
     insIntro:
@@ -416,8 +495,12 @@ export const en: Dict = {
     // names on the two shells cannot be read without enlarging, and on a phone
     // the image is only ~340 px wide.
     insAppZoomHint: 'Dense screen: open the screenshot, then click it again for full size — that is where the note names become readable.',
-    // Lightbox labels: the screenshot opens full screen.
-    lightbox: { close: 'Close', zoom: 'Enlarge screenshot' },
+    // Lightbox labels: images open full screen.
+    // ⚠️ `prev` / `next` added 27/08/2026: the page now carries a group of
+    // EIGHT photographs (`yishama-reception`), so the ‹ › arrows are really
+    // visible. Without these two keys their `aria-label` fell back to the
+    // component's FRENCH defaults — on the English page too.
+    lightbox: { close: 'Close', prev: 'Previous photo', next: 'Next photo', zoom: 'Enlarge photo' },
 
     pairEyebrow: 'Together',
     pairTitle: 'A chromatic handpan, in two pieces',

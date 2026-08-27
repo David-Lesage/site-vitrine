@@ -374,6 +374,106 @@ const fr = {
     why432Text:
       'Je suis passionné par l’impact de la vibration sur l’eau et sur le corps — la cymatique. C’est pour ça que j’ai demandé à Yonathan un accordage basé sur le la 432 Hz. Il m’a répondu que c’était possible, mais qu’il devait en être certain <em>avant</em> de commencer à accorder : sur un handpan, ce choix-là ne se refait pas.',
 
+    // ═══════════════════════════════════════════════════════════════════
+    // 📦 LA RÉCEPTION — MAI 2023 (section ajoutée le 27/08/2026)
+    // ═══════════════════════════════════════════════════════════════════
+    // Huit photos de David, fournies par lui pour cette page.
+    //
+    // POURQUOI CETTE SECTION EXISTE, ET POURQUOI ICI (entre « La raison
+    // d'être » et « Les deux instruments ») :
+    //  · la page affirmait déjà l'arrivée, sans jamais la montrer —
+    //    `insTitle` (« reçus en mai 2023 ») et `insIntro` (« Ils sont
+    //    arrivés en caisses de bois sécurisées, coques de transport
+    //    comprises — presque le jour de mon anniversaire ») étaient les
+    //    deux seules traces du moment, et c'étaient des affirmations sans
+    //    pièce. Les photos les transforment en document ;
+    //  · la section 4 est VERROUILLÉE (le crédit Yishama doit rester collé
+    //    au titre et se lire AVANT les cartes de gammes) et c'est déjà la
+    //    plus chargée de la page ; y ajouter huit photos en aurait fait un
+    //    mur, et aurait cassé l'enchaînement voulu « 6 + 6 → 24 » de la
+    //    légende de la capture d'app vers la section « Ensemble » ;
+    //  · chronologiquement, l'arrivée se place APRÈS la commande (§ 3) et
+    //    AVANT l'anatomie note à note (§ 4). C'est le seul endroit où elle
+    //    ne coupe rien.
+    // ⚠️ `insIntro` n'a pas été retouché : la nuance « presque le jour de
+    //    mon anniversaire » y était déjà, et cette section la précise sans
+    //    la contredire (livraison la veille, anniversaire le lendemain).
+    //
+    // 🎚️ HIÉRARCHIE EN TROIS TEMPS (le format des fichiers l'impose autant
+    // que le récit — deux photos sont en 1:2,1, deux sont carrées, deux
+    // sont des documents en portrait et deux sont panoramiques) :
+    //  ① L'OUVERTURE (1 à 4) — les deux très hautes ensemble sur une même
+    //     rangée (rapports identiques = zéro trou), puis les deux carrées ;
+    //  ② LES PAPIERS (5 à 7) — ce ne sont pas des photos d'ambiance, ce
+    //     sont des DOCUMENTS. Le certificat ne se lit qu'agrandi : il vit
+    //     en vignette et se déplie dans la lightbox ;
+    //  ③ LE LENDEMAIN (8) — panoramique, pleine largeur, seule de sa
+    //     rangée : c'est le point d'arrivée de la séquence.
+    //
+    // 🖋️ LA SIGNATURE MANUSCRITE DU CERTIFICAT EST LA PREUVE DOCUMENTAIRE
+    // DE LA GRAPHIE « Yhonatan Ale-Yahav » (voir la longue note sur
+    // `insCredit` plus bas). Ce n'est donc plus une convention interne :
+    // c'est ce que le fabricant écrit de sa main. La coexistence avec le
+    // « Yonathan » familier du récit reste voulue.
+    //
+    // 🚫 AUCUN RECADRAGE, AUCUNE RETOUCHE. La photo 1 est floue, sombre et
+    // bruitée : c'est un document, pas une image de catalogue. On ne
+    // l'excuse pas et on ne la répare pas — la légende l'assume, c'est
+    // tout. Et le numéro d'identification 483 du certificat reste visible :
+    // David l'a envoyé sciemment pour cette page.
+    //
+    // ⚠️ RIEN N'EST INVENTÉ SUR CE QU'IL A RESSENTI. Les seuls faits
+    // ajoutés (mai 2023, la livraison, l'anniversaire le lendemain) sont
+    // de lui. Les photos fournissent le reste.
+    recEyebrow: 'Mai 2023',
+    recTitle: 'Le jour où ils sont arrivés',
+    recIntro:
+      'Je n’ai aucune image soignée de ce moment-là. J’ai celles que j’ai prises avec mon téléphone, dans l’ordre où c’est arrivé : le camion, la caisse, la housse, l’instrument — puis la lettre, et le lendemain.',
+
+    recCaption1:
+      'Mai 2023, à la nuit tombante. Le camion est encore devant la maison et les deux caisses sont déjà là. La photo est floue et sombre : je la garde telle quelle, c’est la tête que j’avais.',
+    recCaption2:
+      'Sous le carton et le calage en polystyrène, une caisse en contreplaqué fermée à la vis. Sur le couvercle, une enveloppe scellée à la cire rouge. Par l’interstice, on devine déjà le liseré rouge de la housse.',
+    recCaption3:
+      'La housse rigide posée sur le parquet : camouflage noir mat, spirale matelassée, liseré rouge sur la tranche, et le badge Yishama au centre.',
+    recCaption4:
+      'La fermeture ouverte, et le métal. Le ding au centre avec ses anneaux, les notes tout autour. Le dessin que Yonathan avait commencé dans ma chambre était devenu un objet.',
+
+    recPapersLead: 'Dans la caisse, il y avait aussi les papiers.',
+    recCaption5:
+      'La même enveloppe que sur la photo de la caisse, cette fois ouverte — le cachet de cire à côté du certificat.',
+    recCaption6:
+      'Le certificat du E 18, signé à la main par Yhonatan Ale-Yahav : la gamme, l’acier, les dix-huit notes, les dimensions, le poids, le numéro d’identification. Yishama l’appelle « E Major 18 » ; sur cette page, E 18 est mon libellé de travail.',
+    recCaption7: 'Le dos du certificat : le logo Yishama, sur le même papier texturé.',
+
+    recNextDayLead: 'Et le lendemain, c’était mon anniversaire.',
+    recCaption8:
+      'Les deux pans installés sur leurs pieds, la tablette au-dessus, le cadre du piano droit ouvert derrière. Vingt-quatre heures après le camion.',
+
+    recZoomHint:
+      'Clique sur une photo pour l’ouvrir en grand, puis navigue entre les huit avec ‹ ›. Le certificat ne se lit qu’agrandi.',
+
+    // 🔤 `alt` — accessibilité ET référencement. On décrit ce qu'on voit
+    // réellement, y compris le mot YISHAMA sur le carton et sur le badge de
+    // la housse, et le texte du certificat tel qu'il est imprimé (en
+    // anglais : un `alt` décrit, il ne traduit pas).
+    recAlt1:
+      'Photo floue prise au crépuscule : David Lesage en très gros plan, bouche grande ouverte et yeux écarquillés. Derrière lui, deux grands cartons de livraison empilés ; celui du bas porte le logo et le mot YISHAMA en grandes lettres, avec ses étiquettes de transport. Au fond, derrière la porte vitrée, le camion de livraison blanc est encore garé devant la maison.',
+    recAlt2:
+      'Vue plongeante sur le carton ouvert : le calage en polystyrène blanc et, à l’intérieur, une caisse en contreplaqué clair fermée par des vis apparentes aux coins. Sur le couvercle, glissée dans une pochette plastique de protection, une enveloppe kraft fermée par un cachet de cire rouge. Par l’interstice sous le couvercle, on aperçoit la housse noire et son liseré rouge.',
+    recAlt3:
+      'La housse rigide du handpan vue de dessus, posée sur un parquet clair : tissu camouflage noir mat, large spirale matelassée en relief, badge rectangulaire portant le mot YISHAMA au centre, liseré rouge sur la tranche et fermeture éclair sur le pourtour.',
+    recAlt4:
+      'La housse ouverte : à l’intérieur, le handpan dont le métal renvoie une lumière chaude, dorée et bronze. Au centre, le ding et ses anneaux concentriques ; tout autour, les zones de notes, en creux et en dômes.',
+    recAlt5:
+      'Sur un plan de travail en bois : l’enveloppe kraft, maintenant ouverte, avec son cachet de cire rouge frappé d’un monogramme, posée à côté du certificat d’authenticité imprimé sur papier texturé.',
+    recAlt6:
+      'Le certificat d’authenticité Yishama en pleine page. On y lit : Certificate of Authenticity, Owner David Lesage, Year 2023, Scale E Major 18, Steel Type Stainless Steel, Notes (A B C♯ D♯) E / (F♯) G♯ B C♯ D♯ E F♯ G♯ A B C♯ D♯ E, Dimensions 53 × 53 × 28 cm, Weight 4,4 kg, la mention « designed and produced at YISHAMA Workshop, Isfiya / Israël », la signature manuscrite de Yhonatan Ale-Yahav et le numéro d’identification 483.',
+    recAlt7:
+      'Le dos du certificat : le logo Yishama — une volute dorée — au-dessus du mot YISHAMA en capitales, sur papier texturé, avec l’adresse WWW.YISHAMA.COM en bas de page.',
+    recAlt8:
+      'David Lesage souriant, tête penchée, en pleine lumière du jour. Devant lui, ses deux handpans Yishama en métal gris anthracite posés sur leurs pieds ; derrière, une tablette fixée sur un bras articulé, le cadre d’un piano droit ouvert laissant voir cordes et mécanique, un tableau représentant une Fleur de Vie orangée, des pads électroniques et un pédalier.',
+
     insEyebrow: 'Les deux instruments',
     insTitle: 'Dix-huit notes chacun, reçus en mai 2023',
     insIntro:
@@ -469,7 +569,11 @@ const fr = {
     // un téléphone l'image ne fait que ~340 px de large.
     insAppZoomHint: 'Écran dense : ouvre la capture, puis clique dessus à nouveau pour la taille réelle — c’est là que les noms de notes se lisent.',
     // Libellés de la lightbox : la capture s'ouvre en plein écran.
-    lightbox: { close: 'Fermer', zoom: 'Agrandir la capture' },
+    // ⚠️ `prev` / `next` ajoutés le 27/08/2026 : la page a désormais un groupe
+    // de HUIT photos (`yishama-reception`), donc des flèches ‹ › réellement
+    // visibles. Sans ces deux clés, leur `aria-label` retombait sur le défaut
+    // français du composant — y compris sur la page anglaise.
+    lightbox: { close: 'Fermer', prev: 'Photo précédente', next: 'Photo suivante', zoom: 'Agrandir la photo' },
 
     pairEyebrow: 'Ensemble',
     pairTitle: 'Un handpan chromatique, en deux pièces',

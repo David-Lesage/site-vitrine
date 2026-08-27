@@ -29,7 +29,185 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 27/08/2026 (5ᵉ passe) — 🖼️ LE GABARIT DU BLOG SAIT ENFIN PORTER UNE IMAGE
+## ÉTAT ACTUEL — 27/08/2026 (6ᵉ passe) — 📦 `/yishama` A ENFIN LE JOUR OÙ ILS SONT ARRIVÉS
+
+**Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, build 93 pages).**
+
+- 🇫🇷 https://www.lesagedavid.fr/yishama/#reception
+- 🇬🇧 https://www.lesagedavid.fr/en/yishama/#reception
+
+**Demande de David** : « pour la page yishama storytelling, voici photo de réception des 2 Yishama /
+caisse en bois / housse de protection flightcase / première ouverture », puis **4 photos de plus**
+dans la foulée (anniversaire, enveloppe ouverte, certificat, verso). **8 photos, un seul lot, un
+seul déploiement.**
+
+### 📍 OÙ, ET POURQUOI LÀ — nouvelle section `#reception`, ENTRE § 3 et § 4
+
+La page **affirmait** déjà l'arrivée sans jamais la montrer : `insTitle` (« Dix-huit notes chacun,
+**reçus en mai 2023** ») et `insIntro` (« Ils sont arrivés en **caisses de bois sécurisées, coques
+de transport comprises** — presque le jour de mon anniversaire ») en étaient les deux seules traces.
+Les photos **sont** littéralement ces caisses et cette coque : elles transforment l'affirmation en
+pièce. Même raisonnement que pour `methode-2023-cartographie-notes.webp` en § 9.
+
+**Pourquoi PAS dans la section 4** — deux adjacences verrouillées y interdisaient toute insertion :
+① le crédit Yishama doit rester **collé au titre et avant les cartes de gammes** ; ② la légende de
+la capture d'app (« 6 + 6 → **24** ») est la **marche voulue vers la section « Ensemble »** juste en
+dessous. Et la § 4 était déjà la plus chargée de la page.
+**Pourquoi entre 3 et 4** : chronologie — la commande (§ 3) → l'arrivée → l'anatomie note à note
+(§ 4). Le seul point de la page où la séquence ne coupe rien. Ton **`ink`** (sombre) : ça punctue
+entre deux sections claires, et le crépuscule / la housse noire / le bronze y ressortent.
+⛔ **`insIntro` n'a PAS été retouché** : « presque le jour de mon anniversaire » y était déjà, et la
+nouvelle section la **précise** (livraison la veille, anniversaire le lendemain) au lieu de la
+contredire.
+
+🔬 **PREUVE QUE LE CRÉDIT N'EST PAS REPOUSSÉ** — mesuré à 375 px, **en prod (avant) et en local
+(après)** : écart titre → crédit = **240 px** dans les deux cas ; écart crédit → cartes = **472 px**
+dans les deux cas. Seule l'origine de la § 4 descend, de très exactement la hauteur de la nouvelle
+section. Ordre `titre < crédit < cartes` revérifié aussi à 1280 px.
+
+### 🎚️ LA HIÉRARCHIE EN TROIS TEMPS (et le problème de format, résolu SANS recadrage)
+
+Deux photos en **1:2,1** (945×2000), deux **carrées**, deux **documents en portrait**, deux
+**panoramiques**. Une image 1:2,1 en pleine largeur ferait plusieurs écrans de haut sur un
+téléphone : la hauteur est traitée **en mise en page**, jamais par un recadrage.
+
+| Temps | Contenu | Mise en page |
+|---|---|---|
+| ① **L'ouverture** | 1 livraison · 2 caisse+cachet · 3 housse · 4 première ouverture | grille **2 colonnes à TOUTES les tailles**. Rangée 1 = les deux 1:2,1 (rapports **strictement identiques** → zéro trou, légendes alignées) ; rangée 2 = les deux carrées |
+| ② **Les papiers** | 5 enveloppe ouverte (pleine largeur) · 6 certificat recto · 7 verso/logo | 6 et 7 alignés par la **HAUTEUR** (`max-h` commun), pas par la largeur : rapports différents (1431×2000 vs 1290×2000), un alignement en largeur décrocherait les deux bas |
+| ③ **Le lendemain** | 8 anniversaire (panoramique) | pleine largeur, **seule de sa rangée** — c'est le point d'arrivée |
+
+🧱 **TOUTE LA SECTION TIENT DANS UNE SEULE COLONNE `max-w-2xl` (672 px).** C'est ce qui supprime les
+« trous béants » : à 1280 px les 4 photos du temps ① font **exactement 324 px de large chacune**,
+bords alignés (L304→R976), sans plafond de hauteur ni marge latérale. Une première version plafonnait
+les portraits (`sm:max-h-[560px]`) dans une colonne `max-w-4xl` : ça donnait 266 px centrés dans des
+cellules de 436, donc 85 px de vide de chaque côté sous des carrées pleine largeur. **Abandonné.**
+
+### 📐 MESURES RÉELLES (navigateur intégré, build servi depuis `dist/`)
+
+| | 375 px | 1280 px |
+|---|---|---|
+| **hauteur totale de la section** | **2 800 px** | 3 364 px |
+| détail | titre+chapô 295 · ① 993 · ② 865 · ③ 297 · ligne d'aide 39 (+ marges et `py-16`) | colonne 672 px |
+| photos 1 & 2 | 164×344 chacune | 324×683 |
+| photos 3 & 4 | 164×164 / 164×161 | 324×324 / 324×319 |
+| photo 5 | 343×209 | 672×409 |
+| docs 6 & 7 | 164×228 / 149×230 | 287×400 / 259×400 |
+| photo 8 | 343×163 | 672×319 |
+| débordement horizontal | **aucun** (`scrollWidth` = 375) | **aucun** |
+
+✅ **Aucune déformation** : rapport affiché vs rapport source vérifié image par image à 1280 px —
+0,4744/0,4725 · 0,999/0,999 · 1,015/1,0151 · 1,6429/1,6461 · 0,7169/0,7155 · 0,6468/0,645 ·
+2,1111/2,1164.
+
+### 🔍 LA LIGHTBOX — UN SEUL GROUPE, ET `data-lb-wide` MESURÉ PLUTÔT QUE SUPPOSÉ
+
+`data-lb="yishama-reception"` sur **les huit**, dans l'ordre du récit → compteur **« n / 8 »** et
+flèches ‹ › qui refeuillettent la séquence. C'est **l'inverse** du choix fait pour `yishama-app` et
+`yishama-methode-2023` (groupes séparés exprès, deux images sans rapport) : ici les huit racontent
+la même chose, la navigation est justement ce qu'on veut.
+
+⚠️ **`prev` / `next` sont désormais passés au composant** (`yishama.lightbox.prev/next`, FR + EN).
+Sans eux, les flèches d'un groupe de 8 retombaient sur les libellés **français** par défaut du
+composant — **y compris sur `/en/yishama`**. Vérifié en anglais : *Previous photo* / *Next photo*.
+
+**`data-lb-wide` sur TROIS images, et c'est mesuré à 375 px :**
+
+| image | dans la page | lightbox ajustée | verdict |
+|---|---|---|---|
+| 6 certificat | 164 px | 343 px, **illisible** | `data-lb-wide` → taille réelle **1431 px, ×4,17** |
+| 5 enveloppe (panoramique) | 343 px | **343 px** | **GAIN ZÉRO** → `data-lb-wide` |
+| 8 anniversaire (panoramique) | 343 px | **343 px** | **GAIN ZÉRO** → `data-lb-wide` |
+| les 5 autres | ~164 px | 343 px (**×2,1**) | ajusté suffit |
+
+👉 **La règle se confirme une 4ᵉ fois** : une image déjà en pleine largeur dans la page ne gagne
+RIEN à la lightbox ajustée. Toujours mesurer avant de poser (ou d'omettre) `data-lb-wide`.
+
+### 🖼️ LES 8 FICHIERS — `cwebp -q 90 -sharp_yuv`, aucun recadrage
+
+Originaux hors dépôt dans `_medias-originaux-avec-titre/` (suffixe `-source.jpg`).
+
+| # | fichier `public/images/` | dimensions | poids |
+|---|---|---|---|
+| 1 | `yishama-reception-1-livraison.webp` | 945×2000 | 360 Ko |
+| 2 | `yishama-reception-2-caisse-cachet-cire.webp` | 945×2000 | 269 Ko |
+| 3 | `yishama-reception-3-housse.webp` | 1998×2000 | 537 Ko |
+| 4 | `yishama-reception-4-premiere-ouverture.webp` | 1954×1925 | 514 Ko |
+| 5 | `yishama-reception-5-enveloppe-ouverte-certificat.webp` | 2000×1215 | 482 Ko |
+| 6 | `yishama-reception-6-certificat-recto.webp` | 1431×2000 | **1,15 Mo** |
+| 7 | `yishama-reception-7-certificat-verso-logo.webp` | 1290×2000 | 663 Ko |
+| 8 | `yishama-reception-8-lendemain-anniversaire.webp` | 2000×945 | 276 Ko |
+
+**Total ≈ 4,3 Mo, tous en `loading="lazy"`.** Le certificat est le plus lourd : c'est le **grain du
+papier texturé**, pas de l'information — si un jour il faut alléger la page, c'est le seul candidat
+(testé : 704 Ko à q78, 812 Ko à q82, 954 Ko à q86 ; garder ≥ q86 pour que le texte reste net en
+taille réelle, puisque c'est précisément ce qu'on va y lire).
+
+### 🚫 CE QUI N'A **PAS** ÉTÉ TOUCHÉ
+
+- **Section 4** : ni le crédit, ni les cartes, ni `insIntro`, ni `app-hybride-deux-gammes.webp`.
+- **Section 6 « Trois aciers, trois voix »** : **rien**. En attente d'arbitrage David + échange
+  Yishama (voir ci-dessous).
+- **Section 9** : `methode-2023-cartographie-notes.webp` inchangée.
+- Aucune clé i18n supprimée (**vérifié par diff des clés : 0 supprimée, 22 ajoutées de chaque
+  côté, parité FR/EN exacte**). Les 14 lignes supprimées du diff sont **uniquement** le commentaire
+  de la `<Lightbox />`, son appel, et les deux lignes `lightbox: {...}` que j'ai remplacées.
+- Aucun autre article, aucune autre page, aucune dépendance npm, aucun slug.
+- Les 4 phrases « degré » et les 3 contradictions de `audits/AUDIT-CHROMAKEYS-2026-08-27.md`
+  **attendent toujours David**.
+
+### 🧾 CE QUE LE CERTIFICAT APPREND — 4 FAITS À PORTER À DAVID
+
+Le certificat (photos 6 et 7) est **lisible intégralement**. Il est publié tel quel, numéro de série
+compris : David l'a envoyé sciemment pour la page.
+
+> Owner **David Lesage** · Year **2023** · Scale **E Major 18** · Steel Type **Stainless Steel** ·
+> Notes **(A B C♯ D♯) E / (F♯) G♯ B C♯ D♯ E F♯ G♯ A B C♯ D♯ E** · Dimensions **53 × 53 × 28 cm** ·
+> Weight **4,4 kg** · *designed and produced at YISHAMA Workshop, **Isfiya / ISRAËL*** ·
+> signature manuscrite **Yhonatan Ale-Yahav** · Identification number **483**
+
+1. 🔩 **L'ACIER DU E 18 EST « Stainless Steel » (inox).** ⚠️ **Ni `/yishama` ni
+   `src/data/yishama.ts` ne documentaient l'acier des deux pans de David** — la section « Trois
+   aciers, trois voix » décrit ce que **Yishama propose**, pas ce que **David possède**, et le
+   commentaire d'en-tête de `yishama.ts` liste ses sources sans jamais mentionner l'acier de ses
+   instruments. **Aucune contradiction, donc — un simple blanc.** ⛔ **Rien n'a été modifié dans
+   cette section**, et la photo 4 (« première ouverture ») n'y a **pas** été utilisée : le métal y
+   paraît doré/bronze, alors que le certificat dit **inox** et que la photo 8 (le lendemain) montre
+   les deux pans **gris anthracite**. 👉 **La démonstration est faite : on ne déduit PAS un acier
+   d'une couleur sur une photo.** Le certificat ne couvre en revanche **que le E 18** — celui du
+   D Kurd 18 reste inconnu.
+2. 🖋️ **LA SIGNATURE MANUSCRITE CONFIRME « Yhonatan Ale-Yahav ».** Le crédit du site est désormais
+   adossé à une **pièce**, plus à une convention interne. Dit dans les commentaires de `dict.ts` et
+   `en.ts` qui protègent la coexistence « Yonathan » (récit) / « Yhonatan Ale-Yahav » (crédit).
+   *(`src/data/yishama.ts` porte la même note mais n'était pas dans mon périmètre — à compléter.)*
+3. 🏷️ **ÉCART DE NOM : Yishama écrit « E Major 18 », le site et l'app écrivent « E 18 ».** ⛔ **Rien
+   renommé nulle part.** La légende de la photo 6 le dit franchement (« Yishama l'appelle E Major
+   18 ; sur cette page, E 18 est mon libellé de travail »), ce qui rejoint `insFootnote` qui
+   annonçait déjà que ces noms sont les libellés de travail de David.
+4. ✅ **LES NOTES CONCORDENT, NOTE POUR NOTE, AVEC `src/data/yishama.ts`.** Décodage des
+   parenthèses = notes du dessous : `(A B C♯ D♯)` + `(F♯)` → **A2 B2 C♯3 D♯3 F♯3** = les 5 du
+   dessous ; `E/` → **le ding E3** ; les 12 suivantes → **G♯3 B3 C♯4 D♯4 E4 F♯4 G♯4 A4 B4 C♯5 D♯5
+   E5** = le dessus. **18 notes, découpage dessus/dessous compris : identique.** 🎯 **C'est une
+   confirmation par le fabricant des données du site.**
+
+⚠️ **Écart mineur, NON corrigé** : `makerFacts` annonce « **environ 55 cm** de diamètre […] et
+**4,4 kg** ». Le certificat dit **53 × 53 × 28 cm** et **4,4 kg**. Le poids tombe juste, le diamètre
+non — mais `makerFacts` parle du catalogue Yishama en général (« sur la plupart des modèles »), pas
+de l'instrument de David. À arbitrer, pas à corriger d'office.
+
+### ✍️ LES LÉGENDES — VOIX DE DAVID, ET RIEN D'INVENTÉ
+
+Les seuls faits ajoutés (mai 2023, la livraison, l'anniversaire **le lendemain**) sont **de lui**.
+Aucun ressenti fabriqué : pas de « je tremblais », pas de « j'avais les larmes aux yeux ».
+🚫 **La photo 1 est floue, sombre et bruitée — on ne l'excuse pas et on ne la répare pas.** La
+légende l'assume : « *La photo est floue et sombre : je la garde telle quelle, c'est la tête que
+j'avais.* » C'est un **document**, pas une image de catalogue.
+🔗 Le **cachet de cire relie les photos 2 et 6** (scellé, puis ouvert) : dit en une demi-phrase dans
+la légende 5, sans y revenir.
+
+---
+
+## 27/08/2026 (5ᵉ passe) — 🖼️ LE GABARIT DU BLOG SAIT ENFIN PORTER UNE IMAGE
 
 **Statut : ✅ COMMITÉ (`ce62fe3`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, build 93 pages).**
 

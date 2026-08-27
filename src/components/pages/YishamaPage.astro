@@ -140,6 +140,214 @@ const ld = [
     </div>
   </Section>
 
+  {/* ───────────── 3 bis. LA RÉCEPTION — MAI 2023 ─────────────
+
+      📦 HUIT PHOTOS DE DAVID (ajoutées le 27/08/2026), fournies par lui pour
+      cette page. Voir la longue note de `dict.ts` (clé `recEyebrow`).
+
+      POURQUOI ICI, ENTRE « La raison d'être » ET « Les deux instruments » —
+      les trois raisons, dans l'ordre :
+      ① La page AFFIRMAIT déjà l'arrivée sans jamais la montrer. `insTitle`
+         (« reçus en mai 2023 ») et `insIntro` (« Ils sont arrivés en caisses
+         de bois sécurisées, coques de transport comprises — presque le jour
+         de mon anniversaire ») en étaient les deux seules traces, et
+         c'étaient des affirmations sans pièce. Les photos EN SONT la pièce :
+         la caisse de bois et la coque de transport sont littéralement là.
+      ② La SECTION 4 EST VERROUILLÉE et déjà la plus chargée de la page. Le
+         crédit Yishama doit rester collé au titre et se lire AVANT les cartes
+         de gammes ; et la légende de la capture d'app (« 6 + 6 → 24 ») est la
+         marche voulue vers la section « Ensemble » juste en dessous. Poser
+         huit photos dans la section 4, quel que soit l'endroit, cassait l'une
+         de ces deux adjacences.
+      ③ CHRONOLOGIE : la commande (§ 3) → l'arrivée → l'anatomie note à note
+         (§ 4). C'est le seul point de la page où la séquence ne coupe rien.
+      ⛔ `insIntro` n'a PAS été retouché : la nuance « presque le jour de mon
+         anniversaire » y était déjà, et cette section la précise (livraison la
+         veille, anniversaire le lendemain) au lieu de la contredire.
+
+      🎚️ HIÉRARCHIE EN TROIS TEMPS — imposée autant par le récit que par les
+      formats, qui sont ici un vrai problème de mise en page (deux photos en
+      1:2,1, deux carrées, deux documents en portrait, une panoramique) :
+      ① L'OUVERTURE (1-4) — les DEUX TRÈS HAUTES sur une même rangée : rapports
+         strictement identiques (945×2000 toutes les deux), donc zéro trou et
+         zéro décalage de légende. Idem pour les deux carrées en dessous. Une
+         image en 1:2,1 en pleine largeur ferait plusieurs écrans de haut sur
+         un téléphone : la hauteur est traitée en MISE EN PAGE (deux colonnes
+         à toutes les tailles, puis plafond `sm:max-h` sur grand écran), jamais
+         par un recadrage.
+      ② LES PAPIERS (5-7) — ce ne sont PAS des photos d'ambiance, ce sont des
+         DOCUMENTS. La photo d'ambiance de l'enveloppe ouverte prend la pleine
+         largeur ; le certificat et son dos vivent en vignettes alignées par la
+         HAUTEUR (`max-h` commun) et non par la largeur — leurs rapports
+         diffèrent (1431×2000 vs 1290×2000), les aligner par la largeur
+         laisserait un décrochement. Le certificat porte `data-lb-wide` : à
+         375 px il n'est lisible qu'en taille réelle.
+      ③ LE LENDEMAIN (8) — panoramique, pleine largeur, SEULE de sa rangée.
+         C'est le point d'arrivée de la séquence, il ne se partage pas.
+
+      🔗 UN SEUL GROUPE DE LIGHTBOX (`yishama-reception`) pour les huit, dans
+      l'ordre du récit : les flèches ‹ › refeuillettent la séquence. C'est
+      l'inverse du choix fait pour `yishama-app` et `yishama-methode-2023`
+      (groupes séparés exprès) — là-bas deux images sans rapport auraient sauté
+      l'une à l'autre sans texte ; ici les huit RACONTENT la même chose, et la
+      navigation est justement ce qu'on veut.
+
+      🚫 AUCUN RECADRAGE, AUCUNE RETOUCHE. La photo 1 est floue, sombre et
+      bruitée — c'est un document, pas une image de catalogue. La légende
+      l'assume au lieu de l'excuser. Et le numéro d'identification 483 du
+      certificat reste visible : David l'a envoyé sciemment pour cette page.
+
+      ⚠️ NE PAS UTILISER LA PHOTO 4 DANS LA SECTION « Trois aciers, trois
+      voix ». Le métal y paraît doré/bronze, mais ni cette page ni
+      `src/data/yishama.ts` ne documentent l'acier des deux pans de David :
+      conclure d'après une couleur sur une photo serait un raisonnement non
+      fiable (éclairage, patine). Le certificat, lui, l'écrit noir sur blanc —
+      mais le sort de cette section attend un arbitrage de David. */}
+  <Section tone="ink" id="reception">
+    <SectionHeading tone="light" eyebrow={y.recEyebrow} title={y.recTitle} intro={y.recIntro} />
+
+    {/* ① L'OUVERTURE — 2 colonnes à toutes les tailles. Rangée 1 : les deux
+        photos en 1:2,1. Rangée 2 : les deux carrées. */}
+    <div class="mx-auto mt-10 grid max-w-2xl grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10">
+      <figure>
+        <div class="flex justify-center">
+          <img
+            src="/images/yishama-reception-1-livraison.webp"
+            width="945"
+            height="2000"
+            alt={y.recAlt1}
+            data-lb="yishama-reception"
+            class="h-auto w-full rounded-card border border-cream/10 shadow-lg"
+            loading="lazy"
+          />
+        </div>
+        <figcaption class="mt-3 text-sm leading-relaxed text-cream/70">{y.recCaption1}</figcaption>
+      </figure>
+
+      <figure>
+        <div class="flex justify-center">
+          <img
+            src="/images/yishama-reception-2-caisse-cachet-cire.webp"
+            width="945"
+            height="2000"
+            alt={y.recAlt2}
+            data-lb="yishama-reception"
+            class="h-auto w-full rounded-card border border-cream/10 shadow-lg"
+            loading="lazy"
+          />
+        </div>
+        <figcaption class="mt-3 text-sm leading-relaxed text-cream/70">{y.recCaption2}</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="/images/yishama-reception-3-housse.webp"
+          width="1998"
+          height="2000"
+          alt={y.recAlt3}
+          data-lb="yishama-reception"
+          class="w-full rounded-card border border-cream/10 shadow-lg"
+          loading="lazy"
+        />
+        <figcaption class="mt-3 text-sm leading-relaxed text-cream/70">{y.recCaption3}</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="/images/yishama-reception-4-premiere-ouverture.webp"
+          width="1954"
+          height="1925"
+          alt={y.recAlt4}
+          data-lb="yishama-reception"
+          class="w-full rounded-card border border-cream/10 shadow-lg"
+          loading="lazy"
+        />
+        <figcaption class="mt-3 text-sm leading-relaxed text-cream/70">{y.recCaption4}</figcaption>
+      </figure>
+    </div>
+
+    {/* ② LES PAPIERS — le cachet de cire relie 2 et 5 : c'est le même objet,
+        scellé puis ouvert. La légende le dit en une demi-phrase, sans y
+        revenir. */}
+    <div class="mx-auto mt-14 max-w-2xl">
+      <p class="text-lg leading-relaxed text-cream/80">{y.recPapersLead}</p>
+      <div class="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10">
+        <figure class="col-span-2">
+          <img
+            src="/images/yishama-reception-5-enveloppe-ouverte-certificat.webp"
+            width="2000"
+            height="1215"
+            alt={y.recAlt5}
+            data-lb="yishama-reception"
+            data-lb-wide
+            class="w-full rounded-card border border-cream/10 shadow-lg"
+            loading="lazy"
+          />
+          <figcaption class="mt-3 text-sm leading-relaxed text-cream/70">{y.recCaption5}</figcaption>
+        </figure>
+
+        {/* Les deux documents sont alignés par la HAUTEUR, pas par la largeur :
+            1431×2000 et 1290×2000 n'ont pas le même rapport, un alignement en
+            largeur décrocherait les deux bas de page. */}
+        <figure>
+          <div class="flex justify-center">
+            <img
+              src="/images/yishama-reception-6-certificat-recto.webp"
+              width="1431"
+              height="2000"
+              alt={y.recAlt6}
+              data-lb="yishama-reception"
+              data-lb-wide
+              class="h-auto max-h-[230px] w-auto max-w-full rounded-card border border-cream/10 shadow-lg sm:max-h-[400px]"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="mt-3 text-sm leading-relaxed text-cream/70">{y.recCaption6}</figcaption>
+        </figure>
+
+        <figure>
+          <div class="flex justify-center">
+            <img
+              src="/images/yishama-reception-7-certificat-verso-logo.webp"
+              width="1290"
+              height="2000"
+              alt={y.recAlt7}
+              data-lb="yishama-reception"
+              class="h-auto max-h-[230px] w-auto max-w-full rounded-card border border-cream/10 shadow-lg sm:max-h-[400px]"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="mt-3 text-sm leading-relaxed text-cream/70">{y.recCaption7}</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    {/* ③ LE LENDEMAIN — pleine largeur, seule de sa rangée. */}
+    <figure class="mx-auto mt-14 max-w-2xl">
+      <p class="text-lg leading-relaxed text-cream/80">{y.recNextDayLead}</p>
+      <img
+        src="/images/yishama-reception-8-lendemain-anniversaire.webp"
+        width="2000"
+        height="945"
+        alt={y.recAlt8}
+        data-lb="yishama-reception"
+        data-lb-wide
+        class="mt-6 w-full rounded-card border border-cream/10 shadow-lg"
+        loading="lazy"
+      />
+      <figcaption class="mt-3 text-sm leading-relaxed text-cream/70">{y.recCaption8}</figcaption>
+    </figure>
+
+    {/* 🔍 Ligne d'aide À PART, jamais fondue dans une légende : les légendes
+        sont la voix de David, on n'y colle pas un mode d'emploi. Elle est
+        nécessaire — mesuré à 375 px, une photo de la grille ne fait que
+        ~165 px de large, et le certificat n'y est pas lisible. */}
+    <p class="mx-auto mt-8 flex max-w-2xl items-start justify-center gap-2 text-xs leading-relaxed text-cream/55">
+      <Icon name="lucide:maximize-2" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold" />
+      <span>{y.recZoomHint}</span>
+    </p>
+  </Section>
+
   {/* ───────────── 4. LES DEUX INSTRUMENTS ───────────── */}
   <Section tone="cream-deep" id="instruments">
     <SectionHeading eyebrow={y.insEyebrow} title={y.insTitle} intro={y.insIntro} />
@@ -512,16 +720,42 @@ const ld = [
   </Section>
 
   <VideoModal />
-  {/* DEUX images de la page s'ouvrent en plein écran, chacune SEULE dans son
-      groupe (la lightbox masque alors d'elle-même les flèches ‹ › et le
-      compteur), et toutes deux en `data-lb-wide` — ce sont des documents
-      DENSES, dont le contenu ne se lit qu'en taille réelle :
-        · `yishama-app`            — la capture de l'app (section 4) ;
-        · `yishama-methode-2023`   — la page 4 du document d'août 2023
-                                     (section 9). Voir le commentaire posé
-                                     au-dessus de sa <figure> : le groupe est
-                                     séparé exprès, ne pas les fusionner.
+  {/* TROIS groupes de lightbox sur cette page, volontairement DISTINCTS :
+        · `yishama-app`          — la capture de l'app (section 4), SEULE dans
+                                   son groupe, `data-lb-wide` ;
+        · `yishama-methode-2023` — la page 4 du document d'août 2023
+                                   (section 9), SEULE aussi, `data-lb-wide`.
+                                   Voir le commentaire au-dessus de sa
+                                   <figure> : séparée exprès de la précédente,
+                                   ne pas les fusionner ;
+        · `yishama-reception`    — les HUIT photos de mai 2023 (section 3 bis),
+                                   dans l'ordre du récit. Ici le regroupement
+                                   est au contraire VOULU : les huit racontent
+                                   la même chose, feuilleter avec ‹ › refait la
+                                   séquence. TROIS d'entre elles portent
+                                   `data-lb-wide`, et c'est MESURÉ, pas
+                                   supposé (375 px, 27/08/2026) :
+                                     · 6 (certificat) 164 → 343 ajusté, mais
+                                       illisible : taille réelle 1431 px,
+                                       gain ×4,17 ;
+                                     · 5 (enveloppe ouverte) et 8 (le
+                                       lendemain) sont PANORAMIQUES et déjà en
+                                       pleine largeur dans la page : la
+                                       lightbox ajustée les affiche à 343 px,
+                                       soit très exactement leur taille dans la
+                                       page — GAIN ZÉRO. Sans le second état,
+                                       les ouvrir n'apporterait rien.
+                                   Les cinq autres passent de ~164 à 343 px
+                                   (≈ ×2,1) : l'affichage ajusté leur suffit.
+      Une image SEULE dans son groupe fait disparaître d'elle-même les flèches
+      ‹ › et le compteur — c'est pourquoi ces trois groupes ne se marchent pas
+      dessus.
       La photo de la section « Ensemble » reste volontairement SANS `data-lb`
-      (elle n'a rien à faire lire de près). */}
-  <Lightbox labels={{ close: y.lightbox.close, zoom: y.lightbox.zoom }} />
+      (elle n'a rien à faire lire de près).
+      ⚠️ `prev` / `next` sont désormais passés au composant : sans eux, les
+      flèches du groupe de huit retombaient sur les libellés FR par défaut,
+      y compris sur `/en/yishama`. */}
+  <Lightbox
+    labels={{ close: y.lightbox.close, prev: y.lightbox.prev, next: y.lightbox.next, zoom: y.lightbox.zoom }}
+  />
 </Layout>
