@@ -70,7 +70,12 @@ export const products: Product[] = [
   // Housse de calebasse Now Groove — pré-vente HelloAsso, édition limitée faite main
   { id: 'housse', price: 0, image: '/images/prod-housse-1.jpg', imgW: 1000, imgH: 1000, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/pres-vente-housse-calebasse-now-groove-by-david-lesage', category: 'creations', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'limited', priceLabel: '99 €', images: ['/images/prod-housse-1.jpg', '/images/prod-housse-2.jpg', '/images/prod-housse-3.jpg', '/images/prod-housse-4.jpg'] },
   // Micros
-  { id: 'micro-hisong', price: 0, image: '/images/prod-micro-hisong.webp', imgW: 1400, imgH: 1400, url: 'https://hisong.io/DAVID-LESAGE-SAVE-5', category: 'micros', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'hisong', priceLabel: '319 € – 426 € TTC', priceNoteKey: 'hisong', images: ['/images/prod-micro-hisong.webp', '/images/prod-hisong-7.jpg', '/images/prod-hisong-3.jpg', '/images/prod-hisong-2.jpg', '/images/prod-hisong-4.jpg', '/images/prod-hisong-5.jpg', '/images/prod-hisong-6.jpg'], videoUrls: ['https://www.youtube.com/watch?v=B_7ZvlpHUsE', 'https://youtu.be/rx8ZZcL7Nog'] },
+  // 🎟️ Hisong : `discountCode` reprend EXACTEMENT le code contenu dans l'URL
+  // d'affiliation (hisong.io/DAVID-LESAGE-SAVE-5). Il devrait s'appliquer seul
+  // en passant par ce lien — le bouton « Copier le code » est là pour le cas où
+  // il ne s'affiche pas au paiement (demande de David, 29/08/2026). Si l'URL
+  // change un jour, changer les deux ensemble.
+  { id: 'micro-hisong', price: 0, image: '/images/prod-micro-hisong.webp', imgW: 1400, imgH: 1400, url: 'https://hisong.io/DAVID-LESAGE-SAVE-5', category: 'micros', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'hisong', priceLabel: '319 € – 426 € TTC', priceNoteKey: 'hisong', discountCode: 'DAVID-LESAGE-SAVE-5', images: ['/images/prod-micro-hisong.webp', '/images/prod-hisong-7.jpg', '/images/prod-hisong-3.jpg', '/images/prod-hisong-2.jpg', '/images/prod-hisong-4.jpg', '/images/prod-hisong-5.jpg', '/images/prod-hisong-6.jpg'], videoUrls: ['https://www.youtube.com/watch?v=B_7ZvlpHUsE', 'https://youtu.be/rx8ZZcL7Nog'] },
   { id: 'micro-muling', price: 0, image: '/images/prod-muling-2.jpg', imgW: 1200, imgH: 1200, url: '/micro-muling', category: 'micros', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'muling', priceLabel: '246,50 € au lieu de 258 €', videoUrls: ['https://youtu.be/ENArz99dyTQ'], images: ['/images/prod-muling-2.jpg', '/images/prod-muling-1.jpg', '/images/prod-muling-3.jpg', '/images/prod-muling-4.jpg', '/images/prod-muling-5.jpg', '/images/prod-muling-6.jpg', '/images/prod-muling-7.jpg', '/images/prod-muling-8.jpg', '/images/prod-muling-9.jpg', '/images/prod-muling-10.jpg'] },
   // ── Accessoires — les pieds de handpan Atlas (fabricant italien).
   // 🤝 Partenariat d'affiliation validé le 20/08/2026 : avant cette date, la
@@ -83,7 +88,23 @@ export const products: Product[] = [
   // src/data/atlas.ts : la pastille « copier le code » apparaît ici toute seule
   // — et rien d'autre : ne pas remplacer `url` par un lien externe, la fiche
   // dédiée est ce qui explique la différence entre les deux modèles.
-  { id: 'atlas', price: 0, image: '/images/prod-atlas-pro-1.webp', imgW: 1120, imgH: 1400, url: '/pieds-atlas', category: 'accessoires', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'atlas', priceLabel: 'Atlas Pro 215 € · Atlas All 230 €', ...(ATLAS_PROMO_ACTIVE ? { discountCode: ATLAS_DISCOUNT_CODE } : {}), images: ['/images/prod-atlas-pro-1.webp', '/images/prod-atlas-all-1.webp', '/images/prod-atlas-pro-6.webp', '/images/prod-atlas-all-2.webp', '/images/prod-atlas-pro-3.webp'] },
+  // 📸 ORDRE DU CARROUSEL (29/08/2026, demande de David) : les DEUX photos les plus
+  // informatives d'abord — le Pro déployé/replié, puis le All à 96 cm.
+  // ⚠️ CE SONT LEURS VERSIONS CARRÉES, ET C'EST VOLONTAIRE. `.carousel` est en
+  //    `aspect-ratio: 1/1` + `object-fit: cover` (src/styles/global.css) : posé tel
+  //    quel, `prod-atlas-pro-8-fond-blanc.webp` (720×1170) perdrait 38 % de sa
+  //    hauteur et `prod-atlas-all-9.webp` (916×1400) 34,6 % — c'est-à-dire, dans les
+  //    deux cas, LE HAUT ET LE BAS DU PIED, donc exactement ce que la photo
+  //    démontre. `prod-atlas-pro-8-carre.webp` existait déjà pour cette raison
+  //    (voir le long commentaire de src/data/atlas.ts) ;
+  //    `prod-atlas-all-9-carre.webp` a été fabriqué de la même façon le 29/08 :
+  //    marges BLANCHES à gauche/droite sur un carré 1400×1400, coins vérifiés à
+  //    255,255,255. AUCUN pixel du sujet n'est perdu, aucun recadrage.
+  //    Si l'un des deux originaux change, REGÉNÉRER son carré.
+  // ℹ️ `image` / `imgW` / `imgH` NE suivent PAS : dès que `images.length > 1`,
+  //    ShopCard rend le carrousel et n'utilise plus `image` — celle-ci ne sert
+  //    plus qu'au JSON-LD ItemList de la page. La grille n'est donc pas touchée.
+  { id: 'atlas', price: 0, image: '/images/prod-atlas-pro-1.webp', imgW: 1120, imgH: 1400, url: '/pieds-atlas', category: 'accessoires', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'atlas', priceLabel: 'Atlas Pro 215 € · Atlas All 230 €', ...(ATLAS_PROMO_ACTIVE ? { discountCode: ATLAS_DISCOUNT_CODE } : {}), images: ['/images/prod-atlas-pro-8-carre.webp', '/images/prod-atlas-all-9-carre.webp', '/images/prod-atlas-pro-1.webp', '/images/prod-atlas-all-1.webp', '/images/prod-atlas-pro-6.webp', '/images/prod-atlas-all-2.webp', '/images/prod-atlas-pro-3.webp'] },
   // Musique — albums & écoute en streaming (Spotify / plateformes)
   { id: 'phoenix-opus1', price: 0, image: '/images/prod-phoenix-opus1.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/album/3sxUqtH3uKf7pceIJ0j5l5', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },
   { id: 'phoenix-opus2', price: 0, image: '/images/prod-phoenix-opus2.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/album/19JuVzKWNd5xUMquLvLSm1', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },
