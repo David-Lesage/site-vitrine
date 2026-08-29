@@ -29,7 +29,194 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 27/08/2026 (6ᵉ passe) — 📦 `/yishama` A ENFIN LE JOUR OÙ ILS SONT ARRIVÉS
+## ÉTAT ACTUEL — 29/08/2026 (7ᵉ passe) — 🔗 UN LIEN PAR PRODUIT + 🎟️ LE CODE HISONG + 📸 ATLAS
+
+**Statut : ✅ COMMITÉ (`b63490e`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, 375 px et
+1280 px, build 93 pages).** Trois demandes de David, **un seul lot, un seul déploiement**.
+
+---
+
+### 1️⃣ « Crée des ancres sur chacun des produits » — ELLES EXISTAIENT DÉJÀ
+
+> David : « Je veux que tu crées des ancres sur chacun des produits de cette page pour que je
+> puisse envoyer des liens précis aux personnes qui le demandent. Par exemple pour le produit
+> Micro Hisong AirStudio S1. »
+
+🎯 **RIEN N'A ÉTÉ AJOUTÉ AU CODE, ET C'EST LA BONNE NOUVELLE.** `src/components/ShopCard.astro`
+(ligne 31) pose depuis toujours `<div id={p.id} class="… scroll-mt-28 …">`. Les 19 ancres
+**existaient déjà**, en FR comme en EN. Ce qui manquait, c'était **la vérification** et
+**la liste**. ⛔ Aucun `id` renommé : ils sont maintenant des URL publiques, donc permanentes.
+
+**📐 LA MESURE QUI COMPTE — d'où viennent les 192 px.** Le saut est la somme de DEUX réglages,
+et c'est ça qu'il fallait comprendre avant de conclure :
+
+| | valeur | où |
+|---|---|---|
+| `scroll-padding-top` sur `html` | **80 px** | `src/styles/global.css` (global au site) |
+| `scroll-mt-28` sur la carte produit | **112 px** | `ShopCard.astro` |
+| **→ le produit arrive à** | **192 px** du haut | mesuré, pas déduit |
+| en-tête collant (`sticky top-0`) | **69 px** à 375 px · **75 px** à 1280 px | `Header.astro` |
+| **→ marge libre sous l'en-tête** | **123 px** (mobile) · **117 px** (desktop) | jamais recouvert |
+
+**Les 19 ancres mesurées à 192 px**, une par une, **en FR et en EN**, **à 375 px et à 1280 px** :
+`handpan-studio` `neotone-one` `neotone-mutant` `yishama` `gonilele` `tambour` `now-groove`
+`calebasse` `housse` `micro-hisong` `micro-muling` `atlas` `phoenix-opus1` `phoenix-opus2`
+`cover` `cours-prives` `onesec` `oko` `structured`.
+
+✅ **AUCUN `id` EN DOUBLE** dans le HTML **produit** (`dist/`, pas seulement la source), FR et EN,
+**et revérifié sur la production**. Les ancres de catégorie (`#micros`, `#accessoires`…) et de
+sous-catégorie (`#handpans-acoustique`, `#handpans-electronique`) **ne collisionnent avec aucun
+`id` de produit** — les deux familles de noms sont disjointes.
+
+🔍 **PAS DE FILTRE PAR CATÉGORIE SUR LA PAGE** — c'était le risque principal, il n'existe pas.
+`ShopPage.astro` rend les 9 catégories **toutes ensemble** (`categoryIds.map(...)`), aucun
+`?cat=`, aucun onglet, aucun JS qui masque des cartes. Un lien ne peut donc pas tomber sur un
+produit caché. Rien à corriger.
+
+🧊 **ARRIVÉE À FROID VÉRIFIÉE** (URL collée dans un onglet neuf, pas un clic interne) : identique,
+192 px. **Aucun décalage pendant le chargement**, et la raison est structurelle — les images ne
+peuvent pas bouger la mise en page : `.carousel` est en `aspect-ratio: 1/1` et l'image simple vit
+dans un `aspect-square`, donc la place est réservée avant même le téléchargement. Mesuré avant /
+après avoir forcé les 89 images en `eager` : `scrollHeight` identique (20 464 px), position
+identique. ⚠️ `scroll-behavior: smooth` est global : à froid le saut **s'anime**, il faut donc
+laisser ~1 s avant de mesurer — sans ça on croit que l'ancre a échoué (piège rencontré).
+
+**📄 LE LIVRABLE : `BOUTIQUE-LIENS-PRODUITS.md`** (racine du dépôt). Les 19 produits par leur
+**nom affiché** (« Micro Hisong AirStudio S1 », pas `micro-hisong`), lien 🇫🇷 + lien 🇬🇧, groupés
+par catégorie **dans l'ordre de la page**. C'est le fichier que David ouvre pour copier un lien —
+écrit pour lui, pas pour un développeur.
+Forme retenue : `https://www.lesagedavid.fr/boutique#micro-hisong` (**sans** barre finale — vérifié
+en 200 direct, pas de redirection ; l'apex `lesagedavid.fr/boutique` répond 200 lui aussi).
+Le slug **n'est pas traduit** : `translatedSlugs` (`src/i18n/utils.ts`) ne contient que
+`/pieds-atlas → /handpan-stands`. L'anglais est donc bien `/en/boutique#…`.
+
+**🚫 BOUTON « COPIER LE LIEN » SUR CHAQUE CARTE : NON, ET VOICI POURQUOI.** L'idée était bonne sur
+le papier (c'est le geste quotidien de David), elle est mauvaise sur cette page :
+1. elle repose sur le **survol**, qui n'existe pas sur téléphone — or c'est précisément depuis son
+   téléphone que David répond « c'est quoi ton micro ? » ;
+2. l'emplacement « bouton copier » de la carte est **déjà pris** par les codes de réduction (Atlas,
+   Oko, et désormais Hisong). Deux boutons « copier » côte à côte au moment où un client va payer,
+   c'est une ambiguïté sur **ce qui est copié** — sur une page commerciale, ça se paie ;
+3. la boutique est une **surface de vente**, pas un outil personnel : 19 boutons de confort pour
+   une seule personne pèsent sur tous les visiteurs.
+👉 Le fichier `.md` répond au besoin réel, en un seul endroit, sans toucher au rendu.
+
+---
+
+### 2️⃣ Le code Hisong, à l'endroit exact où on en parle
+
+> David : « Dans le bloc de texte [⚠️ Mise en garde…], fais un rappel de mon code
+> `DAVID-LESAGE-SAVE-5` à placer au moment du paiement si ce n'est pas fait automatiquement. »
+
+**Le manque, concrètement** : `shop.priceNotes.hisong` nommait « le code **VIP10** » mais **jamais
+celui de David**. Quelqu'un qui lisait « mon code −5 % » ne pouvait pas le saisir.
+
+✅ **Cohérence vérifiée AVANT d'écrire** : `url: 'https://hisong.io/DAVID-LESAGE-SAVE-5'` dans
+`shop.ts` — le code et le lien d'affiliation portent bien le même identifiant. Aucune divergence.
+
+**Deux choses ajoutées, pas une :**
+- **le code est écrit dans la ligne qui en parle** — « — mon code **DAVID-LESAGE-SAVE-5** : −5 % » ;
+- **une phrase dit la nuance sans rien promettre**, juste avant « Frais de port » :
+  *« **Mon code :** en passant par mon lien, il devrait s'appliquer tout seul. Si tu ne le vois pas
+  au moment du paiement, saisis-le à la main — le bouton juste en dessous le copie. »*
+  ⚖️ Ni « ça s'applique automatiquement » (faux si le lien est perdu), ni « il faut le saisir »
+  (faux dans le cas normal). C'est la formulation demandée.
+
+🎟️ **`micro-hisong` reçoit `discountCode: 'DAVID-LESAGE-SAVE-5'`** → le bouton **« Copier le
+code »** déjà éprouvé sur Atlas et Oko apparaît tout seul, **sans nouvelle interface, sans
+nouvelle clé i18n** (`shop.copyCode` / `shop.codeCopied` existaient). Sur mobile, un code de
+19 caractères se **tape** mal et se **sélectionne** mal : le bouton est ce qui rend la note
+utilisable. Le bloc se place **juste sous la note**, d'où le « juste en dessous » de la phrase.
+⚠️ Le code apparaît donc **deux fois** sur la fiche, et c'est assumé : une fois **pour être lu**
+(dans la note, là où on l'explique), une fois **pour être copié** (le bouton). Ce ne sont pas deux
+redites, ce sont deux gestes.
+
+📐 Balisage respecté : uniquement `<strong>` et `<br>`, comme le reste de la note. **Aucun `<code>`,
+aucun `<em>`** — le piège du `&lt;em&gt;` sorti en clair a déjà mordu sur ce site. Rendu vérifié à
+l'écran (FR + EN, 375 px et 1280 px) : rien d'échappé, rien de cassé.
+
+🔤 **SIGNALÉ, NON CORRIGÉ (pré-existant)** : `ShopCard.astro` écrit `{s.copyCode} : <strong>…`
+avec une **espace avant les deux-points** — convention française appliquée aussi en anglais, où
+elle est fautive (« Copy code : DAVID-LESAGE-SAVE-5 »). Le défaut existait déjà sur Atlas et Oko ;
+la fiche Hisong le rend juste plus visible. Correction = un caractère, mais elle touche une carte
+partagée : **à faire à froid**, pas dans un lot commercial.
+
+---
+
+### 3️⃣ Carrousel Atlas — les deux photos qui MONTRENT, et le piège du carré
+
+> David : « J'aimerais que sur `#atlas` ces deux photos apparaissent en premier dans le
+> carrousel : `prod-atlas-pro-8-fond-blanc.webp` et `prod-atlas-all-9.webp` »
+
+Ce sont les deux images **informatives** des séries : le Pro **déployé ET replié** dans un même
+cliché, et le All à **96 cm**. Leur place en tête est justifiée, ce n'est pas une préférence.
+
+🚨 **LE PIÈGE, ET IL EST GRAVE : `.carousel` EST EN `aspect-ratio: 1/1` + `object-fit: cover`.**
+Posés tels quels, les fichiers portrait nommés par David auraient été **rognés par le milieu** :
+
+| fichier | dimensions | part visible en carré | ce qui disparaît |
+|---|---|---|---|
+| `prod-atlas-pro-8-fond-blanc.webp` | 720 × 1170 | **61,5 %** | le handpan en haut, les embouts en bas |
+| `prod-atlas-all-9.webp` | 916 × 1400 | **65,4 %** | la couronne en haut, le pied en bas |
+
+👉 C'est-à-dire **exactement les deux extrémités qui font la démonstration des hauteurs**. Une
+photo de pied rognée en haut et en bas ne démontre plus rien.
+
+✅ **CE SONT DONC LEURS VERSIONS CARRÉES QUI SONT POSÉES.**
+- `prod-atlas-pro-8-carre.webp` (1170 × 1170) **existait déjà** — fabriquée le 20/08 pour ce
+  problème précis, tout est expliqué dans le long commentaire de `src/data/atlas.ts`.
+- **`prod-atlas-all-9-carre.webp` (1400 × 1400) créée le 29/08, à l'identique** : marges
+  **blanches** à gauche et à droite, coins vérifiés à `255,255,255`, `cwebp -q 92 -sharp_yuv`,
+  30 Ko. ⛔ **Aucun recadrage, aucun redimensionnement du sujet** — c'est du **remplissage**, pas
+  de la coupe : 100 % des pixels de David sont conservés. Les originaux sont intacts.
+- ⚠️ **Si l'un des deux originaux change un jour, REGÉNÉRER son carré.**
+
+🔬 **MESURÉ APRÈS COUP, EN PRODUCTION** — part de la source réellement affichée :
+les 2 nouvelles diapos = **100 %** (zéro rognage) ; les 5 anciennes = **80 %** (leur comportement
+d'avant, inchangé). Carrousel **317 × 317 avant comme après**, compteur **« 1 / 7 »**,
+**7 pastilles**, les 7 images en 200 et chargées.
+
+**❓ LA QUESTION POSÉE : `image` doit-elle suivre ? NON — et c'est mesurable.** Dans
+`ShopCard.astro`, dès que `images.length > 1` c'est le **carrousel** qui est rendu ; la branche
+`<img src={p.image} width={p.imgW} height={p.imgH}>` n'est **jamais atteinte**. `image` ne sert
+plus qu'au **JSON-LD `ItemList`** de la page. ⛔ `image` / `imgW` / `imgH` **n'ont donc pas été
+touchés**, et **la grille ne bouge pas d'un pixel** — la carte Atlas est seule dans sa catégorie
+de toute façon.
+
+⚠️ **UN ÉCART À PORTER À DAVID, NON TRANCHÉ.** Sa capture montrait deux vignettes légendées
+« Bois — sans **puis avec** ses rallonges », avec les repères **50 cm** et **96 cm**. Or cette
+figure de `/pieds-atlas` est composée de **DEUX** photos (`prod-atlas-all-8` à 50 cm +
+`prod-atlas-all-9` à 96 cm), affichées au vrai rapport 50/96. Le fichier qu'il a nommé,
+`prod-atlas-all-9.webp`, n'en est que **la moitié « 96 cm »** : seule, elle montre le All haut,
+pas la comparaison. **Sa consigne a été suivie à la lettre** (un fichier, une diapo). S'il voulait
+la **paire**, il faut un carré composé de plus — à lui de dire.
+
+---
+
+### 🚫 CE QUI N'A **PAS** ÉTÉ TOUCHÉ
+
+- **Aucun prix, aucun `priceLabel`, aucune donnée Stripe.** Rien d'autre dans `shop.ts` que
+  l'ordre du tableau `images` d'Atlas, `discountCode` sur Hisong, et des commentaires.
+- **Aucun `id` de produit renommé** (ce sont des URL publiques désormais), **aucun slug**,
+  **aucune page**, **aucune dépendance npm**, **aucune clé i18n supprimée** (2 chaînes modifiées,
+  une de chaque côté, parité FR/EN exacte).
+- `/yishama`, les 4 phrases « degré » de `audits/AUDIT-CHROMAKEYS-2026-08-27.md`, `archives/` :
+  **rien**.
+- `src/components/ShopCard.astro` et `ShopPage.astro` : **aucune modification** — tout passe par
+  les données et les dictionnaires.
+
+### 🧪 CE QUI A ÉTÉ VÉRIFIÉ EN LIGNE (pas seulement en local)
+
+`/boutique` et `/en/boutique` en **200** · **aucun `id` en double** dans le HTML servi ·
+**#micro-hisong**, **#atlas**, **#oko**, **#yishama (EN)**, **#handpan-studio**, **#structured**,
+**#cours-prives** : tous à **192 px**, à 375 px **et** à 1280 px · le bouton « Copier le code »
+porte bien `DAVID-LESAGE-SAVE-5` · la note contient le code · les 7 diapos Atlas dans le bon ordre,
+`prod-atlas-all-9-carre.webp` et `prod-atlas-pro-8-carre.webp` en **200** · aucun débordement
+horizontal.
+
+---
+
+## 27/08/2026 (6ᵉ passe) — 📦 `/yishama` A ENFIN LE JOUR OÙ ILS SONT ARRIVÉS
 
 **Statut : ✅ COMMITÉ, POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, build 93 pages).**
 
@@ -3021,6 +3208,22 @@ Table `affiliate_sales` + `neotone_coupon_pool`, vues `affiliate_revenue` et
 ---
 
 ## Journal
+
+### 29/08/2026
+- Boutique : **19 ancres par produit vérifiées** (elles existaient dans `ShopCard.astro`, il
+  manquait la preuve et la liste) → livrable `BOUTIQUE-LIENS-PRODUITS.md` avec les liens 🇫🇷/🇬🇧.
+  Saut mesuré à **192 px** (80 px `scroll-padding-top` + 112 px `scroll-mt-28`) pour un en-tête de
+  69/75 px, à froid comme au clic, FR + EN, 375 px et 1280 px, en local **et** en production.
+  Aucun `id` en double, aucun filtre de catégorie sur la page.
+- **Bouton « copier le lien » par carte : refusé** (survol inexistant sur mobile, conflit avec le
+  bouton « Copier le code » des réductions, page commerciale ≠ outil personnel).
+- Micro Hisong : le code **DAVID-LESAGE-SAVE-5** entre dans la note de prix (FR + EN) avec la
+  nuance « devrait s'appliquer seul, sinon saisis-le », + `discountCode` → bouton « Copier le
+  code » déjà éprouvé (Atlas, Oko). Code cohérent avec l'URL d'affiliation.
+- Carrousel Atlas : les deux photos informatives en tête, **en versions carrées** —
+  `prod-atlas-all-9-carre.webp` fabriquée (marges blanches, zéro recadrage) parce que
+  `object-fit: cover` aurait mangé 34,6 % / 38,5 % de la hauteur, soit le haut et le bas des pieds.
+  `image`/`imgW`/`imgH` inchangés : inutilisés dès que `images.length > 1`.
 
 ### 10/08/2026
 - Blog : filtre par catégorie (8 sujets, FR/EN, lien profond `?c=`) + 40 articles existants
