@@ -29,6 +29,135 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 30/08/2026 (8ᵉ passe) — 🥁 LE PARTENAIRE OUBLIÉ + 📝 LA LÉGENDE + 📏 UNE SEULE LIGNE
+
+**Statut : ✅ COMMITÉ (`6177aaf`), POUSSÉ, DÉPLOYÉ (`dpl_FrkFChHPTi4gW5SVUU9mHDFA4pw5`),
+VÉRIFIÉ EN LIGNE (FR + EN sur `www.lesagedavid.fr`, build 93 pages).** Trois demandes de
+David sur `/showroom`, **un seul lot, un seul déploiement**. Fichiers touchés, et eux seuls :
+`src/components/pages/ShowroomPage.astro`, `src/i18n/dict.ts`, `src/i18n/en.ts`.
+
+---
+
+### 1️⃣ « J'ai oublié un partenaire : l'Âme du tambour »
+
+> David : « Il figure dans ma boutique mais **il n'est pas cité sur la page du showroom**.
+> Peux-tu corriger cela ? »
+
+🔎 **CE QU'IL FAUT SAVOIR AVANT DE TOUCHER À CE BLOC — IL N'ÉTAIT PAS ABSENT.** Le tambour
+était **déjà nommé**, tout en bas de la page, dans `programBonus` (« ✨ Et parfois, ça va plus
+loin… et même le tambour chamanique “l'Âme du tambour” »). Ce qui manquait, c'était sa place
+**parmi les marques partenaires** : Yishama, Neotone, La Maison du Ngoni, Hisong, Muling,
+Atlas vivent toutes dans la section `#deux-univers` (« Tout ce que tu peux essayer sur
+place »), lui non.
+
+📐 **IL N'Y A PAS DE « SECTION PARTENAIRES » SUR CETTE PAGE, ET C'EST LA CLÉ.** Les marques ne
+sont pas listées ensemble : elles sont **portées par les instruments** — chapitre 1 = le duo
+handpan (Yishama / Neotone), chapitre 2 = `also` (Gonilélé, calebasse, micros), chapitre 3 =
+l'encadré Atlas. Le tambour est donc entré comme **un encadré partenaire de plus**, pas comme
+une 4ᵉ carte de la grille `also`.
+
+🚨 **POURQUOI PAS UNE 4ᵉ CARTE DANS `also` — LE PIÈGE À NE PAS REFAIRE.** `alsoNote` promet
+« **coche-le au moment de réserver ta place** ». Or `showcaseInterests` et `demoInstruments`
+(`src/data/site.ts`) **n'ont pas de case `tambour`**, et en ajouter une exige les **trois
+écritures** (formulaire → `api/subscribe.js` → EF `site-lead` + colonne en base). Une 4ᵉ carte
+aurait donc promis, noir sur blanc, une case à cocher **qui n'existe pas**. C'est exactement le
+raisonnement qui avait déjà sorti **les pieds Atlas** de ce bloc le 21/08. L'encadré est donc
+placé **APRÈS `alsoNote`** : la promesse reste vraie pour les trois instruments qu'elle vise.
+
+🎨 **Forme** : encadré compact `border-copper/30 bg-cream`, une seule ligne icône + texte
+(`lucide:disc-2`) — même famille visuelle que l'encadré Atlas mais **deux fois plus léger**.
+C'est un partenaire, pas un 4ᵉ instrument du programme : le Neotone reste la tête d'affiche.
+
+📷 **PAS DE PHOTO, ET C'EST DÉLIBÉRÉ.** La seule image disponible, `/images/prod-tambour.jpg`,
+est une **vignette de vidéo YouTube en 480×360**, avec bandes noires et logos incrustés
+(« David Lesage Artiste » / « L'ÂME DU TAMBOUR »). Dans le carrousel `showroomAlsoGallery`
+(carré, 512 px de large, photos produit détourées) elle serait floue et détonnerait. Le lien
+mène à `#tambour` dans la boutique — **ancre vérifiée dans `dist/`, FR et EN** — où la photo et
+le code de réduction vivent déjà. Si David fournit un jour une vraie photo du tambour au
+showroom, c'est là qu'il faudra l'ajouter.
+
+🚫 **AUCUN FAIT INVENTÉ.** Tout vient de `shop.products.tambour` (Julien, tambours-cadres
+artisanaux, « aligné, passionné et intègre », code `David-Tambour`) et de `programBonus` (« ce
+n'est pas systématique »). **Ni atelier, ni ville, ni ancienneté** : ce n'est écrit nulle part
+sur le site. Le texte de l'encadré **dit la même nuance que `programBonus`** (« le tambour
+n'est pas de toutes les séances ») — les deux endroits ne se contredisent pas.
+
+**Nouvelles clés (FR + EN)** : `showroom.tambourEyebrow` · `tambourTitle` · `tambourText` ·
+`tambourCta`. Aucune clé supprimée.
+
+---
+
+### 2️⃣ La légende à compléter — et pourquoi ce n'est PAS un texte alternatif
+
+> David : « Sur le site la phrase : "Ce qui t'attend en arrivant : Neotone, Yishama, calebasse,
+> prêts à être joués." — il faut la **compléter avec tous les autres instruments et micros**. »
+
+C'est `showroom.photoCaption.instruments` — la **légende** (`<figcaption>`) de la photo
+`showroom-instruments.webp`, et **pas** son `alt`. La distinction est le cœur du sujet :
+
+| | rôle | modifié ? |
+|---|---|---|
+| `photoAlt.instruments` | **décrit la photo** pour qui ne la voit pas | ❌ **non** |
+| `photoCaption.instruments` | depuis le 21/08, **vaut pour la section entière** (la photo est remontée sous le titre de section) | ✅ oui |
+
+👉 Compléter la légende avec l'inventaire complet est donc juste ; compléter l'`alt` aurait été
+**faux** (il décrirait des objets absents du cadre). **Ne pas confondre les deux à l'avenir.**
+
+**FR** : « Ce qui t'attend en arrivant : les Neotone, mes handpans Yishama, le Gonilélé, la
+calebasse, les micros et le tambour chamanique — prêts à être joués. »
+**EN** : « What waits for you on arrival: the Neotones, my Yishama handpans, the Gonilélé, the
+calabash, the microphones and the shamanic drum — all ready to be played. »
+
+🔍 **La photo a été REGARDÉE avant d'écrire** (crops à l'appui) : on y voit bien les deux
+Neotone avec leur écran, les deux Yishama sur trépieds, la calebasse sur son tapis rouge, le
+Gonilélé posé sur le tapis rond, **et un tambour-cadre appuyé au mur** près de la sono Bose.
+Rien de listé n'est absent du showroom.
+
+---
+
+### 3️⃣ « Sur une seule ligne » — fait au bureau, IMPOSSIBLE à 375 px (dit franchement)
+
+> David : « mets cette phrase sur une seule ligne : "Handpan acoustique et électronique, le
+> même jour" »
+
+C'est `showroom.duoTitle`, le `<h3>` du chapitre 1. **Mesures réelles** (pas des estimations) :
+
+| largeur | police | cadre | texte | AVANT | APRÈS |
+|---|---|---|---|---|---|
+| **1280 px** | 30 px | 672 px (`max-w-2xl`) | **692 px** | 2 lignes | ✅ **1 ligne** (cadre 768 px) |
+| **768 px** | 30 px | 736 px | 692 px | 2 lignes | ✅ **1 ligne** |
+| **375 px** | 24 px | 343 px | **558 px** | 2 lignes (256 + 296 px) | ⚠️ **2 lignes**, inchangé |
+
+🎯 **Au bureau il ne manquait que 20 px.** Le conteneur du titre passe de `max-w-2xl` à
+**`max-w-3xl`** (768 px) ; le paragraphe d'intro garde `max-w-2xl` via un `mx-auto` sur le `<p>`
+— **sa longueur de ligne ne change pas**. Aucun débordement horizontal
+(`document.scrollWidth === innerWidth` vérifié à 375 / 768 / 1280, FR et EN).
+
+🚫 **À 375 px, UNE SEULE LIGNE EST IMPOSSIBLE — et il faut le dire à David.** Il faudrait
+descendre la police à **~14,7 px** (FR) / ~15,9 px (EN), soit **plus petit que le paragraphe de
+16 px juste en dessous** : un titre de chapitre plus petit que son propre texte, illisible et
+hiérarchie cassée. Compromis retenu : `text-balance` (qui, ici, donne la même coupe que le
+rendu naturel — donc **inoffensif**, gardé pour protéger l'anglais et les futures traductions).
+⛔ **Ne pas « corriger » ça avec un `whitespace-nowrap`** : le texte déborderait de l'écran.
+
+---
+
+### 🅨 À SOUMETTRE À DAVID — la revendication « premier lieu au monde » est plus large sur le site que dans ses propres mots
+
+⚠️ **Rien n'a été modifié : c'est une revendication d'exclusivité, elle demande son arbitrage.**
+
+- **Ce que dit le site aujourd'hui** (`showroom.exclText`, FR) : « à ma connaissance, Le Nid est
+  **le premier lieu au monde où ces instruments s'essaient ET s'achètent en direct**, sur
+  place. »
+- **Ce que David dit maintenant (ses mots, côté Facebook)** : « c'est le premier lieu au monde
+  **EN DEHORS DE L'ATELIER DES CRÉATEURS À BUDAPEST** où on peut l'essayer et repartir avec ».
+
+👉 La réserve de Budapest **n'existe pas sur le site**. La phrase en ligne est donc **plus
+large** que ce que David revendique lui-même. À trancher par lui : ajoute-t-on la réserve
+(FR + EN, `exclText`) ? Tant qu'il n'a pas répondu, **ne pas y toucher**.
+
+---
+
 ## ÉTAT ACTUEL — 29/08/2026 (7ᵉ passe) — 🔗 UN LIEN PAR PRODUIT + 🎟️ LE CODE HISONG + 📸 ATLAS
 
 **Statut : ✅ COMMITÉ (`b63490e`), POUSSÉ, DÉPLOYÉ, VÉRIFIÉ EN LIGNE (FR + EN, 375 px et
