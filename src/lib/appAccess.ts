@@ -20,6 +20,22 @@ export const APP_CONFIG_ENDPOINT =
   'https://zqcuhnjjrgmybftppkcl.supabase.co/rest/v1/app_public_config?select=value&key=eq.app_public_access'
 export const APP_CONFIG_KEY = 'sb_publishable_turahpl0xi-qKN6jmG3yBg_tqpVZbtx'
 
+/* ---------------------------------------------------------------------------
+   LE GUICHET « cet email a-t-il été pré-autorisé ? » (`beta-door-check`)
+
+   David invite des gens nominativement (table `public.beta_door`, RLS
+   admin-only). La table n'est JAMAIS lue depuis le navigateur : l'Edge
+   Function répond OUI / NON et rien d'autre, la clé de service reste chez
+   elle. C'est le MÊME guichet que l'écran d'entrée de l'application
+   (`auth/waitlist-submit.ts` → `isPreauthorizedEmail`) — d'où la même URL, le
+   même corps `{ email }` et la même réponse `{ ok, preauthorized }`.
+
+   🔑 Clé envoyée = la clé *publishable* (anon), la même que partout ailleurs
+   sur le site. JAMAIS de `service_role` dans du code client.
+--------------------------------------------------------------------------- */
+export const BETA_DOOR_ENDPOINT =
+  'https://zqcuhnjjrgmybftppkcl.supabase.co/functions/v1/beta-door-check'
+
 /** État connu au build (repli). */
 export const appOpenAtBuild = site.appPublicAccess
 

@@ -107,9 +107,13 @@ export const en: Dict = {
       formPledgeText: 'I build this tool on my own. What you declare here decides your access — it isn’t a check, it’s an agreement. If your use changes (you start teaching with it, say), tell me: we adjust, simply.',
       formPledgeCheck: 'I commit to the honesty of what I’ve declared.',
       formRolesRequired: 'Tick at least one box — that’s the heart of the request.',
-      formPersonalGoal: 'What for?',
-      formPersonalGoalLearn: 'Learn to play',
-      formPersonalGoalCompose: 'Compose, create my own scales',
+      // THE DOOR — same wording as the app's entry screen (auth/portal-i18n.ts,
+      // keys `beta.invitedTitle` · `invitedText` · `invitedBtn` · `notMe`).
+      invitedTitle: 'You are on the invite list ✨',
+      invitedText:
+        'This address has been invited to join the beta. All that is left is to choose a password and come in.',
+      invitedBtn: 'Create my password and come in',
+      invitedNotMe: 'That’s not me — join the waiting list',
       formShowcase: 'I’d like to hear about the next free showcases in Paris',
       formBeta: 'I’d like to become a beta tester — early, free access to the app, in exchange for my regular feedback.',
       formMotivation: 'Why does the app interest you? (optional)',

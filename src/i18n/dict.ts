@@ -119,9 +119,18 @@ const fr = {
       formPledgeText: 'Je construis cet outil seul. Ce que tu déclares ici détermine ton accès — ce n’est pas un contrôle, c’est un accord. Si ton usage change (tu te mets à enseigner avec, par exemple), dis-le moi : on ajuste, simplement.',
       formPledgeCheck: 'Je m’engage sur l’honnêteté de ce que j’ai déclaré.',
       formRolesRequired: 'Coche au moins une case : c’est le cœur de la demande.',
-      formPersonalGoal: 'Pour quoi faire ?',
-      formPersonalGoalLearn: 'Apprendre à jouer',
-      formPersonalGoalCompose: 'Composer, créer mes gammes',
+      /* ─────────────────────────────────────────────────────────────────────
+         LA PORTE — « cet email a-t-il déjà été invité ? »
+         Mêmes mots que l'écran d'entrée de l'application (auth/portal-i18n.ts,
+         clés `beta.invitedTitle` · `invitedText` · `invitedBtn` · `notMe`) :
+         une personne pré-autorisée doit lire EXACTEMENT la même phrase des deux
+         côtés. Ne pas réécrire ici sans réécrire là-bas.
+         ───────────────────────────────────────────────────────────────────── */
+      invitedTitle: 'Tu fais partie des invité·e·s ✨',
+      invitedText:
+        'Cette adresse a été invitée à rejoindre la bêta. Il ne te reste plus qu’à choisir un mot de passe pour entrer.',
+      invitedBtn: 'Créer mon mot de passe et entrer',
+      invitedNotMe: 'Ce n’est pas moi — rejoindre la liste d’attente',
       formShowcase: 'Je souhaite être informé·e des prochains showcases gratuits à Paris',
       formBeta: 'Je souhaite devenir bêta-testeur — accès anticipé et gratuit à l’application, en échange de mes retours réguliers.',
       formMotivation: 'Pourquoi l’application t’intéresse ? (facultatif)',

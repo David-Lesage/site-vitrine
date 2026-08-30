@@ -8,6 +8,8 @@ import { Icon } from 'astro-icon/components'
 import { getDict } from '@/i18n/dict'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
+import { site } from '@/data/site'
+import { BETA_DOOR_ENDPOINT, APP_CONFIG_KEY } from '@/lib/appAccess'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -15,7 +17,45 @@ const { lang } = Astro.props
 const b = getDict(lang).common.beta
 ---
 
-<div id="acces" class="mx-auto max-w-3xl scroll-mt-28 rounded-card border border-copper/30 bg-copper/5 p-6 md:p-8">
+<div id="acces" data-beta-block class="mx-auto max-w-3xl scroll-mt-28 rounded-card border border-copper/30 bg-copper/5 p-6 md:p-8">
+  {/* ══ LA PORTE ═══════════════════════════════════════════════════════════
+      Visible UNIQUEMENT si l'adresse saisie plus bas a été invitée
+      nominativement par David (table `public.beta_door`, interrogée par
+      l'Edge Function `beta-door-check`). C'est le MÊME guichet que l'écran
+      d'entrée de l'application : une personne pré-autorisée qui arrive par le
+      site ne doit pas se retrouver dans une file d'attente qui ne la concerne
+      pas.
+
+      🚨 DÉGRADATION SILENCIEUSE, C'EST LA RÈGLE. Adresse inconnue, guichet en
+      panne, CORS, rate-limit : `askDoor()` renvoie `false` et RIEN ne change
+      à l'écran — pas de message d'erreur, pas d'indice. Impossible de
+      distinguer « adresse inconnue » de « guichet indisponible », et le site
+      fonctionne exactement comme avant si la fonction disparaît.
+
+      🔒 Aucune information sensible : on ne dit jamais d'où vient l'invitation
+      ni qui d'autre est sur la liste. Juste « tu es invité·e ».
+      ═══════════════════════════════════════════════════════════════════════ */}
+  <div data-invited-box hidden class="mb-8 rounded-card border border-gold/40 bg-gold/10 p-5 text-center md:p-6">
+    <Icon name="lucide:sparkles" class="mx-auto h-8 w-8 text-copper" />
+    <p class="mt-3 font-display text-xl font-700 text-ink md:text-2xl">{b.invitedTitle}</p>
+    <p class="mt-2 text-ink-soft/90">{b.invitedText}</p>
+    {/* ⚠️ URL CANONIQUE DE L'APP, SANS PARAMÈTRE — et ce n'est pas un oubli.
+        Vérifié le 30/08/2026 en lecture dans `auth/auth-screen.ts` (projet app) :
+        l'écran d'entrée ne lit AUCUN paramètre `?email=`. Il ne lit que
+        `?signup=1`, lui-même NEUTRALISÉ tant que la bêta est fermée. Un
+        `?email=` serait donc du bruit qui n'aurait aucun effet.
+        La personne saisit son adresse de l'autre côté et l'app la reconnaît
+        avec CE MÊME guichet — le parcours aboutit, il demande juste une frappe
+        de plus. Le jour où l'app lira `?email=`, c'est ici qu'on l'ajoutera. */}
+    <a data-invited-go href={site.appUrl} class="mt-5 inline-block rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper">{b.invitedBtn}</a>
+    {/* Sortie de secours : l'état « invité·e » masque la candidature, il ne
+        doit donc pas être un cul-de-sac pour qui a saisi l'adresse d'un autre. */}
+    <p class="mt-4">
+      <button type="button" data-invited-notme class="text-sm text-ink-soft/70 underline underline-offset-4 hover:text-copper">{b.invitedNotMe}</button>
+    </p>
+  </div>
+
+  <div data-beta-waitlist>
   <span class="inline-flex items-center gap-2 rounded-full bg-copper/15 px-3 py-1 text-xs font-700 uppercase tracking-widest text-copper">
     <Icon name="lucide:lock" class="h-3.5 w-3.5" />{b.badge}
   </span>
@@ -64,47 +104,51 @@ const b = getDict(lang).common.beta
         </div>
       </fieldset>
 
-      <!--
-        Déclaration d'intention. Cases à COCHER : une même personne peut être
-        joueuse, prof ET fabricante. Chaque case annonce sa contrepartie AVANT
-        la question — c'est ce qui rend la réponse honnête facile à donner.
-      -->
+      {/*
+        USAGE — LA question du formulaire. Cases à COCHER : une même personne
+        peut être joueuse, prof ET fabricante. Chaque case annonce sa
+        contrepartie AVANT la question — c'est ce qui rend la réponse honnête
+        facile à donner.
+
+        ─────────────────────────────────────────────────────────────────────
+        30/08/2026 — UNE SEULE QUESTION (alignement sur la refonte de l'app du
+        28/08, `auth/auth-screen.ts`).
+        ─────────────────────────────────────────────────────────────────────
+        Ce bloc était suivi d'un SECOND bloc « Pour quoi faire ? (apprendre ·
+        composer) », qui reposait la même chose — et pouvait la CONTREDIRE.
+        Il a disparu : « Pour moi — apprendre, jouer, composer » le dit déjà.
+        Et chaque sous-question vit maintenant DANS ce fieldset, juste sous la
+        case qui la déclenche, au lieu d'apparaître plus bas détachée de sa
+        cause. Le formulaire ne pose plus qu'une question ; ce sont les
+        réponses qui en ouvrent d'autres.
+
+        ⚠️ CHAÎNE DE DONNÉES : `site_leads.personal_goal` reste rempli, mais il
+        est désormais DÉRIVÉ des cases (cf. `derivedGoals()` dans le script en
+        bas de ce fichier) — exactement comme l'app. Rien n'est devenu orphelin.
+      */}
       <fieldset class="mt-2">
         <legend class="text-sm font-600">{b.formUsage}</legend>
         <p class="mt-1 text-xs text-ink-soft/70">{b.formUsageHint}</p>
         <div class="mt-3 grid gap-2">
-          {[
-            ['personal', b.formUsagePersonal, b.formUsagePersonalDeal],
-            ['teacher', b.formUsageTeacher, b.formUsageTeacherDeal],
-            ['maker', b.formUsageMaker, b.formUsageMakerDeal],
-            ['other', b.formUsageOther, ''],
-          ].map(([v, label, deal]) => (
-            <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-ink/15 bg-cream-deep/25 p-3.5 transition-colors has-[:checked]:border-rust has-[:checked]:bg-rust/5 hover:bg-ink/5">
-              <input type="checkbox" name="roles" value={v} class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
-              <span>
-                <span class="block text-sm font-600">{label}</span>
-                {deal && <span class="mt-1 block text-xs leading-relaxed text-ink-soft/70">{deal}</span>}
-              </span>
-            </label>
-          ))}
-        </div>
-      </fieldset>
+          <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-ink/15 bg-cream-deep/25 p-3.5 transition-colors has-[:checked]:border-rust has-[:checked]:bg-rust/5 hover:bg-ink/5">
+            <input type="checkbox" name="roles" value="personal" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+            <span>
+              <span class="block text-sm font-600">{b.formUsagePersonal}</span>
+              <span class="mt-1 block text-xs leading-relaxed text-ink-soft/70">{b.formUsagePersonalDeal}</span>
+            </span>
+          </label>
 
-      <!-- Sous-question : visible + obligatoire uniquement si « Pour moi » -->
-      <fieldset data-sub="personalGoal" class="ml-0 hidden border-l-2 border-copper/30 pl-4 sm:ml-2">
-        <legend class="text-sm font-600">{b.formPersonalGoal}</legend>
-        <div class="mt-2 flex flex-wrap gap-2">
-          {[['learn', b.formPersonalGoalLearn], ['compose', b.formPersonalGoalCompose]].map(([v, label]) => (
-            <label class="cursor-pointer">
-              <input type="radio" name="personalGoal" value={v} class="peer sr-only" />
-              <span class="inline-block rounded-full border border-ink/20 px-4 py-2 text-sm transition-colors peer-checked:border-rust peer-checked:bg-rust peer-checked:text-cream hover:bg-ink/5">{label}</span>
-            </label>
-          ))}
-        </div>
-      </fieldset>
+          <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-ink/15 bg-cream-deep/25 p-3.5 transition-colors has-[:checked]:border-rust has-[:checked]:bg-rust/5 hover:bg-ink/5">
+            <input type="checkbox" name="roles" value="teacher" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+            <span>
+              <span class="block text-sm font-600">{b.formUsageTeacher}</span>
+              <span class="mt-1 block text-xs leading-relaxed text-ink-soft/70">{b.formUsageTeacherDeal}</span>
+            </span>
+          </label>
 
-      <!-- Sous-question prof : dimensionne la Licence Enseignant, en un clic -->
-      <fieldset data-sub="studentCount" class="ml-0 hidden border-l-2 border-copper/30 pl-4 sm:ml-2">
+          <!-- Sous-question de « Pour enseigner », juste dessous : dimensionne
+               la Licence Enseignant, en un clic. -->
+          <fieldset data-sub="studentCount" class="ml-0 hidden border-l-2 border-copper/30 pl-4 sm:ml-2">
         <legend class="text-sm font-600">{b.formStudentCount}</legend>
         <div class="mt-2 flex flex-wrap gap-2">
           {[['none', b.formStudentCountNone], ['1-5', b.formStudentCount1], ['6-20', b.formStudentCount6], ['20+', b.formStudentCount20]].map(([v, label]) => (
@@ -114,10 +158,19 @@ const b = getDict(lang).common.beta
             </label>
           ))}
         </div>
-      </fieldset>
+          </fieldset>
 
-      <!-- Fiche fabricant : ce qui alimente le catalogue de mise en relation -->
-      <fieldset data-sub="maker" data-partial class="ml-0 hidden border-l-2 border-copper/30 pl-4 sm:ml-2">
+          <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-ink/15 bg-cream-deep/25 p-3.5 transition-colors has-[:checked]:border-rust has-[:checked]:bg-rust/5 hover:bg-ink/5">
+            <input type="checkbox" name="roles" value="maker" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+            <span>
+              <span class="block text-sm font-600">{b.formUsageMaker}</span>
+              <span class="mt-1 block text-xs leading-relaxed text-ink-soft/70">{b.formUsageMakerDeal}</span>
+            </span>
+          </label>
+
+          <!-- Fiche fabricant : sous-question de « Pour fabriquer », juste
+               dessous. C'est ce qui alimente le catalogue de mise en relation. -->
+          <fieldset data-sub="maker" data-partial class="ml-0 hidden border-l-2 border-copper/30 pl-4 sm:ml-2">
         <legend class="text-sm font-600">{b.formMakerLegend}</legend>
         <p class="mt-1 text-xs text-ink-soft/70">{b.formMakerHint}</p>
 
@@ -150,6 +203,15 @@ const b = getDict(lang).common.beta
           <span class="text-sm font-600">{b.formMakerPricing}</span>
           <textarea name="makerPricing" rows="2" maxlength="1000" placeholder={b.formMakerPricingPlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea>
         </label>
+          </fieldset>
+
+          <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-ink/15 bg-cream-deep/25 p-3.5 transition-colors has-[:checked]:border-rust has-[:checked]:bg-rust/5 hover:bg-ink/5">
+            <input type="checkbox" name="roles" value="other" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+            <span>
+              <span class="block text-sm font-600">{b.formUsageOther}</span>
+            </span>
+          </label>
+        </div>
       </fieldset>
 
       <label class="mt-2 flex cursor-pointer items-start gap-3 rounded-xl border border-copper/25 bg-copper/5 p-4">
@@ -206,7 +268,110 @@ const b = getDict(lang).common.beta
       <p class="text-xs text-ink-soft/70">{b.formPrivacy}</p>
     </form>
   </div>
+  </div>
 </div>
+
+<script
+  is:inline
+  define:vars={{ DOOR_ENDPOINT: BETA_DOOR_ENDPOINT, DOOR_KEY: APP_CONFIG_KEY }}
+>
+  /* ══ LA PORTE — reconnaissance d'un email pré-autorisé ═══════════════════
+     Script `is:inline` À PART du script principal ci-dessous, pour une raison
+     de fond : si quoi que ce soit ici échoue, le formulaire de liste d'attente
+     doit continuer de fonctionner exactement comme avant. Les deux ne
+     partagent aucune variable.
+
+     Tout est enveloppé de try/catch et toute anomalie retombe sur `false`
+     (= état normal, formulaire visible). Aucun message d'erreur n'est jamais
+     affiché : on ne doit pas pouvoir distinguer « adresse inconnue » de
+     « guichet en panne ». ══════════════════════════════════════════════════ */
+  ;(function () {
+    var block = document.querySelector('[data-beta-block]')
+    var form = document.getElementById('beta-form')
+    if (!block || !form) return
+    var box = block.querySelector('[data-invited-box]')
+    var waitlist = block.querySelector('[data-beta-waitlist]')
+    var goLink = block.querySelector('[data-invited-go]')
+    var notMe = block.querySelector('[data-invited-notme]')
+    var input = form.querySelector('input[name="email"]')
+    if (!box || !waitlist || !goLink || !notMe || !input) return
+
+    /** Réponses déjà obtenues : le guichet n'est jamais rappelé pour rien. */
+    var cache = {}
+    /** Adresses pour lesquelles la personne a répondu « ce n'est pas moi ». */
+    var dismissed = {}
+    /** Dernière adresse interrogée (la personne peut taper pendant l'appel). */
+    var lastAsked = ''
+    /** Adresse actuellement reconnue, ou '' — l'état suit l'email saisi. */
+    var invited = ''
+    var timer = 0
+
+    /** OUI / NON, et rien d'autre. Toute anomalie = NON. */
+    function askDoor(email) {
+      return fetch(DOOR_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          apikey: DOOR_KEY,
+          Authorization: 'Bearer ' + DOOR_KEY,
+        },
+        body: JSON.stringify({ email: email }),
+      })
+        .then(function (r) { return r.ok ? r.json() : null })
+        .then(function (p) { return !!(p && p.preauthorized === true) })
+        .catch(function () { return false })
+    }
+
+    /* UN SEUL CHEMIN À L'ÉCRAN : reconnue → la candidature disparaît et
+       l'invitation devient l'action principale ; adresse changée → tout
+       revient, sans rechargement. Un invité ne doit jamais pouvoir aller au
+       bout d'une liste d'attente qui ne le concerne pas. */
+    function apply(email) {
+      invited = email || ''
+      box.hidden = !invited
+      waitlist.hidden = !!invited
+      if (invited) {
+        box.setAttribute('data-email', invited)
+      } else {
+        box.removeAttribute('data-email')
+      }
+    }
+
+    function check(raw) {
+      var email = String(raw || '').trim().toLowerCase()
+      if (!email || email.indexOf('@') === -1 || dismissed[email]) { apply(''); return }
+      if (email === invited) return
+      lastAsked = email
+      if (email in cache) { apply(cache[email] ? email : ''); return }
+      askDoor(email).then(function (ok) {
+        cache[email] = ok
+        if (email !== lastAsked) return // la personne a continué à taper
+        apply(ok ? email : '')
+      })
+    }
+
+    // Anti-rebond : jamais un appel par frappe. On interroge au `blur` et au
+    // `change` ; pendant la frappe on se contente de RENDRE la main dès que
+    // l'adresse ne correspond plus à celle qui a été reconnue.
+    input.addEventListener('input', function () {
+      if (invited && input.value.trim().toLowerCase() !== invited) apply('')
+    })
+    function debounced() {
+      clearTimeout(timer)
+      timer = setTimeout(function () { check(input.value) }, 350)
+    }
+    input.addEventListener('change', debounced)
+    input.addEventListener('blur', debounced)
+
+    notMe.addEventListener('click', function () {
+      var recognized = box.getAttribute('data-email') || ''
+      if (recognized) dismissed[recognized] = true
+      apply('')
+      input.focus()
+      input.select()
+    })
+  })()
+</script>
 
 <script>
   const form = document.getElementById('beta-form') as HTMLFormElement | null
@@ -219,6 +384,25 @@ const b = getDict(lang).common.beta
   const checked = (name: string) => radios(name).find((r) => r.checked)?.value || ''
   /** Casquettes cochées : une personne peut être joueuse, prof ET fabricante. */
   const roles = () => radios('roles').filter((r) => r.checked).map((r) => r.value)
+
+  /**
+   * `personal_goal` — DÉRIVÉ des cases d'usage, jamais redemandé.
+   * =====================================================================
+   * Le formulaire ne pose plus « Pour quoi faire ? » (30/08/2026, alignement
+   * sur l'app) : la case « Pour moi — apprendre, jouer, composer » le dit
+   * déjà. On continue pourtant d'ENVOYER la valeur avec le vocabulaire d'avant
+   * (`learn` · `compose` · `teach`), parce que la chaîne l'attend :
+   * `site_leads.personal_goal` reste rempli, le back-office et les statistiques
+   * restent lisibles, et les anciennes lignes restent comparables aux nouvelles.
+   * MÊME dérivation que `derivedGoals()` dans `auth/auth-screen.ts` de l'app.
+   */
+  const derivedGoals = () => {
+    const r = roles()
+    if (!r.includes('personal')) return []
+    const goals = ['learn', 'compose']
+    if (r.includes('teacher')) goals.push('teach')
+    return goals
+  }
 
   function toggleSub(name: string, show: boolean, required = true) {
     const fs = sub(name)
@@ -241,7 +425,6 @@ const b = getDict(lang).common.beta
   function syncConditionals() {
     const r = roles()
     toggleSub('handpanType', checked('hasHandpan') === 'yes')
-    toggleSub('personalGoal', r.includes('personal'))
     toggleSub('studentCount', r.includes('teacher'))
     toggleSub('maker', r.includes('maker'))
     // Motivation obligatoire dès que la personne veut devenir bêta-testeur.
@@ -292,7 +475,11 @@ const b = getDict(lang).common.beta
           // `usage_type` est DÉRIVÉ des casquettes côté serveur : on n'envoie plus
           // de valeur unique, seulement la déclaration complète.
           roles: data.getAll('roles').map(String),
-          personalGoal: get('personalGoal'),
+          // `personalGoals` (liste) remplace l'ancien `personalGoal` (choix
+          // unique) : la question n'est plus posée, la valeur est dérivée des
+          // casquettes. `site-lead` accepte les deux formes — les anciens
+          // appelants et les pages en cache continuent de fonctionner.
+          personalGoals: derivedGoals(),
           studentCount: get('studentCount'),
           makerCountry: get('makerCountry'),
           makerMaxNotes: get('makerMaxNotes'),
