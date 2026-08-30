@@ -2123,6 +2123,32 @@ const fr = {
     ],
     alsoNote: 'Tu viens pour l’un d’eux en particulier ? Coche-le au moment de réserver ta place : je le prépare pour la séance.',
 
+    // ── 🥁 « L'ÂME DU TAMBOUR » — LE PARTENAIRE QUI MANQUAIT (30/08/2026).
+    // David : « J'ai oublié un partenaire : l'Âme du tambour. Il figure dans ma
+    // boutique mais il n'est pas cité sur la page du showroom. »
+    // ⓘ Il n'était pas TOTALEMENT absent : `programBonus` le nomme déjà, tout en
+    //   bas, dans « et parfois ça va plus loin ». Ce qui manquait, c'est sa
+    //   place parmi les MARQUES PARTENAIRES de la section des instruments.
+    // 📐 POURQUOI UN ENCADRÉ À PART, ET PAS UNE 4ᵉ CARTE DANS `also` :
+    //   exactement la raison qui a sorti les pieds Atlas de ce bloc. `alsoNote`
+    //   promet « coche-le au moment de réserver » — or `showcaseInterests` et
+    //   `demoInstruments` (src/data/site.ts) n'ont PAS de case `tambour`, et en
+    //   ajouter une demande les trois écritures (formulaire → api/subscribe.js
+    //   → site-lead + colonne). Une 4ᵉ carte aurait donc promis une case qui
+    //   n'existe pas. L'encadré est APRÈS `alsoNote` : la promesse reste vraie
+    //   pour les trois instruments qu'elle vise.
+    // 🚫 NE RIEN INVENTER : tout ce qui est écrit ici vient de la fiche boutique
+    //   (`shop.products.tambour`) et de `programBonus`. « l'Âme du Tambour » est
+    //   un NOM PROPRE, le fabricant s'appelle Julien, le code est David-Tambour.
+    //   Ni atelier, ni ville, ni ancienneté : ce n'est écrit nulle part.
+    // ⚖️ Le tambour n'est PAS annoncé comme systématique — `programBonus` dit
+    //   l'inverse (« ce n'est pas systématique »). Les deux textes disent donc
+    //   la même chose, et la page ne se contredit pas.
+    tambourEyebrow: 'Partenaire · L’Âme du Tambour',
+    tambourTitle: 'Le tambour chamanique',
+    tambourText: 'Les tambours-cadres artisanaux de Julien — « l’Âme du Tambour », un fabricant aligné, passionné et intègre. Le tambour n’est pas de toutes les séances : il sort selon les personnes présentes et ce qui les intéresse. Dis-moi qu’il t’attire au moment de réserver, j’en tiens compte.',
+    tambourCta: 'Voir le tambour dans la boutique',
+
     // ── 🎠 CARROUSEL « LE RESTE DE CE QUE JE JOUE » (20/08/2026, demande de
     //    David : « il faudrait créer un carrousel où on voit des images de
     //    calebasse / micro Hisong / micro Muling / Gonilélé »).
@@ -2227,7 +2253,14 @@ const fr = {
     photoCaption: {
       vueEnsemble: 'Un showcase au Nid — public assis en cercle, instruments au centre.',
       grandePiece: 'La même pièce en journée, avant que tout soit installé.',
-      instruments: 'Ce qui t’attend en arrivant : Neotone, Yishama, calebasse, prêts à être joués.',
+      // 🗓️ 30/08/2026 (David) : « il faut la compléter avec tous les autres
+      //    instruments et micros ». Cette légende ne décrit PAS la photo (c'est
+      //    `photoAlt.instruments` qui le fait, et lui n'a pas bougé) : depuis le
+      //    21/08 elle vaut pour la SECTION entière — d'où l'inventaire complet.
+      //    ⚠️ Tout ce qui est cité ici est bien installé sur place (duo handpan,
+      //    Gonilélé, calebasse, micros, tambour) : ne rien y ajouter qui ne soit
+      //    pas réellement au showroom.
+      instruments: 'Ce qui t’attend en arrivant : les Neotone, mes handpans Yishama, le Gonilélé, la calebasse, les micros et le tambour chamanique — prêts à être joués.',
       // 🚨 CORRIGÉ le 20/08/2026 (David) — la version précédente disait
       //    « avant que tu prennes les baguettes ». Un handpan se joue AUX
       //    MAINS, et aucune baguette ne circule pendant les showcases :

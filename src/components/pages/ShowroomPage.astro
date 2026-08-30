@@ -780,10 +780,25 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         mais jamais plus que Neotone. `duoNote` dit franchement la seule
         asymétrie réelle : seul le Neotone est en stock. */}
     <div class="mt-14">
-      <div class="mx-auto max-w-2xl text-center">
+      {/* 📏 30/08/2026 (David) : « mets cette phrase sur une seule ligne :
+          "Handpan acoustique et électronique, le même jour" ».
+          MESURÉ AVANT : 2 lignes partout. À 1280 px le texte fait 692 px pour
+          un cadre de 672 px (`max-w-2xl`) — il ne manquait que 20 px. Le
+          conteneur du titre passe donc en `max-w-3xl` (768 px) : une seule
+          ligne dès 768 px de large. L'intro garde `max-w-2xl` (`mx-auto` sur
+          le <p>) : sa longueur de ligne, elle, ne change pas.
+          🚫 À 375 px, UNE SEULE LIGNE EST IMPOSSIBLE : le cadre fait 343 px, il
+             faudrait descendre la police à ~14,7 px, soit PLUS PETIT que le
+             paragraphe (16 px) juste en dessous. Un titre de chapitre plus
+             petit que son texte, c'est illisible et ça casse la hiérarchie.
+             👉 Compromis retenu : `text-balance`, qui coupe en deux lignes
+             ÉQUILIBRÉES au lieu d'une ligne pleine + un mot orphelin.
+             Ne pas « corriger » ça avec un `whitespace-nowrap` : ça
+             déborderait de l'écran. */}
+      <div class="mx-auto max-w-3xl text-center">
         <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.duoEyebrow}</p>
-        <h3 class="mt-3 font-display text-2xl font-700 md:text-3xl">{sh.duoTitle}</h3>
-        <p class="mt-3 text-ink-soft/85">{sh.duoIntro}</p>
+        <h3 class="mt-3 text-balance font-display text-2xl font-700 md:text-3xl">{sh.duoTitle}</h3>
+        <p class="mx-auto mt-3 max-w-2xl text-ink-soft/85">{sh.duoIntro}</p>
       </div>
       <div class="mt-10 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-4">
       {sh.duo.map((d, i) => (
@@ -866,6 +881,39 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         ))}
       </div>
       <p class="mx-auto mt-6 max-w-2xl text-center text-sm text-ink-soft/70">{sh.alsoNote}</p>
+      {/* ═══ 🥁 « L'ÂME DU TAMBOUR » — LE PARTENAIRE OUBLIÉ (30/08/2026) ═════
+          David : « J'ai oublié un partenaire : l'Âme du tambour. Il figure dans
+          ma boutique mais il n'est pas cité sur la page du showroom. »
+          ⓘ Il était déjà NOMMÉ dans `programBonus` (« et parfois, ça va plus
+            loin »), mais absent de la section où vivent les marques partenaires
+            — Yishama, Neotone, La Maison du Ngoni, Hisong, Muling, Atlas.
+          📐 PLACÉ APRÈS `alsoNote`, ET C'EST LE POINT IMPORTANT : cette note
+            promet « coche-le au moment de réserver », et `showcaseInterests` /
+            `demoInstruments` (src/data/site.ts) n'ont PAS de case `tambour`.
+            Une 4ᵉ carte dans la grille aurait promis une case inexistante.
+            C'est exactement le raisonnement qui a sorti les pieds Atlas d'ici.
+          🎨 Encadré compact `border-copper/30`, une seule ligne icône + texte :
+            même famille visuelle que l'encadré Atlas, mais deux fois plus léger
+            — c'est un partenaire, pas un 4ᵉ instrument du programme, et le
+            Neotone reste la tête d'affiche.
+          📷 PAS DE PHOTO ICI, VOLONTAIREMENT : la seule image disponible
+            (/images/prod-tambour.jpg) est une vignette de vidéo en 480×360,
+            avec bandes noires et logos incrustés. Dans le carrousel
+            `showroomAlsoGallery` (carré, 512 px de large) elle serait floue et
+            détonnerait à côté des photos produit. Le lien mène à sa fiche
+            boutique, où la photo et le code de réduction vivent déjà. */}
+      <div class="mx-auto mt-8 max-w-2xl rounded-card border border-copper/30 bg-cream p-5 sm:p-6">
+        <div class="flex items-start gap-4">
+          <Icon name="lucide:disc-2" class="mt-1 h-7 w-7 shrink-0 text-copper" />
+          <div>
+            <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{sh.tambourEyebrow}</p>
+            {/* <h4> : sous le <h3> du chapitre — comme les cartes ci-dessus. */}
+            <h4 class="mt-1 font-display text-lg font-700">{sh.tambourTitle}</h4>
+            <p class="mt-2 text-sm text-ink-soft/85">{sh.tambourText}</p>
+            <a href={L('/boutique#tambour')} class="mt-4 inline-flex items-center gap-1 text-sm font-700 text-copper transition-all hover:gap-2">{sh.tambourCta} →</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     {/* ═══ CHAPITRE 3/4 — 🦵 LES PIEDS ATLAS (20/08/2026) ═════════════════

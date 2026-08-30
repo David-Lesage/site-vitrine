@@ -1792,6 +1792,25 @@ export const en: Dict = {
     ],
     alsoNote: 'Coming for one of them in particular? Tick it when you book your spot: I’ll have it ready for the session.',
 
+    // ── 🥁 “L'ÂME DU TAMBOUR”, THE PARTNER THAT WAS MISSING (30/08/2026).
+    // David: “I forgot a partner: l'Âme du tambour. He is in my shop but he is
+    // not mentioned on the showroom page.”
+    // ⓘ He was not entirely absent: `programBonus` already names him at the very
+    //   bottom. What was missing was his place among the PARTNER BRANDS.
+    // 📐 A SEPARATE BOX, NOT A 4TH `also` CARD — same reason that moved the
+    //   Atlas stands out of that block: `alsoNote` promises “tick it when you
+    //   book”, and `showcaseInterests` / `demoInstruments` (src/data/site.ts)
+    //   have NO `tambour` option. Adding one needs the three writes (form →
+    //   api/subscribe.js → site-lead + column). Placed AFTER `alsoNote`, the
+    //   promise stays true for the three instruments it targets.
+    // 🚫 INVENT NOTHING: every fact here comes from `shop.products.tambour` and
+    //   `programBonus`. “l'Âme du Tambour” is a proper name, the maker is
+    //   Julien, the code is David-Tambour. No workshop, no town, no seniority.
+    tambourEyebrow: 'Partner · L’Âme du Tambour',
+    tambourTitle: 'The shamanic frame drum',
+    tambourText: 'The handcrafted frame drums of Julien — “l’Âme du Tambour”, an aligned, passionate and honest maker. The drum is not out at every session: it comes out depending on who is there and what interests them. Tell me it draws you when you book, and I take it into account.',
+    tambourCta: 'See the drum in the shop',
+
     // ── 🎠 “The rest of what I play” carousel (20/08/2026) — see dict.ts.
     //    Files are REUSED as-is from the dedicated pages; ids must match
     //    `showroomAlsoGallery` in src/data/showroom.ts.
@@ -1868,7 +1887,12 @@ export const en: Dict = {
     photoCaption: {
       vueEnsemble: 'A showcase at Le Nid — audience in a circle, instruments at the centre.',
       grandePiece: 'The same room in daylight, before everything is set up.',
-      instruments: 'What waits for you on arrival: Neotone, Yishama, calabash, ready to be played.',
+      // 🗓️ 30/08/2026 (David): “complete it with all the other instruments and
+      //    microphones”. This caption does NOT describe the photo (that is
+      //    `photoAlt.instruments`, unchanged): since 21/08 it stands for the
+      //    WHOLE section — hence the full inventory. Everything listed is
+      //    really on site; add nothing that is not.
+      instruments: 'What waits for you on arrival: the Neotones, my Yishama handpans, the Gonilélé, the calabash, the microphones and the shamanic drum — all ready to be played.',
       // 🚨 Fixed 20/08/2026 (David): the previous line said “before you pick
       //    up the mallets”. A handpan is played WITH THE HANDS, and no
       //    mallets are used at the showcases. Do not reintroduce them.
