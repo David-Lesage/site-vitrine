@@ -206,6 +206,8 @@ const ALLOWED_HAS_HANDPAN = ['yes', 'no', 'planning'];
 const ALLOWED_USAGE = ['personal', 'teacher', 'both', 'maker'];
 const ALLOWED_HANDPAN_TYPE = ['acoustic', 'electronic', 'both'];
 const ALLOWED_PERSONAL_GOAL = ['learn', 'compose'];
+/** Forme LISTE (dérivée des casquettes, cf. plus bas) — `teach` en plus, comme `app-lead`. */
+const ALLOWED_PERSONAL_GOALS = ['learn', 'compose', 'teach'];
 
 // Déclaration d'intention (22/07/2026) — casquettes MULTIPLES.
 const ALLOWED_ROLES = ['personal', 'teacher', 'maker', 'other'];
@@ -284,6 +286,9 @@ const PROFILE_LABELS: Record<string, string> = {
     personal: 'à titre personnel', teacher: 'prof (outil pédagogique)', maker: 'fabricant de handpan',
     other: 'autre / ne sait pas encore',
     learn: 'apprendre à jouer', compose: 'composer / créer des gammes',
+    // `teach` : valeur DÉRIVÉE (jamais saisie), ajoutée à `personal_goal` quand
+    // la personne coche à la fois « pour moi » et « pour enseigner ».
+    teach: 'enseigner',
     none: 'aucun élève pour l’instant', '1-5': '1 à 5 élèves', '6-20': '6 à 20 élèves', '20+': 'plus de 20 élèves',
     'onboarding-60': 'Prise en main de l’instrument (1h)', 'onboarding-90': 'Prise en main de l’instrument (1h30)',
     one: 'Neotone¹ (10 notes)', mutant: 'Neotone¹ Mutant (19 notes)', undecided: 'ne sait pas encore',
@@ -742,9 +747,33 @@ Deno.serve(async (req) => {
         const rawHandpanType = String(body.handpanType ?? '').trim();
         const handpanType =
             hasHandpan === 'yes' && ALLOWED_HANDPAN_TYPE.includes(rawHandpanType) ? rawHandpanType : null;
+        /* `personal_goal` — DEUX FORMES ACCEPTÉES, et c'est voulu.
+           ---------------------------------------------------------------
+           · `personalGoals` (liste) : forme actuelle. Depuis le 30/08/2026 le
+             formulaire du site ne pose plus « Pour quoi faire ? » — la valeur
+             est DÉRIVÉE des cases d'usage (`learn` · `compose` · `teach`),
+             comme le fait déjà `app-lead`. On stocke la liste jointe par des
+             virgules, exactement comme l'app, pour que les deux portes
+             d'entrée écrivent la même chose dans la même colonne.
+           · `personalGoal` (chaîne) : forme historique. Conservée pour les
+             appelants pas encore migrés et les pages du site encore en cache
+             chez un visiteur — sinon leur réponse serait silencieusement
+             perdue le jour du déploiement.
+           Dans les deux cas, une valeur inconnue est ignorée (null) plutôt que
+           refusée : c'est un formulaire public, perdre un contact sur un 400
+           coûterait plus cher qu'une sous-réponse manquante. */
+        const rawGoalList = Array.isArray(body.personalGoals)
+            ? body.personalGoals.map((g: unknown) => String(g ?? '').trim())
+            : [];
+        const goalList = [...new Set(rawGoalList.filter((g) => ALLOWED_PERSONAL_GOALS.includes(g)))];
         const rawPersonalGoal = String(body.personalGoal ?? '').trim();
-        const personalGoal =
-            isPersonal && ALLOWED_PERSONAL_GOAL.includes(rawPersonalGoal) ? rawPersonalGoal : null;
+        const personalGoal = !isPersonal
+            ? null
+            : goalList.length
+              ? goalList.join(',')
+              : ALLOWED_PERSONAL_GOAL.includes(rawPersonalGoal)
+                ? rawPersonalGoal
+                : null;
         const wantsBeta = body.wantsBeta === true;
 
         // Champs « demande de réservation »
@@ -1134,7 +1163,12 @@ Deno.serve(async (req) => {
                             'Déclare être': roles.length
                                 ? roles.map((r) => PROFILE_LABELS[r] ?? r).join(' + ')
                                 : (usageType ? PROFILE_LABELS[usageType] ?? usageType : null),
-                            Objectif: personalGoal ? PROFILE_LABELS[personalGoal] ?? personalGoal : null,
+                            // `personal_goal` peut être une LISTE jointe par des virgules
+                            // (« learn,compose ») depuis le 30/08/2026 : on traduit chaque
+                            // valeur, sinon l'email d'alerte afficherait le code brut.
+                            Objectif: personalGoal
+                                ? personalGoal.split(',').map((g) => PROFILE_LABELS[g] ?? g).join(' · ')
+                                : null,
                             Élèves: studentCount ? PROFILE_LABELS[studentCount] ?? studentCount : null,
                             'Fabrique à': makerCountry,
                             'Notes max': makerMaxNotes ? PROFILE_LABELS[makerMaxNotes] ?? makerMaxNotes : null,

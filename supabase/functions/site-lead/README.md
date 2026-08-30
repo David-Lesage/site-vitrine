@@ -19,8 +19,16 @@ provoqué une perte de données silencieuse (voir plus bas).
 has_handpan   : yes | no | planning
 usage_type    : personal | teacher | both | maker
 handpan_type  : acoustic | electronic | both      (seulement si has_handpan = yes)
-personal_goal : learn | compose                   (seulement si usage_type = personal)
+personal_goal : learn | compose | teach           (seulement si usage_type = personal)
 ```
+
+**30/08/2026 — `personal_goal` n'est plus une question, c'est une dérivation.** Le
+formulaire du site ne pose plus « Pour quoi faire ? » (alignement sur la refonte de l'app
+du 28/08) : la case « Pour moi — apprendre, jouer, composer » le dit déjà. Le client envoie
+désormais **`personalGoals` (liste)** — `["learn","compose"]`, plus `"teach"` si la case
+« Pour enseigner » est cochée aussi — et la fonction la stocke **jointe par des virgules**,
+exactement comme `app-lead`. L'ancien champ **`personalGoal` (chaîne) reste accepté** : une
+page encore en cache chez un visiteur ne doit pas perdre sa réponse.
 
 Différence assumée : `app-lead` **rejette** (400) une réponse incohérente ; `site-lead`
 la **met à null**. C'est la porte d'entrée publique du site — perdre un contact sur un 400

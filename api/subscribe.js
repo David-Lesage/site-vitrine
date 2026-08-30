@@ -45,8 +45,12 @@ export default async function handler(req, res) {
         usageType: body.usageType,
         roles: body.roles,
         pledgeHonest: body.pledgeHonest === true,
-        // Sous-question : objectif (si la casquette « pour moi » est cochée)
+        // Objectif personnel. Depuis le 30/08/2026 le formulaire ne le DEMANDE
+        // plus : il est dérivé des casquettes et arrive sous forme de liste
+        // (`personalGoals`). `personalGoal` (choix unique) reste transmis pour
+        // les anciens appelants et les pages encore en cache.
         personalGoal: body.personalGoal,
+        personalGoals: body.personalGoals,
         // Sous-question prof : dimensionne la Licence Enseignant
         studentCount: body.studentCount,
         // Fiche fabricant — alimente le catalogue de mise en relation
