@@ -46,6 +46,16 @@ Many acoustic handpans have **bottom notes** — the notes under the instrument,
 
 On a rich scale like a **20-note D Kurd**, these two views make all the difference for finding your way around — just pick whichever speaks to you.
 
+## What has changed since, and where to start
+
+This article dates from July 2026. Since then, acoustic mode has reorganised itself around **three doors**, all free, all either in the right-hand panel or under the pan.
+
+**My handpans.** The right-hand panel no longer opens on the world's catalogue but on **your** instruments. Tick one handpan to play it alone, tick two to play them together — that's the whole subject of [Two handpans that become one](/en/blog/deux-handpans-mode-hybride).
+
+**🎼 Chord workshop → ✨ Reveal.** Under the pan, a bar shows every chord playable on your instrument. The **✨ Reveal** button opens, full screen, the answer to the only question that matters at the start: *what does my handpan already know how to do?* — how many chords, which ones, and how many pieces of the repertoire they let you accompany.
+
+**🎯 Complete your scale.** The funnel that compares your real notes with what the chords ask for, and tells you, chord by chord, what is missing — then what a second instrument would unlock.
+
 ## Free now, more later if you want
 
 Acoustic mode gives you the essentials at no cost: visualise, learn, create, export. Saving your personal library and the advanced functions belong to the Studio version, but nothing forces you into it to get started. You can experience real progress while staying on the free tier.

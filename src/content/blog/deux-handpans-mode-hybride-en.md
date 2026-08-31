@@ -26,19 +26,23 @@ The app also points out what you already have without knowing it: the **relative
 
 One word of honesty: those counters rest on a still-modest catalogue of scores. They tell the truth, but not yet the *whole* truth — the repertoire will grow as scores are added to the [music library](/en/blog/bibliotheque-musicale-handpan).
 
-## 🌗 The Hybrid banner
+## 🌗 Two checkboxes, and the banner appears
 
-As soon as a second handpan is present — because you registered it, or because "Complete" suggests one — a **Hybrid** banner appears above your pans. Both shells are shown **genuinely side by side** (with a button to swap them), and the chords sort themselves into three families:
+Setting a second handpan down now takes **two checkboxes**. Right-hand panel, **My handpans** block: tick one instrument and it plays alone; tick a second and the pair is set — badges **⓵** and **⓶**, in the order you ticked. The old "2nd pan" dropdowns (the guided strip, the "Complete" funnel) were removed at the end of August: one gesture is left, **🤝 Put alongside**, and it accepts every one of your instruments, Neotone and custom shells included.
 
-- those the **first pan** plays alone;
-- those the **second** plays alone;
-- those that only exist **with both**.
+A banner then appears above your pans: **🌗 Your 2 handpans: *the first* + *the second***, with a **⇄ swap** to exchange their places, the current tonal frame, and the count that says everything in one line:
 
-For that third family, the chord voicing is genuinely computed across the two instruments — lowest root in the bass — and the path crosses the gap from one pan to the other. You see at a glance which hand goes where, and the play order follows.
+- how many chords the **first pan** plays alone;
+- how many the **second** plays alone;
+- how many you have **with both**.
+
+That last number is the real subject. For those chords, the voicing is genuinely computed across the two instruments — lowest root in the bass — and the path crosses the gap from one pan to the other. You see at a glance which hand goes where, and the play order follows.
+
+A word on vocabulary, because the app now draws the line: two acoustics side by side is a **duo**. An acoustic **and** a Neotone is the **Hybrid** — same banner, different rules, and it is "Complete" that takes you there. The app never mixes the two families by default: it *offers* you the Hybrid instead of refusing.
 
 ## Your repertoire, right from loading
 
-Another quiet but decisive change: you no longer have to ask. As soon as a scale is loaded in acoustic Logic Mode, a "**Your repertoire**" card (*Ton répertoire*) tells you how many known pieces you can play, which ones, and **which note would unlock the most**. The information arrives before the question.
+Another quiet but decisive change: you no longer have to ask. As soon as a scale is loaded in acoustic Logic Mode, a line appears under the 7 degrees: "🎵 ***N* pieces playable with your scale**", with a "see →" that opens the list. The information arrives before the question. And **which note would unlock the most** is answered by "Complete" and by the [✨ Reveal](/blog/reveler-les-accords-de-ton-handpan) screen.
 
 ## And if you want to hear before deciding
 

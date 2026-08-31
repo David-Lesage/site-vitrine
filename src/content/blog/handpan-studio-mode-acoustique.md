@@ -32,9 +32,9 @@ L'app te montre les accords de ta gamme sous forme de **Constellations** — ces
 
 En mode acoustique, la **création** de dispositions colorées et l'**export** de tes visuels sont gratuits (l'export porte toujours un discret filigrane). Tu peux composer ta propre lecture de gamme et la garder sous les yeux. Pour aller plus loin, découvre comment fonctionne la [création de gamme](/blog/creer-sa-gamme-de-handpan).
 
-## Les bottom notes : deux affichages au choix
+## Les notes du dessous : deux affichages au choix
 
-Beaucoup de handpans acoustiques ont des **bottom notes** — les notes situées sous l'instrument, autour du trou du dessous. Handpan Constellation Studio les prend en charge et te laisse choisir **comment les afficher**, selon ta façon de te représenter ton pan :
+Beaucoup de handpans acoustiques ont des **notes du dessous** — celles qui sont sous l'instrument, autour du trou. (L'application les appelle comme ça partout : « notes du dessous », et non *bottom notes*.) Handpan Constellation Studio les prend en charge et te laisse choisir **comment les afficher**, selon ta façon de te représenter ton pan :
 
 **Affichage en étoile** (façon *Notepan*) — les notes du dessous s'affichent en couronne autour du pan principal, pratique pour tout voir d'un seul coup d'œil :
 
@@ -45,6 +45,16 @@ Beaucoup de handpans acoustiques ont des **bottom notes** — les notes situées
 ![Handpan Constellation Studio — D Kurd 20 notes, la coque du dessous présentée à côté](/images/blog-bottom-coques.webp)
 
 Sur une gamme riche comme un **D Kurd 20 notes**, ces deux vues changent tout pour se repérer : choisis simplement celle qui te parle le plus.
+
+## Ce qui a changé depuis, et par où entrer
+
+Cet article date de juillet 2026. Depuis, le mode acoustique s'est réorganisé autour de **trois portes**, toutes gratuites, toutes dans le panneau de droite ou sous le pan.
+
+**Mes handpans.** Le panneau de droite ne s'ouvre plus sur le catalogue du monde mais sur **tes** instruments. Tu coches un handpan pour le jouer seul, tu en coches deux pour les jouer ensemble — c'est tout le sujet de [« Mes handpans » : une seule porte](/blog/mes-handpans-une-seule-porte).
+
+**🎼 Atelier d'accords → ✨ Révéler.** Sous le pan, une barre affiche tous les accords jouables sur ton instrument. Le bouton **✨ Révéler** ouvre en grand la réponse à la seule question qui compte au début : *qu'est-ce que mon handpan sait déjà faire ?* — combien d'accords, lesquels, et combien de morceaux du répertoire ils permettent d'accompagner. C'est raconté en détail dans [« Révéler » : tout ce que ton handpan sait déjà jouer](/blog/reveler-les-accords-de-ton-handpan).
+
+**🎯 Compléter ta gamme.** Le funnel qui compare tes notes réelles avec ce que demandent les accords, et te dit, accord par accord, ce qui manque — puis ce qu'un second instrument débloquerait : [Deux handpans qui n'en font qu'un](/blog/deux-handpans-mode-hybride).
 
 ## Gratuit maintenant, plus tard si tu veux
 

@@ -22,7 +22,7 @@ D'où cette drôle de situation : on attend d'être capable de jouer pour oser c
 
 La barre d'accompagnement renverse l'ordre. Tu cliques un accord de la grille, il se met à tourner en boucle. Tu règles :
 
-- **La figure** — Plaqué, Arpège ↑, Arpège ↑↓, ou Arpège ↑×2 ;
+- **La figure** — Plaqué, Arpège ↑, Arpège ↓, Arpège ↑↓ ou Arpège ↑×2 ;
 - **Le débit** — ♩ noire, ♪ croche, ♬ double croche ;
 - **Le tempo**, en BPM, tant que ça ne te bouscule pas.
 
@@ -34,11 +34,11 @@ Cette barre existe aussi bien sur la grille d'accords du mode acoustique que sur
 
 Quand la boucle est en place, il manque encore quelque chose : la **pulsation vivante**. Un métronome donne l'heure ; un batteur donne l'envie.
 
-Handpan Constellation Studio propose douze grooves d'accompagnement — pop, funk, reggae, bossa, 6/8… — avec leurs fills automatiques. Tu peux les utiliser pour t'échauffer, mais surtout **enregistrer par-dessus** : à la lecture, le groove reste une piste indépendante que tu peux couper d'un clic 🔇, et il suit le tempo de ton morceau. Il part même dans le fichier MIDI quand tu exportes ton enregistrement.
+Il est là, juste à côté de la barre : un tiroir **🥁 Batteur**. Tu l'ouvres, tu choisis un groove, un tempo, et une « vie » — Sobre, Vivant, Généreux. **41 grooves** rangés en huit familles : *Pour le handpan* (Souffle, Battement de cœur, Cajón doux, Vagues, Berceuse, Marche tranquille, Pluie, et le métronome sec), *Pop & Rock*, *Latines*, *Afrique & Orient*, *Swing & Jazz*, *Hip-hop & Urbain*, *Électro & Dance*, *Du monde*. Chacun a ses fills.
 
-Tu peux aussi jouer par-dessus une piste MIDI ou un fichier audio importé — pratique pour t'entraîner sur une chanson que tu aimes avant de l'accompagner pour de vrai.
+Ça aussi, c'est **gratuit**, et ça ne demande aucun matériel : le batteur tourne dans le navigateur, dès le niveau Découverte, sur la grille d'accords du mode acoustique comme sur celle du Mode Logique. Le groove que tu choisis te suit d'un outil à l'autre.
 
-Les grooves et l'enregistrement MIDI relèvent de la version **Studio** ; ils demandent un [Neotone](/le-neotone) branché pour donner le meilleur.
+Ce qui relève de la version **Studio**, c'est l'**enregistrement MIDI** — et là, le batteur change de rôle : le groove devient une piste d'accompagnement à part entière, que tu coupes d'un clic 🔇 à la lecture, qui suit le tempo de ton morceau et qui part dans le fichier quand tu exportes. Tu peux aussi jouer par-dessus une piste MIDI ou un fichier audio importé — pratique pour t'entraîner sur une chanson que tu aimes avant de l'accompagner pour de vrai. C'est là qu'un [Neotone](/le-neotone) branché donne le meilleur.
 
 ## Chanter d'abord, jouer ensuite
 

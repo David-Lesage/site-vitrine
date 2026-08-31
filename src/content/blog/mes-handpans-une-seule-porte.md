@@ -24,7 +24,7 @@ Avant, il fallait deviner. Maintenant, c'est deux cases à cocher.
 
 En mode acoustique, le panneau de droite s'ouvre désormais sur **tes** instruments, pas sur le catalogue du monde. C'est un renversement volontaire : l'acoustique est un monde fini et personnel — on part de ce que tu as. L'exploration des autres gammes vient après, plus bas, sous « Découvrir d'autres gammes ».
 
-Le bloc s'appelle **🥁 Mes handpans**. Chaque instrument occupe un rang, avec :
+Le bloc s'appelle **Mes handpans** — avec, dans son en-tête, le logo de handpan et non l'emoji de caisse claire qui traînait là avant (« un handpan acoustique n'est pas une caisse claire »). Chaque instrument occupe un rang, avec :
 
 - son **logo de famille** — rond cuivré pour un acoustique, cuivré à couronne s'il a des notes du dessous, bleu pour un électronique ;
 - la pastille dorée **« tu joues dessus »** ;
@@ -34,19 +34,18 @@ Sous la liste, **une seule barre d'actions**, qui annonce toujours sur quoi elle
 
 Et une distinction qui a l'air anodine mais qui change tout : **sélectionner n'est pas jouer**. Tu cliques un rang pour le désigner, et la barre te propose alors ▶ Jouer (il se pose seul), 🎼 Mes morceaux, 🎡 Tester une autre tonalité, 🤝 Mettre à côté, ✏️ Renommer, 🗑 Retirer. Tu peux agir sur un instrument sans le charger.
 
-<!-- 📸 PLACE RÉSERVÉE — CAPTURE « MES HANDPANS », à faire par David.
-     Sa place est ICI, juste après la description du bloc.
-     CE QU'ELLE DOIT MONTRER : le panneau de droite en mode acoustique, bloc « 🥁 Mes handpans »
-     avec AU MOINS DEUX instruments enregistrés, dont un coché ⓵ et un coché ⓶ (donc le duo
-     posé), les logos de famille visibles, et la barre « POUR : … » dépliée sous la liste.
-     IDÉALEMENT un D Kurd 10 en ⓵ : tout l'article est écrit pour cette gamme-là.
-     QUAND ELLE ARRIVE :
-       1. `cwebp -q 92 -sharp_yuv -resize 2000 0 <source> -o public/images/blog-mes-handpans-duo.webp`
-          (original dans `_medias-originaux-avec-titre/`).
-       2. Remplacer ce commentaire par une <figure> sur le modèle de
-          `les-deux-visions-chromakeys.md` (width/height réels, `loading="lazy"`, `data-lb`).
-     ⛔ NE JAMAIS la fabriquer : ni montage, ni schéma imitant l'app.
-        L'article se lit entièrement sans elle. -->
+<figure>
+  <img
+    src="/images/blog-mes-handpans-duo.webp"
+    width="1548"
+    height="2112"
+    alt="Panneau de droite de Handpan Constellation Studio en mode acoustique, bloc « Mes handpans (2) ». Premier rang : case cochée ⓵, logo rond cuivré, « D Minor / Kurd 10 — D · 10 notes », pastille dorée « tu joues dessus ». Deuxième rang : case cochée ⓶, logo rond cuivré, « B2 Amara 9 — B · 9 notes », mention « à côté ». Sous la liste, la barre d'actions « POUR D Minor / Kurd 10 », avec le crayon de renommage, la pastille ACOUSTIQUE, « Retirer », « Mes morceaux (156) », « Tester une autre tonalité », puis l'encart « 🤝 MON DUO — D Minor / Kurd 10 + B2 Amara 9 · ▶ Jouer le duo · ⇄ inverser · Retirer du duo ». En bas : « Changer de gamme → plus bas ↓ », « ＋ Handpan enregistré », « Partager cette gamme », « ⚡ Ajouter mon Neotone »."
+    data-lb="mes-handpans-duo"
+    loading="lazy"
+  />
+  <figcaption>Deux instruments cochés <strong>⓵</strong> et <strong>⓶</strong> : le duo est posé. La barre <strong>POUR&nbsp;: …</strong> dit toujours sur quel instrument elle agit, et l'encart <em>Mon duo</em> porte le <strong>⇄ inverser</strong>.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Deux cases à cocher, et c'est tout
 
@@ -114,7 +113,7 @@ Ce qui relève du **Studio**, c'est la **sauvegarde durable dans le cloud** : c'
 
 ## Le résumé, si tu ne retiens qu'une chose
 
-> Panneau de droite → **🥁 Mes handpans** → **coche un instrument** pour le jouer seul, **coches-en deux** pour les jouer ensemble.
+> Panneau de droite → **Mes handpans** → **coche un instrument** pour le jouer seul, **coches-en deux** pour les jouer ensemble.
 
 Il n'y a plus d'autre chemin. C'était le but.
 

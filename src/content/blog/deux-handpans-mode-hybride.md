@@ -26,19 +26,23 @@ L'app te signale aussi ce que tu as déjà sans le savoir : la **gamme relative*
 
 Un mot d'honnêteté : ces compteurs s'appuient sur un catalogue de partitions encore modeste. Ils disent vrai, mais ils ne disent pas encore *tout* — le répertoire s'étoffera au fil des partitions déposées dans la [Bibliothèque musicale](/blog/bibliotheque-musicale-handpan).
 
-## 🌗 Le bandeau Hybride
+## 🌗 Deux cases à cocher, et le bandeau apparaît
 
-Dès qu'un second handpan est présent — parce que tu l'as enregistré, ou parce que « Compléter » t'en propose un — un bandeau **Hybride** apparaît au-dessus de tes pans. Les deux coques s'affichent **réellement côte à côte** (avec un bouton pour les inverser), et les accords se rangent en trois familles :
+Poser un second handpan tient désormais en **deux cases à cocher**. Panneau de droite, bloc **Mes handpans** : tu coches un instrument, il joue seul ; tu en coches un deuxième, le duo se pose — badges **⓵** et **⓶**, dans l'ordre où tu as coché. Les anciennes listes déroulantes de « 2ᵉ pan » (la bande guidée, le funnel « Compléter ») ont disparu fin août : il ne reste qu'un geste, **🤝 Mettre à côté**, et il accepte tous tes instruments, Neotone et coques sur mesure compris.
 
-- ceux que le **premier pan** joue seul ;
-- ceux que le **second** joue seul ;
-- ceux qui n'existent **qu'à deux**.
+Un bandeau s'affiche alors au-dessus de tes pans : **🌗 Tes 2 handpans : *le premier* + *le second***, avec un **⇄ inverser** pour échanger leurs places, le cadre tonal en cours, et le décompte qui dit tout en une ligne :
 
-Pour cette troisième famille, la disposition d'accord est calculée pour de vrai entre les deux instruments — la fondamentale la plus grave à la basse — et le tracé traverse l'espace d'un pan à l'autre. Tu vois d'un coup d'œil quelle main part où, et l'ordre de jeu suit.
+- combien d'accords le **premier pan** joue seul ;
+- combien le **second** joue seul ;
+- combien tu en as **à deux**.
+
+Ce dernier nombre est le vrai sujet. Pour ces accords-là, la disposition est calculée pour de vrai entre les deux instruments — la fondamentale la plus grave à la basse — et le tracé traverse l'espace d'un pan à l'autre. Tu vois d'un coup d'œil quelle main part où, et l'ordre de jeu suit.
+
+Un mot de vocabulaire, parce que l'application fait maintenant la différence : deux acoustiques côte à côte, c'est un **duo**. Un acoustique **et** un Neotone, c'est l'**Hybride** — le même bandeau, mais d'autres règles, et c'est « Compléter » qui t'y emmène. L'app ne mélange jamais les deux familles d'office : elle te *propose* l'Hybride au lieu de refuser.
 
 ## Ton répertoire, dès le chargement
 
-Autre changement discret mais décisif : tu n'as plus rien à demander. Dès qu'une gamme est chargée en Mode Logique acoustique, une carte « **Ton répertoire** » t'annonce combien de morceaux connus tu peux jouer, lesquels, et **quelle note en débloquerait le plus**. L'information arrive avant la question.
+Autre changement discret mais décisif : tu n'as plus rien à demander. Dès qu'une gamme est chargée en Mode Logique acoustique, une ligne apparaît sous les 7 degrés : « 🎵 ***N* morceaux jouables avec ta gamme** », et un « voir → » qui ouvre la liste. L'information arrive avant la question. Et **quelle note en débloquerait le plus**, ce sont « Compléter » et l'écran [✨ Révéler](/blog/reveler-les-accords-de-ton-handpan) qui te le disent.
 
 ## Et si tu veux entendre avant de décider
 

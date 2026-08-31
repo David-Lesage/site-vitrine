@@ -22,7 +22,7 @@ Hence a strange situation: people wait until they can play before they dare sing
 
 The accompaniment bar flips the order. Click a chord in the grid and it starts looping. You set:
 
-- **The figure** — block chord, arpeggio ↑, arpeggio ↑↓, or arpeggio ↑×2;
+- **The figure** — block chord, arpeggio ↑, arpeggio ↓, arpeggio ↑↓ or arpeggio ↑×2;
 - **The rate** — ♩ quarter, ♪ eighth, ♬ sixteenth;
 - **The tempo**, in BPM, as slow as you need.
 
@@ -34,11 +34,11 @@ That bar exists both on the acoustic mode's chord grid and on the [Logic Mode](/
 
 Once the loop is running, something is still missing: a **living pulse**. A metronome tells the time; a drummer makes you want to play.
 
-Handpan Constellation Studio offers twelve accompaniment grooves — pop, funk, reggae, bossa, 6/8… — with their automatic fills. You can use them to warm up, but above all to **record over**: on playback the groove stays an independent track you can mute with one click 🔇, and it follows your piece's tempo. It even travels into the MIDI file when you export your recording.
+He's right there, next to the bar: a **🥁 Drummer** drawer. Open it, pick a groove, a tempo, and a "life" — Plain, Alive, Generous. **41 grooves** in eight families: *For the handpan* (Breath, Heartbeat, Soft cajón, Waves, Lullaby, Easy walk, Rain, and the plain metronome), *Pop & Rock*, *Latin*, *Africa & the East*, *Swing & Jazz*, *Hip-hop & Urban*, *Electronic & Dance*, *From around the world*. Each one has its fills.
 
-You can also play over an imported MIDI track or audio file — handy for practising a song you love before accompanying it for real.
+This too is **free**, and it needs no hardware: the drummer runs in the browser, right from the Discovery level, on the acoustic mode's chord grid as well as the Logic Mode one. The groove you pick follows you from one tool to the next.
 
-Grooves and MIDI recording belong to the **Studio** version; they're at their best with a [Neotone](/en/le-neotone) connected.
+What belongs to the **Studio** version is **MIDI recording** — and there the drummer changes role: the groove becomes a full accompaniment track, one you mute with a click 🔇 on playback, that follows your piece's tempo and travels into the file when you export. You can also play over an imported MIDI track or audio file — handy for practising a song you love before accompanying it for real. That's where a connected [Neotone](/en/le-neotone) gives its best.
 
 ## Sing first, play later
 

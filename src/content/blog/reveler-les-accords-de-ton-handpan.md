@@ -35,33 +35,19 @@ Voilà ce que l'écran répond, sur cet instrument :
 
 Six et cent-cinquante-six. Ce sont les deux nombres qui comptent, et ils ne sont pas du même ordre.
 
-<!-- 📸 PLACE RÉSERVÉE — CAPTURE « RÉVÉLER, MODÈLE A · LA RÉVÉLATION », à faire par David.
-     Sa place est ICI, juste après les deux nombres : l'écran les affiche tous les deux.
-     CE QU'ELLE DOIT MONTRER (état vérifié en session le 31/08/2026, en local sur le
-     serveur de dev — donc reproductible en trois gestes) :
-       1. Mode acoustique, gamme « D Minor / Kurd 10 » chargée (c'est la gamme par défaut).
-       2. Sous le pan : barre « 🎼 Atelier d'accords » → bouton « ✨ Révéler ».
-       3. Onglet « A · La révélation » (celui ouvert par défaut).
-     CE QU'ON DOIT Y LIRE, sans rien retoucher :
-       · en haut : « Révéler tes accords », la pastille « D Minor / Kurd 10 », et le compteur
-         « 0 / 6 accords acquis » ;
-       · le cercle « CYCLE DES QUINTES » avec SIX pastilles « ? » regroupées sur un seul arc
-         (côté A♯ / F / C) — le reste du cercle est éteint. C'EST l'image de l'article ;
-       · la légende « Chaque étoile est un accord que ton handpan sait déjà jouer… » ;
-       · la ligne jaune « 156 morceaux du répertoire que D Minor / Kurd 10 te permet déjà
-         d'accompagner » ;
-       · en bas, l'encart « Et avec un 2ᵉ handpan ? ».
-     ⚠️ CAPTURE SUR GRAND ÉCRAN (l'app demande ordinateur ou tablette). En session, la fenêtre
-     du navigateur intégré ne dépassait pas 482 px de large : impossible d'en tirer une image
-     à la définition des autres captures du blog. C'est la SEULE raison pour laquelle elle
-     manque — l'écran, lui, a bien été vu dans cet état exact.
-     QUAND ELLE ARRIVE :
-       1. `cwebp -q 92 -sharp_yuv -resize 2000 0 <source> -o public/images/blog-reveler-dkurd10-ciel.webp`
-          (original dans `_medias-originaux-avec-titre/`).
-       2. Remplacer ce commentaire par une <figure> sur le modèle de
-          `les-deux-visions-chromakeys.md` (width/height réels, `loading="lazy"`, `data-lb`).
-     ⛔ NE JAMAIS la fabriquer : ni montage, ni schéma imitant l'app. L'article se lit
-        entièrement sans elle — aucune phrase ne pointe vers une image absente. -->
+<figure>
+  <img
+    src="/images/blog-reveler-dkurd10-ciel.webp"
+    width="2000"
+    height="1000"
+    alt="Handpan Constellation Studio, écran « Révéler tes accords », onglet A · La révélation, gamme D Minor / Kurd 10. En haut à droite, le compteur « 0 / 6 accords acquis ». Au centre, le cercle CYCLE DES QUINTES : six pastilles « ? » serrées sur un seul arc, du côté A♯ – F – C ; tout le reste du cercle (D, A, E, B, F♯, C♯, G♯, D♯) est éteint. Sous le cercle : « Chaque étoile est un accord que ton handpan sait déjà jouer. Elles occupent un arc du cycle des quintes : c'est la forme de ta gamme. » À droite, la barre « Les accords de ton handpan 0/6 », la ligne jaune « 156 morceaux du répertoire que D Minor / Kurd 10 te permet déjà d'accompagner », et l'invite « Clique une étoile. Elle sonne, elle se nomme, elle s'allume. » En bas, l'encart « Et avec un 2ᵉ handpan ? »."
+    data-lb="reveler-dkurd10-ciel"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Un D Kurd 10 dans l'écran <strong>✨ Révéler</strong>, onglet <em>A · La révélation</em> : six accords, tous serrés sur <strong>un seul arc</strong> du cycle des quintes. Le reste du cercle est éteint — ce n'est pas un manque, c'est la forme de la gamme.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Six accords, et lesquels
 
