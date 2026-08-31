@@ -81,5 +81,5 @@
     <circle cx="355" cy="708" r="13" fill="#cf8c45"/><text x="378" y="715" fill="#3a2c22">grands pads de l'anneau</text>
     <circle cx="648" cy="708" r="10" fill="#c8a866"/><text x="668" y="715" fill="#3a2c22">petits pads « mutants » : l'octave au-dessus</text>
   </g>
-  <text x="600" y="768" fill="#3a2c22" font-size="21" font-weight="700" text-anchor="middle" opacity="0.9">Mêmes 5 notes des deux côtés : les 24 tonalités s'ouvrent dans les deux cas. Ce qui change, c'est le registre.</text>
+  <text x="600" y="768" fill="#3a2c22" font-size="21" font-weight="700" text-anchor="middle" opacity="0.9">Mêmes 5 notes, mêmes 24 tonalités. Ce que le Mutant ajoute, c'est la basse sous l'accord.</text>
 </svg>

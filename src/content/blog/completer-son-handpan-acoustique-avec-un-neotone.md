@@ -12,7 +12,7 @@ draft: false
 
 > Comment un handpan électronique Neotone 19 Mutant peut-il compléter mon handpan acoustique et débloquer les 24 tonalités possibles qui me permettent de jouer tout le répertoire mondial de la musique et arrêter de tourner en rond ?
 
-C'est ma question, et j'ai fini par pouvoir y répondre avec des chiffres plutôt qu'avec une intuition. Tous ceux qui suivent viennent du moteur de [Handpan Constellation Studio](/handpan-app) — le même calcul que celui qui s'affiche à l'écran quand on charge sa gamme. Aucun n'est une estimation.
+C'est ma question, et j'ai fini par pouvoir y répondre avec des chiffres plutôt qu'avec une intuition. Tous ceux qui suivent sont obtenus en rejouant les fonctions réelles de [Handpan Constellation Studio](/handpan-app) sur les notes réelles de mon instrument — le même moteur que celui qui calcule ce qui s'affiche à l'écran quand on charge sa gamme. Aucun n'est une estimation, et chacun est défini avant d'être annoncé.
 
 ## Tourner en rond, ce n'est pas un manque de talent
 
@@ -22,7 +22,13 @@ Prenons mon propre instrument, le **E 18 — David Lesage Signature**. Dix-huit 
 
 ![Les douze notes de la musique : mon handpan E 18 en porte sept, cinq manquent ; le Neotone les apporte](/images/blog-hybride-12-notes.svg)
 
-Ce n'est pas un détail théorique. Une tonalité est « complète » quand ses sept degrés sont jouables — quand on peut poser les sept accords qui la constituent. Avec mon E 18 seul, sur les 24 tonalités possibles (12 majeures + leurs 12 mineures), **2 sont complètes** : mi majeur, et sa relative do♯ mineur. Toutes les autres ont un trou.
+Ce n'est pas un détail théorique. Posons la définition tout de suite, parce qu'un nombre sans sa définition n'est pas une information :
+
+> **Une tonalité est « complète » quand ses sept degrés sont jouables** — quand on peut poser, sur l'instrument, les sept accords qui la constituent. Et **les 24 tonalités**, ce sont les 12 majeures **plus** les 12 mineures naturelles, comptées séparément.
+
+Avec mon E 18 seul, **2 des 24 sont complètes** : mi majeur, et sa relative do♯ mineur. Ce sont d'ailleurs les mêmes sept notes lues de deux façons — autrement dit, je n'ai qu'**une seule zone tonale**. Les 22 autres ont un trou.
+
+*(Petite note pour qui compare avec l'écran : l'application affiche parfois ce même fait sur 12 — elle regroupe alors chaque tonique et n'appelle « complète » que celle dont la majeure **et** la mineure le sont. Dans ce compte-là, mon E 18 seul est à 0 sur 12, et l'Hybride à 12 sur 12. Même réalité, deux dénominateurs. Ici je compte sur 24, comme dans ma question de départ.)*
 
 En accords, ça donne **6 accords majeurs ou mineurs sur les 24** : do♯m, mi, fa♯m, sol♯m, la, si. C'est joli, c'est cohérent — et au bout de quelques mois, on en a fait le tour. On ne tourne pas en rond par paresse. On tourne en rond parce que le cercle est réellement petit.
 
@@ -62,26 +68,32 @@ C'est le point sur lequel je m'attendais à trouver un écart franc, et où les 
 
 Il manque cinq notes à mon E 18. Le **Neotone¹** a dix creux, le **Mutant** en a dix-neuf. Cinq tiennent dans dix. **Les deux modèles ouvrent donc les 24 tonalités.** Le Mutant n'en ouvre pas davantage : il n'y en a pas davantage.
 
-J'ai vérifié que ce n'était pas une particularité de ma gamme : sur les **74 gammes du catalogue** de l'application, la gamme la plus pauvre en porte quatre notes différentes sur douze — il en manque donc huit au maximum, et huit tiennent encore dans dix creux. **Le Neotone¹ à 10 creux n'échoue sur aucune.**
+J'ai vérifié que ce n'était pas une particularité de ma gamme : sur les **74 gammes du catalogue** de l'application, la plus pauvre porte quatre notes différentes sur douze — il en manque donc huit au maximum, et huit tiennent encore dans dix creux. **Le Neotone¹ à 10 creux n'échoue sur aucune.**
 
-Ce qui change entre les deux modèles, c'est le **registre**.
+Ce qui sépare vraiment les deux modèles, c'est le **registre** — et, derrière le registre, une chose très concrète : **est-ce que l'accord a sa basse ?**
 
 | | Neotone¹ (10 creux) | Neotone Mutant (19 creux) |
 |---|---|---|
 | Notes du complément | 5 (do, ré, fa, sol, si♭) | les 5 mêmes |
 | Tonalités ouvertes | 24 / 24 | 24 / 24 |
+| Accords majeurs et mineurs | 24 / 24 | 24 / 24 |
 | Hauteurs distinctes posées | 10 | 15 |
 | Chaque note disponible sur | 2 octaves | **3 octaves** |
 | Étendue | do₂ → si♭₃ | do₂ → **si♭₄** |
 | Hauteurs dans le registre de l'acoustique (la₂–mi₅) | 6 sur 10 | **11 sur 15** |
+| **Accords avec leur fondamentale au grave** | **23 / 24** | **24 / 24** |
 
 ![Les deux Neotone tels que l'application les génère pour compléter mon E 18 : le 10 creux et le 19 creux portent les mêmes cinq notes, le Mutant les répète une octave plus haut](/images/blog-hybride-neotone-10-vs-19.svg)
 
-En clair : avec le Neotone¹, la note la plus grave va sous le ding, et le complément vit surtout **dans les graves** — quatre de ses dix hauteurs sont plus basses que la note la plus grave de mon acoustique. C'est une vraie basse, c'est précieux, mais dans l'octave où je joue mes mélodies, il ne me reste que six hauteurs de complément.
+Avec le Neotone¹, la note la plus grave va sous le ding, et le complément vit surtout **dans les graves** — quatre de ses dix hauteurs sont plus basses que la note la plus grave de mon acoustique. C'est une vraie basse, c'est précieux. Mais dans l'octave où je joue mes mélodies, il ne me reste que six hauteurs de complément. Avec le Mutant, les petits pads répètent chaque note **une octave au-dessus** : le complément monte jusqu'au si♭₄, en plein dans le registre mélodique du pan.
 
-Avec le Mutant, les petits pads répètent chaque note **une octave au-dessus**. Le complément monte jusqu'au si♭₄, en plein dans le registre mélodique du pan. Concrètement : la note qui manquait à mon accord, je l'ai à l'octave où j'en ai besoin, pas seulement en dessous.
+Et voilà à quoi ça sert, musicalement. Un accord « a sa basse » quand on peut **poser sa fondamentale plus bas que sa tierce et que sa quinte** — la note qui donne son nom à l'accord est celle qu'on entend en dessous. Quand elle n'y est pas, l'accord sonne quand même, mais renversé : il flotte, il ne pose pas.
 
-**Donc :** si l'objectif est « avoir les douze notes et ouvrir les 24 tonalités », le Neotone¹ suffit — et ça vaut la peine de le savoir avant d'acheter. Si l'objectif est de jouer les accords et les mélodies **dans le même registre** que l'acoustique, sans devoir toujours descendre chercher la note manquante à la basse, c'est le Mutant qui fait la différence. C'est un arbitrage de jeu, pas un arbitrage de possibilités.
+Sur mon E 18, le Neotone¹ donne **23 des 24 accords avec leur basse** ; le Mutant les donne **tous les 24**. Autant le dire : le gain, sur *ma* gamme, c'est **un seul accord** — sol♯ majeur, qui a besoin d'un do plus haut que sol♯3 et ne l'a que sur le Mutant. Ce n'est pas de quoi justifier 1 160 € d'écart à soi seul.
+
+Sur d'autres gammes, l'écart est franc. Mon D Kurd 18 passe de **21 à 24**. Et sur l'ensemble du catalogue, le Mutant fait strictement mieux sur **66 gammes sur 74** (égalité sur 8, jamais moins bien), la moyenne passant de **19,2 à 22,7 accords avec leur basse sur 24**.
+
+**Donc :** si l'objectif est « avoir les douze notes et ouvrir les 24 tonalités », **le Neotone¹ suffit** — et ça vaut la peine de le savoir avant d'acheter. Le Mutant n'achète pas des possibilités supplémentaires : il achète de **l'assise**, la fondamentale sous l'accord et la note manquante à l'octave où on en a besoin. Combien il en achète dépend de ta gamme — sur la mienne, un accord ; sur d'autres, trois ou plus. C'est un arbitrage de jeu, pas un arbitrage de possibilités.
 
 ## Ce que ça coûte, et ce que ça ne fait pas
 
