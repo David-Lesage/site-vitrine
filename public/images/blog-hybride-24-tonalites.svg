@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" font-family="system-ui, sans-serif" role="img" aria-label="Le cycle des quintes, 12 tonalités majeures et leurs 12 mineures relatives. À gauche, avec le handpan E 18 seul, une seule tonalité majeure et une seule mineure sont complètes. À droite, avec le Neotone, les 24 sont complètes.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" font-family="system-ui, sans-serif" role="img" aria-label="Le cycle des quintes, 12 tonalités majeures et leurs 12 mineures relatives. À gauche, avec un D Kurd 10 seul, seuls fa majeur et ré mineur sont complets. À droite, avec le Neotone, les 24 le sont.">
   <rect width="1200" height="720" fill="#f4ebd9"/>
-
-  <text x="300" y="52" fill="#1f1611" font-size="28" font-weight="700" text-anchor="middle">E 18 seul</text>
+  <text x="300" y="52" fill="#1f1611" font-size="28" font-weight="700" text-anchor="middle">D Kurd 10 seul</text>
   <text x="300" y="86" fill="#8a3a1f" font-size="24" font-weight="700" text-anchor="middle">2 tonalités complètes sur 24</text>
   <g transform="translate(0 40)">
     <circle cx="300" cy="380" r="196" fill="none" stroke="#3a2c22" stroke-opacity="0.12" stroke-width="1.5"/>
@@ -22,10 +21,10 @@
     <text x="496" y="389" fill="#3a2c22" fill-opacity="0.4" font-size="26" font-weight="700" text-anchor="middle">A</text>
     <circle cx="418" cy="380" r="28" fill="none" stroke="#3a2c22" stroke-opacity="0.25" stroke-width="2.5" stroke-dasharray="6 5"/>
     <text x="418" y="388" fill="#3a2c22" fill-opacity="0.4" font-size="21" font-weight="700" text-anchor="middle">F#m</text>
-    <circle cx="470" cy="478" r="36" fill="#b8722f" stroke="#b8722f" stroke-opacity="1" stroke-width="2.5"/>
-    <text x="470" y="487" fill="#f4ebd9" fill-opacity="1" font-size="26" font-weight="700" text-anchor="middle">E</text>
-    <circle cx="402" cy="439" r="28" fill="#8a3a1f" stroke="#8a3a1f" stroke-opacity="1" stroke-width="2.5"/>
-    <text x="402" y="447" fill="#f4ebd9" fill-opacity="1" font-size="21" font-weight="700" text-anchor="middle">C#m</text>
+    <circle cx="470" cy="478" r="36" fill="none" stroke="#3a2c22" stroke-opacity="0.25" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <text x="470" y="487" fill="#3a2c22" fill-opacity="0.4" font-size="26" font-weight="700" text-anchor="middle">E</text>
+    <circle cx="402" cy="439" r="28" fill="none" stroke="#3a2c22" stroke-opacity="0.25" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <text x="402" y="447" fill="#3a2c22" fill-opacity="0.4" font-size="21" font-weight="700" text-anchor="middle">C#m</text>
     <circle cx="398" cy="550" r="36" fill="none" stroke="#3a2c22" stroke-opacity="0.25" stroke-width="2.5" stroke-dasharray="6 5"/>
     <text x="398" y="559" fill="#3a2c22" fill-opacity="0.4" font-size="26" font-weight="700" text-anchor="middle">B</text>
     <circle cx="359" cy="482" r="28" fill="none" stroke="#3a2c22" stroke-opacity="0.25" stroke-width="2.5" stroke-dasharray="6 5"/>
@@ -50,17 +49,15 @@
     <text x="130" y="291" fill="#3a2c22" fill-opacity="0.4" font-size="26" font-weight="700" text-anchor="middle">A#</text>
     <circle cx="198" cy="321" r="28" fill="none" stroke="#3a2c22" stroke-opacity="0.25" stroke-width="2.5" stroke-dasharray="6 5"/>
     <text x="198" y="329" fill="#3a2c22" fill-opacity="0.4" font-size="21" font-weight="700" text-anchor="middle">Gm</text>
-    <circle cx="202" cy="210" r="36" fill="none" stroke="#3a2c22" stroke-opacity="0.25" stroke-width="2.5" stroke-dasharray="6 5"/>
-    <text x="202" y="219" fill="#3a2c22" fill-opacity="0.4" font-size="26" font-weight="700" text-anchor="middle">F</text>
-    <circle cx="241" cy="278" r="28" fill="none" stroke="#3a2c22" stroke-opacity="0.25" stroke-width="2.5" stroke-dasharray="6 5"/>
-    <text x="241" y="286" fill="#3a2c22" fill-opacity="0.4" font-size="21" font-weight="700" text-anchor="middle">Dm</text>
+    <circle cx="202" cy="210" r="36" fill="#b8722f" stroke="#b8722f" stroke-opacity="1" stroke-width="2.5"/>
+    <text x="202" y="219" fill="#f4ebd9" fill-opacity="1" font-size="26" font-weight="700" text-anchor="middle">F</text>
+    <circle cx="241" cy="278" r="28" fill="#8a3a1f" stroke="#8a3a1f" stroke-opacity="1" stroke-width="2.5"/>
+    <text x="241" y="286" fill="#f4ebd9" fill-opacity="1" font-size="21" font-weight="700" text-anchor="middle">Dm</text>
     <text x="300" y="374" fill="#3a2c22" fill-opacity="0.55" font-size="19" font-weight="700" text-anchor="middle">cycle</text>
     <text x="300" y="398" fill="#3a2c22" fill-opacity="0.55" font-size="19" font-weight="700" text-anchor="middle">des quintes</text>
   </g>
-
   <line x1="600" y1="150" x2="600" y2="660" stroke="#3a2c22" stroke-opacity="0.15" stroke-width="2"/>
-
-  <text x="900" y="52" fill="#1f1611" font-size="28" font-weight="700" text-anchor="middle">E 18 + Neotone</text>
+  <text x="900" y="52" fill="#1f1611" font-size="28" font-weight="700" text-anchor="middle">D Kurd 10 + Neotone</text>
   <text x="900" y="86" fill="#8a3a1f" font-size="24" font-weight="700" text-anchor="middle">24 tonalités complètes sur 24</text>
   <g transform="translate(0 40)">
     <circle cx="900" cy="380" r="196" fill="none" stroke="#3a2c22" stroke-opacity="0.12" stroke-width="1.5"/>
@@ -116,12 +113,9 @@
     <text x="900" y="374" fill="#3a2c22" fill-opacity="0.55" font-size="19" font-weight="700" text-anchor="middle">cycle</text>
     <text x="900" y="398" fill="#3a2c22" fill-opacity="0.55" font-size="19" font-weight="700" text-anchor="middle">des quintes</text>
   </g>
-
   <g font-size="20">
-    <circle cx="330" cy="694" r="14" fill="#b8722f"/>
-    <text x="354" y="701" fill="#3a2c22">majeure</text>
-    <circle cx="500" cy="694" r="12" fill="#8a3a1f"/>
-    <text x="522" y="701" fill="#3a2c22">mineure naturelle</text>
+    <circle cx="330" cy="694" r="14" fill="#b8722f"/><text x="354" y="701" fill="#3a2c22">majeure</text>
+    <circle cx="500" cy="694" r="12" fill="#8a3a1f"/><text x="522" y="701" fill="#3a2c22">mineure naturelle</text>
     <circle cx="740" cy="694" r="14" fill="none" stroke="#3a2c22" stroke-opacity="0.3" stroke-width="2.5" stroke-dasharray="6 5"/>
     <text x="764" y="701" fill="#3a2c22" fill-opacity="0.7">tonalité incomplète : au moins une note manque</text>
   </g>

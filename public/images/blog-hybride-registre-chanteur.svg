@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" font-family="system-ui, sans-serif" role="img" aria-label="Trois bandes de registre. Avec un D Kurd 10 seul, cinq hauteurs restent au-dessus de l'octave d'accompagnement. Avec un Neotone à 10 creux, dix. Avec le Mutant à 19 creux, quinze, et le registre monte jusqu'au si 5.">
+  <rect width="1200" height="660" fill="#f4ebd9"/>
+  <text x="30" y="48" fill="#1f1611" font-size="27" font-weight="700">S'accompagner en chantant : ce qu'il reste au-dessus de l'accord</text>
+  <text x="30" y="80" fill="#3a2c22" font-size="19" opacity="0.85">Chaque marque est une hauteur réellement disponible. L'accompagnement tient dans la première octave ; la mélodie vit au-dessus.</text>
+  <line x1="168" y1="118" x2="168" y2="600" stroke="#3a2c22" stroke-opacity="0.14" stroke-width="1.5"/>
+  <text x="168" y="106" fill="#3a2c22" fill-opacity="0.5" font-size="19" font-weight="700" text-anchor="middle">C3</text>
+  <line x1="475" y1="118" x2="475" y2="600" stroke="#3a2c22" stroke-opacity="0.14" stroke-width="1.5"/>
+  <text x="475" y="106" fill="#3a2c22" fill-opacity="0.5" font-size="19" font-weight="700" text-anchor="middle">C4</text>
+  <line x1="782" y1="118" x2="782" y2="600" stroke="#3a2c22" stroke-opacity="0.14" stroke-width="1.5"/>
+  <text x="782" y="106" fill="#3a2c22" fill-opacity="0.5" font-size="19" font-weight="700" text-anchor="middle">C5</text>
+  <line x1="1090" y1="118" x2="1090" y2="600" stroke="#3a2c22" stroke-opacity="0.14" stroke-width="1.5"/>
+  <text x="1090" y="106" fill="#3a2c22" fill-opacity="0.5" font-size="19" font-weight="700" text-anchor="middle">C6</text>
+  <text x="30" y="136" fill="#1f1611" font-size="22" font-weight="700">D Kurd 10 seul</text>
+  <rect x="208" y="148" width="329" height="70" rx="10" fill="#b8722f" fill-opacity="0.13" stroke="#b8722f" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="373" y="232" fill="#8a3a1f" font-size="17" font-weight="700" text-anchor="middle">l'accompagnement</text>
+  <rect x="540" y="148" width="264" height="70" rx="10" fill="#c8a866" fill-opacity="0.16" stroke="#c8a866" stroke-opacity="0.6" stroke-width="1.5"/>
+  <text x="665" y="232" fill="#3a2c22" fill-opacity="0.8" font-size="17" font-weight="700" text-anchor="middle">la mélodie — 5 hauteurs</text>
+  <circle cx="219" cy="183" r="9" fill="#b8722f"/>
+  <circle cx="398" cy="183" r="9" fill="#b8722f"/>
+  <circle cx="424" cy="183" r="9" fill="#b8722f"/>
+  <circle cx="475" cy="183" r="9" fill="#b8722f"/>
+  <circle cx="526" cy="183" r="9" fill="#b8722f"/>
+  <circle cx="578" cy="183" r="9" fill="#b8722f"/>
+  <circle cx="603" cy="183" r="9" fill="#b8722f"/>
+  <circle cx="654" cy="183" r="9" fill="#b8722f"/>
+  <circle cx="706" cy="183" r="9" fill="#b8722f"/>
+  <circle cx="782" cy="183" r="9" fill="#b8722f"/>
+  <text x="30" y="296" fill="#1f1611" font-size="22" font-weight="700">+ Neotone¹ (10 creux)</text>
+  <rect x="183" y="308" width="329" height="70" rx="10" fill="#b8722f" fill-opacity="0.13" stroke="#b8722f" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="347" y="392" fill="#8a3a1f" font-size="17" font-weight="700" text-anchor="middle">l'accompagnement</text>
+  <rect x="515" y="308" width="290" height="70" rx="10" fill="#c8a866" fill-opacity="0.16" stroke="#c8a866" stroke-opacity="0.6" stroke-width="1.5"/>
+  <text x="653" y="392" fill="#3a2c22" fill-opacity="0.8" font-size="17" font-weight="700" text-anchor="middle">la mélodie — 10 hauteurs</text>
+  <circle cx="219" cy="343" r="9" fill="#b8722f"/>
+  <circle cx="398" cy="343" r="9" fill="#b8722f"/>
+  <circle cx="424" cy="343" r="9" fill="#b8722f"/>
+  <circle cx="475" cy="343" r="9" fill="#b8722f"/>
+  <circle cx="526" cy="343" r="9" fill="#b8722f"/>
+  <circle cx="578" cy="343" r="9" fill="#b8722f"/>
+  <circle cx="603" cy="343" r="9" fill="#b8722f"/>
+  <circle cx="654" cy="343" r="9" fill="#b8722f"/>
+  <circle cx="706" cy="343" r="9" fill="#b8722f"/>
+  <circle cx="782" cy="343" r="9" fill="#b8722f"/>
+  <rect x="186" y="335" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="237" y="335" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="314" y="335" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="365" y="335" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="442" y="335" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="493" y="335" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="544" y="335" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="621" y="335" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="672" y="335" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="749" y="335" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <text x="30" y="456" fill="#1f1611" font-size="22" font-weight="700">+ Neotone Mutant (19 creux)</text>
+  <rect x="183" y="468" width="329" height="70" rx="10" fill="#b8722f" fill-opacity="0.13" stroke="#b8722f" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="347" y="552" fill="#8a3a1f" font-size="17" font-weight="700" text-anchor="middle">l'accompagnement</text>
+  <rect x="515" y="468" width="571" height="70" rx="10" fill="#c8a866" fill-opacity="0.16" stroke="#c8a866" stroke-opacity="0.6" stroke-width="1.5"/>
+  <text x="793" y="552" fill="#3a2c22" fill-opacity="0.8" font-size="17" font-weight="700" text-anchor="middle">la mélodie — 15 hauteurs</text>
+  <circle cx="219" cy="503" r="9" fill="#b8722f"/>
+  <circle cx="398" cy="503" r="9" fill="#b8722f"/>
+  <circle cx="424" cy="503" r="9" fill="#b8722f"/>
+  <circle cx="475" cy="503" r="9" fill="#b8722f"/>
+  <circle cx="526" cy="503" r="9" fill="#b8722f"/>
+  <circle cx="578" cy="503" r="9" fill="#b8722f"/>
+  <circle cx="603" cy="503" r="9" fill="#b8722f"/>
+  <circle cx="654" cy="503" r="9" fill="#b8722f"/>
+  <circle cx="706" cy="503" r="9" fill="#b8722f"/>
+  <circle cx="782" cy="503" r="9" fill="#b8722f"/>
+  <rect x="186" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="237" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="314" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="365" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="442" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="493" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="544" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="621" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="672" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="749" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="800" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="851" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="928" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="979" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <rect x="1056" y="495" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/>
+  <g font-size="19">
+    <circle cx="44" cy="628" r="9" fill="#b8722f"/><text x="64" y="635" fill="#3a2c22">notes du handpan acoustique</text>
+    <rect x="356" y="620" width="16" height="16" rx="4" fill="#c8a866" stroke="#8a3a1f" stroke-width="1.5"/><text x="382" y="635" fill="#3a2c22">notes apportées par le Neotone</text>
+  </g>
+</svg>
