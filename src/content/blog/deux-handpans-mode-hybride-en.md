@@ -1,7 +1,7 @@
 ---
 title: "Two handpans that become one: Hybrid mode"
 description: "When a second handpan joins the first, Handpan Constellation Studio draws each chord across both — and tells you what that duo really unlocks."
-pubDate: 2026-09-08
+pubDate: 2026-09-01
 cover: "/images/blog-bottom-coques.webp"
 category: "acoustique"
 tags: ["hybrid", "two handpans", "complete"]

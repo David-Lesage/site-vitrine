@@ -1,7 +1,7 @@
 ---
 title: "« Mes handpans » : une seule porte pour tes instruments"
 description: "Déclarer ton pan, en poser un second à côté, retrouver ton installation sur l'iPad : il y avait cinq chemins différents, il n'en reste qu'un. Voilà lequel, et ce qui a changé."
-pubDate: 2026-10-01
+pubDate: 2026-09-01
 cover: "/images/app-hybride-deux-gammes.webp"
 category: "acoustique"
 tags: ["acoustique", "deux handpans", "mes handpans"]

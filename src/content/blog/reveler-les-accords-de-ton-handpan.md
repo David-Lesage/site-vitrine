@@ -1,7 +1,7 @@
 ---
 title: "« Révéler » : tout ce que ton handpan sait déjà jouer"
 description: "Un D Kurd 10 donne 6 accords et permet d'accompagner 156 morceaux du répertoire. Un seul bouton te le montre, avant même de penser à un second instrument."
-pubDate: 2026-09-28
+pubDate: 2026-09-01
 cover: "/images/blog-grille-accords-roue.webp"
 category: "acoustique"
 tags: ["acoustique", "révéler", "répertoire"]

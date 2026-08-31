@@ -1,7 +1,7 @@
 ---
 title: "Deux handpans qui n'en font qu'un : le mode Hybride"
 description: "Quand un second handpan rejoint le premier, Handpan Constellation Studio dessine l'accord à cheval sur les deux — et te dit ce que ce duo débloque vraiment."
-pubDate: 2026-09-08
+pubDate: 2026-09-01
 cover: "/images/blog-bottom-coques.webp"
 category: "acoustique"
 tags: ["hybride", "deux handpans", "compléter"]

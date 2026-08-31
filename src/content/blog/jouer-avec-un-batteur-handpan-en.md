@@ -1,7 +1,7 @@
 ---
 title: "Loop your chords, and sing over them"
 description: "The accompaniment bar loops one chord — or a whole progression — at the tempo you choose. And when you want more, a drummer joins in."
-pubDate: 2026-09-04
+pubDate: 2026-09-01
 cover: "/images/app-midi.webp"
 category: "chant"
 tags: ["rhythm", "loop", "drummer"]

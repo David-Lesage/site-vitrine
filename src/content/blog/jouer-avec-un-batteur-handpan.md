@@ -1,7 +1,7 @@
 ---
 title: "Mets tes accords en boucle, et chante par-dessus"
 description: "La barre d'accompagnement joue un accord — ou tout un enchaînement — en boucle au tempo que tu veux. Et pour aller plus loin, un batteur t'accompagne."
-pubDate: 2026-09-04
+pubDate: 2026-09-01
 cover: "/images/app-midi.webp"
 category: "chant"
 tags: ["rythme", "boucle", "batteur"]
