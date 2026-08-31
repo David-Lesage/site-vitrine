@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="system-ui, sans-serif" role="img" aria-label="Schéma des deux Neotone tels que l'application les génère pour compléter le handpan E 18. À gauche le Neotone à 10 creux, à droite le Mutant à 19 creux ; les deux portent les mêmes cinq notes manquantes, le Mutant les répète sur une octave de plus.">
+  <rect width="1200" height="800" fill="#f4ebd9"/>
+
+  <text x="285" y="52" fill="#1f1611" font-size="28" font-weight="700" text-anchor="middle">Neotone¹ — 10 creux</text>
+  <text x="285" y="86" fill="#3a2c22" font-size="21" text-anchor="middle" opacity="0.85">les 5 notes manquantes, sur 2 octaves</text>
+  <text x="285" y="118" fill="#8a3a1f" font-size="21" font-weight="700" text-anchor="middle">do₂ → si♭₃</text>
+
+  <text x="885" y="52" fill="#1f1611" font-size="28" font-weight="700" text-anchor="middle">Neotone Mutant — 19 creux</text>
+  <text x="885" y="86" fill="#3a2c22" font-size="21" text-anchor="middle" opacity="0.85">les 5 mêmes notes, sur 3 octaves</text>
+  <text x="885" y="118" fill="#8a3a1f" font-size="21" font-weight="700" text-anchor="middle">do₂ → si♭₄</text>
+
+  <g>
+    <circle cx="306" cy="421" r="231" fill="#241a14" stroke="#b8722f" stroke-width="3"/>
+    <circle cx="306" cy="421" r="221" fill="none" stroke="#b8722f" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="306" cy="418" r="55.0" fill="#b8722f"/>
+    <text x="306" y="427" fill="#1f1611" font-size="25" font-weight="700" text-anchor="middle">C2</text>
+    <circle cx="163" cy="509" r="35.8" fill="#cf8c45"/>
+    <text x="163" y="516" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">D2</text>
+    <circle cx="249" cy="582" r="35.8" fill="#cf8c45"/>
+    <text x="249" y="588" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">F2</text>
+    <circle cx="144" cy="398" r="35.8" fill="#cf8c45"/>
+    <text x="144" y="405" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">G2</text>
+    <circle cx="363" cy="582" r="35.8" fill="#cf8c45"/>
+    <text x="363" y="588" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">B♭2</text>
+    <circle cx="200" cy="300" r="35.8" fill="#cf8c45"/>
+    <text x="200" y="307" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">C3</text>
+    <circle cx="449" cy="509" r="35.8" fill="#cf8c45"/>
+    <text x="449" y="516" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">D3</text>
+    <circle cx="306" cy="262" r="35.8" fill="#cf8c45"/>
+    <text x="306" y="268" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">F3</text>
+    <circle cx="468" cy="398" r="35.8" fill="#cf8c45"/>
+    <text x="468" y="405" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">G3</text>
+    <circle cx="412" cy="300" r="35.8" fill="#cf8c45"/>
+    <text x="412" y="307" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">B♭3</text>
+  </g>
+  <g>
+    <circle cx="894" cy="421" r="231" fill="#241a14" stroke="#b8722f" stroke-width="3"/>
+    <circle cx="894" cy="421" r="221" fill="none" stroke="#b8722f" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="894" cy="418" r="55.0" fill="#b8722f"/>
+    <text x="894" y="427" fill="#1f1611" font-size="25" font-weight="700" text-anchor="middle">C2</text>
+    <circle cx="751" cy="509" r="35.8" fill="#cf8c45"/>
+    <text x="751" y="516" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">D2</text>
+    <circle cx="837" cy="582" r="35.8" fill="#cf8c45"/>
+    <text x="837" y="588" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">F2</text>
+    <circle cx="732" cy="398" r="35.8" fill="#cf8c45"/>
+    <text x="732" y="405" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">G2</text>
+    <circle cx="951" cy="582" r="35.8" fill="#cf8c45"/>
+    <text x="951" y="588" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">B♭2</text>
+    <circle cx="788" cy="300" r="35.8" fill="#cf8c45"/>
+    <text x="788" y="307" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">C3</text>
+    <circle cx="1037" cy="509" r="35.8" fill="#cf8c45"/>
+    <text x="1037" y="516" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">D3</text>
+    <circle cx="894" cy="262" r="35.8" fill="#cf8c45"/>
+    <text x="894" y="268" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">F3</text>
+    <circle cx="1056" cy="398" r="35.8" fill="#cf8c45"/>
+    <text x="1056" y="405" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">G3</text>
+    <circle cx="1000" cy="300" r="35.8" fill="#cf8c45"/>
+    <text x="1000" y="307" fill="#1f1611" font-size="19" font-weight="700" text-anchor="middle">B♭3</text>
+    <circle cx="799" cy="482" r="17.6" fill="#c8a866"/>
+    <text x="799" y="486" fill="#1f1611" font-size="13" font-weight="700" text-anchor="middle">D3</text>
+    <circle cx="857" cy="530" r="17.6" fill="#c8a866"/>
+    <text x="857" y="535" fill="#1f1611" font-size="13" font-weight="700" text-anchor="middle">F3</text>
+    <circle cx="786" cy="407" r="17.6" fill="#c8a866"/>
+    <text x="786" y="412" fill="#1f1611" font-size="13" font-weight="700" text-anchor="middle">G3</text>
+    <circle cx="931" cy="530" r="17.6" fill="#c8a866"/>
+    <text x="931" y="535" fill="#1f1611" font-size="13" font-weight="700" text-anchor="middle">B♭3</text>
+    <circle cx="823" cy="342" r="17.6" fill="#c8a866"/>
+    <text x="823" y="347" fill="#1f1611" font-size="13" font-weight="700" text-anchor="middle">C4</text>
+    <circle cx="989" cy="482" r="17.6" fill="#c8a866"/>
+    <text x="989" y="486" fill="#1f1611" font-size="13" font-weight="700" text-anchor="middle">D4</text>
+    <circle cx="894" cy="316" r="17.6" fill="#c8a866"/>
+    <text x="894" y="321" fill="#1f1611" font-size="13" font-weight="700" text-anchor="middle">F4</text>
+    <circle cx="1002" cy="407" r="17.6" fill="#c8a866"/>
+    <text x="1002" y="412" fill="#1f1611" font-size="13" font-weight="700" text-anchor="middle">G4</text>
+    <circle cx="965" cy="342" r="17.6" fill="#c8a866"/>
+    <text x="965" y="347" fill="#1f1611" font-size="13" font-weight="700" text-anchor="middle">B♭4</text>
+  </g>
+
+  <g font-size="20">
+    <circle cx="145" cy="708" r="15" fill="#b8722f"/><text x="168" y="715" fill="#3a2c22">ding (la basse)</text>
+    <circle cx="355" cy="708" r="13" fill="#cf8c45"/><text x="378" y="715" fill="#3a2c22">grands pads de l'anneau</text>
+    <circle cx="648" cy="708" r="10" fill="#c8a866"/><text x="668" y="715" fill="#3a2c22">petits pads « mutants » : l'octave au-dessus</text>
+  </g>
+  <text x="600" y="768" fill="#3a2c22" font-size="21" font-weight="700" text-anchor="middle" opacity="0.9">Mêmes 5 notes des deux côtés : les 24 tonalités s'ouvrent dans les deux cas. Ce qui change, c'est le registre.</text>
+</svg>
