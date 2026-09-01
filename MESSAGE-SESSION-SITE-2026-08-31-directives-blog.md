@@ -79,3 +79,48 @@ Côté SITE, la file de rattrapage déjà établie (rapport du 31/08, par écart
 - « Handpan Compagnon » n'existe plus : **« Handpan Constellation Studio »** partout
   (renommé ce soir dans l'app ; vérifiez vos articles).
 - Nom de l'app toujours **provisoire** — pas de storytelling définitif sur le nom.
+
+---
+
+## ⚡ POST-SCRIPTUM du 31/08, 21h50 — la session APP a déployé à votre place
+
+Vous étiez injoignable et David demandait le rattrapage : les **4 articles en attente
+sont datés du 01/09 et DÉPLOYÉS** (commit `du soir` + `npx vercel --prod --yes`,
+vérifiés 200 en prod). Le « calendrier » ne tenait qu'à l'absence de déploiement :
+le site n'a aucun filtre de date — à savoir pour votre future cadence.
+
+**Ce qui reste à VOUS** (validé par David) :
+1. Le chantier **filtre / sommaire du blog** (ses mots : « un véritable filtre /
+   sommaire ») — 35 articles maintenant, la navigation ne suit plus.
+2. L'**encart récurrent** « le logiciel évolue à une vitesse vertigineuse — phase de
+   création » à poser sur les articles.
+3. La file de rattrapage restante : doigtés/pouce · constellation des joueurs ·
+   « Coller ses paroles en deux minutes ».
+4. **Créditer nommément les contributeurs** dans les articles aussi — règle permanente
+   de David du 31/08 (« communauté fraternelle », nom complet). Premier : Ismael Barredo.
+5. Le renommage : plus aucun « Handpan Compagnon » (vérifiez vos gabarits/anciens articles
+   visibles ; l'app et ses e-mails sont déjà renommés « Handpan Constellation Studio »).
+
+---
+
+## 📦 Déploiement APP du 01/09 ~11h20 (rituel : impact blog)
+
+**Rien ne devient faux** dans vos articles publiés. **Matière neuve pour un futur article**
+(éditeur de partition) : UN SEUL play — accords + batteur démarrent à 0 ms d'écart, mesuré —,
+bascules « 🥁 avec batteur » / « ⏱ décompte » / « ⇢ Enchaîner » (l'arpège en flux continu),
+le « + » de Mes handpans qui ajoute vraiment, la coche mixte qui lance l'Hybride au lieu de
+refuser. Et l'été entier du journal (31 entrées) désormais lisible en 6 langues dans l'app.
+
+---
+
+## 🇪🇸 01/09 ~11h30 — L'ESPAGNOL arrive sur VOTRE site (ordre direct de David)
+
+David a demandé à la session APP de traduire le site en espagnol sans attendre votre
+réveil (« un bouton sur le site est déjà en attente »). En cours, sur votre dépôt :
+`src/i18n/es.ts` généré depuis dict.ts via **l'API Google Cloud Translation** (projet
+`resonances-traduction` de l'association, clé restreinte, crédits d'essai — coût 0 €),
+noms propres protégés, locale es câblée en miroir de /en, **blog volontairement exclu**
+de cette passe (gabarits seuls) — la liste des 5 articles prioritaires pour la passe 2
+sera dans le rapport, « Révéler » en tête (le lecteur hispanophone type existe : Ismael
+Barredo). Le script `scripts/traduire-i18n-es.mjs` restera chez vous, rejouable.
+À vous ensuite : la qualité éditoriale es (Google traduit, il n'écrit pas), et la passe 2.

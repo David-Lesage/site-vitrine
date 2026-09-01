@@ -2252,10 +2252,14 @@ const fr = {
     //    colonne ne les attend en base — règle des trois écritures). Ne pas
     //    déplacer ce bloc au-dessus de la note sans ajouter la case partout.
     // 🚨 Chiffres relevés sur les fiches officielles Atlas (voir src/data/atlas.ts).
-    // ⚠️ David ne les a pas encore reçus : aucun avis d'usage ici non plus.
+    // 🅓 RÈGLE LEVÉE LE 01/09/2026 — David a reçu les pieds Atlas le 26/08/2026 et les a
+    //    essayés (sa vidéo de démo : s1lFN3PDEnA, en tête de /pieds-atlas). Le futur est
+    //    devenu du présent ci-dessous. Reste interdit : lui prêter un RESSENTI qu'il n'a pas
+    //    encore formulé (« ils sont stables », « le montage est rapide »…). Il a dit qu'il les
+    //    a essayés, pas ce qu'il en pense — voir les 3 emplacements en attente dans AtlasPage.
     atlasEyebrow: 'Nouveau · Partenaire Atlas',
     atlasTitle: 'Et de quoi poser ton handpan',
-    atlasIntro: 'Atlas fabrique en Italie des trépieds pour handpan : l’instrument se pose sur un disque flottant tenu par huit aimants anti-rayures, sans vis ni sangle à serrer sur le métal. Je viens de devenir partenaire de la marque, qui m’envoie ses deux modèles en démonstration. Ils seront là, avec les handpans — tu pourras poser un instrument dessus et régler la hauteur toi-même.',
+    atlasIntro: 'Atlas fabrique en Italie des trépieds pour handpan : l’instrument se pose sur un disque flottant tenu par huit aimants anti-rayures, sans vis ni sangle à serrer sur le métal. Je suis devenu partenaire de la marque, qui m’a envoyé ses deux modèles en démonstration. Ils sont là, avec les handpans — tu pourras poser un instrument dessus et régler la hauteur toi-même.',
     atlasModels: [
       {
         name: 'Atlas Pro',

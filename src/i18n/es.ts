@@ -1710,7 +1710,7 @@ export const es: Dict = {
     },
     "atlasEyebrow": "Nuevo · Socio Atlas",
     "atlasTitle": "Y algo donde colocar el handpan.",
-    "atlasIntro": "Atlas fabrica trípodes para handpan en Italia: el instrumento descansa sobre un disco flotante sujeto por ocho imanes resistentes a los arañazos, sin tornillos ni correas que lo fijen al metal. Me acabo de convertir en socio de la marca y me enviarán sus dos modelos para que los pruebe. Estarán allí, junto con los handpans; podrás colocar un instrumento sobre ellos y ajustar la altura tú mismo.",
+    "atlasIntro": "Atlas fabrica trípodes para handpan en Italia: el instrumento descansa sobre un disco flotante sujeto por ocho imanes resistentes a los arañazos, sin tornillos ni correas que lo fijen al metal. Me he convertido en socio de la marca y me han enviado sus dos modelos para que los pruebe. Ya están allí, junto con los handpans; podrás colocar un instrumento sobre ellos y ajustar la altura tú mismo.",
     "atlasModels": [
       {
         "name": "Atlas Pro",

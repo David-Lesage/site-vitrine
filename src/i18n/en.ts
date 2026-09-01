@@ -1888,10 +1888,13 @@ export const en: Dict = {
     //    stands are NOT a checkbox on the booking form (no column expects them
     //    in the database; see the rule of three writes).
     // 🚨 Figures taken from the official Atlas pages (see src/data/atlas.ts).
-    // ⚠️ David has not received them yet: no hands-on opinion here either.
+    // 🅓 RULE LIFTED ON 01/09/2026 — David received the Atlas stands on 26/08/2026 and has
+    //    tried them (his demo video: s1lFN3PDEnA, at the top of /handpan-stands). The future
+    //    tense below became present. Still forbidden: attributing to him a FEELING he has not
+    //    voiced yet. He said he tried them, not what he thinks of them.
     atlasEyebrow: 'New · Atlas partner',
     atlasTitle: 'And something to put your handpan on',
-    atlasIntro: 'Atlas builds handpan tripods in Italy: the instrument rests on a floating disc held by eight scratch-resistant magnets, with nothing screwed or strapped onto the metal. I have just become a partner of the brand, and they are sending me both models as demonstration stands. They will be here alongside the handpans — you can set an instrument on one and adjust the height yourself.',
+    atlasIntro: 'Atlas builds handpan tripods in Italy: the instrument rests on a floating disc held by eight scratch-resistant magnets, with nothing screwed or strapped onto the metal. I have become a partner of the brand, and they sent me both models as demonstration stands. They are here alongside the handpans — you can set an instrument on one and adjust the height yourself.',
     atlasModels: [
       {
         name: 'Atlas Pro',
