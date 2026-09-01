@@ -14,3 +14,7 @@ package-lock.json
 
 # Sauvegarde locale des médias avant recadrage (titre app) — hors dépôt
 _medias-originaux-avec-titre/
+
+# Cache local du script de traduction ES (peut contenir beaucoup de texte, régénérable)
+scripts/.cache-traduction-es.json
+.env.local
