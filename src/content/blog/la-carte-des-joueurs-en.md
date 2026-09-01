@@ -24,9 +24,11 @@ Here it's the other way round, and it's the one design decision that really matt
 
 > **You don't appear.** You use the app normally, nobody sees you. One day, if you feel like it, you flip a switch — and not before.
 
-That switch has a name nobody can misread, **"Appear on the map"**, it lives in "🌍 My public profile" in your account menu, and it stays **off until you turn it on**. While it's off, everything else is inert. No field is pre-ticked. None is guessed from your account: your display name is not your sign-up name, it's empty until you write something in it.
+That switch has a name nobody can misread, **"Appear on the map"**, it lives in "🌍 My public profile" in your account menu, and it stays **off until you turn it on**. It is the only condition for appearing: there is no other route that puts you on the map.
 
 And once it's on, it isn't a bundle. It's **field by field**. You can give your country and nothing else. You can wear the teacher hat without giving your town. You can add your links without saying what you build. Whatever is empty simply doesn't show — there's no orphan line on your card, no "not specified" pointing at the gap.
+
+And the default isn't reversed once: **it's reversed at every level.** Your instruments show it best. You could reasonably assume that lighting your star publishes the list of your pans — it's exactly the sort of thing a players' map would want to show, and I find it valuable. It doesn't: **sharing your instruments is a second, separate box, and it's off by default too.** You can be on the map, with your town and your teacher hat, having said nothing about what you play. Turning something on here never drags anything else on with it.
 
 Worth saying plainly: this isn't a compliance checkbox added at the end. It's the starting point everything else was drawn from.
 
@@ -38,7 +40,9 @@ That's the second point, and it's as technical as it is ethical.
 
 So how does a star find its place? **It's derived from the name of the town you typed yourself.** That's all. What the app knows about your position is a word you wrote. And if you'd rather not type a town, your star sits on the country instead.
 
-The consequence to remember: **never more precise than your town.** That isn't a promise of good behaviour, it's a limit of construction — even someone who *wanted* to be more precise couldn't be, because the information exists nowhere in the system. You can stay broader than a town, too: a region is enough, if that's what makes you comfortable.
+And I can be more precise than "we only store the town", because the difference is enormous. **There are only two place boxes in the whole system: a two-letter country code, and a town name of sixty characters at most.** That is all that exists. There is **no box for a latitude, no box for a longitude** — they aren't left empty, they were never created. A star's coordinates are worked out **at the moment of display**, by looking your town name up in a list of towns shipped with the app; and if you gave no town, the star sits at the centre of the country.
+
+The consequence to remember: **never more precise than your town.** That isn't a promise of good behaviour, nor a setting someone could change their mind about one day. **Even someone who wanted to be more precise couldn't be** — there is nowhere to put the information. You can stay broader than a town, too: a region is enough, if that's what makes you comfortable.
 
 ## The preview isn't a promise, it's the same screen
 
@@ -56,9 +60,15 @@ There's an awkward moment in the life of every community map: the beginning. Twe
 
 I chose something else: **it has to be beautiful from the first few sign-ups, not only at a thousand.** When the stars are few, they grow larger, they carry a name, they link up to one another — scarcity becomes a drawing instead of a void. Which is exactly what the sky does, incidentally: twelve stars is plenty for a constellation.
 
-There's a corollary I care about, and it's a matter of honesty towards whoever is looking: **a country with no star does not mean "nobody plays here".** It means "nobody here has lit their star yet". A map that lets you believe otherwise is lying about its own sample — and given which way the switch is set, it would be lying a lot.
+And the corollary I care about most is a matter of honesty towards whoever is looking. A map that lets you believe it surveys the world is lying about its own sample — and given which way the switch is set, it would be lying a lot. So the map says it itself, on screen, in all seven of the app's languages:
 
-So let it be said here, straight away: what you see on that map is **who said yes**. Nothing else. It is not a census of handpan players in the world, and it never will be.
+> **A country with no dot isn't a country without players, it's a country where nobody has said yes yet.**
+
+It can count to zero without flinching, too — "0 of you have lit your star" — and over an empty region it simply offers: "be the first dot in this area".
+
+So what you see on that map is **who said yes**. Nothing else. It is not a census of handpan players in the world, and it never will be.
+
+I may as well finish the demonstration, since it's true as I write this. **Tonight, 1 September 2026, the constellation holds one star.** Just one. A teacher, golden halo; no makers yet. That isn't an embarrassed confession, it's a date: the map has existed for a few days, and this is exactly where it stands. If you're reading this now, you can be the second.
 
 ## Why "constellation", and not "member map"
 
@@ -74,13 +84,13 @@ What makes the word right rather than merely pretty is that the rendering follow
 
 One gesture. **You turn the master switch off, your star leaves the map, immediately.**
 
-No fields to empty one by one, no form, no request to send me, no waiting period. And nothing is destroyed on the way out: your information stays in your profile, it's simply that nobody sees it any more. Turn it back on six months later and it's all still there.
+No fields to empty one by one, no form, no request to send me, no waiting period. And it isn't cosmetic hiding: the map simply only ever reads profiles whose switch is on, and there's no route around that filter.
 
 That's the logical counterpart to the rest. A switch that's hard to turn on and easy to turn off isn't clumsy design — it's the right direction of travel.
 
 ## How to get there
 
-In the app: your account menu, then **"🌍 My public profile"**. It's all on one screen — the switch, the fields, and the preview beside them.
+In the app: your account menu, then **"🌍 My public profile"**. It's all on one screen — the switch, the fields, and the preview beside them. The map itself only opens to signed-in accounts: it shows people, it isn't a public page for a search engine to index.
 
 Take your time filling it in without switching it on, if you want to see what it looks like. The preview updates as you type, and while the switch is off you're the only one looking at it.
 

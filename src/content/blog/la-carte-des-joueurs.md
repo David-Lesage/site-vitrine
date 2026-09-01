@@ -24,9 +24,11 @@ Ici, c'est l'inverse, et c'est la seule décision de conception qui compte vraim
 
 > **Tu n'apparais pas.** Tu utilises l'application normalement, personne ne te voit. Un jour, si tu en as envie, tu allumes un interrupteur — et pas avant.
 
-Cet interrupteur porte un nom qui ne trompe personne, **« Apparaître sur la carte »**, il vit dans « 🌍 Mon profil public », dans le menu de ton compte, et il est **éteint tant que tu ne l'allumes pas**. Tant qu'il l'est, le reste est inerte. Aucun champ n'est pré-coché. Aucun n'est deviné à partir de ton compte : ton nom d'affichage n'est pas ton nom d'inscription, il est vide jusqu'à ce que tu écrives quelque chose dedans.
+Cet interrupteur porte un nom qui ne trompe personne, **« Apparaître sur la carte »**, il vit dans « 🌍 Mon profil public », dans le menu de ton compte, et il est **éteint tant que tu ne l'allumes pas**. C'est la seule condition d'apparition : il n'existe pas d'autre chemin qui te ferait arriver sur la carte.
 
 Et une fois allumé, ce n'est pas un paquet. C'est **champ par champ**. Tu peux mettre ton pays et rien d'autre. Tu peux mettre ta casquette de prof sans mettre ta ville. Tu peux mettre tes liens sans dire ce que tu fabriques. Ce qui est vide n'apparaît pas — il n'y a pas de ligne orpheline sur ta fiche, pas de « non renseigné » qui pointe l'absence.
+
+Et le défaut n'est pas inversé une fois : **il l'est à chaque étage.** L'exemple qui le montre le mieux, ce sont tes instruments. On pourrait légitimement penser qu'allumer son étoile publie la liste de ses pans — c'est le genre d'information qu'une carte de joueurs voudrait montrer, et je la trouve précieuse. Eh bien non : **le partage des instruments est une deuxième case, séparée, elle aussi éteinte par défaut.** Tu peux être sur la carte, avec ta ville et ta casquette de prof, et n'avoir rien dit de ce que tu joues. Allumer, ici, n'entraîne jamais autre chose qu'un seul allumage.
 
 Je précise, parce que ça compte : ce n'est pas une case de conformité posée en dernière minute. C'est le point de départ à partir duquel tout le reste a été dessiné.
 
@@ -38,7 +40,9 @@ C'est le deuxième point, et il est technique autant qu'éthique.
 
 Alors comment une étoile trouve-t-elle sa place ? **Elle est déduite du nom de la ville que tu as écrit toi-même.** C'est tout. Ce que l'application connaît de ta position, c'est un mot que tu as tapé. Et si tu ne veux pas taper de ville, ton étoile se pose sur le pays.
 
-La conséquence à retenir : **jamais plus précis que ta ville.** Ce n'est pas une promesse de bonne conduite, c'est une limite de construction — même quelqu'un qui *voudrait* être plus précis ne le pourrait pas, parce que l'information n'existe nulle part dans le système. Tu peux d'ailleurs rester encore plus large qu'une ville : une région suffit, si c'est ce qui te met à l'aise.
+Et je peux être plus précis que « on ne stocke que la ville », parce que la différence est énorme. **Il n'y a que deux cases de lieu dans tout le système : un code de pays sur deux lettres, et un nom de ville de soixante caractères au maximum.** C'est tout ce qui existe. Il n'y a **pas de case pour une latitude, pas de case pour une longitude** — elles ne sont pas laissées vides, elles n'ont jamais été créées. Les coordonnées d'une étoile sont calculées **au moment de l'affichage**, en cherchant le nom de ta ville dans une liste de villes embarquée avec l'application ; et si tu n'as pas mis de ville, l'étoile se pose au centre du pays.
+
+La conséquence à retenir : **jamais plus précis que ta ville.** Ce n'est pas une promesse de bonne conduite, ni un réglage que quelqu'un pourrait changer d'avis un jour. **Même quelqu'un qui voudrait être plus précis ne le pourrait pas** — il n'y a nulle part où mettre l'information. Tu peux d'ailleurs rester encore plus large qu'une ville : une région suffit, si c'est ce qui te met à l'aise.
 
 ## L'aperçu n'est pas une promesse, c'est le même écran
 
@@ -56,9 +60,15 @@ Il y a un moment gênant dans la vie de toute carte communautaire : le début. D
 
 J'ai choisi autre chose : **elle doit être belle dès les premiers inscrits, pas seulement à mille.** Quand les étoiles sont peu nombreuses, elles sont grosses, elles portent un nom, elles se relient entre elles — la rareté devient un dessin plutôt qu'un vide. C'est exactement ce que fait le ciel, d'ailleurs : douze étoiles, ça suffit largement à faire une constellation.
 
-Il y a un corollaire auquel je tiens, et c'est une question d'honnêteté envers ceux qui regardent : **un pays sans étoile ne veut pas dire « personne ne joue ici ».** Ça veut dire « personne n'a encore allumé son étoile ». Une carte qui laisse croire le contraire ment sur son propre échantillon — et vu le sens dans lequel est posé l'interrupteur, elle mentirait beaucoup.
+Et le corollaire auquel je tiens le plus, c'est une question d'honnêteté envers celui qui regarde. Une carte qui laisse croire qu'elle recense le monde ment sur son propre échantillon — et vu le sens dans lequel est posé l'interrupteur, elle mentirait beaucoup. Alors la carte le dit elle-même, à l'écran, dans les sept langues de l'application :
 
-Alors autant le dire tout de suite, ici : ce que tu vois sur cette carte, c'est **qui a dit oui**. Rien d'autre. Ce n'est pas un recensement du handpan dans le monde, et ça ne le sera jamais.
+> **Un pays sans point n'est pas un pays sans joueurs, c'est un pays où personne n'a encore dit oui.**
+
+Elle sait aussi compter jusqu'à zéro sans se cacher — « Vous êtes 0 à avoir allumé votre étoile » — et, sur une zone déserte, elle propose simplement : « sois le premier point de cette zone ».
+
+Ce que tu vois sur cette carte, c'est donc **qui a dit oui**. Rien d'autre. Ce n'est pas un recensement du handpan dans le monde, et ça ne le sera jamais.
+
+Autant aller au bout de la démonstration, puisque c'est vrai au moment où j'écris ces lignes. **Ce soir, 1er septembre 2026, la constellation compte une étoile.** Une seule. Un prof, halo doré ; aucun fabricant pour l'instant. Ce n'est pas un aveu gêné, c'est une date : la carte existe depuis quelques jours, et voilà exactement où elle en est. Si tu lis ça maintenant, tu peux être la deuxième.
 
 ## Pourquoi « constellation », et pas « carte des membres »
 
@@ -74,13 +84,13 @@ Ce qui rend le mot juste plutôt que joli, c'est que le rendu suit : ce n'est pa
 
 Un geste. **Tu éteins l'interrupteur maître, ton étoile disparaît de la carte, immédiatement.**
 
-Pas de champ à vider un par un, pas de formulaire, pas de demande à m'adresser, pas de délai. Et rien n'est détruit au passage : tes informations restent dans ton profil, simplement plus personne ne les voit. Si tu rallumes six mois plus tard, tout est encore là.
+Pas de champ à vider un par un, pas de formulaire, pas de demande à m'adresser, pas de délai. Et ce n'est pas un masquage cosmétique : la carte ne lit tout simplement que les profils dont l'interrupteur est allumé, il n'existe pas de chemin qui contourne ce filtre.
 
 C'est la contrepartie logique du reste. Un interrupteur qui est dur à allumer et facile à éteindre, ce n'est pas un défaut d'ergonomie — c'est le bon sens de marche.
 
 ## Comment y aller
 
-Dans l'application : le menu de ton compte, puis **« 🌍 Mon profil public »**. Tout est là, sur un seul écran — l'interrupteur, les champs, et l'aperçu à côté.
+Dans l'application : le menu de ton compte, puis **« 🌍 Mon profil public »**. Tout est là, sur un seul écran — l'interrupteur, les champs, et l'aperçu à côté. La carte, elle, ne s'ouvre qu'aux comptes connectés : elle montre des gens, elle n'est pas une page publique qu'un moteur de recherche viendrait indexer.
 
 Prends le temps de le remplir sans allumer, si tu veux voir à quoi ça ressemble. L'aperçu se met à jour pendant que tu tapes, et tant que l'interrupteur est éteint, tu es le seul à le regarder.
 
