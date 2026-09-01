@@ -118,12 +118,38 @@ inscrits** (+ « un pays vide ≠ un pays sans joueurs »).
 `prototypes/constellation-joueurs-carte.html` et `-profil.html`, ouvertes et lues à l'écran
 (servies en `python3 -m http.server`, `file://` bloqué par l'extension).
 
+### ✅ RENFORCÉ AVEC LE VÉRIFIÉ EN BASE (commit `944ca6d`)
+La session APP a tout contrôlé dans le code le 01/09 (migration `0064_player_profiles.sql`
++ `community/*`) — voir `MESSAGE-SESSION-APP-REPONSE-2026-09-01-constellation.md` à la racine.
+Les 6 affirmations de l'article sont **confirmées**, et trois sont désormais écrites au sens fort :
+- **Il n'y a AUCUNE colonne de coordonnées.** Seuls champs de lieu : `country_code` (2 lettres)
+  et `city` (≤ 60 car.). Lat/lon résolues **à l'affichage** contre `community/cities-data.ts` ;
+  ville vide → centroïde du pays. L'article dit donc « nulle part où stocker mieux », pas
+  « on ne stocke que la ville » — c'est le cœur du texte, ne pas l'affaiblir en relecture.
+- **`share_instruments` a son PROPRE opt-in** (false par défaut) : allumer son étoile ne publie
+  pas ses instruments. Le défaut est inversé **à chaque étage** — ça renforce l'angle.
+- **L'état vide est assumé DANS l'app, en 7 langues** : l'article cite les vraies chaînes
+  (« un pays sans point n'est pas un pays sans joueurs… », « Vous êtes 0 à… », « sois le
+  premier point de cette zone ») au lieu d'une formulation maison.
+- Couleurs confirmées : prof = or `#FFD700`, fabricant = cuivre clair `#E0A860` (« cuivré » OK).
+- **Chute datée** : au 1er septembre 2026 la constellation compte **1 étoile** (un prof, zéro
+  fabricant). Écrit comme une date, pas comme un manque — la phrase ne devient pas fausse.
+- Ajout : la carte est **réservée aux comptes connectés** (grant `authenticated`).
+
+### ⛔ RETIRÉ DE L'ARTICLE — ne pas réintroduire au bénéfice du doute
+Deux affirmations issues des maquettes et **non confirmées** par le code : « aucun champ n'est
+pré-coché / le nom d'affichage n'est pas le nom d'inscription » et « si tu rallumes six mois
+plus tard, tout est encore là ». Si un jour c'est vérifié, elles peuvent revenir — pas avant.
+
 ### 🚫 AUCUNE ILLUSTRATION — c'est volontaire, ne pas « réparer »
 Le seul visuel existant est une **maquette** peuplée de personnes fictives (Lena, Kenji,
 Tomás…). La règle de David interdit de présenter une maquette comme une capture : l'article
-part donc **sans image dans le corps** et se lit entièrement sans. Les prises de vue à
-demander à David sont listées dans le rapport de session (carte réelle desktop + mobile,
-panneau « 🌍 Mon profil public » éteint puis allumé avec l'aperçu, une fiche ouverte).
+part donc **sans image dans le corps** et se lit entièrement sans. ⚠️ **La capture qui prouverait l'angle est
+impossible à obtenir de David** : SON interrupteur est allumé (c'est lui, l'unique étoile) —
+une image « interrupteur éteint » ne peut venir que d'un compte neuf. La carte est en outre
+réservée aux comptes connectés, donc la session APP ne peut pas la capturer non plus. Ce qui
+reste possible : les 2 captures depuis le compte de David (la carte + « Mon profil public »),
+et l'écran de la carte à l'état déconnecté, que la session APP a déjà pu prendre.
 
 ### ⚠️ POURQUOI PAS DÉPLOYÉ
 Au moment de la publication, une **session parallèle travaillait sur `src/data/atlas.ts`,
