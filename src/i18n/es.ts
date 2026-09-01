@@ -24,7 +24,7 @@ export const es: Dict = {
       "studio": "Handpan Constellation Studio",
       "blog": "Blog",
       "showroom": "Sala de exposición",
-      "about": "Acerca de",
+      "about": "Sobre mí",
       "contact": "Contacto"
     },
     "brandSub": "Música visible",
@@ -1863,7 +1863,7 @@ export const es: Dict = {
   "about": {
     "title": "Acerca de — David Lesage, músico, educador e inventor",
     "description": "Un baterista de formación que se convirtió en intérprete de handpan y cantante: el Conservatorio, La Voz, Naxos y la escena internacional del handpan, dos instrumentos hechos a medida sin instrucciones, y las herramientas que terminé construyendo.",
-    "heroEyebrow": "Acerca de",
+    "heroEyebrow": "Sobre mí",
     "heroTitle": "Baterista de formación, intérprete de handpan, cantante y fabricante de herramientas.",
     "heroLead": "Soy David Lesage: baterista de formación que se convirtió en intérprete de handpan, cantante, educador y fabricante de herramientas. Aquí está mi trayectoria, en orden cronológico, con sus respectivas fechas.",
     "heroImgAlt": "David Lesage, músico",
