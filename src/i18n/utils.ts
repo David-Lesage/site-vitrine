@@ -74,3 +74,21 @@ export function unlocalizePath(pathname: string): string {
   if (prefix && neutralSlugs[`${prefix}:${rest}`]) return neutralSlugs[`${prefix}:${rest}`]
   return rest
 }
+
+// ============================================================
+// FORMATAGE DES NOMBRES ET DES DATES (01/09/2026)
+// Le code écrivait partout `lang === 'en' ? 'en-GB' : 'fr-FR'`. Avec l'arrivée
+// de l'espagnol, ce ternaire envoyait silencieusement les pages `es` sur le
+// format FRANÇAIS : « 2 400 € » là où un lecteur hispanophone attend
+// « 2.400 € ». Une seule table, pour que la prochaine langue n'ait qu'une
+// ligne à ajouter.
+// ============================================================
+const LOCALES: Record<Lang, string> = {
+  fr: 'fr-FR',
+  en: 'en-GB',
+  es: 'es-ES',
+}
+
+export function numberLocale(lang: Lang): string {
+  return LOCALES[lang] ?? LOCALES.fr
+}

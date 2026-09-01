@@ -5,12 +5,13 @@ import Button from '@/components/Button.astro'
 import { appCta } from '@/lib/appAccess'
 import { getDict } from '@/i18n/dict'
 import { formatAmount, fetchPricesAtBuild, type PlanId } from '@/lib/prices'
+import { numberLocale } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const t = getDict(lang).studio
-const locale = lang === 'en' ? 'en-GB' : 'fr-FR'
+const locale = numberLocale(lang)
 
 const prices = await fetchPricesAtBuild()
 const period: Record<PlanId, string> = { monthly: t.pricePerMonth, annual: t.pricePerYear, lifetime: t.priceOnce }

@@ -28,9 +28,15 @@ const playlistId = (neotonePlaylist.match(/list=([\w-]+)/) || [])[1] || ''
 
 // Hero épuré (premium) : le mot-clé en dégradé de marque, les 3 piliers
 // en gras doré. Plus de glyphes (notes / smileys / handpan sur les lettres).
-const colorWord = lang === 'en' ? 'colours' : 'couleurs'
-const geoWord = lang === 'en' ? 'geometry' : 'géométrie'
-const emoWord = lang === 'en' ? 'emotions' : 'émotions'
+// Les 3 piliers doivent être mis en gras DANS le titre traduit : il faut donc
+// le mot exact tel qu'il apparaît dans chaque langue, sinon `emphasize` ne le
+// trouve pas et le gras disparaît en silence.
+const PILIERS: Record<Lang, [string, string, string]> = {
+  fr: ['couleurs', 'géométrie', 'émotions'],
+  en: ['colours', 'geometry', 'emotions'],
+  es: ['colores', 'geometría', 'emociones'],
+}
+const [colorWord, geoWord, emoWord] = PILIERS[lang]
 const emphasize = (text: string, words: string[]) =>
   words.reduce((acc, w) => {
     const i = acc.indexOf(w)

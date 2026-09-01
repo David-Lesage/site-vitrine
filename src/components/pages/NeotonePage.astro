@@ -13,7 +13,7 @@ import { Icon } from 'astro-icon/components'
 import { models, woods, woodNames, modelCarousels, specIcons, includedIcons, extrasIcons } from '@/data/neotone'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
-import { localizePath } from '@/i18n/utils'
+import { localizePath, numberLocale } from '@/i18n/utils'
 import { faqLdJson, productLdJson, breadcrumbLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
@@ -96,7 +96,7 @@ const ld = [
             <ul class="mt-4 flex-1 space-y-2 text-sm text-ink-soft/90">
               {d.modelFeatures[m.id].map((f) => <li class="flex gap-2"><Icon name="lucide:check" class="mt-0.5 h-4 w-4 shrink-0 text-copper" /> {f}</li>)}
             </ul>
-            <p class="mt-5 font-display text-lg font-700">{n.fromPrice} {m.fromPrice.toLocaleString(lang === 'en' ? 'en-GB' : 'fr-FR')} € HT</p>
+            <p class="mt-5 font-display text-lg font-700">{n.fromPrice} {m.fromPrice.toLocaleString(numberLocale(lang))} € HT</p>
           </div>
         </div>
       ))}

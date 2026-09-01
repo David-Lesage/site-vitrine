@@ -60,7 +60,7 @@ import {
   ATLAS_AFFILIATE_URL, ATLAS_PROMO_ACTIVE, ATLAS_DISCOUNT_CODE, ATLAS_BODY_STATUS, type AtlasPhoto,
 } from '@/data/atlas'
 import { getDict } from '@/i18n/dict'
-import { localizePath } from '@/i18n/utils'
+import { localizePath, numberLocale } from '@/i18n/utils'
 import { breadcrumbLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
@@ -69,7 +69,7 @@ const { lang } = Astro.props
 const t = getDict(lang)
 const a = t.atlas
 const L = (p: string) => localizePath(p, lang)
-const locale = lang === 'en' ? 'en-GB' : 'fr-FR'
+const locale = numberLocale(lang)
 const eur = (n: number) => n.toLocaleString(locale) + ' €'
 const alt = a.alt as Record<string, string>
 

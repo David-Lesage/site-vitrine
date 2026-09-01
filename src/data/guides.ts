@@ -73,7 +73,7 @@ export interface Guide {
 }
 
 type GuideKey = 'learn' | 'vsAcoustic' | 'chooseHandpan'
-type GuidesByLang = Record<GuideKey, Guide>
+export type GuidesByLang = Record<GuideKey, Guide>
 
 // ============================================================
 // FR
@@ -856,7 +856,10 @@ const en: GuidesByLang = {
   },
 }
 
-export const guides: Record<Lang, GuidesByLang> = { fr, en }
+// ES généré depuis le FRANÇAIS par `scripts/traduire-i18n-es.mjs`.
+import { esGuides } from './guides-es'
+
+export const guides: Record<Lang, GuidesByLang> = { fr, en, es: esGuides }
 
 export function getGuide(lang: Lang, key: GuideKey): Guide {
   return guides[lang][key]

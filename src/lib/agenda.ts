@@ -10,6 +10,7 @@
 // d'où le filet côté client (`data-event-iso`, voir les <script> des pages).
 // ============================================================
 import { agendaEvents } from '@/data/site'
+import { numberLocale } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
 
 export interface ShowcaseDate {
@@ -36,7 +37,7 @@ export interface ShowcaseDate {
 
 /** Showcases À VENIR uniquement, du plus proche au plus lointain. */
 export function upcomingShowcases(lang: Lang): ShowcaseDate[] {
-  const locale = lang === 'en' ? 'en-GB' : 'fr-FR'
+  const locale = numberLocale(lang)
   const todayIso = new Date().toISOString().slice(0, 10)
   const fmt = (d: Date, opts: Intl.DateTimeFormatOptions) =>
     new Intl.DateTimeFormat(locale, opts).format(d)

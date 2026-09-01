@@ -3118,10 +3118,13 @@ const fr = {
 
 export type Dict = typeof fr
 
-// EN importé séparément pour garder ce fichier lisible.
+// EN et ES importés séparément pour garder ce fichier lisible.
+// ⚠️ `en.ts` est écrit à la main ; `es.ts` est GÉNÉRÉ depuis le français par
+// `scripts/traduire-i18n-es.mjs` — corriger le français, puis relancer.
 import { en } from './en'
+import { es } from './es'
 
-const dicts: Record<Lang, Dict> = { fr, en }
+const dicts: Record<Lang, Dict> = { fr, en, es }
 
 export function getDict(lang: Lang): Dict {
   return dicts[lang] ?? fr

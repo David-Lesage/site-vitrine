@@ -8,7 +8,7 @@ import { Icon } from 'astro-icon/components'
 import type { Product } from '@/data/shop'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
-import { localizePath } from '@/i18n/utils'
+import { localizePath, numberLocale } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang; product: Product }
@@ -17,7 +17,7 @@ const t = getDict(lang)
 const s = t.shop
 const L = (path: string) => localizePath(path, lang)
 const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
-const eur = (n: number) => n.toLocaleString(lang === 'en' ? 'en-GB' : 'fr-FR') + ' €'
+const eur = (n: number) => n.toLocaleString(numberLocale(lang)) + ' €'
 const productCopy = s.products as Record<string, { name: string; description: string }>
 const linkTags = s.linkTags as Record<string, string>
 const linkCtas = s.linkCtas as Record<string, string>

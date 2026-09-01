@@ -10,6 +10,7 @@ import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
 import { site } from '@/data/site'
 import { BETA_DOOR_ENDPOINT, APP_CONFIG_KEY } from '@/lib/appAccess'
+import { localizePath } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -64,7 +65,7 @@ const b = getDict(lang).common.beta
   <p class="mt-3 text-ink-soft/90">{b.wish}</p>
   <div class="mt-8 rounded-card border border-ink/10 bg-cream p-5 md:p-6">
     <h3 class="font-display text-lg font-700">{b.formTitle}</h3>
-    <form id="beta-form" class="mt-4 grid gap-3" data-lang={lang} data-roles-required={b.formRolesRequired} data-redirect={lang === 'en' ? '/en/blog' : '/blog'} novalidate>
+    <form id="beta-form" class="mt-4 grid gap-3" data-lang={lang} data-roles-required={b.formRolesRequired} data-redirect={localizePath('/blog', lang)} novalidate>
       <div class="grid gap-3 sm:grid-cols-2">
         <label class="block">
           <span class="text-sm font-600">{b.formFirst}</span>

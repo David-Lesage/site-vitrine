@@ -19,7 +19,9 @@ const blog = defineCollection({
     // `src/lib/blogCategories.ts`.
     category: z.enum(BLOG_CATEGORIES),
     tags: z.array(z.string()).default([]),
-    lang: z.enum(['fr', 'en']),
+    // `es` est accepté par le schéma mais AUCUN article espagnol n'existe
+    // encore (passe 2) : `/es/blog` renvoie donc vers les articles français.
+    lang: z.enum(['fr', 'en', 'es']),
     youtubeId: z.string().optional(),
     draft: z.boolean().default(false),
   }),

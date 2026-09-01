@@ -1,0 +1,115 @@
+---
+// ════════════════════════════════════════════════════════════════════════════
+// BLOG ESPAGNOL — L'HABILLAGE EST TRADUIT, LES ARTICLES NE LE SONT PAS ENCORE
+// ════════════════════════════════════════════════════════════════════════════
+// Les 35 articles du blog représentent à eux seuls plus de caractères que tout
+// le reste du site : leur traduction est une passe à part. En attendant, la
+// pire réponse serait une page vide — `getCollection('blog', e => e.data.lang
+// === 'es')` ne renvoie rien, et un visiteur hispanophone conclurait qu'il n'y
+// a pas de blog du tout.
+//
+// Cette page liste donc les articles FRANÇAIS, chacun explicitement badgé
+// « En français », et pointe vers la route française `/blog/<permalink>`. Le
+// lecteur sait AVANT de cliquer dans quelle langue il atterrit — c'est la
+// seule chose qui compte ici.
+//
+// ⚠️ Il n'y a délibérément PAS de `src/pages/es/blog/[slug].astro` : une route
+// d'article espagnole qui servirait du texte français créerait une URL `/es/`
+// mensongère, et Google la pénaliserait comme du contenu dupliqué mal déclaré.
+//
+// LE JOUR OÙ des articles espagnols existeront (frontmatter `lang: "es"`, déjà
+// accepté par `src/content.config.ts`), il suffira de repasser cette page sur
+// le modèle exact de `src/pages/en/blog/index.astro` et d'ajouter le `[slug]`.
+// ════════════════════════════════════════════════════════════════════════════
+import { getCollection } from 'astro:content'
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import BlogFilter from '@/components/BlogFilter.astro'
+import { localizePath } from '@/i18n/utils'
+import { breadcrumbLdJson } from '@/lib/ldJson'
+import { categoryLabel } from '@/lib/blogCategories'
+
+const lang = 'es' as const
+
+// Articles FRANÇAIS : ce sont eux qu'on présente, faute de version espagnole.
+const posts = (await getCollection('blog', (e) => e.data.lang === 'fr' && !e.data.draft)).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+)
+
+const dateFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })
+const title = 'Blog de handpan — aprender con los colores · David Lesage'
+const description =
+  'El blog de David Lesage: el método ChromaKeys, el handpan electrónico Neotone, la creación de escalas y consejos para aprender handpan de otra manera, sin teoría musical.'
+
+const ldJSON = breadcrumbLdJson([
+  { name: 'Inicio', url: '/es' },
+  { name: 'Blog', url: '/es/blog' },
+])
+---
+
+<Layout title={title} description={description} ldJSON={ldJSON}>
+  <Section>
+    <SectionHeading
+      eyebrow="Blog"
+      title="Aprender handpan, de otra manera"
+      intro="Colores, formas y emociones: el método de David Lesage, el handpan electrónico Neotone y tutoriales para progresar a tu ritmo."
+      align="center"
+    />
+
+    <!-- L'avertissement est posé AVANT la liste, pas en bas de page : le lecteur
+         doit savoir dans quelle langue il s'engage avant de choisir un article. -->
+    <p
+      class="mx-auto mt-8 max-w-2xl rounded-card border border-copper/30 bg-copper/5 px-5 py-4 text-center text-sm leading-relaxed text-ink-soft"
+    >
+      Los artículos del blog todavía no están traducidos al español: se muestran y se leen
+      <strong class="font-700 text-ink">en francés</strong>. La traducción está en camino.
+    </p>
+
+    <BlogFilter lang={lang} posts={posts} />
+
+    <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-blog-grid>
+      {posts.map((post) => (
+        <article
+          data-category={post.data.category}
+          class="group flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+        >
+          {/* Lien vers la route FRANÇAISE : c'est là que vit l'article. */}
+          <a href={localizePath(`/blog/${post.data.permalink}`, 'fr')} class="block">
+            <img
+              src={post.data.cover}
+              alt={post.data.title}
+              width="480"
+              height="300"
+              loading="lazy"
+              class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105"
+            />
+          </a>
+          <div class="flex flex-1 flex-col p-6">
+            <div class="flex flex-wrap items-center gap-2 text-xs font-600 uppercase tracking-[0.12em] text-copper">
+              <span>{categoryLabel(post.data.category, lang)}</span>
+              <span class="text-ink-soft/60">· {dateFmt.format(post.data.pubDate)}</span>
+              <span class="rounded-full bg-ink/8 px-2 py-0.5 normal-case tracking-normal text-ink-soft/80">
+                🇫🇷 En francés
+              </span>
+            </div>
+            <h2 class="mt-3 font-display text-xl font-700 leading-snug text-ink">
+              <a
+                href={localizePath(`/blog/${post.data.permalink}`, 'fr')}
+                class="transition-colors group-hover:text-rust"
+              >
+                {post.data.title}
+              </a>
+            </h2>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-ink-soft/85">{post.data.description}</p>
+            <span class="mt-4 text-sm font-700 text-rust">Leer el artículo (en francés) →</span>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-10 text-center text-ink-soft/70" style="display:none" data-blog-empty>
+      Todavía no hay artículos en esta categoría.
+    </p>
+  </Section>
+</Layout>

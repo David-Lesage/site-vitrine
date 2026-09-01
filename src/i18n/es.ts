@@ -16,11 +16,11 @@ import type { Dict } from './dict'
 export const es: Dict = {
   "common": {
     "nav": {
-      "home": "Bienvenido",
+      "home": "Inicio",
       "neotone": "El Neotone",
       "yishama": "Yishama",
-      "shop": "Comercio",
-      "lessons": "Curso",
+      "shop": "Tienda",
+      "lessons": "Cursos",
       "studio": "Handpan Constellation Studio",
       "blog": "Blog",
       "showroom": "Sala de exposición",
@@ -34,10 +34,10 @@ export const es: Dict = {
       "resources": "Recursos",
       "navigation": "Navegación",
       "contact": "Contacto",
-      "learnHandpan": "Aprende a tocar el handpan.",
+      "learnHandpan": "Aprender el handpan",
       "electricVsAcoustic": "Electrónica frente a acústica",
       "chooseHandpan": "¿Qué handpan elegir?",
-      "newsletter": "Hoja informativa",
+      "newsletter": "Boletín",
       "faq": "Preguntas frecuentes",
       "legal": "Aviso legal",
       "terms": "Términos y condiciones generales",
@@ -59,7 +59,7 @@ export const es: Dict = {
       "Premio del Conservatorio",
       "La Voz · Temporada 11",
       "Embajador Neotone · Yishama · Maison du Ngoni",
-      "Showroom París 20"
+      "Showroom París 20ᵉ"
     ],
     "beta": {
       "badge": "Acceso limitado",
@@ -70,8 +70,8 @@ export const es: Dict = {
       "ctaWaitlist": "Únete a la lista de espera",
       "priceClosedNote": "Estos precios son solo orientativos; serán los precios del lanzamiento público. La aplicación completa, incluido el plan gratuito Discovery, aún no está disponible: ningún plan está disponible actualmente. Un pequeño grupo de beta testers la está utilizando a cambio de sus comentarios. Por ahora, la lista de espera es la única forma de acceder, independientemente del plan que te interese cuando se lance. ¿Quieres ser beta tester? Cuéntame abajo por qué te interesa la aplicación; leo y respondo personalmente.",
       "formTitle": "Para ser notificado de la apertura",
-      "formFirst": "Nombre de pila",
-      "formLast": "Nombre",
+      "formFirst": "Nombre",
+      "formLast": "Apellidos",
       "formEmail": "Correo electrónico",
       "formHandpan": "¿Ya tienes un handpan?",
       "formHandpanYes": "Sí",
@@ -81,7 +81,7 @@ export const es: Dict = {
       "formHandpanTypeAcoustic": "Acústico",
       "formHandpanTypeElectronic": "Electrónico",
       "formHandpanTypeBoth": "Ambos",
-      "formUsage": "¿Para qué utilizarás Handpan Constellation Studio ?",
+      "formUsage": "¿Para qué utilizarás Handpan Constellation Studio?",
       "formUsageHint": "Marque todas las casillas que le correspondan. Lo que declare determinará su acceso; si se aplican varias casillas, prevalecerá la más vinculante.",
       "formUsagePersonal": "Para mí: aprender, tocar, componer",
       "formUsagePersonalDeal": "Gratis. Tus creaciones siguen siendo tuyas; las exportaciones llevan marca de agua.",
@@ -96,23 +96,23 @@ export const es: Dict = {
       "formStudentCount1": "1 a 5",
       "formStudentCount6": "6 a 20",
       "formStudentCount20": "Más de 20",
-      "formMakerLegend": "Hoja de información del fabricante",
+      "formMakerLegend": "Tu ficha de fabricante",
       "formMakerHint": "Eso es lo que hará que aparezcas en el catálogo, con las personas adecuadas frente a ti.",
-      "formMakerCountry": "¿Dónde fabrican?",
+      "formMakerCountry": "¿Dónde fabricas?",
       "formMakerCountryPlaceholder": "País, ciudad",
       "formMakerNotes": "¿Cuántas notas puede tener cada instrumento?",
       "formMakerNotes9": "9 o menos",
       "formMakerNotes10": "10 a 13",
       "formMakerNotes14": "14 a 17",
       "formMakerNotes18": "Mayores de 18 años",
-      "formMakerNotesVaries": "Depende de la gama de productos.",
+      "formMakerNotesVaries": "Depende de las escalas",
       "formMakerMetals": "¿Con qué metales trabajas?",
       "formMakerMetalNitrided": "Acero nitrurado",
       "formMakerMetalStainless": "Acero inoxidable",
-      "formMakerMetalEmber": "Acero de brasas",
+      "formMakerMetalEmber": "Ember steel",
       "formMakerMetalOther": "Otro",
-      "formMakerPricing": "Sus gamas de productos preferidas, sus precios, sus plazos de entrega.",
-      "formMakerPricingPlaceholder": "Ej.: Billetes de 9 D Kurd , 1.400 € — Plazo de entrega de 3 meses.",
+      "formMakerPricing": "Tus escalas preferidas, tus tarifas, tus plazos de entrega.",
+      "formMakerPricingPlaceholder": "Ej.: Billetes de 9 D Kurd, 1.400 € — Plazo de entrega de 3 meses.",
       "formPledgeTitle": "¿Queda claro?",
       "formPledgeText": "Estoy desarrollando esta herramienta yo mismo. Lo que declares aquí determina tu acceso; no es un control, sino un acuerdo. Si cambia tu uso (por ejemplo, si empiezas a usarla para impartir clases), avísame: lo ajustaremos sin problema.",
       "formPledgeCheck": "Mantengo la veracidad de lo que he declarado.",
@@ -133,7 +133,7 @@ export const es: Dict = {
       "formPrivacy": "Tu dirección de correo electrónico solo se utiliza para notificarte cuando se abre el correo. No enviamos spam; puedes darte de baja cuando quieras."
     },
     "emotions": [
-      "Balance",
+      "Equilibrio",
       "Impulso",
       "Aventura",
       "Relajación",
@@ -144,7 +144,7 @@ export const es: Dict = {
   },
   "home": {
     "title": "Aprender a tocar el handpan de una manera diferente — David Lesage",
-    "description": "El handpan acústico Yishama , el handpan electrónico Neotone y mi método basado en colores: aprende a tocar el handpan de una forma diferente con Handpan Constellation Studio . Ven a probarlos en París.",
+    "description": "El handpan acústico Yishama, el handpan electrónico Neotone y mi método basado en colores: aprende a tocar el handpan de una forma diferente con Handpan Constellation Studio. Ven a probarlos en París.",
     "heroEyebrow": "Músico · Educador · Inventor",
     "heroTitleA": "Voy a devolver la música",
     "heroTitleHighlight": "visible",
@@ -159,7 +159,7 @@ export const es: Dict = {
       {
         "sub": "Acústica y electrónica",
         "title": "Instrumentos y micrófonos",
-        "text": "Un handpan acústico Yishama , un handpan electrónico Neotone , micrófonos: dos mundos que acompaño por igual.",
+        "text": "Un handpan acústico Yishama, un handpan electrónico Neotone, micrófonos: dos mundos que acompaño por igual.",
         "cta": "Ver ambos universos"
       },
       {
@@ -171,7 +171,7 @@ export const es: Dict = {
       {
         "sub": "Acústica y Neotone",
         "title": "Handpan Constellation Studio",
-        "text": "La aplicación que hace que la música sea visible tanto en tu handpan acústico como en el Neotone : colores, geometría y emociones.",
+        "text": "La aplicación que hace que la música sea visible tanto en tu handpan acústico como en el Neotone: colores, geometría y emociones.",
         "cta": "Descubre la aplicación"
       }
     ],
@@ -195,8 +195,8 @@ export const es: Dict = {
       },
       {
         "sub": "Handpan electrónico · Neotone",
-        "title": "El teclado de escalas",
-        "text": "El handpan electrónico fabricado por Soundventure, empresa para la que he sido probador beta desde 2023. Todas las escalas en un solo instrumento, tanto para usar con auriculares como en el escenario.",
+        "title": "El teclado de las escalas",
+        "text": "El handpan electrónico fabricado por Soundventure, del cual soy probador beta desde 2023. Todas las escalas en un solo instrumento, para usar con auriculares o en el escenario.",
         "points": [
           "Todas las escalas en un solo instrumento.",
           "Volumen ajustable, reproducción con auriculares, grabadora integrada.",
@@ -208,7 +208,7 @@ export const es: Dict = {
     ],
     "duoBridgeEyebrow": "El guion",
     "duoBridgeTitle": "Mi aplicación habla ambos idiomas.",
-    "duoBridgeText": "Handpan Constellation Studio cuenta con un modo acústico y un modo electrónico. Si tu rango acústico no es suficiente, la función \"🎯 Complete\" te indica con precisión qué notas te faltan y qué añadiría un segundo handpan acústico o un Neotone . El modo híbrido reproduce tus acordes en ambas mitades. Completar, no competir.",
+    "duoBridgeText": "Handpan Constellation Studio cuenta con un modo acústico y un modo electrónico. Si tu escala acústica no es suficiente, la función \"🎯 Complete\" te indica con precisión qué notas te faltan y qué añadiría un segundo handpan acústico o un Neotone. El modo híbrido reproduce tus acordes en ambos instrumentos. Completar, no competir.",
     "duoBridgeCta": "Descubra Handpan Constellation Studio",
     "whyEyebrow": "¿Por qué yo?",
     "whyTitle": "La herramienta que me hubiera gustado aprender de niño",
@@ -231,7 +231,7 @@ export const es: Dict = {
     "showroomDatesAll": "Ver el programa completo",
     "communityEyebrow": "La comunidad",
     "communityTitle": "Únete al movimiento de música visible.",
-    "communityIntro": "Mantente al tanto de las próximas presentaciones en París y del lanzamiento de Handpan Constellation Studio . Sin spam, solo lo esencial.",
+    "communityIntro": "Mantente al tanto de las próximas presentaciones en París y del lanzamiento de Handpan Constellation Studio. Sin spam, solo lo esencial.",
     "communityPlaceholder": "ton@email.fr",
     "communityButton": "Avísame sobre las próximas presentaciones.",
     "communityNote": "Se abrirá un breve formulario: usted introduce su nombre y correo electrónico, e inmediatamente recibirá las próximas fechas por correo electrónico.",
@@ -241,17 +241,17 @@ export const es: Dict = {
     "proofVideos": [
       "Actuación musical en Neotone",
       "La forma de mi corazón — en mis dos Yishama",
-      "Creación de tu gama de productos: tutorial"
+      "Crear tu escala — tutorial"
     ],
     "proofCta": "Consulta la lista de reproducción completa Neotone",
     "proofCtaYishama": "Vea la lista de reproducción completa Yishama"
   },
   "neotone": {
     "title": "Neotone — handpan electrónico y digital | David Lesage",
-    "description": "El Neotone , con la asistencia de David Lesage : -5% de descuento online (-7% en la tienda), 6 años de garantía, calculadora de precios por país y asistencia personalizada desde la prueba hasta el desembalaje.",
+    "description": "El Neotone, con la asistencia de David Lesage: -5% de descuento online (-7% en la tienda), 6 años de garantía, calculadora de precios por país y asistencia personalizada desde la prueba hasta el desembalaje.",
     "heroEyebrow": "El equipo · Handpan digital",
-    "heroTitle": "El Neotone , el mejor handpan electrónico del mundo.",
-    "heroLead": "Si compras a través de mí, embajador oficial Neotone , obtendrás <strong class=\"text-cream\">un 5 % de descuento online</strong> (o <strong class=\"text-cream\">un 7 % en la tienda</strong> ), una <strong class=\"text-cream\">garantía de 6 años</strong> y asistencia personalizada, desde la prueba hasta el desempaquetado.",
+    "heroTitle": "El Neotone, el mejor handpan electrónico del mundo.",
+    "heroLead": "Si compras a través de mí, embajador oficial Neotone, obtendrás <strong class=\"text-cream\">un 5% de descuento online</strong> (o <strong class=\"text-cream\">un 7% en la tienda</strong>), una <strong class=\"text-cream\">garantía de 6 años</strong> y asistencia personalizada, desde la prueba hasta el desempaquetado.",
     "ctaCalc": "Calcula mi precio",
     "ctaShowroom": "Reserva mi visita a la sala de exposición.",
     "modelsEyebrow": "Los dos modelos",
@@ -292,12 +292,12 @@ export const es: Dict = {
     "compLegendAco": "Handpan acústico",
     "compLegendNeo": "Neotone Electronics",
     "calcEyebrow": "Calculadora de precios",
-    "calcTitle": "¿Cuánto me costará realmente mi Neotone ?",
+    "calcTitle": "¿Cuánto me costará realmente mi Neotone?",
     "calcIntro": "Elige tu método de compra, tu modelo, tu tipo de madera y tu país: la calculadora aplicará el descuento y el IVA correctos para 2026.",
     "calcDisclaimer": "Los precios mostrados incluyen el envío a todo el mundo. Se aplican los tipos de IVA estándar de 2026. Fuera de la UE: no se aplica el IVA de la UE, pero pueden añadirse tasas aduaneras locales al envío, a su cargo.",
     "procEyebrow": "Procedimiento de compra",
     "procTitle": "Desde su primera pregunta hasta la recepción",
-    "procIntro": "Un proceso sencillo y transparente, con asistencia de principio a fin. Dos maneras de llevarte tu Neotone :",
+    "procIntro": "Un proceso sencillo y transparente, con asistencia de principio a fin. Dos maneras de llevarte tu Neotone:",
     "procHighlight": "Si acude a la sala de exposiciones de París, se llevará su instrumento el mismo día, sin retrasos en la fabricación.",
     "procOnlineTitle": "En línea — envíos a todo el mundo",
     "procShowroomTitle": "En persona — París 20",
@@ -314,12 +314,12 @@ export const es: Dict = {
     "extrasHeadphonesCta": "Lee: ¿Qué casco elegir?",
     "bridgeEyebrow": "Tono Neotone + el método visual",
     "bridgeTitle": "Aprende a través de los colores y las formas.",
-    "bridgeText": "Con Handpan Constellation Studio , aprenderás a través de colores y formas, tanto en tu Neotone como en un handpan acústico.",
+    "bridgeText": "Con Handpan Constellation Studio, aprenderás a través de colores y formas, tanto en tu Neotone como en un handpan acústico.",
     "bridgeCta": "Descubre el método",
     "trustEyebrow": "Una señal de confianza",
     "trustTitle": "Conozco personalmente a las personas que fabrican su Neotone",
-    "trustP1": "He visitado los talleres en Hungría varias veces. Conozco personalmente a Csaba y Norbert —los dos amigos detrás de Neotone , así como a todo el equipo: Gergely, Dániel y los artesanos de MAG Instruments, y Yonathan de Yishama .",
-    "trustP2": "Soy probador beta oficial de la marca desde 2023. Desde el primer Neotone¹ , he reportado y corregido miles de errores y sugerido innumerables mejoras. Al comprar a través de mí, no solo obtienes un distribuidor: obtienes a alguien que vive y respira el instrumento y que lo desarrolla constantemente.",
+    "trustP1": "He visitado los talleres en Hungría varias veces. Conozco personalmente a Csaba y Norbert —los dos amigos detrás de Neotone, así como a todo el equipo: Gergely, Dániel y los artesanos de MAG Instruments, y Yonathan de Yishama.",
+    "trustP2": "Soy probador beta oficial de la marca desde 2023. Desde el primer Neotone¹, he reportado y corregido miles de errores y sugerido innumerables mejoras. Al comprar a través de mí, no solo obtienes un distribuidor: obtienes a alguien que vive y respira el instrumento y que lo desarrolla constantemente.",
     "trustYishamaLink": "Mi historia con Yonathan y mis dos handpans Yishama",
     "trustCaption1": "Sesión de pruebas y depuración con el equipo, durante el taller.",
     "trustCaption2": "Con el equipo Neotone durante una de mis visitas a Hungría.",
@@ -328,35 +328,35 @@ export const es: Dict = {
     "faqOutro": "¿Tienes alguna otra pregunta? Escríbeme a"
   },
   "yishama": {
-    "title": "Mis handpans Yishama : dos instrumentos para una sola voz | David Lesage",
-    "description": "La historia de mi encuentro con Yonathan y Yishama : dos handpans acústicos de 18 notas afinados a 432 Hz, diseñados a medida para acompañar mi voz, y el resultado final que produjeron.",
+    "title": "Mis handpans Yishama: dos instrumentos para una sola voz | David Lesage",
+    "description": "La historia de mi encuentro con Yonathan y Yishama: dos handpans acústicos de 18 notas afinados a 432 Hz, diseñados a medida para acompañar mi voz, y el resultado final que produjeron.",
     "heroEyebrow": "Mis instrumentos acústicos",
-    "heroTitle": "Yishama : dos handpans nacidos de un encuentro",
-    "heroLead": "Dos instrumentos de 18 notas, afinados a <strong class=\"text-cream\">432 Hz</strong> , diseñados junto con <strong class=\"text-cream\">Yonathan</strong> con un único propósito: que yo pudiera cantar acompañándome. Esta es su historia y lo que aprendí de ellos.",
+    "heroTitle": "Yishama: dos handpans nacidos de un encuentro",
+    "heroLead": "Dos instrumentos de 18 notas, afinados a <strong class=\"text-cream\">432 Hz</strong>, diseñados junto con <strong class=\"text-cream\">Yonathan</strong> con un único propósito: que yo pudiera cantar acompañándome. Esta es su historia y lo que aprendí de ellos.",
     "heroCtaVideo": "Escucha Shape of My Heart",
     "heroCtaStory": "Lee la historia",
-    "heroImgAlt": "David Lesage sosteniendo uno de sus dos handpans Yishama , con notas visibles debajo.",
+    "heroImgAlt": "David Lesage sosteniendo uno de sus dos handpans Yishama, con notas visibles debajo.",
     "metEyebrow": "Naxos, Grecia · 2022",
     "metTitle": "Un hombre que conocí por casualidad, al día siguiente de un concierto.",
     "metP1": "La noche anterior había dado un concierto de handpan y canto. Al día siguiente, me encontré con un hombre en el bar al aire libre del festival. No sabía quién era. Me dijeron que era uno de los mejores fabricantes de handpan del mundo.",
     "metP2": "Le cuento mi sueño, el que he tenido durante años: \"un piano handpan\". Poder cantar, tocar versiones, acompañar mi voz, sin quedarme estancada en un solo estilo.",
     "metP3": "Me escuchó con calma y durante un buen rato. No intentó venderme sus instrumentos. Incluso me dijo que, con mi estilo de tocar tan percusivo, no estaba seguro de que el suyo fuera adecuado para mí.",
     "metP4": "Ese día, en esa pequeña isla, descubrí el mundo internacional del handpan: instrumentos con notas por encima y por debajo, notas graves profundas, una cualidad que ni siquiera había sospechado.",
-    "metQuote": "Cuando conocí a Yonathan, el director ejecutivo de Yishama , y a Andrea, su esposa, inmediatamente percibí la delicadeza y la profundidad de la persona que tenía delante.",
+    "metQuote": "Cuando conocí a Yonathan, el director ejecutivo de Yishama, y a Andrea, su esposa, inmediatamente percibí la delicadeza y la profundidad de la persona que tenía delante.",
     "metQuoteSource": "Lo que escribí en aquel entonces, en mi antiguo sitio web.",
     "metPhotoAlt": "David Lesage con Yonathan y Andréa de Yishama",
     "metPhotoCaption": "Con Yonathan y Andréa, comienza una larga historia.",
     "roomEyebrow": "Festival HUG, Hungría",
     "roomTitle": "Subió a mi habitación con un lápiz.",
     "roomP1": "Unos meses después, en el festival HUG de Hungría, Yonathan subió a mi habitación con Andrea. Empezó a hacerme preguntas. Y a dibujar.",
-    "roomP2": "No entendí mucho: no tengo conocimientos de ingeniería. Solo sabía lo que quería <em>oír</em> . Él lo tradujo en huecos, grosores, octavas. Solo me importaba un aspecto técnico: un máximo de notas redondeadas en el fondo, como timbres; suenan mucho más fáciles de tocar que las notas huecas.",
+    "roomP2": "No entendí mucho: no tengo conocimientos de ingeniería. Solo sabía lo que quería <em>oír</em>. Él lo tradujo en huecos, grosores, octavas. Solo me importaba un aspecto técnico: un máximo de notas redondeadas en el fondo, como timbres; suenan mucho más fáciles de tocar que las notas huecas.",
     "roomP3": "En todo lo demás, deposité mi total confianza en él. Fue entonces cuando decidió convertirme en embajadora de su marca. Pero antes de eso, ya había mostrado un interés genuino y sincero en mí. Luego me recibió en su casa en Budapest antes de que abordara mi vuelo.",
-    "roomAside": "Me había enviado, unos meses antes, el enlace a su <em>Pantam Virtual</em> : \"crea el instrumento de tus sueños en la aplicación y luego envíame el enlace de tu diseño\". Intercambiamos estos enlaces durante semanas.",
+    "roomAside": "Me había enviado, unos meses antes, el enlace a su <em>Pantam Virtual</em>: \"crea el instrumento de tus sueños en la aplicación y luego envíame el enlace de tu diseño\". Intercambiamos estos enlaces durante semanas.",
     "whyEyebrow": "La razón de ser",
     "whyTitle": "¿Por qué dos handpans, y por qué esos en concreto?",
     "whyIntro": "No se trata de dos instrumentos colocados uno al lado del otro. Es un sistema único en dos partes, diseñado para una voz.",
-    "whyP1": "El handpan es un instrumento magnífico y a la vez difícil de tocar. Una escala es una elección, y por lo tanto, un sacrificio. Nueve o diez notas, y siempre te faltará <strong>la</strong> que te permitiría tocar el acorde con el que sueñas.",
-    "whyP2": "Para un cantante, es aún peor. Acompañar una voz requiere una <strong>nota de bajo sólida</strong> : sin ella, se tocan inversiones y la voz pierde su base. Quería basar mi canto en la nota más grave de cada acorde, para luego construir el arpegio: D3-F♯3-A3 sobre un D2, B♭2-D3-F3-B♭3.",
+    "whyP1": "El handpan es un instrumento magnífico y obstinado. La escala es una elección, y por lo tanto, una renuncia. Nueve o diez notas, y siempre te faltará <strong>la</strong> que te permitiría tocar el acorde con el que sueñas.",
+    "whyP2": "Para un cantante, es aún peor. Acompañar una voz requiere una <strong>nota de bajo sólida</strong>: sin ella, se tocan inversiones y la voz pierde su base. Quería basar mi canto en la nota más grave de cada acorde, para luego construir el arpegio: D3-F♯3-A3 sobre un D2, B♭2-D3-F3-B♭3.",
     "whyP3": "Mi petición era sencilla: dos instrumentos que, juntos, me dieran todos los sostenidos y bemoles. Para cantar en cualquier tonalidad, con la tónica de cada acorde en el registro grave.",
     "whyQuote": "Mi sueño es poder cantar y acompañarme fácilmente con el handpan en todas las tonalidades, con el mayor rango posible, sin verme limitado por la falta de notas.",
     "whyQuoteSource": "Carta de intención — 22 de noviembre de 2022",
@@ -372,7 +372,7 @@ export const es: Dict = {
     "recPapersLead": "Los papeles también estaban en la caja.",
     "recCaption5": "El mismo sobre que en la foto de la caja, esta vez abierto; el sello de cera está junto al certificado.",
     "recCaption6": "El certificado E 18, firmado a mano por Yhonatan Ale-Yahav: la escala, el acero, las dieciocho notas, las dimensiones, el peso, el número de identificación. Yishama lo llama \"E Major 18\"; en esta página, E 18 es mi etiqueta de trabajo.",
-    "recCaption7": "En el reverso del certificado: el logotipo Yishama , impreso en el mismo papel texturizado.",
+    "recCaption7": "En el reverso del certificado: el logotipo Yishama, impreso en el mismo papel texturizado.",
     "recNextDayLead": "Y al día siguiente era mi cumpleaños.",
     "recCaption8": "Los dos paneles se instalaron sobre sus patas, el estante superior y el marco del piano vertical abierto detrás. Veinticuatro horas después del camión.",
     "recZoomHint": "Haz clic en una foto para abrirla a tamaño completo y luego navega entre las ocho con ‹ ›. El certificado solo se puede leer ampliado.",
@@ -381,7 +381,7 @@ export const es: Dict = {
     "recAlt3": "La cubierta rígida del handpan vista desde arriba, colocada sobre un suelo de parqué claro: tela de camuflaje negro mate, espiral ancha acolchada en relieve, placa rectangular con la palabra YISHAMA en el centro, ribete rojo en el borde y cremallera alrededor del perímetro.",
     "recAlt4": "La vitrina abierta deja ver el handpan, cuyo metal refleja una luz cálida, dorada y bronceada. En el centro se encuentra el ding y sus anillos concéntricos; a su alrededor, las zonas de notas, en huecos y cúpulas.",
     "recAlt5": "Sobre una superficie de trabajo de madera: el sobre de papel kraft, ahora abierto, con su sello de cera roja que lleva un monograma, colocado junto al certificado de autenticidad impreso en papel texturizado.",
-    "recAlt6": "El certificado de autenticidad de página completa Yishama . Dice: Certificado de autenticidad, Propietario David Lesage , Año 2023, Escala Mi mayor 18, Tipo de acero Acero inoxidable, Notas (ABC♯ D♯) E / (F♯) G♯ BC♯ D♯ EF♯ G♯ ABC♯ D♯ E, Dimensiones 53 × 53 × 28 cm, Peso 4,4 kg, la mención \"diseñado y producido en el taller YISHAMA, Isfiya / Israel\", la firma manuscrita de Yhonatan Ale-Yahav y el número de identificación 483.",
+    "recAlt6": "El certificado de autenticidad de página completa Yishama. Dice: Certificado de autenticidad, Propietario David Lesage, Año 2023, Escala Mi mayor 18, Tipo de acero Acero inoxidable, Notas (ABC♯ D♯) E / (F♯) G♯ BC♯ D♯ EF♯ G♯ ABC♯ D♯ E, Dimensiones 53 × 53 × 28 cm, Peso 4,4 kg, la mención \"diseñado y producido en el taller YISHAMA, Isfiya / Israel\", la firma manuscrita de Yhonatan Ale-Yahav y el número de identificación 483.",
     "recAlt7": "El reverso del certificado: el logotipo Yishama —un pergamino dorado— sobre la palabra YISHAMA en mayúsculas, en papel texturizado, con la dirección WWW.YISHAMA.COM en la parte inferior de la página.",
     "recAlt8": "David Lesage sonriendo, con la cabeza inclinada, a plena luz del día. Delante de él, sus dos handpans Yishama de metal gris antracita apoyados sobre sus bases; detrás, una tableta fijada a un brazo articulado, el marco de un piano vertical abierto que deja ver las cuerdas y la mecánica, una pintura que representa una Flor de la Vida naranja, pads electrónicos y un pedalier.",
     "insEyebrow": "Los dos instrumentos",
@@ -392,11 +392,11 @@ export const es: Dict = {
     "insBottom": "Debajo",
     "insNotes": "notes",
     "insTuning": "Sintonizado a 432 Hz",
-    "insCredit": "Fabricados por Yishama — diseñados por <strong>Yhonatan Ale-Yahav</strong> . Estas dos colecciones no figuran en ningún catálogo: fueron hechas por encargo.",
+    "insCredit": "Fabricados por Yishama — diseñados por <strong>Yhonatan Ale-Yahav</strong>. Estas dos escalas no figuran en ningún catálogo: fueron hechas a medida.",
     "insCreditBrief": "Las especificaciones eran mías, propias de una cantante: poder acompañarme con el handpan como lo haría un guitarrista o un pianista. Es decir, poder tocar todos los acordes, en todas las tonalidades, con la tónica de cada acorde como nota de bajo y un sonido característico. No sabía cómo sería posible. Fue el ingenio de Yonathan lo que lo hizo realidad.",
-    "insFootnote": "Son piezas únicas: sus nombres son etiquetas de trabajo mías, no modelos del catálogo Yishama . Cada instrumento, de forma independiente, produce los siete grados de su escala con la fundamental disponible en el bajo.",
-    "insAppAlt": "Captura de pantalla de Handpan Constellation Studio , pestaña Logic en modo híbrido: mis dos handpans Yishama dibujados uno al lado del otro, todas sus notas mostradas como puntos de colores: a la izquierda, el E 18 (ding E3), a la derecha, el D Kurd 18 (ding D3), incluyendo las notas de abajo. El banner superior indica 6 acordes con el E 18, 6 con el D Kurd 18 y 24 con ambos combinados. Abajo, los siete grados de unión: I Balance E, II Momentum F♯m, III Adventure G♯m, IV Relaxation A, V Tension B, VI Nostalgia C♯m, VII Mystery D♯°.",
-    "insAppCaption": "En mi aplicación, mis dos escalas se combinan: seis acordes con una, seis con la otra, y veinticuatro cuando suenan juntas. Es este número el que nos indica que Yonathan no me creó dos instrumentos, sino un sistema.",
+    "insFootnote": "Son piezas únicas: sus nombres son etiquetas de trabajo mías, no modelos del catálogo Yishama. Cada instrumento, por sí solo, ofrece los siete grados de su escala con la fundamental disponible en el bajo.",
+    "insAppAlt": "Captura de pantalla de Handpan Constellation Studio, pestaña Logic en modo híbrido: mis dos handpans Yishama dibujados uno al lado del otro, todas sus notas mostradas como puntos de colores: a la izquierda, el E 18 (ding E3), a la derecha, el D Kurd 18 (ding D3), incluyendo las notas de abajo. El banner superior indica 6 acordes con el E 18, 6 con el D Kurd 18 y 24 con ambos combinados. Abajo, los siete grados de unión: I Balance E, II Momentum F♯m, III Adventure G♯m, IV Relaxation A, V Tension B, VI Nostalgia C♯m, VII Mystery D♯°.",
+    "insAppCaption": "Mis dos escalas combinadas en mi aplicación: seis acordes con una, seis con la otra, y veinticuatro cuando tocan juntas. Es este número el que nos indica que Yonathan no me hizo dos instrumentos, sino un sistema.",
     "insAppZoomHint": "Pantalla densa: abre la captura y vuelve a hacer clic en ella para ver el tamaño real; ahí es donde se leen los nombres de las notas.",
     "lightbox": {
       "close": "Cerca",
@@ -406,10 +406,10 @@ export const es: Dict = {
     },
     "pairEyebrow": "Juntos",
     "pairTitle": "Un handpan cromático, en dos piezas.",
-    "pairIntro": "Cada una cubre su propio rango. Juntas, sus 36 notas cubren los doce semitonos, sin excepción.",
-    "pairP1": "Los 24 acordes mayores y menores se pueden tocar, y <strong>cada uno tiene su tónica en el registro grave</strong> . Eso es exactamente lo que pedí: no tener que volver a tocar una inversión por falta de una nota de bajo.",
+    "pairIntro": "Cada una cubre su escala por separado. Juntas, sus 36 notas cubren los doce semitonos, sin excepción.",
+    "pairP1": "Los 24 acordes mayores y menores se pueden tocar, y <strong>cada uno tiene su tónica en el registro grave</strong>. Eso es exactamente lo que pedí: no tener que volver a tocar una inversión por falta de una nota de bajo.",
     "pairP2": "Yonathan construyó, sin que jamás se le conociera por ese nombre, un handpan cromático en dos piezas. Incluso los concibió como un sistema: quitó una nota de la primera porque ya la tenía en la segunda, para así liberar espacio para otra.",
-    "pairHonest": "Una aclaración importante: esto describe la <em>disponibilidad de notas</em> , no la fluidez del movimiento. Cambiar de una sección a otra a mitad de un acorde sigue siendo un ejercicio físico. Precisamente este problema fue lo que, en última instancia, motivó la creación de mi aplicación.",
+    "pairHonest": "Una aclaración importante: esto describe la <em>disponibilidad de notas</em>, no la fluidez del movimiento. Cambiar de una sección a otra a mitad de un acorde sigue siendo un ejercicio físico. Precisamente este problema fue lo que, en última instancia, motivó la creación de mi aplicación.",
     "pairFactLabels": {
       "notes": "calificaciones totales",
       "keys": "tonos",
@@ -420,25 +420,25 @@ export const es: Dict = {
     "pairPhotoCaption": "Los dos instrumentos uno al lado del otro: imagen de la portada de Shape of My Heart.",
     "metalEyebrow": "El metal",
     "metalTitle": "Tres aceros, tres voces",
-    "metalIntro": "En Yishama , el metal no es solo un detalle final: es la elección principal, que determina el tono, la resonancia y el mantenimiento. Ofrecemos tres familias; haga clic para obtener más información.",
+    "metalIntro": "En Yishama, el metal no es solo un detalle final: es la elección principal, que determina el tono, la resonancia y el mantenimiento. Ofrecemos tres familias; haga clic para obtener más información.",
     "metalCardCta": "Ver detalles",
     "metalModalEyebrow": "Fabricación de acero",
     "metalModalClose": "Cerca",
     "metalLabelSound": "El sonido",
     "metalLabelCare": "La entrevista",
     "metalLabelBest": "Ideal para",
-    "metalSource": "Fuente: artículo «Handpan nitrurado vs. handpan de acero inoxidable», publicado por Yishama , y su catálogo. El precio de un Yishama varía según el rango, el número de notas, las notas subyacentes y el tipo de material.",
-    "metalNote": "Desde 2021, cada Yishama lleva grabado con láser en su interior: número de serie, nombre de la gama y tipo de material con su grosor.",
+    "metalSource": "Fuente: artículo «Handpan nitrurado vs. handpan de acero inoxidable», publicado por Yishama, y su catálogo. El precio de un Yishama varía según la escala, el número de notas, las notas subyacentes y el tipo de material.",
+    "metalNote": "Desde 2021, cada Yishama lleva grabado en su interior con láser: número de serie, nombre de la escala y tipo de material con su grosor.",
     "makerEyebrow": "El fabricante",
     "makerTitle": "¿Quién es Yishama",
     "makerIntro": "Una empresa israelí, también presente en Hungría, que se encuentra entre los mejores fabricantes de handpan del mundo.",
-    "makerP1": "« Yishama » proviene del hebreo (יִשָּׁמַע) y significa <em>«ser escuchado</em> ». Su intención, según lo expresan, es crear una escultura sonora que ofrezca a cada persona una experiencia única de autodescubrimiento a través del sonido, el ritmo y la armonía. Su lema se resume en una frase: «En Yishama , nos esforzamos por la calidad y la pasión».",
+    "makerP1": "«Yishama» proviene del hebreo (יִשָּׁמַע) y significa <em>«ser escuchado</em>». Su intención, según lo expresan, es crear una escultura sonora que ofrezca a cada persona una experiencia única de autodescubrimiento a través del sonido, el ritmo y la armonía. Su lema se resume en una frase: «En Yishama, nos esforzamos por la calidad y la pasión».",
     "makerP2": "Yonathan y su equipo fabrican instrumentos con graves muy profundos y agudos brillantes. Cuando escuché a Kabeção, Nadishana, David Kuckhermann, Alexandre Lora o Flavio Salvaje tocar con estos instrumentos, comprendí que eran con ellos con quienes quería trabajar.",
     "makerFactsTitle": "Lo que ellos mismos dicen",
     "makerFacts": [
       {
         "t": "Cada instrumento está firmado",
-        "d": "Desde 2021, un grabado láser en el interior proporciona el número de serie, el nombre de la gama y el material con su grosor."
+        "d": "Desde 2021, un grabado láser en el interior proporciona el número de serie, el nombre de la escala y el material con su grosor."
       },
       {
         "t": "El formato",
@@ -454,30 +454,30 @@ export const es: Dict = {
       }
     ],
     "makerCta": "Descubre los handpans Yishama",
-    "makerDisclosure": "Transparencia: Soy embajadora y afiliada Yishama . Si usas mi enlace, recibo una comisión; esto no afecta el precio para ti. Solo represento a fabricantes cuyo trabajo admiro profundamente.",
+    "makerDisclosure": "Transparencia: Soy embajadora y afiliada Yishama. Si usas mi enlace, recibo una comisión; esto no afecta el precio para ti. Solo represento a fabricantes cuyo trabajo admiro profundamente.",
     "videosEyebrow": "En la música",
     "videosTitle": "Lo que grabé con ellos",
     "videosIntro": "Una versión de Sting, una oración, una canción folclórica húngara, rap francés. Todo se reproduce en los dos Yishama a 432 Hz.",
     "videosFeaturedLabel": "El vídeo que conmovió a Yonathan",
     "videosFeaturedTitle": "La forma de mi corazón — Sting",
-    "videosFeaturedText": "Cuando se lo envié, respondió: “¡Guau, guau, guau, qué bonito!” […] ¡Tu voz es increíble, me llega al corazón! Me encantaría compartirla con nuestra audiencia Yishama .",
+    "videosFeaturedText": "Cuando se lo envié, respondió: “¡Guau, guau, guau, qué bonito!” […] ¡Tu voz es increíble, me llega al corazón! Me encantaría compartirla con nuestra audiencia Yishama.",
     "videosPlaylistCta": "Vea la lista de reproducción completa Yishama",
     "videosWatch": "Mirar",
     "bridgeEyebrow": "Lo que produjeron estos dos bandos",
     "bridgeTitle": "Nadie pudo darme el método; simplemente no existía.",
     "bridgeP1": "Estaba feliz y completamente perdido. Dos magníficos y muy complejos instrumentos llegaron sin instrucciones. Era como si me hubieran confiado dos naves espaciales, solo que el manual de pilotaje no estaba escrito en ninguna parte, para nadie.",
-    "bridgeP1b": "El handpan es un instrumento <strong>del siglo XXI</strong> que aún evoluciona rápidamente: carece de los siglos de tradición pedagógica del piano o la guitarra. Ni siquiera puede tener <em>un único</em> método: existen tantos handpans como escalas, arreglos de notas y cantidades de notas. Lo que es válido para un instrumento ya no lo es para otro. Esto no se debe a un descuido; es la juventud de un instrumento en constante evolución.",
-    "bridgeP1c": "A esto se suma lo que lo hace tan mágico: el handpan suele ser un instrumento <strong>modal</strong> . Esta es una ventaja y un excelente punto de partida, especialmente si nunca antes has tocado música; obtienes un resultado hermoso casi de inmediato, sin teoría. Pero también te das cuenta rápidamente de que estás dando vueltas en círculos. Y en cuanto te conviertes en un músico profesional, esperando acompañamiento cromático o queriendo cantar canciones reales sobre él —como fue mi caso—, se vuelve muy complejo, muy rápidamente. Yo venía de la batería, un instrumento puramente rítmico: no tenía ninguna base en armonía en la que apoyarme.",
-    "bridgeP2": "En agosto de 2023, comencé un documento para finalmente averiguar cómo componer mis acordes en mis dos paneles. Tarjetas de colores, una nota por color. <strong>Este documento se convirtió en Handpan Constellation Studio .</strong>",
+    "bridgeP1b": "El handpan es un instrumento <strong>del siglo XXI</strong> que aún evoluciona rápidamente: carece de los siglos de tradición pedagógica del piano o la guitarra. Ni siquiera puede tener <em>un método único</em>: existen tantos handpans como escalas, arreglos de notas y cantidades de notas. Lo que es válido para un instrumento ya no lo es para otro. Esto no se debe a un descuido; es la juventud de un instrumento vivo.",
+    "bridgeP1c": "A esto se suma lo que lo hace tan mágico: el handpan suele ser un instrumento <strong>modal</strong>. Esta es una ventaja y un excelente punto de partida, especialmente si nunca antes has tocado música; obtienes un resultado hermoso casi de inmediato, sin teoría. Pero también te das cuenta rápidamente de que estás dando vueltas en círculos. Y en cuanto te conviertes en un músico profesional, esperando acompañamiento cromático o queriendo cantar canciones reales sobre él —como fue mi caso—, se vuelve muy complejo, muy rápidamente. Yo venía de la batería, un instrumento puramente rítmico: no tenía ninguna base en armonía en la que apoyarme.",
+    "bridgeP2": "En agosto de 2023, comencé un documento para finalmente averiguar cómo componer mis acordes en mis dos paneles. Tarjetas de colores, una nota por color. <strong>Este documento se convirtió en Handpan Constellation Studio.</strong>",
     "bridgeDocAlt": "Página de un documento manuscrito fechado en agosto de 2023, titulado \"Mapeo completo de la ubicación de las notas en los handpans por tipo de nota\" (ortografía original). A la izquierda, la carcasa del E 18 sobre un fondo ocre, su E3 ding en el centro y todas sus notas a su alrededor en puntos de color; a la derecha, la carcasa del D Kurd 18 sobre un fondo crema, su D3 ding en el centro, sus notas dispuestas de la misma manera, incluidas las de abajo. En la parte inferior, una cuadrícula cromática de cuatro octavas, de C2 a B5: los cuadrados de las notas presentes están coloreados, los demás permanecen pálidos. Cada nombre de nota tiene su propio color, el mismo para todas las octavas: C en rojo, D en naranja, E en amarillo, F en verde, G en cian, A en azul, B en magenta. A la derecha, una pequeña tabla de \"Recordatorio\" muestra las equivalencias C = Do, D = Ré, E = Mi…",
-    "bridgeDocCaption": "Agosto de 2023, página 4 de 21 de este documento: mis dos secciones dibujadas a mano con todas sus notas, y debajo de ellas las cuatro octavas donde coloreé las notas que realmente conocía. Un color por nota, independientemente de la octava; esta ya era la regla de la aplicación ChromaKeys , tres años antes. Nunca la terminé: la dejé a medias porque era demasiado compleja para mí; mi nivel de teoría musical era demasiado bajo para comprender y modelar todo por completo.",
+    "bridgeDocCaption": "Agosto de 2023, página 4 de 21 de este documento: mis dos secciones dibujadas a mano con todas sus notas, y debajo de ellas las cuatro octavas donde coloreé las notas que realmente conocía. Un color por nota, independientemente de la octava; esta ya era la regla de la aplicación ChromaKeys, tres años antes. Nunca la terminé: la dejé a medias porque era demasiado compleja para mí; mi nivel de teoría musical era demasiado bajo para comprender y modelar todo por completo.",
     "bridgeDocZoomHint": "Imagen de alta resolución: ábrala y vuelva a hacer clic en ella para ver el tamaño real; ahí es donde se leen los nombres de las notas y la cuadrícula.",
-    "bridgeP3": "Lo más preocupante es que la pregunta inicial provino de él. Ya en agosto de 2022, Yonathan me escribió sobre el instrumento \"cromático, de cantautor\": \"intenta tocar algunas canciones en la aplicación usando esta escala para que podamos entender qué notas te faltan y encontrar la manera de añadirlas\". Tres años después, la aplicación responde a esa pregunta para todos.",
+    "bridgeP3": "Lo más preocupante es que la pregunta inicial provino de él. Ya en agosto de 2022, Yonathan me escribió sobre el instrumento \"cromático, de cantautor\": \"intenta tocar algunas piezas en la aplicación con esta escala para que podamos entender qué notas te faltan y encontrar la manera de añadirlas\". Tres años después, la aplicación responde a esa pregunta para todos.",
     "bridgeAppTitle": "Lo que la aplicación hace hoy por un handpan acústico.",
     "bridgeAppIntro": "Todo lo que sigue es gratuito y no requiere instrumentos electrónicos.",
     "bridgeApp": [
       {
-        "t": "Tu gama de colores",
+        "t": "Tu escala, en color",
         "d": "Tú eliges tu instrumento: la aplicación diseña tu estuche con tus notas reales, cada una con su propio color. La pantalla se convierte en el espejo de tu sartén."
       },
       {
@@ -485,7 +485,7 @@ export const es: Dict = {
         "d": "Una opción de configuración ajusta la aplicación a tu handpan, de modo que lo que oyes en la pantalla suene bien con lo que tienes en tus manos."
       },
       {
-        "t": "🎯 Completa tu gama",
+        "t": "🎯 Completa tu escala",
         "d": "La aplicación compara tus notas reales con los acordes que requieren y te indica exactamente cuáles te faltan; luego, qué segundo handpan las proporcionaría y cuántas canciones desbloquearías."
       },
       {
@@ -493,8 +493,8 @@ export const es: Dict = {
         "d": "En cuanto aparece el segundo panel, las dos conchas se muestran una al lado de la otra y cada acorde se dibuja en ambas, con el orden de ejecución y las manos correspondientes. Justo mi problema de gimnasia, resuelto en pantalla."
       }
     ],
-    "bridgeSignature": "Mis dos escalas personalizadas están disponibles en la aplicación, con la marca \"✨ Signature David Lesage \". El distintivo lleva mi nombre: las especificaciones son mías, pero las escalas son <strong>de Yishama , diseñadas por Yhonatan Ale-Yahav</strong> . Puedes descargarlas, escucharlas y descubrir sus posibilidades, incluso sin tenerlas físicamente.",
-    "bridgeHonest": "Sinceramente, la aplicación no te escucha. No adivina tu escala a través del micrófono; tú la eliges o construyes la base nota por nota. A partir de ahí, razona basándose en tus notas reales.",
+    "bridgeSignature": "Mis dos escalas personalizados están en la aplicación, con la insignia \"✨ Signature David Lesage \". La insignia lleva mi nombre: las especificaciones son mías, pero los escalas son <strong>de Yishama y fueron diseñados por Yhonatan Ale-Yahav</strong>. Puedes cargarlos, escucharlos y ver cómo funcionan, incluso sin tenerlos en tus manos.",
+    "bridgeHonest": "Sinceramente, la aplicación no te escucha. No adivina tu escala en el micrófono; tú la eliges o construyes tu estructura nota por nota. A partir de ahí, razona basándose en tus notas reales.",
     "bridgeCta": "Descubra Handpan Constellation Studio",
     "bridgeCtaBlog": "Lee: Cómo usar la aplicación en tu handpan acústico",
     "endEyebrow": "Y ahora",
@@ -504,14 +504,14 @@ export const es: Dict = {
     "endCtaYishama": "Descubre Yishama"
   },
   "shop": {
-    "title": "Tienda de handpans — Neotone , micrófonos y accesorios",
-    "description": "Una selección de instrumentos y accesorios excepcionales, probados y elegidos por David Lesage : handpans digitales Neotone y micrófonos Hisong .",
-    "eyebrow": "Comercio",
+    "title": "Tienda de handpans — Neotone, micrófonos y accesorios",
+    "description": "Una selección de instrumentos y accesorios excepcionales, probados y elegidos por David Lesage: handpans digitales Neotone y micrófonos Hisong.",
+    "eyebrow": "Tienda",
     "title2": "Embajador de instrumentos y micrófonos excepcionales",
     "intro": "La calidad y el refinamiento son de suma importancia para mí.",
     "ambassadorText": "Colaboro con fabricantes de instrumentos y micrófonos excepcionales, cuya calidad me enorgullece mostrar y representar. A través de mí, podrá beneficiarse de cupones de descuento, así como de demostraciones y pruebas durante mis eventos en el distrito 20 de París.",
-    "keyNotice": "Pago en línea deshabilitado: ingrese PUBLIC_SNIPCART_KEY en .env para activar el carrito de compras.",
-    "from": "del ",
+    "keyNotice": "Pago en línea deshabilitado: ingrese PUBLIC_SNIPCART_KEY en.env para activar el carrito de compras.",
+    "from": "del",
     "soon": "Pronto",
     "soonLong": "Muy pronto",
     "addCart": "Añadir a la cesta",
@@ -546,7 +546,7 @@ export const es: Dict = {
     "copyCode": "Copia el código",
     "codeCopied": "¡Copiado!",
     "priceNotes": {
-      "hisong": "<strong>⚠️ Importante:</strong> En la página web Hisong , los precios se muestran <strong>sin IVA</strong> (de 265,95 € a 354,95 € sin IVA). <strong>El IVA del 20 %</strong> se añade al finalizar la compra. Por lo tanto, los precios indicados son los <strong>precios reales con IVA incluido</strong> , para evitar sorpresas desagradables.<br><br> <strong>Buenas noticias: los descuentos son acumulativos.</strong><br> — Mi código <strong>DAVID-LESAGE-SAVE-5</strong> : <strong>-5%</strong><br> — Código <strong>VIP10</strong> : −10% de descuento en tu primer pedido (se aplica automáticamente)<br> — a veces descuentos excepcionales del 15 al 20%<br><br> <strong>Mi código:</strong> si usas mi enlace, se aplicará automáticamente. Si no lo ves al finalizar la compra, introdúcelo manualmente; el botón que aparece justo debajo lo copiará.<br><br> <strong>Gastos de envío:</strong> desde <strong>11,95 €</strong> en Francia; usted elige la empresa de transporte al finalizar la compra.<br><br> <strong>Ejemplo concreto:</strong><br> — Kit para músicos: ≈ <strong>273 € IVA incluido</strong> después de los dos descuentos, o ≈ <strong>285 € con gastos de envío incluidos.</strong><br> — Kit maestro: ≈ <strong>364 € IVA incluido</strong> , o ≈ <strong>376 € con gastos de envío incluidos.</strong>"
+      "hisong": "<strong>⚠️ Importante:</strong> En la página web Hisong, los precios se muestran <strong>sin IVA</strong> (de 265,95 € a 354,95 € sin IVA). <strong>El IVA del 20%</strong> se añade al finalizar la compra. Por lo tanto, los precios indicados son los <strong>precios reales con IVA incluido</strong>, para evitar sorpresas desagradables.<br><br> <strong>Buenas noticias: los descuentos son acumulativos.</strong><br> — Mi código <strong>DAVID-LESAGE-SAVE-5</strong>: <strong>-5%</strong><br> — Código <strong>VIP10</strong>: −10% de descuento en tu primer pedido (se aplica automáticamente)<br> — a veces descuentos excepcionales del 15 al 20%<br><br> <strong>Mi código:</strong> si usas mi enlace, se aplicará automáticamente. Si no lo ves al finalizar la compra, introdúcelo manualmente; el botón que aparece justo debajo lo copiará.<br><br> <strong>Gastos de envío:</strong> desde <strong>11,95 €</strong> en Francia; usted elige la empresa de transporte al finalizar la compra.<br><br> <strong>Ejemplo concreto:</strong><br> — Kit para músicos: ≈ <strong>273 € IVA incluido</strong> después de los dos descuentos, o ≈ <strong>285 € con gastos de envío incluidos.</strong><br> — Kit maestro: ≈ <strong>364 € IVA incluido</strong>, o ≈ <strong>376 € con gastos de envío incluidos.</strong>"
     },
     "watchDemo": "Mira mi demostración en vídeo.",
     "adviceTitle": "¿Necesitas asesoramiento antes de comprar?",
@@ -559,7 +559,7 @@ export const es: Dict = {
       },
       "app": {
         "label": "Solicitud",
-        "blurb": "Handpan Constellation Studio : la aplicación educativa que hace visible la música."
+        "blurb": "Handpan Constellation Studio: la aplicación educativa que hace visible la música."
       },
       "creations": {
         "label": "Mis creaciones · Ahora Groove",
@@ -598,21 +598,21 @@ export const es: Dict = {
       },
       "electronique": {
         "label": "Electrónico",
-        "blurb": "Todos los rangos, el casco, el escenario.",
+        "blurb": "Todas las escalas, el casco, la etapa.",
         "more": "Todo lo que necesitas saber sobre Neotone →"
       }
     },
     "subNavLabel": "Dos universos:",
-    "handpanNote": "La única diferencia real: el <strong>Neotone</strong> (fabricado por Soundventure) se pide a través de mi calculadora, con un código de descuento personalizado y una garantía de 6 años. Para <strong>Yishama</strong> , soy embajador y afiliado; los pedidos se realizan en su sitio web y mi enlace está contigo. Dos formas de comprar, un mismo requisito de calidad.",
+    "handpanNote": "La única diferencia real: el <strong>Neotone</strong> (fabricado por Soundventure) se pide a través de mi calculadora, con un código de descuento personalizado y una garantía de 6 años. Para <strong>Yishama</strong>, soy embajador y afiliado; los pedidos se realizan en su sitio web y mi enlace está contigo. Dos formas de comprar, un mismo requisito de calidad.",
     "handpanBridge": "El vínculo entre ambos: Handpan Constellation Studio →",
     "products": {
       "handpan-studio": {
         "name": "Handpan Constellation Studio · la aplicación",
-        "description": "Mi aplicación educativa, tanto para handpan acústico como para Neotone : colores, geometría y emociones que hacen que la música sea visible. Prueba gratuita en modo acústico, luego Studio desde 9,90 €/mes: desbloquea la creación, el guardado y la exportación de tus partituras en PDF/PNG."
+        "description": "Mi aplicación educativa, tanto para handpan acústico como para Neotone: colores, geometría y emociones que hacen que la música sea visible. Prueba gratuita en modo acústico, luego Studio desde 9,90 €/mes: desbloquea la creación, el guardado y la exportación de tus partituras en PDF/PNG."
       },
       "neotone-one": {
         "name": "Neotone¹",
-        "description": "Handpan digital de 10 notas, todas las escalas, calidad profesional. Adquiéralo con oferta especial: código de descuento personalizado + 6 años de garantía."
+        "description": "Handpan digital de 10 notas, todas escalas, calidad de estudio. Cómprelo con el código de descuento incluido + 6 años de garantía."
       },
       "neotone-mutant": {
         "name": "Neotone¹ Mutant",
@@ -632,15 +632,15 @@ export const es: Dict = {
       },
       "housse": {
         "name": "Ahora, la versión de calabaza de Groove es de David Lesage",
-        "description": "Funda premium para mochila diseñada por David Lesage : esterilla integrada, correas desmontables, bolsillo de almacenamiento (para huevos, accesorios y método), interior de terciopelo. ✋ Edición especial hecha a mano, en una serie ultralimitada."
+        "description": "Funda para mochila de escala de alto rendimiento diseñada por David Lesage: función de esterilla integrada, correas desmontables, bolsillo de almacenamiento (para huevos, accesorios y material de escalada), interior de terciopelo. ✋ Edición especial hecha a mano, en una serie ultralimitada."
       },
       "tambour": {
         "name": "Tambor chamánico · El alma del tambor",
-        "description": "Tambor de marco artesanal de Julien (L’Âme du Tambour), un artesano ético, apasionado y honesto. Disfruta de un 5 % de descuento con el código David-Tambour."
+        "description": "Tambor de marco artesanal de Julien (L’Âme du Tambour), un artesano ético, apasionado y honesto. Disfruta de un 5% de descuento con el código David-Tambour."
       },
       "micro-hisong": {
         "name": "Micrófono Hisong AirStudio S1",
-        "description": "El primer estudio móvil todo en uno (micrófono, auriculares inalámbricos, interfaz de audio, estuche de carga). Ideal para voces, handpan acústico y gonilélé: un auténtico estudio portátil.<br><br> <strong>Tres kits para elegir</strong> (los precios incluyen el IVA del 20%):<br> 1 — Músico 4 en 1 · <strong>319 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(265,95 € sin IVA)</span><br> 2 — Creador 5 en 1 · <strong>372 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(309,95 € IVA excluido)</span><br> 3 — Master 6 en 1 · <strong>426 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(354,95 € IVA excluido)</span><br><br> <strong>Mi consejo:</strong> si quieres usar el micrófono para <strong>actuaciones en directo</strong> , necesitas el <strong>kit 6 en 1 (Master)</strong> .<br><br> Demostraciones y ventas directas en mis escaparates de París."
+        "description": "El primer estudio móvil todo en uno (micrófono, auriculares inalámbricos, interfaz de audio, estuche de carga). Ideal para voces, handpan acústico y gonilélé: un auténtico estudio portátil.<br><br> <strong>Tres kits para elegir</strong> (los precios incluyen el IVA del 20%):<br> 1 — Músico 4 en 1 · <strong>319 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(265,95 € sin IVA)</span><br> 2 — Creador 5 en 1 · <strong>372 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(309,95 € IVA excluido)</span><br> 3 — Master 6 en 1 · <strong>426 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(354,95 € IVA excluido)</span><br><br> <strong>Mi consejo:</strong> si quieres usar el micrófono para <strong>actuaciones en directo</strong>, necesitas el <strong>kit 6 en 1 (Master)</strong>.<br><br> Demostraciones y ventas directas en mis escaparates de París."
       },
       "micro-muling": {
         "name": "Micrófono Muling MP1 + preamplificador HMP-2",
@@ -648,7 +648,7 @@ export const es: Dict = {
       },
       "atlas": {
         "name": "Soportes Atlas Handpan: profesionales y todos",
-        "description": "Los trípodes magnéticos del fabricante italiano Atlas . El handpan se apoya sobre un disco flotante con ocho imanes protegidos, sin tornillos ni correas. Hay dos modelos disponibles: el <strong>Atlas Pro</strong> , de aluminio, telescópico, de 1,8 kg, con bolsa de transporte incluida (215 €); y el <strong>Atlas All</strong> , de madera, cuya cabeza se ajusta entre las patas para tocar sentado, antes de acoplar las patas y extensiones para tocar de pie (230 €). Soy socio de la marca; ambos modelos estarán disponibles para probar en la sala de exposición."
+        "description": "Los trípodes magnéticos del fabricante italiano Atlas. El handpan se apoya sobre un disco flotante con ocho imanes protegidos, sin tornillos ni correas. Hay dos modelos disponibles: el <strong>Atlas Pro</strong>, de aluminio, telescópico, de 1,8 kg, con bolsa de transporte incluida (215 €); y el <strong>Atlas All</strong>, de madera, cuya cabeza se ajusta entre las patas para tocar sentado, antes de acoplar las patas y extensiones para tocar de pie (230 €). Soy socio de la marca; ambos modelos estarán disponibles para probar en la sala de exposición."
       },
       "phoenix-opus1": {
         "name": "La Alianza Fénix — Opus I",
@@ -676,11 +676,11 @@ export const es: Dict = {
       },
       "onesec": {
         "name": "Un segundo: recupera el control de tu tiempo frente a la pantalla.",
-        "description": "La app que realmente me ayuda a evitar perderme en el desplazamiento. Antes de abrir una app tentadora (redes sociales…), OneSec me obliga a hacer una breve pausa —el tiempo justo para respirar— y la necesidad compulsiva desaparece. Es sencilla y, para mí, es una de las pocas cosas que realmente me han funcionado. Este método está científicamente validado (estudios con el Instituto Max Planck). Es prácticamente gratuita; consigue un 30 % de descuento en la versión Premium con mi enlace."
+        "description": "La app que realmente me ayuda a evitar perderme en el desplazamiento. Antes de abrir una app tentadora (redes sociales…), OneSec me obliga a hacer una breve pausa —el tiempo justo para respirar— y la necesidad compulsiva desaparece. Es sencilla y, para mí, es una de las pocas cosas que realmente me han funcionado. Este método está científicamente validado (estudios con el Instituto Max Planck). Es prácticamente gratuita; consigue un 30% de descuento en la versión Premium con mi enlace."
       },
       "oko": {
         "name": "Botella de agua con filtro ÖKO",
-        "description": "La botella de agua que llevo conmigo a todas partes, siempre, como músico que viaja constantemente: el agua es fundamental. Filtración instantánea sin esperas ni electricidad, probada en un laboratorio independiente acreditado por COFRAC contra más de 200 contaminantes. Me complace representar el producto perfecto para todos los viajeros. Disfruta de un 10 % de descuento con mi código."
+        "description": "La botella de agua que llevo conmigo a todas partes, siempre, como músico que viaja constantemente: el agua es fundamental. Filtración instantánea sin esperas ni electricidad, probada en un laboratorio independiente acreditado por COFRAC contra más de 200 contaminantes. Me complace representar el producto perfecto para todos los viajeros. Disfruta de un 10% de descuento con mi código."
       },
       "structured": {
         "name": "Estructurado: planificación diaria",
@@ -691,8 +691,8 @@ export const es: Dict = {
   "booking": {
     "defaultTitle": "Reserva tu visita",
     "defaultIntro": "Déjame tus datos de contacto y te responderé personalmente para concretar los detalles.",
-    "first": "Nombre de pila",
-    "last": "Nombre",
+    "first": "Nombre",
+    "last": "Apellidos",
     "email": "Correo electrónico",
     "phone": "Teléfono (opcional)",
     "people": "¿Cuántos de vosotros seréis?",
@@ -719,7 +719,7 @@ export const es: Dict = {
     "goniPrefill": "Versión (10 cuerdas / 12 cuerdas + pastilla):\nEstuche (+€40) / Afinador (+€10):\nRecogida en París o envío (+€25):",
     "collabPrefill": "Mi proyecto en pocas líneas:",
     "vipTitle": "Una cita solo para ti",
-    "vipScope": "Tú decides qué hacer: descubre y prueba cualquier instrumento de la tienda ( Neotone , handpans acústicos, Gonilélé , calabaza…), prueba un micrófono para handpan ( Hisong , Muling ) o simplemente recibe una guía personalizada, tanto si eres principiante, como si aún buscas el instrumento ideal o quieres profundizar en un tema específico. Tanto si reservas una hora como una hora y media, solo dime qué te trae por aquí: yo me encargaré de todo.",
+    "vipScope": "Tú decides qué hacer: descubre y prueba cualquier instrumento de la tienda (Neotone, handpans acústicos, Gonilélé, calabaza…), prueba un micrófono para handpan (Hisong, Muling) o simplemente recibe una guía personalizada, tanto si eres principiante, como si aún buscas el instrumento ideal o quieres profundizar en un tema específico. Tanto si reservas una hora como una hora y media, solo dime qué te trae por aquí: yo me encargaré de todo.",
     "vipPriceLabel": "Precio",
     "vipPriceNote": "Un único precio, independientemente del motivo de su visita.",
     "vipPolicyShort": "Cancelación con menos de 24 horas de antelación: el pago sigue siendo obligatorio —este espacio estaba reservado para usted—, pero la cita se puede reprogramar dentro de los 3 meses siguientes.",
@@ -731,7 +731,7 @@ export const es: Dict = {
       "lesson": "Toma una lección con David."
     },
     "discountTitle": "Obtén mi código de descuento Neotone",
-    "discountIntro": "Solicitaré un código de descuento personalizado para ti a Neotone : 5% de descuento online y 7% si vienes a probarlo a la tienda. Te responderé en un plazo de 24 a 48 horas.",
+    "discountIntro": "Solicitaré un código de descuento personalizado para ti a Neotone: 5% de descuento online y 7% si vienes a probarlo a la tienda. Te responderé en un plazo de 24 a 48 horas.",
     "discountModel": "¿Qué modelo te interesa?",
     "discountModelChoose": "Elegir…",
     "discountModelNames": {
@@ -741,7 +741,7 @@ export const es: Dict = {
     },
     "discountCountry": "País de entrega",
     "discountCountryPlaceholder": "Francia, Bélgica, Suiza…",
-    "discountNote": "Esta información se utiliza únicamente para solicitar su código a Neotone .",
+    "discountNote": "Esta información se utiliza únicamente para solicitar su código a Neotone.",
     "phonePlain": "Teléfono",
     "phoneWhyShowcase": "Imprescindible para una presentación: debe tener una fecha fija, y si surge algún imprevisto de última hora por cualquiera de las partes, debo poder contactarle de inmediato.",
     "socialLabel": "Tu cuenta de redes sociales",
@@ -751,7 +751,7 @@ export const es: Dict = {
     "discountNext1": "Leí tu mensaje personalmente; respondo a todo el mundo.",
     "discountNext2": "En un plazo de 24 horas tras mi lectura, <strong>Neotone se pondrá en contacto contigo directamente</strong> y te enviará tu código de descuento.",
     "discountNext3": "Neotone se encarga entonces de todo el proceso: pedido, pago y entrega. Sigo disponible si me necesitas.",
-    "discoveryLabel": "¿Cómo supiste de mí como embajador Neotone ?",
+    "discoveryLabel": "¿Cómo supiste de mí como embajador Neotone?",
     "discoveryChoose": "Elegir…",
     "discoveryNames": {
       "youtube": "YouTube",
@@ -778,7 +778,7 @@ export const es: Dict = {
     "freeMessageLabel": "Tu mensaje",
     "freeMessageHint": "Siéntese donde quiera; lo leo todo.",
     "sessionTypeRecommended": "★ Recomendado para principiantes",
-    "sessionTypeHint": "¿Acabas de recibir tu instrumento Neotone , handpan acústico, micrófono— y te sientes un poco perdido? Esta es la lección perfecta para ti: elige \"Toma una lección con David\", empezamos juntos, lo configuramos todo y tomamos las riendas, sin ningún compromiso a largo plazo.",
+    "sessionTypeHint": "¿Acabas de recibir tu instrumento Neotone, handpan acústico, micrófono— y te sientes un poco perdido? Esta es la lección perfecta para ti: elige \"Toma una lección con David\", empezamos juntos, lo configuramos todo y tomamos las riendas, sin ningún compromiso a largo plazo.",
     "durationLabel": "¿Cuánto tiempo quieres que tardemos?",
     "durationHint": "Para una experiencia práctica, la duración recomendada es de 1 hora y 30 minutos: te proporciono todas las herramientas que necesitas para ser independiente.",
     "slotsTitle": "Su disponibilidad",
@@ -811,7 +811,7 @@ export const es: Dict = {
     "showcaseInterestNames": {
       "all": "Todo",
       "handpan": "Handpan",
-      "mic": "Micrófono ( Muling y/o Hisong )",
+      "mic": "Micrófono (Muling y/o Hisong)",
       "calebasse": "Calabaza",
       "gonilele": "Gonilélé (arpa africana)",
       "meet": "Para conocerte"
@@ -819,7 +819,7 @@ export const es: Dict = {
   },
   "muling": {
     "title": "Micro Muling para handpan acústico | David Lesage",
-    "description": "El micrófono Muling para handpans acústicos, probado y presentado por David Lesage : grabación clara y precisa, sin retroalimentación. Vídeo de prueba completo, fotos e información para pedidos.",
+    "description": "El micrófono Muling para handpans acústicos, probado y presentado por David Lesage: grabación clara y precisa, sin retroalimentación. Vídeo de prueba completo, fotos e información para pedidos.",
     "back": "← Volver a la tienda",
     "eyebrow": "Micrófono para handpan acústico",
     "heroTitle": "El micrófono Muling",
@@ -850,13 +850,13 @@ export const es: Dict = {
     "priceLabel": "Precio del fabricante",
     "priceNote": "Los gastos de envío y cualquier tasa aduanera aplicable son adicionales.",
     "priceDiscountLabel": "Al pasar por mí",
-    "priceDiscountNote": "Código {code} — {pct} % de descuento sobre el precio del fabricante, reservado para pedidos realizados a través de este formulario.",
+    "priceDiscountNote": "Código {code} — {pct}% de descuento sobre el precio del fabricante, reservado para pedidos realizados a través de este formulario.",
     "orderTitle": "Pide mi micrófono",
-    "orderText": "El fabricante aún no ofrece pago en línea para Francia: te pondré en contacto directamente con ellos. Rellena el formulario y recibirás inmediatamente la información de contacto para pagar Muling , que se encargará de todo hasta que recibas tu micrófono.",
+    "orderText": "El fabricante aún no ofrece pago en línea para Francia: te pondré en contacto directamente con ellos. Rellena el formulario y recibirás inmediatamente la información de contacto para pagar Muling, que se encargará de todo hasta que recibas tu micrófono.",
     "ctaContact": "Pide mi micrófono",
     "mulingOrderTitle": "Pide el micrófono Muling",
-    "mulingOrderIntro": "Código {code} aplicado: {pct} % de descuento sobre el precio del fabricante. Aquí están los detalles del pago; Muling se encargará directamente del resto.",
-    "mulingOrderPriceLine": "Precio del fabricante {base} € − {pct} % = {final} €",
+    "mulingOrderIntro": "Código {code} aplicado: {pct}% de descuento sobre el precio del fabricante. Aquí están los detalles del pago; Muling se encargará directamente del resto.",
+    "mulingOrderPriceLine": "Precio del fabricante {base} € − {pct}% = {final} €",
     "mulingQuantity": "¿Cuántos micrófonos?",
     "mulingDeliveryNote": "Información especial para el repartidor.",
     "mulingDeliveryNoteHint": "Código de acceso al edificio, piso, instrucciones para el depósito… (opcional)",
@@ -868,7 +868,7 @@ export const es: Dict = {
     "mulingConsent": "Acepto que mi información pueda ser transmitida a Muling Musical Instruments Co., Ltd. (China) y a Résonances Productions para el procesamiento de mi pedido.",
     "mulingConsentRequired": "Para procesar el pedido, es necesario que Muling proporcione sus datos; marque la casilla para continuar.",
     "mulingBankTitle": "Para pagar su pedido",
-    "mulingBankIntro": "Transfiere el importe exacto a Muling , incluyendo tu número de referencia en la descripción. El pago se realiza en euros, únicamente mediante transferencia SEPA.",
+    "mulingBankIntro": "Transfiere el importe exacto a Muling, incluyendo tu número de referencia en la descripción. El pago se realiza en euros, únicamente mediante transferencia SEPA.",
     "mulingBankBeneficiary": "Beneficiario",
     "mulingBankIban": "IBAN",
     "mulingBankBic": "BIC",
@@ -880,7 +880,7 @@ export const es: Dict = {
     "mulingCopiedLine": "¡Copiado!",
     "mulingDownloadPdf": "⬇️ Descarga esta información en formato PDF",
     "mulingBankSepaOnly": "⚠️ Esta cuenta solo acepta transferencias SEPA en euros; no se aceptan transferencias SWIFT ni internacionales.",
-    "mulingBankNotified": "Muling ha sido notificado de su pedido en su dirección oficial ( {email} ), con toda la información; ellos son quienes se encargan del envío y el seguimiento.",
+    "mulingBankNotified": "Muling ha sido notificado de su pedido en su dirección oficial ({email}), con toda la información; ellos son quienes se encargan del envío y el seguimiento.",
     "mulingBankNext": "Una vez completada la transferencia, guarda el comprobante de pago (captura de pantalla o PDF) y súbelo aquí. Muling se pondrá en contacto contigo para confirmar la recepción y proporcionarte la información de seguimiento.",
     "mulingProofLabel": "Sube tu comprobante de transferencia",
     "mulingProofHint": "Captura de pantalla o PDF de tu transferencia (máximo 5 MB).",
@@ -890,11 +890,11 @@ export const es: Dict = {
     "mulingProofMissing": "Suba el comprobante de transferencia (imagen o PDF) antes de continuar.",
     "mulingProofInvalidType": "Formato no aceptado: suba una imagen (JPG, PNG) o un PDF.",
     "mulingProofTooLarge": "El archivo pesa más de 5 MB; redúzcalo e inténtelo de nuevo.",
-    "mulingResumeIntro": "Estás regresando para reportar el pago de tu pedido {ref} . Confirma la dirección de correo electrónico que usaste al realizar el pedido y luego sube tu comprobante de pago.",
+    "mulingResumeIntro": "Estás regresando para reportar el pago de tu pedido {ref}. Confirma la dirección de correo electrónico que usaste al realizar el pedido y luego sube tu comprobante de pago.",
     "mulingResumeEmailLabel": "Dirección de correo electrónico utilizada al realizar el pedido",
     "mulingResumeEmailHint": "Él es quien identifica su pedido; no se muestra ninguna información personal en esta página hasta que haya sido verificado.",
     "mulingResumeEmailMissing": "Indica la dirección de correo electrónico utilizada al realizar el pedido.",
-    "mulingResumeAmountNote": "El importe exacto de su pedido se muestra en su correo electrónico de confirmación ( {unit} € por micro).",
+    "mulingResumeAmountNote": "El importe exacto de su pedido se muestra en su correo electrónico de confirmación ({unit} € por micro).",
     "mulingResumeMismatch": "Esta dirección de correo electrónico no está asociada a este pedido. Por favor, utilice la dirección de correo electrónico exacta que proporcionó al realizar su pedido o escríbame a contact@lesagedavid.fr.",
     "mulingThankYouTitle": "Gracias, anotado ✨",
     "mulingThankYouText": "Hemos recibido su comprobante de pago y lo hemos enviado a Muling junto con toda la información de su pedido. Recibirá un correo electrónico de confirmación en esta dirección; por favor, guárdelo como comprobante de pago. Muling se pondrá en contacto con usted directamente para informarle sobre el envío y el seguimiento.",
@@ -929,7 +929,7 @@ export const es: Dict = {
         "d": "La grabación se realiza por contacto: los ruidos externos y otros instrumentos quedan prácticamente bloqueados, lo cual resulta invaluable para las improvisaciones y las actuaciones en directo."
       }
     ],
-    "specsCaution": "⚠️ Importante antes de comprar: las cápsulas están diseñadas exclusivamente para funcionar con el preamplificador Muling . No son compatibles con equipos de otras marcas; se trata de un sistema completo, no de una cápsula para integrar en una configuración existente.",
+    "specsCaution": "⚠️ Importante antes de comprar: las cápsulas están diseñadas exclusivamente para funcionar con el preamplificador Muling. No son compatibles con equipos de otras marcas; se trata de un sistema completo, no de una cápsula para integrar en una configuración existente.",
     "specsSource": "Especificaciones técnicas proporcionadas por el fabricante, contrastadas con mi propia experiencia de uso.",
     "boxTitle": "Lo que contiene el conjunto",
     "boxIntro": "El kit HMP-2 está completo: dos cápsulas y el preamplificador, listo para tocar en uno o dos handpans.",
@@ -991,8 +991,8 @@ export const es: Dict = {
     "dangerTitle": "Lea esto antes de la primera conexión.",
     "dangers": [
       "<strong>Nunca</strong> conecte un sensor pasivo a la entrada CH1.",
-      "Para utilizar un sensor pasivo de tipo H1, el canal CH2 debe estar configurado en <strong>OFF</strong> .",
-      "La fuente de alimentación principal debe tener <strong>polaridad negativa en el centro</strong> . Invertir la polaridad destruirá el dispositivo de forma irreversible."
+      "Para utilizar un sensor pasivo de tipo H1, el canal CH2 debe estar configurado en <strong>OFF</strong>.",
+      "La fuente de alimentación principal debe tener <strong>polaridad negativa en el centro</strong>. Invertir la polaridad destruirá el dispositivo de forma irreversible."
     ],
     "makerEyebrow": "El fabricante",
     "makerTitle": "Instrumentos Muling",
@@ -1004,11 +1004,11 @@ export const es: Dict = {
       },
       {
         "t": "El logotipo",
-        "d": "El logotipo Muling se basa en tres símbolos del pensamiento clásico chino: <strong>el yin y el yang</strong> , el <strong>cielo redondo y la tierra cuadrada</strong> (天圆地方) y los <strong>cinco elementos</strong> (五行). Esto simboliza que el instrumento, el sensor y el músico forman un todo."
+        "d": "El logotipo Muling se basa en tres símbolos del pensamiento clásico chino: <strong>el yin y el yang</strong>, el <strong>cielo redondo y la tierra cuadrada</strong> (天圆地方) y los <strong>cinco elementos</strong> (五行). Esto simboliza que el instrumento, el sensor y el músico forman un todo."
       },
       {
-        "t": "La gama",
-        "d": "Muling desarrolla tres familias de productos para instrumentos de cuerda, además de una gama dedicada al handpan —incluido el conjunto HMP-2 que se presenta en esta página— y pastillas personalizadas de autor."
+        "t": "La escala",
+        "d": "Muling desarrolla tres familias de productos para instrumentos de cuerda, además de una escala específica para handpans —incluido el conjunto HMP-2 que se presenta en esta página— y pastillas personalizadas de edición limitada."
       }
     ],
     "makerLinksTitle": "Sigue Muling",
@@ -1032,7 +1032,7 @@ export const es: Dict = {
   },
   "gonilele": {
     "title": "Arpa Gonilélé — La Casa Ngoni | David Lesage",
-    "description": "El arpa Gonilélé (NGoni lélé), un arpa-laúd de viaje de La Maison du Ngoni, presentada por el embajador David Lesage . Fotos, vídeos, unboxing, precios e información para realizar pedidos.",
+    "description": "El arpa Gonilélé (NGoni lélé), un arpa-laúd de viaje de La Maison du Ngoni, presentada por el embajador David Lesage. Fotos, vídeos, unboxing, precios e información para realizar pedidos.",
     "back": "← Volver a la tienda",
     "eyebrow": "Embajador · La Casa de Ngoni",
     "heroTitle": "El arpa Gonilélé",
@@ -1040,8 +1040,8 @@ export const es: Dict = {
     "ctaOrder": "Pide mi Gonilélé",
     "ctaVideos": "Mira los videos",
     "ctaLesson": "Toma un curso",
-    "whatTitle": "¿Qué es Gonilélé ?",
-    "whatText": "El Gonilélé (o NGoni lélé) es un arpa-laúd de África Occidental, reinventado para viajar por Joris Feuillâtre de La Maison du Ngoni. Con su cuerpo de calabaza, mástil de madera fina y cuerdas pentatónicas, encarna la unión de las energías masculina y femenina, conectadas con lo divino. Un instrumento intuitivo, meditativo y profundo, accesible tanto para principiantes como para músicos experimentados.",
+    "whatTitle": "¿Qué es Gonilélé?",
+    "whatText": "El Gonilélé (o NGoni lélé) es un arpa-laúd de África Occidental reinventada para viajar por Joris Feuillâtre de La Maison du Ngoni. Con su cuerpo de calabaza, mástil de madera fina y cuerdas afinadas en escala pentatónica, encarna la unión de las energías masculina y femenina, conectadas con lo divino. Un instrumento intuitivo, meditativo y profundo, accesible tanto para principiantes como para músicos experimentados.",
     "ambassadorTitle": "Embajador de la Casa de Ngoni",
     "ambassadorText": "Colaboro con Joris Feuillâtre desde 2023. El Gonilélé me ha acompañado en los momentos más importantes de mi vida: es natural que ahora represente a La Maison du Ngoni y que transmita este instrumento a quienes me rodean.",
     "photosTitle": "El instrumento en imágenes",
@@ -1075,7 +1075,7 @@ export const es: Dict = {
     "contactPickup": "Retiro",
     "contactShipping": "Envíos disponibles — Francia · 25 €",
     "paymentTitle": "Pago",
-    "paymentText": "El pago se realiza a la cuenta de la asociación Résonances Productions .",
+    "paymentText": "El pago se realiza a la cuenta de la asociación Résonances Productions.",
     "paymentIban": "IBAN",
     "paymentBic": "BIC",
     "coursesTitle": "¿Quieres aprender conmigo?",
@@ -1084,7 +1084,7 @@ export const es: Dict = {
   },
   "atlas": {
     "title": "Soportes Atlas Handpan: Atlas Pro y Atlas All | David Lesage",
-    "description": "Trípodes magnéticos Atlas para handpans, fabricados en Italia: Atlas Pro en aluminio (250 €) y Atlas All en madera (270 €). Características, fotos y una reseña en París con David Lesage , socio de la marca.",
+    "description": "Trípodes magnéticos Atlas para handpans, fabricados en Italia: Atlas Pro en aluminio (250 €) y Atlas All en madera (270 €). Características, fotos y una reseña en París con David Lesage, socio de la marca.",
     "back": "← Volver a la tienda",
     "eyebrow": "Socio · Atlas Handpan",
     "heroProCaption": "Aluminio: el mismo soporte, extendido y plegado.",
@@ -1102,7 +1102,7 @@ export const es: Dict = {
     "whyPoints": [
       {
         "t": "De rodillas, sentado, de pie",
-        "d": "Atlas anuncia tres posiciones para tocar su gama de guitarras de madera: sobre las piernas, sentado en una silla o de pie. Sin embargo, la Atlas Pro se anuncia para dos posiciones: sentado y de pie."
+        "d": "Atlas anuncia tres posiciones para tocar su guitarra escala de madera: sobre las piernas, sentado en una silla o de pie. Sin embargo, la Atlas Pro se anuncia para dos posiciones: sentado y de pie."
       },
       {
         "t": "Un accesorio magnético",
@@ -1161,8 +1161,8 @@ export const es: Dict = {
     "storyFestivalCaption": "Festival Everness, Hungría: de pie detrás de mis dos handpans acústicos {yishama} — sobre los pies que estaba usando en ese momento.",
     "storyStandsPhotoCaption": "Mi montaje escénico visto de cerca: tres instrumentos, tres soportes diferentes y múltiples alturas para ajustar antes de tocar.",
     "partnerTitle": "¿Por qué estoy hablando de esto ahora?",
-    "partnerText": "Acabamos de concretar la colaboración con Atlas : ahora formo parte de la marca y me enviarán dos stands de demostración para mis presentaciones. Preferí no anunciarlo aquí hasta que se firmara el contrato; ahora que está hecho, lo comparto.",
-    "affiliateNote": "Mi enlace de seguimiento aún no está disponible: por ahora, los botones te llevan directamente a la página oficial Atlas .",
+    "partnerText": "Acabamos de concretar la colaboración con Atlas: ahora formo parte de la marca y me enviarán dos stands de demostración para mis presentaciones. Preferí no anunciarlo aquí hasta que se firmara el contrato; ahora que está hecho, lo comparto.",
+    "affiliateNote": "Mi enlace de seguimiento aún no está disponible: por ahora, los botones te llevan directamente a la página oficial Atlas.",
     "testTitle": "Lo que verificaré delante de ti",
     "testText": "Los recibiré en unos días. Lo que digo en esta página lo digo con pleno conocimiento de causa: he usado cuatro soportes diferentes en el escenario y sé exactamente lo que busco. Lo que aún no tengo es el escenario, así que en cuanto lleguen ambos soportes a la sala de exposiciones, grabaré mi demostración, la publicaré aquí y les contaré qué tal me fue.",
     "videoSectionTitle": "La demostración en vídeo",
@@ -1189,13 +1189,13 @@ export const es: Dict = {
     "pro": {
       "name": "Atlas Pro",
       "tagline": "Aluminio, telescópico, incluye bolsa.",
-      "text": "El modelo de aluminio. Sus tres patas telescópicas son ajustables de forma continua e independiente, un sistema de apertura rápida permite montarlo y plegarlo en segundos, y la estructura se pliega sobre sí misma para facilitar su transporte. Atlas indica que pesa 1,8 kg e incluye la bolsa Atlas .",
+      "text": "El modelo de aluminio. Sus tres patas telescópicas son ajustables de forma continua e independiente, un sistema de apertura rápida permite montarlo y plegarlo en segundos, y la estructura se pliega sobre sí misma para facilitar su transporte. Atlas indica que pesa 1,8 kg e incluye la bolsa Atlas.",
       "material": "Patas telescópicas de aluminio ligero",
       "mount": "Disco flotante, 8 imanes antiarañazos",
       "positions": "Sentado o de pie, ajustable de forma continua",
       "bag": "Bolsa de transporte Atlas Bag incluida",
       "body": "La pieza de madera no está incluida.",
-      "cta": "Consulte el Atlas Pro en el sitio web Atlas ."
+      "cta": "Consulte el Atlas Pro en el sitio web Atlas."
     },
     "all": {
       "name": "Atlas Todo",
@@ -1205,7 +1205,7 @@ export const es: Dict = {
       "mount": "Disco flotante, 8 imanes antiarañazos",
       "positions": "De rodillas, sentado (sin extensiones) o de pie (con extensiones).",
       "cta": "Ver todo el Atlas en el sitio web Atlas",
-      "body": "Incluido: esta es la pieza básica de la gama."
+      "body": "Incluido: esta es la pieza básica de la escala"
     },
     "headEyebrow": "La cabeza del pie",
     "headTitle": "Un pie, pero no solo un pie.",
@@ -1213,7 +1213,7 @@ export const es: Dict = {
     "headPoints": [
       {
         "t": "El instrumento ya no depende de ti.",
-        "d": "Es la cabeza la que sujeta el handpan, no los muslos. Atlas anuncia tres posiciones para tocar su gama de instrumentos de madera: de rodillas, sentado y de pie."
+        "d": "Es la cabeza la que sujeta el handpan, no los muslos. Atlas anuncia tres posiciones para tocar su escala de madera: de rodillas, sentado y de pie."
       },
       {
         "t": "Las notas a continuación permanecen accesibles.",
@@ -1231,23 +1231,23 @@ export const es: Dict = {
     "headIncluded": [
       {
         "t": "Atlas Todo — incluido",
-        "d": "La gama de madera es modular: la base es el cabezal, las patas se atornillan a él para crear el Atlas Short, y luego las extensiones para el Atlas All. Al elegir el Atlas All, dispone de las tres posiciones."
+        "d": "La escala de madera es modular: la base es la pieza principal, a la que se atornillan las patas para crear el modelo Atlas Short, y luego las extensiones para el Atlas All. Al elegir el Atlas All, dispone de las tres posiciones."
       },
       {
         "t": "Atlas Pro: la parte de madera no está incluida.",
-        "d": "Marco Agri, el creador de Atlas , me lo confirmó directamente: «El Atlas Pro no incluye la pieza de madera». El modelo Pro se ajusta para tocar sentado o de pie, pero no incluye la cabeza de madera, la que se usa para tocar sobre las piernas. Es mejor saberlo antes de comprarlo que al abrir la caja."
+        "d": "Marco Agri, el creador de Atlas, me lo confirmó directamente: «El Atlas Pro no incluye la pieza de madera». El modelo Pro se ajusta para tocar sentado o de pie, pero no incluye la cabeza de madera, la que se usa para tocar sobre las piernas. Es mejor saberlo antes de comprarlo que al abrir la caja."
       },
       {
-        "t": "Cuerpo Atlas : solo la cabeza",
-        "d": "Atlas también lo vende por separado (140 €, normalmente 165 €). Esto es lo que debes buscar si solo quieres el juego de regazo, o si quieres mejorar una gama de madera: el kit de patas + extensiones (90 €) lo transforma en el Atlas Short, y luego en Atlas All."
+        "t": "Cuerpo Atlas: solo la cabeza",
+        "d": "Atlas también vende la referencia por separado (140 €, normalmente 165 €). Esta es la opción ideal si solo quieres jugar en tu regazo o si quieres mejorar un escala de madera: el kit de pies y extensiones (90 €) lo transforma en Atlas Short y, posteriormente, en Atlas All."
       }
     ],
     "headCompatTitle": "Todas las piezas son compatibles entre sí.",
     "headCompatText": "Esa es otra cosa que Marco Agri me confirmó: \"todas las piezas son totalmente compatibles entre sí\". La consecuencia más útil: si ya tienes un Atlas All o un Atlas Short, ya tienes las piezas de madera; puedes reinstalarlas tal cual en un Atlas Pro, sin perder nada. Y si empiezas desde cero y quieres las tres posiciones de inmediato, el Atlas All te las proporciona.",
     "headCompatSource": "Marco Agri, creador de Atlas — mensaje del 20 de agosto de 2026",
-    "headCta": "Consulte el cuerpo Atlas en el sitio web Atlas .",
+    "headCta": "Consulte el cuerpo Atlas en el sitio web Atlas.",
     "buyTitle": "Dónde pedirlos",
-    "buyText": "El pedido se realiza a través de la página web Atlas . Anuncian gastos de envío de aproximadamente 12 € para Europa, y las devoluciones son gratuitas en un plazo de 14 días, con la etiqueta de devolución incluida en la caja.",
+    "buyText": "El pedido se realiza a través de la página web Atlas. Anuncian gastos de envío de aproximadamente 12 € para Europa, y las devoluciones son gratuitas en un plazo de 14 días, con la etiqueta de devolución incluida en la caja.",
     "buyNote": "En su página web no se especifican el plazo de entrega ni el período de garantía: pregúntales antes de realizar el pedido o escríbeme y yo te haré la pregunta.",
     "showroomTitle": "Pruébalos antes de comprarlos.",
     "showroomText": "Ambos stands estarán ubicados en la sala de exposiciones del distrito 20 de París, junto con los handpans. Podrás colocar un instrumento sobre ellos, ajustar la altura, tocar de pie y ver cuál te conviene más, sin necesidad de comprar nada.",
@@ -1257,17 +1257,17 @@ export const es: Dict = {
       "Sin comprar nada, te vas con tu opinión, no con una caja."
     ],
     "showroomAgendaCta": "Ver próximas fechas",
-    "showroomPhotoCaption": "La sala de exposición preparada para una presentación: mis dos handpans acústicos Yishama y mis dos handpans electrónicos {neotone} , cada uno en su propio soporte; cuatro instrumentos, cuatro soportes diferentes. Aquí es donde se colocarán los dos handpans Atlas , y aquí es donde podrán probarlos.",
+    "showroomPhotoCaption": "La sala de exposición preparada para una presentación: mis dos handpans acústicos Yishama y mis dos handpans electrónicos {neotone}, cada uno en su propio soporte; cuatro instrumentos, cuatro soportes diferentes. Aquí es donde se colocarán los dos handpans Atlas, y aquí es donde podrán probarlos.",
     "promoTitle": "Mi código en Atlas",
-    "promoText": "Aquí está mi código, que deberá introducir al realizar el pago en la página web Atlas , tanto si realiza el pedido en línea como si viene a probárselos a la tienda.",
-    "promoDisclosure": "Soy afiliado de Atlas : cuando se realiza un pedido utilizando este código, recibo una comisión. Esto no añade nada a tu factura ni modifica nada de lo que he escrito anteriormente.",
+    "promoText": "Aquí está mi código, que deberá introducir al realizar el pago en la página web Atlas, tanto si realiza el pedido en línea como si viene a probárselos a la tienda.",
+    "promoDisclosure": "Soy afiliado de Atlas: cuando se realiza un pedido utilizando este código, recibo una comisión. Esto no añade nada a tu factura ni modifica nada de lo que he escrito anteriormente.",
     "alt": {
-      "showroomYishama": "David Lesage en la sala de exposiciones de Nid en París: detrás de él, dos handpans acústicos de acero Yishama , cada uno montado sobre su trípode negro sobre una alfombra trenzada, en una gran sala blanca con arcos iluminados y suelo de parqué claro.",
-      "showroomInstruments": "El espacio de exposición de David Lesage , preparado para una vitrina: dos handpans electrónicos Neotone con coronas luminosas montados sobre trípodes negros cerca de un kit de percusión electrónica, y dos handpans acústicos de acero Yishama , uno sobre un trípode de madera y el otro sobre un soporte de metal; una semiesfera de calabaza colocada sobre una alfombra roja en primer plano, un antiguo suelo de parqué, guirnaldas de luces y una roseta en la pared.",
+      "showroomYishama": "David Lesage en la sala de exposiciones de Nid en París: detrás de él, dos handpans acústicos de acero Yishama, cada uno montado sobre su trípode negro sobre una alfombra trenzada, en una gran sala blanca con arcos iluminados y suelo de parqué claro.",
+      "showroomInstruments": "El espacio de exposición de David Lesage, preparado para una vitrina: dos handpans electrónicos Neotone con coronas luminosas montados sobre trípodes negros cerca de un kit de percusión electrónica, y dos handpans acústicos de acero Yishama, uno sobre un trípode de madera y el otro sobre un soporte de metal; una semiesfera de calabaza colocada sobre una alfombra roja en primer plano, un antiguo suelo de parqué, guirnaldas de luces y una roseta en la pared.",
       "stageStanding": "David Lesage de pie en el escenario bajo los focos, detrás de sus dos handpans montados en soportes, rodeado de sus soportes, sus pedales y una calabaza colocada sobre la alfombra roja.",
-      "stageStands": "Primer plano del montaje escénico de David Lesage : tres handpans colocados sobre soportes de madera y metal a la altura de las manos, un atril y un ordenador portátil, cables y pedales en el suelo.",
+      "stageStands": "Primer plano del montaje escénico de David Lesage: tres handpans colocados sobre soportes de madera y metal a la altura de las manos, un atril y un ordenador portátil, cables y pedales en el suelo.",
       "stageFestival": "David Lesage solo en el escenario del Festival Everness, en Hungría: de pie, descalzo, detrás de sus dos handpans acústicos montados sobre trípodes negros, bajo haces de luz verde y roja, frente a una gran lona tejida multicolor; una semiesfera de calabaza está colocada en el suelo frente a él.",
-      "stagePlateau": "El espacio de David Lesage , aún vacío antes del concierto, visto desde su asiento: un handpan colocado sobre un trípode negro en el centro de alfombras persas, una calabaza, un djembé, un pedal de bombo en el suelo, una consola de control, dos ordenadores portátiles abiertos y un altavoz de monitor, frente a una gran sala con suelo de parqué y columnas blancas.",
+      "stagePlateau": "El espacio de David Lesage, aún vacío antes del concierto, visto desde su asiento: un handpan colocado sobre un trípode negro en el centro de alfombras persas, una calabaza, un djembé, un pedal de bombo en el suelo, una consola de control, dos ordenadores portátiles abiertos y un altavoz de monitor, frente a una gran sala con suelo de parqué y columnas blancas.",
       "allHeightLow": "El trípode Atlas All de madera clara sin sus extensiones, sobre fondo blanco: las tres patas cortas atornilladas bajo el cabezal negro, en posición baja.",
       "allHeightHigh": "El mismo trípode Atlas All en madera clara, equipado con sus extensiones, sobre fondo blanco: las patas son el doble de largas en la posición más alta.",
       "proTwoHeights": "Dos trípodes Atlas Pro uno al lado del otro sobre un fondo gris: el de la izquierda está desplegado en la posición alta y sostiene un handpan de acero, el de la derecha está colocado en la posición baja, con los pies juntos.",
@@ -1279,7 +1279,7 @@ export const es: Dict = {
       "proDisc": "Primer plano del cabezal Atlas Pro: la corona negra tiene ocho imanes redondos de metal agrupados de dos en dos, y la varilla de centrado de madera clara pasa por el centro.",
       "proLock": "Primer plano del sistema de bloqueo de una pata telescópica del Atlas Pro: el anillo de sujeción metálico de liberación rápida.",
       "proClosed": "El Atlas Pro plegado: las tres patas se recogen a lo largo del cuerpo, listas para ser guardadas.",
-      "proBag": "El Atlas Pro plegado se coloca junto a su funda de transporte Atlas Bag, fabricada en lona negra con el logotipo Atlas .",
+      "proBag": "El Atlas Pro plegado se coloca junto a su funda de transporte Atlas Bag, fabricada en lona negra con el logotipo Atlas.",
       "proParts": "El Atlas Pro se divide en dos partes: el cabezal magnético en un lado y el bloque de tres patas telescópicas en el otro.",
       "allPlaying": "Un músico toca de pie sobre un handpan colocado en el trípode Atlas All, en una sala de estar: las tres patas de madera clara están desplegadas en la posición más alta.",
       "allHigh": "El trípode Atlas All montado con sus extensiones, en posición vertical: patas largas de madera clara y cabezal negro.",
@@ -1316,7 +1316,7 @@ export const es: Dict = {
     "universes": [
       {
         "t": "Handpan",
-        "d": "El método visual: los colores, las constelaciones y las emociones hacen que la armonía sea clara y memorable, tanto en el handpan acústico como en Neotone .",
+        "d": "El método visual: los colores, las constelaciones y las emociones hacen que la armonía sea clara y memorable, tanto en el handpan acústico como en Neotone.",
         "cta": "Descubre la aplicación"
       },
       {
@@ -1338,7 +1338,7 @@ export const es: Dict = {
     "workshopsContact": "Preguntas e inscripción:",
     "promiseEyebrow": "Mi promesa educativa",
     "promiseTitle": "El método visual, en desarrollo",
-    "promiseIntro": "En clase utilizo Handpan Constellation Studio : los colores, las constelaciones de acordes y las emociones hacen que la armonía sea clara y memorable, sea cual sea tu nivel, desde niño curioso hasta músico consumado.",
+    "promiseIntro": "En clase utilizo Handpan Constellation Studio: los colores, las constelaciones de acordes y las emociones hacen que la armonía sea clara y memorable, sea cual sea tu nivel, desde niño curioso hasta músico consumado.",
     "pillars": [
       {
         "t": "Para entender",
@@ -1346,7 +1346,7 @@ export const es: Dict = {
       },
       {
         "t": "Memorizar",
-        "d": "Recordamos a través de la forma y la emoción, no mediante la memorización. Los puntos de referencia permanecen estables de una escala a otra."
+        "d": "Se recuerda a través de la forma y la emoción, no mediante la memorización. Los puntos de referencia permanecen estables de una escala a la siguiente."
       },
       {
         "t": "tocar y acompañarse mutuamente",
@@ -1398,11 +1398,11 @@ export const es: Dict = {
   },
   "studio": {
     "title": "Handpan Constellation Studio — handpan acústico y Neotone",
-    "description": "En cualquier handpan acústico, y también en el Neotone . Aprende a través de colores ( ChromaKeys ), combinaciones de acordes y emociones, sin necesidad de teoría musical.",
+    "description": "En cualquier handpan acústico, y también en el Neotone. Aprende a través de colores (ChromaKeys), combinaciones de acordes y emociones, sin necesidad de teoría musical.",
     "heroEyebrow": "La aplicación —un proyecto original de David Lesage",
     "heroTitleA": "Handpan Constellation Studio",
     "heroTitleB": "La música se hace visible",
-    "heroLead": "En cualquier handpan: tanto el acústico como el electrónico Neotone . Un enfoque visual de la música —a través de colores, emociones y geometría— para comprender, memorizar e interpretar.",
+    "heroLead": "En cualquier handpan: tanto el acústico como el electrónico Neotone. Un enfoque visual de la música —a través de colores, emociones y geometría— para comprender, memorizar e interpretar.",
     "heroBadges": [
       "Cualquier handpan acústico",
       "Handpan electrónico Neotone"
@@ -1414,14 +1414,14 @@ export const es: Dict = {
     "problem1Title": "No se muestra ninguna anotación del instrumento.",
     "problem1Text": "Es un instrumento magnífico, pero ¿cómo se compone? Se aprende de oído, por imitación, y después de las primeras melodías se repiten los mismos patrones: el instrumento se convierte en una zona de confort de la que ya no se sale.",
     "problem2Title": "En un handpan electrónico, los puntos de referencia desaparecen.",
-    "problem2Text": "El Neotone cambia de escala sin cesar: una ventaja, pero también una desventaja: las notas bajo tus dedos nunca son las mismas dos veces. No hay un punto fijo; el cerebro se satura, como si tuvieras que reaprender a tocar el instrumento con cada escala.",
+    "problem2Text": "El Neotone cambia de escala sin cesar, lo cual es una ventaja, pero también una trampa: las notas bajo tus dedos nunca son las mismas dos veces. No hay un punto fijo: el cerebro se satura, como si tuvieras que reaprender a tocar el instrumento con cada escala.",
     "chromaEyebrow": "Colores y geometría",
     "chromaTitle": "¿Y si hiciéramos visible lo invisible?",
-    "chromaIntro": "En lugar de mostrar los nombres de las notas —que cambian constantemente—, la aplicación muestra la <strong>estructura</strong> de la música. A cada uno de los siete grados se le asigna un color fijo, del rojo al morado: este es el sistema ChromaKeys . Y cada acorde está representado por una figura geométrica luminosa.",
+    "chromaIntro": "En lugar de mostrar los nombres de las notas —que cambian constantemente—, la aplicación muestra la <strong>estructura</strong> de la música. A cada uno de los siete grados se le asigna un color fijo, del rojo al morado: este es el sistema ChromaKeys. Y cada acorde está representado por una figura geométrica luminosa.",
     "chromaPunch": "Lo que era invisible se vuelve visible.",
     "constelEyebrow": "El lenguaje de las constelaciones",
     "constelTitle": "La nueva tablatura visual para handpan",
-    "constelIntro": "Más allá de los colores ChromaKeys , la aplicación conecta las notas de un acorde: dibuja una figura luminosa, una <strong>constelación de acordes</strong> . Tres maneras de dibujarla.",
+    "constelIntro": "Más allá de los colores ChromaKeys, la aplicación conecta las notas de un acorde: dibuja una figura luminosa, una <strong>constelación de acordes</strong>. Tres maneras de dibujarla.",
     "constellations": [
       {
         "t": "Polígono",
@@ -1445,11 +1445,11 @@ export const es: Dict = {
     "modes": [
       {
         "t": "Lógica",
-        "d": "El corazón de la aplicación. Toca los 7 acordes de cualquier escala, crea tus propias progresiones, sigue los acordes de tus canciones favoritas."
+        "d": "El corazón de la aplicación. Toca los 7 acordes de cualquier escala, crea tus propias secuencias, sigue los acordes de las canciones que te encantan."
       },
       {
         "t": "Atlas sonoro",
-        "d": "Explora las riquezas del mundo: Japón, Oriente, África, la música celta… Escúchalas, apréndelas, viaja."
+        "d": "Explora la escalas del mundo: Japón, Oriente, África, música celta… Escúchala, apréndela, viaja."
       },
       {
         "t": "Creación",
@@ -1462,18 +1462,18 @@ export const es: Dict = {
     ],
     "versionAcoEyebrow": "¿En qué handpan funciona?",
     "versionAcoTitle": "Pensando en tu handpan acústico <span class=\"text-copper\">y en el Neotone</span>",
-    "versionAcoText": "La aplicación no es exclusiva de ninguno de los dos; está diseñada y concebida para ambos. Sin embargo, no ofrece las mismas funcionalidades en cada uno, y precisamente eso es lo que los hace interesantes. En un handpan acústico, la estructura ya está definida: la aplicación la hace visible. En el Neotone , todo es posible: la aplicación establece la estructura. Una aplicación, dos maneras de descubrir.",
+    "versionAcoText": "La aplicación no es exclusiva de ninguno de los dos; está diseñada y concebida para ambos. Sin embargo, no ofrece las mismas funcionalidades en cada uno, y precisamente eso es lo que los hace interesantes. En un handpan acústico, la estructura ya está definida: la aplicación la hace visible. En el Neotone, todo es posible: la aplicación establece la estructura. Una aplicación, dos maneras de descubrir.",
     "duoQuote1": "La electrónica lo ofrece todo y no revela nada; la acústica impone un marco, y un marco es algo que debe explorarse.",
     "duoQuote2": "Un marco de referencia que comprendemos nos hace más libres que un espacio infinito donde nos perdemos.",
     "duoQuoteSource": "David Lesage",
     "duoAcoTitle": "En un handpan acústico",
     "duoAcoText": "Tu instrumento ya tiene sus notas, su escala, sus contornos: la estructura básica está ahí. La aplicación la hace visible, y lo que parecía una limitación se convierte en un territorio por explorar. El modo acústico es gratuito: no necesitas el Neotone para empezar.",
     "versionAcoBullets": [
-      "La escala se muestra en color en la foto de tu handpan.",
+      "Tu escala se muestra a color en la foto de tu handpan.",
       "Aprende nuevos acordes y progresiones, con la guía paso a paso.",
-      "Explora un atlas de gamas por emoción, e imagina el tuyo propio, hecho a medida."
+      "Explora un atlas de escalas por emociones e imagina la tuya propia, hecha a medida."
     ],
-    "versionAcoCaption": "El modo acústico: el enfoque visual de Handpan Constellation Studio , en tu propio handpan.",
+    "versionAcoCaption": "El modo acústico: el enfoque visual de Handpan Constellation Studio, en tu propio handpan.",
     "versionAcoPhotoCaption": "En la sala de exposición: mi handpan acústico Yishama sobre su trípode, la aplicación de arriba, sus acordes en constelaciones.",
     "versionNeoPhotoCaption": "Mi Neotone de madera, la tableta fijada a un brazo justo encima, la partitura de una pieza y sus acordes en constelaciones.",
     "duoPhotoAco": "Mi handpan acústico Yishama y la aplicación.",
@@ -1481,11 +1481,11 @@ export const es: Dict = {
     "versionAcoCta": "Abre la aplicación",
     "versionAcoYishamaLink": "¿De dónde proviene este enfoque?: de mis dos handpans Yishama",
     "versionNeoTitle": "En el Neotone",
-    "versionNeoText": "Todas las escalas en un solo instrumento: todo es posible. Es precisamente aquí donde se hace necesario un marco de referencia; de lo contrario, nos perdemos en el infinito. La aplicación proporciona el marco que el instrumento en sí ya no ofrece.",
+    "versionNeoText": "Todas las escalas en un solo instrumento: todo es posible. Es precisamente aquí donde se hace necesario un marco de referencia; de lo contrario, nos perdemos en el infinito. La aplicación proporciona el marco que el instrumento por sí solo ya no ofrece.",
     "versionNeoBullets": [
       "Conecta tu Neotone a la aplicación mediante MIDI: tu interpretación se mostrará en tiempo real en el handpan virtual.",
-      "Puedes modificar la gama de colores cuanto quieras: sin embargo, los colores de los 7 grados nunca cambian.",
-      "La aplicación te guía a través de los acordes y las escalas, en la que acabas de cargar."
+      "Puedes personalizar tu escala cuanto quieras: sin embargo, los colores de los 7 grados nunca cambian.",
+      "La aplicación te guía a través de tus acordes y escalas, en la que acabas de cargar."
     ],
     "versionNeoCta": "Descubre Neotone",
     "lightbox": {
@@ -1500,9 +1500,9 @@ export const es: Dict = {
     "demoVideoNote": "Grabé la demostración con mi propio handpan acústico y la he subido aquí.",
     "storyEyebrow": "La historia — por David Lesage",
     "storyTitle": "La herramienta que me hubiera gustado aprender de niño",
-    "storyP1": "Descubrir el handpan me trajo recuerdos de las dificultades de mi infancia: la falta de método y la dificultad de organizar visualmente las trayectorias de las notas. Luego, con el Neotone , surgió un nuevo desafío: las notas cambian de posición con cada escala.",
+    "storyP1": "Descubrir el handpan me trajo recuerdos de las dificultades de mi infancia: la falta de método y la dificultad de organizar visualmente las trayectorias de las notas. Luego, con el Neotone, surgió un nuevo desafío: las notas cambian de posición con cada escala.",
     "storyP2": "Así que creé la herramienta que siempre había soñado tener: un enfoque visual de la armonía, a través de colores, formas y emociones, para comprender, memorizar y, finalmente, cantar mientras me acompaño con el handpan.",
-    "storyP3": "Esta es la continuación lógica de <strong>Now Groove</strong> , mi método rítmico (2021) que hace que el ritmo sea accesible mediante emoticonos visuales. Handpan Constellation Studio hace lo mismo con la armonía: una herramienta diseñada por un músico para elevar el handpan al estatus de instrumento de acompañamiento, como la guitarra o el piano.",
+    "storyP3": "Esta es la continuación lógica de <strong>Now Groove</strong>, mi método rítmico (2021) que hace que el ritmo sea accesible mediante emoticonos visuales. Handpan Constellation Studio hace lo mismo con la armonía: una herramienta diseñada por un músico para elevar el handpan al estatus de instrumento de acompañamiento, como la guitarra o el piano.",
     "waitTitle": "La aplicación está disponible",
     "waitText": "Crea tu cuenta gratuita (nombre, apellido, correo electrónico) para empezar, directamente en tu navegador. Al continuar, aceptas los Términos de Servicio y la Política de Privacidad. La selección de tu plan y el pago seguro se realizan dentro de la aplicación.",
     "waitButton": "Abre la aplicación",
@@ -1512,7 +1512,7 @@ export const es: Dict = {
     "contribCards": [
       {
         "t": "En constante evolución",
-        "d": "Regularmente se añaden nuevas funciones, rangos y modos, que se incluyen en la aplicación. La aplicación que usas hoy será aún más completa mañana."
+        "d": "Regularmente se añaden nuevas funciones, escalas y modos de juego. La aplicación que usas hoy será aún más completa mañana."
       },
       {
         "t": "Tus comentarios dan forma a la aplicación.",
@@ -1541,15 +1541,15 @@ export const es: Dict = {
     "priceTiers": {
       "monthly": {
         "name": "Estudio mensual",
-        "blurb": "Desbloquea el modo electrónico ( Neotone /MIDI), la creación avanzada, el guardado y la exportación, mes a mes, sin compromiso."
+        "blurb": "Desbloquea el modo electrónico (Neotone /MIDI), la creación avanzada, el guardado y la exportación, mes a mes, sin compromiso."
       },
       "annual": {
         "name": "Estudio anual",
-        "blurb": "Un año de acceso completo: modo electrónico ( Neotone /MIDI), creación avanzada, guardado y exportación. Aproximadamente tres meses gratis en comparación con la suscripción mensual."
+        "blurb": "Un año de acceso completo: modo electrónico (Neotone /MIDI), creación avanzada, guardado y exportación. Aproximadamente tres meses gratis en comparación con la suscripción mensual."
       },
       "lifetime": {
         "name": "Estudio para toda la vida",
-        "blurb": "Un solo pago, acceso de por vida: modo electrónico ( Neotone /MIDI), creación avanzada, guardado y exportación. Oferta del fundador, unidades limitadas."
+        "blurb": "Un solo pago, acceso de por vida: modo electrónico (Neotone /MIDI), creación avanzada, guardado y exportación. Oferta del fundador, unidades limitadas."
       }
     },
     "priceNote": "Los importes se sincronizan en tiempo real con Stripe. Studio desbloquea todo el taller creativo.",
@@ -1599,26 +1599,26 @@ export const es: Dict = {
       },
       {
         "t": "Atlas sonoro",
-        "d": "Explore una biblioteca de escalas de todo el mundo."
+        "d": "Explora una biblioteca de escalas de todo el mundo."
       },
       {
         "t": "Creación",
-        "d": "Crea tu propia escala en la rueda de colores."
+        "d": "Crea tu propia escala en la rueda cromática."
       }
     ],
     "faqEyebrow": "Preguntas frecuentes",
     "faqTitle": "Preguntas que me hacen sobre Handpan Constellation Studio",
     "faq": [
       {
-        "q": "¿Necesitas un Neotone para usar Handpan Constellation Studio ?",
-        "a": "No. Handpan Constellation Studio funciona con cualquier handpan acústico en modo acústico libre, como el handpan electrónico Neotone . No se requiere un instrumento electrónico para empezar."
+        "q": "¿Necesitas un Neotone para usar Handpan Constellation Studio?",
+        "a": "No. Handpan Constellation Studio funciona con cualquier handpan acústico en modo acústico libre, como el handpan electrónico Neotone. No se requiere un instrumento electrónico para empezar."
       },
       {
         "q": "¿Trabaja Handpan Constellation Studio con un handpan acústico?",
-        "a": "Sí, el modo acústico es gratuito. Puedes ver tu escala en colores y aprender tus acordes directamente en tu propio instrumento acústico."
+        "a": "Sí, el modo acústico es gratuito. Puedes visualizar tu escala en color y aprender los acordes directamente en tu propio instrumento acústico."
       },
       {
-        "q": "¿Qué son ChromaKeys ?",
+        "q": "¿Qué son ChromaKeys?",
         "a": "Este es el sistema de colores del método: cada nota recibe un color fijo. De esta forma, se puede apreciar la estructura de la música de un vistazo, sin necesidad de leer partituras."
       },
       {
@@ -1626,19 +1626,19 @@ export const es: Dict = {
         "a": "Esta es la tablatura visual del método: cada acorde dibuja una figura geométrica que conecta sus notas. Reconoces y memorizas tus acordes por su forma."
       },
       {
-        "q": "¿ Handpan Constellation Studio es gratuito?",
+        "q": "¿Handpan Constellation Studio es gratuito?",
         "a": "Handpan Constellation Studio ofrece una amplia gama de funciones, y lo que es gratuito depende de cómo lo uses. Aprender a tocar el handpan de forma independiente, con tu propio instrumento acústico, es gratis: visualiza tu escala en color, reconoce tus acordes, toca, crea y exporta tus partituras. Lo que va más allá de tu práctica personal es de pago: el modo electrónico Neotone /MIDI, la creación avanzada y el guardado en la nube. Y si lo usas como herramienta de enseñanza en cursos de pago, se trata de una Licencia de Profesor, con área de estudiantes, ejercicios y partituras sin marca de agua. Los precios actuales se muestran a continuación."
       }
     ]
   },
   "showroom": {
     "title": "Prueba handpans, Gonilélé y micrófonos en París — Showroom | David Lesage",
-    "description": "Pruebe todos mis instrumentos en París: el handpan electrónico Neotone , mis handpans acústicos Yishama , el arpa africana Gonilélé , la calabaza y micrófonos para handpan. David Lesage Showroom, 29 rue des Orteaux, París 20: presentaciones gratuitas, demostraciones privadas y clases.",
+    "description": "Pruebe todos mis instrumentos en París: el handpan electrónico Neotone, mis handpans acústicos Yishama, el arpa africana Gonilélé, la calabaza y micrófonos para handpan. David Lesage Showroom, 29 rue des Orteaux, París 20: presentaciones gratuitas, demostraciones privadas y clases.",
     "heroEyebrow": "Le Nid · París 20",
     "heroTitle": "Sala de exposiciones David Lesage",
-    "heroLead": "El Neotone es la atracción principal, y con él todo lo que toco: mis handpans acústicos Yishama , el arpa africana Gonilélé , la calabaza y los micrófonos para handpan. Los escuchas, los tocas, todo en el mismo día.",
+    "heroLead": "El Neotone es la atracción principal, y con él todo lo que toco: mis handpans acústicos Yishama, el arpa africana Gonilélé, la calabaza y los micrófonos para handpan. Los escuchas, los tocas, todo en el mismo día.",
     "ctaBook": "Reserva una cita privada individual (se aplica una tarifa).",
-    "ctaBookNote": "Espacio individual de pago: {grid} . Las exhibiciones públicas son gratuitas; plazas limitadas; se requiere reserva.",
+    "ctaBookNote": "Espacio individual de pago: {grid}. Las exhibiciones públicas son gratuitas; plazas limitadas; se requiere reserva.",
     "ctaNext": "Vea la siguiente muestra",
     "exclBadge": "★ Estreno mundial",
     "exclTitle": "Llévate tu Neotone¹ a casa el mismo día.",
@@ -1668,7 +1668,7 @@ export const es: Dict = {
       {
         "sub": "Electrónica · Neotone",
         "title": "Los dos Neotone",
-        "text": "Uno en los altavoces, el otro en los auriculares. Cambias de una escala a otra, pruebas los efectos y la grabadora, durante el tiempo que necesites.",
+        "text": "Uno en los altavoces, el otro en los auriculares. Cambias de una escala a la otra, pruebas los efectos y la grabadora, durante el tiempo que necesites.",
         "points": [
           "Todas las escalas en un solo instrumento.",
           "Una salida por altavoces, otra por auriculares, efectos incluidos."
@@ -1676,7 +1676,7 @@ export const es: Dict = {
         "cta": "Descubre Neotone"
       }
     ],
-    "duoNote": "Para que quede claro: solo tenemos en stock el Neotone ; es el único que puedes llevarte el mismo día. Los Yishama son mis instrumentos personales: están aquí para que los escuches y los toques, y si quieres uno, te pondré en contacto con el taller (soy embajador y afiliado).",
+    "duoNote": "Para que quede claro: solo tenemos en stock el Neotone; es el único que puedes llevarte el mismo día. Los Yishama son mis instrumentos personales: están aquí para que los escuches y los toques, y si quieres uno, te pondré en contacto con el taller (soy embajador y afiliado).",
     "alsoEyebrow": "Y no solo el handpan",
     "alsoTitle": "El resto de lo que toco también está ahí.",
     "alsoIntro": "El Neotone es la estrella principal de la exhibición, pero no es necesario venir solo por él. Estos instrumentos también están a la venta y puedes probarlos, al igual que los handpans.",
@@ -1706,7 +1706,7 @@ export const es: Dict = {
       "gonileleProduit": "El arpa Gonilélé colocada contra el tronco de un árbol: cuerpo redondo de calabaza cubierto de piel, mástil largo de madera clara tallada y diez cuerdas tensadas hacia el mecanismo.",
       "calebasse": "El kit de calabaza Now Groove: una media calabaza colocada boca abajo sobre una gran esterilla de piel, con dos sonajeros azules en forma de huevo.",
       "hisong": "Un handpan acústico colocado sobre una esterilla, junto al micrófono Hisong AirStudio S1 en su soporte, sus auriculares y la tableta que muestra la aplicación de ajuste del micrófono.",
-      "muling": "La parte inferior de un handpan acústico equipado con el kit Muling : dos cápsulas de contacto rojas pegadas al cuerpo, conectadas mediante sus cables al preamplificador HMP-2 colocado en el suelo."
+      "muling": "La parte inferior de un handpan acústico equipado con el kit Muling: dos cápsulas de contacto rojas pegadas al cuerpo, conectadas mediante sus cables al preamplificador HMP-2 colocado en el suelo."
     },
     "atlasEyebrow": "Nuevo · Socio Atlas",
     "atlasTitle": "Y algo donde colocar el handpan.",
@@ -1726,27 +1726,27 @@ export const es: Dict = {
     "lieuTitle": "¿Cómo es una exposición en Le Nid?",
     "lieuIntro": "Un apartamento-estudio del siglo XX, con suelo de parqué, guirnaldas y todos sentados en círculo alrededor de los instrumentos. Somos unos quince, no más.",
     "photoAlt": {
-      "accueil": "David Lesage , con los brazos extendidos, saluda a los visitantes desde el centro de la amplia sala de exposiciones: suelo de parqué antiguo, paredes blancas con vigas a la vista, una roseta en la pared, un handpan sobre su trípode detrás de él, cojines y un sofá bajo al fondo. (El título \" David Lesage Showroom\" aparece superpuesto en la imagen).",
+      "accueil": "David Lesage, con los brazos extendidos, saluda a los visitantes desde el centro de la amplia sala de exposiciones: suelo de parqué antiguo, paredes blancas con vigas a la vista, una roseta en la pared, un handpan sobre su trípode detrás de él, cojines y un sofá bajo al fondo. (El título \" David Lesage Showroom\" aparece superpuesto en la imagen).",
       "vueEnsemble": "Vista general de una presentación en Le Nid: David Lesage sentado en el centro del círculo, con handpans sobre soportes detrás de él, el público sentado en el suelo, las paredes cubiertas de guirnaldas de luces y una roseta suspendida.",
       "instruments": "Los instrumentos estaban instalados en la sala de exposiciones antes de la llegada del público: dos handpans acústicos Yishama sobre trípodes, dos handpans electrónicos Neotone con su pantalla, una calabaza colocada sobre una alfombra roja, todo ello sobre un antiguo suelo de parqué.",
-      "presentation": "David Lesage , micrófono en mano, presenta los instrumentos en la sala de exposiciones: los handpans Neotone y Yishama alineados detrás de él, bajo la roseta en la pared.",
-      "gonilele": "David Lesage sostiene el Gonilélé , el arpa africana hecha con una calabaza, y muestra el micrófono Hisong AirStudio S1 que se utiliza para amplificarlo.",
+      "presentation": "David Lesage, micrófono en mano, presenta los instrumentos en la sala de exposiciones: los handpans Neotone y Yishama alineados detrás de él, bajo la roseta en la pared.",
+      "gonilele": "David Lesage sostiene el Gonilélé, el arpa africana hecha con una calabaza, y muestra el micrófono Hisong AirStudio S1 que se utiliza para amplificarlo.",
       "grandePiece": "La amplia sala de exposiciones durante el día, antes de que llegue el público: suelo de parqué antiguo, sofá bajo y cojines colocados directamente en el suelo, un handpan acústico sobre su trípode al fondo, una guitarra colgada en la pared, plantas y alfombras enrolladas en una cesta."
     },
     "photoCaption": {
       "vueEnsemble": "Una presentación en Le Nid: el público sentado en círculo, los instrumentos en el centro.",
       "grandePiece": "La misma habitación durante el día, antes de que se instalara todo.",
-      "instruments": "Lo que te espera a tu llegada: el Neotone , mis handpans Yishama , el Gonilélé , la calabaza, los micrófonos y el tambor chamánico, listos para ser tocados.",
+      "instruments": "Lo que te espera a tu llegada: el Neotone, mis handpans Yishama, el Gonilélé, la calabaza, los micrófonos y el tambor chamánico, listos para ser tocados.",
       "presentation": "El momento de introducción, antes de que pongas tus manos en los instrumentos.",
-      "gonilele": "El Gonilélé , el arpa africana hecha con una calabaza, y el micrófono que la amplifica."
+      "gonilele": "El Gonilélé, el arpa africana hecha con una calabaza, y el micrófono que la amplifica."
     },
     "galleryEyebrow": "En imágenes",
     "galleryTitle": "Los instrumentos y equipos, un vistazo más de cerca",
     "galleryIntro": "Desliza o haz clic sobre una foto para ampliarla.",
-    "galleryAltFallback": "Fotografía del showroom de David Lesage — Le Nid , París, distrito 20.",
+    "galleryAltFallback": "Fotografía del showroom de David Lesage — Le Nid, París, distrito 20.",
     "galleryAlt": {
       "demoNeotone1": "David Lesage de pie, en plena demostración: sostiene un handpan electrónico Neotone frente al público sentado, delante de la pared de guirnaldas de luces.",
-      "demoNeotone2": "Vista más amplia de la demostración Neotone : David Lesage de pie en el centro de la sala, los espectadores sentados en círculo sobre el suelo de parqué.",
+      "demoNeotone2": "Vista más amplia de la demostración Neotone: David Lesage de pie en el centro de la sala, los espectadores sentados en círculo sobre el suelo de parqué.",
       "gonileleMicro": "El Gonilélé se colocó horizontalmente, con las cuerdas hacia arriba, junto a la caja del micrófono Hisong AirStudio S1 y su cápsula sobre un soporte.",
       "yishamaMicros": "Un handpan Yishama visto desde arriba, dos cápsulas de micrófono colocadas en la cúpula y cuatro cajas de micrófono Hisong AirStudio S1 dispuestas a su alrededor.",
       "tabletteAccords": "Tableta montada sobre un handpan: la aplicación Handpan Constellation Studio muestra los siete acordes de la escala D Kurd 18 en constelaciones de colores.",
@@ -1761,22 +1761,22 @@ export const es: Dict = {
     "events": [
       {
         "t": "Presentación Neotone y descubrimiento de instrumentos",
-        "d": "Evento público gratuito en Le Nid: David Lesage presenta el Neotone ; luego se puede probar todo allí mismo: handpans acústicos Yishama , arpa africana Gonilélé , calabazas y micrófonos para handpan.",
+        "d": "Evento público gratuito en Le Nid: David Lesage presenta el Neotone; luego se puede probar todo allí mismo: handpans acústicos Yishama, arpa africana Gonilélé, calabazas y micrófonos para handpan.",
         "price": "Público · Gratuito"
       },
       {
         "t": "Familiarizándote con tu instrumento",
-        "d": "¿Acabas de recibir tu Neotone , handpan o micrófono? Lo configuraremos todo juntos y te ayudaremos a empezar a usarlo paso a paso. En persona o por videollamada.",
+        "d": "¿Acabas de recibir tu Neotone, handpan o micrófono? Lo configuraremos todo juntos y te ayudaremos a empezar a usarlo paso a paso. En persona o por videollamada.",
         "price": ""
       },
       {
         "t": "Descubriendo los instrumentos",
-        "d": "Una sesión privada en la sala de exposiciones para probar a fondo todo lo que le interese: handpans acústicos Yishama , Neotone , calabaza, Gonilélé , micrófonos Hisong y Muling .",
+        "d": "Una sesión privada en la sala de exposiciones para probar a fondo todo lo que le interese: handpans acústicos Yishama, Neotone, calabaza, Gonilélé, micrófonos Hisong y Muling.",
         "price": ""
       },
       {
         "t": "Clases individuales o entrenamiento",
-        "d": "Con David Lesage , sea cual sea tu nivel: crea tus escalas, practica piezas y técnicas, o simplemente aclara tus dudas. Presencialmente o en línea.",
+        "d": "Con David Lesage, sea cual sea tu nivel: crea tus propias escalas, practica tus técnicas o simplemente aclara tus dudas. Presencialmente o en línea.",
         "price": ""
       }
     ],
@@ -1789,12 +1789,12 @@ export const es: Dict = {
         "d": "Toco delante de ti: primero el sonido en bruto, luego con efectos (octavador, reverberación, looper) y cantando; la interfaz se proyecta en la pantalla."
       },
       {
-        "t": "Handpan Constellation Studio , la aplicación que hace que la música sea visible.",
+        "t": "Handpan Constellation Studio, la aplicación que hace que la música sea visible.",
         "d": "Demostración en vivo: colores, constelaciones de acordes y cómo aprendemos viendo la música en lugar de descifrar partituras."
       },
       {
         "t": "Sonido acústico y micrófonos",
-        "d": "Mis dos handpans acústicos Yishama , amplificados con micrófonos Hisong y Muling , para compararlos y escuchar la diferencia."
+        "d": "Mis dos handpans acústicos Yishama, amplificados con micrófonos Hisong y Muling, para compararlos y escuchar la diferencia."
       },
       {
         "t": "El Gonilélé y la Calabaza",
@@ -1806,7 +1806,7 @@ export const es: Dict = {
       },
       {
         "t": "Es tu turno de jugar",
-        "d": "Prueba los dos Neotone —uno con altavoces y el otro con auriculares— y mis dos handpans acústicos Yishama . Tómate tu tiempo para familiarizarte con cada instrumento. El Gonilélé y la calabaza también están ahí: tómalos y pruébalos."
+        "d": "Prueba los dos Neotone —uno con altavoces y el otro con auriculares— y mis dos handpans acústicos Yishama. Tómate tu tiempo para familiarizarte con cada instrumento. El Gonilélé y la calabaza también están ahí: tómalos y pruébalos."
       }
     ],
     "programBonusTitle": "Y a veces, va incluso más allá.",
@@ -1817,7 +1817,7 @@ export const es: Dict = {
     "bookPrivateCta": "Reserve una cita individual",
     "agendaEyebrow": "Diario",
     "agendaTitle": "Calendario de eventos públicos gratuitos",
-    "agendaIntro": "Presentación de Neotone a cargo de David Lesage y descubrimiento de todos los instrumentos que se tocan en Le Nid: handpans acústicos Yishama , arpa africana Gonilélé , calabaza y micrófonos para handpan. Podrá probarlos todos en el lugar. Entrada gratuita; plazas limitadas, se requiere reserva.",
+    "agendaIntro": "Presentación de Neotone a cargo de David Lesage y descubrimiento de todos los instrumentos que se tocan en Le Nid: handpans acústicos Yishama, arpa africana Gonilélé, calabaza y micrófonos para handpan. Podrá probarlos todos en el lugar. Entrada gratuita; plazas limitadas, se requiere reserva.",
     "agendaEmpty": "Próximas fechas por anunciar",
     "agendaEmptyText": "Estamos ultimando las próximas fechas. Déjame tu correo electrónico: te avisaremos antes del anuncio público.",
     "agendaEmptyCta": "Avísame de la próxima fecha",
@@ -1861,12 +1861,12 @@ export const es: Dict = {
     ]
   },
   "about": {
-    "title": "Acerca de — David Lesage , músico, educador e inventor",
+    "title": "Acerca de — David Lesage, músico, educador e inventor",
     "description": "Un baterista de formación que se convirtió en intérprete de handpan y cantante: el Conservatorio, La Voz, Naxos y la escena internacional del handpan, dos instrumentos hechos a medida sin instrucciones, y las herramientas que terminé construyendo.",
     "heroEyebrow": "Acerca de",
     "heroTitle": "Baterista de formación, intérprete de handpan, cantante y fabricante de herramientas.",
-    "heroLead": "Soy David Lesage : baterista de formación que se convirtió en intérprete de handpan, cantante, educador y fabricante de herramientas. Aquí está mi trayectoria, en orden cronológico, con sus respectivas fechas.",
-    "heroImgAlt": "David Lesage , músico",
+    "heroLead": "Soy David Lesage: baterista de formación que se convirtió en intérprete de handpan, cantante, educador y fabricante de herramientas. Aquí está mi trayectoria, en orden cronológico, con sus respectivas fechas.",
+    "heroImgAlt": "David Lesage, músico",
     "heroCtaStory": "Lee la historia",
     "heroCtaToday": "Lo que estoy haciendo hoy",
     "storyEyebrow": "Mi historia",
@@ -1887,7 +1887,7 @@ export const es: Dict = {
         "title": "Vídeo, formación, realidad virtual",
         "paras": [
           "Organicé grupos, aprendí a grabar y editar vídeos, me uní al equipo de Thierry Vanoffe en 2017 como formador y creador de vídeos para el canal Numéricoach, y desde 2020 trabajé en Aora Mana —una de las primeras plataformas para viajes iniciáticos en realidad virtual— como cámara, director, editor de realidad virtual de 360° y piloto de drones.",
-          "Superé las audiciones a ciegas de The Voice en TF1, temporada 11, con una canción africana: <em>Koth Biro</em> , grabada el 21 de diciembre de 2021 y emitida el 12 de febrero de 2022. Tras el programa, me invitaron a dar un concierto en solitario en Costa de Marfil.",
+          "Superé las audiciones a ciegas de The Voice en TF1, temporada 11, con una canción africana: <em>Koth Biro</em>, grabada el 21 de diciembre de 2021 y emitida el 12 de febrero de 2022. Tras el programa, me invitaron a dar un concierto en solitario en Costa de Marfil.",
           "Trabajar como formador en Google me ha hecho darme cuenta de mi habilidad para encontrar soluciones técnicas y tecnológicas a los problemas de la gente. Pero incluso mucho antes, estuve a cargo del sistema de sonido de las conferencias del Salón Santé Nature en Flourens —la feria ha cambiado de ubicación varias veces— y de su infraestructura informática. Siempre he ayudado a la gente a encontrar consejos y soluciones a sus problemas informáticos."
         ]
       },
@@ -1898,15 +1898,15 @@ export const es: Dict = {
           "Llevo tocando la calabaza, como instrumento de percusión, desde 2012.",
           "Me faltaban la caja y el charles para la calabaza. Resolví el problema con huevos de plástico: un proyecto de bricolaje que se convirtió en una forma de tocar y luego en una forma de enseñar.",
           "Así nació Now Groove (2021): un método rítmico que utiliza la interacción de llamada y respuesta y emoticonos visuales, y que funciona con cincuenta personas en la misma sala.",
-          "En 2018, devastada por una ruptura, mi terapeuta Fred Hervaud me regaló su propio N'Goni: así fue como conocí el instrumento. En 2023, comencé mi colaboración con Joris Feuillâtre, centrándome en el arpa gonilélé, que ahora enseño como embajadora de La Maison du Ngoni. Mis clases y talleres se imparten a través de Now Music Academy, con el apoyo de la asociación Résonances Productions ."
+          "En 2018, devastada por una ruptura, mi terapeuta Fred Hervaud me regaló su propio N'Goni: así fue como conocí el instrumento. En 2023, comencé mi colaboración con Joris Feuillâtre, centrándome en el arpa gonilélé, que ahora enseño como embajadora de La Maison du Ngoni. Mis clases y talleres se imparten a través de Now Music Academy, con el apoyo de la asociación Résonances Productions."
         ]
       },
       {
         "eyebrow": "La canción",
         "title": "Marie-Christine Reculard y canto holístico",
         "paras": [
-          "Marie-Christine Reculard es mi profesora de canto. Creó <em>el Canto Holístico</em> , que describe en su sitio web como \"un método único de canto terapéutico y energético que utiliza la voz, los colores, las vocales sagradas, los mantras, el yoga y las técnicas de respiración\". Su sitio web es <a href=\"https://www.mariechristinereculard.com/\" target=\"_blank\" rel=\"noopener\" class=\"underline\">mariechristinereculard.com</a> .",
-          "Su método me inspiró, en particular para un modo \"Canta y toca\" —cantar mientras uno se acompaña con el handpan— en el que estoy trabajando para Handpan Constellation Studio . Todavía está en fase de desarrollo: no está disponible en la aplicación actualmente."
+          "Marie-Christine Reculard es mi profesora de canto. Creó <em>el Canto Holístico</em>, que describe en su sitio web como \"un método único de canto terapéutico y energético que utiliza la voz, los colores, las vocales sagradas, los mantras, el yoga y las técnicas de respiración\". Su sitio web es <a href=\"https://www.mariechristinereculard.com/\" target=\"_blank\" rel=\"noopener\" class=\"underline\">mariechristinereculard.com</a>.",
+          "Su método me inspiró, en particular para un modo \"Canta y toca\" —cantar mientras uno se acompaña con el handpan— en el que estoy trabajando para Handpan Constellation Studio. Todavía está en fase de desarrollo: no está disponible en la aplicación actualmente."
         ]
       },
       {
@@ -1914,8 +1914,8 @@ export const es: Dict = {
         "title": "El concierto que me introdujo en el mundo del handpan",
         "paras": [
           "Actúo en el Festival HONA de Agia Anna. Cuando llego, no soy nadie: el escenario es diminuto, el sistema de sonido es deficiente y no hay monitores. Pero ofrezco algo nunca antes visto: canto, toco tres handpans a la vez y hago percusión con los pies y las manos.",
-          "Al día siguiente, me encontré con un hombre en el bar al aire libre del festival. No sabía quién era; me habían dicho que era uno de los mejores fabricantes de handpans del mundo. Era Yonathan, de Yishama . Me escuchó con calma y durante un buen rato, sin intentar venderme sus instrumentos.",
-          "Ese mismo verano, recibí la primera versión beta Neotone . Un mes después, estaba tocando en el festival HUG en Hungría, pasé por el taller y me fui con una versión beta Neotone y un compromiso claro: reportar errores y ayudar a desarrollar el instrumento. Desde entonces, no he dejado de hacerlo; tras miles de comentarios, conozco personalmente a Csaba, Norbert y al equipo de Soundventure en Budapest."
+          "Al día siguiente, me encontré con un hombre en el bar al aire libre del festival. No sabía quién era; me habían dicho que era uno de los mejores fabricantes de handpans del mundo. Era Yonathan, de Yishama. Me escuchó con calma y durante un buen rato, sin intentar venderme sus instrumentos.",
+          "Ese mismo verano, recibí la primera versión beta Neotone. Un mes después, estaba tocando en el festival HUG en Hungría, pasé por el taller y me fui con una versión beta Neotone y un compromiso claro: reportar errores y ayudar a desarrollar el instrumento. Desde entonces, no he dejado de hacerlo; tras miles de comentarios, conozco personalmente a Csaba, Norbert y al equipo de Soundventure en Budapest."
         ]
       },
       {
@@ -1931,12 +1931,12 @@ export const es: Dict = {
     "quoteNaxos": "En ese momento, no me di cuenta de que estaba entrando en un círculo ultraprivado del mundo internacional del handpan.",
     "quoteNaxosSource": "Lo que digo acerca de este concierto",
     "quoteShips": "Es como si tuviera dos naves espaciales, pero no supiera pilotarlas.",
-    "quoteShipsSource": "Mis dos Yishama , los primeros meses",
+    "quoteShipsSource": "Mis dos Yishama, los primeros meses",
     "linkYishama": "Mi historia con Yonathan y mis dos Yishama",
     "linkApp": "Descubra Handpan Constellation Studio",
     "todayEyebrow": "Hoy · París 20",
     "todayTitle": "Músico, profesor y fabricante de herramientas.",
-    "todayIntro": "Soy artista independiente y vivo en París. Le Nid , en el número 29 de la rue des Orteaux, en el distrito 20, es el espacio que dirijo con Iris Chasles, que abrirá sus puertas el 13 de marzo de 2026: un espacio íntimo en el este de París, donde recibimos a grupos pequeños. Allí se combinan cinco propuestas diferentes: conciertos, un taller de ritmos con calabazas, clases particulares, un taller de yoga y sesiones de mente y cuerpo, además de demostraciones gratuitas de instrumentos (se requiere inscripción). Podrás tocar, probar, escuchar e incluso llevarte tu propio Neotone el mismo día. Mis dos Yishama también estarán allí, no a la venta, solo para que los toques. El programa completo está publicado por la asociación Résonances Productions .",
+    "todayIntro": "Soy artista independiente y vivo en París. Le Nid, en el número 29 de la rue des Orteaux, en el distrito 20, es el espacio que dirijo con Iris Chasles, que abrirá sus puertas el 13 de marzo de 2026: un espacio íntimo en el este de París, donde recibimos a grupos pequeños. Allí se combinan cinco propuestas diferentes: conciertos, un taller de ritmos con calabazas, clases particulares, un taller de yoga y sesiones de mente y cuerpo, además de demostraciones gratuitas de instrumentos (se requiere inscripción). Podrás tocar, probar, escuchar e incluso llevarte tu propio Neotone el mismo día. Mis dos Yishama también estarán allí, no a la venta, solo para que los toques. El programa completo está publicado por la asociación Résonances Productions.",
     "today": [
       {
         "t": "Yo juego",
@@ -1952,7 +1952,7 @@ export const es: Dict = {
       },
       {
         "t": "Estoy construyendo un puente",
-        "d": "Beta tester Neotone (Soundventure, Budapest), embajador y afiliado de Yishama , embajador de La Maison du Ngoni."
+        "d": "Beta tester Neotone (Soundventure, Budapest), embajador y afiliado de Yishama, embajador de La Maison du Ngoni."
       }
     ],
     "milestonesEyebrow": "Puntos de referencia",
@@ -1984,7 +1984,7 @@ export const es: Dict = {
       },
       {
         "y": "Junio de 2022",
-        "t": "Festival HONA, Naxos. Encuentro con Yonathan ( Yishama ), primera versión beta Neotone en mano."
+        "t": "Festival HONA, Naxos. Encuentro con Yonathan (Yishama), primera versión beta Neotone en mano."
       },
       {
         "y": "Julio de 2022",
@@ -1996,11 +1996,11 @@ export const es: Dict = {
       },
       {
         "y": "Mayo de 2023",
-        "t": "Recibí mis dos handpans Yishama : 18 notas cada uno, 432 Hz."
+        "t": "Recibí mis dos handpans Yishama: 18 notas cada uno, 432 Hz."
       },
       {
         "y": "Agosto de 2023",
-        "t": "El documento que se convertiría en Handpan Constellation Studio ."
+        "t": "El documento que se convertiría en Handpan Constellation Studio."
       },
       {
         "y": "13 de marzo de 2026",
@@ -2008,7 +2008,7 @@ export const es: Dict = {
       },
       {
         "y": "Hoy",
-        "t": "Le Nid , París 20: cursos, ensayos y exposiciones."
+        "t": "Le Nid, París 20: cursos, ensayos y exposiciones."
       }
     ],
     "visionEyebrow": "Mi visión educativa",
@@ -2025,7 +2025,7 @@ export const es: Dict = {
       },
       {
         "t": "Verifiable",
-        "d": "Conservatorio de Toulouse, etapa, prueba beta a largo plazo Neotone : puntos de referencia con fecha que cualquiera puede verificar."
+        "d": "Conservatorio de Toulouse, etapa, prueba beta a largo plazo Neotone: puntos de referencia con fecha que cualquiera puede verificar."
       }
     ],
     "proofsEyebrow": "Mis puntos de referencia",
@@ -2047,12 +2047,12 @@ export const es: Dict = {
     ],
     "collabEyebrow": "Colaboraciones",
     "collabTitle": "¿Tienes algún proyecto? Hablemos de él.",
-    "collabIntro": "Educación musical, handpan, mis herramientas... o cualquier otro proyecto, incluso fuera de Neotone . Marcas, organizadores, medios de comunicación, colaboradores: la puerta está abierta.",
+    "collabIntro": "Educación musical, handpan, mis herramientas... o cualquier otro proyecto, incluso fuera de Neotone. Marcas, organizadores, medios de comunicación, colaboradores: la puerta está abierta.",
     "collabCta1": "Trabajemos juntos",
     "collabCta2": "Contáctame"
   },
   "contact": {
-    "title": "Contacto: David Lesage , músico y educador.",
+    "title": "Contacto: David Lesage, músico y educador.",
     "description": "Personalmente respondo a todos los mensajes; soy músico, no atención al cliente. Para compras, clases, la aplicación o colaboraciones, escríbeme.",
     "eyebrow": "Contacto",
     "title2": "¿Alguna pregunta? Hablemos de ello.",
@@ -2072,7 +2072,7 @@ export const es: Dict = {
     },
     "subjects": [
       "Compra de un Neotone",
-      "Curso",
+      "Cursos",
       "Handpan Constellation Studio",
       "Colaboración",
       "Prensa",
@@ -2081,7 +2081,7 @@ export const es: Dict = {
   },
   "legal": {
     "title": "Aviso legal — David Lesage",
-    "description": "Avisos legales y condiciones del sitio web de David Lesage : editor, alojamiento, propiedad intelectual, precios e IVA. Showroom 29 rue des Orteaux, París 20.",
+    "description": "Avisos legales y condiciones del sitio web de David Lesage: editor, alojamiento, propiedad intelectual, precios e IVA. Showroom 29 rue des Orteaux, París 20.",
     "h1": "Avisos legales para el sitio web David Lesage",
     "blocks": [
       {
@@ -2094,7 +2094,7 @@ export const es: Dict = {
       },
       {
         "h": "Propiedad intelectual",
-        "p": "El contenido, los textos, las fotografías y los vídeos de este sitio web son propiedad de sus respectivos autores. Las fotografías y especificaciones de los productos Neotone provienen de la documentación oficial de Soundventure Ltd. David Lesage es embajador independiente Neotone ."
+        "p": "El contenido, los textos, las fotografías y los vídeos de este sitio web son propiedad de sus respectivos autores. Las fotografías y especificaciones de los productos Neotone provienen de la documentación oficial de Soundventure Ltd. David Lesage es embajador independiente Neotone."
       },
       {
         "h": "Precio e IVA",
@@ -2104,7 +2104,7 @@ export const es: Dict = {
   },
   "terms": {
     "title": "Condiciones generales — David Lesage",
-    "description": "Condiciones generales del sitio web de David Lesage : qué datos recopilo en los formularios, por qué, con qué herramientas, cuánto tiempo los conservo y cómo ejercer sus derechos.",
+    "description": "Condiciones generales del sitio web de David Lesage: qué datos recopilo en los formularios, por qué, con qué herramientas, cuánto tiempo los conservo y cómo ejercer sus derechos.",
     "h1": "Términos y condiciones generales",
     "versionLabel": "Versión",
     "version": "2026-08-19",
@@ -2120,20 +2120,20 @@ export const es: Dict = {
       },
       {
         "h": "Mi papel y quién recibe el dinero",
-        "p": "Para evitar malentendidos, aclaremos desde el principio: en este sitio presento instrumentos fabricados por mis socios Neotone , Yishama , micrófonos, arpas Gonilélé . Mi función es la de demostrador y no recibo ninguna compensación directa por estas ventas.",
+        "p": "Para evitar malentendidos, aclaremos desde el principio: en este sitio presento instrumentos fabricados por mis socios Neotone, Yishama, micrófonos, arpas Gonilélé. Mi función es la de demostrador y no recibo ninguna compensación directa por estas ventas.",
         "items": [
           "Estas colaboraciones son de carácter afiliado: generan una remuneración, que es la asociación Résonances Productions (asociación sin ánimo de lucro según la ley de 1901) la que la recibe, no yo personalmente.",
-          "Para que sepa exactamente de quién se trata, aquí tiene su identificación: Résonances Productions , una asociación sin ánimo de lucro según la ley francesa de 1901, registrada en la subprefectura de Pamiers y publicada en el Boletín Oficial de Asociaciones el 28 de octubre de 2017 — número RNA W092002501, número SIRET 919 514 075 00010, código APE 9001Z (artes escénicas). Domicilio social: 2 Impasse des Bleuets, 09600 Aigues-Vives, Francia. Dirección postal: 29 Rue des Orteaux, 75020 París, Francia. Correo electrónico: contact@resonancesproductions.org.",
-          "Esta identificación le indica quién recibe estas sumas, y nada más: el editor de este sitio es David Lesage , una persona física; él es el responsable de esta página y de sus datos, como se indica justo arriba y en los avisos legales.",
+          "Para que sepa exactamente de quién se trata, aquí tiene su identificación: Résonances Productions, una asociación sin ánimo de lucro según la ley francesa de 1901, registrada en la subprefectura de Pamiers y publicada en el Boletín Oficial de Asociaciones el 28 de octubre de 2017 — número RNA W092002501, número SIRET 919 514 075 00010, código APE 9001Z (artes escénicas). Domicilio social: 2 Impasse des Bleuets, 09600 Aigues-Vives, Francia. Dirección postal: 29 Rue des Orteaux, 75020 París, Francia. Correo electrónico: contact@resonancesproductions.org.",
+          "Esta identificación le indica quién recibe estas sumas, y nada más: el editor de este sitio es David Lesage, una persona física; él es el responsable de esta página y de sus datos, como se indica justo arriba y en los avisos legales.",
           "Eso no cambia lo que te estoy diciendo sobre un instrumento: te respondo como músico que toca estos instrumentos a diario, y prefiero decirte que un instrumento no es adecuado para ti en lugar de vendértelo.",
-          "En este sitio web no se procesan pagos, ni yo tampoco. Las compras se realizan en otros lugares: en la tienda HelloAsso de Résonances Productions , en la solicitud de suscripción o directamente al fabricante en el caso de un micrófono Muling ."
+          "En este sitio web no se procesan pagos, ni yo tampoco. Las compras se realizan en otros lugares: en la tienda HelloAsso de Résonances Productions, en la solicitud de suscripción o directamente al fabricante en el caso de un micrófono Muling."
         ]
       },
       {
         "h": "Lo que me das, forma por forma",
         "p": "No se recopila ninguna información sin tu conocimiento: todo proviene de lo que tú mismo escribes. Los campos opcionales permanecen vacíos si no los modificas.",
         "items": [
-          "Reserva (visita a la sala de exposición, espacio para demostración, cita individual, solicitud de código de descuento Neotone ): nombre, apellidos, correo electrónico, número de teléfono (si lo proporciona), número de personas, fecha prevista, hasta tres franjas horarias que proponga, tipo y formato de la sesión (presencial o por vídeo), instrumentos que desea descubrir, modelo Neotone que le interesa, país, cuenta de redes sociales, cómo supo de mí, cuánto tiempo lleva tocando, qué le gustaría conseguir y su mensaje.",
+          "Reserva (visita a la sala de exposición, espacio para demostración, cita individual, solicitud de código de descuento Neotone): nombre, apellidos, correo electrónico, número de teléfono (si lo proporciona), número de personas, fecha prevista, hasta tres franjas horarias que proponga, tipo y formato de la sesión (presencial o por vídeo), instrumentos que desea descubrir, modelo Neotone que le interesa, país, cuenta de redes sociales, cómo supo de mí, cuánto tiempo lleva tocando, qué le gustaría conseguir y su mensaje.",
           "Contacto: nombre y apellidos, correo electrónico, asunto, mensaje.",
           "Lista de espera para solicitudes: nombre, apellido, correo electrónico, si ya posee un handpan y cuál, su propósito (para uso personal, para enseñar, para fabricar), su objetivo, el número de alumnos a los que imparte clases y, si fabrica handpans, su país, el número de notas que produce, los metales con los que trabaja y cómo fija sus precios. Además, su motivación si solicita ser probador beta.",
           "Para pedir el Muling micro: nombre, apellidos, correo electrónico, número de teléfono, cantidad, dirección de entrega completa, instrucciones para el repartidor, mensaje y, a continuación, el comprobante de transferencia que suba (imagen o PDF).",
@@ -2180,7 +2180,7 @@ export const es: Dict = {
           "YouTube: un video solo se carga si haces clic en él, y se realiza a través de youtube-nocookie.com. Mientras no hagas clic, no sucede nada.",
           "Muling Musical Instruments Co., Ltd. (China): solo si pide un micrófono, el fabricante realiza el envío directamente, por lo que su pedido se envía por correo electrónico a una dirección china. Este mensaje contiene su nombre, dirección de correo electrónico, número de teléfono, cantidad solicitada, país, dirección completa, instrucciones de envío, importe y número de referencia del pedido. Un campo específico solicita explícitamente esta información antes del envío. El hecho de que el pago se envíe a una cuenta alemana no cambia nada: esta información se envía igualmente a China.",
           "OVH — el nombre de dominio lesagedavid.fr.",
-          "HelloAsso: algunos productos, cursos y talleres se adquieren en la tienda HelloAsso Résonances Productions . Al hacer clic, abandonará este sitio web: se aplicará la política de HelloAsso y nada de lo que ingrese allí se transmitirá a través de este sitio.",
+          "HelloAsso: algunos productos, cursos y talleres se adquieren en la tienda HelloAsso Résonances Productions. Al hacer clic, abandonará este sitio web: se aplicará la política de HelloAsso y nada de lo que ingrese allí se transmitirá a través de este sitio.",
           "Stripe: el sitio lee los precios que muestra la aplicación y nada más; no se le envía ningún dato personal desde este sitio. La suscripción y el pago se procesan dentro de la aplicación, en su propio sitio web."
         ]
       },
@@ -2269,11 +2269,11 @@ export const es: Dict = {
       "noyer": "Nuez"
     },
     "woodDescriptions": {
-      "frene": "Madera clara con veta longitudinal pronunciada y textura fina. El fresno es la madera estándar para el Neotone¹ : ligera, con resonancia equilibrada y una estética depurada. Elegida por músicos que buscan un instrumento neutro y versátil que no llame la atención al tocar.",
+      "frene": "Madera clara con veta longitudinal pronunciada y textura fina. El fresno es la madera estándar para el Neotone¹: ligera, con resonancia equilibrada y una estética depurada. Elegida por músicos que buscan un instrumento neutro y versátil que no llame la atención al tocar.",
       "chene": "Madera robusta con una veta más compacta que la del fresno, en tonos miel dorados. Un carácter noble, de aspecto más cálido que el fresno. Incluida en el precio base: la alternativa natural para quienes buscan un aspecto más cálido sin coste adicional.",
       "acajou": "Madera de color ocre rojizo, profunda, densa y cálida. La caoba aporta profundidad visual y una elegancia clásica, evocando de inmediato la calidad de los instrumentos clásicos. Con el paso de los años, desarrolla una hermosa pátina.",
       "cerisier": "Madera de color rosa anaranjado con vetas finas y uniformes. La madera de cerezo envejece, ganando intensidad y oscureciéndose ligeramente. Posee un carácter suave y distintivo, a medio camino entre la ligereza del roble y la profundidad de la caoba.",
-      "noyer": "Madera oscura con profundos tonos chocolate, a veces veteada con vetas más claras. El nogal es el más contrastante de los cinco, perfecto para un estilo decididamente sofisticado. Se solicita con frecuencia para producciones audiovisuales o montajes escénicos donde el instrumento es el protagonista."
+      "noyer": "Madera oscura con profundos tonos chocolate, a veces veteada con vetas más claras. El nogal es el más contrastante de los cinco, perfecto para un estilo audaz y escala. Se solicita con frecuencia para producciones audiovisuales o montajes escénicos donde el instrumento es el protagonista."
     },
     "metalNames": {
       "nitrure": "Acero nitrurado",
@@ -2283,7 +2283,7 @@ export const es: Dict = {
     "metalEnNames": {
       "nitrure": "Acero nitrurado",
       "inox": "Acero inoxidable",
-      "ember": "Acero de brasas"
+      "ember": "Ember steel"
     },
     "metalTags": {
       "nitrure": "Claro y potente",
@@ -2312,7 +2312,7 @@ export const es: Dict = {
     },
     "yishamaVideos": [
       "El primer encuentro con el instrumento",
-      "Lo que me gusta de mi Yishama : la lógica de la escala.",
+      "Lo que me encanta de mi Yishama: la lógica de la escala",
       "Fallin’ — Versión de Alicia Keys",
       "Copiar y pegar — Portada de Bigflo y Oli",
       "Ave María, versión jazz",
@@ -2329,26 +2329,26 @@ export const es: Dict = {
     "modelFeatures": {
       "one": [
         "9 notas principales + timbre + cúpula (10 zonas de reproducción)",
-        "Hasta 9 rangos cargados sin conexión (claves dedicadas) · ilimitado una vez conectado",
-        "Creación de gamas de productos personalizadas ilimitadas a través de una interfaz web.",
-        "Disparo multifunción: Rango de cambio · Grabador integrado",
+        "Hasta 9 escalas cargados sin conexión (claves dedicadas) · ilimitados una vez conectado",
+        "Creación de escalas personalizadas ilimitadas a través de una interfaz web.",
+        "Ding multifuncional: cambio de escala · grabadora integrada",
         "Control MIDI completo (entrada/salida)",
         "1 entrada para pedal (volumen o expresión)",
         "Salida de audio mono (1 conector) o salida de audio estéreo (2 conectores)",
         "Batería de iones de litio de 7800 mAh: 8 horas de duración de la batería.",
-        "1300 muestras por rango · 48 kHz / 32 bits"
+        "1300 muestras por escala · 48 kHz / 32 bits"
       ],
       "mutant": [
         "9 ranuras para notas con zonas de expansión = 19 notas por escala",
-        "Hasta 18 rangos cargados sin conexión (claves dedicadas) · ilimitado una vez conectado",
-        "Creación de gamas de productos personalizadas ilimitadas a través de una interfaz web.",
+        "Hasta 18 escalas cargados sin conexión (claves dedicadas) · ilimitados una vez conectado",
+        "Creación de escalas personalizadas ilimitadas a través de una interfaz web.",
         "Pantalla LCD retroiluminada integrada",
-        "Disparo multifunción: Rango de cambio · Grabador integrado",
+        "Ding multifuncional: cambio de escala · grabadora integrada",
         "Control MIDI completo (entrada/salida)",
         "1 entrada para pedal (volumen o expresión)",
         "Salida de audio mono (1 conector) o salida de audio estéreo (2 conectores)",
         "Batería de iones de litio de 7800 mAh: 8 horas de duración de la batería.",
-        "1300 muestras por rango · 48 kHz / 32 bits"
+        "1300 muestras por escala · 48 kHz / 32 bits"
       ]
     },
     "specs": [
@@ -2358,17 +2358,17 @@ export const es: Dict = {
           "DAC de 48 kHz / 32 bits · 24 bits / 384 kHz",
           "Relación señal/ruido: 112 dB",
           "Latencia de audio: 5 ms",
-          "1300 muestras de estudio por rango",
+          "1.300 muestras de estudio por escala",
           "Notas: 7 tonos × 10–15 velocidades"
         ]
       },
       {
-        "title": "Incluye 7 gamas de productos oficiales (+ ilimitadas a través de la aplicación)",
+        "title": "7 escalas oficiales incluidos (+ ilimitados a través de la aplicación)",
         "items": [
           "Escalas oficiales de MAG Instruments y handpans Yishama",
           "Ej.: B- Amara · C- Aegean · C# Pygmy · D- Kurd · F#2 Pygmy · G- Hijaz rumano …",
           "Crea tus propias escalas, sin límites.",
-          "Campos de tiro compartidos libremente por la comunidad."
+          "Escalas compartidas gratuitamente por la comunidad"
         ]
       },
       {
@@ -2396,7 +2396,7 @@ export const es: Dict = {
           "Salida de auriculares · Entrada/salida MIDI",
           "1 entrada para pedal (volumen o expresión)",
           "Mono (1 conector) o estéreo (2 conectores)",
-          "Configuración WiFi, creación de rango"
+          "WiFi · ajustes, creación de escalas"
         ]
       },
       {
@@ -2412,11 +2412,11 @@ export const es: Dict = {
     ],
     "comparatif": [
       {
-        "aco": "Para tocar 10 escalas, necesitas 10 handpans: transporte complicado, almacenamiento voluminoso, presupuesto creciente.",
-        "neo": "Un solo Neotone te abre un sinfín de escalas: solo tienes que transportarlo, guardarlo y pagar por él. Además, puedes crear tus propias escalas personalizadas."
+        "aco": "Para tocar 10 escalas, necesitas 10 handpans: transporte complicado, almacenamiento voluminoso, presupuesto en aumento.",
+        "neo": "Un solo Neotone te abre un sinfín de escalas: solo tienes que transportarlo, guardarlo y pagarlo. Además, puedes crear tus propias escalas personalizadas."
       },
       {
-        "aco": "Dos intérpretes, dos escalas diferentes: es difícil tocar juntos o compartir una escala.",
+        "aco": "Dos jugadores, dos escalas diferentes: es difícil jugar juntos o compartir una escala.",
         "neo": "Todos cargan la misma escala para tocar juntos: aprender y compartir se vuelve sencillo, y te abres al mundo para tocar con otros instrumentos."
       },
       {
@@ -2429,11 +2429,11 @@ export const es: Dict = {
       },
       {
         "aco": "Frágil y sensible: imposible de tocar a plena luz del sol, y la afinación cambia con el tiempo y con los golpes.",
-        "neo": "Siempre perfectamente afinado, sin verse afectado por el calor. Elija 440 Hz o 432 Hz y transporte una escala para tocar en la tonalidad correcta con otros instrumentos."
+        "neo": "Siempre perfectamente afinada, sin verse afectada por el calor. Elija 440 Hz o 432 Hz y transporte una escala para tocar en la tonalidad correcta con otros instrumentos."
       },
       {
         "aco": "Muy pocas notas. La física del metal lo limita todo: tamaño, disonancias, espacio disponible.",
-        "neo": "La electrónica libera espacio para la colocación de las notas: es posible obtener muchas más notas y escalas en un solo instrumento."
+        "neo": "La electrónica libera espacio para la colocación de las notas: es posible añadir muchas más notas y escalas en un solo instrumento."
       },
       {
         "aco": "La técnica de percusión acústica es exigente: al principio puede resultar desalentadora para algunas personas, que se rinden por falta de placer inmediato.",
@@ -2441,25 +2441,25 @@ export const es: Dict = {
       },
       {
         "aco": "Para resaltar los armónicos se requiere un nivel de precisión que rara vez se ve en la acústica.",
-        "neo": "En el Neotone , los armónicos se reproducen con facilidad y los efectos acústicos se mantienen."
+        "neo": "En el Neotone, los armónicos se reproducen con facilidad y los efectos acústicos se mantienen."
       },
       {
-        "aco": "En la versión acústica Mutant , las áreas de las notas mutantes son pequeñas y precisas.",
+        "aco": "En la versión acústica Mutant, las áreas de las notas mutantes son pequeñas y precisas.",
         "neo": "El tamaño de las zonas de impacto es ajustable (hasta el 30% de la nota): se amplía para principiantes y se reduce para mayor precisión."
       }
     ],
     "faq": [
       {
-        "q": "¿Qué garantía acompaña al Neotone ?",
+        "q": "¿Qué garantía acompaña al Neotone?",
         "a": "Cada Neotone incluye una garantía de 6 años, un estuche semirrígido y un cargador."
       },
       {
-        "q": "¿Qué empresa fabrica Neotone ?",
-        "a": "El Neotone es fabricado por Soundventure Ltd en Budapest, Hungría. El instrumento nació del sueño de dos amigos, Csaba y Norbert; la empresa se fundó en 2021 con el apoyo de MAG Instruments y Yishama Ltd. He visitado sus talleres en Hungría varias veces: conozco personalmente a Csaba y Norbert, así como a todo el equipo (Gergely, Dániel y los artesanos de MAG Instruments, y Yonathan de Yishama ). También he sido probador beta oficial de la marca desde 2023; desde el primer Neotone¹ , he reportado y corregido miles de errores y sugerido numerosas mejoras."
+        "q": "¿Qué empresa fabrica Neotone?",
+        "a": "El Neotone es fabricado por Soundventure Ltd en Budapest, Hungría. El instrumento nació del sueño de dos amigos, Csaba y Norbert; la empresa se fundó en 2021 con el apoyo de MAG Instruments y Yishama Ltd. He visitado sus talleres en Hungría varias veces: conozco personalmente a Csaba y Norbert, así como a todo el equipo (Gergely, Dániel y los artesanos de MAG Instruments, y Yonathan de Yishama). También he sido probador beta oficial de la marca desde 2023; desde el primer Neotone¹, he reportado y corregido miles de errores y sugerido numerosas mejoras."
       },
       {
-        "q": "¿Para quién es Neotone ?",
-        "a": "Para todos: tocar el handpan digital no requiere experiencia previa. Se convierte rápidamente en indispensable para músicos en vivo (para crear bucles y conectar pedales), para grabaciones en estudio, para quienes tocan por la noche (con auriculares) y para nómadas digitales. Y para quienes ya están enganchados, abre un mundo infinito de posibilidades para crear escalas."
+        "q": "¿Para quién es Neotone?",
+        "a": "Para todos: tocar el handpan digital no requiere experiencia previa. Se convierte rápidamente en indispensable para músicos en vivo (para crear bucles y conectar pedales), para grabaciones en estudio, para quienes tocan por la noche (con auriculares) y para nómadas digitales. Y para quienes ya están enganchados, abre un sinfín de posibilidades para crear escalas."
       },
       {
         "q": "¿Proporciona las mismas sensaciones que un handpan acústico?",
@@ -2467,10 +2467,10 @@ export const es: Dict = {
       },
       {
         "q": "¿Es el Mutant idéntico a un handpan \"mutante\" real?",
-        "a": "No. Las notas adicionales se reproducen a través de una zona independiente dentro de cada campo tonal, lo que requiere un toque suave y preciso. Puedes ampliar esta zona hasta un 30 % de la nota para mayor comodidad."
+        "a": "No. Las notas adicionales se reproducen a través de una zona independiente dentro de cada campo tonal, lo que requiere un toque suave y preciso. Puedes ampliar esta zona hasta un 30% de la nota para mayor comodidad."
       },
       {
-        "q": "Soy principiante, ¿me recomiendas Neotone ?",
+        "q": "Soy principiante, ¿me recomiendas Neotone?",
         "a": "Ambos modelos son ideales para principiantes. Tocar el Neotone es incluso más fácil que tocar un handpan acústico: la sensibilidad de los sensores es ajustable, por lo que se obtiene un buen sonido desde el primer golpe. El Mutant requiere un poco más de precisión al tocar sus notas adicionales, pero permite explorar la armonía con mayor profundidad."
       },
       {
@@ -2478,7 +2478,7 @@ export const es: Dict = {
         "a": "El Neotone es un instrumento digital independiente con su propio motor de sonido: no necesita un ordenador para funcionar. No tiene altavoces integrados, por lo que debe conectarse a un altavoz externo (por ejemplo, el altavoz independiente Bose S1 Pro+) o utilizarse con auriculares para escuchar el sonido."
       },
       {
-        "q": "¿Se pueden aplicar efectos al sonido del Neotone ?",
+        "q": "¿Se pueden aplicar efectos al sonido del Neotone?",
         "a": "Al igual que con una guitarra eléctrica, puedes conectarle todo tipo de equipos externos: pedales de efectos (Boss OC-3), estaciones de bucle (Roland RC-505 MKII), reverberaciones (Strymon Nightsky, Hologram Microcosm)."
       },
       {
@@ -2519,7 +2519,7 @@ export const es: Dict = {
       },
       {
         "title": "Prueba ambos modelos en la vida real.",
-        "text": "Una vez allí, puedes tomarte tu tiempo para probar el Neotone¹ y el Mutant , comparar las maderas y hacerme todas tus preguntas."
+        "text": "Una vez allí, puedes tomarte tu tiempo para probar el Neotone¹ y el Mutant, comparar las maderas y hacerme todas tus preguntas."
       },
       {
         "title": "Llévate tu instrumento a casa el mismo día.",
@@ -2563,7 +2563,7 @@ export const es: Dict = {
       }
     ],
     "calc": {
-      "modeQuestion": "¿Cómo le gustaría recibir su Neotone ?",
+      "modeQuestion": "¿Cómo le gustaría recibir su Neotone?",
       "modeOnline": "📦 Me va a llegar un pedido",
       "modeOnlineSub": "Envío internacional incluido · 5% de descuento",
       "modeShowroom": "🏠 Voy a ir a la sala de exposición ★",
@@ -2577,7 +2577,7 @@ export const es: Dict = {
       "subtotal": "Subtotal (sin IVA)",
       "savings": "Ahorras dinero",
       "savingsB2B": "No pagas",
-      "savingsB2BNote": "Sea {discountRate} el descuento + {vatRate} el IVA sobre el precio base, es decir, la diferencia con el precio de lista con IVA incluido ( {catalog} ). Solo el descuento de {discount} representa una ganancia real: no se paga el IVA por adelantado (inversión del sujeto pasivo) y, de todos modos, se recuperaría.",
+      "savingsB2BNote": "Sea {discountRate} el descuento + {vatRate} el IVA sobre el precio base, es decir, la diferencia con el precio de lista con IVA incluido ({catalog}). Solo el descuento de {discount} representa una ganancia real: no se paga el IVA por adelantado (inversión del sujeto pasivo) y, de todos modos, se recuperaría.",
       "getCode": "Obtén mi código de descuento",
       "discountLabel": "Presentación del embajador",
       "vat": "TINA",

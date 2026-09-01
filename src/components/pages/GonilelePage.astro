@@ -15,7 +15,7 @@ import {
 } from '@/data/gonilele'
 import { SITE_LEAD_KNOWS_CONTACT_SOURCES } from '@/data/site'
 import { getDict } from '@/i18n/dict'
-import { localizePath } from '@/i18n/utils'
+import { localizePath, numberLocale } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -23,7 +23,7 @@ const { lang } = Astro.props
 const t = getDict(lang)
 const g = t.gonilele
 const L = (p: string) => localizePath(p, lang)
-const eur = (n: number) => n.toLocaleString(lang === 'en' ? 'en-GB' : 'fr-FR') + ' €'
+const eur = (n: number) => n.toLocaleString(numberLocale(lang)) + ' €'
 const vt = g.videoTitles as Record<string, string>
 
 // Tant que l'Edge Function ne connaît pas `gonilele-order`, on n'ajoute AUCUN
