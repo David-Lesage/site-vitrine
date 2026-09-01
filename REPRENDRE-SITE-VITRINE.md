@@ -29,6 +29,53 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 01/09/2026 (11ᵉ passe) — 📝 BLOG « LA CARTE DES JOUEURS » (FR + EN)
+
+**Statut : commité (`2caeb91`), poussé sur `main`, buildé (116 pages), rendu vérifié en local
+FR + EN, liens croisés vérifiés — ⛔ PAS ENCORE DÉPLOYÉ EN PROD (voir « Pourquoi » ci-dessous).**
+
+### La demande, mots de David
+> « Peux-tu faire un article de blog sur **la carte des joueurs** présente dans l'app :
+> https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html »
+
+### Fichiers créés, et eux seuls
+`src/content/blog/la-carte-des-joueurs.md` · `src/content/blog/la-carte-des-joueurs-en.md`
+(permalink partagé `la-carte-des-joueurs`, `category: "communaute"`, `pubDate: 2026-09-01`,
+`cover: /images/blog-constellations-3-traces.webp`).
+**Aucun dictionnaire, aucune page, aucun article existant touché.** 114 → **116 pages**.
+
+### L'angle : le renversement du défaut
+Pas une notice. Le sujet est que **tout est éteint au départ** — la quasi-totalité des cartes
+communautaires t'inscrivent puis te laissent te retirer ; ici l'interrupteur maître
+« Apparaître sur la carte » est OFF, champ par champ, et l'app ne connaît de ta position
+qu'**un nom de ville que tu as écrit toi-même** (aucune géolocalisation, aucune adresse).
+Deux corollaires portés par l'article : l'**aperçu est le MÊME composant** que la fiche de la
+carte (garantie technique, pas promesse) et la carte **assume d'être belle dès les premiers
+inscrits** (+ « un pays vide ≠ un pays sans joueurs »).
+
+### Source de la matière — LECTURE SEULE
+**Entrée 250 du changelog de l'app** (`~/CLAUDE/NEOTONE STUDIO/NEOTONE 1er mai 2026/guide/changelog-data.ts`,
+« 🌍 Ta place dans la constellation des joueurs », 28/08/2026) + les deux maquettes
+`prototypes/constellation-joueurs-carte.html` et `-profil.html`, ouvertes et lues à l'écran
+(servies en `python3 -m http.server`, `file://` bloqué par l'extension).
+
+### 🚫 AUCUNE ILLUSTRATION — c'est volontaire, ne pas « réparer »
+Le seul visuel existant est une **maquette** peuplée de personnes fictives (Lena, Kenji,
+Tomás…). La règle de David interdit de présenter une maquette comme une capture : l'article
+part donc **sans image dans le corps** et se lit entièrement sans. Les prises de vue à
+demander à David sont listées dans le rapport de session (carte réelle desktop + mobile,
+panneau « 🌍 Mon profil public » éteint puis allumé avec l'aperçu, une fiche ouverte).
+
+### ⚠️ POURQUOI PAS DÉPLOYÉ
+Au moment de la publication, une **session parallèle travaillait sur `src/data/atlas.ts`,
+`AtlasPage.astro` et `dict.ts`/`en.ts`/`es.ts`** (modifiés non commités). `npx vercel --prod`
+téléverse **l'arbre de travail**, pas le commit : déployer aurait mis en prod leur travail en
+cours. **À faire dès que cette session a fini** : `npx astro build` puis
+`npx vercel --prod --yes --scope batdavmusique-4937s-projects`, et vérifier
+`/blog/la-carte-des-joueurs` et `/en/blog/la-carte-des-joueurs` en ligne.
+
+---
+
 ## ÉTAT ACTUEL — 01/09/2026 (10ᵉ passe) — 🎬 `/pieds-atlas` : LA VIDÉO PASSE EN DÉBUT DE PAGE
 
 **Statut : commité (`8d42791`), poussé sur `main`, buildé (114 pages), déployé en prod,
