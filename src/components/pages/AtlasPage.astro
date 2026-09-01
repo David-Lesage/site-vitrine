@@ -38,10 +38,12 @@
 //    « PHOTO RETIRÉE » plus bas. Avant d'en rajouter une, se demander ce
 //    qu'elle prouve.
 //
-// 🚧 TROIS EMPLACEMENTS RÉSERVÉS, tous pilotés depuis src/data/atlas.ts :
-//    · la vidéo de démonstration de David  → `atlasDemoVideoId`
+// 🚧 EMPLACEMENTS RÉSERVÉS, tous pilotés depuis src/data/atlas.ts :
 //    · le lien d'affiliation               → `ATLAS_AFFILIATE_URL`
 //    · le code de réduction                → `ATLAS_PROMO_ACTIVE` (éteint)
+//    (la vidéo de démonstration `atlasDemoVideoId` N'EST PLUS un emplacement
+//     réservé : elle est en ligne depuis le 01/09/2026, bande `#demo` juste
+//     après le hero.)
 // ============================================================
 import Layout from '@/layouts/Layout.astro'
 import Section from '@/components/Section.astro'
@@ -306,6 +308,38 @@ const ld = [
     </div>
   </section>
 
+  {/* ── 🎬 LA VIDÉO, EN OUVERTURE DE PAGE ───────────────────────────────────
+      Demande de David (01/09/2026) : « mettre la vidéo en début de page ».
+      Elle vivait auparavant dans la section partenaire `tone="ink"` (5ᵉ bloc),
+      sous la forme d'un cadre 16/9 en pointillés « À venir » tant que
+      `atlasDemoVideoId` valait `null`. Le cadre a été SUPPRIMÉ en même temps
+      que la vidéo arrivait : il n'aurait aucun sens en double sur la page.
+
+      POURQUOI ICI, ET PAS DANS #debout :
+      1. « En début de page » au sens littéral. Le hero est haut à 375 px ; le
+         premier bloc après lui est le seul endroit qu'on atteint d'un scroll.
+      2. La vidéo s'appelle « Pourquoi jouer du handpan DEBOUT ? ». Elle est
+         donc posée juste au-dessus de la section « Pourquoi je joue debout » :
+         la vidéo pose la question, la section y répond. Ce n'est pas un bloc
+         flottant, c'est la porte d'entrée du récit.
+      3. Pas DANS #debout parce que cette section porte déjà trois médias
+         (photo de scène, photo showroom, vidéo The Voice), chacun justifié par
+         un long commentaire. Un quatrième média l'aurait enterrée.
+      🎥 C'est la vidéo de David, sur SA chaîne (voir l'avis de source dans
+         src/data/atlas.ts). Aucune question de droits, contrairement à The Voice.
+      ⚙️ Toute la bande est conditionnée par `atlasDemoVideoId` : si l'id
+         repasse à `null`, la section disparaît proprement, pas de trou. */}
+  {atlasDemoVideoId && (
+    <Section tone="cream-deep" id="demo" width="narrow">
+      <p class="text-center text-xs font-700 uppercase tracking-[0.2em] text-rust">{a.videoSectionTitle}</p>
+      <h2 class="mt-3 text-center font-display text-2xl font-700 md:text-3xl">{a.videoTitle}</h2>
+      <div class="mt-7">
+        <YouTube id={atlasDemoVideoId} title={a.videoTitle} />
+      </div>
+      <p class="mt-4 text-center text-sm text-ink-soft/80">{a.videoNote}</p>
+    </Section>
+  )}
+
   {/* ── ÉTAPE 1 · MON EXPÉRIENCE ────────────────────────────────────────────
       Le récit n'est plus une section « à part » qu'on lit après coup : c'est
       la PREMIÈRE marche du tunnel. Il pose qui parle et pourquoi un pied de
@@ -503,14 +537,21 @@ const ld = [
   </Section>
 
   {/* ── L'HONNÊTETÉ, EN UN SEUL BLOC ────────────────────────────────────────
-      Deux choses qui vont ensemble et vivaient dans DEUX sections séparées
-      (partenariat, puis la vidéo) et se répétaient (« je filme dès que je les
-      ai » était écrit deux fois). Elles sont réunies ici :
-      1. l'affiliation — donc l'intérêt de David à ce que tu achètes ;
-      2. l'emplacement réservé à sa propre démonstration filmée.
-      🚨 CES DEUX ÉLÉMENTS NE SE SÉPARENT PAS, et aucun ne se retire. C'est
-         l'identité du site : on annonce la commission dans le même souffle que
-         ce qui reste à montrer.
+      Le partenariat, et donc l'intérêt de David à ce que tu achètes. C'est
+      l'identité du site : la commission est annoncée, pas sous-entendue.
+      🚨 CE BLOC NE SE RETIRE PAS.
+
+      🗑️ RETIRÉ D'ICI LE 01/09/2026 — L'EMPLACEMENT VIDÉO. Il occupait la 2ᵉ
+         colonne sous la forme d'un cadre 16/9 en pointillés « Démonstration par
+         David Lesage · À venir ». La vidéo existe désormais (`atlasDemoVideoId`)
+         et David l'a demandée EN DÉBUT DE PAGE : elle est dans sa propre bande
+         `<Section id="demo">` juste après le hero. Garder ici un cadre
+         « À venir » alors que la vidéo est visible plus haut serait absurde —
+         c'est pourquoi le rendu conditionnel ET le mode d'emploi qui l'expliquait
+         ont disparu ensemble. La section est repassée en UNE colonne (la grille
+         `lg:grid-cols-2` n'avait plus qu'un occupant). L'ancre `#demo` n'est pas
+         perdue : elle a suivi la vidéo. Les clés `videoSoon` restent dans les
+         trois dictionnaires, inutilisées mais non supprimées.
 
       🗑️ SUPPRIMÉ LE 20/08/2026, DÉCISION EXPLICITE DE DAVID — la carte « Ce que
          je vérifierai devant vous » (`testTitle` / `testText`) qui occupait la
@@ -526,54 +567,21 @@ const ld = [
          connaître (poids ressenti, bruit du réglage, tenue sous les mains,
          comparaison de stabilité vécue). Sa conviction : oui. Une expérience
          qu'il n'a pas encore : jamais.
-      📐 RECOMPOSITION : la 2ᵉ colonne n'est pas restée vide — l'emplacement
-         vidéo, qui vivait en dessous sur une colonne centrée, l'occupe. La
-         grille reste donc à deux colonnes pleines au bureau, et s'empile
-         proprement à 375 px. C'est désormais le cadre « À venir » qui porte
-         seul l'information « la démonstration arrive », sans la justifier.
-      🚧 TANT QUE `atlasDemoVideoId` VAUT `null` : cadre 16/9 assumé portant
-         « Démonstration par David Lesage » + « À venir ». Ce n'est PAS une
-         image cassée : rien n'est chargé. Pour la vraie vidéo, une seule ligne
-         à changer dans src/data/atlas.ts. Rien à toucher ici. */}
+      📐 UNE SEULE COLONNE depuis le départ de la vidéo (01/09/2026), bornée par
+         `max-w-3xl` : sans borne, le texte s'étirait sur toute la largeur du
+         conteneur `max-w-7xl` et devenait illisible au bureau. L'ancienne note
+         d'alignement (`lg:items-center`, 258 px contre 423 px) n'a plus d'objet :
+         il n'y a plus deux colonnes à aligner. */}
   <Section tone="ink">
-    {/* 📐 `lg:items-center` (et pas `items-start`) : mesuré dans le navigateur
-        le 20/08/2026, la colonne de texte fait 258 px contre 423 px pour le
-        cadre 16/9 de la vidéo. Alignées en haut, elles laissaient 165 px de
-        vide sombre sous le texte — le « trou » laissé par la carte supprimée.
-        Centrées, les deux colonnes se répondent. À 375 px elles s'empilent,
-        l'alignement n'a plus d'effet. */}
-    <div class="grid items-start gap-10 lg:grid-cols-2 lg:items-center">
-      <div>
-        <SectionHeading tone="light" align="left" eyebrow={a.eyebrow} title={a.partnerTitle} />
-        <p class="mt-5 text-cream/85">{a.partnerText}</p>
-        {/* 🚧 Note affichée UNIQUEMENT tant que le lien d'affiliation est vide.
-            Le jour où `ATLAS_AFFILIATE_URL` est renseigné dans data/atlas.ts,
-            elle disparaît toute seule — rien d'autre à modifier ici. */}
-        {!ATLAS_AFFILIATE_URL && (
-          <p class="mt-5 rounded-lg border border-gold/30 bg-gold/10 p-4 text-sm text-cream/80">{a.affiliateNote}</p>
-        )}
-      </div>
-      <div id="demo">
-        <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{a.videoSectionTitle}</p>
-        <div class="mt-5">
-          {atlasDemoVideoId ? (
-            <YouTube id={atlasDemoVideoId} title={a.videoTitle} />
-          ) : (
-            <div class="relative grid aspect-video w-full place-items-center rounded-card border-2 border-dashed border-cream/25 bg-cream/5 px-6 text-center">
-              <div>
-                <span class="mx-auto grid h-16 w-16 place-items-center rounded-full border border-cream/25 bg-cream/10">
-                  <Icon name="lucide:video" class="h-7 w-7 text-gold" />
-                </span>
-                <p class="mt-5 font-display text-xl font-700 text-cream md:text-2xl">{a.videoTitle}</p>
-                <p class="mt-3 inline-flex items-center gap-2 rounded-full bg-gold/20 px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-gold">
-                  <Icon name="lucide:clock" class="h-4 w-4" /> {a.videoSoon}
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-        <p class="mt-4 text-sm text-cream/70">{a.videoNote}</p>
-      </div>
+    <div class="max-w-3xl">
+      <SectionHeading tone="light" align="left" eyebrow={a.eyebrow} title={a.partnerTitle} />
+      <p class="mt-5 text-cream/85">{a.partnerText}</p>
+      {/* 🚧 Note affichée UNIQUEMENT tant que le lien d'affiliation est vide.
+          Le jour où `ATLAS_AFFILIATE_URL` est renseigné dans data/atlas.ts,
+          elle disparaît toute seule — rien d'autre à modifier ici. */}
+      {!ATLAS_AFFILIATE_URL && (
+        <p class="mt-5 rounded-lg border border-gold/30 bg-gold/10 p-4 text-sm text-cream/80">{a.affiliateNote}</p>
+      )}
     </div>
   </Section>
 

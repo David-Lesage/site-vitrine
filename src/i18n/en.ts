@@ -1239,14 +1239,19 @@ export const en: Dict = {
     testTitle: 'What I will check in front of you',
     testText:
       'They arrive in a few days. What I claim on this page, I claim knowingly: I have worn out four different stands on stage, and I know exactly what I am looking for. What I do not have yet is the field test — so as soon as the two stands are at the showroom, I will film my own demonstration, put it here, and tell you how it goes.',
-    // ✅ Since that deletion, this reserved frame carries the "the demo is
-    //    coming" information on its own — without justifying it.
-    // ⏳ `videoNote` no longer says "a matter of days": a dated promise turns
-    //    false all by itself after a week.
+    // 🎬 The video exists since 01/09/2026 (`atlasDemoVideoId`) and is shown at
+    //    the TOP of the page, right after the hero. No "coming soon" frame left.
+    // 🚨 This is NOT the YouTube title copied over: the official title is full of
+    //    hashtags and handles. It keeps the exact SUBJECT — the "why standing"
+    //    question, and Atlas named by David himself — and adds nothing about what
+    //    the video would show.
+    // 🚨 `videoNote` describes neither the content nor any promise: only where the
+    //    video comes from. Never put a dated promise or a usage verdict back here.
     videoSectionTitle: 'The video demonstration',
-    videoTitle: 'Demonstration by David Lesage',
+    videoTitle: 'Why play the handpan standing up — my video, with Atlas',
+    // ⚠️ Key KEPT but no longer displayed (the "coming soon" frame is gone).
     videoSoon: 'Coming soon',
-    videoNote: 'I will film my own demonstration as soon as the two stands are at the showroom, and put it here.',
+    videoNote: 'My own video, published on my YouTube channel.',
 
     modelsTitle: 'Two models',
     modelsIntro:

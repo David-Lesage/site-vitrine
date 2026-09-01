@@ -84,17 +84,29 @@ export const atlasBodyUrl = 'https://atlashandpan.com/en/products/atlas-body'
 /** Lien d'achat : le lien d'affiliation dès qu'il existe, sinon la fiche officielle. */
 export const atlasLink = (officialUrl: string): string => ATLAS_AFFILIATE_URL || officialUrl
 
-// ── 🎬 VIDÉO DE DÉMONSTRATION PAR DAVID — EMPLACEMENT RÉSERVÉ ──────────────
+// ── 🎬 VIDÉO DE DÉMONSTRATION PAR DAVID — EN LIGNE DEPUIS LE 01/09/2026 ────
 //
-// David filmera sa propre démonstration quand il aura reçu les deux pieds.
-// Tant que `atlasDemoVideoId` vaut `null`, la page affiche un cadre 16/9
-// « Démonstration par David Lesage · À venir » (rien de cassé, rien de vide).
+// ✅ RENSEIGNÉE. Le cadre « À venir » qui tenait la place n'existe plus : il a
+//    été retiré de la page le 01/09/2026 en même temps que la vidéo arrivait.
 //
-// POUR METTRE LA VRAIE VIDÉO EN LIGNE : une seule ligne à changer ici →
-//   export const atlasDemoVideoId: string | null = 'ABCdef123'   // id YouTube
-// (l'identifiant est ce qui suit `watch?v=` ou `youtu.be/` dans l'URL).
-// Le composant <YouTube /> prend alors automatiquement la place du cadre.
-export const atlasDemoVideoId: string | null = null
+// SOURCE VÉRIFIÉE (oEmbed YouTube, 01/09/2026) :
+//   · titre officiel : « Pourquoi jouer du #handpan Debout ? Je prend mon pied
+//     avec #Atlas & @yishama_official »
+//   · chaîne : « David Lesage » — c'est SA vidéo, aucune question de droits
+//     (contrairement à `atlasTheVoiceVideoId` juste en dessous, publiée par TF1).
+//   · format 16/9 classique, ce n'est pas un Short vertical.
+//
+// 📍 OÙ ELLE S'AFFICHE : dans une bande à elle, JUSTE APRÈS LE HERO, avant la
+//    section `#debout` — demande de David (« mettre la vidéo en début de page »).
+//    Le titre de la vidéo pose exactement la question que `#debout` développe.
+//    Voir le bloc `<Section id="demo">` dans AtlasPage.astro.
+//
+// ⚠️ SI ON REPASSE CETTE CONSTANTE À `null` : la bande `#demo` disparaît en
+//    entier (le rendu est conditionné par `atlasDemoVideoId`). Il n'y a plus de
+//    cadre de remplacement — c'était voulu, un cadre « À venir » n'a de sens
+//    qu'avant la publication. Les clés i18n `videoSoon` (FR/EN/ES) sont
+//    conservées dans les dictionnaires au cas où.
+export const atlasDemoVideoId: string | null = 's1lFN3PDEnA'
 
 // ── 🎤 LA VIDÉO « THE VOICE » — TROUVÉE ET RENSEIGNÉE LE 20/08/2026 ────────
 //

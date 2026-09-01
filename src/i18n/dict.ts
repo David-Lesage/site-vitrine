@@ -1448,17 +1448,27 @@ const fr = {
     testTitle: 'Ce que je vérifierai devant vous',
     testText:
       'Je les reçois dans quelques jours. Ce que j’avance sur cette page, je l’avance en connaissance de cause : j’ai usé quatre pieds différents sur scène, et je sais exactement ce que je cherche. Ce que je n’ai pas encore, c’est le terrain — alors dès que les deux pieds sont au showroom, je filme ma propre démonstration, je la mets ici, et je vous dis ce que ça donne.',
-    // `videoSectionTitle` = titre de la SECTION ; `videoTitle` = ce qui est
-    // écrit DANS le cadre réservé (demande de David : le rectangle porte
-    // « Démonstration par David Lesage » et la mention « À venir »).
-    // ✅ DEPUIS LA SUPPRESSION CI-DESSUS, C'EST CE CADRE QUI PORTE SEUL
-    //    l'information « la démonstration arrive » — sans la justifier.
-    // ⏳ `videoNote` ne dit plus « c'est une question de jours » : une promesse
-    //    datée devient fausse toute seule au bout d'une semaine.
+    // 🎬 LA VIDÉO EXISTE DEPUIS LE 01/09/2026 (`atlasDemoVideoId`). Elle est
+    //    affichée EN DÉBUT DE PAGE, juste après le hero — plus aucun cadre
+    //    « À venir » nulle part.
+    // `videoSectionTitle` = le sur-titre de la bande ; `videoTitle` = le titre
+    //    affiché au-dessus du lecteur ET l'intitulé lu par les lecteurs d'écran.
+    // 🚨 CE N'EST PAS LE TITRE YOUTUBE RECOPIÉ. Le titre officiel de la vidéo
+    //    (« Pourquoi jouer du #handpan Debout ? Je prend mon pied avec #Atlas &
+    //    @yishama_official ») est plein de hashtags et de mentions : illisible
+    //    dans une page. Ce qui est écrit ici en garde le SUJET exact — la
+    //    question « pourquoi debout », et le fait qu'Atlas y est nommé par
+    //    David lui-même — sans rien ajouter sur ce que la vidéo montrerait.
+    // 🚨 `videoNote` NE DÉCRIT PAS le contenu de la vidéo et ne promet plus
+    //    rien : il dit seulement d'où elle vient (la chaîne de David). Ne pas y
+    //    remettre une promesse datée, ni un jugement d'usage sur les pieds.
     videoSectionTitle: 'La démonstration en vidéo',
-    videoTitle: 'Démonstration par David Lesage',
+    videoTitle: 'Pourquoi jouer du handpan debout — ma vidéo, avec Atlas',
+    // ⚠️ Clé CONSERVÉE mais PLUS AFFICHÉE (le cadre « À venir » a disparu le
+    //    01/09/2026). Ne pas la supprimer : elle resert si une autre vidéo est
+    //    un jour annoncée avant d'exister.
     videoSoon: 'À venir',
-    videoNote: 'Je filme ma propre démonstration dès que les deux pieds sont au showroom, et je la mets ici.',
+    videoNote: 'Ma propre vidéo, publiée sur ma chaîne YouTube.',
 
     modelsTitle: 'Deux modèles',
     modelsIntro:

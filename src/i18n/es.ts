@@ -1166,9 +1166,9 @@ export const es: Dict = {
     "testTitle": "Lo que verificaré delante de ti",
     "testText": "Los recibiré en unos días. Lo que digo en esta página lo digo con pleno conocimiento de causa: he usado cuatro soportes diferentes en el escenario y sé exactamente lo que busco. Lo que aún no tengo es el escenario, así que en cuanto lleguen ambos soportes a la sala de exposiciones, grabaré mi demostración, la publicaré aquí y les contaré qué tal me fue.",
     "videoSectionTitle": "La demostración en vídeo",
-    "videoTitle": "Demostración de David Lesage",
+    "videoTitle": "Por qué toco el handpan de pie — mi vídeo, con Atlas",
     "videoSoon": "Futuro",
-    "videoNote": "Grabaré mi propia demostración en cuanto tenga ambos pies en la sala de exposición y la subiré aquí.",
+    "videoNote": "Mi propio vídeo, publicado en mi canal de YouTube.",
     "modelsTitle": "Dos modelos",
     "modelsIntro": "Ambos cumplen la misma función: sujetar el handpan sobre un disco magnético flotante. Sin embargo, utilizan materiales diferentes y no se encuentran dentro del mismo rango de altura. Esto es lo que afirma el fabricante, sin añadir nada más.",
     "specs": {
