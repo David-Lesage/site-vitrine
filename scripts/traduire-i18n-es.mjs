@@ -187,9 +187,32 @@ function estTechnique(valeur) {
 const OUVRE = '<span class="notranslate">'
 const FERME = '</span>'
 
+// ───────────────────────────────────────────────────────────────────────────
+// GLOSSAIRE — les faux amis du vocabulaire maison
+// ───────────────────────────────────────────────────────────────────────────
+// « Gamme » est LE mot du site : une gamme de handpan est une échelle musicale
+// (`escala`). Hors contexte, l'API a rendu 28 chaînes sur 81 par « gama de
+// productos » / « rango » — la gamme de produits, le catalogue. « Ta gamme, en
+// couleurs » devenait « Tu gama de colores » : le sens exact du site, inversé.
+//
+// On ne corrige donc pas après coup : on impose le mot AVANT l'envoi, protégé
+// comme un nom propre. `escala` est féminin comme « gamme », les articles et
+// les accords espagnols retombent juste autour.
+const GLOSSAIRE = [
+  [/\bgammes\b/g, 'escalas'],
+  [/\bGammes\b/g, 'Escalas'],
+  [/\bgamme\b/g, 'escala'],
+  [/\bGamme\b/g, 'Escala'],
+]
+
 /** Enveloppe les intouchables. Renvoie le texte prêt à envoyer. */
 function proteger(texte) {
   let out = texte
+  // 0. Le glossaire : le mot espagnol imposé prend la place du français et
+  //    voyage protégé, comme un nom propre.
+  for (const [motif, remplacement] of GLOSSAIRE) {
+    out = out.replace(motif, `${OUVRE}${remplacement}${FERME}`)
+  }
   // 1. Les marqueurs de gabarit.
   out = out.replace(MARQUEUR, (m) => `${OUVRE}${m}${FERME}`)
   // 2. Les noms propres, longs d'abord. On ne protège pas ce qui est DÉJÀ
@@ -230,6 +253,70 @@ function decoderEntites(texte) {
 }
 
 const A_DES_BALISES = /<[a-z/][^>]*>/i
+
+// ───────────────────────────────────────────────────────────────────────────
+// FINITION — deux retouches déterministes appliquées à l'ÉCRITURE
+// ───────────────────────────────────────────────────────────────────────────
+
+/**
+ * 1. Les espaces parasites. Retirer un `<span class="notranslate">` laisse
+ * souvent une espace collée devant la ponctuation — « David Lesage , músico ».
+ * En français cette espace est correcte devant `; : ! ?`, en espagnol jamais.
+ */
+function nettoyerEspaces(traduit, source) {
+  const nettoye = traduit
+    .replace(/[\u0020\u00a0]+([,.;:!?%])/g, '$1')
+    .replace(/([\u00a1\u00bf(\u00ab])[\u0020\u00a0]+/g, '$1')
+    .replace(/[\u0020\u00a0]+([)\u00bb])/g, '$1')
+    .replace(/[\u0020\u00a0]{2,}/g, ' ')
+    .trim()
+  // L'espace de BORD est significative et se restaure depuis la source :
+  // `shop.from` vaut « dès » SUIVI D'UNE ESPACE, parce que le gabarit colle le
+  // prix juste après (`{s.from}{eur(p.price)}`). Un `.trim()` naïf produisait
+  // « del1990 € » sur la boutique espagnole — visible au rendu, pas au build.
+  const avant = source.match(/^\s*/)[0]
+  const apres = source.match(/\s*$/)[0]
+  return avant + nettoye + apres
+}
+
+/**
+ * 2. Les corrections manuelles. Deux causes, toutes deux structurelles :
+ *
+ *   • LES LIBELLÉS COURTS traduits sans contexte. « Boutique » seul devient
+ *     « Comercio » (le commerce), « Cours » devient « Curso » (un cours). Ce
+ *     sont les entrées du MENU : elles se lisent avant tout le reste.
+ *   • LA GRAMMAIRE AUTOUR DU GLOSSAIRE. `escala` voyage dans une enveloppe
+ *     opaque : l'API ne peut pas accorder ce qu'elle ne lit pas, d'où « El
+ *     teclado escalas » ou « Escalas compartidos ».
+ *
+ * Clé = le FRANÇAIS source (donc stable), valeur = l'espagnol retenu. Ces
+ * corrections survivent à toute relance du script, contrairement à une retouche
+ * faite directement dans `es.ts`, qui serait écrasée.
+ */
+const CORRECTIONS = {
+  // ── Navigation et libellés d'interface ──
+  Accueil: 'Inicio',
+  Boutique: 'Tienda',
+  Cours: 'Cursos',
+  Newsletter: 'Boletín',
+  Prénom: 'Nombre',
+  Nom: 'Apellidos',
+  facultatif: 'opcional',
+  'Ember steel': 'Ember steel', // nuance d'acier : un nom, pas une couleur
+  'Apprendre le handpan': 'Aprender el handpan',
+  'Showroom Paris 20ᵉ': 'Showroom París 20ᵉ',
+  'Ta fiche fabricant': 'Tu ficha de fabricante',
+  'Où fabriques-tu ?': '¿Dónde fabricas?',
+  Équilibre: 'Equilibrio',
+  // ── Préfixes collés à une valeur : l'espace finale FAIT partie du texte ──
+  'dès ': 'desde ',
+  // ── Accords cassés par l'enveloppe du glossaire ──
+  'Le clavier des gammes': 'El teclado de las escalas',
+  'Créer sa gamme — tutoriel': 'Crear tu escala — tutorial',
+  'WiFi · réglages, création de gammes': 'WiFi · ajustes, creación de escalas',
+  'Gammes partagées gratuitement par la communauté': 'Escalas compartidas gratuitamente por la comunidad',
+  'Compose ta propre gamme sur la roue chromatique.': 'Crea tu propia escala en la rueda cromática.',
+}
 
 // ───────────────────────────────────────────────────────────────────────────
 // RÉPARATION DES BALISES NON REFERMÉES
@@ -340,11 +427,13 @@ function collecter(valeur, sac = new Set(), cle = '') {
 function reconstruire(valeur, table, cle = '') {
   if (typeof valeur === 'string') {
     if (CLES_TECHNIQUES.has(cle) || estTechnique(valeur)) return valeur
+    // La correction manuelle prime sur tout, y compris sur le cache.
+    if (valeur in CORRECTIONS) return CORRECTIONS[valeur]
     const traduit = table.get(valeur)
     if (traduit === undefined) return valeur
-    // Réparation à l'ÉCRITURE, pas au cache : elle est ainsi rejouable et
+    // Finition à l'ÉCRITURE, pas au cache : elle est ainsi rejouable et
     // s'applique aussi aux chaînes traduites lors des passes précédentes.
-    return A_DES_BALISES.test(valeur) ? reparerBalises(traduit) : traduit
+    return nettoyerEspaces(A_DES_BALISES.test(valeur) ? reparerBalises(traduit) : traduit, valeur)
   }
   if (Array.isArray(valeur)) return valeur.map((v) => reconstruire(v, table, cle))
   if (valeur && typeof valeur === 'object') {

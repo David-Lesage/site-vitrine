@@ -19,6 +19,16 @@ const isZh = Astro.url.pathname.startsWith('/zh/')
 const langs = hasZh ? [...allLanguages, zhEntry] : allLanguages
 const current = isZh ? zhEntry : allLanguages.find((l) => l.code === lang)!
 const hrefFor = (code: string) => (code === 'zh' ? `/zh${basePath}` : localizePath(basePath, code as Lang))
+
+// Le badge des langues pas encore traduites s'affichait « BIENTÔT » en français
+// sur TOUTES les pages, y compris anglaises et espagnoles — le seul mot non
+// traduit du sélecteur de langue, ce qui est l'endroit le plus visible possible.
+const SOON: Record<Lang, { badge: string; title: string }> = {
+  fr: { badge: 'bientôt', title: 'Bientôt disponible' },
+  en: { badge: 'soon', title: 'Coming soon' },
+  es: { badge: 'pronto', title: 'Próximamente' },
+}
+const soon = SOON[lang] ?? SOON.fr
 ---
 
 <div class="relative" data-lang-switcher>
@@ -49,9 +59,9 @@ const hrefFor = (code: string) => (code === 'zh' ? `/zh${basePath}` : localizePa
             <span aria-hidden="true">{l.flag}</span> {l.label}
           </a>
         ) : (
-          <span class="flex items-center justify-between gap-2 px-4 py-2.5 text-sm text-ink/35" title="Bientôt disponible">
+          <span class="flex items-center justify-between gap-2 px-4 py-2.5 text-sm text-ink/35" title={soon.title}>
             <span><span aria-hidden="true">{l.flag}</span> {l.label}</span>
-            <span class="rounded-full bg-ink/5 px-1.5 py-0.5 text-[0.6rem] font-600 uppercase">bientôt</span>
+            <span class="rounded-full bg-ink/5 px-1.5 py-0.5 text-[0.6rem] font-600 uppercase">{soon.badge}</span>
           </span>
         )}
       </li>
