@@ -29,6 +29,65 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 01/09/2026 (12ᵉ passe) — ✅ `/pieds-atlas` : LA RÈGLE « IL N'A PAS ESSAYÉ LES PIEDS » EST LEVÉE
+
+**Statut : commité, poussé sur `main`, buildé (116 pages), rendu vérifié en local FR + EN + ES
+(375 px et bureau), déployé en prod.**
+
+### Ce qui a changé
+Depuis sa rédaction, toute la page `/pieds-atlas` était écrite sous une **règle éditoriale ferme** :
+ne jamais laisser entendre que David avait utilisé les pieds Atlas — il ne les avait pas reçus.
+C'est ce qui explique la prudence de tout le texte (futurs, « Atlas annonce », attributions).
+
+**Les faits ont changé** : colis **ATLAS SRLS livré le 26/08/2026 à 10h37**, et la vidéo
+`s1lFN3PDEnA` (en tête de page depuis le 31/08) le montre jouant sur un pied Atlas.
+**Ses mots (01/09/2026)** : « J'ai essayé les pieds Atlas oui, et j'ai fait une vidéo de démo
+aujourd'hui. »
+
+### 🚨 CE QUE LA LEVÉE N'AUTORISE PAS — À NE PAS PERDRE
+David a dit qu'il les a **essayés** et **filmés**. Il n'a **PAS** raconté ce qu'il a ressenti.
+Donc toujours interdit tant qu'il n'écrit pas ses propres mots : « ils sont stables », « le
+montage prend deux minutes », « le bois vieillit bien », tout détail sensoriel (poids ressenti,
+bruit du réglage, tenue sous les mains) et tout verdict entre les deux modèles.
+**Retirer une fausse limite ≠ ajouter une promesse.**
+
+### Phrases corrigées (FR / EN / ES)
+| Clé | Avant | Après |
+|---|---|---|
+| `heroLead` | « deux modèles **arrivent** au showroom » | « les deux modèles **sont** au showroom » |
+| `heroTryNote` | « Les deux modèles **seront** au showroom » | « **sont** au showroom » |
+| `storyConclusion` | « Je suis convaincu, et **je les attends avec impatience**. » | « Je suis convaincu. **Les deux pieds sont arrivés le 26 août 2026, et je les ai essayés.** » |
+| `storyBridge` | « ce que je n'ai jamais pratiqué, **et que je vais découvrir** » | « **une posture** que je n'ai jamais pratiquée » |
+| `partnerText` | « ils **m'envoient** deux pieds de démonstration » | « ils **m'ont envoyé** deux pieds de démonstration » |
+| `showroomText` | « Les deux pieds **seront** au showroom » | « **sont** au showroom » |
+| `showroomPhotoCaption` | « C'est là que les deux Atlas **prendront** leur place » | « Les deux Atlas **y ont depuis pris** leur place » |
+
+⚠️ Au passage, ES disait « los dos **handpans** Atlas » (les Atlas sont des **pieds**) → corrigé
+en « los dos **soportes** Atlas ».
+
+### 🅓 TROIS EMPLACEMENTS LAISSÉS VIDES POUR SON TÉMOIGNAGE
+Marqués en commentaire dans `AtlasPage.astro` (`🅓 TÉMOIGNAGE DE DAVID — EN ATTENTE DE SES MOTS`).
+**Aucun texte n'a été écrit à sa place.** Quand il donne ses mots : créer la clé dans les TROIS
+dictionnaires et l'afficher.
+1. **Sous la vidéo de démo (`#demo`)** → clé `videoDavidNote`. Question à lui poser : *« Sous ta
+   vidéo, qu'est-ce que tu veux dire de ton essai des pieds — en une ou deux phrases, tes mots ? »*
+2. **Sous l'encart “Ce qu'Atlas dit du son” (`#tete`)** → clé `headAcousticDavid`. La page promet
+   déjà « Je vous dirai ce que j'entends ». Question : *« Qu'est-ce que tu as entendu, toi ? »*
+3. **En tête de la section “Deux modèles” (`#modeles`)** → clé `modelsDavidNote`. Question :
+   *« Après les avoir essayés, est-ce que tu as un avis sur lequel des deux conviendra à qui —
+   ou est-ce qu'on continue de ne pas trancher ? »*
+
+### Ce qui n'a PAS bougé (garde-fous respectés)
+Spécifications produit (dimensions, aimants, matériaux, prix), `ATLAS_PROMO_ACTIVE`,
+`ATLAS_DISCOUNT_CODE = 'DAVID-ATLAS'`, `ATLAS_AFFILIATE_URL`, `atlasDemoVideoId`, aucune clé i18n
+supprimée, aucun slug/URL touché, aucun « showcase » réintroduit. Les attributions « Atlas
+annonce / Atlas indique » restent partout : ce sont les chiffres du fabricant, pas le vécu de David.
+⚠️ **Reste à faire ailleurs** : `src/i18n/en.ts` ligne ~1870 (bloc **`showroom`**, hors périmètre
+de cette passe) porte encore le commentaire « David has not received them yet », et `atlasIntro`
+y dit « they are sending me both models ». À reprendre quand la page `/showroom` sera refondue.
+
+---
+
 ## ÉTAT ACTUEL — 01/09/2026 (11ᵉ passe) — 📝 BLOG « LA CARTE DES JOUEURS » (FR + EN)
 
 **Statut : commité (`2caeb91`), poussé sur `main`, buildé (116 pages), rendu vérifié en local

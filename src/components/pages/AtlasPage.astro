@@ -28,9 +28,22 @@
 // 🚨 CE QUI NE DOIT PAS BOUGER SANS SOURCE :
 //    · tous les chiffres viennent des fiches officielles Atlas (voir l'en-tête
 //      de src/data/atlas.ts, qui liste aussi ce qu'Atlas ne dit PAS) ;
-//    · David n'a pas encore reçu les pieds → aucun avis d'usage sur la page ;
+//    · ✅ RÈGLE LEVÉE LE 01/09/2026 — jusque-là, une règle ferme interdisait
+//      de laisser entendre que David avait utilisé les pieds Atlas : il ne les
+//      avait pas reçus. C'est la raison de la prudence de tout le texte, et
+//      c'est pour ça qu'on garde la trace ici. Les faits ont changé : colis
+//      ATLAS SRLS livré le 26/08/2026 à 10h37, et David a filmé une démo
+//      (`atlasDemoVideoId`, en tête de page) où il joue sur un pied Atlas.
+//      Ses mots : « J'ai essayé les pieds Atlas oui, et j'ai fait une vidéo de
+//      démo aujourd'hui. »
+//      🚨 CE QUE LA LEVÉE N'AUTORISE PAS : il a dit qu'il les a ESSAYÉS et
+//      FILMÉS, PAS ce qu'il en pense. Aucun ressenti d'usage ne s'écrit à sa
+//      place (stabilité, montage, tenue, bois, comparaison des deux modèles).
+//      Les endroits qui attendent SES mots sont marqués sur cette page
+//      « 🅓 TÉMOIGNAGE DE DAVID — EN ATTENTE DE SES MOTS ».
 //    · aucune promesse acoustique endossée par David : ce qu'Atlas dit du son
-//      est entre guillemets et signé Atlas, jamais repris à son compte.
+//      est entre guillemets et signé Atlas, jamais repris à son compte —
+//      il n'a rien dit de ce qu'il entend.
 //
 // 🖼️ RÈGLE D'IMAGE (David, 20/08/2026 : « ça fait brouillon ») : une image ne
 //    reste sur cette page que si elle DÉMONTRE quelque chose que le texte ne
@@ -337,6 +350,19 @@ const ld = [
         <YouTube id={atlasDemoVideoId} title={a.videoTitle} />
       </div>
       <p class="mt-4 text-center text-sm text-ink-soft/80">{a.videoNote}</p>
+
+      {/* ── 🅓 TÉMOIGNAGE DE DAVID — EN ATTENTE DE SES MOTS ────────────────
+          EMPLACEMENT VIDE, VOLONTAIREMENT. C'est ici, juste sous sa propre
+          vidéo, que sa parole sur l'usage RÉEL des pieds aura sa place : il
+          les a reçus le 26/08/2026, il les a essayés, il a filmé cette démo
+          le 01/09/2026.
+          ⛔ NE RIEN ÉCRIRE ICI À SA PLACE. Il n'a pas encore raconté ce qu'il
+             a ressenti — aucun « ils sont stables », « le montage est
+             immédiat », « j'ai été surpris par… ». Tant que ses mots ne sont
+             pas là, ce bloc reste un commentaire.
+          ✍️ QUAND IL LES DONNE : créer une clé `videoDavidNote` dans les TROIS
+             dictionnaires (dict.ts / en.ts / es.ts) et l'afficher ici, en
+             citation. Rien d'autre à changer. */}
     </Section>
   )}
 
@@ -348,7 +374,11 @@ const ld = [
 
       ✅ SEULE SECTION OÙ DAVID PARLE EN SON NOM PLEIN — expérience vécue,
          registre affirmé. Ne pas y remettre de prudence défensive.
-      🚨 NE JAMAIS laisser entendre qu'il a déjà utilisé les pieds Atlas. */}
+      🕰️ Cette section a été écrite sous la règle « ne jamais laisser entendre
+         qu'il a utilisé les pieds Atlas » (levée le 01/09/2026 : livrés le
+         26/08, essayés, démo filmée). Ce qui reste vrai : son récit porte sur
+         les pieds qu'il a USÉS AVANT Atlas, et son ressenti sur les Atlas
+         n'est toujours pas écrit — ne pas l'inventer ici. */}
   <Section id="debout">
     <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_1fr]">
       <div>
@@ -515,7 +545,10 @@ const ld = [
     {/* ── LES TROIS OBJECTIONS D'ACHETEUR (compatibilité, stabilité, retour) ──
         Volontairement en bande de TEXTE et pas en cartes-images : elles
         répondent à des questions, elles n'ont rien à montrer. Chaque phrase est
-        attribuée à Atlas (David n'a pas encore les pieds). */}
+        attribuée à Atlas : ce sont ses chiffres et ses garanties (retour sous
+        14 jours, compatibilité), pas ce que David a constaté en jouant. La
+        règle « il n'a pas les pieds » est levée depuis le 01/09/2026, mais il
+        n'a rien dit de son usage : l'attribution reste. */}
     <div class="mt-10 grid gap-px overflow-hidden rounded-card border border-ink/10 bg-ink/10 md:grid-cols-3">
       {a.solutionFacts.map((f, i) => (
         <div class="bg-cream p-6">
@@ -560,13 +593,17 @@ const ld = [
          aucun sens. Je prends cette responsabilité. » Les deux clés RESTENT
          dans dict.ts et en.ts (aucune clé i18n supprimée) : elles y sont
          marquées « retirée de la page ».
-      🚨 CE QUE CETTE SUPPRESSION N'AUTORISE PAS : elle ne change RIEN à la
-         ligne infranchissable. Toujours interdit, ici comme partout ailleurs
-         sur la page — « je les ai testés », « à l'usage », « après plusieurs
-         concerts avec », et tout détail sensoriel que David ne peut pas
-         connaître (poids ressenti, bruit du réglage, tenue sous les mains,
-         comparaison de stabilité vécue). Sa conviction : oui. Une expérience
-         qu'il n'a pas encore : jamais.
+      🕰️ CE QU'IL FAUT SAVOIR DE CETTE CARTE : elle a été écrite quand David
+         n'avait pas les pieds (« je les reçois dans quelques jours »). Elle est
+         donc PÉRIMÉE depuis la livraison du 26/08/2026. Si David veut un jour
+         reparler de ce qu'il vérifie devant les gens, il faudra RÉÉCRIRE le
+         texte, pas rallumer celui-ci.
+      🚨 CE QUI RESTE INTERDIT MALGRÉ LA LEVÉE DU 01/09/2026 : il a dit qu'il
+         avait essayé les pieds et filmé une démo — il n'a PAS dit ce qu'il en
+         pense. On n'écrit donc toujours pas à sa place « ils sont stables »,
+         « le montage prend deux minutes », ni aucun détail sensoriel (poids
+         ressenti, bruit du réglage, tenue sous les mains, comparaison de
+         stabilité vécue), ni de verdict entre les deux modèles.
       📐 UNE SEULE COLONNE depuis le départ de la vidéo (01/09/2026), bornée par
          `max-w-3xl` : sans borne, le texte s'étirait sur toute la largeur du
          conteneur `max-w-7xl` et devenait illisible au bureau. L'ancienne note
@@ -587,8 +624,9 @@ const ld = [
 
   {/* ── LES DEUX MODÈLES ───────────────────────────────────────────────────
       Deux colonnes de POIDS ÉGAL : ni le Pro ni le All n'est présenté comme
-      « le bon choix ». David n'a pas encore essayé les deux — il ne peut donc
-      pas trancher, et la page ne tranche pas à sa place.
+      « le bon choix ». David les a essayés depuis le 26/08/2026, mais il n'a
+      PAS dit lequel il préfère : la page continue donc de ne pas trancher à sa
+      place. Ne pas déduire une préférence de la vidéo de démo.
       📐 ÉQUILIBRE DES COLONNES (défaut relevé par David sur sa capture) : la
          figure « deux hauteurs » qui allongeait la seule colonne Pro est
          passée dans son carrousel. Les deux colonnes ont maintenant la même
@@ -596,6 +634,16 @@ const ld = [
          d'élément à une seule des deux colonnes sans en ajouter à l'autre. */}
   <Section id="modeles">
     <SectionHeading title={a.modelsTitle} intro={a.modelsIntro} />
+
+    {/* ── 🅓 TÉMOIGNAGE DE DAVID — LEQUEL DES DEUX ? EN ATTENTE DE SES MOTS ─
+        EMPLACEMENT VIDE, VOLONTAIREMENT. La page a toujours refusé de désigner
+        « le bon choix » parce que David n'avait pas les pieds. Il les a
+        maintenant (26/08/2026) et les a essayés — mais il n'a rien dit de sa
+        préférence, ni de ce qui l'a fait pencher.
+        ⛔ NE PAS DÉDUIRE une préférence de la vidéo de démo ni des chiffres.
+        ✍️ QUAND IL LE DIT : clé `modelsDavidNote` dans les trois dictionnaires,
+           affichée ici, sous l'intro et au-dessus des deux colonnes — pour que
+           les colonnes elles-mêmes restent de poids égal. */}
     <div class="mt-12 grid items-stretch gap-10 lg:grid-cols-2">
       {models.map((m) => (
         <article class="flex h-full flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6 lg:p-7">
@@ -662,8 +710,10 @@ const ld = [
       Placée APRÈS les deux modèles, parce qu'elle ne se comprend qu'une fois
       qu'on sait que la gamme bois est modulaire.
       🚨 DEUX RÈGLES QUI NE SE NÉGOCIENT PAS DANS CE BLOC :
-      1. Tout est ATTRIBUÉ à Atlas (« Atlas écrit », « Atlas annonce »). David
-         n'a pas reçu les pieds : aucun ressenti sonore ne peut être le sien.
+      1. Tout reste ATTRIBUÉ à Atlas (« Atlas écrit », « Atlas annonce »).
+         David a les pieds depuis le 26/08/2026 et les a essayés, mais il n'a
+         RIEN dit de ce qu'il entend : aucun ressenti sonore ne peut être écrit
+         à sa place. L'attribution ne tombera que le jour où il l'écrira.
       2. L'inclusion est dite modèle par modèle. Le Body est inclus dans l'Atlas
          All, et Atlas n'annonce RIEN de tel pour le Pro. Écrire « inclus » pour
          le Pro serait le mensonge le plus coûteux de la page : le client le
@@ -708,6 +758,17 @@ const ld = [
       <h3 class="mt-3 font-display text-xl font-700">{a.headAcousticTitle}</h3>
       <p class="mt-3 text-ink-soft/90">{a.headAcousticText}</p>
       <p class="mt-4 rounded-lg bg-ink/5 p-4 text-sm text-ink-soft/85">{a.headAcousticNote}</p>
+
+      {/* ── 🅓 TÉMOIGNAGE DE DAVID SUR LE SON — EN ATTENTE DE SES MOTS ─────
+          EMPLACEMENT VIDE, VOLONTAIREMENT. `headAcousticNote` promet juste
+          au-dessus : « Je vous dirai ce que j'entends ». Depuis le 01/09/2026
+          il PEUT le dire (pieds reçus le 26/08, essayés) — mais il ne l'a pas
+          encore dit. Le son est le sujet où écrire à sa place ferait le plus
+          de dégâts : la page est rémunérée à la commission.
+          ⛔ AUCUNE PHRASE INVENTÉE ICI. Pas de « la résonance est plus
+             longue », pas de « je n'entends aucune perte ».
+          ✍️ QUAND IL LES DONNE : clé `headAcousticDavid` dans les trois
+             dictionnaires, affichée ici sous la citation d'Atlas. */}
     </div>
 
     {/* La réponse « incluse ou pas » — la question qui décide de l'achat. */}
@@ -771,11 +832,12 @@ const ld = [
            utilise AUJOURD'HUI, juste à côté du paragraphe qui nomme leurs
            fabricants. C'est exactement le dénigrement que toute la page évite.
 
-        🚨 CE QUE LA LÉGENDE NE DIT PAS, ET NE DOIT PAS DIRE : que les pieds
-           Atlas sont sur cette photo. Ils ne sont pas encore arrivés. La photo
-           montre l'installation ACTUELLE ; le texte dit que les Atlas y
-           prendront leur place. Aucune marque de pied n'est nommée, ni dans la
-           légende ni dans l'`alt`.
+        🚨 CE QUE LA LÉGENDE NE DIT TOUJOURS PAS, ET NE DOIT PAS DIRE : que les
+           pieds Atlas sont sur cette photo. Le CLICHÉ date d'avant leur
+           livraison (26/08/2026). Depuis le 01/09/2026 la légende dit qu'ils y
+           ont pris leur place — c'est un fait, pas une description de l'image.
+           Ne jamais décrire des Atlas qu'on ne voit pas. Aucune marque de pied
+           n'est nommée, ni dans la légende ni dans l'`alt`.
         ♻️ Fichier RÉUTILISÉ TEL QUEL : /images/showroom-instruments.webp sert
            déjà sur /showroom (voir `showroomPhotos.instruments` dans
            src/data/showroom.ts). Ni copie, ni ré-encodage. Dimensions

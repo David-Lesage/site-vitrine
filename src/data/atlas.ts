@@ -4,8 +4,25 @@
 //
 // 🤝 PARTENARIAT : affiliation validée avec Atlas (fabricant italien) le
 // 20/08/2026. Atlas envoie DEUX pieds de démonstration à David pour ses
-// showcases. Avant cette date, la marque était volontairement absente du
+// rencontres. Avant cette date, la marque était volontairement absente du
 // site (partenariat non signé) — elle peut désormais apparaître.
+//
+// ✅ 26/08/2026 — LES PIEDS SONT ARRIVÉS (colis ATLAS SRLS livré à 10h37).
+// ✅ 01/09/2026 — RÈGLE ÉDITORIALE LEVÉE. De sa rédaction au 31/08/2026, toute
+//    la page /pieds-atlas a été écrite sous une règle ferme : ne JAMAIS laisser
+//    entendre que David avait utilisé les pieds Atlas, parce qu'il ne les avait
+//    pas. C'est ce qui explique la prudence du texte (« Atlas annonce »,
+//    futurs, conditionnels) — on garde la trace, ça éclaire chaque tournure.
+//    Ses mots le 01/09/2026 : « J'ai essayé les pieds Atlas oui, et j'ai fait
+//    une vidéo de démo aujourd'hui. » (vidéo `atlasDemoVideoId`, en tête de page).
+//
+// 🚨 CE QUE LA LEVÉE N'AUTORISE PAS — et c'est tout le sujet : David a dit
+//    qu'il les avait ESSAYÉS et FILMÉS, il n'a PAS raconté ce qu'il a ressenti.
+//    N'écrire à sa place ni « ils sont stables », ni « le montage prend deux
+//    minutes », ni « le bois vieillit bien », ni aucun détail sensoriel, ni un
+//    verdict entre les deux modèles. Retirer une fausse limite n'autorise pas à
+//    ajouter une promesse. Les emplacements qui attendent SES mots sont marqués
+//    « 🅓 TÉMOIGNAGE DE DAVID — EN ATTENTE DE SES MOTS » dans AtlasPage.astro.
 //
 // 🚨 SOURCE DE VÉRITÉ = les fiches officielles Atlas, relevées le 20/08/2026 :
 //    · https://atlashandpan.com/en/products/atlas-pro

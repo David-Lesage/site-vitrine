@@ -1261,7 +1261,7 @@ const fr = {
     heightCm: '{n} cm',
     heroTitle: 'Les pieds Atlas',
     heroLead:
-      'Atlas fabrique en Italie des trépieds pour handpan. L’instrument n’est ni vissé ni sanglé : il se pose sur un disque flottant tenu par des aimants. Je viens de devenir partenaire de la marque, et deux modèles arrivent au showroom — l’Atlas Pro et l’Atlas All.',
+      'Atlas fabrique en Italie des trépieds pour handpan. L’instrument n’est ni vissé ni sanglé : il se pose sur un disque flottant tenu par des aimants. Je suis partenaire de la marque, et les deux modèles sont au showroom — l’Atlas Pro et l’Atlas All.',
     ctaModels: 'Voir les deux modèles',
     ctaSite: 'Le site d’Atlas',
     // 🎯 L'ACTION PRINCIPALE DE TOUTE LA PAGE (20/08/2026, cap de David).
@@ -1271,7 +1271,7 @@ const fr = {
     ctaTry: 'Venir les essayer au showroom',
     ctaTryModel: 'L’essayer au showroom',
     heroTryNote:
-      'Les deux modèles seront au showroom, à Paris 20ᵉ, avec les handpans. Tu poses un instrument dessus, tu règles la hauteur, tu joues — et tu sais.',
+      'Les deux modèles sont au showroom, à Paris 20ᵉ, avec les handpans. Tu poses un instrument dessus, tu règles la hauteur, tu joues — et tu sais.',
 
     whyTitle: 'Ce qu’Atlas fait différemment',
     whyText:
@@ -1303,9 +1303,11 @@ const fr = {
     // répondent à des objections réelles d'acheteur qui manquaient ici.
     // 🚨 CHAQUE PHRASE EST SOURCÉE et ATTRIBUÉE (FAQ officielle d'Atlas,
     //    /pages/discover-all-features, relevée le 20/08/2026) — voir le bloc
-    //    « CE QU'ATLAS CONFIRME » de src/data/atlas.ts. Rien n'est endossé par
-    //    David : il n'a pas encore reçu les pieds. Ne pas retirer les « Atlas
-    //    annonce / Atlas indique » tant que ce n'est pas le cas.
+    //    « CE QU'ATLAS CONFIRME » de src/data/atlas.ts. L'attribution reste :
+    //    ce sont des CHIFFRES ET GARANTIES du fabricant (compatibilité, retour
+    //    sous 14 jours), pas des choses que David pourrait constater en jouant.
+    //    Depuis le 01/09/2026 il a essayé les pieds, mais il n'a pas dit un mot
+    //    de son ressenti : garder « Atlas annonce / Atlas indique ».
     solutionFacts: [
       {
         t: 'Compatible avec ton handpan',
@@ -1331,12 +1333,26 @@ const fr = {
     //    je n'ai pas encore »…) : elles affaiblissent une parole qui fait
     //    autorité, et David l'a explicitement demandé.
     //
-    // 🚨 LA SEULE LIGNE À NE PAS FRANCHIR : ne JAMAIS écrire ni laisser
-    //    entendre qu'il a DÉJÀ UTILISÉ les pieds Atlas. Pas de « je les ai
-    //    testés », pas de « à l'usage », aucun détail sensoriel qu'il ne peut
-    //    pas connaître (poids ressenti, bruit du réglage, tenue réelle). Il
-    //    juge une CONCEPTION — ce qu'un professionnel fait légitimement — et il
-    //    annonce qu'il vérifiera. C'est le seul mensonge possible ici.
+    // ✅ RÈGLE LEVÉE LE 01/09/2026 — DAVID A REÇU ET ESSAYÉ LES PIEDS.
+    //    Jusqu'ici, une règle ferme interdisait de laisser entendre qu'il avait
+    //    déjà utilisé les pieds Atlas : il ne les avait pas reçus, et toute la
+    //    page a été rédigée sous cette contrainte (d'où sa prudence, qui reste
+    //    lisible partout). Les faits ont changé : colis ATLAS SRLS livré le
+    //    26/08/2026 à 10h37, et David a filmé une vidéo de démonstration
+    //    (`atlasDemoVideoId`) où on le voit jouer sur un pied Atlas.
+    //    Ses mots (01/09/2026) : « J'ai essayé les pieds Atlas oui, et j'ai
+    //    fait une vidéo de démo aujourd'hui. »
+    //
+    // 🚨 CE QUE LA LEVÉE N'AUTORISE PAS, ET C'EST L'ESSENTIEL : il a dit qu'il
+    //    les a ESSAYÉS et FILMÉS — il n'a PAS encore raconté ce qu'il en pense.
+    //    Donc toujours interdit tant qu'il n'a pas écrit ses propres mots :
+    //    « ils sont stables », « le montage prend deux minutes », « le bois
+    //    vieillit bien », tout détail sensoriel (poids ressenti, bruit du
+    //    réglage, tenue sous les mains, comparaison de stabilité vécue) et tout
+    //    verdict entre les deux modèles. Retirer une fausse limite n'autorise
+    //    pas à ajouter une promesse. Les emplacements où son témoignage aura sa
+    //    place sont marqués « TÉMOIGNAGE DE DAVID — EN ATTENTE DE SES MOTS »
+    //    dans AtlasPage.astro.
     //
     // 🚨 LES CONCURRENTS SONT NOMMÉS : tout est au TÉMOIGNAGE PERSONNEL
     //    (« mon S Pan », « le mien »), jamais en jugement général sur le
@@ -1379,9 +1395,9 @@ const fr = {
     tryEyebrow: 'La suite',
     storyConclusionTitle: 'Pourquoi Atlas, maintenant',
     storyConclusion:
-      'Au vu de tout ce que j’ai essayé, c’est le premier concept qui répond à chacun des problèmes que j’ai rencontrés : une fixation magnétique au lieu d’une ventouse, un Atlas Pro entièrement en aluminium — jambes télescopiques comprises — et 1,8 kg qui partent dans leur sac. Je suis convaincu, et je les attends avec impatience.',
+      'Au vu de tout ce que j’ai essayé, c’est le premier concept qui répond à chacun des problèmes que j’ai rencontrés : une fixation magnétique au lieu d’une ventouse, un Atlas Pro entièrement en aluminium — jambes télescopiques comprises — et 1,8 kg qui partent dans leur sac. Je suis convaincu. Les deux pieds sont arrivés le 26 août 2026, et je les ai essayés.',
     storyBridge:
-      'Et il y a une ironie que j’aime bien : le même pied ouvre la posture inverse de la mienne. Sa tête permet de jouer assis, sans poser l’instrument sur les jambes — ce que je n’ai jamais pratiqué, et que je vais découvrir.',
+      'Et il y a une ironie que j’aime bien : le même pied ouvre la posture inverse de la mienne. Sa tête permet de jouer assis, sans poser l’instrument sur les jambes — une posture que je n’ai jamais pratiquée.',
     storyBridgeCta: 'La tête du pied',
     // 🖼️ LÉGENDES VISIBLES des photos de la section #debout (pas des `alt`).
     //    Elles disent ce que la photo PROUVE, pas ce qu'elle montre.
@@ -1420,7 +1436,7 @@ const fr = {
 
     partnerTitle: 'Pourquoi j’en parle maintenant',
     partnerText:
-      'Le partenariat avec Atlas vient d’être validé : je suis désormais affilié à la marque, et ils m’envoient deux pieds de démonstration pour mes rencontres. Tant que rien n’était signé, je préférais ne rien annoncer ici — c’est fait, donc j’en parle.',
+      'Le partenariat avec Atlas vient d’être validé : je suis désormais affilié à la marque, et ils m’ont envoyé deux pieds de démonstration pour mes rencontres. Tant que rien n’était signé, je préférais ne rien annoncer ici — c’est fait, donc j’en parle.',
     // 🚧 Cette phrase disparaît le jour où `ATLAS_AFFILIATE_URL` est renseigné
     //    dans src/data/atlas.ts (la page bascule alors sur le lien de suivi).
     //    Tant qu'elle est affichée, elle dit la vérité : les boutons envoient
@@ -1439,12 +1455,14 @@ const fr = {
     //    Les clés sont CONSERVÉES (aucune clé i18n n'est supprimée sans accord)
     //    et le texte reste ici, prêt à être remis en une ligne si David change
     //    d'avis. Ne pas les réutiliser ailleurs sans le lui demander.
-    // 🚨 CE QUE CETTE SUPPRESSION N'AUTORISE PAS : elle ne lève RIEN. Toujours
-    //    interdit partout sur la page — « je les ai testés », « à l'usage »,
-    //    « après plusieurs concerts avec », et tout détail sensoriel que David
-    //    ne peut pas connaître (poids ressenti, bruit du réglage, tenue sous
-    //    les mains, comparaison de stabilité vécue). Sa conviction et son
-    //    analyse : oui. Une expérience qu'il n'a pas encore : jamais.
+    // 🕰️ HISTOIRE : ces clés ont été écrites quand David n'avait pas encore les
+    //    pieds (« Je les reçois dans quelques jours »). Elles sont donc PÉRIMÉES
+    //    depuis le 26/08/2026 (livraison) et la levée de la règle le 01/09/2026.
+    //    Elles restent ici, non affichées, comme trace : si David veut un jour
+    //    une carte de ce genre, il faudra la RÉÉCRIRE, pas la rallumer.
+    // 🚨 CE QUI RESTE INTERDIT malgré la levée : écrire son ressenti à sa place
+    //    (stabilité, montage, tenue, comparaison des deux modèles). Il a dit
+    //    qu'il les avait essayés et filmés, rien de plus.
     testTitle: 'Ce que je vérifierai devant vous',
     testText:
       'Je les reçois dans quelques jours. Ce que j’avance sur cette page, je l’avance en connaissance de cause : j’ai usé quatre pieds différents sur scène, et je sais exactement ce que je cherche. Ce que je n’ai pas encore, c’est le terrain — alors dès que les deux pieds sont au showroom, je filme ma propre démonstration, je la mets ici, et je vous dis ce que ça donne.',
@@ -1527,11 +1545,13 @@ const fr = {
     // ── 🪑 LA TÊTE DU PIED — « on achète plus qu'un pied » (20/08/2026) ──────
     // Ajouté à la demande de David : l'argument manquait complètement.
     //
-    // 🚨 TOUT CE BLOC EST ATTRIBUÉ À ATLAS. David n'a TOUJOURS PAS reçu les pieds :
-    //    il ne peut confirmer aucun ressenti sonore. Les tournures « Atlas écrit /
-    //    Atlas annonce / c'est ce que la conception vise » ne sont pas de la
-    //    prudence décorative — c'est la seule chose qui sépare une information
-    //    rapportée d'un mensonge. Ne les retirer QUE le jour où David a testé.
+    // 🚨 TOUT CE BLOC RESTE ATTRIBUÉ À ATLAS. David a reçu les pieds le
+    //    26/08/2026 et les a essayés (règle levée le 01/09/2026), mais il n'a
+    //    RIEN dit de ce qu'il entend. Les tournures « Atlas écrit / Atlas
+    //    annonce / c'est ce que la conception vise » ne sont pas de la prudence
+    //    décorative : elles séparent une information rapportée d'un ressenti
+    //    qu'on écrirait à sa place. Elles ne tombent que le jour où David
+    //    écrit lui-même ce qu'il a entendu.
     //
     // 🚨 L'INCLUSION EST LE POINT LE PLUS DANGEREUX DE LA PAGE.
     //    Le Body est INCLUS dans l'Atlas All (pièce de base de la gamme bois),
@@ -1624,7 +1644,7 @@ const fr = {
 
     showroomTitle: 'Les essayer avant d’acheter',
     showroomText:
-      'Les deux pieds seront au showroom, à Paris 20ᵉ, avec les handpans. Tu pourras poser un instrument dessus, régler la hauteur, jouer debout, et voir lequel des deux te correspond — sans rien acheter.',
+      'Les deux pieds sont au showroom, à Paris 20ᵉ, avec les handpans. Tu pourras poser un instrument dessus, régler la hauteur, jouer debout, et voir lequel des deux te correspond — sans rien acheter.',
     // Les trois raisons de venir, en une ligne chacune. Elles doivent rester
     // des FAITS vérifiables sur place, jamais des promesses commerciales.
     showroomPoints: [
@@ -1638,12 +1658,14 @@ const fr = {
     // 🔗 {neotone} devient un lien vers /le-neotone (remplacé par `mesh()` dans
     //    AtlasPage.astro). « Yishama » reste en TEXTE SIMPLE ici : il est déjà
     //    lié plus haut, dans `storyFestivalCaption`. Un lien par destination.
-    // 🚨 CETTE LÉGENDE NE DIT PAS que les pieds Atlas sont sur la photo — ils
-    //    ne sont pas encore arrivés. Elle décrit l'installation ACTUELLE et
-    //    annonce que les Atlas y prendront leur place. Ne jamais la réécrire au
-    //    passé ni au présent d'usage. Aucune marque de pied n'y est nommée.
+    // 🚨 CETTE LÉGENDE NE DIT TOUJOURS PAS que les pieds Atlas sont sur la
+    //    photo : le CLICHÉ, lui, date d'avant leur arrivée. Depuis le
+    //    01/09/2026 elle dit qu'ils ont pris leur place (livrés le 26/08/2026)
+    //    — c'est un fait, pas une description de l'image. Ne pas aller plus
+    //    loin : ne pas décrire des Atlas qu'on ne voit pas. Aucune marque de
+    //    pied n'y est nommée.
     showroomPhotoCaption:
-      'Le showroom installé avant une rencontre : mes deux handpans acoustiques Yishama et mes deux handpans électroniques {neotone}, chacun sur son pied — quatre instruments, quatre pieds différents. C’est là que les deux Atlas prendront leur place, et c’est là que tu pourras les essayer.',
+      'Le showroom installé avant une rencontre : mes deux handpans acoustiques Yishama et mes deux handpans électroniques {neotone}, chacun sur son pied — quatre instruments, quatre pieds différents. Les deux Atlas y ont depuis pris leur place, et c’est là que tu pourras les essayer.',
 
     // ── 🎟️ LE CODE DE RÉDUCTION — TEXTES PRÊTS, BLOC ÉTEINT ────────────────
     // ⛔️ RIEN DE CE QUI SUIT N'EST AFFICHÉ tant que `ATLAS_PROMO_ACTIVE` vaut

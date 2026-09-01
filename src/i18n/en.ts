@@ -1100,7 +1100,7 @@ export const en: Dict = {
     heightCm: '{n} cm',
     heroTitle: 'The Atlas stands',
     heroLead:
-      'Atlas builds handpan tripods in Italy. The instrument is neither screwed down nor strapped in: it rests on a floating disc held by magnets. I have just become a partner of the brand, and two models are on their way to the showroom — the Atlas Pro and the Atlas All.',
+      'Atlas builds handpan tripods in Italy. The instrument is neither screwed down nor strapped in: it rests on a floating disc held by magnets. I am a partner of the brand, and both models are now at the showroom — the Atlas Pro and the Atlas All.',
     ctaModels: 'See both models',
     ctaSite: 'Atlas’s website',
     // 🎯 THE PRIMARY ACTION OF THE WHOLE PAGE (20/08/2026, David's call).
@@ -1110,7 +1110,7 @@ export const en: Dict = {
     ctaTry: 'Come and try them at the showroom',
     ctaTryModel: 'Try this one at the showroom',
     heroTryNote:
-      'Both models will be at the showroom, in Paris 20ᵉ, alongside the handpans. You put an instrument on one, set the height, play — and you know.',
+      'Both models are at the showroom, in Paris 20ᵉ, alongside the handpans. You put an instrument on one, set the height, play — and you know.',
 
     whyTitle: 'What Atlas does differently',
     whyText:
@@ -1132,8 +1132,11 @@ export const en: Dict = {
 
     // ── THE THREE QUESTIONS YOU ASK BEFORE ORDERING (20/08/2026) ────────────
     // 🚨 Every sentence is SOURCED and ATTRIBUTED (Atlas's official FAQ,
-    //    /pages/discover-all-features, read on 20/08/2026). Nothing is endorsed
-    //    by David: he has not received the stands yet. Keep the “Atlas states”.
+    //    /pages/discover-all-features, read on 20/08/2026). The attribution
+    //    STAYS: these are the maker's figures and guarantees (compatibility,
+    //    14-day returns), not things David could observe by playing. He has had
+    //    the stands since 26/08/2026 and has tried them (rule lifted 01/09/2026),
+    //    but he has said nothing about how they feel. Keep the “Atlas states”.
     solutionFacts: [
       {
         t: 'It fits your handpan',
@@ -1153,8 +1156,21 @@ export const en: Dict = {
     // ✅ The one section where David speaks fully in his own name: real, lived
     //    experience (years on stage standing, four different stands owned).
     //    Register: assumed conviction. Do NOT reintroduce defensive hedging.
-    // 🚨 NEVER write or imply he has ALREADY USED the Atlas stands. He judges a
-    //    DESIGN and announces he will verify. That is the only possible lie here.
+    // ✅ RULE LIFTED ON 01/09/2026 — DAVID HAS RECEIVED AND TRIED THE STANDS.
+    //    Until then a firm rule forbade implying he had already used them: he
+    //    did not have them. The whole page was written under that constraint,
+    //    which is why it reads so carefully — that caution is editorial history,
+    //    not noise. Facts: an ATLAS SRLS parcel was delivered on 26/08/2026 at
+    //    10:37, and he filmed a demo video (`atlasDemoVideoId`) playing on an
+    //    Atlas stand. His words (FR, 01/09/2026): « J'ai essayé les pieds Atlas
+    //    oui, et j'ai fait une vidéo de démo aujourd'hui. »
+    // 🚨 WHAT THE LIFT DOES NOT ALLOW: he said he TRIED and FILMED them — he has
+    //    NOT said what he thinks. Still forbidden until he writes his own words:
+    //    "they are stable", "it takes two minutes to set up", any sensory detail
+    //    (felt weight, sound of the adjustment, grip, lived stability comparison)
+    //    and any verdict between the two models. Removing a false limit is not a
+    //    licence to add a promise. The spots waiting for his testimony are marked
+    //    "TÉMOIGNAGE DE DAVID — EN ATTENTE DE SES MOTS" in AtlasPage.astro.
     // 🚨 Competitors are named: everything stays PERSONAL TESTIMONY (« my S Pan »,
     //    « mine »), never a general verdict on the product — on a page where
     //    David earns a commission, a general verdict could be denigration.
@@ -1192,9 +1208,9 @@ export const en: Dict = {
     tryEyebrow: 'What happens next',
     storyConclusionTitle: 'Why Atlas, now',
     storyConclusion:
-      'Given everything I have tried, this is the first design that answers every single problem I have run into: a magnetic mount instead of a suction cup, an Atlas Pro made entirely of aluminium — telescopic legs included — and 1.8 kg that go away in their bag. I am convinced, and I am looking forward to them.',
+      'Given everything I have tried, this is the first design that answers every single problem I have run into: a magnetic mount instead of a suction cup, an Atlas Pro made entirely of aluminium — telescopic legs included — and 1.8 kg that go away in their bag. I am convinced. Both stands arrived on 26 August 2026, and I have tried them.',
     storyBridge:
-      'And there is an irony I rather like: the same stand opens up the posture opposite to mine. Its head lets you play seated, without resting the instrument on your legs — something I have never done, and am about to discover.',
+      'And there is an irony I rather like: the same stand opens up the posture opposite to mine. Its head lets you play seated, without resting the instrument on your legs — a posture I have never practised.',
     storyBridgeCta: 'The head of the stand',
     // 🖼️ Visible captions for the photos in the #debout section (not alt text).
     // 🚨 storyFestivalCaption never names the brand of the old stands.
@@ -1216,7 +1232,7 @@ export const en: Dict = {
 
     partnerTitle: 'Why I am talking about them now',
     partnerText:
-      'The partnership with Atlas has just been confirmed: I am now an affiliate of the brand, and they are sending me two demonstration stands for my gatherings. As long as nothing was signed I preferred not to announce anything here — now it is done, so I am saying it.',
+      'The partnership with Atlas has just been confirmed: I am now an affiliate of the brand, and they sent me two demonstration stands for my gatherings. As long as nothing was signed I preferred not to announce anything here — now it is done, so I am saying it.',
     // 🚧 This sentence disappears the day `ATLAS_AFFILIATE_URL` is filled in
     //    in src/data/atlas.ts (the page then switches to the tracking link).
     affiliateNote:
@@ -1230,12 +1246,14 @@ export const en: Dict = {
     //        prends cette responsabilité. »
     //    The keys are KEPT (no i18n key is ever dropped without approval) and
     //    the copy stays here, ready to be put back in one line.
-    // 🚨 WHAT THIS DELETION DOES NOT ALLOW: it lifts nothing. Still forbidden
-    //    everywhere on the page — "I tested them", "in use", "after several
-    //    gigs with them", and any sensory detail David cannot know (felt
-    //    weight, sound of the adjustment, real grip, lived stability
-    //    comparison). His conviction and his analysis: yes. An experience he
-    //    has not had yet: never.
+    // 🕰️ HISTORY: these keys were written while David did not have the stands
+    //    ("They arrive in a few days"). They are therefore OUT OF DATE since the
+    //    26/08/2026 delivery and the 01/09/2026 lift. They stay here, unused, as
+    //    a trace: if David ever wants such a card again, it must be REWRITTEN,
+    //    not switched back on.
+    // 🚨 STILL FORBIDDEN despite the lift: writing his impressions for him
+    //    (stability, setup, grip, a verdict between the two models). He said he
+    //    tried them and filmed them, nothing more.
     testTitle: 'What I will check in front of you',
     testText:
       'They arrive in a few days. What I claim on this page, I claim knowingly: I have worn out four different stands on stage, and I know exactly what I am looking for. What I do not have yet is the field test — so as soon as the two stands are at the showroom, I will film my own demonstration, put it here, and tell you how it goes.',
@@ -1299,8 +1317,10 @@ export const en: Dict = {
 
 
     // ── 🪑 THE HEAD OF THE STAND (20/08/2026) ───────────────────────────────
-    // 🚨 Everything here is ATTRIBUTED TO ATLAS. David still has not received
-    //    the stands and cannot confirm any sound impression.
+    // 🚨 Everything here STAYS ATTRIBUTED TO ATLAS. David received the stands
+    //    on 26/08/2026 and has tried them (rule lifted 01/09/2026), but he has
+    //    said nothing about what he hears. These attributions fall only the day
+    //    he writes his own sound impression.
     // 🚨 The Body is INCLUDED in the Atlas All, and Atlas claims NOTHING of the
     //    sort for the Atlas Pro. See `ATLAS_BODY_STATUS` in src/data/atlas.ts.
     headEyebrow: 'The head of the stand',
@@ -1359,7 +1379,7 @@ export const en: Dict = {
 
     showroomTitle: 'Try them before you buy',
     showroomText:
-      'Both stands will be at the showroom in Paris 20th, alongside the handpans. You can put an instrument on one, set the height, play standing, and see which of the two suits you — without buying anything.',
+      'Both stands are at the showroom in Paris 20th, alongside the handpans. You can put an instrument on one, set the height, play standing, and see which of the two suits you — without buying anything.',
     // The three reasons to come, one line each. They must stay FACTS you can
     // check on the spot, never sales promises.
     showroomPoints: [
@@ -1373,12 +1393,13 @@ export const en: Dict = {
     // 🔗 {neotone} becomes a link to /en/le-neotone (replaced by `mesh()` in
     //    AtlasPage.astro). "Yishama" stays PLAIN TEXT here: it is already
     //    linked further up, in `storyFestivalCaption`. One link per target.
-    // 🚨 THIS CAPTION DOES NOT SAY that the Atlas stands are in the photo —
-    //    they have not arrived yet. It describes the CURRENT setup and says
-    //    the Atlas stands will take their place there. Never rewrite it in the
-    //    past tense. No stand brand is named in it.
+    // 🚨 THIS CAPTION STILL DOES NOT SAY that the Atlas stands are in the
+    //    photo: the SHOT predates their arrival. Since 01/09/2026 it states
+    //    that they have taken their place (delivered 26/08/2026) — that is a
+    //    fact, not a description of the image. Do not go further: never
+    //    describe Atlas stands nobody can see. No stand brand is named in it.
     showroomPhotoCaption:
-      'The showroom set up before a gathering: my two Yishama acoustic handpans and my two {neotone} electronic handpans, each on its own stand — four instruments, four different stands. This is where the two Atlas stands will take their place, and where you will be able to try them.',
+      'The showroom set up before a gathering: my two Yishama acoustic handpans and my two {neotone} electronic handpans, each on its own stand — four instruments, four different stands. The two Atlas stands have since taken their place there, and that is where you will be able to try them.',
 
     // ── 🎟️ THE DISCOUNT CODE — COPY READY, BLOCK SWITCHED OFF ──────────────
     // ⛔️ NONE of this is displayed while `ATLAS_PROMO_ACTIVE` is `false` in
