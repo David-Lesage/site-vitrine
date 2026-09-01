@@ -47,7 +47,7 @@ export const en: Dict = {
     news: {
       check: 'I’d like to hear about upcoming dates and what’s new',
       optional: 'optional',
-      hint: 'New showcase dates, the app opening up, new instruments. I write rarely, and you unsubscribe in one click. If you leave it unticked, I only write to you about your request.',
+      hint: 'New gathering dates, the app opening up, new instruments. I write rarely, and you unsubscribe in one click. If you leave it unticked, I only write to you about your request.',
     },
     credentials: ['Conservatory award', 'The Voice · Season 11', 'Neotone · Yishama · Maison du Ngoni ambassador', 'Showroom Paris 20th'],
     beta: {
@@ -114,7 +114,7 @@ export const en: Dict = {
         'This address has been invited to join the beta. All that is left is to choose a password and come in.',
       invitedBtn: 'Create my password and come in',
       invitedNotMe: 'That’s not me — join the waiting list',
-      formShowcase: 'I’d like to hear about the next free showcases in Paris',
+      formShowcase: 'I’d like to hear about the next free gatherings in Paris',
       formBeta: 'I’d like to become a beta tester — early, free access to the app, in exchange for my regular feedback.',
       formMotivation: 'Why does the app interest you? (optional)',
       formMotivationBeta: 'Why would you like to become a beta tester?',
@@ -188,16 +188,16 @@ export const en: Dict = {
     showroomText: 'In Paris (20th), come try the instruments, meet the community, and walk away the same day with your handpan — with no manufacturing wait, at the best price on the market (−7%).',
     showroomArgs: ['7% discount — the best price (vs. 5% online)', 'No manufacturing delay, no waiting', 'Very limited stock — only a few instruments available'],
     showroomCta1: 'Book my showroom visit',
-    showroomCta2: 'See the next showcase',
-    showroomDatesTitle: 'Next free showcases',
+    showroomCta2: 'See the next gathering',
+    showroomDatesTitle: 'Next free gatherings',
     showroomDatesNote: 'Free entry · booking recommended',
     showroomDatesEmpty: 'Next dates in preparation — write to me to be the first to know.',
     showroomDatesAll: 'See the full agenda',
     communityEyebrow: 'The community',
     communityTitle: 'Join the visible-music movement',
-    communityIntro: 'Be notified about upcoming showcases in Paris and the release of Handpan Constellation Studio. No spam — just the essentials.',
+    communityIntro: 'Be notified about upcoming gatherings in Paris and the release of Handpan Constellation Studio. No spam — just the essentials.',
     communityPlaceholder: 'your@email.com',
-    communityButton: 'Keep me posted about the next showcases',
+    communityButton: 'Keep me posted about the next gatherings',
     // 🚨 FIXED on 18/08/2026 — the previous sentence (“Your mail app opens…”)
     // had been FALSE since 16/08: the button opens the `BookingForm` modal →
     // `site-lead` → `site_leads` (the `mailto:` is only a no-JavaScript fallback).
@@ -645,7 +645,7 @@ export const en: Dict = {
     eyebrow: 'Shop',
     title2: 'Ambassador of exceptional instruments & microphones',
     intro: 'Quality and refinement matter deeply to me.',
-    ambassadorText: 'I work with makers of exceptional instruments and microphones, and I’m proud to showcase and represent their quality. Through me, you can get discount codes as well as demos and hands-on tests at my showcases in Paris (20th).',
+    ambassadorText: 'I work with makers of exceptional instruments and microphones, and I’m proud to present and represent their quality. Through me, you can get discount codes as well as demos and hands-on tests at my gatherings in Paris (20th).',
     keyNotice: 'Online payment disabled: set PUBLIC_SNIPCART_KEY in .env to enable the cart.',
     from: 'from ',
     soon: 'Soon',
@@ -670,7 +670,7 @@ export const en: Dict = {
       handpans: { label: 'Handpan', blurb: 'Two worlds that complete each other.' },
       app: { label: 'App', blurb: 'Handpan Constellation Studio — the teaching app that makes music visible.' },
       creations: { label: 'My creations · Now Groove', blurb: 'Created by me: my Now Groove rhythm method, the signature calabash and its handmade cover.' },
-      instruments: { label: 'Exceptional instruments', blurb: 'I work with outstanding makers whose quality I’m proud to represent. Through me, enjoy discount coupons and demos at my showcases.' },
+      instruments: { label: 'Exceptional instruments', blurb: 'I work with outstanding makers whose quality I’m proud to represent. Through me, enjoy discount coupons and demos at my gatherings.' },
       // Accessories (20/08/2026) — new category created for the Atlas stands.
       micros: { label: 'Microphones', blurb: 'Pickup for acoustic handpan, voice and gong.' },
       accessoires: { label: 'Accessories', blurb: 'What holds the instrument up, and what carries it. Tried at the showroom before it lands here.' },
@@ -694,7 +694,7 @@ export const en: Dict = {
       'calebasse': { name: 'David Lesage Signature Calabash Kit', description: 'Complete kit: a calabash 45 to 50 cm (rare in Europe), hand-finished by Kamou (Djoliba Percussion) and laser-engraved with the Now Groove logo, with its mat and shakers. An organic drum with a natural sound.' },
       'housse': { name: 'Now Groove calabash cover by David Lesage', description: 'A premium backpack cover designed by David Lesage: integrated mat function, detachable straps, storage pocket (eggs, accessories & method), velvet lining. ✋ Special handmade edition, ultra-limited series.' },
       'tambour': { name: 'Shamanic frame drum · L’Âme du Tambour', description: 'A handcrafted frame drum by Julien (L’Âme du Tambour) — an aligned, passionate and honest maker. Enjoy −5% with the code David-Tambour.' },
-      'micro-hisong': { name: 'Hisong AirStudio S1 microphone', description: 'The first all-in-one mobile studio (mic, wireless in-ears, audio interface, charging case). Perfect for voice, acoustic handpan and gonilélé — a true portable studio.<br><br><strong>Three kits to choose from</strong> (prices incl. 20% VAT):<br>1 — Musician 4-in-1 · <strong>€319 incl. VAT</strong> <span class="text-ink-soft/60">(€265.95 excl.)</span><br>2 — Creator 5-in-1 · <strong>€372 incl. VAT</strong> <span class="text-ink-soft/60">(€309.95 excl.)</span><br>3 — Master 6-in-1 · <strong>€426 incl. VAT</strong> <span class="text-ink-soft/60">(€354.95 excl.)</span><br><br><strong>My advice:</strong> if you want to use the mic to <strong>play live</strong>, you need the <strong>6-in-1 (Master) kit</strong>.<br><br>Live demos and on-the-spot purchase at my Paris showcases.' },
+      'micro-hisong': { name: 'Hisong AirStudio S1 microphone', description: 'The first all-in-one mobile studio (mic, wireless in-ears, audio interface, charging case). Perfect for voice, acoustic handpan and gonilélé — a true portable studio.<br><br><strong>Three kits to choose from</strong> (prices incl. 20% VAT):<br>1 — Musician 4-in-1 · <strong>€319 incl. VAT</strong> <span class="text-ink-soft/60">(€265.95 excl.)</span><br>2 — Creator 5-in-1 · <strong>€372 incl. VAT</strong> <span class="text-ink-soft/60">(€309.95 excl.)</span><br>3 — Master 6-in-1 · <strong>€426 incl. VAT</strong> <span class="text-ink-soft/60">(€354.95 excl.)</span><br><br><strong>My advice:</strong> if you want to use the mic to <strong>play live</strong>, you need the <strong>6-in-1 (Master) kit</strong>.<br><br>Live demos and on-the-spot purchase at my Paris gatherings.' },
       'micro-muling': { name: 'Muling MP1 microphone + HMP-2 preamp', description: 'The MP1 is a contact-condenser microphone made for the acoustic handpan. It comes with the HMP-2 preamp, which hosts up to two MP1 mics — for a clear, precise stereo capture with no feedback. Perfect for stage and recording. (Partnership with the maker in progress — email me to be kept posted.)' },
       'atlas': { name: 'Atlas handpan stands — Pro & All', description: 'The magnetic tripods from the Italian maker Atlas. The handpan rests on a floating disc with eight covered magnets, with nothing screwed or strapped on. Two models: the <strong>Atlas Pro</strong> in aluminium, telescopic, 1.8 kg, carrying bag included (€215); the <strong>Atlas All</strong> in wood, whose head is held between your legs to play seated, before taking legs and extensions to play standing (€230). I am a partner of the brand — both will be at the showroom to try.' },
       'phoenix-opus1': { name: 'The Phoenix Alliance — Opus I', description: 'My original album, first opus — a journey blending handpan, voice and organic textures. Stream it on Spotify and every platform.' },
@@ -734,8 +734,8 @@ export const en: Dict = {
     // They replace old `mailto:` links (a 19/07/2026 stop-gap) that opened the
     // visitor's mail client: the request then only existed in David's inbox and
     // left NO trace in the database. Real prospects were lost that way.
-    newsTitle: 'Get notified about the next showcases',
-    newsIntro: 'Leave me your email: I’ll let you know as soon as the dates of the next free showcases in Paris are set. No spam — unsubscribe whenever you like.',
+    newsTitle: 'Get notified about the next gatherings',
+    newsIntro: 'Leave me your email: I’ll let you know as soon as the dates of the next free gatherings in Paris are set. No spam — unsubscribe whenever you like.',
     contactTitle: 'Write to me',
     contactIntro: 'Tell me what brings you here — I read and answer every message personally.',
     goniTitle: 'Order a Gonilélé harp',
@@ -769,7 +769,7 @@ export const en: Dict = {
     discountNote: 'I only use these details to request your code from Neotone.',
     phonePlain: 'Phone',
     // Showcase only (24/08/2026) — see the French dictionary for the reasoning.
-    phoneWhyShowcase: 'Required for a showcase: it’s a fixed date, and if anything comes up at the last minute on either side, I need to be able to reach you straight away.',
+    phoneWhyShowcase: 'Required for a gathering: it’s a fixed date, and if anything comes up at the last minute on either side, I need to be able to reach you straight away.',
     socialLabel: 'Your social media account',
     socialHint: 'Instagram preferred — otherwise Facebook, YouTube or your own website.',
     socialPlaceholder: '@yourhandle or a link',
@@ -783,7 +783,7 @@ export const en: Dict = {
       youtube: 'YouTube',
       instagram: 'Instagram',
       facebook: 'Facebook',
-      showcase: 'A showcase or an event',
+      showcase: 'A gathering or an event',
       'word-of-mouth': 'Word of mouth',
       search: 'A web search',
       'neotone-site': 'The Neotone website',
@@ -834,8 +834,8 @@ export const en: Dict = {
     formatLabel: 'In person or online?',
     formatInPerson: 'In person — Paris 20th showroom',
     formatRemote: 'Online',
-    showcaseTitle: 'Reserve my spot at the showcase',
-    showcaseIntro: 'Free public showcase at the Paris 20th showroom. Booking recommended — seats are limited.',
+    showcaseTitle: 'Reserve my spot at the gathering',
+    showcaseIntro: 'Free public gathering at the Paris 20th showroom. Booking recommended — seats are limited.',
     // Showcase only — "which instrument(s) are you coming for?" (see dict.ts).
     // Optional on purpose. No "Other" option and no free-text field: the
     // existing message box already covers it (David, 17/08/2026).
@@ -1216,7 +1216,7 @@ export const en: Dict = {
 
     partnerTitle: 'Why I am talking about them now',
     partnerText:
-      'The partnership with Atlas has just been confirmed: I am now an affiliate of the brand, and they are sending me two demonstration stands for my showcases. As long as nothing was signed I preferred not to announce anything here — now it is done, so I am saying it.',
+      'The partnership with Atlas has just been confirmed: I am now an affiliate of the brand, and they are sending me two demonstration stands for my gatherings. As long as nothing was signed I preferred not to announce anything here — now it is done, so I am saying it.',
     // 🚧 This sentence disappears the day `ATLAS_AFFILIATE_URL` is filled in
     //    in src/data/atlas.ts (the page then switches to the tracking link).
     affiliateNote:
@@ -1373,7 +1373,7 @@ export const en: Dict = {
     //    the Atlas stands will take their place there. Never rewrite it in the
     //    past tense. No stand brand is named in it.
     showroomPhotoCaption:
-      'The showroom set up before a showcase: my two Yishama acoustic handpans and my two {neotone} electronic handpans, each on its own stand — four instruments, four different stands. This is where the two Atlas stands will take their place, and where you will be able to try them.',
+      'The showroom set up before a gathering: my two Yishama acoustic handpans and my two {neotone} electronic handpans, each on its own stand — four instruments, four different stands. This is where the two Atlas stands will take their place, and where you will be able to try them.',
 
     // ── 🎟️ THE DISCOUNT CODE — COPY READY, BLOCK SWITCHED OFF ──────────────
     // ⛔️ NONE of this is displayed while `ATLAS_PROMO_ACTIVE` is `false` in
@@ -1403,7 +1403,7 @@ export const en: Dict = {
       showroomYishama:
         'David Lesage at the Le Nid showroom in Paris: behind him, two Yishama steel acoustic handpans, each mounted on its own black tripod on a woven mat, in a large white room with lit archways and a pale wooden floor.',
       showroomInstruments:
-        'David Lesage’s showroom set up before a showcase: two Neotone electronic handpans with a lit rim, on black tripods next to an electronic drum kit, and two Yishama acoustic steel handpans, one on a wooden tripod, the other on a metal stand; a calabash half-sphere resting on a red mat in the foreground, old wooden floor, fairy lights and a rosette on the wall.',
+        'David Lesage’s showroom set up before a gathering: two Neotone electronic handpans with a lit rim, on black tripods next to an electronic drum kit, and two Yishama acoustic steel handpans, one on a wooden tripod, the other on a metal stand; a calabash half-sphere resting on a red mat in the foreground, old wooden floor, fairy lights and a rosette on the wall.',
       stageStanding:
         'David Lesage standing on stage under the spotlights, behind his two handpans mounted on stands, surrounded by his stands, his pedals and a calabash resting on the red carpet.',
       stageStands:
@@ -1517,7 +1517,7 @@ export const en: Dict = {
       { title: 'Private lesson · 1h30', price: '€70', text: 'The ideal format to go further: harmony, rhythm, accompaniment, stage and studio tips.' },
       { title: 'Group workshop', price: 'On request', text: 'Group sessions in a small setting (calabash rhythm, handpan…), in a friendly atmosphere. Format and venue on request.' },
     ],
-    footnote: 'Booking by email. In-person lessons in Paris are a natural bridge to the showroom and showcases.',
+    footnote: 'Booking by email. In-person lessons in Paris are a natural bridge to the showroom and gatherings.',
     faqEyebrow: 'FAQ',
     faqTitle: 'Frequently asked questions about the lessons',
     faq: [
@@ -1694,10 +1694,34 @@ export const en: Dict = {
       { q: 'Is Handpan Constellation Studio free?', a: 'Handpan Constellation Studio bundles a lot of features, and it’s your use that decides what’s free and what isn’t. Learning the handpan on your own, on your own acoustic instrument, is free: seeing your scale in colour, recognising your chords, playing, creating and exporting your scores. What goes beyond your personal practice is paid: the electronic Neotone/MIDI mode, advanced creation, cloud saving. And if you use it as a working tool in lessons you charge for, that’s a Teacher Licence — with the student space, the exercises and watermark-free scores that come with it. Up-to-date prices are just below.' },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // 🚧 "GATHERING" (EN) / « RENCONTRE » (FR) — PLACEHOLDER WORD, TO BE REWORKED
+  // ══════════════════════════════════════════════════════════════════════════
+  // 31/08/2026 — David: "the word SHOWCASE must go (French speakers don't know
+  // what it means)", then, about its replacement: "for now put LA RENCONTRE but
+  // it's TO BE REWORKED".
+  //
+  // ⚠️ So "gathering" / « rencontre » is a FOR-WANT-OF-ANYTHING-BETTER choice,
+  //    NOT a settled name. "gathering" was picked because it is the word the
+  //    handpan community actually uses (GRIASDI Handpan Gathering) — that does
+  //    not make the French word settled either.
+  //
+  // 🚨 THE REAL QUESTION IS UPSTREAM, AND ONLY DAVID CAN SETTLE IT: what he
+  //    offers is not merely a commercial demo — "it is a WHOLE EXPERIENCE". The
+  //    right word will come from what the experience gives people, not from
+  //    translating "showcase". Until then: do NOT build storytelling, an event
+  //    name, a tagline or a campaign on "gathering" — it may still change.
+  //
+  // 🔒 WHAT MUST NOT FOLLOW THE WORD (technical identifiers): see dict.ts —
+  //    `showcase-booking` / `showcase-waitlist` are VALUES STORED IN THE
+  //    `site_leads` DATABASE and read by the `site-lead` Edge Function; the
+  //    `showcase*` keys, the `showcase-email` Edge functions, file names and
+  //    URL slugs all stay as they are. Only human-read TEXT changed.
+  // ══════════════════════════════════════════════════════════════════════════
   showroom: {
     title: 'Try a Handpan, a Gonilélé, a Mic in Paris — Showroom | David Lesage',
     description:
-      'Try every instrument I play, in Paris: the Neotone electronic handpan, my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. David Lesage Showroom, 29 rue des Orteaux, Paris 20th: free showcases, private demonstrations and lessons.',
+      'Try every instrument I play, in Paris: the Neotone electronic handpan, my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. David Lesage Showroom, 29 rue des Orteaux, Paris 20th: free gatherings, private demonstrations and lessons.',
     heroEyebrow: 'Le Nid · Paris 20th',
     heroTitle: 'David Lesage Showroom',
     // 🚨 See dict.ts: opened up on 18/08/2026 at David's explicit request. The
@@ -1707,9 +1731,9 @@ export const en: Dict = {
     // See dict.ts: this CTA is the OPTION, shown BELOW the next free showcase.
     ctaBook: 'Book a private one-to-one slot (paid)',
     // "just sign up" played the booking down: it is required.
-    ctaBookNote: 'Paid one-to-one slot: {grid}. Public showcases, on the other hand, are free — limited places · booking required.',
+    ctaBookNote: 'Paid one-to-one slot: {grid}. Public gatherings, on the other hand, are free — limited places · booking required.',
     // ⓘ No longer rendered since 17/08/2026 — see dict.ts.
-    ctaNext: 'See the next showcase',
+    ctaNext: 'See the next gathering',
     exclBadge: '★ World first',
     exclTitle: 'Walk away with your Neotone¹, the same day',
     exclText: 'I’ll own this claim: as far as I know, Le Nid is the first place in the world where these instruments can be tried AND bought directly, on site. In practice, that means you can buy your Neotone¹ right here and take it home immediately — with no manufacturing wait. My Yishama handpans are not for sale: they are my personal instruments, there to be heard and played.',
@@ -1776,7 +1800,7 @@ export const en: Dict = {
     // ✂️ "On site · " dropped, same reason as `duoEyebrow` above.
     alsoEyebrow: 'And not only the handpan',
     alsoTitle: 'Everything else I play is here too',
-    alsoIntro: 'The Neotone is the headline act of the showcase — but you don’t have to come for it. These instruments are out on the floor too, and you can pick them up just like the handpans.',
+    alsoIntro: 'The Neotone is the headline act of the gathering — but you don’t have to come for it. These instruments are out on the floor too, and you can pick them up just like the handpans.',
     also: [
       {
         title: 'The Gonilélé harp',
@@ -1861,7 +1885,7 @@ export const en: Dict = {
     // 🚨 Fixed 21/08/2026 — see dict.ts: showcases can be held in the morning
     //    or the afternoon, so “evening” was simply wrong. No time of day in the
     //    page copy: the actual hour lives in the agenda, and nowhere else.
-    lieuTitle: 'What a showcase at Le Nid looks like',
+    lieuTitle: 'What a gathering at Le Nid looks like',
     lieuIntro: 'A workshop-flat in the 20th arrondissement: bare wood floors, fairy lights, and everyone sitting in a circle around the instruments. Fifteen of us, no more.',
     photoAlt: {
       // 🚧 Fallback photo — see dict.ts: the file is a VIDEO THUMBNAIL, the
@@ -1871,7 +1895,7 @@ export const en: Dict = {
       accueil:
         'David Lesage, arms open, welcoming you from the middle of the showroom’s main room: old wooden floor, white walls under the roof beams, a wall rosette, a handpan on its tripod behind him, cushions and a low sofa at the far end. (The words “David Lesage Showroom” are burnt into the image.)',
       vueEnsemble:
-        'Wide view of a showcase at Le Nid: David Lesage sitting at the centre of the circle, handpans on stands behind him, the audience seated on the wooden floor, walls hung with fairy lights and a rosette above.',
+        'Wide view of a gathering at Le Nid: David Lesage sitting at the centre of the circle, handpans on stands behind him, the audience seated on the wooden floor, walls hung with fairy lights and a rosette above.',
       instruments:
         'The instruments set up at the showroom before the audience arrives: two Yishama acoustic handpans on tripods, two Neotone electronic handpans with their screen, a calabash resting on a red mat, all on an old wooden floor.',
       presentation:
@@ -1889,7 +1913,7 @@ export const en: Dict = {
     //    TWICE on the same page. `vueEnsemble` is kept as a figure: it is the
     //    page's only proof that the event exists and draws people.
     photoCaption: {
-      vueEnsemble: 'A showcase at Le Nid — audience in a circle, instruments at the centre.',
+      vueEnsemble: 'A gathering at Le Nid — audience in a circle, instruments at the centre.',
       grandePiece: 'The same room in daylight, before everything is set up.',
       // 🗓️ 30/08/2026 (David): “complete it with all the other instruments and
       //    microphones”. This caption does NOT describe the photo (that is
@@ -1954,7 +1978,7 @@ export const en: Dict = {
     //    instruments. See the French dictionary for the full reasoning and for
     //    how to bring it back.
     events: [
-      { t: 'Neotone showcase & instrument discovery', d: 'The free public gathering at Le Nid: David Lesage presents the Neotone — then everything is there to be tried, Yishama acoustic handpans, Gonilélé African harp, calabash and handpan microphones.', price: 'Public · Free' },
+      { t: 'Neotone gathering & instrument discovery', d: 'The free public gathering at Le Nid: David Lesage presents the Neotone — then everything is there to be tried, Yishama acoustic handpans, Gonilélé African harp, calabash and handpan microphones.', price: 'Public · Free' },
       { t: 'Getting started with your instrument', d: 'Just received your Neotone, your handpan or your microphone? We set everything up together and walk through the controls, step by step. In person or online.', price: '' },
       { t: 'Discovering the instruments', d: 'A private session at the showroom to try in depth whatever interests you: Yishama acoustic handpans, Neotone, calabash, Gonilélé, Hisong and Muling microphones.', price: '' },
       { t: 'Lesson or one-to-one guidance', d: 'With David Lesage, whatever your level: create your scales, play pieces and techniques, or simply get clear on what you’re looking for. In person or online.', price: '' },
@@ -1989,7 +2013,7 @@ export const en: Dict = {
     bookVisitCta: 'Book my showroom slot (paid)',
     bookPrivateCta: 'Book an individual appointment',
     agendaEyebrow: 'Agenda',
-    agendaTitle: 'Calendar of free public showcases',
+    agendaTitle: 'Calendar of free public gatherings',
     // 🚨 See dict.ts: booking is MANDATORY (David, 17/08/2026). The showcase
     // stays FREE — it is the booking that becomes required, never the entry
     // that becomes paid. Do not reintroduce "free entry" / "booking recommended".
@@ -1997,11 +2021,11 @@ export const en: Dict = {
     agendaEmpty: 'Upcoming dates in preparation',
     agendaEmptyText: 'The next dates are being finalised. Leave me your email and you’ll be the first to know, before the public announcement.',
     agendaEmptyCta: 'Notify me of the next date',
-    agendaNextLabel: 'Next free showcase',
+    agendaNextLabel: 'Next free gathering',
     agendaCount: '{n} upcoming date',
     agendaCountPlural: '{n} upcoming dates',
     agendaSeats: 'Free, booking required · limited places',
-    agendaCta: 'Get notified about upcoming showcases',
+    agendaCta: 'Get notified about upcoming gatherings',
     // 🚨 RENDERED ONCE ONLY SINCE 21/08/2026, ABOVE THE LIST.
     //    It used to be the <h3> of EACH of the five agenda rows: five rows,
     //    the same title five times, the same tag five times, the same address
@@ -2009,7 +2033,7 @@ export const en: Dict = {
     //    small text underneath. Now each row's heading IS its date, and this
     //    shared label is written once, with the address, above the list.
     //    🚫 Do not put it back inside the loop.
-    agendaEventTitle: 'Neotone showcase — and every instrument to try',
+    agendaEventTitle: 'Neotone gathering — and every instrument to try',
     // ⓘ `agendaEventTag` is no longer rendered per row — key kept. Free-ness is
     //    already stated three times around the list (`agendaTitle`,
     //    `agendaIntro`, `agendaSeats`).
@@ -2126,7 +2150,7 @@ export const en: Dict = {
     todayIntro:
       'I’m a French performing-arts freelancer, based in Paris. Le Nid, at 29 rue des Orteaux in the 20th, is the place I run with Iris Chasles, opened on 13 March 2026: a human-sized venue in eastern Paris, where we welcome people in small numbers. Five strands meet there — concerts, a calabash rhythm workshop, individual lessons, a yoga class and psycho-corporeal support — plus the instrument presentations, free and by registration. You can touch, try, listen, and walk away with your Neotone the same day. My two Yishamas are there too, not for sale, just to be played. The full programme is published by the Résonances Productions association.',
     today: [
-      { t: 'I play', d: 'Handpan, voice, calabash and ngoni on stage: 112 logged dates from 2009 to 2026, in 7 countries — including 21 at Jazz in Marciac, two editions of Sziget in Budapest, the Everness Festival in Hungary and a support slot for Amadou &amp; Mariam. Two recorded opuses under the title L’Alliance du Phoenix, and free showcases at Le Nid almost every month.' },
+      { t: 'I play', d: 'Handpan, voice, calabash and ngoni on stage: 112 logged dates from 2009 to 2026, in 7 countries — including 21 at Jazz in Marciac, two editions of Sziget in Budapest, the Everness Festival in Hungary and a support slot for Amadou &amp; Mariam. Two recorded opuses under the title L’Alliance du Phoenix, and free gatherings at Le Nid almost every month.' },
       { t: 'I teach', d: 'Now Music Academy: handpan, calabash rhythm and gonilélé harp, over video anywhere in the world or in person in Paris. I answer personally.' },
       { t: 'I build', d: 'Handpan Constellation Studio makes harmony visible through colours, shapes and emotions. Guso Facile does the same for the paperwork of freelance performers in France.' },
       { t: 'I bridge', d: 'Neotone beta-tester (Soundventure, Budapest), Yishama ambassador and affiliate, La Maison du Ngoni ambassador.' },
@@ -2147,7 +2171,7 @@ export const en: Dict = {
       { y: 'May 2023', t: 'I receive my two Yishama handpans: 18 notes each, 432 Hz.' },
       { y: 'Aug. 2023', t: 'The document that would become Handpan Constellation Studio.' },
       { y: '13 March 2026', t: 'Le Nid opens, 29 rue des Orteaux, Paris 20th.' },
-      { y: 'Today', t: 'Le Nid, Paris 20th — lessons, try-outs and showcases.' },
+      { y: 'Today', t: 'Le Nid, Paris 20th — lessons, try-outs and gatherings.' },
     ],
 
     visionEyebrow: 'My teaching vision',
@@ -2255,7 +2279,7 @@ export const en: Dict = {
         h: 'What you give me, form by form',
         p: 'Nothing is collected behind your back: it all comes from what you type yourself. Optional fields stay empty if you leave them alone.',
         items: [
-          'Booking (showroom visit, seat at a showcase, one-to-one appointment, Neotone discount code request): first name, last name, email, phone if you give it, number of people, target date, up to three time slots you propose, type and format of the session (in person or online), instruments you want to discover, Neotone model you have in mind, country, social media account, how you found me, how long you have been playing, what you would like to achieve, and your message.',
+          'Booking (showroom visit, seat at a gathering, one-to-one appointment, Neotone discount code request): first name, last name, email, phone if you give it, number of people, target date, up to three time slots you propose, type and format of the session (in person or online), instruments you want to discover, Neotone model you have in mind, country, social media account, how you found me, how long you have been playing, what you would like to achieve, and your message.',
           'Contact: name, email, subject, message.',
           'App waiting list: first name, last name, email, whether you already own a handpan and which kind, the role or roles you declare (for yourself, to teach, to build), your goal, your number of students and — if you build handpans — your country, the number of notes you produce, the metals you work with and how you set your prices. Plus your motivation, if you apply as a beta tester.',
           'Muling microphone order: first name, last name, email, phone, quantity, full delivery address, instructions for the courier, message, and then the proof of payment you upload (image or PDF).',
@@ -2269,7 +2293,7 @@ export const en: Dict = {
         items: [
           'Answer you. That is what every form exists for: I read and I reply personally.',
           'Organise what you asked for: confirming a slot, preparing the instruments for your visit, passing an order along. A one-to-one appointment request also creates a proposed lesson in my schedule, inside the app.',
-          'Keep you posted about what’s new — but only if you ticked the second box on the form, the optional one, which is never pre-ticked: a new showcase date, the app opening up, a new instrument. If you leave it unticked, I only write to you about your request, and nothing else. If you tick it, I write rarely, and I target: depending on which door you came in through and what you said you were interested in, you don’t get the same thing as everyone else. You can stop it whenever you want, with no explanation needed.',
+          'Keep you posted about what’s new — but only if you ticked the second box on the form, the optional one, which is never pre-ticked: a new gathering date, the app opening up, a new instrument. If you leave it unticked, I only write to you about your request, and nothing else. If you tick it, I write rarely, and I target: depending on which door you came in through and what you said you were interested in, you don’t get the same thing as everyone else. You can stop it whenever you want, with no explanation needed.',
         ],
       },
       {
@@ -2281,7 +2305,7 @@ export const en: Dict = {
         // there, to make others want to come.
         // Blurring by default is what he actually does today — not a promise.
         h: 'Photos and videos taken on the premises',
-        p: 'I photograph and film what happens here: the showcases, the appointments at the showroom, the instruments going from hand to hand. I publish some of it on this site and on my social media. What matters to me is not your face in particular: it is showing the general atmosphere of the place and of what is shared there, to make others want to come.',
+        p: 'I photograph and film what happens here: the gatherings, the appointments at the showroom, the instruments going from hand to hand. I publish some of it on this site and on my social media. What matters to me is not your face in particular: it is showing the general atmosphere of the place and of what is shared there, to make others want to come.',
         items: [
           'By default, I blur faces. That is what I do today: unless someone has told me they are fine with it, I do not publish them in a recognisable way.',
           'You can tell me no, and you owe me no explanation: a word on the spot is enough, or an email to contact@lesagedavid.fr. Before as well as after publication — if a photo or a video is already online, I take it down or blur you.',
@@ -2371,8 +2395,8 @@ export const en: Dict = {
         items: [] as string[],
       },
       {
-        h: 'Appointments, showcases and orders',
-        p: 'No payment happens on this site. A one-to-one appointment is paid through the link I send you in my reply: payment is what reserves your slot and commits us both. Up to 24 h beforehand we move it with no problem at all; less than 24 h beforehand the payment stays with me, but you don’t lose your appointment — we reschedule it within 3 months. Showcases are free, by reservation, with a limited number of seats. A Muling microphone order is paid by bank transfer, to an account located in Germany, directly to the manufacturer: you make the transfer yourself, and neither this site nor I take that payment. The manufacturer then handles shipping and tracking.',
+        h: 'Appointments, gatherings and orders',
+        p: 'No payment happens on this site. A one-to-one appointment is paid through the link I send you in my reply: payment is what reserves your slot and commits us both. Up to 24 h beforehand we move it with no problem at all; less than 24 h beforehand the payment stays with me, but you don’t lose your appointment — we reschedule it within 3 months. Gatherings are free, by reservation, with a limited number of seats. A Muling microphone order is paid by bank transfer, to an account located in Germany, directly to the manufacturer: you make the transfer yourself, and neither this site nor I take that payment. The manufacturer then handles shipping and tracking.',
         items: [] as string[],
       },
       {
@@ -2519,7 +2543,7 @@ export const en: Dict = {
       { title: 'Pay the balance and receive your Neotone', text: 'As soon as your instrument is ready, you’re notified by email. You pay the balance and the instrument is shipped with its invoice, worldwide.' },
     ],
     procedureShowroom: [
-      { title: 'Book a session with me', text: 'Two options: come to one of my public showcase dates (one a month), or book an individual appointment just for you — 1h · €50 or 1h30 · €70.' },
+      { title: 'Book a session with me', text: 'Two options: come to one of my public gathering dates (one a month), or book an individual appointment just for you — 1h · €50 or 1h30 · €70.' },
       { title: 'Try both models for real', text: 'On the spot, you take your time to test the Neotone¹ and the Mutant, compare the woods, and ask me anything.' },
       { title: 'Walk away with your instrument the same day', text: 'You get the showroom discount (−7%) and walk away with your Neotone right away — no manufacturing wait.' },
     ],

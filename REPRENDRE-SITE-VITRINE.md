@@ -29,6 +29,76 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 01/09/2026 (9ᵉ passe) — 🚧 « SHOWCASE » DISPARAÎT → « RENCONTRE » / « GATHERING » (MOT **PROVISOIRE**)
+
+**Statut : commité, poussé, buildé (114 pages), déployé en prod, vérifié en ligne FR + EN.**
+Fichiers touchés, et eux seuls : `src/i18n/dict.ts`, `src/i18n/en.ts`, `src/i18n/es.ts`
+(1 ligne), `src/lib/booking.ts`, `src/lib/ldJson.ts`,
+`supabase/functions/_shared/showcase-email.ts`, `supabase/functions/site-lead/index.ts`.
+
+### 🚨 LE MOT EST PROVISOIRE — NE PAS BÂTIR DE STORYTELLING DESSUS
+
+> David (31/08/2026) : « le mot **showcase doit disparaître** (les Français ne savent pas ce
+> que c'est), et ma proposition ne se limite pas à une démo commerciale : **c'est une
+> expérience globale**. » Puis, sur le remplaçant : « **pour l'instant mets la rencontre mais
+> à retravailler** ».
+
+- **FR = « rencontre »**, **EN = « gathering »** (le mot que la communauté handpan emploie
+  réellement — GRIASDI Handpan Gathering). **ES = « encuentro »** sur la seule ligne où
+  l'anglais « Showcase » s'affichait encore.
+- ⚠️ **Choisi FAUTE DE MIEUX, pas arrêté.** La vraie question est en amont et **seul David la
+  tranchera** : ce que l'expérience apporte aux gens. Tant que ce n'est pas tranché, ne pas
+  construire de nom d'événement, de slogan ni de campagne sur « rencontre ».
+- Un **bloc de commentaire** disant tout cela est posé **en tête du bloc `showroom`** de
+  `src/i18n/dict.ts` ET de `src/i18n/en.ts`. Ne pas le supprimer tant que le mot n'est pas
+  tranché.
+
+### ⛔ CE QUI N'A PAS BOUGÉ, ET QUI NE DOIT JAMAIS BOUGER
+
+Seul le **texte lu par un humain** a changé. Restent tels quels (≈40 identifiants) :
+- **`showcase-booking` / `showcase-waitlist`** — ce sont des **valeurs écrites en base** dans
+  `site_leads`, reconnues par l'EF `site-lead` (règle des trois écritures : formulaire →
+  `api/subscribe.js` → EF). Les renommer casse les inscriptions **et** orpheline les lignes
+  déjà enregistrées.
+- Les clés i18n `showcase*` (`showcaseTitle`, `showcaseIntro`, `showcaseInterests*`,
+  `phoneWhyShowcase`, `formShowcase`), `wantsShowcase`, `showcase_instruments`,
+  `upcomingShowcases()`, `ShowcaseDate`, `ALLOWED_SHOWCASE_INTERESTS`.
+- Les **noms de fonctions Edge** : `showcase-email`, `showcase-waitlist`,
+  `_shared/showcase-email.ts`.
+- Les **noms de fichiers**, les **slugs d'URL**, le paramètre profond `?showcase=AAAA-MM-JJ`,
+  la valeur `showcase` de la question « comment m'as-tu connu ».
+- Le mot **« showroom »** (David n'a demandé que « showcase », et `/showroom` est une URL
+  publique). Les ancres `#agenda` et `#acces` non plus.
+- Les **commentaires** du code gardent « showcase » : ils documentent l'historique et les
+  identifiants. C'est normal que `grep -rin showcase src/` en renvoie encore.
+
+### ⏳ RESTE À FAIRE — REDÉPLOYER L'EDGE FUNCTION DES EMAILS
+
+Le **contenu** des emails a été réécrit dans le dépôt (confirmation de place, liste d'attente,
+accusé de réception, libellés du récap admin), **mais la fonction n'a pas été redéployée**.
+Tant que ce n'est pas fait, les inscrits reçoivent encore « Ta place au showcase est
+confirmée ». Commande :
+
+```bash
+cd ~/CLAUDE/site-vitrine
+npx supabase functions deploy site-lead --project-ref <ref du projet site>
+```
+
+`_shared/showcase-email.ts` part avec, c'est une dépendance de `site-lead`.
+⚠️ Une **copie** de `_shared/showcase-email.ts` vit dans le dépôt de l'app (EF
+`confirm-showcase`, renvoi manuel depuis le panneau admin « 🎤 Showcase ») : les deux doivent
+rester identiques → passer un brief à la session app.
+
+### 🇪🇸 Point signalé, non traité
+
+`src/i18n/es.ts` traduit « showcase » par **quatre mots différents** (`espectáculo`,
+`vitrina`, `exposición`, `presentación`) — et `exposición` entre en collision avec
+« sala de exposición » (= showroom). Seule la ligne qui affichait littéralement « Neotone
+Showcase » a été corrigée en « Encuentro Neotone ». **Le reste de l'espagnol est à reprendre
+en un lot séparé**, une fois le mot français tranché.
+
+---
+
 ## ÉTAT ACTUEL — 30/08/2026 (8ᵉ passe) — 🥁 LE PARTENAIRE OUBLIÉ + 📝 LA LÉGENDE + 📏 UNE SEULE LIGNE
 
 **Statut : ✅ COMMITÉ (`6177aaf`), POUSSÉ, DÉPLOYÉ (`dpl_FrkFChHPTi4gW5SVUU9mHDFA4pw5`),

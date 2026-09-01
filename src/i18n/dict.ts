@@ -57,7 +57,7 @@ const fr = {
     news: {
       check: 'Je veux être informé·e des prochaines dates et des nouveautés',
       optional: 'facultatif',
-      hint: 'Nouvelles dates de showcase, ouverture de l’application, nouveaux instruments. J’écris peu, et tu te désinscris en un clic. Si tu ne coches pas, je ne t’écris que pour ta demande.',
+      hint: 'Nouvelles dates de rencontre, ouverture de l’application, nouveaux instruments. J’écris peu, et tu te désinscris en un clic. Si tu ne coches pas, je ne t’écris que pour ta demande.',
     },
     credentials: ['Prix du Conservatoire', 'The Voice · Saison 11', 'Ambassadeur Neotone · Yishama · Maison du Ngoni', 'Showroom Paris 20ᵉ'],
     beta: {
@@ -131,7 +131,7 @@ const fr = {
         'Cette adresse a été invitée à rejoindre la bêta. Il ne te reste plus qu’à choisir un mot de passe pour entrer.',
       invitedBtn: 'Créer mon mot de passe et entrer',
       invitedNotMe: 'Ce n’est pas moi — rejoindre la liste d’attente',
-      formShowcase: 'Je souhaite être informé·e des prochains showcases gratuits à Paris',
+      formShowcase: 'Je souhaite être informé·e des prochaines rencontres gratuites à Paris',
       formBeta: 'Je souhaite devenir bêta-testeur — accès anticipé et gratuit à l’application, en échange de mes retours réguliers.',
       formMotivation: 'Pourquoi l’application t’intéresse ? (facultatif)',
       formMotivationBeta: 'Pourquoi souhaites-tu devenir bêta-testeur ?',
@@ -215,16 +215,16 @@ const fr = {
     showroomText: 'À Paris 20ᵉ, viens essayer les instruments, rencontrer la communauté, et repars le jour même avec ton handpan — sans aucun délai de fabrication, au meilleur prix du marché (−7 %).',
     showroomArgs: ['7 % de remise — le meilleur prix (contre 5 % en ligne)', 'Aucun délai de fabrication ni d’attente', 'Stock ultra limité — quelques instruments disponibles'],
     showroomCta1: 'Réserver ma venue au showroom',
-    showroomCta2: 'Voir le prochain showcase',
-    showroomDatesTitle: 'Prochains showcases gratuits',
+    showroomCta2: 'Voir la prochaine rencontre',
+    showroomDatesTitle: 'Prochaines rencontres gratuites',
     showroomDatesNote: 'Entrée libre · réservation conseillée',
     showroomDatesEmpty: 'Prochaines dates en préparation — écris-moi pour être prévenu·e en premier.',
     showroomDatesAll: 'Voir tout l’agenda',
     communityEyebrow: 'La communauté',
     communityTitle: 'Rejoins le mouvement de la musique visible',
-    communityIntro: 'Sois prévenu·e des prochains showcases à Paris et de la sortie de Handpan Constellation Studio. Pas de spam — juste l’essentiel.',
+    communityIntro: 'Sois prévenu·e des prochaines rencontres à Paris et de la sortie de Handpan Constellation Studio. Pas de spam — juste l’essentiel.',
     communityPlaceholder: 'ton@email.fr',
-    communityButton: 'Préviens-moi des prochains showcases',
+    communityButton: 'Préviens-moi des prochaines rencontres',
     // 🚨 CORRIGÉ le 18/08/2026 — la phrase précédente (« Ton logiciel de mail
     // s'ouvre avec un message déjà rédigé ») était FAUSSE depuis le 16/08 : le
     // bouton ouvre le formulaire `BookingForm` → `site-lead` → `site_leads`
@@ -748,7 +748,7 @@ const fr = {
     eyebrow: 'Boutique',
     title2: 'Ambassadeur d’instruments et de micros d’exception',
     intro: 'La qualité et le raffinement comptent énormément pour moi.',
-    ambassadorText: 'Je collabore avec des fabricants d’instruments et de micros d’exception, dont je suis fier de mettre en valeur et de représenter la qualité. À travers moi, tu peux bénéficier de coupons de réduction, ainsi que de démonstrations et d’essais lors de mes showcases à Paris 20e.',
+    ambassadorText: 'Je collabore avec des fabricants d’instruments et de micros d’exception, dont je suis fier de mettre en valeur et de représenter la qualité. À travers moi, tu peux bénéficier de coupons de réduction, ainsi que de démonstrations et d’essais lors de mes rencontres à Paris 20e.',
     keyNotice: 'Paiement en ligne désactivé : renseigne PUBLIC_SNIPCART_KEY dans .env pour activer le panier.',
     from: 'dès ',
     soon: 'Bientôt',
@@ -773,7 +773,7 @@ const fr = {
       handpans: { label: 'Handpan', blurb: 'Deux univers qui se complètent.' },
       app: { label: 'Application', blurb: 'Handpan Constellation Studio — l’app pédagogique qui rend la musique visible.' },
       creations: { label: 'Mes créations · Now Groove', blurb: 'Créées par moi : ma méthode de rythme Now Groove, la calebasse signature et sa housse faite main.' },
-      instruments: { label: 'Instruments d’exception', blurb: 'Je collabore avec des fabricants d’exception dont je représente fièrement la qualité. À travers moi, profite de coupons de réduction et de démonstrations lors de mes showcases.' },
+      instruments: { label: 'Instruments d’exception', blurb: 'Je collabore avec des fabricants d’exception dont je représente fièrement la qualité. À travers moi, profite de coupons de réduction et de démonstrations lors de mes rencontres.' },
       micros: { label: 'Micros', blurb: 'Captation pour handpan acoustique, voix et gong.' },
       // Accessoires (20/08/2026) — nouvelle catégorie créée pour les pieds Atlas.
       // Elle n'existait pas : les pieds n'avaient leur place ni dans « Micros »
@@ -801,7 +801,7 @@ const fr = {
       'calebasse': { name: 'Kit de Calebasse David Lesage Signature', description: 'Kit complet : calebasse de 45 à 50 cm (rare en Europe), finie à la main par Kamou (Djoliba Percussion) et gravée au laser du logo Now Groove, avec son tapis et ses shakers. Une batterie organique au son naturel.' },
       'housse': { name: 'Housse de calebasse Now Groove by David Lesage', description: 'Housse-sac à dos haut de gamme pensée et designée par David Lesage : fonction tapis intégrée, sangles détachables, poche de rangement (œufs, accessoires & méthode), intérieur velours. ✋ Édition spéciale fabriquée à la main, en série ultra limitée.' },
       'tambour': { name: 'Tambour chamanique · L’Âme du Tambour', description: 'Tambour-cadre artisanal de Julien (L’Âme du Tambour) — un fabricant aligné, passionné et intègre. Profite de −5 % avec le code David-Tambour.' },
-      'micro-hisong': { name: 'Micro Hisong AirStudio S1', description: 'Le premier studio mobile tout-en-un (micro, retours intra sans fil, interface audio, boîtier de charge). Idéal pour la voix, le handpan acoustique et le gonilélé — un véritable studio portatif.<br><br><strong>Trois kits au choix</strong> (prix TTC, TVA 20 % incluse) :<br>1 — Musicien 4-en-1 · <strong>319 € TTC</strong> <span class="text-ink-soft/60">(265,95 € HT)</span><br>2 — Créateur 5-en-1 · <strong>372 € TTC</strong> <span class="text-ink-soft/60">(309,95 € HT)</span><br>3 — Master 6-en-1 · <strong>426 € TTC</strong> <span class="text-ink-soft/60">(354,95 € HT)</span><br><br><strong>Mon conseil :</strong> si tu veux utiliser le micro pour <strong>jouer en live</strong>, il te faut le <strong>kit 6-en-1 (Master)</strong>.<br><br>Démonstrations et achat en direct à mes showcases à Paris.' },
+      'micro-hisong': { name: 'Micro Hisong AirStudio S1', description: 'Le premier studio mobile tout-en-un (micro, retours intra sans fil, interface audio, boîtier de charge). Idéal pour la voix, le handpan acoustique et le gonilélé — un véritable studio portatif.<br><br><strong>Trois kits au choix</strong> (prix TTC, TVA 20 % incluse) :<br>1 — Musicien 4-en-1 · <strong>319 € TTC</strong> <span class="text-ink-soft/60">(265,95 € HT)</span><br>2 — Créateur 5-en-1 · <strong>372 € TTC</strong> <span class="text-ink-soft/60">(309,95 € HT)</span><br>3 — Master 6-en-1 · <strong>426 € TTC</strong> <span class="text-ink-soft/60">(354,95 € HT)</span><br><br><strong>Mon conseil :</strong> si tu veux utiliser le micro pour <strong>jouer en live</strong>, il te faut le <strong>kit 6-en-1 (Master)</strong>.<br><br>Démonstrations et achat en direct à mes rencontres à Paris.' },
       'micro-muling': { name: 'Micro Muling MP1 + préampli HMP-2', description: 'Le MP1 est un micro contact-condensateur conçu pour le handpan acoustique. Fourni avec le préampli HMP-2, qui accueille jusqu’à deux micros MP1 — pour une captation stéréo, claire et précise, sans Larsen. Idéal pour la scène et l’enregistrement. (Contractualisation en cours avec le fabricant : écris-moi pour être tenu au courant.)' },
       'atlas': { name: 'Pieds de handpan Atlas — Pro & All', description: 'Les trépieds magnétiques du fabricant italien Atlas. Le handpan se pose sur un disque flottant à huit aimants protégés, sans vis ni sangle. Deux modèles : l’<strong>Atlas Pro</strong> en aluminium, télescopique, 1,8 kg, sac de transport inclus (215 €) ; l’<strong>Atlas All</strong> en bois, dont la tête se coince entre les jambes pour jouer assis, avant de recevoir pieds et rallonges pour jouer debout (230 €). Je suis partenaire de la marque — les deux seront à essayer au showroom.' },
       'phoenix-opus1': { name: 'L’Alliance du Phoenix — Opus I', description: 'Mon album original, premier opus — un voyage entre handpan, voix et textures organiques. À écouter sur Spotify et toutes les plateformes.' },
@@ -842,8 +842,8 @@ const fr = {
     // ouvraient le logiciel de mail du visiteur : la demande n'existait alors que
     // dans la boîte de David et ne laissait AUCUNE trace en base. Des prospects
     // réels ont été perdus comme ça — voir REPRENDRE-SITE-VITRINE.md.
-    newsTitle: 'Être prévenu·e des prochains showcases',
-    newsIntro: 'Laisse-moi ton email : je te préviens dès que les dates des prochains showcases gratuits à Paris sont fixées. Pas de spam — tu te désinscris quand tu veux.',
+    newsTitle: 'Être prévenu·e des prochaines rencontres',
+    newsIntro: 'Laisse-moi ton email : je te préviens dès que les dates des prochaines rencontres gratuites à Paris sont fixées. Pas de spam — tu te désinscris quand tu veux.',
     contactTitle: 'M’écrire',
     contactIntro: 'Dis-moi ce qui t’amène — je lis et je réponds personnellement à chaque message.',
     goniTitle: 'Commander une harpe Gonilélé',
@@ -895,7 +895,7 @@ const fr = {
     // pourquoi. Le showcase est une date fixe, à une heure fixe, dans un lieu
     // physique : un imprévu de dernière minute se prévient par téléphone, pas
     // par email.
-    phoneWhyShowcase: 'Obligatoire pour un showcase : c’est une date fixe, et si un imprévu de dernière minute survient d’un côté ou de l’autre, je dois pouvoir te joindre tout de suite.',
+    phoneWhyShowcase: 'Obligatoire pour une rencontre : c’est une date fixe, et si un imprévu de dernière minute survient d’un côté ou de l’autre, je dois pouvoir te joindre tout de suite.',
     socialLabel: 'Ton compte réseaux sociaux',
     socialHint: 'Instagram de préférence — sinon Facebook, YouTube ou ton site perso.',
     socialPlaceholder: '@toncompte ou un lien',
@@ -911,7 +911,7 @@ const fr = {
       youtube: 'YouTube',
       instagram: 'Instagram',
       facebook: 'Facebook',
-      showcase: 'Un showcase ou un événement',
+      showcase: 'Une rencontre ou un événement',
       'word-of-mouth': 'Bouche-à-oreille',
       search: 'Une recherche sur internet',
       'neotone-site': 'Le site de Neotone',
@@ -965,8 +965,8 @@ const fr = {
     formatLabel: 'En présentiel ou en visio ?',
     formatInPerson: 'En présentiel — showroom Paris 20ᵉ',
     formatRemote: 'En visio',
-    showcaseTitle: 'Réserver ma place au showcase',
-    showcaseIntro: 'Showcase public gratuit au showroom de Paris 20ᵉ. Réservation conseillée, les places sont limitées.',
+    showcaseTitle: 'Réserver ma place à la rencontre',
+    showcaseIntro: 'Rencontre publique gratuite au showroom de Paris 20ᵉ. Réservation conseillée, les places sont limitées.',
     // ── SHOWCASE : « pour quel(s) instrument(s) viens-tu ? » (17/08/2026) ─────
     // Posée UNIQUEMENT sur une réservation de showcase. Facultative : elle sert
     // à préparer la séance et à cibler les emails ensuite, pas à filtrer.
@@ -1420,7 +1420,7 @@ const fr = {
 
     partnerTitle: 'Pourquoi j’en parle maintenant',
     partnerText:
-      'Le partenariat avec Atlas vient d’être validé : je suis désormais affilié à la marque, et ils m’envoient deux pieds de démonstration pour mes showcases. Tant que rien n’était signé, je préférais ne rien annoncer ici — c’est fait, donc j’en parle.',
+      'Le partenariat avec Atlas vient d’être validé : je suis désormais affilié à la marque, et ils m’envoient deux pieds de démonstration pour mes rencontres. Tant que rien n’était signé, je préférais ne rien annoncer ici — c’est fait, donc j’en parle.',
     // 🚧 Cette phrase disparaît le jour où `ATLAS_AFFILIATE_URL` est renseigné
     //    dans src/data/atlas.ts (la page bascule alors sur le lien de suivi).
     //    Tant qu'elle est affichée, elle dit la vérité : les boutons envoient
@@ -1633,7 +1633,7 @@ const fr = {
     //    annonce que les Atlas y prendront leur place. Ne jamais la réécrire au
     //    passé ni au présent d'usage. Aucune marque de pied n'y est nommée.
     showroomPhotoCaption:
-      'Le showroom installé avant un showcase : mes deux handpans acoustiques Yishama et mes deux handpans électroniques {neotone}, chacun sur son pied — quatre instruments, quatre pieds différents. C’est là que les deux Atlas prendront leur place, et c’est là que tu pourras les essayer.',
+      'Le showroom installé avant une rencontre : mes deux handpans acoustiques Yishama et mes deux handpans électroniques {neotone}, chacun sur son pied — quatre instruments, quatre pieds différents. C’est là que les deux Atlas prendront leur place, et c’est là que tu pourras les essayer.',
 
     // ── 🎟️ LE CODE DE RÉDUCTION — TEXTES PRÊTS, BLOC ÉTEINT ────────────────
     // ⛔️ RIEN DE CE QUI SUIT N'EST AFFICHÉ tant que `ATLAS_PROMO_ACTIVE` vaut
@@ -1667,7 +1667,7 @@ const fr = {
       showroomYishama:
         'David Lesage au showroom du Nid, à Paris : derrière lui, deux handpans acoustiques Yishama en acier, chacun monté sur son trépied noir sur un tapis tressé, dans une grande pièce blanche aux arches éclairées et au parquet clair.',
       showroomInstruments:
-        'Le showroom de David Lesage installé avant un showcase : deux handpans électroniques Neotone à couronne lumineuse montés sur trépieds noirs près d’un kit de percussions électroniques, et deux handpans acoustiques Yishama en acier, l’un sur un trépied en bois, l’autre sur un pied métallique ; une demi-sphère de calebasse posée sur un tapis rouge au premier plan, parquet ancien, guirlandes lumineuses et rosace au mur.',
+        'Le showroom de David Lesage installé avant une rencontre : deux handpans électroniques Neotone à couronne lumineuse montés sur trépieds noirs près d’un kit de percussions électroniques, et deux handpans acoustiques Yishama en acier, l’un sur un trépied en bois, l’autre sur un pied métallique ; une demi-sphère de calebasse posée sur un tapis rouge au premier plan, parquet ancien, guirlandes lumineuses et rosace au mur.',
       // 📷 Photos de scène de David — HangAout 2021, dossier COM de David.
       //    Aucun public reconnaissable dessus (vérifié) : il est seul en scène.
       stageStanding:
@@ -1800,7 +1800,7 @@ const fr = {
       { title: 'Cours particulier · 1h30', price: '70 €', text: 'Le format idéal pour aller plus loin : harmonie, rythme, accompagnement, conseils de scène et de studio.' },
       { title: 'Atelier de groupe', price: 'Sur demande', text: 'Sessions collectives en petit comité (rythme calebasse, handpan…), dans une ambiance conviviale. Format et lieu sur demande.' },
     ],
-    footnote: 'Prise de rendez-vous par email. Le présentiel à Paris est un pont naturel vers le showroom et les showcases.',
+    footnote: 'Prise de rendez-vous par email. Le présentiel à Paris est un pont naturel vers le showroom et les rencontres.',
     faqEyebrow: 'FAQ',
     faqTitle: 'Les questions fréquentes sur les cours',
     faq: [
@@ -1994,10 +1994,37 @@ const fr = {
       { q: 'Handpan Constellation Studio est-il gratuit ?', a: 'Handpan Constellation Studio regroupe beaucoup de fonctionnalités, et c’est ton usage qui décide de ce qui est gratuit ou non. Apprendre le handpan en autonomie, sur ton propre instrument acoustique, est gratuit : visualiser ta gamme en couleurs, reconnaître tes accords, jouer, créer et exporter tes partitions. Devient payant ce qui va au-delà de ta pratique personnelle : le mode électronique Neotone/MIDI, la création avancée, la sauvegarde cloud. Et si tu t’en sers comme outil de travail dans des cours que tu fais payer, c’est une Licence Enseignant — avec l’espace élèves, les exercices et les partitions sans filigrane qui vont avec. Les tarifs à jour sont juste en dessous.' },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // 🚧 « RENCONTRE » (FR) / « GATHERING » (EN) — MOT PROVISOIRE, À RETRAVAILLER
+  // ══════════════════════════════════════════════════════════════════════════
+  // 31/08/2026 — David : « le mot SHOWCASE doit disparaître (les Français ne
+  // savent pas ce que c'est) », puis, sur son remplaçant : « pour l'instant
+  // mets LA RENCONTRE mais À RETRAVAILLER ».
+  //
+  // ⚠️ « rencontre » / « gathering » a donc été posé FAUTE DE MIEUX. Ce n'est
+  //    PAS un mot arrêté. « gathering » a été retenu côté EN parce que c'est
+  //    celui que la communauté handpan emploie réellement (GRIASDI Handpan
+  //    Gathering) ; ce n'est pas pour autant une validation du mot français.
+  //
+  // 🚨 LA VRAIE QUESTION EST EN AMONT, ET SEUL DAVID LA TRANCHERA : ce qu'il
+  //    propose ne se limite pas à une démo commerciale — « c'est une EXPÉRIENCE
+  //    GLOBALE ». Le bon mot sortira de ce que l'expérience apporte aux gens,
+  //    pas d'une traduction de « showcase ». Tant que ce n'est pas tranché :
+  //    NE PAS bâtir de storytelling, de nom d'événement, de slogan ni de
+  //    campagne sur « rencontre » — le mot peut encore changer entièrement.
+  //
+  // 🔒 CE QUI NE DOIT SURTOUT PAS SUIVRE LE MOT (identifiants techniques) :
+  //    `showcase-booking` / `showcase-waitlist` (VALEURS ÉCRITES EN BASE dans
+  //    `site_leads`, reconnues par l'Edge Function `site-lead` — les renommer
+  //    casse les inscriptions ET orpheline les lignes existantes), les clés
+  //    `showcase*` de ce fichier, les fonctions Edge `showcase-email` /
+  //    `_shared/showcase-email.ts`, les noms de fichiers et les slugs d'URL.
+  //    Seul le TEXTE LU PAR UN HUMAIN a changé.
+  // ══════════════════════════════════════════════════════════════════════════
   showroom: {
     title: 'Essayer handpan, Gonilélé et micros à Paris — Showroom | David Lesage',
     description:
-      'Essaie tous mes instruments à Paris : le handpan électronique Neotone, mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : showcases gratuits, démonstrations privées et cours.',
+      'Essaie tous mes instruments à Paris : le handpan électronique Neotone, mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : rencontres gratuites, démonstrations privées et cours.',
     heroEyebrow: 'Le Nid · Paris 20ᵉ',
     heroTitle: 'Showroom David Lesage',
     // 🚨 OUVERTURE DU DISCOURS (18/08/2026, demande explicite de David).
@@ -2013,11 +2040,11 @@ const fr = {
     // immédiatement que ce n'est pas le showcase public gratuit.
     ctaBook: 'Réserver un créneau individuel privé (payant)',
     // « sur simple inscription » minimisait la réservation : elle est obligatoire.
-    ctaBookNote: 'Créneau individuel payant : {grid}. Les showcases publics, eux, sont gratuits — nombre de places limitées · réservation nécessaire.',
+    ctaBookNote: 'Créneau individuel payant : {grid}. Les rencontres publiques, elles, sont gratuites — nombre de places limitées · réservation nécessaire.',
     // ⓘ Plus affichée depuis le 17/08/2026 : quand il n'y a plus de date, le hero
     // montre le bloc « prochaines dates en préparation » (agendaEmpty*) au lieu de
     // ce simple bouton. Clé conservée si David veut le remettre.
-    ctaNext: 'Voir le prochain showcase',
+    ctaNext: 'Voir la prochaine rencontre',
     exclBadge: '★ Première mondiale',
     exclTitle: 'Repars avec ton Neotone¹, le jour même',
     exclText: 'Je l’assume : à ma connaissance, Le Nid est le premier lieu au monde où ces instruments s’essaient ET s’achètent en direct, sur place. Concrètement, ça veut dire que tu peux acheter ton Neotone¹ ici même et l’emporter immédiatement — sans aucun délai de fabrication. Mes handpans Yishama, eux, ne sont pas à vendre : ce sont mes instruments personnels, ils sont là pour être entendus et joués.',
@@ -2112,7 +2139,7 @@ const fr = {
     //    même raison que `duoEyebrow` ci-dessus.
     alsoEyebrow: 'Et pas seulement le handpan',
     alsoTitle: 'Le reste de ce que je joue est là aussi',
-    alsoIntro: 'Le Neotone est la tête d’affiche du showcase — mais tu n’es pas obligé·e de venir pour lui. Ces instruments-là sont sortis eux aussi, et tu peux les prendre en main au même titre que les handpans.',
+    alsoIntro: 'Le Neotone est la tête d’affiche de la rencontre — mais tu n’es pas obligé·e de venir pour lui. Ces instruments-là sont sortis eux aussi, et tu peux les prendre en main au même titre que les handpans.',
     also: [
       {
         title: 'La harpe Gonilélé',
@@ -2222,7 +2249,7 @@ const fr = {
     //    Reformulation validée par David, SANS horaire. Ne réintroduire aucun
     //    moment de la journée dans les textes de cette page : l'heure exacte est
     //    portée par l'agenda (`agendaEventTime`), et par lui seul.
-    lieuTitle: 'À quoi ça ressemble, un showcase au Nid',
+    lieuTitle: 'À quoi ça ressemble, une rencontre au Nid',
     lieuIntro: 'Un appartement-atelier du 20ᵉ, du parquet, des guirlandes, et tout le monde assis en cercle autour des instruments. On est une quinzaine, pas plus.',
     photoAlt: {
       // 🚧 PHOTO DE REPLI — 21/08/2026. Le fichier est une VIGNETTE VIDÉO : le
@@ -2235,7 +2262,7 @@ const fr = {
       accueil:
         'David Lesage, bras ouverts, accueille debout au milieu de la grande pièce du showroom : parquet ancien, murs blancs sous charpente, rosace au mur, un handpan sur son trépied derrière lui, des coussins et un canapé bas au fond. (Le titre « David Lesage Showroom » est incrusté sur l’image.)',
       vueEnsemble:
-        'Vue d’ensemble d’un showcase au Nid : David Lesage assis au centre du cercle, handpans sur pieds derrière lui, le public assis à même le parquet, murs tendus de guirlandes lumineuses et rosace suspendue.',
+        'Vue d’ensemble d’une rencontre au Nid : David Lesage assis au centre du cercle, handpans sur pieds derrière lui, le public assis à même le parquet, murs tendus de guirlandes lumineuses et rosace suspendue.',
       instruments:
         'Les instruments installés au showroom avant l’arrivée du public : deux handpans acoustiques Yishama sur trépieds, deux handpans électroniques Neotone avec leur écran, une calebasse posée sur un tapis rouge, le tout sur parquet ancien.',
       presentation:
@@ -2260,7 +2287,7 @@ const fr = {
     //    👉 POUR LES REMETTRE : les <figure> supprimées sont documentées à leur
     //       emplacement d'origine dans ShowroomPage.astro.
     photoCaption: {
-      vueEnsemble: 'Un showcase au Nid — public assis en cercle, instruments au centre.',
+      vueEnsemble: 'Une rencontre au Nid — public assis en cercle, instruments au centre.',
       grandePiece: 'La même pièce en journée, avant que tout soit installé.',
       // 🗓️ 30/08/2026 (David) : « il faut la compléter avec tous les autres
       //    instruments et micros ». Cette légende ne décrit PAS la photo (c'est
@@ -2350,7 +2377,7 @@ const fr = {
     //       dans ShowroomPage.astro, et remettre `sh.events[0].price` en tête de
     //       `eventPrices` + `eventHighlight` à 1. Rien d'autre.
     events: [
-      { t: 'Showcase Neotone & découverte des instruments', d: 'Le rendez-vous public et gratuit du Nid : David Lesage présente les Neotone — puis tout est essayable sur place, handpans acoustiques Yishama, harpe africaine Gonilélé, calebasse et micros pour handpan.', price: 'Public · Gratuit' },
+      { t: 'Rencontre Neotone & découverte des instruments', d: 'Le rendez-vous public et gratuit du Nid : David Lesage présente les Neotone — puis tout est essayable sur place, handpans acoustiques Yishama, harpe africaine Gonilélé, calebasse et micros pour handpan.', price: 'Public · Gratuit' },
       { t: 'Prise en main de ton instrument', d: 'Tu viens de recevoir ton Neotone, ton handpan ou ton micro ? On règle tout ensemble et on prend les commandes en main, pas à pas. En présentiel ou en visio.', price: '' },
       { t: 'Découverte des instruments', d: 'Une session privée au showroom pour essayer en profondeur tout ce qui t’intéresse : handpans acoustiques Yishama, Neotone, calebasse, Gonilélé, micros Hisong et Muling.', price: '' },
       { t: 'Cours ou accompagnement individuel', d: 'Avec David Lesage, quel que soit ton niveau : créer tes gammes, jouer morceaux et techniques, ou simplement y voir clair sur ce que tu cherches. En présentiel ou en visio.', price: '' },
@@ -2399,7 +2426,7 @@ const fr = {
     bookVisitCta: 'Réserver mon créneau au showroom (payant)',
     bookPrivateCta: 'Réserver un rendez-vous individuel',
     agendaEyebrow: 'Agenda',
-    agendaTitle: 'Calendrier des showcases publics gratuits',
+    agendaTitle: 'Calendrier des rencontres publiques gratuites',
     // 🚨 RÉSERVATION OBLIGATOIRE (tranché par David le 17/08/2026) : « la
     // réservation est obligatoire, je veux savoir qui vient et récupérer les
     // infos des gens ». La page disait encore « Entrée libre — réservation
@@ -2411,12 +2438,12 @@ const fr = {
     agendaEmpty: 'Prochaines dates en préparation',
     agendaEmptyText: 'Les prochaines dates sont en cours de calage. Laisse-moi ton email : tu seras prévenu·e en premier, avant l’annonce publique.',
     agendaEmptyCta: 'Me prévenir de la prochaine date',
-    agendaNextLabel: 'Prochain showcase gratuit',
+    agendaNextLabel: 'Prochaine rencontre gratuite',
     agendaCount: '{n} date à venir',
     agendaCountPlural: '{n} dates à venir',
     // Mots de David (16/08/2026), affichés sous la date dans le hero.
     agendaSeats: 'Gratuit sur réservation · places limitées',
-    agendaCta: 'Être prévenu·e des prochains showcases',
+    agendaCta: 'Être prévenu·e des prochaines rencontres',
     // 🚨 AFFICHÉ UNE SEULE FOIS DEPUIS LE 21/08/2026, AU-DESSUS DE LA LISTE.
     //    AVANT : ce titre était le <h3> de CHACUNE des cinq lignes de l'agenda.
     //    Cinq lignes, cinq fois le même titre, cinq fois le même tag, cinq fois
@@ -2427,7 +2454,7 @@ const fr = {
     //    qu'une fois, avec l'adresse, juste au-dessus de la liste.
     //    🚫 Ne pas le remettre dans la boucle : c'est ce qui rendait les cinq
     //       lignes indiscernables.
-    agendaEventTitle: 'Showcase Neotone — et tous les instruments à essayer',
+    agendaEventTitle: 'Rencontre Neotone — et tous les instruments à essayer',
     // ⓘ `agendaEventTag` n'est PLUS affiché sur chaque ligne — clé conservée.
     //    La gratuité est déjà dite trois fois autour de la liste :
     //    `agendaTitle` (« showcases publics GRATUITS »), `agendaIntro`
@@ -2601,7 +2628,7 @@ const fr = {
     todayIntro:
       'Je suis intermittent du spectacle, installé à Paris. Le Nid, au 29 rue des Orteaux dans le 20ᵉ, est le lieu que je porte avec Iris Chasles, ouvert le 13 mars 2026 : un lieu à taille humaine, dans l’est parisien, où l’on reçoit en petit comité. Cinq propositions s’y croisent — concerts, workshop de rythme à la calebasse, cours individuels, atelier de yoga et accompagnement psycho-corporel —, auxquelles s’ajoutent les présentations d’instruments, gratuites et sur inscription. On peut y toucher, essayer, écouter, et repartir avec son Neotone le jour même. Mes deux Yishama y sont aussi, pas à vendre, juste pour être joués. Le programme complet est publié par l’association Résonances Productions.',
     today: [
-      { t: 'Je joue', d: 'Handpan, voix, calebasse et ngoni sur scène : 112 dates recensées de 2009 à 2026, dans 7 pays — dont 21 à Jazz in Marciac, deux éditions du Sziget à Budapest, l’Everness Festival en Hongrie et une première partie d’Amadou &amp; Mariam. Deux opus enregistrés sous le titre L’Alliance du Phoenix, et des showcases gratuits au Nid presque chaque mois.' },
+      { t: 'Je joue', d: 'Handpan, voix, calebasse et ngoni sur scène : 112 dates recensées de 2009 à 2026, dans 7 pays — dont 21 à Jazz in Marciac, deux éditions du Sziget à Budapest, l’Everness Festival en Hongrie et une première partie d’Amadou &amp; Mariam. Deux opus enregistrés sous le titre L’Alliance du Phoenix, et des rencontres gratuites au Nid presque chaque mois.' },
       { t: 'J’enseigne', d: 'Now Music Academy : handpan, rythme à la calebasse et harpe gonilélé, en visio partout dans le monde ou en présentiel à Paris. Je réponds personnellement.' },
       { t: 'Je construis', d: 'Handpan Constellation Studio rend l’harmonie visible par les couleurs, les formes et les émotions. Guso Facile fait la même chose pour l’administratif des intermittents.' },
       { t: 'Je fais le pont', d: 'Bêta-testeur Neotone (Soundventure, Budapest), ambassadeur et affilié Yishama, ambassadeur La Maison du Ngoni.' },
@@ -2622,7 +2649,7 @@ const fr = {
       { y: 'Mai 2023', t: 'Je reçois mes deux handpans Yishama : 18 notes chacun, 432 Hz.' },
       { y: 'Août 2023', t: 'Le document qui deviendra Handpan Constellation Studio.' },
       { y: '13 mars 2026', t: 'Ouverture du Nid, 29 rue des Orteaux, Paris 20ᵉ.' },
-      { y: 'Aujourd’hui', t: 'Le Nid, Paris 20ᵉ — cours, essais et showcases.' },
+      { y: 'Aujourd’hui', t: 'Le Nid, Paris 20ᵉ — cours, essais et rencontres.' },
     ],
 
     visionEyebrow: 'Ma vision pédagogique',
@@ -2781,7 +2808,7 @@ const fr = {
         h: 'Ce que tu me donnes, formulaire par formulaire',
         p: 'Rien n’est collecté à ton insu : tout vient de ce que tu écris toi-même. Les champs facultatifs restent vides si tu n’y touches pas.',
         items: [
-          'Réservation (venue au showroom, place à un showcase, rendez-vous individuel, demande de code de remise Neotone) : prénom, nom, email, téléphone si tu le donnes, nombre de personnes, date visée, jusqu’à trois créneaux que tu proposes, type et format de séance (sur place ou en visio), instruments que tu veux découvrir, modèle Neotone envisagé, pays, compte de réseau social, comment tu m’as connu, depuis quand tu joues, ce que tu aimerais réussir, et ton message.',
+          'Réservation (venue au showroom, place à une rencontre, rendez-vous individuel, demande de code de remise Neotone) : prénom, nom, email, téléphone si tu le donnes, nombre de personnes, date visée, jusqu’à trois créneaux que tu proposes, type et format de séance (sur place ou en visio), instruments que tu veux découvrir, modèle Neotone envisagé, pays, compte de réseau social, comment tu m’as connu, depuis quand tu joues, ce que tu aimerais réussir, et ton message.',
           'Contact : nom et prénom, email, sujet, message.',
           'Liste d’attente de l’application : prénom, nom, email, si tu as déjà un handpan et lequel, la ou les casquettes que tu déclares (pour toi, pour enseigner, pour fabriquer), ton objectif, ton nombre d’élèves et — si tu fabriques des handpans — ton pays, le nombre de notes que tu produis, les métaux que tu travailles et ta façon de fixer tes prix. Plus ta motivation, si tu candidates comme bêta-testeur.',
           'Commande du micro Muling : prénom, nom, email, téléphone, quantité, adresse de livraison complète, consignes pour le livreur, message, puis la preuve de virement que tu déposes (image ou PDF).',
@@ -2795,7 +2822,7 @@ const fr = {
         items: [
           'Te répondre. C’est la raison d’être de chaque formulaire : je lis et je réponds personnellement.',
           'Organiser ce que tu as demandé : confirmer un créneau, préparer les instruments pour ta venue, faire suivre une commande. Une demande de rendez-vous individuel crée aussi une proposition de cours dans mon agenda, à l’intérieur de l’application.',
-          'Te tenir au courant de mes nouveautés — mais seulement si tu as coché la seconde case du formulaire, celle qui est facultative et qui n’est jamais cochée d’avance : une nouvelle date de showcase, l’ouverture de l’application, un nouvel instrument. Si tu ne la coches pas, je ne t’écris que pour ta demande, et rien d’autre. Si tu la coches, j’écris peu, et je cible : selon la porte par laquelle tu es entré et selon ce que tu as déclaré t’intéresser, tu ne reçois pas la même chose que quelqu’un d’autre. Tu peux dire stop quand tu veux, sans avoir à te justifier.',
+          'Te tenir au courant de mes nouveautés — mais seulement si tu as coché la seconde case du formulaire, celle qui est facultative et qui n’est jamais cochée d’avance : une nouvelle date de rencontre, l’ouverture de l’application, un nouvel instrument. Si tu ne la coches pas, je ne t’écris que pour ta demande, et rien d’autre. Si tu la coches, j’écris peu, et je cible : selon la porte par laquelle tu es entré et selon ce que tu as déclaré t’intéresser, tu ne reçois pas la même chose que quelqu’un d’autre. Tu peux dire stop quand tu veux, sans avoir à te justifier.',
         ],
       },
       {
@@ -2814,7 +2841,7 @@ const fr = {
         // que David fait RÉELLEMENT aujourd'hui faute de savoir qui accepte.
         // Ne rien ajouter ici qui ne soit pas vrai dans les faits.
         h: 'Photos et vidéos prises sur place',
-        p: 'Je photographie et je filme ce qui se passe ici : les showcases, les rendez-vous au showroom, les instruments qui passent de main en main. J’en publie une partie sur ce site et sur mes réseaux. Ce qui m’importe, ce n’est pas ton visage en particulier : c’est de montrer l’ambiance générale du lieu et de ce qui s’y partage, pour donner envie à d’autres de venir.',
+        p: 'Je photographie et je filme ce qui se passe ici : les rencontres, les rendez-vous au showroom, les instruments qui passent de main en main. J’en publie une partie sur ce site et sur mes réseaux. Ce qui m’importe, ce n’est pas ton visage en particulier : c’est de montrer l’ambiance générale du lieu et de ce qui s’y partage, pour donner envie à d’autres de venir.',
         items: [
           'Par défaut, je floute les visages. C’est ce que je fais aujourd’hui : tant que quelqu’un ne m’a pas dit qu’il était d’accord, je ne le publie pas de façon reconnaissable.',
           'Tu peux me dire non, et tu n’as rien à justifier : un mot sur place suffit, ou un email à contact@lesagedavid.fr. Avant comme après la publication — si une photo ou une vidéo est déjà en ligne, je la retire ou je te floute.',
@@ -2910,8 +2937,8 @@ const fr = {
         items: [] as string[],
       },
       {
-        h: 'Rendez-vous, showcases et commandes',
-        p: 'Aucun paiement ne se fait sur ce site. Un rendez-vous individuel se règle par le lien que je t’envoie dans ma réponse : c’est le règlement qui réserve ton créneau et nous engage tous les deux. Jusqu’à 24 h avant, on le décale sans aucun souci ; à moins de 24 h, le règlement reste acquis mais tu ne perds pas ton rendez-vous — on le reporte dans les 3 mois. Les showcases sont gratuits, sur réservation, avec un nombre de places limité. Une commande de micro Muling se règle par virement bancaire, sur un compte situé en Allemagne, directement auprès du fabricant : c’est toi qui fais la démarche, à ton initiative, et ni ce site ni moi n’encaissons ce paiement. Le fabricant assure ensuite l’expédition et le suivi.',
+        h: 'Rendez-vous, rencontres et commandes',
+        p: 'Aucun paiement ne se fait sur ce site. Un rendez-vous individuel se règle par le lien que je t’envoie dans ma réponse : c’est le règlement qui réserve ton créneau et nous engage tous les deux. Jusqu’à 24 h avant, on le décale sans aucun souci ; à moins de 24 h, le règlement reste acquis mais tu ne perds pas ton rendez-vous — on le reporte dans les 3 mois. Les rencontres sont gratuites, sur réservation, avec un nombre de places limité. Une commande de micro Muling se règle par virement bancaire, sur un compte situé en Allemagne, directement auprès du fabricant : c’est toi qui fais la démarche, à ton initiative, et ni ce site ni moi n’encaissons ce paiement. Le fabricant assure ensuite l’expédition et le suivi.',
         items: [] as string[],
       },
       {
@@ -3062,7 +3089,7 @@ const fr = {
       { title: 'Règle le solde et reçois ton Neotone', text: 'Dès que ton instrument est prêt, tu es notifié par email. Tu règles le solde puis l’instrument t’est expédié avec sa facture, partout dans le monde.' },
     ],
     procedureShowroom: [
-      { title: 'Prends rendez-vous avec moi', text: 'Deux options : viens à l’une de mes dates de showcase publiques (une par mois), ou réserve un rendez-vous individuel rien que pour toi — 1h · 50 € ou 1h30 · 70 €.' },
+      { title: 'Prends rendez-vous avec moi', text: 'Deux options : viens à l’une de mes dates de rencontre publiques (une par mois), ou réserve un rendez-vous individuel rien que pour toi — 1h · 50 € ou 1h30 · 70 €.' },
       { title: 'Essaie les deux modèles en vrai', text: 'Sur place, tu prends le temps de tester le Neotone¹ et le Mutant, de comparer les bois, et de me poser toutes tes questions.' },
       { title: 'Repars avec ton instrument le jour même', text: 'Tu profites de la remise showroom (−7 %) et tu repars directement avec ton Neotone — sans délai de fabrication.' },
     ],

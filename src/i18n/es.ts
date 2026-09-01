@@ -1826,7 +1826,7 @@ export const es: Dict = {
     "agendaCountPlural": "{n} próximas fechas",
     "agendaSeats": "Gratis con reserva · Plazas limitadas",
     "agendaCta": "Para recibir notificaciones sobre próximos eventos",
-    "agendaEventTitle": "Neotone Showcase: y todos los instrumentos que puedes probar.",
+    "agendaEventTitle": "Encuentro Neotone: y todos los instrumentos que puedes probar.",
     "agendaEventTag": "Público · Gratuito",
     "agendaEventTime": "desde {start} hasta {end}",
     "agendaRulesTitle": "Cosas que debes saber antes de venir",

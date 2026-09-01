@@ -264,8 +264,8 @@ function deriveUsageType(roles: string[]): string | null {
 const SOURCE_LABELS: Record<string, { fr: string; en: string }> = {
     'showroom-visit': { fr: 'Venue au showroom (Paris 20ᵉ)', en: 'Showroom visit (Paris 20th)' },
     'private-session': { fr: 'Rendez-vous individuel (cours / démonstration privée)', en: 'Individual appointment (lesson / private demo)' },
-    'showcase-booking': { fr: 'Place à un showcase public gratuit', en: 'Spot at a free public showcase' },
-    'showcase-waitlist': { fr: 'Alerte prochaines dates de showcase', en: 'Alert for upcoming showcase dates' },
+    'showcase-booking': { fr: 'Place à une rencontre publique gratuite', en: 'Spot at a free public gathering' },
+    'showcase-waitlist': { fr: 'Alerte prochaines dates de rencontre', en: 'Alert for upcoming gathering dates' },
     'beta-waitlist': { fr: 'Liste d’attente application', en: 'App waiting list' },
     'app-login': { fr: 'Liste d’attente (écran de connexion)', en: 'Waiting list (login screen)' },
     // ⚠️ DEUX TAUX (21/08/2026) : ce libellé part dans l'email de confirmation
@@ -274,7 +274,7 @@ const SOURCE_LABELS: Record<string, { fr: string; en: string }> = {
     // rendait l'email faux une fois sur deux. Identique à `booking.discountIntro`
     // des dictionnaires du site.
     'neotone-discount': { fr: 'Demande de code de remise Neotone (−5 % en ligne, −7 % au showroom)', en: 'Neotone discount code request (−5% online, −7% at the showroom)' },
-    showcase: { fr: 'Groupe showcases', en: 'Showcase group' },
+    showcase: { fr: 'Groupe rencontres', en: 'Gathering group' },
     contact: { fr: 'Message via le formulaire de contact', en: 'Message via the contact form' },
     'gonilele-order': { fr: 'Commande d’une harpe Gonilélé', en: 'Gonilélé harp order' },
 };
@@ -292,7 +292,7 @@ const PROFILE_LABELS: Record<string, string> = {
     none: 'aucun élève pour l’instant', '1-5': '1 à 5 élèves', '6-20': '6 à 20 élèves', '20+': 'plus de 20 élèves',
     'onboarding-60': 'Prise en main de l’instrument (1h)', 'onboarding-90': 'Prise en main de l’instrument (1h30)',
     one: 'Neotone¹ (10 notes)', mutant: 'Neotone¹ Mutant (19 notes)', undecided: 'ne sait pas encore',
-    youtube: 'YouTube', instagram: 'Instagram', facebook: 'Facebook', showcase: 'un showcase / un événement',
+    youtube: 'YouTube', instagram: 'Instagram', facebook: 'Facebook', showcase: 'une rencontre / un événement',
     'word-of-mouth': 'bouche-à-oreille', search: 'recherche internet', 'neotone-site': 'le site de Neotone',
     'under-1': 'moins d’un an', '1-3': 'entre 1 et 3 ans', 'over-3': 'plus de 3 ans',
     // 'demo' seul = ancien identifiant (1h30), gardé pour les lignes déjà en base.
@@ -420,15 +420,15 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
         p2: 'Handpan Studio makes music <strong>visible</strong>: every note has its colour, every chord becomes a recognisable shape, and every degree carries an emotion. You learn by looking — no music theory required. It works on an acoustic handpan just as on an electronic Neotone.',
         ctaBlog: 'Discover the features on the blog',
         h2show: 'Come and try everything in Paris — for free',
-        p3: 'Once a month I host a <strong>free showcase in Paris</strong> (booking required). I present the electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, <strong>handpan microphones</strong>, the <strong>Gonilélé</strong> African harp, the <strong>calabash</strong> — and of course the app. You play, you listen, you ask anything.',
-        ctaShow: 'See the next showcases',
+        p3: 'Once a month I host a <strong>free gathering in Paris</strong> (booking required). I present the electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, <strong>handpan microphones</strong>, the <strong>Gonilélé</strong> African harp, the <strong>calabash</strong> — and of course the app. You play, you listen, you ask anything.',
+        ctaShow: 'See the next gatherings',
         h2priv: 'Rather have a moment just for you?',
         p4: 'I also offer <strong>individual appointments</strong>, at the Paris 20th showroom or online — and you decide what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply get one-to-one guidance — whether you’re a complete beginner, still working out what suits you, or want to dig into one specific thing. Just tell me what you’re coming for.',
         privPrice: '<strong>1h — €50</strong> · <strong>1h30 — €70</strong> — one single price, whatever you’re coming for.',
         ctaPriv: 'Book a VIP appointment with David',
         sign: 'See you soon,<br />David Lesage',
         foot: 'You are receiving this email because you signed up on lesagedavid.fr.',
-        showNote: 'You asked to be kept posted about the showcases — you will receive the dates.',
+        showNote: 'You asked to be kept posted about the gatherings — you will receive the dates.',
     } : {
         title: 'Tu es sur la liste ✨',
         p1: 'Merci pour ton intérêt pour Handpan Studio ! Tes informations sont bien enregistrées : je te recontacte le moment venu, dès l’ouverture de l’application.',
@@ -436,15 +436,15 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
         p2: 'Handpan Studio rend la musique <strong>visible</strong> : chaque note a sa couleur, chaque accord devient une forme reconnaissable, et chaque degré porte une émotion. Tu apprends en regardant — sans solfège. Ça fonctionne sur un handpan acoustique comme sur un Neotone électronique.',
         ctaBlog: 'Découvrir les fonctionnalités sur le blog',
         h2show: 'Viens tout essayer à Paris — gratuitement',
-        p3: 'Une fois par mois, j’anime un <strong>showcase gratuit à Paris</strong> (sur réservation). J’y présente le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les <strong>micros pour handpan</strong>, la harpe africaine <strong>Gonilélé</strong>, la <strong>calebasse</strong> — et bien sûr l’application. Tu joues, tu écoutes, tu poses toutes tes questions.',
-        ctaShow: 'Voir les prochains showcases',
+        p3: 'Une fois par mois, j’anime une <strong>rencontre gratuite à Paris</strong> (sur réservation). J’y présente le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les <strong>micros pour handpan</strong>, la harpe africaine <strong>Gonilélé</strong>, la <strong>calebasse</strong> — et bien sûr l’application. Tu joues, tu écoutes, tu poses toutes tes questions.',
+        ctaShow: 'Voir les prochaines rencontres',
         h2priv: 'Envie d’un moment rien que pour toi ?',
         p4: 'Je propose aussi des <strong>rendez-vous individuels</strong>, au showroom de Paris 20ᵉ ou en visio — et c’est toi qui choisis ce qu’on en fait : découvrir et essayer n’importe quel instrument de la boutique (Neotone, handpans acoustiques, Gonilélé, calebasse…), tester un micro pour handpan (Hisong, set Muling), ou simplement être accompagné·e en tête-à-tête — que tu débutes complètement, que tu cherches encore ce qui te correspond, ou que tu veuilles creuser un point précis. Dis-moi juste ce qui t’amène.',
         privPrice: '<strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong> — un seul tarif, quel que soit ce pour quoi tu viens.',
         ctaPriv: 'Réserver un RDV VIP avec David',
         sign: 'À très vite,<br />David Lesage',
         foot: 'Tu reçois cet email parce que tu t’es inscrit·e sur lesagedavid.fr.',
-        showNote: 'Tu as demandé à être tenu·e au courant des showcases — tu recevras les dates.',
+        showNote: 'Tu as demandé à être tenu·e au courant des rencontres — tu recevras les dates.',
     };
 
     return shell(lang, `

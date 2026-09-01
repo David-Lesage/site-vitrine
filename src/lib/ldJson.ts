@@ -172,7 +172,7 @@ export function localBusinessLdJson() {
     '@context': 'https://schema.org',
     '@type': 'MusicStore',
     name: 'Showroom David Lesage',
-    description: "Le seul endroit au monde pour tester et repartir avec un Neotone le jour même. Showcases, démonstrations privées et cours à Paris 20ᵉ.",
+    description: "Le seul endroit au monde pour tester et repartir avec un Neotone le jour même. Rencontres, démonstrations privées et cours à Paris 20ᵉ.",
     image: new URL('/images/localisation-showroom-poster.webp', site.url).toString(),
     url: new URL('/showroom', site.url).toString(),
     telephone: site.phone,

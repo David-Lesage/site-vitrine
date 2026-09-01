@@ -24,11 +24,11 @@ function mailto(subject: string, lines: (string | null)[], to: string = site.ema
 export function newsletterMailto(lang: Lang): string {
   if (lang === 'en') {
     return mailto(
-      'Keep me posted about the next showcases',
+      'Keep me posted about the next gatherings',
       [
         'Hi David,',
         '',
-        'I’d like to be kept posted about your next showcases in Paris and about Handpan Constellation Studio.',
+        'I’d like to be kept posted about your next gatherings in Paris and about Handpan Constellation Studio.',
         '',
         'My details:',
         '• Full name: ',
@@ -40,11 +40,11 @@ export function newsletterMailto(lang: Lang): string {
     )
   }
   return mailto(
-    'Je veux être tenu au courant des prochains showcases',
+    'Je veux être tenu au courant des prochaines rencontres',
     [
       'Bonjour David,',
       '',
-      'Je souhaite être tenu·e au courant de tes prochains showcases à Paris et des nouveautés de Handpan Constellation Studio.',
+      'Je souhaite être tenu·e au courant de tes prochaines rencontres à Paris et des nouveautés de Handpan Constellation Studio.',
       '',
       'Mes coordonnées :',
       '• Nom et prénom : ',
@@ -131,10 +131,10 @@ export function privateSessionMailto(lang: Lang): string {
 // Réservation d'une place à un showcase public gratuit (avec date)
 export function eventMailto(lang: Lang, dateLabel: string): string {
   if (lang === 'en') {
-    return mailto(`Booking — free showcase on ${dateLabel}`, [
+    return mailto(`Booking — free gathering on ${dateLabel}`, [
       'Hi David,',
       '',
-      `I’d like to reserve a spot for the free public showcase on ${dateLabel} at the Paris showroom.`,
+      `I’d like to reserve a spot for the free public gathering on ${dateLabel} at the Paris showroom.`,
       '',
       'My details:',
       '• Full name: ',
@@ -144,10 +144,10 @@ export function eventMailto(lang: Lang, dateLabel: string): string {
       'See you there!',
     ])
   }
-  return mailto(`Réservation — showcase gratuit du ${dateLabel}`, [
+  return mailto(`Réservation — rencontre gratuite du ${dateLabel}`, [
     'Bonjour David,',
     '',
-    `Je souhaite réserver une place pour le showcase public gratuit du ${dateLabel} au showroom de Paris 20ᵉ.`,
+    `Je souhaite réserver une place pour la rencontre publique gratuite du ${dateLabel} au showroom de Paris 20ᵉ.`,
     '',
     'Mes coordonnées :',
     '• Nom et prénom : ',

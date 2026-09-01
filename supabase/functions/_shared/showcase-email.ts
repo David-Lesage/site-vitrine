@@ -165,9 +165,9 @@ ${inner}
 export function showcaseConfirmationSubject(eventDate: string | null, lang: string): string {
     const d = longDate(eventDate, lang);
     if (lang === 'en') {
-        return d ? `Your showcase spot is confirmed — ${d} ✨` : 'Your showcase spot is confirmed ✨';
+        return d ? `Your gathering spot is confirmed — ${d} ✨` : 'Your gathering spot is confirmed ✨';
     }
-    return d ? `Ta place au showcase est confirmée — ${d} ✨` : 'Ta place au showcase est confirmée ✨';
+    return d ? `Ta place à la rencontre est confirmée — ${d} ✨` : 'Ta place à la rencontre est confirmée ✨';
 }
 
 export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
@@ -183,8 +183,8 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
 
     const t = en ? {
         title: 'It’s confirmed — your spot is booked ✨',
-        p1: 'Your spot at the showcase is <strong>confirmed</strong>. Nothing else to do: come as you are, I’m looking forward to having you play.',
-        freeBadge: 'Free showcase, booking required — <strong>you owe nothing</strong>, there is nothing to pay.',
+        p1: 'Your spot at the gathering is <strong>confirmed</strong>. Nothing else to do: come as you are, I’m looking forward to having you play.',
+        freeBadge: 'Free gathering, booking required — <strong>you owe nothing</strong>, there is nothing to pay.',
         whenTitle: 'When',
         dateRow: 'Date',
         hoursRow: 'Times',
@@ -235,13 +235,13 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         upPriceNote: 'One single price, whatever you are coming for.',
         upCancel: 'Cancellation less than 24 h beforehand: the payment stays with me — that slot was reserved for you — but the appointment can be rescheduled within 3 months.',
         upCta: 'Book an individual appointment',
-        upDistinct: 'This is a <strong>separate, paid</strong> appointment. It changes nothing about the showcase you have just booked, which stays <strong>free</strong>.',
+        upDistinct: 'This is a <strong>separate, paid</strong> appointment. It changes nothing about the gathering you have just booked, which stays <strong>free</strong>.',
         sign: 'See you very soon,<br />David Lesage',
-        foot: 'You are receiving this email because you booked a spot at a free showcase at Le Nid.',
+        foot: 'You are receiving this email because you booked a spot at a free gathering at Le Nid.',
     } : {
         title: 'C’est confirmé — ta place est réservée ✨',
-        p1: 'Ta place au showcase est <strong>confirmée</strong>. Rien d’autre à faire : viens comme tu es, j’ai hâte de t’entendre jouer.',
-        freeBadge: 'Showcase gratuit, sur réservation — <strong>tu ne dois rien</strong>, il n’y a rien à régler.',
+        p1: 'Ta place à la rencontre est <strong>confirmée</strong>. Rien d’autre à faire : viens comme tu es, j’ai hâte de t’entendre jouer.',
+        freeBadge: 'Rencontre gratuite, sur réservation — <strong>tu ne dois rien</strong>, il n’y a rien à régler.',
         whenTitle: 'Quand',
         dateRow: 'Date',
         hoursRow: 'Horaires',
@@ -292,9 +292,9 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         upPriceNote: 'Un seul tarif, quel que soit ce pour quoi tu viens.',
         upCancel: 'Annulation à moins de 24 h : le règlement reste acquis — ce créneau t’était réservé — mais le rendez-vous est reportable dans les 3 mois.',
         upCta: 'Réserver un rendez-vous individuel',
-        upDistinct: 'C’est un rendez-vous <strong>séparé et payant</strong>. Ça ne change rien au showcase que tu viens de réserver, qui reste <strong>gratuit</strong>.',
+        upDistinct: 'C’est un rendez-vous <strong>séparé et payant</strong>. Ça ne change rien à la rencontre que tu viens de réserver, qui reste <strong>gratuite</strong>.',
         sign: 'À très vite,<br />David Lesage',
-        foot: 'Tu reçois cet email parce que tu as réservé une place à un showcase gratuit au Nid.',
+        foot: 'Tu reçois cet email parce que tu as réservé une place à une rencontre gratuite au Nid.',
     };
 
     const row = (k: string, v: string) =>
@@ -447,9 +447,9 @@ export function fallbackUpcoming(todayIso: string): UpcomingEvent[] {
 
 export function showcaseDatesSubject(count: number, lang: string): string {
     if (lang === 'en') {
-        return count > 0 ? 'The next showcase dates in Paris ✨' : 'You are on the showcase list ✨';
+        return count > 0 ? 'The next gathering dates in Paris ✨' : 'You are on the gathering list ✨';
     }
-    return count > 0 ? 'Les prochaines dates de showcase à Paris ✨' : 'Tu es sur la liste des showcases ✨';
+    return count > 0 ? 'Les prochaines dates de rencontre à Paris ✨' : 'Tu es sur la liste des rencontres ✨';
 }
 
 export interface ShowcaseDatesOptions {
@@ -467,9 +467,9 @@ export function showcaseDatesHtml(o: ShowcaseDatesOptions): string {
     const t = en ? {
         title: events.length ? 'Here are the next dates ✨' : 'You are on the list ✨',
         p1: events.length
-            ? 'Thanks for your interest in the showcases! Here are <strong>all the dates already scheduled</strong>. Pick the one that suits you and book your spot in one click — it is <strong>free</strong>, booking is simply required so I know how many of us we will be.'
-            : 'Thanks for your interest in the showcases! <strong>No date is scheduled at the moment</strong> — that is exactly what this list is for: I will write to you as soon as the next one is set, before it is announced anywhere else. You have nothing else to do.',
-        datesTitle: 'The next showcases',
+            ? 'Thanks for your interest in the gatherings! Here are <strong>all the dates already scheduled</strong>. Pick the one that suits you and book your spot in one click — it is <strong>free</strong>, booking is simply required so I know how many of us we will be.'
+            : 'Thanks for your interest in the gatherings! <strong>No date is scheduled at the moment</strong> — that is exactly what this list is for: I will write to you as soon as the next one is set, before it is announced anywhere else. You have nothing else to do.',
+        datesTitle: 'The next gatherings',
         bookCta: 'Book this date',
         where: 'Where',
         practicalTitle: 'Good to know before you come',
@@ -480,13 +480,13 @@ export function showcaseDatesHtml(o: ShowcaseDatesOptions): string {
         what: 'The electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the <strong>handpan microphones</strong>, the <strong>Gonilélé</strong> African harp, the <strong>calabash</strong> — and the <strong>Handpan Constellation Studio</strong> app, which makes music visible. You play, you listen, you ask anything.',
         allCta: 'See the full agenda',
         sign: 'See you very soon,<br />David Lesage',
-        foot: 'You are receiving this email because you asked to be kept posted about the showcases on lesagedavid.fr.',
+        foot: 'You are receiving this email because you asked to be kept posted about the gatherings on lesagedavid.fr.',
     } : {
         title: events.length ? 'Voici les prochaines dates ✨' : 'Tu es sur la liste ✨',
         p1: events.length
-            ? 'Merci pour ton intérêt pour les showcases ! Voici <strong>toutes les dates déjà prévues</strong>. Choisis celle qui t’arrange et réserve ta place en un clic — c’est <strong>gratuit</strong>, la réservation sert juste à savoir combien on sera.'
-            : 'Merci pour ton intérêt pour les showcases ! <strong>Aucune date n’est fixée pour le moment</strong> — c’est exactement à ça que sert cette liste : je t’écris dès que la prochaine est calée, avant même qu’elle soit annoncée ailleurs. Tu n’as rien d’autre à faire.',
-        datesTitle: 'Les prochains showcases',
+            ? 'Merci pour ton intérêt pour les rencontres ! Voici <strong>toutes les dates déjà prévues</strong>. Choisis celle qui t’arrange et réserve ta place en un clic — c’est <strong>gratuit</strong>, la réservation sert juste à savoir combien on sera.'
+            : 'Merci pour ton intérêt pour les rencontres ! <strong>Aucune date n’est fixée pour le moment</strong> — c’est exactement à ça que sert cette liste : je t’écris dès que la prochaine est calée, avant même qu’elle soit annoncée ailleurs. Tu n’as rien d’autre à faire.',
+        datesTitle: 'Les prochaines rencontres',
         bookCta: 'Réserver cette date',
         where: 'Où',
         practicalTitle: 'À savoir avant de venir',
@@ -497,7 +497,7 @@ export function showcaseDatesHtml(o: ShowcaseDatesOptions): string {
         what: 'Le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les <strong>micros pour handpan</strong>, la harpe africaine <strong>Gonilélé</strong>, la <strong>calebasse</strong> — et l’application <strong>Handpan Constellation Studio</strong>, qui rend la musique visible. Tu joues, tu écoutes, tu poses toutes tes questions.',
         allCta: 'Voir l’agenda complet',
         sign: 'À très vite,<br />David Lesage',
-        foot: 'Tu reçois cet email parce que tu as demandé à être tenu·e au courant des showcases sur lesagedavid.fr.',
+        foot: 'Tu reçois cet email parce que tu as demandé à être tenu·e au courant des rencontres sur lesagedavid.fr.',
     };
 
     // Une ligne par date : le libellé long, l'horaire, et le bouton qui ouvre le
