@@ -29,6 +29,96 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 01/09/2026 (10ᵉ passe) — 🎬 `/pieds-atlas` : LA VIDÉO PASSE EN DÉBUT DE PAGE
+
+**Statut : commité (`8d42791`), poussé sur `main`, buildé (114 pages), déployé en prod,
+vérifié en ligne FR + EN + ES.**
+
+### La demande, mots de David
+> « Ajoute à la page https://www.lesagedavid.fr/pieds-atlas de la boutique Atlas la vidéo
+> suivante : https://youtu.be/s1lFN3PDEnA — **mettre la vidéo en début de page**. »
+
+### La vidéo (source vérifiée par oEmbed, ne pas réinventer)
+- id **`s1lFN3PDEnA`**, format 16/9 (pas un Short).
+- titre officiel : « Pourquoi jouer du #handpan Debout ? Je prend mon pied avec #Atlas &
+  @yishama_official ».
+- chaîne : **David Lesage** — c'est SA vidéo, **aucune question de droits** (à ne pas
+  confondre avec `atlasTheVoiceVideoId`, publiée par TF1, qui a son propre avis de droits).
+
+### Où elle est, et pourquoi
+Dans une **bande à elle, `<Section tone="cream-deep" id="demo" width="narrow">`, JUSTE APRÈS
+LE HERO**, avant `#debout`. Trois raisons, écrites en commentaire dans AtlasPage.astro :
+1. « en début de page » au sens littéral — le hero est haut à 375 px, c'est le seul bloc
+   qu'on atteint d'un scroll ;
+2. la vidéo demande « pourquoi jouer du handpan **debout** ? » et la section juste en dessous
+   s'appelle « **Pourquoi je joue debout** » : question / réponse, pas un bloc flottant ;
+3. **pas DANS `#debout`** parce que cette section porte déjà trois médias (photo de scène,
+   photo showroom, vidéo The Voice), chacun justifié par un long commentaire — un quatrième
+   l'aurait enterrée.
+
+**Le `<h1>` ne bouge pas** : mesuré à 375 px, `h1Top = 733 px` avant ET après (le bloc est
+inséré *sous* le hero). `#demo` occupe exactement la position que `#debout` avait (1278 px) ;
+`#debout` descend à 1755 px. Ratio du lecteur = 1.778 exact, `scrollWidth = 375` (aucun
+débordement horizontal), 0 iframe au chargement (façade `<YouTube>` conservée).
+
+### 🗑️ CE QUI A ÉTÉ RETIRÉ — l'ancien emplacement, 5ᵉ bloc
+La section partenaire `tone="ink"` portait en 2ᵉ colonne le **cadre 16/9 en pointillés
+« Démonstration par David Lesage · À venir »**. Il a été **supprimé** (rendu conditionnel +
+le mode d'emploi qui l'expliquait) : garder un « À venir » alors que la vidéo est visible plus
+haut serait absurde. La section est **repassée en une colonne `max-w-3xl`** (sans borne, le
+texte s'étirait sur `max-w-7xl`). **L'ancre `#demo` a suivi la vidéo**, elle n'est pas perdue.
+Le commentaire d'origine a été réécrit sur place — la prochaine session ne cherchera pas un
+bloc qui n'existe plus. Idem dans `src/data/atlas.ts` : le mode d'emploi « tant que ça vaut
+`null` » est remplacé par l'avis de source + « si on repasse à `null`, la bande disparaît en
+entier, il n'y a plus de cadre de remplacement ».
+
+### Libellés retenus (⚠️ PAS le titre YouTube recopié — il est plein de hashtags)
+| clé | FR | EN | ES |
+|---|---|---|---|
+| `videoSectionTitle` | La démonstration en vidéo *(inchangé)* | The video demonstration *(inchangé)* | *(inchangé)* |
+| `videoTitle` | **Pourquoi jouer du handpan debout — ma vidéo, avec Atlas** | **Why play the handpan standing up — my video, with Atlas** | **Por qué toco el handpan de pie — mi vídeo, con Atlas** |
+| `videoNote` | **Ma propre vidéo, publiée sur ma chaîne YouTube.** | **My own video, published on my YouTube channel.** | **Mi propio vídeo, publicado en mi canal de YouTube.** |
+| `videoSoon` | À venir | Coming soon | Futuro |
+
+- `videoTitle` garde le **sujet exact** de la vidéo (la question « pourquoi debout », Atlas
+  nommé par David lui-même) sans rien affirmer sur ce qu'elle montrerait.
+- `videoNote` **ne promet plus rien** : l'ancien texte (« je filme dès que les deux pieds sont
+  au showroom ») était devenu faux. Il ne décrit pas non plus le contenu. Ne pas y remettre
+  une promesse datée ni un jugement d'usage sur les pieds.
+- **`videoSoon` est conservée** dans les trois dictionnaires, **non affichée**. Aucune clé
+  i18n supprimée.
+
+### 🖼️ EFFET DE BORD UTILE — `src/components/YouTube.astro`
+Le jour de la publication, `https://i.ytimg.com/vi/s1lFN3PDEnA/hqdefault.jpg` **répondait
+404 en servant quand même une image grise de 120×90** (YouTube n'avait pas fini de générer
+cette taille ; `maxresdefault` et `sddefault` existaient déjà). Résultat : rectangle noir
+vide. **Piège : aucun événement `error` n'est émis**, l'image « se charge » très bien. Un
+filet de secours a été ajouté au composant — si `naturalWidth <= 120`, on bascule sur
+`maxresdefault.jpg` puis `sddefault.jpg`. Une demi-heure plus tard `hqdefault` était en place
+et c'est elle qui s'affiche (vérifié en prod : `naturalWidth = 480`). **Ne pas remplacer ce
+test par un `onerror`, il ne se déclenche pas dans ce cas.** Le composant est partagé par tout
+le site : coût nul quand tout va bien.
+
+### Fichiers touchés, et eux seuls
+`src/data/atlas.ts` · `src/components/pages/AtlasPage.astro` · `src/components/YouTube.astro` ·
+`src/i18n/dict.ts` · `src/i18n/en.ts` · `src/i18n/es.ts`.
+**Rien d'autre n'a bougé sur la page** : ordre des sections identique (hero → `#demo` →
+`#debout` → `#probleme` → `#solution` → partenaire → `#modeles` → `#tete` → `#essayer`), flags
+`ATLAS_PROMO_ACTIVE` / `ATLAS_DISCOUNT_CODE` / `ATLAS_AFFILIATE_URL` intacts, aucun slug
+modifié, aucune dépendance ajoutée, aucun « showcase » réintroduit.
+Aucun doublon ailleurs : la fiche `atlas` de `src/data/shop.ts` n'a **pas** de `videoUrls`, et
+`studioAcousticDemoVideoId` (`src/data/site.ts`, page `/handpan-app`) est un AUTRE emplacement
+réservé, toujours à `null` — ne pas le confondre.
+
+### ⚠️ À SURVEILLER (pas traité, hors mandat)
+La vidéo montre David avec un pied Atlas. La page conserve par ailleurs sa **ligne
+infranchissable** (« ne jamais laisser entendre qu'il a déjà utilisé les pieds Atlas »), qui a
+structuré toute sa rédaction. Vérifié : plus aucune phrase visible ne dit qu'il ne les a pas
+encore reçus (`testTitle` / `testText` sont hors page depuis le 20/08). **Mais la règle est
+maintenant à re-trancher avec David** — c'est lui qui sait ce qu'il a réellement essayé.
+
+---
+
 ## ÉTAT ACTUEL — 01/09/2026 (9ᵉ passe) — 🚧 « SHOWCASE » DISPARAÎT → « RENCONTRE » / « GATHERING » (MOT **PROVISOIRE**)
 
 **Statut : commité, poussé, buildé (114 pages), déployé en prod, vérifié en ligne FR + EN.**
