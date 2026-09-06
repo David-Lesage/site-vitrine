@@ -1176,6 +1176,9 @@ export const es: Dict = {
     "modelsDavidLead": "Sobre el modelo Pro, en su vídeo:",
     "modelsDavidQuote": "Pues no sé qué tiene de mucho más pro, salvo que es superbonito, de aluminio, y que se monta tres veces más rápido. Así que sí, es mucho más pro y mucho más ligero, con materiales de calidad que aguantan con el tiempo. Ultrarrápido, mucho más fino, fácil de transportar y de guardar. El concepto es exactamente el mismo que el del primero.",
     "modelsDavidSource": "David Lesage, en su vídeo de YouTube (traducido del francés)",
+    "modelsDavidTodayLead": "Y hoy, por escrito:",
+    "modelsDavidTodayQuote": "El Pro tiene un defecto: la cabeza de madera no se ofrece, ni como opción ni incluida, y es su único defecto, pero hay que decirlo. Aun así, prefiero el Pro. Por eso no se puede usar la cabeza sola para tocar sentado, mientras que la versión de madera sí, pero tarda más en montarse, ocupa más al transportarla y es menos regulable.",
+    "modelsDavidTodaySource": "David Lesage, 6 de septiembre de 2026 (traducido del francés)",
     "specs": {
       "price": "Precio anunciado",
       "height": "Altura",

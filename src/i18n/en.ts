@@ -1287,6 +1287,10 @@ export const en: Dict = {
     modelsDavidQuote:
       'Well, I don’t know what makes it so much more pro, other than that it is really sleek, in aluminium, and that it goes up three times faster. So yes, it is much more pro and much lighter, with quality materials that last over time. Ultra fast, much slimmer, easy to carry and to store. The concept is exactly the same as the first one.',
     modelsDavidSource: 'David Lesage, in his YouTube video (translated from French)',
+    modelsDavidTodayLead: 'And today, in writing:',
+    modelsDavidTodayQuote:
+      'The Pro has one flaw: the wooden head is not offered, neither as an option nor included, and that is its only flaw, but it has to be said. Still, I prefer the Pro. So you cannot use the head on its own to play seated, whereas the wooden version lets you — but it takes longer to set up, is bulkier to carry and less adjustable.',
+    modelsDavidTodaySource: 'David Lesage, 6 September 2026 (translated from French)',
     specs: {
       price: 'Listed price',
       height: 'Height',

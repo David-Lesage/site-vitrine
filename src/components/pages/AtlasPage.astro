@@ -651,6 +651,14 @@ const ld = [
       <figcaption class="mt-3 text-xs font-600 uppercase tracking-widest text-ink-soft/55">
         <a href={`https://www.youtube.com/watch?v=${atlasDemoVideoId}`} target="_blank" rel="noopener" class="underline decoration-ink/20 underline-offset-4 hover:text-copper">{a.modelsDavidSource}</a>
       </figcaption>
+      {/* 🅓 06/09/2026 — ajout ÉCRIT de David (pas la vidéo) : préférence
+          assumée pour le Pro + son seul défaut. Ses mots, orthographe seule
+          corrigée. Toujours au-dessus des colonnes : leur poids reste égal. */}
+      <p class="mt-6 text-sm font-600 text-copper">{a.modelsDavidTodayLead}</p>
+      <blockquote class="mt-3 text-ink-soft/90 italic leading-relaxed">
+        «&nbsp;{a.modelsDavidTodayQuote}&nbsp;»
+      </blockquote>
+      <figcaption class="mt-3 text-xs font-600 uppercase tracking-widest text-ink-soft/55">{a.modelsDavidTodaySource}</figcaption>
     </figure>
     <div class="mt-12 grid items-stretch gap-10 lg:grid-cols-2">
       {models.map((m) => (

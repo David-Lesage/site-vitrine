@@ -1508,6 +1508,13 @@ const fr = {
     modelsDavidQuote:
       'Alors, je sais pas ce qu’il a de beaucoup plus pro, si ce n’est qu’il est hyper design en aluminium, qu’il se monte trois fois plus vite. Donc oui, c’est beaucoup plus pro et beaucoup plus léger, avec des matériaux de qualité qui tiennent dans le temps. Ultra rapide, beaucoup plus fin, facile à transporter, à ranger. Le concept est exactement le même que le premier.',
     modelsDavidSource: 'David Lesage, dans sa vidéo YouTube',
+    // 🅓 Et ce qu'il AJOUTE, à l'écrit, le 06/09/2026 (pas dans la vidéo) : sa
+    //    préférence assumée + le seul défaut du Pro. Mots de David, orthographe
+    //    seule corrigée. Ne pas reformuler.
+    modelsDavidTodayLead: 'Et aujourd’hui, à l’écrit :',
+    modelsDavidTodayQuote:
+      'Le Pro a un défaut : la tête en bois n’est pas proposée, ni en option ni avec, et c’est son seul défaut, mais il faut le noter. Mais je préfère quand même le Pro. Du coup on ne peut pas utiliser la tête seule pour jouer assis, alors que la version bois oui, mais plus longue à monter, plus volumineuse à transporter et moins réglable.',
+    modelsDavidTodaySource: 'David Lesage, 6 septembre 2026',
     // Libellés des lignes de caractéristiques. Les valeurs de PRIX, HAUTEUR et
     // POIDS sont construites par la page depuis `atlasPrices` / `atlasSpecs`
     // (src/data/atlas.ts) : impossible que le FR et l'EN affichent deux nombres
