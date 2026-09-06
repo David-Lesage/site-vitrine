@@ -29,6 +29,72 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 06/09/2026 (13ᵉ passe) — 🛰️ BLOG « LA CARTE DES JOUEURS » : LA MAQUETTE ENTRE DANS L'ARTICLE
+
+**Statut : commité (`9e0d9cd`), poussé sur `main`, buildé (116 pages), rendu vérifié FR + EN
+(375 px et bureau), déployé en prod et contrôlé en ligne.**
+
+### La demande de David
+> « Intègre le prototype interactif qui permet aux gens de voir et de tester exactement à quoi
+> ressemble la carte interactive […] et je veux que l'image d'aperçu et l'image utilisée dans
+> l'article soit celle de la maquette, au lieu de l'image actuelle qui n'a rien à voir et qui
+> montre les diagrammes d'accords. »
+
+### 🚨 La tension résolue (à ne pas défaire)
+Le prototype montre **DOUZE joueurs FICTIFS** (Lena/Berlin, Kenji/Kyoto, Aïcha/Marrakech,
+Bruno/Curitiba…) et un compteur « 12 étoiles allumées ». L'article, lui, se termine sur un fait
+vérifié en base : **« Ce soir, 1er septembre 2026, la constellation compte une étoile. Une seule. »**
+Douze fausses étoiles à côté d'une vraie, c'est un article qui ment si le lecteur confond.
+
+Ce qui a été fait pour rendre la confusion impossible :
+1. Le bloc maquette est posé **APRÈS** la phrase datée (elle n'a pas bougé d'un mot) — la maquette
+   SERT la chute au lieu de la contredire : « voilà à quoi ressemblera ce ciel, voilà où il en est ».
+2. **Trois** mentions explicites, à chacune des trois apparitions :
+   - une citation d'avertissement (⚠️ « Ce qui suit est une maquette, pas l'application ») ;
+   - la légende de l'image (« Maquette de conception — personnes fictives ») + le texte `alt`,
+     qui dit lui aussi que les douze personnes sont inventées ;
+   - le bandeau cuivré du cadre interactif.
+3. Le prototype se nomme lui-même « MAQUETTE · CARTE DU MONDE » en haut — visible dans l'image
+   ET dans le cadre.
+
+### L'intégration technique
+- **`<iframe>` direct vers l'app** : `https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html`.
+  Vérifié au `curl -I` : la page ne renvoie **ni `X-Frame-Options` ni `frame-ancestors`**, et elle
+  est autonome (aucune tuile, aucun réseau, aucune bibliothèque). **Aucune copie dans `public/`** :
+  une seule source, donc aucune divergence à surveiller avec la session APP.
+- Le fichier source côté app (`~/CLAUDE/NEOTONE STUDIO/…/prototypes/`) a été **lu seulement**.
+- CSS ajoutée aux **DEUX** gabarits — ⚠️ piège découvert ici : `src/pages/blog/[slug].astro` et
+  `src/pages/en/blog/[slug].astro` sont **deux fichiers distincts** ; oublier le second laisse la
+  page EN sans style (l'iframe retombe à 150 px et le repli mobile s'affiche en permanence).
+- Classes `.embed-maquette`, `-bandeau`, `-pied`, `-intro`, `-mobile`. Strictement additif : seul
+  cet article les utilise.
+
+### Le verdict mobile, assumé
+Le prototype est une mise en page de **bureau** (carte 2,65:1 + panneau latéral). Dans un iframe de
+343 px, la carte tombe à ~125 px de haut et les étiquettes des étoiles deviennent illisibles. Donc
+**sous 900 px : le cadre ET sa phrase d'introduction (« tu peux la manipuler ci-dessous ») sont
+masqués**, remplacés par un encart « Ouvrir la maquette en grand ». Le lecteur mobile garde l'image
+légendée, qui reste nette. Vérifié à 375 px : **aucun débordement horizontal**, FR et EN.
+Sur bureau, le cadre fait **1000 px de haut** — hauteur choisie pour que la carte tienne dedans
+sans qu'on ait à faire défiler l'iframe pour la trouver ; le reste (panneaux latéraux) défile
+à l'intérieur du cadre.
+
+### Les images
+- **Nouveau cover : `/images/blog-carte-joueurs-maquette.webp`** (2000×1425, 151 Ko) — capture
+  réelle du prototype, rendue à 1560 CSS px en ×2 puis réduite. Sert d'`og:image` et de vignette
+  dans l'index du blog (vérifié en ligne).
+- La même image est reprise **dans le corps** de l'article, en `<figure>` avec lightbox
+  (`data-lb` / `data-lb-wide`).
+- ⚠️ **L'ancien cover `blog-constellations-3-traces.webp` RESTE dans `public/images/`** : il est
+  toujours le cover de `les-constellations-du-handpan` (FR **et** EN), et c'est là qu'il est à sa
+  place. Ne pas le supprimer.
+
+### Non-régression contrôlée
+`les-deux-visions-chromakeys` (figures), `quel-casque-choisir-neotone` EN (tableaux),
+`les-constellations-du-handpan` (cover inchangé) : aucun débordement, styles identiques.
+
+---
+
 ## ÉTAT ACTUEL — 01/09/2026 (12ᵉ passe) — ✅ `/pieds-atlas` : LA RÈGLE « IL N'A PAS ESSAYÉ LES PIEDS » EST LEVÉE
 
 **Statut : commité, poussé sur `main`, buildé (116 pages), rendu vérifié en local FR + EN + ES
