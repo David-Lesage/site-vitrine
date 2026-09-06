@@ -29,13 +29,34 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ⏸️ COUPURE RÉSEAU — 06/09/2026 ~15h20 — À FAIRE EN PREMIER À LA REPRISE
+## ✅ COUPURE RÉSEAU — 06/09/2026 ~15h20 — RÉGLÉ le 06/09 soir par la session « Site vitrine continuation » (push fait, 2 messages APP lus, voir 17ᵉ passe)
 1. **`git push origin master`** : **20 commits locaux non poussés** (DNS `github.com` KO au moment
    de la coupure). La prod Vercel, elle, EST à jour (déployée avant la coupure).
 2. **Deux fichiers-messages de la session APP non lus**, arrivés à la racine juste avant la coupure :
    `MESSAGE-SESSION-APP-2026-09-06-captures-livrees.md` et `MESSAGE-SESSION-APP-REPONSE-2026-09-06-soir.md`.
    Les lire avant tout nouveau travail sur le blog (ils répondent probablement aux manques F3/B4/D1/E2/F6).
 3. Aucun agent n'était en cours dans la session SITE au moment de la coupure : arbre propre, rien d'à moitié écrit.
+
+## ÉTAT ACTUEL — 06/09/2026 (17ᵉ passe, soir) — 🔓 BLOG LIBRE · « Hybride » retiré et déployé · Atlas : extraits à valider
+
+- **Marqueur `BLOG-IMAGES-TERMINÉ` posé** (`b25a6e1`, 15h09) : `src/content/blog/**` et `public/images/**` sont libres.
+  ⚠️ Mais 3 captures APP sont arrivées APRÈS (17h, `MESSAGE-SESSION-APP-REPONSE-2026-09-06-soir.md`, rectificatif E2) :
+  `app-bibliotheque-morceau-incompatible` (webp créé, non référencé), `blog-atlas-destinations-2026-vignette`,
+  `app-midi-mapping-2026` (non intégrées ; `app-midi.webp` périmée encore utilisée dans `pourquoi-handpan-electronique` FR/EN,
+  `StudioPage.astro`, `shop.ts`). L'article `bibliotheque-musicale-handpan` dit encore « un bouton pour basculer sur la bonne
+  gamme » (l'app propose 4 handpans complémentaires chiffrés + Neotone + « Compléter mon instrument »).
+  **Question de partition envoyée à la session « Site vitrine — showroom, blog, Facebook »** : qui reprend ce reste ?
+- **21 commits poussés** après la coupure réseau (`origin/main` à jour), prod 200.
+- **« Hybride » retiré** (`5ff8a01`, déployé, vérifié prod FR+EN) : 9 textes FR/EN/ES + 4 commentaires. Seuls restent les
+  chemins `app-hybride-deux-gammes.webp`. « Accord à cheval sur les deux pans » remplacé par « chaque accord se résout sur
+  le pan qui le porte » (mesuré par la session APP : D Kurd 10 + B2 Amara 9).
+- **Témoignage Atlas** : transcription auto YouTube `s1lFN3PDEnA` (yt-dlp, FR, 12 min) →
+  `audits/2026-09-06-atlas-transcription-youtube.md`, extraits verbatim candidats par emplacement.
+  ⚠️ Transcription AUTOMATIQUE avec erreurs (« Minel », « le sang » pour « le son », Muling déformé) → David relit/corrige
+  avant toute mise en prod. `headAcousticDavid` : aucun jugement d'écoute dans la vidéo ; `modelsDavidNote` : il ne tranche
+  pas (a les deux). Rien écrit dans `AtlasPage.astro` ni les dictionnaires : attente du choix de David.
+- **`DEMANDES-DAVID.md`** créé à la racine (registre des demandes).
+- File restante : brouillon email Yishama · Hisong co-orga (nom de la 2ᵉ page ?) · Facebook ≈3 oct/30 oct/20 nov · 3 emails.
 
 ## ÉTAT ACTUEL — 06/09/2026 (17ᵉ passe) — ✅ BLOG-IMAGES-TERMINÉ : LE BLOG MONTRE L'APP DE 2026, DÉPLOYÉ
 
