@@ -29,6 +29,67 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 06/09/2026 (16ᵉ passe) — 🚧 SESSION PARALLÈLE : CE QUI EST RÉSERVÉ, CE QUI EST LIBRE
+
+> ⛔ **À LIRE AVANT DE TOUCHER UN FICHIER.** Une autre session Claude Code travaille en ce
+> moment sur ce dépôt. Elle a un agent qui écrit dans **`src/content/blog/**` et
+> `public/images/**`**. **Ces deux dossiers sont INTERDITS** tant que le marqueur ci-dessous
+> n'est pas dans `git log`. Tout le reste du projet est libre.
+
+### 🔓 Comment savoir que c'est fini (signal vérifiable, pas une supposition)
+```bash
+cd /Users/davidlesage/CLAUDE/site-vitrine && git log --oneline -15
+```
+Le travail est terminé quand un commit dont le message contient **`BLOG-IMAGES-TERMINÉ`**
+apparaît. Tant qu'il n'y est pas : ne pas toucher au blog ni aux images, même si l'arbre de
+travail paraît propre (l'agent commite article par article, donc il est propre entre deux
+articles sans être fini pour autant).
+
+### D'où vient ce chantier
+La session APP a livré le 06/09 deux choses, toutes deux dans le dépôt :
+1. **`MESSAGE-SESSION-APP-REPONSE-2026-09-06-verif-affirmations.md`** (racine) — les 10
+   affirmations factuelles du blog vérifiées en **réexécutant le moteur**, pas en lisant le
+   changelog. 7 exactes, 1 fausse (« trois rayons » → **quatre**), 2 imprécises.
+   Détail preuve par preuve : `NEOTONE STUDIO/NEOTONE 1er mai 2026/audits/2026-09-06-verif-affirmations-blog.md`.
+2. **35 captures réelles de l'app** (aucune maquette) dans deux dossiers :
+   - `…/audits/captures-2026-09-06-blog/` (26 PNG)
+   - `…/audits/captures-2026-09-01-article-partition/` (9 PNG + `LISEZMOI.md` qui décrit chacune)
+
+### Ce qui est DÉJÀ FAIT et commité (ne pas refaire)
+- `13d7485` — **les 6 corrections de texte** : quatre rayons (⭐ n'existe plus, pastilles à
+  cinq états), quatre cadres mineurs (mélodique compris), titre « Tes 2 handpans » (**slug
+  inchangé** — référencement), nuance « Studio ; pendant la bêta, ouvert à tous »,
+  phrase filigrane laissée telle quelle, réserve « catalogue en construction » gardée.
+- `78e4f42` — **`ta-partition-prend-vie` entièrement illustré** + vignette remplacée (elle
+  montrait des diagrammes d'accords sans rapport avec le sujet).
+
+### Ce qui RESTE à faire par l'agent
+Le second lot de 26 captures sur la dizaine d'articles restants ; le remplacement des images
+périmées (`app-logique.webp` = vignette de **5 articles** ; `app-neotone-tablette`,
+`app-cours-mode-logique`, `app-hybride-deux-gammes` montrent l'onglet **« Midi connect »**
+qui n'existe plus) ; et **l'inventaire de ce qui reste périmé sans remplaçant** — c'est ce
+dernier point que David attend, parce qu'il ne se résoudra pas tout seul.
+
+### ⚠️ Incident à connaître
+Un premier agent est tombé en cours de route sur une **erreur d'API** (filtrage de contenu),
+pas sur une erreur de code. Il avait commité avant : rien perdu. Le relancé commite
+**article par article** pour cette raison. Si ça retombe : relire `git log`, repartir du
+dernier commit, ne pas recommencer depuis le début.
+
+### La file d'attente (libre, hors blog/images)
+- **« Hybride »** : le mot est RÉSERVÉ par David au futur mode acoustique+électronique.
+  Reste à le retirer de **6 endroits du site** hors blog.
+- **Témoignage Atlas** : récupérer la transcription YouTube de `s1lFN3PDEnA` et remplir les
+  **trois emplacements commentés vides** de `src/components/pages/AtlasPage.astro`
+  (`videoDavidNote`, `headAcousticDavid`, `modelsDavidNote`) avec **ses mots**.
+- **Facebook** : les 3 partages suivants, ~15 jours avant (18/10 → ~3 octobre ;
+  14/11 → ~30 octobre ; 5/12 → ~20 novembre). Les 3 groupes du 19/09 sont faits.
+  GRIASDI **écarté** d'un commun accord.
+- **Seconde page Hisong** à ajouter en co-organisatrice sur les 4 événements.
+- **Brouillon email Yishama** (photos des aciers) : contexte de la page + image actuelle + lien.
+- 3 adresses email manquantes (Muling, La Maison du Ngoni, L'Âme du Tambour) — en attente
+  de David, à sa demande.
+
 ## ÉTAT ACTUEL — 06/09/2026 (15ᵉ passe) — 🅓 `/showroom` : LA PAGE RÉPONDAIT À TOUT, SAUF À « POURQUOI VENIR ? »
 
 **Statut : commité, poussé sur `main`, buildé (116 pages), mesuré au navigateur intégré à
