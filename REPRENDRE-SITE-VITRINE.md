@@ -41,9 +41,16 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 cd /Users/davidlesage/CLAUDE/site-vitrine && git log --oneline -15
 ```
 Le travail est terminé quand un commit dont le message contient **`BLOG-IMAGES-TERMINÉ`**
-apparaît. Tant qu'il n'y est pas : ne pas toucher au blog ni aux images, même si l'arbre de
-travail paraît propre (l'agent commite article par article, donc il est propre entre deux
-articles sans être fini pour autant).
+apparaît. Ce commit est posé par la **session qui pilote l'agent**, à la réception de la
+notification de fin — l'agent, lui, ne le pose pas.
+
+Tant que ce marqueur n'est pas là : ne pas toucher au blog ni aux images, **même si l'arbre
+de travail paraît propre**. C'est le piège : l'agent commite article par article, donc entre
+deux articles l'arbre est propre sans que le travail soit fini. `git status` ne prouve rien
+ici, seul le marqueur fait foi.
+
+⚠️ **Les sessions ne peuvent pas se parler dans ce dépôt** (`SendMessage` est désactivé).
+Personne ne viendra te prévenir : c'est à toi de relire `git log` quand tu veux savoir.
 
 ### D'où vient ce chantier
 La session APP a livré le 06/09 deux choses, toutes deux dans le dépôt :
