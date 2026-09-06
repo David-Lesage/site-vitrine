@@ -503,86 +503,14 @@ input::placeholder{color:rgba(224,225,221,.35)}
     </div>
   </div>
 
-  <!-- ═══ PIED : CE QUE ÇA DEMANDE À L'APP ═══ -->
-  <div class="tech">
-    <h2>🔧 Ce que ça demande à l'app</h2>
+  <!-- ═══ 06/09/2026 — BLOC « CE QUE ÇA DEMANDE À L'APP » SUPPRIMÉ (copie du site) ═══
+     Il posait 4 questions de conception. Elles sont toutes tranchées et VÉRIFIÉES en base
+     le 06/09 : table dédiée `public.player_profiles` + vue filtrée pour la carte,
+     `public_id` (le `user_id` n'est jamais exposé), aucune colonne lat/lon, `map_hidden`
+     + `hidden_reason` côté admin, et les longueurs max en base (nom 40, ville 60,
+     note 160, liens 300). Un lecteur de blog n'a pas à lire des questions déjà résolues.
+     ⚠️ Le bloc reste INTACT dans le fichier d'origine du dépôt APP. -->
 
-    <h3>1 · Les données — <code>user_preferences</code> ou table dédiée ?</h3>
-    <p>
-      Les champs sociaux existants (<code>social_instagram</code>, <code>website</code>) vivent
-      déjà dans <code>public.user_preferences</code>, écrits par
-      <code>onboarding/instrument-finder.ts</code> (<code>openPublicProfilePanel()</code>).
-      La suite naturelle serait d'y ajouter les colonnes :
-    </p>
-    <table>
-      <thead><tr><th>Colonne</th><th>Type</th><th>Rôle</th></tr></thead>
-      <tbody>
-        <tr><td><code>map_opt_in</code></td><td>boolean, défaut <code>false</code></td><td>l'interrupteur maître — <b>la seule condition d'apparition</b></td></tr>
-        <tr><td><code>public_name</code></td><td>text</td><td>nom d'affichage, jamais dérivé du compte</td></tr>
-        <tr><td><code>country</code></td><td>text</td><td><b>existe déjà</b> (migration <code>0060</code>, question marché) — à ne pas dupliquer</td></tr>
-        <tr><td><code>city</code></td><td>text, nullable</td><td>granularité maximale ; jamais de rue, jamais de coordonnées saisies</td></tr>
-        <tr><td><code>is_teacher</code> / <code>is_maker</code></td><td>boolean</td><td>halo doré / cuivré + filtres de la carte</td></tr>
-        <tr><td><code>teacher_note</code></td><td>text, nullable</td><td>une ligne, longueur bornée côté base</td></tr>
-        <tr><td><code>social_spotify</code> / <code>social_youtube</code></td><td>text</td><td>alignées sur les deux colonnes sociales existantes</td></tr>
-        <tr><td><code>share_instruments</code></td><td>boolean, défaut <code>false</code></td><td>opt-in séparé : cocher la carte ne partage pas les instruments</td></tr>
-        <tr><td><code>map_opt_in_at</code></td><td>timestamptz</td><td>trace du consentement (RGPD) — quand, pas seulement si</td></tr>
-      </tbody>
-    </table>
-    <p style="margin-top:var(--sp-3)">
-      ⚠️ <b>Un point tranche l'affaire</b> : <code>user_preferences</code> est aujourd'hui
-      <b>lisible par son seul propriétaire</b> (<code>prefs_select_own</code>, migration
-      <code>0003</code>). Une carte a besoin que <em>tout le monde</em> lise les lignes des gens
-      qui ont dit oui. Deux voies :
-    </p>
-    <ul>
-      <li><b>Vue publique</b> — <code>create view public.players_map as select … from user_preferences where map_opt_in</code>,
-        avec une policy de lecture pour <code>authenticated</code> sur les colonnes retenues
-        <em>seulement</em>. Le moins de code, mais on ouvre une porte sur la table la plus
-        sensible de l'app : le filtre de colonnes devient un point de vigilance permanent.</li>
-      <li><b>Table dédiée</b> — <code>public.player_profiles</code>, alimentée à l'enregistrement,
-        RLS « lecture par tous les connectés, écriture par le propriétaire ». Le profil public
-        devient un objet à part entière, physiquement séparé des préférences privées. Plus de
-        code, mais l'erreur de colonne devient impossible.</li>
-    </ul>
-    <p>Les coordonnées lat/lon ne sont <b>jamais saisies par l'utilisateur</b> : elles sont
-      dérivées à l'affichage d'une table de villes, ou du centroïde du pays si la ville est vide.
-      Ça garantit qu'une étoile ne peut pas être plus précise qu'une ville, même si quelqu'un
-      le voulait.</p>
-
-    <h3>2 · La modération — la question posée, pas tranchée</h3>
-    <div class="q">
-      <p style="margin:0 0 6px"><b>Que fait-on d'un profil abusif ?</b> Trois champs sont
-      librement écrits par l'utilisateur et publiés à tous : le nom d'affichage, la ville, et la
-      ligne « comment j'enseigne ». Un lien Spotify ou YouTube peut pointer n'importe où.</p>
-      <p style="margin:0">Les options ne s'excluent pas, et aucune n'est choisie ici :
-      <b>(a)</b> modération <em>a priori</em> — une étoile n'apparaît qu'après validation par
-      David, sûr mais ça met un humain dans la boucle à chaque inscription ;
-      <b>(b)</b> modération <em>a posteriori</em> — publication immédiate + bouton « signaler »
-      sur chaque fiche, avec une file dans la console admin ;
-      <b>(c)</b> <em>réservé aux comptes payants ou vérifiés</em> — la barrière économique fait
-      le tri, mais elle exclut les élèves gratuits d'un maillage qui les concerne ;
-      <b>(d)</b> <em>rien pour l'instant</em>, assumé tant que la communauté tient dans une
-      salle — avec un plan écrit d'avance pour le jour où ça ne tient plus.</p>
-    </div>
-    <p style="margin-top:var(--sp-3)">Quelle que soit l'option : il faut au minimum
-      <b>un moyen de retirer une étoile côté admin</b> (un booléen <code>map_hidden</code> que
-      l'utilisateur ne contrôle pas), et une longueur maximale en base sur les trois champs
-      libres. Ces deux-là sont indépendants du choix.</p>
-
-    <h3>3 · Le lien avec l'existant</h3>
-    <ul>
-      <li><code>auth/account-menu.ts</code> — l'entrée « 🌍 Mon profil public » existe déjà et
-        ouvre <code>openPublicProfilePanel()</code> : c'est ce panneau qui s'enrichit, pas un
-        nouvel écran.</li>
-      <li><code>onboarding/instrument-finder.ts</code> — <code>socialFields()</code> gagne deux
-        champs ; la copie FR/EN est déjà structurée (<code>ppTitle</code>, <code>ppSub</code>…),
-        donc tout nouveau texte passe par <code>translations.ts</code> (règle i18n, 7 langues).</li>
-      <li><code>library/my-handpans.ts</code> — la liste des instruments partagés se lit dans
-        <code>user_preferences.handpans</code> ; on n'en publie que trois champs.</li>
-      <li><code>library/handpan-logo.ts</code> — les logos à points de l'aperçu sont ceux de
-        l'app (cuivré = acoustique, couronne = bottom notes, bleu + halo = électronique).</li>
-    </ul>
-  </div>
 
 </div>
 
@@ -622,6 +550,16 @@ const MES_INSTRUMENTS=[
   {famille:'electronic',bottom:false,gamme:'Neotone Mutant · Noyer',             modele:'Neotone Mutant · 19 creux · Noyer · 440 Hz'}
 ];
 
+// 🔗 06/09/2026 — Bac à sable : le lien est cliquable si ce qui est saisi EST une URL
+//    (http/https). Au chargement ce sont les vraies adresses de David ; si le visiteur
+//    tape autre chose, le bouton redevient inerte plutôt que de mener nulle part.
+function lienSiUrl(v,contenu){
+  if(!v) return '';
+  const u=String(v).trim();
+  return /^https?:\/\//i.test(u)
+    ? '<a class="link" href="'+u.replace(/"/g,'&quot;')+'" target="_blank" rel="noopener noreferrer">'+contenu+'</a>'
+    : '<a class="link" href="#" onclick="return false">'+contenu+'</a>';
+}
 const SPOTIFY_ICO='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#1DB954"/><path d="M7 15.2c2.7-.8 5.6-.6 8 .8M6.8 12.2c3.3-1 6.9-.7 9.7 1M6.6 9.1c3.9-1.1 8.1-.7 11.3 1.3" stroke="#0D1B2A" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>';
 const YOUTUBE_ICO='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0000"/><path d="M10 8.8l6 3.2-6 3.2z" fill="#fff"/></svg>';
 
@@ -647,10 +585,10 @@ function ficheHtml(p){
   if(p.teach) badges+='<span class="badge t">🎓 Donne des cours</span>';
   if(p.maker) badges+='<span class="badge m">🔨 Fabrique des instruments</span>';
   let liens='';
-  if(p.spotify) liens+='<a class="link" href="#" onclick="return false">'+SPOTIFY_ICO+'Spotify</a>';
-  if(p.youtube) liens+='<a class="link" href="#" onclick="return false">'+YOUTUBE_ICO+'YouTube</a>';
-  if(p.insta)   liens+='<a class="link" href="#" onclick="return false">◎ Instagram</a>';
-  if(p.site)    liens+='<a class="link" href="#" onclick="return false">↗ Site web</a>';
+  liens+=lienSiUrl(p.spotify,SPOTIFY_ICO+'Spotify');
+  liens+=lienSiUrl(p.youtube,YOUTUBE_ICO+'YouTube');
+  liens+=lienSiUrl(p.insta,'◎ Instagram');
+  liens+=lienSiUrl(p.site,'↗ Site web');
   let instr='';
   if(p.instruments&&p.instruments.length){
     instr='<section><h4>Ses instruments</h4>'+p.instruments.map(i=>

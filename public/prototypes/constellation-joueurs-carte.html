@@ -346,80 +346,14 @@ h1 em{font-style:normal;background:var(--gold-gradient);-webkit-background-clip:
 
   </div>
 
-  <!-- ═══ PIED : CE QUE ÇA DEMANDE À L'APP ═══ -->
-  <div class="tech">
-    <h2>🔧 Ce que ça demande à l'app</h2>
+  <!-- ═══ 06/09/2026 — BLOC « CE QUE ÇA DEMANDE À L'APP » SUPPRIMÉ (copie du site) ═══
+     Il posait 4 questions de conception. Elles sont toutes tranchées et VÉRIFIÉES en base
+     le 06/09 : table dédiée `public.player_profiles` + vue filtrée pour la carte,
+     `public_id` (le `user_id` n'est jamais exposé), aucune colonne lat/lon, `map_hidden`
+     + `hidden_reason` côté admin, et les longueurs max en base (nom 40, ville 60,
+     note 160, liens 300). Un lecteur de blog n'a pas à lire des questions déjà résolues.
+     ⚠️ Le bloc reste INTACT dans le fichier d'origine du dépôt APP. -->
 
-    <h3>1 · La lecture — c'est ici que ça coince, pas dans le dessin</h3>
-    <p>
-      La carte a besoin de lire les profils <b>des autres</b>. Or
-      <code>public.user_preferences</code> est aujourd'hui strictement privée
-      (<code>prefs_select_own</code>, migration <code>0003</code> : chacun ne lit que sa ligne).
-      Il faut donc, au choix :
-    </p>
-    <ul>
-      <li><b>une vue publique</b> <code>players_map</code> filtrée sur <code>map_opt_in = true</code>
-        et sur les seules colonnes publiables, avec une policy de lecture pour
-        <code>authenticated</code> ;</li>
-      <li><b>une table dédiée</b> <code>public.player_profiles</code> (RLS : lecture par tous les
-        connectés, écriture par le propriétaire), physiquement séparée des préférences privées.</li>
-    </ul>
-    <p>
-      Dans les deux cas la règle est la même : <b>aucune colonne non listée ne sort</b>, et le
-      <code>user_id</code> ne doit pas être exposé tel quel (un identifiant public court suffit —
-      sinon on relie une étoile à un compte, donc à un e-mail, dès la première jointure).
-    </p>
-
-    <h3>2 · Les coordonnées — dérivées, jamais saisies</h3>
-    <p>
-      Personne ne saisit de latitude. On stocke <code>country</code> (déjà présent, migration
-      <code>0060</code>) et <code>city</code> en texte, et on résout en lat/lon <b>à l'affichage</b>,
-      contre une table de villes embarquée. Trois conséquences voulues :
-      une étoile ne peut pas être plus précise qu'une ville, même volontairement ;
-      ville vide → centroïde du pays ; et l'app n'appelle <b>jamais</b>
-      <code>navigator.geolocation</code>.
-    </p>
-    <p>
-      Pour éviter le tas d'étoiles empilées dans les grandes villes : dispersion déterministe de
-      quelques dizaines de kilomètres autour du point de ville (même personne = toujours le même
-      décalage), ce qui rend le nuage lisible <em>et</em> rend le point moins exact, pas plus.
-    </p>
-
-    <h3>3 · Le rendu</h3>
-    <ul>
-      <li>Carte SVG en polygones dans le bundle (≈ 4 ko) — pas de tuiles, pas de CDN, cohérent
-        avec la règle « <code>bun.lock</code> gelé, pas de nouvelle dépendance ».</li>
-      <li>La <b>fiche</b> est le même composant que l'aperçu du profil public : un seul rendu à
-        maintenir, donc jamais de décalage entre « ce que je crois montrer » et « ce qui est
-        montré ».</li>
-      <li>Textes via <code>translations.ts</code> (7 langues) — y compris les libellés de pays,
-        qui ne peuvent pas rester en français en dur.</li>
-      <li>Les logos d'instruments viennent de <code>library/handpan-logo.ts</code> : cuivré =
-        acoustique, couronne de points = bottom notes, bleu + halo = électronique.</li>
-    </ul>
-
-    <h3>4 · La modération — la question posée, pas tranchée</h3>
-    <div class="q">
-      <p style="margin:0 0 6px"><b>Que fait-on d'un profil abusif ?</b> Nom d'affichage, ville et
-      ligne « comment j'enseigne » sont écrits librement et lus par tous ; un lien Spotify ou
-      YouTube peut pointer n'importe où. Et une carte de profs est, par nature, un endroit où
-      quelqu'un finira par vouloir se faire de la publicité.</p>
-      <p style="margin:0"><b>(a)</b> validation avant publication (sûr, mais un humain dans la
-      boucle à chaque inscription) · <b>(b)</b> publication immédiate + bouton « signaler » et
-      file dans la console admin · <b>(c)</b> réservé aux comptes payants ou vérifiés (le tri se
-      fait tout seul, mais on exclut les élèves gratuits du maillage qui les concerne) ·
-      <b>(d)</b> rien pour l'instant, assumé, avec un plan écrit d'avance.
-      <br>Aucune n'est choisie ici. Deux briques sont nécessaires <em>quelle que soit</em> la
-      réponse : un <code>map_hidden</code> côté admin que l'utilisateur ne contrôle pas, et une
-      longueur maximale en base sur les trois champs libres.</p>
-    </div>
-    <p style="margin-top:var(--sp-3)">
-      Question jumelle, spécifique à la carte : <b>un prof doit-il être visible par défaut plus
-      loin qu'un joueur ?</b> Un joueur cherche « près de chez moi » ; un prof, lui, a intérêt à
-      être vu de loin. Faut-il un rayon, un classement, une mise en avant — et si oui, est-ce que
-      ça se paie ? C'est une décision de modèle, pas d'interface.
-    </p>
-  </div>
 
 </div>
 
@@ -584,6 +518,16 @@ function handpanLogo(family,bottomNotes,size){
     +'<circle cx="24" cy="24" r="5.6" fill="none" stroke="'+c.ring+'" stroke-width=".8" opacity=".8"/>'
     +dots+'</svg>';
 }
+// 🔗 06/09/2026 — Les liens de David sont RÉELS et cliquables ; ceux des profils
+//    d'exemple restent inertes. Sources vérifiées le 06/09 : sa table
+//    `player_profiles` et son Linktree public. Ne pas inventer d'URL ici.
+const LIENS_REELS={sp:'https://open.spotify.com/intl-fr/artist/7zEAQJbalBFj8XNHrcqdbK',yt:'https://www.youtube.com/c/DavidLesage',ig:'https://www.instagram.com/david.lesage.artiste/',we:'https://lesagedavid.fr/'};
+function lien(actif,reel,cle,contenu){
+  if(!actif) return '';
+  const u = reel ? LIENS_REELS[cle] : null;
+  return u ? '<a class="link" href="'+u+'" target="_blank" rel="noopener noreferrer">'+contenu+'</a>'
+           : '<a class="link" href="#" onclick="return false">'+contenu+'</a>';
+}
 const SPOTIFY_ICO='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#1DB954"/><path d="M7 15.2c2.7-.8 5.6-.6 8 .8M6.8 12.2c3.3-1 6.9-.7 9.7 1M6.6 9.1c3.9-1.1 8.1-.7 11.3 1.3" stroke="#0D1B2A" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>';
 const YOUTUBE_ICO='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0000"/><path d="M10 8.8l6 3.2-6 3.2z" fill="#fff"/></svg>';
 
@@ -596,10 +540,10 @@ function ficheHtml(p){
   if(p.t) badges+='<span class="badge t">🎓 Donne des cours</span>';
   if(p.m) badges+='<span class="badge m">🔨 Fabrique des instruments</span>';
   let liens='';
-  if(p.sp) liens+='<a class="link" href="#" onclick="return false">'+SPOTIFY_ICO+'Spotify</a>';
-  if(p.yt) liens+='<a class="link" href="#" onclick="return false">'+YOUTUBE_ICO+'YouTube</a>';
-  if(p.ig) liens+='<a class="link" href="#" onclick="return false">◎ Instagram</a>';
-  if(p.we) liens+='<a class="link" href="#" onclick="return false">🌐 Site web</a>';
+  liens+=lien(p.sp,p.real,'sp',SPOTIFY_ICO+'Spotify');
+  liens+=lien(p.yt,p.real,'yt',YOUTUBE_ICO+'YouTube');
+  liens+=lien(p.ig,p.real,'ig','◎ Instagram');
+  liens+=lien(p.we,p.real,'we','🌐 Site web');
   let instr='';
   if(p.inst&&p.inst.length){
     instr='<section><h4>Ses instruments</h4>'+p.inst.map(i=>
