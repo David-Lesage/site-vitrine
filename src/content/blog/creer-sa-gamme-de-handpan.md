@@ -2,7 +2,7 @@
 title: "Comment créer sa gamme de handpan (tutoriel)"
 description: "Comprends ce qu'est une gamme de handpan et apprends à créer la tienne, gratuitement, dans le mode acoustique de Handpan Constellation Studio — puis à la partager avec la communauté."
 pubDate: 2026-06-29
-cover: "/images/app-creation.webp"
+cover: "/images/app-creation-acoustique.webp"
 category: "gammes"
 tags: ["gammes", "tutoriel"]
 lang: "fr"
@@ -29,6 +29,20 @@ Une gamme, c'est le « caractère » de ton pan : une note centrale (le **ding**
 3. **Ajoute tes notes.** Place les degrés autour du ding ; l'écran les affiche en couleurs et dessine les Constellations d'accords en temps réel.
 4. **Écoute et ajuste.** Joue ta disposition, déplace ou remplace les notes qui ne te parlent pas. Ton oreille tranche, ton œil confirme.
 5. **Enregistre ta gamme.** Sauvegarde-la pour la retrouver plus tard, sur handpan acoustique comme sur [Neotone](/le-neotone).
+
+<figure>
+  <img
+    src="/images/app-creation-acoustique.webp"
+    width="2000"
+    height="1250"
+    alt="L'onglet Création, thème sombre, sur un handpan acoustique. Au centre, le pan avec son ding D3 et ses notes colorées D4, A#3, A3, F4, E4, C4, C5, A4, G4 ; une bulle indique « D Minor / Kurd 10 ». Autour du haut du pan, la roue chromatique complète — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — chaque pastille à sa couleur, avec les repères d'octaves 2 à 5 en arc de cercle. À gauche, une barre d'outils verticale : palette ChromaKeys, clavier, crayon, corbeille, annuler, refaire. À droite, le panneau « Mes handpans » : « Tu ne connais pas le nom de ta gamme ? Réponds à quelques questions simples : on la retrouve ensemble. », un bouton « 🔍 Trouve ton instrument », l'instrument « D Minor / Kurd 10 » marqué du badge ACOUSTIQUE, « 🎙 Mes morceaux (156) », « Tester une autre tonalité », puis un bloc « ✨ Mon handpan » indiquant « Coque : 10 dessus · simple » et une rangée de creux du dessous numérotés de 1 à 9 plus « aucun ». En bas de ce panneau : « Clique un creux sur le pan pour le sélectionner, puis une couleur dans la palette ChromaKeys autour du pan pour lui assigner une note. Reclique un creux placé pour l'écouter. »"
+    data-lb="creation-acoustique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>L'onglet Création en <strong>mode acoustique</strong> (badge ACOUSTIQUE à droite), sur un D Minor / Kurd 10. La roue chromatique entoure le pan : on clique un creux, puis la couleur de la note qu'on veut y poser. Le panneau de droite tient le compte des creux du dessous et de la coque choisie.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### S'appuyer sur les couleurs
 

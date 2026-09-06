@@ -2,7 +2,7 @@
 title: "Playing handpan by colours: the ChromaKeys method"
 description: "Learn handpan without music theory using ChromaKeys: every note becomes a colour, every chord a shape. David Lesage's visual method to progress fast."
 pubDate: 2026-06-15
-cover: "/images/constel-polygone.webp"
+cover: "/images/app-chromakeys-on.webp"
 category: "methode"
 tags: ["method", "getting started"]
 lang: "en"
@@ -21,6 +21,20 @@ This approach leans on a simple fact about the brain: we memorise a colour and a
 ### Each note, a colour
 
 The seven degrees of a scale get seven stable colours. Whatever the key of your handpan, the logic stays the same: the first degree always keeps its hue, the fifth its own, and so on. Learn it once, play it everywhere.
+
+<figure>
+  <img
+    src="/images/app-chromakeys-on.webp"
+    width="2000"
+    height="1250"
+    alt="Logic Mode with ChromaKeys on: every note on the handpan is painted in its own colour and ringed with a glow — D2 orange at the centre, C#4 and C#3 red, B3 magenta, A3 and A4 blue, F#3 and F#4 green, G3 and G4 sky blue, E2 and E3 yellow. Around the top of the pan, the chromatic wheel is unfolded: C, C#, D, D#, E, F, F#, G, G#, A, A#, B, each in its colour, with octave arcs 2 to 5. On the left, the vertical toolbar with its rainbow icon active. Along the bottom, the seven degree cards from I ÉQUILIBRE D to VII MYSTÈRE C#°."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>ChromaKeys on, palette open. Every pitch has its own colour, the same everywhere: a <em>C</em> is red, an <em>E</em> yellow, a <em>G</em> sky blue. The chromatic wheel above the pan shows all twelve semitones and their hues. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### Each chord, a shape
 

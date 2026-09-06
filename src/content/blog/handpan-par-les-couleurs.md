@@ -2,7 +2,7 @@
 title: "Le handpan par les couleurs : la méthode ChromaKeys"
 description: "Apprends le handpan sans solfège grâce aux ChromaKeys : chaque note devient une couleur, chaque accord une forme. La méthode visuelle de David Lesage pour progresser vite."
 pubDate: 2026-06-15
-cover: "/images/constel-polygone.webp"
+cover: "/images/app-chromakeys-on.webp"
 category: "methode"
 tags: ["méthode", "débuter"]
 lang: "fr"
@@ -21,6 +21,20 @@ Cette approche s'appuie sur une réalité du cerveau : nous mémorisons une coul
 ### Chaque note, une couleur
 
 Les sept degrés d'une gamme reçoivent sept couleurs stables. Quelle que soit la tonalité de ton handpan, la logique reste la même : le premier degré garde toujours sa teinte, le cinquième la sienne, etc. Tu apprends une fois, tu joues partout.
+
+<figure>
+  <img
+    src="/images/app-chromakeys-on.webp"
+    width="2000"
+    height="1250"
+    alt="Le Mode Logique avec les ChromaKeys activées : chaque note du handpan est peinte de sa couleur et entourée d'un halo lumineux — D2 orange au centre, C#4 et C#3 rouges, B3 magenta, A3 et A4 bleus, F#3 et F#4 verts, G3 et G4 bleu ciel, E2 et E3 jaunes. Autour du haut du pan, la roue chromatique déployée : C, C#, D, D#, E, F, F#, G, G#, A, A#, B, chacune à sa couleur, avec les arcs d'octaves 2 à 5. À gauche, la barre d'outils verticale dont l'icône arc-en-ciel est active. En bas, les sept cartouches de degrés de I ÉQUILIBRE D à VII MYSTÈRE C#°."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Les ChromaKeys allumées, palette ouverte. Chaque hauteur a sa couleur, la même partout : un <em>do</em> est rouge, un <em>mi</em> jaune, un <em>sol</em> bleu ciel. La roue chromatique au-dessus du pan montre les douze demi-tons et leurs teintes.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### Chaque accord, une forme
 

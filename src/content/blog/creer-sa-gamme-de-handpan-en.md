@@ -2,7 +2,7 @@
 title: "How to create your own handpan scale (tutorial)"
 description: "Understand what a handpan scale is and learn to build your own, for free, in Handpan Constellation Studio's acoustic mode — then share it with the community."
 pubDate: 2026-06-29
-cover: "/images/app-creation.webp"
+cover: "/images/app-creation-acoustique.webp"
 category: "gammes"
 tags: ["scales", "tutorial"]
 lang: "en"
@@ -29,6 +29,20 @@ A scale is the "character" of your pan: a central note (the **ding**) surrounded
 3. **Add your notes.** Place the degrees around the ding; the screen shows them in colour and draws chord Constellations in real time.
 4. **Listen and adjust.** Play your layout, move or replace the notes that don't speak to you. Your ear decides, your eye confirms.
 5. **Save your scale.** Store it to find it later, on an acoustic handpan or a [Neotone](/en/le-neotone).
+
+<figure>
+  <img
+    src="/images/app-creation-acoustique.webp"
+    width="2000"
+    height="1250"
+    alt="The Création tab, dark theme, on an acoustic handpan. In the centre, the pan with its D3 ding and coloured notes D4, A#3, A3, F4, E4, C4, C5, A4, G4; a bubble reads « D Minor / Kurd 10 ». Around the top of the pan, the full chromatic wheel — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — each disc in its own colour, with octave markers 2 to 5 on an arc. On the left, a vertical toolbar: ChromaKeys palette, keyboard, pencil, bin, undo, redo. On the right, the « Mes handpans » panel: an invitation to find your scale by answering a few questions, a « 🔍 Trouve ton instrument » button, the instrument « D Minor / Kurd 10 » with an ACOUSTIQUE badge, « 🎙 Mes morceaux (156) », « Tester une autre tonalité », then a « ✨ Mon handpan » block reading « Coque : 10 dessus · simple » with a row of bottom-note slots numbered 1 to 9 plus « aucun », and instructions to click a dimple then a ChromaKeys colour to assign it a note."
+    data-lb="creation-acoustique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The Création tab in <strong>acoustic mode</strong> (ACOUSTIQUE badge on the right), on a D Minor / Kurd 10. The chromatic wheel surrounds the pan: click a dimple, then the colour of the note you want on it. The right-hand panel tracks the bottom notes and the shell you picked. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### Lean on the colours
 
