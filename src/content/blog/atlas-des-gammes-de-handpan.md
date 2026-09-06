@@ -24,6 +24,20 @@ C'est aussi une façon de comprendre d'où vient le handpan. Beaucoup de ses gam
 
 Chaque gamme porte une couleur émotionnelle : lumineuse, mélancolique, mystérieuse, apaisante. Tu peux te laisser guider par l'humeur du moment plutôt que par la théorie. C'est souvent comme ça qu'on trouve « sa » gamme — celle qui te touche sans que tu saches encore pourquoi.
 
+<figure>
+  <img
+    src="/images/blog-atlas-destinations-2026.webp"
+    width="2000"
+    height="1600"
+    alt="Le panneau « Découvrir d'autres gammes » ouvert à droite de l'application, thème sombre. En haut, un sélecteur THÈME avec quatre choix : Classique (actif), 📽 Planétarium, 🛂 Passeport, 📎 Magazine ; puis une bascule « 🌍 Voyage » (active) / « 🏢 Structuré » et un champ de recherche. En dessous, le titre « Où veux-tu voyager aujourd'hui ? » et le sous-titre « Choisis une destination — découvre les handpans qui t'y attendent. ». Six cartes colorées suivent, chacune avec son nom, une phrase d'ambiance et un décompte : Source Sereine (vert, « Calme, méditation, simplicité », 9 handpans), Grand Large (doré, « Joie et horizons ouverts », 7 handpans), Échappée Vive (rose, « Espiègle, moderne, entraînant », 3 handpans), Clair-Obscur (bleu, « Doux-amer, entre ombre et lumière », 3 handpans), Routes du Désert (brun, « Mystère et chaleur d'Orient », 21 handpans), Terres de Brume (violet, « Mélancolie et introspection », 31 handpans). À gauche, un handpan D Minor / Kurd 10 et ses sept emplacements d'accords."
+    data-lb="atlas"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le panneau de l'Atlas, entier. Six destinations, chacune avec son ambiance en une phrase et le <strong>nombre de handpans qui l'habitent</strong> — de 3 pour <em>Échappée Vive</em> à 31 pour <em>Terres de Brume</em>. En haut, les quatre thèmes d'affichage : Classique, Planétarium, Passeport, Magazine.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
 ### Écouter avant de choisir
 
 D'un clic, tu entends la gamme sonner. Pas besoin de la posséder ni de l'imaginer : Handpan Constellation Studio la joue pour toi. C'est précieux quand tu hésites avant d'acheter un handpan acoustique, ou avant de charger une gamme sur ton [handpan électronique Neotone](/le-neotone).

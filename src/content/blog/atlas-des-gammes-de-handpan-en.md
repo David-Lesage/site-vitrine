@@ -24,6 +24,20 @@ It's also a way to understand where the handpan comes from. Many of its scales d
 
 Each scale carries an emotional colour: bright, melancholic, mysterious, soothing. You can let the mood of the moment guide you rather than theory. That's often how you find "your" scale — the one that moves you before you even know why.
 
+<figure>
+  <img
+    src="/images/blog-atlas-destinations-2026.webp"
+    width="2000"
+    height="1600"
+    alt="The « Découvrir d'autres gammes » panel open on the right of the application, dark theme. At the top, a THÈME selector with four choices: Classique (active), 📽 Planétarium, 🛂 Passeport, 📎 Magazine; then a « 🌍 Voyage » (active) / « 🏢 Structuré » switch and a search field. Below, the heading « Où veux-tu voyager aujourd'hui ? » and the subtitle « Choisis une destination — découvre les handpans qui t'y attendent. ». Six coloured cards follow, each with a name, a mood line and a count: Source Sereine (green, calm and meditation, 9 handpans), Grand Large (gold, joy and open horizons, 7 handpans), Échappée Vive (pink, playful and modern, 3 handpans), Clair-Obscur (blue, bittersweet, 3 handpans), Routes du Désert (brown, mystery and eastern warmth, 21 handpans), Terres de Brume (purple, melancholy and introspection, 31 handpans). On the left, a D Minor / Kurd 10 handpan and its seven chord slots."
+    data-lb="atlas"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The Atlas panel, whole. Six destinations, each with its mood in one line and the <strong>number of handpans that live there</strong> — from 3 in <em>Échappée Vive</em> to 31 in <em>Terres de Brume</em>. At the top, the four display themes: Classique, Planétarium, Passeport, Magazine. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
 ### Listen before you choose
 
 With one click, you hear the scale sound. No need to own it or imagine it: Handpan Constellation Studio plays it for you. That's precious when you're hesitating before buying an acoustic handpan, or before loading a scale onto your [electronic Neotone handpan](/en/le-neotone).
