@@ -45,6 +45,6 @@ Dans les deux sens, le pont MIDI reste ouvert : importe un fichier `.mid`, expor
 
 ## Où le trouver
 
-L'éditeur s'ouvre depuis la **Bibliothèque musicale**, et il charge ta gamme du moment — ou n'importe quelle gamme de l'Atlas, transposable. C'est une fonction **Studio**, comme la sauvegarde de tes créations.
+L'éditeur s'ouvre depuis la **Bibliothèque musicale**, et il charge ta gamme du moment — ou n'importe quelle gamme de l'Atlas, transposable. L'éditeur de mélodies fera partie de la version **Studio** ; pendant la bêta, il est ouvert à tous.
 
 Ta prochaine mélodie mérite mieux que ta mémoire de demain matin. Ouvre [Handpan Constellation Studio](/handpan-app), pose trois notes, et regarde-les tourner en boucle. Et si tu veux être guidé pour composer, mes [cours de handpan](/cours) sont faits pour ça.

@@ -25,14 +25,17 @@ The library opens from your account, and it sorts music into two families:
 - 🎤 **Songs** — the ones you accompany on the handpan: Beatles, Cohen, anything sung around a fire.
 - 🥁 **Handpan pieces** — the players' repertoire, the music that stands on its own. That part is **still being built**: it will grow with the compositions the community leaves there.
 
-A search box, filters by author, style or year, and three shelves: ⭐ the best known, ✍️ your compositions, 🎼 other players' compositions. One click opens the piece straight into the [score editor](/en/blog/editeur-de-partition-handpan).
+A search box, filters by author, style or year, and four shelves: 🌍 the world repertoire, 🎨 the handpan repertoire, ✍️ your compositions, 🎼 other players' compositions. One click opens the piece straight into the [score editor](/en/blog/editeur-de-partition-handpan).
 
 ## The badge that changes everything
 
 Every piece now carries a marker, computed from the real notes of your scale:
 
-- ✅ **playable with your scale**;
-- ⚠️ **needs a different scale** — and the app tells you which.
+- ✅ **playable as is**;
+- ✅ **playable transposed**;
+- 🔓 **playable with your 2nd handpan**;
+- 🥁 **playable with another player**;
+- 🔒 **notes are missing** — and the app tells you which.
 
 Counters at the top of the list give you the picture before you even start searching. And if you click an incompatible piece anyway, you don't get a flat refusal: you get a clear explanation and a button to switch to the right scale. In acoustic mode the app goes further and offers the piece **transposed into your handpan's key**.
 

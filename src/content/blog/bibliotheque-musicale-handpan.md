@@ -25,14 +25,17 @@ La Bibliothèque s'ouvre depuis ton compte, et elle range la musique en deux fam
 - 🎤 **Les chansons** — celles qu'on accompagne au handpan : Beatles, Cohen, tout ce qui se chante autour d'un feu.
 - 🥁 **Les morceaux de handpan** — le répertoire des joueurs, celui qui se joue seul. Cette partie-là est **encore en construction** : elle grandira avec les compositions que la communauté y déposera.
 
-Une recherche, des filtres par auteur, style ou année, et trois rayons : ⭐ les plus connus, ✍️ tes compositions, 🎼 celles des autres joueurs. Un clic ouvre le morceau directement dans l'[éditeur de partition](/blog/editeur-de-partition-handpan).
+Une recherche, des filtres par auteur, style ou année, et quatre rayons : 🌍 le répertoire mondial, 🎨 le répertoire handpan, ✍️ tes compositions, 🎼 celles des autres joueurs. Un clic ouvre le morceau directement dans l'[éditeur de partition](/blog/editeur-de-partition-handpan).
 
 ## Le badge qui change tout
 
 Chaque morceau porte désormais une pastille, calculée sur les notes réelles de ta gamme :
 
-- ✅ **jouable avec ta gamme** ;
-- ⚠️ **nécessite une autre gamme** — et l'app te dit laquelle.
+- ✅ **jouable tel quel** ;
+- ✅ **jouable transposé** ;
+- 🔓 **jouable avec ton 2ᵉ handpan** ;
+- 🥁 **jouable avec un autre joueur** ;
+- 🔒 **il manque des notes** — et l'app te dit lesquelles.
 
 Des compteurs en tête de liste t'annoncent la couleur avant même que tu cherches. Et si tu cliques quand même sur un morceau incompatible, tu n'as pas droit à un refus sec : tu obtiens une explication claire et un bouton pour basculer sur la bonne gamme. En mode acoustique, l'app va plus loin et te propose le morceau **transposé dans la tonalité de ton handpan**.
 

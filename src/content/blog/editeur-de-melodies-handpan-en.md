@@ -45,6 +45,6 @@ Either way the MIDI bridge stays open: import a `.mid` file, export yours, take 
 
 ## Where to find it
 
-The editor opens from the **music library** (*Bibliothèque musicale*), and it loads your current scale — or any scale from the Atlas, transposable. It's a **Studio** feature, like saving your creations.
+The editor opens from the **music library** (*Bibliothèque musicale*), and it loads your current scale — or any scale from the Atlas, transposable. The melody editor will be part of the **Studio** version; during the beta, it is open to everyone.
 
 Your next melody deserves better than your memory tomorrow morning. Open [Handpan Constellation Studio](/en/handpan-app), drop three notes, and watch them loop. And if you'd like to be guided while composing, my [handpan lessons](/en/cours) are made for that.
