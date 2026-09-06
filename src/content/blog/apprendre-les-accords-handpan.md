@@ -2,7 +2,7 @@
 title: "Apprendre tes accords pas à pas : le mode guidé"
 description: "Dans Handpan Constellation Studio, le handpan devient une surface guidée : l'app allume la note colorée à jouer et t'accompagne, accord après accord, avec un retour sonore et visuel."
 pubDate: 2026-08-11
-cover: "/images/app-logique.webp"
+cover: "/images/app-mode-guide-note-allumee.webp"
 category: "logique"
 tags: ["méthode", "accords", "apprentissage"]
 lang: "fr"
@@ -23,6 +23,20 @@ Le principe est simple et visuel. Tu choisis un accord, et l'app **te montre exa
 - La **note colorée** à jouer s'illumine sur le handpan virtuel.
 - Tu la touches, un **retour sonore et visuel** confirme (ou t'invite à réessayer).
 - La note suivante s'allume, et ainsi de suite jusqu'à ce que l'accord soit complet.
+
+<figure>
+  <img
+    src="/images/app-mode-guide-note-allumee.webp"
+    width="2000"
+    height="1250"
+    alt="Le Mode Logique pendant l'apprentissage guidé. Au centre du handpan, une bulle blanche affiche « Joue la note qui pulse ! ». Quatre notes sont allumées en rouge et cerclées : le ding D2 marqué d'un petit R, A3 marqué d'un L, F#3 et D4 marqué d'un R ; toutes les autres notes du pan sont éteintes, en gris, simplement cerclées de jaune. En bas, les sept cartouches de degrés de I ÉQUILIBRE Dm à VII MYSTÈRE C."
+    data-lb="mode-guide"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>L'apprentissage guidé en cours : la consigne au centre dit « <strong>Joue la note qui pulse !</strong> ». Les notes de l'accord s'allument sur le pan, chacune avec la main suggérée — <em>L</em> pour la gauche, <em>R</em> pour la droite. Les notes qui ne font pas partie de l'accord restent éteintes.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 Tu avances **à ton rythme**, autant de fois que tu veux. Ce n'est pas un examen chronométré : c'est un accompagnement patient qui te fait mémoriser l'accord **par la couleur et par le geste**, pas par cœur.
 

@@ -2,7 +2,7 @@
 title: "Learn your chords step by step: the guided mode"
 description: "In Handpan Constellation Studio, your handpan becomes a guided surface: the app lights up the coloured note to play and walks you through, chord after chord, with sound and visual feedback."
 pubDate: 2026-08-11
-cover: "/images/app-logique.webp"
+cover: "/images/app-mode-guide-note-allumee.webp"
 category: "logique"
 tags: ["method", "chords", "learning"]
 lang: "en"
@@ -23,6 +23,20 @@ The idea is simple and visual. You pick a chord, and the app **shows you exactly
 - The **coloured note** to play lights up on the virtual handpan.
 - You touch it, and **sound and visual feedback** confirms (or invites you to try again).
 - The next note lights up, and so on until the chord is complete.
+
+<figure>
+  <img
+    src="/images/app-mode-guide-note-allumee.webp"
+    width="2000"
+    height="1250"
+    alt="Logic Mode during guided learning. At the centre of the handpan, a white bubble reads « Joue la note qui pulse ! » (play the pulsing note). Four notes are lit in red and outlined: the ding D2 marked with a small R, A3 marked L, F#3, and D4 marked R; every other note on the pan is dark grey with a plain yellow outline. Along the bottom, the seven degree cards from I ÉQUILIBRE Dm to VII MYSTÈRE C."
+    data-lb="mode-guide"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Guided learning in progress: the prompt in the middle reads « <strong>Joue la note qui pulse !</strong> » — play the pulsing note. The chord's notes light up on the pan, each with its suggested hand — <em>L</em> for left, <em>R</em> for right. Notes outside the chord stay dark. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 You move at **your own pace**, as many times as you like. It's not a timed exam: it's a patient guide that helps you memorise the chord **through colour and gesture**, not by rote.
 
