@@ -2,7 +2,7 @@
 title: "L'Atlas Sonore : voyager dans les gammes du monde"
 description: "L'Atlas de Handpan Constellation Studio te laisse parcourir les gammes de handpan du monde entier, les écouter et les visualiser en couleurs. Un voyage sonore."
 pubDate: 2026-07-06
-cover: "/images/blog-atlas-destinations.webp"
+cover: "/images/blog-atlas-destinations-2026-vignette.webp"
 category: "gammes"
 tags: ["gammes", "atlas"]
 lang: "fr"

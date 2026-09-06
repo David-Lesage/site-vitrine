@@ -37,7 +37,7 @@ Every piece now carries a marker, computed from the real notes of your scale:
 - 🥁 **playable with another player**;
 - 🔒 **notes are missing** — and the app tells you which.
 
-Counters at the top of the list give you the picture before you even start searching. And if you click an incompatible piece anyway, you don't get a flat refusal: you get a clear explanation and a button to switch to the right scale. In acoustic mode the app goes further and offers the piece **transposed into your handpan's key**.
+Counters at the top of the list give you the picture before you even start searching. On a **D Minor / Kurd 10** the count is blunt: **156 pieces playable, 41 blocked**. Both mechanisms live side by side — automatic transposition (« ✅ Jouable transposé en F ») makes playable whatever can be played in another key, while the amber badge (« 🔒 Il manque C# sur ton pan ») says plainly what does not fit.
 
 <figure>
   <img
@@ -52,6 +52,26 @@ Counters at the top of the list give you the picture before you even start searc
   <figcaption>The list, with badges computed against the loaded scale. At the top, the count announced before you search anything: « <strong>Tu peux en accompagner 156</strong> » — 156 you can accompany, 41 more with other notes. On the cards the nuance shows — <em>He's a Pirate</em> plays as is, <em>Let It Be</em> and <em>Hallelujah</em> transposed to F, <em>Zombie</em> to D minor. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
+A blocked piece still opens. Click it and the app doesn't slam the door: it names the missing notes, tells you that you can go in anyway, then shows you what would complete your instrument — with numbers.
+
+<figure>
+  <img
+    src="/images/app-bibliotheque-morceau-incompatible.webp"
+    width="2000"
+    height="1400"
+    alt="The library in dark theme, with the dialogue for a blocked piece open on top. Behind it, the cards show both families of badges: green « ✅ Jouable transposé en F », « ✅ Jouable transposé en G mineur », « ✅ Jouable transposé en D mineur » (Unchained Melody, Uptown Funk, Viva la Vida, Wagon Wheel, Wake Me Up, What's Up, Wicked Game, With or Without You, Wonderful Tonight, You Are My Sunshine); amber « 🔒 Il manque C# sur ton pan », « 🔒 Il manque C#, B sur ton pan », « 🔒 Il manque B sur ton pan » (California Dreamin', Chan Chan, Creep, Don't Look Back in Anger, Amsterdam, Billie Jean). In the centre, the dialogue titled « (Sittin' On) The Dock of the Bay — Otis Redding »: « Il manque C#, B sur ton handpan pour accompagner tout le morceau. Tu peux quand même l'ouvrir et en jouer une partie. » Then a box « 🧩 Complète ton instrument pour l'accompagner » listing four complementary handpans with figures: 🥁 B2 Athena 9 (transposed) — all missing notes · +41 pieces; 🥁 C# Raga Desh — all missing notes · +41 pieces; 🥁 G Oxalis 11 (transposed) — all missing notes · +40 pieces; 🥁 D Voyager 10 (transposed) — all missing notes · +41 pieces. Below, a box « ⚡ Ou un Neotone sur-mesure — généré avec exactement les notes manquantes », a large cyan button « 🧭 Compléter mon instrument », and two secondary buttons « Voir la grille quand même » and « Annuler »."
+    data-lb="incompatible"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The dialogue for a blocked piece — <em>(Sittin' On) The Dock of the Bay</em> on a D Kurd 10. The app names the missing notes (« <strong>Il manque C#, B</strong> » — C# and B are missing), reminds you the piece can still be opened, then puts a figure on what a second instrument would unlock: <strong>+41 pieces</strong> with a B2 Athena 9, <strong>+40</strong> with a G Oxalis 11. And at the bottom, the button that matters: « Voir la grille quand même » — see the chart anyway. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
+Neither a wall nor plain transposition: a door. The app says what is missing, offers a second handpan that fills exactly that gap — with the number of pieces gained —, offers a made-to-measure Neotone generated with precisely those notes, and still lets you into the chart.
+
+In acoustic mode the app goes further and offers the piece **transposed into your handpan's key** where that is possible.
 
 ## Your library follows you
 

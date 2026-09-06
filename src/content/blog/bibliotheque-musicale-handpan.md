@@ -37,7 +37,7 @@ Chaque morceau porte désormais une pastille, calculée sur les notes réelles d
 - 🥁 **jouable avec un autre joueur** ;
 - 🔒 **il manque des notes** — et l'app te dit lesquelles.
 
-Des compteurs en tête de liste t'annoncent la couleur avant même que tu cherches. Et si tu cliques quand même sur un morceau incompatible, tu n'as pas droit à un refus sec : tu obtiens une explication claire et un bouton pour basculer sur la bonne gamme. En mode acoustique, l'app va plus loin et te propose le morceau **transposé dans la tonalité de ton handpan**.
+Des compteurs en tête de liste t'annoncent la couleur avant même que tu cherches. Sur un **D Minor / Kurd 10**, le compte tombe net : **156 morceaux jouables, 41 bloqués**. Les deux mécanismes cohabitent, ils ne s'excluent pas — la transposition automatique (« ✅ Jouable transposé en F ») rend jouable ce qui peut l'être dans une autre tonalité, et la pastille ambre (« 🔒 Il manque C# sur ton pan ») annonce franchement ce qui ne rentre pas.
 
 <figure>
   <img
@@ -52,6 +52,26 @@ Des compteurs en tête de liste t'annoncent la couleur avant même que tu cherch
   <figcaption>La liste, avec les pastilles calculées sur la gamme chargée. En tête, le compte annoncé avant toute recherche : « <strong>Tu peux en accompagner 156</strong> · 41 de plus avec d'autres notes ». Sur les fiches, la nuance est visible — <em>He's a Pirate</em> est jouable tel quel, <em>Let It Be</em> et <em>Hallelujah</em> jouables transposés en F, <em>Zombie</em> en ré mineur.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+Un morceau bloqué s'ouvre quand même. Clique dessus et l'app ne te claque pas la porte au nez : elle nomme les notes qui manquent, te dit que tu peux entrer malgré tout, puis te montre par quoi compléter ton instrument — chiffres à l'appui.
+
+<figure>
+  <img
+    src="/images/app-bibliotheque-morceau-incompatible.webp"
+    width="2000"
+    height="1400"
+    alt="La bibliothèque en thème sombre, avec par-dessus le dialogue ouvert sur un morceau bloqué. Derrière, les fiches montrent les deux familles de pastilles : en vert « ✅ Jouable transposé en F », « ✅ Jouable transposé en G mineur », « ✅ Jouable transposé en D mineur » (Unchained Melody, Uptown Funk, Viva la Vida, Wagon Wheel, Wake Me Up, What's Up, Wicked Game, With or Without You, Wonderful Tonight, You Are My Sunshine) ; en ambre « 🔒 Il manque C# sur ton pan », « 🔒 Il manque C#, B sur ton pan », « 🔒 Il manque B sur ton pan » (California Dreamin', Chan Chan, Creep, Don't Look Back in Anger, Amsterdam, Billie Jean). Au centre, le dialogue intitulé « (Sittin' On) The Dock of the Bay — Otis Redding » : « Il manque C#, B sur ton handpan pour accompagner tout le morceau. Tu peux quand même l'ouvrir et en jouer une partie. » Puis un encadré « 🧩 Complète ton instrument pour l'accompagner » listant quatre handpans complémentaires chiffrés : 🥁 B2 Athena 9 (transposé) — ✓ toutes les notes manquantes · +41 morceaux ; 🥁 C# Raga Desh — ✓ toutes les notes manquantes · +41 morceaux ; 🥁 G Oxalis 11 (transposé) — ✓ toutes les notes manquantes · +40 morceaux ; 🥁 D Voyager 10 (transposé) — ✓ toutes les notes manquantes · +41 morceaux. En dessous, un encadré « ⚡ Ou un Neotone sur-mesure — généré avec exactement les notes manquantes », un grand bouton cyan « 🧭 Compléter mon instrument », et deux boutons secondaires « Voir la grille quand même » et « Annuler »."
+    data-lb="incompatible"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le dialogue d'un morceau bloqué — <em>(Sittin' On) The Dock of the Bay</em> sur un D Kurd 10. L'app nomme les notes absentes (« <strong>Il manque C#, B</strong> »), rappelle que le morceau reste ouvrable, puis chiffre ce qu'un second instrument débloquerait : <strong>+41 morceaux</strong> avec un B2 Athena 9, <strong>+40</strong> avec un G Oxalis 11. Et en bas, le bouton qui compte : « Voir la grille quand même ».</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
+Ni mur, ni simple transposition : une porte. L'app dit ce qui manque, propose un deuxième handpan qui comble exactement le trou — avec le nombre de morceaux gagnés —, propose un Neotone sur-mesure généré avec précisément ces notes-là, et te laisse quand même entrer dans la grille.
+
+En mode acoustique, l'app va plus loin et te propose le morceau **transposé dans la tonalité de ton handpan** quand c'est possible.
 
 ## Ta bibliothèque te suit
 

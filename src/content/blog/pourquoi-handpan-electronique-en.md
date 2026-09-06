@@ -32,7 +32,7 @@ An acoustic handpan is tuned once and for all: one scale, one key. The Neotone c
 
 Over **MIDI**, the Neotone drives any music software. It becomes an expressive controller for composing, layering sounds or playing virtual instruments — all while keeping the natural gesture of the handpan.
 
-![The Neotone used as a MIDI controller in Handpan Constellation Studio](/images/app-midi.webp)
+![The MIDI mapping assistant in Handpan Constellation Studio, « Midi connect » tab: the panel « Clique sur ‘Lancer le Mapping Auto’ » with its two paths — « Lancer le Mapping Auto » and « 🎵 Ma gamme Neotone officielle » —, the Neotone Mutant · Noyer drawn below with its chromatic ring from C to B across three octaves, and on the right the « Mes handpans » panel (MIDI & mapping, Modèle & bois, ⚡⚡ Deux électroniques) then the « Paramètres MIDI » block. Screenshot of the French interface.](/images/app-midi-mapping-2026.webp)
 
 ## Who is the Neotone for?
 
