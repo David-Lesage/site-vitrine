@@ -2,7 +2,7 @@
 title: "Improve Handpan Constellation Studio: the feedback feature"
 description: "Handpan Constellation Studio evolves thanks to you: from inside the app, send a bug, an idea, a question or a thought in one click. Every message is read and shapes what comes next."
 pubDate: 2026-08-23
-cover: "/images/app-logique.webp"
+cover: "/images/app-donner-mon-avis.webp"
 category: "communaute"
 tags: ["community", "feedback"]
 lang: "en"
@@ -22,6 +22,20 @@ Open the help menu in [Handpan Constellation Studio](/en/handpan-app), click **"
 - 💬 **Share a thought** — "general feedback, a feeling".
 
 No endless form, no third-party account: you write your message right there, in the moment, while you play. You can even **attach a screenshot, an audio clip or a short video** to show exactly what you mean.
+
+<figure>
+  <img
+    src="/images/app-donner-mon-avis.webp"
+    width="2000"
+    height="1250"
+    alt="The feedback window open over the dimmed application. Title « Que veux-tu nous dire ? » (what would you like to tell us?), subtitle « Choisis ce qui correspond le mieux. ». Five cards: « 🐞 Signaler un bug », « 💡 Proposer une idée », « ❓ Poser une question », « 💬 Donner un avis », « 🌐 Mauvaise traduction — Un mot sonne faux dans ta langue ». Below, two open consultations: « Propose un nom à l'app » and « Comment nommer les tablatures ? », each inviting you to suggest or vote. A progress bar at the top marks the first step."
+    data-lb="donner-mon-avis"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The feedback window as it opens. Alongside the four entries above sits « <strong>🌐 Mauvaise traduction</strong> » — a word sounds wrong in your language — plus two open consultations at the bottom: the app's <em>final name</em> and what to call the <em>tablatures</em>. You can suggest, or vote. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Why your feedback matters so much
 
