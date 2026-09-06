@@ -29,6 +29,14 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ⏸️ COUPURE RÉSEAU — 06/09/2026 ~15h20 — À FAIRE EN PREMIER À LA REPRISE
+1. **`git push origin master`** : **20 commits locaux non poussés** (DNS `github.com` KO au moment
+   de la coupure). La prod Vercel, elle, EST à jour (déployée avant la coupure).
+2. **Deux fichiers-messages de la session APP non lus**, arrivés à la racine juste avant la coupure :
+   `MESSAGE-SESSION-APP-2026-09-06-captures-livrees.md` et `MESSAGE-SESSION-APP-REPONSE-2026-09-06-soir.md`.
+   Les lire avant tout nouveau travail sur le blog (ils répondent probablement aux manques F3/B4/D1/E2/F6).
+3. Aucun agent n'était en cours dans la session SITE au moment de la coupure : arbre propre, rien d'à moitié écrit.
+
 ## ÉTAT ACTUEL — 06/09/2026 (17ᵉ passe) — ✅ BLOG-IMAGES-TERMINÉ : LE BLOG MONTRE L'APP DE 2026, DÉPLOYÉ
 
 > 🔓 **Le blog et `public/images/` sont LIBRES.** L'agent a fini (11 commits `c75e21e`→`c92bab5`),
