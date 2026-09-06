@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<!--
+  ══════════════════════════════════════════════════════════════════════════════
+  COPIE DE TRAVAIL — dépôt site-vitrine (lesagedavid.fr)
+  ══════════════════════════════════════════════════════════════════════════════
+  Origine : ~/CLAUDE/NEOTONE STUDIO/NEOTONE 1er mai 2026/prototypes/constellation-joueurs-profil.html
+            (également publié sur https://play.handpanstudio.app/prototypes/constellation-joueurs-profil.html)
+  Copié le : 06/09/2026
+
+  ⚠️ CETTE COPIE VA DIVERGER DE L'ORIGINAL — c'est volontaire et c'est le prix payé.
+  Elle est modifiée pour l'article de blog « La carte des joueurs » :
+    · l'étoile de David n'est plus la version fictive anonyme « D., Alsace » :
+      elle porte ses VRAIES données publiques (nom, Paris, prof, liens, instruments) ;
+    · le profil est un BAC À SABLE : pré-rempli avec ses données réelles, entièrement
+      manipulable par le lecteur, et RIEN N'EST ENREGISTRÉ (ni serveur ni localStorage :
+      recharger la page remet le profil de David).
+  Les onze autres joueurs restent entièrement fictifs.
+  Ne pas répercuter ces modifications dans le dépôt APP, et ne pas écraser cette copie
+  par une resynchronisation aveugle depuis l'original.
+  ══════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Constellation des joueurs — le profil public enrichi</title>
+<style>
+/* ══════════════════════════════════════════════════════════════════════════════
+   MAQUETTE AUTONOME — aucune dépendance à l'app, aucun import, aucun réseau.
+   Couleurs et mesures RECOPIÉES de variables.css :
+     --primary-color #1B263B · --secondary-color #415A77 · --highlight-color #22D3EE
+     --text-color #E0E1DD · --gold-color #FFD700 · --gold-gradient
+     tokens de forme : --sp-*, --fs-*, --r-*, --h-control 34px
+   Les logos de handpan reprennent EXACTEMENT la palette de library/handpan-logo.ts
+   (acoustique cuivré #E0A860, électronique bleu #5FB6F5, couronne de points = bottom notes).
+   AUCUNE VRAIE DONNÉE UTILISATEUR : tous les profils affichés sont fictifs.
+   ══════════════════════════════════════════════════════════════════════════════ */
+:root{
+  --bg-color:#0D1B2A; --primary-color:#1B263B; --secondary-color:#415A77;
+  --highlight-color:#22D3EE; --text-color:#E0E1DD; --gold-color:#FFD700;
+  --gold-gradient:linear-gradient(45deg,#BF953F,#FCF6BA,#B38728,#FBF5B7,#AA771C);
+  --font-family:'Poppins','Avenir Next','Segoe UI',system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  --line:rgba(224,225,221,.12);
+  --copper:#E0A860; --electric:#5FB6F5; --bad:#F87171; --good:#4ADE80;
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;
+  --fs-title:1.05rem;--fs-section:.92rem;--fs-body:.85rem;--fs-label:.78rem;--fs-micro:.70rem;
+  --r-sm:8px;--r-md:12px;--r-pill:999px;--h-control:34px;
+  --surface-bg:rgba(255,255,255,.04); --surface-border:rgba(255,255,255,.10);
+}
+*{box-sizing:border-box}
+html{font-size:16px}
+body{
+  margin:0;font-family:var(--font-family);color:var(--text-color);line-height:1.55;
+  background:
+    radial-gradient(1100px 640px at 12% -14%,rgba(34,211,238,.10),transparent 60%),
+    radial-gradient(900px 560px at 100% 0,rgba(255,215,0,.06),transparent 55%),
+    var(--bg-color);
+  min-height:100vh;-webkit-font-smoothing:antialiased;
+}
+/* le ciel : mêmes étoiles que la carte, pour que les deux écrans soient le même monde */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.55;
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 22%,rgba(255,255,255,.55),transparent),
+    radial-gradient(1.1px 1.1px at 68% 12%,rgba(255,255,255,.45),transparent),
+    radial-gradient(1.6px 1.6px at 84% 62%,rgba(255,255,255,.40),transparent),
+    radial-gradient(1.1px 1.1px at 32% 78%,rgba(255,255,255,.42),transparent),
+    radial-gradient(1.3px 1.3px at 52% 46%,rgba(255,255,255,.35),transparent),
+    radial-gradient(1.0px 1.0px at 92% 28%,rgba(255,255,255,.38),transparent),
+    radial-gradient(1.2px 1.2px at 6% 58%,rgba(255,255,255,.35),transparent);
+}
+.wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:26px 20px 90px}
+
+/* ── en-tête ───────────────────────────────────────────────────────────────── */
+.eyebrow{font-size:var(--fs-micro);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--highlight-color);opacity:.85;margin:0 0 6px}
+h1{font-size:clamp(1.4rem,3vw,2.05rem);font-weight:700;margin:0 0 12px;line-height:1.15}
+h1 em{font-style:normal;background:var(--gold-gradient);-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.lede{margin:0;padding:13px 16px;border-radius:var(--r-md);max-width:88ch;font-size:var(--fs-body);
+  border:1px solid rgba(255,215,0,.3);background:rgba(255,215,0,.06)}
+.lede p{margin:0 0 5px}.lede p:last-child{margin:0}
+.lede b{color:var(--gold-color)}
+.bac-a-sable{margin:0 0 var(--sp-4);padding:12px 14px;border-radius:var(--r-sm);
+  border:1px solid rgba(34,211,238,.42);background:rgba(34,211,238,.07);
+  font-size:var(--fs-body);line-height:1.55}
+.bac-a-sable p{margin:0}
+.sandbox-msg{flex:1 1 100%;font-size:var(--fs-micro);line-height:1.5;
+  color:var(--highlight-color);opacity:.95;margin-top:6px}
+.bac-a-sable b{color:var(--highlight-color)}
+.dirnav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}
+.dirnav a{font-size:var(--fs-label);font-weight:600;text-decoration:none;color:var(--text-color);
+  opacity:.55;padding:6px 13px;border-radius:var(--r-pill);border:1px solid var(--line)}
+.dirnav a.here{opacity:1;border-color:var(--gold-color);background:rgba(255,215,0,.1)}
+.dirnav a:hover{opacity:1}
+
+/* ── scène : la modale + l'aperçu ──────────────────────────────────────────── */
+.stage{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:var(--sp-5);
+  margin-top:var(--sp-5);align-items:start}
+@media (max-width:960px){.stage{grid-template-columns:1fr}}
+
+.card{background:linear-gradient(180deg,rgba(27,38,59,.96),rgba(13,27,42,.96));
+  border:1px solid var(--line);border-radius:18px;padding:var(--sp-5);
+  box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.kicker{display:inline-block;font-size:var(--fs-micro);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--highlight-color);opacity:.9;margin:0 0 6px}
+.card h2{font-size:1.25rem;margin:0 0 6px;font-weight:700}
+.sub{font-size:var(--fs-body);opacity:.78;margin:0 0 var(--sp-4)}
+.sign{font-size:var(--fs-label);opacity:.6;font-style:italic;margin:var(--sp-2) 0 0}
+
+/* ── l'interrupteur maître ─────────────────────────────────────────────────── */
+.master{display:flex;gap:var(--sp-3);align-items:flex-start;padding:var(--sp-4);
+  border-radius:var(--r-md);border:1px solid rgba(255,215,0,.35);background:rgba(255,215,0,.05);
+  margin:0 0 var(--sp-4)}
+.master .txt{flex:1 1 auto;min-width:0}
+.master strong{display:block;font-size:var(--fs-section);margin-bottom:2px}
+.master p{margin:0;font-size:var(--fs-label);opacity:.72}
+.master.on{border-color:rgba(34,211,238,.5);background:rgba(34,211,238,.07)}
+.state{font-size:var(--fs-micro);letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  padding:3px 9px;border-radius:var(--r-pill);border:1px solid var(--line);opacity:.8;white-space:nowrap}
+.state.off{color:#9AA6B4}
+.state.on{color:#0D1B2A;background:var(--highlight-color);border-color:transparent;opacity:1}
+
+/* interrupteur */
+.sw{position:relative;flex:0 0 auto;width:52px;height:30px;border-radius:var(--r-pill);
+  border:1px solid var(--line);background:rgba(13,27,42,.9);cursor:pointer;padding:0;transition:.18s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;
+  background:#8C99A8;transition:.18s}
+.sw[aria-checked="true"]{background:var(--highlight-color);border-color:transparent}
+.sw[aria-checked="true"]::after{left:25px;background:#0D1B2A}
+.sw:focus-visible{outline:2px solid var(--gold-color);outline-offset:2px}
+
+/* ── zone verrouillée tant que l'interrupteur est OFF ──────────────────────── */
+.gated{position:relative;transition:opacity .2s}
+.gated[data-locked="1"]{opacity:.34;filter:saturate(.5)}
+.gated[data-locked="1"]::after{content:"";position:absolute;inset:-6px;border-radius:var(--r-md);
+  cursor:not-allowed}
+.lockmsg{display:none;align-items:center;gap:8px;font-size:var(--fs-label);opacity:.8;
+  padding:10px 13px;border-radius:var(--r-sm);border:1px dashed var(--line);margin:0 0 var(--sp-4)}
+.gated[data-locked="1"] ~ .lockmsg{display:flex}
+
+/* ── sections & champs ─────────────────────────────────────────────────────── */
+fieldset{border:0;margin:0 0 var(--sp-5);padding:0}
+legend{font-size:var(--fs-section);font-weight:700;padding:0;margin:0 0 var(--sp-1);
+  display:flex;align-items:center;gap:8px}
+.legend-note{font-size:var(--fs-label);opacity:.65;margin:0 0 var(--sp-3)}
+.row{display:flex;gap:var(--sp-3);flex-wrap:wrap}
+.row>*{flex:1 1 190px;min-width:0}
+label.field{display:block;margin:0 0 var(--sp-3)}
+label.field>span{display:block;font-size:var(--fs-label);opacity:.75;margin:0 0 5px}
+label.field .req{color:var(--gold-color);font-weight:700}
+input[type=text],select{width:100%;height:var(--h-control);border-radius:var(--r-sm);
+  border:1px solid var(--surface-border);background:rgba(13,27,42,.75);color:var(--text-color);
+  font:inherit;font-size:var(--fs-body);padding:0 11px}
+input[type=text]:focus,select:focus{outline:none;border-color:var(--highlight-color);
+  box-shadow:0 0 0 3px rgba(34,211,238,.15)}
+input::placeholder{color:rgba(224,225,221,.35)}
+.hint{font-size:var(--fs-micro);opacity:.55;margin:4px 0 0}
+
+/* cases à cocher « rôle » */
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3)}
+@media (max-width:560px){.roles{grid-template-columns:1fr}}
+.role{display:flex;gap:10px;align-items:flex-start;padding:var(--sp-3);border-radius:var(--r-md);
+  border:1px solid var(--surface-border);background:var(--surface-bg);cursor:pointer;transition:.15s}
+.role:hover{border-color:rgba(224,225,221,.25)}
+.role input{margin-top:3px;width:16px;height:16px;accent-color:var(--gold-color);flex:0 0 auto}
+.role .rt{font-size:var(--fs-body);font-weight:600}
+.role .rd{font-size:var(--fs-micro);opacity:.62;display:block;margin-top:2px}
+.role.teach.checked{border-color:rgba(255,215,0,.55);background:rgba(255,215,0,.07)}
+.role.maker.checked{border-color:rgba(224,168,96,.55);background:rgba(224,168,96,.07)}
+.sub-field{margin:var(--sp-2) 0 0;padding:var(--sp-3);border-left:2px solid rgba(255,215,0,.35);
+  background:rgba(255,215,0,.04);border-radius:0 var(--r-sm) var(--r-sm) 0}
+.sub-field[hidden]{display:none}
+
+/* réseaux */
+.social label.field>span{display:flex;align-items:center;gap:7px}
+.ico{width:16px;height:16px;flex:0 0 auto;display:inline-block;vertical-align:-3px}
+
+/* instruments */
+.instr-optin{display:flex;gap:10px;align-items:flex-start;padding:var(--sp-3);border-radius:var(--r-md);
+  border:1px solid var(--surface-border);background:var(--surface-bg);cursor:pointer;margin:0 0 var(--sp-3)}
+.instr-optin input{margin-top:3px;width:16px;height:16px;accent-color:var(--highlight-color)}
+.instr-optin.checked{border-color:rgba(34,211,238,.45);background:rgba(34,211,238,.06)}
+.instr-list{display:flex;flex-direction:column;gap:var(--sp-2)}
+.instr{display:flex;gap:10px;align-items:center;padding:9px 11px;border-radius:var(--r-sm);
+  border:1px solid var(--line);background:rgba(13,27,42,.55)}
+.instr .il{flex:1 1 auto;min-width:0}
+.instr .n{font-size:var(--fs-body);font-weight:600}
+.instr .m{font-size:var(--fs-micro);opacity:.6}
+.instr svg{flex:0 0 auto}
+.tag{font-size:var(--fs-micro);padding:2px 8px;border-radius:var(--r-pill);border:1px solid var(--line);
+  opacity:.85;white-space:nowrap}
+.tag.ac{color:var(--copper);border-color:rgba(224,168,96,.4)}
+.tag.el{color:var(--electric);border-color:rgba(95,182,245,.4)}
+
+/* ── barre de fin ──────────────────────────────────────────────────────────── */
+.foot-actions{display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:center;
+  padding-top:var(--sp-4);border-top:1px solid var(--line)}
+.btn{appearance:none;font:inherit;font-size:var(--fs-body);font-weight:700;border-radius:var(--r-pill);
+  height:var(--h-control);padding:0 18px;cursor:pointer;border:1px solid var(--line);
+  background:transparent;color:var(--text-color);transition:.15s;text-decoration:none;
+  display:inline-flex;align-items:center;gap:7px}
+.btn:hover{border-color:rgba(224,225,221,.35)}
+.btn.primary{background:var(--highlight-color);color:var(--primary-color);border-color:transparent}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.map{background:var(--gold-gradient);color:#2A1C00;border-color:transparent;
+  box-shadow:0 6px 20px rgba(255,215,0,.18)}
+.btn.map:hover{filter:brightness(1.06)}
+.btn[disabled],.btn[aria-disabled="true"]{opacity:.4;cursor:not-allowed;filter:none}
+
+/* ── colonne aperçu ────────────────────────────────────────────────────────── */
+.side{display:flex;flex-direction:column;gap:var(--sp-4);position:sticky;top:20px}
+@media (max-width:960px){.side{position:static}}
+.side h3{font-size:var(--fs-section);margin:0 0 var(--sp-1);font-weight:700}
+.side .why{font-size:var(--fs-label);opacity:.68;margin:0 0 var(--sp-3)}
+
+/* la FICHE — composant partagé mot pour mot avec la carte */
+.fiche{border-radius:var(--r-md);padding:var(--sp-4);
+  border:1px solid rgba(34,211,238,.30);background:rgba(13,27,42,.85)}
+.fiche.teach{border-color:rgba(255,215,0,.45)}
+.fiche.maker{border-color:rgba(224,168,96,.45)}
+.fiche-head{display:flex;gap:var(--sp-3);align-items:center;margin:0 0 var(--sp-3)}
+.avatar{flex:0 0 auto;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  font-size:1.1rem;background:radial-gradient(circle at 34% 30%,rgba(34,211,238,.55),rgba(13,27,42,.9));
+  border:1px solid rgba(34,211,238,.5)}
+.fiche.teach .avatar{background:radial-gradient(circle at 34% 30%,rgba(255,215,0,.5),rgba(13,27,42,.9));
+  border-color:rgba(255,215,0,.55)}
+.fiche.maker .avatar{background:radial-gradient(circle at 34% 30%,rgba(224,168,96,.5),rgba(13,27,42,.9));
+  border-color:rgba(224,168,96,.55)}
+.fiche .who{font-size:1.02rem;font-weight:700;line-height:1.2}
+.fiche .where{font-size:var(--fs-label);opacity:.7}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 var(--sp-3)}
+.badge{font-size:var(--fs-micro);font-weight:700;padding:3px 9px;border-radius:var(--r-pill)}
+.badge.t{color:#2A1C00;background:var(--gold-color)}
+.badge.m{color:#2A1C00;background:var(--copper)}
+.fiche section{margin:0 0 var(--sp-3)}
+.fiche section:last-child{margin:0}
+.fiche h4{font-size:var(--fs-micro);letter-spacing:.12em;text-transform:uppercase;opacity:.55;
+  margin:0 0 6px;font-weight:700}
+.links{display:flex;gap:7px;flex-wrap:wrap}
+.link{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-label);text-decoration:none;
+  color:var(--text-color);padding:5px 11px;border-radius:var(--r-pill);border:1px solid var(--line)}
+.link:hover{border-color:rgba(224,225,221,.35)}
+.empty{font-size:var(--fs-label);opacity:.5;font-style:italic}
+
+/* ce que personne ne voit */
+.never{border-radius:var(--r-md);padding:var(--sp-4);border:1px solid rgba(74,222,128,.28);
+  background:rgba(74,222,128,.05)}
+.never h3{color:var(--good)}
+.never ul{margin:0;padding-left:1.1rem;font-size:var(--fs-label);opacity:.82}
+.never li{margin:0 0 4px}
+
+/* ── pied « ce que ça demande à l'app » ────────────────────────────────────── */
+.tech{margin-top:var(--sp-6);padding:var(--sp-5);border-radius:18px;
+  border:1px solid var(--line);background:rgba(27,38,59,.55)}
+.tech h2{font-size:var(--fs-title);margin:0 0 var(--sp-3)}
+.tech h3{font-size:var(--fs-section);margin:var(--sp-4) 0 var(--sp-2);color:var(--highlight-color)}
+.tech p,.tech li{font-size:var(--fs-body);opacity:.85}
+.tech ul{margin:0;padding-left:1.15rem}
+.tech li{margin:0 0 5px}
+.tech code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8em;
+  background:rgba(13,27,42,.8);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+.q{border-left:3px solid var(--gold-color);padding:var(--sp-3) var(--sp-4);margin:var(--sp-3) 0 0;
+  background:rgba(255,215,0,.05);border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:var(--fs-body)}
+.q b{color:var(--gold-color)}
+.tech table{width:100%;border-collapse:collapse;font-size:var(--fs-label);margin:var(--sp-2) 0 0}
+.tech th,.tech td{text-align:left;padding:6px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+.tech th{opacity:.6;font-weight:700;font-size:var(--fs-micro);letter-spacing:.08em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">Maquette · profil public</p>
+  <h1>Ta place dans la <em>constellation des joueurs</em></h1>
+
+  <div class="bac-a-sable">
+    <p><b>🧪 Bac à sable — rien n'est enregistré.</b> Cet écran est pré-rempli avec le
+    <b>vrai profil public de David Lesage</b>. Tu peux tout changer — éteindre l'interrupteur,
+    décocher les instruments, réécrire le nom : l'aperçu de droite suit en direct, et c'est
+    exactement ce que verraient les autres. <b>Aucune donnée n'est envoyée ni conservée</b> :
+    recharge la page et le profil de David revient.</p>
+    <p style="margin:6px 0 0">Sur la carte, les onze autres joueurs sont des <b>exemples
+    inventés</b> — sauf David, qui est réel.</p>
+  </div>
+
+  <div class="lede">
+    <p><b>Parti pris 1 — rien n'est public tant que tu ne l'as pas allumé.</b> Un seul interrupteur
+    maître, <b>OFF par défaut</b> : tant qu'il est éteint, tout le reste est grisé et rien ne part
+    nulle part. Aucun champ n'est pré-coché, aucun n'est deviné depuis le compte.</p>
+    <p><b>Parti pris 2 — jamais plus précis qu'une ville.</b> Le pays est le seul champ obligatoire
+    pour apparaître ; la ville reste facultative. Pas d'adresse, pas de géolocalisation du
+    navigateur, pas de coordonnées exactes : une ville = un point de ville, pour tout le monde
+    pareil.</p>
+    <p><b>Parti pris 3 — tu vois ta fiche telle que les autres la verront.</b> L'aperçu de droite
+    n'est pas un résumé : c'est le <b>même composant</b> que la fiche qui s'ouvre au clic sur la
+    carte, mis à jour en direct à chaque case cochée.</p>
+  </div>
+
+  <nav class="dirnav">
+    <a class="here" href="constellation-joueurs-profil.html">① Le profil public</a>
+    <a href="constellation-joueurs-carte.html">② La carte du monde →</a>
+    <a href="index.html">Galerie des maquettes</a>
+  </nav>
+
+  <div class="stage">
+
+    <!-- ═══ LA MODALE « MON PROFIL PUBLIC » ═══ -->
+    <div class="card" role="dialog" aria-modal="true" aria-label="Mon profil public">
+      <span class="kicker">🌍 Mon profil public</span>
+      <h2>Allumer ton étoile</h2>
+      <p class="sub">
+        L'idée est simple : que celles et ceux qui utilisent l'app puissent savoir qui d'autre
+        l'utilise. Trouver un prof près de chez toi. Croiser quelqu'un qui joue à trois rues et
+        ne le savait pas. Le handpan est un petit monde très éparpillé — autant qu'il se voie.
+        <br>Tu choisis ce que tu montres, ligne par ligne, et tu peux tout éteindre d'un geste.
+      </p>
+
+      <!-- interrupteur maître -->
+      <div class="master" id="master">
+        <button class="sw" id="sw-master" role="switch" aria-checked="true"
+                aria-label="Apparaître sur la carte de la constellation"></button>
+        <div class="txt">
+          <strong>Apparaître sur la carte</strong>
+          <p id="master-desc">Éteint. Tu utilises l'app normalement, personne ne te voit.</p>
+        </div>
+        <span class="state off" id="master-state">Éteint</span>
+      </div>
+
+      <div class="gated" id="gated" data-locked="1">
+
+        <!-- ── OÙ ─────────────────────────────────────────────── -->
+        <fieldset>
+          <legend>📍 Où tu es</legend>
+          <p class="legend-note">
+            Le pays est le seul champ obligatoire pour apparaître — c'est lui qui pose ton étoile.
+            La ville affine, et reste facultative.
+          </p>
+          <label class="field">
+            <span>Ton nom d'affichage</span>
+            <input type="text" id="f-pseudo" value="David Lesage Artiste" placeholder="Prénom, initiale, pseudo… comme tu veux">
+            <p class="hint">Ce que les autres liront. Ton nom complet n'est jamais publié automatiquement.</p>
+          </label>
+          <div class="row">
+            <label class="field">
+              <span>Pays <span class="req">*</span></span>
+              <select id="f-pays">
+                <option value="">— Choisir —</option>
+                <option>Allemagne</option><option>Belgique</option><option>Brésil</option>
+                <option>Canada</option><option>Espagne</option>
+                <option selected>France</option>
+                <option>Italie</option><option>Japon</option><option>Maroc</option>
+                <option>Nouvelle-Zélande</option><option>Portugal</option>
+                <option>Royaume-Uni</option><option>Suède</option><option>Suisse</option>
+                <option>Turquie</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Ville ou région <span style="opacity:.6">(facultatif)</span></span>
+              <input type="text" id="f-ville" value="Paris" placeholder="Ex. Strasbourg, ou juste « Alsace »">
+              <p class="hint">Tu peux rester large : une région suffit si tu ne veux pas dire ta ville.</p>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- ── CE QUE TU FAIS ─────────────────────────────────── -->
+        <fieldset>
+          <legend>🤝 Ce que tu fais</legend>
+          <p class="legend-note">
+            Ça n'ajoute rien à ton compte et ça ne te crée aucune obligation — ça permet juste
+            à quelqu'un qui cherche un prof, ou un instrument, de te trouver.
+          </p>
+          <div class="roles">
+            <label class="role teach" id="role-teach">
+              <input type="checkbox" id="f-teach" checked>
+              <span>
+                <span class="rt">🎓 Je donne des cours</span>
+                <span class="rd">Ton étoile prend un halo doré. Tu apparais dans le filtre « Profs ».</span>
+              </span>
+            </label>
+            <label class="role maker" id="role-maker">
+              <input type="checkbox" id="f-maker">
+              <span>
+                <span class="rt">🔨 Je fabrique des instruments</span>
+                <span class="rd">Halo cuivré. Tu apparais dans le filtre « Fabricants ».</span>
+              </span>
+            </label>
+          </div>
+          <div class="sub-field" id="sub-teach" hidden>
+            <label class="field" style="margin:0">
+              <span>Une ligne pour dire comment tu enseignes <span style="opacity:.6">(facultatif)</span></span>
+              <input type="text" id="f-teachnote" value="présentiel et en visio - handpan acoustique et Electronique ainsi que d'autres instruments (harpe africaine Ngoni, calebasse, chant etc...)" placeholder="Ex. cours en présentiel et en visio, débutants bienvenus">
+              <p class="hint">Court. C'est une carte, pas une petite annonce.</p>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- ── OÙ T'ÉCOUTER ───────────────────────────────────── -->
+        <fieldset class="social">
+          <legend>🎧 Où on peut t'écouter</legend>
+          <p class="legend-note">
+            Tout est facultatif. Ce qui est vide n'apparaît pas — pas de champ orphelin sur ta fiche.
+          </p>
+          <div class="row">
+            <label class="field">
+              <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#1DB954"/><path d="M7 15.2c2.7-.8 5.6-.6 8 .8M6.8 12.2c3.3-1 6.9-.7 9.7 1M6.6 9.1c3.9-1.1 8.1-.7 11.3 1.3" stroke="#0D1B2A" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg> Spotify</span>
+              <input type="text" id="f-spotify" value="https://open.spotify.com/artist/7zEAQJbalBFj8XNHrcqdbK" placeholder="Lien vers ton profil ou ta playlist">
+            </label>
+            <label class="field">
+              <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0000"/><path d="M10 8.8l6 3.2-6 3.2z" fill="#fff"/></svg> YouTube</span>
+              <input type="text" id="f-youtube" value="https://www.youtube.com/@DavidLesageArtiste" placeholder="Lien vers ta chaîne">
+            </label>
+          </div>
+          <div class="row">
+            <label class="field">
+              <span>Instagram <span style="opacity:.55">(déjà dans l'app)</span></span>
+              <!-- Instagram laissé VIDE : le lien était tronqué (« david.lesage. ») dans la capture du
+                   profil réel et n'existe nulle part dans le dépôt du site. Un champ vide est honnête ;
+                   une URL inventée mènerait à un compte inexistant. -->
+              <input type="text" id="f-insta" placeholder="@ton_compte">
+            </label>
+            <label class="field">
+              <span>Site web <span style="opacity:.55">(déjà dans l'app)</span></span>
+              <input type="text" id="f-site" value="https://lesagedavid.fr/" placeholder="https://…">
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- ── TES INSTRUMENTS ────────────────────────────────── -->
+        <fieldset>
+          <legend>🪘 Tes instruments</legend>
+          <p class="legend-note">
+            Ce que ça sert : quelqu'un qui cherche « qui joue en D Kurd près de Lyon » te trouve.
+            C'est aussi comme ça qu'on voit, sur la carte, quelles gammes circulent dans quels pays.
+          </p>
+          <label class="instr-optin" id="optin-instr">
+            <input type="checkbox" id="f-instr" checked>
+            <span>
+              <span class="rt" style="font-size:var(--fs-body);font-weight:600">
+                Partager publiquement mes instruments</span>
+              <span class="rd" style="font-size:var(--fs-micro);opacity:.62;display:block;margin-top:2px">
+                Uniquement la gamme, la famille (acoustique / électronique) et le modèle.
+                Jamais tes réglages, tes morceaux, ni tes enregistrements.</span>
+            </span>
+          </label>
+
+          <p class="legend-note" style="margin-top:var(--sp-3)">
+            Voici exactement les trois informations qui seraient publiées, pour chacun des
+            handpans enregistrés dans ta bibliothèque :
+          </p>
+          <div class="instr-list" id="instr-preview"></div>
+        </fieldset>
+
+      </div><!-- /gated -->
+
+      <p class="lockmsg">🔒 Allume « Apparaître sur la carte » pour renseigner ces champs.</p>
+
+      <div class="foot-actions">
+        <button class="btn primary" type="button" id="btn-save">Enregistrer</button>
+        <button class="btn" type="button" id="btn-close">Fermer</button>
+        <button class="btn" type="button" id="btn-wipe">🗑 Tout retirer</button>
+        <span class="sandbox-msg" id="sandbox-msg" hidden></span>
+        <span style="flex:1 1 auto"></span>
+        <a class="btn map" href="constellation-joueurs-carte.html">
+          ✨ Voir la carte de la constellation des joueurs</a>
+      </div>
+      <p class="sign">Merci de faire vivre ce petit monde. — David</p>
+    </div>
+
+    <!-- ═══ COLONNE APERÇU ═══ -->
+    <div class="side">
+
+      <div class="card" style="padding:var(--sp-4)">
+        <h3>👁 Voici exactement ce que les autres verront</h3>
+        <p class="why">
+          Cet encart est le composant de fiche de la carte, sans un pixel de différence.
+          Il se met à jour à chaque case cochée.
+        </p>
+        <div id="fiche-host"></div>
+      </div>
+
+      <div class="never">
+        <h3>🔒 Ce que personne ne voit, jamais</h3>
+        <ul>
+          <li>Ton adresse e-mail et ton nom de compte</li>
+          <li>Ton adresse postale — elle n'est même pas demandée</li>
+          <li>Ta position exacte : aucune géolocalisation du navigateur n'est appelée</li>
+          <li>Tes morceaux, tes arrangements, tes enregistrements, tes réglages</li>
+          <li>Ton abonnement, ta date d'inscription, ton activité dans l'app</li>
+          <li>Les cases que tu n'as pas cochées — un champ vide n'apparaît pas sur ta fiche</li>
+        </ul>
+      </div>
+
+      <div class="card" style="padding:var(--sp-4)">
+        <h3>↩︎ Et si tu changes d'avis</h3>
+        <p class="why" style="margin:0">
+          Un seul geste : tu éteins l'interrupteur maître, ton étoile disparaît de la carte.
+          Rien à supprimer champ par champ, rien à demander à personne. Les données restent
+          dans ton profil, simplement plus personne ne les voit.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ PIED : CE QUE ÇA DEMANDE À L'APP ═══ -->
+  <div class="tech">
+    <h2>🔧 Ce que ça demande à l'app</h2>
+
+    <h3>1 · Les données — <code>user_preferences</code> ou table dédiée ?</h3>
+    <p>
+      Les champs sociaux existants (<code>social_instagram</code>, <code>website</code>) vivent
+      déjà dans <code>public.user_preferences</code>, écrits par
+      <code>onboarding/instrument-finder.ts</code> (<code>openPublicProfilePanel()</code>).
+      La suite naturelle serait d'y ajouter les colonnes :
+    </p>
+    <table>
+      <thead><tr><th>Colonne</th><th>Type</th><th>Rôle</th></tr></thead>
+      <tbody>
+        <tr><td><code>map_opt_in</code></td><td>boolean, défaut <code>false</code></td><td>l'interrupteur maître — <b>la seule condition d'apparition</b></td></tr>
+        <tr><td><code>public_name</code></td><td>text</td><td>nom d'affichage, jamais dérivé du compte</td></tr>
+        <tr><td><code>country</code></td><td>text</td><td><b>existe déjà</b> (migration <code>0060</code>, question marché) — à ne pas dupliquer</td></tr>
+        <tr><td><code>city</code></td><td>text, nullable</td><td>granularité maximale ; jamais de rue, jamais de coordonnées saisies</td></tr>
+        <tr><td><code>is_teacher</code> / <code>is_maker</code></td><td>boolean</td><td>halo doré / cuivré + filtres de la carte</td></tr>
+        <tr><td><code>teacher_note</code></td><td>text, nullable</td><td>une ligne, longueur bornée côté base</td></tr>
+        <tr><td><code>social_spotify</code> / <code>social_youtube</code></td><td>text</td><td>alignées sur les deux colonnes sociales existantes</td></tr>
+        <tr><td><code>share_instruments</code></td><td>boolean, défaut <code>false</code></td><td>opt-in séparé : cocher la carte ne partage pas les instruments</td></tr>
+        <tr><td><code>map_opt_in_at</code></td><td>timestamptz</td><td>trace du consentement (RGPD) — quand, pas seulement si</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:var(--sp-3)">
+      ⚠️ <b>Un point tranche l'affaire</b> : <code>user_preferences</code> est aujourd'hui
+      <b>lisible par son seul propriétaire</b> (<code>prefs_select_own</code>, migration
+      <code>0003</code>). Une carte a besoin que <em>tout le monde</em> lise les lignes des gens
+      qui ont dit oui. Deux voies :
+    </p>
+    <ul>
+      <li><b>Vue publique</b> — <code>create view public.players_map as select … from user_preferences where map_opt_in</code>,
+        avec une policy de lecture pour <code>authenticated</code> sur les colonnes retenues
+        <em>seulement</em>. Le moins de code, mais on ouvre une porte sur la table la plus
+        sensible de l'app : le filtre de colonnes devient un point de vigilance permanent.</li>
+      <li><b>Table dédiée</b> — <code>public.player_profiles</code>, alimentée à l'enregistrement,
+        RLS « lecture par tous les connectés, écriture par le propriétaire ». Le profil public
+        devient un objet à part entière, physiquement séparé des préférences privées. Plus de
+        code, mais l'erreur de colonne devient impossible.</li>
+    </ul>
+    <p>Les coordonnées lat/lon ne sont <b>jamais saisies par l'utilisateur</b> : elles sont
+      dérivées à l'affichage d'une table de villes, ou du centroïde du pays si la ville est vide.
+      Ça garantit qu'une étoile ne peut pas être plus précise qu'une ville, même si quelqu'un
+      le voulait.</p>
+
+    <h3>2 · La modération — la question posée, pas tranchée</h3>
+    <div class="q">
+      <p style="margin:0 0 6px"><b>Que fait-on d'un profil abusif ?</b> Trois champs sont
+      librement écrits par l'utilisateur et publiés à tous : le nom d'affichage, la ville, et la
+      ligne « comment j'enseigne ». Un lien Spotify ou YouTube peut pointer n'importe où.</p>
+      <p style="margin:0">Les options ne s'excluent pas, et aucune n'est choisie ici :
+      <b>(a)</b> modération <em>a priori</em> — une étoile n'apparaît qu'après validation par
+      David, sûr mais ça met un humain dans la boucle à chaque inscription ;
+      <b>(b)</b> modération <em>a posteriori</em> — publication immédiate + bouton « signaler »
+      sur chaque fiche, avec une file dans la console admin ;
+      <b>(c)</b> <em>réservé aux comptes payants ou vérifiés</em> — la barrière économique fait
+      le tri, mais elle exclut les élèves gratuits d'un maillage qui les concerne ;
+      <b>(d)</b> <em>rien pour l'instant</em>, assumé tant que la communauté tient dans une
+      salle — avec un plan écrit d'avance pour le jour où ça ne tient plus.</p>
+    </div>
+    <p style="margin-top:var(--sp-3)">Quelle que soit l'option : il faut au minimum
+      <b>un moyen de retirer une étoile côté admin</b> (un booléen <code>map_hidden</code> que
+      l'utilisateur ne contrôle pas), et une longueur maximale en base sur les trois champs
+      libres. Ces deux-là sont indépendants du choix.</p>
+
+    <h3>3 · Le lien avec l'existant</h3>
+    <ul>
+      <li><code>auth/account-menu.ts</code> — l'entrée « 🌍 Mon profil public » existe déjà et
+        ouvre <code>openPublicProfilePanel()</code> : c'est ce panneau qui s'enrichit, pas un
+        nouvel écran.</li>
+      <li><code>onboarding/instrument-finder.ts</code> — <code>socialFields()</code> gagne deux
+        champs ; la copie FR/EN est déjà structurée (<code>ppTitle</code>, <code>ppSub</code>…),
+        donc tout nouveau texte passe par <code>translations.ts</code> (règle i18n, 7 langues).</li>
+      <li><code>library/my-handpans.ts</code> — la liste des instruments partagés se lit dans
+        <code>user_preferences.handpans</code> ; on n'en publie que trois champs.</li>
+      <li><code>library/handpan-logo.ts</code> — les logos à points de l'aperçu sont ceux de
+        l'app (cuivré = acoustique, couronne = bottom notes, bleu + halo = électronique).</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════════════════
+   LOGOS HANDPAN — recopie fidèle de library/handpan-logo.ts (palette + géométrie).
+   ══════════════════════════════════════════════════════════════════════════════ */
+const ACOUSTIC={shellFrom:'#4A3520',shellTo:'#241608',dotFrom:'#FFE1B0',dotTo:'#C9812F',ring:'#E0A860'};
+const ELECTRONIC={shellFrom:'#1E3050',shellTo:'#0C1830',dotFrom:'#BFE6FF',dotTo:'#2E7BD6',ring:'#5FB6F5'};
+const NOTE_DOTS=[[24,10.5],[34.6,15.6],[37.2,27],[29.9,36.2],[18.1,36.2],[10.8,27],[13.4,15.6]];
+let uid=0;
+function handpanLogo(family,bottomNotes,size){
+  const u='hpl'+(++uid).toString(36);
+  const ac=family==='acoustic', c=ac?ACOUSTIC:ELECTRONIC, dot='url(#'+u+'-dot)';
+  const dots=NOTE_DOTS.map(p=>'<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3.1" fill="'+dot+'"/>').join('');
+  const halo=ac?'':'<circle cx="24" cy="24" r="21.4" fill="none" stroke="'+c.ring+'" stroke-width="1" opacity=".45"/>';
+  let crown='';
+  if(ac&&bottomNotes){for(let i=0;i<9;i++){const a=(-90+40*i+20)*Math.PI/180;
+    crown+='<circle cx="'+(24+21.9*Math.cos(a)).toFixed(2)+'" cy="'+(24+21.9*Math.sin(a)).toFixed(2)+'" r="1.85" fill="'+dot+'"/>';}}
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="'+size+'" height="'+size+'" aria-hidden="true">'
+    +'<defs><radialGradient id="'+u+'-shell" cx="36%" cy="26%" r="78%">'
+    +'<stop offset="0" stop-color="'+c.shellFrom+'"/><stop offset="1" stop-color="'+c.shellTo+'"/></radialGradient>'
+    +'<linearGradient id="'+u+'-dot" x1="0" y1="0" x2="0" y2="1">'
+    +'<stop offset="0" stop-color="'+c.dotFrom+'"/><stop offset="1" stop-color="'+c.dotTo+'"/></linearGradient></defs>'
+    +halo+crown
+    +'<circle cx="24" cy="24" r="18.6" fill="url(#'+u+'-shell)" stroke="'+c.ring+'" stroke-width="1.4"/>'
+    +'<circle cx="24" cy="24" r="5.6" fill="url(#'+u+'-dot)"/>'
+    +'<circle cx="24" cy="24" r="5.6" fill="none" stroke="'+c.ring+'" stroke-width=".8" opacity=".8"/>'
+    +dots+'</svg>';
+}
+
+/* ── LES INSTRUMENTS RÉELS de David, tels qu'affichés dans sa bibliothèque ──── */
+const MES_INSTRUMENTS=[
+  {famille:'acoustic',  bottom:true, gamme:'E 18 — David Lesage Signature',      modele:'E · 18 notes · dessous'},
+  {famille:'acoustic',  bottom:true, gamme:'D Kurd 18 — David Lesage Signature', modele:'D · 18 notes · dessous'},
+  {famille:'electronic',bottom:false,gamme:'Neotone¹ · Hêtre',                   modele:'Neotone¹ · 10 creux · Hêtre · 440 Hz'},
+  {famille:'electronic',bottom:false,gamme:'Neotone Mutant · Noyer',             modele:'Neotone Mutant · 19 creux · Noyer · 440 Hz'}
+];
+
+const SPOTIFY_ICO='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#1DB954"/><path d="M7 15.2c2.7-.8 5.6-.6 8 .8M6.8 12.2c3.3-1 6.9-.7 9.7 1M6.6 9.1c3.9-1.1 8.1-.7 11.3 1.3" stroke="#0D1B2A" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>';
+const YOUTUBE_ICO='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0000"/><path d="M10 8.8l6 3.2-6 3.2z" fill="#fff"/></svg>';
+
+/* ── APERÇU DES INSTRUMENTS DANS LE FORMULAIRE ─────────────────────────────── */
+function renderInstrPreview(){
+  const on=document.getElementById('f-instr').checked;
+  document.getElementById('instr-preview').innerHTML=MES_INSTRUMENTS.map(i=>
+    '<div class="instr" style="'+(on?'':'opacity:.42')+'">'
+    +handpanLogo(i.famille,i.bottom,30)
+    +'<div class="il"><div class="n">'+i.gamme+'</div><div class="m">'+i.modele+'</div></div>'
+    +'<span class="tag '+(i.famille==='acoustic'?'ac':'el')+'">'
+    +(i.famille==='acoustic'?'acoustique':'électronique')+'</span></div>').join('')
+    + (on?'':'<p class="hint" style="opacity:.5">Non partagés — ta fiche n\'affichera pas cette section.</p>');
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   LA FICHE — composant partagé mot pour mot avec constellation-joueurs-carte.html
+   ══════════════════════════════════════════════════════════════════════════════ */
+function ficheHtml(p){
+  const cls='fiche'+(p.teach?' teach':'')+(p.maker&&!p.teach?' maker':'');
+  const initiale=(p.pseudo||'?').trim().charAt(0).toUpperCase();
+  let badges='';
+  if(p.teach) badges+='<span class="badge t">🎓 Donne des cours</span>';
+  if(p.maker) badges+='<span class="badge m">🔨 Fabrique des instruments</span>';
+  let liens='';
+  if(p.spotify) liens+='<a class="link" href="#" onclick="return false">'+SPOTIFY_ICO+'Spotify</a>';
+  if(p.youtube) liens+='<a class="link" href="#" onclick="return false">'+YOUTUBE_ICO+'YouTube</a>';
+  if(p.insta)   liens+='<a class="link" href="#" onclick="return false">◎ Instagram</a>';
+  if(p.site)    liens+='<a class="link" href="#" onclick="return false">↗ Site web</a>';
+  let instr='';
+  if(p.instruments&&p.instruments.length){
+    instr='<section><h4>Ses instruments</h4>'+p.instruments.map(i=>
+      '<div class="instr">'+handpanLogo(i.famille,i.bottom,26)
+      +'<div class="il"><div class="n">'+i.gamme+'</div><div class="m">'+i.modele+'</div></div>'
+      +'<span class="tag '+(i.famille==='acoustic'?'ac':'el')+'">'
+      +(i.famille==='acoustic'?'acoustique':'électronique')+'</span></div>').join('')+'</section>';
+  }
+  const lieu=[p.ville,p.pays].filter(Boolean).join(', ')||'—';
+  return '<div class="'+cls+'">'
+    +'<div class="fiche-head"><div class="avatar">'+initiale+'</div>'
+    +'<div><div class="who">'+(p.pseudo||'Sans nom')+'</div><div class="where">📍 '+lieu+'</div></div></div>'
+    +(badges?'<div class="badges">'+badges+'</div>':'')
+    +(p.teachnote?'<section><h4>Cours</h4><p style="margin:0;font-size:var(--fs-body);opacity:.85">'+p.teachnote+'</p></section>':'')
+    +instr
+    +'<section><h4>Où l\'écouter</h4>'+(liens?'<div class="links">'+liens+'</div>':'<p class="empty">Rien de partagé.</p>')+'</section>'
+    +'</div>';
+}
+
+/* ── ÉTAT DU FORMULAIRE → FICHE ────────────────────────────────────────────── */
+const $=id=>document.getElementById(id);
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+function render(){
+  const on=$('sw-master').getAttribute('aria-checked')==='true';
+  $('gated').dataset.locked=on?'0':'1';
+  $('gated').querySelectorAll('input,select,button').forEach(el=>el.disabled=!on);
+  $('master').classList.toggle('on',on);
+  $('master-state').textContent=on?'Allumé':'Éteint';
+  $('master-state').className='state '+(on?'on':'off');
+  $('master-desc').textContent=on
+    ? 'Allumé. Ton étoile apparaît sur la carte, avec ce que tu as coché ci-dessous — et rien d\'autre.'
+    : 'Éteint. Tu utilises l\'app normalement, personne ne te voit.';
+
+  $('role-teach').classList.toggle('checked',$('f-teach').checked);
+  $('role-maker').classList.toggle('checked',$('f-maker').checked);
+  $('optin-instr').classList.toggle('checked',$('f-instr').checked);
+  $('sub-teach').hidden=!$('f-teach').checked;
+  renderInstrPreview();
+
+  const pays=$('f-pays').value;
+  if(!on){
+    $('fiche-host').innerHTML=
+      '<div class="fiche" style="border-style:dashed;border-color:var(--line);opacity:.75">'
+      +'<p style="margin:0;font-size:var(--fs-body);opacity:.7">'
+      +'☾ <b>Ton étoile est éteinte.</b><br>Tu n\'apparais pas sur la carte, et aucune de ces '
+      +'informations n\'est visible par qui que ce soit.</p></div>';
+    return;
+  }
+  if(!pays){
+    $('fiche-host').innerHTML=
+      '<div class="fiche" style="border-color:rgba(248,113,113,.5)">'
+      +'<p style="margin:0;font-size:var(--fs-body)">⚠️ <b>Il manque le pays.</b><br>'
+      +'C\'est lui qui pose ton étoile : sans lui, tu n\'apparais pas, même l\'interrupteur allumé.</p></div>';
+    return;
+  }
+  $('fiche-host').innerHTML=ficheHtml({
+    pseudo:esc($('f-pseudo').value.trim()),
+    ville:esc($('f-ville').value.trim()),
+    pays:esc(pays),
+    teach:$('f-teach').checked,
+    maker:$('f-maker').checked,
+    teachnote:$('f-teach').checked?esc($('f-teachnote').value.trim()):'',
+    spotify:$('f-spotify').value.trim(),
+    youtube:$('f-youtube').value.trim(),
+    insta:$('f-insta').value.trim(),
+    site:$('f-site').value.trim(),
+    instruments:$('f-instr').checked?MES_INSTRUMENTS:null
+  });
+}
+
+$('sw-master').addEventListener('click',()=>{
+  const on=$('sw-master').getAttribute('aria-checked')==='true';
+  $('sw-master').setAttribute('aria-checked',String(!on));
+  render();
+});
+document.querySelectorAll('#gated input,#gated select').forEach(el=>{
+  el.addEventListener('input',render); el.addEventListener('change',render);
+});
+
+/* ── BAC À SABLE : les trois boutons du pied ne peuvent RIEN enregistrer ──────
+   Aucun appel réseau, aucun localStorage/sessionStorage. Ils disent ce qu'ils
+   feraient dans l'app, et rappellent qu'ici il n'y a rien à sauvegarder. */
+function sandboxSay(msg){
+  const el=$('sandbox-msg');
+  el.hidden=false; el.textContent=msg;
+  clearTimeout(sandboxSay._t);
+  sandboxSay._t=setTimeout(()=>{el.hidden=true;},7000);
+}
+$('btn-save').addEventListener('click',()=>sandboxSay(
+  '🧪 Aperçu : rien n\'est enregistré. Dans l\'application, ce bouton écrirait ton profil '
+  + 'et allumerait ton étoile. Ici, recharge la page et le profil de David revient.'));
+$('btn-close').addEventListener('click',()=>sandboxSay(
+  '🧪 Aperçu : dans l\'application, ce bouton refermerait le panneau. Ici il n\'y a rien à refermer.'));
+$('btn-wipe').addEventListener('click',()=>sandboxSay(
+  '🧪 Aperçu : désactivé. Dans l\'application, « Tout retirer » effacerait pour de bon ton profil '
+  + 'public (ton compte, tes morceaux et tes handpans ne sont pas touchés). Ici, rien n\'existe à effacer.'));
+$('btn-wipe').style.opacity='.55';
+
+render();
+</script>
+</body>
+</html>

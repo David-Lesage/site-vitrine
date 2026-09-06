@@ -93,17 +93,36 @@ Voilà la seule chose que cette page ne peut pas te montrer honnêtement : un ci
 <p class="embed-maquette-intro">Et tu peux la manipuler toi-même, ci-dessous : filtre les profs, cherche une ville, bascule entre « Lancement (12) » et « Plus tard (59) » pour voir comment le dessin tient quand le ciel se remplit.</p>
 
 <div class="embed-maquette">
-  <p class="embed-maquette-bandeau"><strong>⚠️ Maquette de conception — pas l'application</strong><br />Les noms, les villes et les compteurs affichés ci-dessous sont fictifs. L'application, au 1<sup>er</sup> septembre 2026, compte une étoile.</p>
+  <p class="embed-maquette-bandeau"><strong>⚠️ Maquette de conception — pas l'application</strong><br />Les onze autres joueurs et le compteur affichés ci-dessous sont fictifs. <strong>Une seule étoile est réelle : la mienne</strong>, à Paris — clique dessus, tu verras mon vrai profil public, celui-là même que l'application publie. L'application, au 1<sup>er</sup> septembre 2026, compte cette étoile-là, et elle seule.</p>
   <iframe
-    src="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html"
+    src="/prototypes/constellation-joueurs-carte.html"
     title="Maquette interactive de la carte des joueurs (données fictives)"
     loading="lazy"
     referrerpolicy="no-referrer"
   ></iframe>
-  <p class="embed-maquette-pied">Cadre interactif — <a href="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html">ouvrir la maquette en grand</a>.</p>
+  <p class="embed-maquette-pied">Cadre interactif — <a href="/prototypes/constellation-joueurs-carte.html">ouvrir la maquette en grand</a>.</p>
 </div>
 
-<p class="embed-maquette-mobile"><strong>⚠️ Maquette de conception — pas l'application.</strong> La version manipulable est une mise en page d'écran large ; sur un téléphone elle serait illisible, donc je préfère te donner l'image ci-dessus et le lien plutôt qu'un cadre inutilisable. <a href="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html">Ouvrir la maquette en grand</a> (noms et chiffres fictifs).</p>
+<p class="embed-maquette-mobile"><strong>⚠️ Maquette de conception — pas l'application.</strong> La version manipulable est une mise en page d'écran large ; sur un téléphone elle serait illisible, donc je préfère te donner l'image ci-dessus et le lien plutôt qu'un cadre inutilisable. <a href="/prototypes/constellation-joueurs-carte.html">Ouvrir la carte en grand</a> (onze joueurs fictifs, plus mon étoile réelle). Et pour voir l'écran depuis lequel on allume son étoile, pré-rempli avec mon vrai profil et modifiable sans que rien ne soit enregistré : <a href="/prototypes/constellation-joueurs-profil.html">ouvrir le bac à sable du profil public</a>.</p>
+
+### L'écran depuis lequel on allume son étoile
+
+Reste la question que tout le monde se pose avant de cocher quoi que ce soit : *qu'est-ce qui va être publié, exactement ?* Alors plutôt que de te le promettre, je te le montre — avec **mes propres données**, celles de mon vrai profil public, et je te laisse les tripoter.
+
+<p class="embed-maquette-intro">Ci-dessous, le panneau « 🌍 Mon profil public » tel qu'il existe dans l'application, <strong>pré-rempli avec mon profil réel</strong>. Éteins l'interrupteur en haut : mon étoile s'éteint sous tes yeux. Décoche « Partager mes instruments » : mes quatre handpans disparaissent de la fiche. Réécris le nom : la fiche suit. La colonne de droite n'est pas une illustration, c'est le composant de fiche de la carte — ce que tu y vois est littéralement ce que les autres verraient. <strong>Rien n'est enregistré</strong> : recharge la page et mon profil revient.</p>
+
+<div class="embed-maquette embed-maquette-haute">
+  <p class="embed-maquette-bandeau"><strong>🧪 Bac à sable — rien n'est enregistré</strong><br />Cet écran est pré-rempli avec mon vrai profil public et il est entièrement modifiable : aucune donnée n'est envoyée ni conservée, recharger remet mon profil. Les autres joueurs de la carte sont des exemples inventés — sauf moi, qui suis réel.</p>
+  <iframe
+    src="/prototypes/constellation-joueurs-profil.html"
+    title="Bac à sable du profil public de la carte des joueurs, pré-rempli avec le profil réel de David Lesage"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+  ></iframe>
+  <p class="embed-maquette-pied">Cadre interactif — <a href="/prototypes/constellation-joueurs-profil.html">ouvrir le bac à sable en grand</a>.</p>
+</div>
+
+<p class="embed-maquette-mobile"><strong>🧪 Bac à sable du profil public — rien n'est enregistré.</strong> C'est l'écran depuis lequel on allume son étoile, pré-rempli avec mon vrai profil et entièrement modifiable ; mais c'est une mise en page de bureau, deux colonnes, et dans un cadre de téléphone elle serait illisible. <a href="/prototypes/constellation-joueurs-profil.html">Ouvrir le bac à sable en grand</a> (aucune donnée envoyée ni conservée).</p>
 
 ## Pourquoi « constellation », et pas « carte des membres »
 

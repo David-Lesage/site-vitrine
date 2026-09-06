@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<!--
+  ══════════════════════════════════════════════════════════════════════════════
+  COPIE DE TRAVAIL — dépôt site-vitrine (lesagedavid.fr)
+  ══════════════════════════════════════════════════════════════════════════════
+  Origine : ~/CLAUDE/NEOTONE STUDIO/NEOTONE 1er mai 2026/prototypes/constellation-joueurs-carte.html
+            (également publié sur https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html)
+  Copié le : 06/09/2026
+
+  ⚠️ CETTE COPIE VA DIVERGER DE L'ORIGINAL — c'est volontaire et c'est le prix payé.
+  Elle est modifiée pour l'article de blog « La carte des joueurs » :
+    · l'étoile de David n'est plus la version fictive anonyme « D., Alsace » :
+      elle porte ses VRAIES données publiques (nom, Paris, prof, liens, instruments) ;
+    · le profil est un BAC À SABLE : pré-rempli avec ses données réelles, entièrement
+      manipulable par le lecteur, et RIEN N'EST ENREGISTRÉ (ni serveur ni localStorage :
+      recharger la page remet le profil de David).
+  Les onze autres joueurs restent entièrement fictifs.
+  Ne pas répercuter ces modifications dans le dépôt APP, et ne pas écraser cette copie
+  par une resynchronisation aveugle depuis l'original.
+  ══════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La carte de la constellation des joueurs</title>
+<style>
+/* ══════════════════════════════════════════════════════════════════════════════
+   MAQUETTE AUTONOME — zéro dépendance externe, zéro requête réseau.
+   PAS de Leaflet, PAS de Google Maps, PAS de tuile : la carte du monde est une
+   SUITE DE POLYGONES écrite dans ce fichier (projection équirectangulaire
+   simplifiée, lon → x, lat → y). Elle n'a pas vocation à être géographiquement
+   exacte : elle est stylisée, comme un ciel.
+
+   Couleurs RECOPIÉES de variables.css :
+     --bg-color #0D1B2A · --primary-color #1B263B · --secondary-color #415A77
+     --highlight-color #22D3EE · --text-color #E0E1DD · --gold-color #FFD700
+   Logos de handpan : palette de library/handpan-logo.ts (cuivré / bleu / couronne).
+
+   ⚠️ TOUTES LES DONNÉES SONT FICTIVES. Aucun nom, aucune ville, aucun lien réel.
+   ══════════════════════════════════════════════════════════════════════════════ */
+:root{
+  --bg-color:#0D1B2A; --primary-color:#1B263B; --secondary-color:#415A77;
+  --highlight-color:#22D3EE; --text-color:#E0E1DD; --gold-color:#FFD700;
+  --gold-gradient:linear-gradient(45deg,#BF953F,#FCF6BA,#B38728,#FBF5B7,#AA771C);
+  --font-family:'Poppins','Avenir Next','Segoe UI',system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  --line:rgba(224,225,221,.12);
+  --copper:#E0A860; --electric:#5FB6F5;
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;
+  --fs-title:1.05rem;--fs-section:.92rem;--fs-body:.85rem;--fs-label:.78rem;--fs-micro:.70rem;
+  --r-sm:8px;--r-md:12px;--r-pill:999px;--h-control:34px;
+  --surface-bg:rgba(255,255,255,.04); --surface-border:rgba(255,255,255,.10);
+}
+*{box-sizing:border-box}
+html{font-size:16px}
+body{
+  margin:0;font-family:var(--font-family);color:var(--text-color);line-height:1.55;
+  background:
+    radial-gradient(1200px 700px at 15% -18%,rgba(34,211,238,.10),transparent 62%),
+    radial-gradient(900px 560px at 100% 0,rgba(255,215,0,.055),transparent 55%),
+    var(--bg-color);
+  min-height:100vh;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1400px;margin:0 auto;padding:26px 20px 90px}
+
+.eyebrow{font-size:var(--fs-micro);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--highlight-color);opacity:.85;margin:0 0 6px}
+h1{font-size:clamp(1.4rem,3vw,2.05rem);font-weight:700;margin:0 0 12px;line-height:1.15}
+h1 em{font-style:normal;background:var(--gold-gradient);-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.lede{margin:0;padding:13px 16px;border-radius:var(--r-md);max-width:92ch;font-size:var(--fs-body);
+  border:1px solid rgba(255,215,0,.3);background:rgba(255,215,0,.06)}
+.lede p{margin:0 0 5px}.lede p:last-child{margin:0}
+.lede b{color:var(--gold-color)}
+.dirnav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}
+.dirnav a{font-size:var(--fs-label);font-weight:600;text-decoration:none;color:var(--text-color);
+  opacity:.55;padding:6px 13px;border-radius:var(--r-pill);border:1px solid var(--line)}
+.dirnav a.here{opacity:1;border-color:var(--gold-color);background:rgba(255,215,0,.1)}
+.dirnav a:hover{opacity:1}
+
+/* ── barre de contrôle ─────────────────────────────────────────────────────── */
+.controls{display:flex;flex-wrap:wrap;gap:var(--sp-3);align-items:center;margin:var(--sp-5) 0 var(--sp-3)}
+.seg{display:inline-flex;background:rgba(13,27,42,.7);border:1px solid var(--line);
+  border-radius:var(--r-pill);padding:3px}
+.seg button{appearance:none;border:0;background:transparent;color:var(--text-color);font:inherit;
+  font-size:var(--fs-label);font-weight:700;padding:7px 15px;border-radius:var(--r-pill);
+  cursor:pointer;opacity:.55;transition:.15s;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.seg button:hover{opacity:.9}
+.seg button[aria-pressed="true"]{background:var(--secondary-color);opacity:1;
+  box-shadow:0 0 0 1px rgba(255,215,0,.35) inset}
+.search{position:relative;flex:1 1 240px;max-width:340px}
+.search input{width:100%;height:var(--h-control);border-radius:var(--r-pill);
+  border:1px solid var(--surface-border);background:rgba(13,27,42,.75);color:var(--text-color);
+  font:inherit;font-size:var(--fs-body);padding:0 14px 0 34px}
+.search input:focus{outline:none;border-color:var(--highlight-color);
+  box-shadow:0 0 0 3px rgba(34,211,238,.15)}
+.search::before{content:"⌕";position:absolute;left:13px;top:50%;transform:translateY(-50%);
+  opacity:.5;font-size:1rem;pointer-events:none}
+.count{font-size:var(--fs-label);opacity:.72;flex:1 1 auto;text-align:right;min-width:180px}
+.count b{color:var(--gold-color)}
+
+/* ── la scène : ciel + panneau ─────────────────────────────────────────────── */
+.scene{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:var(--sp-4);align-items:start}
+@media (max-width:1080px){.scene{grid-template-columns:1fr}}
+
+.skybox{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);
+  background:
+    radial-gradient(900px 420px at 22% 8%,rgba(34,211,238,.10),transparent 62%),
+    radial-gradient(700px 400px at 84% 90%,rgba(255,215,0,.06),transparent 60%),
+    linear-gradient(180deg,#08131F,#0D1B2A 55%,#0A1826);
+  box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.sky{position:relative;width:100%;aspect-ratio:360/136}
+.sky svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.stars-bg{opacity:.75}
+/* fond d'étoiles décoratives (le ciel, pas les joueurs) */
+.dust{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    radial-gradient(1.3px 1.3px at 8% 18%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1px 1px at 24% 62%,rgba(255,255,255,.4),transparent),
+    radial-gradient(1.5px 1.5px at 41% 12%,rgba(255,255,255,.35),transparent),
+    radial-gradient(1px 1px at 57% 78%,rgba(255,255,255,.4),transparent),
+    radial-gradient(1.2px 1.2px at 73% 30%,rgba(255,255,255,.35),transparent),
+    radial-gradient(1px 1px at 88% 66%,rgba(255,255,255,.4),transparent),
+    radial-gradient(1.4px 1.4px at 95% 20%,rgba(255,255,255,.3),transparent),
+    radial-gradient(1px 1px at 13% 84%,rgba(255,255,255,.35),transparent),
+    radial-gradient(1.1px 1.1px at 64% 50%,rgba(255,255,255,.3),transparent),
+    radial-gradient(1px 1px at 33% 40%,rgba(255,255,255,.3),transparent)}
+
+/* ── une étoile = un joueur ────────────────────────────────────────────────── */
+.star{position:absolute;transform:translate(-50%,-50%);border:0;padding:0;background:none;
+  cursor:pointer;line-height:0;z-index:3}
+.star .core{display:block;border-radius:50%;background:#EAF7FF;
+  box-shadow:0 0 0 2px rgba(34,211,238,.35),0 0 14px 3px rgba(34,211,238,.55);
+  animation:tw 3.6s ease-in-out infinite}
+.star.teach .core{box-shadow:0 0 0 2px rgba(255,215,0,.45),0 0 18px 5px rgba(255,215,0,.55);
+  background:#FFF6D0}
+.star.maker .core{box-shadow:0 0 0 2px rgba(224,168,96,.45),0 0 18px 5px rgba(224,168,96,.55);
+  background:#FFE9CC}
+.star:hover .core,.star.sel .core{transform:scale(1.35)}
+.star .core{transition:transform .16s}
+.star:focus-visible{outline:2px solid var(--gold-color);outline-offset:6px;border-radius:50%}
+.star.dim{opacity:.14;pointer-events:none}
+/* Le libellé se pose dans la direction la moins encombrée (calculée au rendu) :
+   c'est ce qui rend l'Europe lisible malgré la densité. */
+.star .lbl{position:absolute;left:50%;top:100%;transform:translate(-50%,4px);white-space:nowrap;
+  font-size:11px;line-height:1.25;font-weight:600;letter-spacing:.01em;text-align:center;
+  text-shadow:0 1px 4px #05101B,0 0 10px #05101B,0 0 3px #05101B;pointer-events:none;opacity:.94}
+.star .lbl.lp-t{top:auto;bottom:100%;transform:translate(-50%,-4px)}
+.star .lbl.lp-r{left:100%;top:50%;transform:translate(8px,-50%);text-align:left}
+.star .lbl.lp-l{left:auto;right:100%;top:50%;transform:translate(-8px,-50%);text-align:right}
+.star .lbl.lp-br{left:100%;top:100%;transform:translate(3px,1px);text-align:left}
+.star .lbl.lp-bl{left:auto;right:100%;top:100%;transform:translate(-3px,1px);text-align:right}
+.star .lbl.lp-tr{left:100%;top:auto;bottom:100%;transform:translate(3px,-1px);text-align:left}
+.star .lbl.lp-tl{left:auto;right:100%;top:auto;bottom:100%;transform:translate(-3px,-1px);text-align:right}
+.star .lbl small{display:block;font-weight:500;font-size:9.5px;opacity:.65}
+.star.teach .lbl{color:#FFE9A0}
+.star.maker .lbl{color:#F4CE9E}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.62}}
+.sky.dense .star .lbl{display:none}
+.sky.dense .star:hover .lbl,.sky.dense .star.sel .lbl{display:block}
+
+/* légende posée dans le ciel */
+.legend{position:absolute;left:14px;bottom:12px;display:flex;gap:14px;flex-wrap:wrap;
+  font-size:var(--fs-micro);background:rgba(8,19,31,.72);border:1px solid var(--line);
+  border-radius:var(--r-pill);padding:7px 14px;backdrop-filter:blur(4px);z-index:4}
+.legend span{display:inline-flex;align-items:center;gap:6px;opacity:.9}
+.dotl{width:9px;height:9px;border-radius:50%;background:#EAF7FF;
+  box-shadow:0 0 0 2px rgba(34,211,238,.35),0 0 9px 2px rgba(34,211,238,.5)}
+.dotl.t{background:#FFF6D0;box-shadow:0 0 0 2px rgba(255,215,0,.45),0 0 9px 2px rgba(255,215,0,.5)}
+.dotl.m{background:#FFE9CC;box-shadow:0 0 0 2px rgba(224,168,96,.45),0 0 9px 2px rgba(224,168,96,.5)}
+
+/* bandeau honnête */
+.honest{position:absolute;right:14px;top:12px;max-width:300px;font-size:var(--fs-micro);
+  background:rgba(8,19,31,.78);border:1px solid rgba(255,215,0,.28);border-radius:var(--r-md);
+  padding:9px 12px;backdrop-filter:blur(4px);z-index:4;line-height:1.45}
+.honest b{color:var(--gold-color)}
+@media (max-width:760px){.honest{position:static;max-width:none;margin:var(--sp-2) 0 0;border-radius:0}}
+
+/* ── panneau latéral ───────────────────────────────────────────────────────── */
+.aside{display:flex;flex-direction:column;gap:var(--sp-3);position:sticky;top:18px}
+@media (max-width:1080px){.aside{position:static}}
+.pan{border-radius:var(--r-md);border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(27,38,59,.92),rgba(13,27,42,.92));padding:var(--sp-4)}
+.pan h3{font-size:var(--fs-section);margin:0 0 var(--sp-2);font-weight:700}
+.pan p.why{font-size:var(--fs-label);opacity:.7;margin:0}
+
+/* la FICHE — composant identique à celui de constellation-joueurs-profil.html */
+.fiche{border-radius:var(--r-md);padding:var(--sp-4);
+  border:1px solid rgba(34,211,238,.30);background:rgba(13,27,42,.85)}
+.fiche.teach{border-color:rgba(255,215,0,.45)}
+.fiche.maker{border-color:rgba(224,168,96,.45)}
+.fiche-head{display:flex;gap:var(--sp-3);align-items:center;margin:0 0 var(--sp-3)}
+.avatar{flex:0 0 auto;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  font-size:1.1rem;background:radial-gradient(circle at 34% 30%,rgba(34,211,238,.55),rgba(13,27,42,.9));
+  border:1px solid rgba(34,211,238,.5)}
+.fiche.teach .avatar{background:radial-gradient(circle at 34% 30%,rgba(255,215,0,.5),rgba(13,27,42,.9));
+  border-color:rgba(255,215,0,.55)}
+.fiche.maker .avatar{background:radial-gradient(circle at 34% 30%,rgba(224,168,96,.5),rgba(13,27,42,.9));
+  border-color:rgba(224,168,96,.55)}
+.fiche .who{font-size:1.02rem;font-weight:700;line-height:1.2}
+.fiche .where{font-size:var(--fs-label);opacity:.7}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 var(--sp-3)}
+.badge{font-size:var(--fs-micro);font-weight:700;padding:3px 9px;border-radius:var(--r-pill)}
+.badge.t{color:#2A1C00;background:var(--gold-color)}
+.badge.m{color:#2A1C00;background:var(--copper)}
+.fiche section{margin:0 0 var(--sp-3)}
+.fiche section:last-child{margin:0}
+.fiche h4{font-size:var(--fs-micro);letter-spacing:.12em;text-transform:uppercase;opacity:.55;
+  margin:0 0 6px;font-weight:700}
+.instr{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:var(--r-sm);
+  border:1px solid var(--line);background:rgba(13,27,42,.55);margin:0 0 6px}
+.instr:last-child{margin:0}
+.instr .il{flex:1 1 auto;min-width:0}
+.instr .n{font-size:var(--fs-body);font-weight:600}
+.instr .m{font-size:var(--fs-micro);opacity:.6}
+.tag{font-size:var(--fs-micro);padding:2px 8px;border-radius:var(--r-pill);border:1px solid var(--line);
+  white-space:nowrap}
+.tag.ac{color:var(--copper);border-color:rgba(224,168,96,.4)}
+.tag.el{color:var(--electric);border-color:rgba(95,182,245,.4)}
+.links{display:flex;gap:7px;flex-wrap:wrap}
+.link{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-label);text-decoration:none;
+  color:var(--text-color);padding:5px 11px;border-radius:var(--r-pill);border:1px solid var(--line)}
+.link:hover{border-color:rgba(224,225,221,.35)}
+.ico{width:15px;height:15px;flex:0 0 auto}
+.empty{font-size:var(--fs-label);opacity:.5;font-style:italic}
+.fiche-foot{margin-top:var(--sp-3);padding-top:var(--sp-3);border-top:1px solid var(--line);
+  display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.mini{appearance:none;font:inherit;font-size:var(--fs-micro);border-radius:var(--r-pill);
+  border:1px solid var(--line);background:transparent;color:var(--text-color);padding:5px 11px;
+  cursor:pointer;opacity:.75}
+.mini:hover{opacity:1;border-color:rgba(224,225,221,.35)}
+
+/* liste des résultats */
+.results{display:flex;flex-direction:column;gap:5px;max-height:280px;overflow:auto}
+.res{display:flex;gap:9px;align-items:center;padding:7px 9px;border-radius:var(--r-sm);
+  border:1px solid transparent;background:rgba(255,255,255,.03);cursor:pointer;text-align:left;
+  font:inherit;color:inherit;width:100%}
+.res:hover,.res.sel{border-color:var(--surface-border);background:rgba(255,255,255,.07)}
+.res .d{width:8px;height:8px;border-radius:50%;flex:0 0 auto;background:#EAF7FF;
+  box-shadow:0 0 8px 1px rgba(34,211,238,.6)}
+.res.t .d{background:#FFF6D0;box-shadow:0 0 8px 1px rgba(255,215,0,.6)}
+.res.m .d{background:#FFE9CC;box-shadow:0 0 8px 1px rgba(224,168,96,.6)}
+.res .rn{font-size:var(--fs-body);font-weight:600;flex:0 0 auto}
+.res .rl{font-size:var(--fs-micro);opacity:.6;flex:1 1 auto;min-width:0;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap;text-align:right}
+.noresult{font-size:var(--fs-label);opacity:.75;padding:var(--sp-3);border-radius:var(--r-sm);
+  border:1px dashed var(--line);line-height:1.5}
+.noresult b{color:var(--gold-color)}
+
+/* ── pied technique ────────────────────────────────────────────────────────── */
+.tech{margin-top:var(--sp-6);padding:var(--sp-5);border-radius:18px;
+  border:1px solid var(--line);background:rgba(27,38,59,.55)}
+.tech h2{font-size:var(--fs-title);margin:0 0 var(--sp-3)}
+.tech h3{font-size:var(--fs-section);margin:var(--sp-4) 0 var(--sp-2);color:var(--highlight-color)}
+.tech p,.tech li{font-size:var(--fs-body);opacity:.85}
+.tech ul{margin:0;padding-left:1.15rem}.tech li{margin:0 0 5px}
+.tech code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8em;
+  background:rgba(13,27,42,.8);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+.q{border-left:3px solid var(--gold-color);padding:var(--sp-3) var(--sp-4);margin:var(--sp-3) 0 0;
+  background:rgba(255,215,0,.05);border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:var(--fs-body)}
+.q b{color:var(--gold-color)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">Maquette · carte du monde</p>
+  <h1>La <em>constellation des joueurs</em></h1>
+
+  <p class="q" style="margin:0 0 var(--sp-4)">
+    <b>Aperçu — rien n'est enregistré.</b> Les onze autres joueurs de cette carte
+    (Lena, Kenji, Aïcha, Bruno…) sont des <b>exemples inventés</b> : ces personnes n'existent
+    pas. <b>Une seule étoile est réelle : David Lesage</b>, à Paris — ses informations sont
+    celles de son vrai profil public.
+  </p>
+
+  <div class="lede">
+    <p><b>Parti pris 1 — « constellation » pris au mot.</b> Pas d'épingles rouges sur une carte
+    routière : un fond de ciel, des continents à peine esquissés, et les joueurs en <b>étoiles</b>.
+    La carte est dessinée en polygones dans ce fichier — <b>aucune tuile, aucun réseau, aucune
+    bibliothèque</b> : elle marche hors ligne et ne fuite l'IP de personne vers un serveur de cartes.</p>
+    <p><b>Parti pris 2 — belle à 12 comme à 1000.</b> Au lancement il y aura une poignée d'étoiles.
+    En effectif faible, elles <b>grossissent, se nomment et se relient</b> : la rareté devient un
+    dessin au lieu d'un vide. Le bouton « Plus tard » montre le même écran densément peuplé.</p>
+    <p><b>Parti pris 3 — la carte dit ce qu'elle ne montre pas.</b> Un pays sans étoile ne veut
+    pas dire « personne ne joue ici » : ça veut dire « personne n'a encore allumé son étoile ».
+    C'est écrit sur la carte, en permanence, pour que l'absence ne mente jamais.</p>
+  </div>
+
+  <nav class="dirnav">
+    <a href="constellation-joueurs-profil.html">← ① Le profil public</a>
+    <a class="here" href="constellation-joueurs-carte.html">② La carte du monde</a>
+    <a href="index.html">Galerie des maquettes</a>
+  </nav>
+
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Filtrer">
+      <button type="button" data-filter="all" aria-pressed="true">Tous</button>
+      <button type="button" data-filter="teach" aria-pressed="false">🎓 Profs</button>
+      <button type="button" data-filter="maker" aria-pressed="false">🔨 Fabricants</button>
+    </div>
+    <div class="search">
+      <input type="text" id="q" placeholder="Chercher un pays ou une ville…"
+             aria-label="Chercher un pays ou une ville">
+    </div>
+    <div class="seg" role="group" aria-label="Effectif">
+      <button type="button" data-pop="launch" aria-pressed="true">Lancement (12)</button>
+      <button type="button" data-pop="later" aria-pressed="false">Plus tard (59)</button>
+    </div>
+    <p class="count" id="count"></p>
+  </div>
+
+  <div class="scene">
+
+    <div class="skybox">
+      <div class="sky" id="sky">
+        <svg class="stars-bg" id="map" viewBox="0 0 360 136" aria-hidden="true"></svg>
+        <div class="dust"></div>
+        <svg id="links" viewBox="0 0 360 136" aria-hidden="true"
+             style="pointer-events:none;z-index:2"></svg>
+        <!-- les étoiles sont injectées ici -->
+        <div class="legend">
+          <span><i class="dotl"></i> Joueur</span>
+          <span><i class="dotl t"></i> 🎓 Donne des cours</span>
+          <span><i class="dotl m"></i> 🔨 Fabrique des instruments</span>
+        </div>
+        <div class="honest" id="honest"></div>
+      </div>
+    </div>
+
+    <div class="aside">
+      <div id="fiche-host"></div>
+      <div class="pan">
+        <h3>Résultats</h3>
+        <div class="results" id="results"></div>
+      </div>
+      <div class="pan">
+        <h3>☾ Pourquoi ce pays est vide</h3>
+        <p class="why">
+          La carte ne montre que celles et ceux qui ont allumé leur étoile dans leur profil
+          public. Un pays sans point n'est pas un pays sans joueurs — c'est un pays où personne
+          n'a encore dit oui.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ PIED : CE QUE ÇA DEMANDE À L'APP ═══ -->
+  <div class="tech">
+    <h2>🔧 Ce que ça demande à l'app</h2>
+
+    <h3>1 · La lecture — c'est ici que ça coince, pas dans le dessin</h3>
+    <p>
+      La carte a besoin de lire les profils <b>des autres</b>. Or
+      <code>public.user_preferences</code> est aujourd'hui strictement privée
+      (<code>prefs_select_own</code>, migration <code>0003</code> : chacun ne lit que sa ligne).
+      Il faut donc, au choix :
+    </p>
+    <ul>
+      <li><b>une vue publique</b> <code>players_map</code> filtrée sur <code>map_opt_in = true</code>
+        et sur les seules colonnes publiables, avec une policy de lecture pour
+        <code>authenticated</code> ;</li>
+      <li><b>une table dédiée</b> <code>public.player_profiles</code> (RLS : lecture par tous les
+        connectés, écriture par le propriétaire), physiquement séparée des préférences privées.</li>
+    </ul>
+    <p>
+      Dans les deux cas la règle est la même : <b>aucune colonne non listée ne sort</b>, et le
+      <code>user_id</code> ne doit pas être exposé tel quel (un identifiant public court suffit —
+      sinon on relie une étoile à un compte, donc à un e-mail, dès la première jointure).
+    </p>
+
+    <h3>2 · Les coordonnées — dérivées, jamais saisies</h3>
+    <p>
+      Personne ne saisit de latitude. On stocke <code>country</code> (déjà présent, migration
+      <code>0060</code>) et <code>city</code> en texte, et on résout en lat/lon <b>à l'affichage</b>,
+      contre une table de villes embarquée. Trois conséquences voulues :
+      une étoile ne peut pas être plus précise qu'une ville, même volontairement ;
+      ville vide → centroïde du pays ; et l'app n'appelle <b>jamais</b>
+      <code>navigator.geolocation</code>.
+    </p>
+    <p>
+      Pour éviter le tas d'étoiles empilées dans les grandes villes : dispersion déterministe de
+      quelques dizaines de kilomètres autour du point de ville (même personne = toujours le même
+      décalage), ce qui rend le nuage lisible <em>et</em> rend le point moins exact, pas plus.
+    </p>
+
+    <h3>3 · Le rendu</h3>
+    <ul>
+      <li>Carte SVG en polygones dans le bundle (≈ 4 ko) — pas de tuiles, pas de CDN, cohérent
+        avec la règle « <code>bun.lock</code> gelé, pas de nouvelle dépendance ».</li>
+      <li>La <b>fiche</b> est le même composant que l'aperçu du profil public : un seul rendu à
+        maintenir, donc jamais de décalage entre « ce que je crois montrer » et « ce qui est
+        montré ».</li>
+      <li>Textes via <code>translations.ts</code> (7 langues) — y compris les libellés de pays,
+        qui ne peuvent pas rester en français en dur.</li>
+      <li>Les logos d'instruments viennent de <code>library/handpan-logo.ts</code> : cuivré =
+        acoustique, couronne de points = bottom notes, bleu + halo = électronique.</li>
+    </ul>
+
+    <h3>4 · La modération — la question posée, pas tranchée</h3>
+    <div class="q">
+      <p style="margin:0 0 6px"><b>Que fait-on d'un profil abusif ?</b> Nom d'affichage, ville et
+      ligne « comment j'enseigne » sont écrits librement et lus par tous ; un lien Spotify ou
+      YouTube peut pointer n'importe où. Et une carte de profs est, par nature, un endroit où
+      quelqu'un finira par vouloir se faire de la publicité.</p>
+      <p style="margin:0"><b>(a)</b> validation avant publication (sûr, mais un humain dans la
+      boucle à chaque inscription) · <b>(b)</b> publication immédiate + bouton « signaler » et
+      file dans la console admin · <b>(c)</b> réservé aux comptes payants ou vérifiés (le tri se
+      fait tout seul, mais on exclut les élèves gratuits du maillage qui les concerne) ·
+      <b>(d)</b> rien pour l'instant, assumé, avec un plan écrit d'avance.
+      <br>Aucune n'est choisie ici. Deux briques sont nécessaires <em>quelle que soit</em> la
+      réponse : un <code>map_hidden</code> côté admin que l'utilisateur ne contrôle pas, et une
+      longueur maximale en base sur les trois champs libres.</p>
+    </div>
+    <p style="margin-top:var(--sp-3)">
+      Question jumelle, spécifique à la carte : <b>un prof doit-il être visible par défaut plus
+      loin qu'un joueur ?</b> Un joueur cherche « près de chez moi » ; un prof, lui, a intérêt à
+      être vu de loin. Faut-il un rayon, un classement, une mise en avant — et si oui, est-ce que
+      ça se paie ? C'est une décision de modèle, pas d'interface.
+    </p>
+  </div>
+
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════════════════
+   ① LA CARTE — polygones (lon, lat) → projection équirectangulaire simplifiée.
+      x = lon + 180        (0 … 360)
+      y = 78 - lat         (lat plafonnée à 78 N, plancher -58 S → 0 … 136)
+      Stylisée, volontairement basse définition : c'est un ciel, pas un atlas.
+   ══════════════════════════════════════════════════════════════════════════════ */
+const LANDS=[
+  /* Amérique du Nord */[[-168,66],[-156,71],[-140,70],[-125,70],[-110,68],[-95,68],[-85,70],[-75,68],[-62,58],[-55,50],[-66,44],[-70,41],[-76,35],[-81,25],[-84,29],[-90,29],[-97,26],[-97,20],[-92,15],[-84,10],[-78,8],[-83,13],[-88,17],[-95,17],[-105,20],[-110,24],[-114,30],[-117,33],[-124,40],[-124,48],[-131,55],[-140,59],[-150,59],[-158,56],[-165,61]],
+  /* Amérique du Sud */[[-78,8],[-70,11],[-60,11],[-50,5],[-44,-2],[-35,-6],[-38,-13],[-48,-25],[-53,-34],[-58,-38],[-62,-41],[-65,-45],[-68,-52],[-70,-55],[-75,-50],[-73,-42],[-73,-33],[-70,-23],[-70,-18],[-77,-12],[-81,-5],[-80,0],[-77,4]],
+  /* Groenland */[[-45,60],[-20,70],[-22,77],[-35,78],[-55,78],[-60,76],[-55,66]],
+  /* Afrique */[[-17,15],[-16,21],[-10,28],[-5,36],[10,37],[20,32],[32,31],[35,24],[38,18],[43,12],[51,12],[43,5],[41,-2],[40,-10],[35,-18],[33,-26],[26,-34],[18,-34],[14,-23],[12,-16],[9,-1],[9,4],[3,6],[-8,4],[-13,8]],
+  /* Eurasie */[[-10,36],[-9,44],[-1,46],[-4,48],[2,51],[-5,55],[-3,58],[5,60],[8,63],[15,68],[22,70],[30,70],[45,68],[60,70],[70,73],[80,74],[100,77],[115,74],[130,73],[140,72],[160,70],[170,68],[179,65],[170,60],[160,58],[155,50],[140,45],[135,35],[122,31],[118,24],[110,20],[105,10],[100,6],[98,10],[95,16],[90,22],[80,10],[77,8],[72,20],[68,25],[62,25],[57,25],[50,28],[48,30],[43,37],[36,36],[30,36],[26,39],[23,41],[19,40],[15,38],[18,41],[13,45],[8,44],[3,43],[-2,37]],
+  /* Grande-Bretagne */[[-5,50],[1,51],[-1,54],[-3,58],[-5,57],[-5,53]],
+  /* Irlande */[[-10,52],[-6,55],[-6,52],[-9,51]],
+  /* Islande */[[-24,65],[-14,66],[-13,64],[-22,63]],
+  /* Japon */[[130,31],[136,34],[141,41],[145,44],[141,45],[135,36],[131,33]],
+  /* Madagascar */[[49,-13],[50,-18],[47,-25],[44,-20],[45,-16]],
+  /* Australie */[[113,-22],[114,-34],[118,-35],[129,-32],[138,-35],[146,-39],[150,-37],[153,-28],[146,-19],[142,-11],[136,-12],[130,-11],[125,-14]],
+  /* Nouvelle-Zélande */[[172,-34],[178,-38],[174,-41],[170,-46],[166,-45],[170,-40]],
+  /* Sumatra-Java */[[95,5],[106,-6],[115,-8],[105,-7],[100,0]],
+  /* Bornéo */[[109,2],[119,5],[117,-3],[110,-3]],
+  /* Philippines */[[120,18],[126,15],[126,7],[122,10]],
+  /* Nouvelle-Guinée */[[131,-1],[141,-3],[150,-9],[140,-9],[132,-5]],
+  /* Cuba */[[-85,22],[-77,21],[-74,20],[-84,21]]
+];
+const X=lon=>lon+180, Y=lat=>78-lat;
+(function drawMap(){
+  const svg=document.getElementById('map');
+  let s='<defs><linearGradient id="land" x1="0" y1="0" x2="0" y2="1">'
+       +'<stop offset="0" stop-color="#2A4360"/><stop offset="1" stop-color="#1A2E45"/>'
+       +'</linearGradient></defs>';
+  /* grille discrète : méridiens/parallèles, comme les lignes d'une carte du ciel */
+  for(let lon=-150;lon<=150;lon+=30) s+='<line x1="'+X(lon)+'" y1="0" x2="'+X(lon)+'" y2="136" stroke="rgba(224,225,221,.055)" stroke-width=".35"/>';
+  for(let lat=-40;lat<=70;lat+=20) s+='<line x1="0" y1="'+Y(lat)+'" x2="360" y2="'+Y(lat)+'" stroke="rgba(224,225,221,.055)" stroke-width=".35"/>';
+  s+='<line x1="0" y1="'+Y(0)+'" x2="360" y2="'+Y(0)+'" stroke="rgba(34,211,238,.13)" stroke-width=".5" stroke-dasharray="2 3"/>';
+  for(const poly of LANDS){
+    const pts=poly.map(p=>X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join(' ');
+    s+='<polygon points="'+pts+'" fill="url(#land)" stroke="rgba(34,211,238,.22)" stroke-width=".45" stroke-linejoin="round" opacity=".92"/>';
+  }
+  svg.innerHTML=s;
+})();
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ② LES JOUEURS — 11 FICTIFS + 1 RÉEL.
+      La première entrée était « D., Alsace, France », version fictive et anonyme de David.
+      Décision de David du 01/09/2026 : sur cette copie du site, elle porte ses VRAIES
+      données publiques (nom, Paris, prof, ses liens, ses 4 instruments).
+      Les ONZE autres restent entièrement fictives — aucun nom réel d'utilisateur.
+   ══════════════════════════════════════════════════════════════════════════════ */
+const AC=(g,m,b)=>({famille:'acoustic',bottom:!!b,gamme:g,modele:m});
+const EL=(g,m)=>({famille:'electronic',bottom:false,gamme:g,modele:m});
+
+const LAUNCH=[
+  /* ★ LA SEULE ÉTOILE RÉELLE — David Lesage. Données publiques recopiées de son
+     profil public réel (capture du 01/09/2026). Instagram laissé vide : le lien était
+     tronqué dans la capture et n'est pas dans le dépôt du site — on n'invente pas. */
+  {p:'David Lesage', v:'Paris',    c:'France',            lat:48.8566,lon:2.3522, t:1,m:0,
+   real:1,
+   note:'présentiel et en visio - handpan acoustique et Electronique ainsi que d\'autres instruments (harpe africaine Ngoni, calebasse, chant etc...)',
+   sp:1,yt:1,ig:0,we:1,
+   inst:[AC('E 18 — David Lesage Signature','E · 18 notes · dessous',true),
+         AC('D Kurd 18 — David Lesage Signature','D · 18 notes · dessous',true),
+         EL('Neotone¹ · Hêtre','Neotone¹ · 10 creux · Hêtre · 440 Hz'),
+         EL('Neotone Mutant · Noyer','Neotone Mutant · 19 creux · Noyer · 440 Hz')]},
+  {p:'Marisol',   v:'Valence',     c:'Espagne',           lat:39.47,lon:-0.38,t:0,m:0,sp:1,yt:0,
+   inst:[AC('E La Sirena 9','Fabricant non renseigné',true)]},
+  {p:'Tomás',     v:'Lisbonne',    c:'Portugal',          lat:38.72,lon:-9.13,t:1,m:0,
+   note:'Ateliers collectifs le samedi matin.',sp:0,yt:1,
+   inst:[AC('D Celtic Minor 9','Atelier local',false)]},
+  {p:'Ingrid',    v:'Göteborg',    c:'Suède',             lat:57.71,lon:11.97,t:0,m:0,sp:0,yt:0,inst:null},
+  {p:'Kenji',     v:'Kyoto',       c:'Japon',             lat:35.01,lon:135.77,t:0,m:1,
+   sp:0,yt:1,inst:[AC('F Low Pygmy 8','Modèle maison — série courte',true)]},
+  {p:'Lena',      v:'Berlin',      c:'Allemagne',         lat:52.52,lon:13.40,t:1,m:0,
+   note:'Cours enfants et ados, approche par les couleurs.',sp:1,yt:1,
+   inst:[AC('D Amara 9','Yishama',true),EL('Chromatique (18 pads)','Neotone Mutant')]},
+  {p:'Aïcha',     v:'Marrakech',   c:'Maroc',             lat:31.63,lon:-7.99,t:0,m:0,sp:0,yt:0,inst:null},
+  {p:'Bruno',     v:'Curitiba',    c:'Brésil',            lat:-25.43,lon:-49.27,t:1,m:1,
+   note:'Cours en portugais et en espagnol.',sp:1,yt:1,
+   inst:[AC('C# Hijaz 10','Modèle maison',true)]},
+  {p:'Nadia',     v:'Montréal',    c:'Canada',            lat:45.50,lon:-73.57,t:0,m:0,sp:1,yt:0,
+   inst:[AC('D Kurd 10','Fabricant non renseigné',false)]},
+  {p:'Sam',       v:'Bristol',     c:'Royaume-Uni',       lat:51.45,lon:-2.59,t:0,m:1,sp:0,yt:1,
+   inst:[AC('B Kurd 9','Modèle maison — acier inox',true)]},
+  {p:'Elif',      v:'Izmir',       c:'Turquie',           lat:38.42,lon:27.14,t:0,m:0,sp:0,yt:0,inst:null},
+  {p:'Ari',       v:'Wellington',  c:'Nouvelle-Zélande',  lat:-41.29,lon:174.78,t:1,m:0,
+   note:'Cours en visio uniquement, fuseau Pacifique.',sp:1,yt:0,
+   inst:[EL('Chromatique (18 pads)','Neotone¹ — Soundventure')]}
+];
+
+/* Le même monde, plus tard — pour montrer que l'écran tient aussi à 59 étoiles. */
+const LATER_RAW=[
+ ['Amal','Tunis','Tunisie',36.8,10.2,''],['Björn','Oslo','Norvège',59.9,10.7,'t'],
+ ['Chloé','Nantes','France',47.2,-1.55,''],['Diego','Bogotá','Colombie',4.7,-74.1,'t'],
+ ['Emma','Dublin','Irlande',53.35,-6.26,''],['Farid','Alger','Algérie',36.75,3.06,''],
+ ['Greta','Milan','Italie',45.46,9.19,'t'],['Hana','Séoul','Corée du Sud',37.57,126.98,''],
+ ['Iker','Bilbao','Espagne',43.26,-2.93,'m'],['Jonas','Vienne','Autriche',48.21,16.37,''],
+ ['Kira','Varsovie','Pologne',52.23,21.01,'t'],['Luca','Rome','Italie',41.9,12.5,''],
+ ['Maya','Tel-Aviv','Israël',32.08,34.78,''],['Nils','Copenhague','Danemark',55.68,12.57,'m'],
+ ['Olga','Kyiv','Ukraine',50.45,30.52,''],['Pablo','Buenos Aires','Argentine',-34.6,-58.38,'t'],
+ ['Quentin','Bruxelles','Belgique',50.85,4.35,''],['Rosa','Mexico','Mexique',19.43,-99.13,''],
+ ['Sofia','Athènes','Grèce',37.98,23.73,'t'],['Théo','Genève','Suisse',46.2,6.14,''],
+ ['Uma','Bangalore','Inde',12.97,77.59,''],['Viktor','Prague','Tchéquie',50.08,14.44,'m'],
+ ['Wendy','Melbourne','Australie',-37.81,144.96,'t'],['Xavier','Toulouse','France',43.6,1.44,''],
+ ['Yara','Beyrouth','Liban',33.89,35.5,''],['Zoé','Lyon','France',45.76,4.84,'t'],
+ ['Anders','Helsinki','Finlande',60.17,24.94,''],['Beatriz','Porto','Portugal',41.15,-8.61,''],
+ ['Cyril','Rennes','France',48.11,-1.68,''],['Dana','Amsterdam','Pays-Bas',52.37,4.9,'t'],
+ ['Eitan','Haïfa','Israël',32.79,34.99,'m'],['Flora','Budapest','Hongrie',47.5,19.04,''],
+ ['Gaspard','Bordeaux','France',44.84,-0.58,''],['Hugo','São Paulo','Brésil',-23.55,-46.63,''],
+ ['Iris','Zurich','Suisse',47.38,8.54,'t'],['Jamal','Le Caire','Égypte',30.04,31.24,''],
+ ['Kaito','Osaka','Japon',34.69,135.5,''],['Lise','Strasbourg','France',48.58,7.75,''],
+ ['Marco','Turin','Italie',45.07,7.69,'m'],['Nora','Reykjavík','Islande',64.14,-21.9,''],
+ ['Omar','Casablanca','Maroc',33.57,-7.59,'t'],['Petra','Ljubljana','Slovénie',46.05,14.51,''],
+ ['Sara','Stockholm','Suède',59.33,18.07,''],['Tarek','Amman','Jordanie',31.95,35.93,''],
+ ['Ulla','Hambourg','Allemagne',53.55,9.99,'t'],['Vera','Coimbra','Portugal',40.21,-8.42,''],
+ ['Will','Vancouver','Canada',49.28,-123.12,'m']
+];
+/* instruments partagés pour ~la moitié seulement : c'est un opt-in séparé, la
+   plupart des gens ne le cochent pas — la maquette ne doit pas faire croire l'inverse */
+const POOL=[
+  [AC('D Kurd 9','Fabricant non renseigné',true)],
+  [AC('C# Amara 9','Atelier local',false)],
+  [AC('F Low Pygmy 8','Fabricant non renseigné',true)],
+  [EL('Chromatique (18 pads)','Neotone¹ — Soundventure')],
+  [AC('E Hijaz 10','Modèle maison',true)],
+  [AC('D Celtic Minor 9','Fabricant non renseigné',false)]
+];
+const LATER=LAUNCH.concat(LATER_RAW.map((r,i)=>({
+  p:r[0],v:r[1],c:r[2],lat:r[3],lon:r[4],
+  t:r[5].includes('t')?1:0, m:r[5].includes('m')?1:0,
+  note:r[5].includes('t')?'Cours sur demande.':'',
+  sp:i%3===0?1:0, yt:i%4===1?1:0, ig:i%5===2?1:0,
+  inst:(i%2===0)?POOL[i%POOL.length]:null
+})));
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ③ LOGOS HANDPAN — recopie fidèle de library/handpan-logo.ts.
+   ══════════════════════════════════════════════════════════════════════════════ */
+const ACOUSTIC={shellFrom:'#4A3520',shellTo:'#241608',dotFrom:'#FFE1B0',dotTo:'#C9812F',ring:'#E0A860'};
+const ELECTRONIC={shellFrom:'#1E3050',shellTo:'#0C1830',dotFrom:'#BFE6FF',dotTo:'#2E7BD6',ring:'#5FB6F5'};
+const NOTE_DOTS=[[24,10.5],[34.6,15.6],[37.2,27],[29.9,36.2],[18.1,36.2],[10.8,27],[13.4,15.6]];
+let uid=0;
+function handpanLogo(family,bottomNotes,size){
+  const u='hpl'+(++uid).toString(36);
+  const ac=family==='acoustic', c=ac?ACOUSTIC:ELECTRONIC, dot='url(#'+u+'-dot)';
+  const dots=NOTE_DOTS.map(p=>'<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3.1" fill="'+dot+'"/>').join('');
+  const halo=ac?'':'<circle cx="24" cy="24" r="21.4" fill="none" stroke="'+c.ring+'" stroke-width="1" opacity=".45"/>';
+  let crown='';
+  if(ac&&bottomNotes){for(let i=0;i<9;i++){const a=(-90+40*i+20)*Math.PI/180;
+    crown+='<circle cx="'+(24+21.9*Math.cos(a)).toFixed(2)+'" cy="'+(24+21.9*Math.sin(a)).toFixed(2)+'" r="1.85" fill="'+dot+'"/>';}}
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="'+size+'" height="'+size+'" aria-hidden="true">'
+    +'<defs><radialGradient id="'+u+'-shell" cx="36%" cy="26%" r="78%">'
+    +'<stop offset="0" stop-color="'+c.shellFrom+'"/><stop offset="1" stop-color="'+c.shellTo+'"/></radialGradient>'
+    +'<linearGradient id="'+u+'-dot" x1="0" y1="0" x2="0" y2="1">'
+    +'<stop offset="0" stop-color="'+c.dotFrom+'"/><stop offset="1" stop-color="'+c.dotTo+'"/></linearGradient></defs>'
+    +halo+crown
+    +'<circle cx="24" cy="24" r="18.6" fill="url(#'+u+'-shell)" stroke="'+c.ring+'" stroke-width="1.4"/>'
+    +'<circle cx="24" cy="24" r="5.6" fill="url(#'+u+'-dot)"/>'
+    +'<circle cx="24" cy="24" r="5.6" fill="none" stroke="'+c.ring+'" stroke-width=".8" opacity=".8"/>'
+    +dots+'</svg>';
+}
+const SPOTIFY_ICO='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#1DB954"/><path d="M7 15.2c2.7-.8 5.6-.6 8 .8M6.8 12.2c3.3-1 6.9-.7 9.7 1M6.6 9.1c3.9-1.1 8.1-.7 11.3 1.3" stroke="#0D1B2A" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>';
+const YOUTUBE_ICO='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0000"/><path d="M10 8.8l6 3.2-6 3.2z" fill="#fff"/></svg>';
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ④ LA FICHE — composant identique à celui de constellation-joueurs-profil.html
+   ══════════════════════════════════════════════════════════════════════════════ */
+function ficheHtml(p){
+  const cls='fiche'+(p.t?' teach':'')+(p.m&&!p.t?' maker':'');
+  let badges='';
+  if(p.t) badges+='<span class="badge t">🎓 Donne des cours</span>';
+  if(p.m) badges+='<span class="badge m">🔨 Fabrique des instruments</span>';
+  let liens='';
+  if(p.sp) liens+='<a class="link" href="#" onclick="return false">'+SPOTIFY_ICO+'Spotify</a>';
+  if(p.yt) liens+='<a class="link" href="#" onclick="return false">'+YOUTUBE_ICO+'YouTube</a>';
+  if(p.ig) liens+='<a class="link" href="#" onclick="return false">◎ Instagram</a>';
+  if(p.we) liens+='<a class="link" href="#" onclick="return false">🌐 Site web</a>';
+  let instr='';
+  if(p.inst&&p.inst.length){
+    instr='<section><h4>Ses instruments</h4>'+p.inst.map(i=>
+      '<div class="instr">'+handpanLogo(i.famille,i.bottom,26)
+      +'<div class="il"><div class="n">'+i.gamme+'</div><div class="m">'+i.modele+'</div></div>'
+      +'<span class="tag '+(i.famille==='acoustic'?'ac':'el')+'">'
+      +(i.famille==='acoustic'?'acoustique':'électronique')+'</span></div>').join('')+'</section>';
+  }else{
+    instr='<section><h4>Ses instruments</h4><p class="empty">Non partagés.</p></section>';
+  }
+  return '<div class="'+cls+'">'
+    +'<div class="fiche-head"><div class="avatar">'+p.p.charAt(0).toUpperCase()+'</div>'
+    +'<div><div class="who">'+p.p+'</div><div class="where">📍 '+p.v+', '+p.c+'</div></div></div>'
+    +(badges?'<div class="badges">'+badges+'</div>':'')
+    +(p.note?'<section><h4>Cours</h4><p style="margin:0;font-size:var(--fs-body);opacity:.85">'+p.note+'</p></section>':'')
+    +instr
+    +'<section><h4>Où l\'écouter</h4>'+(liens?'<div class="links">'+liens+'</div>':'<p class="empty">Rien de partagé.</p>')+'</section>'
+    +'<div class="fiche-foot"><button class="mini" type="button">✉️ Écrire</button>'
+    +'<button class="mini" type="button">⚑ Signaler ce profil</button>'
+    +'<span style="font-size:var(--fs-micro);opacity:'+(p.real?'.75;color:var(--highlight-color)':'.45')+'">'
+    +(p.real?'★ profil réel — David Lesage':'fiche fictive')+'</span></div>'
+    +'</div>';
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ⑤ RENDU DE LA CARTE
+   ══════════════════════════════════════════════════════════════════════════════ */
+const sky=document.getElementById('sky');
+const linksSvg=document.getElementById('links');
+let POP='launch', FILTER='all', Q='', SEL=null;
+
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const data=()=>POP==='launch'?LAUNCH:LATER;
+function matches(p){
+  if(FILTER==='teach'&&!p.t) return false;
+  if(FILTER==='maker'&&!p.m) return false;
+  if(Q&&!(norm(p.v).includes(Q)||norm(p.c).includes(Q))) return false;
+  return true;
+}
+
+function render(){
+  const list=data();
+  const shown=list.filter(matches);
+  /* Le SEUIL : au-delà, les noms s'effacent (ils reviennent au survol) et les liens
+     de constellation disparaissent. C'est ce qui permet à l'écran d'être beau à 12
+     — cas du lancement — sans devenir une bouillie de texte à 59. */
+  const few=shown.length<=12;
+  sky.classList.toggle('dense',!few);
+
+  /* ── placement des libellés : la direction la moins encombrée ──────────── */
+  /* Unités de la carte (360×136). Une boîte de libellé ≈ 30 × 11 unités.
+     On teste bas / haut / droite / gauche et on garde le moins de collisions —
+     avec les autres étoiles ET avec les libellés déjà posés. */
+  const CAND=[['',0,7.5],['lp-t',0,-8],['lp-r',18,0],['lp-l',-18,0],
+              ['lp-br',16,6.5],['lp-bl',-16,6.5],['lp-tr',16,-6.5],['lp-tl',-16,-6.5]];
+  const OFF={}; CAND.forEach(c=>OFF[c[0]]=[c[1],c[2]]);
+  const pos=list.map(p=>({x:p.lon+180,y:78-p.lat}));
+  const placed=[]; const lp=[];
+  list.forEach((p,i)=>{
+    if(!matches(p)){lp.push('');return;}
+    let best='',bestScore=Infinity;
+    for(const[cls,dx,dy] of CAND){
+      const cx=pos[i].x+dx, cy=pos[i].y+dy;
+      let sc=0;
+      pos.forEach((o,j)=>{if(j!==i&&Math.abs(o.x-cx)<15&&Math.abs(o.y-cy)<6) sc+=2;});
+      placed.forEach(b=>{if(Math.abs(b.x-cx)<27&&Math.abs(b.y-cy)<9.5) sc+=4;});
+      if(cx<16||cx>344) sc+=5;                    /* pas de libellé coupé au bord */
+      if(cy<6||cy>130) sc+=5;
+      if(cls!=='') sc+=0.4;                       /* à égalité, on garde « dessous » */
+      if(sc<bestScore){bestScore=sc;best=cls;}
+    }
+    placed.push({x:pos[i].x+OFF[best][0], y:pos[i].y+OFF[best][1]});
+    lp.push(best);
+  });
+
+  /* ── les étoiles ───────────────────────────────────────────────────────── */
+  sky.querySelectorAll('.star').forEach(n=>n.remove());
+  const r=few?13:9;
+  list.forEach((p,i)=>{
+    const ok=matches(p);
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='star'+(p.t?' teach':(p.m?' maker':''))+(ok?'':' dim')+(SEL===p?' sel':'');
+    b.style.left=((p.lon+180)/360*100)+'%';
+    b.style.top=((78-p.lat)/136*100)+'%';
+    b.setAttribute('aria-label',p.p+' — '+p.v+', '+p.c);
+    b.innerHTML='<span class="core" style="width:'+r+'px;height:'+r+'px"></span>'
+      +'<span class="lbl '+lp[i]+'">'+p.p+'<small>'+p.v+'</small></span>';
+    b.style.animationDelay=(i*0.17)+'s';
+    b.querySelector('.core').style.animationDelay=((i*0.31)%3.6)+'s';
+    b.addEventListener('click',()=>{SEL=p;render();});
+    sky.appendChild(b);
+  });
+
+  /* ── les lignes de constellation (seulement en effectif faible) ─────────── */
+  if(few&&shown.length>1){
+    const pts=shown.map(p=>({x:(p.lon+180),y:(78-p.lat),p}));
+    const seen=new Set(); let s='';
+    pts.forEach((a,i)=>{
+      const near=pts.map((b,j)=>({j,d:Math.hypot(a.x-b.x,a.y-b.y)}))
+        .filter(o=>o.j!==i).sort((u,v)=>u.d-v.d).slice(0,2);
+      near.forEach(o=>{
+        const k=Math.min(i,o.j)+'-'+Math.max(i,o.j);
+        if(seen.has(k)) return; seen.add(k);
+        const b=pts[o.j];
+        s+='<line x1="'+a.x.toFixed(1)+'" y1="'+a.y.toFixed(1)+'" x2="'+b.x.toFixed(1)
+          +'" y2="'+b.y.toFixed(1)+'" stroke="rgba(34,211,238,.30)" stroke-width=".38" '
+          +'stroke-linecap="round" stroke-dasharray="1.4 2"/>';
+      });
+    });
+    linksSvg.innerHTML=s;
+  } else linksSvg.innerHTML='';
+
+  /* ── compteurs ─────────────────────────────────────────────────────────── */
+  const nt=shown.filter(p=>p.t).length, nm=shown.filter(p=>p.m).length;
+  document.getElementById('count').innerHTML=
+    '<b>'+shown.length+'</b> étoile'+(shown.length>1?'s':'')+' allumée'+(shown.length>1?'s':'')
+    +' · '+nt+' prof'+(nt>1?'s':'')+' · '+nm+' fabricant'+(nm>1?'s':'');
+
+  /* ── bandeau honnête, adapté à l'effectif ──────────────────────────────── */
+  const honest=document.getElementById('honest');
+  if(POP==='launch'){
+    honest.innerHTML='<b>Vous êtes 12 à avoir allumé votre étoile.</b><br>'
+      +'C\'est un début — et c\'est déjà une constellation. La carte ne montre que celles et ceux '
+      +'qui ont dit oui dans leur profil : un pays vide n\'est pas un pays sans joueurs.';
+  }else{
+    honest.innerHTML='<b>59 étoiles allumées.</b><br>'
+      +'Même écran, plus tard. Les noms s\'effacent et reviennent au survol ; les liens de '
+      +'constellation disparaissent — à cette densité, c\'est le nuage qui fait le dessin.';
+  }
+
+  /* ── liste des résultats ───────────────────────────────────────────────── */
+  const res=document.getElementById('results');
+  if(!shown.length){
+    res.innerHTML='<div class="noresult">☾ <b>Personne ici pour l\'instant.</b><br>'
+      +'Ça ne veut pas dire que personne ne joue : la carte ne montre que celles et ceux qui ont '
+      +'choisi d\'apparaître. Essaie un pays voisin — ou allume ton étoile, et sois le premier '
+      +'point de cette zone.</div>';
+  }else{
+    res.innerHTML=shown.map((p,i)=>
+      '<button class="res'+(p.t?' t':(p.m?' m':''))+(SEL===p?' sel':'')+'" type="button" data-i="'+i+'">'
+      +'<i class="d"></i><span class="rn">'+p.p+'</span>'
+      +'<span class="rl">'+p.v+', '+p.c+'</span></button>').join('');
+    res.querySelectorAll('.res').forEach(btn=>btn.addEventListener('click',()=>{
+      SEL=shown[+btn.dataset.i]; render();
+      const el=res.querySelector('.res.sel'); if(el) el.scrollIntoView({block:'nearest'});
+    }));
+  }
+
+  /* ── la fiche ──────────────────────────────────────────────────────────── */
+  const host=document.getElementById('fiche-host');
+  if(SEL&&matches(SEL)) host.innerHTML=ficheHtml(SEL);
+  else host.innerHTML='<div class="pan"><h3>✨ Clique une étoile</h3>'
+    +'<p class="why">Chaque point est quelqu\'un qui a choisi d\'apparaître. Sa fiche montre '
+    +'exactement ce qu\'il a coché — jamais plus.</p></div>';
+}
+
+/* ── contrôles ─────────────────────────────────────────────────────────────── */
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{
+  FILTER=b.dataset.filter;
+  document.querySelectorAll('[data-filter]').forEach(o=>o.setAttribute('aria-pressed',String(o===b)));
+  render();
+}));
+document.querySelectorAll('[data-pop]').forEach(b=>b.addEventListener('click',()=>{
+  POP=b.dataset.pop; SEL=null;
+  document.querySelectorAll('[data-pop]').forEach(o=>o.setAttribute('aria-pressed',String(o===b)));
+  render();
+}));
+document.getElementById('q').addEventListener('input',e=>{Q=norm(e.target.value.trim());render();});
+render();
+</script>
+</body>
+</html>

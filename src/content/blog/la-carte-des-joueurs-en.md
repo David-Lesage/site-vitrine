@@ -93,17 +93,36 @@ Here's the one thing this page cannot honestly show you: a full sky. So let me s
 <p class="embed-maquette-intro">And you can handle it yourself, below: filter the teachers, search for a city, switch between "Lancement (12)" and "Plus tard (59)" to see how the drawing holds up as the sky fills.</p>
 
 <div class="embed-maquette">
-  <p class="embed-maquette-bandeau"><strong>⚠️ Design mockup — not the application</strong><br />The names, cities and counters shown below are fictional. The application, on 1 September 2026, holds one star. (The mockup's own interface is in French.)</p>
+  <p class="embed-maquette-bandeau"><strong>⚠️ Design mockup — not the application</strong><br />The eleven other players and the counter shown below are fictional. <strong>One star is real: mine</strong>, in Paris — click it and you'll see my actual public profile, the very one the application publishes. On 1 September 2026 the application holds that star, and only that one. (The mockup's own interface is in French.)</p>
   <iframe
-    src="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html"
+    src="/prototypes/constellation-joueurs-carte.html"
     title="Interactive mockup of the players' map (fictional data)"
     loading="lazy"
     referrerpolicy="no-referrer"
   ></iframe>
-  <p class="embed-maquette-pied">Interactive frame — <a href="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html">open the mockup full screen</a>.</p>
+  <p class="embed-maquette-pied">Interactive frame — <a href="/prototypes/constellation-joueurs-carte.html">open the mockup full screen</a>.</p>
 </div>
 
-<p class="embed-maquette-mobile"><strong>⚠️ Design mockup — not the application.</strong> The handleable version is a wide-screen layout; on a phone it would be unreadable, so I'd rather give you the image above and the link than a frame you can't use. <a href="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html">Open the mockup full screen</a> (fictional names and numbers).</p>
+<p class="embed-maquette-mobile"><strong>⚠️ Design mockup — not the application.</strong> The handleable version is a wide-screen layout; on a phone it would be unreadable, so I'd rather give you the image above and the link than a frame you can't use. <a href="/prototypes/constellation-joueurs-carte.html">Open the map full screen</a> (eleven fictional players, plus my one real star). And to see the screen you light your star from — prefilled with my real profile, editable, with nothing saved: <a href="/prototypes/constellation-joueurs-profil.html">open the public-profile sandbox</a>.</p>
+
+### The screen you light your star from
+
+There's one question everybody asks before ticking anything: *what exactly gets published?* So rather than promise you an answer, I'll show you — using **my own data**, from my real public profile, and let you poke at it.
+
+<p class="embed-maquette-intro">Below is the "🌍 My public profile" panel as it exists in the application, <strong>prefilled with my real profile</strong>. Flip the master switch off: my star goes dark in front of you. Untick "share my instruments": my four handpans vanish from the card. Rewrite the name: the card follows. The right-hand column isn't an illustration, it's the map's own card component — what you see there is literally what others would see. <strong>Nothing is saved</strong>: reload the page and my profile comes back. (The sandbox's own interface is in French.)</p>
+
+<div class="embed-maquette embed-maquette-haute">
+  <p class="embed-maquette-bandeau"><strong>🧪 Sandbox — nothing is saved</strong><br />This screen is prefilled with my real public profile and is fully editable: no data is sent or stored, reloading brings my profile back. The other players on the map are invented examples — except me, who is real. (Interface in French.)</p>
+  <iframe
+    src="/prototypes/constellation-joueurs-profil.html"
+    title="Public-profile sandbox for the players' map, prefilled with David Lesage's real profile"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+  ></iframe>
+  <p class="embed-maquette-pied">Interactive frame — <a href="/prototypes/constellation-joueurs-profil.html">open the sandbox full screen</a>.</p>
+</div>
+
+<p class="embed-maquette-mobile"><strong>🧪 Public-profile sandbox — nothing is saved.</strong> This is the screen you light your star from, prefilled with my real profile and fully editable; but it's a two-column desktop layout, and inside a phone-sized frame it would be unreadable. <a href="/prototypes/constellation-joueurs-profil.html">Open the sandbox full screen</a> (no data sent or stored).</p>
 
 ## Why "constellation", and not "member map"
 
