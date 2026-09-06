@@ -2,7 +2,7 @@
 title: "Vocal layouts: accompanying every voice"
 description: "Deep, Bright, Wide: three Logic Mode layouts that adapt the chords to the singer's range so the voice settles naturally."
 pubDate: 2026-07-22
-cover: "/images/invisible-visible.webp"
+cover: "/images/app-layout-vocal.webp"
 category: "chant"
 tags: ["singing", "accompaniment"]
 lang: "en"
@@ -17,6 +17,20 @@ Vocal layouts are three settings of [Handpan Constellation Studio's Logic Mode](
 When you accompany someone singing, it's not only the chord that matters — it's **where** it sounds. A chord placed too high clashes with a high voice; placed too low, it leaves a low voice with no support. The same chord, played with a different voicing, can either wrap around the voice or trample it.
 
 That's exactly what the vocal layouts fix. They keep the same colours, the same emotions — the grammar described in [Playing with emotions](/en/blog/handpan-emotions-degres) — but reorganise how the accompaniment occupies the sound space, leaving room for the voice.
+
+<figure>
+  <img
+    src="/images/app-layout-vocal.webp"
+    width="1564"
+    height="996"
+    alt="Close-up of the « ② TONALITÉ » block in Logic Mode's right-hand panel. On the left, « Note d'ancrage » with an orange disc showing the letter D. On the right, « Mode » with two stacked buttons: « 🙂 Joyeux » selected in yellow, and « 😢 Triste » next to a « Nuances » button. Below, separated by a rule, the « 🎚 Layout vocal » setting with a help question mark, and a three-position selector: « 🌑 Profond » highlighted in cyan, « ☀️ Brillant », « 🌈 Ample ». The « Voyage des Sensations » heading begins underneath."
+    data-lb="layout-vocal"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The selector as it appears in the right-hand panel, below the anchor note and the mode. Three positions — <strong>Profond</strong> (deep), <strong>Brillant</strong> (bright), <strong>Ample</strong> (wide) — only one active at a time; Profond here. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## The three presets
 
