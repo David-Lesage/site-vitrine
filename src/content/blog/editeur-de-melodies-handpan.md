@@ -2,7 +2,7 @@
 title: "Composer ta mélodie note à note : l'éditeur de mélodies"
 description: "Pose les notes de ton handpan sur une timeline, écoute, mets en boucle, accélère — et exporte en .mid. L'éditeur de mélodies de Handpan Constellation Studio."
 pubDate: 2026-08-27
-cover: "/images/app-creation.webp"
+cover: "/images/app-editeur-melodies-timeline.webp"
 category: "partitions"
 tags: ["mélodie", "midi", "atelier"]
 lang: "fr"
@@ -21,6 +21,20 @@ Résultat, on rejoue toujours les mêmes trois phrases — celles que les doigts
 ## Ton pan en haut, ta timeline en dessous
 
 Le principe tient en une image. En haut, ton handpan tel que tu le connais, chaque note habillée de sa **ChromaKey**. En bas, une timeline horizontale avec ses mesures. Tu cliques une note, une pastille apparaît au curseur, à sa couleur.
+
+<figure>
+  <img
+    src="/images/app-editeur-melodies-timeline.webp"
+    width="2000"
+    height="1400"
+    alt="L'éditeur de mélodies en pleine page, thème sombre. En haut, le champ de titre « Ode à la Joie (thème) », des boutons annuler / refaire, enregistrer, ouvrir, « Importer », « ↓ .mid », et les onglets « Atelier » et « Pluie de notes ». En dessous, la barre de transport (retour, pause, stop, enregistrement, boucle), TEMPO 80, MÉTRIQUE 4/4, MESURE 2. À gauche, le panneau « GAMME & INSTRUMENT » : « Ode à la Joie (thème) — D » et un handpan dessiné avec le ding D4 au centre et les notes G4, E4, F#4, A4 autour, chacune à sa couleur, plus une réglette de pulsation entre un pied gauche et un pied droit. Au centre, la grille : cinq lignes nommées A4, G4, F#4, E4, D4, quatre mesures numérotées, et une quinzaine de pastilles colorées posées à des moments différents, chacune portant le nom de sa note ; une tête de lecture verticale blanche est arrêtée au début de la mesure 2. À droite, les réglages : Grille « Croche », Métrique 4/4 · 3/4 · 6/8, Vitesse 1×, un sélecteur d'affichage « ChromaKeys / Degré » et les notations Nº, DoRé, ABC, 1-2-3 ; puis la rubrique ENTRAÎNEMENT avec les cases « Clic à chaque temps », « Décompte d'une mesure », « Accélérer peu à peu », « 🥁 Jouer avec le batteur », « Quantiser l'enregistrement (croche) ». En bas de la grille, trois outils : crayon, main, gomme."
+    data-lb="editeur-melodies"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>L'éditeur, ouvert sur le thème de <em>l'Ode à la Joie</em>. Chaque note du pan a sa ligne dans la grille et sa couleur ; les pastilles portent le nom de la note, et la tête de lecture blanche marque où on en est — ici au début de la mesure 2. En bas à gauche de la grille, les trois outils : <strong>crayon</strong>, <strong>main</strong>, <strong>gomme</strong>.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 Ensuite tout se manipule à la main :
 

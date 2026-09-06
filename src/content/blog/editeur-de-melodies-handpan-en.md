@@ -2,7 +2,7 @@
 title: "Compose your melody note by note: the melody editor"
 description: "Drop your handpan's notes onto a timeline, listen, loop, speed up — and export as .mid. Handpan Constellation Studio's melody editor."
 pubDate: 2026-08-27
-cover: "/images/app-creation.webp"
+cover: "/images/app-editeur-melodies-timeline.webp"
 category: "partitions"
 tags: ["melody", "midi", "workshop"]
 lang: "en"
@@ -21,6 +21,20 @@ So you keep replaying the same three phrases — the ones your fingers memorised
 ## Your pan on top, your timeline below
 
 The idea fits in one image. On top, your handpan as you know it, each note wearing its **ChromaKey**. Below, a horizontal timeline with its bars. Click a note and a coloured block appears at the cursor.
+
+<figure>
+  <img
+    src="/images/app-editeur-melodies-timeline.webp"
+    width="2000"
+    height="1400"
+    alt="The melody editor full page, dark theme. At the top, the title field « Ode à la Joie (thème) », undo/redo, save, open, « Importer », « ↓ .mid » buttons, and the « Atelier » and « Pluie de notes » tabs. Below, the transport bar (rewind, pause, stop, record, loop), TEMPO 80, MÉTRIQUE 4/4, MESURE 2. On the left, the « GAMME & INSTRUMENT » panel with a handpan drawn: the D4 ding at the centre and G4, E4, F#4, A4 around it, each in its own colour, plus a pulse slider between a left foot and a right foot. In the centre, the grid: five rows labelled A4, G4, F#4, E4, D4, four numbered bars, and about fifteen coloured blocks placed at different moments, each carrying its note name; a white vertical playhead sits at the start of bar 2. On the right, the settings: Grid « Croche », Metre 4/4 · 3/4 · 6/8, Speed 1×, a « ChromaKeys / Degré » display switch and the Nº, DoRé, ABC, 1-2-3 notations; then a practice section with checkboxes « Clic à chaque temps », « Décompte d'une mesure », « Accélérer peu à peu », « 🥁 Jouer avec le batteur », « Quantiser l'enregistrement (croche) ». At the bottom of the grid, three tools: pencil, hand, eraser."
+    data-lb="editeur-melodies"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The editor, open on the <em>Ode to Joy</em> theme. Every note on the pan gets its own row in the grid and its own colour; each block carries its note name, and the white playhead marks where you are — the start of bar 2 here. Bottom left of the grid: the three tools, <strong>pencil</strong>, <strong>hand</strong>, <strong>eraser</strong>. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 From there everything is hands-on:
 
