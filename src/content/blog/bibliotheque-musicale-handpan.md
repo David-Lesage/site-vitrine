@@ -2,7 +2,7 @@
 title: "La Bibliothèque musicale : et si ta gamme te disait quoi jouer ?"
 description: "Chansons à accompagner, morceaux de handpan, tes compositions : la Bibliothèque de Handpan Constellation Studio te dit lesquels ta gamme sait vraiment jouer."
 pubDate: 2026-08-31
-cover: "/images/blog-partition-hallelujah.webp"
+cover: "/images/app-bibliotheque-badges.webp"
 category: "communaute"
 tags: ["morceaux", "répertoire", "synchronisation"]
 lang: "fr"
@@ -38,6 +38,20 @@ Chaque morceau porte désormais une pastille, calculée sur les notes réelles d
 - 🔒 **il manque des notes** — et l'app te dit lesquelles.
 
 Des compteurs en tête de liste t'annoncent la couleur avant même que tu cherches. Et si tu cliques quand même sur un morceau incompatible, tu n'as pas droit à un refus sec : tu obtiens une explication claire et un bouton pour basculer sur la bonne gamme. En mode acoustique, l'app va plus loin et te propose le morceau **transposé dans la tonalité de ton handpan**.
+
+<figure>
+  <img
+    src="/images/app-bibliotheque-badges.webp"
+    width="2000"
+    height="1400"
+    alt="La fenêtre « 🎵 Le répertoire », thème sombre. En tête : « Le catalogue commun : les chansons à accompagner au handpan et les morceaux composés par les joueurs. (Tes propres sauvegardes, elles, vivent dans 📓 Mes créations.) », un bouton « 🎹 Éditeur de mélodies — composer note à note », puis deux onglets « 🎤 Chansons » (actif) et « 🥁 Morceaux de handpan ». Ensuite une barre de recherche et des filtres : tous les auteurs, tous les styles, toutes les années, partition complète, et un tri Titre (A→Z) / Auteur (A→Z) / Année. Une ligne récapitulative annonce « ✅ Tu peux en accompagner 156 · 🎼 41 de plus avec d'autres notes », et à droite « ✨ Avec un Neotone : tout le répertoire, dans toutes les tonalités — découvrir → ». Sous le titre « 🌍 Répertoire mondial », neuf fiches de morceaux : He's a Pirate (Hans Zimmer, 2003) avec le badge vert « ✅ Jouable avec ton handpan » ; Canon in D, Hallelujah, Knockin' On Heaven's Door, Let It Be, No Woman No Cry, Stand By Me avec « ✅ Jouable transposé en F » ; Zombie avec « ✅ Jouable transposé en D mineur » ; et Shape of My Heart marqué « ⚠️ BROUILLON », sans badge de compatibilité. Chaque fiche porte aussi les étiquettes « Accompagnement » et « Partition complète ». En pied de liste : « Voir aussi les 194 autres morceaux — Structures à compléter et grilles d'accords »."
+    data-lb="bibliotheque"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>La liste, avec les pastilles calculées sur la gamme chargée. En tête, le compte annoncé avant toute recherche : « <strong>Tu peux en accompagner 156</strong> · 41 de plus avec d'autres notes ». Sur les fiches, la nuance est visible — <em>He's a Pirate</em> est jouable tel quel, <em>Let It Be</em> et <em>Hallelujah</em> jouables transposés en F, <em>Zombie</em> en ré mineur.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Ta bibliothèque te suit
 

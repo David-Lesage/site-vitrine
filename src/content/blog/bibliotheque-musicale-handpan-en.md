@@ -2,7 +2,7 @@
 title: "The music library: what if your scale told you what to play?"
 description: "Songs to accompany, handpan pieces, your own compositions: Handpan Constellation Studio's library tells you which ones your scale can actually play."
 pubDate: 2026-08-31
-cover: "/images/blog-partition-hallelujah.webp"
+cover: "/images/app-bibliotheque-badges.webp"
 category: "communaute"
 tags: ["songs", "repertoire", "sync"]
 lang: "en"
@@ -38,6 +38,20 @@ Every piece now carries a marker, computed from the real notes of your scale:
 - 🔒 **notes are missing** — and the app tells you which.
 
 Counters at the top of the list give you the picture before you even start searching. And if you click an incompatible piece anyway, you don't get a flat refusal: you get a clear explanation and a button to switch to the right scale. In acoustic mode the app goes further and offers the piece **transposed into your handpan's key**.
+
+<figure>
+  <img
+    src="/images/app-bibliotheque-badges.webp"
+    width="2000"
+    height="1400"
+    alt="The « 🎵 Le répertoire » window, dark theme. At the top, a line explaining that this is the shared catalogue of songs to accompany and pieces composed by players, a « 🎹 Éditeur de mélodies » button, then two tabs « 🎤 Chansons » (active) and « 🥁 Morceaux de handpan ». Then a search bar and filters by author, style, year and completeness, plus a Title / Author / Year sort. A summary line reads « ✅ Tu peux en accompagner 156 · 🎼 41 de plus avec d'autres notes », and on the right « ✨ Avec un Neotone : tout le répertoire, dans toutes les tonalités ». Under the « 🌍 Répertoire mondial » heading, nine song cards: He's a Pirate (Hans Zimmer, 2003) with the green badge « ✅ Jouable avec ton handpan »; Canon in D, Hallelujah, Knockin' On Heaven's Door, Let It Be, No Woman No Cry and Stand By Me with « ✅ Jouable transposé en F »; Zombie with « ✅ Jouable transposé en D mineur »; and Shape of My Heart marked « ⚠️ BROUILLON » with no compatibility badge. Each card also carries « Accompagnement » and « Partition complète » tags. At the foot: « Voir aussi les 194 autres morceaux »."
+    data-lb="bibliotheque"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The list, with badges computed against the loaded scale. At the top, the count announced before you search anything: « <strong>Tu peux en accompagner 156</strong> » — 156 you can accompany, 41 more with other notes. On the cards the nuance shows — <em>He's a Pirate</em> plays as is, <em>Let It Be</em> and <em>Hallelujah</em> transposed to F, <em>Zombie</em> to D minor. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Your library follows you
 
