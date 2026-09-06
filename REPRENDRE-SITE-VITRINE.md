@@ -37,6 +37,29 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
    Les lire avant tout nouveau travail sur le blog (ils répondent probablement aux manques F3/B4/D1/E2/F6).
 3. Aucun agent n'était en cours dans la session SITE au moment de la coupure : arbre propre, rien d'à moitié écrit.
 
+## ÉTAT ACTUEL — 07/09/2026 (18ᵉ passe, nuit) — ✅ Captures intégrées · ✅ Atlas rempli avec les mots de David · 🐞 captures partition à refaire (session APP)
+
+Tout déployé en prod (`bdc1b45`, vérifié), `origin/main` à jour.
+- **3 captures post-marqueur intégrées** (`2454a59`) : `bibliotheque-musicale-handpan` FR/EN réécrit selon le rectificatif E2
+  (les DEUX mécanismes coexistent, morceau bloqué = porte : notes manquantes + 4 handpans chiffrés + Neotone + « Compléter
+  mon instrument »), vignette Atlas des gammes à 6 destinations, `app-midi.webp` (périmée, conservée en archive) remplacée
+  par `app-midi-mapping-2026.webp` dans `pourquoi-handpan-electronique` FR/EN, `StudioPage.astro`, `shop.ts`.
+- **Témoignage Atlas rempli** (`212c100` + `bdc1b45`) dans `AtlasPage.astro` + dict/en/es. Choix de David : vidéo = l'accroche
+  (0:36) ; tête acoustique = défaut des ventouses (3:14) PUIS principe des trous (5:32), chapeau hors citation ;
+  modèles = description du Pro (6:10) + **ajout ÉCRIT de David du 06/09** (clés `modelsDavidToday*`) : préférence assumée
+  pour le Pro, seul défaut = tête bois ni en option ni incluse → pas de jeu assis avec la tête seule ; bois = plus long à
+  monter, plus volumineux, moins réglable. `headAcousticNote` ne promet plus « je vous dirai ce que j'entends ».
+  🚨 Règle inchangée : ses mots, orthographe seule corrigée ; EN/ES marqués « traduit du français ».
+- 🐞 **Captures de `ta-partition-prend-vie` à REFAIRE** (David, 06/09 : fond cuivré des handpans chargé partiellement, captures
+  prises trop vite). Demande envoyée à la session APP (`MESSAGE-SESSION-SITE-2026-09-06-captures-partielles.md`) : refaire les
+  9 captures en attendant le chargement complet + appliquer ce contrôle à toute capture future + repasser les 32 du 06/09.
+  À la livraison : reconvertir en webp (mêmes noms `app-partition-*.webp`, `app-pupitre-plein-ecran-tablette.webp`), redéployer.
+  **Règle pour la suite (David) : toute capture avec un disque de handpan partiel = à refaire, jamais à publier.**
+- **Brouillon email Yishama** écrit : `BROUILLON-EMAIL-YISHAMA-ACIERS.md` (FR+EN, crochets à remplir, NON envoyé). Découverte :
+  la section « Trois aciers » n'a AUCUNE photo (dégradés CSS), pas « une trop petite ».
+- Reste bloqué sur David : nom exact de la 2ᵉ page Hisong (co-orga 4 événements) · 3 adresses email · envoi Yishama.
+  Facebook : ≈3 oct / ≈30 oct / ≈20 nov.
+
 ## ÉTAT ACTUEL — 06/09/2026 (17ᵉ passe, soir) — 🔓 BLOG LIBRE · « Hybride » retiré et déployé · Atlas : extraits à valider
 
 - **Marqueur `BLOG-IMAGES-TERMINÉ` posé** (`b25a6e1`, 15h09) : `src/content/blog/**` et `public/images/**` sont libres.
