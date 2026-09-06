@@ -2,7 +2,7 @@
 title: "The two views of ChromaKeys: colour tells the note, or the role"
 description: "A C always red, or the first degree always red? ChromaKeys can be read two ways, and both are true. How to know which lens to wear — and when."
 pubDate: 2026-09-24
-cover: "/images/app-hybride-deux-gammes.webp"
+cover: "/images/app-deux-handpans-accord-a-cheval.webp"
 category: "methode"
 tags: ["method", "colours", "degrees"]
 lang: "en"

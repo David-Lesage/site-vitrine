@@ -2,7 +2,7 @@
 title: "Les deux visions des ChromaKeys : la couleur dit la note, ou le rôle"
 description: "Un do toujours rouge, ou le premier degré toujours rouge ? Les ChromaKeys se lisent de deux façons, et les deux sont vraies. Comment savoir laquelle porter — et quand."
 pubDate: 2026-09-24
-cover: "/images/app-hybride-deux-gammes.webp"
+cover: "/images/app-deux-handpans-accord-a-cheval.webp"
 category: "methode"
 tags: ["méthode", "couleurs", "degrés"]
 lang: "fr"

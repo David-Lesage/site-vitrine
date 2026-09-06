@@ -2,7 +2,7 @@
 title: "Deux handpans qui n'en font qu'un : tes 2 handpans"
 description: "Quand un second handpan rejoint le premier, Handpan Constellation Studio dessine l'accord à cheval sur les deux — et te dit ce que ce duo débloque vraiment."
 pubDate: 2026-09-01
-cover: "/images/blog-bottom-coques.webp"
+cover: "/images/app-deux-handpans-accord-a-cheval.webp"
 category: "acoustique"
 tags: ["tes 2 handpans", "deux handpans", "compléter"]
 lang: "fr"
@@ -39,6 +39,20 @@ Un bandeau s'affiche alors au-dessus de tes pans : **🌗 Tes 2 handpans : *le p
 Ce dernier nombre est le vrai sujet. Pour ces accords-là, la disposition est calculée pour de vrai entre les deux instruments — la fondamentale la plus grave à la basse — et le tracé traverse l'espace d'un pan à l'autre. Tu vois d'un coup d'œil quelle main part où, et l'ordre de jeu suit.
 
 Un mot de vocabulaire, parce que l'application fait maintenant la différence : deux acoustiques côte à côte, c'est un **duo**. Un acoustique **et** un Neotone, c'est l'**Hybride** — le même bandeau, mais d'autres règles, et c'est « Compléter » qui t'y emmène. L'app ne mélange jamais les deux familles d'office : elle te *propose* l'Hybride au lieu de refuser.
+
+<figure>
+  <img
+    src="/images/app-deux-handpans-accord-a-cheval.webp"
+    width="2000"
+    height="1400"
+    alt="L'onglet Gammes avec deux handpans posés côte à côte, thème sombre. Au-dessus des instruments, un bandeau : « 🌙 Tes 2 handpans : D Minor / Kurd 10 + B2 … », un bouton « ⇄ inverser », « Cadre : 🌙 mineur naturel », puis le décompte « 6 avec D Minor / Kurd 10 · 4 avec B2 Amara 9 · 14 avec les deux », ce dernier chiffre en jaune. En dessous, un bouton « 🎼 Les 14 accords ↓ », la ligne « Les accords de base, à deux » avec sept pastilles I à VII, et la ligne « Accord I : ① D3 main G · pan 1 → ② F4 main D · pan 1 → ③ A4 main G · pan 1 ». Les deux pans sont dessinés en ChromaKeys ; sur celui de gauche, trois notes sont numérotées 1, 2, 3 et reliées par un tracé. En bas, les sept emplacements d'accords Dm, E°, F, Gm, Am, A#, C."
+    data-lb="deux-handpans"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le bandeau du duo, au-dessus des deux instruments. Il nomme les deux pans, offre un <strong>⇄ inverser</strong>, rappelle le cadre tonal, et surtout donne le décompte en une ligne : <strong>6</strong> accords avec le premier seul, <strong>4</strong> avec le second seul, <strong>14 avec les deux</strong>. La ligne « Accord I » détaille chaque note avec sa main et son pan.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Ton répertoire, dès le chargement
 

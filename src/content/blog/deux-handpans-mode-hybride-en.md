@@ -2,7 +2,7 @@
 title: "Two handpans that become one: your 2 handpans"
 description: "When a second handpan joins the first, Handpan Constellation Studio draws each chord across both — and tells you what that duo really unlocks."
 pubDate: 2026-09-01
-cover: "/images/blog-bottom-coques.webp"
+cover: "/images/app-deux-handpans-accord-a-cheval.webp"
 category: "acoustique"
 tags: ["your 2 handpans", "two handpans", "complete"]
 lang: "en"
@@ -39,6 +39,20 @@ A banner then appears above your pans: **🌗 Your 2 handpans: *the first* + *th
 That last number is the real subject. For those chords, the voicing is genuinely computed across the two instruments — lowest root in the bass — and the path crosses the gap from one pan to the other. You see at a glance which hand goes where, and the play order follows.
 
 A word on vocabulary, because the app now draws the line: two acoustics side by side is a **duo**. An acoustic **and** a Neotone is the **Hybrid** — same banner, different rules, and it is "Complete" that takes you there. The app never mixes the two families by default: it *offers* you the Hybrid instead of refusing.
+
+<figure>
+  <img
+    src="/images/app-deux-handpans-accord-a-cheval.webp"
+    width="2000"
+    height="1400"
+    alt="The Scales tab with two handpans set side by side, dark theme. Above the instruments, a banner: « 🌙 Tes 2 handpans : D Minor / Kurd 10 + B2 … », an « ⇄ inverser » button, « Cadre : 🌙 mineur naturel », then the count « 6 avec D Minor / Kurd 10 · 4 avec B2 Amara 9 · 14 avec les deux », the last figure in yellow. Below, a « 🎼 Les 14 accords ↓ » button, the row « Les accords de base, à deux » with seven pills I to VII, and the line « Accord I : ① D3 main G · pan 1 → ② F4 main D · pan 1 → ③ A4 main G · pan 1 ». Both pans are drawn in ChromaKeys; on the left one, three notes are numbered 1, 2, 3 and joined by a path. Along the bottom, the seven chord slots Dm, E°, F, Gm, Am, A#, C."
+    data-lb="deux-handpans"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The duo banner, above the two instruments. It names both pans, offers a <strong>swap</strong>, recalls the tonal frame, and above all gives the count in one line: <strong>6</strong> chords on the first alone, <strong>4</strong> on the second alone, <strong>14 with both</strong>. The « Accord I » row spells out each note with its hand and its pan. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Your repertoire, right from loading
 
