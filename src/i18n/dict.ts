@@ -172,7 +172,8 @@ const fr = {
     // COMPLÉTION. Deux univers qui coexistent. Rien ici n'est inventé :
     // Yishama = ambassadeur et affilié (rien de signé) · Neotone =
     // handpan électronique fabriqué par Soundventure, David bêta-testeur
-    // depuis 2023 · « 🎯 Compléter » et le mode Hybride sont des
+    // depuis 2023 · « 🎯 Compléter » et l'affichage des deux pans côte à
+    // côte sont des
     // fonctions réellement livrées dans l'app.
     // ⚖️ Les deux cartes doivent rester STRICTEMENT symétriques :
     // même image (même séance photo), même nombre de puces, même CTA.
@@ -202,7 +203,7 @@ const fr = {
     ],
     duoBridgeEyebrow: 'Le trait d’union',
     duoBridgeTitle: 'Mon application parle les deux langues',
-    duoBridgeText: 'Handpan Constellation Studio a un mode acoustique et un mode électronique. Quand ta gamme acoustique ne suffit plus, la fonction « 🎯 Compléter » te dit exactement quelles notes te manquent — et ce qu’apporterait un second handpan acoustique, ou un Neotone. Le mode Hybride trace ensuite tes accords à cheval sur les deux coques. Complétion, pas compétition.',
+    duoBridgeText: 'Handpan Constellation Studio a un mode acoustique et un mode électronique. Quand ta gamme acoustique ne suffit plus, la fonction « 🎯 Compléter » te dit exactement quelles notes te manquent — et ce qu’apporterait un second handpan acoustique, ou un Neotone. Tes deux handpans s’affichent ensuite côte à côte, chaque accord se résolvant sur le pan qui le porte. Complétion, pas compétition.',
     duoBridgeCta: 'Découvrir Handpan Constellation Studio',
 
     whyEyebrow: 'Pourquoi moi',
@@ -551,7 +552,8 @@ const fr = {
 
     // 📸 LA CAPTURE DE L'APPLICATION (ajoutée le 27/08/2026) — les deux gammes
     // ci-dessus, vues dans Handpan Constellation Studio, onglet Logique, mode
-    // Hybride. C'est la seule page du site où ces deux gammes sont nommées et
+    // deux pans côte à côte. C'est la seule page du site où ces deux gammes sont
+    // nommées et
     // détaillées note à note : l'image y montre exactement les mêmes notes,
     // dessinées sur les deux coques.
     //  · `insAppAlt`     = accessibilité ET référencement — « E 18 » et
@@ -568,7 +570,7 @@ const fr = {
     // 👉 D'ici là, ni la légende ni l'`alt` ne doivent laisser entendre que le
     //    crédit est visible à l'écran — il ne l'est pas encore.
     insAppAlt:
-      'Capture de Handpan Constellation Studio, onglet Logique en mode Hybride : mes deux handpans Yishama dessinés côte à côte, toutes leurs notes affichées en pastilles de couleur — à gauche le E 18 (ding E3), à droite le D Kurd 18 (ding D3), notes du dessous comprises. Le bandeau du haut annonce 6 accords avec le E 18, 6 avec le D Kurd 18 et 24 avec les deux réunis. En dessous, les sept degrés de l’union : I Équilibre E, II Élan F♯m, III Aventure G♯m, IV Détente A, V Tension B, VI Nostalgie C♯m, VII Mystère D♯°.',
+      'Capture de Handpan Constellation Studio, onglet Logique : mes deux handpans Yishama dessinés côte à côte, toutes leurs notes affichées en pastilles de couleur — à gauche le E 18 (ding E3), à droite le D Kurd 18 (ding D3), notes du dessous comprises. Le bandeau du haut annonce 6 accords avec le E 18, 6 avec le D Kurd 18 et 24 avec les deux réunis. En dessous, les sept degrés de l’union : I Équilibre E, II Élan F♯m, III Aventure G♯m, IV Détente A, V Tension B, VI Nostalgie C♯m, VII Mystère D♯°.',
     insAppCaption:
       'Mes deux gammes réunies dans mon application : six accords avec l’une, six avec l’autre — et vingt-quatre quand elles jouent ensemble. C’est ce chiffre-là qui dit que Yonathan ne m’a pas fabriqué deux instruments, mais un système.',
     // ⚠️ Ligne d'aide SÉPARÉE de la légende, et non fondue dedans : la légende
@@ -720,7 +722,7 @@ const fr = {
       { t: 'Ta gamme, en couleurs', d: 'Tu choisis ton instrument : l’app dessine ta coque avec tes notes réelles, chacune habillée de sa couleur. L’écran devient le miroir de ton pan.' },
       { t: 'Le diapason 440 / 432 Hz', d: 'Un réglage accorde l’app sur ton handpan — pour que ce que tu entends à l’écran sonne juste avec ce que tu as dans les mains.' },
       { t: '🎯 Compléter ta gamme', d: 'L’app compare tes notes réelles avec ce que demandent les accords, et te dit exactement lesquelles te manquent — puis quel second handpan les apporterait, et combien de morceaux ça débloquerait.' },
-      { t: 'Le mode Hybride', d: 'Dès qu’un second pan est là, les deux coques s’affichent côte à côte et chaque accord se trace à cheval sur les deux, avec l’ordre de jeu et les mains. Exactement mon problème de gymnastique — résolu à l’écran.' },
+      { t: 'Tes 2 handpans côte à côte', d: 'Dès qu’un second pan est là, les deux coques s’affichent côte à côte et chaque accord se trace sur le pan qui le porte, avec l’ordre de jeu et les mains. Exactement mon problème de gymnastique — résolu à l’écran.' },
     ],
     // 🖋️ Le badge de l'app porte MON nom — la phrase doit dire qui les a
     // conçues. Voir la note « CRÉDIT DE PATERNITÉ » plus haut (clé insCredit).

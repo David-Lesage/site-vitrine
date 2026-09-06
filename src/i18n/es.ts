@@ -208,7 +208,7 @@ export const es: Dict = {
     ],
     "duoBridgeEyebrow": "El guion",
     "duoBridgeTitle": "Mi aplicación habla ambos idiomas.",
-    "duoBridgeText": "Handpan Constellation Studio cuenta con un modo acústico y un modo electrónico. Si tu escala acústica no es suficiente, la función \"🎯 Complete\" te indica con precisión qué notas te faltan y qué añadiría un segundo handpan acústico o un Neotone. El modo híbrido reproduce tus acordes en ambos instrumentos. Completar, no competir.",
+    "duoBridgeText": "Handpan Constellation Studio cuenta con un modo acústico y un modo electrónico. Si tu escala acústica no es suficiente, la función \"🎯 Complete\" te indica con precisión qué notas te faltan y qué añadiría un segundo handpan acústico o un Neotone. Tus dos handpans aparecen entonces uno al lado del otro, y cada acorde se resuelve en el pan que lo contiene. Completar, no competir.",
     "duoBridgeCta": "Descubra Handpan Constellation Studio",
     "whyEyebrow": "¿Por qué yo?",
     "whyTitle": "La herramienta que me hubiera gustado aprender de niño",
@@ -395,7 +395,7 @@ export const es: Dict = {
     "insCredit": "Fabricados por Yishama — diseñados por <strong>Yhonatan Ale-Yahav</strong>. Estas dos escalas no figuran en ningún catálogo: fueron hechas a medida.",
     "insCreditBrief": "Las especificaciones eran mías, propias de una cantante: poder acompañarme con el handpan como lo haría un guitarrista o un pianista. Es decir, poder tocar todos los acordes, en todas las tonalidades, con la tónica de cada acorde como nota de bajo y un sonido característico. No sabía cómo sería posible. Fue el ingenio de Yonathan lo que lo hizo realidad.",
     "insFootnote": "Son piezas únicas: sus nombres son etiquetas de trabajo mías, no modelos del catálogo Yishama. Cada instrumento, por sí solo, ofrece los siete grados de su escala con la fundamental disponible en el bajo.",
-    "insAppAlt": "Captura de pantalla de Handpan Constellation Studio, pestaña Logic en modo híbrido: mis dos handpans Yishama dibujados uno al lado del otro, todas sus notas mostradas como puntos de colores: a la izquierda, el E 18 (ding E3), a la derecha, el D Kurd 18 (ding D3), incluyendo las notas de abajo. El banner superior indica 6 acordes con el E 18, 6 con el D Kurd 18 y 24 con ambos combinados. Abajo, los siete grados de unión: I Balance E, II Momentum F♯m, III Adventure G♯m, IV Relaxation A, V Tension B, VI Nostalgia C♯m, VII Mystery D♯°.",
+    "insAppAlt": "Captura de pantalla de Handpan Constellation Studio, pestaña Logic, mis dos handpans Yishama dibujados uno al lado del otro, con todas sus notas mostradas como puntos de colores: a la izquierda, el E 18 (ding E3), a la derecha, el D Kurd 18 (ding D3), incluyendo las notas de abajo. El banner superior indica 6 acordes con el E 18, 6 con el D Kurd 18 y 24 con ambos combinados. Abajo, los siete grados de unión: I Balance E, II Momentum F♯m, III Adventure G♯m, IV Relaxation A, V Tension B, VI Nostalgia C♯m, VII Mystery D♯°.",
     "insAppCaption": "Mis dos escalas combinadas en mi aplicación: seis acordes con una, seis con la otra, y veinticuatro cuando tocan juntas. Es este número el que nos indica que Yonathan no me hizo dos instrumentos, sino un sistema.",
     "insAppZoomHint": "Pantalla densa: abre la captura y vuelve a hacer clic en ella para ver el tamaño real; ahí es donde se leen los nombres de las notas.",
     "lightbox": {
@@ -489,8 +489,8 @@ export const es: Dict = {
         "d": "La aplicación compara tus notas reales con los acordes que requieren y te indica exactamente cuáles te faltan; luego, qué segundo handpan las proporcionaría y cuántas canciones desbloquearías."
       },
       {
-        "t": "Modo híbrido",
-        "d": "En cuanto aparece el segundo panel, las dos conchas se muestran una al lado de la otra y cada acorde se dibuja en ambas, con el orden de ejecución y las manos correspondientes. Justo mi problema de gimnasia, resuelto en pantalla."
+        "t": "Tus 2 handpans, uno al lado del otro",
+        "d": "En cuanto aparece el segundo panel, las dos conchas se muestran una al lado de la otra y cada acorde se dibuja en el pan que lo contiene, con el orden de ejecución y las manos correspondientes. Justo mi problema de gimnasia, resuelto en pantalla."
       }
     ],
     "bridgeSignature": "Mis dos escalas personalizados están en la aplicación, con la insignia \"✨ Signature David Lesage \". La insignia lleva mi nombre: las especificaciones son mías, pero los escalas son <strong>de Yishama y fueron diseñados por Yhonatan Ale-Yahav</strong>. Puedes cargarlos, escucharlos y ver cómo funcionan, incluso sin tenerlos en tus manos.",

@@ -175,7 +175,7 @@ export const en: Dict = {
     ],
     duoBridgeEyebrow: 'The bridge',
     duoBridgeTitle: 'My app speaks both languages',
-    duoBridgeText: 'Handpan Constellation Studio has an acoustic mode and an electronic mode. When your acoustic scale is no longer enough, the “🎯 Complete” feature tells you exactly which notes you are missing — and what a second acoustic handpan, or a Neotone, would bring. Hybrid mode then draws your chords across both shells. Completion, not competition.',
+    duoBridgeText: 'Handpan Constellation Studio has an acoustic mode and an electronic mode. When your acoustic scale is no longer enough, the “🎯 Complete” feature tells you exactly which notes you are missing — and what a second acoustic handpan, or a Neotone, would bring. Your two handpans then appear side by side, each chord resolving on the pan that holds it. Completion, not competition.',
     duoBridgeCta: 'Discover Handpan Constellation Studio',
 
     whyEyebrow: 'Why me',
@@ -490,7 +490,7 @@ export const en: Dict = {
     // Until then, neither the caption nor the alt may suggest the credit is
     // visible on screen — it is not.
     insAppAlt:
-      'Screenshot of Handpan Constellation Studio, Logic tab in Hybrid mode: my two Yishama handpans drawn side by side, every note shown as a coloured pad — the E 18 on the left (ding E3), the D Kurd 18 on the right (ding D3), bottom notes included. The banner at the top reads 6 chords with the E 18, 6 with the D Kurd 18 and 24 with both together. Below, the seven degrees of the union (French interface): I Équilibre E, II Élan F♯m, III Aventure G♯m, IV Détente A, V Tension B, VI Nostalgie C♯m, VII Mystère D♯°.',
+      'Screenshot of Handpan Constellation Studio, Logic tab, my two Yishama handpans drawn side by side, every note shown as a coloured pad — the E 18 on the left (ding E3), the D Kurd 18 on the right (ding D3), bottom notes included. The banner at the top reads 6 chords with the E 18, 6 with the D Kurd 18 and 24 with both together. Below, the seven degrees of the union (French interface): I Équilibre E, II Élan F♯m, III Aventure G♯m, IV Détente A, V Tension B, VI Nostalgie C♯m, VII Mystère D♯°.',
     insAppCaption:
       'My two scales brought together in my own app: six chords with one, six with the other — and twenty-four once they play together. That number is what says Yonathan did not build me two instruments, but one system.',
     // ⚠️ Help line kept SEPARATE from the caption, not folded into it: the
@@ -618,7 +618,7 @@ export const en: Dict = {
       { t: 'Your scale, in colour', d: 'You pick your instrument: the app draws your shell with your real notes, each dressed in its colour. The screen becomes a mirror of your pan.' },
       { t: '440 / 432 Hz tuning', d: 'One setting tunes the app to your handpan — so that what you hear on screen rings true against what you have in your hands.' },
       { t: '🎯 Complete your scale', d: 'The app compares your real notes with what the chords require, and tells you exactly which ones are missing — then which second handpan would supply them, and how many songs that would unlock.' },
-      { t: 'Hybrid mode', d: 'As soon as a second pan is there, both shells appear side by side and each chord is drawn straddling the two, with playing order and hands. Exactly my gymnastics problem — solved on screen.' },
+      { t: 'Your 2 handpans side by side', d: 'As soon as a second pan is there, both shells appear side by side and each chord is drawn on the pan that holds it, with playing order and hands. Exactly my gymnastics problem — solved on screen.' },
     ],
     // 🖋️ The app badge carries MY name — the sentence has to say who designed
     // them. See the “AUTHORSHIP CREDIT” note above (key `insCredit`). Short
