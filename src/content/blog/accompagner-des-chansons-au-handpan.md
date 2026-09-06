@@ -2,7 +2,7 @@
 title: "Accompagner des chansons au handpan, comme une guitare"
 description: "Le Mode Logique fait passer le handpan d'un instrument de nappes méditatives à un vrai instrument d'accompagnement de chansons, sans solfège."
 pubDate: 2026-07-18
-cover: "/images/app-logique.webp"
+cover: "/images/app-logique-progression.webp"
 category: "logique"
 tags: ["méthode", "accompagnement"]
 lang: "fr"
@@ -24,6 +24,20 @@ Le Mode Logique change ce regard. Au lieu de te montrer des notes éparses, il r
 
 D'un coup, ta poignée de notes n'est plus une contrainte : c'est une palette d'accords. Tu ne te demandes plus « quelle note ? » mais « quelle couleur, quelle émotion, maintenant ? ». Et enchaîner des couleurs, c'est exactement ce que fait un guitariste qui plaque des accords derrière une mélodie.
 
+<figure>
+  <img
+    src="/images/app-logique-progression.webp"
+    width="2000"
+    height="1250"
+    alt="Le Mode Logique avec une progression déjà posée. La bulle au centre du handpan indique « D Majeur — Pop Complète — I·II·IV·V·VI ». En bas, cinq cartouches remplis à la suite : I ÉQUILIBRE D, II ÉLAN Em, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm ; les emplacements Accord 6 et Accord 7 restent gris et portent la mention « Aucun ». À droite, dans le panneau Voyage des Sensations, la ligne « Pop Complète : I → II → IV → V → VI »."
+    data-lb="logique-progression"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Une progression posée dans les emplacements du bas : <em>I ÉQUILIBRE D</em>, <em>II ÉLAN Em</em>, <em>IV DÉTENTE G</em>, <em>V TENSION A</em>, <em>VI NOSTALGIE Bm</em>. Les deux derniers emplacements sont restés vides — la suite s'appelle ici « Pop Complète ».</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
 ### Accompagner un morceau connu
 
 Conçu pour cet usage, le Mode Logique te laisse **accompagner la plupart des morceaux connus comme le ferait un guitariste ou un pianiste**. Tu suis la suite d'accords d'une chanson en posant les couleurs correspondantes — le handpan tient la structure harmonique pendant que la mélodie vit par-dessus.
@@ -32,7 +46,19 @@ Conçu pour cet usage, le Mode Logique te laisse **accompagner la plupart des mo
 
 C'est là que ça devient magique : le Mode Logique est **idéal pour accompagner un chanteur ou une chanteuse**. Tu poses les accords, quelqu'un chante par-dessus, et le handpan devient l'écrin harmonique de la voix. Le [Mode Chanson](/handpan-app) va plus loin en proposant des morceaux avec paroles et diagrammes d'accords, prêts à t'accompagner.
 
-![Chanson affichée avec ses diagrammes d'accords ancrés sur les paroles](/images/blog-partition-hallelujah.webp)
+<figure>
+  <img
+    src="/images/blog-partition-hallelujah-2026.webp"
+    width="2000"
+    height="1400"
+    alt="L'Éditeur de Partition Visuelle en mode Chanson, thème sombre. La feuille affiche « HALLELUJAH / Leonard Cohen » avec un badge 6/8 sous le titre, une colonne INTRODUCTION à gauche et une colonne COUPLET 1 à droite. Au-dessus de chaque ligne de paroles, des diagrammes ronds de handpan portent le nom de l'accord : D, Bm, G, A, F#m. En haut, la barre LECTURE avec TEMPO 80, MÉTRIQUE 6/8 et l'attaque réglée sur App. En pied de feuille : « créé avec Handpan Constellation Studio by David Lesage »."
+    data-lb="chanson-hallelujah"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le mode Chanson : les diagrammes d'accords sont ancrés au-dessus des mots. Ici <em>Hallelujah</em> en 6/8, tonalité D — chaque rond montre où poser les mains sur le pan pour l'accord D, Bm, G, A ou F#m.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### Composer à partir de tes émotions
 
