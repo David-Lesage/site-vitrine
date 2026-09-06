@@ -2054,32 +2054,124 @@ const fr = {
   //    Seul le TEXTE LU PAR UN HUMAIN a changé.
   // ══════════════════════════════════════════════════════════════════════════
   showroom: {
-    title: 'Essayer handpan, Gonilélé et micros à Paris — Showroom | David Lesage',
+    title: 'Où essayer un handpan à Paris — acoustique et électronique, gratuit | David Lesage',
     description:
-      'Essaie tous mes instruments à Paris : le handpan électronique Neotone, mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : rencontres gratuites, démonstrations privées et cours.',
-    heroEyebrow: 'Le Nid · Paris 20ᵉ',
-    heroTitle: 'Showroom David Lesage',
+      'Où essayer un handpan à Paris, acoustique et électronique le même jour : le handpan électronique Neotone, mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : rencontres gratuites, démonstrations privées et cours.',
+    heroEyebrow: 'Showroom David Lesage · Le Nid, Paris 20ᵉ',
+    // 🔎 06/09/2026 — LE <h1> DIT ENFIN CE QU'ON VIENT Y FAIRE.
+    // Il disait « Showroom David Lesage » : un nom de marque que personne ne
+    // tape. Relevé de complétions Google du 01/09/2026
+    // (audits/CIBLE-SHOWROOM-2026-08-31.md, §4) : « ou essayer un handpan »
+    // existe, « handpan paris » se décline abondamment, « showroom handpan »
+    // n'a QUE des complétions allemandes. Le nom de marque descend dans
+    // l'eyebrow (il n'est pas perdu), le titre prend les mots réels.
+    // 🚫 Pas de bourrage : « handpan » et « Paris » n'apparaissent qu'une fois
+    //    dans ce titre, et la page dit littéralement ce qu'elle fait.
+    heroTitle: 'Essayer un handpan à Paris — acoustique et électronique, le même jour',
     // 🚨 OUVERTURE DU DISCOURS (18/08/2026, demande explicite de David).
     // Un visiteur joueur de N'Goni a réservé un showcase : il venait pour le
     // GONILÉLÉ, et la page ne parlait que du Neotone et des Yishama — il
     // pouvait croire qu'il s'était trompé d'événement. Le Neotone reste le
     // FER DE LANCE (« un showcase Neotone, il n'y en a pas d'autre, c'est
     // très attractif ») : on ÉLARGIT, on ne remplace pas par une liste plate.
-    heroLead: 'Le Neotone en tête d’affiche — et avec lui tout ce que je joue : mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Tu les entends, tu les joues, le même jour.',
+    heroLead: 'Une rencontre gratuite, une quinzaine de personnes, et tout ce que je joue sorti pour toi : le Neotone en tête d’affiche, mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Tu les entends, tu les joues, le même jour.',
+
+    // ══════════════════════════════════════════════════════════════════════
+    // 🅓 LA PROMESSE — LES QUATRE RENCONTRES (06/09/2026)
+    // ══════════════════════════════════════════════════════════════════════
+    // Diagnostic : les SEPT sections de la page répondaient toutes à une
+    // question de LOGISTIQUE (c'est quoi · c'est où · j'arrive comment · je
+    // m'inscris · ça se passe comment · qu'est-ce qu'il y a · je repars avec).
+    // AUCUNE ne demandait « qu'est-ce que ça va me faire, à moi ? ». La page
+    // servait parfaitement quelqu'un qui avait DÉJÀ décidé de venir ; elle ne
+    // donnait jamais de raison de décider. Résultat constaté : une seule
+    // inscription pour la prochaine date.
+    //
+    // 🚨 MATÉRIAU : les mots de David du 06/09/2026, sa réponse à
+    //    « quel est le bénéfice pour la personne de venir ? » :
+    //    « Les gens vont pouvoir vivre une expérience rare et précieuse
+    //    (tester un Neotone gratuitement ainsi que d'autres instruments rares
+    //    et accessoires (micro etc) — c'est unique dans un seul et même
+    //    endroit). Rencontrer d'autres passionnés, découvrir l'application que
+    //    j'ai créée, créer du lien, vivre une expérience forte, poser des
+    //    questions et avoir des réponses en direct, vivre leur propre
+    //    expérience de l'instrument […] ce qui est précieux c'est l'expérience
+    //    de la rencontre : avec moi, avec les instruments, avec les autres,
+    //    avec eux-mêmes. »
+    //
+    // ⛔ NE PAS LISSER CETTE DERNIÈRE PHRASE. Les quatre rencontres sont la
+    //    STRUCTURE de ce bloc (un item par rencontre, dans SON ordre), pas une
+    //    formule décorative. « avec eux-mêmes » est le plus fort des quatre
+    //    parce qu'il ne parle plus du tout de commerce : il reste en dernier,
+    //    et il ne se réécrit pas en argument de vente.
+    //    Seule adaptation faite : la 3ᵉ personne (« eux-mêmes ») passe à la 2ᵉ
+    //    (« toi-même ») parce que toute la page tutoie. Le mot ne change pas.
+    // ⛔ Aucun témoignage, aucun avis, aucun chiffre de fréquentation inventé :
+    //    la seule quantité citée (« une quinzaine ») vient de `lieuIntro`,
+    //    écrit par David.
+    promiseEyebrow: 'Ce que tu viens vivre',
+    promiseTitle: 'Une expérience rare, dans un seul et même endroit',
+    promiseLead: 'Tester un Neotone gratuitement, et avec lui d’autres instruments rares et leurs accessoires : c’est unique dans un seul et même endroit. Mais ce qui est précieux, c’est l’expérience de la rencontre — avec moi, avec les instruments, avec les autres, avec toi-même.',
+    promise: [
+      {
+        t: 'Avec moi',
+        d: 'Tu poses tes questions et tu as les réponses en direct, de vive voix. Pas une fiche produit : quelqu’un en face de toi, qui joue ces instruments tous les jours et qui répond à tout le monde, du curieux débutant au musicien confirmé.',
+      },
+      {
+        t: 'Avec les instruments',
+        d: 'Tu vis ta propre expérience de l’instrument : c’est toi qui joues. Le Neotone, mes handpans acoustiques, la harpe Gonilélé, la calebasse, les micros — des instruments rares que tu n’as nulle part ailleurs réunis au même endroit, et que tu prends en main sans rien avoir à acheter.',
+      },
+      {
+        t: 'Avec les autres',
+        d: 'Tu rencontres d’autres passionnés. On est une quinzaine, pas plus : c’est ce qui fait qu’on se parle vraiment, et que du lien se crée — les discussions continuent longtemps après la fin.',
+      },
+      {
+        t: 'Avec toi-même',
+        d: 'Le plus difficile à raconter, et le seul que personne ne peut vivre à ta place : ce que ça te fait, à toi, de poser les mains sur ces instruments et de t’entendre en jouer.',
+      },
+    ],
+    promiseNote: 'Tu découvriras aussi Handpan Constellation Studio, l’application que j’ai créée pour rendre la musique visible. Et c’est gratuit : la rencontre publique ne coûte rien — il faut juste réserver ta place.',
+
+    // 🤝 VENIR À PLUSIEURS (06/09/2026, demande de David : « qu’elle
+    //    communique même à des amis pour venir vivre cette expérience
+    //    ensemble »). Rien sur la page ne le suggérait.
+    //    Sobriété demandée : PAS de bandeau de partage, PAS d'icônes de
+    //    réseaux sociaux. Un encart discret sous les dates + un bouton qui
+    //    utilise le partage natif du téléphone, avec copie du lien en repli.
+    // 🔒 Une inscription PAR PERSONNE : le formulaire et ce qu'il envoie ne
+    //    changent pas (règle des trois écritures) — on ne rajoute pas un champ
+    //    « nombre d'accompagnants » qui ne serait écrit nulle part.
+    shareTitle: 'On vit mieux ça à plusieurs',
+    shareText: 'Tu peux venir accompagné·e — c’est même souvent mieux : on repart avec quelqu’un avec qui en reparler. Envoie-lui simplement cette page, et que chacun réserve sa place de son côté (une inscription par personne, pour que je sache combien nous serons).',
+    shareCta: 'Envoyer cette page à quelqu’un',
+    shareCopied: 'Lien copié — il n’y a plus qu’à le coller',
+
     // ⚠️ Hero du showroom (16/08/2026) : ce CTA est l'OPTION, pas l'entrée.
     // Il est affiché SOUS la date du prochain showcase gratuit, en bouton
     // secondaire. Le libellé dit « individuel privé » pour qu'on comprenne
     // immédiatement que ce n'est pas le showcase public gratuit.
     ctaBook: 'Réserver un créneau individuel privé (payant)',
     // « sur simple inscription » minimisait la réservation : elle est obligatoire.
-    ctaBookNote: 'Créneau individuel payant : {grid}. Les rencontres publiques, elles, sont gratuites — nombre de places limitées · réservation nécessaire.',
+    // 🔁 06/09/2026 — LA JAUGE EST RETOURNÉE. « nombre de places limitées »
+    //    se lisait comme une réserve ; chez les collectifs qui remplissent le
+    //    même public (Instatic dance, ecstatic dance parisienne), « 20 places
+    //    max » est écrit comme une QUALITÉ — c'est intime, c'est POUR ÇA qu'on
+    //    vient. Le chiffre employé ici est celui de David lui-même
+    //    (`lieuIntro` : « on est une quinzaine, pas plus »).
+    ctaBookNote: 'Créneau individuel payant : {grid}. Les rencontres publiques, elles, sont gratuites — une quinzaine de personnes, pas plus, pour que chacun ait le temps de jouer · réservation nécessaire.',
     // ⓘ Plus affichée depuis le 17/08/2026 : quand il n'y a plus de date, le hero
     // montre le bloc « prochaines dates en préparation » (agendaEmpty*) au lieu de
     // ce simple bouton. Clé conservée si David veut le remettre.
     ctaNext: 'Voir la prochaine rencontre',
     exclBadge: '★ Première mondiale',
     exclTitle: 'Repars avec ton Neotone¹, le jour même',
-    exclText: 'Je l’assume : à ma connaissance, Le Nid est le premier lieu au monde où ces instruments s’essaient ET s’achètent en direct, sur place. Concrètement, ça veut dire que tu peux acheter ton Neotone¹ ici même et l’emporter immédiatement — sans aucun délai de fabrication. Mes handpans Yishama, eux, ne sont pas à vendre : ce sont mes instruments personnels, ils sont là pour être entendus et joués.',
+    // 🇭🇺 RÉSERVE DE BUDAPEST — 06/09/2026, décision de David, ses mots :
+    //    « on peut préciser effectivement en dehors des ateliers à Budapest.
+    //    C'est complémentaire. Je suis le premier lieu après l'usine /
+    //    l'atelier de fabrication à Budapest. »
+    //    ⛔ La revendication n'est PAS supprimée ni affaiblie au-delà de cette
+    //    réserve : elle reste une exclusivité mondiale, simplement exacte.
+    exclText: 'Je l’assume : à ma connaissance, après l’atelier de fabrication à Budapest, Le Nid est le premier lieu au monde où ces instruments s’essaient ET s’achètent en direct, sur place. Concrètement, ça veut dire que tu peux acheter ton Neotone¹ ici même et l’emporter immédiatement — sans aucun délai de fabrication. Mes handpans Yishama, eux, ne sont pas à vendre : ce sont mes instruments personnels, ils sont là pour être entendus et joués.',
     exclArgs: ['7 % de remise — le meilleur prix du marché (contre 5 % en ligne)', 'Aucun délai de fabrication ni d’attente', 'Stock ultra limité — quelques instruments disponibles'],
     // 🇫🇷 REVENDICATION EN ATTENTE — ÉCRITE, PLACÉE, PAS PUBLIÉE.
     // Ne s'affiche QUE si `FRANCE_EXCLUSIVITY_ACTIVE` vaut `true`
@@ -2113,7 +2205,7 @@ const fr = {
     //    pas le sujet de la section, elles le montrent. Changer ce titre
     //    reviendrait à retoucher une formule validée sans rien y gagner.
     onsiteEyebrow: 'Sur place',
-    onsiteTitle: 'Tout ce que tu peux essayer sur place',
+    onsiteTitle: 'Tout ce que tu peux essayer sur place : handpans acoustiques, Neotone, micros',
 
     // ── « Le monde du ET » version showroom : ici, ce n'est pas un choix
     // d'achat mais une EXPÉRIENCE — les deux univers se jouent sur place.
@@ -2285,7 +2377,7 @@ const fr = {
     //    Reformulation validée par David, SANS horaire. Ne réintroduire aucun
     //    moment de la journée dans les textes de cette page : l'heure exacte est
     //    portée par l'agenda (`agendaEventTime`), et par lui seul.
-    lieuTitle: 'À quoi ça ressemble, une rencontre au Nid',
+    lieuTitle: 'À quoi ça ressemble, une rencontre au Nid (Paris 20ᵉ)',
     lieuIntro: 'Un appartement-atelier du 20ᵉ, du parquet, des guirlandes, et tout le monde assis en cercle autour des instruments. On est une quinzaine, pas plus.',
     photoAlt: {
       // 🚧 PHOTO DE REPLI — 21/08/2026. Le fichier est une VIGNETTE VIDÉO : le
@@ -2462,7 +2554,9 @@ const fr = {
     bookVisitCta: 'Réserver mon créneau au showroom (payant)',
     bookPrivateCta: 'Réserver un rendez-vous individuel',
     agendaEyebrow: 'Agenda',
-    agendaTitle: 'Calendrier des rencontres publiques gratuites',
+    // 🔎 06/09/2026 — le titre porte ce que les gens tapent (« essayer un
+    //    handpan », « handpan Paris ») au lieu du seul mot d'agenda.
+    agendaTitle: 'Essayer un handpan à Paris : les prochaines dates, gratuites',
     // 🚨 RÉSERVATION OBLIGATOIRE (tranché par David le 17/08/2026) : « la
     // réservation est obligatoire, je veux savoir qui vient et récupérer les
     // infos des gens ». La page disait encore « Entrée libre — réservation
@@ -2470,7 +2564,7 @@ const fr = {
     // ⚠️ Le showcase reste GRATUIT : c'est la RÉSERVATION qui devient
     // nécessaire, jamais l'entrée qui devient payante. Ne pas réintroduire
     // « entrée libre », « réservation conseillée » ni « sans inscription ».
-    agendaIntro: 'Présentation des Neotone par David Lesage — et découverte de tout ce qui se joue au Nid : handpans acoustiques Yishama, harpe africaine Gonilélé, calebasse, micros pour handpan. Tout est essayable sur place. Gratuit — nombre de places limitées · réservation nécessaire.',
+    agendaIntro: 'Présentation des Neotone par David Lesage — et découverte de tout ce qui se joue au Nid : handpans acoustiques Yishama, harpe africaine Gonilélé, calebasse, micros pour handpan. Tout est essayable sur place. Gratuit — une quinzaine de personnes, pas plus, pour que chacun ait le temps de jouer · réservation nécessaire.',
     agendaEmpty: 'Prochaines dates en préparation',
     agendaEmptyText: 'Les prochaines dates sont en cours de calage. Laisse-moi ton email : tu seras prévenu·e en premier, avant l’annonce publique.',
     agendaEmptyCta: 'Me prévenir de la prochaine date',
@@ -2478,7 +2572,7 @@ const fr = {
     agendaCount: '{n} date à venir',
     agendaCountPlural: '{n} dates à venir',
     // Mots de David (16/08/2026), affichés sous la date dans le hero.
-    agendaSeats: 'Gratuit sur réservation · places limitées',
+    agendaSeats: 'Gratuit sur réservation · une quinzaine de personnes, pas plus',
     agendaCta: 'Être prévenu·e des prochaines rencontres',
     // 🚨 AFFICHÉ UNE SEULE FOIS DEPUIS LE 21/08/2026, AU-DESSUS DE LA LISTE.
     //    AVANT : ce titre était le <h3> de CHACUNE des cinq lignes de l'agenda.
@@ -2518,7 +2612,7 @@ const fr = {
     agendaMoreTitle: 'Tu ne peux pas venir — ou tu préfères un moment rien que pour toi ?',
     agendaMoreText: 'Réserve un rendez-vous individuel avec moi, à un autre moment qui te convient.',
     accessEyebrow: 'Comment venir',
-    accessTitle: 'Accès au showroom',
+    accessTitle: 'Venir au showroom, Paris 20ᵉ',
     accessMaps: 'Voir sur Google Maps →',
     access: [
       { icon: '🚌', t: 'Bus', d: 'Lignes 26 et 64 — arrêt Orteaux, à 3 min à pied (≈ 250 m). Ligne 76 — arrêt Bagnolet-Orteaux.' },

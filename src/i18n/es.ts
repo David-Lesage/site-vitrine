@@ -24,7 +24,7 @@ export const es: Dict = {
       "studio": "Handpan Constellation Studio",
       "blog": "Blog",
       "showroom": "Sala de exposición",
-      "about": "Sobre mí",
+      "about": "Acerca de",
       "contact": "Contacto"
     },
     "brandSub": "Música visible",
@@ -53,7 +53,7 @@ export const es: Dict = {
     "news": {
       "check": "Quiero estar informado/a de las próximas fechas y novedades.",
       "optional": "facultatif",
-      "hint": "Nuevas fechas de presentaciones, lanzamiento de la app, nuevos instrumentos. Escribo poco y puedes darte de baja con un clic. Si no marcas la casilla, solo me pondré en contacto contigo en relación con tu solicitud."
+      "hint": "Nuevas fechas de reuniones, lanzamiento de la app, nuevas herramientas. Escribo con poca frecuencia y puedes darte de baja con un clic. Si no marcas la casilla, solo me pondré en contacto contigo en relación con tu solicitud."
     },
     "credentials": [
       "Premio del Conservatorio",
@@ -121,7 +121,7 @@ export const es: Dict = {
       "invitedText": "Esta dirección ha sido invitada a participar en la versión beta. Solo tienes que elegir una contraseña para iniciar sesión.",
       "invitedBtn": "Crea mi contraseña e ingresa",
       "invitedNotMe": "No soy yo; apúntate a la lista de espera.",
-      "formShowcase": "Me gustaría estar informado sobre los próximos espectáculos gratuitos en París.",
+      "formShowcase": "Me gustaría estar informado sobre las próximas reuniones gratuitas en París.",
       "formBeta": "Me gustaría convertirme en probador beta: acceso anticipado y gratuito a la aplicación a cambio de mis comentarios periódicos.",
       "formMotivation": "¿Por qué te interesa la aplicación? (opcional)",
       "formMotivationBeta": "¿Por qué quieres convertirte en probador beta?",
@@ -224,16 +224,16 @@ export const es: Dict = {
       "Existencias extremadamente limitadas: solo hay unos pocos instrumentos disponibles."
     ],
     "showroomCta1": "Reserva mi visita a la sala de exposición.",
-    "showroomCta2": "Vea la siguiente muestra",
-    "showroomDatesTitle": "Próximas exhibiciones gratuitas",
+    "showroomCta2": "Consulte la próxima reunión.",
+    "showroomDatesTitle": "Próximas reuniones gratuitas",
     "showroomDatesNote": "Entrada gratuita · Se recomienda reservar",
     "showroomDatesEmpty": "Próximas fechas en preparación: escríbame para ser el primero en enterarse.",
     "showroomDatesAll": "Ver el programa completo",
     "communityEyebrow": "La comunidad",
     "communityTitle": "Únete al movimiento de música visible.",
-    "communityIntro": "Mantente al tanto de las próximas presentaciones en París y del lanzamiento de Handpan Constellation Studio. Sin spam, solo lo esencial.",
+    "communityIntro": "Mantente al tanto de los próximos eventos en París y del lanzamiento de Handpan Constellation Studio. Sin spam, solo lo esencial.",
     "communityPlaceholder": "ton@email.fr",
-    "communityButton": "Avísame sobre las próximas presentaciones.",
+    "communityButton": "Avísame sobre las próximas reuniones.",
     "communityNote": "Se abrirá un breve formulario: usted introduce su nombre y correo electrónico, e inmediatamente recibirá las próximas fechas por correo electrónico.",
     "proofEyebrow": "Primero, el sonido",
     "proofTitle": "Vea y escuche los instrumentos en vivo.",
@@ -509,7 +509,7 @@ export const es: Dict = {
     "eyebrow": "Tienda",
     "title2": "Embajador de instrumentos y micrófonos excepcionales",
     "intro": "La calidad y el refinamiento son de suma importancia para mí.",
-    "ambassadorText": "Colaboro con fabricantes de instrumentos y micrófonos excepcionales, cuya calidad me enorgullece mostrar y representar. A través de mí, podrá beneficiarse de cupones de descuento, así como de demostraciones y pruebas durante mis eventos en el distrito 20 de París.",
+    "ambassadorText": "Colaboro con fabricantes de instrumentos y micrófonos excepcionales, cuya calidad me enorgullece mostrar y representar. A través de mí, podrás beneficiarte de cupones de descuento, así como de demostraciones y pruebas durante mis encuentros en el distrito 20 de París.",
     "keyNotice": "Pago en línea deshabilitado: ingrese PUBLIC_SNIPCART_KEY en.env para activar el carrito de compras.",
     "from": "desde ",
     "soon": "Pronto",
@@ -567,7 +567,7 @@ export const es: Dict = {
       },
       "instruments": {
         "label": "Instrumentos excepcionales",
-        "blurb": "Colaboro con fabricantes excepcionales cuya calidad represento con orgullo. A través de mí, podrá beneficiarse de cupones de descuento y demostraciones durante mis eventos."
+        "blurb": "Colaboro con fabricantes excepcionales cuya calidad represento con orgullo. A través de mí, podrá beneficiarse de cupones de descuento y demostraciones durante mis reuniones."
       },
       "micros": {
         "label": "Micrófonos",
@@ -640,7 +640,7 @@ export const es: Dict = {
       },
       "micro-hisong": {
         "name": "Micrófono Hisong AirStudio S1",
-        "description": "El primer estudio móvil todo en uno (micrófono, auriculares inalámbricos, interfaz de audio, estuche de carga). Ideal para voces, handpan acústico y gonilélé: un auténtico estudio portátil.<br><br> <strong>Tres kits para elegir</strong> (los precios incluyen el IVA del 20%):<br> 1 — Músico 4 en 1 · <strong>319 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(265,95 € sin IVA)</span><br> 2 — Creador 5 en 1 · <strong>372 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(309,95 € IVA excluido)</span><br> 3 — Master 6 en 1 · <strong>426 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(354,95 € IVA excluido)</span><br><br> <strong>Mi consejo:</strong> si quieres usar el micrófono para <strong>actuaciones en directo</strong>, necesitas el <strong>kit 6 en 1 (Master)</strong>.<br><br> Demostraciones y ventas directas en mis escaparates de París."
+        "description": "El primer estudio móvil todo en uno (micrófono, auriculares inalámbricos, interfaz de audio, estuche de carga). Ideal para voces, handpan acústico y gonilélé: un auténtico estudio portátil.<br><br> <strong>Tres kits para elegir</strong> (los precios incluyen el IVA del 20%):<br> 1 — Músico 4 en 1 · <strong>319 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(265,95 € sin IVA)</span><br> 2 — Creador 5 en 1 · <strong>372 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(309,95 € IVA excluido)</span><br> 3 — Master 6 en 1 · <strong>426 € IVA incluido</strong> <span class=\"text-ink-soft/60\">(354,95 € IVA excluido)</span><br><br> <strong>Mi consejo:</strong> si quieres usar el micrófono para <strong>actuaciones en directo</strong>, necesitas el <strong>kit 6 en 1 (Master)</strong>.<br><br> Demostraciones y ventas directas en mis eventos en París."
       },
       "micro-muling": {
         "name": "Micrófono Muling MP1 + preamplificador HMP-2",
@@ -710,8 +710,8 @@ export const es: Dict = {
     "visitIntro": "Distrito 20 de París, solo con cita previa. Es una cita individual de pago: precio único, independientemente del motivo de la visita. Indíqueme su disponibilidad y le sugeriré un horario.",
     "privateTitle": "Reserve una cita individual",
     "privateIntro": "Un encuentro personalizado, en la sala de exposiciones del distrito 20 de París o por videollamada: descubre un instrumento, familiarízate con el que acabas de comprar o perfecciona tu práctica, sea cual sea tu nivel.",
-    "newsTitle": "Para recibir notificaciones sobre próximos eventos",
-    "newsIntro": "Déjame tu correo electrónico: te avisaré en cuanto se anuncien las fechas de las próximas presentaciones gratuitas en París. Sin spam; puedes darte de baja cuando quieras.",
+    "newsTitle": "Para recibir notificaciones sobre las próximas reuniones",
+    "newsIntro": "Déjame tu correo electrónico: te avisaré en cuanto se anuncien las fechas de los próximos encuentros gratuitos en París. Sin spam; puedes darte de baja cuando quieras.",
     "contactTitle": "Escríbeme",
     "contactIntro": "Cuéntame qué te trae por aquí; leo y respondo personalmente a todos los mensajes.",
     "goniTitle": "Pide un arpa Gonilélé",
@@ -743,7 +743,7 @@ export const es: Dict = {
     "discountCountryPlaceholder": "Francia, Bélgica, Suiza…",
     "discountNote": "Esta información se utiliza únicamente para solicitar su código a Neotone.",
     "phonePlain": "Teléfono",
-    "phoneWhyShowcase": "Imprescindible para una presentación: debe tener una fecha fija, y si surge algún imprevisto de última hora por cualquiera de las partes, debo poder contactarle de inmediato.",
+    "phoneWhyShowcase": "Requisito indispensable para la reunión: que sea una fecha fija y que, si surge algún imprevisto de última hora por cualquiera de las partes, pueda contactarle de inmediato.",
     "socialLabel": "Tu cuenta de redes sociales",
     "socialHint": "Instagram es preferible; de lo contrario, Facebook, YouTube o tu sitio web personal.",
     "socialPlaceholder": "@tucuenta o un enlace",
@@ -757,7 +757,7 @@ export const es: Dict = {
       "youtube": "YouTube",
       "instagram": "Instagram",
       "facebook": "Facebook",
-      "showcase": "Una vitrina o un evento",
+      "showcase": "Una reunión o un evento",
       "word-of-mouth": "Palabra de boca",
       "search": "Una búsqueda en internet",
       "neotone-site": "El sitio web Neotone",
@@ -804,8 +804,8 @@ export const es: Dict = {
     "formatLabel": "¿En persona o por videoconferencia?",
     "formatInPerson": "En persona — showroom París 20",
     "formatRemote": "A través de vídeo",
-    "showcaseTitle": "Reservar mi plaza en la exposición",
-    "showcaseIntro": "Exposición pública gratuita en el showroom Paris 20th. Se recomienda reservar, las plazas son limitadas.",
+    "showcaseTitle": "Reservar mi plaza en la reunión",
+    "showcaseIntro": "Encuentro público gratuito en la sala de exposiciones del distrito 20 de París. Se recomienda reservar, las plazas son limitadas.",
     "showcaseInterestsLabel": "¿Para qué instrumento(s) estás aquí?",
     "showcaseInterestsHint": "Marca todo lo que te interese; lo prepararé para la sesión. ¿Necesitas aclarar algún detalle? Avísame en tu mensaje a continuación.",
     "showcaseInterestNames": {
@@ -1091,7 +1091,7 @@ export const es: Dict = {
     "heroAllCaption": "Madera — sin y luego con sus extensiones",
     "heightCm": "{n} cm",
     "heroTitle": "pies Atlas",
-    "heroLead": "Atlas fabrica trípodes para handpan en Italia. El instrumento no se atornilla ni se sujeta con correas: descansa sobre un disco flotante sostenido por imanes. Soy socio de la marca y ambos modelos ya están en la sala de exposición: el Atlas Pro y el Atlas All.",
+    "heroLead": "Atlas fabrica trípodes para handpan en Italia. El instrumento no se atornilla ni se sujeta con correas: descansa sobre un disco flotante sostenido por imanes. Soy socio de la marca y ambos modelos, el Atlas Pro y el Atlas All, están expuestos en la sala de exhibición.",
     "ctaModels": "Vea ambos modelos.",
     "ctaSite": "El sitio web Atlas",
     "ctaTry": "Ven y pruébalos en la sala de exposición.",
@@ -1153,7 +1153,7 @@ export const es: Dict = {
     "solutionEyebrow": "La solución",
     "tryEyebrow": "La secuela",
     "storyConclusionTitle": "¿Por qué Atlas ahora?",
-    "storyConclusion": "Considerando todo lo que he probado, este es el primer concepto que resuelve todos los problemas que he encontrado: un soporte magnético en lugar de una ventosa, un Atlas Pro fabricado completamente en aluminio —incluidas las patas telescópicas— y que pesa solo 1,8 kg con su estuche. Me ha convencido. Ambos soportes llegaron el 26 de agosto de 2026 y ya los he probado.",
+    "storyConclusion": "Considerando todo lo que he probado, este es el primer diseño que resuelve todos los problemas que he encontrado: un soporte magnético en lugar de una ventosa, un Atlas Pro totalmente de aluminio (incluidas las patas telescópicas) y un peso de 1,8 kg que cabe en su propia bolsa. Me ha convencido. Los dos soportes llegaron el 26 de agosto de 2026 y ya los he probado.",
     "storyBridge": "Y hay una ironía que me gusta: ese mismo pie permite adoptar la postura opuesta a la mía. Su cabezal te permite tocar sentado, sin apoyar el instrumento en las piernas, una postura que nunca he practicado.",
     "storyBridgeCta": "La cabeza del pie",
     "storyShowroomCaption": "En la sala de exposición, es igual: mis dos handpans acústicos Yishama permanecen montados en sus soportes, a la altura adecuada para tocar, listos para ser interpretados. Un soporte para handpan no es un accesorio que se saca para los conciertos; es la base sobre la que se sostiene el instrumento.",
@@ -1161,12 +1161,12 @@ export const es: Dict = {
     "storyFestivalCaption": "Festival Everness, Hungría: de pie detrás de mis dos handpans acústicos {yishama} — sobre los pies que estaba usando en ese momento.",
     "storyStandsPhotoCaption": "Mi montaje escénico visto de cerca: tres instrumentos, tres soportes diferentes y múltiples alturas para ajustar antes de tocar.",
     "partnerTitle": "¿Por qué estoy hablando de esto ahora?",
-    "partnerText": "Acabamos de concretar la colaboración con Atlas: ahora formo parte de la marca y me han enviado dos stands de demostración para mis presentaciones. Preferí no anunciarlo aquí hasta que se firmara el contrato; ahora que está hecho, lo comparto.",
+    "partnerText": "Acabamos de concretar la colaboración con Atlas: ahora formo parte de la marca y me han enviado dos stands de demostración para mis reuniones. Preferí no anunciarlo aquí hasta que se firmara el contrato; ahora que está hecho, lo comparto.",
     "affiliateNote": "Mi enlace de seguimiento aún no está disponible: por ahora, los botones te llevan directamente a la página oficial Atlas.",
     "testTitle": "Lo que verificaré delante de ti",
     "testText": "Los recibiré en unos días. Lo que digo en esta página lo digo con pleno conocimiento de causa: he usado cuatro soportes diferentes en el escenario y sé exactamente lo que busco. Lo que aún no tengo es el escenario, así que en cuanto lleguen ambos soportes a la sala de exposiciones, grabaré mi demostración, la publicaré aquí y les contaré qué tal me fue.",
     "videoSectionTitle": "La demostración en vídeo",
-    "videoTitle": "Por qué toco el handpan de pie — mi vídeo, con Atlas",
+    "videoTitle": "¿Por qué tocar el handpan de pie? — mi vídeo, con Atlas",
     "videoSoon": "Futuro",
     "videoNote": "Mi propio vídeo, publicado en mi canal de YouTube.",
     "modelsTitle": "Dos modelos",
@@ -1250,20 +1250,20 @@ export const es: Dict = {
     "buyText": "El pedido se realiza a través de la página web Atlas. Anuncian gastos de envío de aproximadamente 12 € para Europa, y las devoluciones son gratuitas en un plazo de 14 días, con la etiqueta de devolución incluida en la caja.",
     "buyNote": "En su página web no se especifican el plazo de entrega ni el período de garantía: pregúntales antes de realizar el pedido o escríbeme y yo te haré la pregunta.",
     "showroomTitle": "Pruébalos antes de comprarlos.",
-    "showroomText": "Ambos stands están en la sala de exposiciones del distrito 20 de París, junto con los handpans. Podrás colocar un instrumento sobre ellos, ajustar la altura, tocar de pie y ver cuál te conviene más, sin necesidad de comprar nada.",
+    "showroomText": "Ambos soportes se encuentran en la sala de exposiciones, en el distrito 20 de París, junto a los handpans. Puedes colocar un instrumento sobre ellos, ajustar la altura, tocar de pie y ver cuál te conviene más, sin necesidad de comprar nada.",
     "showroomPoints": [
       "Las dos modelos una al lado de la otra, no dos fotos.",
       "Un handpan colocado encima: usted mismo ajusta la altura, primero sentado y luego de pie.",
       "Sin comprar nada, te vas con tu opinión, no con una caja."
     ],
     "showroomAgendaCta": "Ver próximas fechas",
-    "showroomPhotoCaption": "La sala de exposición preparada para una presentación: mis dos handpans acústicos Yishama y mis dos handpans electrónicos {neotone}, cada uno en su propio soporte; cuatro instrumentos, cuatro soportes diferentes. Los dos soportes Atlas ya han ocupado aquí su lugar, y aquí es donde podrán probarlos.",
+    "showroomPhotoCaption": "La sala de exposición preparada antes de una reunión: mis dos handpans acústicos Yishama y mis dos handpans electrónicos {neotone}, cada uno en su propio soporte; cuatro instrumentos, cuatro soportes diferentes. Los dos handpans Atlas se unieron después, y ahí es donde se pueden probar.",
     "promoTitle": "Mi código en Atlas",
     "promoText": "Aquí está mi código, que deberá introducir al realizar el pago en la página web Atlas, tanto si realiza el pedido en línea como si viene a probárselos a la tienda.",
     "promoDisclosure": "Soy afiliado de Atlas: cuando se realiza un pedido utilizando este código, recibo una comisión. Esto no añade nada a tu factura ni modifica nada de lo que he escrito anteriormente.",
     "alt": {
       "showroomYishama": "David Lesage en la sala de exposiciones de Nid en París: detrás de él, dos handpans acústicos de acero Yishama, cada uno montado sobre su trípode negro sobre una alfombra trenzada, en una gran sala blanca con arcos iluminados y suelo de parqué claro.",
-      "showroomInstruments": "El espacio de exposición de David Lesage, preparado para una vitrina: dos handpans electrónicos Neotone con coronas luminosas montados sobre trípodes negros cerca de un kit de percusión electrónica, y dos handpans acústicos de acero Yishama, uno sobre un trípode de madera y el otro sobre un soporte de metal; una semiesfera de calabaza colocada sobre una alfombra roja en primer plano, un antiguo suelo de parqué, guirnaldas de luces y una roseta en la pared.",
+      "showroomInstruments": "El espacio de exposición de David Lesage preparado antes de una reunión: dos handpans electrónicos Neotone con coronas luminosas montados sobre trípodes negros cerca de un kit de percusión electrónica, y dos handpans acústicos de acero Yishama, uno sobre un trípode de madera y el otro sobre un soporte de metal; una semiesfera de calabaza colocada sobre una alfombra roja en primer plano, un antiguo suelo de parqué, guirnaldas de luces y una roseta en la pared.",
       "stageStanding": "David Lesage de pie en el escenario bajo los focos, detrás de sus dos handpans montados en soportes, rodeado de sus soportes, sus pedales y una calabaza colocada sobre la alfombra roja.",
       "stageStands": "Primer plano del montaje escénico de David Lesage: tres handpans colocados sobre soportes de madera y metal a la altura de las manos, un atril y un ordenador portátil, cables y pedales en el suelo.",
       "stageFestival": "David Lesage solo en el escenario del Festival Everness, en Hungría: de pie, descalzo, detrás de sus dos handpans acústicos montados sobre trípodes negros, bajo haces de luz verde y roja, frente a una gran lona tejida multicolor; una semiesfera de calabaza está colocada en el suelo frente a él.",
@@ -1378,7 +1378,7 @@ export const es: Dict = {
         "text": "Sesiones en grupos reducidos (ritmo de calabaza, handpan…) en un ambiente agradable. Formato y lugar a convenir."
       }
     ],
-    "footnote": "Las citas pueden concertarse por correo electrónico. Las reuniones presenciales en París ofrecen una conexión natural con la sala de exposiciones y los escaparates.",
+    "footnote": "Las citas pueden concertarse por correo electrónico. Las visitas presenciales a París constituyen una puerta de entrada natural a la sala de exposiciones y ofrecen oportunidades para establecer contactos.",
     "faqEyebrow": "Preguntas frecuentes",
     "faqTitle": "Preguntas frecuentes sobre los cursos",
     "faq": [
@@ -1632,17 +1632,43 @@ export const es: Dict = {
     ]
   },
   "showroom": {
-    "title": "Prueba handpans, Gonilélé y micrófonos en París — Showroom | David Lesage",
-    "description": "Pruebe todos mis instrumentos en París: el handpan electrónico Neotone, mis handpans acústicos Yishama, el arpa africana Gonilélé, la calabaza y micrófonos para handpan. David Lesage Showroom, 29 rue des Orteaux, París 20: presentaciones gratuitas, demostraciones privadas y clases.",
-    "heroEyebrow": "Le Nid · París 20",
-    "heroTitle": "Sala de exposiciones David Lesage",
-    "heroLead": "El Neotone es la atracción principal, y con él todo lo que toco: mis handpans acústicos Yishama, el arpa africana Gonilélé, la calabaza y los micrófonos para handpan. Los escuchas, los tocas, todo en el mismo día.",
+    "title": "Dónde probar un handpan en París: acústico y electrónico, gratis | David Lesage",
+    "description": "¿Dónde probar un handpan en París, tanto acústico como electrónico, el mismo día? Descubre el handpan electrónico Neotone, mis handpans acústicos Yishama, el arpa africana Gonilélé, la calabaza y micrófonos para handpan. David Lesage Showroom, 29 rue des Orteaux, distrito 20 de París: encuentros gratuitos, demostraciones privadas y clases.",
+    "heroEyebrow": "Showroom de David Lesage · Le Nid, París 20ᵉ",
+    "heroTitle": "Probar un handpan en París: acústico y electrónico, todo en un mismo día.",
+    "heroLead": "Un evento gratuito, con unas quince personas, donde podrás disfrutar de todos mis instrumentos: el Neotone como cabeza de cartel, mis handpans acústicos Yishama, el arpa africana Gonilélé, la calabaza y los micrófonos para handpan. Podrás escucharlos y tocarlos, todo en el mismo día.",
+    "promiseEyebrow": "Lo que vienes a vivir",
+    "promiseTitle": "Una experiencia única, todo en un mismo lugar.",
+    "promiseLead": "Probar un Neotone gratis, junto con otros instrumentos exclusivos y sus accesorios: una experiencia única en un solo lugar. Pero lo verdaderamente valioso es la experiencia de conectar con ellos: conmigo, con los instrumentos, con los demás y contigo mismo.",
+    "promise": [
+      {
+        "t": "Conmigo",
+        "d": "Puedes hacer tus preguntas y obtener respuestas directas y en directo. No es una ficha técnica: te atenderá una persona que toca estos instrumentos a diario y responde a todo el mundo, desde el principiante curioso hasta el músico experimentado."
+      },
+      {
+        "t": "Con los instrumentos",
+        "d": "Vives tu propia experiencia con el instrumento: tú eres quien toca. El Neotone, mis handpans acústicos, el arpa Gonilélé, la calabaza, los micrófonos: instrumentos singulares que no encontrarás en ningún otro lugar, reunidos en un solo sitio, y que tomas en tus manos sin tener que comprar nada."
+      },
+      {
+        "t": "Con los demás",
+        "d": "Conoces a otros entusiastas. Somos unos quince, no más: eso es lo que hace que realmente hablemos entre nosotros y que se cree un vínculo; las conversaciones continúan mucho después de que termine el evento."
+      },
+      {
+        "t": "Contigo mismo",
+        "d": "Lo más difícil de describir, y lo único que nadie puede experimentar por ti: lo que se siente al poner las manos sobre esos instrumentos y oírte tocarlos."
+      }
+    ],
+    "promiseNote": "También descubrirás Handpan Constellation Studio, la aplicación que creé para dar mayor visibilidad a la música. Y es gratis: el evento público no tiene costo; solo necesitas reservar tu lugar.",
+    "shareTitle": "Esto se vive mejor acompañado",
+    "shareText": "Puedes venir acompañado/a; incluso suele ser mejor: así tendrás con quién hablar después. Simplemente envíales esta página y que cada uno reserve su plaza por separado (una inscripción por persona, para que sepa cuántos seremos).",
+    "shareCta": "Enviar esta página a alguien",
+    "shareCopied": "Enlace copiado; ahora solo tienes que pegarlo.",
     "ctaBook": "Reserva una cita privada individual (se aplica una tarifa).",
-    "ctaBookNote": "Espacio individual de pago: {grid}. Las exhibiciones públicas son gratuitas; plazas limitadas; se requiere reserva.",
-    "ctaNext": "Vea la siguiente muestra",
+    "ctaBookNote": "Franja horaria individual de pago: {grid}. Las reuniones públicas son gratuitas (unas quince personas, no más, para que todos tengan tiempo de participar). Se requiere reserva.",
+    "ctaNext": "Consulte la próxima reunión.",
     "exclBadge": "★ Estreno mundial",
     "exclTitle": "Llévate tu Neotone¹ a casa el mismo día.",
-    "exclText": "Lo reafirmo: que yo sepa, Le Nid es el primer lugar del mundo donde estos instrumentos se pueden probar y comprar directamente allí mismo. En la práctica, esto significa que puedes comprar tu Neotone¹ aquí mismo y llevártelo a casa de inmediato, sin demoras de fabricación. Sin embargo, mis handpans Yishama no están a la venta: son mis instrumentos personales, pensados para ser escuchados y tocados.",
+    "exclText": "Lo reafirmo: que yo sepa, después del taller en Budapest, Le Nid es el primer lugar del mundo donde estos instrumentos se pueden probar y comprar directamente allí mismo. En la práctica, esto significa que puedes comprar tu Neotone¹ aquí mismo y llevártelo a casa de inmediato, sin demoras de fabricación. Sin embargo, mis handpans Yishama no están a la venta: son mis instrumentos personales, pensados para ser escuchados y tocados.",
     "exclArgs": [
       "7% de descuento: el mejor precio del mercado (en comparación con el 5% online).",
       "Sin retrasos en la fabricación ni tiempos de espera.",
@@ -1650,7 +1676,7 @@ export const es: Dict = {
     ],
     "franceClaim": "El único lugar en Francia donde se pueden probar y comprar directamente estos instrumentos.",
     "onsiteEyebrow": "En el sitio",
-    "onsiteTitle": "Todo lo que puedes probar en el sitio",
+    "onsiteTitle": "Todo lo que puedes probar allí: handpans acústicos, Neotone, micrófonos",
     "duoEyebrow": "Los dos mundos del handpan",
     "duoTitle": "Handpan acústico y electrónico, el mismo día.",
     "duoIntro": "La sala de exposición no está ahí para obligarte a elegir un bando. Ambos mundos coexisten: los escuchas, los tocas, sientes la diferencia en tus manos. No hay competencia, solo complementariedad.",
@@ -1679,7 +1705,7 @@ export const es: Dict = {
     "duoNote": "Para que quede claro: solo tenemos en stock el Neotone; es el único que puedes llevarte el mismo día. Los Yishama son mis instrumentos personales: están aquí para que los escuches y los toques, y si quieres uno, te pondré en contacto con el taller (soy embajador y afiliado).",
     "alsoEyebrow": "Y no solo el handpan",
     "alsoTitle": "El resto de lo que toco también está ahí.",
-    "alsoIntro": "El Neotone es la estrella principal de la exhibición, pero no es necesario venir solo por él. Estos instrumentos también están a la venta y puedes probarlos, al igual que los handpans.",
+    "alsoIntro": "El Neotone es la principal atracción del evento, pero no tienes que venir solo por él. Estos instrumentos también han salido al mercado y puedes probarlos, al igual que los handpans.",
     "also": [
       {
         "title": "El arpa Gonilélé",
@@ -1710,7 +1736,7 @@ export const es: Dict = {
     },
     "atlasEyebrow": "Nuevo · Socio Atlas",
     "atlasTitle": "Y algo donde colocar el handpan.",
-    "atlasIntro": "Atlas fabrica trípodes para handpan en Italia: el instrumento descansa sobre un disco flotante sujeto por ocho imanes resistentes a los arañazos, sin tornillos ni correas que lo fijen al metal. Me he convertido en socio de la marca y me han enviado sus dos modelos para que los pruebe. Ya están allí, junto con los handpans; podrás colocar un instrumento sobre ellos y ajustar la altura tú mismo.",
+    "atlasIntro": "Atlas fabrica trípodes para handpan en Italia: el instrumento descansa sobre un disco flotante sujeto por ocho imanes resistentes a los arañazos, sin tornillos ni correas que lo fijen al metal. Me he convertido en socio de la marca y me enviaron sus dos modelos para que los probara. Están aquí, junto con los handpans; puedes colocar un instrumento sobre ellos y ajustar la altura tú mismo.",
     "atlasModels": [
       {
         "name": "Atlas Pro",
@@ -1723,18 +1749,18 @@ export const es: Dict = {
     ],
     "atlasCta": "Todo lo que necesitas saber sobre las patas Atlas",
     "lieuEyebrow": "El lugar · Le Nid",
-    "lieuTitle": "¿Cómo es una exposición en Le Nid?",
+    "lieuTitle": "¿Cómo es una reunión en Le Nid (distrito 20 de París)?",
     "lieuIntro": "Un apartamento-estudio del siglo XX, con suelo de parqué, guirnaldas y todos sentados en círculo alrededor de los instrumentos. Somos unos quince, no más.",
     "photoAlt": {
       "accueil": "David Lesage, con los brazos extendidos, saluda a los visitantes desde el centro de la amplia sala de exposiciones: suelo de parqué antiguo, paredes blancas con vigas a la vista, una roseta en la pared, un handpan sobre su trípode detrás de él, cojines y un sofá bajo al fondo. (El título \" David Lesage Showroom\" aparece superpuesto en la imagen).",
-      "vueEnsemble": "Vista general de una presentación en Le Nid: David Lesage sentado en el centro del círculo, con handpans sobre soportes detrás de él, el público sentado en el suelo, las paredes cubiertas de guirnaldas de luces y una roseta suspendida.",
+      "vueEnsemble": "Panorama general de una reunión en Le Nid: David Lesage sentado en el centro del círculo, con handpans sobre soportes detrás de él, el público sentado en el suelo, las paredes cubiertas de guirnaldas de luces y una roseta suspendida.",
       "instruments": "Los instrumentos estaban instalados en la sala de exposiciones antes de la llegada del público: dos handpans acústicos Yishama sobre trípodes, dos handpans electrónicos Neotone con su pantalla, una calabaza colocada sobre una alfombra roja, todo ello sobre un antiguo suelo de parqué.",
       "presentation": "David Lesage, micrófono en mano, presenta los instrumentos en la sala de exposiciones: los handpans Neotone y Yishama alineados detrás de él, bajo la roseta en la pared.",
       "gonilele": "David Lesage sostiene el Gonilélé, el arpa africana hecha con una calabaza, y muestra el micrófono Hisong AirStudio S1 que se utiliza para amplificarlo.",
       "grandePiece": "La amplia sala de exposiciones durante el día, antes de que llegue el público: suelo de parqué antiguo, sofá bajo y cojines colocados directamente en el suelo, un handpan acústico sobre su trípode al fondo, una guitarra colgada en la pared, plantas y alfombras enrolladas en una cesta."
     },
     "photoCaption": {
-      "vueEnsemble": "Una presentación en Le Nid: el público sentado en círculo, los instrumentos en el centro.",
+      "vueEnsemble": "Un encuentro en Le Nid: el público sentado en círculo, los instrumentos en el centro.",
       "grandePiece": "La misma habitación durante el día, antes de que se instalara todo.",
       "instruments": "Lo que te espera a tu llegada: el Neotone, mis handpans Yishama, el Gonilélé, la calabaza, los micrófonos y el tambor chamánico, listos para ser tocados.",
       "presentation": "El momento de introducción, antes de que pongas tus manos en los instrumentos.",
@@ -1760,7 +1786,7 @@ export const es: Dict = {
     "eventsHighlight": "Lo más solicitado en startups",
     "events": [
       {
-        "t": "Presentación Neotone y descubrimiento de instrumentos",
+        "t": "Reunión Neotone y descubrimiento de instrumentos",
         "d": "Evento público gratuito en Le Nid: David Lesage presenta el Neotone; luego se puede probar todo allí mismo: handpans acústicos Yishama, arpa africana Gonilélé, calabazas y micrófonos para handpan.",
         "price": "Público · Gratuito"
       },
@@ -1816,17 +1842,17 @@ export const es: Dict = {
     "bookVisitCta": "Reservar mi plaza en la sala de exposiciones (se aplica una tarifa)",
     "bookPrivateCta": "Reserve una cita individual",
     "agendaEyebrow": "Diario",
-    "agendaTitle": "Calendario de eventos públicos gratuitos",
-    "agendaIntro": "Presentación de Neotone a cargo de David Lesage y descubrimiento de todos los instrumentos que se tocan en Le Nid: handpans acústicos Yishama, arpa africana Gonilélé, calabaza y micrófonos para handpan. Podrá probarlos todos en el lugar. Entrada gratuita; plazas limitadas, se requiere reserva.",
+    "agendaTitle": "Prueba un handpan en París: próximas fechas, gratis.",
+    "agendaIntro": "David Lesage presentará los Neotone, y podrás descubrir todo lo que se toca en Le Nid: handpans acústicos Yishama, el arpa africana Gonilélé, calabazas y micrófonos para handpan. Podrás probarlo todo allí mismo. Entrada gratuita; el aforo está limitado a unas quince personas para que todos tengan tiempo de tocar; se requiere reserva.",
     "agendaEmpty": "Próximas fechas por anunciar",
     "agendaEmptyText": "Estamos ultimando las próximas fechas. Déjame tu correo electrónico: te avisaremos antes del anuncio público.",
     "agendaEmptyCta": "Avísame de la próxima fecha",
-    "agendaNextLabel": "Próxima muestra gratuita",
+    "agendaNextLabel": "Próxima reunión gratuita",
     "agendaCount": "{n} fecha futura",
     "agendaCountPlural": "{n} próximas fechas",
-    "agendaSeats": "Gratis con reserva · Plazas limitadas",
-    "agendaCta": "Para recibir notificaciones sobre próximos eventos",
-    "agendaEventTitle": "Encuentro Neotone: y todos los instrumentos que puedes probar.",
+    "agendaSeats": "Gratis con reserva · aproximadamente quince personas, no más",
+    "agendaCta": "Para recibir notificaciones sobre las próximas reuniones",
+    "agendaEventTitle": "Encuentro Neotone: todos los instrumentos que puedes probar.",
     "agendaEventTag": "Público · Gratuito",
     "agendaEventTime": "desde {start} hasta {end}",
     "agendaRulesTitle": "Cosas que debes saber antes de venir",
@@ -1840,7 +1866,7 @@ export const es: Dict = {
     "agendaMoreTitle": "¿No puedes venir? ¿O prefieres tener un tiempo para ti solo/a?",
     "agendaMoreText": "Reserva una cita individual conmigo en otro momento que te convenga.",
     "accessEyebrow": "Cómo llegar",
-    "accessTitle": "Acceso a la sala de exposición",
+    "accessTitle": "Visite la sala de exposiciones, París 20.",
     "accessMaps": "Ver en Google Maps →",
     "access": [
       {
@@ -1863,7 +1889,7 @@ export const es: Dict = {
   "about": {
     "title": "Acerca de — David Lesage, músico, educador e inventor",
     "description": "Un baterista de formación que se convirtió en intérprete de handpan y cantante: el Conservatorio, La Voz, Naxos y la escena internacional del handpan, dos instrumentos hechos a medida sin instrucciones, y las herramientas que terminé construyendo.",
-    "heroEyebrow": "Sobre mí",
+    "heroEyebrow": "Acerca de",
     "heroTitle": "Baterista de formación, intérprete de handpan, cantante y fabricante de herramientas.",
     "heroLead": "Soy David Lesage: baterista de formación que se convirtió en intérprete de handpan, cantante, educador y fabricante de herramientas. Aquí está mi trayectoria, en orden cronológico, con sus respectivas fechas.",
     "heroImgAlt": "David Lesage, músico",
@@ -1940,7 +1966,7 @@ export const es: Dict = {
     "today": [
       {
         "t": "Yo juego",
-        "d": "Handpan, voz, calabaza y ngoni en el escenario: 112 actuaciones grabadas entre 2009 y 2026 en 7 países, incluyendo 21 en Jazz in Marciac, dos ediciones de Sziget en Budapest, el Festival Everness en Hungría y como teloneros de Amadou & Mariam. Dos álbumes grabados bajo el título L’Alliance du Phoenix y presentaciones gratuitas en Le Nid casi todos los meses."
+        "d": "Handpan, voz, calabaza y ngoni en el escenario: 112 actuaciones grabadas entre 2009 y 2026 en 7 países, incluyendo 21 en Jazz in Marciac, dos ediciones de Sziget en Budapest, el Festival Everness en Hungría y como teloneros de Amadou & Mariam. Dos álbumes grabados bajo el título L’Alliance du Phoenix y eventos gratuitos en Le Nid casi todos los meses."
       },
       {
         "t": "Yo enseño",
@@ -2008,7 +2034,7 @@ export const es: Dict = {
       },
       {
         "y": "Hoy",
-        "t": "Le Nid, París 20: cursos, ensayos y exposiciones."
+        "t": "Le Nid, París 20: cursos, ensayos y encuentros."
       }
     ],
     "visionEyebrow": "Mi visión educativa",
@@ -2133,7 +2159,7 @@ export const es: Dict = {
         "h": "Lo que me das, forma por forma",
         "p": "No se recopila ninguna información sin tu conocimiento: todo proviene de lo que tú mismo escribes. Los campos opcionales permanecen vacíos si no los modificas.",
         "items": [
-          "Reserva (visita a la sala de exposición, espacio para demostración, cita individual, solicitud de código de descuento Neotone): nombre, apellidos, correo electrónico, número de teléfono (si lo proporciona), número de personas, fecha prevista, hasta tres franjas horarias que proponga, tipo y formato de la sesión (presencial o por vídeo), instrumentos que desea descubrir, modelo Neotone que le interesa, país, cuenta de redes sociales, cómo supo de mí, cuánto tiempo lleva tocando, qué le gustaría conseguir y su mensaje.",
+          "Reserva (visita a la sala de exposición, reunión, cita individual, solicitud de código de descuento Neotone): nombre, apellidos, correo electrónico, número de teléfono (si lo proporciona), número de personas, fecha prevista, hasta tres franjas horarias que proponga, tipo y formato de la sesión (presencial o por vídeo), instrumentos que desea descubrir, modelo Neotone que le interesa, país, cuenta de redes sociales, cómo supo de mí, cuánto tiempo lleva tocando, qué le gustaría conseguir y su mensaje.",
           "Contacto: nombre y apellidos, correo electrónico, asunto, mensaje.",
           "Lista de espera para solicitudes: nombre, apellido, correo electrónico, si ya posee un handpan y cuál, su propósito (para uso personal, para enseñar, para fabricar), su objetivo, el número de alumnos a los que imparte clases y, si fabrica handpans, su país, el número de notas que produce, los metales con los que trabaja y cómo fija sus precios. Además, su motivación si solicita ser probador beta.",
           "Para pedir el Muling micro: nombre, apellidos, correo electrónico, número de teléfono, cantidad, dirección de entrega completa, instrucciones para el repartidor, mensaje y, a continuación, el comprobante de transferencia que suba (imagen o PDF).",
@@ -2146,12 +2172,12 @@ export const es: Dict = {
         "items": [
           "Para responderte. Ese es el motivo de cada formulario: lo leo y respondo personalmente.",
           "Organiza lo que solicitaste: confirma una hora, prepara los instrumentos para tu llegada y envía el pedido. Al solicitar una cita individual, también se crea una propuesta de clase en mi calendario, dentro de la aplicación.",
-          "Te mantendré al tanto de mis últimas novedades, pero solo si has marcado la segunda casilla del formulario, la opcional que nunca viene marcada por defecto: una nueva fecha de presentación, el lanzamiento de la app, un nuevo instrumento. Si no la marcas, solo me pondré en contacto contigo sobre tu solicitud y nada más. Si la marcas, escribiré menos y te enviaré información personalizada: según cómo te hayas registrado y tus intereses, no recibirás lo mismo que otra persona. Puedes darte de baja cuando quieras, sin tener que dar explicaciones."
+          "Te mantendré al tanto de mis últimas novedades, pero solo si has marcado la segunda casilla del formulario, la opcional que nunca viene marcada por defecto: una nueva fecha de reunión, el lanzamiento de la app, un nuevo instrumento. Si no la marcas, solo me pondré en contacto contigo sobre tu solicitud y nada más. Si la marcas, escribiré menos y te enviaré información personalizada: según cómo te hayas registrado y tus intereses, no recibirás lo mismo que otra persona. Puedes darte de baja cuando quieras, sin necesidad de dar explicaciones."
         ]
       },
       {
         "h": "Fotos y vídeos tomados en el lugar.",
-        "p": "Fotografío y filmo lo que sucede aquí: los escaparates, las citas en la sala de exposiciones, los instrumentos que pasan de mano en mano. Publico parte de este material en este sitio web y en mis redes sociales. Lo que me importa no es tu rostro en particular, sino mostrar el ambiente general del lugar y lo que se comparte aquí, para animar a otros a venir.",
+        "p": "Fotografío y filmo lo que sucede aquí: los encuentros, las citas en la sala de exposiciones, los instrumentos que pasan de mano en mano. Publico parte de ello en esta página web y en mis redes sociales. Lo que me importa no es tu rostro en particular, sino mostrar el ambiente general del lugar y lo que se comparte aquí, para animar a otros a venir.",
         "items": [
           "Por defecto, difumino los rostros. Eso es lo que estoy haciendo hoy: a menos que alguien me diga que está de acuerdo, no los publico de forma que se les pueda reconocer.",
           "Puedes decirme que no, y no tienes que justificar nada: basta con decírmelo en persona o enviar un correo electrónico a contact@lesagedavid.fr. Antes o después de la publicación, si una foto o un vídeo ya está en línea, lo eliminaré o lo difuminaré.",
@@ -2233,8 +2259,8 @@ export const es: Dict = {
         "items": []
       },
       {
-        "h": "Citas, vitrinas y pedidos",
-        "p": "En este sitio web no se procesan pagos. Las citas individuales se reservan a través del enlace que le enviaré en mi respuesta: este pago reserva su cita y es vinculante para ambos. Hasta 24 horas antes de la cita, podemos reprogramarla sin problema; con menos de 24 horas de antelación, el pago sigue siendo válido, pero no perderá su cita: la reprogramaremos en un plazo de 3 meses. Las presentaciones son gratuitas, solo con reserva previa y con aforo limitado. Los pedidos de micrófonos Muling se pagan mediante transferencia bancaria a una cuenta en Alemania, directamente al fabricante: usted mismo inicia este proceso y ni este sitio web ni yo recibimos el pago. El fabricante se encarga del envío y el seguimiento.",
+        "h": "Citas, reuniones y órdenes",
+        "p": "En este sitio web no se procesan pagos. Las citas individuales se reservan a través del enlace que le enviaré en mi respuesta: el pago reserva su cita y es vinculante para ambos. Hasta 24 horas antes de la cita, podemos reprogramarla sin problema; con menos de 24 horas de antelación, el pago sigue siendo válido, pero no perderá su cita: la reprogramaremos en un plazo de 3 meses. Las reuniones son gratuitas, solo con reserva previa y con disponibilidad limitada. Los pedidos de micrófonos Muling se pagan mediante transferencia bancaria a una cuenta en Alemania, directamente al fabricante: usted mismo inicia este proceso y ni este sitio web ni yo recibimos el pago. El fabricante se encarga del envío y el seguimiento.",
         "items": []
       },
       {
@@ -2515,7 +2541,7 @@ export const es: Dict = {
     "procedureShowroom": [
       {
         "title": "Pide cita conmigo",
-        "text": "Dos opciones: asistir a una de mis presentaciones públicas (una al mes) o reservar una cita individual solo para ti: 1 hora · 50 € o 1 hora y 30 minutos · 70 €."
+        "text": "Dos opciones: asistir a una de mis reuniones públicas (una al mes) o reservar una cita individual: 1 hora · 50 € o 1 hora y 30 minutos · 70 €."
       },
       {
         "title": "Prueba ambos modelos en la vida real.",

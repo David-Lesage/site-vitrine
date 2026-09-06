@@ -29,6 +29,105 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 06/09/2026 (15ᵉ passe) — 🅓 `/showroom` : LA PAGE RÉPONDAIT À TOUT, SAUF À « POURQUOI VENIR ? »
+
+**Statut : commité, poussé sur `main`, buildé (116 pages), mesuré au navigateur intégré à
+375 px en FR / EN / ES, déployé en prod et contrôlé en ligne dans les trois langues.**
+
+### Le diagnostic (établi en relisant les commentaires de la page elle-même)
+La page se donnait sept titres de section, et les sept étaient des questions de **logistique** :
+c'est quoi · c'est où · j'y arrive comment · je m'inscris · ça se passe comment · qu'est-ce
+qu'il y a · je repars avec. **Aucune ne demandait « qu'est-ce que ça va me faire, à moi ? »**
+Elle servait parfaitement quelqu'un qui avait DÉJÀ décidé de venir. Constat de départ : **une
+seule inscription** pour la prochaine date. Ce n'était pas un problème d'ordre — on pouvait tout
+permuter, il manquait la même chose.
+
+### Le matériau : les mots de David (06/09/2026), à ne jamais lisser
+> « Les gens vont pouvoir vivre une **expérience rare et précieuse** (tester un Neotone
+> gratuitement ainsi que d'autres instruments rares et accessoires — c'est **unique dans un seul
+> et même endroit**). Rencontrer d'autres passionnés, découvrir l'application que j'ai créée,
+> créer du lien, vivre une expérience forte, poser des questions et avoir des réponses en direct,
+> vivre leur propre expérience de l'instrument […] ce qui est précieux c'est **l'expérience de la
+> rencontre : avec moi, avec les instruments, avec les autres, avec eux-mêmes**. »
+
+⛔ **Les quatre rencontres sont une STRUCTURE, pas une formule.** Elles sont les quatre cartes de
+la nouvelle section, dans SON ordre. « avec eux-mêmes » (rendu « avec toi-même », la page tutoie)
+reste **en dernier et mis en relief** : c'est le seul des quatre qui ne parle plus de commerce.
+Ne jamais le retourner en argument de vente.
+
+### Le nouvel ordre des sections
+| # | Section | Question | Mouvement |
+|---|---|---|---|
+| 0 | carrousel | à quoi ça ressemble | inchangé |
+| 1 | hero | c'est quoi · c'est quand · c'est gratuit | `<h1>` réécrit |
+| 2 | **LA PROMESSE (neuve)** | **qu'est-ce que ça va me faire, à MOI ?** | **créée** |
+| 3 | `#agenda` | je m'inscris ← LE BUT | + encart « venir à plusieurs » |
+| 4 | `#le-lieu` / `#acces` | j'arrive comment | **descendue sous l'agenda** |
+| 5→9 | déroulé · instruments · rappel · exclusivité · `#individuel` | inchangées |
+
+### Ce qui a changé, précisément
+- **Nouvelle section 2** : `promiseEyebrow` / `promiseTitle` / `promiseLead` / `promise[4]` /
+  `promiseNote` (dict.ts, en.ts, es.ts). Gabarit compact volontaire (icône en ligne, `p-5`) :
+  chaque pixel gagné est rendu à l'agenda.
+- **`<h1>` : « Showroom David Lesage » → « Essayer un handpan à Paris — acoustique et
+  électronique, le même jour »**. Le nom de marque descend dans l'eyebrow, il n'est pas perdu.
+  Source : relevé de complétions Google du 01/09 (`audits/CIBLE-SHOWROOM-2026-08-31.md`, §4) —
+  « ou essayer un handpan » existe, « showroom handpan » n'a QUE des complétions allemandes.
+  Idem `agendaTitle`, `lieuTitle`, `accessTitle`, `onsiteTitle`, `<title>` et `meta description`.
+- **La jauge est retournée** : « nombre de places limitées » (réserve) → « une quinzaine de
+  personnes, pas plus, pour que chacun ait le temps de jouer » (qualité). Le chiffre est celui
+  de David (`lieuIntro`). Touche `agendaSeats`, `agendaIntro`, `ctaBookNote`.
+- **« Venir à plusieurs »** : encart sobre sous les dates + bouton `[data-share]` (partage natif
+  du téléphone, repli presse-papiers puis `execCommand`). **Aucune dépendance ajoutée.** Le
+  formulaire et ce qu'il envoie ne changent pas : une inscription par personne.
+- 🇭🇺 **RÉSERVE DE BUDAPEST** (décision de David du jour) — `exclText` FR/EN/ES :
+  « à ma connaissance, **après l'atelier de fabrication à Budapest**, Le Nid est le premier lieu
+  au monde où ces instruments s'essaient ET s'achètent en direct ». La revendication n'est ni
+  supprimée ni affaiblie au-delà de cette réserve. `FRANCE_EXCLUSIVITY_ACTIVE` reste `false`.
+
+### Mesures au navigateur intégré, 375 px (le chiffre qui juge la refonte)
+| | avant | après |
+|---|---|---|
+| 1ʳᵉ phrase de bénéfice | **aucune, à aucune hauteur** | 599 px (hero) |
+| la promesse (les 4 rencontres) | **n'existait pas** | h2 à 1 377 px · phrase à 1 505 px |
+| `#agenda` | 2 437 px | 2 992 px (+555) |
+| `#acces` | 1 747 px | 6 633 px |
+| débordement horizontal | 0 | 0 (`scrollWidth` = 375) |
+
+⚖️ **L'agenda descend de 555 px, et c'est assumé** : il reste deux points d'inscription AU-DESSUS
+de lui (la carte de date du hero à ~800 px, et le bouton « Réserver ma place » qui clôt la
+promesse). Quelqu'un de déjà décidé n'a donc pas à descendre plus qu'avant. Si un jour on doit
+regagner de la hauteur, c'est le gabarit des quatre cartes qu'on resserre, pas la promesse
+qu'on supprime.
+
+### ⚠️ Effet de bord assumé sur `src/i18n/es.ts` (fichier GÉNÉRÉ)
+`node scripts/traduire-i18n-es.mjs` régénère tout l'espagnol depuis le français. Il a donc aussi
+rattrapé un **retard antérieur** : le passage « showcase → rencontre » du 31/08 n'avait jamais été
+repassé en ES (« espectáculos », « presentaciones » → « reuniones / encuentros »). Ces lignes hors
+bloc `showroom` sont des **corrections dues**, pas des modifications de contenu.
+Deux retouches ponctuelles faites à la main **et reportées dans le cache** (sinon elles seraient
+écrasées) : « Lo que acabas de experimentar » → « Lo que vienes a vivir », et
+« Es más fácil sobrellevar esto en grupo » → « Esto se vive mejor acompañado ».
+
+### Ce qui n'a PAS bougé (vérifié)
+`#agenda` et `#acces` (cibles de resonancesproductions.org/le-nid), le slug `/showroom`, les
+dates (`agendaEvents`) et les tarifs (`sessionTypes`) de `src/data/site.ts`, le formulaire et ses
+identifiants `showcase-booking` / `showcaseInterests`, les 6 étapes du déroulé (identiques à
+l'email de confirmation), le mot **provisoire** « rencontre / gathering », aucune clé i18n
+supprimée, aucune page hors `/showroom`.
+
+### Ce qui reste ouvert (proposé, pas fait)
+1. **Le mot** : « rencontre » reste provisoire, et c'est David qui le tranche. Le bon mot sortira
+   de la promesse (« expérience globale »), pas d'une traduction de « showcase ».
+2. **Un point de comparaison chiffré** : la page ne peut pas prouver son effet sans mesure — un
+   simple compteur d'inscriptions par date dirait si la refonte a marché.
+3. **Le tarif duo / l'événement Facebook invitable** : la cartographie montre que ce public
+   partage par événement FB et Linktree, pas par bouton de page. Ça se joue hors du site.
+4. **`bain sonore paris 20`** est la 1ʳᵉ déclinaison suggérée par Google et Le Nid est dans le
+   20ᵉ — mais **ce n'est pas ce que David propose** : à ne pas capter sans qu'il le décide.
+
+---
+
 ## ÉTAT ACTUEL — 06/09/2026 (14ᵉ passe) — 🧪 LE PROFIL PUBLIC DEVIENT UN BAC À SABLE, AVEC LES VRAIES DONNÉES DE DAVID
 
 **Statut : commité (`1d90cdb`), poussé sur `main`, buildé (116 pages), bac à sable testé pour de

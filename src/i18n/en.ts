@@ -1745,24 +1745,76 @@ export const en: Dict = {
   //    URL slugs all stay as they are. Only human-read TEXT changed.
   // ══════════════════════════════════════════════════════════════════════════
   showroom: {
-    title: 'Try a Handpan, a Gonilélé, a Mic in Paris — Showroom | David Lesage',
+    title: 'Where to try a handpan in Paris — acoustic and electronic, free | David Lesage',
     description:
-      'Try every instrument I play, in Paris: the Neotone electronic handpan, my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. David Lesage Showroom, 29 rue des Orteaux, Paris 20th: free gatherings, private demonstrations and lessons.',
-    heroEyebrow: 'Le Nid · Paris 20th',
-    heroTitle: 'David Lesage Showroom',
+      'Where to try a handpan in Paris, acoustic and electronic on the same day: the Neotone electronic handpan, my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. David Lesage Showroom, 29 rue des Orteaux, Paris 20th: free gatherings, private demonstrations and lessons.',
+    heroEyebrow: 'David Lesage Showroom · Le Nid, Paris 20th',
+    // 🔎 06/09/2026 — see dict.ts: the <h1> said "David Lesage Showroom", a
+    // brand name nobody searches for. The brand moves into the eyebrow (it is
+    // not lost) and the title says what you actually come here to do.
+    heroTitle: 'Try a handpan in Paris — acoustic and electronic, the same day',
     // 🚨 See dict.ts: opened up on 18/08/2026 at David's explicit request. The
     // Neotone stays the headline act — we WIDEN, we do not replace it with a
     // flat list where everything weighs the same.
-    heroLead: 'The Neotone as the headline act — and with it everything else I play: my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. You hear them, you play them, the same day.',
+    heroLead: 'A free gathering, fifteen of us, and everything I play brought out for you: the Neotone as the headline act, my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. You hear them, you play them, the same day.',
+
+    // ══════════════════════════════════════════════════════════════════════
+    // 🅓 THE PROMISE — THE FOUR ENCOUNTERS (06/09/2026)
+    // ══════════════════════════════════════════════════════════════════════
+    // Full rationale and David's verbatim answer are in dict.ts (French is the
+    // source). In short: all seven sections of this page answered a LOGISTICS
+    // question; none answered "what will this do for ME?". David's own words:
+    // "what is precious is the experience of the encounter: with me, with the
+    // instruments, with the others, with themselves."
+    // ⛔ Those four encounters are the STRUCTURE of this block, in HIS order.
+    //    "with themselves" stays last and never turns into a sales argument.
+    promiseEyebrow: 'What you come here for',
+    promiseTitle: 'A rare experience, all in one single place',
+    promiseLead: 'Trying a Neotone for free, and with it other rare instruments and their accessories: that is unique, all in one single place. But what is precious is the experience of the encounter — with me, with the instruments, with the others, with yourself.',
+    promise: [
+      {
+        t: 'With me',
+        d: 'You ask your questions and you get the answers live, out loud. Not a product sheet: someone in front of you who plays these instruments every day, and who answers everyone, from the curious beginner to the seasoned musician.',
+      },
+      {
+        t: 'With the instruments',
+        d: 'You live your own experience of the instrument: you are the one playing. The Neotone, my acoustic handpans, the Gonilélé harp, the calabash, the microphones — rare instruments you will find gathered nowhere else, and that you can pick up without buying anything.',
+      },
+      {
+        t: 'With the others',
+        d: 'You meet other enthusiasts. Fifteen of us, no more: that is what makes people actually talk to each other, and what creates a bond — the conversations carry on long after the end.',
+      },
+      {
+        t: 'With yourself',
+        d: 'The hardest one to describe, and the only one nobody can live for you: what it does to you to put your hands on these instruments and hear yourself play them.',
+      },
+    ],
+    promiseNote: 'You will also discover Handpan Constellation Studio, the app I created to make music visible. And it is free: the public gathering costs nothing — you just need to book your place.',
+
+    // 🤝 COMING TOGETHER (06/09/2026) — see dict.ts. Deliberately sober: no
+    //    share banner, no social icons. Native share, clipboard fallback.
+    shareTitle: 'It is better lived together',
+    shareText: 'You can come with someone — it is often better that way: you leave with somebody to talk it over with. Just send them this page, and let each of you book a place (one booking per person, so I know how many we will be).',
+    shareCta: 'Send this page to someone',
+    shareCopied: 'Link copied — just paste it',
+
     // See dict.ts: this CTA is the OPTION, shown BELOW the next free showcase.
     ctaBook: 'Book a private one-to-one slot (paid)',
     // "just sign up" played the booking down: it is required.
-    ctaBookNote: 'Paid one-to-one slot: {grid}. Public gatherings, on the other hand, are free — limited places · booking required.',
+    // 🔁 06/09/2026 — the cap is turned around: see dict.ts. "Limited places"
+    //    read as a caveat; the number is David's own ("fifteen of us, no more").
+    ctaBookNote: 'Paid one-to-one slot: {grid}. Public gatherings, on the other hand, are free — fifteen of us, no more, so that everyone gets time to play · booking required.',
     // ⓘ No longer rendered since 17/08/2026 — see dict.ts.
     ctaNext: 'See the next gathering',
     exclBadge: '★ World first',
     exclTitle: 'Walk away with your Neotone¹, the same day',
-    exclText: 'I’ll own this claim: as far as I know, Le Nid is the first place in the world where these instruments can be tried AND bought directly, on site. In practice, that means you can buy your Neotone¹ right here and take it home immediately — with no manufacturing wait. My Yishama handpans are not for sale: they are my personal instruments, there to be heard and played.',
+    // 🇭🇺 THE BUDAPEST RESERVATION — 06/09/2026, David's decision, his words:
+    //    "we can indeed specify, apart from the workshops in Budapest. It is
+    //    complementary. I am the first place after the factory / manufacturing
+    //    workshop in Budapest."
+    //    ⛔ The claim is NOT removed nor weakened beyond that reservation: it
+    //    remains a world exclusivity, simply an accurate one.
+    exclText: 'I’ll own this claim: as far as I know, after the manufacturing workshop in Budapest, Le Nid is the first place in the world where these instruments can be tried AND bought directly, on site. In practice, that means you can buy your Neotone¹ right here and take it home immediately — with no manufacturing wait. My Yishama handpans are not for sale: they are my personal instruments, there to be heard and played.',
     exclArgs: ['7% discount — the best price on the market (vs. 5% online)', 'No manufacturing delay, no waiting', 'Very limited stock — only a few instruments available'],
     // 🇫🇷 PENDING CLAIM — WRITTEN, PLACED, NOT PUBLISHED.
     // Only rendered when `FRANCE_EXCLUSIVITY_ACTIVE` is `true`
@@ -1787,7 +1839,7 @@ export const en: Dict = {
     //    the instruments, the mics, the PA and the tablet — all of it playable
     //    on site. They do not widen the section's subject, they show it.
     onsiteEyebrow: 'On site',
-    onsiteTitle: 'Everything you can try on site',
+    onsiteTitle: 'Everything you can try on site: acoustic handpans, Neotone, microphones',
 
     // « The world of AND », showroom edition: here it is an EXPERIENCE, not a
     // purchase decision. Strict parity both ways — feature Yishama, but never
@@ -1914,7 +1966,7 @@ export const en: Dict = {
     // 🚨 Fixed 21/08/2026 — see dict.ts: showcases can be held in the morning
     //    or the afternoon, so “evening” was simply wrong. No time of day in the
     //    page copy: the actual hour lives in the agenda, and nowhere else.
-    lieuTitle: 'What a gathering at Le Nid looks like',
+    lieuTitle: 'What a gathering at Le Nid looks like (Paris 20th)',
     lieuIntro: 'A workshop-flat in the 20th arrondissement: bare wood floors, fairy lights, and everyone sitting in a circle around the instruments. Fifteen of us, no more.',
     photoAlt: {
       // 🚧 Fallback photo — see dict.ts: the file is a VIDEO THUMBNAIL, the
@@ -2042,18 +2094,18 @@ export const en: Dict = {
     bookVisitCta: 'Book my showroom slot (paid)',
     bookPrivateCta: 'Book an individual appointment',
     agendaEyebrow: 'Agenda',
-    agendaTitle: 'Calendar of free public gatherings',
+    agendaTitle: 'Try a handpan in Paris: the next free dates',
     // 🚨 See dict.ts: booking is MANDATORY (David, 17/08/2026). The showcase
     // stays FREE — it is the booking that becomes required, never the entry
     // that becomes paid. Do not reintroduce "free entry" / "booking recommended".
-    agendaIntro: 'Neotone presentation by David Lesage — and a chance to discover everything else played at Le Nid: Yishama acoustic handpans, Gonilélé African harp, calabash, handpan microphones. All of it there to be tried. Free — limited places · booking required.',
+    agendaIntro: 'Neotone presentation by David Lesage — and a chance to discover everything else played at Le Nid: Yishama acoustic handpans, Gonilélé African harp, calabash, handpan microphones. All of it there to be tried. Free — fifteen of us, no more, so that everyone gets time to play · booking required.',
     agendaEmpty: 'Upcoming dates in preparation',
     agendaEmptyText: 'The next dates are being finalised. Leave me your email and you’ll be the first to know, before the public announcement.',
     agendaEmptyCta: 'Notify me of the next date',
     agendaNextLabel: 'Next free gathering',
     agendaCount: '{n} upcoming date',
     agendaCountPlural: '{n} upcoming dates',
-    agendaSeats: 'Free, booking required · limited places',
+    agendaSeats: 'Free, booking required · fifteen of us, no more',
     agendaCta: 'Get notified about upcoming gatherings',
     // 🚨 RENDERED ONCE ONLY SINCE 21/08/2026, ABOVE THE LIST.
     //    It used to be the <h3> of EACH of the five agenda rows: five rows,
@@ -2082,7 +2134,7 @@ export const en: Dict = {
     agendaMoreTitle: 'Can’t make these dates — or would you rather have a moment just for you?',
     agendaMoreText: 'Book an individual appointment with me, at another time that suits you.',
     accessEyebrow: 'How to get there',
-    accessTitle: 'Showroom access',
+    accessTitle: 'Coming to the showroom, Paris 20th',
     accessMaps: 'View on Google Maps →',
     access: [
       { icon: '🚌', t: 'Bus', d: 'Lines 26 and 64 — Orteaux stop, a 3-min walk (≈ 250 m). Line 76 — Bagnolet-Orteaux stop.' },

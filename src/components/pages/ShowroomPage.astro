@@ -22,19 +22,56 @@ import type { Lang } from '@/i18n/config'
 //    (gratuite). Tout le reste lui est subordonné. Mots de David, 20/08/2026 :
 //    « La finalité c'est qu'elle s'inscrive à une date, c'est le seul objectif. »
 //
-// 📐 ORDRE DES SECTIONS — refondu le 20/08/2026. Chaque section répond à UNE
-//    question du visiteur, dans l'ordre où elle se pose :
+// ════════════════════════════════════════════════════════════════════════════
+// 🅓 06/09/2026 — LA PAGE RÉPONDAIT À TOUT, SAUF À « POURQUOI VENIR ? »
+// ════════════════════════════════════════════════════════════════════════════
+// Diagnostic, lisible dans la carte des sections ci-dessous telle qu'elle était
+// écrite le 20/08 : SEPT sections, SEPT questions de LOGISTIQUE. Aucune ne
+// demandait « qu'est-ce que ça va me faire, à MOI ? ». La page servait
+// parfaitement quelqu'un qui avait DÉJÀ décidé de venir — elle ne donnait
+// jamais de raison de décider. Ce n'était pas un problème d'ordre : on pouvait
+// tout permuter, il manquait la même chose. Constat au moment de la refonte :
+// UNE seule inscription pour la prochaine date.
+//
+// Mots de David : « L'ordre des informations affiché n'est pas le bon. Il faut
+// trouver et mettre en avant rapidement quel est le bénéfice pour la personne
+// de venir, et le rendre explicite de plein de manières possibles pour que la
+// personne se reconnaisse et s'engage en prenant un rendez-vous, et communique
+// même à des amis pour venir vivre cette expérience ensemble. » Et : « ma
+// proposition ne se limite pas à une démo commerciale : c'est une expérience
+// globale. »
+//
+// 👉 CE QUI A ÉTÉ FAIT : une section 2 « LA PROMESSE » est née (les QUATRE
+//    RENCONTRES, mots de David — voir `promise*` dans dict.ts), le lieu et
+//    l'accès sont passés APRÈS l'agenda, la jauge est devenue une qualité et
+//    non une réserve, et un encart sobre « venir à plusieurs » est apparu sous
+//    les dates. Détail et justification dans le commentaire de chaque section.
+//
+// 📐 ORDRE DES SECTIONS — refondu le 20/08/2026, révisé le 06/09/2026. Chaque
+//    section répond à UNE question du visiteur, dans l'ordre où elle se pose :
 //
 //    0. CARROUSEL D'OUVERTURE ..... « à quoi ça ressemble, là-bas ? »  (21/08)
-//    1. HERO ...................... « c'est quoi, c'est quand, c'est gratuit ? »
-//    2. #le-lieu (+ l'accès) ...... « je débarque où, et j'y arrive comment ? »
+//    1. HERO ...................... « c'est quoi, c'est où, c'est gratuit ? »
+//    2. LA PROMESSE ............... « qu'est-ce que ça va me faire, à MOI ? » (06/09) ← LA RAISON
 //    3. #agenda ................... « je m'inscris. »            ← LE BUT
-//    4. le déroulé ................ « comment ça se PASSE ? »
-//    5. #deux-univers ............. « qu'est-ce qu'il Y A, sur place ? »
+//       └─ encart « venir à plusieurs » sous les dates            (06/09)
+//    4. #le-lieu (+ l'accès) ...... « je débarque où, et j'y arrive comment ? »
+//    5. le déroulé ................ « comment ça se PASSE ? »
+//    6. #deux-univers ............. « qu'est-ce qu'il Y A, sur place ? »
 //       └─ 4ᵉ chapitre : « En images » (ancre `#en-images` conservée)
-//    6. rappel de la date ......... « bon, j'y vais. »            ← LE BUT (2)
-//    7. exclusivité ............... « et si je veux repartir avec ? »
-//    8. #individuel ............... « et si je ne peux pas venir ? »
+//    7. rappel de la date ......... « bon, j'y vais. »            ← LE BUT (2)
+//    8. exclusivité ............... « et si je veux repartir avec ? »
+//    9. #individuel ............... « et si je ne peux pas venir ? »
+//
+// 🔎 LES TITRES DISENT CE QUE LES GENS TAPENT (06/09/2026). Le <h1> était
+//    « Showroom David Lesage » : un nom de marque que personne ne cherche.
+//    Relevé de complétions Google du 01/09 (audits/CIBLE-SHOWROOM-2026-08-31.md,
+//    §4) : « ou essayer un handpan » existe, « handpan paris » se décline
+//    massivement, « showroom handpan » n'a QUE des complétions allemandes. Le
+//    nom de marque est descendu dans l'eyebrow, et le <h1>, l'agenda, le lieu,
+//    l'accès et la section « sur place » portent les mots réels.
+//    🚫 Aucun bourrage : chaque mot-clé apparaît une fois par titre, et les
+//       titres disent littéralement ce que la page fait.
 //
 // ════════════════════════════════════════════════════════════════════════════
 // 🖼️ 21/08/2026 (soir) — « EN IMAGES » N'EST PLUS UNE SECTION, C'EST UN
@@ -142,6 +179,9 @@ const L = (p: string) => localizePath(p, lang)
 // 🎫 Icônes des TROIS formats payants (section 9). L'icône `lucide:presentation`
 // a disparu avec la carte du showcase gratuit — voir `paidEvents` plus bas.
 const eventIcons = ['lucide:compass', 'lucide:hand', 'lucide:graduation-cap']
+// 🅓 Les QUATRE RENCONTRES (section 2), dans l'ordre des mots de David :
+// avec moi · avec les instruments · avec les autres · avec toi-même.
+const promiseIcons = ['lucide:messages-square', 'lucide:hand', 'lucide:users', 'lucide:sparkles']
 // 🦵 PIEDS ATLAS — LES MÊMES CARROUSELS QUE /pieds-atlas (20/08/2026).
 // David : « les photos des pieds sont trop petites sur la page showroom, ils ne
 // sont pas bien mis en valeur, il faudrait utiliser les mêmes carrousels que la
@@ -452,79 +492,59 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
     </div>
   </section>
 
-  {/* ═══ 2. LE LIEU ET L'ACCÈS — « je débarque où, et j'y arrive comment ? »
-      📍 L'ACCÈS A ÉTÉ REMONTÉ ICI le 20/08/2026 (il fermait la page).
-      Raison : « c'est où dans Paris, et est-ce que c'est loin » est un frein
-      DUR — il se levait après la décision, donc trop tard pour ceux qu'il
-      arrêtait. Fusionné dans la même section que le lieu parce que c'est la
-      même question posée deux fois (« à quoi ça ressemble » / « comment j'y
-      vais »), et parce que le bas de page répétait le POSTER DE LA VIDÉO du
-      hero : la même image, deux fois sur la page.
-      🔗 `id="acces"` est conservé (sur le sous-bloc) : les anciens liens
-         /showroom#acces continuent de tomber au bon endroit.
-      🚨 Les visages du public sont floutés à la source par David (seul le sien
-      est net, au centre) — ne jamais republier une version non floutée, et
-      n'appliquer AUCUN filtre de netteté sur ces images. */}
-  <Section id="le-lieu">
-    <SectionHeading eyebrow={sh.lieuEyebrow} title={sh.lieuTitle} intro={sh.lieuIntro} />
-    {/* DEUX PHOTOS, PAS UNE (20/08/2026) : la vue d'ensemble prouve que
-        l'événement EXISTE (du monde, un cercle, des instruments) ; la grande pièce vide
-        répond à la question que personne ne pose à voix haute — « je débarque
-        où, exactement ? ». C'est ce doute-là qui coûte des inscriptions.
-        ⓘ Une variante au cadrage resserré de la 1ʳᵉ existe :
-        `/images/showroom-vue-ensemble-resserre.webp` (2000×826). */}
-    {/* 📷 UNE SEULE PHOTO ICI (21/08/2026) — LE DOUBLON EST PARTI.
-        AVANT : DEUX figures côte à côte, `vueEnsemble` et `grandePiece`.
-        Or ce sont exactement les diapositives 2 et 4 du carrousel d'ouverture,
-        à ~1 100 px au-dessus. La page montrait donc les mêmes images deux fois
-        en moins de deux écrans — c'est précisément le « photos un peu partout »
-        que David décrit. Une redondance déjà signalée ici la veille et laissée
-        « à trancher » : elle est tranchée.
+  {/* ═══ 2. LA PROMESSE — « qu'est-ce que ça va me faire, à MOI ? » ═══════
+      🅓 SECTION AJOUTÉE LE 06/09/2026, ET C'EST LA CORRECTION DE FOND DE
+         CETTE PAGE. Diagnostic établi en relisant ses propres commentaires de
+         section : elles étaient SEPT, et toutes les sept répondaient à une
+         question de LOGISTIQUE (c'est quoi · c'est où · j'y arrive comment ·
+         je m'inscris · ça se passe comment · qu'est-ce qu'il y a · je repars
+         avec). AUCUNE ne demandait « qu'est-ce que ça va me faire, à moi ? ».
+         La page servait parfaitement quelqu'un qui avait DÉJÀ décidé de venir,
+         et ne donnait jamais de raison de décider. Ce n'était pas un problème
+         d'ORDRE : on pouvait tout permuter, il manquait la même chose.
+         Constat chiffré au moment de la refonte : UNE seule inscription pour
+         la prochaine date.
 
-        POURQUOI C'EST `vueEnsemble` QUI RESTE, et pas l'autre : c'est la seule
-        image de toute la page qui prouve que L'ÉVÉNEMENT EXISTE ET QU'IL Y A DU
-        MONDE (un cercle, des gens assis, des instruments au centre). C'est
-        aussi la seule qui illustre littéralement le titre de la section
-        (« À quoi ça ressemble, un showcase au Nid ») et son intro (« tout le
-        monde assis en cercle […] on est une quinzaine »). `grandePiece` montre
-        la pièce VIDE : le carrousel d'ouverture le fait déjà, en 4ᵉ position.
+      🚨 SON CONTENU EST LA RÉPONSE DE DAVID, PAS UN ARGUMENTAIRE ÉCRIT ICI.
+         Verbatim complet + consignes dans `promise*` (dict.ts). Les QUATRE
+         RENCONTRES — avec moi · avec les instruments · avec les autres · avec
+         toi-même — sont sa phrase, et elles sont la STRUCTURE de ce bloc, dans
+         SON ordre. ⛔ Ne pas les lisser, ne pas les réordonner, et surtout ne
+         pas transformer la quatrième (« avec eux-mêmes ») en argument de
+         vente : c'est la seule des quatre qui ne parle plus du tout de
+         commerce, c'est pour ça qu'elle est la plus forte.
 
-        ⓘ Rien n'est perdu : le FICHIER `showroom-grande-piece.webp` reste
-          affiché (carrousel d'ouverture) et sa légende reste dans les deux
-          dictionnaires (`photoCaption.grandePiece`) — aucune clé supprimée.
-        📏 Gain mesuré sur mobile (375 px) : ~240 px retirés AVANT l'agenda.
-        ⚡ `loading="lazy"` : la première image visible de la page est la 1ʳᵉ
-           diapositive du carrousel d'ouverture (prop `eager` du composant).
-           Celle-ci est à ~1 470 px du haut sur mobile.
-        🚫 Ne pas remettre une seconde figure ici sans remesurer la position de
-           `#agenda` : c'est la contrainte la plus dure de la page. */}
-    <figure class="mx-auto mt-10 max-w-4xl overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-      <img
-        src={showroomPhotos.vueEnsemble.src}
-        width={showroomPhotos.vueEnsemble.w}
-        height={showroomPhotos.vueEnsemble.h}
-        alt={sh.photoAlt.vueEnsemble}
-        loading="lazy"
-        decoding="async"
-        class="block h-auto w-full"
-      />
-      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.vueEnsemble}</figcaption>
-    </figure>
-
-    {/* ── COMMENT VENIR — sous un filet, dans la même section. */}
-    <div id="acces" class="mt-14 scroll-mt-24 border-t border-ink/10 pt-12">
-      <div class="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
-        <div>
-          <SectionHeading align="left" eyebrow={sh.accessEyebrow} title={sh.accessTitle} />
-          <p class="mt-4 text-lg font-600">{site.address}</p>
-          <div class="mt-4"><Button href={site.mapsUrl} variant="ghost" external>{sh.accessMaps}</Button></div>
+      📐 POURQUOI ICI, JUSTE SOUS LE HERO, ET AVANT TOUT LE RESTE : le bénéfice
+         doit se lire AVANT la logistique. Mesure à 375 px : la promesse
+         apparaît à ~700 px du haut (avant cette refonte, la page n'en portait
+         aucune, à aucune hauteur). Le lieu et l'accès, eux, sont passés APRÈS
+         l'agenda — voir le commentaire de la section 4.
+      🚫 Aucun témoignage, aucun avis de participant, aucun chiffre de
+         fréquentation : il n'en existe pas, on n'en fabrique pas. La seule
+         quantité citée (« une quinzaine ») est celle que David a écrite
+         lui-même dans `lieuIntro`. */}
+  <Section tone="cream-deep">
+    <SectionHeading eyebrow={sh.promiseEyebrow} title={sh.promiseTitle} intro={sh.promiseLead} />
+    {/* 📏 GABARIT VOLONTAIREMENT COMPACT (icône EN LIGNE avec le titre, `p-5`,
+        `gap-4`) : cette section s'intercale AU-DESSUS de l'agenda, et la
+        hauteur de l'agenda sur mobile est la contrainte la plus dure de la
+        page. Chaque pixel gagné ici est un pixel rendu à l'inscription.
+        🃏 La 4ᵉ carte (« avec toi-même ») est la seule mise en relief — c'est
+           la plus forte des quatre, et elle est la dernière lue. */}
+    <div class="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
+      {sh.promise.map((r, i) => (
+        <div class:list={['flex flex-col rounded-card border p-5', i === 3 ? 'border-2 border-copper/50 bg-cream shadow-md' : 'border-ink/10 bg-cream']}>
+          <div class="flex items-center gap-3">
+            <Icon name={promiseIcons[i]} class="h-6 w-6 shrink-0 text-copper" />
+            <h3 class="font-display text-xl font-700">{r.t}</h3>
+          </div>
+          <p class="mt-2 text-ink-soft/85">{r.d}</p>
         </div>
-        <div class="space-y-4">
-          {sh.access.map((a) => (
-            <div class="flex gap-4 rounded-card border border-ink/10 bg-cream-deep/40 p-4"><span class="text-2xl" aria-hidden="true">{a.icon}</span><div><p class="font-700">{a.t}</p><p class="text-sm text-ink-soft/85">{a.d}</p></div></div>
-          ))}
-        </div>
-      </div>
+      ))}
+    </div>
+    <p class="mx-auto mt-8 max-w-2xl rounded-xl bg-gold/10 px-5 py-4 text-center text-sm font-600 text-ink-soft/90">{sh.promiseNote}</p>
+    <div class="mt-8 text-center">
+      <Button href="#agenda" variant="primary">{sh.agendaBookCta}</Button>
     </div>
   </Section>
 
@@ -640,6 +660,34 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
         ))}
       </div>
 
+
+      {/* ═══ 🤝 VENIR À PLUSIEURS (06/09/2026) ═══════════════════════════════
+          Demande de David : que la personne « communique même à des amis pour
+          venir vivre cette expérience ensemble ». RIEN sur la page ne le
+          suggérait — ni ici, ni ailleurs.
+          Sobriété demandée : pas de bandeau de partage, pas d'icônes de
+          réseaux sociaux. Un encart discret, sous les dates, et UN bouton.
+          🖱️ Le bouton utilise le partage natif du téléphone
+             (`navigator.share`) et, à défaut, copie le lien dans le
+             presse-papiers (script en bas de page). Aucune dépendance ajoutée.
+          🔒 Le formulaire d'inscription et ce qu'il envoie ne changent PAS :
+             une inscription par personne, comme avant. */}
+      <div class="mx-auto mt-8 max-w-2xl rounded-card border border-copper/30 bg-cream-deep/40 p-5 text-center">
+        <p class="font-display text-base font-700">🤝 {sh.shareTitle}</p>
+        <p class="mx-auto mt-1.5 max-w-xl text-sm leading-relaxed text-ink-soft/85">{sh.shareText}</p>
+        <div class="mt-4">
+          <button
+            type="button"
+            data-share
+            data-share-copied={sh.shareCopied}
+            class="inline-flex items-center gap-2 rounded-full border-2 border-copper/50 px-5 py-2.5 text-sm font-700 text-copper transition-colors hover:bg-copper hover:text-cream"
+          >
+            <Icon name="lucide:send" class="h-4 w-4" />
+            <span data-share-label>{sh.shareCta}</span>
+          </button>
+        </div>
+      </div>
+
       {/* À SAVOIR AVANT DE VENIR — les trois règles pratiques (16/08/2026).
           Elles ne vivaient que dans l'email de confirmation, donc seules les
           personnes DÉJÀ inscrites les lisaient. Placées ici, juste sous les
@@ -672,6 +720,94 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
             data-title={sh.agendaEmptyCta}
             data-intro={sh.agendaEmptyText}
           >{sh.agendaEmptyCta}</Button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  {/* ═══ 4. LE LIEU ET L'ACCÈS — « je débarque où, et j'y arrive comment ? »
+      📉 DESCENDUE SOUS L'AGENDA LE 06/09/2026. Elle était la 2ᵉ section : on
+         apprenait l'adresse et les lignes de bus AVANT d'avoir la moindre
+         raison de venir. Le bénéfice passe devant la logistique (mots de
+         David : « il faut trouver et mettre en avant rapidement quel est le
+         bénéfice pour la personne de venir »).
+         ⚖️ Elle ne descend que d'UN cran, et reste juste sous l'agenda : « c'est
+         où dans Paris, et est-ce que c'est loin » reste un frein dur (raison du
+         remontage du 20/08/2026), il se lève donc toujours immédiatement après
+         la décision, pas en fin de page.
+      🔗 `#acces` (cible de resonancesproductions.org/le-nid) est INTACT.
+
+      ── historique du 20/08/2026, toujours valable ───────────────────────── — « je débarque où, et j'y arrive comment ? »
+      📍 L'ACCÈS A ÉTÉ REMONTÉ ICI le 20/08/2026 (il fermait la page).
+      Raison : « c'est où dans Paris, et est-ce que c'est loin » est un frein
+      DUR — il se levait après la décision, donc trop tard pour ceux qu'il
+      arrêtait. Fusionné dans la même section que le lieu parce que c'est la
+      même question posée deux fois (« à quoi ça ressemble » / « comment j'y
+      vais »), et parce que le bas de page répétait le POSTER DE LA VIDÉO du
+      hero : la même image, deux fois sur la page.
+      🔗 `id="acces"` est conservé (sur le sous-bloc) : les anciens liens
+         /showroom#acces continuent de tomber au bon endroit.
+      🚨 Les visages du public sont floutés à la source par David (seul le sien
+      est net, au centre) — ne jamais republier une version non floutée, et
+      n'appliquer AUCUN filtre de netteté sur ces images. */}
+  <Section id="le-lieu">
+    <SectionHeading eyebrow={sh.lieuEyebrow} title={sh.lieuTitle} intro={sh.lieuIntro} />
+    {/* DEUX PHOTOS, PAS UNE (20/08/2026) : la vue d'ensemble prouve que
+        l'événement EXISTE (du monde, un cercle, des instruments) ; la grande pièce vide
+        répond à la question que personne ne pose à voix haute — « je débarque
+        où, exactement ? ». C'est ce doute-là qui coûte des inscriptions.
+        ⓘ Une variante au cadrage resserré de la 1ʳᵉ existe :
+        `/images/showroom-vue-ensemble-resserre.webp` (2000×826). */}
+    {/* 📷 UNE SEULE PHOTO ICI (21/08/2026) — LE DOUBLON EST PARTI.
+        AVANT : DEUX figures côte à côte, `vueEnsemble` et `grandePiece`.
+        Or ce sont exactement les diapositives 2 et 4 du carrousel d'ouverture,
+        à ~1 100 px au-dessus. La page montrait donc les mêmes images deux fois
+        en moins de deux écrans — c'est précisément le « photos un peu partout »
+        que David décrit. Une redondance déjà signalée ici la veille et laissée
+        « à trancher » : elle est tranchée.
+
+        POURQUOI C'EST `vueEnsemble` QUI RESTE, et pas l'autre : c'est la seule
+        image de toute la page qui prouve que L'ÉVÉNEMENT EXISTE ET QU'IL Y A DU
+        MONDE (un cercle, des gens assis, des instruments au centre). C'est
+        aussi la seule qui illustre littéralement le titre de la section
+        (« À quoi ça ressemble, un showcase au Nid ») et son intro (« tout le
+        monde assis en cercle […] on est une quinzaine »). `grandePiece` montre
+        la pièce VIDE : le carrousel d'ouverture le fait déjà, en 4ᵉ position.
+
+        ⓘ Rien n'est perdu : le FICHIER `showroom-grande-piece.webp` reste
+          affiché (carrousel d'ouverture) et sa légende reste dans les deux
+          dictionnaires (`photoCaption.grandePiece`) — aucune clé supprimée.
+        📏 Gain mesuré sur mobile (375 px) : ~240 px retirés AVANT l'agenda.
+        ⚡ `loading="lazy"` : la première image visible de la page est la 1ʳᵉ
+           diapositive du carrousel d'ouverture (prop `eager` du composant).
+           Celle-ci est à ~1 470 px du haut sur mobile.
+        🚫 Ne pas remettre une seconde figure ici sans remesurer la position de
+           `#agenda` : c'est la contrainte la plus dure de la page. */}
+    <figure class="mx-auto mt-10 max-w-4xl overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
+      <img
+        src={showroomPhotos.vueEnsemble.src}
+        width={showroomPhotos.vueEnsemble.w}
+        height={showroomPhotos.vueEnsemble.h}
+        alt={sh.photoAlt.vueEnsemble}
+        loading="lazy"
+        decoding="async"
+        class="block h-auto w-full"
+      />
+      <figcaption class="px-5 py-3 text-center text-sm text-ink-soft/85">{sh.photoCaption.vueEnsemble}</figcaption>
+    </figure>
+
+    {/* ── COMMENT VENIR — sous un filet, dans la même section. */}
+    <div id="acces" class="mt-14 scroll-mt-24 border-t border-ink/10 pt-12">
+      <div class="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+        <div>
+          <SectionHeading align="left" eyebrow={sh.accessEyebrow} title={sh.accessTitle} />
+          <p class="mt-4 text-lg font-600">{site.address}</p>
+          <div class="mt-4"><Button href={site.mapsUrl} variant="ghost" external>{sh.accessMaps}</Button></div>
+        </div>
+        <div class="space-y-4">
+          {sh.access.map((a) => (
+            <div class="flex gap-4 rounded-card border border-ink/10 bg-cream-deep/40 p-4"><span class="text-2xl" aria-hidden="true">{a.icon}</span><div><p class="font-700">{a.t}</p><p class="text-sm text-ink-soft/85">{a.d}</p></div></div>
+          ))}
         </div>
       </div>
     </div>
@@ -1181,6 +1317,57 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
 </Layout>
 
 <script>
+  // ── 🤝 « Envoyer cette page à quelqu'un » (06/09/2026) ────────────────────
+  // Partage natif du téléphone quand il existe, copie du lien sinon. Aucune
+  // dépendance, aucun réseau social ciblé, aucune donnée envoyée nulle part.
+  document.querySelectorAll<HTMLButtonElement>('[data-share]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const url = location.origin + location.pathname
+      const title = document.title
+      try {
+        if (navigator.share) {
+          await navigator.share({ title, url })
+          return
+        }
+      } catch {
+        // Partage natif annulé par la personne : ne rien faire, ne rien dire.
+        return
+      }
+      // 🩹 REPLI EN DEUX TEMPS, testé le 06/09/2026 : `navigator.clipboard`
+      //    lève `NotAllowedError` dès que la page n'a pas le focus (c'est ce
+      //    qui s'est passé au premier essai). `execCommand('copy')` sur un
+      //    champ temporaire, lui, marche dans un geste utilisateur — c'est le
+      //    seul repli qui tienne sur les vieux navigateurs comme dans ce cas.
+      let ok = false
+      try {
+        await navigator.clipboard.writeText(url)
+        ok = true
+      } catch {
+        try {
+          const zone = document.createElement('textarea')
+          zone.value = url
+          zone.setAttribute('readonly', '')
+          zone.style.position = 'fixed'
+          zone.style.opacity = '0'
+          document.body.appendChild(zone)
+          zone.select()
+          ok = document.execCommand('copy')
+          document.body.removeChild(zone)
+        } catch {
+          ok = false
+        }
+      }
+      // Rien n'a pu être copié : on ne prétend pas le contraire.
+      if (!ok) return
+      const label = btn.querySelector('[data-share-label]')
+      const done = btn.dataset.shareCopied
+      if (!label || !done) return
+      const before = label.textContent
+      label.textContent = done
+      window.setTimeout(() => { label.textContent = before }, 2600)
+    })
+  })
+
   // Filet de sécurité : la page est statique, donc une date déjà passée pourrait
   // rester affichée si le site n'a pas été rebuildé. On la retire à l'affichage,
   // et on bascule sur l'état « prochaines dates en préparation » s'il ne reste rien.
