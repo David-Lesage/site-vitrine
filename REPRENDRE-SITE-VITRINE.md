@@ -29,7 +29,43 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
-## ÉTAT ACTUEL — 06/09/2026 (16ᵉ passe) — 🚧 SESSION PARALLÈLE : CE QUI EST RÉSERVÉ, CE QUI EST LIBRE
+## ÉTAT ACTUEL — 06/09/2026 (17ᵉ passe) — ✅ BLOG-IMAGES-TERMINÉ : LE BLOG MONTRE L'APP DE 2026, DÉPLOYÉ
+
+> 🔓 **Le blog et `public/images/` sont LIBRES.** L'agent a fini (11 commits `c75e21e`→`c92bab5`),
+> build 116 pages OK, **déployé en prod** (`site-vitrine-bc9soxjbc`, vérifié en ligne : figures
+> `data-lb-wide` présentes sur 3 articles, images servies en 200). Rien en attente dans l'arbre.
+
+### Ce qui a été fait (résumé — détail dans les 11 messages de commit)
+- **21 articles** (FR + EN) illustrés ou re-couverts avec les captures réelles du 06/09.
+- Images périmées **plus utilisées nulle part** : `app-logique.webp`, `app-creation.webp`,
+  `app-hybride-deux-gammes.webp`, `constel-polygone.webp` (fichiers conservés — archives).
+
+### 🔴 Ce qui reste périmé SANS remplaçant (David attend ça)
+1. `transposer-pour-chanter-handpan` (FR+EN) — couverture `app-atlas.webp` ancienne coiffe. **Capture F3 (`app-transposer-ancrage`) jamais livrée.** Seule couverture franchement fausse.
+2. `pourquoi-handpan-electronique` — corps sur `app-midi.webp` (ancien assistant de mapping). Aucun remplaçant.
+3. `diagrammes-accords-handpan-pdf` — `blog-grille-accords-dkurd.webp` signe encore « Handpan Studio ». **B4 non livrée.**
+4. `jouer-avec-un-batteur` — **D1 (barre d'accompagnement en boucle) non livrée** ; section « L'app joue, tu chantes » laissée sans image (volontaire : pas le même écran).
+5. Atlas — F6 inutilisable en vignette (large zone vide à gauche). **Recadrage toujours dû.**
+- À refaire côté APP : **E2** (`app-bibliotheque-morceau-incompatible` est en fait la modale d'accueil de l'éditeur, mal nommée).
+
+### ⚠️ Deux images cassées ANTÉRIEURES (référencées, absentes de `public/images/`)
+`blog-chromakeys-notes-e18-chakras.webp` (dans `les-deux-visions-chromakeys` FR+EN) et
+`blog-hybride-dkurd-neotone.webp` (dans `completer-son-handpan-acoustique-avec-un-neotone`).
+En prod depuis leurs commits d'origine (`ce62fe3`, `907bfc5`). **À produire ou à retirer.**
+
+### Trois écarts texte/image relevés, NON corrigés (à trancher)
+- `feedback-ameliorer` : l'article dit « menu d'aide → Un retour ? » ; le vrai bouton est « 💬 Donner mon avis BÊTA » en en-tête ; l'entrée « 🌐 Mauvaise traduction » manque.
+- `editeur-de-melodies` : titre « pan en haut, timeline en dessous » — à l'écran pan **à gauche**, grille à droite.
+- `jouer-avec-un-batteur` : 41 grooves / 8 familles non visibles sur la capture (liste fermée).
+
+### Incident de méthode à retenir
+Premier agent tombé sur une **erreur d'API** (filtrage de contenu) en pleine course, sans perte
+car il avait commité. Le relancé a commité **article par article** : c'est la bonne pratique
+pour tout lot long, on la garde.
+
+---
+
+## (16ᵉ passe, 06/09/2026 — ARCHIVÉE, le verrou est levé) 🚧 SESSION PARALLÈLE
 
 > ⛔ **À LIRE AVANT DE TOUCHER UN FICHIER.** Une autre session Claude Code travaille en ce
 > moment sur ce dépôt. Elle a un agent qui écrit dans **`src/content/blog/**` et
