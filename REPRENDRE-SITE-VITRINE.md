@@ -29,6 +29,120 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
 
 ---
 
+## ÉTAT ACTUEL — 06/09/2026 (14ᵉ passe) — 🧪 LE PROFIL PUBLIC DEVIENT UN BAC À SABLE, AVEC LES VRAIES DONNÉES DE DAVID
+
+**Statut : commité (`1d90cdb`), poussé sur `main`, buildé (116 pages), bac à sable testé pour de
+vrai dans le navigateur, 375 px vérifié FR + EN (débordement 0), déployé en prod
+(`site-vitrine-defnt51z8`, aliasé `lesagedavid.fr`) et contrôlé en ligne.**
+
+### La demande de David
+> « Peux-tu modifier la maquette en remplissant mes réelles données pour qu'elles apparaissent de
+> façon réelle et interactive sur l'article et dans la maquette ? […] Avec les données fictives
+> sauf évidemment mon profil à moi (David Lesage qui est réel). […] Tu remplis avec mes données,
+> l'utilisateur peut voir le résultat et tester en mettant ses propres données pour voir ce que ça fait. »
+
+### 🚨 CHANGEMENT D'ARCHITECTURE — LES PROTOTYPES SONT MAINTENANT COPIÉS DANS LE SITE
+
+Jusqu'à la 13ᵉ passe, les `<iframe>` de l'article pointaient sur
+`https://play.handpanstudio.app/prototypes/…`, c'est-à-dire sur les fichiers de **l'app**.
+Il fallait les **modifier** (y mettre les vraies données de David) — et on ne modifie pas le
+dépôt de l'app depuis ici. Donc :
+
+| Avant | Maintenant |
+|---|---|
+| `https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html` | `/prototypes/constellation-joueurs-carte.html` (copie locale) |
+| (rien) | `/prototypes/constellation-joueurs-profil.html` (copie locale) |
+
+Les deux copies vivent dans **`public/prototypes/`** et portent en tête un commentaire HTML
+disant d'où elles viennent, la date (06/09/2026), et **qu'elles vont diverger de l'original**.
+⚠️ **À dire à la session APP** : ses `prototypes/constellation-joueurs-*.html` sont intacts, mais
+le site en a désormais une version modifiée. **Ne jamais resynchroniser aveuglément** l'une sur
+l'autre. `~/CLAUDE/NEOTONE STUDIO/` n'a été qu'en **lecture seule**.
+
+### Ce qui a changé dans les copies
+
+**`public/prototypes/constellation-joueurs-carte.html`**
+- L'entrée `{p:'D.', v:'Alsace', …}` — que le fichier décrivait lui-même comme « la version
+  fictive et volontairement anonyme de David » — devient son **étoile réelle** :
+  `p:'David Lesage'`, `v:'Paris'`, `lat:48.8566`, `lon:2.3522`, `t:1`, `m:0`, drapeau `real:1`,
+  sa ligne d'enseignement verbatim, ses liens, ses **4 instruments**.
+- `ficheHtml()` gagne le support d'un lien **site web** (`we`) — il n'existait pas — et son pied
+  affiche « ★ profil réel — David Lesage » au lieu de « fiche fictive ».
+- Un bandeau sous le `<h1>` dit que les onze autres sont inventés et que **seul David est réel**.
+- Les **onze autres joueurs et les 47 de « Plus tard » restent entièrement fictifs.**
+
+**`public/prototypes/constellation-joueurs-profil.html` — le bac à sable**
+- Pré-rempli avec son profil réel : interrupteur **ALLUMÉ**, « David Lesage Artiste »,
+  France / Paris, ☑️ « Je donne des cours » + sa ligne verbatim, ☑️ « Partager mes instruments »
+  + ses 4 handpans, ses liens.
+- **Rien n'est enregistré** : aucun appel réseau, **aucun `localStorage`/`sessionStorage`**
+  (vérifié par `grep` puis dans le navigateur). Recharger la page remet le profil de David.
+- Les boutons **Enregistrer / Fermer / 🗑 Tout retirer** sont **neutralisés** : ils affichent un
+  message « 🧪 Aperçu : rien n'est enregistré… » qui explique ce qu'ils feraient dans l'app.
+  (« Tout retirer » n'existait pas dans le prototype d'origine ; il a été ajouté, désactivé,
+  parce qu'il est dans l'écran réel.)
+- Bandeau cyan « 🧪 Bac à sable » en tête de page.
+
+### ⛔ LES TROIS URL DOUTEUSES — CE QUI A ÉTÉ FAIT, ET POURQUOI
+
+| Champ | Décision | Justification |
+|---|---|---|
+| **Spotify** | `https://open.spotify.com/artist/7zEAQJbalBFj8XNHrcqdbK` — **repris du dépôt** | `src/data/shop.ts:113` (produit `cover`) porte cet ID d'artiste, et il **commence bien par `7zEA…`**, exactement le fragment visible dans sa capture. Ce n'est donc pas une invention : c'est la complétion par une valeur déjà publiée sur le site. |
+| **YouTube** | `https://www.youtube.com/@DavidLesageArtiste` — **repris du dépôt** | Sa capture affiche `youtube.com/c/DavidLesage`, le site utilise partout `@DavidLesageArtiste` (`src/data/site.ts:63` et `src/data/yishama.ts:28`). **Contradiction NON tranchée** : j'ai pris la valeur du dépôt, qui est celle publiée et vérifiable sur le site. **À confirmer par David** — si `/c/DavidLesage` est la bonne, la corriger dans la copie du profil ET de la carte. |
+| **Instagram** | **LAISSÉ VIDE** | Sa capture est tronquée (`david.lesage.`) et **aucune valeur du dépôt ne correspond** (`site.ts` n'a que `neotone.digitalhandpan`, `muling.ts` que `mulingpickup`). Un champ vide est honnête ; une URL inventée mènerait à un compte inexistant. Conséquence : sur la carte, son étoile a `ig:0` et sa fiche n'affiche **pas** de bouton Instagram. **David peut donner l'URL exacte → à poser dans les deux copies.** |
+
+⛔ Son orthographe est **intacte** : « Electronique » sans accent, « Ngoni », « etc... ».
+⚠️ Ne figurent dans ces maquettes que des données **déjà publiques** : pas d'e-mail, pas d'adresse.
+
+### L'article (FR `la-carte-des-joueurs.md` + EN `la-carte-des-joueurs-en.md`)
+- Les `src` des iframes passent en **chemins locaux**.
+- Le bandeau du cadre de la carte ne dit plus « les noms sont fictifs » tout court : il dit que
+  les **onze autres** le sont et qu'**une étoile est réelle, la sienne**.
+- **Nouvelle section ajoutée** (rien de réécrit) : « **L'écran depuis lequel on allume son
+  étoile** » / « The screen you light your star from », avec l'intro, le cadre
+  `.embed-maquette.embed-maquette-haute`, et le repli mobile.
+- ⛔ **Intacts** : la chute datée (« Ce soir, 1er septembre 2026… une étoile »), la structure, la
+  `<figure>` avec son `alt` (qui décrit l'**image**, où « D. en Alsace » figure toujours — c'est
+  exact, l'image n'a pas changé), et les trois mentions « maquette » de la 13ᵉ passe.
+
+### CSS — les DEUX gabarits (piège déjà mordu deux fois)
+Une seule règle ajoutée, dans **`src/pages/blog/[slug].astro` ET `src/pages/en/blog/[slug].astro`** :
+`.embed-maquette-haute iframe { height: 1500px; }` (le profil est en deux colonnes + une section
+technique, il est plus haut que la carte à 1000 px). Tout le reste — bordure, bandeau, pied, et
+surtout le **repli sous 900 px** — était déjà générique et s'applique tel quel au nouveau cadre.
+
+### Ce que le bac à sable fait RÉELLEMENT (observé, pas supposé)
+Testé dans le navigateur intégré, sur le fichier seul **et** dans l'iframe de l'article buildé :
+| Geste | Ce que j'ai vu |
+|---|---|
+| chargement | interrupteur « Allumé », « David Lesage Artiste », Paris/France, cours coché, 4 instruments cochés ; la fiche affiche son nom, 📍 Paris France, 🎓 Donne des cours, sa ligne verbatim, ses 4 instruments, Spotify + YouTube + Site web (pas d'Instagram) |
+| interrupteur **éteint** | la fiche devient « ☾ **Ton étoile est éteinte.** Tu n'apparais pas sur la carte… » et **tous les champs passent en `disabled`** |
+| décocher **Partager mes instruments** | les 4 handpans disparaissent de la fiche (« Non partagés. ») |
+| changer le **nom** | la fiche suit **à la frappe** |
+| vider le **pays** | « ⚠️ Il manque le pays. C'est lui qui pose ton étoile… » |
+| **Enregistrer / Fermer / Tout retirer** | message « 🧪 Aperçu : rien n'est enregistré… », aucune écriture |
+| **recharger** | **le profil de David revient intégralement** |
+| carte, clic sur son étoile | fiche complète + pied « ★ profil réel — David Lesage » |
+
+### Rendu 375 px (mesuré)
+FR et EN : **débordement horizontal = 0**. Les **deux** cadres (`display:none`) et les deux
+intros sont masqués, les **deux** encarts de repli sont affichés (`display:block`) avec leur lien
+« ouvrir en grand ». À 1280 px : les deux iframes rendent (1000 px et 1500 px de haut), et
+**dans** l'iframe du profil à 702 px de large, `scrollWidth == clientWidth` → pas de scroll
+horizontal interne non plus.
+
+### Non-régression
+`/blog/les-constellations-du-handpan`, `/blog/handpan-emotions-degres` et
+`/en/blog/apprendre-les-accords-handpan` : 200, `h1` présent, débordement 0, zéro
+`.embed-maquette` (la CSS reste bien confinée à cet article).
+
+### Reste ouvert
+1. **Instagram** — champ vide en attendant l'URL exacte de David.
+2. **YouTube** — `@DavidLesageArtiste` (dépôt) vs `/c/DavidLesage` (son profil app) : à trancher.
+3. **Prévenir la session APP** de la divergence des deux prototypes.
+
+---
+
 ## ÉTAT ACTUEL — 06/09/2026 (13ᵉ passe) — 🛰️ BLOG « LA CARTE DES JOUEURS » : LA MAQUETTE ENTRE DANS L'ARTICLE
 
 **Statut : commité (`9e0d9cd`), poussé sur `main`, buildé (116 pages), rendu vérifié FR + EN
