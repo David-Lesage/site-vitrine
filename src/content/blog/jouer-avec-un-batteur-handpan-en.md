@@ -2,7 +2,7 @@
 title: "Loop your chords, and sing over them"
 description: "The accompaniment bar loops one chord — or a whole progression — at the tempo you choose. And when you want more, a drummer joins in."
 pubDate: 2026-09-01
-cover: "/images/app-midi.webp"
+cover: "/images/app-tiroir-batteur.webp"
 category: "chant"
 tags: ["rhythm", "loop", "drummer"]
 lang: "en"
@@ -39,6 +39,20 @@ He's right there, next to the bar: a **🥁 Drummer** drawer. Open it, pick a gr
 This too is **free**, and it needs no hardware: the drummer runs in the browser, right from the Discovery level, on the acoustic mode's chord grid as well as the Logic Mode one. The groove you pick follows you from one tool to the next.
 
 What belongs to the **Studio** version is **MIDI recording** — and there the drummer changes role: the groove becomes a full accompaniment track, one you mute with a click 🔇 on playback, that follows your piece's tempo and travels into the file when you export. You can also play over an imported MIDI track or audio file — handy for practising a song you love before accompanying it for real. That's where a connected [Neotone](/en/le-neotone) gives its best.
+
+<figure>
+  <img
+    src="/images/app-tiroir-batteur.webp"
+    width="898"
+    height="396"
+    alt="The 🥁 Batteur (drummer) drawer, open, dark theme. Header: « Batteur — Pop 4/4 · 80 · au repos ». Below, a dropdown showing « Pop 4/4 », a play button, and a « BPM − 80 + » control. Second row: a volume control « 🔊 − 85% + » then a three-position selector « Sobre / Vivant / Généreux », with Vivant selected in purple. Last line: a « décompte » (count-in) checkbox and a play button."
+    data-lb="batteur"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The <strong>🥁 drummer</strong> drawer, open. The groove is picked from the list (here <em>Pop 4/4</em>), tempo and volume sit next to it, and the "liveliness" is chosen between <strong>Sobre</strong>, <strong>Vivant</strong> and <strong>Généreux</strong> — Vivant is active here. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Sing first, play later
 

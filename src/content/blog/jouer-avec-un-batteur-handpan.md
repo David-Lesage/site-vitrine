@@ -2,7 +2,7 @@
 title: "Mets tes accords en boucle, et chante par-dessus"
 description: "La barre d'accompagnement joue un accord — ou tout un enchaînement — en boucle au tempo que tu veux. Et pour aller plus loin, un batteur t'accompagne."
 pubDate: 2026-09-01
-cover: "/images/app-midi.webp"
+cover: "/images/app-tiroir-batteur.webp"
 category: "chant"
 tags: ["rythme", "boucle", "batteur"]
 lang: "fr"
@@ -35,6 +35,20 @@ Cette barre existe aussi bien sur la grille d'accords du mode acoustique que sur
 Quand la boucle est en place, il manque encore quelque chose : la **pulsation vivante**. Un métronome donne l'heure ; un batteur donne l'envie.
 
 Il est là, juste à côté de la barre : un tiroir **🥁 Batteur**. Tu l'ouvres, tu choisis un groove, un tempo, et une « vie » — Sobre, Vivant, Généreux. **41 grooves** rangés en huit familles : *Pour le handpan* (Souffle, Battement de cœur, Cajón doux, Vagues, Berceuse, Marche tranquille, Pluie, et le métronome sec), *Pop & Rock*, *Latines*, *Afrique & Orient*, *Swing & Jazz*, *Hip-hop & Urbain*, *Électro & Dance*, *Du monde*. Chacun a ses fills.
+
+<figure>
+  <img
+    src="/images/app-tiroir-batteur.webp"
+    width="898"
+    height="396"
+    alt="Le tiroir 🥁 Batteur ouvert, thème sombre. En tête : « Batteur — Pop 4/4 · 80 · au repos ». En dessous, une liste déroulante affichant « Pop 4/4 », un bouton lecture, et un réglage « BPM − 80 + ». Deuxième rangée : un réglage de volume « 🔊 − 85% + » puis un sélecteur à trois positions « Sobre / Vivant / Généreux », Vivant étant sélectionné en violet. Dernière ligne : une case à cocher « décompte » et un bouton lecture."
+    data-lb="batteur"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le tiroir <strong>🥁 Batteur</strong> ouvert. Le groove est choisi dans la liste (ici <em>Pop 4/4</em>), le tempo et le volume se règlent à côté, et la « vie » se choisit entre <strong>Sobre</strong>, <strong>Vivant</strong> et <strong>Généreux</strong> — Vivant est actif ici.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 Ça aussi, c'est **gratuit**, et ça ne demande aucun matériel : le batteur tourne dans le navigateur, dès le niveau Découverte, sur la grille d'accords du mode acoustique comme sur celle du Mode Logique. Le groove que tu choisis te suit d'un outil à l'autre.
 
