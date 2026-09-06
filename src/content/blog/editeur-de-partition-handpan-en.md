@@ -2,7 +2,7 @@
 title: "The score editor: play your songs on the handpan"
 description: "Song Mode shows lyrics with chord diagrams anchored above the words. Play Hallelujah or Let It Be on the handpan, no music theory needed."
 pubDate: 2026-08-15
-cover: "/images/blog-partition-hallelujah.webp"
+cover: "/images/blog-partition-hallelujah-2026.webp"
 category: "partitions"
 tags: ["score", "songs", "accompaniment"]
 lang: "en"
@@ -21,6 +21,20 @@ Several songs come ready with lyrics and chords: **Hallelujah**, **Let It Be**, 
 ### Example: Hallelujah
 
 Open *Hallelujah* in Song Mode. Above the word where the first chord lands, a mini-handpan appears with its coloured notes. You play the chord, you sing the line, and when the next diagram arrives above another word, you change. The famous rise of "*Hallelujah…*" becomes a series of diagrams you chain in rhythm with the syllables. You don't have to count bars: the words carry you, the colours tell you where to go.
+
+<figure>
+  <img
+    src="/images/blog-partition-hallelujah-2026.webp"
+    width="2000"
+    height="1400"
+    alt="The Visual Score Editor in Song mode, dark theme. On the left, the MODE panel with five choices — Instrument seul, Complet, Séquence d'accords, Tous les accords possibles, Chanson (selected) — key D, then the LAYOUT blocks (Ink-Saver, Portrait selected or Landscape, unplayed notes coloured or empty), STYLE, CONTENT, DIAGRAMS, LEGEND, and MY ACCOUNT with « ✍️ Nouvelle chanson » and « 💾 Enregistrer dans mon compte ». On the right, the « HALLELUJAH / Leonard Cohen » sheet with a 6/8 badge under the title, an INTRODUCTION column and a COUPLET 1 column, round D, Bm, G, A, F#m diagrams set above the lines of lyrics. At the top, the playback bar (TEMPO 80, METRE 6/8, attack App) and the Pupitre, Export PDF, PNG, Polygons buttons. In the sheet footer: « créé avec Handpan Constellation Studio by David Lesage »."
+    data-lb="editeur-partition"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Song mode on screen. Settings on the left — mode, key, layout, diagram content; the sheet on the right, where each diagram is anchored above the word on which the chord changes. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### Example: Let It Be
 

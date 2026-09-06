@@ -2,7 +2,7 @@
 title: "L'éditeur de partition : joue tes chansons au handpan"
 description: "Le Mode Chanson affiche les paroles avec les diagrammes d'accords ancrés au-dessus des mots. Joue Hallelujah ou Let It Be au handpan, sans solfège."
 pubDate: 2026-08-15
-cover: "/images/blog-partition-hallelujah.webp"
+cover: "/images/blog-partition-hallelujah-2026.webp"
 category: "partitions"
 tags: ["partition", "chansons", "accompagnement"]
 lang: "fr"
@@ -21,6 +21,20 @@ Des morceaux sont fournis avec paroles et accords prêts à jouer : **Hallelujah
 ### Exemple : Hallelujah
 
 Ouvre *Hallelujah* en Mode Chanson. Au-dessus du mot où tombe le premier accord, un mini-handpan s'affiche avec ses notes colorées. Tu poses l'accord, tu chantes la phrase, et quand le diagramme suivant arrive au-dessus d'un autre mot, tu changes. La célèbre montée « *Hallelujah…* » devient une suite de diagrammes que tu enchaînes en rythme avec les syllabes. Tu n'as pas à compter les mesures : les mots te portent, les couleurs te disent où aller.
+
+<figure>
+  <img
+    src="/images/blog-partition-hallelujah-2026.webp"
+    width="2000"
+    height="1400"
+    alt="L'Éditeur de Partition Visuelle en mode Chanson, thème sombre. À gauche, le panneau MODE avec cinq choix — Instrument seul, Complet, Séquence d'accords, Tous les accords possibles, Chanson (sélectionné) — la Tonalité D, puis les blocs MISE EN PAGE (Éco-Encre, Portrait sélectionné ou Paysage, « Notes non jouées : Couleur / Vide »), STYLE, CONTENU, DIAGRAMMES, LÉGENDE, et MON COMPTE avec « ✍️ Nouvelle chanson » et « 💾 Enregistrer dans mon compte ». À droite, la feuille « HALLELUJAH / Leonard Cohen » avec un badge 6/8 sous le titre, une colonne INTRODUCTION et une colonne COUPLET 1, les diagrammes ronds D, Bm, G, A, F#m posés au-dessus des lignes de paroles. En haut, la barre LECTURE (TEMPO 80, MÉTRIQUE 6/8, ATTAQUE App) et les boutons Pupitre, Exporter PDF, PNG, Polygones. En pied de feuille : « créé avec Handpan Constellation Studio by David Lesage »."
+    data-lb="editeur-partition"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le mode Chanson à l'écran. À gauche les réglages — mode, tonalité, mise en page, contenu des diagrammes ; à droite la feuille, où chaque diagramme est ancré au-dessus du mot où l'accord change.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### Exemple : Let It Be
 

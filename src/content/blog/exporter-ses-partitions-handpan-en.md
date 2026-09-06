@@ -2,7 +2,7 @@
 title: "Keep and share your chords: the score editor"
 description: "Export your progressions and visual scores as PDF or PNG to review, keep or pass on. Handpan Constellation Studio's visual score editor."
 pubDate: 2026-08-07
-cover: "/images/app-creation.webp"
+cover: "/images/app-partition-pdf-exporte.webp"
 category: "partitions"
 tags: ["score", "tools"]
 lang: "en"
@@ -33,6 +33,20 @@ A PDF is shareable. You can send your progression to a friend who plays, a singe
 ### A watermark, a signature
 
 Every export discreetly carries the note "created with Handpan Constellation Studio by David Lesage". This watermark doesn't spoil your score: it accompanies it like a signature, and recalls where the tool comes from as your document travels.
+
+<figure>
+  <img
+    src="/images/app-partition-pdf-exporte.webp"
+    width="2000"
+    height="2830"
+    alt="First page of a PDF actually exported by the application, in Ink-Saver mode (white background). Title PETITE RONDE DU SOIR, subtitle « par David Lesage — Gamme : Do majeur (démo) (C) ». In the centre, the handpan diagram with its notes named C2 to G4. Below, the line « Accordage : C Majeur — C2 · D2 · E2 · F2 · G2 · A2 · B2 · C3 · D3 · E3 · F3 · G3 · A3 · B3 · C4 · D4 · E4 · F4 · G4 ». Then two sections: a blue « Couplet » band followed by the C, G, Am, F diagrams, and a pink « Refrain » band followed by F, C, G, C. In the footer: « créé avec Handpan Constellation Studio by David Lesage »."
+    data-lb="export-partition"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>A PDF genuinely produced by the application, in <em>Ink-Saver</em> mode. The title, the full tuning of the scale, the sections as coloured bands with their diagrams — and the signature in the footer. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## From idea to document
 

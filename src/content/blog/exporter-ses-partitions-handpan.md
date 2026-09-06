@@ -2,7 +2,7 @@
 title: "Garder et partager tes accords : l'éditeur de partition"
 description: "Exporte tes progressions et partitions visuelles en PDF ou PNG pour réviser, garder ou transmettre. L'éditeur de partition de Handpan Constellation Studio."
 pubDate: 2026-08-07
-cover: "/images/app-creation.webp"
+cover: "/images/app-partition-pdf-exporte.webp"
 category: "partitions"
 tags: ["partition", "outils"]
 lang: "fr"
@@ -33,6 +33,20 @@ Un PDF se partage. Tu peux envoyer ta progression à un ami qui joue, à un chan
 ### Un filigrane, une signature
 
 Chaque export porte discrètement la mention « créé avec Handpan Constellation Studio by David Lesage ». Ce filigrane n'abîme pas ta partition : il l'accompagne comme une signature, et rappelle d'où vient l'outil quand ton document circule.
+
+<figure>
+  <img
+    src="/images/app-partition-pdf-exporte.webp"
+    width="2000"
+    height="2830"
+    alt="Première page d'un PDF réellement exporté par l'application, en mode Éco-Encre (fond blanc). Titre PETITE RONDE DU SOIR, sous-titre « par David Lesage — Gamme : Do majeur (démo) (C) ». Au centre, le schéma du handpan avec ses notes nommées C2 à G4. En dessous, la ligne « Accordage : C Majeur — C2 · D2 · E2 · F2 · G2 · A2 · B2 · C3 · D3 · E3 · F3 · G3 · A3 · B3 · C4 · D4 · E4 · F4 · G4 ». Puis deux sections : un bandeau bleu « Couplet » suivi des diagrammes C, G, Am, F, et un bandeau rose « Refrain » suivi des diagrammes F, C, G, C. En pied de page : « créé avec Handpan Constellation Studio by David Lesage »."
+    data-lb="export-partition"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Un PDF réellement sorti de l'application, en mode <em>Éco-Encre</em>. Le titre, l'accordage complet de la gamme, les sections en bandeaux colorés avec leurs diagrammes — et la signature en pied de page.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## De l'idée au document
 
