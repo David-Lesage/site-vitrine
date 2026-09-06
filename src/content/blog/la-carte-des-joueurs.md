@@ -2,7 +2,7 @@
 title: "La carte des joueurs : une constellation où rien n'est allumé par défaut"
 description: "Handpan Constellation Studio a maintenant sa carte du monde. Chaque joueur y est une étoile — mais elle est éteinte tant que tu ne l'allumes pas, champ par champ, et l'app ne sait jamais où tu es."
 pubDate: 2026-09-01
-cover: "/images/blog-constellations-3-traces.webp"
+cover: "/images/blog-carte-joueurs-maquette.webp"
 category: "communaute"
 tags: ["communauté", "profil public", "carte"]
 lang: "fr"
@@ -69,6 +69,41 @@ Elle sait aussi compter jusqu'à zéro sans se cacher — « Vous êtes 0 à avo
 Ce que tu vois sur cette carte, c'est donc **qui a dit oui**. Rien d'autre. Ce n'est pas un recensement du handpan dans le monde, et ça ne le sera jamais.
 
 Autant aller au bout de la démonstration, puisque c'est vrai au moment où j'écris ces lignes. **Ce soir, 1er septembre 2026, la constellation compte une étoile.** Une seule. Un prof, halo doré ; aucun fabricant pour l'instant. Ce n'est pas un aveu gêné, c'est une date : la carte existe depuis quelques jours, et voilà exactement où elle en est. Si tu lis ça maintenant, tu peux être la deuxième.
+
+### À quoi ressemble ce ciel une fois peuplé
+
+Voilà la seule chose que cette page ne peut pas te montrer honnêtement : un ciel plein. Alors je te montre la **maquette de conception** — le dessin qui a servi à fabriquer la carte, avec douze étoiles au lieu d'une.
+
+> ⚠️ **Ce qui suit est une maquette, pas l'application.** Les douze joueurs — Lena à Berlin, Kenji à Kyoto, Aïcha à Marrakech, Bruno à Curitiba… — et le compteur « 12 étoiles allumées » sont **entièrement fictifs** : ces personnes n'existent pas, ces chiffres n'existent pas. C'est un croquis d'atelier. Le nombre réel, vérifié, est celui du paragraphe précédent : **une étoile**.
+
+<figure>
+  <img
+    src="/images/blog-carte-joueurs-maquette.webp"
+    width="2000"
+    height="1425"
+    alt="Maquette de conception de la carte des joueurs de Handpan Constellation Studio. En haut à gauche, l'écran s'annonce lui-même : « MAQUETTE · CARTE DU MONDE », puis le titre « La constellation des joueurs ». La carte est un ciel bleu nuit, avec les continents à peine esquissés en bleu ardoise plus clair et un fin quadrillage. Douze étoiles nommées y sont posées, reliées entre elles par des traits pointillés cyan : Nadia à Montréal, Sam à Bristol, Ingrid à Göteborg, Lena à Berlin, Tomás à Lisbonne, D. en Alsace, Marisol à Valence, Elif à Izmir, Aïcha à Marrakech, Kenji à Kyoto, Bruno à Curitiba, Ari à Wellington — ces douze personnes sont FICTIVES, inventées pour la maquette. Certaines étoiles ont un halo doré, d'autres un halo cuivré, d'autres sont simplement cyan ; la légende en bas de la carte les distingue : « Joueur », « Donne des cours », « Fabrique des instruments ». Au-dessus de la carte, les filtres Tous / Profs / Fabricants, un champ « Chercher un pays ou une ville… », un sélecteur d'effectif « Lancement (12) » / « Plus tard (59) », et un compteur « 12 étoiles allumées · 5 profs · 3 fabricants ». Un encart sur la carte dit « Vous êtes 12 à avoir allumé votre étoile ». À droite, un panneau « Clique une étoile », la liste des résultats avec le nom et la ville de chaque étoile, et un encart « Pourquoi ce pays est vide » : « un pays sans point n'est pas un pays sans joueurs — c'est un pays où personne n'a encore dit oui »."
+    data-lb="carte-joueurs-maquette"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption><strong>Maquette de conception — personnes fictives.</strong> Le ciel, les continents esquissés, les halos dorés pour les profs et cuivrés pour les fabricants, la phrase sur les pays vides : tout ça est bien ce que fait l'application. Les douze noms, eux, sont inventés.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
+<p class="embed-maquette-intro">Et tu peux la manipuler toi-même, ci-dessous : filtre les profs, cherche une ville, bascule entre « Lancement (12) » et « Plus tard (59) » pour voir comment le dessin tient quand le ciel se remplit.</p>
+
+<div class="embed-maquette">
+  <p class="embed-maquette-bandeau"><strong>⚠️ Maquette de conception — pas l'application</strong><br />Les noms, les villes et les compteurs affichés ci-dessous sont fictifs. L'application, au 1<sup>er</sup> septembre 2026, compte une étoile.</p>
+  <iframe
+    src="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html"
+    title="Maquette interactive de la carte des joueurs (données fictives)"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+  ></iframe>
+  <p class="embed-maquette-pied">Cadre interactif — <a href="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html">ouvrir la maquette en grand</a>.</p>
+</div>
+
+<p class="embed-maquette-mobile"><strong>⚠️ Maquette de conception — pas l'application.</strong> La version manipulable est une mise en page d'écran large ; sur un téléphone elle serait illisible, donc je préfère te donner l'image ci-dessus et le lien plutôt qu'un cadre inutilisable. <a href="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html">Ouvrir la maquette en grand</a> (noms et chiffres fictifs).</p>
 
 ## Pourquoi « constellation », et pas « carte des membres »
 

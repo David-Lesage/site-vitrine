@@ -2,7 +2,7 @@
 title: "The players' map: a constellation where nothing is switched on by default"
 description: "Handpan Constellation Studio now has its world map. Every player is a star on it — but yours stays dark until you light it, field by field, and the app never knows where you are."
 pubDate: 2026-09-01
-cover: "/images/blog-constellations-3-traces.webp"
+cover: "/images/blog-carte-joueurs-maquette.webp"
 category: "communaute"
 tags: ["community", "public profile", "map"]
 lang: "en"
@@ -69,6 +69,41 @@ It can count to zero without flinching, too — "0 of you have lit your star" �
 So what you see on that map is **who said yes**. Nothing else. It is not a census of handpan players in the world, and it never will be.
 
 I may as well finish the demonstration, since it's true as I write this. **Tonight, 1 September 2026, the constellation holds one star.** Just one. A teacher, golden halo; no makers yet. That isn't an embarrassed confession, it's a date: the map has existed for a few days, and this is exactly where it stands. If you're reading this now, you can be the second.
+
+### What that sky looks like once it fills up
+
+Here's the one thing this page cannot honestly show you: a full sky. So let me show you the **design mockup** instead — the drawing the map was built from, with twelve stars instead of one.
+
+> ⚠️ **What follows is a mockup, not the application.** The twelve players — Lena in Berlin, Kenji in Kyoto, Aïcha in Marrakech, Bruno in Curitiba… — and the "12 stars lit" counter are **entirely fictional**: those people don't exist, those numbers don't exist. It's a studio sketch. The real, verified number is the one in the paragraph above: **one star**.
+
+<figure>
+  <img
+    src="/images/blog-carte-joueurs-maquette.webp"
+    width="2000"
+    height="1425"
+    alt="Design mockup of the players' map in Handpan Constellation Studio. Top left, the screen labels itself: « MAQUETTE · CARTE DU MONDE » (mockup · world map), then the title « La constellation des joueurs ». The map is a night-blue sky, continents barely sketched in lighter slate blue over a faint grid. Twelve named stars sit on it, joined by dotted cyan lines: Nadia in Montreal, Sam in Bristol, Ingrid in Gothenburg, Lena in Berlin, Tomás in Lisbon, D. in Alsace, Marisol in Valencia, Elif in Izmir, Aïcha in Marrakech, Kenji in Kyoto, Bruno in Curitiba, Ari in Wellington — all twelve people are FICTIONAL, invented for the mockup. Some stars carry a golden halo, some a copper halo, some are plain cyan; the legend at the bottom of the map tells them apart: player, teaches, makes instruments. Above the map: filters All / Teachers / Makers, a « search a country or a city » field, a headcount switch « Lancement (12) » / « Plus tard (59) », and a counter reading « 12 stars lit · 5 teachers · 3 makers ». A card on the map reads « you are 12 who have lit your star ». On the right, a « click a star » panel, the results list with each star's name and city, and a « why this country is empty » card: a country with no dot is not a country with no players — it's a country where nobody has said yes yet."
+    data-lb="carte-joueurs-maquette"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption><strong>Design mockup — fictional people.</strong> The sky, the sketched continents, the golden halos for teachers and copper ones for makers, the sentence about empty countries: all of that is what the application really does. The twelve names are made up.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
+<p class="embed-maquette-intro">And you can handle it yourself, below: filter the teachers, search for a city, switch between "Lancement (12)" and "Plus tard (59)" to see how the drawing holds up as the sky fills.</p>
+
+<div class="embed-maquette">
+  <p class="embed-maquette-bandeau"><strong>⚠️ Design mockup — not the application</strong><br />The names, cities and counters shown below are fictional. The application, on 1 September 2026, holds one star. (The mockup's own interface is in French.)</p>
+  <iframe
+    src="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html"
+    title="Interactive mockup of the players' map (fictional data)"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+  ></iframe>
+  <p class="embed-maquette-pied">Interactive frame — <a href="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html">open the mockup full screen</a>.</p>
+</div>
+
+<p class="embed-maquette-mobile"><strong>⚠️ Design mockup — not the application.</strong> The handleable version is a wide-screen layout; on a phone it would be unreadable, so I'd rather give you the image above and the link than a frame you can't use. <a href="https://play.handpanstudio.app/prototypes/constellation-joueurs-carte.html">Open the mockup full screen</a> (fictional names and numbers).</p>
 
 ## Why "constellation", and not "member map"
 
