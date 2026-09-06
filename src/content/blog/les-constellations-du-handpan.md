@@ -2,7 +2,7 @@
 title: "Les Constellations : voir un accord comme une forme"
 description: "Dans Handpan Constellation Studio, un accord devient un dessin. Découvre les 3 façons de tracer une Constellation : Polygone, Ouvert et Mains."
 pubDate: 2026-07-02
-cover: "/images/blog-constellations-3-traces.webp"
+cover: "/images/blog-constellations-3-traces-2026-polygone.webp"
 category: "methode"
 tags: ["méthode", "accords"]
 lang: "fr"
@@ -24,19 +24,55 @@ Handpan Constellation Studio te laisse choisir **comment** ce dessin apparaît, 
 
 Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée — un triangle pour trois notes, un quadrilatère pour quatre, etc. C'est la vue la plus « d'un coup d'œil » : tu reconnais l'accord comme tu reconnaîtrais un logo. Idéal pour mémoriser un accord et le retrouver instantanément ailleurs sur le pan, car la même forme se déplace en gardant sa silhouette.
 
-![Constellation en mode Polygone : la forme fermée de l'accord](/images/constel-polygone.webp)
+<figure>
+  <img
+    src="/images/blog-constellations-3-traces-2026-polygone.webp"
+    width="2000"
+    height="1250"
+    alt="Le Mode Logique, accord I Équilibre D actif sur un Neotone Mutant. Sur le pan, quatre notes sont allumées — D2 au centre en orange, D4 en orange en haut, A3 en bleu à gauche, F#3 en vert en bas à gauche — et un tracé rouge les relie en une figure fermée qui revient à son point de départ. Les autres notes du pan restent éteintes. La bulle au centre indique « I Équilibre D »."
+    data-lb="constellations"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le tracé <strong>Polygone</strong> : les quatre notes de l'accord I sont reliées en une figure fermée. C'est la forme qu'on mémorise, pas la liste des notes.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### L'Ouvert : le chemin des notes
 
 Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à l'autre, dans l'ordre où tu les joues. C'est la vue du geste. Tu ne vois plus seulement quel accord tu joues, mais comment ta main le parcourt — parfait pour travailler un arpège ou une phrase mélodique et sentir la direction du mouvement.
 
-![Constellation en mode Ouvert : le chemin des notes](/images/constel-ouvert.webp)
+<figure>
+  <img
+    src="/images/blog-constellations-3-traces-2026-ouvert.webp"
+    width="2000"
+    height="1250"
+    alt="Le même accord I Équilibre D sur le même pan, mais le tracé rouge ne se referme plus : il descend de D4 vers A3, puis de A3 vers F#3, et une branche part du centre. Les mêmes quatre notes sont allumées, les autres restent éteintes."
+    data-lb="constellations"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le tracé <strong>Ouvert</strong> : mêmes notes, mais le chemin ne se referme pas. Il se lit comme un parcours, d'une note à la suivante.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### Les Mains : qui joue quoi
 
 Le mode **Mains** colore le tracé selon la main qui joue chaque note. D'un regard, tu sais ce que fait la gauche et ce que fait la droite. C'est un repère précieux quand un accord se répartit entre les deux mains, ou quand tu veux équilibrer ton jeu sans te crisper.
 
-![Constellation en mode Mains : quelle main joue quelle note](/images/constel-mains.webp)
+<figure>
+  <img
+    src="/images/blog-constellations-3-traces-2026-mains.webp"
+    width="2000"
+    height="1250"
+    alt="Le même accord I Équilibre D, tracé en mode Mains. Deux tracés séparés : un trait bleu relie A3 et F#3, toutes deux marquées d'un L, et un trait rouge relie D2 et D4, toutes deux marquées d'un R. Les quatre notes portent donc la lettre de la main qui les joue."
+    data-lb="constellations"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le tracé <strong>Mains</strong> : la figure se coupe en deux. Le trait bleu relie ce que joue la main gauche (<em>L</em>), le rouge ce que joue la droite (<em>R</em>) — chaque note porte sa lettre.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Passer d'un tracé à l'autre
 
