@@ -351,18 +351,19 @@ const ld = [
       </div>
       <p class="mt-4 text-center text-sm text-ink-soft/80">{a.videoNote}</p>
 
-      {/* ── 🅓 TÉMOIGNAGE DE DAVID — EN ATTENTE DE SES MOTS ────────────────
-          EMPLACEMENT VIDE, VOLONTAIREMENT. C'est ici, juste sous sa propre
-          vidéo, que sa parole sur l'usage RÉEL des pieds aura sa place : il
-          les a reçus le 26/08/2026, il les a essayés, il a filmé cette démo
-          le 01/09/2026.
-          ⛔ NE RIEN ÉCRIRE ICI À SA PLACE. Il n'a pas encore raconté ce qu'il
-             a ressenti — aucun « ils sont stables », « le montage est
-             immédiat », « j'ai été surpris par… ». Tant que ses mots ne sont
-             pas là, ce bloc reste un commentaire.
-          ✍️ QUAND IL LES DONNE : créer une clé `videoDavidNote` dans les TROIS
-             dictionnaires (dict.ts / en.ts / es.ts) et l'afficher ici, en
-             citation. Rien d'autre à changer. */}
+      {/* ── 🅓 SA PAROLE, SOUS SA VIDÉO ────────────────────────────────────
+          Citation VERBATIM choisie par David lui-même (source : transcription
+          de sa vidéo, 06/09/2026 — audits/2026-09-06-atlas-transcription-
+          youtube.md). ⛔ Ne jamais reformuler, ne couper qu'avec […], ne rien
+          ajouter à l'intérieur des guillemets. */}
+      <figure class="mx-auto mt-8 max-w-2xl rounded-card border border-copper/30 bg-cream p-6">
+        <blockquote class="font-display text-lg italic leading-relaxed text-ink">
+          «&nbsp;{a.videoDavidQuote}&nbsp;»
+        </blockquote>
+        <figcaption class="mt-3 text-xs font-600 uppercase tracking-widest text-ink-soft/55">
+          <a href={`https://www.youtube.com/watch?v=${atlasDemoVideoId}`} target="_blank" rel="noopener" class="underline decoration-ink/20 underline-offset-4 hover:text-copper">{a.videoDavidSource}</a>
+        </figcaption>
+      </figure>
     </Section>
   )}
 
@@ -635,15 +636,22 @@ const ld = [
   <Section id="modeles">
     <SectionHeading title={a.modelsTitle} intro={a.modelsIntro} />
 
-    {/* ── 🅓 TÉMOIGNAGE DE DAVID — LEQUEL DES DEUX ? EN ATTENTE DE SES MOTS ─
-        EMPLACEMENT VIDE, VOLONTAIREMENT. La page a toujours refusé de désigner
-        « le bon choix » parce que David n'avait pas les pieds. Il les a
-        maintenant (26/08/2026) et les a essayés — mais il n'a rien dit de sa
-        préférence, ni de ce qui l'a fait pencher.
-        ⛔ NE PAS DÉDUIRE une préférence de la vidéo de démo ni des chiffres.
-        ✍️ QUAND IL LE DIT : clé `modelsDavidNote` dans les trois dictionnaires,
-           affichée ici, sous l'intro et au-dessus des deux colonnes — pour que
-           les colonnes elles-mêmes restent de poids égal. */}
+    {/* ── 🅓 SA PAROLE SUR LE MODÈLE PRO ────────────────────────────────────
+        Citation VERBATIM choisie par David (source : transcription de sa vidéo,
+        06/09/2026). Elle DÉCRIT le Pro, elle ne désigne pas « le bon choix » :
+        le chapeau `modelsDavidLead` le dit hors guillemets, et le bloc est posé
+        AU-DESSUS des deux colonnes pour qu'elles restent de poids égal.
+        ⛔ Toujours interdit : déduire une préférence de la vidéo ou des
+           chiffres, ou ajouter un élément à une seule des deux colonnes. */}
+    <figure class="mx-auto mt-8 max-w-3xl rounded-card border border-copper/30 bg-cream-deep/40 p-6 md:p-7">
+      <p class="text-sm font-600 text-copper">{a.modelsDavidLead}</p>
+      <blockquote class="mt-3 text-ink-soft/90 italic leading-relaxed">
+        «&nbsp;{a.modelsDavidQuote}&nbsp;»
+      </blockquote>
+      <figcaption class="mt-3 text-xs font-600 uppercase tracking-widest text-ink-soft/55">
+        <a href={`https://www.youtube.com/watch?v=${atlasDemoVideoId}`} target="_blank" rel="noopener" class="underline decoration-ink/20 underline-offset-4 hover:text-copper">{a.modelsDavidSource}</a>
+      </figcaption>
+    </figure>
     <div class="mt-12 grid items-stretch gap-10 lg:grid-cols-2">
       {models.map((m) => (
         <article class="flex h-full flex-col rounded-card border border-ink/10 bg-cream-deep/40 p-6 lg:p-7">
@@ -759,16 +767,27 @@ const ld = [
       <p class="mt-3 text-ink-soft/90">{a.headAcousticText}</p>
       <p class="mt-4 rounded-lg bg-ink/5 p-4 text-sm text-ink-soft/85">{a.headAcousticNote}</p>
 
-      {/* ── 🅓 TÉMOIGNAGE DE DAVID SUR LE SON — EN ATTENTE DE SES MOTS ─────
-          EMPLACEMENT VIDE, VOLONTAIREMENT. `headAcousticNote` promet juste
-          au-dessus : « Je vous dirai ce que j'entends ». Depuis le 01/09/2026
-          il PEUT le dire (pieds reçus le 26/08, essayés) — mais il ne l'a pas
-          encore dit. Le son est le sujet où écrire à sa place ferait le plus
-          de dégâts : la page est rémunérée à la commission.
-          ⛔ AUCUNE PHRASE INVENTÉE ICI. Pas de « la résonance est plus
-             longue », pas de « je n'entends aucune perte ».
-          ✍️ QUAND IL LES DONNE : clé `headAcousticDavid` dans les trois
-             dictionnaires, affichée ici sous la citation d'Atlas. */}
+      {/* ── 🅓 SA PAROLE SUR LE SON ─────────────────────────────────────────
+          DEUX phrases VERBATIM juxtaposées dans cet ordre, choisies par David
+          (source : transcription de sa vidéo, 06/09/2026) : la 1re parle de son
+          ANCIEN pied à ventouses, la 2e de la tête Atlas. Le chapeau
+          `headAcousticDavidLead` situe les deux — hors guillemets, toujours.
+          ⛔ AUCUNE PHRASE INVENTÉE ICI : il ne livre pas de jugement d'écoute
+             comparé sur Atlas (pas de « la résonance est plus longue », pas de
+             « je n'entends aucune perte »). La page est rémunérée à la
+             commission : c'est le sujet où écrire à sa place ferait le plus de
+             dégâts. `headAcousticNote` renvoie désormais à sa vidéo au lieu de
+             promettre un verdict d'écoute qu'il n'a pas donné. */}
+      <figure class="mt-5 border-l-2 border-copper/40 pl-4">
+        <p class="text-sm font-600 text-copper">{a.headAcousticDavidLead}</p>
+        <blockquote class="mt-2 text-ink-soft/90 italic leading-relaxed">
+          <p>«&nbsp;{a.headAcousticDavidQuote1}&nbsp;»</p>
+          <p class="mt-3">«&nbsp;{a.headAcousticDavidQuote2}&nbsp;»</p>
+        </blockquote>
+        <figcaption class="mt-3 text-xs font-600 uppercase tracking-widest text-ink-soft/55">
+          <a href={`https://www.youtube.com/watch?v=${atlasDemoVideoId}`} target="_blank" rel="noopener" class="underline decoration-ink/20 underline-offset-4 hover:text-copper">{a.headAcousticDavidSource}</a>
+        </figcaption>
+      </figure>
     </div>
 
     {/* La réponse « incluse ou pas » — la question qui décide de l'achat. */}

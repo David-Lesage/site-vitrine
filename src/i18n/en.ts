@@ -1270,10 +1270,23 @@ export const en: Dict = {
     // ⚠️ Key KEPT but no longer displayed (the "coming soon" frame is gone).
     videoSoon: 'Coming soon',
     videoNote: 'My own video, published on my YouTube channel.',
+    // 🅓 David's own words — source: transcript of the YouTube video, taken on
+    //    06/09/2026. FR is the verbatim; this is a faithful translation, and
+    //    the page labels it as one in `videoDavidSource`.
+    videoDavidQuote:
+      'I have invested in every handpan stand, or almost every handpan stand, and I am going to explain to you why today I take my stand with Atlas.',
+    videoDavidSource: 'David Lesage, in his YouTube video (translated from French)',
 
     modelsTitle: 'Two models',
     modelsIntro:
       'Both do the same job — holding the handpan on a floating magnetic disc. They do not do it with the same materials, nor over the same height range. Here is what the maker states, with nothing added.',
+    // 🅓 David on the Pro model — source: transcript of the YouTube video,
+    //    06/09/2026. A DESCRIPTION of the Pro, not a preference: the lead-in
+    //    says so, and the two columns stay of equal weight.
+    modelsDavidLead: 'About the Pro model, in his video:',
+    modelsDavidQuote:
+      'Well, I don’t know what makes it so much more pro, other than that it is really sleek, in aluminium, and that it goes up three times faster. So yes, it is much more pro and much lighter, with quality materials that last over time. Ultra fast, much slimmer, easy to carry and to store. The concept is exactly the same as the first one.',
+    modelsDavidSource: 'David Lesage, in his YouTube video (translated from French)',
     specs: {
       price: 'Listed price',
       height: 'Height',
@@ -1349,7 +1362,18 @@ export const en: Dict = {
     //    The SEPARATION OF VOICES does not move: Atlas talks about the sound,
     //    not David, and he announces that he will settle it himself.
     headAcousticNote:
-      'Those are their words, not mine: when it comes to sound, I do not repeat anyone’s claim before hearing it myself. I will tell you what I hear.',
+      'Those are their words, not mine: when it comes to sound, I do not repeat anyone’s claim before hearing it myself. What I say about it is in my video — here it is.',
+    // 🅓 David on the sound — source: transcript of the YouTube video,
+    //    06/09/2026. TWO sentences side by side, in this order, nothing added
+    //    between them: the first is about his OLD suction-cup stand, the second
+    //    about the Atlas head. ⛔ He gives no comparative listening verdict on
+    //    Atlas: never add one.
+    headAcousticDavidLead: 'On his old suction-cup stand, then on the Atlas head:',
+    headAcousticDavidQuote1:
+      'This suction system has one flaw: it absorbs the vibrations of the handpan, and that is not great, because it means we are going to lose the sound of the pan — part of the sound, at least.',
+    headAcousticDavidQuote2:
+      'The fact that it has holes is really important, because it means that the sound of the handpan is going to be able to escape.',
+    headAcousticDavidSource: 'David Lesage, in his YouTube video (translated from French)',
     headIncludedTitle: 'Included, or bought on top?',
     headIncluded: [
       {

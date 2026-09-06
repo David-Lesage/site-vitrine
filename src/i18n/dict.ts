@@ -1489,10 +1489,25 @@ const fr = {
     //    un jour annoncée avant d'exister.
     videoSoon: 'À venir',
     videoNote: 'Ma propre vidéo, publiée sur ma chaîne YouTube.',
+    // 🅓 SA PAROLE — source : transcription de la vidéo YouTube, relevée le
+    //    06/09/2026 (audits/2026-09-06-atlas-transcription-youtube.md).
+    //    VERBATIM choisi par David lui-même. On ne reformule pas, on ne coupe
+    //    qu'avec […]. Le `lead` est du texte de page, jamais de la citation.
+    videoDavidQuote:
+      'J’ai investi dans tous les pieds ou presque tous les pieds de handpan et je vais t’expliquer pourquoi aujourd’hui je prends mon pied avec Atlas.',
+    videoDavidSource: 'David Lesage, dans sa vidéo YouTube',
 
     modelsTitle: 'Deux modèles',
     modelsIntro:
       'Les deux font le même travail — tenir le handpan sur un disque magnétique flottant. Ils ne le font pas avec les mêmes matériaux, ni sur la même plage de hauteur. Voici ce qu’annonce le fabricant, sans rien ajouter.',
+    // 🅓 SA PAROLE SUR LE MODÈLE PRO — source : transcription de la vidéo
+    //    YouTube, 06/09/2026. C'est une DESCRIPTION du Pro choisie par David,
+    //    pas une préférence : le chapeau (`modelsDavidLead`) le dit, et les
+    //    deux colonnes restent de poids égal (le bloc est au-dessus d'elles).
+    modelsDavidLead: 'À propos du modèle Pro, dans sa vidéo :',
+    modelsDavidQuote:
+      'Alors, je sais pas ce qu’il a de beaucoup plus pro, si ce n’est qu’il est hyper design en aluminium, qu’il se monte trois fois plus vite. Donc oui, c’est beaucoup plus pro et beaucoup plus léger, avec des matériaux de qualité qui tiennent dans le temps. Ultra rapide, beaucoup plus fin, facile à transporter, à ranger. Le concept est exactement le même que le premier.',
+    modelsDavidSource: 'David Lesage, dans sa vidéo YouTube',
     // Libellés des lignes de caractéristiques. Les valeurs de PRIX, HAUTEUR et
     // POIDS sont construites par la page depuis `atlasPrices` / `atlasSpecs`
     // (src/data/atlas.ts) : impossible que le FR et l'EN affichent deux nombres
@@ -1589,7 +1604,19 @@ const fr = {
     //    fausse toute seule. La SÉPARATION DES VOIX, elle, ne bouge pas : c'est
     //    Atlas qui parle du son, pas David, et il annonce qu'il tranchera.
     headAcousticNote:
-      'Ce sont leurs mots, pas les miens : sur le son, je ne reprends l’affirmation de personne sans l’avoir entendue. Je vous dirai ce que j’entends.',
+      'Ce sont leurs mots, pas les miens : sur le son, je ne reprends l’affirmation de personne sans l’avoir entendue. Ce que j’en dis, moi, c’est dans ma vidéo — le voici.',
+    // 🅓 SA PAROLE SUR LE SON — source : transcription de la vidéo YouTube,
+    //    06/09/2026. DEUX phrases juxtaposées dans cet ordre, sans mot ajouté
+    //    entre elles : la 1re parle de son ANCIEN pied à ventouses, la 2e de la
+    //    tête Atlas. Le chapeau (`headAcousticDavidLead`) situe, hors citation.
+    //    ⛔ Il ne livre AUCUN jugement d'écoute comparé sur Atlas : ne jamais
+    //       en ajouter un (« la résonance est plus longue »…).
+    headAcousticDavidLead: 'Sur son ancien pied à ventouses, puis sur la tête Atlas :',
+    headAcousticDavidQuote1:
+      'Ce système de suction, il a un défaut, c’est qu’il absorbe les vibrations du handpan et ça c’est pas top parce que ça veut dire qu’on va perdre le son du pan, en tout cas une partie du son.',
+    headAcousticDavidQuote2:
+      'Le fait qu’elle ait des trous, bah c’est hyper important parce que ça veut dire que du coup le son du handpan va pouvoir s’échapper.',
+    headAcousticDavidSource: 'David Lesage, dans sa vidéo YouTube',
     headIncludedTitle: 'Incluse, ou à acheter en plus ?',
     headIncluded: [
       {

@@ -1169,8 +1169,13 @@ export const es: Dict = {
     "videoTitle": "¿Por qué tocar el handpan de pie? — mi vídeo, con Atlas",
     "videoSoon": "Futuro",
     "videoNote": "Mi propio vídeo, publicado en mi canal de YouTube.",
+    "videoDavidQuote": "He invertido en todos los soportes de handpan, o casi todos, y hoy te voy a explicar por qué me llevo mi soporte con Atlas.",
+    "videoDavidSource": "David Lesage, en su vídeo de YouTube (traducido del francés)",
     "modelsTitle": "Dos modelos",
     "modelsIntro": "Ambos cumplen la misma función: sujetar el handpan sobre un disco magnético flotante. Sin embargo, utilizan materiales diferentes y no se encuentran dentro del mismo rango de altura. Esto es lo que afirma el fabricante, sin añadir nada más.",
+    "modelsDavidLead": "Sobre el modelo Pro, en su vídeo:",
+    "modelsDavidQuote": "Pues no sé qué tiene de mucho más pro, salvo que es superbonito, de aluminio, y que se monta tres veces más rápido. Así que sí, es mucho más pro y mucho más ligero, con materiales de calidad que aguantan con el tiempo. Ultrarrápido, mucho más fino, fácil de transportar y de guardar. El concepto es exactamente el mismo que el del primero.",
+    "modelsDavidSource": "David Lesage, en su vídeo de YouTube (traducido del francés)",
     "specs": {
       "price": "Precio anunciado",
       "height": "Altura",
@@ -1226,7 +1231,11 @@ export const es: Dict = {
     ],
     "headAcousticTitle": "Lo que Atlas dice sobre el sonido",
     "headAcousticText": "Atlas explica que su soporte «nació de la búsqueda de un mejor sonido», que «no absorbe vibraciones y aumenta la resonancia» y que «su forma hueca permite que el sonido fluya libremente». Respecto al clavijero, añaden que mejora el control del instrumento «sin obstaculizar las vibraciones».",
-    "headAcousticNote": "Son sus palabras, no las mías: en cuanto al sonido, no repito lo que nadie dice sin haberlo escuchado. Les diré lo que oigo.",
+    "headAcousticNote": "Son sus palabras, no las mías: en cuanto al sonido, no repito lo que nadie dice sin haberlo escuchado. Lo que yo digo al respecto está en mi vídeo: aquí lo tienes.",
+    "headAcousticDavidLead": "Sobre su antiguo soporte de ventosas, y después sobre el cabezal Atlas:",
+    "headAcousticDavidQuote1": "Este sistema de ventosas tiene un defecto: absorbe las vibraciones del handpan, y eso no es bueno, porque significa que vamos a perder el sonido del pan, o al menos una parte del sonido.",
+    "headAcousticDavidQuote2": "Que tenga agujeros es superimportante, porque significa que el sonido del handpan va a poder escaparse.",
+    "headAcousticDavidSource": "David Lesage, en su vídeo de YouTube (traducido del francés)",
     "headIncludedTitle": "¿Incluido o debe adquirirse por separado?",
     "headIncluded": [
       {
