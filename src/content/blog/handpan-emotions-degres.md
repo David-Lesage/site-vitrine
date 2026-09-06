@@ -2,7 +2,7 @@
 title: "Jouer avec les émotions : les 7 degrés colorés"
 description: "Le Mode Logique de Handpan Constellation Studio associe chaque degré à une couleur et une émotion. Construis une progression d'accords et raconte une histoire."
 pubDate: 2026-07-10
-cover: "/images/app-logique.webp"
+cover: "/images/app-logique-2026.webp"
 category: "methode"
 tags: ["méthode", "émotions"]
 lang: "fr"
@@ -17,6 +17,20 @@ Le Mode Logique de [Handpan Constellation Studio](/handpan-app) traite la musiqu
 Dans une gamme, chaque note occupe un rôle. Le premier degré est le point d'ancrage, celui où « ça se pose ». Le cinquième crée l'élan, l'envie d'aller plus loin. Le sixième amène une teinte nostalgique, le septième une tension qui appelle une résolution. Ces rôles sont universels : ils existent dans presque toute la musique que tu aimes, sans que tu l'aies jamais formulé.
 
 Le Mode Logique rend ces rôles **visibles** en leur donnant une couleur stable, dans la logique des **ChromaKeys** décrite dans [Le handpan par les couleurs](/blog/handpan-par-les-couleurs). Le degré I garde toujours sa teinte, quel que soit ta gamme. Tu apprends une grammaire d'émotions une fois pour toutes.
+
+<figure>
+  <img
+    src="/images/app-logique-2026.webp"
+    width="2000"
+    height="1250"
+    alt="Le Mode Logique de Handpan Constellation Studio, thème sombre. Au centre, un handpan Neotone Mutant dont les notes sont colorées ; la bulle au milieu indique « D Majeur — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». En bas, sept cartouches colorés alignés : I ÉQUILIBRE D en rouge, II ÉLAN Em en orange, III AVENTURE F#m en jaune, IV DÉTENTE G en vert, V TENSION A en bleu, VI NOSTALGIE Bm en violet, VII MYSTÈRE C#° en rose. Sous les cartouches, la flèche « PROGRESSION DES ACCORDS ». À droite, le panneau « Logique et Emotions » avec Ressenti émotionnel activé, la note d'ancrage D et le mode Joyeux."
+    data-lb="logique-degres"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Les sept degrés, tels que l'application les affiche. Sur un handpan accordé en <strong>D Majeur</strong>, ils vont de <em>I ÉQUILIBRE D</em> à <em>VII MYSTÈRE C#°</em> — chaque cartouche porte son numéro, son émotion et l'accord correspondant.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Construire une progression d'accords
 
