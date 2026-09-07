@@ -27,12 +27,12 @@ A **▶ / ⏸ / ⏹** bar plays the chords **in the order of the lyrics**. The c
     src="/images/app-partition-lecteur-en-marche.webp"
     width="2000"
     height="1770"
-    alt="Handpan Constellation Studio, Visual Score Editor in Song mode, dark theme. The PLAYBACK bar at the top shows a ⏸ button (the piece is playing), a stop button, a 🥁 drummer toggle, a metronome toggle, TEMPO 80, MÉTRIQUE 4/4, and the attack set to Arpège among App, Plaqué, Arpège and Arpège ↑↓. Below it, the line « Batteur — Pop 4/4 · 80 · au repos ». On the left, the MODE panel with Chanson selected and key C. On the right, the sheet « LET IT BE — The Beatles » with a 4/4 badge under the title, a COUPLET 1 section and a boxed REFRAIN block, chord diagrams C, G, Am and F placed above the lyrics, and ×4, ×2 and ×3 badges on some chords."
+    alt="Handpan Constellation Studio, Visual Score Editor in Song mode, dark theme. The PLAYBACK bar at the top shows a ⏸ button (the piece is playing), a stop button, a 🥁 drummer toggle, a metronome toggle, TEMPO 80, MÉTRIQUE 4/4, and the attack set to Arpège among App, Plaqué, Arpège and Arpège ↑↓. Below it, the line « Batteur — Pop 4/4 · 80 · au repos ». On the left, the MODE panel with Chanson selected and key C. On the right, the sheet « LET IT BE — The Beatles » with a 4/4 badge under the title, a COUPLET 1 section and a boxed REFRAIN block, chord diagrams C, G, Am and F placed above the lyrics, and ×4 and ×2 badges on the C and G chords of the third line."
     data-lb="partition-lecteur"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The editor during playback: the button shows <strong>⏸</strong>, the attack is set to <em>Arpège</em>, tempo 80, time signature 4/4. The diagrams sit above the lyrics of <em>Let It Be</em>, with their ×4, ×2 and ×3 badges. (The interface is shown in French.)</figcaption>
+  <figcaption>The editor during playback: the button shows <strong>⏸</strong>, the attack is set to <em>Arpège</em>, tempo 80, time signature 4/4. The diagrams sit above the lyrics of <em>Let It Be</em>, with their ×4 and ×2 badges. (The interface is shown in French.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
