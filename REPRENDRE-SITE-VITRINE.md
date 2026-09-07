@@ -48,6 +48,31 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## ÉTAT ACTUEL — 07/09/2026 (20ᵉ passe, soir) — 🌈 ChromaKeys : refonte app lancée, 2 articles en attente · Hisong · adresses
+
+- **Article ChromaKeys → 2 articles** (accord David) : (1) « lire les couleurs » = mode Logique, acoustique d'abord puis
+  électronique en pont ; (2) « le capo du handpan » = électronique, constellations invariantes par transposition, cas d'usage
+  (voix, rejoindre des musiciens), cadre clair vs chaos cognitif, Mutant vs Neotone 1, lien « layout vocal » (3ᵉ article à part).
+  Ton : zéro justification. Une capture par bloc. **Bloqués tant que David n'a pas testé la refonte dans l'app.**
+- **Audit code (lecture seule)** : `audits/2026-09-07-chromakeys-modes-audit-code.md`. Découvertes : le bouton Chromakeys ne
+  commandait que la palette circulaire ; « Accords » hors Logique = autre moteur (couleur de la fondamentale) ; camembert sans
+  interrupteur propre ; formes des degrés invariantes par construction en Logique électronique (pads, pas notes), pas en acoustique ;
+  roue de tonalité acoustique = aperçu d'écoute réversible (entonnoir Yishama), pas un capo.
+- **Décision produit David + GO FINAL 07/09** → session APP (`MESSAGE-SESSION-SITE-2026-09-07-chromakeys-3-interrupteurs.md`,
+  copie déposée à la racine du dépôt APP) : 3 réglages indépendants (la couleur dit la note/sa place/rien · notes partagées
+  on/off · œil), **nouveau rendu « anneau »** (note = couleur chakra au centre, parts autour = accords), bouton Chromakeys =
+  couleurs, palette circulaire → « La palette de création ChromaKeys », préréglages par niveau, infobulles, vocabulaire
+  2 niveaux. Maquette : https://claude.ai/code/artifact/8104ace9-8103-4ce3-baa2-807ac3ccc2ec
+  (`prototypes/2026-09-07-menu-chromakeys-3-reglages.html`). **Attendre le message APP de mise en ligne + les retours de David.**
+- **Noms officiels des degrés (David)** : I Équilibre (OU « nous », rouge, racines) · II l'Élan (O « beau », orange, création) ·
+  III Aventure (O « or », jaune, plexus) · IV Détente (A « amour », vert) · V Tension (E « épée », bleu clair, expression) ·
+  VI Nostalgie (I « vie », indigo, 3ᵉ œil) · VII Mystère (M bourdonnement, violet, couronne). Alignement app = session APP.
+- **Hisong** : 2 pages FB `profile.php?id=61553083345525` et `?id=61572523493118` ; à lire sur les 4 événements (laquelle est
+  déjà co-orga), puis ajouter l'autre — clics sur le compte de David = demander son accord avant.
+- **Adresses partenaires** (JAMAIS affichées sur le site, règle David) : Muling `85846599@qq.com` · La Maison du Ngoni
+  `lamaisondungoni@gmail.com` · L'Âme du Tambour : manquante. Email Yishama (photos des aciers) **envoyé par David** le 07/09.
+- Toujours attendu de la session APP : mesure moteur mineur harmonique/mélodique.
+
 ## ÉTAT ACTUEL — 07/09/2026 (19ᵉ passe) — 🔎 Search Console « Introuvable (404) » : CORRIGÉ et déployé
 
 Alerte GSC 5-6/09 : hreflang `es` émis vers `/es/blog/<slug>/` alors qu'aucun article espagnol n'existe (+3 hreflang `en`
