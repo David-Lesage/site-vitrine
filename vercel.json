@@ -18,52 +18,92 @@
     },
     {
       "source": "/handpan-studio",
-      "destination": "/handpan-app",
+      "destination": "/handpan-app/",
       "statusCode": 301
     },
     {
       "source": "/handpan-studio/",
-      "destination": "/handpan-app",
+      "destination": "/handpan-app/",
       "statusCode": 301
     },
     {
       "source": "/handpan-compagnon",
-      "destination": "/handpan-app",
+      "destination": "/handpan-app/",
       "statusCode": 301
     },
     {
       "source": "/handpan-compagnon/",
-      "destination": "/handpan-app",
+      "destination": "/handpan-app/",
       "statusCode": 301
     },
     {
       "source": "/en/handpan-studio",
-      "destination": "/en/handpan-app",
+      "destination": "/en/handpan-app/",
       "statusCode": 301
     },
     {
       "source": "/en/handpan-studio/",
-      "destination": "/en/handpan-app",
+      "destination": "/en/handpan-app/",
       "statusCode": 301
     },
     {
       "source": "/en/handpan-compagnon",
-      "destination": "/en/handpan-app",
+      "destination": "/en/handpan-app/",
       "statusCode": 301
     },
     {
       "source": "/en/handpan-compagnon/",
-      "destination": "/en/handpan-app",
+      "destination": "/en/handpan-app/",
       "statusCode": 301
     },
     {
       "source": "/en/pieds-atlas",
-      "destination": "/en/handpan-stands",
+      "destination": "/en/handpan-stands/",
       "statusCode": 301
     },
     {
       "source": "/en/pieds-atlas/",
-      "destination": "/en/handpan-stands",
+      "destination": "/en/handpan-stands/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/blog/:slug",
+      "destination": "/blog/:slug/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/blog/:slug/",
+      "destination": "/blog/:slug/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/completer-son-handpan-acoustique-avec-un-neotone",
+      "destination": "/blog/completer-son-handpan-acoustique-avec-un-neotone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/completer-son-handpan-acoustique-avec-un-neotone/",
+      "destination": "/blog/completer-son-handpan-acoustique-avec-un-neotone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/mes-handpans-une-seule-porte",
+      "destination": "/blog/mes-handpans-une-seule-porte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/mes-handpans-une-seule-porte/",
+      "destination": "/blog/mes-handpans-une-seule-porte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/reveler-les-accords-de-ton-handpan",
+      "destination": "/blog/reveler-les-accords-de-ton-handpan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/reveler-les-accords-de-ton-handpan/",
+      "destination": "/blog/reveler-les-accords-de-ton-handpan/",
       "statusCode": 301
     }
   ]

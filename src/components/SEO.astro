@@ -1,7 +1,7 @@
 ---
 import { site } from '@/data/site'
-import { ogLocale, activeLangs, type Lang } from '@/i18n/config'
-import { localizePath, unlocalizePath } from '@/i18n/utils'
+import { ogLocale, type Lang } from '@/i18n/config'
+import { localizePath, unlocalizePath, availableLangs } from '@/i18n/utils'
 import { publicImageSize, imageMimeType } from '@/lib/imageSize'
 
 interface Props {
@@ -34,9 +34,20 @@ const imageSize = publicImageSize(image)
 const imageType = imageMimeType(image)
 const graphs = ldJSON ? (Array.isArray(ldJSON) ? ldJSON : [ldJSON]) : []
 
-// Alternates hreflang pour chaque langue active
+// Alternates hreflang — UNIQUEMENT pour les langues où la page existe VRAIMENT
+// (07/09/2026). On listait auparavant toutes les langues actives par simple
+// concaténation de préfixe : 35 URLs annoncées à Google répondaient 404
+// (32 `/es/blog/<slug>`, 3 `/en/blog/<slug>` d'articles non traduits), d'où
+// l'alerte Search Console « Introuvable (404) ». `availableLangs` interroge
+// les mêmes sources que le build (fichiers de src/pages + collection blog).
 const basePath = unlocalizePath(Astro.url.pathname)
-const alternates = activeLangs.map((l) => ({ lang: l, href: new URL(localizePath(basePath, l), site.url).toString() }))
+const alternates = (await availableLangs(basePath)).map((l) => ({
+  lang: l,
+  href: new URL(localizePath(basePath, l), site.url).toString(),
+}))
+// x-default reste le français ; s'il n'existait pas (cas théorique), on ne
+// déclare rien plutôt qu'une URL inventée.
+const xDefault = alternates.find((a) => a.lang === 'fr')?.href
 
 // Normalisation longueur description (cible SEO 50–160 caractères, anti-troncature Google)
 const clampDescription = (value: string) => {
@@ -64,7 +75,7 @@ const desc = clampDescription(description)
 
 <link rel="canonical" href={canonical} />
 {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
-<link rel="alternate" hreflang="x-default" href={alternates.find((a) => a.lang === 'fr')?.href} />
+{xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} />}
 {/* Favicon = le logotype noir de David (choix du 17/08/2026), recadré sur le cercle.
     Plus de version SVG : le logotype est une image, pas une forme géométrique — la
     déclarer en SVG obligerait à un tracé approximatif. `/favicon.ico` est à la RACINE

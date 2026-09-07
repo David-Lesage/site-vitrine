@@ -92,3 +92,81 @@ const LOCALES: Record<Lang, string> = {
 export function numberLocale(lang: Lang): string {
   return LOCALES[lang] ?? LOCALES.fr
 }
+
+// ============================================================
+// EXISTENCE RÉELLE D'UNE PAGE DANS UNE LANGUE (07/09/2026)
+// ------------------------------------------------------------
+// Bug corrigé : `SEO.astro` fabriquait une balise
+// `<link rel="alternate" hreflang="es" href="/es/blog/<slug>">` pour CHAQUE
+// article, par simple concaténation du préfixe de langue — alors qu'aucun
+// article espagnol n'existe et qu'il n'y a même pas de route
+// `src/pages/es/blog/[slug].astro`. Google suit ces balises : 32 URLs
+// espagnoles + 3 anglaises (articles FR sans version EN) répondaient 404,
+// d'où l'alerte Search Console « Introuvable (404) » du 05/09/2026.
+//
+// Règle : on ne déclare une langue QUE si la page cible est réellement
+// construite. Deux sources de vérité, les mêmes que celles du build :
+//   • pages statiques → les fichiers de `src/pages/**` (import.meta.glob,
+//     résolu au build par Vite : zéro coût au runtime, zéro dépendance) ;
+//   • articles de blog → la collection `blog`, filtrée sur `lang` +
+//     `permalink`, exactement comme les `getStaticPaths()` des routes.
+// Ajouter demain des articles `lang: "es"` + la route `[slug].astro`
+// suffira : les hreflang réapparaîtront tout seuls.
+// ============================================================
+import { getCollection } from 'astro:content'
+
+// Routes statiques réellement présentes dans src/pages (les routes dynamiques
+// `[slug]` sont exclues : leur existence dépend du contenu, traitée plus bas).
+const staticRoutes: Set<string> = new Set(
+  Object.keys(import.meta.glob('/src/pages/**/*.astro'))
+    .filter((f) => !f.includes('['))
+    .map((f) => {
+      const r = f.replace('/src/pages', '').replace(/\.astro$/, '').replace(/\/index$/, '')
+      return r === '' ? '/' : r
+    }),
+)
+
+// La collection n'est lue qu'une fois pour tout le build.
+let blogIndex: Promise<Set<string>> | null = null
+function blogKeys(): Promise<Set<string>> {
+  blogIndex ??= getCollection('blog').then(
+    (posts) =>
+      new Set(posts.filter((p) => !p.data.draft).map((p) => `${p.data.lang}:${p.data.permalink}`)),
+  )
+  return blogIndex
+}
+
+// La page `neutralPath` (chemin sans préfixe de langue) existe-t-elle en `lang` ?
+export async function pageExistsForLang(neutralPath: string, lang: Lang): Promise<boolean> {
+  const cut = neutralPath.search(/[?#]/)
+  const base = cut === -1 ? neutralPath : neutralPath.slice(0, cut)
+  const article = base.match(/^\/blog\/(.+?)\/?$/)
+  if (article) return (await blogKeys()).has(`${lang}:${article[1]}`)
+  const target = localizePath(base, lang).replace(/\/$/, '')
+  return staticRoutes.has(target === '' ? '/' : target)
+}
+
+// Langues dans lesquelles la page existe vraiment (ordre de `activeLangs`).
+export async function availableLangs(neutralPath: string): Promise<Lang[]> {
+  const out: Lang[] = []
+  for (const l of activeLangs) if (await pageExistsForLang(neutralPath, l)) out.push(l)
+  return out
+}
+
+// Cible du SÉLECTEUR DE LANGUE quand la page n'existe pas dans la langue
+// demandée. On ne casse jamais le geste « je veux lire ce site en espagnol » :
+// on remonte à la section parente la plus proche qui, elle, existe
+// (/blog/<article> → /es/blog, qui liste les articles), et à défaut à
+// l'accueil de la langue. Un article FR ouvert en espagnol amène donc à
+// l'index du blog espagnol plutôt qu'à une 404 ou à l'accueil : c'est le
+// contexte le plus proche de ce que le visiteur lisait.
+export async function switcherHref(neutralPath: string, lang: Lang): Promise<string> {
+  if (await pageExistsForLang(neutralPath, lang)) return localizePath(neutralPath, lang)
+  const parts = neutralPath.split('/').filter(Boolean)
+  while (parts.length > 1) {
+    parts.pop()
+    const parent = '/' + parts.join('/')
+    if (await pageExistsForLang(parent, lang)) return localizePath(parent, lang)
+  }
+  return localizePath('/', lang)
+}

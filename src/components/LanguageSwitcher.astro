@@ -1,6 +1,6 @@
 ---
 import { allLanguages, type Lang } from '@/i18n/config'
-import { unlocalizePath, localizePath } from '@/i18n/utils'
+import { unlocalizePath, localizePath, switcherHref } from '@/i18n/utils'
 
 interface Props {
   lang: Lang
@@ -18,7 +18,17 @@ const isZh = Astro.url.pathname.startsWith('/zh/')
 
 const langs = hasZh ? [...allLanguages, zhEntry] : allLanguages
 const current = isZh ? zhEntry : allLanguages.find((l) => l.code === lang)!
-const hrefFor = (code: string) => (code === 'zh' ? `/zh${basePath}` : localizePath(basePath, code as Lang))
+// 07/09/2026 — le sélecteur construisait l'URL par concaténation : depuis un
+// article FR, « Español » menait à /es/blog/<slug>, qui n'existe pas (404).
+// `switcherHref` retombe sur la section parente la plus proche qui existe
+// dans la langue demandée (ici /es/blog, l'index qui liste les articles), et
+// à défaut sur l'accueil de la langue. Le geste « lire ce site en X » n'est
+// jamais un cul-de-sac.
+const hrefs = new Map<string, string>()
+for (const l of allLanguages) {
+  if (l.active) hrefs.set(l.code, await switcherHref(basePath, l.code as Lang))
+}
+const hrefFor = (code: string) => (code === 'zh' ? `/zh${basePath}` : (hrefs.get(code) ?? localizePath(basePath, code as Lang)))
 
 // Le badge des langues pas encore traduites s'affichait « BIENTÔT » en français
 // sur TOUTES les pages, y compris anglaises et espagnoles — le seul mot non
