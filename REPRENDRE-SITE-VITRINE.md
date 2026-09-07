@@ -37,6 +37,17 @@ Avant d'éditer un fichier de l'autre côté : vérifier `git status` là-bas. U
    Les lire avant tout nouveau travail sur le blog (ils répondent probablement aux manques F3/B4/D1/E2/F6).
 3. Aucun agent n'était en cours dans la session SITE au moment de la coupure : arbre propre, rien d'à moitié écrit.
 
+## 🤝 PASSATION 07/09/2026 — la session d'origine (16/08→07/09) s'arrête, « Site Vitrine Continuation » continue
+Vérifié au moment de partir : arbre propre, `origin/main` à jour, aucun agent en cours. La nouvelle session
+avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est perdu**. Seul savoir non écrit ailleurs :
+- **Facebook, pièges concrets** : titre d'événement ≤ **100 caractères** (au-delà, coupé sans prévenir) ; taper `/` hors
+  d'un champ ouvre le raccourci clavier → toujours `form_input` par ref ; `Escape` ferme le formulaire d'événement
+  (« Quitter la page ? » → « Rester ») ; très longs textes → couper en 2 `type` (timeout CDP, le texte arrive quand même) ;
+  **One Sec** intercepte Facebook dans le Chrome de David (curseur « No Limit » = son geste, jamais le nôtre).
+  « Dupliquer l'évènement » emporte titre, bandeau, description, billets ET co-organisateurs.
+- **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
+  GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
+
 ## ÉTAT ACTUEL — 07/09/2026 (18ᵉ passe, nuit) — ✅ Captures intégrées · ✅ Atlas rempli avec les mots de David · 🐞 captures partition à refaire (session APP)
 
 Tout déployé en prod (`bdc1b45`, vérifié), `origin/main` à jour.
