@@ -41,3 +41,7 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 | 07/09 | « je n'ai pas compris la roue de tonalité […] exemple avec un D Kurd acoustique » | ✅ répondu 07/09 |
 | 07/09 | « le mail à Yishama est parti » | ✅ envoyé par David 07/09 |
 | 07/09 | Adresses : Muling 85846599@qq.com · La Maison du Ngoni lamaisondungoni@gmail.com (« présentes dans l'appli, vente et affiliation → partenaires ») | ✅ notées ; reste L'Âme du Tambour + l'usage attendu côté site |
+| 07/09 | Noms officiels des 7 degrés : « Équilibre, l'Élan, Aventure, Détente, Tension, Nostalgie, Mystère » ; associés à des zones du corps et, en Chanter & Jouer, aux voyelles « OU, O (beau), O (or), A, E, I, M » | ✅ noté (ordre I→VII supposé, à confirmer) |
+| 07/09 | Article 1 : garder le CHOIX actuel chakra / degré ; prise de conscience : « il me manque un bouton dédié […] faire apparaître ou non si une note appartient à plusieurs accords (la fonction camembert) qui est une fonction à part entière et pas liée au fait de penser en degré » → « que peux-tu me proposer pour élargir cette gradation de possibilités d'outils et la rendre claire ? » | ⏳ proposition faite 07/09, go de David attendu |
+| 07/09 | Hisong : « deux pages, Hisong global et Hisong tout court, tu veux les liens de quelles pages ? » | ⏳ répondu : pages Facebook ; il faut savoir laquelle est déjà co-organisatrice et laquelle ajouter |
+| 07/09 | « concernant les adresses mails je ne souhaite pas les faire apparaître » | ✅ règle notée : jamais d'adresse partenaire affichée sur le site |
