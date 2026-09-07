@@ -62,8 +62,10 @@ vers des articles FR sans version EN). Diagnostic + correctif + rapport : `audit
 - **Redirections aplaties** : les 11 redirections existantes faisaient 2 sauts (301 sans slash → 308 avec slash) ;
   destinations désormais en slash final, un seul saut (motif GSC « Page avec redirection » devrait baisser).
 - Sitemap : jamais en cause (116 URLs, toutes existantes).
-- **Gestes pour David dans GSC** : Indexation → Pages → « Introuvable (404) » → **Valider la correction** ; Sitemaps →
-  supprimer l'entrée erronée `https://www.lesagedavid.fr/` (fichier HTML, 0 page). Ne pas utiliser l'outil « Retraits ».
+- **Gestes GSC FAITS le 07/09 (via Chrome, accord de David)** : « Introuvable (404) » → validation **commencée le 07/09/2026**
+  (Google recontrôle sous quelques jours à ~2 semaines ; ne pas relancer pendant « en cours ») ; faux sitemap
+  `https://www.lesagedavid.fr/` **supprimé**, seul `sitemap-index.xml` reste (116 pages). Ne pas utiliser l'outil « Retraits ».
+  À surveiller ~21/09 : l'état de validation doit passer à « Réussie ».
 
 ## ÉTAT ACTUEL — 07/09/2026 (18ᵉ passe, nuit) — ✅ Captures intégrées · ✅ Atlas rempli avec les mots de David · 🐞 captures partition à refaire (session APP)
 
