@@ -48,6 +48,23 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## ÉTAT ACTUEL — 07/09/2026 (19ᵉ passe) — 🔎 Search Console « Introuvable (404) » : CORRIGÉ et déployé
+
+Alerte GSC 5-6/09 : hreflang `es` émis vers `/es/blog/<slug>/` alors qu'aucun article espagnol n'existe (+3 hreflang `en`
+vers des articles FR sans version EN). Diagnostic + correctif + rapport : `audits/2026-09-07-gsc-indexation-404-es-RAPPORT.md`
+(contexte GSC : `audits/2026-09-07-gsc-indexation-404-es-contexte.md`). Commit `07230bb`, déployé, vérifié prod.
+- **Source** : `src/i18n/utils.ts` (`pageExistsForLang` / `availableLangs` / `switcherHref`) → `SEO.astro` ne déclare une
+  alternate que si la page existe (35 URLs fautives → 0) ; `LanguageSwitcher.astro` remonte à la section parente existante
+  (depuis un article, « Español » → `/es/blog/`, l'index qui liste les articles FR avec badge « En français »).
+- **Filet `vercel.json`** : 301 `/es/blog/:slug` → `/blog/:slug/` (générique) + 3 règles nominatives EN.
+  🚨 **PIÈGE DE MAINTENANCE** : la règle ES est générique et évaluée AVANT le système de fichiers → le jour où un article
+  espagnol existe, elle le MASQUERA. À supprimer / rendre nominative à la première traduction ES d'un article.
+- **Redirections aplaties** : les 11 redirections existantes faisaient 2 sauts (301 sans slash → 308 avec slash) ;
+  destinations désormais en slash final, un seul saut (motif GSC « Page avec redirection » devrait baisser).
+- Sitemap : jamais en cause (116 URLs, toutes existantes).
+- **Gestes pour David dans GSC** : Indexation → Pages → « Introuvable (404) » → **Valider la correction** ; Sitemaps →
+  supprimer l'entrée erronée `https://www.lesagedavid.fr/` (fichier HTML, 0 page). Ne pas utiliser l'outil « Retraits ».
+
 ## ÉTAT ACTUEL — 07/09/2026 (18ᵉ passe, nuit) — ✅ Captures intégrées · ✅ Atlas rempli avec les mots de David · 🐞 captures partition à refaire (session APP)
 
 Tout déployé en prod (`bdc1b45`, vérifié), `origin/main` à jour.
