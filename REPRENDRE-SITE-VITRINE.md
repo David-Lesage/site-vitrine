@@ -80,7 +80,14 @@ Tout déployé en prod (`bdc1b45`, vérifié), `origin/main` à jour.
   pour le Pro, seul défaut = tête bois ni en option ni incluse → pas de jeu assis avec la tête seule ; bois = plus long à
   monter, plus volumineux, moins réglable. `headAcousticNote` ne promet plus « je vous dirai ce que j'entends ».
   🚨 Règle inchangée : ses mots, orthographe seule corrigée ; EN/ES marqués « traduit du français ».
-- 🐞 **Captures de `ta-partition-prend-vie` à REFAIRE** (David, 06/09 : fond cuivré des handpans chargé partiellement, captures
+- ✅ **Captures de `ta-partition-prend-vie` REFAITES le 07/09** (`7bc2fc9`, déployé) : cause = textures des disques
+  (`pattern-noyer-new`, défaut Neotone) chargées depuis `raw.githubusercontent.com`, capture partie avant le `load`.
+  Méthode rejouable dans APP `audits/captures-2026-09-07-article-partition-v2/` (`lib.mjs → attendreRessources()`,
+  `controle-pixels.mjs` : 192 points par disque, seuil ≥20 % cuivre / <55 % noir). Zoom ramené 91 → 81 % (dernier
+  diagramme coupé) ; le badge ×3 n'est plus dans le cadre de la figure 1 (alt + légende ajustés). Capture 6
+  « contributeurs » toujours non produite (panneau admin, session cloud requise).
+  🚨 **RÈGLE (David)** : toute capture avec un disque de handpan partiel = à refaire, jamais à publier → réutiliser ces scripts.
+- (historique) 🐞 **Captures de `ta-partition-prend-vie` à REFAIRE** (David, 06/09 : fond cuivré des handpans chargé partiellement, captures
   prises trop vite). Demande envoyée à la session APP (`MESSAGE-SESSION-SITE-2026-09-06-captures-partielles.md`) : refaire les
   9 captures en attendant le chargement complet + appliquer ce contrôle à toute capture future + repasser les 32 du 06/09.
   À la livraison : reconvertir en webp (mêmes noms `app-partition-*.webp`, `app-pupitre-plein-ecran-tablette.webp`), redéployer.
