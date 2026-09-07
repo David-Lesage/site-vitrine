@@ -1,0 +1,119 @@
+<title>Menu ChromaKeys</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#0d1520;--panel:#132033;--panel2:#0f1a2a;--ink:#e8edf5;--ink2:#9aa8bb;--line:#233247;--on:#22d3ee;
+--c1:#EF4444;--c2:#F97316;--c3:#EAB308;--c4:#22C55E;--c5:#38BDF8;--c6:#5050FF;--c7:#EB00FF;}
+body{background:var(--bg);color:var(--ink);font-family:Poppins,system-ui,sans-serif;margin:0;padding:24px 16px 48px}
+main{max-width:1040px;margin:0 auto;display:grid;gap:28px}
+h1{font-size:22px;font-weight:600;margin:0}
+p.lead{color:var(--ink2);margin:6px 0 0;max-width:62ch;line-height:1.5}
+.wrap{display:grid;grid-template-columns:340px 1fr;gap:24px;align-items:start}
+@media(max-width:760px){.wrap{grid-template-columns:1fr}}
+.menu{position:relative;border-radius:18px;padding:18px;background:var(--panel)}
+.menu::before{content:"";position:absolute;inset:-2px;border-radius:20px;padding:2px;
+background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7));
+-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.menu h2{margin:0 0 14px;font-size:15px;font-weight:600;letter-spacing:.02em;
+background:linear-gradient(90deg,var(--c1),var(--c3),var(--c4),var(--c5),var(--c7));-webkit-background-clip:text;background-clip:text;color:transparent}
+.q{border-top:1px solid var(--line);padding:14px 0}
+.q:first-of-type{border-top:0;padding-top:0}
+.q .t{font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.q .s{font-size:11.5px;color:var(--ink2);margin-top:3px;line-height:1.4}
+.seg{display:flex;gap:6px;margin-top:10px}
+.seg button{flex:1;border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:10px;padding:8px 6px;font:inherit;font-size:12.5px;cursor:pointer}
+.seg button[aria-pressed=true]{border-color:var(--on);background:rgba(34,211,238,.12);color:#bff4fc}
+.sw{width:44px;height:24px;border-radius:12px;background:var(--line);border:0;position:relative;cursor:pointer}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}
+.sw[aria-checked=true]{background:var(--on)}.sw[aria-checked=true]::after{left:23px}
+.eyes{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.eyes button{border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:8px;padding:5px 8px;font:inherit;font-size:12px;cursor:pointer}
+.eyes button[aria-pressed=true]{border-color:var(--on);box-shadow:0 0 0 2px rgba(34,211,238,.25)}
+.stage{display:grid;gap:14px}
+.pan{background:var(--panel2);border-radius:18px;padding:16px;display:grid;justify-items:center}
+.pan svg{width:min(100%,380px);height:auto}
+.legend{font-size:12.5px;color:var(--ink2);text-align:center;line-height:1.5;max-width:52ch}
+.legend b{color:var(--ink)}
+.grad{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.grad button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;color:var(--ink);font:inherit;cursor:pointer}
+.grad button small{display:block;color:var(--ink2);font-size:11px;margin-top:2px}
+.grad .lvl{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--on)}
+.note{font-size:12px;color:var(--ink2);border-left:3px solid var(--c3);padding:6px 10px;line-height:1.5}
+button:focus-visible{outline:2px solid var(--on);outline-offset:2px}
+</style>
+<main>
+<div><h1>Menu ChromaKeys : trois questions, un seul cadre</h1>
+<p class="lead">Maquette de principe. Change les réglages à gauche, le handpan à droite suit. Les cinq boutons du bas rejouent la gradation Découverte → Musicien.</p></div>
+
+<div class="wrap">
+ <section class="menu" aria-label="Menu ChromaKeys">
+  <h2>ChromaKeys</h2>
+  <div class="q"><div class="t">La couleur dit…</div><div class="s">ce que veut dire une couleur sur le handpan</div>
+   <div class="seg" id="color">
+    <button data-v="note" aria-pressed="true">la note<br><small style="color:var(--ink2)">chakras</small></button>
+    <button data-v="place">sa place dans la gamme<br><small style="color:var(--ink2)">degrés</small></button>
+    <button data-v="none">rien</button></div></div>
+  <div class="q"><div class="t">Notes partagées <button class="sw" id="shared" role="switch" aria-checked="false" aria-label="Notes partagées"></button></div>
+   <div class="s">montre en parts quand une note sert dans plusieurs accords</div></div>
+  <div class="q"><div class="t">Dessin des accords</div><div class="s">l'œil sur chaque accord trace sa constellation</div>
+   <div class="eyes" id="eyes">
+    <button data-d="1" aria-pressed="false">👁 Équilibre</button><button data-d="4" aria-pressed="false">👁 Détente</button><button data-d="5" aria-pressed="false">👁 Tension</button></div></div>
+ </section>
+
+ <section class="stage">
+  <div class="pan"><svg id="svg" viewBox="0 0 400 400" role="img" aria-label="Handpan en Do majeur"></svg>
+   <div class="legend" id="legend"></div></div>
+  <div class="grad">
+   <button data-p="0"><span class="lvl">Découverte</span>Chaque note a sa couleur<small>note · partagées off · pas d'œil</small></button>
+   <button data-p="1"><span class="lvl">Nouveau</span>Ma couleur, et un anneau<small>note · partagées on</small></button>
+   <button data-p="2"><span class="lvl">Apprenti</span>Le camembert<small>place · partagées on</small></button>
+   <button data-p="3"><span class="lvl">Musicien</span>Tout l'accord d'une couleur<small>place · œil Équilibre</small></button>
+   <button data-p="4"><span class="lvl">Aujourd'hui</span>Le tracé, chaque note garde sa couleur<small>note · œil Équilibre</small></button>
+  </div>
+  <p class="note">Le seul rendu nouveau est l'anneau (2ᵉ carte) : la note garde sa couleur au centre, les parts autour disent dans combien d'accords elle sert. Tout le reste existe déjà dans l'app, seulement séparé en trois réglages au lieu de deux.</p>
+ </section>
+</div>
+</main>
+<script>
+// Do majeur, 9 notes : D3 A3 B3 C4 D4 E4 F4 G4 A4 ; ding C3
+const NOTES=[{n:'C3',d:1,x:200,y:200,r:46},{n:'D3',d:2,x:200,y:70,r:30},{n:'A3',d:6,x:300,y:110,r:28},{n:'B3',d:7,x:335,y:200,r:27},{n:'C4',d:1,x:300,y:290,r:26},{n:'D4',d:2,x:200,y:335,r:25},{n:'E4',d:3,x:100,y:290,r:24},{n:'F4',d:4,x:65,y:200,r:23},{n:'G4',d:5,x:100,y:110,r:22},{n:'A4',d:6,x:150,y:135,r:18}];
+const CHAKRA={C:1,D:2,E:3,F:4,G:5,A:6,B:7};
+const COL={1:'#EF4444',2:'#F97316',3:'#EAB308',4:'#22C55E',5:'#38BDF8',6:'#5050FF',7:'#EB00FF'};
+const NAME={1:'Équilibre',2:"l'Élan",3:'Aventure',4:'Détente',5:'Tension',6:'Nostalgie',7:'Mystère'};
+// accords de la gamme (degrés) : I=1,3,5 … chaque accord = degré + tierce + quinte
+const chordDeg=d=>[d,((d+1)%7)+1,((d+3)%7)+1];
+const chordsOf=deg=>[1,2,3,4,5,6,7].filter(c=>chordDeg(c).includes(deg));
+const st={color:'note',shared:false,eyes:new Set()};
+function sector(cx,cy,r,a0,a1,fill){const p=a=>[cx+r*Math.sin(a),cy-r*Math.cos(a)];const[x0,y0]=p(a0),[x1,y1]=p(a1);const big=a1-a0>Math.PI?1:0;return `<path d="M${cx},${cy} L${x0},${y0} A${r},${r} 0 ${big} 1 ${x1},${y1} Z" fill="${fill}"/>`}
+function ring(cx,cy,r,a0,a1,fill){const p=(a,rr)=>[cx+rr*Math.sin(a),cy-rr*Math.cos(a)];const ri=r*0.78;const[x0,y0]=p(a0,r),[x1,y1]=p(a1,r),[x2,y2]=p(a1,ri),[x3,y3]=p(a0,ri);const big=a1-a0>Math.PI?1:0;return `<path d="M${x0},${y0} A${r},${r} 0 ${big} 1 ${x1},${y1} L${x2},${y2} A${ri},${ri} 0 ${big} 0 ${x3},${y3} Z" fill="${fill}"/>`}
+function render(){
+ const eye=[...st.eyes];const inEye=new Set();eye.forEach(c=>chordDeg(c).forEach(d=>inEye.add(d)));
+ let s=`<defs><radialGradient id="body" cx="50%" cy="45%"><stop offset="0" stop-color="#8a5a3a"/><stop offset=".7" stop-color="#5a3a26"/><stop offset="1" stop-color="#3a2418"/></radialGradient></defs>
+ <circle cx="200" cy="200" r="190" fill="url(#body)" stroke="#2a3a52" stroke-width="3"/>`;
+ // tracés
+ eye.forEach(c=>{const pts=NOTES.filter(n=>chordDeg(c).includes(n.d)&&n.n!=='C3'||(c===1&&n.n==='C4'));const q=NOTES.filter(n=>chordDeg(c).includes(n.d)&&n.r<40);const stroke=st.color==='place'?COL[c]:'#e8edf5';s+=`<polygon points="${q.map(n=>n.x+','+n.y).join(' ')}" fill="none" stroke="${stroke}" stroke-width="3" opacity=".9"/>`});
+ NOTES.forEach(n=>{
+  const base=st.color==='note'?COL[CHAKRA[n.n[0]]]:st.color==='place'?COL[n.d]:'#5c6b80';
+  let fill=base;
+  if(eye.length){ if(!inEye.has(n.d)) fill='#4a5568'; else if(st.color==='place') fill=COL[eye.find(c=>chordDeg(c).includes(n.d))]; }
+  const shared=st.shared&&!(eye.length)&&st.color!=='none';
+  if(shared&&st.color==='place'){const cs=chordsOf(n.d);cs.forEach((c,i)=>{s+=sector(n.x,n.y,n.r,i*2*Math.PI/cs.length,(i+1)*2*Math.PI/cs.length,COL[c])})}
+  else s+=`<circle cx="${n.x}" cy="${n.y}" r="${n.r}" fill="${fill}"/>`;
+  if(shared&&st.color==='note'){const cs=chordsOf(n.d);cs.forEach((c,i)=>{s+=ring(n.x,n.y,n.r+6,i*2*Math.PI/cs.length+0.05,(i+1)*2*Math.PI/cs.length-0.05,COL[c])})}
+  s+=`<text x="${n.x}" y="${n.y+4}" text-anchor="middle" font-size="${n.r>40?14:11}" font-weight="600" fill="#0d1520" font-family="Poppins,sans-serif">${n.n}</text>`;
+ });
+ document.getElementById('svg').innerHTML=s;
+ const L=[];L.push(st.color==='note'?'<b>La couleur dit la note</b> : tous les Ré sont orange, quelle que soit l\'octave.':st.color==='place'?'<b>La couleur dit la place</b> : le Do est rouge parce qu\'il est le 1ᵉʳ degré, Équilibre.':'<b>Sans couleur.</b>');
+ if(st.shared&&!eye.length&&st.color!=='none')L.push(st.color==='place'?'<b>Notes partagées</b> : chaque note est découpée en autant de parts que d\'accords où elle sert.':'<b>Notes partagées</b> : un anneau en parts autour de la note, elle garde sa couleur.');
+ if(eye.length)L.push(st.color==='place'?`<b>Œil ${eye.map(c=>NAME[c]).join(' + ')}</b> : tout l'accord prend la couleur de son degré, le reste s'éteint en gris.`:`<b>Œil ${eye.map(c=>NAME[c]).join(' + ')}</b> : le tracé apparaît, chaque note garde sa couleur.`);
+ document.getElementById('legend').innerHTML=L.join(' ');
+ document.querySelectorAll('#color button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===st.color));
+ document.getElementById('shared').setAttribute('aria-checked',st.shared);
+ document.querySelectorAll('#eyes button').forEach(b=>b.setAttribute('aria-pressed',st.eyes.has(+b.dataset.d)));
+}
+document.querySelectorAll('#color button').forEach(b=>b.onclick=()=>{st.color=b.dataset.v;render()});
+document.getElementById('shared').onclick=()=>{st.shared=!st.shared;render()};
+document.querySelectorAll('#eyes button').forEach(b=>b.onclick=()=>{const d=+b.dataset.d;st.eyes.has(d)?st.eyes.delete(d):st.eyes.add(d);render()});
+const PRE=[{color:'note',shared:false,eyes:[]},{color:'note',shared:true,eyes:[]},{color:'place',shared:true,eyes:[]},{color:'place',shared:false,eyes:[1]},{color:'note',shared:false,eyes:[1]}];
+document.querySelectorAll('.grad button').forEach(b=>b.onclick=()=>{const p=PRE[+b.dataset.p];st.color=p.color;st.shared=p.shared;st.eyes=new Set(p.eyes);render()});
+render();
+</script>
