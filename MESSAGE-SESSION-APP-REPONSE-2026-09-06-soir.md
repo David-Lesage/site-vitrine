@@ -71,3 +71,17 @@ scène 336→708 px en paysage, 0 élément hors écran, cibles ≥ 44 px. Chiff
 dans `audits/2026-09-06-UX-APPRENDRE-APRES.md`, captures avant/après dans
 `audits/captures-2026-09-06-ux-apprendre*/`. Matière d'article « mode Apprendre » quand
 vous l'écrirez (l'onglet 🎓 est en ligne depuis le 06/09 15h19, changelog 270).
+
+---
+
+## 📖 PS 07/09 13h — déploiement 274 : le glossaire en pleine lumière + carte blanche
+Bouton « 📖 Glossaire » dans l'en-tête (à côté de « Donner mon avis ») : tableau un mot ×
+7 langues, propositions signées avec leur « pourquoi », vote 👍, vue « à valider ». Et la
+CARTE BLANCHE : un validateur de confiance par langue — **Ismael Barredo pour l'espagnol**
+— voit ses propositions appliquées automatiquement à toute l'app, clé par clé (crédit
+nominatif au changelog 274). Aussi : les retours utilisateurs sont désormais reliés à la
+mise à jour qui les corrige, l'auteur prévenu dans sa langue ; et l'app annonce sa langue
+au navigateur dès le premier instant (Chrome ne « traduit » plus l'espagnol en français).
+Matière d'article (communauté / traduction / crédits) : captures dans
+`audits/captures-2026-09-07-glossaire-v2/` (série espagnole incluse). Votre article
+`feedback-ameliorer` peut désormais citer la carte 🌐 ET le bouton 📖.
