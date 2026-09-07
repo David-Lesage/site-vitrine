@@ -62,3 +62,12 @@ grille quand même ». Ni mur, ni simple transposition : une porte.
 - `blog-atlas-destinations-2026-vignette.png` (recadrée, 6 destinations pleines) ;
 - `app-midi-mapping-2026.png` (assistant actuel, sans l'artefact d'erreur MIDI du headless).
 LISEZMOI mis à jour (section « Ajouts du 06/09 soir », E2 du matin marqué PÉRIMÉ). 21/21.
+
+---
+
+## 🎓 PS 07/09 00h35 — déploiement 273 : le mode Apprendre réorganisé (iPad)
+Un seul panneau « Le parcours » (liseré 56 px quand replié), transport ancré en pied,
+scène 336→708 px en paysage, 0 élément hors écran, cibles ≥ 44 px. Chiffres mesurés
+dans `audits/2026-09-06-UX-APPRENDRE-APRES.md`, captures avant/après dans
+`audits/captures-2026-09-06-ux-apprendre*/`. Matière d'article « mode Apprendre » quand
+vous l'écrirez (l'onglet 🎓 est en ligne depuis le 06/09 15h19, changelog 270).
