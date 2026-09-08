@@ -10,7 +10,7 @@ permalink: "deux-handpans-mode-hybride"
 draft: false
 ---
 
-Beaucoup de joueurs finissent par avoir **deux handpans** — et les jouent comme deux instruments séparés. Le mode acoustique de [Handpan Constellation Studio](/handpan-app) les regarde autrement : il pose les deux coques côte à côte et dessine chaque accord **à cheval sur les deux**, avec l'ordre de jeu et les mains. Ce ne sont plus deux pans. C'est un instrument.
+Beaucoup de joueurs finissent par avoir **deux handpans** — et les jouent comme deux instruments séparés. Ces deux instruments peuvent être acoustiques, électroniques, ou l'un et l'autre. [Handpan Constellation Studio](/handpan-app) les regarde autrement : il pose les deux coques côte à côte et dessine chaque accord **à cheval sur les deux**, avec l'ordre de jeu et les mains. Ce ne sont plus deux pans. C'est un instrument.
 
 ## Il manque toujours une note
 
@@ -38,7 +38,7 @@ Un bandeau s'affiche alors au-dessus de tes pans : **🌗 Tes 2 handpans : *le p
 
 Ce dernier nombre est le vrai sujet. Pour ces accords-là, la disposition est calculée pour de vrai entre les deux instruments — la fondamentale la plus grave à la basse — et le tracé traverse l'espace d'un pan à l'autre. Tu vois d'un coup d'œil quelle main part où, et l'ordre de jeu suit.
 
-Un mot de vocabulaire, parce que l'application fait maintenant la différence : deux acoustiques côte à côte, c'est un **duo**. Un acoustique **et** un Neotone, c'est l'**Hybride** — le même bandeau, mais d'autres règles, et c'est « Compléter » qui t'y emmène. L'app ne mélange jamais les deux familles d'office : elle te *propose* l'Hybride au lieu de refuser.
+Un mot de vocabulaire, parce que l'application fait maintenant la différence : deux acoustiques côte à côte, c'est un **duo**. Un acoustique **et** un Neotone, c'est l'autre famille — le même bandeau, mais d'autres règles, et c'est « Compléter » qui t'y emmène ; c'est le sujet de [compléter son handpan acoustique avec un Neotone](/blog/completer-son-handpan-acoustique-avec-un-neotone). L'app ne mélange jamais les deux familles d'office : elle te *propose* la paire mixte au lieu de refuser.
 
 <figure>
   <img
@@ -53,6 +53,8 @@ Un mot de vocabulaire, parce que l'application fait maintenant la différence : 
   <figcaption>Le bandeau du duo, au-dessus des deux instruments. Il nomme les deux pans, offre un <strong>⇄ inverser</strong>, rappelle le cadre tonal, et surtout donne le décompte en une ligne : <strong>6</strong> accords avec le premier seul, <strong>4</strong> avec le second seul, <strong>14 avec les deux</strong>. La ligne « Accord I » détaille chaque note avec sa main et son pan.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : électronique (un acoustique + un Neotone), même écran, même état -->
 
 ## Ton répertoire, dès le chargement
 

@@ -10,7 +10,7 @@ permalink: "deux-handpans-mode-hybride"
 draft: false
 ---
 
-Many players end up owning **two handpans** — and playing them as two separate instruments. [Handpan Constellation Studio's](/en/handpan-app) acoustic mode looks at them differently: it lays both shells side by side and draws each chord **across the two of them**, with the play order and the hands. They're no longer two pans. They're one instrument.
+Many players end up owning **two handpans** — and playing them as two separate instruments. Those two instruments can be acoustic, electronic, or one of each. [Handpan Constellation Studio](/en/handpan-app) looks at them differently: it lays both shells side by side and draws each chord **across the two of them**, with the play order and the hands. They're no longer two pans. They're one instrument.
 
 ## There's always a note missing
 
@@ -38,7 +38,7 @@ A banner then appears above your pans: **🌗 Your 2 handpans: *the first* + *th
 
 That last number is the real subject. For those chords, the voicing is genuinely computed across the two instruments — lowest root in the bass — and the path crosses the gap from one pan to the other. You see at a glance which hand goes where, and the play order follows.
 
-A word on vocabulary, because the app now draws the line: two acoustics side by side is a **duo**. An acoustic **and** a Neotone is the **Hybrid** — same banner, different rules, and it is "Complete" that takes you there. The app never mixes the two families by default: it *offers* you the Hybrid instead of refusing.
+A word on vocabulary, because the app now draws the line: two acoustics side by side is a **duo**. An acoustic **and** a Neotone is the other family — same banner, different rules, and it is "Complete" that takes you there. The app never mixes the two families by default: it *offers* you the mixed pair instead of refusing.
 
 <figure>
   <img
@@ -53,6 +53,8 @@ A word on vocabulary, because the app now draws the line: two acoustics side by 
   <figcaption>The duo banner, above the two instruments. It names both pans, offers a <strong>swap</strong>, recalls the tonal frame, and above all gives the count in one line: <strong>6</strong> chords on the first alone, <strong>4</strong> on the second alone, <strong>14 with both</strong>. The « Accord I » row spells out each note with its hand and its pan. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
+<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): electronic (an acoustic + a Neotone), same screen, same state -->
 
 ## Your repertoire, right from loading
 
