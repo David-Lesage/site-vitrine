@@ -12,6 +12,8 @@ draft: false
 
 Dans [Handpan Constellation Studio](/handpan-app), une **barre d'accompagnement** te laisse mettre un accord en boucle — ou toute une suite d'accords — au tempo que tu choisis. L'app joue, toi tu chantes. Tu n'as pas besoin de savoir jouer l'accord pour poser ta voix dessus : c'est même l'inverse qui marche le mieux.
 
+Tout ce qui suit vaut **que ton handpan soit acoustique ou électronique** : la barre d'accompagnement et le batteur existent des deux côtés, sur la grille d'accords du mode acoustique comme sur celle du Mode Logique.
+
 ## Le blocage : chanter demande deux mains libres
 
 Pour chanter sur un accord, il faut que l'accord **tourne** — régulièrement, longtemps, sans s'arrêter. Or au début, jouer un accord en boucle demande déjà toute ton attention : tu comptes tes notes, tu cherches ta main, tu t'arrêtes pour réfléchir. La voix, elle, n'a plus de place.
@@ -28,7 +30,7 @@ La barre d'accompagnement renverse l'ordre. Tu cliques un accord de la grille, i
 
 Et si tu cliques plusieurs accords, ils remplissent une **file d'enchaînement** — un accord par mesure — jouée en boucle. Ta grille de chanson tourne toute seule pendant que tu cherches ta mélodie, ta voyelle, ta hauteur. C'est exactement l'exercice décrit dans [Transposer pour chanter](/blog/transposer-pour-chanter-handpan), mais avec l'instrument qui travaille à ta place.
 
-Cette barre existe aussi bien sur la grille d'accords du mode acoustique que sur celle du [Mode Logique](/blog/handpan-emotions-degres), et elle fait partie de la version gratuite.
+Cette barre existe aussi bien sur la grille d'accords du mode acoustique que sur celle du [Mode Logique](/blog/handpan-emotions-degres), et elle fait partie de la version gratuite. Un handpan acoustique en profite exactement comme un électronique : c'est l'app qui fait tourner l'accord, ton instrument reste ce qu'il est.
 
 ## Puis un vrai batteur entre dans la pièce
 

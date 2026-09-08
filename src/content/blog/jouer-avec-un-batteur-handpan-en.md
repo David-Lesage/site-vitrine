@@ -12,6 +12,8 @@ draft: false
 
 In [Handpan Constellation Studio](/en/handpan-app), an **accompaniment bar** (*barre d'accompagnement*) lets you loop a chord — or a whole chord sequence — at the tempo you choose. The app plays, you sing. You don't need to be able to play the chord to put your voice on top of it: in fact, the other way round works better.
 
+Everything that follows holds **whether your handpan is acoustic or electronic**: the accompaniment bar and the drummer exist on both sides, on the acoustic mode's chord grid as well as the Logic Mode one.
+
 ## The block: singing needs two free hands
 
 To sing over a chord, the chord has to **keep turning** — steadily, for a while, without stopping. Early on, though, looping a chord already takes all your attention: you're counting notes, hunting for your hand, stopping to think. There's no room left for your voice.
@@ -28,7 +30,7 @@ The accompaniment bar flips the order. Click a chord in the grid and it starts l
 
 And if you click several chords, they fill a **queue** — one chord per bar — played on a loop. Your song's chord chart turns on its own while you look for your melody, your vowel, your pitch. It's exactly the exercise described in [Transposing to sing](/en/blog/transposer-pour-chanter-handpan), but with the instrument doing the work for you.
 
-That bar exists both on the acoustic mode's chord grid and on the [Logic Mode](/en/blog/handpan-emotions-degres) one, and it's part of the free version.
+That bar exists both on the acoustic mode's chord grid and on the [Logic Mode](/en/blog/handpan-emotions-degres) one, and it's part of the free version. An acoustic handpan benefits exactly as an electronic one does: the app is what keeps the chord turning, your instrument stays what it is.
 
 ## Then a real drummer walks in
 
