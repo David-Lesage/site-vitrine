@@ -31,7 +31,7 @@ Suddenly your handful of notes is no longer a constraint: it's a palette of chor
     src="/images/app-logique-progression.webp"
     width="2000"
     height="1250"
-    alt="Logic Mode with a progression already filled in. The bubble at the centre of the handpan reads « D Majeur — Pop Complète — I·II·IV·V·VI ». Along the bottom, five filled cards in a row: I ÉQUILIBRE D, II ÉLAN Em, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm; slots Accord 6 and Accord 7 stay grey and read « Aucun ». On the right, in the Voyage des Sensations panel, the line « Pop Complète : I → II → IV → V → VI »."
+    alt="Logic Mode with a progression already filled in. The handpan screen, at the centre of the instrument, reads « D Majeur — Pop Complète — I·II·IV·V·VI ». Along the bottom, five filled cards in a row: I ÉQUILIBRE D, II ÉLAN Em, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm; slots Accord 6 and Accord 7 stay grey and read « Aucun ». On the right, in the Voyage des Sensations panel, the line « Pop Complète : I → II → IV → V → VI »."
     data-lb="logique-progression"
     data-lb-wide
     loading="lazy"

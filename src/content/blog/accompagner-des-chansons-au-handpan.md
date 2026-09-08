@@ -31,7 +31,7 @@ D'un coup, ta poignée de notes n'est plus une contrainte : c'est une palette d'
     src="/images/app-logique-progression.webp"
     width="2000"
     height="1250"
-    alt="Le Mode Logique avec une progression déjà posée. La bulle au centre du handpan indique « D Majeur — Pop Complète — I·II·IV·V·VI ». En bas, cinq cartouches remplis à la suite : I ÉQUILIBRE D, II ÉLAN Em, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm ; les emplacements Accord 6 et Accord 7 restent gris et portent la mention « Aucun ». À droite, dans le panneau Voyage des Sensations, la ligne « Pop Complète : I → II → IV → V → VI »."
+    alt="Le Mode Logique avec une progression déjà posée. L'écran du handpan, au centre de l'instrument, indique « D Majeur — Pop Complète — I·II·IV·V·VI ». En bas, cinq cartouches remplis à la suite : I ÉQUILIBRE D, II ÉLAN Em, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm ; les emplacements Accord 6 et Accord 7 restent gris et portent la mention « Aucun ». À droite, dans le panneau Voyage des Sensations, la ligne « Pop Complète : I → II → IV → V → VI »."
     data-lb="logique-progression"
     data-lb-wide
     loading="lazy"
