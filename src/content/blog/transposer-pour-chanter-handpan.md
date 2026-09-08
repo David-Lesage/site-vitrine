@@ -12,6 +12,8 @@ draft: false
 
 Transposer, c'est déplacer la note d'ancrage de ton handpan pour changer de tonalité d'un seul geste. Si une chanson est trop haute ou trop basse pour ta voix, tu n'as pas à forcer : dans [Handpan Constellation Studio](/handpan-app), tu glisses l'ensemble vers ta hauteur naturelle, et tout retombe juste — accompagnement et chant dans **ta** tonalité.
 
+Le problème de départ — *ta voix a sa hauteur* — est le même pour tous les joueurs de handpan. Ce qui change, c'est ce que l'instrument permet d'en faire : **transposer pour de bon appartient au handpan électronique**, et une section plus bas dit ce que l'acoustique en fait de son côté.
+
 ## Le vrai problème : ta voix a sa hauteur
 
 Une chanson est écrite dans une tonalité donnée, pensée pour la voix de son interprète. La tienne est unique : ce qui est confortable pour l'un est perché ou caverneux pour l'autre. Forcer une note trop haute crispe la gorge ; viser trop bas fait disparaître le son. Le résultat est frustrant, alors que le problème n'est pas ta voix — c'est la tonalité.
@@ -27,6 +29,14 @@ Concrètement : tu chantes une phrase, c'est trop haut, tu descends l'ancrage de
 ### Chanter juste sans « chanter faux »
 
 Beaucoup de gens croient qu'ils « chantent faux » alors qu'ils chantent simplement dans une mauvaise tonalité pour eux. En transposant, tu déplaces la cible vers ta zone confortable — et souvent, la justesse revient toute seule. Ce n'est pas de la triche, c'est ce que fait tout accompagnateur professionnel quand il adapte un morceau à un chanteur.
+
+## Sur un handpan acoustique : entendre, pas transposer
+
+Un pan acoustique ne se transpose pas — ses notes sont martelées une fois pour toutes. L'app ne prétend pas le contraire.
+
+Elle propose autre chose, et c'est utile : depuis la carte qui annonce l'instrument sur lequel tu joues, une **roue de tonalité** te laisse *tester* ta gamme dans une autre tonalité. Toutes les notes sont décalées du même intervalle et tu **entends** ta gamme transposée — géométrie conservée, hauteurs déplacées. C'est un aperçu d'écoute, entièrement **réversible** : tu reviens à ton instrument réel quand tu veux.
+
+À quoi ça sert ? Exactement à la question de cet article, mais avant l'achat : trouver la tonalité qui va à ta voix, et savoir laquelle demander pour un prochain instrument. L'app te rapproche d'ailleurs de la gamme de catalogue la plus proche de ce que tu viens d'entendre.
 
 ### Transposition et layout : le duo gagnant
 

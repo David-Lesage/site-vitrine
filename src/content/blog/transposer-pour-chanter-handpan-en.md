@@ -12,6 +12,8 @@ draft: false
 
 Transposing means shifting your handpan's anchor note to change key in a single move. If a song is too high or too low for your voice, you don't have to strain: in [Handpan Constellation Studio](/en/handpan-app), you slide the whole thing to your natural pitch, and everything falls into place — accompaniment and singing in **your** key.
 
+The starting problem — *your voice has its own pitch* — is the same for every handpan player. What differs is what the instrument lets you do about it: **transposing for real belongs to the electronic handpan**, and a section further down says what acoustic does instead.
+
 ## The real problem: your voice has its pitch
 
 A song is written in a given key, designed for the singer who first performed it. Yours is unique: what's comfortable for one person is sky-high or cavernous for another. Forcing a note too high tightens the throat; aiming too low makes the sound vanish. The result is frustrating, when the problem isn't your voice — it's the key.
@@ -27,6 +29,14 @@ In practice: you sing a phrase, it's too high, you drop the anchor a few notches
 ### Singing in tune without "singing off-key"
 
 Many people believe they "sing off-key" when they're simply singing in a key that's wrong for them. By transposing, you move the target into your comfortable zone — and often, accuracy comes back on its own. It's not cheating, it's what every professional accompanist does when adapting a piece to a singer.
+
+## On an acoustic handpan: hearing, not transposing
+
+An acoustic pan doesn't transpose — its notes are hammered into the steel once and for all. The app doesn't pretend otherwise.
+
+It offers something else, and it's useful: from the card naming the instrument you play on, a **key wheel** lets you *test* your scale in another key. Every note is shifted by the same interval and you **hear** your scale transposed — geometry kept, pitches moved. It's a listening preview, fully **reversible**: you return to your real instrument whenever you want.
+
+What is it for? Exactly this article's question, but before buying: finding the key that suits your voice, and knowing which one to ask for on a future instrument. The app also points you to the catalogue scale closest to what you just heard.
 
 ### Transposition and layout: the winning duo
 
