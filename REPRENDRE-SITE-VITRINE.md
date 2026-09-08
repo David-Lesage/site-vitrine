@@ -48,6 +48,29 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## ÉTAT ACTUEL — 08/09/2026 (22ᵉ passe, après-midi) — ✍️ 3 articles écrits · blog corrigé (278/279) · 58 captures commandées à l'APP
+
+Demande David 15h (relayée par l'APP) : « écrire les 3 articles en attente avec les captures d'écran adéquates, et enchaîne
+sur la mise à jour de tous les articles de blog ». Textes faits, déployés (sauf capo), captures commandées.
+- **Article 1 « Lire les couleurs »** (`les-deux-visions-chromakeys`, `a9c80cf`) : réécrit de zéro sur les libellés 276-278
+  (3 réglages, 7 degrés Équilibre→Mystère + voyelles, notes partagées telles que MESURÉES : 22 anneaux en Gammes sur D Kurd, rien en
+  Logique, parts masquées dès qu'un œil est ouvert, préréglages par niveau). **Déployé en texte** ; 16 placeholders CK1-01…08 (a/e)
+  en commentaires HTML. Cover encore l'ancienne (2 handpans, jugée hors sujet par David) → remplacer par CK1-01 à la livraison.
+- **Article 2 « Le capo du handpan »** (`le-capo-du-handpan`, `373d17c`, **draft: true**) : électronique dès la 1ʳᵉ phrase, degré I
+  identique en C/D/A, voix, rejoindre des musiciens, cadre clair vs chaos cognitif, Mutant vs Neotone 1, roue de tonalité acoustique.
+  8 placeholders CK2-01…08. **Passer draft: false quand les captures sont intégrées.** CK2-06 dépend de la mesure moteur mineurs.
+  Note : l'APP avait compris « article 2 = notes partagées » ; David avait validé « capo » → suivi David, notes partagées = bloc de l'art. 1.
+- **Blog corrigé** (`…6e702c2`) : « bulle/badge » → « l'écran du handpan » (5 articles FR+EN), « Ajouter mon Neotone » → « ⚡ Ajouter un
+  handpan électronique », calage vertical seul mémorisé (279). Inventaire des figures périmées :
+  `audits/2026-09-08-blog-captures-perimees-palette-278.md` (32 figures, 10 périmées, ids BLOG-<slug>-<n>).
+- **Captures commandées à l'APP** : `MESSAGE-SESSION-SITE-2026-09-08-captures-a-produire.md` (copie racine dépôt APP) — A 16 CK1 ·
+  B 8 CK2 · C 3 Constellations acoustiques · D 10 BLOG · E 21 jumelles. À la livraison : webp (cwebp -q 82), remplacer les
+  commentaires par des <figure> (alt d'après l'image), cover art. 1, draft:false capo, build, deploy, changelog blog.
+- **Toujours en attente de David** : « Élan » vs « l'Élan » (II) · « l'Hybride » → « compléter son acoustique » (article completer) ·
+  oui pour suivre la page HISONG (co-orga) · test du menu ChromaKeys (fait selon l'APP).
+- Vocabulaire à respecter partout : « l'écran du handpan » (jamais badge/LCD/bulle) · « le pan » ≠ « la bande/bandeau » (palette) ·
+  jamais « palette simplifiée/allégée » (rien retiré, tout rangé) · « ⚡ Ajouter un handpan électronique ».
+
 ## ÉTAT ACTUEL — 08/09/2026 (21ᵉ passe) — 🌍 Blog remanié « communication globale » (30 articles, déployé) · ChromaKeys livré côté app
 
 - **RÈGLE DAVID (07/09, mémoire `blog-communication-globale-pas-que-electronique`)** : 3 cas. (1) sujet commun → langage neutre
