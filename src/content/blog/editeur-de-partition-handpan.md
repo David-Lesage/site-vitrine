@@ -10,7 +10,7 @@ permalink: "editeur-de-partition-handpan"
 draft: false
 ---
 
-Le **Mode Chanson** de l'éditeur de partition visuelle de [Handpan Constellation Studio](/handpan-app) affiche les paroles avec les **diagrammes d'accords ancrés au-dessus des mots** — comme une grille d'accords de guitare, mais en mini-handpans colorés. Tu vois où changer d'accord, tu chantes, tu joues. Aucun solfège requis : les couleurs te guident.
+Le **Mode Chanson** de l'éditeur de partition visuelle de [Handpan Constellation Studio](/handpan-app) affiche les paroles avec les **diagrammes d'accords ancrés au-dessus des mots** — comme une grille d'accords de guitare, mais en mini-handpans colorés. Tu vois où changer d'accord, tu chantes, tu joues. Aucun solfège requis : les couleurs te guident. Cela vaut **que ton handpan soit acoustique ou électronique** : les diagrammes sont dessinés sur la disposition réelle de ton instrument.
 
 ## Chanter et jouer en même temps
 

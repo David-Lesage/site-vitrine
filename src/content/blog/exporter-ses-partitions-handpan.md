@@ -10,7 +10,7 @@ permalink: "exporter-ses-partitions-handpan"
 draft: false
 ---
 
-L'éditeur de partition visuelle de [Handpan Constellation Studio](/handpan-app) te laisse exporter tes accords et tes partitions en **PDF ou PNG**. Une belle progression trouvée ce soir ne s'évapore plus : tu la gardes en image, tu la révises demain, tu la transmets à quelqu'un. Un fichier, et ton idée devient un document que tu possèdes.
+L'éditeur de partition visuelle de [Handpan Constellation Studio](/handpan-app) te laisse exporter tes accords et tes partitions en **PDF ou PNG**. Une belle progression trouvée ce soir ne s'évapore plus : tu la gardes en image, tu la révises demain, tu la transmets à quelqu'un. Un fichier, et ton idée devient un document que tu possèdes. L'export fonctionne **que ton handpan soit acoustique ou électronique**.
 
 ## Le drame de l'idée qui s'envole
 
@@ -47,6 +47,8 @@ Chaque export porte discrètement la mention « créé avec Handpan Constellatio
   <figcaption>Un PDF réellement sorti de l'application, en mode <em>Éco-Encre</em>. Le titre, l'accordage complet de la gamme, les sections en bandeaux colorés avec leurs diagrammes — et la signature en pied de page.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : acoustique, même écran, même état -->
 
 ## De l'idée au document
 

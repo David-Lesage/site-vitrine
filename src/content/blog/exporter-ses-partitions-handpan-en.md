@@ -10,7 +10,7 @@ permalink: "exporter-ses-partitions-handpan"
 draft: false
 ---
 
-[Handpan Constellation Studio's](/en/handpan-app) visual score editor lets you export your chords and scores as **PDF or PNG**. A lovely progression found tonight no longer vanishes: you keep it as an image, review it tomorrow, pass it on to someone. One file, and your idea becomes a document you own.
+[Handpan Constellation Studio's](/en/handpan-app) visual score editor lets you export your chords and scores as **PDF or PNG**. A lovely progression found tonight no longer vanishes: you keep it as an image, review it tomorrow, pass it on to someone. One file, and your idea becomes a document you own. Exporting works **whether your handpan is acoustic or electronic**.
 
 ## The drama of the idea that flies away
 
@@ -47,6 +47,8 @@ Every export discreetly carries the note "created with Handpan Constellation Stu
   <figcaption>A PDF genuinely produced by the application, in <em>Ink-Saver</em> mode. The title, the full tuning of the scale, the sections as coloured bands with their diagrams — and the signature in the footer. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
+<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): acoustic, same screen, same state -->
 
 ## From idea to document
 

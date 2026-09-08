@@ -10,7 +10,7 @@ permalink: "editeur-de-partition-handpan"
 draft: false
 ---
 
-The **Song Mode** in [Handpan Constellation Studio's](/en/handpan-app) visual score editor shows lyrics with **chord diagrams anchored above the words** — like a guitar chord chart, but with colourful mini-handpans. You see where the chord changes, you sing, you play. No music theory required: the colours guide you.
+The **Song Mode** in [Handpan Constellation Studio's](/en/handpan-app) visual score editor shows lyrics with **chord diagrams anchored above the words** — like a guitar chord chart, but with colourful mini-handpans. You see where the chord changes, you sing, you play. No music theory required: the colours guide you. This holds **whether your handpan is acoustic or electronic**: the diagrams are drawn on the real layout of your instrument.
 
 ## Sing and play at the same time
 
