@@ -14,6 +14,8 @@ The handpan is a small world, scattered very thin. People playing three streets 
 
 Since the end of August, the app has one. **A world map, where every player who wants to be there is a star.** Country, town if you like, "I teach", "I make instruments", your Spotify and YouTube links, and even your instruments.
 
+The map draws no line between players: **acoustic or electronic**, it's the same sky, the same star, the same settings. What places you somewhere isn't your instrument, it's what you chose to switch on.
+
 But that isn't what this article is about. Community maps are everywhere. What's different here is **which way round the switch is set.**
 
 ## The reversal: you're not on it, and you never were

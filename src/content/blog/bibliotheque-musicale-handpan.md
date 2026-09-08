@@ -12,6 +12,8 @@ draft: false
 
 La **Bibliothèque musicale** de [Handpan Constellation Studio](/handpan-app) rassemble au même endroit les chansons à accompagner, les morceaux de handpan et tes propres compositions. Mais son vrai talent est ailleurs : elle regarde **ta** gamme et te dit, morceau par morceau, ce que ton instrument sait jouer — et ce qu'il ne sait pas.
 
+Ce calcul se fait sur les notes réelles de ta gamme, **que ton handpan soit acoustique ou électronique**.
+
 ## La question que tout le monde se pose
 
 « Est-ce que je peux jouer cette chanson sur mon pan ? » C'est la première question de tout joueur de handpan, et pendant longtemps la seule réponse était : essaie, et tu verras bien. On tâtonne, on tombe sur un accord faux, on conclut qu'on n'y arrive pas — alors que c'est simplement la gamme qui ne contient pas la note.
@@ -71,7 +73,7 @@ Un morceau bloqué s'ouvre quand même. Clique dessus et l'app ne te claque pas 
 
 Ni mur, ni simple transposition : une porte. L'app dit ce qui manque, propose un deuxième handpan qui comble exactement le trou — avec le nombre de morceaux gagnés —, propose un Neotone sur-mesure généré avec précisément ces notes-là, et te laisse quand même entrer dans la grille.
 
-En mode acoustique, l'app va plus loin et te propose le morceau **transposé dans la tonalité de ton handpan** quand c'est possible.
+Sur un handpan acoustique, l'app va plus loin et te propose le morceau **transposé dans la tonalité de ton pan** quand c'est possible — puisque les notes, elles, ne bougeront pas. Sur un handpan électronique, c'est l'instrument qui va chercher la tonalité du morceau.
 
 ## Ta bibliothèque te suit
 

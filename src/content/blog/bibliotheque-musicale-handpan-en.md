@@ -12,6 +12,8 @@ draft: false
 
 [Handpan Constellation Studio's](/en/handpan-app) **music library** (*Bibliothèque musicale* in the app, still labelled in French) gathers in one place the songs you can accompany, the handpan pieces and your own compositions. But its real talent lies elsewhere: it looks at **your** scale and tells you, piece by piece, what your instrument can play — and what it can't.
 
+That calculation runs on the real notes of your scale, **whether your handpan is acoustic or electronic**.
+
 ## The question everyone asks
 
 "Can I play this song on my pan?" It's every handpan player's first question, and for a long time the only answer was: try it and see. You feel around, you hit a wrong chord, you conclude you're not good enough — when in fact the scale simply doesn't contain the note.
@@ -71,7 +73,7 @@ A blocked piece still opens. Click it and the app doesn't slam the door: it name
 
 Neither a wall nor plain transposition: a door. The app says what is missing, offers a second handpan that fills exactly that gap — with the number of pieces gained —, offers a made-to-measure Neotone generated with precisely those notes, and still lets you into the chart.
 
-In acoustic mode the app goes further and offers the piece **transposed into your handpan's key** where that is possible.
+On an acoustic handpan the app goes further and offers the piece **transposed into your pan's key** where that is possible — since the notes themselves will not move. On an electronic handpan, it is the instrument that goes to meet the key of the piece.
 
 ## Your library follows you
 

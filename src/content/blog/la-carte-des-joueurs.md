@@ -14,6 +14,8 @@ Le handpan est un petit monde très éparpillé. Des gens qui jouent à trois ru
 
 Depuis fin août, l'application en a un. **Une carte du monde, où chaque joueur qui le souhaite est une étoile.** Pays, ville si tu veux, « je donne des cours », « je fabrique des instruments », tes liens Spotify et YouTube, et même tes instruments.
 
+La carte ne fait aucune différence entre les joueurs : **acoustique ou électronique**, c'est le même ciel, la même étoile, les mêmes réglages. Ce qui te range quelque part, ce n'est pas ton instrument, c'est ce que tu as choisi d'allumer.
+
 Mais ce n'est pas ça, le sujet de cet article. Une carte communautaire, tout le monde en a une. Ce qui est différent ici, c'est **le sens dans lequel l'interrupteur est posé.**
 
 ## Le renversement : tu n'es pas dessus, et tu ne l'as jamais été
