@@ -10,6 +10,8 @@ permalink: "jouer-et-chanter-au-casque-neotone"
 draft: false
 ---
 
+**This article is about the electronic handpan.** Headphone playing requires a headphone output — something an acoustic handpan simply does not have.
+
 The [Neotone](/en/le-neotone), an electronic handpan, plays through **headphones** — late at night, in a flat, on the road, disturbing no one. Where an acoustic handpan rings through the whole house, the Neotone keeps the sound for you alone. And it isn't just about discretion: with headphones, you get an **immersive experience** that acoustic simply cannot offer.
 
 ## The acoustic volume wall

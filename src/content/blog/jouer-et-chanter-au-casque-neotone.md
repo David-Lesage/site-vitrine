@@ -10,6 +10,8 @@ permalink: "jouer-et-chanter-au-casque-neotone"
 draft: false
 ---
 
+**Cet article concerne le handpan électronique.** Le jeu au casque suppose une sortie casque : c'est une possibilité qui n'existe pas sur un handpan acoustique.
+
 Le [Neotone](/le-neotone), handpan électronique, se joue **au casque** — tard le soir, en appartement, en déplacement, sans déranger personne. Là où un handpan acoustique sonne dans toute la maison, le Neotone garde le son pour toi seul. Et ce n'est pas qu'une question de discrétion : au casque, tu vis une **expérience immersive** que l'acoustique ne peut pas offrir.
 
 ## Le mur du volume acoustique
