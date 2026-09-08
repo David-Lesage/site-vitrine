@@ -10,6 +10,8 @@ permalink: "etre-bien-dans-le-son-neotone"
 draft: false
 ---
 
+**Cet article concerne le handpan électronique.** Un pan acoustique se passe d'enceinte : il sonne tout seul, et rien de ce qui suit ne le concerne.
+
 Le [Neotone](/le-neotone) est un instrument numérique : il n'a pas de haut-parleur intégré. Pour l'entendre, tu le branches à une enceinte ou tu joues au casque. Et là, un détail change absolument tout : **où tu places ton enceinte**. Bien positionnée, elle te met littéralement *dans* le son. Mal placée, tu joues « à côté » de ta musique. Voici comment je m'installe.
 
 ## Pourquoi le placement change tout

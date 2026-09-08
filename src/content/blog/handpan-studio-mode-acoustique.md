@@ -10,6 +10,8 @@ permalink: "handpan-studio-mode-acoustique"
 draft: false
 ---
 
+**Cet article concerne le handpan acoustique.** Si tu joues sur un handpan électronique, les mêmes couleurs et les mêmes Constellations t'attendent ailleurs dans l'app — ici, on parle de ton pan martelé.
+
 Tu as déjà un handpan acoustique ? Le mode acoustique de [Handpan Constellation Studio](/handpan-app) est fait pour toi, et il est gratuit. Tu indiques ta gamme, l'app affiche ton pan en couleurs à l'écran, aligné sur ton instrument. Tu vois tes notes, tu repères tes accords, tu apprends par le regard — sans avoir besoin d'un [handpan électronique Neotone](/le-neotone).
 
 ## Ton pan, en couleurs, sur ton écran

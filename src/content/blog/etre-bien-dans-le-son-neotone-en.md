@@ -10,6 +10,8 @@ permalink: "etre-bien-dans-le-son-neotone"
 draft: false
 ---
 
+**This article is about the electronic handpan.** An acoustic pan needs no speaker: it sounds on its own, and none of what follows applies to it.
+
 The [Neotone](/en/le-neotone) is a digital instrument: it has no built-in speaker. To hear it, you connect it to a speaker or play with headphones. And one detail changes everything: **where you place your speaker**. Set up well, it puts you literally *inside* the sound. Set up badly, you play "next to" your music. Here's how I do it.
 
 ## Why placement changes everything

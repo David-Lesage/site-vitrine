@@ -10,6 +10,8 @@ permalink: "handpan-studio-mode-acoustique"
 draft: false
 ---
 
+**This article is about the acoustic handpan.** If you play an electronic one, the same colours and Constellations are waiting elsewhere in the app — here we are talking about your hammered pan.
+
 Already own an acoustic handpan? Handpan Constellation Studio's [acoustic mode](/en/handpan-app) is made for you, and it's free. You tell it your scale, the app shows your pan in colour on screen, aligned with your instrument. You see your notes, spot your chords, learn by looking — with no need for an [electronic Neotone handpan](/en/le-neotone).
 
 ## Your pan, in colour, on your screen
