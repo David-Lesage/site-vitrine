@@ -12,6 +12,8 @@ draft: false
 
 L'éditeur de mélodies de [Handpan Constellation Studio](/handpan-app) te donne ce qui manquait entre tes mains et ta mémoire : ton pan en haut, une **timeline** en dessous. Tu cliques une note du pan, elle se pose sur la ligne du temps. Tu écoutes, tu déplaces, tu mets en boucle, et tu exportes en `.mid`. Une mélodie qui existait ce soir existe encore demain matin.
 
+L'éditeur affiche ta gamme du moment, **que ton handpan soit acoustique ou électronique** — seule la prise au vol par MIDI, décrite plus bas, demande un instrument électronique.
+
 ## Une mélodie ne se note pas, au handpan
 
 Les accords, on finit par les garder : ils ont une forme, une couleur, un [diagramme](/blog/diagrammes-accords-handpan-pdf). Une mélodie, non. Elle se joue, elle passe, elle disparaît. Et la portée classique n'aide pas beaucoup : elle demande de savoir lire, et surtout elle ne dit rien de **l'endroit du pan** où poser la main.
@@ -51,7 +53,9 @@ La tête de lecture rallume les notes sur le pan pendant qu'elle avance : tu voi
 
 Une barre de pulsation complète l'ensemble : les temps s'allument, le premier en orange, et les pieds **gauche (bleu)** et **droit (rouge)** alternent au tempo. Tu ne comptes plus, tu balances.
 
-## Ce que tu joues s'écrit
+## Enregistrer ce que tu joues (handpan électronique)
+
+Cette section-là ne concerne que les handpans électroniques : il faut une sortie MIDI, qu'un pan acoustique n'a pas.
 
 Si ton [Neotone](/le-neotone) est branché en MIDI, tu peux aussi partir dans l'autre sens : tu appuies sur ⏺, un décompte se lance, et **ce que tu joues s'écrit dans la grille**. Tu corriges ensuite à la souris ce que la main a raté.
 

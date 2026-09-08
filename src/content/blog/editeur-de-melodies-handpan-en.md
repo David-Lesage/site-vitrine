@@ -12,6 +12,8 @@ draft: false
 
 [Handpan Constellation Studio's](/en/handpan-app) melody editor (*Éditeur de mélodies* in the app, still labelled in French) gives you what was missing between your hands and your memory: your pan on top, a **timeline** underneath. Click a note on the pan and it lands on the time line. You listen, you move things around, you loop, and you export as `.mid`. A melody that existed tonight still exists tomorrow morning.
 
+The editor shows your current scale **whether your handpan is acoustic or electronic** — only the live MIDI capture described below needs an electronic instrument.
+
 ## On the handpan, a melody doesn't get written down
 
 Chords, you end up keeping: they have a shape, a colour, a [diagram](/en/blog/diagrammes-accords-handpan-pdf). A melody doesn't. You play it, it passes, it's gone. And the classical staff doesn't help much: it asks you to read music, and above all it says nothing about **where on the pan** to put your hand.
@@ -51,7 +53,9 @@ The playhead lights the notes back up on the pan as it travels: you watch your m
 
 A pulse bar completes the picture: the beats light up, the first one in orange, and the **left (blue)** and **right (red)** feet alternate at the tempo. You stop counting, you start swaying.
 
-## What you play gets written
+## Recording what you play (electronic handpan)
+
+This section applies to electronic handpans only: it needs a MIDI output, which an acoustic pan does not have.
 
 If your [Neotone](/en/le-neotone) is connected over MIDI, you can also work the other way round: press ⏺, a count-in starts, and **what you play is written into the grid**. Then you fix with the mouse whatever your hand missed.
 
