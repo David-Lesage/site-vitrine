@@ -12,6 +12,8 @@ draft: false
 
 "Sad" (*Triste*), in [Handpan Constellation Studio's](/en/handpan-app) [Logic Mode](/en/blog/handpan-emotions-degres), is no longer a single colour. That button now hides **three shades of minor** — natural 🌙, harmonic 🔥, melodic 🎷 — and it only takes two or four notes rising by a semitone to move from one to the next. The chord shapes themselves don't budge.
 
+**This article is about the electronic handpan**: raising a note by a semitone requires pads. What the app keeps of it on the acoustic side is stated at the end of the article.
+
 ## Minor isn't an emotion, it's a family
 
 We learn very early that major = happy and minor = sad. It's convenient, and it falls apart the moment you actually listen. A lullaby, an oriental theme and a jazz standard can all three be "in minor" and tell completely different stories.

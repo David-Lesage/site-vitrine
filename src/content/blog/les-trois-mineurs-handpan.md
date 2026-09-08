@@ -12,6 +12,8 @@ draft: false
 
 « Triste », dans le [Mode Logique](/blog/handpan-emotions-degres) de [Handpan Constellation Studio](/handpan-app), n'est plus une seule couleur. Sous ce bouton se cachent désormais **trois nuances de mineur** — naturel 🌙, harmonique 🔥, mélodique 🎷 — et il suffit de deux ou quatre notes qui montent d'un demi-ton pour passer de l'une à l'autre. Les formes d'accords, elles, ne bougent pas.
 
+**Cet article concerne le handpan électronique** : faire monter une note d'un demi-ton suppose des pads. Ce que l'app en garde côté acoustique est dit en fin d'article.
+
 ## Le mineur n'est pas une émotion, c'est une famille
 
 On apprend très tôt que majeur = joyeux et mineur = triste. C'est commode, et c'est faux dès qu'on écoute vraiment. Une berceuse, un thème oriental et un standard de jazz peuvent tous les trois être « en mineur » et ne raconter absolument pas la même chose.
