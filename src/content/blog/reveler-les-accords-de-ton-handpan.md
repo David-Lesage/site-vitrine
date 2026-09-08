@@ -14,6 +14,8 @@ Le reproche le plus juste qu'on m'ait fait sur l'application, c'est qu'elle offr
 
 Une seule porte, un seul bouton, et une seule question posée à ton instrument : *qu'est-ce que tu sais déjà faire ?*
 
+**Cet article décrit l'écran tel qu'on l'ouvre en mode acoustique**, sur un handpan aux notes fixes : c'est là que la question « qu'est-ce que mon instrument sait déjà faire ? » se pose vraiment, puisque la réponse ne peut pas être changée d'un réglage.
+
 ## Où c'est, exactement
 
 Charge ta gamme en mode acoustique. Sous le pan, tu as la barre **🎼 Atelier d'accords** — la même qui affiche « tous les accords jouables sur ton instrument ». À droite de cette barre, trois boutons : **✨ Révéler**, ↗ Agrandir, 🖨 Imprimer.
