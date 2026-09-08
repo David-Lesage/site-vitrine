@@ -2,7 +2,7 @@
 title: "Les trois visages du mineur : naturel, harmonique, mélodique"
 description: "Sous le bouton « Triste » du Mode Logique, trois nuances de mineur. Deux pastilles qui montent d'un demi-ton, et la couleur orientale ou jazz apparaît."
 pubDate: 2026-09-12
-cover: "/images/app-triste-trois-mineurs-naturel.webp"
+cover: "/images/app-triste-trois-mineurs-naturel-2026-09.webp"
 category: "logique"
 tags: ["harmonie", "mineur", "musicien"]
 lang: "fr"
@@ -26,10 +26,10 @@ C'est celui que tout le monde connaît, et celui que ton handpan joue par défau
 
 <figure>
   <img
-    src="/images/app-triste-trois-mineurs-naturel.webp"
-    width="2000"
-    height="1250"
-    alt="Le Mode Logique en mineur naturel. L'écran du handpan, au centre du pan, indique « D Min. Nat. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII » ; les pastilles portent notamment C4 en haut à gauche et C3 en bas. Les sept cartouches de degrés affichent I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. À droite, le bouton Triste est actif et son menu Nuances est déplié : « 🌙 Triste profond — mineur naturel, le Triste actuel » (surligné), « 🔥 Triste intense, couleur orientale — mineur harmonique · 7ᵉ montée d'un demi-ton — 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 6ᵉ et 7ᵉ montées d'un demi-ton — 4 pads changent »."
+    src="/images/app-triste-trois-mineurs-naturel-2026-09.webp"
+    width="1600"
+    height="1392"
+    alt="Le Mode Logique en mineur naturel sur un Neotone Mutant, thème sombre. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. L'écran du handpan, juste sous le ding D2, indique « D Min. Nat. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII » ; les pastilles portent notamment C4 en haut à gauche et C3 en bas. Les sept cartouches de degrés affichent I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. À droite, dans le panneau « Logique et Emotions », le bouton Triste est actif et son menu Nuances est déplié : « 🌙 Triste profond — mineur naturel — le Triste actuel » (surligné), « 🔥 Triste intense, couleur orientale — mineur harmonique · 7ᵉ montée d'un demi-ton — 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 6ᵉ et 7ᵉ montées d'un demi-ton — 4 pads changent »."
     data-lb="trois-mineurs"
     data-lb-wide
     loading="lazy"
@@ -46,10 +46,10 @@ Sur le pan, **deux pastilles seulement** changent de note.
 
 <figure>
   <img
-    src="/images/app-triste-trois-mineurs-harmonique.webp"
-    width="2000"
-    height="1250"
-    alt="Le même écran, avec l'entrée « 🔥 Triste intense, couleur orientale » sélectionnée dans le menu Nuances. Sur le handpan, les pastilles qui affichaient C4 et C3 affichent maintenant C#4 et C#3 ; toutes les autres notes sont inchangées, ainsi que les sept cartouches de degrés et la disposition générale."
+    src="/images/app-triste-trois-mineurs-harmonique-2026-09.webp"
+    width="1600"
+    height="1392"
+    alt="Le même écran, avec l'entrée « 🔥 Triste intense, couleur orientale » surlignée dans le menu Nuances. L'écran du handpan indique maintenant « D Min. Harm. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». Sur le handpan, les pastilles qui affichaient C4 et C3 affichent maintenant C#4 et C#3 ; toutes les autres notes sont inchangées, ainsi que les sept cartouches de degrés (de I ÉQUILIBRE Dm à VII MYSTÈRE C) et la disposition générale."
     data-lb="trois-mineurs"
     data-lb-wide
     loading="lazy"

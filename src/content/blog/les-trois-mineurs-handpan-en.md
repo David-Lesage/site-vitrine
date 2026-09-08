@@ -2,7 +2,7 @@
 title: "The three faces of minor: natural, harmonic, melodic"
 description: "Under Logic Mode's \"Sad\" button, three shades of minor. Two dots rise by a semitone, and the oriental or jazz colour appears."
 pubDate: 2026-09-12
-cover: "/images/app-triste-trois-mineurs-naturel.webp"
+cover: "/images/app-triste-trois-mineurs-naturel-2026-09.webp"
 category: "logique"
 tags: ["harmony", "minor", "musician"]
 lang: "en"
@@ -26,10 +26,10 @@ This is the one everyone knows, and the one your handpan plays by default. Its d
 
 <figure>
   <img
-    src="/images/app-triste-trois-mineurs-naturel.webp"
-    width="2000"
-    height="1250"
-    alt="Logic Mode in natural minor. The handpan screen, at the centre of the pan, reads « D Min. Nat. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII »; the pads include C4 at the top left and C3 at the bottom. The seven degree cards read I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. On the right, the Triste button is active and its Nuances menu is open: « 🌙 Triste profond — mineur naturel », « 🔥 Triste intense, couleur orientale — mineur harmonique · 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 4 pads changent »."
+    src="/images/app-triste-trois-mineurs-naturel-2026-09.webp"
+    width="1600"
+    height="1392"
+    alt="Logic Mode in natural minor on a Neotone Mutant, dark theme. Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, then the four menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island outlined in cyan with its printer icon. The handpan screen, just below the D2 ding, reads « D Min. Nat. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII »; the pads include C4 at the top left and C3 at the bottom. The seven degree cards read I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. On the right, in the « Logique et Emotions » panel, the Triste button is active and its Nuances menu is unfolded: « 🌙 Triste profond — mineur naturel — le Triste actuel » (highlighted), « 🔥 Triste intense, couleur orientale — mineur harmonique · 7ᵉ montée d'un demi-ton — 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 6ᵉ et 7ᵉ montées d'un demi-ton — 4 pads changent »."
     data-lb="trois-mineurs"
     data-lb-wide
     loading="lazy"
@@ -46,10 +46,10 @@ On the pan, **only two dots** change note.
 
 <figure>
   <img
-    src="/images/app-triste-trois-mineurs-harmonique.webp"
-    width="2000"
-    height="1250"
-    alt="The same screen with « 🔥 Triste intense, couleur orientale » selected in the Nuances menu. On the handpan, the pads that read C4 and C3 now read C#4 and C#3; every other note is unchanged, as are the seven degree cards and the overall layout."
+    src="/images/app-triste-trois-mineurs-harmonique-2026-09.webp"
+    width="1600"
+    height="1392"
+    alt="The same screen, with the « 🔥 Triste intense, couleur orientale » entry highlighted in the Nuances menu. The handpan screen now reads « D Min. Harm. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». On the handpan, the pads that showed C4 and C3 now show C#4 and C#3; every other note is unchanged, as are the seven degree cards (from I ÉQUILIBRE Dm to VII MYSTÈRE C) and the overall layout."
     data-lb="trois-mineurs"
     data-lb-wide
     loading="lazy"
