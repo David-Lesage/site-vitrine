@@ -1,6 +1,6 @@
 ---
-title: "The two views of ChromaKeys: colour tells the note, or the role"
-description: "A C always red, or the first degree always red? ChromaKeys can be read two ways, and both are true. How to know which lens to wear — and when."
+title: "Reading the colours: the note, its place in the scale, or nothing"
+description: "The ChromaKeys menu asks three independent questions: what the colour says, whether shared notes split apart, and whether chords are drawn. Three settings, valid on an acoustic handpan and an electronic one alike."
 pubDate: 2026-09-24
 cover: "/images/app-deux-handpans-accord-a-cheval.webp"
 category: "methode"
@@ -10,155 +10,120 @@ permalink: "les-deux-visions-chromakeys"
 draft: false
 ---
 
-This is the misunderstanding I see coming back most often, and it's my fault: I never wrote it down plainly. I say "C is red" — and someone answers: "but you told me the first degree was red, and my scale is in E." Both are right. Until it's said clearly, it stays a trap.
+Whether your handpan is acoustic or electronic, a colour can say two things. It can say **which note** you have under the mallet. Or it can say **which place** that note occupies in your scale. Two different readings of the same instrument, and both are right.
 
-So, once and for all: **ChromaKeys has two views.** The **absolute note**, and the **role a note plays inside a key**. These are **two truths, both true depending on how you choose to think about it**. Neither is a loose way of speaking, neither replaces the other.
+The app doesn't choose for you: it lets you choose. It's a setting, it takes one click, and it's called **ChromaKeys**.
 
-This article assumes you already know what the method's colours and shapes are. If not, start with [Playing handpan by colours](/en/blog/handpan-par-les-couleurs) and come back here: this is the nuance you'll be missing right afterwards.
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-01-acoustique — D Kurd 10 Yishama, mode Gammes, niveau Musicien, La couleur dit = la note, Notes partagées = Off, aucun œil ouvert ; cadrage : pan entier + bande ChromaKeys visible en haut ; fichier attendu /images/blog-chromakeys-2026-01-ouverture-acoustique.webp -->
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-01-electronique — Neotone Mutant, mode Logique, C majeur (ancrage C), niveau Musicien, La couleur dit = la note, Notes partagées = Off, aucun œil ouvert ; cadrage : pan entier + bande ChromaKeys visible en haut ; fichier attendu /images/blog-chromakeys-2026-01-ouverture-electronique.webp -->
 
-## Two lenses, a single colour wheel
+## The ChromaKeys menu: three questions, not one
 
-That's the image I ended up keeping, and it's already inside the app, on the screen that explains what happens when you set a second handpan down next to the first:
+At the top of the screen, the tool bar. Inside it, an island with a multicoloured outline: **ChromaKeys**. It doesn't ask one question, it asks three — and they are independent. You can answer one without touching the other two.
 
-> To find your way, you have two lenses. They are not competing options.
+1. **Colour says…** → *the note* · *its place in the scale* · *nothing*
+2. **Shared notes** → *Off* / *On*
+3. **Chord drawing** → there's nothing to click here: **the eye lives on each chord card**, at the bottom of the screen. The island just reminds you of it.
 
-Hold on to this above all: **a single colour wheel.** The same red, the same orange, the same yellow. It isn't "the note palette" on one side and "the degree palette" on the other. It's **one palette, laid onto your instrument in two different ways**. You don't change colours — you change the question.
+You'll notice each setting carries two labels: the plain word first, and the theory word in small type right beside it. *The note* is what others call the **chakras**. *Its place in the scale* is what's called the **degrees**. I say it once here, and after that I use the plain words.
 
-- The first lens answers: **"Which note is this?"**
-- The second answers: **"What is it for?"**
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-02-acoustique — D Kurd 10 Yishama, mode Gammes, niveau Musicien, îlot ChromaKeys au premier plan (contour multicolore, les 3 réglages sur une ligne), La couleur dit = la note, Notes partagées = Off ; cadrage : gros plan sur la bande d'outils, pan visible en dessous ; fichier attendu /images/blog-chromakeys-2026-02-menu-acoustique.webp -->
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-02-electronique — Neotone Mutant, mode Logique, C majeur (ancrage C), niveau Musicien, îlot ChromaKeys au premier plan, La couleur dit = sa place dans la gamme, Notes partagées = On ; cadrage : gros plan sur la bande d'outils, pan visible en dessous ; fichier attendu /images/blog-chromakeys-2026-02-menu-electronique.webp -->
 
-Nobody plays with only one of them. You move between them constantly — except that usually it happens inside the head of a musician who has done ten years of music theory, and nobody ever says it out loud.
+## "Colour says the note": a C always red
 
-## Lens 1 — chakra mode: a C is always red
+First possible answer. Here the colour is glued to the **name** of the note, and it never moves again.
 
-I call it **chakra mode**, and it isn't a metaphor I bolted on afterwards: in the app, the button is literally named that, and it lights up the chakra colours — red at the root, then orange, yellow, green, and so on going up.
+- A **C** is red.
+- A **D** is orange.
+- An **F** is green.
+- An **A** is indigo.
 
-Here, the colour is glued to the **name of the note**, and it never moves again.
+All twelve notes have their colour — sharps included, each with its own shade. Change scale, change instrument, change key: nothing moves. Red stays C.
 
-- A **C** is red. An octave higher, still red. An octave lower, still red.
-- An **E** is yellow. On your pan, on mine, on a stranger's pan on the other side of the world: yellow.
-- Change scale, change instrument, change key: **nothing moves.** Red stays C.
+The most immediate benefit is **the octave**. With nothing else turned on, every *D* on your shell is orange: the low one, the high one, the one up on the right. At a glance, you see they're the same note at different pitches. That's the kind of thing that takes months to absorb by ear, and becomes obvious in a second through colour.
 
-This is the lens of **geography**. It tells you *where you are*. And its great strength is precisely that it is indifferent to everything else: it's the one landmark in your practice that never shifts under your feet.
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-03-acoustique — D Kurd 10 Yishama, mode Gammes, niveau Musicien, La couleur dit = la note, Notes partagées = Off, aucun œil ouvert ; cadrage : pan entier + bande ChromaKeys ; on doit voir les deux D orange à des octaves différentes ; fichier attendu /images/blog-chromakeys-2026-03-note-acoustique.webp -->
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-03-electronique — Neotone Mutant, mode Logique, C majeur (ancrage C), niveau Musicien, La couleur dit = la note, Notes partagées = Off, aucun œil ouvert ; cadrage : pan entier + bande ChromaKeys ; fichier attendu /images/blog-chromakeys-2026-03-note-electronique.webp -->
 
-The app says it in a single line, right on the button: *"A C is always red, wherever it sits."*
+## What is a degree? (the eight-year-old version)
 
-## Lens 2 — the degree: the first is always red, in every key
+Before the second answer, one word is needed. Just one.
 
-The other lens no longer looks at the name of the note. It looks at **the place it occupies inside your scale**.
+A scale is **seven places**, from the first to the seventh. Like the steps of a staircase. Each note of your scale occupies one step, and only one. The **degree** of a note is **the number of its step**. Nothing more.
 
-A scale is seven places. The first is home — it's where everything settles, the note a melody wants to come back to. The fifth pushes forward. The sixth tints things with nostalgia. The seventh pulls, and asks to be resolved. Those places exist in just about all the music you love, even if nobody ever gave you their names.
+What's lovely is that the steps have a character. Always the same one, in any key. I gave them names:
 
-The "role" lens gives a colour to those **places**, not to the notes. And there, the rule changes completely:
+- **I — Balance** (*Équilibre*): home, where everything settles.
+- **II — Momentum** (*Élan*): it starts, it pushes gently.
+- **III — Adventure** (*Aventure*): you leave the known behind.
+- **IV — Ease** (*Détente*): you breathe.
+- **V — Tension**: it pulls, it asks for what comes next.
+- **VI — Nostalgia** (*Nostalgie*): sweetness with a sting.
+- **VII — Mystery** (*Mystère*): suspended, it can't stay there.
 
-- **The first degree is always red, in every key.**
-- If your scale is in **E**, it's the **E** that turns red — because its role is to be the first degree.
-- In D, the D turns red. In G, the G. Colour follows **function**, not name.
+Each one also has its vowel, to sing: OU · O (as in "beau") · O (as in "or") · A · E · I · M. That's the bridge to singing, and it's worked in the **Sing & Play** mode — a subject of its own.
 
-<figure>
-  <img
-    src="/images/blog-chromakeys-degres-e18-logique.webp"
-    width="2000"
-    height="1233"
-    alt="Handpan Constellation Studio, Logic tab, Star view: the E 18 — David Lesage Signature scale. Chord I, labelled « I ÉQUILIBRE E », is lit — the E3 ding at the centre, then E4, B3 and G♯3 are all four red and joined by a line; every other note on the shell (F♯3, B4, A4, C♯5, G♯4, D♯5, E5, F♯4, C♯3, D♯4, C♯4, D♯3, B2, A2) stays grey. Along the bottom, the seven chord cards, each in its degree colour: I « Équilibre » E red, II « Élan » F♯m orange, III « Aventure » G♯m yellow, IV « Détente » A green, V « Tension » B cyan, VI « Nostalgie » C♯m blue, VII « Mystère » D♯° magenta. The interface is shown in French."
-    data-lb="chromakeys-degres-logique"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>My E 18 scale in the app, first degree lit: it is the <strong>E</strong> that is red — the E3 ding, and with it E4, B3 and G♯3. Not one C is red on this screen. Along the bottom, the seven degrees, each in its own colour. (Screenshot taken with the app in French.)</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Tap the image to open it, then tap it again for full size.</p>
-</figure>
+## "Colour says its place in the scale"
 
-This is the lens of **grammar**. It doesn't tell you where you are, it tells you *what you are doing*. It's the one Logic Mode uses, and it's the one that carries the emotions I write about in [Playing with emotions: the 7 coloured degrees](/en/blog/handpan-emotions-degres).
+Second answer. Here the colour no longer looks at the note's name, but at its step.
 
-<figure>
-  <img
-    src="/images/blog-chromakeys-degres-e18-partition.webp"
-    width="2000"
-    height="1524"
-    alt="The Visual Score Editor of Handpan Constellation Studio, in « Séquence d'accords » (chord sequence) mode. The exportable sheet is titled « E 18 — DAVID LESAGE SIGNATURE » and carries, right underneath, the line « Made by Yishama Pantam - Yhonatan Ale-Yahav ». The scale's seven chords are each drawn on their own shell, in their degree colour, with the notes that make them up written below: E red (E – G♯ – B), F♯m orange (F♯ – A – C♯), G♯m yellow (G♯ – B – D♯), A green (A – C♯ – E), B cyan (B – D♯ – F♯), C♯m blue (C♯ – E – G♯), D♯ magenta (D♯ – F♯ – A). The E3 ding, at the centre of every shell, changes colour from one chord to the next: red in E, green in A, blue in C♯m. On the left, the settings panel: Mode, layout, Style (Handpan Acoustic texture, gold note outline, « Ouvert » chord path), content, diagrams. The interface is shown in French."
-    data-lb="chromakeys-degres-partition"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>The same logic, printable: the seven chords of my E 18, each in its degree colour. The ding, at the centre, is always the same E — red in the E chord, green in the A chord, blue in C♯m. Colour follows the role, not the name. And under the title, the app prints « Made by Yishama Pantam - Yhonatan Ale-Yahav »: the credit for my scales follows them all the way onto the score.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Tap the image to open it, then tap it again for full size.</p>
-</figure>
+**The I is always red.** If your scale is in D, it's the D that turns red. In E, the E. Colour follows the place, not the name. And the drawing made by the seven colours stays identical from one key to another: that's what lets you play the same thing elsewhere without relearning anything.
 
-## The trap: in C, both lenses say the same thing
+⚠️ **An honest caveat**: this is true **in Logic mode**. Elsewhere — in Scales, in Creation — the setting is no longer called "its place in the scale" but **"Chords"**, and the tooltip tells you exactly what it does: *"Colour = the note the chord is named after"*. In other words, every note of a chord takes the colour of the note that gives the chord its name. Useful, but it isn't reading by degrees. The word changes because the calculation changes; the app doesn't pretend otherwise.
 
-Here, I think, is the real reason everyone gets lost — me first, for a long time.
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-04-acoustique — D Kurd 10 Yishama, mode Gammes, niveau Musicien, La couleur dit = Accords (3e position du réglage, libellé « Accords » hors Logique), Notes partagées = Off, aucun œil ouvert, infobulle « Couleur = la note qui donne son nom à l'accord » affichée ; cadrage : pan entier + bande ChromaKeys avec l'infobulle ; fichier attendu /images/blog-chromakeys-2026-04-place-acoustique.webp -->
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-04-electronique — Neotone Mutant, mode Logique, C majeur (ancrage C), niveau Musicien, La couleur dit = sa place dans la gamme, Notes partagées = Off, aucun œil ouvert ; on doit voir les 7 cartes d'accords en bas, chacune dans la couleur de son degré (I Équilibre rouge → VII Mystère magenta) ; fichier attendu /images/blog-chromakeys-2026-04-place-electronique.webp -->
 
-**When your scale is in C, both views land on the same colour.** C is red because it's a C. And C is red because it's the first degree. Two completely different explanations, one single red on screen. No way to guess there are two of them.
+## "Shared notes": when one note serves several chords
 
-Change key, and the veil lifts at once. Take a pan in **E**:
+Third idea, and it's a setting of its own — that was my realisation last week: it had no business sitting inside the previous choice.
 
-- **Note** lens: E is **yellow** (it's an E, it has been yellow everywhere and always), and the red has gone to sit on the C.
-- **Role** lens: E is **red** (it's the first degree, it's home), and there is no longer a single note that is red "because it's a C".
+One and the same note can belong to several chords. When **Shared notes** is set to *On*, that note **splits into slices** — a pie, one slice per chord it takes part in, each slice in the colour of the chord concerned. When colour says *the note*, sharing takes another form: a **thin ring** around the note's colour, which keeps the note recognisable.
 
-<!-- 📸 RESERVED SLOT — THE « CHAKRAS » SCREENSHOT (colour = NOTE), not supplied by David yet.
-     This is where it goes, and nowhere else: right after the two bullets that set the note lens
-     against the role lens on the SAME pan in E.
-     WHAT IT MUST SHOW: the same screen as the screenshot further up (Handpan Constellation Studio,
-     Logic tab, Star view, E 18 — David Lesage Signature), but with the note-colour selector set to
-     CHAKRAS: there the E is YELLOW, and the red sits on the C. The contrast with the earlier image
-     IS the demonstration this article is built on.
-     WHEN IT ARRIVES (3 steps, no more):
-       1. `cwebp -q 92 -sharp_yuv -resize 2000 0 <source> -o public/images/blog-chromakeys-notes-e18-chakras.webp`
-          (no cropping: the app title along the top is what dates the screenshot); keep the original in
-          `_medias-originaux-avec-titre/blog-chromakeys-notes-e18-chakras-source.jpg`.
-       2. Replace this comment with a <figure> copied from the ones above, with the real width/height,
-          `loading="lazy"` and `data-lb-wide`.
-       3. Decision to make at that point: give it `data-lb="chromakeys-degres-logique"` — the SAME group
-          as the "degree" screenshot — so the reader flips between the two with the lightbox ‹ › arrows.
-          That is the whole point: two lenses, one screen. (The group then shows a "1 / 2" counter,
-          which is normal.)
-     ⛔ NEVER fabricate it: no montage, no recolouring, no diagram imitating the app. The article reads
-        and holds together completely without it — no sentence points at a missing image. Until it is
-        here, change nothing. -->
+Three things measured by the app, which I'd rather tell you than let you hunt for:
 
-Same instrument, same screen, same colour wheel. Two different pictures, and **neither of them lies**. Which is exactly why you need to know which pair you have on your nose.
+- On a **D Kurd in Scales/Chords mode**, you count **22 visible rings**. That isn't a textbook case: that's half your shell.
+- **In Logic mode, no note belongs to two chords.** So there is nothing to see there — the setting exists, it simply produces no slice in that mode.
+- **The slices disappear as soon as a chord eye is opened.** The two never coexist on screen: either you're looking at the network of shared notes, or you're looking at a drawn chord.
 
-## Which one to wear, and when
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-05-acoustique — D Kurd 10 Yishama, mode Gammes, niveau Musicien, La couleur dit = Accords, Notes partagées = On, AUCUN œil ouvert (indispensable : les parts disparaissent sinon) ; cadrage : pan entier, les camemberts bien lisibles ; fichier attendu /images/blog-chromakeys-2026-05-partagees-acoustique.webp -->
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-05-electronique — Neotone Mutant, mode Gammes (PAS Logique : en Logique aucune note n'est partagée), gamme C majeur, niveau Musicien, La couleur dit = la note, Notes partagées = On, aucun œil ouvert ; on doit voir les anneaux fins autour des couleurs de notes ; fichier attendu /images/blog-chromakeys-2026-05-partagees-electronique.webp -->
 
-That's the only question that really matters, and the answer holds in two verbs on each side.
+## "Chord drawing": the eye that traces the constellation
 
-**Wear the "note" lens — I play, I locate — when:**
+On each chord card, at the bottom of the screen, there's an eye. You open it, and the **chord's constellation is traced** on the instrument: a path linking its notes together. That drawing is what stays the same when you change key, and that's where Logic mode becomes a machine for understanding.
 
-- you're hunting for one precise note on your shell, right now, without thinking;
-- someone says "give me an F" and you have to find it in a second;
-- you're learning the geography of an instrument you don't know yet;
-- you're playing on **two handpans** and need to know at a glance which shell carries the note you want;
-- you're working through a melody note by note.
+What you see depends on your answer to the first question:
 
-**Wear the "role" lens — I understand, I compose — when:**
+- With **"its place in the scale"**: the whole chord takes **the colour of its degree** — the I entirely red — and **the rest of the instrument dims to grey**.
+- With **"the note"**: the constellation is traced just the same, but **each note keeps its own colour**. The rest dims too.
 
-- you want to understand **why** a progression does something to you, instead of just taking it;
-- you're composing, and looking for what comes next;
-- you want to play the same thing **in another key** — because the drawing of the roles doesn't change;
-- you're transposing a song so it falls inside your voice;
-- you're choosing by emotion: calm, momentum, nostalgia.
+Two ways of looking at the same chord: its function on one side, its geography on the other.
 
-And if you only keep one sentence, keep the one the app shows at the end of that screen — I have nothing better:
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-06-acoustique — D Kurd 10 Yishama, mode Gammes, niveau Musicien, La couleur dit = la note, Notes partagées = Off, UN SEUL œil ouvert sur la première carte d'accord ; cadrage : pan entier + rangée des cartes d'accords ; les notes de l'accord gardent chacune sa couleur, le reste est gris ; fichier attendu /images/blog-chromakeys-2026-06-oeil-acoustique.webp -->
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-06-electronique — Neotone Mutant, mode Logique, C majeur (ancrage C), niveau Musicien, La couleur dit = sa place dans la gamme, Notes partagées = Off, UN SEUL œil ouvert sur la carte « I Équilibre » ; cadrage : pan entier + rangée des cartes d'accords ; tout l'accord en rouge, le reste gris ; fichier attendu /images/blog-chromakeys-2026-06-oeil-electronique.webp -->
 
-> Knowing which one to wear — that is the learning.
+## You have nothing to set: the presets by level
 
-## Where it actually lives in the app
+If all that sounds like a lot, good news: you have nothing to do. Your **level** answers for you, and you can always come back to it later.
 
-It isn't a hidden setting. Next to your shell there's a small **"Note Color"** selector with three buttons: no colour, **Chakras**, and **Degrees**. One click, and the whole instrument flips in front of you: same pads, different logic.
+| Level | Colour says… | Shared notes |
+|---|---|---|
+| **Discovery** | the note | Off |
+| **Apprentice** | its place in the scale | On |
+| **Musician** | everything visible and adjustable | |
 
-In **Sing & Play** mode, the same switch exists in another shape, **"By role / By note"**, each with its little explanatory line. And in the melody editor, [both logics live side by side too](/en/blog/editeur-de-melodies-handpan), on the same melody.
+In Discovery, the island shrinks to the essentials: a single switch. Nothing has been removed from the app — it's simply put away until you need it.
 
-My advice: don't choose once and for all. **Switch.** Watching the same instrument change clothes teaches you what each set of clothes is saying far better than reading what I just wrote.
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-07-acoustique — D Kurd 10 Yishama, mode Gammes, niveau DÉCOUVERTE, La couleur dit = la note, Notes partagées = Off ; cadrage : bande d'outils entière pour montrer l'îlot ChromaKeys réduit ; fichier attendu /images/blog-chromakeys-2026-07-preregles-acoustique.webp -->
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-07-electronique — Neotone Mutant, mode Logique, C majeur (ancrage C), niveau APPRENTI, La couleur dit = sa place dans la gamme, Notes partagées = On, aucun œil ouvert ; cadrage : bande d'outils entière + pan ; fichier attendu /images/blog-chromakeys-2026-07-preregles-electronique.webp -->
 
-## Where the confusion comes from — I'm not going to pretend
+## And next
 
-There's a very simple reason, and it's historical.
+Once you read the colours by place in the scale, something unexpected happens: the drawing of each chord no longer depends on the key. The I has the same shape in C, in D, in A. It is exactly the gesture of a guitarist putting on a capo — except that on an electronic handpan, the capo is a button. That's the subject of the next article.
 
-At the very beginning, **there was only one rainbow.** In August 2023 I started a document by hand where I coloured my notes one by one: C red, D orange, E yellow, F green, and so on. [That page still exists, and I've published it](/en/yishama) — it's where all of this starts. There weren't two logics back then: there was one, and it did everything.
+<!-- lien à poser : article capo -->
 
-The two views only separated later, when the app began talking about roles as well. And I wasn't fast enough to put the words back in order behind it: I'm not a theorist, my level of music theory was too weak to model all of it properly first time, and I did what I could in the order I could.
-
-So if you still come across, here or there, a sentence saying "the seven degrees each receive a colour, that's the ChromaKeys system" — it isn't a lie, it's **an exact leftover from the time when there was only one wheel.** There, now it's said.
-
-The word "ChromaKeys", inside the app, names the rainbow where C is always red. But the concept itself carries two. And the day you know which of the two you're looking at, nothing contradicts anything any more: you've simply learned to change lenses.
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-08-acoustique — D Kurd 10 Yishama, mode Gammes, niveau Musicien, La couleur dit = la note, Notes partagées = Off, un œil ouvert ; cadrage : plan large de tout l'écran (bande d'outils + pan + cartes d'accords + écran du handpan centré sous le ding) — image de clôture ; fichier attendu /images/blog-chromakeys-2026-08-cloture-acoustique.webp -->
+<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK1-08-electronique — Neotone Mutant, mode Logique, C majeur (ancrage C), niveau Musicien, La couleur dit = sa place dans la gamme, Notes partagées = Off, un œil ouvert sur « I Équilibre » ; cadrage : plan large de tout l'écran, écran du handpan centré sous le ding — image de clôture ; fichier attendu /images/blog-chromakeys-2026-08-cloture-electronique.webp -->
