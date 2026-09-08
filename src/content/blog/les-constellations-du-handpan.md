@@ -1,6 +1,6 @@
 ---
 title: "Les Constellations : voir un accord comme une forme"
-description: "Dans Handpan Constellation Studio, un accord devient un dessin. Découvre les 3 façons de tracer une Constellation : Polygone, Ouvert et Mains."
+description: "Que ton handpan soit acoustique ou électronique, un accord devient un dessin. Découvre les 3 façons de tracer une Constellation : Polygone, Ouvert et Mains."
 pubDate: 2026-07-02
 cover: "/images/blog-constellations-3-traces-2026-polygone.webp"
 category: "methode"
@@ -10,19 +10,21 @@ permalink: "les-constellations-du-handpan"
 draft: false
 ---
 
-Une Constellation, c'est un accord que tu vois plutôt qu'un accord que tu comptes. Dans [Handpan Constellation Studio](/handpan-app), les notes qui sonnent ensemble se relient par des traits lumineux et forment une figure reconnaissable. Ton œil retient un dessin, ta main le rejoue. L'app propose trois façons de tracer cette forme : le Polygone, l'Ouvert et les Mains.
+Une Constellation, c'est un accord que tu vois plutôt qu'un accord que tu comptes. Dans [Handpan Constellation Studio](/handpan-app), les notes qui sonnent ensemble se relient par des traits lumineux et forment une figure reconnaissable. Ton œil retient un dessin, ta main le rejoue.
+
+Cela vaut **que ton handpan soit acoustique ou électronique**. Un pan acoustique en D Kurd 10 et un Neotone dessinent tous les deux leurs accords : mêmes traits, même lecture, même geste. L'app propose trois façons de tracer cette forme : le Polygone, l'Ouvert et les Mains.
 
 ## Pourquoi une forme plutôt qu'une liste
 
 Mémoriser « ré, fa, la » demande un effort de traduction à chaque fois. Mémoriser un triangle posé à un endroit précis de ton pan, non : ton cerveau adore les formes. C'est le cœur de la méthode ChromaKeys, que tu peux découvrir en détail dans [Le handpan par les couleurs](/blog/handpan-par-les-couleurs). La Constellation est simplement l'étape d'après : quand plusieurs couleurs se rencontrent, elles dessinent quelque chose.
 
-Handpan Constellation Studio te laisse choisir **comment** ce dessin apparaît, selon ce que tu veux comprendre : la forme globale de l'accord, l'ordre dans lequel tu joues les notes, ou la répartition entre tes deux mains.
+Handpan Constellation Studio te laisse choisir **comment** ce dessin apparaît, selon ce que tu veux comprendre : la forme globale de l'accord, l'ordre dans lequel tu joues les notes, ou la répartition entre tes deux mains. Les trois tracés existent des deux côtés : sur un instrument acoustique comme sur un instrument électronique.
 
 ## Les 3 tracés de Constellation
 
 ### Le Polygone : la forme fermée
 
-Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée — un triangle pour trois notes, un quadrilatère pour quatre, etc. C'est la vue la plus « d'un coup d'œil » : tu reconnais l'accord comme tu reconnaîtrais un logo. Idéal pour mémoriser un accord et le retrouver instantanément ailleurs sur le pan, car la même forme se déplace en gardant sa silhouette.
+Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée — un triangle pour trois notes, un quadrilatère pour quatre, etc. C'est la vue la plus « d'un coup d'œil » : tu reconnais l'accord comme tu reconnaîtrais un logo. Idéal pour mémoriser un accord et le retrouver d'un regard — sur ton pan acoustique comme sur ton pan électronique.
 
 <figure>
   <img
@@ -38,9 +40,11 @@ Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée �
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
+<!-- 📷 CAPTURE ACOUSTIQUE À INSÉRER : D Kurd 10 Yishama, même accord, tracé Polygone — fichier attendu /images/blog-constellations-3-traces-2026-polygone-acoustique.webp — copier la <figure> ci-dessus, alt + figcaption à écrire d'après la capture -->
+
 ### L'Ouvert : le chemin des notes
 
-Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à l'autre, dans l'ordre où tu les joues. C'est la vue du geste. Tu ne vois plus seulement quel accord tu joues, mais comment ta main le parcourt — parfait pour travailler un arpège ou une phrase mélodique et sentir la direction du mouvement.
+Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à l'autre, dans l'ordre où tu les joues. C'est la vue du geste. Tu ne vois plus seulement quel accord tu joues, mais comment ta main le parcourt — parfait pour travailler un arpège ou une phrase mélodique et sentir la direction du mouvement. Sur un pan acoustique, ce chemin épouse la disposition réelle de tes creux ; sur un pan électronique, celle de tes pads.
 
 <figure>
   <img
@@ -56,9 +60,11 @@ Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
+<!-- 📷 CAPTURE ACOUSTIQUE À INSÉRER : D Kurd 10 Yishama, même accord, tracé Ouvert — fichier attendu /images/blog-constellations-3-traces-2026-ouvert-acoustique.webp — copier la <figure> ci-dessus, alt + figcaption à écrire d'après la capture -->
+
 ### Les Mains : qui joue quoi
 
-Le mode **Mains** colore le tracé selon la main qui joue chaque note. D'un regard, tu sais ce que fait la gauche et ce que fait la droite. C'est un repère précieux quand un accord se répartit entre les deux mains, ou quand tu veux équilibrer ton jeu sans te crisper.
+Le mode **Mains** colore le tracé selon la main qui joue chaque note. D'un regard, tu sais ce que fait la gauche et ce que fait la droite. C'est un repère précieux quand un accord se répartit entre les deux mains, ou quand tu veux équilibrer ton jeu sans te crisper. Là encore, rien ne change selon l'instrument : la question « quelle main joue quoi » se pose exactement pareil sur un acoustique.
 
 <figure>
   <img
@@ -74,10 +80,19 @@ Le mode **Mains** colore le tracé selon la main qui joue chaque note. D'un rega
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
+<!-- 📷 CAPTURE ACOUSTIQUE À INSÉRER : D Kurd 10 Yishama, même accord, tracé Mains — fichier attendu /images/blog-constellations-3-traces-2026-mains-acoustique.webp — copier la <figure> ci-dessus, alt + figcaption à écrire d'après la capture -->
+
+## Ce qui diffère entre acoustique et électronique
+
+Un point mérite d'être dit clairement. Sur un handpan **acoustique**, l'accord est résolu à partir de tes notes réelles, telles qu'elles sont disposées sur ton instrument : la forme obtenue est donc **propre à ton pan**. Deux gammes différentes donnent deux dessins différents pour le même accord — et c'est précisément ce qui rend la Constellation utile : elle te parle de *ton* instrument.
+
+Sur un handpan **électronique**, en mode Logique, la forme d'un degré est fixée par la disposition des pads : le I garde le même dessin quelle que soit la tonalité, seules les notes jouées changent. C'est un autre confort — celui de transporter un doigté d'une tonalité à l'autre — et il fera l'objet d'un article à part, « le capo du handpan ».
+<!-- lien à poser : article capo -->
+
 ## Passer d'un tracé à l'autre
 
-Le vrai confort, c'est de pouvoir basculer entre ces trois vues sur la même Constellation. Tu mémorises la forme globale avec le Polygone, tu travailles le geste avec l'Ouvert, puis tu vérifies ta répartition avec les Mains. Trois éclairages d'un même accord, sans jamais ouvrir une partition.
+Le vrai confort, c'est de pouvoir basculer entre ces trois vues sur la même Constellation. Tu mémorises la forme globale avec le Polygone, tu travailles le geste avec l'Ouvert, puis tu vérifies ta répartition avec les Mains. Trois éclairages d'un même accord, sans jamais ouvrir une partition — et de la même façon, quel que soit ton instrument.
 
 Et si tu veux inventer tes propres accords colorés, l'app te laisse composer librement : lis [Créer sa gamme de handpan](/blog/creer-sa-gamme-de-handpan) pour voir comment la création fonctionne (gratuite en mode acoustique, l'export porte un filigrane).
 
-Les Constellations rendent visible ce qui, d'habitude, reste abstrait. Tu ne « sais » plus un accord : tu le **vois**. Ouvre [Handpan Constellation Studio](/handpan-app) et regarde ton premier triangle s'allumer.
+Les Constellations rendent visible ce qui, d'habitude, reste abstrait. Tu ne « sais » plus un accord : tu le **vois**. Ouvre [Handpan Constellation Studio](/handpan-app), choisis ton instrument — acoustique ou électronique — et regarde ton premier triangle s'allumer.
