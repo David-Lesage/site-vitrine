@@ -12,6 +12,8 @@ draft: false
 
 Dans [Handpan Constellation Studio](/handpan-app), chaque accord se dessine comme un **mini-handpan coloré** : les notes de l'accord sont mises en couleur, l'ordre de jeu est numéroté, et un doigté est suggéré. Tu exportes ces diagrammes en **PDF ou PNG** imprimables pour réviser à ton rythme ou les transmettre — un langage visuel qui se lit sans solfège.
 
+Ces diagrammes se génèrent **que ton handpan soit acoustique ou électronique** : le mini-pan dessiné reprend la disposition réelle de ton instrument. Les exports montrés ici sortent d'un D Minor / Kurd 10 acoustique.
+
 ## Un accord, un mini-handpan
 
 Un accord noté sur une portée classique ne te dit pas *où poser tes mains* sur ton instrument. Le diagramme d'accord de Handpan Constellation Studio répond exactement à cette question. Chaque accord devient une image de ton handpan, avec :
@@ -30,6 +32,8 @@ D'un simple regard, tu passes du nom d'un accord à un geste concret sur l'instr
 La **Grille d'accords** de l'app va plus loin qu'un accord isolé : elle liste **tous les accords jouables sur ta gamme**, classés par familles — majeurs, mineurs, majeurs 7, mineurs 7, 7ᵉ, diminués — avec la mention « renversé » quand l'accord se joue dans un autre ordre. Voici l'export réel d'un **D Minor / Kurd 10** :
 
 ![Export réel de la grille d'accords d'un D Minor Kurd 10 : la roue de la gamme avec ses notes colorées](/images/blog-grille-accords-roue.webp)
+
+<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : électronique, même écran, même état -->
 
 En un document, tu sais exactement ce que ton handpan sait jouer. C'est ta carte d'identité harmonique.
 

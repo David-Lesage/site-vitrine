@@ -12,6 +12,8 @@ draft: false
 
 In [Handpan Constellation Studio](/en/handpan-app), each chord is drawn as a **colourful mini-handpan**: the chord's notes are colour-coded, the play order is numbered, and a fingering is suggested. You export these diagrams as printable **PDF or PNG** to review at your own pace or pass them on — a visual language that reads without music theory.
 
+These diagrams are generated **whether your handpan is acoustic or electronic**: the mini-pan drawn follows the real layout of your instrument. The exports shown here come from an acoustic D Minor / Kurd 10.
+
 ## One chord, one mini-handpan
 
 A chord written on a classical staff doesn't tell you *where to place your hands* on your instrument. Handpan Constellation Studio's chord diagram answers exactly that. Each chord becomes an image of your handpan, with:
@@ -30,6 +32,8 @@ At a single glance, you move from a chord's name to a concrete gesture on the in
 The app's **Chord Grid** goes beyond a single chord: it lists **every chord playable on your scale**, sorted by families — majors, minors, major 7, minor 7, 7th, diminished — with an "inverted" note when the chord is played in another order. Here is the real export of a **D Minor / Kurd 10**:
 
 ![Real export of a D Minor Kurd 10 chord grid: the scale wheel with its colour-coded notes](/images/blog-grille-accords-roue.webp)
+
+<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): electronic, same screen, same state -->
 
 In one document, you know exactly what your handpan can play. It's your harmonic identity card.
 
