@@ -12,6 +12,8 @@ draft: false
 
 Vocal layouts are three settings of [Handpan Constellation Studio's Logic Mode](/en/handpan-app) that rearrange the chords' layout and voicing to match the singer's range. Deep, Bright, Wide: each places the notes differently so the voice settles naturally above your accompaniment, instead of fighting it.
 
+The question behind them — *where does the accompaniment sound, relative to the voice?* — applies to every handpan player. The three-position selector itself is a Logic Mode setting: a section further down says what that means on the acoustic side.
+
 ## Why a layout changes everything for the voice
 
 When you accompany someone singing, it's not only the chord that matters — it's **where** it sounds. A chord placed too high clashes with a high voice; placed too low, it leaves a low voice with no support. The same chord, played with a different voicing, can either wrap around the voice or trample it.
@@ -50,6 +52,12 @@ The **Wide** layout is the versatile one. It opens the accompaniment in a balanc
 
 There's no right or wrong choice: there's the layout that lets **your** voice breathe. The simplest way is to try. Sing a phrase, switch preset, listen for where your voice feels carried rather than hindered. Your ear will decide faster than any rule.
 
-And if your key doesn't sit right with your voice, transposition lets you shift the whole thing in one move to sing at your natural pitch. Layouts adapt the shape, transposition adapts the pitch: together, they mould the accompaniment around you.
+And if your key doesn't sit right with your voice, transposition lets you shift the whole thing in one move to sing at your natural pitch. Layouts adapt the shape, transposition adapts the pitch: together, they mould the accompaniment around you. Here too, free transposition belongs to the electronic handpan; on an acoustic one, the key wheel lets you *hear* your scale in another key as a reversible preview — detailed in [Transposing to sing](/en/blog/transposer-pour-chanter-handpan).
+
+## On an acoustic handpan
+
+An acoustic pan has its notes hammered into the steel once and for all: there is no layout to rearrange, and therefore no Deep / Bright / Wide selector.
+
+The reasoning stays intact, though — the pitch at which you place your accompaniment is what decides whether the voice breathes or struggles. What the three presets do for you, you then do by ear: playing lower under a high voice, higher under a low one. The gesture is manual, the goal is the same.
 
 Want guidance to accompany your voice? [David Lesage's lessons](/en/cours) take you by the hand. Open [Handpan Constellation Studio](/en/handpan-app), try the three layouts, and let your voice find its place.

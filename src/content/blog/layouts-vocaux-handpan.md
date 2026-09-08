@@ -12,6 +12,8 @@ draft: false
 
 Les layouts vocaux sont trois réglages du [Mode Logique de Handpan Constellation Studio](/handpan-app) qui réarrangent la disposition et le voicing des accords selon la tessiture du chanteur. Profond, Brillant, Ample : chacun place les notes différemment pour que la voix se pose naturellement au-dessus de ton accompagnement, sans jamais lutter contre lui.
 
+La question posée ici — *où sonne l'accompagnement par rapport à la voix ?* — se pose à tous les joueurs de handpan. Le sélecteur à trois positions, lui, est un réglage du Mode Logique : une section plus bas dit ce qu'il en est côté acoustique.
+
 ## Pourquoi un layout change tout pour la voix
 
 Quand tu accompagnes quelqu'un qui chante, ce n'est pas seulement l'accord qui compte, c'est **où** il sonne. Un accord posé trop haut vient percuter une voix aiguë ; posé trop bas, il laisse une voix grave sans appui. Le même accord, joué avec un voicing différent, peut soit envelopper la voix, soit lui marcher dessus.
@@ -50,6 +52,12 @@ Le layout **Ample** est le polyvalent. Il ouvre l'accompagnement de façon équi
 
 Il n'y a pas de bon ou de mauvais choix : il y a le layout qui laisse **ta** voix respirer. Le plus simple est d'essayer. Chante une phrase, change de preset, écoute où ta voix se sent portée plutôt que gênée. Ton oreille tranchera plus vite que n'importe quelle règle.
 
-Et si ta tonalité ne tombe pas juste avec ta voix, la transposition te laisse déplacer l'ensemble d'un geste pour chanter dans ta hauteur naturelle. Les layouts adaptent la forme, la transposition adapte la hauteur : ensemble, ils moulent l'accompagnement autour de toi.
+Et si ta tonalité ne tombe pas juste avec ta voix, la transposition te laisse déplacer l'ensemble d'un geste pour chanter dans ta hauteur naturelle. Les layouts adaptent la forme, la transposition adapte la hauteur : ensemble, ils moulent l'accompagnement autour de toi. Là encore, la transposition libre appartient au handpan électronique ; sur un acoustique, la roue de tonalité te fait *entendre* ta gamme dans une autre tonalité, en aperçu réversible — c'est détaillé dans [Transposer pour chanter](/blog/transposer-pour-chanter-handpan).
+
+## Sur un handpan acoustique
+
+Un pan acoustique a ses notes martelées une fois pour toutes : il n'y a pas de disposition à réorganiser, donc pas de sélecteur Profond / Brillant / Ample.
+
+Le raisonnement, lui, reste entier — c'est la hauteur à laquelle tu poses ton accompagnement qui décide si la voix respire ou se bat. Ce que les trois presets font pour toi, tu le fais alors à l'oreille : en jouant plus bas sous une voix aiguë, plus haut sous une voix grave. Le geste est manuel, l'objectif est le même.
 
 Envie d'être guidé pour accompagner ta voix ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-app), essaie les trois layouts, et laisse ta voix trouver sa place.
