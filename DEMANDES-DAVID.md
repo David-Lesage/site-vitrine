@@ -52,3 +52,7 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 - ⏳ David (08/09) : « il faudra faire la même chose [hébreu via Google Translate] pour le site internet vitrine » — transmis à la session SITE (MESSAGE-SESSION-APP-2026-09-08-hebreu.md), à lancer là-bas
 | 07/09 | « les-constellations-du-handpan devrait être remanié et doublé de captures écran parallèles de handpan acoustique car il est vrai autant pour les handpans acoustiques qu'électroniques » | ⏳ en cours (audit article + demande de captures acoustiques à la session APP) |
 | 07/09 | RÈGLE : « notre approche de communication aujourd'hui sur le blog est globale et elle ne doit pas être centrée uniquement sur l'électronique, c'est très important » | ✅ notée (handoff + mémoire) — à appliquer à tout article |
+| 07/09 | « tu as mon accord pour t'occuper des événements Facebook » (Hisong co-organisatrice, 4 événements) | ⏳ en cours (Chrome) |
+| 07/09 | « laisse tomber l'Âme du Tambour ce n'est pas prioritaire » | ✅ abandonné 07/09 |
+| 07/09 | « concernant le remaniement des textes il doit s'appliquer à tous les articles du blog » (langage neutre acoustique/électronique, 3 cas) | ⏳ en cours (2 agents, textes seulement) |
+| 07/09 | « mais nous attendions la nouvelle palette d'outils pour les captures écran » | ✅ compris : AUCUNE capture (ChromaKeys, Constellations acoustique, articles) avant la nouvelle palette ; session APP prévenue |
