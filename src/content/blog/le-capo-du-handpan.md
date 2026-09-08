@@ -7,7 +7,7 @@ category: "methode"
 tags: ["méthode", "électronique", "tonalités"]
 lang: "fr"
 permalink: "le-capo-du-handpan"
-draft: false
+draft: true
 ---
 
 <!-- cover à remplacer : capture CK2-01 -->

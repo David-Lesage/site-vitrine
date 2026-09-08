@@ -7,7 +7,7 @@ category: "methode"
 tags: ["method", "electronic", "keys"]
 lang: "en"
 permalink: "le-capo-du-handpan"
-draft: false
+draft: true
 ---
 
 <!-- cover à remplacer : capture CK2-01 -->
