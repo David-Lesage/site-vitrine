@@ -41,7 +41,7 @@ Et une distinction qui a l'air anodine mais qui change tout : **sélectionner n'
     src="/images/blog-mes-handpans-duo.webp"
     width="1548"
     height="2112"
-    alt="Panneau de droite de Handpan Constellation Studio en mode acoustique, bloc « Mes handpans (2) ». Premier rang : case cochée ⓵, logo rond cuivré, « D Minor / Kurd 10 — D · 10 notes », pastille dorée « tu joues dessus ». Deuxième rang : case cochée ⓶, logo rond cuivré, « B2 Amara 9 — B · 9 notes », mention « à côté ». Sous la liste, la barre d'actions « POUR D Minor / Kurd 10 », avec le crayon de renommage, la pastille ACOUSTIQUE, « Retirer », « Mes morceaux (156) », « Tester une autre tonalité », puis l'encart « 🤝 MON DUO — D Minor / Kurd 10 + B2 Amara 9 · ▶ Jouer le duo · ⇄ inverser · Retirer du duo ». En bas : « Changer de gamme → plus bas ↓ », « ＋ Handpan enregistré », « Partager cette gamme », « ⚡ Ajouter mon Neotone »."
+    alt="Panneau de droite de Handpan Constellation Studio en mode acoustique, bloc « Mes handpans (2) ». Premier rang : case cochée ⓵, logo rond cuivré, « D Minor / Kurd 10 — D · 10 notes », pastille dorée « tu joues dessus ». Deuxième rang : case cochée ⓶, logo rond cuivré, « B2 Amara 9 — B · 9 notes », mention « à côté ». Sous la liste, la barre d'actions « POUR D Minor / Kurd 10 », avec le crayon de renommage, la pastille ACOUSTIQUE, « Retirer », « Mes morceaux (156) », « Tester une autre tonalité », puis l'encart « 🤝 MON DUO — D Minor / Kurd 10 + B2 Amara 9 · ▶ Jouer le duo · ⇄ inverser · Retirer du duo ». En bas : « Changer de gamme → plus bas ↓ », « ＋ Handpan enregistré », « Partager cette gamme », « ⚡ Ajouter un handpan électronique »."
     data-lb="mes-handpans-duo"
     loading="lazy"
   />
@@ -84,7 +84,7 @@ Tu passais dix minutes, sur l'ordinateur, à replacer les **notes du dessous** d
 Ce qui te suit maintenant :
 
 - le **placement des notes du dessous** — la géométrie réelle de *ton* instrument, pas une préférence ;
-- le **calage de l'écran** ;
+- le **calage vertical de l'écran du handpan** ;
 - l'**appairage de ton duo** ;
 - tes **choix d'octave** ;
 - tes **brouillons de gammes** du Labo et ta **progression**.
