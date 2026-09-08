@@ -25,7 +25,7 @@ Le Mode Logique rend ces rôles **visibles** en leur donnant une couleur stable,
     src="/images/app-logique-2026.webp"
     width="2000"
     height="1250"
-    alt="Le Mode Logique de Handpan Constellation Studio, thème sombre. Au centre, un handpan Neotone Mutant dont les notes sont colorées ; la bulle au milieu indique « D Majeur — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». En bas, sept cartouches colorés alignés : I ÉQUILIBRE D en rouge, II ÉLAN Em en orange, III AVENTURE F#m en jaune, IV DÉTENTE G en vert, V TENSION A en bleu, VI NOSTALGIE Bm en violet, VII MYSTÈRE C#° en rose. Sous les cartouches, la flèche « PROGRESSION DES ACCORDS ». À droite, le panneau « Logique et Emotions » avec Ressenti émotionnel activé, la note d'ancrage D et le mode Joyeux."
+    alt="Le Mode Logique de Handpan Constellation Studio, thème sombre. Au centre, un handpan Neotone Mutant dont les notes sont colorées ; l'écran du handpan, au milieu, indique « D Majeur — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». En bas, sept cartouches colorés alignés : I ÉQUILIBRE D en rouge, II ÉLAN Em en orange, III AVENTURE F#m en jaune, IV DÉTENTE G en vert, V TENSION A en bleu, VI NOSTALGIE Bm en violet, VII MYSTÈRE C#° en rose. Sous les cartouches, la flèche « PROGRESSION DES ACCORDS ». À droite, le panneau « Logique et Emotions » avec Ressenti émotionnel activé, la note d'ancrage D et le mode Joyeux."
     data-lb="logique-degres"
     data-lb-wide
     loading="lazy"

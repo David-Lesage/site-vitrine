@@ -25,7 +25,7 @@ Logic Mode makes these roles **visible** by giving them a stable colour, followi
     src="/images/app-logique-2026.webp"
     width="2000"
     height="1250"
-    alt="Handpan Constellation Studio's Logic Mode, dark theme. In the centre, a Neotone Mutant handpan with coloured notes; the bubble in the middle reads « D Majeur — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». Along the bottom, seven coloured cards: I ÉQUILIBRE D in red, II ÉLAN Em in orange, III AVENTURE F#m in yellow, IV DÉTENTE G in green, V TENSION A in blue, VI NOSTALGIE Bm in purple, VII MYSTÈRE C#° in pink. Below them, the « PROGRESSION DES ACCORDS » arrow. On the right, the « Logique et Emotions » panel with emotional wording selected, anchor note D and the Joyeux mode."
+    alt="Handpan Constellation Studio's Logic Mode, dark theme. In the centre, a Neotone Mutant handpan with coloured notes; the handpan screen, in the middle, reads « D Majeur — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». Along the bottom, seven coloured cards: I ÉQUILIBRE D in red, II ÉLAN Em in orange, III AVENTURE F#m in yellow, IV DÉTENTE G in green, V TENSION A in blue, VI NOSTALGIE Bm in purple, VII MYSTÈRE C#° in pink. Below them, the « PROGRESSION DES ACCORDS » arrow. On the right, the « Logique et Emotions » panel with emotional wording selected, anchor note D and the Joyeux mode."
     data-lb="logique-degres"
     data-lb-wide
     loading="lazy"
