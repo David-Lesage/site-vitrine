@@ -12,6 +12,8 @@ draft: false
 
 Jusqu'ici, la partition visuelle de [Handpan Constellation Studio](/handpan-app) servait à **garder** et à **transmettre** : on l'exportait en [PDF](/blog/exporter-ses-partitions-handpan), on l'imprimait, on l'envoyait. Elle sait maintenant faire une chose de plus, et c'est celle qui change le travail quotidien : elle **se joue**. Le diagramme en cours s'illumine, la page défile toute seule, et tu n'as plus qu'à suivre.
 
+Tout ce qui suit vaut **que ton handpan soit acoustique ou électronique** : une partition, un lecteur, un pupitre et une impression ne dépendent pas de l'instrument sur lequel tu la joues.
+
 ## Lire une partition, c'est déjà travailler à deux choses
 
 Quand tu déchiffres une grille d'accords, ton cerveau fait deux métiers en même temps : jouer, et **savoir où tu en es**. Le second mange presque toute l'énergie. On perd sa ligne, on répète le mauvais couplet, on s'arrête pour vérifier — et l'élan musical retombe.
@@ -123,6 +125,8 @@ Un morceau que tu as composé s'imprime maintenant comme il se joue : **une lign
   <figcaption>Un morceau composé dans l'app, exporté en PDF et imprimé en <em>Éco-Encre</em> : <strong>une ligne par partie</strong>, chaque section annoncée par son bandeau de couleur — <span style="color:#3b82f6">Couplet</span> en bleu, <span style="color:#ec4899">Refrain</span> en rose — et les diagrammes dans l'ordre de jeu.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : acoustique, même écran, même état — le même export PDF pour une gamme acoustique, dont le schéma d'instrument montre un pan acoustique — copier la <figure> ci-dessus, alt + figcaption à écrire d'après la capture -->
 
 Tu peux aussi choisir la taille des diagrammes — S, M, L ou XL — pour une partition lisible à distance, et réordonner les lignes de paroles par glisser-déposer.
 

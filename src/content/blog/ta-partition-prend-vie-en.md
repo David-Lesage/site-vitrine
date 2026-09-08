@@ -12,6 +12,8 @@ draft: false
 
 Until now, [Handpan Constellation Studio's](/en/handpan-app) visual score was there to **keep** and to **pass on**: you exported it as a [PDF](/en/blog/exporter-ses-partitions-handpan), printed it, sent it. It can now do one more thing, and it's the one that changes daily practice: it **plays itself**. The current diagram lights up, the page scrolls on its own, and all you have to do is follow.
 
+Everything below holds **whether your handpan is acoustic or electronic**: a score, a player, a music stand and a printout don't depend on the instrument you play them on.
+
 ## Reading a score already means doing two jobs
 
 When you work through a chord chart, your brain does two jobs at once: playing, and **knowing where you are**. The second one eats almost all the energy. You lose your line, you repeat the wrong verse, you stop to check — and the musical momentum drops.
@@ -123,6 +125,8 @@ A piece you composed now prints the way it's played: **one line per part**, with
   <figcaption>A piece composed in the app, exported to PDF and printed in <em>Eco-Ink</em>: <strong>one line per part</strong>, each section announced by its colour band — <span style="color:#3b82f6">Couplet</span> in blue, <span style="color:#ec4899">Refrain</span> in pink — and the diagrams in playing order.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
+<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new toolbar) : acoustic, same screen, same state — the same PDF export for an acoustic scale, whose instrument diagram shows an acoustic pan — copy the <figure> above, alt + figcaption to be written from the screenshot -->
 
 You can also choose the diagram size — S, M, L or XL — for a score that reads from a distance, and reorder lyric lines by drag and drop.
 
