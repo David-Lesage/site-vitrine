@@ -48,6 +48,17 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## ÉTAT ACTUEL — 08/09/2026 (23ᵉ passe, 17h) — 🎬 PRODUCTION DES CAPTURES EN COURS (go David relayé par l'APP ~16h45)
+
+David : « Envoie les articles du site en production avec les captures écran maintenant que la barre d'outils est opérationnelle ».
+L'APP nous laisse produire nous-mêmes (scripts partition-v2 : lib.mjs, controle-pixels.mjs, convertir-site.sh ; app dev locale
+`?nogate=1&studio=1`). Deux agents en parallèle, fichiers disjoints :
+- Agent 1 (port 4321, `audits/captures-2026-09-08-blog-lot-final/`) : 16 CK1 (article 1, + cover) et 3 Constellations acoustiques.
+- Agent 2 (port 4322, `…-lot-final-capo/`) : 8 CK2, passe le capo en draft:false si CK2-02a/b/c prouvent la forme identique.
+- Captures MONTRANT la palette : en dernier (2 retouches APP imminentes : contour Exporter, icône imprimante ; entrée 280 palette
+  sur une ligne en prod 16h08). Ensuite : lot D (10 figures blog périmées) puis E (21 jumelles).
+- À chaque retour d'agent : vérifier à l'œil 1-2 webp, build, `vercel --prod`, push, changelog blog si convention.
+
 ## ÉTAT ACTUEL — 08/09/2026 (22ᵉ passe, après-midi) — ✍️ 3 articles écrits · blog corrigé (278/279) · 58 captures commandées à l'APP
 
 Demande David 15h (relayée par l'APP) : « écrire les 3 articles en attente avec les captures d'écran adéquates, et enchaîne
