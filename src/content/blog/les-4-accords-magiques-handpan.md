@@ -12,6 +12,8 @@ draft: false
 
 Les « 4 accords magiques » sont une petite suite d'accords qui revient dans des milliers de chansons populaires. Au handpan, le [Mode Logique de Handpan Constellation Studio](/handpan-app) te les met sous les mains en couleurs : quatre degrés, quatre émotions, et tout un pan de musique qui s'ouvre — sans lire une seule note.
 
+Cette suite ne dépend d'aucun instrument en particulier : elle vaut **que ton handpan soit acoustique ou électronique**. Ce qui change d'un cas à l'autre, c'est seulement la façon dont tu la retrouves sous tes mains.
+
 ## Pourquoi quatre accords suffisent
 
 Si tant de chansons semblent « faciles à reconnaître », c'est souvent parce qu'elles partagent la même ossature harmonique. Quatre degrés reviennent en boucle, dans un ordre légèrement variable, sous d'innombrables tubes. Ce n'est pas de la paresse d'auteur : cette suite fonctionne parce qu'elle raconte une histoire émotionnelle complète — un départ, une ouverture, un doute, un retour.
@@ -28,6 +30,8 @@ Dans le Mode Logique, chaque degré porte une couleur et une émotion stables, c
 - Le degré **IV** — l'ouverture, le grand espace.
 
 ![Quatre accords en diagrammes mini-handpan colorés](/images/blog-grille-accords-familles.webp)
+
+Sur un handpan **acoustique**, la même suite se joue avec les notes que ton instrument possède : certains pans la donnent entière, d'autres n'en donnent qu'une partie. L'écran [✨ Révéler](/blog/reveler-les-accords-de-ton-handpan) te dit exactement lesquels de ces accords tombent dans ta gamme, et lesquels manquent.
 
 Tu n'as plus à retenir des noms d'accords ni des positions abstraites. Tu suis une suite de couleurs, et la boucle magique tourne sous tes mains. C'est le même geste que celui décrit dans [Accompagner des chansons au handpan](/blog/accompagner-des-chansons-au-handpan) : enchaîner des accords comme le ferait un guitariste.
 

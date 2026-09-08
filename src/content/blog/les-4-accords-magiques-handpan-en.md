@@ -12,6 +12,8 @@ draft: false
 
 The "4 magic chords" are a short chord sequence that recurs in thousands of popular songs. On the handpan, [Handpan Constellation Studio's Logic Mode](/en/handpan-app) puts them under your hands in colour: four degrees, four emotions, and a whole swath of music opening up — without reading a single note.
 
+The sequence depends on no particular instrument: it holds **whether your handpan is acoustic or electronic**. All that changes is how you find it under your hands.
+
 ## Why four chords are enough
 
 If so many songs feel "easy to recognise", it's often because they share the same harmonic skeleton. Four degrees loop around, in a slightly variable order, beneath countless hits. It's not writer's laziness: this sequence works because it tells a complete emotional story — a departure, an opening, a doubt, a return.
@@ -28,6 +30,8 @@ In Logic Mode, each degree carries a stable colour and emotion, as explained in 
 - Degree **IV** — openness, the wide space.
 
 ![Four chords shown as coloured mini-handpan diagrams](/images/blog-grille-accords-familles.webp)
+
+On an **acoustic** handpan, the same sequence is played with the notes your instrument holds: some pans give it whole, others give only part of it. The [✨ Reveal](/en/blog/reveler-les-accords-de-ton-handpan) screen tells you exactly which of these chords fall inside your scale, and which are missing.
 
 You no longer have to remember chord names or abstract positions. You follow a sequence of colours, and the magic loop turns under your hands. It's the same gesture described in [Accompanying songs on handpan](/en/blog/accompagner-des-chansons-au-handpan): chaining chords the way a guitarist would.
 
