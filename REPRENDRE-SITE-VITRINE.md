@@ -48,6 +48,22 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## ÉTAT ACTUEL — 08/09/2026 (24ᵉ passe, 22h) — ✅ 3 ARTICLES EN PROD AVEC CAPTURES RÉELLES · lot D+E en cours
+
+- **En prod** (`bba1810` Constellations 3 acoustiques · `61a168b` Capo 8 captures, draft:false · `da3649c` Lire les couleurs 15 captures
+  + nouvelle cover `blog-chromakeys-2026-01-ouverture-acoustique.webp`). PNG/scripts : dépôt APP `audits/captures-2026-09-08-blog-lot-final*/`.
+- **Constats mesurés qui contredisent le message APP 276** (transmis à l'APP) : en Logique sur Mutant do majeur, de nombreux creux SONT
+  coupés en 2 couleurs de degré ; « Notes partagées » côté Neotone en Gammes impossible (Bibliothèque de Gammes = pan vide) ; le réglage
+  ne se renomme plus « Accords » hors Logique (calcul change, pas le nom) ; « 22 anneaux » → 8 creux sur 10 découpés sur D Kurd.
+  Les textes des articles disent ce qui a été VU.
+- **États inexistants, non forcés** : CK1-05-electronique, CK2-04 (morceau→progression en Logique), CK2-07 (Neotone¹ vs Mutant : pan
+  identique en Logique, diff 0,97 %) → à illustrer autrement si David y tient. Mineur harmonique photographié (même tracé) ; mélodique
+  « à confirmer » (mesure APP attendue).
+- **Pièges outillage documentés** (LISEZMOI lot-final) : `deviceScaleFactor` dans le contrôle pixel ; ports CDP distincts par instance
+  Chrome ; poser l'ancrage remet le mode en MAJEUR (poser la nuance mineure APRÈS la tonique) ; champ `emotionalScaleMode`.
+- **En cours** : agent lot D (10 figures périmées palette/écran) + lot E (21 jumelles), port 4323, `audits/captures-2026-09-08-blog-lot-DE/`.
+  À son retour : vérifier 1-2 webp, build, deploy, push.
+
 ## ÉTAT ACTUEL — 08/09/2026 (23ᵉ passe, 17h) — 🎬 PRODUCTION DES CAPTURES EN COURS (go David relayé par l'APP ~16h45)
 
 David : « Envoie les articles du site en production avec les captures écran maintenant que la barre d'outils est opérationnelle ».
