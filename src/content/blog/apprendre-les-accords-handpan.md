@@ -31,7 +31,7 @@ Le principe est simple et visuel. Tu choisis un accord, et l'app **te montre exa
     src="/images/app-mode-guide-note-allumee.webp"
     width="2000"
     height="1250"
-    alt="Le Mode Logique pendant l'apprentissage guidé. Au centre du handpan, une bulle blanche affiche « Joue la note qui pulse ! ». Quatre notes sont allumées en rouge et cerclées : le ding D2 marqué d'un petit R, A3 marqué d'un L, F#3 et D4 marqué d'un R ; toutes les autres notes du pan sont éteintes, en gris, simplement cerclées de jaune. En bas, les sept cartouches de degrés de I ÉQUILIBRE Dm à VII MYSTÈRE C."
+    alt="Le Mode Logique pendant l'apprentissage guidé. Au centre du handpan, l'écran du handpan affiche « Joue la note qui pulse ! ». Quatre notes sont allumées en rouge et cerclées : le ding D2 marqué d'un petit R, A3 marqué d'un L, F#3 et D4 marqué d'un R ; toutes les autres notes du pan sont éteintes, en gris, simplement cerclées de jaune. En bas, les sept cartouches de degrés de I ÉQUILIBRE Dm à VII MYSTÈRE C."
     data-lb="mode-guide"
     data-lb-wide
     loading="lazy"

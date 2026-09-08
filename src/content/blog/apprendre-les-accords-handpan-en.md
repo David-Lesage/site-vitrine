@@ -31,7 +31,7 @@ The idea is simple and visual. You pick a chord, and the app **shows you exactly
     src="/images/app-mode-guide-note-allumee.webp"
     width="2000"
     height="1250"
-    alt="Logic Mode during guided learning. At the centre of the handpan, a white bubble reads « Joue la note qui pulse ! » (play the pulsing note). Four notes are lit in red and outlined: the ding D2 marked with a small R, A3 marked L, F#3, and D4 marked R; every other note on the pan is dark grey with a plain yellow outline. Along the bottom, the seven degree cards from I ÉQUILIBRE Dm to VII MYSTÈRE C."
+    alt="Logic Mode during guided learning. At the centre of the handpan, the handpan screen reads « Joue la note qui pulse ! » (play the pulsing note). Four notes are lit in red and outlined: the ding D2 marked with a small R, A3 marked L, F#3, and D4 marked R; every other note on the pan is dark grey with a plain yellow outline. Along the bottom, the seven degree cards from I ÉQUILIBRE Dm to VII MYSTÈRE C."
     data-lb="mode-guide"
     data-lb-wide
     loading="lazy"
