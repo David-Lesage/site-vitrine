@@ -12,6 +12,8 @@ draft: false
 
 Oui, on peut accompagner des chansons au handpan comme on le ferait à la guitare ou au piano. Le [Mode Logique de Handpan Constellation Studio](/handpan-app) pose sept accords colorés — un par degré, un par émotion — sous tes mains. Tu enchaînes des accords au lieu de chercher des notes isolées, et l'instrument méditatif devient un partenaire d'accompagnement, sans une ligne de solfège.
 
+Cela vaut **que ton handpan soit acoustique ou électronique** : le Mode Logique existe des deux côtés, et poser une suite d'accords sous une chanson se joue de la même façon sur un pan martelé et sur un pan à pads.
+
 ## Le blocage : « le handpan ne fait que des nappes »
 
 Le handpan a peu de notes. Neuf, dix, parfois treize. Face à cette contrainte, presque tout le monde arrive à la même conclusion : on ne peut « que » faire des nappes planantes, des mélodies contemplatives, de la méditation sonore. Magnifique, mais limité. On l'imagine comme un instrument de niche, mélodique et introspectif — jamais comme un instrument qui **porte une chanson**.
@@ -38,9 +40,13 @@ D'un coup, ta poignée de notes n'est plus une contrainte : c'est une palette d'
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
+<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : acoustique, même écran, même état -->
+
 ### Accompagner un morceau connu
 
 Conçu pour cet usage, le Mode Logique te laisse **accompagner la plupart des morceaux connus comme le ferait un guitariste ou un pianiste**. Tu suis la suite d'accords d'une chanson en posant les couleurs correspondantes — le handpan tient la structure harmonique pendant que la mélodie vit par-dessus.
+
+Cette suite d'accords se pose aussi bien sur un handpan acoustique — le Mode Logique acoustique affiche les mêmes sept degrés colorés sur les notes réelles de ta gamme.
 
 ### Accompagner une voix
 
@@ -66,6 +72,6 @@ L'accompagnement n'est qu'une porte. Une fois les couleurs apprises, tu peux **c
 
 ## De niche à instrument d'accompagnement
 
-C'est tout le déplacement que propose cette approche : sortir le handpan de sa case « instrument méditatif de niche » pour en faire un instrument d'accompagnement accessible, au même titre qu'une guitare. Sans solfège, sans années de théorie — juste des couleurs, des émotions, et l'envie de porter une chanson.
+C'est tout le déplacement que propose cette approche : sortir le handpan — acoustique ou électronique — de sa case « instrument méditatif de niche » pour en faire un instrument d'accompagnement accessible, au même titre qu'une guitare. Sans solfège, sans années de théorie — juste des couleurs, des émotions, et l'envie de porter une chanson.
 
 Envie d'être guidé dans cette approche ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-app) et pose ta première suite d'accords — la chanson attend son accompagnement.

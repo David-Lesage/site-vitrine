@@ -12,6 +12,8 @@ draft: false
 
 Yes, you can accompany songs on the handpan just as you would on guitar or piano. [Handpan Constellation Studio's Logic Mode](/en/handpan-app) lays seven coloured chords — one per degree, one per emotion — under your hands. You chain chords instead of hunting for isolated notes, and the meditative instrument becomes an accompaniment partner, without a single line of music theory.
 
+This holds **whether your handpan is acoustic or electronic**: Logic Mode exists on both sides, and laying a chord progression under a song works the same way on a hammered pan and on a pad pan.
+
 ## The block: "the handpan only does drones"
 
 The handpan has few notes. Nine, ten, sometimes thirteen. Faced with that constraint, almost everyone reaches the same conclusion: you can "only" make floating drones, contemplative melodies, sound meditation. Beautiful, but limited. People picture it as a niche instrument, melodic and introspective — never as an instrument that **carries a song**.
@@ -38,9 +40,13 @@ Suddenly your handful of notes is no longer a constraint: it's a palette of chor
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
+<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): acoustic, same screen, same state -->
+
 ### Accompanying a known song
 
 Designed for this, Logic Mode lets you **accompany most well-known songs the way a guitarist or pianist would**. You follow a song's chord sequence by laying down the matching colours — the handpan holds the harmonic structure while the melody lives on top.
+
+That same chord progression sits just as well on an acoustic handpan — acoustic Logic Mode shows the same seven coloured degrees on the real notes of your scale.
 
 ### Accompanying a voice
 
@@ -66,6 +72,6 @@ Accompaniment is just one door. Once you've learned the colours, you can **compo
 
 ## From niche to accompaniment instrument
 
-That's the whole shift this approach offers: pulling the handpan out of its "niche meditative instrument" box to make it an accessible accompaniment instrument, on par with a guitar. No music theory, no years of study — just colours, emotions, and the desire to carry a song.
+That's the whole shift this approach offers: pulling the handpan — acoustic or electronic — out of its "niche meditative instrument" box to make it an accessible accompaniment instrument, on par with a guitar. No music theory, no years of study — just colours, emotions, and the desire to carry a song.
 
 Want to be guided through this approach? [David Lesage's lessons](/en/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/en/handpan-app) and lay down your first chord sequence — the song is waiting for its accompaniment.
