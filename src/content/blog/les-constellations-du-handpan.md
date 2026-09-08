@@ -40,7 +40,19 @@ Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée �
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE ACOUSTIQUE À INSÉRER : D Kurd 10 Yishama, même accord, tracé Polygone — fichier attendu /images/blog-constellations-3-traces-2026-polygone-acoustique.webp — copier la <figure> ci-dessus, alt + figcaption à écrire d'après la capture -->
+<figure>
+  <img
+    src="/images/blog-constellations-3-traces-2026-polygone-acoustique.webp"
+    width="2000"
+    height="1250"
+    alt="Le même accord de ré mineur, cette fois sur un handpan acoustique D Minor / Kurd 10, dans l'onglet Gammes. Quatre creux sont allumés — le ding D3 et le D4 en orange, le F4 en vert, le A4 en indigo — et un tracé orange les relie en une figure fermée : du ding vers A4, puis F4, puis D4, et retour au ding. Les six autres creux (A3, A#3, C4, E4, G4, C5) restent gris. Sous le ding, l'écran du handpan affiche « D Minor / Kurd 10 »."
+    data-lb="constellations"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le tracé <strong>Polygone</strong> sur un pan <strong>acoustique</strong> : même accord, figure fermée elle aussi — mais le dessin est celui de <em>cet</em> instrument, pas d'un gabarit.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### L'Ouvert : le chemin des notes
 
@@ -60,7 +72,19 @@ Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE ACOUSTIQUE À INSÉRER : D Kurd 10 Yishama, même accord, tracé Ouvert — fichier attendu /images/blog-constellations-3-traces-2026-ouvert-acoustique.webp — copier la <figure> ci-dessus, alt + figcaption à écrire d'après la capture -->
+<figure>
+  <img
+    src="/images/blog-constellations-3-traces-2026-ouvert-acoustique.webp"
+    width="2000"
+    height="1250"
+    alt="Le même accord de ré mineur sur le même handpan acoustique D Minor / Kurd 10, tracé en mode Ouvert : le chemin orange ne se referme plus. Il part du ding D3, rejoint le D4 en bas à gauche, monte au F4 vert, puis au A4 indigo, et s'arrête là. Les mêmes quatre creux sont allumés, les six autres restent gris."
+    data-lb="constellations"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le tracé <strong>Ouvert</strong> : mêmes notes, mais le chemin s'arrête sur la dernière. Il se lit comme un parcours, du grave vers l'aigu.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### Les Mains : qui joue quoi
 
@@ -80,7 +104,19 @@ Le mode **Mains** colore le tracé selon la main qui joue chaque note. D'un rega
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE ACOUSTIQUE À INSÉRER : D Kurd 10 Yishama, même accord, tracé Mains — fichier attendu /images/blog-constellations-3-traces-2026-mains-acoustique.webp — copier la <figure> ci-dessus, alt + figcaption à écrire d'après la capture -->
+<figure>
+  <img
+    src="/images/blog-constellations-3-traces-2026-mains-acoustique.webp"
+    width="2000"
+    height="1250"
+    alt="Le même accord de ré mineur sur le handpan acoustique D Minor / Kurd 10, tracé en mode Mains. Le ding D3 est cerclé de rouge et marqué R ; A4, F4 et D4 sont cerclés de bleu et marqués L, reliés entre eux par un trait bleu. La répartition entre les deux mains se lit d'un regard."
+    data-lb="constellations"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le tracé <strong>Mains</strong> : le ding revient à la droite (<em>R</em>, cercle rouge), les trois notes du pourtour à la gauche (<em>L</em>, cercle bleu et trait bleu qui les relie).</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Ce qui diffère entre acoustique et électronique
 

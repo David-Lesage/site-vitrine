@@ -40,7 +40,19 @@ Handpan Constellation Studio lets you choose **how** that drawing appears, depen
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- 📷 ACOUSTIC SCREENSHOT TO INSERT / CAPTURE ACOUSTIQUE À INSÉRER : D Kurd 10 Yishama, same chord, Polygon trace — expected file /images/blog-constellations-3-traces-2026-polygone-acoustique.webp — copy the <figure> above, alt + figcaption to be written from the screenshot -->
+<figure>
+  <img
+    src="/images/blog-constellations-3-traces-2026-polygone-acoustique.webp"
+    width="2000"
+    height="1250"
+    alt="The same D minor chord, this time on an acoustic D Minor / Kurd 10 handpan, in the Scales tab. Four dimples are lit — the D3 ding and D4 in orange, F4 in green, A4 in indigo — and an orange path joins them into a closed figure: from the ding to A4, then F4, then D4, and back to the ding. The six other dimples (A3, A#3, C4, E4, G4, C5) stay grey. Under the ding, the handpan screen reads « D Minor / Kurd 10 »."
+    data-lb="constellations"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The <strong>Polygon</strong> trace on an <strong>acoustic</strong> pan: same chord, also a closed figure — but the shape belongs to <em>this</em> instrument, not to a template. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### The Open trace: the path of the notes
 
@@ -60,7 +72,19 @@ Handpan Constellation Studio lets you choose **how** that drawing appears, depen
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- 📷 ACOUSTIC SCREENSHOT TO INSERT / CAPTURE ACOUSTIQUE À INSÉRER : D Kurd 10 Yishama, same chord, Open trace — expected file /images/blog-constellations-3-traces-2026-ouvert-acoustique.webp — copy the <figure> above, alt + figcaption to be written from the screenshot -->
+<figure>
+  <img
+    src="/images/blog-constellations-3-traces-2026-ouvert-acoustique.webp"
+    width="2000"
+    height="1250"
+    alt="The same D minor chord on the same acoustic D Minor / Kurd 10 handpan, drawn in Open mode: the orange path no longer closes. It starts at the D3 ding, reaches D4 at the lower left, climbs to the green F4, then to the indigo A4, and stops there. The same four dimples are lit, the other six stay grey."
+    data-lb="constellations"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The <strong>Open</strong> trace: same notes, but the path stops on the last one. It reads as a journey, from low to high. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### Hands: who plays what
 
@@ -80,7 +104,19 @@ Handpan Constellation Studio lets you choose **how** that drawing appears, depen
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- 📷 ACOUSTIC SCREENSHOT TO INSERT / CAPTURE ACOUSTIQUE À INSÉRER : D Kurd 10 Yishama, same chord, Hands trace — expected file /images/blog-constellations-3-traces-2026-mains-acoustique.webp — copy the <figure> above, alt + figcaption to be written from the screenshot -->
+<figure>
+  <img
+    src="/images/blog-constellations-3-traces-2026-mains-acoustique.webp"
+    width="2000"
+    height="1250"
+    alt="The same D minor chord on the acoustic D Minor / Kurd 10 handpan, drawn in Hands mode. The D3 ding is ringed in red and marked R; A4, F4 and D4 are ringed in blue and marked L, joined to each other by a blue line. The split between the two hands reads at a glance."
+    data-lb="constellations"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The <strong>Hands</strong> trace: the ding goes to the right hand (<em>R</em>, red ring), the three outer notes to the left (<em>L</em>, blue ring and blue connecting line). (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## What actually differs between acoustic and electronic
 
