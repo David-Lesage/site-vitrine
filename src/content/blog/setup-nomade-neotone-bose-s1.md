@@ -10,6 +10,8 @@ permalink: "setup-nomade-neotone-bose-s1"
 draft: false
 ---
 
+**Cet article concerne le handpan électronique** : il décrit un setup sonorisé bâti autour d'un instrument à sorties ligne. Un handpan acoustique se sonorise autrement, au micro, et ce n'est pas le sujet ici.
+
 Jouer sur une plage au coucher du soleil, en forêt, sur une terrasse ou dans une salle — sans chercher une prise, sans ingénieur du son, sans un coffre rempli de matériel. C'est exactement ce que permet le duo **[Neotone](/le-neotone) + Bose S1 Pro+** : deux appareils sur batterie, un câble entre les deux, et tu es autonome. Voici le setup que j'utilise vraiment, avec les liens pour chaque élément.
 
 ## Pourquoi ce duo fonctionne si bien

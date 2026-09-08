@@ -10,7 +10,7 @@ permalink: "atlas-des-gammes-de-handpan"
 draft: false
 ---
 
-L'Atlas Sonore de [Handpan Constellation Studio](/handpan-app) est une carte des gammes du handpan que tu peux explorer comme un voyageur. Chaque gamme y est classée, écoutable en un clic et affichée en couleurs sur un pan. Tu parcours des ambiances venues de cultures et de pays différents, tu compares, tu ressens — avant même de savoir en nommer une seule note.
+L'Atlas Sonore de [Handpan Constellation Studio](/handpan-app) est une carte des gammes du handpan que tu peux explorer comme un voyageur. Chaque gamme y est classée, écoutable en un clic et affichée en couleurs sur un pan. Tu parcours des ambiances venues de cultures et de pays différents, tu compares, tu ressens — avant même de savoir en nommer une seule note. L'Atlas s'explore **que ton handpan soit acoustique ou électronique** : dans les deux cas tu écoutes et tu vois avant de décider.
 
 ## Pourquoi un Atlas plutôt qu'une liste
 
@@ -38,9 +38,11 @@ Chaque gamme porte une couleur émotionnelle : lumineuse, mélancolique, mystér
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
+<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : électronique, même écran, même état -->
+
 ### Écouter avant de choisir
 
-D'un clic, tu entends la gamme sonner. Pas besoin de la posséder ni de l'imaginer : Handpan Constellation Studio la joue pour toi. C'est précieux quand tu hésites avant d'acheter un handpan acoustique, ou avant de charger une gamme sur ton [handpan électronique Neotone](/le-neotone).
+D'un clic, tu entends la gamme sonner. Pas besoin de la posséder ni de l'imaginer : Handpan Constellation Studio la joue pour toi. C'est précieux quand tu hésites avant d'acheter un handpan acoustique, ou avant de charger une gamme sur ton [handpan électronique Neotone](/le-neotone). Une nuance honnête, propre à chaque instrument : l'électronique charge n'importe quelle gamme dans n'importe quelle tonalité, tandis qu'un pan acoustique garde ses notes martelées — l'app te fait alors **écouter** ta gamme transposée sans la remplacer.
 
 ### Voir la gamme en couleurs
 

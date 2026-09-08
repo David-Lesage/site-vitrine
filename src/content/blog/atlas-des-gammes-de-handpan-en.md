@@ -10,7 +10,7 @@ permalink: "atlas-des-gammes-de-handpan"
 draft: false
 ---
 
-The Sound Atlas in [Handpan Constellation Studio](/en/handpan-app) is a map of handpan scales you can explore like a traveller. Every scale is sorted, playable in one click and shown in colour on a pan. You roam through moods from different cultures and countries, you compare, you feel — before you can even name a single note.
+The Sound Atlas in [Handpan Constellation Studio](/en/handpan-app) is a map of handpan scales you can explore like a traveller. Every scale is sorted, playable in one click and shown in colour on a pan. You roam through moods from different cultures and countries, you compare, you feel — before you can even name a single note. The Atlas is there **whether your handpan is acoustic or electronic**: either way you listen and you look before you decide.
 
 ## Why an Atlas instead of a list
 
@@ -38,9 +38,11 @@ Each scale carries an emotional colour: bright, melancholic, mysterious, soothin
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
+<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): electronic, same screen, same state -->
+
 ### Listen before you choose
 
-With one click, you hear the scale sound. No need to own it or imagine it: Handpan Constellation Studio plays it for you. That's precious when you're hesitating before buying an acoustic handpan, or before loading a scale onto your [electronic Neotone handpan](/en/le-neotone).
+With one click, you hear the scale sound. No need to own it or imagine it: Handpan Constellation Studio plays it for you. That's precious when you're hesitating before buying an acoustic handpan, or before loading a scale onto your [electronic Neotone handpan](/en/le-neotone). One honest difference between the two instruments: an electronic pan loads any scale in any key, while an acoustic pan keeps its hammered notes — so the app lets you **hear** your scale transposed without replacing it.
 
 ### See the scale in colour
 

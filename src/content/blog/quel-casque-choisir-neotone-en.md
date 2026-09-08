@@ -10,6 +10,8 @@ permalink: "quel-casque-choisir-neotone"
 draft: false
 ---
 
+**This article is about the electronic handpan**: it covers listening gear plugged into a headphone output, which an acoustic handpan does not have.
+
 The [Neotone](/en/le-neotone) has a dedicated headphone output — and headphones are [the most immersive experience](/en/blog/jouer-et-chanter-au-casque-neotone) it offers. But which ones should you choose? Here's my real setup, the one I use every day: **open-back headphones at home and in the studio**, **in-ears on stage**. Two uses, two tools, with prices and links.
 
 ## At home and in the studio: the Beyerdynamic DT-990 Pro

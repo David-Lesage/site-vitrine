@@ -12,6 +12,8 @@ youtubeId: "v87I0csinRY"
 draft: false
 ---
 
+**Cet article concerne le handpan électronique** : il explique ce que cet instrument-là apporte, et pour qui. Il ne remplace rien — il se lit à côté de l'acoustique, pas contre lui.
+
 Un handpan électronique comme le **Neotone** te donne la sensation et le geste d'un handpan acoustique, mais avec la liberté du numérique : tu joues au casque à minuit sans réveiller personne, tu changes de gamme en une seconde, tu ajoutes des effets, tu enregistres en qualité studio et tu le branches à ton ordinateur en MIDI. Un seul instrument, un monde de possibilités.
 
 ## Jouer à toute heure, au casque
