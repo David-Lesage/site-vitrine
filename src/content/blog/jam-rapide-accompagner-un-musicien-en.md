@@ -12,6 +12,8 @@ draft: false
 
 [Handpan Constellation Studio's](/en/handpan-app) **Quick Jam** (⚡ *Jam Rapide* in the app, still labelled in French) turns a line thrown across the room — "we're in G minor, I-IV-V on the verse" — into a ready-to-play score, with named sections and diagrams in the right order. Three clicks. About as long as the guitarist needs to finish tuning.
 
+That route doesn't depend on the instrument in your hands: **acoustic or electronic**, you give the same key, you lay out the same degrees, and you get the same score. Only one step in this article applies specifically to the electronic handpan, and it is flagged as such.
+
 ## The scene every handpan player knows
 
 A campfire, a living room, a jam. Someone says "it's in A minor, four chords, you following?". Everyone starts. You're still wondering whether your scale contains an E, which note to strike first, and whether what comes out will be in tune.
@@ -58,11 +60,11 @@ Type them exactly as you're given them — "Am, F, C, G", or in Do Re Mi if that
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-## The handpan you'd need
+## The "See the scale" card: a step specific to the electronic handpan
 
-On the way out of Quick Jam, a "See the scale" card (*Voir la gamme*) draws the matching instrument on a **real Neotone shell**: each chord is voiced root · third · fifth · octave, exactly as in Logic Mode, and the shell picks itself — Neotone¹ with 10 notes if that's enough, Mutant with 19 otherwise.
+This one applies to the electronic handpan only. On the way out of Quick Jam, a "See the scale" card (*Voir la gamme*) draws the matching instrument on a **real Neotone shell**: each chord is voiced root · third · fifth · octave, exactly as in Logic Mode, and the shell picks itself — Neotone¹ with 10 notes if that's enough, Mutant with 19 otherwise.
 
-So before playing a single note you can see whether the piece fits your instrument — and if you play a [Neotone](/en/le-neotone), you can load that layout straight away.
+So before playing a single note you can see whether the piece fits your instrument — and if you play a [Neotone](/en/le-neotone), you can load that layout straight away. On an acoustic handpan there is nothing to load: its notes are hammered into the steel once and for all. The card then serves purely as a comparison — what the piece asks for, against what your pan holds.
 
 <figure>
   <img

@@ -12,6 +12,8 @@ draft: false
 
 Le **Jam Rapide** de [Handpan Constellation Studio](/handpan-app) transforme une phrase lancée en l'air — « on est en sol mineur, I-IV-V au couplet » — en une partition prête à jouer, sections nommées et diagrammes dans le bon ordre. Trois clics. Le temps que le guitariste finisse d'accorder.
 
+Ce chemin-là ne dépend pas de l'instrument que tu as sous les mains : **acoustique ou électronique**, tu donnes la même tonalité, tu poses les mêmes degrés, et tu obtiens la même partition. Une seule étape de cet article vaut spécifiquement pour le handpan électronique, et elle est annoncée comme telle.
+
 ## La scène que tout joueur de handpan a vécue
 
 Un feu de camp, un salon, une jam. Quelqu'un dit « c'est en la mineur, quatre accords, tu suis ? ». Tout le monde démarre. Toi, tu es encore en train de te demander si ta gamme contient un mi, quelle note attaquer en premier, et si ce qui va sortir sera juste.
@@ -58,11 +60,11 @@ Tape-les tels qu'on te les donne — « Am, F, C, G », ou en Do Ré Mi si c'est
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-## Le handpan qu'il te faut
+## La fiche « Voir la gamme » : une étape propre au handpan électronique
 
-À la sortie du Jam Rapide, une fiche « Voir la gamme » te dessine l'instrument correspondant sur une **vraie coque Neotone** : chaque accord y est disposé fondamentale · tierce · quinte · octave, exactement comme en Mode Logique, et la coque se choisit toute seule — Neotone¹ à 10 notes si ça suffit, Mutant à 19 notes sinon.
+Celle-ci ne vaut que pour le handpan électronique. À la sortie du Jam Rapide, une fiche « Voir la gamme » te dessine l'instrument correspondant sur une **vraie coque Neotone** : chaque accord y est disposé fondamentale · tierce · quinte · octave, exactement comme en Mode Logique, et la coque se choisit toute seule — Neotone¹ à 10 notes si ça suffit, Mutant à 19 notes sinon.
 
-Tu vois donc, avant de jouer une seule note, si le morceau tient sur ton instrument — et si tu joues sur un [Neotone](/le-neotone), tu peux charger cette disposition directement.
+Tu vois donc, avant de jouer une seule note, si le morceau tient sur ton instrument — et si tu joues sur un [Neotone](/le-neotone), tu peux charger cette disposition directement. Sur un handpan acoustique, il n'y a rien à charger : les notes y sont martelées une fois pour toutes. La fiche te sert alors seulement de point de comparaison — ce que le morceau demande, face à ce que ton pan possède.
 
 <figure>
   <img
