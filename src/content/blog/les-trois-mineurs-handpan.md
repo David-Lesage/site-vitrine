@@ -29,7 +29,7 @@ C'est celui que tout le monde connaît, et celui que ton handpan joue par défau
     src="/images/app-triste-trois-mineurs-naturel.webp"
     width="2000"
     height="1250"
-    alt="Le Mode Logique en mineur naturel. La bulle au centre du pan indique « D Min. Nat. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII » ; les pastilles portent notamment C4 en haut à gauche et C3 en bas. Les sept cartouches de degrés affichent I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. À droite, le bouton Triste est actif et son menu Nuances est déplié : « 🌙 Triste profond — mineur naturel, le Triste actuel » (surligné), « 🔥 Triste intense, couleur orientale — mineur harmonique · 7ᵉ montée d'un demi-ton — 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 6ᵉ et 7ᵉ montées d'un demi-ton — 4 pads changent »."
+    alt="Le Mode Logique en mineur naturel. L'écran du handpan, au centre du pan, indique « D Min. Nat. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII » ; les pastilles portent notamment C4 en haut à gauche et C3 en bas. Les sept cartouches de degrés affichent I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. À droite, le bouton Triste est actif et son menu Nuances est déplié : « 🌙 Triste profond — mineur naturel, le Triste actuel » (surligné), « 🔥 Triste intense, couleur orientale — mineur harmonique · 7ᵉ montée d'un demi-ton — 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 6ᵉ et 7ᵉ montées d'un demi-ton — 4 pads changent »."
     data-lb="trois-mineurs"
     data-lb-wide
     loading="lazy"

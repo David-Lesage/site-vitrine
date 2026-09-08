@@ -29,7 +29,7 @@ This is the one everyone knows, and the one your handpan plays by default. Its d
     src="/images/app-triste-trois-mineurs-naturel.webp"
     width="2000"
     height="1250"
-    alt="Logic Mode in natural minor. The bubble at the centre of the pan reads « D Min. Nat. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII »; the pads include C4 at the top left and C3 at the bottom. The seven degree cards read I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. On the right, the Triste button is active and its Nuances menu is open: « 🌙 Triste profond — mineur naturel », « 🔥 Triste intense, couleur orientale — mineur harmonique · 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 4 pads changent »."
+    alt="Logic Mode in natural minor. The handpan screen, at the centre of the pan, reads « D Min. Nat. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII »; the pads include C4 at the top left and C3 at the bottom. The seven degree cards read I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. On the right, the Triste button is active and its Nuances menu is open: « 🌙 Triste profond — mineur naturel », « 🔥 Triste intense, couleur orientale — mineur harmonique · 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 4 pads changent »."
     data-lb="trois-mineurs"
     data-lb-wide
     loading="lazy"
