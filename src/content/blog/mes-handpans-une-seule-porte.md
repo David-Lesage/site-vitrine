@@ -12,6 +12,8 @@ draft: false
 
 Cet article est une réparation autant qu'une nouveauté. Pendant des mois, **poser un deuxième handpan à côté du premier** pouvait se faire de cinq façons différentes dans l'application — et deux de ces cinq façons se comportaient mal. L'une servait le catalogue général alors qu'elle annonçait « tes » instruments. L'autre oubliait : tu retirais un pan, tu rechargeais la page, il était revenu.
 
+Ce panneau est le même des deux côtés : **que tes handpans soient acoustiques ou électroniques**, c'est la même liste, les mêmes cases à cocher, les mêmes gestes. Seules quelques actions de la barre changent selon l'instrument sélectionné, et c'est dit là où ça se produit.
+
 Depuis fin août, **il ne reste qu'un seul geste**. Si tu as lu ici des consignes qui parlent de listes déroulantes ou d'un bandeau à faire apparaître, elles sont périmées : voici la bonne version.
 
 ## Le cas concret
@@ -47,6 +49,8 @@ Et une distinction qui a l'air anodine mais qui change tout : **sélectionner n'
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
+<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : électronique, même écran, même état — le bloc « Mes handpans » du panneau de droite en mode électronique, avec ses actions propres (🎛 MIDI & mapping, ⚙︎ Modèle & bois) — copier la <figure> ci-dessus, alt + figcaption à écrire d'après la capture -->
+
 ## Deux cases à cocher, et c'est tout
 
 C'est le geste à retenir, et il n'y en a plus d'autre.
@@ -61,9 +65,9 @@ Et le duo **survit au rechargement de la page**, d'où qu'il ait été posé. C'
 
 ## Si les deux instruments ne sont pas de la même famille
 
-Poser un acoustique à côté d'un acoustique, c'est un **duo**. Poser un acoustique à côté d'un Neotone, ce n'est pas la même chose : c'est un **Hybride**, avec ses propres règles — c'est le sujet de [cet article-là](/blog/completer-son-handpan-acoustique-avec-un-neotone).
+Poser un acoustique à côté d'un acoustique, c'est un **duo**. Poser un acoustique à côté d'un Neotone, ce n'est pas la même chose : **tes deux handpans** ne viennent pas du même monde, et l'association obéit alors à ses propres règles — c'est le sujet de [cet article-là](/blog/completer-son-handpan-acoustique-avec-un-neotone).
 
-L'application ne mélange donc jamais les deux d'office. Mais elle ne refuse pas non plus, comme elle le faisait avant : quand tu coches un acoustique et un électronique, **elle te propose l'Hybride**. C'est une porte, pas un mur.
+L'application ne mélange donc jamais les deux d'office. Mais elle ne refuse pas non plus, comme elle le faisait avant : quand tu coches un acoustique et un électronique, **elle te propose de les associer quand même**. C'est une porte, pas un mur.
 
 ## Le Neotone a droit au même bloc
 
