@@ -56,3 +56,4 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 | 07/09 | « laisse tomber l'Âme du Tambour ce n'est pas prioritaire » | ✅ abandonné 07/09 |
 | 07/09 | « concernant le remaniement des textes il doit s'appliquer à tous les articles du blog » (langage neutre acoustique/électronique, 3 cas) | ⏳ en cours (2 agents, textes seulement) |
 | 07/09 | « mais nous attendions la nouvelle palette d'outils pour les captures écran » | ✅ compris : AUCUNE capture (ChromaKeys, Constellations acoustique, articles) avant la nouvelle palette ; session APP prévenue |
+| 07/09 | Hisong co-orga — constat Facebook : « Hisong Global » déjà EN ATTENTE sur le 19/09 (avec Muling, L'âme du Tambour, La maison du ngoni, Atlas) ; la page « HISONG » (id 61572523493118) n'apparaît PAS dans la recherche co-organisateurs (homonymes seulement) | 🔒 bloqué : la page doit être trouvable (suivie ?) — question posée à David |
