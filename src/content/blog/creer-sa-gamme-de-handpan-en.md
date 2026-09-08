@@ -12,6 +12,8 @@ draft: false
 
 Creating your own handpan scale means choosing the set of notes that will make up your instrument — their order, their number and the emotion they carry. In the **Handpan Constellation Studio** app you can do it for free, draw your layout in colour, hear it live, then save it and share it with the community. This tutorial shows you how.
 
+The approach is the same **whether your handpan is acoustic or electronic**: you pick a tonic, you place notes around the ding, you listen. The screenshots in this article show the Création tab in acoustic mode, because that is where creating is free; the gesture itself is identical on the electronic side.
+
 ## What is a handpan scale?
 
 A scale is the "character" of your pan: a central note (the **ding**) surrounded by notes laid out around the dome. Each scale has an emotional colour — meditative, bright, mysterious — depending on the intervals you choose. Understanding this is already composing: you don't place notes at random, you build a mood.
@@ -43,6 +45,8 @@ A scale is the "character" of your pan: a central note (the **ding**) surrounded
   <figcaption>The Création tab in <strong>acoustic mode</strong> (ACOUSTIQUE badge on the right), on a D Minor / Kurd 10. The chromatic wheel surrounds the pan: click a dimple, then the colour of the note you want on it. The right-hand panel tracks the bottom notes and the shell you picked. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
+<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): electronic, same screen, same state -->
 
 ### Lean on the colours
 

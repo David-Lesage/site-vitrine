@@ -12,6 +12,8 @@ draft: false
 
 Créer sa gamme de handpan, c'est choisir l'ensemble des notes qui composeront ton instrument — leur ordre, leur nombre et l'émotion qu'elles portent. Dans l'application **Handpan Constellation Studio**, tu peux le faire gratuitement, dessiner ta disposition en couleurs, l'écouter en direct, puis la sauvegarder et la partager avec la communauté. Ce tutoriel t'explique comment.
 
+La démarche est la même **que ton handpan soit acoustique ou électronique** : tu choisis une tonique, tu poses des notes autour du ding, tu écoutes. Les captures de cet article montrent l'onglet Création en mode acoustique, parce que c'est là que la création est gratuite ; le geste, lui, est identique côté électronique.
+
 ## Qu'est-ce qu'une gamme de handpan ?
 
 Une gamme, c'est le « caractère » de ton pan : une note centrale (le **ding**) entourée de notes disposées autour du dôme. Chaque gamme a une couleur émotionnelle — méditative, lumineuse, mystérieuse — selon les intervalles choisis. Comprendre ça, c'est déjà composer : tu ne places pas des notes au hasard, tu construis une ambiance.
@@ -43,6 +45,8 @@ Une gamme, c'est le « caractère » de ton pan : une note centrale (le **ding**
   <figcaption>L'onglet Création en <strong>mode acoustique</strong> (badge ACOUSTIQUE à droite), sur un D Minor / Kurd 10. La roue chromatique entoure le pan : on clique un creux, puis la couleur de la note qu'on veut y poser. Le panneau de droite tient le compte des creux du dessous et de la coque choisie.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : électronique, même écran, même état -->
 
 ### S'appuyer sur les couleurs
 
