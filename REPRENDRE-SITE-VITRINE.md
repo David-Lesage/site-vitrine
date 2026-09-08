@@ -48,6 +48,31 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## ÉTAT ACTUEL — 08/09/2026 (21ᵉ passe) — 🌍 Blog remanié « communication globale » (30 articles, déployé) · ChromaKeys livré côté app
+
+- **RÈGLE DAVID (07/09, mémoire `blog-communication-globale-pas-que-electronique`)** : 3 cas. (1) sujet commun → langage neutre
+  « ton handpan » + captures DOUBLÉES acoustique/électronique ; (2) sujet propre à un instrument → article dédié qui le dit dès
+  la 1ʳᵉ ligne ; (3) mixte → corps neutre, partie spécifique isolée dans une section nommée. **Toute capture attend la nouvelle
+  palette d'outils de l'app** (David) — les emplacements sont réservés en commentaires HTML `<!-- 📷 CAPTURE JUMELLE À INSÉRER … -->`
+  (21 emplacements sur 12 articles ; grep pour les retrouver) + Constellations : 3 captures acoustiques D Kurd 10 demandées à l'APP.
+- **Fait (commits `bef6e26`…`850d387` + `7ae77bf` + lot B `…2e05c9b`)** : 30 articles FR+EN remaniés, textes seulement, ≈85 passages ;
+  « hybride » disparu des textes (reste slugs/fichiers). ⚠️ À VALIDER par David : dans `completer-son-handpan-acoustique-avec-un-neotone`
+  le concept nommé « l'Hybride » est devenu « compléter son acoustique » (tag `hybride`→`compléter`). Points prudents : jam-rapide
+  (existence en acoustique non vérifiée), layouts-vocaux (section acoustique = fait physique seulement), editeur-de-melodies (pas de jumelle,
+  instrument non identifiable), accompagner-des-chansons fig. 1 (Neotone supposé), exporter (PDF 19 notes = électronique).
+- **APP 08/09** (`MESSAGE-SESSION-APP-REPONSE-2026-09-08-chromakeys-livre.md`, `…-277-livree.md`) : ChromaKeys 3 réglages livré (276)
+  puis bandeau réagencé sur UNE ligne (277) ; libellés définitifs : « La couleur dit… la note / sa place dans la gamme / rien »,
+  « Notes partagées », « Dessin des accords » (mention), « La palette de création ChromaKeys » (Création seulement), infobulle hors Logique
+  « Couleur = la note qui donne son nom à l'accord », degrés I Équilibre · II **Élan** (pas « l'Élan », à trancher) · … · VII Mystère.
+  Doublon « Couleur des notes » (îlot Notation) masqué. 🚨 **L'anneau des notes partagées n'a jamais été observé : en Logique aucune
+  note n'appartient à 2 accords** → le camembert vit hors Logique (mode Accords) → article ChromaKeys 1 à cadrer en conséquence.
+  **Articles ChromaKeys 1 & 2 : attendre les retours de David après test dans l'app.** Les captures du menu du 07/09 sont périmées.
+- **Hébreu** (`MESSAGE-SESSION-APP-2026-09-08-hebreu.md`) : à faire un jour sur le site (config, sélecteur, hreflang, script Google) —
+  **EN PAUSE**, David : « la priorité est la préparation de la vidéo ». Ne pas lancer sans demande.
+- **Hisong** : « Hisong Global » déjà EN ATTENTE sur le 19/09 (avec Muling, L'âme du Tambour, La maison du ngoni, Atlas) ; la page
+  « HISONG » (id 61572523493118) est introuvable dans la recherche co-orga (David ne la suit pas : bouton « S'abonner »). Question posée.
+  Événements : 19/09 `events/1039056572174963`, 18/10, 14/11, 05/12 (barre latérale). Modifier = « en tant que Résonances Productions ».
+
 ## ÉTAT ACTUEL — 07/09/2026 (20ᵉ passe, soir) — 🌈 ChromaKeys : refonte app lancée, 2 articles en attente · Hisong · adresses
 
 - **Article ChromaKeys → 2 articles** (accord David) : (1) « lire les couleurs » = mode Logique, acoustique d'abord puis
