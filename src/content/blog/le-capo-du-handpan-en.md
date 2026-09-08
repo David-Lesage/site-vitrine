@@ -2,19 +2,29 @@
 title: "The handpan's capo: the same shape in every key"
 description: "On an electronic handpan in Logic mode, a degree's constellation keeps the same shape whatever the key. Same gestures, different pitch — like a capo on a guitar."
 pubDate: 2026-10-01
-cover: "/images/blog-constellations-3-traces-2026-polygone.webp"
+cover: "/images/blog-capo-2026-01-mutant-logique.webp"
 category: "methode"
 tags: ["method", "electronic", "keys"]
 lang: "en"
 permalink: "le-capo-du-handpan"
-draft: true
+draft: false
 ---
-
-<!-- cover à remplacer : capture CK2-01 -->
 
 This article is about the **electronic handpan** — today, a 19-note Neotone Mutant. On an acoustic handpan the notes cannot move: what follows does not exist there in this form.
 
-<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK2-01 — Neotone Mutant, mode Logique, niveau Musicien, La couleur dit = sa place dans la gamme, œil ouvert sur l'accord I, ancrage D, cadrage pan entier + écran du handpan centré sous le ding ; sert aussi de vignette de couverture ; fichier attendu /images/blog-capo-2026-01-mutant-logique.webp -->
+<figure>
+  <img
+    src="/images/blog-capo-2026-01-mutant-logique.webp"
+    width="1600"
+    height="1170"
+    alt="Logic mode on a 19-note Neotone Mutant, anchor note D. Four tone fields are lit red — D2 at the centre, D4 at the top, A3 on the left, F#3 lower left — joined by a red path. The handpan screen, the small white panel sitting under the ding, reads « I Équilibre D ». Below, the seven chord cards of the key: I Équilibre D, II Élan Em, III Aventure F#m, IV Détente G, V Tension A, VI Nostalgie Bm, VII Mystère C#°, each in its degree colour. Only the first card's eye is switched on — that is what draws the constellation."
+    data-lb="capo"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Degree <strong>I</strong> with the anchor note on <strong>D</strong>. Remember this drawing: we are about to find it again, untouched, in two other keys.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## What a guitarist does with a capo
 
@@ -28,9 +38,47 @@ Take the constellation of **degree I** — the one the app calls **Balance**. Sh
 
 The drawing is the same. Exactly the same: same tone fields lit, same polygon, same path from one note to the next. Only the pitches played have changed.
 
-<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK2-02a — Neotone Mutant, mode Logique, niveau Musicien, La couleur dit = sa place dans la gamme, œil ouvert sur l'accord I, ancrage C, cadrage pan entier + écran du handpan centré sous le ding ; fichier attendu /images/blog-capo-2026-02a-ancrage-C.webp -->
-<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK2-02b — capture JUMELLE de CK2-02a : rigoureusement le même écran, la même taille de fenêtre et le même cadrage, seul l'ancrage change → ancrage D ; fichier attendu /images/blog-capo-2026-02b-ancrage-D.webp -->
-<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK2-02c — capture JUMELLE de CK2-02a et CK2-02b : même écran, même cadrage, ancrage A ; fichier attendu /images/blog-capo-2026-02c-ancrage-A.webp -->
+<figure>
+  <img
+    src="/images/blog-capo-2026-02a-ancrage-C.webp"
+    width="1600"
+    height="1170"
+    alt="The same screen, anchor note C. The lit tone fields are C2 at the centre, C4 at the top, G3 on the left, E3 lower left, plus a small pale-red C3. The red path draws exactly the same figure as in the two images below. The handpan screen reads « I Équilibre C » and the chord cards show C, Dm, Em, F, G, Am, B°."
+    data-lb="capo"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Anchored on <strong>C</strong>: C2 · E3 · G3 · C4.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
+<figure>
+  <img
+    src="/images/blog-capo-2026-02b-ancrage-D.webp"
+    width="1600"
+    height="1170"
+    alt="Twin capture of the previous one, taken in the same window and the same frame, with only the anchor note changed to D. The same positions are lit; they now read D2, D4, A3 and F#3, with a small pale-red D3. The red path is superimposable on the previous one. The handpan screen reads « I Équilibre D »."
+    data-lb="capo"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Anchored on <strong>D</strong>: D2 · F#3 · A3 · D4. Same tone fields, different pitches.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
+<figure>
+  <img
+    src="/images/blog-capo-2026-02c-ancrage-A.webp"
+    width="1600"
+    height="1170"
+    alt="A third twin capture, same window and same frame, anchor note A. The same positions are lit and read A2, A4, E4 and C#4, with a small pale-red A3. The red path occupies exactly the same place. The handpan screen reads « I Équilibre A »."
+    data-lb="capo"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Anchored on <strong>A</strong>: A2 · C#4 · E4 · A4. The drawing has not moved by a pixel — and it was measured: the three paths overlap by more than 99 %, with the same bounding box.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### Why it holds
 
@@ -40,7 +88,19 @@ A degree's shape is drawn on the pan's **positions** — the pads, identified by
 
 Put another way: the geometry is fixed on one side, the sounding content on the other. Transposing only moves the second. That is why the shape cannot deform — not because someone checked that it works, but because nothing in the mechanism could make it move.
 
-<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK2-03 — Neotone Mutant, mode Logique, niveau Musicien, même écran que CK2-02a mais œil ouvert sur un AUTRE degré (V) pour montrer que l'invariance ne vaut pas que pour le I, ancrage C puis A en deux vignettes si possible ; fichier attendu /images/blog-capo-2026-03-degre-V.webp -->
+<figure>
+  <img
+    src="/images/blog-capo-2026-03-degre-V.webp"
+    width="1600"
+    height="2368"
+    alt="Two stacked captures of the same screen, this time with the eye open on degree V. Top, anchored on C: the tone fields G2, B2, D3 and G3 are lit sky blue and joined by a blue path; the handpan screen reads « V Tension G ». Bottom, anchored on A: the same positions are lit, reading E3, G#3, B3 and E4, the blue path follows exactly the same route, and the handpan screen reads « V Tension E »."
+    data-lb="capo"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Degree <strong>V</strong>, in C then in A. The invariance is not a property of the I alone: every degree keeps its shape.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Two very concrete uses
 
@@ -50,13 +110,29 @@ A singer tells you your scale sits too high for her. On an acoustic instrument, 
 
 You haven't transposed a piece: you have transposed the instrument. What you rehearsed still holds.
 
-<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK2-04 — Neotone Mutant, mode Logique, niveau Musicien, un morceau chargé depuis la bibliothèque, deux vignettes jumelles du MÊME morceau à deux ancrages différents (ex. D puis Bb), écran du handpan visible et centré pour que la gamme affichée fasse foi ; fichier attendu /images/blog-capo-2026-04-voix.webp -->
+<!-- 📷 CK2-04 NOT PRODUCED (08/09/2026) — the requested state does not exist in the app: Logic
+     mode fills its 7 slots with the degrees of the key, it has no « load a song from the library
+     into the progression » function. « Mes morceaux » opens the Visual Score Editor's repertoire,
+     a different screen, where the handpan screen is not visible. Nothing was staged: the figure is
+     left out rather than fabricated. Revisit if a « song → progression » entry is added. -->
 
 ### Joining other musicians
 
 A session starts, someone calls the key. You set your anchor there and play. No "sorry, I'm in D", no second instrument to unpack: the repertoire you know follows you.
 
-<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK2-05 — Neotone Mutant, mode Logique, niveau Musicien, la roue / le sélecteur d'ancrage ouvert, montrant qu'on choisit la tonalité en un geste ; cadrage resserré sur le sélecteur + une partie du pan ; fichier attendu /images/blog-capo-2026-05-choisir-ancrage.webp -->
+<figure>
+  <img
+    src="/images/blog-capo-2026-05-choisir-ancrage.webp"
+    width="1600"
+    height="975"
+    alt="Close-up of the open anchor-note selector: a twelve-petal flower, one per semitone, each in its ChromaKeys colour — C red, D orange, E yellow, F green, G sky blue, A indigo, B magenta, and the accidentals in the matching lighter shades. The C petal carries a tick and the centre of the flower reads C. On the left, the end of the row of chord cards and the edge of the pan."
+    data-lb="capo"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Changing key is one petal away. Each note keeps its ChromaKeys colour, the same one it has on the pan.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## A clear frame, rather than cognitive chaos
 
@@ -66,11 +142,25 @@ Logic mode answers that with a frame. **The same placement of notes by degree in
 
 This holds for **all major scales and for natural minor**: identical shape, different content.
 
-For **harmonic minor** and **melodic minor**, let's put it carefully: these variants change the content of 2 or 4 positions — the leading tone, and for melodic the sixth as well. The shape of the degrees, though, is preserved by construction: these variants inherit the same templates, and raising a note by a semitone does not reorder the notes of a polygon. Some chords change harmonic colour along the way — that is expected, it is the very point of those variants.
+For **harmonic minor** it is verified on screen, and the capture below shows it: in C minor, degree V, moving from natural to harmonic leaves the same four tone fields lit and the same path — only the leading tone rises a semitone, B♭ becomes B. The variant changes what you hear, not what you see.
 
-<!-- à confirmer par la mesure moteur APP (mineur harmonique/mélodique) -->
+For **melodic minor**, let's put it carefully: it alters 4 positions instead of 2 (the sixth on top of the leading tone), and nothing forces the shape to move for that — but we have not photographed it yet.
 
-<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK2-06 — Neotone Mutant, mode Logique, niveau Musicien, deux vignettes jumelles : mineur naturel puis mineur harmonique, même ancrage, même degré affiché (V), pour montrer forme identique / contenu modifié ; fichier attendu /images/blog-capo-2026-06-mineurs.webp -->
+<!-- à confirmer par une capture : mineur mélodique (l'harmonique, lui, est mesuré — cf. CK2-06) -->
+
+<figure>
+  <img
+    src="/images/blog-capo-2026-06-mineurs.webp"
+    width="1600"
+    height="2368"
+    alt="Two stacked captures, anchored on C, minor mode, eye open on degree V. Top, natural minor: the tone fields G2, Bb2, D3 and G3 are lit sky blue and joined by a blue path; the chord cards read Cm, D°, Eb, Fm, Gm, Ab, Bb. Bottom, harmonic minor: exactly the same positions and the same path, but the tone field that read Bb2 now reads B2, and the Bb3 at the top has become B3. The rest of the pan is identical between the two images."
+    data-lb="capo"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Natural minor then harmonic minor, same anchor, same degree: <strong>the shape does not move</strong>, only the leading tone rises a semitone (B♭ → B).</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Mutant or Neotone 1: what differs
 
@@ -78,7 +168,12 @@ The **Mutant** plays every major and minor scale. It is what makes the reasoning
 
 On the **Neotone 1**, the notions of degree and chord apply too — but in a limited way: not all seven degrees are there. The logic is the same, the ground is narrower.
 
-<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK2-07 — deux vignettes jumelles du sélecteur de modèle : handpan électronique modèle standard puis modèle Mutant, mode Logique, même degré demandé, pour montrer un polygone complet d'un côté et plus pauvre de l'autre ; fichier attendu /images/blog-capo-2026-07-mutant-vs-neotone1.webp -->
+<!-- 📷 CK2-07 NOT PRODUCED (08/09/2026) — measured, not assumed: in Logic mode, flipping the
+     MODÈLE pill from « Mutant » to « Neotone¹ » changes NOTHING on the displayed pan. The two
+     captures taken back to back (audits/captures-2026-09-08-blog-lot-final-capo/CK2-07a and 07b)
+     differ by 0.97 % of pixels in the pan area, and those 0.97 % are the MODÈLE pill itself: same
+     19 tone fields, same polygon for the I. There is no « poorer polygon » to show, and a caption
+     claiming one would be false. Revisit when the 10-note model is reflected on the pan in Logic. -->
 
 ## And on the acoustic side, honestly
 
@@ -86,7 +181,19 @@ There is indeed a **key wheel** in acoustic mode. It serves something else. It l
 
 It is not a capo. Your acoustic pan hasn't moved by a semitone — and it cannot. On an acoustic instrument, a chord's constellation is worked out from the notes actually present: it speaks about *your* instrument, and it changes from one scale to another. That's a quality, not a shortfall; it simply isn't the same promise.
 
-<!-- 📷 CAPTURE À PRODUIRE (APP) — id: CK2-08 — mode acoustique, carte-ancre « TU JOUES SUR … » avec la roue de tonalité ouverte, montrant l'aperçu d'écoute dans une autre tonalité ; écran du handpan centré ; fichier attendu /images/blog-capo-2026-08-roue-tonalite.webp -->
+<figure>
+  <img
+    src="/images/blog-capo-2026-08-roue-tonalite.webp"
+    width="1600"
+    height="1013"
+    alt="Acoustic mode with a D Minor / Kurd 10 loaded. On the pan, the tone fields are coloured as pie slices — one slice per chord the note belongs to — and the handpan screen, centred under the D3 ding, reads « D Minor / Kurd 10 ». On the right, the card for the instrument being played reads « POUR D Minor / Kurd 10 · ACOUSTIQUE » with the buttons « Mes morceaux (156) » and « Tester une autre tonalité ». Below it, the open « Tester une autre tonalité » panel explains that you can hear your scale in another key, that it is useful for finding the one that suits your voice, and that it is only a preview: nothing is changed in « Mes handpans ». Twelve key buttons C to B follow, with D highlighted."
+    data-lb="capo"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>On the acoustic side, the key wheel lets you <strong>hear</strong> the scale elsewhere. It is a reversible preview, not a capo — the instrument itself has not moved.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Going further
 
