@@ -4,13 +4,15 @@ description: "Tu as un D Kurd 10 et tu tournes en rond. Posé à côté, un Neot
 pubDate: 2026-08-31
 cover: "/images/showroom-instruments.webp"
 category: "neotone"
-tags: ["hybride", "neotone", "tonalités"]
+tags: ["compléter", "neotone", "tonalités"]
 lang: "fr"
 permalink: "completer-son-handpan-acoustique-avec-un-neotone"
 draft: false
 ---
 
 > Comment un handpan électronique Neotone 19 Mutant peut-il compléter mon handpan acoustique et débloquer les 24 tonalités possibles qui me permettent de jouer tout le répertoire mondial de la musique et arrêter de tourner en rond ?
+
+**Cet article concerne un handpan acoustique complété par un handpan électronique.** C'est un cas propre à cette paire : ce qui suit n'est possible ni avec deux acoustiques, ni avec deux électroniques.
 
 C'est ma question, et j'ai fini par pouvoir y répondre avec des chiffres plutôt qu'avec une intuition. Tous ceux qui suivent sont obtenus en rejouant les fonctions réelles de [Handpan Constellation Studio](/handpan-app) sur les notes réelles des instruments — le même moteur que celui qui calcule ce qui s'affiche à l'écran quand on charge sa gamme. Aucun n'est une estimation, et chacun est défini avant d'être annoncé.
 
@@ -28,7 +30,7 @@ Posons maintenant la définition, parce qu'un nombre sans sa définition n'est p
 
 Avec un D Kurd 10 seul, **2 des 24 sont complètes** : fa majeur, et ré mineur. Ce sont d'ailleurs les mêmes sept notes lues de deux façons — autrement dit, tu n'as qu'**une seule zone tonale**. Les 22 autres ont un trou. En accords, ça donne **6 accords majeurs ou mineurs sur les 24**.
 
-*(Petite note pour qui compare avec l'écran : l'application affiche parfois ce même fait sur 12 — elle regroupe alors chaque tonique et n'appelle « complète » que celle dont la majeure **et** la mineure le sont. Dans ce compte-là, le D Kurd 10 seul est à 0 sur 12, et l'Hybride à 12 sur 12. Même réalité, deux dénominateurs. Ici je compte sur 24, comme dans ma question de départ.)*
+*(Petite note pour qui compare avec l'écran : l'application affiche parfois ce même fait sur 12 — elle regroupe alors chaque tonique et n'appelle « complète » que celle dont la majeure **et** la mineure le sont. Dans ce compte-là, le D Kurd 10 seul est à 0 sur 12, et l'acoustique complété à 12 sur 12. Même réalité, deux dénominateurs. Ici je compte sur 24, comme dans ma question de départ.)*
 
 ![Les douze notes de la musique : un D Kurd 10 en porte sept, cinq manquent ; le Neotone les apporte](/images/blog-hybride-12-notes.svg)
 
@@ -40,7 +42,7 @@ Sur un handpan acoustique, on ne choisit pas librement les notes : la taille du 
 
 Un **Neotone** n'a pas cette contrainte. Ses pads sont des capteurs : n'importe quelle note peut aller sur n'importe quel creux. On peut donc y mettre **exactement, et seulement, ce qui manque à l'acoustique**.
 
-C'est ce que j'appelle l'**Hybride**, et le mot est précis : un handpan **acoustique complété par un handpan électronique**. Deux électroniques n'en font pas un. Deux acoustiques non plus — ça, c'est un [duo de handpans](/blog/deux-handpans-mode-hybride), autre chose, avec ses propres qualités. L'Hybride, c'est le geste et le timbre de l'acoustique, plus les notes qu'il ne peut pas porter.
+C'est ce que j'appelle **compléter son acoustique**, et les mots sont précis : un handpan **acoustique complété par un handpan électronique**. Deux électroniques n'en font pas un. Deux acoustiques non plus — ça, c'est un [duo de handpans](/blog/deux-handpans-mode-hybride), autre chose, avec ses propres qualités. Ici, c'est le geste et le timbre de l'acoustique, plus les notes qu'il ne peut pas porter.
 
 L'acoustique ne perd rien : il reste exactement ce qu'il est, on continue à jouer dessus.
 
@@ -146,11 +148,11 @@ Tout ce qui est écrit ici s'affiche dans l'application : tu charges ta gamme, t
 
 Si tu veux essayer un acoustique et un Neotone côte à côte avant de trancher entre les deux modèles, c'est possible au [showroom](/showroom). Et si tu veux qu'on explore ça ensemble, mes [cours](/cours) sont ouverts.
 
-Mon objectif n'a jamais changé : **s'accompagner au handpan comme un guitariste ou un pianiste**. L'Hybride est le premier moment où ça devient littéralement vrai.
+Mon objectif n'a jamais changé : **s'accompagner au handpan comme un guitariste ou un pianiste**. Un acoustique complété par un électronique est le premier moment où ça devient littéralement vrai.
 
-<!-- 📷 PHOTO MANQUANTE — l'Hybride en vrai, à faire par David.
+<!-- 📷 PHOTO MANQUANTE — l'acoustique + le Neotone en vrai, à faire par David.
      CE QU'ELLE DOIT MONTRER : un handpan acoustique et un Neotone posés côte à côte sur leurs
-     pieds, tels qu'on les joue — le geste de l'Hybride, pas une photo produit. IDÉALEMENT un
+     pieds, tels qu'on les joue — le geste des deux instruments ensemble, pas une photo produit. IDÉALEMENT un
      D Kurd 10 ou 9, pas l'E 18 : tout l'article est écrit pour la personne qui a CETTE gamme-là.
      Sa place est ICI, juste avant la conclusion : tout l'article a parlé de « poser un Neotone
      à côté », et on ne l'a encore jamais vu.
