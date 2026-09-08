@@ -10,7 +10,7 @@ permalink: "handpan-par-les-couleurs"
 draft: false
 ---
 
-Playing handpan by colours means learning to play without reading a single note of music theory: every sound on your instrument gets a colour (the **ChromaKeys**) and every chord draws a geometric shape (a **Constellation**). Your eye recognises the colour, your hand follows the shape, and the music happens — naturally, through gesture and emotion rather than theory.
+Playing handpan by colours means learning to play without reading a single note of music theory: every sound on your instrument gets a colour (the **ChromaKeys**) and every chord draws a geometric shape (a **Constellation**). Your eye recognises the colour, your hand follows the shape, and the music happens — naturally, through gesture and emotion rather than theory. The method does not depend on the instrument: it reads the same way on an acoustic handpan and on an electronic one.
 
 ## Why colours instead of sheet music
 
@@ -35,6 +35,8 @@ The seven degrees of a scale get seven stable colours. Whatever the key of your 
   <figcaption>ChromaKeys on, palette open. Every pitch has its own colour, the same everywhere: a <em>C</em> is red, an <em>E</em> yellow, a <em>G</em> sky blue. The chromatic wheel above the pan shows all twelve semitones and their hues. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
+<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): acoustic, same screen, same state -->
 
 ### Each chord, a shape
 

@@ -12,6 +12,8 @@ draft: false
 
 Handpan Constellation Studio's [Logic Mode](/en/handpan-app) treats music as a language of emotions. Each degree of a scale — the seven steps that make it up — gets a colour and an emotional tone: balance, momentum, gentle tension, coming home. You no longer choose notes, you choose what you want people to feel. And a sequence of degrees becomes a story.
 
+This grammar holds **whether your handpan is acoustic or electronic**: Logic Mode exists on both sides and colours the degrees in both cases — on an acoustic pan, from the real notes of your scale.
+
 ## Seven degrees, seven emotions
 
 In a scale, every note plays a role. The first degree is the anchor, the place where things "settle". The fifth creates momentum, the urge to go further. The sixth brings a nostalgic tint, the seventh a tension that calls for resolution. These roles are universal: they exist in almost all the music you love, even if you've never put words to them.
@@ -31,6 +33,8 @@ Logic Mode makes these roles **visible** by giving them a stable colour, followi
   <figcaption>The seven degrees as the app displays them. On a handpan tuned to <strong>D major</strong> they run from <em>I ÉQUILIBRE D</em> to <em>VII MYSTÈRE C#°</em> — each card carries its number, its emotion and the matching chord. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
+<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): acoustic, same screen, same state -->
 
 ## Building a chord progression
 

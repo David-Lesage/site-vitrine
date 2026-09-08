@@ -10,7 +10,7 @@ permalink: "handpan-par-les-couleurs"
 draft: false
 ---
 
-Le handpan par les couleurs, c'est apprendre à jouer sans lire une seule note de solfège : chaque son de ton instrument reçoit une couleur (les **ChromaKeys**) et chaque accord dessine une forme géométrique (une **Constellation**). Ton œil reconnaît la couleur, ta main suit la forme, et la musique arrive — naturellement, par le geste et l'émotion plutôt que par la théorie.
+Le handpan par les couleurs, c'est apprendre à jouer sans lire une seule note de solfège : chaque son de ton instrument reçoit une couleur (les **ChromaKeys**) et chaque accord dessine une forme géométrique (une **Constellation**). Ton œil reconnaît la couleur, ta main suit la forme, et la musique arrive — naturellement, par le geste et l'émotion plutôt que par la théorie. La méthode ne dépend pas de l'instrument : elle se lit de la même façon sur un handpan acoustique et sur un handpan électronique.
 
 ## Pourquoi les couleurs plutôt que le solfège
 
@@ -35,6 +35,8 @@ Les sept degrés d'une gamme reçoivent sept couleurs stables. Quelle que soit l
   <figcaption>Les ChromaKeys allumées, palette ouverte. Chaque hauteur a sa couleur, la même partout : un <em>do</em> est rouge, un <em>mi</em> jaune, un <em>sol</em> bleu ciel. La roue chromatique au-dessus du pan montre les douze demi-tons et leurs teintes.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : acoustique, même écran, même état -->
 
 ### Chaque accord, une forme
 
