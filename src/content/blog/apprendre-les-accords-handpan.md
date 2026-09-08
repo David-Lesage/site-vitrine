@@ -12,6 +12,8 @@ draft: false
 
 Apprendre un accord au handpan, c'est savoir quelles notes jouer, dans quel ordre et avec quelle main. Le **mode d'apprentissage guidé** de [Handpan Constellation Studio](/handpan-app) transforme ton instrument en surface éclairée : l'application allume la **note colorée** à toucher, tu la joues, et tu passes à la suivante — l'accord s'apprend par le geste, sans lire une seule note de solfège.
 
+Ce mode guidé fonctionne **que ton handpan soit acoustique ou électronique** : dans les deux cas, l'app allume sur l'écran les notes réelles de ta gamme, une par une.
+
 ## Le vrai blocage quand on débute les accords
 
 Sur le papier, un accord est une abstraction : trois ou quatre notes qu'il faut « connaître ». Résultat, beaucoup de joueurs de handpan restent bloqués sur des mélodies ou des nappes, sans jamais oser **s'accompagner** ou accompagner quelqu'un. Le problème n'est pas le talent : c'est que la théorie arrive avant le plaisir de jouer.
@@ -37,6 +39,8 @@ Le principe est simple et visuel. Tu choisis un accord, et l'app **te montre exa
   <figcaption>L'apprentissage guidé en cours : la consigne au centre dit « <strong>Joue la note qui pulse !</strong> ». Les notes de l'accord s'allument sur le pan, chacune avec la main suggérée — <em>L</em> pour la gauche, <em>R</em> pour la droite. Les notes qui ne font pas partie de l'accord restent éteintes.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : acoustique, même écran, même état -->
 
 Tu avances **à ton rythme**, autant de fois que tu veux. Ce n'est pas un examen chronométré : c'est un accompagnement patient qui te fait mémoriser l'accord **par la couleur et par le geste**, pas par cœur.
 

@@ -12,6 +12,8 @@ draft: false
 
 Learning a chord on the handpan means knowing which notes to play, in what order and with which hand. The **guided learning mode** in [Handpan Constellation Studio](/en/handpan-app) turns your instrument into a lit-up surface: the app highlights the **coloured note** to touch, you play it, and you move on to the next one — the chord is learned through gesture, without reading a single note of music theory.
 
+The guided mode works **whether your handpan is acoustic or electronic**: either way, the app lights up the real notes of your scale on screen, one at a time.
+
 ## The real block when starting out with chords
 
 On paper, a chord is an abstraction: three or four notes you're supposed to "know". As a result, many handpan players stay stuck on melodies or ambient textures, never daring to **accompany** themselves or someone else. It's not about talent: theory simply arrives before the joy of playing.
@@ -37,6 +39,8 @@ The idea is simple and visual. You pick a chord, and the app **shows you exactly
   <figcaption>Guided learning in progress: the prompt in the middle reads « <strong>Joue la note qui pulse !</strong> » — play the pulsing note. The chord's notes light up on the pan, each with its suggested hand — <em>L</em> for left, <em>R</em> for right. Notes outside the chord stay dark. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
+<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): acoustic, same screen, same state -->
 
 You move at **your own pace**, as many times as you like. It's not a timed exam: it's a patient guide that helps you memorise the chord **through colour and gesture**, not by rote.
 
