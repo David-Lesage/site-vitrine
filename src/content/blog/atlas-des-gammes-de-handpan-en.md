@@ -26,10 +26,10 @@ Each scale carries an emotional colour: bright, melancholic, mysterious, soothin
 
 <figure>
   <img
-    src="/images/blog-atlas-destinations-2026.webp"
-    width="2000"
-    height="1600"
-    alt="The « Découvrir d'autres gammes » panel open on the right of the application, dark theme. At the top, a THÈME selector with four choices: Classique (active), 📽 Planétarium, 🛂 Passeport, 📎 Magazine; then a « 🌍 Voyage » (active) / « 🏢 Structuré » switch and a search field. Below, the heading « Où veux-tu voyager aujourd'hui ? » and the subtitle « Choisis une destination — découvre les handpans qui t'y attendent. ». Six coloured cards follow, each with a name, a mood line and a count: Source Sereine (green, calm and meditation, 9 handpans), Grand Large (gold, joy and open horizons, 7 handpans), Échappée Vive (pink, playful and modern, 3 handpans), Clair-Obscur (blue, bittersweet, 3 handpans), Routes du Désert (brown, mystery and eastern warmth, 21 handpans), Terres de Brume (purple, melancholy and introspection, 31 handpans). On the left, a D Minor / Kurd 10 handpan and its seven chord slots."
+    src="/images/blog-atlas-destinations-2026-09.webp"
+    width="1600"
+    height="1745"
+    alt="The « Découvrir d'autres gammes » panel open on the right of the application, dark theme, beside an acoustic D Minor / Kurd 10 handpan whose screen, right under the D3 ding, carries the scale name. At the top of the panel, the « Mes handpans » block: « D Minor / Kurd 10 » marked « tu joues dessus », the « POUR D Minor / Kurd 10 » bar with the ACOUSTIQUE badge, « 🎼 Mes morceaux (156) », « 🎡 Tester une autre tonalité », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » and « ⚡ Ajouter un handpan électronique »; then the collapsed sections « ✨ Ce que tu peux faire » and « 🎯 Compléter ». Below, « 🧭 Découvrir d'autres gammes » unfolded: a THÈME selector with four choices — Classique (active), 🌌 Planétarium, 🛂 Passeport, 🗞 Magazine — a « 🌍 Voyage » (active) / « 🎛 Structuré » switch, a search field, the heading « Où veux-tu voyager aujourd'hui ? » and six coloured cards, each with a name, a mood line and a count: Source Sereine (calm and meditation, 9 handpans), Grand Large (joy and open horizons, 7 handpans), Échappée Vive (playful and modern, 3 handpans), Clair-Obscur (bittersweet, 3 handpans), Routes du Désert (mystery and eastern warmth, 21 handpans), Terres de Brume (melancholy and introspection, 31 handpans). Bottom left, the chord slots F, Gm, Am, A#, C and the PROGRESSION DES ACCORDS arrow."
     data-lb="atlas"
     data-lb-wide
     loading="lazy"
@@ -38,7 +38,7 @@ Each scale carries an emotional colour: bright, melancholic, mysterious, soothin
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): electronic, same screen, same state -->
+<!-- 📷 TWIN SCREENSHOT: NO ELECTRONIC EQUIVALENT (checked 09/09/2026). On a Neotone the Atlas is not the « 🧭 Découvrir d'autres gammes » section tucked under an already-chosen instrument: it is the « Atlas Sonore » panel itself, which is HOW you choose the scale, and it shows the destinations as a carousel (❮ DESTINATION ZEN • AIR | AKEBONO / KOKIN ❯) instead of the six-card grid. This figure's screen therefore does not exist on an electronic pan — comment left in place. -->
 
 ### Listen before you choose
 
