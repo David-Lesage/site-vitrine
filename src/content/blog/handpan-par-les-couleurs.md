@@ -2,7 +2,7 @@
 title: "Le handpan par les couleurs : la méthode ChromaKeys"
 description: "Apprends le handpan sans solfège grâce aux ChromaKeys : chaque note devient une couleur, chaque accord une forme. La méthode visuelle de David Lesage pour progresser vite."
 pubDate: 2026-06-15
-cover: "/images/app-chromakeys-on.webp"
+cover: "/images/app-chromakeys-on-2026-09.webp"
 category: "methode"
 tags: ["méthode", "débuter"]
 lang: "fr"
@@ -24,10 +24,10 @@ Les sept degrés d'une gamme reçoivent sept couleurs stables. Quelle que soit l
 
 <figure>
   <img
-    src="/images/app-chromakeys-on.webp"
-    width="2000"
-    height="1250"
-    alt="Le Mode Logique avec les ChromaKeys activées : chaque note du handpan est peinte de sa couleur et entourée d'un halo lumineux — D2 orange au centre, C#4 et C#3 rouges, B3 magenta, A3 et A4 bleus, F#3 et F#4 verts, G3 et G4 bleu ciel, E2 et E3 jaunes. Autour du haut du pan, la roue chromatique déployée : C, C#, D, D#, E, F, F#, G, G#, A, A#, B, chacune à sa couleur, avec les arcs d'octaves 2 à 5. À gauche, la barre d'outils verticale dont l'icône arc-en-ciel est active. En bas, les sept cartouches de degrés de I ÉQUILIBRE D à VII MYSTÈRE C#°."
+    src="/images/app-chromakeys-on-2026-09.webp"
+    width="1600"
+    height="896"
+    alt="L'onglet Création sur un handpan électronique Neotone Mutant, thème sombre, ChromaKeys allumées. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, un îlot « La palette de création ChromaKeys » également sur On, puis les quatre menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Chaque note du pan est peinte de sa couleur et cerclée d'un halo — D2 orange au centre, C#4 et C#3 rouges, B3 magenta, A3 et A4 bleus, F#3 et F#4 verts, G3 et G4 bleu ciel, E2 et E3 jaunes. Autour du haut du pan, la roue chromatique déployée : C, C#, D, D#, E, F, F#, G, G#, A, A#, B, chacune à sa couleur, avec les arcs d'octaves 2 à 5. À gauche, une colonne d'outils verticale de six icônes dans un cadre jaune — arc-en-ciel (active), clavier, crayon, corbeille, annuler, refaire. En bas, les sept emplacements d'accords : D, Em, F#m, G, A, Bm, C#°, chacun avec ses trois notes écrites en dessous. L'écran du handpan indique « Neotone Mutant »."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
@@ -36,7 +36,19 @@ Les sept degrés d'une gamme reçoivent sept couleurs stables. Quelle que soit l
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : acoustique, même écran, même état -->
+<figure>
+  <img
+    src="/images/app-creation-acoustique-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="L'onglet Création sur un handpan acoustique D Minor / Kurd 10, thème sombre. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Au centre, le pan avec son ding D3 et ses notes colorées D4, A#3, A3, F4, E4, C4, C5, A4, G4 ; l'écran du handpan indique « D Minor / Kurd 10 ». Autour du haut du pan, la roue chromatique complète — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — chaque pastille à sa couleur, avec les repères d'octaves 2 à 5 en arc de cercle. À gauche, une colonne d'outils verticale de six icônes dans un cadre jaune : arc-en-ciel (active), clavier, crayon, corbeille, annuler, refaire. À droite, le panneau « Mes handpans » : « D Minor / Kurd 10 » marqué « tu joues dessus », la barre « POUR D Minor / Kurd 10 » avec le badge ACOUSTIQUE, « 🎼 Mes morceaux (156) », « 🎡 Tester une autre tonalité », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » et « ⚡ Ajouter un handpan électronique » ; en dessous, les sections repliées « ✨ Ce que tu peux faire » et « 🎯 Compléter », puis « 🧭 Découvrir d'autres gammes ». En bas, les sept emplacements d'accords Dm, E°, F, Gm, Am, A#, C."
+    data-lb="chromakeys-acoustique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le même écran sur un handpan acoustique.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### Chaque accord, une forme
 

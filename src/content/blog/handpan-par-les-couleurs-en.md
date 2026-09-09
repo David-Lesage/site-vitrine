@@ -2,7 +2,7 @@
 title: "Playing handpan by colours: the ChromaKeys method"
 description: "Learn handpan without music theory using ChromaKeys: every note becomes a colour, every chord a shape. David Lesage's visual method to progress fast."
 pubDate: 2026-06-15
-cover: "/images/app-chromakeys-on.webp"
+cover: "/images/app-chromakeys-on-2026-09.webp"
 category: "methode"
 tags: ["method", "getting started"]
 lang: "en"
@@ -24,10 +24,10 @@ The seven degrees of a scale get seven stable colours. Whatever the key of your 
 
 <figure>
   <img
-    src="/images/app-chromakeys-on.webp"
-    width="2000"
-    height="1250"
-    alt="Logic Mode with ChromaKeys on: every note on the handpan is painted in its own colour and ringed with a glow — D2 orange at the centre, C#4 and C#3 red, B3 magenta, A3 and A4 blue, F#3 and F#4 green, G3 and G4 sky blue, E2 and E3 yellow. Around the top of the pan, the chromatic wheel is unfolded: C, C#, D, D#, E, F, F#, G, G#, A, A#, B, each in its colour, with octave arcs 2 to 5. On the left, the vertical toolbar with its rainbow icon active. Along the bottom, the seven degree cards from I ÉQUILIBRE D to VII MYSTÈRE C#°."
+    src="/images/app-chromakeys-on-2026-09.webp"
+    width="1600"
+    height="896"
+    alt="The Création tab on a Neotone Mutant electronic handpan, dark theme, ChromaKeys on. Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, a « La palette de création ChromaKeys » island also on On, then the four menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island outlined in cyan with its printer icon. Every note on the pan is painted in its own colour and ringed with a halo — D2 orange at the centre, C#4 and C#3 red, B3 magenta, A3 and A4 blue, F#3 and F#4 green, G3 and G4 sky blue, E2 and E3 yellow. Around the top of the pan, the chromatic wheel is unfolded: C, C#, D, D#, E, F, F#, G, G#, A, A#, B, each in its own colour, with the octave 2 to 5 arcs. On the left, a vertical column of six icons in a yellow frame — rainbow (active), keyboard, pencil, bin, undo, redo. Along the bottom, the seven chord slots: D, Em, F#m, G, A, Bm, C#°, each with its three notes written underneath. The handpan screen reads « Neotone Mutant »."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
@@ -36,7 +36,19 @@ The seven degrees of a scale get seven stable colours. Whatever the key of your 
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): acoustic, same screen, same state -->
+<figure>
+  <img
+    src="/images/app-creation-acoustique-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="The Création tab on a D Minor / Kurd 10 acoustic handpan, dark theme. Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, then the four menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island outlined in cyan with its printer icon. In the centre, the pan with its D3 ding and its coloured notes D4, A#3, A3, F4, E4, C4, C5, A4, G4; the handpan screen reads « D Minor / Kurd 10 ». Around the top of the pan, the full chromatic wheel — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — each dot in its own colour, with the octave 2 to 5 arcs. On the left, a vertical column of six icons in a yellow frame: rainbow (active), keyboard, pencil, bin, undo, redo. On the right, the « Mes handpans » panel: « D Minor / Kurd 10 » marked « tu joues dessus », the « POUR D Minor / Kurd 10 » bar with the ACOUSTIQUE badge, « 🎼 Mes morceaux (156) », « 🎡 Tester une autre tonalité », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » and « ⚡ Ajouter un handpan électronique »; below, the collapsed « ✨ Ce que tu peux faire » and « 🎯 Compléter » sections, then « 🧭 Découvrir d'autres gammes ». Along the bottom, the seven chord slots Dm, E°, F, Gm, Am, A#, C."
+    data-lb="chromakeys-acoustique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The same screen on an acoustic handpan.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### Each chord, a shape
 
