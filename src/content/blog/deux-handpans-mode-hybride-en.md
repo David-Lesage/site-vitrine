@@ -2,7 +2,7 @@
 title: "Two handpans that become one: your 2 handpans"
 description: "When a second handpan joins the first, Handpan Constellation Studio draws each chord across both — and tells you what that duo really unlocks."
 pubDate: 2026-09-01
-cover: "/images/app-deux-handpans-accord-a-cheval.webp"
+cover: "/images/app-deux-handpans-accord-a-cheval-2026-09.webp"
 category: "acoustique"
 tags: ["your 2 handpans", "two handpans", "complete"]
 lang: "en"
@@ -42,10 +42,10 @@ A word on vocabulary, because the app now draws the line: two acoustics side by 
 
 <figure>
   <img
-    src="/images/app-deux-handpans-accord-a-cheval.webp"
-    width="2000"
-    height="1400"
-    alt="The Scales tab with two handpans set side by side, dark theme. Above the instruments, a banner: « 🌙 Tes 2 handpans : D Minor / Kurd 10 + B2 … », an « ⇄ inverser » button, « Cadre : 🌙 mineur naturel », then the count « 6 avec D Minor / Kurd 10 · 4 avec B2 Amara 9 · 14 avec les deux », the last figure in yellow. Below, a « 🎼 Les 14 accords ↓ » button, the row « Les accords de base, à deux » with seven pills I to VII, and the line « Accord I : ① D3 main G · pan 1 → ② F4 main D · pan 1 → ③ A4 main G · pan 1 ». Both pans are drawn in ChromaKeys; on the left one, three notes are numbered 1, 2, 3 and joined by a path. Along the bottom, the seven chord slots Dm, E°, F, Gm, Am, A#, C."
+    src="/images/app-deux-handpans-accord-a-cheval-2026-09.webp"
+    width="1600"
+    height="849"
+    alt="The Scales tab with two handpans set side by side, dark theme. Above the instruments, the duo banner: « 🌙 Tes 2 handpans : D Minor / Kurd 10 + B2 … », an « ⇄ inverser » button, « Cadre : 🌙 mineur naturel », then the count « 6 avec D Minor / Kurd 10 · 4 avec B2 Amara 9 · 14 avec les deux », the last figure in yellow; below it the « 🎼 Les 14 accords ↓ » button, the row « Les accords de base, à deux » with seven coloured pills I to VII, and the prompt « Clique un degré, ou un accord dans l'Atelier : il s'allume sur les deux handpans. ». Both pans are drawn in ChromaKeys: on the left the D Minor / Kurd 10, its orange D3 ding, the handpan screen right underneath reading « D Minor / Kurd 10 », and a thin path joining three notes of chord I; on the right the B2 Amara 9 with its magenta B2 ding, C#4, B3, A3, F#3, A4, F#4, E4, D4. Between the two pans, the round ⇄ button. Along the bottom, the seven chord slots: Dm (D F A, its eye lit), E° (E G A#, RENV. 2), F (F A C), Gm (G A# D, RENV. 1), Am (A C E), A# (A# D F), C (C E G). On the right, the « Mes handpans (2) » block: ⓵ D Minor / Kurd 10 « tu joues dessus », ⓶ B2 Amara 9 « à côté », the « POUR D Minor / Kurd 10 » bar with the ACOUSTIQUE badge, the « 🤝 MON DUO » card and its « ⇄ inverser », then « ＋ Ajouter un handpan », « 📤 Partager cette gamme » and « ⚡ Ajouter un handpan électronique »."
     data-lb="deux-handpans"
     data-lb-wide
     loading="lazy"
@@ -54,7 +54,7 @@ A word on vocabulary, because the app now draws the line: two acoustics side by 
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): electronic (an acoustic + a Neotone), same screen, same state -->
+<!-- 📷 TWIN SCREENSHOT STILL TO TAKE: mixed duo (one acoustic + one Neotone). Not produced on 09/09/2026 — « Mes handpans » only registers acoustic pans (addCurrentHandpan goes through currentAcousticHandpan), and the mixed duo is set up via « ⚡ Ajouter un handpan électronique », a path that could not be driven automatically. Comment left in place. -->
 
 ## Your repertoire, right from loading
 
