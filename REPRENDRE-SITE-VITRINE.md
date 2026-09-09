@@ -48,6 +48,22 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## ÉTAT ACTUEL — 09/09/2026 (25ᵉ passe, matin) — ✅ Blog : figures périmées refaites + jumelles · 🧊 MODE ÉCONOME
+
+- **Mode économe (David 09/09, mémoire `mode-econome-un-agent-traductions-a-part`)** : UN agent à la fois, brief étroit, rapport
+  ≤ 10 lignes ; FRANÇAIS seulement (EN si gratuit) ; traductions = session dédiée « Traduction & changelog multilingue » ; retouche
+  d'article = passage nommé, jamais régénérer ; captures manquantes → APP par fichier-message, en un lot ; ne décrire une fonction app
+  qu'après le message de déploiement APP (281 à venir : Apprendre v3, accords acoustique, mode Chanson, Chanter & Jouer).
+- **Lot D+E livré** (`730f21c`…`c6e249b`, déployé) : 10/10 figures périmées refaites (palette une ligne, écran centré), 5 jumelles
+  posées, **12 emplacements laissés** avec motif dans le commentaire HTML (mode guidé n'existe pas en acoustique ; Atlas panneau différent
+  en électronique ; duo mixte non scriptable ; pages PDF = autre chaîne). `grep -rn "CAPTURE JUMELLE" src/content/blog` pour la liste.
+- **Constats pour l'APP** : le mode guidé (Apprentissage interactif › Accords) ne s'engage pas en acoustique (aucune note ne s'allume) ;
+  `scrollIntoView` fait planter Chrome headless dans les scénarios duo. Transmis.
+- **Nuit du 08→09** : limite 5 h atteinte (91 % à 22h30) ; agent coupé, repris à 6h34 sans perte (commits par article). Un réveil
+  CronCreate programmé pendant la limite N'A PAS tiré : ne pas compter dessus quand le quota est atteint.
+- En attente David : « Élan »/« l'Élan » · « l'Hybride » → « compléter son acoustique » · oui pour suivre la page HISONG (co-orga) ·
+  ses retouches ciblées d'articles existants.
+
 ## ÉTAT ACTUEL — 08/09/2026 (24ᵉ passe, 22h) — ✅ 3 ARTICLES EN PROD AVEC CAPTURES RÉELLES · lot D+E en cours
 
 - **En prod** (`bba1810` Constellations 3 acoustiques · `61a168b` Capo 8 captures, draft:false · `da3649c` Lire les couleurs 15 captures
