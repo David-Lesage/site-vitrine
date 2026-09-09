@@ -95,6 +95,20 @@ Première réponse possible. Ici, la couleur est collée au **nom** de la note, 
 
 Les douze notes ont leur couleur — les dièses compris, avec leur nuance propre. Change de gamme, change d'instrument, change de <abbr title="La note de référence sur laquelle la gamme est construite : en do majeur, la tonalité est do.">tonalité</abbr> : rien ne bouge. Le rouge reste le do.
 
+<figure>
+  <img
+    src="/images/blog-chromakeys-2026-12-arc-en-ciel.webp"
+    width="1800"
+    height="1478"
+    alt="La palette de création ChromaKeys : un arc de douze pastilles rondes au-dessus du handpan acoustique D Minor / Kurd 10. De gauche à droite : do rouge foncé, do dièse rouge vif, ré orange foncé, ré dièse orange clair, mi jaune, fa vert foncé, fa dièse vert clair, sol bleu ciel, sol dièse bleu ciel clair, la indigo, la dièse indigo clair, si magenta. Sous l'arc, une bande courbe passe du rouge au violet et porte les repères Octave 2, Octave 3, Octave 4, Octave 5."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Les douze couleurs, dans l'ordre. Les sept notes, et entre elles <strong>les demi-tons dans une nuance plus claire de la même couleur</strong> : c'est la seule chose à retenir.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
 L'intérêt le plus immédiat, c'est **l'octave**.
 
 Sans rien allumer d'autre, tous les *ré* de ta coque sont orange : le grave, l'aigu, celui du haut à droite. D'un coup d'œil, tu vois que ce sont **la même note à des hauteurs différentes**.
@@ -125,6 +139,26 @@ C'est le genre de chose qu'on met des mois à intégrer par l'oreille, et qui de
     loading="lazy"
   />
   <figcaption>Sur dix-neuf notes, l'effet est encore plus net : chaque famille de note forme un groupe de couleur qu'on repère d'un regard.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
+### Quand il y a beaucoup de notes
+
+Dix notes, ça se retient. Mais mon handpan de scène en porte **dix-huit**.
+
+Quand le cerveau a beaucoup d'informations à traiter d'un coup, il ne trie plus rien : il subit. **La couleur trie à sa place.**
+
+<figure>
+  <img
+    src="/images/blog-chromakeys-2026-13-paire-18-notes.webp"
+    width="2824"
+    height="1273"
+    alt="Deux captures du même handpan acoustique « D Kurd 18 — David Lesage Signature » montées côte à côte. Les dix-huit notes couvrent toute la coque. À gauche, la couleur dit la note : les ré sont orange, les la indigo, les do rouges, les fa verts. À droite, la couleur dit sa place dans la gamme : les mêmes notes se regroupent en familles de couleurs beaucoup moins nombreuses."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Mon <strong>D Kurd 18</strong>, deux fois. À gauche dix-huit noms de notes ; à droite, quelques familles de couleur. <strong>C'est le même instrument</strong> — seule la façon de le lire a changé.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -171,19 +205,38 @@ Et le dessin des sept couleurs reste identique d'une tonalité à l'autre : c'es
   <figcaption>Le même réglage <em>hors</em> du mode Logique : la couleur ne dit plus la marche, elle dit <strong>l'accord</strong> — toutes les notes d'un accord prennent la couleur de celle qui lui donne son nom.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+### Les deux lectures, côte à côte
+
+Voici la même coque, photographiée deux fois : à gauche la couleur dit **la note**, à droite elle dit **sa place dans la gamme**. Rien d'autre n'a bougé.
+
 <figure>
   <img
-    src="/images/blog-chromakeys-2026-04-place-electronique.webp"
-    width="2000"
-    height="1105"
-    alt="Le Neotone Mutant en mode Logique, do majeur, réglé sur « sa place dans la gamme », avec en bas les sept cartes d'accord colorées par degré : I ÉQUILIBRE C en rouge, II ÉLAN Dm en orange, III AVENTURE Em en jaune, IV DÉTENTE F en vert, V TENSION G en bleu, VI NOSTALGIE Am en indigo, VII MYSTÈRE B° en magenta. Sur le pan, chaque note porte la couleur du degré auquel il appartient."
+    src="/images/blog-chromakeys-2026-09-paire-note-place-acoustique.webp"
+    width="2824"
+    height="1385"
+    alt="Deux captures du même handpan acoustique D Minor / Kurd 10 montées côte à côte. À gauche, l'îlot Chromakeys sur « la note » : le ding D3 et le D4 orange, A#3 indigo clair, C5 rouge, E4 jaune, F4 vert, G4 bleu ciel, A3 et A4 indigo. À droite, l'îlot sur « sa place dans la gamme » : les mêmes notes changent de couleur — D3, D4, F4 et A4 orange, A#3, E4 et G4 jaunes, C5 vert, A3 et C4 indigo."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>En mode Logique, la couleur dit vraiment <strong>la marche</strong> : le I est rouge, le VII magenta, et les sept cartes d'accord reprennent exactement ces couleurs.</figcaption>
+  <figcaption>Le <strong>même</strong> handpan acoustique, deux fois. À gauche la note, à droite sa place. Le ding et le D4 restent orange des deux côtés — c'est le hasard d'une gamme en ré.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+<figure>
+  <img
+    src="/images/blog-chromakeys-2026-09-paire-note-place-electronique.webp"
+    width="2824"
+    height="1385"
+    alt="Deux captures du même Neotone Mutant à 19 notes en mode Logique, ancré en do majeur, montées côte à côte. À gauche « la note » : les do rouges, les ré orange, les mi jaunes, les fa verts, les sol bleu ciel, les la indigo, les si magenta. À droite « sa place dans la gamme » : les couleurs se regroupent par degré."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Et le <strong>même</strong> pan électronique, deux fois. La démonstration vaut sur les deux instruments : c'est le réglage qui change, jamais l'instrument.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
 
 ## « Notes partagées » : quand une note sert dans plusieurs accords
 
@@ -203,23 +256,33 @@ Trois choses vérifiées dans l'application au moment d'écrire, que je préfèr
 
 <figure>
   <img
-    src="/images/blog-chromakeys-2026-05-partagees-acoustique.webp"
-    width="2000"
-    height="2000"
-    alt="Gros plan sur le pan acoustique D Minor / Kurd 10, notes partagées allumées. Huit notes sur dix sont découpées en parts de camembert de deux ou trois couleurs — F4 en bleu, vert et orange, E4 en rouge, jaune et bleu, A#3 en indigo, bleu ciel et jaune. Seuls le ding D3 et le A3 restent d'une seule couleur."
+    src="/images/blog-chromakeys-2026-10-paire-partagees-acoustique.webp"
+    width="2824"
+    height="1429"
+    alt="Deux captures du même handpan acoustique D Minor / Kurd 10 côte à côte. À gauche, notes partagées sur Off : chaque note est d'une seule couleur. À droite, notes partagées sur On : huit notes sur dix portent un anneau découpé en arcs de couleurs — F4 cerclé de bleu, vert et orange, E4 de rouge, jaune et bleu, A#3 d'indigo, bleu ciel et jaune. Seuls le ding D3 et le A3 restent nus."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption><strong>Notes partagées</strong> : chaque part dit un accord auquel la note appartient. Sur ce D Kurd, huit notes sur dix servent dans plusieurs accords.</figcaption>
+  <figcaption><strong>Notes partagées</strong>, sur le même pan acoustique : à gauche éteint, à droite allumé. Chaque arc de l'anneau dit un accord auquel la note appartient.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
-<!-- 📷 CAPTURE NON PRODUITE (état inexistant dans l'app, vérifié le 08/09/2026) : sur un
-     Neotone, l'onglet Gammes est la Bibliothèque de Gammes — le pan y reste vide (aucune note,
-     aucun nom, écran « Bibliothèque de Gammes »), donc aucun anneau à montrer. L'anneau fin
-     autour de la couleur de note existe bel et bien, mais il se voit sur le pan acoustique.
-     Repère d'origine conservé :
-     📷 CAPTURE À PRODUIRE (APP) — id: CK1-05-electronique — Neotone Mutant, mode Gammes (PAS Logique : en Logique aucune note n'est partagée), gamme C majeur, niveau Musicien, La couleur dit = la note, Notes partagées = On, aucun œil ouvert ; on doit voir les anneaux fins autour des couleurs de notes ; fichier attendu /images/blog-chromakeys-2026-05-partagees-electronique.webp -->
+
+<figure>
+  <img
+    src="/images/blog-chromakeys-2026-10-paire-partagees-electronique.webp"
+    width="2824"
+    height="1429"
+    alt="Deux captures du même Neotone Mutant en mode Logique, do majeur, réglé sur « sa place dans la gamme », montées côte à côte. À gauche, notes partagées sur Off. À droite, notes partagées sur On : de nombreuses notes se coupent en deux couleurs de degré."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le même essai sur le pan électronique. <strong>Là aussi les notes se partagent</strong> — je croyais le contraire avant de faire la capture.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
+
 
 ## « Dessin des accords » : l'œil qui trace la constellation
 
@@ -238,30 +301,33 @@ Deux façons de regarder le même accord : sa fonction d'un côté, sa géograph
 
 <figure>
   <img
-    src="/images/blog-chromakeys-2026-06-oeil-acoustique.webp"
-    width="2000"
-    height="1222"
-    alt="Le pan acoustique avec un seul œil ouvert, celui de la carte Accord 1 (Dm — D F A). Quatre notes restent allumées et gardent chacun leur couleur propre : le ding D3 et le D4 orange, F4 vert, A4 indigo, reliés par un tracé orange. Les six autres notes sont éteintes en gris. En bas, la rangée des sept cartes d'accord, l'œil de la première est barré."
+    src="/images/blog-chromakeys-2026-11-paire-oeil-acoustique.webp"
+    width="2824"
+    height="1496"
+    alt="Deux captures du même handpan acoustique D Minor / Kurd 10 côte à côte, avec en bas la rangée des sept cartes d'accord. À gauche, aucun œil ouvert : les dix notes sont allumées, chacune de sa couleur. À droite, l'œil de la carte Accord 1 (Dm — D F A) est ouvert : seuls le ding D3, le D4, le F4 et le A4 restent allumés et reliés par un tracé orange, les six autres notes sont éteintes en gris."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Un œil ouvert : la constellation se trace et <strong>le reste de l'instrument s'éteint en gris</strong>. Avec « la note », chaque note de l'accord garde sa couleur.</figcaption>
+  <figcaption>L'œil de la carte <strong>Accord 1</strong> : fermé à gauche, ouvert à droite. La constellation se trace, et <strong>le reste de l'instrument s'éteint en gris</strong>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
 <figure>
   <img
-    src="/images/blog-chromakeys-2026-06-oeil-electronique.webp"
-    width="2000"
-    height="1105"
-    alt="Le Neotone Mutant en mode Logique, do majeur, œil ouvert sur la carte I ÉQUILIBRE C. Les notes de l'accord — C2 au centre, C3, E3, G3, C4 — sont tous du même rouge et reliés par un tracé rouge ; les autres notes sont grises. L'écran du handpan affiche « I Équilibre C »."
+    src="/images/blog-chromakeys-2026-11-paire-oeil-electronique.webp"
+    width="2824"
+    height="1287"
+    alt="Deux captures du même Neotone Mutant en mode Logique, do majeur, réglé sur « sa place dans la gamme », côte à côte. À gauche, aucun œil ouvert. À droite, l'œil de la carte I ÉQUILIBRE C est ouvert : les notes de l'accord sont toutes du même rouge et reliées par un tracé rouge, les autres sont grises."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le même geste avec « sa place dans la gamme » : <strong>tout l'accord est rouge</strong>, parce que c'est le I. La forme et la couleur disent la même chose.</figcaption>
+  <figcaption>Le même geste sur le pan électronique : <strong>tout l'accord est rouge</strong>, parce que c'est le I. La forme et la couleur disent la même chose.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+
 
 ## Tu n'as rien à régler : les préréglages par niveau
 
@@ -306,29 +372,5 @@ En Découverte, l'îlot se réduit d'ailleurs à l'essentiel : **une seule bascu
 
 Une fois que tu lis les couleurs par la place dans la gamme, il se passe quelque chose d'inattendu : le dessin de chaque accord ne dépend plus de la tonalité. Le I a la même forme en do, en ré, en la. C'est exactement le geste d'un guitariste qui pose un capo — sauf que sur un handpan électronique, le capo est un bouton. C'est le sujet de [l'article suivant : *Le capo du handpan*](/blog/le-capo-du-handpan).
 
-<figure>
-  <img
-    src="/images/blog-chromakeys-2026-08-cloture-acoustique.webp"
-    width="2000"
-    height="1222"
-    alt="Plan large de tout l'écran côté acoustique : la bande d'outils, le handpan D Minor / Kurd 10 avec l'accord Dm tracé et l'écran du handpan centré sous le ding, et en bas la rangée des sept cartes d'accord (Dm, E°, F, Gm, Am, A#, C)."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Tout tient sur un seul écran : les réglages en haut, l'instrument au milieu, les accords en bas.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
-<figure>
-  <img
-    src="/images/blog-chromakeys-2026-08-cloture-electronique.webp"
-    width="2000"
-    height="1105"
-    alt="Le même plan large côté électronique : la bande d'outils, le Neotone Mutant avec l'accord I entièrement rouge et l'écran du handpan affichant « I Équilibre C », et en bas les sept cartes de degrés, de I ÉQUILIBRE C à VII MYSTÈRE B°."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Et le même écran sur un pan électronique. Les mots ne changent pas d'un instrument à l'autre — c'est le but.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
+Les mots ne changent pas d'un instrument à l'autre — acoustique ou électronique, c'est le même écran, les mêmes trois questions. C'est le but.
+
