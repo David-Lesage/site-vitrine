@@ -2,7 +2,7 @@
 title: "Accompagner des chansons au handpan, comme une guitare"
 description: "Le Mode Logique fait passer le handpan d'un instrument de nappes méditatives à un vrai instrument d'accompagnement de chansons, sans solfège."
 pubDate: 2026-07-18
-cover: "/images/app-logique-progression.webp"
+cover: "/images/app-logique-progression-2026-09.webp"
 category: "logique"
 tags: ["méthode", "accompagnement"]
 lang: "fr"
@@ -28,10 +28,10 @@ D'un coup, ta poignée de notes n'est plus une contrainte : c'est une palette d'
 
 <figure>
   <img
-    src="/images/app-logique-progression.webp"
-    width="2000"
-    height="1250"
-    alt="Le Mode Logique avec une progression déjà posée. L'écran du handpan, au centre de l'instrument, indique « D Majeur — Pop Complète — I·II·IV·V·VI ». En bas, cinq cartouches remplis à la suite : I ÉQUILIBRE D, II ÉLAN Em, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm ; les emplacements Accord 6 et Accord 7 restent gris et portent la mention « Aucun ». À droite, dans le panneau Voyage des Sensations, la ligne « Pop Complète : I → II → IV → V → VI »."
+    src="/images/app-logique-progression-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… » avec « la note · chakras » retenu, « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Le Mode Logique avec une progression déjà posée sur un Neotone Mutant. L'écran du handpan, juste sous le ding D2, indique « D Majeur — Pop Complète — I·II·IV·V·VI ». En bas, cinq cartouches remplis à la suite : I ÉQUILIBRE D, II ÉLAN Em, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm ; les emplacements Accord 6 et Accord 7 restent gris et portent la mention « Aucun ». À droite, le bloc « Mes handpans » (Neotone Mutant · Noyer) et le panneau « Logique et Emotions » avec Ressenti émotionnel retenu, la note d'ancrage D et le mode Joyeux."
     data-lb="logique-progression"
     data-lb-wide
     loading="lazy"
@@ -40,7 +40,19 @@ D'un coup, ta poignée de notes n'est plus une contrainte : c'est une palette d'
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : acoustique, même écran, même état -->
+<figure>
+  <img
+    src="/images/app-logique-progression-acoustique-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="La même progression posée sur un handpan acoustique D Minor / Kurd 10, thème sombre. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Au centre, le pan et l'écran du handpan, juste sous le ding D3, qui indique « D Minor / Kurd 10 ». En bas, cinq cartouches remplis à la suite : I ÉQUILIBRE Dm, II ÉLAN E° (renversement 2), IV DÉTENTE Gm (renversement 1), V TENSION Am, VI NOSTALGIE A# ; les emplacements Accord 6 et Accord 7 restent gris et portent la mention « Aucun ». À droite, le panneau « Logique et Emotions » avec la note d'ancrage D, le mode Joyeux et, dans « Voyage des Sensations », la ligne « Pop Complète : I ➔ II ➔ IV ➔ V ➔ VI » retenue."
+    data-lb="logique-progression-acoustique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>La même progression, sur un <strong>handpan acoustique</strong>. Pop Complète reste Pop Complète : seuls les accords changent de nom, parce que le pan n'a pas les mêmes notes.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### Accompagner un morceau connu
 

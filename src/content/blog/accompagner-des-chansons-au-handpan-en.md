@@ -2,7 +2,7 @@
 title: "Accompanying songs on handpan, like a guitar"
 description: "Logic Mode turns the handpan from a meditative drone instrument into a real song-accompaniment instrument, no music theory needed."
 pubDate: 2026-07-18
-cover: "/images/app-logique-progression.webp"
+cover: "/images/app-logique-progression-2026-09.webp"
 category: "logique"
 tags: ["method", "accompaniment"]
 lang: "en"
@@ -28,10 +28,10 @@ Suddenly your handful of notes is no longer a constraint: it's a palette of chor
 
 <figure>
   <img
-    src="/images/app-logique-progression.webp"
-    width="2000"
-    height="1250"
-    alt="Logic Mode with a progression already filled in. The handpan screen, at the centre of the instrument, reads « D Majeur — Pop Complète — I·II·IV·V·VI ». Along the bottom, five filled cards in a row: I ÉQUILIBRE D, II ÉLAN Em, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm; slots Accord 6 and Accord 7 stay grey and read « Aucun ». On the right, in the Voyage des Sensations panel, the line « Pop Complète : I → II → IV → V → VI »."
+    src="/images/app-logique-progression-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… » with « la note · chakras » selected, « Notes partagées » on On, then the four menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island outlined in cyan with its printer icon. Logic Mode with a progression already laid out on a Neotone Mutant. The handpan screen, just below the D2 ding, reads « D Majeur — Pop Complète — I·II·IV·V·VI ». Along the bottom, five filled cards in a row: I ÉQUILIBRE D, II ÉLAN Em, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm; the Accord 6 and Accord 7 slots stay grey and read « Aucun ». On the right, the « Mes handpans » block (Neotone Mutant · Noyer) and the « Logique et Emotions » panel with emotional wording selected, anchor note D and Joyeux mode."
     data-lb="logique-progression"
     data-lb-wide
     loading="lazy"
@@ -40,7 +40,19 @@ Suddenly your handful of notes is no longer a constraint: it's a palette of chor
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): acoustic, same screen, same state -->
+<figure>
+  <img
+    src="/images/app-logique-progression-acoustique-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="The same progression laid out on an acoustic D Minor / Kurd 10 handpan, dark theme. At the top, the compact tool bar on a single line: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, then the four menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island ringed in cyan with its printer icon. In the centre, the pan and the handpan screen, right under the D3 ding, reading « D Minor / Kurd 10 ». At the bottom, five cards filled in a row: I ÉQUILIBRE Dm, II ÉLAN E° (2nd inversion), IV DÉTENTE Gm (1st inversion), V TENSION Am, VI NOSTALGIE A#; the Accord 6 and Accord 7 slots stay grey and read « Aucun ». On the right, the « Logique et Emotions » panel with anchor note D, Joyeux mode and, in « Voyage des Sensations », the « Pop Complète : I ➔ II ➔ IV ➔ V ➔ VI » line selected."
+    data-lb="logique-progression-acoustique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The same progression on an <strong>acoustic handpan</strong>. Pop Complète stays Pop Complète: only the chord names change, because the pan does not hold the same notes. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### Accompanying a known song
 
