@@ -2,7 +2,7 @@
 title: "« Mes handpans » : une seule porte pour tes instruments"
 description: "Déclarer ton pan, en poser un second à côté, retrouver ton installation sur l'iPad : il y avait cinq chemins différents, il n'en reste qu'un. Voilà lequel, et ce qui a changé."
 pubDate: 2026-09-01
-cover: "/images/blog-mes-handpans-duo.webp"
+cover: "/images/blog-mes-handpans-duo-2026-09.webp"
 category: "acoustique"
 tags: ["acoustique", "deux handpans", "mes handpans"]
 lang: "fr"
@@ -38,10 +38,10 @@ Et une distinction qui a l'air anodine mais qui change tout : **sélectionner n'
 
 <figure>
   <img
-    src="/images/blog-mes-handpans-duo.webp"
-    width="1548"
-    height="2112"
-    alt="Panneau de droite de Handpan Constellation Studio en mode acoustique, bloc « Mes handpans (2) ». Premier rang : case cochée ⓵, logo rond cuivré, « D Minor / Kurd 10 — D · 10 notes », pastille dorée « tu joues dessus ». Deuxième rang : case cochée ⓶, logo rond cuivré, « B2 Amara 9 — B · 9 notes », mention « à côté ». Sous la liste, la barre d'actions « POUR D Minor / Kurd 10 », avec le crayon de renommage, la pastille ACOUSTIQUE, « Retirer », « Mes morceaux (156) », « Tester une autre tonalité », puis l'encart « 🤝 MON DUO — D Minor / Kurd 10 + B2 Amara 9 · ▶ Jouer le duo · ⇄ inverser · Retirer du duo ». En bas : « Changer de gamme → plus bas ↓ », « ＋ Handpan enregistré », « Partager cette gamme », « ⚡ Ajouter un handpan électronique »."
+    src="/images/blog-mes-handpans-duo-2026-09.webp"
+    width="1600"
+    height="2171"
+    alt="Le bloc « Mes handpans (2) » du panneau de droite de Handpan Constellation Studio en mode acoustique, thème sombre, cerclé de jaune. En en-tête, le titre et un bouton ＋. Premier rang : pastille jaune ⓵, logo rond cuivré, « D Minor / Kurd 10 — D · 10 notes », pastille dorée « tu joues dessus ». Deuxième rang : pastille jaune ⓶, logo rond cuivré, « B2 Amara 9 — B · 9 notes », mention « à côté ». Sous la liste, la barre d'actions « POUR D Minor / Kurd 10 » avec le crayon de renommage, le badge ACOUSTIQUE et « 🗑 Retirer », puis les boutons « 🎼 Mes morceaux (156) » et « 🎡 Tester une autre tonalité », et l'encart « 🤝 MON DUO — D Minor / Kurd 10 + B2 Amara 9 » avec « ▶ Jouer le duo », « ⇄ inverser » et « Retirer du duo ». En bas : « 🧭 Changer de gamme → plus bas ↓ », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » et « ⚡ Ajouter un handpan électronique »."
     data-lb="mes-handpans-duo"
     loading="lazy"
   />
@@ -49,7 +49,19 @@ Et une distinction qui a l'air anodine mais qui change tout : **sélectionner n'
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : électronique, même écran, même état — le bloc « Mes handpans » du panneau de droite en mode électronique, avec ses actions propres (🎛 MIDI & mapping, ⚙︎ Modèle & bois) — copier la <figure> ci-dessus, alt + figcaption à écrire d'après la capture -->
+<figure>
+  <img
+    src="/images/blog-mes-handpans-electronique-2026-09.webp"
+    width="1600"
+    height="1745"
+    alt="Le même bloc « Mes handpans » sur un handpan électronique, thème sombre. Un seul rang : pastille jaune ⓵, logo rond bleu, « Neotone Mutant · Noyer — Neotone Mutant · 19 creux · Noyer · 440 Hz », pastille dorée « tu joues dessus ». En dessous, la barre d'actions « POUR Neotone Mutant · Noyer » avec le badge ÉLECTRONIQUE, le grand bouton « 🎼 Mes morceaux », puis deux actions propres à l'instrument électronique : « 🎛 MIDI &amp; mapping » et « ⚙︎ Modèle &amp; bois — Neotone Mutant · Noyer ». Suit « ⚡⚡ Deux électroniques » et sa phrase « pose un 2ᵉ Neotone qui joue ce que le premier ne peut pas — c'est son COMPLÉMENT, pas sa copie. ». En bas, les mêmes portes que sur l'acoustique : « 🧭 Changer de gamme → plus bas ↓ », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » et « ⚡ Ajouter un handpan électronique »."
+    data-lb="mes-handpans-electronique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le même bloc, sur un <strong>handpan électronique</strong>. Même porte, même grammaire : la liste, la barre <strong>POUR&nbsp;: …</strong>, les mêmes boutons en pied. Seules changent les actions qui n'ont de sens que là — <em>MIDI &amp; mapping</em>, <em>Modèle &amp; bois</em> — et l'invitation à poser un second Neotone.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Deux cases à cocher, et c'est tout
 
