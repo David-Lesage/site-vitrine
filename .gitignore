@@ -18,3 +18,4 @@ _medias-originaux-avec-titre/
 # Cache local du script de traduction ES (peut contenir beaucoup de texte, régénérable)
 scripts/.cache-traduction-es.json
 .env.local
+scripts/.cache-traduction-en.json
