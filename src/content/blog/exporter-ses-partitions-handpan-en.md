@@ -48,7 +48,7 @@ Every export discreetly carries the note "created with Handpan Constellation Stu
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): acoustic, same screen, same state -->
+<!-- 📷 TWIN SCREENSHOT STILL TO TAKE: the same PDF export for an ACOUSTIC scale, whose instrument diagram shows an acoustic pan. Not produced on 09/09/2026: this figure is not an app screenshot but a page of an actually exported PDF. The twin therefore requires composing the piece on the target scale, running the export, then rendering a page of the PDF — a different chain from the screenshot pipeline (audits/captures-2026-09-08-blog-lot-DE), to be built separately. Comment left in place. -->
 
 ## From idea to document
 

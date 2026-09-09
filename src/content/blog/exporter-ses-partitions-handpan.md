@@ -48,7 +48,7 @@ Chaque export porte discrètement la mention « créé avec Handpan Constellatio
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : acoustique, même écran, même état -->
+<!-- 📷 CAPTURE JUMELLE À REPRENDRE : le même export PDF pour une gamme ACOUSTIQUE, dont le schéma d'instrument montre un pan acoustique. Non produite le 09/09/2026 : cette figure n'est pas une capture d'écran de l'app mais une page de PDF réellement exporté. La jumelle demande donc de composer le morceau sur la gamme voulue, de lancer l'export, puis de faire le rendu d'une page du PDF — une chaîne différente de celle des captures d'écran (audits/captures-2026-09-08-blog-lot-DE), à monter à part. Commentaire laissé en place. -->
 
 ## De l'idée au document
 
