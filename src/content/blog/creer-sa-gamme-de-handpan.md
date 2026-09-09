@@ -2,7 +2,7 @@
 title: "Comment créer sa gamme de handpan (tutoriel)"
 description: "Comprends ce qu'est une gamme de handpan et apprends à créer la tienne, gratuitement, dans le mode acoustique de Handpan Constellation Studio — puis à la partager avec la communauté."
 pubDate: 2026-06-29
-cover: "/images/app-creation-acoustique.webp"
+cover: "/images/app-creation-acoustique-2026-09.webp"
 category: "gammes"
 tags: ["gammes", "tutoriel"]
 lang: "fr"
@@ -34,19 +34,31 @@ Une gamme, c'est le « caractère » de ton pan : une note centrale (le **ding**
 
 <figure>
   <img
-    src="/images/app-creation-acoustique.webp"
-    width="2000"
-    height="1250"
-    alt="L'onglet Création, thème sombre, sur un handpan acoustique. Au centre, le pan avec son ding D3 et ses notes colorées D4, A#3, A3, F4, E4, C4, C5, A4, G4 ; l'écran du handpan indique « D Minor / Kurd 10 ». Autour du haut du pan, la roue chromatique complète — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — chaque pastille à sa couleur, avec les repères d'octaves 2 à 5 en arc de cercle. À gauche, une barre d'outils verticale : palette ChromaKeys, clavier, crayon, corbeille, annuler, refaire. À droite, le panneau « Mes handpans » : « Tu ne connais pas le nom de ta gamme ? Réponds à quelques questions simples : on la retrouve ensemble. », un bouton « 🔍 Trouve ton instrument », l'instrument « D Minor / Kurd 10 » marqué du badge ACOUSTIQUE, « 🎙 Mes morceaux (156) », « Tester une autre tonalité », puis un bloc « ✨ Mon handpan » indiquant « Coque : 10 dessus · simple » et une rangée de creux du dessous numérotés de 1 à 9 plus « aucun ». En bas de ce panneau : « Clique un creux sur le pan pour le sélectionner, puis une couleur dans la palette ChromaKeys autour du pan pour lui assigner une note. Reclique un creux placé pour l'écouter. »"
+    src="/images/app-creation-acoustique-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="L'onglet Création sur un handpan acoustique D Minor / Kurd 10, thème sombre. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Au centre, le pan avec son ding D3 et ses notes colorées D4, A#3, A3, F4, E4, C4, C5, A4, G4 ; l'écran du handpan indique « D Minor / Kurd 10 ». Autour du haut du pan, la roue chromatique complète — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — chaque pastille à sa couleur, avec les repères d'octaves 2 à 5 en arc de cercle. À gauche, une colonne d'outils verticale de six icônes dans un cadre jaune : arc-en-ciel (active), clavier, crayon, corbeille, annuler, refaire. À droite, le panneau « Mes handpans » : « D Minor / Kurd 10 » marqué « tu joues dessus », la barre « POUR D Minor / Kurd 10 » avec le badge ACOUSTIQUE, « 🎼 Mes morceaux (156) », « 🎡 Tester une autre tonalité », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » et « ⚡ Ajouter un handpan électronique » ; en dessous, les sections repliées « ✨ Ce que tu peux faire » et « 🎯 Compléter », puis « 🧭 Découvrir d'autres gammes ». En bas, les sept emplacements d'accords Dm, E°, F, Gm, Am, A#, C."
     data-lb="creation-acoustique"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>L'onglet Création en <strong>mode acoustique</strong> (badge ACOUSTIQUE à droite), sur un D Minor / Kurd 10. La roue chromatique entoure le pan : on clique un creux, puis la couleur de la note qu'on veut y poser. Le panneau de droite tient le compte des creux du dessous et de la coque choisie.</figcaption>
+  <figcaption>L'onglet Création en <strong>mode acoustique</strong> (badge ACOUSTIQUE à droite), sur un D Minor / Kurd 10. La roue chromatique entoure le pan : on clique un creux, puis la couleur de la note qu'on veut y poser. Le panneau de droite reste centré sur <strong>Mes handpans</strong> : l'instrument chargé, ses morceaux, et les portes vers un deuxième pan.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : électronique, même écran, même état -->
+<figure>
+  <img
+    src="/images/app-chromakeys-on-2026-09.webp"
+    width="1600"
+    height="896"
+    alt="L'onglet Création sur un handpan électronique Neotone Mutant, thème sombre, ChromaKeys allumées. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, un îlot « La palette de création ChromaKeys » également sur On, puis les quatre menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Chaque note du pan est peinte de sa couleur et cerclée d'un halo — D2 orange au centre, C#4 et C#3 rouges, B3 magenta, A3 et A4 bleus, F#3 et F#4 verts, G3 et G4 bleu ciel, E2 et E3 jaunes. Autour du haut du pan, la roue chromatique déployée : C, C#, D, D#, E, F, F#, G, G#, A, A#, B, chacune à sa couleur, avec les arcs d'octaves 2 à 5. À gauche, une colonne d'outils verticale de six icônes dans un cadre jaune — arc-en-ciel (active), clavier, crayon, corbeille, annuler, refaire. En bas, les sept emplacements d'accords : D, Em, F#m, G, A, Bm, C#°, chacun avec ses trois notes écrites en dessous. L'écran du handpan indique « Neotone Mutant »."
+    data-lb="creation-electronique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le même écran sur un handpan électronique.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### S'appuyer sur les couleurs
 

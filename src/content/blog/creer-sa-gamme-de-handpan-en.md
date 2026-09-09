@@ -2,7 +2,7 @@
 title: "How to create your own handpan scale (tutorial)"
 description: "Understand what a handpan scale is and learn to build your own, for free, in Handpan Constellation Studio's acoustic mode — then share it with the community."
 pubDate: 2026-06-29
-cover: "/images/app-creation-acoustique.webp"
+cover: "/images/app-creation-acoustique-2026-09.webp"
 category: "gammes"
 tags: ["scales", "tutorial"]
 lang: "en"
@@ -34,19 +34,31 @@ A scale is the "character" of your pan: a central note (the **ding**) surrounded
 
 <figure>
   <img
-    src="/images/app-creation-acoustique.webp"
-    width="2000"
-    height="1250"
-    alt="The Création tab, dark theme, on an acoustic handpan. In the centre, the pan with its D3 ding and coloured notes D4, A#3, A3, F4, E4, C4, C5, A4, G4; the handpan screen reads « D Minor / Kurd 10 ». Around the top of the pan, the full chromatic wheel — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — each disc in its own colour, with octave markers 2 to 5 on an arc. On the left, a vertical toolbar: ChromaKeys palette, keyboard, pencil, bin, undo, redo. On the right, the « Mes handpans » panel: an invitation to find your scale by answering a few questions, a « 🔍 Trouve ton instrument » button, the instrument « D Minor / Kurd 10 » with an ACOUSTIQUE badge, « 🎙 Mes morceaux (156) », « Tester une autre tonalité », then a « ✨ Mon handpan » block reading « Coque : 10 dessus · simple » with a row of bottom-note slots numbered 1 to 9 plus « aucun », and instructions to click a dimple then a ChromaKeys colour to assign it a note."
+    src="/images/app-creation-acoustique-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="The Création tab on a D Minor / Kurd 10 acoustic handpan, dark theme. Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, then the four menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island outlined in cyan with its printer icon. In the centre, the pan with its D3 ding and its coloured notes D4, A#3, A3, F4, E4, C4, C5, A4, G4; the handpan screen reads « D Minor / Kurd 10 ». Around the top of the pan, the full chromatic wheel — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — each dot in its own colour, with the octave 2 to 5 arcs. On the left, a vertical column of six icons in a yellow frame: rainbow (active), keyboard, pencil, bin, undo, redo. On the right, the « Mes handpans » panel: « D Minor / Kurd 10 » marked « tu joues dessus », the « POUR D Minor / Kurd 10 » bar with the ACOUSTIQUE badge, « 🎼 Mes morceaux (156) », « 🎡 Tester une autre tonalité », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » and « ⚡ Ajouter un handpan électronique »; below, the collapsed « ✨ Ce que tu peux faire » and « 🎯 Compléter » sections, then « 🧭 Découvrir d'autres gammes ». Along the bottom, the seven chord slots Dm, E°, F, Gm, Am, A#, C."
     data-lb="creation-acoustique"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The Création tab in <strong>acoustic mode</strong> (ACOUSTIQUE badge on the right), on a D Minor / Kurd 10. The chromatic wheel surrounds the pan: click a dimple, then the colour of the note you want on it. The right-hand panel tracks the bottom notes and the shell you picked. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The Création tab in <strong>acoustic mode</strong> (ACOUSTIQUE badge on the right), on a D Minor / Kurd 10. The chromatic wheel surrounds the pan: click a dimple, then the colour of the note you want on it. The right-hand panel stays focused on <strong>Mes handpans</strong>: the loaded instrument, its songs, and the doors to a second pan. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): electronic, same screen, same state -->
+<figure>
+  <img
+    src="/images/app-chromakeys-on-2026-09.webp"
+    width="1600"
+    height="896"
+    alt="The Création tab on a Neotone Mutant electronic handpan, dark theme, ChromaKeys on. Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, a « La palette de création ChromaKeys » island also on On, then the four menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island outlined in cyan with its printer icon. Every note on the pan is painted in its own colour and ringed with a halo — D2 orange at the centre, C#4 and C#3 red, B3 magenta, A3 and A4 blue, F#3 and F#4 green, G3 and G4 sky blue, E2 and E3 yellow. Around the top of the pan, the chromatic wheel is unfolded: C, C#, D, D#, E, F, F#, G, G#, A, A#, B, each in its own colour, with the octave 2 to 5 arcs. On the left, a vertical column of six icons in a yellow frame — rainbow (active), keyboard, pencil, bin, undo, redo. Along the bottom, the seven chord slots: D, Em, F#m, G, A, Bm, C#°, each with its three notes written underneath. The handpan screen reads « Neotone Mutant »."
+    data-lb="creation-electronique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The same screen on an electronic handpan.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### Lean on the colours
 
