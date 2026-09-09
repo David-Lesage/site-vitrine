@@ -1,0 +1,80 @@
+---
+// Page « Politique de confidentialité »
+// (/politique-de-confidentialite · /en/… · /es/…).
+//
+// POURQUOI CETTE PAGE EXISTE (09/09/2026) : Google refuse de valider l'écran de
+// consentement OAuth de l'application Handpan Constellation Studio tant qu'aucune
+// URL PUBLIQUE de politique de confidentialité n'est déclarée et atteignable.
+// Elle doit donc rester en ligne, à un clic du pied de page, dans chaque langue —
+// et l'URL du scope Google (https://www.googleapis.com/auth/calendar.events) doit
+// y figurer LITTÉRALEMENT.
+//
+// Même gabarit que TermsPage (titres + listes à puces), sans le bandeau « version » :
+// ce document n'est pas versionné côté site, il porte une date de mise à jour.
+// C'est l'application qui gère un numéro de version, dans son propre document.
+//
+// 🚨 Le contenu vit dans le bloc `privacy` de src/i18n/dict.ts (FR),
+// src/i18n/en.ts (EN) et src/i18n/es.ts (ES). Chaque affirmation y est sourcée en
+// commentaire : ne rien y ajouter qui ne soit pas vérifiable dans un dépôt.
+//
+// <!-- à compléter par David : les mentions légales ne portent AUCUN SIRET ni
+//      forme juridique pour David Lesage personne physique (seul le SIRET de
+//      l'association Résonances Productions y figure, et c'est un tiers). Rien
+//      n'a donc été inventé ici. Si un numéro d'immatriculation doit apparaître
+//      sur cette page, il faut l'ajouter d'abord aux mentions légales. -->
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import Button from '@/components/Button.astro'
+import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import { site } from '@/data/site'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const pc = t.privacy
+const legalHref = localizePath('/mentions-legales', lang)
+const termsHref = localizePath('/conditions-generales', lang)
+---
+
+<Layout title={pc.title} description={pc.description}>
+  <Section width="narrow">
+    <h1 class="font-display text-3xl font-700 lg:text-4xl">{pc.h1}</h1>
+
+    <p class="mt-3 text-xs font-600 uppercase tracking-wide text-ink-soft/70">
+      {pc.updatedLabel} : {pc.updated}
+    </p>
+
+    <p class="mt-6 text-lg leading-relaxed text-ink-soft">{pc.lead}</p>
+
+    <div class="mt-12 space-y-10 text-ink-soft/90">
+      {pc.sections.map((s) => (
+        <div>
+          <h2 class="font-display text-xl font-700 text-ink">{s.h}</h2>
+          <p class="mt-2 leading-relaxed">{s.p}</p>
+          {s.items.length > 0 && (
+            <ul class="mt-4 space-y-3">
+              {s.items.map((it) => (
+                <li class="flex gap-3 leading-relaxed">
+                  <span aria-hidden="true" class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-copper"></span>
+                  <span>{it}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-14 rounded-card border border-copper/25 bg-copper/5 p-6">
+      <h2 class="font-display text-xl font-700 text-ink">{pc.contactTitle}</h2>
+      <p class="mt-2 leading-relaxed text-ink-soft/90">{pc.contactText}</p>
+      <div class="mt-5 flex flex-wrap items-center gap-3">
+        <Button href={`mailto:${site.email}`}>{pc.contactCta}</Button>
+        <a href={legalHref} class="text-sm font-600 underline decoration-copper/50 underline-offset-4 hover:text-rust">{pc.legalLink}</a>
+        <a href={termsHref} class="text-sm font-600 underline decoration-copper/50 underline-offset-4 hover:text-rust">{pc.termsLink}</a>
+      </div>
+    </div>
+  </Section>
+</Layout>

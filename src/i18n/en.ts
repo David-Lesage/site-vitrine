@@ -29,6 +29,7 @@ export const en: Dict = {
       faq: 'FAQ',
       legal: 'Legal notice',
       terms: 'Terms & conditions',
+      privacy: 'Privacy Policy',
       rights: 'Independent Neotone ambassador · All prices are indicative and may change without notice.',
     },
     skip: 'Skip to content',
@@ -2533,6 +2534,133 @@ export const en: Dict = {
     contactText: 'Write to contact@lesagedavid.fr. I answer personally, and I much prefer a question asked too early to a doubt kept to yourself.',
     contactCta: 'Write to me',
     legalLink: 'See the legal notice',
+  },
+  // Privacy Policy — see the sourcing comment above the `privacy` block in
+  // src/i18n/dict.ts. The Google OAuth scope string is quoted LITERALLY.
+  privacy: {
+    title: 'Privacy Policy — David Lesage',
+    description:
+      'Privacy policy for the David Lesage site and the Handpan Constellation Studio app: what is collected, lesson bookings, Google Calendar, retention periods and GDPR rights.',
+    h1: 'Privacy Policy',
+    updatedLabel: 'Last updated',
+    updated: '9 September 2026',
+    lead: 'This page says plainly what I do with your data: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. It covers this site and the Handpan Constellation Studio application. No jargon: if something isn’t clear, write to me — I’m the one who reads.',
+    sections: [
+      {
+        h: 'Who is responsible for your data',
+        p: 'David Lesage — musician, teacher and inventor, publisher of this site and of the Handpan Constellation Studio application. Showroom: 29 rue des Orteaux, 75020 Paris, France. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52. There is no marketing department behind any of this: I decide what is collected, I read it, and I answer you.',
+        items: [] as string[],
+      },
+      {
+        h: 'What this page covers',
+        p: 'Two places, two different uses, and they are worth telling apart.',
+        items: [
+          'The lesagedavid.fr site: what you write in the forms (booking, contact, waiting list, microphone order). The form-by-form detail is on the Terms & conditions page, and it still holds.',
+          'The Handpan Constellation Studio application: your account, your subscription, and — if you teach or are a student — the lesson calendar.',
+        ],
+      },
+      {
+        h: 'What I collect in the application, and why',
+        p: 'When you create your account: your email address, your last name and your first name, plus a phone number if you choose to provide one — that last one is optional.',
+        items: [
+          'Create and secure your account, and give you access to the application.',
+          'Manage your subscription.',
+          'Contact you about your account.',
+          'Anonymised data — data that cannot be traced back to you — may also be used to better understand the needs of handpan players and to improve the application.',
+        ],
+      },
+      {
+        h: 'Booking a lesson: it concerns only the teacher and the student',
+        p: 'When a lesson is booked in the application, the details of that session concern two people only: the teacher and the student of that lesson. Nobody else has access — not other teachers, not other students, not anyone outside.',
+        items: [
+          'A session’s details are: the student’s name and email, their phone number if given, the date and time, the duration, the place or the video-call link, the type of session and the notes attached to the lesson.',
+          'Technically, access is locked at the database level itself: a session can only be read by the teacher who created it and by the student concerned. Plus the application’s administrator, that is to say me, David Lesage — I would rather say so than leave it unsaid.',
+          'This information is used to organise the lesson, and for nothing else. It is never sold, passed on or shared for commercial purposes.',
+        ],
+      },
+      {
+        h: 'If the teacher links their Google Calendar',
+        p: 'Linking a calendar is the teacher’s choice, and only a choice: the application works perfectly well without it. Until they do, no data travels to Google.',
+        items: [
+          'When they do, the event is created in THEIR own calendar, and the student is invited to it — meaning they receive the invitation and see the event on their side. Nothing is written into the student’s calendar without their own agreement.',
+          'The permission requested from Google is exactly this one: https://www.googleapis.com/auth/calendar.events — it allows lesson events to be created, updated and deleted, and nothing else. The application does not read the rest of the calendar, does not browse it, and does not access any other Google service.',
+          'No calendar data is used for any other purpose. It is never passed on, sold or shared with any third party whatsoever.',
+          'The teacher can unlink their calendar at any time, from within the application. The link is then deleted and the application immediately stops writing to Google Calendar; lessons remain in the application but no longer sync to it. Events already created belong to their Google calendar: they stay there, and it is up to them to delete them if they wish.',
+        ],
+      },
+      {
+        h: 'Usage measurement in the application',
+        p: 'The application is developed by one person — me. To know where to put my energy, I measure how it is used: the time spent in each part of the application, and interface actions, timestamped, in their order. I am the only recipient of these measurements.',
+        items: [
+          'What is never collected: your musical content (not your scales, not your pieces, not what you play), the text you type, your keystrokes, your mouse movements. No advertising trackers, no third-party analytics: nothing goes to Google, Meta or anyone else.',
+          'These measurements are kept for as long as your account is active, and are deleted automatically along with it.',
+          'You can opt out of this measurement at any time from within the application, with no explanation needed: opting out is immediate and erases the measurements already recorded about you.',
+          'The full text, which is the one that prevails, is the one shown in the application, available at any time from “My account” → “Privacy & Terms”.',
+        ],
+      },
+      {
+        h: 'On what legal basis',
+        p: 'It depends on what is at stake, and it is better said precisely.',
+        items: [
+          'Your consent, for the site forms and for receiving my news: two separate checkboxes, only one of which is mandatory, and you can withdraw either at any time.',
+          'Performance of the service, for your account, your subscription and organising lessons: without this information, the application simply cannot do what you are asking of it.',
+          'My legitimate interest in improving the application, for usage measurement — together with a full right to object, exercisable in one gesture inside the application.',
+        ],
+      },
+      {
+        h: 'How long I keep all this',
+        p: 'For as long as it is useful, no longer.',
+        items: [
+          'Your account data and the lesson calendar: for as long as your account is active. You can ask for it to be deleted at any time.',
+          'Usage measurements: for as long as your account is active, and erased immediately if you object to the measurement.',
+          'What you write to me through the site forms: three years after our last exchange, and the clock resets with every new exchange.',
+        ],
+      },
+      {
+        h: 'The providers that see your data',
+        p: 'I neither sell nor rent any data, to anyone, ever. Here is the list of services that are genuinely involved.',
+        items: [
+          'Supabase — the database where accounts, the lesson calendar and form replies are stored, along with the storage space for uploaded files. The project is hosted in Ireland, within the European Union.',
+          'Vercel — the host of this site. The small server functions that relay the forms run in the United States.',
+          'Stripe — payment of the application subscription. The site itself only reads the displayed prices there: no personal data is sent to it from this site.',
+          'Google — the contact@lesagedavid.fr mailbox is hosted by Google, and that is where I answer you. The site also loads its fonts and video thumbnails from Google servers: none of your replies is passed on to them, but your browser’s IP address is. And Google Calendar is involved only if a teacher has chosen to link it, as described above.',
+        ],
+      },
+      {
+        h: 'Cookies and analytics on this site',
+        p: 'This site sets no cookies. It uses no analytics tool, no advertising pixel, no tracker — which is why there is no banner to accept on arrival. The only thing your browser remembers locally is the language you chose: it never leaves your device. Not to be confused with the application’s usage measurement described above, which is a different thing and can be turned off in one click.',
+        items: [] as string[],
+      },
+      {
+        h: 'Your rights, and how to exercise them',
+        p: 'One gesture is enough: write to contact@lesagedavid.fr. No form to fill in, no proof to provide unless I have serious doubt about your identity. I answer personally, within one month at most.',
+        items: [
+          'Access — know exactly what I hold about you; I can send you a copy.',
+          'Rectification — correct information that is wrong or out of date.',
+          'Erasure — delete everything, including your account.',
+          'Objection — refuse a use, in particular usage measurement and news emails.',
+          'Portability — get back what you gave me, in a file you can reuse elsewhere.',
+          'Restriction — ask for your information to be set aside while we settle a disagreement.',
+          'Withdrawal of consent — at any time, with no explanation needed.',
+          'And if you disagree with me: you can lodge a complaint with the CNIL, the French data protection authority — CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, www.cnil.fr. But write to me first if you like: it’s faster.',
+        ],
+      },
+      {
+        h: 'Security',
+        p: 'The site and the application are served over HTTPS end to end. The database can only be reached with dedicated credentials, and its access rules are enforced by the database itself — that is what guarantees a lesson can only be read by the teacher and the student concerned. The token authorising access to Google Calendar is kept in a table strictly unreachable from a browser, and is never sent back to the client. No banking details are entered or stored on this site: payments go through Stripe.',
+        items: [] as string[],
+      },
+      {
+        h: 'If this page changes',
+        p: 'It carries a last-updated date, at the top. When the text changes, that date changes with it. For the application, a version number accompanies the document shown before you enter: that is what makes it possible to know exactly which text you had in front of you on the day you accepted it.',
+        items: [] as string[],
+      },
+    ],
+    contactTitle: 'A question about this page?',
+    contactText: 'Write to me at contact@lesagedavid.fr. I answer personally, and I much prefer a question asked too early to a doubt kept to yourself.',
+    contactCta: 'Write to me',
+    legalLink: 'See the legal notice',
+    termsLink: 'See the terms & conditions',
   },
   data: {
     woodSupplements: {

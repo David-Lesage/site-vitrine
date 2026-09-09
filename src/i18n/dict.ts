@@ -35,6 +35,10 @@ const fr = {
       faq: 'FAQ',
       legal: 'Mentions légales',
       terms: 'Conditions générales',
+      // Politique de confidentialité (09/09/2026) — exigée par Google pour l'écran
+      // de consentement OAuth de l'application : l'URL doit être publique ET
+      // atteignable depuis le pied de page de toutes les pages, dans chaque langue.
+      privacy: 'Politique de confidentialité',
       rights: 'Ambassadeur indépendant Neotone · Tous les prix sont indicatifs et peuvent évoluer sans préavis.',
     },
     skip: 'Aller au contenu',
@@ -3132,6 +3136,183 @@ const fr = {
     contactText: 'Écris-moi à contact@lesagedavid.fr. Je réponds personnellement, et je préfère largement une question posée trop tôt à un doute gardé pour soi.',
     contactCta: 'M’écrire',
     legalLink: 'Voir les mentions légales',
+  },
+  // ── POLITIQUE DE CONFIDENTIALITÉ (page /politique-de-confidentialite) ─────
+  // 🚨 PAGE JURIDIQUE PUBLIÉE AU NOM D'UNE PERSONNE RÉELLE. Rien d'inventé.
+  //
+  // POURQUOI CETTE PAGE EXISTE (09/09/2026) : Google refuse de valider l'écran de
+  // consentement OAuth de l'application tant qu'aucune URL publique de politique
+  // de confidentialité n'est déclarée et atteignable. C'est un blocage dur sur la
+  // synchronisation Google Agenda du mode enseignant.
+  //
+  // SOURCES, vérifiées le 09/09/2026 — chaque affirmation vient d'un fichier réel :
+  //  · Identité du responsable → recopiée MOT POUR MOT du bloc `legal` de ce
+  //    fichier (mentions légales). Aucun SIRET ni forme juridique n'y figure pour
+  //    David Lesage personne physique : NE PAS EN INVENTER (voir le commentaire
+  //    « à compléter » dans PrivacyPage.astro).
+  //  · Texte de base = la politique de confidentialité DÉJÀ EN LIGNE DANS L'APP,
+  //    dépôt « NEOTONE STUDIO », `auth/legal-text.ts`, constante `PRIVACY_FR`
+  //    (§ 1 responsable, § 2 données, § 3 finalités, § 3 bis mesure d'usage,
+  //    § 4 hébergement Supabase + Stripe, § 5 conservation, § 6 droits RGPD,
+  //    § 7 pas de revente). Adapté au format d'une page web, pas réécrit.
+  //  · Rendez-vous / cours → migration `0037_teacher_agenda_lessons.sql` :
+  //    colonnes student_name, student_email, student_phone, starts_at,
+  //    duration_min, location, note, google_meet_url ; policy `lessons_select` =
+  //    `teacher_id = auth.uid() or student_id = auth.uid() or public.is_admin()`
+  //    → prof + élève concernés (+ l'administrateur, qui est David : c'est dit).
+  //  · Google Agenda → `supabase/functions/google-calendar/index.ts` : constante
+  //    SCOPES = 'https://www.googleapis.com/auth/calendar.events' + openid + email ;
+  //    `body.attendees = [{ email: lesson.student_email, ... }]` (invitation de
+  //    l'élève dans l'agenda DU PROFESSEUR) ; `action === 'disconnect'` supprime
+  //    la ligne de `teacher_google_credentials` (délier à tout moment).
+  //    ⚠️ Le scope est cité LITTÉRALEMENT : Google compare la chaîne.
+  //  · Prestataires : Supabase (base + stockage), Vercel (hébergement du site),
+  //    Stripe (paiement de l'abonnement dans l'app), Google (messagerie
+  //    contact@lesagedavid.fr, polices, vignettes YouTube, et Agenda si le
+  //    professeur le relie). Tous déjà sourcés dans le bloc `terms` ci-dessus.
+  //    Ne rien ajouter à cette liste sans preuve dans un dépôt.
+  //  · Aucun cookie / aucune mesure d'audience SUR LE SITE → aucun set-cookie en
+  //    prod, aucun gtag/fbq/matomo/@vercel/analytics dans le dépôt. La mesure
+  //    d'usage décrite ici est celle de l'APPLICATION, pas celle du site : les
+  //    deux ne doivent jamais être confondues.
+  privacy: {
+    title: 'Politique de confidentialité — David Lesage',
+    description:
+      'Politique de confidentialité du site David Lesage et de l’application Handpan Constellation Studio : données collectées, prise de rendez-vous, Google Agenda, durées de conservation et droits RGPD.',
+    h1: 'Politique de confidentialité',
+    updatedLabel: 'Dernière mise à jour',
+    updated: '9 septembre 2026',
+    lead: 'Cette page dit en clair ce que je fais de tes données : ce que je collecte, pourquoi, avec quels outils, combien de temps je le garde, et comment tu reprends la main quand tu veux. Elle couvre ce site et l’application Handpan Constellation Studio. Pas de jargon : si quelque chose n’est pas clair, écris-moi — c’est moi qui lis.',
+    sections: [
+      {
+        h: 'Qui est responsable de tes données',
+        p: 'David Lesage — musicien, pédagogue et inventeur, éditeur de ce site et de l’application Handpan Constellation Studio. Showroom : 29 rue des Orteaux, 75020 Paris. Email : contact@lesagedavid.fr · Téléphone : +33 6 10 73 31 52. Il n’y a pas de service marketing derrière tout ça : c’est moi qui décide de ce qui est collecté, moi qui le lis, et moi qui te réponds.',
+        items: [] as string[],
+      },
+      {
+        h: 'Ce que couvre cette page',
+        p: 'Deux endroits, deux usages différents, et il vaut mieux les distinguer.',
+        items: [
+          'Le site lesagedavid.fr : ce que tu écris dans les formulaires (réservation, contact, liste d’attente, commande d’un micro). Le détail formulaire par formulaire est sur la page Conditions générales, et il reste vrai.',
+          'L’application Handpan Constellation Studio : ton compte, ton abonnement, et — si tu enseignes ou si tu es élève — l’agenda des cours.',
+        ],
+      },
+      {
+        h: 'Ce que je collecte dans l’application, et pourquoi',
+        p: 'À la création de ton compte : ton adresse email, ton nom et ton prénom, ainsi qu’un numéro de téléphone si tu choisis de le renseigner — ce dernier est facultatif.',
+        items: [
+          'Créer et sécuriser ton compte, et te donner accès à l’application.',
+          'Gérer ton abonnement.',
+          'Te contacter au sujet de ton compte.',
+          'Des données anonymisées, c’est-à-dire qui ne permettent pas de remonter jusqu’à toi, peuvent servir à mieux comprendre les besoins des joueuses et joueurs de handpan et à améliorer l’application.',
+        ],
+      },
+      {
+        // ── SECTION DEMANDÉE PAR DAVID (09/09/2026) ──────────────────────────
+        // Ses mots : « en ce qui concerne la prise de RDV, ces infos ne
+        // concernent que le professeur et l'élève ». Formulé proprement,
+        // sans rien ajouter : la liste des champs vient de la migration 0037,
+        // le cercle de lecture vient de la policy `lessons_select` — qui
+        // inclut aussi l'administrateur, donc c'est écrit.
+        h: 'La prise de rendez-vous : ça ne regarde que le professeur et l’élève',
+        p: 'Quand un cours est réservé dans l’application, les informations de la séance ne concernent que deux personnes : le professeur et l’élève de ce cours. Personne d’autre n’y a accès — ni les autres professeurs, ni les autres élèves, ni qui que ce soit d’extérieur.',
+        items: [
+          'Les informations d’une séance sont : le nom et l’email de l’élève, son téléphone s’il l’a donné, la date et l’heure, la durée, le lieu ou le lien de visioconférence, le type de séance et les notes attachées au cours.',
+          'Techniquement, l’accès est verrouillé au niveau de la base de données elle-même : une séance n’est lisible que par le professeur qui l’a créée et par l’élève concerné. S’y ajoute l’administrateur de l’application, c’est-à-dire moi, David Lesage — je le dis plutôt que de le taire.',
+          'Ces informations servent à organiser le cours, et à rien d’autre. Elles ne sont ni revendues, ni transmises, ni partagées à des fins commerciales.',
+        ],
+      },
+      {
+        // ⚠️ Le scope Google est cité LITTÉRALEMENT, tel qu'il est dans
+        // supabase/functions/google-calendar/index.ts (SCOPES). Google compare
+        // la chaîne à l'écran de consentement : ne jamais l'abréger ni le
+        // reformater.
+        h: 'Si le professeur relie son Google Agenda',
+        p: 'Relier son agenda est un choix du professeur, et un choix seulement : l’application fonctionne très bien sans. Tant qu’il ne l’a pas fait, aucune donnée ne circule vers Google.',
+        items: [
+          'Quand il le fait, l’événement est créé dans SON agenda à lui, et l’élève y est invité — c’est-à-dire qu’il reçoit l’invitation et voit l’événement de son côté. Rien n’est écrit dans l’agenda de l’élève sans son propre accord.',
+          'L’autorisation demandée à Google est exactement celle-ci : https://www.googleapis.com/auth/calendar.events — elle permet de créer, mettre à jour et supprimer les événements des cours, et rien d’autre. L’application ne lit pas le reste de l’agenda, ne le parcourt pas, et n’accède à aucun autre service Google.',
+          'Aucune donnée d’agenda n’est utilisée à d’autres fins. Elle n’est ni transmise, ni vendue, ni partagée avec un tiers, quel qu’il soit.',
+          'Le professeur peut délier son agenda à tout moment, depuis l’application. La liaison est alors supprimée et l’application cesse immédiatement d’écrire dans Google Agenda ; les cours restent dans l’application, mais ils ne s’y synchronisent plus. Les événements déjà créés, eux, appartiennent à son agenda Google : ils y restent, et c’est à lui de les y supprimer s’il le souhaite.',
+        ],
+      },
+      {
+        // Repris de PRIVACY_FR § 3 bis (auth/legal-text.ts) — RÉSUMÉ fidèle et
+        // volontairement plus court : le texte complet, qui fait foi, est celui
+        // affiché dans l'application avant l'entrée. Ne rien promettre ici que
+        // ce texte ne promette pas (en particulier : la mesure est FINE).
+        h: 'La mesure d’usage dans l’application',
+        p: 'L’application est développée par une seule personne — moi. Pour savoir où mettre mon énergie, je mesure la façon dont elle est utilisée : le temps passé dans chaque partie de l’application, et les actions d’interface, horodatées, dans leur ordre. Je suis le seul destinataire de ces mesures.',
+        items: [
+          'Ce qui n’est jamais collecté : ton contenu musical (ni tes gammes, ni tes morceaux, ni ce que tu joues), le texte que tu saisis, tes frappes clavier, tes mouvements de souris. Aucun traceur publicitaire, aucun outil d’analyse tiers : rien ne part vers Google, Meta ou qui que ce soit.',
+          'Ces mesures sont conservées tant que ton compte est actif, et supprimées automatiquement avec lui.',
+          'Tu peux refuser cette mesure à tout moment depuis l’application, sans avoir à te justifier : le refus est immédiat et efface les mesures déjà enregistrées te concernant.',
+          'Le texte complet, qui fait foi, est celui affiché dans l’application, accessible à tout moment depuis « Mon compte » → « Confidentialité & CGU ».',
+        ],
+      },
+      {
+        h: 'Sur quelle base légale',
+        p: 'Selon ce dont il s’agit, et il vaut mieux le dire précisément.',
+        items: [
+          'Ton consentement, pour les formulaires du site et pour recevoir mes nouveautés : deux cases distinctes, dont une seule est obligatoire, et tu peux retirer l’un comme l’autre à tout moment.',
+          'L’exécution du service, pour ton compte, ton abonnement et l’organisation des cours : sans ces informations, l’application ne peut simplement pas faire ce que tu lui demandes.',
+          'Mon intérêt légitime à améliorer l’application, pour la mesure d’usage — assorti d’un droit d’opposition entier, exerçable en un geste dans l’application.',
+        ],
+      },
+      {
+        h: 'Combien de temps je garde tout ça',
+        p: 'Aussi longtemps que c’est utile, pas plus.',
+        items: [
+          'Les données de ton compte et l’agenda des cours : tant que ton compte est actif. Tu peux demander sa suppression à tout moment.',
+          'Les mesures d’usage : tant que ton compte est actif, et effacées immédiatement si tu t’opposes à la mesure.',
+          'Ce que tu m’écris depuis les formulaires du site : trois ans après notre dernier échange, et le compteur repart de zéro à chaque nouvel échange.',
+        ],
+      },
+      {
+        h: 'Les prestataires qui voient passer tes données',
+        p: 'Je ne vends ni ne loue aucune donnée, à personne, jamais. Voici la liste des services qui interviennent réellement.',
+        items: [
+          'Supabase — la base de données où sont enregistrés les comptes, l’agenda des cours et les réponses aux formulaires, ainsi que l’espace de stockage des fichiers déposés. Le projet est hébergé en Irlande, dans l’Union européenne.',
+          'Vercel — l’hébergeur de ce site. Les petites fonctions serveur qui relaient les formulaires s’exécutent aux États-Unis.',
+          'Stripe — le paiement de l’abonnement à l’application. Le site, lui, y lit seulement les tarifs affichés : aucune donnée personnelle ne lui est envoyée depuis ce site.',
+          'Google — la messagerie contact@lesagedavid.fr est hébergée chez Google, et c’est là que je te réponds. Le site charge aussi ses polices d’écriture et les vignettes des vidéos depuis les serveurs de Google : aucune de tes réponses ne leur est transmise, mais l’adresse IP de ton navigateur, oui. Et Google Agenda intervient uniquement si un professeur a choisi de le relier, comme décrit plus haut.',
+        ],
+      },
+      {
+        h: 'Cookies et mesure d’audience sur ce site',
+        p: 'Ce site-ci ne dépose aucun cookie. Il n’utilise aucun outil de mesure d’audience, aucun pixel publicitaire, aucun traceur — c’est pour ça qu’il n’y a pas de bandeau à accepter en arrivant. La seule chose que ton navigateur retient localement, c’est la langue que tu as choisie : elle ne quitte jamais ton appareil. À ne pas confondre avec la mesure d’usage de l’application, décrite plus haut, qui est une autre chose et qui, elle, se refuse en un clic.',
+        items: [] as string[],
+      },
+      {
+        h: 'Tes droits, et comment les exercer',
+        p: 'Un seul geste suffit : écris à contact@lesagedavid.fr. Pas de formulaire à remplir, pas de justificatif à fournir tant que je n’ai pas de doute sérieux sur ton identité. Je te réponds personnellement, dans un délai d’un mois au maximum.',
+        items: [
+          'Accès — savoir exactement ce que j’ai sur toi ; je peux t’en envoyer la copie.',
+          'Rectification — corriger une information fausse ou dépassée.',
+          'Effacement — tout supprimer, y compris ton compte.',
+          'Opposition — refuser un usage, en particulier la mesure d’usage et les emails de nouveautés.',
+          'Portabilité — récupérer ce que tu m’as donné dans un fichier réutilisable ailleurs.',
+          'Limitation — demander que tes informations soient mises de côté le temps qu’on règle un désaccord.',
+          'Retrait du consentement — à tout moment, sans avoir à te justifier.',
+          'Et si tu n’es pas d’accord avec moi : tu peux introduire une réclamation auprès de la CNIL, l’autorité française de protection des données — CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, www.cnil.fr. Mais écris-moi d’abord si tu veux : c’est plus rapide.',
+        ],
+      },
+      {
+        h: 'Sécurité',
+        p: 'Le site et l’application sont servis en HTTPS de bout en bout. La base de données n’est accessible qu’avec des identifiants dédiés, et ses règles d’accès sont posées au niveau de la base elle-même — c’est ce qui garantit qu’une séance de cours n’est lisible que par le professeur et l’élève concernés. Le jeton qui autorise l’accès à Google Agenda est conservé dans une table strictement inaccessible depuis un navigateur, et il n’est jamais renvoyé au client. Aucune donnée bancaire n’est saisie ni conservée sur ce site : les paiements passent par Stripe.',
+        items: [] as string[],
+      },
+      {
+        h: 'Si cette page change',
+        p: 'Elle porte une date de dernière mise à jour, en haut. Quand le texte change, cette date change avec lui. Pour l’application, un numéro de version accompagne le document affiché avant l’entrée : c’est lui qui permet de savoir quel texte exactement tu avais sous les yeux le jour où tu l’as accepté.',
+        items: [] as string[],
+      },
+    ],
+    contactTitle: 'Une question sur cette page ?',
+    contactText: 'Écris-moi à contact@lesagedavid.fr. Je réponds personnellement, et je préfère largement une question posée trop tôt à un doute gardé pour soi.',
+    contactCta: 'M’écrire',
+    legalLink: 'Voir les mentions légales',
+    termsLink: 'Voir les conditions générales',
   },
   // Données produit traduisibles (prose). Les valeurs numériques restent dans src/data.
   data: {

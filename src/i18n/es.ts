@@ -41,6 +41,7 @@ export const es: Dict = {
       "faq": "Preguntas frecuentes",
       "legal": "Aviso legal",
       "terms": "Términos y condiciones generales",
+      "privacy": "Política de privacidad",
       "rights": "Embajador independiente Neotone · Todos los precios son orientativos y están sujetos a cambios sin previo aviso."
     },
     "skip": "Saltar al contenido",
@@ -2297,6 +2298,134 @@ export const es: Dict = {
     "contactText": "Escríbame a contact@lesagedavid.fr. Respondo personalmente y prefiero con mucho una pregunta formulada demasiado pronto a una duda guardada para uno mismo.",
     "contactCta": "Escríbeme",
     "legalLink": "Consulte los avisos legales."
+  },
+  // RETOUCHE MANUELLE ASSUMÉE (09/09/2026) : bloc ajouté à la main, hors passe du
+  // script de traduction, parce que la page était bloquante (validation OAuth
+  // Google). Source = le bloc `privacy` du français dans src/i18n/dict.ts.
+  // ⚠️ L'URL du scope Google est citée LITTÉRALEMENT et ne doit jamais être traduite.
+  "privacy": {
+    "title": "Política de privacidad — David Lesage",
+    "description": "Política de privacidad del sitio de David Lesage y de la aplicación Handpan Constellation Studio: datos recogidos, reserva de clases, Google Calendar, plazos de conservación y derechos RGPD.",
+    "h1": "Política de privacidad",
+    "updatedLabel": "Última actualización",
+    "updated": "9 de septiembre de 2026",
+    "lead": "Esta página dice claramente qué hago con tus datos: qué recojo, por qué, con qué herramientas, cuánto tiempo los conservo y cómo recuperas el control cuando quieras. Cubre este sitio y la aplicación Handpan Constellation Studio. Sin jerga: si algo no queda claro, escríbeme — soy yo quien lee.",
+    "sections": [
+      {
+        "h": "Quién es responsable de tus datos",
+        "p": "David Lesage — músico, pedagogo e inventor, editor de este sitio y de la aplicación Handpan Constellation Studio. Sala de exposición: 29 rue des Orteaux, 75020 París, Francia. Correo: contact@lesagedavid.fr · Teléfono: +33 6 10 73 31 52. No hay ningún departamento de marketing detrás de todo esto: soy yo quien decide qué se recoge, quien lo lee y quien te responde.",
+        "items": []
+      },
+      {
+        "h": "Qué cubre esta página",
+        "p": "Dos lugares, dos usos distintos, y conviene diferenciarlos.",
+        "items": [
+          "El sitio lesagedavid.fr: lo que escribes en los formularios (reserva, contacto, lista de espera, pedido de un micrófono). El detalle formulario por formulario está en la página de Términos y condiciones generales, y sigue siendo válido.",
+          "La aplicación Handpan Constellation Studio: tu cuenta, tu suscripción y — si enseñas o eres alumno/a — la agenda de las clases."
+        ]
+      },
+      {
+        "h": "Qué recojo en la aplicación, y por qué",
+        "p": "Al crear tu cuenta: tu dirección de correo electrónico, tu apellido y tu nombre, y un número de teléfono si decides indicarlo — este último es opcional.",
+        "items": [
+          "Crear y proteger tu cuenta, y darte acceso a la aplicación.",
+          "Gestionar tu suscripción.",
+          "Ponerme en contacto contigo respecto a tu cuenta.",
+          "Datos anonimizados, es decir, que no permiten remontarse hasta ti, pueden servir para comprender mejor las necesidades de quienes tocan el handpan y para mejorar la aplicación."
+        ]
+      },
+      {
+        "h": "La reserva de clases: solo concierne al profesor y al alumno",
+        "p": "Cuando se reserva una clase en la aplicación, la información de esa sesión concierne únicamente a dos personas: el profesor y el alumno de esa clase. Nadie más tiene acceso — ni los demás profesores, ni los demás alumnos, ni ninguna persona externa.",
+        "items": [
+          "La información de una sesión es: el nombre y el correo del alumno, su teléfono si lo ha facilitado, la fecha y la hora, la duración, el lugar o el enlace de videollamada, el tipo de sesión y las notas asociadas a la clase.",
+          "Técnicamente, el acceso está bloqueado en la propia base de datos: una sesión solo puede leerla el profesor que la ha creado y el alumno correspondiente. A ello se suma el administrador de la aplicación, es decir, yo, David Lesage — prefiero decirlo a callarlo.",
+          "Esta información sirve para organizar la clase, y para nada más. No se vende, ni se transmite, ni se comparte con fines comerciales."
+        ]
+      },
+      {
+        "h": "Si el profesor vincula su Google Calendar",
+        "p": "Vincular la agenda es una decisión del profesor, y solo una decisión: la aplicación funciona perfectamente sin ella. Mientras no lo haga, ningún dato viaja hacia Google.",
+        "items": [
+          "Cuando lo hace, el evento se crea en SU propia agenda, y se invita al alumno — es decir, recibe la invitación y ve el evento por su lado. No se escribe nada en la agenda del alumno sin su propio consentimiento.",
+          "El permiso solicitado a Google es exactamente este: https://www.googleapis.com/auth/calendar.events — permite crear, actualizar y eliminar los eventos de las clases, y nada más. La aplicación no lee el resto de la agenda, no la recorre y no accede a ningún otro servicio de Google.",
+          "Ningún dato de agenda se utiliza con otros fines. No se transmite, ni se vende, ni se comparte con ningún tercero.",
+          "El profesor puede desvincular su agenda en cualquier momento, desde la aplicación. El vínculo se elimina y la aplicación deja inmediatamente de escribir en Google Calendar; las clases permanecen en la aplicación, pero ya no se sincronizan. Los eventos ya creados pertenecen a su agenda de Google: siguen ahí, y le corresponde a él eliminarlos si lo desea."
+        ]
+      },
+      {
+        "h": "La medición de uso en la aplicación",
+        "p": "La aplicación la desarrolla una sola persona — yo. Para saber dónde poner mi energía, mido cómo se utiliza: el tiempo dedicado a cada parte de la aplicación y las acciones de interfaz, con marca de tiempo y en su orden. Soy el único destinatario de estas mediciones.",
+        "items": [
+          "Lo que nunca se recoge: tu contenido musical (ni tus escalas, ni tus piezas, ni lo que tocas), el texto que escribes, tus pulsaciones de teclado, los movimientos de tu ratón. Ningún rastreador publicitario, ninguna herramienta de análisis de terceros: nada se envía a Google, Meta ni a nadie más.",
+          "Estas mediciones se conservan mientras tu cuenta esté activa y se eliminan automáticamente con ella.",
+          "Puedes rechazar esta medición en cualquier momento desde la aplicación, sin tener que justificarte: el rechazo es inmediato y borra las mediciones ya registradas sobre ti.",
+          "El texto completo, que es el que prevalece, es el que se muestra en la aplicación, accesible en todo momento desde «Mi cuenta» → «Privacidad y condiciones»."
+        ]
+      },
+      {
+        "h": "Sobre qué base legal",
+        "p": "Según de qué se trate, y conviene decirlo con precisión.",
+        "items": [
+          "Tu consentimiento, para los formularios del sitio y para recibir mis novedades: dos casillas distintas, de las cuales solo una es obligatoria, y puedes retirar cualquiera de ellas en cualquier momento.",
+          "La ejecución del servicio, para tu cuenta, tu suscripción y la organización de las clases: sin esta información, la aplicación simplemente no puede hacer lo que le pides.",
+          "Mi interés legítimo en mejorar la aplicación, para la medición de uso — acompañado de un derecho de oposición íntegro, ejercitable con un solo gesto dentro de la aplicación."
+        ]
+      },
+      {
+        "h": "Cuánto tiempo conservo todo esto",
+        "p": "Mientras sea útil, no más.",
+        "items": [
+          "Los datos de tu cuenta y la agenda de las clases: mientras tu cuenta esté activa. Puedes pedir su supresión en cualquier momento.",
+          "Las mediciones de uso: mientras tu cuenta esté activa, y borradas de inmediato si te opones a la medición.",
+          "Lo que me escribes desde los formularios del sitio: tres años después de nuestro último intercambio, y el contador vuelve a cero con cada nuevo intercambio."
+        ]
+      },
+      {
+        "h": "Los proveedores por los que pasan tus datos",
+        "p": "No vendo ni alquilo ningún dato, a nadie, nunca. Esta es la lista de los servicios que intervienen realmente.",
+        "items": [
+          "Supabase — la base de datos donde se registran las cuentas, la agenda de las clases y las respuestas de los formularios, así como el espacio de almacenamiento de los archivos enviados. El proyecto está alojado en Irlanda, en la Unión Europea.",
+          "Vercel — el alojamiento de este sitio. Las pequeñas funciones de servidor que retransmiten los formularios se ejecutan en Estados Unidos.",
+          "Stripe — el pago de la suscripción a la aplicación. El sitio, por su parte, solo lee allí las tarifas mostradas: no se le envía ningún dato personal desde este sitio.",
+          "Google — el buzón contact@lesagedavid.fr está alojado en Google, y es ahí donde te respondo. El sitio también carga sus tipografías y las miniaturas de los vídeos desde servidores de Google: ninguna de tus respuestas se les transmite, pero la dirección IP de tu navegador sí. Y Google Calendar interviene únicamente si un profesor ha decidido vincularlo, tal como se describe más arriba."
+        ]
+      },
+      {
+        "h": "Cookies y medición de audiencia en este sitio",
+        "p": "Este sitio no deposita ninguna cookie. No utiliza ninguna herramienta de medición de audiencia, ningún píxel publicitario, ningún rastreador — por eso no hay ningún banner que aceptar al llegar. Lo único que tu navegador recuerda localmente es el idioma que has elegido: nunca sale de tu dispositivo. No hay que confundirlo con la medición de uso de la aplicación, descrita más arriba, que es otra cosa y que se rechaza con un clic.",
+        "items": []
+      },
+      {
+        "h": "Tus derechos, y cómo ejercerlos",
+        "p": "Basta con un gesto: escribe a contact@lesagedavid.fr. Ningún formulario que rellenar, ningún justificante que aportar mientras no tenga una duda seria sobre tu identidad. Te respondo personalmente, en un plazo máximo de un mes.",
+        "items": [
+          "Acceso — saber exactamente qué tengo sobre ti; puedo enviarte una copia.",
+          "Rectificación — corregir una información falsa o desactualizada.",
+          "Supresión — borrarlo todo, incluida tu cuenta.",
+          "Oposición — rechazar un uso, en particular la medición de uso y los correos de novedades.",
+          "Portabilidad — recuperar lo que me has dado en un archivo reutilizable en otro lugar.",
+          "Limitación — pedir que tu información se deje en suspenso mientras resolvemos un desacuerdo.",
+          "Retirada del consentimiento — en cualquier momento, sin tener que justificarte.",
+          "Y si no estás de acuerdo conmigo: puedes presentar una reclamación ante la CNIL, la autoridad francesa de protección de datos — CNIL, 3 place de Fontenoy, TSA 80715, 75334 París Cedex 07, www.cnil.fr. Pero escríbeme antes si quieres: es más rápido."
+        ]
+      },
+      {
+        "h": "Seguridad",
+        "p": "El sitio y la aplicación se sirven en HTTPS de extremo a extremo. A la base de datos solo se accede con credenciales dedicadas, y sus reglas de acceso se aplican en la propia base — eso es lo que garantiza que una clase solo pueda ser leída por el profesor y el alumno correspondientes. El token que autoriza el acceso a Google Calendar se guarda en una tabla estrictamente inaccesible desde un navegador y nunca se devuelve al cliente. En este sitio no se introduce ni se conserva ningún dato bancario: los pagos pasan por Stripe.",
+        "items": []
+      },
+      {
+        "h": "Si esta página cambia",
+        "p": "Lleva arriba una fecha de última actualización. Cuando el texto cambia, esa fecha cambia con él. Para la aplicación, un número de versión acompaña al documento mostrado antes de entrar: es lo que permite saber exactamente qué texto tenías delante el día en que lo aceptaste.",
+        "items": []
+      }
+    ],
+    "contactTitle": "¿Alguna pregunta sobre esta página?",
+    "contactText": "Escríbeme a contact@lesagedavid.fr. Respondo personalmente, y prefiero con mucho una pregunta hecha demasiado pronto a una duda guardada para uno mismo.",
+    "contactCta": "Escríbeme",
+    "legalLink": "Ver el aviso legal",
+    "termsLink": "Ver los términos y condiciones generales"
   },
   "data": {
     "woodSupplements": {

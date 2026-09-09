@@ -91,6 +91,16 @@ export const footerNav = [
   // les pages, pas seulement depuis un formulaire. Le slug n'est pas traduit :
   // la version EN vit sur /en/conditions-generales (convention du site).
   { key: 'terms', href: '/conditions-generales' },
+  // Politique de confidentialité (09/09/2026) — AJOUTÉE POUR UNE RAISON PRÉCISE :
+  // Google refuse de valider l'écran de consentement OAuth de l'application
+  // (scope calendar.events, synchronisation Google Agenda du mode enseignant)
+  // tant qu'il n'existe pas une URL de politique de confidentialité PUBLIQUE et
+  // ATTEIGNABLE. Google vérifie qu'on y accède depuis le site : elle doit donc
+  // rester à un clic depuis le pied de page, dans toutes les langues.
+  // Même convention de slug que `terms` : la version EN vit sur
+  // /en/politique-de-confidentialite, la version ES sur
+  // /es/politique-de-confidentialite (les routes ne sont pas traduites).
+  { key: 'privacy', href: '/politique-de-confidentialite' },
 ] as const
 
 // Prochains showcases publics gratuits (dates neutres, ISO).
