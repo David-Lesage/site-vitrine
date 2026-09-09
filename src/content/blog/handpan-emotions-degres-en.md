@@ -2,7 +2,7 @@
 title: "Playing with emotions: the 7 coloured degrees"
 description: "Handpan Constellation Studio's Logic Mode ties each degree to a colour and an emotion. Build a chord progression and tell a story."
 pubDate: 2026-07-10
-cover: "/images/app-logique-2026.webp"
+cover: "/images/app-logique-2026-09.webp"
 category: "methode"
 tags: ["method", "emotions"]
 lang: "en"
@@ -22,10 +22,10 @@ Logic Mode makes these roles **visible** by giving them a stable colour, followi
 
 <figure>
   <img
-    src="/images/app-logique-2026.webp"
-    width="2000"
-    height="1250"
-    alt="Handpan Constellation Studio's Logic Mode, dark theme. In the centre, a Neotone Mutant handpan with coloured notes; the handpan screen, in the middle, reads « D Majeur — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». Along the bottom, seven coloured cards: I ÉQUILIBRE D in red, II ÉLAN Em in orange, III AVENTURE F#m in yellow, IV DÉTENTE G in green, V TENSION A in blue, VI NOSTALGIE Bm in purple, VII MYSTÈRE C#° in pink. Below them, the « PROGRESSION DES ACCORDS » arrow. On the right, the « Logique et Emotions » panel with emotional wording selected, anchor note D and the Joyeux mode."
+    src="/images/app-logique-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="Handpan Constellation Studio's Logic Mode, dark theme. Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… » with « la note · chakras » selected over « sa place dans la gamme · degrés », and « Notes partagées » set to On; then four dropdown menus, each showing its current setting — NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ, CONSTELLATION Ouvert; on the right, the EXPORTER PDF / PARTITION island, outlined in cyan, with its printer icon. In the centre, a Neotone Mutant handpan with coloured notes; the handpan screen, just below the D2 ding, reads « D Majeur — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». Along the bottom, seven coloured cards: I ÉQUILIBRE D in red, II ÉLAN Em in orange, III AVENTURE F#m in yellow, IV DÉTENTE G in green, V TENSION A in blue, VI NOSTALGIE Bm in purple, VII MYSTÈRE C#° in pink, then the « PROGRESSION DES ACCORDS » arrow. On the right, the « Mes handpans » block (Neotone Mutant · Noyer, 19 dimples, ÉLECTRONIQUE badge, and at the foot « ⚡ Ajouter un handpan électronique ») and, below it, the « Logique et Emotions » panel: emotional wording selected, anchor note D, Joyeux mode."
     data-lb="logique-degres"
     data-lb-wide
     loading="lazy"
@@ -34,7 +34,19 @@ Logic Mode makes these roles **visible** by giving them a stable colour, followi
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): acoustic, same screen, same state -->
+<figure>
+  <img
+    src="/images/app-logique-degres-acoustique-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="The same screen on an acoustic D Minor / Kurd 10 handpan, dark theme. At the top, the compact tool bar on a single line: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, then the four menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island ringed in cyan with its printer icon. In the centre, the pan and the handpan screen, right under the D3 ding, reading « D Minor / Kurd 10 ». At the bottom, the seven degree cards this scale produces: I ÉQUILIBRE Dm, II ÉLAN E° (2nd inversion), III AVENTURE F, IV DÉTENTE Gm (1st inversion), V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. On the right, the « Logique et Emotions » panel: emotional feel selected, anchor note D, Joyeux mode, and in « Voyage des Sensations » the « Les 7 degrés dans l'ordre » line selected."
+    data-lb="logique-degres-acoustique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The same screen on an <strong>acoustic handpan</strong>, a D Minor / Kurd 10. The seven degrees keep their number, colour and emotion: only the chords change, because the pan does not hold the same notes. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Building a chord progression
 

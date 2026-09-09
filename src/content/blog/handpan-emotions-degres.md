@@ -2,7 +2,7 @@
 title: "Jouer avec les émotions : les 7 degrés colorés"
 description: "Le Mode Logique de Handpan Constellation Studio associe chaque degré à une couleur et une émotion. Construis une progression d'accords et raconte une histoire."
 pubDate: 2026-07-10
-cover: "/images/app-logique-2026.webp"
+cover: "/images/app-logique-2026-09.webp"
 category: "methode"
 tags: ["méthode", "émotions"]
 lang: "fr"
@@ -22,10 +22,10 @@ Le Mode Logique rend ces rôles **visibles** en leur donnant une couleur stable,
 
 <figure>
   <img
-    src="/images/app-logique-2026.webp"
-    width="2000"
-    height="1250"
-    alt="Le Mode Logique de Handpan Constellation Studio, thème sombre. Au centre, un handpan Neotone Mutant dont les notes sont colorées ; l'écran du handpan, au milieu, indique « D Majeur — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». En bas, sept cartouches colorés alignés : I ÉQUILIBRE D en rouge, II ÉLAN Em en orange, III AVENTURE F#m en jaune, IV DÉTENTE G en vert, V TENSION A en bleu, VI NOSTALGIE Bm en violet, VII MYSTÈRE C#° en rose. Sous les cartouches, la flèche « PROGRESSION DES ACCORDS ». À droite, le panneau « Logique et Emotions » avec Ressenti émotionnel activé, la note d'ancrage D et le mode Joyeux."
+    src="/images/app-logique-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="Le Mode Logique de Handpan Constellation Studio, thème sombre. Tout en haut, la bande d'outils compacte, sur une seule ligne : l'îlot ChromaKeys (Off / On, réglé sur On), « La couleur dit… » avec « la note · chakras » retenu face à « sa place dans la gamme · degrés », et « Notes partagées » sur On ; puis quatre menus déroulants affichant chacun son réglage courant — NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ, CONSTELLATION Ouvert ; à droite, l'îlot EXPORTER PDF / PARTITION, cerclé de cyan, avec son icône d'imprimante. Au centre, un handpan Neotone Mutant aux notes colorées ; l'écran du handpan, juste sous le ding D2, indique « D Majeur — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». En bas, sept cartouches colorés alignés : I ÉQUILIBRE D en rouge, II ÉLAN Em en orange, III AVENTURE F#m en jaune, IV DÉTENTE G en vert, V TENSION A en bleu, VI NOSTALGIE Bm en violet, VII MYSTÈRE C#° en rose, puis la flèche « PROGRESSION DES ACCORDS ». À droite, le bloc « Mes handpans » (Neotone Mutant · Noyer, 19 creux, badge ÉLECTRONIQUE, et en pied « ⚡ Ajouter un handpan électronique ») et, en dessous, le panneau « Logique et Emotions » : Ressenti émotionnel retenu, note d'ancrage D, mode Joyeux."
     data-lb="logique-degres"
     data-lb-wide
     loading="lazy"
@@ -34,7 +34,19 @@ Le Mode Logique rend ces rôles **visibles** en leur donnant une couleur stable,
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : acoustique, même écran, même état -->
+<figure>
+  <img
+    src="/images/app-logique-degres-acoustique-2026-09.webp"
+    width="1600"
+    height="971"
+    alt="Le même écran sur un handpan acoustique D Minor / Kurd 10, thème sombre. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Au centre, le pan et l'écran du handpan, juste sous le ding D3, qui indique « D Minor / Kurd 10 ». En bas, les sept cartouches de degrés que donne cette gamme : I ÉQUILIBRE Dm, II ÉLAN E° (renversement 2), III AVENTURE F, IV DÉTENTE Gm (renversement 1), V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. À droite, le panneau « Logique et Emotions » : Ressenti émotionnel retenu, note d'ancrage D, mode Joyeux, et dans « Voyage des Sensations » la ligne « Les 7 degrés dans l'ordre » retenue."
+    data-lb="logique-degres-acoustique"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le même écran, sur un <strong>handpan acoustique</strong> D Minor / Kurd 10. Les sept degrés gardent leur numéro, leur couleur et leur émotion : ce sont les accords qui changent, parce que le pan n'a pas les mêmes notes.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Construire une progression d'accords
 
