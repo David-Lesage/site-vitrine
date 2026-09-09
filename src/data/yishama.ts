@@ -90,12 +90,43 @@ export const pairFacts = [
 
 /**
  * Les trois métaux proposés par Yishama.
- * Pas de photo par métal (je n'en ai pas de fiable) : le disque est
- * rendu en CSS, ce qui évite d'illustrer un acier avec la photo d'un
- * autre. `grad` = dégradé du disque.
+ *
+ * Chaque acier est illustré par la photo d'un instrument Yishama réel
+ * (catalogue Yishama, fond noir, pan vu de dessus).
+ *
+ * Pairing photo↔acier = lecture visuelle de David/Claude 09/09,
+ * validation demandée à Altin (Yishama) par mail ; corriger ici si
+ * Altin infirme.
+ *
+ * `grad` reste comme repli CSS si une image venait à manquer.
+ * `photo` = fichier dans /public/images. `product` = fiche produit Yishama.
  */
-export const metals: { key: MetalKey; grad: string }[] = [
-  { key: 'nitrure', grad: 'linear-gradient(150deg,#4a4038 0%,#221c18 45%,#6b5a49 78%,#2b231d 100%)' },
-  { key: 'inox', grad: 'linear-gradient(150deg,#d9dde0 0%,#8f989e 40%,#f2f4f5 62%,#6f797f 100%)' },
-  { key: 'ember', grad: 'linear-gradient(150deg,#e8c9a0 0%,#a9713d 42%,#f0dcc0 65%,#7d4a24 100%)' },
+export const metals: {
+  key: MetalKey
+  grad: string
+  photo: string
+  model: string
+  product: string
+}[] = [
+  {
+    key: 'nitrure',
+    grad: 'linear-gradient(150deg,#4a4038 0%,#221c18 45%,#6b5a49 78%,#2b231d 100%)',
+    photo: '/images/yishama-a-minor-17.webp',
+    model: 'A Minor 17',
+    product: 'https://www.yishama.com/product/a-yukis-scale-a-minor/',
+  },
+  {
+    key: 'inox',
+    grad: 'linear-gradient(150deg,#d9dde0 0%,#8f989e 40%,#f2f4f5 62%,#6f797f 100%)',
+    photo: '/images/yishama-g2-hijaz-18.webp',
+    model: 'G2 Hijaz 18',
+    product: 'https://www.yishama.com/product/g2-hijaz-18/',
+  },
+  {
+    key: 'ember',
+    grad: 'linear-gradient(150deg,#e8c9a0 0%,#a9713d 42%,#f0dcc0 65%,#7d4a24 100%)',
+    photo: '/images/yishama-f2-astronaut.webp',
+    model: 'F2 Astronaut',
+    product: 'https://www.yishama.com/product/f2-astronaut/',
+  },
 ]

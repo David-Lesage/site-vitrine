@@ -525,13 +525,23 @@ export const en: Dict = {
     metalIntro:
       'At Yishama the metal is not a finishing detail: it is the first choice, the one that decides timbre, sustain and upkeep. Three families are offered — click for the detail.',
     metalCardCta: 'See the detail',
+    metalPhotoCredit: '© Yishama',
+    metalPhotoAlts: {
+      nitrure:
+        'Yishama A Minor 17 handpan seen from above on a black background: blue-grey mottled surface with bronze glints, the ding at the centre and about fifteen note fields around it.',
+      inox: 'Yishama G2 Hijaz 18 handpan seen from above on a black background: satin bronze-brown surface, the ding at the centre and about a dozen visible note fields.',
+      ember:
+        'Yishama F2 Astronaut handpan seen from above on a black background: bright golden surface, the ding at the centre and about a dozen visible note fields.',
+    },
+    metalOption:
+      'On Yishama’s site the steel is picked when you order, as an option on the instrument. On the models above the selector offers stainless or Ember Steel; nitrided is not listed there.',
     metalModalEyebrow: 'Build steel',
     metalModalClose: 'Close',
     metalLabelSound: 'The sound',
     metalLabelCare: 'Upkeep',
     metalLabelBest: 'Best for',
     metalSource:
-      'Source: Yishama’s own article “Nitrided handpan vs stainless handpan”, and their catalogue. The price of a Yishama varies with the scale, the number of notes, the bottom notes and the material type.',
+      'Source: Yishama’s own article “Nitrided handpan vs stainless handpan”, and their online catalogue (checked on 9 September 2026). The price of a Yishama varies with the scale, the number of notes, the bottom notes and the material type.',
     metalNote:
       'Since 2021, every Yishama carries a laser engraving inside: serial number, scale name, and material type with its thickness.',
 

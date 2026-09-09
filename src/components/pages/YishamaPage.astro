@@ -490,16 +490,35 @@ const ld = [
   <Section id="metaux">
     <SectionHeading eyebrow={y.metalEyebrow} title={y.metalTitle} intro={y.metalIntro} />
     <div class="mx-auto mt-12 grid max-w-4xl gap-x-8 gap-y-10 sm:grid-cols-3">
+      {/*
+        Pairing photo↔acier = lecture visuelle de David/Claude 09/09,
+        validation demandée à Altin (Yishama) par mail ; corriger dans
+        src/data/yishama.ts si Altin infirme.
+      */}
       {metals.map((m) => (
-        <button type="button" class="wood-card" data-metal={m.key} aria-label={`${y.metalCardCta} — ${d.metalNames[m.key]}`}>
-          <span class="metal-card-disc block" data-cta={y.metalCardCta} style={`background:${m.grad}`}></span>
-          <h4>{d.metalNames[m.key]}</h4>
-          <div class="wood-card-sub">{d.metalEnNames[m.key]}</div>
-          <div class="wood-card-supp">{d.metalTags[m.key]}</div>
-        </button>
+        <div class="metal-card-wrap">
+          <button type="button" class="wood-card" data-metal={m.key} aria-label={`${y.metalCardCta} — ${d.metalNames[m.key]}`}>
+            <span class="metal-card-disc block" data-cta={y.metalCardCta} style={`background:${m.grad}`}>
+              <img src={m.photo} width="800" height="800" alt={y.metalPhotoAlts[m.key]} loading="lazy" decoding="async" />
+            </span>
+            <h4>{d.metalNames[m.key]}</h4>
+            <div class="wood-card-sub">{d.metalEnNames[m.key]}</div>
+            <div class="wood-card-supp">{d.metalTags[m.key]}</div>
+          </button>
+          <p class="metal-card-credit">
+            <a href={m.product} target="_blank" rel="noopener">{m.model}</a>
+            <span>{y.metalPhotoCredit}</span>
+          </p>
+        </div>
       ))}
     </div>
+    {/* Vérifié sur yishama.com le 09/09 : l'acier est une option de commande.
+        À confirmer par Altin : le nitruré est-il encore proposé ? */}
     <p class="mx-auto mt-10 flex max-w-3xl items-start gap-3 rounded-card border border-ink/10 bg-cream-deep/50 p-5 text-sm text-ink-soft/85">
+      <Icon name="lucide:settings-2" class="mt-0.5 h-5 w-5 shrink-0 text-copper" />
+      <span>{y.metalOption}</span>
+    </p>
+    <p class="mx-auto mt-4 flex max-w-3xl items-start gap-3 rounded-card border border-ink/10 bg-cream-deep/50 p-5 text-sm text-ink-soft/85">
       <Icon name="lucide:scan-line" class="mt-0.5 h-5 w-5 shrink-0 text-copper" />
       <span>{y.metalNote}</span>
     </p>
