@@ -33,7 +33,7 @@ La **Grille d'accords** de l'app va plus loin qu'un accord isolé : elle liste *
 
 ![Export réel de la grille d'accords d'un D Minor Kurd 10 : la roue de la gamme avec ses notes colorées](/images/blog-grille-accords-roue.webp)
 
-<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : électronique, même écran, même état -->
+<!-- 📷 CAPTURE JUMELLE À REPRENDRE : la même grille d'accords exportée pour un handpan ÉLECTRONIQUE. Non produite le 09/09/2026 : cette figure n'est pas une capture d'écran de l'app mais une page de PDF réellement exporté. La jumelle demande donc de composer le morceau sur la gamme voulue, de lancer l'export, puis de faire le rendu d'une page du PDF — une chaîne différente de celle des captures d'écran (audits/captures-2026-09-08-blog-lot-DE), à monter à part. Commentaire laissé en place. -->
 
 En un document, tu sais exactement ce que ton handpan sait jouer. C'est ta carte d'identité harmonique.
 

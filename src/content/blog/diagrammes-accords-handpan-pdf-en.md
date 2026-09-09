@@ -33,7 +33,7 @@ The app's **Chord Grid** goes beyond a single chord: it lists **every chord play
 
 ![Real export of a D Minor Kurd 10 chord grid: the scale wheel with its colour-coded notes](/images/blog-grille-accords-roue.webp)
 
-<!-- 📷 TWIN SCREENSHOT TO INSERT / CAPTURE JUMELLE À INSÉRER (after the new tool palette): electronic, same screen, same state -->
+<!-- 📷 TWIN SCREENSHOT STILL TO TAKE: the same chord grid exported for an ELECTRONIC handpan. Not produced on 09/09/2026: this figure is not an app screenshot but a page of an actually exported PDF. The twin therefore requires composing the piece on the target scale, running the export, then rendering a page of the PDF — a different chain from the screenshot pipeline (audits/captures-2026-09-08-blog-lot-DE), to be built separately. Comment left in place. -->
 
 In one document, you know exactly what your handpan can play. It's your harmonic identity card.
 
