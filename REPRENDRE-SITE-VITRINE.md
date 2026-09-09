@@ -48,6 +48,38 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## ÉTAT ACTUEL — 09/09/2026 (26ᵉ passe, soir) — 🔐 Politique de confidentialité EN LIGNE · Yishama illustrée · article ChromaKeys affiné
+
+- **🔐 `/politique-de-confidentialite` (FR + EN + ES)** créée et déployée (`94c3d61`, 124 pages) — débloque l'écran de consentement
+  **Google OAuth** de l'app (Google exige une URL publique). `PrivacyPage.astro` calqué sur `TermsPage.astro`, lien ajouté au
+  **pied de page** dans les 3 langues (`src/data/site.ts` footerNav + clé `privacy`). Le scope
+  `https://www.googleapis.com/auth/calendar.events` y figure littéralement. Section « prise de rendez-vous » = mots de David
+  (« ces infos ne concernent que le professeur et l'élève ») + sources réelles de l'app (PRIVACY_FR `auth/legal-text.ts`,
+  migration 0037, policy `lessons_select` — l'accès admin est mentionné honnêtement, `supabase/functions/google-calendar/`).
+  Sous-traitants cités : Supabase, Vercel, Stripe, Google. Session APP prévenue.
+  🚨 **À COMPLÉTER PAR DAVID** : les mentions légales ne portent aucun SIRET ni forme juridique pour lui en personne physique
+  (seul celui de Résonances Productions, qui est un tiers). S'il en faut un ici, l'ajouter d'abord aux mentions légales.
+  ⚠️ `src/i18n/es.ts` est GÉNÉRÉ par `scripts/traduire-i18n-es.mjs` : la traduction ES manuelle sera écrasée à la prochaine
+  passe si elle n'est pas reportée dans `scripts/.cache-traduction-es.json`.
+- **Page Yishama** (`7921b04`, déployé) : les 3 photos d'Altin remplacent les dégradés CSS, une par acier — décision de David
+  « on corrige derrière si Altin infirme », **aucune mention « à confirmer » à l'écran** (trace en commentaire de code).
+  Pairing publié : nitruré = A Minor 17 · Ember = F2 Astronaut · inox = G2 Hijaz 18. ⚠️ La 3ᵉ image ne vient PAS de la pièce
+  jointe (téléchargement Drive corrompu, tronqué de 3 octets, 2 essais) mais de la fiche produit officielle ; et elle est brun
+  bronze, ce qui rend la lecture « inox » douteuse. Texte corrigé : l'acier est une OPTION à la commande (inox ou Ember sur ces
+  modèles ; nitruré absent du sélecteur), source datée du 09/09. **Brouillon de réponse à Altin posé dans le GMAIL de David**
+  (fil existant) : valider le pairing + 3 aciers ou 2 ? + ce que le joueur entend + galerie ou pas. David l'envoie lui-même.
+- **Article ChromaKeys affiné** (`3f17e3f`, déployé) : 9 consignes sur 12 appliquées (paires côte à côte du même instrument
+  doublées acoustique/électronique, arc-en-ciel, 18 notes, « sous tes doigts », ding ≠ creux, gras, `<abbr>`, lien capo).
+  Non faits : GIF animé (outillage images fixes) ; D Kurd 19 et Cyclope 19 absents du catalogue app → D Kurd 18 Signature.
+  **À trancher par David** : titre sur 2 lignes impossible sans modifier le gabarit `src/pages/blog/[slug].astro:71` (titre rendu
+  en texte brut, un `<br>` s'afficherait) — accord requis car ça touche tous les articles.
+- **Article « accompagner un morceau » (à écrire)** : angle validé par David. Let It Be sur D Kurd 10 = jouable **transposé en fa**
+  (le sol majeur exige un si naturel absent du Kurd ; en fa les 4 accords tombent) — confirmé par le calcul ET par la pastille
+  de l'app. Progression validée : 10 notes (ça marche, mais en fa, sans basses) → D Kurd 19 « modèle David Lesage pour chanteur »
+  (basses, accompagnement au service de la voix) → électronique (layouts vocaux). Vérifier avant d'écrire : un D Kurd 19 n'ajoute
+  probablement PAS de si naturel (plus de notes ≠ plus de tonalités).
+
+
 ## ÉTAT ACTUEL — 09/09/2026 (25ᵉ passe, matin) — ✅ Blog : figures périmées refaites + jumelles · 🧊 MODE ÉCONOME
 
 - **Mode économe (David 09/09, mémoire `mode-econome-un-agent-traductions-a-part`)** : UN agent à la fois, brief étroit, rapport
