@@ -2,7 +2,7 @@
 title: "Apprendre tes accords pas à pas : le mode guidé"
 description: "Dans Handpan Constellation Studio, le handpan devient une surface guidée : l'app allume la note colorée à jouer et t'accompagne, accord après accord, avec un retour sonore et visuel."
 pubDate: 2026-08-11
-cover: "/images/app-mode-guide-note-allumee.webp"
+cover: "/images/app-mode-guide-note-allumee-2026-09.webp"
 category: "logique"
 tags: ["méthode", "accords", "apprentissage"]
 lang: "fr"
@@ -28,10 +28,10 @@ Le principe est simple et visuel. Tu choisis un accord, et l'app **te montre exa
 
 <figure>
   <img
-    src="/images/app-mode-guide-note-allumee.webp"
-    width="2000"
-    height="1250"
-    alt="Le Mode Logique pendant l'apprentissage guidé. Au centre du handpan, l'écran du handpan affiche « Joue la note qui pulse ! ». Quatre notes sont allumées en rouge et cerclées : le ding D2 marqué d'un petit R, A3 marqué d'un L, F#3 et D4 marqué d'un R ; toutes les autres notes du pan sont éteintes, en gris, simplement cerclées de jaune. En bas, les sept cartouches de degrés de I ÉQUILIBRE Dm à VII MYSTÈRE C."
+    src="/images/app-mode-guide-note-allumee-2026-09.webp"
+    width="1600"
+    height="807"
+    alt="Le Mode Logique pendant l'apprentissage guidé, sur un Neotone Mutant en D Majeur. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ (✋ +LR) et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Au centre, l'écran du handpan affiche « Joue la note qui pulse ! ». Quatre notes sont allumées en rouge : le ding D2 marqué d'un petit R, A3 marqué d'un L, F#3 et D4 marqué d'un R ; toutes les autres notes du pan sont éteintes, en gris, chacune gardant son fin liseré de couleur. En bas, les sept cartouches de degrés de I ÉQUILIBRE D à VII MYSTÈRE C#°."
     data-lb="mode-guide"
     data-lb-wide
     loading="lazy"
@@ -40,7 +40,7 @@ Le principe est simple et visuel. Tu choisis un accord, et l'app **te montre exa
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE JUMELLE À INSÉRER (après la nouvelle palette) : acoustique, même écran, même état -->
+<!-- 📷 CAPTURE JUMELLE : PAS D'ÉQUIVALENT ACOUSTIQUE (vérifié le 09/09/2026). En mode acoustique, le segment « 🎓 APPRENTISSAGE INTERACTIF › 🎹 Accords » est bien présent et s'active, mais l'écran du handpan reste sur le nom de la gamme et aucune note ne s'allume : la consigne « Joue la note qui pulse ! » ne s'affiche jamais. L'écran de cet article n'existe donc pas sur un pan acoustique — commentaire laissé en place, à reprendre le jour où le mode guidé y sera actif. -->
 
 Tu avances **à ton rythme**, autant de fois que tu veux. Ce n'est pas un examen chronométré : c'est un accompagnement patient qui te fait mémoriser l'accord **par la couleur et par le geste**, pas par cœur.
 
