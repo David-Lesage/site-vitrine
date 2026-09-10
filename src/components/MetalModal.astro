@@ -1,9 +1,13 @@
 ---
 // Modal plein écran détaillant un métal Yishama (nitruré / inox / Ember).
-// Même mécanique que <WoodModal /> pour les essences du Neotone, mais
-// sans photo : je n'ai pas de cliché fiable par acier, et illustrer un
-// métal avec la photo d'un autre serait malhonnête. Le disque est donc
-// rendu en CSS et le détail est textuel (son · entretien · usage).
+// Même mécanique que <WoodModal /> pour les essences du Neotone.
+// 🖼️ 09/2026 — la fenêtre montre désormais LA VRAIE PHOTO de l'acier
+// (même source de vérité que les cartes de la page : `metals[].photo`
+// dans src/data/yishama.ts, jamais recopiée en dur ici). Les clichés
+// sont sur fond NOIR et la modale sur fond crème → cadre sombre à bords
+// arrondis plutôt qu'un détourage. Clic sur la photo = agrandissement,
+// délégué à la <Lightbox /> DÉJÀ présente sur la page (groupe
+// `data-lb="metal-modal"`), donc aucun second mécanisme à écrire.
 // Données injectées côté client. Inclure une fois sur la page.
 import { metals } from '@/data/yishama'
 import { getDict } from '@/i18n/dict'
@@ -27,18 +31,33 @@ const metalData = Object.fromEntries(
       care: d.metalCare[m.key],
       best: d.metalBest[m.key],
       grad: m.grad,
+      photo: m.photo,
+      alt: y.metalPhotoAlts[m.key],
     },
   ])
 )
-const labels = { eyebrow: y.metalModalEyebrow, sound: y.metalLabelSound, care: y.metalLabelCare, best: y.metalLabelBest, close: y.metalModalClose }
+const firstPhoto = metals[0].photo
+const labels = { eyebrow: y.metalModalEyebrow, sound: y.metalLabelSound, care: y.metalLabelCare, best: y.metalLabelBest, close: y.metalModalClose, zoom: y.lightbox.zoom }
 ---
 
-<div id="metal-modal" class="wood-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="metal-modal-title">
+<div id="metal-modal" class="wood-modal" data-zoom-label={labels.zoom} role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="metal-modal-title">
   <div class="wood-modal-content">
     <button class="wood-modal-close" type="button" aria-label={labels.close}>×</button>
     <div class="wood-modal-eyebrow">{labels.eyebrow}</div>
     <div class="metal-modal-head">
-      <span class="metal-disc metal-disc-lg" id="metal-modal-disc" aria-hidden="true"></span>
+      <span class="metal-modal-photo-frame">
+        <img
+          id="metal-modal-photo"
+          class="metal-modal-photo"
+          src={firstPhoto}
+          width="800"
+          height="800"
+          alt=""
+          data-lb="metal-modal"
+          aria-label={labels.zoom}
+          decoding="async"
+        />
+      </span>
       <div>
         <h3 class="wood-modal-title" id="metal-modal-title">…</h3>
         <div class="wood-modal-en" id="metal-modal-en">…</div>
@@ -62,7 +81,11 @@ const labels = { eyebrow: y.metalModalEyebrow, sound: y.metalLabelSound, care: y
   const modal = document.getElementById('metal-modal')
   if (dataEl && modal) {
     const metals = JSON.parse(dataEl.textContent || '{}')
-    const elDisc = document.getElementById('metal-modal-disc')!
+    const elPhoto = document.getElementById('metal-modal-photo') as HTMLImageElement
+    const zoomLabel = modal.getAttribute('data-zoom-label') || ''
+    // La lightbox partagée de la page (z-index 10000 > 9999 de la modale).
+    const lightbox = document.getElementById('lightbox')
+    const lbOpen = () => !!lightbox && lightbox.classList.contains('is-open')
     const elTitle = document.getElementById('metal-modal-title')!
     const elEn = document.getElementById('metal-modal-en')!
     const elTag = document.getElementById('metal-modal-tag')!
@@ -73,11 +96,18 @@ const labels = { eyebrow: y.metalModalEyebrow, sound: y.metalLabelSound, care: y
     const closeBtn = modal.querySelector<HTMLElement>('.wood-modal-close')!
     let lastFocused: HTMLElement | null = null
 
+    // Pas de `loading="lazy"` (la modale est masquée au chargement : l'image
+    // n'arriverait qu'au moment du clic, cadre noir le temps du transfert).
+    // On précharge aussi les deux autres photos, sans dépendance.
+    Object.keys(metals).forEach((k) => { const im = new Image(); im.src = metals[k].photo })
+
     function openMetal(key: string) {
       const m = metals[key]
       if (!m) return
       lastFocused = document.activeElement as HTMLElement
-      elDisc.setAttribute('style', `background:${m.grad}`)
+      elPhoto.src = m.photo
+      elPhoto.alt = m.alt
+      elPhoto.setAttribute('aria-label', m.alt ? m.alt + ' — ' + zoomLabel : zoomLabel)
       elTitle.textContent = m.name
       elEn.textContent = m.en
       elTag.textContent = m.tag
@@ -100,9 +130,49 @@ const labels = { eyebrow: y.metalModalEyebrow, sound: y.metalLabelSound, care: y
       card.addEventListener('click', () => openMetal(card.dataset.metal || ''))
     })
     closeBtn.addEventListener('click', closeMetal)
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeMetal() })
+    modal.addEventListener('click', (e) => { if (e.target === modal && !lbOpen()) closeMetal() })
+    // Échap : l'agrandissement d'abord, la fenêtre ensuite. La lightbox a son
+    // propre écouteur Escape ; ici on s'efface tant qu'elle est ouverte, sinon
+    // une seule pression fermerait les deux d'un coup.
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeMetal()
-    })
+      if (e.key !== 'Escape') return
+      if (lbOpen()) return
+      if (modal.classList.contains('is-open')) closeMetal()
+    }, true) // capture : passe AVANT l'écouteur (bulle) de la lightbox, sinon
+             // elle aurait déjà retiré `is-open` et le test ci-dessus serait faux.
+    // En se fermant, la lightbox remet `body.overflow` à vide — alors que la
+    // fenêtre de l'acier, elle, est toujours ouverte. On rebloque le défilement.
+    if (lightbox) {
+      let wasOpen = false
+      new MutationObserver(() => {
+        const now = lbOpen()
+        if (wasOpen && !now && modal.classList.contains('is-open')) {
+          document.body.style.overflow = 'hidden'
+        }
+        wasOpen = now
+      }).observe(lightbox, { attributes: true, attributeFilter: ['class'] })
+    }
   }
 </script>
+
+<style>
+  /* Cadre sombre : les photos Yishama sont sur fond noir, la modale sur fond
+     crème. Le cadre assume ce noir (bords arrondis) au lieu de détourer. */
+  .metal-modal-photo-frame {
+    display: block;
+    flex: 0 0 auto;
+    width: clamp(112px, 20vw, 176px);
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #0b0b0b;
+    box-shadow: 0 10px 24px rgba(31, 22, 17, 0.24);
+  }
+  .metal-modal-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+  }
+</style>
