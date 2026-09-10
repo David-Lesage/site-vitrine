@@ -28,7 +28,7 @@ Cet article concerne le **handpan électronique** — aujourd'hui, un Neotone Mu
 
 ## Ce qu'un guitariste fait avec un capo
 
-Un guitariste pose une barrette sur son manche, et joue exactement les mêmes positions qu'avant. Ses doigts ne changent pas ; la tonalité, si. Il n'a rien réappris : il a déplacé son point de départ.
+Un guitariste pose une barrette sur son manche, et joue exactement les mêmes positions qu'avant. Ses doigts ne changent pas ; la <abbr title="La note de départ autour de laquelle tournent un morceau et ses accords, par exemple « en ré ».">tonalité</abbr>, si. Il n'a rien réappris : il a déplacé son point de départ.
 
 <figure>
   <img
@@ -41,13 +41,13 @@ Un guitariste pose une barrette sur son manche, et joue exactement les mêmes po
   <figcaption>À gauche, <strong>sans capo</strong>. À droite, <strong>capo en case 2</strong> : même forme, autre tonalité. Le capo déplace le point de départ, pas la main — le dessin des doigts reste le même.</figcaption>
 </figure>
 
-Le handpan électronique, en **mode Logique**, fait la même chose. Tu changes la note d'ancrage, et tout ce que tu savais jouer reste jouable, au même endroit, avec les mêmes gestes — dans une autre tonalité.
+Le handpan électronique, en **<abbr title="Le mode de l'app où chaque accord de la tonalité a toujours la même place sur le pan.">mode Logique</abbr>**, fait la même chose. Tu changes la note d'ancrage, et tout ce que tu savais jouer reste jouable, au même endroit, avec les mêmes gestes — dans une autre tonalité.
 
 ## La roue d'ancrage, c'est le capo du handpan
 
-Sur le handpan électronique, la barrette s'appelle la **note d'ancrage**. Tu la choisis sur une roue de douze pétales, un par demi-ton. Toucher un pétale, c'est poser le capo ailleurs.
+Sur le handpan électronique, la barrette s'appelle la **note d'ancrage**. Tu la choisis sur une roue de douze pétales, un par <abbr title="Le plus petit pas entre deux notes voisines, par exemple de do à do#.">demi-ton</abbr>. Toucher un pétale, c'est poser le capo ailleurs.
 
-Prends la constellation du **degré I** — celui que l'app appelle **Équilibre**. Choisis la note d'ancrage **do**, puis **ré**, puis **la**, et regarde le pan à chaque fois.
+Prends la <abbr title="Le dessin qui relie, sur le pan, les notes d'un même accord.">constellation</abbr> du **<abbr title="La place d'un accord dans la tonalité, numérotée de I à VII.">degré</abbr> I** — celui que l'app appelle **Équilibre**. Choisis la note d'ancrage **do**, puis **ré**, puis **la**, et regarde le pan à chaque fois.
 
 <figure>
   <img
@@ -67,53 +67,53 @@ Regarde les anneaux cuivre : ce sont les mêmes emplacements, reliés par le mê
 
 ### Pourquoi c'est vrai
 
-Ce n'est pas une coïncidence heureuse, c'est la façon dont le mode Logique est construit.
+C'est la façon dont le mode Logique est construit.
 
-La forme d'un degré est dessinée sur les **emplacements** du pan — les pads, repérés par leur position — et pas sur les notes. Le degré I, c'est « ces emplacements-là, reliés dans cet ordre-là ». Quand tu changes de tonalité, l'app recalcule **ce que chaque emplacement joue**, sans jamais toucher au dessin.
+La forme d'un degré est dessinée sur les **emplacements** du pan — les notes du pan, repérées par leur position — et pas sur les notes. Le degré I, c'est « ces emplacements-là, reliés dans cet ordre-là ». Quand tu changes de tonalité, l'app recalcule **ce que chaque emplacement joue**, sans jamais toucher au dessin.
 
-Autrement dit : la géométrie est fixée d'un côté, le contenu sonore de l'autre. Transposer ne fait bouger que le second. C'est pour ça que la forme ne peut pas se déformer — pas parce qu'on a « vérifié que ça marche », mais parce que rien, dans le mécanisme, ne pourrait la faire bouger.
+Autrement dit : la géométrie est fixée d'un côté, le contenu sonore de l'autre. Transposer ne fait bouger que le second. C'est pour ça que la forme ne se déforme jamais : rien, dans le mécanisme, ne peut la faire bouger.
 
 <figure>
   <img
     src="/images/blog-capo-2026-03-degre-V.webp"
     width="1600"
     height="2368"
-    alt="Deux captures empilées du même écran, œil ouvert sur le degré V cette fois. En haut, ancrage C : les notes G2, B2, D3 et G3 sont allumées en bleu ciel et reliés par un tracé bleu, l'écran du handpan indique « V Tension G ». En bas, ancrage A : les mêmes emplacements sont allumés, ils portent E3, G#3, B3 et E4, le tracé bleu suit exactement le même chemin, et l'écran du handpan indique « V Tension E »."
+    alt="Deux captures empilées du même écran, œil ouvert sur le degré V cette fois. En haut, ancrage C : les notes G2, B2, D3 et G3 sont allumées en bleu ciel et reliées par un tracé bleu, l'écran du handpan indique « V Tension G ». En bas, ancrage A : les mêmes emplacements sont allumés, ils portent E3, G#3, B3 et E4, le tracé bleu suit exactement le même chemin, et l'écran du handpan indique « V Tension E »."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le degré <strong>V</strong>, en do puis en la. L'invariance ne concerne pas que le I : chaque degré garde sa forme.</figcaption>
+  <figcaption>Le degré <strong>V</strong>, ancrage en <strong>do (C)</strong> en haut, en <strong>la (A)</strong> en bas : le tracé bleu suit le même chemin, seuls les noms changent. Ce n'est pas propre au I : chaque degré garde sa forme.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
 ## Apprendre un accord sans le nom des notes
 
-Et si le nom des notes te complique la vie, tu peux t'en passer. Dans la palette d'outils, section **Notation**, le bouton **🚫** (« Aucun nom de note ») efface les noms ; la case **« N° d'ordre de jeu 1·2·3 »** affiche à la place l'ordre dans lequel frapper les notes de l'accord. Dans la section **Mains & doigté**, le bouton **✋** (« Mains en couleur ») colore chaque numéro selon la main qui joue : bleu pour la gauche, rouge pour la droite.
+Et si le nom des notes te complique la vie, tu peux t'en passer. Dans la palette d'outils, section **Notation**, le bouton **🚫** (« Aucun nom de note ») efface les noms sur le pan ; la case **« N° d'ordre de jeu 1·2·3 »** affiche à la place l'ordre dans lequel frapper les notes de l'accord. Dans la section **Mains & doigté**, le bouton **✋** (« Mains en couleur ») colore chaque numéro selon la main qui joue : bleu pour la gauche, rouge pour la droite.
 
 <figure>
   <img
     src="/images/blog-capo-2026-10-sans-noms-ordre-mains.webp"
     width="1600"
     height="1170"
-    alt="Le pan en mode Logique, note d'ancrage ré, œil ouvert sur l'accord I. Les noms des notes ont disparu. Les quatre notes allumées en rouge portent chacune un numéro dans un rond blanc : 1 au centre, 2 et 3 à gauche, chiffres bleus sur anneau bleu (main gauche) ; 1 et 4, chiffres rouges (main droite). L'écran du handpan, sous le ding, affiche « I Équilibre ». En bas, les sept cartes d'accord colorées : I Équilibre, II Élan, III Aventure, IV Détente, V Tension, VI Nostalgie, VII Mystère."
+    alt="Le pan en mode Logique, note d'ancrage ré, œil ouvert sur l'accord I. Les noms des notes ont disparu. Les quatre notes allumées en rouge portent chacune un numéro dans un rond blanc : 1 au centre, 2 et 3 à gauche, chiffres bleus sur anneau bleu (main gauche) ; 1 et 4, chiffres rouges (main droite). L'écran du handpan, sous le ding, affiche « I Équilibre ». En bas, les sept cartes d'accord colorées gardent leur nom d'accord : I Équilibre D, II Élan Em, III Aventure F#m, IV Détente G, V Tension A, VI Nostalgie Bm, VII Mystère C#°."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le même accord I, sans aucun nom de note : l'ordre de frappe 1·2·3·4, et la couleur de la main qui joue.</figcaption>
+  <figcaption>Le même accord I, sans aucun nom de note sur le pan : l'ordre de frappe 1·2·3·4, et la couleur de la main qui joue. Les cartes du bas, elles, gardent le nom de l'accord.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-On peut donc apprendre un accord sans même connaître le nom de ses notes. Ce qu'il faut savoir tient en deux choses : **dans quelle tonalité** tu es (la note d'ancrage), et **l'ordre des accords** de la chanson. Et cet ordre se retient par les couleurs, en pensant en degrés — ou en voyage d'émotions : **I Équilibre**, **II Élan**, **III Aventure**, **IV Détente**, **V Tension**, **VI Nostalgie**, **VII Mystère**. Une chanson devient un chemin de sensations plutôt qu'une liste de lettres. C'est tout le sens du mode Logique.
+On peut donc apprendre un <abbr title="Au moins trois notes jouées ensemble, par exemple do, mi, sol.">accord</abbr> sans même connaître le nom de ses notes. Ce qu'il faut savoir tient en deux choses : **dans quelle tonalité** tu es (la note d'ancrage), et **l'ordre des accords** de la chanson. Et cet ordre se retient par les couleurs, en pensant en degrés — ou en voyage d'émotions : **I Équilibre**, **II Élan**, **III Aventure**, **IV Détente**, **V Tension**, **VI Nostalgie**, **VII Mystère**. Une chanson devient un chemin de sensations plutôt qu'une liste de lettres. C'est tout le sens du mode Logique.
 
 ## Deux usages très concrets
 
 ### Accompagner une voix
 
-Une chanteuse te dit que ta gamme est trop haute pour elle. Sur un instrument acoustique, la conversation s'arrête là. Sur un handpan électronique, tu descends l'ancrage de deux tons et tu rejoues **le même morceau**, avec les mêmes gestes, dans la tessiture où sa voix se pose.
+Une chanteuse te dit que ta gamme est trop haute pour elle. Sur un instrument acoustique, la conversation s'arrête là. Sur un handpan électronique, tu descends l'ancrage de deux tons et tu rejoues **le même morceau**, avec les mêmes gestes, dans la <abbr title="L'étendue des notes, du grave à l'aigu, qu'une voix chante à l'aise.">tessiture</abbr> où sa voix se pose.
 
-Tu n'as pas transposé un morceau : tu as transposé l'instrument. Ce que tu as répété reste valable.
+Tu n'as pas <abbr title="Déplacer toutes les notes du même écart, plus haut ou plus bas.">transposé</abbr> un morceau : tu as transposé l'instrument. Ce que tu as répété reste valable.
 
 <!-- 📷 CK2-04 NON PRODUITE (08/09/2026) — l'état demandé n'existe pas dans l'app : le mode
      Logique remplit ses 7 emplacements avec les degrés de la tonalité, il n'a pas de fonction
@@ -136,7 +136,7 @@ Une session commence, quelqu'un annonce la tonalité. Tu poses ton ancrage dessu
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Changer de tonalité, c'est un pétale à toucher. Chaque note garde sa couleur ChromaKeys, la même que sur le pan.</figcaption>
+  <figcaption>Changer de tonalité, c'est un pétale à toucher. Chaque pétale porte la couleur de sa note ; la note choisie est cochée et s'affiche au centre.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -146,11 +146,11 @@ C'est là que ça devient plus qu'une astuce. Un Neotone peut jouer à peu près
 
 Le mode Logique répond à ça par un cadre. **Le même placement des notes par degrés dans toutes les tonalités.** Tu apprends une fois où vivent le I, le IV, le V — et cette carte reste vraie partout. Ce que tu gagnes n'est pas de la puissance, c'est de la stabilité : un point fixe dans un instrument qui, sans lui, pourrait tout être à la fois.
 
-Cela vaut pour **toutes les gammes majeures et le mineur naturel** : forme identique, contenu différent.
+Cela vaut pour **toutes les <abbr title="La série de notes d'une tonalité, rangées de la plus grave à la plus aiguë.">gammes</abbr> majeures et le mineur naturel** : forme identique, contenu différent.
 
-Pour le **mineur harmonique**, c'est vérifié à l'écran : en do mineur, degré V, le passage du naturel à l'harmonique laisse les quatre mêmes notes allumées et le même tracé — seule la sensible monte d'un demi-ton, si bémol devient si. La nuance change ce qu'on entend, pas ce qu'on voit.
+Pour le **<abbr title="Le mineur naturel dont la 7e note monte d'un demi-ton.">mineur harmonique</abbr>**, c'est vérifié à l'écran : en do mineur, degré V, le passage du naturel à l'harmonique laisse les quatre mêmes emplacements allumés et le même tracé. Une seule note change : la 7e monte d'un demi-ton, si bémol devient si. La nuance change ce qu'on entend, pas ce qu'on voit.
 
-Pour le **mineur mélodique**, disons-le prudemment : il altère 4 emplacements au lieu de 2 (la sixte en plus de la sensible), et rien n'oblige la forme à bouger pour autant — mais nous ne l'avons pas encore photographié.
+Pour le **mineur mélodique**, ce n'est pas encore vérifié à l'écran : à confirmer.
 
 <!-- à confirmer par une capture : mineur mélodique (l'harmonique, lui, est mesuré — cf. CK2-06) -->
 
@@ -170,11 +170,11 @@ Sur le **Neotone 1**, les notions de degré et d'accord s'appliquent aussi — m
      légende qui le prétendrait serait fausse. À reprendre quand le modèle 10 notes se reflétera
      sur le pan en Logique. -->
 
-## Et côté acoustique, honnêtement
+## Et côté acoustique
 
-Il existe bien, en mode acoustique, une **roue de tonalité**. Elle sert à autre chose. Elle te laisse **écouter ta gamme dans une autre tonalité** — toutes les notes décalées du même intervalle — pour entendre si cette hauteur-là irait mieux à ta voix. C'est un aperçu, réversible : tu reviens à ton instrument réel dès que tu refermes. Son usage principal, c'est de **choisir un instrument avant de l'acheter**.
+Il existe bien, en mode acoustique, un bouton **« Tester une autre tonalité »**. Il sert à autre chose. Il te laisse **écouter ta gamme dans une autre tonalité** — toutes les notes décalées du même écart — pour entendre si cette hauteur-là irait mieux à ta voix. C'est un aperçu : dès que tu refermes, ta gamme revient telle qu'elle était. Son usage principal, c'est de **choisir un instrument avant de l'acheter**.
 
-Ce n'est pas un capo. Ton pan acoustique, lui, n'a pas bougé d'un demi-ton — et il ne le peut pas. Sur un acoustique, la constellation d'un accord est calculée à partir des notes réellement présentes : elle parle de *ton* instrument, et elle change d'une gamme à l'autre. C'est une qualité, pas un manque, simplement ce n'est pas la même promesse.
+Ce n'est pas un capo. Ton vrai pan acoustique, lui, n'a pas bougé d'un demi-ton — et il ne le peut pas. Sur un acoustique, la constellation d'un accord est calculée à partir des notes réellement présentes : elle parle de *ton* instrument, et elle change d'une gamme à l'autre. Ce n'est simplement pas la même promesse.
 
 <figure>
   <img
@@ -186,7 +186,7 @@ Ce n'est pas un capo. Ton pan acoustique, lui, n'a pas bougé d'un demi-ton — 
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Côté acoustique : la roue de tonalité fait <strong>écouter</strong> la gamme ailleurs. C'est un aperçu réversible, pas un capo — l'instrument, lui, n'a pas bougé.</figcaption>
+  <figcaption>Côté acoustique : « Tester une autre tonalité » fait <strong>écouter</strong> la gamme ailleurs. C'est un aperçu réversible, pas un capo — l'instrument, lui, n'a pas bougé.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
