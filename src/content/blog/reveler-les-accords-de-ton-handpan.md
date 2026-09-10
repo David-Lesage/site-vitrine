@@ -128,7 +128,7 @@ Trois limites, franchement.
 
 **Le répertoire n'est pas le monde.** 197 morceaux, c'est un catalogue en construction, pas la musique entière. Un morceau absent du catalogue n'est pas un morceau injouable — il n'est simplement pas encore relevé. Le nombre « 156 sur 197 » ne vaut que dans ce cadre-là, et je le dis à chaque fois.
 
-**Les doigtés acoustiques sont générés, pas validés un par un.** L'ordre de jeu et l'attribution des mains que tu vois sur le pan viennent d'un moteur géométrique qui connaît la position réelle de chaque creux. Il est bon. Il n'a pas été relu gamme par gamme sous mes mains, contrairement à ceux du Mode Logique électronique. À prendre comme une proposition solide, pas comme une référence.
+**Les doigtés acoustiques sont générés, pas validés un par un.** L'ordre de jeu et l'attribution des mains que tu vois sur le pan viennent d'un moteur géométrique qui connaît la position réelle de chaque note. Il est bon. Il n'a pas été relu gamme par gamme sous mes mains, contrairement à ceux du Mode Logique électronique. À prendre comme une proposition solide, pas comme une référence.
 
 **Révéler est jeune.** Il est sorti du Labo le 31 août. Il marche, il est juste, mais il va bouger — et il bougera d'autant plus vite que vous serez nombreux à me dire ce qui manque, avec le bouton 💬 « Donner mon avis » qui est maintenant présent **dans** l'écran.
 

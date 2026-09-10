@@ -45,7 +45,7 @@ Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée �
     src="/images/blog-constellations-3-traces-2026-polygone-acoustique.webp"
     width="2000"
     height="1250"
-    alt="Le même accord de ré mineur, cette fois sur un handpan acoustique D Minor / Kurd 10, dans l'onglet Gammes. Quatre creux sont allumés — le ding D3 et le D4 en orange, le F4 en vert, le A4 en indigo — et un tracé orange les relie en une figure fermée : du ding vers A4, puis F4, puis D4, et retour au ding. Les six autres creux (A3, A#3, C4, E4, G4, C5) restent gris. Sous le ding, l'écran du handpan affiche « D Minor / Kurd 10 »."
+    alt="Le même accord de ré mineur, cette fois sur un handpan acoustique D Minor / Kurd 10, dans l'onglet Gammes. Quatre notes sont allumées — le ding D3 et le D4 en orange, le F4 en vert, le A4 en indigo — et un tracé orange les relie en une figure fermée : du ding vers A4, puis F4, puis D4, et retour au ding. Les six autres notes (A3, A#3, C4, E4, G4, C5) restent gris. Sous le ding, l'écran du handpan affiche « D Minor / Kurd 10 »."
     data-lb="constellations"
     data-lb-wide
     loading="lazy"
@@ -56,7 +56,7 @@ Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée �
 
 ### L'Ouvert : le chemin des notes
 
-Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à l'autre, dans l'ordre où tu les joues. C'est la vue du geste. Tu ne vois plus seulement quel accord tu joues, mais comment ta main le parcourt — parfait pour travailler un arpège ou une phrase mélodique et sentir la direction du mouvement. Sur un pan acoustique, ce chemin épouse la disposition réelle de tes creux ; sur un pan électronique, celle de tes pads.
+Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à l'autre, dans l'ordre où tu les joues. C'est la vue du geste. Tu ne vois plus seulement quel accord tu joues, mais comment ta main le parcourt — parfait pour travailler un arpège ou une phrase mélodique et sentir la direction du mouvement. Sur un pan acoustique, ce chemin épouse la disposition réelle de tes notes ; sur un pan électronique, celle de tes pads.
 
 <figure>
   <img
@@ -77,7 +77,7 @@ Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à
     src="/images/blog-constellations-3-traces-2026-ouvert-acoustique.webp"
     width="2000"
     height="1250"
-    alt="Le même accord de ré mineur sur le même handpan acoustique D Minor / Kurd 10, tracé en mode Ouvert : le chemin orange ne se referme plus. Il part du ding D3, rejoint le D4 en bas à gauche, monte au F4 vert, puis au A4 indigo, et s'arrête là. Les mêmes quatre creux sont allumés, les six autres restent gris."
+    alt="Le même accord de ré mineur sur le même handpan acoustique D Minor / Kurd 10, tracé en mode Ouvert : le chemin orange ne se referme plus. Il part du ding D3, rejoint le D4 en bas à gauche, monte au F4 vert, puis au A4 indigo, et s'arrête là. Les mêmes quatre notes sont allumées, les six autres restent gris."
     data-lb="constellations"
     data-lb-wide
     loading="lazy"

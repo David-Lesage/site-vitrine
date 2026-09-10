@@ -123,7 +123,7 @@ Ce qui relève du **Studio**, c'est la **sauvegarde durable dans le cloud** : c'
 
 **Les anciennes fiches « fusionnées » traînent encore.** L'ancien bouton « 💾 Enregistrer mes 2 handpans » créait une troisième fiche fantôme dans ta bibliothèque, en plus des deux vrais instruments. Le bouton a disparu — la paire se souvient d'elle-même — mais les fiches déjà créées continuent de se charger. Si tu en as, tu peux les retirer sans rien perdre.
 
-**Le doigté acoustique reste généré.** Quand le duo dessine un accord à cheval sur les deux coques, l'ordre de jeu et l'attribution des mains viennent d'un moteur qui connaît la position réelle de chaque creux — il est sérieux, il a été corrigé en profondeur fin août, mais il n'a pas été relu accord par accord sous mes mains comme ceux du Mode Logique électronique. Prends-le comme une proposition solide.
+**Le doigté acoustique reste généré.** Quand le duo dessine un accord à cheval sur les deux coques, l'ordre de jeu et l'attribution des mains viennent d'un moteur qui connaît la position réelle de chaque note — il est sérieux, il a été corrigé en profondeur fin août, mais il n'a pas été relu accord par accord sous mes mains comme ceux du Mode Logique électronique. Prends-le comme une proposition solide.
 
 **La reconnaissance de gamme au micro n'existe pas encore.** Si tu ne sais pas quelle est ta gamme, il faut passer par l'[Atlas Sonore](/blog/atlas-des-gammes-de-handpan) et la reconnaître à l'oreille. C'est annoncé, ce n'est pas fait.
 
