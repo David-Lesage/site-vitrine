@@ -53,28 +53,15 @@ You'll notice each setting carries two labels: the plain word first, and the the
 
 <figure>
   <img
-    src="/images/blog-chromakeys-2026-02-menu-acoustique.webp"
-    width="2000"
-    height="601"
-    alt="Close-up of the toolbar. On the left, the rainbow-edged Chromakeys island: an Off/On switch set to On, then « La couleur dit… » with three side-by-side choices — « la note / chakras » (selected), « sa place dans la gamme / degrés », « rien » — then « Notes partagées » set to Off. On the right, the Handpan Appearance island and the Export island. The top of the acoustic pan shows underneath."
+    src="/images/blog-chromakeys-2026-02-menu-paire-acoustique.webp"
+    width="2860"
+    height="681"
+    alt="Two side-by-side screenshots of the same acoustic handpan, a D Kurd 10, in the same frame: the Chromakeys island of the toolbar and the top of the pan. The rest of the toolbar is slightly darkened. On each half, a copper ring surrounds two settings. On the left, « La couleur dit… » is set to « la note » and « Notes partagées » to Off: each note of the pan has a single colour. On the right, « La couleur dit… » is set to « sa place dans la gamme » and « Notes partagées » to On: the notes change colour and several are split into slices of different colours."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The <strong>Chromakeys</strong> island and its settings, all on one line. The plain word first, the theory word small underneath. (Screenshot of the French interface.)</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>
-<figure>
-  <img
-    src="/images/blog-chromakeys-2026-02-menu-electronique.webp"
-    width="2000"
-    height="601"
-    alt="The same close-up on the electronic side: in the Chromakeys island, « sa place dans la gamme / degrés » is selected and « Notes partagées » is On. Under the toolbar, the top of the Neotone Mutant shows dimples split into two colours."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>The same three questions, answered differently: place in the scale, and shared notes on. Each setting changes without touching the others. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The same handpan, two settings changed, circled in copper. Left: <em>colour says the note</em>, <strong>shared notes</strong> Off. Right: <em>colour says its place in the scale</em>, shared notes On. Look at the pan: the colours change, and some notes split into several slices. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

@@ -59,28 +59,15 @@ Tu remarqueras que chaque réglage porte deux étiquettes : le mot simple en pre
 
 <figure>
   <img
-    src="/images/blog-chromakeys-2026-02-menu-acoustique.webp"
-    width="2000"
-    height="601"
-    alt="Gros plan sur la bande d'outils. À gauche, l'îlot Chromakeys au contour arc-en-ciel : un interrupteur Off/On sur On, puis « La couleur dit… » avec trois choix côte à côte — « la note / chakras » (sélectionné), « sa place dans la gamme / degrés », « rien » — puis « Notes partagées » sur Off. À droite, l'îlot Apparence Handpan (Notation, Apparence, Mains &amp; doigté, Constellation) et l'îlot Exporter. Le haut du pan acoustique apparaît en dessous."
+    src="/images/blog-chromakeys-2026-02-menu-paire-acoustique.webp"
+    width="2860"
+    height="681"
+    alt="Deux captures côte à côte du même handpan acoustique, un D Kurd 10, dans le même cadrage : l'îlot Chromakeys de la bande d'outils et le haut du pan. Le reste de la bande est légèrement assombri. Sur chaque moitié, un anneau cuivre entoure deux réglages. À gauche, « La couleur dit… » est sur « la note » et « Notes partagées » sur Off : chaque note du pan a une seule couleur. À droite, « La couleur dit… » est sur « sa place dans la gamme » et « Notes partagées » sur On : les notes changent de couleur et plusieurs sont coupées en parts de couleurs différentes."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>L'îlot <strong>Chromakeys</strong> et ses réglages, tous sur une seule ligne. Le mot simple d'abord, le mot de théorie en petit dessous.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
-<figure>
-  <img
-    src="/images/blog-chromakeys-2026-02-menu-electronique.webp"
-    width="2000"
-    height="601"
-    alt="Le même gros plan sur la bande d'outils, côté électronique : dans l'îlot Chromakeys, « sa place dans la gamme / degrés » est sélectionné et « Notes partagées » est sur On. Sous la bande, le haut du Neotone Mutant montre des notes dont plusieurs sont coupées en deux couleurs."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Les mêmes trois questions, réglées autrement : <em>sa place dans la gamme</em> et les notes partagées allumées. Chaque réglage se change sans toucher aux autres.</figcaption>
+  <figcaption>Le même handpan, deux réglages changés, entourés en cuivre. À gauche, <em>la couleur dit la note</em> et les <strong>notes partagées</strong> sont sur Off. À droite, <em>la couleur dit sa place dans la gamme</em> et les notes partagées sont sur On. Regarde le pan : les couleurs changent, et certaines notes se coupent en plusieurs parts.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
