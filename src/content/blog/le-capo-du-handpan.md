@@ -32,13 +32,13 @@ Un guitariste pose une barrette sur son manche, et joue exactement les mêmes po
 
 <figure>
   <img
-    src="/images/blog-capo-2026-guitare-capo.svg"
+    src="/images/blog-capo-2026-guitare-capo-v2.svg"
     width="1240"
-    height="440"
-    alt="Deux manches de guitare vus de face. À gauche, « Sans capo » : une forme d'accord à trois doigts, numérotés 1, 2, 3, posée près du sillet, en cases 1, 2 et 3. Une flèche mène à droite, « Capo en case 2 : même forme, autre tonalité » : une barrette traverse le manche en case 2 et les trois mêmes doigts forment exactement le même dessin, deux cases plus loin, en cases 3, 4 et 5."
+    height="270"
+    alt="Deux manches de guitare vus de face, côte à côte, cases numérotées de 1 à 6. À gauche, sans capo : une forme d'accord à trois doigts, numérotés 1, 2, 3, posée près du sillet, en cases 1, 2 et 3. Une flèche mène à droite : une barrette cuivrée, le capo, traverse le manche en case 2, et les trois mêmes doigts forment exactement le même dessin, deux cases plus loin, en cases 3, 4 et 5."
     loading="lazy"
   />
-  <figcaption>Le capo déplace le point de départ, pas la main : le dessin des doigts reste le même.</figcaption>
+  <figcaption>À gauche, <strong>sans capo</strong>. À droite, <strong>capo en case 2</strong> : même forme, autre tonalité. Le capo déplace le point de départ, pas la main — le dessin des doigts reste le même.</figcaption>
 </figure>
 
 Le handpan électronique, en **mode Logique**, fait la même chose. Tu changes la note d'ancrage, et tout ce que tu savais jouer reste jouable, au même endroit, avec les mêmes gestes — dans une autre tonalité.
@@ -51,15 +51,15 @@ Prends la constellation du **degré I** — celui que l'app appelle **Équilibre
 
 <figure>
   <img
-    src="/images/blog-capo-2026-09-grille-3-tonalites.webp"
+    src="/images/blog-capo-2026-09-grille-3-tonalites-v2.webp"
     width="2400"
-    height="1150"
-    alt="Une grille de trois colonnes, « Ancrage en do (C) », « Ancrage en ré (D) », « Ancrage en la (A) ». En haut de chaque colonne, la roue d'ancrage ouverte : douze pétales colorés, le pétale choisi coché, et son nom au centre de la roue — C, puis D, puis A. En bas, le pan en mode Logique, Neotone Mutant, œil ouvert sur l'accord I Équilibre : quatre notes allumées en rouge, reliées par le même tracé, entourées d'un anneau cuivre. Les emplacements entourés sont les mêmes dans les trois colonnes ; leurs noms changent : C2, E3, G3, C4 en do ; D2, F#3, A3, D4 en ré ; A2, C#4, E4, A4 en la. Sous chaque pan, les sept cartes d'accord de la tonalité."
+    height="1096"
+    alt="Une grille de trois colonnes, côte à côte, dans le même cadrage. En haut de chaque colonne, l'écran de l'app légèrement assombri, sauf la roue d'ancrage restée nette : douze pastilles colorées, la pastille choisie cochée et son nom au centre de la roue — C, puis D, puis A. En bas, le pan en mode Logique, Neotone Mutant, œil ouvert sur l'accord I Équilibre : quatre notes allumées en rouge, reliées par le même tracé, entourées d'un anneau cuivre. Les emplacements entourés sont les mêmes dans les trois colonnes ; leurs noms changent : C2, E3, G3, C4 en do ; D2, F#3, A3, D4 en ré ; A2, C#4, E4, A4 en la. Sous chaque pan, les sept cartes d'accord de la tonalité."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>En haut, la roue : la note d'ancrage change. En bas, l'accord I : <strong>le dessin entouré ne bouge pas</strong>, seuls les noms des notes changent.</figcaption>
+  <figcaption>De gauche à droite : ancrage en <strong>do (C)</strong>, en <strong>ré (D)</strong>, en <strong>la (A)</strong>. En haut, la roue d'ancrage, seule laissée en lumière : la note au centre change. En bas, l'accord I : <strong>le dessin entouré ne bouge pas</strong>, seuls les noms des notes changent.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
