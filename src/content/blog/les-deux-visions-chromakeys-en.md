@@ -248,7 +248,7 @@ In Discovery, the island shrinks to the essentials: **a single switch**, Off or 
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Discovery level</span><span style="flex:1">Apprentice level</span></div>
   <img
-    src="/images/blog-chromakeys-2026-07-niveaux-electronique.webp"
+    src="/images/blog-chromakeys-2026-07-niveaux-electronique-v7.webp"
     width="2552"
     height="1248"
     alt="The toolbar at Apprentice level, above the Neotone Mutant in C major. The three Chromakeys settings are visible again: « place in the scale » is selected and « shared notes » is On. On the pan, several dimples are split into two degree colours."
