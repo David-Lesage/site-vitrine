@@ -46,6 +46,8 @@ VI Nostalgie · VII Mystère. Voyelles en Chanter & Jouer : OU · O (beau) · O 
 
 ## 4. La vérité
 
+- Un fait sur un **instrument physique** donné par David (ex. le Neotone 1 n'a pas les 7 degrés) est une source
+  valable : ce n'est pas une affirmation sur l'app, il n'a pas à être prouvé à l'écran (10/09).
 - **Rien affirmé sur l'app sans l'avoir vu** : à l'écran (capture) ou dans le code (fichier:ligne).
   Si un état n'existe pas, on ne triche pas : on l'écrit tel qu'il est.
 - **Les mots de David se citent, ils ne se reformulent pas** comme s'ils étaient les nôtres.
