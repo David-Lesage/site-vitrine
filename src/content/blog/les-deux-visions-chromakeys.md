@@ -81,13 +81,13 @@ Sur un pan à dix-huit notes, l'écart est encore plus frappant.
 
 ## Le menu ChromaKeys : trois questions, pas une
 
-En haut de l'écran, la bande d'outils. Dedans, un îlot au contour multicolore : **ChromaKeys**. Il ne pose pas une question, il en pose trois — et elles sont indépendantes. Tu peux répondre à l'une sans toucher aux deux autres.
+En haut de l'écran, la bande d'outils. Dedans, un îlot au contour multicolore : **ChromaKeys**. Il pose deux questions, et une troisième se règle ailleurs, sur les cartes d'accord. Les trois sont indépendantes : tu peux répondre à l'une sans toucher aux deux autres.
 
 1. **La couleur dit…** → *la note* · *sa place dans la gamme*. Pour qu'elle ne dise **rien**, pas besoin d'un troisième choix : c'est l'interrupteur **Off** sous le nom ChromaKeys. Repasse sur *On*, et la dernière lecture choisie revient.
 2. **Notes partagées** → *Off* / *On*
-3. **Dessin des accords** → il n'y a rien à cliquer ici : **l'œil vit sur chaque carte d'<abbr title="Au moins trois notes jouées ensemble — par exemple do, mi, sol.">accord</abbr>**, en bas de l'écran. L'îlot te le rappelle, c'est tout.
+3. **Dessin des accords** → il n'y a rien à cliquer ici : **l'œil vit sur chaque carte d'<abbr title="Au moins trois notes jouées ensemble — par exemple do, mi, sol.">accord</abbr>**, en bas de l'écran, pas dans l'îlot.
 
-Tu remarqueras que chaque réglage porte deux étiquettes : le mot simple en premier, et le mot de théorie en petit juste à côté. *La note*, c'est ce que d'autres appellent les **chakras**. *Sa place dans la gamme*, c'est ce qu'on appelle les **<abbr title="Le numéro de la place qu'une note occupe dans la gamme : 1re, 2e, 3e…">degrés</abbr>**. Je le dis une fois ici, et ensuite j'emploie les mots simples.
+Tu remarqueras que les deux choix de « La couleur dit… » portent chacun deux étiquettes : le mot simple en premier, et le mot de théorie en petit juste à côté. *La note*, c'est ce que d'autres appellent les **chakras**. *Sa place dans la gamme*, c'est ce qu'on appelle les **<abbr title="Le numéro de la place qu'une note occupe dans la gamme : 1re, 2e, 3e…">degrés</abbr>**. Je le dis une fois ici, et ensuite j'emploie les mots simples.
 
 <figure>
   <img
@@ -124,11 +124,11 @@ Les douze notes ont leur couleur — les dièses compris, avec leur nuance propr
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Les douze couleurs, dans l'ordre. Les sept notes, et entre elles <strong>les demi-tons dans une nuance plus claire de la même couleur</strong> : c'est la seule chose à retenir.</figcaption>
+  <figcaption>Les douze couleurs, dans l'ordre. Les sept notes, et entre elles <strong>les <abbr title="Le plus petit écart entre deux notes : de do à do dièse, par exemple.">demi-tons</abbr> dans une nuance plus claire de la même couleur</strong> : c'est la seule chose à retenir.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-L'intérêt le plus immédiat, c'est **l'octave**.
+L'intérêt le plus immédiat, c'est **l'<abbr title="La même note, plus grave ou plus aiguë : un ré grave et un ré aigu sont à une octave d'écart.">octave</abbr>**.
 
 Sans rien allumer d'autre, tous les *ré* de ta coque sont orange : le grave, l'aigu, celui du haut à droite. D'un coup d'œil, tu vois que ce sont **la même note à des hauteurs différentes**.
 
@@ -172,16 +172,16 @@ Quand le cerveau a beaucoup d'informations à traiter d'un coup, il ne trie plus
     src="/images/blog-chromakeys-2026-13-paire-18-notes.webp"
     width="2824"
     height="1273"
-    alt="Deux captures du même handpan acoustique « D Kurd 18 — David Lesage Signature » montées côte à côte. Les dix-huit notes couvrent toute la coque. À gauche, la couleur dit la note : les ré sont orange, les la indigo, les do rouges, les fa verts. À droite, la couleur dit sa place dans la gamme : les mêmes notes se regroupent en familles de couleurs beaucoup moins nombreuses."
+    alt="Deux captures du même handpan acoustique « D Kurd 18 — David Lesage Signature » montées côte à côte. Les dix-huit notes couvrent toute la coque. À gauche, la couleur dit la note : les ré sont orange, les la indigo, les do rouges, les fa verts. À droite, la couleur dit sa place dans la gamme : chaque note prend la couleur de l'accord qu'elle sert : C4 passe au vert, A3 à l'orange."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Mon <strong>D Kurd 18</strong>, deux fois. À gauche dix-huit noms de notes ; à droite, quelques familles de couleur. <strong>C'est le même instrument</strong> — seule la façon de le lire a changé.</figcaption>
+  <figcaption>Mon <strong>D Kurd 18</strong>, deux fois. À gauche, chaque note a la couleur de son nom ; à droite, la couleur de l'accord qu'elle sert — regarde <strong>C4 passer au vert et A3 à l'orange</strong>. C'est le même instrument : seule la façon de le lire a changé.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-## Un degré, c'est quoi ? (version enfant de 8 ans)
+## Un degré, c'est quoi ?
 
 Avant la deuxième réponse, il faut un mot. Un seul.
 
@@ -203,13 +203,17 @@ Chacune a aussi sa voyelle, qu'on chante : OU · O (comme « beau ») · O (comm
 
 ## « La couleur dit sa place dans la gamme »
 
-Deuxième réponse. Là, la couleur ne regarde plus le nom de la note, mais sa marche.
+Deuxième réponse. Là, la couleur ne regarde plus le nom de la note : elle regarde **l'accord qu'elle sert** dans ta gamme.
 
-**Le I est toujours rouge.** Si ta gamme est en ré, c'est le ré qui devient rouge. En mi, c'est le mi. **La couleur suit la place, pas le nom.**
+**En mode Logique, cette couleur est celle du degré de l'accord.** L'accord du I est toujours rouge, celui du II orange, et ainsi de suite. Si ta gamme est en ré, ce sont les notes de l'accord de ré qui deviennent rouges. **La couleur suit la place, pas le nom.**
+
+Conséquence visible : deux notes du même nom peuvent porter deux couleurs différentes, parce qu'elles ne servent pas le même accord.
 
 Et le dessin des sept couleurs reste identique d'une tonalité à l'autre : c'est ce qui te permet de **rejouer la même chose ailleurs sans rien réapprendre**.
 
-⚠️ **Une précision honnête** : ceci est vrai **en mode Logique**. Ailleurs — en Gammes, en Création — le bouton garde le même nom, mais **le calcul, lui, change** : toutes les notes d'un même accord prennent alors la couleur de la note qui donne son nom à l'accord. C'est utile — tu vois d'un coup quelles notes vont ensemble — mais ce n'est pas la lecture par degrés. Regarde la capture qui suit : sur le D Kurd, quatre notes se retrouvent du même orange que le ré, non pas parce qu'ils sont des ré, mais parce qu'ils appartiennent à un accord de ré.
+**Hors du mode Logique** — en Gammes, en Création — le bouton garde le même nom, mais chaque accord prend la couleur de **la note qui lui donne son nom**. Tu vois toujours d'un coup quelles notes vont ensemble, mais ce n'est plus la lecture par degrés.
+
+Sur le D Kurd de la capture qui suit, F4 et A4 prennent l'orange du ré : ce ne sont pas des ré, mais ils appartiennent à l'accord de ré.
 
 <figure>
   <img
@@ -226,7 +230,7 @@ Et le dessin des sept couleurs reste identique d'une tonalité à l'autre : c'es
 </figure>
 ### Les deux lectures, côte à côte
 
-Voici la même coque, photographiée deux fois : à gauche la couleur dit **la note**, à droite elle dit **sa place dans la gamme**. Rien d'autre n'a bougé.
+Voici le même handpan, photographié deux fois : à gauche la couleur dit **la note**, à droite **sa place dans la gamme**. Rien d'autre n'a bougé.
 
 <figure>
   <img
@@ -238,7 +242,7 @@ Voici la même coque, photographiée deux fois : à gauche la couleur dit **la n
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le <strong>même</strong> handpan acoustique, deux fois. À gauche la note, à droite sa place. Le ding et le D4 restent orange des deux côtés — c'est le hasard d'une gamme en ré.</figcaption>
+  <figcaption>Le <strong>même</strong> handpan acoustique, deux fois, hors mode Logique. À gauche la note ; à droite la couleur de l'accord : <strong>F4 et A4 passent à l'orange</strong> de l'accord de ré, C5 au vert de l'accord de fa.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -252,14 +256,14 @@ Voici la même coque, photographiée deux fois : à gauche la couleur dit **la n
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Et le <strong>même</strong> pan électronique, deux fois. La démonstration vaut sur les deux instruments : c'est le réglage qui change, jamais l'instrument.</figcaption>
+  <figcaption>Le <strong>même</strong> pan électronique, deux fois, en mode Logique. À droite, les notes de l'accord du I (C2, E3, G3, C4) sont <strong>toutes rouges</strong> ; D2 est orange (II), mais D3 est bleu ciel parce qu'il sert l'accord du V.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
 
 ## « Notes partagées » : quand une note sert dans plusieurs accords
 
-Troisième idée, et c'est un réglage à part — c'était ma prise de conscience de la semaine dernière : ça n'avait rien à faire dans le choix précédent.
+Troisième idée, et c'est un réglage à part.
 
 Une même note peut appartenir à plusieurs accords.
 
@@ -267,10 +271,10 @@ Quand **Notes partagées** est sur *On*, cette note **se découpe en parts** —
 
 Quand la couleur dit *la note*, le partage prend une autre forme : un **anneau fin** autour de la couleur de la note, qui la laisse reconnaissable.
 
-Trois choses vérifiées dans l'application au moment d'écrire, que je préfère dire plutôt que de te laisser chercher :
+Trois choses à savoir :
 
 - Sur un **D Kurd 10 acoustique**, **huit notes sur dix** se découpent. Ce n'est pas un cas d'école : c'est presque toute ta coque.
-- **En mode Logique aussi, sur un Neotone Mutant en do majeur, de nombreuses notes se coupent en deux.** Je croyais le contraire, la capture dit l'inverse : les sept degrés se partagent bel et bien des notes.
+- **En mode Logique aussi**, sur un Neotone Mutant en do majeur, **de nombreuses notes se coupent** : les sept degrés se partagent des notes.
 - **Les parts disparaissent dès qu'un œil d'accord est ouvert.** Les deux ne coexistent jamais à l'écran : ou tu regardes le réseau des notes partagées, ou tu regardes un accord dessiné.
 
 <figure>
@@ -283,7 +287,7 @@ Trois choses vérifiées dans l'application au moment d'écrire, que je préfèr
     data-lb-wide
     loading="lazy"
   />
-  <figcaption><strong>Notes partagées</strong>, sur le même pan acoustique : à gauche éteint, à droite allumé. Chaque arc de l'anneau dit un accord auquel la note appartient.</figcaption>
+  <figcaption><strong>Notes partagées</strong>, sur le même pan acoustique : à gauche éteint, à droite allumé. Chaque arc de l'anneau dit un accord auquel la note appartient : regarde <strong>F4 et E4, trois arcs chacun</strong>. Seuls le ding et A3 restent nus.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -297,7 +301,7 @@ Trois choses vérifiées dans l'application au moment d'écrire, que je préfèr
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le même essai sur le pan électronique. <strong>Là aussi les notes se partagent</strong> — je croyais le contraire avant de faire la capture.</figcaption>
+  <figcaption>Le même essai sur le pan électronique. <strong>Là aussi les notes se partagent</strong> : G3 et F3 en trois parts, E3, B3 et D3 en deux.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -358,7 +362,7 @@ Si tout ça te paraît beaucoup, bonne nouvelle : tu n'as rien à faire. Ton **n
 | **Apprenti** | sa place dans la gamme | On |
 | **Musicien** | tout est visible et modifiable | |
 
-En Découverte, l'îlot se réduit d'ailleurs à l'essentiel : **une seule bascule**, Off ou On. Les deux autres réglages ne sont pas seulement préréglés, ils sont rangés — tu ne peux pas les dérégler par accident. Rien n'a été retiré de l'application : tout revient au niveau Apprenti.
+En Découverte, l'îlot se réduit d'ailleurs à l'essentiel : **une seule bascule**, Off ou On. Les deux autres réglages sont rangés : tu ne peux pas les dérégler par accident, et ils reviennent au niveau Apprenti.
 
 <figure>
   <img
@@ -370,7 +374,7 @@ En Découverte, l'îlot se réduit d'ailleurs à l'essentiel : **une seule bascu
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Au niveau <strong>Découverte</strong>, l'îlot se réduit à une seule bascule. Rien n'a été retiré de l'application : c'est rangé jusqu'à ce que tu en aies besoin.</figcaption>
+  <figcaption>Au niveau <strong>Découverte</strong>, l'îlot se réduit à une seule bascule, Off ou On. Le reste est rangé jusqu'à ce que tu en aies besoin.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 <figure>
