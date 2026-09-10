@@ -30,27 +30,40 @@ Cet article concerne le **handpan électronique** — aujourd'hui, un Neotone Mu
 
 Un guitariste pose une barrette sur son manche, et joue exactement les mêmes positions qu'avant. Ses doigts ne changent pas ; la tonalité, si. Il n'a rien réappris : il a déplacé son point de départ.
 
+<figure>
+  <img
+    src="/images/blog-capo-2026-guitare-capo.svg"
+    width="1240"
+    height="440"
+    alt="Deux manches de guitare vus de face. À gauche, « Sans capo » : une forme d'accord à trois doigts, numérotés 1, 2, 3, posée près du sillet, en cases 1, 2 et 3. Une flèche mène à droite, « Capo en case 2 : même forme, autre tonalité » : une barrette traverse le manche en case 2 et les trois mêmes doigts forment exactement le même dessin, deux cases plus loin, en cases 3, 4 et 5."
+    loading="lazy"
+  />
+  <figcaption>Le capo déplace le point de départ, pas la main : le dessin des doigts reste le même.</figcaption>
+</figure>
+
 Le handpan électronique, en **mode Logique**, fait la même chose. Tu changes la note d'ancrage, et tout ce que tu savais jouer reste jouable, au même endroit, avec les mêmes gestes — dans une autre tonalité.
 
-## La démonstration : le degré I, en C, en D, en A
+## La roue d'ancrage, c'est le capo du handpan
 
-Prends la constellation du **degré I** — celui que l'app appelle **Équilibre**. Affiche-la avec une note d'ancrage en **C**. Puis en **D**. Puis en **A**.
+Sur le handpan électronique, la barrette s'appelle la **note d'ancrage**. Tu la choisis sur une roue de douze pétales, un par demi-ton. Toucher un pétale, c'est poser le capo ailleurs.
 
-Le dessin est le même. Exactement le même : mêmes notes allumées, même polygone, même chemin d'une note à l'autre. Seules les hauteurs jouées ont changé.
+Prends la constellation du **degré I** — celui que l'app appelle **Équilibre**. Choisis la note d'ancrage **do**, puis **ré**, puis **la**, et regarde le pan à chaque fois.
 
 <figure>
   <img
-    src="/images/blog-capo-2026-02-ancrages-C-D-A.webp"
-    width="2598"
-    height="1002"
-    alt="Trois captures côte à côte, même fenêtre et même cadrage, degré I Équilibre avec la note d'ancrage en C, puis D, puis A. Sur chacune, les mêmes emplacements sont allumés en rouge et reliés par le même tracé : C2 · E3 · G3 · C4 à gauche, D2 · F#3 · A3 · D4 au milieu, A2 · C#4 · E4 · A4 à droite. Sous chaque pan, la rangée des sept cartes d'accord de la tonalité."
+    src="/images/blog-capo-2026-09-grille-3-tonalites.webp"
+    width="2400"
+    height="1150"
+    alt="Une grille de trois colonnes, « Ancrage en do (C) », « Ancrage en ré (D) », « Ancrage en la (A) ». En haut de chaque colonne, la roue d'ancrage ouverte : douze pétales colorés, le pétale choisi coché, et son nom au centre de la roue — C, puis D, puis A. En bas, le pan en mode Logique, Neotone Mutant, œil ouvert sur l'accord I Équilibre : quatre notes allumées en rouge, reliées par le même tracé, entourées d'un anneau cuivre. Les emplacements entourés sont les mêmes dans les trois colonnes ; leurs noms changent : C2, E3, G3, C4 en do ; D2, F#3, A3, D4 en ré ; A2, C#4, E4, A4 en la. Sous chaque pan, les sept cartes d'accord de la tonalité."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Même degré, trois ancrages : <strong>la même forme</strong>, seules les hauteurs changent. Vérifié à la mesure : les trois tracés se recouvrent à plus de 99 %.</figcaption>
+  <figcaption>En haut, la roue : la note d'ancrage change. En bas, l'accord I : <strong>le dessin entouré ne bouge pas</strong>, seuls les noms des notes changent.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+Regarde les anneaux cuivre : ce sont les mêmes emplacements, reliés par le même tracé, dans les trois colonnes. Ce qui change, c'est le nom écrit dessus — do, mi, sol en do ; ré, fa#, la en ré ; la, do#, mi en la. Les gestes restent, la tonalité change : exactement ce que fait le capo.
 
 ### Pourquoi c'est vrai
 
@@ -73,6 +86,26 @@ Autrement dit : la géométrie est fixée d'un côté, le contenu sonore de l'au
   <figcaption>Le degré <strong>V</strong>, en do puis en la. L'invariance ne concerne pas que le I : chaque degré garde sa forme.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
+
+## Apprendre un accord sans le nom des notes
+
+Et si le nom des notes te complique la vie, tu peux t'en passer. Dans la palette d'outils, section **Notation**, le bouton **🚫** (« Aucun nom de note ») efface les noms ; la case **« N° d'ordre de jeu 1·2·3 »** affiche à la place l'ordre dans lequel frapper les notes de l'accord. Dans la section **Mains & doigté**, le bouton **✋** (« Mains en couleur ») colore chaque numéro selon la main qui joue : bleu pour la gauche, rouge pour la droite.
+
+<figure>
+  <img
+    src="/images/blog-capo-2026-10-sans-noms-ordre-mains.webp"
+    width="1600"
+    height="1170"
+    alt="Le pan en mode Logique, note d'ancrage ré, œil ouvert sur l'accord I. Les noms des notes ont disparu. Les quatre notes allumées en rouge portent chacune un numéro dans un rond blanc : 1 au centre, 2 et 3 à gauche, chiffres bleus sur anneau bleu (main gauche) ; 1 et 4, chiffres rouges (main droite). L'écran du handpan, sous le ding, affiche « I Équilibre ». En bas, les sept cartes d'accord colorées : I Équilibre, II Élan, III Aventure, IV Détente, V Tension, VI Nostalgie, VII Mystère."
+    data-lb="capo"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le même accord I, sans aucun nom de note : l'ordre de frappe 1·2·3·4, et la couleur de la main qui joue.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
+On peut donc apprendre un accord sans même connaître le nom de ses notes. Ce qu'il faut savoir tient en deux choses : **dans quelle tonalité** tu es (la note d'ancrage), et **l'ordre des accords** de la chanson. Et cet ordre se retient par les couleurs, en pensant en degrés — ou en voyage d'émotions : **I Équilibre**, **II Élan**, **III Aventure**, **IV Détente**, **V Tension**, **VI Nostalgie**, **VII Mystère**. Une chanson devient un chemin de sensations plutôt qu'une liste de lettres. C'est tout le sens du mode Logique.
 
 ## Deux usages très concrets
 

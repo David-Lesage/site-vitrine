@@ -40,9 +40,9 @@ The drawing is the same. Exactly the same: same tone fields lit, same polygon, s
 
 <figure>
   <img
-    src="/images/blog-capo-2026-02-ancrages-C-D-A.webp"
-    width="2598"
-    height="1002"
+    src="/images/blog-capo-2026-09-grille-3-tonalites.webp"
+    width="2400"
+    height="1150"
     alt="The same screen, anchor note C. The lit tone fields are C2 at the centre, C4 at the top, G3 on the left, E3 lower left, plus a small pale-red C3. The red path draws exactly the same figure as in the two images below. The handpan screen reads « I Équilibre C » and the chord cards show C, Dm, Em, F, G, Am, B°. Twin capture of the previous one, taken in the same window and the same frame, with only the anchor note changed to D. The same positions are lit; they now read D2, D4, A3 and F#3, with a small pale-red D3. The red path is superimposable on the previous one. The handpan screen reads « I Équilibre D ». A third twin capture, same window and same frame, anchor note A. The same positions are lit and read A2, A4, E4 and C#4, with a small pale-red A3. The red path occupies exactly the same place. The handpan screen reads « I Équilibre A »."
     data-lb="capo"
     data-lb-wide
