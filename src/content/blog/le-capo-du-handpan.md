@@ -32,13 +32,16 @@ Un guitariste pose une barrette sur son manche, et joue exactement les mêmes po
 
 <figure>
   <img
-    src="/images/blog-capo-2026-guitare-capo-v2.svg"
+    src="/images/blog-capo-2026-guitare-capo-v3.svg"
     width="1240"
-    height="270"
+    height="340"
     alt="Deux manches de guitare vus de face, côte à côte, cases numérotées de 1 à 6. À gauche, sans capo : une forme d'accord à trois doigts, numérotés 1, 2, 3, posée près du sillet, en cases 1, 2 et 3. Une flèche mène à droite : une barrette cuivrée, le capo, traverse le manche en case 2, et les trois mêmes doigts forment exactement le même dessin, deux cases plus loin, en cases 3, 4 et 5."
+    data-lb="capo"
+    data-lb-wide
     loading="lazy"
   />
   <figcaption>À gauche, <strong>sans capo</strong>. À droite, <strong>capo en case 2</strong> : même forme, autre tonalité. Le capo déplace le point de départ, pas la main — le dessin des doigts reste le même.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
 Le handpan électronique, en **<abbr title="Le mode de l'app où chaque accord de la tonalité a toujours la même place sur le pan.">mode Logique</abbr>**, fait la même chose. Tu changes la note d'ancrage, et tout ce que tu savais jouer reste jouable, au même endroit, avec les mêmes gestes — dans une autre tonalité.
@@ -49,7 +52,7 @@ Sur le handpan électronique, la barrette s'appelle la **note d'ancrage**. Tu la
 
 Prends la <abbr title="Le dessin qui relie, sur le pan, les notes d'un même accord.">constellation</abbr> du **<abbr title="La place d'un accord dans la tonalité, numérotée de I à VII.">degré</abbr> I** — celui que l'app appelle **Équilibre**. Choisis la note d'ancrage **do**, puis **ré**, puis **la**, et regarde le pan à chaque fois.
 
-<figure>
+<figure id="grille-trois-tonalites">
   <img
     src="/images/blog-capo-2026-09-grille-3-tonalites-v2.webp"
     width="2400"
@@ -74,16 +77,17 @@ La forme d'un degré est dessinée sur les **emplacements** du pan — les notes
 Autrement dit : la géométrie est fixée d'un côté, le contenu sonore de l'autre. Transposer ne fait bouger que le second. C'est pour ça que la forme ne se déforme jamais : rien, dans le mécanisme, ne peut la faire bouger.
 
 <figure>
+  <div class="figure-labels" aria-hidden="true" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;text-align:center;font-size:0.9rem;font-weight:600;margin-bottom:0.4rem"><span>Ancrage en do (C)</span><span>Ancrage en la (A)</span></div>
   <img
-    src="/images/blog-capo-2026-03-degre-V.webp"
-    width="1600"
-    height="2368"
-    alt="Deux captures empilées du même écran, œil ouvert sur le degré V cette fois. En haut, ancrage C : les notes G2, B2, D3 et G3 sont allumées en bleu ciel et reliées par un tracé bleu, l'écran du handpan indique « V Tension G ». En bas, ancrage A : les mêmes emplacements sont allumés, ils portent E3, G#3, B3 et E4, le tracé bleu suit exactement le même chemin, et l'écran du handpan indique « V Tension E »."
+    src="/images/blog-capo-2026-03-degre-V-cote-a-cote.webp"
+    width="3240"
+    height="1170"
+    alt="Deux captures du même écran, côte à côte et au même cadrage, œil ouvert sur le degré V. À gauche, ancrage C : les notes G2, B2, D3 et G3 sont allumées en bleu ciel, entourées d'un anneau cuivre et reliées par un tracé bleu ; l'écran du handpan indique « V Tension G ». À droite, ancrage A : les quatre mêmes emplacements, entourés eux aussi, portent E3, G#3, B3 et E4, le tracé bleu suit exactement le même chemin, et l'écran du handpan indique « V Tension E ». Le reste de l'écran est légèrement assombri."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le degré <strong>V</strong>, ancrage en <strong>do (C)</strong> en haut, en <strong>la (A)</strong> en bas : le tracé bleu suit le même chemin, seuls les noms changent. Ce n'est pas propre au I : chaque degré garde sa forme.</figcaption>
+  <figcaption>Le degré <strong>V</strong>, ancrage en <strong>do (C)</strong> à gauche, en <strong>la (A)</strong> à droite : les quatre emplacements entourés sont les mêmes, le tracé bleu suit le même chemin, seuls les noms changent. Ce n'est pas propre au I : chaque degré garde sa forme.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -124,21 +128,7 @@ Tu n'as pas <abbr title="Déplacer toutes les notes du même écart, plus haut o
 
 ### Rejoindre d'autres musiciens
 
-Une session commence, quelqu'un annonce la tonalité. Tu poses ton ancrage dessus et tu joues. Pas de « désolé, je suis en ré », pas de deuxième instrument à sortir : le répertoire que tu connais te suit.
-
-<figure>
-  <img
-    src="/images/blog-capo-2026-05-choisir-ancrage.webp"
-    width="1600"
-    height="975"
-    alt="Gros plan sur le sélecteur de note d'ancrage ouvert : une fleur de douze pétales, un par demi-ton, chacun dans sa couleur ChromaKeys — C rouge, D orange, E jaune, F vert, G bleu ciel, A indigo, B magenta, et les altérations dans les teintes claires correspondantes. Le pétale C porte une coche et le centre de la fleur affiche C. À gauche, la fin de la rangée des cartes d'accord et le bord du pan."
-    data-lb="capo"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Changer de tonalité, c'est un pétale à toucher. Chaque pétale porte la couleur de sa note ; la note choisie est cochée et s'affiche au centre.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
+Une session commence, quelqu'un annonce la tonalité. Tu poses ton ancrage dessus — un pétale à toucher sur la roue, celle que montre [la grille des trois tonalités](#grille-trois-tonalites) — et tu joues. Pas de « désolé, je suis en ré », pas de deuxième instrument à sortir : le répertoire que tu connais te suit.
 
 ## Un cadre clair, plutôt qu'un chaos cognitif
 
@@ -178,10 +168,10 @@ Ce n'est pas un capo. Ton vrai pan acoustique, lui, n'a pas bougé d'un demi-ton
 
 <figure>
   <img
-    src="/images/blog-capo-2026-08-roue-tonalite.webp"
+    src="/images/blog-capo-2026-08-roue-tonalite-v2.webp"
     width="1600"
-    height="1013"
-    alt="Le mode acoustique avec un D Minor / Kurd 10 chargé. Sur le pan, les notes sont colorées par camemberts — une part par accord auquel la note participe — et l'écran du handpan, centré sous le ding D3, affiche « D Minor / Kurd 10 ». À droite, la carte de l'instrument joué indique « POUR D Minor / Kurd 10 · ACOUSTIQUE » avec les boutons « Mes morceaux (156) » et « Tester une autre tonalité ». En dessous, le panneau ouvert « Tester une autre tonalité » explique : « Écoute ta gamme dans une autre tonalité — utile pour trouver celle qui va à ta voix. C'est un simple aperçu : rien n'est modifié dans Mes handpans », suivi des douze touches C à B dont D est allumée."
+    height="935"
+    alt="Le mode acoustique avec un D Minor / Kurd 10 chargé. À gauche, le pan : les notes sont colorées par camemberts — une part par accord auquel la note participe — et l'écran du handpan, centré sous le ding D3, affiche « D Minor / Kurd 10 ». À droite, la carte de l'instrument joué, avec le bouton « Tester une autre tonalité ». En bas à droite, le panneau ouvert « Tester une autre tonalité », entouré d'un anneau cuivre, explique : « Écoute ta gamme dans une autre tonalité — utile pour trouver celle qui va à ta voix. C'est un simple aperçu : rien n'est modifié dans Mes handpans », suivi des douze touches C à B ; la touche D, allumée, est entourée elle aussi. Le reste de l'écran est assombri."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
