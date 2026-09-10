@@ -43,10 +43,10 @@ Voici les trois tracés sur un pan **électronique**, un Neotone Mutant en <abbr
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygone</span><span style="flex:1">Ouvert</span><span style="flex:1">Mains</span></div>
   <img
-    src="/images/blog-constellations-2026-trio-electronique.webp"
-    width="3412"
-    height="671"
-    alt="Trois captures côte à côte du même Neotone Mutant en mode Logique, ancré en ré, mode Triste (ré mineur naturel), l'œil ouvert sur l'accord I Équilibre Dm : l'écran du handpan affiche « I Équilibre Dm ». Au-dessus du pan, le menu Constellation est ouvert, le reste de l'interface est légèrement assombri. Quatre notes sont allumées : D2 au centre, F3, A3 et D4. À gauche, le style Polygone est actif (anneau cuivre) : le tracé rouge relie D2, F3, A3, D4 et revient de D4 à D2 ; ce trait de retour est entouré en cuivre. Au milieu, le style Ouvert est actif : les mêmes notes, mais le trait de D4 à D2 a disparu, à l'endroit entouré. À droite, le style Mains est actif : A3 et F3 sont cerclées de bleu, marquées L et reliées par un trait bleu ; D2 et D4 sont cerclées de rouge, marquées R et reliées par un trait rouge. Les quatre notes sont entourées en cuivre."
+    src="/images/blog-constellations-2026-trio-electronique-v2.webp"
+    width="3712"
+    height="730"
+    alt="Trois captures côte à côte du même Neotone Mutant en mode Logique, ancré en ré, mode Triste (ré mineur naturel), l'œil ouvert sur l'accord I Équilibre Dm : l'écran du handpan affiche « I Équilibre Dm ». Au-dessus du pan, le menu Constellation est ouvert, le reste de l'interface est assombri. Quatre notes sont allumées : D2 au centre, F3, A3 et D4. À gauche, le style Polygone est actif (anneau cuivre) : le tracé rouge relie D2, F3, A3, D4 et revient de D4 à D2 ; ce trait de retour est entouré en cuivre. Au milieu, le style Ouvert est actif : les mêmes notes, mais le trait de D4 à D2 a disparu, à l'endroit entouré. À droite, le style Mains est actif : A3 et F3 sont cerclées de bleu, marquées L et reliées par un trait bleu ; D2 et D4 sont cerclées de rouge, marquées R et reliées par un trait rouge. Les quatre notes sont entourées en cuivre."
     data-lb="constellations"
     data-lb-wide
     loading="lazy"
@@ -60,10 +60,10 @@ Et les mêmes trois tracés sur un pan **acoustique**, un D Kurd 10. Sur ce pan,
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygone</span><span style="flex:1">Ouvert</span><span style="flex:1">Mains</span></div>
   <img
-    src="/images/blog-constellations-2026-trio-acoustique.webp"
-    width="3412"
-    height="671"
-    alt="Trois captures côte à côte du même handpan acoustique D Minor / Kurd 10, l'œil ouvert sur l'accord I, Dm ; l'écran du handpan affiche « D Minor / Kurd 10 ». Au-dessus du pan, le menu Constellation est ouvert, le reste de l'interface est légèrement assombri. Quatre notes sont allumées en orange : le ding D3, D4, F4 et A4. À gauche, le style Polygone est actif (anneau cuivre) : le tracé relie D3, D4, F4, A4 et revient de A4 au ding ; ce trait de retour est entouré en cuivre. Au milieu, le style Ouvert est actif : les mêmes notes, mais le trait de A4 au ding a disparu, à l'endroit entouré. À droite, le style Mains est actif : le ding D3 est cerclé de rouge et marqué R ; D4, F4 et A4 sont cerclées de bleu, marquées L et reliées par un trait bleu. Les quatre notes sont entourées en cuivre."
+    src="/images/blog-constellations-2026-trio-acoustique-v2.webp"
+    width="3712"
+    height="730"
+    alt="Trois captures côte à côte du même handpan acoustique D Minor / Kurd 10, l'œil ouvert sur l'accord I, Dm ; l'écran du handpan affiche « D Minor / Kurd 10 ». Au-dessus du pan, le menu Constellation est ouvert, le reste de l'interface est assombri. Quatre notes sont allumées en orange : le ding D3, D4, F4 et A4. À gauche, le style Polygone est actif (anneau cuivre) : le tracé relie D3, D4, F4, A4 et revient de A4 au ding ; ce trait de retour est entouré en cuivre. Au milieu, le style Ouvert est actif : les mêmes notes, mais le trait de A4 au ding a disparu, à l'endroit entouré. À droite, le style Mains est actif : le ding D3 est cerclé de rouge et marqué R ; D4, F4 et A4 sont cerclées de bleu, marquées L et reliées par un trait bleu. Les quatre notes sont entourées en cuivre."
     data-lb="constellations"
     data-lb-wide
     loading="lazy"

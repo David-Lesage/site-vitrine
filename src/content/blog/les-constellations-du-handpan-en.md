@@ -43,9 +43,9 @@ Handpan Constellation Studio lets you choose **how** that drawing appears, depen
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygon</span><span style="flex:1">Open</span><span style="flex:1">Hands</span></div>
   <img
-    src="/images/blog-constellations-2026-trio-electronique.webp"
-    width="3412"
-    height="671"
+    src="/images/blog-constellations-2026-trio-electronique-v2.webp"
+    width="3712"
+    height="730"
     alt="Three side-by-side captures of the same Neotone Mutant in Logic mode, anchored on D, sad mode (D natural minor), chord I Dm shown: D2, F3, A3, D4 lit. Left, Polygon (copper ring): the trace closes from D4 back to D2, circled in copper. Middle, Open: that closing line is gone. Right, Hands: A3 and F3 in blue marked L, D2 and D4 in red marked R."
     data-lb="constellations"
     data-lb-wide
@@ -58,9 +58,9 @@ Handpan Constellation Studio lets you choose **how** that drawing appears, depen
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygon</span><span style="flex:1">Open</span><span style="flex:1">Hands</span></div>
   <img
-    src="/images/blog-constellations-2026-trio-acoustique.webp"
-    width="3412"
-    height="671"
+    src="/images/blog-constellations-2026-trio-acoustique-v2.webp"
+    width="3712"
+    height="730"
     alt="Three side-by-side captures of the same acoustic D Minor / Kurd 10 handpan, chord I Dm shown: ding D3, D4, F4, A4 lit. Left, Polygon: the trace closes from A4 back to the ding, circled in copper. Middle, Open: that closing line is gone. Right, Hands: the ding in red marked R, D4, F4 and A4 in blue marked L."
     data-lb="constellations"
     data-lb-wide
