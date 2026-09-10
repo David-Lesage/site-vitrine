@@ -22,7 +22,7 @@ Un mot sur l'exemple, d'abord. J'ai la chance d'avoir un pan de dix-huit notes a
 
 Un handpan acoustique est un instrument martelé. Chaque creux est une note, décidée une fois pour toutes, à une place imposée par la physique de la coque. C'est ce qui fait sa beauté, et c'est aussi ce qui fait le mur.
 
-Voici le D Kurd 10 tel qu'il existe : **ré₃ · la₃ · si♭₃ · do₄ · ré₄ · mi₄ · fa₄ · sol₄ · la₄ · do₅**. Dix creux, mais seulement **sept notes différentes** sur les douze de la musique — le reste, ce sont les mêmes notes à l'octave. Et une chose qu'on remarque tout de suite quand on la regarde écrite : **il n'y a rien sous le ré₃.** Aucune basse. L'instrument commence là où beaucoup de chansons voudraient poser leur fondation.
+Voici le D Kurd 10 tel qu'il existe : **ré₃ · la₃ · si♭₃ · do₄ · ré₄ · mi₄ · fa₄ · sol₄ · la₄ · do₅**. Dix notes, mais seulement **sept notes différentes** sur les douze de la musique — le reste, ce sont les mêmes notes à l'octave. Et une chose qu'on remarque tout de suite quand on la regarde écrite : **il n'y a rien sous le ré₃.** Aucune basse. L'instrument commence là où beaucoup de chansons voudraient poser leur fondation.
 
 Posons maintenant la définition, parce qu'un nombre sans sa définition n'est pas une information :
 
@@ -40,7 +40,7 @@ On ne tourne pas en rond par paresse. On tourne en rond parce que le cercle est 
 
 Sur un handpan acoustique, on ne choisit pas librement les notes : la taille du creux, sa place sur la coque, sa distance aux voisines, tout est contraint par le métal. C'est pour ça qu'on ne fabrique pas un handpan chromatique.
 
-Un **Neotone** n'a pas cette contrainte. Ses pads sont des capteurs : n'importe quelle note peut aller sur n'importe quel creux. On peut donc y mettre **exactement, et seulement, ce qui manque à l'acoustique**.
+Un **Neotone** n'a pas cette contrainte. Ses pads sont des capteurs : n'importe quelle note peut aller sur n'importe quel pad. On peut donc y mettre **exactement, et seulement, ce qui manque à l'acoustique**.
 
 C'est ce que j'appelle **compléter son acoustique**, et les mots sont précis : un handpan **acoustique complété par un handpan électronique**. Deux électroniques n'en font pas un. Deux acoustiques non plus — ça, c'est un [duo de handpans](/blog/deux-handpans-mode-hybride), autre chose, avec ses propres qualités. Ici, c'est le geste et le timbre de l'acoustique, plus les notes qu'il ne peut pas porter.
 
@@ -73,7 +73,7 @@ Mais il ne suffit pas de pouvoir faire ça. Il faut aussi qu'**il reste des note
 
 Alors mesurons-le. **Combien d'accords, sur les 24, peut-on jouer en arpège complet — fondamentale, tierce, quinte, octave, dans le même geste ?**
 
-| | D Kurd 10 seul | + Neotone¹ (10 creux) | + Mutant (19 creux) |
+| | D Kurd 10 seul | + Neotone¹ (10 notes) | + Mutant (19 notes) |
 |---|---|---|---|
 | Hauteurs disponibles | 10 | 20 | **25** |
 | Étendue | ré₃ → do₅ | do♯₃ → do₅ | do♯₃ → **si₅** |
@@ -96,7 +96,7 @@ Ce n'est pas une idée que j'ajoute après coup — c'est déjà dans le mode Lo
 - **☀️ Brillant** — do₃ → sol₅. Registre médium-aigu, clair et aérien. Fait pour les **voix graves** : l'instrument scintille au-dessus de la voix.
 - **🌈 Ample** — do₂ → sol₅. Les basses restent en bas, les extensions montent tout en haut, et **il se creuse un vide au milieu** — exactement là où une voix médium vient se poser.
 
-Regarde comment c'est bâti : sept notes de basses, sept notes au cœur, cinq en extension. **Dix-neuf emplacements.** C'est la structure même de ces trois layouts, et elle demande dix-neuf creux. Sur dix, on ne peut pas poser les trois étages.
+Regarde comment c'est bâti : sept notes de basses, sept notes au cœur, cinq en extension. **Dix-neuf emplacements.** C'est la structure même de ces trois layouts, et elle demande dix-neuf notes. Sur dix, on ne peut pas poser les trois étages.
 
 C'est l'argument le plus honnête pour le Mutant, et ce n'est pas un argument de notes : c'est un argument de **place**.
 
@@ -116,9 +116,9 @@ Un handpan Hijaz d'occasion coûte un instrument entier. Là, ce sont deux pads 
 
 C'est le point sur lequel je m'attendais à trouver un écart franc, et où les chiffres m'ont contredit. Autant le dire tel quel.
 
-Il manque cinq notes à un D Kurd 10. Le **Neotone¹** a dix creux, le **Mutant** en a dix-neuf. Cinq tiennent dans dix. **Les deux modèles ouvrent donc les 24 tonalités, et les 24 accords.** Le Mutant n'en ouvre pas davantage : il n'y en a pas davantage.
+Il manque cinq notes à un D Kurd 10. Le **Neotone¹** a dix notes, le **Mutant** en a dix-neuf. Cinq tiennent dans dix. **Les deux modèles ouvrent donc les 24 tonalités, et les 24 accords.** Le Mutant n'en ouvre pas davantage : il n'y en a pas davantage.
 
-J'ai vérifié que ce n'était pas une particularité de cette gamme : sur les **74 gammes du catalogue** de l'application, la plus pauvre porte quatre notes différentes sur douze — il en manque donc huit au maximum, et huit tiennent encore dans dix creux. **Le Neotone¹ à 10 creux n'échoue sur aucune.**
+J'ai vérifié que ce n'était pas une particularité de cette gamme : sur les **74 gammes du catalogue** de l'application, la plus pauvre porte quatre notes différentes sur douze — il en manque donc huit au maximum, et huit tiennent encore dans dix notes. **Le Neotone¹ à 10 notes n'échoue sur aucune.**
 
 ![Les deux Neotone tels que l'application les génère pour compléter un D Kurd 10 : mêmes cinq notes, le Mutant les répète une octave plus haut](/images/blog-hybride-neotone-10-vs-19.svg)
 
@@ -136,7 +136,7 @@ C'est un **second instrument**, donc un achat. Sur la [boutique](/boutique), le 
 
 Et trois limites, franchement.
 
-**Le complément automatique remplit les notes qui manquent, pas les octaves qui manquent.** Sur un D Kurd 10, le Neotone démarre au do♯₃ — juste sous le ré₃ de l'acoustique — et ne descend pas plus bas, parce qu'aucune *note* ne manque dans le grave, seulement des *hauteurs*. Si tu veux de vraies basses sous ton D Kurd, il faut construire le Neotone à la main : l'app te laisse poser n'importe quelle note sur n'importe quel pad, et c'est là, précisément, que dix-neuf creux valent mieux que dix.
+**Le complément automatique remplit les notes qui manquent, pas les octaves qui manquent.** Sur un D Kurd 10, le Neotone démarre au do♯₃ — juste sous le ré₃ de l'acoustique — et ne descend pas plus bas, parce qu'aucune *note* ne manque dans le grave, seulement des *hauteurs*. Si tu veux de vraies basses sous ton D Kurd, il faut construire le Neotone à la main : l'app te laisse poser n'importe quelle note sur n'importe quel pad, et c'est là, précisément, que dix-neuf notes valent mieux que dix.
 
 **Avoir toutes les notes ne rend pas tout facile** — ça rend tout possible, ce qui n'est pas la même chose. Une gamme est une contrainte, mais c'est aussi une carte : elle dit où aller. Quand on a les douze notes, cette carte disparaît. Beaucoup de gens se sentent moins bons juste après être passés à deux instruments, et ce n'est pas eux qui régressent : c'est leur cadre qui s'est évaporé. L'application accompagne ce moment au lieu de faire semblant qu'il n'existe pas.
 
