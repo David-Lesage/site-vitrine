@@ -2,7 +2,7 @@
 title: "Les Constellations : voir un accord comme une forme"
 description: "Que ton handpan soit acoustique ou électronique, un accord devient un dessin. Découvre les 3 façons de tracer une Constellation : Polygone, Ouvert et Mains."
 pubDate: 2026-07-02
-cover: "/images/blog-constellations-3-traces-2026-polygone.webp"
+cover: "/images/blog-constellations-2026-couverture.webp"
 category: "methode"
 tags: ["méthode", "accords"]
 lang: "fr"
@@ -22,99 +22,53 @@ Handpan Constellation Studio te laisse choisir **comment** ce dessin apparaît, 
 
 ## Les 3 tracés de Constellation
 
+Le réglage se trouve dans la palette, sous **Constellation** : trois boutons, **Polygone**, **Ouvert** et **Mains**. Pour bien voir ce qui change, on garde **le même accord, ré mineur** (ré, fa, la), et on ne touche qu'à ce réglage.
+
 ### Le Polygone : la forme fermée
 
-Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée — un triangle pour trois notes, un quadrilatère pour quatre, etc. C'est la vue la plus « d'un coup d'œil » : tu reconnais l'accord comme tu reconnaîtrais un logo. Idéal pour mémoriser un accord et le retrouver d'un regard — sur ton pan acoustique comme sur ton pan électronique.
-
-<figure>
-  <img
-    src="/images/blog-constellations-3-traces-2026-polygone.webp"
-    width="2000"
-    height="1250"
-    alt="Le Mode Logique, accord I Équilibre D actif sur un Neotone Mutant. Sur le pan, quatre notes sont allumées — D2 au centre en orange, D4 en orange en haut, A3 en bleu à gauche, F#3 en vert en bas à gauche — et un tracé rouge les relie en une figure fermée qui revient à son point de départ. Les autres notes du pan restent éteintes. Sous le ding, l'écran du handpan affiche « I Équilibre D »."
-    data-lb="constellations"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Le tracé <strong>Polygone</strong> : sur ce Neotone Mutant, les quatre notes de l'accord I, <strong>ré majeur</strong> (ré, fa#, la), sont reliées en une figure fermée. C'est la forme qu'on mémorise, pas la liste des notes.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/blog-constellations-3-traces-2026-polygone-acoustique.webp"
-    width="2000"
-    height="1250"
-    alt="L'accord I d'un handpan acoustique D Minor / Kurd 10, ré mineur, dans l'onglet Gammes. Quatre notes sont allumées — le ding D3 et le D4 en orange, le F4 en vert, le A4 en indigo — et un tracé orange les relie en une figure fermée : du ding vers D4, puis F4, puis A4, et retour au ding. Les six autres notes (A3, A#3, C4, E4, G4, C5) restent gris. Sous le ding, l'écran du handpan affiche « D Minor / Kurd 10 »."
-    data-lb="constellations"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Le tracé <strong>Polygone</strong> sur un pan <strong>acoustique</strong> : ici l'accord I de ce D Kurd 10, <strong>ré mineur</strong> (ré, fa, la). La figure est fermée elle aussi, et son dessin est celui de <em>cet</em> instrument.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
+Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée : un triangle pour trois notes, un quadrilatère pour quatre, etc. C'est la vue la plus « d'un coup d'œil » : tu reconnais l'accord comme tu reconnaîtrais un logo. Idéal pour mémoriser un accord et le retrouver d'un regard.
 
 ### L'Ouvert : le chemin des notes
 
-Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à l'autre, de la plus grave à la plus aiguë. C'est la vue du geste. Tu ne vois plus seulement quel accord tu joues, mais comment ta main le parcourt — parfait pour travailler un <abbr title="Les notes d'un accord jouées l'une après l'autre plutôt qu'ensemble.">arpège</abbr> ou une phrase mélodique et sentir la direction du mouvement. Sur un pan acoustique, ce chemin épouse la disposition réelle de tes notes ; sur un pan électronique, celle de tes pads.
-
-<figure>
-  <img
-    src="/images/blog-constellations-3-traces-2026-ouvert.webp"
-    width="2000"
-    height="1250"
-    alt="Le même accord I Équilibre D sur le même pan, mais le tracé rouge ne se referme plus : il part de D2 au centre, rejoint F#3, monte à A3, puis à D4, et s'arrête là. Les mêmes quatre notes sont allumées, les autres restent éteintes."
-    data-lb="constellations"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Le tracé <strong>Ouvert</strong> : mêmes notes, mais le chemin ne se referme pas. Il se lit comme un parcours, du grave vers l'aigu.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/blog-constellations-3-traces-2026-ouvert-acoustique.webp"
-    width="2000"
-    height="1250"
-    alt="L'accord de ré mineur sur le même handpan acoustique D Minor / Kurd 10, tracé en mode Ouvert : le chemin orange ne se referme plus. Il part du ding D3, rejoint le D4 en bas à gauche, monte au F4 vert, puis au A4 indigo, et s'arrête là. Les mêmes quatre notes sont allumées, les six autres restent gris."
-    data-lb="constellations"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Le tracé <strong>Ouvert</strong> : mêmes notes, mais le chemin s'arrête sur la dernière. Il se lit comme un parcours, du grave vers l'aigu.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
+Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à l'autre, de la plus grave à la plus aiguë. C'est la vue du geste. Tu ne vois plus seulement quel accord tu joues, mais comment ta main le parcourt : parfait pour travailler un <abbr title="Les notes d'un accord jouées l'une après l'autre plutôt qu'ensemble.">arpège</abbr> ou une phrase mélodique et sentir la direction du mouvement.
 
 ### Les Mains : qui joue quoi
 
-Le mode **Mains** colore le tracé selon la main qui joue chaque note. D'un regard, tu sais ce que fait la gauche et ce que fait la droite. C'est un repère précieux quand un accord se répartit entre les deux mains, ou quand tu veux équilibrer ton jeu sans te crisper. Le tracé Mains fonctionne de la même façon sur un pan acoustique et sur un pan électronique.
+Le mode **Mains** colore le tracé selon la main qui joue chaque note. D'un regard, tu sais ce que fait la gauche et ce que fait la droite. C'est un repère précieux quand un accord se répartit entre les deux mains, ou quand tu veux équilibrer ton jeu sans te crisper.
+
+### Les trois tracés, sur tes deux handpans
+
+Voici les trois tracés sur un pan **électronique**, un Neotone Mutant en <abbr title="Le mode de l'app où chaque accord de la tonalité a toujours la même place sur le pan.">mode Logique</abbr>, ancré en ré, mode Triste.
 
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygone</span><span style="flex:1">Ouvert</span><span style="flex:1">Mains</span></div>
   <img
-    src="/images/blog-constellations-3-traces-2026-mains.webp"
-    width="2000"
-    height="1250"
-    alt="Le même accord I Équilibre D, tracé en mode Mains. Deux tracés séparés : un trait bleu relie A3 et F#3, toutes deux marquées d'un L, et un trait rouge relie D2 et D4, toutes deux marquées d'un R. Les quatre notes portent donc la lettre de la main qui les joue."
+    src="/images/blog-constellations-2026-trio-electronique.webp"
+    width="3412"
+    height="671"
+    alt="Trois captures côte à côte du même Neotone Mutant en mode Logique, ancré en ré, mode Triste (ré mineur naturel), l'œil ouvert sur l'accord I Équilibre Dm : l'écran du handpan affiche « I Équilibre Dm ». Au-dessus du pan, le menu Constellation est ouvert, le reste de l'interface est légèrement assombri. Quatre notes sont allumées : D2 au centre, F3, A3 et D4. À gauche, le style Polygone est actif (anneau cuivre) : le tracé rouge relie D2, F3, A3, D4 et revient de D4 à D2 ; ce trait de retour est entouré en cuivre. Au milieu, le style Ouvert est actif : les mêmes notes, mais le trait de D4 à D2 a disparu, à l'endroit entouré. À droite, le style Mains est actif : A3 et F3 sont cerclées de bleu, marquées L et reliées par un trait bleu ; D2 et D4 sont cerclées de rouge, marquées R et reliées par un trait rouge. Les quatre notes sont entourées en cuivre."
     data-lb="constellations"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le tracé <strong>Mains</strong> : la figure se coupe en deux. Le trait bleu relie ce que joue la main gauche (<em>L</em>), le rouge ce que joue la droite (<em>R</em>) — chaque note porte sa lettre.</figcaption>
+  <figcaption>Le même accord, <strong>ré mineur</strong>, sur un Neotone Mutant : seul le réglage <strong>Constellation</strong> change (entouré en cuivre). En <strong>Polygone</strong>, la figure se referme de D4 vers le centre ; en <strong>Ouvert</strong>, ce trait de retour disparaît ; en <strong>Mains</strong>, le tracé se coupe en deux : bleu pour la gauche (<em>L</em>), rouge pour la droite (<em>R</em>).</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
+Et les mêmes trois tracés sur un pan **acoustique**, un D Kurd 10. Sur ce pan, le chemin épouse la disposition réelle de tes notes ; sur le pan électronique, celle de tes pads.
+
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygone</span><span style="flex:1">Ouvert</span><span style="flex:1">Mains</span></div>
   <img
-    src="/images/blog-constellations-3-traces-2026-mains-acoustique.webp"
-    width="2000"
-    height="1250"
-    alt="L'accord de ré mineur sur le handpan acoustique D Minor / Kurd 10, tracé en mode Mains. Le ding D3 est cerclé de rouge et marqué R ; A4, F4 et D4 sont cerclés de bleu et marqués L, reliés entre eux par un trait bleu. La répartition entre les deux mains se lit d'un regard."
+    src="/images/blog-constellations-2026-trio-acoustique.webp"
+    width="3412"
+    height="671"
+    alt="Trois captures côte à côte du même handpan acoustique D Minor / Kurd 10, l'œil ouvert sur l'accord I, Dm ; l'écran du handpan affiche « D Minor / Kurd 10 ». Au-dessus du pan, le menu Constellation est ouvert, le reste de l'interface est légèrement assombri. Quatre notes sont allumées en orange : le ding D3, D4, F4 et A4. À gauche, le style Polygone est actif (anneau cuivre) : le tracé relie D3, D4, F4, A4 et revient de A4 au ding ; ce trait de retour est entouré en cuivre. Au milieu, le style Ouvert est actif : les mêmes notes, mais le trait de A4 au ding a disparu, à l'endroit entouré. À droite, le style Mains est actif : le ding D3 est cerclé de rouge et marqué R ; D4, F4 et A4 sont cerclées de bleu, marquées L et reliées par un trait bleu. Les quatre notes sont entourées en cuivre."
     data-lb="constellations"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le tracé <strong>Mains</strong> : le ding revient à la droite (<em>R</em>, cercle rouge), les trois notes du pourtour à la gauche (<em>L</em>, cercle bleu et trait bleu qui les relie).</figcaption>
+  <figcaption>Le même accord, <strong>ré mineur</strong>, sur un D Kurd 10 acoustique. En <strong>Polygone</strong>, la figure revient de A4 au ding ; en <strong>Ouvert</strong>, elle s'arrête sur A4 ; en <strong>Mains</strong>, le ding revient à la droite (<em>R</em>, cercle rouge), les trois notes du pourtour à la gauche (<em>L</em>, cercle bleu et trait bleu). Le dessin est celui de <em>cet</em> instrument.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
