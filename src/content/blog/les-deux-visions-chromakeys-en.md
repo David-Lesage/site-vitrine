@@ -2,7 +2,7 @@
 title: "Reading the colours: the note, its place in the scale, or nothing"
 description: "The ChromaKeys menu asks three independent questions: what the colour says, whether shared notes split apart, and whether chords are drawn. Three settings, valid on an acoustic handpan and an electronic one alike."
 pubDate: 2026-09-24
-cover: "/images/blog-chromakeys-2026-01-ouverture-acoustique.webp"
+cover: "/images/blog-chromakeys-2026-00-couverture-18-notes.webp"
 category: "methode"
 tags: ["method", "colours", "degrees"]
 lang: "en"
@@ -15,29 +15,17 @@ Whether your handpan is acoustic or electronic, a colour can say two things. It 
 The app doesn't choose for you: it lets you choose. It's a setting, it takes one click, and it's called **ChromaKeys**.
 
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Acoustic · D Kurd 10</span><span style="flex:1">Electronic · Neotone Mutant</span></div>
   <img
-    src="/images/blog-chromakeys-2026-01-ouverture-acoustique.webp"
-    width="2000"
-    height="878"
+    src="/images/blog-chromakeys-2026-01-ouverture-paire.webp"
+    width="2560"
+    height="1168"
     alt="The toolbar at the top of the screen, with the rainbow-edged Chromakeys island, and below it an acoustic D Minor / Kurd 10 handpan seen from above. Every dimple carries its own colour: the D3 ding and D4 orange, A3 and A4 indigo, A#3 light indigo, C4 and C5 red, E4 yellow, F4 green, G4 sky blue. The handpan screen, centred under the ding, reads « D Minor / Kurd 10 »."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
   <figcaption>An <strong>acoustic</strong> D Kurd 10 with colour set to <em>the note</em>: ten dimples, ten colours, and two Ds in the very same orange. (Screenshot of the French interface.)</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>
-<figure>
-  <img
-    src="/images/blog-chromakeys-2026-01-ouverture-electronique.webp"
-    width="2000"
-    height="878"
-    alt="The same toolbar, and below it a 19-dimple Neotone Mutant in Logic mode, anchored in C major. Each dimple carries the colour of its note: the Cs red (C2 at the centre, C3, C4), the Ds orange, the Es yellow, the Fs green, the Gs sky blue, the As indigo, the Bs magenta. The handpan screen reads « C Majeur »."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>The same setting on an <strong>electronic</strong> pan: nineteen dimples, one rule — one note, one colour. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -79,19 +67,6 @@ At the top of the screen, the tool bar. Inside it, an island with a multicoloure
 
 You'll notice each setting carries two labels: the plain word first, and the theory word in small type right beside it. *The note* is what others call the **chakras**. *Its place in the scale* is what's called the **degrees**. I say it once here, and after that I use the plain words.
 
-<figure>
-  <img
-    src="/images/blog-chromakeys-2026-02-menu-paire-acoustique.webp"
-    width="2860"
-    height="681"
-    alt="Two side-by-side screenshots of the same acoustic handpan, a D Kurd 10, in the same frame: the Chromakeys island of the toolbar and the top of the pan. The rest of the toolbar is slightly darkened. On each half, a copper ring surrounds two settings. On the left, « La couleur dit… » is set to « la note » and « Notes partagées » to Off: each note of the pan has a single colour. On the right, « La couleur dit… » is set to « sa place dans la gamme » and « Notes partagées » to On: the notes change colour and several are split into slices of different colours."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>The same handpan, two settings changed, circled in copper. Left: <em>colour says the note</em>, <strong>shared notes</strong> Off. Right: <em>colour says its place in the scale</em>, shared notes On. Look at the pan: the colours change, and some notes split into several slices. (Screenshot of the French interface.)</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>
 
 ## "Colour says the note": a C always red
 
@@ -107,29 +82,17 @@ All twelve notes have their colour — sharps included, each with its own shade.
 The most immediate benefit is **the octave**. With nothing else turned on, every *D* on your shell is orange: the low one, the high one, the one up on the right. At a glance, you see they're the same note at different pitches. That's the kind of thing that takes months to absorb by ear, and becomes obvious in a second through colour.
 
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Acoustic · D Kurd 10</span><span style="flex:1">Electronic · Neotone Mutant</span></div>
   <img
-    src="/images/blog-chromakeys-2026-03-note-acoustique.webp"
-    width="2000"
-    height="1929"
+    src="/images/blog-chromakeys-2026-03-note-re-paire.webp"
+    width="2080"
+    height="935"
     alt="The Chromakeys island and, below it, the acoustic D Minor / Kurd 10 handpan in full size. The D3 ding at the centre and D4 at the lower left carry exactly the same orange, although they are an octave apart. Around them: A3 and A4 indigo, A#3 light indigo, C4 and C5 red, E4 yellow, F4 green, G4 sky blue."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
   <figcaption><strong>The two Ds are the same orange</strong> — the ding and the lower dimple. The octave becomes visible before it becomes audible. (Screenshot of the French interface.)</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>
-<figure>
-  <img
-    src="/images/blog-chromakeys-2026-03-note-electronique.webp"
-    width="2000"
-    height="1929"
-    alt="The Chromakeys island and, below it, the 19-dimple Neotone Mutant anchored in C major, each dimple in the colour of its note. The three Cs are red, the three Ds orange, the Es yellow, the Fs green, the Gs sky blue, the As indigo, the Bs magenta."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>On nineteen dimples the effect is even clearer: each note family forms a colour group you spot at a glance. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -161,9 +124,9 @@ Second answer. Here the colour no longer looks at the note's name, but at its st
 
 <figure>
   <img
-    src="/images/blog-chromakeys-2026-04-place-acoustique.webp"
-    width="2000"
-    height="878"
+    src="/images/blog-chromakeys-2026-04-place-acoustique-v6.webp"
+    width="1226"
+    height="1096"
     alt="The acoustic D Minor / Kurd 10 handpan with the « place in the scale » setting. Colours no longer follow the names of the dimples: D3, D4, F4 and A4 share the orange of D, A#3, E4 and G4 the yellow of E, C5 the green of F. In the toolbar, the second choice of « La couleur dit… » is selected."
     data-lb="chromakeys"
     data-lb-wide
@@ -269,10 +232,11 @@ If all that sounds like a lot, good news: you have nothing to do. Your **level**
 In Discovery, the island shrinks to the essentials: **a single switch**, Off or On. The other two settings aren't merely preset, they're put away — you can't knock them out of place by accident. Nothing has been removed from the app: everything comes back at Apprentice level.
 
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Discovery level</span><span style="flex:1">Apprentice level</span></div>
   <img
-    src="/images/blog-chromakeys-2026-07-preregles-acoustique.webp"
-    width="2000"
-    height="191"
+    src="/images/blog-chromakeys-2026-07-niveaux-acoustique.webp"
+    width="2560"
+    height="1168"
     alt="The whole toolbar at Discovery level. The Chromakeys island now holds only an Off/On switch under its name: the three detailed settings are gone. Next to it, the Handpan Appearance island is reduced to Fingering, Fingerings, Constellation and Texture, then the Export island."
     data-lb="chromakeys"
     data-lb-wide
@@ -282,10 +246,11 @@ In Discovery, the island shrinks to the essentials: **a single switch**, Off or 
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Discovery level</span><span style="flex:1">Apprentice level</span></div>
   <img
-    src="/images/blog-chromakeys-2026-07-preregles-electronique.webp"
-    width="2000"
-    height="878"
+    src="/images/blog-chromakeys-2026-07-niveaux-electronique.webp"
+    width="2552"
+    height="1248"
     alt="The toolbar at Apprentice level, above the Neotone Mutant in C major. The three Chromakeys settings are visible again: « place in the scale » is selected and « shared notes » is On. On the pan, several dimples are split into two degree colours."
     data-lb="chromakeys"
     data-lb-wide
