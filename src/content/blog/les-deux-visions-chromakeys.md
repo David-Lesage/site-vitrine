@@ -47,11 +47,43 @@ Un mot avant de commencer, parce qu'il revient partout ici : sur un handpan, la 
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
+Et si la couleur ne disait **rien** ? Sous le nom ChromaKeys, un interrupteur **Off / On**. Sur *Off*, les couleurs s'éteignent et le pan redevient du métal nu. Sur *On*, elles reviennent.
+
+<figure>
+  <img
+    src="/images/blog-chromakeys-2026-14-off-on-acoustique.webp"
+    width="2572"
+    height="1176"
+    alt="Deux captures côte à côte du même handpan acoustique D Minor / Kurd 10, dans le même cadrage, avec au-dessus l'îlot Chromakeys. Un anneau cuivre entoure l'interrupteur Off/On sur chaque moitié ; le reste de la bande est légèrement assombri. À gauche, l'interrupteur est sur Off : les dix notes n'ont aucune couleur, seulement leur contour et leur nom sur le métal. À droite, il est sur On et la couleur dit « la note » : le ding D3 et le D4 orange, A3 et A4 indigo, A#3 indigo clair, C4 et C5 rouges, E4 jaune, F4 vert, G4 bleu ciel."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le même D Kurd 10, ChromaKeys sur <strong>Off</strong> à gauche, sur <strong>On</strong> à droite : sans couleur, toutes les notes se ressemblent ; avec, on les distingue d'un coup d'œil.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
+Sur un pan à dix-huit notes, l'écart est encore plus frappant.
+
+<figure>
+  <img
+    src="/images/blog-chromakeys-2026-14-off-on-18-notes.webp"
+    width="2476"
+    height="1152"
+    alt="Deux captures côte à côte du même handpan acoustique « D Kurd 18 — David Lesage Signature », dans le même cadrage, avec au-dessus l'îlot Chromakeys. Un anneau cuivre entoure l'interrupteur Off/On sur chaque moitié. À gauche, sur Off : douze notes sur le dessus et six notes du dessous tout autour, toutes sans couleur. À droite, sur On, la couleur dit « la note » : les ré orange, les la et la dièse indigo, les do rouges, les fa verts, les sol bleu ciel, le mi jaune."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Mon <strong>D Kurd 18</strong>, Off puis On : dix-huit notes grises se confondent, dix-huit notes colorées se rangent d'elles-mêmes en familles.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
 ## Le menu ChromaKeys : trois questions, pas une
 
 En haut de l'écran, la bande d'outils. Dedans, un îlot au contour multicolore : **ChromaKeys**. Il ne pose pas une question, il en pose trois — et elles sont indépendantes. Tu peux répondre à l'une sans toucher aux deux autres.
 
-1. **La couleur dit…** → *la note* · *sa place dans la gamme* · *rien*
+1. **La couleur dit…** → *la note* · *sa place dans la gamme*. Pour qu'elle ne dise **rien**, pas besoin d'un troisième choix : c'est l'interrupteur **Off** sous le nom ChromaKeys. Repasse sur *On*, et la dernière lecture choisie revient.
 2. **Notes partagées** → *Off* / *On*
 3. **Dessin des accords** → il n'y a rien à cliquer ici : **l'œil vit sur chaque carte d'<abbr title="Au moins trois notes jouées ensemble — par exemple do, mi, sol.">accord</abbr>**, en bas de l'écran. L'îlot te le rappelle, c'est tout.
 

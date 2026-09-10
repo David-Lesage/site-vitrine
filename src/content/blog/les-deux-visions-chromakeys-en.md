@@ -41,6 +41,34 @@ The app doesn't choose for you: it lets you choose. It's a setting, it takes one
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
+<figure>
+  <img
+    src="/images/blog-chromakeys-2026-14-off-on-acoustique.webp"
+    width="2572"
+    height="1176"
+    alt="Two side-by-side screenshots of the same acoustic D Minor / Kurd 10 handpan, same framing. A copper ring circles the ChromaKeys Off/On switch on each half. Left, Off: the ten notes have no colour. Right, On, colour says “the note”: each note has its own colour."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The same D Kurd 10, ChromaKeys <strong>Off</strong> on the left, <strong>On</strong> on the right: without colour every note looks alike; with it, you tell them apart at a glance. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
+<figure>
+  <img
+    src="/images/blog-chromakeys-2026-14-off-on-18-notes.webp"
+    width="2476"
+    height="1152"
+    alt="Two side-by-side screenshots of the same acoustic “D Kurd 18 — David Lesage Signature” handpan, same framing, ChromaKeys switch ringed in copper. Left, Off: eighteen notes without colour. Right, On: each note has the colour of its name."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>My <strong>D Kurd 18</strong>, Off then On. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
 ## The ChromaKeys menu: three questions, not one
 
 At the top of the screen, the tool bar. Inside it, an island with a multicoloured outline: **ChromaKeys**. It doesn't ask one question, it asks three — and they are independent. You can answer one without touching the other two.
