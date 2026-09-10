@@ -115,25 +115,13 @@ Le mode Logique répond à ça par un cadre. **Le même placement des notes par 
 
 Cela vaut pour **toutes les gammes majeures et le mineur naturel** : forme identique, contenu différent.
 
-Pour le **mineur harmonique**, c'est vérifié à l'écran, et la capture ci-dessous le montre : en do mineur, degré V, le passage du naturel à l'harmonique laisse les quatre mêmes creux allumés et le même tracé — seule la sensible monte d'un demi-ton, si bémol devient si. La nuance change ce qu'on entend, pas ce qu'on voit.
+Pour le **mineur harmonique**, c'est vérifié à l'écran : en do mineur, degré V, le passage du naturel à l'harmonique laisse les quatre mêmes creux allumés et le même tracé — seule la sensible monte d'un demi-ton, si bémol devient si. La nuance change ce qu'on entend, pas ce qu'on voit.
 
 Pour le **mineur mélodique**, disons-le prudemment : il altère 4 emplacements au lieu de 2 (la sixte en plus de la sensible), et rien n'oblige la forme à bouger pour autant — mais nous ne l'avons pas encore photographié.
 
 <!-- à confirmer par une capture : mineur mélodique (l'harmonique, lui, est mesuré — cf. CK2-06) -->
 
-<figure>
-  <img
-    src="/images/blog-capo-2026-06-mineurs.webp"
-    width="1600"
-    height="2368"
-    alt="Deux captures empilées, ancrage C, mode Triste, œil ouvert sur le degré V. En haut, mineur naturel : les creux G2, Bb2, D3 et G3 sont allumés en bleu ciel et reliés par un tracé bleu ; les cartes d'accord affichent Cm, D°, Eb, Fm, Gm, Ab, Bb. En bas, mineur harmonique : ce sont exactement les mêmes emplacements et le même tracé, mais le creux qui portait Bb2 porte maintenant B2, et le Bb3 du haut est devenu B3. Le reste du pan est identique d'une image à l'autre."
-    data-lb="capo"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Mineur naturel puis mineur harmonique, même ancrage, même degré : <strong>la forme ne bouge pas</strong>, seule la sensible monte d'un demi-ton (Bb → B).</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
+<!-- figure mineurs retirée : bug d'étiquettes app en harmonique, cf. APP/audits/captures-2026-09-10-capo-v2/BUG-etiquettes-mineur-harmonique.md ; remettre après correctif -->
 
 ## Mutant ou Neotone 1 : ce qui change
 
