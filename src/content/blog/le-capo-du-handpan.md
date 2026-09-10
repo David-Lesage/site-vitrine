@@ -10,14 +10,14 @@ permalink: "le-capo-du-handpan"
 draft: false
 ---
 
-Cet article concerne le **handpan électronique** — aujourd'hui, un Neotone Mutant à 19 creux. Sur un handpan acoustique, les notes ne bougent pas : ce qui suit n'y existe pas tel quel.
+Cet article concerne le **handpan électronique** — aujourd'hui, un Neotone Mutant à 19 notes. Sur un handpan acoustique, les notes ne bougent pas : ce qui suit n'y existe pas tel quel.
 
 <figure>
   <img
     src="/images/blog-capo-2026-01-mutant-logique.webp"
     width="1600"
     height="1170"
-    alt="Le mode Logique sur un Neotone Mutant à 19 creux, note d'ancrage D. Quatre creux sont allumés en rouge — D2 au centre, D4 en haut, A3 à gauche, F#3 en bas à gauche — et un tracé rouge les relie. L'écran du handpan, l'encadré blanc posé sous le ding, affiche « I Équilibre D ». En dessous, les sept cartes d'accord de la tonalité : I Équilibre D, II Élan Em, III Aventure F#m, IV Détente G, V Tension A, VI Nostalgie Bm, VII Mystère C#°, chacune dans la couleur de son degré. L'œil de la première carte est le seul fermé, c'est lui qui trace la constellation."
+    alt="Le mode Logique sur un Neotone Mutant à 19 notes, note d'ancrage D. Quatre notes sont allumées en rouge — D2 au centre, D4 en haut, A3 à gauche, F#3 en bas à gauche — et un tracé rouge les relie. L'écran du handpan, l'encadré blanc posé sous le ding, affiche « I Équilibre D ». En dessous, les sept cartes d'accord de la tonalité : I Équilibre D, II Élan Em, III Aventure F#m, IV Détente G, V Tension A, VI Nostalgie Bm, VII Mystère C#°, chacune dans la couleur de son degré. L'œil de la première carte est le seul fermé, c'est lui qui trace la constellation."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
@@ -36,7 +36,7 @@ Le handpan électronique, en **mode Logique**, fait la même chose. Tu changes l
 
 Prends la constellation du **degré I** — celui que l'app appelle **Équilibre**. Affiche-la avec une note d'ancrage en **C**. Puis en **D**. Puis en **A**.
 
-Le dessin est le même. Exactement le même : mêmes creux allumés, même polygone, même chemin d'une note à l'autre. Seules les hauteurs jouées ont changé.
+Le dessin est le même. Exactement le même : mêmes notes allumées, même polygone, même chemin d'une note à l'autre. Seules les hauteurs jouées ont changé.
 
 <figure>
   <img
@@ -56,7 +56,7 @@ Le dessin est le même. Exactement le même : mêmes creux allumés, même polyg
 
 Ce n'est pas une coïncidence heureuse, c'est la façon dont le mode Logique est construit.
 
-La forme d'un degré est dessinée sur les **emplacements** du pan — les pads, repérés par leur position — et pas sur les notes. Le degré I, c'est « ces creux-là, reliés dans cet ordre-là ». Quand tu changes de tonalité, l'app recalcule **ce que chaque emplacement joue**, sans jamais toucher au dessin.
+La forme d'un degré est dessinée sur les **emplacements** du pan — les pads, repérés par leur position — et pas sur les notes. Le degré I, c'est « ces emplacements-là, reliés dans cet ordre-là ». Quand tu changes de tonalité, l'app recalcule **ce que chaque emplacement joue**, sans jamais toucher au dessin.
 
 Autrement dit : la géométrie est fixée d'un côté, le contenu sonore de l'autre. Transposer ne fait bouger que le second. C'est pour ça que la forme ne peut pas se déformer — pas parce qu'on a « vérifié que ça marche », mais parce que rien, dans le mécanisme, ne pourrait la faire bouger.
 
@@ -65,7 +65,7 @@ Autrement dit : la géométrie est fixée d'un côté, le contenu sonore de l'au
     src="/images/blog-capo-2026-03-degre-V.webp"
     width="1600"
     height="2368"
-    alt="Deux captures empilées du même écran, œil ouvert sur le degré V cette fois. En haut, ancrage C : les creux G2, B2, D3 et G3 sont allumés en bleu ciel et reliés par un tracé bleu, l'écran du handpan indique « V Tension G ». En bas, ancrage A : les mêmes emplacements sont allumés, ils portent E3, G#3, B3 et E4, le tracé bleu suit exactement le même chemin, et l'écran du handpan indique « V Tension E »."
+    alt="Deux captures empilées du même écran, œil ouvert sur le degré V cette fois. En haut, ancrage C : les notes G2, B2, D3 et G3 sont allumées en bleu ciel et reliés par un tracé bleu, l'écran du handpan indique « V Tension G ». En bas, ancrage A : les mêmes emplacements sont allumés, ils portent E3, G#3, B3 et E4, le tracé bleu suit exactement le même chemin, et l'écran du handpan indique « V Tension E »."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
@@ -115,7 +115,7 @@ Le mode Logique répond à ça par un cadre. **Le même placement des notes par 
 
 Cela vaut pour **toutes les gammes majeures et le mineur naturel** : forme identique, contenu différent.
 
-Pour le **mineur harmonique**, c'est vérifié à l'écran : en do mineur, degré V, le passage du naturel à l'harmonique laisse les quatre mêmes creux allumés et le même tracé — seule la sensible monte d'un demi-ton, si bémol devient si. La nuance change ce qu'on entend, pas ce qu'on voit.
+Pour le **mineur harmonique**, c'est vérifié à l'écran : en do mineur, degré V, le passage du naturel à l'harmonique laisse les quatre mêmes notes allumées et le même tracé — seule la sensible monte d'un demi-ton, si bémol devient si. La nuance change ce qu'on entend, pas ce qu'on voit.
 
 Pour le **mineur mélodique**, disons-le prudemment : il altère 4 emplacements au lieu de 2 (la sixte en plus de la sensible), et rien n'oblige la forme à bouger pour autant — mais nous ne l'avons pas encore photographié.
 
@@ -133,7 +133,7 @@ Sur le **Neotone 1**, les notions de degré et d'accord s'appliquent aussi — m
      pastille MODÈLE de « Mutant » à « Neotone¹ » ne change RIEN au pan affiché. Les deux captures
      faites à la suite (audits/captures-2026-09-08-blog-lot-final-capo/CK2-07a et 07b) diffèrent de
      0,97 % de pixels dans la zone du pan, et ces 0,97 % sont la pastille MODÈLE elle-même : mêmes
-     19 creux, même polygone du I. Il n'y a donc pas de « polygone plus pauvre » à montrer, et une
+     19 notes, même polygone du I. Il n'y a donc pas de « polygone plus pauvre » à montrer, et une
      légende qui le prétendrait serait fausse. À reprendre quand le modèle 10 notes se reflétera
      sur le pan en Logique. -->
 
@@ -148,7 +148,7 @@ Ce n'est pas un capo. Ton pan acoustique, lui, n'a pas bougé d'un demi-ton — 
     src="/images/blog-capo-2026-08-roue-tonalite.webp"
     width="1600"
     height="1013"
-    alt="Le mode acoustique avec un D Minor / Kurd 10 chargé. Sur le pan, les creux sont colorés par camemberts — une part par accord auquel la note participe — et l'écran du handpan, centré sous le ding D3, affiche « D Minor / Kurd 10 ». À droite, la carte de l'instrument joué indique « POUR D Minor / Kurd 10 · ACOUSTIQUE » avec les boutons « Mes morceaux (156) » et « Tester une autre tonalité ». En dessous, le panneau ouvert « Tester une autre tonalité » explique : « Écoute ta gamme dans une autre tonalité — utile pour trouver celle qui va à ta voix. C'est un simple aperçu : rien n'est modifié dans Mes handpans », suivi des douze touches C à B dont D est allumée."
+    alt="Le mode acoustique avec un D Minor / Kurd 10 chargé. Sur le pan, les notes sont colorées par camemberts — une part par accord auquel la note participe — et l'écran du handpan, centré sous le ding D3, affiche « D Minor / Kurd 10 ». À droite, la carte de l'instrument joué indique « POUR D Minor / Kurd 10 · ACOUSTIQUE » avec les boutons « Mes morceaux (156) » et « Tester une autre tonalité ». En dessous, le panneau ouvert « Tester une autre tonalité » explique : « Écoute ta gamme dans une autre tonalité — utile pour trouver celle qui va à ta voix. C'est un simple aperçu : rien n'est modifié dans Mes handpans », suivi des douze touches C à B dont D est allumée."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
