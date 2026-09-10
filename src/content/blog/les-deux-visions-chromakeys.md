@@ -1,6 +1,6 @@
 ---
 title: "Lire les couleurs : la note, sa place dans la gamme, ou rien"
-description: "Le menu ChromaKeys pose trois questions indépendantes : ce que dit la couleur, si les notes partagées se découpent, et si les accords se dessinent. Trois réglages, valables sur un handpan acoustique comme électronique."
+description: "Lire les couleurs, c'est répondre à trois questions indépendantes : ce que dit la couleur, si les notes partagées se découpent, et si les accords se dessinent. Trois réglages, valables sur un handpan acoustique comme électronique."
 pubDate: 2026-09-24
 cover: "/images/blog-chromakeys-2026-00-couverture-18-notes.webp"
 category: "methode"
@@ -18,7 +18,7 @@ Ce sont deux lectures différentes du même instrument, et **les deux sont juste
 
 L'application ne choisit pas à ta place : elle te laisse choisir. C'est un réglage, il tient en un clic, et il s'appelle **ChromaKeys**.
 
-Un mot avant de commencer, parce qu'il revient partout ici : sur un handpan, la note du centre est **bombée** — c'est le **ding**. Les autres sont creusées. *Une note est une note : parfois en creux, parfois en ding.* Je dirai donc « note » dans tout l'article.
+Sur un handpan, la note du centre est **bombée** : c'est le **ding**. Les autres notes sont creusées dans le métal. Ici, toutes s'appellent simplement des **notes**.
 
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Acoustique · D Kurd 10</span><span style="flex:1">Électronique · Neotone Mutant</span></div>
@@ -26,7 +26,7 @@ Un mot avant de commencer, parce qu'il revient partout ici : sur un handpan, la 
     src="/images/blog-chromakeys-2026-01-ouverture-paire.webp"
     width="2560"
     height="1168"
-    alt="Deux captures côte à côte, même réglage. À gauche, un handpan acoustique D Minor / Kurd 10 ; à droite, un Neotone Mutant à 19 notes en mode Logique, ancré en do majeur. Au-dessus de chacun, l'îlot Chromakeys, avec un anneau cuivre autour du choix « la note » ; le reste de la bande est assombri. À gauche : le ding D3 et le D4 orange, A3 et A4 indigo, A#3 indigo clair, C4 et C5 rouges, E4 jaune, F4 vert, G4 bleu ciel. À droite : les do rouges (C2 au centre, C3, C4), les ré orange, les mi jaunes, les fa verts, les sol bleu ciel, les la indigo, les si magenta."
+    alt="Deux captures côte à côte, même réglage. À gauche, un handpan acoustique D Minor / Kurd 10 ; à droite, un Neotone Mutant à 19 notes en mode Logique, ancré en do majeur. Au-dessus de chacun, l'îlot Chromakeys, avec un anneau cuivre autour du choix « la note ». À gauche : le ding D3 et le D4 orange, A3 et A4 indigo, A#3 indigo clair, C4 et C5 rouges, E4 jaune, F4 vert, G4 bleu ciel. À droite : les do rouges (C2 au centre, C3, C4), les ré orange, les mi jaunes, les fa verts, les sol bleu ciel, les la indigo, les si magenta."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
@@ -185,29 +185,17 @@ Chacune a aussi sa voyelle, qu'on chante : OU · O (comme « beau ») · O (comm
 
 Deuxième réponse. Là, la couleur ne regarde plus le nom de la note : elle regarde **l'accord qu'elle sert** dans ta gamme.
 
-**En mode Logique, cette couleur est celle du degré de l'accord.** L'accord du I est toujours rouge, celui du II orange, et ainsi de suite. Si ta gamme est en ré, ce sont les notes de l'accord de ré qui deviennent rouges. **La couleur suit la place, pas le nom.**
+**Sur un handpan électronique, en <abbr title="Un mode propre au handpan électronique : ses notes sont rangées par degrés, de I à VII.">mode Logique</abbr>, cette couleur est celle du degré de l'accord.** L'accord du I est toujours rouge, celui du II orange, et ainsi de suite. Si ta gamme est en ré, ce sont les notes de l'accord de ré qui deviennent rouges. **La couleur suit la place, pas le nom.**
 
 Conséquence visible : deux notes du même nom peuvent porter deux couleurs différentes, parce qu'elles ne servent pas le même accord.
 
 Et le dessin des sept couleurs reste identique d'une tonalité à l'autre : c'est ce qui te permet de **rejouer la même chose ailleurs sans rien réapprendre**.
 
-**Hors du mode Logique** — en Gammes, en Création — le bouton garde le même nom, mais chaque accord prend la couleur de **la note qui lui donne son nom**. Tu vois toujours d'un coup quelles notes vont ensemble, mais ce n'est plus la lecture par degrés.
+**Hors du mode Logique** — en Gammes, en Création, et toujours sur un handpan acoustique — le bouton garde le même nom, mais chaque accord prend la couleur de **la note qui lui donne son nom**. Tu vois toujours d'un coup quelles notes vont ensemble, mais ce n'est plus la lecture par degrés.
 
-Sur le D Kurd de la capture qui suit, F4 et A4 prennent l'orange du ré : ce ne sont pas des ré, mais ils appartiennent à l'accord de ré.
+Sur le D Kurd des captures qui suivent, F4 et A4 prennent l'orange du ré : ce ne sont pas des ré, mais ils appartiennent à l'accord de ré.
 
-<figure>
-  <img
-    src="/images/blog-chromakeys-2026-04-place-acoustique-v6.webp"
-    width="1226"
-    height="1096"
-    alt="L'îlot Chromakeys, avec un anneau cuivre autour du choix « sa place dans la gamme », et sous lui le handpan acoustique D Minor / Kurd 10. Le ding D3, D4, F4 et A4 sont orange ; A#3, E4 et G4 jaunes ; A3 et C4 indigo ; C5 vert. Le reste de la bande est assombri."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Le réglage <em>sa place dans la gamme</em> (entouré en cuivre), <em>hors</em> du mode Logique : la couleur ne dit plus la marche, elle dit <strong>l'accord</strong> — toutes les notes d'un accord prennent la couleur de celle qui lui donne son nom.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
+
 ### Les deux lectures, côte à côte
 
 Voici le même handpan, photographié deux fois : à gauche la couleur dit **la note**, à droite **sa place dans la gamme**. Rien d'autre n'a bougé.
@@ -270,7 +258,7 @@ Trois choses à savoir :
     data-lb-wide
     loading="lazy"
   />
-  <figcaption><strong>Notes partagées</strong>, sur le même pan acoustique : à gauche éteint, à droite allumé. Chaque arc de l'anneau dit un accord auquel la note appartient : regarde <strong>F4 et E4, trois arcs chacun</strong> (entourées). Seuls le ding et A3 restent nus.</figcaption>
+  <figcaption><strong>Notes partagées</strong>, sur le même pan acoustique : à gauche éteint, à droite allumé. Chaque arc de l'anneau dit un accord auquel la note appartient : regarde par exemple <strong>F4 et E4, trois arcs chacun</strong> (entourées). Seuls le ding et A3 restent nus.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
