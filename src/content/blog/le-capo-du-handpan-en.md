@@ -40,43 +40,15 @@ The drawing is the same. Exactly the same: same tone fields lit, same polygon, s
 
 <figure>
   <img
-    src="/images/blog-capo-2026-02a-ancrage-C.webp"
-    width="1600"
-    height="1170"
-    alt="The same screen, anchor note C. The lit tone fields are C2 at the centre, C4 at the top, G3 on the left, E3 lower left, plus a small pale-red C3. The red path draws exactly the same figure as in the two images below. The handpan screen reads « I Équilibre C » and the chord cards show C, Dm, Em, F, G, Am, B°."
+    src="/images/blog-capo-2026-02-ancrages-C-D-A.webp"
+    width="2598"
+    height="1002"
+    alt="The same screen, anchor note C. The lit tone fields are C2 at the centre, C4 at the top, G3 on the left, E3 lower left, plus a small pale-red C3. The red path draws exactly the same figure as in the two images below. The handpan screen reads « I Équilibre C » and the chord cards show C, Dm, Em, F, G, Am, B°. Twin capture of the previous one, taken in the same window and the same frame, with only the anchor note changed to D. The same positions are lit; they now read D2, D4, A3 and F#3, with a small pale-red D3. The red path is superimposable on the previous one. The handpan screen reads « I Équilibre D ». A third twin capture, same window and same frame, anchor note A. The same positions are lit and read A2, A4, E4 and C#4, with a small pale-red A3. The red path occupies exactly the same place. The handpan screen reads « I Équilibre A »."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Anchored on <strong>C</strong>: C2 · E3 · G3 · C4.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/blog-capo-2026-02b-ancrage-D.webp"
-    width="1600"
-    height="1170"
-    alt="Twin capture of the previous one, taken in the same window and the same frame, with only the anchor note changed to D. The same positions are lit; they now read D2, D4, A3 and F#3, with a small pale-red D3. The red path is superimposable on the previous one. The handpan screen reads « I Équilibre D »."
-    data-lb="capo"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Anchored on <strong>D</strong>: D2 · F#3 · A3 · D4. Same tone fields, different pitches.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/blog-capo-2026-02c-ancrage-A.webp"
-    width="1600"
-    height="1170"
-    alt="A third twin capture, same window and same frame, anchor note A. The same positions are lit and read A2, A4, E4 and C#4, with a small pale-red A3. The red path occupies exactly the same place. The handpan screen reads « I Équilibre A »."
-    data-lb="capo"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Anchored on <strong>A</strong>: A2 · C#4 · E4 · A4. The drawing has not moved by a pixel — and it was measured: the three paths overlap by more than 99 %, with the same bounding box.</figcaption>
+  <figcaption>Anchored on <strong>C</strong>: C2 · E3 · G3 · C4. Anchored on <strong>D</strong>: D2 · F#3 · A3 · D4. Same tone fields, different pitches. Anchored on <strong>A</strong>: A2 · C#4 · E4 · A4. The drawing has not moved by a pixel — and it was measured: the three paths overlap by more than 99 %, with the same bounding box.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

@@ -40,43 +40,15 @@ Le dessin est le même. Exactement le même : mêmes creux allumés, même polyg
 
 <figure>
   <img
-    src="/images/blog-capo-2026-02a-ancrage-C.webp"
-    width="1600"
-    height="1170"
-    alt="Le même écran, note d'ancrage C. Les creux allumés en rouge sont C2 au centre, C4 en haut, G3 à gauche, E3 en bas à gauche, plus un petit C3 en rouge pâle. Le tracé rouge dessine exactement la même figure que sur les deux images suivantes. L'écran du handpan indique « I Équilibre C » et les cartes d'accord affichent C, Dm, Em, F, G, Am, B°."
+    src="/images/blog-capo-2026-02-ancrages-C-D-A.webp"
+    width="2598"
+    height="1002"
+    alt="Trois captures côte à côte, même fenêtre et même cadrage, degré I Équilibre avec la note d'ancrage en C, puis D, puis A. Sur chacune, les mêmes emplacements sont allumés en rouge et reliés par le même tracé : C2 · E3 · G3 · C4 à gauche, D2 · F#3 · A3 · D4 au milieu, A2 · C#4 · E4 · A4 à droite. Sous chaque pan, la rangée des sept cartes d'accord de la tonalité."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Ancrage en <strong>do</strong> : C2 · E3 · G3 · C4.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/blog-capo-2026-02b-ancrage-D.webp"
-    width="1600"
-    height="1170"
-    alt="Capture jumelle de la précédente, prise dans la même fenêtre et le même cadrage, seule la note d'ancrage change : D. Les creux allumés sont aux mêmes emplacements, ils portent maintenant D2, D4, A3 et F#3, avec le petit D3 en rouge pâle. Le tracé rouge est superposable au précédent. L'écran du handpan indique « I Équilibre D »."
-    data-lb="capo"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Ancrage en <strong>ré</strong> : D2 · F#3 · A3 · D4. Mêmes creux, autres hauteurs.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/blog-capo-2026-02c-ancrage-A.webp"
-    width="1600"
-    height="1170"
-    alt="Troisième capture jumelle, même fenêtre et même cadrage, note d'ancrage A. Les mêmes emplacements sont allumés et portent A2, A4, E4 et C#4, avec le petit A3 en rouge pâle. Le tracé rouge occupe rigoureusement la même place. L'écran du handpan indique « I Équilibre A »."
-    data-lb="capo"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Ancrage en <strong>la</strong> : A2 · C#4 · E4 · A4. Le dessin n'a pas bougé d'un pixel — vérifié à la mesure : les trois tracés se recouvrent à plus de 99 %, avec la même boîte englobante.</figcaption>
+  <figcaption>Même degré, trois ancrages : <strong>la même forme</strong>, seules les hauteurs changent. Vérifié à la mesure : les trois tracés se recouvrent à plus de 99 %.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
