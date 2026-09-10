@@ -71,6 +71,10 @@ VI Nostalgie · VII Mystère. Voyelles en Chanter & Jouer : OU · O (beau) · O 
   les couleurs simplifient (09/09).
 - Vidéos de démo (`/handpan-app`) réutilisables ; recadrer si l'interface n'est pas à propos (10/09).
 - La légende dit **ce qu'on voit et ce qu'il faut remarquer**.
+- **Jamais de texte incrusté dans une image.** Un mot écrit dans l'image (« Ancrage en do », « Sans capo »…)
+  ne se traduira dans aucune langue. Les étiquettes vivent en HTML, au-dessus ou sous l'image (10/09).
+  Mieux encore : **laisser l'interface parler** — ex. une capture de la roue de tonalité au-dessus de chaque
+  dessin dit « la tonalité a changé » sans un seul mot à traduire (10/09).
 
 ## 6. Langues
 
@@ -91,6 +95,7 @@ Aucune publication tant qu'une ligne est « non conforme ».
 3. Recadrage serré, rien d'inutile ou de distrayant ?
 4. L'image dit-elle vrai et ne se contredit-elle pas (étiquettes, notes, réglages) ?
 5. Palette actuelle, écran du handpan centré, textures complètes ?
+5b. Aucun texte incrusté dans l'image (étiquettes en HTML, traduisibles) ?
 6. La légende dit-elle ce qu'il faut remarquer ?
 7. Sujet commun : la paire existe-t-elle aussi pour l'autre instrument ?
 
