@@ -55,6 +55,12 @@ VI Nostalgie · VII Mystère. Voyelles en Chanter & Jouer : OU · O (beau) · O 
 
 ## 5. Les images — la partie où les erreurs arrivent
 
+> 🚨 **RÈGLE ABSOLUE (David, 10/09) — toute comparaison se montre CÔTE À CÔTE, jamais l'une sous l'autre.**
+> « Dès que l'humain doit faire défiler, il perd le focus sur ce qu'il est en train de voir, et du coup il perd
+> la compréhension. » Deux états, trois tonalités, avant/après, acoustique/électronique : tout ce que l'œil doit
+> comparer tient dans le même regard, sans défilement. Sur petit écran, préférer une image composite
+> (réduite, agrandissable au clic) plutôt qu'un empilement.
+
 - **Une comparaison = le MÊME instrument, la MÊME coque, CÔTE À CÔTE.** Jamais une capture acoustique puis
   une électronique pour illustrer la même chose : « c'est super confusant » (09/09, rappel 10/09).
 - **Sujet commun → la comparaison est doublée** : une paire acoustique (D Kurd 10 Yishama) ET une paire
@@ -90,7 +96,7 @@ de la page, **figure par figure et paragraphe par paragraphe**. Résultat : un t
 Aucune publication tant qu'une ligne est « non conforme ».
 
 **Pour chaque figure :**
-1. Si c'est une comparaison : même instrument, même coque, côte à côte ?
+1. Si c'est une comparaison : même instrument, même coque, CÔTE À CÔTE dans le même regard, sans défiler (règle absolue) ?
 2. Le changement se voit-il sans chercher (encadré, anneau, flèche) ?
 3. Recadrage serré, rien d'inutile ou de distrayant ?
 4. L'image dit-elle vrai et ne se contredit-elle pas (étiquettes, notes, réglages) ?
