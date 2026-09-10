@@ -67,8 +67,10 @@ VI Nostalgie · VII Mystère. Voyelles en Chanter & Jouer : OU · O (beau) · O 
   électronique (Neotone Mutant), chacune côte à côte (09/09).
 - **Ce qui change doit sauter aux yeux.** Encadré ou anneau cuivre `#C77B3A` sur le réglage modifié ET sur sa
   conséquence visible ; flèches si ça clarifie. Le lecteur ne doit jamais avoir à chercher (10/09).
-- **Recadrer serré sur ce dont parle le texte.** Retirer ou assombrir le reste (panneau de droite…),
-  sauf s'il est pertinent pour le sujet (09/09).
+- **Guider l'œil sans perdre le contexte.** Préférer **assombrir légèrement** tout ce qui entoure l'élément
+  dont parle le texte (voile sombre ~45-55 %, découpe nette autour de l'élément) plutôt que de recadrer à
+  l'excès : « c'est aussi important d'avoir du contexte » (David, 10/09). Recadrer seulement ce qui n'apporte
+  rien du tout (ex. panneau de droite hors sujet) (09/09).
 - **Comparaison de formes** (tonalités, modes) : même cadrage au pixel, côte à côte, sans avoir à défiler (10/09).
 - **Quand un nom change, le montrer** : entourer les notes dont le nom change (10/09).
 - Captures au **rendu réel** uniquement, jamais de maquette ; attente du chargement complet des textures
@@ -79,6 +81,7 @@ VI Nostalgie · VII Mystère. Voyelles en Chanter & Jouer : OU · O (beau) · O 
 - La légende dit **ce qu'on voit et ce qu'il faut remarquer**.
 - **Jamais de texte incrusté dans une image.** Un mot écrit dans l'image (« Ancrage en do », « Sans capo »…)
   ne se traduira dans aucune langue. Les étiquettes vivent en HTML, au-dessus ou sous l'image (10/09).
+  Les lettres de notes (C, D, A…) sont internationales : elles peuvent rester, c'est l'interface.
   Mieux encore : **laisser l'interface parler** — ex. une capture de la roue de tonalité au-dessus de chaque
   dessin dit « la tonalité a changé » sans un seul mot à traduire (10/09).
 
