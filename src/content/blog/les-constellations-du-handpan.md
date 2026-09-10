@@ -36,9 +36,9 @@ Le mode **Ouvert** ne ferme pas la figure : il trace le **chemin** d'une note à
 
 Le mode **Mains** colore le tracé selon la main qui joue chaque note. D'un regard, tu sais ce que fait la gauche et ce que fait la droite. C'est un repère précieux quand un accord se répartit entre les deux mains, ou quand tu veux équilibrer ton jeu sans te crisper.
 
-### Les trois tracés, sur tes deux handpans
+### Les trois tracés, en acoustique et en électronique
 
-Voici les trois tracés sur un pan **électronique**, un Neotone Mutant en <abbr title="Le mode de l'app où chaque accord de la tonalité a toujours la même place sur le pan.">mode Logique</abbr>, ancré en ré, mode Triste.
+Voici les trois tracés sur un pan **électronique**, un Neotone Mutant en <abbr title="Le mode de l'app où chaque accord de la tonalité a toujours la même place sur le pan.">mode Logique</abbr>, ancré en ré, <abbr title="Le réglage de l'app pour une tonalité mineure, à la couleur plus sombre.">mode Triste</abbr>.
 
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygone</span><span style="flex:1">Ouvert</span><span style="flex:1">Mains</span></div>
@@ -68,7 +68,7 @@ Et les mêmes trois tracés sur un pan **acoustique**, un D Kurd 10. Sur ce pan,
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le même accord, <strong>ré mineur</strong>, sur un D Kurd 10 acoustique. En <strong>Polygone</strong>, la figure revient de A4 au ding ; en <strong>Ouvert</strong>, elle s'arrête sur A4 ; en <strong>Mains</strong>, le ding revient à la droite (<em>R</em>, cercle rouge), les trois notes du pourtour à la gauche (<em>L</em>, cercle bleu et trait bleu). Le dessin est celui de <em>cet</em> instrument.</figcaption>
+  <figcaption>Le même accord, <strong>ré mineur</strong>, sur un D Kurd 10 acoustique. En <strong>Polygone</strong>, la figure revient de A4 au <abbr title="La grande note bombée au centre du pan.">ding</abbr> ; en <strong>Ouvert</strong>, elle s'arrête sur A4 ; en <strong>Mains</strong>, le ding revient à la droite (<em>R</em>, cercle rouge), les trois notes du pourtour à la gauche (<em>L</em>, cercle bleu et trait bleu). Le dessin est celui de <em>cet</em> instrument.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -76,7 +76,7 @@ Et les mêmes trois tracés sur un pan **acoustique**, un D Kurd 10. Sur ce pan,
 
 Sur un handpan **acoustique**, l'accord se dessine à partir de tes notes réelles, telles qu'elles sont disposées sur ton instrument : la forme obtenue est **propre à ton pan**. Deux <abbr title="L'ensemble des notes de ton instrument, par exemple D Kurd.">gammes</abbr> différentes donnent deux dessins différents pour le même accord. La Constellation te parle de *ton* instrument.
 
-Sur un handpan **électronique**, en <abbr title="Le mode de l'app où chaque accord de la tonalité a toujours la même place sur le pan.">mode Logique</abbr>, la forme d'un <abbr title="La place d'un accord dans la tonalité, numérotée de I à VII.">degré</abbr> est fixée par la disposition des pads : le I garde le même dessin quelle que soit la <abbr title="La note de départ autour de laquelle tournent un morceau et ses accords, par exemple « en ré ».">tonalité</abbr>, seules les notes jouées changent.
+Sur un handpan **électronique**, en mode Logique, la forme d'un <abbr title="La place d'un accord dans la tonalité, numérotée de I à VII.">degré</abbr> est fixée par la disposition des pads : le I garde le même dessin quelle que soit la <abbr title="La note de départ autour de laquelle tournent un morceau et ses accords, par exemple « en ré ».">tonalité</abbr>, seules les notes jouées changent.
 
 Tu gardes ainsi le même doigté d'une tonalité à l'autre. C'est le sujet de l'article [Le capo du handpan](/blog/le-capo-du-handpan).
 
