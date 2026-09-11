@@ -48,6 +48,12 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## ⚠️ LEÇON 11/09 — ne jamais tester en POST un point d'entrée de production
+Un test « sans téléphone » envoyé à `/api/subscribe` avec `motif` au lieu de `source` a pris le chemin par défaut
+(`beta-waitlist`) : fausse ligne `test@example.com` dans `site_leads` + mail de notification à David. Toujours LIRE le
+relais avant, et ne tester qu'en local (navigateur, sans soumettre) ou avec une donnée explicitement convenue avec David.
+Le relais identifie le formulaire par `source` (`contact`, `beta-waitlist`, `showcase`…), pas `motif`.
+
 ## ÉTAT ACTUEL — 09/09/2026 (26ᵉ passe, soir) — 🔐 Politique de confidentialité EN LIGNE · Yishama illustrée · article ChromaKeys affiné
 
 - **🔐 `/politique-de-confidentialite` (FR + EN + ES)** créée et déployée (`94c3d61`, 124 pages) — débloque l'écran de consentement
