@@ -2877,7 +2877,7 @@ const fr = {
     title2: 'Une question ? Parlons-en.',
     intro: 'Je réponds personnellement à chaque message — je ne suis pas un service client, mais un musicien qui joue le Neotone au quotidien. Pour choisir ton modèle, ton bois, ou organiser ta venue : écris-moi.',
     coords: { email: 'Email — réponse rapide', phone: 'Téléphone', showroom: 'Showroom · sur rendez-vous' },
-    form: { name: 'Nom & prénom', email: 'Email', subject: 'Sujet', message: 'Message', submit: 'M’écrire', note: 'Sinon, écris-moi directement à' },
+    form: { name: 'Nom & prénom', email: 'Email', phone: 'Téléphone', phoneHelp: 'Pour que je puisse te rappeler rapidement.', phoneError: 'Indique un numéro de téléphone valide (8 à 15 chiffres, indicatif international accepté : +33, +1…).', subject: 'Sujet', message: 'Message', submit: 'M’écrire', note: 'Sinon, écris-moi directement à' },
     subjects: ['Achat d’un Neotone', 'Cours', 'Handpan Constellation Studio', 'Collaboration', 'Presse', 'Autre'],
   },
   legal: {
@@ -3184,7 +3184,7 @@ const fr = {
       'Politique de confidentialité du site David Lesage et de l’application Handpan Constellation Studio : données collectées, prise de rendez-vous, Google Agenda, durées de conservation et droits RGPD.',
     h1: 'Politique de confidentialité',
     updatedLabel: 'Dernière mise à jour',
-    updated: '9 septembre 2026',
+    updated: '11 septembre 2026',
     lead: 'Cette page dit en clair ce que je fais de tes données : ce que je collecte, pourquoi, avec quels outils, combien de temps je le garde, et comment tu reprends la main quand tu veux. Elle couvre ce site et l’application Handpan Constellation Studio. Pas de jargon : si quelque chose n’est pas clair, écris-moi — c’est moi qui lis.',
     sections: [
       {
@@ -3197,6 +3197,8 @@ const fr = {
         p: 'Deux endroits, deux usages différents, et il vaut mieux les distinguer.',
         items: [
           'Le site lesagedavid.fr : ce que tu écris dans les formulaires (réservation, contact, liste d’attente, commande d’un micro). Le détail formulaire par formulaire est sur la page Conditions générales, et il reste vrai.',
+          // Ajout 11/09/2026 : le formulaire de contact demande désormais un téléphone (obligatoire).
+          'Le formulaire de contact demande aussi ton numéro de téléphone : il sert uniquement à te recontacter. Il est conservé aussi longtemps que ton email et repose sur la même base légale (ton consentement).',
           'L’application Handpan Constellation Studio : ton compte, ton abonnement, et — si tu enseignes ou si tu es élève — l’agenda des cours.',
         ],
       },

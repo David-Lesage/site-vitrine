@@ -20,6 +20,17 @@ export default async function handler(req, res) {
       res.status(400).json({ error: 'invalid_email' })
       return
     }
+    // Téléphone obligatoire pour le formulaire de CONTACT uniquement (11/09/2026).
+    // Même règle que le navigateur et l'Edge Function : 8 à 15 chiffres (E.164),
+    // formats internationaux acceptés (espaces, points, tirets, parenthèses, « + »).
+    if (body.source === 'contact') {
+      const phone = String(body.phone || '').trim()
+      const digits = phone.replace(/\D/g, '').length
+      if (!/^\+?[\d\s().\-]+$/.test(phone) || digits < 8 || digits > 15) {
+        res.status(400).json({ error: 'invalid_phone' })
+        return
+      }
+    }
 
     const headers = {
       apikey: ANON,

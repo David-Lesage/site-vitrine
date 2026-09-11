@@ -199,6 +199,27 @@ function esc(s: string): string {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+/**
+ * Téléphone (11/09/2026) — obligatoire pour le formulaire de CONTACT, pour que
+ * David puisse rappeler au lieu de négocier par écrit. Formats internationaux
+ * acceptés (+33 6 12 34 56 78, 06 12 34 56 78, +1 (555) 123-4567…) : seuls
+ * chiffres, espaces, points, tirets, parenthèses et un « + » initial ; entre 8
+ * et 15 chiffres (norme E.164). Même règle que côté navigateur (ContactPage).
+ */
+function isValidPhone(raw: string): boolean {
+    const s = raw.trim();
+    if (!/^\+?[\d\s().\-]+$/.test(s)) return false;
+    const n = s.replace(/\D/g, '').length;
+    return n >= 8 && n <= 15;
+}
+
+/** Numéro nettoyé pour un lien `tel:` (chiffres + « + » initial), '' si vide. */
+function phoneHref(raw: string): string {
+    const s = raw.trim();
+    const digits = s.replace(/\D/g, '');
+    return digits ? (s.startsWith('+') ? '+' : '') + digits : '';
+}
+
 // Allowlists du formulaire de liste d'attente. ⚠ Doivent rester IDENTIQUES à
 // celles de l'Edge Function `app-lead` (écran de connexion de l'app), qui
 // alimente la même table. 'maker' = fabricant de handpan, ajouté le 22/07/2026.
@@ -616,7 +637,14 @@ function bookingHtml(
 function adminNotifyHtml(f: Record<string, string | number | null>, extraHtml = ''): string {
     const row = (k: string, v: string | number | null) =>
         v === null || v === '' ? '' :
-        `<tr><td style="padding:5px 0;color:#6b7280;font-size:13px;width:130px;vertical-align:top;">${k}</td><td style="padding:5px 0;color:#111827;font-size:14px;">${esc(String(v))}</td></tr>`;
+        `<tr><td style="padding:5px 0;color:#6b7280;font-size:13px;width:130px;vertical-align:top;">${k}</td><td style="padding:5px 0;color:#111827;font-size:14px;">${
+            // Téléphone cliquable (11/09/2026) : David rappelle en un geste
+            // depuis son téléphone. Le lien porte le numéro NETTOYÉ (chiffres
+            // et « + » initial), le texte affiché reste celui saisi.
+            k === 'Téléphone' && phoneHref(String(v))
+                ? `<a href="tel:${esc(phoneHref(String(v)))}" style="color:#b4462a;">${esc(String(v))}</a>`
+                : esc(String(v))
+        }</td></tr>`;
 
     return shell('fr', `
         <tr><td style="padding:26px 28px 6px;">
@@ -913,6 +941,9 @@ Deno.serve(async (req) => {
         const socialAccount = String(body.socialAccount ?? '').trim().slice(0, 200) || null;
 
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
+        // Téléphone obligatoire UNIQUEMENT pour le formulaire de contact : les
+        // autres motifs (réservations, bêta, fabricants…) gardent leurs règles.
+        if (source === 'contact' && !isValidPhone(phone ?? '')) return json({ error: 'invalid_phone' }, 400);
 
         const isBooking = BOOKING_SOURCES.includes(source);
         // Réservation d'une place à un showcase → confirmation IMMÉDIATE.

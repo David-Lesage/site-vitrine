@@ -2114,6 +2114,9 @@ export const es: Dict = {
     "form": {
       "name": "Nombre y apellido",
       "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "phoneHelp": "Para que pueda devolverte la llamada rápidamente.",
+      "phoneError": "Indica un número de teléfono válido (de 8 a 15 dígitos, se acepta el prefijo internacional: +33, +1…).",
       "subject": "Sujeto",
       "message": "Mensaje",
       "submit": "Escríbeme",
@@ -2311,7 +2314,7 @@ export const es: Dict = {
     "description": "Política de privacidad del sitio de David Lesage y de la aplicación Handpan Constellation Studio: datos recogidos, reserva de clases, Google Calendar, plazos de conservación y derechos RGPD.",
     "h1": "Política de privacidad",
     "updatedLabel": "Última actualización",
-    "updated": "9 de septiembre de 2026",
+    "updated": "11 de septiembre de 2026",
     "lead": "Esta página dice claramente qué hago con tus datos: qué recojo, por qué, con qué herramientas, cuánto tiempo los conservo y cómo recuperas el control cuando quieras. Cubre este sitio y la aplicación Handpan Constellation Studio. Sin jerga: si algo no queda claro, escríbeme — soy yo quien lee.",
     "sections": [
       {
@@ -2324,6 +2327,7 @@ export const es: Dict = {
         "p": "Dos lugares, dos usos distintos, y conviene diferenciarlos.",
         "items": [
           "El sitio lesagedavid.fr: lo que escribes en los formularios (reserva, contacto, lista de espera, pedido de un micrófono). El detalle formulario por formulario está en la página de Términos y condiciones generales, y sigue siendo válido.",
+          "El formulario de contacto también pide tu número de teléfono: sirve únicamente para volver a contactarte. Se conserva el mismo tiempo que tu correo electrónico y se basa en la misma base legal (tu consentimiento).",
           "La aplicación Handpan Constellation Studio: tu cuenta, tu suscripción y — si enseñas o eres alumno/a — la agenda de las clases."
         ]
       },

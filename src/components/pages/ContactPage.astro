@@ -59,6 +59,14 @@ const coords = [
             <label class="block"><span class="text-sm font-600">{ct.form.name}</span><input type="text" name="name" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream px-4 py-3 focus:border-copper focus:outline-none" /></label>
             <label class="block"><span class="text-sm font-600">{ct.form.email}</span><input type="email" name="email" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream px-4 py-3 focus:border-copper focus:outline-none" /></label>
           </div>
+          {/* Téléphone OBLIGATOIRE (11/09/2026, demande de David) : un rappel de
+              10 minutes vaut mieux qu'une négociation par mail. Formats
+              internationaux acceptés — 8 à 15 chiffres (E.164), même règle que
+              api/subscribe.js et l'Edge Function site-lead. */}
+          <label class="block"><span class="text-sm font-600">{ct.form.phone}</span>
+            <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" data-error={ct.form.phoneError} aria-describedby="ct-phone-help" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream px-4 py-3 focus:border-copper focus:outline-none" />
+            <span id="ct-phone-help" class="mt-1 block text-xs text-ink-soft/70">{ct.form.phoneHelp}</span>
+          </label>
           <label class="block"><span class="text-sm font-600">{ct.form.subject}</span>
             <select name="subject" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream px-4 py-3 focus:border-copper focus:outline-none">
               {ct.subjects.map((su) => <option>{su}</option>)}
@@ -105,14 +113,27 @@ const coords = [
     const successEl = document.querySelector('[data-ct-success]') as HTMLElement | null
     const errorEl = form?.querySelector('[data-ct-error]') as HTMLElement | null
 
+    // Validation du téléphone : chiffres, espaces, points, tirets, parenthèses
+    // et « + » initial ; 8 à 15 chiffres. Ne rejette pas un numéro étranger.
+    const phoneEl = form?.querySelector('input[name="phone"]') as HTMLInputElement | null
+    const checkPhone = () => {
+      if (!phoneEl) return
+      const v = phoneEl.value.trim()
+      const n = v.replace(/\D/g, '').length
+      const ok = v === '' || (/^\+?[\d\s().\-]+$/.test(v) && n >= 8 && n <= 15)
+      phoneEl.setCustomValidity(ok ? '' : phoneEl.dataset.error || 'Invalid phone')
+    }
+    phoneEl?.addEventListener('input', checkPhone)
+
     form?.addEventListener('submit', async (e) => {
       e.preventDefault()
+      checkPhone()
       if (!form.reportValidity()) return
       const data = new FormData(form)
       const get = (k: string) => String(data.get(k) || '').trim()
       const to = form.dataset.to || ''
       const subject = `${get('subject')} — ${get('name')}`
-      const body = [get('message'), '', '—', get('name'), get('email')].join('\n')
+      const body = [get('message'), '', '—', get('name'), get('email'), get('phone')].join('\n')
       const mailtoHref = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 
       // Le formulaire ne demande qu'un champ « Nom & prénom » : on ne coupe qu'au
@@ -139,6 +160,7 @@ const coords = [
             email: get('email'),
             firstName: parts[0] || '',
             lastName: parts.slice(1).join(' '),
+            phone: get('phone'),
             // `site_leads` n'a pas de colonne « sujet » : on le met en tête du
             // message, ce qui le rend visible dans la notification ET dans les
             // exports, sans migration de schéma.

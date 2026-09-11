@@ -2339,7 +2339,7 @@ export const en: Dict = {
     title2: 'A question? Let’s talk.',
     intro: 'I answer every message personally — I’m not a customer-service desk, but a musician who plays the Neotone every day. To choose your model, your wood, or arrange your visit: write to me.',
     coords: { email: 'Email — quick reply', phone: 'Phone', showroom: 'Showroom · by appointment' },
-    form: { name: 'Full name', email: 'Email', subject: 'Subject', message: 'Message', submit: 'Write to me', note: 'Or write to me directly at' },
+    form: { name: 'Full name', email: 'Email', phone: 'Phone', phoneHelp: 'So I can call you back quickly.', phoneError: 'Please enter a valid phone number (8 to 15 digits, international prefix accepted: +33, +1…).', subject: 'Subject', message: 'Message', submit: 'Write to me', note: 'Or write to me directly at' },
     subjects: ['Buying a Neotone', 'Lessons', 'Handpan Constellation Studio', 'Collaboration', 'Press', 'Other'],
   },
   legal: {
@@ -2546,7 +2546,7 @@ export const en: Dict = {
       'Privacy policy for the David Lesage site and the Handpan Constellation Studio app: what is collected, lesson bookings, Google Calendar, retention periods and GDPR rights.',
     h1: 'Privacy Policy',
     updatedLabel: 'Last updated',
-    updated: '9 September 2026',
+    updated: '11 September 2026',
     lead: 'This page says plainly what I do with your data: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. It covers this site and the Handpan Constellation Studio application. No jargon: if something isn’t clear, write to me — I’m the one who reads.',
     sections: [
       {
@@ -2559,6 +2559,7 @@ export const en: Dict = {
         p: 'Two places, two different uses, and they are worth telling apart.',
         items: [
           'The lesagedavid.fr site: what you write in the forms (booking, contact, waiting list, microphone order). The form-by-form detail is on the Terms & conditions page, and it still holds.',
+          'The contact form also asks for your phone number: it is used only to get back to you. It is kept as long as your email and rests on the same legal basis (your consent).',
           'The Handpan Constellation Studio application: your account, your subscription, and — if you teach or are a student — the lesson calendar.',
         ],
       },
