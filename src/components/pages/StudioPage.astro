@@ -10,7 +10,7 @@ import AppAccessSync from '@/components/AppAccessSync.astro'
 import { Icon } from 'astro-icon/components'
 import YouTube from '@/components/YouTube.astro'
 import Lightbox from '@/components/Lightbox.astro'
-import { chromaKeys, studioVideos, studioAcousticDemoVideoId } from '@/data/site'
+import { chromaKeys, studioVideos, studioAcousticDemoVideoId, appSeries } from '@/data/site'
 import { appCta } from '@/lib/appAccess'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
@@ -216,6 +216,24 @@ const ld = [
       </div>
     </div>
   </Section>
+
+  {/* 🎬 LA SÉRIE VIDÉO DE L'APP (11/09/2026) — 3ᵉ bloc, juste après
+      « sur quel handpan » (qui doit rester 2ᵉ, voir plus haut). Source unique :
+      `appSeries` dans src/data/site.ts. Une vidéo = grand lecteur centré ;
+      dès la deuxième, la mise en page passe seule en grille 2 colonnes. */}
+  {appSeries.length > 0 && (
+    <Section tone="ink" id="serie">
+      <SectionHeading tone="light" eyebrow={st.seriesEyebrow} title={st.seriesTitle} intro={st.seriesIntro} />
+      <div class:list={['mx-auto mt-10', appSeries.length === 1 ? 'max-w-4xl' : 'grid max-w-6xl gap-8 md:grid-cols-2']}>
+        {appSeries.map((v) => (
+          <figure class="m-0">
+            <YouTube id={v.id} title={v.title} />
+            <figcaption class="mt-4 text-center font-display text-lg font-600 text-cream/90">{v.title}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </Section>
+  )}
 
   <Section>
     <SectionHeading eyebrow={st.problemEyebrow} title={st.problemTitle} />

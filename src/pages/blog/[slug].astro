@@ -91,6 +91,8 @@ if (d.youtubeId) ldJSON.push(...videoLdJson([{ id: d.youtubeId, name: d.title, d
     </div>
 
     <script>
+      // Façades vidéo (.yt-lite) écrites directement dans un article (11/09/2026).
+      import '@/scripts/yt-lite'
       // Les liens externes d'un article s'ouvrent dans un nouvel onglet :
       // le visiteur garde le site ouvert derrière lui.
       document.querySelectorAll<HTMLAnchorElement>('.prose-blog a[href^="http"]').forEach((a) => {

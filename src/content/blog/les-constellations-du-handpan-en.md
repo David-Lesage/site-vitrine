@@ -14,6 +14,16 @@ A Constellation is a chord you see rather than a chord you count. In [Handpan Co
 
 This holds **whether your handpan is acoustic or electronic**. An acoustic pan in D Kurd 10 and a Neotone both draw their chords: same lines, same reading, same gesture. The app offers three ways to trace that shape: Polygon, Open and Hands.
 
+To see this language in motion, here is the first video of the series about the app.
+
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="QV4Xe7zp4nM" aria-label="Play the video: Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions">
+    <img src="https://i.ytimg.com/vi/QV4Xe7zp4nM/hqdefault.jpg" alt="Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions</figcaption>
+</figure>
+
 ## Why a shape instead of a list
 
 Memorising "D, F, A" means translating every single time. Memorising a triangle sitting at a precise spot on your pan does not: your brain loves shapes. That's the heart of the ChromaKeys method, which you can explore in [Playing handpan by colours](/en/blog/handpan-par-les-couleurs). The Constellation is simply the next step: when several colours meet, they draw something.

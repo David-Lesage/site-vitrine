@@ -8,7 +8,7 @@ import BookingForm from '@/components/BookingForm.astro'
 import { newsletterMailto } from '@/lib/booking'
 import { Icon } from 'astro-icon/components'
 import YouTube from '@/components/YouTube.astro'
-import { site, homeVideos, neotonePlaylist } from '@/data/site'
+import { site, homeVideos, neotonePlaylist, appSeries } from '@/data/site'
 import { yishamaPlaylist } from '@/data/yishama'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
@@ -180,6 +180,14 @@ const duoMeta = [
       <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{h.duoBridgeEyebrow}</p>
       <h3 class="mt-3 font-display text-2xl font-700">{h.duoBridgeTitle}</h3>
       <p class="mx-auto mt-4 max-w-3xl text-ink-soft/85">{h.duoBridgeText}</p>
+      {/* 🎬 1ʳᵉ vidéo de la série de l'app (`appSeries`, src/data/site.ts) — dans
+          le bloc APP, jamais dans `homeVideos` (équilibre acoustique/électronique). */}
+      {appSeries[0] && (
+        <div class="mx-auto mt-6 max-w-2xl">
+          <YouTube id={appSeries[0].id} title={appSeries[0].title} />
+          <p class="mt-3 text-sm text-ink-soft/75">{appSeries[0].title}</p>
+        </div>
+      )}
       <div class="mt-6"><Button href={L('/handpan-app')} variant="primary">{h.duoBridgeCta}</Button></div>
     </div>
   </Section>

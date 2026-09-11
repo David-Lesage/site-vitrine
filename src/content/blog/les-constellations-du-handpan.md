@@ -14,6 +14,16 @@ Une <abbr title="Le dessin qui relie, sur le pan, les notes d'un même accord.">
 
 Cela vaut **que ton handpan soit acoustique ou électronique**. Un pan acoustique en D Kurd 10 et un Neotone dessinent tous les deux leurs accords : mêmes traits, même lecture, même geste. L'app propose trois façons de tracer cette forme : le Polygone, l'Ouvert et les Mains.
 
+Pour voir ce langage en mouvement, voici la première vidéo de la série consacrée à l'application.
+
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="QV4Xe7zp4nM" aria-label="Lire la vidéo : Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions">
+    <img src="https://i.ytimg.com/vi/QV4Xe7zp4nM/hqdefault.jpg" alt="Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions</figcaption>
+</figure>
+
 ## Pourquoi une forme plutôt qu'une liste
 
 Mémoriser « ré, fa, la » demande un effort de traduction à chaque fois. Mémoriser un triangle posé à un endroit précis de ton pan, non : ton cerveau adore les formes. C'est le cœur de la méthode ChromaKeys, que tu peux découvrir en détail dans [Le handpan par les couleurs](/blog/handpan-par-les-couleurs). La Constellation est simplement l'étape d'après : quand plusieurs couleurs se rencontrent, elles dessinent quelque chose.

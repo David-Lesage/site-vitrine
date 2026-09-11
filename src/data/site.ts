@@ -244,6 +244,18 @@ export const studioVideos: { src: string; poster: string }[] = [
 // Le composant <YouTube /> prend alors automatiquement la place du cadre.
 export const studioAcousticDemoVideoId: string | null = null
 
+// ── 🎬 LA SÉRIE VIDÉO DE L'APP — SOURCE UNIQUE (11/09/2026) ─────────────────
+// Série de vidéos YouTube qui présentent, une par une, les fonctions de
+// Handpan Constellation Studio. Lue par /handpan-app (section #serie, grand
+// lecteur si une seule vidéo, grille automatique dès la deuxième) et par le
+// bloc app de l'accueil (qui montre toujours la PREMIÈRE). Les articles du
+// blog reprennent le même id à la main (Markdown).
+// 👉 Ajouter les suivantes ici, une ligne par vidéo, dans l'ordre de la
+//    série : la page se met à jour seule. `title` = titre EXACT sur YouTube.
+export const appSeries: { id: string; title: string }[] = [
+  { id: 'QV4Xe7zp4nM', title: 'Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions' },
+]
+
 // Les 7 degrés ChromaKeys — couleurs neutres (émotions via dict.common.emotions)
 export const chromaKeys = [
   { degree: 'I', color: 'var(--color-chroma-1)' },

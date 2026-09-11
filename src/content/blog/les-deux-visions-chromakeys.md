@@ -18,6 +18,16 @@ Ce sont deux lectures différentes du même instrument, et **les deux sont juste
 
 L'application ne choisit pas à ta place : elle te laisse choisir. C'est un réglage, il tient en un clic, et il s'appelle **ChromaKeys**.
 
+Pour voir ce langage en mouvement, voici la première vidéo de la série consacrée à l'application.
+
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="QV4Xe7zp4nM" aria-label="Lire la vidéo : Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions">
+    <img src="https://i.ytimg.com/vi/QV4Xe7zp4nM/hqdefault.jpg" alt="Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions</figcaption>
+</figure>
+
 Sur un handpan, la note du centre est **bombée** : c'est le **ding**. Les autres notes sont creusées dans le métal. Ici, toutes s'appellent simplement des **notes**.
 
 <figure>

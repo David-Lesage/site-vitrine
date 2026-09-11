@@ -14,6 +14,16 @@ Handpan Constellation Studio's [Logic Mode](/en/handpan-app) treats music as a l
 
 This grammar holds **whether your handpan is acoustic or electronic**: Logic Mode exists on both sides and colours the degrees in both cases — on an acoustic pan, from the real notes of your scale.
 
+To see this language in motion, here is the first video of the series about the app.
+
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="QV4Xe7zp4nM" aria-label="Play the video: Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions">
+    <img src="https://i.ytimg.com/vi/QV4Xe7zp4nM/hqdefault.jpg" alt="Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions</figcaption>
+</figure>
+
 ## Seven degrees, seven emotions
 
 In a scale, every note plays a role. The first degree is the anchor, the place where things "settle". The fifth creates momentum, the urge to go further. The sixth brings a nostalgic tint, the seventh a tension that calls for resolution. These roles are universal: they exist in almost all the music you love, even if you've never put words to them.

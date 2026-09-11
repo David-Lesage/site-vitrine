@@ -14,6 +14,16 @@ Whether your handpan is acoustic or electronic, a colour can say two things. It 
 
 The app doesn't choose for you: it lets you choose. It's a setting, it takes one click, and it's called **ChromaKeys**.
 
+To see this language in motion, here is the first video of the series about the app.
+
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="QV4Xe7zp4nM" aria-label="Play the video: Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions">
+    <img src="https://i.ytimg.com/vi/QV4Xe7zp4nM/hqdefault.jpg" alt="Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions</figcaption>
+</figure>
+
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Acoustic · D Kurd 10</span><span style="flex:1">Electronic · Neotone Mutant</span></div>
   <img

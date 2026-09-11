@@ -1689,6 +1689,9 @@ export const en: Dict = {
     lightbox: { close: 'Close', prev: 'Previous photo', next: 'Next photo', zoom: 'Enlarge photo' },
     // 🎬 "Coming soon" video slot — same mechanism as /pieds-atlas.
     //    Driven by `studioAcousticDemoVideoId` (src/data/site.ts), set to null.
+    seriesTitle: 'Discover the app on video',
+    seriesIntro: 'A series of short videos, one feature at a time. Here is the first one.',
+    seriesEyebrow: 'The video series',
     demoVideoEyebrow: 'The video demonstration',
     demoVideoTitle: 'Demonstration on an acoustic handpan — by David Lesage',
     demoVideoSoon: 'Coming soon',

@@ -1514,6 +1514,9 @@ export const es: Dict = {
       "next": "Siguiente foto",
       "zoom": "Ampliar la foto"
     },
+    "seriesTitle": "Descubre la app en vídeo",
+    "seriesIntro": "Una serie de vídeos cortos, una función cada vez. Aquí está el primero.",
+    "seriesEyebrow": "La serie en vídeo",
     "demoVideoEyebrow": "La demostración en vídeo",
     "demoVideoTitle": "Demostración con un handpan acústico — por David Lesage",
     "demoVideoSoon": "Futuro",

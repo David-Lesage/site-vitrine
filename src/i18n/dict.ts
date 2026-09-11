@@ -2006,6 +2006,9 @@ const fr = {
     //    Piloté par `studioAcousticDemoVideoId` (src/data/site.ts), à `null`.
     //    `demoVideoTitle` = ce qui est écrit DANS le cadre ; `demoVideoEyebrow`
     //    = l'intitulé au-dessus. Rien à changer ici pour publier la vidéo.
+    seriesTitle: 'Découvre l\'app en vidéo',
+    seriesIntro: 'Une série de courtes vidéos, une fonction à la fois. Voici la première.',
+    seriesEyebrow: 'La série vidéo',
     demoVideoEyebrow: 'La démonstration en vidéo',
     demoVideoTitle: 'Démonstration sur handpan acoustique — par David Lesage',
     demoVideoSoon: 'À venir',

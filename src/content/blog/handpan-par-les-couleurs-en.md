@@ -12,6 +12,16 @@ draft: false
 
 Playing handpan by colours means learning to play without reading a single note of music theory: every sound on your instrument gets a colour (the **ChromaKeys**) and every chord draws a geometric shape (a **Constellation**). Your eye recognises the colour, your hand follows the shape, and the music happens — naturally, through gesture and emotion rather than theory. The method does not depend on the instrument: it reads the same way on an acoustic handpan and on an electronic one.
 
+To see this language in motion, here is the first video of the series about the app.
+
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="QV4Xe7zp4nM" aria-label="Play the video: Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions">
+    <img src="https://i.ytimg.com/vi/QV4Xe7zp4nM/hqdefault.jpg" alt="Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions</figcaption>
+</figure>
+
 ## Why colours instead of sheet music
 
 Traditional notation asks you to translate an abstract symbol into a sound, then into a gesture. Three steps, three chances to lose your way. The ChromaKeys method removes one of them: the colour **is** the sound. A C is no longer a black dot on five lines — it's a red you spot instantly on your pan.
