@@ -1688,14 +1688,9 @@ export const en: Dict = {
     // Lightbox labels: both photos of the pair open full screen.
     lightbox: { close: 'Close', prev: 'Previous photo', next: 'Next photo', zoom: 'Enlarge photo' },
     // 🎬 "Coming soon" video slot — same mechanism as /pieds-atlas.
-    //    Driven by `studioAcousticDemoVideoId` (src/data/site.ts), set to null.
     seriesTitle: 'Discover the app on video',
     seriesIntro: 'A series of short videos, one feature at a time. Here is the first one.',
     seriesEyebrow: 'The video series',
-    demoVideoEyebrow: 'The video demonstration',
-    demoVideoTitle: 'Demonstration on an acoustic handpan — by David Lesage',
-    demoVideoSoon: 'Coming soon',
-    demoVideoNote: 'I am filming the demonstration on my own acoustic handpan, and I will put it here.',
     storyEyebrow: 'The story — by David Lesage',
     storyTitle: 'The tool I wish I’d been taught as a child',
     storyP1: 'When I discovered the handpan, I hit the wall of my childhood again: no method, and the difficulty of visually organising the paths of notes. Then, with the Neotone, a new difficulty: the notes change place with every scale.',

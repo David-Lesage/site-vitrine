@@ -2003,16 +2003,10 @@ const fr = {
     // Libellés de la lightbox : les deux photos du duo s'ouvrent en plein écran.
     lightbox: { close: 'Fermer', prev: 'Photo précédente', next: 'Photo suivante', zoom: 'Agrandir la photo' },
     // 🎬 Emplacement vidéo « À venir » — même dispositif que /pieds-atlas.
-    //    Piloté par `studioAcousticDemoVideoId` (src/data/site.ts), à `null`.
-    //    `demoVideoTitle` = ce qui est écrit DANS le cadre ; `demoVideoEyebrow`
     //    = l'intitulé au-dessus. Rien à changer ici pour publier la vidéo.
     seriesTitle: 'Découvre l\'app en vidéo',
     seriesIntro: 'Une série de courtes vidéos, une fonction à la fois. Voici la première.',
     seriesEyebrow: 'La série vidéo',
-    demoVideoEyebrow: 'La démonstration en vidéo',
-    demoVideoTitle: 'Démonstration sur handpan acoustique — par David Lesage',
-    demoVideoSoon: 'À venir',
-    demoVideoNote: 'Je filme la démonstration sur mon propre handpan acoustique, et je la mets ici.',
     storyEyebrow: 'L’histoire — par David Lesage',
     storyTitle: 'L’outil que j’aurais rêvé qu’on m’enseigne, enfant',
     storyP1: 'En découvrant le handpan, j’ai retrouvé le mur de mon enfance : aucune méthode, et la difficulté d’organiser visuellement les chemins de notes. Puis, avec le Neotone, une nouvelle difficulté : les notes changent de place à chaque gamme.',

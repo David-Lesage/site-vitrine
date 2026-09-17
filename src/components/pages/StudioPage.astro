@@ -10,7 +10,7 @@ import AppAccessSync from '@/components/AppAccessSync.astro'
 import { Icon } from 'astro-icon/components'
 import YouTube from '@/components/YouTube.astro'
 import Lightbox from '@/components/Lightbox.astro'
-import { chromaKeys, studioVideos, studioAcousticDemoVideoId, appSeries } from '@/data/site'
+import { chromaKeys, studioVideos, appSeries } from '@/data/site'
 import { appCta } from '@/lib/appAccess'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
@@ -103,10 +103,7 @@ const ld = [
          simple ». Le petit monde du handpan juge déjà assez : cette page apaise.
 
       🎨 Le ton reste `cream-deep` : le hero est déjà `bg-ink`, deux blocs
-         sombres collés se seraient fondus en un seul.
-      🎬 L'emplacement vidéo « À venir » vit ICI, au plus près de l'argument
-         acoustique — pas en bas de page. Une seule ligne à changer dans
-         src/data/site.ts (`studioAcousticDemoVideoId`) pour le remplacer. */}
+         sombres collés se seraient fondus en un seul. */}
   <Section tone="cream-deep" id="acoustique">
     <div class="mx-auto max-w-3xl text-center">
       <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{st.versionAcoEyebrow}</p>
@@ -188,33 +185,10 @@ const ld = [
     {/* UN SEUL bouton pour les deux mondes : c'est la même application. */}
     <div class="mt-10 text-center"><Button {...acoCta.attrs} variant="primary">{acoCta.label}</Button></div>
 
-    <div class="mt-16 grid gap-10 lg:grid-cols-2 lg:items-start">
-      <figure class="m-0">
-        <img src="/images/app-acoustique.jpg" width="1634" height="802" alt={st.versionAcoCaption} class="w-full rounded-card border border-ink/10 shadow-sm" loading="lazy" />
-        <figcaption class="mt-3 text-sm text-ink-soft/70">{st.versionAcoCaption}</figcaption>
-      </figure>
-      <div id="demo-acoustique">
-        <p class="text-xs font-700 uppercase tracking-[0.2em] text-copper">{st.demoVideoEyebrow}</p>
-        <div class="mt-5">
-          {studioAcousticDemoVideoId ? (
-            <YouTube id={studioAcousticDemoVideoId} title={st.demoVideoTitle} />
-          ) : (
-            <div class="relative grid aspect-video w-full place-items-center rounded-card border-2 border-dashed border-ink/25 bg-ink/5 px-6 text-center">
-              <div>
-                <span class="mx-auto grid h-16 w-16 place-items-center rounded-full border border-ink/15 bg-cream">
-                  <Icon name="lucide:video" class="h-7 w-7 text-copper" />
-                </span>
-                <p class="mt-5 font-display text-xl font-700 md:text-2xl">{st.demoVideoTitle}</p>
-                <p class="mt-3 inline-flex items-center gap-2 rounded-full bg-copper/15 px-4 py-1.5 text-xs font-700 uppercase tracking-widest text-copper">
-                  <Icon name="lucide:clock" class="h-4 w-4" /> {st.demoVideoSoon}
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-        <p class="mt-4 text-sm text-ink-soft/75">{st.demoVideoNote}</p>
-      </div>
-    </div>
+    <figure class="mx-auto mt-16 max-w-3xl">
+      <img src="/images/app-acoustique.jpg" width="1634" height="802" alt={st.versionAcoCaption} class="w-full rounded-card border border-ink/10 shadow-sm" loading="lazy" />
+      <figcaption class="mt-3 text-sm text-ink-soft/70">{st.versionAcoCaption}</figcaption>
+    </figure>
   </Section>
 
   {/* 🎬 LA SÉRIE VIDÉO DE L'APP (11/09/2026) — 3ᵉ bloc, juste après
