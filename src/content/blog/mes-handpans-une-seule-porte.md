@@ -79,7 +79,7 @@ Et le duo **survit au rechargement de la page**, d'où qu'il ait été posé. C'
 
 Poser un acoustique à côté d'un acoustique, c'est un **duo**. Poser un acoustique à côté d'un Neotone, ce n'est pas la même chose : **tes deux handpans** ne viennent pas du même monde, et l'association obéit alors à ses propres règles — c'est le sujet de [cet article-là](/blog/completer-son-handpan-acoustique-avec-un-neotone).
 
-L'application ne mélange donc jamais les deux d'office. Mais elle ne refuse pas non plus, comme elle le faisait avant : quand tu coches un acoustique et un électronique, **elle te propose de les associer quand même**. C'est une porte, pas un mur.
+L'application ne mélange donc jamais les deux d'office. Mais elle ne refuse pas non plus, comme elle le faisait avant : quand ta liste contient déjà un électronique et que tu coches un acoustique avec lui, **elle te propose de les associer quand même**. C'est une porte, pas un mur.
 
 ## Le Neotone a droit au même bloc
 
