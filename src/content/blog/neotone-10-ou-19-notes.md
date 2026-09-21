@@ -24,7 +24,7 @@ Cet article concerne le **handpan électronique Neotone**. Il existe en deux mod
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur une image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-Le Mutant a aussi **l'écran du handpan** : un petit écran intégré à l'instrument. Le Neotone¹ à 10 notes n'en a pas.
+Le Mutant a aussi un **petit écran intégré** à l'instrument. Le Neotone¹ à 10 notes n'en a pas.
 
 ## Choisis le 19 notes si…
 
@@ -66,6 +66,8 @@ Tu as déjà un handpan acoustique et tu l'aimes. Il lui manque juste **des bass
 
 Tu gardes ton acoustique au centre ; l'électronique joue ce que l'autre ne peut pas. L'article [Compléter son handpan acoustique avec un Neotone](/blog/completer-son-handpan-acoustique-avec-un-neotone) détaille ce cas.
 
+Le Mutant sait faire la même chose. Il devient intéressant si tu chantes en jouant : ses notes en plus te laissent **de la place pour la mélodie**, au-dessus de l'accord. Le même article compare les deux.
+
 ### Tu veux découvrir le handpan
 
 Dix notes, c'est un terrain simple pour faire tes premiers pas. Tu entends tout de suite une musique cohérente.
@@ -87,7 +89,7 @@ Moins de notes, pas d'écran : le 10 notes est le modèle le plus simple et le m
 | En faire ton instrument principal | | ✓ |
 | Accompagner la voix sur des morceaux connus | | ✓ |
 | Les 7 degrés en majeur et en mineur | | ✓ |
-| L'écran du handpan | | ✓ |
+| Un écran intégré à l'instrument | | ✓ |
 
 Pour comprendre pourquoi un handpan électronique, tout court, peut t'intéresser : [Pourquoi choisir un handpan électronique](/blog/pourquoi-handpan-electronique).
 
