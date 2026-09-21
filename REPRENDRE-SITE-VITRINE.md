@@ -83,7 +83,7 @@ un agent à la fois · FR seulement (EN = session Traduction) · jamais de test 
   facturation particulier/société dans affiliate_sales ; bouton « Envoyer à Neotone » → neotone@digitalhandpan.com ; accès partenaire
   Neotone + Hisong comme Muling). **Ne rien construire côté site avant les noms définitifs** (bloc de disponibilités + formulaire
   2 parcours en ligne −5 % / showroom −7 %). Juridique/TVA = « c'est Neotone qui trouve la solution » (David).
-- Rendre le mode électronique aux bêta-testeurs (décision David 21/09) : le mode sans marque (journal 323) cachait le bouton ⚡ et la bascule.
+- ✅ Mode électronique rendu aux bêta-testeurs (journal 344, 21/09) ; reste masqué seulement quand David filme en mode présentation.
 - 6 captures blog périmées à refaire dans leur prochain lot (Création ×4, Mes morceaux jam-rapide, dialogue « Neotone sur-mesure »).
 
 ### Attend David
