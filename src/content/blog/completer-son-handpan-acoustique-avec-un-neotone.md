@@ -144,7 +144,7 @@ Et trois limites, franchement.
 
 ## Où on voit ça se produire
 
-Tout ce qui est écrit ici s'affiche dans l'application : tu charges ta gamme, tu demandes le complément, et le bilan arrive avec l'état d'avant et l'état d'après — pour que tu n'aies pas à croire une promesse. C'est dans [Handpan Constellation Studio](/handpan-app), qui s'ouvre sur `play.handpanstudio.app`, et le mode acoustique avec la complétion de gamme est gratuit.
+Tout ce qui est écrit ici sort du moteur de l'application, rejoué sur les notes réelles — pour que tu n'aies pas à croire une promesse. C'est dans [Handpan Constellation Studio](/handpan-app), qui s'ouvre sur `play.handpanstudio.app`, et le mode acoustique avec la complétion de gamme est gratuit.
 
 Si tu veux essayer un acoustique et un Neotone côte à côte avant de trancher entre les deux modèles, c'est possible au [showroom](/showroom). Et si tu veux qu'on explore ça ensemble, mes [cours](/cours) sont ouverts.
 

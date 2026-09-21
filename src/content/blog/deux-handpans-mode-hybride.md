@@ -38,7 +38,7 @@ Un bandeau s'affiche alors au-dessus de tes pans : **🌗 Tes 2 handpans : *le p
 
 Ce dernier nombre est le vrai sujet. Pour ces accords-là, la disposition est calculée pour de vrai entre les deux instruments — la fondamentale la plus grave à la basse — et le tracé traverse l'espace d'un pan à l'autre. Tu vois d'un coup d'œil quelle main part où, et l'ordre de jeu suit.
 
-Un mot de vocabulaire, parce que l'application fait maintenant la différence : deux acoustiques côte à côte, c'est un **duo**. Un acoustique **et** un Neotone, c'est l'autre famille — le même bandeau, mais d'autres règles, et c'est « Compléter » qui t'y emmène ; c'est le sujet de [compléter son handpan acoustique avec un Neotone](/blog/completer-son-handpan-acoustique-avec-un-neotone). L'app ne mélange jamais les deux familles d'office : elle te *propose* la paire mixte au lieu de refuser.
+Un mot de vocabulaire, parce que l'application fait maintenant la différence : deux acoustiques côte à côte, c'est un **duo**. Un acoustique **et** un Neotone, c'est l'autre famille — le même bandeau, mais d'autres règles ; c'est le sujet de [compléter son handpan acoustique avec un Neotone](/blog/completer-son-handpan-acoustique-avec-un-neotone). L'app ne mélange jamais les deux familles d'office : elle te *propose* la paire mixte au lieu de refuser.
 
 <figure>
   <img
@@ -67,6 +67,6 @@ Deux détails valent de l'or avant de commander quoi que ce soit :
 - La **roue de tonalité** te laisse écouter ta gamme transposée dans une autre tonalité. Tu entends le futur instrument avant qu'il existe.
 - Le réglage de **diapason 440 / 432 Hz** accorde l'app sur *ton* handpan, pour que ce que tu entends à l'écran sonne juste avec ce que tu as dans les mains.
 
-Le mode acoustique, « Compléter » et la roue de tonalité sont **gratuits** ; enregistrer durablement ta configuration à deux handpans fait partie de la version Studio. Et si le second pan devient une vraie envie, l'app te dit exactement quelles notes demander — que tu partes sur un [Neotone](/le-neotone) ou sur un instrument acoustique.
+Le mode acoustique, « Compléter » et la roue de tonalité sont **gratuits** ; enregistrer durablement ta configuration à deux handpans fait partie de la version Studio. Et si le second pan devient une vraie envie, l'app te dit exactement quelles notes demander ; ces notes valent pour un instrument acoustique comme pour un [Neotone](/le-neotone).
 
 Ouvre [Handpan Constellation Studio](/handpan-app), charge ta gamme et regarde ce qu'il te manque vraiment. Souvent, c'est moins que tu ne crois. Et pour explorer tout ça à deux, mes [cours de handpan](/cours) sont ouverts.

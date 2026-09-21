@@ -71,7 +71,7 @@ Un morceau bloqué s'ouvre quand même. Clique dessus et l'app ne te claque pas 
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-Ni mur, ni simple transposition : une porte. L'app dit ce qui manque, propose un deuxième handpan qui comble exactement le trou — avec le nombre de morceaux gagnés —, propose un Neotone sur-mesure généré avec précisément ces notes-là, et te laisse quand même entrer dans la grille.
+Ni mur, ni simple transposition : une porte. L'app dit ce qui manque, propose un deuxième handpan qui comble exactement le trou — avec le nombre de morceaux gagnés —, et te laisse quand même entrer dans la grille.
 
 Sur un handpan acoustique, l'app va plus loin et te propose le morceau **transposé dans la tonalité de ton pan** quand c'est possible — puisque les notes, elles, ne bougeront pas. Sur un handpan électronique, c'est l'instrument qui va chercher la tonalité du morceau.
 
