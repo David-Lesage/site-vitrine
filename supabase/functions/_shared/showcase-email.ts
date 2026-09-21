@@ -142,6 +142,24 @@ export interface ShowcaseEmailOptions {
     peopleCount: number | null;
     /** Grille tarifaire du rendez-vous individuel, calculée par le site. */
     priceGrid: string;
+    /**
+     * Jeton personnel de présence (`site_leads.attendance_token`, 21/09/2026).
+     * Présent et valide → le bouton du bloc « Si tu as un empêchement » mène à
+     * la page où la personne annule ou reporte elle-même sa venue (David est
+     * prévenu automatiquement). Absent → email STRICTEMENT identique à avant.
+     */
+    attendanceToken?: string | null;
+}
+
+/**
+ * Lien personnel « ma venue » (page /showcase/ma-venue du site, FR et /en/) —
+ * même forme que `venuePageUrl()` du rappel J-1 (_shared/showcase-attendance.ts).
+ * Chaîne vide si le jeton n'est pas un uuid.
+ */
+export function attendanceUrl(token: string | null | undefined, lang = 'fr'): string {
+    const tok = String(token ?? '').trim();
+    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(tok)) return '';
+    return `https://www.lesagedavid.fr${lang === 'en' ? '/en' : ''}/showcase/ma-venue?t=${tok}`;
 }
 
 const btn = (href: string, label: string, primary = true) =>
@@ -180,6 +198,10 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
     // ouvre directement la modale (voir BookingForm.astro), `#agenda` garantit
     // qu'on atterrit au bon endroit même si le script n'a pas encore chargé.
     const privateHref = `${base}/showroom?rdv=prive#agenda`;
+    // Lien « ma venue » (21/09/2026) : remplace « Choisir une autre date » quand
+    // un jeton existe — la page propose elle-même les autres dates ET prévient
+    // David (la page agenda seule ne le prévenait pas).
+    const attendanceHref = attendanceUrl(o.attendanceToken, en ? 'en' : 'fr');
 
     const t = en ? {
         title: 'It’s confirmed — your spot is booked ✨',
@@ -205,6 +227,7 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         trouble2: 'So if for any reason you are not coming, let me know, and as early as possible. Because it has consequences: it can change how I organise things, and it can stop someone else from coming.',
         trouble3: 'If you are postponing your visit, book another date.',
         troubleCta: 'Choose another date',
+        attendanceCta: 'Cancel or postpone my visit',
         programWhat: 'The electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the <strong>handpan microphones</strong>, the <strong>Gonilélé</strong> African harp, the <strong>calabash</strong> — and the <strong>Handpan Constellation Studio</strong> app, which makes music visible. Whichever of them brought you here, it will be out on the floor.',
         program: [
             ['The Neotone live', 'I play in front of you: the raw sound, then with effects (octaver, reverb, looper) and with singing — the interface projected on the screen.'],
@@ -262,6 +285,7 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         trouble2: 'Donc si pour X raison tu ne viens pas, préviens-moi, et le plus tôt possible. Car cela a des conséquences : ça peut changer mon organisation, empêcher quelqu’un d’autre de venir.',
         trouble3: 'Si tu reportes ta venue, prends un nouveau rendez-vous.',
         troubleCta: 'Choisir une autre date',
+        attendanceCta: 'Annuler ou reporter ma venue',
         programWhat: 'Le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les <strong>micros pour handpan</strong>, la harpe africaine <strong>Gonilélé</strong>, la <strong>calebasse</strong> — et l’application <strong>Handpan Constellation Studio</strong>, qui rend la musique visible. Quel que soit celui qui t’amène, il sera sorti.',
         program: [
             ['Le Neotone en live', 'Je joue devant vous : le son brut, puis avec effets (octaver, réverbe, looper) et au chant — l’interface projetée à l’écran.'],
@@ -378,7 +402,9 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
           <p style="margin:0;color:#374151;font-size:14px;line-height:1.7;">${t.trouble1}</p>
           <p style="margin:8px 0 0;color:#374151;font-size:14px;line-height:1.7;">${t.trouble2}</p>
           <p style="margin:8px 0 0;color:#374151;font-size:14px;line-height:1.7;">${t.trouble3}</p>
-          <div style="margin-top:14px;">${btn(`${base}/showroom#agenda`, t.troubleCta, false)}</div>
+          <div style="margin-top:14px;">${attendanceHref
+            ? btn(attendanceHref, t.attendanceCta, false)
+            : btn(`${base}/showroom#agenda`, t.troubleCta, false)}</div>
         </td></tr>
 
         <tr><td style="padding:22px 28px 8px;border-top:1px solid #f0f1f3;">
