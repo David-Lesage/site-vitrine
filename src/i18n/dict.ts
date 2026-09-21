@@ -1955,7 +1955,7 @@ const fr = {
     modes: [
       { t: 'Logique', d: 'Le cœur de l’app. Joue les 7 accords de n’importe quelle gamme, construis tes enchaînements, suis les accords des morceaux que tu aimes.' },
       { t: 'Atlas Sonore', d: 'Explore les gammes du monde entier — Japon, Orient, Afrique, musiques celtiques… Écoute-les, apprends-les, voyage.' },
-      { t: 'Création', d: 'Compose tes propres gammes sur mesure, note par note et couleur par couleur, puis garde-les dans ta bibliothèque.' },
+      { t: 'Créer', d: 'Compose tes propres gammes sur mesure, note par note et couleur par couleur, puis garde-les dans ta bibliothèque.' },
       { t: 'MIDI Connect', d: 'Le pont entre ton Neotone et l’app : ton jeu réel s’affiche en temps réel sur le handpan virtuel, et l’app te guide dans tes accords et tes gammes.' },
     ],
     versionAcoEyebrow: 'Sur quel handpan ça marche ?',

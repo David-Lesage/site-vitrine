@@ -180,7 +180,7 @@ Conséquence visible : deux notes du même nom peuvent porter deux couleurs diff
 
 Et le dessin des sept couleurs reste identique d'une tonalité à l'autre : c'est ce qui te permet de **rejouer la même chose ailleurs sans rien réapprendre**.
 
-**Hors du mode Logique** — en Gammes, en Création, et toujours sur un handpan acoustique — le bouton garde le même nom, mais chaque accord prend la couleur de **la note qui lui donne son nom**. Tu vois toujours d'un coup quelles notes vont ensemble, mais ce n'est plus la lecture par degrés.
+**Hors du mode Logique** — en Gammes, dans Mon instrument, et toujours sur un handpan acoustique — le bouton garde le même nom, mais chaque accord prend la couleur de **la note qui lui donne son nom**. Tu vois toujours d'un coup quelles notes vont ensemble, mais ce n'est plus la lecture par degrés.
 
 Sur le D Kurd des captures qui suivent, F4 et A4 prennent l'orange du ré : ce ne sont pas des ré, mais ils appartiennent à l'accord de ré.
 

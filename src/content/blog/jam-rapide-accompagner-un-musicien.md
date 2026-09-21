@@ -94,7 +94,7 @@ Dernier réflexe de jam : quelqu'un chante, et la tonalité est trop haute. Les 
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>La dernière étape. Le morceau est déjà rangé dans <em>Mes morceaux</em>, la transposition se fait avec <strong>♭ −</strong> et <strong>+ ♯</strong> de part et d'autre de la tonalité courante, et cinq boutons décident de la suite : Pupitre, Mon instrument, Imprimer, l'éditeur, ou le mode Scène.</figcaption>
+  <figcaption>La dernière étape. Le morceau est déjà rangé dans <em>Mes accompagnements</em>, la transposition se fait avec <strong>♭ −</strong> et <strong>+ ♯</strong> de part et d'autre de la tonalité courante, et cinq boutons décident de la suite : Pupitre, Mon instrument, Imprimer, l'éditeur, ou le mode Scène.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

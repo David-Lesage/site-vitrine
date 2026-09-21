@@ -1650,7 +1650,7 @@ export const en: Dict = {
     modes: [
       { t: 'Logic', d: 'The heart of the app. Play the 7 chords of any scale, build your progressions, follow the chords of the songs you love.' },
       { t: 'Sound Atlas', d: 'Explore scales from all over the world — Japan, the Orient, Africa, Celtic music… Listen to them, learn them, travel.' },
-      { t: 'Creation', d: 'Compose your own custom scales, note by note and colour by colour, then keep them in your library.' },
+      { t: 'Create', d: 'Compose your own custom scales, note by note and colour by colour, then keep them in your library.' },
       { t: 'MIDI Connect', d: 'The bridge between your Neotone and the app: your real playing appears live on the virtual handpan, and the app guides you through your chords and scales.' },
     ],
     versionAcoEyebrow: 'Which handpan does it work on?',
