@@ -77,8 +77,8 @@ un agent à la fois · FR seulement (EN = session Traduction) · jamais de test 
   843 Available · 972 Available · 975 Sold · 911 In transit). Le STOCK VIT DANS L'APP ; le Sheet est le miroir pour Neotone.
 
 ### En cours chez la session APP du 18 (attendre ses messages « appliqué »)
-- Showcase : lien ma-venue dans le mail de confirmation + boutons Annulé/Reporté du tableau de bord — **rien déployé sans le feu vert
-  de David**. Quand il dit oui : faire passer `attendanceToken` dans site-lead et redéployer EN MÊME TEMPS.
+- ✅ Showcase COMPLET en prod le 21/09 (feu vert David) : confirm-showcase v9 + boutons Annulé/Reporter (app) ; site-lead v39 passe
+  `attendanceToken` → les deux mails de confirmation portent « Annuler ou reporter ma venue ».
 - Ventes Neotone/Hisong : schéma repensé (stock_pieces = détail par n° de série d'un article stock_items existant, marque → partner_profiles ;
   facturation particulier/société dans affiliate_sales ; bouton « Envoyer à Neotone » → neotone@digitalhandpan.com ; accès partenaire
   Neotone + Hisong comme Muling). **Ne rien construire côté site avant les noms définitifs** (bloc de disponibilités + formulaire
@@ -87,7 +87,6 @@ un agent à la fois · FR seulement (EN = session Traduction) · jamais de test 
 - 6 captures blog périmées à refaire dans leur prochain lot (Création ×4, Mes morceaux jam-rapide, dialogue « Neotone sur-mesure »).
 
 ### Attend David
-- Feu vert pour déployer le lien d'annulation dans les mails de confirmation du showcase.
 - Rappel J-1 : aux inscriptions confirmées seulement, ou à toutes sauf annulées (état actuel) ? Premier envoi le 17/10.
 - Prix Neotone¹ frêne : Sheet 2 450 € vs site 1 990 € HT (≈ 2 388 € TTC).
 - Article sur le nouveau son de l'app (journal 343 ; 44/53 notes transposées — ne pas écrire « note par note ») : go ?
