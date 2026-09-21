@@ -12,6 +12,8 @@ interface Props {
   ogType?: string
   keywords?: string
   lang?: Lang
+  /** Page privée (lien personnel) : exclue des moteurs. */
+  noindex?: boolean
 }
 
 const {
@@ -24,6 +26,7 @@ const {
   ogType = 'website',
   keywords = 'David Lesage, handpan, handpan numérique, Neotone, Handpan Constellation Studio, cours de handpan, showroom Paris, pédagogie musicale visuelle, ChromaKeys',
   lang = 'fr',
+  noindex = false,
 } = Astro.props
 
 const canonical = new URL(Astro.url.pathname, site.url).toString()
@@ -69,7 +72,7 @@ const desc = clampDescription(description)
 <meta name="description" content={desc} />
 <meta name="keywords" content={keywords} />
 <meta name="author" content="David Lesage" />
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
 <meta name="geo.region" content="FR-75" />
 <meta name="geo.placename" content="Paris" />
 

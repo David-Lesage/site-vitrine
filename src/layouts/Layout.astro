@@ -17,9 +17,10 @@ interface Props {
   // Pages traduites hors dictionnaire principal (ex. /zh/micro-muling) :
   // force l'attribut lang du <html> sans toucher au routage i18n.
   htmlLangOverride?: string
+  noindex?: boolean
 }
 
-const { title, description, image, ldJSON, ogType, keywords, htmlLangOverride } = Astro.props
+const { title, description, image, ldJSON, ogType, keywords, htmlLangOverride, noindex } = Astro.props
 const lang = getLang(Astro.url)
 const t = getDict(lang)
 
@@ -29,7 +30,7 @@ const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
 <!doctype html>
 <html lang={htmlLangOverride || htmlLang[lang]}>
   <head>
-    <SEO title={title} description={description} image={image} ldJSON={ldJSON} ogType={ogType} keywords={keywords} lang={lang} />
+    <SEO title={title} description={description} image={image} ldJSON={ldJSON} ogType={ogType} keywords={keywords} lang={lang} noindex={noindex} />
     <script is:inline>
       // Détection de la langue du visiteur, avec garde-fous :
       // — jamais si l'utilisateur a déjà choisi une langue (localStorage) ;

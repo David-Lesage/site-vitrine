@@ -1,0 +1,193 @@
+---
+// ============================================================================
+// /showcase/ma-venue?t=<jeton> — la personne inscrite annule ou reporte SA venue
+// (demande de David, 21/09/2026). Lien envoyé dans le rappel J-1 (EF
+// `showcase-reminder`) et, à terme, dans l'email de confirmation.
+// Page PRIVÉE : noindex + exclue du sitemap (astro.config.mjs).
+// Tout passe par l'EF `showcase-attendance` : jamais d'email affiché, jamais de
+// suppression (le statut devient 'cancelled' ou 'rescheduled').
+// Textes locaux (fr/en/es) plutôt que dans dict.ts : es.ts est GÉNÉRÉ par script
+// et une page privée à 3 phrases ne justifie pas une passe de traduction.
+// ============================================================================
+import Layout from '@/layouts/Layout.astro'
+import { upcomingShowcases } from '@/lib/agenda'
+import { localizePath } from '@/i18n/utils'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const upcoming = upcomingShowcases(lang).map((s) => ({ iso: s.iso, long: s.long, start: s.start, end: s.end }))
+const agendaHref = localizePath('/showroom', lang) + '#agenda'
+
+const T = {
+  fr: {
+    title: 'Ma venue au showcase',
+    loading: 'Un instant…',
+    intro: 'Tu es inscrit·e au showcase du',
+    hours: (a: string, b: string) => `de ${a} à ${b}, au Nid.`,
+    cancel: 'Je ne peux plus venir',
+    change: 'Changer de date',
+    confirmCancel: 'Tu confirmes ? Je libère ta place et je préviens David.',
+    yesCancel: 'Oui, j’annule',
+    back: 'Retour',
+    pick: 'Choisis ta nouvelle date :',
+    noDates: 'Aucune autre date n’est ouverte pour l’instant. Reviens bientôt voir l’agenda !',
+    doneCancel: 'C’est noté : ta venue est annulée. Merci d’avoir prévenu, ta place pourra profiter à quelqu’un d’autre. Tu vas recevoir un petit email de confirmation.',
+    doneRe: (d: string) => `C’est noté : rendez-vous le ${d} ! Tu recevras un rappel la veille, avec les infos d’accès.`,
+    already: 'Ta venue est déjà annulée. Si tu veux revenir, choisis une date dans l’agenda :',
+    seeAgenda: 'Voir l’agenda',
+    invalid: 'Ce lien ne fonctionne pas (ou plus). Écris-moi à contact@lesagedavid.fr et je m’en occupe.',
+    error: 'Oups, ça n’a pas marché. Réessaie dans un instant, ou écris à contact@lesagedavid.fr.',
+    hi: (n: string) => (n ? `Bonjour ${n} !` : 'Bonjour !'),
+  },
+  en: {
+    title: 'My showcase visit',
+    loading: 'One moment…',
+    intro: 'You’re booked for the showcase on',
+    hours: (a: string, b: string) => `from ${a} to ${b}, at Le Nid.`,
+    cancel: 'I can’t come anymore',
+    change: 'Change date',
+    confirmCancel: 'Are you sure? I’ll free up your spot and let David know.',
+    yesCancel: 'Yes, cancel',
+    back: 'Back',
+    pick: 'Pick your new date:',
+    noDates: 'No other date is open yet. Check the agenda again soon!',
+    doneCancel: 'Noted: your visit is cancelled. Thanks for letting me know — your spot can go to someone else. A short confirmation email is on its way.',
+    doneRe: (d: string) => `Noted: see you on ${d}! You’ll get a reminder the day before, with the access details.`,
+    already: 'Your visit is already cancelled. If you’d like to come, pick a date in the agenda:',
+    seeAgenda: 'See the agenda',
+    invalid: 'This link doesn’t work (anymore). Write to contact@lesagedavid.fr and I’ll sort it out.',
+    error: 'Oops, that didn’t work. Try again in a moment, or write to contact@lesagedavid.fr.',
+    hi: (n: string) => (n ? `Hi ${n}!` : 'Hi!'),
+  },
+  es: {
+    title: 'Mi visita al showcase',
+    loading: 'Un momento…',
+    intro: 'Estás inscrito·a en el showcase del',
+    hours: (a: string, b: string) => `de ${a} a ${b}, en Le Nid.`,
+    cancel: 'Ya no puedo ir',
+    change: 'Cambiar de fecha',
+    confirmCancel: '¿Lo confirmas? Libero tu plaza y aviso a David.',
+    yesCancel: 'Sí, cancelo',
+    back: 'Volver',
+    pick: 'Elige tu nueva fecha:',
+    noDates: 'Todavía no hay otra fecha abierta. ¡Vuelve pronto a mirar la agenda!',
+    doneCancel: 'Anotado: tu visita queda cancelada. Gracias por avisar, tu plaza podrá servirle a otra persona. Vas a recibir un pequeño correo de confirmación.',
+    doneRe: (d: string) => `Anotado: ¡nos vemos el ${d}! Recibirás un recordatorio la víspera, con la información de acceso.`,
+    already: 'Tu visita ya está cancelada. Si quieres venir, elige una fecha en la agenda:',
+    seeAgenda: 'Ver la agenda',
+    invalid: 'Este enlace no funciona (o ya no). Escríbeme a contact@lesagedavid.fr y me encargo.',
+    error: 'Uy, no ha funcionado. Inténtalo de nuevo en un momento o escribe a contact@lesagedavid.fr.',
+    hi: (n: string) => (n ? `¡Hola ${n}!` : '¡Hola!'),
+  },
+}
+const t = T[lang]
+// Les fonctions ne passent pas dans define:vars → on sérialise des gabarits.
+const strings = {
+  ...t,
+  hours: t.hours('{a}', '{b}'),
+  doneRe: t.doneRe('{d}'),
+  hi: t.hi('{n}'),
+  hiEmpty: t.hi(''),
+}
+const EF = 'https://zqcuhnjjrgmybftppkcl.supabase.co/functions/v1/showcase-attendance'
+const locale = lang === 'en' ? 'en-GB' : lang === 'es' ? 'es-ES' : 'fr-FR'
+---
+
+<Layout title={`${t.title} — David Lesage`} noindex>
+  <section class="bg-cream">
+    <div class="mx-auto max-w-xl px-4 py-14 sm:py-20">
+      <h1 class="font-display text-3xl font-700 text-ink">{t.title}</h1>
+      <div id="mv" class="mt-6 rounded-2xl border border-cream-deep bg-white/70 p-5 sm:p-7 text-ink-soft break-words">
+        <p data-s="loading">{t.loading}</p>
+
+        <div data-s="main" hidden>
+          <p class="font-600 text-ink" data-hi></p>
+          <p class="mt-2">{t.intro} <strong class="text-ink" data-date></strong>, <span data-hours></span></p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <button type="button" data-go="change" class="rounded-full bg-copper px-5 py-3 font-600 text-white hover:bg-rust">{t.change}</button>
+            <button type="button" data-go="cancel" class="rounded-full border border-ink-soft/30 px-5 py-3 font-600 text-ink hover:bg-cream-deep">{t.cancel}</button>
+          </div>
+        </div>
+
+        <div data-s="cancel" hidden>
+          <p>{t.confirmCancel}</p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <button type="button" data-act="cancel" class="rounded-full bg-rust px-5 py-3 font-600 text-white hover:bg-ink">{t.yesCancel}</button>
+            <button type="button" data-go="main" class="rounded-full border border-ink-soft/30 px-5 py-3 font-600 text-ink">{t.back}</button>
+          </div>
+        </div>
+
+        <div data-s="change" hidden>
+          <p>{t.pick}</p>
+          <div class="mt-4 flex flex-col gap-2" data-dates></div>
+          <p class="mt-4 hidden" data-nodates>{t.noDates}</p>
+          <button type="button" data-go="main" class="mt-5 rounded-full border border-ink-soft/30 px-5 py-3 font-600 text-ink">{t.back}</button>
+        </div>
+
+        <div data-s="done" hidden>
+          <p class="text-ink" data-msg></p>
+          <a href={agendaHref} class="mt-5 hidden rounded-full bg-copper px-5 py-3 font-600 text-white" data-agenda>{t.seeAgenda}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script define:vars={{ S: strings, EF, upcoming, locale }}>
+  const root = document.getElementById('mv')
+  const q = (s) => root.querySelector(s)
+  const show = (name) => root.querySelectorAll('[data-s]').forEach((el) => { el.hidden = el.dataset.s !== name })
+  const fmt = (iso) => new Intl.DateTimeFormat(locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso + 'T12:00:00'))
+  const done = (msg, agenda) => { q('[data-msg]').textContent = msg; const a = q('[data-agenda]'); a.classList.toggle('hidden', !agenda); a.classList.toggle('inline-block', !!agenda); show('done') }
+  const token = new URLSearchParams(location.search).get('t') || ''
+  let lead = null
+
+  async function call(body) {
+    const r = await fetch(EF, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ t: token, ...body }) })
+    const j = await r.json().catch(() => ({}))
+    if (!r.ok || !j.ok) throw new Error(j.error || 'error')
+    return j
+  }
+
+  async function init() {
+    if (!token) return done(S.invalid)
+    try {
+      const r = await fetch(EF + '?t=' + encodeURIComponent(token))
+      const j = await r.json().catch(() => ({}))
+      if (!r.ok || !j.ok) return done(r.status >= 500 ? S.error : S.invalid)
+      lead = j
+      if (j.status === 'cancelled') return done(S.already, true)
+      q('[data-hi]').textContent = j.first_name ? S.hi.replace('{n}', j.first_name) : S.hiEmpty
+      q('[data-date]').textContent = fmt(j.event_date)
+      q('[data-hours]').textContent = S.hours.replace('{a}', j.hours.start).replace('{b}', j.hours.end)
+      // Dates proposées = agenda du site ∩ dates validées par le serveur.
+      const serverDates = new Set((j.upcoming || []).map((u) => u.date))
+      const list = upcoming.filter((u) => serverDates.has(u.iso) && u.iso !== j.event_date)
+      const box = q('[data-dates]')
+      list.forEach((u) => {
+        const b = document.createElement('button')
+        b.type = 'button'
+        b.className = 'rounded-xl border border-cream-deep bg-white px-4 py-3 text-left hover:border-copper'
+        b.innerHTML = '<span class="block font-600 text-ink first-letter:uppercase"></span><span class="block text-sm"></span>'
+        b.children[0].textContent = u.long
+        b.children[1].textContent = u.start + ' – ' + u.end
+        b.addEventListener('click', () => act({ action: 'reschedule', new_date: u.iso }, () => done(S.doneRe.replace('{d}', u.long))))
+        box.appendChild(b)
+      })
+      q('[data-nodates]').classList.toggle('hidden', list.length > 0)
+      show('main')
+    } catch { done(S.error) }
+  }
+
+  async function act(body, ok) {
+    root.querySelectorAll('button').forEach((b) => (b.disabled = true))
+    try { await call(body); ok() } catch { done(S.error) }
+  }
+
+  root.addEventListener('click', (e) => {
+    const go = e.target.closest('[data-go]'); if (go) return show(go.dataset.go)
+    const a = e.target.closest('[data-act="cancel"]'); if (a) act({ action: 'cancel' }, () => done(S.doneCancel, true))
+  })
+  init()
+</script>
