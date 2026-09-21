@@ -1110,6 +1110,14 @@ Deno.serve(async (req) => {
                 //  2. showcase-waitlist → les DATES à venir + un lien par date (v22) ;
                 //  3. autre réservation → accusé de réception (David répond) ;
                 //  4. inscription simple → « tu es sur la liste ».
+                // Lien « Annuler ou reporter ma venue » (21/09/2026, feu vert David) :
+                // le jeton est posé par défaut en base à l'insertion de la ligne.
+                let attendanceToken: string | null = null;
+                if (isShowcaseBooking && leadId) {
+                    const { data: tok } = await admin
+                        .from('site_leads').select('attendance_token').eq('id', leadId).maybeSingle();
+                    attendanceToken = (tok?.attendance_token as string | undefined) ?? null;
+                }
                 const showcaseHours = showcaseHoursFor(eventDate);
                 const subject = isShowcaseBooking
                     ? showcaseConfirmationSubject(eventDate, lang)
@@ -1127,6 +1135,7 @@ Deno.serve(async (req) => {
                         endTime: eventEnd ?? showcaseHours.end,
                         peopleCount,
                         priceGrid,
+                        attendanceToken,
                     })
                     : isShowcaseWaitlist
                         ? showcaseDatesHtml({ firstName, lang, events: upcomingEvents })
