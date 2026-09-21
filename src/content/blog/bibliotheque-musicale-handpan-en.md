@@ -71,7 +71,7 @@ A blocked piece still opens. Click it and the app doesn't slam the door: it name
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-Neither a wall nor plain transposition: a door. The app says what is missing, offers a second handpan that fills exactly that gap — with the number of pieces gained —, offers a made-to-measure Neotone generated with precisely those notes, and still lets you into the chart.
+Neither a wall nor plain transposition: a door. The app says what is missing, offers a second handpan that fills exactly that gap — with the number of pieces gained —, and still lets you into the chart.
 
 On an acoustic handpan the app goes further and offers the piece **transposed into your pan's key** where that is possible — since the notes themselves will not move. On an electronic handpan, it is the instrument that goes to meet the key of the piece.
 

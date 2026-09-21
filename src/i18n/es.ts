@@ -1482,7 +1482,7 @@ export const es: Dict = {
         "d": "Explora la escalas del mundo: Japón, Oriente, África, música celta… Escúchala, apréndela, viaja."
       },
       {
-        "t": "Creación",
+        "t": "Crear",
         "d": "Crea tus propias escalas personalizadas, nota por nota y color por color, y guárdalas en tu biblioteca."
       },
       {

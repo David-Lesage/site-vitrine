@@ -1,6 +1,6 @@
 ---
 title: "Reading the colours: the note, its place in the scale, or nothing"
-description: "The ChromaKeys menu asks three independent questions: what the colour says, whether shared notes split apart, and whether chords are drawn. Three settings, valid on an acoustic handpan and an electronic one alike."
+description: "Reading the colours means answering three independent questions: what the colour says, whether shared notes split apart, and whether chords are drawn. Three settings, valid on an acoustic handpan and an electronic one alike."
 pubDate: 2026-09-24
 cover: "/images/blog-chromakeys-2026-00-couverture-18-notes.webp"
 category: "methode"
@@ -10,7 +10,11 @@ permalink: "les-deux-visions-chromakeys"
 draft: false
 ---
 
-Whether your handpan is acoustic or electronic, a colour can say two things. It can say **which note** you have under the mallet. Or it can say **which place** that note occupies in your scale. Two different readings of the same instrument, and both are right.
+Whether your handpan is acoustic or electronic, a colour can say two things.
+
+It can say **which note** you have under your fingers. Or it can say **which place** that note holds in your <abbr title="The series of notes on your instrument, arranged from lowest to highest.">scale</abbr>.
+
+These are two different readings of the same instrument, and **both are right**.
 
 The app doesn't choose for you: it lets you choose. It's a setting, it takes one click, and it's called **ChromaKeys**.
 
@@ -24,27 +28,32 @@ To see this language in motion, here is the first video of the series about the 
   <figcaption>Un nouveau langage visuel pour apprendre le handpan grâce aux couleurs, la géométrie et les émotions</figcaption>
 </figure>
 
+On a handpan, the note in the centre is **domed**: that's the **ding**. The other notes are hollowed into the metal. Here, they are all simply called **notes**.
+
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Acoustic · D Kurd 10</span><span style="flex:1">Electronic · Neotone Mutant</span></div>
   <img
     src="/images/blog-chromakeys-2026-01-ouverture-paire.webp"
     width="2560"
     height="1168"
-    alt="The toolbar at the top of the screen, with the rainbow-edged Chromakeys island, and below it an acoustic D Minor / Kurd 10 handpan seen from above. Every dimple carries its own colour: the D3 ding and D4 orange, A3 and A4 indigo, A#3 light indigo, C4 and C5 red, E4 yellow, F4 green, G4 sky blue. The handpan screen, centred under the ding, reads « D Minor / Kurd 10 »."
+    alt="Two captures side by side, same setting. On the left, an acoustic D Minor / Kurd 10 handpan; on the right, a 19-note Neotone Mutant in Logic mode, anchored in C major. Above each, the Chromakeys island, with a copper ring around the “the note” choice. Left: the D3 ding and D4 orange, A3 and A4 indigo, A#3 light indigo, C4 and C5 red, E4 yellow, F4 green, G4 sky blue. Right: the Cs red (C2 in the centre, C3, C4), the Ds orange, the Es yellow, the Fs green, the Gs sky blue, the As indigo, the Bs magenta."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>An <strong>acoustic</strong> D Kurd 10 with colour set to <em>the note</em>: ten dimples, ten colours, and two Ds in the very same orange. (Screenshot of the French interface.)</figcaption>
+  <figcaption>Colour set to <em>the note</em> (circled in copper), on an <strong>acoustic</strong> pan and on an <strong>electronic</strong> pan. Ten notes on one side, nineteen on the other, and the same rule: one note, one colour. (Screenshots of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
+And what if the colour said **nothing**? Under the ChromaKeys name there is an **Off / On** switch. On *Off*, the colours go out and the pan is bare metal again. On *On*, they come back.
+
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">ChromaKeys Off</span><span style="flex:1">ChromaKeys On</span></div>
   <img
     src="/images/blog-chromakeys-2026-14-off-on-acoustique.webp"
     width="2572"
     height="1176"
-    alt="Two side-by-side screenshots of the same acoustic D Minor / Kurd 10 handpan, same framing. A copper ring circles the ChromaKeys Off/On switch on each half. Left, Off: the ten notes have no colour. Right, On, colour says “the note”: each note has its own colour."
+    alt="Two captures side by side of the same acoustic D Minor / Kurd 10 handpan, same framing, with the Chromakeys island above. A copper ring circles the Off/On switch on each half; the rest of the bar is slightly dimmed. Left, the switch is Off: the ten notes have no colour, only their outline and their name on the metal. Right, it is On and the colour says “the note”: the D3 ding and D4 orange, A3 and A4 indigo, A#3 light indigo, C4 and C5 red, E4 yellow, F4 green, G4 sky blue."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
@@ -52,30 +61,47 @@ To see this language in motion, here is the first video of the series about the 
   <figcaption>The same D Kurd 10, ChromaKeys <strong>Off</strong> on the left, <strong>On</strong> on the right: without colour every note looks alike; with it, you tell them apart at a glance. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
-
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">ChromaKeys Off</span><span style="flex:1">ChromaKeys On</span></div>
   <img
-    src="/images/blog-chromakeys-2026-14-off-on-18-notes.webp"
-    width="2476"
-    height="1152"
-    alt="Two side-by-side screenshots of the same acoustic “D Kurd 18 — David Lesage Signature” handpan, same framing, ChromaKeys switch ringed in copper. Left, Off: eighteen notes without colour. Right, On: each note has the colour of its name."
+    src="/images/blog-chromakeys-2026-14-off-on-electronique.webp"
+    width="2552"
+    height="1168"
+    alt="Two captures side by side of the same 19-note Neotone Mutant, in Logic mode anchored in C major, same framing, with the Chromakeys island above. A copper ring circles the Off/On switch on each half. Left, Off: the nineteen notes without colour, only their outline and their name on the wood. Right, On: each note takes back the colour of its name, the Cs red, the Ds orange, the Es yellow, the Fs green, the Gs sky blue, the As indigo, the Bs magenta."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>My <strong>D Kurd 18</strong>, Off then On. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The same test on the <strong>electronic</strong> pan: on <strong>Off</strong>, nineteen notes without colour; on <strong>On</strong>, each takes back the colour of its note. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
+On an eighteen-note pan, the difference is even more striking.
+
+<figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">ChromaKeys Off</span><span style="flex:1">ChromaKeys On</span></div>
+  <img
+    src="/images/blog-chromakeys-2026-14-off-on-18-notes.webp"
+    width="2476"
+    height="1152"
+    alt="Two captures side by side of the same acoustic “D Kurd 18 — David Lesage Signature” handpan, same framing, with the Chromakeys island above. A copper ring circles the Off/On switch on each half. Left, Off: twelve notes on top and six bottom notes all around, all without colour. Right, On, the colour says “the note”: the Ds orange, the As and A sharps indigo, the Cs red, the Fs green, the Gs sky blue, the E yellow."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>My <strong>D Kurd 18</strong>, Off then On: eighteen grey notes blur together, eighteen coloured notes sort themselves into families. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
 ## The ChromaKeys menu: three questions, not one
 
-At the top of the screen, the tool bar. Inside it, an island with a multicoloured outline: **ChromaKeys**. It doesn't ask one question, it asks three — and they are independent. You can answer one without touching the other two.
+At the top of the screen, the toolbar. Inside it, an island with a multicoloured outline: **ChromaKeys**. It asks two questions, and a third one is set elsewhere, on the chord cards. All three are independent: you can answer one without touching the other two.
 
-1. **Colour says…** → *the note* · *its place in the scale* · *nothing*
+1. **Colour says…** → *the note* · *its place in the scale*. For it to say **nothing**, you don't need a third choice: that's the **Off** switch under the ChromaKeys name. Switch back to *On*, and the last reading you chose comes back.
 2. **Shared notes** → *Off* / *On*
-3. **Chord drawing** → there's nothing to click here: **the eye lives on each chord card**, at the bottom of the screen. The island just reminds you of it.
+3. **Chord drawing** → there's nothing to click here: **the eye lives on each <abbr title="At least three notes played together — for example C, E, G.">chord</abbr> card**, at the bottom of the screen, not in the island.
 
-You'll notice each setting carries two labels: the plain word first, and the theory word in small type right beside it. *The note* is what others call the **chakras**. *Its place in the scale* is what's called the **degrees**. I say it once here, and after that I use the plain words.
+You'll notice that the two choices of "Colour says…" each carry two labels: the plain word first, and the theory word in small type right beside it. *The note* is what others call the **chakras**. *Its place in the scale* is what's called the **<abbr title="The number of the place a note holds in the scale: 1st, 2nd, 3rd…">scale degrees</abbr>**. I say it once here, and after that I use the plain words.
 
 
 ## "Colour says the note": a C always red
@@ -87,9 +113,27 @@ First possible answer. Here the colour is glued to the **name** of the note, and
 - An **F** is green.
 - An **A** is indigo.
 
-All twelve notes have their colour — sharps included, each with its own shade. Change scale, change instrument, change key: nothing moves. Red stays C.
+All twelve notes have their colour — sharps included, each with its own shade. Change scale, change instrument, change <abbr title="The reference note the scale is built on: in C major, the key is C.">key</abbr>: nothing moves. Red stays C.
 
-The most immediate benefit is **the octave**. With nothing else turned on, every *D* on your shell is orange: the low one, the high one, the one up on the right. At a glance, you see they're the same note at different pitches. That's the kind of thing that takes months to absorb by ear, and becomes obvious in a second through colour.
+<figure>
+  <img
+    src="/images/blog-chromakeys-2026-12-arc-en-ciel.webp"
+    width="1800"
+    height="1478"
+    alt="The ChromaKeys creation palette: an arc of twelve round dots above the acoustic D Minor / Kurd 10 handpan. From left to right: C dark red, C sharp bright red, D dark orange, D sharp light orange, E yellow, F dark green, F sharp light green, G sky blue, G sharp light sky blue, A indigo, A sharp light indigo, B magenta. Under the arc, a curved band runs from red to violet and carries the marks Octave 2, Octave 3, Octave 4, Octave 5."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The twelve colours, in order. The seven notes, and between them <strong>the <abbr title="The smallest step between two notes: from C to C sharp, for example.">semitones</abbr> in a lighter shade of the same colour</strong>: that's the only thing to remember.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
+The most immediate benefit is **the <abbr title="The same note, lower or higher: a low D and a high D are an octave apart.">octave</abbr>**.
+
+With nothing else turned on, every *D* on your shell is orange: the low one, the high one, the one up on the right. At a glance, you see they are **the same note at different pitches**.
+
+That's the kind of thing that takes months to absorb by ear, and becomes obvious in a second through colour.
 
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Acoustic · D Kurd 10</span><span style="flex:1">Electronic · Neotone Mutant</span></div>
@@ -97,103 +141,160 @@ The most immediate benefit is **the octave**. With nothing else turned on, every
     src="/images/blog-chromakeys-2026-03-note-re-paire.webp"
     width="2080"
     height="935"
-    alt="The Chromakeys island and, below it, the acoustic D Minor / Kurd 10 handpan in full size. The D3 ding at the centre and D4 at the lower left carry exactly the same orange, although they are an octave apart. Around them: A3 and A4 indigo, A#3 light indigo, C4 and C5 red, E4 yellow, F4 green, G4 sky blue."
+    alt="Two pans side by side, colour set to “the note”. On the left, the acoustic D Minor / Kurd 10 handpan: a copper ring circles the D3 ding and D4, in the same orange. On the right, the Neotone Mutant anchored in C major: a copper ring circles D2, D3 and D4, also in the same orange. The other notes keep the colour of their name: Cs red, Es yellow, Fs green, Gs sky blue, As indigo, Bs magenta."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption><strong>The two Ds are the same orange</strong> — the ding and the lower dimple. The octave becomes visible before it becomes audible. (Screenshot of the French interface.)</figcaption>
+  <figcaption><strong>The Ds are the same orange</strong>, circled in copper: the D3 ding and D4 on the acoustic pan, D2, D3 and D4 on the electronic pan. The octave becomes visible before it becomes audible. Same for the As and the Cs. (Screenshots of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-## What is a degree? (the eight-year-old version)
+## What is a scale degree?
 
 Before the second answer, one word is needed. Just one.
 
-A scale is **seven places**, from the first to the seventh. Like the steps of a staircase. Each note of your scale occupies one step, and only one. The **degree** of a note is **the number of its step**. Nothing more.
+A scale is **seven places**, from the first to the seventh. Like the steps of a staircase.
 
-What's lovely is that the steps have a character. Always the same one, in any key. I gave them names:
+Each note of your scale sits on one step, and only one. The **degree** of a note is **the number of its step**. Nothing more.
 
-- **I — Balance** (*Équilibre*): home, where everything settles.
-- **II — Momentum** (*Élan*): it starts, it pushes gently.
-- **III — Adventure** (*Aventure*): you leave the known behind.
-- **IV — Ease** (*Détente*): you breathe.
+What's lovely is that the steps have a character — **always the same one, in any key**. I gave them names:
+
+- **I — Balance**: home, where everything settles.
+- **II — Momentum**: it starts, it pushes gently.
+- **III — Adventure**: you leave the known behind.
+- **IV — Relaxation**: you breathe.
 - **V — Tension**: it pulls, it asks for what comes next.
-- **VI — Nostalgia** (*Nostalgie*): sweetness with a sting.
-- **VII — Mystery** (*Mystère*): suspended, it can't stay there.
+- **VI — Nostalgia**: sweetness with a sting.
+- **VII — Mystery**: suspended, it can't stay there.
 
-Each one also has its vowel, to sing: OU · O (as in "beau") · O (as in "or") · A · E · I · M. That's the bridge to singing, and it's worked in the **Sing & Play** mode — a subject of its own.
+Each one also has its vowel, to sing: OU · O (as in "beau") · O (as in "or") · A · E · I · M. That's the bridge to singing, and it's worked on in **Sing & Play** mode — a subject of its own.
 
 ## "Colour says its place in the scale"
 
-Second answer. Here the colour no longer looks at the note's name, but at its step.
+Second answer. Here the colour no longer looks at the note's name: it looks at **the chord it serves** in your scale.
 
-**The I is always red.** If your scale is in D, it's the D that turns red. In E, the E. Colour follows the place, not the name. And the drawing made by the seven colours stays identical from one key to another: that's what lets you play the same thing elsewhere without relearning anything.
+**On an electronic handpan, in <abbr title="A mode specific to the electronic handpan: its notes are arranged by scale degree, from I to VII.">Logic mode</abbr>, this colour is the colour of the chord's degree.** The I chord is always red, the II orange, and so on. If your scale is in D, it's the notes of the D chord that turn red. **Colour follows the place, not the name.**
 
-⚠️ **An honest caveat**: this is true **in Logic mode**. Elsewhere — in Scales, in Creation — the button keeps the same name, but **the calculation changes**: every note of a chord then takes the colour of the note the chord is named after. Useful — you see at a glance which notes go together — but it isn't reading by degrees. Look at the screenshot below: on the D Kurd, four dimples end up in the same orange as D, not because they are Ds, but because they belong to a D chord.
+A visible consequence: two notes with the same name can carry two different colours, because they don't serve the same chord.
+
+And the pattern of the seven colours stays identical from one key to another: that's what lets you **play the same thing elsewhere without relearning anything**.
+
+**Outside Logic mode** — in Scales, in My instrument, and always on an acoustic handpan — the button keeps the same name, but each chord takes the colour of **the note it is named after**. You still see at a glance which notes go together, but it is no longer the reading by degrees.
+
+On the D Kurd in the screenshots below, F4 and A4 take on D's orange: they aren't Ds, but they belong to the D chord.
+
+
+### The two readings, side by side
+
+Here is the same handpan, photographed twice: on the left the colour says **the note**, on the right **its place in the scale**. Nothing else has moved.
 
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Colour says: the note</span><span style="flex:1">Colour says: its place in the scale</span></div>
   <img
-    src="/images/blog-chromakeys-2026-04-place-acoustique-v6.webp"
-    width="1226"
-    height="1096"
-    alt="The acoustic D Minor / Kurd 10 handpan with the « place in the scale » setting. Colours no longer follow the names of the dimples: D3, D4, F4 and A4 share the orange of D, A#3, E4 and G4 the yellow of E, C5 the green of F. In the toolbar, the second choice of « La couleur dit… » is selected."
+    src="/images/blog-chromakeys-2026-09-note-place-acoustique-v6.webp"
+    width="2560"
+    height="1168"
+    alt="Two captures side by side of the same acoustic D Minor / Kurd 10 handpan, same framing, outside Logic mode. On each half, a copper ring circles the “Colour says…” setting and six notes. Left, “the note”: F4 green, A4 indigo, C5 red, A#3 light indigo, G4 sky blue, C4 red. Right, “its place in the scale”: F4 and A4 orange, C5 green, A#3 and G4 yellow, C4 indigo. D3, D4, E4 and A3 don't change."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The same setting <em>outside</em> Logic mode: the colour no longer names the step, it names <strong>the chord</strong> — every note of a chord takes the colour of the note the chord is named after. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The <strong>same</strong> acoustic handpan, twice, outside Logic mode. Six notes change colour, circled in copper: <strong>F4 and A4 turn to the orange</strong> of the D chord, C5 to the green of the F chord, A#3 and G4 to the yellow of the E chord, C4 to the indigo of the A chord. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Colour says: the note</span><span style="flex:1">Colour says: its place in the scale</span></div>
   <img
-    src="/images/blog-chromakeys-2026-04-place-electronique.webp"
-    width="2000"
-    height="1105"
-    alt="The Neotone Mutant in Logic mode, C major, set to « place in the scale », with the seven chord cards below coloured by degree: I ÉQUILIBRE C red, II ÉLAN Dm orange, III AVENTURE Em yellow, IV DÉTENTE F green, V TENSION G blue, VI NOSTALGIE Am indigo, VII MYSTÈRE B° magenta. On the pan, each dimple carries the colour of the degree it belongs to."
+    src="/images/blog-chromakeys-2026-09-note-place-electronique-v7.webp"
+    width="2552"
+    height="1168"
+    alt="Two captures side by side of the same Neotone Mutant, in Logic mode anchored in C major, same framing. On each half, a copper ring circles the “Colour says…” setting and six notes: C2, E3, G3, C4, D2 and D3. Left, “the note”: C2 and C4 red, E3 yellow, G3 sky blue, D2 and D3 orange. Right, “its place in the scale”: C2, E3, G3 and C4 all red, D2 orange, D3 sky blue."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>In Logic mode the colour really does name <strong>the step</strong>: I is red, VII magenta, and the seven chord cards use exactly those colours. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The <strong>same</strong> electronic pan, twice, in Logic mode. On the right, the notes of the I chord (C2, E3, G3, C4, circled) are <strong>all red</strong>; D2 is orange (II), but D3 is sky blue because it serves the V chord. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
+### When there are a lot of notes
+
+Ten notes, you can remember. But my stage handpan has **eighteen**. Here are the two readings you've just seen, on that big instrument.
+
+When the brain has a lot of information to handle at once, it stops sorting: it just takes the hit. **Colour does the sorting for it.**
+
+<figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Colour says: the note</span><span style="flex:1">Colour says: its place in the scale</span></div>
+  <img
+    src="/images/blog-chromakeys-2026-13-note-place-18-notes-v7.webp"
+    width="2464"
+    height="1144"
+    alt="Two captures side by side of the same acoustic “D Kurd 18 — David Lesage Signature” handpan, same framing. On each half, a copper ring circles the “Colour says…” setting and six notes: A3, A#3, C4, G4, A#5 and F3. Left, “the note”: A3 indigo, A#3 and A#5 light indigo, C4 red, G4 sky blue, F3 green. Right, “its place in the scale”: A3 and F3 orange, A#3 sky blue, C4 green, G4 and A#5 yellow."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>My <strong>D Kurd 18</strong>, twice. On the left, each note has the colour of its name; on the right, the colour of the chord it serves. Six notes change, circled in copper — watch <strong>C4 turn green and A3 turn orange</strong>. It's the same instrument: only the way of reading it has changed. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
 ## "Shared notes": when one note serves several chords
 
-Third idea, and it's a setting of its own — that was my realisation last week: it had no business sitting inside the previous choice.
+Third idea, and it's a setting of its own.
 
-One and the same note can belong to several chords. When **Shared notes** is set to *On*, that note **splits into slices** — a pie, one slice per chord it takes part in, each slice in the colour of the chord concerned. When colour says *the note*, sharing takes another form: a **thin ring** around the note's colour, which keeps the note recognisable.
+One and the same note can belong to several chords.
 
-Three things checked in the app as I wrote this, which I'd rather tell you than let you hunt for:
+When **Shared notes** is *On*, that note **splits into slices** — a pie, one slice per chord it takes part in, each slice in the colour of the chord concerned.
 
-- On an **acoustic D Kurd 10**, **eight dimples out of ten** are split. That isn't a textbook case: that's nearly your whole shell.
-- **In Logic mode too, on a Neotone Mutant in C major, many dimples are cut in two.** I believed the opposite; the screenshot says otherwise: the seven degrees really do share notes.
-- **The slices disappear as soon as a chord eye is opened.** The two never coexist on screen: either you're looking at the network of shared notes, or you're looking at a drawn chord.
+When the colour says *the note*, sharing takes another form: a **thin ring** around the note's colour, which keeps the note recognisable.
+
+Three things to know:
+
+- On an **acoustic D Kurd 10**, **eight notes out of ten** split. That isn't a textbook case: that's nearly your whole shell.
+- **In Logic mode too**, on a Neotone Mutant in C major, **many notes are split**: the seven degrees share notes.
+- **The slices disappear as soon as a chord eye is opened.** The two never coexist on screen: either you look at the network of shared notes, or you look at a drawn chord.
 
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Shared notes: Off</span><span style="flex:1">Shared notes: On</span></div>
   <img
-    src="/images/blog-chromakeys-2026-05-partagees-acoustique.webp"
-    width="2000"
-    height="2000"
-    alt="Close-up of the acoustic D Minor / Kurd 10 pan with shared notes on. Eight dimples out of ten are cut into pie slices of two or three colours — F4 in blue, green and orange, E4 in red, yellow and blue, A#3 in indigo, sky blue and yellow. Only the D3 ding and A3 stay a single colour."
+    src="/images/blog-chromakeys-2026-10-partagees-acoustique-v6.webp"
+    width="2560"
+    height="1168"
+    alt="Two captures side by side of the same acoustic D Minor / Kurd 10 handpan, colour set to “the note”. On each half, a copper ring circles the “Shared notes” setting as well as F4 and E4. Left, Off, each note has a single colour. Right, On, a ring of colours appears around most notes: F4 and E4 carry three arcs each; the D3 ding and A3 stay without a ring."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption><strong>Shared notes</strong>: each slice names a chord the note belongs to. On this D Kurd, eight dimples out of ten serve in several chords. (Screenshot of the French interface.)</figcaption>
+  <figcaption><strong>Shared notes</strong>, on the same acoustic pan: off on the left, on on the right. Each arc of the ring names a chord the note belongs to: look for example at <strong>F4 and E4, three arcs each</strong> (circled). Only the ding and A3 stay bare. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
-<!-- 📷 SCREENSHOT NOT PRODUCED (state does not exist in the app, checked 08/09/2026): on a
-     Neotone, the Scales tab is the Scale Library — the pan stays empty there (no notes, no
-     names, screen reading « Bibliothèque de Gammes »), so there is no ring to show. The thin
-     ring around the note colour does exist, but it shows on the acoustic pan.
-     Original marker kept:
-     📷 CAPTURE À PRODUIRE (APP) — id: CK1-05-electronique — Neotone Mutant, mode Gammes (PAS Logique : en Logique aucune note n'est partagée), gamme C majeur, niveau Musicien, La couleur dit = la note, Notes partagées = On, aucun œil ouvert ; on doit voir les anneaux fins autour des couleurs de notes ; fichier attendu /images/blog-chromakeys-2026-05-partagees-electronique.webp -->
+
+<figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Shared notes: Off</span><span style="flex:1">Shared notes: On</span></div>
+  <img
+    src="/images/blog-chromakeys-2026-10-partagees-electronique-v6.webp"
+    width="2552"
+    height="1168"
+    alt="Two captures side by side of the same Neotone Mutant, in Logic mode anchored in C major, colour set to “its place in the scale”. On each half, a copper ring circles the “Shared notes” setting as well as G3 and F3. Left, Off, each note has a single colour. Right, On, G3 and F3 are cut into three slices; E3, B3, D3, B2, A3, C3 and A2 into two."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The same test on the electronic pan. <strong>Here too notes are shared</strong>: G3 and F3 in three slices (circled); E3, B3, D3, B2, A3, C3 and A2 in two. (Screenshot of the French interface.)</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
+
 
 ## "Chord drawing": the eye that traces the constellation
 
-On each chord card, at the bottom of the screen, there's an eye. You open it, and the **chord's constellation is traced** on the instrument: a path linking its notes together. That drawing is what stays the same when you change key, and that's where Logic mode becomes a machine for understanding.
+On each chord card, at the bottom of the screen, there's an eye.
+
+You open it, and the **chord's constellation is traced** on the instrument: a path linking its notes together.
+
+That drawing is what **stays the same when you change key** — and that's where Logic mode becomes a machine for understanding.
 
 What you see depends on your answer to the first question:
 
@@ -203,31 +304,36 @@ What you see depends on your answer to the first question:
 Two ways of looking at the same chord: its function on one side, its geography on the other.
 
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Eye closed</span><span style="flex:1">Eye open</span></div>
   <img
-    src="/images/blog-chromakeys-2026-06-oeil-acoustique.webp"
-    width="2000"
-    height="1222"
-    alt="The acoustic pan with a single eye open, the one on the Accord 1 card (Dm — D F A). Four dimples stay lit and each keeps its own colour: the D3 ding and D4 orange, F4 green, A4 indigo, joined by an orange path. The other six dimples are greyed out. Below, the row of seven chord cards, the first eye struck through."
+    src="/images/blog-chromakeys-2026-11-oeil-acoustique-v6.webp"
+    width="2600"
+    height="1236"
+    alt="Two captures side by side of the same acoustic D Minor / Kurd 10 handpan, with the Chromakeys island at the top and the chord cards at the bottom. On each half, a copper ring circles the eye of the Accord 1 (Dm) card and the four notes of the chord: D3, D4, F4 and A4. Left, the eye is closed: every note has its colour. Right, it is open: an orange path joins D3, D4, F4 and A4, and the other notes turn grey."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>One eye open: the constellation is drawn and <strong>the rest of the instrument goes grey</strong>. With « the note », each note of the chord keeps its colour. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The eye of the <strong>Accord 1</strong> (Dm) card, circled in copper: closed on the left, open on the right. The constellation is traced between D3, D4, F4 and A4, and <strong>the rest of the instrument dims to grey</strong>. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
 <figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Eye closed</span><span style="flex:1">Eye open</span></div>
   <img
-    src="/images/blog-chromakeys-2026-06-oeil-electronique.webp"
-    width="2000"
-    height="1105"
-    alt="The Neotone Mutant in Logic mode, C major, eye open on the I ÉQUILIBRE C card. The notes of the chord — C2 at the centre, C3, E3, G3, C4 — are all the same red and joined by a red path; the other fifteen dimples are grey. The handpan screen reads « I Équilibre C »."
+    src="/images/blog-chromakeys-2026-11-oeil-electronique-v7.webp"
+    width="2600"
+    height="1155"
+    alt="Two captures side by side of the same Neotone Mutant, in Logic mode anchored in C major, colour set to “its place in the scale”, with the Chromakeys island at the top and the seven chord cards at the bottom. On each half, a copper ring circles the eye of the I Équilibre (C) card and the notes C2, E3, G3 and C4. Left, the eye is closed. Right, it is open: a red path joins C2, E3, G3 and C4, all red, and the other notes turn grey."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The same gesture with « place in the scale »: <strong>the whole chord is red</strong>, because it is the I. Shape and colour say the same thing. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The same gesture on the electronic pan: <strong>the whole chord is red</strong> (C2, E3, G3, C4), because it is the I. Shape and colour say the same thing. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
+
+
 
 ## You have nothing to set: the presets by level
 
@@ -237,9 +343,9 @@ If all that sounds like a lot, good news: you have nothing to do. Your **level**
 |---|---|---|
 | **Discovery** | the note | Off |
 | **Apprentice** | its place in the scale | On |
-| **Musician** | everything visible and adjustable | |
+| **Musician** | everything visible and adjustable | your choice |
 
-In Discovery, the island shrinks to the essentials: **a single switch**, Off or On. The other two settings aren't merely preset, they're put away — you can't knock them out of place by accident. Nothing has been removed from the app: everything comes back at Apprentice level.
+In Discovery, the island shrinks to the essentials: **a single switch**, Off or On. The other two settings are put away: you can't knock them out of place by accident, and they come back at Apprentice level.
 
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Discovery level</span><span style="flex:1">Apprentice level</span></div>
@@ -247,12 +353,12 @@ In Discovery, the island shrinks to the essentials: **a single switch**, Off or 
     src="/images/blog-chromakeys-2026-07-niveaux-acoustique.webp"
     width="2560"
     height="1168"
-    alt="The whole toolbar at Discovery level. The Chromakeys island now holds only an Off/On switch under its name: the three detailed settings are gone. Next to it, the Handpan Appearance island is reduced to Fingering, Fingerings, Constellation and Texture, then the Export island."
+    alt="Two captures side by side of the same acoustic D Minor / Kurd 10 handpan. On each half, a copper ring circles the Chromakeys island. Left, at Discovery level, the island holds only an Off/On switch and the note names are hidden; each note carries the colour of its name. Right, at Apprentice level, the island shows “Colour says…” on “its place in the scale” and “Shared notes” On: the note names are shown and several notes are cut into coloured slices."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>At <strong>Discovery</strong> level the island shrinks to a single switch. Nothing was removed from the app: it is tidied away until you need it. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The same D Kurd 10, two levels. At <strong>Discovery</strong>, the island shrinks to a single switch, Off or On. At <strong>Apprentice</strong>, the settings come back, already set: place in the scale, and shared notes on. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 <figure>
@@ -261,44 +367,18 @@ In Discovery, the island shrinks to the essentials: **a single switch**, Off or 
     src="/images/blog-chromakeys-2026-07-niveaux-electronique-v7.webp"
     width="2552"
     height="1248"
-    alt="The toolbar at Apprentice level, above the Neotone Mutant in C major. The three Chromakeys settings are visible again: « place in the scale » is selected and « shared notes » is On. On the pan, several dimples are split into two degree colours."
+    alt="Two captures side by side of the same Neotone Mutant, in Logic mode anchored in C major. On each half, a copper ring circles the Chromakeys island. Left, at Discovery level: a single Off/On switch, note names hidden, each note in the colour of its name. Right, at Apprentice level: “its place in the scale” and “Shared notes” On, names shown, several notes cut into two or three slices."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>At <strong>Apprentice</strong> level the settings come back, already set: place in the scale, and shared notes on. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The same pair on the electronic pan: a single switch at Discovery, the settings already set at Apprentice. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
 ## And next
 
-Once you read the colours by place in the scale, something unexpected happens: the drawing of each chord no longer depends on the key. The I has the same shape in C, in D, in A. It is exactly the gesture of a guitarist putting on a capo — except that on an electronic handpan, the capo is a button. That's the subject of the next article.
+Once you read the colours by place in the scale, something unexpected happens: the drawing of each chord no longer depends on the key. The I has the same shape in C, in D, in A. It is exactly the gesture of a guitarist putting on a capo — except that on an electronic handpan, the capo is a button. That's the subject of [the next article: *The handpan capo*](/en/blog/le-capo-du-handpan).
 
-<!-- lien à poser : article capo -->
+The words don't change from one instrument to the other — acoustic or electronic, it's the same screen, the same three questions. That's the point.
 
-<figure>
-  <img
-    src="/images/blog-chromakeys-2026-08-cloture-acoustique.webp"
-    width="2000"
-    height="1222"
-    alt="Wide shot of the whole acoustic screen: the toolbar, the D Minor / Kurd 10 handpan with the Dm chord drawn and the handpan screen centred under the ding, and at the bottom the row of seven chord cards (Dm, E°, F, Gm, Am, A#, C)."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Everything fits on one screen: the settings on top, the instrument in the middle, the chords at the bottom. (Screenshot of the French interface.)</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>
-<figure>
-  <img
-    src="/images/blog-chromakeys-2026-08-cloture-electronique.webp"
-    width="2000"
-    height="1105"
-    alt="The same wide shot on the electronic side: the toolbar, the Neotone Mutant with chord I entirely red and the handpan screen reading « I Équilibre C », and at the bottom the seven degree cards, from I ÉQUILIBRE C to VII MYSTÈRE B°."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>And the same screen on an electronic pan. The words do not change from one instrument to the other — that is the point. (Screenshot of the French interface.)</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>

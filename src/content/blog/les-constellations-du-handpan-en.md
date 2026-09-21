@@ -10,7 +10,7 @@ permalink: "les-constellations-du-handpan"
 draft: false
 ---
 
-A Constellation is a chord you see rather than a chord you count. In [Handpan Constellation Studio](/en/handpan-app), the notes that sound together link up with glowing lines and form a recognisable figure. Your eye keeps a drawing, your hand replays it.
+A <abbr title="The drawing that links, on the pan, the notes of one chord.">Constellation</abbr> is a <abbr title="At least three notes played together, for example C, E, G.">chord</abbr> you see rather than a chord you count. In [Handpan Constellation Studio](/en/handpan-app), the notes that sound together link up with glowing lines and form a recognisable figure. Your eye keeps a drawing, your hand replays it.
 
 This holds **whether your handpan is acoustic or electronic**. An acoustic pan in D Kurd 10 and a Neotone both draw their chords: same lines, same reading, same gesture. The app offers three ways to trace that shape: Polygon, Open and Hands.
 
@@ -32,23 +32,23 @@ Handpan Constellation Studio lets you choose **how** that drawing appears, depen
 
 ## The 3 Constellation traces
 
+The setting lives in the palette, under **Constellation**: three buttons, **Polygon**, **Open** and **Hands**. To see clearly what changes, we keep **the same chord, D minor** (D, F, A), and touch only that setting.
+
 ### The Polygon: the closed shape
 
-**Polygon** mode links every note of the chord into a closed figure — a triangle for three notes, a quadrilateral for four, and so on. It's the most "at a glance" view: you recognise the chord the way you'd recognise a logo. Ideal for memorising a chord and recognising it at a glance — on your acoustic pan as much as on your electronic one.
-
-
+**Polygon** mode links every note of the chord into a closed figure — a triangle for three notes, a quadrilateral for four, and so on. It's the most "at a glance" view: you recognise the chord the way you'd recognise a logo. Ideal for memorising a chord and recognising it at a glance.
 
 ### The Open trace: the path of the notes
 
-**Open** mode doesn't close the figure: it draws the **path** from one note to the next, in the order you play them. It's the view of the gesture. You no longer just see which chord you're playing, but how your hand travels through it — perfect for working on an arpeggio or a melodic phrase and feeling the direction of the movement. On an acoustic pan, that path follows the real layout of your tone fields; on an electronic one, the layout of your pads.
-
-
+**Open** mode doesn't close the figure: it draws the **path** from one note to the next, from the lowest to the highest. It's the view of the gesture. You no longer just see which chord you're playing, but how your hand travels through it: perfect for working on an <abbr title="The notes of a chord played one after another rather than together.">arpeggio</abbr> or a melodic phrase and feeling the direction of the movement.
 
 ### Hands: who plays what
 
-**Hands** mode colours the trace according to which hand plays each note. At a glance, you know what the left hand does and what the right hand does. It's a precious cue when a chord splits between both hands, or when you want to balance your playing without tensing up. Here too, nothing changes with the instrument: the question "which hand plays what" comes up in exactly the same way on an acoustic pan.
+**Hands** mode colours the trace according to which hand plays each note. At a glance, you know what the left hand does and what the right hand does. It's a precious cue when a chord splits between both hands, or when you want to balance your playing without tensing up.
 
+### The three traces, acoustic and electronic
 
+Here are the three traces on an **electronic** pan, a Neotone Mutant in <abbr title="The app mode where every chord of the key always has the same place on the pan.">Logic mode</abbr>, anchored on D, <abbr title="The app setting for a minor key, with a darker colour.">Sad mode</abbr>.
 
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygon</span><span style="flex:1">Open</span><span style="flex:1">Hands</span></div>
@@ -65,6 +65,8 @@ Handpan Constellation Studio lets you choose **how** that drawing appears, depen
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
+And the same three traces on an **acoustic** pan, a D Kurd 10. On this pan, the path follows the real layout of your notes; on the electronic pan, the layout of your pads.
+
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygon</span><span style="flex:1">Open</span><span style="flex:1">Hands</span></div>
   <img
@@ -76,21 +78,22 @@ Handpan Constellation Studio lets you choose **how** that drawing appears, depen
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The same chord, <strong>D minor</strong>, on an acoustic D Kurd 10: Polygon closes the shape, Open stops on A4, Hands gives the ding to the right hand (<em>R</em>) and the three outer notes to the left (<em>L</em>).</figcaption>
+  <figcaption>The same chord, <strong>D minor</strong>, on an acoustic D Kurd 10: Polygon closes the shape, Open stops on A4, Hands gives the <abbr title="The large domed note in the centre of the pan.">ding</abbr> to the right hand (<em>R</em>) and the three outer notes to the left (<em>L</em>). The drawing is that of <em>this</em> instrument.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-## What actually differs between acoustic and electronic
+## What differs between acoustic and electronic
 
-One point deserves to be stated plainly. On an **acoustic** handpan, the chord is resolved from your real notes, laid out as they are on your instrument: the resulting shape is therefore **specific to your pan**. Two different scales give two different drawings for the same chord — and that is exactly what makes the Constellation useful: it speaks to you about *your* instrument.
+On an **acoustic** handpan, the chord is drawn from your real notes, laid out as they are on your instrument: the resulting shape is **specific to your pan**. Two different <abbr title="The set of notes of your instrument, for example D Kurd.">scales</abbr> give two different drawings for the same chord. The Constellation speaks to you about *your* instrument.
 
-On an **electronic** handpan, in Logic mode, the shape of a degree is fixed by the pad layout: the I keeps the same drawing whatever the key, only the notes played change. That is a different kind of comfort — carrying a fingering from one key to another — and it will get its own article, "the handpan capo".
-<!-- lien à poser : article capo -->
+On an **electronic** handpan, in Logic mode, the shape of a <abbr title="The position of a chord in the key, numbered from I to VII.">scale degree</abbr> is fixed by the pad layout: the I keeps the same drawing whatever the <abbr title="The home note that a piece and its chords revolve around, for example &quot;in D&quot;.">key</abbr>, only the notes played change.
+
+So you keep the same fingering from one key to another. That is the subject of the article [The handpan capo](/en/blog/le-capo-du-handpan).
 
 ## Switching between traces
 
 The real comfort is being able to flip between these three views on the same Constellation. You memorise the overall shape with Polygon, work the gesture with Open, then check your split with Hands. Three lights on a single chord, without ever opening a score — and in the same way, whatever your instrument.
 
-And if you want to invent your own coloured chords, the app lets you compose freely: read [Create your own handpan scale](/en/blog/creer-sa-gamme-de-handpan) to see how creation works (free in acoustic mode, exports carry a watermark).
+And if you want to invent your own coloured chords, the app lets you compose freely: read [Create your own handpan scale](/en/blog/creer-sa-gamme-de-handpan) to see how creation works (free in acoustic mode).
 
 Constellations make visible what usually stays abstract. You no longer "know" a chord: you **see** it. Open [Handpan Constellation Studio](/en/handpan-app), pick your instrument — acoustic or electronic — and watch your first triangle light up.

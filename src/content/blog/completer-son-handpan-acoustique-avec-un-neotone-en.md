@@ -144,7 +144,7 @@ And three limits, plainly.
 
 ## Where you can watch this happen
 
-Everything written here is displayed in the app: you load your scale, you ask for the completion, and the summary arrives with the before state and the after state — so you don't have to take a promise on trust. It's in [Handpan Constellation Studio](/en/handpan-app), which opens at `play.handpanstudio.app`, and acoustic mode with scale completion is free.
+Everything written here comes out of the app's engine, replayed on the real notes — so you don't have to take a promise on trust. It's in [Handpan Constellation Studio](/en/handpan-app), which opens at `play.handpanstudio.app`, and acoustic mode with scale completion is free.
 
 If you'd like to try an acoustic and a Neotone side by side before deciding between the two models, you can at the [showroom](/en/showroom). And if you'd like us to explore this together, my [lessons](/en/cours) are open.
 

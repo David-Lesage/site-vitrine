@@ -38,7 +38,7 @@ A banner then appears above your pans: **🌗 Your 2 handpans: *the first* + *th
 
 That last number is the real subject. For those chords, the voicing is genuinely computed across the two instruments — lowest root in the bass — and the path crosses the gap from one pan to the other. You see at a glance which hand goes where, and the play order follows.
 
-A word on vocabulary, because the app now draws the line: two acoustics side by side is a **duo**. An acoustic **and** a Neotone is the other family — same banner, different rules, and it is "Complete" that takes you there. The app never mixes the two families by default: it *offers* you the mixed pair instead of refusing.
+A word on vocabulary, because the app now draws the line: two acoustics side by side is a **duo**. An acoustic **and** a Neotone is the other family — same banner, different rules; that is the subject of [completing your acoustic handpan with a Neotone](/en/blog/completer-son-handpan-acoustique-avec-un-neotone). The app never mixes the two families by default: it *offers* you the mixed pair instead of refusing.
 
 <figure>
   <img
@@ -58,7 +58,7 @@ A word on vocabulary, because the app now draws the line: two acoustics side by 
 
 ## Your repertoire, right from loading
 
-Another quiet but decisive change: you no longer have to ask. As soon as a scale is loaded in acoustic Logic Mode, a line appears under the 7 degrees: "🎵 ***N* pieces playable with your scale**", with a "see →" that opens the list. The information arrives before the question. And **which note would unlock the most** is answered by "Complete" and by the [✨ Reveal](/blog/reveler-les-accords-de-ton-handpan) screen.
+Another quiet but decisive change: you no longer have to ask. As soon as a scale is loaded in acoustic Logic Mode, a line appears under the 7 degrees: "🎵 ***N* pieces playable with your scale**", with a "see →" that opens the list. The information arrives before the question. And **which note would unlock the most** is answered by "Complete" and by the [✨ Reveal](/en/blog/reveler-les-accords-de-ton-handpan) screen.
 
 ## And if you want to hear before deciding
 
@@ -67,6 +67,6 @@ Two details are worth their weight in gold before ordering anything:
 - The **key wheel** (*roue de tonalité*) lets you listen to your scale transposed into another key. You hear the future instrument before it exists.
 - The **440 / 432 Hz tuning setting** tunes the app to *your* handpan, so what you hear on screen sounds right with what you hold in your hands.
 
-Acoustic mode, "Complete" and the key wheel are **free**; permanently registering your two-handpan setup is part of the Studio version. And if the second pan becomes a real desire, the app tells you exactly which notes to ask for — whether you go for a [Neotone](/en/le-neotone) or an acoustic instrument.
+Acoustic mode, "Complete" and the key wheel are **free**; permanently registering your two-handpan setup is part of the Studio version. And if the second pan becomes a real desire, the app tells you exactly which notes to ask for; those notes work for an acoustic instrument just as well as for a [Neotone](/en/le-neotone).
 
 Open [Handpan Constellation Studio](/en/handpan-app), load your scale and see what you're really missing. It's often less than you think. And to explore all this together, my [handpan lessons](/en/cours) are open.
