@@ -48,6 +48,52 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 21/09/2026 (27ᵉ passe, soir) — REPRENDRE ICI
+
+**Interlocutrice APP = session « Handpan Constellation Studio 18 Septembre »** (`local_ce739c7e-…`). ⚠️ PAS « Handpan Constel
+Studio 10 septembre 2026 » (erreur de destinataire du 21/09 : elle a été arrêtée, rien appliqué en prod, ses fichiers non
+commités — migrations 0088/0089, EF send-sale-to-partner inachevée — sont gérés par la session du 18). Session Traduction =
+« Traduction et changelog multilingue » (`local_2cbb5d37-…`) : produit les -en.md et es.ts, jamais nous.
+
+**Règles de travail en vigueur** : `specs/CHARTE-ARTICLES.md` (toutes les règles de David + grille ; relecteur distinct avant
+toute publication d'article ; « set hybride » permis dans le texte, seul « le mode Hybride » nom de fonction réservé) ·
+un agent à la fois · FR seulement (EN = session Traduction) · jamais de test POST en prod.
+
+### Fait et en prod (depuis le 11/09)
+- Vidéo série app `QV4Xe7zp4nM` : /handpan-app (section « Découvre l'app en vidéo », source unique `appSeries` dans src/data/site.ts),
+  accueil, 4 articles. Cadre « Démonstration… À venir » supprimé de /handpan-app.
+- Formulaire de contact : téléphone OBLIGATOIRE (navigateur + /api/subscribe + EF site-lead v37, lien tel: dans le mail).
+- /le-neotone : calculateur par défaut « Je viens au showroom » + « Neotone¹ Mutant » ; bloc « Pourquoi choisir un 10 notes ou
+  un 19 notes ? » (schémas SVG neotone-10-vs-19-*.svg). Article **/blog/neotone-10-ou-19-notes** publié (relu).
+- **Showcase** : migration `showcase_attendance` sur site_leads (attendance_token, reminder_sent_at, cancelled_at, rescheduled_from,
+  rescheduled_at, attendance_changed_by 'self'|'admin', statuts 'cancelled'/'rescheduled') ; EF `showcase-attendance` (publique) et
+  `showcase-reminder` (secret `x-reminder-secret`, Vault `showcase_reminder_secret`) ; cron `showcase-reminder` 08:00+09:00 UTC → envoie
+  à 10 h Paris la veille ; page /showcase/ma-venue (FR/EN/ES, noindex). Mail à contact@lesagedavid.fr à chaque report ET annulation.
+  pg_cron + pg_net activés le 21/09 (n'existaient pas → le digest hebdo 0084 de l'app n'est jamais parti).
+  `_shared/showcase-email.ts` identique dans les 2 dépôts (diff 4026c78e appliqué, NON redéployé : site-lead ne passe pas encore le jeton).
+- 27 changements de l'app 276→343 : 8 phrases corrigées (Création→Créer ; plus de marque/achat dans l'app pour non-admin ;
+  Mes accompagnements) + 1 précision mes-handpans (association acoustique+électronique si un électronique est déjà dans la liste).
+- Google Sheet Neotone `15fWK_CFnfQWvgrTJHao4rTHKdzmbieaUd5hPqhv6Oi4` : colonne L « Sale status » ajoutée (799 Sale in progress ·
+  843 Available · 972 Available · 975 Sold · 911 In transit). Le STOCK VIT DANS L'APP ; le Sheet est le miroir pour Neotone.
+
+### En cours chez la session APP du 18 (attendre ses messages « appliqué »)
+- Showcase : lien ma-venue dans le mail de confirmation + boutons Annulé/Reporté du tableau de bord — **rien déployé sans le feu vert
+  de David**. Quand il dit oui : faire passer `attendanceToken` dans site-lead et redéployer EN MÊME TEMPS.
+- Ventes Neotone/Hisong : schéma repensé (stock_pieces = détail par n° de série d'un article stock_items existant, marque → partner_profiles ;
+  facturation particulier/société dans affiliate_sales ; bouton « Envoyer à Neotone » → neotone@digitalhandpan.com ; accès partenaire
+  Neotone + Hisong comme Muling). **Ne rien construire côté site avant les noms définitifs** (bloc de disponibilités + formulaire
+  2 parcours en ligne −5 % / showroom −7 %). Juridique/TVA = « c'est Neotone qui trouve la solution » (David).
+- Rendre le mode électronique aux bêta-testeurs (décision David 21/09) : le mode sans marque (journal 323) cachait le bouton ⚡ et la bascule.
+- 6 captures blog périmées à refaire dans leur prochain lot (Création ×4, Mes morceaux jam-rapide, dialogue « Neotone sur-mesure »).
+
+### Attend David
+- Feu vert pour déployer le lien d'annulation dans les mails de confirmation du showcase.
+- Rappel J-1 : aux inscriptions confirmées seulement, ou à toutes sauf annulées (état actuel) ? Premier envoi le 17/10.
+- Prix Neotone¹ frêne : Sheet 2 450 € vs site 1 990 € HT (≈ 2 388 € TTC).
+- Article sur le nouveau son de l'app (journal 343 ; 44/53 notes transposées — ne pas écrire « note par note ») : go ?
+- Hisong co-orga (s'abonner à la page HISONG), Guide dans le blog + logo, recherche blog, article daltonisme, titre sur 2 lignes
+  (gabarit commun), fausse inscription test@example.com (11/09) à supprimer ou non.
+
 ## ⚠️ LEÇON 11/09 — ne jamais tester en POST un point d'entrée de production
 Un test « sans téléphone » envoyé à `/api/subscribe` avec `motif` au lieu de `source` a pris le chemin par défaut
 (`beta-waitlist`) : fausse ligne `test@example.com` dans `site_leads` + mail de notification à David. Toujours LIRE le
@@ -4322,3 +4368,10 @@ Table `affiliate_sales` + `neotone_coupon_pool`, vues `affiliate_revenue` et
   redéploiement Vercel de l'app → toute inscription depuis `play.*` a été rejetée en
   `400 invalid_roles` pendant l'intervalle. RÈGLE : quand une Edge Function durcit son contrat,
   déployer le CLIENT (Vercel) AVANT, ou dans la minute qui suit.
+
+
+---
+## Journal — 21/09/2026 (session « Site vitrine continuation »)
+Vidéo série app placée · téléphone obligatoire au contact · cadre « à venir » retiré · calculateur par défaut + bloc 10/19 ·
+rappel J-1 + annulation/report showcase (EF + cron + page) · article Neotone 10 ou 19 (relu, publié) · colonne Sheet Neotone ·
+chantier ventes transmis · erreur de destinataire (session du 10) réparée · 27 changements app audités · charte : « set hybride » permis.
