@@ -166,6 +166,26 @@ const ld = [
     </div>
   </Section>
 
+  {/* « Pourquoi 10 ou 19 notes ? » — placé JUSTE AVANT le calculateur : c'est là que la
+      personne doit choisir son modèle. Mots de David (21/09/2026). Schéma SVG sans texte
+      incrusté (aucune capture réelle d'un pan 10 notes n'existe) ; étiquettes en HTML. */}
+  <Section id="10-ou-19-notes">
+    <SectionHeading eyebrow={n.whyEyebrow} title={n.whyTitle} />
+    <div class="mx-auto mt-8 grid max-w-5xl items-center gap-8 lg:grid-cols-2">
+      <div class="space-y-4 text-ink-soft/90">
+        {n.whyP.map((p) => <p set:html={p} />)}
+        <p class="text-sm">{n.whyLinkIntro} <a href={lang === 'es' ? localizePath('/blog/le-capo-du-handpan', 'en') : L('/blog/le-capo-du-handpan')} class="font-700 text-rust underline underline-offset-4 hover:text-copper">{n.whyLinkCapo}</a></p>
+      </div>
+      <figure>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="text-center"><img src="/images/neotone-10-vs-19-10-notes.svg" width="600" height="600" alt={n.whyAlt10} data-lb="neotone-10-vs-19" class="w-full rounded-card border border-ink/10" loading="lazy" /><p class="mt-2 text-sm font-700">{n.whyCap10}</p></div>
+          <div class="text-center"><img src="/images/neotone-10-vs-19-19-notes.svg" width="600" height="600" alt={n.whyAlt19} data-lb="neotone-10-vs-19" class="w-full rounded-card border border-ink/10" loading="lazy" /><p class="mt-2 text-sm font-700">{n.whyCap19}</p></div>
+        </div>
+        <figcaption class="mt-2 text-center text-xs text-ink-soft/70">{n.whySchema}</figcaption>
+      </figure>
+    </div>
+  </Section>
+
   <Section tone="cream-deep" id="calculateur">
     <SectionHeading eyebrow={n.calcEyebrow} title={n.calcTitle} intro={n.calcIntro} />
     <div class="mt-10"><Calculator lang={lang} /></div>

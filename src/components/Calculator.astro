@@ -13,6 +13,7 @@ const c = t.data.calc
 const bkd = t.booking
 
 const modelLabels: Record<string, string> = { one: 'Neotone¹', mutant: 'Neotone¹ Mutant' }
+const DEFAULT_MODEL = 'mutant'
 
 // Données injectées côté client
 const calcData = {
@@ -44,11 +45,11 @@ const calcData = {
       <fieldset>
         <legend class="text-xs font-700 uppercase tracking-widest text-copper">{c.modeQuestion}</legend>
         <div class="mt-3 grid gap-3 sm:grid-cols-2" role="radiogroup" aria-label={c.modeQuestion}>
-          <button type="button" class="calc-mode rounded-xl border-2 border-copper bg-copper/10 p-4 text-left" data-mode="online" aria-checked="true" role="radio">
+          <button type="button" class="calc-mode rounded-xl border-2 border-ink/15 p-4 text-left" data-mode="online" aria-checked="false" role="radio">
             <span class="block font-700">{c.modeOnline}</span>
             <span class="block text-sm text-ink-soft/80">{c.modeOnlineSub}</span>
           </button>
-          <button type="button" class="calc-mode rounded-xl border-2 border-ink/15 p-4 text-left" data-mode="showroom" aria-checked="false" role="radio">
+          <button type="button" class="calc-mode rounded-xl border-2 border-copper bg-copper/10 p-4 text-left" data-mode="showroom" aria-checked="true" role="radio">
             <span class="block font-700">{c.modeShowroom}</span>
             <span class="block text-sm text-ink-soft/80">{c.modeShowroomSub}</span>
           </button>
@@ -58,8 +59,10 @@ const calcData = {
       <fieldset>
         <legend class="text-xs font-700 uppercase tracking-widest text-copper">{c.step1}</legend>
         <div class="mt-3 grid gap-3 sm:grid-cols-2" role="radiogroup" aria-label={c.step1}>
-          {models.map((m, i) => (
-            <button type="button" class:list={['calc-model rounded-xl border-2 p-4 text-left', i === 0 ? 'border-copper bg-copper/10' : 'border-ink/15']} data-model={m.id} aria-checked={i === 0 ? 'true' : 'false'} role="radio">
+          {/* Par défaut (David, 21/09/2026) : « Je viens au showroom » + « Neotone¹ Mutant ».
+              Doit rester aligné avec DEFAULT_MODEL et `state` dans le script ci-dessous. */}
+          {models.map((m) => (
+            <button type="button" class:list={['calc-model rounded-xl border-2 p-4 text-left', m.id === DEFAULT_MODEL ? 'border-copper bg-copper/10' : 'border-ink/15']} data-model={m.id} aria-checked={m.id === DEFAULT_MODEL ? 'true' : 'false'} role="radio">
               <span class="block font-display text-lg font-700">{modelLabels[m.id]}</span>
               <span class="block text-sm text-ink-soft/80">{t.data.modelNotes[m.id]}</span>
             </button>
@@ -138,7 +141,7 @@ const calcData = {
   if (dataEl) {
     const DATA = JSON.parse(dataEl.textContent || '{}')
     const L = DATA.i18n
-    const state = { model: 'one', wood: 'frene', country: 'FR', b2b: false, mode: 'online' }
+    const state = { model: 'mutant', wood: 'frene', country: 'FR', b2b: false, mode: 'showroom' }
     const locale = document.documentElement.lang === 'en' ? 'en-GB' : 'fr-FR'
 
     const fmtEUR = (n: number) => new Intl.NumberFormat(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n) + ' €'
