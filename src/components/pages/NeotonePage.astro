@@ -71,7 +71,10 @@ const stockLabels: StockLabels = {
   lang,
   locale: numberLocale(lang),
 }
-const stockHtml = renderStockHtml(await fetchStockAtBuild(), stockLabels)
+// Lu UNE seule fois au build : sert au bloc « Ce qui est disponible » ET au
+// calculateur (grisage des bois absents du showroom).
+const stockLines = await fetchStockAtBuild()
+const stockHtml = renderStockHtml(stockLines, stockLabels)
 
 // Petits logos handpan pour le comparatif : acoustique (métal monochrome) vs électronique (couleurs ChromaKeys)
 const acoGlyph = `<svg viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-7 shrink-0 text-ink-soft/60" aria-hidden="true"><ellipse cx="14" cy="13" rx="12" ry="9" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="1.4"/><circle cx="14" cy="13" r="2.6" fill="currentColor"/><circle cx="14" cy="6.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="7.5" cy="10.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="20.5" cy="10.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="9.5" cy="17.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="18.5" cy="17.5" r="1.5" fill="currentColor" fill-opacity="0.6"/></svg>`
@@ -208,7 +211,7 @@ const ld = [
 
   <Section tone="cream-deep" id="calculateur">
     <SectionHeading eyebrow={n.calcEyebrow} title={n.calcTitle} intro={n.calcIntro} />
-    <div class="mt-10"><Calculator lang={lang} /></div>
+    <div class="mt-10"><Calculator lang={lang} stock={stockLines} /></div>
     <p class="mx-auto mt-6 max-w-3xl text-center text-xs text-ink-soft/70">{n.calcDisclaimer}</p>
 
     {/* ── 📦 STOCK RÉEL DES NEOTONE CHEZ DAVID ──────────────────────────────
@@ -271,9 +274,14 @@ const ld = [
           headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}`, Accept: 'application/json' },
         })
         if (!res.ok) return
-        const html = renderStockHtml(normalizeStock(await res.json()), labels)
+        const lines = normalizeStock(await res.json())
+        const html = renderStockHtml(lines, labels)
         box.innerHTML = html
         box.hidden = html === ''
+        // Le calculateur écoute cet événement pour regriser les bois absents du
+        // showroom (tableau vide = plus aucune restriction). Un seul fetch pour
+        // les deux blocs.
+        document.dispatchEvent(new CustomEvent('neotone:stock', { detail: lines }))
       } catch {
         /* réseau / CORS : on garde ce qui a été figé au build */
       }

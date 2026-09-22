@@ -3536,6 +3536,13 @@ const fr = {
       // formulaire de demande de code : « Retrait au showroom (−7 %) ».
       modeOnlineShort: 'Livraison (−5 %)',
       modeShowroomShort: 'Retrait au showroom (−7 %)',
+      // ── Disponibilité au showroom (vue `stock_pieces_public`) ─────────────
+      // Uniquement en mode « Je viens au showroom » ET si la vue renvoie au
+      // moins une pièce. Vue vide / injoignable → aucune restriction, aucun de
+      // ces textes n'apparaît (un stock inconnu ne doit jamais bloquer un achat).
+      stockOut: 'pas en stock au showroom',
+      stockExpected: 'attendu le {date}',
+      stockAdjusted: 'Nous avons ajusté ton choix : seuls ces instruments sont au showroom aujourd’hui.',
       step1: '1 · Choisis ton modèle',
       step2: '2 · Choisis ton bois',
       step3: '3 · Ton pays de livraison',

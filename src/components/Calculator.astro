@@ -1,16 +1,26 @@
 ---
 import { models, countries, woods, woodNames } from '@/data/neotone'
 import { site } from '@/data/site'
-import { getDict } from '@/i18n/dict'
+import { getDict, fr } from '@/i18n/dict'
 import type { Lang } from '@/i18n/config'
+import type { StockLine } from '@/lib/stock'
+import { numberLocale } from '@/i18n/utils'
 
 interface Props {
   lang: Lang
+  /** Stock physique figé au build (vue `stock_pieces_public`). Vide = aucune restriction. */
+  stock?: StockLine[]
 }
-const { lang } = Astro.props
+const { lang, stock = [] } = Astro.props
 const t = getDict(lang)
 const c = t.data.calc
 const bkd = t.booking
+
+// `es.ts` est GÉNÉRÉ : tant que les clés `stock*` du calculateur n'y sont pas,
+// on retombe sur le français explicitement plutôt que d'afficher « undefined ».
+const cFr = fr.data.calc as unknown as Record<string, string>
+const cAny = c as unknown as Record<string, string>
+const sl = (key: string) => cAny[key] || cFr[key] || ''
 
 const modelLabels: Record<string, string> = { one: 'Neotone¹', mutant: 'Neotone¹ Mutant' }
 const DEFAULT_MODEL = 'mutant'
@@ -36,7 +46,17 @@ const calcData = {
     savingsB2BNote: c.savingsB2BNote,
     modeOnlineShort: c.modeOnlineShort,
     modeShowroomShort: c.modeShowroomShort,
+    stockOut: sl('stockOut'),
+    stockExpected: sl('stockExpected'),
+    stockAdjusted: sl('stockAdjusted'),
   },
+  // ── 📦 Disponibilité physique au showroom (demande de David, 22/09/2026) ──
+  // « que la personne voie son choix limité directement au niveau du choix des
+  // bois sur lesquels elle peut cliquer ». S'applique UNIQUEMENT au mode
+  // « Je viens au showroom » : en livraison, tous les bois restent commandables.
+  // Tableau VIDE (état du 22/09/2026, vue sans ligne) ⇒ aucune restriction.
+  stock: stock.map((l) => ({ model: l.model, wood: l.wood, status: l.status, arrival: l.arrival })),
+  locale: numberLocale(lang),
 }
 ---
 
@@ -57,6 +77,10 @@ const calcData = {
           </button>
         </div>
       </fieldset>
+
+      {/* Affiché seulement si le choix courant a dû être déplacé parce que la
+          pièce n'est pas au showroom. Jamais visible quand la vue est vide. */}
+      <p id="calc-stock-notice" class="rounded-xl border border-copper/30 bg-copper/10 px-4 py-3 text-sm text-ink-soft/90" hidden></p>
 
       <fieldset>
         <legend class="text-xs font-700 uppercase tracking-widest text-copper">{c.step1}</legend>
@@ -208,6 +232,9 @@ const calcData = {
     }
 
     function render() {
+      // AVANT compute() : si la sélection courante n'est pas au showroom, elle
+      // est recalée ici — le prix et le récapitulatif restent donc justes.
+      applyAvailability()
       const r = compute()
       syncTrigger()
       $('calc-selection')!.textContent = `${DATA.models[state.model].label} — ${DATA.woodLabels[state.wood]}`
@@ -260,9 +287,130 @@ const calcData = {
       }
     }
 
+    // ══ 📦 DISPONIBILITÉ AU SHOWROOM ═════════════════════════════════════════
+    // Règle (demande de David, 22/09/2026) :
+    //  · « Je me fais livrer »  → AUCUNE restriction, tous les bois cliquables.
+    //  · « Je viens au showroom » → seuls les couples modèle+bois réellement
+    //    `disponible` restent cliquables ; les autres sont grisés, non
+    //    cliquables et portent une mention honnête (« pas en stock au
+    //    showroom », ou « attendu le … » si la pièce est en transit).
+    //  · Liste de stock VIDE (état du 22/09/2026) ou injoignable → on ne
+    //    restreint RIEN : un stock inconnu ne doit jamais empêcher un achat.
+    type StockRow = { model: string; wood: string; status: 'disponible' | 'en_transit'; arrival: string | null }
+    let stock: StockRow[] = Array.isArray(DATA.stock) ? DATA.stock : []
+    const stockLocale = DATA.locale || locale
+
+    const restrict = () => state.mode === 'showroom' && stock.length > 0
+
+    /** null = aucune pièce connue pour ce couple. */
+    function availOf(model: string, wood: string): StockRow | null {
+      const rows = stock.filter((r) => r.model === model && r.wood === wood)
+      const ready = rows.find((r) => r.status === 'disponible')
+      if (ready) return ready
+      const transit = rows
+        .filter((r) => r.status === 'en_transit')
+        .sort((a, b) => (a.arrival ?? '9999').localeCompare(b.arrival ?? '9999'))[0]
+      return transit ?? null
+    }
+
+    const woodKeys = (model: string) => Object.keys(DATA.models[model].woods)
+    const isWoodOk = (model: string, wood: string) => availOf(model, wood)?.status === 'disponible'
+    const isModelOk = (model: string) => woodKeys(model).some((w) => isWoodOk(model, w))
+
+    function fmtDate(iso: string | null): string | null {
+      if (!iso) return null
+      const d = new Date(`${iso}T12:00:00Z`)
+      if (Number.isNaN(d.getTime())) return null
+      return new Intl.DateTimeFormat(stockLocale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(d)
+    }
+
+    /** La pièce en transit la plus proche pour un modèle (toutes essences). */
+    function soonestOf(model: string): StockRow | null {
+      return woodKeys(model)
+        .map((w) => availOf(model, w))
+        .filter((r): r is StockRow => r !== null && r.status === 'en_transit')
+        .sort((a, b) => (a.arrival ?? '9999').localeCompare(b.arrival ?? '9999'))[0] ?? null
+    }
+
+    /** Mention discrète sous un bouton indisponible. */
+    function unavailableText(row: StockRow | null): string {
+      if (row && row.status === 'en_transit') {
+        const d = fmtDate(row.arrival)
+        if (d) return String(L.stockExpected).replace('{date}', d)
+      }
+      return String(L.stockOut)
+    }
+
+    function setBtnState(btn: HTMLButtonElement, ok: boolean, note: string) {
+      let tag = btn.querySelector<HTMLElement>('.calc-avail')
+      if (ok) {
+        btn.removeAttribute('aria-disabled')
+        btn.classList.remove('opacity-40', 'cursor-not-allowed', 'grayscale')
+        tag?.remove()
+        return
+      }
+      btn.setAttribute('aria-disabled', 'true')
+      btn.classList.add('opacity-40', 'cursor-not-allowed', 'grayscale')
+      if (!tag) {
+        tag = document.createElement('span')
+        tag.className = 'calc-avail mt-1 block text-[0.65rem] leading-tight text-ink-soft/70'
+        btn.appendChild(tag)
+      }
+      tag.textContent = note
+    }
+
+    /** Applique le grisage et, si besoin, recale la sélection courante. */
+    function applyAvailability(): boolean {
+      const on = restrict()
+      let adjusted = false
+
+      if (on && !isModelOk(state.model)) {
+        const fallback = Object.keys(DATA.models).find((m) => isModelOk(m))
+        if (fallback) { state.model = fallback; adjusted = true }
+      }
+      if (on && isModelOk(state.model) && !isWoodOk(state.model, state.wood)) {
+        const fallback = woodKeys(state.model).find((w) => isWoodOk(state.model, w))
+        if (fallback) { state.wood = fallback; adjusted = true }
+      }
+
+      document.querySelectorAll<HTMLButtonElement>('.calc-model').forEach((btn) => {
+        const m = btn.dataset.model!
+        const ok = !on || isModelOk(m)
+        setBtnState(btn, ok, unavailableText(on ? soonestOf(m) : null))
+        btn.setAttribute('aria-checked', m === state.model ? 'true' : 'false')
+        btn.classList.toggle('border-copper', m === state.model)
+        btn.classList.toggle('bg-copper/10', m === state.model)
+        btn.classList.toggle('border-ink/15', m !== state.model)
+      })
+
+      document.querySelectorAll<HTMLButtonElement>('.calc-wood').forEach((btn) => {
+        const w = btn.dataset.wood!
+        const ok = !on || isWoodOk(state.model, w)
+        setBtnState(btn, ok, unavailableText(on ? availOf(state.model, w) : null))
+        btn.setAttribute('aria-checked', w === state.wood ? 'true' : 'false')
+      })
+
+      const notice = $('calc-stock-notice')!
+      if (adjusted) { notice.textContent = L.stockAdjusted; notice.hidden = false }
+      else { notice.hidden = true; notice.textContent = '' }
+      return adjusted
+    }
+
+    /**
+     * Mise à jour en direct : la page dispatche `neotone:stock` avec les lignes
+     * normalisées de la vue publique (voir NeotonePage.astro). Un tableau vide
+     * remet le calculateur sans aucune restriction.
+     */
+    document.addEventListener('neotone:stock', (e) => {
+      const rows = (e as CustomEvent).detail
+      stock = Array.isArray(rows) ? rows : []
+      render()
+    })
+
     function bindGroup(selector: string, key: 'model' | 'wood' | 'mode', attr: string) {
       document.querySelectorAll<HTMLButtonElement>(selector).forEach((btn) => {
         btn.addEventListener('click', () => {
+          if (btn.getAttribute('aria-disabled') === 'true') return
           document.querySelectorAll<HTMLButtonElement>(selector).forEach((b) => {
             b.classList.remove('border-copper', 'bg-copper/10')
             b.classList.add('border-ink/15')
