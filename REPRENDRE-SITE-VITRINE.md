@@ -58,9 +58,12 @@ une fois vérifié (commit → build → `npx vercel --prod --yes` → push → 
 - ⏳ **AGENT EN COURS** : formulaire de facturation du calculateur (particulier/société, TVA intracom, SIRET, livraison
   distincte) dans `BookingForm.astro`, motif `neotone-discount` seulement. Appel à l'EF `sale-intake` **derrière un drapeau
   `SALE_INTAKE_ENABLED = false`** : la fonction n'est pas déployée. L'activer quand la session APP dit « déployée ».
-- ⏳ **À LANCER ENSUITE (même page, donc après)** : dans le calculateur, si mode = « Je viens au showroom », ne rendre
-  cliquables que les bois RÉELLEMENT en stock (source : `stock_pieces_public`) ; si mode = « Je me fais livrer », tous les
-  bois restent disponibles. Demande de David du 22/09, à faire dans le calculateur, pas dans le formulaire.
+- ✅ FAIT (22/09, en prod) : calculateur — en showroom, seuls les bois en stock cliquables ; en livraison, tous ; à vue vide,
+  aucune restriction. S'activera seul quand l'app aura enregistré les pièces.
+- ⏳ RESTE À FAIRE quand on branchera `sale-intake` : déplacer l'appel côté SERVEUR (/api, jeton `SITE_LEAD_TOKEN`, jamais
+  dans un fichier servi au navigateur), faire remonter `site_lead_id` par site-lead + api/subscribe, exposer
+  `price_original_eur`/`price_discounted_eur` depuis le calculateur (nombres, sans € ni virgule), puis premier appel réel
+  AVEC la session app (données « TEST — à supprimer », prévenir David avant), puis passer `SALE_INTAKE_ENABLED` à true.
 
 ### Contrat FIGÉ avec l'app (ne pas réinventer)
 - **Lecture du stock** : vue `public.stock_pieces_public` (anon SELECT) — `partner`, `model`, `wood`, `status`
