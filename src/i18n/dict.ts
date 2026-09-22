@@ -927,6 +927,47 @@ const fr = {
     discountCountry: 'Pays de livraison',
     discountCountryPlaceholder: 'France, Belgique, Suisse…',
     discountNote: 'Ces informations me servent uniquement à demander ton code auprès de Neotone.',
+    // ── FACTURATION (21-22/09/2026, demande de David) ────────────────────────
+    // Ses mots : « dans tous les cas il faut récupérer les informations de
+    // facturation ; si la personne a une société qui récupère la TVA, il faut
+    // qu'elle mette toutes ces infos dans le formulaire. »
+    // ⚠️ Regroupées dans un SOUS-OBJET `billing` exprès : `es.ts` est GÉNÉRÉ
+    // depuis ce fichier et n'a pas encore ces clés — le composant fait un
+    // repli sur le français en une seule ligne (`{...fr.booking.billing}`).
+    billing: {
+      title: 'Facturation',
+      intro: 'Neotone établit la facture : ces informations lui sont indispensables, et elles ne servent qu’à ça.',
+      kindLabel: 'Tu achètes…',
+      kindPrivate: 'En tant que particulier',
+      kindCompany: 'Au nom d’une société',
+      name: 'Nom de facturation',
+      namePlaceholder: 'Le nom qui doit apparaître sur la facture',
+      address: 'Adresse',
+      addressPlaceholder: 'Numéro et nom de rue',
+      postalCode: 'Code postal',
+      city: 'Ville',
+      country: 'Pays de facturation',
+      countryChoose: 'Choisis…',
+      company: 'Raison sociale',
+      companyPlaceholder: 'Le nom juridique de la société',
+      vat: 'N° de TVA intracommunautaire',
+      vatPlaceholder: 'FR12345678901',
+      siret: 'SIRET',
+      siretPlaceholder: '123 456 789 00010',
+      // L'aide d'une ligne demandée par David : à quoi servent ces deux champs.
+      vatSiretHint: 'Facultatifs — un n° de TVA valide permet à Neotone de te facturer hors taxes (tu récupères la TVA dans ton pays) ; le SIRET identifie l’entreprise sur la facture française.',
+      // ── LIVRAISON ───────────────────────────────────────────────────────────
+      shippingTitle: 'Livraison',
+      shippingSame: 'Livrer à l’adresse de facturation',
+      shippingName: 'Nom du destinataire',
+      shippingAddress: 'Adresse de livraison',
+      shippingPostalCode: 'Code postal',
+      shippingCity: 'Ville',
+      shippingCountry: 'Pays de livraison',
+      // Retours affichés après l'envoi.
+      orderRef: 'Référence de ta demande : {ref}',
+      unavailable: 'Aucun exemplaire n’est disponible pour ce choix en ce moment. Ta demande est bien enregistrée : je te réponds personnellement avec les délais réels.',
+    },
     // Pour une demande de code : Neotone a besoin du téléphone → pas de « facultatif ».
     phonePlain: 'Téléphone',
     // SHOWCASE UNIQUEMENT (24/08/2026, demande de David) : le téléphone devient

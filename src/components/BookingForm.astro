@@ -6,7 +6,9 @@
 //
 // S'ouvre en modale au clic sur n'importe quel élément [data-booking="<source>"].
 // Inclure UNE fois par page contenant de tels boutons.
-import { getDict } from '@/i18n/dict'
+import { getDict, fr } from '@/i18n/dict'
+import { countries } from '@/data/neotone'
+import { saleIntakeClientConfig } from '@/lib/saleIntake'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
 import { durationLabel, priceLabel, priceGrid } from '@/lib/sessions'
@@ -64,6 +66,25 @@ const remoteKinds = [...new Set(sessionTypes.filter((s) => s.remote).map((s) => 
 const upcoming = JSON.stringify(
   upcomingShowcases(lang).map((e) => ({ date: e.iso, start: e.start, end: e.end })),
 )
+
+// ── FACTURATION (21-22/09/2026, demande de David) ─────────────────────────────
+// Bloc réservé au motif `neotone-discount` : c'est Neotone qui facture, et
+// David doit pouvoir lui transmettre le dossier complet d'un seul geste.
+//
+// ⚠️ REPLI FRANÇAIS ASSUMÉ : `es.ts` est GÉNÉRÉ depuis le français et n'a pas
+// encore ces clés (la traduction passe par la session dédiée). Le spread
+// ci-dessous garantit qu'aucun libellé ne s'affiche vide en espagnol — il
+// s'affiche en français en attendant. À supprimer le jour où `es.ts` est
+// régénéré ? NON : le garder coûte une ligne et protège les prochains ajouts.
+const bb = { ...fr.booking.billing, ...(bk.billing ?? {}) }
+// Liste de pays RÉUTILISÉE du calculateur (`src/data/neotone.ts`) : le contrat
+// de `sale-intake` réclame un code ISO à deux lettres, un champ libre en
+// produirait fatalement des invalides. Même source = mêmes pays que le prix
+// annoncé juste avant.
+const billingCountries = countries.map((co) => ({ code: co.code, name: co.name[lang] }))
+// Interrupteur + URL du guichet, lus par le <script> (une expression du
+// frontmatter ne s'interpole pas dans un script traité).
+const saleIntake = saleIntakeClientConfig()
 ---
 
 <div
@@ -71,6 +92,7 @@ const upcoming = JSON.stringify(
   data-remote-kinds={remoteKinds}
   data-price-grid={grid}
   data-upcoming={upcoming}
+  data-sale-intake={saleIntake}
   class="fixed inset-0 z-[100] hidden items-start justify-center overflow-y-auto bg-ink/80 p-4 py-10 backdrop-blur-sm"
   role="dialog"
   aria-modal="true"
@@ -243,6 +265,142 @@ const upcoming = JSON.stringify(
           </label>
         </fieldset>
 
+        {/* ── FACTURATION (21-22/09/2026, demande de David) ───────────────────
+            « dans tous les cas il faut récupérer les informations de
+            facturation ; si la personne a une société qui récupère la TVA, il
+            faut qu'elle mette toutes ces infos dans le formulaire. »
+            ⚠️ AUCUNE question déjà répondue n'est reposée : modèle, bois, mode
+            d'achat et pays de LIVRAISON viennent du calculateur (récapitulatif
+            « Ton choix » ci-dessus). Le pays de FACTURATION, lui, est une autre
+            question — le siège d'une société n'est pas forcément là où on se
+            fait livrer.
+            ⚠️ Ce bloc vit DANS `[data-bk-discount]` : `toggleBlock()` désactive
+            et vide donc tous ses champs pour les autres motifs, sans une ligne
+            de code en plus. Ses deux sous-blocs (société / livraison) sont
+            pilotés par `syncBillingBlocks()`, appelée APRÈS `toggleBlock`.
+            ⚠️ Aucun <textarea> ici : `toggleBlock()` ne balaie que
+            « input, select ». Une adresse en textarea ne serait jamais vidée. */}
+        <fieldset data-bk-billing class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
+          <legend class="px-1 text-sm font-700">{bb.title}</legend>
+          <p class="text-xs leading-relaxed text-ink-soft/70">{bb.intro}</p>
+
+          {/* Particulier / Société — le radio pilote l'affichage des champs
+              d'entreprise. Toujours une valeur cochée par défaut : on ne
+              bloque jamais l'envoi sur une question à deux réponses. */}
+          <div class="mt-3" role="radiogroup" aria-label={bb.kindLabel}>
+            <span class="text-sm font-600">{bb.kindLabel}</span>
+            <div class="mt-2 grid gap-2 sm:grid-cols-2">
+              {[['particulier', bb.kindPrivate], ['societe', bb.kindCompany]].map(([v, label], i) => (
+                <label class="flex cursor-pointer items-center gap-2.5 rounded-lg bg-cream px-3 py-2 text-sm">
+                  <input type="radio" name="billingKind" value={v} checked={i === 0} class="h-4 w-4 shrink-0 accent-rust" data-bk-billing-kind />
+                  {label}
+                </label>
+              ))}
+            </div>
+          </div>
+
+          {/* SOCIÉTÉ — raison sociale OBLIGATOIRE (contrat `sale-intake`),
+              TVA et SIRET facultatifs avec l'aide d'une ligne demandée par
+              David. Masqué ⇒ désactivé ⇒ non validé et non envoyé. */}
+          <div data-bk-billing-company class="mt-3 hidden">
+            <div class="grid gap-3">
+            <label class="block">
+              <span class="text-sm font-600">{bb.company}<span aria-hidden="true" class="text-rust"> *</span></span>
+              <input type="text" name="billingCompany" autocomplete="organization" required placeholder={bb.companyPlaceholder} class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+            </label>
+            <div class="grid gap-3 sm:grid-cols-2">
+              <label class="block">
+                <span class="text-sm font-600">{bb.vat}</span>
+                <input type="text" name="billingVatNumber" placeholder={bb.vatPlaceholder} class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+              </label>
+              <label class="block">
+                <span class="text-sm font-600">{bb.siret}</span>
+                <input type="text" name="billingSiret" placeholder={bb.siretPlaceholder} class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+              </label>
+            </div>
+            <p class="text-xs leading-relaxed text-ink-soft/70">{bb.vatSiretHint}</p>
+            </div>
+          </div>
+
+          <div class="mt-3 grid gap-3">
+            <label class="block">
+              <span class="text-sm font-600">{bb.name}<span aria-hidden="true" class="text-rust"> *</span></span>
+              <input type="text" name="billingName" autocomplete="billing name" required placeholder={bb.namePlaceholder} class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-600">{bb.address}<span aria-hidden="true" class="text-rust"> *</span></span>
+              <input type="text" name="billingAddress" autocomplete="billing street-address" required placeholder={bb.addressPlaceholder} class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+            </label>
+            <div class="grid gap-3 sm:grid-cols-[minmax(0,8rem)_1fr]">
+              <label class="block">
+                <span class="text-sm font-600">{bb.postalCode}<span aria-hidden="true" class="text-rust"> *</span></span>
+                <input type="text" name="billingPostalCode" autocomplete="billing postal-code" required class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+              </label>
+              <label class="block">
+                <span class="text-sm font-600">{bb.city}<span aria-hidden="true" class="text-rust"> *</span></span>
+                <input type="text" name="billingCity" autocomplete="billing address-level2" required class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+              </label>
+            </div>
+            {/* Codes ISO à deux lettres — exigence du contrat `sale-intake`. */}
+            <label class="block">
+              <span class="text-sm font-600">{bb.country}<span aria-hidden="true" class="text-rust"> *</span></span>
+              <select name="billingCountry" required class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none">
+                <option value="">{bb.countryChoose}</option>
+                {billingCountries.map((co) => <option value={co.code}>{co.name}</option>)}
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        {/* ── LIVRAISON ───────────────────────────────────────────────────────
+            N'apparaît QUE si la personne se fait livrer, c'est-à-dire si le
+            calculateur était en mode « en ligne ». En mode « showroom » elle
+            vient chercher l'instrument : poser la question n'aurait aucun sens.
+            Hors calculateur (mode inconnu), on la pose — mieux vaut une
+            question de trop qu'une adresse manquante.
+            « Même adresse que la facturation » est COCHÉE par défaut : le cas
+            courant ne demande aucune saisie. */}
+        <fieldset data-bk-shipping class="rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
+          <legend class="px-1 text-sm font-700">{bb.shippingTitle}</legend>
+          <label class="mt-1 flex cursor-pointer items-start gap-3 text-sm">
+            <input type="checkbox" name="shippingSame" checked class="mt-0.5 h-5 w-5 shrink-0 accent-rust" data-bk-shipping-same />
+            <span class="font-600">{bb.shippingSame}</span>
+          </label>
+          <div data-bk-shipping-fields class="mt-3 hidden">
+            <div class="grid gap-3">
+            <label class="block">
+              <span class="text-sm font-600">{bb.shippingName}<span aria-hidden="true" class="text-rust"> *</span></span>
+              <input type="text" name="shippingName" autocomplete="shipping name" required class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-600">{bb.shippingAddress}<span aria-hidden="true" class="text-rust"> *</span></span>
+              <input type="text" name="shippingAddress" autocomplete="shipping street-address" required placeholder={bb.addressPlaceholder} class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+            </label>
+            <div class="grid gap-3 sm:grid-cols-[minmax(0,8rem)_1fr]">
+              <label class="block">
+                <span class="text-sm font-600">{bb.shippingPostalCode}<span aria-hidden="true" class="text-rust"> *</span></span>
+                <input type="text" name="shippingPostalCode" autocomplete="shipping postal-code" required class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+              </label>
+              <label class="block">
+                <span class="text-sm font-600">{bb.shippingCity}<span aria-hidden="true" class="text-rust"> *</span></span>
+                <input type="text" name="shippingCity" autocomplete="shipping address-level2" required class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+              </label>
+            </div>
+            <label class="block">
+              <span class="text-sm font-600">{bb.shippingCountry}<span aria-hidden="true" class="text-rust"> *</span></span>
+              <select name="shippingCountry" required class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none">
+                <option value="">{bb.countryChoose}</option>
+                {billingCountries.map((co) => <option value={co.code}>{co.name}</option>)}
+              </select>
+            </label>
+            </div>
+          </div>
+        </fieldset>
+
+        {/* Anti-doublon : uuid figé à l'OUVERTURE de la modale, réutilisé tel
+            quel si la personne renvoie le formulaire (contrat `sale-intake`). */}
+        <input type="hidden" name="clientRequestId" value="" />
+
         {/* Ce qui se passe après l'envoi — annoncé AVANT, pour qu'il n'y ait
             aucune surprise : c'est Neotone qui reprend la main. */}
         <div class="rounded-xl border border-copper/25 bg-copper/5 p-4">
@@ -356,6 +514,14 @@ const upcoming = JSON.stringify(
     <div data-bk-success class="hidden py-6 text-center">
       <p class="font-display text-xl font-700 text-ink">{bk.successTitle}</p>
       <p class="mt-3 text-ink-soft/85">{bk.successText}</p>
+      {/* Référence renvoyée par le guichet `sale-intake` (`order_ref`) : affichée
+          seulement quand elle existe vraiment. Tant que l'Edge Function n'est pas
+          déployée (interrupteur à false), cette ligne ne s'affiche jamais — on
+          n'annonce pas une référence inventée. */}
+      <p data-bk-order-ref data-template={bb.orderRef} class="mt-3 hidden text-sm font-700 text-copper"></p>
+      {/* `piece_indisponible` : la demande est enregistrée quand même (l'email à
+          David est déjà parti), on le dit sans faire peur. */}
+      <p data-bk-unavailable class="mx-auto mt-4 hidden max-w-sm rounded-xl border border-copper/25 bg-copper/5 p-3 text-left text-xs leading-relaxed text-ink-soft/85">{bb.unavailable}</p>
       <button type="button" class="bk-close mt-6 rounded-full bg-rust px-6 py-3 font-700 text-cream hover:bg-copper">{bk.successClose}</button>
     </div>
   </div>
@@ -379,6 +545,18 @@ const upcoming = JSON.stringify(
   const calcRecapTextEl = modal?.querySelector('[data-bk-calc-recap-text]') as HTMLElement
   const discountModelEl = modal?.querySelector('[data-bk-discount-model]') as HTMLElement
   const discountCountryEl = modal?.querySelector('[data-bk-discount-country]') as HTMLElement
+  // ── FACTURATION / LIVRAISON (21-22/09/2026) ─────────────────────────────────
+  const billingCompanyEl = modal?.querySelector('[data-bk-billing-company]') as HTMLElement
+  const shippingEl = modal?.querySelector('[data-bk-shipping]') as HTMLElement
+  const shippingFieldsEl = modal?.querySelector('[data-bk-shipping-fields]') as HTMLElement
+  const shippingSameEl = modal?.querySelector('[data-bk-shipping-same]') as HTMLInputElement | null
+  const orderRefEl = modal?.querySelector('[data-bk-order-ref]') as HTMLElement
+  const unavailableEl = modal?.querySelector('[data-bk-unavailable]') as HTMLElement
+  // Interrupteur + URL du guichet `sale-intake`, posés au build par
+  // `src/lib/saleIntake.ts`. Un JSON cassé ne doit JAMAIS empêcher une demande
+  // de partir → repli sur « désactivé ».
+  let SALE: { enabled: boolean; url: string; key: string; partner: string; termsVersion: string } | null = null
+  try { SALE = JSON.parse(modal?.dataset.saleIntake || 'null') } catch { SALE = null }
   const instrumentsEl = modal?.querySelector('[data-bk-instruments]') as HTMLElement
   // Showcase uniquement — « pour quel(s) instrument(s) viens-tu ? » (17/08/2026)
   const showcaseInterestsEl = modal?.querySelector('[data-bk-showcase-interests]') as HTMLElement
@@ -444,6 +622,29 @@ const upcoming = JSON.stringify(
     toggleBlock(durationEl, !!kind)
   }
 
+  /**
+   * FACTURATION / LIVRAISON — deux bascules, rien de plus :
+   *  · « au nom d'une société » → raison sociale (obligatoire), TVA, SIRET ;
+   *  · « livrer à l'adresse de facturation » décochée → adresse de livraison.
+   * Dans les deux cas on passe par `toggleBlock()` : un champ masqué est
+   * DÉSACTIVÉ, donc ni validé par le navigateur ni envoyé au serveur — c'est ce
+   * qui évite le piège du `required` invisible qui bloque l'envoi en silence.
+   *
+   * ⚠️ À appeler APRÈS `toggleBlock(discountEl, …)` : celui-ci réactive TOUS les
+   * champs du bloc remise, y compris ces deux sous-blocs.
+   */
+  function syncBillingBlocks() {
+    const onDiscount = discountEl && !discountEl.classList.contains('hidden')
+    const kind = (modal?.querySelector('input[name="billingKind"]:checked') as HTMLInputElement | null)?.value || ''
+    toggleBlock(billingCompanyEl, !!onDiscount && kind === 'societe')
+    // Lu après la bascule : masquer le bloc livraison décoche « même adresse ».
+    const shipping = !!onDiscount && !shippingEl?.classList.contains('hidden')
+    toggleBlock(shippingFieldsEl, shipping && shippingSameEl?.checked === false)
+  }
+
+  modal?.querySelectorAll('input[name="billingKind"]').forEach((r) => r.addEventListener('change', syncBillingBlocks))
+  shippingSameEl?.addEventListener('change', syncBillingBlocks)
+
   kindSelect?.addEventListener('change', syncSessionBlocks)
   // « Visio » retire la question des instruments, « présentiel » la ramène.
   modal?.querySelectorAll('input[name="sessionFormat"]').forEach((r) => r.addEventListener('change', syncSessionBlocks))
@@ -497,6 +698,26 @@ const upcoming = JSON.stringify(
     // `country`, l'Edge Function et api/subscribe.js sont inchangés là-dessus.
     discountModelEl?.classList.toggle('hidden', hasCalc)
     discountCountryEl?.classList.toggle('hidden', hasCalc)
+    // ── LIVRAISON : seulement si la personne se fait livrer ────────────────────
+    // Mode « showroom » = elle vient chercher l'instrument → aucune adresse de
+    // livraison à demander. Mode inconnu (modale ouverte hors calculateur) → on
+    // pose la question : une adresse de trop vaut mieux qu'une adresse manquante.
+    const purchaseMode = hasCalc ? (trigger.getAttribute('data-calc-mode') || '') : ''
+    toggleBlock(shippingEl, isDiscount && purchaseMode !== 'showroom')
+    // `toggleBlock` décoche en masquant : on remet le défaut « même adresse »
+    // à CHAQUE ouverture, sinon le cas courant redemanderait une saisie.
+    if (shippingSameEl && !shippingSameEl.disabled) shippingSameEl.checked = true
+    // ── ANTI-DOUBLON ──────────────────────────────────────────────────────────
+    // `client_request_id` est figé à l'OUVERTURE et réutilisé tel quel si la
+    // personne renvoie (réseau coupé, 502…) : le guichet reconnaît alors la
+    // MÊME demande au lieu d'en créer une seconde. `randomUUID` n'existe pas
+    // hors HTTPS sur les vieux navigateurs → repli sans uuid (le guichet
+    // l'accepte, c'est un champ facultatif), jamais une exception.
+    const reqIdInput = form.elements.namedItem('clientRequestId') as HTMLInputElement | null
+    if (isDiscount && reqIdInput && !reqIdInput.value) {
+      try { reqIdInput.value = crypto.randomUUID() } catch { reqIdInput.value = '' }
+    }
+    syncBillingBlocks()
     // « Sans limite de caractère » : on agrandit visiblement la zone de texte et on
     // annonce qu'on lit tout, pour que la personne ose écrire.
     const msgEl = form.querySelector('textarea[name="message"]') as HTMLTextAreaElement | null
@@ -546,6 +767,8 @@ const upcoming = JSON.stringify(
     form.classList.remove('hidden')
     success?.classList.add('hidden')
     errEl?.classList.add('hidden')
+    orderRefEl?.classList.add('hidden')
+    unavailableEl?.classList.add('hidden')
     modal.classList.remove('hidden')
     modal.classList.add('flex')
     modal.setAttribute('aria-hidden', 'false')
@@ -645,6 +868,42 @@ const upcoming = JSON.stringify(
     }
     slotsErrEl?.classList.add('hidden')
 
+    // ── FACTURATION : LE FILET D'ABORD (21-22/09/2026) ────────────────────────
+    // Tant que `sale-intake` n'est pas déployée (interrupteur à false), RIEN de
+    // ce que la personne vient de saisir n'arriverait à David : `api/subscribe`
+    // ne connaît pas ces champs et n'est pas dans le périmètre de ce chantier.
+    // On annexe donc le récapitulatif de facturation au MESSAGE envoyé au
+    // serveur — pas à la zone de texte affichée : ce que la personne a écrit
+    // reste intact à l'écran, et David reçoit le dossier complet par email.
+    // ⚠️ Uniquement pour `neotone-discount` : aucun autre motif n'a ces champs.
+    const billingLines: string[] = []
+    if (source === 'neotone-discount') {
+      const kind = get('billingKind')
+      const push = (k: string, v: string) => { if (v) billingLines.push(`${k} : ${v}`) }
+      push('Type', kind === 'societe' ? 'Société' : 'Particulier')
+      push('Raison sociale', get('billingCompany'))
+      push('N° TVA intracom.', get('billingVatNumber'))
+      push('SIRET', get('billingSiret'))
+      push('Nom de facturation', get('billingName'))
+      push('Adresse', get('billingAddress'))
+      push('Code postal', get('billingPostalCode'))
+      push('Ville', get('billingCity'))
+      push('Pays de facturation', get('billingCountry'))
+      if (!shippingEl?.classList.contains('hidden')) {
+        if (data.get('shippingSame') !== null) billingLines.push('Livraison : même adresse que la facturation')
+        else {
+          push('Livraison — nom', get('shippingName'))
+          push('Livraison — adresse', get('shippingAddress'))
+          push('Livraison — code postal', get('shippingPostalCode'))
+          push('Livraison — ville', get('shippingCity'))
+          push('Livraison — pays', get('shippingCountry'))
+        }
+      }
+    }
+    const messageForServer = billingLines.length
+      ? `${get('message')}\n\n— Facturation (saisie dans le formulaire) —\n${billingLines.join('\n')}`.trim()
+      : get('message')
+
     const label = btn.textContent
     btn.disabled = true
     btn.textContent = btn.getAttribute('data-sending') || '…'
@@ -659,7 +918,8 @@ const upcoming = JSON.stringify(
           lastName: get('lastName'),
           email: get('email'),
           phone: get('phone'),
-          message: get('message'),
+          // Message + récapitulatif de facturation annexé (voir plus haut).
+          message: messageForServer,
           peopleCount: get('peopleCount') ? Number(get('peopleCount')) : null,
           eventDate: get('eventDate') || null,
           eventStart: get('eventStart') || null,
@@ -700,8 +960,86 @@ const upcoming = JSON.stringify(
         }),
       })
       if (!r.ok) throw new Error('failed')
+      // ⚠️ `/api/subscribe` répond `{ ok, emailSent }` et RIEN d'autre : il ne
+      // renvoie AUCUN identifiant de la ligne `site_leads` créée. On ne peut
+      // donc pas transmettre `site_lead_id` au guichet aujourd'hui — signalé à
+      // la session app. Le jour où `api/subscribe.js` + l'Edge Function
+      // `site-lead` renverront l'`id`, il suffira de le lire ici.
       form.classList.add('hidden')
       success?.classList.remove('hidden')
+
+      // ── DÉPÔT DE LA VENTE (`sale-intake`) ───────────────────────────────────
+      // Se joue APRÈS le filet, et ne peut donc RIEN lui faire perdre : à ce
+      // stade l'email de David est déjà parti et l'écran dit déjà « c'est
+      // envoyé ». Un échec ici n'affiche aucune erreur — la demande n'est pas
+      // perdue, et la personne n'a rien à refaire.
+      // 🔴 `SALE.enabled` est à false tant que l'Edge Function n'est pas
+      // déployée (voir `src/lib/saleIntake.ts`) : aucune requête n'est émise.
+      if (SALE?.enabled && source === 'neotone-discount') {
+        try {
+          const num = (v: string) => { const n = Number(v); return Number.isFinite(n) && v ? n : undefined }
+          const opt = (v: string) => v || undefined
+          const isCompany = get('billingKind') === 'societe'
+          const sameAddress = data.get('shippingSame') !== null
+          const hasShipping = !shippingEl?.classList.contains('hidden')
+          const body: Record<string, unknown> = {
+            // ⛔ Jamais de status / source / commission_eur / serial_number… :
+            // c'est le guichet qui les pose (voir src/lib/saleIntake.ts).
+            partner: SALE.partner,
+            customer_name: `${get('firstName')} ${get('lastName')}`.trim(),
+            email: get('email'),
+            billing_kind: isCompany ? 'societe' : 'particulier',
+            billing_name: get('billingName'),
+            billing_address: get('billingAddress'),
+            billing_postal_code: get('billingPostalCode'),
+            billing_city: get('billingCity'),
+            billing_country: get('billingCountry'),
+            terms_accepted: true,
+            terms_version: SALE.termsVersion,
+            billing_company: isCompany ? get('billingCompany') : undefined,
+            billing_vat_number: isCompany ? opt(get('billingVatNumber')) : undefined,
+            billing_siret: isCompany ? opt(get('billingSiret')) : undefined,
+            phone: opt(get('phone')),
+            lang: form.dataset.lang || 'fr',
+            quantity: 1,
+            model: opt(get('neotoneModel')),
+            wood: opt(get('neotoneWood')),
+            news_opt_in: data.get('newsOptIn') !== null,
+            client_request_id: opt(get('clientRequestId')),
+          }
+          // Adresse de livraison : uniquement si elle DIFFÈRE de la facturation.
+          // Même adresse ⇒ on n'envoie rien, le guichet ne peut pas les
+          // désynchroniser ensuite.
+          if (hasShipping && !sameAddress) {
+            body.shipping_name = get('shippingName')
+            body.shipping_address = get('shippingAddress')
+            body.shipping_postal_code = get('shippingPostalCode')
+            body.shipping_city = get('shippingCity')
+            body.shipping_country = get('shippingCountry')
+          }
+          // `num()` garde la porte ouverte : le calculateur ne transmet pas
+          // encore les montants (`data-calc-*`), ils partiront dès qu'il le fera.
+          const orig = num(get('priceOriginalEur'))
+          const disc = num(get('priceDiscountedEur'))
+          if (orig !== undefined) body.price_original_eur = orig
+          if (disc !== undefined) body.price_discounted_eur = disc
+          // `undefined` disparaît à la sérialisation JSON : aucun champ vide
+          // n'est envoyé, aucune valeur inventée non plus.
+          const sr = await fetch(SALE.url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', apikey: SALE.key },
+            body: JSON.stringify(body),
+          })
+          const sd = await sr.json().catch(() => ({}))
+          if (sd?.ok === true && sd.order_ref && orderRefEl) {
+            const tpl = orderRefEl.dataset.template || '{ref}'
+            orderRefEl.textContent = tpl.replace('{ref}', String(sd.order_ref))
+            orderRefEl.classList.remove('hidden')
+          } else if (sd?.erreur === 'piece_indisponible') {
+            unavailableEl?.classList.remove('hidden')
+          }
+        } catch { /* Le filet a déjà fonctionné : on ne dit rien de plus. */ }
+      }
     } catch {
       errEl?.classList.remove('hidden')
     } finally {
