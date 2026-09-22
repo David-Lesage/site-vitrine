@@ -48,6 +48,56 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 22/09/2026 (28ᵉ passe, soir) — REPRENDRE ICI
+
+**Interlocutrice APP = « Handpan Constellation Studio 18 Septembre »** (`local_ce739c7e-…`). Traduction = `local_2cbb5d37-…`.
+Règles : `specs/CHARTE-ARTICLES.md` · un agent à la fois · FR seul · jamais de POST de test en prod · déployer sans demander
+une fois vérifié (commit → build → `npx vercel --prod --yes` → push → contrôle en prod).
+
+### En cours / juste après
+- ⏳ **AGENT EN COURS** : formulaire de facturation du calculateur (particulier/société, TVA intracom, SIRET, livraison
+  distincte) dans `BookingForm.astro`, motif `neotone-discount` seulement. Appel à l'EF `sale-intake` **derrière un drapeau
+  `SALE_INTAKE_ENABLED = false`** : la fonction n'est pas déployée. L'activer quand la session APP dit « déployée ».
+- ⏳ **À LANCER ENSUITE (même page, donc après)** : dans le calculateur, si mode = « Je viens au showroom », ne rendre
+  cliquables que les bois RÉELLEMENT en stock (source : `stock_pieces_public`) ; si mode = « Je me fais livrer », tous les
+  bois restent disponibles. Demande de David du 22/09, à faire dans le calculateur, pas dans le formulaire.
+
+### Contrat FIGÉ avec l'app (ne pas réinventer)
+- **Lecture du stock** : vue `public.stock_pieces_public` (anon SELECT) — `partner`, `model`, `wood`, `status`
+  ('disponible'|'en_transit'), `expected_arrival_on`. Jamais de n° de série ni d'acheteur. Module site : `src/lib/stock.ts`.
+  **Vide aujourd'hui** → le bloc « Disponible tout de suite / Bientôt disponible » (en prod sous le calculateur) reste masqué.
+  L'app doit initialiser 5 pièces (799 réservé · 843 et 972 disponibles · 975 vendu · 911 en transit 30/09), données
+  confirmées par David dans la colonne B « Sale » de son Sheet `15fWK_CFnfQWvgrTJHao4rTHKdzmbieaUd5hPqhv6Oi4`.
+- **Écriture d'une vente** : JAMAIS dans `affiliate_sales`. EF dédiée `sale-intake` (POST, en-tête `apikey` = clé publishable
+  de `src/lib/prices.ts`). Obligatoires : partner, customer_name, email, billing_kind, billing_name, billing_address,
+  billing_postal_code, billing_city, billing_country (ISO2), terms_accepted, terms_version ; + billing_company si société.
+  Interdits : status, source, commission_eur, transmitted_*, serial_number… Réponse `{ok, sale_id, order_ref}` ou
+  `{ok:false, erreur}` (dont `piece_indisponible`). `client_request_id` (uuid à l'ouverture) = anti-doublon.
+  On n'envoie PAS `reserved_piece_id` : l'acheteur ne choisit pas un exemplaire, David affecte le n° de série.
+- ⚠️ Toute vue Supabase nouvellement créée donne par défaut l'écriture à `anon` : révoquer systématiquement.
+
+### Fait et en prod (21-22/09)
+- Showcase COMPLET : rappel J-1 10 h Paris (cron), page /showcase/ma-venue, EF showcase-attendance + showcase-reminder,
+  lien « Annuler ou reporter » dans les DEUX mails (site-lead v40 + confirm-showcase v9), boutons Annulé/Reporter côté app.
+- Formulaire Neotone : plus de doublon du modèle (récap « Ton choix » + lien Modifier) ; **le bois et le mode d'achat
+  arrivent enfin dans le mail de David** (ils manquaient).
+- Bloc de disponibilité sous le calculateur (masqué tant que la vue est vide).
+- 27 changements de l'app audités : 8 phrases corrigées + 1 précision. Mode électronique rendu aux bêta-testeurs (journal 344).
+- Article **/blog/neotone-10-ou-19-notes** publié (relu). Charte : « set hybride » permis, seul « le mode Hybride » réservé.
+
+### Attend David
+- **Colonnes acheteurs dans le Google Sheet** : NE PAS faire sans sa décision (Sheet partagé avec Neotone = données
+  personnelles chez un tiers). 3 voies proposées ; recommandation : les ventes restent dans l'app, Neotone reçoit une vente
+  à la fois par mail. Reporter le STOCK dans le Sheet, en revanche, ne pose aucun problème.
+- Rappel J-1 : à toutes les inscriptions non annulées (état actuel) ou seulement aux confirmées ? Premier envoi 17/10.
+- Prix Neotone¹ frêne : Sheet 2 450 € vs site 1 990 € HT (≈ 2 388 € TTC).
+- Article sur le nouveau son de l'app (journal 343 ; 44/53 notes transposées, ne pas écrire « note par note »).
+- Domaine pour Google : lesagedavid.fr (actuel, recommandé) ou handpanstudio.app. La redirection reste temporaire tant que
+  le nom de l'app n'est pas définitif.
+- Hisong co-orga (s'abonner à la page HISONG) · Guide dans le blog + logo · recherche blog · article daltonisme ·
+  titre sur 2 lignes (gabarit commun) · fausse inscription test@example.com (11/09) à supprimer ou non.
+
+
 ## 🧭 ÉTAT ACTUEL — 21/09/2026 (27ᵉ passe, soir) — REPRENDRE ICI
 
 **Interlocutrice APP = session « Handpan Constellation Studio 18 Septembre »** (`local_ce739c7e-…`). ⚠️ PAS « Handpan Constel
@@ -4374,3 +4424,8 @@ Table `affiliate_sales` + `neotone_coupon_pool`, vues `affiliate_revenue` et
 Vidéo série app placée · téléphone obligatoire au contact · cadre « à venir » retiré · calculateur par défaut + bloc 10/19 ·
 rappel J-1 + annulation/report showcase (EF + cron + page) · article Neotone 10 ou 19 (relu, publié) · colonne Sheet Neotone ·
 chantier ventes transmis · erreur de destinataire (session du 10) réparée · 27 changements app audités · charte : « set hybride » permis.
+
+## Journal — 22/09/2026
+Doublon du modèle supprimé du formulaire (+ bois et mode d'achat ajoutés au mail) · bloc de disponibilité posé sous le
+calculateur (masqué à vide) · contrat `sale-intake` figé avec l'app · colonne B « Sale » du Sheet lue et transmise ·
+formulaire de facturation en cours · bois disponibles dans le calculateur à faire ensuite.
