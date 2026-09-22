@@ -12,7 +12,8 @@ import YouTube from '@/components/YouTube.astro'
 import { Icon } from 'astro-icon/components'
 import { models, woods, woodNames, modelCarousels, specIcons, includedIcons, extrasIcons } from '@/data/neotone'
 import { site } from '@/data/site'
-import { getDict } from '@/i18n/dict'
+import { getDict, fr } from '@/i18n/dict'
+import { fetchStockAtBuild, renderStockHtml, type StockLabels } from '@/lib/stock'
 import { localizePath, numberLocale } from '@/i18n/utils'
 import { faqLdJson, productLdJson, breadcrumbLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
@@ -52,6 +53,25 @@ const modelLabels: Record<string, string> = { one: 'Neotone¹', mutant: 'Neotone
 //       description: n.procShowroomVideoText }])` au tableau `ld` ci-dessous.
 //       Date de mise en ligne relevée sur YouTube : 2026-03-02. Durée : 2 min 35.
 const showroomTourVideoId = 'Vlzo3KbpPjw'
+
+// ── 📦 Stock physique des Neotone (voir le bloc dans la section #calculateur).
+// `es.ts` est GÉNÉRÉ : tant que les clés `stock*` n'y sont pas, on retombe sur
+// le français plutôt que d'afficher un libellé vide.
+const nFr = fr.neotone as Record<string, string>
+const nAny = n as unknown as Record<string, string>
+const sl = (key: string) => nAny[key] || nFr[key] || ''
+const stockLabels: StockLabels = {
+  title: sl('stockTitle'),
+  availTitle: sl('stockAvailTitle'),
+  soonTitle: sl('stockSoonTitle'),
+  arrivalPrefix: sl('stockArrivalPrefix'),
+  note: sl('stockNote'),
+  noteLink: sl('stockNoteLink'),
+  showroomHref: L('/showroom'),
+  lang,
+  locale: numberLocale(lang),
+}
+const stockHtml = renderStockHtml(await fetchStockAtBuild(), stockLabels)
 
 // Petits logos handpan pour le comparatif : acoustique (métal monochrome) vs électronique (couleurs ChromaKeys)
 const acoGlyph = `<svg viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-7 shrink-0 text-ink-soft/60" aria-hidden="true"><ellipse cx="14" cy="13" rx="12" ry="9" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="1.4"/><circle cx="14" cy="13" r="2.6" fill="currentColor"/><circle cx="14" cy="6.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="7.5" cy="10.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="20.5" cy="10.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="9.5" cy="17.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="18.5" cy="17.5" r="1.5" fill="currentColor" fill-opacity="0.6"/></svg>`
@@ -190,7 +210,76 @@ const ld = [
     <SectionHeading eyebrow={n.calcEyebrow} title={n.calcTitle} intro={n.calcIntro} />
     <div class="mt-10"><Calculator lang={lang} /></div>
     <p class="mx-auto mt-6 max-w-3xl text-center text-xs text-ink-soft/70">{n.calcDisclaimer}</p>
+
+    {/* ── 📦 STOCK RÉEL DES NEOTONE CHEZ DAVID ──────────────────────────────
+        Demande de David (22/09/2026) : « il faudrait aussi que les personnes
+        sachent quels Neotone sont actuellement disponibles en stock ».
+
+        Placé JUSTE APRÈS le calculateur, dans la même section : c'est là que la
+        personne vient de choisir son modèle et son bois et de voir son prix —
+        la question suivante est « est-ce qu'il y en a un, tout de suite ? ».
+        Et la section suivante (#procedure) enchaîne sur la commande. Un bloc
+        plus haut dans la page arriverait avant le choix ; plus bas, après la
+        procédure, il arriverait trop tard.
+
+        Source : vue publique `stock_pieces_public` (lecture seule, jamais de
+        n° de série ni d'acheteur). Vue VIDE ou injoignable → le bloc reste
+        `hidden`, donc invisible : pas de « stock inconnu », pas de cadre vide.
+        C'est l'état du 22/09/2026 (0 ligne) : David doit d'abord confirmer son
+        stock pièce par pièce côté app. */}
+    <div
+      data-stock-neotone
+      data-lang={lang}
+      data-locale={numberLocale(lang)}
+      data-showroom={L('/showroom')}
+      data-title={stockLabels.title}
+      data-avail={stockLabels.availTitle}
+      data-soon={stockLabels.soonTitle}
+      data-prefix={stockLabels.arrivalPrefix}
+      data-note={stockLabels.note}
+      data-note-link={stockLabels.noteLink}
+      hidden={stockHtml === ''}
+      class="mx-auto mt-12 max-w-3xl rounded-card border border-copper/25 bg-cream p-6"
+      set:html={stockHtml}
+    />
   </Section>
+
+<script>
+  // Rafraîchit le stock en direct : il bouge entre deux déploiements, et la page
+  // peut être servie depuis un cache. Même générateur de HTML qu'au build.
+  // Échec réseau / vue vide → on masque le bloc (jamais d'info fausse).
+  import { STOCK_URL, normalizeStock, renderStockHtml, type StockLabels } from '@/lib/stock'
+  import { SUPABASE_ANON_KEY } from '@/lib/prices'
+  import type { Lang } from '@/i18n/config'
+
+  const box = document.querySelector<HTMLElement>('[data-stock-neotone]')
+  if (box) {
+    const labels: StockLabels = {
+      title: box.dataset.title ?? '',
+      availTitle: box.dataset.avail ?? '',
+      soonTitle: box.dataset.soon ?? '',
+      arrivalPrefix: box.dataset.prefix ?? '',
+      note: box.dataset.note ?? '',
+      noteLink: box.dataset.noteLink ?? '',
+      showroomHref: box.dataset.showroom ?? '/showroom',
+      lang: (box.dataset.lang ?? 'fr') as Lang,
+      locale: box.dataset.locale ?? 'fr-FR',
+    }
+    ;(async () => {
+      try {
+        const res = await fetch(STOCK_URL, {
+          headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}`, Accept: 'application/json' },
+        })
+        if (!res.ok) return
+        const html = renderStockHtml(normalizeStock(await res.json()), labels)
+        box.innerHTML = html
+        box.hidden = html === ''
+      } catch {
+        /* réseau / CORS : on garde ce qui a été figé au build */
+      }
+    })()
+  }
+</script>
 
   <Section id="procedure">
     <SectionHeading eyebrow={n.procEyebrow} title={n.procTitle} intro={n.procIntro} />

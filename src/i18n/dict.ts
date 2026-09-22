@@ -287,6 +287,16 @@ const fr = {
     calcIntro: 'Choisis ton mode d’achat, ton modèle, ton bois et ton pays — le calculateur applique la bonne remise et la TVA 2026.',
     calcDisclaimer:
       'Les prix publics affichés incluent déjà l’envoi mondial. Taux de TVA standards 2026. Hors UE : aucune TVA UE appliquée, mais des frais de douane locaux peuvent s’ajouter à la livraison, à ta charge.',
+    // ── Stock physique (vue publique `stock_pieces_public`) ──────────────────
+    // Affiché SEULEMENT si la vue renvoie au moins une pièce Neotone. Vue vide
+    // ou injoignable → aucun de ces textes n'apparaît (voir src/lib/stock.ts).
+    stockTitle: 'Ce qui est disponible en ce moment',
+    stockAvailTitle: 'Disponible tout de suite',
+    stockSoonTitle: 'Bientôt disponible',
+    stockArrivalPrefix: 'prévu le',
+    stockNote:
+      'Ces instruments sont chez moi, à Paris : tu peux venir les essayer avant de te décider. Le stock bouge, et la commande se fait ensuite avec Neotone.',
+    stockNoteLink: 'Voir le showroom',
     whyEyebrow: "Deux modèles",
     whyTitle: "Pourquoi choisir un 10 notes ou un 19 notes ?",
     whyP: ["Le <strong>Neotone¹ (10 notes)</strong> est très bien pour <strong>découvrir</strong> le handpan, <strong>méditer</strong> et <strong>improviser</strong> dans une gamme.", "Le <strong>Neotone¹ Mutant (19 notes)</strong> est fait pour devenir ton <strong>instrument principal</strong>, ou pour <strong>accompagner la voix</strong> sur des morceaux connus.", "Il permet de jouer tous les <abbr title=\"Au moins trois notes jouées ensemble, par exemple do, mi, sol.\">accords</abbr> (<abbr title=\"La place d’un accord dans une tonalité, numérotée de I à VII.\">degrés</abbr>) des <abbr title=\"La gamme de référence d’un morceau, par exemple do majeur ou la mineur.\">tonalités</abbr> majeures et mineures sur une même gamme : I Équilibre, II Élan, III Aventure, IV Détente, V Tension, VI Nostalgie, VII Mystère."],
