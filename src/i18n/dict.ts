@@ -904,6 +904,10 @@ const fr = {
     // modifier ici sans les modifier là-bas.
     discountIntro: 'Un code nominatif que je demande pour toi auprès de Neotone : −5 % en ligne, −7 % si tu viens l’essayer au showroom. Réponse personnelle sous 24 à 48 h.',
     discountModel: 'Quel modèle t’intéresse ?',
+    // Récapitulatif du choix DÉJÀ fait dans le calculateur : la question du
+    // modèle ne se repose plus (demande de David, 22/09/2026).
+    calcRecapLabel: 'Ton choix',
+    calcRecapEdit: 'Modifier',
     discountModelChoose: 'Choisis…',
     discountModelNames: {
       one: 'Neotone¹ — 10 notes',
@@ -3477,6 +3481,10 @@ const fr = {
       modeOnlineSub: 'Livraison mondiale incluse · remise 5 %',
       modeShowroom: '🏠 Je viens au showroom ★',
       modeShowroomSub: 'Paris 20ᵉ · remise 7 % · sans délai',
+      // Libellés COURTS (sans emoji) réutilisés dans le récapitulatif du
+      // formulaire de demande de code : « Retrait au showroom (−7 %) ».
+      modeOnlineShort: 'Livraison (−5 %)',
+      modeShowroomShort: 'Retrait au showroom (−7 %)',
       step1: '1 · Choisis ton modèle',
       step2: '2 · Choisis ton bois',
       step3: '3 · Ton pays de livraison',

@@ -242,6 +242,21 @@ const ALLOWED_MAKER_METALS = ['nitrided', 'stainless', 'ember', 'other'];
 // une page encore en cache qui l'enverrait, et pour les lignes déjà en base.
 const ALLOWED_SESSION_TYPE = ['onboarding-60', 'onboarding-90', 'demo-60', 'demo-90', 'demo', 'lesson-60', 'lesson-90'];
 const ALLOWED_NEOTONE_MODEL = ['one', 'mutant', 'undecided'];
+// Bois et mode d'achat repris du calculateur de /le-neotone (22/09/2026).
+// Utilisés UNIQUEMENT dans l'email d'alerte de David : aucune colonne ajoutée.
+const ALLOWED_NEOTONE_WOOD = ['frene', 'chene', 'acajou', 'cerisier', 'noyer'];
+const NEOTONE_WOOD_LABELS = {
+    frene: 'Frêne',
+    chene: 'Chêne',
+    acajou: 'Acajou',
+    cerisier: 'Cerisier',
+    noyer: 'Noyer',
+};
+const ALLOWED_PURCHASE_MODE = ['online', 'showroom'];
+const PURCHASE_MODE_LABELS = {
+    online: 'Livraison (remise 5 %)',
+    showroom: 'Retrait au showroom (remise 7 %)',
+};
 const ALLOWED_DISCOVERY = ['youtube', 'instagram', 'facebook', 'showcase', 'word-of-mouth', 'search', 'neotone-site', 'other'];
 const ALLOWED_PLAYING_SINCE = ['none', 'under-1', '1-3', 'over-3'];
 const SLOT_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/;
@@ -933,6 +948,10 @@ Deno.serve(async (req) => {
         const rawModel = String(body.neotoneModel ?? '').trim();
         const neotoneModel = ALLOWED_NEOTONE_MODEL.includes(rawModel) ? rawModel : null;
         const country = String(body.country ?? '').trim().slice(0, 80) || null;
+        const rawWood = String(body.neotoneWood ?? '').trim();
+        const neotoneWood = ALLOWED_NEOTONE_WOOD.includes(rawWood) ? rawWood : null;
+        const rawPurchaseMode = String(body.neotonePurchaseMode ?? '').trim();
+        const purchaseMode = ALLOWED_PURCHASE_MODE.includes(rawPurchaseMode) ? rawPurchaseMode : null;
         const rawDiscovery = String(body.discoveryChannel ?? '').trim();
         const discoveryChannel = ALLOWED_DISCOVERY.includes(rawDiscovery) ? rawDiscovery : null;
         const rawPlaying = String(body.playingSince ?? '').trim();
@@ -1219,6 +1238,8 @@ Deno.serve(async (req) => {
                             'Gammes / tarifs': makerPricing,
                             Motivation: motivation,
                             'Modèle visé': neotoneModel ? PROFILE_LABELS[neotoneModel] ?? neotoneModel : null,
+                            Bois: neotoneWood ? NEOTONE_WOOD_LABELS[neotoneWood] : null,
+                            'Mode d’achat': purchaseMode ? PURCHASE_MODE_LABELS[purchaseMode] : null,
                             'Pays de livraison': country,
                             'Réseaux sociaux': socialAccount,
                             'M’a découvert par': discoveryChannel ? PROFILE_LABELS[discoveryChannel] ?? discoveryChannel : null,

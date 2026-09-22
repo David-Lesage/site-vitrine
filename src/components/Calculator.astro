@@ -17,7 +17,7 @@ const DEFAULT_MODEL = 'mutant'
 
 // Données injectées côté client
 const calcData = {
-  models: Object.fromEntries(models.map((m) => [m.id, { label: modelLabels[m.id], woods: m.woods }])),
+  models: Object.fromEntries(models.map((m) => [m.id, { label: modelLabels[m.id], note: t.data.modelNotes[m.id], woods: m.woods }])),
   woodLabels: Object.fromEntries(woods.map((w) => [w.key, woodNames[w.key][lang]])),
   countries: Object.fromEntries(countries.map((co) => [co.code, { name: co.name[lang], vat: co.vat, eu: co.eu, note: co.note ? co.note[lang] : '' }])),
   i18n: {
@@ -34,6 +34,8 @@ const calcData = {
     savings: c.savings,
     savingsB2B: c.savingsB2B,
     savingsB2BNote: c.savingsB2BNote,
+    modeOnlineShort: c.modeOnlineShort,
+    modeShowroomShort: c.modeShowroomShort,
   },
 }
 ---
@@ -123,7 +125,13 @@ const calcData = {
       {/* Ouvre le formulaire de demande de code (modale BookingForm) au lieu d'un
           mailto : la demande est enregistrée et David reçoit tout ce que Neotone
           lui réclame — modèle et pays de livraison compris. */}
+      {/* ⚠️ Les `data-calc-*` sont RÉÉCRITS à chaque render() ci-dessous : c'est
+          par eux que le choix déjà fait ici voyage jusqu'à la modale, qui ne
+          repose donc plus la question du modèle (demande de David, 22/09/2026).
+          `data-calc-recap` est la phrase affichée ; les autres sont les valeurs
+          envoyées au serveur (noms de champs INCHANGÉS). */}
       <button
+        id="calc-get-code"
         type="button"
         data-booking="neotone-discount"
         data-title={bkd.discountTitle}
@@ -181,8 +189,27 @@ const calcData = {
       return { basePrice, discount, discountRate, discountPct, subtotalHT, vatRate, vatAmount, finalTTC, savings, savingsRate, catalogTTC, b2bEU, country }
     }
 
+    function syncTrigger() {
+      const btn = $('calc-get-code')
+      if (!btn) return
+      const modeLabel = state.mode === 'showroom' ? L.modeShowroomShort : L.modeOnlineShort
+      btn.dataset.calcModel = state.model
+      btn.dataset.calcWood = state.wood
+      btn.dataset.calcMode = state.mode
+      btn.dataset.calcCountry = DATA.countries[state.country].name
+      btn.dataset.calcRecap = [
+        // On ne garde que le début de la note (« 10 notes ») : la suite
+        // (« · sans écran ») se confondrait avec les séparateurs du récap.
+        `${DATA.models[state.model].label} — ${String(DATA.models[state.model].note).split(' · ')[0]}`,
+        DATA.woodLabels[state.wood],
+        modeLabel,
+        DATA.countries[state.country].name,
+      ].join(' · ')
+    }
+
     function render() {
       const r = compute()
+      syncTrigger()
       $('calc-selection')!.textContent = `${DATA.models[state.model].label} — ${DATA.woodLabels[state.wood]}`
       $('calc-base')!.textContent = fmtEUR(r.basePrice)
       $('calc-discount-label')!.textContent = `${L.discountLabel} −${Math.round(r.discountRate * 100)} %`

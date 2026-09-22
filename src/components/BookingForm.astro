@@ -174,7 +174,26 @@ const upcoming = JSON.stringify(
       {/* Demande de code de remise Neotone : modèle + pays de livraison, ce que
           Neotone réclame à David pour enregistrer la vente. */}
       <div data-bk-discount class="grid gap-3">
-        <label class="block">
+        {/* RÉCAPITULATIF DU CALCULATEUR (22/09/2026, demande de David : « le
+            formulaire repose une question inutile du modèle alors que dans le
+            calculateur la personne a déjà répondu »). Le choix arrive par les
+            `data-calc-*` du bouton « Obtenir mon code de remise » ; les deux
+            questions ci-dessous sont alors MASQUÉES (jamais désactivées : elles
+            doivent continuer à partir au serveur sous leurs noms d'origine
+            `neotoneModel` / `country`).
+            ⚠️ Si la modale s'ouvre SANS ces données (lien direct, autre page,
+            script bloqué), le récapitulatif reste caché et les questions
+            réapparaissent : il ne doit jamais annoncer un choix inventé. */}
+        <div data-bk-calc-recap class="hidden rounded-xl border border-copper/25 bg-copper/5 p-4">
+          <p class="text-[11px] font-700 uppercase tracking-widest text-copper">{bk.calcRecapLabel}</p>
+          <p data-bk-calc-recap-text class="mt-1 break-words text-sm font-600 leading-relaxed"></p>
+          <button type="button" data-bk-calc-edit class="mt-2 text-xs font-600 text-ink-soft/70 underline hover:text-copper">{bk.calcRecapEdit}</button>
+        </div>
+        {/* Bois et mode d'achat choisis dans le calculateur — ils n'étaient
+            transmis nulle part avant. Vides hors calculateur. */}
+        <input type="hidden" name="neotoneWood" value="" />
+        <input type="hidden" name="neotonePurchaseMode" value="" />
+        <label class="block" data-bk-discount-model>
           <span class="text-sm font-600">{bk.discountModel}</span>
           <select name="neotoneModel" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none">
             <option value="">{bk.discountModelChoose}</option>
@@ -183,7 +202,7 @@ const upcoming = JSON.stringify(
             ))}
           </select>
         </label>
-        <label class="block">
+        <label class="block" data-bk-discount-country>
           <span class="text-sm font-600">{bk.discountCountry}</span>
           <input type="text" name="country" autocomplete="country-name" placeholder={bk.discountCountryPlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
         </label>
@@ -355,6 +374,11 @@ const upcoming = JSON.stringify(
   const termsEl = modal?.querySelector('[data-bk-terms]') as HTMLElement
   const vipEl = modal?.querySelector('[data-bk-vip]') as HTMLElement
   const discountEl = modal?.querySelector('[data-bk-discount]') as HTMLElement
+  // Récapitulatif du calculateur + les deux questions qu'il remplace (22/09/2026).
+  const calcRecapEl = modal?.querySelector('[data-bk-calc-recap]') as HTMLElement
+  const calcRecapTextEl = modal?.querySelector('[data-bk-calc-recap-text]') as HTMLElement
+  const discountModelEl = modal?.querySelector('[data-bk-discount-model]') as HTMLElement
+  const discountCountryEl = modal?.querySelector('[data-bk-discount-country]') as HTMLElement
   const instrumentsEl = modal?.querySelector('[data-bk-instruments]') as HTMLElement
   // Showcase uniquement — « pour quel(s) instrument(s) viens-tu ? » (17/08/2026)
   const showcaseInterestsEl = modal?.querySelector('[data-bk-showcase-interests]') as HTMLElement
@@ -452,6 +476,27 @@ const upcoming = JSON.stringify(
     toggleBlock(showcaseInterestsEl, isShowcase)
     toggleBlock(sessionEl, isPaid)
     toggleBlock(discountEl, isDiscount)
+    // ── Choix déjà fait dans le calculateur ──────────────────────────────────
+    // Les valeurs sont posées APRÈS `toggleBlock` : montrer le bloc n'écrase
+    // rien, mais le masquer vide ses champs — l'ordre inverse les perdrait.
+    // Le récapitulatif ne s'affiche QUE si le déclencheur porte vraiment le
+    // choix ; sinon on remet les deux questions (repli honnête).
+    const calcRecap = isDiscount ? (trigger.getAttribute('data-calc-recap') || '') : ''
+    const hasCalc = !!calcRecap
+    const modelSel = form.elements.namedItem('neotoneModel') as HTMLSelectElement | null
+    const countryInput = form.elements.namedItem('country') as HTMLInputElement | null
+    const woodInput = form.elements.namedItem('neotoneWood') as HTMLInputElement | null
+    const modeInput = form.elements.namedItem('neotonePurchaseMode') as HTMLInputElement | null
+    if (modelSel) modelSel.value = hasCalc ? (trigger.getAttribute('data-calc-model') || '') : ''
+    if (countryInput) countryInput.value = hasCalc ? (trigger.getAttribute('data-calc-country') || '') : ''
+    if (woodInput) woodInput.value = hasCalc ? (trigger.getAttribute('data-calc-wood') || '') : ''
+    if (modeInput) modeInput.value = hasCalc ? (trigger.getAttribute('data-calc-mode') || '') : ''
+    if (calcRecapTextEl) calcRecapTextEl.textContent = calcRecap
+    calcRecapEl?.classList.toggle('hidden', !hasCalc)
+    // Masqué ≠ désactivé : les champs partent toujours sous `neotoneModel` et
+    // `country`, l'Edge Function et api/subscribe.js sont inchangés là-dessus.
+    discountModelEl?.classList.toggle('hidden', hasCalc)
+    discountCountryEl?.classList.toggle('hidden', hasCalc)
     // « Sans limite de caractère » : on agrandit visiblement la zone de texte et on
     // annonce qu'on lit tout, pour que la personne ose écrire.
     const msgEl = form.querySelector('textarea[name="message"]') as HTMLTextAreaElement | null
@@ -520,6 +565,13 @@ const upcoming = JSON.stringify(
     el.addEventListener('click', (e) => { e.preventDefault(); open(el) })
   })
   modal?.querySelectorAll('.bk-close').forEach((b) => b.addEventListener('click', close))
+  // « Modifier » : on referme et on ramène au calculateur, là où le choix se fait.
+  modal?.querySelector('[data-bk-calc-edit]')?.addEventListener('click', () => {
+    close()
+    const calc = document.getElementById('calculateur')
+    if (calc) calc.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    else location.hash = '#calculateur'
+  })
   modal?.addEventListener('click', (e) => { if (e.target === modal) close() })
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) close()
@@ -621,6 +673,9 @@ const upcoming = JSON.stringify(
           // Function ne s'en sert que pour `showcase-waitlist`.
           upcomingEvents: upcoming,
           neotoneModel: get('neotoneModel') || null,
+          // Bois et mode d'achat repris du calculateur (22/09/2026).
+          neotoneWood: get('neotoneWood') || null,
+          neotonePurchaseMode: get('neotonePurchaseMode') || null,
           socialAccount: get('socialAccount') || null,
           discoveryChannel: get('discoveryChannel') || null,
           playingSince: get('playingSince') || null,

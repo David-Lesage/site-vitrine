@@ -91,6 +91,11 @@ export default async function handler(req, res) {
         // que d'obliger David à les recopier à la main dans une réponse.
         upcomingEvents: body.upcomingEvents,
         neotoneModel: body.neotoneModel,
+        // Bois et mode d'achat (livraison / retrait showroom) choisis dans le
+        // calculateur de /le-neotone (22/09/2026) : ils n'étaient relayés nulle
+        // part, l'email de David ne pouvait donc pas les mentionner.
+        neotoneWood: body.neotoneWood,
+        neotonePurchaseMode: body.neotonePurchaseMode,
         socialAccount: body.socialAccount,
         discoveryChannel: body.discoveryChannel,
         playingSince: body.playingSince,

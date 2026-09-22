@@ -779,6 +779,8 @@ export const en: Dict = {
     // ⚠️ ALWAYS BOTH RATES (21/08/2026) — see the comment in dict.ts.
     discountIntro: 'A personal code that I request for you from Neotone: −5% online, −7% if you come and try it at the showroom. Personal reply within 24 to 48 h.',
     discountModel: 'Which model are you interested in?',
+    calcRecapLabel: 'Your choice',
+    calcRecapEdit: 'Change',
     discountModelChoose: 'Choose…',
     discountModelNames: {
       one: 'Neotone¹ — 10 notes',
@@ -2821,6 +2823,8 @@ export const en: Dict = {
       modeOnlineSub: 'Worldwide shipping included · 5% discount',
       modeShowroom: '🏠 Come to the showroom ★',
       modeShowroomSub: 'Paris 20th · 7% discount · no wait',
+      modeOnlineShort: 'Delivery (−5%)',
+      modeShowroomShort: 'Showroom pickup (−7%)',
       step1: '1 · Choose your model',
       step2: '2 · Choose your wood',
       step3: '3 · Your delivery country',
