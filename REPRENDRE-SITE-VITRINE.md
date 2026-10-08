@@ -48,22 +48,33 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
-## 🧭 ÉTAT ACTUEL — 22/09/2026 (28ᵉ passe, soir) — REPRENDRE ICI
+## 🧭 ÉTAT ACTUEL — 08/10/2026 (29ᵉ passe) — REPRENDRE ICI (état re-vérifié le 08/10, rien n'a bougé côté site depuis le 22/09)
 
 **Interlocutrice APP = « Handpan Constellation Studio 18 Septembre »** (`local_ce739c7e-…`). Traduction = `local_2cbb5d37-…`.
 Règles : `specs/CHARTE-ARTICLES.md` · un agent à la fois · FR seul · jamais de POST de test en prod · déployer sans demander
 une fois vérifié (commit → build → `npx vercel --prod --yes` → push → contrôle en prod).
 
-### En cours / juste après
-- ⏳ **AGENT EN COURS** : formulaire de facturation du calculateur (particulier/société, TVA intracom, SIRET, livraison
-  distincte) dans `BookingForm.astro`, motif `neotone-discount` seulement. Appel à l'EF `sale-intake` **derrière un drapeau
-  `SALE_INTAKE_ENABLED = false`** : la fonction n'est pas déployée. L'activer quand la session APP dit « déployée ».
-- ✅ FAIT (22/09, en prod) : calculateur — en showroom, seuls les bois en stock cliquables ; en livraison, tous ; à vue vide,
-  aucune restriction. S'activera seul quand l'app aura enregistré les pièces.
-- ⏳ RESTE À FAIRE quand on branchera `sale-intake` : déplacer l'appel côté SERVEUR (/api, jeton `SITE_LEAD_TOKEN`, jamais
-  dans un fichier servi au navigateur), faire remonter `site_lead_id` par site-lead + api/subscribe, exposer
-  `price_original_eur`/`price_discounted_eur` depuis le calculateur (nombres, sans € ni virgule), puis premier appel réel
-  AVEC la session app (données « TEST — à supprimer », prévenir David avant), puis passer `SALE_INTAKE_ENABLED` à true.
+### Vérifié le 08/10/2026 (ne pas le croire sans relire : ça a pu bouger depuis)
+- Dépôt `origin/main` = HEAD, **aucun commit depuis le 22/09 au soir**. EF en ligne : `site-lead` v40 · `sale-intake` v1 (déployée par la
+  session APP) · `showcase-attendance` v1 · `showcase-reminder` v1.
+- **`stock_pieces_public` est TOUJOURS VIDE (`[]`)** → le bloc « Disponible tout de suite » (sous le calculateur) reste masqué et le
+  calculateur ne restreint aucun bois. La session APP attendait le feu vert de David pour enregistrer les 5 instruments (voir plus bas).
+
+### Terminé (en prod depuis le 22/09)
+- ✅ Formulaire de facturation du calculateur (particulier/société, raison sociale, TVA intracom, SIRET, livraison distincte
+  « même adresse » par défaut), motif `neotone-discount` seulement. La facturation est annexée au mail de David (filet).
+- ✅ Calculateur : en showroom seuls les bois en stock sont cliquables ; en livraison tous ; **vue vide ⇒ aucune restriction**.
+- ✅ Doublon du modèle supprimé du formulaire (récap « Ton choix » + lien Modifier) ; bois + mode d'achat arrivent dans le mail.
+
+### ⏳ RESTE À FAIRE pour brancher l'enregistrement automatique des ventes (`SALE_INTAKE_ENABLED = false`, src/lib/saleIntake.ts)
+1. Déplacer l'appel `sale-intake` côté SERVEUR (/api, en-tête `x-site-token` = `SITE_LEAD_TOKEN`, **jamais dans un fichier servi au
+   navigateur**) ; vérifier que `SITE_LEAD_TOKEN` est posé côté Vercel. `site-lead`, lui, l'envoie déjà (api/subscribe.js:41-42).
+2. Faire remonter `site_lead_id` (uuid de la ligne `site_leads`) par site-lead + api/subscribe (aujourd'hui la réponse est `{ok, emailSent}`).
+3. Exposer `price_original_eur` / `price_discounted_eur` depuis le calculateur (NOMBRES, sans € ni virgule). Ne JAMAIS envoyer
+   `discount_buyer_pct` (champ interdit : la remise est la décision de David).
+4. Gérer à l'écran : `piece_indisponible`, `coupon_code_deja_utilise`, limite de débit (6/IP et 3/e-mail par 10 min), `reused:true` (ignorable).
+5. **Premier appel réel AVEC la session APP** : données manifestement fausses (« TEST — à supprimer »), prévenir David avant, la session
+   APP regarde la ligne créée et la retire si elle n'est pas bonne. Seulement ensuite : `SALE_INTAKE_ENABLED = true`.
 
 ### Contrat FIGÉ avec l'app (ne pas réinventer)
 - **Lecture du stock** : vue `public.stock_pieces_public` (anon SELECT) — `partner`, `model`, `wood`, `status`
@@ -88,7 +99,19 @@ une fois vérifié (commit → build → `npx vercel --prod --yes` → push → 
 - 27 changements de l'app audités : 8 phrases corrigées + 1 précision. Mode électronique rendu aux bêta-testeurs (journal 344).
 - Article **/blog/neotone-10-ou-19-notes** publié (relu). Charte : « set hybride » permis, seul « le mode Hybride » réservé.
 
-### Attend David
+### Attend David (par ordre de blocage)
+- 🔴 **Feu vert à la session APP du 18 pour enregistrer son stock** : 5 pièces (Mutant acajou 799 = réservé · Mutant frêne 843 et
+  Mutant acajou 972 = disponibles · Mutant noyer 975 = vendu · Neotone¹ frêne 911 = en transit, prévu 30/09), données de sa colonne B « Sale »
+  du Sheet. Débloque : bloc de disponibilité + restriction des bois du calculateur.
+- 🔴 **Vente du 975** (à enregistrer dans « Vente et affiliation » par la session APP, jamais par nous) : acheteur réel = Alexandre
+  Massé (e-mail personnel connu de David), facturation au nom de MM MUSIC PROD SARL (société, TVA FR intracom). Facture réelle
+  **E-SND-2026-218** (Soundventure Kft., 3 106,20 € TVA 0 autoliquidation, 21/08/2026, objet « Walnut Neotone Mutant Edition Sale »).
+  ⚠️ **E-BN-2025-33 (12 970 €) n'est PAS la facture de vente** : c'est vraisemblablement l'ACHAT des 4 Mutant (3 240+3 150+3 240+3 340 = 12 970).
+  3 106,20 = 3 340 × 0,93 → vendu à −7 % (showroom). Questions posées à David : inscrire la remise de 7 % ? confirmer que E-BN est l'achat ?
+  (Données personnelles de l'acheteur volontairement NON recopiées ici : voir les messages à la session APP.)
+- Colonnes d'acheteurs dans le Google Sheet Neotone : NE PAS les ajouter sans sa décision (Sheet partagé avec Neotone). Reporter le STOCK
+  dans le Sheet est sans problème. Colonne « Sale status » (L) déjà ajoutée le 21/09 ; David a ajouté sa colonne B « Sale ».
+- (suite des décisions en attente)
 - **Colonnes acheteurs dans le Google Sheet** : NE PAS faire sans sa décision (Sheet partagé avec Neotone = données
   personnelles chez un tiers). 3 voies proposées ; recommandation : les ventes restent dans l'app, Neotone reçoit une vente
   à la fois par mail. Reporter le STOCK dans le Sheet, en revanche, ne pose aucun problème.
@@ -4432,3 +4455,8 @@ chantier ventes transmis · erreur de destinataire (session du 10) réparée · 
 Doublon du modèle supprimé du formulaire (+ bois et mode d'achat ajoutés au mail) · bloc de disponibilité posé sous le
 calculateur (masqué à vide) · contrat `sale-intake` figé avec l'app · colonne B « Sale » du Sheet lue et transmise ·
 formulaire de facturation en cours · bois disponibles dans le calculateur à faire ensuite.
+
+## Journal — 08/10/2026 (sauvegarde pour nouvelle session)
+État vérifié : site-vitrine à jour (0/0 avec origin), aucune modification depuis le 22/09 soir. `sale-intake` déployée côté app mais NON branchée
+(drapeau à false). `stock_pieces_public` encore vide. Les deux blocages réels sont chez David : feu vert stock/vente 975 à la session APP du 18
+Septembre, et décisions en attente listées ci-dessus.
