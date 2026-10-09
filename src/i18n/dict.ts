@@ -2944,7 +2944,7 @@ const fr = {
       'Je réponds personnellement à chaque message — un musicien, pas un service client. Pour ton achat, tes cours, l’app ou une collaboration : écris-moi.',
     eyebrow: 'Contact',
     title2: 'Une question ? Parlons-en.',
-    intro: 'Je réponds personnellement à chaque message — je ne suis pas un service client, mais un musicien qui joue le Neotone au quotidien. Pour choisir ton modèle, ton bois, ou organiser ta venue : écris-moi.',
+    intro: 'Je réponds personnellement à chaque message — je ne suis pas un service client, mais un musicien qui joue le Neotone au quotidien. Pour choisir ton modèle, ton bois, ou organiser ta venue : écris-moi. Les Neotone ne se louent pas et ne se prêtent pas : pour en essayer un, viens au showroom.',
     coords: { email: 'Email — réponse rapide', phone: 'Téléphone', showroom: 'Showroom · sur rendez-vous' },
     form: { name: 'Nom & prénom', email: 'Email', phone: 'Téléphone', phoneHelp: 'Pour que je puisse te rappeler rapidement.', phoneError: 'Indique un numéro de téléphone valide (8 à 15 chiffres, indicatif international accepté : +33, +1…).', subject: 'Sujet', message: 'Message', submit: 'M’écrire', note: 'Sinon, écris-moi directement à' },
     subjects: ['Achat d’un Neotone', 'Cours', 'Handpan Constellation Studio', 'Collaboration', 'Presse', 'Autre'],
@@ -3509,6 +3509,7 @@ const fr = {
       { q: 'Je débute — recommandes-tu le Neotone ?', a: "Les deux modèles conviennent parfaitement aux débutants. Jouer du Neotone est même plus facile que de jouer d'un handpan acoustique : la sensibilité des capteurs est réglable, tu obtiens un son juste dès la première frappe. Le Mutant demande un jeu un peu plus précis pour ses notes supplémentaires, mais permet d'aller beaucoup plus loin dans l'harmonie." },
       { q: 'Faut-il du matériel supplémentaire pour produire du son ?', a: "Le Neotone est un instrument numérique autonome avec son propre moteur sonore : il n'a pas besoin d'ordinateur pour fonctionner. Il n'a pas de haut-parleurs intégrés, il est donc nécessaire de le brancher à une enceinte (exemple : enceinte autonome Bose S1 Pro+) ou de jouer au casque pour entendre le son." },
       { q: 'Peut-on appliquer des effets au son du Neotone ?', a: 'Comme avec une guitare électrique, tu peux y connecter tout le matériel externe : pédales d’effet (Boss OC-3), loop stations (Roland RC-505 MKII), reverbs (Strymon Nightsky, Hologram Microcosm).' },
+      { q: 'Peut-on louer un Neotone, ou en emprunter un ?', a: 'Non. Les Neotone ne se louent pas, et je ne prête ni instrument ni prototype. Pour l’essayer avant de l’acheter, viens au showroom à Paris : tu joues les modèles en stock aussi longtemps que tu veux.' },
       { q: 'Le Neotone est-il portable et autonome sur batterie ?', a: 'Oui. Environ 8 heures d’autonomie en jeu continu. Il est livré avec un chargeur, utilisable que l’instrument soit en cours de jeu ou non.' },
     ],
     procedure: [
