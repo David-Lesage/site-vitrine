@@ -64,7 +64,8 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
   `_shared/showcase-email.ts` doit rester identique à la copie du dépôt APP → la prévenir.
 - ✅ **Hisong S1 EN PROD (commit 3984c8e)** sur les chiffres du panier de David (France, TTC) : S1 270,95 € · avec RX Plus (Universal Pack, +90 €)
   360,95 € · 342,91 € avec DAVID-LESAGE-SAVE-5, livraison offerte. Anciens kits 4/5/6-en-1 supprimés. Retirés faute de preuve : VIP10,
-  promos 15-20 %, port 11,95 €. Muse (≠ « S2 ») : rien publié, David n'a pas tranché.
+  promos 15-20 %, port 11,95 €. Muse : David ne connaît pas ce produit → ne JAMAIS l'ajouter.
+- Achat Neotone (David 09/10) : Neotone génère le lien de paiement, l'envoie au client et facture ; David remplit les cases VIOLETTES du Sheet.
 
 ## 🧭 ÉTAT ACTUEL — 09/10/2026 (30ᵉ passe, session cloud) — REPRENDRE ICI
 
