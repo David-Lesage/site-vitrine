@@ -48,6 +48,21 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 09/10/2026 soir (31ᵉ passe, session LOCALE) — REPRENDRE ICI
+
+- ✅ **Stock Neotone EN PROD** : Apps Script « Stock public Neotone » créé sur **contact@lesagedavid.fr** (Chrome /u/2/,
+  projet `1k8XpOAi9neT6CYD1q8YWR_T5VRiLx2GI9IM9F91J46Wp6BenOcDQiaYa`), Application Web, exécuter en tant que moi, accès tout le monde.
+  URL `/exec` = `https://script.google.com/macros/s/AKfycbyTg-PJqlFx9qW3RzP-vziucOH2xYuDl3ntnpLods3LX5zIdzGHuz8E6m5uS0P1j6E7/exec`
+  (vérifiée : seulement model/wood/status/dates ; 3 pièces : Mutant acajou, Mutant frêne, Neotone¹ frêne). Commit a0ff624, déployé,
+  `/api/stock` OK (≈2 s ; 1er appel à froid a pris un 502 « upstream » → le délai de 8 s peut être juste), badges « En stock » + FAQ location vérifiés.
+  ⚠️ Pour modifier le script : Gérer les déploiements → crayon → Nouvelle version (garder l'URL). L'autorisation OAuth s'ouvre
+  dans une FENÊTRE séparée que Claude-in-Chrome ne voit pas : David doit cliquer lui-même.
+  ⚠️ `bun` n'est PAS installé sur le Mac : build local = `npx astro build` ; tests stock = jiti avec alias `@/` (voir journal).
+- ⏸️ **Micros Hisong — rien modifié** : hisong.io (lu le 09/10) ne montre PAS de « S2 » mais l'**AirStudio Muse** (précommande,
+  252,95 € affiché en haut / 252,00 € dans le récapitulatif, expédition estimée 20/12/2026). S1 : un seul « Standard Pack » 271,95 €
+  (« Price excludes VAT ») + option « Universal Pack » 89,00 € (89,95 € sur la page Muse). La FAQ Hisong parle encore des kits
+  4-en-1/5-en-1/6-en-1. Notre fiche affiche encore 319/372/426 € TTC (265,95/309,95/354,95 HT). → questions posées à David.
+
 ## 🧭 ÉTAT ACTUEL — 09/10/2026 (30ᵉ passe, session cloud) — REPRENDRE ICI
 
 **Fusionné dans `main` (PR #1, commit 8db9284) mais PAS DÉPLOYÉ** : la session cloud n'a pas accès à l'équipe Vercel
