@@ -254,7 +254,7 @@ export const en: Dict = {
     calcIntro: 'Choose your purchase mode, model, wood and country — the calculator applies the right discount and 2026 VAT.',
     calcDisclaimer:
       'Listed public prices already include worldwide shipping. Standard 2026 VAT rates. Outside the EU: no EU VAT applied, but local customs fees may be added on delivery, at your expense.',
-    // ── Physical stock (public view `stock_pieces_public`) ───────────────────
+    // ── Physical stock (David's Google Sheet, via src/lib/stockSource.js) ──
     stockTitle: 'What is available right now',
     stockAvailTitle: 'Available right away',
     stockSoonTitle: 'Coming soon',
@@ -262,6 +262,14 @@ export const en: Dict = {
     stockNote:
       'These instruments are at my place in Paris: you can come and try them before you decide. Stock moves, and the order is then placed with Neotone.',
     stockNoteLink: 'See the showroom',
+    // Model cards: per-model stock (plain English, to be reviewed by the EN pass).
+    stockModelBadge: 'In stock',
+    stockModelIn: 'In stock: {woods}',
+    stockModelInLink: 'try it at the showroom (−7%)',
+    stockModelOut: 'Not in stock at the moment',
+    stockModelOutLink: 'available to buy online (−5%, delivery)',
+    stockModelSoon: 'Coming soon: {woods}',
+    stockModelSoonDate: 'expected {date}',
     whyEyebrow: "Two models",
     whyTitle: "Why choose a 10-note or a 19-note?",
     whyP: ["The <strong>Neotone¹ (10 notes)</strong> is great for <strong>discovering</strong> the handpan, <strong>meditating</strong> and <strong>improvising</strong> within a scale.", "The <strong>Neotone¹ Mutant (19 notes)</strong> is made to become your <strong>main instrument</strong>, or to <strong>accompany your voice</strong> on well-known songs.", "It lets you play every <abbr title=\"At least three notes played together, for example C, E, G.\">chord</abbr> (<abbr title=\"The position of a chord within a key, numbered I to VII.\">degree</abbr>) of the major and minor <abbr title=\"The reference scale of a song, for example C major or A minor.\">keys</abbr> on a single scale: I Balance, II Momentum, III Adventure, IV Calm, V Tension, VI Nostalgia, VII Mystery."],
@@ -2384,7 +2392,7 @@ export const en: Dict = {
       'I answer every message personally — a musician, not a customer-service desk. For your purchase, your lessons, the app or a collaboration: write to me.',
     eyebrow: 'Contact',
     title2: 'A question? Let’s talk.',
-    intro: 'I answer every message personally — I’m not a customer-service desk, but a musician who plays the Neotone every day. To choose your model, your wood, or arrange your visit: write to me.',
+    intro: 'I answer every message personally — I’m not a customer-service desk, but a musician who plays the Neotone every day. To choose your model, your wood, or arrange your visit: write to me. Neotones are not for rent or loan: to try one, come to the showroom.',
     coords: { email: 'Email — quick reply', phone: 'Phone', showroom: 'Showroom · by appointment' },
     form: { name: 'Full name', email: 'Email', phone: 'Phone', phoneHelp: 'So I can call you back quickly.', phoneError: 'Please enter a valid phone number (8 to 15 digits, international prefix accepted: +33, +1…).', subject: 'Subject', message: 'Message', submit: 'Write to me', note: 'Or write to me directly at' },
     subjects: ['Buying a Neotone', 'Lessons', 'Handpan Constellation Studio', 'Collaboration', 'Press', 'Other'],
@@ -2830,6 +2838,7 @@ export const en: Dict = {
       { q: 'I’m a beginner — do you recommend the Neotone?', a: 'Both models are perfectly suited to beginners. Playing the Neotone is even easier than playing an acoustic handpan: sensor sensitivity is adjustable, so you get a true sound from the very first strike. The Mutant requires slightly more precise playing for its extra notes, but lets you go much further in harmony.' },
       { q: 'Do I need extra gear to produce sound?', a: 'The Neotone is a self-contained digital instrument with its own sound engine: it doesn’t need a computer to work. It has no built-in speakers, so you need to connect it to a speaker (for example the standalone Bose S1 Pro+) or play with headphones to hear the sound.' },
       { q: 'Can you apply effects to the Neotone’s sound?', a: 'As with an electric guitar, you can connect any external gear: effects pedals (Boss OC-3), loop stations (Roland RC-505 MKII), reverbs (Strymon Nightsky, Hologram Microcosm).' },
+      { q: 'Can I rent or borrow a Neotone?', a: 'No. Neotones are not for rent, and I do not lend instruments or prototypes. To try one before buying, come to the showroom in Paris: you can play the models in stock for as long as you like.' },
       { q: 'Is the Neotone portable and battery-powered?', a: 'Yes. About 8 hours of continuous playing. It ships with a charger, usable whether the instrument is playing or not.' },
     ],
     procedure: [

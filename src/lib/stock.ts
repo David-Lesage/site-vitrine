@@ -1,32 +1,34 @@
 // ============================================================
 // Stock physique des Neotone présents chez David, lu DYNAMIQUEMENT
-// depuis la vue publique `public.stock_pieces_public` du projet
-// Supabase de Handpan Constellation Studio.
+// depuis son Google Sheet de commandes (onglet « Orders Total »), via un
+// Google Apps Script publié — voir src/lib/stockSource.js (URL +
+// traduction des valeurs du Sheet) et scripts/google-apps-script/.
+//
+// Remplace (09/10/2026) l'ancienne lecture de la vue Supabase
+// `stock_pieces_public`, restée vide : la vérité est dans le Sheet, que
+// David tient à jour en temps réel.
 //
 // Même mécanique que src/lib/prices.ts :
-// - À la compilation (SSG) : on lit la vue et on fige les lignes dans
+// - À la compilation (SSG) : on lit l'Apps Script et on fige l'état dans
 //   le HTML → correct à chaque déploiement, sans JS.
-// - Côté client : un petit script relit la vue pour une mise à jour en
-//   direct (le stock bouge entre deux déploiements).
+// - Côté client : la page relit `/api/stock` (api/stock.js, cache CDN
+//   60 s) au chargement — le stock bouge entre deux déploiements.
 //
-// La clé « anon/publishable » est publique (sécurité par RLS), comme
-// dans l'app elle-même. La vue ne contient JAMAIS de numéro de série
-// ni d'identité d'acheteur : seulement partenaire / modèle / bois /
-// statut / date d'arrivée prévue.
+// L'Apps Script ne publie JAMAIS de nom, e-mail, adresse, téléphone,
+// n° de série ni prix : seulement modèle / bois / statut / dates.
 //
 // ⚠️ RÈGLE ABSOLUE : lecture seule, et aucun affichage inventé. Si la
-// vue est vide ou injoignable, on renvoie un tableau vide et la page
-// n'affiche RIEN (pas de « stock inconnu », pas de cadre vide).
+// source est vide ou injoignable, on renvoie un tableau vide et la page
+// n'affiche RIEN (pas de « stock inconnu », pas de cadre vide) — et ne
+// grise AUCUN modèle : on ne grise pas par défaut ce qu'on ne sait pas.
 // ============================================================
 
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from '@/lib/prices'
-import { woodNames, type WoodKey, type ModelId } from '@/data/neotone'
+import { woodNames, woods, type WoodKey, type ModelId } from '@/data/neotone'
 import type { Lang } from '@/i18n/config'
+import { fetchSheetStock, resolveStockScriptUrl } from '@/lib/stockSource.js'
 
-export const STOCK_SELECT = 'partner,model,wood,status,expected_arrival_on'
-export const STOCK_URL =
-  `${SUPABASE_URL}/rest/v1/stock_pieces_public` +
-  `?select=${STOCK_SELECT}&partner=eq.neotone`
+/** Relais same-origin lu par le navigateur (fonction Vercel api/stock.js). */
+export const STOCK_API_PATH = '/api/stock'
 
 export type StockStatus = 'disponible' | 'en_transit'
 
@@ -172,21 +174,125 @@ export function renderStockHtml(lines: StockLine[], labels: StockLabels): string
   return out
 }
 
+// ── Cartes « Deux modèles » (section #modeles) ──────────────────────────────
+// Demande de David (09/10/2026) : « les modèles qui ne sont pas en stock
+// doivent être grisés avec une indication "pas en stock actuellement", mais
+// qu'ils restent disponibles à l'achat en ligne à −5 % ».
+// Même principe que le bloc ci-dessus : UN générateur, utilisé au build et
+// par le script client. Source vide ⇒ état '' ⇒ rien d'affiché, rien de grisé.
+
+export interface ModelStockLabels {
+  /** Badge court : « En stock ». */
+  badge: string
+  /** « En stock : {woods} » */
+  inStock: string
+  /** Lien vers le calculateur en mode showroom : « à essayer au showroom (−7 %) ». */
+  inStockLink: string
+  /** « Pas en stock actuellement » */
+  out: string
+  /** Lien vers le calculateur en mode livraison : « disponible à l'achat en ligne (−5 %, livraison) ». */
+  outLink: string
+  /** « Bientôt en stock : {woods} » */
+  soon: string
+  /** « arrivée prévue le {date} » (ajouté seulement si la date est connue et future). */
+  soonDate: string
+  lang: Lang
+  locale: string
+}
+
+/** '' = source vide (aucun affichage) · 'in' = au moins une pièce disponible · 'out' = aucune. */
+export type ModelStockState = '' | 'in' | 'out'
+
+export interface ModelStockSummary {
+  state: ModelStockState
+  /** Bois disponibles tout de suite, dans l'ordre du nuancier. */
+  available: string[]
+  /** Bois en transit (un par essence, date la plus proche). */
+  soon: { wood: string; arrival: string | null }[]
+}
+
+const WOOD_ORDER: string[] = woods.map((w) => w.key)
+const byWoodOrder = (a: string, b: string) => {
+  const ia = WOOD_ORDER.indexOf(a)
+  const ib = WOOD_ORDER.indexOf(b)
+  return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib) || a.localeCompare(b)
+}
+
+/** Résume le stock d'UN modèle. Aucune ligne au total ⇒ état '' (on ne sait rien, on ne dit rien). */
+export function modelStockSummary(lines: StockLine[], model: string): ModelStockSummary {
+  if (!lines.length) return { state: '', available: [], soon: [] }
+  const mine = lines.filter((l) => l.model === model)
+  const available = [...new Set(mine.filter((l) => l.status === 'disponible').map((l) => l.wood))].sort(byWoodOrder)
+  const soonMap = new Map<string, string | null>()
+  for (const l of mine) {
+    if (l.status !== 'en_transit') continue
+    if (!soonMap.has(l.wood)) soonMap.set(l.wood, l.arrival)
+    else {
+      const cur = soonMap.get(l.wood) ?? null
+      // Garde la date connue la plus proche ; une date connue l'emporte sur « sans date ».
+      if (l.arrival && (!cur || l.arrival < cur)) soonMap.set(l.wood, l.arrival)
+    }
+  }
+  const soon = [...soonMap.entries()].map(([wood, arrival]) => ({ wood, arrival })).sort((a, b) => byWoodOrder(a.wood, b.wood))
+  return { state: available.length ? 'in' : 'out', available, soon }
+}
+
+const LINK_CLS =
+  'inline-flex min-h-11 items-center font-700 text-rust underline underline-offset-4 hover:text-copper'
+
 /**
- * Lecture au build (Node, sans contrainte CORS). Échec silencieux :
- * en cas d'erreur réseau, de réponse non-200 ou de vue vide → [].
+ * HTML de la carte d'un modèle : `badge` (à côté du titre) et `detail` (sous
+ * l'accroche). Les liens portent `data-goto-calc-mode` / `data-goto-calc-model` :
+ * le calculateur les intercepte pour se placer dans le bon mode avec ce modèle.
+ */
+export function renderModelStock(
+  lines: StockLine[],
+  model: string,
+  labels: ModelStockLabels,
+): { state: ModelStockState; badge: string; detail: string } {
+  const s = modelStockSummary(lines, model)
+  if (!s.state) return { state: '', badge: '', detail: '' }
+  const woodsText = (keys: string[]) => keys.map((w) => esc(woodLabel(w, labels.lang))).join(', ')
+  const link = (mode: 'online' | 'showroom', text: string) =>
+    `<a href="#calculateur" data-goto-calc-mode="${mode}" data-goto-calc-model="${esc(model)}" class="${LINK_CLS}">${esc(text)}</a>`
+
+  let badge = ''
+  let detail = ''
+  if (s.state === 'in') {
+    badge = `<span class="rounded-full border border-copper/40 bg-copper/15 px-3 py-1 text-xs font-700 text-rust">${esc(labels.badge)}</span>`
+    detail +=
+      `<p class="text-sm text-ink-soft/90"><span class="font-700 text-ink">${esc(labels.inStock).replace('{woods}', woodsText(s.available))}</span>` +
+      ` — ${link('showroom', labels.inStockLink)}</p>`
+  } else {
+    detail +=
+      `<p class="text-sm text-ink-soft/90"><span class="font-700 text-ink">${esc(labels.out)}</span>` +
+      ` — ${link('online', labels.outLink)}</p>`
+  }
+  if (s.soon.length) {
+    const items = s.soon
+      .map((x) => {
+        const d = formatArrival(x.arrival, labels.locale)
+        const name = esc(woodLabel(x.wood, labels.lang))
+        return d ? `${name} (${esc(labels.soonDate.replace('{date}', d))})` : name
+      })
+      .join(', ')
+    detail += `<p class="mt-1 text-sm text-ink-soft/90">${esc(labels.soon).replace('{woods}', items)}</p>`
+  }
+  return { state: s.state, badge, detail }
+}
+
+/**
+ * Lecture au build (Node, sans contrainte CORS) : appel DIRECT de l'Apps
+ * Script, avec la même transformation que api/stock.js. Échec silencieux :
+ * URL non configurée, erreur réseau, délai dépassé, réponse non-200 ou
+ * source vide → [] (rien d'affiché, rien de grisé).
  */
 export async function fetchStockAtBuild(): Promise<StockLine[]> {
+  const env = typeof process !== 'undefined' ? process.env : undefined
+  const url = resolveStockScriptUrl(env)
+  if (!url) return []
   try {
-    const res = await fetch(STOCK_URL, {
-      headers: {
-        apikey: SUPABASE_ANON_KEY,
-        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-        Accept: 'application/json',
-      },
-    })
-    if (!res.ok) return []
-    return normalizeStock(await res.json())
+    return normalizeStock(await fetchSheetStock(url))
   } catch {
     return []
   }

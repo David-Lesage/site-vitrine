@@ -12,7 +12,8 @@
     "check": "astro check",
     "seo:check": "seo-checker",
     "seo:check:report": "seo-checker --report seo-report.txt",
-    "astro": "astro"
+    "astro": "astro",
+    "test:stock": "bun scripts/test-stock-source.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
