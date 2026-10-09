@@ -137,9 +137,9 @@ test('parseSheetDate', () => {
   assert.equal(parseSheetDate(''), null)
   assert.equal(parseSheetDate(undefined), null)
 })
-test('URL : constante vide livrée, surcharge par env', () => {
-  assert.equal(STOCK_SCRIPT_URL, '')
-  assert.equal(resolveStockScriptUrl({}), '')
+test('URL : constante = Application Web Apps Script, surcharge par env', () => {
+  assert.match(STOCK_SCRIPT_URL, /^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/)
+  assert.equal(resolveStockScriptUrl({}), STOCK_SCRIPT_URL)
   assert.equal(resolveStockScriptUrl({ STOCK_SCRIPT_URL: ' http://127.0.0.1:1/x ' }), 'http://127.0.0.1:1/x')
 })
 

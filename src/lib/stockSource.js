@@ -29,7 +29,7 @@
  * Peut être surchargée par la variable d'environnement `STOCK_SCRIPT_URL`
  * (Vercel → Settings → Environment Variables, ou en local pour les tests).
  */
-export const STOCK_SCRIPT_URL = ''
+export const STOCK_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTg-PJqlFx9qW3RzP-vziucOH2xYuDl3ntnpLods3LX5zIdzGHuz8E6m5uS0P1j6E7/exec'
 
 /** Délai maximal d'attente de l'Apps Script (ms). Il répond en général en 1 à 3 s. */
 export const STOCK_FETCH_TIMEOUT_MS = 8000
