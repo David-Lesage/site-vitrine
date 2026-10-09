@@ -62,10 +62,9 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
   dans site.ts). Prise en main + démo restent 50/70 (`priceGrid(kind)`). HelloAsso corrigé par David et vérifié.
   🔒 EF `site-lead` + `_shared/showcase-email.ts` modifiées dans CE dépôt mais PAS redéployées (attente feu vert) ;
   `_shared/showcase-email.ts` doit rester identique à la copie du dépôt APP → la prévenir.
-- ⏸️ **Micros Hisong — rien modifié** : hisong.io (lu le 09/10) ne montre PAS de « S2 » mais l'**AirStudio Muse** (précommande,
-  252,95 € affiché en haut / 252,00 € dans le récapitulatif, expédition estimée 20/12/2026). S1 : un seul « Standard Pack » 271,95 €
-  (« Price excludes VAT ») + option « Universal Pack » 89,00 € (89,95 € sur la page Muse). La FAQ Hisong parle encore des kits
-  4-en-1/5-en-1/6-en-1. Notre fiche affiche encore 319/372/426 € TTC (265,95/309,95/354,95 HT). → questions posées à David.
+- ✅ **Hisong S1 EN PROD (commit 3984c8e)** sur les chiffres du panier de David (France, TTC) : S1 270,95 € · avec RX Plus (Universal Pack, +90 €)
+  360,95 € · 342,91 € avec DAVID-LESAGE-SAVE-5, livraison offerte. Anciens kits 4/5/6-en-1 supprimés. Retirés faute de preuve : VIP10,
+  promos 15-20 %, port 11,95 €. Muse (≠ « S2 ») : rien publié, David n'a pas tranché.
 
 ## 🧭 ÉTAT ACTUEL — 09/10/2026 (30ᵉ passe, session cloud) — REPRENDRE ICI
 
