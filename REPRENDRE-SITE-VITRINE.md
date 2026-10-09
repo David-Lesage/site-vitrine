@@ -48,6 +48,29 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 09/10/2026 (30ᵉ passe, session cloud) — REPRENDRE ICI
+
+**Fusionné dans `main` (PR #1, commit 8db9284) mais PAS DÉPLOYÉ** : la session cloud n'a pas accès à l'équipe Vercel
+`batdavmusique-4937s-projects` (connecteur Vercel en 403) ni au réseau vers lesagedavid.fr. → `npx vercel --prod --yes` depuis le local.
+- **Stock Neotone lu dans le Google Sheet** (`15fWK…`, onglet « Orders Total », propriétaire **Soundventure**, contact@ = éditeur) :
+  `scripts/google-apps-script/stock-public.gs` (Apps Script AUTONOME, ne publie que modèle/bois/statut/dates) → `api/stock.js`
+  (cache 60 s) → `src/lib/stockSource.js` (`STOCK_SCRIPT_URL` VIDE ⇒ rien affiché) → cartes des modèles grisées
+  « Pas en stock actuellement — disponible à l'achat en ligne (−5 %, livraison) », badge « En stock » sinon, calculateur.
+  `stock_pieces_public` (Supabase) n'est PLUS lue par le site. Tests : `bun run test:stock` (19).
+  👉 RESTE : créer et déployer l'Apps Script avec le compte contact@lesagedavid.fr (David ne veut pas le faire lui-même :
+  le faire via Claude dans Chrome en session LOCALE), coller l'URL `/exec` dans `STOCK_SCRIPT_URL`, déployer, vérifier `/api/stock`.
+- **FAQ Neotone + page contact** : « Les Neotone ne se louent pas et ne se prêtent pas » (FR + EN) contre les demandes parasites.
+- Sheet remis en « Restreint » par David le 09/10 (il avait été public avec les données clients de Neotone).
+
+### Demandes de David en cours (09/10)
+- **Micros Hisong** : nouveaux prix S1 + sortie du S2 → mettre à jour `src/data/shop.ts` (priceLabel), `dict.ts` / `en.ts`
+  (`shop.products['micro-hisong']`, `shop.priceNotes.hisong` avec ses exemples chiffrés), article `setup-nomade-neotone-bose-s1(-en).md`.
+  hisong.io bloqué en cloud → lire https://hisong.io/products/hisong-airstudio-s1 via Chrome en local. Aucun prix inventé.
+- **Stock des micros Hisong à Paris** : afficher combien il en reste. Source à décider avec David (pas le Sheet Neotone).
+- **Traitement automatique des messages du formulaire** (`site_leads`, source `contact`, reçus sur contact@lesagedavid.fr) :
+  brouillons Gmail de réponse dans la langue du client, stock réel, « non » poli pour location/prototype. Attend l'accord de David
+  (tâche planifiée horaire). Réponse anglaise à Rocco (Mutant noyer : vendu ; frêne et acajou dispo) donnée à David le 09/10.
+
 ## 🧭 ÉTAT ACTUEL — 08/10/2026 (29ᵉ passe) — REPRENDRE ICI (état re-vérifié le 08/10, rien n'a bougé côté site depuis le 22/09)
 
 **Interlocutrice APP = « Handpan Constellation Studio 18 Septembre »** (`local_ce739c7e-…`). Traduction = `local_2cbb5d37-…`.
