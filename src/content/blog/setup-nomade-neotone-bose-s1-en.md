@@ -60,7 +60,7 @@ A simple 6.35 mm mono jack cable (or two for stereo). It's the only link between
 | Angled 6.35 mm jack cable | €15 to €30 |
 | **Option** — Bose wireless transmitter | ≈ €168 (or speaker + transmitter combo ≈ €759) |
 | **Option** — Bose Sub1 subwoofer | €990 |
-| **Option** — Hisong AirStudio S1 mic | €319 to €426 incl. VAT |
+| **Option** — Hisong AirStudio S1 mic | €270.95 (€360.95 with the RX Plus) |
 
 A complete Neotone¹ + S1 Pro+ + cable setup therefore comes to around **€2,600** — the equivalent of a single good acoustic handpan, but with every scale, total autonomy and amplification included.
 
@@ -70,7 +70,7 @@ A complete Neotone¹ + S1 Pro+ + cable setup therefore comes to around **€2,60
 - **Bose S1 Pro+** → [official Bose page](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html) (≈ €599 at retailers) — also worth checking [Leboncoin second-hand listings](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B).
 - **Bose wireless transmitter** (zero-cable option) → [Woodbrass, ≈ €168](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) · [speaker + transmitter combo ≈ €759 at SonoVente](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html)
 - **Bose Sub1 subwoofer** (option) → [official Bose page](https://www.bose.fr/p/portable-pa/sub1-powered-bass-module/SUB1-SPEAKERBASSMOD.html)
-- **Hisong AirStudio S1 mic** (option) → [via my partner link](https://hisong.io/DAVID-LESAGE-SAVE-5) — careful, prices there are shown excluding tax: the details are in [my shop](/en/boutique).
+- **Hisong AirStudio S1 mic** (option) → [via my partner link](https://hisong.io/DAVID-LESAGE-SAVE-5) — with the RX Plus (to send the sound to the PA), my −5% code brings it down to €342.91 with free shipping: the details are in [my shop](/en/boutique).
 - **Angled jack cable** → for example [this Ernie Ball cable at Thomann](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm) (angled connector on the instrument side, essential to rest the handpan on the floor).
 - **Headphones, MIDI-USB cable** → from any serious audio retailer, for example [Thomann](https://www.thomann.de/fr/search_dir.html?sw=cable+jack+6.3).
 

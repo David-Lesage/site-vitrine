@@ -60,7 +60,7 @@ Un simple câble jack 6,35 mm mono (ou deux pour la stéréo). C'est le seul lie
 | Câble jack 6,35 mm coudé | 15 à 30 € |
 | **Option** — émetteur sans fil Bose | ≈ 168 € (ou combo enceinte + émetteur ≈ 759 €) |
 | **Option** — caisson Bose Sub1 | 990 € |
-| **Option** — micro Hisong AirStudio S1 | 319 à 426 € TTC |
+| **Option** — micro Hisong AirStudio S1 | 270,95 € (360,95 € avec le RX Plus) |
 
 Un setup complet Neotone¹ + S1 Pro+ + câble revient donc autour de **2 600 €** — l'équivalent d'un bon handpan acoustique unique, mais avec toutes les gammes, l'autonomie totale et la sonorisation incluse.
 
@@ -70,7 +70,7 @@ Un setup complet Neotone¹ + S1 Pro+ + câble revient donc autour de **2 600 €
 - **Bose S1 Pro+** → [page officielle Bose](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html) (≈ 599 € chez les revendeurs) — pense aussi aux [annonces Leboncoin](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B) en occasion.
 - **Émetteur sans fil Bose** (option zéro câble) → [Woodbrass, ≈ 168 €](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) · [combo enceinte + émetteur ≈ 759 € chez SonoVente](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html)
 - **Caisson Bose Sub1** (option) → [page officielle Bose](https://www.bose.fr/p/portable-pa/sub1-powered-bass-module/SUB1-SPEAKERBASSMOD.html)
-- **Micro Hisong AirStudio S1** (option) → [via mon lien partenaire](https://hisong.io/DAVID-LESAGE-SAVE-5) — attention, les prix y sont affichés hors taxes : les détails sont dans [ma boutique](/boutique).
+- **Micro Hisong AirStudio S1** (option) → [via mon lien partenaire](https://hisong.io/DAVID-LESAGE-SAVE-5) — avec le RX Plus (pour sortir vers la sono), mon code −5 % le ramène à 342,91 € livraison offerte : les détails sont dans [ma boutique](/boutique).
 - **Câble jack coudé** → par exemple [ce câble Ernie Ball chez Thomann](https://www.thomann.fr/ernie_ball_instrument_cable_black_6.htm) (connecteur coudé côté instrument, indispensable pour poser le handpan au sol).
 - **Casque, câble MIDI-USB** → chez n'importe quel revendeur audio sérieux, par exemple [Thomann](https://www.thomann.de/fr/search_dir.html?sw=cable+jack+6.3).
 
