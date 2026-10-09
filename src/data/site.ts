@@ -160,10 +160,16 @@ export const agendaEvents: readonly {
 // `recommended` : mis en avant dans le formulaire. La prise en main répond au
 // moment où l'on décroche — juste après l'achat, face à une interface inconnue.
 //
-// ⚠ GRILLE UNIQUE, annoncée partout (site + email) : 1h = 50 €, 1h30 = 70 €,
-// quel que soit le motif du rendez-vous. Ne pas introduire de durée/tarif qui
-// sorte de cette grille sans mettre à jour la copie (dict.booking.vip*,
-// showroom.agendaMore*, email `site-lead`).
+// 💶 DEUX GRILLES depuis le 09/10/2026 (décision de David) :
+//   · prise en main (`onboarding`) et démonstration privée (`demo`) :
+//     1h = 50 €, 1h30 = 70 € — c'est le « rendez-vous individuel » du showroom ;
+//   · COURS (`lesson`) : 1h = 60 €, 1h30 = 75 €, et forfait 4 cours à
+//     50 €/h (200 €) ou 70 €/1h30 (280 €) — voir `lessonPackage` ci-dessous.
+// Les grilles se lisent par motif via `priceGrid(kind)` (src/lib/sessions.ts).
+// Un prix qui bouge ici doit aussi bouger dans la copie écrite en dur :
+// dict/en/es (`lessons.formulas`, `lessons.faq`, `lessons.package*`,
+// `gonilele.coursesText`, `booking.vipPriceNote`), `shop.ts` (cours-prives) et
+// l'Edge Function `site-lead` + `_shared/showcase-email.ts` (emails).
 export const sessionTypes = [
   { id: 'onboarding-60', kind: 'onboarding', minutes: 60, price: 50, remote: true, recommended: true },
   // `recommended` uniquement sur la 1ʳᵉ : c'est la porte d'entrée, et répéter
@@ -171,9 +177,21 @@ export const sessionTypes = [
   { id: 'onboarding-90', kind: 'onboarding', minutes: 90, price: 70, remote: true, recommended: false },
   { id: 'demo-60', kind: 'demo', minutes: 60, price: 50, remote: false, recommended: false },
   { id: 'demo-90', kind: 'demo', minutes: 90, price: 70, remote: false, recommended: false },
-  { id: 'lesson-60', kind: 'lesson', minutes: 60, price: 50, remote: true, recommended: false },
-  { id: 'lesson-90', kind: 'lesson', minutes: 90, price: 70, remote: true, recommended: false },
+  { id: 'lesson-60', kind: 'lesson', minutes: 60, price: 60, remote: true, recommended: false },
+  { id: 'lesson-90', kind: 'lesson', minutes: 90, price: 75, remote: true, recommended: false },
 ] as const
+
+// Forfait 4 cours (09/10/2026) : le cours tombe à 50 € (1h) ou 70 € (1h30),
+// soit 200 € ou 280 € le forfait. Les 4 cours sont à utiliser SUR 2 MOIS
+// (« Forfait 4 cours de 1H sur 2 mois » sur HelloAsso, en prix libre « à partir
+// de » — le site annonce le montant simple). Payé sur HelloAsso (même boutique que les
+// cours à l'unité). Affiché sur /cours (bloc sous les cartes de formules).
+export const lessonPackage = {
+  lessons: 4,
+  validityMonths: 2,
+  pricePerLesson: { 60: 50, 90: 70 },
+  url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/cours-prive-et-stages-avec-david-lesage',
+} as const
 
 export type SessionTypeId = (typeof sessionTypes)[number]['id']
 

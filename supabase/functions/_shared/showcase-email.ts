@@ -82,6 +82,9 @@
 // `sessionTypes` de src/data/site.ts) et transmise dans la requête. Une Edge
 // Function ne peut pas importer le code du site : `FALLBACK_PRICE_GRID` n'est
 // qu'un filet si la valeur n'arrive pas (page en cache d'avant ce changement).
+// Depuis le 09/10/2026 la grille transmise est celle de la prise en main / démo
+// (`priceGrid('demo')`) ; le tarif d'un COURS (60/75) est écrit EN DUR dans
+// `upPriceNote` — à aligner à la main sur `sessionTypes` si un prix bouge.
 // =============================================================================
 
 /** Repli si le site n'envoie pas sa grille. ⚠ Doit refléter `sessionTypes`. */
@@ -255,7 +258,7 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         up1: 'Book an individual appointment with me, at another time that suits you.',
         up2: 'You choose what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply be guided one-to-one — whether you are a complete beginner, still looking for what suits you, or want to dig into one specific point. Whether you take 1h or 1h30, just tell me what brings you: I prepare everything for you.',
         upPriceLabel: 'Price',
-        upPriceNote: 'One single price, whatever you are coming for.',
+        upPriceNote: 'Onboarding or demo. For a lesson: 1h · €60 — 1h30 · €75 (4-lesson package over 2 months available).',
         upCancel: 'Cancellation less than 24 h beforehand: the payment stays with me — that slot was reserved for you — but the appointment can be rescheduled within 3 months.',
         upCta: 'Book an individual appointment',
         upDistinct: 'This is a <strong>separate, paid</strong> appointment. It changes nothing about the gathering you have just booked, which stays <strong>free</strong>.',
@@ -313,7 +316,7 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         up1: 'Réserve un rendez-vous individuel avec moi, à un autre moment qui te convient.',
         up2: 'Tu choisis ce qu’on en fait : découvrir et essayer n’importe quel instrument de la boutique (Neotone, handpans acoustiques, Gonilélé, calebasse…), tester un micro pour handpan (Hisong, set Muling), ou simplement être accompagné·e en tête-à-tête — que tu débutes complètement, que tu cherches encore ce qui te correspond, ou que tu veuilles creuser un point précis. Que tu prennes 1h ou 1h30, dis-moi juste ce qui t’amène : je prépare tout pour toi.',
         upPriceLabel: 'Tarif',
-        upPriceNote: 'Un seul tarif, quel que soit ce pour quoi tu viens.',
+        upPriceNote: 'Prise en main ou démo. Pour un cours : 1h · 60 € — 1h30 · 75 € (forfait 4 cours sur 2 mois possible).',
         upCancel: 'Annulation à moins de 24 h : le règlement reste acquis — ce créneau t’était réservé — mais le rendez-vous est reportable dans les 3 mois.',
         upCta: 'Réserver un rendez-vous individuel',
         upDistinct: 'C’est un rendez-vous <strong>séparé et payant</strong>. Ça ne change rien à la rencontre que tu viens de réserver, qui reste <strong>gratuite</strong>.',

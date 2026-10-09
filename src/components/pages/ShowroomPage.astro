@@ -243,11 +243,14 @@ const paidEvents = sh.events.slice(1)
 // Les 3 cartes payantes affichent le tarif de site.ts (sessionTypes), comme le
 // formulaire de réservation — impossible qu'elles annoncent deux prix différents.
 const eventPrices = [priceForKind('onboarding'), priceForKind('demo'), priceForKind('lesson')]
-// La grille du rendez-vous individuel (« 1h · 50 € — 1h30 · 70 € »), annoncée
-// UNIQUEMENT dans le bloc #individuel (bas de page) et dans la modale.
+// La grille du rendez-vous individuel (« 1h · 50 € — 1h30 · 70 € » : prise en
+// main / démo), annoncée UNIQUEMENT dans le bloc #individuel (bas de page) et
+// dans la modale. Le tarif d'un COURS (60/75 depuis le 09/10/2026) est dit
+// juste dessous, dans `vipPriceNote` (`lessonGrid`).
 // 🚨 Elle n'apparaît plus dans le hero : c'était le PREMIER prix lisible de la
 //    page, sur une page dont l'objet est un événement GRATUIT.
-const grid = priceGrid()
+const grid = priceGrid('demo')
+const lessonGrid = priceGrid('lesson')
 // La prise en main est mise en avant : c'est le moment où quelqu'un qui vient
 // d'acheter décroche ou s'attache. Elle est passée de l'indice 1 à l'indice 0
 // le 21/08/2026 avec le retrait de la carte du showcase gratuit — c'est
@@ -1288,7 +1291,7 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
       <div class="mx-auto mt-5 flex max-w-md flex-col items-center gap-1 rounded-xl bg-gold/15 px-5 py-4">
         <span class="text-[11px] font-700 uppercase tracking-widest text-ink-soft/70">{bk.vipPriceLabel}</span>
         <span class="font-display text-xl font-700 text-rust">{grid}</span>
-        <span class="text-xs text-ink-soft/70">{bk.vipPriceNote}</span>
+        <span class="text-xs text-ink-soft/70">{bk.vipPriceNote.replace('{lessonGrid}', lessonGrid)}</span>
       </div>
       <p class="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-ink-soft/70">{bk.vipPolicyShort}</p>
       <div class="mt-5 flex flex-wrap justify-center gap-3">

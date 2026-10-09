@@ -31,7 +31,7 @@
 // v14 (05/08/2026) : canal de découverte + deux réponses facultatives, et message
 //      libre porté à 20 000 caractères (« sans limite » côté visiteur).
 // v15 (08/08/2026) : RDV VIP — l'email « tu es sur la liste » annonce le tarif
-//      en clair (1h = 50 €, 1h30 = 70 €) et porte un bouton vers
+//      en clair (1h = 50 €, 1h30 = 70 € — cours 60/75 depuis le 09/10/2026) et porte un bouton vers
 //      /showroom#agenda ; le rendez-vous n'est plus limité au Neotone (tout
 //      instrument de la boutique, micros, ou simple accompagnement) ; cadre
 //      d'annulation explicite (24 h, report possible dans les 3 mois) ;
@@ -440,9 +440,11 @@ ${inner}
  * l'application, puis le blog, puis les showcases, puis le RDV VIP.
  *
  * ⚠ TARIFS EN DUR (`privPrice`) : une Edge Function ne peut pas importer
- * src/data/site.ts. La grille annoncée ici doit rester IDENTIQUE à
- * `sessionTypes` du site (1h = 50 €, 1h30 = 70 €) — si un prix bouge là-bas,
- * le changer ici aussi.
+ * src/data/site.ts. Les grilles annoncées ici doivent rester IDENTIQUES à
+ * `sessionTypes` du site — depuis le 09/10/2026 : prise en main / démo
+ * 1h = 50 €, 1h30 = 70 € ; COURS 1h = 60 €, 1h30 = 75 € (forfait 4 cours :
+ * 50 €/h ou 70 €/1h30). Si un prix bouge là-bas, le changer ici aussi
+ * (ici, dans `bookingHtml` et dans `_shared/showcase-email.ts`).
  */
 function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolean): string {
     const en = lang === 'en';
@@ -460,7 +462,7 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
         ctaShow: 'See the next gatherings',
         h2priv: 'Rather have a moment just for you?',
         p4: 'I also offer <strong>individual appointments</strong>, at the Paris 20th showroom or online — and you decide what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply get one-to-one guidance — whether you’re a complete beginner, still working out what suits you, or want to dig into one specific thing. Just tell me what you’re coming for.',
-        privPrice: '<strong>1h — €50</strong> · <strong>1h30 — €70</strong> — one single price, whatever you’re coming for.',
+        privPrice: 'Onboarding or demo: <strong>1h — €50</strong> · <strong>1h30 — €70</strong>.<br />Lesson: <strong>1h — €60</strong> · <strong>1h30 — €75</strong> (4-lesson package over 2 months: €50/h or €70/1h30).',
         ctaPriv: 'Book a VIP appointment with David',
         sign: 'See you soon,<br />David Lesage',
         foot: 'You are receiving this email because you signed up on lesagedavid.fr.',
@@ -476,7 +478,7 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
         ctaShow: 'Voir les prochaines rencontres',
         h2priv: 'Envie d’un moment rien que pour toi ?',
         p4: 'Je propose aussi des <strong>rendez-vous individuels</strong>, au showroom de Paris 20ᵉ ou en visio — et c’est toi qui choisis ce qu’on en fait : découvrir et essayer n’importe quel instrument de la boutique (Neotone, handpans acoustiques, Gonilélé, calebasse…), tester un micro pour handpan (Hisong, set Muling), ou simplement être accompagné·e en tête-à-tête — que tu débutes complètement, que tu cherches encore ce qui te correspond, ou que tu veuilles creuser un point précis. Dis-moi juste ce qui t’amène.',
-        privPrice: '<strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong> — un seul tarif, quel que soit ce pour quoi tu viens.',
+        privPrice: 'Prise en main ou démo : <strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong>.<br />Cours : <strong>1h — 60 €</strong> · <strong>1h30 — 75 €</strong> (forfait 4 cours sur 2 mois : 50 €/h ou 70 €/1h30).',
         ctaPriv: 'Réserver un RDV VIP avec David',
         sign: 'À très vite,<br />David Lesage',
         foot: 'Tu reçois cet email parce que tu t’es inscrit·e sur lesagedavid.fr.',
@@ -543,6 +545,7 @@ function bookingHtml(
     const base = en ? `${SITE}/en` : SITE;
     const hi = firstName ? `${en ? 'Hi' : 'Bonjour'} ${esc(firstName)},` : (en ? 'Hi,' : 'Bonjour,');
     const isDiscount = src === 'neotone-discount';
+    const isLesson = !!sessionType && sessionType.startsWith('lesson');
     const dateLabel = eventDate
         ? new Intl.DateTimeFormat(en ? 'en-GB' : 'fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
             .format(new Date(eventDate + 'T12:00:00'))
@@ -561,7 +564,11 @@ function bookingHtml(
         instruments: 'Instruments',
         slots: 'Slots you suggested',
         termsTitle: 'How it works',
-        priceNote: 'Price: <strong>1h — €50</strong> · <strong>1h30 — €70</strong> — one single price, whatever you’re coming for.',
+        // Tarif selon le motif (09/10/2026) : un COURS (`lesson-*`) n'a pas la grille
+        // de la prise en main / démo. ⚠ Aligné à la main sur `sessionTypes` du site.
+        priceNote: isLesson
+            ? 'Price: <strong>1h — €60</strong> · <strong>1h30 — €75</strong> — or the 4-lesson package over 2 months: €50/h or €70/1h30 per lesson (€200 / €280).'
+            : 'Price: <strong>1h — €50</strong> · <strong>1h30 — €70</strong>.',
         terms1: 'I reply personally to confirm the slot I keep.',
         terms2: 'The appointment is firm once paid: payment is what reserves your slot and commits us both.',
         terms3: 'Something came up? Up to 24 h beforehand, we move your appointment — no problem at all.',
@@ -584,7 +591,9 @@ function bookingHtml(
         instruments: 'Instruments',
         slots: 'Créneaux que tu proposes',
         termsTitle: 'Comment ça se passe',
-        priceNote: 'Tarif : <strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong> — un seul tarif, quel que soit ce pour quoi tu viens.',
+        priceNote: isLesson
+            ? 'Tarif : <strong>1h — 60 €</strong> · <strong>1h30 — 75 €</strong> — ou le forfait 4 cours sur 2 mois : 50 €/h ou 70 €/1h30 le cours (200 € / 280 €).'
+            : 'Tarif : <strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong>.',
         terms1: 'Je te réponds personnellement pour confirmer le créneau que je retiens.',
         terms2: 'Le rendez-vous devient ferme au règlement : c’est lui qui réserve ton créneau et nous engage tous les deux.',
         terms3: 'Un empêchement ? Jusqu’à 24 h avant, on décale ton rendez-vous sans aucun souci.',

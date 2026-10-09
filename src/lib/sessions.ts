@@ -18,14 +18,14 @@ export function priceLabel(price: number): string {
   return `${price} €`
 }
 
-/** « 1h30 · 50 € » — ce qui suit le nom du rendez-vous. */
+/** « 1h30 · 70 € » — ce qui suit le nom du rendez-vous. */
 export function sessionDetails(id: SessionTypeId): string {
   const s = sessionTypes.find((x) => x.id === id)!
   return `${durationLabel(s.minutes)} · ${priceLabel(s.price)}`
 }
 
 /**
- * Options du menu déroulant du formulaire : « Démonstration privée — 1h30 · 50 € ».
+ * Options du menu déroulant du formulaire : « Démonstration privée — 1h30 · 70 € ».
  * `names` vient de dict.booking.sessionTypeNames (clé = `kind`).
  */
 export function sessionOptions(
@@ -47,18 +47,22 @@ export function priceForKind(kind: string): string {
     .join(' · ')
 }
 
+/** Motif d'un rendez-vous : `onboarding` · `demo` · `lesson`. */
+export type SessionKind = (typeof sessionTypes)[number]['kind']
+
 /**
- * La GRILLE du rendez-vous individuel, indépendante du motif : « 1h · 50 € —
- * 1h30 · 70 € ». C'est ce qu'on annonce en clair dans la modale de réservation,
- * sur la page showroom et dans l'email — un seul tarif possible par durée.
- * Déduite de `sessionTypes` : impossible d'annoncer un prix que le formulaire
- * ne pratique pas.
+ * La GRILLE d'un motif : « 1h · 50 € — 1h30 · 70 € ». Depuis le 09/10/2026 il
+ * y a DEUX grilles — prise en main et démo à 50/70 (le « rendez-vous
+ * individuel » du showroom), cours à 60/75 — d'où le `kind` obligatoire : une
+ * grille « tous motifs confondus » afficherait le prix du dernier motif lu.
+ * Utilisée par la modale de réservation, la page showroom et l'email (via
+ * `data-price-grid`). Déduite de `sessionTypes` : impossible d'annoncer un
+ * prix que le formulaire ne pratique pas.
  */
-export function priceGrid(): string {
-  const byDuration = new Map<number, number>()
-  for (const s of sessionTypes) byDuration.set(s.minutes, s.price)
-  return [...byDuration.entries()]
-    .sort((a, b) => a[0] - b[0])
-    .map(([minutes, price]) => `${durationLabel(minutes)} · ${priceLabel(price)}`)
+export function priceGrid(kind: SessionKind): string {
+  return sessionTypes
+    .filter((s) => s.kind === kind)
+    .sort((a, b) => a.minutes - b.minutes)
+    .map((s) => `${durationLabel(s.minutes)} · ${priceLabel(s.price)}`)
     .join(' — ')
 }

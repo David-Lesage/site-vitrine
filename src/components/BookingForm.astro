@@ -42,15 +42,30 @@ const KIND_ORDER = ['lesson', 'demo'] as const
 const kinds = KIND_ORDER.map((k) => ({ id: k, label: bk.sessionTypeNames[k] }))
 // Durées proposées + tarifs : déduits de `sessionTypes`, jamais recopiés — la
 // modale ne peut pas annoncer un prix que le formulaire ne pratique pas.
-const durations = [...new Map(sessionTypes.map((s) => [s.minutes, s.price])).entries()]
-  .sort((a, b) => a[0] - b[0])
-  .map(([minutes, price], i, all) => ({
+// 💶 Depuis le 09/10/2026 le tarif DÉPEND DU MOTIF (cours 60/75, démo 50/70) :
+// chaque option porte un libellé par motif (`labels`), et le <script> remet le
+// bon texte à chaque changement du menu « motif » (voir `syncDurationLabels`).
+// `label` = libellé par défaut (démo), avant tout choix de motif — le bloc
+// durée est de toute façon masqué tant qu'aucun motif n'est choisi.
+const durationMinutes = [...new Set(sessionTypes.map((s) => s.minutes))].sort((a, b) => a - b)
+const durations = durationMinutes.map((minutes, i, all) => {
+  // ★ sur la plus longue : c'est celle que David conseille pour une prise en main.
+  const star = i === all.length - 1 && bk.sessionTypeRecommended ? ` ${bk.sessionTypeRecommended}` : ''
+  const labelFor = (kind: string) => {
+    const s = sessionTypes.find((x) => x.kind === kind && x.minutes === minutes)
+    return s ? `${durationLabel(minutes)} · ${priceLabel(s.price)}${star}` : ''
+  }
+  return {
     value: String(minutes),
-    // ★ sur la plus longue : c'est celle que David conseille pour une prise en main.
-    label: `${durationLabel(minutes)} · ${priceLabel(price)}${i === all.length - 1 && bk.sessionTypeRecommended ? ` ${bk.sessionTypeRecommended}` : ''}`,
-  }))
-// « 1h · 50 € — 1h30 · 70 € » : la grille annoncée en clair dans la modale.
-const grid = priceGrid()
+    label: labelFor('demo'),
+    labels: Object.fromEntries(KIND_ORDER.map((k) => [k, labelFor(k)])),
+  }
+})
+// Grilles annoncées en clair dans la modale : le rendez-vous individuel
+// (prise en main / démo, « 1h · 50 € — 1h30 · 70 € ») et, dans la note, le
+// tarif d'un COURS (« 1h · 60 € — 1h30 · 75 € »).
+const grid = priceGrid('demo')
+const lessonGrid = priceGrid('lesson')
 const slots = [1, 2, 3]
 // Motifs acceptant la visio (les cours) — lu par le script. On raisonne
 // désormais par MOTIF et non par identifiant complet : la durée n'a aucune
@@ -114,9 +129,9 @@ const saleIntake = saleIntakeClientConfig()
       <p class="mt-1.5 text-xs leading-relaxed text-ink-soft/85">{bk.vipScope}</p>
       <div class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <span class="text-[11px] font-700 uppercase tracking-widest text-ink-soft/70">{bk.vipPriceLabel}</span>
-        <span class="font-display text-lg font-700 text-rust">{grid}</span>
+        <span class="font-display text-lg font-700 text-rust" data-bk-vip-grid data-grids={JSON.stringify({ demo: grid, lesson: lessonGrid })}>{grid}</span>
       </div>
-      <p class="mt-1 text-xs text-ink-soft/70">{bk.vipPriceNote}</p>
+      <p class="mt-1 text-xs text-ink-soft/70" data-bk-vip-note>{bk.vipPriceNote.replace('{lessonGrid}', lessonGrid)}</p>
     </div>
 
     <form id="booking-form" class="mt-5 grid gap-3" data-lang={lang} novalidate>
@@ -454,7 +469,7 @@ const saleIntake = saleIntakeClientConfig()
           <span class="text-sm font-600">{bk.durationLabel}</span>
           <select name="sessionDuration" required class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none">
             <option value="">{bk.sessionTypeChoose}</option>
-            {durations.map((d) => <option value={d.value}>{d.label}</option>)}
+            {durations.map((d) => <option value={d.value} data-labels={JSON.stringify(d.labels)}>{d.label}</option>)}
           </select>
         </label>
         <p class="mt-2 rounded-lg bg-gold/10 px-3 py-2 text-xs leading-relaxed text-ink-soft/85">{bk.durationHint}</p>
@@ -620,6 +635,29 @@ const saleIntake = saleIntakeClientConfig()
     const format = (modal?.querySelector('input[name="sessionFormat"]:checked') as HTMLInputElement | null)?.value || ''
     toggleBlock(instrumentsEl, !!kind && format !== 'remote')
     toggleBlock(durationEl, !!kind)
+    syncDurationLabels(kind)
+  }
+
+  /**
+   * Remet sur chaque durée le tarif du motif choisi (cours 60/75, démo 50/70),
+   * et aligne la grille « Tarif » du bloc VIP : dès qu'un motif est choisi elle
+   * affiche CE motif, et la note « Pour un cours : … » (inutile alors) se masque.
+   */
+  function syncDurationLabels(kind: string) {
+    const gridEl = modal?.querySelector('[data-bk-vip-grid]') as HTMLElement | null
+    const noteEl = modal?.querySelector('[data-bk-vip-note]') as HTMLElement | null
+    try {
+      const grids = JSON.parse(gridEl?.dataset.grids || '{}')
+      if (gridEl) gridEl.textContent = grids[kind] || grids.demo || gridEl.textContent
+    } catch { /* grille par défaut conservée */ }
+    noteEl?.classList.toggle('hidden', !!kind)
+    if (!kind) return
+    durationEl?.querySelectorAll<HTMLOptionElement>('option[data-labels]').forEach((o) => {
+      try {
+        const label = JSON.parse(o.dataset.labels || '{}')[kind]
+        if (label) o.textContent = label
+      } catch { /* libellé par défaut conservé */ }
+    })
   }
 
   /**
