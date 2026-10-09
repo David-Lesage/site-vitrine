@@ -58,6 +58,10 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
   ⚠️ Pour modifier le script : Gérer les déploiements → crayon → Nouvelle version (garder l'URL). L'autorisation OAuth s'ouvre
   dans une FENÊTRE séparée que Claude-in-Chrome ne voit pas : David doit cliquer lui-même.
   ⚠️ `bun` n'est PAS installé sur le Mac : build local = `npx astro build` ; tests stock = jiti avec alias `@/` (voir journal).
+- ✅ **Tarifs des cours EN PROD (commit ad7dbbf)** : cours 60 €/1h, 75 €/1h30 ; forfait 4 cours sur 2 mois 200 €/280 € (`lessonPackage`
+  dans site.ts). Prise en main + démo restent 50/70 (`priceGrid(kind)`). HelloAsso corrigé par David et vérifié.
+  🔒 EF `site-lead` + `_shared/showcase-email.ts` modifiées dans CE dépôt mais PAS redéployées (attente feu vert) ;
+  `_shared/showcase-email.ts` doit rester identique à la copie du dépôt APP → la prévenir.
 - ⏸️ **Micros Hisong — rien modifié** : hisong.io (lu le 09/10) ne montre PAS de « S2 » mais l'**AirStudio Muse** (précommande,
   252,95 € affiché en haut / 252,00 € dans le récapitulatif, expédition estimée 20/12/2026). S1 : un seul « Standard Pack » 271,95 €
   (« Price excludes VAT ») + option « Universal Pack » 89,00 € (89,95 € sur la page Muse). La FAQ Hisong parle encore des kits
