@@ -254,7 +254,7 @@ export const en: Dict = {
     calcIntro: 'Choose your purchase mode, model, wood and country — the calculator applies the right discount and 2026 VAT.',
     calcDisclaimer:
       'Listed public prices already include worldwide shipping. Standard 2026 VAT rates. Outside the EU: no EU VAT applied, but local customs fees may be added on delivery, at your expense.',
-    // ── Physical stock (public view `stock_pieces_public`) ───────────────────
+    // ── Physical stock (David's Google Sheet, via src/lib/stockSource.js) ──
     stockTitle: 'What is available right now',
     stockAvailTitle: 'Available right away',
     stockSoonTitle: 'Coming soon',
@@ -262,6 +262,14 @@ export const en: Dict = {
     stockNote:
       'These instruments are at my place in Paris: you can come and try them before you decide. Stock moves, and the order is then placed with Neotone.',
     stockNoteLink: 'See the showroom',
+    // Model cards: per-model stock (plain English, to be reviewed by the EN pass).
+    stockModelBadge: 'In stock',
+    stockModelIn: 'In stock: {woods}',
+    stockModelInLink: 'try it at the showroom (−7%)',
+    stockModelOut: 'Not in stock at the moment',
+    stockModelOutLink: 'available to buy online (−5%, delivery)',
+    stockModelSoon: 'Coming soon: {woods}',
+    stockModelSoonDate: 'expected {date}',
     whyEyebrow: "Two models",
     whyTitle: "Why choose a 10-note or a 19-note?",
     whyP: ["The <strong>Neotone¹ (10 notes)</strong> is great for <strong>discovering</strong> the handpan, <strong>meditating</strong> and <strong>improvising</strong> within a scale.", "The <strong>Neotone¹ Mutant (19 notes)</strong> is made to become your <strong>main instrument</strong>, or to <strong>accompany your voice</strong> on well-known songs.", "It lets you play every <abbr title=\"At least three notes played together, for example C, E, G.\">chord</abbr> (<abbr title=\"The position of a chord within a key, numbered I to VII.\">degree</abbr>) of the major and minor <abbr title=\"The reference scale of a song, for example C major or A minor.\">keys</abbr> on a single scale: I Balance, II Momentum, III Adventure, IV Calm, V Tension, VI Nostalgia, VII Mystery."],

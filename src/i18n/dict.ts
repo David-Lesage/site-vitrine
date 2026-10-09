@@ -287,9 +287,9 @@ const fr = {
     calcIntro: 'Choisis ton mode d’achat, ton modèle, ton bois et ton pays — le calculateur applique la bonne remise et la TVA 2026.',
     calcDisclaimer:
       'Les prix publics affichés incluent déjà l’envoi mondial. Taux de TVA standards 2026. Hors UE : aucune TVA UE appliquée, mais des frais de douane locaux peuvent s’ajouter à la livraison, à ta charge.',
-    // ── Stock physique (vue publique `stock_pieces_public`) ──────────────────
-    // Affiché SEULEMENT si la vue renvoie au moins une pièce Neotone. Vue vide
-    // ou injoignable → aucun de ces textes n'apparaît (voir src/lib/stock.ts).
+    // ── Stock physique (Google Sheet de David, via src/lib/stockSource.js) ──
+    // Affiché SEULEMENT si la source renvoie au moins une pièce Neotone. Source
+    // vide ou injoignable → aucun de ces textes n'apparaît (voir src/lib/stock.ts).
     stockTitle: 'Ce qui est disponible en ce moment',
     stockAvailTitle: 'Disponible tout de suite',
     stockSoonTitle: 'Bientôt disponible',
@@ -297,6 +297,16 @@ const fr = {
     stockNote:
       'Ces instruments sont chez moi, à Paris : tu peux venir les essayer avant de te décider. Le stock bouge, et la commande se fait ensuite avec Neotone.',
     stockNoteLink: 'Voir le showroom',
+    // ── Cartes « Deux modèles » : stock par modèle (Google Sheet de David) ──
+    // Source vide ou injoignable → aucun de ces textes, aucune carte grisée.
+    // `{woods}` = liste des bois, `{date}` = date en toutes lettres.
+    stockModelBadge: 'En stock',
+    stockModelIn: 'En stock : {woods}',
+    stockModelInLink: 'à essayer au showroom (−7 %)',
+    stockModelOut: 'Pas en stock actuellement',
+    stockModelOutLink: 'disponible à l’achat en ligne (−5 %, livraison)',
+    stockModelSoon: 'Bientôt en stock : {woods}',
+    stockModelSoonDate: 'arrivée prévue le {date}',
     whyEyebrow: "Deux modèles",
     whyTitle: "Pourquoi choisir un 10 notes ou un 19 notes ?",
     whyP: ["Le <strong>Neotone¹ (10 notes)</strong> est très bien pour <strong>découvrir</strong> le handpan, <strong>méditer</strong> et <strong>improviser</strong> dans une gamme.", "Le <strong>Neotone¹ Mutant (19 notes)</strong> est fait pour devenir ton <strong>instrument principal</strong>, ou pour <strong>accompagner la voix</strong> sur des morceaux connus.", "Il permet de jouer tous les <abbr title=\"Au moins trois notes jouées ensemble, par exemple do, mi, sol.\">accords</abbr> (<abbr title=\"La place d’un accord dans une tonalité, numérotée de I à VII.\">degrés</abbr>) des <abbr title=\"La gamme de référence d’un morceau, par exemple do majeur ou la mineur.\">tonalités</abbr> majeures et mineures sur une même gamme : I Équilibre, II Élan, III Aventure, IV Détente, V Tension, VI Nostalgie, VII Mystère."],
@@ -3536,9 +3546,9 @@ const fr = {
       // formulaire de demande de code : « Retrait au showroom (−7 %) ».
       modeOnlineShort: 'Livraison (−5 %)',
       modeShowroomShort: 'Retrait au showroom (−7 %)',
-      // ── Disponibilité au showroom (vue `stock_pieces_public`) ─────────────
-      // Uniquement en mode « Je viens au showroom » ET si la vue renvoie au
-      // moins une pièce. Vue vide / injoignable → aucune restriction, aucun de
+      // ── Disponibilité au showroom (Google Sheet, voir src/lib/stock.ts) ───
+      // Uniquement en mode « Je viens au showroom » ET si la source renvoie au
+      // moins une pièce. Source vide / injoignable → aucune restriction, aucun de
       // ces textes n'apparaît (un stock inconnu ne doit jamais bloquer un achat).
       stockOut: 'pas en stock au showroom',
       stockExpected: 'attendu le {date}',

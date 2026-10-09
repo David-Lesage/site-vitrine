@@ -8,7 +8,7 @@ import { numberLocale } from '@/i18n/utils'
 
 interface Props {
   lang: Lang
-  /** Stock physique figé au build (vue `stock_pieces_public`). Vide = aucune restriction. */
+  /** Stock physique figé au build (Google Sheet de David, voir src/lib/stock.ts). Vide = aucune restriction. */
   stock?: StockLine[]
 }
 const { lang, stock = [] } = Astro.props
@@ -54,7 +54,7 @@ const calcData = {
   // « que la personne voie son choix limité directement au niveau du choix des
   // bois sur lesquels elle peut cliquer ». S'applique UNIQUEMENT au mode
   // « Je viens au showroom » : en livraison, tous les bois restent commandables.
-  // Tableau VIDE (état du 22/09/2026, vue sans ligne) ⇒ aucune restriction.
+  // Tableau VIDE (source vide ou injoignable) ⇒ aucune restriction.
   stock: stock.map((l) => ({ model: l.model, wood: l.wood, status: l.status, arrival: l.arrival })),
   locale: numberLocale(lang),
 }
@@ -294,8 +294,8 @@ const calcData = {
     //    `disponible` restent cliquables ; les autres sont grisés, non
     //    cliquables et portent une mention honnête (« pas en stock au
     //    showroom », ou « attendu le … » si la pièce est en transit).
-    //  · Liste de stock VIDE (état du 22/09/2026) ou injoignable → on ne
-    //    restreint RIEN : un stock inconnu ne doit jamais empêcher un achat.
+    //  · Liste de stock VIDE ou source injoignable → on ne restreint RIEN :
+    //    un stock inconnu ne doit jamais empêcher un achat.
     type StockRow = { model: string; wood: string; status: 'disponible' | 'en_transit'; arrival: string | null }
     let stock: StockRow[] = Array.isArray(DATA.stock) ? DATA.stock : []
     const stockLocale = DATA.locale || locale
@@ -341,19 +341,34 @@ const calcData = {
       return String(L.stockOut)
     }
 
+    // Contraste (09/10/2026) : seule la pastille du bois est fortement estompée
+    // et désaturée ; les textes d'origine (nom, nombre de notes) le sont
+    // légèrement, et la mention « pas en stock au showroom » reste en pleine
+    // opacité, foncée, donc lisible. Avant, l'opacité 40 % s'appliquait au
+    // bouton entier, mention comprise (~2:1).
+    const FADE_DISC = ['opacity-40', 'grayscale']
+    const FADE_TEXT = ['opacity-70']
+    const fadeOf = (el: Element) => (el.classList.contains('calc-wood-disc') ? FADE_DISC : FADE_TEXT)
     function setBtnState(btn: HTMLButtonElement, ok: boolean, note: string) {
       let tag = btn.querySelector<HTMLElement>('.calc-avail')
+      const content = [...btn.children].filter((el) => !el.classList.contains('calc-avail'))
       if (ok) {
         btn.removeAttribute('aria-disabled')
-        btn.classList.remove('opacity-40', 'cursor-not-allowed', 'grayscale')
+        btn.classList.remove('cursor-not-allowed')
+        content.forEach((el) => el.classList.remove(...fadeOf(el)))
         tag?.remove()
         return
       }
       btn.setAttribute('aria-disabled', 'true')
-      btn.classList.add('opacity-40', 'cursor-not-allowed', 'grayscale')
+      btn.classList.add('cursor-not-allowed')
+      content.forEach((el) => el.classList.add(...fadeOf(el)))
       if (!tag) {
         tag = document.createElement('span')
-        tag.className = 'calc-avail mt-1 block text-[0.65rem] leading-tight text-ink-soft/70'
+        // Sous une pastille de bois (56 px), la mention passe sur deux lignes
+        // centrées plutôt que d'élargir le nuancier (pas de débordement à 375 px).
+        tag.className =
+          'calc-avail mt-1 block text-[0.7rem] font-600 leading-tight text-ink-soft' +
+          (btn.classList.contains('calc-wood') ? ' max-w-[5.5rem] text-center' : '')
         btn.appendChild(tag)
       }
       tag.textContent = note
@@ -404,6 +419,35 @@ const calcData = {
     document.addEventListener('neotone:stock', (e) => {
       const rows = (e as CustomEvent).detail
       stock = Array.isArray(rows) ? rows : []
+      render()
+    })
+
+    /** Synchronise l'aspect des deux boutons de mode avec `state.mode`. */
+    function syncModeButtons() {
+      document.querySelectorAll<HTMLButtonElement>('.calc-mode').forEach((b) => {
+        const on = b.dataset.mode === state.mode
+        b.classList.toggle('border-copper', on)
+        b.classList.toggle('bg-copper/10', on)
+        b.classList.toggle('border-ink/15', !on)
+        b.setAttribute('aria-checked', on ? 'true' : 'false')
+      })
+    }
+
+    /**
+     * Liens venus des cartes « Deux modèles » (section #modeles, 09/10/2026) :
+     * `<a href="#calculateur" data-goto-calc-mode="online" data-goto-calc-model="one">`.
+     * « Pas en stock actuellement — disponible à l'achat en ligne (−5 %) » place
+     * le calculateur en livraison sur CE modèle ; « à essayer au showroom » le
+     * place en showroom. Le défilement vers #calculateur reste celui du lien.
+     */
+    document.addEventListener('click', (e) => {
+      const a = (e.target as Element | null)?.closest<HTMLElement>('[data-goto-calc-mode]')
+      if (!a) return
+      const mode = a.dataset.gotoCalcMode
+      const model = a.dataset.gotoCalcModel
+      if (mode === 'online' || mode === 'showroom') state.mode = mode
+      if (model && DATA.models[model]) state.model = model
+      syncModeButtons()
       render()
     })
 

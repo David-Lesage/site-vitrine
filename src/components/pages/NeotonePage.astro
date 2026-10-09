@@ -13,7 +13,7 @@ import { Icon } from 'astro-icon/components'
 import { models, woods, woodNames, modelCarousels, specIcons, includedIcons, extrasIcons } from '@/data/neotone'
 import { site } from '@/data/site'
 import { getDict, fr } from '@/i18n/dict'
-import { fetchStockAtBuild, renderStockHtml, type StockLabels } from '@/lib/stock'
+import { fetchStockAtBuild, renderStockHtml, renderModelStock, type StockLabels, type ModelStockLabels } from '@/lib/stock'
 import { localizePath, numberLocale } from '@/i18n/utils'
 import { faqLdJson, productLdJson, breadcrumbLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
@@ -71,10 +71,26 @@ const stockLabels: StockLabels = {
   lang,
   locale: numberLocale(lang),
 }
-// Lu UNE seule fois au build : sert au bloc « Ce qui est disponible » ET au
-// calculateur (grisage des bois absents du showroom).
+// Cartes « Deux modèles » : badge « En stock » ou carte grisée « Pas en stock
+// actuellement » (demande de David, 09/10/2026). Libellés transmis au script
+// client en JSON (attribut `data-model-stock-labels`).
+const modelStockLabels: ModelStockLabels = {
+  badge: sl('stockModelBadge'),
+  inStock: sl('stockModelIn'),
+  inStockLink: sl('stockModelInLink'),
+  out: sl('stockModelOut'),
+  outLink: sl('stockModelOutLink'),
+  soon: sl('stockModelSoon'),
+  soonDate: sl('stockModelSoonDate'),
+  lang,
+  locale: numberLocale(lang),
+}
+// Lu UNE seule fois au build (Google Sheet via l'Apps Script) : sert au bloc
+// « Ce qui est disponible », aux cartes des modèles ET au calculateur
+// (grisage des bois absents du showroom). Source vide → tout reste neutre.
 const stockLines = await fetchStockAtBuild()
 const stockHtml = renderStockHtml(stockLines, stockLabels)
+const modelStock = Object.fromEntries(models.map((m) => [m.id, renderModelStock(stockLines, m.id, modelStockLabels)]))
 
 // Petits logos handpan pour le comparatif : acoustique (métal monochrome) vs électronique (couleurs ChromaKeys)
 const acoGlyph = `<svg viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-7 shrink-0 text-ink-soft/60" aria-hidden="true"><ellipse cx="14" cy="13" rx="12" ry="9" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="1.4"/><circle cx="14" cy="13" r="2.6" fill="currentColor"/><circle cx="14" cy="6.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="7.5" cy="10.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="20.5" cy="10.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="9.5" cy="17.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="18.5" cy="17.5" r="1.5" fill="currentColor" fill-opacity="0.6"/></svg>`
@@ -106,16 +122,27 @@ const ld = [
 
   <Section id="modeles">
     <SectionHeading eyebrow={n.modelsEyebrow} title={n.modelsTitle} intro={n.modelsIntro} />
-    <div class="mt-12 grid gap-8 md:grid-cols-2">
+    {/* 📦 STOCK PAR MODÈLE (demande de David, 09/10/2026) — source : son Google
+        Sheet (src/lib/stock.ts). `data-stock` sur la carte : 'in' = au moins une
+        pièce disponible (badge « En stock » + bois) ; 'out' = aucune → photos
+        désaturées + mention « Pas en stock actuellement — disponible à l'achat
+        en ligne (−5 %, livraison) », la carte reste lisible et cliquable ; ''
+        = source vide ou injoignable → rien d'affiché, RIEN de grisé.
+        Le texte dit l'état : le grisé n'est qu'un appui visuel. */}
+    <div class="mt-12 grid gap-8 md:grid-cols-2" data-model-stock-labels={JSON.stringify(modelStockLabels)}>
       {models.map((m) => (
-        <div class="flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
-          <div class="p-4"><Carousel id={m.id} slides={modelCarousels[m.id]} alt={modelLabels[m.id]} /></div>
+        <div class="group/model flex flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40 transition-colors data-[stock=out]:border-dashed data-[stock=out]:border-ink/25 data-[stock=out]:bg-ink/[0.04]" data-model-card={m.id} data-stock={modelStock[m.id].state}>
+          <div class="p-4 transition-[filter,opacity] group-data-[stock=out]/model:opacity-70 group-data-[stock=out]/model:grayscale"><Carousel id={m.id} slides={modelCarousels[m.id]} alt={modelLabels[m.id]} /></div>
           <div class="flex flex-1 flex-col p-6 pt-2">
-            <div class="flex items-baseline justify-between">
-              <h3 class="font-display text-2xl font-700">{modelLabels[m.id]}</h3>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-2">
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h3 class="font-display text-2xl font-700">{modelLabels[m.id]}</h3>
+                <span data-model-stock-badge={m.id} class="empty:hidden" set:html={modelStock[m.id].badge} />
+              </div>
               <span class="rounded-full bg-copper/15 px-3 py-1 text-xs font-700 text-copper">{d.modelNotes[m.id]}</span>
             </div>
             <p class="mt-1 text-ink-soft/80">{d.modelTaglines[m.id]}</p>
+            <div data-model-stock-detail={m.id} class="mt-3 empty:hidden" set:html={modelStock[m.id].detail} />
             <ul class="mt-4 flex-1 space-y-2 text-sm text-ink-soft/90">
               {d.modelFeatures[m.id].map((f) => <li class="flex gap-2"><Icon name="lucide:check" class="mt-0.5 h-4 w-4 shrink-0 text-copper" /> {f}</li>)}
             </ul>
@@ -225,11 +252,10 @@ const ld = [
         plus haut dans la page arriverait avant le choix ; plus bas, après la
         procédure, il arriverait trop tard.
 
-        Source : vue publique `stock_pieces_public` (lecture seule, jamais de
-        n° de série ni d'acheteur). Vue VIDE ou injoignable → le bloc reste
-        `hidden`, donc invisible : pas de « stock inconnu », pas de cadre vide.
-        C'est l'état du 22/09/2026 (0 ligne) : David doit d'abord confirmer son
-        stock pièce par pièce côté app. */}
+        Source (09/10/2026) : le Google Sheet de David, via son Apps Script
+        (lecture seule, jamais de nom, d'e-mail ni de n° de série — voir
+        src/lib/stockSource.js). Source VIDE ou injoignable → le bloc reste
+        `hidden`, donc invisible : pas de « stock inconnu », pas de cadre vide. */}
     <div
       data-stock-neotone
       data-lang={lang}
@@ -249,11 +275,35 @@ const ld = [
 
 <script>
   // Rafraîchit le stock en direct : il bouge entre deux déploiements, et la page
-  // peut être servie depuis un cache. Même générateur de HTML qu'au build.
-  // Échec réseau / vue vide → on masque le bloc (jamais d'info fausse).
-  import { STOCK_URL, normalizeStock, renderStockHtml, type StockLabels } from '@/lib/stock'
-  import { SUPABASE_ANON_KEY } from '@/lib/prices'
+  // peut être servie depuis un cache. Mêmes générateurs de HTML qu'au build.
+  // Source :  /api/stock (api/stock.js → Apps Script → Google Sheet).
+  //  · 200 + lignes → bloc, cartes et calculateur mis à jour ;
+  //  · 200 + []     → source vide : bloc masqué, aucune carte grisée, aucune
+  //                   restriction dans le calculateur (jamais d'info fausse) ;
+  //  · erreur (502, réseau, /api absent en `astro dev`) → on garde l'état figé
+  //                   au build, sans rien inventer.
+  import { STOCK_API_PATH, normalizeStock, renderStockHtml, renderModelStock, type StockLabels, type ModelStockLabels, type StockLine } from '@/lib/stock'
   import type { Lang } from '@/i18n/config'
+
+  function applyModelStock(lines: StockLine[]) {
+    const grid = document.querySelector<HTMLElement>('[data-model-stock-labels]')
+    if (!grid) return
+    let labels: ModelStockLabels
+    try {
+      labels = JSON.parse(grid.dataset.modelStockLabels || '')
+    } catch {
+      return
+    }
+    grid.querySelectorAll<HTMLElement>('[data-model-card]').forEach((card) => {
+      const model = card.dataset.modelCard!
+      const r = renderModelStock(lines, model, labels)
+      card.dataset.stock = r.state
+      const badge = card.querySelector<HTMLElement>('[data-model-stock-badge]')
+      const detail = card.querySelector<HTMLElement>('[data-model-stock-detail]')
+      if (badge) badge.innerHTML = r.badge
+      if (detail) detail.innerHTML = r.detail
+    })
+  }
 
   const box = document.querySelector<HTMLElement>('[data-stock-neotone]')
   if (box) {
@@ -270,20 +320,21 @@ const ld = [
     }
     ;(async () => {
       try {
-        const res = await fetch(STOCK_URL, {
-          headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}`, Accept: 'application/json' },
-        })
+        const res = await fetch(STOCK_API_PATH, { headers: { Accept: 'application/json' } })
         if (!res.ok) return
-        const lines = normalizeStock(await res.json())
+        const data = await res.json()
+        if (!Array.isArray(data)) return
+        const lines = normalizeStock(data)
         const html = renderStockHtml(lines, labels)
         box.innerHTML = html
         box.hidden = html === ''
+        applyModelStock(lines)
         // Le calculateur écoute cet événement pour regriser les bois absents du
         // showroom (tableau vide = plus aucune restriction). Un seul fetch pour
-        // les deux blocs.
+        // les trois blocs.
         document.dispatchEvent(new CustomEvent('neotone:stock', { detail: lines }))
       } catch {
-        /* réseau / CORS : on garde ce qui a été figé au build */
+        /* réseau / réponse illisible : on garde ce qui a été figé au build */
       }
     })()
   }
