@@ -24,3 +24,17 @@ N (cyan) = taux de TVA, origine inconnue. Le connecteur Sheets n'a pas accès (a
 Client remplit le formulaire (+ encart procédure) → vente déposée dans l'app (sale-intake) → David choisit n° de série + prix → clic
 « Envoyer à Neotone » = mail à neotone@ + écriture des cases violettes (doPost Apps Script protégé, par nom d'en-tête, jamais
 écraser une case non vide) → Neotone facture et envoie le lien → David vérifie et confirme.
+
+## ✅ Décisions de David (10/10/2026)
+1. Envoi à Neotone **après le clic de David** dans l'app (jamais automatique à la soumission).
+2. Remise par défaut : **−7 % showroom / −5 % en ligne** (mode choisi par le client), modifiable par David avant l'envoi.
+3. **Client en copie** du mail envoyé à Neotone.
+4. **Ajouter une colonne « Phone » (violette)** dans le Sheet — à faire valider par Neotone (leur fichier).
+
+## Répartition
+- SITE (cette session) : formulaire + encart procédure + confirmation e-mail + consentement transmission à Soundventure ;
+  dépôt serveur vers `sale-intake` (étapes 1-4 du handoff 08/10) ; `doPost` de l'Apps Script (écriture des cases violettes par
+  nom d'en-tête, secret partagé, jamais écraser une case non vide). Premier appel réel AVEC la session APP + feu vert David.
+- APP : bouton « Envoyer à Neotone » (aperçu dry_run, choix n° de série + prix), EF send-sale-to-partner (Dani en destinataire,
+  client en copie) + appel du doPost ; corriger `purchase_channel` forcé à 'online' dans sale-intake.
+- DAVID : mail à Neotone pour la colonne Phone (brouillon préparé par Claude).
