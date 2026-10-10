@@ -29,7 +29,7 @@ Client remplit le formulaire (+ encart procédure) → vente déposée dans l'ap
 1. Envoi à Neotone **après le clic de David** dans l'app (jamais automatique à la soumission).
 2. Remise par défaut : **−7 % showroom / −5 % en ligne** (mode choisi par le client), modifiable par David avant l'envoi.
 3. **Client en copie** du mail envoyé à Neotone.
-4. **Ajouter une colonne « Phone » (violette)** dans le Sheet — à faire valider par Neotone (leur fichier).
+4. ~~Colonne Phone~~ → **ANNULÉ (David 10/10)** : « mettre le numéro dans la colonne W "Billing adress of the customer" […] tout dans la même case nom, prénom, adresse, numéro de TVA si applicable ». Aucun mail à Neotone nécessaire.
 
 ## Répartition
 - SITE (cette session) : formulaire + encart procédure + confirmation e-mail + consentement transmission à Soundventure ;
@@ -37,4 +37,4 @@ Client remplit le formulaire (+ encart procédure) → vente déposée dans l'ap
   nom d'en-tête, secret partagé, jamais écraser une case non vide). Premier appel réel AVEC la session APP + feu vert David.
 - APP : bouton « Envoyer à Neotone » (aperçu dry_run, choix n° de série + prix), EF send-sale-to-partner (Dani en destinataire,
   client en copie) + appel du doPost ; corriger `purchase_channel` forcé à 'online' dans sale-intake.
-- DAVID : mail à Neotone pour la colonne Phone (brouillon préparé par Claude).
+
