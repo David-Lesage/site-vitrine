@@ -69,7 +69,7 @@ export const es: Dict = {
       "wish": "¿Te gustaría ser probador beta? Marca la casilla en el formulario y cuéntame brevemente por qué te interesa la aplicación y cómo piensas usarla. Leo los mensajes y respondo personalmente.",
       "more": "Acceso a la aplicación",
       "ctaWaitlist": "Únete a la lista de espera",
-      "priceClosedNote": "Estos precios son solo orientativos; serán los precios del lanzamiento público. La aplicación completa, incluido el plan gratuito Discovery, aún no está disponible: ningún plan está disponible actualmente. Un pequeño grupo de beta testers la está utilizando a cambio de sus comentarios. Por ahora, la lista de espera es la única forma de acceder, independientemente del plan que te interese cuando se lance. ¿Quieres ser beta tester? Cuéntame abajo por qué te interesa la aplicación; leo y respondo personalmente.",
+      "priceClosedNote": "Estos precios son solo orientativos; serán los precios del lanzamiento público. La aplicación completa, incluido el plan gratuito, aún no está disponible: ningún plan está disponible actualmente. Un pequeño grupo de beta testers la está utilizando a cambio de sus comentarios. Por ahora, la lista de espera es la única forma de acceder, independientemente del plan que te interese cuando se lance. ¿Quieres ser beta tester? Cuéntame abajo por qué te interesa la aplicación; leo y respondo personalmente.",
       "formTitle": "Para ser notificado de la apertura",
       "formFirst": "Nombre",
       "formLast": "Apellidos",
@@ -626,7 +626,7 @@ export const es: Dict = {
     "products": {
       "handpan-studio": {
         "name": "Handpan Constellation Studio · la aplicación",
-        "description": "Mi aplicación educativa, tanto para handpan acústico como para Neotone: colores, geometría y emociones que hacen que la música sea visible. Prueba gratuita en modo acústico, luego Studio desde 9,90 €/mes: desbloquea la creación, el guardado y la exportación de tus partituras en PDF/PNG."
+        "description": "Mi aplicación educativa, tanto para handpan acústico como para Neotone: colores, geometría y emociones que hacen que la música sea visible. Prueba gratuita en modo acústico, luego Esencial a 3,49 € IVA incl./mes, con 1 mes de prueba gratuito. Studio y Profesor: próximamente."
       },
       "neotone-one": {
         "name": "Neotone¹",
@@ -1556,35 +1556,28 @@ export const es: Dict = {
       }
     ],
     "priceEyebrow": "Precios",
-    "priceTitle": "Descubrimiento o Estudio",
-    "priceIntro": "Comienza gratis con Discovery. Actualiza a Studio para desbloquear el modo electrónico Neotone (MIDI), la creación avanzada, el guardado y la exportación de tus partituras a PDF/PNG.",
-    "priceCta": "Voy al estudio",
+    "priceTitle": "Gratis, Esencial… y pronto más",
+    "priceIntro": "Empieza gratis. Pasa a Esencial para ir más lejos, con un mes de prueba gratuito. Los planes Studio y Profesor están en camino.",
+    "priceCta": "Paso a Esencial",
     "priceFreeCta": "Comienza gratis",
-    "pricePopular": "El más elegido",
-    "priceMax": "Oferta limitada para fundadores",
-    "priceOnce": "pago único",
-    "pricePerMonth": "/ mois",
-    "pricePerYear": "/ an",
+    "pricePerMonth": "/ mes",
+    "priceTtc": "IVA incl.",
+    "priceTrial": "1 mes de prueba gratuito",
+    "priceComing": "Próximamente",
     "priceFree": {
-      "name": "Descubrimiento",
-      "price": "Gratis",
-      "blurb": "Una cuenta gratuita para descubrir el enfoque visual: visualiza, reproduce y exporta tus partituras en modo acústico, sin pagar nada."
+      "name": "Gratis",
+      "price": "",
+      "blurb": "Una cuenta gratuita para descubrir el enfoque visual de la aplicación."
     },
     "priceTiers": {
-      "monthly": {
-        "name": "Estudio mensual",
-        "blurb": "Desbloquea el modo electrónico (Neotone /MIDI), la creación avanzada, el guardado y la exportación, mes a mes, sin compromiso."
+      "essential": {
+        "name": "Esencial",
+        "blurb": "Tarjeta bancaria registrada al inscribirte; la suscripción empieza automáticamente tras el mes de prueba, se renueva cada mes y todo mes empezado se debe; puedes pararla en cualquier momento para el mes siguiente."
       },
-      "annual": {
-        "name": "Estudio anual",
-        "blurb": "Un año de acceso completo: modo electrónico (Neotone /MIDI), creación avanzada, guardado y exportación. Aproximadamente tres meses gratis en comparación con la suscripción mensual."
-      },
-      "lifetime": {
-        "name": "Estudio para toda la vida",
-        "blurb": "Un solo pago, acceso de por vida: modo electrónico (Neotone /MIDI), creación avanzada, guardado y exportación. Oferta del fundador, unidades limitadas."
-      }
+      "studio": { "name": "Studio", "blurb": "" },
+      "prof": { "name": "Profesor", "blurb": "" }
     },
-    "priceNote": "Los importes se sincronizan en tiempo real con Stripe. Studio desbloquea todo el taller creativo.",
+    "priceNote": "Precios con IVA incluido. La suscripción se contrata y se gestiona dentro de la aplicación.",
     "videosEyebrow": "La aplicación en movimiento",
     "videosTitle": "Vea Handpan Constellation Studio en acción.",
     "videosIntro": "Doce vídeos demostrativos de la aplicación: haga clic en una miniatura para verla a pantalla completa.",
@@ -2187,7 +2180,8 @@ export const es: Dict = {
           "Para que sepa exactamente de quién se trata, aquí tiene su identificación: Résonances Productions, una asociación sin ánimo de lucro según la ley francesa de 1901, registrada en la subprefectura de Pamiers y publicada en el Boletín Oficial de Asociaciones el 28 de octubre de 2017 — número RNA W092002501, número SIRET 919 514 075 00010, código APE 9001Z (artes escénicas). Domicilio social: 2 Impasse des Bleuets, 09600 Aigues-Vives, Francia. Dirección postal: 29 Rue des Orteaux, 75020 París, Francia. Correo electrónico: contact@resonancesproductions.org.",
           "Esta identificación le indica quién recibe estas sumas, y nada más: el editor de este sitio es David Lesage, una persona física; él es el responsable de esta página y de sus datos, como se indica justo arriba y en los avisos legales.",
           "Eso no cambia lo que te estoy diciendo sobre un instrumento: te respondo como músico que toca estos instrumentos a diario, y prefiero decirte que un instrumento no es adecuado para ti en lugar de vendértelo.",
-          "En este sitio web no se procesan pagos, ni yo tampoco. Las compras se realizan en otros lugares: en la tienda HelloAsso de Résonances Productions, en la solicitud de suscripción o directamente al fabricante en el caso de un micrófono Muling."
+          "En este sitio web no se procesan pagos, ni yo tampoco. Las compras se realizan en otros lugares: en la tienda HelloAsso de Résonances Productions, en la solicitud de suscripción o directamente al fabricante en el caso de un micrófono Muling.",
+          "Suscripción a la aplicación (plan Esencial, 3,49 € IVA incluido al mes): empieza con un mes de prueba gratuito, para el que se registra una tarjeta bancaria al inscribirte. Si no la paras antes del final de la prueba, la suscripción empieza automáticamente y se renueva cada mes por tácita reconducción. Todo mes empezado se debe y no se reembolsa; puedes pararla en cualquier momento, con efecto el mes siguiente."
         ]
       },
       {

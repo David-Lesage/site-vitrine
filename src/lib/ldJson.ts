@@ -102,9 +102,9 @@ export function softwareAppLdJson() {
       '@type': 'AggregateOffer',
       priceCurrency: 'EUR',
       lowPrice: '0',
-      highPrice: '249',
-      offerCount: '4',
-      description: 'Version Découverte gratuite, ou Studio dès 9,90 €/mois (89 €/an · 249 € à vie).',
+      highPrice: '3.49',
+      offerCount: '2',
+      description: 'Version gratuite, ou Essentiel à 3,49 € TTC/mois avec 1 mois d’essai gratuit. Studio et Prof : à venir.',
     },
   }
 }

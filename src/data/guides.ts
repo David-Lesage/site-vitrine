@@ -175,7 +175,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Pour appliquer la méthode, j’ai créé <a href="/handpan-app">Handpan Constellation Studio</a>, l’application qui rend la musique visible. Elle affiche tes notes en couleurs, dessine les accords en formes, propose un atlas de gammes du monde et te laisse créer les tiennes. La version <strong>Découverte est gratuite</strong> en mode acoustique ; la formule <strong>Studio (dès 9,90 €)</strong> débloque l’électronique, la sauvegarde et la création avancée. C’est le compagnon idéal pour s’exercer, seul, à son rythme.',
+            html: 'Pour appliquer la méthode, j’ai créé <a href="/handpan-app">Handpan Constellation Studio</a>, l’application qui rend la musique visible. Elle affiche tes notes en couleurs, dessine les accords en formes, propose un atlas de gammes du monde et te laisse créer les tiennes. La version <strong>Découverte est gratuite</strong> en mode acoustique ; la formule <strong>Essentiel (3,49 € TTC/mois, 1 mois d’essai gratuit)</strong> va plus loin ; les formules Studio et Prof sont à venir. C’est le compagnon idéal pour s’exercer, seul, à son rythme.',
           },
         ],
       },
@@ -567,7 +567,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'To apply the method, I built <a href="/handpan-app">Handpan Constellation Studio</a>, the app that makes music visible. It shows your notes in colours, draws chords as shapes, offers an atlas of world scales and lets you create your own. The <strong>Discovery version is free</strong> in acoustic mode; the <strong>Studio plan (from €9.90)</strong> unlocks the electronic mode, saving and advanced creation. It’s the ideal companion to practise on your own, at your own pace.',
+            html: 'To apply the method, I built <a href="/handpan-app">Handpan Constellation Studio</a>, the app that makes music visible. It shows your notes in colours, draws chords as shapes, offers an atlas of world scales and lets you create your own. The <strong>Discovery version is free</strong> in acoustic mode; the <strong>Essential plan (€3.49 incl. VAT/month, 1-month free trial)</strong> goes further; the Studio and Teacher plans are coming. It’s the ideal companion to practise on your own, at your own pace.',
           },
         ],
       },

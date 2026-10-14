@@ -17,7 +17,9 @@ export const SUPABASE_URL = 'https://zqcuhnjjrgmybftppkcl.supabase.co'
 export const SUPABASE_ANON_KEY = 'sb_publishable_turahpl0xi-qKN6jmG3yBg_tqpVZbtx'
 export const GET_PRICES_URL = `${SUPABASE_URL}/functions/v1/get-prices`
 
-export type PlanId = 'monthly' | 'annual' | 'lifetime'
+// Décision David 14/10/2026 : seule la formule Essentiel a un prix (3,49 € TTC / mois,
+// 1 mois d'essai). Studio et Prof : « À venir », quelle que soit la réponse de Stripe.
+export type PlanId = 'essential'
 export interface PriceInfo {
   amount: number | null
   currency: string
@@ -25,12 +27,10 @@ export interface PriceInfo {
 }
 export type PriceMap = Record<PlanId, PriceInfo>
 
-// Valeurs de repli si la récupération échoue au build (montants au 29/06/2026 ;
-// la vraie source de vérité reste Stripe via /api/prices).
+// Valeur de repli tant que le prix Stripe « essential » n'existe pas (ou si la
+// récupération échoue) : 3,49 € TTC / mois (décision David 14/10/2026).
 export const FALLBACK_PRICES: PriceMap = {
-  monthly: { amount: 9.9, currency: 'eur', interval: 'month' },
-  annual: { amount: 89, currency: 'eur', interval: 'year' },
-  lifetime: { amount: 249, currency: 'eur', interval: null },
+  essential: { amount: 3.49, currency: 'eur', interval: 'month' },
 }
 
 export function formatAmount(p: PriceInfo | undefined, locale = 'fr-FR'): string {
@@ -56,11 +56,8 @@ export async function fetchPricesAtBuild(): Promise<PriceMap> {
     })
     if (!res.ok) return FALLBACK_PRICES
     const data = (await res.json()) as Partial<PriceMap>
-    return {
-      monthly: data.monthly ?? FALLBACK_PRICES.monthly,
-      annual: data.annual ?? FALLBACK_PRICES.annual,
-      lifetime: data.lifetime ?? FALLBACK_PRICES.lifetime,
-    }
+    const e = data.essential
+    return { essential: e && e.amount != null ? e : FALLBACK_PRICES.essential }
   } catch {
     return FALLBACK_PRICES
   }

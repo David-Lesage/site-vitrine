@@ -104,7 +104,7 @@ export const esGuides: GuidesByLang = {
         "blocks": [
           {
             "kind": "p",
-            "html": "Para implementar este método, creé <a href=\"/handpan-app\">Handpan Constellation Studio</a>, la aplicación que hace que la música sea visual. Muestra las notas en color, dibuja acordes con formas, ofrece un mapa mundial de escalas y te permite crear las tuyas propias. La <strong>versión Discovery es gratuita</strong> en modo acústico; la <strong>versión Studio (a partir de 9,90 €)</strong> desbloquea la electrónica, la función de guardado y la creación avanzada. Es la compañera ideal para practicar a solas, a tu propio ritmo."
+            "html": "Para implementar este método, creé <a href=\"/handpan-app\">Handpan Constellation Studio</a>, la aplicación que hace que la música sea visual. Muestra las notas en color, dibuja acordes con formas, ofrece un mapa mundial de escalas y te permite crear las tuyas propias. La <strong>versión Discovery es gratuita</strong> en modo acústico; la <strong>versión Esencial (3,49 € IVA incl./mes, 1 mes de prueba gratuito)</strong> va más allá; los planes Studio y Profesor llegarán pronto. Es la compañera ideal para practicar a solas, a tu propio ritmo."
           }
         ]
       },
