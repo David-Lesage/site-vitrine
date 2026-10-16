@@ -16,18 +16,21 @@
 //      coupait l'en-tête `Subject:` avec un `=\r\n` dès qu'il dépassait 74
 //      caractères encodés, ce qui faisait basculer tous les en-têtes suivants
 //      dans le corps (email affiché en source MIME brute). Cf. _shared/mail.ts.
+// v4 (16/10/2026) : le mail à Muling passe par `_shared/muling-mail.ts` — la
+//      PREUVE DE VIREMENT est jointe au mail (au lieu de « dans le dashboard »),
+//      la ligne `Phone:` est toujours présente (mention explicite si absente),
+//      les infos livreur suivent. Incident RASMUS DAHLVIK : Muling a dû redemander
+//      le téléphone.
 // v3 (09/08/2026) : corps envoyé en base64 via `textPart()` — même lib, SECOND
 //      bug indépendant : `quotedPrintableEncode()` échappe `=` en `=3d`
 //      MINUSCULE, interdit par la RFC 2045 §6.7. Cf. _shared/mail.ts.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
-import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
-import { mailSubject, textPart } from '../_shared/mail.ts';
+import {
+    MULING_SALE_COLS, sendMail, sendMulingOrderMail, smtpEnv, type MulingSale,
+} from '../_shared/muling-mail.ts';
 
-const ADMIN_EMAIL = 'contact@lesagedavid.fr';
-const MULING_EMAIL = '85846599@qq.com';
-const DASHBOARD_URL = 'https://play.handpanstudio.app/';
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const MAX_BYTES = 6 * 1024 * 1024; // ~5 Mo de fichier réel une fois décodé
 const ALLOWED_TYPES: Record<string, string> = {
@@ -65,11 +68,12 @@ Deno.serve(async (req) => {
             { auth: { persistSession: false, autoRefreshToken: false } },
         );
 
-        const { data: sale, error: fetchErr } = await admin
+        const { data: saleRow, error: fetchErr } = await admin
             .from('affiliate_sales')
-            .select('id, email, phone, customer_name, quantity, price_discounted_eur, order_ref, shipping_address, shipping_city, shipping_postal_code, shipping_country')
+            .select(MULING_SALE_COLS)
             .eq('id', saleId).eq('partner', 'muling').maybeSingle();
         if (fetchErr) throw fetchErr;
+        const sale = saleRow as unknown as MulingSale | null;
         // L'email doit correspondre à celui de la commande : preuve suffisante
         // à ce volume, sans exiger de compte utilisateur pour le client.
         if (!sale || String(sale.email ?? '').toLowerCase() !== email) {
@@ -92,50 +96,30 @@ Deno.serve(async (req) => {
         }).eq('id', saleId);
         if (updErr) throw updErr;
 
-        // Notification — pas de pièce jointe (le fichier reste dans le bucket
-        // privé, consultable depuis le dashboard) : juste prévenir vite.
-        const host = Deno.env.get('SMTP_HOST') ?? '';
-        const user = Deno.env.get('SMTP_USER') ?? '';
-        const pass = Deno.env.get('SMTP_PASS') ?? '';
-        const from = Deno.env.get('SMTP_FROM') ?? user;
-        const port = Number(Deno.env.get('SMTP_PORT') ?? '465');
-        if (host && user && pass && from) {
-            const send = async (to: string, cc: string | undefined, subject: string, text: string) => {
-                const c = new SMTPClient({ connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } } });
-                try { await c.send({ from, to, cc, subject: mailSubject(subject), mimeContent: [textPart(text)] }); }
-                catch (e) { console.error('muling-claim mail error:', e); }
-                finally { try { await c.close(); } catch { /* ignore */ } }
-            };
+        // Notifications. Le mail à Muling porte la preuve en PIÈCE JOINTE (les
+        // octets sont déjà là : on ne relit pas le bucket). Une panne de mail ne
+        // défait pas le dépôt — la preuve est enregistrée et reste dans le dashboard.
+        const env = smtpEnv();
+        if (env) {
             const name = sale.customer_name ?? email;
-            const addr = [sale.shipping_address, sale.shipping_postal_code, sale.shipping_city, sale.shipping_country]
-                .filter(Boolean).join(', ');
             const ref = sale.order_ref ?? saleId;
 
-            // Un seul email à Muling, David en copie — mêmes infos qu'à la
-            // commande + lien de connexion au dashboard (David, 08/08/2026).
-            await send(MULING_EMAIL, ADMIN_EMAIL, `Payment proof submitted — ${name} (${ref})`,
-                [
-                    `${name} has submitted proof of payment for their order.`,
-                    '',
-                    `Name: ${name}`,
-                    `Email: ${email}`,
-                    sale.phone ? `Phone: ${sale.phone}` : null,
-                    `Quantity: ${sale.quantity}x HMP-2`,
-                    `Amount: ${sale.price_discounted_eur} EUR`,
-                    `Reference: ${ref}`,
-                    addr ? `Shipping address: ${addr}` : null,
-                    '',
-                    'Proof of payment is available in the shared dashboard.',
-                    `Dashboard: ${DASHBOARD_URL}`,
-                ].filter((l) => l !== null).join('\n'));
+            // Un seul email à Muling, David en copie.
+            await sendMulingOrderMail(
+                env,
+                { ...sale, payment_proof_path: path },
+                { bytes, ext },
+                false,
+            );
 
             // Confirmation au CLIENT — preuve écrite pour lui que son dépôt a
             // bien été reçu et transmis (David, 08/08/2026 : « qu'elle ait
             // aussi une preuve »). Pas de cc ici, c'est un email personnel.
             const fr = lang === 'fr';
-            await send(email, undefined,
-                fr ? `Ta preuve de virement est bien reçue — réf. ${ref}` : `Your proof of payment was received — ref. ${ref}`,
-                (fr ? [
+            await sendMail(env, {
+                to: email,
+                subject: fr ? `Ta preuve de virement est bien reçue — réf. ${ref}` : `Your proof of payment was received — ref. ${ref}`,
+                text: (fr ? [
                     `Bonjour ${name},`,
                     '',
                     'C’est confirmé : ta preuve de virement a bien été reçue et transmise à Muling, avec toutes les infos de ta commande.',
@@ -163,7 +147,8 @@ Deno.serve(async (req) => {
                     '',
                     'Thank you,',
                     'David Lesage',
-                ]).join('\n'));
+                ]).join('\n'),
+            });
         }
 
         return json({ ok: true });

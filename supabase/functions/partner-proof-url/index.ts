@@ -7,6 +7,11 @@
 //
 // Appel : supabase.functions.invoke('partner-proof-url', { body: { saleId } })
 // v1 (08/08/2026).
+// v2 (16/10/2026) : l'ADMIN du site peut aussi obtenir la preuve de n'importe
+//      quelle commande (bouton « 📄 Voir la preuve » du panneau Ventes). Jusque-là
+//      un admin n'avait aucun moyen de la voir : `partner_orders` est vide pour
+//      lui, la fonction répondait `not_found`. Le contrôle est fait par le SERVEUR
+//      (`is_site_admin()` évalué avec le JWT de l'appelant) — jamais côté client.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -35,13 +40,17 @@ Deno.serve(async (req) => {
         const saleId = String(body.saleId ?? '').trim();
         if (!saleId) return jsonResponse(req, { error: 'missing_sale_id' }, 400);
 
-        const { data: order, error: orderErr } = await asUser
-            .from('partner_orders')
-            .select('id')
-            .eq('id', saleId)
-            .maybeSingle();
-        if (orderErr) throw orderErr;
-        if (!order) return jsonResponse(req, { error: 'not_found' }, 404);
+        // Admin du site : accès direct. Sinon : partenaire propriétaire de la commande.
+        const { data: isAdmin } = await asUser.rpc('is_site_admin');
+        if (isAdmin !== true) {
+            const { data: order, error: orderErr } = await asUser
+                .from('partner_orders')
+                .select('id')
+                .eq('id', saleId)
+                .maybeSingle();
+            if (orderErr) throw orderErr;
+            if (!order) return jsonResponse(req, { error: 'not_found' }, 404);
+        }
 
         const admin = createClient(SUPABASE_URL, SERVICE_KEY, {
             auth: { persistSession: false, autoRefreshToken: false },

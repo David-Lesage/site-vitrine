@@ -66,7 +66,7 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
           <label class="block"><span class="text-sm font-600">{bk.email}</span>
             <input type="email" name="email" autocomplete="email" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
           <label class="block"><span class="text-sm font-600">{bk.phonePlain}</span>
-            <input type="tel" name="phone" autocomplete="tel" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+            <input type="tel" name="phone" autocomplete="tel" required minlength="6" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
         </div>
         <label class="block"><span class="text-sm font-600">{mu.mulingQuantity}</span>
           <input type="number" name="quantity" min="1" max="20" value="1" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>

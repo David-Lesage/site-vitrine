@@ -209,6 +209,11 @@ Deno.serve(async (req) => {
 
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
         if (!consent) return json({ error: 'missing_consent' }, 400);
+        // TÉLÉPHONE OBLIGATOIRE (16/10/2026) : Muling en a besoin pour la livraison
+        // et l'a redemandé sur la commande RASMUS DAHLVIK, dont le champ était
+        // facultatif. Au moins 6 chiffres — pas de contrôle de format plus fin :
+        // les numéros viennent du monde entier.
+        if ((phone ?? '').replace(/\D/g, '').length < 6) return json({ error: 'missing_phone' }, 400);
         if (!country || !address || !city || !postalCode) return json({ error: 'missing_address' }, 400);
 
         const admin = createClient(
