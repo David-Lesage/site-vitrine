@@ -62,7 +62,7 @@ export function websiteLdJson() {
     '@type': 'WebSite',
     '@id': `${site.url}/#website`,
     name: 'David Lesage — Musique visible',
-    alternateName: ['David Lesage', 'Handpan Constellation Studio', 'Neotone'],
+    alternateName: ['David Lesage', 'Handpan Constellation Studio'],
     url: home,
     description: site.positioning,
     inLanguage: ['fr', 'en'],

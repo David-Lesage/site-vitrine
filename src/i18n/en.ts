@@ -168,7 +168,7 @@ export const en: Dict = {
       {
         sub: 'Electronic handpan · Neotone',
         title: 'A keyboard of scales',
-        text: 'The electronic handpan built by Soundventure, which I have beta-tested since 2023. Every scale in a single instrument, on headphones as well as on stage.',
+        text: 'The electronic handpan built by Soundventure, which I have beta-tested since 2021. Every scale in a single instrument, on headphones as well as on stage.',
         points: ['Every scale in a single instrument', 'Adjustable volume, headphone play, built-in recorder', 'I am an official Neotone ambassador'],
         cta: 'Discover the Neotone',
         alt: 'David Lesage with two Neotone electronic handpans',
@@ -309,7 +309,7 @@ export const en: Dict = {
     trustEyebrow: 'A token of trust',
     trustTitle: 'I personally know the people who make your Neotone',
     trustP1: 'I’ve travelled several times to the workshops in Hungary. I personally know Csaba and Norbert — the two friends behind the Neotone — as well as the whole team: Gergely, Dániel and the craftsmen at MAG Instruments, and Yonathan from Yishama.',
-    trustP2: 'I’ve been an official beta tester for the brand since 2023. Since the very first Neotone¹, I’ve reported and helped fix thousands of bugs and suggested countless improvements. Buying through me isn’t just buying from a reseller: it’s buying from someone who lives the instrument from the inside and helps it evolve.',
+    trustP2: 'I’ve been an official beta tester for the brand since 2021. Since the very first Neotone¹, I’ve reported and helped fix thousands of bugs and suggested countless improvements. Buying through me isn’t just buying from a reseller: it’s buying from someone who lives the instrument from the inside and helps it evolve.',
     trustCaption1: 'A testing and debugging session with the team, at the workshop.',
     trustYishamaLink: 'My story with Yonathan and my two Yishama handpans',
     trustCaption2: 'With the Neotone team during one of my visits to Hungary.',

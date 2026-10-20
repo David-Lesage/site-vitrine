@@ -176,7 +176,7 @@ const fr = {
     // COMPLÉTION. Deux univers qui coexistent. Rien ici n'est inventé :
     // Yishama = ambassadeur et affilié (rien de signé) · Neotone =
     // handpan électronique fabriqué par Soundventure, David bêta-testeur
-    // depuis 2023 · « 🎯 Compléter » et l'affichage des deux pans côte à
+    // depuis 2021 · « 🎯 Compléter » et l'affichage des deux pans côte à
     // côte sont des
     // fonctions réellement livrées dans l'app.
     // ⚖️ Les deux cartes doivent rester STRICTEMENT symétriques :
@@ -199,7 +199,7 @@ const fr = {
       {
         sub: 'Handpan électronique · Neotone',
         title: 'Le clavier des gammes',
-        text: 'Le handpan électronique fabriqué par Soundventure, dont je suis bêta-testeur depuis 2023. Toutes les gammes dans un seul instrument, au casque comme sur scène.',
+        text: 'Le handpan électronique fabriqué par Soundventure, dont je suis bêta-testeur depuis 2021. Toutes les gammes dans un seul instrument, au casque comme sur scène.',
         points: ['Toutes les gammes dans un seul instrument', 'Volume réglable, jeu au casque, enregistreur intégré', 'Je suis ambassadeur officiel Neotone'],
         cta: 'Découvrir le Neotone',
         alt: 'David Lesage avec deux handpans électroniques Neotone',
@@ -347,7 +347,7 @@ const fr = {
     trustEyebrow: 'Gage de confiance',
     trustTitle: 'Je connais personnellement ceux qui fabriquent ton Neotone',
     trustP1: 'Je me suis rendu plusieurs fois dans les ateliers, en Hongrie. Je connais personnellement Csaba et Norbert — les deux amis à l’origine du Neotone — ainsi que toute l’équipe : Gergely, Dániel et les artisans de MAG Instruments, et Yonathan de Yishama.',
-    trustP2: 'Je suis beta-testeur officiel de la marque depuis 2023. Depuis le tout premier Neotone¹, j’ai remonté et fait corriger des milliers de bugs et proposé d’innombrables améliorations. En passant par moi, tu n’as pas un simple revendeur : tu as quelqu’un qui vit l’instrument de l’intérieur et le fait évoluer.',
+    trustP2: 'Je suis beta-testeur officiel de la marque depuis 2021. Depuis le tout premier Neotone¹, j’ai remonté et fait corriger des milliers de bugs et proposé d’innombrables améliorations. En passant par moi, tu n’as pas un simple revendeur : tu as quelqu’un qui vit l’instrument de l’intérieur et le fait évoluer.',
     trustYishamaLink: 'Mon histoire avec Yonathan et mes deux handpans Yishama',
     trustCaption1: 'Session de test et de debug avec l’équipe, à l’atelier.',
     trustCaption2: 'Avec l’équipe Neotone lors d’une de mes visites en Hongrie.',

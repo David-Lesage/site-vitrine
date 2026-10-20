@@ -197,7 +197,7 @@ export const es: Dict = {
       {
         "sub": "Handpan electrónico · Neotone",
         "title": "El teclado de las escalas",
-        "text": "El handpan electrónico fabricado por Soundventure, del cual soy probador beta desde 2023. Todas las escalas en un solo instrumento, para usar con auriculares o en el escenario.",
+        "text": "El handpan electrónico fabricado por Soundventure, del cual soy probador beta desde 2021. Todas las escalas en un solo instrumento, para usar con auriculares o en el escenario.",
         "points": [
           "Todas las escalas en un solo instrumento.",
           "Volumen ajustable, reproducción con auriculares, grabadora integrada.",
@@ -330,7 +330,7 @@ export const es: Dict = {
     "trustEyebrow": "Una señal de confianza",
     "trustTitle": "Conozco personalmente a las personas que fabrican su Neotone",
     "trustP1": "He visitado los talleres en Hungría varias veces. Conozco personalmente a Csaba y Norbert —los dos amigos detrás de Neotone, así como a todo el equipo: Gergely, Dániel y los artesanos de MAG Instruments, y Yonathan de Yishama.",
-    "trustP2": "Soy probador beta oficial de la marca desde 2023. Desde el primer Neotone¹, he reportado y corregido miles de errores y sugerido innumerables mejoras. Al comprar a través de mí, no solo obtienes un distribuidor: obtienes a alguien que vive y respira el instrumento y que lo desarrolla constantemente.",
+    "trustP2": "Soy probador beta oficial de la marca desde 2021. Desde el primer Neotone¹, he reportado y corregido miles de errores y sugerido innumerables mejoras. Al comprar a través de mí, no solo obtienes un distribuidor: obtienes a alguien que vive y respira el instrumento y que lo desarrolla constantemente.",
     "trustYishamaLink": "Mi historia con Yonathan y mis dos handpans Yishama",
     "trustCaption1": "Sesión de pruebas y depuración con el equipo, durante el taller.",
     "trustCaption2": "Con el equipo Neotone durante una de mis visitas a Hungría.",
