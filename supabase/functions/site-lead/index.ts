@@ -462,7 +462,7 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
         ctaShow: 'See the next gatherings',
         h2priv: 'Rather have a moment just for you?',
         p4: 'I also offer <strong>individual appointments</strong>, at the Paris 20th showroom or online — and you decide what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply get one-to-one guidance — whether you’re a complete beginner, still working out what suits you, or want to dig into one specific thing. Just tell me what you’re coming for.',
-        privPrice: 'Onboarding or demo: <strong>1h — €50</strong> · <strong>1h30 — €70</strong>.<br />Lesson: <strong>1h — €60</strong> · <strong>1h30 — €75</strong> (4-lesson package over 2 months: €50/h or €70/1h30).',
+        privPrice: 'Onboarding or demo: <strong>1h — €50</strong> · <strong>1h30 — €70</strong>.<br />Lesson (pay what you wish, with a minimum): <strong>1h — from €60</strong> · <strong>1h30 — from €75</strong> (4-lesson package over 2 months: from €200 / €280).',
         ctaPriv: 'Book a VIP appointment with David',
         sign: 'See you soon,<br />David Lesage',
         foot: 'You are receiving this email because you signed up on lesagedavid.fr.',
@@ -478,7 +478,7 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
         ctaShow: 'Voir les prochaines rencontres',
         h2priv: 'Envie d’un moment rien que pour toi ?',
         p4: 'Je propose aussi des <strong>rendez-vous individuels</strong>, au showroom de Paris 20ᵉ ou en visio — et c’est toi qui choisis ce qu’on en fait : découvrir et essayer n’importe quel instrument de la boutique (Neotone, handpans acoustiques, Gonilélé, calebasse…), tester un micro pour handpan (Hisong, set Muling), ou simplement être accompagné·e en tête-à-tête — que tu débutes complètement, que tu cherches encore ce qui te correspond, ou que tu veuilles creuser un point précis. Dis-moi juste ce qui t’amène.',
-        privPrice: 'Prise en main ou démo : <strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong>.<br />Cours : <strong>1h — 60 €</strong> · <strong>1h30 — 75 €</strong> (forfait 4 cours sur 2 mois : 50 €/h ou 70 €/1h30).',
+        privPrice: 'Prise en main ou démo : <strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong>.<br />Cours (prix libre à partir d’un minimum) : <strong>1h — dès 60 €</strong> · <strong>1h30 — dès 75 €</strong> (forfait 4 cours sur 2 mois : dès 200 € / 280 €).',
         ctaPriv: 'Réserver un RDV VIP avec David',
         sign: 'À très vite,<br />David Lesage',
         foot: 'Tu reçois cet email parce que tu t’es inscrit·e sur lesagedavid.fr.',
@@ -567,7 +567,7 @@ function bookingHtml(
         // Tarif selon le motif (09/10/2026) : un COURS (`lesson-*`) n'a pas la grille
         // de la prise en main / démo. ⚠ Aligné à la main sur `sessionTypes` du site.
         priceNote: isLesson
-            ? 'Price: <strong>1h — €60</strong> · <strong>1h30 — €75</strong> — or the 4-lesson package over 2 months: €50/h or €70/1h30 per lesson (€200 / €280).'
+            ? 'Price (pay what you wish, with a minimum): <strong>1h — from €60</strong> · <strong>1h30 — from €75</strong> — or the 4-lesson package over 2 months: from €200 / €280.'
             : 'Price: <strong>1h — €50</strong> · <strong>1h30 — €70</strong>.',
         terms1: 'I reply personally to confirm the slot I keep.',
         terms2: 'The appointment is firm once paid: payment is what reserves your slot and commits us both.',
@@ -592,7 +592,7 @@ function bookingHtml(
         slots: 'Créneaux que tu proposes',
         termsTitle: 'Comment ça se passe',
         priceNote: isLesson
-            ? 'Tarif : <strong>1h — 60 €</strong> · <strong>1h30 — 75 €</strong> — ou le forfait 4 cours sur 2 mois : 50 €/h ou 70 €/1h30 le cours (200 € / 280 €).'
+            ? 'Tarif (prix libre à partir d’un minimum) : <strong>1h — dès 60 €</strong> · <strong>1h30 — dès 75 €</strong> — ou le forfait 4 cours sur 2 mois : dès 200 € / 280 €.'
             : 'Tarif : <strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong>.',
         terms1: 'Je te réponds personnellement pour confirmer le créneau que je retiens.',
         terms2: 'Le rendez-vous devient ferme au règlement : c’est lui qui réserve ton créneau et nous engage tous les deux.',
