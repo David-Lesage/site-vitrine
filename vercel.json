@@ -10,7 +10,7 @@
       "has": [
         {
           "type": "host",
-          "value": "^(www\\.)?(neotonestudio\\.app|neotone-studio\\.app)$"
+          "value": "^(www\\.)?(neotonestudio\\.app|neotone-studio\\.app|playneotone\\.app)$"
         }
       ],
       "destination": "https://www.lesagedavid.fr/neotone/",
@@ -25,6 +25,17 @@
         }
       ],
       "destination": "https://www.lesagedavid.fr/handpan-app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "^(www\\.)?(playhandpan\\.app|playhandpanstudio\\.app)$"
+        }
+      ],
+      "destination": "https://play.handpanstudio.app/",
       "statusCode": 301
     },
     {
