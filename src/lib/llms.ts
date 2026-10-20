@@ -31,6 +31,7 @@ import { getDict, type Dict } from '@/i18n/dict'
 import { getGuide } from '@/data/guides'
 import { localizePath, pageExistsForLang } from '@/i18n/utils'
 import { products, categoryIds, categorySubs, type Product } from '@/data/shop'
+import { fillCoursePrices, siteCoursePrices } from '@/lib/sessions'
 import { categoryLabel } from '@/lib/blogCategories'
 import type { Lang } from '@/i18n/config'
 
@@ -423,7 +424,9 @@ export async function buildLlms(mode: Mode): Promise<string> {
   const optEn = await renderOptional('en', '##')
   if (optFr.length || optEn.length) parts.push('## Optional', ...optFr, ...optEn)
 
-  return parts.join('\n').replace(/\n{3,}/g, '\n\n').trimEnd() + '\n'
+  // 💶 Jetons de prix des cours (`{lesson60}`…, cf. src/lib/sessions.ts) remplis
+  // ici, une fois pour tout le texte (pages, FAQ, boutique).
+  return fillCoursePrices(parts.join('\n'), siteCoursePrices()).replace(/\n{3,}/g, '\n\n').trimEnd() + '\n'
 }
 
 export const textResponse = (body: string) =>

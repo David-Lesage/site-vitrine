@@ -1322,7 +1322,7 @@ const fr = {
     paymentBic: 'BIC',
     coursesTitle: 'Envie d’apprendre avec moi ?',
     coursesText:
-      'Je donne des cours particuliers de Gonilélé (et plus) en visio ou en présentiel à Paris : 60 €/h ou 75 €/1h30 (forfait 4 cours sur 2 mois : 50 €/h ou 70 €/1h30).',
+      'Je donne des cours particuliers de Gonilélé (et plus) en visio ou en présentiel à Paris, à prix libre à partir d’un minimum : dès {lesson60} €/h ou dès {lesson90} €/1h30 (forfait 4 cours sur 2 mois : dès {packLesson60} €/h ou {packLesson90} €/1h30).',
     coursesCta: 'Réserver un cours',
   },
   // ============================================================
@@ -1965,20 +1965,23 @@ const fr = {
     formulasEyebrow: 'Formules & tarifs',
     formulasTitle: 'Choisis ton format',
     formulas: [
-      { title: 'Cours particulier · 1h', price: '60 €', text: 'Visio ou présentiel à Paris. Handpan, rythme à la calebasse ou gonilélé : on travaille ce qui te fait vibrer.' },
-      { title: 'Cours particulier · 1h30', price: '75 €', text: 'Le format idéal pour aller plus loin : harmonie, rythme, accompagnement, conseils de scène et de studio.' },
+      { title: 'Cours particulier · 1h', price: 'dès {lesson60} €', text: 'Visio ou présentiel à Paris. Handpan, rythme à la calebasse ou gonilélé : on travaille ce qui te fait vibrer.' },
+      { title: 'Cours particulier · 1h30', price: 'dès {lesson90} €', text: 'Le format idéal pour aller plus loin : harmonie, rythme, accompagnement, conseils de scène et de studio.' },
       { title: 'Atelier de groupe', price: 'Sur demande', text: 'Sessions collectives en petit comité (rythme calebasse, handpan…), dans une ambiance conviviale. Format et lieu sur demande.' },
     ],
-    footnote: 'Prise de rendez-vous par email. Le présentiel à Paris est un pont naturel vers le showroom et les rencontres.',
+    footnote: 'Prix libre à partir du montant indiqué. Prise de rendez-vous par email. Le présentiel à Paris est un pont naturel vers le showroom et les rencontres.',
     // Forfait 4 cours (09/10/2026) — chiffres de `lessonPackage` (src/data/site.ts).
+    // 💶 20/10/2026 : prix libre à partir d'un minimum. Les montants sont des
+    // JETONS (`{lesson60}`, `{pack60}`, `{packLesson60}`…) remplis au build par
+    // `fillCoursePrices()` (src/lib/sessions.ts) avec les tarifs HelloAsso.
     packageTitle: 'Forfait 4 cours sur 2 mois',
-    packageText: '4 cours de 1h : 200 € (50 € le cours) · 4 cours de 1h30 : 280 € (70 € le cours). Les 4 cours sont à utiliser sur 2 mois.',
+    packageText: '4 cours de 1h : dès {pack60} € (soit {packLesson60} € le cours) · 4 cours de 1h30 : dès {pack90} € ({packLesson90} € le cours). Prix libre à partir de ces montants ; les 4 cours sont à utiliser sur 2 mois.',
     packageCta: 'Régler sur HelloAsso',
     faqEyebrow: 'FAQ',
     faqTitle: 'Les questions fréquentes sur les cours',
     faq: [
       { q: 'Peut-on apprendre le handpan sans solfège ?', a: 'Oui, c’est tout le principe de la méthode. L’approche visuelle — les couleurs des notes et les formes des accords — remplace le solfège pour te faire progresser vite.' },
-      { q: 'Combien coûte un cours de handpan ?', a: 'Un cours particulier coûte 60 €/h ou 75 €/1h30, en visio ou en présentiel à Paris. Avec le forfait 4 cours (à utiliser sur 2 mois), le cours tombe à 50 €/h (200 € le forfait) ou 70 €/1h30 (280 € le forfait). Les ateliers de groupe se font sur demande.' },
+      { q: 'Combien coûte un cours de handpan ?', a: 'Les cours sont à prix libre, à partir d’un minimum : dès {lesson60} € pour 1h, dès {lesson90} € pour 1h30, en visio ou en présentiel à Paris. Avec le forfait 4 cours (à utiliser sur 2 mois), c’est dès {pack60} € (1h) ou dès {pack90} € (1h30), soit à partir de {packLesson60} € ou {packLesson90} € le cours. Les ateliers de groupe se font sur demande.' },
       { q: 'Les cours en ligne, ça marche pour le handpan ?', a: 'Oui, les cours se donnent en visio partout dans le monde, avec la même méthode visuelle qu’en présentiel. Il te suffit de ton instrument et d’une connexion.' },
     ],
   },

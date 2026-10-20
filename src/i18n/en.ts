@@ -1153,7 +1153,7 @@ export const en: Dict = {
     paymentBic: 'BIC',
     coursesTitle: 'Want to learn with me?',
     coursesText:
-      'I give private Gonilélé lessons (and more) online or in person in Paris: €60/h or €75/1h30 (4-lesson package over 2 months: €50/h or €70/1h30).',
+      'I give private Gonilélé lessons (and more) online or in person in Paris, pay-what-you-want above a minimum: from €{lesson60}/h or from €{lesson90}/1h30 (4-lesson package over 2 months: from €{packLesson60}/h or €{packLesson90}/1h30).',
     coursesCta: 'Book a lesson',
   },
   // ============================================================
@@ -1645,19 +1645,19 @@ export const en: Dict = {
     formulasEyebrow: 'Formats & pricing',
     formulasTitle: 'Choose your format',
     formulas: [
-      { title: 'Private lesson · 1h', price: '€60', text: 'Online or in person in Paris. Handpan, calabash rhythm or gonilélé: we work on what moves you.' },
-      { title: 'Private lesson · 1h30', price: '€75', text: 'The ideal format to go further: harmony, rhythm, accompaniment, stage and studio tips.' },
+      { title: 'Private lesson · 1h', price: 'from €{lesson60}', text: 'Online or in person in Paris. Handpan, calabash rhythm or gonilélé: we work on what moves you.' },
+      { title: 'Private lesson · 1h30', price: 'from €{lesson90}', text: 'The ideal format to go further: harmony, rhythm, accompaniment, stage and studio tips.' },
       { title: 'Group workshop', price: 'On request', text: 'Group sessions in a small setting (calabash rhythm, handpan…), in a friendly atmosphere. Format and venue on request.' },
     ],
-    footnote: 'Booking by email. In-person lessons in Paris are a natural bridge to the showroom and gatherings.',
+    footnote: 'Pay what you want, from the amount shown. Booking by email. In-person lessons in Paris are a natural bridge to the showroom and gatherings.',
     packageTitle: '4-lesson package over 2 months',
-    packageText: '4 one-hour lessons: €200 (€50 per lesson) · 4 lessons of 1h30: €280 (€70 per lesson). The 4 lessons are to be used within 2 months.',
+    packageText: '4 one-hour lessons: from €{pack60} (€{packLesson60} per lesson) · 4 lessons of 1h30: from €{pack90} (€{packLesson90} per lesson). Pay what you want above these amounts; the 4 lessons are to be used within 2 months.',
     packageCta: 'Pay on HelloAsso',
     faqEyebrow: 'FAQ',
     faqTitle: 'Frequently asked questions about the lessons',
     faq: [
       { q: 'Can you learn handpan without reading music?', a: 'Yes, that is the whole point of the method. The visual approach — the colours of the notes and the shapes of the chords — replaces music theory to help you progress fast.' },
-      { q: 'How much does a handpan lesson cost?', a: 'A private lesson costs €60/hour or €75 for 1.5 hours, online or in person in Paris. With the 4-lesson package (to be used within 2 months), a lesson drops to €50/hour (€200 for the package) or €70 for 1.5 hours (€280 for the package). Group workshops are available on request.' },
+      { q: 'How much does a handpan lesson cost?', a: 'Lessons are pay-what-you-want above a minimum: from €{lesson60} for 1 hour, from €{lesson90} for 1.5 hours, online or in person in Paris. With the 4-lesson package (to be used within 2 months), it is from €{pack60} (1h) or from €{pack90} (1h30), that is from €{packLesson60} or €{packLesson90} per lesson. Group workshops are available on request.' },
       { q: 'Do online handpan lessons actually work?', a: 'Yes, lessons are given online anywhere in the world, using the same visual method as in person. All you need is your instrument and a connection.' },
     ],
   },

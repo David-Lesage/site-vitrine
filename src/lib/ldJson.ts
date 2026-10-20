@@ -116,7 +116,9 @@ export function softwareAppLdJson() {
 }
 
 // Les cours / méthode (page Cours = Now Music Academy)
-export function courseLdJson(p: { name: string; description: string; url: string }) {
+// `offers` : formules à PRIX LIBRE À PARTIR D'UN MINIMUM (cours, 20/10/2026) →
+// Offer + PriceSpecification `minPrice` (schema.org), sans prix maximum.
+export function courseLdJson(p: { name: string; description: string; url: string; offers?: { name: string; minPrice: number; url: string }[] }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -131,6 +133,19 @@ export function courseLdJson(p: { name: string; description: string; url: string
       url: home,
     },
     about: ['Handpan', 'Handpan électronique Neotone', 'Rythme', 'Pédagogie musicale visuelle'],
+    ...(p.offers?.length
+      ? {
+          offers: p.offers.map((o) => ({
+            '@type': 'Offer',
+            name: o.name,
+            category: 'Paid',
+            url: o.url,
+            price: o.minPrice,
+            priceCurrency: 'EUR',
+            priceSpecification: { '@type': 'PriceSpecification', minPrice: o.minPrice, priceCurrency: 'EUR' },
+          })),
+        }
+      : {}),
   }
 }
 

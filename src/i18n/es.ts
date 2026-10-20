@@ -1109,7 +1109,7 @@ export const es: Dict = {
     "paymentIban": "IBAN",
     "paymentBic": "BIC",
     "coursesTitle": "¿Quieres aprender conmigo?",
-    "coursesText": "Imparto clases particulares de Gonilélé (y otros idiomas) por vídeo o presencialmente en París: 60 €/hora o 75 €/1,5 horas (bono de 4 clases en 2 meses: 50 €/hora o 70 €/1,5 horas).",
+    "coursesText": "Imparto clases particulares de Gonilélé (y más) por videoconferencia o presencialmente en París, a precio libre a partir de un mínimo: desde {lesson60} €/hora o desde {lesson90} €/1,5 horas (bono de 4 clases en 2 meses: desde {packLesson60} €/hora o {packLesson90} €/1,5 horas).",
     "coursesCta": "Reserva un curso"
   },
   "atlas": {
@@ -1413,12 +1413,12 @@ export const es: Dict = {
     "formulas": [
       {
         "title": "Clase particular · 1 hora",
-        "price": "60 €",
+        "price": "desde {lesson60} €",
         "text": "Clases por vídeo o presenciales en París. Handpan, ritmos de calabaza o gonilélé: trabajamos con lo que te hace vibrar."
       },
       {
         "title": "Clase particular · 1,5 horas",
-        "price": "75 €",
+        "price": "desde {lesson90} €",
         "text": "El formato ideal para ir más allá: armonía, ritmo, acompañamiento, asesoramiento escénico y de estudio."
       },
       {
@@ -1427,9 +1427,9 @@ export const es: Dict = {
         "text": "Sesiones en grupos reducidos (ritmo de calabaza, handpan…) en un ambiente agradable. Formato y lugar a convenir."
       }
     ],
-    "footnote": "Las citas pueden concertarse por correo electrónico. Las visitas presenciales a París constituyen una puerta de entrada natural a la sala de exposiciones y ofrecen oportunidades para establecer contactos.",
+    "footnote": "Precio libre a partir del importe indicado. Las citas se conciertan por correo electrónico. Las clases presenciales en París son un puente natural hacia el showroom y los encuentros.",
     "packageTitle": "Bono de 4 clases en 2 meses",
-    "packageText": "4 clases de 1 hora: 200 € (50 € por clase) · 4 clases de 1,5 horas: 280 € (70 € por clase). Las 4 clases se utilizan en un plazo de 2 meses.",
+    "packageText": "4 clases de 1 hora: desde {pack60} € ({packLesson60} € por clase) · 4 clases de 1,5 horas: desde {pack90} € ({packLesson90} € por clase). Precio libre a partir de estos importes; las 4 clases se utilizan en un plazo de 2 meses.",
     "packageCta": "Pagar en HelloAsso",
     "faqEyebrow": "Preguntas frecuentes",
     "faqTitle": "Preguntas frecuentes sobre los cursos",
@@ -1440,7 +1440,7 @@ export const es: Dict = {
       },
       {
         "q": "¿Cuánto cuesta una clase de handpan?",
-        "a": "Las clases particulares cuestan 60 € la hora o 75 € la hora y media (con el bono de 4 clases, a utilizar en 2 meses: 50 € la hora, 200 € el bono, o 70 € la hora y media, 280 € el bono), y pueden impartirse por videoconferencia o presencialmente en París. También se ofrecen talleres grupales bajo petición."
+        "a": "Las clases son a precio libre, a partir de un mínimo: desde {lesson60} € la hora, desde {lesson90} € la hora y media, por videoconferencia o presencialmente en París. Con el bono de 4 clases (a utilizar en 2 meses), es desde {pack60} € (1 hora) o desde {pack90} € (1,5 horas), es decir, a partir de {packLesson60} € o {packLesson90} € por clase. También se ofrecen talleres grupales bajo petición."
       },
       {
         "q": "¿Funcionan los cursos online para aprender a tocar el handpan?",

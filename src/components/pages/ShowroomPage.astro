@@ -9,7 +9,7 @@ import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { localBusinessLdJson, breadcrumbLdJson } from '@/lib/ldJson'
 import { upcomingShowcases } from '@/lib/agenda'
-import { priceForKind, priceGrid } from '@/lib/sessions'
+import { priceForKind, priceGrid, siteCoursePrices } from '@/lib/sessions'
 import BookingForm from '@/components/BookingForm.astro'
 import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
@@ -242,15 +242,17 @@ const alsoMeta = [
 const paidEvents = sh.events.slice(1)
 // Les 3 cartes payantes affichent le tarif de site.ts (sessionTypes), comme le
 // formulaire de réservation — impossible qu'elles annoncent deux prix différents.
-const eventPrices = [priceForKind('onboarding'), priceForKind('demo'), priceForKind('lesson')]
+// Tarifs des cours et de la démo (repli : site.ts).
+const prices = siteCoursePrices()
+const eventPrices = [priceForKind('onboarding', lang, prices), priceForKind('demo', lang, prices), priceForKind('lesson', lang, prices)]
 // La grille du rendez-vous individuel (« 1h · 50 € — 1h30 · 70 € » : prise en
 // main / démo), annoncée UNIQUEMENT dans le bloc #individuel (bas de page) et
 // dans la modale. Le tarif d'un COURS (60/75 depuis le 09/10/2026) est dit
 // juste dessous, dans `vipPriceNote` (`lessonGrid`).
 // 🚨 Elle n'apparaît plus dans le hero : c'était le PREMIER prix lisible de la
 //    page, sur une page dont l'objet est un événement GRATUIT.
-const grid = priceGrid('demo')
-const lessonGrid = priceGrid('lesson')
+const grid = priceGrid('demo', lang, prices)
+const lessonGrid = priceGrid('lesson', lang, prices)
 // La prise en main est mise en avant : c'est le moment où quelqu'un qui vient
 // d'acheter décroche ou s'attache. Elle est passée de l'indice 1 à l'indice 0
 // le 21/08/2026 avec le retrait de la carte du showcase gratuit — c'est

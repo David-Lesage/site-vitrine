@@ -10,12 +10,25 @@ import { site, lessonPackage } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { courseLdJson, breadcrumbLdJson, faqLdJson } from '@/lib/ldJson'
+import { fillCoursePricesDeep, siteCoursePrices } from '@/lib/sessions'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const t = getDict(lang)
-const l = t.lessons
+// 💶 Cours à prix libre à partir d'un minimum (20/10/2026) : les montants ne
+// sont pas écrits dans le dictionnaire, ce sont des jetons (`{lesson60}`…)
+// remplis ici avec les tarifs (repli : site.ts).
+const prices = siteCoursePrices()
+const l = fillCoursePricesDeep(t.lessons, prices)
+const helloassoLessons = 'https://www.helloasso.com/associations/resonances-productions/boutiques/cours-prive-et-stages-avec-david-lesage'
+// Offres des données structurées : `minPrice` = le minimum du prix libre.
+const offers = [
+  { name: l.formulas[0].title, minPrice: prices.lesson[60] },
+  { name: l.formulas[1].title, minPrice: prices.lesson[90] },
+  { name: `${l.packageTitle} · 1h`, minPrice: prices.package[60] },
+  { name: `${l.packageTitle} · 1h30`, minPrice: prices.package[90] },
+].map((o) => ({ ...o, url: helloassoLessons }))
 const L = (p: string) => localizePath(p, lang)
 const pillarIcons = ['lucide:eye', 'lucide:brain', 'lucide:music']
 const formulaIcons = ['lucide:user', 'lucide:user', 'lucide:users']
@@ -29,7 +42,7 @@ const workshopsUrl = 'https://sites.google.com/lesagedavid.fr/now-groove/atelier
 const schoolEmail = 'School@lesagedavid.fr'
 ---
 
-<Layout title={l.title} description={l.description} image="/images/og-david.jpg" ldJSON={[courseLdJson({ name: l.heroTitle, description: l.description, url: '/cours' }), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: t.common.nav.lessons, url: L('/cours') }]), faqLdJson(l.faq)]}>
+<Layout title={l.title} description={l.description} image="/images/og-david.jpg" ldJSON={[courseLdJson({ name: l.heroTitle, description: l.description, url: '/cours', offers }), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: t.common.nav.lessons, url: L('/cours') }]), faqLdJson(l.faq)]}>
   <!-- Bandeau Now Music Academy -->
   <section class="relative overflow-hidden bg-ink text-cream">
     <div class="absolute inset-0">

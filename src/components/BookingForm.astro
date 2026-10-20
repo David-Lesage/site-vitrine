@@ -11,7 +11,7 @@ import { countries } from '@/data/neotone'
 import { saleIntakeClientConfig } from '@/lib/saleIntake'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
-import { durationLabel, priceLabel, priceGrid } from '@/lib/sessions'
+import { durationLabel, sessionPriceLabel, priceGrid, siteCoursePrices } from '@/lib/sessions'
 import { sessionTypes, demoInstruments, showcaseInterests } from '@/data/site'
 import { upcomingShowcases } from '@/lib/agenda'
 import type { Lang } from '@/i18n/config'
@@ -19,6 +19,8 @@ import type { Lang } from '@/i18n/config'
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const bk = getDict(lang).booking
+// Tarifs des cours et de la démo (repli : site.ts).
+const prices = siteCoursePrices()
 // ── DEUX MENUS AU LIEU D'UN (18/08/2026, demande de David) ───────────────────
 // Avant : UN menu « Quel rendez-vous ? » qui mélangeait le motif ET la durée
 // (« Cours ou accompagnement individuel — 1h30 · 70 € »), soit 6 lignes.
@@ -53,7 +55,7 @@ const durations = durationMinutes.map((minutes, i, all) => {
   const star = i === all.length - 1 && bk.sessionTypeRecommended ? ` ${bk.sessionTypeRecommended}` : ''
   const labelFor = (kind: string) => {
     const s = sessionTypes.find((x) => x.kind === kind && x.minutes === minutes)
-    return s ? `${durationLabel(minutes)} · ${priceLabel(s.price)}${star}` : ''
+    return s ? `${durationLabel(minutes)} · ${sessionPriceLabel(s, lang, prices)}${star}` : ''
   }
   return {
     value: String(minutes),
@@ -64,8 +66,8 @@ const durations = durationMinutes.map((minutes, i, all) => {
 // Grilles annoncées en clair dans la modale : le rendez-vous individuel
 // (prise en main / démo, « 1h · 50 € — 1h30 · 70 € ») et, dans la note, le
 // tarif d'un COURS (« 1h · 60 € — 1h30 · 75 € »).
-const grid = priceGrid('demo')
-const lessonGrid = priceGrid('lesson')
+const grid = priceGrid('demo', lang, prices)
+const lessonGrid = priceGrid('lesson', lang, prices)
 const slots = [1, 2, 3]
 // Motifs acceptant la visio (les cours) — lu par le script. On raisonne
 // désormais par MOTIF et non par identifiant complet : la durée n'a aucune

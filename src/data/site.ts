@@ -163,13 +163,22 @@ export const agendaEvents: readonly {
 // 💶 DEUX GRILLES depuis le 09/10/2026 (décision de David) :
 //   · prise en main (`onboarding`) et démonstration privée (`demo`) :
 //     1h = 50 €, 1h30 = 70 € — c'est le « rendez-vous individuel » du showroom ;
-//   · COURS (`lesson`) : 1h = 60 €, 1h30 = 75 €, et forfait 4 cours à
-//     50 €/h (200 €) ou 70 €/1h30 (280 €) — voir `lessonPackage` ci-dessous.
+//   · COURS (`lesson`) : PRIX LIBRE À PARTIR D'UN MINIMUM (David, 20/10/2026,
+//     « le tarif de cours est un prix libre à partir d'un minimum ») : dès 60 €
+//     (1h), dès 75 € (1h30), forfait 4 cours dès 200 € (1h) ou dès 280 € (1h30)
+//     — voir `lessonPackage` ci-dessous. `freePrice: true` = `price` est un
+//     MINIMUM, affiché « dès 60 € » / « from €60 » / « desde 60 € ».
+//   · prise en main et démonstration : prix FIXES.
+// 🔄 HelloAsso fait foi : au build, src/lib/helloassoCatalogue.ts relit les
+//    tarifs des cours et de la démo sur HelloAsso et les substitue à ceux-ci.
+//    Les montants ci-dessous ne servent que de REPLI (HelloAsso injoignable).
 // Les grilles se lisent par motif via `priceGrid(kind)` (src/lib/sessions.ts).
-// Un prix qui bouge ici doit aussi bouger dans la copie écrite en dur :
-// dict/en/es (`lessons.formulas`, `lessons.faq`, `lessons.package*`,
-// `gonilele.coursesText`, `booking.vipPriceNote`), `shop.ts` (cours-prives) et
-// l'Edge Function `site-lead` + `_shared/showcase-email.ts` (emails).
+// La copie (dict/en/es : `lessons.formulas`, `lessons.faq`, `lessons.package*`,
+// `gonilele.coursesText`) n'écrit plus les montants des cours : elle porte des
+// jetons `{lesson60}` `{lesson90}` `{pack60}` `{pack90}` `{packLesson60}`
+// `{packLesson90}` remplis par `fillCoursePrices()` (src/lib/sessions.ts).
+// Les emails (Edge Function `site-lead` + `_shared/showcase-email.ts`) ont leur
+// propre copie des montants.
 export const sessionTypes = [
   { id: 'onboarding-60', kind: 'onboarding', minutes: 60, price: 50, remote: true, recommended: true },
   // `recommended` uniquement sur la 1ʳᵉ : c'est la porte d'entrée, et répéter
@@ -177,18 +186,22 @@ export const sessionTypes = [
   { id: 'onboarding-90', kind: 'onboarding', minutes: 90, price: 70, remote: true, recommended: false },
   { id: 'demo-60', kind: 'demo', minutes: 60, price: 50, remote: false, recommended: false },
   { id: 'demo-90', kind: 'demo', minutes: 90, price: 70, remote: false, recommended: false },
-  { id: 'lesson-60', kind: 'lesson', minutes: 60, price: 60, remote: true, recommended: false },
-  { id: 'lesson-90', kind: 'lesson', minutes: 90, price: 75, remote: true, recommended: false },
+  { id: 'lesson-60', kind: 'lesson', minutes: 60, price: 60, remote: true, recommended: false, freePrice: true },
+  { id: 'lesson-90', kind: 'lesson', minutes: 90, price: 75, remote: true, recommended: false, freePrice: true },
 ] as const
 
-// Forfait 4 cours (09/10/2026) : le cours tombe à 50 € (1h) ou 70 € (1h30),
-// soit 200 € ou 280 € le forfait. Les 4 cours sont à utiliser SUR 2 MOIS
+// Forfait 4 cours (09/10/2026) : dès 200 € (1h) ou dès 280 € (1h30), soit à
+// partir de 50 € ou 70 € le cours. Les 4 cours sont à utiliser SUR 2 MOIS
 // (« Forfait 4 cours de 1H sur 2 mois » sur HelloAsso, en prix libre « à partir
-// de » — le site annonce le montant simple). Payé sur HelloAsso (même boutique que les
-// cours à l'unité). Affiché sur /cours (bloc sous les cartes de formules).
+// de » — le site l'annonce comme tel depuis le 20/10/2026). Payé sur HelloAsso
+// (même boutique que les cours à l'unité). Affiché sur /cours (bloc sous les
+// cartes de formules). `packagePrice` = minimum du forfait (repli si HelloAsso
+// ne répond pas) ; `pricePerLesson` = ce minimum divisé par 4.
 export const lessonPackage = {
   lessons: 4,
   validityMonths: 2,
+  freePrice: true,
+  packagePrice: { 60: 200, 90: 280 },
   pricePerLesson: { 60: 50, 90: 70 },
   url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/cours-prive-et-stages-avec-david-lesage',
 } as const
