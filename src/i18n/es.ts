@@ -674,7 +674,7 @@ export const es: Dict = {
       },
       "atlas": {
         "name": "Soportes Atlas Handpan: profesionales y todos",
-        "description": "Los trípodes magnéticos del fabricante italiano Atlas. El handpan se apoya sobre un disco flotante con ocho imanes protegidos, sin tornillos ni correas. Hay dos modelos disponibles: el <strong>Atlas Pro</strong>, de aluminio, telescópico, de 1,8 kg, con bolsa de transporte incluida (250 €); y el <strong>Atlas All</strong>, de madera, cuya cabeza se ajusta entre las patas para tocar sentado, antes de acoplar las patas y extensiones para tocar de pie (270 €). Soy socio de la marca; ambos modelos estarán disponibles para probar en la sala de exposición."
+        "description": "Los trípodes magnéticos del fabricante italiano Atlas. El handpan se apoya sobre un disco flotante con ocho imanes protegidos, sin tornillos ni correas. Hay dos modelos disponibles: el <strong>Atlas Pro</strong>, de aluminio, telescópico, de 1,8 kg, con bolsa de transporte incluida (250 €); y el <strong>Atlas All</strong>, de madera, cuya cabeza se ajusta entre las patas para tocar sentado, antes de acoplar las patas y extensiones para tocar de pie (270 €). Soy socio de la marca; ambos modelos están en el showroom, listos para probar."
       },
       "phoenix-opus1": {
         "name": "La Alianza Fénix — Opus I",
