@@ -6,15 +6,70 @@
   "outputDirectory": "dist",
   "redirects": [
     {
-      "source": "/",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
-          "value": "^(www\\.)?(handpanstudio\\.app|handpan-studio\\.app|neotone-studio\\.app|neotonestudio\\.app)$"
+          "value": "^(www\\.)?(neotonestudio\\.app|neotone-studio\\.app)$"
         }
       ],
-      "destination": "/handpan-app",
-      "permanent": false
+      "destination": "https://www.lesagedavid.fr/neotone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "^(www\\.)?(handpanstudio\\.app|handpan-studio\\.app)$"
+        }
+      ],
+      "destination": "https://www.lesagedavid.fr/handpan-app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/le-neotone{/}?",
+      "has": [
+        {
+          "type": "host",
+          "value": "^(lesagedavid\\.fr|project-a5vpj\\.vercel\\.app)$"
+        }
+      ],
+      "destination": "https://www.lesagedavid.fr/neotone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:lang(en|es)/le-neotone{/}?",
+      "has": [
+        {
+          "type": "host",
+          "value": "^(lesagedavid\\.fr|project-a5vpj\\.vercel\\.app)$"
+        }
+      ],
+      "destination": "https://www.lesagedavid.fr/:lang/neotone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path((?!api(?:/|$))(?!_vercel(?:/|$))(?:[^/]+/)*[^/.]+)",
+      "has": [
+        {
+          "type": "host",
+          "value": "^(lesagedavid\\.fr|project-a5vpj\\.vercel\\.app)$"
+        }
+      ],
+      "destination": "https://www.lesagedavid.fr/:path/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path((?!api(?:/|$))(?!_vercel(?:/|$)).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "^(lesagedavid\\.fr|project-a5vpj\\.vercel\\.app)$"
+        }
+      ],
+      "destination": "https://www.lesagedavid.fr/:path",
+      "statusCode": 301
     },
     {
       "source": "/le-neotone",
