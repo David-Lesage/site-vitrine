@@ -145,11 +145,11 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 | 09/10 | « je veux juste avoir à dire à la personne : tu remplis le formulaire d'achat sur mon site » | ⏳ lié au formulaire ci-dessus |
 | 09/10 | « je veux aussi que le client soit au courant de la procédure » (lien de paiement généré par Neotone, en semaine seulement) | ⏳ lié au formulaire ci-dessus |
 | 09/10 | « si un client veut venir un weekend et qu'il est presque sûr de son achat, on peut préparer à l'avance un lien de paiement en semaine […] il peut repartir avec » | ⏳ lié au formulaire ci-dessus |
-| 20/10 | « la page micro Hisong sur le modèle de la page Muling » (brief APP 20/10 §1) | ⏳ en cours |
-| 20/10 | « le redessin du Neotone avec la vraie géométrie 10/19 creux » (brief APP 20/10 §2) | ⏳ en cours |
+| 20/10 | « la page micro Hisong sur le modèle de la page Muling » (brief APP 20/10 §1) | ✅ fait 20/10 — en prod (/micro-hisong FR/EN/ES), textes rédigés par l'agent à faire valider par David |
+| 20/10 | « le redessin du Neotone avec la vraie géométrie 10/19 creux » (brief APP 20/10 §2) | ✅ fait 20/10 — en prod, géométrie de layout.ts (9+9+ding pour le Mutant), alt corrigés FR/EN/ES |
 | 20/10 | « la mise en forme du mail du formulaire d'achat Neotone avec la facturation ligne par ligne » (brief APP 20/10 §3) | ⏳ en cours — dépend du chantier « formulaire d'achat » non commité du 10/10 (mêmes fichiers) |
 | 20/10 | « /neotone contre /le-neotone et l'anticipation de neotone.studio, en me proposant avant de bouger quoi que ce soit » | ⏳ proposition à faire |
-| 20/10 | « llms.txt et llms-full.txt générés à chaque build » | ⏳ en cours |
+| 20/10 | « llms.txt et llms-full.txt générés à chaque build » | ✅ fait 20/10 — en prod (13 pages, 19 produits, 34 articles par langue, 0 lien mort) |
 | 20/10 | « l'audit SEO » | ⏳ en cours |
 | 20/10 | « les nouveaux articles illustrés sur les nouveautés 520 à 538 de l'app » (un article par mise à jour, relecteur distinct) | ⏳ en cours |
 | 20/10 | « la revue des articles périmés » | ⏳ en cours |

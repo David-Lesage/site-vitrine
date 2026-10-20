@@ -61,6 +61,14 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
   du 09/10 dans les mails (60/75 + forfait) ; le chantier du 10/10 ajoute le mail d'achat. `_shared/showcase-email.ts` :
   la copie du dépôt APP n'a pas le changement du 09/10 (upPriceNote). Rien redéployé : feu vert David attendu.
 - `/api/stock` OK le 20/10 : 200 en 3 s à froid puis cache ; Apps Script seul ≈ 2 s → délai de 8 s suffisant.
+- ✅ **EN PROD 20/10 soir** : schémas Neotone 10/19 redessinés (51121a5), page `/micro-hisong` FR/EN/ES (6ae3015, textes dans
+  `src/i18n/hisong.ts`, vidéos/contextes = tableaux de données, slugs d'articles prévus), `llms.txt`/`llms-full.txt` générés au build
+  (6a8821f, `src/lib/llms.ts`, tableau `PAGES`). Vérifié en prod (200, liens boutique, alt).
+- 🚨 **Incident 20/10 (moi)** : un `git commit -a` (registre, a1b3864) a embarqué le chantier du 10/10 dans `main` et l'a poussé
+  → `main` ne buildait plus (import `saleIntakeCore.js` manquant). Annulé par 2039dd0 (rien n'avait été déployé). Le chantier COMPLET
+  = branche `wip/achat-neotone-2026-10-10` (a1b3864 + 3df9df7). Pour le reprendre sur main : `git revert 2039dd0` puis
+  `git checkout wip/achat-neotone-2026-10-10 -- src/lib/saleIntakeCore.js scripts/test-achat-neotone.mjs`. LEÇON : jamais `commit -a`, toujours des chemins explicites.
+- À trancher (David) : Atlas 250/270 € (description SEO) vs 215/230 € (boutique) ; « kit Master » (app) vs « RX Plus (Universal Pack) » (site).
 - Briefs du 20/10 à traiter : `MESSAGE-SESSION-SITE-2026-10-20-hisong-neotone-formulaire.md` et `…-seo-llms-articles.md`.
 
 ## 🧭 ÉTAT ACTUEL — 09/10/2026 soir (31ᵉ passe, session LOCALE) — REPRENDRE ICI
