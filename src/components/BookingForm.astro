@@ -92,6 +92,8 @@ const upcoming = JSON.stringify(
 // s'affiche en français en attendant. À supprimer le jour où `es.ts` est
 // régénéré ? NON : le garder coûte une ligne et protège les prochains ajouts.
 const bb = { ...fr.booking.billing, ...(bk.billing ?? {}) }
+// Procédure d'achat Neotone (10/10/2026) — même repli FR que `billing`.
+const pp = { ...fr.booking.purchase, ...(bk.purchase ?? {}) }
 // Liste de pays RÉUTILISÉE du calculateur (`src/data/neotone.ts`) : le contrat
 // de `sale-intake` réclame un code ISO à deux lettres, un champ libre en
 // produirait fatalement des invalides. Même source = mêmes pays que le prix
@@ -169,8 +171,19 @@ const saleIntake = saleIntakeClientConfig()
           <span class="text-sm font-600" data-bk-phone-label data-default={bk.phone} data-plain={bk.phonePlain}>{bk.phone}</span>
           <input type="tel" name="phone" autocomplete="tel" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
           <span data-bk-phone-why class="mt-1 hidden block text-xs leading-relaxed text-ink-soft/70">{bk.phoneWhyShowcase}</span>
+          <span data-bk-phone-why-purchase class="mt-1 hidden block text-xs leading-relaxed text-ink-soft/70">{pp.phoneWhy}</span>
         </label>
       </div>
+
+      {/* ACHAT NEOTONE (10/10/2026) — e-mail saisi DEUX fois : c'est l'adresse
+          où Neotone envoie la facture et le lien de paiement, une coquille
+          coûte un avoir (incident #799). Bloc piloté par `toggleBlock` : masqué
+          = désactivé = ni validé ni envoyé pour les autres motifs. */}
+      <label class="block" data-bk-email-confirm>
+        <span class="text-sm font-600">{pp.emailConfirm}<span aria-hidden="true" class="text-rust"> *</span></span>
+        <input type="email" name="emailConfirm" autocomplete="email" required data-mismatch={pp.emailMismatch} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" />
+        <span data-bk-email-mismatch class="mt-1 hidden block text-sm font-600 text-rust">{pp.emailMismatch}</span>
+      </label>
 
       <label class="block" data-bk-people>
         <span class="text-sm font-600">{bk.people}</span>
@@ -211,6 +224,21 @@ const saleIntake = saleIntakeClientConfig()
       {/* Demande de code de remise Neotone : modèle + pays de livraison, ce que
           Neotone réclame à David pour enregistrer la vente. */}
       <div data-bk-discount class="grid gap-3">
+        {/* ── COMMENT SE PASSE L'ACHAT (10/10/2026, demande de David) ──────────
+            « je veux aussi que le client soit au courant de la procédure ».
+            Dit AVANT de remplir quoi que ce soit, et rappelé après l'envoi.
+            Remplace l'ancien bloc « Ce qui se passe ensuite » (il promettait
+            un code de réduction envoyé par Neotone : ce n'est plus le cas). */}
+        <div data-bk-purchase-how class="rounded-xl border border-copper/25 bg-copper/5 p-4">
+          <p class="text-sm font-700">{pp.howTitle}</p>
+          <ol class="mt-2 space-y-1.5 text-xs leading-relaxed text-ink-soft/85">
+            {[pp.how1, pp.how2, pp.how3, pp.how4].map((step, i) => (
+              <li class="flex gap-2"><span aria-hidden="true" class="text-copper">{i + 1}.</span><span>{step}</span></li>
+            ))}
+          </ol>
+          <p class="mt-3 rounded-lg bg-gold/10 px-3 py-2 text-xs leading-relaxed text-ink-soft/85" set:html={pp.weekend} />
+          <p class="mt-2 text-xs leading-relaxed text-ink-soft/70">{pp.vat}</p>
+        </div>
         {/* RÉCAPITULATIF DU CALCULATEUR (22/09/2026, demande de David : « le
             formulaire repose une question inutile du modèle alors que dans le
             calculateur la personne a déjà répondu »). Le choix arrive par les
@@ -416,16 +444,11 @@ const saleIntake = saleIntakeClientConfig()
             quel si la personne renvoie le formulaire (contrat `sale-intake`). */}
         <input type="hidden" name="clientRequestId" value="" />
 
-        {/* Ce qui se passe après l'envoi — annoncé AVANT, pour qu'il n'y ait
-            aucune surprise : c'est Neotone qui reprend la main. */}
-        <div class="rounded-xl border border-copper/25 bg-copper/5 p-4">
-          <p class="text-sm font-700">{bk.discountNextTitle}</p>
-          <ol class="mt-2 space-y-1.5 text-xs leading-relaxed text-ink-soft/85">
-            <li class="flex gap-2"><span aria-hidden="true" class="text-copper">1.</span><span set:html={bk.discountNext1} /></li>
-            <li class="flex gap-2"><span aria-hidden="true" class="text-copper">2.</span><span set:html={bk.discountNext2} /></li>
-            <li class="flex gap-2"><span aria-hidden="true" class="text-copper">3.</span><span set:html={bk.discountNext3} /></li>
-          </ol>
-        </div>
+        {/* Montants du calculateur (10/10/2026) — NOMBRES HT, posés par
+            `data-calc-price-*` du bouton. Vides hors calculateur : rien n'est
+            alors envoyé (jamais de prix inventé). */}
+        <input type="hidden" name="priceOriginalEur" value="" />
+        <input type="hidden" name="priceDiscountedEur" value="" />
       </div>
 
       {/* Cours seulement : une démonstration ne se fait pas en visio.
@@ -513,6 +536,14 @@ const saleIntake = saleIntakeClientConfig()
       {/* Conditions générales — case OBLIGATOIRE, identique sur tous les
           formulaires du site. Volontairement placée juste avant le bouton :
           c'est le dernier geste avant l'envoi. */}
+      {/* ACHAT NEOTONE — accord EXPLICITE à la transmission des coordonnées
+          au fabricant (10/10/2026). Obligatoire, jamais pré-cochée ; vérifiée
+          aussi côté serveur (api/subscribe.js → 400 `consent_required`). */}
+      <label data-bk-partner-consent class="flex cursor-pointer items-start gap-3 rounded-xl border border-copper/25 bg-copper/5 p-3 text-sm leading-relaxed">
+        <input type="checkbox" name="partnerConsent" required data-required-msg={pp.consentRequired} class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+        <span>{pp.consent}<span aria-hidden="true" class="text-rust"> *</span></span>
+      </label>
+
       <TermsCheckbox lang={lang} class="mt-1" />
 
       {/* Nouveautés — case FACULTATIVE, jamais pré-cochée, juste sous la case
@@ -522,13 +553,23 @@ const saleIntake = saleIntakeClientConfig()
       <NewsCheckbox lang={lang} />
 
       <button type="submit" data-sending={bk.sending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{bk.submit}</button>
-      <p data-bk-error class="hidden text-sm font-600 text-rust">{bk.error}</p>
+      <p data-bk-error data-default={bk.error} data-invalid-phone={pp.phoneInvalid} data-consent-required={pp.consentRequired} class="hidden text-sm font-600 text-rust">{bk.error}</p>
       <p class="text-xs text-ink-soft/70">{bk.privacy}</p>
     </form>
 
     <div data-bk-success class="hidden py-6 text-center">
       <p class="font-display text-xl font-700 text-ink">{bk.successTitle}</p>
-      <p class="mt-3 text-ink-soft/85">{bk.successText}</p>
+      <p data-bk-success-text class="mt-3 text-ink-soft/85">{bk.successText}</p>
+      {/* ACHAT NEOTONE — la suite (étapes 2 à 4), rappelée après l'envoi. */}
+      <div data-bk-success-purchase class="mx-auto mt-3 hidden max-w-sm text-left">
+        <p class="text-ink-soft/85">{pp.successText}</p>
+        <ol class="mt-3 space-y-1.5 text-sm leading-relaxed text-ink-soft/85">
+          {[pp.how2, pp.how3, pp.how4].map((step, i) => (
+            <li class="flex gap-2"><span aria-hidden="true" class="text-copper">{i + 2}.</span><span>{step}</span></li>
+          ))}
+        </ol>
+        <p class="mt-3 rounded-lg bg-gold/10 px-3 py-2 text-xs leading-relaxed text-ink-soft/85">{pp.successWeekend}</p>
+      </div>
       {/* Référence renvoyée par le guichet `sale-intake` (`order_ref`) : affichée
           seulement quand elle existe vraiment. Tant que l'Edge Function n'est pas
           déployée (interrupteur à false), cette ligne ne s'affiche jamais — on
@@ -537,6 +578,9 @@ const saleIntake = saleIntakeClientConfig()
       {/* `piece_indisponible` : la demande est enregistrée quand même (l'email à
           David est déjà parti), on le dit sans faire peur. */}
       <p data-bk-unavailable class="mx-auto mt-4 hidden max-w-sm rounded-xl border border-copper/25 bg-copper/5 p-3 text-left text-xs leading-relaxed text-ink-soft/85">{bb.unavailable}</p>
+      {/* Autres retours du dépôt de la vente : la demande est TOUJOURS arrivée
+          (l'email de David est parti avant) — on le dit sans faire peur. */}
+      <p data-bk-sale-note data-rate-limited={pp.saleRateLimited} data-coupon-used={pp.saleCouponUsed} data-failed={pp.saleFailed} class="mx-auto mt-4 hidden max-w-sm rounded-xl border border-copper/25 bg-copper/5 p-3 text-left text-xs leading-relaxed text-ink-soft/85"></p>
       <button type="button" class="bk-close mt-6 rounded-full bg-rust px-6 py-3 font-700 text-cream hover:bg-copper">{bk.successClose}</button>
     </div>
   </div>
@@ -567,10 +611,18 @@ const saleIntake = saleIntakeClientConfig()
   const shippingSameEl = modal?.querySelector('[data-bk-shipping-same]') as HTMLInputElement | null
   const orderRefEl = modal?.querySelector('[data-bk-order-ref]') as HTMLElement
   const unavailableEl = modal?.querySelector('[data-bk-unavailable]') as HTMLElement
-  // Interrupteur + URL du guichet `sale-intake`, posés au build par
-  // `src/lib/saleIntake.ts`. Un JSON cassé ne doit JAMAIS empêcher une demande
-  // de partir → repli sur « désactivé ».
-  let SALE: { enabled: boolean; url: string; key: string; partner: string; termsVersion: string } | null = null
+  // ── ACHAT NEOTONE (10/10/2026) ──────────────────────────────────────────────
+  const emailConfirmEl = modal?.querySelector('[data-bk-email-confirm]') as HTMLElement
+  const emailMismatchEl = modal?.querySelector('[data-bk-email-mismatch]') as HTMLElement
+  const partnerConsentEl = modal?.querySelector('[data-bk-partner-consent]') as HTMLElement
+  const successTextEl = modal?.querySelector('[data-bk-success-text]') as HTMLElement
+  const successPurchaseEl = modal?.querySelector('[data-bk-success-purchase]') as HTMLElement
+  const saleNoteEl = modal?.querySelector('[data-bk-sale-note]') as HTMLElement
+  // Interrupteur du dépôt de la vente, posé au build par `src/lib/saleIntake.ts`.
+  // Depuis le 10/10/2026 le navigateur n'appelle PLUS `sale-intake` : il joint
+  // un objet `sale` à /api/subscribe, qui fait l'appel côté serveur. Un JSON
+  // cassé ne doit JAMAIS empêcher une demande de partir → repli « désactivé ».
+  let SALE: { enabled: boolean; termsVersion: string } | null = null
   try { SALE = JSON.parse(modal?.dataset.saleIntake || 'null') } catch { SALE = null }
   const instrumentsEl = modal?.querySelector('[data-bk-instruments]') as HTMLElement
   // Showcase uniquement — « pour quel(s) instrument(s) viens-tu ? » (17/08/2026)
@@ -715,6 +767,10 @@ const saleIntake = saleIntakeClientConfig()
     toggleBlock(showcaseInterestsEl, isShowcase)
     toggleBlock(sessionEl, isPaid)
     toggleBlock(discountEl, isDiscount)
+    // Achat Neotone : e-mail confirmé + accord de transmission à Soundventure.
+    toggleBlock(emailConfirmEl, isDiscount)
+    toggleBlock(partnerConsentEl, isDiscount)
+    emailMismatchEl?.classList.add('hidden')
     // ── Choix déjà fait dans le calculateur ──────────────────────────────────
     // Les valeurs sont posées APRÈS `toggleBlock` : montrer le bloc n'écrase
     // rien, mais le masquer vide ses champs — l'ordre inverse les perdrait.
@@ -730,6 +786,11 @@ const saleIntake = saleIntakeClientConfig()
     if (countryInput) countryInput.value = hasCalc ? (trigger.getAttribute('data-calc-country') || '') : ''
     if (woodInput) woodInput.value = hasCalc ? (trigger.getAttribute('data-calc-wood') || '') : ''
     if (modeInput) modeInput.value = hasCalc ? (trigger.getAttribute('data-calc-mode') || '') : ''
+    // Montants HT du calculateur (10/10/2026) — vides hors calculateur.
+    const priceOrigInput = form.elements.namedItem('priceOriginalEur') as HTMLInputElement | null
+    const priceDiscInput = form.elements.namedItem('priceDiscountedEur') as HTMLInputElement | null
+    if (priceOrigInput) priceOrigInput.value = hasCalc ? (trigger.getAttribute('data-calc-price-original') || '') : ''
+    if (priceDiscInput) priceDiscInput.value = hasCalc ? (trigger.getAttribute('data-calc-price-discounted') || '') : ''
     if (calcRecapTextEl) calcRecapTextEl.textContent = calcRecap
     calcRecapEl?.classList.toggle('hidden', !hasCalc)
     // Masqué ≠ désactivé : les champs partent toujours sous `neotoneModel` et
@@ -787,7 +848,10 @@ const saleIntake = saleIntakeClientConfig()
     // ⚠️ Le champ n'est jamais masqué : un `required` invisible bloquerait
     //    l'envoi sans message affichable.
     const phoneInput = form.querySelector('input[name="phone"]') as HTMLInputElement | null
-    if (phoneInput) phoneInput.required = isShowcase
+    // ACHAT NEOTONE (10/10/2026) : le téléphone devient OBLIGATOIRE aussi pour
+    // `neotone-discount` — Neotone le demande pour établir la facture.
+    if (phoneInput) phoneInput.required = isShowcase || isDiscount
+    modal?.querySelector('[data-bk-phone-why-purchase]')?.classList.toggle('hidden', !isDiscount)
     const phoneLabel = modal?.querySelector('[data-bk-phone-label]') as HTMLElement | null
     if (phoneLabel) phoneLabel.textContent = (isDiscount || isShowcase ? phoneLabel.dataset.plain : phoneLabel.dataset.default) || phoneLabel.textContent
     modal?.querySelector('[data-bk-phone-why]')?.classList.toggle('hidden', !isShowcase)
@@ -807,6 +871,11 @@ const saleIntake = saleIntakeClientConfig()
     errEl?.classList.add('hidden')
     orderRefEl?.classList.add('hidden')
     unavailableEl?.classList.add('hidden')
+    saleNoteEl?.classList.add('hidden')
+    // Écran de confirmation : la suite de l'achat (étapes 2 à 4) remplace le
+    // texte générique pour une demande d'achat Neotone.
+    successTextEl?.classList.toggle('hidden', isDiscount)
+    successPurchaseEl?.classList.toggle('hidden', !isDiscount)
     modal.classList.remove('hidden')
     modal.classList.add('flex')
     modal.setAttribute('aria-hidden', 'false')
@@ -874,8 +943,41 @@ const saleIntake = saleIntakeClientConfig()
     }
   } catch { /* URL exotique : on ne casse jamais la page pour ça */ }
 
+  // ── ACHAT NEOTONE : contrôles avec un message CLAIR (10/10/2026) ───────────
+  // `setCustomValidity` plutôt qu'un message à part : le navigateur se pose
+  // sur le bon champ et lit le message. Rien de tout ça ne s'applique quand
+  // les champs sont désactivés (autres motifs).
+  function checkPurchaseFields(): void {
+    if (!form) return
+    const email = form.elements.namedItem('email') as HTMLInputElement | null
+    const confirm = form.elements.namedItem('emailConfirm') as HTMLInputElement | null
+    const phone = form.elements.namedItem('phone') as HTMLInputElement | null
+    const consent = form.elements.namedItem('partnerConsent') as HTMLInputElement | null
+    const errBox = modal?.querySelector('[data-bk-error]') as HTMLElement | null
+    if (confirm && !confirm.disabled) {
+      const mismatch = !!confirm.value && confirm.value.trim().toLowerCase() !== (email?.value || '').trim().toLowerCase()
+      confirm.setCustomValidity(mismatch ? (confirm.dataset.mismatch || 'Les deux adresses email ne sont pas identiques.') : '')
+      emailMismatchEl?.classList.toggle('hidden', !mismatch)
+    }
+    if (phone) {
+      const onPurchase = !!confirm && !confirm.disabled
+      const v = phone.value.trim()
+      const digits = v.replace(/\D/g, '').length
+      const bad = onPurchase && !!v && (!/^\+?[\d\s().\-]+$/.test(v) || digits < 8 || digits > 15)
+      phone.setCustomValidity(bad ? (errBox?.dataset.invalidPhone || '') : '')
+    }
+    if (consent && !consent.disabled) {
+      consent.setCustomValidity(consent.checked ? '' : (consent.dataset.requiredMsg || ''))
+    }
+  }
+  ;['email', 'emailConfirm', 'phone', 'partnerConsent'].forEach((n) => {
+    const el = form?.elements.namedItem(n) as HTMLInputElement | null
+    el?.addEventListener(el.type === 'checkbox' ? 'change' : 'input', checkPurchaseFields)
+  })
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault()
+    checkPurchaseFields()
     if (!form.reportValidity()) return
     const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement
     const data = new FormData(form)
@@ -927,6 +1029,13 @@ const saleIntake = saleIntakeClientConfig()
       push('Code postal', get('billingPostalCode'))
       push('Ville', get('billingCity'))
       push('Pays de facturation', get('billingCountry'))
+      // Trace de l'accord de transmission à Soundventure (10/10/2026) : la
+      // case est obligatoire, mais on l'écrit noir sur blanc dans le dossier.
+      if (data.get('partnerConsent') !== null) {
+        billingLines.push(`Transmission à Soundventure Kft. : accord donné le ${new Date().toISOString().slice(0, 16).replace('T', ' ')} (UTC)`)
+      }
+      const mode = get('neotonePurchaseMode')
+      if (mode) billingLines.push(`Mode d'achat : ${mode === 'showroom' ? 'showroom (−7 % par défaut)' : 'en ligne (−5 % par défaut)'}`)
       if (!shippingEl?.classList.contains('hidden')) {
         if (data.get('shippingSame') !== null) billingLines.push('Livraison : même adresse que la facturation')
         else {
@@ -946,6 +1055,55 @@ const saleIntake = saleIntakeClientConfig()
     btn.disabled = true
     btn.textContent = btn.getAttribute('data-sending') || '…'
     errEl?.classList.add('hidden')
+    if (errEl?.dataset.default) errEl.textContent = errEl.dataset.default
+
+    // ── DÉPÔT DE LA VENTE (`sale-intake`) — FAIT PAR LE SERVEUR ───────────────
+    // Le navigateur ne joint qu'un objet `sale` (noms du contrat figé) ;
+    // api/subscribe.js enregistre d'abord le contact (le filet : email à David),
+    // PUIS dépose la vente avec le jeton serveur, recalcule le prix remisé et
+    // filtre les champs en liste blanche (src/lib/saleIntakeCore.js).
+    // 🔴 `SALE.enabled` = false tant que David n'a pas donné son feu vert :
+    // aucun objet `sale` n'est alors envoyé.
+    let sale: Record<string, unknown> | undefined
+    if (SALE?.enabled && source === 'neotone-discount') {
+      const opt = (v: string) => v || undefined
+      const isCompany = get('billingKind') === 'societe'
+      const sameAddress = data.get('shippingSame') !== null
+      const hasShipping = !shippingEl?.classList.contains('hidden')
+      sale = {
+        customer_name: `${get('firstName')} ${get('lastName')}`.trim(),
+        email: get('email'),
+        billing_kind: isCompany ? 'societe' : 'particulier',
+        billing_name: get('billingName'),
+        billing_address: get('billingAddress'),
+        billing_postal_code: get('billingPostalCode'),
+        billing_city: get('billingCity'),
+        billing_country: get('billingCountry'),
+        terms_accepted: data.get('termsAccepted') !== null,
+        billing_company: isCompany ? get('billingCompany') : undefined,
+        billing_vat_number: isCompany ? opt(get('billingVatNumber')) : undefined,
+        billing_siret: isCompany ? opt(get('billingSiret')) : undefined,
+        phone: opt(get('phone')),
+        lang: form.dataset.lang || 'fr',
+        model: opt(get('neotoneModel')),
+        wood: opt(get('neotoneWood')),
+        purchase_mode: opt(get('neotonePurchaseMode')),
+        // NOMBRES HT (le serveur recalcule le prix remisé selon le mode).
+        price_original_eur: get('priceOriginalEur') ? Number(get('priceOriginalEur')) : undefined,
+        news_opt_in: data.get('newsOptIn') !== null,
+        client_request_id: opt(get('clientRequestId')),
+      }
+      // Livraison : uniquement si elle DIFFÈRE de la facturation.
+      if (hasShipping && !sameAddress) {
+        Object.assign(sale, {
+          shipping_name: get('shippingName'),
+          shipping_address: get('shippingAddress'),
+          shipping_postal_code: get('shippingPostalCode'),
+          shipping_city: get('shippingCity'),
+          shipping_country: get('shippingCountry'),
+        })
+      }
+    }
 
     try {
       const r = await fetch('/api/subscribe', {
@@ -995,88 +1153,43 @@ const saleIntake = saleIntakeClientConfig()
           source,
           lang: form.dataset.lang || 'fr',
           page: location.pathname,
+          // Achat Neotone : accord explicite de transmission à Soundventure
+          // (vérifié aussi par le serveur) + vente à déposer, si activé.
+          partnerConsent: source === 'neotone-discount' ? data.get('partnerConsent') !== null : undefined,
+          sale,
         }),
       })
-      if (!r.ok) throw new Error('failed')
-      // ⚠️ `/api/subscribe` répond `{ ok, emailSent }` et RIEN d'autre : il ne
-      // renvoie AUCUN identifiant de la ligne `site_leads` créée. On ne peut
-      // donc pas transmettre `site_lead_id` au guichet aujourd'hui — signalé à
-      // la session app. Le jour où `api/subscribe.js` + l'Edge Function
-      // `site-lead` renverront l'`id`, il suffira de le lire ici.
+      const resp = await r.json().catch(() => ({} as Record<string, unknown>))
+      if (!r.ok) {
+        // Message précis quand le serveur dit pourquoi (téléphone, accord).
+        const err = String((resp as { error?: string }).error || '')
+        if (errEl) {
+          errEl.textContent = (err === 'invalid_phone' ? errEl.dataset.invalidPhone
+            : err === 'consent_required' ? errEl.dataset.consentRequired
+            : errEl.dataset.default) || errEl.textContent
+        }
+        throw new Error('failed')
+      }
       form.classList.add('hidden')
       success?.classList.remove('hidden')
 
-      // ── DÉPÔT DE LA VENTE (`sale-intake`) ───────────────────────────────────
-      // Se joue APRÈS le filet, et ne peut donc RIEN lui faire perdre : à ce
-      // stade l'email de David est déjà parti et l'écran dit déjà « c'est
-      // envoyé ». Un échec ici n'affiche aucune erreur — la demande n'est pas
-      // perdue, et la personne n'a rien à refaire.
-      // 🔴 `SALE.enabled` est à false tant que l'Edge Function n'est pas
-      // déployée (voir `src/lib/saleIntake.ts`) : aucune requête n'est émise.
-      if (SALE?.enabled && source === 'neotone-discount') {
-        try {
-          const num = (v: string) => { const n = Number(v); return Number.isFinite(n) && v ? n : undefined }
-          const opt = (v: string) => v || undefined
-          const isCompany = get('billingKind') === 'societe'
-          const sameAddress = data.get('shippingSame') !== null
-          const hasShipping = !shippingEl?.classList.contains('hidden')
-          const body: Record<string, unknown> = {
-            // ⛔ Jamais de status / source / commission_eur / serial_number… :
-            // c'est le guichet qui les pose (voir src/lib/saleIntake.ts).
-            partner: SALE.partner,
-            customer_name: `${get('firstName')} ${get('lastName')}`.trim(),
-            email: get('email'),
-            billing_kind: isCompany ? 'societe' : 'particulier',
-            billing_name: get('billingName'),
-            billing_address: get('billingAddress'),
-            billing_postal_code: get('billingPostalCode'),
-            billing_city: get('billingCity'),
-            billing_country: get('billingCountry'),
-            terms_accepted: true,
-            terms_version: SALE.termsVersion,
-            billing_company: isCompany ? get('billingCompany') : undefined,
-            billing_vat_number: isCompany ? opt(get('billingVatNumber')) : undefined,
-            billing_siret: isCompany ? opt(get('billingSiret')) : undefined,
-            phone: opt(get('phone')),
-            lang: form.dataset.lang || 'fr',
-            quantity: 1,
-            model: opt(get('neotoneModel')),
-            wood: opt(get('neotoneWood')),
-            news_opt_in: data.get('newsOptIn') !== null,
-            client_request_id: opt(get('clientRequestId')),
-          }
-          // Adresse de livraison : uniquement si elle DIFFÈRE de la facturation.
-          // Même adresse ⇒ on n'envoie rien, le guichet ne peut pas les
-          // désynchroniser ensuite.
-          if (hasShipping && !sameAddress) {
-            body.shipping_name = get('shippingName')
-            body.shipping_address = get('shippingAddress')
-            body.shipping_postal_code = get('shippingPostalCode')
-            body.shipping_city = get('shippingCity')
-            body.shipping_country = get('shippingCountry')
-          }
-          // `num()` garde la porte ouverte : le calculateur ne transmet pas
-          // encore les montants (`data-calc-*`), ils partiront dès qu'il le fera.
-          const orig = num(get('priceOriginalEur'))
-          const disc = num(get('priceDiscountedEur'))
-          if (orig !== undefined) body.price_original_eur = orig
-          if (disc !== undefined) body.price_discounted_eur = disc
-          // `undefined` disparaît à la sérialisation JSON : aucun champ vide
-          // n'est envoyé, aucune valeur inventée non plus.
-          const sr = await fetch(SALE.url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', apikey: SALE.key },
-            body: JSON.stringify(body),
-          })
-          const sd = await sr.json().catch(() => ({}))
-          if (sd?.ok === true && sd.order_ref && orderRefEl) {
-            const tpl = orderRefEl.dataset.template || '{ref}'
-            orderRefEl.textContent = tpl.replace('{ref}', String(sd.order_ref))
-            orderRefEl.classList.remove('hidden')
-          } else if (sd?.erreur === 'piece_indisponible') {
-            unavailableEl?.classList.remove('hidden')
-          }
-        } catch { /* Le filet a déjà fonctionné : on ne dit rien de plus. */ }
+      // ── RETOUR DU DÉPÔT DE LA VENTE (présent seulement si `sale` envoyé) ──
+      // Le filet a TOUJOURS fonctionné à ce stade : chaque message le dit.
+      const saleRes = (resp as { sale?: { ok: boolean; order_ref?: string; erreur?: string } }).sale
+      if (saleRes?.ok && saleRes.order_ref && orderRefEl) {
+        // `reused: true` (renvoi du même formulaire) : même référence, rien à dire de plus.
+        const tpl = orderRefEl.dataset.template || '{ref}'
+        orderRefEl.textContent = tpl.replace('{ref}', String(saleRes.order_ref))
+        orderRefEl.classList.remove('hidden')
+      } else if (saleRes && !saleRes.ok) {
+        if (saleRes.erreur === 'piece_indisponible') unavailableEl?.classList.remove('hidden')
+        else if (saleNoteEl) {
+          const d = saleNoteEl.dataset
+          saleNoteEl.textContent = (saleRes.erreur === 'trop_de_demandes' ? d.rateLimited
+            : saleRes.erreur === 'coupon_code_deja_utilise' ? d.couponUsed
+            : d.failed) || ''
+          saleNoteEl.classList.remove('hidden')
+        }
       }
     } catch {
       errEl?.classList.remove('hidden')

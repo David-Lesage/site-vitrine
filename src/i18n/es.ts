@@ -748,8 +748,8 @@ export const es: Dict = {
       "demo": "Demostración privada y pruebas de instrumentos",
       "lesson": "Toma una lección con David."
     },
-    "discountTitle": "Obtén mi código de descuento Neotone",
-    "discountIntro": "Solicitaré un código de descuento personalizado para ti a Neotone: 5% de descuento online y 7% si vienes a probarlo a la tienda. Te responderé en un plazo de 24 a 48 horas.",
+    "discountTitle": "Comprar mi Neotone",
+    "discountIntro": "Reviso tu solicitud y la transmito a Neotone, que te envía la factura y un enlace de pago con tarjeta, de lunes a viernes. −5 % en línea, −7 % en el showroom.",
     "discountModel": "¿Qué modelo te interesa?",
     "discountModelChoose": "Elegir…",
     "discountModelNames": {
@@ -759,7 +759,27 @@ export const es: Dict = {
     },
     "discountCountry": "País de entrega",
     "discountCountryPlaceholder": "Francia, Bélgica, Suiza…",
-    "discountNote": "Esta información se utiliza únicamente para solicitar su código a Neotone.",
+    "discountNote": "Esta información solo sirve para preparar tu solicitud a Neotone.",
+    "purchase": {
+      "howTitle": "Cómo funciona la compra",
+      "how1": "Rellenas este formulario.",
+      "how2": "Reviso tu solicitud y la transmito a Neotone (Soundventure, en Budapest). Tú vas en copia.",
+      "how3": "Neotone te envía la factura y un enlace de pago con tarjeta, de lunes a viernes de 9 h a 17 h (hora de París, la misma que en Budapest), normalmente en menos de una hora.",
+      "how4": "Pagas y el instrumento es tuyo: en el showroom, te lo llevas; en línea, te lo envían.",
+      "weekend": "<strong>¿Vienes al showroom un fin de semana?</strong> Rellena este formulario antes del viernes: el enlace de pago estará listo, podrás pagar allí mismo y llevártelo.",
+      "vat": "En la factura se aplica el IVA (20 % en Francia), salvo si tu empresa indica un número de IVA intracomunitario válido.",
+      "emailConfirm": "Confirma tu email",
+      "emailMismatch": "Las dos direcciones de email no coinciden. Revísalas: es a esta dirección donde Neotone te enviará la factura y el enlace de pago.",
+      "phoneWhy": "Obligatorio: Neotone lo pide para emitir tu factura.",
+      "phoneInvalid": "Este número no parece válido: de 8 a 15 cifras, se acepta el prefijo del país (+34…).",
+      "consent": "Acepto que mis datos de facturación se transmitan a Soundventure Kft. (Neotone, Hungría) para emitir la factura y el enlace de pago.",
+      "consentRequired": "Marca esta casilla: sin tu consentimiento, no puedo transmitir tu solicitud a Neotone.",
+      "successText": "Tu solicitud me ha llegado y recibirás un email de confirmación. Esto es lo que sigue:",
+      "successWeekend": "¿Vienes al showroom un fin de semana? El enlace de pago estará listo antes: pagas allí mismo y te lo llevas.",
+      "saleRateLimited": "Tu solicitud me ha llegado por email. Su registro automático se ha aplazado (demasiados envíos en poco tiempo): me encargo yo mismo, no tienes que hacer nada más.",
+      "saleCouponUsed": "Este código de descuento ya se ha utilizado. Tu solicitud me ha llegado: te responderé personalmente.",
+      "saleFailed": "Tu solicitud me ha llegado por email; la registro yo mismo. No tienes que hacer nada más."
+    },
     "phonePlain": "Teléfono",
     "phoneWhyShowcase": "Requisito indispensable para la reunión: que sea una fecha fija y que, si surge algún imprevisto de última hora por cualquiera de las partes, pueda contactarle de inmediato.",
     "socialLabel": "Tu cuenta de redes sociales",
@@ -2317,7 +2337,7 @@ export const es: Dict = {
     "description": "Política de privacidad del sitio de David Lesage y de la aplicación Handpan Constellation Studio: datos recogidos, reserva de clases, Google Calendar, plazos de conservación y derechos RGPD.",
     "h1": "Política de privacidad",
     "updatedLabel": "Última actualización",
-    "updated": "11 de septiembre de 2026",
+    "updated": "10 de octubre de 2026",
     "lead": "Esta página dice claramente qué hago con tus datos: qué recojo, por qué, con qué herramientas, cuánto tiempo los conservo y cómo recuperas el control cuando quieras. Cubre este sitio y la aplicación Handpan Constellation Studio. Sin jerga: si algo no queda claro, escríbeme — soy yo quien lee.",
     "sections": [
       {
@@ -2398,6 +2418,7 @@ export const es: Dict = {
           "Supabase — la base de datos donde se registran las cuentas, la agenda de las clases y las respuestas de los formularios, así como el espacio de almacenamiento de los archivos enviados. El proyecto está alojado en Irlanda, en la Unión Europea.",
           "Vercel — el alojamiento de este sitio. Las pequeñas funciones de servidor que retransmiten los formularios se ejecutan en Estados Unidos.",
           "Stripe — el pago de la suscripción a la aplicación. El sitio, por su parte, solo lee allí las tarifas mostradas: no se le envía ningún dato personal desde este sitio.",
+          "Soundventure Kft. (Neotone, Budapest, Hungría — Unión Europea) — solo si compras un Neotone con el formulario de compra, y solo si has marcado la casilla que lo autoriza: le transmito tu nombre, tu dirección de facturación, tu email, tu teléfono y, si lo tienes, tu número de IVA intracomunitario. Neotone emite la factura y te envía el enlace de pago con tarjeta; estos datos solo sirven para eso, y también los anoto en la hoja de pedidos que llevo con Neotone.",
           "Google — el buzón contact@lesagedavid.fr está alojado en Google, y es ahí donde te respondo. El sitio también carga sus tipografías y las miniaturas de los vídeos desde servidores de Google: ninguna de tus respuestas se les transmite, pero la dirección IP de tu navegador sí. Y Google Calendar interviene únicamente si un profesor ha decidido vincularlo, tal como se describe más arriba."
         ]
       },
@@ -2672,28 +2693,20 @@ export const es: Dict = {
     ],
     "procedure": [
       {
-        "title": "Contáctame para recibir tu código de descuento.",
-        "text": "Envía un correo electrónico con tu nombre y apellido, tu país de entrega, tu dirección de correo electrónico y tu número de teléfono."
+        "title": "Rellenas el formulario de compra",
+        "text": "Elige tu modelo y tu madera en la calculadora (−5 % en línea, −7 % en el showroom) y rellena el formulario de compra con tus datos de facturación."
       },
       {
-        "title": "Reciba su código de descuento único",
-        "text": "Recibirás un código de descuento personalizado de Neotone (-5% online, -7% en la tienda)."
+        "title": "Lo reviso y lo transmito a Neotone",
+        "text": "Reviso tu solicitud y la transmito a Neotone (Soundventure, en Budapest). Tú vas en copia."
       },
       {
-        "title": "Realice su pedido con Neotone",
-        "text": "Neotone se pondrá en contacto con usted en un plazo de dos días con una oferta personalizada."
+        "title": "Neotone te envía la factura y el enlace de pago",
+        "text": "Neotone te envía la factura y un enlace de pago con tarjeta, de lunes a viernes de 9 h a 17 h (hora de París, la misma que en Budapest), normalmente en menos de una hora."
       },
       {
-        "title": "Abonar un depósito de 1.000 € sin IVA.",
-        "text": "Al recibir la confirmación, deberá abonar un depósito de 1000 € (sin IVA). Esto dará inicio a la fabricación artesanal de su instrumento."
-      },
-      {
-        "title": "Paciencia durante la fabricación",
-        "text": "El tiempo de espera varía entre 2 y 5 meses, dependiendo de la cola. Recibirá un tiempo de espera estimado personalizado."
-      },
-      {
-        "title": "Paga el saldo y recibe tu Neotone",
-        "text": "En cuanto su instrumento esté listo, recibirá una notificación por correo electrónico. Usted abona el resto del importe y, a continuación, el instrumento se le enviará junto con su factura a cualquier parte del mundo."
+        "title": "Pagas y el instrumento es tuyo",
+        "text": "En línea, te lo envían con su factura. Si tu modelo no está en stock, te respondo personalmente con los plazos reales."
       }
     ],
     "procedureShowroom": [
@@ -2707,7 +2720,7 @@ export const es: Dict = {
       },
       {
         "title": "Llévate tu instrumento a casa el mismo día.",
-        "text": "Aprovecha el descuento de la sala de exposición (−7%) y llévate tu Neotone directamente, sin demoras en la fabricación."
+        "text": "Aprovecha el descuento del showroom (−7 %): rellenas el formulario de compra, Neotone te envía el enlace de pago, pagas allí mismo y te llevas tu Neotone, sin demoras de fabricación. ¿Vienes un fin de semana? Rellena el formulario antes del viernes: el enlace estará listo."
       }
     ],
     "included": [
@@ -2762,7 +2775,7 @@ export const es: Dict = {
       "savings": "Ahorras dinero",
       "savingsB2B": "No pagas",
       "savingsB2BNote": "Sea {discountRate} el descuento + {vatRate} el IVA sobre el precio base, es decir, la diferencia con el precio de lista con IVA incluido ({catalog}). Solo el descuento de {discount} representa una ganancia real: no se paga el IVA por adelantado (inversión del sujeto pasivo) y, de todos modos, se recuperaría.",
-      "getCode": "Obtén mi código de descuento",
+      "getCode": "Comprar mi Neotone",
       "discountLabel": "Presentación del embajador",
       "vat": "TINA",
       "finalTTC": "Precio final con IVA incluido a pagar",

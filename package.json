@@ -13,7 +13,8 @@
     "seo:check": "seo-checker",
     "seo:check:report": "seo-checker --report seo-report.txt",
     "astro": "astro",
-    "test:stock": "bun scripts/test-stock-source.mjs"
+    "test:stock": "bun scripts/test-stock-source.mjs",
+    "test:achat": "node scripts/test-achat-neotone.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

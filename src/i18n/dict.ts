@@ -916,14 +916,15 @@ const fr = {
     sessionTypeNames: { onboarding: 'Prise en main de mon instrument', demo: 'Démo privée et tester un instrument', lesson: 'Prendre un cours avec David' },
     // Demande de code de remise Neotone. Ces informations sont exactement celles
     // que Neotone réclame à David pour enregistrer la vente et sa commission.
-    discountTitle: 'Obtenir mon code de remise Neotone',
+    // 10/10/2026 : ce formulaire est désormais le FORMULAIRE D'ACHAT.
+    discountTitle: 'Acheter mon Neotone',
     // ⚠️ DEUX TAUX, TOUJOURS LES DEUX (21/08/2026). La modale s'ouvre depuis le
     // calculateur, qui peut être en mode « en ligne » (−5 %) OU « showroom »
     // (−7 %) : annoncer un seul taux rendait le message faux une fois sur deux.
     // Citer les deux reste exact quel que soit le mode choisi. Les taux sont
     // ceux du calculateur (`Calculator.astro`, source de vérité) : ne pas les
     // modifier ici sans les modifier là-bas.
-    discountIntro: 'Un code nominatif que je demande pour toi auprès de Neotone : −5 % en ligne, −7 % si tu viens l’essayer au showroom. Réponse personnelle sous 24 à 48 h.',
+    discountIntro: 'Je vérifie ta demande et je la transmets à Neotone, qui t’envoie la facture et un lien de paiement par carte, du lundi au vendredi. −5 % en ligne, −7 % au showroom.',
     discountModel: 'Quel modèle t’intéresse ?',
     // Récapitulatif du choix DÉJÀ fait dans le calculateur : la question du
     // modèle ne se repose plus (demande de David, 22/09/2026).
@@ -937,7 +938,7 @@ const fr = {
     },
     discountCountry: 'Pays de livraison',
     discountCountryPlaceholder: 'France, Belgique, Suisse…',
-    discountNote: 'Ces informations me servent uniquement à demander ton code auprès de Neotone.',
+    discountNote: 'Ces informations me servent uniquement à préparer ta demande auprès de Neotone.',
     // ── FACTURATION (21-22/09/2026, demande de David) ────────────────────────
     // Ses mots : « dans tous les cas il faut récupérer les informations de
     // facturation ; si la personne a une société qui récupère la TVA, il faut
@@ -978,6 +979,32 @@ const fr = {
       // Retours affichés après l'envoi.
       orderRef: 'Référence de ta demande : {ref}',
       unavailable: 'Aucun exemplaire n’est disponible pour ce choix en ce moment. Ta demande est bien enregistrée : je te réponds personnellement avec les délais réels.',
+    },
+    // ── ACHAT D'UN NEOTONE : la procédure dite AVANT et APRÈS (10/10/2026) ────
+    // Demande de David : « je veux aussi que le client soit au courant de la
+    // procédure ». Procédure réelle de Neotone (mails du 17/08 au 02/10) : carte
+    // uniquement, lien de paiement envoyé par Neotone lun-ven 9h-17h, pas de
+    // support le week-end. Sous-objet `purchase` + repli FR dans le composant,
+    // comme `billing`.
+    purchase: {
+      howTitle: 'Comment se passe l’achat',
+      how1: 'Tu remplis ce formulaire.',
+      how2: 'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest). Tu es en copie.',
+      how3: 'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), en général dans l’heure.',
+      how4: 'Tu paies, l’instrument est à toi : au showroom, tu repars avec ; en ligne, il t’est livré.',
+      weekend: '<strong>Tu viens au showroom un week-end ?</strong> Remplis ce formulaire avant le vendredi : le lien de paiement sera prêt, tu pourras payer sur place et repartir avec.',
+      vat: 'La TVA s’applique sur la facture (20 % en France), sauf si ta société indique un n° de TVA intracommunautaire valide.',
+      emailConfirm: 'Confirme ton email',
+      emailMismatch: 'Les deux adresses email ne sont pas identiques. Vérifie-les : c’est à cette adresse que Neotone t’enverra la facture et le lien de paiement.',
+      phoneWhy: 'Obligatoire : Neotone le demande pour établir ta facture.',
+      phoneInvalid: 'Ce numéro ne semble pas valide : 8 à 15 chiffres, indicatif du pays accepté (+33…).',
+      consent: 'J’accepte que mes coordonnées de facturation soient transmises à Soundventure Kft. (Neotone, Hongrie) pour l’établissement de la facture et du lien de paiement.',
+      consentRequired: 'Coche cette case : sans ton accord, je ne peux pas transmettre ta demande à Neotone.',
+      successText: 'Ta demande m’est bien parvenue, et tu reçois un email de confirmation. Voici la suite :',
+      successWeekend: 'Tu viens au showroom un week-end ? Le lien de paiement sera prêt avant : tu paies sur place et tu repars avec.',
+      saleRateLimited: 'Ta demande m’est bien parvenue par email. Son enregistrement automatique est différé (trop d’envois en peu de temps) : je m’en occupe moi-même, tu n’as rien à refaire.',
+      saleCouponUsed: 'Ce code de remise a déjà servi. Ta demande m’est bien parvenue : je reviens vers toi personnellement.',
+      saleFailed: 'Ta demande m’est bien parvenue par email ; je l’enregistre moi-même. Tu n’as rien à refaire.',
     },
     // Pour une demande de code : Neotone a besoin du téléphone → pas de « facultatif ».
     phonePlain: 'Téléphone',
@@ -3258,7 +3285,7 @@ const fr = {
       'Politique de confidentialité du site David Lesage et de l’application Handpan Constellation Studio : données collectées, prise de rendez-vous, Google Agenda, durées de conservation et droits RGPD.',
     h1: 'Politique de confidentialité',
     updatedLabel: 'Dernière mise à jour',
-    updated: '11 septembre 2026',
+    updated: '10 octobre 2026',
     lead: 'Cette page dit en clair ce que je fais de tes données : ce que je collecte, pourquoi, avec quels outils, combien de temps je le garde, et comment tu reprends la main quand tu veux. Elle couvre ce site et l’application Handpan Constellation Studio. Pas de jargon : si quelque chose n’est pas clair, écris-moi — c’est moi qui lis.',
     sections: [
       {
@@ -3354,6 +3381,8 @@ const fr = {
           'Supabase — la base de données où sont enregistrés les comptes, l’agenda des cours et les réponses aux formulaires, ainsi que l’espace de stockage des fichiers déposés. Le projet est hébergé en Irlande, dans l’Union européenne.',
           'Vercel — l’hébergeur de ce site. Les petites fonctions serveur qui relaient les formulaires s’exécutent aux États-Unis.',
           'Stripe — le paiement de l’abonnement à l’application. Le site, lui, y lit seulement les tarifs affichés : aucune donnée personnelle ne lui est envoyée depuis ce site.',
+          // Ajout 10/10/2026 : formulaire d'achat d'un Neotone (case de consentement dédiée).
+          'Soundventure Kft. (Neotone, Budapest, Hongrie — Union européenne) — seulement si tu achètes un Neotone avec le formulaire d’achat, et seulement si tu as coché la case qui l’autorise : je lui transmets ton nom, ton adresse de facturation, ton email, ton téléphone et, si tu en as un, ton n° de TVA intracommunautaire. C’est Neotone qui établit la facture et t’envoie le lien de paiement par carte ; ces informations ne servent qu’à ça, et je les reporte aussi dans le tableau de commandes que je tiens avec Neotone.',
           'Google — la messagerie contact@lesagedavid.fr est hébergée chez Google, et c’est là que je te réponds. Le site charge aussi ses polices d’écriture et les vignettes des vidéos depuis les serveurs de Google : aucune de tes réponses ne leur est transmise, mais l’adresse IP de ton navigateur, oui. Et Google Agenda intervient uniquement si un professeur a choisi de le relier, comme décrit plus haut.',
         ],
       },
@@ -3517,18 +3546,20 @@ const fr = {
       { q: 'Peut-on louer un Neotone, ou en emprunter un ?', a: 'Non. Les Neotone ne se louent pas, et je ne prête ni instrument ni prototype. Pour l’essayer avant de l’acheter, viens au showroom à Paris : tu joues les modèles en stock aussi longtemps que tu veux.' },
       { q: 'Le Neotone est-il portable et autonome sur batterie ?', a: 'Oui. Environ 8 heures d’autonomie en jeu continu. Il est livré avec un chargeur, utilisable que l’instrument soit en cours de jeu ou non.' },
     ],
+    // ⚠️ 10/10/2026 — MÊMES 4 ÉTAPES, mot pour mot, que l'encart « Comment se
+    // passe l'achat » du formulaire (booking.purchase.how1-4). Remplace l'ancien
+    // parcours « code de remise → acompte de 1 000 € HT → solde » (procédure
+    // Neotone périmée : carte uniquement, lien de paiement envoyé par Neotone).
     procedure: [
-      { title: 'Contacte-moi pour recevoir ton code de remise', text: 'Envoie un email avec ton nom et prénom, ton pays de livraison, ton email et ton numéro de téléphone.' },
-      { title: 'Reçois ton code de remise unique', text: 'Tu reçois un code de réduction nominatif de la part de Neotone (−5 % en ligne, −7 % au showroom).' },
-      { title: 'Passe commande chez Neotone', text: 'Neotone te recontacte sous deux jours avec une offre personnalisée.' },
-      { title: "Verse l'acompte de 1 000 € HT", text: "À réception de la confirmation, tu règles un acompte de 1 000 € HT. Cela déclenche la fabrication artisanale de ton instrument." },
-      { title: 'Patience pendant la fabrication', text: 'Le délai varie entre 2 et 5 mois selon la file d’attente. Tu reçois un délai estimatif personnalisé.' },
-      { title: 'Règle le solde et reçois ton Neotone', text: 'Dès que ton instrument est prêt, tu es notifié par email. Tu règles le solde puis l’instrument t’est expédié avec sa facture, partout dans le monde.' },
+      { title: 'Tu remplis le formulaire d’achat', text: 'Choisis ton modèle et ton bois dans le calculateur (−5 % en ligne, −7 % au showroom), puis remplis le formulaire d’achat avec tes coordonnées de facturation.' },
+      { title: 'Je vérifie et je transmets à Neotone', text: 'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest). Tu es en copie.' },
+      { title: 'Neotone t’envoie la facture et le lien de paiement', text: 'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), en général dans l’heure.' },
+      { title: 'Tu paies, l’instrument est à toi', text: 'En ligne, il t’est livré avec sa facture. Si ton modèle n’est pas en stock, je te réponds personnellement avec les délais réels.' },
     ],
     procedureShowroom: [
       { title: 'Prends rendez-vous avec moi', text: 'Deux options : viens à l’une de mes dates de rencontre publiques (une par mois), ou réserve un rendez-vous individuel rien que pour toi — 1h · 50 € ou 1h30 · 70 €.' },
       { title: 'Essaie les deux modèles en vrai', text: 'Sur place, tu prends le temps de tester le Neotone¹ et le Mutant, de comparer les bois, et de me poser toutes tes questions.' },
-      { title: 'Repars avec ton instrument le jour même', text: 'Tu profites de la remise showroom (−7 %) et tu repars directement avec ton Neotone — sans délai de fabrication.' },
+      { title: 'Repars avec ton instrument le jour même', text: 'Tu profites de la remise showroom (−7 %) : tu remplis le formulaire d’achat, Neotone t’envoie le lien de paiement, tu paies sur place et tu repars avec ton Neotone — sans délai de fabrication. Tu viens un week-end ? Remplis le formulaire avant le vendredi : le lien sera prêt.' },
     ],
     included: [
       { title: 'Sac de transport', text: 'Sac noir spécial avec bandoulière et sangles sac à dos · 520 × 220 mm.' },
@@ -3574,7 +3605,7 @@ const fr = {
       savingsB2B: 'Tu ne débourses pas',
       savingsB2BNote:
         'Soit {discountRate} de remise + {vatRate} de TVA du prix de base — l’écart avec le prix catalogue TTC ({catalog}). Seule la remise de {discount} est un gain réel : la TVA, tu ne l’avances pas (autoliquidation), et tu la récupérerais de toute façon.',
-      getCode: 'Obtenir mon code de remise',
+      getCode: 'Acheter mon Neotone',
       discountLabel: 'Remise ambassadeur',
       vat: 'TVA',
       finalTTC: 'Prix final TTC à payer',

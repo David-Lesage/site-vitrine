@@ -309,7 +309,8 @@ const SOURCE_LABELS: Record<string, { fr: string; en: string }> = {
     // mode « en ligne » (−5 %) OU « showroom » (−7 %) — n'en annoncer qu'un
     // rendait l'email faux une fois sur deux. Identique à `booking.discountIntro`
     // des dictionnaires du site.
-    'neotone-discount': { fr: 'Demande de code de remise Neotone (−5 % en ligne, −7 % au showroom)', en: 'Neotone discount code request (−5% online, −7% at the showroom)' },
+    // 10/10/2026 : le formulaire de « code de remise » est devenu le formulaire d'ACHAT.
+    'neotone-discount': { fr: 'Achat d’un Neotone (−5 % en ligne, −7 % au showroom)', en: 'Neotone purchase (−5% online, −7% at the showroom)' },
     showcase: { fr: 'Groupe rencontres', en: 'Gathering group' },
     contact: { fr: 'Message via le formulaire de contact', en: 'Message via the contact form' },
     'gonilele-order': { fr: 'Commande d’une harpe Gonilélé', en: 'Gonilélé harp order' },
@@ -578,6 +579,15 @@ function bookingHtml(
         cta: 'See the showroom page',
         sign: 'See you soon,<br />David Lesage',
         foot: 'You are receiving this email because you sent a request on lesagedavid.fr.',
+        // ACHAT NEOTONE (10/10/2026) — même procédure, mot pour mot, que
+        // l'encart du formulaire d'achat (site : booking.purchase.how1-4).
+        p1Purchase: 'Thanks — your purchase request has reached me. Here is exactly what happens next.',
+        howTitle: 'How the purchase works',
+        how1: 'You filled in the purchase form: done ✅',
+        how2: 'I check your request and pass it on to Neotone (Soundventure, in Budapest). You are copied in.',
+        how3: 'Neotone sends you the invoice and a card payment link, Monday to Friday, 9 am to 5 pm (Paris time, the same as Budapest), usually within the hour.',
+        how4: 'You pay, and the instrument is yours: at the showroom, you leave with it; online, it is delivered to you.',
+        weekend: '<strong>Coming to the showroom at the weekend?</strong> If you filled in the form before Friday, the payment link will be ready: you pay on the spot and leave with your instrument.',
     } : {
         title: 'Demande bien reçue ✨',
         p1: 'Merci pour ton message — ta demande est enregistrée et je les lis toutes personnellement. Je te réponds très vite pour caler les détails.',
@@ -603,6 +613,15 @@ function bookingHtml(
         cta: 'Voir la page du showroom',
         sign: 'À très vite,<br />David Lesage',
         foot: 'Tu reçois cet email parce que tu as envoyé une demande sur lesagedavid.fr.',
+        // ACHAT NEOTONE (10/10/2026) — même procédure, mot pour mot, que
+        // l'encart du formulaire d'achat (site : booking.purchase.how1-4).
+        p1Purchase: 'Merci — ta demande d’achat m’est bien parvenue. Voici exactement la suite.',
+        howTitle: 'Comment se passe l’achat',
+        how1: 'Tu as rempli le formulaire d’achat : c’est fait ✅',
+        how2: 'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest). Tu es en copie.',
+        how3: 'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), en général dans l’heure.',
+        how4: 'Tu paies, l’instrument est à toi : au showroom, tu repars avec ; en ligne, il t’est livré.',
+        weekend: '<strong>Tu viens au showroom un week-end ?</strong> Si tu as rempli le formulaire avant le vendredi, le lien de paiement sera prêt : tu paies sur place et tu repars avec.',
     };
 
     const row = (k: string, v: string) =>
@@ -612,8 +631,17 @@ function bookingHtml(
         <tr><td style="padding:28px 28px 4px;">
           <div style="font-size:21px;font-weight:700;color:#111827;">${t.title}</div>
           <p style="margin:14px 0 0;color:#374151;font-size:15px;line-height:1.6;">${hi}</p>
-          <p style="margin:12px 0 0;color:#374151;font-size:15px;line-height:1.6;">${t.p1}</p>
+          <p style="margin:12px 0 0;color:#374151;font-size:15px;line-height:1.6;">${isDiscount ? t.p1Purchase : t.p1}</p>
         </td></tr>
+
+        ${isDiscount ? `
+        <tr><td style="padding:20px 28px 4px;border-top:1px solid #f0f1f3;">
+          <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.howTitle}</h2>
+          <ol style="margin:0;padding-left:18px;color:#374151;font-size:14px;line-height:1.7;">
+            <li>${t.how1}</li><li>${t.how2}</li><li>${t.how3}</li><li>${t.how4}</li>
+          </ol>
+          <p style="margin:12px 0 0;padding:10px 12px;background:#faf5ef;border:1px solid #e7d9c6;border-radius:10px;color:#374151;font-size:14px;line-height:1.6;">${t.weekend}</p>
+        </td></tr>` : ''}
 
         <tr><td style="padding:22px 28px 4px;border-top:1px solid #f0f1f3;">
           <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.recap}</h2>
@@ -1293,7 +1321,11 @@ Deno.serve(async (req) => {
             }
         }
 
-        return json({ ok: true, emailSent, booking: isBooking, showcase: wantsShowcase });
+        // `id` (10/10/2026) : identifiant de la ligne `site_leads`, relayé par
+        // api/subscribe.js à l'EF `sale-intake` (`site_lead_id`) pour relier une
+        // vente Neotone à la demande d'origine. Ce n'est pas une donnée
+        // personnelle : un uuid opaque, inutilisable sans la clé de service.
+        return json({ ok: true, id: leadId ?? null, emailSent, booking: isBooking, showcase: wantsShowcase });
     } catch (err) {
         console.error('site-lead error:', err);
         return json({ error: err instanceof Error ? err.message : 'server_error' }, 500);

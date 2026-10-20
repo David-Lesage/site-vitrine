@@ -4,9 +4,59 @@
 // n'est jamais exposée au navigateur.
 //
 // Aucune dépendance npm (bun.lock gelé).
+//
+// 10/10/2026 — achat d'un Neotone (`source = 'neotone-discount'`) : après
+// l'enregistrement du contact (le filet), ce relais DÉPOSE aussi la vente dans
+// l'app via l'Edge Function `sale-intake`, CÔTÉ SERVEUR, avec le jeton
+// `SITE_LEAD_TOKEN` (jamais exposé au navigateur). Interrupteur :
+// `SALE_INTAKE_ENABLED` dans src/lib/saleIntakeCore.js (false = aucun appel).
+
+import {
+  SALE_INTAKE_ENABLED,
+  buildSaleIntakePayload,
+  summarizeSaleIntakeResponse,
+  isValidPhone,
+} from '../src/lib/saleIntakeCore.js'
 
 const SUPABASE_URL = 'https://zqcuhnjjrgmybftppkcl.supabase.co'
 const ANON = 'sb_publishable_turahpl0xi-qKN6jmG3yBg_tqpVZbtx'
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+// Délai max. du dépôt de la vente : au-delà, on rend la main au navigateur
+// (le filet a déjà fonctionné, David a l'email).
+const SALE_INTAKE_TIMEOUT_MS = 8000
+
+/**
+ * Dépose la vente dans l'app (EF `sale-intake`). Ne lève JAMAIS : renvoie
+ * `{ ok, order_ref }` ou `{ ok:false, erreur }`, affiché tel quel à l'écran.
+ */
+async function depositSale(sale, siteLeadId) {
+  const token = process.env.SITE_LEAD_TOKEN
+  // L'EF EXIGE le jeton : sans lui, inutile d'appeler (403 assuré).
+  if (!token) return { ok: false, erreur: 'indisponible' }
+  const built = buildSaleIntakePayload(sale, { siteLeadId })
+  if (!built.ok) return built
+  const ctrl = new AbortController()
+  const timer = setTimeout(() => ctrl.abort(), SALE_INTAKE_TIMEOUT_MS)
+  try {
+    const r = await fetch(`${SUPABASE_URL}/functions/v1/sale-intake`, {
+      method: 'POST',
+      headers: {
+        apikey: ANON,
+        Authorization: `Bearer ${ANON}`,
+        'Content-Type': 'application/json',
+        'x-site-token': token,
+      },
+      body: JSON.stringify(built.payload),
+      signal: ctrl.signal,
+    })
+    const data = await r.json().catch(() => ({}))
+    return summarizeSaleIntakeResponse(r.status, data)
+  } catch {
+    return { ok: false, erreur: 'injoignable' }
+  } finally {
+    clearTimeout(timer)
+  }
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -28,6 +78,19 @@ export default async function handler(req, res) {
       const digits = phone.replace(/\D/g, '').length
       if (!/^\+?[\d\s().\-]+$/.test(phone) || digits < 8 || digits > 15) {
         res.status(400).json({ error: 'invalid_phone' })
+        return
+      }
+    }
+    // Achat d'un Neotone (10/10/2026) : téléphone OBLIGATOIRE (Neotone le
+    // demande pour la facture) et accord EXPLICITE à la transmission des
+    // coordonnées à Soundventure Kft. Sans cet accord, rien ne part.
+    if (body.source === 'neotone-discount') {
+      if (!isValidPhone(body.phone)) {
+        res.status(400).json({ error: 'invalid_phone' })
+        return
+      }
+      if (body.partnerConsent !== true) {
+        res.status(400).json({ error: 'consent_required' })
         return
       }
     }
@@ -132,7 +195,16 @@ export default async function handler(req, res) {
       res.status(r.status === 400 ? 400 : 502).json({ error: data.error || 'upstream' })
       return
     }
-    res.status(200).json({ ok: true, emailSent: data.emailSent === true })
+    // `id` de la ligne `site_leads` (renvoyé par site-lead depuis le 10/10/2026 ;
+    // absent tant que l'EF n'est pas redéployée → simplement non transmis).
+    const siteLeadId = typeof data.id === 'string' && UUID_RE.test(data.id) ? data.id : undefined
+
+    // ── DÉPÔT DE LA VENTE — APRÈS le filet, jamais à sa place ───────────────
+    let sale
+    if (SALE_INTAKE_ENABLED && body.source === 'neotone-discount' && body.sale && typeof body.sale === 'object') {
+      sale = await depositSale(body.sale, siteLeadId)
+    }
+    res.status(200).json({ ok: true, emailSent: data.emailSent === true, ...(sale ? { sale } : {}) })
   } catch (err) {
     res.status(500).json({ error: 'server_error' })
   }

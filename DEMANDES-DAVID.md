@@ -156,5 +156,5 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 | 20/10 | Compteur « X micros disponibles à Paris » sur la fiche boutique : vue publique lecture seule sur stock_levels (avec la session APP), écriture anon révoquée, rien si vide | ⏳ en cours |
 | 20/10 | Messages du formulaire de contact → brouillon Gmail auto dans la langue du client, stock réel de /api/stock, « non » poli location/prototype, jamais d'envoi ; « propose-moi la tâche planifiée avant de la créer » | ⏳ proposition à faire |
 | 20/10 | site-lead + _shared/showcase-email.ts : « rappelle-moi ce qu'elles changent et attends mon feu vert » + prévenir la session APP | ⏳ rappel fait 20/10, feu vert attendu |
-| 20/10 | Signifier à la session « Handpan StudioV4 — reprise projet » que la session SITE a la main sur le site | ✅ fait 20/10 (message envoyé, mis en file, lecture non confirmée) |
+| 20/10 | Signifier à la session « Handpan StudioV4 — reprise projet » que la session SITE a la main sur le site | ✅ fait 20/10 — passation acceptée par StudioV4 (ne touche plus au dépôt ni à site-lead ; alignera showcase-email.ts après le feu vert) |
 | 20/10 | Vérifier /api/stock (502 à froid, délai 8 s de stockSource.js trop court ?) | ✅ vérifié 20/10 : 200 en 3 s à froid, Apps Script 2 s ; 8 s suffit (voir ÉTAT ACTUEL) |
