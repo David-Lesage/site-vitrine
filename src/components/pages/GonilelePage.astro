@@ -17,14 +17,15 @@ import { SITE_LEAD_KNOWS_CONTACT_SOURCES } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath, numberLocale } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
-import { fillCoursePrices, siteCoursePrices } from '@/lib/sessions'
+import { fillCoursePrices } from '@/lib/sessions'
+import { getCoursePrices } from '@/lib/helloassoCatalogue'
 
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const t = getDict(lang)
 const g = t.gonilele
 // Tarifs des cours (jetons `{lesson60}`… de `coursesText`, repli : site.ts).
-const prices = siteCoursePrices()
+const prices = await getCoursePrices()
 const L = (p: string) => localizePath(p, lang)
 const eur = (n: number) => n.toLocaleString(numberLocale(lang)) + ' €'
 const vt = g.videoTitles as Record<string, string>

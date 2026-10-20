@@ -11,7 +11,8 @@ import { countries } from '@/data/neotone'
 import { saleIntakeClientConfig } from '@/lib/saleIntake'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
-import { durationLabel, sessionPriceLabel, priceGrid, siteCoursePrices } from '@/lib/sessions'
+import { durationLabel, sessionPriceLabel, priceGrid } from '@/lib/sessions'
+import { getCoursePrices } from '@/lib/helloassoCatalogue'
 import { sessionTypes, demoInstruments, showcaseInterests } from '@/data/site'
 import { upcomingShowcases } from '@/lib/agenda'
 import type { Lang } from '@/i18n/config'
@@ -19,8 +20,8 @@ import type { Lang } from '@/i18n/config'
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const bk = getDict(lang).booking
-// Tarifs des cours et de la démo (repli : site.ts).
-const prices = siteCoursePrices()
+// Tarifs des cours et de la démo (HelloAsso au build, repli : site.ts).
+const prices = await getCoursePrices()
 // ── DEUX MENUS AU LIEU D'UN (18/08/2026, demande de David) ───────────────────
 // Avant : UN menu « Quel rendez-vous ? » qui mélangeait le motif ET la durée
 // (« Cours ou accompagnement individuel — 1h30 · 70 € »), soit 6 lignes.

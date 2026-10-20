@@ -9,7 +9,8 @@ import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { localBusinessLdJson, breadcrumbLdJson } from '@/lib/ldJson'
 import { upcomingShowcases } from '@/lib/agenda'
-import { priceForKind, priceGrid, siteCoursePrices } from '@/lib/sessions'
+import { priceForKind, priceGrid } from '@/lib/sessions'
+import { getCoursePrices } from '@/lib/helloassoCatalogue'
 import BookingForm from '@/components/BookingForm.astro'
 import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
@@ -242,8 +243,8 @@ const alsoMeta = [
 const paidEvents = sh.events.slice(1)
 // Les 3 cartes payantes affichent le tarif de site.ts (sessionTypes), comme le
 // formulaire de réservation — impossible qu'elles annoncent deux prix différents.
-// Tarifs des cours et de la démo (repli : site.ts).
-const prices = siteCoursePrices()
+// Tarifs des cours et de la démo (HelloAsso au build, repli : site.ts).
+const prices = await getCoursePrices()
 const eventPrices = [priceForKind('onboarding', lang, prices), priceForKind('demo', lang, prices), priceForKind('lesson', lang, prices)]
 // La grille du rendez-vous individuel (« 1h · 50 € — 1h30 · 70 € » : prise en
 // main / démo), annoncée UNIQUEMENT dans le bloc #individuel (bas de page) et

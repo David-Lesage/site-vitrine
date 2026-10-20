@@ -10,7 +10,8 @@ import type { Product } from '@/data/shop'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath, numberLocale } from '@/i18n/utils'
-import { fillCoursePrices, siteCoursePrices } from '@/lib/sessions'
+import { fillCoursePrices } from '@/lib/sessions'
+import { getCoursePrices } from '@/lib/helloassoCatalogue'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang; product: Product }
@@ -29,7 +30,7 @@ const info = productCopy[p.id]
 const isExternal = !(p.url.startsWith('/') || p.url.startsWith('mailto:'))
 const href = p.url.startsWith('/') ? L(p.url) : p.url
 // Jetons `{lesson60}`… (carte des cours, prix libre) remplis avec les tarifs.
-const prices = siteCoursePrices()
+const prices = await getCoursePrices()
 const rawPrice = (lang === 'en' || lang === 'es' ? p.priceLabelI18n?.[lang] : undefined) ?? p.priceLabel
 const priceText = rawPrice ? fillCoursePrices(rawPrice, prices) : rawPrice
 ---

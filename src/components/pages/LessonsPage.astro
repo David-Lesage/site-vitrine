@@ -10,7 +10,8 @@ import { site, lessonPackage } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { courseLdJson, breadcrumbLdJson, faqLdJson } from '@/lib/ldJson'
-import { fillCoursePricesDeep, siteCoursePrices } from '@/lib/sessions'
+import { fillCoursePricesDeep } from '@/lib/sessions'
+import { getCoursePrices } from '@/lib/helloassoCatalogue'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -18,8 +19,8 @@ const { lang } = Astro.props
 const t = getDict(lang)
 // 💶 Cours à prix libre à partir d'un minimum (20/10/2026) : les montants ne
 // sont pas écrits dans le dictionnaire, ce sont des jetons (`{lesson60}`…)
-// remplis ici avec les tarifs (repli : site.ts).
-const prices = siteCoursePrices()
+// remplis ici avec les tarifs (HelloAsso au build, repli : site.ts).
+const prices = await getCoursePrices()
 const l = fillCoursePricesDeep(t.lessons, prices)
 const helloassoLessons = 'https://www.helloasso.com/associations/resonances-productions/boutiques/cours-prive-et-stages-avec-david-lesage'
 // Offres des données structurées : `minPrice` = le minimum du prix libre.
