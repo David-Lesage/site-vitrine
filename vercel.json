@@ -107,36 +107,6 @@
       "statusCode": 301
     },
     {
-      "source": "/en/blog/completer-son-handpan-acoustique-avec-un-neotone",
-      "destination": "/blog/completer-son-handpan-acoustique-avec-un-neotone/",
-      "statusCode": 301
-    },
-    {
-      "source": "/en/blog/completer-son-handpan-acoustique-avec-un-neotone/",
-      "destination": "/blog/completer-son-handpan-acoustique-avec-un-neotone/",
-      "statusCode": 301
-    },
-    {
-      "source": "/en/blog/mes-handpans-une-seule-porte",
-      "destination": "/blog/mes-handpans-une-seule-porte/",
-      "statusCode": 301
-    },
-    {
-      "source": "/en/blog/mes-handpans-une-seule-porte/",
-      "destination": "/blog/mes-handpans-une-seule-porte/",
-      "statusCode": 301
-    },
-    {
-      "source": "/en/blog/reveler-les-accords-de-ton-handpan",
-      "destination": "/blog/reveler-les-accords-de-ton-handpan/",
-      "statusCode": 301
-    },
-    {
-      "source": "/en/blog/reveler-les-accords-de-ton-handpan/",
-      "destination": "/blog/reveler-les-accords-de-ton-handpan/",
-      "statusCode": 301
-    },
-    {
       "source": "/:path((?!api(?:/|$))(?!_vercel(?:/|$))(?:[^/]+/)*[^/.]+)",
       "destination": "/:path/",
       "statusCode": 301
