@@ -213,15 +213,9 @@ const calcData = {
       return { basePrice, discount, discountRate, discountPct, subtotalHT, vatRate, vatAmount, finalTTC, savings, savingsRate, catalogTTC, b2bEU, country }
     }
 
-    function syncTrigger(r: ReturnType<typeof compute>) {
+    function syncTrigger() {
       const btn = $('calc-get-code')
       if (!btn) return
-      // Montants transmis au dépôt de la vente (10/10/2026) : NOMBRES HT, sans
-      // « € » ni virgule. Le serveur recalcule lui-même le prix remisé depuis
-      // le prix catalogue et le mode (−7 % showroom / −5 % en ligne) : celui-ci
-      // n'est qu'informatif. Aucun prix TTC : la TVA dépend de la facture.
-      btn.dataset.calcPriceOriginal = String(Math.round(r.basePrice * 100) / 100)
-      btn.dataset.calcPriceDiscounted = String(Math.round(r.subtotalHT * 100) / 100)
       const modeLabel = state.mode === 'showroom' ? L.modeShowroomShort : L.modeOnlineShort
       btn.dataset.calcModel = state.model
       btn.dataset.calcWood = state.wood
@@ -242,7 +236,7 @@ const calcData = {
       // est recalée ici — le prix et le récapitulatif restent donc justes.
       applyAvailability()
       const r = compute()
-      syncTrigger(r)
+      syncTrigger()
       $('calc-selection')!.textContent = `${DATA.models[state.model].label} — ${DATA.woodLabels[state.wood]}`
       $('calc-base')!.textContent = fmtEUR(r.basePrice)
       $('calc-discount-label')!.textContent = `${L.discountLabel} −${Math.round(r.discountRate * 100)} %`

@@ -791,9 +791,9 @@ export const en: Dict = {
     // `onboarding-60/-90`) but is no longer offered: getting started with an
     // instrument is now part of the lessons.
     sessionTypeNames: { onboarding: 'Getting started with my instrument', demo: 'Private demo and trying an instrument', lesson: 'Take a lesson with David' },
-    discountTitle: 'Buy my Neotone',
+    discountTitle: 'Get my Neotone discount code',
     // ⚠️ ALWAYS BOTH RATES (21/08/2026) — see the comment in dict.ts.
-    discountIntro: 'I check your request and pass it on to Neotone, who sends you the invoice and a card payment link, Monday to Friday. −5% online, −7% at the showroom.',
+    discountIntro: 'A personal code that I request for you from Neotone: −5% online, −7% if you come and try it at the showroom. Personal reply within 24 to 48 h.',
     discountModel: 'Which model are you interested in?',
     calcRecapLabel: 'Your choice',
     calcRecapEdit: 'Change',
@@ -805,7 +805,7 @@ export const en: Dict = {
     },
     discountCountry: 'Delivery country',
     discountCountryPlaceholder: 'France, Belgium, Switzerland…',
-    discountNote: 'I only use these details to prepare your request to Neotone.',
+    discountNote: 'I only use these details to request your code from Neotone.',
     // Billing (21-22/09/2026) — see the French dictionary for the reasoning.
     billing: {
       title: 'Billing',
@@ -837,27 +837,6 @@ export const en: Dict = {
       shippingCountry: 'Delivery country',
       orderRef: 'Your request reference: {ref}',
       unavailable: 'No instrument is available for this choice right now. Your request is safely recorded: I will reply personally with the real lead times.',
-    },
-    // Neotone purchase procedure (10/10/2026) — see the French dictionary.
-    purchase: {
-      howTitle: 'How the purchase works',
-      how1: 'You fill in this form.',
-      how2: 'I check your request and pass it on to Neotone (Soundventure, in Budapest). You are copied in.',
-      how3: 'Neotone sends you the invoice and a card payment link, Monday to Friday, 9 am to 5 pm (Paris time, the same as Budapest), usually within the hour.',
-      how4: 'You pay, and the instrument is yours: at the showroom, you leave with it; online, it is delivered to you.',
-      weekend: '<strong>Coming to the showroom at the weekend?</strong> Fill in this form before Friday: the payment link will be ready, so you can pay on the spot and leave with your instrument.',
-      vat: 'VAT applies on the invoice (20% in France), unless your company provides a valid intra-EU VAT number.',
-      emailConfirm: 'Confirm your email',
-      emailMismatch: 'The two email addresses do not match. Please check them: this is where Neotone will send your invoice and payment link.',
-      phoneWhy: 'Required: Neotone needs it to issue your invoice.',
-      phoneInvalid: 'This number does not look valid: 8 to 15 digits, country code accepted (+33…).',
-      consent: 'I agree that my billing details may be passed on to Soundventure Kft. (Neotone, Hungary) to issue the invoice and the payment link.',
-      consentRequired: 'Please tick this box: without your consent, I cannot pass your request on to Neotone.',
-      successText: 'Your request has reached me, and you will receive a confirmation email. Here is what happens next:',
-      successWeekend: 'Coming to the showroom at the weekend? The payment link will be ready beforehand: you pay on the spot and leave with your instrument.',
-      saleRateLimited: 'Your request has reached me by email. Its automatic recording is delayed (too many submissions in a short time): I will take care of it myself, you have nothing to redo.',
-      saleCouponUsed: 'This discount code has already been used. Your request has reached me: I will get back to you personally.',
-      saleFailed: 'Your request has reached me by email; I will record it myself. You have nothing to redo.',
     },
     phonePlain: 'Phone',
     // Showcase only (24/08/2026) — see the French dictionary for the reasoning.
@@ -2625,7 +2604,7 @@ export const en: Dict = {
       'Privacy policy for the David Lesage site and the Handpan Constellation Studio app: what is collected, lesson bookings, Google Calendar, retention periods and GDPR rights.',
     h1: 'Privacy Policy',
     updatedLabel: 'Last updated',
-    updated: '10 October 2026',
+    updated: '11 September 2026',
     lead: 'This page says plainly what I do with your data: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. It covers this site and the Handpan Constellation Studio application. No jargon: if something isn’t clear, write to me — I’m the one who reads.',
     sections: [
       {
@@ -2706,7 +2685,6 @@ export const en: Dict = {
           'Supabase — the database where accounts, the lesson calendar and form replies are stored, along with the storage space for uploaded files. The project is hosted in Ireland, within the European Union.',
           'Vercel — the host of this site. The small server functions that relay the forms run in the United States.',
           'Stripe — payment of the application subscription. The site itself only reads the displayed prices there: no personal data is sent to it from this site.',
-          'Soundventure Kft. (Neotone, Budapest, Hungary — European Union) — only if you buy a Neotone with the purchase form, and only if you have ticked the box that allows it: I pass on your name, billing address, email, phone number and, if you have one, your intra-EU VAT number. Neotone issues the invoice and sends you the card payment link; these details are used for nothing else, and I also record them in the order sheet I keep with Neotone.',
           'Google — the contact@lesagedavid.fr mailbox is hosted by Google, and that is where I answer you. The site also loads its fonts and video thumbnails from Google servers: none of your replies is passed on to them, but your browser’s IP address is. And Google Calendar is involved only if a teacher has chosen to link it, as described above.',
         ],
       },
@@ -2866,17 +2844,18 @@ export const en: Dict = {
       { q: 'Can I rent or borrow a Neotone?', a: 'No. Neotones are not for rent, and I do not lend instruments or prototypes. To try one before buying, come to the showroom in Paris: you can play the models in stock for as long as you like.' },
       { q: 'Is the Neotone portable and battery-powered?', a: 'Yes. About 8 hours of continuous playing. It ships with a charger, usable whether the instrument is playing or not.' },
     ],
-    // 10/10/2026 — same 4 steps as the purchase form panel (booking.purchase.how1-4).
     procedure: [
-      { title: 'You fill in the purchase form', text: 'Choose your model and wood in the calculator (−5% online, −7% at the showroom), then fill in the purchase form with your billing details.' },
-      { title: 'I check and pass it on to Neotone', text: 'I check your request and pass it on to Neotone (Soundventure, in Budapest). You are copied in.' },
-      { title: 'Neotone sends you the invoice and payment link', text: 'Neotone sends you the invoice and a card payment link, Monday to Friday, 9 am to 5 pm (Paris time, the same as Budapest), usually within the hour.' },
-      { title: 'You pay, and the instrument is yours', text: 'Online, it is delivered to you with its invoice. If your model is not in stock, I will reply personally with the real lead times.' },
+      { title: 'Contact me to receive your discount code', text: 'Send an email with your first and last name, your delivery country, your email and your phone number.' },
+      { title: 'Receive your unique discount code', text: 'You receive a personal discount code from Neotone (−5% online, −7% at the showroom).' },
+      { title: 'Place your order with Neotone', text: 'Neotone gets back to you within two days with a personalised offer.' },
+      { title: 'Pay the €1,000 excl. VAT deposit', text: 'On confirmation, you pay a deposit of €1,000 excl. VAT. This triggers the hand-crafting of your instrument.' },
+      { title: 'Patience during manufacturing', text: 'The lead time varies between 2 and 5 months depending on the queue. You receive a personalised estimate.' },
+      { title: 'Pay the balance and receive your Neotone', text: 'As soon as your instrument is ready, you’re notified by email. You pay the balance and the instrument is shipped with its invoice, worldwide.' },
     ],
     procedureShowroom: [
       { title: 'Book a session with me', text: 'Two options: come to one of my public gathering dates (one a month), or book an individual appointment just for you — 1h · €50 or 1h30 · €70.' },
       { title: 'Try both models for real', text: 'On the spot, you take your time to test the Neotone¹ and the Mutant, compare the woods, and ask me anything.' },
-      { title: 'Walk away with your instrument the same day', text: 'You get the showroom discount (−7%): you fill in the purchase form, Neotone sends you the payment link, you pay on the spot and walk away with your Neotone — no manufacturing wait. Coming at the weekend? Fill in the form before Friday: the link will be ready.' },
+      { title: 'Walk away with your instrument the same day', text: 'You get the showroom discount (−7%) and walk away with your Neotone right away — no manufacturing wait.' },
     ],
     included: [
       { title: 'Carrying bag', text: 'Special black bag with shoulder strap and backpack straps · 520 × 220 mm.' },
@@ -2915,7 +2894,7 @@ export const en: Dict = {
       savingsB2B: 'You don’t pay upfront',
       savingsB2BNote:
         'That is {discountRate} discount + {vatRate} VAT on the base price — the gap with the catalogue price incl. VAT ({catalog}). Only the {discount} discount is a real gain: the VAT is simply never advanced (reverse charge), and you would reclaim it anyway.',
-      getCode: 'Buy my Neotone',
+      getCode: 'Get my discount code',
       discountLabel: 'Ambassador discount',
       vat: 'VAT',
       finalTTC: 'Final price to pay (incl. VAT)',

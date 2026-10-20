@@ -78,15 +78,6 @@ Conséquences, à ne pas défaire par erreur :
 Valeur en vigueur : **`2026-08-19`** (l'ajout de la finalité « photos et vidéos » aux
 conditions générales, validé par David).
 
-## Réponse : `id` de la ligne (10/10/2026)
-
-La réponse est `{ ok, id, emailSent, booking, showcase }`. `id` = uuid de la ligne
-`site_leads` créée ou mise à jour (`null` si absent). `api/subscribe.js` le relaie à
-l'EF `sale-intake` (champ `site_lead_id`) pour relier une vente Neotone à la demande
-d'origine. Changement **additif** : aucun appelant existant n'est cassé.
-⚠️ Pas encore redéployée à cette date (attente feu vert) : tant qu'elle ne l'est pas,
-`site_lead_id` n'est simplement pas transmis.
-
 ## Déployer
 
 Pas de CLI configurée ici : le déploiement passe par l'outil Supabase MCP

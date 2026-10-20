@@ -15,20 +15,29 @@
 // Le bouton « envoyer à Neotone » vit dans l'application (back-office) : le
 // site, lui, ne fait qu'une chose — DÉPOSER la vente proprement structurée.
 //
-// ⚠️⚠️ INTERRUPTEUR : `SALE_INTAKE_ENABLED` (défini dans `saleIntakeCore.js`,
-// réexporté ici) est à FALSE. À false, le formulaire se comporte EXACTEMENT
-// comme avant (POST /api/subscribe → site-lead → email à David) et le serveur
-// n'émet AUCUNE requête vers `sale-intake`.
-//
-// 🔒 10/10/2026 — l'appel à `sale-intake` est désormais fait CÔTÉ SERVEUR par
-// `api/subscribe.js` (en-tête `x-site-token` = `SITE_LEAD_TOKEN`, variable
-// d'environnement Vercel). Le navigateur n'a plus ni l'URL ni la clé du
-// guichet : il envoie un objet `sale` à /api/subscribe, rien de plus.
+// ⚠️⚠️ INTERRUPTEUR : `SALE_INTAKE_ENABLED` est à FALSE tant que l'Edge
+// Function n'est pas déployée. À false, le formulaire se comporte EXACTEMENT
+// comme avant (POST /api/subscribe → site-lead → email à David) et n'émet
+// AUCUNE requête réseau vers `sale-intake`. Le jour où la session app annonce
+// « déployée », passer cette seule constante à `true` et redéployer.
 // ============================================================
-import { SALE_INTAKE_ENABLED, TERMS_VERSION, SALE_PARTNER, DEFAULT_DISCOUNT_PCT } from './saleIntakeCore.js'
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from '@/lib/prices'
 
-/** 🔴 LE SEUL INTERRUPTEUR (source : `saleIntakeCore.js`). */
-export { SALE_INTAKE_ENABLED, TERMS_VERSION, SALE_PARTNER, DEFAULT_DISCOUNT_PCT }
+/** 🔴 LE SEUL INTERRUPTEUR. Voir l'avertissement ci-dessus. */
+export const SALE_INTAKE_ENABLED = false
+
+export const SALE_INTAKE_URL = `${SUPABASE_URL}/functions/v1/sale-intake`
+export { SUPABASE_ANON_KEY }
+
+// CONDITIONS GÉNÉRALES — ⚠️ DOIT rester STRICTEMENT ÉGALE à `TERMS_VERSION`
+// dans `supabase/functions/site-lead/index.ts` et
+// `supabase/functions/muling-order/index.ts`, et à `terms.version` dans
+// `src/i18n/dict.ts`. Un consentement horodaté sur une version qui n'existe
+// pas ailleurs n'est pas opposable.
+export const TERMS_VERSION = '2026-08-19'
+
+/** Le seul partenaire branché sur ce guichet pour l'instant. */
+export const SALE_PARTNER = 'neotone'
 
 /**
  * Corps de requête accepté par `sale-intake`.
@@ -67,17 +76,9 @@ export interface SaleIntakePayload {
   quantity?: number
   model?: string
   wood?: string
-  /** Prix catalogue HT du calculateur (NOMBRE). */
   price_original_eur?: number
-  /** Recalculé côté serveur : original × (1 − 7 % showroom / 5 % en ligne). */
   price_discounted_eur?: number
-  /**
-   * Mode choisi par le client. ⚠️ Pas (encore) lu par l'EF v1, qui force
-   * `purchase_channel = 'online'` (champ interdit au site) : à brancher côté APP.
-   */
-  purchase_mode?: 'showroom' | 'online'
   news_opt_in?: boolean
-  /** ⚠️ Pas lu par l'EF v1 (absent de sa liste `CONNUS`) : ignoré. */
   shipping_name?: string
   shipping_address?: string
   shipping_postal_code?: string
@@ -96,11 +97,16 @@ export type SaleIntakeResult =
 
 /**
  * Ce que le composant lit au runtime, sérialisé dans un attribut `data-*`.
- * Plus d'URL ni de clé : le dépôt passe par /api/subscribe (côté serveur).
+ * Un `<script>` Astro traité ne peut pas interpoler une expression du
+ * frontmatter : c'est le même mécanisme que `data-price-grid` /
+ * `data-upcoming` dans `BookingForm.astro`.
  */
 export function saleIntakeClientConfig() {
   return JSON.stringify({
     enabled: SALE_INTAKE_ENABLED,
+    url: SALE_INTAKE_URL,
+    key: SUPABASE_ANON_KEY,
+    partner: SALE_PARTNER,
     termsVersion: TERMS_VERSION,
   })
 }
