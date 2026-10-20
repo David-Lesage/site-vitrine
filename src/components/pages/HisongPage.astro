@@ -1,0 +1,315 @@
+---
+// Page dédiée au micro Hisong AirStudio S1 (/micro-hisong, /en/…, /es/…) —
+// créée le 20/10/2026 sur le modèle de MulingPage.astro.
+// Différence majeure avec Muling : PAS de formulaire de commande. L'achat se
+// fait sur hisong.io, via le lien d'affiliation qui porte le code.
+// Textes ET données propres à la page : src/i18n/hisong.ts.
+import { getCollection } from 'astro:content'
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import Carousel from '@/components/Carousel.astro'
+import Lightbox from '@/components/Lightbox.astro'
+import YouTube from '@/components/YouTube.astro'
+import { Icon } from 'astro-icon/components'
+import { getDict } from '@/i18n/dict'
+import { localizePath, numberLocale } from '@/i18n/utils'
+import { breadcrumbLdJson, videoLdJson } from '@/lib/ldJson'
+import { site } from '@/data/site'
+import {
+  hisongText, hisongAffiliateUrl, hisongDiscountCode, hisongDiscountPct, hisongPrices,
+  hisongPhotos, hisongVideos, hisongContexts, hisongRelatedPosts,
+} from '@/i18n/hisong'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const t = getDict(lang)
+const h = hisongText[lang]
+const L = (p: string) => localizePath(p, lang)
+const pct = String(hisongDiscountPct)
+const eur = (n: number) =>
+  new Intl.NumberFormat(numberLocale(lang), { style: 'currency', currency: 'EUR' }).format(n)
+
+// ── Articles de blog : lien UNIQUEMENT si l'article est réellement publié ──
+// Le blog n'existe qu'en FR (/blog/…) et EN (/en/blog/…). En espagnol, on
+// renvoie vers la version anglaise si elle existe, sinon la française, avec
+// une mention de langue — jamais vers une URL /es/blog/… qui serait un 404.
+const posts = await getCollection('blog', (e) => !e.data.draft)
+const blogLangs: Lang[] = lang === 'fr' ? ['fr'] : lang === 'en' ? ['en'] : ['en', 'fr']
+function findPost(slug: string) {
+  for (const bl of blogLangs) {
+    const p = posts.find((e) => e.data.lang === bl && e.data.permalink === slug)
+    if (p) {
+      return {
+        title: p.data.title,
+        href: bl === 'fr' ? `/blog/${slug}` : `/en/blog/${slug}`,
+        langNote: bl !== lang ? h.relatedPostLangNote[bl] : undefined,
+      }
+    }
+  }
+  return null
+}
+const contexts = hisongContexts.map((c) => ({ ...c, copy: h.contexts[c.key], post: findPost(c.blogSlug) }))
+const relatedPosts = hisongRelatedPosts.map(findPost).filter((p): p is NonNullable<typeof p> => p !== null)
+
+const focusRing = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper'
+
+// ── Données structurées ──
+const pageUrl = new URL(L('/micro-hisong'), site.url).toString()
+const ld = [
+  breadcrumbLdJson([
+    { name: t.common.nav.home, url: L('/') },
+    { name: t.common.nav.shop, url: L('/boutique') },
+    { name: h.heroTitle, url: L('/micro-hisong') },
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Hisong AirStudio S1',
+    description: h.description,
+    url: pageUrl,
+    image: hisongPhotos.slice(0, 3).map((src) => new URL(src, site.url).toString()),
+    brand: { '@type': 'Brand', name: 'Hisong' },
+    // Deux formules réellement vendues (prix TTC, livraison en France) — pas
+    // de `availability` : on ne connaît pas l'état du stock chez Hisong.
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'EUR',
+      lowPrice: hisongPrices.s1.toFixed(2),
+      highPrice: hisongPrices.s1RxPlus.toFixed(2),
+      offerCount: 2,
+      url: hisongAffiliateUrl,
+    },
+  },
+  ...videoLdJson(hisongVideos.map((v) => ({ id: v.id, name: v.title[lang], description: h.videoIntro }))),
+]
+---
+
+<Layout title={h.title} description={h.description} image="/images/prod-hisong-3.jpg" ldJSON={ld}>
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <div class="chroma-bar absolute inset-x-0 top-0 h-1"></div>
+    <div class="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-24">
+      <a href={L('/boutique') + '#micros'} class:list={['inline-flex min-h-11 items-center rounded text-sm font-600 text-cream/70 hover:text-gold focus-visible:text-gold', focusRing]}>{h.back}</a>
+      <div class="mt-4 grid items-center gap-10 lg:grid-cols-2">
+        <div class="min-w-0">
+          <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{h.eyebrow}</p>
+          <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">{h.heroTitle}</h1>
+          <p class="mt-5 text-lg text-cream/85">{h.heroLead}</p>
+          <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-gold/20 px-4 py-1.5 text-sm font-700 text-gold">
+            <Icon name="lucide:badge-percent" class="h-4 w-4" />
+            {h.heroBadge.replace('{pct}', pct)}
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <Button href={hisongAffiliateUrl} variant="primary" external class={focusRing}>{h.ctaBuy}<Icon name="lucide:external-link" class="h-4 w-4" /></Button>
+            <Button href="#videos" variant="light" class={focusRing}>{h.ctaVideos}</Button>
+          </div>
+        </div>
+        <div class="min-w-0 rounded-card shadow-md">
+          <Carousel id="hisong-photos" slides={hisongPhotos.map((src) => ({ src }))} alt={h.carouselAlt} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 🎬 Vidéos : la liste vit dans `hisongVideos` (src/i18n/hisong.ts) —
+      ajouter une ligne là-bas suffit pour ajouter une vidéo ici. */}
+  <Section tone="cream-deep" id="videos">
+    <SectionHeading eyebrow={h.videoEyebrow} title={h.videoTitle} intro={h.videoIntro} />
+    <div class:list={['mx-auto mt-10 grid gap-8', hisongVideos.length > 1 ? 'max-w-5xl md:grid-cols-2' : 'max-w-3xl']}>
+      {hisongVideos.map((v) => (
+        <figure>
+          <YouTube id={v.id} title={v.title[lang]} />
+          <figcaption class="mt-3 font-display text-lg font-700">{v.title[lang]}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </Section>
+
+  <Section id="contenu">
+    <SectionHeading title={h.boxTitle} intro={h.boxIntro} />
+    <div class="mx-auto mt-10 max-w-3xl">
+      <ul class="grid gap-3 sm:grid-cols-2">
+        {h.boxItems.map((it) => (
+          <li class="flex gap-3 rounded-card border border-ink/10 bg-cream-deep/40 p-4 text-ink-soft/90"><Icon name="lucide:check" class="mt-0.5 h-5 w-5 shrink-0 text-copper" />{it}</li>
+        ))}
+      </ul>
+      <p class="mt-6 rounded-lg border border-copper/25 bg-copper/5 p-4 text-sm text-ink-soft/90">{h.boxNote}</p>
+    </div>
+  </Section>
+
+  {/* 🗺️ Contextes : une carte = un futur article. Lien affiché UNIQUEMENT si
+      l'article est publié avec le `blogSlug` prévu (voir hisongContexts). */}
+  <Section tone="cream-deep" id="contextes">
+    <SectionHeading eyebrow={h.contextsEyebrow} title={h.contextsTitle} intro={h.contextsIntro} />
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {contexts.map((c) => (
+        <div class="flex flex-col rounded-card border border-ink/10 bg-cream p-6">
+          <Icon name={c.icon} class="h-8 w-8 text-copper" />
+          <h3 class="mt-3 font-display text-lg font-700">{c.copy.t}</h3>
+          <p class="mt-2 flex-1 text-sm text-ink-soft/85">{c.copy.d}</p>
+          {c.post ? (
+            <a href={c.post.href} class:list={['mt-4 inline-flex min-h-11 items-center gap-1.5 self-start rounded text-sm font-700 text-rust underline-offset-4 hover:underline focus-visible:underline', focusRing]}>
+              {h.contextRead}<Icon name="lucide:arrow-right" class="h-4 w-4" />
+              {c.post.langNote && <span class="font-400 text-ink-soft/70">{c.post.langNote}</span>}
+            </a>
+          ) : (
+            <span class="mt-4 inline-flex items-center gap-1.5 self-start rounded-full bg-ink/5 px-3 py-1 text-xs font-600 text-ink-soft/70">
+              <Icon name="lucide:clock" class="h-3.5 w-3.5" />{h.contextSoon}
+            </span>
+          )}
+        </div>
+      ))}
+    </div>
+
+    {relatedPosts.length > 0 && (
+      <div class="mx-auto mt-10 max-w-3xl rounded-card border border-copper/25 bg-copper/5 p-5">
+        <p class="flex items-center gap-2 text-sm font-700"><Icon name="lucide:book-open" class="h-4 w-4 text-copper" />{h.relatedPostsTitle}</p>
+        <ul class="mt-2">
+          {relatedPosts.map((p) => (
+            <li>
+              <a href={p.href} class:list={['inline-flex min-h-11 items-center rounded text-sm font-600 text-rust underline underline-offset-4 hover:text-copper focus-visible:text-copper', focusRing]}>
+                {p.title}{p.langNote && <span class="ml-1.5 font-400 text-ink-soft/70 no-underline">{p.langNote}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </Section>
+
+  {/* ⚖️ Comparatif repris TEL QUEL de l'écran « Matériel recommandé » de l'app
+      (partenaires/index.ts, clés ptn.page.* de translations.ts). Si l'app
+      change, mettre à jour `compareRows` dans src/i18n/hisong.ts. */}
+  <Section id="comparatif">
+    <SectionHeading title={h.compareTitle} intro={h.compareIntro} />
+    <div class="mx-auto mt-10 max-w-5xl">
+      {/* Mobile : une carte par micro (pas de tableau qui déborde) */}
+      <div class="grid gap-4 md:hidden">
+        {(['integre', 'muling', 'hisong'] as const).map((col) => (
+          <div class:list={['rounded-card border p-5', col === 'hisong' ? 'border-copper/40 bg-copper/5' : 'border-ink/10 bg-cream-deep/40']}>
+            <h3 class="font-display text-lg font-700">{h.compareCols[col]}</h3>
+            <dl class="mt-3 space-y-2 text-sm">
+              {h.compareRows.map((r) => (
+                <div><dt class="font-700 text-ink-soft/70">{r.h}</dt><dd class="text-ink-soft/90">{r[col]}</dd></div>
+              ))}
+            </dl>
+          </div>
+        ))}
+      </div>
+      {/* Écran large : le tableau, comme dans l'app */}
+      <div class="hidden overflow-hidden rounded-card border border-ink/10 md:block">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-cream-deep">
+            <tr>
+              <th class="p-4"><span class="sr-only">—</span></th>
+              <th scope="col" class="p-4 font-display text-base font-700">{h.compareCols.integre}</th>
+              <th scope="col" class="p-4 font-display text-base font-700">{h.compareCols.muling}</th>
+              <th scope="col" class="bg-copper/10 p-4 font-display text-base font-700">{h.compareCols.hisong}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {h.compareRows.map((r) => (
+              <tr class="border-t border-ink/10">
+                <th scope="row" class="p-4 font-700 text-ink-soft">{r.h}</th>
+                <td class="p-4 text-ink-soft/90">{r.integre}</td>
+                <td class="p-4 text-ink-soft/90">{r.muling}</td>
+                <td class="bg-copper/5 p-4 text-ink-soft/90">{r.hisong}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-ink-soft/75">{h.compareNote}</p>
+      <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+        <p class="text-xs text-ink-soft/60">{h.compareSource}</p>
+        <a href={L('/micro-muling')} class:list={['inline-flex min-h-11 items-center gap-1.5 rounded text-sm font-700 text-rust underline-offset-4 hover:underline focus-visible:underline', focusRing]}>
+          {h.compareMulingLink}<Icon name="lucide:arrow-right" class="h-4 w-4" />
+        </a>
+      </div>
+    </div>
+  </Section>
+
+  <Section tone="cream-deep" id="achat">
+    <SectionHeading title={h.priceTitle} />
+    <div class="mx-auto mt-10 max-w-3xl space-y-6">
+      <div class="rounded-card border border-copper/30 bg-copper/5 p-6">
+        <div class="flex flex-wrap items-baseline justify-between gap-3">
+          <span class="font-600 text-ink-soft">{h.priceS1Label}</span>
+          <span class="font-display text-2xl font-700 text-ink">{eur(hisongPrices.s1)}</span>
+        </div>
+        <div class="mt-3 flex flex-wrap items-baseline justify-between gap-3 border-t border-copper/20 pt-3">
+          <span class="font-600 text-ink-soft">{h.priceRxLabel}</span>
+          <span class="font-display text-2xl font-700 text-ink">{eur(hisongPrices.s1RxPlus)}</span>
+        </div>
+        <div class="mt-3 flex flex-wrap items-baseline justify-between gap-3 border-t border-copper/20 pt-3">
+          <span class="inline-flex items-center gap-2 font-700 text-rust">
+            <Icon name="lucide:badge-percent" class="h-5 w-5 shrink-0" />
+            {h.priceCodeLabel.replace('{pct}', pct)}
+          </span>
+          <span class="text-right">
+            <span class="font-display text-3xl font-700 text-ink">{eur(hisongPrices.s1RxPlusWithCode)}</span>
+            <span class="block text-xs font-600 text-rust">{h.priceCodeExtra}</span>
+          </span>
+        </div>
+      </div>
+      <p class="text-sm text-ink-soft/75">{h.priceNote}</p>
+
+      {/* Bloc « code de réduction » — même logique que la fiche boutique. */}
+      <div class="rounded-card border border-ink/10 bg-cream p-6">
+        <h3 class="font-display text-xl font-700">{h.codeTitle}</h3>
+        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-copper/30 bg-copper/5 px-4 py-3">
+          <strong class="break-all font-display text-lg font-700 tracking-wide text-ink">{hisongDiscountCode}</strong>
+          <button
+            type="button"
+            class:list={['shop-copy-code inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-full bg-copper/15 px-4 text-sm font-700 text-copper transition-colors hover:bg-copper hover:text-cream focus-visible:bg-copper focus-visible:text-cream', focusRing]}
+            data-code={hisongDiscountCode}
+            data-copy-label={h.copyCode}
+            data-copied-label={h.codeCopied}
+          >
+            {h.copyCode}
+          </button>
+        </div>
+        <p class="mt-3 text-sm text-ink-soft/85">{h.codeText}</p>
+        <div class="mt-6 rounded-lg border border-rust/20 bg-rust/5 p-4">
+          <p class="text-sm font-700 text-rust">{h.adviceTitle}</p>
+          <p class="mt-1 text-sm text-ink-soft/90">{h.adviceText}</p>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <Button href={hisongAffiliateUrl} variant="primary" external class={focusRing}>{h.ctaBuy}<Icon name="lucide:external-link" class="h-4 w-4" /></Button>
+          <Button href={L('/showroom')} variant="ghost" class={focusRing}>{h.ctaShowroom}</Button>
+        </div>
+        <p class="mt-4 text-xs text-ink-soft/70">{h.buyNote}</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section tone="ink">
+    <div class="mx-auto max-w-3xl rounded-card border border-cream/10 bg-cream/5 p-8 text-center md:p-10">
+      <h2 class="font-display text-2xl font-700 text-cream md:text-3xl">{h.relatedTitle}</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-cream/75">{h.relatedText}</p>
+      <div class="mt-7"><Button href={L('/le-neotone')} variant="light" class={focusRing}>{h.relatedCta}</Button></div>
+    </div>
+  </Section>
+
+  <Lightbox />
+</Layout>
+
+<script>
+  // Bouton « copier le code » — même comportement que la boutique (ShopPage.astro).
+  document.querySelectorAll('.shop-copy-code').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const code = btn.getAttribute('data-code') || ''
+      const copyLabel = btn.getAttribute('data-copy-label') || ''
+      const copiedLabel = btn.getAttribute('data-copied-label') || ''
+      try {
+        await navigator.clipboard.writeText(code)
+        btn.textContent = copiedLabel
+        window.setTimeout(() => { btn.textContent = copyLabel }, 1800)
+      } catch {
+        // Presse-papier indisponible : le code reste lisible à côté du bouton.
+      }
+    })
+  })
+</script>
