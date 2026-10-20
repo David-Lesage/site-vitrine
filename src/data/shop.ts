@@ -30,9 +30,15 @@ export interface Product {
   // libellé du bouton pour les produits 'link'
   linkLabel?: 'buy' | 'listen' | 'discover' | 'order' | 'interested'
   // pastille (plateforme / statut) pour les produits 'link' → dict.shop.linkTags
-  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec' | 'oko' | 'structured' | 'atlas' | 'atlasCode'
+  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec' | 'oko' | 'structured' | 'atlas' | 'atlasCode' | 'coeurdeson' | 'forbrain'
   // prix indicatif affiché tel quel (produits externes), ex. "299 €"
   priceLabel?: string
+  // version traduite de `priceLabel` (ex. « dès 260 € » → « from €260 »). Sans
+  // elle, l'anglais et l'espagnol affichent le libellé français tel quel.
+  priceLabelI18n?: { en?: string; es?: string }
+  // crédit photo affiché en petit sur l'image (« Photo : Cœur de Son ») quand
+  // la photo vient du fabricant et pas de David.
+  photoCredit?: string
   // code de réduction affiché avec un bouton « copier » (produits externes, lien d'affiliation)
   discountCode?: string
   // encart d'explication du prix (TVA, remises cumulables, port) → dict.shop.priceNotes
@@ -64,6 +70,19 @@ export const products: Product[] = [
   // PAS les instruments personnels de David.
   { id: 'yishama', price: 0, image: '/images/prod-yishama-5.jpg', imgW: 667, imgH: 1000, url: 'https://www.yishama.com/?wpam_id=40', category: 'handpans', sub: 'acoustique', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'yishama', videoUrls: ['https://www.youtube.com/watch?v=Zp_zaqsRBCg'], images: ['/images/prod-yishama-5.jpg', '/images/prod-yishama.png', '/images/prod-yishama-2.jpg', '/images/prod-yishama-3.jpg', '/images/prod-yishama-4.jpg'] },
   { id: 'gonilele', price: 0, image: '/images/prod-gonilele-4.jpg', imgW: 1000, imgH: 1100, url: '/gonilele', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'maisongoni', priceLabel: 'dès 440 €', images: ['/images/prod-gonilele-4.jpg', '/images/prod-gonilele-2.jpg', '/images/prod-gonilele-5.jpg', '/images/prod-gonilele.jpeg', '/images/prod-gonilele-3.jpg'] },
+  // 🥁 Cœur de Son (Florel Viardot, Thaon-les-Vosges) — AUTRE artisan que L'Âme
+  // du Tambour : toile imperméable + accordage à l'air, contre la peau chez
+  // Julien. Les deux fiches cohabitent, sans comparaison qui dénigre l'une.
+  // Prix publics relevés sur coeurdeson.com le 20/10/2026 (variantes Wix de la
+  // page « tambour en toile à main ») : 40 cm 260 €, 45 cm 280 €, 50 cm 320 €,
+  // 55 cm 330 €, 65 cm 380 € (+90 € avec l'anneau de cuivre) ; sur pied 65 cm 520 €.
+  // 🎟️ Code DAVID-COEUR-DE-SON (−10 %) : forme donnée par David. Florel avait
+  // écrit « David Coeur de son » dans son mail du 01/10 → forme exacte à confirmer.
+  // 📸 Photo du site de Florel (accord écrit à obtenir), créditée sur la carte.
+  //    Dès qu'il existe une photo du « Géode de feu » de David, la mettre en premier.
+  // 🚫 Rien sur la commission, et les bienfaits annoncés par la marque
+  //    (chakras, ancrage) ne sont pas repris comme des promesses.
+  { id: 'coeur-de-son', price: 0, image: '/images/prod-coeur-de-son-1.webp', imgW: 900, imgH: 1200, url: 'https://www.coeurdeson.com/product-page/tambour-en-toile-%C3%A0-main', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'coeurdeson', priceLabel: 'dès 260 €', priceLabelI18n: { en: 'from €260', es: 'desde 260 €' }, discountCode: 'DAVID-COEUR-DE-SON', photoCredit: 'Cœur de Son' },
   { id: 'tambour', price: 0, image: '/images/prod-tambour.jpg', imgW: 480, imgH: 360, url: 'https://www.facebook.com/profile.php?id=100075977844059', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'tambour' },
   // ── Mes créations Now Groove (David Lesage) : méthode + calebasse signature + housse ──
   { id: 'now-groove', price: 0, image: '/images/prod-nowgroove.webp', imgW: 1000, imgH: 1442, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/formation-de-rythme-now-groove-david-lesage', category: 'creations', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'helloasso' },
@@ -122,6 +141,14 @@ export const products: Product[] = [
   { id: 'onesec', price: 0, image: '/images/prod-onesec-1.webp', imgW: 1464, imgH: 1731, url: 'https://web.one-sec.app/store?deal=david30', category: 'outils', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'onesec', priceLabel: 'Gratuit · −30 % sur Premium avec mon lien', images: ['/images/prod-onesec-1.webp', '/images/prod-onesec-2.webp', '/images/prod-onesec-3.webp'] },
   // Gourde filtrante ÖKO — recommandation perso (lien d'affiliation), musicien en déplacement
   { id: 'oko', price: 0, image: '/images/prod-oko-1.png', imgW: 768, imgH: 768, url: 'https://okoeurope.com/products/gourde-filtrante?ref=DAVIDOKO', category: 'outils', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'oko', priceLabel: 'dès 63 €', discountCode: 'DAVIDOKO', videoUrls: ['https://www.youtube.com/watch?v=yHKnJPz9TkQ'], images: ['/images/prod-oko-1.png', '/images/prod-oko-2.webp', '/images/prod-oko-3.webp', '/images/prod-oko-4.webp', '/images/prod-oko-5.webp', '/images/prod-oko-6.webp'] },
+  // 🎧 Casque Forbrain (Sound For Life) — outil d'entraînement de la VOIX, pas un
+  // micro de scène : d'où la catégorie « outils » et pas « micros ».
+  // Prix relevé sur shop.soundforlife.com/fr le 20/10/2026 : 299 € (prix initial),
+  // 269 € avec l'offre en cours (−10 %). Si l'offre se termine, repasser à « 299 € ».
+  // 🎟️ Lien d'affiliation fourni par David ; le code 3A9907007 (−10 %) s'applique
+  // seul via le lien, sinon il se saisit dans le panier. Rien sur la commission.
+  // 🚫 Aucune promesse médicale ni thérapeutique (la marque en fait, pas nous).
+  { id: 'forbrain', price: 0, image: '/images/prod-forbrain-1.webp', imgW: 1000, imgH: 1000, url: 'https://shop.soundforlife.com/?affiliate=3A9907007', category: 'outils', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'forbrain', priceLabel: '269 € au lieu de 299 € (offre du moment)', priceLabelI18n: { en: '€269 instead of €299 (current offer)', es: '269 € en lugar de 299 € (oferta actual)' }, discountCode: '3A9907007' },
   // Structured — recommandation perso, pas encore de programme d'affiliation (David, 09/08/2026)
   { id: 'structured', price: 0, image: '/images/prod-structured-1.png', imgW: 1200, imgH: 630, url: 'https://structured.app/', category: 'outils', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'structured' },
 ]

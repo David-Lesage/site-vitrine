@@ -369,7 +369,8 @@ async function renderLang(lang: LlmsLang, mode: Mode, h: '##' | '###'): Promise<
     for (const g of shop) {
       for (const it of g.items) {
         out.push(`${sub} ${plain(it.name)}`, `${l.category} : ${g.label}`, `${l.url} : ${it.url}`)
-        if (it.p.priceLabel) out.push(`${l.price} : ${it.p.priceLabel}`)
+        const priceText = (lang === 'en' ? it.p.priceLabelI18n?.en : undefined) ?? it.p.priceLabel
+        if (priceText) out.push(`${l.price} : ${priceText}`)
         if (it.p.discountCode) out.push(`${l.code} : ${it.p.discountCode}`)
         for (const v of it.p.videoUrls ?? []) out.push(`${l.video} : ${v}`)
         out.push('', plain(it.description, true), '')

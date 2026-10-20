@@ -553,7 +553,9 @@ export const es: Dict = {
       "oko": "-10% con mi código",
       "structured": "Realmente uso",
       "atlas": "Socio Atlas",
-      "atlasCode": "−10 % con mi código"
+      "atlasCode": "−10 % con mi código",
+      "coeurdeson": "−10 % con mi código",
+      "forbrain": "−10 % con mi código"
     },
     "linkCtas": {
       "buy": "Ver la oferta →",
@@ -564,6 +566,7 @@ export const es: Dict = {
     },
     "copyCode": "Copia el código",
     "codeCopied": "¡Copiado!",
+    "photoBy": "Foto:",
     "priceNotes": {
       "hisong": "<strong>Los precios, en sencillo</strong> (envío a Francia, IVA incluido: no se añade nada al pagar):<br>— micrófono <strong>AirStudio S1</strong> (Standard Pack): <strong>270,95 €</strong><br>— con el <strong>RX Plus</strong> (Universal Pack, +90 €): <strong>360,95 €</strong><br><br><strong>Con mi código DAVID-LESAGE-SAVE-5 (−5%)</strong>, el S1 + RX Plus sale a <strong>342,91 €</strong>, <strong>envío gratuito</strong>.<br><br><strong>Mi código:</strong> si usas mi enlace, debería aplicarse solo. Si no lo ves al finalizar la compra, introdúcelo manualmente; el botón que aparece justo debajo lo copia."
     },
@@ -653,6 +656,10 @@ export const es: Dict = {
         "name": "Ahora, la versión de calabaza de Groove es de David Lesage",
         "description": "Funda para mochila de escala de alto rendimiento diseñada por David Lesage: función de esterilla integrada, correas desmontables, bolsillo de almacenamiento (para huevos, accesorios y material de escalada), interior de terciopelo. ✋ Edición especial hecha a mano, en una serie ultralimitada."
       },
+      "coeur-de-son": {
+        "name": "Tambor de lona · Cœur de Son",
+        "description": "El tambor de Florel Viardot, del taller Cœur de Son en Thaon-les-Vosges (Francia): una <strong>lona impermeable</strong>, sin materia animal, tensada sobre un aro de madera y <strong>afinada con aire</strong>. Una cámara de aire, inflada con una bomba, regula la tensión, desde graves profundos hasta medios graves; la humedad no la destensa, así que se puede tocar al aire libre. Cada tambor es una pieza única con su propio nombre, y el motivo puede pintarlo a mano Sandrine, bajo presupuesto. Unas 3 semanas de fabricación. Cinco tamaños, de 40 cm (260 €) a 65 cm (380 €); también existe con soporte (65 cm, 520 €).<br><br>Yo mismo toco uno, «Géode de feu», y puedes probarlo en el showroom (solo demostración: el pedido se hace con Florel). Si prefieres el cuero, el tambor de piel de L’Âme du Tambour está justo al lado: dos materiales, dos sonidos. <strong>−10 % con mi código</strong>, al pagar."
+      },
       "tambour": {
         "name": "Tambor chamánico · El alma del tambor",
         "description": "Tambor de marco artesanal de Julien (L’Âme du Tambour), un artesano ético, apasionado y honesto. Disfruta de un 5% de descuento con el código David-Tambour."
@@ -700,6 +707,10 @@ export const es: Dict = {
       "oko": {
         "name": "Botella de agua con filtro ÖKO",
         "description": "La botella de agua que llevo conmigo a todas partes, siempre, como músico que viaja constantemente: el agua es fundamental. Filtración instantánea sin esperas ni electricidad, probada en un laboratorio independiente acreditado por COFRAC contra más de 200 contaminantes. Me complace representar el producto perfecto para todos los viajeros. Disfruta de un 10% de descuento con mi código."
+      },
+      "forbrain": {
+        "name": "Casco Forbrain · entrenar la voz",
+        "description": "Un casco de <strong>conducción ósea</strong> con micrófono: hablas o cantas, y tu voz te vuelve al instante a través de los huesos, delante de las orejas, pasada por un <strong>filtro dinámico</strong> que refuerza los agudos y suaviza los graves. Te oyes de otra manera, con más nitidez. Lo he probado: la experiencia es asombrosa. No es un micrófono de escenario, es una herramienta de entrenamiento, unos minutos al día leyendo en voz alta o cantando, para trabajar la voz, la dicción, la afinación y la atención. Autónomo, sin pantalla ni aplicación. No espero de él nada médico: lo recomiendo para el trabajo de la voz. Con mi enlace, el <strong>−10 %</strong> se aplica solo; si no, introduce mi código en la cesta."
       },
       "structured": {
         "name": "Estructurado: planificación diaria",

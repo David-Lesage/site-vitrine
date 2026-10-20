@@ -27,6 +27,7 @@ const ytId = (u: string) => (u.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{6,})/) ||
 const info = productCopy[p.id]
 const isExternal = !(p.url.startsWith('/') || p.url.startsWith('mailto:'))
 const href = p.url.startsWith('/') ? L(p.url) : p.url
+const priceText = (lang === 'en' || lang === 'es' ? p.priceLabelI18n?.[lang] : undefined) ?? p.priceLabel
 ---
 
 <div id={p.id} class="flex scroll-mt-28 flex-col overflow-hidden rounded-card border border-ink/10 bg-cream-deep/40">
@@ -35,6 +36,10 @@ const href = p.url.startsWith('/') ? L(p.url) : p.url
       <div class="p-3"><Carousel id={`shop-${p.id}`} slides={p.images.map((src) => ({ src }))} alt={info.name} /></div>
     ) : (
       <div class="aspect-square bg-ink/5 p-6"><img src={p.image} width={p.imgW} height={p.imgH} alt={info.name} class="h-full w-full object-contain" loading="lazy" /></div>
+    )}
+    {/* Crédit photo quand l'image vient du fabricant (ex. Cœur de Son). */}
+    {p.photoCredit && (
+      <span class="absolute bottom-2 left-3 rounded-full bg-cream/90 px-2.5 py-0.5 text-[11px] font-600 text-ink-soft">{s.photoBy} {p.photoCredit}</span>
     )}
     {/* Bouton + réduction remontés SUR l'image (David, 08/08/2026) : sur les
         cartes à long carrousel + description, le CTA du bas passait inaperçu. */}
@@ -88,7 +93,7 @@ const href = p.url.startsWith('/') ? L(p.url) : p.url
     <div class="mt-4 flex flex-wrap items-center justify-between gap-2">
       {p.mode === 'soon' && <span class="text-sm font-600 text-ink-soft/60">{s.soon}</span>}
       {(p.mode === 'cart' || p.mode === 'quote') && <span class="font-display text-lg font-700">{p.mode === 'quote' ? s.from : ''}{eur(p.price)}</span>}
-      {p.mode === 'link' && p.priceLabel && <span class="font-display text-lg font-700">{p.priceLabel}</span>}
+      {p.mode === 'link' && priceText && <span class="font-display text-lg font-700">{priceText}</span>}
       {p.mode === 'link' && p.tagKey && <span class="inline-flex items-center gap-1.5 rounded-full bg-copper/15 px-3 py-1 text-xs font-700 text-copper">{linkTags[p.tagKey]}</span>}
     </div>
     {p.priceNoteKey && (
