@@ -279,7 +279,7 @@ export const en: Dict = {
     whyCap19: "Neotone¹ Mutant — 19 notes",
     whySchema: "Simplified diagram, seen from above: each dot is a note.",
     whyAlt10: "Diagram of a handpan seen from above with 10 notes: the ding in the centre and 9 notes around it.",
-    whyAlt19: "Diagram of a handpan seen from above with 19 notes: the ding in the centre, 10 notes around it and 8 notes on the rim.",
+    whyAlt19: "Diagram of a handpan seen from above with 19 notes: the ding in the centre, 9 large notes in a ring and 9 small notes just inside it.",
     procEyebrow: 'Purchase procedure',
     procTitle: 'From your first question to delivery',
     procIntro: 'A simple, transparent journey, with support from start to finish. Two ways to walk away with your Neotone:',

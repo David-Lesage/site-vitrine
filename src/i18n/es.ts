@@ -305,7 +305,7 @@ export const es: Dict = {
     "whyCap19": "Neotone¹ Mutant — 19 notas",
     "whySchema": "Esquema simplificado, visto desde arriba: cada punto es una nota.",
     "whyAlt10": "Esquema de un handpan visto desde arriba con 10 notas: el ding en el centro y 9 notas alrededor.",
-    "whyAlt19": "Esquema de un handpan visto desde arriba con 19 notas: el ding en el centro, 10 notas alrededor y 8 notas en el borde.",
+    "whyAlt19": "Esquema de un handpan visto desde arriba con 19 notas: el ding en el centro, 9 notas grandes en corona y 9 notas pequeñas justo por dentro.",
     "procEyebrow": "Procedimiento de compra",
     "procTitle": "Desde su primera pregunta hasta la recepción",
     "procIntro": "Un proceso sencillo y transparente, con asistencia de principio a fin. Dos maneras de llevarte tu Neotone:",

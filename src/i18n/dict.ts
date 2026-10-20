@@ -316,7 +316,7 @@ const fr = {
     whyCap19: "Neotone¹ Mutant — 19 notes",
     whySchema: "Schéma simplifié, vu de dessus : chaque pastille est une note.",
     whyAlt10: "Schéma d’un handpan vu de dessus avec 10 notes : le ding au centre et 9 notes autour.",
-    whyAlt19: "Schéma d’un handpan vu de dessus avec 19 notes : le ding au centre, 10 notes autour et 8 notes sur le bord.",
+    whyAlt19: "Schéma d’un handpan vu de dessus avec 19 notes : le ding au centre, 9 grandes notes en couronne et 9 petites notes juste à l’intérieur.",
     procEyebrow: 'Procédure d’achat',
     procTitle: 'De ta première question à la réception',
     procIntro: 'Un parcours simple et transparent, accompagné de bout en bout. Deux façons de repartir avec ton Neotone :',
