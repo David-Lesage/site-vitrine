@@ -12,7 +12,7 @@ draft: false
 
 **This article is about the electronic handpan.** Headphone playing requires a headphone output — something an acoustic handpan simply does not have.
 
-The [Neotone](/en/le-neotone), an electronic handpan, plays through **headphones** — late at night, in a flat, on the road, disturbing no one. Where an acoustic handpan rings through the whole house, the Neotone keeps the sound for you alone. And it isn't just about discretion: with headphones, you get an **immersive experience** that acoustic simply cannot offer.
+The [Neotone](/en/neotone), an electronic handpan, plays through **headphones** — late at night, in a flat, on the road, disturbing no one. Where an acoustic handpan rings through the whole house, the Neotone keeps the sound for you alone. And it isn't just about discretion: with headphones, you get an **immersive experience** that acoustic simply cannot offer.
 
 ## The acoustic volume wall
 
@@ -42,4 +42,4 @@ The Neotone isn't just a silent handpan: it carries the whole [Handpan Constella
 
 Electronic doesn't replace the magic of acoustic: it extends it to moments that were closed to it. At night, on the road, in a hotel room — the Neotone makes playing possible where acoustic must stay silent. And often, those stolen moments make the most beautiful sessions.
 
-Curious about the instrument that makes all this possible? Discover the [Neotone](/en/le-neotone), and let [David Lesage's lessons](/en/cours) guide you. Open [Handpan Constellation Studio](/en/handpan-app) and play your first loop, tonight, disturbing no one.
+Curious about the instrument that makes all this possible? Discover the [Neotone](/en/neotone), and let [David Lesage's lessons](/en/cours) guide you. Open [Handpan Constellation Studio](/en/handpan-app) and play your first loop, tonight, disturbing no one.

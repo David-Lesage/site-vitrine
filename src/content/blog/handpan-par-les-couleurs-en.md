@@ -74,7 +74,7 @@ The easiest way in is to see those colours and shapes live on a screen, aligned 
 
 ## And if you play an electronic handpan
 
-The method shines even brighter on an [electronic Neotone handpan](/en/le-neotone): the instrument and the screen speak the same visual language, you switch scales with a single gesture, and you can play with headphones at any hour. Colours stay your guiding thread, whatever scale is loaded.
+The method shines even brighter on an [electronic Neotone handpan](/en/neotone): the instrument and the screen speak the same visual language, you switch scales with a single gesture, and you can play with headphones at any hour. Colours stay your guiding thread, whatever scale is loaded.
 
 Want to be guided step by step? [David Lesage's lessons](/en/cours) teach the ChromaKeys method from scratch, at your own pace, until playing becomes second nature.
 

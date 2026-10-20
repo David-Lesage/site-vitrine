@@ -42,7 +42,7 @@ Chaque gamme porte une couleur émotionnelle : lumineuse, mélancolique, mystér
 
 ### Écouter avant de choisir
 
-D'un clic, tu entends la gamme sonner. Pas besoin de la posséder ni de l'imaginer : Handpan Constellation Studio la joue pour toi. C'est précieux quand tu hésites avant d'acheter un handpan acoustique, ou avant de charger une gamme sur ton [handpan électronique Neotone](/le-neotone). Une nuance honnête, propre à chaque instrument : l'électronique charge n'importe quelle gamme dans n'importe quelle tonalité, tandis qu'un pan acoustique garde ses notes martelées — l'app te fait alors **écouter** ta gamme transposée sans la remplacer.
+D'un clic, tu entends la gamme sonner. Pas besoin de la posséder ni de l'imaginer : Handpan Constellation Studio la joue pour toi. C'est précieux quand tu hésites avant d'acheter un handpan acoustique, ou avant de charger une gamme sur ton [handpan électronique Neotone](/neotone). Une nuance honnête, propre à chaque instrument : l'électronique charge n'importe quelle gamme dans n'importe quelle tonalité, tandis qu'un pan acoustique garde ses notes martelées — l'app te fait alors **écouter** ta gamme transposée sans la remplacer.
 
 ### Voir la gamme en couleurs
 

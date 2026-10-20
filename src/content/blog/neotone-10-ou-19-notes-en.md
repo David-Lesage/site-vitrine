@@ -78,7 +78,7 @@ A single <abbr title="A set of chosen notes that sound good together.">scale</ab
 
 ### You want a lighter and more accessible instrument
 
-Fewer notes, no screen: the 10-note model is the simplest and cheapest. Up-to-date prices are in the [calculator](/en/le-neotone#calculateur).
+Fewer notes, no screen: the 10-note model is the simplest and cheapest. Up-to-date prices are in the [calculator](/en/neotone#calculateur).
 
 ## In summary
 
@@ -95,4 +95,4 @@ To understand why an electronic handpan in general might interest you: [Why choo
 
 ## And if you're hesitating
 
-The simplest thing is to play both. Come and try them at the [showroom in Paris](/en/showroom): your hands will quickly tell you which one speaks to you. And to compare prices for your country, the [calculator](/en/le-neotone#calculateur) will do the math for you.
+The simplest thing is to play both. Come and try them at the [showroom in Paris](/en/showroom): your hands will quickly tell you which one speaks to you. And to compare prices for your country, the [calculator](/en/neotone#calculateur) will do the math for you.

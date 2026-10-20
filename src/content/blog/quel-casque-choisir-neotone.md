@@ -12,7 +12,7 @@ draft: false
 
 **Cet article concerne le handpan électronique** : il parle de matériel d'écoute branché sur une sortie casque, ce qu'un handpan acoustique n'a pas.
 
-Le [Neotone](/le-neotone) a une sortie casque dédiée — et le casque, c'est [l'expérience la plus immersive](/blog/jouer-et-chanter-au-casque-neotone) qu'il offre. Mais quel casque choisir ? Voici mon setup réel, celui que j'utilise tous les jours : un **casque ouvert à la maison et en studio**, des **intras sur scène**. Deux usages, deux outils, avec les prix et les liens.
+Le [Neotone](/neotone) a une sortie casque dédiée — et le casque, c'est [l'expérience la plus immersive](/blog/jouer-et-chanter-au-casque-neotone) qu'il offre. Mais quel casque choisir ? Voici mon setup réel, celui que j'utilise tous les jours : un **casque ouvert à la maison et en studio**, des **intras sur scène**. Deux usages, deux outils, avec les prix et les liens.
 
 ## À la maison et en studio : le Beyerdynamic DT-990 Pro
 
@@ -52,4 +52,4 @@ Pour couper le dernier câble entre moi et mon retour, j'utilise le système **X
 
 Tu débutes ? Commence simplement avec le casque que tu as déjà (adaptateur jack 6,35 mm si besoin) : le plaisir du jeu au casque est immédiat. Le jour où tu montes sur scène, les intras + le sans-fil changent la vie.
 
-Pour le reste du matériel (enceinte, câbles, MIDI), regarde [le setup nomade complet](/blog/setup-nomade-neotone-bose-s1) et [ce qu'il faut prévoir autour du Neotone](/le-neotone#extras). Et pour apprendre à jouer par les couleurs, direction [Handpan Constellation Studio](/handpan-app).
+Pour le reste du matériel (enceinte, câbles, MIDI), regarde [le setup nomade complet](/blog/setup-nomade-neotone-bose-s1) et [ce qu'il faut prévoir autour du Neotone](/neotone#extras). Et pour apprendre à jouer par les couleurs, direction [Handpan Constellation Studio](/handpan-app).

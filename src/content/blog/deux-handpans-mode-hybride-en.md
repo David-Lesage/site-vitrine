@@ -67,6 +67,6 @@ Two details are worth their weight in gold before ordering anything:
 - The **key wheel** (*roue de tonalité*) lets you listen to your scale transposed into another key. You hear the future instrument before it exists.
 - The **440 / 432 Hz tuning setting** tunes the app to *your* handpan, so what you hear on screen sounds right with what you hold in your hands.
 
-Acoustic mode, "Complete" and the key wheel are **free**; permanently registering your two-handpan setup is part of the Studio version. And if the second pan becomes a real desire, the app tells you exactly which notes to ask for; those notes work for an acoustic instrument just as well as for a [Neotone](/en/le-neotone).
+Acoustic mode, "Complete" and the key wheel are **free**; permanently registering your two-handpan setup is part of the Studio version. And if the second pan becomes a real desire, the app tells you exactly which notes to ask for; those notes work for an acoustic instrument just as well as for a [Neotone](/en/neotone).
 
 Open [Handpan Constellation Studio](/en/handpan-app), load your scale and see what you're really missing. It's often less than you think. And to explore all this together, my [handpan lessons](/en/cours) are open.

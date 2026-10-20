@@ -74,6 +74,6 @@ En Mode Logique électronique, l'app peut te proposer un **doigté suggéré** p
 
 ## De l'émotion au morceau
 
-Une fois que tu sens comment les degrés dialoguent, tout s'ouvre. Tu peux visualiser tes accords en Constellations, changer de gamme via l'[Atlas Sonore](/blog/atlas-des-gammes-de-handpan), ou porter ces couleurs sur un [handpan électronique Neotone](/le-neotone) où écran et instrument parlent la même langue.
+Une fois que tu sens comment les degrés dialoguent, tout s'ouvre. Tu peux visualiser tes accords en Constellations, changer de gamme via l'[Atlas Sonore](/blog/atlas-des-gammes-de-handpan), ou porter ces couleurs sur un [handpan électronique Neotone](/neotone) où écran et instrument parlent la même langue.
 
 Envie d'être guidé pas à pas dans cette grammaire des émotions ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-app) et compose ta première phrase — non pas avec des notes, mais avec des émotions.

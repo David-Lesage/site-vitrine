@@ -78,7 +78,7 @@ Une seule <abbr title="Un ensemble de notes choisies qui sonnent bien ensemble."
 
 ### Tu veux un instrument plus léger et plus accessible
 
-Moins de notes, pas d'écran : le 10 notes est le modèle le plus simple et le moins cher. Les prix à jour sont dans le [calculateur](/le-neotone#calculateur).
+Moins de notes, pas d'écran : le 10 notes est le modèle le plus simple et le moins cher. Les prix à jour sont dans le [calculateur](/neotone#calculateur).
 
 ## En résumé
 
@@ -95,4 +95,4 @@ Pour comprendre pourquoi un handpan électronique, tout court, peut t'intéresse
 
 ## Et si tu hésites
 
-Le plus simple est de jouer les deux. Viens les essayer au [showroom à Paris](/showroom) : tes mains te diront vite lequel te parle. Et pour comparer les prix selon ton pays, le [calculateur](/le-neotone#calculateur) fait le calcul pour toi.
+Le plus simple est de jouer les deux. Viens les essayer au [showroom à Paris](/showroom) : tes mains te diront vite lequel te parle. Et pour comparer les prix selon ton pays, le [calculateur](/neotone#calculateur) fait le calcul pour toi.

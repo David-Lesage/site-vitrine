@@ -12,7 +12,7 @@ draft: false
 
 **Cet article concerne le handpan électronique.** Un pan acoustique se passe d'enceinte : il sonne tout seul, et rien de ce qui suit ne le concerne.
 
-Le [Neotone](/le-neotone) est un instrument numérique : il n'a pas de haut-parleur intégré. Pour l'entendre, tu le branches à une enceinte ou tu joues au casque. Et là, un détail change absolument tout : **où tu places ton enceinte**. Bien positionnée, elle te met littéralement *dans* le son. Mal placée, tu joues « à côté » de ta musique. Voici comment je m'installe.
+Le [Neotone](/neotone) est un instrument numérique : il n'a pas de haut-parleur intégré. Pour l'entendre, tu le branches à une enceinte ou tu joues au casque. Et là, un détail change absolument tout : **où tu places ton enceinte**. Bien positionnée, elle te met littéralement *dans* le son. Mal placée, tu joues « à côté » de ta musique. Voici comment je m'installe.
 
 ## Pourquoi le placement change tout
 
@@ -30,7 +30,7 @@ Ce qui se passe alors :
 - **À hauteur de tête**, tu l'entends comme un retour de scène personnel, clair et présent, sans avoir à monter le volume.
 - Tu gardes tes mains et ton attention sur l'instrument, pas sur « est-ce que je m'entends bien ? ».
 
-Mon enceinte pour ça, c'est la **Bose S1 Pro+** (≈ **599 €** chez les revendeurs — [site officiel Bose](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html), et pense aussi à regarder [les annonces Leboncoin](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B) en occasion) : autonome (environ 8 h de batterie), compacte, elle se pose sur un pied et se transporte partout — parfaite en jam, en cours, sur scène. Attention au modèle : le **Pro+** a **davantage de basses** que l'ancien S1 Pro. Et tu peux même **supprimer le câble** grâce à l'[émetteur sans fil Bose en option](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) (≈ 168 €), parfois vendu en [combo enceinte + émetteur à ≈ 759 €](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html). C'est celle que je recommande dans le matériel à prévoir autour du [Neotone](/le-neotone#extras).
+Mon enceinte pour ça, c'est la **Bose S1 Pro+** (≈ **599 €** chez les revendeurs — [site officiel Bose](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html), et pense aussi à regarder [les annonces Leboncoin](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B) en occasion) : autonome (environ 8 h de batterie), compacte, elle se pose sur un pied et se transporte partout — parfaite en jam, en cours, sur scène. Attention au modèle : le **Pro+** a **davantage de basses** que l'ancien S1 Pro. Et tu peux même **supprimer le câble** grâce à l'[émetteur sans fil Bose en option](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) (≈ 168 €), parfois vendu en [combo enceinte + émetteur à ≈ 759 €](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html). C'est celle que je recommande dans le matériel à prévoir autour du [Neotone](/neotone#extras).
 
 ## Aller plus loin : le système Bose L1
 
@@ -55,4 +55,4 @@ Casque **et** enceinte ne s'opposent pas : le casque pour l'intimité et la pré
 
 ## En résumé
 
-Le meilleur son avec un Neotone ne coûte pas cher en matériel — il tient surtout à un **bon placement** : mets ton enceinte **derrière toi, à hauteur de tête**, et tu passeras de « j'entends ma musique » à « je suis dans ma musique ». Pour voir le reste du matériel utile, c'est sur la page du [Neotone](/le-neotone#extras) ; et pour apprendre à jouer par les couleurs, direction [Handpan Constellation Studio](/handpan-app).
+Le meilleur son avec un Neotone ne coûte pas cher en matériel — il tient surtout à un **bon placement** : mets ton enceinte **derrière toi, à hauteur de tête**, et tu passeras de « j'entends ma musique » à « je suis dans ma musique ». Pour voir le reste du matériel utile, c'est sur la page du [Neotone](/neotone#extras) ; et pour apprendre à jouer par les couleurs, direction [Handpan Constellation Studio](/handpan-app).

@@ -57,7 +57,7 @@ Une barre de pulsation complète l'ensemble : les temps s'allument, le premier e
 
 Cette section-là ne concerne que les handpans électroniques : il faut une sortie MIDI, qu'un pan acoustique n'a pas.
 
-Si ton [Neotone](/le-neotone) est branché en MIDI, tu peux aussi partir dans l'autre sens : tu appuies sur ⏺, un décompte se lance, et **ce que tu joues s'écrit dans la grille**. Tu corriges ensuite à la souris ce que la main a raté.
+Si ton [Neotone](/neotone) est branché en MIDI, tu peux aussi partir dans l'autre sens : tu appuies sur ⏺, un décompte se lance, et **ce que tu joues s'écrit dans la grille**. Tu corriges ensuite à la souris ce que la main a raté.
 
 Dans les deux sens, le pont MIDI reste ouvert : importe un fichier `.mid`, exporte le tien, emmène ta mélodie dans n'importe quel logiciel de musique.
 

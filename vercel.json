@@ -17,6 +17,36 @@
       "permanent": false
     },
     {
+      "source": "/le-neotone",
+      "destination": "/neotone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/le-neotone/",
+      "destination": "/neotone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/le-neotone",
+      "destination": "/en/neotone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/le-neotone/",
+      "destination": "/en/neotone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/le-neotone",
+      "destination": "/es/neotone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/le-neotone/",
+      "destination": "/es/neotone/",
+      "statusCode": 301
+    },
+    {
       "source": "/handpan-studio",
       "destination": "/handpan-app/",
       "statusCode": 301

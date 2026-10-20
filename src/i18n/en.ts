@@ -1489,7 +1489,7 @@ export const en: Dict = {
     showroomAgendaCta: 'See the next dates',
 
     // ── 📷 CAPTION OF THE SHOWROOM PHOTO (added 20/08/2026) ─────────────────
-    // 🔗 {neotone} becomes a link to /en/le-neotone (replaced by `mesh()` in
+    // 🔗 {neotone} becomes a link to /en/neotone (replaced by `mesh()` in
     //    AtlasPage.astro). "Yishama" stays PLAIN TEXT here: it is already
     //    linked further up, in `storyFestivalCaption`. One link per target.
     // 🚨 THIS CAPTION STILL DOES NOT SAY that the Atlas stands are in the

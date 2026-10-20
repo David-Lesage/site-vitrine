@@ -64,7 +64,7 @@ Tape-les tels qu'on te les donne — « Am, F, C, G », ou en Do Ré Mi si c'est
 
 Celle-ci ne vaut que pour le handpan électronique. À la sortie du Jam Rapide, une fiche « Voir la gamme » te dessine l'instrument correspondant sur une **vraie coque Neotone** : chaque accord y est disposé fondamentale · tierce · quinte · octave, exactement comme en Mode Logique, et la coque se choisit toute seule — Neotone¹ à 10 notes si ça suffit, Mutant à 19 notes sinon.
 
-Tu vois donc, avant de jouer une seule note, si le morceau tient sur ton instrument — et si tu joues sur un [Neotone](/le-neotone), tu peux charger cette disposition directement. Sur un handpan acoustique, il n'y a rien à charger : les notes y sont martelées une fois pour toutes. La fiche te sert alors seulement de point de comparaison — ce que le morceau demande, face à ce que ton pan possède.
+Tu vois donc, avant de jouer une seule note, si le morceau tient sur ton instrument — et si tu joues sur un [Neotone](/neotone), tu peux charger cette disposition directement. Sur un handpan acoustique, il n'y a rien à charger : les notes y sont martelées une fois pour toutes. La fiche te sert alors seulement de point de comparaison — ce que le morceau demande, face à ce que ton pan possède.
 
 <figure>
   <img

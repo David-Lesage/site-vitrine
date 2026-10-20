@@ -114,7 +114,7 @@ const href = p.url.startsWith('/') ? L(p.url) : p.url
       {p.mode === 'cart' && !snipcartKey && (
         <a href={`mailto:${site.email}?subject=${encodeURIComponent(info.name)}`} class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{s.orderEmail}</a>
       )}
-      {p.mode === 'quote' && <a href={L('/le-neotone') + '#calculateur'} class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{s.calcOrder}</a>}
+      {p.mode === 'quote' && <a href={L('/neotone') + '#calculateur'} class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{s.calcOrder}</a>}
       {p.mode === 'link' && <a href={href} target={isExternal ? '_blank' : undefined} rel="noopener" class="block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream hover:bg-copper">{linkCtas[p.linkLabel || 'buy']}</a>}
       {p.mode === 'soon' && <span class="block w-full rounded-full border border-ink/15 px-5 py-3 text-center font-600 text-ink-soft/50">{s.soonLong}</span>}
     </div>

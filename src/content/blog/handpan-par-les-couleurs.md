@@ -74,7 +74,7 @@ Le plus simple pour t'y mettre est de visualiser ces couleurs et ces formes en d
 
 ## Et si tu joues sur un handpan électronique
 
-La méthode brille encore plus sur un [handpan électronique Neotone](/le-neotone) : l'instrument et l'écran parlent la même langue visuelle, tu changes de gamme en un geste, et tu peux jouer au casque à toute heure. Les couleurs restent ton fil conducteur, quelle que soit la gamme chargée.
+La méthode brille encore plus sur un [handpan électronique Neotone](/neotone) : l'instrument et l'écran parlent la même langue visuelle, tu changes de gamme en un geste, et tu peux jouer au casque à toute heure. Les couleurs restent ton fil conducteur, quelle que soit la gamme chargée.
 
 Envie d'être accompagné pas à pas ? Les [cours de David Lesage](/cours) reprennent la méthode ChromaKeys de zéro, à ton rythme, jusqu'à ce que jouer devienne un réflexe.
 

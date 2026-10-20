@@ -57,7 +57,7 @@ A pulse bar completes the picture: the beats light up, the first one in orange, 
 
 This section applies to electronic handpans only: it needs a MIDI output, which an acoustic pan does not have.
 
-If your [Neotone](/en/le-neotone) is connected over MIDI, you can also work the other way round: press ⏺, a count-in starts, and **what you play is written into the grid**. Then you fix with the mouse whatever your hand missed.
+If your [Neotone](/en/neotone) is connected over MIDI, you can also work the other way round: press ⏺, a count-in starts, and **what you play is written into the grid**. Then you fix with the mouse whatever your hand missed.
 
 Either way the MIDI bridge stays open: import a `.mid` file, export yours, take your melody into any music software.
 

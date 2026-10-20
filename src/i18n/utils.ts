@@ -10,7 +10,7 @@ export function getLang(url: URL): Lang {
 // ============================================================
 // SLUGS TRADUITS (20/08/2026)
 // Par défaut une page garde son slug FRANÇAIS dans toutes les langues
-// (/en/le-neotone, /en/cours…). Décision de David : on ne traduit QUE les
+// (/en/neotone, /en/cours…). Décision de David : on ne traduit QUE les
 // slugs dont le bénéfice SEO anglophone est démontré, une page à la fois.
 //
 // Clé   = chemin NEUTRE (= le slug français, celui écrit partout dans le code)

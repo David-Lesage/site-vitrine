@@ -164,7 +164,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Les deux se jouent exactement pareil, avec les mains. Le handpan acoustique offre une résonance et un contact physique inimitables. Le <a href="/le-neotone">handpan électronique Neotone</a>, lui, se joue au casque (idéal en appartement, la nuit) <em>ou</em> à l’extérieur avec un ampli type Bose S1 : ce n’est pas seulement un instrument pour jouer au casque. Il change aussi de gamme en un geste et se branche à ton ordinateur. Pour un débutant, l’électronique lève deux freins majeurs : le bruit et le budget d’un seul instrument figé sur une seule gamme. J’explore ce choix en détail dans mon guide <a href="/handpan-electronique-vs-acoustique">handpan électronique vs acoustique</a>.',
+            html: 'Les deux se jouent exactement pareil, avec les mains. Le handpan acoustique offre une résonance et un contact physique inimitables. Le <a href="/neotone">handpan électronique Neotone</a>, lui, se joue au casque (idéal en appartement, la nuit) <em>ou</em> à l’extérieur avec un ampli type Bose S1 : ce n’est pas seulement un instrument pour jouer au casque. Il change aussi de gamme en un geste et se branche à ton ordinateur. Pour un débutant, l’électronique lève deux freins majeurs : le bruit et le budget d’un seul instrument figé sur une seule gamme. J’explore ce choix en détail dans mon guide <a href="/handpan-electronique-vs-acoustique">handpan électronique vs acoustique</a>.',
           },
         ],
       },
@@ -195,7 +195,7 @@ const fr: GuidesByLang = {
     related: [
       { href: '/handpan-app', label: 'Découvrir l’app Handpan Constellation Studio' },
       { href: '/cours', label: 'Prendre des cours de handpan' },
-      { href: '/le-neotone', label: 'Le handpan électronique Neotone' },
+      { href: '/neotone', label: 'Le handpan électronique Neotone' },
       { href: '/blog/handpan-par-les-couleurs', label: 'Article : le handpan par les couleurs' },
       { href: '/blog/creer-sa-gamme-de-handpan', label: 'Article : créer sa gamme de handpan' },
     ],
@@ -305,14 +305,14 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Il n’y a pas de « meilleur » dans l’absolu : il y a l’instrument juste pour ta vie. Si le silence, la polyvalence des gammes et la création numérique comptent, le <a href="/le-neotone">Neotone</a> est imbattable. Si la vibration acoustique et le jeu partagé priment, un handpan traditionnel te comblera. Et pour t’exercer aux deux mondes sans acheter tout de suite, l’application <a href="/handpan-app">Handpan Constellation Studio</a> propose un mode acoustique gratuit et un mode électronique. J’ai aussi écrit un article dédié : <a href="/blog/pourquoi-handpan-electronique">pourquoi j’ai choisi le handpan électronique</a>.',
+            html: 'Il n’y a pas de « meilleur » dans l’absolu : il y a l’instrument juste pour ta vie. Si le silence, la polyvalence des gammes et la création numérique comptent, le <a href="/neotone">Neotone</a> est imbattable. Si la vibration acoustique et le jeu partagé priment, un handpan traditionnel te comblera. Et pour t’exercer aux deux mondes sans acheter tout de suite, l’application <a href="/handpan-app">Handpan Constellation Studio</a> propose un mode acoustique gratuit et un mode électronique. J’ai aussi écrit un article dédié : <a href="/blog/pourquoi-handpan-electronique">pourquoi j’ai choisi le handpan électronique</a>.',
           },
         ],
       },
     ],
     relatedHeading: 'Pour aller plus loin',
     related: [
-      { href: '/le-neotone', label: 'Découvrir le handpan électronique Neotone' },
+      { href: '/neotone', label: 'Découvrir le handpan électronique Neotone' },
       { href: '/handpan-app', label: 'L’app Handpan Constellation Studio (acoustique + électronique)' },
       { href: '/blog/pourquoi-handpan-electronique', label: 'Article : pourquoi le handpan électronique' },
     ],
@@ -338,7 +338,7 @@ const fr: GuidesByLang = {
     cta: {
       heading: 'Envie de tester le handpan électronique ?',
       text: 'Découvre le Neotone, ou essaie les deux modes dans l’application Handpan Constellation Studio.',
-      primary: { href: '/le-neotone', label: 'Découvrir le Neotone' },
+      primary: { href: '/neotone', label: 'Découvrir le Neotone' },
       secondary: { href: '/handpan-app#acces', label: 'Accès à l’application' },
     },
     datePublished: '2026-07-01',
@@ -368,7 +368,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Un handpan acoustique se compose d’un ding et de notes disposées autour : les modèles courants vont de 8 à 10 notes, et certains ajoutent des notes sous la coque (« bottom notes »). Côté électronique, le <a href="/le-neotone">Neotone</a> existe en 10 notes et le Mutant en 19 notes.',
+            html: 'Un handpan acoustique se compose d’un ding et de notes disposées autour : les modèles courants vont de 8 à 10 notes, et certains ajoutent des notes sous la coque (« bottom notes »). Côté électronique, le <a href="/neotone">Neotone</a> existe en 10 notes et le Mutant en 19 notes.',
           },
         ],
       },
@@ -401,7 +401,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Le prix d’un handpan correct est autour de <strong>1500 €</strong> selon moi. Méfie-toi des instruments très bon marché : sous un certain prix, l’accordage est souvent approximatif et l’instrument sonnera faux — le pire départ possible. Mais prévois aussi la suite : rapidement tu en achètes un deuxième, car tu tourneras en rond avec une seule gamme. C’est là que la question d’un <a href="/le-neotone">Neotone</a> peut se poser. Tout dépend de ce que tu recherches : si tu veux chanter et t’accompagner dans toutes les tonalités et tessitures, c’est clairement le plus adapté. Ou de te faire un handpan pour chanteur·se sur mesure. Regarde aussi la <a href="/boutique">boutique</a> pour les accessoires (housse, support) qui protègent ton instrument.',
+            html: 'Le prix d’un handpan correct est autour de <strong>1500 €</strong> selon moi. Méfie-toi des instruments très bon marché : sous un certain prix, l’accordage est souvent approximatif et l’instrument sonnera faux — le pire départ possible. Mais prévois aussi la suite : rapidement tu en achètes un deuxième, car tu tourneras en rond avec une seule gamme. C’est là que la question d’un <a href="/neotone">Neotone</a> peut se poser. Tout dépend de ce que tu recherches : si tu veux chanter et t’accompagner dans toutes les tonalités et tessitures, c’est clairement le plus adapté. Ou de te faire un handpan pour chanteur·se sur mesure. Regarde aussi la <a href="/boutique">boutique</a> pour les accessoires (housse, support) qui protègent ton instrument.',
           },
         ],
       },
@@ -435,7 +435,7 @@ const fr: GuidesByLang = {
     ],
     relatedHeading: 'Pour aller plus loin',
     related: [
-      { href: '/le-neotone', label: 'Le handpan électronique Neotone (10 & 19 notes)' },
+      { href: '/neotone', label: 'Le handpan électronique Neotone (10 & 19 notes)' },
       { href: '/showroom', label: 'Essayer un handpan au showroom de Paris' },
       { href: '/boutique', label: 'Accessoires : housses, supports…' },
       { href: '/handpan-electronique-vs-acoustique', label: 'Comparatif électronique vs acoustique' },
@@ -463,7 +463,7 @@ const fr: GuidesByLang = {
       heading: 'Trouve le handpan qui te correspond',
       text: 'Viens l’essayer à Paris, ou découvre le Neotone et ses gammes interchangeables.',
       primary: { href: '/showroom', label: 'Réserver ma venue au showroom' },
-      secondary: { href: '/le-neotone', label: 'Découvrir le Neotone' },
+      secondary: { href: '/neotone', label: 'Découvrir le Neotone' },
     },
     datePublished: '2026-07-01',
     dateModified: '2026-07-01',
@@ -556,7 +556,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Both are played exactly the same way, with your hands. An acoustic handpan offers an inimitable resonance and physical contact. The <a href="/le-neotone">electronic Neotone handpan</a> can be played on headphones (perfect in a flat, at night) <em>or</em> outdoors through an amp such as a Bose S1: it isn’t only a headphone instrument. It also changes scale in a single gesture and connects to your computer. For a beginner, going electronic removes two major hurdles: noise, and the cost of a single instrument locked to one scale. I explore this choice in detail in my <a href="/handpan-electronique-vs-acoustique">electronic vs acoustic handpan</a> guide.',
+            html: 'Both are played exactly the same way, with your hands. An acoustic handpan offers an inimitable resonance and physical contact. The <a href="/neotone">electronic Neotone handpan</a> can be played on headphones (perfect in a flat, at night) <em>or</em> outdoors through an amp such as a Bose S1: it isn’t only a headphone instrument. It also changes scale in a single gesture and connects to your computer. For a beginner, going electronic removes two major hurdles: noise, and the cost of a single instrument locked to one scale. I explore this choice in detail in my <a href="/handpan-electronique-vs-acoustique">electronic vs acoustic handpan</a> guide.',
           },
         ],
       },
@@ -587,7 +587,7 @@ const en: GuidesByLang = {
     related: [
       { href: '/handpan-app', label: 'Discover the Handpan Constellation Studio app' },
       { href: '/cours', label: 'Take handpan lessons' },
-      { href: '/le-neotone', label: 'The electronic Neotone handpan' },
+      { href: '/neotone', label: 'The electronic Neotone handpan' },
       { href: '/blog/handpan-par-les-couleurs', label: 'Article: the handpan through colours' },
       { href: '/blog/creer-sa-gamme-de-handpan', label: 'Article: create your handpan scale' },
     ],
@@ -694,14 +694,14 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'There’s no “best” in absolute terms: there’s the right instrument for your life. If silence, scale versatility and digital creation matter, the <a href="/le-neotone">Neotone</a> is unbeatable. If acoustic vibration and shared playing come first, a traditional handpan will delight you. And to practise both worlds before buying, the <a href="/handpan-app">Handpan Constellation Studio</a> app offers a free acoustic mode and an electronic mode. I’ve also written a dedicated article: <a href="/blog/pourquoi-handpan-electronique">why I chose the electronic handpan</a>.',
+            html: 'There’s no “best” in absolute terms: there’s the right instrument for your life. If silence, scale versatility and digital creation matter, the <a href="/neotone">Neotone</a> is unbeatable. If acoustic vibration and shared playing come first, a traditional handpan will delight you. And to practise both worlds before buying, the <a href="/handpan-app">Handpan Constellation Studio</a> app offers a free acoustic mode and an electronic mode. I’ve also written a dedicated article: <a href="/blog/pourquoi-handpan-electronique">why I chose the electronic handpan</a>.',
           },
         ],
       },
     ],
     relatedHeading: 'Go further',
     related: [
-      { href: '/le-neotone', label: 'Discover the electronic Neotone handpan' },
+      { href: '/neotone', label: 'Discover the electronic Neotone handpan' },
       { href: '/handpan-app', label: 'The Handpan Constellation Studio app (acoustic + electronic)' },
       { href: '/blog/pourquoi-handpan-electronique', label: 'Article: why the electronic handpan' },
     ],
@@ -727,7 +727,7 @@ const en: GuidesByLang = {
     cta: {
       heading: 'Want to try the electronic handpan?',
       text: 'Discover the Neotone, or try both modes in the Handpan Constellation Studio app.',
-      primary: { href: '/le-neotone', label: 'Discover the Neotone' },
+      primary: { href: '/neotone', label: 'Discover the Neotone' },
       secondary: { href: '/handpan-app#acces', label: 'Access to the app' },
     },
     datePublished: '2026-07-01',
@@ -754,7 +754,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'An acoustic handpan has a ding and notes laid out around it: common models run from 8 to 10 notes, and some add notes under the shell (“bottom notes”). On the electronic side, the <a href="/le-neotone">Neotone</a> comes in a 10-note model and the Mutant in 19 notes.',
+            html: 'An acoustic handpan has a ding and notes laid out around it: common models run from 8 to 10 notes, and some add notes under the shell (“bottom notes”). On the electronic side, the <a href="/neotone">Neotone</a> comes in a 10-note model and the Mutant in 19 notes.',
           },
         ],
       },
@@ -821,7 +821,7 @@ const en: GuidesByLang = {
     ],
     relatedHeading: 'Go further',
     related: [
-      { href: '/le-neotone', label: 'The electronic Neotone handpan (10 & 19 notes)' },
+      { href: '/neotone', label: 'The electronic Neotone handpan (10 & 19 notes)' },
       { href: '/showroom', label: 'Try a handpan at the Paris showroom' },
       { href: '/boutique', label: 'Accessories: bags, stands…' },
       { href: '/handpan-electronique-vs-acoustique', label: 'Electronic vs acoustic comparison' },
@@ -849,7 +849,7 @@ const en: GuidesByLang = {
       heading: 'Find the handpan that suits you',
       text: 'Come try it in Paris, or discover the Neotone and its interchangeable scales.',
       primary: { href: '/showroom', label: 'Book my showroom visit' },
-      secondary: { href: '/le-neotone', label: 'Discover the Neotone' },
+      secondary: { href: '/neotone', label: 'Discover the Neotone' },
     },
     datePublished: '2026-07-01',
     dateModified: '2026-07-01',

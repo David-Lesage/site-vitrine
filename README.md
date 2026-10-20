@@ -31,7 +31,7 @@ bun run check      # vérification de types Astro
 | Page | Route | Contenu |
 |---|---|---|
 | Accueil | `/` | David héros, 3 univers, showroom, communauté, preuve sociale |
-| Le Neotone | `/le-neotone` | Modèles, bois, specs, comparatif, **calculateur de prix**, procédure, FAQ |
+| Le Neotone | `/neotone` | Modèles, bois, specs, comparatif, **calculateur de prix**, procédure, FAQ |
 | Boutique | `/boutique` | Catégories WooCommerce-like : handpans (devis) + micros (panier Snipcart) |
 | Cours | `/cours` | Méthode visuelle, formules & tarifs, workshops |
 | Handpan Compagnon | `/handpan-app` | ChromaKeys, Constellations, émotions, 4 modes, liste d'attente |

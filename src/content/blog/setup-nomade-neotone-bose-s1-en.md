@@ -12,7 +12,7 @@ draft: false
 
 **This article is about the electronic handpan**: it describes an amplified setup built around an instrument with line outputs. An acoustic handpan is amplified differently, with a microphone, and that is not the subject here.
 
-Playing on a beach at sunset, in a forest, on a terrace or in a venue — without hunting for a power socket, without a sound engineer, without a car boot full of gear. That's exactly what the **[Neotone](/en/le-neotone) + Bose S1 Pro+** duo makes possible: two battery-powered devices, one cable between them, and you're self-sufficient. Here's the setup I actually use, with links for every item.
+Playing on a beach at sunset, in a forest, on a terrace or in a venue — without hunting for a power socket, without a sound engineer, without a car boot full of gear. That's exactly what the **[Neotone](/en/neotone) + Bose S1 Pro+** duo makes possible: two battery-powered devices, one cable between them, and you're self-sufficient. Here's the setup I actually use, with links for every item.
 
 ## Why this duo works so well
 
@@ -66,7 +66,7 @@ A complete Neotone¹ + S1 Pro+ + cable setup therefore comes to around **€2,60
 
 ## Where to buy each item
 
-- **Neotone¹ / Neotone¹ Mutant** → [my Neotone page](/en/le-neotone) (−5% discount code online, 6-year warranty, personal support). You can also [come and try it in Paris](/en/showroom): the discount goes up to −7% at the showroom, and you leave with it the same day.
+- **Neotone¹ / Neotone¹ Mutant** → [my Neotone page](/en/neotone) (−5% discount code online, 6-year warranty, personal support). You can also [come and try it in Paris](/en/showroom): the discount goes up to −7% at the showroom, and you leave with it the same day.
 - **Bose S1 Pro+** → [official Bose page](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html) (≈ €599 at retailers) — also worth checking [Leboncoin second-hand listings](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B).
 - **Bose wireless transmitter** (zero-cable option) → [Woodbrass, ≈ €168](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) · [speaker + transmitter combo ≈ €759 at SonoVente](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html)
 - **Bose Sub1 subwoofer** (option) → [official Bose page](https://www.bose.fr/p/portable-pa/sub1-powered-bass-module/SUB1-SPEAKERBASSMOD.html)

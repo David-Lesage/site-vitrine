@@ -64,7 +64,7 @@ Type them exactly as you're given them — "Am, F, C, G", or in Do Re Mi if that
 
 This one applies to the electronic handpan only. On the way out of Quick Jam, a "See the scale" card (*Voir la gamme*) draws the matching instrument on a **real Neotone shell**: each chord is voiced root · third · fifth · octave, exactly as in Logic Mode, and the shell picks itself — Neotone¹ with 10 notes if that's enough, Mutant with 19 otherwise.
 
-So before playing a single note you can see whether the piece fits your instrument — and if you play a [Neotone](/en/le-neotone), you can load that layout straight away. On an acoustic handpan there is nothing to load: its notes are hammered into the steel once and for all. The card then serves purely as a comparison — what the piece asks for, against what your pan holds.
+So before playing a single note you can see whether the piece fits your instrument — and if you play a [Neotone](/en/neotone), you can load that layout straight away. On an acoustic handpan there is nothing to load: its notes are hammered into the steel once and for all. The card then serves purely as a comparison — what the piece asks for, against what your pan holds.
 
 <figure>
   <img

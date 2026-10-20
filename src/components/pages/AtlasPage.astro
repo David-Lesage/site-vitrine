@@ -114,7 +114,7 @@ const tryHref = L('/showroom') + '#agenda'
 const mesh = (s: string) =>
   s
     .replace('{yishama}', `<a href="${L('/yishama')}" class="font-600 text-cream underline decoration-cream/40 underline-offset-4 transition-colors hover:text-gold">Yishama</a>`)
-    .replace('{neotone}', `<a href="${L('/le-neotone')}" class="font-600 text-cream underline decoration-cream/40 underline-offset-4 transition-colors hover:text-gold">Neotone</a>`)
+    .replace('{neotone}', `<a href="${L('/neotone')}" class="font-600 text-cream underline decoration-cream/40 underline-offset-4 transition-colors hover:text-gold">Neotone</a>`)
 
 // Les photos passent au carrousel avec leur VRAI texte alternatif et leurs
 // dimensions : la place est réservée au chargement, la page ne saute pas.
@@ -881,7 +881,7 @@ const ld = [
         class="block h-auto w-full"
       />
       {/* 🔗 `set:html` : le mot « Neotone » est le second (et dernier) lien de
-          maillage de la page — il renvoie vers /le-neotone. « Yishama » reste
+          maillage de la page — il renvoie vers /neotone. « Yishama » reste
           en texte simple ICI, parce qu'il est déjà lié plus haut, dans la
           légende du festival. Un lien par destination, pas un de plus. */}
       <figcaption

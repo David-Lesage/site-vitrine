@@ -132,7 +132,7 @@ What really separates the two models is the **register** — and behind the regi
 
 ## What it costs, and what it doesn't do
 
-It's a **second instrument**, so it's a purchase. In the [shop](/en/boutique), the Neotone¹ starts at **€1,990** and the Mutant at **€3,150**; the details of the editions and the calculator are on the [Neotone page](/en/le-neotone). This isn't an accessory. It's a decision.
+It's a **second instrument**, so it's a purchase. In the [shop](/en/boutique), the Neotone¹ starts at **€1,990** and the Mutant at **€3,150**; the details of the editions and the calculator are on the [Neotone page](/en/neotone). This isn't an accessory. It's a decision.
 
 And three limits, plainly.
 

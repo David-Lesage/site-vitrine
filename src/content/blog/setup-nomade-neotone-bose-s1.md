@@ -12,7 +12,7 @@ draft: false
 
 **Cet article concerne le handpan électronique** : il décrit un setup sonorisé bâti autour d'un instrument à sorties ligne. Un handpan acoustique se sonorise autrement, au micro, et ce n'est pas le sujet ici.
 
-Jouer sur une plage au coucher du soleil, en forêt, sur une terrasse ou dans une salle — sans chercher une prise, sans ingénieur du son, sans un coffre rempli de matériel. C'est exactement ce que permet le duo **[Neotone](/le-neotone) + Bose S1 Pro+** : deux appareils sur batterie, un câble entre les deux, et tu es autonome. Voici le setup que j'utilise vraiment, avec les liens pour chaque élément.
+Jouer sur une plage au coucher du soleil, en forêt, sur une terrasse ou dans une salle — sans chercher une prise, sans ingénieur du son, sans un coffre rempli de matériel. C'est exactement ce que permet le duo **[Neotone](/neotone) + Bose S1 Pro+** : deux appareils sur batterie, un câble entre les deux, et tu es autonome. Voici le setup que j'utilise vraiment, avec les liens pour chaque élément.
 
 ## Pourquoi ce duo fonctionne si bien
 
@@ -66,7 +66,7 @@ Un setup complet Neotone¹ + S1 Pro+ + câble revient donc autour de **2 600 €
 
 ## Où acheter chaque élément
 
-- **Neotone¹ / Neotone¹ Mutant** → [ma page Neotone](/le-neotone) (code de remise −5 % en ligne, garantie 6 ans, accompagnement personnel). Tu peux aussi [venir l'essayer à Paris](/showroom) : la remise monte à −7 % au showroom, et tu repars avec le jour même.
+- **Neotone¹ / Neotone¹ Mutant** → [ma page Neotone](/neotone) (code de remise −5 % en ligne, garantie 6 ans, accompagnement personnel). Tu peux aussi [venir l'essayer à Paris](/showroom) : la remise monte à −7 % au showroom, et tu repars avec le jour même.
 - **Bose S1 Pro+** → [page officielle Bose](https://www.bose.fr/p/portable-pa/s1-pro-wireless-pa-system/S1PROP-SPEAKERWIRELESS.html) (≈ 599 € chez les revendeurs) — pense aussi aux [annonces Leboncoin](https://www.leboncoin.fr/recherche?text=bose+s1+pro%2B) en occasion.
 - **Émetteur sans fil Bose** (option zéro câble) → [Woodbrass, ≈ 168 €](https://www.woodbrass.com/emetteurs-bose-professional-bose-wireless-instrument-transmitter-1-4-p377933.html) · [combo enceinte + émetteur ≈ 759 € chez SonoVente](https://www.sonovente.com/bose-s1-pro-plus-emetteur-jack-6-35-p90857.html)
 - **Caisson Bose Sub1** (option) → [page officielle Bose](https://www.bose.fr/p/portable-pa/sub1-powered-bass-module/SUB1-SPEAKERBASSMOD.html)

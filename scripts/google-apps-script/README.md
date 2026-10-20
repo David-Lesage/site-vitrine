@@ -16,6 +16,6 @@ Pour modifier le script ensuite sans changer d'URL : **Gérer les déploiements 
 
 - `src/lib/stockSource.js` : URL + traduction des valeurs du Sheet (`sheetToStockRows`), testée par `node scripts/test-stock-source.mjs`.
 - `api/stock.js` : relais `/api/stock` (cache CDN 60 s), lu par la page au chargement.
-- `src/lib/stock.ts` : lecture au build + rendu des blocs de la page `/le-neotone`.
+- `src/lib/stock.ts` : lecture au build + rendu des blocs de la page `/neotone`.
 
 URL vide ou script injoignable : la page n'affiche aucun stock et ne grise aucun modèle.

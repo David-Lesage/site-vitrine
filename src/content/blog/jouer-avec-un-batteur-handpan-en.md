@@ -40,7 +40,7 @@ He's right there, next to the bar: a **🥁 Drummer** drawer. Open it, pick a gr
 
 This too is **free**, and it needs no hardware: the drummer runs in the browser, right from the Discovery level, on the acoustic mode's chord grid as well as the Logic Mode one. The groove you pick follows you from one tool to the next.
 
-What belongs to the **Studio** version is **MIDI recording** — and there the drummer changes role: the groove becomes a full accompaniment track, one you mute with a click 🔇 on playback, that follows your piece's tempo and travels into the file when you export. You can also play over an imported MIDI track or audio file — handy for practising a song you love before accompanying it for real. That's where a connected [Neotone](/en/le-neotone) gives its best.
+What belongs to the **Studio** version is **MIDI recording** — and there the drummer changes role: the groove becomes a full accompaniment track, one you mute with a click 🔇 on playback, that follows your piece's tempo and travels into the file when you export. You can also play over an imported MIDI track or audio file — handy for practising a song you love before accompanying it for real. That's where a connected [Neotone](/en/neotone) gives its best.
 
 <figure>
   <img

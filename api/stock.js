@@ -2,7 +2,7 @@
 // Neotone depuis le Google Sheet de David, via son Apps Script publié
 // (scripts/google-apps-script/stock-public.gs). Même principe que api/prices.js :
 // appelée côté serveur (pas de contrainte CORS), le navigateur interroge
-// /api/stock en same-origin au chargement de /le-neotone.
+// /api/stock en same-origin au chargement de /neotone.
 //
 // Réponse : tableau au format de `normalizeStock()` (src/lib/stock.ts) :
 //   [{ partner:'neotone', model:'one'|'mutant', wood:'frene'|…, status:'disponible'|'en_transit', expected_arrival_on:'AAAA-MM-JJ'|null }]

@@ -132,7 +132,7 @@ Ce qui sépare réellement les deux modèles, c'est le **registre** — et derri
 
 ## Ce que ça coûte, et ce que ça ne fait pas
 
-C'est un **second instrument**, donc un achat. Sur la [boutique](/boutique), le Neotone¹ est affiché dès **1 990 €** et le Mutant dès **3 150 €** ; le détail des éditions et le calculateur sont sur la [page du Neotone](/le-neotone). Ce n'est pas un accessoire. C'est une décision.
+C'est un **second instrument**, donc un achat. Sur la [boutique](/boutique), le Neotone¹ est affiché dès **1 990 €** et le Mutant dès **3 150 €** ; le détail des éditions et le calculateur sont sur la [page du Neotone](/neotone). Ce n'est pas un accessoire. C'est une décision.
 
 Et trois limites, franchement.
 

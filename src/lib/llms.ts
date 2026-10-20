@@ -114,7 +114,7 @@ const guidePage = (key: 'learn' | 'vsAcoustic' | 'chooseHandpan') => (_t: Dict, 
 
 const PAGES: PageDef[] = [
   { path: '/', group: 'main', text: dictPage('home') },
-  { path: '/le-neotone', group: 'main', text: dictPage('neotone') },
+  { path: '/neotone', group: 'main', text: dictPage('neotone') },
   { path: '/handpan-app', group: 'main', text: dictPage('studio') },
   { path: '/cours', group: 'main', text: dictPage('lessons') },
   { path: '/boutique', group: 'main', text: dictPage('shop') },

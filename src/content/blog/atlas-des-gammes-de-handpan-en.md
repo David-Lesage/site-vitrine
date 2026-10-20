@@ -42,7 +42,7 @@ Each scale carries an emotional colour: bright, melancholic, mysterious, soothin
 
 ### Listen before you choose
 
-With one click, you hear the scale sound. No need to own it or imagine it: Handpan Constellation Studio plays it for you. That's precious when you're hesitating before buying an acoustic handpan, or before loading a scale onto your [electronic Neotone handpan](/en/le-neotone). One honest difference between the two instruments: an electronic pan loads any scale in any key, while an acoustic pan keeps its hammered notes — so the app lets you **hear** your scale transposed without replacing it.
+With one click, you hear the scale sound. No need to own it or imagine it: Handpan Constellation Studio plays it for you. That's precious when you're hesitating before buying an acoustic handpan, or before loading a scale onto your [electronic Neotone handpan](/en/neotone). One honest difference between the two instruments: an electronic pan loads any scale in any key, while an acoustic pan keeps its hammered notes — so the app lets you **hear** your scale transposed without replacing it.
 
 ### See the scale in colour
 

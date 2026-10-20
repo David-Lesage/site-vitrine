@@ -67,7 +67,7 @@ export const site = {
 // Clé de libellé (→ dict.common.nav) + chemin neutre (sera localisé via localizePath)
 export const nav = [
   { key: 'home', href: '/' },
-  { key: 'neotone', href: '/le-neotone' },
+  { key: 'neotone', href: '/neotone' },
   // Mes deux handpans acoustiques Yishama + l'histoire avec Yonathan.
   { key: 'yishama', href: '/yishama' },
   { key: 'shop', href: '/boutique' },
@@ -84,7 +84,7 @@ export const footerNav = [
   { key: 'electricVsAcoustic', href: '/handpan-electronique-vs-acoustique' },
   { key: 'chooseHandpan', href: '/quel-handpan-choisir' },
   { key: 'newsletter', href: '/#communaute' },
-  { key: 'faq', href: '/le-neotone#faq' },
+  { key: 'faq', href: '/neotone#faq' },
   { key: 'legal', href: '/mentions-legales' },
   // Conditions générales (17/08/2026) — c'est le texte que la case obligatoire
   // des 4 formulaires fait accepter : il doit être atteignable depuis TOUTES

@@ -43,7 +43,7 @@ const emphasize = (text: string, words: string[]) =>
     return i === -1 ? acc : `${acc.slice(0, i)}<strong class="font-600 text-gold">${w}</strong>${acc.slice(i + w.length)}`
   }, text)
 const heroLeadHtml = emphasize(h.heroLead, [colorWord, geoWord, emoWord])
-// ⚖️ La 1ʳᵉ carte ne pointe plus vers /le-neotone mais vers la section
+// ⚖️ La 1ʳᵉ carte ne pointe plus vers /neotone mais vers la section
 // « deux univers » (#instruments) : sur l'accueil, aucun des deux mondes
 // n'entre par la grande porte avant l'autre. Son visuel est volontairement
 // SPLIT (acoustique | électronique), les deux moitiés à 50 %.
@@ -59,7 +59,7 @@ const href = (p: string) => (p.startsWith('#') ? p : L(p))
 // c'est l'ordre du titre « Acoustique et électronique ».
 const duoMeta = [
   { img: '/images/yishama-hero-david.webp', icon: 'lucide:circle-dot', href: '/yishama', accent: 'text-copper', ring: 'border-copper/30', chip: 'bg-copper/10 text-copper' },
-  { img: '/images/neotone-hero-david.webp', icon: 'lucide:audio-waveform', href: '/le-neotone', accent: 'text-rust', ring: 'border-rust/30', chip: 'bg-rust/10 text-rust' },
+  { img: '/images/neotone-hero-david.webp', icon: 'lucide:audio-waveform', href: '/neotone', accent: 'text-rust', ring: 'border-rust/30', chip: 'bg-rust/10 text-rust' },
 ]
 ---
 

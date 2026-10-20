@@ -12,7 +12,7 @@ draft: false
 
 **Cet article concerne le handpan électronique.** Le jeu au casque suppose une sortie casque : c'est une possibilité qui n'existe pas sur un handpan acoustique.
 
-Le [Neotone](/le-neotone), handpan électronique, se joue **au casque** — tard le soir, en appartement, en déplacement, sans déranger personne. Là où un handpan acoustique sonne dans toute la maison, le Neotone garde le son pour toi seul. Et ce n'est pas qu'une question de discrétion : au casque, tu vis une **expérience immersive** que l'acoustique ne peut pas offrir.
+Le [Neotone](/neotone), handpan électronique, se joue **au casque** — tard le soir, en appartement, en déplacement, sans déranger personne. Là où un handpan acoustique sonne dans toute la maison, le Neotone garde le son pour toi seul. Et ce n'est pas qu'une question de discrétion : au casque, tu vis une **expérience immersive** que l'acoustique ne peut pas offrir.
 
 ## Le mur du volume acoustique
 
@@ -42,4 +42,4 @@ Le Neotone n'est pas qu'un handpan silencieux : il porte toute l'approche de [Ha
 
 L'électronique ne remplace pas la magie de l'acoustique : elle l'étend à des moments qui lui étaient fermés. La nuit, en déplacement, dans une chambre d'hôtel — le Neotone rend le jeu possible là où l'acoustique se tait. Et souvent, ce sont ces moments volés qui font les plus belles séances.
 
-Curieux de l'instrument qui rend tout ça possible ? Découvre le [Neotone](/le-neotone), et laisse-toi guider par les [cours de David Lesage](/cours). Ouvre [Handpan Constellation Studio](/handpan-app) et joue ta première boucle, ce soir, sans déranger personne.
+Curieux de l'instrument qui rend tout ça possible ? Découvre le [Neotone](/neotone), et laisse-toi guider par les [cours de David Lesage](/cours). Ouvre [Handpan Constellation Studio](/handpan-app) et joue ta première boucle, ce soir, sans déranger personne.

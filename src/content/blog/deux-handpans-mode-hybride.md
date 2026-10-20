@@ -67,6 +67,6 @@ Deux détails valent de l'or avant de commander quoi que ce soit :
 - La **roue de tonalité** te laisse écouter ta gamme transposée dans une autre tonalité. Tu entends le futur instrument avant qu'il existe.
 - Le réglage de **diapason 440 / 432 Hz** accorde l'app sur *ton* handpan, pour que ce que tu entends à l'écran sonne juste avec ce que tu as dans les mains.
 
-Le mode acoustique, « Compléter » et la roue de tonalité sont **gratuits** ; enregistrer durablement ta configuration à deux handpans fait partie de la version Studio. Et si le second pan devient une vraie envie, l'app te dit exactement quelles notes demander ; ces notes valent pour un instrument acoustique comme pour un [Neotone](/le-neotone).
+Le mode acoustique, « Compléter » et la roue de tonalité sont **gratuits** ; enregistrer durablement ta configuration à deux handpans fait partie de la version Studio. Et si le second pan devient une vraie envie, l'app te dit exactement quelles notes demander ; ces notes valent pour un instrument acoustique comme pour un [Neotone](/neotone).
 
 Ouvre [Handpan Constellation Studio](/handpan-app), charge ta gamme et regarde ce qu'il te manque vraiment. Souvent, c'est moins que tu ne crois. Et pour explorer tout ça à deux, mes [cours de handpan](/cours) sont ouverts.

@@ -54,7 +54,7 @@ Il est là, juste à côté de la barre : un tiroir **🥁 Batteur**. Tu l'ouvre
 
 Ça aussi, c'est **gratuit**, et ça ne demande aucun matériel : le batteur tourne dans le navigateur, dès le niveau Découverte, sur la grille d'accords du mode acoustique comme sur celle du Mode Logique. Le groove que tu choisis te suit d'un outil à l'autre.
 
-Ce qui relève de la version **Studio**, c'est l'**enregistrement MIDI** — et là, le batteur change de rôle : le groove devient une piste d'accompagnement à part entière, que tu coupes d'un clic 🔇 à la lecture, qui suit le tempo de ton morceau et qui part dans le fichier quand tu exportes. Tu peux aussi jouer par-dessus une piste MIDI ou un fichier audio importé — pratique pour t'entraîner sur une chanson que tu aimes avant de l'accompagner pour de vrai. C'est là qu'un [Neotone](/le-neotone) branché donne le meilleur.
+Ce qui relève de la version **Studio**, c'est l'**enregistrement MIDI** — et là, le batteur change de rôle : le groove devient une piste d'accompagnement à part entière, que tu coupes d'un clic 🔇 à la lecture, qui suit le tempo de ton morceau et qui part dans le fichier quand tu exportes. Tu peux aussi jouer par-dessus une piste MIDI ou un fichier audio importé — pratique pour t'entraîner sur une chanson que tu aimes avant de l'accompagner pour de vrai. C'est là qu'un [Neotone](/neotone) branché donne le meilleur.
 
 ## Chanter d'abord, jouer ensuite
 

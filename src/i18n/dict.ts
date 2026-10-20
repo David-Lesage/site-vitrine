@@ -1781,7 +1781,7 @@ const fr = {
     showroomAgendaCta: 'Voir les prochaines dates',
 
     // ── 📷 LÉGENDE DE LA PHOTO DU SHOWROOM (ajoutée le 20/08/2026) ───────────
-    // 🔗 {neotone} devient un lien vers /le-neotone (remplacé par `mesh()` dans
+    // 🔗 {neotone} devient un lien vers /neotone (remplacé par `mesh()` dans
     //    AtlasPage.astro). « Yishama » reste en TEXTE SIMPLE ici : il est déjà
     //    lié plus haut, dans `storyFestivalCaption`. Un lien par destination.
     // 🚨 CETTE LÉGENDE NE DIT TOUJOURS PAS que les pieds Atlas sont sur la
@@ -2760,7 +2760,7 @@ const fr = {
   // 🚫 NE JAMAIS AJOUTER ICI : santé, psychothérapie, diagnostics,
   // famille, finances personnelles, vie privée, profils de personnalité.
   // 🚫 Ne pas dater le début du bêta-test Neotone tant que David n'a
-  // pas tranché (l'ancien Wix dit 2021, /le-neotone dit 2023).
+  // pas tranché (l'ancien Wix dit 2021, /neotone dit 2023).
   //
   // ⚠️ RÈGLE ABSOLUE (rappel de David, 14/08/2026) : n'écrire ICI que
   // des faits sourcés ou des formulations qu'il a lui-même fournies.

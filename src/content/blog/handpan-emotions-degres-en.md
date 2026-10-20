@@ -74,6 +74,6 @@ In electronic Logic Mode, the app can offer you a **suggested fingering** to cha
 
 ## From emotion to a piece
 
-Once you feel how the degrees talk to each other, everything opens up. You can visualise your chords as Constellations, switch scales through the [Sound Atlas](/en/blog/atlas-des-gammes-de-handpan), or bring these colours onto an [electronic Neotone handpan](/en/le-neotone) where screen and instrument speak the same language.
+Once you feel how the degrees talk to each other, everything opens up. You can visualise your chords as Constellations, switch scales through the [Sound Atlas](/en/blog/atlas-des-gammes-de-handpan), or bring these colours onto an [electronic Neotone handpan](/en/neotone) where screen and instrument speak the same language.
 
 Want to be guided step by step through this grammar of emotions? [David Lesage's lessons](/en/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/en/handpan-app) and compose your first phrase — not with notes, but with emotions.
