@@ -720,7 +720,7 @@ const ld = [
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <Button href={L('/handpan-app')} variant="primary">{y.bridgeCta}</Button>
-        <Button href={L('/blog/handpan-studio-mode-acoustique')} variant="ghost">{y.bridgeCtaBlog}</Button>
+        <Button href={lang === 'es' ? localizePath('/blog/handpan-studio-mode-acoustique', 'en') : L('/blog/handpan-studio-mode-acoustique')} variant="ghost">{y.bridgeCtaBlog}</Button>
       </div>
     </div>
   </Section>

@@ -9,6 +9,7 @@ import { localizePath } from '@/i18n/utils'
 import { articleLdJson, breadcrumbLdJson, faqLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 import { getGuide } from '@/data/guides'
+import { getCollection } from 'astro:content'
 
 interface Props {
   lang: Lang
@@ -17,15 +18,30 @@ interface Props {
 const { lang, guideKey } = Astro.props
 const t = getDict(lang)
 const g = getGuide(lang, guideKey)
-const L = (p: string) => localizePath(p, lang)
+// Articles réellement publiés, par langue (20/10/2026) : un lien de guide vers
+// `/blog/<slug>` ne doit viser la version de la langue courante QUE si elle
+// existe. Sinon il menait à `/es/blog/<slug>`, une redirection vers le français
+// (audit SEO P1-4) : on vise directement la version publiée la plus proche,
+// anglais puis français — même ordre que la page Hisong (`blogLangs`).
+const publishedPosts = new Set(
+  (await getCollection('blog')).filter((p) => !p.data.draft).map((p) => `${p.data.lang}:${p.data.permalink}`),
+)
+const L = (p: string) => {
+  const article = p.match(/^\/blog\/([^/?#]+)/)
+  if (article) {
+    const found = ([lang, 'en', 'fr'] as Lang[]).find((l) => publishedPosts.has(`${l}:${article[1]}`))
+    if (found) return localizePath(p, found)
+  }
+  return localizePath(p, lang)
+}
 // Localise un lien interne (chemin neutre) ; laisse les URL absolues telles quelles.
 const href = (link: { href: string; external?: boolean }) =>
   link.external || /^https?:\/\//.test(link.href) ? link.href : L(link.href)
 
 // Les liens internes du corps sont écrits en chemins neutres ('/handpan-app').
-// En EN on les préfixe automatiquement pour rester dans la bonne langue.
-const localizeHtml = (html: string) =>
-  lang === 'fr' ? html : html.replace(/href="(\/[^"]*)"/g, (_m, p) => `href="${L(p)}"`)
+// Ils passent TOUS par L() (FR compris depuis le 20/10/2026) : préfixe de
+// langue, slug traduit et « / » final de l'adresse canonique.
+const localizeHtml = (html: string) => html.replace(/href="(\/[^"]*)"/g, (_m, p) => `href="${L(p)}"`)
 
 // Image d'aperçu (WhatsApp / Facebook / LinkedIn) propre à chaque guide.
 // « Apprendre le handpan » = la méthode ChromaKeys → la roue de couleurs de l'app.

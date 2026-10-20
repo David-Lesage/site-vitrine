@@ -115,7 +115,7 @@ export const esGuides: GuidesByLang = {
         "blocks": [
           {
             "kind": "p",
-            "html": "En cierto punto, una perspectiva externa lo acelera todo: la postura, la posición de las manos, el ritmo, la elección de la escala. Mis <a href=\"/cours\">clases de handpan</a>, online en todo el mundo o presenciales en París, se adaptan a tu nivel, desde principiante absoluto hasta músico experimentado. Trabajamos el método a través de colores y formas, pero también del ritmo y la expresión personal. Para profundizar en el método, lee sobre <a href=\"/blog/handpan-par-les-couleurs\">handpans y colores</a> y <a href=\"/blog/creer-sa-crea tu propia escala de handpan</a>.</a>"
+            "html": "En cierto punto, una perspectiva externa lo acelera todo: la postura, la posición de las manos, el ritmo, la elección de la escala. Mis <a href=\"/cours\">clases de handpan</a>, online en todo el mundo o presenciales en París, se adaptan a tu nivel, desde principiante absoluto hasta músico experimentado. Trabajamos el método a través de colores y formas, pero también del ritmo y la expresión personal. Para profundizar en el método, lee sobre <a href=\"/blog/handpan-par-les-couleurs\">handpans y colores</a> y <a href=\"/blog/creer-sa-gamme-de-handpan\">crea tu propia escala de handpan</a>."
           }
         ]
       }
