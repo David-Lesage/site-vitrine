@@ -48,6 +48,21 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 20/10/2026 (32ᵉ passe, session LOCALE « site-vitrine ») — REPRENDRE ICI
+
+- **Passation 20/10** : cette session a la main sur tout le site ; message envoyé à « Handpan StudioV4 — reprise projet »
+  (local_d111b5db…) pour qu'elle n'édite plus ce dépôt. Commits 4f234ee (14/10) et fb887cc (16/10) faits par d'autres sessions.
+- ⚠️ **Chantier NON COMMITÉ du 10/10 07:16** (ancienne session site, arrêtée) : formulaire d'ACHAT Neotone —
+  `BookingForm.astro`, `Calculator.astro`, `NeotonePage.astro`, `api/subscribe.js` (dépôt de la vente côté serveur via
+  `sale-intake`, jeton `SITE_LEAD_TOKEN`, interrupteur `SALE_INTAKE_ENABLED`=false dans `src/lib/saleIntakeCore.js` non suivi),
+  `saleIntake.ts`, i18n dict/en/es, `site-lead` (libellé « Achat d'un Neotone » + procédure 4 étapes dans le mail),
+  `stock-public.gs`, `scripts/test-achat-neotone.mjs`. À relire, finir et tester AVANT le brief §3 (mêmes fichiers).
+- **EF `site-lead` en ligne = version 44 du 22/09** (vérifié par téléchargement). HEAD ajoute seulement les tarifs des cours
+  du 09/10 dans les mails (60/75 + forfait) ; le chantier du 10/10 ajoute le mail d'achat. `_shared/showcase-email.ts` :
+  la copie du dépôt APP n'a pas le changement du 09/10 (upPriceNote). Rien redéployé : feu vert David attendu.
+- `/api/stock` OK le 20/10 : 200 en 3 s à froid puis cache ; Apps Script seul ≈ 2 s → délai de 8 s suffisant.
+- Briefs du 20/10 à traiter : `MESSAGE-SESSION-SITE-2026-10-20-hisong-neotone-formulaire.md` et `…-seo-llms-articles.md`.
+
 ## 🧭 ÉTAT ACTUEL — 09/10/2026 soir (31ᵉ passe, session LOCALE) — REPRENDRE ICI
 
 - ✅ **Stock Neotone EN PROD** : Apps Script « Stock public Neotone » créé sur **contact@lesagedavid.fr** (Chrome /u/2/,
