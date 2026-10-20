@@ -2639,7 +2639,7 @@ export const es: Dict = {
       },
       {
         "q": "¿Qué empresa fabrica Neotone?",
-        "a": "El Neotone es fabricado por Soundventure Ltd en Budapest, Hungría. El instrumento nació del sueño de dos amigos, Csaba y Norbert; la empresa se fundó en 2021 con el apoyo de MAG Instruments y Yishama Ltd. He visitado sus talleres en Hungría varias veces: conozco personalmente a Csaba y Norbert, así como a todo el equipo (Gergely, Dániel y los artesanos de MAG Instruments, y Yonathan de Yishama). También he sido probador beta oficial de la marca desde 2023; desde el primer Neotone¹, he reportado y corregido miles de errores y sugerido numerosas mejoras."
+        "a": "El Neotone es fabricado por Soundventure Ltd en Budapest, Hungría. El instrumento nació del sueño de dos amigos, Csaba y Norbert; la empresa se fundó en 2021 con el apoyo de MAG Instruments y Yishama Ltd. He visitado sus talleres en Hungría varias veces: conozco personalmente a Csaba y Norbert, así como a todo el equipo (Gergely, Dániel y los artesanos de MAG Instruments, y Yonathan de Yishama). También he sido probador beta oficial de la marca desde 2021; desde el primer Neotone¹, he reportado y corregido miles de errores y sugerido numerosas mejoras."
       },
       {
         "q": "¿Para quién es Neotone?",
