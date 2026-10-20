@@ -68,6 +68,17 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
   → `main` ne buildait plus (import `saleIntakeCore.js` manquant). Annulé par 2039dd0 (rien n'avait été déployé). Le chantier COMPLET
   = branche `wip/achat-neotone-2026-10-10` (a1b3864 + 3df9df7). Pour le reprendre sur main : `git revert 2039dd0` puis
   `git checkout wip/achat-neotone-2026-10-10 -- src/lib/saleIntakeCore.js scripts/test-achat-neotone.mjs`. LEÇON : jamais `commit -a`, toujours des chemins explicites.
+- ✅ **LOT SEO EN PROD 20/10 ~19h15** (a5d312f…aef72d5) : page `/neotone/` (301 depuis `/le-neotone` FR/EN/ES), « / » final partout
+  (`src/lib/trailing-slash.mjs` + 301 générique en fin de `vercel.json`, `/api` exclu — PAS de `trailingSlash:true` Vercel car 308 sur les POST),
+  apex + `*.app` en 301 par règles `has host` (play.handpanstudio.app jamais visé, vérifié 200), 3 articles EN visibles, guide ES réparé,
+  JSON-LD Product×2 / FAQPage / MusicStore / Breadcrumb sur /neotone. ⚠️ `project-a5vpj.vercel.app` redirige maintenant vers www :
+  vérifier un déploiement par son URL de prévisualisation propre. Contrôles : scratchpad `check-dist.mjs` / `sim-vercel.cjs` (non versionnés).
+  Session APP prévenue pour ses 8 liens `/le-neotone`.
+- **Stratégie Neotone** : `audits/STRATEGIE-NEOTONE-SEO-2026-10-20.md`. Le fabricant (play.digitalhandpan.com → neotone.studio en déc.)
+  lie `/en/le-neotone` (« Paris Hub ») sans nofollow = meilleur atout. Contradiction d'entité à corriger (attente phrase de David) :
+  `llms.ts` « conçoit le Neotone » + « conçu par David Lesage », `ldJson.ts:65` alternateName « Neotone », sameAs Instagram `neotone.digitalhandpan`.
+  Ensuite : enrichir /neotone (« Neotone One », lien site officiel, 7 articles liés, prix HT), articles 520-538 FR+EN.
+- Erreurs ES signalées pour la session Traduction : « 10 valoraciones » au lieu de « 10 notas », ding = « timbre », guides-es.ts ~l.387.
 - À trancher (David) : Atlas 250/270 € (description SEO) vs 215/230 € (boutique) ; « kit Master » (app) vs « RX Plus (Universal Pack) » (site).
 - Briefs du 20/10 à traiter : `MESSAGE-SESSION-SITE-2026-10-20-hisong-neotone-formulaire.md` et `…-seo-llms-articles.md`.
 

@@ -148,9 +148,9 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 | 20/10 | « la page micro Hisong sur le modèle de la page Muling » (brief APP 20/10 §1) | ✅ fait 20/10 — en prod (/micro-hisong FR/EN/ES), textes rédigés par l'agent à faire valider par David |
 | 20/10 | « le redessin du Neotone avec la vraie géométrie 10/19 creux » (brief APP 20/10 §2) | ✅ fait 20/10 — en prod, géométrie de layout.ts (9+9+ding pour le Mutant), alt corrigés FR/EN/ES |
 | 20/10 | « la mise en forme du mail du formulaire d'achat Neotone avec la facturation ligne par ligne » (brief APP 20/10 §3) | ⏳ en cours — dépend du chantier « formulaire d'achat » non commité du 10/10 (mêmes fichiers) |
-| 20/10 | « /neotone contre /le-neotone et l'anticipation de neotone.studio, en me proposant avant de bouger quoi que ce soit » | ⏳ proposition à faire |
+| 20/10 | « /neotone contre /le-neotone et l'anticipation de neotone.studio, en me proposant avant de bouger quoi que ce soit » | ✅ fait 20/10 — carte blanche de David, /neotone en prod (neotone.studio = domaine du fabricant) |
 | 20/10 | « llms.txt et llms-full.txt générés à chaque build » | ✅ fait 20/10 — en prod (13 pages, 19 produits, 34 articles par langue, 0 lien mort) |
-| 20/10 | « l'audit SEO » | ⏳ en cours |
+| 20/10 | « l'audit SEO » | ✅ fait 20/10 — audits/AUDIT-SEO-2026-10-20.md ; P1 en prod, P2 à suivre |
 | 20/10 | « les nouveaux articles illustrés sur les nouveautés 520 à 538 de l'app » (un article par mise à jour, relecteur distinct) | ⏳ en cours |
 | 20/10 | « la revue des articles périmés » | ⏳ en cours |
 | 20/10 | Compteur « X micros disponibles à Paris » sur la fiche boutique : vue publique lecture seule sur stock_levels (avec la session APP), écriture anon révoquée, rien si vide | ⏳ en cours |
@@ -158,5 +158,5 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 | 20/10 | site-lead + _shared/showcase-email.ts : « rappelle-moi ce qu'elles changent et attends mon feu vert » + prévenir la session APP | ⏳ rappel fait 20/10, feu vert attendu |
 | 20/10 | Signifier à la session « Handpan StudioV4 — reprise projet » que la session SITE a la main sur le site | ✅ fait 20/10 — passation acceptée par StudioV4 (ne touche plus au dépôt ni à site-lead ; alignera showcase-email.ts après le feu vert) |
 | 20/10 | Vérifier /api/stock (502 à froid, délai 8 s de stockSource.js trop court ?) | ✅ vérifié 20/10 : 200 en 3 s à froid, Apps Script 2 s ; 8 s suffit (voir ÉTAT ACTUEL) |
-| 20/10 | « optimiser mon site pour que je ressorte dans les résultats de recherche Google en premier ou en deuxième quand quelqu'un tape neotone ou neotone studio ou handpan électronique dans le monde entier ou via des IA […] préparer le terrain dès maintenant […] en utilisant tous les noms de domaine que j'ai achetés » (neotone.studio = domaine du FABRICANT à partir de décembre, aujourd'hui play.digitalhandpan.com) | ⏳ en cours — lot technique + plan de contenu lancés |
+| 20/10 | « optimiser mon site pour que je ressorte dans les résultats de recherche Google en premier ou en deuxième quand quelqu'un tape neotone ou neotone studio ou handpan électronique dans le monde entier ou via des IA […] préparer le terrain dès maintenant […] en utilisant tous les noms de domaine que j'ai achetés » (neotone.studio = domaine du FABRICANT à partir de décembre, aujourd'hui play.digitalhandpan.com) | ⏳ en cours — ✅ lot technique EN PROD 20/10 (/neotone, 301 domaines, « / » final, P1 1-4, données structurées) ; plan dans audits/STRATEGIE-NEOTONE-SEO-2026-10-20.md ; 🔒 phrase d'identité Neotone (llms « conçoit » vs ambassadeur) attendue de David |
 | 20/10 | « pour le reste oui je te laisse carte blanche pour tout optimiser et me dire ce que tu fais pour cela » (audit SEO) | ⏳ en cours |
