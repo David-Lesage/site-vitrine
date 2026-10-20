@@ -4,6 +4,7 @@
 // « Acoustique ET Électronique » de la catégorie Handpan) sans dupliquer le
 // markup — donc sans risque de divergence entre les deux univers.
 import Carousel from '@/components/Carousel.astro'
+import PromoCodeCopy from '@/components/PromoCodeCopy.astro'
 import { Icon } from 'astro-icon/components'
 import type { Product } from '@/data/shop'
 import { site } from '@/data/site'
@@ -93,19 +94,11 @@ const href = p.url.startsWith('/') ? L(p.url) : p.url
     {p.priceNoteKey && (
       <div class="mt-3 rounded-lg border border-copper/30 bg-copper/5 p-3 text-xs leading-relaxed text-ink-soft/90" set:html={priceNotes[p.priceNoteKey]} />
     )}
+    {/* 🎟️ Code de réduction : même composant que les pages /pieds-atlas et
+        /micro-hisong (PromoCodeCopy) — une seule façon de l'afficher. Le
+        script de copie est dans ShopPage.astro (classe `shop-copy-code`). */}
     {p.discountCode && (
-      <div class="mt-3 flex items-center justify-between gap-2 rounded-lg border border-copper/30 bg-copper/5 px-3 py-2 text-sm">
-        <span class="text-ink-soft/85">{s.copyCode} : <strong class="font-700 text-ink">{p.discountCode}</strong></span>
-        <button
-          type="button"
-          class="shop-copy-code shrink-0 rounded-full bg-copper/15 px-3 py-1.5 text-xs font-700 text-copper transition-colors hover:bg-copper hover:text-cream"
-          data-code={p.discountCode}
-          data-copy-label={s.copyCode}
-          data-copied-label={s.codeCopied}
-        >
-          {s.copyCode}
-        </button>
-      </div>
+      <PromoCodeCopy code={p.discountCode} copyLabel={s.copyCode} copiedLabel={s.codeCopied} class="mt-3" />
     )}
     <div class="mt-4">
       {p.mode === 'cart' && snipcartKey && (

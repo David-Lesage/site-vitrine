@@ -6,10 +6,11 @@
 
 import { modelCarousels } from './neotone'
 // 🎟️ Le code de réduction Atlas est piloté par UN SEUL interrupteur, dans
-// src/data/atlas.ts. Tant que `ATLAS_PROMO_ACTIVE` est `false`, la carte Atlas
-// de la boutique n'affiche AUCUN code — parce que le code n'existe pas encore
-// chez Atlas et qu'un code refusé au paiement coûterait la confiance du client.
-import { ATLAS_PROMO_ACTIVE, ATLAS_DISCOUNT_CODE } from './atlas'
+// src/data/atlas.ts (`ATLAS_PROMO_ACTIVE`, actif depuis le 11/09/2026 : code
+// DAVID-ATLAS, −10 % confirmé par Atlas). S'il repasse à `false`, la carte Atlas
+// perd sa pastille « −10 % » ET son code d'un coup. Les prix publics viennent
+// de `atlasPrices` : un seul relevé, la page et la carte ne peuvent pas diverger.
+import { ATLAS_PROMO_ACTIVE, ATLAS_DISCOUNT_CODE, atlasPrices } from './atlas'
 
 export interface Product {
   id: string
@@ -29,7 +30,7 @@ export interface Product {
   // libellé du bouton pour les produits 'link'
   linkLabel?: 'buy' | 'listen' | 'discover' | 'order' | 'interested'
   // pastille (plateforme / statut) pour les produits 'link' → dict.shop.linkTags
-  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec' | 'oko' | 'structured' | 'atlas'
+  tagKey?: 'helloasso' | 'streaming' | 'hisong' | 'yishama' | 'nowgroove' | 'ondemand' | 'maisongoni' | 'tambour' | 'spotify' | 'limited' | 'app' | 'muling' | 'onesec' | 'oko' | 'structured' | 'atlas' | 'atlasCode'
   // prix indicatif affiché tel quel (produits externes), ex. "299 €"
   priceLabel?: string
   // code de réduction affiché avec un bouton « copier » (produits externes, lien d'affiliation)
@@ -86,11 +87,12 @@ export const products: Product[] = [
   // démonstration pour les showcases.
   // 🚧 `url` pointe sur la fiche du site (et pas sur atlashandpan.com) parce
   // que le lien d'affiliation n'existe pas encore : c'est la page dédiée qui
-  // porte les liens d'achat, via `atlasLink()` de src/data/atlas.ts. Quand le
-  // code arrivera, il suffit de passer `ATLAS_PROMO_ACTIVE` à `true` dans
-  // src/data/atlas.ts : la pastille « copier le code » apparaît ici toute seule
-  // — et rien d'autre : ne pas remplacer `url` par un lien externe, la fiche
-  // dédiée est ce qui explique la différence entre les deux modèles.
+  // porte les liens d'achat, via `atlasLink()` de src/data/atlas.ts. Ne pas
+  // remplacer `url` par un lien externe : la fiche dédiée explique la
+  // différence entre les deux modèles ET rappelle de saisir le code au paiement.
+  // 🎟️ 20/10/2026 : pastille « −10 % avec mon code » (`atlasCode`) + code à
+  // copier, tant que `ATLAS_PROMO_ACTIVE` est vrai. PRIX PUBLICS seulement, pas
+  // de prix barré : aucun prix remisé n'est confirmé (voir src/data/atlas.ts).
   // 📸 ORDRE DU CARROUSEL (29/08/2026, demande de David) : les DEUX photos les plus
   // informatives d'abord — le Pro déployé/replié, puis le All à 96 cm.
   // ⚠️ CE SONT LEURS VERSIONS CARRÉES, ET C'EST VOLONTAIRE. `.carousel` est en
@@ -107,7 +109,7 @@ export const products: Product[] = [
   // ℹ️ `image` / `imgW` / `imgH` NE suivent PAS : dès que `images.length > 1`,
   //    ShopCard rend le carrousel et n'utilise plus `image` — celle-ci ne sert
   //    plus qu'au JSON-LD ItemList de la page. La grille n'est donc pas touchée.
-  { id: 'atlas', price: 0, image: '/images/prod-atlas-pro-1.webp', imgW: 1120, imgH: 1400, url: '/pieds-atlas', category: 'accessoires', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'atlas', priceLabel: 'Atlas Pro 215 € · Atlas All 230 €', ...(ATLAS_PROMO_ACTIVE ? { discountCode: ATLAS_DISCOUNT_CODE } : {}), images: ['/images/prod-atlas-pro-8-carre.webp', '/images/prod-atlas-all-9-carre.webp', '/images/prod-atlas-pro-1.webp', '/images/prod-atlas-all-1.webp', '/images/prod-atlas-pro-6.webp', '/images/prod-atlas-all-2.webp', '/images/prod-atlas-pro-3.webp'] },
+  { id: 'atlas', price: 0, image: '/images/prod-atlas-pro-1.webp', imgW: 1120, imgH: 1400, url: '/pieds-atlas', category: 'accessoires', active: true, mode: 'link', linkLabel: 'discover', tagKey: ATLAS_PROMO_ACTIVE ? 'atlasCode' : 'atlas', priceLabel: `Atlas Pro ${atlasPrices.pro} € · Atlas All ${atlasPrices.all} €`, ...(ATLAS_PROMO_ACTIVE ? { discountCode: ATLAS_DISCOUNT_CODE } : {}), images: ['/images/prod-atlas-pro-8-carre.webp', '/images/prod-atlas-all-9-carre.webp', '/images/prod-atlas-pro-1.webp', '/images/prod-atlas-all-1.webp', '/images/prod-atlas-pro-6.webp', '/images/prod-atlas-all-2.webp', '/images/prod-atlas-pro-3.webp'] },
   // Musique — albums & écoute en streaming (Spotify / plateformes)
   { id: 'phoenix-opus1', price: 0, image: '/images/prod-phoenix-opus1.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/album/3sxUqtH3uKf7pceIJ0j5l5', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },
   { id: 'phoenix-opus2', price: 0, image: '/images/prod-phoenix-opus2.jpg', imgW: 640, imgH: 640, url: 'https://open.spotify.com/album/19JuVzKWNd5xUMquLvLSm1', category: 'musique', active: true, mode: 'link', linkLabel: 'listen', tagKey: 'spotify' },

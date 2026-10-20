@@ -53,7 +53,9 @@
 //
 // 🚧 EMPLACEMENTS RÉSERVÉS, tous pilotés depuis src/data/atlas.ts :
 //    · le lien d'affiliation               → `ATLAS_AFFILIATE_URL`
-//    · le code de réduction                → `ATLAS_PROMO_ACTIVE` (éteint)
+//    · le code de réduction                → `ATLAS_PROMO_ACTIVE` (ACTIF depuis le
+//      11/09/2026 : DAVID-ATLAS, −10 % — affiché en haut, à chaque lien d'achat
+//      et en bas de page, voir « 🎟️ LE CODE » plus bas)
 //    (la vidéo de démonstration `atlasDemoVideoId` N'EST PLUS un emplacement
 //     réservé : elle est en ligne depuis le 01/09/2026, bande `#demo` juste
 //     après le hero.)
@@ -65,6 +67,7 @@ import Button from '@/components/Button.astro'
 import Carousel from '@/components/Carousel.astro'
 import Lightbox from '@/components/Lightbox.astro'
 import YouTube from '@/components/YouTube.astro'
+import PromoCodeCopy from '@/components/PromoCodeCopy.astro'
 import { Icon } from 'astro-icon/components'
 import {
   atlasProPhotos, atlasAllPhotos, atlasBodyPhotos, atlasProHeightPhoto, atlasProHeightSquare,
@@ -72,11 +75,11 @@ import {
   atlasPrices, atlasRegularPrices, atlasSpecs, ATLAS_PRICES_READ_AT, ATLAS_SALE_ON,
   atlasProUrl, atlasAllUrl, atlasBodyUrl, atlasSite, atlasLink, atlasDemoVideoId,
   atlasTheVoiceVideoId,
-  ATLAS_AFFILIATE_URL, ATLAS_PROMO_ACTIVE, ATLAS_DISCOUNT_CODE, ATLAS_BODY_STATUS, type AtlasPhoto,
+  ATLAS_AFFILIATE_URL, ATLAS_PROMO_ACTIVE, ATLAS_DISCOUNT_CODE, ATLAS_DISCOUNT_PCT, ATLAS_BODY_STATUS, type AtlasPhoto,
 } from '@/data/atlas'
 import { getDict } from '@/i18n/dict'
 import { localizePath, numberLocale } from '@/i18n/utils'
-import { breadcrumbLdJson } from '@/lib/ldJson'
+import { breadcrumbLdJson, productLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -133,6 +136,29 @@ const priceNote = a.priceNote.replace(
   '{date}',
   new Date(ATLAS_PRICES_READ_AT).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' }),
 )
+
+// 🎟️ LE CODE — RENDU TRÈS VISIBLE (David, 20/10/2026 : « mon code promo […]
+// n'est pas assez visible ; il faut que la personne entre mon coupon au moment
+// du paiement sur le site du fabricant »). Quatre emplacements, tous pilotés
+// par `ATLAS_PROMO_ACTIVE` : (1) bloc dans le hero, près des prix publics ;
+// (2) pastille « −10 % » sous le prix de chaque modèle + rappel « saisis
+// DAVID-ATLAS au paiement » collé au lien d'achat ; (3) rappel près du lien
+// Atlas Body ; (4) bloc « Mon code chez Atlas » en bas de page.
+// 🚨 AUCUN PRIX REMISÉ CALCULÉ : prix public + « −10 % », rien d'autre — voir
+//    le bloc du code dans src/data/atlas.ts (écart 215/230 € à trancher).
+const showCode = ATLAS_PROMO_ACTIVE && !!ATLAS_DISCOUNT_CODE
+const pct = String(ATLAS_DISCOUNT_PCT)
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+const withPct = (s: string) => s.replaceAll('{pct}', pct)
+// Le code est mis en gras dans la phrase (set:html) : il doit sauter aux yeux.
+const withCodeHtml = (s: string, cls: string) =>
+  esc(withPct(s)).replace('{code}', `<strong class="${cls}">${esc(ATLAS_DISCOUNT_CODE)}</strong>`)
+// La partie après « → » (la remise) passe en or : c'est elle qu'on doit voir.
+const heroPricesHtml = esc(withPct(a.heroCodePrices))
+  .replace(/→\s*(.+)$/, '→ <strong class="font-700 text-gold">$1</strong>')
+  .replace('{pro}', `<strong class="whitespace-nowrap text-cream">${esc(a.pro.name)} ${esc(eur(atlasPrices.pro))}</strong>`)
+  .replace('{all}', `<strong class="whitespace-nowrap text-cream">${esc(a.all.name)} ${esc(eur(atlasPrices.all))}</strong>`)
+const promoText = withPct(a.promoText)
 
 const proRows = [
   { t: a.specs.height, d: height(atlasSpecs.pro.heightMinCm, atlasSpecs.pro.heightMaxCm) },
@@ -199,6 +225,26 @@ const ld = [
     { name: t.common.nav.shop, url: L('/boutique') },
     { name: a.heroTitle, url: L('/pieds-atlas') },
   ]),
+  // 🏷️ Product / Offer : PRIX PUBLIC uniquement (src/data/atlas.ts). Le prix
+  // avec le code dépend d'une saisie au paiement : ce n'est pas l'offre
+  // publique, il n'est donc pas déclaré. Vendeur = Atlas (la commande se
+  // passe chez eux), prix TTC (« Taxes incluses » sur leurs fiches).
+  ...[
+    { id: 'atlas-pro', copy: a.pro, photos: atlasProPhotos, price: atlasPrices.pro, offerUrl: atlasLink(atlasProUrl) },
+    { id: 'atlas-all', copy: a.all, photos: atlasAllPhotos, price: atlasPrices.all, offerUrl: atlasLink(atlasAllUrl) },
+  ].map((pr) =>
+    productLdJson({
+      id: pr.id,
+      name: pr.copy.name,
+      description: pr.copy.text,
+      pageUrl: L('/pieds-atlas'),
+      images: pr.photos.slice(0, 3).map((ph) => ph.src),
+      offers: [{ name: pr.copy.name, price: pr.price, url: pr.offerUrl }],
+      brand: 'Atlas',
+      vatIncluded: true,
+      seller: { name: 'Atlas', url: atlasSite },
+    }),
+  ),
 ]
 ---
 
@@ -316,6 +362,18 @@ const ld = [
             <Button href="#modeles" variant="light">{a.ctaModels}</Button>
           </div>
           <p class="mt-5 max-w-xl text-sm leading-relaxed text-cream/70">{a.heroTryNote}</p>
+          {/* 🎟️ (1) LE CODE, EN HAUT DE PAGE, À CÔTÉ DES PRIX PUBLICS. */}
+          {showCode && (
+            <div class="mt-7 max-w-xl rounded-card border border-gold/40 bg-gold/10 p-5">
+              <p class="inline-flex items-center gap-2 text-xs font-700 uppercase tracking-[0.2em] text-gold">
+                <Icon name="lucide:ticket-percent" class="h-4 w-4 shrink-0" />
+                {withPct(a.heroCodeTitle)}
+              </p>
+              <p class="mt-3 text-cream/85" set:html={heroPricesHtml} />
+              <PromoCodeCopy code={ATLAS_DISCOUNT_CODE} copyLabel={t.shop.copyCode} copiedLabel={t.shop.codeCopied} tone="dark" class="mt-4" />
+              <p class="mt-3 text-sm leading-relaxed text-cream/75">{a.heroCodeText}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -681,11 +739,20 @@ const ld = [
               barré disparaît sans toucher au gabarit. */}
           <div class="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <span class="font-display text-3xl font-700 text-ink">{eur(m.price)}</span>
-            {ATLAS_SALE_ON && m.was > m.price && (
+            {ATLAS_SALE_ON && m.was > m.price ? (
               <Fragment>
                 <s class="font-display text-lg font-600 text-ink-soft/45">{eur(m.was)}</s>
                 <span class="rounded-full bg-copper/15 px-2.5 py-0.5 text-[11px] font-700 uppercase tracking-widest text-copper">{a.priceRegular}</span>
               </Fragment>
+            ) : (
+              <span class="text-xs font-600 uppercase tracking-widest text-ink-soft/55">{a.publicPrice}</span>
+            )}
+            {/* 🎟️ (2a) La remise, en pourcentage seulement — pas de prix calculé. */}
+            {showCode && (
+              <span class="inline-flex items-center gap-1.5 self-center rounded-full bg-copper/15 px-3 py-1 text-xs font-700 text-copper">
+                <Icon name="lucide:badge-percent" class="h-4 w-4 shrink-0" />
+                {withPct(a.codeBadge)}
+              </span>
             )}
           </div>
 
@@ -710,8 +777,20 @@ const ld = [
                  encore, et on n'en invente pas. */}
           <div class="mt-auto pt-6">
             <Button href={tryHref} variant="primary" class="w-full">{a.ctaTryModel}</Button>
+            {/* 🎟️ (2b) LE RAPPEL COLLÉ AU LIEN D'ACHAT : c'est au paiement, chez
+                Atlas, que le code doit être saisi — on le dit juste avant de
+                quitter le site, avec le code prêt à copier. */}
+            {showCode && (
+              <div class="mt-4 rounded-lg border border-copper/30 bg-copper/5 p-3">
+                <p class="flex items-start gap-2 text-sm text-ink-soft/90">
+                  <Icon name="lucide:ticket-percent" class="mt-0.5 h-4 w-4 shrink-0 text-copper" />
+                  <span set:html={withCodeHtml(a.codeReminder, 'font-700 tracking-wide text-ink')} />
+                </p>
+                <PromoCodeCopy code={ATLAS_DISCOUNT_CODE} copyLabel={t.shop.copyCode} copiedLabel={t.shop.codeCopied} class="mt-3" />
+              </div>
+            )}
             <p class="mt-3 text-center">
-              <a href={m.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-600 text-ink-soft/70 underline decoration-ink/20 underline-offset-4 hover:text-copper">
+              <a href={m.href} target="_blank" rel="noopener" class="inline-flex min-h-11 items-center gap-1.5 rounded text-sm font-600 text-ink-soft/70 underline decoration-ink/20 underline-offset-4 hover:text-copper focus-visible:text-copper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper">
                 {m.copy.cta}
                 <Icon name="lucide:external-link" class="h-3.5 w-3.5" />
               </a>
@@ -819,8 +898,18 @@ const ld = [
         <p class="mt-3 text-ink-soft/90">{a.headCompatText}</p>
         <p class="mt-4 text-xs font-600 uppercase tracking-widest text-ink-soft/55">{a.headCompatSource}</p>
       </div>
-      <p class="mt-8 text-center">
-        <a href={atlasLink(atlasBodyUrl)} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-600 text-ink-soft/70 underline decoration-ink/20 underline-offset-4 hover:text-copper">
+      {/* 🎟️ (3) Le code vaut aussi pour l'Atlas Body (mail d'Atlas, 11/09/2026). */}
+      {showCode && (
+        <div class="mx-auto mt-8 max-w-xl rounded-lg border border-copper/30 bg-copper/5 p-3">
+          <p class="flex items-start gap-2 text-sm text-ink-soft/90">
+            <Icon name="lucide:ticket-percent" class="mt-0.5 h-4 w-4 shrink-0 text-copper" />
+            <span set:html={withCodeHtml(a.bodyCodeReminder, 'font-700 tracking-wide text-ink')} />
+          </p>
+          <PromoCodeCopy code={ATLAS_DISCOUNT_CODE} copyLabel={t.shop.copyCode} copiedLabel={t.shop.codeCopied} class="mt-3" />
+        </div>
+      )}
+      <p class:list={['text-center', showCode ? 'mt-3' : 'mt-8']}>
+        <a href={atlasLink(atlasBodyUrl)} target="_blank" rel="noopener" class="inline-flex min-h-11 items-center gap-1.5 rounded text-sm font-600 text-ink-soft/70 underline decoration-ink/20 underline-offset-4 hover:text-copper focus-visible:text-copper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper">
           {a.headCta}
           <Icon name="lucide:external-link" class="h-3.5 w-3.5" />
         </a>
@@ -832,9 +921,8 @@ const ld = [
       C'est la fin du tunnel, et c'est la seule action mise en avant. La
       commande chez Atlas existe toujours — elle est juste à sa place : après,
       et plus discrète. Ne pas ré-échanger les deux.
-      🚧 Le bloc « code de réduction » ne s'affiche QUE si `ATLAS_PROMO_ACTIVE`
-         vaut `true` dans src/data/atlas.ts. Il est ÉTEINT au 20/08/2026 : le
-         code n'existe pas encore chez Atlas. Tout est expliqué là-bas. */}
+      🎟️ (4) Le bloc « code de réduction » s'affiche tant que `ATLAS_PROMO_ACTIVE`
+         vaut `true` dans src/data/atlas.ts (actif depuis le 11/09/2026). */}
   <Section tone="ink" id="essayer">
     <div class="mx-auto max-w-3xl text-center">
       <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{a.tryEyebrow}</p>
@@ -913,33 +1001,20 @@ const ld = [
       <p class="mt-3 text-cream/80">{a.buyText}</p>
       <p class="mt-4 rounded-lg border border-gold/30 bg-gold/10 p-4 text-sm text-cream/80">{a.buyNote}</p>
 
-      {ATLAS_PROMO_ACTIVE && ATLAS_DISCOUNT_CODE && (
+      {showCode && (
         <div class="mt-6 rounded-card border border-gold/40 bg-gold/10 p-5 md:p-6">
           <p class="inline-flex items-center gap-2 text-xs font-700 uppercase tracking-[0.2em] text-gold">
             <Icon name="lucide:ticket-percent" class="h-4 w-4" />
             {a.promoTitle}
           </p>
-          <p class="mt-3 text-sm leading-relaxed text-cream/85">{a.promoText}</p>
-          {/* Même mécanique que la carte ÖKO de la boutique (ShopCard.astro) :
-              le code reste LISIBLE à l'écran, le bouton ne fait que l'économie
-              d'une sélection à la souris. Si le presse-papier est indisponible,
-              rien ne casse — le code est déjà écrit. */}
-          <div class="mt-4 flex flex-wrap items-center gap-3 rounded-lg border border-cream/20 bg-ink/40 px-4 py-3">
-            <code class="font-display text-lg font-700 tracking-widest text-gold">{ATLAS_DISCOUNT_CODE}</code>
-            <button
-              type="button"
-              class="shop-copy-code ml-auto shrink-0 rounded-full bg-gold/20 px-4 py-1.5 text-xs font-700 text-gold transition-colors hover:bg-gold hover:text-ink"
-              data-code={ATLAS_DISCOUNT_CODE}
-              data-copy-label={t.shop.copyCode}
-              data-copied-label={t.shop.codeCopied}
-            >{t.shop.copyCode}</button>
-          </div>
+          <p class="mt-3 text-sm leading-relaxed text-cream/85">{promoText}</p>
+          <PromoCodeCopy code={ATLAS_DISCOUNT_CODE} copyLabel={t.shop.copyCode} copiedLabel={t.shop.codeCopied} tone="dark" class="mt-4" />
           <p class="mt-4 text-xs leading-relaxed text-cream/65">{a.promoDisclosure}</p>
         </div>
       )}
 
       <p class="mt-6">
-        <a href={atlasLink(atlasSite)} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-600 text-cream/70 underline decoration-cream/25 underline-offset-4 hover:text-gold">
+        <a href={atlasLink(atlasSite)} target="_blank" rel="noopener" class="inline-flex min-h-11 items-center gap-1.5 rounded text-sm font-600 text-cream/70 underline decoration-cream/25 underline-offset-4 hover:text-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
           {a.ctaSite}
           <Icon name="lucide:external-link" class="h-3.5 w-3.5" />
         </a>
@@ -955,8 +1030,9 @@ const ld = [
 
 <script>
   // Bouton « copier le code » du bloc de réduction Atlas — même comportement
-  // que celui de la boutique (ShopPage.astro). Le sélecteur ne trouve rien tant
-  // que `ATLAS_PROMO_ACTIVE` est `false` : la boucle ne fait alors rien du tout.
+  // que celui de la boutique (ShopPage.astro). Sert les 4 emplacements du code
+  // (composant PromoCodeCopy). Si `ATLAS_PROMO_ACTIVE` repasse à `false`, le
+  // sélecteur ne trouve rien et la boucle ne fait rien du tout.
   document.querySelectorAll('.shop-copy-code').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const code = btn.getAttribute('data-code') || ''

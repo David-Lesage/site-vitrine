@@ -260,15 +260,25 @@ export function breadcrumbLdJson(trail: { name: string; url: string }[]) {
 // `availability` n'est écrite QUE si le stock lu au build dit ce bois « disponible » :
 // sans information, on ne déclare rien. Aucun avis, aucune note : il n'y en a
 // pas de réels (pas d'aggregateRating / review).
+//
+// 🧩 Options ajoutées le 20/10/2026 pour les pieds Atlas (vendus PAR Atlas,
+// prix TTC) : `brand`, `vatIncluded`, `seller`, et `url` par offre. Sans elles,
+// la sortie Neotone est strictement inchangée (mêmes valeurs par défaut).
 export function productLdJson(p: {
   id: string
   name: string
   description: string
   pageUrl: string
   images: string[]
-  offers: { name: string; price: number; inStock?: boolean }[]
+  offers: { name: string; price: number; inStock?: boolean; url?: string }[]
+  brand?: string
+  vatIncluded?: boolean
+  seller?: { name: string; url?: string }
 }) {
   const url = pageUrl(p.pageUrl)
+  const seller = p.seller
+    ? { '@type': 'Organization', name: p.seller.name, ...(p.seller.url ? { url: p.seller.url } : {}) }
+    : { '@type': 'Person', '@id': `${site.url}/#david-lesage`, name: 'David Lesage' }
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -277,21 +287,21 @@ export function productLdJson(p: {
     description: p.description,
     url,
     image: p.images.map((img) => new URL(img, site.url).toString()),
-    brand: { '@type': 'Brand', name: 'Neotone' },
+    brand: { '@type': 'Brand', name: p.brand ?? 'Neotone' },
     offers: p.offers.map((o) => ({
       '@type': 'Offer',
       name: o.name,
-      url,
+      url: o.url ?? url,
       price: o.price,
       priceCurrency: 'EUR',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
         price: o.price,
         priceCurrency: 'EUR',
-        valueAddedTaxIncluded: false,
+        valueAddedTaxIncluded: p.vatIncluded ?? false,
       },
       ...(o.inStock ? { availability: 'https://schema.org/InStock' } : {}),
-      seller: { '@type': 'Person', '@id': `${site.url}/#david-lesage`, name: 'David Lesage' },
+      seller,
     })),
   }
 }

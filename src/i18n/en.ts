@@ -691,7 +691,7 @@ export const en: Dict = {
     orderEmail: 'Order by email',
     creationsBadge: 'David Lesage signature',
     calcOrder: 'Calculate my price & order',
-    linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: '−5% through me', onesec: 'I actually use it', oko: '−10% with my code', structured: 'I actually use it', atlas: 'Atlas partner' },
+    linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: '−5% through me', onesec: 'I actually use it', oko: '−10% with my code', structured: 'I actually use it', atlas: 'Atlas partner', atlasCode: '−10% with my code' },
     linkCtas: { buy: 'See offer →', listen: 'Listen →', discover: 'Discover →', order: 'Order →', interested: 'I’m interested →' },
     copyCode: 'Copy code',
     codeCopied: 'Copied!',
@@ -733,7 +733,7 @@ export const en: Dict = {
       'tambour': { name: 'Shamanic frame drum · L’Âme du Tambour', description: 'A handcrafted frame drum by Julien (L’Âme du Tambour) — an aligned, passionate and honest maker. Enjoy −5% with the code David-Tambour.' },
       'micro-hisong': { name: 'Hisong AirStudio S1 microphone', description: 'The first all-in-one mobile studio: dual-mode mic, wireless in-ear monitoring, audio interface, wireless receiver for your phone (RX Mini), magnetic stand and case. Perfect for voice, acoustic handpan and gonilélé — a true portable studio.<br><br><strong>Prices (VAT included, shipping to France):</strong> the S1 alone <strong>€270.95</strong>; with the <strong>RX Plus</strong> (+€90) <strong>€360.95</strong>, i.e. <strong>€342.91</strong> with my −5% code and free shipping.<br><br><strong>My advice:</strong> if you want to use the mic to <strong>play live</strong>, you need the <strong>RX Plus</strong> (Universal Pack): it sends the sound to the PA, the mixing desk or a camera.<br><br>Live demos and on-the-spot purchase at my Paris gatherings.' },
       'micro-muling': { name: 'Muling MP1 microphone + HMP-2 preamp', description: 'The MP1 is a contact-condenser microphone made for the acoustic handpan. It comes with the HMP-2 preamp, which hosts up to two MP1 mics — for a clear, precise stereo capture with no feedback. Perfect for stage and recording. (Partnership with the maker in progress — email me to be kept posted.)' },
-      'atlas': { name: 'Atlas handpan stands — Pro & All', description: 'The magnetic tripods from the Italian maker Atlas. The handpan rests on a floating disc with eight covered magnets, with nothing screwed or strapped on. Two models: the <strong>Atlas Pro</strong> in aluminium, telescopic, 1.8 kg, carrying bag included (€215); the <strong>Atlas All</strong> in wood, whose head is held between your legs to play seated, before taking legs and extensions to play standing (€230). I am a partner of the brand — both will be at the showroom to try.' },
+      'atlas': { name: 'Atlas handpan stands — Pro & All', description: 'The magnetic tripods from the Italian maker Atlas. The handpan rests on a floating disc with eight covered magnets, with nothing screwed or strapped on. Two models: the <strong>Atlas Pro</strong> in aluminium, telescopic, 1.8 kg, carrying bag included (€250); the <strong>Atlas All</strong> in wood, whose head is held between your legs to play seated, before taking legs and extensions to play standing (€270). I am a partner of the brand — both will be at the showroom to try.' },
       'phoenix-opus1': { name: 'The Phoenix Alliance — Opus I', description: 'My original album, first opus — a journey blending handpan, voice and organic textures. Stream it on Spotify and every platform.' },
       'phoenix-opus2': { name: 'The Phoenix Alliance — Opus II', description: 'The second opus — the journey continues. Stream it on Spotify and every platform.' },
       'cover': { name: 'Covers — David Lesage', description: 'My covers reimagined on handpan and voice (Shape of My Heart, Imagine, Ave Maria…). Listen on Spotify.' },
@@ -1163,7 +1163,7 @@ export const en: Dict = {
   atlas: {
     title: 'Atlas handpan stands — Atlas Pro & Atlas All | David Lesage',
     description:
-      'The Atlas magnetic handpan stands, made in Italy: Atlas Pro in aluminium (€250) and Atlas All in wood (€270). Specifications, photos, and a chance to try them in Paris with David Lesage, a partner of the brand.',
+      'The Atlas magnetic handpan stands, made in Italy: Atlas Pro in aluminium (€250) and Atlas All in wood (€270), 10% off with the code DAVID-ATLAS. Specifications, photos, and a chance to try them in Paris with David Lesage, a partner of the brand.',
     back: '← Back to the shop',
     eyebrow: 'Partner · Atlas Handpan',
     heroProCaption: 'Aluminium — the same stand, extended and folded',
@@ -1375,8 +1375,18 @@ export const en: Dict = {
     },
     heightValue: '{min} cm to {max} cm',
     weightValue: '{w} kg',
-    priceNote: 'Prices read on Atlas’s website on {date}, during a sale. The price that counts is the one shown by Atlas when you order — shipping is extra.',
+    priceNote: 'Public prices (VAT included) read on Atlas’s website on {date}. The price that counts is the one shown by Atlas when you order — shipping is extra.',
     priceRegular: 'usual price',
+    // 🎟️ The code, made visible (20/10/2026). {pct}/{code}/{pro}/{all} are
+    // filled in by the page from src/data/atlas.ts. No discounted price is
+    // written: only the public price and “−10%”.
+    publicPrice: 'public price',
+    codeBadge: '−{pct}% with my code',
+    heroCodeTitle: 'My code at Atlas: −{pct}%',
+    heroCodePrices: 'Public price: {pro} · {all} → −{pct}% with my code',
+    heroCodeText: 'Valid on all Atlas products, Atlas Body included. Enter it at checkout, on the Atlas website.',
+    codeReminder: 'At checkout on the Atlas website, enter my code {code}: −{pct}%.',
+    bodyCodeReminder: 'My code {code} also works on the Atlas Body: −{pct}% at checkout on the Atlas website.',
     pro: {
       name: 'Atlas Pro',
       tagline: 'Aluminium, telescopic, bag included',
@@ -1461,7 +1471,7 @@ export const en: Dict = {
       },
       {
         t: 'Atlas Body — the head on its own',
-        d: 'Atlas also lists it separately (€140, usually €165). It is what you look at if you only want lap playing, or if you want to grow a wooden set: the legs + extensions kit (€90) turns it into an Atlas Short, then an Atlas All.',
+        d: 'Atlas also lists it separately (€165). It is what you look at if you only want lap playing, or if you want to grow a wooden set: the legs + extensions kit (€105) turns it into an Atlas Short, then an Atlas All.',
       },
     ],
     headCompatTitle: 'All the parts are fully compatible',
@@ -1500,19 +1510,13 @@ export const en: Dict = {
     showroomPhotoCaption:
       'The showroom set up before a gathering: my two Yishama acoustic handpans and my two {neotone} electronic handpans, each on its own stand — four instruments, four different stands. The two Atlas stands have since taken their place there, and that is where you will be able to try them.',
 
-    // ── 🎟️ THE DISCOUNT CODE — COPY READY, BLOCK SWITCHED OFF ──────────────
-    // ⛔️ NONE of this is displayed while `ATLAS_PROMO_ACTIVE` is `false` in
-    //    src/data/atlas.ts. As of 20/08/2026 the code DOES NOT EXIST yet at
-    //    Atlas: showing it would have visitors type a code that gets refused.
-    // ✅ These sentences are written to STAY TRUE on the day it is switched on:
-    //    no amount and no percentage are announced, and David's commission is
-    //    stated, not hidden.
-    // 🏷️ The code itself (`DAVID-ATLAS`, src/data/atlas.ts) was chosen on
-    //    20/08/2026 for the same reason: it announces no figure at all. Never
-    //    write here an amount that the code would let the reader "guess".
+    // ── 🎟️ THE DISCOUNT CODE — ACTIVE SINCE 11/09/2026 ─────────────────────
+    // ✅ Confirmed by Atlas by email (11/09/2026): DAVID-ATLAS, −10% on all
+    //    products, Atlas Body included. David's commission is stated, never
+    //    quantified. The block is still driven by `ATLAS_PROMO_ACTIVE`.
     promoTitle: 'My code at Atlas',
     promoText:
-      'Here is my code, to enter at checkout on the Atlas website — whether you order online or after coming to try them at the showroom.',
+      'Here is my code: −{pct}% on all Atlas products, Atlas Body included. Enter it at checkout on the Atlas website — whether you order online or after coming to try them at the showroom.',
     promoDisclosure:
       'I am an Atlas affiliate: when an order goes through this code, I earn a commission. It adds nothing to what you pay, and it changes nothing about what I wrote above.',
 

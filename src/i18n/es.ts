@@ -552,7 +552,8 @@ export const es: Dict = {
       "onesec": "Realmente uso",
       "oko": "-10% con mi código",
       "structured": "Realmente uso",
-      "atlas": "Socio Atlas"
+      "atlas": "Socio Atlas",
+      "atlasCode": "−10 % con mi código"
     },
     "linkCtas": {
       "buy": "Ver la oferta →",
@@ -666,7 +667,7 @@ export const es: Dict = {
       },
       "atlas": {
         "name": "Soportes Atlas Handpan: profesionales y todos",
-        "description": "Los trípodes magnéticos del fabricante italiano Atlas. El handpan se apoya sobre un disco flotante con ocho imanes protegidos, sin tornillos ni correas. Hay dos modelos disponibles: el <strong>Atlas Pro</strong>, de aluminio, telescópico, de 1,8 kg, con bolsa de transporte incluida (215 €); y el <strong>Atlas All</strong>, de madera, cuya cabeza se ajusta entre las patas para tocar sentado, antes de acoplar las patas y extensiones para tocar de pie (230 €). Soy socio de la marca; ambos modelos estarán disponibles para probar en la sala de exposición."
+        "description": "Los trípodes magnéticos del fabricante italiano Atlas. El handpan se apoya sobre un disco flotante con ocho imanes protegidos, sin tornillos ni correas. Hay dos modelos disponibles: el <strong>Atlas Pro</strong>, de aluminio, telescópico, de 1,8 kg, con bolsa de transporte incluida (250 €); y el <strong>Atlas All</strong>, de madera, cuya cabeza se ajusta entre las patas para tocar sentado, antes de acoplar las patas y extensiones para tocar de pie (270 €). Soy socio de la marca; ambos modelos estarán disponibles para probar en la sala de exposición."
       },
       "phoenix-opus1": {
         "name": "La Alianza Fénix — Opus I",
@@ -1102,7 +1103,7 @@ export const es: Dict = {
   },
   "atlas": {
     "title": "Soportes Atlas Handpan: Atlas Pro y Atlas All | David Lesage",
-    "description": "Trípodes magnéticos Atlas para handpans, fabricados en Italia: Atlas Pro en aluminio (250 €) y Atlas All en madera (270 €). Características, fotos y una reseña en París con David Lesage, socio de la marca.",
+    "description": "Trípodes magnéticos Atlas para handpans, fabricados en Italia: Atlas Pro en aluminio (250 €) y Atlas All en madera (270 €), −10 % con el código DAVID-ATLAS. Características, fotos y prueba en París con David Lesage, socio de la marca.",
     "back": "← Volver a la tienda",
     "eyebrow": "Socio · Atlas Handpan",
     "heroProCaption": "Aluminio: el mismo soporte, extendido y plegado.",
@@ -1210,8 +1211,15 @@ export const es: Dict = {
     },
     "heightValue": "desde {min} cm hasta {max} cm",
     "weightValue": "{w} kg",
-    "priceNote": "Los precios con IVA incluido se obtuvieron del sitio web Atlas el {date} durante una promoción. El precio final es el que se muestra en Atlas al momento de realizar su pedido, más los gastos de envío.",
+    "priceNote": "Precios públicos con IVA incluido, consultados en la web de Atlas el {date}. El precio que cuenta es el que muestra Atlas al hacer tu pedido; los gastos de envío son adicionales.",
     "priceRegular": "precio habitual",
+    "publicPrice": "precio público",
+    "codeBadge": "−{pct} % con mi código",
+    "heroCodeTitle": "Mi código en Atlas: −{pct} %",
+    "heroCodePrices": "Precio público: {pro} · {all} → −{pct} % con mi código",
+    "heroCodeText": "Válido en todos los productos Atlas, Atlas Body incluido. Introdúcelo al pagar, en la web de Atlas.",
+    "codeReminder": "Al pagar en la web de Atlas, introduce mi código {code}: −{pct} %.",
+    "bodyCodeReminder": "Mi código {code} también vale para el Atlas Body: −{pct} % al pagar en la web de Atlas.",
     "pro": {
       "name": "Atlas Pro",
       "tagline": "Aluminio, telescópico, incluye bolsa.",
@@ -1269,7 +1277,7 @@ export const es: Dict = {
       },
       {
         "t": "Cuerpo Atlas: solo la cabeza",
-        "d": "Atlas también vende la referencia por separado (140 €, normalmente 165 €). Esta es la opción ideal si solo quieres jugar en tu regazo o si quieres mejorar un escala de madera: el kit de pies y extensiones (90 €) lo transforma en Atlas Short y, posteriormente, en Atlas All."
+        "d": "Atlas también vende la referencia por separado (165 €). Esta es la opción ideal si solo quieres jugar en tu regazo o si quieres mejorar un escala de madera: el kit de pies y extensiones (105 €) lo transforma en Atlas Short y, posteriormente, en Atlas All."
       }
     ],
     "headCompatTitle": "Todas las piezas son compatibles entre sí.",
@@ -1289,7 +1297,7 @@ export const es: Dict = {
     "showroomAgendaCta": "Ver próximas fechas",
     "showroomPhotoCaption": "La sala de exposición preparada antes de una reunión: mis dos handpans acústicos Yishama y mis dos handpans electrónicos {neotone}, cada uno en su propio soporte; cuatro instrumentos, cuatro soportes diferentes. Los dos handpans Atlas se unieron después, y ahí es donde se pueden probar.",
     "promoTitle": "Mi código en Atlas",
-    "promoText": "Aquí está mi código, que deberá introducir al realizar el pago en la página web Atlas, tanto si realiza el pedido en línea como si viene a probárselos a la tienda.",
+    "promoText": "Aquí está mi código: −{pct} % en todos los productos Atlas, Atlas Body incluido. Se introduce al pagar en la web de Atlas, tanto si haces el pedido en línea como si vienes antes a probarlos a la sala de exposición.",
     "promoDisclosure": "Soy afiliado de Atlas: cuando se realiza un pedido utilizando este código, recibo una comisión. Esto no añade nada a tu factura ni modifica nada de lo que he escrito anteriormente.",
     "alt": {
       "showroomYishama": "David Lesage en la sala de exposiciones de Nid en París: detrás de él, dos handpans acústicos de acero Yishama, cada uno montado sobre su trípode negro sobre una alfombra trenzada, en una gran sala blanca con arcos iluminados y suelo de parqué claro.",

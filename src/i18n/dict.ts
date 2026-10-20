@@ -803,7 +803,7 @@ const fr = {
     orderEmail: 'Commander par email',
     creationsBadge: 'Signature David Lesage',
     calcOrder: 'Calculer mon prix & commander',
-    linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: '−5 % via moi', onesec: 'J’utilise vraiment', oko: '−10 % avec mon code', structured: 'J’utilise vraiment', atlas: 'Partenaire Atlas' },
+    linkTags: { helloasso: 'Sur HelloAsso', streaming: 'En streaming', hisong: '−5 % Hisong', yishama: 'Ambassadeur Yishama', nowgroove: 'Now Groove', ondemand: 'Sur demande', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'Sur Spotify', limited: 'Édition limitée', app: 'Application', muling: '−5 % via moi', onesec: 'J’utilise vraiment', oko: '−10 % avec mon code', structured: 'J’utilise vraiment', atlas: 'Partenaire Atlas', atlasCode: '−10 % avec mon code' },
     linkCtas: { buy: 'Voir l’offre →', listen: 'Écouter →', discover: 'Découvrir →', order: 'Commander →', interested: 'Ce micro m’intéresse →' },
     copyCode: 'Copier le code',
     codeCopied: 'Copié !',
@@ -849,7 +849,7 @@ const fr = {
       'tambour': { name: 'Tambour chamanique · L’Âme du Tambour', description: 'Tambour-cadre artisanal de Julien (L’Âme du Tambour) — un fabricant aligné, passionné et intègre. Profite de −5 % avec le code David-Tambour.' },
       'micro-hisong': { name: 'Micro Hisong AirStudio S1', description: 'Le premier studio mobile tout-en-un : micro double mode, retours sans fil, interface audio, récepteur sans fil pour téléphone (RX Mini), support magnétique et étui. Idéal pour la voix, le handpan acoustique et le gonilélé — un véritable studio portatif.<br><br><strong>Prix (TTC, livraison en France) :</strong> le S1 seul <strong>270,95 €</strong> ; avec le <strong>RX Plus</strong> (+90 €) <strong>360,95 €</strong>, soit <strong>342,91 €</strong> avec mon code −5 % et la livraison offerte.<br><br><strong>Mon conseil :</strong> si tu veux utiliser le micro pour <strong>jouer en live</strong>, il te faut le <strong>RX Plus</strong> (Universal Pack) : c’est lui qui sort le son vers la sono, la table de mixage ou une caméra.<br><br>Démonstrations et achat en direct à mes rencontres à Paris.' },
       'micro-muling': { name: 'Micro Muling MP1 + préampli HMP-2', description: 'Le MP1 est un micro contact-condensateur conçu pour le handpan acoustique. Fourni avec le préampli HMP-2, qui accueille jusqu’à deux micros MP1 — pour une captation stéréo, claire et précise, sans Larsen. Idéal pour la scène et l’enregistrement. (Contractualisation en cours avec le fabricant : écris-moi pour être tenu au courant.)' },
-      'atlas': { name: 'Pieds de handpan Atlas — Pro & All', description: 'Les trépieds magnétiques du fabricant italien Atlas. Le handpan se pose sur un disque flottant à huit aimants protégés, sans vis ni sangle. Deux modèles : l’<strong>Atlas Pro</strong> en aluminium, télescopique, 1,8 kg, sac de transport inclus (215 €) ; l’<strong>Atlas All</strong> en bois, dont la tête se coince entre les jambes pour jouer assis, avant de recevoir pieds et rallonges pour jouer debout (230 €). Je suis partenaire de la marque — les deux seront à essayer au showroom.' },
+      'atlas': { name: 'Pieds de handpan Atlas — Pro & All', description: 'Les trépieds magnétiques du fabricant italien Atlas. Le handpan se pose sur un disque flottant à huit aimants protégés, sans vis ni sangle. Deux modèles : l’<strong>Atlas Pro</strong> en aluminium, télescopique, 1,8 kg, sac de transport inclus (250 €) ; l’<strong>Atlas All</strong> en bois, dont la tête se coince entre les jambes pour jouer assis, avant de recevoir pieds et rallonges pour jouer debout (270 €). Je suis partenaire de la marque — les deux seront à essayer au showroom.' },
       'phoenix-opus1': { name: 'L’Alliance du Phoenix — Opus I', description: 'Mon album original, premier opus — un voyage entre handpan, voix et textures organiques. À écouter sur Spotify et toutes les plateformes.' },
       'phoenix-opus2': { name: 'L’Alliance du Phoenix — Opus II', description: 'Le second opus — la suite du voyage musical. À écouter sur Spotify et toutes les plateformes.' },
       'cover': { name: 'Reprises — David Lesage', description: 'Mes reprises revisitées au handpan et à la voix (Shape of My Heart, Imagine, Ave Maria…). À écouter sur Spotify.' },
@@ -1343,7 +1343,7 @@ const fr = {
   atlas: {
     title: 'Pieds de handpan Atlas — Atlas Pro & Atlas All | David Lesage',
     description:
-      'Les trépieds magnétiques Atlas pour handpan, fabriqués en Italie : Atlas Pro en aluminium (250 €) et Atlas All en bois (270 €). Caractéristiques, photos et essai à Paris avec David Lesage, partenaire de la marque.',
+      'Les trépieds magnétiques Atlas pour handpan, fabriqués en Italie : Atlas Pro en aluminium (250 €) et Atlas All en bois (270 €), −10 % avec le code DAVID-ATLAS. Caractéristiques, photos et essai à Paris avec David Lesage, partenaire de la marque.',
     back: '← Retour à la boutique',
     eyebrow: 'Partenaire · Atlas Handpan',
     // Légendes du diptyque du hero : elles disent ce que MONTRE l'image
@@ -1625,8 +1625,20 @@ const fr = {
     heightValue: 'de {min} cm à {max} cm',
     weightValue: '{w} kg',
     // {date} est remplacé par la page depuis `ATLAS_PRICES_READ_AT`.
-    priceNote: 'Prix TTC relevés sur le site d’Atlas le {date}, pendant une promotion. Le prix qui fait foi reste celui affiché chez Atlas au moment de ta commande — frais de port en plus.',
+    priceNote: 'Prix publics TTC relevés sur le site d’Atlas le {date}. Le prix qui fait foi reste celui affiché chez Atlas au moment de ta commande — frais de port en plus.',
     priceRegular: 'prix habituel',
+    // ── 🎟️ LE CODE, RENDU VISIBLE (20/10/2026, demande de David) ──────────
+    // {pct} et {code} sont remplacés par la page depuis src/data/atlas.ts
+    // (`ATLAS_DISCOUNT_PCT`, `ATLAS_DISCOUNT_CODE`). {pro} / {all} = « Atlas
+    // Pro 250 € » etc., construits depuis `atlasPrices`.
+    // 🚨 Aucun prix remisé n'est écrit : seulement le prix public et « −10 % ».
+    publicPrice: 'prix public',
+    codeBadge: '−{pct} % avec mon code',
+    heroCodeTitle: 'Mon code chez Atlas : −{pct} %',
+    heroCodePrices: 'Prix public : {pro} · {all} → −{pct} % avec mon code',
+    heroCodeText: 'Valable sur tous les produits Atlas, Atlas Body compris. Saisis-le au moment du paiement, sur le site d’Atlas.',
+    codeReminder: 'Au moment du paiement sur le site d’Atlas, saisis mon code {code} : −{pct} %.',
+    bodyCodeReminder: 'Mon code {code} marche aussi sur l’Atlas Body : −{pct} % au paiement sur le site d’Atlas.',
     pro: {
       name: 'Atlas Pro',
       tagline: 'Aluminium, télescopique, sac fourni',
@@ -1726,7 +1738,7 @@ const fr = {
       },
       {
         t: 'Atlas Body — la tête seule',
-        d: 'Atlas la référence aussi séparément (140 €, habituellement 165 €). C’est ce qu’on regarde quand on ne veut que le jeu sur les genoux, ou quand on veut faire évoluer une gamme bois : le kit pieds + rallonges (90 €) la transforme en Atlas Short, puis en Atlas All.',
+        d: 'Atlas la référence aussi séparément (165 €). C’est ce qu’on regarde quand on ne veut que le jeu sur les genoux, ou quand on veut faire évoluer une gamme bois : le kit pieds + rallonges (105 €) la transforme en Atlas Short, puis en Atlas All.',
       },
     ],
     // ── 🚧 SECTION SUSCEPTIBLE D'ÉVOLUER — VÉRIFIER AVANT PUBLICATION ───────
@@ -1793,21 +1805,17 @@ const fr = {
     showroomPhotoCaption:
       'Le showroom installé avant une rencontre : mes deux handpans acoustiques Yishama et mes deux handpans électroniques {neotone}, chacun sur son pied — quatre instruments, quatre pieds différents. Les deux Atlas y ont depuis pris leur place, et c’est là que tu pourras les essayer.',
 
-    // ── 🎟️ LE CODE DE RÉDUCTION — TEXTES PRÊTS, BLOC ÉTEINT ────────────────
-    // ⛔️ RIEN DE CE QUI SUIT N'EST AFFICHÉ tant que `ATLAS_PROMO_ACTIVE` vaut
-    //    `false` dans src/data/atlas.ts. Au 20/08/2026 le code N'EXISTE PAS
-    //    encore chez Atlas : l'afficher ferait saisir aux visiteurs un code qui
-    //    serait refusé au paiement.
-    // ✅ CES PHRASES SONT ÉCRITES POUR RESTER VRAIES LE JOUR DE L'ACTIVATION :
-    //    aucun montant ni pourcentage n'est annoncé, et la commission de David
-    //    est dite, pas cachée. Si Atlas confirme un pourcentage, c'est ICI qu'on
-    //    l'ajoute — pas ailleurs.
+    // ── 🎟️ LE CODE DE RÉDUCTION — ACTIF DEPUIS LE 11/09/2026 ────────────────
+    // ✅ Atlas a confirmé par mail (11/09/2026) : DAVID-ATLAS, −10 % sur tous
+    //    les produits, Atlas Body compris. Le pourcentage est donc annoncé
+    //    ({pct}, depuis `ATLAS_DISCOUNT_PCT`). La commission de David est dite,
+    //    jamais chiffrée. Le bloc reste piloté par `ATLAS_PROMO_ACTIVE`.
     // 🏷️ Le code lui-même (`DAVID-ATLAS`, src/data/atlas.ts) a été choisi le
     //    20/08/2026 pour la même raison : il n'annonce aucun chiffre. Ne pas
     //    écrire ici de montant que le code laisserait « deviner ».
     promoTitle: 'Mon code chez Atlas',
     promoText:
-      'Voici mon code, à saisir au moment du paiement sur le site d’Atlas — que tu commandes en ligne ou après être venu les essayer au showroom.',
+      'Voici mon code : −{pct} % sur tous les produits Atlas, Atlas Body compris. Il se saisit au moment du paiement sur le site d’Atlas — que tu commandes en ligne ou après être venu les essayer au showroom.',
     promoDisclosure:
       'Je suis affilié à Atlas : quand une commande passe par ce code, je touche une commission. Ça ne t’ajoute rien à payer, et ça ne change rien à ce que je t’ai écrit plus haut.',
 

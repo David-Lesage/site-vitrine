@@ -1,0 +1,40 @@
+---
+// Pastille « code de réduction + bouton Copier » — UNE seule façon de faire.
+// Même gabarit que le bloc code de /micro-hisong (HisongPage.astro) : le code
+// reste LISIBLE à l'écran, le bouton n'économise qu'une sélection à la souris.
+// Si le presse-papier est indisponible, rien ne casse : le code est écrit.
+//
+// ⚙️ Le comportement vient du script de la page qui l'affiche
+//    (`document.querySelectorAll('.shop-copy-code')`, cf. AtlasPage.astro,
+//    HisongPage.astro, ShopPage.astro) — la classe `shop-copy-code` et les
+//    attributs `data-*` sont donc le contrat, ne pas les renommer.
+// 👆 Tactile ET souris : bouton ≥ 44 px (`min-h-11`), focus clavier visible
+//    et calqué sur le survol. `aria-live` annonce « Copié ! » aux lecteurs
+//    d'écran quand le libellé change.
+interface Props {
+  code: string
+  copyLabel: string
+  copiedLabel: string
+  /** `light` sur fond crème, `dark` sur fond encre (hero, bas de page). */
+  tone?: 'light' | 'dark'
+  class?: string
+}
+const { code, copyLabel, copiedLabel, tone = 'light', class: extra } = Astro.props
+const box = tone === 'dark' ? 'border-cream/20 bg-ink/40' : 'border-copper/30 bg-copper/5'
+const txt = tone === 'dark' ? 'text-gold' : 'text-ink'
+const btn =
+  tone === 'dark'
+    ? 'bg-gold/20 text-gold hover:bg-gold hover:text-ink focus-visible:bg-gold focus-visible:text-ink focus-visible:outline-gold'
+    : 'bg-copper/15 text-copper hover:bg-copper hover:text-cream focus-visible:bg-copper focus-visible:text-cream focus-visible:outline-copper'
+---
+<div class:list={['flex flex-wrap items-center justify-between gap-2 rounded-lg border px-3 py-2.5 sm:gap-3 sm:px-4', box, extra]}>
+  <strong class:list={['break-all font-display text-base font-700 tracking-wide sm:text-lg', txt]}>{code}</strong>
+  <button
+    type="button"
+    class:list={['shop-copy-code inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-full px-3 text-sm sm:px-4 font-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', btn]}
+    data-code={code}
+    data-copy-label={copyLabel}
+    data-copied-label={copiedLabel}
+    aria-live="polite"
+  >{copyLabel}</button>
+</div>

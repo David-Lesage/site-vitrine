@@ -53,44 +53,42 @@
 //
 export const ATLAS_AFFILIATE_URL = ''
 
-// ── 🎟️ CODE DE RÉDUCTION — CONSTRUIT, PRÊT, MAIS VOLONTAIREMENT ÉTEINT ─────
+// ── 🎟️ CODE DE RÉDUCTION — ACTIF CHEZ ATLAS DEPUIS LE 11/09/2026 ───────────
 //
-// 🚨 AU 20/08/2026, CE CODE N'EXISTE PAS ENCORE CHEZ ATLAS.
-//    Il est écrit ici pour que le bloc soit fini et visible en local, PAS pour
-//    être publié. L'afficher aujourd'hui enverrait des visiteurs saisir un code
-//    qui serait REFUSÉ au paiement : David promettrait une remise imaginaire à
-//    des gens qui viennent de lui faire confiance. C'est le seul vrai risque de
-//    cette page, et c'est pour ça qu'il y a un interrupteur.
+// ✅ SOURCE : mail d'Atlas (info@atlashandpan.com) à David, 11/09/2026 :
+//    « We've set up your discount code DAVID-ATLAS and it is already active
+//      […] It offers a 10% discount to your customers on all Atlas products,
+//      including the Atlas Body. »
+//    → code `DAVID-ATLAS`, −10 %, TOUS les produits Atlas, Atlas Body compris.
+//    Le pourcentage est donc écrit noir sur blanc par Atlas : la page et la
+//    boutique peuvent l'annoncer (`ATLAS_DISCOUNT_PCT`).
 //
-// ▶️ POUR VOIR LE RENDU EN LOCAL (sans rien publier) :
-//      passer `ATLAS_PROMO_ACTIVE` à `true`, lancer `npm run dev`, regarder
-//      /pieds-atlas (bloc « Mon code chez Atlas », en bas de page) — puis
-//      REMETTRE `false` avant de committer.
+// 📣 20/10/2026 — DEMANDE DE DAVID : « mon code promo […] n'est pas assez
+//    visible ; il faut que la personne entre mon coupon au moment du paiement
+//    sur le site du fabricant ». Le code est donc affiché en haut de
+//    /pieds-atlas (bloc près des prix), à côté de CHAQUE lien d'achat, en bas
+//    de page, et sur la carte Atlas de la boutique.
 //
-// ✅ POUR L'ACTIVER POUR DE BON, LE JOUR OÙ ATLAS CONFIRME LE CODE :
-//      1. vérifier le code réellement créé par Atlas et le recopier dans
-//         `ATLAS_DISCOUNT_CODE` (il peut être différent de `DAVID-ATLAS`) ;
-//      2. passer `ATLAS_PROMO_ACTIVE` à `true`. C'est tout : le bloc apparaît
-//         sur /pieds-atlas ET la pastille « copier le code » apparaît sur la
-//         carte Atlas de la boutique (src/data/shop.ts lit les deux constantes).
-//      3. si — et seulement si — Atlas annonce un POURCENTAGE, l'écrire dans
-//         `atlas.promoText` (dict.ts + en.ts) et dans `shop.linkTags.atlas`.
-//         Tant qu'il n'est pas confirmé, la page dit « une réduction » sans
-//         chiffre : mieux vaut rien que faux.
+// 🚨 PAS DE PRIX REMISÉ CALCULÉ. Au 20/10/2026, David parlait de « 215 et
+//    230 € avec mon code » pour un prix public de « 250/270 € ». Or 250 et
+//    270 € −10 % donnent 225 et 243 €, pas 215 et 230 (215/230 € étaient les
+//    prix PROMOTIONNELS affichés par Atlas au relevé du 20/08/2026). Tant que
+//    David n'a pas tranché, le site affiche le PRIX PUBLIC lu chez Atlas et
+//    « −10 % avec mon code », sans montant remisé que personne n'a confirmé.
 //
-// 🏷️ POURQUOI `DAVID-ATLAS` ET PLUS `LESAGE-10` (David, 20/08/2026) :
-//    « comme ça, ça ne fait aucune promesse ». `LESAGE-10` laissait lire un
-//    montant (10 % ? 10 € ?) qu'AUCUNE source ne confirme — le visiteur aurait
-//    déduit une remise que Marco n'a jamais annoncée. `DAVID-ATLAS` n'annonce
-//    rien : il identifie seulement la provenance de la commande. Si un jour un
-//    code chiffré est proposé, ne le recopier ici QUE si le chiffre est écrit
-//    noir sur blanc par Atlas.
+// 🔙 HISTORIQUE (gardé pour comprendre les tournures) : au 20/08/2026 le code
+//    n'existait pas encore ; l'interrupteur `ATLAS_PROMO_ACTIVE` le masquait
+//    pour ne pas faire saisir un code refusé au paiement. Le nom `DAVID-ATLAS`
+//    (plutôt que `LESAGE-10`) avait été choisi par David parce qu'il « ne fait
+//    aucune promesse ». L'interrupteur reste : le repasser à `false` masque le
+//    code PARTOUT (page, boutique, llms.txt) si Atlas le désactive un jour.
 //
-// ⚠️ Les textes `promoTitle` / `promoText` / `promoDisclosure` sont rédigés pour
-//    rester VRAIS le jour de l'activation : ils ne promettent aucun montant, et
-//    ils disent que David touche une commission. Ne pas les « vendre » plus.
+// ⚠️ La commission d'affiliation n'est jamais chiffrée sur le site : seule la
+//    mention générique « je touche une commission » (`promoDisclosure`) existe.
 export const ATLAS_PROMO_ACTIVE = true
 export const ATLAS_DISCOUNT_CODE = 'DAVID-ATLAS'
+/** −10 % — chiffre écrit par Atlas dans le mail du 11/09/2026. */
+export const ATLAS_DISCOUNT_PCT = 10
 
 // Fiches officielles (repli tant que le lien d'affiliation n'existe pas).
 export const atlasSite = 'https://atlashandpan.com/en'
@@ -159,31 +157,31 @@ export const atlasDemoVideoId: string | null = 's1lFN3PDEnA'
 //    aucun VideoObject n'est émis pour elle.
 export const atlasTheVoiceVideoId: string | null = '_v60Ow5_axY'
 
-// ── PRIX (relevés le 20/08/2026 sur les fiches officielles, en euros) ──────
-// « Taxes included » / « Taxes incluses » sur toutes les fiches → prix TTC.
-// Les frais de port sont EN PLUS et calculés au paiement (voir `atlasShipping`).
+// ── PRIX PUBLICS (relevés le 20/10/2026, en euros TTC) ─────────────────────
+// SOURCE : catalogue Shopify d'Atlas, https://www.atlashandpan.com/products.json
+//   (devise du panier : EUR) — Atlas Pro 250 €, Atlas All 270 €, Atlas Body
+//   165 €, Atlas Short 230 €, Kit pieds + rallonges 105 €, aucun prix barré
+//   (`compare_at_price` vide) : la promotion du 20/08/2026 est TERMINÉE.
+// Les fiches disent « Taxes incluses » → prix TTC. Port en plus (`atlasShipping`).
 //
-// 🚨 UNE PROMOTION ÉTAIT EN COURS SUR TOUT LE CATALOGUE au moment du relevé :
-//    Atlas affiche un prix barré (« prix habituel ») et un prix promotionnel.
-//    `atlasPrices` = ce qu'on paie aujourd'hui · `atlasRegularPrices` = le prix barré.
-//    La page affiche les deux, DATÉS, et rappelle que le prix qui fait foi est
-//    celui d'Atlas au moment de la commande.
-// ⚠️ À RE-VÉRIFIER : quand la promotion s'arrêtera, `atlasPrices` deviendra faux
-//    dans le sens le plus gênant (annoncer moins cher que la réalité). Recharger
-//    les 3 fiches, mettre à jour les deux tableaux ET `ATLAS_PRICES_READ_AT`.
-//    Si la promo est finie : recopier `atlasRegularPrices` dans `atlasPrices` et
-//    passer `ATLAS_SALE_ON` à false — le prix barré disparaît tout seul.
-export const ATLAS_PRICES_READ_AT = '2026-08-20'
-export const ATLAS_SALE_ON = true
+// 🔙 Au 20/08/2026 une promotion était en cours (Pro 215 €, All 230 €, Body
+//    140 €, prix barrés 250/270/165 €) : c'est d'où viennent les « 215/230 € »
+//    encore cités par David le 20/10/2026 — voir le bloc du code plus haut.
+// ⚠️ SI ATLAS RELANCE UNE PROMOTION : mettre le prix promo dans `atlasPrices`,
+//    le prix habituel dans `atlasRegularPrices`, passer `ATLAS_SALE_ON` à true
+//    et mettre à jour `ATLAS_PRICES_READ_AT` — le prix barré réapparaît seul.
+//    La page affiche toujours « le prix qui fait foi est celui d'Atlas ».
+export const ATLAS_PRICES_READ_AT = '2026-10-20'
+export const ATLAS_SALE_ON = false
 
 export const atlasPrices = {
-  pro: 215,
-  all: 230,
+  pro: 250,
+  all: 270,
   /** Vendu SÉPARÉMENT — voir `ATLAS_BODY_STATUS` plus bas. */
-  body: 140,
+  body: 165,
 } as const
 
-/** Prix barrés (« prix habituel ») affichés par Atlas pendant la promotion. */
+/** Prix barrés (« prix habituel ») — utilisés seulement si `ATLAS_SALE_ON`. */
 export const atlasRegularPrices = {
   pro: 250,
   all: 270,
@@ -382,14 +380,16 @@ export const atlasAllCover = atlasAllPhotos[0]
 //
 //   · ATLAS ALL   → le Body est **INCLUS**. La gamme bois est modulaire :
 //                   Body (seul) → + pieds = Atlas Short → + rallonges = Atlas All.
-//   · ATLAS SHORT → le Body est **INCLUS** (modèle intermédiaire, 195 €).
-//   · ATLAS BODY  → **vendu SEUL à part**, 140 € (prix habituel 165 €), pour qui
+//   · ATLAS SHORT → le Body est **INCLUS** (modèle intermédiaire, 195 € au
+//                   20/08/2026 en promotion ; 230 € au 20/10/2026).
+//   · ATLAS BODY  → **vendu SEUL à part**, 165 € au 20/10/2026 (140 € pendant
+//                   la promotion du 20/08/2026), pour qui
 //                   ne veut que le jeu sur les genoux, ou veut compléter plus tard.
 //   · ATLAS PRO   → ❌ **NON INCLUSE — CONFIRMÉ PAR LE FABRICANT.**
 //                   Marco Agri, créateur d'Atlas, à David le 20/08/2026 :
 //                   « but atlas pro doesn't come with the wood part. »
 //                   L'acheteur d'un Pro qui veut jouer assis doit commander
-//                   l'Atlas Body EN PLUS (140 €). C'est LE point qui fait la
+//                   l'Atlas Body EN PLUS (165 € au 20/10/2026). C'est LE point qui fait la
 //                   différence entre un client satisfait et un client qui
 //                   découvre une pièce manquante à la réception.
 //                   ✅ MAIS CE N'EST PAS UN CUL-DE-SAC : « all parts are fully
@@ -407,7 +407,8 @@ export const atlasAllCover = atlasAllPhotos[0]
 //     positions: on your lap, seated, or standing. »
 //   · Fiche « Kit Pieds + Rallonges » (90 €) — « vous pouvez transformer votre
 //     Atlas Body en Atlas Short, voire même en Atlas All. »
-//   · Arithmétique cohérente : Body 140 € + Kit 90 € = 230 € = prix de l'Atlas All.
+//   · Arithmétique cohérente : Body 140 € + Kit 90 € = 230 € = prix de l'Atlas All
+//     (promotion du 20/08/2026) ; au 20/10/2026 : Body 165 € + Kit 105 € = 270 €.
 export const ATLAS_BODY_STATUS = {
   includedInAll: true,
   includedInShort: true,
@@ -441,4 +442,4 @@ export const ATLAS_BODY_STATUS = {
 //   · les dimensions une fois plié / la taille du sac Atlas Bag ;
 //   · l'existence d'un sac pour l'Atlas All (le sac Atlas est vendu 10 € à part,
 //     et n'est explicitement inclus qu'avec l'Atlas Pro) ;
-//   · la date de fin de la promotion en cours.
+//   · (la promotion du 20/08/2026 est terminée au 20/10/2026 — plus d'objet).
