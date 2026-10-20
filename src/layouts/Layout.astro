@@ -50,8 +50,8 @@ const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
           var zhPages = ['/micro-muling']
           var target =
             code.indexOf('zh') === 0 && zhPages.indexOf(path.replace(/\/$/, '')) !== -1
-              ? '/zh' + path.replace(/\/$/, '')
-              : '/en' + (path === '/' ? '' : path)
+              ? '/zh' + path.replace(/\/$/, '') + '/'
+              : '/en' + (path === '/' ? '/' : path)
           sessionStorage.setItem('lang-auto', '1')
           location.replace(target)
         } catch (e) {}

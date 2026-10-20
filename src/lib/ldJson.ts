@@ -1,4 +1,10 @@
 import { site } from '@/data/site'
+import { withTrailingSlash } from '@/lib/trailing-slash.mjs'
+
+// Adresse absolue d'une PAGE du site, toujours sous sa forme canonique
+// (« / » final, 20/10/2026) — la même que <link rel="canonical"> et le sitemap.
+const pageUrl = (path: string) => new URL(withTrailingSlash(path), site.url).toString()
+const home = `${site.url}/`
 
 // Données structurées Schema.org — David Lesage = entité Person (E-E-A-T)
 export function personLdJson() {
@@ -9,7 +15,7 @@ export function personLdJson() {
     name: 'David Lesage',
     jobTitle: 'Musicien, pédagogue et inventeur',
     description: site.positioning,
-    url: site.url,
+    url: home,
     image: new URL('/images/hero-david.jpg', site.url).toString(),
     email: `mailto:${site.email}`,
     telephone: site.phone,
@@ -57,7 +63,7 @@ export function websiteLdJson() {
     '@id': `${site.url}/#website`,
     name: 'David Lesage — Musique visible',
     alternateName: ['David Lesage', 'Handpan Constellation Studio', 'Neotone'],
-    url: site.url,
+    url: home,
     description: site.positioning,
     inLanguage: ['fr', 'en'],
     publisher: { '@id': `${site.url}/#david-lesage` },
@@ -116,13 +122,13 @@ export function courseLdJson(p: { name: string; description: string; url: string
     '@type': 'Course',
     name: p.name,
     description: p.description,
-    url: new URL(p.url, site.url).toString(),
+    url: pageUrl(p.url),
     inLanguage: 'fr',
     provider: {
       '@type': 'Person',
       '@id': `${site.url}/#david-lesage`,
       name: 'David Lesage',
-      url: site.url,
+      url: home,
     },
     about: ['Handpan', 'Handpan électronique Neotone', 'Rythme', 'Pédagogie musicale visuelle'],
   }
@@ -174,7 +180,7 @@ export function localBusinessLdJson() {
     name: 'Showroom David Lesage',
     description: "Le seul endroit au monde pour tester et repartir avec un Neotone le jour même. Rencontres, démonstrations privées et cours à Paris 20ᵉ.",
     image: new URL('/images/localisation-showroom-poster.webp', site.url).toString(),
-    url: new URL('/showroom', site.url).toString(),
+    url: pageUrl('/showroom'),
     telephone: site.phone,
     email: site.email,
     priceRange: '€€€',
@@ -197,7 +203,7 @@ export function itemListLdJson(items: { name: string; url: string; image: string
       '@type': 'ListItem',
       position: i + 1,
       name: it.name,
-      url: new URL(it.url, site.url).toString(),
+      url: pageUrl(it.url),
       image: new URL(it.image, site.url).toString(),
     })),
   }
@@ -212,7 +218,7 @@ export function articleLdJson(p: {
   datePublished: string
   dateModified?: string
 }) {
-  const url = new URL(p.url, site.url).toString()
+  const url = pageUrl(p.url)
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -223,8 +229,8 @@ export function articleLdJson(p: {
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     datePublished: p.datePublished,
     dateModified: p.dateModified || p.datePublished,
-    author: { '@id': `${site.url}/#david-lesage`, '@type': 'Person', name: 'David Lesage', url: site.url },
-    publisher: { '@id': `${site.url}/#david-lesage`, '@type': 'Person', name: 'David Lesage', url: site.url },
+    author: { '@id': `${site.url}/#david-lesage`, '@type': 'Person', name: 'David Lesage', url: home },
+    publisher: { '@id': `${site.url}/#david-lesage`, '@type': 'Person', name: 'David Lesage', url: home },
   }
 }
 
@@ -236,7 +242,7 @@ export function breadcrumbLdJson(trail: { name: string; url: string }[]) {
       '@type': 'ListItem',
       position: i + 1,
       name: t.name,
-      item: new URL(t.url, site.url).toString(),
+      item: pageUrl(t.url),
     })),
   }
 }

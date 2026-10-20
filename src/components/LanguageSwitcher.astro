@@ -28,7 +28,7 @@ const hrefs = new Map<string, string>()
 for (const l of allLanguages) {
   if (l.active) hrefs.set(l.code, await switcherHref(basePath, l.code as Lang))
 }
-const hrefFor = (code: string) => (code === 'zh' ? `/zh${basePath}` : (hrefs.get(code) ?? localizePath(basePath, code as Lang)))
+const hrefFor = (code: string) => (code === 'zh' ? `/zh${basePath}/` : (hrefs.get(code) ?? localizePath(basePath, code as Lang)))
 
 // Le badge des langues pas encore traduites s'affichait « BIENTÔT » en français
 // sur TOUTES les pages, y compris anglaises et espagnoles — le seul mot non

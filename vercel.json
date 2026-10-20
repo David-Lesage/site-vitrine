@@ -135,6 +135,11 @@
       "source": "/en/blog/reveler-les-accords-de-ton-handpan/",
       "destination": "/blog/reveler-les-accords-de-ton-handpan/",
       "statusCode": 301
+    },
+    {
+      "source": "/:path((?!api(?:/|$))(?!_vercel(?:/|$))(?:[^/]+/)*[^/.]+)",
+      "destination": "/:path/",
+      "statusCode": 301
     }
   ]
 }

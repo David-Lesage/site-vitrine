@@ -1,4 +1,5 @@
 import { defaultLang, activeLangs, type Lang } from './config'
+import { withTrailingSlash } from '@/lib/trailing-slash.mjs'
 
 // Détecte la langue depuis l'URL (/en/... → 'en', sinon 'fr')
 export function getLang(url: URL): Lang {
@@ -44,16 +45,18 @@ const neutralSlugs: Record<string, string> = Object.entries(translatedSlugs).red
 
 // Préfixe une route interne pour la langue courante, en appliquant le slug
 // traduit s'il y en a un. Les suffixes (#ancre, ?query) sont préservés.
-// localizePath('/showroom', 'en') → '/en/showroom' ; ('/showroom', 'fr') → '/showroom'
-// localizePath('/pieds-atlas#modeles', 'en') → '/en/handpan-stands#modeles'
+// localizePath('/showroom', 'en') → '/en/showroom/' ; ('/showroom', 'fr') → '/showroom/'
+// localizePath('/pieds-atlas#modeles', 'en') → '/en/handpan-stands/#modeles'
 export function localizePath(path: string, lang: Lang): string {
   const clean = path.startsWith('/') ? path : `/${path}`
   const cut = clean.search(/[?#]/)
   const base = cut === -1 ? clean : clean.slice(0, cut)
   const suffix = cut === -1 ? '' : clean.slice(cut)
-  const slug = translatedSlugs[base]?.[lang] ?? base
-  if (lang === defaultLang) return slug + suffix
-  return `/${lang}${slug === '/' ? '' : slug}` + suffix
+  const slug = translatedSlugs[base.replace(/(.)\/$/, '$1')]?.[lang] ?? base
+  // « / » final systématique sur les pages (20/10/2026, cf. lib/trailing-slash.mjs) :
+  // c'est la forme canonique, celle du sitemap et des hreflang.
+  if (lang === defaultLang) return withTrailingSlash(slug + suffix)
+  return withTrailingSlash(`/${lang}${slug === '/' ? '' : slug}` + suffix)
 }
 
 // Langues partiellement traduites : pas de dictionnaire complet, mais quelques

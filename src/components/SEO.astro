@@ -1,7 +1,7 @@
 ---
 import { site } from '@/data/site'
 import { ogLocale, type Lang } from '@/i18n/config'
-import { localizePath, unlocalizePath, availableLangs } from '@/i18n/utils'
+import { localizePath, unlocalizePath, availableLangs, pageExistsForLang } from '@/i18n/utils'
 import { publicImageSize, imageMimeType } from '@/lib/imageSize'
 
 interface Props {
@@ -45,9 +45,15 @@ const graphs = ldJSON ? (Array.isArray(ldJSON) ? ldJSON : [ldJSON]) : []
 // les mêmes sources que le build (fichiers de src/pages + collection blog).
 const basePath = unlocalizePath(Astro.url.pathname)
 const alternates = (await availableLangs(basePath)).map((l) => ({
-  lang: l,
+  lang: l as string,
   href: new URL(localizePath(basePath, l), site.url).toString(),
 }))
+// Langue partielle (20/10/2026) : la page chinoise /zh/micro-muling/ déclarait
+// FR/EN/ES sans qu'aucune ne la déclare en retour (hreflang non réciproques).
+// On l'ajoute partout où la version `zh` existe vraiment.
+if (await pageExistsForLang(basePath, 'zh' as Lang)) {
+  alternates.push({ lang: 'zh-Hans', href: new URL(localizePath(basePath, 'zh' as Lang), site.url).toString() })
+}
 // x-default reste le français ; s'il n'existait pas (cas théorique), on ne
 // déclare rien plutôt qu'une URL inventée.
 const xDefault = alternates.find((a) => a.lang === 'fr')?.href

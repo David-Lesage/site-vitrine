@@ -44,7 +44,7 @@ function findPost(slug: string) {
     if (p) {
       return {
         title: p.data.title,
-        href: bl === 'fr' ? `/blog/${slug}` : `/en/blog/${slug}`,
+        href: bl === 'fr' ? `/blog/${slug}/` : `/en/blog/${slug}/`,
         langNote: bl !== lang ? h.relatedPostLangNote[bl] : undefined,
       }
     }

@@ -26,6 +26,7 @@
 
 import { getCollection, type CollectionEntry } from 'astro:content'
 import { site } from '@/data/site'
+import { withTrailingSlash } from '@/lib/trailing-slash.mjs'
 import { getDict, type Dict } from '@/i18n/dict'
 import { getGuide } from '@/data/guides'
 import { localizePath, pageExistsForLang } from '@/i18n/utils'
@@ -183,7 +184,8 @@ function oneLine(html: string, max = 240): string {
   return head.replace(/\s+\S*$/, '') + '…'
 }
 
-const abs = (p: string) => (/^https?:\/\//.test(p) ? p : new URL(p, site.url).toString())
+// « / » final des pages (forme canonique, 20/10/2026) ; fichiers et images inchangés.
+const abs = (p: string) => (/^https?:\/\//.test(p) ? withTrailingSlash(p) : new URL(withTrailingSlash(p), site.url).toString())
 
 /** Liens et images RELATIFS du Markdown d'un article → URL absolues. */
 function absolutize(md: string): string {

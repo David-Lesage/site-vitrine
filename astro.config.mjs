@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import icon from 'astro-icon'
 import tailwindcss from '@tailwindcss/vite'
+import { rehypeTrailingSlash } from './src/lib/trailing-slash.mjs'
 
 // Domaine de production (à ajuster lors du déploiement réel)
 const SITE = process.env.SITE_URL || 'https://www.lesagedavid.fr'
@@ -31,6 +32,9 @@ function rehypeStripHtmlComments() {
 export default defineConfig({
   site: SITE,
   output: 'static',
+  // Une seule forme d'adresse : « / » final (20/10/2026, audit SEO P1-1).
+  // Les fichiers (llms.txt, sitemap, images) ne sont pas concernés.
+  trailingSlash: 'always',
   i18n: {
     defaultLocale: 'fr',
     // Langues actives (routées). DE/ES/IT/PT s'ajoutent ici dès que leur dictionnaire est prêt.
@@ -51,7 +55,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    rehypePlugins: [rehypeStripHtmlComments],
+    rehypePlugins: [rehypeStripHtmlComments, rehypeTrailingSlash],
   },
   vite: {
     plugins: [tailwindcss()],
