@@ -13,9 +13,9 @@ import { Icon } from 'astro-icon/components'
 import { models, woods, woodNames, modelCarousels, specIcons, includedIcons, extrasIcons } from '@/data/neotone'
 import { site } from '@/data/site'
 import { getDict, fr } from '@/i18n/dict'
-import { fetchStockAtBuild, renderStockHtml, renderModelStock, type StockLabels, type ModelStockLabels } from '@/lib/stock'
+import { fetchStockAtBuild, renderStockHtml, renderModelStock, modelStockSummary, type StockLabels, type ModelStockLabels } from '@/lib/stock'
 import { localizePath, numberLocale } from '@/i18n/utils'
-import { faqLdJson, productLdJson, breadcrumbLdJson } from '@/lib/ldJson'
+import { faqLdJson, productLdJson, breadcrumbLdJson, localBusinessLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -96,11 +96,30 @@ const modelStock = Object.fromEntries(models.map((m) => [m.id, renderModelStock(
 const acoGlyph = `<svg viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-7 shrink-0 text-ink-soft/60" aria-hidden="true"><ellipse cx="14" cy="13" rx="12" ry="9" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="1.4"/><circle cx="14" cy="13" r="2.6" fill="currentColor"/><circle cx="14" cy="6.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="7.5" cy="10.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="20.5" cy="10.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="9.5" cy="17.5" r="1.5" fill="currentColor" fill-opacity="0.6"/><circle cx="18.5" cy="17.5" r="1.5" fill="currentColor" fill-opacity="0.6"/></svg>`
 const neoGlyph = `<svg viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-7 shrink-0" aria-hidden="true"><ellipse cx="14" cy="13" rx="12" ry="9" fill="#1f2a44" stroke="#c8792e" stroke-width="1.4"/><circle cx="14" cy="13" r="2.6" fill="#2f6bd8"/><circle cx="14" cy="6.5" r="1.5" fill="#e0402b"/><circle cx="7.5" cy="10.5" r="1.5" fill="#f1c62f"/><circle cx="20.5" cy="10.5" r="1.5" fill="#4caf6d"/><circle cx="9.5" cy="17.5" r="1.5" fill="#8a49b8"/><circle cx="18.5" cy="17.5" r="1.5" fill="#ef8a2a"/></svg>`
 
+// Données structurées (20/10/2026) : une fiche Product par modèle, marque
+// Neotone, une offre par bois aux prix HT du site (`models`), textes de la
+// langue de la page ; FAQ ; fil d'Ariane ; le showroom (MusicStore, même @id
+// que sur /showroom/). Aucun avis ni note : on n'en a pas de réels.
 const ld = [
-  breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: n.heroEyebrow, url: L('/neotone') }]),
+  breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: 'Neotone', url: L('/neotone') }]),
   faqLdJson(d.faq),
-  productLdJson({ name: 'Neotone¹', description: 'Handpan numérique professionnel 10 notes', price: 1990, image: '/images/neotone1-1.jpg' }),
-  productLdJson({ name: 'Neotone¹ Mutant', description: 'Handpan numérique professionnel 19 notes avec écran LCD', price: 3150, image: '/images/mutant-0.jpg' }),
+  ...models.map((m) =>
+    productLdJson({
+      id: `neotone-${m.id}`,
+      name: modelLabels[m.id],
+      // Pas `modelNotes` : en espagnol il dit « 10 valoraciones » (= avis), à proscrire ici.
+      description: `${d.modelTaglines[m.id]} — ${d.modelFeatures[m.id][0]}`,
+      pageUrl: L('/neotone'),
+      images: modelCarousels[m.id].filter((sl) => !sl.wide).slice(0, 3).map((sl) => sl.src),
+      offers: (Object.entries(m.woods) as [keyof typeof woodNames, number][]).map(([wood, price]) => ({
+        name: `${modelLabels[m.id]} — ${woodNames[wood][lang]}`,
+        price,
+        // « En stock » seulement pour un bois que le stock lu au build dit disponible.
+        inStock: modelStockSummary(stockLines, m.id).available.includes(wood),
+      })),
+    }),
+  ),
+  localBusinessLdJson(),
 ]
 ---
 

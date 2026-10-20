@@ -173,10 +173,16 @@ export function faqLdJson(items: { q: string; a: string }[]) {
   }
 }
 
+// Identifiant stable du showroom : la même entité est décrite sur /showroom/
+// et sur /neotone/ (20/10/2026). Pas d'horaires ni de coordonnées GPS : le
+// showroom reçoit sur rendez-vous et ces données n'existent pas dans le site.
+export const showroomId = `${site.url}/showroom/#showroom`
+
 export function localBusinessLdJson() {
   return {
     '@context': 'https://schema.org',
     '@type': 'MusicStore',
+    '@id': showroomId,
     name: 'Showroom David Lesage',
     description: "Le seul endroit au monde pour tester et repartir avec un Neotone le jour même. Rencontres, démonstrations privées et cours à Paris 20ᵉ.",
     image: new URL('/images/localisation-showroom-poster.webp', site.url).toString(),
@@ -247,20 +253,45 @@ export function breadcrumbLdJson(trail: { name: string; url: string }[]) {
   }
 }
 
-export function productLdJson(p: { name: string; description: string; price: number; image: string; sku?: string }) {
+// Fiche produit d'un modèle Neotone (20/10/2026, objectif « Neotone » dans Google).
+// Une offre par essence de bois, aux prix EXACTS du site (src/data/neotone.ts),
+// qui sont des prix HORS TAXES (« à partir de … € HT » sur la page ; la TVA
+// dépend du pays, cf. Calculator.astro) → `valueAddedTaxIncluded: false`.
+// `availability` n'est écrite QUE si le stock lu au build dit ce bois « disponible » :
+// sans information, on ne déclare rien. Aucun avis, aucune note : il n'y en a
+// pas de réels (pas d'aggregateRating / review).
+export function productLdJson(p: {
+  id: string
+  name: string
+  description: string
+  pageUrl: string
+  images: string[]
+  offers: { name: string; price: number; inStock?: boolean }[]
+}) {
+  const url = pageUrl(p.pageUrl)
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': `${url}#${p.id}`,
     name: p.name,
     description: p.description,
-    image: new URL(p.image, site.url).toString(),
+    url,
+    image: p.images.map((img) => new URL(img, site.url).toString()),
     brand: { '@type': 'Brand', name: 'Neotone' },
-    offers: {
+    offers: p.offers.map((o) => ({
       '@type': 'Offer',
+      name: o.name,
+      url,
+      price: o.price,
       priceCurrency: 'EUR',
-      price: p.price,
-      availability: 'https://schema.org/InStock',
-      seller: { '@type': 'Person', name: 'David Lesage' },
-    },
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: o.price,
+        priceCurrency: 'EUR',
+        valueAddedTaxIncluded: false,
+      },
+      ...(o.inStock ? { availability: 'https://schema.org/InStock' } : {}),
+      seller: { '@type': 'Person', '@id': `${site.url}/#david-lesage`, name: 'David Lesage' },
+    })),
   }
 }
