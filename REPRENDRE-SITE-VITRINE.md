@@ -85,6 +85,9 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
   (playneotone → /neotone/ ; playhandpan* → https://play.handpanstudio.app/). Déployé depuis un worktree propre (agent Atlas en cours).
 - ✅ site-lead redéployé 20/10 (feu vert David) : cours = prix libre « dès 60/75 € », forfaits dès 200/280 € ; copie APP alignée.
 - ⏳ HelloAsso : la session APP ajoute `{action:'catalogue'}` public (lecture seule) à l'EF helloasso-notifications → brancher le site dessus.
+- ✅ **EN PROD 20/10 ~20h30** : Atlas DAVID-ATLAS visible (61c4fac, composant `PromoCodeCopy.astro`, prix publics 250/270 €) ;
+  fiches Cœur de Son + Forbrain (29adf0a) ; cours « dès » (96578b0) ; `src/lib/helloassoCatalogue.ts` lit
+  `…/functions/v1/helloasso-notifications?action=catalogue` au build (repli `site.ts`) ; contrôle `node scripts/check-helloasso-prices.mjs`.
 - À trancher (David) : Atlas 250/270 € (description SEO) vs 215/230 € (boutique) ; « kit Master » (app) vs « RX Plus (Universal Pack) » (site).
 - Briefs du 20/10 à traiter : `MESSAGE-SESSION-SITE-2026-10-20-hisong-neotone-formulaire.md` et `…-seo-llms-articles.md`.
 
