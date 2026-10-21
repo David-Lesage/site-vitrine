@@ -1300,6 +1300,13 @@ Deno.serve(async (req) => {
             people_count: peopleCount,
             event_date: eventDate,
             neotone_model: neotoneModel,
+            // 21/10/2026 — mode d'achat, bois et facturation structurée en base
+            // (lus par l'app : « Neotone → Sheet », « Demander le code »).
+            // ⚠️ Colonnes créées par specs/migration-0188-site-leads-neotone-achat.sql :
+            // ne JAMAIS déployer cette version avant que la migration soit appliquée.
+            neotone_purchase_mode: isNeotone ? purchaseMode : null,
+            neotone_wood: isNeotone ? neotoneWood : null,
+            billing: billing ?? null,
             country,
             social_account: socialAccount,
             discovery_channel: discoveryChannel,
