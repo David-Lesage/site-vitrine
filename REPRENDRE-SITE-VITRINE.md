@@ -88,9 +88,7 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - ✅ **EN PROD 20/10 ~20h30** : Atlas DAVID-ATLAS visible (61c4fac, composant `PromoCodeCopy.astro`, prix publics 250/270 €) ;
   fiches Cœur de Son + Forbrain (29adf0a) ; cours « dès » (96578b0) ; `src/lib/helloassoCatalogue.ts` lit
   `…/functions/v1/helloasso-notifications?action=catalogue` au build (repli `site.ts`) ; contrôle `node scripts/check-helloasso-prices.mjs`.
-- 🚨 **NE PAS DÉPLOYER `site-lead` (HEAD 36c8a52) TANT QUE la migration `specs/migration-0188-site-leads-neotone-achat.sql`
-  n'est pas appliquée** (colonnes neotone_purchase_mode / neotone_wood / billing ; appliquée par la session APP). Sinon, chaque
-  insertion échoue et les demandes sont perdues. Version en ligne = ca39976 (21/10 ~05h20, formulaire showroom/en ligne).
+- ✅ Migration 0188 appliquée par la session APP (21/10 ~05h35) ; `site-lead` 36c8a52 déployé (vérifié = dépôt) : écrit neotone_purchase_mode / neotone_wood / billing (jsonb) pour la source neotone-discount.
 - À trancher (David) : Atlas 250/270 € (description SEO) vs 215/230 € (boutique) ; « kit Master » (app) vs « RX Plus (Universal Pack) » (site).
 - Briefs du 20/10 à traiter : `MESSAGE-SESSION-SITE-2026-10-20-hisong-neotone-formulaire.md` et `…-seo-llms-articles.md`.
 
