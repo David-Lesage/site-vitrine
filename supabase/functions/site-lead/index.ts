@@ -161,6 +161,21 @@
 //      au message : c'est lui qui garde la facturation EN BASE (aucune colonne
 //      dédiée dans `site_leads`) et c'est le filet si le site est déployé avant
 //      cette fonction. La colonne `message` est donc INCHANGÉE.
+// 21/10/2026 (bis) : NEOTONE — RÉCAPITULATIF CHIFFRÉ, 24 H, PREUVE DE PAIEMENT.
+//      Demande de David : « rappeler le prix, le modèle choisi, l'économie
+//      faite grâce au 5 ou 7 % et les −20 % si autoliquidation via numéro de
+//      TVA. Neotone ne répond pas en 1 h, mets plutôt 24 h. Si la personne a
+//      payé avant de venir, il me faudra la preuve de paiement ou de virement. »
+//      · `neotonePrice` = les montants CALCULÉS PAR LE SITE (Calculator.astro,
+//        compute()). Cette fonction ne recalcule RIEN : elle borne chaque
+//        nombre et vérifie qu'ils sont cohérents entre eux (au centime) ; au
+//        moindre écart, ou s'ils manquent (page en cache, ancien appel), le
+//        bloc chiffré n'apparaît pas — plutôt rien qu'un chiffre faux.
+//      · Hors taxes si UE + (case B2B du calculateur OU n° de TVA saisi) —
+//        exactement la règle du formulaire. Le taux est celui du pays dans le
+//        calculateur (jamais codé en dur).
+//      · Montants en base : pas de colonne (proposition à valider), ils ne
+//        vivent que dans les deux emails pour l'instant.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -592,6 +607,112 @@ function shippingRows(b: Billing | null, lang: string): [string, string][] {
     return rows.filter(([, v]) => v);
 }
 
+// =============================================================================
+// MONTANTS NEOTONE (21/10/2026) — ceux du calculateur du site, jamais recalculés
+// =============================================================================
+/**
+ * Montants envoyés par le site (`data-calc-price` du calculateur, relayés tels
+ * quels). std = particulier (TVA du pays si UE) ; b2b* = case B2B cochée.
+ */
+interface NeotonePrice {
+    basePrice: number; discountPct: number; discount: number; subtotalHT: number;
+    vatRate: number; vatAmount: number; totalTTC: number; savings: number;
+    b2bSavings: number; b2bSavingsRate: number; catalogTTC: number;
+    eu: boolean; b2b: boolean; countryCode: string;
+}
+
+/**
+ * Borne et VALIDE les montants reçus — aucun recalcul affiché. Rend `null` au
+ * moindre doute : nombre manquant, hors bornes, taux de remise qui ne
+ * correspond pas au mode, ou montants incohérents entre eux de plus d'un
+ * centime (arrondis du site compris). Mieux vaut pas de bloc qu'un chiffre faux.
+ */
+function parseNeotonePrice(raw: unknown, purchaseMode: string | null): NeotonePrice | null {
+    if (!raw || typeof raw !== 'object' || !purchaseMode) return null;
+    const r = raw as Record<string, unknown>;
+    const keys = ['basePrice', 'discountPct', 'discount', 'subtotalHT', 'vatRate', 'vatAmount', 'totalTTC', 'savings', 'b2bSavings', 'b2bSavingsRate', 'catalogTTC'] as const;
+    const n: Record<string, number> = {};
+    for (const k of keys) {
+        const v = r[k];
+        if (typeof v !== 'number' || !Number.isFinite(v) || v < 0 || v > 50000) return null;
+        n[k] = v;
+    }
+    const countryCode = String(r.countryCode ?? '').trim().toUpperCase();
+    if (!/^[A-Z]{2}$/.test(countryCode)) return null;
+    const eu = r.eu === true;
+    // Bornes métier : prix catalogue plausible, remise = celle du mode, TVA ≤ 30 %.
+    if (n.basePrice < 100 || n.basePrice > 20000) return null;
+    if (n.discountPct !== (purchaseMode === 'showroom' ? 7 : 5)) return null;
+    if (n.vatRate > 30 || (!eu && n.vatRate !== 0)) return null;
+    // Cohérence (tolérance 1,5 centime : chaque montant est arrondi par le site).
+    const near = (a: number, b: number) => Math.abs(a - b) <= 0.015;
+    const ok = near(n.discount, n.basePrice * n.discountPct / 100)
+        && near(n.subtotalHT, n.basePrice - n.discount)
+        && near(n.vatAmount, n.subtotalHT * n.vatRate / 100)
+        && near(n.totalTTC, n.subtotalHT + n.vatAmount)
+        && near(n.savings, n.discount * (1 + n.vatRate / 100))
+        && near(n.b2bSavings, n.discount + n.basePrice * n.vatRate / 100)
+        && near(n.b2bSavingsRate, n.discountPct + n.vatRate)
+        && near(n.catalogTTC, n.basePrice * (1 + n.vatRate / 100));
+    if (!ok) return null;
+    return { ...(n as unknown as Omit<NeotonePrice, 'eu' | 'b2b' | 'countryCode'>), eu, b2b: r.b2b === true, countryCode };
+}
+
+/** Mêmes formats que le calculateur du site (fmtEUR / fmtVAT). */
+function fmtEur(n: number, lang: string): string {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-GB' : 'fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n) + ' €';
+}
+function fmtRate(v: number): string {
+    return v === Math.floor(v) ? `${v} %` : `${String(v).replace('.', ',')} %`;
+}
+/** « France » (sans le code) — pour la ligne de TVA. */
+function plainCountry(code: string, lang: string): string {
+    try { return new Intl.DisplayNames([lang === 'en' ? 'en' : 'fr'], { type: 'region' }).of(code) ?? code; } catch { return code; }
+}
+
+/**
+ * Lignes du récapitulatif chiffré, dans l'ordre du calculateur, MÊMES LIBELLÉS
+ * que `data.calc` des dictionnaires du site (dict.ts / en.ts) — à garder
+ * alignés à la main : une Edge Function n'importe pas src/i18n.
+ * `ht` : UE + (case B2B OU n° de TVA saisi) — même règle que le formulaire.
+ */
+function neotonePriceView(p: NeotonePrice, lang: string, mode: string, vatNumber: string) {
+    const en = lang === 'en';
+    const ht = p.eu && (p.b2b || !!vatNumber);
+    const country = plainCountry(p.countryCode, lang);
+    const rate = fmtRate(p.vatRate);
+    const rows: [string, string][] = [
+        [en ? 'Public price excl. VAT (shipping included)' : 'Prix public HT (envoi compris)', fmtEur(p.basePrice, lang)],
+        [`${en ? 'Ambassador discount' : 'Remise ambassadeur'} −${p.discountPct} %${mode === 'showroom' ? ' (showroom)' : (en ? ' (online)' : ' (en ligne)')}`, `− ${fmtEur(p.discount, lang)}`],
+        [en ? 'Subtotal excl. VAT' : 'Sous-total HT', fmtEur(p.subtotalHT, lang)],
+    ];
+    let finalLabel: string, finalValue: number, savings: string;
+    const notes: string[] = [];
+    if (p.eu && !ht) {
+        rows.push([`${en ? 'VAT' : 'TVA'} ${country} ${rate}`, fmtEur(p.vatAmount, lang)]);
+        finalLabel = en ? 'Final price to pay (incl. VAT)' : 'Prix final TTC à payer';
+        finalValue = p.totalTTC;
+        savings = `${en ? 'You save' : 'Tu économises'} ${fmtEur(p.savings, lang)}`;
+    } else if (ht) {
+        rows.push([en ? `${country} VAT ${rate} not charged` : `TVA ${country} ${rate} non facturée`, fmtEur(p.vatAmount, lang)]);
+        finalLabel = en ? 'Price to pay excl. VAT (reverse charge)' : 'Prix HT à payer (autoliquidation)';
+        finalValue = p.subtotalHT;
+        savings = `${en ? 'You don’t pay upfront' : 'Tu ne débourses pas'} ${fmtEur(p.b2bSavings, lang)} (−${fmtRate(p.b2bSavingsRate)})`;
+        notes.push(en
+            ? `Excluding VAT: the VAT (${rate}) is not charged (reverse charge), subject to a valid VAT number.`
+            : `Hors taxes : la TVA (${rate}) n’est pas facturée (autoliquidation), sous réserve de validité du n° de TVA.`);
+    } else {
+        finalLabel = en ? 'Price to pay excl. VAT · outside the EU' : 'Prix HT à payer · hors UE';
+        finalValue = p.subtotalHT;
+        savings = `${en ? 'You save' : 'Tu économises'} ${fmtEur(p.savings, lang)}`;
+        notes.push(en ? 'No EU VAT · local customs fees at your expense' : 'Sans TVA UE · frais de douane locaux à ta charge');
+    }
+    notes.push(mode === 'showroom'
+        ? (en ? 'Pickup at the showroom · Paris 20th · no wait, no shipping fee' : 'Retrait au showroom · Paris 20ᵉ · aucun délai, aucun frais d’envoi')
+        : (en ? 'Payment is made on the Neotone shop, with your discount code.' : 'Le paiement se fait sur la boutique Neotone, avec ton code de réduction.'));
+    return { ht, rows, finalLabel, finalValue: fmtEur(finalValue, lang), savings, notes, missingVat: ht && !vatNumber };
+}
+
 const btn = (href: string, label: string, primary = true) =>
     `<a href="${href}" style="display:inline-block;background:${primary ? '#b4462a' : '#ffffff'};color:${primary ? '#ffffff' : '#b4462a'};border:1px solid #b4462a;text-decoration:none;font-weight:600;font-size:14px;padding:12px 24px;border-radius:999px;">${label}</a>`;
 
@@ -702,6 +823,19 @@ function slotLabel(slot: string, lang: string): string {
     return `${date} ${lang === 'en' ? 'at' : 'à'} ${t}`;
 }
 
+/** Bloc chiffré (mail client ET mail interne) — tout passe par `esc()`. */
+function neotonePriceHtml(v: ReturnType<typeof neotonePriceView>): string {
+    const line = (k: string, val: string) =>
+        `<tr><td style="padding:4px 0;color:#6b7280;font-size:13px;vertical-align:top;">${esc(k)}</td><td style="padding:4px 0 4px 12px;color:#111827;font-size:14px;text-align:right;white-space:nowrap;vertical-align:top;">${esc(val)}</td></tr>`;
+    return `
+          <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
+            ${v.rows.map(([k, val]) => line(k, val)).join('')}
+            <tr><td style="padding:10px 0 2px;border-top:1px solid #e5e7eb;color:#b4462a;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">${esc(v.finalLabel)}</td><td style="padding:10px 0 2px 12px;border-top:1px solid #e5e7eb;color:#111827;font-size:20px;font-weight:700;text-align:right;white-space:nowrap;">${esc(v.finalValue)}</td></tr>
+          </table>
+          <p style="margin:8px 0 0;color:#b4462a;font-size:14px;font-weight:700;">${esc(v.savings)}</p>
+          ${v.notes.map((n) => `<p style="margin:6px 0 0;color:#6b7280;font-size:13px;line-height:1.5;">${esc(n)}</p>`).join('')}`;
+}
+
 /** Accusé de réception d'une DEMANDE DE RÉSERVATION. David répond personnellement. */
 function bookingHtml(
     firstName: string,
@@ -715,7 +849,7 @@ function bookingHtml(
     instruments: string[] | null,
     neotoneModel: string | null,
     // NEOTONE (21/10/2026) — facultatif : les autres motifs n'en passent pas.
-    neo: { purchaseMode?: string | null; wood?: string | null; billing?: Billing | null } = {},
+    neo: { purchaseMode?: string | null; wood?: string | null; billing?: Billing | null; price?: NeotonePrice | null } = {},
 ): string {
     const en = lang === 'en';
     const base = en ? `${SITE}/en` : SITE;
@@ -725,6 +859,8 @@ function bookingHtml(
     // l'email reste alors l'accusé de réception générique, sans procédure.
     const neoMode = isDiscount && (neo.purchaseMode === 'showroom' || neo.purchaseMode === 'online') ? neo.purchaseMode : null;
     const billing = isDiscount ? neo.billing ?? null : null;
+    // Récapitulatif chiffré : seulement si le mode est connu ET les montants valides.
+    const priceView = neoMode && neo.price ? neotonePriceView(neo.price, lang, neoMode, billing?.vatNumber ?? '') : null;
     const isLesson = !!sessionType && sessionType.startsWith('lesson');
     const dateLabel = eventDate
         ? new Intl.DateTimeFormat(en ? 'en-GB' : 'fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
@@ -771,8 +907,9 @@ function bookingHtml(
         howShowroom: [
             'You filled in the purchase form: done ✅',
             'I check your request and pass it on to Neotone (Soundventure, in Budapest). You are copied in.',
-            'Neotone sends you the invoice and a card payment link, Monday to Friday, 9 am to 5 pm (Paris time, the same as Budapest), usually within the hour.',
+            'Neotone sends you the invoice and a card payment link, Monday to Friday, 9 am to 5 pm (Paris time, the same as Budapest), within 24 hours (working days).',
             'You pay, and the instrument is yours: you leave with it, at the showroom (Paris 20th).',
+            'If you pay before coming, send me the proof of payment or bank transfer at <a href="mailto:contact@lesagedavid.fr" style="color:#b4462a;">contact@lesagedavid.fr</a>: I hand you your Neotone on presentation of this proof.',
         ],
         weekend: '<strong>Coming to the showroom at the weekend?</strong> If you filled in the form before Friday, the payment link will be ready: you pay on the spot and leave with your instrument.',
         howOnlineTitle: 'How you get your discount code',
@@ -789,6 +926,8 @@ function bookingHtml(
         // sert à commander chez Neotone) — on n'affirme donc rien de plus.
         billingCheckOnline: 'Something wrong? Just reply to this email.',
         shippingTitle: 'Delivery',
+        priceTitle: 'Your price',
+        priceMissingVat: 'You haven’t given an intra-EU VAT number yet: reply to this email to send it to me.',
     } : {
         title: 'Demande bien reçue ✨',
         p1: 'Merci pour ton message — ta demande est enregistrée et je les lis toutes personnellement. Je te réponds très vite pour caler les détails.',
@@ -822,8 +961,9 @@ function bookingHtml(
         howShowroom: [
             'Tu as rempli le formulaire d’achat : c’est fait ✅',
             'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest). Tu es en copie.',
-            'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), en général dans l’heure.',
+            'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), sous 24 h (jours ouvrés).',
             'Tu paies, l’instrument est à toi : tu repars avec, au showroom (Paris 20ᵉ).',
+            'Si tu paies avant de venir, envoie-moi la preuve de paiement ou de virement à <a href="mailto:contact@lesagedavid.fr" style="color:#b4462a;">contact@lesagedavid.fr</a> : je te remets ton Neotone sur présentation de ce justificatif.',
         ],
         weekend: '<strong>Tu viens au showroom un week-end ?</strong> Si tu as rempli le formulaire avant le vendredi, le lien de paiement sera prêt : tu paies sur place et tu repars avec.',
         howOnlineTitle: 'Comment tu reçois ton code de réduction',
@@ -838,6 +978,8 @@ function bookingHtml(
         billingCheck: 'Vérifie-les : c’est avec ces informations que la facture est établie. Une erreur ? Réponds simplement à cet email.',
         billingCheckOnline: 'Une erreur ? Réponds simplement à cet email.',
         shippingTitle: 'Livraison',
+        priceTitle: 'Ton prix',
+        priceMissingVat: 'Tu n’as pas encore indiqué de n° de TVA intracommunautaire : réponds à cet email pour me le transmettre.',
     };
 
     const row = (k: string, v: string) =>
@@ -857,7 +999,7 @@ function bookingHtml(
             ${(neoMode === 'showroom' ? t.howShowroom : t.howOnline).map((step) => `<li>${step}</li>`).join('')}
           </ol>
           ${neoMode === 'showroom' ? `<p style="margin:12px 0 0;padding:10px 12px;background:#faf5ef;border:1px solid #e7d9c6;border-radius:10px;color:#374151;font-size:14px;line-height:1.6;">${t.weekend}</p>` : ''}
-          ${billing?.vatNumber ? `<p style="margin:12px 0 0;color:#374151;font-size:14px;line-height:1.6;">${t.vatNote}</p>` : ''}
+          ${billing?.vatNumber && !priceView ? `<p style="margin:12px 0 0;color:#374151;font-size:14px;line-height:1.6;">${t.vatNote}</p>` : ''}
         </td></tr>` : ''}
 
         <tr><td style="padding:22px 28px 4px;border-top:1px solid #f0f1f3;">
@@ -876,6 +1018,13 @@ function bookingHtml(
             ${message ? row(t.yourMsg, esc(message).replace(/\n/g, '<br />')) : ''}
           </table>
         </td></tr>
+
+        ${priceView ? `
+        <tr><td style="padding:20px 28px 4px;border-top:1px solid #f0f1f3;">
+          <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.priceTitle}</h2>
+          ${neotonePriceHtml(priceView)}
+          ${priceView.missingVat ? `<p style="margin:8px 0 0;color:#374151;font-size:13px;line-height:1.5;">${t.priceMissingVat}</p>` : ''}
+        </td></tr>` : ''}
 
         ${billing && billingRows(billing, lang).length ? `
         <tr><td style="padding:20px 28px 4px;border-top:1px solid #f0f1f3;">
@@ -1259,6 +1408,8 @@ Deno.serve(async (req) => {
             ? splitLegacyBilling(message)
             : { personal: message, legacy: null };
         const billing = isNeotone ? (parseBilling(body.billing) ?? legacyBilling) : null;
+        // Montants du calculateur (21/10/2026) — bornés et vérifiés, jamais recalculés.
+        const neotonePrice = isNeotone ? parseNeotonePrice(body.neotonePrice, purchaseMode) : null;
 
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
         // Téléphone obligatoire UNIQUEMENT pour le formulaire de contact : les
@@ -1468,7 +1619,7 @@ Deno.serve(async (req) => {
                         ? showcaseDatesHtml({ firstName, lang, events: upcomingEvents })
                         : isBooking
                             ? bookingHtml(firstName, lang, source, eventDate, personalMessage, sessionType, preferredSlots, sessionFormat, instruments, neotoneModel,
-                                { purchaseMode, wood: neotoneWood, billing })
+                                { purchaseMode, wood: neotoneWood, billing, price: neotonePrice })
                             : confirmationHtml(firstName, lang, wantsShowcase);
 
                 await client.send({
@@ -1500,6 +1651,10 @@ Deno.serve(async (req) => {
             // qui se déclare (c'est un partenaire potentiel : il ne doit jamais dormir
             // dans le dashboard). Une simple inscription ne déclenche RIEN.
             if (isBooking || wantsBeta || isMaker) {
+                // Même bloc chiffré que le mail client, en français.
+                const adminPriceView = purchaseMode && neotonePrice
+                    ? neotonePriceView(neotonePrice, 'fr', purchaseMode, billing?.vatNumber ?? '')
+                    : null;
                 const notifier = new SMTPClient({
                     connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } },
                 });
@@ -1591,7 +1746,12 @@ Deno.serve(async (req) => {
                             'Recevoir les nouveautés': newsOptInAt
                                 ? `oui — accord donné le ${newsOptInAt.slice(0, 10)}`
                                 : 'non (case facultative laissée décochée)',
-                        }, await slotConfirmBlockHtml(confirmLessonId, confirmSlots), billing ? [
+                        }, (adminPriceView ? `
+        <tr><td style="padding:14px 28px 6px;border-top:1px solid #f0f1f3;">
+          <div style="margin:0 0 6px;font-size:15px;font-weight:700;color:#111827;">Prix — montants du calculateur</div>
+          ${neotonePriceHtml(adminPriceView)}
+          ${adminPriceView.missingVat ? '<p style="margin:8px 0 0;color:#b4462a;font-size:13px;line-height:1.5;">⚠️ Case B2B cochée dans le calculateur, mais aucun n° de TVA saisi.</p>' : ''}
+        </td></tr>` : '') + await slotConfirmBlockHtml(confirmLessonId, confirmSlots), billing ? [
                             {
                                 title: 'Facturation',
                                 rows: [
