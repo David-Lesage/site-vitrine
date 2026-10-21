@@ -710,7 +710,7 @@ export const es: Dict = {
       },
       "forbrain": {
         "name": "Casco Forbrain · entrenar la voz",
-        "description": "Un casco de <strong>conducción ósea</strong> con micrófono: hablas o cantas, y tu voz te vuelve al instante a través de los huesos, delante de las orejas, pasada por un <strong>filtro dinámico</strong> que refuerza los agudos y suaviza los graves. Te oyes de otra manera, con más nitidez. Lo he probado: la experiencia es asombrosa. No es un micrófono de escenario, es una herramienta de entrenamiento, unos minutos al día leyendo en voz alta o cantando, para trabajar la voz, la dicción, la afinación y la atención. Autónomo, sin pantalla ni aplicación. No espero de él nada médico: lo recomiendo para el trabajo de la voz. Con mi enlace, el <strong>−10 %</strong> se aplica solo; si no, introduce mi código en la cesta."
+        "description": "Un casco de <strong>conducción ósea</strong> con micrófono, para oír tu propia voz en directo: canto, voz + handpan. Hablas o cantas, y tu voz te vuelve al instante a través de los huesos, delante de las orejas, pasada por un <strong>filtro dinámico</strong> que refuerza los agudos y suaviza los graves. Te oyes de otra manera, con más nitidez. Lo he probado: la experiencia es asombrosa. No es un micrófono de escenario, es una herramienta de entrenamiento, unos minutos al día leyendo en voz alta o cantando, para trabajar la voz, la dicción, la afinación y la atención. Autónomo, sin pantalla ni aplicación. No espero de él nada médico: lo recomiendo para el trabajo de la voz. Con mi enlace, el <strong>−10 %</strong> se aplica solo; si no, introduce mi código en la cesta."
       },
       "structured": {
         "name": "Estructurado: planificación diaria",
@@ -1150,7 +1150,6 @@ export const es: Dict = {
     "heroTitle": "pies Atlas",
     "heroLead": "Atlas fabrica trípodes para handpan en Italia. El instrumento no se atornilla ni se sujeta con correas: descansa sobre un disco flotante sostenido por imanes. Soy socio de la marca y ambos modelos, el Atlas Pro y el Atlas All, están expuestos en la sala de exhibición.",
     "ctaModels": "Vea ambos modelos.",
-    "ctaSite": "El sitio web Atlas",
     "ctaTry": "Ven y pruébalos en la sala de exposición.",
     "ctaTryModel": "Pruébalo en la sala de exposición.",
     "heroTryNote": "Ambos modelos están en la sala de exposición, en el distrito 20 de París, junto con los handpans. Colocas un instrumento, ajustas la altura, tocas y listo.",
@@ -1219,7 +1218,6 @@ export const es: Dict = {
     "storyStandsPhotoCaption": "Mi montaje escénico visto de cerca: tres instrumentos, tres soportes diferentes y múltiples alturas para ajustar antes de tocar.",
     "partnerTitle": "¿Por qué estoy hablando de esto ahora?",
     "partnerText": "Acabamos de concretar la colaboración con Atlas: ahora formo parte de la marca y me han enviado dos stands de demostración para mis reuniones. Preferí no anunciarlo aquí hasta que se firmara el contrato; ahora que está hecho, lo comparto.",
-    "affiliateNote": "Mi enlace de seguimiento aún no está disponible: por ahora, los botones te llevan directamente a la página oficial Atlas.",
     "testTitle": "Lo que verificaré delante de ti",
     "testText": "Los recibiré en unos días. Lo que digo en esta página lo digo con pleno conocimiento de causa: he usado cuatro soportes diferentes en el escenario y sé exactamente lo que busco. Lo que aún no tengo es el escenario, así que en cuanto lleguen ambos soportes a la sala de exposiciones, grabaré mi demostración, la publicaré aquí y les contaré qué tal me fue.",
     "videoSectionTitle": "La demostración en vídeo",
@@ -1252,9 +1250,13 @@ export const es: Dict = {
     "priceNote": "Precios públicos con IVA incluido, consultados en la web de Atlas el {date}. El precio que cuenta es el que muestra Atlas al hacer tu pedido; los gastos de envío son adicionales.",
     "priceRegular": "precio habitual",
     "publicPrice": "precio público",
-    "codeBadge": "−{pct} % con mi código",
+    "codeBadge": "{now} con mi código",
     "heroCodeTitle": "Mi código en Atlas: −{pct} %",
-    "heroCodePrices": "Precio público: {pro} · {all} → −{pct} % con mi código",
+    "heroCodePrices": "Con el código: {pro} · {all}",
+    "buyCta": "Comprar en Atlas con −{pct} % →",
+    "buyHint": "El botón copia el código y luego abre la web de Atlas en una pestaña nueva.",
+    "buyCopied": "Código {code} copiado ✓ — pégalo al pagar en la web de Atlas.",
+    "savingLine": "{name}: {was} → {now} con el código ({save})",
     "heroCodeText": "Válido en todos los productos Atlas, Atlas Body incluido. Introdúcelo al pagar, en la web de Atlas.",
     "codeReminder": "Al pagar en la web de Atlas, introduce mi código {code}: −{pct} %.",
     "bodyCodeReminder": "Mi código {code} también vale para el Atlas Body: −{pct} % al pagar en la web de Atlas.",
@@ -1266,17 +1268,15 @@ export const es: Dict = {
       "mount": "Disco flotante, 8 imanes antiarañazos",
       "positions": "Sentado o de pie, ajustable de forma continua",
       "bag": "Bolsa de transporte Atlas Bag incluida",
-      "body": "La pieza de madera no está incluida.",
-      "cta": "Consulte el Atlas Pro en el sitio web Atlas."
+      "body": "La pieza de madera no está incluida."
     },
     "all": {
-      "name": "Atlas Todo",
+      "name": "Atlas All",
       "tagline": "De madera, modular con extensiones.",
       "text": "El modelo de madera. Su cuerpo principal está impreso en 3D y descansa sobre una base de madera equipada con una punta antivuelco. Las patas miden 41 cm de largo y se extienden 10 cm; al atornillar las tres extensiones de 41 cm, se puede convertir de una posición sentada a una de pie.",
       "material": "Cuerpo impreso en 3D; base, extensiones y patas de madera.",
       "mount": "Disco flotante, 8 imanes antiarañazos",
       "positions": "De rodillas, sentado (sin extensiones) o de pie (con extensiones).",
-      "cta": "Ver todo el Atlas en el sitio web Atlas",
       "body": "Incluido: esta es la pieza básica de la escala"
     },
     "headEyebrow": "La cabeza del pie",
@@ -1306,7 +1306,7 @@ export const es: Dict = {
     "headIncludedTitle": "¿Incluido o debe adquirirse por separado?",
     "headIncluded": [
       {
-        "t": "Atlas Todo — incluido",
+        "t": "Atlas All — incluido",
         "d": "La escala de madera es modular: la base es la pieza principal, a la que se atornillan las patas para crear el modelo Atlas Short, y luego las extensiones para el Atlas All. Al elegir el Atlas All, dispone de las tres posiciones."
       },
       {
@@ -1321,7 +1321,6 @@ export const es: Dict = {
     "headCompatTitle": "Todas las piezas son compatibles entre sí.",
     "headCompatText": "Esa es otra cosa que Marco Agri me confirmó: \"todas las piezas son totalmente compatibles entre sí\". La consecuencia más útil: si ya tienes un Atlas All o un Atlas Short, ya tienes las piezas de madera; puedes reinstalarlas tal cual en un Atlas Pro, sin perder nada. Y si empiezas desde cero y quieres las tres posiciones de inmediato, el Atlas All te las proporciona.",
     "headCompatSource": "Marco Agri, creador de Atlas — mensaje del 20 de agosto de 2026",
-    "headCta": "Consulte el cuerpo Atlas en el sitio web Atlas.",
     "buyTitle": "Dónde pedirlos",
     "buyText": "El pedido se realiza a través de la página web Atlas. Anuncian gastos de envío de aproximadamente 12 € para Europa, y las devoluciones son gratuitas en un plazo de 14 días, con la etiqueta de devolución incluida en la caja.",
     "buyNote": "En su página web no se especifican el plazo de entrega ni el período de garantía: pregúntales antes de realizar el pedido o escríbeme y yo te haré la pregunta.",
@@ -1367,7 +1366,7 @@ export const es: Dict = {
     },
     "heightFigureCaption": "El mismo pie, fotografiado dos veces: a la izquierda, completamente extendido, con un handpan sobre él; a la derecha, plegado al mínimo. Todo el rango de 51 a 109 cm en una sola imagen.",
     "photosPro": "El Atlas Pro en imágenes",
-    "photosAll": "Atlas Todo en imágenes",
+    "photosAll": "El Atlas All en imágenes",
     "carousel": {
       "prev": "Foto anterior",
       "next": "Siguiente foto",
@@ -1814,7 +1813,7 @@ export const es: Dict = {
         "text": "Fabricada en aluminio, pesa 1,8 kg. Sus patas telescópicas son ajustables de forma continua de 51 a 109 cm, se pliega en segundos y se transporta en su bolsa, que viene incluida."
       },
       {
-        "name": "Atlas Todo",
+        "name": "Atlas All",
         "text": "Fabricada en madera, de 50 a 96 cm. Su cabezal se ajusta entre las piernas para tocar sentado sin necesidad de apoyar el instrumento en los muslos; para tocar de pie, se atornillan los pies y las extensiones."
       }
     ],

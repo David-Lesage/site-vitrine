@@ -11,6 +11,20 @@
 // 👆 Tactile ET souris : bouton ≥ 44 px (`min-h-11`), focus clavier visible
 //    et calqué sur le survol. `aria-live` annonce « Copié ! » aux lecteurs
 //    d'écran quand le libellé change.
+//
+// 🛒 VARIANTE « ACHETER » (21/10/2026, demande de David : « c'est le mot "Le
+//    site d'Atlas" qui apparaît en tout petit, ça n'incite pas à passer à la
+//    caisse »). Si `buyHref` est fourni, l'encadré contient, juste sous
+//    « CODE / Copier le code », un VRAI bouton plein pleine largeur.
+//    · C'est un vrai `<a href target="_blank">` : SANS JavaScript, il ouvre
+//      quand même le site du fabricant (le code reste écrit juste au-dessus).
+//    · AVEC JavaScript, le script de la page (classe `promo-buy`, cf.
+//      AtlasPage.astro) copie le code AU MÊME CLIC, sans empêcher l'ouverture,
+//      puis remplace `buyHint` par `buyCopied` dans la zone `role="status"`
+//      (annoncée aux lecteurs d'écran).
+//    · Le contenu du slot (texte d'accroche, économie en €) s'affiche en tête
+//      de l'encadré.
+//    Sans `buyHref`, le rendu est STRICTEMENT l'ancien (boutique, Hisong).
 interface Props {
   code: string
   copyLabel: string
@@ -18,23 +32,68 @@ interface Props {
   /** `light` sur fond crème, `dark` sur fond encre (hero, bas de page). */
   tone?: 'light' | 'dark'
   class?: string
+  /** Lien d'achat chez le fabricant → affiche le bouton plein « Acheter ». */
+  buyHref?: string
+  buyLabel?: string
+  /** Texte sous le bouton avant le clic (ce que fait le bouton). */
+  buyHint?: string
+  /** Texte après le clic (« Code … copié ✓ »), annoncé aux lecteurs d'écran. */
+  buyCopied?: string
 }
-const { code, copyLabel, copiedLabel, tone = 'light', class: extra } = Astro.props
+const { code, copyLabel, copiedLabel, tone = 'light', class: extra, buyHref, buyLabel, buyHint, buyCopied } = Astro.props
 const box = tone === 'dark' ? 'border-cream/20 bg-ink/40' : 'border-copper/30 bg-copper/5'
 const txt = tone === 'dark' ? 'text-gold' : 'text-ink'
 const btn =
   tone === 'dark'
     ? 'bg-gold/20 text-gold hover:bg-gold hover:text-ink focus-visible:bg-gold focus-visible:text-ink focus-visible:outline-gold'
     : 'bg-copper/15 text-copper hover:bg-copper hover:text-cream focus-visible:bg-copper focus-visible:text-cream focus-visible:outline-copper'
+// Bouton d'achat : même gabarit que les boutons principaux du site
+// (Button.astro : rounded-full, font-700, ombre, léger soulèvement au survol),
+// en plus grand. Or sur fond encre, rouille sur fond crème : contraste maximal.
+// Le focus clavier reprend exactement l'état de survol.
+const buyBox = tone === 'dark' ? 'border-gold/50 bg-gold/10' : 'border-copper/40 bg-copper/5'
+const buyBtn =
+  tone === 'dark'
+    ? 'bg-gold text-ink hover:bg-cream focus-visible:bg-cream focus-visible:outline-gold'
+    : 'bg-rust text-cream hover:bg-copper focus-visible:bg-copper focus-visible:outline-copper'
+const hintTxt = tone === 'dark' ? 'text-cream/70' : 'text-ink-soft/75'
 ---
-<div class:list={['flex flex-wrap items-center justify-between gap-2 rounded-lg border px-3 py-2.5 sm:gap-3 sm:px-4', box, extra]}>
-  <strong class:list={['break-all font-display text-base font-700 tracking-wide sm:text-lg', txt]}>{code}</strong>
-  <button
-    type="button"
-    class:list={['shop-copy-code inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-full px-3 text-sm sm:px-4 font-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', btn]}
-    data-code={code}
-    data-copy-label={copyLabel}
-    data-copied-label={copiedLabel}
-    aria-live="polite"
-  >{copyLabel}</button>
-</div>
+{buyHref ? (
+  <div class:list={['rounded-card border p-3 sm:p-5', buyBox, extra]}>
+    <slot />
+    <div class:list={['flex flex-wrap items-center justify-between gap-2 rounded-lg border px-3 py-2 sm:gap-3 sm:px-4', box]}>
+      <strong class:list={['break-all font-display text-lg font-700 tracking-wide sm:text-xl', txt]}>{code}</strong>
+      <button
+        type="button"
+        class:list={['shop-copy-code inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-full px-3 text-sm sm:px-4 font-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', btn]}
+        data-code={code}
+        data-copy-label={copyLabel}
+        data-copied-label={copiedLabel}
+        aria-live="polite"
+      >{copyLabel}</button>
+    </div>
+    <a
+      href={buyHref}
+      target="_blank"
+      rel="noopener"
+      class:list={['promo-buy mt-3 flex min-h-12 w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-center text-base font-700 sm:px-5 leading-snug shadow-md transition-all duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', buyBtn]}
+      data-code={code}
+      data-copied={buyCopied}
+    >{buyLabel}</a>
+    {buyHint && (
+      <p class:list={['promo-buy-status mt-2 text-center text-xs leading-relaxed', hintTxt]} role="status" aria-live="polite">{buyHint}</p>
+    )}
+  </div>
+) : (
+  <div class:list={['flex flex-wrap items-center justify-between gap-2 rounded-lg border px-3 py-2.5 sm:gap-3 sm:px-4', box, extra]}>
+    <strong class:list={['break-all font-display text-base font-700 tracking-wide sm:text-lg', txt]}>{code}</strong>
+    <button
+      type="button"
+      class:list={['shop-copy-code inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-full px-3 text-sm sm:px-4 font-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', btn]}
+      data-code={code}
+      data-copy-label={copyLabel}
+      data-copied-label={copiedLabel}
+      aria-live="polite"
+    >{copyLabel}</button>
+  </div>
+)}

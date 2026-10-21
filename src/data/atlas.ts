@@ -32,26 +32,39 @@
 //    arrondi. Ce qui manque est listé plus bas sous « 🚧 NON RENSEIGNÉ ».
 // ============================================================
 
-// ── 🚧 AFFILIATION — LE SEUL ENDROIT À MODIFIER QUAND LE CODE ARRIVERA ─────
+// ── 🔗 LIENS D'ACHAT — UN SEUL ENDROIT, SELON LA LANGUE DE LECTURE ─────────
 //
-// David n'a PAS encore reçu son lien d'affiliation Atlas (20/08/2026).
-// Tant que `ATLAS_AFFILIATE_URL` est vide, tous les boutons de la page pointent
-// vers la fiche officielle Atlas, sans aucun paramètre ajouté — c'est
-// volontaire : on n'invente pas d'URL de tracking.
-// (Le code de réduction, lui, a son propre interrupteur juste en dessous.)
+// 🗑️ 21/10/2026 — L'ANCIEN INTERRUPTEUR `ATLAS_AFFILIATE_URL` A ÉTÉ SUPPRIMÉ.
+//    Il attendait un « lien de suivi » qui n'existe pas : chez Atlas, le suivi
+//    passe par le CODE `DAVID-ATLAS` (actif depuis le 11/09/2026, vérifié par
+//    David dans le panier le 21/10/2026). Il ne servait plus qu'à afficher la
+//    note « Mon lien de suivi n'est pas encore en place… », que David a fait
+//    retirer : « c'est faux, le code fonctionne ». N'INVENTER AUCUN lien
+//    d'affiliation : il n'y en a pas.
 //
-// QUAND ATLAS TRANSMET LES ÉLÉMENTS :
-//   1. `ATLAS_AFFILIATE_URL` = le lien COMPLET fourni par Atlas (celui qui
-//      trace la vente). Ex. 'https://atlashandpan.com/?ref=xxxx'.
-//      → dès qu'il est rempli, `atlasLink()` l'utilise partout à la place des
-//        fiches officielles. Ne pas fabriquer ce lien : le copier tel quel.
-//   2. Le CODE DE RÉDUCTION ne se règle plus ici : il a son propre bloc
-//      juste en dessous (`ATLAS_PROMO_ACTIVE` / `ATLAS_DISCOUNT_CODE`), qui
-//      pilote À LA FOIS la page /pieds-atlas et la carte Atlas de la boutique.
-//      Ne PAS ajouter de `discountCode:` à la main dans src/data/shop.ts : il
-//      s'y ajoute tout seul quand l'interrupteur passe à `true`.
-//
-export const ATLAS_AFFILIATE_URL = ''
+// 🌍 LANGUE (David, 21/10/2026) : fr → /fr ; en → /en ; de → /de ; it → racine
+//    (le site d'Atlas est en italien à la racine) ; es → /en, car David n'a pas
+//    donné de version espagnole (et `/es` répond 404 chez Atlas, vérifié par curl
+//    le 21/10/2026). Seuls fr/en/es sont routés sur notre site aujourd'hui ;
+//    de/it sont prêts pour le jour où ils le seront.
+// 🛒 PAR MODÈLE : les fiches produit existent dans chaque langue
+//    (`/fr/products/atlas-pro`, `/fr/products/atlas-all`, `/fr/products/atlas-body`
+//    → 200, `lang="fr"`, vérifié par curl le 21/10/2026). Les boutons d'un modèle
+//    mènent donc à SA fiche dans la bonne langue ; les autres à l'accueil.
+const ATLAS_ROOT_BY_LANG: Record<string, string> = {
+  fr: 'https://atlashandpan.com/fr',
+  en: 'https://atlashandpan.com/en',
+  de: 'https://atlashandpan.com/de',
+  it: 'https://atlashandpan.com/',
+  es: 'https://atlashandpan.com/en',
+}
+export type AtlasProduct = 'atlas-pro' | 'atlas-all' | 'atlas-body'
+
+/** Lien « Acheter chez Atlas » pour une langue de lecture (et un modèle, si précisé). */
+export const atlasBuyUrl = (lang: string, product?: AtlasProduct): string => {
+  const root = ATLAS_ROOT_BY_LANG[lang] ?? ATLAS_ROOT_BY_LANG.en
+  return product ? `${root.replace(/\/$/, '')}/products/${product}` : root
+}
 
 // ── 🎟️ CODE DE RÉDUCTION — ACTIF CHEZ ATLAS DEPUIS LE 11/09/2026 ───────────
 //
@@ -69,12 +82,14 @@ export const ATLAS_AFFILIATE_URL = ''
 //    /pieds-atlas (bloc près des prix), à côté de CHAQUE lien d'achat, en bas
 //    de page, et sur la carte Atlas de la boutique.
 //
-// 🚨 PAS DE PRIX REMISÉ CALCULÉ. Au 20/10/2026, David parlait de « 215 et
-//    230 € avec mon code » pour un prix public de « 250/270 € ». Or 250 et
-//    270 € −10 % donnent 225 et 243 €, pas 215 et 230 (215/230 € étaient les
-//    prix PROMOTIONNELS affichés par Atlas au relevé du 20/08/2026). Tant que
-//    David n'a pas tranché, le site affiche le PRIX PUBLIC lu chez Atlas et
-//    « −10 % avec mon code », sans montant remisé que personne n'a confirmé.
+// ✅ PRIX AVEC LE CODE — TRANCHÉ LE 21/10/2026. David a vérifié dans le panier
+//    Atlas, code appliqué : « le coupon de réduction effectue une économie de
+//    25 € sur le pied Pro, −27 € sur le pied All ». C'est exactement
+//    prix public × (1 − 10 %) : 250 → 225 €, 270 → 243 €, 165 → 148,50 €.
+//    (Les « 215/230 € » cités le 20/10 étaient les prix PROMOTIONNELS du
+//    20/08/2026, aujourd'hui terminés.) Les montants sont CALCULÉS par
+//    `atlasWithCode()` depuis `atlasPrices` : ils suivent les prix tout seuls.
+//    🚫 Les données structurées Offer gardent le PRIX PUBLIC, rien d'autre.
 //
 // 🔙 HISTORIQUE (gardé pour comprendre les tournures) : au 20/08/2026 le code
 //    n'existait pas encore ; l'interrupteur `ATLAS_PROMO_ACTIVE` le masquait
@@ -90,14 +105,18 @@ export const ATLAS_DISCOUNT_CODE = 'DAVID-ATLAS'
 /** −10 % — chiffre écrit par Atlas dans le mail du 11/09/2026. */
 export const ATLAS_DISCOUNT_PCT = 10
 
-// Fiches officielles (repli tant que le lien d'affiliation n'existe pas).
-export const atlasSite = 'https://atlashandpan.com/en'
-export const atlasProUrl = 'https://atlashandpan.com/en/products/atlas-pro'
-export const atlasAllUrl = 'https://atlashandpan.com/en/products/atlas-all'
-export const atlasBodyUrl = 'https://atlashandpan.com/en/products/atlas-body'
+/**
+ * Prix avec le code et économie, au centime près, depuis un prix public.
+ * Vérifié le 21/10/2026 contre le panier Atlas : Pro 250 → 225 (−25),
+ * All 270 → 243 (−27), Body 165 → 148,50 (−16,50).
+ */
+export const atlasWithCode = (publicPrice: number): { now: number; save: number } => {
+  const now = Math.round(publicPrice * (100 - ATLAS_DISCOUNT_PCT)) / 100
+  return { now, save: Math.round((publicPrice - now) * 100) / 100 }
+}
 
-/** Lien d'achat : le lien d'affiliation dès qu'il existe, sinon la fiche officielle. */
-export const atlasLink = (officialUrl: string): string => ATLAS_AFFILIATE_URL || officialUrl
+/** Site d'Atlas « neutre » (vendeur des données structurées Offer). */
+export const atlasSite = 'https://atlashandpan.com/en'
 
 // ── 🎬 VIDÉO DE DÉMONSTRATION PAR DAVID — EN LIGNE DEPUIS LE 01/09/2026 ────
 //

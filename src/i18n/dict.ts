@@ -860,7 +860,7 @@ const fr = {
       'streaming': { name: 'Ma musique en streaming', description: 'Retrouve mes compositions et reprises sur Spotify, Apple Music, Deezer et toutes les plateformes.' },
       'onesec': { name: 'one sec — reprendre le contrôle de son temps d’écran', description: 'L’app qui m’aide vraiment à ne pas me perdre dans le scroll. Avant d’ouvrir une appli happante (réseaux sociaux…), one sec impose une courte pause — le temps d’une respiration — et l’envie compulsive retombe. C’est simple, et pour moi c’est l’une des rares choses qui a réellement fonctionné. Approche validée par la science (études avec l’Institut Max Planck). Gratuite pour l’essentiel ; profite de −30 % sur Premium via mon lien.' },
       'oko': { name: 'Gourde filtrante ÖKO', description: 'La gourde que j’emmène partout, tout le temps, en tant que musicien en déplacement — l’eau est la chose la plus importante qui soit. Filtration instantanée sans attente ni électricité, testée en laboratoire indépendant accrédité COFRAC sur plus de 200 contaminants. Je suis heureux de représenter un produit idéal pour tous les voyageurs. Profite de −10 % avec mon code.' },
-      'forbrain': { name: 'Casque Forbrain · entraîner sa voix', description: 'Un casque à <strong>conduction osseuse</strong> avec micro : tu parles ou tu chantes, et ta voix te revient aussitôt par les os, devant les oreilles, passée dans un <strong>filtre dynamique</strong> qui renforce les aigus et adoucit les graves. On s’entend autrement, plus nettement. Je l’ai testé : l’expérience est bluffante. Ce n’est pas un micro de scène, c’est un outil d’entraînement, quelques minutes par jour en lisant à voix haute ou en chantant, pour travailler la voix, la diction, la justesse et l’attention. Autonome, sans écran ni application. Je n’en attends rien de médical : je le recommande pour le travail de la voix. Via mon lien, <strong>−10 %</strong> s’appliquent tout seuls ; sinon, saisis mon code dans le panier.' },
+      'forbrain': { name: 'Casque Forbrain · entraîner sa voix', description: 'Un casque à <strong>conduction osseuse</strong> avec micro, pour entendre sa voix en direct — chant, voix + handpan. Tu parles ou tu chantes, et ta voix te revient aussitôt par les os, devant les oreilles, passée dans un <strong>filtre dynamique</strong> qui renforce les aigus et adoucit les graves. On s’entend autrement, plus nettement. Je l’ai testé : l’expérience est bluffante. Ce n’est pas un micro de scène, c’est un outil d’entraînement, quelques minutes par jour en lisant à voix haute ou en chantant, pour travailler la voix, la diction, la justesse et l’attention. Autonome, sans écran ni application. Je n’en attends rien de médical : je le recommande pour le travail de la voix. Via mon lien, <strong>−10 %</strong> s’appliquent tout seuls ; sinon, saisis mon code dans le panier.' },
       'structured': { name: 'Structured — planning quotidien', description: 'L’app que j’utilise pour organiser mes journées de musicien-entrepreneur, entre concerts, ateliers et développement de projets. Une timeline visuelle claire au lieu d’une liste de tâches qui s’accumule. Pas encore de programme d’affiliation avec eux, je le partage simplement parce que je m’en sers vraiment.' },
     },
   },
@@ -1403,7 +1403,6 @@ const fr = {
     heroLead:
       'Atlas fabrique en Italie des trépieds pour handpan. L’instrument n’est ni vissé ni sanglé : il se pose sur un disque flottant tenu par des aimants. Je suis partenaire de la marque, et les deux modèles sont au showroom — l’Atlas Pro et l’Atlas All.',
     ctaModels: 'Voir les deux modèles',
-    ctaSite: 'Le site d’Atlas',
     // 🎯 L'ACTION PRINCIPALE DE TOUTE LA PAGE (20/08/2026, cap de David).
     //    Avant : les boutons principaux envoyaient sur les fiches d'Atlas.
     //    Maintenant : l'essai au showroom est le bouton plein, l'achat en ligne
@@ -1577,12 +1576,9 @@ const fr = {
     partnerTitle: 'Pourquoi j’en parle maintenant',
     partnerText:
       'Le partenariat avec Atlas vient d’être validé : je suis désormais affilié à la marque, et ils m’ont envoyé deux pieds de démonstration pour mes rencontres. Tant que rien n’était signé, je préférais ne rien annoncer ici — c’est fait, donc j’en parle.',
-    // 🚧 Cette phrase disparaît le jour où `ATLAS_AFFILIATE_URL` est renseigné
-    //    dans src/data/atlas.ts (la page bascule alors sur le lien de suivi).
-    //    Tant qu'elle est affichée, elle dit la vérité : les boutons envoient
-    //    simplement sur la fiche officielle, sans rien tracer.
-    affiliateNote:
-      'Mon lien de suivi n’est pas encore en place : pour l’instant, les boutons t’emmènent directement sur la fiche officielle d’Atlas.',
+    // 🗑️ 21/10/2026 — la note « Mon lien de suivi n'est pas encore en place… »
+    //    (`affiliateNote`) a été SUPPRIMÉE à la demande de David : c'était faux,
+    //    le suivi passe par le code DAVID-ATLAS, qui fonctionne.
 
     // ── 🗑️ RETIRÉES DE LA PAGE LE 20/08/2026 — DÉCISION EXPLICITE DE DAVID ──
     //    Ces deux clés ne sont PLUS AFFICHÉES : la carte « Ce que je vérifierai
@@ -1679,11 +1675,20 @@ const fr = {
     // {pct} et {code} sont remplacés par la page depuis src/data/atlas.ts
     // (`ATLAS_DISCOUNT_PCT`, `ATLAS_DISCOUNT_CODE`). {pro} / {all} = « Atlas
     // Pro 250 € » etc., construits depuis `atlasPrices`.
-    // 🚨 Aucun prix remisé n'est écrit : seulement le prix public et « −10 % ».
+    // ✅ 21/10/2026 : prix avec le code vérifiés par David dans le panier Atlas
+    //    (« économie de 25 € sur le pied Pro, −27 € sur le pied All »). {now},
+    //    {was}, {save} sont CALCULÉS par la page (`atlasWithCode`), jamais écrits.
     publicPrice: 'prix public',
-    codeBadge: '−{pct} % avec mon code',
+    codeBadge: '{now} avec mon code',
     heroCodeTitle: 'Mon code chez Atlas : −{pct} %',
-    heroCodePrices: 'Prix public : {pro} · {all} → −{pct} % avec mon code',
+    heroCodePrices: 'Avec le code : {pro} · {all}',
+    // 🛒 Le bouton « Acheter » (David, 21/10/2026) : un clic COPIE le code puis
+    //    OUVRE Atlas dans un nouvel onglet. `buyHint` est affiché sous le bouton
+    //    et remplacé par `buyCopied` après le clic (annoncé aux lecteurs d'écran).
+    buyCta: 'Acheter chez Atlas avec −{pct} % →',
+    buyHint: 'Le bouton copie le code, puis ouvre le site d’Atlas dans un nouvel onglet.',
+    buyCopied: 'Code {code} copié ✓ — colle-le au moment du paiement chez Atlas.',
+    savingLine: '{name} : {was} → {now} avec le code ({save})',
     heroCodeText: 'Valable sur tous les produits Atlas, Atlas Body compris. Saisis-le au moment du paiement, sur le site d’Atlas.',
     codeReminder: 'Au moment du paiement sur le site d’Atlas, saisis mon code {code} : −{pct} %.',
     bodyCodeReminder: 'Mon code {code} marche aussi sur l’Atlas Body : −{pct} % au paiement sur le site d’Atlas.',
@@ -1697,7 +1702,6 @@ const fr = {
       positions: 'Assis ou debout, réglage en continu',
       bag: 'Sac de transport Atlas Bag inclus',
       body: 'Partie bois non comprise',
-      cta: 'Voir l’Atlas Pro sur le site d’Atlas',
     },
     all: {
       name: 'Atlas All',
@@ -1707,7 +1711,6 @@ const fr = {
       material: 'Corps imprimé en 3D ; base, rallonges et pieds en bois',
       mount: 'Disque flottant, 8 aimants anti-rayures',
       positions: 'Sur les genoux, assis (sans rallonges) ou debout (avec rallonges)',
-      cta: 'Voir l’Atlas All sur le site d’Atlas',
       body: 'Incluse — c’est la pièce de base de la gamme',
       // 🚧 Pas de ligne « Poids » ni « Transport » pour l'Atlas All : Atlas ne
       //    donne NI son poids, NI l'essence du bois, NI l'existence d'un sac
@@ -1820,7 +1823,6 @@ const fr = {
     headCompatText:
       'C’est l’autre chose que Marco Agri m’a confirmée : « all parts are fully compatible with the others ». La conséquence la plus utile : si tu possèdes déjà un Atlas All ou un Atlas Short, tu as déjà la partie bois — elle se remonte telle quelle sur un Atlas Pro, rien n’est perdu. Et si tu pars de zéro en voulant les trois positions d’emblée, c’est l’Atlas All qui les donne aujourd’hui.',
     headCompatSource: 'Marco Agri, créateur d’Atlas — message du 20 août 2026',
-    headCta: 'Voir l’Atlas Body sur le site d’Atlas',
 
     buyTitle: 'Où les commander',
     buyText:

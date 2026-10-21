@@ -100,15 +100,25 @@ export const products: Product[] = [
   // Muling → /micro-muling). C'est la page qui porte le lien d'achat hisong.io.
   { id: 'micro-hisong', price: 0, image: '/images/prod-micro-hisong.webp', imgW: 1400, imgH: 1400, url: '/micro-hisong', category: 'micros', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'hisong', priceLabel: '270,95 € · 360,95 € avec RX Plus', priceNoteKey: 'hisong', discountCode: 'DAVID-LESAGE-SAVE-5', images: ['/images/prod-micro-hisong.webp', '/images/prod-hisong-7.jpg', '/images/prod-hisong-3.jpg', '/images/prod-hisong-2.jpg', '/images/prod-hisong-4.jpg', '/images/prod-hisong-5.jpg', '/images/prod-hisong-6.jpg'], videoUrls: ['https://www.youtube.com/watch?v=B_7ZvlpHUsE', 'https://youtu.be/rx8ZZcL7Nog'] },
   { id: 'micro-muling', price: 0, image: '/images/prod-muling-2.jpg', imgW: 1200, imgH: 1200, url: '/micro-muling', category: 'micros', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'muling', priceLabel: '246,50 € au lieu de 258 €', videoUrls: ['https://youtu.be/ENArz99dyTQ'], images: ['/images/prod-muling-2.jpg', '/images/prod-muling-1.jpg', '/images/prod-muling-3.jpg', '/images/prod-muling-4.jpg', '/images/prod-muling-5.jpg', '/images/prod-muling-6.jpg', '/images/prod-muling-7.jpg', '/images/prod-muling-8.jpg', '/images/prod-muling-9.jpg', '/images/prod-muling-10.jpg'] },
+  // 🎧 Casque Forbrain (Sound For Life) — casque à conduction osseuse AVEC micro.
+  // 21/10/2026 : passé de « outils » à « micros », à côté de Muling et Hisong —
+  // demande de David : « intègre le casque Forbrain dans la rubrique micro de ma
+  // boutique ». Prix, lien et code inchangés.
+  // Prix relevé sur shop.soundforlife.com/fr le 20/10/2026 : 299 € (prix initial),
+  // 269 € avec l'offre en cours (−10 %). Si l'offre se termine, repasser à « 299 € ».
+  // 🎟️ Lien d'affiliation fourni par David ; le code 3A9907007 (−10 %) s'applique
+  // seul via le lien, sinon il se saisit dans le panier. Rien sur la commission.
+  // 🚫 Aucune promesse médicale ni thérapeutique (la marque en fait, pas nous).
+  { id: 'forbrain', price: 0, image: '/images/prod-forbrain-1.webp', imgW: 1000, imgH: 1000, url: 'https://shop.soundforlife.com/?affiliate=3A9907007', category: 'micros', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'forbrain', priceLabel: '269 € au lieu de 299 € (offre du moment)', priceLabelI18n: { en: '€269 instead of €299 (current offer)', es: '269 € en lugar de 299 € (oferta actual)' }, discountCode: '3A9907007' },
   // ── Accessoires — les pieds de handpan Atlas (fabricant italien).
   // 🤝 Partenariat d'affiliation validé le 20/08/2026 : avant cette date, la
   // marque était volontairement absente du site. Atlas envoie deux pieds de
   // démonstration pour les showcases.
-  // 🚧 `url` pointe sur la fiche du site (et pas sur atlashandpan.com) parce
-  // que le lien d'affiliation n'existe pas encore : c'est la page dédiée qui
-  // porte les liens d'achat, via `atlasLink()` de src/data/atlas.ts. Ne pas
-  // remplacer `url` par un lien externe : la fiche dédiée explique la
-  // différence entre les deux modèles ET rappelle de saisir le code au paiement.
+  // 🚧 `url` pointe sur la fiche du site (et pas sur atlashandpan.com) : c'est la
+  // page dédiée qui porte les boutons « Acheter chez Atlas », dans la langue de
+  // lecture, via `atlasBuyUrl()` de src/data/atlas.ts. Ne pas remplacer `url`
+  // par un lien externe : la fiche dédiée explique la différence entre les deux
+  // modèles ET copie le code avant d'ouvrir Atlas.
   // 🎟️ 20/10/2026 : pastille « −10 % avec mon code » (`atlasCode`) + code à
   // copier, tant que `ATLAS_PROMO_ACTIVE` est vrai. PRIX PUBLICS seulement, pas
   // de prix barré : aucun prix remisé n'est confirmé (voir src/data/atlas.ts).
@@ -143,14 +153,6 @@ export const products: Product[] = [
   { id: 'onesec', price: 0, image: '/images/prod-onesec-1.webp', imgW: 1464, imgH: 1731, url: 'https://web.one-sec.app/store?deal=david30', category: 'outils', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'onesec', priceLabel: 'Gratuit · −30 % sur Premium avec mon lien', images: ['/images/prod-onesec-1.webp', '/images/prod-onesec-2.webp', '/images/prod-onesec-3.webp'] },
   // Gourde filtrante ÖKO — recommandation perso (lien d'affiliation), musicien en déplacement
   { id: 'oko', price: 0, image: '/images/prod-oko-1.png', imgW: 768, imgH: 768, url: 'https://okoeurope.com/products/gourde-filtrante?ref=DAVIDOKO', category: 'outils', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'oko', priceLabel: 'dès 63 €', discountCode: 'DAVIDOKO', videoUrls: ['https://www.youtube.com/watch?v=yHKnJPz9TkQ'], images: ['/images/prod-oko-1.png', '/images/prod-oko-2.webp', '/images/prod-oko-3.webp', '/images/prod-oko-4.webp', '/images/prod-oko-5.webp', '/images/prod-oko-6.webp'] },
-  // 🎧 Casque Forbrain (Sound For Life) — outil d'entraînement de la VOIX, pas un
-  // micro de scène : d'où la catégorie « outils » et pas « micros ».
-  // Prix relevé sur shop.soundforlife.com/fr le 20/10/2026 : 299 € (prix initial),
-  // 269 € avec l'offre en cours (−10 %). Si l'offre se termine, repasser à « 299 € ».
-  // 🎟️ Lien d'affiliation fourni par David ; le code 3A9907007 (−10 %) s'applique
-  // seul via le lien, sinon il se saisit dans le panier. Rien sur la commission.
-  // 🚫 Aucune promesse médicale ni thérapeutique (la marque en fait, pas nous).
-  { id: 'forbrain', price: 0, image: '/images/prod-forbrain-1.webp', imgW: 1000, imgH: 1000, url: 'https://shop.soundforlife.com/?affiliate=3A9907007', category: 'outils', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'forbrain', priceLabel: '269 € au lieu de 299 € (offre du moment)', priceLabelI18n: { en: '€269 instead of €299 (current offer)', es: '269 € en lugar de 299 € (oferta actual)' }, discountCode: '3A9907007' },
   // Structured — recommandation perso, pas encore de programme d'affiliation (David, 09/08/2026)
   { id: 'structured', price: 0, image: '/images/prod-structured-1.png', imgW: 1200, imgH: 630, url: 'https://structured.app/', category: 'outils', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'structured' },
 ]

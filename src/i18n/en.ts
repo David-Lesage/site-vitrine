@@ -744,7 +744,7 @@ export const en: Dict = {
       'streaming': { name: 'My music on streaming', description: 'Find my compositions and covers on Spotify, Apple Music, Deezer and all platforms.' },
       'onesec': { name: 'one sec — take back control of your screen time', description: 'The app that genuinely helps me not get lost in the scroll. Before you open a grabby app (social media…), one sec adds a short pause — the length of a breath — and the compulsive urge fades. It’s simple, and for me it’s one of the very few things that actually worked. A science-backed approach (studies with the Max Planck Institute). Free for the essentials; get −30% off Premium through my link.' },
       'oko': { name: 'ÖKO filtering bottle', description: 'The bottle I take everywhere, all the time, as a musician on the road — water is the single most important thing there is. Instant filtration with no wait and no electricity, tested by an independent COFRAC-accredited lab against 200+ contaminants. I’m glad to represent a product that’s perfect for every traveller. Enjoy −10% with my code.' },
-      'forbrain': { name: 'Forbrain headset · voice training', description: 'A <strong>bone-conduction</strong> headset with a microphone: you speak or sing, and your voice comes straight back to you through the bones in front of your ears, run through a <strong>dynamic filter</strong> that lifts the highs and softens the lows. You hear yourself differently, more clearly. I’ve tested it: the experience is striking. It isn’t a stage mic, it’s a training tool, a few minutes a day reading aloud or singing, to work on your voice, diction, pitch and focus. Standalone, no screen, no app. I don’t expect anything medical from it: I recommend it for voice work. Through my link, the <strong>−10%</strong> applies by itself; otherwise, enter my code in the cart.' },
+      'forbrain': { name: 'Forbrain headset · voice training', description: 'A <strong>bone-conduction</strong> headset with a microphone, to hear your own voice live — singing, voice + handpan. You speak or sing, and your voice comes straight back to you through the bones in front of your ears, run through a <strong>dynamic filter</strong> that lifts the highs and softens the lows. You hear yourself differently, more clearly. I’ve tested it: the experience is striking. It isn’t a stage mic, it’s a training tool, a few minutes a day reading aloud or singing, to work on your voice, diction, pitch and focus. Standalone, no screen, no app. I don’t expect anything medical from it: I recommend it for voice work. Through my link, the <strong>−10%</strong> applies by itself; otherwise, enter my code in the cart.' },
       'structured': { name: 'Structured — daily planner', description: 'The app I use to organise my days as a musician-entrepreneur, between concerts, workshops and project development. A clear visual timeline instead of a to-do list that keeps piling up. No affiliate program with them yet — I just share it because I genuinely use it.' },
     },
   },
@@ -1204,7 +1204,6 @@ export const en: Dict = {
     heroLead:
       'Atlas builds handpan tripods in Italy. The instrument is neither screwed down nor strapped in: it rests on a floating disc held by magnets. I am a partner of the brand, and both models are now at the showroom — the Atlas Pro and the Atlas All.',
     ctaModels: 'See both models',
-    ctaSite: 'Atlas’s website',
     // 🎯 THE PRIMARY ACTION OF THE WHOLE PAGE (20/08/2026, David's call).
     //    Before: the main buttons sent people to Atlas's product pages.
     //    Now: trying them at the showroom is the solid button, buying online is
@@ -1335,10 +1334,6 @@ export const en: Dict = {
     partnerTitle: 'Why I am talking about them now',
     partnerText:
       'The partnership with Atlas has just been confirmed: I am now an affiliate of the brand, and they sent me two demonstration stands for my gatherings. As long as nothing was signed I preferred not to announce anything here — now it is done, so I am saying it.',
-    // 🚧 This sentence disappears the day `ATLAS_AFFILIATE_URL` is filled in
-    //    in src/data/atlas.ts (the page then switches to the tracking link).
-    affiliateNote:
-      'My tracking link is not in place yet: for now, the buttons take you straight to the official Atlas product page.',
 
     // ── 🗑️ REMOVED FROM THE PAGE ON 20/08/2026 — DAVID'S EXPLICIT DECISION ──
     //    These two keys are NO LONGER DISPLAYED: the "What I will check in
@@ -1412,9 +1407,13 @@ export const en: Dict = {
     // filled in by the page from src/data/atlas.ts. No discounted price is
     // written: only the public price and “−10%”.
     publicPrice: 'public price',
-    codeBadge: '−{pct}% with my code',
+    codeBadge: '{now} with my code',
     heroCodeTitle: 'My code at Atlas: −{pct}%',
-    heroCodePrices: 'Public price: {pro} · {all} → −{pct}% with my code',
+    heroCodePrices: 'With the code: {pro} · {all}',
+    buyCta: 'Buy from Atlas with −{pct}% →',
+    buyHint: 'The button copies the code, then opens the Atlas website in a new tab.',
+    buyCopied: 'Code {code} copied ✓ — paste it at checkout on the Atlas website.',
+    savingLine: '{name}: {was} → {now} with the code ({save})',
     heroCodeText: 'Valid on all Atlas products, Atlas Body included. Enter it at checkout, on the Atlas website.',
     codeReminder: 'At checkout on the Atlas website, enter my code {code}: −{pct}%.',
     bodyCodeReminder: 'My code {code} also works on the Atlas Body: −{pct}% at checkout on the Atlas website.',
@@ -1428,7 +1427,6 @@ export const en: Dict = {
       positions: 'Seated or standing, continuous adjustment',
       bag: 'Atlas Bag carrying bag included',
       body: 'Wooden part not included',
-      cta: 'See the Atlas Pro on Atlas’s website',
     },
     all: {
       name: 'Atlas All',
@@ -1438,7 +1436,6 @@ export const en: Dict = {
       material: '3D-printed body; wooden base, extensions and legs',
       mount: 'Floating disc, 8 scratch-resistant magnets',
       positions: 'On your lap, seated (without extensions) or standing (with extensions)',
-      cta: 'See the Atlas All on Atlas’s website',
       body: 'Included — it is the core module of the range',
       // 🚧 No “Weight” or “Carrying” row for the Atlas All: Atlas gives neither
       //    its weight, nor the wood species, nor whether a bag exists for it.
@@ -1509,7 +1506,6 @@ export const en: Dict = {
     headCompatText:
       'That is the other thing Marco Agri confirmed to me: “all parts are fully compatible with the others”. The most useful consequence: if you already own an Atlas All or an Atlas Short, you already have the wooden part — it fits straight onto an Atlas Pro, nothing is wasted. And if you are starting from scratch and want all three positions from the outset, the Atlas All is what gives them today.',
     headCompatSource: 'Marco Agri, creator of Atlas — message of 20 August 2026',
-    headCta: 'See the Atlas Body on Atlas’s website',
 
     buyTitle: 'Where to order them',
     buyText:
