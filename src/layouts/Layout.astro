@@ -6,6 +6,8 @@ import Footer from '@/components/Footer.astro'
 import { getLang } from '@/i18n/utils'
 import { getDict } from '@/i18n/dict'
 import { htmlLang } from '@/i18n/config'
+import AffiliationCapture from '@/components/AffiliationCapture.astro'
+import { AFFILIATION_MODE } from '@/data/affiliation'
 
 interface Props {
   title?: string
@@ -31,6 +33,13 @@ const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
 <html lang={htmlLangOverride || htmlLang[lang]}>
   <head>
     <SEO title={title} description={description} image={image} ldJSON={ldJSON} ogType={ogType} keywords={keywords} lang={lang} noindex={noindex} />
+    {AFFILIATION_MODE !== 'off' && (
+      // Lien d'affiliation : la redirection de langue ci-dessous garde alors
+      // ?ref (et le reste de la requête + l'ancre). Sans ça, un visiteur non
+      // francophone arrivant sur /handpan-app/?ref=… perdait son code avant
+      // même que la capture ne s'exécute. En 'off', comportement inchangé.
+      <script is:inline>window.__hcsKeepQuery = true</script>
+    )}
     <script is:inline>
       // Détection de la langue du visiteur, avec garde-fous :
       // — jamais si l'utilisateur a déjà choisi une langue (localStorage) ;
@@ -52,6 +61,7 @@ const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
             code.indexOf('zh') === 0 && zhPages.indexOf(path.replace(/\/$/, '')) !== -1
               ? '/zh' + path.replace(/\/$/, '') + '/'
               : '/en' + (path === '/' ? '/' : path)
+          if (window.__hcsKeepQuery) target += location.search + location.hash
           sessionStorage.setItem('lang-auto', '1')
           location.replace(target)
         } catch (e) {}
@@ -73,6 +83,10 @@ const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
       <slot />
     </main>
     <Footer lang={lang} />
+
+    {/* Lien d'affiliation (?ref=) — interrupteur dans src/data/affiliation.ts.
+        En 'off' (valeur livrée), rien n'est rendu ni chargé. */}
+    {AFFILIATION_MODE !== 'off' && <AffiliationCapture />}
 
     {snipcartKey && (
       <>

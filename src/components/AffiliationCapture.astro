@@ -1,0 +1,9 @@
+---
+// Capture du lien d'affiliation (?ref=CODE) — voir src/data/affiliation.ts.
+// Rendu par Layout.astro seulement si AFFILIATION_MODE !== 'off' : en 'off',
+// ce composant n'est pas rendu et son script n'est référencé par aucune page.
+---
+
+<script>
+  import '@/scripts/affiliation'
+</script>
