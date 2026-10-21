@@ -44,14 +44,14 @@ const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
       // Détection de la langue du visiteur, avec garde-fous :
       // — jamais si l'utilisateur a déjà choisi une langue (localStorage) ;
       // — jamais deux fois dans la même session (anti-boucle) ;
-      // — jamais depuis une page déjà localisée (/en, /zh) ;
+      // — jamais depuis une page déjà localisée (/en, /es, /zh) ;
       // — les francophones restent sur la version française (par défaut).
       ;(function () {
         try {
           if (localStorage.getItem('pref-lang')) return
           if (sessionStorage.getItem('lang-auto')) return
           var path = location.pathname
-          if (/^\/(en|zh)(\/|$)/.test(path)) return
+          if (/^\/(en|es|zh)(\/|$)/.test(path)) return
           var nav = navigator.languages && navigator.languages.length ? navigator.languages[0] : navigator.language
           var code = (nav || '').toLowerCase()
           if (!code || code.indexOf('fr') === 0) return
