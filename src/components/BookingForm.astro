@@ -102,6 +102,22 @@ const pp = { ...fr.booking.purchase, ...(bk.purchase ?? {}) }
 // produirait fatalement des invalides. Même source = mêmes pays que le prix
 // annoncé juste avant.
 const billingCountries = countries.map((co) => ({ code: co.code, name: co.name[lang] }))
+// ── RÉCAPITULATIF CHIFFRÉ (21/10/2026, demande de David) ─────────────────────
+// « rappeler le prix, le modèle choisi, l'économie faite grâce au 5 ou 7 % et
+// les −20 % si autoliquidation ». Les MONTANTS arrivent du calculateur
+// (`data-calc-price`, voir Calculator.astro) ; les LIBELLÉS sont ceux du
+// calculateur lui-même (`data.calc`) — mêmes mots, mêmes chiffres. Repli FR
+// clé par clé (es.ts est généré).
+const calcFr = fr.data.calc as unknown as Record<string, string>
+const calcAny = getDict(lang).data.calc as unknown as Record<string, string>
+const cl = (k: string) => calcAny[k] || calcFr[k] || ''
+const priceLabels = {
+  basePrice: cl('basePrice'), discountLabel: cl('discountLabel'), subtotal: cl('subtotal'), vat: cl('vat'),
+  finalTTC: cl('finalTTC'), finalB2B: cl('finalB2B'), finalExtUE: cl('finalExtUE'), finalExtUENote: cl('finalExtUENote'),
+  finalShowroom: cl('finalShowroom'), savings: cl('savings'), savingsB2B: cl('savingsB2B'),
+  vatNotCharged: pp.priceVatNotCharged, htNote: pp.priceHtNote, htNeedVat: pp.priceHtNeedVat, onlineNote: pp.priceOnlineNote,
+  countries: Object.fromEntries(countries.map((co) => [co.code, co.name[lang]])),
+}
 // Interrupteur + URL du guichet, lus par le <script> (une expression du
 // frontmatter ne s'interpole pas dans un script traité).
 const saleIntake = saleIntakeClientConfig()
@@ -229,6 +245,18 @@ const saleIntake = saleIntakeClientConfig()
         <div data-bk-calc-recap class="hidden rounded-xl border border-copper/25 bg-copper/5 p-4">
           <p class="text-[11px] font-700 uppercase tracking-widest text-copper">{bk.calcRecapLabel}</p>
           <p data-bk-calc-recap-text class="mt-1 break-words text-sm font-600 leading-relaxed"></p>
+          {/* Montants du calculateur (21/10/2026). Rempli par `renderPrice()`,
+              en textContent uniquement. Reste CACHÉ si le déclencheur ne porte
+              pas de montants valides : on n'affiche jamais un prix inventé. */}
+          <div data-bk-price data-labels={JSON.stringify(priceLabels)} class="mt-3 hidden border-t border-copper/20 pt-3">
+            <dl data-bk-price-rows class="space-y-1.5 text-sm"></dl>
+            <div class="mt-2 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5 border-t border-copper/20 pt-2">
+              <span data-bk-price-final-label class="text-xs font-700 uppercase tracking-wider text-copper"></span>
+              <span data-bk-price-final class="font-display text-xl font-700 text-ink"></span>
+            </div>
+            <p data-bk-price-savings class="mt-1.5 text-sm font-700 text-rust"></p>
+            <p data-bk-price-note class="mt-1.5 text-xs leading-relaxed text-ink-soft/75"></p>
+          </div>
           <button type="button" data-bk-calc-edit class="mt-2 text-xs font-600 text-ink-soft/70 underline hover:text-copper">{bk.calcRecapEdit}</button>
         </div>
         {/* Bois et mode d'achat choisis dans le calculateur — ils n'étaient
@@ -430,7 +458,7 @@ const saleIntake = saleIntakeClientConfig()
             l'email au client (Edge Function `site-lead`). */}
         <div data-bk-how="showroom" class="hidden rounded-xl border border-copper/25 bg-copper/5 p-4">
           <p class="text-sm font-700">{pp.showroomHowTitle}</p>
-          <ol class="mt-2 space-y-1.5 text-xs leading-relaxed text-ink-soft/85">
+          <ol class="mt-2 space-y-1.5 text-xs leading-relaxed text-ink-soft/85 [&_a]:font-600 [&_a]:text-copper [&_a]:underline">
             {pp.showroomHow.map((step, i) => (
               <li class="flex gap-2"><span aria-hidden="true" class="text-copper">{i + 1}.</span><span set:html={step} /></li>
             ))}
@@ -579,6 +607,86 @@ const saleIntake = saleIntakeClientConfig()
   const calcRecapTextEl = modal?.querySelector('[data-bk-calc-recap-text]') as HTMLElement
   const discountModelEl = modal?.querySelector('[data-bk-discount-model]') as HTMLElement
   const discountCountryEl = modal?.querySelector('[data-bk-discount-country]') as HTMLElement
+  // ── MONTANTS DU CALCULATEUR (21/10/2026) ────────────────────────────────────
+  // Lus tels quels sur `data-calc-price` du bouton du calculateur, affichés
+  // dans « Ton choix » puis envoyés à `site-lead` (`neotonePrice`). AUCUN
+  // recalcul ici : le seul choix fait par ce script est QUELLE variante
+  // afficher (particulier TTC ou hors taxes), selon la case B2B du calculateur
+  // OU un n° de TVA saisi dans la facturation.
+  type CalcPrice = {
+    basePrice: number; discountPct: number; discount: number; subtotalHT: number
+    vatRate: number; vatAmount: number; totalTTC: number; savings: number
+    b2bSavings: number; b2bSavingsRate: number; catalogTTC: number
+    eu: boolean; b2b: boolean; countryCode: string; mode: string
+  }
+  let calcPrice: CalcPrice | null = null
+  const priceEl = modal?.querySelector('[data-bk-price]') as HTMLElement | null
+  let PL: Record<string, any> = {}
+  try { PL = JSON.parse(priceEl?.dataset.labels || '{}') } catch { PL = {} }
+
+  /** `null` si le JSON manque ou si un seul nombre est absent / non fini. */
+  function readCalcPrice(raw: string, mode: string): CalcPrice | null {
+    try {
+      const p = JSON.parse(raw)
+      const nums = ['basePrice', 'discountPct', 'discount', 'subtotalHT', 'vatRate', 'vatAmount', 'totalTTC', 'savings', 'b2bSavings', 'b2bSavingsRate', 'catalogTTC']
+      if (!p || typeof p !== 'object' || !nums.every((k) => typeof p[k] === 'number' && Number.isFinite(p[k]))) return null
+      if (mode !== 'showroom' && mode !== 'online') return null
+      return { ...p, eu: p.eu === true, b2b: p.b2b === true, countryCode: String(p.countryCode || ''), mode }
+    } catch { return null }
+  }
+
+  // Mêmes formats que le calculateur (fmtEUR / fmtVAT de Calculator.astro).
+  const priceLocale = document.documentElement.lang === 'en' ? 'en-GB' : 'fr-FR'
+  const fmtEUR = (n: number) => new Intl.NumberFormat(priceLocale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n) + ' €'
+  const fmtVAT = (v: number) => (v === Math.floor(v) ? v + ' %' : v.toString().replace('.', ',') + ' %')
+
+  function renderPrice() {
+    if (!priceEl) return
+    const P = calcPrice
+    priceEl.classList.toggle('hidden', !P)
+    if (!P) return
+    const vatInput = form?.elements.namedItem('billingVatNumber') as HTMLInputElement | null
+    const vatNum = vatInput && !vatInput.disabled ? vatInput.value.trim() : ''
+    // Hors taxes : UE + (case B2B du calculateur OU n° de TVA saisi ici).
+    const ht = P.eu && (P.b2b || !!vatNum)
+    const country = PL.countries?.[P.countryCode] || P.countryCode
+    const rows: [string, string][] = [
+      [PL.basePrice, fmtEUR(P.basePrice)],
+      [`${PL.discountLabel} −${P.discountPct} %`, '− ' + fmtEUR(P.discount)],
+      [PL.subtotal, fmtEUR(P.subtotalHT)],
+    ]
+    let finalLabel: string, finalValue: number, savings: string
+    const notes: string[] = []
+    if (P.eu && !ht) {
+      rows.push([`${PL.vat} ${country} ${fmtVAT(P.vatRate)}`, fmtEUR(P.vatAmount)])
+      finalLabel = PL.finalTTC; finalValue = P.totalTTC
+      savings = `${PL.savings} ${fmtEUR(P.savings)}`
+    } else if (ht) {
+      rows.push([String(PL.vatNotCharged).replace('{country}', country).replace('{rate}', fmtVAT(P.vatRate)), fmtEUR(P.vatAmount)])
+      finalLabel = PL.finalB2B; finalValue = P.subtotalHT
+      savings = `${PL.savingsB2B} ${fmtEUR(P.b2bSavings)} (−${fmtVAT(P.b2bSavingsRate)})`
+      notes.push(String(PL.htNote).replace('{rate}', fmtVAT(P.vatRate)))
+      if (!vatNum) notes.push(PL.htNeedVat)
+    } else {
+      finalLabel = PL.finalExtUE; finalValue = P.subtotalHT
+      savings = `${PL.savings} ${fmtEUR(P.savings)}`
+      notes.push(PL.finalExtUENote)
+    }
+    notes.push(P.mode === 'showroom' ? PL.finalShowroom : PL.onlineNote)
+    const dl = priceEl.querySelector('[data-bk-price-rows]') as HTMLElement
+    dl.replaceChildren(...rows.map(([k, v]) => {
+      const div = document.createElement('div')
+      div.className = 'flex justify-between gap-3'
+      const dt = document.createElement('dt'); dt.className = 'text-ink-soft/75'; dt.textContent = k
+      const dd = document.createElement('dd'); dd.className = 'shrink-0 font-600 tabular-nums'; dd.textContent = v
+      div.append(dt, dd)
+      return div
+    }))
+    ;(priceEl.querySelector('[data-bk-price-final-label]') as HTMLElement).textContent = finalLabel
+    ;(priceEl.querySelector('[data-bk-price-final]') as HTMLElement).textContent = fmtEUR(finalValue)
+    ;(priceEl.querySelector('[data-bk-price-savings]') as HTMLElement).textContent = savings
+    ;(priceEl.querySelector('[data-bk-price-note]') as HTMLElement).textContent = notes.filter(Boolean).join(' ')
+  }
   // ── FACTURATION / LIVRAISON (21-22/09/2026) ─────────────────────────────────
   const billingCompanyEl = modal?.querySelector('[data-bk-billing-company]') as HTMLElement
   const shippingEl = modal?.querySelector('[data-bk-shipping]') as HTMLElement
@@ -697,10 +805,14 @@ const saleIntake = saleIntakeClientConfig()
     // Lu après la bascule : masquer le bloc livraison décoche « même adresse ».
     const shipping = !!onDiscount && !shippingEl?.classList.contains('hidden')
     toggleBlock(shippingFieldsEl, shipping && shippingSameEl?.checked === false)
+    // Société → Particulier vide le n° de TVA : le récapitulatif repasse en TTC.
+    renderPrice()
   }
 
   modal?.querySelectorAll('input[name="billingKind"]').forEach((r) => r.addEventListener('change', syncBillingBlocks))
   shippingSameEl?.addEventListener('change', syncBillingBlocks)
+  // Un n° de TVA saisi fait basculer le récapitulatif en hors taxes (et inversement).
+  modal?.querySelector('input[name="billingVatNumber"]')?.addEventListener('input', renderPrice)
 
   kindSelect?.addEventListener('change', syncSessionBlocks)
   // « Visio » retire la question des instruments, « présentiel » la ramène.
@@ -750,6 +862,8 @@ const saleIntake = saleIntakeClientConfig()
     if (woodInput) woodInput.value = hasCalc ? (trigger.getAttribute('data-calc-wood') || '') : ''
     if (modeInput) modeInput.value = hasCalc ? (trigger.getAttribute('data-calc-mode') || '') : ''
     if (calcRecapTextEl) calcRecapTextEl.textContent = calcRecap
+    // Montants : seulement avec un choix du calculateur ET des nombres valides.
+    calcPrice = hasCalc ? readCalcPrice(trigger.getAttribute('data-calc-price') || '', trigger.getAttribute('data-calc-mode') || '') : null
     calcRecapEl?.classList.toggle('hidden', !hasCalc)
     // Masqué ≠ désactivé : les champs partent toujours sous `neotoneModel` et
     // `country`, l'Edge Function et api/subscribe.js sont inchangés là-dessus.
@@ -1037,6 +1151,9 @@ const saleIntake = saleIntakeClientConfig()
           neotonePurchaseMode: get('neotonePurchaseMode') || null,
           // Facturation en champs séparés (21/10/2026) — voir plus haut.
           billing,
+          // Montants du calculateur (21/10/2026), tels qu'affichés dans « Ton
+          // choix ». `site-lead` les borne et les met en page, sans recalcul.
+          neotonePrice: source === 'neotone-discount' ? calcPrice : null,
           socialAccount: get('socialAccount') || null,
           discoveryChannel: get('discoveryChannel') || null,
           playingSince: get('playingSince') || null,

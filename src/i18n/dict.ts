@@ -1019,8 +1019,10 @@ const fr = {
       showroomHow: [
         'Tu remplis ce formulaire.',
         'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest). Tu es en copie.',
-        'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), en général dans l’heure.',
+        'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), sous 24 h (jours ouvrés).',
         'Tu paies, l’instrument est à toi : tu repars avec, au showroom (Paris 20ᵉ).',
+        // 21/10/2026, demande de David : preuve de paiement si l'on paie avant de venir.
+        'Si tu paies avant de venir, envoie-moi la preuve de paiement ou de virement à <a href="mailto:contact@lesagedavid.fr">contact@lesagedavid.fr</a> : je te remets ton Neotone sur présentation de ce justificatif.',
       ],
       showroomWeekend: '<strong>Tu viens au showroom un week-end ?</strong> Remplis ce formulaire avant le vendredi : le lien de paiement sera prêt, tu pourras payer sur place et repartir avec.',
       onlineTitle: 'Achat en ligne : demande de code de réduction (−5 %)',
@@ -1032,6 +1034,15 @@ const fr = {
         'Je demande pour toi un code de réduction nominatif auprès de Neotone : <strong>Neotone te contacte directement</strong> et te le transmet.',
         'C’est ensuite Neotone qui prend la suite des opérations : commande, paiement, livraison. Je reste disponible si tu as besoin de moi.',
       ],
+      // ── Récapitulatif chiffré du bloc « Ton choix » (21/10/2026) ──────────
+      // Montants = ceux du calculateur (data-calc-price), jamais recalculés.
+      // Les autres libellés (prix public HT, remise, TVA, total…) sont ceux du
+      // calculateur lui-même (`data.calc`) : mêmes mots, mêmes chiffres.
+      // `{country}` / `{rate}` remplacés par le composant.
+      priceVatNotCharged: 'TVA {country} {rate} non facturée',
+      priceHtNote: 'Hors taxes : la TVA ({rate}) n’est pas facturée (autoliquidation), sous réserve de validité du n° de TVA.',
+      priceHtNeedVat: 'Indique ton n° de TVA intracommunautaire dans la facturation ci-dessous.',
+      priceOnlineNote: 'Le paiement se fait sur la boutique Neotone, avec ton code de réduction.',
     },
     // Questions « pour créer du lien » — aucune n'est obligatoire.
     discoveryLabel: 'Comment m’as-tu découvert comme ambassadeur Neotone ?',

@@ -789,8 +789,9 @@ export const es: Dict = {
       "showroomHow": [
         "Rellenas este formulario.",
         "Reviso tu solicitud y se la transmito a Neotone (Soundventure, en Budapest). Vas en copia.",
-        "Neotone te envía la factura y un enlace de pago con tarjeta, de lunes a viernes de 9 h a 17 h (hora de París, la misma que en Budapest), normalmente en menos de una hora.",
-        "Pagas y el instrumento es tuyo: te lo llevas en el showroom (París 20)."
+        "Neotone te envía la factura y un enlace de pago con tarjeta, de lunes a viernes de 9 h a 17 h (hora de París, la misma que en Budapest), en un plazo de 24 h (días laborables).",
+        "Pagas y el instrumento es tuyo: te lo llevas en el showroom (París 20).",
+        "Si pagas antes de venir, envíame el justificante de pago o de transferencia a <a href=\"mailto:contact@lesagedavid.fr\">contact@lesagedavid.fr</a>: te entrego tu Neotone al presentar este justificante."
       ],
       "showroomWeekend": "<strong>¿Vienes al showroom un fin de semana?</strong> Rellena este formulario antes del viernes: el enlace de pago estará listo, podrás pagar allí mismo y llevarte tu instrumento.",
       "onlineTitle": "Compra online: solicitud de código de descuento (−5 %)",
@@ -801,7 +802,11 @@ export const es: Dict = {
         "Leo tu solicitud personalmente; respondo a todo el mundo.",
         "Solicito para ti un código de descuento personal a Neotone: <strong>Neotone se pone en contacto contigo directamente</strong> y te lo envía.",
         "Después, Neotone se encarga de todo el proceso: pedido, pago y entrega. Sigo disponible si me necesitas."
-      ]
+      ],
+      "priceVatNotCharged": "IVA {country} {rate} no facturado",
+      "priceHtNote": "Sin IVA: el IVA ({rate}) no se factura (inversión del sujeto pasivo), siempre que el número de IVA sea válido.",
+      "priceHtNeedVat": "Indica tu número de IVA intracomunitario en los datos de facturación más abajo.",
+      "priceOnlineNote": "El pago se realiza en la tienda de Neotone, con tu código de descuento."
     },
     "discoveryLabel": "¿Cómo supiste de mí como embajador Neotone?",
     "discoveryChoose": "Elegir…",

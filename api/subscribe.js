@@ -101,6 +101,10 @@ export default async function handler(req, res) {
         // shipping }. L'Edge Function le borne champ par champ ; avant ce
         // relais, la facturation n'arrivait que mélangée au message.
         billing: body.billing && typeof body.billing === 'object' ? body.billing : undefined,
+        // Montants du calculateur Neotone (21/10/2026) : prix, remise, TVA,
+        // total. L'Edge Function les borne et vérifie leur cohérence ; un objet
+        // absent ou incohérent ⇒ aucun bloc chiffré dans les emails.
+        neotonePrice: body.neotonePrice && typeof body.neotonePrice === 'object' ? body.neotonePrice : undefined,
         socialAccount: body.socialAccount,
         discoveryChannel: body.discoveryChannel,
         playingSince: body.playingSince,

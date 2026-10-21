@@ -224,10 +224,32 @@ const calcData = {
       // ailleurs pour l'étiquette « Remise −7 % »).
       const discountPct = Math.round(discountRate * 100)
       const savingsRate = discountPct + (b2bEU ? country.vat : 0)
-      return { basePrice, discount, discountRate, discountPct, subtotalHT, vatRate, vatAmount, finalTTC, savings, savingsRate, catalogTTC, b2bEU, country }
+      // ── Les DEUX variantes, pour le formulaire (21/10/2026) ───────────────
+      // Le récapitulatif du formulaire doit pouvoir basculer en hors taxes si
+      // la personne saisit un n° de TVA alors que la case B2B n'est pas cochée
+      // ici (et inversement). Il ne recalcule rien : il lit ces valeurs, qui
+      // sont EXACTEMENT celles que ce calculateur affiche dans chaque cas
+      // (mêmes formules que ci-dessus, case cochée ou non).
+      const stdVatRate = country.eu ? country.vat : 0
+      const stdVatAmount = subtotalHT * (stdVatRate / 100)
+      const stdTotalTTC = subtotalHT + stdVatAmount
+      const stdSavings = country.eu ? discount * (1 + stdVatRate / 100) : discount
+      const b2bSavings = country.eu ? discount + basePrice * (country.vat / 100) : discount
+      const b2bSavingsRate = discountPct + (country.eu ? country.vat : 0)
+      return { basePrice, discount, discountRate, discountPct, subtotalHT, vatRate, vatAmount, finalTTC, savings, savingsRate, catalogTTC, b2bEU, country,
+        stdVatRate, stdVatAmount, stdTotalTTC, stdSavings, b2bSavings, b2bSavingsRate }
     }
 
-    function syncTrigger() {
+    /**
+     * Arrondi au centime IDENTIQUE à l'affichage : même moteur que fmtEUR
+     * (Intl, 2 décimales), sans séparateur de milliers. Ni Math.round(n*100)
+     * ni toFixed ne conviennent : sur 120,395 (99,50 × 1,21) ils donnent
+     * 120,39 quand le calculateur affiche 120,40 (vérifié le 21/10/2026).
+     */
+    const centsFmt = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: false })
+    const cents = (n: number) => Number(centsFmt.format(n))
+
+    function syncTrigger(r: ReturnType<typeof compute>) {
       const btn = $('calc-get-code')
       if (!btn) return
       const modeLabel = state.mode === 'showroom' ? L.modeShowroomShort : L.modeOnlineShort
@@ -250,6 +272,28 @@ const calcData = {
         modeLabel,
         DATA.countries[state.country].name,
       ].join(' · ')
+      // ── MONTANTS DU CALCULATEUR → formulaire → mails (21/10/2026) ─────────
+      // Demande de David : « rappeler le prix, le modèle choisi, l'économie
+      // faite grâce au 5 ou 7 % et les −20 % si autoliquidation ». SOURCE
+      // UNIQUE = compute() : le formulaire et l'Edge Function `site-lead`
+      // affichent ces nombres tels quels, sans rien recalculer.
+      //   std*  = particulier (TVA du pays si UE) ; b2b* = case B2B cochée.
+      btn.dataset.calcPrice = JSON.stringify({
+        basePrice: cents(r.basePrice),
+        discountPct: r.discountPct,
+        discount: cents(r.discount),
+        subtotalHT: cents(r.subtotalHT),
+        vatRate: r.stdVatRate,
+        vatAmount: cents(r.stdVatAmount),
+        totalTTC: cents(r.stdTotalTTC),
+        savings: cents(r.stdSavings),
+        b2bSavings: cents(r.b2bSavings),
+        b2bSavingsRate: r.b2bSavingsRate,
+        catalogTTC: cents(r.catalogTTC),
+        eu: !!r.country.eu,
+        b2b: state.b2b,
+        countryCode: state.country,
+      })
     }
 
     function render() {
@@ -257,7 +301,7 @@ const calcData = {
       // est recalée ici — le prix et le récapitulatif restent donc justes.
       applyAvailability()
       const r = compute()
-      syncTrigger()
+      syncTrigger(r)
       $('calc-selection')!.textContent = `${DATA.models[state.model].label} — ${DATA.woodLabels[state.wood]}`
       $('calc-base')!.textContent = fmtEUR(r.basePrice)
       $('calc-discount-label')!.textContent = `${L.discountLabel} −${Math.round(r.discountRate * 100)} %`
