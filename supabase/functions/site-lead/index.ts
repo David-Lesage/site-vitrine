@@ -142,6 +142,25 @@
 //      TERMS_VERSION passée à '2026-08-19' : ajout d'une finalité, validé par
 //      David. À garder identique dans muling-order/index.ts et dans
 //      `terms.version` de src/i18n/dict.ts et src/i18n/en.ts.
+// 21/10/2026 : NEOTONE — DEUX PARCOURS, DEUX INTITULÉS, FACTURATION LISIBLE.
+//      Demande de David : « Acheter au showroom quand c'est 7 % et Achat en
+//      ligne pour le code de réduction ». La source reste `neotone-discount`
+//      (index unique email+source, lignes déjà en base) ; c'est le MODE
+//      (`neotonePurchaseMode`, transmis par le calculateur) qui choisit
+//      l'intitulé (objet et titre du mail à David, ligne « Motif » du mail
+//      client) et la procédure du mail client :
+//        · showroom = VENTE DIRECTE au showroom : facture + lien de paiement
+//          préparés par Neotone en semaine (specs/ACHAT-NEOTONE-PROCEDURE) ;
+//        · en ligne = demande de code de réduction nominatif.
+//      Facturation : le site envoie un objet `billing` STRUCTURÉ. Le message
+//      personnel n'est plus mélangé au reste : bloc « Facturation » (un champ
+//      par ligne) et bloc « Livraison » séparés, retours à la ligne réels.
+//      Compatibilité : une requête à l'ANCIEN format (facturation annexée au
+//      message sous « — Facturation (saisie dans le formulaire) — ») est
+//      découpée et relue ici. Le site continue d'ailleurs d'annexer ce bloc
+//      au message : c'est lui qui garde la facturation EN BASE (aucune colonne
+//      dédiée dans `site_leads`) et c'est le filet si le site est déployé avant
+//      cette fonction. La colonne `message` est donc INCHANGÉE.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -245,17 +264,22 @@ const ALLOWED_NEOTONE_MODEL = ['one', 'mutant', 'undecided'];
 // Bois et mode d'achat repris du calculateur de /le-neotone (22/09/2026).
 // Utilisés UNIQUEMENT dans l'email d'alerte de David : aucune colonne ajoutée.
 const ALLOWED_NEOTONE_WOOD = ['frene', 'chene', 'acajou', 'cerisier', 'noyer'];
-const NEOTONE_WOOD_LABELS = {
+const NEOTONE_WOOD_LABELS: Record<string, string> = {
     frene: 'Frêne',
     chene: 'Chêne',
     acajou: 'Acajou',
     cerisier: 'Cerisier',
     noyer: 'Noyer',
 };
+// Mail client en anglais (21/10/2026) — mêmes bois que `woodNames` du site.
+const NEOTONE_WOOD_LABELS_EN: Record<string, string> = {
+    frene: 'Ash', chene: 'Oak', acajou: 'Mahogany', cerisier: 'Cherry', noyer: 'Walnut',
+};
 const ALLOWED_PURCHASE_MODE = ['online', 'showroom'];
-const PURCHASE_MODE_LABELS = {
-    online: 'Livraison (remise 5 %)',
-    showroom: 'Retrait au showroom (remise 7 %)',
+// 21/10/2026 : libellés alignés sur les deux parcours (voir l'en-tête).
+const PURCHASE_MODE_LABELS: Record<string, string> = {
+    online: 'Achat en ligne : code de réduction (remise 5 %, livraison)',
+    showroom: 'Achat au showroom (remise 7 %, retrait sur place)',
 };
 const ALLOWED_DISCOVERY = ['youtube', 'instagram', 'facebook', 'showcase', 'word-of-mouth', 'search', 'neotone-site', 'other'];
 const ALLOWED_PLAYING_SINCE = ['none', 'under-1', '1-3', 'over-3'];
@@ -413,9 +437,159 @@ function sessionDuration(sessionType: string | null): number {
     return 60;
 }
 
-function sourceLabel(src: string, lang: string): string {
-    const l = SOURCE_LABELS[src];
+/**
+ * NEOTONE (21/10/2026) — un intitulé PAR MODE, mots de David : « Acheter au
+ * showroom quand c'est 7 % et Achat en ligne pour le code de réduction ».
+ * Mode absent (page en cache, appel ancien) → libellé à deux taux ci-dessus.
+ * ⚠ Mêmes textes que `booking.purchase.showroomTitle` / `onlineTitle` des
+ * dictionnaires du site.
+ */
+const NEOTONE_MODE_LABELS: Record<string, { fr: string; en: string }> = {
+    showroom: { fr: 'Acheter un Neotone au showroom (−7 %)', en: 'Buy a Neotone at the showroom (−7%)' },
+    online: { fr: 'Achat en ligne : demande de code de réduction (−5 %)', en: 'Online purchase: discount code request (−5%)' },
+};
+
+function sourceLabel(src: string, lang: string, purchaseMode: string | null = null): string {
+    const byMode = src === 'neotone-discount' && purchaseMode ? NEOTONE_MODE_LABELS[purchaseMode] : undefined;
+    const l = byMode ?? SOURCE_LABELS[src];
     return l ? (lang === 'en' ? l.en : l.fr) : src;
+}
+
+// =============================================================================
+// FACTURATION NEOTONE (21/10/2026) — champs structurés + lecture de l'ancien format
+// =============================================================================
+/** Adresse de livraison quand elle DIFFÈRE de la facturation. */
+interface ShippingAddress { name: string; address: string; postalCode: string; city: string; country: string }
+
+/**
+ * Facturation d'une demande Neotone. `shipping` : `null` = question non posée
+ * (mode showroom) ; `'same'` = livrer à l'adresse de facturation ; sinon
+ * l'adresse de livraison saisie.
+ */
+interface Billing {
+    kind: 'particulier' | 'societe' | null;
+    company: string; vatNumber: string; siret: string;
+    name: string; address: string; postalCode: string; city: string; country: string;
+    shipping: null | 'same' | ShippingAddress;
+}
+
+/** Marqueur de l'ancien format (BookingForm.astro l'annexe toujours au message). */
+const LEGACY_BILLING_MARKER = '— Facturation (saisie dans le formulaire) —';
+
+const clip = (v: unknown, n: number) => String(v ?? '').trim().slice(0, n);
+
+/** Objet `billing` envoyé par le site → valeurs bornées ; `null` s'il est vide. */
+function parseBilling(raw: unknown): Billing | null {
+    if (!raw || typeof raw !== 'object') return null;
+    const r = raw as Record<string, unknown>;
+    const kind = r.kind === 'societe' ? 'societe' : r.kind === 'particulier' ? 'particulier' : null;
+    const isCompany = kind === 'societe';
+    let shipping: Billing['shipping'] = null;
+    if (r.shipping === 'same') shipping = 'same';
+    else if (r.shipping && typeof r.shipping === 'object') {
+        const s = r.shipping as Record<string, unknown>;
+        const addr = {
+            name: clip(s.name, 160), address: clip(s.address, 300), postalCode: clip(s.postalCode, 20),
+            city: clip(s.city, 120), country: clip(s.country, 2).toUpperCase(),
+        };
+        if (Object.values(addr).some(Boolean)) shipping = addr;
+    }
+    const b: Billing = {
+        kind,
+        company: isCompany ? clip(r.company, 200) : '',
+        vatNumber: isCompany ? clip(r.vatNumber, 40) : '',
+        siret: isCompany ? clip(r.siret, 40) : '',
+        name: clip(r.name, 160),
+        address: clip(r.address, 300),
+        postalCode: clip(r.postalCode, 20),
+        city: clip(r.city, 120),
+        country: clip(r.country, 2).toUpperCase(),
+        shipping,
+    };
+    const filled = [b.company, b.vatNumber, b.siret, b.name, b.address, b.postalCode, b.city, b.country].some(Boolean);
+    return filled || shipping ? b : null;
+}
+
+/**
+ * ANCIEN FORMAT : « <message perso>\n\n— Facturation (saisie dans le formulaire) —\nType : …\nAdresse : … ».
+ * Rend le message personnel SEUL et, si le bloc existe, la facturation relue.
+ */
+function splitLegacyBilling(message: string | null): { personal: string | null; legacy: Billing | null } {
+    if (!message) return { personal: null, legacy: null };
+    const at = message.indexOf(LEGACY_BILLING_MARKER);
+    if (at < 0) return { personal: message, legacy: null };
+    const personal = message.slice(0, at).trim() || null;
+    const kv: Record<string, string> = {};
+    for (const line of message.slice(at + LEGACY_BILLING_MARKER.length).split('\n')) {
+        const i = line.indexOf(' : ');
+        if (i > 0) kv[line.slice(0, i).trim()] = line.slice(i + 3).trim();
+    }
+    const kind = kv['Type'] === 'Société' ? 'societe' : kv['Type'] === 'Particulier' ? 'particulier' : null;
+    let shipping: Billing['shipping'] = null;
+    if (kv['Livraison'] === 'même adresse que la facturation') shipping = 'same';
+    else if (kv['Livraison — adresse'] || kv['Livraison — nom']) {
+        shipping = {
+            name: kv['Livraison — nom'] ?? '', address: kv['Livraison — adresse'] ?? '',
+            postalCode: kv['Livraison — code postal'] ?? '', city: kv['Livraison — ville'] ?? '',
+            country: (kv['Livraison — pays'] ?? '').toUpperCase(),
+        };
+    }
+    return {
+        personal,
+        legacy: parseBilling({
+            kind, company: kv['Raison sociale'], vatNumber: kv['N° TVA intracom.'], siret: kv['SIRET'],
+            name: kv['Nom de facturation'], address: kv['Adresse'], postalCode: kv['Code postal'],
+            city: kv['Ville'], country: kv['Pays de facturation'],
+            shipping: shipping === 'same' ? 'same' : shipping ?? undefined,
+        }),
+    };
+}
+
+/** « France (FR) » — le site envoie un code ISO à deux lettres. */
+function countryName(code: string, lang: string): string {
+    if (!code) return '';
+    try {
+        const name = new Intl.DisplayNames([lang === 'en' ? 'en' : 'fr'], { type: 'region' }).of(code);
+        return name && name !== code ? `${name} (${code})` : code;
+    } catch {
+        return code;
+    }
+}
+
+/** Lignes du bloc « Facturation », UN champ par ligne, dans l'ordre demandé par David. */
+function billingRows(b: Billing, lang: string): [string, string][] {
+    const en = lang === 'en';
+    const L = en
+        ? { type: 'Type', priv: 'Individual', comp: 'Company', company: 'Company name', vat: 'Intra-EU VAT number', siret: 'SIRET', name: 'Billing name', address: 'Address', pc: 'Postcode', city: 'City', country: 'Country' }
+        : { type: 'Type', priv: 'Particulier', comp: 'Société', company: 'Raison sociale', vat: 'N° TVA intracom.', siret: 'SIRET', name: 'Nom', address: 'Adresse', pc: 'Code postal', city: 'Ville', country: 'Pays' };
+    const rows: [string, string][] = [
+        [L.type, b.kind === 'societe' ? L.comp : b.kind === 'particulier' ? L.priv : ''],
+        [L.name, b.name],
+        [L.company, b.company],
+        [L.vat, b.vatNumber],
+        [L.siret, b.siret],
+        [L.address, b.address],
+        [L.pc, b.postalCode],
+        [L.city, b.city],
+        [L.country, countryName(b.country, lang)],
+    ];
+    return rows.filter(([, v]) => v);
+}
+
+/** Lignes du bloc « Livraison » — vide si la question n'a pas été posée. */
+function shippingRows(b: Billing | null, lang: string): [string, string][] {
+    const en = lang === 'en';
+    if (!b?.shipping) return [];
+    if (b.shipping === 'same') return [[en ? 'Address' : 'Adresse', en ? 'same as the billing address' : 'même adresse que la facturation']];
+    const s = b.shipping;
+    const rows: [string, string][] = [
+        [en ? 'Recipient' : 'Destinataire', s.name],
+        [en ? 'Address' : 'Adresse', s.address],
+        [en ? 'Postcode' : 'Code postal', s.postalCode],
+        [en ? 'City' : 'Ville', s.city],
+        [en ? 'Country' : 'Pays', countryName(s.country, lang)],
+    ];
+    return rows.filter(([, v]) => v);
 }
 
 const btn = (href: string, label: string, primary = true) =>
@@ -540,11 +714,17 @@ function bookingHtml(
     sessionFormat: string | null,
     instruments: string[] | null,
     neotoneModel: string | null,
+    // NEOTONE (21/10/2026) — facultatif : les autres motifs n'en passent pas.
+    neo: { purchaseMode?: string | null; wood?: string | null; billing?: Billing | null } = {},
 ): string {
     const en = lang === 'en';
     const base = en ? `${SITE}/en` : SITE;
     const hi = firstName ? `${en ? 'Hi' : 'Bonjour'} ${esc(firstName)},` : (en ? 'Hi,' : 'Bonjour,');
     const isDiscount = src === 'neotone-discount';
+    // Parcours Neotone : `null` si le mode n'est pas connu (ancien appel) —
+    // l'email reste alors l'accusé de réception générique, sans procédure.
+    const neoMode = isDiscount && (neo.purchaseMode === 'showroom' || neo.purchaseMode === 'online') ? neo.purchaseMode : null;
+    const billing = isDiscount ? neo.billing ?? null : null;
     const isLesson = !!sessionType && sessionType.startsWith('lesson');
     const dateLabel = eventDate
         ? new Intl.DateTimeFormat(en ? 'en-GB' : 'fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
@@ -578,6 +758,37 @@ function bookingHtml(
         cta: 'See the showroom page',
         sign: 'See you soon,<br />David Lesage',
         foot: 'You are receiving this email because you sent a request on lesagedavid.fr.',
+        // ── NEOTONE (21/10/2026) ── Procédure SHOWROOM = textes du chantier du
+        // 10/10 (specs/ACHAT-NEOTONE-PROCEDURE-2026-10-09.md : carte uniquement,
+        // lien de paiement lun-ven 9h-17h, pas de support le week-end, David
+        // transmet à Neotone avec le client en copie). Procédure EN LIGNE =
+        // textes déjà publiés sur le site (booking.discountIntro / discountNext*),
+        // SANS délai : la spec n'en donne aucun.
+        wood: 'Wood',
+        p1Showroom: 'Thanks — your request to buy a Neotone at the showroom has reached me. Here is exactly what happens next.',
+        p1Online: 'Thanks — your discount code request has reached me. Here is what happens next.',
+        howShowroomTitle: 'How the purchase at the showroom works',
+        howShowroom: [
+            'You filled in the purchase form: done ✅',
+            'I check your request and pass it on to Neotone (Soundventure, in Budapest). You are copied in.',
+            'Neotone sends you the invoice and a card payment link, Monday to Friday, 9 am to 5 pm (Paris time, the same as Budapest), usually within the hour.',
+            'You pay, and the instrument is yours: you leave with it, at the showroom (Paris 20th).',
+        ],
+        weekend: '<strong>Coming to the showroom at the weekend?</strong> If you filled in the form before Friday, the payment link will be ready: you pay on the spot and leave with your instrument.',
+        howOnlineTitle: 'How you get your discount code',
+        howOnline: [
+            'You filled in the form: done ✅',
+            'I read your request personally and request a personal discount code for you from Neotone.',
+            '<strong>Neotone contacts you directly</strong> and sends you your discount code.',
+            'From there Neotone takes over: order, payment, delivery. I stay available if you need me.',
+        ],
+        vatNote: 'You entered an intra-EU VAT number: if it is valid, the invoice will be issued excluding VAT (reverse charge).',
+        billingTitle: 'Your billing details',
+        billingCheck: 'Please check them: the invoice is issued from these details. Something wrong? Just reply to this email.',
+        // En ligne : la facture n'est pas établie par ce formulaire (le code
+        // sert à commander chez Neotone) — on n'affirme donc rien de plus.
+        billingCheckOnline: 'Something wrong? Just reply to this email.',
+        shippingTitle: 'Delivery',
     } : {
         title: 'Demande bien reçue ✨',
         p1: 'Merci pour ton message — ta demande est enregistrée et je les lis toutes personnellement. Je te réponds très vite pour caler les détails.',
@@ -603,6 +814,30 @@ function bookingHtml(
         cta: 'Voir la page du showroom',
         sign: 'À très vite,<br />David Lesage',
         foot: 'Tu reçois cet email parce que tu as envoyé une demande sur lesagedavid.fr.',
+        // ── NEOTONE (21/10/2026) ── mêmes sources que la version anglaise.
+        wood: 'Bois',
+        p1Showroom: 'Merci — ta demande d’achat d’un Neotone au showroom m’est bien parvenue. Voici exactement la suite.',
+        p1Online: 'Merci — ta demande de code de réduction m’est bien parvenue. Voici la suite.',
+        howShowroomTitle: 'Comment se passe l’achat au showroom',
+        howShowroom: [
+            'Tu as rempli le formulaire d’achat : c’est fait ✅',
+            'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest). Tu es en copie.',
+            'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), en général dans l’heure.',
+            'Tu paies, l’instrument est à toi : tu repars avec, au showroom (Paris 20ᵉ).',
+        ],
+        weekend: '<strong>Tu viens au showroom un week-end ?</strong> Si tu as rempli le formulaire avant le vendredi, le lien de paiement sera prêt : tu paies sur place et tu repars avec.',
+        howOnlineTitle: 'Comment tu reçois ton code de réduction',
+        howOnline: [
+            'Tu as rempli le formulaire : c’est fait ✅',
+            'Je lis ta demande personnellement et je demande pour toi un code de réduction nominatif auprès de Neotone.',
+            '<strong>Neotone te contacte directement</strong> et te transmet ton code de réduction.',
+            'C’est ensuite Neotone qui prend la suite des opérations : commande, paiement, livraison. Je reste disponible si tu as besoin de moi.',
+        ],
+        vatNote: 'Tu as indiqué un n° de TVA intracommunautaire : s’il est valide, la facture sera établie hors taxes (autoliquidation).',
+        billingTitle: 'Tes informations de facturation',
+        billingCheck: 'Vérifie-les : c’est avec ces informations que la facture est établie. Une erreur ? Réponds simplement à cet email.',
+        billingCheckOnline: 'Une erreur ? Réponds simplement à cet email.',
+        shippingTitle: 'Livraison',
     };
 
     const row = (k: string, v: string) =>
@@ -612,14 +847,25 @@ function bookingHtml(
         <tr><td style="padding:28px 28px 4px;">
           <div style="font-size:21px;font-weight:700;color:#111827;">${t.title}</div>
           <p style="margin:14px 0 0;color:#374151;font-size:15px;line-height:1.6;">${hi}</p>
-          <p style="margin:12px 0 0;color:#374151;font-size:15px;line-height:1.6;">${t.p1}</p>
+          <p style="margin:12px 0 0;color:#374151;font-size:15px;line-height:1.6;">${neoMode === 'showroom' ? t.p1Showroom : neoMode === 'online' ? t.p1Online : t.p1}</p>
         </td></tr>
+
+        ${neoMode ? `
+        <tr><td style="padding:20px 28px 4px;border-top:1px solid #f0f1f3;">
+          <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${neoMode === 'showroom' ? t.howShowroomTitle : t.howOnlineTitle}</h2>
+          <ol style="margin:0;padding-left:18px;color:#374151;font-size:14px;line-height:1.7;">
+            ${(neoMode === 'showroom' ? t.howShowroom : t.howOnline).map((step) => `<li>${step}</li>`).join('')}
+          </ol>
+          ${neoMode === 'showroom' ? `<p style="margin:12px 0 0;padding:10px 12px;background:#faf5ef;border:1px solid #e7d9c6;border-radius:10px;color:#374151;font-size:14px;line-height:1.6;">${t.weekend}</p>` : ''}
+          ${billing?.vatNumber ? `<p style="margin:12px 0 0;color:#374151;font-size:14px;line-height:1.6;">${t.vatNote}</p>` : ''}
+        </td></tr>` : ''}
 
         <tr><td style="padding:22px 28px 4px;border-top:1px solid #f0f1f3;">
           <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.recap}</h2>
           <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
-            ${row(t.kind, esc(sourceLabel(src, lang)))}
+            ${row(t.kind, esc(sourceLabel(src, lang, neoMode)))}
             ${neotoneModel ? row(t.model, esc(PROFILE_LABELS[neotoneModel] ?? neotoneModel)) : ''}
+            ${isDiscount && neo.wood && NEOTONE_WOOD_LABELS[neo.wood] ? row(t.wood, esc((en ? NEOTONE_WOOD_LABELS_EN : NEOTONE_WOOD_LABELS)[neo.wood])) : ''}
             ${sessionType ? row(t.kindOf, esc(PROFILE_LABELS[sessionType] ?? sessionType)) : ''}
             ${sessionFormat ? row(t.format, esc(PROFILE_LABELS[sessionFormat] ?? sessionFormat)) : ''}
             ${instruments?.length ? row(t.instruments, esc(instruments.map((i) => PROFILE_LABELS[i] ?? i).join(', '))) : ''}
@@ -630,6 +876,23 @@ function bookingHtml(
             ${message ? row(t.yourMsg, esc(message).replace(/\n/g, '<br />')) : ''}
           </table>
         </td></tr>
+
+        ${billing && billingRows(billing, lang).length ? `
+        <tr><td style="padding:20px 28px 4px;border-top:1px solid #f0f1f3;">
+          <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.billingTitle}</h2>
+          <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
+            ${billingRows(billing, lang).map(([k, v]) => row(esc(k), esc(v))).join('')}
+          </table>
+          <p style="margin:10px 0 0;color:#6b7280;font-size:13px;line-height:1.5;">${neoMode === 'online' ? t.billingCheckOnline : t.billingCheck}</p>
+        </td></tr>` : ''}
+
+        ${billing?.shipping && billing.shipping !== 'same' ? `
+        <tr><td style="padding:20px 28px 4px;border-top:1px solid #f0f1f3;">
+          <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.shippingTitle}</h2>
+          <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
+            ${shippingRows(billing, lang).map(([k, v]) => row(esc(k), esc(v))).join('')}
+          </table>
+        </td></tr>` : ''}
 
         ${preferredSlots?.length ? `
         <tr><td style="padding:20px 28px 4px;border-top:1px solid #f0f1f3;">
@@ -658,7 +921,14 @@ function bookingHtml(
  * `extraHtml` = bloc optionnel ajouté APRÈS le tableau (v19 : les boutons
  * « Confirmer ce créneau »).
  */
-function adminNotifyHtml(f: Record<string, string | number | null>, extraHtml = ''): string {
+function adminNotifyHtml(
+    f: Record<string, string | number | null>,
+    extraHtml = '',
+    // 21/10/2026 : blocs titrés (Facturation, Livraison…), un champ par ligne,
+    // placés sous le tableau principal. Demande de David (20/10) : la
+    // facturation ne doit plus être noyée dans le champ « Message ».
+    sections: { title: string; rows: [string, string][] }[] = [],
+): string {
     const row = (k: string, v: string | number | null) =>
         v === null || v === '' ? '' :
         `<tr><td style="padding:5px 0;color:#6b7280;font-size:13px;width:130px;vertical-align:top;">${k}</td><td style="padding:5px 0;color:#111827;font-size:14px;">${
@@ -667,18 +937,29 @@ function adminNotifyHtml(f: Record<string, string | number | null>, extraHtml = 
             // et « + » initial), le texte affiché reste celui saisi.
             k === 'Téléphone' && phoneHref(String(v))
                 ? `<a href="tel:${esc(phoneHref(String(v)))}" style="color:#b4462a;">${esc(String(v))}</a>`
-                : esc(String(v))
+                // Retours à la ligne RÉELS (21/10/2026) : un message de plusieurs
+                // lignes arrivait sur une seule ligne, illisible.
+                : esc(String(v)).replace(/\r?\n/g, '<br />')
         }</td></tr>`;
+    const blocks = sections.filter((sec) => sec.rows.length);
+    const sectionsHtml = blocks.map((sec, i) => `
+        <tr><td style="padding:14px 28px ${i === blocks.length - 1 && !extraHtml ? '26px' : '6px'};border-top:1px solid #f0f1f3;">
+          <div style="margin:0 0 6px;font-size:15px;font-weight:700;color:#111827;">${esc(sec.title)}</div>
+          <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
+            ${sec.rows.map(([k, v]) => row(esc(k), v)).join('')}
+          </table>
+        </td></tr>`).join('');
 
     return shell('fr', `
         <tr><td style="padding:26px 28px 6px;">
           <div style="font-size:20px;font-weight:700;color:#111827;">Nouvelle demande — ${esc(String(f.Motif ?? ''))}</div>
         </td></tr>
-        <tr><td style="padding:8px 28px ${extraHtml ? '10px' : '26px'};">
+        <tr><td style="padding:8px 28px ${extraHtml || blocks.length ? '10px' : '26px'};">
           <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
             ${Object.entries(f).map(([k, v]) => row(k, v)).join('')}
           </table>
         </td></tr>
+        ${sectionsHtml}
         ${extraHtml}
 `);
 }
@@ -968,6 +1249,17 @@ Deno.serve(async (req) => {
         const dream = String(body.dream ?? '').trim().slice(0, 300) || null;
         const socialAccount = String(body.socialAccount ?? '').trim().slice(0, 200) || null;
 
+        // FACTURATION NEOTONE (21/10/2026) — objet `billing` structuré si le site
+        // l'envoie ; sinon relu depuis l'ANCIEN format (bloc annexé au message).
+        // Dans les deux cas, le bloc annexé est RETIRÉ du message affiché dans
+        // les emails : `personalMessage` = ce que la personne a écrit, et rien
+        // d'autre. La colonne `message` garde, elle, le texte reçu tel quel.
+        const isNeotone = source === 'neotone-discount';
+        const { personal: personalMessage, legacy: legacyBilling } = isNeotone
+            ? splitLegacyBilling(message)
+            : { personal: message, legacy: null };
+        const billing = isNeotone ? (parseBilling(body.billing) ?? legacyBilling) : null;
+
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
         // Téléphone obligatoire UNIQUEMENT pour le formulaire de contact : les
         // autres motifs (réservations, bêta, fabricants…) gardent leurs règles.
@@ -1168,7 +1460,8 @@ Deno.serve(async (req) => {
                     : isShowcaseWaitlist
                         ? showcaseDatesHtml({ firstName, lang, events: upcomingEvents })
                         : isBooking
-                            ? bookingHtml(firstName, lang, source, eventDate, message, sessionType, preferredSlots, sessionFormat, instruments, neotoneModel)
+                            ? bookingHtml(firstName, lang, source, eventDate, personalMessage, sessionType, preferredSlots, sessionFormat, instruments, neotoneModel,
+                                { purchaseMode, wood: neotoneWood, billing })
                             : confirmationHtml(firstName, lang, wantsShowcase);
 
                 await client.send({
@@ -1212,13 +1505,13 @@ Deno.serve(async (req) => {
                         // plus stratégique. Son pays figure dans l'objet pour situer d'un
                         // coup d'œil (le catalogue se choisit d'abord sur la localisation).
                         subject: mailSubject((
-                            isBooking ? `[Site] ${sourceLabel(source, 'fr')} — ${firstName} ${lastName}`
+                            isBooking ? `[Site] ${sourceLabel(source, 'fr', purchaseMode)} — ${firstName} ${lastName}`
                             : isMaker ? `[Fabricant] ${firstName} ${lastName}${makerCountry ? ` — ${makerCountry}` : ''}`
                             : `[Bêta] Candidature — ${firstName} ${lastName}`
                         ).trim()),
                         mimeContent: [htmlPart(adminNotifyHtml({
                             Motif: isBooking
-                                ? sourceLabel(source, 'fr')
+                                ? sourceLabel(source, 'fr', purchaseMode)
                                 : [
                                     isMaker ? 'Fabricant de handpan — fiche catalogue' : null,
                                     wantsBeta ? 'Candidature bêta-testeur' : null,
@@ -1249,7 +1542,13 @@ Deno.serve(async (req) => {
                             'Modèle visé': neotoneModel ? PROFILE_LABELS[neotoneModel] ?? neotoneModel : null,
                             Bois: neotoneWood ? NEOTONE_WOOD_LABELS[neotoneWood] : null,
                             'Mode d’achat': purchaseMode ? PURCHASE_MODE_LABELS[purchaseMode] : null,
-                            'Pays de livraison': country,
+                            // Showroom : rien n'est livré, ce pays est celui choisi dans
+                            // le calculateur (il fixe la TVA affichée), pas une livraison.
+                            'Pays de livraison': purchaseMode === 'showroom' ? null : country,
+                            'Pays (calculateur)': purchaseMode === 'showroom' ? country : null,
+                            // Livraison identique à la facturation : une ligne suffit
+                            // (le bloc « Livraison » n'apparaît que s'il diffère).
+                            Livraison: billing?.shipping === 'same' ? 'même adresse que la facturation' : null,
                             'Réseaux sociaux': socialAccount,
                             'M’a découvert par': discoveryChannel ? PROFILE_LABELS[discoveryChannel] ?? discoveryChannel : null,
                             'Joue depuis': playingSince ? PROFILE_LABELS[playingSince] ?? playingSince : null,
@@ -1271,7 +1570,9 @@ Deno.serve(async (req) => {
                             // (ils appartiennent à l'événement), d'où le rappel ici.
                             Horaires: isShowcaseBooking && eventStart && eventEnd ? `${eventStart} → ${eventEnd}` : null,
                             Personnes: peopleCount,
-                            Message: message,
+                            // Le message PERSONNEL seul (21/10/2026) : la facturation a
+                            // son propre bloc, sous le tableau.
+                            Message: personalMessage,
                             Page: page || null,
                             Langue: lang,
                             // Trace du consentement, visible sans ouvrir la base.
@@ -1283,7 +1584,20 @@ Deno.serve(async (req) => {
                             'Recevoir les nouveautés': newsOptInAt
                                 ? `oui — accord donné le ${newsOptInAt.slice(0, 10)}`
                                 : 'non (case facultative laissée décochée)',
-                        }, await slotConfirmBlockHtml(confirmLessonId, confirmSlots)))],
+                        }, await slotConfirmBlockHtml(confirmLessonId, confirmSlots), billing ? [
+                            {
+                                title: 'Facturation',
+                                rows: [
+                                    ...billingRows(billing, 'fr'),
+                                    ...(billing.vatNumber
+                                        ? [['Facture', 'hors taxes si le n° de TVA intracom. est valide (autoliquidation) — à vérifier'] as [string, string]]
+                                        : []),
+                                ],
+                            },
+                            ...(billing.shipping && billing.shipping !== 'same'
+                                ? [{ title: 'Livraison (différente de la facturation)', rows: shippingRows(billing, 'fr') }]
+                                : []),
+                        ] : []))],
                     });
                 } catch (notifyErr) {
                     console.error('site-lead notify error:', notifyErr);

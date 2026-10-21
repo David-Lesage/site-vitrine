@@ -21,6 +21,9 @@ const bkd = t.booking
 const cFr = fr.data.calc as unknown as Record<string, string>
 const cAny = c as unknown as Record<string, string>
 const sl = (key: string) => cAny[key] || cFr[key] || ''
+// Deux parcours Neotone (21/10/2026) : intitulé du bouton et de la modale selon
+// le mode. Même repli FR que `billing` dans BookingForm (es.ts est généré).
+const pp = { ...fr.booking.purchase, ...((bkd as { purchase?: Partial<typeof fr.booking.purchase> }).purchase ?? {}) }
 
 const modelLabels: Record<string, string> = { one: 'Neotone¹', mutant: 'Neotone¹ Mutant' }
 const DEFAULT_MODEL = 'mutant'
@@ -44,8 +47,16 @@ const calcData = {
     savings: c.savings,
     savingsB2B: c.savingsB2B,
     savingsB2BNote: c.savingsB2BNote,
-    modeOnlineShort: c.modeOnlineShort,
-    modeShowroomShort: c.modeShowroomShort,
+    // `sl()` : repli FR si la clé manque dans une langue (es.ts est généré).
+    modeOnlineShort: sl('modeOnlineShort'),
+    modeShowroomShort: sl('modeShowroomShort'),
+    // Bouton + titre + intro de la modale, par mode (21/10/2026).
+    buyShowroomButton: pp.showroomButton,
+    buyShowroomTitle: pp.showroomTitle,
+    buyShowroomIntro: pp.showroomIntro,
+    buyOnlineButton: pp.onlineButton,
+    buyOnlineTitle: pp.onlineTitle,
+    buyOnlineIntro: pp.onlineIntro,
     stockOut: sl('stockOut'),
     stockExpected: sl('stockExpected'),
     stockAdjusted: sl('stockAdjusted'),
@@ -154,14 +165,17 @@ const calcData = {
           repose donc plus la question du modèle (demande de David, 22/09/2026).
           `data-calc-recap` est la phrase affichée ; les autres sont les valeurs
           envoyées au serveur (noms de champs INCHANGÉS). */}
+      {/* 21/10/2026 — libellé, titre et intro RÉÉCRITS par mode dans
+          syncTrigger() (« Acheter au showroom » / « Achat en ligne : code »).
+          Rendu initial = mode showroom, celui de `state` par défaut. */}
       <button
         id="calc-get-code"
         type="button"
         data-booking="neotone-discount"
-        data-title={bkd.discountTitle}
-        data-intro={bkd.discountIntro}
+        data-title={pp.showroomTitle}
+        data-intro={pp.showroomIntro}
         class="mt-6 block w-full rounded-full bg-rust px-5 py-3 text-center font-700 text-cream transition-colors hover:bg-copper"
-      >{c.getCode}</button>
+      >{pp.showroomButton}</button>
     </div>
   </div>
 </div>
@@ -220,6 +234,13 @@ const calcData = {
       btn.dataset.calcModel = state.model
       btn.dataset.calcWood = state.wood
       btn.dataset.calcMode = state.mode
+      // Deux parcours (21/10/2026) : showroom = achat sur place (−7 %),
+      // en ligne = demande de code de réduction (−5 %). La modale lit
+      // `data-title` / `data-intro` à l'ouverture.
+      const showroom = state.mode === 'showroom'
+      btn.textContent = showroom ? L.buyShowroomButton : L.buyOnlineButton
+      btn.dataset.title = showroom ? L.buyShowroomTitle : L.buyOnlineTitle
+      btn.dataset.intro = showroom ? L.buyShowroomIntro : L.buyOnlineIntro
       btn.dataset.calcCountry = DATA.countries[state.country].name
       btn.dataset.calcRecap = [
         // On ne garde que le début de la note (« 10 notes ») : la suite

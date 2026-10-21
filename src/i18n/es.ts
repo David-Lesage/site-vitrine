@@ -771,7 +771,7 @@ export const es: Dict = {
     },
     "discountCountry": "País de entrega",
     "discountCountryPlaceholder": "Francia, Bélgica, Suiza…",
-    "discountNote": "Esta información se utiliza únicamente para solicitar su código a Neotone.",
+    "discountNote": "Esta información solo me sirve para preparar tu solicitud a Neotone.",
     "phonePlain": "Teléfono",
     "phoneWhyShowcase": "Requisito indispensable para la reunión: que sea una fecha fija y que, si surge algún imprevisto de última hora por cualquiera de las partes, pueda contactarle de inmediato.",
     "socialLabel": "Tu cuenta de redes sociales",
@@ -781,6 +781,28 @@ export const es: Dict = {
     "discountNext1": "Leí tu mensaje personalmente; respondo a todo el mundo.",
     "discountNext2": "En un plazo de 24 horas tras mi lectura, <strong>Neotone se pondrá en contacto contigo directamente</strong> y te enviará tu código de descuento.",
     "discountNext3": "Neotone se encarga entonces de todo el proceso: pedido, pago y entrega. Sigo disponible si me necesitas.",
+    "purchase": {
+      "showroomTitle": "Comprar un Neotone en el showroom (−7 %)",
+      "showroomIntro": "Te llevas tu instrumento en el showroom (París 20). Reviso tu solicitud y se la transmito a Neotone, que te envía la factura y un enlace de pago con tarjeta, de lunes a viernes.",
+      "showroomButton": "Comprar en el showroom (−7 %)",
+      "showroomHowTitle": "Cómo es la compra en el showroom",
+      "showroomHow": [
+        "Rellenas este formulario.",
+        "Reviso tu solicitud y se la transmito a Neotone (Soundventure, en Budapest). Vas en copia.",
+        "Neotone te envía la factura y un enlace de pago con tarjeta, de lunes a viernes de 9 h a 17 h (hora de París, la misma que en Budapest), normalmente en menos de una hora.",
+        "Pagas y el instrumento es tuyo: te lo llevas en el showroom (París 20)."
+      ],
+      "showroomWeekend": "<strong>¿Vienes al showroom un fin de semana?</strong> Rellena este formulario antes del viernes: el enlace de pago estará listo, podrás pagar allí mismo y llevarte tu instrumento.",
+      "onlineTitle": "Compra online: solicitud de código de descuento (−5 %)",
+      "onlineIntro": "Un código de descuento personal que solicito para ti a Neotone: −5 % en tu pedido online, entregado en tu casa.",
+      "onlineButton": "Compra online: obtener mi código (−5 %)",
+      "onlineHowTitle": "Cómo recibes tu código de descuento",
+      "onlineHow": [
+        "Leo tu solicitud personalmente; respondo a todo el mundo.",
+        "Solicito para ti un código de descuento personal a Neotone: <strong>Neotone se pone en contacto contigo directamente</strong> y te lo envía.",
+        "Después, Neotone se encarga de todo el proceso: pedido, pago y entrega. Sigo disponible si me necesitas."
+      ]
+    },
     "discoveryLabel": "¿Cómo supiste de mí como embajador Neotone?",
     "discoveryChoose": "Elegir…",
     "discoveryNames": {
@@ -2782,6 +2804,8 @@ export const es: Dict = {
       "savingsB2B": "No pagas",
       "savingsB2BNote": "Sea {discountRate} el descuento + {vatRate} el IVA sobre el precio base, es decir, la diferencia con el precio de lista con IVA incluido ({catalog}). Solo el descuento de {discount} representa una ganancia real: no se paga el IVA por adelantado (inversión del sujeto pasivo) y, de todos modos, se recuperaría.",
       "getCode": "Obtén mi código de descuento",
+      "modeOnlineShort": "Compra online, código de descuento (−5 %)",
+      "modeShowroomShort": "Compra en el showroom (−7 %)",
       "discountLabel": "Presentación del embajador",
       "vat": "TINA",
       "finalTTC": "Precio final con IVA incluido a pagar",

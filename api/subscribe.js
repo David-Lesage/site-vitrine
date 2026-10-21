@@ -96,6 +96,11 @@ export default async function handler(req, res) {
         // part, l'email de David ne pouvait donc pas les mentionner.
         neotoneWood: body.neotoneWood,
         neotonePurchaseMode: body.neotonePurchaseMode,
+        // Facturation Neotone STRUCTURÉE (21/10/2026) : un objet { kind, name,
+        // company, vatNumber, siret, address, postalCode, city, country,
+        // shipping }. L'Edge Function le borne champ par champ ; avant ce
+        // relais, la facturation n'arrivait que mélangée au message.
+        billing: body.billing && typeof body.billing === 'object' ? body.billing : undefined,
         socialAccount: body.socialAccount,
         discoveryChannel: body.discoveryChannel,
         playingSince: body.playingSince,

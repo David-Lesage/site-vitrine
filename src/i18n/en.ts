@@ -808,7 +808,7 @@ export const en: Dict = {
     },
     discountCountry: 'Delivery country',
     discountCountryPlaceholder: 'France, Belgium, Switzerland…',
-    discountNote: 'I only use these details to request your code from Neotone.',
+    discountNote: 'I only use these details to prepare your request to Neotone.',
     // Billing (21-22/09/2026) — see the French dictionary for the reasoning.
     billing: {
       title: 'Billing',
@@ -851,6 +851,29 @@ export const en: Dict = {
     discountNext1: 'I read your message personally — I reply to everyone.',
     discountNext2: 'Within 24 h of me reading it, <strong>Neotone contacts you directly</strong> and sends you your discount code.',
     discountNext3: 'From there Neotone takes over: order, payment, delivery. I stay available if you need me.',
+    // Two Neotone paths (21/10/2026) — see the French dictionary.
+    purchase: {
+      showroomTitle: 'Buy a Neotone at the showroom (−7%)',
+      showroomIntro: 'You leave with your instrument, at the showroom (Paris 20th). I check your request and pass it on to Neotone, who sends you the invoice and a card payment link, Monday to Friday.',
+      showroomButton: 'Buy at the showroom (−7%)',
+      showroomHowTitle: 'How the purchase at the showroom works',
+      showroomHow: [
+        'You fill in this form.',
+        'I check your request and pass it on to Neotone (Soundventure, in Budapest). You are copied in.',
+        'Neotone sends you the invoice and a card payment link, Monday to Friday, 9 am to 5 pm (Paris time, the same as Budapest), usually within the hour.',
+        'You pay, and the instrument is yours: you leave with it, at the showroom (Paris 20th).',
+      ],
+      showroomWeekend: '<strong>Coming to the showroom at the weekend?</strong> Fill in this form before Friday: the payment link will be ready, so you can pay on the spot and leave with your instrument.',
+      onlineTitle: 'Online purchase: discount code request (−5%)',
+      onlineIntro: 'A personal discount code that I request for you from Neotone: −5% on your online order, delivered to you.',
+      onlineButton: 'Online purchase: get my code (−5%)',
+      onlineHowTitle: 'How you get your discount code',
+      onlineHow: [
+        'I read your request personally — I reply to everyone.',
+        'I request a personal discount code for you from Neotone: <strong>Neotone contacts you directly</strong> and sends it to you.',
+        'From there Neotone takes over: order, payment, delivery. I stay available if you need me.',
+      ],
+    },
     discoveryLabel: 'How did you find me as a Neotone ambassador?',
     discoveryChoose: 'Choose…',
     discoveryNames: {
@@ -2882,8 +2905,8 @@ export const en: Dict = {
       modeOnlineSub: 'Worldwide shipping included · 5% discount',
       modeShowroom: '🏠 Come to the showroom ★',
       modeShowroomSub: 'Paris 20th · 7% discount · no wait',
-      modeOnlineShort: 'Delivery (−5%)',
-      modeShowroomShort: 'Showroom pickup (−7%)',
+      modeOnlineShort: 'Online purchase, discount code (−5%)',
+      modeShowroomShort: 'Showroom purchase (−7%)',
       stockOut: 'not in stock at the showroom',
       stockExpected: 'expected {date}',
       stockAdjusted: 'We adjusted your choice: these are the only instruments at the showroom today.',

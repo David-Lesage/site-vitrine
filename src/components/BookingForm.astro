@@ -95,6 +95,8 @@ const upcoming = JSON.stringify(
 // s'affiche en français en attendant. À supprimer le jour où `es.ts` est
 // régénéré ? NON : le garder coûte une ligne et protège les prochains ajouts.
 const bb = { ...fr.booking.billing, ...(bk.billing ?? {}) }
+// Deux parcours Neotone (21/10/2026) — même repli FR que `billing`.
+const pp = { ...fr.booking.purchase, ...(bk.purchase ?? {}) }
 // Liste de pays RÉUTILISÉE du calculateur (`src/data/neotone.ts`) : le contrat
 // de `sale-intake` réclame un code ISO à deux lettres, un champ libre en
 // produirait fatalement des invalides. Même source = mêmes pays que le prix
@@ -420,13 +422,27 @@ const saleIntake = saleIntakeClientConfig()
         <input type="hidden" name="clientRequestId" value="" />
 
         {/* Ce qui se passe après l'envoi — annoncé AVANT, pour qu'il n'y ait
-            aucune surprise : c'est Neotone qui reprend la main. */}
-        <div class="rounded-xl border border-copper/25 bg-copper/5 p-4">
-          <p class="text-sm font-700">{bk.discountNextTitle}</p>
+            aucune surprise. DEUX PARCOURS depuis le 21/10/2026 (demande de
+            David : « Acheter au showroom quand c'est 7 % et Achat en ligne pour
+            le code de réduction ») — un seul bloc visible, choisi par le mode
+            du calculateur dans `open()`. Mode inconnu → bloc « en ligne »
+            (l'ancien parcours « code »). Les mêmes étapes sont rappelées dans
+            l'email au client (Edge Function `site-lead`). */}
+        <div data-bk-how="showroom" class="hidden rounded-xl border border-copper/25 bg-copper/5 p-4">
+          <p class="text-sm font-700">{pp.showroomHowTitle}</p>
           <ol class="mt-2 space-y-1.5 text-xs leading-relaxed text-ink-soft/85">
-            <li class="flex gap-2"><span aria-hidden="true" class="text-copper">1.</span><span set:html={bk.discountNext1} /></li>
-            <li class="flex gap-2"><span aria-hidden="true" class="text-copper">2.</span><span set:html={bk.discountNext2} /></li>
-            <li class="flex gap-2"><span aria-hidden="true" class="text-copper">3.</span><span set:html={bk.discountNext3} /></li>
+            {pp.showroomHow.map((step, i) => (
+              <li class="flex gap-2"><span aria-hidden="true" class="text-copper">{i + 1}.</span><span set:html={step} /></li>
+            ))}
+          </ol>
+          <p class="mt-3 rounded-lg bg-gold/10 px-3 py-2 text-xs leading-relaxed text-ink-soft/85" set:html={pp.showroomWeekend} />
+        </div>
+        <div data-bk-how="online" class="rounded-xl border border-copper/25 bg-copper/5 p-4">
+          <p class="text-sm font-700">{pp.onlineHowTitle}</p>
+          <ol class="mt-2 space-y-1.5 text-xs leading-relaxed text-ink-soft/85">
+            {pp.onlineHow.map((step, i) => (
+              <li class="flex gap-2"><span aria-hidden="true" class="text-copper">{i + 1}.</span><span set:html={step} /></li>
+            ))}
           </ol>
         </div>
       </div>
@@ -745,6 +761,11 @@ const saleIntake = saleIntakeClientConfig()
     // pose la question : une adresse de trop vaut mieux qu'une adresse manquante.
     const purchaseMode = hasCalc ? (trigger.getAttribute('data-calc-mode') || '') : ''
     toggleBlock(shippingEl, isDiscount && purchaseMode !== 'showroom')
+    // Procédure affichée selon le parcours (21/10/2026) : achat au showroom,
+    // ou demande de code en ligne (aussi quand le mode est inconnu).
+    modal?.querySelectorAll<HTMLElement>('[data-bk-how]').forEach((el) => {
+      el.classList.toggle('hidden', el.dataset.bkHow !== (purchaseMode === 'showroom' ? 'showroom' : 'online'))
+    })
     // `toggleBlock` décoche en masquant : on remet le défaut « même adresse »
     // à CHAQUE ouverture, sinon le cas courant redemanderait une saisie.
     if (shippingSameEl && !shippingSameEl.disabled) shippingSameEl.checked = true
@@ -941,9 +962,46 @@ const saleIntake = saleIntakeClientConfig()
         }
       }
     }
+    // ⚠️ Ce bloc annexé RESTE envoyé (21/10/2026) : c'est lui qui garde la
+    // facturation EN BASE (`site_leads.message`, aucune colonne dédiée), et
+    // c'est le filet si cette page est servie avant que l'Edge Function ne
+    // sache lire `billing`. L'Edge Function le RETIRE du message affiché dans
+    // les emails : marqueur et libellés à ne pas modifier (elle les relit).
     const messageForServer = billingLines.length
       ? `${get('message')}\n\n— Facturation (saisie dans le formulaire) —\n${billingLines.join('\n')}`.trim()
       : get('message')
+
+    // ── FACTURATION STRUCTURÉE (21/10/2026, demande de David) ─────────────────
+    // « le champ "message" s'affiche d'une façon qui mélange le message perso et
+    // le reste des infos » : la facturation part AUSSI en champs séparés, que
+    // l'Edge Function met en page dans un bloc « Facturation », un champ par
+    // ligne. `shipping` : null = question non posée (showroom), 'same' = même
+    // adresse que la facturation, sinon l'adresse de livraison.
+    let billing: Record<string, unknown> | null = null
+    if (source === 'neotone-discount') {
+      const isCompany = get('billingKind') === 'societe'
+      const hasShipping = !shippingEl?.classList.contains('hidden')
+      billing = {
+        kind: isCompany ? 'societe' : 'particulier',
+        name: get('billingName'),
+        company: isCompany ? get('billingCompany') : '',
+        vatNumber: isCompany ? get('billingVatNumber') : '',
+        siret: isCompany ? get('billingSiret') : '',
+        address: get('billingAddress'),
+        postalCode: get('billingPostalCode'),
+        city: get('billingCity'),
+        country: get('billingCountry'),
+        shipping: !hasShipping ? null
+          : data.get('shippingSame') !== null ? 'same'
+          : {
+              name: get('shippingName'),
+              address: get('shippingAddress'),
+              postalCode: get('shippingPostalCode'),
+              city: get('shippingCity'),
+              country: get('shippingCountry'),
+            },
+      }
+    }
 
     const label = btn.textContent
     btn.disabled = true
@@ -977,6 +1035,8 @@ const saleIntake = saleIntakeClientConfig()
           // Bois et mode d'achat repris du calculateur (22/09/2026).
           neotoneWood: get('neotoneWood') || null,
           neotonePurchaseMode: get('neotonePurchaseMode') || null,
+          // Facturation en champs séparés (21/10/2026) — voir plus haut.
+          billing,
           socialAccount: get('socialAccount') || null,
           discoveryChannel: get('discoveryChannel') || null,
           playingSince: get('playingSince') || null,

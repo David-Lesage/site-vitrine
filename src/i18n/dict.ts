@@ -940,7 +940,8 @@ const fr = {
     },
     discountCountry: 'Pays de livraison',
     discountCountryPlaceholder: 'France, Belgique, Suisse…',
-    discountNote: 'Ces informations me servent uniquement à demander ton code auprès de Neotone.',
+    // 21/10/2026 : neutre — vaut pour l'achat au showroom comme pour le code en ligne.
+    discountNote: 'Ces informations me servent uniquement à préparer ta demande auprès de Neotone.',
     // ── FACTURATION (21-22/09/2026, demande de David) ────────────────────────
     // Ses mots : « dans tous les cas il faut récupérer les informations de
     // facturation ; si la personne a une société qui récupère la TVA, il faut
@@ -999,6 +1000,39 @@ const fr = {
     discountNext1: 'Je lis ton message personnellement — je réponds à tout le monde.',
     discountNext2: 'Dans les 24 h qui suivent ma lecture, <strong>Neotone te contacte directement</strong> et te transmet ton code de réduction.',
     discountNext3: 'C’est ensuite Neotone qui prend la suite des opérations : commande, paiement, livraison. Je reste disponible si tu as besoin de moi.',
+    // ── DEUX PARCOURS NEOTONE (21/10/2026, demande de David) ──────────────────
+    // Ses mots : « Acheter au showroom quand c'est 7 % et Achat en ligne pour le
+    // code de réduction ». Le mode vient du calculateur (`data-calc-mode`) :
+    //  · showroom = VENTE DIRECTE : facture + lien de paiement préparés par
+    //    Neotone, en semaine (specs/ACHAT-NEOTONE-PROCEDURE-2026-10-09.md, textes
+    //    repris du chantier du 10/10) ;
+    //  · en ligne = demande de code de réduction nominatif (textes déjà publiés
+    //    ci-dessus, `discountNext*`). AUCUN délai : la spec n'en donne pas.
+    // ⚠️ `showroomTitle` / `onlineTitle` = mêmes textes que NEOTONE_MODE_LABELS
+    // de l'Edge Function `site-lead` (objet du mail à David, mail client).
+    // Sous-objet + repli FR dans le composant, comme `billing`.
+    purchase: {
+      showroomTitle: 'Acheter un Neotone au showroom (−7 %)',
+      showroomIntro: 'Tu repars avec ton instrument, au showroom (Paris 20ᵉ). Je vérifie ta demande et je la transmets à Neotone, qui t’envoie la facture et un lien de paiement par carte, du lundi au vendredi.',
+      showroomButton: 'Acheter au showroom (−7 %)',
+      showroomHowTitle: 'Comment se passe l’achat au showroom',
+      showroomHow: [
+        'Tu remplis ce formulaire.',
+        'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest). Tu es en copie.',
+        'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), en général dans l’heure.',
+        'Tu paies, l’instrument est à toi : tu repars avec, au showroom (Paris 20ᵉ).',
+      ],
+      showroomWeekend: '<strong>Tu viens au showroom un week-end ?</strong> Remplis ce formulaire avant le vendredi : le lien de paiement sera prêt, tu pourras payer sur place et repartir avec.',
+      onlineTitle: 'Achat en ligne : demande de code de réduction (−5 %)',
+      onlineIntro: 'Un code de réduction nominatif que je demande pour toi auprès de Neotone : −5 % sur ta commande en ligne, livrée chez toi.',
+      onlineButton: 'Achat en ligne : obtenir mon code (−5 %)',
+      onlineHowTitle: 'Comment tu reçois ton code de réduction',
+      onlineHow: [
+        'Je lis ta demande personnellement — je réponds à tout le monde.',
+        'Je demande pour toi un code de réduction nominatif auprès de Neotone : <strong>Neotone te contacte directement</strong> et te le transmet.',
+        'C’est ensuite Neotone qui prend la suite des opérations : commande, paiement, livraison. Je reste disponible si tu as besoin de moi.',
+      ],
+    },
     // Questions « pour créer du lien » — aucune n'est obligatoire.
     discoveryLabel: 'Comment m’as-tu découvert comme ambassadeur Neotone ?',
     discoveryChoose: 'Choisis…',
@@ -3564,8 +3598,9 @@ const fr = {
       modeShowroomSub: 'Paris 20ᵉ · remise 7 % · sans délai',
       // Libellés COURTS (sans emoji) réutilisés dans le récapitulatif du
       // formulaire de demande de code : « Retrait au showroom (−7 %) ».
-      modeOnlineShort: 'Livraison (−5 %)',
-      modeShowroomShort: 'Retrait au showroom (−7 %)',
+      // 21/10/2026 : intitulés des deux parcours (voir `booking.purchase`).
+      modeOnlineShort: 'Achat en ligne, code de réduction (−5 %)',
+      modeShowroomShort: 'Achat au showroom (−7 %)',
       // ── Disponibilité au showroom (Google Sheet, voir src/lib/stock.ts) ───
       // Uniquement en mode « Je viens au showroom » ET si la source renvoie au
       // moins une pièce. Source vide / injoignable → aucune restriction, aucun de
