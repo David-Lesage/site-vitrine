@@ -2,6 +2,7 @@
 title: "Loop your chords, and sing over them"
 description: "The accompaniment bar loops one chord — or a whole progression — at the tempo you choose. And when you want more, a drummer joins in."
 pubDate: 2026-09-01
+updatedDate: 2026-10-23
 cover: "/images/app-tiroir-batteur.webp"
 category: "chant"
 tags: ["rhythm", "loop", "drummer"]
@@ -37,6 +38,8 @@ That bar exists both on the acoustic mode's chord grid and on the [Logic Mode](/
 Once the loop is running, something is still missing: a **living pulse**. A metronome tells the time; a drummer makes you want to play.
 
 He's right there, next to the bar: a **🥁 Drummer** drawer. Open it, pick a groove, a tempo, and a "life" — Plain, Alive, Generous. **41 grooves** in eight families: *For the handpan* (Breath, Heartbeat, Soft cajón, Waves, Lullaby, Easy walk, Rain, and the plain metronome), *Pop & Rock*, *Latin*, *Africa & the East*, *Swing & Jazz*, *Hip-hop & Urban*, *Electronic & Dance*, *From around the world*. Each one has its fills.
+
+That was the count on 1 September. Since then, the drummer has gained seven urban rhythms (trap, drill, boom bap, afro-trap, dembow, amapiano…) and new sounds: a "Soft" kit by default (*Doux*), which sits well with the handpan, an "Acoustic" kit, a "Real acoustic" kit of genuinely recorded percussion, and Trap 808, Boom bap, House and Lo-fi kits. The old sound is still available under the name "Electro". And in the melody editor, the drummer now follows the melody on a single clock.
 
 This too is **free**, and it needs no hardware: the drummer runs in the browser, right from the Discovery level, on the acoustic mode's chord grid as well as the Logic Mode one. The groove you pick follows you from one tool to the next.
 

@@ -107,7 +107,7 @@ Here's the little detail that helps every single day. One **🎼** button and yo
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-The music stand opens from the editor, from your pieces, and on the way out of [Quick Jam](/en/blog/jam-rapide-accompagner-un-musicien).
+The music stand opens from the editor, from your pieces, from the **▶ Play** tab, and on the way out of [Quick Jam](/en/blog/jam-rapide-accompagner-un-musicien).
 
 ## 🖨 And for those who love paper
 

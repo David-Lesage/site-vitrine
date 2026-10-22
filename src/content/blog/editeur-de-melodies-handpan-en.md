@@ -2,6 +2,7 @@
 title: "Compose your melody note by note: the melody editor"
 description: "Drop your handpan's notes onto a timeline, listen, loop, speed up — and export as .mid. Handpan Constellation Studio's melody editor."
 pubDate: 2026-08-27
+updatedDate: 2026-10-23
 cover: "/images/app-editeur-melodies-timeline.webp"
 category: "partitions"
 tags: ["melody", "midi", "workshop"]
@@ -12,7 +13,7 @@ draft: false
 
 [Handpan Constellation Studio's](/en/handpan-app) melody editor (*Éditeur de mélodies* in the app, still labelled in French) gives you what was missing between your hands and your memory: your pan on top, a **timeline** underneath. Click a note on the pan and it lands on the time line. You listen, you move things around, you loop, and you export as `.mid`. A melody that existed tonight still exists tomorrow morning.
 
-The editor shows your current scale **whether your handpan is acoustic or electronic** — only the live MIDI capture described below needs an electronic instrument.
+The editor shows your current scale **whether your handpan is acoustic or electronic** — live MIDI capture needs an electronic instrument, and an acoustic one can record itself through the microphone, as described below.
 
 ## On the handpan, a melody doesn't get written down
 
@@ -53,16 +54,18 @@ The playhead lights the notes back up on the pan as it travels: you watch your m
 
 A pulse bar completes the picture: the beats light up, the first one in orange, and the **left (blue)** and **right (red)** feet alternate at the tempo. You stop counting, you start swaying.
 
-## Recording what you play (electronic handpan)
+## Recording what you play
 
-This section applies to electronic handpans only: it needs a MIDI output, which an acoustic pan does not have.
+Live MIDI capture applies to electronic handpans only: it needs a MIDI output, which an acoustic pan does not have.
 
 If your [Neotone](/en/neotone) is connected over MIDI, you can also work the other way round: press ⏺, a count-in starts, and **what you play is written into the grid**. Then you fix with the mouse whatever your hand missed.
+
+**On an acoustic handpan**, the microphone does the listening. Since 22 October, Import offers *⏺ M'enregistrer maintenant* (record myself now): you play, ⏹ Stop, and the app suggests the notes; you correct them by ear. The sound never leaves your device. It's also a tool of its own in 🧰 Tools: *Transcrire mon jeu au micro* (transcribe my playing by microphone). It is still young: reliable on slow, clean playing, much less on fast playing.
 
 Either way the MIDI bridge stays open: import a `.mid` file, export yours, take your melody into any music software.
 
 ## Where to find it
 
-The editor opens from the **music library** (*Bibliothèque musicale*), and it loads your current scale — or any scale from the Atlas, transposable. The melody editor will be part of the **Studio** version; during the beta, it is open to everyone.
+The editor opens from **Create** (*Créer*) and from the **music library** (*Bibliothèque musicale*), and it loads your current scale — or any scale from the Atlas, transposable. The melody editor will be part of the **Studio** version; during the beta, it is open to everyone.
 
 Your next melody deserves better than your memory tomorrow morning. Open [Handpan Constellation Studio](/en/handpan-app), drop three notes, and watch them loop. And if you'd like to be guided while composing, my [handpan lessons](/en/cours) are made for that.

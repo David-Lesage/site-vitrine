@@ -2,6 +2,7 @@
 title: "Composer ta mélodie note à note : l'éditeur de mélodies"
 description: "Pose les notes de ton handpan sur une timeline, écoute, mets en boucle, accélère — et exporte en .mid. L'éditeur de mélodies de Handpan Constellation Studio."
 pubDate: 2026-08-27
+updatedDate: 2026-10-23
 cover: "/images/app-editeur-melodies-timeline.webp"
 category: "partitions"
 tags: ["mélodie", "midi", "atelier"]
@@ -12,7 +13,7 @@ draft: false
 
 L'éditeur de mélodies de [Handpan Constellation Studio](/handpan-app) te donne ce qui manquait entre tes mains et ta mémoire : ton pan en haut, une **timeline** en dessous. Tu cliques une note du pan, elle se pose sur la ligne du temps. Tu écoutes, tu déplaces, tu mets en boucle, et tu exportes en `.mid`. Une mélodie qui existait ce soir existe encore demain matin.
 
-L'éditeur affiche ta gamme du moment, **que ton handpan soit acoustique ou électronique** — seule la prise au vol par MIDI, décrite plus bas, demande un instrument électronique.
+L'éditeur affiche ta gamme du moment, **que ton handpan soit acoustique ou électronique** — la prise au vol par MIDI demande un instrument électronique, et un acoustique peut s'enregistrer au micro, comme décrit plus bas.
 
 ## Une mélodie ne se note pas, au handpan
 
@@ -53,16 +54,18 @@ La tête de lecture rallume les notes sur le pan pendant qu'elle avance : tu voi
 
 Une barre de pulsation complète l'ensemble : les temps s'allument, le premier en orange, et les pieds **gauche (bleu)** et **droit (rouge)** alternent au tempo. Tu ne comptes plus, tu balances.
 
-## Enregistrer ce que tu joues (handpan électronique)
+## Enregistrer ce que tu joues
 
-Cette section-là ne concerne que les handpans électroniques : il faut une sortie MIDI, qu'un pan acoustique n'a pas.
+La prise au vol par MIDI ne concerne que les handpans électroniques : il faut une sortie MIDI, qu'un pan acoustique n'a pas.
 
 Si ton [Neotone](/neotone) est branché en MIDI, tu peux aussi partir dans l'autre sens : tu appuies sur ⏺, un décompte se lance, et **ce que tu joues s'écrit dans la grille**. Tu corriges ensuite à la souris ce que la main a raté.
+
+**Sur un handpan acoustique**, c'est le micro qui écoute. Depuis le 22 octobre, Importer propose « ⏺ M'enregistrer maintenant » : tu joues, ⏹ Arrêter, et l'app te propose les notes ; tu corriges à l'oreille. Le son ne quitte pas ton appareil. C'est aussi un outil à part dans 🧰 Outils : « Transcrire mon jeu au micro ». C'est encore jeune : fiable sur un jeu lent et propre, beaucoup moins sur un jeu rapide.
 
 Dans les deux sens, le pont MIDI reste ouvert : importe un fichier `.mid`, exporte le tien, emmène ta mélodie dans n'importe quel logiciel de musique.
 
 ## Où le trouver
 
-L'éditeur s'ouvre depuis la **Bibliothèque musicale**, et il charge ta gamme du moment — ou n'importe quelle gamme de l'Atlas, transposable. L'éditeur de mélodies fera partie de la version **Studio** ; pendant la bêta, il est ouvert à tous.
+L'éditeur s'ouvre depuis **Créer** et depuis la **Bibliothèque musicale**, et il charge ta gamme du moment — ou n'importe quelle gamme de l'Atlas, transposable. L'éditeur de mélodies fera partie de la version **Studio** ; pendant la bêta, il est ouvert à tous.
 
 Ta prochaine mélodie mérite mieux que ta mémoire de demain matin. Ouvre [Handpan Constellation Studio](/handpan-app), pose trois notes, et regarde-les tourner en boucle. Et si tu veux être guidé pour composer, mes [cours de handpan](/cours) sont faits pour ça.
