@@ -2,6 +2,7 @@
 title: "Quick Jam: accompany a musician in three clicks"
 description: "A friend calls out \"G minor, I-IV-V on the verse\"? Three clicks and your score is ready. And if you only know the chords, the app works out the key."
 pubDate: 2026-09-16
+updatedDate: 2026-10-23
 cover: "/images/app-jam-rapide-saisie.webp"
 category: "logique"
 tags: ["jam", "accompaniment", "score"]
@@ -12,7 +13,7 @@ draft: false
 
 [Handpan Constellation Studio's](/en/handpan-app) **Quick Jam** (⚡ *Jam Rapide* in the app, still labelled in French) turns a line thrown across the room — "we're in G minor, I-IV-V on the verse" — into a ready-to-play score, with named sections and diagrams in the right order. Three clicks. About as long as the guitarist needs to finish tuning.
 
-That route doesn't depend on the instrument in your hands: **acoustic or electronic**, you give the same key, you lay out the same degrees, and you get the same score. Only one step in this article applies specifically to the electronic handpan, and it is flagged as such.
+That route doesn't depend on the instrument in your hands: **acoustic or electronic**, you give the same key, you lay out the same degrees, and you get the same score, laid out on your own instrument.
 
 ## The scene every handpan player knows
 
@@ -60,11 +61,13 @@ Type them exactly as you're given them — "Am, F, C, G", or in Do Re Mi if that
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-## The "See the scale" card: a step specific to the electronic handpan
+## Your instrument, not another one
 
-This one applies to the electronic handpan only. On the way out of Quick Jam, a "See the scale" card (*Voir la gamme*) draws the matching instrument on a **real Neotone shell**: each chord is voiced root · third · fifth · octave, exactly as in Logic Mode, and the shell picks itself — Neotone¹ with 10 notes if that's enough, Mutant with 19 otherwise.
+> **Updated 23 October 2026.** In September, a "See the scale" card (*Voir la gamme*) drew, on the way out of Quick Jam, a Neotone instrument picked by the app. It was removed in October.
 
-So before playing a single note you can see whether the piece fits your instrument — and if you play a [Neotone](/en/neotone), you can load that layout straight away. On an acoustic handpan there is nothing to load: its notes are hammered into the steel once and for all. The card then serves purely as a comparison — what the piece asks for, against what your pan holds.
+Quick Jam now lays the chords out on **the handpan you have loaded**, with the same notes in the same places. If a chord can't be played in full on your instrument, the card tells you which note is missing. Transposing changes the key, never your instrument.
+
+So before playing a single note you can see whether the piece fits your instrument.
 
 <figure>
   <img
@@ -76,7 +79,7 @@ So before playing a single note you can see whether the piece fits your instrume
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The output card. The app names the shell it picked — here the <strong>Neotone Mutant (19 notes)</strong> — and why: twelve notes are needed to voice four chords in four sounds. Clicking a degree draws its polygon on the instrument and lists its notes. (Screenshot of the French interface.)</figcaption>
+  <figcaption><strong>The former output card, as it existed in September</strong>: it no longer exists now that Quick Jam plays on your instrument. The app named the shell it had picked — here the <strong>Neotone Mutant (19 notes)</strong> — and why: twelve notes are needed to voice four chords in four sounds. Clicking a degree drew its polygon on the instrument and listed its notes. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -94,7 +97,7 @@ The last jam reflex: someone sings, and the key is too high. The **♭ / ♯** b
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The last step. The piece is already filed under <em>My accompaniments</em>, transposition happens with <strong>♭ −</strong> and <strong>+ ♯</strong> either side of the current key, and five buttons decide what comes next: music stand, instrument, print, editor, or Scene mode. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The last step. The piece is already filed under <em>Mes morceaux</em> (my pieces), transposition happens with <strong>♭ −</strong> and <strong>+ ♯</strong> either side of the current key, and five buttons decide what comes next: music stand, instrument, print, editor, or Scene mode. (Screenshot of the French interface.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -102,4 +105,4 @@ The last jam reflex: someone sings, and the key is too high. The **♭ / ♯** b
 
 The resulting score isn't a dead end: it opens full screen on the **music stand** (*Pupitre*), it prints, it stays in your pieces and it plays back chord by chord — that's the subject of [Your score comes alive](/en/blog/ta-partition-prend-vie).
 
-Next time someone calls a key over their shoulder, open [Handpan Constellation Studio](/en/handpan-app) and make it playable before the first verse is over. And if you'd like to learn to hear those progressions instead of typing them, my [handpan lessons](/en/cours) start right there.
+Next time someone calls a key over their shoulder, open [Handpan Constellation Studio](/en/handpan-app), then **▶ Play › ⚡ Quick Jam** (*▶ Jouer › ⚡ Jam rapide*), and make it playable before the first verse is over. And if you'd like to learn to hear those progressions instead of typing them, my [handpan lessons](/en/cours) start right there.

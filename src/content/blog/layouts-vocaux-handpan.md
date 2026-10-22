@@ -2,6 +2,7 @@
 title: "Les layouts vocaux : accompagner chaque voix"
 description: "Profond, Brillant, Ample : trois dispositions du Mode Logique qui adaptent les accords à la tessiture du chanteur pour que la voix se pose."
 pubDate: 2026-07-22
+updatedDate: 2026-10-23
 cover: "/images/app-layout-vocal.webp"
 category: "chant"
 tags: ["chant", "accompagnement"]
@@ -10,7 +11,7 @@ permalink: "layouts-vocaux-handpan"
 draft: false
 ---
 
-Les layouts vocaux sont trois réglages du [Mode Logique de Handpan Constellation Studio](/handpan-app) qui réarrangent la disposition et le voicing des accords selon la tessiture du chanteur. Profond, Brillant, Ample : chacun place les notes différemment pour que la voix se pose naturellement au-dessus de ton accompagnement, sans jamais lutter contre lui.
+Les layouts vocaux — que l'app appelle aujourd'hui **« Dispositions d'accord »** — sont trois réglages du [Mode Logique de Handpan Constellation Studio](/handpan-app) qui réarrangent la disposition et le voicing des accords selon la tessiture du chanteur. Profond, Brillant, Ample : chacun place les notes différemment pour que la voix se pose naturellement au-dessus de ton accompagnement, sans jamais lutter contre lui.
 
 La question posée ici — *où sonne l'accompagnement par rapport à la voix ?* — se pose à tous les joueurs de handpan. Le sélecteur à trois positions, lui, est un réglage du Mode Logique : une section plus bas dit ce qu'il en est côté acoustique.
 
@@ -34,6 +35,8 @@ C'est exactement ce que règlent les layouts vocaux. Ils gardent les mêmes coul
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
+> **Mise à jour du 23 octobre 2026.** La capture date de juillet. Ce réglage vit maintenant dans le rail de droite, repère **🎛 Dispositions & Logique**, et chaque carte d'accord porte une puce (« Profond ▾ ») qui change le registre pour ce seul degré. En Découverte, les trois positions s'appellent 🌑 Grave · ☀️ Clair · 🌈 Large.
+
 ## Les trois presets
 
 ### Profond — pour les voix aiguës
@@ -52,7 +55,7 @@ Le layout **Ample** est le polyvalent. Il ouvre l'accompagnement de façon équi
 
 Il n'y a pas de bon ou de mauvais choix : il y a le layout qui laisse **ta** voix respirer. Le plus simple est d'essayer. Chante une phrase, change de preset, écoute où ta voix se sent portée plutôt que gênée. Ton oreille tranchera plus vite que n'importe quelle règle.
 
-Et si ta tonalité ne tombe pas juste avec ta voix, la transposition te laisse déplacer l'ensemble d'un geste pour chanter dans ta hauteur naturelle. Les layouts adaptent la forme, la transposition adapte la hauteur : ensemble, ils moulent l'accompagnement autour de toi. Là encore, la transposition libre appartient au handpan électronique ; sur un acoustique, la roue de tonalité te fait *entendre* ta gamme dans une autre tonalité, en aperçu réversible — c'est détaillé dans [Transposer pour chanter](/blog/transposer-pour-chanter-handpan).
+Et si ta tonalité ne tombe pas juste avec ta voix, la transposition te laisse déplacer l'ensemble d'un geste pour chanter dans ta hauteur naturelle. Les layouts adaptent la forme, la transposition adapte la hauteur : ensemble, ils moulent l'accompagnement autour de toi. Là encore, la transposition libre appartient au handpan électronique ; sur un acoustique, la roue de tonalité (aujourd'hui L'Étoile des 24 tonalités) te fait *entendre* ta gamme dans une autre tonalité, en aperçu réversible — c'est détaillé dans [Transposer pour chanter](/blog/transposer-pour-chanter-handpan).
 
 ## Sur un handpan acoustique
 
@@ -60,4 +63,4 @@ Un pan acoustique a ses notes martelées une fois pour toutes : il n'y a pas de 
 
 Le raisonnement, lui, reste entier — c'est la hauteur à laquelle tu poses ton accompagnement qui décide si la voix respire ou se bat. Ce que les trois presets font pour toi, tu le fais alors à l'oreille : en jouant plus bas sous une voix aiguë, plus haut sous une voix grave. Le geste est manuel, l'objectif est le même.
 
-Envie d'être guidé pour accompagner ta voix ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-app), essaie les trois layouts, et laisse ta voix trouver sa place.
+Envie d'être guidé pour accompagner ta voix ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-app), essaie les trois dispositions, et laisse ta voix trouver sa place.

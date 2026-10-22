@@ -11,6 +11,8 @@ permalink: "mes-handpans-une-seule-porte"
 draft: false
 ---
 
+> **Updated 23 October 2026.** Since this article, the screen has changed again. **My handpans** now shows all your instruments as cards, with their real drawing, full screen on a computer. At the top, **🤝 My duo** has two slots; further down, **🤝 My duos** keeps every saved duo, with "▶ Play the duo". Each handpan keeps its own wood. The how-to below (the right-hand panel, the tick boxes, the "FOR" bar) describes the 1 September screen, the one the screenshots show.
+
 This article is as much a repair as it is a new feature. For months, **setting a second handpan beside the first** could be done five different ways in the app — and two of those five behaved badly. One served the general catalogue while claiming to show "your" instruments. The other forgot: you removed a pan, reloaded the page, and it was back.
 
 This panel is the same on both sides: **whether your handpans are acoustic or electronic**, it's the same list, the same checkboxes, the same gestures. Only a few actions in the bar change depending on the instrument selected, and that's spelled out where it happens.
@@ -126,13 +128,13 @@ And **everything is saved to your account, even on the free tier**: your handpan
 
 **Acoustic fingering is still generated.** When the duo draws a chord across both shells, the play order and the hand assignments come from an engine that knows the real position of every note — it's serious work, it was deeply corrected at the end of August, but it hasn't been reviewed chord by chord under my own hands the way the electronic Logic Mode has. Take it as a solid proposal.
 
-**Scale recognition by microphone doesn't exist yet.** If you don't know your scale, you have to go through the [Sound Atlas](/en/blog/atlas-des-gammes-de-handpan) and recognise it by ear. It's announced, it isn't built.
+**Scale recognition by microphone has arrived, and it is still young.** If you don't know your scale, the microphone scale-recognition tool in 🧰 Tools guides you step by step: you play your notes, the app names them, and the drawing of your handpan fills in with each note it recognises. If the microphone hears nothing recognisable, listening lasts two minutes and can't be interrupted. The [Sound Atlas](/en/blog/atlas-des-gammes-de-handpan) is still there to recognise it by ear.
 
 ## The summary, if you remember only one thing
 
-> Right-hand panel → **My handpans** → **tick one instrument** to play it alone, **tick two** to play them together.
+> **My handpans** → your instruments as cards; **🤝 My duo** and its two slots to play two together; **🤝 My duos** to find the ones you saved.
 
-There's no other path any more. That was the point.
+One door for your instruments. That was the point.
 
 And once your two pans are set, the next question is: *what does that unlock, exactly?* It has its answer in ["Reveal"](/en/blog/reveler-les-accords-de-ton-handpan), and in the ["Complete your scale"](/en/blog/deux-handpans-mode-hybride) screen.
 

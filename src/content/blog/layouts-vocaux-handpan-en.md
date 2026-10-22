@@ -2,6 +2,7 @@
 title: "Vocal layouts: accompanying every voice"
 description: "Deep, Bright, Wide: three Logic Mode layouts that adapt the chords to the singer's range so the voice settles naturally."
 pubDate: 2026-07-22
+updatedDate: 2026-10-23
 cover: "/images/app-layout-vocal.webp"
 category: "chant"
 tags: ["singing", "accompaniment"]
@@ -10,7 +11,7 @@ permalink: "layouts-vocaux-handpan"
 draft: false
 ---
 
-Vocal layouts are three settings of [Handpan Constellation Studio's Logic Mode](/en/handpan-app) that rearrange the chords' layout and voicing to match the singer's range. Deep, Bright, Wide: each places the notes differently so the voice settles naturally above your accompaniment, instead of fighting it.
+Vocal layouts — which the app now calls **chord voicings** (*Dispositions d'accord*) — are three settings of [Handpan Constellation Studio's Logic Mode](/en/handpan-app) that rearrange the chords' layout and voicing to match the singer's range. Deep, Bright, Wide: each places the notes differently so the voice settles naturally above your accompaniment, instead of fighting it.
 
 The question behind them — *where does the accompaniment sound, relative to the voice?* — applies to every handpan player. The three-position selector itself is a Logic Mode setting: a section further down says what that means on the acoustic side.
 
@@ -34,6 +35,8 @@ That's exactly what the vocal layouts fix. They keep the same colours, the same 
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
+> **Updated 23 October 2026.** The screenshot dates from July. This setting now lives in the right-hand rail, under the **🎛 Voicings & Logic** landmark, and each chord card carries a chip ("Deep ▾") that changes the register for that degree alone. In Discovery level, the three positions are called 🌑 Low · ☀️ Clear · 🌈 Wide.
+
 ## The three presets
 
 ### Deep — for high voices
@@ -52,7 +55,7 @@ The **Wide** layout is the versatile one. It opens the accompaniment in a balanc
 
 There's no right or wrong choice: there's the layout that lets **your** voice breathe. The simplest way is to try. Sing a phrase, switch preset, listen for where your voice feels carried rather than hindered. Your ear will decide faster than any rule.
 
-And if your key doesn't sit right with your voice, transposition lets you shift the whole thing in one move to sing at your natural pitch. Layouts adapt the shape, transposition adapts the pitch: together, they mould the accompaniment around you. Here too, free transposition belongs to the electronic handpan; on an acoustic one, the key wheel lets you *hear* your scale in another key as a reversible preview — detailed in [Transposing to sing](/en/blog/transposer-pour-chanter-handpan).
+And if your key doesn't sit right with your voice, transposition lets you shift the whole thing in one move to sing at your natural pitch. Layouts adapt the shape, transposition adapts the pitch: together, they mould the accompaniment around you. Here too, free transposition belongs to the electronic handpan; on an acoustic one, the key wheel (now the Star of the 24 keys) lets you *hear* your scale in another key as a reversible preview — detailed in [Transposing to sing](/en/blog/transposer-pour-chanter-handpan).
 
 ## On an acoustic handpan
 
@@ -60,4 +63,4 @@ An acoustic pan has its notes hammered into the steel once and for all: there is
 
 The reasoning stays intact, though — the pitch at which you place your accompaniment is what decides whether the voice breathes or struggles. What the three presets do for you, you then do by ear: playing lower under a high voice, higher under a low one. The gesture is manual, the goal is the same.
 
-Want guidance to accompany your voice? [David Lesage's lessons](/en/cours) take you by the hand. Open [Handpan Constellation Studio](/en/handpan-app), try the three layouts, and let your voice find its place.
+Want guidance to accompany your voice? [David Lesage's lessons](/en/cours) take you by the hand. Open [Handpan Constellation Studio](/en/handpan-app), try the three voicings, and let your voice find its place.

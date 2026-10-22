@@ -2,6 +2,7 @@
 title: "Jam Rapide : accompagner un musicien en trois clics"
 description: "Un ami te lance « sol mineur, I-IV-V au couplet » ? Trois clics et ta partition est prête. Et si tu ne connais que les accords, l'app devine la tonalité."
 pubDate: 2026-09-16
+updatedDate: 2026-10-23
 cover: "/images/app-jam-rapide-saisie.webp"
 category: "logique"
 tags: ["jam", "accompagnement", "partition"]
@@ -12,7 +13,7 @@ draft: false
 
 Le **Jam Rapide** de [Handpan Constellation Studio](/handpan-app) transforme une phrase lancée en l'air — « on est en sol mineur, I-IV-V au couplet » — en une partition prête à jouer, sections nommées et diagrammes dans le bon ordre. Trois clics. Le temps que le guitariste finisse d'accorder.
 
-Ce chemin-là ne dépend pas de l'instrument que tu as sous les mains : **acoustique ou électronique**, tu donnes la même tonalité, tu poses les mêmes degrés, et tu obtiens la même partition. Une seule étape de cet article vaut spécifiquement pour le handpan électronique, et elle est annoncée comme telle.
+Ce chemin-là ne dépend pas de l'instrument que tu as sous les mains : **acoustique ou électronique**, tu donnes la même tonalité, tu poses les mêmes degrés, et tu obtiens la même partition, posée sur ton propre instrument.
 
 ## La scène que tout joueur de handpan a vécue
 
@@ -60,11 +61,13 @@ Tape-les tels qu'on te les donne — « Am, F, C, G », ou en Do Ré Mi si c'est
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-## La fiche « Voir la gamme » : une étape propre au handpan électronique
+## Ton instrument, pas un autre
 
-Celle-ci ne vaut que pour le handpan électronique. À la sortie du Jam Rapide, une fiche « Voir la gamme » te dessine l'instrument correspondant sur une **vraie coque Neotone** : chaque accord y est disposé fondamentale · tierce · quinte · octave, exactement comme en Mode Logique, et la coque se choisit toute seule — Neotone¹ à 10 notes si ça suffit, Mutant à 19 notes sinon.
+> **Mise à jour du 23 octobre 2026.** En septembre, une fiche « Voir la gamme » dessinait à la sortie du Jam Rapide un instrument Neotone choisi par l'app. Elle a disparu en octobre.
 
-Tu vois donc, avant de jouer une seule note, si le morceau tient sur ton instrument — et si tu joues sur un [Neotone](/neotone), tu peux charger cette disposition directement. Sur un handpan acoustique, il n'y a rien à charger : les notes y sont martelées une fois pour toutes. La fiche te sert alors seulement de point de comparaison — ce que le morceau demande, face à ce que ton pan possède.
+Le Jam Rapide pose maintenant les accords sur **le handpan que tu as chargé**, avec les mêmes notes aux mêmes endroits. Si un accord ne peut pas être joué en entier sur ton instrument, la carte te dit quelle note manque. Transposer change la tonalité, jamais ton instrument.
+
+Tu vois donc, avant de jouer une seule note, si le morceau tient sur ton instrument.
 
 <figure>
   <img
@@ -76,7 +79,7 @@ Tu vois donc, avant de jouer une seule note, si le morceau tient sur ton instrum
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>La fiche de sortie. L'app annonce la coque qu'elle a retenue — ici le <strong>Neotone Mutant (19 notes)</strong> — et pourquoi : « 12 notes nécessaires pour voicer 4 accords en 4 sons ». Cliquer un degré trace son polygone sur l'instrument et liste ses notes.</figcaption>
+  <figcaption><strong>L'ancienne fiche de sortie, telle qu'elle existait en septembre</strong> : elle n'existe plus depuis que le Jam Rapide joue sur ton instrument. L'app y annonçait la coque qu'elle avait retenue — ici le <strong>Neotone Mutant (19 notes)</strong> — et pourquoi : « 12 notes nécessaires pour voicer 4 accords en 4 sons ». Cliquer un degré traçait son polygone sur l'instrument et listait ses notes.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -94,7 +97,7 @@ Dernier réflexe de jam : quelqu'un chante, et la tonalité est trop haute. Les 
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>La dernière étape. Le morceau est déjà rangé dans <em>Mes accompagnements</em>, la transposition se fait avec <strong>♭ −</strong> et <strong>+ ♯</strong> de part et d'autre de la tonalité courante, et cinq boutons décident de la suite : Pupitre, Mon instrument, Imprimer, l'éditeur, ou le mode Scène.</figcaption>
+  <figcaption>La dernière étape. Le morceau est déjà rangé dans <em>Mes morceaux</em>, la transposition se fait avec <strong>♭ −</strong> et <strong>+ ♯</strong> de part et d'autre de la tonalité courante, et cinq boutons décident de la suite : Pupitre, Mon instrument, Imprimer, l'éditeur, ou le mode Scène.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -102,4 +105,4 @@ Dernier réflexe de jam : quelqu'un chante, et la tonalité est trop haute. Les 
 
 La partition obtenue n'est pas un cul-de-sac : elle s'ouvre en plein écran sur le **Pupitre**, s'imprime, se garde dans tes morceaux et s'écoute accord par accord — c'est le sujet de l'article [Ta partition prend vie](/blog/ta-partition-prend-vie).
 
-La prochaine fois qu'on te lance une tonalité par-dessus l'épaule, ouvre [Handpan Constellation Studio](/handpan-app) et rends-la jouable avant la fin du premier couplet. Et si tu veux apprendre à entendre ces enchaînements sans les taper, mes [cours de handpan](/cours) commencent par là.
+La prochaine fois qu'on te lance une tonalité par-dessus l'épaule, ouvre [Handpan Constellation Studio](/handpan-app), puis **▶ Jouer › ⚡ Jam rapide**, et rends-la jouable avant la fin du premier couplet. Et si tu veux apprendre à entendre ces enchaînements sans les taper, mes [cours de handpan](/cours) commencent par là.

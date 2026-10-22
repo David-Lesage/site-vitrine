@@ -11,6 +11,8 @@ permalink: "mes-handpans-une-seule-porte"
 draft: false
 ---
 
+> **Mise à jour du 23 octobre 2026.** Depuis cet article, l'écran a encore changé. **Mes handpans** montre maintenant tous tes instruments en cartes, avec leur vrai dessin, en plein écran sur ordinateur. En haut, **🤝 Mon duo** a deux emplacements ; plus bas, **🤝 Mes duos** garde chaque duo enregistré, avec « ▶ Jouer le duo ». Chaque handpan garde son propre bois. Le mode d'emploi ci-dessous (le panneau de droite, les cases à cocher, la barre « POUR ») décrit l'écran du 1er septembre, celui que montrent les captures.
+
 Cet article est une réparation autant qu'une nouveauté. Pendant des mois, **poser un deuxième handpan à côté du premier** pouvait se faire de cinq façons différentes dans l'application — et deux de ces cinq façons se comportaient mal. L'une servait le catalogue général alors qu'elle annonçait « tes » instruments. L'autre oubliait : tu retirais un pan, tu rechargeais la page, il était revenu.
 
 Ce panneau est le même des deux côtés : **que tes handpans soient acoustiques ou électroniques**, c'est la même liste, les mêmes cases à cocher, les mêmes gestes. Seules quelques actions de la barre changent selon l'instrument sélectionné, et c'est dit là où ça se produit.
@@ -126,13 +128,13 @@ Et **tout est sauvegardé sur ton compte, même en gratuit** : tes handpans et t
 
 **Le doigté acoustique reste généré.** Quand le duo dessine un accord à cheval sur les deux coques, l'ordre de jeu et l'attribution des mains viennent d'un moteur qui connaît la position réelle de chaque note — il est sérieux, il a été corrigé en profondeur fin août, mais il n'a pas été relu accord par accord sous mes mains comme ceux du Mode Logique électronique. Prends-le comme une proposition solide.
 
-**La reconnaissance de gamme au micro n'existe pas encore.** Si tu ne sais pas quelle est ta gamme, il faut passer par l'[Atlas Sonore](/blog/atlas-des-gammes-de-handpan) et la reconnaître à l'oreille. C'est annoncé, ce n'est pas fait.
+**La reconnaissance de gamme au micro est arrivée, et elle est encore jeune.** Si tu ne sais pas quelle est ta gamme, 🧰 Outils › « 🎤 Reconnaître ma gamme au micro » te guide pas à pas : tu joues tes notes, l'app les nomme, et le dessin de ton handpan se remplit à chaque note reconnue. Si le micro n'entend rien de reconnaissable, l'écoute dure deux minutes sans qu'on puisse l'interrompre. L'[Atlas Sonore](/blog/atlas-des-gammes-de-handpan) reste là pour la reconnaître à l'oreille.
 
 ## Le résumé, si tu ne retiens qu'une chose
 
-> Panneau de droite → **Mes handpans** → **coche un instrument** pour le jouer seul, **coches-en deux** pour les jouer ensemble.
+> **Mes handpans** → tes instruments en cartes ; **🤝 Mon duo** et ses deux emplacements pour en jouer deux ensemble ; **🤝 Mes duos** pour retrouver ceux que tu as enregistrés.
 
-Il n'y a plus d'autre chemin. C'était le but.
+Une seule porte pour tes instruments. C'était le but.
 
 Et une fois tes deux pans posés, la question suivante est : *qu'est-ce que ça débloque, exactement ?* Elle a sa réponse dans [« Révéler »](/blog/reveler-les-accords-de-ton-handpan), et dans l'écran [« Compléter ta gamme »](/blog/deux-handpans-mode-hybride).
 

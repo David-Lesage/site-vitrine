@@ -27,11 +27,11 @@ L'app te signale aussi ce que tu as déjà sans le savoir : la **gamme relative*
 
 Un mot d'honnêteté : ces compteurs s'appuient sur un catalogue de partitions encore modeste. Ils disent vrai, mais ils ne disent pas encore *tout* — le répertoire s'étoffera au fil des partitions déposées dans la [Bibliothèque musicale](/blog/bibliotheque-musicale-handpan).
 
-## 🌗 Deux cases à cocher, et le bandeau apparaît
+## 🌗 Le second pan, et le bandeau du duo
 
-Poser un second handpan tient désormais en **deux cases à cocher**. Panneau de droite, bloc **Mes handpans** : tu coches un instrument, il joue seul ; tu en coches un deuxième, le duo se pose — badges **⓵** et **⓶**, dans l'ordre où tu as coché. Les anciennes listes déroulantes de « 2ᵉ pan » (la bande guidée, le funnel « Compléter ») ont disparu fin août : il ne reste qu'un geste, **🤝 Mettre à côté**, et il accepte tous tes instruments, Neotone et coques sur mesure compris.
+> **Mise à jour du 23 octobre 2026.** Les deux cases à cocher du panneau de droite n'existent plus. Tes instruments sont maintenant dans **Mes handpans**, en cartes, et **🤝 Mon duo** a deux emplacements. Dès que tes deux handpans sont posés, l'app te demande **ce que tu veux en faire** : 🌈 tout jouer, 🎵 jouer un morceau, 🎯 compléter ta tonalité ou ✋ garder tel quel. Sous les pans, deux rangées de cartes : les 7 accords de ta tonalité, puis les accords **en plus** que seuls tes deux handpans ensemble permettent. Un bouton « ✕ Un seul handpan » ramène à un seul instrument.
 
-Un bandeau s'affiche alors au-dessus de tes pans : **🌗 Tes 2 handpans : *le premier* + *le second***, avec un **⇄ inverser** pour échanger leurs places, le cadre tonal en cours, et le décompte qui dit tout en une ligne :
+Un bandeau s'affiche au-dessus de tes pans. Dans sa version de septembre, celle de la capture ci-dessous : **🌗 Tes 2 handpans : *le premier* + *le second***, avec un **⇄ inverser** pour échanger leurs places, le cadre tonal en cours, et le décompte qui dit tout en une ligne :
 
 - combien d'accords le **premier pan** joue seul ;
 - combien le **second** joue seul ;
@@ -59,13 +59,13 @@ Un mot de vocabulaire, parce que l'application fait maintenant la différence : 
 
 ## Ton répertoire, dès le chargement
 
-Autre changement discret mais décisif : tu n'as plus rien à demander. Dès qu'une gamme est chargée en Mode Logique acoustique, une ligne apparaît sous les 7 degrés : « 🎵 ***N* morceaux jouables avec ta gamme** », et un « voir → » qui ouvre la liste. L'information arrive avant la question. Et **quelle note en débloquerait le plus**, ce sont « Compléter » et l'écran [✨ Révéler](/blog/reveler-les-accords-de-ton-handpan) qui te le disent.
+Autre changement discret mais décisif : tu n'as plus rien à demander. Dès qu'une gamme acoustique est chargée dans Découvrir › Degrés & émotions, une ligne apparaît sous les 7 degrés : « 🎵 ***N* morceaux jouables avec ta gamme** », et un « voir → » qui ouvre la liste. L'information arrive avant la question. Et **quelle note en débloquerait le plus**, ce sont « Compléter » et l'écran [✨ Révéler](/blog/reveler-les-accords-de-ton-handpan) qui te le disent.
 
 ## Et si tu veux entendre avant de décider
 
 Deux détails valent de l'or avant de commander quoi que ce soit :
 
-- La **roue de tonalité** te laisse écouter ta gamme transposée dans une autre tonalité. Tu entends le futur instrument avant qu'il existe.
+- **L'Étoile des 24 tonalités** (l'ancienne roue de tonalité), et dans 🧰 Outils l'écoute de ta gamme dans une autre tonalité, te laissent écouter ta gamme transposée. Tu entends le futur instrument avant qu'il existe.
 - Le réglage de **diapason 440 / 432 Hz** accorde l'app sur *ton* handpan, pour que ce que tu entends à l'écran sonne juste avec ce que tu as dans les mains.
 
 Le mode acoustique, « Compléter » et L'Étoile des 24 tonalités sont **gratuits**, et ton duo est enregistré sur ton compte, même en gratuit : il te suit sur tous tes appareils. Et si le second pan devient une vraie envie, l'app te dit exactement quelles notes demander ; ces notes valent pour un instrument acoustique comme pour un [Neotone](/neotone).

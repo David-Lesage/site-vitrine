@@ -2,6 +2,7 @@
 title: "Apprendre tes accords pas à pas : le mode guidé"
 description: "Dans Handpan Constellation Studio, le handpan devient une surface guidée : l'app allume la note colorée à jouer et t'accompagne, accord après accord, avec un retour sonore et visuel."
 pubDate: 2026-08-11
+updatedDate: 2026-10-23
 cover: "/images/app-mode-guide-note-allumee-2026-09.webp"
 category: "logique"
 tags: ["méthode", "accords", "apprentissage"]
@@ -13,6 +14,8 @@ draft: false
 Apprendre un accord au handpan, c'est savoir quelles notes jouer, dans quel ordre et avec quelle main. Le **mode d'apprentissage guidé** de [Handpan Constellation Studio](/handpan-app) transforme ton instrument en surface éclairée : l'application allume la **note colorée** à toucher, tu la joues, et tu passes à la suivante — l'accord s'apprend par le geste, sans lire une seule note de solfège.
 
 Ce mode guidé fonctionne **que ton handpan soit acoustique ou électronique** : dans les deux cas, l'app allume sur l'écran les notes réelles de ta gamme, une par une.
+
+> **Mise à jour du 23 octobre 2026.** Chaque accord a maintenant son bouton **🎓**, à côté de 👁 et ▶. Il ouvre un écran rien que pour lui, « Apprendre cet accord » : la note à jouer, son numéro et la main à utiliser, le tracé qui grandit à chaque bonne note, puis « Bien joué ! » et l'accord suivant. Tu choisis comment pratiquer (simple, aller-retour ou descendant) et qui t'écoute : le micro ou l'écran. Ça marche aussi avec deux handpans côte à côte. La capture ci-dessous montre la version de septembre.
 
 ## Le vrai blocage quand on débute les accords
 
@@ -40,6 +43,7 @@ Le principe est simple et visuel. Tu choisis un accord, et l'app **te montre exa
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
+<!-- MAJ 23/10/2026 : ce constat est dépassé. L'écran 🎓 « Apprendre cet accord » existe (#487, #515) et le micro écoute un acoustique (#514). Capture acoustique ET Neotone à produire au lot 2. -->
 <!-- 📷 CAPTURE JUMELLE : PAS D'ÉQUIVALENT ACOUSTIQUE (vérifié le 09/09/2026). En mode acoustique, le segment « 🎓 APPRENTISSAGE INTERACTIF › 🎹 Accords » est bien présent et s'active, mais l'écran du handpan reste sur le nom de la gamme et aucune note ne s'allume : la consigne « Joue la note qui pulse ! » ne s'affiche jamais. L'écran de cet article n'existe donc pas sur un pan acoustique — commentaire laissé en place, à reprendre le jour où le mode guidé y sera actif. -->
 
 Tu avances **à ton rythme**, autant de fois que tu veux. Ce n'est pas un examen chronométré : c'est un accompagnement patient qui te fait mémoriser l'accord **par la couleur et par le geste**, pas par cœur.
@@ -56,4 +60,4 @@ Apprendre un accord n'est qu'une première marche. Une fois quelques accords en 
 
 ## Par où commencer
 
-Ouvre [Handpan Constellation Studio](/handpan-app) en mode acoustique (gratuit), choisis un accord simple, et laisse-toi guider note après note. En quelques minutes, tu joueras ton premier accord — et tu comprendras pourquoi voir la musique change tout. Envie d'aller plus loin avec un accompagnement humain ? Découvre [mes cours de handpan](/cours).
+Ouvre [Handpan Constellation Studio](/handpan-app) en mode acoustique (gratuit), choisis un accord simple, touche son **🎓**, et laisse-toi guider note après note. En quelques minutes, tu joueras ton premier accord — et tu comprendras pourquoi voir la musique change tout. Envie d'aller plus loin avec un accompagnement humain ? Découvre [mes cours de handpan](/cours).

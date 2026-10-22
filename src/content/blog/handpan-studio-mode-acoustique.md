@@ -51,13 +51,13 @@ Sur une gamme riche comme un **D Kurd 20 notes**, ces deux vues changent tout po
 
 ## Ce qui a changé depuis, et par où entrer
 
-Cet article date de juillet 2026. Depuis, le mode acoustique s'est réorganisé autour de **trois portes**, toutes gratuites, toutes dans le panneau de droite ou sous le pan.
+Cet article date de juillet 2026. Depuis, le mode acoustique s'est réorganisé autour de **trois portes**, toutes gratuites. Le panneau de droite est devenu un **rail** de cinq repères, toujours à la même place : ⏯ Lecture & tempo · 🎛 Dispositions & Logique · 🎓 Apprendre · 🧭 Explorer · ⋯ Plus (mise à jour du 23 octobre 2026).
 
-**Mes handpans.** Le panneau de droite ne s'ouvre plus sur le catalogue du monde mais sur **tes** instruments. Tu coches un handpan pour le jouer seul, tu en coches deux pour les jouer ensemble — c'est tout le sujet de [« Mes handpans » : une seule porte](/blog/mes-handpans-une-seule-porte).
+**Mes handpans.** Tous **tes** instruments, en cartes, avec leur vrai dessin. En haut, **🤝 Mon duo** a deux emplacements pour en jouer deux ensemble — c'est tout le sujet de [« Mes handpans » : une seule porte](/blog/mes-handpans-une-seule-porte).
 
-**🎼 Atelier d'accords → ✨ Révéler.** Sous le pan, une barre affiche tous les accords jouables sur ton instrument. Le bouton **✨ Révéler** ouvre en grand la réponse à la seule question qui compte au début : *qu'est-ce que mon handpan sait déjà faire ?* — combien d'accords, lesquels, et combien de morceaux du répertoire ils permettent d'accompagner. C'est raconté en détail dans [« Révéler » : tout ce que ton handpan sait déjà jouer](/blog/reveler-les-accords-de-ton-handpan).
+**🎼 Atelier d'accords → ✨ Révéler.** L'Atelier d'accords s'ouvre dans un panneau à droite, sans cacher le pan, rangé en trois onglets : Explorer, Construire et Tonalité. Le bouton **✨ Révéler** ouvre en grand la réponse à la seule question qui compte au début : *qu'est-ce que mon handpan sait déjà faire ?* — combien d'accords, lesquels, et combien de morceaux du répertoire ils permettent d'accompagner. C'est raconté en détail dans [« Révéler » : tout ce que ton handpan sait déjà jouer](/blog/reveler-les-accords-de-ton-handpan).
 
-**🎯 Compléter ta gamme.** Le funnel qui compare tes notes réelles avec ce que demandent les accords, et te dit, accord par accord, ce qui manque — puis ce qu'un second instrument débloquerait : [Deux handpans qui n'en font qu'un](/blog/deux-handpans-mode-hybride).
+**🎯 Compléter ta gamme.** Une pilule sous le nom de ton handpan, avec « · N notes manquantes » quand c'est le cas. Elle ouvre le funnel qui compare tes notes réelles avec ce que demandent les accords, et te dit, accord par accord, ce qui manque — puis ce qu'un second instrument débloquerait : [Deux handpans qui n'en font qu'un](/blog/deux-handpans-mode-hybride).
 
 ## Gratuit maintenant, plus tard si tu veux
 

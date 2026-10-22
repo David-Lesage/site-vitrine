@@ -2,6 +2,7 @@
 title: "Learn your chords step by step: the guided mode"
 description: "In Handpan Constellation Studio, your handpan becomes a guided surface: the app lights up the coloured note to play and walks you through, chord after chord, with sound and visual feedback."
 pubDate: 2026-08-11
+updatedDate: 2026-10-23
 cover: "/images/app-mode-guide-note-allumee-2026-09.webp"
 category: "logique"
 tags: ["method", "chords", "learning"]
@@ -13,6 +14,8 @@ draft: false
 Learning a chord on the handpan means knowing which notes to play, in what order and with which hand. The **guided learning mode** in [Handpan Constellation Studio](/en/handpan-app) turns your instrument into a lit-up surface: the app highlights the **coloured note** to touch, you play it, and you move on to the next one — the chord is learned through gesture, without reading a single note of music theory.
 
 The guided mode works **whether your handpan is acoustic or electronic**: either way, the app lights up the real notes of your scale on screen, one at a time.
+
+> **Updated 23 October 2026.** Every chord now has its own **🎓** button, next to 👁 and ▶. It opens a screen just for that chord, *Apprendre cet accord* (learn this chord): the note to play, its number and the hand to use, the shape growing with each right note, then a "well played" and the next chord. You choose how to practise (simple, back-and-forth or descending) and who listens to you: the microphone or the screen. It also works with two handpans side by side. The screenshot below shows the September version.
 
 ## The real block when starting out with chords
 
@@ -40,6 +43,7 @@ The idea is simple and visual. You pick a chord, and the app **shows you exactly
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
+<!-- UPDATE 23/10/2026: this finding is outdated. The 🎓 "Learn this chord" screen exists (#487, #515) and the microphone listens to an acoustic (#514). Acoustic AND Neotone screenshots to produce in batch 2. -->
 <!-- 📷 TWIN SCREENSHOT: NO ACOUSTIC EQUIVALENT (checked 09/09/2026). In acoustic mode the « 🎓 APPRENTISSAGE INTERACTIF › 🎹 Accords » segment is present and does switch on, but the handpan screen stays on the scale name and no note lights up: the « Joue la note qui pulse ! » prompt never appears. This article's screen therefore does not exist on an acoustic pan — comment left in place, to be revisited once guided mode works there. -->
 
 You move at **your own pace**, as many times as you like. It's not a timed exam: it's a patient guide that helps you memorise the chord **through colour and gesture**, not by rote.
@@ -56,4 +60,4 @@ Learning a chord is only the first step. Once you have a few chords in hand, you
 
 ## Where to start
 
-Open [Handpan Constellation Studio](/en/handpan-app) in acoustic mode (free), pick a simple chord, and let it guide you note by note. In a few minutes you'll play your first chord — and you'll understand why seeing music changes everything. Want to go further with human guidance? Discover [my handpan lessons](/en/cours).
+Open [Handpan Constellation Studio](/en/handpan-app) in acoustic mode (free), pick a simple chord, tap its **🎓**, and let it guide you note by note. In a few minutes you'll play your first chord — and you'll understand why seeing music changes everything. Want to go further with human guidance? Discover [my handpan lessons](/en/cours).

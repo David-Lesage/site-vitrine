@@ -27,11 +27,11 @@ The app also points out what you already have without knowing it: the **relative
 
 One word of honesty: those counters rest on a still-modest catalogue of scores. They tell the truth, but not yet the *whole* truth — the repertoire will grow as scores are added to the [music library](/en/blog/bibliotheque-musicale-handpan).
 
-## 🌗 Two checkboxes, and the banner appears
+## 🌗 The second pan, and the duo banner
 
-Setting a second handpan down now takes **two checkboxes**. Right-hand panel, **My handpans** block: tick one instrument and it plays alone; tick a second and the pair is set — badges **⓵** and **⓶**, in the order you ticked. The old "2nd pan" dropdowns (the guided strip, the "Complete" funnel) were removed at the end of August: one gesture is left, **🤝 Put alongside**, and it accepts every one of your instruments, Neotone and custom shells included.
+> **Updated 23 October 2026.** The two checkboxes in the right-hand panel no longer exist. Your instruments now live in **My handpans**, as cards, and **🤝 My duo** has two slots. As soon as your two handpans are set down, the app asks **what you want to do with them**: 🌈 play everything, 🎵 play a song, 🎯 complete your key, or ✋ keep as is. Under the pans, two rows of cards: the 7 chords of your key, then the **extra** chords that only your two handpans together allow. A "✕ Un seul handpan" (*one handpan only*) button takes you back to a single instrument.
 
-A banner then appears above your pans: **🌗 Your 2 handpans: *the first* + *the second***, with a **⇄ swap** to exchange their places, the current tonal frame, and the count that says everything in one line:
+A banner appears above your pans. In its September version, the one in the screenshot below: **🌗 Your 2 handpans: *the first* + *the second***, with a **⇄ swap** to exchange their places, the current tonal frame, and the count that says everything in one line:
 
 - how many chords the **first pan** plays alone;
 - how many the **second** plays alone;
@@ -59,13 +59,13 @@ A word on vocabulary, because the app now draws the line: two acoustics side by 
 
 ## Your repertoire, right from loading
 
-Another quiet but decisive change: you no longer have to ask. As soon as a scale is loaded in acoustic Logic Mode, a line appears under the 7 degrees: "🎵 ***N* pieces playable with your scale**", with a "see →" that opens the list. The information arrives before the question. And **which note would unlock the most** is answered by "Complete" and by the [✨ Reveal](/en/blog/reveler-les-accords-de-ton-handpan) screen.
+Another quiet but decisive change: you no longer have to ask. As soon as an acoustic scale is loaded in Discover › Degrees & emotions (*Découvrir › Degrés & émotions*), a line appears under the 7 degrees: "🎵 ***N* pieces playable with your scale**", with a "see →" that opens the list. The information arrives before the question. And **which note would unlock the most** is answered by "Complete" and by the [✨ Reveal](/en/blog/reveler-les-accords-de-ton-handpan) screen.
 
 ## And if you want to hear before deciding
 
 Two details are worth their weight in gold before ordering anything:
 
-- The **key wheel** (*roue de tonalité*) lets you listen to your scale transposed into another key. You hear the future instrument before it exists.
+- **The Star of the 24 keys** (the former key wheel), and in 🧰 Tools the tool for hearing your scale in another key, let you listen to your scale transposed into another key. You hear the future instrument before it exists.
 - The **440 / 432 Hz tuning setting** tunes the app to *your* handpan, so what you hear on screen sounds right with what you hold in your hands.
 
 Acoustic mode, "Complete" and the Star of the 24 keys are **free**, and your duo is saved to your account, even on the free tier: it follows you on all your devices. And if the second pan becomes a real desire, the app tells you exactly which notes to ask for; those notes work for an acoustic instrument just as well as for a [Neotone](/en/neotone).
