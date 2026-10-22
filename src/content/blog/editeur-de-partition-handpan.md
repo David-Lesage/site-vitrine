@@ -2,6 +2,7 @@
 title: "L'éditeur de partition : joue tes chansons au handpan"
 description: "Le Mode Chanson affiche les paroles avec les diagrammes d'accords ancrés au-dessus des mots. Joue Hallelujah ou Let It Be au handpan, sans solfège."
 pubDate: 2026-08-15
+updatedDate: 2026-10-23
 cover: "/images/blog-partition-hallelujah-2026.webp"
 category: "partitions"
 tags: ["partition", "chansons", "accompagnement"]
@@ -58,4 +59,4 @@ Une fois l'affichage réglé, tu exportes en **PDF ou PNG** — les diagrammes p
 
 ## Ta chanson, à ta portée
 
-Créer et exporter en mode acoustique est **gratuit** ; la version Studio ajoute la sauvegarde cloud pour retrouver tes chansons partout. Ouvre [Handpan Constellation Studio](/handpan-app), charge *Hallelujah* ou *Let It Be* en Mode Chanson, et joue ta première chanson dès ce soir.
+Créer et exporter en mode acoustique est **gratuit**, et tes chansons sont sauvegardées sur ton compte, quel que soit ton palier, pour les retrouver partout. Ouvre [Handpan Constellation Studio](/handpan-app), charge *Hallelujah* ou *Let It Be* en Mode Chanson, et joue ta première chanson dès ce soir.

@@ -2,6 +2,7 @@
 title: "« Mes handpans » : une seule porte pour tes instruments"
 description: "Déclarer ton pan, en poser un second à côté, retrouver ton installation sur l'iPad : il y avait cinq chemins différents, il n'en reste qu'un. Voilà lequel, et ce qui a changé."
 pubDate: 2026-09-01
+updatedDate: 2026-10-23
 cover: "/images/blog-mes-handpans-duo-2026-09.webp"
 category: "acoustique"
 tags: ["acoustique", "deux handpans", "mes handpans"]
@@ -117,7 +118,7 @@ Deux détails qui comptent plus qu'ils n'en ont l'air.
 
 Tout ce que décrit cet article — déclarer tes instruments, les cocher, poser un duo, l'inverser, renommer, voir ce que les deux permettent — appartient au **mode acoustique, qui est gratuit**.
 
-Ce qui relève du **Studio**, c'est la **sauvegarde durable dans le cloud** : c'est elle qui fait que ta configuration te retrouve sur un autre appareil, et c'est justement le sujet du paragraphe précédent. En Découverte, tes instruments vivent sur la machine où tu les as déclarés.
+Et **tout est sauvegardé sur ton compte, même en gratuit** : tes handpans et tes duos te retrouvent sur un autre appareil, comme le décrit le paragraphe précédent.
 
 ## Ce qui n'est pas encore là
 

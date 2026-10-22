@@ -2,6 +2,7 @@
 title: "Keep and share your chords: the score editor"
 description: "Export your progressions and visual scores as PDF or PNG to review, keep or pass on. Handpan Constellation Studio's visual score editor."
 pubDate: 2026-08-07
+updatedDate: 2026-10-23
 cover: "/images/app-partition-pdf-exporte.webp"
 category: "partitions"
 tags: ["score", "tools"]
@@ -52,6 +53,6 @@ Every export discreetly carries the note "created with Handpan Constellation Stu
 
 ## From idea to document
 
-Creating and exporting your scores in acoustic mode is **free**; the Studio version adds cloud saving to find your creations everywhere. Either way, your ideas no longer fly away.
+Creating and exporting your scores in acoustic mode is **free**, and your creations are saved to your account, whatever your plan, so you find them everywhere. Either way, your ideas no longer fly away.
 
 Want guidance to compose and keep your progressions? [David Lesage's lessons](/en/cours) take you by the hand. Open [Handpan Constellation Studio](/en/handpan-app) and export your first score — the one you'll find again tomorrow.

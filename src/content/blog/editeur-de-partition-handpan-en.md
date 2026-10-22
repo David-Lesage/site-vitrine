@@ -2,6 +2,7 @@
 title: "The score editor: play your songs on the handpan"
 description: "Song Mode shows lyrics with chord diagrams anchored above the words. Play Hallelujah or Let It Be on the handpan, no music theory needed."
 pubDate: 2026-08-15
+updatedDate: 2026-10-23
 cover: "/images/blog-partition-hallelujah-2026.webp"
 category: "partitions"
 tags: ["score", "songs", "accompaniment"]
@@ -58,4 +59,4 @@ Once the display is set, you export as **PDF or PNG** — the diagrams can also 
 
 ## Your song, within reach
 
-Creating and exporting in acoustic mode is **free**; the Studio version adds cloud saving to find your songs everywhere. Open [Handpan Constellation Studio](/en/handpan-app), load *Hallelujah* or *Let It Be* in Song Mode, and play your first song tonight.
+Creating and exporting in acoustic mode is **free**, and your songs are saved to your account, whatever your plan, so you find them everywhere. Open [Handpan Constellation Studio](/en/handpan-app), load *Hallelujah* or *Let It Be* in Song Mode, and play your first song tonight.

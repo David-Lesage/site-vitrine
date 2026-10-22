@@ -2,6 +2,7 @@
 title: "The music library: what if your scale told you what to play?"
 description: "Songs to accompany, handpan pieces, your own compositions: Handpan Constellation Studio's library tells you which ones your scale can actually play."
 pubDate: 2026-08-31
+updatedDate: 2026-10-23
 cover: "/images/app-bibliotheque-badges.webp"
 category: "communaute"
 tags: ["songs", "repertoire", "sync"]
@@ -79,7 +80,7 @@ On an acoustic handpan the app goes further and offers the piece **transposed in
 
 Everything you create — pieces, scales, sets — is tied to your account and turns up on each of your devices: the computer in the living room, the iPad on the sofa, the phone on the train. Offline, the app keeps working and catches up on syncing as soon as the network is back. And if the same item exists in two places, the most recent version wins, **without ever erasing anything**.
 
-That online backup is part of the **Studio** version; receiving and viewing shared content stays free.
+That backup is for everyone: **everything you create is saved to your account, whatever your plan**, even on the free tier. Receiving and viewing shared content stays free too.
 
 ## A repertoire built together
 

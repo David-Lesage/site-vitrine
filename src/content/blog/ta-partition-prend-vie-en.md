@@ -2,6 +2,7 @@
 title: "Your score comes alive: the player, the repeats, the music stand"
 description: "The score no longer just gets printed: it plays, lights up chord after chord, counts your repeats and goes full screen."
 pubDate: 2026-09-20
+updatedDate: 2026-10-23
 cover: "/images/blog-partition-prend-vie-couverture.webp"
 category: "partitions"
 tags: ["player", "music stand", "printing"]
@@ -134,7 +135,7 @@ You can also choose the diagram size — S, M, L or XL — for a score that read
 
 One last point, and it matters: shared scores keep track of **who contributed what**, first and last name shown. Placing a chord in the right spot, fixing a repeat, specifying a time signature: small gestures, but end to end they build a handpan repertoire that existed nowhere else. It's the same spirit as the [feedback feature](/en/blog/feedback-ameliorer-handpan-studio) — a tool we make together.
 
-Exports made without Studio access carry a discreet "free version" watermark; everything else — player, music stand, repeats — stays under your fingers.
+Exports made on a free account carry a discreet "free version" watermark; everything else — player, music stand, repeats — stays under your fingers.
 
 <figure>
   <img
@@ -146,7 +147,7 @@ Exports made without Studio access carry a discreet "free version" watermark; ev
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The same export, made <strong>without Studio access</strong>: the « version gratuite » watermark is repeated across the page, and a QR badge is added in the footer.</figcaption>
+  <figcaption>The same export, made <strong>on a free account</strong>: the « version gratuite » watermark is repeated across the page, and a QR badge is added in the footer.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

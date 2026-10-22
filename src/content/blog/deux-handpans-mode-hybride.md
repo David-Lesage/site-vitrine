@@ -2,6 +2,7 @@
 title: "Deux handpans qui n'en font qu'un : tes 2 handpans"
 description: "Quand un second handpan rejoint le premier, Handpan Constellation Studio dessine l'accord à cheval sur les deux — et te dit ce que ce duo débloque vraiment."
 pubDate: 2026-09-01
+updatedDate: 2026-10-23
 cover: "/images/app-deux-handpans-accord-a-cheval-2026-09.webp"
 category: "acoustique"
 tags: ["tes 2 handpans", "deux handpans", "compléter"]
@@ -67,6 +68,6 @@ Deux détails valent de l'or avant de commander quoi que ce soit :
 - La **roue de tonalité** te laisse écouter ta gamme transposée dans une autre tonalité. Tu entends le futur instrument avant qu'il existe.
 - Le réglage de **diapason 440 / 432 Hz** accorde l'app sur *ton* handpan, pour que ce que tu entends à l'écran sonne juste avec ce que tu as dans les mains.
 
-Le mode acoustique, « Compléter » et la roue de tonalité sont **gratuits** ; enregistrer durablement ta configuration à deux handpans fait partie de la version Studio. Et si le second pan devient une vraie envie, l'app te dit exactement quelles notes demander ; ces notes valent pour un instrument acoustique comme pour un [Neotone](/neotone).
+Le mode acoustique, « Compléter » et L'Étoile des 24 tonalités sont **gratuits**, et ton duo est enregistré sur ton compte, même en gratuit : il te suit sur tous tes appareils. Et si le second pan devient une vraie envie, l'app te dit exactement quelles notes demander ; ces notes valent pour un instrument acoustique comme pour un [Neotone](/neotone).
 
 Ouvre [Handpan Constellation Studio](/handpan-app), charge ta gamme et regarde ce qu'il te manque vraiment. Souvent, c'est moins que tu ne crois. Et pour explorer tout ça à deux, mes [cours de handpan](/cours) sont ouverts.

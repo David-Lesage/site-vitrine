@@ -2,6 +2,7 @@
 title: "Two handpans that become one: your 2 handpans"
 description: "When a second handpan joins the first, Handpan Constellation Studio draws each chord across both — and tells you what that duo really unlocks."
 pubDate: 2026-09-01
+updatedDate: 2026-10-23
 cover: "/images/app-deux-handpans-accord-a-cheval-2026-09.webp"
 category: "acoustique"
 tags: ["your 2 handpans", "two handpans", "complete"]
@@ -67,6 +68,6 @@ Two details are worth their weight in gold before ordering anything:
 - The **key wheel** (*roue de tonalité*) lets you listen to your scale transposed into another key. You hear the future instrument before it exists.
 - The **440 / 432 Hz tuning setting** tunes the app to *your* handpan, so what you hear on screen sounds right with what you hold in your hands.
 
-Acoustic mode, "Complete" and the key wheel are **free**; permanently registering your two-handpan setup is part of the Studio version. And if the second pan becomes a real desire, the app tells you exactly which notes to ask for; those notes work for an acoustic instrument just as well as for a [Neotone](/en/neotone).
+Acoustic mode, "Complete" and the Star of the 24 keys are **free**, and your duo is saved to your account, even on the free tier: it follows you on all your devices. And if the second pan becomes a real desire, the app tells you exactly which notes to ask for; those notes work for an acoustic instrument just as well as for a [Neotone](/en/neotone).
 
 Open [Handpan Constellation Studio](/en/handpan-app), load your scale and see what you're really missing. It's often less than you think. And to explore all this together, my [handpan lessons](/en/cours) are open.

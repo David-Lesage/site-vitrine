@@ -2,6 +2,7 @@
 title: "Garder et partager tes accords : l'éditeur de partition"
 description: "Exporte tes progressions et partitions visuelles en PDF ou PNG pour réviser, garder ou transmettre. L'éditeur de partition de Handpan Constellation Studio."
 pubDate: 2026-08-07
+updatedDate: 2026-10-23
 cover: "/images/app-partition-pdf-exporte.webp"
 category: "partitions"
 tags: ["partition", "outils"]
@@ -52,6 +53,6 @@ Chaque export porte discrètement la mention « créé avec Handpan Constellatio
 
 ## De l'idée au document
 
-Créer et exporter tes partitions en mode acoustique est **gratuit** ; la version Studio ajoute la sauvegarde cloud pour retrouver tes créations partout. Dans tous les cas, tes idées ne s'envolent plus.
+Créer et exporter tes partitions en mode acoustique est **gratuit**, et tes créations sont sauvegardées sur ton compte, quel que soit ton palier, pour les retrouver partout. Dans tous les cas, tes idées ne s'envolent plus.
 
 Envie d'être guidé pour composer et garder tes progressions ? Les [cours de David Lesage](/cours) te prennent par la main. Ouvre [Handpan Constellation Studio](/handpan-app) et exporte ta première partition — celle que tu retrouveras demain.

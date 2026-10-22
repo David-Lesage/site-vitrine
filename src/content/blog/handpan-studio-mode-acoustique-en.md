@@ -2,6 +2,7 @@
 title: "Handpan Constellation Studio on your acoustic handpan (free)"
 description: "Handpan Constellation Studio's acoustic mode shows YOUR scale in colour on your own handpan and teaches you chords. Free, no Neotone needed."
 pubDate: 2026-07-14
+updatedDate: 2026-10-23
 cover: "/images/app-acoustique.jpg"
 category: "acoustique"
 tags: ["acoustic", "getting started"]
@@ -60,6 +61,6 @@ This article dates from July 2026. Since then, acoustic mode has reorganised its
 
 ## Free now, more later if you want
 
-Acoustic mode gives you the essentials at no cost: visualise, learn, create, export. Saving your personal library and the advanced functions belong to the Studio version, but nothing forces you into it to get started. You can experience real progress while staying on the free tier.
+Acoustic mode gives you the essentials at no cost: visualise, learn, create, export. Your personal library is saved to your account, even on the free tier; some advanced functions belong to the paid plans, but nothing forces you into them to get started. You can experience real progress while staying on the free tier.
 
 Your acoustic handpan is waiting for just one thing: to become **visible**. Open [Handpan Constellation Studio](/en/handpan-app), enter your scale, and watch your instrument light up with colour. And if you'd like some guidance, [David Lesage's lessons](/en/cours) start from the very beginning, at your own pace.

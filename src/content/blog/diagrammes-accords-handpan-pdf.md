@@ -2,6 +2,7 @@
 title: "Créer et exporter tes diagrammes d'accords en PDF"
 description: "Chaque accord dessiné comme un mini-handpan coloré : notes, ordre de jeu, doigté suggéré. Exporte tes diagrammes d'accords en PDF ou PNG imprimable."
 pubDate: 2026-08-19
+updatedDate: 2026-10-23
 cover: "/images/blog-grille-accords-familles.webp"
 category: "partitions"
 tags: ["diagrammes", "accords", "pdf"]
@@ -59,7 +60,7 @@ Active le **Mode Éco-Encre** avant d'imprimer : fond blanc, encre économisée,
 
 ### Filigrane et gratuité
 
-Chaque export porte discrètement la mention « créé avec Handpan Constellation Studio by David Lesage » — une signature qui accompagne ton document sans l'abîmer. Créer et exporter tes diagrammes en mode acoustique est **gratuit** ; la version Studio ajoute la sauvegarde cloud. Pour la logique d'export au sens large, l'article [garder et partager tes accords](/blog/exporter-ses-partitions-handpan) complète le tableau.
+Chaque export porte discrètement la mention « créé avec Handpan Constellation Studio by David Lesage » — une signature qui accompagne ton document sans l'abîmer. Créer et exporter tes diagrammes en mode acoustique est **gratuit**, et tout ce que tu crées est sauvegardé sur ton compte, quel que soit ton palier. Pour la logique d'export au sens large, l'article [garder et partager tes accords](/blog/exporter-ses-partitions-handpan) complète le tableau.
 
 ## Tes accords, sur papier
 

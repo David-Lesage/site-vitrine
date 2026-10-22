@@ -2,6 +2,7 @@
 title: "Ta partition prend vie : le lecteur, les répétitions, le pupitre"
 description: "La partition ne se contente plus d'être imprimée : elle se joue, s'illumine accord après accord, compte tes répétitions et s'affiche en plein écran."
 pubDate: 2026-09-20
+updatedDate: 2026-10-23
 cover: "/images/blog-partition-prend-vie-couverture.webp"
 category: "partitions"
 tags: ["lecteur", "pupitre", "impression"]
@@ -134,7 +135,7 @@ Tu peux aussi choisir la taille des diagrammes — S, M, L ou XL — pour une pa
 
 Dernier point, et il compte : les partitions partagées gardent la trace de **qui a contribué quoi**, prénom et nom affichés. Placer un accord au bon endroit, corriger une répétition, préciser une métrique : ce sont de petits gestes, mais mis bout à bout ils construisent un répertoire de handpan qui n'existait nulle part. C'est le même esprit que la [fonction feedback](/blog/feedback-ameliorer-handpan-studio) — un outil qu'on fabrique ensemble.
 
-Les exports réalisés sans accès Studio portent un discret filigrane « version gratuite » ; tout le reste — lecteur, Pupitre, répétitions — reste sous tes doigts.
+Les exports réalisés sur un compte gratuit portent un discret filigrane « version gratuite » ; tout le reste — lecteur, Pupitre, répétitions — reste sous tes doigts.
 
 <figure>
   <img
@@ -146,7 +147,7 @@ Les exports réalisés sans accès Studio portent un discret filigrane « versio
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le même export, réalisé <strong>sans accès Studio</strong> : le filigrane « version gratuite » est répété sur toute la page, et un badge QR s'ajoute en pied de page.</figcaption>
+  <figcaption>Le même export, réalisé <strong>sur un compte gratuit</strong> : le filigrane « version gratuite » est répété sur toute la page, et un badge QR s'ajoute en pied de page.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

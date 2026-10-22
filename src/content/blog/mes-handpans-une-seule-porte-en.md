@@ -2,6 +2,7 @@
 title: "“My handpans”: a single door to your instruments"
 description: "Declare your pan, set a second one beside it, find your setup again on the iPad: there used to be five different paths, now there's only one. Here's which one, and what has changed."
 pubDate: 2026-09-01
+updatedDate: 2026-10-23
 cover: "/images/blog-mes-handpans-duo-2026-09.webp"
 category: "acoustique"
 tags: ["acoustic", "two handpans", "my handpans"]
@@ -117,7 +118,7 @@ Two details that count for more than they look.
 
 Everything this article describes — declaring your instruments, ticking them, setting a duo, swapping it, renaming, seeing what the two allow — belongs to **acoustic mode, which is free**.
 
-What belongs to **Studio** is **lasting backup in the cloud**: that's what makes your setup find you again on another device, and it's exactly the subject of the previous section. In Discovery mode, your instruments live on the machine where you declared them.
+And **everything is saved to your account, even on the free tier**: your handpans and your duos find you again on another device, as the previous section describes.
 
 ## What isn't here yet
 

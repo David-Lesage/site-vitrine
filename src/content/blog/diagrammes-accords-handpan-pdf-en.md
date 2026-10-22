@@ -2,6 +2,7 @@
 title: "Create and export your chord diagrams as PDF"
 description: "Each chord drawn as a colourful mini-handpan: notes, play order, suggested fingering. Export your chord diagrams as printable PDF or PNG."
 pubDate: 2026-08-19
+updatedDate: 2026-10-23
 cover: "/images/blog-grille-accords-familles.webp"
 category: "partitions"
 tags: ["diagrams", "chords", "pdf"]
@@ -59,7 +60,7 @@ Turn on **Ink-Saver Mode** before printing: white background, ink saved, diagram
 
 ### Watermark and free access
 
-Every export discreetly carries the note "created with Handpan Constellation Studio by David Lesage" — a signature that accompanies your document without spoiling it. Creating and exporting your diagrams in acoustic mode is **free**; the Studio version adds cloud saving. For export logic in the broader sense, the article on [keeping and sharing your chords](/en/blog/exporter-ses-partitions-handpan) rounds out the picture.
+Every export discreetly carries the note "created with Handpan Constellation Studio by David Lesage" — a signature that accompanies your document without spoiling it. Creating and exporting your diagrams in acoustic mode is **free**, and everything you create is saved to your account, whatever your plan. For export logic in the broader sense, the article on [keeping and sharing your chords](/en/blog/exporter-ses-partitions-handpan) rounds out the picture.
 
 ## Your chords, on paper
 

@@ -2,6 +2,7 @@
 title: "La Bibliothèque musicale : et si ta gamme te disait quoi jouer ?"
 description: "Chansons à accompagner, morceaux de handpan, tes compositions : la Bibliothèque de Handpan Constellation Studio te dit lesquels ta gamme sait vraiment jouer."
 pubDate: 2026-08-31
+updatedDate: 2026-10-23
 cover: "/images/app-bibliotheque-badges.webp"
 category: "communaute"
 tags: ["morceaux", "répertoire", "synchronisation"]
@@ -79,7 +80,7 @@ Sur un handpan acoustique, l'app va plus loin et te propose le morceau **transpo
 
 Tout ce que tu crées — morceaux, gammes, sets — est rattaché à ton compte et se retrouve sur chacun de tes appareils : l'ordinateur du salon, l'iPad du canapé, le téléphone du train. Hors ligne, l'app continue de fonctionner et rattrape la synchronisation dès que le réseau revient. Et si le même élément existe à deux endroits, c'est la version la plus récente qui gagne, **sans jamais rien effacer**.
 
-Cette sauvegarde en ligne fait partie de la version **Studio** ; recevoir et consulter un contenu partagé reste gratuit.
+Cette sauvegarde vaut pour tous : **tout ce que tu crées est sauvegardé sur ton compte, quel que soit ton palier**, même en gratuit. Recevoir et consulter un contenu partagé reste gratuit aussi.
 
 ## Un répertoire qui se construit à plusieurs
 

@@ -2,6 +2,7 @@
 title: "Handpan Constellation Studio sur ton handpan acoustique"
 description: "Le mode acoustique de Handpan Constellation Studio visualise TA gamme en couleurs sur ton propre handpan et t'apprend des accords. Gratuit, sans Neotone."
 pubDate: 2026-07-14
+updatedDate: 2026-10-23
 cover: "/images/app-acoustique.jpg"
 category: "acoustique"
 tags: ["acoustique", "débuter"]
@@ -60,6 +61,6 @@ Cet article date de juillet 2026. Depuis, le mode acoustique s'est réorganisé 
 
 ## Gratuit maintenant, plus tard si tu veux
 
-Le mode acoustique te donne l'essentiel sans rien débourser : visualiser, apprendre, créer, exporter. La sauvegarde de ta bibliothèque personnelle et les fonctions avancées relèvent de la version Studio, mais rien ne t'y oblige pour commencer. Tu peux vivre une vraie progression en restant en gratuit.
+Le mode acoustique te donne l'essentiel sans rien débourser : visualiser, apprendre, créer, exporter. Ta bibliothèque personnelle est sauvegardée sur ton compte, même en gratuit ; certaines fonctions avancées relèvent des offres payantes, mais rien ne t'y oblige pour commencer. Tu peux vivre une vraie progression en restant en gratuit.
 
 Ton handpan acoustique n'attend qu'une chose : devenir **visible**. Ouvre [Handpan Constellation Studio](/handpan-app), indique ta gamme, et regarde ton instrument s'allumer de couleurs. Et si tu veux être accompagné, les [cours de David Lesage](/cours) reprennent tout depuis le début, à ton rythme.
