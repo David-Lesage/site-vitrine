@@ -27,6 +27,14 @@ Dans Handpan Constellation Studio, **déplacer la note d'ancrage suffit à chang
 
 Concrètement : tu chantes une phrase, c'est trop haut, tu descends l'ancrage de quelques crans, tu réessaies. En quelques secondes, tu trouves la hauteur où ta voix se pose sans effort. La chanson tombe juste, l'accompagnement aussi.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-transposer.webp" width="1920" height="1080" aria-label="Vidéo avec le son : changer la note d'ancrage">
+    <source src="/videos/blog/demo-transposer.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/demo-transposer.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Démo d'écran, sur un Neotone Mutant : dans le panneau <strong>Dispositions &amp; Logique</strong>, on change la note d'ancrage. Toute la disposition suit : les accords se redessinent dans la nouvelle tonalité.</figcaption>
+</figure>
+
 ### Chanter juste sans « chanter faux »
 
 Beaucoup de gens croient qu'ils « chantent faux » alors qu'ils chantent simplement dans une mauvaise tonalité pour eux. En transposant, tu déplaces la cible vers ta zone confortable — et souvent, la justesse revient toute seule. Ce n'est pas de la triche, c'est ce que fait tout accompagnateur professionnel quand il adapte un morceau à un chanteur.

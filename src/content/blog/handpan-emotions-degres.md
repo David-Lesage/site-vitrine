@@ -31,6 +31,14 @@ Dans une gamme, chaque note occupe un rôle. Le premier degré est le point d'an
 
 Le Mode Logique rend ces rôles **visibles** en leur donnant une couleur stable, dans la logique des **ChromaKeys** décrite dans [Le handpan par les couleurs](/blog/handpan-par-les-couleurs). Le degré I garde toujours sa teinte, quel que soit ta gamme. Tu apprends une grammaire d'émotions une fois pour toutes.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/mode-logique-couleurs.webp" width="1280" height="720" aria-label="Vidéo avec le son : les 7 accords d'un D Kurd en couleurs">
+    <source src="/videos/blog/mode-logique-couleurs.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/mode-logique-couleurs.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Animation sur une photo : un D Kurd 11 acoustique, et l'app sur la tablette, dans <strong>Degrés &amp; émotions</strong>. Chaque accord de la gamme s'allume à son tour, dans sa couleur, avec son degré et son émotion : ici II Élan, puis IV Détente (sol mineur).</figcaption>
+</figure>
+
 <figure>
   <img
     src="/images/app-logique-2026-09.webp"

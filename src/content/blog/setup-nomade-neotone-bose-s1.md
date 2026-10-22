@@ -50,6 +50,14 @@ Un simple câble jack 6,35 mm mono (ou deux pour la stéréo). C'est le seul lie
 - **Le caisson Bose Sub1** — si tu veux de vraies basses profondes en petit concert. Attention : il pèse **16 kg**, donc il sort du registre « nomade léger ». Réserve-le aux dates où tu viens en voiture.
 - **Un micro** — si tu chantes ou si tu veux aussi capter un handpan acoustique, le **Hisong AirStudio S1** se branche sur la S1 Pro+ et transforme le setup en mini-studio mobile.
 
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="s1lFN3PDEnA" aria-label="Lire la vidéo : Pourquoi je joue debout : un pied Atlas et un Yishama">
+    <img src="https://i.ytimg.com/vi/s1lFN3PDEnA/hqdefault.jpg" alt="Pourquoi je joue debout : un pied Atlas et un Yishama" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Pourquoi je joue debout : un pied Atlas et un Yishama</figcaption>
+</figure>
+
 ## Le budget, sans mauvaise surprise
 
 | Élément | Prix indicatif |

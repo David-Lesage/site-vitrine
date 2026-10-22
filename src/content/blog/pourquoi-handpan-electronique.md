@@ -45,6 +45,14 @@ En **MIDI**, le Neotone pilote n'importe quel logiciel de musique. Il devient un
 
 Associé à la méthode visuelle des couleurs, l'instrument devient encore plus intuitif : découvre [le handpan par les couleurs (ChromaKeys)](/blog/handpan-par-les-couleurs) pour comprendre comment l'écran et l'instrument parlent la même langue.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/neotone-mutant-couleurs.webp" width="1280" height="720" aria-label="Vidéo avec le son : les 7 degrés en couleurs sur un Neotone Mutant">
+    <source src="/videos/blog/neotone-mutant-couleurs.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/neotone-mutant-couleurs.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Animation sur une photo : un Neotone Mutant à 19 notes, et l'app sur la tablette, en do majeur. Chaque accord de la tonalité s'allume à son tour, dans sa couleur, avec son degré et son émotion : ici IV Détente (fa majeur).</figcaption>
+</figure>
+
 Pour voir toutes les caractéristiques, les gammes disponibles et les éditions, rends-toi sur la page dédiée au [Neotone](/neotone). Tu peux aussi le prendre en main dans l'application [Handpan Constellation Studio](/handpan-app), ou apprendre à en jouer avec les [cours de David Lesage](/cours).
 
 Le handpan électronique n'enlève rien à la magie de l'acoustique : il t'ouvre simplement une porte de plus, à toute heure et dans toutes les gammes.

@@ -14,6 +14,14 @@ draft: false
 
 The [Neotone](/en/neotone), an electronic handpan, plays through **headphones** — late at night, in a flat, on the road, disturbing no one. Where an acoustic handpan rings through the whole house, the Neotone keeps the sound for you alone. And it isn't just about discretion: with headphones, you get an **immersive experience** that acoustic simply cannot offer.
 
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="KNQc6jCs0VE" aria-label="Play the video: Amara on the Neotone, with voice">
+    <img src="https://i.ytimg.com/vi/KNQc6jCs0VE/hqdefault.jpg" alt="Amara on the Neotone, with voice" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Amara on the Neotone, with voice</figcaption>
+</figure>
+
 ## The acoustic volume wall
 
 An acoustic handpan is magnificent — and loud. It resonates, it carries, it fills a room and spills through the walls. Wonderful in the daytime, outdoors, in sharing. Much trickier in the evening, in a flat, with household members asleep or sensitive neighbours. How many times does the urge to play run into "not now, it'll disturb people"?
@@ -33,6 +41,14 @@ That's the surprise of headphone playing: it isn't a degraded mode, it's a **dif
 - **Rare focus**: cut off from sound distractions, you hear every detail of your playing — the nuances, the fingering, the silences. Many players progress faster with headphones for that very reason.
 
 It's the intimate counterpart of [the speaker placement I recommend](/en/blog/etre-bien-dans-le-son-neotone): the speaker behind you to share, the headphones to immerse yourself.
+
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="rx8ZZcL7Nog" aria-label="Play the video: A studio in my pocket for my voice and my handpan">
+    <img src="https://i.ytimg.com/vi/rx8ZZcL7Nog/hqdefault.jpg" alt="A studio in my pocket for my voice and my handpan" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>A studio in my pocket for my voice and my handpan</figcaption>
+</figure>
 
 ### The method travels with the instrument
 

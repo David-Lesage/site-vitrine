@@ -105,6 +105,14 @@ En haut de l'écran, le bouton **🎨 Affichage** ouvre la palette d'outils. Ded
 Tu remarqueras que les deux choix de « La couleur dit… » portent chacun deux étiquettes : le mot simple en premier, et le mot de théorie en petit juste à côté. *La note*, c'est ce que d'autres appellent les **chakras**. *Sa place dans la gamme*, c'est ce qu'on appelle les **<abbr title="Le numéro de la place qu'une note occupe dans la gamme : 1re, 2e, 3e…">degrés</abbr>**. Je le dis une fois ici, et ensuite j'emploie les mots simples.
 
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-couleur.webp" width="1920" height="1080" aria-label="Vidéo avec le son : ChromaKeys, une couleur par note">
+    <source src="/videos/blog/demo-couleur.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/demo-couleur.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Démo d'écran, sur un Neotone Mutant : l'îlot <strong>ChromaKeys</strong> s'ouvre dans 🎨 Affichage, puis les notes de la gamme s'allument une à une, chacune dans sa couleur.</figcaption>
+</figure>
+
 ## « La couleur dit la note » : un do toujours rouge
 
 Première réponse possible. Ici, la couleur est collée au **nom** de la note, et elle ne bouge plus jamais.

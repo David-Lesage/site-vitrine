@@ -50,6 +50,14 @@ A simple 6.35 mm mono jack cable (or two for stereo). It's the only link between
 - **The Bose Sub1 subwoofer** — if you want real deep bass for small concerts. Careful: it weighs **16 kg**, so it leaves the "light nomad" category. Keep it for dates you drive to.
 - **A microphone** — if you sing, or want to capture an acoustic handpan too, the **Hisong AirStudio S1** plugs into the S1 Pro+ and turns the setup into a mobile mini-studio.
 
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="s1lFN3PDEnA" aria-label="Play the video: Why I play standing up: an Atlas stand and a Yishama">
+    <img src="https://i.ytimg.com/vi/s1lFN3PDEnA/hqdefault.jpg" alt="Why I play standing up: an Atlas stand and a Yishama" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Why I play standing up: an Atlas stand and a Yishama</figcaption>
+</figure>
+
 ## The budget, with no bad surprise
 
 | Item | Indicative price |

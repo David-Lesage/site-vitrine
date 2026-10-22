@@ -42,6 +42,14 @@ Mine are the **KZ ZS12 Pro X** (≈ **€34** — [see them on AliExpress](https
 
 To cut the last cable between me and my monitor mix, I use the **X-vive U4** system (≈ **€199** — [see it at Woodbrass](https://www.woodbrass.com/ensembles-recepteurs-portables-x-vive-x-vive-u4-p378823.html)): the transmitter plugs into the output, the receiver clips to my belt, and my in-ears plug into it. The result: **I move freely on stage** with my monitor mix in my ears, and no trailing wire.
 
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="rx8ZZcL7Nog" aria-label="Play the video: A studio in my pocket for my voice and my handpan">
+    <img src="https://i.ytimg.com/vi/rx8ZZcL7Nog/hqdefault.jpg" alt="A studio in my pocket for my voice and my handpan" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>A studio in my pocket for my voice and my handpan</figcaption>
+</figure>
+
 ## In short: two setups for two moments
 
 | Use | Gear | Price ≈ |

@@ -33,6 +33,14 @@ Une gamme, c'est le « caractère » de ton pan : une note centrale (le **ding**
 4. **Écoute et ajuste.** Joue ta disposition, déplace ou remplace les notes qui ne te parlent pas. Ton oreille tranche, ton œil confirme.
 5. **Enregistre ta gamme.** Sauvegarde-la pour la retrouver plus tard, sur handpan acoustique comme sur [Neotone](/neotone).
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-creation.webp" width="1920" height="1080" aria-label="Vidéo avec le son : créer sa gamme">
+    <source src="/videos/blog/demo-creation.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/demo-creation.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Démo d'écran, sur un Neotone Mutant : on part d'un pan vide, on touche les notes dans l'arc des douze couleurs, et elles se posent une à une sur le pan.</figcaption>
+</figure>
+
 <figure>
   <img
     src="/images/app-creation-acoustique-2026-09.webp"
@@ -64,6 +72,14 @@ Une gamme, c'est le « caractère » de ton pan : une note centrale (le **ding**
 ### S'appuyer sur les couleurs
 
 Si tu débutes, la méthode visuelle rend la composition beaucoup plus intuitive : tu choisis d'abord l'émotion, puis la couleur, puis la note. Pour bien comprendre le principe, lis [le handpan par les couleurs (ChromaKeys)](/blog/handpan-par-les-couleurs).
+
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="zWqXGlHb2wI" aria-label="Lire la vidéo : Créer ses gammes sur le Neotone">
+    <img src="https://i.ytimg.com/vi/zWqXGlHb2wI/hqdefault.jpg" alt="Créer ses gammes sur le Neotone" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Créer ses gammes sur le Neotone</figcaption>
+</figure>
 
 ## Partager sa gamme avec la communauté
 

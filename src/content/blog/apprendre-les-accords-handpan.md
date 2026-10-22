@@ -29,6 +29,14 @@ Le principe est simple et visuel. Tu choisis un accord, et l'app **te montre exa
 - Tu la touches, un **retour sonore et visuel** confirme (ou t'invite à réessayer).
 - La note suivante s'allume, et ainsi de suite jusqu'à ce que l'accord soit complet.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-oeil.webp" width="1920" height="1080" aria-label="Vidéo avec le son : l'œil d'une carte d'accord">
+    <source src="/videos/blog/demo-oeil.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/demo-oeil.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Démo d'écran, sur un Neotone Mutant, dans <strong>Degrés &amp; émotions</strong> : l'œil d'une carte d'accord allume ses notes sur le pan, numérotées et reliées par leur tracé. Ici I Équilibre (ré mineur), puis IV Détente (sol mineur).</figcaption>
+</figure>
+
 <figure>
   <img
     src="/images/app-mode-guide-note-allumee-2026-09.webp"

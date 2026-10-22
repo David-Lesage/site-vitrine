@@ -44,6 +44,14 @@ Each scale carries an emotional colour: bright, melancholic, mysterious, soothin
 
 With one click, you hear the scale sound. No need to own it or imagine it: Handpan Constellation Studio plays it for you. That's precious when you're hesitating before buying an acoustic handpan, or before loading a scale onto your [electronic Neotone handpan](/en/neotone). One honest difference between the two instruments: an electronic pan loads any scale in any key, while an acoustic pan keeps its hammered notes — so the app lets you **hear** your scale transposed without replacing it.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-atlas.webp" width="1920" height="1080" aria-label="Video with sound: the Sound Atlas">
+    <source src="/videos/blog/demo-atlas.mp4" type="video/mp4" />
+    <p>Your browser can't play this video. <a href="/videos/blog/demo-atlas.mp4">Open the video (MP4)</a>.</p>
+  </video>
+  <figcaption>Screen demo: the Sound Atlas open next to the pan. You scroll through the destinations, one scale per destination, and the <strong>« Démo musicale »</strong> button lets you hear it. The app is shown in French.</figcaption>
+</figure>
+
 ### See the scale in colour
 
 Every scale appears on a pan with the **ChromaKeys**: each note, its colour. You immediately see the layout, the number of notes, the place of the central ding. This visual reading is the same everywhere in the app — it's the method explained in [Playing handpan by colours](/en/blog/handpan-par-les-couleurs).

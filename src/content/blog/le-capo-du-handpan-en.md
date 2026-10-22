@@ -52,6 +52,14 @@ The electronic handpan, in **<abbr title="The app mode where every chord of the 
 
 On the electronic handpan, the bar is called the **anchor note**. You pick it on a wheel of twelve petals, one per <abbr title="The smallest step between two neighbouring notes, for example from C to C#.">semitone</abbr>. Touching a petal means clamping the capo somewhere else.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-transposer.webp" width="1920" height="1080" aria-label="Video with sound: changing the anchor note">
+    <source src="/videos/blog/demo-transposer.mp4" type="video/mp4" />
+    <p>Your browser can't play this video. <a href="/videos/blog/demo-transposer.mp4">Open the video (MP4)</a>.</p>
+  </video>
+  <figcaption>Screen demo, on a Neotone Mutant: in the panel <strong>« Dispositions &amp; Logique »</strong>, the anchor note changes. The whole layout follows: the chords are redrawn in the new key. The app is shown in French.</figcaption>
+</figure>
+
 Take the <abbr title="The drawing that links, on the pan, the notes of one chord.">constellation</abbr> of **scale degree I** — the one the app calls **Balance**. Choose the anchor note **C**, then **D**, then **A**, and look at the pan each time.
 
 <figure id="grille-trois-tonalites">

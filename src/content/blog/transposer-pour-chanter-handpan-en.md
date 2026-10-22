@@ -27,6 +27,14 @@ In Handpan Constellation Studio, **shifting the anchor note is enough to change 
 
 In practice: you sing a phrase, it's too high, you drop the anchor a few notches, you try again. In seconds, you find the pitch where your voice settles effortlessly. The song sits right, and so does the accompaniment.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-transposer.webp" width="1920" height="1080" aria-label="Video with sound: changing the anchor note">
+    <source src="/videos/blog/demo-transposer.mp4" type="video/mp4" />
+    <p>Your browser can't play this video. <a href="/videos/blog/demo-transposer.mp4">Open the video (MP4)</a>.</p>
+  </video>
+  <figcaption>Screen demo, on a Neotone Mutant: in the panel <strong>« Dispositions &amp; Logique »</strong>, the anchor note changes. The whole layout follows: the chords are redrawn in the new key. The app is shown in French.</figcaption>
+</figure>
+
 ### Singing in tune without "singing off-key"
 
 Many people believe they "sing off-key" when they're simply singing in a key that's wrong for them. By transposing, you move the target into your comfortable zone — and often, accuracy comes back on its own. It's not cheating, it's what every professional accompanist does when adapting a piece to a singer.

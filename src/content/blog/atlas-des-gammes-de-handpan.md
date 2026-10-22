@@ -44,6 +44,14 @@ Chaque gamme porte une couleur émotionnelle : lumineuse, mélancolique, mystér
 
 D'un clic, tu entends la gamme sonner. Pas besoin de la posséder ni de l'imaginer : Handpan Constellation Studio la joue pour toi. C'est précieux quand tu hésites avant d'acheter un handpan acoustique, ou avant de charger une gamme sur ton [handpan électronique Neotone](/neotone). Une nuance honnête, propre à chaque instrument : l'électronique charge n'importe quelle gamme dans n'importe quelle tonalité, tandis qu'un pan acoustique garde ses notes martelées — l'app te fait alors **écouter** ta gamme transposée sans la remplacer.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-atlas.webp" width="1920" height="1080" aria-label="Vidéo avec le son : l'Atlas Sonore">
+    <source src="/videos/blog/demo-atlas.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/demo-atlas.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Démo d'écran : l'Atlas Sonore ouvert à côté du pan. On fait défiler les destinations, une gamme par destination, et le bouton <strong>Démo musicale</strong> la fait entendre.</figcaption>
+</figure>
+
 ### Voir la gamme en couleurs
 
 Chaque gamme s'affiche sur un pan avec les **ChromaKeys** : chaque note, sa couleur. Tu vois immédiatement la disposition, le nombre de notes, la place du ding central. Cette lecture visuelle est la même partout dans l'app — c'est la méthode expliquée dans [Le handpan par les couleurs](/blog/handpan-par-les-couleurs).

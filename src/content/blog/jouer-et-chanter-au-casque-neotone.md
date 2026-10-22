@@ -14,6 +14,14 @@ draft: false
 
 Le [Neotone](/neotone), handpan électronique, se joue **au casque** — tard le soir, en appartement, en déplacement, sans déranger personne. Là où un handpan acoustique sonne dans toute la maison, le Neotone garde le son pour toi seul. Et ce n'est pas qu'une question de discrétion : au casque, tu vis une **expérience immersive** que l'acoustique ne peut pas offrir.
 
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="KNQc6jCs0VE" aria-label="Lire la vidéo : Amara au Neotone, avec la voix">
+    <img src="https://i.ytimg.com/vi/KNQc6jCs0VE/hqdefault.jpg" alt="Amara au Neotone, avec la voix" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Amara au Neotone, avec la voix</figcaption>
+</figure>
+
 ## Le mur du volume acoustique
 
 Un handpan acoustique est magnifique — et sonore. Il résonne, il porte, il remplit une pièce et déborde par les murs. Formidable en journée, en extérieur, en partage. Beaucoup plus délicat le soir, en appartement, avec des proches qui dorment ou des voisins sensibles. Combien de fois l'envie de jouer se heurte à « pas maintenant, ça va déranger » ?
@@ -33,6 +41,14 @@ C'est la surprise du jeu au casque : ce n'est pas un mode dégradé, c'est une *
 - **Une concentration rare** : coupé des distractions sonores, tu entends chaque détail de ton jeu — les nuances, le doigté, les silences. Beaucoup de joueurs progressent plus vite au casque pour cette raison.
 
 C'est le pendant intime du [placement d'enceinte que je recommande](/blog/etre-bien-dans-le-son-neotone) : l'enceinte derrière toi pour partager, le casque pour t'immerger.
+
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="rx8ZZcL7Nog" aria-label="Lire la vidéo : Un studio dans ma poche pour ma voix et mon handpan">
+    <img src="https://i.ytimg.com/vi/rx8ZZcL7Nog/hqdefault.jpg" alt="Un studio dans ma poche pour ma voix et mon handpan" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Un studio dans ma poche pour ma voix et mon handpan</figcaption>
+</figure>
 
 ### La méthode voyage avec l'instrument
 

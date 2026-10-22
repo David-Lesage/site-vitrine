@@ -27,6 +27,23 @@ Cet article concerne le **handpan électronique Neotone**. Il existe en deux mod
 
 Le Mutant a aussi un **petit écran intégré** à l'instrument. Le Neotone¹ à 10 notes n'en a pas.
 
+<div class="article-mp4-pair">
+  <figure class="article-mp4">
+    <video controls preload="none" playsinline poster="/videos/blog/neotone1-hetre.webp" width="1280" height="720" aria-label="Vidéo avec le son : un Neotone¹ à 10 notes dans l'app">
+      <source src="/videos/blog/neotone1-hetre.mp4" type="video/mp4" />
+      <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/neotone1-hetre.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+    </video>
+    <figcaption><strong>Neotone¹ — 10 notes</strong>. Animation sur une photo : un Neotone¹ en hêtre, gamme D majeur 10. Les notes s'allument une à une, sur le pan et dans l'app.</figcaption>
+  </figure>
+  <figure class="article-mp4">
+    <video controls preload="none" playsinline poster="/videos/blog/neotone-mutant-couleurs.webp" width="1280" height="720" aria-label="Vidéo avec le son : un Neotone Mutant à 19 notes dans l'app">
+      <source src="/videos/blog/neotone-mutant-couleurs.mp4" type="video/mp4" />
+      <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/neotone-mutant-couleurs.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+    </video>
+    <figcaption><strong>Neotone¹ Mutant — 19 notes</strong>. Animation sur une photo, en do majeur : chaque accord de la tonalité s'allume dans sa couleur, avec son degré, ici IV Détente (fa majeur).</figcaption>
+  </figure>
+</div>
+
 ## Choisis le 19 notes si…
 
 ### Tu veux en faire ton instrument principal

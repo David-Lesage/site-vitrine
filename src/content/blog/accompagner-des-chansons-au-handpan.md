@@ -27,6 +27,14 @@ Le Mode Logique change ce regard. Au lieu de te montrer des notes éparses, il r
 
 D'un coup, ta poignée de notes n'est plus une contrainte : c'est une palette d'accords. Tu ne te demandes plus « quelle note ? » mais « quelle couleur, quelle émotion, maintenant ? ». Et enchaîner des couleurs, c'est exactement ce que fait un guitariste qui plaque des accords derrière une mélodie.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/mode-logique-couleurs.webp" width="1280" height="720" aria-label="Vidéo avec le son : les 7 accords d'un D Kurd en couleurs">
+    <source src="/videos/blog/mode-logique-couleurs.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/mode-logique-couleurs.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Animation sur une photo : un D Kurd 11 acoustique, et l'app sur la tablette, dans <strong>Degrés &amp; émotions</strong>. Chaque accord de la gamme s'allume à son tour, dans sa couleur, avec son degré et son émotion : ici II Élan, puis IV Détente (sol mineur).</figcaption>
+</figure>
+
 <figure>
   <img
     src="/images/app-logique-progression-2026-09.webp"

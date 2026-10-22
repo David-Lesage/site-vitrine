@@ -13,6 +13,14 @@ draft: false
 
 Many players end up owning **two handpans** — and playing them as two separate instruments. Those two instruments can be acoustic, electronic, or one of each. [Handpan Constellation Studio](/en/handpan-app) looks at them differently: it lays both shells side by side and draws each chord **across the two of them**, with the play order and the hands. They're no longer two pans. They're one instrument.
 
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="Zp_zaqsRBCg" aria-label="Play the video: Shape of My Heart, sung, on two Yishama handpans">
+    <img src="https://i.ytimg.com/vi/Zp_zaqsRBCg/hqdefault.jpg" alt="Shape of My Heart, sung, on two Yishama handpans" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Shape of My Heart, sung, on two Yishama handpans</figcaption>
+</figure>
+
 ## There's always a note missing
 
 A handpan scale is a choice, and therefore a renunciation. You have nine or ten notes, beautiful ones, and there will always be **that one** missing note that would make the chord you dream of playable. It's the most common frustration, and the most poorly explained: you think you can't do it, when the note simply doesn't exist under your hands.

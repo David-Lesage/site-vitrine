@@ -861,3 +861,41 @@ h1, h2, h3, h4, .font-display {
 .calc-wood-disc img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .calc-wood[aria-checked='true'] .calc-wood-disc { border-color: var(--color-copper); }
 .calc-wood:hover .calc-wood-disc { transform: translateY(-2px); }
+
+/* ════════ 🎬 VIDÉOS MP4 HÉBERGÉES DANS UN ARTICLE — ajouté le 23/10/2026 ════════
+   Décision de David (23/10) : « On va pas publier sur YouTube pour le moment.
+   Peux-tu intégrer les vidéos directement sur le site […] Publie les vidéos qui
+   ont du son. » Fichiers : `public/videos/blog/<nom>.mp4` + `<nom>.webp` (aperçu).
+   Bloc HTML commun, à recopier tel quel dans un `.md` :
+     <figure class="article-mp4">
+       <video controls preload="none" playsinline poster="/videos/blog/X.webp" width="1280" height="720">
+         <source src="/videos/blog/X.mp4" type="video/mp4" />
+         <a href="/videos/blog/X.mp4">Texte de repli</a>
+       </video>
+       <figcaption>Légende</figcaption>
+     </figure>
+   ⚠️ JAMAIS d'autoplay : ces vidéos ont du son. `preload="none"` : rien n'est
+   téléchargé avant le clic (seule l'image d'aperçu).
+   Comparaison (règle de David : côte à côte) : deux <figure class="article-mp4">
+   dans <div class="article-mp4-pair"> → deux colonnes en bureau, empilées sous 640 px. */
+.prose-blog .article-mp4 { margin-top: 2.25rem; margin-bottom: 2.25rem; }
+.prose-blog .article-mp4 video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #0b1020;
+  border-radius: var(--radius-card);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  box-shadow: 0 18px 40px -22px rgba(31, 22, 17, 0.55);
+}
+.prose-blog .article-mp4-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}
+.prose-blog .article-mp4-pair .article-mp4 { margin: 0; }
+@media (min-width: 640px) {
+  .prose-blog .article-mp4-pair { grid-template-columns: 1fr 1fr; }
+}

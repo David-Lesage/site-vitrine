@@ -42,6 +42,14 @@ Les miennes : les **KZ ZS12 Pro X** (≈ **34 €** — [les voir sur AliExpress
 
 Pour couper le dernier câble entre moi et mon retour, j'utilise le système **X-vive U4** (≈ **199 €** — [le voir chez Woodbrass](https://www.woodbrass.com/ensembles-recepteurs-portables-x-vive-x-vive-u4-p378823.html)) : l'émetteur se branche sur la sortie, le récepteur se clipse à la ceinture, et mes intras s'y branchent. Résultat : **je me déplace librement sur scène** avec mon retour dans les oreilles, sans un fil qui traîne.
 
+<figure class="article-video">
+  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="rx8ZZcL7Nog" aria-label="Lire la vidéo : Un studio dans ma poche pour ma voix et mon handpan">
+    <img src="https://i.ytimg.com/vi/rx8ZZcL7Nog/hqdefault.jpg" alt="Un studio dans ma poche pour ma voix et mon handpan" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
+  </button>
+  <figcaption>Un studio dans ma poche pour ma voix et mon handpan</figcaption>
+</figure>
+
 ## En résumé : deux setups selon le moment
 
 | Usage | Matériel | Prix ≈ |

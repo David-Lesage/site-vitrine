@@ -35,6 +35,14 @@ Handpan Constellation Studio lets you choose **how** that drawing appears, depen
 
 The setting lives in the palette (the **🎨 Display** button, *Affichage*), under **Constellation**: three buttons, **Polygon**, **Open** and **Hands**. To see clearly what changes, we keep **the same chord, D minor** (D, F, A), and touch only that setting.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-styles.webp" width="1920" height="1080" aria-label="Video with sound: Polygon, Open, Hands">
+    <source src="/videos/blog/demo-styles.mp4" type="video/mp4" />
+    <p>Your browser can't play this video. <a href="/videos/blog/demo-styles.mp4">Open the video (MP4)</a>.</p>
+  </video>
+  <figcaption>Screen demo, on a Neotone Mutant: in 🎨 Display › Constellation, you switch from one trace to another. The chord stays the same; only its drawing changes. The app is shown in French.</figcaption>
+</figure>
+
 ### The Polygon: the closed shape
 
 **Polygon** mode links every note of the chord into a closed figure — a triangle for three notes, a quadrilateral for four, and so on. It's the most "at a glance" view: you recognise the chord the way you'd recognise a logo. Ideal for memorising a chord and recognising it at a glance.

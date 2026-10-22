@@ -29,6 +29,14 @@ The idea is simple and visual. You pick a chord, and the app **shows you exactly
 - You touch it, and **sound and visual feedback** confirms (or invites you to try again).
 - The next note lights up, and so on until the chord is complete.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-oeil.webp" width="1920" height="1080" aria-label="Video with sound: the eye on a chord card">
+    <source src="/videos/blog/demo-oeil.mp4" type="video/mp4" />
+    <p>Your browser can't play this video. <a href="/videos/blog/demo-oeil.mp4">Open the video (MP4)</a>.</p>
+  </video>
+  <figcaption>Screen demo, on a Neotone Mutant, in <strong>« Degrés &amp; émotions »</strong>: the eye on a chord card lights its notes on the pan, numbered and joined by their trace. Here I Balance (D minor), then IV Relaxation (G minor). The app is shown in French.</figcaption>
+</figure>
+
 <figure>
   <img
     src="/images/app-mode-guide-note-allumee-2026-09.webp"

@@ -72,6 +72,14 @@ When several notes sound together, their colours connect into a **Constellation*
 
 The easiest way in is to see those colours and shapes live on a screen, aligned with your instrument. That's exactly what the [Handpan Constellation Studio app](/en/handpan-app) does: it shows your pan in colour, draws Constellations in real time and guides you step by step — the Discovery version is free.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-couleur.webp" width="1920" height="1080" aria-label="Video with sound: ChromaKeys, one colour per note">
+    <source src="/videos/blog/demo-couleur.mp4" type="video/mp4" />
+    <p>Your browser can't play this video. <a href="/videos/blog/demo-couleur.mp4">Open the video (MP4)</a>.</p>
+  </video>
+  <figcaption>Screen demo, on a Neotone Mutant: the <strong>ChromaKeys</strong> island opens in 🎨 Display, then the notes of the scale light up one by one, each in its colour. The app is shown in French.</figcaption>
+</figure>
+
 ## And if you play an electronic handpan
 
 The method shines even brighter on an [electronic Neotone handpan](/en/neotone): the instrument and the screen speak the same visual language, you switch scales with a single gesture, and you can play with headphones at any hour. Colours stay your guiding thread, whatever scale is loaded.

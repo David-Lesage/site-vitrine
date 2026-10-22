@@ -35,6 +35,14 @@ Handpan Constellation Studio te laisse choisir **comment** ce dessin apparaît, 
 
 Le réglage se trouve dans la palette (bouton **🎨 Affichage**), sous **Constellation** : trois boutons, **Polygone**, **Ouvert** et **Mains**. Pour bien voir ce qui change, on garde **le même accord, ré mineur** (ré, fa, la), et on ne touche qu'à ce réglage.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-styles.webp" width="1920" height="1080" aria-label="Vidéo avec le son : Polygone, Ouvert, Mains">
+    <source src="/videos/blog/demo-styles.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/demo-styles.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Démo d'écran, sur un Neotone Mutant : dans 🎨 Affichage › Constellation, on passe d'un tracé à l'autre. L'accord ne change pas, seul son dessin change.</figcaption>
+</figure>
+
 ### Le Polygone : la forme fermée
 
 Le mode **Polygone** relie toutes les notes de l'accord en une figure fermée : un triangle pour trois notes, un quadrilatère pour quatre, etc. C'est la vue la plus « d'un coup d'œil » : tu reconnais l'accord comme tu reconnaîtrais un logo. Idéal pour mémoriser un accord et le retrouver d'un regard.
@@ -81,6 +89,14 @@ Et les mêmes trois tracés sur un pan **acoustique**, un D Kurd 10. Sur ce pan,
   />
   <figcaption>Le même accord, <strong>ré mineur</strong>, sur un D Kurd 10 acoustique. En <strong>Polygone</strong>, la figure revient de A4 au <abbr title="La grande note bombée au centre du pan.">ding</abbr> ; en <strong>Ouvert</strong>, elle s'arrête sur A4 ; en <strong>Mains</strong>, le ding revient à la droite (<em>R</em>, cercle rouge), les trois notes du pourtour à la gauche (<em>L</em>, cercle bleu et trait bleu). Le dessin est celui de <em>cet</em> instrument.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/trois-constellations.webp" width="1280" height="720" aria-label="Vidéo avec le son : trois façons de dessiner un accord de handpan">
+    <source src="/videos/blog/trois-constellations.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/trois-constellations.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Animation sur une photo : le même accord, ré mineur, sur un D Kurd 11 acoustique, dessiné de trois façons. <strong>Ouvert</strong> : le chemin de l'arpège. <strong>Polygone</strong> : la forme de l'accord. <strong>Mains</strong> : un chemin par main. L'app, sur la tablette, montre le même tracé.</figcaption>
 </figure>
 
 ## Ce qui diffère entre acoustique et électronique

@@ -51,6 +51,14 @@ Le handpan électronique, en **<abbr title="Le mode de l'app où chaque accord d
 
 Sur le handpan électronique, la barrette s'appelle la **note d'ancrage**. Tu la choisis sur une roue de douze pétales, un par <abbr title="Le plus petit pas entre deux notes voisines, par exemple de do à do#.">demi-ton</abbr>. Toucher un pétale, c'est poser le capo ailleurs.
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-transposer.webp" width="1920" height="1080" aria-label="Vidéo avec le son : changer la note d'ancrage">
+    <source src="/videos/blog/demo-transposer.mp4" type="video/mp4" />
+    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/demo-transposer.mp4">Ouvrir la vidéo (MP4)</a>.</p>
+  </video>
+  <figcaption>Démo d'écran, sur un Neotone Mutant : dans le panneau <strong>Dispositions &amp; Logique</strong>, on change la note d'ancrage. Toute la disposition suit : les accords se redessinent dans la nouvelle tonalité.</figcaption>
+</figure>
+
 Prends la <abbr title="Le dessin qui relie, sur le pan, les notes d'un même accord.">constellation</abbr> du **degré I** — celui que l'app appelle **Équilibre**. Choisis la note d'ancrage **do**, puis **ré**, puis **la**, et regarde le pan à chaque fois.
 
 <figure id="grille-trois-tonalites">

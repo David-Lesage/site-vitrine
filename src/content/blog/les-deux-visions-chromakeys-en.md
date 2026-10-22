@@ -105,6 +105,14 @@ At the top of the screen, the **🎨 Display** button (*Affichage*) opens the to
 You'll notice that the two choices of "Colour says…" each carry two labels: the plain word first, and the theory word in small type right beside it. *The note* is what others call the **chakras**. *Its place in the scale* is what's called the **<abbr title="The number of the place a note holds in the scale: 1st, 2nd, 3rd…">scale degrees</abbr>**. I say it once here, and after that I use the plain words.
 
 
+<figure class="article-mp4">
+  <video controls preload="none" playsinline poster="/videos/blog/demo-couleur.webp" width="1920" height="1080" aria-label="Video with sound: ChromaKeys, one colour per note">
+    <source src="/videos/blog/demo-couleur.mp4" type="video/mp4" />
+    <p>Your browser can't play this video. <a href="/videos/blog/demo-couleur.mp4">Open the video (MP4)</a>.</p>
+  </video>
+  <figcaption>Screen demo, on a Neotone Mutant: the <strong>ChromaKeys</strong> island opens in 🎨 Display, then the notes of the scale light up one by one, each in its colour. The app is shown in French.</figcaption>
+</figure>
+
 ## "Colour says the note": a C always red
 
 First possible answer. Here the colour is glued to the **name** of the note, and it never moves again.
