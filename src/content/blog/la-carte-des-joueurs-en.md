@@ -1,7 +1,8 @@
 ---
-title: "The players' map: a constellation where nothing is switched on by default"
-description: "Handpan Constellation Studio now has its world map. Every player is a star on it — but yours stays dark until you light it, field by field, and the app never knows where you are."
+title: "The players' map: a star for everyone, and nothing more by default"
+description: "Handpan Constellation Studio has its world map. Every player is a star on it: a first name, an initial, a country. Everything else lights up field by field, if you want it to, and the app never knows where you are."
 pubDate: 2026-09-01
+updatedDate: 2026-10-23
 cover: "/images/blog-carte-joueurs-maquette.webp"
 category: "communaute"
 tags: ["community", "public profile", "map"]
@@ -10,27 +11,31 @@ permalink: "la-carte-des-joueurs"
 draft: false
 ---
 
+> **Updated 23 October 2026.** This article dates from 1 September. Back then, you had to light your star to appear on the map. Since 22 October, **every player has their star on it**: first name, the initial of their surname, and their country. The passages below have been corrected accordingly.
+
 The handpan is a small world, scattered very thin. People playing three streets apart have no idea. Someone goes looking for a teacher with no way of knowing there's one in their own town. That has always been true, and it has nothing to do with technology: there simply is no place where we can see each other.
 
-Since the end of August, the app has one. **A world map, where every player who wants to be there is a star.** Country, town if you like, "I teach", "I make instruments", your Spotify and YouTube links, and even your instruments.
+Since the end of August, the app has one. **A world map, where every player is a star.** And, if you wish: town, "I teach", "I make instruments", your Spotify and YouTube links, and even your instruments.
 
 The map draws no line between players: **acoustic or electronic**, it's the same sky, the same star, the same settings. What places you somewhere isn't your instrument, it's what you chose to switch on.
 
-But that isn't what this article is about. Community maps are everywhere. What's different here is **which way round the switch is set.**
+But that isn't what this article is about. Community maps are everywhere. What's different here is **what is shown by default, and what isn't.**
 
-## The reversal: you're not on it, and you never were
+## By default: a first name, an initial, a country
 
-Try the thought experiment with the other services you use. You sign up, and you **are** on the map, in the directory, in the member list. Then, if that doesn't suit you, you go hunting for the setting that takes you off. Visibility is the default; opting out is the effort.
+Try the thought experiment with the other services you use. You sign up, and you **are** on the map, in the directory, in the member list, with everything you gave when you signed up. Then, if that doesn't suit you, you go hunting for the setting that takes you off.
 
-Here it's the other way round, and it's the one design decision that really matters:
+Here too, by accepting the terms of use, you appear on the map. But look at what appears:
 
-> **You don't appear.** You use the app normally, nobody sees you. One day, if you feel like it, you flip a switch — and not before.
+> **Your first name, the initial of your surname, your country.** "Marie L. · France". Never your address, your town or your email. The star sits at the centre of your country.
 
-That switch has a name nobody can misread, **"Appear on the map"**, it lives in "🌍 My public profile" in your account menu, and it stays **off until you turn it on**. It is the only condition for appearing: there is no other route that puts you on the map.
+The only option for that simple star, in "🌍 My public profile" (your account menu): show your full surname.
 
-And once it's on, it isn't a bundle. It's **field by field**. You can give your country and nothing else. You can wear the teacher hat without giving your town. You can add your links without saying what you build. Whatever is empty simply doesn't show — there's no orphan line on your card, no "not specified" pointing at the gap.
+Everything else is your **detailed card**: chosen name, town, teacher hat, social links, instruments. It's optional and **off until you turn it on**. Once on, it replaces your simple star.
 
-And the default isn't reversed once: **it's reversed at every level.** Your instruments show it best. You could reasonably assume that lighting your star publishes the list of your pans — it's exactly the sort of thing a players' map would want to show, and I find it valuable. It doesn't: **sharing your instruments is a second, separate box, and it's off by default too.** You can be on the map, with your town and your teacher hat, having said nothing about what you play. Turning something on here never drags anything else on with it.
+And once it's on, it isn't a bundle. It's **field by field**. You can wear the teacher hat without giving your town. You can add your links without saying what you build. Whatever is empty simply doesn't show — there's no orphan line on your card, no "not specified" pointing at the gap.
+
+And that principle holds **at every level.** Your instruments show it best. You could reasonably assume that turning on your card publishes the list of your pans — it's exactly the sort of thing a players' map would want to show, and I find it valuable. It doesn't: **sharing your instruments is a second, separate box, and it's off by default too.** You can be on the map, with your town and your teacher hat, having said nothing about what you play. Turning something on here never drags anything else on with it.
 
 Worth saying plainly: this isn't a compliance checkbox added at the end. It's the starting point everything else was drawn from.
 
@@ -40,7 +45,7 @@ That's the second point, and it's as technical as it is ethical.
 
 **No geolocation. No address.** The app never asks the browser where you are, and never asks you for an address — it has no field for one.
 
-So how does a star find its place? **It's derived from the name of the town you typed yourself.** That's all. What the app knows about your position is a word you wrote. And if you'd rather not type a town, your star sits on the country instead.
+So how does a star find its place? **By default, it sits at the centre of your country**, picked from a list. If you turn on your card and type a town, **its place is derived from the name of that town.** That's all. What the app knows about your position is a word you wrote.
 
 And I can be more precise than "we only store the town", because the difference is enormous. **There are only two place boxes in the whole system: a two-letter country code, and a town name of sixty characters at most.** That is all that exists. There is **no box for a latitude, no box for a longitude** — they aren't left empty, they were never created. A star's coordinates are worked out **at the moment of display**, by looking your town name up in a list of towns shipped with the app; and if you gave no town, the star sits at the centre of the country.
 
@@ -62,21 +67,21 @@ There's an awkward moment in the life of every community map: the beginning. Twe
 
 I chose something else: **it has to be beautiful from the first few sign-ups, not only at a thousand.** When the stars are few, they grow larger, they carry a name, they link up to one another — scarcity becomes a drawing instead of a void. Which is exactly what the sky does, incidentally: twelve stars is plenty for a constellation.
 
-And the corollary I care about most is a matter of honesty towards whoever is looking. A map that lets you believe it surveys the world is lying about its own sample — and given which way the switch is set, it would be lying a lot. So the map says it itself, on screen, in all seven of the app's languages:
+And the corollary I care about most is a matter of honesty towards whoever is looking. A map that lets you believe it surveys the world is lying about its own sample: it only shows players registered in the app. So the map says it itself, on screen, in all seven of the app's languages:
 
 > **A country with no dot isn't a country without players, it's a country where nobody has said yes yet.**
 
 It can count to zero without flinching, too — "0 of you have lit your star" — and over an empty region it simply offers: "be the first dot in this area".
 
-So what you see on that map is **who said yes**. Nothing else. It is not a census of handpan players in the world, and it never will be.
+So what you see on that map is **the players registered in the app**. Nothing else. It is not a census of handpan players in the world, and it never will be.
 
-I may as well finish the demonstration, since it's true as I write this. **Tonight, 1 September 2026, the constellation holds one star.** Just one. A teacher, golden halo; no makers yet. That isn't an embarrassed confession, it's a date: the map has existed for a few days, and this is exactly where it stands. If you're reading this now, you can be the second.
+A dated landmark, for the record. **On 1 September 2026, when I wrote the first version of this article, the constellation held one star.** Just one. A teacher, golden halo; no makers. Since 22 October, every registered player has their own.
 
 ### What that sky looks like once it fills up
 
-Here's the one thing this page cannot honestly show you: a full sky. So let me show you the **design mockup** instead — the drawing the map was built from, with twelve stars instead of one.
+Here is the **design mockup** — the drawing the map was built from, with twelve stars. It predates the 22 October rule.
 
-> ⚠️ **What follows is a mockup, not the application.** The twelve players — Lena in Berlin, Kenji in Kyoto, Aïcha in Marrakech, Bruno in Curitiba… — and the "12 stars lit" counter are **entirely fictional**: those people don't exist, those numbers don't exist. It's a studio sketch. The real, verified number is the one in the paragraph above: **one star**.
+> ⚠️ **What follows is a mockup, not the application.** The twelve players — Lena in Berlin, Kenji in Kyoto, Aïcha in Marrakech, Bruno in Curitiba… — and the "12 stars lit" counter are **entirely fictional**: those people don't exist, those numbers don't exist. It's a studio sketch, drawn when the map held **only one star**.
 
 <figure>
   <img
@@ -107,11 +112,11 @@ Here's the one thing this page cannot honestly show you: a full sky. So let me s
 
 <p class="embed-maquette-mobile"><strong>⚠️ Design mockup — not the application.</strong> The handleable version is a wide-screen layout; on a phone it would be unreadable, so I'd rather give you the image above and the link than a frame you can't use. <a href="/prototypes/constellation-joueurs-carte.html">Open the map full screen</a> (eleven fictional players, plus my one real star). And to see the screen you light your star from — prefilled with my real profile, editable, with nothing saved: <a href="/prototypes/constellation-joueurs-profil.html">open the public-profile sandbox</a>.</p>
 
-### The screen you light your star from
+### The screen you turn your card on from
 
 There's one question everybody asks before ticking anything: *what exactly gets published?* So rather than promise you an answer, I'll show you — using **my own data**, from my real public profile, and let you poke at it.
 
-<p class="embed-maquette-intro">Below is the "🌍 My public profile" panel as it exists in the application, <strong>prefilled with my real profile</strong>. Flip the master switch off: my star goes dark in front of you. Untick "share my instruments": my four handpans vanish from the card. Rewrite the name: the card follows. The right-hand column isn't an illustration, it's the map's own card component — what you see there is literally what others would see. <strong>Nothing is saved</strong>: reload the page and my profile comes back. (The sandbox's own interface is in French.)</p>
+<p class="embed-maquette-intro">Below is the "🌍 My public profile" panel as it existed in the application on 1 September 2026, before the 22 October rule, <strong>prefilled with my real profile</strong>. Flip the master switch off: my star goes dark in front of you. Untick "share my instruments": my four handpans vanish from the card. Rewrite the name: the card follows. The right-hand column isn't an illustration, it's the map's own card component — what you see there is literally what others would see. <strong>Nothing is saved</strong>: reload the page and my profile comes back. (The sandbox's own interface is in French.)</p>
 
 <div class="embed-maquette embed-maquette-haute">
   <p class="embed-maquette-bandeau"><strong>🧪 Sandbox — nothing is saved</strong><br />This screen is prefilled with my real public profile and is fully editable: no data is sent or stored, reloading brings my profile back. The other players on the map are invented examples — except me, who is real. (Interface in French.)</p>
@@ -134,13 +139,13 @@ In Handpan Constellation Studio, [a chord is a Constellation](/en/blog/les-const
 
 The map does exactly that, one level up. The isolated points are no longer notes, they're **people**. They already existed, scattered, unaware of each other. The map doesn't create them: it draws the lines.
 
-What makes the word right rather than merely pretty is that the rendering follows: it isn't a road-map background with red pins. It's a sky, continents barely sketched in, and points of light. A **golden** halo for those who teach, a **copper** one for those who make instruments — with filters and a search, so you can find a teacher or a maker without scrolling through the whole world.
+What makes the word right rather than merely pretty is that the rendering follows: it isn't a road-map background with red pins. It's a sky, continents barely sketched in, and points of light. A **golden** halo for those who teach, a **copper** one for those who make instruments — with tabs (All · 🎵 Musicians · Teachers · Makers) and a search, so you can find a teacher or a maker without scrolling through the whole world. The 🎵 Musicians tab names nobody: one circle per country says how many musicians use the app, and a country with fewer than 3 people is never named.
 
 ## And if you change your mind
 
-One gesture. **You turn the master switch off, your star leaves the map, immediately.**
+One gesture. **You turn your detailed card off, it leaves the map, immediately.** Only your simple star remains: first name, initial, country.
 
-No fields to empty one by one, no form, no request to send me, no waiting period. And it isn't cosmetic hiding: the map simply only ever reads profiles whose switch is on, and there's no route around that filter.
+No fields to empty one by one, no form, no request to send me, no waiting period. And it isn't cosmetic hiding: the map simply only ever reads detailed cards that are switched on, and there's no route around that filter.
 
 That's the logical counterpart to the rest. A switch that's hard to turn on and easy to turn off isn't clumsy design — it's the right direction of travel.
 
@@ -148,6 +153,6 @@ That's the logical counterpart to the rest. A switch that's hard to turn on and 
 
 In the app: your account menu, then **"🌍 My public profile"**. It's all on one screen — the switch, the fields, and the preview beside them. The map itself only opens to signed-in accounts: it shows people, it isn't a public page for a search engine to index.
 
-Take your time filling it in without switching it on, if you want to see what it looks like. The preview updates as you type, and while the switch is off you're the only one looking at it.
+Take your time filling in your card without switching it on, if you want to see what it looks like. The preview updates as you type, and while your card is off you're the only one looking at it.
 
 And as always: if something's missing, or something bothers you, [tell me from inside the app](/en/blog/feedback-ameliorer-handpan-studio). A map of people is the kind of feature nobody can design alone in a corner — the questions it raises are raised for the people on it.
