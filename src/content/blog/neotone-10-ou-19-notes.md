@@ -39,6 +39,8 @@ Pour accompagner une chanson, il faut ses <abbr title="Au moins trois notes jou�
 
 Ces accords ont chacun une place dans la <abbr title="La note de départ autour de laquelle tournent un morceau et ses accords, par exemple « en ré ».">tonalité</abbr> : ce sont les **<abbr title="La place d'un accord dans la tonalité, numérotée de I à VII.">degrés</abbr>**, de I à VII. Le Mutant les a **tous les sept**. Le Neotone¹ à 10 notes n'a pas les sept degrés.
 
+Depuis octobre 2026, l'app joue pourtant **les 7 degrés sur un Neotone¹**. Chaque note y garde un rôle fixe dans toutes les tonalités, et les 7 accords deviennent jouables. Mais ils ne sont pas tous complets sous tes mains : seuls les quatre plus joués (I, V, vi, IV ; en mineur i, VI, III, VII) ont leur basse, les autres peuvent sonner renversés, et pour jouer un degré en entier l'app réaccorde une note pour toi, avec un bouton pour revenir. Sur le Mutant, les sept degrés sont là d'emblée, sans rien réaccorder.
+
 <figure>
   <img
     src="/images/blog-capo-2026-01-mutant-logique.webp"
@@ -89,7 +91,7 @@ Moins de notes, pas d'écran : le 10 notes est le modèle le plus simple et le m
 | Découvrir, improviser, méditer | ✓ | ✓ |
 | En faire ton instrument principal | | ✓ |
 | Accompagner la voix sur des morceaux connus | | ✓ |
-| Les 7 degrés en majeur et en mineur | | ✓ |
+| Les 7 degrés en majeur et en mineur | dans l'app, pas tous en entier | ✓ |
 | Un écran intégré à l'instrument | | ✓ |
 
 Pour comprendre pourquoi un handpan électronique, tout court, peut t'intéresser : [Pourquoi choisir un handpan électronique](/blog/pourquoi-handpan-electronique).
