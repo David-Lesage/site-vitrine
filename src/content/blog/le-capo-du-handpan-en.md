@@ -2,6 +2,7 @@
 title: "The handpan's capo: the same shape in every key"
 description: "On an electronic handpan in Logic mode, a degree's constellation keeps the same shape whatever the key. Same gestures, different pitch — like a capo on a guitar."
 pubDate: 2026-10-01
+updatedDate: 2026-10-23
 cover: "/images/blog-capo-2026-01-mutant-logique.webp"
 category: "methode"
 tags: ["method", "electronic", "keys"]
@@ -94,7 +95,7 @@ Put another way: the geometry is fixed on one side, the sounding content on the 
 
 ## Learning a chord without the note names
 
-And if note names get in your way, you can do without them. In the tool palette, **Notation** section, the **🚫** button ("No note names") clears the names on the pan; the **"Playing order number 1·2·3"** box shows instead the order in which to strike the notes of the chord. In the **Hands & fingering** section, the **✋** button ("Hands in colour") colours each number by the hand that plays it: blue for the left, red for the right.
+And if note names get in your way, you can do without them. In the tool palette (the **🎨 Display** button, *Affichage*), **Notation** section, the **🚫** button ("No note names") clears the names on the pan; the **"Playing order number 1·2·3"** box shows instead the order in which to strike the notes of the chord. In the **Hands & fingering** section, the **✋** button ("Hands in colour") colours each number by the hand that plays it: blue for the left, red for the right.
 
 <figure>
   <img
@@ -159,7 +160,7 @@ On the **Neotone 1**, the notions of degree and chord apply too — but in a lim
 
 ## And on the acoustic side
 
-In acoustic mode, there is a **"Try a different key"** button. It serves something else. It lets you **hear your scale in another key** — every note shifted by the same distance — so you can tell whether that pitch would suit your voice better. It's a preview: as soon as you close it, your scale comes back exactly as it was. Its main use is **choosing an instrument before buying it**.
+In acoustic mode, there is a **"Try a different key"** button (now also one click away in 🧰 Tools: hearing your scale in another key). It serves something else. It lets you **hear your scale in another key** — every note shifted by the same distance — so you can tell whether that pitch would suit your voice better. It's a preview: as soon as you close it, your scale comes back exactly as it was. Its main use is **choosing an instrument before buying it**.
 
 It is not a capo. Your real acoustic pan hasn't moved by a semitone — and it cannot. On an acoustic instrument, a chord's constellation is worked out from the notes actually present: it speaks about *your* instrument, and it changes from one scale to another. It simply isn't the same promise.
 
@@ -179,7 +180,7 @@ It is not a capo. Your real acoustic pan hasn't moved by a semitone — and it c
 
 ## Going further
 
-Once the key no longer holds you back, the next question becomes: **at which height** to place the chords under a voice. That's the subject of the [vocal layouts](/en/blog/layouts-vocaux-handpan) — Deep, Wide, Bright — which move the octaves without touching the shapes.
+Once the key no longer holds you back, the next question becomes: **at which height** to place the chords under a voice. That's the subject of the [chord voicings](/en/blog/layouts-vocaux-handpan) (formerly "vocal layouts") — Deep, Wide, Bright — which move the octaves without touching the shapes.
 
 And if reading the colours on the pan isn't clear yet, go back to [The two ChromaKeys readings](/en/blog/les-deux-visions-chromakeys): the colour that tells you the note, and the colour that tells you its place in the scale. Those two readings are what make the constellation legible.
 

@@ -2,6 +2,7 @@
 title: "Improve Handpan Constellation Studio: the feedback feature"
 description: "Handpan Constellation Studio evolves thanks to you: from inside the app, send a bug, an idea, a question or a thought in one click. Every message is read and shapes what comes next."
 pubDate: 2026-08-23
+updatedDate: 2026-10-23
 cover: "/images/app-donner-mon-avis.webp"
 category: "communaute"
 tags: ["community", "feedback"]
@@ -14,12 +15,14 @@ Handpan Constellation Studio isn't a frozen app: it's a **living project** that 
 
 ## Feedback in one click, without leaving the app
 
-Open the help menu in [Handpan Constellation Studio](/en/handpan-app), click **"Feedback"**, and a small window simply asks: *"What would you like to tell us?"*. You choose what fits best:
+In [Handpan Constellation Studio](/en/handpan-app), click **💬 Give my opinion** (*Donner mon avis*), at the top of the screen, and a small window simply asks: *"What would you like to tell us?"*. You choose what fits best:
 
 - 🐞 **Report a bug** — "something isn't working".
 - 💡 **Suggest an idea** — "a feature to add".
 - ❓ **Ask a question** — "I need help".
 - 💬 **Share a thought** — "general feedback, a feeling".
+
+For a bug there's a shorter route: the **🐞 Report a bug** button, next to the bell in the header, opens the form directly. And the app itself attaches what's needed to understand your problem: the screen you were on, your handpan and your last few actions.
 
 No endless form, no third-party account: you write your message right there, in the moment, while you play. You can even **attach a screenshot, an audio clip or a short video** to show exactly what you mean.
 
@@ -53,4 +56,4 @@ Sending feedback isn't "filing a ticket": it's **taking part**. By sharing what 
 
 ## Your turn
 
-Next time an idea crosses your mind while playing — "what if it could do that?" — don't keep it to yourself. Open [Handpan Constellation Studio](/en/handpan-app), click "Feedback", and tell me. And if you'd rather talk it through, my [handpan lessons](/en/cours) are another place where your feedback feeds the teaching.
+Next time an idea crosses your mind while playing — "what if it could do that?" — don't keep it to yourself. Open [Handpan Constellation Studio](/en/handpan-app), click "💬 Give my opinion", and tell me. And if you'd rather talk it through, my [handpan lessons](/en/cours) are another place where your feedback feeds the teaching.

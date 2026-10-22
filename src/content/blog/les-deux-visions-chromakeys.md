@@ -2,6 +2,7 @@
 title: "Lire les couleurs : la note, sa place dans la gamme, ou rien"
 description: "Lire les couleurs, c'est répondre à trois questions indépendantes : ce que dit la couleur, si les notes partagées se découpent, et si les accords se dessinent. Trois réglages, valables sur un handpan acoustique comme électronique."
 pubDate: 2026-09-24
+updatedDate: 2026-10-23
 cover: "/images/blog-chromakeys-2026-00-couverture-18-notes.webp"
 category: "methode"
 tags: ["méthode", "couleurs", "degrés"]
@@ -95,7 +96,7 @@ Sur un pan à dix-huit notes, l'écart est encore plus frappant.
 
 ## Le menu ChromaKeys : trois questions, pas une
 
-En haut de l'écran, la bande d'outils. Dedans, un îlot au contour multicolore : **ChromaKeys**. Il pose deux questions, et une troisième se règle ailleurs, sur les cartes d'accord. Les trois sont indépendantes : tu peux répondre à l'une sans toucher aux deux autres.
+En haut de l'écran, le bouton **🎨 Affichage** ouvre la palette d'outils. Dedans, un îlot au contour multicolore : **ChromaKeys**. Il pose deux questions, et une troisième se règle ailleurs, sur les cartes d'accord. Les trois sont indépendantes : tu peux répondre à l'une sans toucher aux deux autres.
 
 1. **La couleur dit…** → *la note* · *sa place dans la gamme*. Pour qu'elle ne dise **rien**, pas besoin d'un troisième choix : c'est l'interrupteur **Off** sous le nom ChromaKeys. Repasse sur *On*, et la dernière lecture choisie revient.
 2. **Notes partagées** → *Off* / *On*
@@ -168,7 +169,7 @@ Ce qui est beau, c'est que les marches ont un caractère — **toujours le même
 - **VI — Nostalgie** : la douceur qui pique un peu.
 - **VII — Mystère** : suspendu, ça ne peut pas rester là.
 
-Chacune a aussi sa voyelle, qu'on chante : OU · O (comme « beau ») · O (comme « or ») · A · E · I · M. C'est le pont vers le chant, et ça se travaille dans le mode **Chanter & Jouer** — un sujet à part entière.
+Chacune a aussi sa voyelle, qu'on chante : OU · O (comme « beau ») · O (comme « or ») · A · E · I · M. C'est le pont vers le chant, et ça se travaille dans le menu **🎤 Chanter** — un sujet à part entière.
 
 ## « La couleur dit sa place dans la gamme »
 
@@ -180,7 +181,7 @@ Conséquence visible : deux notes du même nom peuvent porter deux couleurs diff
 
 Et le dessin des sept couleurs reste identique d'une tonalité à l'autre : c'est ce qui te permet de **rejouer la même chose ailleurs sans rien réapprendre**.
 
-**Hors du mode Logique** — en Gammes, dans Mon instrument, et toujours sur un handpan acoustique — le bouton garde le même nom, mais chaque accord prend la couleur de **la note qui lui donne son nom**. Tu vois toujours d'un coup quelles notes vont ensemble, mais ce n'est plus la lecture par degrés.
+**Hors du mode Logique** — en Gammes, dans Créer › Une gamme, et toujours sur un handpan acoustique — le bouton garde le même nom, mais chaque accord prend la couleur de **la note qui lui donne son nom**. Tu vois toujours d'un coup quelles notes vont ensemble, mais ce n'est plus la lecture par degrés.
 
 Sur le D Kurd des captures qui suivent, F4 et A4 prennent l'orange du ré : ce ne sont pas des ré, mais ils appartiennent à l'accord de ré.
 

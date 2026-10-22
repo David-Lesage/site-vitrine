@@ -2,6 +2,7 @@
 title: "« Révéler » : tout ce que ton handpan sait déjà jouer"
 description: "Un D Kurd 10 donne 6 accords et permet d'accompagner 156 morceaux du répertoire. Un seul bouton te le montre, avant même de penser à un second instrument."
 pubDate: 2026-09-01
+updatedDate: 2026-10-23
 cover: "/images/blog-reveler-dkurd10-ciel.webp"
 category: "acoustique"
 tags: ["acoustique", "révéler", "répertoire"]
@@ -17,6 +18,8 @@ Une seule porte, un seul bouton, et une seule question posée à ton instrument 
 **Cet article décrit l'écran tel qu'on l'ouvre en mode acoustique**, sur un handpan aux notes fixes : c'est là que la question « qu'est-ce que mon instrument sait déjà faire ? » se pose vraiment, puisque la réponse ne peut pas être changée d'un réglage.
 
 ## Où c'est, exactement
+
+> **Mise à jour du 23 octobre 2026.** Le chemin a changé. L'Atelier d'accords s'ouvre maintenant dans un panneau à droite, sans cacher le pan, et ✨ Révéler figure aussi dans l'onglet **▶ Jouer**, parmi ce que ton pan permet. Le paragraphe suivant décrit le chemin de septembre.
 
 Charge ta gamme en mode acoustique. Sous le pan, tu as la barre **🎼 Atelier d'accords** — la même qui affiche « tous les accords jouables sur ton instrument ». À droite de cette barre, trois boutons : **✨ Révéler**, ↗ Agrandir, 🖨 Imprimer.
 

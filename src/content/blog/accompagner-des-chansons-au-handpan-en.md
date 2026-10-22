@@ -2,6 +2,7 @@
 title: "Accompanying songs on handpan, like a guitar"
 description: "Logic Mode turns the handpan from a meditative drone instrument into a real song-accompaniment instrument, no music theory needed."
 pubDate: 2026-07-18
+updatedDate: 2026-10-23
 cover: "/images/app-logique-progression-2026-09.webp"
 category: "logique"
 tags: ["method", "accompaniment"]
@@ -62,7 +63,7 @@ That same chord progression sits just as well on an acoustic handpan — acousti
 
 ### Accompanying a voice
 
-This is where it gets magical: Logic Mode is **ideal for accompanying a singer**. You lay the chords, someone sings over them, and the handpan becomes the harmonic setting for the voice. The [Song Mode](/en/handpan-app) goes further with songs featuring lyrics and chord diagrams, ready to accompany you.
+This is where it gets magical: Logic Mode is **ideal for accompanying a singer**. You lay the chords, someone sings over them, and the handpan becomes the harmonic setting for the voice. The [Song Mode](/en/blog/editeur-de-partition-handpan) goes further with songs featuring lyrics and chord diagrams, ready to accompany you.
 
 <figure>
   <img
@@ -86,4 +87,4 @@ Accompaniment is just one door. Once you've learned the colours, you can **compo
 
 That's the whole shift this approach offers: pulling the handpan — acoustic or electronic — out of its "niche meditative instrument" box to make it an accessible accompaniment instrument, on par with a guitar. No music theory, no years of study — just colours, emotions, and the desire to carry a song.
 
-Want to be guided through this approach? [David Lesage's lessons](/en/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/en/handpan-app) and lay down your first chord sequence — the song is waiting for its accompaniment.
+Want to be guided through this approach? [David Lesage's lessons](/en/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/en/handpan-app), go to **Discover › Degrees & emotions** (*Découvrir › Degrés & émotions*), and lay down your first chord sequence — the song is waiting for its accompaniment.

@@ -2,6 +2,7 @@
 title: "Neotone with 10 notes or 19 notes: which one should you choose?"
 description: "The 10-note Neotone¹ and the 19-note Neotone¹ Mutant don't serve the same project. Main instrument, voice, or a complement to your acoustic handpan: the cases where one or the other is the right choice."
 pubDate: 2026-09-22
+updatedDate: 2026-10-23
 cover: "/images/neotone-10-vs-19-19-notes.svg"
 category: "methode"
 tags: ["electronic", "Neotone", "choosing"]
@@ -56,7 +57,7 @@ And these chords keep the same shape when you change key: that's the story told 
 
 ### You want bass under your voice
 
-Low notes set beneath your singing give a piece its grounding. The [vocal layouts](/en/blog/layouts-vocaux-handpan) show how to use them.
+Low notes set beneath your singing give a piece its grounding. The [chord voicings](/en/blog/layouts-vocaux-handpan) (formerly "vocal layouts") show how to use them.
 
 ## Choose the 10 notes if…
 

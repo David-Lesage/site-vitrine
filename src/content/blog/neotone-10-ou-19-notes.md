@@ -2,6 +2,7 @@
 title: "Neotone 10 notes ou 19 notes : lequel choisir ?"
 description: "Le Neotone¹ à 10 notes et le Neotone¹ Mutant à 19 notes ne servent pas le même projet. Instrument principal, voix, ou complément de ton handpan acoustique : les cas où l'un ou l'autre est le bon choix."
 pubDate: 2026-09-22
+updatedDate: 2026-10-23
 cover: "/images/neotone-10-vs-19-19-notes.svg"
 category: "methode"
 tags: ["électronique", "Neotone", "choisir"]
@@ -56,7 +57,7 @@ Et ces accords gardent la même forme quand tu changes de tonalité : c'est ce q
 
 ### Tu veux des basses sous ta voix
 
-Des notes graves posées sous le chant donnent de l'assise à un morceau. Les [layouts vocaux](/blog/layouts-vocaux-handpan) montrent comment les utiliser.
+Des notes graves posées sous le chant donnent de l'assise à un morceau. Les [dispositions d'accord](/blog/layouts-vocaux-handpan) (autrefois « layouts vocaux ») montrent comment les utiliser.
 
 ## Choisis le 10 notes si…
 

@@ -2,6 +2,7 @@
 title: "De 2 à 24 tonalités : compléter son handpan acoustique avec un Neotone"
 description: "Tu as un D Kurd 10 et tu tournes en rond. Posé à côté, un Neotone y ajoute exactement les notes qui manquent : 2 tonalités complètes deviennent 24, et tu peux enfin t'accompagner en chantant."
 pubDate: 2026-08-31
+updatedDate: 2026-10-23
 cover: "/images/showroom-instruments.webp"
 category: "neotone"
 tags: ["compléter", "neotone", "tonalités"]
@@ -88,15 +89,15 @@ Mets ça en situation. Tu veux chanter une chanson en **ré majeur**. Sur ton D 
 
 C'est ça, le bénéfice d'un registre large. Ça ne se voit dans aucun décompte de tonalités.
 
-## L'app connaît déjà ce problème : le Layout vocal
+## L'app connaît déjà ce problème : les Dispositions d'accord
 
-Ce n'est pas une idée que j'ajoute après coup — c'est déjà dans le mode Logique de l'application, sous le nom de **Layout vocal**. Il propose trois façons d'étaler la même gamme sur l'instrument, choisies en fonction de **ta** voix :
+Ce n'est pas une idée que j'ajoute après coup — c'est déjà dans le mode Logique de l'application, sous le nom de **Dispositions d'accord** (autrefois « Layout vocal »). Il propose trois façons d'étaler la même gamme sur l'instrument, choisies en fonction de **ta** voix :
 
 - **🌑 Profond** — do₂ → sol₄. Basses chaudes, sonorité boisée. Fait pour les **voix aiguës** : le chant flotte au-dessus du grave.
 - **☀️ Brillant** — do₃ → sol₅. Registre médium-aigu, clair et aérien. Fait pour les **voix graves** : l'instrument scintille au-dessus de la voix.
 - **🌈 Ample** — do₂ → sol₅. Les basses restent en bas, les extensions montent tout en haut, et **il se creuse un vide au milieu** — exactement là où une voix médium vient se poser.
 
-Regarde comment c'est bâti : sept notes de basses, sept notes au cœur, cinq en extension. **Dix-neuf emplacements.** C'est la structure même de ces trois layouts, et elle demande dix-neuf notes. Sur dix, on ne peut pas poser les trois étages.
+Regarde comment c'est bâti : sept notes de basses, sept notes au cœur, cinq en extension. **Dix-neuf emplacements.** C'est la structure même de ces trois dispositions, et elle demande dix-neuf notes. Sur dix, on ne peut pas poser les trois étages.
 
 C'est l'argument le plus honnête pour le Mutant, et ce n'est pas un argument de notes : c'est un argument de **place**.
 

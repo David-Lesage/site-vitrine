@@ -2,6 +2,7 @@
 title: "Jouer avec les émotions : les 7 degrés colorés"
 description: "Le Mode Logique de Handpan Constellation Studio associe chaque degré à une couleur et une émotion. Construis une progression d'accords et raconte une histoire."
 pubDate: 2026-07-10
+updatedDate: 2026-10-23
 cover: "/images/app-logique-2026-09.webp"
 category: "methode"
 tags: ["méthode", "émotions"]
@@ -76,4 +77,4 @@ En Mode Logique électronique, l'app peut te proposer un **doigté suggéré** p
 
 Une fois que tu sens comment les degrés dialoguent, tout s'ouvre. Tu peux visualiser tes accords en Constellations, changer de gamme via l'[Atlas Sonore](/blog/atlas-des-gammes-de-handpan), ou porter ces couleurs sur un [handpan électronique Neotone](/neotone) où écran et instrument parlent la même langue.
 
-Envie d'être guidé pas à pas dans cette grammaire des émotions ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-app) et compose ta première phrase — non pas avec des notes, mais avec des émotions.
+Envie d'être guidé pas à pas dans cette grammaire des émotions ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-app), va dans **Découvrir › Degrés & émotions**, et compose ta première phrase — non pas avec des notes, mais avec des émotions.

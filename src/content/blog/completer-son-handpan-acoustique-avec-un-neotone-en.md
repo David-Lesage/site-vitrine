@@ -2,6 +2,7 @@
 title: "From 2 to 24 keys: completing your acoustic handpan with a Neotone"
 description: "You have a D Kurd 10 and you're going round in circles. Set beside it, a Neotone adds exactly the notes that are missing: 2 complete keys become 24, and you can finally accompany yourself while singing."
 pubDate: 2026-08-31
+updatedDate: 2026-10-23
 cover: "/images/showroom-instruments.webp"
 category: "neotone"
 tags: ["complete", "neotone", "keys"]
@@ -88,15 +89,15 @@ Put that into a real situation. You want to sing a song in **D major**. On your 
 
 That's the benefit of a wide register. It shows up in no count of keys at all.
 
-## The app already knows this problem: the Vocal Layout
+## The app already knows this problem: chord voicings
 
-This isn't an idea I'm bolting on afterwards — it's already in the app's Logic Mode, under the name **Vocal Layout**. It offers three ways of spreading the same scale across the instrument, chosen according to **your** voice:
+This isn't an idea I'm bolting on afterwards — it's already in the app's Logic Mode, under the name **chord voicings** (*Dispositions d'accord*, formerly "Vocal Layout"). It offers three ways of spreading the same scale across the instrument, chosen according to **your** voice:
 
 - **🌑 Deep** — C₂ → G₄. Warm bass, woody tone. Made for **high voices**: the singing floats above the low end.
 - **☀️ Bright** — C₃ → G₅. Upper-middle register, clear and airy. Made for **low voices**: the instrument sparkles above the voice.
 - **🌈 Wide** — C₂ → G₅. The bass stays down low, the extensions climb right to the top, and **a gap opens up in the middle** — exactly where a mid-range voice comes to rest.
 
-Look at how that's built: seven bass notes, seven at the core, five in the extension. **Nineteen positions.** That's the very structure of these three layouts, and it asks for nineteen tone fields. On ten, you can't lay down all three storeys.
+Look at how that's built: seven bass notes, seven at the core, five in the extension. **Nineteen positions.** That's the very structure of these three voicings, and it asks for nineteen tone fields. On ten, you can't lay down all three storeys.
 
 That's the most honest argument for the Mutant, and it isn't an argument about notes: it's an argument about **room**.
 

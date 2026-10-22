@@ -2,6 +2,7 @@
 title: "Accompagner des chansons au handpan, comme une guitare"
 description: "Le Mode Logique fait passer le handpan d'un instrument de nappes méditatives à un vrai instrument d'accompagnement de chansons, sans solfège."
 pubDate: 2026-07-18
+updatedDate: 2026-10-23
 cover: "/images/app-logique-progression-2026-09.webp"
 category: "logique"
 tags: ["méthode", "accompagnement"]
@@ -62,7 +63,7 @@ Cette suite d'accords se pose aussi bien sur un handpan acoustique — le Mode L
 
 ### Accompagner une voix
 
-C'est là que ça devient magique : le Mode Logique est **idéal pour accompagner un chanteur ou une chanteuse**. Tu poses les accords, quelqu'un chante par-dessus, et le handpan devient l'écrin harmonique de la voix. Le [Mode Chanson](/handpan-app) va plus loin en proposant des morceaux avec paroles et diagrammes d'accords, prêts à t'accompagner.
+C'est là que ça devient magique : le Mode Logique est **idéal pour accompagner un chanteur ou une chanteuse**. Tu poses les accords, quelqu'un chante par-dessus, et le handpan devient l'écrin harmonique de la voix. Le [Mode Chanson](/blog/editeur-de-partition-handpan) va plus loin en proposant des morceaux avec paroles et diagrammes d'accords, prêts à t'accompagner.
 
 <figure>
   <img
@@ -86,4 +87,4 @@ L'accompagnement n'est qu'une porte. Une fois les couleurs apprises, tu peux **c
 
 C'est tout le déplacement que propose cette approche : sortir le handpan — acoustique ou électronique — de sa case « instrument méditatif de niche » pour en faire un instrument d'accompagnement accessible, au même titre qu'une guitare. Sans solfège, sans années de théorie — juste des couleurs, des émotions, et l'envie de porter une chanson.
 
-Envie d'être guidé dans cette approche ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-app) et pose ta première suite d'accords — la chanson attend son accompagnement.
+Envie d'être guidé dans cette approche ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-app), va dans **Découvrir › Degrés & émotions**, et pose ta première suite d'accords — la chanson attend son accompagnement.

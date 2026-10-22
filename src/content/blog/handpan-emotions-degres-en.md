@@ -2,6 +2,7 @@
 title: "Playing with emotions: the 7 coloured degrees"
 description: "Handpan Constellation Studio's Logic Mode ties each degree to a colour and an emotion. Build a chord progression and tell a story."
 pubDate: 2026-07-10
+updatedDate: 2026-10-23
 cover: "/images/app-logique-2026-09.webp"
 category: "methode"
 tags: ["method", "emotions"]
@@ -76,4 +77,4 @@ In electronic Logic Mode, the app can offer you a **suggested fingering** to cha
 
 Once you feel how the degrees talk to each other, everything opens up. You can visualise your chords as Constellations, switch scales through the [Sound Atlas](/en/blog/atlas-des-gammes-de-handpan), or bring these colours onto an [electronic Neotone handpan](/en/neotone) where screen and instrument speak the same language.
 
-Want to be guided step by step through this grammar of emotions? [David Lesage's lessons](/en/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/en/handpan-app) and compose your first phrase — not with notes, but with emotions.
+Want to be guided step by step through this grammar of emotions? [David Lesage's lessons](/en/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/en/handpan-app), go to **Discover › Degrees & emotions** (*Découvrir › Degrés & émotions*), and compose your first phrase — not with notes, but with emotions.

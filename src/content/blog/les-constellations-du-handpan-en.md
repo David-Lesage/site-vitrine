@@ -2,6 +2,7 @@
 title: "Constellations: seeing a chord as a shape"
 description: "Whether your handpan is acoustic or electronic, a chord becomes a drawing. Discover the 3 ways to trace a Constellation: Polygon, Open and Hands."
 pubDate: 2026-07-02
+updatedDate: 2026-10-23
 cover: "/images/blog-constellations-2026-couverture.webp"
 category: "methode"
 tags: ["method", "chords"]
@@ -32,7 +33,7 @@ Handpan Constellation Studio lets you choose **how** that drawing appears, depen
 
 ## The 3 Constellation traces
 
-The setting lives in the palette, under **Constellation**: three buttons, **Polygon**, **Open** and **Hands**. To see clearly what changes, we keep **the same chord, D minor** (D, F, A), and touch only that setting.
+The setting lives in the palette (the **🎨 Display** button, *Affichage*), under **Constellation**: three buttons, **Polygon**, **Open** and **Hands**. To see clearly what changes, we keep **the same chord, D minor** (D, F, A), and touch only that setting.
 
 ### The Polygon: the closed shape
 

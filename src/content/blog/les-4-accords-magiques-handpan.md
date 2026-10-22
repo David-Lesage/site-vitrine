@@ -2,6 +2,7 @@
 title: "Les 4 accords magiques au handpan"
 description: "Une poignée d'accords derrière des milliers de chansons. Découvre les 4 accords magiques et joue-les au handpan avec le Mode Logique."
 pubDate: 2026-07-26
+updatedDate: 2026-10-23
 cover: "/images/blog-diagrammes-accords.webp"
 category: "logique"
 tags: ["accords", "accompagnement"]
@@ -45,6 +46,6 @@ Pour que la boucle tourne sans accroc, l'app peut te proposer un **doigté sugg�
 
 ## À toi de jouer
 
-Quatre couleurs, une boucle, et voilà de quoi accompagner une infinité de chansons — ou composer les tiennes. Si tu veux chanter par-dessus, pense à choisir un layout vocal adapté à ta voix et à transposer dans ta tonalité.
+Quatre couleurs, une boucle, et voilà de quoi accompagner une infinité de chansons — ou composer les tiennes. Si tu veux chanter par-dessus, pense à choisir une [disposition d'accord](/blog/layouts-vocaux-handpan) adaptée à ta voix et à transposer dans ta tonalité.
 
 Envie d'être guidé pas à pas ? Les [cours de David Lesage](/cours) te prennent par la main, à ton rythme. Ouvre [Handpan Constellation Studio](/handpan-app) et fais tourner ta première boucle magique.

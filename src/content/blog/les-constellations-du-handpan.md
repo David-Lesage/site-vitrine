@@ -2,6 +2,7 @@
 title: "Les Constellations : voir un accord comme une forme"
 description: "Que ton handpan soit acoustique ou électronique, un accord devient un dessin. Découvre les 3 façons de tracer une Constellation : Polygone, Ouvert et Mains."
 pubDate: 2026-07-02
+updatedDate: 2026-10-23
 cover: "/images/blog-constellations-2026-couverture.webp"
 category: "methode"
 tags: ["méthode", "accords"]
@@ -32,7 +33,7 @@ Handpan Constellation Studio te laisse choisir **comment** ce dessin apparaît, 
 
 ## Les 3 tracés de Constellation
 
-Le réglage se trouve dans la palette, sous **Constellation** : trois boutons, **Polygone**, **Ouvert** et **Mains**. Pour bien voir ce qui change, on garde **le même accord, ré mineur** (ré, fa, la), et on ne touche qu'à ce réglage.
+Le réglage se trouve dans la palette (bouton **🎨 Affichage**), sous **Constellation** : trois boutons, **Polygone**, **Ouvert** et **Mains**. Pour bien voir ce qui change, on garde **le même accord, ré mineur** (ré, fa, la), et on ne touche qu'à ce réglage.
 
 ### Le Polygone : la forme fermée
 

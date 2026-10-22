@@ -2,6 +2,7 @@
 title: "Améliore Handpan Constellation Studio : la fonction feedback"
 description: "Handpan Constellation Studio évolue grâce à toi : depuis l'app, envoie un bug, une idée, une question ou un avis en un clic. Chaque message est lu et oriente les prochaines nouveautés."
 pubDate: 2026-08-23
+updatedDate: 2026-10-23
 cover: "/images/app-donner-mon-avis.webp"
 category: "communaute"
 tags: ["communauté", "feedback"]
@@ -14,12 +15,14 @@ Handpan Constellation Studio n'est pas une app figée : c'est un **projet vivant
 
 ## Un retour en un clic, sans quitter l'app
 
-Ouvre le menu d'aide de [Handpan Constellation Studio](/handpan-app), clique sur **« Un retour ? »**, et une petite fenêtre te demande simplement : *« Que veux-tu nous dire ? »*. Tu choisis ce qui correspond le mieux :
+Dans [Handpan Constellation Studio](/handpan-app), clique sur **💬 Donner mon avis**, en haut de l'écran, et une petite fenêtre te demande simplement : *« Que veux-tu nous dire ? »*. Tu choisis ce qui correspond le mieux :
 
 - 🐞 **Signaler un bug** — « quelque chose ne marche pas ».
 - 💡 **Proposer une idée** — « une fonctionnalité à ajouter ».
 - ❓ **Poser une question** — « j'ai besoin d'aide ».
 - 💬 **Donner un avis** — « un retour général, un ressenti ».
+
+Pour un bug, il y a plus court : le bouton **🐞 Signaler un bug**, à côté de la cloche dans l'en-tête, ouvre directement le formulaire. Et l'app joint d'elle-même ce qu'il faut pour comprendre ton problème : l'écran où tu étais, ton handpan et tes derniers gestes.
 
 Pas de formulaire interminable, pas de compte tiers : tu écris ton message là, sur le moment, pendant que tu joues. Tu peux même **joindre une capture, un audio ou une courte vidéo** pour montrer précisément ce que tu veux dire.
 
@@ -53,4 +56,4 @@ Envoyer un retour, ce n'est pas « faire un ticket » : c'est **participer**. En
 
 ## À toi de jouer
 
-La prochaine fois qu'une idée te traverse en jouant — « et si on pouvait faire ça ? » — ne la garde pas pour toi. Ouvre [Handpan Constellation Studio](/handpan-app), clique sur « Un retour ? », et dis-le-moi. Et si tu veux échanger de vive voix, mes [cours de handpan](/cours) sont aussi un endroit où tes retours nourrissent la pédagogie.
+La prochaine fois qu'une idée te traverse en jouant — « et si on pouvait faire ça ? » — ne la garde pas pour toi. Ouvre [Handpan Constellation Studio](/handpan-app), clique sur « 💬 Donner mon avis », et dis-le-moi. Et si tu veux échanger de vive voix, mes [cours de handpan](/cours) sont aussi un endroit où tes retours nourrissent la pédagogie.

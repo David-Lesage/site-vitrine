@@ -2,6 +2,7 @@
 title: "“Reveal”: everything your handpan already knows how to play"
 description: "A D Kurd 10 gives you 6 chords and lets you accompany 156 pieces from the repertoire. One button shows you that, before you even think about a second instrument."
 pubDate: 2026-09-01
+updatedDate: 2026-10-23
 cover: "/images/blog-reveler-dkurd10-ciel.webp"
 category: "acoustique"
 tags: ["acoustic", "reveal", "repertoire"]
@@ -17,6 +18,8 @@ One door, one button, and one question put to your instrument: *what do you alre
 **This article describes the screen as you open it in acoustic mode**, on a handpan with fixed notes: that's where the question "what does my instrument already know how to do?" really arises, since the answer can't be changed with a setting.
 
 ## Where it is, exactly
+
+> **Updated 23 October 2026.** The route has changed. The chord workshop now opens in a panel on the right, without hiding the pan, and ✨ Reveal also sits in the **▶ Play** tab, among what your pan allows. The next paragraph describes the September route.
 
 Load your scale in acoustic mode. Under the pan you have the **🎼 Chord Workshop** bar — the same one that shows "every chord playable on your instrument". To the right of that bar, three buttons: **✨ Reveal**, ↗ Enlarge, 🖨 Print.
 

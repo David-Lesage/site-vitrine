@@ -2,6 +2,7 @@
 title: "Le capo du handpan : la même forme dans toutes les tonalités"
 description: "Sur un handpan électronique en mode Logique, la constellation d'un degré garde la même forme quelle que soit la tonalité. Mêmes gestes, autre hauteur — comme un capo sur une guitare."
 pubDate: 2026-10-01
+updatedDate: 2026-10-23
 cover: "/images/blog-capo-2026-01-mutant-logique.webp"
 category: "methode"
 tags: ["méthode", "électronique", "tonalités"]
@@ -93,7 +94,7 @@ Autrement dit : la géométrie est fixée d'un côté, le contenu sonore de l'au
 
 ## Apprendre un accord sans le nom des notes
 
-Et si le nom des notes te complique la vie, tu peux t'en passer. Dans la palette d'outils, section **Notation**, le bouton **🚫** (« Aucun nom de note ») efface les noms sur le pan ; la case **« N° d'ordre de jeu 1·2·3 »** affiche à la place l'ordre dans lequel frapper les notes de l'accord. Dans la section **Mains & doigté**, le bouton **✋** (« Mains en couleur ») colore chaque numéro selon la main qui joue : bleu pour la gauche, rouge pour la droite.
+Et si le nom des notes te complique la vie, tu peux t'en passer. Dans la palette d'outils (bouton **🎨 Affichage**), section **Notation**, le bouton **🚫** (« Aucun nom de note ») efface les noms sur le pan ; la case **« N° d'ordre de jeu 1·2·3 »** affiche à la place l'ordre dans lequel frapper les notes de l'accord. Dans la section **Mains & doigté**, le bouton **✋** (« Mains en couleur ») colore chaque numéro selon la main qui joue : bleu pour la gauche, rouge pour la droite.
 
 <figure>
   <img
@@ -160,7 +161,7 @@ Sur le **Neotone 1**, les notions de degré et d'accord s'appliquent aussi — m
 
 ## Et côté acoustique
 
-En mode acoustique, il y a un bouton **« Tester une autre tonalité »**. Il sert à autre chose. Il te laisse **écouter ta gamme dans une autre tonalité** — toutes les notes décalées du même écart — pour entendre si cette hauteur-là irait mieux à ta voix. C'est un aperçu : dès que tu refermes, ta gamme revient telle qu'elle était. Son usage principal, c'est de **choisir un instrument avant de l'acheter**.
+En mode acoustique, il y a un bouton **« Tester une autre tonalité »** (aujourd'hui aussi en un clic dans 🧰 Outils : écouter ta gamme dans une autre tonalité). Il sert à autre chose. Il te laisse **écouter ta gamme dans une autre tonalité** — toutes les notes décalées du même écart — pour entendre si cette hauteur-là irait mieux à ta voix. C'est un aperçu : dès que tu refermes, ta gamme revient telle qu'elle était. Son usage principal, c'est de **choisir un instrument avant de l'acheter**.
 
 Ce n'est pas un capo. Ton vrai pan acoustique, lui, n'a pas bougé d'un demi-ton — et il ne le peut pas. Sur un acoustique, la constellation d'un accord est calculée à partir des notes réellement présentes : elle parle de *ton* instrument, et elle change d'une gamme à l'autre. Ce n'est simplement pas la même promesse.
 
@@ -180,7 +181,7 @@ Ce n'est pas un capo. Ton vrai pan acoustique, lui, n'a pas bougé d'un demi-ton
 
 ## Pour aller plus loin
 
-Une fois que la tonalité ne te retient plus, la question suivante devient : **dans quelle hauteur** poser les accords sous une voix. C'est le sujet des [layouts vocaux](/blog/layouts-vocaux-handpan) — Profond, Ample, Brillant — qui déplacent les octaves sans toucher aux formes.
+Une fois que la tonalité ne te retient plus, la question suivante devient : **dans quelle hauteur** poser les accords sous une voix. C'est le sujet des [dispositions d'accord](/blog/layouts-vocaux-handpan) (autrefois « layouts vocaux ») — Profond, Ample, Brillant — qui déplacent les octaves sans toucher aux formes.
 
 Et si la lecture des couleurs sur le pan n'est pas encore limpide, reprends par [Les deux visions ChromaKeys](/blog/les-deux-visions-chromakeys) : la couleur qui dit la note, et la couleur qui dit la place dans la gamme. Ce sont ces deux lectures qui rendent la constellation lisible.
 

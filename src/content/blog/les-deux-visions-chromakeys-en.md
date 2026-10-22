@@ -2,6 +2,7 @@
 title: "Reading the colours: the note, its place in the scale, or nothing"
 description: "Reading the colours means answering three independent questions: what the colour says, whether shared notes split apart, and whether chords are drawn. Three settings, valid on an acoustic handpan and an electronic one alike."
 pubDate: 2026-09-24
+updatedDate: 2026-10-23
 cover: "/images/blog-chromakeys-2026-00-couverture-18-notes.webp"
 category: "methode"
 tags: ["method", "colours", "degrees"]
@@ -95,7 +96,7 @@ On an eighteen-note pan, the difference is even more striking.
 
 ## The ChromaKeys menu: three questions, not one
 
-At the top of the screen, the toolbar. Inside it, an island with a multicoloured outline: **ChromaKeys**. It asks two questions, and a third one is set elsewhere, on the chord cards. All three are independent: you can answer one without touching the other two.
+At the top of the screen, the **🎨 Display** button (*Affichage*) opens the tool palette. Inside it, an island with a multicoloured outline: **ChromaKeys**. It asks two questions, and a third one is set elsewhere, on the chord cards. All three are independent: you can answer one without touching the other two.
 
 1. **Colour says…** → *the note* · *its place in the scale*. For it to say **nothing**, you don't need a third choice: that's the **Off** switch under the ChromaKeys name. Switch back to *On*, and the last reading you chose comes back.
 2. **Shared notes** → *Off* / *On*
@@ -168,7 +169,7 @@ What's lovely is that the steps have a character — **always the same one, in a
 - **VI — Nostalgia**: sweetness with a sting.
 - **VII — Mystery**: suspended, it can't stay there.
 
-Each one also has its vowel, to sing: OU · O (as in "beau") · O (as in "or") · A · E · I · M. That's the bridge to singing, and it's worked on in **Sing & Play** mode — a subject of its own.
+Each one also has its vowel, to sing: OU · O (as in "beau") · O (as in "or") · A · E · I · M. That's the bridge to singing, and it's worked on in the **🎤 Sing** menu (*Chanter*) — a subject of its own.
 
 ## "Colour says its place in the scale"
 
@@ -180,7 +181,7 @@ A visible consequence: two notes with the same name can carry two different colo
 
 And the pattern of the seven colours stays identical from one key to another: that's what lets you **play the same thing elsewhere without relearning anything**.
 
-**Outside Logic mode** — in Scales, in My instrument, and always on an acoustic handpan — the button keeps the same name, but each chord takes the colour of **the note it is named after**. You still see at a glance which notes go together, but it is no longer the reading by degrees.
+**Outside Logic mode** — in Scales, in Create › A scale (*Une gamme*), and always on an acoustic handpan — the button keeps the same name, but each chord takes the colour of **the note it is named after**. You still see at a glance which notes go together, but it is no longer the reading by degrees.
 
 On the D Kurd in the screenshots below, F4 and A4 take on D's orange: they aren't Ds, but they belong to the D chord.
 

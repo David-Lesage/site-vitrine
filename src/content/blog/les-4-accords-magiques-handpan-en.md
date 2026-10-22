@@ -2,6 +2,7 @@
 title: "The 4 magic chords on handpan"
 description: "A handful of chords behind thousands of songs. Discover the 4 magic chords and play them on handpan with Logic Mode."
 pubDate: 2026-07-26
+updatedDate: 2026-10-23
 cover: "/images/blog-diagrammes-accords.webp"
 category: "logique"
 tags: ["chords", "accompaniment"]
@@ -45,6 +46,6 @@ To keep the loop running without a hitch, the app can offer a **suggested finger
 
 ## Your turn to play
 
-Four colours, one loop, and there you have enough to accompany endless songs — or compose your own. If you want to sing over them, remember to pick a vocal layout suited to your voice and to transpose into your key.
+Four colours, one loop, and there you have enough to accompany endless songs — or compose your own. If you want to sing over them, remember to pick a [chord voicing](/en/blog/layouts-vocaux-handpan) suited to your voice and to transpose into your key.
 
 Want to be guided step by step? [David Lesage's lessons](/en/cours) take you by the hand, at your own pace. Open [Handpan Constellation Studio](/en/handpan-app) and spin your first magic loop.

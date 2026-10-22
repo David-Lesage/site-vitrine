@@ -2,6 +2,7 @@
 title: "Transpose to sing in your own key"
 description: "Your voice doesn't sit right with the handpan? Shift the anchor note in one move and change key to sing at your natural pitch."
 pubDate: 2026-07-30
+updatedDate: 2026-10-23
 cover: "/images/app-atlas.webp"
 category: "chant"
 tags: ["singing", "tip"]
@@ -34,13 +35,13 @@ Many people believe they "sing off-key" when they're simply singing in a key tha
 
 An acoustic pan doesn't transpose — its notes are hammered into the steel once and for all. The app doesn't pretend otherwise.
 
-It offers something else, and it's useful: from the card naming the instrument you play on, a **key wheel** lets you *test* your scale in another key. Every note is shifted by the same interval and you **hear** your scale transposed — geometry kept, pitches moved. It's a listening preview, fully **reversible**: you return to your real instrument whenever you want.
+It offers something else, and it's useful: a **key wheel**, now **the Star of the 24 keys**, lets you *test* your scale in another key; it's also a shortcut in 🧰 Tools: hearing your scale in another key. Every note is shifted by the same interval and you **hear** your scale transposed — geometry kept, pitches moved. It's a listening preview, fully **reversible**: you return to your real instrument whenever you want.
 
 What is it for? Exactly this article's question, but before buying: finding the key that suits your voice, and knowing which one to ask for on a future instrument. The app also points you to the catalogue scale closest to what you just heard.
 
-### Transposition and layout: the winning duo
+### Transposition and chord voicing: the winning duo
 
-Transposition sets the **pitch**; the vocal layout sets the **shape** of the accompaniment around the voice. Together they mould the song around you: you pick a [vocal layout](/en/blog/layouts-vocaux-handpan) suited to your range, then transpose until it lands just right. That's the full setup for accompanying your own singing.
+Transposition sets the **pitch**; the chord voicing (formerly "vocal layout") sets the **shape** of the accompaniment around the voice. Together they mould the song around you: you pick a [chord voicing](/en/blog/layouts-vocaux-handpan) suited to your range, then transpose until it lands just right. That's the full setup for accompanying your own singing.
 
 ## Sing at your own pitch
 

@@ -2,6 +2,7 @@
 title: "Transposer pour chanter dans ta tonalité"
 description: "Ta voix ne tombe pas juste avec le handpan ? Déplace la note d'ancrage d'un geste et change de tonalité pour chanter dans ta hauteur."
 pubDate: 2026-07-30
+updatedDate: 2026-10-23
 cover: "/images/app-atlas.webp"
 category: "chant"
 tags: ["chant", "astuce"]
@@ -34,13 +35,13 @@ Beaucoup de gens croient qu'ils « chantent faux » alors qu'ils chantent simple
 
 Un pan acoustique ne se transpose pas — ses notes sont martelées une fois pour toutes. L'app ne prétend pas le contraire.
 
-Elle propose autre chose, et c'est utile : depuis la carte qui annonce l'instrument sur lequel tu joues, une **roue de tonalité** te laisse *tester* ta gamme dans une autre tonalité. Toutes les notes sont décalées du même intervalle et tu **entends** ta gamme transposée — géométrie conservée, hauteurs déplacées. C'est un aperçu d'écoute, entièrement **réversible** : tu reviens à ton instrument réel quand tu veux.
+Elle propose autre chose, et c'est utile : une **roue de tonalité**, aujourd'hui **L'Étoile des 24 tonalités**, te laisse *tester* ta gamme dans une autre tonalité ; c'est aussi un raccourci de 🧰 Outils : écouter ta gamme dans une autre tonalité. Toutes les notes sont décalées du même intervalle et tu **entends** ta gamme transposée — géométrie conservée, hauteurs déplacées. C'est un aperçu d'écoute, entièrement **réversible** : tu reviens à ton instrument réel quand tu veux.
 
 À quoi ça sert ? Exactement à la question de cet article, mais avant l'achat : trouver la tonalité qui va à ta voix, et savoir laquelle demander pour un prochain instrument. L'app te rapproche d'ailleurs de la gamme de catalogue la plus proche de ce que tu viens d'entendre.
 
-### Transposition et layout : le duo gagnant
+### Transposition et disposition d'accord : le duo gagnant
 
-La transposition règle la **hauteur** ; le layout vocal règle la **forme** de l'accompagnement autour de la voix. Ensemble, ils moulent la chanson autour de toi : tu choisis un [layout vocal](/blog/layouts-vocaux-handpan) adapté à ta tessiture, puis tu transposes jusqu'à ce que ça tombe pile. C'est le réglage complet pour t'accompagner au chant.
+La transposition règle la **hauteur** ; la disposition d'accord (autrefois « layout vocal ») règle la **forme** de l'accompagnement autour de la voix. Ensemble, elles moulent la chanson autour de toi : tu choisis une [disposition d'accord](/blog/layouts-vocaux-handpan) adaptée à ta tessiture, puis tu transposes jusqu'à ce que ça tombe pile. C'est le réglage complet pour t'accompagner au chant.
 
 ## Chante dans ta hauteur
 
