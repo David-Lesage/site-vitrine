@@ -128,7 +128,9 @@ And **everything is saved to your account, even on the free tier**: your handpan
 
 **Acoustic fingering is still generated.** When the duo draws a chord across both shells, the play order and the hand assignments come from an engine that knows the real position of every note — it's serious work, it was deeply corrected at the end of August, but it hasn't been reviewed chord by chord under my own hands the way the electronic Logic Mode has. Take it as a solid proposal.
 
-**Scale recognition by microphone has arrived, and it is still young.** If you don't know your scale, the microphone scale-recognition tool in 🧰 Tools guides you step by step: you play your notes, the app names them, and the drawing of your handpan fills in with each note it recognises. If the microphone hears nothing recognisable, listening lasts two minutes and can't be interrupted. The [Sound Atlas](/en/blog/atlas-des-gammes-de-handpan) is still there to recognise it by ear.
+## What just arrived
+
+**Scale recognition by microphone has arrived, and it is still young.** If you don't know your scale, the microphone scale-recognition tool in 🧰 Tools guides you step by step: you play your notes, the app names them, and the drawing of your handpan fills in with each note it recognises. The [Sound Atlas](/en/blog/atlas-des-gammes-de-handpan) is still there to recognise it by ear.
 
 ## The summary, if you remember only one thing
 

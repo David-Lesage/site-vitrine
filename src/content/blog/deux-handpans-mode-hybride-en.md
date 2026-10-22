@@ -73,9 +73,9 @@ Another quiet but decisive change: you no longer have to ask. As soon as an acou
 
 Two details are worth their weight in gold before ordering anything:
 
-- **The Star of the 24 keys** (the former key wheel), and in 🧰 Tools the tool for hearing your scale in another key, let you listen to your scale transposed into another key. You hear the future instrument before it exists.
+- **"The Star of the 24 keys"** (*L'Étoile des 24 tonalités*, the former key wheel) lets you listen to your scale transposed into another key; the same tool is also a shortcut in 🧰 Tools. You hear the future instrument before it exists.
 - The **440 / 432 Hz tuning setting** tunes the app to *your* handpan, so what you hear on screen sounds right with what you hold in your hands.
 
-Acoustic mode, "Complete" and the Star of the 24 keys are **free**, and your duo is saved to your account, even on the free tier: it follows you on all your devices. And if the second pan becomes a real desire, the app tells you exactly which notes to ask for; those notes work for an acoustic instrument just as well as for a [Neotone](/en/neotone).
+Acoustic mode, "Complete" and "The Star of the 24 keys" are **free**, and your duo is saved to your account, even on the free tier: it follows you on all your devices. And if the second pan becomes a real desire, the app tells you exactly which notes to ask for; those notes work for an acoustic instrument just as well as for a [Neotone](/en/neotone).
 
 Open [Handpan Constellation Studio](/en/handpan-app), load your scale and see what you're really missing. It's often less than you think. And to explore all this together, my [handpan lessons](/en/cours) are open.

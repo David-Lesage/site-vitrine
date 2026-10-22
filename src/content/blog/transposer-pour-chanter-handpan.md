@@ -43,7 +43,7 @@ Beaucoup de gens croient qu'ils « chantent faux » alors qu'ils chantent simple
 
 Un pan acoustique ne se transpose pas — ses notes sont martelées une fois pour toutes. L'app ne prétend pas le contraire.
 
-Elle propose autre chose, et c'est utile : une **roue de tonalité**, aujourd'hui **L'Étoile des 24 tonalités**, te laisse *tester* ta gamme dans une autre tonalité ; c'est aussi un raccourci de 🧰 Outils : écouter ta gamme dans une autre tonalité. Toutes les notes sont décalées du même intervalle et tu **entends** ta gamme transposée — géométrie conservée, hauteurs déplacées. C'est un aperçu d'écoute, entièrement **réversible** : tu reviens à ton instrument réel quand tu veux.
+Elle propose autre chose, et c'est utile : une **roue de tonalité**, aujourd'hui **« L'Étoile des 24 tonalités »**, te laisse *tester* ta gamme dans une autre tonalité ; c'est aussi un raccourci de 🧰 Outils : écouter ta gamme dans une autre tonalité. Toutes les notes sont décalées du même intervalle et tu **entends** ta gamme transposée — géométrie conservée, hauteurs déplacées. C'est un aperçu d'écoute, entièrement **réversible** : tu reviens à ton instrument réel quand tu veux.
 
 À quoi ça sert ? Exactement à la question de cet article, mais avant l'achat : trouver la tonalité qui va à ta voix, et savoir laquelle demander pour un prochain instrument. L'app te rapproche d'ailleurs de la gamme de catalogue la plus proche de ce que tu viens d'entendre.
 

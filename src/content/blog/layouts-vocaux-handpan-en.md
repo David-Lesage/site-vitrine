@@ -55,7 +55,7 @@ The **Wide** layout is the versatile one. It opens the accompaniment in a balanc
 
 There's no right or wrong choice: there's the layout that lets **your** voice breathe. The simplest way is to try. Sing a phrase, switch preset, listen for where your voice feels carried rather than hindered. Your ear will decide faster than any rule.
 
-And if your key doesn't sit right with your voice, transposition lets you shift the whole thing in one move to sing at your natural pitch. Layouts adapt the shape, transposition adapts the pitch: together, they mould the accompaniment around you. Here too, free transposition belongs to the electronic handpan; on an acoustic one, the key wheel (now the Star of the 24 keys) lets you *hear* your scale in another key as a reversible preview — detailed in [Transposing to sing](/en/blog/transposer-pour-chanter-handpan).
+And if your key doesn't sit right with your voice, transposition lets you shift the whole thing in one move to sing at your natural pitch. Layouts adapt the shape, transposition adapts the pitch: together, they mould the accompaniment around you. Here too, free transposition belongs to the electronic handpan; on an acoustic one, the key wheel (now "The Star of the 24 keys") lets you *hear* your scale in another key as a reversible preview — detailed in [Transposing to sing](/en/blog/transposer-pour-chanter-handpan).
 
 ## On an acoustic handpan
 

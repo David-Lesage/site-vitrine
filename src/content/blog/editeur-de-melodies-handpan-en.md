@@ -60,7 +60,7 @@ Live MIDI capture applies to electronic handpans only: it needs a MIDI output, w
 
 If your [Neotone](/en/neotone) is connected over MIDI, you can also work the other way round: press ⏺, a count-in starts, and **what you play is written into the grid**. Then you fix with the mouse whatever your hand missed.
 
-**On an acoustic handpan**, the microphone does the listening. Since 22 October, Import offers *⏺ M'enregistrer maintenant* (record myself now): you play, ⏹ Stop, and the app suggests the notes; you correct them by ear. The sound never leaves your device. It's also a tool of its own in 🧰 Tools: *Transcrire mon jeu au micro* (transcribe my playing by microphone). It is still young: reliable on slow, clean playing, much less on fast playing.
+**On an acoustic handpan**, the microphone does the listening. Since 22 October, Import offers *⏺ M'enregistrer maintenant* (record myself now): you play, *⏹ Arrêter* (stop), and the app suggests the notes; you correct them by ear. The sound never leaves your device. It's also a tool of its own in 🧰 Tools: *Transcrire mon jeu au micro* (transcribe my playing by microphone). It is still young: reliable on slow, clean playing, much less on fast playing.
 
 Either way the MIDI bridge stays open: import a `.mid` file, export yours, take your melody into any music software.
 

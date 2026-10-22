@@ -39,7 +39,7 @@ To accompany a song, you need its <abbr title="At least three notes played toget
 
 Each of these chords has its place in the <abbr title="The home note that a piece and its chords revolve around, for example &quot;in D&quot;.">key</abbr>: these are the **<abbr title="The position of a chord in the key, numbered from I to VII.">scale degrees</abbr>**, from I to VII. The Mutant has **all seven**. The 10-note Neotone¹ does not have all seven degrees.
 
-Since October 2026, though, the app plays **all 7 degrees on a Neotone¹**. Each note keeps a fixed role in every key, and the 7 chords become playable. But they are not all complete under your hands: only the four most played (I, V, vi, IV; in minor i, VI, III, VII) have their bass note, the others may sound inverted, and to play a degree in full the app retunes one note for you, with a button to go back. On the Mutant, all seven degrees are there from the start, with nothing to retune.
+Since October 2026, though, the app plays **all 7 degrees on a Neotone¹**. Each note keeps a fixed role in every key, and the 7 chords become playable. But they are not all complete under your hands: only the four most played chords (<abbr title="In major: I Balance, V Tension, VI Nostalgia, IV Relaxation.">I, V, vi, IV</abbr>; in minor i, VI, III, VII) have their bass note, the others may sound <abbr title="The lowest note is not the one that gives the chord its name.">inverted</abbr>, and to play a degree in full the app retunes one note for you, with a button to go back. On the Mutant, all seven degrees are there from the start, with nothing to retune.
 
 <figure>
   <img

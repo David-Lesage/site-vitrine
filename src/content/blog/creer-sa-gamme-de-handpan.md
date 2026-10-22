@@ -38,7 +38,7 @@ Une gamme, c'est le « caractère » de ton pan : une note centrale (le **ding**
     <source src="/videos/blog/demo-creation.mp4" type="video/mp4" />
     <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/demo-creation.mp4">Ouvrir la vidéo (MP4)</a>.</p>
   </video>
-  <figcaption>Démo d'écran, sur un Neotone Mutant : on part d'un pan vide, on touche les notes dans l'arc des douze couleurs, et elles se posent une à une sur le pan.</figcaption>
+  <figcaption>Démo d'écran, sur un Neotone Mutant : on part d'un pan presque vide (le ding et deux notes), on touche les notes dans l'arc des douze couleurs, et elles se posent une à une sur le pan.</figcaption>
 </figure>
 
 <figure>

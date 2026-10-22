@@ -877,7 +877,8 @@ h1, h2, h3, h4, .font-display {
    ⚠️ JAMAIS d'autoplay : ces vidéos ont du son. `preload="none"` : rien n'est
    téléchargé avant le clic (seule l'image d'aperçu).
    Comparaison (règle de David : côte à côte) : deux <figure class="article-mp4">
-   dans <div class="article-mp4-pair"> → deux colonnes en bureau, empilées sous 640 px. */
+   dans <div class="article-mp4-pair"> → deux colonnes à TOUTES les largeurs,
+   jamais empilées (charte §5). À 390 px, ~175 px par vidéo ; plein écran possible. */
 .prose-blog .article-mp4 { margin-top: 2.25rem; margin-bottom: 2.25rem; }
 .prose-blog .article-mp4 video {
   display: block;
@@ -890,12 +891,17 @@ h1, h2, h3, h4, .font-display {
 }
 .prose-blog .article-mp4-pair {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.5rem;
   margin-top: 2.25rem;
   margin-bottom: 2.25rem;
 }
-.prose-blog .article-mp4-pair .article-mp4 { margin: 0; }
+.prose-blog .article-mp4-pair .article-mp4 { margin: 0; min-width: 0; }
 @media (min-width: 640px) {
-  .prose-blog .article-mp4-pair { grid-template-columns: 1fr 1fr; }
+  .prose-blog .article-mp4-pair { gap: 1rem; }
+}
+/* Tableau large dans un article : défilement interne, jamais de la page. */
+.prose-blog .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+@media (max-width: 639px) {
+  .prose-blog div.table-scroll > table { font-size: 0.85rem; } /* bat la règle 0.95rem de [slug].astro */
 }

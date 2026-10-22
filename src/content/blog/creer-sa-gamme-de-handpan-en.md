@@ -38,7 +38,7 @@ A scale is the "character" of your pan: a central note (the **ding**) surrounded
     <source src="/videos/blog/demo-creation.mp4" type="video/mp4" />
     <p>Your browser can't play this video. <a href="/videos/blog/demo-creation.mp4">Open the video (MP4)</a>.</p>
   </video>
-  <figcaption>Screen demo, on a Neotone Mutant: starting from an empty pan, you tap notes on the arc of twelve colours, and they land on the pan one by one. The app is shown in French.</figcaption>
+  <figcaption>Screen demo, on a Neotone Mutant: starting from an almost empty pan (the ding and two notes), you tap notes on the arc of twelve colours, and they land on the pan one by one. The app is shown in French.</figcaption>
 </figure>
 
 <figure>

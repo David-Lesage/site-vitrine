@@ -71,7 +71,7 @@ And the corollary I care about most is a matter of honesty towards whoever is lo
 
 > **A country with no dot isn't a country without players, it's a country where nobody has said yes yet.**
 
-It can count to zero without flinching, too — "0 of you have lit your star" — and over an empty region it simply offers: "be the first dot in this area".
+It can say where it's empty, too — and over an empty region it simply offers: "be the first dot in this area".
 
 So what you see on that map is **the players registered in the app**. Nothing else. It is not a census of handpan players in the world, and it never will be.
 

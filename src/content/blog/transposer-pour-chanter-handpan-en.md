@@ -43,7 +43,7 @@ Many people believe they "sing off-key" when they're simply singing in a key tha
 
 An acoustic pan doesn't transpose — its notes are hammered into the steel once and for all. The app doesn't pretend otherwise.
 
-It offers something else, and it's useful: a **key wheel**, now **the Star of the 24 keys**, lets you *test* your scale in another key; it's also a shortcut in 🧰 Tools: hearing your scale in another key. Every note is shifted by the same interval and you **hear** your scale transposed — geometry kept, pitches moved. It's a listening preview, fully **reversible**: you return to your real instrument whenever you want.
+It offers something else, and it's useful: a **key wheel**, now **"The Star of the 24 keys"**, lets you *test* your scale in another key; it's also a shortcut in 🧰 Tools: hearing your scale in another key. Every note is shifted by the same interval and you **hear** your scale transposed — geometry kept, pitches moved. It's a listening preview, fully **reversible**: you return to your real instrument whenever you want.
 
 What is it for? Exactly this article's question, but before buying: finding the key that suits your voice, and knowing which one to ask for on a future instrument. The app also points you to the catalogue scale closest to what you just heard.
 

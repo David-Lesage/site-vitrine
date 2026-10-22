@@ -73,9 +73,9 @@ Autre changement discret mais décisif : tu n'as plus rien à demander. Dès qu'
 
 Deux détails valent de l'or avant de commander quoi que ce soit :
 
-- **L'Étoile des 24 tonalités** (l'ancienne roue de tonalité), et dans 🧰 Outils l'écoute de ta gamme dans une autre tonalité, te laissent écouter ta gamme transposée. Tu entends le futur instrument avant qu'il existe.
+- **« L'Étoile des 24 tonalités »** (l'ancienne roue de tonalité) te laisse écouter ta gamme transposée dans une autre tonalité ; le même outil existe en raccourci dans 🧰 Outils. Tu entends le futur instrument avant qu'il existe.
 - Le réglage de **diapason 440 / 432 Hz** accorde l'app sur *ton* handpan, pour que ce que tu entends à l'écran sonne juste avec ce que tu as dans les mains.
 
-Le mode acoustique, « Compléter » et L'Étoile des 24 tonalités sont **gratuits**, et ton duo est enregistré sur ton compte, même en gratuit : il te suit sur tous tes appareils. Et si le second pan devient une vraie envie, l'app te dit exactement quelles notes demander ; ces notes valent pour un instrument acoustique comme pour un [Neotone](/neotone).
+Le mode acoustique, « Compléter » et « L'Étoile des 24 tonalités » sont **gratuits**, et ton duo est enregistré sur ton compte, même en gratuit : il te suit sur tous tes appareils. Et si le second pan devient une vraie envie, l'app te dit exactement quelles notes demander ; ces notes valent pour un instrument acoustique comme pour un [Neotone](/neotone).
 
 Ouvre [Handpan Constellation Studio](/handpan-app), charge ta gamme et regarde ce qu'il te manque vraiment. Souvent, c'est moins que tu ne crois. Et pour explorer tout ça à deux, mes [cours de handpan](/cours) sont ouverts.

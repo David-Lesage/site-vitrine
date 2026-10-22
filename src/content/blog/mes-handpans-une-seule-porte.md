@@ -128,7 +128,9 @@ Et **tout est sauvegardé sur ton compte, même en gratuit** : tes handpans et t
 
 **Le doigté acoustique reste généré.** Quand le duo dessine un accord à cheval sur les deux coques, l'ordre de jeu et l'attribution des mains viennent d'un moteur qui connaît la position réelle de chaque note — il est sérieux, il a été corrigé en profondeur fin août, mais il n'a pas été relu accord par accord sous mes mains comme ceux du Mode Logique électronique. Prends-le comme une proposition solide.
 
-**La reconnaissance de gamme au micro est arrivée, et elle est encore jeune.** Si tu ne sais pas quelle est ta gamme, 🧰 Outils › « 🎤 Reconnaître ma gamme au micro » te guide pas à pas : tu joues tes notes, l'app les nomme, et le dessin de ton handpan se remplit à chaque note reconnue. Si le micro n'entend rien de reconnaissable, l'écoute dure deux minutes sans qu'on puisse l'interrompre. L'[Atlas Sonore](/blog/atlas-des-gammes-de-handpan) reste là pour la reconnaître à l'oreille.
+## Ce qui vient d'arriver
+
+**La reconnaissance de gamme au micro est arrivée, et elle est encore jeune.** Si tu ne sais pas quelle est ta gamme, 🧰 Outils › « 🎤 Reconnaître ma gamme au micro » te guide pas à pas : tu joues tes notes, l'app les nomme, et le dessin de ton handpan se remplit à chaque note reconnue. L'[Atlas Sonore](/blog/atlas-des-gammes-de-handpan) reste là pour la reconnaître à l'oreille.
 
 ## Le résumé, si tu ne retiens qu'une chose
 

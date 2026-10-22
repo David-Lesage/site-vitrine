@@ -64,14 +64,6 @@ Sur un D Kurd 10, il manque cinq notes : **do♯, ré♯, fa♯, sol♯, si**. V
 
 Le cycle des quintes cesse d'être un schéma de manuel. Il devient une chose qu'on parcourt : on module, on transpose une chanson pour la chanter, on accompagne quelqu'un dans sa tonalité à lui plutôt que de lui demander de venir dans la mienne.
 
-<figure class="article-mp4">
-  <video controls preload="none" playsinline poster="/videos/blog/completer-dkurd.webp" width="1280" height="720" aria-label="Vidéo avec le son : Compléter un D Kurd avec un Neotone : de 2 à 24 tonalités">
-    <source src="/videos/blog/completer-dkurd.mp4" type="video/mp4" />
-    <p>Ton navigateur ne lit pas cette vidéo. <a href="/videos/blog/completer-dkurd.mp4">Ouvrir la vidéo (MP4)</a>.</p>
-  </video>
-  <figcaption>Animation sur une photo : un D Kurd 11 acoustique, et l'app sur la tablette. L'app montre d'abord les 7 accords de ré mineur, puis ce qu'un Neotone posé à côté ajoute : les notes qui manquaient, et des tonalités complètes qui passent de 2 à 24 sur 24. Ici un D Kurd 11 : le principe est le même qu'avec un D Kurd 10.</figcaption>
-</figure>
-
 ## Mais la vraie question n'est pas « est-ce que j'ai toutes les notes ? »
 
 C'est là que l'histoire devient intéressante, et c'est le point que je n'avais pas vu au départ.
@@ -82,12 +74,16 @@ Mais il ne suffit pas de pouvoir faire ça. Il faut aussi qu'**il reste des note
 
 Alors mesurons-le. **Combien d'accords, sur les 24, peut-on jouer en arpège complet — fondamentale, tierce, quinte, octave, dans le même geste ?**
 
+<div class="table-scroll">
+
 | | D Kurd 10 seul | + Neotone¹ (10 notes) | + Mutant (19 notes) |
 |---|---|---|---|
 | Hauteurs disponibles | 10 | 20 | **25** |
 | Étendue | ré₃ → do₅ | do♯₃ → do₅ | do♯₃ → **si₅** |
 | **Arpèges complets (sur 24)** | **2** | **12** | **14** |
 | Hauteurs restant au-dessus de l'accompagnement | 5 | 10 | **15** |
+
+</div>
 
 **Deux.** Sur un D Kurd 10, il n'y a que deux accords qu'on puisse arpéger complètement — do majeur et la mineur. C'est tout. Et ni l'un ni l'autre n'est ré mineur, l'accord dont la gamme porte pourtant le nom.
 

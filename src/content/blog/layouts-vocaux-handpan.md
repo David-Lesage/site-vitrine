@@ -55,7 +55,7 @@ Le layout **Ample** est le polyvalent. Il ouvre l'accompagnement de façon équi
 
 Il n'y a pas de bon ou de mauvais choix : il y a le layout qui laisse **ta** voix respirer. Le plus simple est d'essayer. Chante une phrase, change de preset, écoute où ta voix se sent portée plutôt que gênée. Ton oreille tranchera plus vite que n'importe quelle règle.
 
-Et si ta tonalité ne tombe pas juste avec ta voix, la transposition te laisse déplacer l'ensemble d'un geste pour chanter dans ta hauteur naturelle. Les layouts adaptent la forme, la transposition adapte la hauteur : ensemble, ils moulent l'accompagnement autour de toi. Là encore, la transposition libre appartient au handpan électronique ; sur un acoustique, la roue de tonalité (aujourd'hui L'Étoile des 24 tonalités) te fait *entendre* ta gamme dans une autre tonalité, en aperçu réversible — c'est détaillé dans [Transposer pour chanter](/blog/transposer-pour-chanter-handpan).
+Et si ta tonalité ne tombe pas juste avec ta voix, la transposition te laisse déplacer l'ensemble d'un geste pour chanter dans ta hauteur naturelle. Les layouts adaptent la forme, la transposition adapte la hauteur : ensemble, ils moulent l'accompagnement autour de toi. Là encore, la transposition libre appartient au handpan électronique ; sur un acoustique, la roue de tonalité (aujourd'hui « L'Étoile des 24 tonalités ») te fait *entendre* ta gamme dans une autre tonalité, en aperçu réversible — c'est détaillé dans [Transposer pour chanter](/blog/transposer-pour-chanter-handpan).
 
 ## Sur un handpan acoustique
 

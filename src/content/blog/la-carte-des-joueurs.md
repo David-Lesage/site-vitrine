@@ -71,7 +71,7 @@ Et le corollaire auquel je tiens le plus, c'est une question d'honnêteté enver
 
 > **Un pays sans point n'est pas un pays sans joueurs, c'est un pays où personne n'a encore dit oui.**
 
-Elle sait aussi compter jusqu'à zéro sans se cacher — « Vous êtes 0 à avoir allumé votre étoile » — et, sur une zone déserte, elle propose simplement : « sois le premier point de cette zone ».
+Elle sait aussi dire où elle est vide — et, sur une zone déserte, elle propose simplement : « sois le premier point de cette zone ».
 
 Ce que tu vois sur cette carte, ce sont donc **les joueurs inscrits dans l'application**. Rien d'autre. Ce n'est pas un recensement du handpan dans le monde, et ça ne le sera jamais.
 

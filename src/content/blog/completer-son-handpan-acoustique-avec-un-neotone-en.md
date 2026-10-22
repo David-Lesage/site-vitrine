@@ -74,12 +74,16 @@ But being able to do that isn't enough on its own. There also have to be **notes
 
 So let's measure it. **How many chords, out of the 24, can you play as a full arpeggio — root, third, fifth, octave, in one gesture?**
 
+<div class="table-scroll">
+
 | | D Kurd 10 alone | + Neotone¹ (10 notes) | + Mutant (19 notes) |
 |---|---|---|---|
 | Available pitches | 10 | 20 | **25** |
 | Range | D₃ → C₅ | C♯₃ → C₅ | C♯₃ → **B₅** |
 | **Full arpeggios (out of 24)** | **2** | **12** | **14** |
 | Pitches left above the accompaniment | 5 | 10 | **15** |
+
+</div>
 
 **Two.** On a D Kurd 10 there are only two chords you can arpeggiate in full — C major and A minor. That's it. And neither of them is D minor, the chord the scale is actually named after.
 
