@@ -82,6 +82,12 @@ const MONTH_NAMES = {
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
 }
+// Abréviations pour les pastilles du calculateur (« Arrive le 9-13 nov. »), 25/10/2026.
+const MONTH_SHORT = {
+  fr: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'],
+  en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  es: ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sept.', 'oct.', 'nov.', 'dic.'],
+}
 const MONTH_KEYS_EN = MONTH_NAMES.en.map((m) => m.toLowerCase())
 
 /**
@@ -252,12 +258,14 @@ export function arrivalEndIso(label, today) {
  * null si absente ou illisible : l'appelant affiche alors « bientôt ».
  * @param {string | null | undefined} label
  * @param {string} lang  'fr' | 'en' | 'es'
+ * @param {{ short?: boolean }} [opts]  short : mois abrégés (« 9-13 nov. »), pour les pastilles
  * @returns {string | null}
  */
-export function formatArrivalLabel(label, lang) {
+export function formatArrivalLabel(label, lang, opts) {
   const parts = splitCanonical(label ?? '')
   if (!parts) return null
-  const names = MONTH_NAMES[lang] ?? MONTH_NAMES.fr
+  const table = opts && opts.short ? MONTH_SHORT : MONTH_NAMES
+  const names = table[lang] ?? table.fr
   const one = (p) => (p.d ? `${p.d} ${names[p.m - 1]}` : names[p.m - 1])
   if (parts.length === 1) return one(parts[0])
   const [a, b] = parts

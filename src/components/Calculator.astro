@@ -23,6 +23,11 @@ const cAny = c as unknown as Record<string, string>
 const sl = (key: string) => cAny[key] || cFr[key] || ''
 // Deux parcours Neotone (21/10/2026) : intitulé du bouton et de la modale selon
 // le mode. Même repli FR que `billing` dans BookingForm (es.ts est généré).
+// Pastilles d'état du stock (25/10/2026) : clés partagées avec la page
+// (namespace `neotone`), même repli FR.
+const nFr = fr.neotone as unknown as Record<string, string>
+const nAny = t.neotone as unknown as Record<string, string>
+const nl = (key: string) => nAny[key] || nFr[key] || ''
 const pp = { ...fr.booking.purchase, ...((bkd as { purchase?: Partial<typeof fr.booking.purchase> }).purchase ?? {}) }
 
 const modelLabels: Record<string, string> = { one: 'Neotone¹', mutant: 'Neotone¹ Mutant' }
@@ -68,6 +73,16 @@ const calcData = {
     stockTagIn: sl('stockTagIn'),
     stockTagTransit: sl('stockTagTransit'),
     stockTagOut: sl('stockTagOut'),
+    // Pastilles (David, 25/10/2026 : « très clair même sans cliquer »).
+    pills: {
+      in: nl('stockPillIn'),
+      soon: nl('stockPillSoon'),
+      soonDate: nl('stockPillSoonDate'),
+      soonMonth: nl('stockPillSoonMonth'),
+      order: nl('stockPillOrder'),
+    },
+    stockOnlineAlsoIn: nl('stockOnlineAlsoIn'),
+    stockOnlineSwitch: nl('stockOnlineSwitch'),
   },
   // ── 📦 Disponibilité physique au showroom ─────────────────────────────────
   // 25/10/2026 (David) : « même si l'instrument n'est pas en stock au showroom,
@@ -117,11 +132,15 @@ const calcData = {
 
       <fieldset>
         <legend class="text-xs font-700 uppercase tracking-widest text-copper">{c.step2}</legend>
-        <div class="mt-3 flex flex-wrap gap-4" role="radiogroup" aria-label={c.step2}>
+        {/* Tuiles (25/10/2026) : la SÉLECTION = bordure cuivre de la tuile (comme
+            les modèles) ; le STOCK = anneau rouille autour de la vignette + pastille
+            pleine « ✓ En stock à Paris ». Deux signaux distincts, jamais confondus.
+            2 colonnes à 390 px pour que la pastille tienne sur une ligne. */}
+        <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3" role="radiogroup" aria-label={c.step2}>
           {woods.map((w, i) => (
-            <button type="button" class="calc-wood flex flex-col items-center gap-1.5" data-wood={w.key} aria-checked={i === 0 ? 'true' : 'false'} role="radio">
-              <span class="calc-wood-disc"><img src={w.img} width="570" height="420" alt={woodNames[w.key][lang]} loading="lazy" /></span>
-              <span class="text-xs font-600">{woodNames[w.key][lang]}</span>
+            <button type="button" class:list={['calc-wood flex min-h-11 flex-col items-center gap-1.5 rounded-xl border-2 px-2 pb-2.5 pt-3 text-center', i === 0 ? 'border-copper bg-copper/10' : 'border-ink/15']} data-wood={w.key} aria-checked={i === 0 ? 'true' : 'false'} role="radio">
+              <span class="calc-wood-disc"><img src={w.img} width="570" height="420" alt="" loading="lazy" /></span>
+              <span class="text-sm font-700">{woodNames[w.key][lang]}</span>
             </button>
           ))}
         </div>
@@ -131,12 +150,16 @@ const calcData = {
             Rempli par `renderStock()`. Caché tant que la source n'a pas répondu :
             on n'affiche jamais un stock inventé. Le bouton « Faire la demande »
             ouvre le formulaire (source `neotone-stock-request`) avec le choix. */}
-        <div id="calc-stock-status" data-state="" class="mt-4 rounded-xl border px-4 py-3 text-sm data-[state=in]:border-copper/40 data-[state=in]:bg-copper/10 data-[state=out]:border-ink/20 data-[state=out]:bg-cream data-[state=transit]:border-gold/50 data-[state=transit]:bg-gold/10" aria-live="polite" hidden>
-          <p class="flex items-start gap-2 font-700 text-ink">
-            <span id="calc-stock-status-icon" aria-hidden="true"></span>
-            <span id="calc-stock-status-text"></span>
-          </p>
-          <p id="calc-stock-status-sub" class="mt-1 text-ink-soft/85"></p>
+        <div id="calc-stock-status" data-state="" class="mt-4 rounded-xl border-2 px-4 py-3 text-sm data-[state=in]:border-rust/45 data-[state=in]:bg-rust/[0.07] data-[state=out]:border-ink/15 data-[state=out]:bg-cream data-[state=transit]:border-gold/60 data-[state=transit]:bg-gold/10" aria-live="polite" hidden>
+          <p id="calc-stock-status-head" class="flex flex-wrap items-center gap-2 font-700 text-ink"></p>
+          <p id="calc-stock-status-sub" class="mt-1.5 text-ink-soft/85"></p>
+          {/* Mode « en ligne » + couple aussi au showroom : bascule vers le showroom. */}
+          <button
+            id="calc-stock-switch"
+            type="button"
+            class="mt-3 inline-flex min-h-11 items-center rounded-full border-2 border-rust px-5 py-2 font-700 text-rust transition-colors hover:bg-rust hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+            hidden
+          >{nl('stockOnlineSwitch')}</button>
           <button
             id="calc-stock-request"
             type="button"
@@ -213,6 +236,7 @@ const calcData = {
 <script type="application/json" id="calc-data" set:html={JSON.stringify(calcData)}></script>
 
 <script>
+  import { stockPillHtml, transitPillText, type PillKind, type StockPillLabels } from '@/lib/stock'
   import { formatArrivalLabel } from '@/lib/stockSource.js'
   const dataEl = document.getElementById('calc-data')
   if (dataEl) {
@@ -422,62 +446,110 @@ const calcData = {
       if (Number.isNaN(d.getTime())) return null
       return new Intl.DateTimeFormat(stockLocale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(d)
     }
-    /** Période ou date d'arrivée lisible, ou null (→ « arrive bientôt »). */
-    function arrivalText(row: StockRow | null): string | null {
-      if (!row || row.status !== 'en_transit') return null
-      return formatArrivalLabel(row.arrivalLabel ?? null, LANG) ?? fmtDate(row.arrival)
+    const PILLS: StockPillLabels = L.pills
+    /** Texte de la pastille d'un couple (« En stock à Paris », « Arrive le 9-13 nov. », « Sur commande »). */
+    function pillText(row: StockRow | null): string {
+      const st = stateOf(row)
+      if (st === 'in') return PILLS.in
+      if (st === 'transit') return transitPillText(PILLS, row!.arrivalLabel ?? null, row!.arrival, LANG, stockLocale)
+      return PILLS.order
     }
 
-    /** Mention courte sous un bouton (jamais bloquante). '' = rien. */
-    function setTag(btn: HTMLButtonElement, text: string, st: StockState | '') {
+    /**
+     * Pastille sous un bouton (jamais bloquante). '' = rien.
+     * `data-stock` sur le bouton porte l'anneau / le relief (voir global.css,
+     * `.calc-wood[data-stock=…]`, `.calc-model[data-stock=in]`).
+     */
+    function setTag(btn: HTMLButtonElement, text: string, st: PillKind | '') {
       let tag = btn.querySelector<HTMLElement>('.calc-avail')
-      if (!text) { tag?.remove(); return }
+      if (!text || !st) {
+        tag?.remove()
+        delete btn.dataset.stock
+        return
+      }
       if (!tag) {
         tag = document.createElement('span')
         btn.appendChild(tag)
       }
-      tag.className =
-        'calc-avail mt-1 block text-[0.7rem] font-700 leading-tight ' +
-        (st === 'in' ? 'text-rust' : st === 'transit' ? 'text-copper' : 'text-ink-soft/80') +
-        (btn.classList.contains('calc-wood') ? ' max-w-[5.5rem] text-center' : '')
-      tag.textContent = text
+      btn.dataset.stock = st
+      tag.className = 'calc-avail mt-2 flex' + (btn.classList.contains('calc-wood') ? ' justify-center' : '')
+      tag.innerHTML = stockPillHtml(st, text)
     }
-    const tagText = (st: StockState) => (st === 'in' ? L.stockTagIn : st === 'transit' ? L.stockTagTransit : L.stockTagOut)
 
     function renderStock() {
+      // Mode « achat en ligne » (choix du 25/10/2026) : tout bois, tout modèle se
+      // commande en ligne et est livré ; l'état du showroom n'y change rien. On
+      // n'affiche donc AUCUNE pastille (sinon « Sur commande » partout, ce qui
+      // ferait croire à un délai ou à un manque). Seule exception utile : si le
+      // couple choisi est AUSSI au showroom, un encart secondaire le dit et
+      // propose de basculer vers l'achat au showroom (−7 %).
+      const showroom = state.mode === 'showroom'
       document.querySelectorAll<HTMLButtonElement>('.calc-model').forEach((btn) => {
         const m = btn.dataset.model!
-        setTag(btn, stockKnown ? tagText(modelState(m)) : '', stockKnown ? modelState(m) : '')
+        const st = modelState(m)
+        // Modèle : « En stock à Paris » si au moins un bois est disponible ;
+        // « Arrive bientôt » si au moins un arrive (sans date : plusieurs bois).
+        const text = st === 'in' ? PILLS.in : st === 'transit' ? PILLS.soon : PILLS.order
+        setTag(btn, stockKnown && showroom ? text : '', stockKnown && showroom ? st : '')
       })
       document.querySelectorAll<HTMLButtonElement>('.calc-wood').forEach((btn) => {
-        const w = btn.dataset.wood!
-        const st = stateOf(availOf(state.model, w))
-        setTag(btn, stockKnown ? tagText(st) : '', stockKnown ? st : '')
+        const row = availOf(state.model, btn.dataset.wood!)
+        setTag(btn, stockKnown && showroom ? pillText(row) : '', stockKnown && showroom ? stateOf(row) : '')
       })
 
       const box = $('calc-stock-status')!
+      const head = $('calc-stock-status-head')!
+      const sub = $('calc-stock-status-sub')!
       const reqBtn = $('calc-stock-request') as HTMLButtonElement
+      const switchBtn = $('calc-stock-switch') as HTMLButtonElement
       if (!stockKnown) { box.hidden = true; box.dataset.state = ''; return }
       const row = availOf(state.model, state.wood)
       const st = stateOf(row)
+
+      if (!showroom) {
+        reqBtn.hidden = true
+        if (st !== 'in') { box.hidden = true; box.dataset.state = ''; return }
+        box.hidden = false
+        box.dataset.state = 'in'
+        head.innerHTML = stockPillHtml('in', PILLS.in)
+        sub.textContent = L.stockOnlineAlsoIn
+        switchBtn.hidden = false
+        return
+      }
+
+      switchBtn.hidden = true
       const when = arrivalText(row)
-      box.hidden = false
-      box.dataset.state = st
-      $('calc-stock-status-icon')!.textContent = st === 'in' ? '✓' : st === 'transit' ? '⏳' : '○'
-      $('calc-stock-status-text')!.textContent =
+      // Phrase complète (pour la demande envoyée à David) ; à l'écran, la
+      // pastille porte l'état (en stock / arrive), le texte plein reste pour « sur commande ».
+      const full =
         st === 'in' ? L.stockStateIn
         : st === 'transit' ? (when ? String(L.stockStateTransit).replace('{period}', when) : L.stockStateTransitSoon)
         : L.stockStateOut
-      $('calc-stock-status-sub')!.textContent =
-        st === 'in' ? L.stockStateInSub : st === 'transit' ? L.stockStateTransitSub : L.stockStateOutSub
+      box.hidden = false
+      box.dataset.state = st
+      head.innerHTML = st === 'out' ? '' : stockPillHtml(st, pillText(row))
+      if (st === 'out') head.textContent = L.stockStateOut
+      sub.textContent = st === 'in' ? L.stockStateInSub : st === 'transit' ? L.stockStateTransitSub : L.stockStateOutSub
       // « Faire la demande » : seulement quand le couple n'est PAS au showroom.
       reqBtn.hidden = st === 'in'
       const label = `${DATA.models[state.model].label} — ${DATA.woodLabels[state.wood]}`
       reqBtn.dataset.calcModel = state.model
       reqBtn.dataset.calcWood = state.wood
       reqBtn.dataset.calcMode = state.mode
-      reqBtn.dataset.calcRecap = [label, $('calc-stock-status-text')!.textContent].join(' · ')
+      reqBtn.dataset.calcRecap = [label, full].join(' · ')
     }
+
+    /** Période (longue) ou date d'arrivée lisible, ou null — pour la phrase complète. */
+    function arrivalText(row: StockRow | null): string | null {
+      if (!row || row.status !== 'en_transit') return null
+      return formatArrivalLabel(row.arrivalLabel ?? null, LANG) ?? fmtDate(row.arrival)
+    }
+
+    $('calc-stock-switch')?.addEventListener('click', () => {
+      state.mode = 'showroom'
+      syncModeButtons()
+      render()
+    })
 
     /**
      * Mise à jour en direct : la page dispatche `neotone:stock` après avoir lu

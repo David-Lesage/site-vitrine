@@ -861,6 +861,28 @@ h1, h2, h3, h4, .font-display {
 .calc-wood-disc img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .calc-wood[aria-checked='true'] .calc-wood-disc { border-color: var(--color-copper); }
 .calc-wood:hover .calc-wood-disc { transform: translateY(-2px); }
+/* 📦 Stock (David, 25/10/2026 : « très clair même sans cliquer »).
+   SÉLECTION = bordure cuivre de la tuile (classes posées par le script).
+   EN STOCK  = anneau rouille + halo + léger relief autour de la vignette
+               (`data-stock="in"`, posé par renderStock()), + pastille pleine.
+   ARRIVE    = anneau doré en POINTILLÉ (forme ≠ couleur seule), + pastille contour.
+   SUR COMMANDE = rien autour de la vignette, texte discret. */
+.calc-wood[data-stock='in'] .calc-wood-disc {
+  box-shadow:
+    0 0 0 3px var(--color-cream),
+    0 0 0 6px var(--color-rust),
+    0 8px 16px -4px rgba(138, 58, 31, 0.55);
+}
+.calc-wood[data-stock='transit'] .calc-wood-disc {
+  outline: 2px dashed var(--color-gold);
+  outline-offset: 3px;
+}
+/* Dans une tuile de bois (≈ 150 px à 390 px) : pastille sur UNE ligne. */
+.calc-wood .stock-pill { font-size: 0.6875rem; padding-inline: 0.5rem; white-space: nowrap; }
+.calc-wood[data-stock='in'],
+.calc-model[data-stock='in'] {
+  box-shadow: 0 6px 18px -8px rgba(138, 58, 31, 0.45);
+}
 
 /* ════════ 🎬 VIDÉOS MP4 HÉBERGÉES DANS UN ARTICLE — ajouté le 23/10/2026 ════════
    Décision de David (23/10) : « On va pas publier sur YouTube pour le moment.

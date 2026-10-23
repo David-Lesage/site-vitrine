@@ -310,6 +310,18 @@ const fr = {
     stockModelSoon: 'Bientôt en stock : {woods}',
     stockModelSoonDate: 'arrivée prévue le {date}',
     stockModelSoonPeriod: 'arrivée prévue : {period}',
+    // ── Pastilles d'état du stock (David, 25/10/2026 : « très clair même sans
+    // cliquer ») — calculateur, bloc « Ce qui est disponible », cartes modèles.
+    // `{period}` : « 9-13 nov. » (avec jour) ou « novembre » (mois seul).
+    stockPillIn: 'En stock à Paris',
+    stockPillSoon: 'Arrive bientôt',
+    stockPillSoonDate: 'Arrive le {period}',
+    stockPillSoonMonth: 'Arrive en {period}',
+    stockPillOrder: 'Sur commande',
+    // Mode « achat en ligne » : tout se commande, l'état du showroom n'est
+    // montré que s'il est utile (le couple choisi est aussi au showroom).
+    stockOnlineAlsoIn: 'Celui-ci est aussi au showroom, à Paris : tu peux venir l’essayer et repartir avec (−7 %).',
+    stockOnlineSwitch: 'Passer à l’achat au showroom',
     whyEyebrow: "Deux modèles",
     whyTitle: "Pourquoi choisir un 10 notes ou un 19 notes ?",
     whyP: ["Le <strong>Neotone¹ (10 notes)</strong> est très bien pour <strong>découvrir</strong> le handpan, <strong>méditer</strong> et <strong>improviser</strong> dans une gamme.", "Le <strong>Neotone¹ Mutant (19 notes)</strong> est fait pour devenir ton <strong>instrument principal</strong>, ou pour <strong>accompagner la voix</strong> sur des morceaux connus.", "Il permet de jouer tous les <abbr title=\"Au moins trois notes jouées ensemble, par exemple do, mi, sol.\">accords</abbr> (<abbr title=\"La place d’un accord dans une tonalité, numérotée de I à VII.\">degrés</abbr>) des <abbr title=\"La gamme de référence d’un morceau, par exemple do majeur ou la mineur.\">tonalités</abbr> majeures et mineures sur une même gamme : I Équilibre, II Élan, III Aventure, IV Détente, V Tension, VI Nostalgie, VII Mystère."],

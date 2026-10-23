@@ -13,7 +13,7 @@ import { Icon } from 'astro-icon/components'
 import { models, woods, woodNames, modelCarousels, specIcons, includedIcons, extrasIcons } from '@/data/neotone'
 import { site } from '@/data/site'
 import { getDict, fr } from '@/i18n/dict'
-import { fetchStockAtBuild, renderStockHtml, renderModelStock, modelStockSummary, type StockLabels, type ModelStockLabels } from '@/lib/stock'
+import { fetchStockAtBuild, renderStockHtml, renderModelStock, modelStockSummary, type StockLabels, type ModelStockLabels, type StockPillLabels } from '@/lib/stock'
 import { localizePath, numberLocale } from '@/i18n/utils'
 import { faqLdJson, productLdJson, breadcrumbLdJson, localBusinessLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
@@ -60,6 +60,14 @@ const showroomTourVideoId = 'Vlzo3KbpPjw'
 const nFr = fr.neotone as Record<string, string>
 const nAny = n as unknown as Record<string, string>
 const sl = (key: string) => nAny[key] || nFr[key] || ''
+// Pastilles d'état (David, 25/10/2026) : même code visuel que le calculateur.
+const stockPills: StockPillLabels = {
+  in: sl('stockPillIn'),
+  soon: sl('stockPillSoon'),
+  soonDate: sl('stockPillSoonDate'),
+  soonMonth: sl('stockPillSoonMonth'),
+  order: sl('stockPillOrder'),
+}
 const stockLabels: StockLabels = {
   title: sl('stockTitle'),
   availTitle: sl('stockAvailTitle'),
@@ -69,6 +77,7 @@ const stockLabels: StockLabels = {
   note: sl('stockNote'),
   noteLink: sl('stockNoteLink'),
   showroomHref: L('/showroom'),
+  pills: stockPills,
   lang,
   locale: numberLocale(lang),
 }
@@ -84,6 +93,7 @@ const modelStockLabels: ModelStockLabels = {
   soon: sl('stockModelSoon'),
   soonDate: sl('stockModelSoonDate'),
   soonPeriod: sl('stockModelSoonPeriod'),
+  pillIn: stockPills.in,
   lang,
   locale: numberLocale(lang),
 }
@@ -289,6 +299,7 @@ const ld = [
       data-period={stockLabels.arrivalPeriod}
       data-note={stockLabels.note}
       data-note-link={stockLabels.noteLink}
+      data-pills={JSON.stringify(stockPills)}
       hidden={stockHtml === ''}
       class="mx-auto mt-12 max-w-3xl rounded-card border border-copper/25 bg-cream p-6"
       set:html={stockHtml}
@@ -304,7 +315,7 @@ const ld = [
   //                   restriction dans le calculateur (jamais d'info fausse) ;
   //  · erreur (502, réseau, /api absent en `astro dev`) → on garde l'état figé
   //                   au build, sans rien inventer.
-  import { STOCK_API_PATH, normalizeStock, renderStockHtml, renderModelStock, type StockLabels, type ModelStockLabels, type StockLine } from '@/lib/stock'
+  import { STOCK_API_PATH, normalizeStock, renderStockHtml, renderModelStock, type StockLabels, type ModelStockLabels, type StockLine, type StockPillLabels } from '@/lib/stock'
   import type { Lang } from '@/i18n/config'
 
   function applyModelStock(lines: StockLine[]) {
@@ -338,6 +349,13 @@ const ld = [
       note: box.dataset.note ?? '',
       noteLink: box.dataset.noteLink ?? '',
       showroomHref: box.dataset.showroom ?? '/showroom',
+      pills: (() => {
+        try {
+          return JSON.parse(box.dataset.pills || '') as StockPillLabels
+        } catch {
+          return undefined
+        }
+      })(),
       lang: (box.dataset.lang ?? 'fr') as Lang,
       locale: box.dataset.locale ?? 'fr-FR',
     }

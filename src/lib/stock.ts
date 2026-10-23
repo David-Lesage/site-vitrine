@@ -118,9 +118,80 @@ export function normalizeStock(rows: unknown): StockLine[] {
         if (!b.arrival) return -1
         return a.arrival < b.arrival ? -1 : 1
       }
+      // Même date (ou aucune) : une période connue (colonne L) passe avant « bientôt ».
+      if (!!a.arrivalLabel !== !!b.arrivalLabel) return a.arrivalLabel ? -1 : 1
     }
     return modelLabel(a.model).localeCompare(modelLabel(b.model)) || a.wood.localeCompare(b.wood)
   })
+}
+
+// ── Pastilles d'état (David, 25/10/2026) ────────────────────────────────────
+// « visuellement je veux que les handpans qui sont en stock soient beaucoup plus
+// visibles pour que ce soit très clair même sans cliquer dessus ».
+// UN code visuel partagé par le calculateur, le bloc « Ce qui est disponible »
+// et les cartes des modèles :
+//  · en stock      → pastille PLEINE rouille, texte crème, ✓ (contraste ≈ 8:1)
+//  · arrive        → pastille CONTOUR dorée, texte encre, horloge, date si connue
+//  · sur commande  → texte discret, sans pastille (ce n'est pas un interdit)
+// Jamais la couleur seule : chaque pastille porte un texte (lu par les lecteurs
+// d'écran) ET un symbole (décoratif, aria-hidden).
+
+export type PillKind = 'in' | 'transit' | 'out'
+
+export interface StockPillLabels {
+  /** « En stock à Paris » */
+  in: string
+  /** « Arrive bientôt » (aucune date connue) */
+  soon: string
+  /** « Arrive le {period} » (période avec jour : « 9-13 nov. ») */
+  soonDate: string
+  /** « Arrive en {period} » (mois seul : « novembre ») */
+  soonMonth: string
+  /** « Sur commande » */
+  order: string
+}
+
+const ICON_CHECK =
+  '<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" aria-hidden="true"><path d="M3 8.6l3.2 3.1L13 4.6"/></svg>'
+const ICON_CLOCK =
+  '<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" class="shrink-0" aria-hidden="true"><circle cx="8" cy="8" r="6.1"/><path d="M8 4.7V8l2.3 1.5"/></svg>'
+
+export const PILL_CLS: Record<PillKind, string> = {
+  in: 'stock-pill stock-pill-in inline-flex max-w-full items-center gap-1 rounded-full bg-rust px-2.5 py-1 text-xs font-700 leading-tight text-cream shadow-[0_2px_6px_-1px_rgba(138,58,31,0.55)]',
+  transit:
+    'stock-pill stock-pill-transit inline-flex max-w-full items-center gap-1 rounded-full border-2 border-gold bg-gold/15 px-2 py-0.5 text-xs font-700 leading-tight text-ink',
+  out: 'stock-pill stock-pill-out inline-block text-xs font-600 leading-tight text-ink-soft/80',
+}
+
+/** HTML d'une pastille. `text` est échappé ici. */
+export function stockPillHtml(kind: PillKind, text: string): string {
+  const icon = kind === 'in' ? ICON_CHECK : kind === 'transit' ? ICON_CLOCK : ''
+  return `<span class="${PILL_CLS[kind]}">${icon}<span class="stock-pill-text">${esc(text)}</span></span>`
+}
+
+/** Texte de la pastille « arrive » : période du Sheet (abrégée), sinon date, sinon « bientôt ». */
+export function transitPillText(
+  labels: StockPillLabels,
+  arrivalLabel: string | null | undefined,
+  arrivalIso: string | null | undefined,
+  lang: string,
+  locale: string,
+): string {
+  const period = formatArrivalLabel(arrivalLabel ?? null, lang, { short: true })
+  // Mois seul : en toutes lettres (« Arrive en novembre ») ; avec jour : abrégé (« Arrive le 9-13 nov. »).
+  if (period && !/\d/.test(period)) return labels.soonMonth.replace('{period}', formatArrivalLabel(arrivalLabel ?? null, lang) ?? period)
+  if (period) return labels.soonDate.replace('{period}', period)
+  if (arrivalIso) {
+    const d = new Date(`${arrivalIso}T12:00:00Z`)
+    if (!Number.isNaN(d.getTime()))
+      return labels.soonDate.replace('{period}', new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short', timeZone: 'UTC' }).format(d))
+  }
+  return labels.soon
+}
+
+/** Vignette d'un bois (null si l'essence est inconnue). */
+export function woodImage(wood: string): string | null {
+  return woods.find((w) => w.key === wood)?.img ?? null
 }
 
 // ── Rendu ────────────────────────────────────────────────────────────────────
@@ -137,6 +208,8 @@ export interface StockLabels {
   note: string
   noteLink: string
   showroomHref: string
+  /** Pastilles (25/10/2026). Absentes ⇒ ancien rendu texte. */
+  pills?: StockPillLabels
   lang: Lang
   locale: string
 }
@@ -146,10 +219,29 @@ function esc(s: string): string {
 }
 
 function renderLines(lines: StockLine[], labels: StockLabels): string {
+  const pills = labels.pills
   return lines
     .map((l) => {
       const name = `${esc(modelLabel(l.model))} — ${esc(woodLabel(l.wood, labels.lang))}`
       const count = l.count > 1 ? ` <span class="text-ink-soft/70">× ${l.count}</span>` : ''
+      if (pills) {
+        // Une ligne par pièce : vignette du bois · nom · pastille d'état.
+        const inStock = l.status === 'disponible'
+        const img = woodImage(l.wood)
+        const thumb = img
+          ? `<img src="${esc(img)}" alt="" width="44" height="44" loading="lazy" class="h-11 w-11 shrink-0 rounded-full object-cover ${
+              inStock ? 'ring-[3px] ring-rust ring-offset-2 ring-offset-cream' : 'ring-2 ring-gold/70 ring-offset-1 ring-offset-cream'
+            }" />`
+          : ''
+        const pill = inStock
+          ? stockPillHtml('in', pills.in)
+          : stockPillHtml('transit', transitPillText(pills, l.arrivalLabel, l.arrival, labels.lang, labels.locale))
+        return (
+          `<li class="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border p-2.5 ${
+            inStock ? 'border-rust/35 bg-rust/[0.06] shadow-sm' : 'border-ink/10 bg-cream-deep/40'
+          }">${thumb}<span class="min-w-[9rem] flex-1 font-700 text-ink">${name}${count}</span>${pill}</li>`
+        )
+      }
       const when =
         l.status === 'en_transit'
           ? (() => {
@@ -173,11 +265,11 @@ export function renderStockHtml(lines: StockLine[], labels: StockLabels): string
   let out = `<h3 class="font-display text-xl font-700">${esc(labels.title)}</h3>`
   if (avail.length) {
     out += `<p class="mt-5 text-xs font-700 uppercase tracking-[0.2em] text-rust">${esc(labels.availTitle)}</p>`
-    out += `<ul class="mt-2 space-y-1 text-ink-soft/90">${renderLines(avail, labels)}</ul>`
+    out += `<ul class="mt-2 ${labels.pills ? 'space-y-2' : 'space-y-1'} text-ink-soft/90">${renderLines(avail, labels)}</ul>`
   }
   if (soon.length) {
     out += `<p class="mt-5 text-xs font-700 uppercase tracking-[0.2em] text-copper">${esc(labels.soonTitle)}</p>`
-    out += `<ul class="mt-2 space-y-1 text-ink-soft/90">${renderLines(soon, labels)}</ul>`
+    out += `<ul class="mt-2 ${labels.pills ? 'space-y-2' : 'space-y-1'} text-ink-soft/90">${renderLines(soon, labels)}</ul>`
   }
   out +=
     `<p class="mt-5 text-sm text-ink-soft/85">${esc(labels.note)} ` +
@@ -209,6 +301,8 @@ export interface ModelStockLabels {
   soonDate: string
   /** « arrivée prévue : {period} » — période de la colonne L, prioritaire sur la date. */
   soonPeriod?: string
+  /** Texte de la pastille pleine (« En stock à Paris »), 25/10/2026. Sinon `badge`. */
+  pillIn?: string
   lang: Lang
   locale: string
 }
@@ -274,7 +368,7 @@ export function renderModelStock(
   let badge = ''
   let detail = ''
   if (s.state === 'in') {
-    badge = `<span class="rounded-full border border-copper/40 bg-copper/15 px-3 py-1 text-xs font-700 text-rust">${esc(labels.badge)}</span>`
+    badge = stockPillHtml('in', labels.pillIn || labels.badge)
     detail +=
       `<p class="text-sm text-ink-soft/90"><span class="font-700 text-ink">${esc(labels.inStock).replace('{woods}', woodsText(s.available))}</span>` +
       ` — ${link('showroom', labels.inStockLink)}</p>`
