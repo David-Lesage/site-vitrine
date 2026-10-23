@@ -194,3 +194,4 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 | 24/10 | (APP) lot F livré : 106 captures Nuit étoilée FR + EN (audits/2026-10-23-captures-blog/) | ✅ lot 2 EN PROD 24/10 ~04h50 (51 FR + 49 EN captures, relu) + 5 captures du duo ; 7 captures à refaire demandées à l APP |
 | 24/10 | (APP) lot 3 de captures (Let It Be en C, pupitre, Ode, mode Logique par degrés, mineurs, couleurs/créer) | ✅ en prod 24/10 ~05h57 (relu), + trois mineurs v2 en prod 24/10 ; reste pupitre tablette (défaut de l app) ; vidéo 08 attendue |
 | 25/10 | (APP) lot 4 : pupitre tablette corrigé, Let It Be mode Chanson, renommage (#633) + vidéo 08 refaite | ✅ en prod 25/10 |
+| 25/10 | « Oui, lance le troisième article : la carte des joueurs réécrite » | ⏳ rédaction en cours (puis relecteur distinct) |
