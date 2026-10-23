@@ -33,31 +33,32 @@ This approach leans on a simple fact about the brain: we memorise a colour and a
 
 The seven degrees of a scale get seven stable colours. Whatever the key of your handpan, the logic stays the same: the first degree always keeps its hue, the fifth its own, and so on. Learn it once, play it everywhere.
 
-<figure>
-  <img
-    src="/images/app-chromakeys-on-2026-10-en.webp"
-    width="2912"
-    height="1630"
-    alt="The creation screen on a Neotone Mutant, Starry Night theme, with the Display menu open. At the top, the ChromaKeys island: ChromaKeys On, “The colour tells you…” set to “the note · chakras”, Shared notes On, “The ChromaKeys creation palette” On; to the right, the NOTATION, APPEARANCE Walnut, HANDS &amp; FINGERING and CONSTELLATION menus. In the centre, the pan: each note is painted its colour — the D3 ding orange, D4 and D5 orange, C4, C5 and C3 red, E4 and E5 yellow, F4, F5 and F3 green, G4, G5 and G3 sky blue, A3, A4 and A5 blue, Bb3 and Bb2 indigo. Around the top of the pan, the chromatic wheel: C, C#, D, D#, E, F, F#, G, G#, A, A#, B, each in its colour, with octave arcs 2 to 6. On the left, a column of drawing tools in a yellow frame. At the bottom, the coloured chord cards Dm, Edim, F, Gm, Am, Bb, each with its notes."
-    data-lb="chromakeys"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>ChromaKeys on, palette open. Every pitch has its own colour, the same everywhere: a <em>C</em> is red, an <em>E</em> yellow, a <em>G</em> sky blue. The chromatic wheel above the pan shows all twelve semitones and their hues.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/app-creation-acoustique-2026-10-en.webp"
-    width="2880"
-    height="1748"
-    alt="The creation screen, starting from this handpan, on an acoustic D Kurd 10, Starry Night theme. On the left, the column of drawing tools in a yellow frame, then the instrument name and the Stop, Sound and 440.00 Hz buttons. In the centre, the pan with its D3 ding and its coloured notes D4, F4, A4, C5, G4, E4, C4, A3, Bb3; the handpan's screen reads “D Kurd 10”. Around the top of the pan, the full chromatic wheel — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — each dot in its colour, with octave marks 2 to 5 in an arc. At the bottom, the seven basic chords of the scale: Dm, Edim, F, Gm, Am, Bb, C, each in the colour of its root note."
-    data-lb="chromakeys-acoustique"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>The same screen on an acoustic handpan, the D Kurd 10: the same wheel of colours around the pan, and at the bottom the seven chords of the scale, each in the colour of its note.</figcaption>
+<figure class="article-img-pair">
+  <div class="article-img-pair-grid">
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">Electronic handpan</span>
+    <img
+        src="/images/app-chromakeys-on-2026-10-en.webp"
+        width="2912"
+        height="1630"
+        alt="The creation screen on a Neotone Mutant, Starry Night theme, with the Display menu open. At the top, the ChromaKeys island: ChromaKeys On, “The colour tells you…” set to “the note · chakras”, Shared notes On, “The ChromaKeys creation palette” On; to the right, the NOTATION, APPEARANCE Walnut, HANDS &amp; FINGERING and CONSTELLATION menus. In the centre, the pan: each note is painted its colour — the D3 ding orange, D4 and D5 orange, C4, C5 and C3 red, E4 and E5 yellow, F4, F5 and F3 green, G4, G5 and G3 sky blue, A3, A4 and A5 blue, Bb3 and Bb2 indigo. Around the top of the pan, the chromatic wheel: C, C#, D, D#, E, F, F#, G, G#, A, A#, B, each in its colour, with octave arcs 2 to 6. On the left, a column of drawing tools in a yellow frame. At the bottom, the coloured chord cards Dm, Edim, F, Gm, Am, Bb, each with its notes."
+        data-lb="chromakeys"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">D Kurd 10 (acoustic)</span>
+    <img
+        src="/images/app-creation-acoustique-2026-10-en.webp"
+        width="2880"
+        height="1748"
+        alt="The creation screen, starting from this handpan, on an acoustic D Kurd 10, Starry Night theme. On the left, the column of drawing tools in a yellow frame, then the instrument name and the Stop, Sound and 440.00 Hz buttons. In the centre, the pan with its D3 ding and its coloured notes D4, F4, A4, C5, G4, E4, C4, A3, Bb3; the handpan's screen reads “D Kurd 10”. Around the top of the pan, the full chromatic wheel — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — each dot in its colour, with octave marks 2 to 5 in an arc. At the bottom, the seven basic chords of the scale: Dm, Edim, F, Gm, Am, Bb, C, each in the colour of its root note."
+        data-lb="chromakeys-acoustique"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+  </div>
+  <figcaption>On the left, ChromaKeys on, palette open. Every pitch has its own colour, the same everywhere: a <em>C</em> is red, an <em>E</em> yellow, a <em>G</em> sky blue. The chromatic wheel above the pan shows all twelve semitones and their hues. On the right, on an acoustic handpan, the D Kurd 10: the same wheel of colours around the pan, and at the bottom the seven chords of the scale, each in the colour of its note.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

@@ -25,37 +25,38 @@ La différence tient à presque rien : selon que la sixte et la septième de la 
 
 C'est celui que tout le monde connaît, et celui que ton handpan joue par défaut. Ses degrés se chiffrent **i, ii°, III, iv, v, VI, VII** : le cinquième degré y est mineur, ce qui donne cette douceur qui ne conclut jamais tout à fait. C'est la couleur des nappes, de la contemplation, du handpan tel qu'on l'imagine.
 
-<figure>
-  <img
-    src="/images/app-triste-trois-mineurs-naturel-2026-10.webp"
-    width="2880"
-    height="2506"
-    alt="Degrés &amp; émotions en mineur naturel sur un Neotone Mutant · Noyer, thème Nuit étoilée, au niveau Musicien. L'œil de I ÉQUILIBRE Dm est allumé : sur le pan, D2, F3, A3 et D4 s'éclairent en rouge, et l'écran du handpan indique « I Équilibre Dm » ; les notes portent notamment C4 en haut à gauche et C3 en bas. En bas, les cartes I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am. À droite, le tiroir « Dispositions &amp; Logique », bloc « Logique et Emotions » : « Complet, 7 degrés sur 7 — Sur ton Neotone Mutant (19 notes), Logique est complète dans toutes les tonalités ». Sous Tonalité, note d'ancrage D, mode Triste actif, et la liste de ses nuances : « 🌙 Triste profond — mineur naturel — le Triste actuel » (surligné), « 🔥 Triste intense, couleur orientale — mineur harmonique · 7ᵉ montée d'un demi-ton — 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 6ᵉ et 7ᵉ montées d'un demi-ton — 4 pads changent ». Plus bas, « Dispositions d'accord » (Profond, Brillant, Ample) et « Voyage des Sensations »."
-    data-lb="trois-mineurs"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Les nuances de <strong>Triste</strong>, dépliées dans le tiroir <em>Dispositions &amp; Logique</em>. L'app y annonce elle-même le coût de chaque nuance : « 2 pads changent » pour le mineur harmonique, « 4 pads changent » pour le mélodique. Ici le mineur naturel est actif : le pan porte C4 et C3.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
-
 ## 🔥 Le mineur harmonique — la couleur orientale
 
 Fais monter **la septième** d'un demi-ton, et tout bascule. Le cinquième degré devient une vraie dominante majeure : il *tire* vers la tonique au lieu de flotter. Entre le sixième et le septième degré s'ouvre alors un intervalle plus large, ce fameux pas oriental qu'on reconnaît immédiatement.
 
 Sur le pan, **deux pastilles seulement** changent de note.
 
-<figure>
-  <img
-    src="/images/app-triste-trois-mineurs-harmonique-2026-10.webp"
-    width="2880"
-    height="2506"
-    alt="Le même écran, avec l'entrée « 🔥 Triste intense, couleur orientale » surlignée dans la liste des nuances. Sur le pan, les notes qui affichaient C4 et C3 affichent maintenant C#4 et C#3 ; toutes les autres notes sont à leur place, et l'accord I Équilibre Dm reste allumé sur D2, F3, A3 et D4. Dans les cartes du bas, III AVENTURE devient F+ et V TENSION devient A (majeur)."
-    data-lb="trois-mineurs"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>La même vue en mineur harmonique. Deux notes seulement ont changé de nom : <strong>C4 → C#4</strong> et <strong>C3 → C#3</strong>. L'accord allumé et sa forme sur le pan sont identiques à l'image précédente ; dans les cartes, le V devient <em>A</em> majeur et le III devient <em>F+</em>.</figcaption>
+<figure class="article-img-pair">
+  <div class="article-img-pair-grid">
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">Mineur naturel</span>
+    <img
+        src="/images/app-triste-trois-mineurs-naturel-2026-10.webp"
+        width="2880"
+        height="2506"
+        alt="Degrés &amp; émotions en mineur naturel sur un Neotone Mutant · Noyer, thème Nuit étoilée, au niveau Musicien. L'œil de I ÉQUILIBRE Dm est allumé : sur le pan, D2, F3, A3 et D4 s'éclairent en rouge, et l'écran du handpan indique « I Équilibre Dm » ; les notes portent notamment C4 en haut à gauche et C3 en bas. En bas, les cartes I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am. À droite, le tiroir « Dispositions &amp; Logique », bloc « Logique et Emotions » : « Complet, 7 degrés sur 7 — Sur ton Neotone Mutant (19 notes), Logique est complète dans toutes les tonalités ». Sous Tonalité, note d'ancrage D, mode Triste actif, et la liste de ses nuances : « 🌙 Triste profond — mineur naturel — le Triste actuel » (surligné), « 🔥 Triste intense, couleur orientale — mineur harmonique · 7ᵉ montée d'un demi-ton — 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 6ᵉ et 7ᵉ montées d'un demi-ton — 4 pads changent ». Plus bas, « Dispositions d'accord » (Profond, Brillant, Ample) et « Voyage des Sensations »."
+        data-lb="trois-mineurs"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">Mineur harmonique</span>
+    <img
+        src="/images/app-triste-trois-mineurs-harmonique-2026-10.webp"
+        width="2880"
+        height="2506"
+        alt="Le même écran, avec l'entrée « 🔥 Triste intense, couleur orientale » surlignée dans la liste des nuances. Sur le pan, les notes qui affichaient C4 et C3 affichent maintenant C#4 et C#3 ; toutes les autres notes sont à leur place, et l'accord I Équilibre Dm reste allumé sur D2, F3, A3 et D4. Dans les cartes du bas, III AVENTURE devient F+ et V TENSION devient A (majeur)."
+        data-lb="trois-mineurs"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+  </div>
+  <figcaption>Les nuances de <strong>Triste</strong>, dépliées dans le tiroir <em>Dispositions &amp; Logique</em> : à gauche le mineur naturel, à droite le mineur harmonique. L'app y annonce elle-même le coût de chaque nuance : « 2 pads changent » pour le mineur harmonique, « 4 pads changent » pour le mélodique. D'une image à l'autre, deux notes seulement changent de nom : <strong>C4 → C#4</strong> et <strong>C3 → C#3</strong>. L'accord allumé et sa forme sur le pan restent identiques ; dans les cartes, le V devient <em>A</em> majeur et le III devient <em>F+</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

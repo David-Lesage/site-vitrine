@@ -17,7 +17,7 @@ Handpan Constellation Studio n'est pas une app figée : c'est un **projet vivant
 
 Dans [Handpan Constellation Studio](/handpan-app), le chemin le plus court est en haut de l'écran : le bouton **🐞 Signaler un bug**. Il ouvre directement le signalement, qui te demande d'abord **quelle partie est concernée** — plantage, son, MIDI, erreur musicale, affichage, mobile, lenteur, sauvegarde, compte, texte ou traduction, ou autre chose. Et l'app joint d'elle-même ce qu'il faut pour comprendre ton problème : l'écran où tu étais, ton handpan et tes derniers gestes.
 
-Pour une idée, une question ou un simple ressenti, les grands outils de l'app — **Mes handpans**, par exemple — portent leur propre bouton **💬 Donner mon avis**, juste à côté de leur titre.
+Pour une idée, une question ou un simple ressenti, les grands outils de l'app — **Mes handpans**, par exemple — portent leur propre bouton **💬 Donner mon avis**, juste à côté de leur titre. Il ouvre la petite fenêtre « Que veux-tu nous dire ? », avec 💡 une idée, ❓ une question, 💬 un avis ou 🌐 une mauvaise traduction. Deux consultations y sont aussi ouvertes : 💡 « Propose un nom à l'app » et 🎼 « Comment nommer les tablatures ? ».
 
 Pas de formulaire interminable, pas de compte tiers : tu écris ton message là, sur le moment, pendant que tu joues. Tu peux même **joindre une capture, un audio ou une courte vidéo** pour montrer précisément ce que tu veux dire.
 

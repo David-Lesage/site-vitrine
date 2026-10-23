@@ -39,31 +39,32 @@ Le Mode Logique rend ces rôles **visibles** en leur donnant une couleur stable,
   <figcaption>Animation sur une photo : un D Kurd 11 acoustique, et l'app sur la tablette, dans <strong>Degrés &amp; émotions</strong>. Chaque accord de la gamme s'allume à son tour, dans sa couleur, avec son degré et son émotion : ici II Élan, puis IV Détente (sol mineur).</figcaption>
 </figure>
 
-<figure>
-  <img
-    src="/images/app-logique-2026-10.webp"
-    width="2880"
-    height="1748"
-    alt="Handpan Constellation Studio en thème Nuit étoilée, onglet Découvrir › Degrés &amp; émotions, sur un Neotone Mutant · Noyer. En haut, la barre de l'app : Découvrir, Jouer, Chanter, Apprentissage, puis Signaler un bug, Affichage, Outils, Ma bibliothèque. Au centre, le pan aux notes colorées ; l'écran du handpan, sous le ding D2, indique « D Min. Nat. — Les 7 degrés dans l'ordre I-II-III-IV-V-VI-VII ». En bas, sept cartes alignées, chacune avec ses boutons œil, lecture et chapeau : I ÉQUILIBRE Dm en rouge, II ÉLAN Edim en orange, III AVENTURE F en jaune, IV DÉTENTE Gm en vert, V TENSION Am en bleu, VI NOSTALGIE Bb en violet, VII MYSTÈRE C en rose, chacune avec la puce « Profond ». Dessous, la flèche « PROGRESSION DES ACCORDS » et la barre « Atelier d'accords » (Tous mes accords, Ma tonalité, Révéler, Agrandir, Imprimer)."
-    data-lb="logique-degres"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Les sept degrés, tels que l'application les affiche. Sur ce Neotone Mutant réglé en <strong>D mineur naturel</strong>, ils vont de <em>I ÉQUILIBRE Dm</em> à <em>VII MYSTÈRE C</em> : chaque carte porte son numéro, son émotion et l'accord correspondant.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/app-logique-degres-acoustique-2026-10.webp"
-    width="2880"
-    height="1748"
-    alt="Le même écran sur un handpan acoustique D Kurd 10, thème Nuit étoilée, avec le tiroir « Dispositions &amp; Logique » ouvert à droite. Au centre, le pan ; l'écran du handpan, sous le ding D3, indique « D Kurd 10 ». En bas, les cartes de degrés : I ÉQUILIBRE Dm, II ÉLAN Edim (renversement 2), III AVENTURE F, IV DÉTENTE Gm (renversement 1), V TENSION Am ; le tiroir passe par-dessus les cartes 6 et 7. Dans le tiroir, le bloc « Logique et Emotions » : « Complet, 7 degrés sur 7 — Sur ton D Kurd 10, Logique est complète en D mineur ; en G mineur il manque 3 degrés. » Puis la tonalité : note d'ancrage D, mode Triste retenu, « Joyeux · 3 notes à trouver », « Triste · ✓ complet », le rappel que sur un handpan acoustique les notes sont gravées, « En D, ta gamme joue ses 7 degrés (mineur naturel) » et le bouton « Tester une autre tonalité »."
-    data-lb="logique-degres-acoustique"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Le même écran, sur un <strong>handpan acoustique</strong> D Kurd 10, avec le tiroir <em>Dispositions &amp; Logique</em> ouvert (il recouvre les cartes 6 et 7). Les degrés gardent leur numéro, leur couleur et leur émotion. En D mineur, ce pan joue les sept degrés : l'app l'annonce, « Complet · 7 degrés sur 7 », et précise qu'en G mineur il en manquerait trois.</figcaption>
+<figure class="article-img-pair">
+  <div class="article-img-pair-grid">
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">Neotone Mutant (électronique)</span>
+    <img
+        src="/images/app-logique-2026-10.webp"
+        width="2880"
+        height="1748"
+        alt="Handpan Constellation Studio en thème Nuit étoilée, onglet Découvrir › Degrés &amp; émotions, sur un Neotone Mutant · Noyer. En haut, la barre de l'app : Découvrir, Jouer, Chanter, Apprentissage, puis Signaler un bug, Affichage, Outils, Ma bibliothèque. Au centre, le pan aux notes colorées ; l'écran du handpan, sous le ding D2, indique « D Min. Nat. — Les 7 degrés dans l'ordre I-II-III-IV-V-VI-VII ». En bas, sept cartes alignées, chacune avec ses boutons œil, lecture et chapeau : I ÉQUILIBRE Dm en rouge, II ÉLAN Edim en orange, III AVENTURE F en jaune, IV DÉTENTE Gm en vert, V TENSION Am en bleu, VI NOSTALGIE Bb en violet, VII MYSTÈRE C en rose, chacune avec la puce « Profond ». Dessous, la flèche « PROGRESSION DES ACCORDS » et la barre « Atelier d'accords » (Tous mes accords, Ma tonalité, Révéler, Agrandir, Imprimer)."
+        data-lb="logique-degres"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">D Kurd 10 (acoustique)</span>
+    <img
+        src="/images/app-logique-degres-acoustique-2026-10.webp"
+        width="2880"
+        height="1748"
+        alt="Le même écran sur un handpan acoustique D Kurd 10, thème Nuit étoilée, avec le tiroir « Dispositions &amp; Logique » ouvert à droite. Au centre, le pan ; l'écran du handpan, sous le ding D3, indique « D Kurd 10 ». En bas, les cartes de degrés : I ÉQUILIBRE Dm, II ÉLAN Edim (renversement 2), III AVENTURE F, IV DÉTENTE Gm (renversement 1), V TENSION Am ; le tiroir passe par-dessus les cartes 6 et 7. Dans le tiroir, le bloc « Logique et Emotions » : « Complet, 7 degrés sur 7 — Sur ton D Kurd 10, Logique est complète en D mineur ; en G mineur il manque 3 degrés. » Puis la tonalité : note d'ancrage D, mode Triste retenu, « Joyeux · 3 notes à trouver », « Triste · ✓ complet », le rappel que sur un handpan acoustique les notes sont gravées, « En D, ta gamme joue ses 7 degrés (mineur naturel) » et le bouton « Tester une autre tonalité »."
+        data-lb="logique-degres-acoustique"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+  </div>
+  <figcaption>Les sept degrés, tels que l'application les affiche. À gauche, sur un Neotone Mutant réglé en <strong>D mineur naturel</strong>, ils vont de <em>I ÉQUILIBRE Dm</em> à <em>VII MYSTÈRE C</em> : chaque carte porte son numéro, son émotion et l'accord correspondant. À droite, le même écran sur un <strong>handpan acoustique</strong> D Kurd 10, avec le tiroir <em>Dispositions &amp; Logique</em> ouvert (il recouvre les cartes 6 et 7) : les degrés gardent leur numéro, leur couleur et leur émotion. En D mineur, ce pan joue les sept degrés : l'app l'annonce, « Complet · 7 degrés sur 7 », et précise qu'en G mineur il en manquerait trois.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

@@ -1,6 +1,6 @@
 ---
 title: "“Reveal”: everything your handpan already knows how to play"
-description: "A D Kurd 10 gives you 6 chords and lets you accompany 156 pieces from the repertoire. One button shows you that, before you even think about a second instrument."
+description: "A D Kurd 10 gives you 6 chords and lets you accompany over 150 pieces from the repertoire. One button shows you that, before you even think about a second instrument."
 pubDate: 2026-09-01
 updatedDate: 2026-10-24
 cover: "/images/blog-reveler-dkurd10-ciel-2026-10-en.webp"

@@ -27,15 +27,15 @@ Une barre **▶ / ⏸ / ⏹** joue les accords **dans l'ordre des paroles**. Le 
 
 <figure>
   <img
-    src="/images/app-partition-lecteur-en-marche-2026-10.webp"
-    width="2260"
-    height="2000"
-    alt="L'Éditeur de Partition Visuelle pendant la lecture de Let It Be, thème Nuit étoilée. En haut, le bouton de lecture est devenu un carré (arrêt), le tempo est à 80, l'attaque est réglée sur « App » (les autres choix : Plaqué, Arpège, Arpège ↑↓), puis le bouton « Enchaîner » et la ligne « Batteur Pop 4/4 · 80 · au repos ». En haut à droite, les boutons Pupitre, PDF et PNG. À gauche, la colonne des réglages : Mode, Tonalité, Mise en page, Style du handpan, Titre et contenu, Diagrammes, Légende, Mon morceau. Au-dessus de la feuille, un bandeau jaune : « Disposition Logique en D mineur : tous les accords du morceau sont complets. Cette gamme n'est pas celle de ton Neotone. Sur ton Neotone, choisis la gamme D mineur (disposition Logique). » Sur la feuille, le titre LET IT BE, The Beatles, la pastille 4/4, puis l'Intro : des diagrammes de handpan nommés Dm · Équilibre, Am · Tension, Bb · Nostalgie, Gm · Détente."
+    src="/images/app-partition-lecteur-en-marche.webp"
+    width="2000"
+    height="1770"
+    alt="Handpan Constellation Studio, Éditeur de Partition Visuelle en mode Chanson, thème sombre. En haut, la barre LECTURE : le bouton de lecture affiche ⏸ (le morceau joue), un bouton d'arrêt, une bascule 🥁 Batteur, une bascule de métronome, TEMPO 80, MÉTRIQUE 4/4, et l'ATTAQUE réglée sur Arpège parmi App, Plaqué, Arpège et Arpège ↑↓. En dessous, la ligne « Batteur — Pop 4/4 · 80 · au repos ». À gauche, le panneau MODE avec Chanson sélectionné et la Tonalité C. À droite, la feuille « LET IT BE — The Beatles », badge 4/4 sous le titre, section COUPLET 1 et bloc REFRAIN encadré, avec les diagrammes d'accords C, G, Am, F posés au-dessus des paroles et les badges ×4 et ×2 posés sur les accords C et G de la troisième ligne."
     data-lb="partition-lecteur"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>L'éditeur pendant la lecture : le bouton de lecture est devenu un carré d'arrêt, le tempo est à 80, l'attaque réglée sur <em>App</em> (à côté, <em>Plaqué</em>, <em>Arpège</em>, <em>Arpège ↑↓</em>), et le batteur attend. Le bandeau jaune dit seulement que ce morceau est posé en D mineur, une autre gamme que celle réglée sur le Neotone de la capture : l'app propose de la choisir pour jouer sur l'instrument, la lecture fonctionne dans tous les cas.</figcaption>
+  <figcaption>L'éditeur pendant la lecture : le bouton affiche <strong>⏸</strong>, l'attaque est réglée sur <em>Arpège</em>, le tempo sur 80 et la métrique sur 4/4. Les diagrammes sont posés au-dessus des paroles de <em>Let It Be</em>, avec leurs badges ×4 et ×2.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -103,7 +103,7 @@ Voilà le petit détail qui rend service tous les jours. Un bouton **🎼** et t
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le <strong>🎼 Pupitre</strong> aux proportions d'un iPad en portrait : la partition prend tout l'écran, et une seule barre en bas regroupe ce qui sert en jouant — <em>Lire</em>, <em>M'entraîner</em>, <em>Apprendre la grille</em>, <em>Défiler</em>, <em>Boucle A-B</em>, <em>Transposer</em>, <em>Exporter</em>, <em>Chanter</em>.</figcaption>
+  <figcaption>Le <strong>🎼 Pupitre</strong> aux proportions d'un iPad en portrait : la partition prend tout l'écran, et les commandes de jeu sont regroupées en bas — <em>Lire</em>, <em>M'entraîner</em>, <em>Apprendre la grille</em>, <em>Modifier</em>, le zoom, puis <em>Défiler</em>, <em>Boucle A-B</em>, <em>Transposer</em>, <em>Exporter</em>, <em>Chanter</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

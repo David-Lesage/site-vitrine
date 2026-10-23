@@ -41,31 +41,32 @@ Une gamme, c'est le « caractère » de ton pan : une note centrale (le **ding**
   <figcaption>Démo d'écran, sur un Neotone Mutant : on part d'un pan presque vide (le ding et deux notes), on touche les notes dans l'arc des douze couleurs, et elles se posent une à une sur le pan.</figcaption>
 </figure>
 
-<figure>
-  <img
-    src="/images/app-creation-acoustique-2026-10.webp"
-    width="2880"
-    height="1748"
-    alt="L'écran de création « Partir de ce handpan » sur un handpan acoustique D Kurd 10, thème Nuit étoilée. À gauche, la colonne d'outils de dessin dans un cadre jaune, puis le nom de l'instrument et les boutons Stop, Son et 440,00 Hz. Au centre, le pan avec son ding D3 et ses notes colorées D4, F4, A4, C5, G4, E4, C4, A3, Bb3 ; l'écran du handpan indique « D Kurd 10 ». Autour du haut du pan, la roue chromatique complète — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — chaque pastille à sa couleur, avec les repères d'octaves 2 à 5 en arc de cercle. En haut à droite, les boutons « Les accords de mon handpan » et « Degrés &amp; émotions ». En bas, « Les 7 accords de base de ta gamme » : Dm, Edim, F, Gm, Am, Bb, C, chacun dans la couleur de sa note de base."
-    data-lb="creation-acoustique"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>L'écran de création (aujourd'hui « Une gamme », dans <strong>Créer</strong>) en <strong>mode acoustique</strong>, sur un D Kurd 10. La roue chromatique entoure le pan : on clique une note, puis la couleur de la note qu'on veut y poser. Les outils de dessin sont dans la colonne de gauche ; en bas, les sept accords de base de la gamme.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/app-chromakeys-on-2026-10.webp"
-    width="2870"
-    height="1608"
-    alt="L'écran de création sur un Neotone Mutant, thème Nuit étoilée, avec le menu Affichage ouvert. En haut, l'îlot ChromaKeys : ChromaKeys sur On, « La couleur dit… » réglé sur « la note · chakras », Notes partagées sur On, « La palette de création ChromaKeys » sur On ; à droite, les menus NOTATION, APPARENCE Noyer, MAINS &amp; DOIGTÉ et CONSTELLATION. Au centre, le pan : chaque note est peinte de sa couleur — le ding D3 orange, D4 et D5 orange, C4, C5 et C3 rouges, E4 et E5 jaunes, F4, F5 et F3 verts, G4, G5 et G3 bleu ciel, A3, A4 et A5 bleus, Bb3 et Bb2 indigo. Autour du haut du pan, la roue chromatique déployée : C, C#, D, D#, E, F, F#, G, G#, A, A#, B, chacune à sa couleur, avec les arcs d'octaves 2 à 6. À gauche, une colonne d'outils de dessin dans un cadre jaune. En bas, les cartes d'accords colorées Dm, Edim, F, Gm, Am, Bb, chacune avec ses notes."
-    data-lb="creation-electronique"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Le même écran sur un handpan électronique, avec le menu 🎨 Affichage ouvert au-dessus : la palette de création ChromaKeys y est allumée.</figcaption>
+<figure class="article-img-pair">
+  <div class="article-img-pair-grid">
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">D Kurd 10 (acoustique)</span>
+    <img
+        src="/images/app-creation-acoustique-2026-10.webp"
+        width="2880"
+        height="1748"
+        alt="L'écran de création « Partir de ce handpan » sur un handpan acoustique D Kurd 10, thème Nuit étoilée. À gauche, la colonne d'outils de dessin dans un cadre jaune, puis le nom de l'instrument et les boutons Stop, Son et 440,00 Hz. Au centre, le pan avec son ding D3 et ses notes colorées D4, F4, A4, C5, G4, E4, C4, A3, Bb3 ; l'écran du handpan indique « D Kurd 10 ». Autour du haut du pan, la roue chromatique complète — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — chaque pastille à sa couleur, avec les repères d'octaves 2 à 5 en arc de cercle. En haut à droite, les boutons « Les accords de mon handpan » et « Degrés &amp; émotions ». En bas, « Les 7 accords de base de ta gamme » : Dm, Edim, F, Gm, Am, Bb, C, chacun dans la couleur de sa note de base."
+        data-lb="creation-acoustique"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">Handpan électronique</span>
+    <img
+        src="/images/app-chromakeys-on-2026-10.webp"
+        width="2870"
+        height="1608"
+        alt="L'écran de création sur un Neotone Mutant, thème Nuit étoilée, avec le menu Affichage ouvert. En haut, l'îlot ChromaKeys : ChromaKeys sur On, « La couleur dit… » réglé sur « la note · chakras », Notes partagées sur On, « La palette de création ChromaKeys » sur On ; à droite, les menus NOTATION, APPARENCE Noyer, MAINS &amp; DOIGTÉ et CONSTELLATION. Au centre, le pan : chaque note est peinte de sa couleur — le ding D3 orange, D4 et D5 orange, C4, C5 et C3 rouges, E4 et E5 jaunes, F4, F5 et F3 verts, G4, G5 et G3 bleu ciel, A3, A4 et A5 bleus, Bb3 et Bb2 indigo. Autour du haut du pan, la roue chromatique déployée : C, C#, D, D#, E, F, F#, G, G#, A, A#, B, chacune à sa couleur, avec les arcs d'octaves 2 à 6. À gauche, une colonne d'outils de dessin dans un cadre jaune. En bas, les cartes d'accords colorées Dm, Edim, F, Gm, Am, Bb, chacune avec ses notes."
+        data-lb="creation-electronique"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+  </div>
+  <figcaption>À gauche, l'écran de création (aujourd'hui « Une gamme », dans <strong>Créer</strong>) en <strong>mode acoustique</strong>, sur un D Kurd 10. La roue chromatique entoure le pan : on clique une note, puis la couleur de la note qu'on veut y poser. Les outils de dessin sont dans la colonne de gauche ; en bas, les sept accords de base de la gamme. À droite, le même écran sur un handpan électronique, avec le menu 🎨 Affichage ouvert au-dessus : la palette de création ChromaKeys y est allumée.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

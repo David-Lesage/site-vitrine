@@ -900,6 +900,42 @@ h1, h2, h3, h4, .font-display {
 @media (min-width: 640px) {
   .prose-blog .article-mp4-pair { gap: 1rem; }
 }
+/* ════════ 🖼 COMPARAISON DE DEUX CAPTURES — ajouté le 24/10/2026 ════════
+   Charte §5 (règle absolue) : une comparaison se lit côte à côte, jamais empilée.
+   Même principe que .article-mp4-pair : deux colonnes à TOUTES les largeurs.
+   Bloc HTML commun, à recopier tel quel dans un `.md` (aucune ligne vide dedans) :
+     <figure class="article-img-pair">
+       <div class="article-img-pair-grid">
+         <div class="article-img-pair-cell"><span class="article-img-pair-label">Avant</span>
+         <img src="…" width="…" height="…" alt="…" data-lb="groupe" data-lb-wide loading="lazy" />
+         </div>
+         <div class="article-img-pair-cell"><span class="article-img-pair-label">Après</span>
+         <img … />
+         </div>
+       </div>
+       <figcaption>Légende commune (« à gauche… à droite… »)</figcaption>
+     </figure>
+   À 390 px, ~170 px par image : la lightbox (data-lb) donne la taille réelle. */
+.prose-blog .article-img-pair-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+}
+.prose-blog .article-img-pair-cell { min-width: 0; }
+.prose-blog .article-img-pair-label {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+.prose-blog .article-img-pair-cell img { margin: 0; max-width: 100%; }
+@media (min-width: 640px) {
+  .prose-blog .article-img-pair-grid { gap: 1rem; }
+  .prose-blog .article-img-pair-label { font-size: 0.9rem; }
+}
 /* Tableau large dans un article : défilement interne, jamais de la page. */
 .prose-blog .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
 @media (max-width: 639px) {

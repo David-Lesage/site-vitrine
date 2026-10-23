@@ -23,7 +23,7 @@ Ce blocage n'est pas technique, il est mental. On regarde le handpan comme une c
 
 ## Voir les accords en couleurs débloque tout
 
-Le Mode Logique change ce regard. Au lieu de te montrer des notes éparses, il regroupe ce que tu as sous les mains en **sept accords, chacun avec sa couleur et son émotion** — exactement la grammaire décrite dans [Jouer avec les émotions : les 7 degrés colorés](/blog/handpan-emotions-degres). Le degré I, c'est « chez soi ». Le V, l'élan. Le VI, la nostalgie. Chaque couleur est un accord entier, pas une note.
+Le Mode Logique change ce regard. Au lieu de te montrer des notes éparses, il regroupe ce que tu as sous les mains en **sept accords, chacun avec sa couleur et son émotion** — exactement la grammaire décrite dans [Jouer avec les émotions : les 7 degrés colorés](/blog/handpan-emotions-degres). Le degré I, c'est « chez soi ». Le V, la tension. Le VI, la nostalgie. Chaque couleur est un accord entier, pas une note.
 
 D'un coup, ta poignée de notes n'est plus une contrainte : c'est une palette d'accords. Tu ne te demandes plus « quelle note ? » mais « quelle couleur, quelle émotion, maintenant ? ». Et enchaîner des couleurs, c'est exactement ce que fait un guitariste qui plaque des accords derrière une mélodie.
 
@@ -35,31 +35,32 @@ D'un coup, ta poignée de notes n'est plus une contrainte : c'est une palette d'
   <figcaption>Animation sur une photo : un D Kurd 11 acoustique, et l'app sur la tablette, dans <strong>Degrés &amp; émotions</strong>. Chaque accord de la gamme s'allume à son tour, dans sa couleur, avec son degré et son émotion : ici II Élan, puis IV Détente (sol mineur).</figcaption>
 </figure>
 
-<figure>
-  <img
-    src="/images/app-logique-progression-2026-10.webp"
-    width="2880"
-    height="1748"
-    alt="Handpan Constellation Studio en thème Nuit étoilée, Découvrir › Degrés &amp; émotions, sur un Neotone Mutant · Noyer. L'œil de la première carte, I ÉQUILIBRE Dm, est allumé : sur le pan, les quatre notes de l'accord s'éclairent en rouge et sont numérotées dans l'ordre de jeu, 1 sur le ding D2, 2 sur F3, 3 sur A3, 4 sur D4, reliées par un trait ; les autres notes restent sombres. L'écran du handpan, sous le ding, indique « I Équilibre Dm ». En bas, les sept cartes : I ÉQUILIBRE Dm, II ÉLAN Edim, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE Bb, VII MYSTÈRE C, puis la flèche « PROGRESSION DES ACCORDS » et la barre « Atelier d'accords »."
-    data-lb="logique-progression"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Un degré, un accord entier. L'œil de <em>I ÉQUILIBRE Dm</em> est allumé : sur le Neotone Mutant, les quatre notes de l'accord s'éclairent et sont numérotées dans l'ordre où les jouer (1 sur le ding D2, puis F3, A3, D4). Les six autres cartes attendent leur tour.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/app-logique-progression-acoustique-2026-10.webp"
-    width="2880"
-    height="1748"
-    alt="Le même écran sur un handpan acoustique D Kurd 10, thème Nuit étoilée. L'œil de I ÉQUILIBRE Dm est allumé : les notes de l'accord s'éclairent en rouge, numérotées 1 sur le ding D3, 2 sur D4, 3 sur F4, 4 sur A4, reliées par un trait ; l'écran du handpan indique « D Kurd 10 ». À gauche, sous le nom de l'instrument, les boutons Stop, Son, 440,00 Hz et Compléter. En bas, les sept cartes : I ÉQUILIBRE Dm, II ÉLAN Edim (renversement 2), III AVENTURE F, IV DÉTENTE Gm (renversement 1), V TENSION Am, VI NOSTALGIE Bb, VII MYSTÈRE C."
-    data-lb="logique-progression-acoustique"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>Le même geste sur un <strong>handpan acoustique</strong> D Kurd 10. En D mineur, les sept degrés portent les mêmes accords que sur le Mutant ; ce sont les notes allumées qui changent, parce que le pan n'a pas la même disposition : ici D3, D4, F4 et A4.</figcaption>
+<figure class="article-img-pair">
+  <div class="article-img-pair-grid">
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">Neotone Mutant (électronique)</span>
+    <img
+        src="/images/app-logique-progression-2026-10.webp"
+        width="2880"
+        height="1748"
+        alt="Handpan Constellation Studio en thème Nuit étoilée, Découvrir › Degrés &amp; émotions, sur un Neotone Mutant · Noyer. L'œil de la première carte, I ÉQUILIBRE Dm, est allumé : sur le pan, les quatre notes de l'accord s'éclairent en rouge et sont numérotées dans l'ordre de jeu, 1 sur le ding D2, 2 sur F3, 3 sur A3, 4 sur D4, reliées par un trait ; les autres notes restent sombres. L'écran du handpan, sous le ding, indique « I Équilibre Dm ». En bas, les sept cartes : I ÉQUILIBRE Dm, II ÉLAN Edim, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE Bb, VII MYSTÈRE C, puis la flèche « PROGRESSION DES ACCORDS » et la barre « Atelier d'accords »."
+        data-lb="logique-progression"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">D Kurd 10 (acoustique)</span>
+    <img
+        src="/images/app-logique-progression-acoustique-2026-10.webp"
+        width="2880"
+        height="1748"
+        alt="Le même écran sur un handpan acoustique D Kurd 10, thème Nuit étoilée. L'œil de I ÉQUILIBRE Dm est allumé : les notes de l'accord s'éclairent en rouge, numérotées 1 sur le ding D3, 2 sur D4, 3 sur F4, 4 sur A4, reliées par un trait ; l'écran du handpan indique « D Kurd 10 ». À gauche, sous le nom de l'instrument, les boutons Stop, Son, 440,00 Hz et Compléter. En bas, les sept cartes : I ÉQUILIBRE Dm, II ÉLAN Edim (renversement 2), III AVENTURE F, IV DÉTENTE Gm (renversement 1), V TENSION Am, VI NOSTALGIE Bb, VII MYSTÈRE C."
+        data-lb="logique-progression-acoustique"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+  </div>
+  <figcaption>Un degré, un accord entier. L'œil de <em>I ÉQUILIBRE Dm</em> est allumé : à gauche, sur le Neotone Mutant, les quatre notes de l'accord s'éclairent et sont numérotées dans l'ordre où les jouer (1 sur le ding D2, puis F3, A3, D4). À droite, le même geste sur un <strong>handpan acoustique</strong> D Kurd 10 : en D mineur, les sept degrés portent les mêmes accords que sur le Mutant ; ce sont les notes allumées qui changent, parce que le pan n'a pas la même disposition : ici D3, D4, F4 et A4.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

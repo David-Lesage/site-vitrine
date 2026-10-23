@@ -15,7 +15,7 @@ Cet article est une réparation autant qu'une nouveauté. Pendant des mois, **po
 
 Cet écran est le même des deux côtés : **que tes handpans soient acoustiques ou électroniques**, ce sont les mêmes cartes et les mêmes gestes. Seuls quelques réglages changent selon l'instrument, et c'est dit là où ça se produit.
 
-Aujourd'hui, **il ne reste qu'une porte**. Si tu as lu ici des consignes qui parlent de listes déroulantes, d'un bandeau à faire apparaître, d'un panneau de droite ou de cases à cocher, elles sont périmées : voici la bonne version, celle d'octobre 2026.
+Aujourd'hui, **il ne reste qu'une porte**. Si tu as lu ici des consignes qui parlent de listes déroulantes, d'un bandeau à faire apparaître, de cases à cocher ou d'une barre « POUR », elles sont périmées : voici la bonne version, celle d'octobre 2026.
 
 ## Le cas concret
 
@@ -68,7 +68,7 @@ C'est le geste à retenir. L'app le dit elle-même en haut de l'écran : *charge
 
 **Mon duo** a deux places. La **①** reçoit le **pan principal**, la **②** celui qui se pose **à côté**. Chaque place a son **✕** pour retirer l'instrument, et la place s'affiche aussi sur la carte, en jaune.
 
-L'ordre compte, parce que c'est lui qui décide quel pan est à gauche et lequel est à droite quand les deux s'affichent côte à côte. Tu t'es trompé ? Le bouton **⇄**, entre les deux places, les échange.
+L'ordre compte, parce que c'est lui qui décide quel pan est à gauche et lequel est à droite quand les deux s'affichent côte à côte. Tu t'es trompé ? Le bouton **⇄**, entre les deux places, les échange (sauf dans un Duo hybride : le bouton y est grisé, car l'acoustique reste en ①, voir plus bas).
 
 Sous les deux places : **Jouer le duo**, **Défaire le duo**, et **Mes duos**. Le duo posé est mémorisé (« Duo mémorisé : D Kurd 10 + B Amara 9 ») : il **survit au rechargement de la page**, ce qui était l'un des deux vrais défauts de l'ancien système. Et la ligne **« Apparence modifie : ① le pan principal / ② le pan d'à côté »** te laisse choisir à quel pan s'appliquent les réglages d'apparence.
 
@@ -76,11 +76,11 @@ Enfin, tout en bas, **Mes duos** garde les duos que tu as enregistrés (« Mon d
 
 ## Si les deux instruments ne sont pas de la même famille
 
-Poser un acoustique à côté d'un acoustique, c'est un **duo**. Poser un acoustique à côté d'un Neotone, ce n'est pas la même chose : **tes deux handpans** ne viennent pas du même monde, et l'association obéit alors à ses propres règles — c'est le sujet de [cet article-là](/blog/completer-son-handpan-acoustique-avec-un-neotone).
+Deux acoustiques côte à côte, c'est un **Duo acoustique**. Un acoustique à côté d'un Neotone, c'est un **Duo hybride** : **tes deux handpans** ne viennent pas du même monde, et l'association obéit à ses propres règles — c'est le sujet de [cet article-là](/blog/completer-son-handpan-acoustique-avec-un-neotone).
 
-L'application ne mélange donc jamais les deux d'office. Mais elle ne refuse pas non plus, comme elle le faisait avant : quand tu veux poser un acoustique avec un électronique, **elle te propose de les associer quand même**. C'est une porte, pas un mur.
+Mais elle ne refuse pas non plus, comme elle le faisait avant : pose un acoustique et un électronique dans **Mon duo**, et tu as un **Duo hybride**. L'acoustique prend alors toujours la place **①**, pan principal, et l'électronique la **②** : si tu les as posés dans l'autre ordre, l'app les remet en place et te le dit (« Acoustique + électronique : l'acoustique passe au pan principal, l'électronique à côté. »). C'est une porte, pas un mur.
 
-## Le Neotone a droit au même bloc
+## Le Neotone a droit aux mêmes cartes
 
 Petit rattrapage de fin août : en mode électronique, le panneau de droite n'avait **aucun bloc d'identité**. Tu jouais sur un instrument que le panneau ne nommait même pas.
 
@@ -104,17 +104,17 @@ Rien n'est jamais effacé : quand deux appareils ne sont pas d'accord, le plus r
 
 > ⚠️ **Un seul geste à connaître, et une seule fois.** À la toute première réconciliation entre tes appareils, **ouvre en dernier celui dont tu veux garder le placement**. Après ça, tu n'y penses plus.
 
-## Renommer, créditer
+## Nommer un duo, créditer le fabricant
 
 Deux détails qui comptent plus qu'ils n'en ont l'air.
 
-**✏️ Renommer.** Ton instrument peut s'appeler « Mon premier pan » ou « le D Kurd de Marie » plutôt que « D Minor / Kurd 10 ». Vide le champ, le nom d'origine revient.
+**✎ Nommer un duo.** Quand tu enregistres un duo (« Mon duo » › Mes duos › Enregistrer ce duo), tu peux lui donner un nom — « Scène », « Méditation » — et le changer ensuite avec le crayon **✎** de sa ligne dans **Mes duos**. Les cartes des instruments, elles, n'ont pas de crayon.
 
 **Le crédit du fabricant** est rattaché à l'instrument qu'il décrit, et non plus à l'écran en général. « Made by Yishama Pantam — Yhonatan Ale-Yahav » suit la gamme jusque sur les partitions imprimées. Un handpan a un auteur ; c'est la moindre des choses qu'il reste écrit dessus.
 
 ## Ce qui est gratuit, ce qui ne l'est pas
 
-Tout ce que décrit cet article — déclarer tes instruments, poser un duo, l'inverser, renommer, voir ce que les deux permettent — appartient au **mode acoustique, qui est gratuit**.
+Tout ce que décrit cet article — déclarer tes instruments, poser un duo, l'inverser, le nommer, voir ce que les deux permettent — appartient au **mode acoustique, qui est gratuit**.
 
 Et **tout est sauvegardé sur ton compte, même en gratuit** : tes handpans et tes duos te retrouvent sur un autre appareil, comme le décrit le paragraphe précédent.
 

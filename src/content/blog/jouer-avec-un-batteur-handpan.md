@@ -37,7 +37,7 @@ Cette barre existe aussi bien sur la grille d'accords du mode acoustique que sur
 
 Quand la boucle est en place, il manque encore quelque chose : la **pulsation vivante**. Un métronome donne l'heure ; un batteur donne l'envie.
 
-Il est là, juste à côté de la barre : un tiroir **🥁 Batteur**. Tu l'ouvres, tu choisis un groove, un tempo, et une « vie » — Sobre, Vivant, Généreux. **41 grooves** rangés en huit familles : *Pour le handpan* (Souffle, Battement de cœur, Cajón doux, Vagues, Berceuse, Marche tranquille, Pluie, et le métronome sec), *Pop & Rock*, *Latines*, *Afrique & Orient*, *Swing & Jazz*, *Hip-hop & Urbain*, *Électro & Dance*, *Du monde*. Chacun a ses fills.
+Il est là, juste à côté de la barre : un tiroir **🥁 Batteur**. Tu l'ouvres, tu choisis un groove, un tempo, et, au niveau Musicien, une « vie » — Sobre, Vivant, Généreux. **41 grooves** rangés en huit familles : *Pour le handpan* (Souffle, Battement de cœur, Cajón doux, Vagues, Berceuse, Marche tranquille, Pluie, et le métronome sec), *Pop & Rock*, *Latines*, *Afrique & Orient*, *Swing & Jazz*, *Hip-hop & Urbain*, *Électro & Dance*, *Du monde*. Chacun a ses fills.
 
 C'était le compte du 1er septembre. Depuis, le batteur a gagné sept rythmes urbains (trap, drill, boom bap, afro-trap, dembow, amapiano…) et de nouveaux sons : un kit « Doux » par défaut, qui va bien avec le handpan, un kit « Acoustique », un kit « Acoustique réel » de vraies percussions enregistrées, et des kits Trap 808, Boom bap, House et Lo-fi. L'ancien son reste disponible sous le nom « Électro ». Et dans l'éditeur de mélodies, le batteur suit maintenant la mélodie sur une seule horloge.
 

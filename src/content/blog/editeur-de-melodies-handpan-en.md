@@ -3,7 +3,7 @@ title: "Compose your melody note by note: the melody editor"
 description: "Drop your handpan's notes onto a timeline, listen, loop, speed up — and export as .mid. Handpan Constellation Studio's melody editor."
 pubDate: 2026-08-27
 updatedDate: 2026-10-24
-cover: "/images/app-editeur-melodies-timeline-2026-10-en.webp"
+cover: "/images/app-editeur-melodies-timeline-2026-10.webp"
 category: "partitions"
 tags: ["melody", "midi", "workshop"]
 lang: "en"
@@ -27,15 +27,15 @@ The idea fits in one image. On the left, your handpan as you know it, each note 
 
 <figure>
   <img
-    src="/images/app-editeur-melodies-timeline-2026-10-en.webp"
+    src="/images/app-editeur-melodies-timeline-2026-10.webp"
     width="2880"
     height="2016"
-    alt="The melody editor full size, Starry Night theme, open on “Ode à la Joie”. At the top, the title, undo / redo, save, open, “Import”, “.mid · XML”, the “Workshop” (active) and “Note rain / Handpan Hero” tabs, and “Copy this tool's link”; below, “Give feedback”. Then the toolbar: rewind, play, stop, record, loop, the pencil (active), hand, selection, eraser, arrow, mute and scissors tools, “Clear all”, the “Sixteenth note” grid, “Quantize”, and TEMPO 110, TIME SIGNATURE 4/4, BAR 1. On the left, “SCALE &amp; INSTRUMENT — Ode à la Joie — D” and a drawn handpan with coloured notes, with the warning “Not on the instrument: F#4”, the “Enlarge the handpans” button, a pulse slider between a left and a right foot, and “MY MELODIES” with help for the tools. In the centre, the grid: one row per note, A3 to A4, each in its colour, three numbered bars, and the coloured blocks of the melody, F#4 F#4 G4 A4 A4 G4 F#4 E4 D4. On the right, “MELODY”: Grid Eighth note, Time signature 4/4, 3/4 or 6/8, Speed 1×. At the bottom, the “Drummer Pop 4/4 · 110 · resting” bar."
+    alt="The melody editor full size, Starry Night theme, interface in French, open on “Ode à la Joie”. At the top, the title, undo / redo, save, open, “Importer” (Import), “.mid · XML”, the “Atelier” (Workshop, active) and “Pluie de notes / Handpan Hero” (Note rain) tabs, and “Copier le lien de cet outil” (Copy this tool's link); below, “Donner mon avis” (Give feedback). Then the toolbar: rewind, play, stop, record, loop, the pencil (active), hand, selection, eraser, arrow, mute and scissors tools, “Tout effacer” (Clear all), the “Double croche” (sixteenth note) grid, “Quantifier” (Quantize), and TEMPO 110, MÉTRIQUE (time signature) 4/4, MESURE (bar) 1. On the left, “GAMME &amp; INSTRUMENT” (scale and instrument) and a drawn handpan with coloured notes, the “Agrandir les handpans” (Enlarge the handpans) button, a pulse slider between a left and a right foot, and “MES MÉLODIES” (my melodies) with help for the tools. In the centre, the grid: one row per note, Bb2 to A5, each in its colour, three numbered bars, and the coloured blocks of the melody, E4 E4 F4 G4 G4 F4 E4 D4 C4. On the right, “MÉLODIE”: Grid Croche (eighth note), time signature 4/4, 3/4 or 6/8, Speed 1×. At the bottom, the “Batteur Pop 4/4 · 110 · au repos” (drummer, resting) bar."
     data-lb="editeur-melodies"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The editor, open on the theme of <em>Ode to Joy</em>, here in D. On the left, your handpan — the app warns that F#4 isn't on this instrument; in the centre, the grid, where each note gets its row and its colour, and the blocks carry the note name. Above, the toolbar: <strong>pencil</strong>, <strong>hand</strong>, <strong>eraser</strong>, plus selection, scissors and <em>Quantize</em>.</figcaption>
+  <figcaption>The editor, open on the theme of <em>Ode to Joy</em>. On the left, your handpan; in the centre, the grid, where each note of the pan gets its row and its colour, and the blocks carry the note name. Above, the toolbar: <strong>pencil</strong>, <strong>hand</strong>, <strong>eraser</strong>, plus selection, scissors and <em>Quantize</em>. (Screenshot of the French interface: the English one will follow.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

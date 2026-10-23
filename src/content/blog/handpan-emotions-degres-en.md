@@ -31,31 +31,32 @@ In a scale, every note plays a role. The first degree is the anchor, the place w
 
 Logic Mode makes these roles **visible** by giving them a stable colour, following the **ChromaKeys** logic described in [Playing handpan by colours](/en/blog/handpan-par-les-couleurs). Degree I always keeps its hue, whatever your scale. You learn a grammar of emotions once and for all.
 
-<figure>
-  <img
-    src="/images/app-logique-2026-10-en.webp"
-    width="2880"
-    height="1748"
-    alt="Handpan Constellation Studio in the Starry Night theme, Discover › Degrees &amp; emotions, on a Neotone Mutant · Walnut. Along the top, the app bar: Discover, Play, Sing, Learning, then Report a bug, Display, Tools, My library. In the middle, the pan with coloured notes; the handpan's screen, under the D2 ding, reads “D Nat. Min. — All 7 degrees in order I-II-III-IV-V-VI-VII”. At the bottom, seven cards in a row, each with its eye, play and mortarboard buttons: I BALANCE Dm in red, II MOMENTUM Edim in orange, III ADVENTURE F in yellow, IV RELAXATION Gm in green, V TENSION Am in blue, VI NOSTALGIA Bb in purple, VII MYSTERY C in pink, each with a “Deep” chip. Below, the “CHORD PROGRESSION” arrow and the “Chord workshop” bar (All my chords, My key, Reveal, Enlarge, Print)."
-    data-lb="logique-degres"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>The seven degrees as the app displays them. On this Neotone Mutant set to <strong>D natural minor</strong>, they run from <em>I BALANCE Dm</em> to <em>VII MYSTERY C</em>: each card carries its number, its emotion and the matching chord.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>
-
-<figure>
-  <img
-    src="/images/app-logique-degres-acoustique-2026-10-en.webp"
-    width="2880"
-    height="1748"
-    alt="The same screen on an acoustic D Kurd 10 handpan, Starry Night theme, with the “Voicings &amp; Logic” drawer open on the right. In the middle, the pan; the handpan's screen, under the D3 ding, reads “D Kurd 10”. At the bottom, the degree cards: I BALANCE Dm, II MOMENTUM Edim (inversion 2), III ADVENTURE F, IV RELAXATION Gm (inversion 1), V TENSION Am; the drawer covers cards 6 and 7. In the drawer, the “Logic &amp; Emotions” block: “Complete, 7 degrees out of 7 — On your D Kurd 10, Logic is complete in D minor; in G minor, 3 degrees are missing.” Then the key: anchor note D, Sad mode selected, “Happy · 3 notes to find”, “Sad · ✓ complete”, the reminder that on an acoustic handpan the notes are tuned into the steel, “In D, your scale plays all 7 degrees (natural minor)” and the “Try a different key” button."
-    data-lb="logique-degres-acoustique"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>The same screen on an <strong>acoustic handpan</strong>, a D Kurd 10, with the <em>Voicings &amp; Logic</em> drawer open (it covers cards 6 and 7). The degrees keep their number, colour and emotion. In D minor this pan plays all seven degrees: the app says so, “Complete · 7 degrees out of 7”, and adds that in G minor three would be missing.</figcaption>
+<figure class="article-img-pair">
+  <div class="article-img-pair-grid">
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">Neotone Mutant (electronic)</span>
+    <img
+        src="/images/app-logique-2026-10-en.webp"
+        width="2880"
+        height="1748"
+        alt="Handpan Constellation Studio in the Starry Night theme, Discover › Degrees &amp; emotions, on a Neotone Mutant · Walnut. Along the top, the app bar: Discover, Play, Sing, Learning, then Report a bug, Display, Tools, My library. In the middle, the pan with coloured notes; the handpan's screen, under the D2 ding, reads “D Nat. Min. — All 7 degrees in order I-II-III-IV-V-VI-VII”. At the bottom, seven cards in a row, each with its eye, play and mortarboard buttons: I BALANCE Dm in red, II MOMENTUM Edim in orange, III ADVENTURE F in yellow, IV RELAXATION Gm in green, V TENSION Am in blue, VI NOSTALGIA Bb in purple, VII MYSTERY C in pink, each with a “Deep” chip. Below, the “CHORD PROGRESSION” arrow and the “Chord workshop” bar (All my chords, My key, Reveal, Enlarge, Print)."
+        data-lb="logique-degres"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+    <div class="article-img-pair-cell"><span class="article-img-pair-label">D Kurd 10 (acoustic)</span>
+    <img
+        src="/images/app-logique-degres-acoustique-2026-10-en.webp"
+        width="2880"
+        height="1748"
+        alt="The same screen on an acoustic D Kurd 10 handpan, Starry Night theme, with the “Voicings &amp; Logic” drawer open on the right. In the middle, the pan; the handpan's screen, under the D3 ding, reads “D Kurd 10”. At the bottom, the degree cards: I BALANCE Dm, II MOMENTUM Edim (inversion 2), III ADVENTURE F, IV RELAXATION Gm (inversion 1), V TENSION Am; the drawer covers cards 6 and 7. In the drawer, the “Logic &amp; Emotions” block: “Complete, 7 degrees out of 7 — On your D Kurd 10, Logic is complete in D minor; in G minor, 3 degrees are missing.” Then the key: anchor note D, Sad mode selected, “Happy · 3 notes to find”, “Sad · ✓ complete”, the reminder that on an acoustic handpan the notes are tuned into the steel, “In D, your scale plays all 7 degrees (natural minor)” and the “Try a different key” button."
+        data-lb="logique-degres-acoustique"
+        data-lb-wide
+        loading="lazy"
+      />
+    </div>
+  </div>
+  <figcaption>The seven degrees as the app displays them. On the left, on a Neotone Mutant set to <strong>D natural minor</strong>, they run from <em>I BALANCE Dm</em> to <em>VII MYSTERY C</em>: each card carries its number, its emotion and the matching chord. On the right, the same screen on an <strong>acoustic handpan</strong>, a D Kurd 10, with the <em>Voicings &amp; Logic</em> drawer open (it covers cards 6 and 7): the degrees keep their number, colour and emotion. In D minor this pan plays all seven degrees: the app says so, “Complete · 7 degrees out of 7”, and adds that in G minor three would be missing.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

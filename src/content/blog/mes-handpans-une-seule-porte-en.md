@@ -15,7 +15,7 @@ This article is as much a repair as it is a new feature. For months, **setting a
 
 This screen is the same on both sides: **whether your handpans are acoustic or electronic**, it's the same cards and the same gestures. Only a few settings change depending on the instrument, and that's spelled out where it happens.
 
-Today, **only one door remains**. If you've read instructions here that mention drop-down lists, a banner to bring up, a right-hand panel or boxes to tick, they're out of date: this is the right version, the October 2026 one.
+Today, **only one door remains**. If you've read instructions here that mention drop-down lists, a banner to bring up, boxes to tick or a "FOR" bar, they're out of date: this is the right version, the October 2026 one.
 
 ## A concrete case
 
@@ -68,7 +68,7 @@ This is the gesture to remember. The app says so itself at the top of the screen
 
 **My pair** has two places. Place **①** takes the **main pan**, place **②** the one that sits **next to it**. Each place has its **✕** to take the instrument out, and the place also shows on the card, in yellow.
 
-The order matters, because it decides which pan is on the left and which is on the right when the two are shown side by side. Got it the wrong way round? The **⇄** button, between the two places, swaps them.
+The order matters, because it decides which pan is on the left and which is on the right when the two are shown side by side. Got it the wrong way round? The **⇄** button, between the two places, swaps them (except in a Hybrid duo: the button is greyed out there, because the acoustic stays in ①, see below).
 
 Under the two places: **Play the pair**, **Undo the pair**, and **My pairs**. The pair you set is saved ("Saved pair: D Kurd 10 + B Amara 9"): it **survives a page reload**, which was one of the two real flaws of the old system. And the line **"Appearance changes: ① the main pan / ② the pan beside it"** lets you choose which pan the appearance settings apply to.
 
@@ -76,11 +76,11 @@ Finally, right at the bottom, **My pairs** keeps the pairs you've saved ("My pai
 
 ## If the two instruments aren't from the same family
 
-Setting an acoustic beside an acoustic is a **duo**. Setting an acoustic beside a Neotone is not the same thing: **your two handpans** don't come from the same world, and the pairing then follows rules of its own — that's the subject of [this other article](/en/blog/completer-son-handpan-acoustique-avec-un-neotone).
+Two acoustics side by side make an **Acoustic duo**; an acoustic beside a Neotone makes a **Hybrid duo**: **your two handpans** don't come from the same world, and the pairing follows rules of its own — that's the subject of [this other article](/en/blog/completer-son-handpan-acoustique-avec-un-neotone).
 
-So the app never mixes the two by default. But it doesn't refuse them either, the way it used to: when you want to set an acoustic with an electronic, **it offers to pair them anyway**. It's a door, not a wall.
+But it doesn't refuse them either, the way it used to: put an acoustic and an electronic in **My pair** and you get a **Hybrid duo**; the acoustic always takes slot **①**, the main pan, and the electronic slot **②**. If you set them the other way round, the app puts them back in order and tells you so ("Acoustic + electronic: the acoustic becomes the main pan, the electronic goes next to it."). It's a door, not a wall.
 
-## The Neotone gets the same block
+## The Neotone gets the same cards
 
 A small catch-up from the end of August: in electronic mode, the right-hand panel had **no identity block at all**. You were playing an instrument the panel didn't even name.
 
@@ -104,17 +104,17 @@ Nothing is ever erased: when two devices disagree, the more recent one wins and 
 
 > ⚠️ **One gesture to know, and only once.** The very first time your devices reconcile, **open last the one whose placement you want to keep.** After that, you never think about it again.
 
-## Renaming, crediting
+## Naming a pair, crediting the maker
 
 Two details that count for more than they look.
 
-**✏️ Rename.** Your instrument can be called "My first pan" or "Marie's D Kurd" rather than "D Minor / Kurd 10". Clear the field and the original name comes back.
+**✎ Name a pair.** When you save a pair ("My pair" › My pairs › Save this pair), you can give it a name — "Stage", "Meditation" — and change it later with the **✎** pencil on its line in **My pairs**. The instrument cards, for their part, have no pencil.
 
 **The maker's credit** is attached to the instrument it describes, no longer to the screen in general. "Made by Yishama Pantam — Yhonatan Ale-Yahav" follows the scale all the way onto printed scores. A handpan has a maker; the least we can do is keep it written on it.
 
 ## What's free, what isn't
 
-Everything this article describes — declaring your instruments, setting a pair, swapping it, renaming, seeing what the two allow — belongs to **acoustic mode, which is free**.
+Everything this article describes — declaring your instruments, setting a pair, swapping it, naming it, seeing what the two allow — belongs to **acoustic mode, which is free**.
 
 And **everything is saved to your account, even on the free tier**: your handpans and your duos find you again on another device, as the previous section describes.
 
