@@ -37,7 +37,7 @@ Un mot d'honnêteté : ces compteurs s'appuient sur un catalogue de partitions e
 
 ## 🌗 Le second pan, et le bandeau du duo
 
-> **Mise à jour du 23 octobre 2026.** Les deux cases à cocher du panneau de droite n'existent plus. Tes instruments sont maintenant dans **Mes handpans**, en cartes, et **🤝 Mon duo** a deux emplacements. Dès que tes deux handpans sont posés, l'app te demande **ce que tu veux en faire** : 🌈 tout jouer, 🎵 jouer un morceau, 🎯 compléter ta tonalité ou ✋ garder tel quel. Sous les pans, deux rangées de cartes : les 7 accords de ta tonalité, puis les accords **en plus** que seuls tes deux handpans ensemble permettent. Un bouton « ✕ Un seul handpan » ramène à un seul instrument.
+> **Mise à jour du 23 octobre 2026.** Les deux cases à cocher du panneau de droite n'existent plus. Tes instruments sont maintenant dans **Mes handpans**, en cartes, et **🤝 Mon duo** a deux emplacements. Dès que tes deux handpans sont posés, l'app te demande **ce que tu veux en faire** : 🌈 tout jouer, 🎵 jouer un morceau, 🎯 compléter ta tonalité ou ✋ garder tel quel. Sous les pans, deux rangées de cartes : les 7 accords de ta tonalité, puis les accords **en plus** que seuls tes deux handpans ensemble permettent. Un bouton « ✕ Un seul handpan » ramène à un seul instrument. Tout le parcours est expliqué dans [Jouer deux handpans ensemble](/blog/deux-handpans-ensemble/).
 
 Un bandeau s'affiche au-dessus de tes pans. Dans sa version de septembre, celle de la capture ci-dessous : **🌗 Tes 2 handpans : *le premier* + *le second***, avec un **⇄ inverser** pour échanger leurs places, le cadre tonal en cours, et le décompte qui dit tout en une ligne :
 

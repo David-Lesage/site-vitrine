@@ -37,7 +37,7 @@ One word of honesty: those counters rest on a still-modest catalogue of scores. 
 
 ## 🌗 The second pan, and the duo banner
 
-> **Updated 23 October 2026.** The two checkboxes in the right-hand panel no longer exist. Your instruments now live in **My handpans**, as cards, and **🤝 My duo** has two slots. As soon as your two handpans are set down, the app asks **what you want to do with them**: 🌈 play everything, 🎵 play a song, 🎯 complete your key, or ✋ keep as is. Under the pans, two rows of cards: the 7 chords of your key, then the **extra** chords that only your two handpans together allow. A "✕ Un seul handpan" (*one handpan only*) button takes you back to a single instrument.
+> **Updated 23 October 2026.** The two checkboxes in the right-hand panel no longer exist. Your instruments now live in **My handpans**, as cards, and **🤝 My duo** has two slots. As soon as your two handpans are set down, the app asks **what you want to do with them**: 🌈 play everything, 🎵 play a song, 🎯 complete your key, or ✋ keep as is. Under the pans, two rows of cards: the 7 chords of your key, then the **extra** chords that only your two handpans together allow. A "✕ Un seul handpan" (*one handpan only*) button takes you back to a single instrument. The whole flow is explained in [Playing two handpans together](/en/blog/deux-handpans-ensemble/).
 
 A banner appears above your pans. In its September version, the one in the screenshot below: **🌗 Your 2 handpans: *the first* + *the second***, with a **⇄ swap** to exchange their places, the current tonal frame, and the count that says everything in one line:
 
