@@ -936,6 +936,49 @@ h1, h2, h3, h4, .font-display {
   .prose-blog .article-img-pair-grid { gap: 1rem; }
   .prose-blog .article-img-pair-label { font-size: 0.9rem; }
 }
+/* ════════ 🎼 COMPOSITE DE COMPARAISON (une seule image, N pans) — ajouté le 24/10/2026 ════════
+   Pour une capture déjà composée (ex. les trois mineurs). Étiquettes en HTML, une par pan :
+   - par défaut : rangée de N colonnes égales AU-DESSUS de l'image (composite côte à côte) ;
+   - avec .minor-compare--stack-sm, sous 640 px : <picture> sert une version « un pan par
+     ligne », et chaque étiquette se pose en haut de SA ligne (--row = 0, 1… ; --rows = N).
+   À n'utiliser en empilé que si l'image mobile tient entière dans 390 × 844 (charte §5).
+     <figure class="minor-compare minor-compare--stack-sm" style="--rows:2">
+       <div class="minor-compare-media">
+         <div class="minor-compare-labels"><span style="--row:0">A</span><span style="--row:1">B</span></div>
+         <picture><source media="(max-width: 639px)" srcset="…mobile…" width="…" height="…" /><img … /></picture>
+       </div>
+       <figcaption>…</figcaption>
+     </figure> */
+.prose-blog .minor-compare-media { position: relative; }
+.prose-blog .minor-compare-media picture,
+.prose-blog .minor-compare-media img { display: block; margin: 0; max-width: 100%; height: auto; }
+.prose-blog .minor-compare-labels {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
+.prose-blog .minor-compare-labels > span { flex: 1 1 0; min-width: 0; overflow-wrap: anywhere; }
+@media (min-width: 640px) {
+  .prose-blog .minor-compare-labels { gap: 1rem; font-size: 0.9rem; }
+}
+@media (max-width: 639px) {
+  .prose-blog .minor-compare--stack-sm .minor-compare-labels { display: block; margin: 0; }
+  .prose-blog .minor-compare--stack-sm .minor-compare-labels > span {
+    position: absolute;
+    z-index: 1;
+    left: 0.5rem;
+    top: calc(var(--row, 0) * 100% / var(--rows, 1) + 0.5rem);
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(10, 14, 30, 0.82);
+    color: #fff;
+    font-size: 0.85rem;
+  }
+}
 /* Tableau large dans un article : défilement interne, jamais de la page. */
 .prose-blog .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
 @media (max-width: 639px) {
