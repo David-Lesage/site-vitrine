@@ -930,7 +930,7 @@ function bookingHtml(
             'I check your request and pass it on to Neotone (Soundventure, in Budapest) with the serial number of your instrument. You are copied in.',
             ...payFirstSteps('en'),
         ],
-        weekend: '<strong>Coming at the weekend?</strong> Neotone only invoices on weekdays: send your request several working days before, so that your Neotone is paid before you come.',
+        weekend: '<strong>Coming at the weekend?</strong> Neotone does not work at weekends: the payment link must have arrived, and been paid, before you come. Send your request a few working days before.',
         howOnlineTitle: 'How you get your discount code',
         howOnline: [
             'You filled in the form: done ✅',
@@ -981,7 +981,7 @@ function bookingHtml(
             'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest) avec le n° de série de ton instrument. Tu es en copie.',
             ...payFirstSteps('fr'),
         ],
-        weekend: '<strong>Tu viens un week-end ?</strong> Neotone ne facture qu’en semaine : fais ta demande plusieurs jours ouvrés avant, pour que ton Neotone soit payé avant ta venue.',
+        weekend: '<strong>Tu viens un week-end ?</strong> Neotone ne travaille pas le week-end : le lien de paiement doit être arrivé, et réglé, avant ta venue. Fais ta demande quelques jours ouvrés avant.',
         howOnlineTitle: 'Comment tu reçois ton code de réduction',
         howOnline: [
             'Tu as rempli le formulaire : c’est fait ✅',

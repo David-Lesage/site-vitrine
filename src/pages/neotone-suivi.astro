@@ -62,7 +62,7 @@ const API = 'https://zqcuhnjjrgmybftppkcl.supabase.co/functions/v1/neotone-purch
         superseded: 'Une nouvelle date t’a été proposée depuis : utilise le bouton du dernier e-mail.',
         confirmTitle: 'Une date pour ton Neotone', confirmQ: function (d, p) { return 'Ton Neotone (' + p + ') sera au showroom vers le ' + d + '. Ça te convient ?' },
         confirmBtn: 'Oui, je confirme', confirmOther: 'Une autre date t’arrangerait ? Réponds simplement à l’e-mail.',
-        confirmed: function (d) { return 'Merci, c’est noté ! Ton Neotone t’attend vers le ' + d + '. Neotone va t’envoyer la facture et le lien de paiement (szamlazz.hu, en semaine) : pense à vérifier tes spams. Tu paies avant ta venue.' },
+        confirmed: function (d) { return 'Merci, c’est noté ! Ton Neotone t’attend vers le ' + d + '. Neotone va t’envoyer la facture et le lien de paiement (szamlazz.hu, les jours ouvrés) : pense à vérifier tes spams. Paie dès réception du lien ou, au plus tard, le jour de ta venue si c’est un jour ouvré : je te remets ton Neotone une fois payé.' },
         already: 'C’est déjà fait : rien de plus à faire.',
       },
       en: {
@@ -70,7 +70,7 @@ const API = 'https://zqcuhnjjrgmybftppkcl.supabase.co/functions/v1/neotone-purch
         superseded: 'A new date has been proposed since: please use the button in the latest email.',
         confirmTitle: 'A date for your Neotone', confirmQ: function (d, p) { return 'Your Neotone (' + p + ') will be at the showroom around ' + d + '. Does that work for you?' },
         confirmBtn: 'Yes, I confirm', confirmOther: 'Another date would suit you better? Just reply to the email.',
-        confirmed: function (d) { return 'Thank you, noted! Your Neotone will be waiting for you around ' + d + '. Neotone will send you the invoice and the payment link (szamlazz.hu, on weekdays): check your spam folder. You pay before coming.' },
+        confirmed: function (d) { return 'Thank you, noted! Your Neotone will be waiting for you around ' + d + '. Neotone will send you the invoice and the payment link (szamlazz.hu, on working days): check your spam folder. Pay as soon as you receive the link or, at the latest, on the day of your visit if it is a working day: I hand you your Neotone once it is paid.' },
         already: 'Already done: nothing more to do.',
       },
     }

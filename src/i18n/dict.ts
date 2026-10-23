@@ -1028,25 +1028,25 @@ const fr = {
     // Sous-objet + repli FR dans le composant, comme `billing`.
     purchase: {
       showroomTitle: 'Acheter un Neotone au showroom (−7 %)',
-      showroomIntro: 'Tu repars avec ton instrument, au showroom (Paris 20ᵉ). Le paiement se fait AVANT ta venue, jamais le jour même : Neotone t’envoie la facture et le lien de paiement en semaine seulement. Fais ta demande plusieurs jours ouvrés avant.',
+      showroomIntro: 'Tu repars avec ton instrument, au showroom (Paris 20ᵉ). Il n’y a pas de paiement au showroom : Neotone t’envoie la facture et le lien de paiement les jours ouvrés, en général dans la journée. Payer le jour même est possible, mais pour être sûr de repartir avec ton Neotone, fais ta demande quelques jours ouvrés avant.',
       showroomButton: 'Acheter au showroom (−7 %)',
       showroomHowTitle: 'Comment se passe l’achat au showroom',
       showroomHow: [
         'Tu remplis ce formulaire (date de retrait souhaitée comprise).',
         'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest) avec le n° de série de ton instrument. Tu es en copie.',
-        'Neotone t’envoie la facture et un lien de paiement par carte, en semaine seulement (hors jours fériés hongrois). Il vient de szamlazz.hu : pense à vérifier tes spams.',
-        'Tu paies <strong>avant</strong> ta venue. Le jour J, je te remets ton Neotone déjà payé, au showroom (Paris 20ᵉ). Je pourrai te demander ta preuve de paiement.'
+        'Neotone t’envoie la facture et un lien de paiement par carte, les jours ouvrés (hors jours fériés hongrois), en général dans la journée. Il vient de szamlazz.hu : pense à vérifier tes spams.',
+        'Tu paies dès réception du lien ou, au plus tard, le jour de ta venue si c’est un jour ouvré. Je te remets ton Neotone une fois payé, au showroom (Paris 20ᵉ). Je pourrai te demander ta preuve de paiement.'
       ],
-      showroomWeekend: '<strong>Tu viens un week-end ?</strong> Neotone ne facture qu’en semaine : fais ta demande plusieurs jours ouvrés avant, pour que ton Neotone soit payé avant ta venue. Aucun paiement n’est possible au showroom.',
+      showroomWeekend: '<strong>Tu viens un week-end ?</strong> Neotone ne travaille pas le week-end : le lien de paiement doit être arrivé, et réglé, avant ta venue. Fais ta demande quelques jours ouvrés avant. Il n’y a pas de paiement au showroom.',
       pickupTitle: 'Retrait à Paris',
       pickupLabel: 'Date souhaitée de retrait au showroom',
-      pickupHint: 'Choisis-la plusieurs jours ouvrés après aujourd’hui : le temps que Neotone te facture et que tu paies.',
-      payFirstTitle: 'Le paiement se fait avant ta venue, jamais le jour même',
+      pickupHint: 'Idéalement quelques jours ouvrés après aujourd’hui : le temps que Neotone t’envoie le lien et que tu paies sereinement.',
+      payFirstTitle: 'Comment se passe le paiement',
       payFirst: [
-        'Neotone établit la facture et envoie le lien de paiement <strong>en semaine seulement</strong> (pas les jours fériés hongrois).',
-        'Fais ta demande <strong>plusieurs jours ouvrés</strong> avant ta venue.',
-        'Le lien de paiement vient de szamlazz.hu : <strong>vérifie tes spams</strong>.',
-        '<strong>Aucun paiement n’est possible au showroom.</strong>'
+        'Neotone (Soundventure, Budapest) envoie la facture et le lien de paiement par carte <strong>les jours ouvrés</strong> (du lundi au vendredi, hors jours fériés hongrois), en général dans la journée.',
+        'Il n’y a <strong>aucun moyen de payer au showroom</strong>, et je ne peux te remettre ton Neotone qu’une fois payé.',
+        'Payer le jour même est possible un jour ouvré, si le lien arrive à temps, mais rien ne le garantit. Pour être sûr de repartir avec ton instrument (indispensable le week-end), fais ta demande <strong>quelques jours ouvrés avant</strong>, et paie dès réception du lien ou, au plus tard, le jour de ta venue.',
+        'Le lien de paiement vient de szamlazz.hu : <strong>vérifie tes spams</strong>.'
       ],
       vatNone: 'Je n’ai pas de n° de TVA intracommunautaire',
       vatMissing: 'Indique ton n° de TVA intracommunautaire, ou coche « Je n’en ai pas ».',
@@ -1055,7 +1055,7 @@ const fr = {
         'Tu remplis ce formulaire (date de retrait souhaitée comprise).',
         'S’il est en route, je te propose la date d’arrivée au showroom. S’il est à fabriquer, je demande ses délais à Neotone, puis je te propose une date.',
         'Tu confirmes cette date d’un clic, depuis mon e-mail.',
-        'Neotone t’envoie la facture et le lien de paiement (szamlazz.hu, pense à tes spams). Tu paies avant ta venue, et je te remets ton Neotone déjà payé.'
+        'Neotone t’envoie la facture et le lien de paiement (szamlazz.hu, pense à tes spams). Tu paies dès réception ou, au plus tard, le jour de ta venue si c’est un jour ouvré, et je te remets ton Neotone une fois payé.'
       ],
       onlineTitle: 'Achat en ligne : demande de code de réduction (−5 %)',
       onlineIntro: 'Un code de réduction nominatif que je demande pour toi auprès de Neotone : −5 % sur ta commande en ligne, livrée chez toi.',

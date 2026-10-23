@@ -863,25 +863,25 @@ export const en: Dict = {
     // Two Neotone paths (21/10/2026) — see the French dictionary.
     purchase: {
       showroomTitle: 'Buy a Neotone at the showroom (−7%)',
-      showroomIntro: 'You leave with your instrument, at the showroom (Paris 20th). Payment is made BEFORE your visit, never on the day: Neotone sends you the invoice and the payment link on weekdays only. Send your request several working days before.',
+      showroomIntro: 'You leave with your instrument, at the showroom (Paris 20th). There is no payment at the showroom: Neotone sends you the invoice and the payment link on working days, usually within the day. Paying on the day itself is possible, but to be sure you leave with your Neotone, send your request a few working days before.',
       showroomButton: 'Buy at the showroom (−7%)',
       showroomHowTitle: 'How the purchase at the showroom works',
       showroomHow: [
         'You fill in this form (including the date you wish to pick it up).',
         'I check your request and pass it on to Neotone (Soundventure, in Budapest) with the serial number of your instrument. You are copied in.',
-        'Neotone sends you the invoice and a card payment link, on weekdays only (except Hungarian public holidays). It comes from szamlazz.hu: check your spam folder.',
-        'You pay <strong>before</strong> coming. On the day, I hand you your Neotone, already paid, at the showroom (Paris 20th). I may ask you for your proof of payment.'
+        'Neotone sends you the invoice and a card payment link on working days (except Hungarian public holidays), usually within the day. It comes from szamlazz.hu: check your spam folder.',
+        'You pay as soon as you receive the link or, at the latest, on the day of your visit if it is a working day. I hand you your Neotone once it is paid, at the showroom (Paris 20th). I may ask you for your proof of payment.'
       ],
-      showroomWeekend: '<strong>Coming at the weekend?</strong> Neotone only invoices on weekdays: send your request several working days before, so that your Neotone is paid before you come. No payment is possible at the showroom.',
+      showroomWeekend: '<strong>Coming at the weekend?</strong> Neotone does not work at weekends: the payment link must have arrived, and been paid, before you come. Send your request a few working days before. There is no payment at the showroom.',
       pickupTitle: 'Pickup in Paris',
       pickupLabel: 'Preferred pickup date at the showroom',
-      pickupHint: 'Pick a date several working days from today: time for Neotone to invoice you and for you to pay.',
-      payFirstTitle: 'You pay before coming, never on the day',
+      pickupHint: 'Ideally a few working days from today: time for Neotone to send you the link and for you to pay without rushing.',
+      payFirstTitle: 'How payment works',
       payFirst: [
-        'Neotone issues the invoice and sends the payment link <strong>on weekdays only</strong> (not on Hungarian public holidays).',
-        'Send your request <strong>several working days</strong> before your visit.',
-        'The payment link comes from szamlazz.hu: <strong>check your spam folder</strong>.',
-        '<strong>No payment is possible at the showroom.</strong>'
+        'Neotone (Soundventure, Budapest) sends the invoice and the card payment link <strong>on working days</strong> (Monday to Friday, except Hungarian public holidays), usually within the day.',
+        'There is <strong>no way to pay at the showroom</strong>, and I can only hand you your Neotone once it is paid.',
+        'Paying on the day itself is possible on a working day, if the link arrives in time, but nothing guarantees it. To be sure you leave with your instrument (essential at the weekend), send your request <strong>a few working days before</strong>, and pay as soon as you receive the link or, at the latest, on the day of your visit.',
+        'The payment link comes from szamlazz.hu: <strong>check your spam folder</strong>.'
       ],
       vatNone: 'I don’t have an intra-EU VAT number',
       vatMissing: 'Enter your intra-EU VAT number, or tick “I don’t have one”.',
@@ -890,7 +890,7 @@ export const en: Dict = {
         'You fill in this form (including the date you wish to pick it up).',
         'If it is on its way, I propose its arrival date at the showroom. If it has to be built, I ask Neotone for the lead time, then propose a date.',
         'You confirm this date in one click, from my email.',
-        'Neotone sends you the invoice and the payment link (szamlazz.hu, check your spam). You pay before coming, and I hand you your Neotone, already paid.'
+        'Neotone sends you the invoice and the payment link (szamlazz.hu, check your spam). You pay as soon as you receive it or, at the latest, on the day of your visit if it is a working day, and I hand you your Neotone once it is paid.'
       ],
       onlineTitle: 'Online purchase: discount code request (−5%)',
       onlineIntro: 'A personal discount code that I request for you from Neotone: −5% on your online order, delivered to you.',

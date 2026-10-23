@@ -230,15 +230,17 @@ ${sec}
 /** Étapes « paiement avant la venue » — reprises dans tous les mails au client. */
 export function payFirstSteps(lang: string): string[] {
     return lang === 'en' ? [
-        'You pay <strong>before</strong> coming, never on the day: no payment is possible at the showroom.',
-        'Neotone (Soundventure, Budapest) issues the invoice and sends you a card payment link, <strong>on weekdays only</strong> (Monday to Friday, except Hungarian public holidays). Please send your request several working days before your visit.',
+        'Neotone (Soundventure, Budapest) issues the invoice and sends you a card payment link <strong>on working days</strong> (Monday to Friday, except Hungarian public holidays), usually within the day.',
+        'There is no way to pay at the showroom, and I can only hand you your Neotone once it is paid.',
+        'Paying on the day itself is possible on a working day, if the link arrives in time, but nothing guarantees it. To be sure you leave with your instrument (essential if you come at the weekend), pay as soon as you receive the link or, at the latest, on the day of your visit if it is a working day.',
         'The payment link comes from <strong>szamlazz.hu</strong>: check your spam folder.',
-        'On the day, I hand you a Neotone that is already paid. I may ask you for your proof of payment: keep the email from szamlazz.hu.',
+        'I may ask you for your proof of payment: keep the email from szamlazz.hu.',
     ] : [
-        'Tu paies <strong>avant</strong> ta venue, jamais le jour même : aucun paiement n’est possible au showroom.',
-        'Neotone (Soundventure, Budapest) établit la facture et t’envoie un lien de paiement par carte, <strong>en semaine seulement</strong> (du lundi au vendredi, hors jours fériés hongrois). Fais ta demande plusieurs jours ouvrés avant ta venue.',
+        'Neotone (Soundventure, Budapest) établit la facture et t’envoie un lien de paiement par carte, <strong>les jours ouvrés</strong> (du lundi au vendredi, hors jours fériés hongrois), en général dans la journée.',
+        'Il n’y a aucun moyen de payer au showroom, et je ne peux te remettre ton Neotone qu’une fois payé.',
+        'Payer le jour même est possible un jour ouvré, si le lien arrive à temps, mais rien ne le garantit. Pour être sûr de repartir avec ton instrument (indispensable si tu viens un week-end), paie dès réception du lien ou, au plus tard, le jour de ta venue si c’est un jour ouvré.',
         'Le lien de paiement vient de <strong>szamlazz.hu</strong> : pense à vérifier tes spams.',
-        'Le jour J, je te remets un Neotone déjà payé. Je pourrai te demander ta preuve de paiement : garde le mail de szamlazz.hu.',
+        'Je pourrai te demander ta preuve de paiement : garde le mail de szamlazz.hu.',
     ];
 }
 export const stepsHtml = (steps: string[]) =>
@@ -335,8 +337,8 @@ export function neotoneInvoiceMail(lead: PurchaseLead, serial: string) {
         'The customer will pick up the instrument at the Paris Hub once it is paid.',
     ];
     const forCustomer = lead.lang === 'en'
-        ? 'For the customer (in copy): the invoice and the card payment link come from szamlazz.hu, on weekdays — please check your spam folder. David may ask you for your proof of payment: please keep the szamlazz.hu email.'
-        : 'Pour le client (en copie) : la facture et le lien de paiement par carte viennent de szamlazz.hu, en semaine — pense à vérifier tes spams. David pourra te demander ta preuve de paiement : garde le mail de szamlazz.hu.';
+        ? 'For the customer (in copy): the invoice and the card payment link come from szamlazz.hu, on working days — please check your spam folder. David may ask you for your proof of payment: please keep the szamlazz.hu email.'
+        : 'Pour le client (en copie) : la facture et le lien de paiement par carte viennent de szamlazz.hu, les jours ouvrés — pense à vérifier tes spams. David pourra te demander ta preuve de paiement : garde le mail de szamlazz.hu.';
     const sign = ['Thank you!', 'Best regards,', 'David Lesage', 'Paris Hub — Neotone showroom', 'contact@lesagedavid.fr · lesagedavid.fr'];
     const text = `${intro.join('\n\n')}\n\n${lines.filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n')}\n\n${sign.join('\n')}\n\n—\n${forCustomer}\n`;
     const html = `<!doctype html><html lang="en"><head><meta charset="utf-8" /></head>
