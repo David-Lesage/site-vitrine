@@ -1,0 +1,125 @@
+---
+// Vente EN DIRECT au showroom du micro Hisong AirStudio S1 (25/10/2026).
+// Bouton + modale, sur /micro-hisong (FR/EN/ES). → /api/hisong-direct →
+// Edge Function `hisong-direct` → affiliate_sales (partner 'hisong',
+// purchase_channel 'showroom'). L'inventaire est décrémenté par l'APP, jamais ici.
+// L'achat en ligne, lui, reste sur hisong.io avec le code.
+import TermsCheckbox from '@/components/TermsCheckbox.astro'
+import NewsCheckbox from '@/components/NewsCheckbox.astro'
+import { getDict } from '@/i18n/dict'
+import { hisongPrices } from '@/i18n/hisong'
+import { numberLocale } from '@/i18n/utils'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const bk = getDict(lang).booking
+const eur = (n: number) => new Intl.NumberFormat(numberLocale(lang), { style: 'currency', currency: 'EUR' }).format(n)
+const COPY = {
+  fr: { open: '🤝 Je suis au showroom : achat en direct', title: 'Achat en direct au showroom', intro: 'Tu es au showroom avec moi : je te remets le micro en main propre. Laisse tes coordonnées pour la facture et la garantie.', pack: 'Modèle', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', qty: 'Quantité', submit: 'Valider l’achat', sending: 'Envoi…', error: 'L’envoi a échoué. Réessaie, ou dis-le-moi directement.', thanksTitle: 'Merci, c’est enregistré ✨', thanksText: 'Tu vas recevoir un récapitulatif par email. Ton micro t’est remis en main propre.', total: 'Total' },
+  en: { open: '🤝 I’m at the showroom: buy in person', title: 'In-person purchase at the showroom', intro: 'You’re at the showroom with me: I hand you the mic in person. Leave your details for the invoice and warranty.', pack: 'Model', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', qty: 'Quantity', submit: 'Confirm purchase', sending: 'Sending…', error: 'Sending failed. Try again, or tell me directly.', thanksTitle: 'Thanks, it’s recorded ✨', thanksText: 'You’ll receive a summary by email. Your mic is handed to you in person.', total: 'Total' },
+  es: { open: '🤝 Estoy en el showroom: compra directa', title: 'Compra directa en el showroom', intro: 'Estás conmigo en el showroom: te entrego el micrófono en mano. Deja tus datos para la factura y la garantía.', pack: 'Modelo', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', qty: 'Cantidad', submit: 'Confirmar la compra', sending: 'Enviando…', error: 'El envío ha fallado. Inténtalo de nuevo o dímelo directamente.', thanksTitle: 'Gracias, está registrado ✨', thanksText: 'Recibirás un resumen por correo. Tu micrófono se te entrega en mano.', total: 'Total' },
+}
+const c = COPY[(lang in COPY ? lang : 'en') as keyof typeof COPY]
+const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none'
+---
+
+<button type="button" data-open-hisong-direct class="inline-flex min-h-11 items-center rounded-full border border-copper/40 px-5 py-2.5 text-left text-sm font-700 text-copper transition-colors hover:bg-copper hover:text-cream">{c.open}</button>
+
+<div id="hisong-direct-modal" class="fixed inset-0 z-[100] hidden items-start justify-center overflow-y-auto bg-ink/80 p-4 py-10 backdrop-blur-sm" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="hd-title">
+  <div class="relative w-full max-w-lg rounded-card bg-cream p-6 shadow-2xl md:p-8">
+    <button class="hd-close absolute right-3 top-3 grid h-11 w-11 place-items-center rounded-full text-2xl leading-none text-ink-soft hover:bg-ink/5" type="button" aria-label={bk.close}>×</button>
+    <div data-hd-step="form">
+      <h2 id="hd-title" class="pr-10 font-display text-2xl font-700">{c.title}</h2>
+      <p class="mt-2 text-sm text-ink-soft/85">{c.intro}</p>
+      <form id="hisong-direct-form" class="mt-5 grid gap-3" novalidate>
+        <fieldset class="grid gap-2">
+          <legend class="mb-1 text-sm font-600">{c.pack}</legend>
+          <label class="flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-xl border border-ink/15 bg-cream-deep/30 p-3 has-[:checked]:border-copper has-[:checked]:bg-copper/10">
+            <span class="flex items-center gap-3"><input type="radio" name="pack" value="s1" data-price={hisongPrices.s1} checked class="h-5 w-5 shrink-0 accent-rust" /><span class="text-sm font-700">{c.s1}</span></span>
+            <span class="text-sm font-700">{eur(hisongPrices.s1)}</span>
+          </label>
+          <label class="flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-xl border border-ink/15 bg-cream-deep/30 p-3 has-[:checked]:border-copper has-[:checked]:bg-copper/10">
+            <span class="flex items-center gap-3"><input type="radio" name="pack" value="s1RxPlus" data-price={hisongPrices.s1RxPlus} class="h-5 w-5 shrink-0 accent-rust" /><span class="text-sm font-700">{c.rx}</span></span>
+            <span class="text-sm font-700">{eur(hisongPrices.s1RxPlus)}</span>
+          </label>
+        </fieldset>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="block"><span class="text-sm font-600">{bk.first}</span><input type="text" name="firstName" autocomplete="given-name" required class={input} /></label>
+          <label class="block"><span class="text-sm font-600">{bk.last}</span><input type="text" name="lastName" autocomplete="family-name" required class={input} /></label>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="block"><span class="text-sm font-600">{bk.email}</span><input type="email" name="email" autocomplete="email" required class={input} /></label>
+          <label class="block"><span class="text-sm font-600">{bk.phonePlain}</span><input type="tel" name="phone" autocomplete="tel" class={input} /></label>
+        </div>
+        <label class="block"><span class="text-sm font-600">{c.qty}</span><input type="number" name="quantity" min="1" max="10" value="1" required class={input} /></label>
+        <label class="block"><span class="text-sm font-600">{bk.message}</span><textarea name="message" rows="2" class={input}></textarea></label>
+        <p class="rounded-lg bg-gold/10 px-3 py-2 text-sm font-700">{c.total} : <span data-hd-total>{eur(hisongPrices.s1)}</span></p>
+        <TermsCheckbox lang={lang} />
+        <NewsCheckbox lang={lang} />
+        <button type="submit" data-sending={c.sending} class="mt-1 min-h-11 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{c.submit}</button>
+        <p data-hd-error class="hidden text-sm font-600 text-rust">{c.error}</p>
+      </form>
+    </div>
+    <div data-hd-step="thanks" class="hidden py-6 text-center">
+      <p class="font-display text-xl font-700 text-ink">{c.thanksTitle}</p>
+      <p class="mt-3 text-ink-soft/85">{c.thanksText}</p>
+      <button type="button" class="hd-close mt-6 min-h-11 rounded-full bg-rust px-6 py-3 font-700 text-cream hover:bg-copper">{bk.successClose}</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('hisong-direct-modal')
+  const form = document.getElementById('hisong-direct-form') as HTMLFormElement | null
+  let last: HTMLElement | null = null
+  const fmt = new Intl.NumberFormat(document.documentElement.lang || 'fr', { style: 'currency', currency: 'EUR' })
+  const step = (s: string) => modal?.querySelectorAll('[data-hd-step]').forEach((el) => el.classList.toggle('hidden', el.getAttribute('data-hd-step') !== s))
+  function total() {
+    const p = Number((form?.querySelector('input[name="pack"]:checked') as HTMLInputElement | null)?.dataset.price || 0)
+    const q = Math.max(1, Math.min(10, Number((form?.querySelector('input[name="quantity"]') as HTMLInputElement | null)?.value) || 1))
+    const el = modal?.querySelector('[data-hd-total]'); if (el) el.textContent = fmt.format(Math.round(p * q * 100) / 100)
+  }
+  function open() {
+    if (!modal) return
+    last = document.activeElement as HTMLElement
+    form?.reset(); total(); step('form')
+    modal.classList.remove('hidden'); modal.classList.add('flex'); modal.setAttribute('aria-hidden', 'false')
+    document.body.style.overflow = 'hidden'
+    ;(form?.querySelector('input[name="firstName"]') as HTMLInputElement | null)?.focus()
+  }
+  function close() {
+    if (!modal) return
+    modal.classList.add('hidden'); modal.classList.remove('flex'); modal.setAttribute('aria-hidden', 'true')
+    document.body.style.overflow = ''
+    last?.focus?.()
+  }
+  document.querySelectorAll('[data-open-hisong-direct]').forEach((b) => b.addEventListener('click', open))
+  modal?.querySelectorAll('.hd-close').forEach((b) => b.addEventListener('click', close))
+  modal?.addEventListener('click', (e) => { if (e.target === modal) close() })
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) close() })
+  form?.addEventListener('input', total)
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    if (!form.reportValidity()) return
+    const d = new FormData(form)
+    const get = (k: string) => String(d.get(k) || '').trim()
+    const err = modal?.querySelector('[data-hd-error]'); err?.classList.add('hidden')
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement
+    const label = btn.textContent
+    btn.disabled = true; btn.textContent = btn.dataset.sending || label
+    try {
+      const r = await fetch('/api/hisong-direct', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: get('firstName'), lastName: get('lastName'), email: get('email'), phone: get('phone'),
+          pack: get('pack'), quantity: Number(get('quantity')) || 1, message: get('message'),
+          termsAccepted: d.get('termsAccepted') !== null, newsOptIn: d.get('newsOptIn') !== null,
+          lang: document.documentElement.lang || 'fr',
+        }),
+      })
+      if (!r.ok) throw new Error('failed')
+      step('thanks')
+    } catch { err?.classList.remove('hidden') } finally { btn.disabled = false; btn.textContent = label }
+  })
+</script>

@@ -42,6 +42,14 @@ const MULING_EMAIL = '85846599@qq.com'
 // exigerait une route qui exposerait la commande à partir du seul identifiant
 // — exclu). On rappelle donc le prix unitaire, déjà public sur la page, et on
 // renvoie à l'email de commande pour le montant exact.
+// VENTE EN DIRECT (25/10/2026) — textes du choix « livraison / showroom ».
+// Locaux au composant (FR/EN/ES) : ils ne servent qu'ici.
+const saleCopy = {
+  fr: { legend: 'Comment récupères-tu ton micro ?', online: '🚚 Livraison (achat en ligne)', onlineHint: 'Muling t’expédie le micro à ton adresse.', showroom: '🤝 Remise en main propre au showroom (vente en direct)', showroomHint: 'Je te remets le micro sur place : pas d’adresse de livraison. Même prix, même virement à Muling.', thanks: 'Ta preuve de virement est bien reçue et transmise à Muling. Tu vas recevoir un email de confirmation à garder comme preuve — ton micro t’est remis en main propre, rien ne sera expédié.' },
+  en: { legend: 'How do you get your mic?', online: '🚚 Delivery (online purchase)', onlineHint: 'Muling ships the mic to your address.', showroom: '🤝 Hand-over at the showroom (in-person sale)', showroomHint: 'I hand you the mic on site: no shipping address needed. Same price, same transfer to Muling.', thanks: 'Your proof of payment has been received and sent to Muling. You’ll get a confirmation email to keep as proof — your mic is handed to you in person, nothing will be shipped.' },
+  es: { legend: '¿Cómo recibes tu micrófono?', online: '🚚 Envío (compra en línea)', onlineHint: 'Muling te envía el micrófono a tu dirección.', showroom: '🤝 Entrega en mano en el showroom (venta directa)', showroomHint: 'Te entrego el micrófono allí mismo: sin dirección de envío. Mismo precio, misma transferencia a Muling.', thanks: 'Hemos recibido tu comprobante de pago y lo hemos enviado a Muling. Recibirás un correo de confirmación para guardar como comprobante: tu micrófono se te entrega en mano, no se enviará nada.' },
+}
+const sc = saleCopy[(lang in saleCopy ? lang : 'en') as keyof typeof saleCopy]
 const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(mulingDiscountedPriceEur))
 ---
 
@@ -56,6 +64,18 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
       <p class="mt-2 inline-block rounded-lg bg-gold/10 px-3 py-2 text-sm font-700 text-ink">{priceLine}</p>
 
       <form id="muling-order-form" class="mt-5 grid gap-3" novalidate>
+        {/* Mode de vente (25/10/2026) → affiliate_sales.purchase_channel. */}
+        <fieldset class="grid gap-2">
+          <legend class="mb-1 text-sm font-600">{sc.legend}</legend>
+          <label class="flex min-h-11 cursor-pointer items-start gap-3 rounded-xl border border-ink/15 bg-cream-deep/30 p-3 has-[:checked]:border-copper has-[:checked]:bg-copper/10">
+            <input type="radio" name="saleMode" value="online" checked class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+            <span class="min-w-0"><span class="block text-sm font-700">{sc.online}</span><span class="block text-xs text-ink-soft/75">{sc.onlineHint}</span></span>
+          </label>
+          <label class="flex min-h-11 cursor-pointer items-start gap-3 rounded-xl border border-ink/15 bg-cream-deep/30 p-3 has-[:checked]:border-copper has-[:checked]:bg-copper/10">
+            <input type="radio" name="saleMode" value="showroom" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+            <span class="min-w-0"><span class="block text-sm font-700">{sc.showroom}</span><span class="block text-xs text-ink-soft/75">{sc.showroomHint}</span></span>
+          </label>
+        </fieldset>
         <div class="grid gap-3 sm:grid-cols-2">
           <label class="block"><span class="text-sm font-600">{bk.first}</span>
             <input type="text" name="firstName" autocomplete="given-name" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
@@ -70,6 +90,7 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
         </div>
         <label class="block"><span class="text-sm font-600">{mu.mulingQuantity}</span>
           <input type="number" name="quantity" min="1" max="20" value="1" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+        <div data-mo-shipping class="grid gap-3">
         <label class="block"><span class="text-sm font-600">{mu.mulingCountry}</span>
           <input type="text" name="country" autocomplete="country-name" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
         <label class="block"><span class="text-sm font-600">{mu.mulingAddress}</span>
@@ -83,6 +104,7 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
         <label class="block"><span class="text-sm font-600">{mu.mulingDeliveryNote}</span>
           <span class="mt-0.5 block text-xs text-ink-soft/70">{mu.mulingDeliveryNoteHint}</span>
           <textarea name="deliveryNote" rows="2" placeholder={mu.mulingDeliveryNotePlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea></label>
+        </div>
         <label class="block"><span class="text-sm font-600">{bk.message}</span>
           <textarea name="message" rows="2" placeholder={bk.messagePlaceholder} class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none"></textarea></label>
 
@@ -162,7 +184,8 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
     <!-- Étape 3 : merci -->
     <div data-mo-step="thanks" class="hidden py-6 text-center">
       <p class="font-display text-xl font-700 text-ink">{mu.mulingThankYouTitle}</p>
-      <p class="mt-3 text-ink-soft/85">{mu.mulingThankYouText}</p>
+      <p data-mo-thanks-online class="mt-3 text-ink-soft/85">{mu.mulingThankYouText}</p>
+      <p data-mo-thanks-showroom class="mt-3 hidden text-ink-soft/85">{sc.thanks}</p>
       <button type="button" class="mo-close mt-6 rounded-full bg-rust px-6 py-3 font-700 text-cream hover:bg-copper">{bk.successClose}</button>
     </div>
   </div>
@@ -199,6 +222,20 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
     modal?.querySelector('[data-mo-amount-row]')?.classList.toggle('hidden', on)
   }
 
+  // Vente en direct : masque l'adresse et lève ses `required` (un champ masqué
+  // obligatoire bloquerait reportValidity()).
+  let saleMode: 'online' | 'showroom' = 'online'
+  function applySaleMode() {
+    const v = (orderForm?.querySelector('input[name="saleMode"]:checked') as HTMLInputElement | null)?.value
+    saleMode = v === 'showroom' ? 'showroom' : 'online'
+    const box = modal?.querySelector('[data-mo-shipping]')
+    box?.classList.toggle('hidden', saleMode === 'showroom')
+    box?.querySelectorAll<HTMLInputElement>('input[name="country"],input[name="address"],input[name="city"],input[name="postalCode"]').forEach((i) => { i.required = saleMode === 'online' })
+    modal?.querySelector('[data-mo-thanks-online]')?.classList.toggle('hidden', saleMode === 'showroom')
+    modal?.querySelector('[data-mo-thanks-showroom]')?.classList.toggle('hidden', saleMode !== 'showroom')
+  }
+  orderForm?.querySelectorAll('input[name="saleMode"]').forEach((r) => r.addEventListener('change', applySaleMode))
+
   function show() {
     if (!modal) return
     lastFocused = document.activeElement as HTMLElement
@@ -214,6 +251,7 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
     currentSaleId = null
     currentEmail = ''
     setResumeMode(false)
+    applySaleMode()
     showStep('order')
     show()
   }
@@ -333,9 +371,10 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           firstName: get('firstName'), lastName: get('lastName'), email: get('email'), phone: get('phone'),
-          quantity: Number(get('quantity')) || 1, country: get('country'), address: get('address'),
-          city: get('city'), postalCode: get('postalCode'), message: get('message'),
-          deliveryNote: get('deliveryNote'), consent: true,
+          quantity: Number(get('quantity')) || 1,
+          ...(saleMode === 'online' ? { country: get('country'), address: get('address'), city: get('city'), postalCode: get('postalCode') } : {}), message: get('message'),
+          deliveryNote: saleMode === 'online' ? get('deliveryNote') : '', consent: true,
+          saleMode,
           // Conditions générales du site — distinctes du consentement de
           // transmission à Muling ci-dessus (`consent`). Case obligatoire,
           // bloquée en amont par `reportValidity()`.

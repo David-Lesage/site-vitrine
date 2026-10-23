@@ -44,6 +44,9 @@ export default async function handler(req, res) {
         // ne le transmettait pas. `affiliate_sales.delivery_note` était donc
         // toujours vide. Exactement le piège documenté dans subscribe.js.
         deliveryNote: body.deliveryNote,
+        // 25/10/2026 : mode de vente ('online' | 'showroom'). Ce relais filtre par
+        // liste explicite : sans cette ligne, toute vente directe serait « online ».
+        saleMode: body.saleMode === 'showroom' ? 'showroom' : 'online',
         consent: true,
         // Conditions générales du site — DISTINCT de `consent` ci-dessus, qui est
         // l'accord de transmission des coordonnées à Muling (tiers, Chine).
