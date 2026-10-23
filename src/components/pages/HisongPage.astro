@@ -14,6 +14,7 @@ import Lightbox from '@/components/Lightbox.astro'
 import YouTube from '@/components/YouTube.astro'
 import { Icon } from 'astro-icon/components'
 import { getDict } from '@/i18n/dict'
+import HisongDirectForm from '@/components/HisongDirectForm.astro'
 import { localizePath, numberLocale } from '@/i18n/utils'
 import { breadcrumbLdJson, videoLdJson } from '@/lib/ldJson'
 import { site } from '@/data/site'
@@ -281,6 +282,8 @@ const ld = [
           <Button href={L('/showroom')} variant="ghost" class={focusRing}>{h.ctaShowroom}</Button>
         </div>
         <p class="mt-4 text-xs text-ink-soft/70">{h.buyNote}</p>
+        {/* Vente en direct au showroom (25/10/2026) → affiliate_sales.purchase_channel='showroom'. */}
+        <div class="mt-5 border-t border-ink/10 pt-5"><HisongDirectForm lang={lang} /></div>
       </div>
     </div>
   </Section>

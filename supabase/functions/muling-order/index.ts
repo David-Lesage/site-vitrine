@@ -38,6 +38,14 @@
 //      `/en/micro-muling?commande=<saleId>` (EN), qui rouvre cet écran à tout
 //      moment, sans session. Le lien seul ne déclenche rien : l'email de la
 //      commande est redemandé et vérifié par `muling-claim-payment`.
+// v5 (25/10/2026) : VENTE EN DIRECT AU SHOWROOM. Champ `saleMode`
+//      ('online' | 'showroom') → colonne EXISTANTE `affiliate_sales.purchase_channel`
+//      (CHECK online|showroom, déjà en base). En `showroom` : remise en main
+//      propre depuis le stock consigné, donc AUCUNE adresse de livraison exigée
+//      ni enregistrée ; même prix, même virement SEPA à Muling. Muling reçoit
+//      toujours l'email, avec la mention « ne pas expédier ». C'est l'app qui
+//      crée le mouvement d'inventaire `sale_direct` à partir de purchase_channel :
+//      cette fonction ne touche JAMAIS à stock_movements.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -102,7 +110,7 @@ ${inner}
 const row = (k: string, v: string) =>
     `<tr><td style="padding:4px 0;color:#6b7280;font-size:13px;width:130px;vertical-align:top;">${k}</td><td style="padding:4px 0;color:#111827;font-size:14px;">${v}</td></tr>`;
 
-function clientEmailHtml(lang: string, firstName: string, ref: string, total: number, quantity: number, saleId: string): string {
+function clientEmailHtml(lang: string, firstName: string, ref: string, total: number, quantity: number, saleId: string, isShowroom = false): string {
     const en = lang !== 'fr';
     const hi = firstName ? `${en ? 'Hi' : 'Bonjour'} ${esc(firstName)},` : (en ? 'Hi,' : 'Bonjour,');
     const t = en ? {
@@ -127,6 +135,12 @@ function clientEmailHtml(lang: string, firstName: string, ref: string, total: nu
         p4: 'On te redemandera l’adresse email de cette commande — c’est elle qui l’identifie.',
         sign: 'Merci,<br />David Lesage',
     };
+    if (isShowroom) {
+        // v5 : remise en main propre — rien n'est expédié par Muling.
+        t.p1 = en
+            ? 'Thanks for your purchase at the showroom — I’m handing you the mic in person, nothing will be shipped. Here are the payment details, for your records.'
+            : 'Merci pour ton achat au showroom — je te remets le micro en main propre, rien ne sera expédié. Voici les informations de paiement, pour archive.';
+    }
     const link = claimUrl(lang, saleId);
     return shell(`
         <tr><td style="padding:28px 28px 4px;">
@@ -204,6 +218,10 @@ Deno.serve(async (req) => {
         // cette personne pour autre chose que sa commande.
         const newsOptIn = body.newsOptIn === true;
 
+        // v5 : mode de vente. Toute valeur inconnue = 'online' (comportement d'avant).
+        const purchaseChannel = body.saleMode === 'showroom' ? 'showroom' : 'online';
+        const isShowroom = purchaseChannel === 'showroom';
+
         const rawQty = Number(body.quantity);
         const quantity = Number.isFinite(rawQty) && rawQty > 0 ? Math.min(Math.round(rawQty), 20) : 1;
 
@@ -214,7 +232,7 @@ Deno.serve(async (req) => {
         // facultatif. Au moins 6 chiffres — pas de contrôle de format plus fin :
         // les numéros viennent du monde entier.
         if ((phone ?? '').replace(/\D/g, '').length < 6) return json({ error: 'missing_phone' }, 400);
-        if (!country || !address || !city || !postalCode) return json({ error: 'missing_address' }, 400);
+        if (!isShowroom && (!country || !address || !city || !postalCode)) return json({ error: 'missing_address' }, 400);
 
         const admin = createClient(
             Deno.env.get('SUPABASE_URL') ?? '',
@@ -231,8 +249,10 @@ Deno.serve(async (req) => {
             source: 'muling-order',
             customer_name: `${firstName} ${lastName}`.trim() || null,
             email, phone,
-            shipping_country: country, shipping_address: address,
-            shipping_city: city, shipping_postal_code: postalCode,
+            // En showroom, rien à livrer : aucune adresse enregistrée.
+            shipping_country: isShowroom ? null : country, shipping_address: isShowroom ? null : address,
+            shipping_city: isShowroom ? null : city, shipping_postal_code: isShowroom ? null : postalCode,
+            purchase_channel: purchaseChannel,
             quantity,
             price_original_eur: priceOriginal,
             price_discounted_eur: priceDiscounted,
@@ -247,7 +267,7 @@ Deno.serve(async (req) => {
             news_opt_in: newsOptIn,
             news_opt_in_at: newsOptIn ? new Date().toISOString() : null,
             admin_note: message,
-            delivery_note: deliveryNote,
+            delivery_note: isShowroom ? null : deliveryNote,
         }).select('id').single();
         if (error) throw error;
         const saleId = ins!.id as string;
@@ -278,19 +298,21 @@ Deno.serve(async (req) => {
 
             emailSent = await send(email, undefined, ADMIN_EMAIL,
                 lang === 'fr' ? 'David Lesage — ta commande Muling' : 'David Lesage — your Muling order',
-                clientEmailHtml(lang, firstName, ref, priceDiscounted, quantity, saleId));
+                clientEmailHtml(lang, firstName, ref, priceDiscounted, quantity, saleId, isShowroom));
 
             // Un seul email à Muling, David en copie — toutes les infos de la
             // commande + lien de connexion au dashboard (David, 08/08/2026).
-            await send(MULING_EMAIL, ADMIN_EMAIL, ADMIN_EMAIL, `New order — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(), mulingHtml({
+            await send(MULING_EMAIL, ADMIN_EMAIL, ADMIN_EMAIL, `${isShowroom ? 'Showroom sale' : 'New order'} — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(), mulingHtml({
                 Name: `${firstName} ${lastName}`.trim() || null, Email: email, Phone: phone,
-                Quantity: quantity, Country: country, Address: `${address}, ${postalCode} ${city}`,
-                'Delivery note': deliveryNote,
+                Quantity: quantity,
+                'Sale mode': isShowroom ? 'SHOWROOM — handed over in person by David from consigned stock. DO NOT SHIP.' : 'Online — please ship',
+                Country: isShowroom ? null : country, Address: isShowroom ? null : `${address}, ${postalCode} ${city}`,
+                'Delivery note': isShowroom ? null : deliveryNote,
                 'Amount (EUR)': priceDiscounted, Reference: ref,
             }));
         }
 
-        return json({ ok: true, saleId, ref, emailSent, amount: priceDiscounted, currency: 'EUR' });
+        return json({ ok: true, saleId, ref, emailSent, saleMode: purchaseChannel, amount: priceDiscounted, currency: 'EUR' });
     } catch (err) {
         console.error('muling-order error:', err);
         return json({ error: err instanceof Error ? err.message : 'server_error' }, 500);
