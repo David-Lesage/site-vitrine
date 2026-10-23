@@ -21,6 +21,7 @@ export const BLOG_CATEGORIES = [
   'partitions',
   'chant',
   'neotone',
+  'accessoires',
   'communaute',
 ] as const
 
@@ -34,6 +35,7 @@ const LABELS: Record<BlogCategory, Record<Lang, string>> = {
   partitions: { fr: 'Partitions & composition', en: 'Scores & composing', es: 'Partituras y composición' },
   chant: { fr: 'Chanter & accompagner', en: 'Singing & accompaniment', es: 'Cantar y acompañar' },
   neotone: { fr: 'Neotone & matériel', en: 'Neotone & gear', es: 'Neotone y equipo' },
+  accessoires: { fr: 'Accessoires et micros handpan', en: 'Handpan accessories & microphones', es: 'Accesorios y micrófonos de handpan' },
   communaute: { fr: 'Communauté & bibliothèque', en: 'Community & library', es: 'Comunidad y biblioteca' },
 }
 
