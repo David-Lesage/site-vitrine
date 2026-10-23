@@ -13,13 +13,13 @@ permalink: "la-carte-des-joueurs"
 draft: false
 ---
 
-> **Article réécrit le 23 octobre 2026.** Depuis le 22 octobre, **chaque joueuse et chaque joueur de l'app a son étoile sur la carte**. Cet article décrit la carte telle qu'elle est aujourd'hui.
+> **Article réécrit le 23 octobre 2026.** Depuis le 22 octobre, **chaque joueuse et chaque joueur de l'app a son étoile sur la carte**, dès qu'il accepte les nouvelles conditions d'utilisation. Cet article décrit la carte telle qu'elle est aujourd'hui.
 
 Le handpan est un petit monde très éparpillé. Des gens qui jouent à trois rues les uns des autres ne le savent pas. Quelqu'un cherche un prof et n'a aucun moyen de savoir qu'il y en a un dans sa ville. Il n'existait simplement aucun endroit où se voir.
 
-L'application en a un : **la constellation des joueurs**, une carte du monde où chaque joueur est une étoile. En tête de l'écran « Mon profil public », l'app dit à quoi elle sert, avec les mots que j'ai choisis :
+L'application en a un : **la constellation des joueurs**, une carte du monde où chaque joueur est une étoile. En tête de l'écran « Mon profil public », l'app dit à quoi elle sert :
 
-> « Que celles et ceux qui utilisent l'app puissent savoir qui d'autre l'utilise. Trouver un prof près de chez toi. Croiser quelqu'un qui joue à trois rues et ne le savait pas. »
+> « Que celles et ceux qui utilisent l’app puissent savoir qui d’autre l’utilise. Trouver un prof près de chez toi. Croiser quelqu'un qui joue à trois rues et ne le savait pas. »
 
 La carte ne fait aucune différence entre les joueurs : **acoustique ou électronique**, c'est le même ciel, la même étoile, les mêmes réglages.
 
@@ -27,7 +27,7 @@ La carte ne fait aucune différence entre les joueurs : **acoustique ou électro
 
 En acceptant les <abbr title="Conditions générales d'utilisation : le contrat que tu acceptes en créant ton compte.">conditions d'utilisation</abbr>, tu apparais sur la carte. Voici exactement ce qui apparaît :
 
-> **Ton prénom, l'initiale de ton nom, ton pays.** « Marie L. · France ». Jamais ton adresse, ta ville ni ton e-mail.
+> **Ton prénom, l'initiale de ton nom, ton pays.** « Marie L. · France ». Jamais ton adresse, ta ville ni ton e-mail. Et seuls les comptes connectés voient la carte.
 
 L'étoile se pose **au centre de ton pays**. Ce pays, tu le choisis dans une liste à l'accueil. S'il manque, « Mon profil public » te le demande une seule fois. Sans pays, ton étoile n'est pas posée.
 
@@ -45,7 +45,7 @@ Et une fois allumée, ce n'est pas un paquet. C'est **champ par champ**. Tu peux
 
 Ce principe vaut **à chaque étage.** Tes instruments en sont le meilleur exemple. Allumer ta fiche ne publie pas la liste de tes handpans : **« Partager publiquement mes instruments » est une case à part**, décochée au départ. Cochée, elle montre seulement la gamme, la famille (acoustique ou électronique) et le modèle. Jamais tes réglages, tes morceaux ni tes enregistrements.
 
-Si tu donnes des cours, la case « 🎓 Je donne des cours » donne à ton étoile un **halo doré** et te range sous « Profs ». Six questions facultatives aident un élève à se décider : en ligne ou en présentiel, langues, tarif, durée d'un cours, grands débutants, rayon de déplacement. Ce volet est tout neuf. « 🔨 Je fabrique des instruments » donne un **halo cuivré** et te range sous « Fabricants ».
+Si tu donnes des cours, la case « 🎓 Je donne des cours » donne à ton étoile un **halo doré** et te range sous « Profs ». Six questions facultatives aident un élève à se décider : en ligne ou en présentiel, langues, tarif, durée d'un cours, grands débutants, rayon de déplacement. Ce volet est arrivé fin septembre. « 🔨 Je fabrique des instruments » donne un **halo cuivré** et te range sous « Fabricants ».
 
 ### Ce que tu vois est ce que les autres verront
 
@@ -57,6 +57,11 @@ Si tu donnes des cours, la case « 🎓 Je donne des cours » donne à ton étoi
 
 Éteindre ta fiche détaillée et enregistrer suffit : **elle disparaît de la carte**, et tu redeviens une étoile simple (prénom, initiale, pays). Le bouton « 🗑 Tout retirer » efface pour de bon les informations de la fiche ; ton compte, tes morceaux et tes handpans ne sont pas touchés.
 
+<!-- C1 EN ATTENTE DE DAVID : phrase proposée par la relecture, à ajouter ici après sa décision (« je la retire » l'engage personnellement).
+FR : Ton étoile simple, elle, ne s'éteint pas d'une case : elle vient avec les conditions d'utilisation. Si tu ne veux pas y être, écris-moi à contact@lesagedavid.fr et je la retire de la carte. Supprimer ton compte la retire aussi.
+EN : Your simple star, though, can't be switched off with a box: it comes with the terms of use. If you'd rather not be on the map, write to me at contact@lesagedavid.fr and I'll remove it. Deleting your account removes it too.
+-->
+
 ## L'application ne sait pas où tu es
 
 **Aucune <abbr title="Le navigateur qui demande au téléphone ou à l'ordinateur sa position exacte, par GPS ou par le réseau.">géolocalisation</abbr>. Aucune adresse.** L'application n'appelle jamais le navigateur pour lui demander où tu te trouves, et ne te demande jamais une adresse : elle n'a pas de champ pour ça.
@@ -64,6 +69,8 @@ Si tu donnes des cours, la case « 🎓 Je donne des cours » donne à ton étoi
 Alors comment une étoile trouve-t-elle sa place ? Ton étoile simple se pose **au centre de ton pays**. Si tu allumes ta fiche et écris une ville, sa place est **déduite du nom de cette ville**, cherché dans une liste de villes embarquée avec l'application. Ce que l'application connaît de ta position, c'est un mot que tu as choisi.
 
 Il n'existe **pas de case pour une latitude, pas de case pour une longitude** : elles n'ont jamais été créées. Les coordonnées d'une étoile sont calculées au moment de l'affichage. **Jamais plus précis que ta ville**, donc, et tu peux rester plus large : une région suffit, et l'app te le propose elle-même.
+
+**Même quelqu'un qui voudrait être plus précis ne le pourrait pas** : il n'y a nulle part où mettre l'information.
 
 ## L'onglet 🎵 Musiciens : combien, jamais qui
 
@@ -73,11 +80,11 @@ Sous « Musiciens », un **cercle violet par pays** dit combien de musiciens uti
 
 <!-- CAPTURE À VENIR (FR) : onglet « 🎵 Musiciens », Nuit étoilée, 1440×900 + 2880×1800, un cercle violet cliqué (fiche « {n} musiciens comptés ici »). Libellés après 61f0bb91 : plus aucune mention de « se retirer du compteur » ni de « dire oui ». Données du banc. Fichier : /images/blog-carte-joueurs-musiciens-2026-10.webp -->
 
-## Trouver un prof, un joueur, un fabricant près de chez toi
+## Trouver un prof de handpan, un joueur, un fabricant près de chez toi
 
 C'est à ça que sert la carte. Une recherche (« Chercher un pays ou une ville… »), un zoom, et un affichage **🗺 Carte** ou **☰ Liste** triable par nom ou par pays. L'onglet « Profs » montre les halos dorés ; « Fabricants », les halos cuivrés.
 
-Par-dessus, la pastille **« 🌐 L'annuaire des fabricants »** allume un calque à part : **541 ateliers de handpan recensés dans 53 pays**, un cercle bleu par pays, dont la taille dit combien. Ce ne sont pas des étoiles : personne ne s'est inscrit là. L'app le dit : c'est « la carte de l'artisanat, pas celle des personnes ». Un clic sur un cercle donne la liste des ateliers du pays et leur site.
+Par-dessus, la pastille **« 🌐 L'annuaire des fabricants »** allume un calque à part : **541 fabricants recensés, dans 53 pays**, un cercle bleu par pays, dont la taille dit combien. Ce ne sont pas des étoiles : personne ne s'est inscrit là. L'app le dit : c'est « la carte de l’artisanat, pas celle des personnes ». Un clic sur un cercle donne la liste des ateliers du pays et leur site.
 
 <!-- CAPTURE À VENIR (FR) : carte « Tous », Nuit étoilée, 1440×900 + 2880×1800, annuaire des fabricants allumé, bandeau « Vous êtes {n} à briller sur la carte. », sous-titre « Chaque étoile est une joueuse ou un joueur de l'app… ». Comptes fictifs du banc (prénom + initiale), dit dans la légende. Sert aussi de couverture. Fichier : /images/blog-carte-joueurs-carte-2026-10.webp -->
 
@@ -87,11 +94,11 @@ Toute carte communautaire commence presque vide. J'ai voulu qu'elle soit **belle
 
 Et la carte dit ce qu'elle montre. Un pays sans étoile n'est pas forcément un pays sans joueurs :
 
-> « Une étoile se pose au centre du pays de la personne. Un compte dont le pays n'est pas renseigné n'est pas placé : un pays vide n'est donc pas forcément un pays sans joueurs. »
+> « Une étoile se pose au centre du pays de la personne. Un compte dont le pays n’est pas renseigné n’est pas placé : un pays vide n’est donc pas forcément un pays sans joueurs. »
 
 Ce que tu vois, ce sont **les joueurs de l'application**. Pas un recensement du handpan dans le monde.
 
-Un repère daté, pour l'histoire : **le 1er septembre 2026, la constellation comptait une étoile.** Une seule, un prof, halo doré. Depuis le 22 octobre, chaque joueuse et chaque joueur a la sienne.
+Un repère daté, pour l'histoire : **le 1er septembre 2026, la constellation comptait une étoile.** Une seule, un prof, halo doré. Depuis le 22 octobre, chaque joueuse et chaque joueur qui accepte les conditions a la sienne.
 
 ## Pourquoi « constellation »
 
@@ -108,4 +115,4 @@ Dans l'application, ouvre le menu de ton compte, section « Moi & la communauté
 
 La carte est **réservée aux comptes connectés** : elle montre des gens, ce n'est pas une page publique. Dans « Mon profil public », la case « Ma fiche peut être vue sans compte » prépare le jour où une partie de la carte deviendrait publique. Aujourd'hui, elle ne change rien, et rien ne devient public tout seul.
 
-L'écran se termine par un mot que je signe : « Merci de faire vivre ce petit monde. — David ». Si quelque chose te manque ou te gêne sur cette carte, [dis-le-moi depuis l'application](/blog/feedback-ameliorer-handpan-studio).
+L'écran se termine par un mot que je signe : « Merci de faire vivre ce petit monde. — David ». Si quelque chose te manque ou te gêne sur cette carte, [dis-le-moi depuis l'application](/blog/feedback-ameliorer-handpan-studio). Une carte de gens, c'est le genre de fonction qu'on ne peut pas concevoir seul dans son coin : les questions qu'elle pose se posent à ceux qui y sont.
