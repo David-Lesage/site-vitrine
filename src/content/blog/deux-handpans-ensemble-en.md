@@ -12,7 +12,7 @@ draft: false
 
 You own a handpan, and you wonder what a **second** one would give you. It can be acoustic or electronic: a [Neotone](/en/neotone/). In [Handpan Constellation Studio](/en/handpan-app/), two handpans placed side by side become **a single instrument**: one chord can take a note on one pan and two notes on the other.
 
-This article covers every kind of pair. One section is for pairs where one handpan is a Neotone, another for pairs where both are: their titles say so.
+This article covers the three kinds of duo: the **acoustic duo** (two acoustic handpans), the **hybrid electro-acoustic duo** (one acoustic and one Neotone) and the **electronic duo** (two Neotones). Sections specific to one of them say so in their title.
 
 <figure class="article-video">
   <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="Zp_zaqsRBCg" aria-label="Play the video: Shape of My Heart, sung, on two Yishama handpans">
@@ -26,7 +26,7 @@ This article covers every kind of pair. One section is for pairs where one handp
 
 It all starts in **My handpans** ("Change instrument ▾" › My handpans). At the top, **🤝 My pair** has two slots, ① and ②. Drag two cards into them, then click **▶ Play the pair**.
 
-The two handpans appear side by side, each with its own notes. A pair can be two acoustic handpans, one acoustic and one Neotone, or two Neotones.
+The two handpans appear side by side, each with its own notes. A duo can be acoustic (two acoustic handpans), hybrid electro-acoustic (one acoustic and one Neotone) or electronic (two Neotones).
 
 <!-- CAPTURE À VENIR : My handpans in the Starry Night theme, with "🤝 My pair" filled (two cards in ① and ②) and the "🤝 My pairs" row below. No Starry Night screenshot of this screen exists yet. -->
 
@@ -34,7 +34,7 @@ The two handpans appear side by side, each with its own notes. A pair can be two
 
 Under the two handpans, the app lays out the <abbr title="At least three notes played together, for example D, F sharp, A.">chords</abbr> in **two rows** of cards.
 
-The first row holds **the 7 chords of your <abbr title="The family of notes and chords built around a starting note, for example D minor.">key</abbr>**. Most of the time, your first handpan already plays them on its own. Each one carries its emotion.
+The first row holds **the 7 chords of your <abbr title="The family of notes and chords built around a starting note, for example D minor.">key</abbr>**. Most of the time, your first handpan already plays them on its own. Each one carries its emotion: Balance, Momentum, Adventure, Relaxation, Tension, Nostalgia, Mystery.
 
 The second row is the real novelty: **"On top of that, thanks to your two handpans together"**. These are chords that neither handpan plays alone. Each card says it in one line: **⚡ only together**.
 
@@ -48,7 +48,7 @@ The second row is the real novelty: **"On top of that, thanks to your two handpa
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>A D Kurd 18 and a Neotone Mutant (French interface). At the top, <strong>the 7 chords of D minor</strong>, which the D Kurd 18 plays alone. Below, outlined in gold, <strong>16 more chords</strong> you can only play together, such as D major (D) or E major (E). Every card has its eye 👁, its ▶, its loop 🔁 and its 🎓.</figcaption>
+  <figcaption>A D Kurd 18 and a Neotone Mutant (French interface). At the top, <strong>the 7 chords of D minor</strong>, which the D Kurd 18 plays alone. Below, outlined in gold, <strong>16 more chords</strong> you can only play together, such as D major (D) or E major (E). Every card has its eye 👁, its ▶, its loop 🔁 and its 🎓. Screenshot taken before the 22 October update: since then, the cards are more compact and the extra chords scroll along a single line.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -60,11 +60,11 @@ The 🎓 opens the chord's learning view on both handpans. A **"Full view"** but
 
 <!-- CAPTURE À VENIR : a chord marked "only together" lit on both handpans (numbered notes, a line from one pan to the other), Starry Night theme. See the French article for why the existing D Kurd 18 + Mutant screenshot is not used. -->
 
-## When one of the two is a Neotone: "What do you want to do with these two handpans?"
+## Hybrid electro-acoustic duo: "What do you want to do with these two handpans?"
 
-**This section is about pairs where at least one handpan is a Neotone.** The notes of an acoustic handpan are hammered into the metal: they do not change. A Neotone's notes do: any pad can take any note.
+**This section is about the hybrid duo: one acoustic handpan and one Neotone.** The notes of an acoustic handpan are hammered into the metal: they do not change. A Neotone's notes do: any pad can take any note.
 
-That makes the Neotone the **joker** of your acoustic handpan. The app writes it the scale that completes yours.
+That is what lets the Neotone **complete** your acoustic handpan: the app suggests the scale that fills in what yours is missing.
 
 As soon as both handpans are on screen, the app asks: **"What do you want to do with these two handpans?"** Four answers:
 
@@ -83,12 +83,12 @@ With **"Try this scale"**, the new scale is set on the Neotone drawn on screen. 
 
 To put it on your real Neotone, there are two ways:
 
-- **"Load onto my Neotone"**, over the internet (Neotone Connexion). This direct loading is **reserved for Neotone beta testers for now**. If your Neotone is offline, the scale is saved on your Neotone account and loads when you connect it.
-- **"Copy the notes for my Neotone"**, for everyone: the app copies the notes one by one, ding first. Paste them into the Neotone app, and it is the same scale.
+- **"Load onto my Neotone"**, over the internet (Neotone Connection). This direct loading is **reserved for Neotone beta testers for now**. If your Neotone is offline, the scale is saved on your Neotone account and loads when you connect it.
+- **"Copy the notes for my Neotone"**, in place of direct loading for everyone else: the app copies the notes one by one, ding first. Paste them into the Neotone app, and it is the same scale.
 
 On a D Kurd 11 paired with a Neotone¹, for example, the app goes from **no extra chord** (the Neotone¹ repeated the D Kurd's notes) to **16 chords together**, and the playable keys go from **2 out of 24 to 24 out of 24**. The detailed figures (why 24 keys, what separates a 10-note Neotone¹ from a 19-note Mutant, how much room is left for the melody when you sing) are in [From 2 to 24 keys: completing your acoustic handpan with a Neotone](/en/blog/completer-son-handpan-acoustique-avec-un-neotone/).
 
-## Two acoustic handpans: what you can do with what you have
+## Acoustic duo: what you can do with what you have
 
 With two acoustic handpans, no note can change. So the app does not ask what to modify: it shows you **"What you can do with these two handpans"**.
 
@@ -104,17 +104,17 @@ On a D Kurd 11, for example, the app suggests a 12-note E3 major: together, **12
 
 The missing-note calculation is solid. The number of songs a second handpan "would open" still relies on a small number of complete scores: take it as a hint, not an inventory.
 
-The article [Two handpans that become one](/en/blog/deux-handpans-mode-hybride/) tells how the app got here, starting from the note that is always missing.
+The article [Acoustic duo: two handpans that become one](/en/blog/deux-handpans-mode-hybride/) tells how the app got here, starting from the note that is always missing.
 
-## Two Neotones: each on its own pan
+## Electronic duo: each on its own pan
 
-**This section is about two electronic handpans plugged in over USB**, for example a Mutant and a Neotone¹.
+**This section is about the electronic duo: two Neotones plugged in over USB**, for example a Mutant and a Neotone¹.
 
 In the **Midi connect** tab, **"Pair my two Neotones"** asks you to tap a note on one, then on the other. From then on, each instrument lights up its own pan, ① or ②, and the app remembers it the next time you plug in.
 
 Hits received twice are discarded. Your <abbr title="The language an electronic instrument uses to tell the computer which note you play and how hard.">MIDI</abbr> recordings keep one track per instrument. And in "Learn a chord", hits on the second Neotone count too.
 
-Two limits to know before plugging in. Midi connect only appears from the Apprentice level up. And on iPad and iPhone, no browser gives access to MIDI: you need a computer.
+Two limits to know before plugging in. Midi connect only appears from the Apprentice level up. And on iPad and iPhone, no browser gives access to MIDI: plug them into a computer or an Android tablet.
 
 <!-- CAPTURE À VENIR : Midi connect, Starry Night theme, with the "Pair my two Neotones" button and the two pans ① and ②. -->
 
@@ -128,7 +128,7 @@ In My handpans, the **🤝 My pairs** row shows each saved pair in its own frame
 
 Your pairs are saved **on your account**, even on the free plan. A pair saved on your computer shows up on your tablet, and a pair deleted on one disappears from the other.
 
-If you close the app mid-session, **"Pick up where I left off"** brings back your two handpans with the same choice.
+If you reload the page mid-session, **"Pick up where I left off"** brings back your two handpans with the same choice.
 
 ## Depending on your level
 
@@ -138,9 +138,9 @@ At **Apprentice** and **Musician** levels, chord and key names appear.
 
 ## What a second handpan gives you, in short
 
-- **Two acoustic handpans**: chords that neither plays alone, and the app tells you which ones.
-- **One acoustic and one Neotone**: the Neotone takes the notes your acoustic handpan lacks. On a D Kurd, that can open all 24 keys.
-- **Two Neotones**: each on its own pan, over USB, on a computer.
+- **Acoustic duo**: chords that neither plays alone, and the app tells you which ones.
+- **Hybrid electro-acoustic duo**: the Neotone takes the notes your acoustic handpan lacks. On a D Kurd, that can open all 24 keys.
+- **Electronic duo**: each on its own pan, over USB, on a computer or an Android tablet.
 - **In every case**: your pairs on your account, ready to play in one click.
 
 Open [Handpan Constellation Studio](/en/handpan-app/), put your two handpans in 🤝 My pair, and look at the second row. To discover the Neotone, everything is on the [Neotone page](/en/neotone/), and you can try it next to an acoustic handpan at the [showroom](/en/showroom/).

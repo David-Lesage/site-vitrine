@@ -1,5 +1,5 @@
 ---
-title: "Jouer deux handpans ensemble : ce qu'un deuxième handpan t'apporte"
+title: "Jouer deux handpans ensemble : ce qu'un 2ᵉ handpan t'apporte"
 description: "Un deuxième handpan, acoustique ou Neotone ? L'app te demande ce que tu veux en faire, montre les accords qu'on joue à deux et garde tes duos sur ton compte."
 pubDate: 2026-10-23
 cover: "/images/blog-deux-handpans-ensemble-photo.webp"
@@ -12,7 +12,7 @@ draft: false
 
 Tu as un handpan, et tu te demandes ce qu'un **deuxième** t'apporterait. Il peut être acoustique ou électronique : un [Neotone](/neotone/). Dans [Handpan Constellation Studio](/handpan-app/), tes deux handpans posés côte à côte deviennent **un seul instrument** : un accord peut prendre une note sur l'un et deux notes sur l'autre.
 
-Cet article parle de tous les duos. Une section est réservée au cas où l'un des deux est un Neotone, et une autre au cas où les deux le sont : elles le disent dans leur titre.
+Cet article parle des trois sortes de duos : le **duo acoustique** (deux handpans acoustiques), le **duo hybride électro-acoustique** (un acoustique et un Neotone) et le **duo électronique** (deux Neotone). Les sections propres à l'un d'eux le disent dans leur titre.
 
 <figure class="article-video">
   <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="Zp_zaqsRBCg" aria-label="Lire la vidéo : Shape of My Heart, à la voix, sur deux handpans Yishama">
@@ -26,7 +26,7 @@ Cet article parle de tous les duos. Une section est réservée au cas où l'un d
 
 Tout commence dans **Mes handpans** (« Changer d'instrument ▾ » › Mes handpans). En haut, **🤝 Mon duo** a deux emplacements, ① et ②. Tu y glisses deux cartes, puis tu cliques **▶ Jouer le duo**.
 
-Les deux handpans s'affichent côte à côte, chacun avec ses propres notes. Le duo peut réunir deux acoustiques, un acoustique et un Neotone, ou deux Neotone.
+Les deux handpans s'affichent côte à côte, chacun avec ses propres notes. Le duo peut être acoustique (deux acoustiques), hybride électro-acoustique (un acoustique et un Neotone) ou électronique (deux Neotone).
 
 <!-- CAPTURE À VENIR : Mes handpans en thème Nuit étoilée, avec « 🤝 Mon duo » rempli (deux cartes en ① et ②) et la rangée « 🤝 Mes duos » en dessous. Aucune capture Nuit étoilée de cet écran n'existe encore. -->
 
@@ -48,7 +48,7 @@ La deuxième rangée est la vraie nouveauté : **« En plus, grâce à tes deux 
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Un D Kurd 18 et un Neotone Mutant. En haut, <strong>les 7 accords de ré mineur</strong>, que le D Kurd 18 joue seul. En bas, cerclés d'or, <strong>16 accords en plus</strong> qu'on ne joue qu'à deux, comme le ré majeur (D) ou le mi majeur (E). Chaque carte a son œil 👁, son ▶, sa boucle 🔁 et son 🎓.</figcaption>
+  <figcaption>Un D Kurd 18 et un Neotone Mutant. En haut, <strong>les 7 accords de ré mineur</strong>, que le D Kurd 18 joue seul. En bas, cerclés d'or, <strong>16 accords en plus</strong> qu'on ne joue qu'à deux, comme le ré majeur (D) ou le mi majeur (E). Chaque carte a son œil 👁, son ▶, sa boucle 🔁 et son 🎓. Capture prise avant la mise à jour du 22 octobre : depuis, les cartes sont plus compactes et les accords en plus défilent sur une seule ligne.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -60,11 +60,11 @@ Le 🎓 ouvre l'apprentissage de l'accord sur les deux handpans. Un bouton **« 
 
 <!-- CAPTURE À VENIR : un accord « ⚡ seulement à deux » allumé sur les deux handpans (notes numérotées, trait d'un pan à l'autre), en thème Nuit étoilée. La capture existante (D Kurd 18 + Mutant, 22/10) n'est pas utilisée : la note du Mutant y est écrite « Gb3 » dans un accord de ré majeur, et un pad « F#3 » reste allumé à côté. Bug signalé à la session de l'app. -->
 
-## Quand l'un des deux est un Neotone : « Que veux-tu faire avec ces deux handpans ? »
+## Duo hybride électro-acoustique : « Que veux-tu faire avec ces deux handpans ? »
 
-**Cette section concerne les duos où l'un des handpans au moins est un Neotone.** Les notes d'un handpan acoustique sont martelées dans le métal : elles ne changent pas. Celles d'un Neotone, si : chaque pad peut recevoir n'importe quelle note.
+**Cette section concerne le duo hybride : un handpan acoustique et un Neotone.** Les notes d'un handpan acoustique sont martelées dans le métal : elles ne changent pas. Celles d'un Neotone, si : chaque pad peut recevoir n'importe quelle note.
 
-C'est ce qui fait du Neotone le **joker** de ton acoustique. L'app lui écrit la gamme qui complète la tienne.
+C'est ce qui permet au Neotone de **compléter** ton acoustique : l'app lui propose la gamme qui comble ce qui manque à la tienne.
 
 Dès que les deux handpans sont à l'écran, l'app te pose la question : **« Que veux-tu faire avec ces deux handpans ? »** Quatre réponses :
 
@@ -92,11 +92,11 @@ Avec **« Essayer cette gamme »**, la nouvelle gamme se pose sur le Neotone des
 Pour la mettre sur ton vrai Neotone, il y a deux chemins :
 
 - **« Charger sur mon Neotone »**, par internet (Neotone Connexion). Ce chargement direct est **réservé aux bêta-testeurs Neotone pour l'instant**. Si ton Neotone n'est pas en ligne, la gamme est enregistrée sur ton compte Neotone et se chargera quand tu le relieras.
-- **« Copier les notes pour mon Neotone »**, pour tout le monde : l'app copie les notes une à une, le ding d'abord. Tu les colles dans l'app Neotone, et c'est la même gamme.
+- **« Copier les notes pour mon Neotone »**, à la place du chargement direct pour tous les autres : l'app copie les notes une à une, le ding d'abord. Tu les colles dans l'app Neotone, et c'est la même gamme.
 
 Les chiffres détaillés (pourquoi 24 tonalités, ce qui sépare un Neotone¹ de 10 notes d'un Mutant de 19 notes, ce qu'il reste pour la mélodie quand on chante) sont dans [De 2 à 24 tonalités : compléter son handpan acoustique avec un Neotone](/blog/completer-son-handpan-acoustique-avec-un-neotone/).
 
-## Deux acoustiques : ce que tu peux faire avec ce que tu as
+## Duo acoustique : ce que tu peux faire avec ce que tu as
 
 Avec deux handpans acoustiques, aucune note ne peut changer. L'app ne te demande donc pas quoi modifier : elle te montre **« Ce que tu peux faire avec ces deux handpans »**.
 
@@ -118,17 +118,17 @@ Avec un seul acoustique, la pilule **🎯 Compléter**, sous le nom de ton handp
 
 Le calcul des notes manquantes est solide. Le nombre de morceaux qu'un deuxième handpan « t'ouvrirait » s'appuie encore sur un petit nombre de partitions complètes : prends-le comme une indication, pas comme un inventaire.
 
-L'article [Deux handpans qui n'en font qu'un](/blog/deux-handpans-mode-hybride/) raconte comment l'app est arrivée là, depuis la note qui manque toujours.
+L'article [Duo acoustique : deux handpans qui n'en font qu'un](/blog/deux-handpans-mode-hybride/) raconte comment l'app est arrivée là, depuis la note qui manque toujours.
 
-## Deux Neotone : chacun sur son pan
+## Duo électronique : chacun sur son pan
 
-**Cette section concerne deux handpans électroniques branchés en USB**, par exemple un Mutant et un Neotone¹.
+**Cette section concerne le duo électronique : deux Neotone branchés en USB**, par exemple un Mutant et un Neotone¹.
 
 Dans l'onglet **Midi connect**, **« Associer mes deux Neotone »** te demande de taper une note sur l'un, puis sur l'autre. Ensuite, chaque instrument allume son propre pan, ① ou ②, et l'app s'en souvient au prochain branchement.
 
 Les frappes reçues en double sont écartées. Tes enregistrements <abbr title="Le langage qu'un instrument électronique utilise pour dire à l'ordinateur quelle note tu joues et avec quelle force.">MIDI</abbr> gardent une piste par instrument. Et dans « Apprendre un accord », les frappes du deuxième Neotone comptent aussi.
 
-Deux limites, à connaître avant de brancher. Midi connect n'apparaît qu'à partir du niveau Apprenti. Et sur iPad et iPhone, aucun navigateur ne donne accès au MIDI : il faut un ordinateur.
+Deux limites, à connaître avant de brancher. Midi connect n'apparaît qu'à partir du niveau Apprenti. Et sur iPad et iPhone, aucun navigateur ne donne accès au MIDI : branche-les sur un ordinateur ou une tablette Android.
 
 <!-- CAPTURE À VENIR : Midi connect, thème Nuit étoilée, avec le bouton « Associer mes deux Neotone » et les deux pans ① et ②. -->
 
@@ -142,7 +142,7 @@ Dans Mes handpans, la rangée **🤝 Mes duos** montre chaque duo enregistré da
 
 Tes duos sont enregistrés **sur ton compte**, même en gratuit. Un duo enregistré sur ton ordinateur apparaît sur ta tablette, et un duo supprimé sur l'un disparaît de l'autre.
 
-Si tu fermes l'app en plein travail, **« Reprendre »** retrouve tes deux handpans avec le même choix.
+Si tu actualises la page en plein travail, **« Reprendre »** retrouve tes deux handpans avec le même choix.
 
 ## Selon ton niveau
 
@@ -152,9 +152,9 @@ En **Apprenti** et en **Musicien**, les noms des accords et des tonalités appar
 
 ## Ce qu'un deuxième handpan t'apporte, en résumé
 
-- **Deux acoustiques** : des accords que ni l'un ni l'autre ne joue seul, et l'app te dit lesquels.
-- **Un acoustique et un Neotone** : le Neotone prend les notes qui manquent à ton acoustique. Sur un D Kurd, ça peut ouvrir les 24 tonalités.
-- **Deux Neotone** : chacun sur son pan, en USB, sur ordinateur.
+- **Duo acoustique** : des accords que ni l'un ni l'autre ne joue seul, et l'app te dit lesquels.
+- **Duo hybride électro-acoustique** : le Neotone prend les notes qui manquent à ton acoustique. Sur un D Kurd, ça peut ouvrir les 24 tonalités.
+- **Duo électronique** : chacun sur son pan, en USB, sur ordinateur ou tablette Android.
 - **Dans tous les cas** : tes duos sur ton compte, prêts à jouer d'un clic.
 
 Ouvre [Handpan Constellation Studio](/handpan-app/), pose tes deux handpans dans 🤝 Mon duo, et regarde la deuxième rangée. Si tu veux découvrir le Neotone, tout est sur la [page du Neotone](/neotone/), et tu peux l'essayer à côté d'un acoustique au [showroom](/showroom/).
