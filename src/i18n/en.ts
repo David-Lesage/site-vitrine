@@ -863,17 +863,35 @@ export const en: Dict = {
     // Two Neotone paths (21/10/2026) — see the French dictionary.
     purchase: {
       showroomTitle: 'Buy a Neotone at the showroom (−7%)',
-      showroomIntro: 'You leave with your instrument, at the showroom (Paris 20th). I check your request and pass it on to Neotone, who sends you the invoice and a card payment link, Monday to Friday.',
+      showroomIntro: 'You leave with your instrument, at the showroom (Paris 20th). Payment is made BEFORE your visit, never on the day: Neotone sends you the invoice and the payment link on weekdays only. Send your request several working days before.',
       showroomButton: 'Buy at the showroom (−7%)',
       showroomHowTitle: 'How the purchase at the showroom works',
       showroomHow: [
-        'You fill in this form.',
-        'I check your request and pass it on to Neotone (Soundventure, in Budapest). You are copied in.',
-        'Neotone sends you the invoice and a card payment link, Monday to Friday, 9 am to 5 pm (Paris time, the same as Budapest), within 24 hours (working days).',
-        'You pay, and the instrument is yours: you leave with it, at the showroom (Paris 20th).',
-        'If you pay before coming, send me the proof of payment or bank transfer at <a href="mailto:contact@lesagedavid.fr">contact@lesagedavid.fr</a>: I hand you your Neotone on presentation of this proof.',
+        'You fill in this form (including the date you wish to pick it up).',
+        'I check your request and pass it on to Neotone (Soundventure, in Budapest) with the serial number of your instrument. You are copied in.',
+        'Neotone sends you the invoice and a card payment link, on weekdays only (except Hungarian public holidays). It comes from szamlazz.hu: check your spam folder.',
+        'You pay <strong>before</strong> coming. On the day, I hand you your Neotone, already paid, at the showroom (Paris 20th). You can ask me for the proof of payment.'
       ],
-      showroomWeekend: '<strong>Coming to the showroom at the weekend?</strong> Fill in this form before Friday: the payment link will be ready, so you can pay on the spot and leave with your instrument.',
+      showroomWeekend: '<strong>Coming at the weekend?</strong> Neotone only invoices on weekdays: send your request several working days before, so that your Neotone is paid before you come. No payment is possible at the showroom.',
+      pickupTitle: 'Pickup in Paris',
+      pickupLabel: 'Preferred pickup date at the showroom',
+      pickupHint: 'Pick a date several working days from today: time for Neotone to invoice you and for you to pay.',
+      payFirstTitle: 'You pay before coming, never on the day',
+      payFirst: [
+        'Neotone issues the invoice and sends the payment link <strong>on weekdays only</strong> (not on Hungarian public holidays).',
+        'Send your request <strong>several working days</strong> before your visit.',
+        'The payment link comes from szamlazz.hu: <strong>check your spam folder</strong>.',
+        '<strong>No payment is possible at the showroom.</strong>'
+      ],
+      vatNone: 'I don’t have an intra-EU VAT number',
+      vatMissing: 'Enter your intra-EU VAT number, or tick “I don’t have one”.',
+      stockHowTitle: 'How your request works',
+      stockHow: [
+        'You fill in this form (including the date you wish to pick it up).',
+        'If it is on its way, I propose its arrival date at the showroom. If it has to be built, I ask Neotone for the lead time, then propose a date.',
+        'You confirm this date in one click, from my email.',
+        'Neotone sends you the invoice and the payment link (szamlazz.hu, check your spam). You pay before coming, and I hand you your Neotone, already paid.'
+      ],
       onlineTitle: 'Online purchase: discount code request (−5%)',
       onlineIntro: 'A personal discount code that I request for you from Neotone: −5% on your online order, delivered to you.',
       onlineButton: 'Online purchase: get my code (−5%)',
@@ -2929,7 +2947,7 @@ export const en: Dict = {
       stockTagOut: 'Made to order',
       stockRequestButton: 'Send a request',
       stockRequestTitle: 'Request for a Neotone not yet at the showroom',
-      stockRequestIntro: 'Leave me your details: I’ll ask Neotone for the build and delivery time to Paris for this model and wood, and get back to you with their answer.',
+      stockRequestIntro: 'The full form: I propose an arrival date at the showroom (or ask Neotone for the lead time if it has to be built), you confirm it in one click, then you pay before coming.',
       step1: '1 · Choose your model',
       step2: '2 · Choose your wood',
       step3: '3 · Your delivery country',

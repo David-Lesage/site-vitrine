@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     // formats internationaux acceptés (espaces, points, tirets, parenthèses, « + »).
     // 25/10/2026 : aussi pour `neotone-stock-request` (Neotone pas au showroom) :
     // David rappelle la personne avec les délais de fabrication et de livraison.
-    if (body.source === 'contact' || body.source === 'neotone-stock-request') {
+    if (body.source === 'contact' || body.source === 'neotone-stock-request' || (body.source === 'neotone-discount' && body.neotonePurchaseMode === 'showroom')) {
       const phone = String(body.phone || '').trim()
       const digits = phone.replace(/\D/g, '').length
       if (!/^\+?[\d\s().\-]+$/.test(phone) || digits < 8 || digits > 15) {
@@ -98,6 +98,11 @@ export default async function handler(req, res) {
         // part, l'email de David ne pouvait donc pas les mentionner.
         neotoneWood: body.neotoneWood,
         neotonePurchaseMode: body.neotonePurchaseMode,
+        // Processus d'achat en 3 cas (25/10/2026) : date de retrait souhaitée,
+        // état du stock vu par le client (in / transit / out) et date d'arrivée affichée.
+        pickupDate: body.pickupDate,
+        neotoneStockState: body.neotoneStockState,
+        neotoneArrival: body.neotoneArrival,
         // Facturation Neotone STRUCTURÉE (21/10/2026) : un objet { kind, name,
         // company, vatNumber, siret, address, postalCode, city, country,
         // shipping }. L'Edge Function le borne champ par champ ; avant ce

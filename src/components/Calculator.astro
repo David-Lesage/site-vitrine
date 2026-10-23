@@ -353,9 +353,10 @@ const calcData = {
 
     function render() {
       // Le stock informe, il ne recale plus rien (25/10/2026).
-      renderStock()
       const r = compute()
       syncTrigger(r)
+      // Après syncTrigger : « Faire la demande » recopie les montants du bouton d'achat.
+      renderStock()
       $('calc-selection')!.textContent = `${DATA.models[state.model].label} — ${DATA.woodLabels[state.wood]}`
       $('calc-base')!.textContent = fmtEUR(r.basePrice)
       $('calc-discount-label')!.textContent = `${L.discountLabel} −${Math.round(r.discountRate * 100)} %`
@@ -537,6 +538,14 @@ const calcData = {
       reqBtn.dataset.calcWood = state.wood
       reqBtn.dataset.calcMode = state.mode
       reqBtn.dataset.calcRecap = [label, full].join(' · ')
+      // Processus d'achat en 3 cas (25/10/2026) : le formulaire complet reçoit
+      // aussi les montants (−7 % showroom), le pays, l'état du stock (cas 2 =
+      // en route, cas 3 = à fabriquer) et la date d'arrivée affichée.
+      const buy = $('calc-get-code')
+      reqBtn.dataset.calcCountry = buy?.dataset.calcCountry || ''
+      reqBtn.dataset.calcPrice = buy?.dataset.calcPrice || ''
+      reqBtn.dataset.calcStock = st === 'transit' ? 'transit' : 'out'
+      reqBtn.dataset.calcArrival = when || ''
     }
 
     /** Période (longue) ou date d'arrivée lisible, ou null — pour la phrase complète. */

@@ -1028,18 +1028,35 @@ const fr = {
     // Sous-objet + repli FR dans le composant, comme `billing`.
     purchase: {
       showroomTitle: 'Acheter un Neotone au showroom (−7 %)',
-      showroomIntro: 'Tu repars avec ton instrument, au showroom (Paris 20ᵉ). Je vérifie ta demande et je la transmets à Neotone, qui t’envoie la facture et un lien de paiement par carte, du lundi au vendredi.',
+      showroomIntro: 'Tu repars avec ton instrument, au showroom (Paris 20ᵉ). Le paiement se fait AVANT ta venue, jamais le jour même : Neotone t’envoie la facture et le lien de paiement en semaine seulement. Fais ta demande plusieurs jours ouvrés avant.',
       showroomButton: 'Acheter au showroom (−7 %)',
       showroomHowTitle: 'Comment se passe l’achat au showroom',
       showroomHow: [
-        'Tu remplis ce formulaire.',
-        'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest). Tu es en copie.',
-        'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), sous 24 h (jours ouvrés).',
-        'Tu paies, l’instrument est à toi : tu repars avec, au showroom (Paris 20ᵉ).',
-        // 21/10/2026, demande de David : preuve de paiement si l'on paie avant de venir.
-        'Si tu paies avant de venir, envoie-moi la preuve de paiement ou de virement à <a href="mailto:contact@lesagedavid.fr">contact@lesagedavid.fr</a> : je te remets ton Neotone sur présentation de ce justificatif.',
+        'Tu remplis ce formulaire (date de retrait souhaitée comprise).',
+        'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest) avec le n° de série de ton instrument. Tu es en copie.',
+        'Neotone t’envoie la facture et un lien de paiement par carte, en semaine seulement (hors jours fériés hongrois). Il vient de szamlazz.hu : pense à vérifier tes spams.',
+        'Tu paies <strong>avant</strong> ta venue. Le jour J, je te remets ton Neotone déjà payé, au showroom (Paris 20ᵉ). Tu peux me demander la preuve de paiement.'
       ],
-      showroomWeekend: '<strong>Tu viens au showroom un week-end ?</strong> Remplis ce formulaire avant le vendredi : le lien de paiement sera prêt, tu pourras payer sur place et repartir avec.',
+      showroomWeekend: '<strong>Tu viens un week-end ?</strong> Neotone ne facture qu’en semaine : fais ta demande plusieurs jours ouvrés avant, pour que ton Neotone soit payé avant ta venue. Aucun paiement n’est possible au showroom.',
+      pickupTitle: 'Retrait à Paris',
+      pickupLabel: 'Date souhaitée de retrait au showroom',
+      pickupHint: 'Choisis-la plusieurs jours ouvrés après aujourd’hui : le temps que Neotone te facture et que tu paies.',
+      payFirstTitle: 'Le paiement se fait avant ta venue, jamais le jour même',
+      payFirst: [
+        'Neotone établit la facture et envoie le lien de paiement <strong>en semaine seulement</strong> (pas les jours fériés hongrois).',
+        'Fais ta demande <strong>plusieurs jours ouvrés</strong> avant ta venue.',
+        'Le lien de paiement vient de szamlazz.hu : <strong>vérifie tes spams</strong>.',
+        '<strong>Aucun paiement n’est possible au showroom.</strong>'
+      ],
+      vatNone: 'Je n’ai pas de n° de TVA intracommunautaire',
+      vatMissing: 'Indique ton n° de TVA intracommunautaire, ou coche « Je n’en ai pas ».',
+      stockHowTitle: 'Comment se passe ta demande',
+      stockHow: [
+        'Tu remplis ce formulaire (date de retrait souhaitée comprise).',
+        'S’il est en route, je te propose la date d’arrivée au showroom. S’il est à fabriquer, je demande ses délais à Neotone, puis je te propose une date.',
+        'Tu confirmes cette date d’un clic, depuis mon e-mail.',
+        'Neotone t’envoie la facture et le lien de paiement (szamlazz.hu, pense à tes spams). Tu paies avant ta venue, et je te remets ton Neotone déjà payé.'
+      ],
       onlineTitle: 'Achat en ligne : demande de code de réduction (−5 %)',
       onlineIntro: 'Un code de réduction nominatif que je demande pour toi auprès de Neotone : −5 % sur ta commande en ligne, livrée chez toi.',
       onlineButton: 'Achat en ligne : obtenir mon code (−5 %)',
@@ -3646,7 +3663,7 @@ const fr = {
       stockTagOut: 'Sur commande',
       stockRequestButton: 'Faire la demande',
       stockRequestTitle: 'Demande pour un Neotone pas encore au showroom',
-      stockRequestIntro: 'Laisse-moi tes coordonnées : je demande à Neotone le délai de fabrication et de livraison jusqu’à Paris pour ce modèle et ce bois, et je reviens vers toi avec la réponse.',
+      stockRequestIntro: 'Le formulaire complet : je te propose une date d’arrivée au showroom (ou je demande ses délais à Neotone s’il est à fabriquer), tu la confirmes d’un clic, puis tu paies avant ta venue.',
       step1: '1 · Choisis ton modèle',
       step2: '2 · Choisis ton bois',
       step3: '3 · Ton pays de livraison',

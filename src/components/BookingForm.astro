@@ -366,6 +366,13 @@ const saleIntake = saleIntakeClientConfig()
                 <input type="text" name="billingSiret" placeholder={bb.siretPlaceholder} class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
               </label>
             </div>
+            {/* 25/10/2026 (processus validé) : la question du n° de TVA est TOUJOURS
+                posée à une société — un n° OU « je n'en ai pas ». Vérifié au submit. */}
+            <label class="flex cursor-pointer items-start gap-2.5 text-sm">
+              <input type="checkbox" name="billingNoVat" class="mt-0.5 h-4 w-4 shrink-0 accent-rust" data-bk-novat />
+              <span>{pp.vatNone}</span>
+            </label>
+            <p data-bk-vat-err class="hidden text-xs font-600 text-rust" role="alert">{pp.vatMissing}</p>
             <p class="text-xs leading-relaxed text-ink-soft/70">{bb.vatSiretHint}</p>
             </div>
           </div>
@@ -399,6 +406,27 @@ const saleIntake = saleIntakeClientConfig()
             </label>
           </div>
         </fieldset>
+
+        {/* ── RETRAIT À PARIS + PAIEMENT AVANT LA VENUE (25/10/2026, processus validé) ──
+            Achat au showroom (cas 1) et demande hors stock (cas 2 et 3) : date
+            souhaitée de retrait OBLIGATOIRE, et la règle du paiement dite AVANT
+            l'envoi. Masqué (donc désactivé) en mode « en ligne ». */}
+        <fieldset data-bk-pickup class="hidden rounded-xl border border-ink/15 bg-cream-deep/20 p-4">
+          <legend class="px-1 text-sm font-700">{pp.pickupTitle}</legend>
+          <label class="block">
+            <span class="text-sm font-600">{pp.pickupLabel}<span aria-hidden="true" class="text-rust"> *</span></span>
+            <input type="date" name="pickupDate" required class="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-3 py-2.5 text-sm focus:border-copper focus:outline-none" />
+          </label>
+          <p class="mt-2 text-xs leading-relaxed text-ink-soft/70">{pp.pickupHint}</p>
+          <div class="mt-3 rounded-lg border border-rust/30 bg-rust/[0.06] p-3">
+            <p class="text-sm font-700">{pp.payFirstTitle}</p>
+            <ul class="mt-1.5 space-y-1 text-xs leading-relaxed text-ink-soft/85">
+              {pp.payFirst.map((line) => <li class="flex gap-2"><span aria-hidden="true" class="text-rust">•</span><span set:html={line} /></li>)}
+            </ul>
+          </div>
+        </fieldset>
+        <input type="hidden" name="neotoneStockState" value="" />
+        <input type="hidden" name="neotoneArrival" value="" />
 
         {/* ── LIVRAISON ───────────────────────────────────────────────────────
             N'apparaît QUE si la personne se fait livrer, c'est-à-dire si le
@@ -465,6 +493,14 @@ const saleIntake = saleIntakeClientConfig()
           </ol>
           <p class="mt-3 rounded-lg bg-gold/10 px-3 py-2 text-xs leading-relaxed text-ink-soft/85" set:html={pp.showroomWeekend} />
         </div>
+        <div data-bk-how="stock" class="hidden rounded-xl border border-copper/25 bg-copper/5 p-4">
+          <p class="text-sm font-700">{pp.stockHowTitle}</p>
+          <ol class="mt-2 space-y-1.5 text-xs leading-relaxed text-ink-soft/85">
+            {pp.stockHow.map((step, i) => (
+              <li class="flex gap-2"><span aria-hidden="true" class="text-copper">{i + 1}.</span><span set:html={step} /></li>
+            ))}
+          </ol>
+        </div>
         <div data-bk-how="online" class="rounded-xl border border-copper/25 bg-copper/5 p-4">
           <p class="text-sm font-700">{pp.onlineHowTitle}</p>
           <ol class="mt-2 space-y-1.5 text-xs leading-relaxed text-ink-soft/85">
@@ -473,20 +509,6 @@ const saleIntake = saleIntakeClientConfig()
             ))}
           </ol>
         </div>
-      </div>
-
-      {/* ── DEMANDE POUR UN NEOTONE PAS AU SHOWROOM (25/10/2026, demande de David) ──
-          Source `neotone-stock-request`, ouverte par « Faire la demande » du
-          calculateur. Récapitulatif du choix (modèle · bois · état du stock) et
-          trois champs cachés : ils partent sous les noms `neotoneModel` /
-          `neotoneWood` / `neotonePurchaseMode` à l'envoi (voir le submit).
-          Masqué pour tous les autres motifs ⇒ champs désactivés et vidés. */}
-      <div data-bk-stock class="hidden rounded-xl border border-copper/25 bg-copper/5 p-4">
-        <p class="text-[11px] font-700 uppercase tracking-widest text-copper">{bk.calcRecapLabel}</p>
-        <p data-bk-stock-recap class="mt-1 break-words text-sm font-600 leading-relaxed"></p>
-        <input type="hidden" name="stockModel" value="" />
-        <input type="hidden" name="stockWood" value="" />
-        <input type="hidden" name="stockMode" value="" />
       </div>
 
       {/* Cours seulement : une démonstration ne se fait pas en visio.
@@ -616,7 +638,9 @@ const saleIntake = saleIntakeClientConfig()
   const termsEl = modal?.querySelector('[data-bk-terms]') as HTMLElement
   const vipEl = modal?.querySelector('[data-bk-vip]') as HTMLElement
   const discountEl = modal?.querySelector('[data-bk-discount]') as HTMLElement
-  const stockReqEl = modal?.querySelector('[data-bk-stock]') as HTMLElement
+  const pickupEl = modal?.querySelector('[data-bk-pickup]') as HTMLElement
+  const noVatEl = modal?.querySelector('[data-bk-novat]') as HTMLInputElement | null
+  const vatErrEl = modal?.querySelector('[data-bk-vat-err]') as HTMLElement | null
   // Récapitulatif du calculateur + les deux questions qu'il remplace (22/09/2026).
   const calcRecapEl = modal?.querySelector('[data-bk-calc-recap]') as HTMLElement
   const calcRecapTextEl = modal?.querySelector('[data-bk-calc-recap-text]') as HTMLElement
@@ -827,7 +851,14 @@ const saleIntake = saleIntakeClientConfig()
   modal?.querySelectorAll('input[name="billingKind"]').forEach((r) => r.addEventListener('change', syncBillingBlocks))
   shippingSameEl?.addEventListener('change', syncBillingBlocks)
   // Un n° de TVA saisi fait basculer le récapitulatif en hors taxes (et inversement).
-  modal?.querySelector('input[name="billingVatNumber"]')?.addEventListener('input', renderPrice)
+  modal?.querySelector('input[name="billingVatNumber"]')?.addEventListener('input', () => { vatErrEl?.classList.add('hidden'); renderPrice() })
+  // « Je n'ai pas de n° de TVA » : le champ se vide et se grise (et inversement).
+  noVatEl?.addEventListener('change', () => {
+    const vat = modal?.querySelector('input[name="billingVatNumber"]') as HTMLInputElement | null
+    if (vat) { if (noVatEl.checked) vat.value = ''; vat.readOnly = noVatEl.checked }
+    vatErrEl?.classList.add('hidden')
+    renderPrice()
+  })
 
   kindSelect?.addEventListener('change', syncSessionBlocks)
   // « Visio » retire la question des instruments, « présentiel » la ramène.
@@ -855,30 +886,23 @@ const saleIntake = saleIntakeClientConfig()
     const isVip = isPaid || source === 'showroom-visit'
     const needsSlots = isVip
     const isShowcase = source === 'showcase-booking'
-    // Neotone pas au showroom (25/10/2026) : prénom, nom, e-mail, téléphone
-    // (obligatoire), message facultatif, conditions générales. Rien d'autre.
+    // Neotone pas au showroom (25/10/2026, processus validé) : MÊME formulaire
+    // complet que l'achat au showroom (facturation, TVA, date de retrait).
+    // Cas 2 (en route) ou 3 (à fabriquer) selon `data-calc-stock`.
     const isStockRequest = source === 'neotone-stock-request'
-    toggleBlock(stockReqEl, isStockRequest)
-    if (isStockRequest) {
-      const setVal = (n: string, v: string) => { const el = form.elements.namedItem(n) as HTMLInputElement | null; if (el) el.value = v }
-      setVal('stockModel', trigger.getAttribute('data-calc-model') || '')
-      setVal('stockWood', trigger.getAttribute('data-calc-wood') || '')
-      setVal('stockMode', trigger.getAttribute('data-calc-mode') || '')
-      const recapEl = modal?.querySelector('[data-bk-stock-recap]') as HTMLElement | null
-      if (recapEl) recapEl.textContent = trigger.getAttribute('data-calc-recap') || ''
-    }
+    const isPurchase = isDiscount || isStockRequest
     toggleBlock(peopleEl, isShowcase)
     // La question « pour quel(s) instrument(s) ? » n'a de sens que pour une
     // place de showcase : ailleurs, c'est le motif lui-même qui la porte.
     toggleBlock(showcaseInterestsEl, isShowcase)
     toggleBlock(sessionEl, isPaid)
-    toggleBlock(discountEl, isDiscount)
+    toggleBlock(discountEl, isPurchase)
     // ── Choix déjà fait dans le calculateur ──────────────────────────────────
     // Les valeurs sont posées APRÈS `toggleBlock` : montrer le bloc n'écrase
     // rien, mais le masquer vide ses champs — l'ordre inverse les perdrait.
     // Le récapitulatif ne s'affiche QUE si le déclencheur porte vraiment le
     // choix ; sinon on remet les deux questions (repli honnête).
-    const calcRecap = isDiscount ? (trigger.getAttribute('data-calc-recap') || '') : ''
+    const calcRecap = isPurchase ? (trigger.getAttribute('data-calc-recap') || '') : ''
     const hasCalc = !!calcRecap
     const modelSel = form.elements.namedItem('neotoneModel') as HTMLSelectElement | null
     const countryInput = form.elements.namedItem('country') as HTMLInputElement | null
@@ -902,10 +926,16 @@ const saleIntake = saleIntakeClientConfig()
     // pose la question : une adresse de trop vaut mieux qu'une adresse manquante.
     const purchaseMode = hasCalc ? (trigger.getAttribute('data-calc-mode') || '') : ''
     toggleBlock(shippingEl, isDiscount && purchaseMode !== 'showroom')
+    // Date de retrait + « paiement avant la venue » : tout achat retiré à Paris.
+    toggleBlock(pickupEl, isStockRequest || (isDiscount && purchaseMode === 'showroom'))
+    const setHidden = (n: string, v: string) => { const el = form.elements.namedItem(n) as HTMLInputElement | null; if (el) el.value = v }
+    setHidden('neotoneStockState', isStockRequest ? (trigger.getAttribute('data-calc-stock') || 'out') : (isDiscount && purchaseMode === 'showroom' ? 'in' : ''))
+    setHidden('neotoneArrival', isStockRequest ? (trigger.getAttribute('data-calc-arrival') || '') : '')
+    vatErrEl?.classList.add('hidden')
     // Procédure affichée selon le parcours (21/10/2026) : achat au showroom,
     // ou demande de code en ligne (aussi quand le mode est inconnu).
     modal?.querySelectorAll<HTMLElement>('[data-bk-how]').forEach((el) => {
-      el.classList.toggle('hidden', el.dataset.bkHow !== (purchaseMode === 'showroom' ? 'showroom' : 'online'))
+      el.classList.toggle('hidden', el.dataset.bkHow !== (isStockRequest ? 'stock' : purchaseMode === 'showroom' ? 'showroom' : 'online'))
     })
     // `toggleBlock` décoche en masquant : on remet le défaut « même adresse »
     // à CHAQUE ouverture, sinon le cas courant redemanderait une saisie.
@@ -917,14 +947,14 @@ const saleIntake = saleIntakeClientConfig()
     // hors HTTPS sur les vieux navigateurs → repli sans uuid (le guichet
     // l'accepte, c'est un champ facultatif), jamais une exception.
     const reqIdInput = form.elements.namedItem('clientRequestId') as HTMLInputElement | null
-    if (isDiscount && reqIdInput && !reqIdInput.value) {
+    if (isPurchase && reqIdInput && !reqIdInput.value) {
       try { reqIdInput.value = crypto.randomUUID() } catch { reqIdInput.value = '' }
     }
     syncBillingBlocks()
     // « Sans limite de caractère » : on agrandit visiblement la zone de texte et on
     // annonce qu'on lit tout, pour que la personne ose écrire.
     const msgEl = form.querySelector('textarea[name="message"]') as HTMLTextAreaElement | null
-    if (msgEl) msgEl.rows = isDiscount ? 8 : 3
+    if (msgEl) msgEl.rows = isPurchase ? 8 : 3
     // Message PRÉ-REMPLI (`data-prefill`) : reprend la petite liste de questions
     // qu'un ancien lien `mailto:` glissait dans le corps de l'email (commande
     // Gonilélé, collaboration…). Sans ça, brancher ces boutons sur ce formulaire
@@ -954,7 +984,7 @@ const saleIntake = saleIntakeClientConfig()
     const phoneInput = form.querySelector('input[name="phone"]') as HTMLInputElement | null
     // Demande « pas en stock » (25/10/2026) : téléphone OBLIGATOIRE, pour que
     // David puisse rappeler la personne avec les délais de Neotone.
-    if (phoneInput) phoneInput.required = isShowcase || isStockRequest
+    if (phoneInput) phoneInput.required = isShowcase || isStockRequest || (isDiscount && purchaseMode === 'showroom')
     const phoneLabel = modal?.querySelector('[data-bk-phone-label]') as HTMLElement | null
     if (phoneLabel) phoneLabel.textContent = (isDiscount || isShowcase || isStockRequest ? phoneLabel.dataset.plain : phoneLabel.dataset.default) || phoneLabel.textContent
     modal?.querySelector('[data-bk-phone-why]')?.classList.toggle('hidden', !isShowcase)
@@ -1073,6 +1103,14 @@ const saleIntake = saleIntakeClientConfig()
     }
     slotsErrEl?.classList.add('hidden')
 
+    // TVA : une société répond TOUJOURS (un n° OU « je n'en ai pas »), 25/10/2026.
+    const isPurchaseSrc = source === 'neotone-discount' || source === 'neotone-stock-request'
+    if (isPurchaseSrc && get('billingKind') === 'societe' && !get('billingVatNumber') && data.get('billingNoVat') === null) {
+      vatErrEl?.classList.remove('hidden')
+      ;(form.querySelector('input[name="billingVatNumber"]') as HTMLInputElement | null)?.focus()
+      return
+    }
+
     // ── FACTURATION : LE FILET D'ABORD (21-22/09/2026) ────────────────────────
     // Tant que `sale-intake` n'est pas déployée (interrupteur à false), RIEN de
     // ce que la personne vient de saisir n'arriverait à David : `api/subscribe`
@@ -1121,7 +1159,7 @@ const saleIntake = saleIntakeClientConfig()
     // ligne. `shipping` : null = question non posée (showroom), 'same' = même
     // adresse que la facturation, sinon l'adresse de livraison.
     let billing: Record<string, unknown> | null = null
-    if (source === 'neotone-discount') {
+    if (isPurchaseSrc) {
       const isCompany = get('billingKind') === 'societe'
       const hasShipping = !shippingEl?.classList.contains('hidden')
       billing = {
@@ -1130,6 +1168,7 @@ const saleIntake = saleIntakeClientConfig()
         company: isCompany ? get('billingCompany') : '',
         vatNumber: isCompany ? get('billingVatNumber') : '',
         siret: isCompany ? get('billingSiret') : '',
+        noVat: isCompany && !get('billingVatNumber') && data.get('billingNoVat') !== null,
         address: get('billingAddress'),
         postalCode: get('billingPostalCode'),
         city: get('billingCity'),
@@ -1174,16 +1213,20 @@ const saleIntake = saleIntakeClientConfig()
           // une liste vide est une information, « aucune date prévue »), l'Edge
           // Function ne s'en sert que pour `showcase-waitlist`.
           upcomingEvents: upcoming,
-          // `stock*` : demande « pas en stock » (25/10/2026), mêmes champs serveur.
-          neotoneModel: get('neotoneModel') || get('stockModel') || null,
+          // Modèle (choix du calculateur, achat comme demande hors stock).
+          neotoneModel: get('neotoneModel') || null,
           // Bois et mode d'achat repris du calculateur (22/09/2026).
-          neotoneWood: get('neotoneWood') || get('stockWood') || null,
-          neotonePurchaseMode: get('neotonePurchaseMode') || get('stockMode') || null,
+          neotoneWood: get('neotoneWood') || null,
+          neotonePurchaseMode: get('neotonePurchaseMode') || null,
+          // Processus d'achat en 3 cas (25/10/2026).
+          pickupDate: get('pickupDate') || null,
+          neotoneStockState: get('neotoneStockState') || null,
+          neotoneArrival: get('neotoneArrival') || null,
           // Facturation en champs séparés (21/10/2026) — voir plus haut.
           billing,
           // Montants du calculateur (21/10/2026), tels qu'affichés dans « Ton
           // choix ». `site-lead` les borne et les met en page, sans recalcul.
-          neotonePrice: source === 'neotone-discount' ? calcPrice : null,
+          neotonePrice: isPurchaseSrc ? calcPrice : null,
           socialAccount: get('socialAccount') || null,
           discoveryChannel: get('discoveryChannel') || null,
           playingSince: get('playingSince') || null,

@@ -47,7 +47,7 @@ export default defineConfig({
     icon(),
     sitemap({
       // Page personnelle (lien avec jeton) : jamais dans le sitemap.
-      filter: (page) => !page.includes('/showcase/ma-venue'),
+      filter: (page) => !page.includes('/showcase/ma-venue') && !page.includes('/neotone-suivi'),
       i18n: {
         defaultLocale: 'fr',
         locales: { fr: 'fr-FR', en: 'en-US' },
