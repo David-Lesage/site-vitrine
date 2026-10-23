@@ -52,15 +52,15 @@ The second row is the real novelty: **"On top of that, thanks to your two handpa
 
 <figure>
   <img
-    src="/images/blog-duo-deux-rangees-accords-2026-10.webp"
-    width="2000"
-    height="1209"
-    alt="The pair screen in the Starry Night theme (French interface), with an acoustic D Kurd 18 and a Neotone Mutant. At the top, the line “Play everything · complementary scale on trial · Chords together: 16”, a yellow “Copy the notes for my Neotone” button and “Change”. Below, the row “The 7 chords of D minor”: Dm, Edim, F, Gm, Am, Bb and C, each with its emotion, the note “D Kurd 18 alone” and a voicing menu. Then the chips “D Kurd 18 · 0”, “Mutant · 2”, “Together · 16” and “+ tension · 15”. Finally the row “On top of that, thanks to your two handpans together: 16 chords”: Cm, C#, C#m, D, Eb, Ebm, E, Em, Fm, F#, F#m, G, G#, A, Bbm and Bm, each outlined in gold and marked “only together”. Every card has four buttons: the eye, play, loop and the learning cap."
+    src="/images/blog-duo-deux-rangees-accords-2026-10-24-en.webp"
+    width="2880"
+    height="2394"
+    alt="The pair screen in the Starry Night theme. At the top, the banner “Hybrid duo: D Kurd 11 + Neotone Mutant · Walnut”, with 7/7 · 7/7 · 12/12, natural minor, “swap” and “Reveal the 24 chords”, then the seven emotions. Below, the two pans: the D Kurd 11 with its notes (D3 in the centre, A3, Bb3, C4, D4, E4, F4, G4, A4, C5, D5) and the Neotone Mutant · Walnut, which carries the complementary scale (C#3 in the centre, F#3, B3, Eb3, Eb4, G#3, G#4, C#4, F#4, B4…). Then the line “Play everything · complementary scale on trial · Chords together: 16”, the yellow “Copy the notes for my Neotone” button and “Change”. The row “The 7 chords of D minor”: Dm, Edim, F, Gm, Am, Bb and C, each with its emotion and the note “D Kurd 11 alone”. The chips “D Kurd 11 · 0”, “Neotone Mutant · Walnut · 2”, “Together · 16 ✓” and “+ tension · 15”. Finally the row “On top of that, thanks to your two handpans together: 16 chords”, on a single line: Cm, C#, C#m, D, Eb, Ebm, E, then Em cut off at the right edge, each outlined in gold and marked “only together”. Every card has the eye, play, loop and learning-cap buttons, and a “Root pos.” menu."
     data-lb="deux-handpans-ensemble"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>A D Kurd 18 and a Neotone Mutant (French interface). At the top, <strong>the 7 chords of D minor</strong>, which the D Kurd 18 plays alone. Below, outlined in gold, <strong>16 more chords</strong> you can only play together, such as D major (D) or E major (E). Every card has its eye 👁, its ▶, its loop 🔁 and its 🎓. Screenshot taken before the 22 October update: since then, the cards are more compact and the extra chords scroll along a single line.</figcaption>
+  <figcaption>A D Kurd 11 and a Neotone Mutant as a <strong>Hybrid duo</strong>, with the complementary scale from <em>🌈 Play everything</em> on trial. At the top, <strong>the 7 chords of D minor</strong>, which the D Kurd 11 plays alone. Below, outlined in gold, <strong>16 more chords</strong> you can only play together, such as D major (D) or E major (E). That row sits on a single line that scrolls: the Em card is cut off at the right edge. Every card has its eye 👁, its ▶, its loop 🔁 and its 🎓.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -70,7 +70,19 @@ The menu under each card picks the chord's <abbr title="How the notes of a chord
 
 The 🎓 opens the chord's learning view on both handpans. A **"Full view"** button enlarges it, for a clean photo for example.
 
-<!-- CAPTURE À VENIR : a chord marked "only together" lit on both handpans (numbered notes, a line from one pan to the other), Starry Night theme. See the French article for why the existing D Kurd 18 + Mutant screenshot is not used. -->
+<figure>
+  <img
+    src="/images/blog-duo-hybride-re-majeur-2026-10-24-en.webp"
+    width="2880"
+    height="1684"
+    alt="The same Hybrid duo, D Kurd 11 + Neotone Mutant · Walnut, with the eye on for the D major chord (D). In the banner, the playing order: ① D3 → ② F#3 → ③ A3. On the D Kurd 11, D3 (in the centre) carries number 1 and A3 number 3, in orange; on the Mutant, F#3 carries number 2. An orange line joins the three notes from one pan to the other. The other notes are dimmed and keep their names. At the bottom, “Play everything · complementary scale on trial · Chords together: 16”."
+    data-lb="deux-handpans-ensemble"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The eye on the <strong>D</strong> card (D major, “⚡ only together”): the chord lights up on both handpans. <strong>① D3</strong> and <strong>③ A3</strong> are on the D Kurd 11, <strong>② F#3</strong> on the Mutant, and a line joins the notes from one pan to the other. The banner repeats the playing order: ① D3 → ② F#3 → ③ A3.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Hybrid electro-acoustic duo: "What do you want to do with these two handpans?"
 
@@ -106,7 +118,19 @@ With two acoustic handpans, no note can change. So the app does not ask what to 
 
 You see the new chords to play together, the playable keys, and the songs from the repertoire that the pair adds to those of your first handpan. A **"Learn a chord with both"** button takes you straight to practice.
 
-<!-- CAPTURE À VENIR : two acoustic handpans as a pair, Starry Night theme, with the "What you can do with these two handpans" block and the two rows of chords. It is the twin of the D Kurd 18 + Mutant screenshot above. -->
+<figure>
+  <img
+    src="/images/blog-duo-acoustique-ce-que-tu-peux-faire-2026-10-24-en.webp"
+    width="2880"
+    height="1944"
+    alt="A pair of two acoustic handpans, Starry Night theme. At the top, the banner “Acoustic duo: D Kurd 10 + B Amara 9”, natural minor, “swap” and “Reveal the 14 chords”, then the seven emotions. Below, the two pans: the D Kurd 10 (D3 in the centre, A3, Bb3, C4, D4, E4, F4, G4, A4, C5) and the B Amara 9 (B2 in the centre, F#3, A3, B3, C#4, D4, E4, F#4, A4). At the bottom, the block “What you can do with these two handpans”: “4 new chords, to play with both”, “Playable keys: 2/24 → 8/24”, “Songs in the repertoire: 157 with your D Kurd 10 alone, +40 with both — e.g. Sultans of Swing · House of the Rising Sun · Hit the Road Jack”, the line “Em · F# · G · Bbm”, and the buttons “See the chords with both”, “Learn a chord with both” and “Reveal everything, full screen”."
+    data-lb="deux-handpans-ensemble"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>An <strong>Acoustic duo</strong>: D Kurd 10 + B Amara 9. Nothing to change on two acoustics: the <em>What you can do with these two handpans</em> block does the count. Here, <strong>4 new chords</strong> to play together, playable keys going from <strong>2 to 8 out of 24</strong>, and <strong>40 more songs</strong> than the 157 of the D Kurd 10 alone.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### You don't have the second one yet?
 
@@ -128,7 +152,18 @@ Hits received twice are discarded. Your <abbr title="The language an electronic 
 
 Two limits to know before plugging in. Midi connect only appears from the Apprentice level up. And on iPad and iPhone, no browser gives access to MIDI: plug them into a computer or an Android tablet.
 
-<!-- CAPTURE À VENIR : Midi connect, Starry Night theme, with the "Pair my two Neotones" button and the two pans ① and ②. -->
+<figure>
+  <img
+    src="/images/blog-midi-associer-deux-neotone-2026-10-24-en.webp"
+    width="742"
+    height="626"
+    alt="The “Two Neotones over USB” panel in Midi connect, Starry Night theme. It reads “① Mutant · — / ② Neotone¹ · —”, then “Each instrument lights its own pan: ① and ②. Pair them once, the app remembers.”, the “Pair my two Neotones” button, an “Ignore MIDI Thru (60 ms window instead of 15)” checkbox and the line “Duplicates removed: 0 · offsets applied: ① 0 ms, ② 0 ms”. Below, the “Pad MIDI numbers” setting, Off."
+    data-lb="deux-handpans-ensemble"
+    loading="lazy"
+  />
+  <figcaption>The <strong>Two Neotones over USB</strong> panel in Midi connect: two Neotones are plugged in, not yet paired. The <strong>Pair my two Neotones</strong> button starts the pairing (tap a note on one, then on the other), which isn't shown here. The two MIDI inputs in this screenshot are simulated, with no instrument.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Your pairs follow you
 
@@ -137,6 +172,20 @@ In My handpans, the **🤝 My pairs** row shows each saved pair in its own frame
 - **▶ Play the pair** puts it on screen in one click, and the app asks again "What do you want to do with these two handpans?".
 - **✎** renames it.
 - **🗑** forgets it. Your handpans stay.
+
+<figure>
+  <img
+    src="/images/blog-mes-handpans-mes-duos-2026-10-24-en.webp"
+    width="2400"
+    height="2520"
+    alt="The “My handpans” screen, Starry Night theme. At the top, “My pair”, marked “On screen”: ① D Kurd 11, “Main pan”, and ② Neotone Mutant · Walnut, “Next to it”, with “Play the pair”, “Undo the pair”, “My pairs (2)” and the line ““Living-room duo”: D Kurd 11 + Neotone Mutant · Walnut”. Below, the cards sorted into “Electronic 1” (Neotone Mutant · Walnut) and “Acoustic 3” (D Kurd 11, D Kurd 10, B Amara 9), with the dashed cards to add more. At the bottom, “My pairs 2”: “Living-room duo”, “Hybrid duo · D Kurd 11 + Neotone Mutant · Walnut”, marked “On screen”, and “The two acoustics”, “Acoustic duo · D Kurd 10 + B Amara 9”, with “Play the pair”. Each pair shows its two handpans drawn side by side, a pencil and a bin."
+    data-lb="deux-handpans-ensemble"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The <strong>🤝 My pairs</strong> row, with two saved pairs: “Living-room duo”, a <strong>Hybrid duo</strong> (D Kurd 11 + Neotone Mutant), on screen, and “The two acoustics”, an <strong>Acoustic duo</strong> (D Kurd 10 + B Amara 9), with its <strong>Play the pair</strong> button. Each has its ✎ pencil and its 🗑 bin. The pair names are examples.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 Your pairs are saved **on your account**, even on the free plan. A pair saved on your computer shows up on your tablet, and a pair deleted on one disappears from the other.
 

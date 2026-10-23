@@ -52,15 +52,15 @@ La deuxième rangée est la vraie nouveauté : **« En plus, grâce à tes deux 
 
 <figure>
   <img
-    src="/images/blog-duo-deux-rangees-accords-2026-10.webp"
-    width="2000"
-    height="1209"
-    alt="L'écran du duo en thème Nuit étoilée, avec un D Kurd 18 acoustique et un Neotone Mutant. En haut, la ligne « 🌈 Tout jouer · gamme complémentaire à l'essai · ⚡ Accords à deux : 16 », un bouton jaune « Copier les notes pour mon Neotone » et « Changer ». Dessous, la rangée « Les 7 accords de Ré mineur » : Dm, Edim, F, Gm, Am, Bb et C, chacun avec son émotion (Équilibre, Élan, Aventure, Détente, Tension, Nostalgie, Mystère), la mention « D Kurd 18 seul » et le menu « Fondam. ». Puis les pastilles « D Kurd 18 · 0 », « Mutant · 2 », « À deux · 16 » et « + tension · 15 ». Enfin la rangée « En plus, grâce à tes deux handpans ensemble : 16 accords » : Cm, C#, C#m, D, Eb, Ebm, E, Em, Fm, F#, F#m, G, G#, A, Bbm et Bm, chacun cerclé d'or avec « ⚡ seulement à deux ». Chaque carte a quatre boutons : l'œil, le son, la boucle et le chapeau d'apprentissage."
+    src="/images/blog-duo-deux-rangees-accords-2026-10-24.webp"
+    width="2880"
+    height="2394"
+    alt="L'écran du duo en thème Nuit étoilée. En haut, le bandeau « Duo hybride : D Kurd 11 + Neotone Mutant · Noyer », avec 7/7 · 7/7 · 12/12, mineur naturel, « inverser » et « Révéler les 24 accords », puis les sept émotions. Dessous, les deux pans : le D Kurd 11 avec ses notes (D3 au centre, A3, Bb3, C4, D4, E4, F4, G4, A4, C5, D5) et le Neotone Mutant · Noyer, qui porte la gamme complémentaire (C#3 au centre, F#3, B3, Eb3, Eb4, G#3, G#4, C#4, F#4, B4…). Puis la ligne « 🌈 Tout jouer · gamme complémentaire à l'essai · ⚡ Accords à deux : 16 », le bouton jaune « Copier les notes pour mon Neotone » et « Changer ». La rangée « Les 7 accords de Ré mineur » : Dm, Edim, F, Gm, Am, Bb et C, chacun avec son émotion et la mention « D Kurd 11 seul ». Les pastilles « D Kurd 11 · 0 », « Neotone Mutant · Noyer · 2 », « À deux · 16 ✓ » et « + tension · 15 ». Enfin la rangée « En plus, grâce à tes deux handpans ensemble : 16 accords », sur une seule ligne : Cm, C#, C#m, D, Eb, Ebm, E, puis Em coupé au bord droit, chacun cerclé d'or avec « ⚡ seulement à deux ». Chaque carte a l'œil, le son, la boucle et le chapeau d'apprentissage, et un menu « Fondam. »."
     data-lb="deux-handpans-ensemble"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Un D Kurd 18 et un Neotone Mutant. En haut, <strong>les 7 accords de ré mineur</strong>, que le D Kurd 18 joue seul. En bas, cerclés d'or, <strong>16 accords en plus</strong> qu'on ne joue qu'à deux, comme le ré majeur (D) ou le mi majeur (E). Chaque carte a son œil 👁, son ▶, sa boucle 🔁 et son 🎓. Capture prise avant la mise à jour du 22 octobre : depuis, les cartes sont plus compactes et les accords en plus défilent sur une seule ligne.</figcaption>
+  <figcaption>Un D Kurd 11 et un Neotone Mutant en <strong>Duo hybride</strong>, avec la gamme complémentaire de <em>🌈 Tout jouer</em> à l'essai. En haut, <strong>les 7 accords de ré mineur</strong>, que le D Kurd 11 joue seul. En bas, cerclés d'or, <strong>16 accords en plus</strong> qu'on ne joue qu'à deux, comme le ré majeur (D) ou le mi majeur (E). Cette rangée tient sur une seule ligne, qui défile : la carte Em est coupée au bord droit. Chaque carte a son œil 👁, son ▶, sa boucle 🔁 et son 🎓.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -70,7 +70,19 @@ Le menu sous chaque carte choisit la <abbr title="La façon de répartir les not
 
 Le 🎓 ouvre l'apprentissage de l'accord sur les deux handpans. Un bouton **« En grand »** l'agrandit, par exemple pour faire une photo propre.
 
-<!-- CAPTURE À VENIR : un accord « ⚡ seulement à deux » allumé sur les deux handpans (notes numérotées, trait d'un pan à l'autre), en thème Nuit étoilée. La capture existante (D Kurd 18 + Mutant, 22/10) n'est pas utilisée : la note du Mutant y est écrite « Gb3 » dans un accord de ré majeur, et un pad « F#3 » reste allumé à côté. Bug signalé à la session de l'app. -->
+<figure>
+  <img
+    src="/images/blog-duo-hybride-re-majeur-2026-10-24.webp"
+    width="2880"
+    height="1684"
+    alt="Le même Duo hybride, D Kurd 11 + Neotone Mutant · Noyer, avec l'œil allumé sur l'accord de ré majeur (D). Dans le bandeau, l'ordre de jeu : ① D3 → ② F#3 → ③ A3. Sur le D Kurd 11, D3 (au centre) porte le numéro 1 et A3 le numéro 3, en orange ; sur le Mutant, F#3 porte le numéro 2. Un trait orange relie les trois notes d'un pan à l'autre. Les autres notes sont éteintes et gardent leur nom. En bas, « Tout jouer · gamme complémentaire à l'essai · Accords à deux : 16 »."
+    data-lb="deux-handpans-ensemble"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>L'œil de la carte <strong>D</strong> (ré majeur, « ⚡ seulement à deux ») : l'accord s'allume sur les deux handpans. <strong>① D3</strong> et <strong>③ A3</strong> sont sur le D Kurd 11, <strong>② F#3</strong> sur le Mutant, et un trait relie les notes d'un pan à l'autre. Le bandeau rappelle l'ordre de jeu : ① D3 → ② F#3 → ③ A3.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Duo hybride électro-acoustique : « Que veux-tu faire avec ces deux handpans ? »
 
@@ -114,7 +126,19 @@ Avec deux handpans acoustiques, aucune note ne peut changer. L'app ne te demande
 
 Tu y lis les accords nouveaux à jouer à deux, les tonalités jouables, et les morceaux du répertoire que le duo ajoute à ceux de ton premier handpan. Un bouton **« Apprendre un accord à deux »** t'emmène directement à la pratique.
 
-<!-- CAPTURE À VENIR : deux handpans acoustiques en duo, thème Nuit étoilée, avec le bloc « Ce que tu peux faire avec ces deux handpans » et les deux rangées d'accords. C'est la capture jumelle de celle du D Kurd 18 + Mutant ci-dessus. -->
+<figure>
+  <img
+    src="/images/blog-duo-acoustique-ce-que-tu-peux-faire-2026-10-24.webp"
+    width="2880"
+    height="1944"
+    alt="Un duo de deux handpans acoustiques, thème Nuit étoilée. En haut, le bandeau « Duo acoustique : D Kurd 10 + B Amara 9 », mineur naturel, « inverser » et « Révéler les 14 accords », puis les sept émotions. Dessous, les deux pans : le D Kurd 10 (D3 au centre, A3, Bb3, C4, D4, E4, F4, G4, A4, C5) et le B Amara 9 (B2 au centre, F#3, A3, B3, C#4, D4, E4, F#4, A4). En bas, le bloc « Ce que tu peux faire avec ces deux handpans » : « 4 accords nouveaux, à jouer à deux », « Tonalités jouables : 2/24 → 8/24 », « Morceaux du répertoire : 157 avec ton D Kurd 10 seul, +40 à deux — par ex. Sultans of Swing · House of the Rising Sun · Hit the Road Jack », la ligne « Em · F# · G · Bbm », et les boutons « Voir les accords à deux », « Apprendre un accord à deux » et « Tout révéler en grand »."
+    data-lb="deux-handpans-ensemble"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Un <strong>Duo acoustique</strong> : D Kurd 10 + B Amara 9. Rien à changer sur deux acoustiques : le bloc <em>Ce que tu peux faire avec ces deux handpans</em> fait le compte. Ici, <strong>4 accords nouveaux</strong> à jouer à deux, les tonalités jouables qui passent de <strong>2 à 8 sur 24</strong>, et <strong>40 morceaux de plus</strong> que les 157 du D Kurd 10 seul.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### Tu n'as pas encore le deuxième ?
 
@@ -142,7 +166,18 @@ Les frappes reçues en double sont écartées. Tes enregistrements <abbr title="
 
 Deux limites, à connaître avant de brancher. Midi connect n'apparaît qu'à partir du niveau Apprenti. Et sur iPad et iPhone, aucun navigateur ne donne accès au MIDI : branche-les sur un ordinateur ou une tablette Android.
 
-<!-- CAPTURE À VENIR : Midi connect, thème Nuit étoilée, avec le bouton « Associer mes deux Neotone » et les deux pans ① et ②. -->
+<figure>
+  <img
+    src="/images/blog-midi-associer-deux-neotone-2026-10-24.webp"
+    width="742"
+    height="626"
+    alt="Le panneau « 🔌 Deux Neotone en USB » de Midi connect, thème Nuit étoilée. Il indique « ① Mutant · — / ② Neotone¹ · — », puis « Chaque instrument allume son pan : ① et ②. Associe-les une fois, l'app s'en souvient. », le bouton « Associer mes deux Neotone », une case « Ignorer le Midi Thru (fenêtre de 60 ms au lieu de 15) » et la ligne « Doublons écartés : 0 · décalages appliqués : ① 0 ms, ② 0 ms ». Dessous, le réglage « Nº MIDI des pads » sur Off."
+    data-lb="deux-handpans-ensemble"
+    loading="lazy"
+  />
+  <figcaption>Le panneau <strong>Deux Neotone en USB</strong>, dans Midi connect : deux Neotone sont branchés, pas encore associés. Le bouton <strong>Associer mes deux Neotone</strong> lance l'association (tape une note sur l'un, puis sur l'autre), qui n'est pas montrée ici. Les deux entrées MIDI de cette capture sont simulées, sans instrument.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Tes duos te suivent
 
@@ -151,6 +186,20 @@ Dans Mes handpans, la rangée **🤝 Mes duos** montre chaque duo enregistré da
 - **▶ Jouer le duo** le pose à l'écran en un clic, et l'app te repose la question « Que veux-tu faire avec ces deux handpans ? ».
 - **✎** le renomme.
 - **🗑** l'oublie. Tes handpans, eux, restent.
+
+<figure>
+  <img
+    src="/images/blog-mes-handpans-mes-duos-2026-10-24.webp"
+    width="2400"
+    height="2520"
+    alt="L'écran « Mes handpans », thème Nuit étoilée. En haut, « Mon duo », marqué « À l'écran » : ① D Kurd 11, « Pan principal », et ② Neotone Mutant · Noyer, « À côté », avec « Jouer le duo », « Défaire le duo », « Mes duos (2) » et la ligne « « Duo du salon » : D Kurd 11 + Neotone Mutant · Noyer ». Dessous, les cartes rangées en « Électroniques 1 » (Neotone Mutant · Noyer) et « Acoustiques 3 » (D Kurd 11, D Kurd 10, B Amara 9), avec les cartes en pointillés pour en ajouter. Tout en bas, « Mes duos 2 » : « Duo du salon », « Duo hybride · D Kurd 11 + Neotone Mutant · Noyer », marqué « À l'écran », et « Les deux acoustiques », « Duo acoustique · D Kurd 10 + B Amara 9 », avec « Jouer le duo ». Chaque duo montre ses deux handpans dessinés côte à côte, un crayon et une corbeille."
+    data-lb="deux-handpans-ensemble"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>La rangée <strong>🤝 Mes duos</strong>, avec deux duos enregistrés : « Duo du salon », un <strong>Duo hybride</strong> (D Kurd 11 + Neotone Mutant), à l'écran, et « Les deux acoustiques », un <strong>Duo acoustique</strong> (D Kurd 10 + B Amara 9), avec son bouton <strong>Jouer le duo</strong>. Chacun a son crayon ✎ et sa corbeille 🗑. Les noms des duos sont des exemples.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 Tes duos sont enregistrés **sur ton compte**, même en gratuit. Un duo enregistré sur ton ordinateur apparaît sur ta tablette, et un duo supprimé sur l'un disparaît de l'autre.
 
