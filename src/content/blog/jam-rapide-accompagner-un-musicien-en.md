@@ -11,7 +11,7 @@ permalink: "jam-rapide-accompagner-un-musicien"
 draft: false
 ---
 
-[Handpan Constellation Studio's](/en/handpan-app) **Quick Jam** (⚡ *Jam Rapide* in the app, still labelled in French) turns a line thrown across the room — "we're in G minor, I-IV-V on the verse" — into a ready-to-play score, with named sections and diagrams in the right order. Three clicks. About as long as the guitarist needs to finish tuning.
+[Handpan Constellation Studio's](/en/handpan-app) **⚡ Quick Jam** turns a line thrown across the room — "we're in G minor, I-IV-V on the verse" — into a ready-to-play score, with named sections and diagrams in the right order. Three clicks. About as long as the guitarist needs to finish tuning.
 
 That route doesn't depend on the instrument in your hands: **acoustic or electronic**, you give the same key, you lay out the same degrees, and you get the same score, laid out on your own instrument.
 

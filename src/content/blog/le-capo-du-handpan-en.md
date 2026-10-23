@@ -138,7 +138,7 @@ You haven't transposed a piece: you have transposed the instrument. What you reh
 
 ### Joining other musicians
 
-A session starts, someone calls the key. You set your anchor there — one petal to touch on the wheel, the one shown in [the three-key grid](#grille-trois-tonalites) — and play. No "sorry, I'm in D", no second instrument to unpack: the repertoire you know follows you.
+A session starts, someone calls the key. You set your anchor there — one petal to touch on the wheel, and [the drawing doesn't move](#grille-trois-tonalites) — and play. No "sorry, I'm in D", no second instrument to unpack: the repertoire you know follows you.
 
 ## A clear frame, rather than cognitive chaos
 

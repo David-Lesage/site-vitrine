@@ -138,7 +138,7 @@ Tu n'as pas transposé un morceau : tu as transposé l'instrument. Ce que tu as 
 
 ### Rejoindre d'autres musiciens
 
-Une session commence, quelqu'un annonce la tonalité. Tu poses ton ancrage dessus — un pétale à toucher sur la roue, celle que montre [la grille des trois tonalités](#grille-trois-tonalites) — et tu joues. Pas de « désolé, je suis en ré », pas de deuxième instrument à sortir : le répertoire que tu connais te suit.
+Une session commence, quelqu'un annonce la tonalité. Tu poses ton ancrage dessus — un pétale à toucher sur la roue, et [le dessin ne bouge pas](#grille-trois-tonalites) — et tu joues. Pas de « désolé, je suis en ré », pas de deuxième instrument à sortir : le répertoire que tu connais te suit.
 
 ## Un cadre clair, plutôt qu'un chaos cognitif
 
