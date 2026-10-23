@@ -2,8 +2,8 @@
 title: "Jam Rapide : accompagner un musicien en trois clics"
 description: "Un ami te lance « sol mineur, I-IV-V au couplet » ? Trois clics et ta partition est prête. Et si tu ne connais que les accords, l'app devine la tonalité."
 pubDate: 2026-09-16
-updatedDate: 2026-10-23
-cover: "/images/app-jam-rapide-saisie.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-jam-rapide-saisie-2026-10.webp"
 category: "logique"
 tags: ["jam", "accompagnement", "partition"]
 lang: "fr"
@@ -29,15 +29,15 @@ L'harmonie sort juste dans les quatre familles de gammes : majeur, mineur nature
 
 <figure>
   <img
-    src="/images/app-jam-rapide-saisie.webp"
-    width="1776"
-    height="1806"
-    alt="La fenêtre « ⚡ Jam Rapide », étape 2 sur 3, thème sombre. En haut : « Tape les degrés dans l'ordre, section par section. » puis « Tonalité : D Majeur ☀️ ». Deux blocs suivent. Le bloc « Couplet », liseré bleu, contient déjà trois pastilles colorées I, IV, V, et sous elles la rangée complète des sept degrés cliquables I, ii, iii, IV, V, vi, vii°. Le bloc « Refrain », liseré rouge, contient quatre pastilles iii, IV, vi, V et la même rangée de sept degrés. En dessous, un bouton « + Ajouter une partie », puis « ← Tonalité » et le bouton bleu « ⚡ Générer la partition »."
+    src="/images/app-jam-rapide-saisie-2026-10.webp"
+    width="1258"
+    height="1280"
+    alt="La fenêtre ⚡ Jam Rapide, étape 2 sur 3, thème Nuit étoilée, avec le bouton « Copier le lien de cet outil ». Consigne : « Tape les degrés dans l'ordre, section par section. » Tonalité : D Majeur. Section Couplet : les degrés choisis I, IV, V en pastilles rouge, verte et bleu ciel, puis la rangée des sept degrés I, ii, iii, IV, V, vi, vii°. Section Refrain : iii, IV, vi, V, puis la même rangée de sept degrés. En dessous, « + Ajouter une partie », puis les boutons « ← Tonalité » et « ⚡ Générer la partition »."
     data-lb="jam-rapide"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>L'étape de saisie : la tonalité est posée (<em>D Majeur</em>), et les degrés s'ajoutent section par section — <strong>I-IV-V</strong> au couplet, <strong>iii-IV-vi-V</strong> au refrain. Chaque section a sa propre rangée de sept degrés, et on peut en ajouter d'autres.</figcaption>
+  <figcaption>L'étape de saisie : la tonalité est posée (<em>D Majeur</em>), et les degrés s'ajoutent section par section — <strong>I-IV-V</strong> au couplet, <strong>iii-IV-vi-V</strong> au refrain. Chaque section a sa propre rangée de sept degrés, et on peut en ajouter d'autres avec <em>Ajouter une partie</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -49,39 +49,23 @@ Tape-les tels qu'on te les donne — « Am, F, C, G », ou en Do Ré Mi si c'est
 
 <figure>
   <img
-    src="/images/app-jam-rapide-deduction.webp"
-    width="1776"
-    height="1275"
-    alt="La fenêtre « ⚡ Jam Rapide » à l'étape 1. Le texte dit « Voici la tonalité qui colle le mieux à tes accords. » puis, en grand : « Ces accords vivent en A MINEUR NATUREL 🌙 » et « ✨ Tous tes accords font partie de cette gamme. » En dessous, quatre pastilles de correspondance : Am → i, F → VI, C → III, G → VII. Plus bas, la rubrique « AUTRES LECTURES POSSIBLES » propose « ☀️ C Majeur · 4/4 ». En pied de fenêtre : « ← Les accords », « ✏️ Organiser en sections », et le bouton bleu « ⚡ C'est parti »."
+    src="/images/app-jam-rapide-deduction-2026-10.webp"
+    width="2056"
+    height="1476"
+    alt="La fenêtre ⚡ Jam Rapide, étape 1, par-dessus l'écran du handpan assombri. « Voici la tonalité qui colle le mieux à tes accords. Ces accords vivent en A MINEUR NATUREL 🌙 — ✨ Tous tes accords font partie de cette gamme. » Quatre pastilles : ✓ Am → i, ✓ F → VI, ✓ C → III, ✓ G → VII. Sous « AUTRES LECTURES POSSIBLES », un bouton « ☀ C Majeur · 4/4 ». En bas, « ← Les accords », « Organiser en sections » et « ⚡ C'est parti »."
     data-lb="jam-rapide"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>La déduction de tonalité. À partir de « Am, F, C, G », l'app répond en toutes lettres : <em>ces accords vivent en A mineur naturel</em>, et montre le degré attribué à chaque accord. Elle propose aussi la lecture concurrente — <em>C Majeur</em> — plutôt que de trancher en silence.</figcaption>
+  <figcaption>La déduction de tonalité. À partir de « Am, F, C, G », l'app répond en toutes lettres : <em>ces accords vivent en A mineur naturel</em>, et montre le degré attribué à chaque accord. Elle propose aussi l'autre lecture possible — <em>C Majeur</em> — plutôt que de trancher en silence.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
 ## Ton instrument, pas un autre
 
-> **Mise à jour du 23 octobre 2026.** En septembre, une fiche « Voir la gamme » dessinait à la sortie du Jam Rapide un instrument Neotone choisi par l'app. Elle a disparu en octobre.
-
 Le Jam Rapide pose maintenant les accords sur **le handpan que tu as chargé**, avec les mêmes notes aux mêmes endroits. Si un accord ne peut pas être joué en entier sur ton instrument, la carte te dit quelle note manque. Transposer change la tonalité, jamais ton instrument.
 
-Tu vois donc, avant de jouer une seule note, si le morceau tient sur ton instrument.
-
-<figure>
-  <img
-    src="/images/app-jam-rapide-voir-la-gamme.webp"
-    width="2000"
-    height="1250"
-    alt="La fiche « 🎯 Disposition réaliste — Jam D Majeur », ouverte par-dessus le Mode Logique assombri. Le texte indique : « Coque choisie : Neotone Mutant (19 notes) — 12 notes nécessaires pour voicer 4 accords en 4 sons (fondamentale · tierce · quinte · octave), comme au Mode Logique. » Au centre, un handpan dessiné sur une coque en bois, notes colorées et numérotées, avec un tracé rouge reliant les notes d'un accord. En dessous : « 👁 L'ŒIL PAR ACCORD — CLIQUE UN DEGRÉ POUR VOIR SON POLYGONE » et quatre boutons I, IV, V, vi, puis la ligne « I : D2 · F#3 · A3 · D4 (+ bonus D3) ». En bas : « ✅ Le morceau utilise cette disposition », « Fermer » et « 🎬 Jouer en mode Scène »."
-    data-lb="jam-rapide"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption><strong>L'ancienne fiche de sortie, telle qu'elle existait en septembre</strong> : elle n'existe plus depuis que le Jam Rapide joue sur ton instrument. L'app y annonçait la coque qu'elle avait retenue — ici le <strong>Neotone Mutant (19 notes)</strong> — et pourquoi : « 12 notes nécessaires pour voicer 4 accords en 4 sons ». Cliquer un degré traçait son polygone sur l'instrument et listait ses notes.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
-</figure>
+Tu vois donc, avant de jouer une seule note, si le morceau tient sur ton instrument. Et s'il ne tient pas, l'app cherche pour toi une autre tonalité qui tombe sur ton handpan (la dernière capture de cet article le montre). Avant octobre, le Jam Rapide choisissait lui-même un instrument Neotone et y dessinait les accords : ce n'est plus le cas.
 
 ## Transposer pour la voix
 
@@ -89,15 +73,15 @@ Dernier réflexe de jam : quelqu'un chante, et la tonalité est trop haute. Les 
 
 <figure>
   <img
-    src="/images/app-jam-rapide-etape3-recap.webp"
-    width="2000"
-    height="1250"
-    alt="La fenêtre « ⚡ Jam Rapide » à l'étape 3 sur 3 : « Ta partition est prête ! Joue-la ou ajuste-la. » puis « ✅ « Jam D Majeur » est dans Mes morceaux. » Une ligne « Couplet » récapitule les quatre pastilles I, IV, V, vi. En dessous, un bloc « 🎤 Transposer (pour la voix du chanteur) » avec trois boutons : « ♭ − », « D », « + ♯ ». Puis le texte « La partition complète (diagrammes d'accords section par section) s'affiche en mode Scène. Tu peux aussi l'ajuster dans l'éditeur de morceau. » Enfin cinq boutons : Pupitre, Mon instrument, Imprimer, Ouvrir dans l'éditeur, Jouer en mode Scène."
+    src="/images/app-jam-rapide-etape3-recap-2026-10.webp"
+    width="2880"
+    height="1800"
+    alt="La fenêtre ⚡ Jam Rapide, étape 3, ouverte sur un D Kurd 10. « Ta partition est prête ! Joue-la ou ajuste-la. ✅ « Jam D Majeur » est dans Mes morceaux. » Rappel des sections : Couplet I, IV, V ; Refrain iii, IV, vi, V. Bloc « Transposer (pour la voix du chanteur) » : ♭ −, la tonalité D, + ♯. Puis « TON INSTRUMENT ET CE MORCEAU — Avec ton instrument, tu joues 0 accord sur 5 » et la liste : D · Équilibre, il manque F# ; G · Détente, il manque B ; A · Tension, il manque C# ; F#m · Aventure, il manque F#, C# ; Bm · Nostalgie, il manque B, F#. Bloc « Une autre tonalité qui tombe sur ton handpan » : en F (+3 demi-tons) tout est jouable, en Bb il manquerait encore Eb, en C il manquerait encore B, chacun avec son bouton « Transposer en… ». En bas, le début du bloc « Les jouer tels quels : un 2ᵉ handpan »."
     data-lb="jam-rapide"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>La dernière étape. Le morceau est déjà rangé dans <em>Mes morceaux</em>, la transposition se fait avec <strong>♭ −</strong> et <strong>+ ♯</strong> de part et d'autre de la tonalité courante, et cinq boutons décident de la suite : Pupitre, Mon instrument, Imprimer, l'éditeur, ou le mode Scène.</figcaption>
+  <figcaption>La dernière étape, sur un D Kurd 10. Le morceau est déjà rangé dans <em>Mes morceaux</em>, et la transposition se fait avec <strong>♭ −</strong> et <strong>+ ♯</strong> de part et d'autre de la tonalité courante. Dessous, l'app compare le morceau à ton instrument : en D, aucun des cinq accords ne se joue en entier, et la note qui manque est donnée pour chacun. Elle propose donc <strong>une autre tonalité qui tombe sur ton handpan</strong> — en F, tout est jouable —, ou un deuxième handpan.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
