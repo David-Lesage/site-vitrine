@@ -31,7 +31,7 @@ Fais monter **la septième** d'un demi-ton, et tout bascule. Le cinquième degr�
 
 Sur le pan, **deux pastilles seulement** changent de note, et l'app l'annonce elle-même dans le tiroir : « 2 pads changent ».
 
-<figure class="article-img-pair article-img-pair--stack-sm">
+<figure class="article-img-pair">
   <div class="article-img-pair-grid">
     <div class="article-img-pair-cell"><span class="article-img-pair-label">Mineur naturel</span>
     <img

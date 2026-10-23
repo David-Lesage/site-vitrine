@@ -31,7 +31,7 @@ Raise **the seventh** by a semitone and everything shifts. The fifth degree beco
 
 On the pan, **only two dots** change note, and the app says so itself in the drawer: “2 pads change”.
 
-<figure class="article-img-pair article-img-pair--stack-sm">
+<figure class="article-img-pair">
   <div class="article-img-pair-grid">
     <div class="article-img-pair-cell"><span class="article-img-pair-label">Natural minor</span>
     <img
