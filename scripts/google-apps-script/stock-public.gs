@@ -7,7 +7,9 @@
  * publier QUE ce dont le site lesagedavid.fr a besoin pour dire quels Neotone
  * sont en stock : modèle, bois, statut, dates d'expédition. RIEN d'autre —
  * ni nom, ni e-mail, ni adresse, ni téléphone, ni n° de série, ni prix.
- * Lecture seule : ce script n'écrit jamais dans le Sheet.
+ * Sortie publique en lecture seule. Depuis le 25/10/2026, deux entrées PRIVÉES
+ * protégées par une clé secrète (voir « PARTIE PRIVÉE » en bas du fichier) :
+ * la liste des n° de série, et l'écriture des cases violettes d'une vente.
  *
  * Pourquoi un script AUTONOME (créé depuis script.google.com, pas depuis le
  * menu Extensions du Sheet) : le Sheet est partagé avec Neotone, un script lié
@@ -82,7 +84,10 @@ var DATE_WORDS = ('january jan janvier janv enero ene february feb fevrier fev f
   'september sep sept septembre septiembre october oct octobre octubre november nov novembre noviembre ' +
   'december dec decembre diciembre dic to au al a').split(' ')
 
-function doGet() {
+function doGet(e) {
+  // Sortie PRIVÉE (25/10/2026) : n° de série, réservée à l'Edge Function
+  // neotone-purchase-action (clé secrète). Sans la clé : sortie publique inchangée.
+  if (e && e.parameter && e.parameter.mode === 'private') return privateGet_(e.parameter.key)
   var body
   try {
     var sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(TAB_NAME)
@@ -171,4 +176,141 @@ function safeDate_(text) {
 function testerLocalement() {
   var out = doGet().getContent()
   Logger.log(out)
+}
+
+
+// =============================================================================
+// PARTIE PRIVÉE (25/10/2026) — processus d'achat en 3 cas
+// =============================================================================
+// Utilisée UNIQUEMENT par l'Edge Function Supabase `neotone-purchase-action`
+// (jamais par le navigateur). Protégée par une clé secrète :
+//   Éditeur Apps Script → ⚙️ Paramètres du projet → Propriétés du script →
+//   ajouter `PRIVATE_KEY` = une longue chaîne aléatoire (32 caractères ou plus).
+//   La même valeur va dans le secret Supabase `STOCK_PRIVATE_KEY`, et l'URL
+//   /exec de ce script dans `STOCK_PRIVATE_URL`.
+// Sans `PRIVATE_KEY` posée, les deux entrées privées refusent tout.
+//
+//  GET  ?mode=private&key=…  → { pieces: [{ serial, model, wood, status, arrivalText }] }
+//       (lignes Neotone « Available » ou « In transit … » seulement)
+//  POST { key, action: 'write_sale', serial, fields: { '<en-tête>': '<valeur>' } }
+//       → écrit les cases de la ligne de ce n° de série, PAR NOM D'EN-TÊTE.
+//       Ne remplace JAMAIS une case déjà remplie : si une seule des cases visées
+//       est non vide, RIEN n'est écrit et la réponse liste les conflits.
+//       En-têtes autorisés (cases violettes, procédure du 09-10/10) : WRITABLE_HEADERS.
+
+// ⚠️ À VÉRIFIER dans le Sheet : l'en-tête EXACT de la colonne des n° de série.
+// Le script prend le premier de cette liste qu'il trouve en ligne 1.
+var SERIAL_HEADERS = ['Serial number', 'Serial No', 'Serial', 'SN', 'S/N', 'Number', 'No', '#']
+
+var WRITABLE_HEADERS = [
+  'Customer discount',
+  'Name of the Customer',
+  'Valid EU VAT Number',
+  'Billing adress of the customer',
+  'Email of the Customer',
+]
+
+function json_(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON)
+}
+
+function keyOk_(key) {
+  var expected = PropertiesService.getScriptProperties().getProperty('PRIVATE_KEY') || ''
+  if (expected.length < 16 || !key || String(key).length !== expected.length) return false
+  var diff = 0
+  for (var i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ String(key).charCodeAt(i)
+  return diff === 0
+}
+
+function normH_(v) { return String(v == null ? '' : v).trim().replace(/\s+/g, ' ').toLowerCase() }
+
+function serialIndex_(headers) {
+  for (var i = 0; i < SERIAL_HEADERS.length; i++) {
+    var j = headers.indexOf(normH_(SERIAL_HEADERS[i]))
+    if (j !== -1) return j
+  }
+  return -1
+}
+
+function privateGet_(key) {
+  if (!keyOk_(key)) return json_({ pieces: [], error: 'forbidden' })
+  try {
+    var values = SpreadsheetApp.openById(SHEET_ID).getSheetByName(TAB_NAME).getDataRange().getDisplayValues()
+    return json_(extractPrivatePieces_(values))
+  } catch (err) {
+    return json_({ pieces: [], error: 'read_failed' })
+  }
+}
+
+/** Comme extractPieces_, plus le n° de série. Sans appel Google (testable). */
+function extractPrivatePieces_(values) {
+  var pub = extractPieces_(values)
+  if (pub.error) return pub
+  var headers = values[0].map(normH_)
+  var si = serialIndex_(headers)
+  if (si === -1) return { pieces: [], error: 'missing_header: serial' }
+  var idx = {}
+  for (var k in COLUMNS) idx[k] = headers.indexOf(normH_(COLUMNS[k]))
+  var pieces = []
+  for (var r = 1; r < values.length; r++) {
+    var row = values[r]
+    if (normH_(row[idx.product]) !== 'neotone') continue
+    var st = splitStatus_(row[idx.status])
+    if (!st) continue
+    var serial = String(row[si]).trim().replace(/^#/, '')
+    if (!serial) continue
+    pieces.push({ serial: serial, model: String(row[idx.model]).trim(), wood: String(row[idx.wood]).trim(), status: st.status, arrivalText: st.arrivalText })
+  }
+  return { pieces: pieces }
+}
+
+function doPost(e) {
+  var req
+  try { req = JSON.parse(e.postData.contents) } catch (err) { return json_({ ok: false, error: 'bad_json' }) }
+  if (!keyOk_(req.key)) return json_({ ok: false, error: 'forbidden' })
+  if (req.action !== 'write_sale') return json_({ ok: false, error: 'unknown_action' })
+  var lock = LockService.getScriptLock()
+  if (!lock.tryLock(10000)) return json_({ ok: false, error: 'busy' })
+  try {
+    var sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(TAB_NAME)
+    var range = sheet.getDataRange()
+    var plan = planSaleWrite_(range.getDisplayValues(), String(req.serial || ''), req.fields || {})
+    if (!plan.ok) return json_(plan)
+    for (var i = 0; i < plan.cells.length; i++) {
+      sheet.getRange(plan.cells[i].row, plan.cells[i].col).setValue(plan.cells[i].value)
+    }
+    return json_({ ok: true, row: plan.row })
+  } catch (err) {
+    return json_({ ok: false, error: 'write_failed' })
+  } finally {
+    lock.releaseLock()
+  }
+}
+
+/**
+ * Cœur de l'écriture, sans appel Google (testable) : où écrire quoi, ou pourquoi pas.
+ * Lignes/colonnes rendues en numérotation Sheets (1 = première).
+ */
+function planSaleWrite_(values, serial, fields) {
+  var headers = values[0].map(normH_)
+  var si = serialIndex_(headers)
+  if (si === -1) return { ok: false, error: 'missing_header: serial' }
+  var want = String(serial).trim().replace(/^#/, '')
+  if (!want) return { ok: false, error: 'serial_not_found' }
+  var rowIdx = -1
+  for (var r = 1; r < values.length; r++) {
+    if (String(values[r][si]).trim().replace(/^#/, '') === want) { rowIdx = r; break }
+  }
+  if (rowIdx === -1) return { ok: false, error: 'serial_not_found' }
+  var cells = [], conflicts = [], missing = []
+  for (var h in fields) {
+    if (WRITABLE_HEADERS.indexOf(h) === -1) continue
+    var c = headers.indexOf(normH_(h))
+    if (c === -1) { missing.push(h); continue }
+    if (String(values[rowIdx][c]).trim() !== '') { conflicts.push(h); continue }
+    cells.push({ row: rowIdx + 1, col: c + 1, value: String(fields[h]) })
+  }
+  if (missing.length) return { ok: false, error: 'missing_header: ' + missing.join(', ') }
+  if (conflicts.length) return { ok: false, error: 'conflict', conflicts: conflicts }
+  return { ok: true, row: rowIdx + 1, cells: cells }
 }

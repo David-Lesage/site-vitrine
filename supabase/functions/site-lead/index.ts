@@ -195,6 +195,9 @@ import {
     type PartnerMailOutcome,
 } from './neotone-stock-request.ts';
 import { canSignSlotTokens, signSlotToken } from '../_shared/lesson-token.ts';
+// Processus d'achat Neotone en 3 cas (25/10/2026) — liens signés + textes partagés.
+import { purchaseActionUrl, signPurchaseToken } from '../_shared/purchase-token.ts';
+import { STOCK_STATES, davidActionBlockHtml, payFirstSteps, type StockState } from '../_shared/neotone-purchase.ts';
 import {
     FALLBACK_PRICE_GRID,
     fallbackUpcoming,
@@ -367,7 +370,7 @@ const SOURCE_LABELS: Record<string, { fr: string; en: string }> = {
     showcase: { fr: 'Groupe rencontres', en: 'Gathering group' },
     contact: { fr: 'Message via le formulaire de contact', en: 'Message via the contact form' },
     'gonilele-order': { fr: 'Commande d’une harpe Gonilélé', en: 'Gonilélé harp order' },
-    'neotone-stock-request': { fr: 'Neotone pas au showroom : demande de délais', en: 'Neotone not at the showroom: lead-time request' },
+    'neotone-stock-request': { fr: 'Achat d’un Neotone pas au showroom (en route ou à fabriquer)', en: 'Buying a Neotone not at the showroom (on its way or to be built)' },
 };
 
 /** Libellés lisibles des réponses du formulaire, pour la notification à David. */
@@ -500,6 +503,8 @@ interface ShippingAddress { name: string; address: string; postalCode: string; c
 interface Billing {
     kind: 'particulier' | 'societe' | null;
     company: string; vatNumber: string; siret: string;
+    /** 25/10/2026 : société qui déclare « je n'ai pas de n° de TVA intracom. » (question toujours posée). */
+    noVat: boolean;
     name: string; address: string; postalCode: string; city: string; country: string;
     shipping: null | 'same' | ShippingAddress;
 }
@@ -530,6 +535,7 @@ function parseBilling(raw: unknown): Billing | null {
         company: isCompany ? clip(r.company, 200) : '',
         vatNumber: isCompany ? clip(r.vatNumber, 40) : '',
         siret: isCompany ? clip(r.siret, 40) : '',
+        noVat: isCompany && !clip(r.vatNumber, 40) && r.noVat === true,
         name: clip(r.name, 160),
         address: clip(r.address, 300),
         postalCode: clip(r.postalCode, 20),
@@ -597,7 +603,7 @@ function billingRows(b: Billing, lang: string): [string, string][] {
         [L.type, b.kind === 'societe' ? L.comp : b.kind === 'particulier' ? L.priv : ''],
         [L.name, b.name],
         [L.company, b.company],
-        [L.vat, b.vatNumber],
+        [L.vat, b.vatNumber || (b.noVat ? (en ? 'none (declared)' : 'aucun (déclaré)') : '')],
         [L.siret, b.siret],
         [L.address, b.address],
         [L.pc, b.postalCode],
@@ -921,13 +927,10 @@ function bookingHtml(
         p1Online: 'Thanks — your discount code request has reached me. Here is what happens next.',
         howShowroomTitle: 'How the purchase at the showroom works',
         howShowroom: [
-            'You filled in the purchase form: done ✅',
-            'I check your request and pass it on to Neotone (Soundventure, in Budapest). You are copied in.',
-            'Neotone sends you the invoice and a card payment link, Monday to Friday, 9 am to 5 pm (Paris time, the same as Budapest), within 24 hours (working days).',
-            'You pay, and the instrument is yours: you leave with it, at the showroom (Paris 20th).',
-            'If you pay before coming, send me the proof of payment or bank transfer at <a href="mailto:contact@lesagedavid.fr" style="color:#b4462a;">contact@lesagedavid.fr</a>: I hand you your Neotone on presentation of this proof.',
+            'I check your request and pass it on to Neotone (Soundventure, in Budapest) with the serial number of your instrument. You are copied in.',
+            ...payFirstSteps('en'),
         ],
-        weekend: '<strong>Coming to the showroom at the weekend?</strong> If you filled in the form before Friday, the payment link will be ready: you pay on the spot and leave with your instrument.',
+        weekend: '<strong>Coming at the weekend?</strong> Neotone only invoices on weekdays: send your request several working days before, so that your Neotone is paid before you come.',
         howOnlineTitle: 'How you get your discount code',
         howOnline: [
             'You filled in the form: done ✅',
@@ -975,13 +978,10 @@ function bookingHtml(
         p1Online: 'Merci — ta demande de code de réduction m’est bien parvenue. Voici la suite.',
         howShowroomTitle: 'Comment se passe l’achat au showroom',
         howShowroom: [
-            'Tu as rempli le formulaire d’achat : c’est fait ✅',
-            'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest). Tu es en copie.',
-            'Neotone t’envoie la facture et un lien de paiement par carte, du lundi au vendredi de 9 h à 17 h (heure de Paris, la même qu’à Budapest), sous 24 h (jours ouvrés).',
-            'Tu paies, l’instrument est à toi : tu repars avec, au showroom (Paris 20ᵉ).',
-            'Si tu paies avant de venir, envoie-moi la preuve de paiement ou de virement à <a href="mailto:contact@lesagedavid.fr" style="color:#b4462a;">contact@lesagedavid.fr</a> : je te remets ton Neotone sur présentation de ce justificatif.',
+            'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest) avec le n° de série de ton instrument. Tu es en copie.',
+            ...payFirstSteps('fr'),
         ],
-        weekend: '<strong>Tu viens au showroom un week-end ?</strong> Si tu as rempli le formulaire avant le vendredi, le lien de paiement sera prêt : tu paies sur place et tu repars avec.',
+        weekend: '<strong>Tu viens un week-end ?</strong> Neotone ne facture qu’en semaine : fais ta demande plusieurs jours ouvrés avant, pour que ton Neotone soit payé avant ta venue.',
         howOnlineTitle: 'Comment tu reçois ton code de réduction',
         howOnline: [
             'Tu as rempli le formulaire : c’est fait ✅',
@@ -1422,18 +1422,34 @@ Deno.serve(async (req) => {
         const isNeotone = source === 'neotone-discount';
         // Demande pour un Neotone absent du showroom (25/10/2026).
         const isStockRequest = source === NEOTONE_STOCK_SOURCE;
+        // ── PROCESSUS D'ACHAT EN 3 CAS (25/10/2026) ─────────────────────────────
+        // Cas 1 = achat au showroom (neotone-discount + mode showroom, pièce en
+        // stock) ; cas 2 = demande pour une pièce EN ROUTE ; cas 3 = À FABRIQUER.
+        // L'état du stock vient du calculateur (vu par le client) : il oriente le
+        // parcours, et David choisit de toute façon le n° de série dans la liste
+        // privée au moment de facturer.
+        const isPurchaseFlow = (isNeotone && purchaseMode === 'showroom') || isStockRequest;
+        const rawStock = String(body.neotoneStockState ?? '').trim();
+        const stockState: StockState | null = isNeotone && purchaseMode === 'showroom'
+            ? 'in'
+            : isStockRequest ? (STOCK_STATES.includes(rawStock as StockState) && rawStock !== 'in' ? rawStock as StockState : 'out') : null;
+        const caseNo: 1 | 2 | 3 | null = !isPurchaseFlow ? null : stockState === 'in' ? 1 : stockState === 'transit' ? 2 : 3;
+        const rawPickup = String(body.pickupDate ?? '').trim();
+        const pickupDate = isPurchaseFlow && /^\d{4}-\d{2}-\d{2}$/.test(rawPickup) && rawPickup >= new Date(Date.now() - 86400000).toISOString().slice(0, 10)
+            ? rawPickup : null;
+        const arrivalLabel = isStockRequest ? (String(body.neotoneArrival ?? '').trim().slice(0, 60) || null) : null;
         const { personal: personalMessage, legacy: legacyBilling } = isNeotone
             ? splitLegacyBilling(message)
             : { personal: message, legacy: null };
-        const billing = isNeotone ? (parseBilling(body.billing) ?? legacyBilling) : null;
+        const billing = isNeotone ? (parseBilling(body.billing) ?? legacyBilling) : isStockRequest ? parseBilling(body.billing) : null;
         // Montants du calculateur (21/10/2026) — bornés et vérifiés, jamais recalculés.
-        const neotonePrice = isNeotone ? parseNeotonePrice(body.neotonePrice, purchaseMode) : null;
+        const neotonePrice = isNeotone || isStockRequest ? parseNeotonePrice(body.neotonePrice, purchaseMode) : null;
 
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
         // Téléphone obligatoire UNIQUEMENT pour le formulaire de contact : les
         // autres motifs (réservations, bêta, fabricants…) gardent leurs règles.
         // 25/10/2026 : aussi pour `neotone-stock-request` (David rappelle avec les délais).
-        if ((source === 'contact' || isStockRequest) && !isValidPhone(phone ?? '')) return json({ error: 'invalid_phone' }, 400);
+        if ((source === 'contact' || isPurchaseFlow) && !isValidPhone(phone ?? '')) return json({ error: 'invalid_phone' }, 400);
 
         const isBooking = BOOKING_SOURCES.includes(source);
         // Réservation d'une place à un showcase → confirmation IMMÉDIATE.
@@ -1491,6 +1507,15 @@ Deno.serve(async (req) => {
             news_opt_in: newsOptIn,
             news_opt_in_at: newsOptInAt,
             preferred_slots: preferredSlots,
+            // 25/10/2026 — processus d'achat : colonnes de specs/migration-0189-site-leads-achat-neotone-3-cas.sql.
+            // Clés posées SEULEMENT pour un achat : les autres formulaires ne dépendent pas de la migration.
+            ...(isPurchaseFlow ? {
+                purchase_state: 'new',
+                neotone_stock_state: stockState,
+                neotone_pickup_date: pickupDate,
+                neotone_arrival_label: arrivalLabel,
+                neotone_price: neotonePrice,
+            } : {}),
         };
 
         // Upsert d'une ligne pour UNE source donnée (index unique lower(email)+source).
@@ -1626,7 +1651,10 @@ Deno.serve(async (req) => {
                             ? (lang === 'en' ? 'David Lesage — your request is received ✨' : 'David Lesage — ta demande est bien reçue ✨')
                             : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨');
                 const html = isStockRequest
-                    ? stockRequestClientHtml({ firstName, lang, model: neotoneModel, wood: neotoneWood, message: personalMessage, site: SITE })
+                    ? stockRequestClientHtml({
+                        firstName, lang, model: neotoneModel, wood: neotoneWood, message: personalMessage, site: SITE,
+                        stockState, pickupDate, billingRows: billing ? billingRows(billing, lang) : [], paySteps: payFirstSteps(lang),
+                    })
                     : isShowcaseBooking
                     ? showcaseConfirmationHtml({
                         firstName,
@@ -1677,17 +1705,18 @@ Deno.serve(async (req) => {
             let partnerOutcome: PartnerMailOutcome | null = null;
             if (isStockRequest) {
                 try {
-                    if (!NEOTONE_STOCK_REQUEST_EMAIL_ENABLED) partnerOutcome = { sent: false, reason: 'disabled' };
+                    if (caseNo === 2) partnerOutcome = { sent: false, reason: 'transit' };
+                    else if (!NEOTONE_STOCK_REQUEST_EMAIL_ENABLED) partnerOutcome = { sent: false, reason: 'disabled' };
                     else if (!canWriteToNeotone(neotoneModel, neotoneWood)) partnerOutcome = { sent: false, reason: 'imprecise' };
                     else {
                         const now = new Date();
-                        const recent = await recentPartnerMail(admin, neotoneModel!, neotoneWood!, now);
+                        const recent = await recentPartnerMail(admin, neotoneModel!, neotoneWood!, now, pickupDate);
                         if (!recent.ok) partnerOutcome = { sent: false, reason: 'unknown_window', detail: recent.error };
                         else if (recent.lastAt) {
                             const when = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'short', timeStyle: 'short', timeZone: SITE_TIME_ZONE }).format(new Date(recent.lastAt));
                             partnerOutcome = { sent: false, reason: 'recent', detail: when };
                         } else {
-                            const mail = neotoneStockMail(neotoneModel!, neotoneWood!);
+                            const mail = neotoneStockMail(neotoneModel!, neotoneWood!, pickupDate);
                             const partnerClient = new SMTPClient({
                                 connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } },
                             });
@@ -1715,6 +1744,21 @@ Deno.serve(async (req) => {
                     console.error('site-lead partner mail error:', partnerErr);
                     partnerOutcome = { sent: false, reason: 'error', detail: partnerErr instanceof Error ? partnerErr.message.slice(0, 120) : 'inconnue' };
                 }
+            }
+
+            // Boutons « en un clic » du processus d'achat (25/10/2026) : liens signés,
+            // valables pour CETTE demande seulement (_shared/purchase-token.ts).
+            async function purchaseActionsHtml(): Promise<string> {
+                if (!caseNo || !leadId) return '';
+                const primary = await signPurchaseToken(leadId, caseNo === 1 ? 'invoice' : 'reply');
+                const cancel = await signPurchaseToken(leadId, 'cancel');
+                if (!primary || !cancel) return '';
+                return davidActionBlockHtml({
+                    caseNo,
+                    primaryUrl: purchaseActionUrl(SITE, primary, 'fr'),
+                    cancelUrl: purchaseActionUrl(SITE, cancel, 'fr'),
+                    partnerLine: caseNo === 3 && partnerOutcome ? partnerOutcomeFr(partnerOutcome) : undefined,
+                });
             }
 
             // Notification à David — UNIQUEMENT pour ce qui attend une réponse de sa part :
@@ -1778,6 +1822,8 @@ Deno.serve(async (req) => {
                             'Mail à Neotone': isStockRequest && partnerOutcome ? partnerOutcomeFr(partnerOutcome) : null,
                             Bois: neotoneWood ? NEOTONE_WOOD_LABELS[neotoneWood] : null,
                             'Mode d’achat': purchaseMode ? PURCHASE_MODE_LABELS[purchaseMode] : null,
+                            'Retrait souhaité': pickupDate,
+                            'Parcours d’achat': caseNo ? `cas ${caseNo} — ${caseNo === 1 ? 'en stock au showroom' : caseNo === 2 ? `en route${arrivalLabel ? ` (arrivée : ${arrivalLabel})` : ''}` : 'à fabriquer'}` : null,
                             // Showroom : rien n'est livré, ce pays est celui choisi dans
                             // le calculateur (il fixe la TVA affichée), pas une livraison.
                             'Pays de livraison': purchaseMode === 'showroom' ? null : country,
@@ -1825,7 +1871,7 @@ Deno.serve(async (req) => {
           <div style="margin:0 0 6px;font-size:15px;font-weight:700;color:#111827;">Prix — montants du calculateur</div>
           ${neotonePriceHtml(adminPriceView)}
           ${adminPriceView.missingVat ? '<p style="margin:8px 0 0;color:#b4462a;font-size:13px;line-height:1.5;">⚠️ Case B2B cochée dans le calculateur, mais aucun n° de TVA saisi.</p>' : ''}
-        </td></tr>` : '') + await slotConfirmBlockHtml(confirmLessonId, confirmSlots), billing ? [
+        </td></tr>` : '') + await purchaseActionsHtml() + await slotConfirmBlockHtml(confirmLessonId, confirmSlots), billing ? [
                             {
                                 title: 'Facturation',
                                 rows: [
