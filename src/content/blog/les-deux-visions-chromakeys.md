@@ -189,6 +189,40 @@ Conséquence visible : deux notes du même nom peuvent porter deux couleurs diff
 
 Et le dessin des sept couleurs reste identique d'une tonalité à l'autre : c'est ce qui te permet de **rejouer la même chose ailleurs sans rien réapprendre**.
 
+### En mode Logique, sur le Neotone Mutant
+
+Pour le voir, je pose un Neotone Mutant en mode Logique, ancré en do (I Équilibre, C), et j'allume l'œil d'un accord : seul cet accord reste en couleur, le reste du pan passe au gris. À gauche la couleur dit **la note**, à droite **sa place dans la gamme**.
+
+<figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">La couleur dit : la note</span><span style="flex:1">La couleur dit : sa place dans la gamme</span></div>
+  <img
+    src="/images/blog-chromakeys-logique-degres-mutant-paire-2026-10-24.webp"
+    width="2158"
+    height="1064"
+    alt="Le même Neotone Mutant, deux fois côte à côte, même cadrage, en mode Logique ancré en do. Au-dessus de chaque pan, l'îlot Chromakeys sur On, Notes partagées sur On. L'œil est allumé sur l'accord « I Équilibre C » : un tracé rouge relie C2, E3, G3 et C4, numérotées de 1 à 4 ; les autres notes sont grises. À gauche, « La couleur dit… » est réglé sur « la note » : C2 et C4 rouges, E3 jaune, G3 bleu ciel. À droite, sur « sa place dans la gamme » : C2, E3, G3 et C4 sont toutes rouges."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>L'accord du <strong>I</strong> (I Équilibre, C). À gauche, chaque note garde la couleur de son nom : C2 et C4 rouges, E3 jaune, G3 bleu ciel. À droite, <strong>tout l'accord est rouge</strong>, parce que c'est le I.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
+<figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">La couleur dit : la note</span><span style="flex:1">La couleur dit : sa place dans la gamme</span></div>
+  <img
+    src="/images/blog-chromakeys-logique-degre-V-mutant-paire-2026-10-24.webp"
+    width="2158"
+    height="1064"
+    alt="Le même réglage, l'œil allumé cette fois sur « V Tension G » : un tracé bleu ciel relie G2, B2, D3 et G3, numérotées de 1 à 4 ; les autres notes, ding C2 compris, sont grises. À gauche, « la note » : G2 et G3 bleu ciel, B2 magenta, D3 orange. À droite, « sa place dans la gamme » : G2, B2, D3 et G3 sont tous bleu ciel."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>L'accord du <strong>V</strong> (V Tension, G). À gauche, D3 est orange, comme tous les ré, et B2 magenta, comme tous les si. À droite, G2, B2, D3 et G3 sont <strong>tous bleu ciel</strong> : D3 est un ré, mais ici il sert l'accord du V.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
+
 **Hors du mode Logique** — en Gammes, dans Créer › Une gamme, et toujours sur un handpan acoustique — le bouton garde le même nom, mais chaque accord prend la couleur de **la note qui lui donne son nom**. Tu vois toujours d'un coup quelles notes vont ensemble, mais ce n'est plus la lecture par degrés.
 
 Sur le D Kurd des captures qui suivent, F4 et A4 prennent une part orange, celle du ré : ce ne sont pas des ré, mais ils appartiennent à l'accord de ré.

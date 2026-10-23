@@ -27,9 +27,24 @@ To see this language in motion, here is the first video of the series about the 
 
 ## Seven degrees, seven emotions
 
-In a scale, every note plays a role. The first degree is the anchor, the place where things "settle". The fifth creates momentum, the urge to go further. The sixth brings a nostalgic tint, the seventh a tension that calls for resolution. These roles are universal: they exist in almost all the music you love, even if you've never put words to them.
+In a scale, every note plays a role. The first degree is the anchor, the place where things "settle". The fifth creates tension, the urge to go further. The sixth brings a nostalgic tint, the seventh a suspended mystery that calls for resolution. These roles are universal: they exist in almost all the music you love, even if you've never put words to them.
 
 Logic Mode makes these roles **visible** by giving them a stable colour, following the **ChromaKeys** logic described in [Playing handpan by colours](/en/blog/handpan-par-les-couleurs). Degree I always keeps its hue, whatever your scale. You learn a grammar of emotions once and for all.
+
+<figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Colour tells you: the note</span><span style="flex:1">Colour tells you: its place in the scale</span></div>
+  <img
+    src="/images/blog-chromakeys-logique-degres-mutant-paire-2026-10-24-en.webp"
+    width="2160"
+    height="1064"
+    alt="The same Neotone Mutant, twice side by side, same framing, in Logic mode anchored on C. Above each pan, the Chromakeys island On. The eye is on for the “I Balance C” chord: a red line links C2, E3, G3 and C4, numbered 1 to 4; the other notes are grey. On the left, the colour tells “the note”: C2 and C4 red, E3 yellow, G3 sky blue. On the right, it tells “its place in the scale”: C2, E3, G3 and C4 are all red."
+    data-lb="degre-I-rouge"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Here on a Neotone Mutant anchored on C, with the eye on the <strong>I</strong>. On the left, the colour tells the note: C, E and G each keep their own. On the right, it tells the place in the scale: <strong>the whole I chord is red</strong>, and it would be in any key. The setting is explained in <a href="/en/blog/les-deux-visions-chromakeys">the two visions of ChromaKeys</a>.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 <figure class="article-img-pair">
   <div class="article-img-pair-grid">

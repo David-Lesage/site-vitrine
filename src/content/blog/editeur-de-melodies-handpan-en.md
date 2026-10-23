@@ -3,7 +3,7 @@ title: "Compose your melody note by note: the melody editor"
 description: "Drop your handpan's notes onto a timeline, listen, loop, speed up — and export as .mid. Handpan Constellation Studio's melody editor."
 pubDate: 2026-08-27
 updatedDate: 2026-10-24
-cover: "/images/app-editeur-melodies-timeline-2026-10.webp"
+cover: "/images/app-editeur-melodies-ode-do-majeur-2026-10-24-en.webp"
 category: "partitions"
 tags: ["melody", "midi", "workshop"]
 lang: "en"
@@ -11,7 +11,7 @@ permalink: "editeur-de-melodies-handpan"
 draft: false
 ---
 
-[Handpan Constellation Studio's](/en/handpan-app) melody editor (*Éditeur de mélodies* in the app, still labelled in French) gives you what was missing between your hands and your memory: your pan on one side, a **timeline** on the other. Click a note on the pan and it lands on the time line. You listen, you move things around, you loop, and you export as `.mid`. A melody that existed tonight still exists tomorrow morning.
+[Handpan Constellation Studio's](/en/handpan-app) melody editor gives you what was missing between your hands and your memory: your pan on one side, a **timeline** on the other. Click a note on the pan and it lands on the time line. You listen, you move things around, you loop, and you export as `.mid`. A melody that existed tonight still exists tomorrow morning.
 
 The editor shows your current scale **whether your handpan is acoustic or electronic** — live MIDI capture needs an electronic instrument, and an acoustic one can record itself through the microphone, as described below.
 
@@ -23,19 +23,19 @@ So you keep replaying the same three phrases — the ones your fingers memorised
 
 ## Your pan on the left, your timeline in the centre
 
-The idea fits in one image. On the left, your handpan as you know it, each note wearing its **ChromaKey**. In the centre, a horizontal timeline with its bars. Click a note and a coloured block appears at the cursor.
+The idea fits in one image. On the left, your handpan as you know it. In the centre, a horizontal timeline with its bars, one row per note, each wearing its **ChromaKey**. Click a note and a coloured block appears at the cursor.
 
 <figure>
   <img
-    src="/images/app-editeur-melodies-timeline-2026-10.webp"
+    src="/images/app-editeur-melodies-ode-do-majeur-2026-10-24-en.webp"
     width="2880"
     height="2016"
-    alt="The melody editor full size, Starry Night theme, interface in French, open on “Ode à la Joie”. At the top, the title, undo / redo, save, open, “Importer” (Import), “.mid · XML”, the “Atelier” (Workshop, active) and “Pluie de notes / Handpan Hero” (Note rain) tabs, and “Copier le lien de cet outil” (Copy this tool's link); below, “Donner mon avis” (Give feedback). Then the toolbar: rewind, play, stop, record, loop, the pencil (active), hand, selection, eraser, arrow, mute and scissors tools, “Tout effacer” (Clear all), the “Double croche” (sixteenth note) grid, “Quantifier” (Quantize), and TEMPO 110, MÉTRIQUE (time signature) 4/4, MESURE (bar) 1. On the left, “GAMME &amp; INSTRUMENT” (scale and instrument) and a drawn handpan with coloured notes, the “Agrandir les handpans” (Enlarge the handpans) button, a pulse slider between a left and a right foot, and “MES MÉLODIES” (my melodies) with help for the tools. In the centre, the grid: one row per note, Bb2 to A5, each in its colour, three numbered bars, and the coloured blocks of the melody, E4 E4 F4 G4 G4 F4 E4 D4 C4. On the right, “MÉLODIE”: Grid Croche (eighth note), time signature 4/4, 3/4 or 6/8, Speed 1×. At the bottom, the “Batteur Pop 4/4 · 110 · au repos” (drummer, resting) bar."
+    alt="The melody editor full size, Starry Night theme, open on “Ode à la Joie” (Ode to Joy), on a Neotone Mutant set to C major. At the top, the title, undo / redo, save, open, “Import”, “.mid · XML”, the “Workshop” (active) and “Note rain / Handpan Hero” tabs, and “Copy this tool's link”; below, “Give feedback”. Then the toolbar: rewind, play, stop, record, loop, the pencil (active), hand, selection, eraser, arrow, mute and scissors tools, “Clear all”, the “Sixteenth note” grid, “Quantize”, and TEMPO 110, TIME SIGNATURE 4/4, BAR 1; on the right, the Scale and Settings buttons. On the left, “SCALE &amp; INSTRUMENT — current scale” and the small drawing of the handpan, grey notes named C2 to C4, the “Enlarge the handpans” button, a pulse slider between a left and a right foot, and “MY MELODIES” with help for the tools. In the centre, the grid: one row per note, C2 to G4, each in its colour, three numbered bars, and the coloured blocks of the melody, E3 E3 F3 G3 G3 F3 E3 D3 C3. No missing-note warning. On the right, “MELODY”: Grid Eighth note, Time signature 4/4, 3/4 or 6/8, Speed 1×. At the bottom, the “Drummer Pop 4/4 · 110 · resting” bar."
     data-lb="editeur-melodies"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The editor, open on the theme of <em>Ode to Joy</em>. On the left, your handpan; in the centre, the grid, where each note of the pan gets its row and its colour, and the blocks carry the note name. Above, the toolbar: <strong>pencil</strong>, <strong>hand</strong>, <strong>eraser</strong>, plus selection, scissors and <em>Quantize</em>. (Screenshot of the French interface: the English one will follow.)</figcaption>
+  <figcaption>The editor, open on the theme of <em>Ode to Joy</em>, with a Neotone Mutant set to C major: the melody (E3 E3 F3 G3 G3 F3 E3 D3 C3) falls entirely on the notes of the pan. On the left, your handpan; in the centre, the grid, where each note of the pan gets its row and its colour, and the blocks carry the note name. Above, the toolbar: <strong>pencil</strong>, <strong>hand</strong>, <strong>eraser</strong>, plus selection, scissors and <em>Quantize</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

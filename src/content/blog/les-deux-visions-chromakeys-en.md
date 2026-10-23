@@ -189,6 +189,40 @@ A visible consequence: two notes with the same name can carry two different colo
 
 And the pattern of the seven colours stays identical from one key to another: that's what lets you **play the same thing elsewhere without relearning anything**.
 
+### In Logic mode, on the Neotone Mutant
+
+To see it, I set a Neotone Mutant to Logic mode, anchored on C (I Balance, C), and switch on one chord's eye: only that chord stays in colour, the rest of the pan turns grey. On the left the colour says **the note**, on the right **its place in the scale**.
+
+<figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Colour tells you: the note</span><span style="flex:1">Colour tells you: its place in the scale</span></div>
+  <img
+    src="/images/blog-chromakeys-logique-degres-mutant-paire-2026-10-24-en.webp"
+    width="2160"
+    height="1064"
+    alt="The same Neotone Mutant, twice side by side, same framing, in Logic mode anchored on C. Above each pan, the Chromakeys island On, Shared notes On. The eye is on for the “I Balance C” chord: a red line links C2, E3, G3 and C4, numbered 1 to 4; the other notes are grey. On the left, “The colour tells you…” is set to “the note”: C2 and C4 red, E3 yellow, G3 sky blue. On the right, set to “its place in the scale”: C2, E3, G3 and C4 are all red."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The <strong>I</strong> chord (I Balance, C). On the left, each note keeps the colour of its name: C2 and C4 red, E3 yellow, G3 sky blue. On the right, <strong>the whole chord is red</strong>, because it is the I.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
+<figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Colour tells you: the note</span><span style="flex:1">Colour tells you: its place in the scale</span></div>
+  <img
+    src="/images/blog-chromakeys-logique-degre-V-mutant-paire-2026-10-24-en.webp"
+    width="2160"
+    height="1064"
+    alt="Same setting, the eye now on “V Tension G”: a sky-blue line links G2, B2, D3 and G3, numbered 1 to 4; the other notes, the C2 ding included, are grey. On the left, “the note”: G2 and G3 sky blue, B2 magenta, D3 orange. On the right, “its place in the scale”: G2, B2, D3 and G3 are all sky blue."
+    data-lb="chromakeys"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The <strong>V</strong> chord (V Tension, G). On the left, D3 is orange, like every D, and B2 magenta, like every B. On the right, G2, B2, D3 and G3 are <strong>all sky blue</strong>: D3 is a D, but here it serves the V chord.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
+
 **Outside Logic mode** — in Scales, in Create › A scale (*Une gamme*), and always on an acoustic handpan — the button keeps the same name, but each chord takes the colour of **the note it is named after**. You still see at a glance which notes go together, but it is no longer the reading by degrees.
 
 On the D Kurd in the screenshots below, F4 and A4 take on an orange slice, D's: they aren't Ds, but they belong to the D chord.

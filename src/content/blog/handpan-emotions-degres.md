@@ -27,9 +27,24 @@ Pour voir ce langage en mouvement, voici la première vidéo de la série consac
 
 ## Sept degrés, sept émotions
 
-Dans une gamme, chaque note occupe un rôle. Le premier degré est le point d'ancrage, celui où « ça se pose ». Le cinquième crée l'élan, l'envie d'aller plus loin. Le sixième amène une teinte nostalgique, le septième une tension qui appelle une résolution. Ces rôles sont universels : ils existent dans presque toute la musique que tu aimes, sans que tu l'aies jamais formulé.
+Dans une gamme, chaque note occupe un rôle. Le premier degré est le point d'ancrage, celui où « ça se pose ». Le cinquième crée la tension, l'envie d'aller plus loin. Le sixième amène une teinte nostalgique, le septième un mystère suspendu qui appelle une résolution. Ces rôles sont universels : ils existent dans presque toute la musique que tu aimes, sans que tu l'aies jamais formulé.
 
 Le Mode Logique rend ces rôles **visibles** en leur donnant une couleur stable, dans la logique des **ChromaKeys** décrite dans [Le handpan par les couleurs](/blog/handpan-par-les-couleurs). Le degré I garde toujours sa teinte, quel que soit ta gamme. Tu apprends une grammaire d'émotions une fois pour toutes.
+
+<figure>
+  <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">La couleur dit : la note</span><span style="flex:1">La couleur dit : sa place dans la gamme</span></div>
+  <img
+    src="/images/blog-chromakeys-logique-degres-mutant-paire-2026-10-24.webp"
+    width="2158"
+    height="1064"
+    alt="Le même Neotone Mutant, deux fois côte à côte, même cadrage, en mode Logique ancré en do. Au-dessus de chaque pan, l'îlot Chromakeys sur On. L'œil est allumé sur l'accord « I Équilibre C » : un tracé rouge relie C2, E3, G3 et C4, numérotées de 1 à 4 ; les autres notes sont grises. À gauche, la couleur dit « la note » : C2 et C4 rouges, E3 jaune, G3 bleu ciel. À droite, elle dit « sa place dans la gamme » : C2, E3, G3 et C4 sont toutes rouges."
+    data-lb="degre-I-rouge"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Ici sur un Neotone Mutant ancré en do, l'œil allumé sur le <strong>I</strong>. À gauche, la couleur dit la note : C, E et G gardent chacune la leur. À droite, elle dit la place dans la gamme : <strong>tout l'accord du I est rouge</strong>, et il le serait dans n'importe quelle tonalité. Le réglage est expliqué dans <a href="/blog/les-deux-visions-chromakeys">les deux visions des ChromaKeys</a>.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 <figure class="article-mp4">
   <video controls preload="none" playsinline poster="/videos/blog/mode-logique-couleurs.webp" width="1280" height="720" aria-label="Vidéo avec le son : les 7 accords d'un D Kurd en couleurs">

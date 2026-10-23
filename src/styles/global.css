@@ -936,6 +936,21 @@ h1, h2, h3, h4, .font-display {
   .prose-blog .article-img-pair-grid { gap: 1rem; }
   .prose-blog .article-img-pair-label { font-size: 0.9rem; }
 }
+/* Variante : sur téléphone (< 640 px), les deux images passent l'une sous l'autre, en pleine
+   largeur, pour garder lisible un détail fin (ex. cartes d'accords des trois mineurs).
+   Côte à côte dès 640 px. */
+.prose-blog .article-img-pair--stack-sm .article-img-pair-grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+@media (min-width: 640px) {
+  .prose-blog .article-img-pair--stack-sm .article-img-pair-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+/* Figure réservée au bureau (≥ 1024 px) : trop dense pour un téléphone ou une tablette. */
+.prose-blog figure.figure-desktop-only { display: none; }
+@media (min-width: 1024px) {
+  .prose-blog figure.figure-desktop-only { display: block; }
+}
+/* Étiquettes HTML au-dessus d'une composite en trois colonnes égales. */
+.prose-blog .trio-labels { display: flex; gap: 0.5rem; margin: 0 0 0.45rem; font-size: 0.85rem; font-weight: 600; line-height: 1.3; text-align: center; }
+.prose-blog .trio-labels > span { flex: 1; }
 /* Tableau large dans un article : défilement interne, jamais de la page. */
 .prose-blog .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
 @media (max-width: 639px) {

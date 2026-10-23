@@ -13,7 +13,7 @@ draft: false
 
 Creating your own handpan scale means choosing the set of notes that will make up your instrument — their order, their number and the emotion they carry. In the **Handpan Constellation Studio** app you can do it for free, draw your layout in colour, hear it live, then save it and share it with the community. This tutorial shows you how.
 
-The approach is the same **whether your handpan is acoustic or electronic**: you pick a tonic, you place notes around the ding, you listen. The screenshots in this article show the creation screen (now the "A scale" card, *Une gamme*, in the **Create** screen) in acoustic mode, because that is where creating is free; the gesture itself is identical on the electronic side.
+The approach is the same **whether your handpan is acoustic or electronic**: you pick a tonic, you place notes around the ding, you listen. The screenshot in this article shows the creation screen (now the "A scale" card in the **Create** screen) side by side, electronic and acoustic: the gesture is identical, and on acoustic, creating is free.
 
 ## What is a handpan scale?
 
@@ -41,32 +41,18 @@ A scale is the "character" of your pan: a central note (the **ding**) surrounded
   <figcaption>Screen demo, on a Neotone Mutant: starting from an almost empty pan (the ding and two notes), you tap notes on the arc of twelve colours, and they land on the pan one by one. The app is shown in French.</figcaption>
 </figure>
 
-<figure class="article-img-pair">
-  <div class="article-img-pair-grid">
-    <div class="article-img-pair-cell"><span class="article-img-pair-label">D Kurd 10 (acoustic)</span>
-    <img
-        src="/images/app-creation-acoustique-2026-10-en.webp"
-        width="2880"
-        height="1748"
-        alt="The creation screen, starting from this handpan, on an acoustic D Kurd 10, Starry Night theme. On the left, the column of drawing tools in a yellow frame, then the instrument name and the Stop, Sound and 440.00 Hz buttons. In the centre, the pan with its D3 ding and its coloured notes D4, F4, A4, C5, G4, E4, C4, A3, Bb3; the handpan's screen reads “D Kurd 10”. Around the top of the pan, the full chromatic wheel — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — each dot in its colour, with octave marks 2 to 5 in an arc. At the bottom, the seven basic chords of the scale: Dm, Edim, F, Gm, Am, Bb, C, each in the colour of its root note."
-        data-lb="creation-acoustique"
-        data-lb-wide
-        loading="lazy"
-      />
-    </div>
-    <div class="article-img-pair-cell"><span class="article-img-pair-label">Electronic handpan</span>
-    <img
-        src="/images/app-chromakeys-on-2026-10-en.webp"
-        width="2912"
-        height="1630"
-        alt="The creation screen on a Neotone Mutant, Starry Night theme, with the Display menu open. At the top, the ChromaKeys island: ChromaKeys On, “The colour tells you…” set to “the note · chakras”, Shared notes On, “The ChromaKeys creation palette” On; to the right, the NOTATION, APPEARANCE Walnut, HANDS &amp; FINGERING and CONSTELLATION menus. In the centre, the pan: each note is painted its colour — the D3 ding orange, D4 and D5 orange, C4, C5 and C3 red, E4 and E5 yellow, F4, F5 and F3 green, G4, G5 and G3 sky blue, A3, A4 and A5 blue, Bb3 and Bb2 indigo. Around the top of the pan, the chromatic wheel: C, C#, D, D#, E, F, F#, G, G#, A, A#, B, each in its colour, with octave arcs 2 to 6. On the left, a column of drawing tools in a yellow frame. At the bottom, the coloured chord cards Dm, Edim, F, Gm, Am, Bb, each with its notes."
-        data-lb="creation-electronique"
-        data-lb-wide
-        loading="lazy"
-      />
-    </div>
-  </div>
-  <figcaption>On the left, the creation screen (now “A scale”, in <strong>Create</strong>) in <strong>acoustic mode</strong>, on a D Kurd 10. The chromatic wheel surrounds the pan: click a note, then the colour of the note you want on it. The drawing tools sit in the left-hand column; at the bottom, the seven basic chords of the scale. On the right, the same screen on an electronic handpan, with the 🎨 Display menu open above it: the ChromaKeys creation palette is switched on there.</figcaption>
+<figure>
+  <div style="display:flex;gap:.5rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:2545">Neotone Mutant (electronic)</span><span style="flex:2058">D Kurd 10 (acoustic)</span></div>
+  <img
+    src="/images/blog-creer-une-gamme-electronique-acoustique-paire-2026-10-24-en.webp"
+    width="4615"
+    height="1499"
+    alt="Two screenshots of the Create › A scale screen, side by side, cut to the same template, ChromaKeys On, the colour telling “the note”. On the left, a Neotone Mutant: the handpan's screen reads “D Kurd 19 – David Lesage · Neotone Mutant”; the D3 ding, D4 and D5 orange, F4 and F5 green, A3 and A4 indigo, C3, C4 and C5 red, G3, G4 and G5 sky blue, E4 and E5 yellow, Bb2 and Bb3 light indigo, several notes ringed with colours. On the right, an acoustic D Kurd 10, with “D Kurd 10 · Change instrument”, Stop, Sound and 440.00 Hz at the top: the D3 ding and D4 orange, F4 green, A3 and A4 indigo, C4 and C5 red, G4 sky blue, E4 yellow, Bb3 light indigo, also ringed with colours. Around each pan, the arc of the twelve colours from C to B and its octaves. At the bottom, on both sides, the seven cards: Dm · Balance (D F A) in orange, Edim · Momentum (E G Bb) in yellow, F · Adventure (F A C) in green, Gm · Ease (G Bb D) in sky blue, Am · Tension (A C E) in indigo, Bb · Nostalgia (Bb D F) in light indigo, C · Mystery (C E G) in red; on the right, under the heading “The 7 basic chords of your scale”."
+    data-lb="creer-une-gamme"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The same screen, <em>Create › A scale</em>, at the same framing: a Neotone Mutant on the left, an acoustic D Kurd 10 on the right. On both sides, each note wears the colour of its name — D orange, F green, A indigo, C red — and the wheel of twelve colours surrounds the pan. At the bottom, the scale's seven basic chords, from <em>Dm · Balance</em> to <em>C · Mystery</em>, each in the colour of the note it is named after.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

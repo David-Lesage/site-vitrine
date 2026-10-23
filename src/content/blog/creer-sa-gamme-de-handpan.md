@@ -13,7 +13,7 @@ draft: false
 
 Créer sa gamme de handpan, c'est choisir l'ensemble des notes qui composeront ton instrument — leur ordre, leur nombre et l'émotion qu'elles portent. Dans l'application **Handpan Constellation Studio**, tu peux le faire gratuitement, dessiner ta disposition en couleurs, l'écouter en direct, puis la sauvegarder et la partager avec la communauté. Ce tutoriel t'explique comment.
 
-La démarche est la même **que ton handpan soit acoustique ou électronique** : tu choisis une tonique, tu poses des notes autour du ding, tu écoutes. Les captures de cet article montrent l'écran de création (aujourd'hui la carte « Une gamme » de l'écran **Créer**) en mode acoustique, parce que c'est là que la création est gratuite ; le geste, lui, est identique côté électronique.
+La démarche est la même **que ton handpan soit acoustique ou électronique** : tu choisis une tonique, tu poses des notes autour du ding, tu écoutes. La capture de cet article montre l'écran de création (aujourd'hui la carte « Une gamme » de l'écran **Créer**) côte à côte, en électronique et en acoustique : le geste est identique, et en acoustique la création est gratuite.
 
 ## Qu'est-ce qu'une gamme de handpan ?
 
@@ -41,32 +41,18 @@ Une gamme, c'est le « caractère » de ton pan : une note centrale (le **ding**
   <figcaption>Démo d'écran, sur un Neotone Mutant : on part d'un pan presque vide (le ding et deux notes), on touche les notes dans l'arc des douze couleurs, et elles se posent une à une sur le pan.</figcaption>
 </figure>
 
-<figure class="article-img-pair">
-  <div class="article-img-pair-grid">
-    <div class="article-img-pair-cell"><span class="article-img-pair-label">D Kurd 10 (acoustique)</span>
-    <img
-        src="/images/app-creation-acoustique-2026-10.webp"
-        width="2880"
-        height="1748"
-        alt="L'écran de création « Partir de ce handpan » sur un handpan acoustique D Kurd 10, thème Nuit étoilée. À gauche, la colonne d'outils de dessin dans un cadre jaune, puis le nom de l'instrument et les boutons Stop, Son et 440,00 Hz. Au centre, le pan avec son ding D3 et ses notes colorées D4, F4, A4, C5, G4, E4, C4, A3, Bb3 ; l'écran du handpan indique « D Kurd 10 ». Autour du haut du pan, la roue chromatique complète — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — chaque pastille à sa couleur, avec les repères d'octaves 2 à 5 en arc de cercle. En haut à droite, les boutons « Les accords de mon handpan » et « Degrés &amp; émotions ». En bas, « Les 7 accords de base de ta gamme » : Dm, Edim, F, Gm, Am, Bb, C, chacun dans la couleur de sa note de base."
-        data-lb="creation-acoustique"
-        data-lb-wide
-        loading="lazy"
-      />
-    </div>
-    <div class="article-img-pair-cell"><span class="article-img-pair-label">Handpan électronique</span>
-    <img
-        src="/images/app-chromakeys-on-2026-10.webp"
-        width="2870"
-        height="1608"
-        alt="L'écran de création sur un Neotone Mutant, thème Nuit étoilée, avec le menu Affichage ouvert. En haut, l'îlot ChromaKeys : ChromaKeys sur On, « La couleur dit… » réglé sur « la note · chakras », Notes partagées sur On, « La palette de création ChromaKeys » sur On ; à droite, les menus NOTATION, APPARENCE Noyer, MAINS &amp; DOIGTÉ et CONSTELLATION. Au centre, le pan : chaque note est peinte de sa couleur — le ding D3 orange, D4 et D5 orange, C4, C5 et C3 rouges, E4 et E5 jaunes, F4, F5 et F3 verts, G4, G5 et G3 bleu ciel, A3, A4 et A5 bleus, Bb3 et Bb2 indigo. Autour du haut du pan, la roue chromatique déployée : C, C#, D, D#, E, F, F#, G, G#, A, A#, B, chacune à sa couleur, avec les arcs d'octaves 2 à 6. À gauche, une colonne d'outils de dessin dans un cadre jaune. En bas, les cartes d'accords colorées Dm, Edim, F, Gm, Am, Bb, chacune avec ses notes."
-        data-lb="creation-electronique"
-        data-lb-wide
-        loading="lazy"
-      />
-    </div>
-  </div>
-  <figcaption>À gauche, l'écran de création (aujourd'hui « Une gamme », dans <strong>Créer</strong>) en <strong>mode acoustique</strong>, sur un D Kurd 10. La roue chromatique entoure le pan : on clique une note, puis la couleur de la note qu'on veut y poser. Les outils de dessin sont dans la colonne de gauche ; en bas, les sept accords de base de la gamme. À droite, le même écran sur un handpan électronique, avec le menu 🎨 Affichage ouvert au-dessus : la palette de création ChromaKeys y est allumée.</figcaption>
+<figure>
+  <div style="display:flex;gap:.5rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:2545">Neotone Mutant (électronique)</span><span style="flex:2058">D Kurd 10 (acoustique)</span></div>
+  <img
+    src="/images/blog-creer-une-gamme-electronique-acoustique-paire-2026-10-24.webp"
+    width="4615"
+    height="1499"
+    alt="Deux captures de l'écran Créer › Une gamme, côte à côte, découpées au même gabarit, ChromaKeys sur On, la couleur disant « la note ». À gauche, un Neotone Mutant : l'écran du handpan indique « D Kurd 19 – David Lesage · Neotone Mutant » ; le ding D3, D4 et D5 orange, F4 et F5 verts, A3 et A4 indigo, C3, C4 et C5 rouges, G3, G4 et G5 bleu ciel, E4 et E5 jaunes, Bb2 et Bb3 indigo clair, plusieurs notes cerclées d'un anneau de couleurs. À droite, un handpan acoustique D Kurd 10, avec en haut « D Kurd 10 · Changer d'instrument », Stop, Son et 440,00 Hz : le ding D3 et D4 orange, F4 vert, A3 et A4 indigo, C4 et C5 rouges, G4 bleu ciel, E4 jaune, Bb3 indigo clair, eux aussi cerclés de couleurs. Autour de chaque pan, l'arc des douze couleurs de C à B et ses octaves. En bas, des deux côtés, les sept cartes : Dm · Équilibre (D F A) en orange, Edim · Élan (E G Bb) en jaune, F · Aventure (F A C) en vert, Gm · Détente (G Bb D) en bleu ciel, Am · Tension (A C E) en indigo, Bb · Nostalgie (Bb D F) en indigo clair, C · Mystère (C E G) en rouge ; à droite, sous le titre « Les 7 accords de base de ta gamme »."
+    data-lb="creer-une-gamme"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>Le même écran, <em>Créer › Une gamme</em>, au même cadrage : à gauche sur un Neotone Mutant, à droite sur un handpan acoustique D Kurd 10. Des deux côtés, chaque note porte la couleur de son nom — le ré orange, le fa vert, le la indigo, le do rouge — et la roue des douze couleurs entoure le pan. En bas, les sept accords de base de la gamme, de <em>Dm · Équilibre</em> à <em>C · Mystère</em>, chacun dans la couleur de la note qui lui donne son nom.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

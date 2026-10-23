@@ -3,7 +3,7 @@ title: "Composer ta mélodie note à note : l'éditeur de mélodies"
 description: "Pose les notes de ton handpan sur une timeline, écoute, mets en boucle, accélère — et exporte en .mid. L'éditeur de mélodies de Handpan Constellation Studio."
 pubDate: 2026-08-27
 updatedDate: 2026-10-24
-cover: "/images/app-editeur-melodies-timeline-2026-10.webp"
+cover: "/images/app-editeur-melodies-ode-do-majeur-2026-10-24.webp"
 category: "partitions"
 tags: ["mélodie", "midi", "atelier"]
 lang: "fr"
@@ -23,19 +23,19 @@ Résultat, on rejoue toujours les mêmes trois phrases — celles que les doigts
 
 ## Ton pan à gauche, ta timeline au centre
 
-Le principe tient en une image. À gauche, ton handpan tel que tu le connais, chaque note habillée de sa **ChromaKey**. Au centre, une timeline horizontale avec ses mesures. Tu cliques une note, une pastille apparaît au curseur, à sa couleur.
+Le principe tient en une image. À gauche, ton handpan tel que tu le connais. Au centre, une timeline horizontale avec ses mesures, une ligne par note, chacune habillée de sa **ChromaKey**. Tu cliques une note, une pastille apparaît au curseur, à sa couleur.
 
 <figure>
   <img
-    src="/images/app-editeur-melodies-timeline-2026-10.webp"
+    src="/images/app-editeur-melodies-ode-do-majeur-2026-10-24.webp"
     width="2880"
     height="2016"
-    alt="L'éditeur de mélodies en grand, thème Nuit étoilée, ouvert sur « Ode à la Joie ». En haut, le titre, annuler / refaire, enregistrer, ouvrir, « Importer », « .mid · XML », les onglets « Atelier » (actif) et « Pluie de notes / Handpan Hero », et « Copier le lien de cet outil » ; dessous, « Donner mon avis ». Puis la barre d'outils : retour, lecture, stop, enregistrement, boucle, les outils crayon (actif), main, sélection, gomme, flèche, muet et ciseaux, « Tout effacer », la grille « Double croche », « Quantifier », et TEMPO 110, MÉTRIQUE 4/4, MESURE 1. À gauche, « GAMME & INSTRUMENT — gamme courante » et un handpan dessiné aux notes colorées, le bouton « Agrandir les handpans », une réglette de pulsation entre un pied gauche et un pied droit, et « MES MÉLODIES » avec l'aide des outils. Au centre, la grille : une ligne par note, de Bb2 à A5, chacune à sa couleur, trois mesures numérotées, et les pastilles colorées de la mélodie, E4 E4 F4 G4 G4 F4 E4 D4 C4. À droite, « MÉLODIE » : Grille Croche, Métrique 4/4, 3/4 ou 6/8, Vitesse 1×. En bas, la barre « Batteur Pop 4/4 · 110 · au repos »."
+    alt="L'éditeur de mélodies en grand, thème Nuit étoilée, ouvert sur « Ode à la Joie », sur un Neotone Mutant posé en do majeur. En haut, le titre, annuler / refaire, enregistrer, ouvrir, « Importer », « .mid · XML », les onglets « Atelier » (actif) et « Pluie de notes / Handpan Hero », et « Copier le lien de cet outil » ; dessous, « Donner mon avis ». Puis la barre d'outils : retour, lecture, stop, enregistrement, boucle, les outils crayon (actif), main, sélection, gomme, flèche, muet et ciseaux, « Tout effacer », la grille « Double croche », « Quantifier », et TEMPO 110, MÉTRIQUE 4/4, MESURE 1 ; à droite, les boutons Gamme et Réglages. À gauche, « GAMME & INSTRUMENT — gamme courante » et le petit dessin du handpan, notes grises nommées de C2 à C4, le bouton « Agrandir les handpans », une réglette de pulsation entre un pied gauche et un pied droit, et « MES MÉLODIES » avec l'aide des outils. Au centre, la grille : une ligne par note, de C2 à G4, chacune à sa couleur, trois mesures numérotées, et les pastilles colorées de la mélodie, E3 E3 F3 G3 G3 F3 E3 D3 C3. Aucune alerte de note absente. À droite, « MÉLODIE » : Grille Croche, Métrique 4/4, 3/4 ou 6/8, Vitesse 1×. En bas, la barre « Batteur Pop 4/4 · 110 · au repos »."
     data-lb="editeur-melodies"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>L'éditeur, ouvert sur le thème de <em>l'Ode à la Joie</em>. À gauche, ton handpan ; au centre, la grille, où chaque note du pan a sa ligne et sa couleur, et où les pastilles portent le nom de la note. Au-dessus, la barre d'outils : <strong>crayon</strong>, <strong>main</strong>, <strong>gomme</strong>, mais aussi sélection, ciseaux et <em>Quantifier</em>.</figcaption>
+  <figcaption>L'éditeur, ouvert sur le thème de <em>l'Ode à la Joie</em>, avec un Neotone Mutant posé en do majeur : la mélodie (E3 E3 F3 G3 G3 F3 E3 D3 C3) tombe entièrement sur les notes du pan. À gauche, ton handpan ; au centre, la grille, où chaque note du pan a sa ligne et sa couleur, et où les pastilles portent le nom de la note. Au-dessus, la barre d'outils : <strong>crayon</strong>, <strong>main</strong>, <strong>gomme</strong>, mais aussi sélection, ciseaux et <em>Quantifier</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
