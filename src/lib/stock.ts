@@ -25,7 +25,7 @@
 
 import { woodNames, woods, type WoodKey, type ModelId } from '@/data/neotone'
 import type { Lang } from '@/i18n/config'
-import { fetchSheetStock, resolveStockScriptUrl } from '@/lib/stockSource.js'
+import { fetchSheetStock, resolveStockScriptUrl, formatArrivalLabel } from '@/lib/stockSource.js'
 
 /** Relais same-origin lu par le navigateur (fonction Vercel api/stock.js). */
 export const STOCK_API_PATH = '/api/stock'
@@ -38,6 +38,8 @@ export interface StockPiece {
   wood: string
   status: StockStatus
   expected_arrival_on: string | null
+  /** Période d'arrivée au showroom, forme canonique (« 9-13 november »), colonne L du Sheet. */
+  arrival_label?: string | null
 }
 
 /** Une ligne d'affichage : un couple modèle + bois, et combien d'exemplaires. */
@@ -47,6 +49,8 @@ export interface StockLine {
   status: StockStatus
   /** Date d'arrivée la plus proche du groupe (statut en_transit uniquement). */
   arrival: string | null
+  /** Période d'arrivée au showroom (forme canonique, voir stockSource.js), ou null. */
+  arrivalLabel: string | null
   count: number
 }
 
@@ -95,11 +99,13 @@ export function normalizeStock(rows: unknown): StockLine[] {
       r.status === 'en_transit' && typeof r.expected_arrival_on === 'string' && r.expected_arrival_on
         ? r.expected_arrival_on
         : null
+    const arrivalLabel =
+      r.status === 'en_transit' && typeof r.arrival_label === 'string' && r.arrival_label ? r.arrival_label : null
 
-    const key = `${r.status}|${model}|${wood}|${arrival ?? ''}`
+    const key = `${r.status}|${model}|${wood}|${arrival ?? ''}|${arrivalLabel ?? ''}`
     const seen = groups.get(key)
     if (seen) seen.count += 1
-    else groups.set(key, { model, wood, status: r.status, arrival, count: 1 })
+    else groups.set(key, { model, wood, status: r.status, arrival, arrivalLabel, count: 1 })
   }
 
   const order: Record<StockStatus, number> = { disponible: 0, en_transit: 1 }
@@ -126,6 +132,8 @@ export interface StockLabels {
   availTitle: string
   soonTitle: string
   arrivalPrefix: string
+  /** « arrivée prévue : {period} » — période écrite dans le Sheet (colonne L). */
+  arrivalPeriod?: string
   note: string
   noteLink: string
   showroomHref: string
@@ -145,6 +153,9 @@ function renderLines(lines: StockLine[], labels: StockLabels): string {
       const when =
         l.status === 'en_transit'
           ? (() => {
+              const period = formatArrivalLabel(l.arrivalLabel, labels.lang)
+              if (period && labels.arrivalPeriod)
+                return ` <span class="text-sm text-ink-soft/75">— ${esc(labels.arrivalPeriod.replace('{period}', period))}</span>`
               const d = formatArrival(l.arrival, labels.locale)
               return d ? ` <span class="text-sm text-ink-soft/75">— ${esc(labels.arrivalPrefix)} ${esc(d)}</span>` : ''
             })()
@@ -196,6 +207,8 @@ export interface ModelStockLabels {
   soon: string
   /** « arrivée prévue le {date} » (ajouté seulement si la date est connue et future). */
   soonDate: string
+  /** « arrivée prévue : {period} » — période de la colonne L, prioritaire sur la date. */
+  soonPeriod?: string
   lang: Lang
   locale: string
 }
@@ -208,7 +221,7 @@ export interface ModelStockSummary {
   /** Bois disponibles tout de suite, dans l'ordre du nuancier. */
   available: string[]
   /** Bois en transit (un par essence, date la plus proche). */
-  soon: { wood: string; arrival: string | null }[]
+  soon: { wood: string; arrival: string | null; arrivalLabel: string | null }[]
 }
 
 const WOOD_ORDER: string[] = woods.map((w) => w.key)
@@ -223,17 +236,19 @@ export function modelStockSummary(lines: StockLine[], model: string): ModelStock
   if (!lines.length) return { state: '', available: [], soon: [] }
   const mine = lines.filter((l) => l.model === model)
   const available = [...new Set(mine.filter((l) => l.status === 'disponible').map((l) => l.wood))].sort(byWoodOrder)
-  const soonMap = new Map<string, string | null>()
+  const soonMap = new Map<string, { arrival: string | null; arrivalLabel: string | null }>()
   for (const l of mine) {
     if (l.status !== 'en_transit') continue
-    if (!soonMap.has(l.wood)) soonMap.set(l.wood, l.arrival)
+    const cur = soonMap.get(l.wood)
+    if (!cur) soonMap.set(l.wood, { arrival: l.arrival, arrivalLabel: l.arrivalLabel })
     else {
-      const cur = soonMap.get(l.wood) ?? null
       // Garde la date connue la plus proche ; une date connue l'emporte sur « sans date ».
-      if (l.arrival && (!cur || l.arrival < cur)) soonMap.set(l.wood, l.arrival)
+      if (l.arrival && (!cur.arrival || l.arrival < cur.arrival)) cur.arrival = l.arrival
+      // Période du Sheet : la première connue l'emporte sur « sans période ».
+      if (!cur.arrivalLabel && l.arrivalLabel) cur.arrivalLabel = l.arrivalLabel
     }
   }
-  const soon = [...soonMap.entries()].map(([wood, arrival]) => ({ wood, arrival })).sort((a, b) => byWoodOrder(a.wood, b.wood))
+  const soon = [...soonMap.entries()].map(([wood, v]) => ({ wood, ...v })).sort((a, b) => byWoodOrder(a.wood, b.wood))
   return { state: available.length ? 'in' : 'out', available, soon }
 }
 
@@ -271,8 +286,10 @@ export function renderModelStock(
   if (s.soon.length) {
     const items = s.soon
       .map((x) => {
-        const d = formatArrival(x.arrival, labels.locale)
         const name = esc(woodLabel(x.wood, labels.lang))
+        const period = formatArrivalLabel(x.arrivalLabel, labels.lang)
+        if (period && labels.soonPeriod) return `${name} (${esc(labels.soonPeriod.replace('{period}', period))})`
+        const d = formatArrival(x.arrival, labels.locale)
         return d ? `${name} (${esc(labels.soonDate.replace('{date}', d))})` : name
       })
       .join(', ')

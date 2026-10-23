@@ -8,7 +8,7 @@ import { numberLocale } from '@/i18n/utils'
 
 interface Props {
   lang: Lang
-  /** Stock physique figé au build (Google Sheet de David, voir src/lib/stock.ts). Vide = aucune restriction. */
+  /** Stock physique figé au build (Google Sheet de David, voir src/lib/stock.ts). Vide = état inconnu, rien d'affiché. Ne bloque jamais le calcul. */
   stock?: StockLine[]
 }
 const { lang, stock = [] } = Astro.props
@@ -57,16 +57,28 @@ const calcData = {
     buyOnlineButton: pp.onlineButton,
     buyOnlineTitle: pp.onlineTitle,
     buyOnlineIntro: pp.onlineIntro,
-    stockOut: sl('stockOut'),
-    stockExpected: sl('stockExpected'),
-    stockAdjusted: sl('stockAdjusted'),
+    // ── 📦 Trois états de stock (David, 25/10/2026) — voir le bloc #calc-stock-status.
+    stockStateIn: sl('stockStateIn'),
+    stockStateInSub: sl('stockStateInSub'),
+    stockStateTransit: sl('stockStateTransit'),
+    stockStateTransitSoon: sl('stockStateTransitSoon'),
+    stockStateTransitSub: sl('stockStateTransitSub'),
+    stockStateOut: sl('stockStateOut'),
+    stockStateOutSub: sl('stockStateOutSub'),
+    stockTagIn: sl('stockTagIn'),
+    stockTagTransit: sl('stockTagTransit'),
+    stockTagOut: sl('stockTagOut'),
   },
-  // ── 📦 Disponibilité physique au showroom (demande de David, 22/09/2026) ──
-  // « que la personne voie son choix limité directement au niveau du choix des
-  // bois sur lesquels elle peut cliquer ». S'applique UNIQUEMENT au mode
-  // « Je viens au showroom » : en livraison, tous les bois restent commandables.
-  // Tableau VIDE (source vide ou injoignable) ⇒ aucune restriction.
-  stock: stock.map((l) => ({ model: l.model, wood: l.wood, status: l.status, arrival: l.arrival })),
+  // ── 📦 Disponibilité physique au showroom ─────────────────────────────────
+  // 25/10/2026 (David) : « même si l'instrument n'est pas en stock au showroom,
+  // la personne [doit pouvoir] calculer le prix ». Le stock NE BLOQUE PLUS
+  // RIEN (avant : bois grisés et non cliquables en mode showroom) : il
+  // INFORME, pour le couple modèle + bois choisi, en trois états.
+  // `stockKnown` = la source a répondu (au build : au moins une pièce lue).
+  // Source inconnue (vide au build, injoignable) ⇒ aucun état affiché.
+  stock: stock.map((l) => ({ model: l.model, wood: l.wood, status: l.status, arrival: l.arrival, arrivalLabel: l.arrivalLabel })),
+  stockKnown: stock.length > 0,
+  lang,
   locale: numberLocale(lang),
 }
 ---
@@ -88,10 +100,6 @@ const calcData = {
           </button>
         </div>
       </fieldset>
-
-      {/* Affiché seulement si le choix courant a dû être déplacé parce que la
-          pièce n'est pas au showroom. Jamais visible quand la vue est vide. */}
-      <p id="calc-stock-notice" class="rounded-xl border border-copper/30 bg-copper/10 px-4 py-3 text-sm text-ink-soft/90" hidden></p>
 
       <fieldset>
         <legend class="text-xs font-700 uppercase tracking-widest text-copper">{c.step1}</legend>
@@ -116,6 +124,28 @@ const calcData = {
               <span class="text-xs font-600">{woodNames[w.key][lang]}</span>
             </button>
           ))}
+        </div>
+        {/* ── 📦 ÉTAT DU STOCK pour le couple modèle + bois choisi (25/10/2026) ──
+            Trois états : disponible au showroom · arrive au showroom (période
+            écrite dans le Sheet, colonne L) · pas en stock = sur commande.
+            Rempli par `renderStock()`. Caché tant que la source n'a pas répondu :
+            on n'affiche jamais un stock inventé. Le bouton « Faire la demande »
+            ouvre le formulaire (source `neotone-stock-request`) avec le choix. */}
+        <div id="calc-stock-status" data-state="" class="mt-4 rounded-xl border px-4 py-3 text-sm data-[state=in]:border-copper/40 data-[state=in]:bg-copper/10 data-[state=out]:border-ink/20 data-[state=out]:bg-cream data-[state=transit]:border-gold/50 data-[state=transit]:bg-gold/10" aria-live="polite" hidden>
+          <p class="flex items-start gap-2 font-700 text-ink">
+            <span id="calc-stock-status-icon" aria-hidden="true"></span>
+            <span id="calc-stock-status-text"></span>
+          </p>
+          <p id="calc-stock-status-sub" class="mt-1 text-ink-soft/85"></p>
+          <button
+            id="calc-stock-request"
+            type="button"
+            data-booking="neotone-stock-request"
+            data-title={sl('stockRequestTitle')}
+            data-intro={sl('stockRequestIntro')}
+            class="mt-3 inline-flex min-h-11 items-center rounded-full border-2 border-rust px-5 py-2 font-700 text-rust transition-colors hover:bg-rust hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+            hidden
+          >{sl('stockRequestButton')}</button>
         </div>
       </fieldset>
 
@@ -183,6 +213,7 @@ const calcData = {
 <script type="application/json" id="calc-data" set:html={JSON.stringify(calcData)}></script>
 
 <script>
+  import { formatArrivalLabel } from '@/lib/stockSource.js'
   const dataEl = document.getElementById('calc-data')
   if (dataEl) {
     const DATA = JSON.parse(dataEl.textContent || '{}')
@@ -297,9 +328,8 @@ const calcData = {
     }
 
     function render() {
-      // AVANT compute() : si la sélection courante n'est pas au showroom, elle
-      // est recalée ici — le prix et le récapitulatif restent donc justes.
-      applyAvailability()
+      // Le stock informe, il ne recale plus rien (25/10/2026).
+      renderStock()
       const r = compute()
       syncTrigger(r)
       $('calc-selection')!.textContent = `${DATA.models[state.model].label} — ${DATA.woodLabels[state.wood]}`
@@ -352,35 +382,39 @@ const calcData = {
       }
     }
 
-    // ══ 📦 DISPONIBILITÉ AU SHOWROOM ═════════════════════════════════════════
-    // Règle (demande de David, 22/09/2026) :
-    //  · « Je me fais livrer »  → AUCUNE restriction, tous les bois cliquables.
-    //  · « Je viens au showroom » → seuls les couples modèle+bois réellement
-    //    `disponible` restent cliquables ; les autres sont grisés, non
-    //    cliquables et portent une mention honnête (« pas en stock au
-    //    showroom », ou « attendu le … » si la pièce est en transit).
-    //  · Liste de stock VIDE ou source injoignable → on ne restreint RIEN :
-    //    un stock inconnu ne doit jamais empêcher un achat.
-    type StockRow = { model: string; wood: string; status: 'disponible' | 'en_transit'; arrival: string | null }
+    // ══ 📦 DISPONIBILITÉ AU SHOWROOM (refonte 25/10/2026) ═════════════════════
+    // David : « même si l'instrument n'est pas en stock au showroom, la
+    // personne [doit pouvoir] calculer le prix ». Donc :
+    //  · TOUS les modèles et TOUS les bois restent cliquables, dans les deux
+    //    modes : le prix se calcule toujours ;
+    //  · le stock INFORME : une petite mention sous chaque bouton, et un bloc
+    //    d'état pour le couple choisi (disponible / arrive / sur commande) ;
+    //  · source inconnue (rien lu au build, /api/stock injoignable) → aucune
+    //    mention : jamais de stock inventé.
+    type StockRow = { model: string; wood: string; status: 'disponible' | 'en_transit'; arrival: string | null; arrivalLabel?: string | null }
     let stock: StockRow[] = Array.isArray(DATA.stock) ? DATA.stock : []
+    let stockKnown: boolean = DATA.stockKnown === true
     const stockLocale = DATA.locale || locale
+    const LANG: string = DATA.lang || 'fr'
 
-    const restrict = () => state.mode === 'showroom' && stock.length > 0
-
-    /** null = aucune pièce connue pour ce couple. */
+    /** null = aucune pièce connue pour ce couple (= sur commande). */
     function availOf(model: string, wood: string): StockRow | null {
       const rows = stock.filter((r) => r.model === model && r.wood === wood)
       const ready = rows.find((r) => r.status === 'disponible')
       if (ready) return ready
       const transit = rows
         .filter((r) => r.status === 'en_transit')
-        .sort((a, b) => (a.arrival ?? '9999').localeCompare(b.arrival ?? '9999'))[0]
-      return transit ?? null
+        .sort((a, b) => (a.arrival ?? '9999').localeCompare(b.arrival ?? '9999'))
+      // Une période connue (colonne L) l'emporte sur « sans période ».
+      return transit.find((r) => r.arrivalLabel) ?? transit[0] ?? null
     }
-
+    type StockState = 'in' | 'transit' | 'out'
+    const stateOf = (row: StockRow | null): StockState => (!row ? 'out' : row.status === 'disponible' ? 'in' : 'transit')
     const woodKeys = (model: string) => Object.keys(DATA.models[model].woods)
-    const isWoodOk = (model: string, wood: string) => availOf(model, wood)?.status === 'disponible'
-    const isModelOk = (model: string) => woodKeys(model).some((w) => isWoodOk(model, w))
+    function modelState(model: string): StockState {
+      const st = woodKeys(model).map((w) => stateOf(availOf(model, w)))
+      return st.includes('in') ? 'in' : st.includes('transit') ? 'transit' : 'out'
+    }
 
     function fmtDate(iso: string | null): string | null {
       if (!iso) return null
@@ -388,102 +422,72 @@ const calcData = {
       if (Number.isNaN(d.getTime())) return null
       return new Intl.DateTimeFormat(stockLocale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(d)
     }
-
-    /** La pièce en transit la plus proche pour un modèle (toutes essences). */
-    function soonestOf(model: string): StockRow | null {
-      return woodKeys(model)
-        .map((w) => availOf(model, w))
-        .filter((r): r is StockRow => r !== null && r.status === 'en_transit')
-        .sort((a, b) => (a.arrival ?? '9999').localeCompare(b.arrival ?? '9999'))[0] ?? null
+    /** Période ou date d'arrivée lisible, ou null (→ « arrive bientôt »). */
+    function arrivalText(row: StockRow | null): string | null {
+      if (!row || row.status !== 'en_transit') return null
+      return formatArrivalLabel(row.arrivalLabel ?? null, LANG) ?? fmtDate(row.arrival)
     }
 
-    /** Mention discrète sous un bouton indisponible. */
-    function unavailableText(row: StockRow | null): string {
-      if (row && row.status === 'en_transit') {
-        const d = fmtDate(row.arrival)
-        if (d) return String(L.stockExpected).replace('{date}', d)
-      }
-      return String(L.stockOut)
-    }
-
-    // Contraste (09/10/2026) : seule la pastille du bois est fortement estompée
-    // et désaturée ; les textes d'origine (nom, nombre de notes) le sont
-    // légèrement, et la mention « pas en stock au showroom » reste en pleine
-    // opacité, foncée, donc lisible. Avant, l'opacité 40 % s'appliquait au
-    // bouton entier, mention comprise (~2:1).
-    const FADE_DISC = ['opacity-40', 'grayscale']
-    const FADE_TEXT = ['opacity-70']
-    const fadeOf = (el: Element) => (el.classList.contains('calc-wood-disc') ? FADE_DISC : FADE_TEXT)
-    function setBtnState(btn: HTMLButtonElement, ok: boolean, note: string) {
+    /** Mention courte sous un bouton (jamais bloquante). '' = rien. */
+    function setTag(btn: HTMLButtonElement, text: string, st: StockState | '') {
       let tag = btn.querySelector<HTMLElement>('.calc-avail')
-      const content = [...btn.children].filter((el) => !el.classList.contains('calc-avail'))
-      if (ok) {
-        btn.removeAttribute('aria-disabled')
-        btn.classList.remove('cursor-not-allowed')
-        content.forEach((el) => el.classList.remove(...fadeOf(el)))
-        tag?.remove()
-        return
-      }
-      btn.setAttribute('aria-disabled', 'true')
-      btn.classList.add('cursor-not-allowed')
-      content.forEach((el) => el.classList.add(...fadeOf(el)))
+      if (!text) { tag?.remove(); return }
       if (!tag) {
         tag = document.createElement('span')
-        // Sous une pastille de bois (56 px), la mention passe sur deux lignes
-        // centrées plutôt que d'élargir le nuancier (pas de débordement à 375 px).
-        tag.className =
-          'calc-avail mt-1 block text-[0.7rem] font-600 leading-tight text-ink-soft' +
-          (btn.classList.contains('calc-wood') ? ' max-w-[5.5rem] text-center' : '')
         btn.appendChild(tag)
       }
-      tag.textContent = note
+      tag.className =
+        'calc-avail mt-1 block text-[0.7rem] font-700 leading-tight ' +
+        (st === 'in' ? 'text-rust' : st === 'transit' ? 'text-copper' : 'text-ink-soft/80') +
+        (btn.classList.contains('calc-wood') ? ' max-w-[5.5rem] text-center' : '')
+      tag.textContent = text
     }
+    const tagText = (st: StockState) => (st === 'in' ? L.stockTagIn : st === 'transit' ? L.stockTagTransit : L.stockTagOut)
 
-    /** Applique le grisage et, si besoin, recale la sélection courante. */
-    function applyAvailability(): boolean {
-      const on = restrict()
-      let adjusted = false
-
-      if (on && !isModelOk(state.model)) {
-        const fallback = Object.keys(DATA.models).find((m) => isModelOk(m))
-        if (fallback) { state.model = fallback; adjusted = true }
-      }
-      if (on && isModelOk(state.model) && !isWoodOk(state.model, state.wood)) {
-        const fallback = woodKeys(state.model).find((w) => isWoodOk(state.model, w))
-        if (fallback) { state.wood = fallback; adjusted = true }
-      }
-
+    function renderStock() {
       document.querySelectorAll<HTMLButtonElement>('.calc-model').forEach((btn) => {
         const m = btn.dataset.model!
-        const ok = !on || isModelOk(m)
-        setBtnState(btn, ok, unavailableText(on ? soonestOf(m) : null))
-        btn.setAttribute('aria-checked', m === state.model ? 'true' : 'false')
-        btn.classList.toggle('border-copper', m === state.model)
-        btn.classList.toggle('bg-copper/10', m === state.model)
-        btn.classList.toggle('border-ink/15', m !== state.model)
+        setTag(btn, stockKnown ? tagText(modelState(m)) : '', stockKnown ? modelState(m) : '')
       })
-
       document.querySelectorAll<HTMLButtonElement>('.calc-wood').forEach((btn) => {
         const w = btn.dataset.wood!
-        const ok = !on || isWoodOk(state.model, w)
-        setBtnState(btn, ok, unavailableText(on ? availOf(state.model, w) : null))
-        btn.setAttribute('aria-checked', w === state.wood ? 'true' : 'false')
+        const st = stateOf(availOf(state.model, w))
+        setTag(btn, stockKnown ? tagText(st) : '', stockKnown ? st : '')
       })
 
-      const notice = $('calc-stock-notice')!
-      if (adjusted) { notice.textContent = L.stockAdjusted; notice.hidden = false }
-      else { notice.hidden = true; notice.textContent = '' }
-      return adjusted
+      const box = $('calc-stock-status')!
+      const reqBtn = $('calc-stock-request') as HTMLButtonElement
+      if (!stockKnown) { box.hidden = true; box.dataset.state = ''; return }
+      const row = availOf(state.model, state.wood)
+      const st = stateOf(row)
+      const when = arrivalText(row)
+      box.hidden = false
+      box.dataset.state = st
+      $('calc-stock-status-icon')!.textContent = st === 'in' ? '✓' : st === 'transit' ? '⏳' : '○'
+      $('calc-stock-status-text')!.textContent =
+        st === 'in' ? L.stockStateIn
+        : st === 'transit' ? (when ? String(L.stockStateTransit).replace('{period}', when) : L.stockStateTransitSoon)
+        : L.stockStateOut
+      $('calc-stock-status-sub')!.textContent =
+        st === 'in' ? L.stockStateInSub : st === 'transit' ? L.stockStateTransitSub : L.stockStateOutSub
+      // « Faire la demande » : seulement quand le couple n'est PAS au showroom.
+      reqBtn.hidden = st === 'in'
+      const label = `${DATA.models[state.model].label} — ${DATA.woodLabels[state.wood]}`
+      reqBtn.dataset.calcModel = state.model
+      reqBtn.dataset.calcWood = state.wood
+      reqBtn.dataset.calcMode = state.mode
+      reqBtn.dataset.calcRecap = [label, $('calc-stock-status-text')!.textContent].join(' · ')
     }
 
     /**
-     * Mise à jour en direct : la page dispatche `neotone:stock` avec les lignes
-     * normalisées de la vue publique (voir NeotonePage.astro). Un tableau vide
-     * remet le calculateur sans aucune restriction.
+     * Mise à jour en direct : la page dispatche `neotone:stock` après avoir lu
+     * /api/stock (voir NeotonePage.astro). `detail` = { lines, known } — un
+     * simple tableau (ancien format) reste accepté.
      */
     document.addEventListener('neotone:stock', (e) => {
-      const rows = (e as CustomEvent).detail
-      stock = Array.isArray(rows) ? rows : []
+      const d = (e as CustomEvent).detail
+      if (Array.isArray(d)) { stock = d; stockKnown = d.length > 0 }
+      else if (d && typeof d === 'object') { stock = Array.isArray(d.lines) ? d.lines : []; stockKnown = d.known === true }
       render()
     })
 
@@ -519,7 +523,6 @@ const calcData = {
     function bindGroup(selector: string, key: 'model' | 'wood' | 'mode', attr: string) {
       document.querySelectorAll<HTMLButtonElement>(selector).forEach((btn) => {
         btn.addEventListener('click', () => {
-          if (btn.getAttribute('aria-disabled') === 'true') return
           document.querySelectorAll<HTMLButtonElement>(selector).forEach((b) => {
             b.classList.remove('border-copper', 'bg-copper/10')
             b.classList.add('border-ink/15')

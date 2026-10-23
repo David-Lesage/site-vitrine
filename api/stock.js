@@ -5,7 +5,8 @@
 // /api/stock en same-origin au chargement de /neotone.
 //
 // Réponse : tableau au format de `normalizeStock()` (src/lib/stock.ts) :
-//   [{ partner:'neotone', model:'one'|'mutant', wood:'frene'|…, status:'disponible'|'en_transit', expected_arrival_on:'AAAA-MM-JJ'|null }]
+//   [{ partner:'neotone', model:'one'|'mutant', wood:'frene'|…, status:'disponible'|'en_transit',
+//      expected_arrival_on:'AAAA-MM-JJ'|null, arrival_label:'9-13 november'|null }]
 //
 // Choix des codes de réponse (documentés ici, appliqués par la page) :
 //   · URL non configurée (constante vide, pas de variable d'env.) → 200 + []
@@ -31,6 +32,9 @@ export default async function handler(req, res) {
   const url = resolveStockScriptUrl(process.env)
   if (!url) {
     res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=300')
+    // « Pas de source » ≠ « source vide » : le calculateur n'affiche alors
+    // AUCUN état de stock (sinon tout serait annoncé « sur commande »).
+    res.setHeader('X-Stock-Source', 'none')
     res.status(200).json([])
     return
   }

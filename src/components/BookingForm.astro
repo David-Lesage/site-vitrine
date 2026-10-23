@@ -475,6 +475,20 @@ const saleIntake = saleIntakeClientConfig()
         </div>
       </div>
 
+      {/* ── DEMANDE POUR UN NEOTONE PAS AU SHOWROOM (25/10/2026, demande de David) ──
+          Source `neotone-stock-request`, ouverte par « Faire la demande » du
+          calculateur. Récapitulatif du choix (modèle · bois · état du stock) et
+          trois champs cachés : ils partent sous les noms `neotoneModel` /
+          `neotoneWood` / `neotonePurchaseMode` à l'envoi (voir le submit).
+          Masqué pour tous les autres motifs ⇒ champs désactivés et vidés. */}
+      <div data-bk-stock class="hidden rounded-xl border border-copper/25 bg-copper/5 p-4">
+        <p class="text-[11px] font-700 uppercase tracking-widest text-copper">{bk.calcRecapLabel}</p>
+        <p data-bk-stock-recap class="mt-1 break-words text-sm font-600 leading-relaxed"></p>
+        <input type="hidden" name="stockModel" value="" />
+        <input type="hidden" name="stockWood" value="" />
+        <input type="hidden" name="stockMode" value="" />
+      </div>
+
       {/* Cours seulement : une démonstration ne se fait pas en visio.
           ⚠️ Placé AVANT les instruments (18/08/2026) : pour un cours, la question
           des instruments à préparer ne se pose que si on se voit au showroom. */}
@@ -602,6 +616,7 @@ const saleIntake = saleIntakeClientConfig()
   const termsEl = modal?.querySelector('[data-bk-terms]') as HTMLElement
   const vipEl = modal?.querySelector('[data-bk-vip]') as HTMLElement
   const discountEl = modal?.querySelector('[data-bk-discount]') as HTMLElement
+  const stockReqEl = modal?.querySelector('[data-bk-stock]') as HTMLElement
   // Récapitulatif du calculateur + les deux questions qu'il remplace (22/09/2026).
   const calcRecapEl = modal?.querySelector('[data-bk-calc-recap]') as HTMLElement
   const calcRecapTextEl = modal?.querySelector('[data-bk-calc-recap-text]') as HTMLElement
@@ -840,6 +855,18 @@ const saleIntake = saleIntakeClientConfig()
     const isVip = isPaid || source === 'showroom-visit'
     const needsSlots = isVip
     const isShowcase = source === 'showcase-booking'
+    // Neotone pas au showroom (25/10/2026) : prénom, nom, e-mail, téléphone
+    // (obligatoire), message facultatif, conditions générales. Rien d'autre.
+    const isStockRequest = source === 'neotone-stock-request'
+    toggleBlock(stockReqEl, isStockRequest)
+    if (isStockRequest) {
+      const setVal = (n: string, v: string) => { const el = form.elements.namedItem(n) as HTMLInputElement | null; if (el) el.value = v }
+      setVal('stockModel', trigger.getAttribute('data-calc-model') || '')
+      setVal('stockWood', trigger.getAttribute('data-calc-wood') || '')
+      setVal('stockMode', trigger.getAttribute('data-calc-mode') || '')
+      const recapEl = modal?.querySelector('[data-bk-stock-recap]') as HTMLElement | null
+      if (recapEl) recapEl.textContent = trigger.getAttribute('data-calc-recap') || ''
+    }
     toggleBlock(peopleEl, isShowcase)
     // La question « pour quel(s) instrument(s) ? » n'a de sens que pour une
     // place de showcase : ailleurs, c'est le motif lui-même qui la porte.
@@ -925,9 +952,11 @@ const saleIntake = saleIntakeClientConfig()
     // ⚠️ Le champ n'est jamais masqué : un `required` invisible bloquerait
     //    l'envoi sans message affichable.
     const phoneInput = form.querySelector('input[name="phone"]') as HTMLInputElement | null
-    if (phoneInput) phoneInput.required = isShowcase
+    // Demande « pas en stock » (25/10/2026) : téléphone OBLIGATOIRE, pour que
+    // David puisse rappeler la personne avec les délais de Neotone.
+    if (phoneInput) phoneInput.required = isShowcase || isStockRequest
     const phoneLabel = modal?.querySelector('[data-bk-phone-label]') as HTMLElement | null
-    if (phoneLabel) phoneLabel.textContent = (isDiscount || isShowcase ? phoneLabel.dataset.plain : phoneLabel.dataset.default) || phoneLabel.textContent
+    if (phoneLabel) phoneLabel.textContent = (isDiscount || isShowcase || isStockRequest ? phoneLabel.dataset.plain : phoneLabel.dataset.default) || phoneLabel.textContent
     modal?.querySelector('[data-bk-phone-why]')?.classList.toggle('hidden', !isShowcase)
     toggleBlock(slotsEl, needsSlots)
     // Blocs purement informatifs (aucun champ) → simple affichage/masquage.
@@ -1145,10 +1174,11 @@ const saleIntake = saleIntakeClientConfig()
           // une liste vide est une information, « aucune date prévue »), l'Edge
           // Function ne s'en sert que pour `showcase-waitlist`.
           upcomingEvents: upcoming,
-          neotoneModel: get('neotoneModel') || null,
+          // `stock*` : demande « pas en stock » (25/10/2026), mêmes champs serveur.
+          neotoneModel: get('neotoneModel') || get('stockModel') || null,
           // Bois et mode d'achat repris du calculateur (22/09/2026).
-          neotoneWood: get('neotoneWood') || null,
-          neotonePurchaseMode: get('neotonePurchaseMode') || null,
+          neotoneWood: get('neotoneWood') || get('stockWood') || null,
+          neotonePurchaseMode: get('neotonePurchaseMode') || get('stockMode') || null,
           // Facturation en champs séparés (21/10/2026) — voir plus haut.
           billing,
           // Montants du calculateur (21/10/2026), tels qu'affichés dans « Ton

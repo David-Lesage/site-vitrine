@@ -39,9 +39,11 @@
  * ── CE QUE LE SCRIPT RENVOIE ──────────────────────────────────────────────
  *  { "updatedAt": "2026-10-09T10:00:00.000Z",
  *    "pieces": [ { "model": "MUTANT", "wood": "ASH", "status": "Available",
- *                  "plannedShipping": "", "actualShipping": "" }, … ] }
+ *                  "plannedShipping": "", "actualShipping": "", "arrivalText": "" }, … ] }
  *  Seules les lignes Product = « Neotone » dont « Sale status » vaut
- *  « Available » ou « In transit » sont publiées. Les valeurs sont recopiées
+ *  « Available » ou COMMENCE par « In transit » sont publiées ; pour ces
+ *  dernières, la date d'arrivée écrite après « In transit » part dans
+ *  `arrivalText` (vide si ce n'est pas une date pure, voir `safeDate_`). Les valeurs sont recopiées
  *  telles qu'affichées dans le Sheet ; c'est le site qui les traduit
  *  (voir `sheetToStockRows` dans src/lib/stockSource.js).
  *  Colonne introuvable (en-tête renommé) → `pieces` vide + champ `error` :
@@ -64,7 +66,21 @@ var COLUMNS = {
 }
 
 // Statuts publiés (comparaison insensible à la casse et aux espaces).
+// « In transit » peut être suivi, DANS LA MÊME CASE, d'une date d'arrivée
+// précise ou approximative, souvent sur une 2ᵉ ligne : « In transit \n9 - 13 november »
+// (relevé du 25/10/2026). Avant cette version, ces lignes étaient PERDUES
+// (comparaison exacte). « confirmed » (vente en cours) et « Sold » ne sont
+// jamais publiés.
 var PUBLISHED_STATUSES = ['available', 'in transit']
+
+// Mots autorisés dans la date d'arrivée publiée : nombres, mois (anglais,
+// français, espagnol, abrégés ou non) et liaisons. Si UN SEUL autre mot est
+// présent (un nom, une remarque…), la date n'est PAS publiée du tout : la case
+// est libre, elle ne doit jamais faire fuiter autre chose qu'une date.
+var DATE_WORDS = ('january jan janvier janv enero ene february feb fevrier fev fevr febrero march mar mars marzo ' +
+  'april apr avril avr abril abr may mai mayo june jun juin junio july jul juillet juil julio august aug aout agosto ago ' +
+  'september sep sept septembre septiembre october oct octobre octubre november nov novembre noviembre ' +
+  'december dec decembre diciembre dic to au al a').split(' ')
 
 function doGet() {
   var body
@@ -108,16 +124,47 @@ function extractPieces_(values) {
   for (var r = 1; r < values.length; r++) {
     var row = values[r]
     if (norm(row[idx.product]) !== 'neotone') continue
-    if (PUBLISHED_STATUSES.indexOf(norm(row[idx.status])) === -1) continue
+    var st = splitStatus_(row[idx.status])
+    if (!st) continue
     pieces.push({
       model: String(row[idx.model]).trim(),
       wood: String(row[idx.wood]).trim(),
-      status: String(row[idx.status]).trim(),
+      status: st.status,
       plannedShipping: String(row[idx.plannedShipping]).trim(),
       actualShipping: String(row[idx.actualShipping]).trim(),
+      arrivalText: st.arrivalText,
     })
   }
   return { pieces: pieces }
+}
+
+/**
+ * Colonne L → { status, arrivalText } ou null (statut non publié).
+ *   « Available »                    → { status: 'Available',  arrivalText: '' }
+ *   « In transit \n9 - 13 november » → { status: 'In transit', arrivalText: '9 - 13 november' }
+ *   « confirmed », « Sold », vide…   → null
+ */
+function splitStatus_(value) {
+  var flat = String(value == null ? '' : value).replace(/\s+/g, ' ').trim()
+  var low = flat.toLowerCase()
+  if (low === 'available') return { status: 'Available', arrivalText: '' }
+  if (low.indexOf('in transit') !== 0) return null
+  var rest = flat.slice('in transit'.length).replace(/^[\s:,;.\-–—()]+/, '').replace(/[()]/g, '').trim()
+  return { status: 'In transit', arrivalText: safeDate_(rest) }
+}
+
+/** Ne garde le texte que s'il n'est fait QUE de nombres, de mois et de liaisons (40 caractères max). */
+function safeDate_(text) {
+  if (!text || text.length > 40) return ''
+  var plain = text.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+  var words = plain.split(/[\s.,\/\-–—]+/).filter(function (w) { return w !== '' })
+  if (!words.length) return ''
+  for (var i = 0; i < words.length; i++) {
+    if (/^\d{1,2}$/.test(words[i])) continue
+    if (DATE_WORDS.indexOf(words[i]) !== -1) continue
+    return ''
+  }
+  return text
 }
 
 /** À lancer depuis l'éditeur (bouton « Exécuter ») pour voir le JSON publié. */

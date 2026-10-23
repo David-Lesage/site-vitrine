@@ -65,6 +65,7 @@ const stockLabels: StockLabels = {
   availTitle: sl('stockAvailTitle'),
   soonTitle: sl('stockSoonTitle'),
   arrivalPrefix: sl('stockArrivalPrefix'),
+  arrivalPeriod: sl('stockArrivalPeriod'),
   note: sl('stockNote'),
   noteLink: sl('stockNoteLink'),
   showroomHref: L('/showroom'),
@@ -82,6 +83,7 @@ const modelStockLabels: ModelStockLabels = {
   outLink: sl('stockModelOutLink'),
   soon: sl('stockModelSoon'),
   soonDate: sl('stockModelSoonDate'),
+  soonPeriod: sl('stockModelSoonPeriod'),
   lang,
   locale: numberLocale(lang),
 }
@@ -284,6 +286,7 @@ const ld = [
       data-avail={stockLabels.availTitle}
       data-soon={stockLabels.soonTitle}
       data-prefix={stockLabels.arrivalPrefix}
+      data-period={stockLabels.arrivalPeriod}
       data-note={stockLabels.note}
       data-note-link={stockLabels.noteLink}
       hidden={stockHtml === ''}
@@ -331,6 +334,7 @@ const ld = [
       availTitle: box.dataset.avail ?? '',
       soonTitle: box.dataset.soon ?? '',
       arrivalPrefix: box.dataset.prefix ?? '',
+      arrivalPeriod: box.dataset.period ?? '',
       note: box.dataset.note ?? '',
       noteLink: box.dataset.noteLink ?? '',
       showroomHref: box.dataset.showroom ?? '/showroom',
@@ -348,10 +352,13 @@ const ld = [
         box.innerHTML = html
         box.hidden = html === ''
         applyModelStock(lines)
-        // Le calculateur écoute cet événement pour regriser les bois absents du
-        // showroom (tableau vide = plus aucune restriction). Un seul fetch pour
-        // les trois blocs.
-        document.dispatchEvent(new CustomEvent('neotone:stock', { detail: lines }))
+        // Le calculateur écoute cet événement pour afficher l'état du stock du
+        // couple choisi (disponible / arrive / sur commande). `known` : la
+        // source a bien répondu — faux seulement si l'Apps Script n'est pas
+        // configuré (en-tête `X-Stock-Source: none` posé par api/stock.js).
+        // Un seul fetch pour les trois blocs.
+        const known = res.headers.get('X-Stock-Source') !== 'none'
+        document.dispatchEvent(new CustomEvent('neotone:stock', { detail: { lines, known } }))
       } catch {
         /* réseau / réponse illisible : on garde ce qui a été figé au build */
       }

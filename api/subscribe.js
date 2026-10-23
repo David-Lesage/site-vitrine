@@ -23,7 +23,9 @@ export default async function handler(req, res) {
     // Téléphone obligatoire pour le formulaire de CONTACT uniquement (11/09/2026).
     // Même règle que le navigateur et l'Edge Function : 8 à 15 chiffres (E.164),
     // formats internationaux acceptés (espaces, points, tirets, parenthèses, « + »).
-    if (body.source === 'contact') {
+    // 25/10/2026 : aussi pour `neotone-stock-request` (Neotone pas au showroom) :
+    // David rappelle la personne avec les délais de fabrication et de livraison.
+    if (body.source === 'contact' || body.source === 'neotone-stock-request') {
       const phone = String(body.phone || '').trim()
       const digits = phone.replace(/\D/g, '').length
       if (!/^\+?[\d\s().\-]+$/.test(phone) || digits < 8 || digits > 15) {

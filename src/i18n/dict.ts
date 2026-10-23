@@ -294,6 +294,8 @@ const fr = {
     stockAvailTitle: 'Disponible tout de suite',
     stockSoonTitle: 'Bientôt disponible',
     stockArrivalPrefix: 'prévu le',
+    // Période d'arrivée écrite dans le Sheet (colonne L, ex. « 9-13 novembre »).
+    stockArrivalPeriod: 'arrivée prévue au showroom : {period}',
     stockNote:
       'Ces instruments sont chez moi, à Paris : tu peux venir les essayer avant de te décider. Le stock bouge, et la commande se fait ensuite avec Neotone.',
     stockNoteLink: 'Voir le showroom',
@@ -307,6 +309,7 @@ const fr = {
     stockModelOutLink: 'disponible à l’achat en ligne (−5 %, livraison)',
     stockModelSoon: 'Bientôt en stock : {woods}',
     stockModelSoonDate: 'arrivée prévue le {date}',
+    stockModelSoonPeriod: 'arrivée prévue : {period}',
     whyEyebrow: "Deux modèles",
     whyTitle: "Pourquoi choisir un 10 notes ou un 19 notes ?",
     whyP: ["Le <strong>Neotone¹ (10 notes)</strong> est très bien pour <strong>découvrir</strong> le handpan, <strong>méditer</strong> et <strong>improviser</strong> dans une gamme.", "Le <strong>Neotone¹ Mutant (19 notes)</strong> est fait pour devenir ton <strong>instrument principal</strong>, ou pour <strong>accompagner la voix</strong> sur des morceaux connus.", "Il permet de jouer tous les <abbr title=\"Au moins trois notes jouées ensemble, par exemple do, mi, sol.\">accords</abbr> (<abbr title=\"La place d’un accord dans une tonalité, numérotée de I à VII.\">degrés</abbr>) des <abbr title=\"La gamme de référence d’un morceau, par exemple do majeur ou la mineur.\">tonalités</abbr> majeures et mineures sur une même gamme : I Équilibre, II Élan, III Aventure, IV Détente, V Tension, VI Nostalgie, VII Mystère."],
@@ -3615,12 +3618,23 @@ const fr = {
       modeOnlineShort: 'Achat en ligne, code de réduction (−5 %)',
       modeShowroomShort: 'Achat au showroom (−7 %)',
       // ── Disponibilité au showroom (Google Sheet, voir src/lib/stock.ts) ───
-      // Uniquement en mode « Je viens au showroom » ET si la source renvoie au
-      // moins une pièce. Source vide / injoignable → aucune restriction, aucun de
-      // ces textes n'apparaît (un stock inconnu ne doit jamais bloquer un achat).
-      stockOut: 'pas en stock au showroom',
-      stockExpected: 'attendu le {date}',
-      stockAdjusted: 'Nous avons ajusté ton choix : seuls ces instruments sont au showroom aujourd’hui.',
+      // 25/10/2026 (David) : le stock ne bloque plus le calcul, il INFORME en
+      // trois états pour le couple modèle + bois choisi, dans les deux modes.
+      // Source inconnue → aucun de ces textes. `{period}` = période d'arrivée
+      // écrite dans le Sheet (colonne L), traduite (« 9-13 novembre »).
+      stockStateIn: 'Disponible au showroom',
+      stockStateInSub: 'Tu peux venir l’essayer à Paris 20ᵉ et repartir avec.',
+      stockStateTransit: 'Arrive au showroom : {period}',
+      stockStateTransitSoon: 'Arrive bientôt au showroom',
+      stockStateTransitSub: 'Le prix ci-dessous reste valable. Fais la demande : je te tiens au courant de son arrivée et des délais.',
+      stockStateOut: 'Pas en stock au showroom : sur commande',
+      stockStateOutSub: 'Le prix ci-dessous reste valable. Fais la demande : je demande à Neotone le délai de fabrication et de livraison pour ce modèle et ce bois, et je reviens vers toi.',
+      stockTagIn: 'Au showroom',
+      stockTagTransit: 'Arrive bientôt',
+      stockTagOut: 'Sur commande',
+      stockRequestButton: 'Faire la demande',
+      stockRequestTitle: 'Demande pour un Neotone pas encore au showroom',
+      stockRequestIntro: 'Laisse-moi tes coordonnées : je demande à Neotone le délai de fabrication et de livraison jusqu’à Paris pour ce modèle et ce bois, et je reviens vers toi avec la réponse.',
       step1: '1 · Choisis ton modèle',
       step2: '2 · Choisis ton bois',
       step3: '3 · Ton pays de livraison',
