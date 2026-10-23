@@ -1035,7 +1035,7 @@ const fr = {
         'Tu remplis ce formulaire (date de retrait souhaitée comprise).',
         'Je vérifie ta demande et je la transmets à Neotone (Soundventure, à Budapest) avec le n° de série de ton instrument. Tu es en copie.',
         'Neotone t’envoie la facture et un lien de paiement par carte, en semaine seulement (hors jours fériés hongrois). Il vient de szamlazz.hu : pense à vérifier tes spams.',
-        'Tu paies <strong>avant</strong> ta venue. Le jour J, je te remets ton Neotone déjà payé, au showroom (Paris 20ᵉ). Tu peux me demander la preuve de paiement.'
+        'Tu paies <strong>avant</strong> ta venue. Le jour J, je te remets ton Neotone déjà payé, au showroom (Paris 20ᵉ). Je pourrai te demander ta preuve de paiement.'
       ],
       showroomWeekend: '<strong>Tu viens un week-end ?</strong> Neotone ne facture qu’en semaine : fais ta demande plusieurs jours ouvrés avant, pour que ton Neotone soit payé avant ta venue. Aucun paiement n’est possible au showroom.',
       pickupTitle: 'Retrait à Paris',

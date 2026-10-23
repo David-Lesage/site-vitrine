@@ -233,12 +233,12 @@ export function payFirstSteps(lang: string): string[] {
         'You pay <strong>before</strong> coming, never on the day: no payment is possible at the showroom.',
         'Neotone (Soundventure, Budapest) issues the invoice and sends you a card payment link, <strong>on weekdays only</strong> (Monday to Friday, except Hungarian public holidays). Please send your request several working days before your visit.',
         'The payment link comes from <strong>szamlazz.hu</strong>: check your spam folder.',
-        'On the day, I hand you a Neotone that is already paid. You can ask me for the proof of payment at any time.',
+        'On the day, I hand you a Neotone that is already paid. I may ask you for your proof of payment: keep the email from szamlazz.hu.',
     ] : [
         'Tu paies <strong>avant</strong> ta venue, jamais le jour même : aucun paiement n’est possible au showroom.',
         'Neotone (Soundventure, Budapest) établit la facture et t’envoie un lien de paiement par carte, <strong>en semaine seulement</strong> (du lundi au vendredi, hors jours fériés hongrois). Fais ta demande plusieurs jours ouvrés avant ta venue.',
         'Le lien de paiement vient de <strong>szamlazz.hu</strong> : pense à vérifier tes spams.',
-        'Le jour J, je te remets un Neotone déjà payé. Tu peux me demander la preuve de paiement à tout moment.',
+        'Le jour J, je te remets un Neotone déjà payé. Je pourrai te demander ta preuve de paiement : garde le mail de szamlazz.hu.',
     ];
 }
 export const stepsHtml = (steps: string[]) =>
@@ -335,8 +335,8 @@ export function neotoneInvoiceMail(lead: PurchaseLead, serial: string) {
         'The customer will pick up the instrument at the Paris Hub once it is paid.',
     ];
     const forCustomer = lead.lang === 'en'
-        ? 'For the customer (in copy): the invoice and the card payment link come from szamlazz.hu, on weekdays — please check your spam folder. You can ask David for the proof of payment at any time.'
-        : 'Pour le client (en copie) : la facture et le lien de paiement par carte viennent de szamlazz.hu, en semaine — pense à vérifier tes spams. Tu peux demander la preuve de paiement à David à tout moment.';
+        ? 'For the customer (in copy): the invoice and the card payment link come from szamlazz.hu, on weekdays — please check your spam folder. David may ask you for your proof of payment: please keep the szamlazz.hu email.'
+        : 'Pour le client (en copie) : la facture et le lien de paiement par carte viennent de szamlazz.hu, en semaine — pense à vérifier tes spams. David pourra te demander ta preuve de paiement : garde le mail de szamlazz.hu.';
     const sign = ['Thank you!', 'Best regards,', 'David Lesage', 'Paris Hub — Neotone showroom', 'contact@lesagedavid.fr · lesagedavid.fr'];
     const text = `${intro.join('\n\n')}\n\n${lines.filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n')}\n\n${sign.join('\n')}\n\n—\n${forCustomer}\n`;
     const html = `<!doctype html><html lang="en"><head><meta charset="utf-8" /></head>
