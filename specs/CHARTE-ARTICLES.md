@@ -40,6 +40,7 @@ d'écrire un article, sinon je suis obligé de repasser derrière sur tout et ç
 | la palette est **rangée** dans des menus | « simplifiée », « allégée », « on a enlevé des réglages » |
 | **⚡ Ajouter un handpan électronique** | « Ajouter mon Neotone » |
 | **tes deux handpans** pour le duo · « un set hybride » est permis dans le texte (David, 21/09) | « le mode Hybride » comme NOM DE FONCTION : réservé au futur mode acoustique + électronique de l'app |
+| **Duo hybride électro-acoustique** (court : « Duo hybride ») = un acoustique + un électronique joués ensemble · **Duo acoustique** = deux acoustiques · **Duo électronique** = deux Neotone (David, 23/10 : « on joue en même temps un handpan acoustique et électronique, c'est un Duo Hybride Électro-Acoustique ») | « hybride » pour toute autre chose ; « mode Hybride » ; « hybride » pour deux acoustiques |
 
 **Degrés** (noms officiels, 07/09) : I Équilibre · II Élan · III Aventure · IV Détente · V Tension ·
 VI Nostalgie · VII Mystère. Voyelles en Chanter & Jouer : OU · O (beau) · O (or) · A · E · I · M.
@@ -112,7 +113,7 @@ Aucune publication tant qu'une ligne est « non conforme ».
 
 **Pour le texte :**
 8. Une idée par paragraphe, gras sobre, infobulles sur les termes techniques ?
-9. Vocabulaire du §3 respecté (note/creux, écran du handpan, pan/bande, « mode Hybride »…) ?
+9. Vocabulaire du §3 respecté (note/creux, écran du handpan, pan/bande, Duo hybride / acoustique / électronique…) ?
 10. Aucune justification ni excuse ?
 11. Chaque affirmation sur l'app est-elle prouvée ?
 12. Les renvois sont-ils des liens cliquables ?
