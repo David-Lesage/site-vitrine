@@ -2,8 +2,8 @@
 title: "Composer ta mélodie note à note : l'éditeur de mélodies"
 description: "Pose les notes de ton handpan sur une timeline, écoute, mets en boucle, accélère — et exporte en .mid. L'éditeur de mélodies de Handpan Constellation Studio."
 pubDate: 2026-08-27
-updatedDate: 2026-10-23
-cover: "/images/app-editeur-melodies-timeline.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-editeur-melodies-timeline-2026-10.webp"
 category: "partitions"
 tags: ["mélodie", "midi", "atelier"]
 lang: "fr"
@@ -11,7 +11,7 @@ permalink: "editeur-de-melodies-handpan"
 draft: false
 ---
 
-L'éditeur de mélodies de [Handpan Constellation Studio](/handpan-app) te donne ce qui manquait entre tes mains et ta mémoire : ton pan en haut, une **timeline** en dessous. Tu cliques une note du pan, elle se pose sur la ligne du temps. Tu écoutes, tu déplaces, tu mets en boucle, et tu exportes en `.mid`. Une mélodie qui existait ce soir existe encore demain matin.
+L'éditeur de mélodies de [Handpan Constellation Studio](/handpan-app) te donne ce qui manquait entre tes mains et ta mémoire : ton pan d'un côté, une **timeline** de l'autre. Tu cliques une note du pan, elle se pose sur la ligne du temps. Tu écoutes, tu déplaces, tu mets en boucle, et tu exportes en `.mid`. Une mélodie qui existait ce soir existe encore demain matin.
 
 L'éditeur affiche ta gamme du moment, **que ton handpan soit acoustique ou électronique** — la prise au vol par MIDI demande un instrument électronique, et un acoustique peut s'enregistrer au micro, comme décrit plus bas.
 
@@ -21,21 +21,21 @@ Les accords, on finit par les garder : ils ont une forme, une couleur, un [diagr
 
 Résultat, on rejoue toujours les mêmes trois phrases — celles que les doigts ont fini par retenir tout seuls.
 
-## Ton pan en haut, ta timeline en dessous
+## Ton pan à gauche, ta timeline au centre
 
-Le principe tient en une image. En haut, ton handpan tel que tu le connais, chaque note habillée de sa **ChromaKey**. En bas, une timeline horizontale avec ses mesures. Tu cliques une note, une pastille apparaît au curseur, à sa couleur.
+Le principe tient en une image. À gauche, ton handpan tel que tu le connais, chaque note habillée de sa **ChromaKey**. Au centre, une timeline horizontale avec ses mesures. Tu cliques une note, une pastille apparaît au curseur, à sa couleur.
 
 <figure>
   <img
-    src="/images/app-editeur-melodies-timeline.webp"
-    width="2000"
-    height="1400"
-    alt="L'éditeur de mélodies en pleine page, thème sombre. En haut, le champ de titre « Ode à la Joie (thème) », des boutons annuler / refaire, enregistrer, ouvrir, « Importer », « ↓ .mid », et les onglets « Atelier » et « Pluie de notes ». En dessous, la barre de transport (retour, pause, stop, enregistrement, boucle), TEMPO 80, MÉTRIQUE 4/4, MESURE 2. À gauche, le panneau « GAMME & INSTRUMENT » : « Ode à la Joie (thème) — D » et un handpan dessiné avec le ding D4 au centre et les notes G4, E4, F#4, A4 autour, chacune à sa couleur, plus une réglette de pulsation entre un pied gauche et un pied droit. Au centre, la grille : cinq lignes nommées A4, G4, F#4, E4, D4, quatre mesures numérotées, et une quinzaine de pastilles colorées posées à des moments différents, chacune portant le nom de sa note ; une tête de lecture verticale blanche est arrêtée au début de la mesure 2. À droite, les réglages : Grille « Croche », Métrique 4/4 · 3/4 · 6/8, Vitesse 1×, un sélecteur d'affichage « ChromaKeys / Degré » et les notations Nº, DoRé, ABC, 1-2-3 ; puis la rubrique ENTRAÎNEMENT avec les cases « Clic à chaque temps », « Décompte d'une mesure », « Accélérer peu à peu », « 🥁 Jouer avec le batteur », « Quantiser l'enregistrement (croche) ». En bas de la grille, trois outils : crayon, main, gomme."
+    src="/images/app-editeur-melodies-timeline-2026-10.webp"
+    width="2880"
+    height="2016"
+    alt="L'éditeur de mélodies en grand, thème Nuit étoilée, ouvert sur « Ode à la Joie ». En haut, le titre, annuler / refaire, enregistrer, ouvrir, « Importer », « .mid · XML », les onglets « Atelier » (actif) et « Pluie de notes / Handpan Hero », et « Copier le lien de cet outil » ; dessous, « Donner mon avis ». Puis la barre d'outils : retour, lecture, stop, enregistrement, boucle, les outils crayon (actif), main, sélection, gomme, flèche, muet et ciseaux, « Tout effacer », la grille « Double croche », « Quantifier », et TEMPO 110, MÉTRIQUE 4/4, MESURE 1. À gauche, « GAMME & INSTRUMENT — gamme courante » et un handpan dessiné aux notes colorées, le bouton « Agrandir les handpans », une réglette de pulsation entre un pied gauche et un pied droit, et « MES MÉLODIES » avec l'aide des outils. Au centre, la grille : une ligne par note, de Bb2 à A5, chacune à sa couleur, trois mesures numérotées, et les pastilles colorées de la mélodie, E4 E4 F4 G4 G4 F4 E4 D4 C4. À droite, « MÉLODIE » : Grille Croche, Métrique 4/4, 3/4 ou 6/8, Vitesse 1×. En bas, la barre « Batteur Pop 4/4 · 110 · au repos »."
     data-lb="editeur-melodies"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>L'éditeur, ouvert sur le thème de <em>l'Ode à la Joie</em>. Chaque note du pan a sa ligne dans la grille et sa couleur ; les pastilles portent le nom de la note, et la tête de lecture blanche marque où on en est — ici au début de la mesure 2. En bas à gauche de la grille, les trois outils : <strong>crayon</strong>, <strong>main</strong>, <strong>gomme</strong>.</figcaption>
+  <figcaption>L'éditeur, ouvert sur le thème de <em>l'Ode à la Joie</em>. À gauche, ton handpan ; au centre, la grille, où chaque note du pan a sa ligne et sa couleur, et où les pastilles portent le nom de la note. Au-dessus, la barre d'outils : <strong>crayon</strong>, <strong>main</strong>, <strong>gomme</strong>, mais aussi sélection, ciseaux et <em>Quantifier</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

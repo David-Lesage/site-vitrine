@@ -2,7 +2,7 @@
 title: "La Bibliothèque musicale : et si ta gamme te disait quoi jouer ?"
 description: "Chansons à accompagner, morceaux de handpan, tes compositions : la Bibliothèque de Handpan Constellation Studio te dit lesquels ta gamme sait vraiment jouer."
 pubDate: 2026-08-31
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/app-bibliotheque-badges.webp"
 category: "communaute"
 tags: ["morceaux", "répertoire", "synchronisation"]
@@ -56,23 +56,23 @@ Des compteurs en tête de liste t'annoncent la couleur avant même que tu cherch
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-Un morceau bloqué s'ouvre quand même. Clique dessus et l'app ne te claque pas la porte au nez : elle nomme les notes qui manquent, te dit que tu peux entrer malgré tout, puis te montre par quoi compléter ton instrument — chiffres à l'appui.
+Un morceau bloqué s'ouvre quand même. Clique dessus et l'app ne te claque pas la porte au nez : sa fiche s'ouvre, les notes qui manquent sont nommées en tête, et tout le reste du morceau est là.
 
 <figure>
   <img
-    src="/images/app-bibliotheque-morceau-incompatible.webp"
-    width="2000"
-    height="1400"
-    alt="La bibliothèque en thème sombre, avec par-dessus le dialogue ouvert sur un morceau bloqué. Derrière, les fiches montrent les deux familles de pastilles : en vert « ✅ Jouable transposé en F », « ✅ Jouable transposé en G mineur », « ✅ Jouable transposé en D mineur » (Unchained Melody, Uptown Funk, Viva la Vida, Wagon Wheel, Wake Me Up, What's Up, Wicked Game, With or Without You, Wonderful Tonight, You Are My Sunshine) ; en ambre « 🔒 Il manque C# sur ton pan », « 🔒 Il manque C#, B sur ton pan », « 🔒 Il manque B sur ton pan » (California Dreamin', Chan Chan, Creep, Don't Look Back in Anger, Amsterdam, Billie Jean). Au centre, le dialogue intitulé « (Sittin' On) The Dock of the Bay — Otis Redding » : « Il manque C#, B sur ton handpan pour accompagner tout le morceau. Tu peux quand même l'ouvrir et en jouer une partie. » Puis un encadré « 🧩 Complète ton instrument pour l'accompagner » listant quatre handpans complémentaires chiffrés : 🥁 B2 Athena 9 (transposé) — ✓ toutes les notes manquantes · +41 morceaux ; 🥁 C# Raga Desh — ✓ toutes les notes manquantes · +41 morceaux ; 🥁 G Oxalis 11 (transposé) — ✓ toutes les notes manquantes · +40 morceaux ; 🥁 D Voyager 10 (transposé) — ✓ toutes les notes manquantes · +41 morceaux. En dessous, un encadré « ⚡ Ou un Neotone sur-mesure — généré avec exactement les notes manquantes », un grand bouton cyan « 🧭 Compléter mon instrument », et deux boutons secondaires « Voir la grille quand même » et « Annuler »."
+    src="/images/app-bibliotheque-morceau-incompatible-2026-10.webp"
+    width="2880"
+    height="2016"
+    alt="Le répertoire en thème Nuit étoilée, sur un D Kurd 10, avec par-dessus la fiche ouverte d'un morceau bloqué : « Shape of My Heart — Sting ». En tête, le choix de version : « Version David Lesage » (active), « Version originale », « Version simplifiée », « Créer ma version », et la phrase « La version de David : sans le pont harmonique de l'original, qu'il n'a jamais joué. Le pont est dans la version originale, avec « Révéler le pont » ». Puis une pastille ambre « 🔒 Il manque Eb, F# sur ton handpan ». Dessous, l'invitation au passeport vocal (« Fais ton passeport vocal (3 minutes)… », boutons « Faire mon passeport » et « Plus tard »), les liens d'écoute de la version de David Lesage et Jef Matthys (Spotify, Apple Music, Deezer, YouTube Music), puis les onglets « Mélodie » et « Arrangement » (actif) avec « Jouer l'arrangement » et « Importer un MIDI et l'adapter au handpan ». Derrière, assombries, les fiches d'autres morceaux, dont plusieurs marquées « Avec ton D Kurd 10 · en F majeur »."
     data-lb="incompatible"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le dialogue d'un morceau bloqué — <em>(Sittin' On) The Dock of the Bay</em> sur un D Kurd 10. L'app nomme les notes absentes (« <strong>Il manque C#, B</strong> »), rappelle que le morceau reste ouvrable, puis chiffre ce qu'un second instrument débloquerait : <strong>+41 morceaux</strong> avec un B2 Athena 9, <strong>+40</strong> avec un G Oxalis 11. Et en bas, le bouton qui compte : « Voir la grille quand même ».</figcaption>
+  <figcaption>La fiche d'un morceau bloqué — <em>Shape of My Heart</em> sur un D Kurd 10. L'app nomme les notes absentes (« <strong>Il manque Eb, F# sur ton handpan</strong> »), mais la fiche s'ouvre en entier : les versions, l'écoute, la mélodie et l'arrangement restent accessibles.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-Ni mur, ni simple transposition : une porte. L'app dit ce qui manque, propose un deuxième handpan qui comble exactement le trou — avec le nombre de morceaux gagnés —, et te laisse quand même entrer dans la grille.
+Ni mur, ni simple transposition : une porte. L'app dit ce qui manque, et te laisse quand même entrer dans le morceau.
 
 Sur un handpan acoustique, l'app va plus loin et te propose le morceau **transposé dans la tonalité de ton pan** quand c'est possible — puisque les notes, elles, ne bougeront pas. Sur un handpan électronique, c'est l'instrument qui va chercher la tonalité du morceau.
 

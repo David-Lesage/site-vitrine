@@ -2,8 +2,8 @@
 title: "Improve Handpan Constellation Studio: the feedback feature"
 description: "Handpan Constellation Studio evolves thanks to you: from inside the app, send a bug, an idea, a question or a thought in one click. Every message is read and shapes what comes next."
 pubDate: 2026-08-23
-updatedDate: 2026-10-23
-cover: "/images/app-donner-mon-avis.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-donner-mon-avis-2026-10-en.webp"
 category: "communaute"
 tags: ["community", "feedback"]
 lang: "en"
@@ -15,28 +15,23 @@ Handpan Constellation Studio isn't a frozen app: it's a **living project** that 
 
 ## Feedback in one click, without leaving the app
 
-In [Handpan Constellation Studio](/en/handpan-app), click **💬 Give my opinion** (*Donner mon avis*), at the top of the screen, and a small window simply asks: *"What would you like to tell us?"*. You choose what fits best:
+In [Handpan Constellation Studio](/en/handpan-app), the shortest route is at the top of the screen: the **🐞 Report a bug** button. It opens the bug report directly, which first asks **which part is affected** — crash, sound, MIDI, musical error, display, mobile, slowness, saving, account, text or translation, or something else. And the app itself attaches what's needed to understand your problem: the screen you were on, your handpan and your last few actions.
 
-- 🐞 **Report a bug** — "something isn't working".
-- 💡 **Suggest an idea** — "a feature to add".
-- ❓ **Ask a question** — "I need help".
-- 💬 **Share a thought** — "general feedback, a feeling".
-
-For a bug there's a shorter route: the **🐞 Report a bug** button, next to the bell in the header, opens the form directly. And the app itself attaches what's needed to understand your problem: the screen you were on, your handpan and your last few actions.
+For an idea, a question or just a feeling, the app's main tools — **My handpans**, for example — carry their own **💬 Give feedback** button, right next to their title.
 
 No endless form, no third-party account: you write your message right there, in the moment, while you play. You can even **attach a screenshot, an audio clip or a short video** to show exactly what you mean.
 
 <figure>
   <img
-    src="/images/app-donner-mon-avis.webp"
-    width="2000"
-    height="1250"
-    alt="The feedback window open over the dimmed application. Title « Que veux-tu nous dire ? » (what would you like to tell us?), subtitle « Choisis ce qui correspond le mieux. ». Five cards: « 🐞 Signaler un bug », « 💡 Proposer une idée », « ❓ Poser une question », « 💬 Donner un avis », « 🌐 Mauvaise traduction — Un mot sonne faux dans ta langue ». Below, two open consultations: « Propose un nom à l'app » and « Comment nommer les tablatures ? », each inviting you to suggest or vote. A progress bar at the top marks the first step."
+    src="/images/app-donner-mon-avis-2026-10-en.webp"
+    width="2880"
+    height="1800"
+    alt="The bug report window open over the dimmed app, Starry Night theme. A progress bar at the top, the title “Which part is affected?” and the subtitle “It helps us to organise and prioritise.”. Eleven choices in two columns: Crash / the app freezes, Sound / audio, MIDI / connected keyboard, Musical error (scale, chord…), Display / visuals, Mobile / tablet, Slowness / performance, Saving / export, Account / payment, Text / translation / typo, Something else. At the bottom, a “← Back” button."
     data-lb="donner-mon-avis"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The feedback window as it opens. Alongside the four entries above sits « <strong>🌐 Mauvaise traduction</strong> » — a word sounds wrong in your language — plus two open consultations at the bottom: the app's <em>final name</em> and what to call the <em>tablatures</em>. You can suggest, or vote. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The bug report as it opens from <strong>🐞 Report a bug</strong>. First question: <em>which part is affected?</em> — from crashes to sound, from MIDI to display, all the way to “Text / translation / typo” for a word that sounds wrong in your language.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -56,4 +51,4 @@ Sending feedback isn't "filing a ticket": it's **taking part**. By sharing what 
 
 ## Your turn
 
-Next time an idea crosses your mind while playing — "what if it could do that?" — don't keep it to yourself. Open [Handpan Constellation Studio](/en/handpan-app), click "💬 Give my opinion", and tell me. And if you'd rather talk it through, my [handpan lessons](/en/cours) are another place where your feedback feeds the teaching.
+Next time an idea crosses your mind while playing — "what if it could do that?" — don't keep it to yourself. Open [Handpan Constellation Studio](/en/handpan-app), click "💬 Give feedback" in the tool you're in (or "🐞 Report a bug" if something is stuck), and tell me. And if you'd rather talk it through, my [handpan lessons](/en/cours) are another place where your feedback feeds the teaching.

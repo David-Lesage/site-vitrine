@@ -2,8 +2,8 @@
 title: "Vocal layouts: accompanying every voice"
 description: "Deep, Bright, Wide: three Logic Mode layouts that adapt the chords to the singer's range so the voice settles naturally."
 pubDate: 2026-07-22
-updatedDate: 2026-10-23
-cover: "/images/app-layout-vocal.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-layout-vocal-2026-10-en.webp"
 category: "chant"
 tags: ["singing", "accompaniment"]
 lang: "en"
@@ -23,19 +23,19 @@ That's exactly what the vocal layouts fix. They keep the same colours, the same 
 
 <figure>
   <img
-    src="/images/app-layout-vocal.webp"
-    width="1564"
-    height="996"
-    alt="Close-up of the « ② TONALITÉ » block in Logic Mode's right-hand panel. On the left, « Note d'ancrage » with an orange disc showing the letter D. On the right, « Mode » with two stacked buttons: « 🙂 Joyeux » selected in yellow, and « 😢 Triste » next to a « Nuances » button. Below, separated by a rule, the « 🎚 Layout vocal » setting with a help question mark, and a three-position selector: « 🌑 Profond » highlighted in cyan, « ☀️ Brillant », « 🌈 Ample ». The « Voyage des Sensations » heading begins underneath."
+    src="/images/app-layout-vocal-2026-10-en.webp"
+    width="792"
+    height="504"
+    alt="Close-up, Starry Night theme, on the “Chord voicings” setting in the Voicings &amp; Logic drawer, under the anchor note's “Flower” and “Line” choices. Header line: “I prefer chords:”, and on the right “e.g. Dm · Balance”. Three positions: “🌑 Deep” (selected), with D2 · F3 · A3 · D4; “☀️ Bright”, with D3 · F4 · A4 · D5; “🌈 Wide”, with D2 · F3 · A3 · D5."
     data-lb="layout-vocal"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The selector as it appears in the right-hand panel, below the anchor note and the mode. Three positions — <strong>Profond</strong> (deep), <strong>Brillant</strong> (bright), <strong>Ample</strong> (wide) — only one active at a time; Profond here. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The <strong>Chord voicings</strong> selector, in the 🎛 Voicings &amp; Logic drawer, under the anchor note. Three positions, only one active at a time — here <strong>Deep</strong> — and for each, the app shows the notes the example chord, Dm, plays: D2 · F3 · A3 · D4 for Deep, D3 · F4 · A4 · D5 for Bright, D2 · F3 · A3 · D5 for Wide.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-> **Updated 23 October 2026.** The screenshot dates from July. This setting now lives in the right-hand rail, under the **🎛 Voicings & Logic** landmark, and each chord card carries a chip ("Deep ▾") that changes the register for that degree alone. In Discovery level, the three positions are called 🌑 Low · ☀️ Clear · 🌈 Wide.
+The setting applies to every chord at once, but each chord card also carries a chip ("Deep ▾") that changes the register for that degree alone. In Discovery level, the three positions are called 🌑 Low · ☀️ Clear · 🌈 Wide.
 
 ## The three presets
 

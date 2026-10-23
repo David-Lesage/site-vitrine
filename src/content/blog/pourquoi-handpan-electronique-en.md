@@ -2,7 +2,7 @@
 title: "Why choose an electronic handpan (the Neotone)"
 description: "Night headphones, endless scales, effects, MIDI, studio quality: discover why an electronic Neotone handpan changes everything, and who it's made for."
 pubDate: 2026-06-22
-updatedDate: 2026-06-22
+updatedDate: 2026-10-24
 cover: "/images/neotone-hero-david.webp"
 category: "neotone"
 tags: ["neotone", "electronic"]
@@ -34,7 +34,7 @@ An acoustic handpan is tuned once and for all: one scale, one key. The Neotone c
 
 Over **MIDI**, the Neotone drives any music software. It becomes an expressive controller for composing, layering sounds or playing virtual instruments — all while keeping the natural gesture of the handpan.
 
-![The MIDI mapping assistant in Handpan Constellation Studio, « Midi connect » tab: the panel « Clique sur ‘Lancer le Mapping Auto’ » with its two paths — « Lancer le Mapping Auto » and « 🎵 Ma gamme Neotone officielle » —, the Neotone Mutant · Noyer drawn below with its chromatic ring from C to B across three octaves, and on the right the « Mes handpans » panel (MIDI & mapping, Modèle & bois, ⚡⚡ Deux électroniques) then the « Paramètres MIDI » block. Screenshot of the French interface.](/images/app-midi-mapping-2026.webp)
+![MIDI connection in Handpan Constellation Studio, Starry Night theme, opened from 🧰 Tools. On the left, the Neotone Mutant drawn with its notes still empty and its chromatic ring from C to B, and below it the seven chord cards Dm, Edim, F, Gm, Am, Bb, C and the “CHORD PROGRESSION” arrow. On the right, the “MIDI Settings” block: “Connection &amp; MIDI mapping”, the “Connect my Neotone” button, the “My Neotone over USB” panel — “No Neotone connected over USB (it shows up as “Ploytec USB MIDI Junction”)” — with the choice of where the sound comes from, “My instrument” or “The app”, then the “MIDI keyboard (LUMI, piano, controller keyboard)” panel.](/images/app-midi-mapping-2026-2026-10-en.webp)
 
 ## Who is the Neotone for?
 

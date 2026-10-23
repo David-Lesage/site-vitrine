@@ -2,8 +2,8 @@
 title: "Les layouts vocaux : accompagner chaque voix"
 description: "Profond, Brillant, Ample : trois dispositions du Mode Logique qui adaptent les accords à la tessiture du chanteur pour que la voix se pose."
 pubDate: 2026-07-22
-updatedDate: 2026-10-23
-cover: "/images/app-layout-vocal.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-layout-vocal-2026-10.webp"
 category: "chant"
 tags: ["chant", "accompagnement"]
 lang: "fr"
@@ -23,19 +23,19 @@ C'est exactement ce que règlent les layouts vocaux. Ils gardent les mêmes coul
 
 <figure>
   <img
-    src="/images/app-layout-vocal.webp"
-    width="1564"
-    height="996"
-    alt="Gros plan sur le bloc « ② TONALITÉ » du panneau droit du Mode Logique. À gauche, « Note d'ancrage » avec une pastille orange portant la lettre D. À droite, « Mode » avec deux boutons empilés : « 🙂 Joyeux » sélectionné en jaune, et « 😢 Triste » accompagné d'un bouton « Nuances ». En dessous, séparé par un trait, le réglage « 🎚 Layout vocal » suivi d'un point d'interrogation d'aide, et un sélecteur à trois positions : « 🌑 Profond » surligné en cyan, « ☀️ Brillant », « 🌈 Ample ». Sous le sélecteur commence le titre « Voyage des Sensations »."
+    src="/images/app-layout-vocal-2026-10.webp"
+    width="792"
+    height="504"
+    alt="Gros plan, thème Nuit étoilée, sur le réglage « Dispositions d'accord » du tiroir Dispositions &amp; Logique, sous les choix « Fleur » et « Ligne » de la note d'ancrage. Ligne d'en-tête : « Je préfère les accords : », et à droite « ex. Dm · Équilibre ». Trois positions : « 🌑 Profond » (sélectionné), avec D2 · F3 · A3 · D4 ; « ☀️ Brillant », avec D3 · F4 · A4 · D5 ; « 🌈 Ample », avec D2 · F3 · A3 · D5."
     data-lb="layout-vocal"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le sélecteur, tel qu'il apparaît dans le panneau droit, sous la note d'ancrage et le mode. Trois positions — <strong>Profond</strong>, <strong>Brillant</strong>, <strong>Ample</strong> — et une seule active à la fois ; ici Profond.</figcaption>
+  <figcaption>Le sélecteur <strong>Dispositions d'accord</strong>, dans le tiroir 🎛 Dispositions &amp; Logique, sous la note d'ancrage. Trois positions, une seule active à la fois — ici <strong>Profond</strong> — et pour chacune, l'app montre les notes que joue l'accord d'exemple, Dm : D2 · F3 · A3 · D4 en Profond, D3 · F4 · A4 · D5 en Brillant, D2 · F3 · A3 · D5 en Ample.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-> **Mise à jour du 23 octobre 2026.** La capture date de juillet. Ce réglage vit maintenant dans le rail de droite, repère **🎛 Dispositions & Logique**, et chaque carte d'accord porte une puce (« Profond ▾ ») qui change le registre pour ce seul degré. En Découverte, les trois positions s'appellent 🌑 Grave · ☀️ Clair · 🌈 Large.
+Le réglage vaut pour tous les accords à la fois, mais chaque carte d'accord porte aussi une puce (« Profond ▾ ») qui change le registre pour ce seul degré. En Découverte, les trois positions s'appellent 🌑 Grave · ☀️ Clair · 🌈 Large.
 
 ## Les trois presets
 

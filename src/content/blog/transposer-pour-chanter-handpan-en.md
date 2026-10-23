@@ -2,8 +2,8 @@
 title: "Transpose to sing in your own key"
 description: "Your voice doesn't sit right with the handpan? Shift the anchor note in one move and change key to sing at your natural pitch."
 pubDate: 2026-07-30
-updatedDate: 2026-10-23
-cover: "/images/app-atlas.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-atlas-2026-10-en.webp"
 category: "chant"
 tags: ["singing", "tip"]
 lang: "en"

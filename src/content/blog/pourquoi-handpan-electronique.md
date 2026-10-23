@@ -2,7 +2,7 @@
 title: "Pourquoi choisir un handpan électronique (le Neotone)"
 description: "Casque de nuit, gammes infinies, effets, MIDI, qualité studio : découvre pourquoi un handpan électronique Neotone change tout, et pour qui il est fait."
 pubDate: 2026-06-22
-updatedDate: 2026-06-22
+updatedDate: 2026-10-24
 cover: "/images/neotone-hero-david.webp"
 category: "neotone"
 tags: ["neotone", "électronique"]
@@ -34,7 +34,7 @@ Un handpan acoustique est accordé une fois pour toutes : une gamme, une tonalit
 
 En **MIDI**, le Neotone pilote n'importe quel logiciel de musique. Il devient un contrôleur expressif pour composer, superposer des sons ou jouer des instruments virtuels — tout en gardant le geste naturel du handpan.
 
-![L'assistant de mapping MIDI de Handpan Constellation Studio, onglet « Midi connect » : l'encart « Clique sur ‘Lancer le Mapping Auto’ » avec ses deux chemins — « Lancer le Mapping Auto » et « 🎵 Ma gamme Neotone officielle » —, le Neotone Mutant · Noyer dessiné en dessous avec sa couronne chromatique C→B sur trois octaves, et à droite le panneau « Mes handpans » (MIDI & mapping, Modèle & bois, ⚡⚡ Deux électroniques) puis le bloc « Paramètres MIDI ».](/images/app-midi-mapping-2026.webp)
+![Le branchement MIDI de Handpan Constellation Studio, thème Nuit étoilée, ouvert depuis 🧰 Outils › Brancher mon instrument (MIDI). En haut à gauche, les deux chemins « Lancer le Mapping Auto » et « 🎵 Ma gamme Neotone officielle ». Au centre, le Neotone Mutant dessiné, notes encore vides, avec sa couronne chromatique C → B sur les octaves 2 à 6, et dessous les sept cartes d'accords Dm, Edim, F, Gm, Am, Bb, C. À droite, la fiche de l'instrument (fabricant Soundventure, diapason 440 Hz) puis le bloc « Paramètres MIDI » : « Branchement &amp; mapping MIDI », le bouton « Brancher mon Neotone », et l'encart « Mon Neotone en USB » — « Aucun Neotone branché en USB (il apparaît sous le nom « Ploytec USB MIDI Junction ») » — avec le choix d'où vient le son, « Mon instrument » ou « L'app ».](/images/app-midi-mapping-2026-2026-10.webp)
 
 ## Pour qui est fait le Neotone ?
 

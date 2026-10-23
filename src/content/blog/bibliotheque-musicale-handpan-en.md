@@ -2,7 +2,7 @@
 title: "The music library: what if your scale told you what to play?"
 description: "Songs to accompany, handpan pieces, your own compositions: Handpan Constellation Studio's library tells you which ones your scale can actually play."
 pubDate: 2026-08-31
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/app-bibliotheque-badges.webp"
 category: "communaute"
 tags: ["songs", "repertoire", "sync"]
@@ -56,23 +56,23 @@ Counters at the top of the list give you the picture before you even start searc
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-A blocked piece still opens. Click it and the app doesn't slam the door: it names the missing notes, tells you that you can go in anyway, then shows you what would complete your instrument — with numbers.
+A blocked piece still opens. Click it and the app doesn't slam the door: its card opens, the missing notes are named at the top, and everything else about the piece is there.
 
 <figure>
   <img
-    src="/images/app-bibliotheque-morceau-incompatible.webp"
-    width="2000"
-    height="1400"
-    alt="The library in dark theme, with the dialogue for a blocked piece open on top. Behind it, the cards show both families of badges: green « ✅ Jouable transposé en F », « ✅ Jouable transposé en G mineur », « ✅ Jouable transposé en D mineur » (Unchained Melody, Uptown Funk, Viva la Vida, Wagon Wheel, Wake Me Up, What's Up, Wicked Game, With or Without You, Wonderful Tonight, You Are My Sunshine); amber « 🔒 Il manque C# sur ton pan », « 🔒 Il manque C#, B sur ton pan », « 🔒 Il manque B sur ton pan » (California Dreamin', Chan Chan, Creep, Don't Look Back in Anger, Amsterdam, Billie Jean). In the centre, the dialogue titled « (Sittin' On) The Dock of the Bay — Otis Redding »: « Il manque C#, B sur ton handpan pour accompagner tout le morceau. Tu peux quand même l'ouvrir et en jouer une partie. » Then a box « 🧩 Complète ton instrument pour l'accompagner » listing four complementary handpans with figures: 🥁 B2 Athena 9 (transposed) — all missing notes · +41 pieces; 🥁 C# Raga Desh — all missing notes · +41 pieces; 🥁 G Oxalis 11 (transposed) — all missing notes · +40 pieces; 🥁 D Voyager 10 (transposed) — all missing notes · +41 pieces. Below, a box « ⚡ Ou un Neotone sur-mesure — généré avec exactement les notes manquantes », a large cyan button « 🧭 Compléter mon instrument », and two secondary buttons « Voir la grille quand même » and « Annuler »."
+    src="/images/app-bibliotheque-morceau-incompatible-2026-10-en.webp"
+    width="2880"
+    height="2016"
+    alt="The repertoire in the Starry Night theme, on a D Kurd 10, with the card of a blocked piece open on top: “Shape of My Heart — Sting”. At the top, the version choice: “David Lesage version” (active), “Original version”, “Simplified version”, “Create my version”, and the line “David's version: without the harmonic bridge of the original, which he has never played. The bridge is in the original version, with “Reveal the bridge””. Then an amber pill “🔒 Eb, F# missing on your handpan”. Below, the vocal passport invitation (“Make your vocal passport (3 minutes)…”, “Make my passport” and “Later” buttons), the listening links for the version by David Lesage and Jef Matthys (Spotify, Apple Music, Deezer, YouTube Music), then the “Melody” and “Arrangement” (active) tabs with “Play the arrangement” and “Import a MIDI and adapt it to the handpan”. Behind, dimmed, the cards of other pieces, several marked “With your D Kurd 10 · in F major”."
     data-lb="incompatible"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The dialogue for a blocked piece — <em>(Sittin' On) The Dock of the Bay</em> on a D Kurd 10. The app names the missing notes (« <strong>Il manque C#, B</strong> » — C# and B are missing), reminds you the piece can still be opened, then puts a figure on what a second instrument would unlock: <strong>+41 pieces</strong> with a B2 Athena 9, <strong>+40</strong> with a G Oxalis 11. And at the bottom, the button that matters: « Voir la grille quand même » — see the chart anyway. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The card for a blocked piece — <em>Shape of My Heart</em> on a D Kurd 10. The app names the missing notes (“<strong>Eb, F# missing on your handpan</strong>”), but the card opens in full: the versions, the listening links, the melody and the arrangement are all still there.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-Neither a wall nor plain transposition: a door. The app says what is missing, offers a second handpan that fills exactly that gap — with the number of pieces gained —, and still lets you into the chart.
+Neither a wall nor plain transposition: a door. The app says what is missing, and still lets you into the piece.
 
 On an acoustic handpan the app goes further and offers the piece **transposed into your pan's key** where that is possible — since the notes themselves will not move. On an electronic handpan, it is the instrument that goes to meet the key of the piece.
 
