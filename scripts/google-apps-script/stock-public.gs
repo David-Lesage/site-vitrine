@@ -200,7 +200,7 @@ function testerLocalement() {
 
 // ⚠️ À VÉRIFIER dans le Sheet : l'en-tête EXACT de la colonne des n° de série.
 // Le script prend le premier de cette liste qu'il trouve en ligne 1.
-var SERIAL_HEADERS = ['Serial number', 'Serial No', 'Serial', 'SN', 'S/N', 'Number', 'No', '#']
+var SERIAL_HEADERS = ['Serial Nr.', 'Serial Nr', 'Serial number', 'Serial No', 'Serial', 'SN', 'S/N', 'Number', 'No', '#']
 
 var WRITABLE_HEADERS = [
   'Customer discount',
