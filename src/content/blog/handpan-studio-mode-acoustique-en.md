@@ -53,7 +53,7 @@ On a rich scale like a **20-note D Kurd**, these two views make all the differen
 
 This article dates from July 2026. Since then, acoustic mode has reorganised itself around **three doors**, all free. The right-hand panel has become a **rail** of five landmarks, always in the same place: ⏯ Playback & tempo · 🎛 Voicings & Logic · 🎓 Learn · 🧭 Explore · ⋯ More (updated 23 October 2026).
 
-**My handpans.** All **your** instruments, as cards, with their real drawing. At the top, **🤝 My duo** has two slots to play two of them together — that's the whole subject of [Two handpans that become one](/en/blog/deux-handpans-mode-hybride).
+**My handpans.** All **your** instruments, as cards, with their real drawing. At the top, **🤝 My duo** has two slots to play two of them together — that's the whole subject of [Acoustic duo: two handpans that become one](/en/blog/deux-handpans-mode-hybride).
 
 **🎼 Chord workshop → ✨ Reveal.** The chord workshop opens in a panel on the right, without hiding the pan, arranged in three tabs: Explore, Build and Key. The **✨ Reveal** button opens, full screen, the answer to the only question that matters at the start: *what does my handpan already know how to do?* — how many chords, which ones, and how many pieces of the repertoire they let you accompany.
 

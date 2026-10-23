@@ -43,7 +43,7 @@ Sur un handpan acoustique, on ne choisit pas librement les notes : la taille du 
 
 Un **Neotone** n'a pas cette contrainte. Ses pads sont des capteurs : n'importe quelle note peut aller sur n'importe quel pad. On peut donc y mettre **exactement, et seulement, ce qui manque à l'acoustique**.
 
-C'est ce que j'appelle **compléter son acoustique**, et les mots sont précis : un handpan **acoustique complété par un handpan électronique**. Deux électroniques n'en font pas un. Deux acoustiques non plus — ça, c'est un [duo de handpans](/blog/deux-handpans-mode-hybride), autre chose, avec ses propres qualités. Ici, c'est le geste et le timbre de l'acoustique, plus les notes qu'il ne peut pas porter.
+C'est ce que j'appelle **compléter son acoustique**, et les mots sont précis : un handpan **acoustique complété par un handpan électronique**. Deux électroniques n'en font pas un. Deux acoustiques non plus — ça, c'est un [duo acoustique](/blog/deux-handpans-mode-hybride), autre chose, avec ses propres qualités. Ici, c'est le geste et le timbre de l'acoustique, plus les notes qu'il ne peut pas porter.
 
 L'acoustique ne perd rien : il reste exactement ce qu'il est, on continue à jouer dessus.
 

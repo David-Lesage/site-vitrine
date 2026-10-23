@@ -1,17 +1,17 @@
 ---
-title: "Deux handpans qui n'en font qu'un : tes 2 handpans"
-description: "Quand un second handpan rejoint le premier, Handpan Constellation Studio dessine l'accord à cheval sur les deux — et te dit ce que ce duo débloque vraiment."
+title: "Duo acoustique : deux handpans qui n'en font qu'un"
+description: "Duo acoustique : quand un second handpan rejoint le premier, Handpan Constellation Studio dessine l'accord à cheval sur les deux et dit ce que le duo débloque."
 pubDate: 2026-09-01
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/app-deux-handpans-accord-a-cheval-2026-09.webp"
 category: "acoustique"
-tags: ["tes 2 handpans", "deux handpans", "compléter"]
+tags: ["duo acoustique", "tes 2 handpans", "deux handpans", "compléter"]
 lang: "fr"
 permalink: "deux-handpans-mode-hybride"
 draft: false
 ---
 
-Beaucoup de joueurs finissent par avoir **deux handpans** — et les jouent comme deux instruments séparés. Ces deux instruments peuvent être acoustiques, électroniques, ou l'un et l'autre. [Handpan Constellation Studio](/handpan-app) les regarde autrement : il pose les deux coques côte à côte et dessine chaque accord **à cheval sur les deux**, avec l'ordre de jeu et les mains. Ce ne sont plus deux pans. C'est un instrument.
+Beaucoup de joueurs finissent par avoir **deux handpans** — et les jouent comme deux instruments séparés. Cet article parle surtout du **duo acoustique** : deux handpans acoustiques. Le duo hybride électro-acoustique (un acoustique et un Neotone) et le duo électronique (deux Neotone) sont expliqués dans [Jouer deux handpans ensemble](/blog/deux-handpans-ensemble/). [Handpan Constellation Studio](/handpan-app) les regarde autrement : il pose les deux coques côte à côte et dessine chaque accord **à cheval sur les deux**, avec l'ordre de jeu et les mains. Ce ne sont plus deux pans. C'est un instrument.
 
 <figure class="article-video">
   <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="Zp_zaqsRBCg" aria-label="Lire la vidéo : Shape of My Heart, à la voix, sur deux handpans Yishama">
@@ -35,7 +35,7 @@ L'app te signale aussi ce que tu as déjà sans le savoir : la **gamme relative*
 
 Un mot d'honnêteté : ces compteurs s'appuient sur un catalogue de partitions encore modeste. Ils disent vrai, mais ils ne disent pas encore *tout* — le répertoire s'étoffera au fil des partitions déposées dans la [Bibliothèque musicale](/blog/bibliotheque-musicale-handpan).
 
-## 🌗 Le second pan, et le bandeau du duo
+## 🌗 Le second pan, et le bandeau du duo acoustique
 
 > **Mise à jour du 23 octobre 2026.** Les deux cases à cocher du panneau de droite n'existent plus. Tes instruments sont maintenant dans **Mes handpans**, en cartes, et **🤝 Mon duo** a deux emplacements. Dès que tes deux handpans sont posés, l'app te demande **ce que tu veux en faire** : 🌈 tout jouer, 🎵 jouer un morceau, 🎯 compléter ta tonalité ou ✋ garder tel quel. Sous les pans, deux rangées de cartes : les 7 accords de ta tonalité, puis les accords **en plus** que seuls tes deux handpans ensemble permettent. Un bouton « ✕ Un seul handpan » ramène à un seul instrument. Tout le parcours est expliqué dans [Jouer deux handpans ensemble](/blog/deux-handpans-ensemble/).
 
@@ -47,7 +47,7 @@ Un bandeau s'affiche au-dessus de tes pans. Dans sa version de septembre, celle 
 
 Ce dernier nombre est le vrai sujet. Pour ces accords-là, la disposition est calculée pour de vrai entre les deux instruments — la fondamentale la plus grave à la basse — et le tracé traverse l'espace d'un pan à l'autre. Tu vois d'un coup d'œil quelle main part où, et l'ordre de jeu suit.
 
-Un mot de vocabulaire, parce que l'application fait maintenant la différence : deux acoustiques côte à côte, c'est un **duo**. Un acoustique **et** un Neotone, c'est l'autre famille — le même bandeau, mais d'autres règles ; c'est le sujet de [compléter son handpan acoustique avec un Neotone](/blog/completer-son-handpan-acoustique-avec-un-neotone). L'app ne mélange jamais les deux familles d'office : elle te *propose* la paire mixte au lieu de refuser.
+Un mot de vocabulaire, parce que l'application fait maintenant la différence : deux acoustiques côte à côte, c'est un **duo acoustique**. Un acoustique **et** un Neotone, c'est un **duo hybride électro-acoustique** — le même bandeau, mais d'autres règles ; c'est le sujet de [compléter son handpan acoustique avec un Neotone](/blog/completer-son-handpan-acoustique-avec-un-neotone). L'app ne mélange jamais les deux familles d'office : elle te *propose* le duo hybride au lieu de refuser.
 
 <figure>
   <img

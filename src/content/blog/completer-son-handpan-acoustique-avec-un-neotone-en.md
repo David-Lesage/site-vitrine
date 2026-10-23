@@ -43,7 +43,7 @@ On an acoustic handpan, you don't get to choose the notes freely: the size of th
 
 A **Neotone** doesn't have that constraint. Its pads are sensors: any note can go on any tone field. So you can put **exactly, and only, what the acoustic is missing** on it.
 
-That's what I call **completing your acoustic**, and the words are precise: an acoustic handpan **completed by an electronic handpan**. Two electronics don't make one. Nor do two acoustics — that's a [handpan duo](/en/blog/deux-handpans-mode-hybride), a different thing, with qualities of its own. Here you get the gesture and the timbre of the acoustic, plus the notes it can't carry.
+That's what I call **completing your acoustic**, and the words are precise: an acoustic handpan **completed by an electronic handpan**. Two electronics don't make one. Nor do two acoustics — that's an [acoustic duo](/en/blog/deux-handpans-mode-hybride), a different thing, with qualities of its own. Here you get the gesture and the timbre of the acoustic, plus the notes it can't carry.
 
 The acoustic loses nothing: it stays exactly what it is, and you go on playing it.
 
