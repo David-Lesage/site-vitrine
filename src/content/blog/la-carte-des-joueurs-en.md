@@ -3,9 +3,7 @@ title: "The handpan players map: everyone has a star on it"
 description: "The app's handpan players map: everyone is a star on it, with a first name, an initial and a country. Find a teacher, a player or a maker near you, at a glance."
 pubDate: 2026-09-01
 updatedDate: 2026-10-23
-# CAPTURE TO COME: cover = the "Everyone" map, Starry Night theme (see the comment on the first figure).
-# Meanwhile, a neutral image (the pan alone): the old mock-up showed the rule from before 22 October.
-cover: "/images/blog-constellations-2026-couverture.webp"
+cover: "/images/blog-carte-joueurs-carte-2026-10-en.webp"
 category: "communaute"
 tags: ["community", "public profile", "map"]
 lang: "en"
@@ -33,7 +31,18 @@ The star sits **at the centre of your country**. You pick that country from a li
 
 The simple star has **one single option**: "Show my full last name". It starts unticked, and only the initial is shown.
 
-<!-- CAPTURE TO COME (EN): "My public profile", Starry Night theme, 1440×900 + 2880×1800. The "⭐ Your star on the players' map" block with the preview "On the map: Marie L. · France" and the "Show my full last name" box; on the right, "👁 Here is exactly what others will see". Labels after commit 61f0bb91 (title "Your star on the map"). Fictional bench account. File: /images/blog-carte-joueurs-mon-etoile-2026-10-en.webp -->
+<figure>
+  <img
+    src="/images/blog-carte-joueurs-mon-etoile-2026-10-en.webp"
+    width="671"
+    height="277"
+    alt="The “Your star on the players’ map” block, Starry Night theme, golden frame. Text: “By accepting the terms of use, you appear on the map with your first name, the initial of your last name and your country — never your address, your city or your email. The star sits at the centre of your country.” In yellow: “On the map: Marie L. · France”. Below, a single unticked box: “Show my full last name”, with the note “By default, only the initial appears (“Marie L.”). This is your star’s only option.”"
+    data-lb="mon-etoile"
+    loading="lazy"
+  />
+  <figcaption>Your star, in “My public profile”: the preview says exactly what is shown (“<strong>Marie L. · France</strong>”), and the only option is the full last name, unticked by default. Fictional account, created for the screenshot.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 Why so little? Because a first name, an initial and a country are enough to know there are many of us, and say nothing about where you live.
 
@@ -51,7 +60,19 @@ If you teach, the "🎓 I teach" box gives your star a **golden halo** and lists
 
 Next to the form, a box is titled **"👁 Here is exactly what others will see"**. It isn't a hand-written summary: it is **the map's card component**, pixel for pixel, updating with every box you tick. There is no code that could make the two drift apart.
 
-<!-- CAPTURE TO COME (EN): SIDE-BY-SIDE comparison, same fictional account, Starry Night: on the left "My detailed card" off (preview "☾ Your detailed card is off…"), on the right on, with a city, 🎓 I teach and the card preview (golden halo). One composite image, two halves with the same framing, no text baked in. File: /images/blog-carte-joueurs-fiche-eteinte-allumee-2026-10-en.webp -->
+<figure>
+  <img
+    src="/images/blog-carte-joueurs-fiche-eteinte-allumee-2026-10-en.webp"
+    width="1440"
+    height="582"
+    alt="Two screenshots side by side of “My public profile”, Starry Night theme, same fictional account. On the left, titled “Detailed card off”: the “My detailed card (chosen name, city, teacher, social links, instruments)” switch is OFF, and the “Here is exactly what others will see” box says “Your detailed card is off: on the map, people only see your simple star (first name, initial, country)”. On the right, titled “Detailed card on”: the switch is ON, and the box shows the card “Marie L. — Nantes, France”, with “Their instruments: Not shared” and “Where to listen: Nothing shared”. On both sides, the “What nobody ever sees” box (email address, postal address, exact position, pieces and settings, subscription, unticked boxes) and “And if you change your mind”."
+    data-lb="fiche"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The same card, off and then on. On the right, the “<strong>Here is exactly what others will see</strong>” box shows the card as it will appear on the map: here a city and nothing else, since nothing else is ticked. Fictional account.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ### And if you change your mind
 
@@ -78,7 +99,19 @@ The map has four tabs: **Everyone · 🎵 Musicians · Teachers · Makers**.
 
 Under "Musicians", **one purple circle per country** says how many musicians use the app. It's an <abbr title="We know how many people, never which ones.">anonymous</abbr> count: no name, no city, no position. Each account counts as one in its country, and **a country with fewer than 3 people is never named**. The stars light up on top.
 
-<!-- CAPTURE TO COME (EN): "🎵 Musicians" tab, Starry Night, 1440×900 + 2880×1800, one purple circle clicked (card "{n} musicians counted here"). Labels after 61f0bb91: no more "remove yourself from the count" nor "said yes". Bench data. File: /images/blog-carte-joueurs-musiciens-2026-10-en.webp -->
+<figure>
+  <img
+    src="/images/blog-carte-joueurs-musiciens-2026-10-en.webp"
+    width="1440"
+    height="900"
+    alt="The “The constellation of players” map, “Musicians” tab active, Starry Night theme. On the world map, stars carrying a first name and an initial, and numbered purple circles. Top right: “695 musicians · 21 countries · 35 stars”. A box on the map: “695 musicians counted, anonymously. + 23 in 14 other countries (fewer than 3 per country: not named). 41 with no country given”. The right-hand panel, open on France: “214 musicians counted here”, “A count: how many accounts play in this country, with no city or location. Names are carried by the stars (first name, initial of the last name, country). Including 4 shining on the map.”, button “Show on the map”. Below, the list of countries with their count: France 214, United States 72, Germany 61, Italy 48, Spain 39, United Kingdom 37, Canada 22."
+    data-lb="musiciens"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The 🎵 Musicians tab, with France clicked: “<strong>214 musicians counted here</strong>”, a number, with no name and no city. Countries with fewer than 3 musicians are not named. Fictional data and first names, created for the screenshot.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## Find a handpan teacher, a player, a maker near you
 
@@ -86,7 +119,19 @@ That's what the map is for. A search ("Search for a country or a city…"), zoom
 
 On top of that, the **"🌐 The makers directory"** chip switches on a separate layer: **541 makers listed, across 53 countries**, one blue circle per country, its size saying how many. These aren't stars: nobody signed up there. The app says so: it is "a map of the craft, not of people". Click a circle to get the country's workshops and their websites.
 
-<!-- CAPTURE TO COME (EN): "Everyone" map, Starry Night, 1440×900 + 2880×1800, makers directory on, banner "{n} of you are shining on the map.", subtitle "Every star is a player using the app…". Fictional bench accounts (first name + initial), stated in the caption. Also used as the cover. File: /images/blog-carte-joueurs-carte-2026-10-en.webp -->
+<figure>
+  <img
+    src="/images/blog-carte-joueurs-carte-2026-10-en.webp"
+    width="1440"
+    height="900"
+    alt="The “The constellation of players” map, “Everyone” tab active, makers directory on (541), Starry Night theme. Subtitle: “Every star is a player using the app: their first name, the initial of their last name and their country. Some have a detailed card (city, teacher, social links, instruments).” On the world map, white and golden stars carrying a first name and an initial, and blue circles for the makers. A box: “39 of you are shining on the map. Each account appears with its first name, the initial of its last name and its country, placed at the centre of the country.” and “541 makers · 53 countries · 17 makers have no known country: they are placed nowhere”. Legend: Player, Teaches, Makes instruments, a circle = a country’s makers. On the right, “Click a star”, “Click a blue circle”, then a list of results with first name, initial, city and country."
+    data-lb="carte"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>The “Everyone” map, with the makers directory on: “<strong>39 of you are shining on the map</strong>”. The stars are players, the blue circles are listed workshops. Every first name and every number in this screenshot is fictional.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## A map that looks good from the first stars
 

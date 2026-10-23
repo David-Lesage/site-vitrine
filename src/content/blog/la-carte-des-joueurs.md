@@ -3,9 +3,7 @@ title: "La carte des joueurs de handpan : tout le monde y a son étoile"
 description: "La carte des joueurs de handpan de l'app : chacun y est une étoile, avec prénom, initiale et pays. Trouve un prof, un joueur ou un fabricant près de chez toi."
 pubDate: 2026-09-01
 updatedDate: 2026-10-23
-# CAPTURE À VENIR : couverture = la carte « Tous », Nuit étoilée (voir le commentaire de la première figure).
-# En attendant, image neutre (le pan seul) : l'ancienne maquette montrait la règle d'avant le 22 octobre.
-cover: "/images/blog-constellations-2026-couverture.webp"
+cover: "/images/blog-carte-joueurs-carte-2026-10.webp"
 category: "communaute"
 tags: ["communauté", "profil public", "carte"]
 lang: "fr"
@@ -33,7 +31,18 @@ L'étoile se pose **au centre de ton pays**. Ce pays, tu le choisis dans une lis
 
 L'étoile simple a **une seule option** : « Afficher mon nom de famille en entier ». Elle est décochée au départ, et seule l'initiale s'affiche.
 
-<!-- CAPTURE À VENIR (FR) : « Mon profil public », thème Nuit étoilée, 1440×900 + 2880×1800. Bloc « ⭐ Ton étoile sur la carte des joueurs » avec l'aperçu « Sur la carte : Marie L. · France » et la case « Afficher mon nom de famille en entier » ; à droite, « 👁 Voici exactement ce que les autres verront ». Libellés après le commit 61f0bb91 (titre « Ton étoile sur la carte »). Compte fictif du banc. Fichier : /images/blog-carte-joueurs-mon-etoile-2026-10.webp -->
+<figure>
+  <img
+    src="/images/blog-carte-joueurs-mon-etoile-2026-10.webp"
+    width="671"
+    height="277"
+    alt="Le bloc « Ton étoile sur la carte des joueurs », thème Nuit étoilée, cadre doré. Texte : « En acceptant les conditions d’utilisation, tu apparais sur la carte avec ton prénom, l’initiale de ton nom et ton pays — jamais ton adresse, ta ville ni ton e-mail. L’étoile se pose au centre de ton pays. » En jaune : « Sur la carte : Marie L. · France ». Dessous, une seule case, décochée : « Afficher mon nom de famille en entier », avec la précision « Par défaut, seule l’initiale apparaît (« Marie L. »). C’est la seule option de ton étoile. »"
+    data-lb="mon-etoile"
+    loading="lazy"
+  />
+  <figcaption>Ton étoile, dans « Mon profil public » : l'aperçu dit exactement ce qui s'affiche (« <strong>Marie L. · France</strong> ») et la seule option est le nom de famille en entier, décochée au départ. Compte fictif, créé pour la capture.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 Pourquoi si peu ? Parce qu'un prénom, une initiale et un pays suffisent à se savoir nombreux, et ne disent pas où tu habites.
 
@@ -51,7 +60,19 @@ Si tu donnes des cours, la case « 🎓 Je donne des cours » donne à ton étoi
 
 À côté du formulaire, un encart s'intitule **« 👁 Voici exactement ce que les autres verront »**. Ce n'est pas un résumé écrit à la main : c'est **le composant de fiche de la carte**, au pixel près, qui se met à jour à chaque case cochée. Il n'y a pas de code capable de faire diverger les deux.
 
-<!-- CAPTURE À VENIR (FR) : comparaison CÔTE À CÔTE, même compte fictif, Nuit étoilée : à gauche « Ma fiche détaillée » éteinte (aperçu « ☾ Ta fiche détaillée est éteinte… »), à droite allumée avec ville, 🎓 Je donne des cours et l'aperçu de la fiche (halo doré). Une image composite, deux moitiés de même cadrage, aucun texte incrusté. Fichier : /images/blog-carte-joueurs-fiche-eteinte-allumee-2026-10.webp -->
+<figure>
+  <img
+    src="/images/blog-carte-joueurs-fiche-eteinte-allumee-2026-10.webp"
+    width="1440"
+    height="582"
+    alt="Deux captures côte à côte de « Mon profil public », thème Nuit étoilée, même compte fictif. À gauche, titrée « Fiche détaillée éteinte » : l’interrupteur « Ma fiche détaillée (nom choisi, ville, prof, réseaux, instruments) » est sur ÉTEINT, et l’encart « Voici exactement ce que les autres verront » dit « Ta fiche détaillée est éteinte : sur la carte, on ne voit que ton étoile simple (prénom, initiale, pays) ». À droite, titrée « Fiche détaillée allumée » : l’interrupteur est sur ALLUMÉ, et l’encart montre la fiche « Marie L. — Nantes, France », avec « Ses instruments : Non partagés » et « Où l’écouter : Rien de partagé ». Des deux côtés, l’encart « Ce que personne ne voit, jamais » (adresse e-mail, adresse postale, position exacte, morceaux et réglages, abonnement, cases non cochées) et « Et si tu changes d’avis »."
+    data-lb="fiche"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>La même fiche, éteinte puis allumée. À droite, l'encart « <strong>Voici exactement ce que les autres verront</strong> » montre la fiche telle qu'elle apparaîtra sur la carte : ici une ville, et rien d'autre, puisque rien d'autre n'est coché. Compte fictif.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ### Et si tu changes d'avis
 
@@ -78,7 +99,19 @@ La carte a quatre onglets : **Tous · 🎵 Musiciens · Profs · Fabricants**.
 
 Sous « Musiciens », un **cercle violet par pays** dit combien de musiciens utilisent l'app. C'est un compteur <abbr title="On sait combien de personnes, jamais lesquelles.">anonyme</abbr> : ni nom, ni ville, ni position. Chaque compte compte pour un dans son pays, et **un pays de moins de 3 personnes n'est jamais nommé**. Les étoiles s'allument par-dessus.
 
-<!-- CAPTURE À VENIR (FR) : onglet « 🎵 Musiciens », Nuit étoilée, 1440×900 + 2880×1800, un cercle violet cliqué (fiche « {n} musiciens comptés ici »). Libellés après 61f0bb91 : plus aucune mention de « se retirer du compteur » ni de « dire oui ». Données du banc. Fichier : /images/blog-carte-joueurs-musiciens-2026-10.webp -->
+<figure>
+  <img
+    src="/images/blog-carte-joueurs-musiciens-2026-10.webp"
+    width="1440"
+    height="900"
+    alt="La carte « La constellation des joueurs », onglet « Musiciens » actif, thème Nuit étoilée. Sur la carte du monde, des étoiles portant un prénom et une initiale, et des cercles violets numérotés. En haut à droite : « 695 musiciens · 21 pays · 35 étoiles ». Un encart sur la carte : « 695 musiciens comptés, anonymement. + 23 dans 14 autres pays (moins de 3 par pays : non nommés). 41 sans pays renseigné ». Le panneau de droite, ouvert sur la France : « 214 musiciens comptés ici », « Un compteur : combien de comptes jouent dans ce pays, sans ville ni position. Les noms, eux, sont portés par les étoiles (prénom, initiale du nom, pays). Dont 4 qui brillent sur la carte. », bouton « Situer sur la carte ». Dessous, la liste des pays avec leur compte : France 214, États-Unis 72, Allemagne 61, Italie 48, Espagne 39, Royaume-Uni 37, Canada 22."
+    data-lb="musiciens"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>L'onglet 🎵 Musiciens, France cliquée : « <strong>214 musiciens comptés ici</strong> », un nombre, sans aucun nom ni aucune ville. Les pays de moins de 3 musiciens ne sont pas nommés. Données et prénoms fictifs, créés pour la capture.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Trouver un prof de handpan, un joueur, un fabricant près de chez toi
 
@@ -86,7 +119,19 @@ C'est à ça que sert la carte. Une recherche (« Chercher un pays ou une ville�
 
 Par-dessus, la pastille **« 🌐 L'annuaire des fabricants »** allume un calque à part : **541 fabricants recensés, dans 53 pays**, un cercle bleu par pays, dont la taille dit combien. Ce ne sont pas des étoiles : personne ne s'est inscrit là. L'app le dit : c'est « la carte de l’artisanat, pas celle des personnes ». Un clic sur un cercle donne la liste des ateliers du pays et leur site.
 
-<!-- CAPTURE À VENIR (FR) : carte « Tous », Nuit étoilée, 1440×900 + 2880×1800, annuaire des fabricants allumé, bandeau « Vous êtes {n} à briller sur la carte. », sous-titre « Chaque étoile est une joueuse ou un joueur de l'app… ». Comptes fictifs du banc (prénom + initiale), dit dans la légende. Sert aussi de couverture. Fichier : /images/blog-carte-joueurs-carte-2026-10.webp -->
+<figure>
+  <img
+    src="/images/blog-carte-joueurs-carte-2026-10.webp"
+    width="1440"
+    height="900"
+    alt="La carte « La constellation des joueurs », onglet « Tous » actif, annuaire des fabricants allumé (541), thème Nuit étoilée. Sous-titre : « Chaque étoile est une joueuse ou un joueur de l’app : son prénom, l’initiale de son nom et son pays. Certaines ont une fiche détaillée (ville, prof, réseaux, instruments). » Sur la carte du monde, des étoiles blanches et dorées portant un prénom et une initiale, et des cercles bleus pour les fabricants. Un encart : « Vous êtes 39 à briller sur la carte. Chaque compte apparaît avec son prénom, l’initiale de son nom et son pays, posé au centre du pays. » et « 541 fabricants · 53 pays · 17 fabricants n’ont pas de pays connu : ils ne sont posés nulle part ». Légende : Joueur, Donne des cours, Fabrique des instruments, un cercle = les fabricants d’un pays. À droite, « Clique une étoile », « Clique un cercle bleu », puis une liste de résultats avec prénom, initiale, ville et pays."
+    data-lb="carte"
+    data-lb-wide
+    loading="lazy"
+  />
+  <figcaption>La carte « Tous », avec l'annuaire des fabricants allumé : « <strong>Vous êtes 39 à briller sur la carte</strong> ». Les étoiles sont des joueurs, les cercles bleus des ateliers recensés. Tous les prénoms et les chiffres de cette capture sont fictifs.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Une carte belle dès les premières étoiles
 
