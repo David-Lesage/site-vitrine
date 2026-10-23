@@ -6,8 +6,9 @@
 // Pourquoi une fonction dédiée et pas `muling-order` : tout, dans muling-order,
 // est propre à Muling (IBAN Muling, email au fabricant à chaque commande,
 // référence RESONANCE, écran de preuve de virement). Hisong n'a rien de cela —
-// l'achat en ligne se fait sur hisong.io avec le code, et la vente directe est
-// réglée à David sur place. `site-lead` est réservé (chantier achat Neotone).
+// l'achat en ligne se fait sur hisong.io avec le code, et la vente directe AUSSI :
+// 24/10/2026, David : « C'est Muling et Hisong qui encaissent le paiement
+// toujours ». Le client paie Hisong (hisong.io + lien), David remet le micro. `site-lead` est réservé (chantier achat Neotone).
 //
 // Écrit dans public.affiliate_sales — la table que lit déjà l'app pour les
 // ventes — avec partner='hisong', source='hisong-direct' et
@@ -27,11 +28,11 @@ const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 // ⚠️ Dupliqué depuis src/i18n/hisong.ts (`hisongPrices`) — les DEUX changent
-// ensemble. Prix TTC affichés sur la fiche, SANS le code (le code −5 % ne vaut
-// que sur hisong.io).
+// ensemble. Prix que le client paie chez Hisong : S1 + RX Plus AVEC le code
+// (342,91 €) ; S1 seul = prix public (aucun prix avec code relevé).
 const PACKS: Record<string, { label: string; price: number }> = {
     s1: { label: 'AirStudio S1 (Standard Pack)', price: 270.95 },
-    s1RxPlus: { label: 'AirStudio S1 + RX Plus (Universal Pack)', price: 360.95 },
+    s1RxPlus: { label: 'AirStudio S1 + RX Plus (Universal Pack)', price: 342.91 },
 };
 // ⚠️ Doit rester égale à TERMS_VERSION de site-lead et muling-order.
 const TERMS_VERSION = '2026-08-19';
@@ -46,10 +47,11 @@ const shell = (inner: string) => `<!doctype html><html><head><meta charset="utf-
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:14px;border:1px solid #e5e7eb;">
 <tr><td style="padding:26px 28px;">${inner}</td></tr></table></td></tr></table></body></html>`;
 
-const COPY: Record<string, { subject: string; title: string; p1: string; sign: string; amount: string }> = {
-    fr: { subject: 'David Lesage — ton micro Hisong', title: 'Merci pour ton achat ✨', p1: 'Ton achat au showroom est bien enregistré. Je te remets le micro en main propre. Voici le récapitulatif, à garder.', sign: 'Merci,<br />David Lesage', amount: 'Montant' },
-    en: { subject: 'David Lesage — your Hisong mic', title: 'Thanks for your purchase ✨', p1: 'Your showroom purchase is recorded. I’m handing you the mic in person. Here is the summary, for your records.', sign: 'Thank you,<br />David Lesage', amount: 'Amount' },
-    es: { subject: 'David Lesage — tu micrófono Hisong', title: 'Gracias por tu compra ✨', p1: 'Tu compra en el showroom está registrada. Te entrego el micrófono en mano. Aquí tienes el resumen, para guardarlo.', sign: 'Gracias,<br />David Lesage', amount: 'Importe' },
+const PAY_URL = 'https://hisong.io/DAVID-LESAGE-SAVE-5';
+const COPY: Record<string, { subject: string; title: string; p1: string; pay: string; sign: string; amount: string }> = {
+    fr: { subject: 'David Lesage — ton micro Hisong', title: 'Merci pour ton achat ✨', p1: 'Ton achat au showroom est bien enregistré. Je te remets le micro en main propre. Voici le récapitulatif, à garder.', pay: 'Le paiement se fait auprès de Hisong, pas auprès de moi : comme pour un achat en ligne, tu paies sur la boutique hisong.io avec mon lien (code −5 % inclus). C’est Hisong qui encaisse et qui émet la facture.', sign: 'Merci,<br />David Lesage', amount: 'Montant' },
+    en: { subject: 'David Lesage — your Hisong mic', title: 'Thanks for your purchase ✨', p1: 'Your showroom purchase is recorded. I’m handing you the mic in person. Here is the summary, for your records.', pay: 'You pay Hisong, not me: just like an online purchase, you pay on the hisong.io shop through my link (−5% code included). Hisong takes the payment and issues the invoice.', sign: 'Thank you,<br />David Lesage', amount: 'Amount' },
+    es: { subject: 'David Lesage — tu micrófono Hisong', title: 'Gracias por tu compra ✨', p1: 'Tu compra en el showroom está registrada. Te entrego el micrófono en mano. Aquí tienes el resumen, para guardarlo.', pay: 'El pago se hace a Hisong, no a mí: como en una compra en línea, pagas en la tienda hisong.io con mi enlace (código −5% incluido). Hisong cobra y emite la factura.', sign: 'Gracias,<br />David Lesage', amount: 'Importe' },
 };
 
 Deno.serve(async (req) => {
@@ -119,6 +121,7 @@ Deno.serve(async (req) => {
                 await c.send({ from, to: email, cc: ADMIN_EMAIL, replyTo: ADMIN_EMAIL, subject: mailSubject(t.subject), mimeContent: [htmlPart(shell(
                     `<div style="font-size:21px;font-weight:700;color:#111827;">${t.title}</div>
                      <p style="margin:12px 0 0;color:#374151;font-size:15px;line-height:1.6;">${t.p1}</p>${recap}
+                     <p style="margin:14px 0 0;color:#374151;font-size:15px;line-height:1.6;">${t.pay}<br /><a href="${PAY_URL}" style="color:#b45309;font-weight:700;">${PAY_URL}</a></p>
                      <p style="margin:16px 0 0;color:#9ca3af;font-size:12px;">${t.sign}</p>`))] });
                 emailSent = true;
             } catch (e) { console.error('hisong-direct mail error:', e); }
