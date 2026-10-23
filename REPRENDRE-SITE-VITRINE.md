@@ -91,7 +91,7 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - ✅ Migration 0188 appliquée par la session APP (21/10 ~05h35) ; `site-lead` 36c8a52 déployé (vérifié = dépôt) : écrit neotone_purchase_mode / neotone_wood / billing (jsonb) pour la source neotone-discount.
 - 🚨 **NE PAS DÉPLOYER `site-lead` NI LE SITE depuis HEAD tant que les migrations `specs/migration-0188…` (déjà appliquée) et
   `specs/migration-0189-site-leads-achat-neotone-3-cas.sql` ne sont pas appliquées** (côté app : numéro ≥ 0235, 0189 et 0234 déjà pris) (processus d'achat 3 cas, commits 8790075 /
-  32cdeb5 / 6d88839, doc `specs/ACHAT-NEOTONE-3-CAS-2026-10-25.md` §8). En prod : 7cab22e (pastilles de stock) + site-lead ea7b271.
+  32cdeb5 / 6d88839, doc `specs/ACHAT-NEOTONE-3-CAS-2026-10-25.md` §8). En prod (24/10 01h05) : worktree 7cab22e + cherry-pick a6b63b9 + 0e00cc5 (ventes directes micros) ; site-lead ea7b271 ; muling-order v5 + hisong-direct déployés.
   Tout autre déploiement urgent : depuis un worktree de 7cab22e + cherry-pick.
 - À trancher (David) : Atlas 250/270 € (description SEO) vs 215/230 € (boutique) ; « kit Master » (app) vs « RX Plus (Universal Pack) » (site).
 - Briefs du 20/10 à traiter : `MESSAGE-SESSION-SITE-2026-10-20-hisong-neotone-formulaire.md` et `…-seo-llms-articles.md`.
