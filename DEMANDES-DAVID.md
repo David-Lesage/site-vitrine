@@ -189,3 +189,4 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 | 23/10 | « c'est ok que les vidéos ne soient pas en thème étoilé, on va pas les refaire juste pour le fond » | ✅ noté (aucune vidéo retournée) |
 | 23/10 | « On va pas publier sur YouTube pour le moment. Peux-tu intégrer les vidéos directement sur le site […] publie les vidéos qui ont du son. Quelles sont mes limites de stockage ? » | ✅ en prod 24/10 — 11 vidéos avec son dans les articles (38 Mo, preload none) ; 4 sans version EN (texte FR incrusté) |
 | 23/10 | « pour les captures à effectuer, demande à la session de l'app de les faire et de te les envoyer ou de les ranger quelque part où tu peux les récupérer » | ✅ déjà fait 22/10 : la session APP les produit dans audits/2026-10-23-captures-blog/ de son dépôt |
+| 24/10 | « Oui, lance le premier nouvel article sur le duo » | ⏳ rédaction en cours (puis relecteur distinct) |
