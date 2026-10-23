@@ -2,6 +2,7 @@
 title: "Playing two handpans together: what a second handpan gives you"
 description: "A second handpan, acoustic or Neotone? The app asks what you want to do with the pair, shows the chords you can only play together and keeps your pairs safe."
 pubDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/blog-deux-handpans-ensemble-photo.webp"
 category: "acoustique"
 tags: ["two handpans", "second handpan", "my pairs", "neotone"]
@@ -28,7 +29,18 @@ It all starts in **My handpans** ("Change instrument ▾" › My handpans). At t
 
 The two handpans appear side by side, each with its own notes. A duo can be acoustic (two acoustic handpans), hybrid electro-acoustic (one acoustic and one Neotone) or electronic (two Neotones).
 
-<!-- CAPTURE À VENIR : My handpans in the Starry Night theme, with "🤝 My pair" filled (two cards in ① and ②) and the "🤝 My pairs" row below. No Starry Night screenshot of this screen exists yet. -->
+<figure>
+  <img
+    src="/images/blog-mes-handpans-duo-2026-10-en.webp"
+    width="1600"
+    height="2170"
+    alt="The “My handpans” screen, Starry Night theme. At the top, the yellow “🤝 My pair” frame, marked “On screen”: ① D Kurd 10, “Main pan”, and ② B Amara 9, “Next to it”, with a ⇄ button between them; below, “▶ Play the pair”, “Undo the pair”, “My pairs (0)” and “Saved pair: D Kurd 10 + B Amara 9”. Further down, the cards of the two handpans with their drawing and their place ① and ② in yellow, two dashed cards to add an acoustic or electronic handpan, then the “My pairs 0” row: “Save a pair (“My pair” › My pairs › Save this pair): it will appear here, ready to play in one click on all your devices.”"
+    data-lb="deux-handpans-ensemble"
+    loading="lazy"
+  />
+  <figcaption><strong>🤝 My pair</strong> filled in: the D Kurd 10 in <strong>①</strong>, the B Amara 9 in <strong>②</strong>, and <strong>▶ Play the pair</strong> just below. Right at the bottom, the <strong>🤝 My pairs</strong> row waits for the pairs you will save.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
+</figure>
 
 ## The chords you can only play together
 

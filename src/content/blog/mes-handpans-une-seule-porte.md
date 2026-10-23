@@ -2,8 +2,8 @@
 title: "« Mes handpans » : une seule porte pour tes instruments"
 description: "Déclarer ton pan, en poser un second à côté, retrouver ton installation sur l'iPad : il y avait cinq chemins différents, il n'en reste qu'un. Voilà lequel, et ce qui a changé."
 pubDate: 2026-09-01
-updatedDate: 2026-10-23
-cover: "/images/blog-mes-handpans-duo-2026-09.webp"
+updatedDate: 2026-10-24
+cover: "/images/blog-mes-handpans-duo-2026-10.webp"
 category: "acoustique"
 tags: ["acoustique", "deux handpans", "mes handpans"]
 lang: "fr"
@@ -11,84 +11,80 @@ permalink: "mes-handpans-une-seule-porte"
 draft: false
 ---
 
-> **Mise à jour du 23 octobre 2026.** Depuis cet article, l'écran a encore changé. **Mes handpans** montre maintenant tous tes instruments en cartes, avec leur vrai dessin, en plein écran sur ordinateur. En haut, **🤝 Mon duo** a deux emplacements ; plus bas, **🤝 Mes duos** garde chaque duo enregistré, avec « ▶ Jouer le duo ». Chaque handpan garde son propre bois. Le mode d'emploi ci-dessous (le panneau de droite, les cases à cocher, la barre « POUR ») décrit l'écran du 1er septembre, celui que montrent les captures.
-
 Cet article est une réparation autant qu'une nouveauté. Pendant des mois, **poser un deuxième handpan à côté du premier** pouvait se faire de cinq façons différentes dans l'application — et deux de ces cinq façons se comportaient mal. L'une servait le catalogue général alors qu'elle annonçait « tes » instruments. L'autre oubliait : tu retirais un pan, tu rechargeais la page, il était revenu.
 
-Ce panneau est le même des deux côtés : **que tes handpans soient acoustiques ou électroniques**, c'est la même liste, les mêmes cases à cocher, les mêmes gestes. Seules quelques actions de la barre changent selon l'instrument sélectionné, et c'est dit là où ça se produit.
+Cet écran est le même des deux côtés : **que tes handpans soient acoustiques ou électroniques**, ce sont les mêmes cartes et les mêmes gestes. Seuls quelques réglages changent selon l'instrument, et c'est dit là où ça se produit.
 
-Depuis fin août, **il ne reste qu'un seul geste**. Si tu as lu ici des consignes qui parlent de listes déroulantes ou d'un bandeau à faire apparaître, elles sont périmées : voici la bonne version.
+Aujourd'hui, **il ne reste qu'une porte**. Si tu as lu ici des consignes qui parlent de listes déroulantes, d'un bandeau à faire apparaître, d'un panneau de droite ou de cases à cocher, elles sont périmées : voici la bonne version, celle d'octobre 2026.
 
 ## Le cas concret
 
-Tu joues sur un **D Kurd 10**. Quelqu'un te prête un second pan pour le week-end — mettons un **C# Amara** — et tu veux savoir ce que les deux donnent ensemble, quels accords deviennent possibles, quelle main part où.
+Tu joues sur un **D Kurd 10**. Quelqu'un te prête un second pan pour le week-end — mettons un **B Amara 9** — et tu veux savoir ce que les deux donnent ensemble, quels accords deviennent possibles, quelle main part où.
 
-Avant, il fallait deviner. Maintenant, c'est deux cases à cocher.
+Avant, il fallait deviner. Maintenant, il suffit de poser les deux dans **Mon duo**.
 
-## Le panneau de droite, en trois lignes
+## Mes handpans, en un coup d'œil
 
-En mode acoustique, le panneau de droite s'ouvre désormais sur **tes** instruments, pas sur le catalogue du monde. C'est un renversement volontaire : l'acoustique est un monde fini et personnel — on part de ce que tu as. L'exploration des autres gammes vient après, plus bas, sous « Découvrir d'autres gammes ».
+**Mes handpans** s'ouvre en grand et montre **tes** instruments, pas le catalogue du monde. C'est un renversement volontaire : l'acoustique est un monde fini et personnel — on part de ce que tu as. Pour en ajouter un, deux cartes en pointillés t'attendent : **Ajouter un handpan acoustique**, depuis le catalogue des gammes, et **Ajouter un handpan électronique**, où tu choisis le modèle et le bois.
 
-Le bloc s'appelle **Mes handpans** — avec, dans son en-tête, le logo de handpan et non l'emoji de caisse claire qui traînait là avant (« un handpan acoustique n'est pas une caisse claire »). Chaque instrument occupe un rang, avec :
+Chaque instrument a **sa carte**, avec :
 
-- son **logo de famille** — rond cuivré pour un acoustique, cuivré à couronne s'il a des notes du dessous, bleu pour un électronique ;
-- la pastille dorée **« tu joues dessus »** ;
-- la mention **« à côté »** pour celui qui est posé en duo.
+- **son vrai dessin**, notes colorées comprises ;
+- son nom, et en dessous le fabricant, le diapason et le nombre de notes ;
+- la pastille verte **« Sur le pan »** quand il est à l'écran ;
+- trois boutons en pied : **✓**, sa **place dans le duo** (① ou ②) et la **corbeille**.
 
-Sous la liste, **une seule barre d'actions**, qui annonce toujours sur quoi elle agit : **« POUR : *ton instrument* »**.
-
-Et une distinction qui a l'air anodine mais qui change tout : **sélectionner n'est pas jouer**. Tu cliques un rang pour le désigner, et la barre te propose alors ▶ Jouer (il se pose seul), 🎼 Mes morceaux, 🎡 Tester une autre tonalité, 🤝 Mettre à côté, ✏️ Renommer, 🗑 Retirer. Tu peux agir sur un instrument sans le charger.
+En haut, une recherche par nom ou par tonalité, et un tri **« Mon ordre (glisser-déposer) »** : tu ranges tes cartes comme tu veux.
 
 <figure>
   <img
-    src="/images/blog-mes-handpans-duo-2026-09.webp"
+    src="/images/blog-mes-handpans-duo-2026-10.webp"
     width="1600"
-    height="2171"
-    alt="Le bloc « Mes handpans (2) » du panneau de droite de Handpan Constellation Studio en mode acoustique, thème sombre, cerclé de jaune. En en-tête, le titre et un bouton ＋. Premier rang : pastille jaune ⓵, logo rond cuivré, « D Minor / Kurd 10 — D · 10 notes », pastille dorée « tu joues dessus ». Deuxième rang : pastille jaune ⓶, logo rond cuivré, « B2 Amara 9 — B · 9 notes », mention « à côté ». Sous la liste, la barre d'actions « POUR D Minor / Kurd 10 » avec le crayon de renommage, le badge ACOUSTIQUE et « 🗑 Retirer », puis les boutons « 🎼 Mes morceaux (156) » et « 🎡 Tester une autre tonalité », et l'encart « 🤝 MON DUO — D Minor / Kurd 10 + B2 Amara 9 » avec « ▶ Jouer le duo », « ⇄ inverser » et « Retirer du duo ». En bas : « 🧭 Changer de gamme → plus bas ↓ », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » et « ⚡ Ajouter un handpan électronique »."
-    data-lb="mes-handpans-duo"
+    height="2170"
+    alt="L'écran « Mes handpans » de Handpan Constellation Studio, thème Nuit étoilée, avec les boutons « Donner mon avis » et « Copier le lien de cet outil ». En haut, une recherche « Rechercher (nom ou tonalité)… », un tri « Mon ordre (glisser-déposer) » et la phrase « Tous tes handpans d'un coup d'œil. Charge-en un, ou forme un duo en glissant deux cartes dans « Mon duo » », puis le bouton jaune « + Ajouter un handpan ». Encadré jaune « Mon duo », marqué « À l'écran » : à gauche ① D Kurd 10, « Pan principal », à droite ② B Amara 9, « À côté », chacun avec son ✕, et un bouton ⇄ entre les deux. Dessous, « Jouer le duo », « Défaire le duo », « Mes duos (0) », la ligne « Duo mémorisé : D Kurd 10 + B Amara 9 » et « Apparence modifie : ① le pan principal / ② le pan d'à côté ». Puis les cartes : D Kurd 10 (Yishama · 440 Hz · 10 notes) et B Amara 9, chacune avec son dessin coloré, la pastille « Sur le pan », un bouton ✓, sa place ① ou ② en jaune et une corbeille ; deux cartes en pointillés « Ajouter un handpan électronique — Choisis le modèle et le bois » et « Ajouter un handpan acoustique — Depuis le catalogue des gammes ». En bas, « Mes duos 0 » et la phrase « Enregistre un duo (« Mon duo » › Mes duos › Enregistrer ce duo) : il apparaîtra ici, prêt à être joué en un clic sur tous tes appareils », et le bouton « ⚡ Ajouter un handpan électronique »."
+    data-lb="mes-handpans"
     loading="lazy"
   />
-  <figcaption>Deux instruments cochés <strong>⓵</strong> et <strong>⓶</strong> : le duo est posé. La barre <strong>POUR&nbsp;: …</strong> dit toujours sur quel instrument elle agit, et l'encart <em>Mon duo</em> porte le <strong>⇄ inverser</strong>.</figcaption>
+  <figcaption><strong>Mes handpans</strong>, avec un duo posé. En haut, <em>Mon duo</em> : le D Kurd 10 en <strong>①</strong>, pan principal, le B Amara 9 en <strong>②</strong>, à côté, le <strong>⇄</strong> entre les deux, puis <em>Jouer le duo</em>, <em>Défaire le duo</em> et <em>Mes duos</em>. Dessous, chaque instrument a sa carte, avec son vrai dessin.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
 <figure>
   <img
-    src="/images/blog-mes-handpans-electronique-2026-09.webp"
-    width="1600"
-    height="1745"
-    alt="Le même bloc « Mes handpans » sur un handpan électronique, thème sombre. Un seul rang : pastille jaune ⓵, logo rond bleu, « Neotone Mutant · Noyer — Neotone Mutant · 19 creux · Noyer · 440 Hz », pastille dorée « tu joues dessus ». En dessous, la barre d'actions « POUR Neotone Mutant · Noyer » avec le badge ÉLECTRONIQUE, le grand bouton « 🎼 Mes morceaux », puis deux actions propres à l'instrument électronique : « 🎛 MIDI &amp; mapping » et « ⚙︎ Modèle &amp; bois — Neotone Mutant · Noyer ». Suit « ⚡⚡ Deux électroniques » et sa phrase « pose un 2ᵉ Neotone qui joue ce que le premier ne peut pas — c'est son COMPLÉMENT, pas sa copie. ». En bas, les mêmes portes que sur l'acoustique : « 🧭 Changer de gamme → plus bas ↓ », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » et « ⚡ Ajouter un handpan électronique »."
-    data-lb="mes-handpans-electronique"
-    data-lb-wide
+    src="/images/blog-mes-handpans-electronique-2026-10.webp"
+    width="1952"
+    height="1760"
+    alt="Le même écran « Mes handpans » avec un seul instrument : la carte « Neotone Mutant · Noyer — Neotone Mutant · 19 creux · Noyer », son dessin aux notes colorées, la pastille « Sur le pan », un menu « Bois : Noyer » et trois boutons (✓, duo, corbeille). À côté, les deux cartes en pointillés « Ajouter un handpan électronique — Choisis le modèle et le bois » et « Ajouter un handpan acoustique — Depuis le catalogue des gammes ». Pas d'encadré « Mon duo » : aucun duo n'est posé."
+    data-lb="mes-handpans"
     loading="lazy"
   />
-  <figcaption>Le même bloc, sur un <strong>handpan électronique</strong>. Même porte, même grammaire : la liste, la barre <strong>POUR&nbsp;: …</strong>, les mêmes boutons en pied. Seules changent les actions qui n'ont de sens que là — <em>MIDI &amp; mapping</em>, <em>Modèle &amp; bois</em> — et l'invitation à poser un second Neotone.</figcaption>
+  <figcaption>Le même écran avec un seul instrument, un <strong>handpan électronique</strong>. Même porte, mêmes cartes : la carte du Neotone porte en plus son menu <em>Bois</em>, et la carte <em>Ajouter un handpan électronique</em> fait choisir le modèle et le bois.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-## Deux cases à cocher, et c'est tout
+## Mon duo : deux places, et c'est tout
 
-C'est le geste à retenir, et il n'y en a plus d'autre.
+C'est le geste à retenir. L'app le dit elle-même en haut de l'écran : *charge-en un, ou forme un duo en glissant deux cartes dans « Mon duo »*.
 
-**Coche un instrument** → il joue seul.
-**Coches-en deux** → le duo se pose, **dans l'ordre où tu as coché** : le premier prend le badge ⓵, le second le badge ⓶.
-**Décoche** → il se retire.
+**Mon duo** a deux places. La **①** reçoit le **pan principal**, la **②** celui qui se pose **à côté**. Chaque place a son **✕** pour retirer l'instrument, et la place s'affiche aussi sur la carte, en jaune.
 
-L'ordre compte, parce que c'est lui qui décide quel pan est à gauche et lequel est à droite quand les deux coques s'affichent côte à côte. Tu t'es trompé ? La barre du duo a un **⇄ inverser**.
+L'ordre compte, parce que c'est lui qui décide quel pan est à gauche et lequel est à droite quand les deux s'affichent côte à côte. Tu t'es trompé ? Le bouton **⇄**, entre les deux places, les échange.
 
-Et le duo **survit au rechargement de la page**, d'où qu'il ait été posé. C'était l'un des deux vrais défauts de l'ancien système.
+Sous les deux places : **Jouer le duo**, **Défaire le duo**, et **Mes duos**. Le duo posé est mémorisé (« Duo mémorisé : D Kurd 10 + B Amara 9 ») : il **survit au rechargement de la page**, ce qui était l'un des deux vrais défauts de l'ancien système. Et la ligne **« Apparence modifie : ① le pan principal / ② le pan d'à côté »** te laisse choisir à quel pan s'appliquent les réglages d'apparence.
+
+Enfin, tout en bas, **Mes duos** garde les duos que tu as enregistrés (« Mon duo » › Mes duos › Enregistrer ce duo), prêts à être joués en un clic sur tous tes appareils.
 
 ## Si les deux instruments ne sont pas de la même famille
 
 Poser un acoustique à côté d'un acoustique, c'est un **duo**. Poser un acoustique à côté d'un Neotone, ce n'est pas la même chose : **tes deux handpans** ne viennent pas du même monde, et l'association obéit alors à ses propres règles — c'est le sujet de [cet article-là](/blog/completer-son-handpan-acoustique-avec-un-neotone).
 
-L'application ne mélange donc jamais les deux d'office. Mais elle ne refuse pas non plus, comme elle le faisait avant : quand ta liste contient déjà un électronique et que tu coches un acoustique avec lui, **elle te propose de les associer quand même**. C'est une porte, pas un mur.
+L'application ne mélange donc jamais les deux d'office. Mais elle ne refuse pas non plus, comme elle le faisait avant : quand tu veux poser un acoustique avec un électronique, **elle te propose de les associer quand même**. C'est une porte, pas un mur.
 
 ## Le Neotone a droit au même bloc
 
 Petit rattrapage de fin août : en mode électronique, le panneau de droite n'avait **aucun bloc d'identité**. Tu jouais sur un instrument que le panneau ne nommait même pas.
 
-Désormais, « Mes handpans » et sa barre « POUR : … » s'affichent dans les deux mondes — même liste, mêmes gestes — avec en plus les actions propres à l'électronique : **🎛 MIDI & mapping** et **⚙︎ Modèle & bois**. Cette dernière ouvre « TON VAISSEAU », donc le choix Mutant / Neotone¹, qui était jusque-là **invisible sur téléphone**.
+Désormais, « Mes handpans » s'affiche dans les deux mondes — mêmes cartes, mêmes gestes. La carte d'un Neotone porte en plus son menu **Bois**, et la carte **Ajouter un handpan électronique** fait choisir le modèle et le bois, donc le choix Mutant / Neotone¹, qui était jusque-là **invisible sur téléphone**.
 
 ## Ton installation te suit d'un appareil à l'autre
 
@@ -112,13 +108,13 @@ Rien n'est jamais effacé : quand deux appareils ne sont pas d'accord, le plus r
 
 Deux détails qui comptent plus qu'ils n'en ont l'air.
 
-**✏️ Renommer.** Un crayon dans la barre « POUR ». Ton instrument peut s'appeler « Mon premier pan » ou « le D Kurd de Marie » plutôt que « D Minor / Kurd 10 ». Vide le champ, le nom d'origine revient.
+**✏️ Renommer.** Ton instrument peut s'appeler « Mon premier pan » ou « le D Kurd de Marie » plutôt que « D Minor / Kurd 10 ». Vide le champ, le nom d'origine revient.
 
 **Le crédit du fabricant** est rattaché à l'instrument qu'il décrit, et non plus à l'écran en général. « Made by Yishama Pantam — Yhonatan Ale-Yahav » suit la gamme jusque sur les partitions imprimées. Un handpan a un auteur ; c'est la moindre des choses qu'il reste écrit dessus.
 
 ## Ce qui est gratuit, ce qui ne l'est pas
 
-Tout ce que décrit cet article — déclarer tes instruments, les cocher, poser un duo, l'inverser, renommer, voir ce que les deux permettent — appartient au **mode acoustique, qui est gratuit**.
+Tout ce que décrit cet article — déclarer tes instruments, poser un duo, l'inverser, renommer, voir ce que les deux permettent — appartient au **mode acoustique, qui est gratuit**.
 
 Et **tout est sauvegardé sur ton compte, même en gratuit** : tes handpans et tes duos te retrouvent sur un autre appareil, comme le décrit le paragraphe précédent.
 

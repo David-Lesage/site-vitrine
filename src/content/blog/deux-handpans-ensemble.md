@@ -2,6 +2,7 @@
 title: "Jouer deux handpans ensemble : ce qu'un 2ᵉ handpan t'apporte"
 description: "Un deuxième handpan, acoustique ou Neotone ? L'app te demande ce que tu veux en faire, montre les accords qu'on joue à deux et garde tes duos sur ton compte."
 pubDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/blog-deux-handpans-ensemble-photo.webp"
 category: "acoustique"
 tags: ["deux handpans", "deuxième handpan", "mes duos", "neotone"]
@@ -28,7 +29,18 @@ Tout commence dans **Mes handpans** (« Changer d'instrument ▾ » › Mes hand
 
 Les deux handpans s'affichent côte à côte, chacun avec ses propres notes. Le duo peut être acoustique (deux acoustiques), hybride électro-acoustique (un acoustique et un Neotone) ou électronique (deux Neotone).
 
-<!-- CAPTURE À VENIR : Mes handpans en thème Nuit étoilée, avec « 🤝 Mon duo » rempli (deux cartes en ① et ②) et la rangée « 🤝 Mes duos » en dessous. Aucune capture Nuit étoilée de cet écran n'existe encore. -->
+<figure>
+  <img
+    src="/images/blog-mes-handpans-duo-2026-10.webp"
+    width="1600"
+    height="2170"
+    alt="L'écran « Mes handpans », thème Nuit étoilée. En haut, l'encadré jaune « 🤝 Mon duo », marqué « À l'écran » : ① D Kurd 10, « Pan principal », et ② B Amara 9, « À côté », avec un bouton ⇄ entre les deux ; dessous, « ▶ Jouer le duo », « Défaire le duo », « Mes duos (0) » et « Duo mémorisé : D Kurd 10 + B Amara 9 ». Plus bas, les cartes des deux handpans avec leur dessin et leur place ① et ② en jaune, deux cartes en pointillés pour ajouter un handpan acoustique ou électronique, puis la rangée « Mes duos 0 » : « Enregistre un duo (« Mon duo » › Mes duos › Enregistrer ce duo) : il apparaîtra ici, prêt à être joué en un clic sur tous tes appareils. »"
+    data-lb="deux-handpans-ensemble"
+    loading="lazy"
+  />
+  <figcaption><strong>🤝 Mon duo</strong> rempli : le D Kurd 10 en <strong>①</strong>, le B Amara 9 en <strong>②</strong>, et <strong>▶ Jouer le duo</strong> juste dessous. Tout en bas, la rangée <strong>🤝 Mes duos</strong> attend les duos que tu enregistreras.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
+</figure>
 
 ## Les accords qu'on ne joue qu'à deux
 

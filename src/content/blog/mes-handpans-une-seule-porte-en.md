@@ -2,8 +2,8 @@
 title: "“My handpans”: a single door to your instruments"
 description: "Declare your pan, set a second one beside it, find your setup again on the iPad: there used to be five different paths, now there's only one. Here's which one, and what has changed."
 pubDate: 2026-09-01
-updatedDate: 2026-10-23
-cover: "/images/blog-mes-handpans-duo-2026-09.webp"
+updatedDate: 2026-10-24
+cover: "/images/blog-mes-handpans-duo-2026-10-en.webp"
 category: "acoustique"
 tags: ["acoustic", "two handpans", "my handpans"]
 lang: "en"
@@ -11,84 +11,80 @@ permalink: "mes-handpans-une-seule-porte"
 draft: false
 ---
 
-> **Updated 23 October 2026.** Since this article, the screen has changed again. **My handpans** now shows all your instruments as cards, with their real drawing, full screen on a computer. At the top, **🤝 My duo** has two slots; further down, **🤝 My duos** keeps every saved duo, with "▶ Play the duo". Each handpan keeps its own wood. The how-to below (the right-hand panel, the tick boxes, the "FOR" bar) describes the 1 September screen, the one the screenshots show.
-
 This article is as much a repair as it is a new feature. For months, **setting a second handpan beside the first** could be done five different ways in the app — and two of those five behaved badly. One served the general catalogue while claiming to show "your" instruments. The other forgot: you removed a pan, reloaded the page, and it was back.
 
-This panel is the same on both sides: **whether your handpans are acoustic or electronic**, it's the same list, the same checkboxes, the same gestures. Only a few actions in the bar change depending on the instrument selected, and that's spelled out where it happens.
+This screen is the same on both sides: **whether your handpans are acoustic or electronic**, it's the same cards and the same gestures. Only a few settings change depending on the instrument, and that's spelled out where it happens.
 
-Since the end of August, **only one gesture remains**. If you've read instructions here that mention drop-down lists or a banner to bring up, they're out of date: this is the right version.
+Today, **only one door remains**. If you've read instructions here that mention drop-down lists, a banner to bring up, a right-hand panel or boxes to tick, they're out of date: this is the right version, the October 2026 one.
 
 ## A concrete case
 
-You play a **D Kurd 10**. Someone lends you a second pan for the weekend — say a **C# Amara** — and you want to know what the two sound like together, which chords become possible, which hand goes where.
+You play a **D Kurd 10**. Someone lends you a second pan for the weekend — say a **B Amara 9** — and you want to know what the two sound like together, which chords become possible, which hand goes where.
 
-Before, you had to guess. Now it's two boxes to tick.
+Before, you had to guess. Now you just set the two of them in **My pair**.
 
-## The right-hand panel, in three lines
+## My handpans, at a glance
 
-In acoustic mode, the right-hand panel now opens on **your** instruments, not on the world's catalogue. That's a deliberate reversal: acoustic is a finite, personal world — we start from what you have. Exploring other scales comes afterwards, further down, under "Discover other scales".
+**My handpans** opens wide and shows **your** instruments, not the world's catalogue. That's a deliberate reversal: acoustic is a finite, personal world — we start from what you have. To add one, two dashed cards are waiting: **Add an acoustic handpan**, from the scale catalogue, and **Add an electronic handpan**, where you choose the model and the wood.
 
-The block is called **My handpans** — with the handpan logo in its header, not the snare-drum emoji that used to sit there ("an acoustic handpan is not a snare drum"). Each instrument gets its own row, with:
+Each instrument has **its own card**, with:
 
-- its **family logo** — a copper circle for an acoustic, copper with a crown if it has bottom notes, blue for an electronic;
-- the gold **"you're playing this one"** dot;
-- the **"beside"** label for the one set up as a duo.
+- **its real drawing**, coloured notes included;
+- its name, and below it the maker, the tuning reference and the number of notes;
+- the green **"On the pan"** badge when it's on screen;
+- three buttons at the foot: **✓**, its **place in the pair** (① or ②) and the **bin**.
 
-Below the list, **a single action bar**, which always says what it is acting on: **"FOR: *your instrument*"**.
-
-And a distinction that looks harmless but changes everything: **selecting is not playing**. You click a row to point at it, and the bar then offers ▶ Play (it loads on its own), 🎼 My pieces, 🎡 Try another key, 🤝 Set beside, ✏️ Rename, 🗑 Remove. You can act on an instrument without loading it.
+At the top, a search by name or key, and a **"My order (drag and drop)"** sort: you arrange your cards however you like.
 
 <figure>
   <img
-    src="/images/blog-mes-handpans-duo-2026-09.webp"
+    src="/images/blog-mes-handpans-duo-2026-10-en.webp"
     width="1600"
-    height="2171"
-    alt="The “My handpans (2)” block in the right-hand panel of Handpan Constellation Studio in acoustic mode, dark theme, circled in yellow. In the header, the title and a ＋ button. First row: yellow dot ⓵, round copper logo, “D Minor / Kurd 10 — D · 10 notes”, gold dot “you're playing this one”. Second row: yellow dot ⓶, round copper logo, “B2 Amara 9 — B · 9 notes”, label “beside”. Below the list, the action bar “FOR D Minor / Kurd 10” with the rename pencil, the ACOUSTIC badge and “🗑 Remove”, then the buttons “🎼 My pieces (156)” and “🎡 Try another key”, and the “🤝 MY DUO — D Minor / Kurd 10 + B2 Amara 9” insert with “▶ Play the duo”, “⇄ swap” and “Remove from duo”. At the bottom: “🧭 Change scale → further down ↓”, “＋ Add a handpan”, “📤 Share this scale” and “⚡ Add an electronic handpan”."
-    data-lb="mes-handpans-duo"
+    height="2170"
+    alt="The “My handpans” screen of Handpan Constellation Studio, Starry Night theme, with the “Give feedback” and “Copy this tool's link” buttons. At the top, a “Search (name or key)…” field, a “My order (drag and drop)” sort and the line “All your handpans at a glance. Load one, or build a duo by dragging two cards into “My pair””, then the yellow “+ Add a handpan” button. A yellow “My pair” frame, marked “On screen”: on the left ① D Kurd 10, “Main pan”, on the right ② B Amara 9, “Next to it”, each with its ✕, and a ⇄ button between them. Below, “Play the pair”, “Undo the pair”, “My pairs (0)”, the line “Saved pair: D Kurd 10 + B Amara 9” and “Appearance changes: ① the main pan / ② the pan beside it”. Then the cards: D Kurd 10 (Yishama · 440 Hz · 10 notes) and B Amara 9, each with its coloured drawing, the “On the pan” badge, a ✓ button, its place ① or ② in yellow and a bin; two dashed cards “Add an electronic handpan — Choose the model and the wood” and “Add an acoustic handpan — From the scale catalogue”. At the bottom, “My pairs 0” with the line “Save a pair (“My pair” › My pairs › Save this pair): it will appear here, ready to play in one click on all your devices”, and the “⚡ Add an electronic handpan” button."
+    data-lb="mes-handpans"
     loading="lazy"
   />
-  <figcaption>Two instruments ticked <strong>⓵</strong> and <strong>⓶</strong>: the duo is set. The <strong>FOR:&nbsp;…</strong> bar always says which instrument it acts on, and the <em>My duo</em> insert carries the <strong>⇄ swap</strong>.</figcaption>
+  <figcaption><strong>My handpans</strong>, with a pair set up. At the top, <em>My pair</em>: the D Kurd 10 in <strong>①</strong>, main pan, the B Amara 9 in <strong>②</strong>, next to it, the <strong>⇄</strong> between them, then <em>Play the pair</em>, <em>Undo the pair</em> and <em>My pairs</em>. Below, each instrument has its own card, with its real drawing.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click it again for full size.</p>
 </figure>
 
 <figure>
   <img
-    src="/images/blog-mes-handpans-electronique-2026-09.webp"
-    width="1600"
-    height="1745"
-    alt="The same “My handpans” block on an electronic handpan, dark theme. A single row: yellow dot ⓵, round blue logo, “Neotone Mutant · Walnut — Neotone Mutant · 19 notes · Walnut · 440 Hz”, gold dot “you're playing this one”. Below, the action bar “FOR Neotone Mutant · Walnut” with the ELECTRONIC badge, the large “🎼 My pieces” button, then two actions specific to the electronic instrument: “🎛 MIDI &amp; mapping” and “⚙︎ Model &amp; wood — Neotone Mutant · Walnut”. Then “⚡⚡ Two electronics” and its line “sets a 2nd Neotone that plays what the first one can't — it's its COMPLEMENT, not its copy.” At the bottom, the same doors as on the acoustic side: “🧭 Change scale → further down ↓”, “＋ Add a handpan”, “📤 Share this scale” and “⚡ Add an electronic handpan”."
-    data-lb="mes-handpans-electronique"
-    data-lb-wide
+    src="/images/blog-mes-handpans-electronique-2026-10-en.webp"
+    width="1952"
+    height="1760"
+    alt="The same “My handpans” screen with a single instrument: the “Neotone Mutant · Walnut” card, its drawing with coloured notes, the “On the pan” badge, a Wood menu set to Walnut and three buttons (✓, pair, bin). Next to it, the two dashed cards “Add an electronic handpan — Choose the model and the wood” and “Add an acoustic handpan — From the scale catalogue”. No “My pair” frame: no pair is set up."
+    data-lb="mes-handpans"
     loading="lazy"
   />
-  <figcaption>The same block, on an <strong>electronic handpan</strong>. Same door, same grammar: the list, the <strong>FOR:&nbsp;…</strong> bar, the same buttons at the foot. Only the actions that make sense there alone change — <em>MIDI &amp; mapping</em>, <em>Model &amp; wood</em> — plus the invitation to set down a second Neotone.</figcaption>
+  <figcaption>The same screen with a single instrument, an <strong>electronic handpan</strong>. Same door, same cards: the Neotone's card also carries its <em>Wood</em> menu, and the <em>Add an electronic handpan</em> card lets you choose the model and the wood.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click it again for full size.</p>
 </figure>
 
-## Two boxes to tick, and that's all
+## My pair: two places, and that's all
 
-This is the gesture to remember, and there is no other one now.
+This is the gesture to remember. The app says so itself at the top of the screen: *load one, or build a duo by dragging two cards into "My pair"*.
 
-**Tick one instrument** → it plays on its own.
-**Tick two** → the duo is set, **in the order you ticked them**: the first takes badge ⓵, the second badge ⓶.
-**Untick** → it steps out.
+**My pair** has two places. Place **①** takes the **main pan**, place **②** the one that sits **next to it**. Each place has its **✕** to take the instrument out, and the place also shows on the card, in yellow.
 
-The order matters, because it decides which pan is on the left and which is on the right when the two shells are shown side by side. Got it the wrong way round? The duo bar has a **⇄ swap**.
+The order matters, because it decides which pan is on the left and which is on the right when the two are shown side by side. Got it the wrong way round? The **⇄** button, between the two places, swaps them.
 
-And the duo **survives a page reload**, wherever it was set from. That was one of the two real flaws of the old system.
+Under the two places: **Play the pair**, **Undo the pair**, and **My pairs**. The pair you set is saved ("Saved pair: D Kurd 10 + B Amara 9"): it **survives a page reload**, which was one of the two real flaws of the old system. And the line **"Appearance changes: ① the main pan / ② the pan beside it"** lets you choose which pan the appearance settings apply to.
+
+Finally, right at the bottom, **My pairs** keeps the pairs you've saved ("My pair" › My pairs › Save this pair), ready to play in one click on all your devices.
 
 ## If the two instruments aren't from the same family
 
 Setting an acoustic beside an acoustic is a **duo**. Setting an acoustic beside a Neotone is not the same thing: **your two handpans** don't come from the same world, and the pairing then follows rules of its own — that's the subject of [this other article](/en/blog/completer-son-handpan-acoustique-avec-un-neotone).
 
-So the app never mixes the two by default. But it doesn't refuse them either, the way it used to: when you tick an acoustic and an electronic, **it offers to pair them anyway**. It's a door, not a wall.
+So the app never mixes the two by default. But it doesn't refuse them either, the way it used to: when you want to set an acoustic with an electronic, **it offers to pair them anyway**. It's a door, not a wall.
 
 ## The Neotone gets the same block
 
 A small catch-up from the end of August: in electronic mode, the right-hand panel had **no identity block at all**. You were playing an instrument the panel didn't even name.
 
-Now "My handpans" and its "FOR: …" bar show up in both worlds — same list, same gestures — plus the actions specific to electronic: **🎛 MIDI & mapping** and **⚙︎ Model & wood**. The latter opens "YOUR SHIP", and therefore the Mutant / Neotone¹ choice, which until now was **invisible on phone**.
+Now "My handpans" shows up in both worlds — same cards, same gestures. A Neotone's card also carries its **Wood** menu, and the **Add an electronic handpan** card lets you choose the model and the wood, and therefore the Mutant / Neotone¹ choice, which until now was **invisible on phone**.
 
 ## Your setup follows you from one device to another
 
@@ -112,13 +108,13 @@ Nothing is ever erased: when two devices disagree, the more recent one wins and 
 
 Two details that count for more than they look.
 
-**✏️ Rename.** A pencil in the "FOR" bar. Your instrument can be called "My first pan" or "Marie's D Kurd" rather than "D Minor / Kurd 10". Clear the field and the original name comes back.
+**✏️ Rename.** Your instrument can be called "My first pan" or "Marie's D Kurd" rather than "D Minor / Kurd 10". Clear the field and the original name comes back.
 
 **The maker's credit** is attached to the instrument it describes, no longer to the screen in general. "Made by Yishama Pantam — Yhonatan Ale-Yahav" follows the scale all the way onto printed scores. A handpan has a maker; the least we can do is keep it written on it.
 
 ## What's free, what isn't
 
-Everything this article describes — declaring your instruments, ticking them, setting a duo, swapping it, renaming, seeing what the two allow — belongs to **acoustic mode, which is free**.
+Everything this article describes — declaring your instruments, setting a pair, swapping it, renaming, seeing what the two allow — belongs to **acoustic mode, which is free**.
 
 And **everything is saved to your account, even on the free tier**: your handpans and your duos find you again on another device, as the previous section describes.
 
@@ -134,7 +130,7 @@ And **everything is saved to your account, even on the free tier**: your handpan
 
 ## The summary, if you remember only one thing
 
-> **My handpans** → your instruments as cards; **🤝 My duo** and its two slots to play two together; **🤝 My duos** to find the ones you saved.
+> **My handpans** → your instruments as cards; **🤝 My pair** and its two places to play two together; **🤝 My pairs** to find the ones you saved.
 
 One door for your instruments. That was the point.
 
