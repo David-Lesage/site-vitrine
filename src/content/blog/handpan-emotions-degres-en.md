@@ -42,7 +42,7 @@ Logic Mode makes these roles **visible** by giving them a stable colour, followi
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Here on a Neotone Mutant anchored on C, with the eye on the <strong>I</strong>. On the left, the colour tells the note: C, E and G each keep their own. On the right, it tells the place in the scale: <strong>the whole I chord is red</strong>, and it would be in any key. The setting is explained in <a href="/en/blog/les-deux-visions-chromakeys">the two visions of ChromaKeys</a>.</figcaption>
+  <figcaption>Here on an electronic handpan, a Neotone Mutant anchored on C, with the eye on the <strong>I</strong>. On the left, the colour tells the note: C, E and G each keep their own. On the right, it tells the place in the scale: <strong>the whole I chord is red</strong>, and it would be in any key. The setting is explained in <a href="/en/blog/les-deux-visions-chromakeys">the two visions of ChromaKeys</a>. On an acoustic, the cards keep the degree colour, but the notes on the pan keep the colour of their name.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

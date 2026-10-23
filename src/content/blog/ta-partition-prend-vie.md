@@ -30,7 +30,7 @@ Une barre **▶ / ⏸ / ⏹** joue les accords **dans l'ordre des paroles**. Le 
     src="/images/app-partition-lecteur-let-it-be-do-majeur-2026-10-24.webp"
     width="2880"
     height="1800"
-    alt="Handpan Constellation Studio, Éditeur de Partition Visuelle en mode Chanson, thème Nuit étoilée, pendant la lecture de Let It Be en do majeur. En haut, les boutons Pupitre, PDF et PNG. Dessous, la barre de lecture : le bouton rond affiche ■ (le morceau joue), Tempo 80, l'Attaque réglée sur Arpège parmi App, Plaqué, Arpège et Arpège ↑↓, Enchaîner, et « Batteur Pop 4/4 · 80 · au repos ». À gauche, les rubriques Mode, Tonalité, Mise en page, Style du handpan, Titre et contenu, Diagrammes, Légende et Mon morceau. Au centre, la section 2, COUPLET 1 : au-dessus des paroles « When I find myself in times of trouble / Mother Mary comes to me / Speaking words of wisdom, let it be », les diagrammes C · Équilibre en rouge, G · Tension en bleu ciel, Am · Nostalgie en indigo et F · Détente en vert ; le mot sur lequel tombe chaque accord est encadré de sa couleur. Sur la troisième ligne, un badge ×4 sur le C et un badge ×2 sur le G ; en fin de ligne, F et C sont collés et leurs étiquettes se chevauchent. En bas, Réorganiser, Modifier les accords et le zoom 100 %."
+    alt="Handpan Constellation Studio, Éditeur de Partition Visuelle en mode Chanson, thème Nuit étoilée, pendant la lecture de Let It Be en do majeur. En haut, les boutons Pupitre, PDF et PNG. Dessous, la barre de lecture : le bouton rond affiche ■ (le morceau joue), Tempo 80, l'Attaque réglée sur Arpège parmi App, Plaqué, Arpège et Arpège ↑↓, Enchaîner, et « Batteur Pop 4/4 · 80 · au repos ». À gauche, les rubriques Mode, Tonalité, Mise en page, Style du handpan, Titre et contenu, Diagrammes, Légende et Mon morceau. Au centre, la section 2, COUPLET 1 : au-dessus des paroles « When I find myself in times of trouble / Mother Mary comes to me / Speaking words of wisdom, let it be », les diagrammes C · Équilibre en rouge, G · Tension en bleu ciel, Am · Nostalgie en indigo et F · Détente en vert ; le mot sur lequel tombe chaque accord est encadré de sa couleur. Sur la troisième ligne, un badge ×4 sur le C et un badge ×2 sur le G ; en fin de ligne, F · Détente puis C · Équilibre, enchaînés sur le dernier mot. En bas, Réorganiser, Modifier les accords et le zoom 100 %."
     data-lb="partition-lecteur"
     data-lb-wide
     loading="lazy"
@@ -103,21 +103,21 @@ Voilà le petit détail qui rend service tous les jours. Un bouton **🎼** et t
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le <strong>🎼 Pupitre</strong> sur un ordinateur, ouvert sur <em>Let It Be</em> : l'intro en do majeur, C, G, Am, F, puis C, G, F, C. Ouvert directement, il n'affiche pas de badges ×N : ceux-là se règlent dans l'éditeur.</figcaption>
+  <figcaption>Le <strong>🎼 Pupitre</strong> sur un ordinateur, ouvert sur <em>Let It Be</em> : l'intro en do majeur, C, G, Am, F, puis C, G, F, C.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
 <figure>
   <img
-    src="/images/app-pupitre-let-it-be-do-majeur-tablette-2026-10-24.webp"
+    src="/images/app-pupitre-plein-ecran-tablette-2026-10.webp"
     width="1536"
     height="2048"
-    alt="Le Pupitre au format d'une tablette en portrait, thème Nuit étoilée. La partition de Let It Be occupe l'écran : titre, The Beatles, 4/4, l'Intro avec ses diagrammes (C · Équilibre, G · Tension, Am · Nostalgie, F · Détente), puis le Couplet 1 avec les diagrammes posés au-dessus des paroles « When I find myself in times of trouble / Mother Mary comes to me » ; sous certains mots, le cadre de couleur de l'accord est décalé d'une demi-ligne vers le bas. En bas, la barre du Pupitre : fermer, Lire (en jaune), M'entraîner, Apprendre la grille, Modifier, le zoom 100 %, puis Défiler, Boucle A-B, Transposer, Exporter et Chanter."
+    alt="Le Pupitre au format d'une tablette en portrait, thème Nuit étoilée. La partition de Let It Be occupe l'écran : titre, The Beatles, 4/4, l'Intro avec ses diagrammes (C · Équilibre, G · Tension, Am · Nostalgie, F · Détente), puis le Couplet 1 avec les diagrammes posés au-dessus des paroles « When I find myself in times of trouble / Mother Mary comes to me ». En bas, la barre du Pupitre : fermer, Lire (en jaune), M'entraîner, Apprendre la grille, Modifier, le zoom 100 %, puis Défiler, Boucle A-B, Transposer, Exporter et Chanter."
     data-lb="partition-pupitre"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le même Pupitre aux proportions d'un iPad en portrait : la partition prend tout l'écran, et les commandes de jeu sont regroupées en bas — <em>Lire</em>, <em>M'entraîner</em>, <em>Apprendre la grille</em>, <em>Modifier</em>, le zoom, puis <em>Défiler</em>, <em>Boucle A-B</em>, <em>Transposer</em>, <em>Exporter</em>, <em>Chanter</em>.</figcaption>
+  <figcaption>Le <strong>🎼 Pupitre</strong> aux proportions d'un iPad en portrait : la partition prend tout l'écran, et les commandes de jeu sont regroupées en bas — <em>Lire</em>, <em>M'entraîner</em>, <em>Apprendre la grille</em>, <em>Modifier</em>, le zoom, puis <em>Défiler</em>, <em>Boucle A-B</em>, <em>Transposer</em>, <em>Exporter</em>, <em>Chanter</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

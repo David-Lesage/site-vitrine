@@ -44,7 +44,7 @@ Les sept degrés d'une gamme reçoivent sept couleurs stables. Quelle que soit l
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le même écran, <em>Créer › Une gamme</em>, au même cadrage : à gauche sur un Neotone Mutant, à droite sur un handpan acoustique D Kurd 10. Des deux côtés, chaque note porte la couleur de son nom — le ré orange, le fa vert, le la indigo, le do rouge — et la roue des douze couleurs entoure le pan. En bas, les sept accords de base de la gamme, de <em>Dm · Équilibre</em> à <em>C · Mystère</em>, chacun dans la couleur de la note qui lui donne son nom.</figcaption>
+  <figcaption>Le même écran, <em>Créer › Une gamme</em>, côte à côte : à gauche sur un Neotone Mutant, à droite sur un handpan acoustique D Kurd 10. Des deux côtés, chaque note porte la couleur de son nom — le ré orange, le fa vert, le la indigo, le do rouge — et la roue des douze couleurs entoure le pan. En bas, les sept accords de base de la gamme, de <em>Dm · Équilibre</em> à <em>C · Mystère</em>, chacun dans la couleur de la note qui lui donne son nom.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

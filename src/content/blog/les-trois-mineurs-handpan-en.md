@@ -29,34 +29,34 @@ This is the one everyone knows, and the one your handpan plays by default. Its d
 
 Raise **the seventh** by a semitone and everything shifts. The fifth degree becomes a true major dominant: it *pulls* towards the tonic instead of floating. Between the sixth and seventh degrees a wider interval opens up — that unmistakable oriental step.
 
-On the pan, **only two dots** change note, and the app says so itself in the drawer: “2 pads change”.
+On the pan, **only two dots** change note.
 
 <figure class="article-img-pair">
   <div class="article-img-pair-grid">
     <div class="article-img-pair-cell"><span class="article-img-pair-label">Natural minor</span>
     <img
-      src="/images/app-trois-mineurs-naturel-2026-10-24-en.webp"
-      width="1174"
-      height="1362"
-      alt="Natural minor on a Neotone Mutant, Starry Night theme, Musician level, pan cropped. The eye is on I Balance Dm: D2, F3, A3 and D4 light up in red, linked by a line; you can read C4 at the top left and C3 at the bottom. Below, the seven cards: I BALANCE Dm, II MOMENTUM E°, III ADVENTURE F, IV RELAXATION Gm, V TENSION Am, VI NOSTALGIA Bb, VII MYSTERY C."
-      data-lb="trois-mineurs"
-      data-lb-wide
-      loading="lazy"
-    />
+        src="/images/app-triste-trois-mineurs-naturel-2026-10-en.webp"
+        width="2880"
+        height="2506"
+        alt="Degrees &amp; emotions in natural minor on a Neotone Mutant · Walnut, Starry Night theme, at Musician level. The eye on I BALANCE Dm is on: on the pan, D2, F3, A3 and D4 light up in red, and the handpan's screen reads “I Balance Dm”; the notes include C4 at the top left and C3 at the bottom. At the bottom, the cards I BALANCE Dm, II MOMENTUM E°, III ADVENTURE F, IV RELAXATION Gm, V TENSION Am. On the right, the “Voicings &amp; Logic” drawer, “Logic &amp; Emotions” block: “Complete, 7 degrees out of 7 — On your Neotone Mutant (19 notes), Logic is complete in every key”. Under Key, anchor note D, Sad mode on, and the list of its shades: “🌙 Deep sadness — natural minor — the current Sad” (highlighted), “🔥 Intense sadness, oriental colour — harmonic minor · 7th step up by a semitone — 2 pads change”, “🎷 Bright sadness, jazz colour — melodic minor · 6th and 7th half-step rises — 4 pads change”. Further down, “Chord voicings” (Deep, Bright, Wide) and “Journey of Sensations”."
+        data-lb="trois-mineurs"
+        data-lb-wide
+        loading="lazy"
+      />
     </div>
     <div class="article-img-pair-cell"><span class="article-img-pair-label">Harmonic minor</span>
     <img
-      src="/images/app-trois-mineurs-harmonique-2026-10-24-en.webp"
-      width="1174"
-      height="1362"
-      alt="The same pan, same framing, in harmonic minor: C4 and C3 have become C#4 and C#3; every other note is in its place, and the I Balance Dm chord stays lit on D2, F3, A3 and D4. In the cards, III ADVENTURE becomes F+, V TENSION becomes A and VII MYSTERY becomes C#°."
-      data-lb="trois-mineurs"
-      data-lb-wide
-      loading="lazy"
-    />
+        src="/images/app-triste-trois-mineurs-harmonique-2026-10-en.webp"
+        width="2880"
+        height="2506"
+        alt="The same screen, with the “🔥 Intense sadness, oriental colour” entry highlighted in the list of shades. On the pan, the notes that read C4 and C3 now read C#4 and C#3; every other note is where it was, and the I Balance Dm chord stays lit on D2, F3, A3 and D4. In the cards at the bottom, III ADVENTURE becomes F+ and V TENSION becomes A (major)."
+        data-lb="trois-mineurs"
+        data-lb-wide
+        loading="lazy"
+      />
     </div>
   </div>
-  <figcaption>The first two shades of <strong>Sad</strong>, side by side: natural minor on the left, harmonic minor on the right. Only two notes change name: <strong>C4 → C#4</strong> and <strong>C3 → C#3</strong>. The lit chord and its shape on the pan stay identical; in the cards, the III becomes <em>F+</em>, the V becomes <em>A</em> major and the VII becomes <em>C#°</em>.</figcaption>
+  <figcaption>The shades of <strong>Sad</strong>, unfolded in the <em>Voicings &amp; Logic</em> drawer: natural minor on the left, harmonic minor on the right. The app states the cost of each shade itself: “2 pads change” for harmonic minor, “4 pads change” for melodic. From one image to the other, only two notes change name: <strong>C4 → C#4</strong> and <strong>C3 → C#3</strong>. The lit chord and its shape on the pan stay identical; in the cards, the V becomes <em>A</em> major and the III becomes <em>F+</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -64,22 +64,7 @@ On the pan, **only two dots** change note, and the app says so itself in the dra
 
 Raise **the sixth and the seventh**, and you get the jazz musicians' scale. The fourth degree turns major, the ii-V-i becomes playable, and the melancholy takes on an elegant, almost smiling quality.
 
-On the pan, **four dots** change note: “4 pads change”, says the drawer.
-
-<figure class="figure-desktop-only">
-  <div class="trio-labels"><span>Natural minor</span><span>Harmonic minor</span><span>Melodic minor</span></div>
-  <img
-    src="/images/app-trois-mineurs-trio-composite-2026-10-24-en.webp"
-    width="3546"
-    height="1362"
-    alt="The three shades at the same framing, side by side, on the same Neotone Mutant, the I Balance Dm chord lit on D2, F3, A3 and D4. On the left, natural minor: C4, C3, Bb3 and Bb2. In the centre, harmonic minor: C#4 and C#3. On the right, melodic minor: C#4, C#3, plus B3 and B2. In the melodic cards: I Dm, II Em, III F+, IV G, V A, VI B°, VII C#°."
-    data-lb="trois-mineurs-trio"
-    data-lb-wide
-    loading="lazy"
-  />
-  <figcaption>The three faces side by side. Melodic minor keeps the two notes of harmonic minor and also raises <strong>Bb3 → B3</strong> and <strong>Bb2 → B2</strong>: four pads in all. In its cards, the II becomes <em>Em</em>, the IV <em>G</em> major and the VI <em>B°</em>. The Dm chord itself hasn't moved.</figcaption>
-  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
-</figure>
+On the pan, **four dots** change note.
 
 ## What doesn't change: your hands
 

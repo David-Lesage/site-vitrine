@@ -30,7 +30,7 @@ A **▶ / ⏸ / ⏹** bar plays the chords **in the order of the lyrics**. The c
     src="/images/app-partition-lecteur-let-it-be-do-majeur-2026-10-24-en.webp"
     width="2880"
     height="1800"
-    alt="Handpan Constellation Studio, Visual Score Editor in Song mode, Starry Night theme, while Let It Be plays in C major. At the top, the Music stand, PDF and PNG buttons. Below, the playback bar: the round button shows ■ (the piece is playing), Tempo 80, Strike set to Arpeggio among App, Block, Arpeggio and Arpeggio ↑↓, Flow on, and “Drummer Pop 4/4 · 80 · resting”. On the left, the sections Mode, Key, Layout, Handpan style, Title and content, Diagrams, Legend and My song. In the centre, section 2, VERSE 1: above the lyrics “When I find myself in times of trouble / Mother Mary comes to me / Speaking words of wisdom, let it be”, the diagrams C · Balance in red, G · Tension in sky blue, Am · Nostalgia in indigo and F · Ease in green; the word each chord falls on is framed in its colour. On the third line, a ×4 badge on the C and a ×2 badge on the G; at the end of the line, F and C sit side by side and their labels overlap. At the bottom, Reorganise, Edit chords and the 100% zoom."
+    alt="Handpan Constellation Studio, Visual Score Editor in Song mode, Starry Night theme, while Let It Be plays in C major. At the top, the Music stand, PDF and PNG buttons. Below, the playback bar: the round button shows ■ (the piece is playing), Tempo 80, Strike set to Arpeggio among App, Block, Arpeggio and Arpeggio ↑↓, Flow on, and “Drummer Pop 4/4 · 80 · resting”. On the left, the sections Mode, Key, Layout, Handpan style, Title and content, Diagrams, Legend and My song. In the centre, section 2, VERSE 1: above the lyrics “When I find myself in times of trouble / Mother Mary comes to me / Speaking words of wisdom, let it be”, the diagrams C · Balance in red, G · Tension in sky blue, Am · Nostalgia in indigo and F · Ease in green; the word each chord falls on is framed in its colour. On the third line, a ×4 badge on the C and a ×2 badge on the G; at the end of the line, F · Ease then C · Balance, back to back on the last word. At the bottom, Reorganise, Edit chords and the 100% zoom."
     data-lb="partition-lecteur"
     data-lb-wide
     loading="lazy"
@@ -103,21 +103,21 @@ Here's the little detail that helps every single day. One **🎼** button and yo
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The <strong>🎼 music stand</strong> on a computer, open on <em>Let It Be</em>: the intro in C major, C, G, Am, F, then C, G, F, C. Opened directly, it shows no ×N badges: those are set in the editor.</figcaption>
+  <figcaption>The <strong>🎼 music stand</strong> on a computer, open on <em>Let It Be</em>: the intro in C major, C, G, Am, F, then C, G, F, C.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
 <figure>
   <img
-    src="/images/app-pupitre-let-it-be-do-majeur-tablette-2026-10-24-en.webp"
+    src="/images/app-pupitre-plein-ecran-tablette-2026-10.webp"
     width="1536"
     height="2048"
-    alt="The music stand at tablet-portrait size, Starry Night theme. The Let It Be score fills the screen: title, The Beatles, 4/4, the Intro with its diagrams (C · Balance, G · Tension, Am · Nostalgia, F · Ease), then VERSE 1 with the diagrams above the lyrics “When I find myself in times of trouble / Mother Mary comes to me”; under some words, the chord's coloured frame sits half a line too low. At the bottom, the music stand controls: close, Play (in yellow), Practise, Learn the chords, Edit, the 100% zoom, then Scroll, A-B loop, Transpose, Export and Sing."
+    alt="The music stand at tablet-portrait size, Starry Night theme, interface in French. The Let It Be score fills the screen: title, The Beatles, 4/4, the Intro with its diagrams (C · Équilibre, G · Tension, Am · Nostalgie, F · Détente), then COUPLET 1 (verse 1) with the diagrams above the lyrics “When I find myself in times of trouble / Mother Mary comes to me”. At the bottom, the music stand controls: close, Lire (Play, in yellow), M’entraîner (Practise), Apprendre la grille (Learn the chords), Modifier (Edit), the 100% zoom, then Défiler (Scroll), Boucle A-B (A-B loop), Transposer (Transpose), Exporter (Export) and Chanter (Sing)."
     data-lb="partition-pupitre"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The same music stand at iPad-portrait proportions: the score fills the screen, and the playing controls are grouped at the bottom — <em>Play</em>, <em>Practise</em>, <em>Learn the chords</em>, <em>Edit</em>, the zoom, then <em>Scroll</em>, <em>A-B loop</em>, <em>Transpose</em>, <em>Export</em>, <em>Sing</em>.</figcaption>
+  <figcaption>The <strong>🎼 music stand</strong> at iPad-portrait proportions: the score fills the screen, and the playing controls are grouped at the bottom — <em>Play</em>, <em>Practise</em>, <em>Learn the chords</em>, <em>Edit</em>, the zoom, then <em>Scroll</em>, <em>A-B loop</em>, <em>Transpose</em>, <em>Export</em>, <em>Sing</em>. (The interface is shown in French.)</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
