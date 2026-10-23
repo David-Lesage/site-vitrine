@@ -2,8 +2,8 @@
 title: "Apprendre tes accords pas à pas : le mode guidé"
 description: "Dans Handpan Constellation Studio, le handpan devient une surface guidée : l'app allume la note colorée à jouer et t'accompagne, accord après accord, avec un retour sonore et visuel."
 pubDate: 2026-08-11
-updatedDate: 2026-10-23
-cover: "/images/app-mode-guide-note-allumee-2026-09.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-mode-guide-note-allumee-2026-10.webp"
 category: "logique"
 tags: ["méthode", "accords", "apprentissage"]
 lang: "fr"
@@ -15,19 +15,19 @@ Apprendre un accord au handpan, c'est savoir quelles notes jouer, dans quel ordr
 
 Ce mode guidé fonctionne **que ton handpan soit acoustique ou électronique** : dans les deux cas, l'app allume sur l'écran les notes réelles de ta gamme, une par une.
 
-> **Mise à jour du 23 octobre 2026.** Chaque accord a maintenant son bouton **🎓**, à côté de 👁 et ▶. Il ouvre un écran rien que pour lui, « Apprendre cet accord » : la note à jouer, son numéro et la main à utiliser, le tracé qui grandit à chaque bonne note, puis « Bien joué ! » et l'accord suivant. Tu choisis comment pratiquer (simple, aller-retour ou descendant) et qui t'écoute : le micro ou l'écran. Ça marche aussi avec deux handpans côte à côte. La capture ci-dessous montre la version de septembre.
-
 ## Le vrai blocage quand on débute les accords
 
 Sur le papier, un accord est une abstraction : trois ou quatre notes qu'il faut « connaître ». Résultat, beaucoup de joueurs de handpan restent bloqués sur des mélodies ou des nappes, sans jamais oser **s'accompagner** ou accompagner quelqu'un. Le problème n'est pas le talent : c'est que la théorie arrive avant le plaisir de jouer.
 
 ## Comment fonctionne le mode guidé
 
-Le principe est simple et visuel. Tu choisis un accord, et l'app **te montre exactement où poser tes mains** :
+Le principe est simple et visuel. Chaque accord a son bouton **🎓**, à côté de 👁 et ▶. Il ouvre un écran rien que pour lui, **« Apprendre un accord »**, et l'app **te montre exactement où poser tes mains** :
 
-- La **note colorée** à jouer s'illumine sur le handpan virtuel.
+- La **note colorée** à jouer pulse sur le pan, avec son numéro et la main à utiliser (« Frappe 1 sur 7 : D — main droite »).
 - Tu la touches, un **retour sonore et visuel** confirme (ou t'invite à réessayer).
-- La note suivante s'allume, et ainsi de suite jusqu'à ce que l'accord soit complet.
+- La note suivante s'allume, et ainsi de suite jusqu'à ce que l'accord soit complet ; puis vient l'accord suivant.
+
+Tu choisis **ta façon de jouer** l'accord (simple, aller-retour ou descendant) et **qui valide ta frappe** : un clic à l'écran, ton Neotone en MIDI, ou le micro. Ça marche aussi avec deux handpans côte à côte.
 
 <figure class="article-mp4">
   <video controls preload="none" playsinline poster="/videos/blog/demo-oeil.webp" width="1920" height="1080" aria-label="Vidéo avec le son : l'œil d'une carte d'accord">
@@ -39,20 +39,19 @@ Le principe est simple et visuel. Tu choisis un accord, et l'app **te montre exa
 
 <figure>
   <img
-    src="/images/app-mode-guide-note-allumee-2026-09.webp"
-    width="1600"
-    height="807"
-    alt="Le Mode Logique pendant l'apprentissage guidé, sur un Neotone Mutant en D Majeur. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ (✋ +LR) et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Au centre, l'écran du handpan affiche « Joue la note qui pulse ! ». Quatre notes sont allumées en rouge : le ding D2 marqué d'un petit R, A3 marqué d'un L, F#3 et D4 marqué d'un R ; toutes les autres notes du pan sont éteintes, en gris, chacune gardant son fin liseré de couleur. En bas, les sept cartouches de degrés de I ÉQUILIBRE D à VII MYSTÈRE C#°."
+    src="/images/app-mode-guide-note-allumee-2026-10.webp"
+    width="2880"
+    height="1454"
+    alt="L'écran « 🎓 Apprendre un accord » sur un Neotone Mutant, thème Nuit étoilée. En haut, le titre « Dm · Équilibre », les notes D F A, et « Accord 1 sur 7 » suivi des sept pastilles Dm (active), Edim, F, Gm, Am, Bb, C ; à droite, « En grand » et « Stop ». À gauche, le pan : quatre notes allumées en rouge et numérotées, 1 sur le ding D2, 2 sur F3, 3 sur A3, 4 sur D4 ; les autres sont sombres ; dessous, « 👆 Touche la note qui pulse ». À droite, le bloc « La note attendue » : « Frappe 1 sur 7 : D — main droite · elle pulse sur le pan », la suite des frappes 1 2 3 4 3 2 1, et les boutons « Écouter l'accord » et « Recommencer ». Puis « Qui valide ta frappe ? » : Clic à l'écran (actif), Neotone (MIDI), Micro, avec « Après un accord réussi : Enchaîner / Me demander / Ancrer cet accord ». En bas, « Ta façon de jouer » : Simple, Aller-retour (actif), Descendant."
     data-lb="mode-guide"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>L'apprentissage guidé en cours : la consigne au centre dit « <strong>Joue la note qui pulse !</strong> ». Les notes de l'accord s'allument sur le pan, chacune avec la main suggérée — <em>L</em> pour la gauche, <em>R</em> pour la droite. Les notes qui ne font pas partie de l'accord restent éteintes.</figcaption>
+  <figcaption>L'écran <strong>🎓 Apprendre un accord</strong>, ici sur un Neotone Mutant. À gauche, les notes de <em>Dm · Équilibre</em> allumées et numérotées sur le pan ; à droite, la note attendue — « <strong>Frappe 1 sur 7 : D</strong> », main droite, elle pulse sur le pan — puis qui valide ta frappe (l'écran, le Neotone en MIDI ou le micro) et ta façon de jouer l'accord.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- MAJ 23/10/2026 : ce constat est dépassé. L'écran 🎓 « Apprendre cet accord » existe (#487, #515) et le micro écoute un acoustique (#514). Capture acoustique ET Neotone à produire au lot 2. -->
-<!-- 📷 CAPTURE JUMELLE : PAS D'ÉQUIVALENT ACOUSTIQUE (vérifié le 09/09/2026). En mode acoustique, le segment « 🎓 APPRENTISSAGE INTERACTIF › 🎹 Accords » est bien présent et s'active, mais l'écran du handpan reste sur le nom de la gamme et aucune note ne s'allume : la consigne « Joue la note qui pulse ! » ne s'affiche jamais. L'écran de cet article n'existe donc pas sur un pan acoustique — commentaire laissé en place, à reprendre le jour où le mode guidé y sera actif. -->
+<!-- 📷 24/10/2026 : capture Neotone posée (écran 🎓 « Apprendre un accord »). La capture acoustique jumelle reste à produire : elle n'est pas dans le lot de captures du 23/10. -->
 
 Tu avances **à ton rythme**, autant de fois que tu veux. Ce n'est pas un examen chronométré : c'est un accompagnement patient qui te fait mémoriser l'accord **par la couleur et par le geste**, pas par cœur.
 

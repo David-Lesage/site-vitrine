@@ -2,7 +2,7 @@
 title: "Handpan Constellation Studio on your acoustic handpan (free)"
 description: "Handpan Constellation Studio's acoustic mode shows YOUR scale in colour on your own handpan and teaches you chords. Free, no Neotone needed."
 pubDate: 2026-07-14
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/app-acoustique.jpg"
 category: "acoustique"
 tags: ["acoustic", "getting started"]
@@ -35,19 +35,13 @@ The app shows you the chords of your scale as **Constellations** — those geome
 
 In acoustic mode, **creating** coloured layouts and **exporting** your visuals are free (exports always carry a discreet watermark). You can compose your own reading of a scale and keep it in front of you. To go further, discover how [scale creation](/en/blog/creer-sa-gamme-de-handpan) works.
 
-## Bottom notes: two displays to choose from
+## Bottom notes: a star around the pan
 
-Many acoustic handpans have **bottom notes** — the notes under the instrument, around the lower opening. Handpan Constellation Studio supports them and lets you choose **how to display them**, depending on how you picture your pan:
+Many acoustic handpans have **bottom notes** — the notes under the instrument, around the lower opening. Handpan Constellation Studio supports them and shows them **as a star** (*Notepan* style): they form a ring around the main pan, outlined with dashes, so you can see everything at a glance:
 
-**Star display** (*Notepan* style) — the bottom notes appear as a ring around the main pan, handy to see everything at a glance:
+![Handpan Constellation Studio, Starry Night theme — David's D Kurd 18 (“D Kurd 18 — David Lesage Signature”): twelve notes on the shell, from the D3 ding to Bb5, and six bottom notes in a ring around the pan, outlined with yellow dashes — G3, F3, F5, G5, Bb2 and C3 — each one coloured](/images/blog-bottom-etoile-2026-10-en.webp)
 
-![Handpan Constellation Studio — 20-note D Kurd, bottom notes shown as a star around the pan](/images/blog-bottom-etoile.webp)
-
-**Two-shell display** (*Yishama* style) — the underside is drawn as a second pan set alongside, closer to the instrument's physical reality:
-
-![Handpan Constellation Studio — 20-note D Kurd, the bottom shell displayed beside the pan](/images/blog-bottom-coques.webp)
-
-On a rich scale like a **20-note D Kurd**, these two views make all the difference for finding your way around — just pick whichever speaks to you.
+On a rich scale like this **D Kurd 18**, this view makes all the difference for finding your way around: the bottom notes stay in their place, around the pan, without hiding the ones on top. The “two shells” display, which drew the underside as a second pan set alongside, was removed from the app at the end of August 2026: only the star view exists today.
 
 ## What has changed since, and where to start
 

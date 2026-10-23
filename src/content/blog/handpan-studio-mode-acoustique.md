@@ -2,7 +2,7 @@
 title: "Handpan Constellation Studio sur ton handpan acoustique"
 description: "Le mode acoustique de Handpan Constellation Studio visualise TA gamme en couleurs sur ton propre handpan et t'apprend des accords. Gratuit, sans Neotone."
 pubDate: 2026-07-14
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/app-acoustique.jpg"
 category: "acoustique"
 tags: ["acoustique", "débuter"]
@@ -35,19 +35,13 @@ L'app te montre les accords de ta gamme sous forme de **Constellations** — ces
 
 En mode acoustique, la **création** de dispositions colorées et l'**export** de tes visuels sont gratuits (l'export porte toujours un discret filigrane). Tu peux composer ta propre lecture de gamme et la garder sous les yeux. Pour aller plus loin, découvre comment fonctionne la [création de gamme](/blog/creer-sa-gamme-de-handpan).
 
-## Les notes du dessous : deux affichages au choix
+## Les notes du dessous : en étoile autour du pan
 
-Beaucoup de handpans acoustiques ont des **notes du dessous** — celles qui sont sous l'instrument, autour du trou. (L'application les appelle comme ça partout : « notes du dessous », et non *bottom notes*.) Handpan Constellation Studio les prend en charge et te laisse choisir **comment les afficher**, selon ta façon de te représenter ton pan :
+Beaucoup de handpans acoustiques ont des **notes du dessous** — celles qui sont sous l'instrument, autour du trou. (L'application les appelle comme ça partout : « notes du dessous », et non *bottom notes*.) Handpan Constellation Studio les prend en charge et les affiche **en étoile** (façon *Notepan*) : elles forment une couronne autour du pan principal, cerclées de pointillés, ce qui permet de tout voir d'un seul coup d'œil :
 
-**Affichage en étoile** (façon *Notepan*) — les notes du dessous s'affichent en couronne autour du pan principal, pratique pour tout voir d'un seul coup d'œil :
+![Handpan Constellation Studio, thème Nuit étoilée — le D Kurd 18 de David (« D Kurd 18 — David Lesage Signature ») : douze notes sur la coque, du ding D3 à Bb5, et six notes du dessous en couronne autour du pan, cerclées de pointillés jaunes — G3, F3, F5, G5, Bb2 et C3 — chacune colorée](/images/blog-bottom-etoile-2026-10.webp)
 
-![Handpan Constellation Studio — D Kurd 20 notes, les notes du dessous affichées en étoile autour du pan](/images/blog-bottom-etoile.webp)
-
-**Affichage 2 coques** (façon *Yishama*) — le dessous est représenté comme un second pan posé à côté, plus fidèle à la réalité physique de l'instrument :
-
-![Handpan Constellation Studio — D Kurd 20 notes, la coque du dessous présentée à côté](/images/blog-bottom-coques.webp)
-
-Sur une gamme riche comme un **D Kurd 20 notes**, ces deux vues changent tout pour se repérer : choisis simplement celle qui te parle le plus.
+Sur une gamme riche comme ce **D Kurd 18**, cette vue change tout pour se repérer : les notes du dessous restent à leur place, autour du pan, sans cacher celles du dessus. L'affichage « 2 coques », qui dessinait le dessous comme un second pan posé à côté, a été retiré de l'application fin août 2026 : seule la vue en étoile existe aujourd'hui.
 
 ## Ce qui a changé depuis, et par où entrer
 

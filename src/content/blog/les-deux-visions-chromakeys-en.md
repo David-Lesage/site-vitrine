@@ -85,7 +85,7 @@ On an eighteen-note pan, the difference is even more striking.
     src="/images/blog-chromakeys-2026-14-off-on-18-notes-2026-10-en.webp"
     width="2160"
     height="1180"
-    alt="David's D Kurd 18 (the handpan's screen reads “D Kurd 18 — David Lesage Signature”), twice side by side, with the ChromaKeys island above. Ten notes on the shell and eight bottom notes laid out as a star around it, outlined with dashes. On the left, ChromaKeys Off: eighteen metal-coloured notes. On the right, ChromaKeys On: each takes the colour of its name, the Ds orange, the Cs red, the Fs green, the Gs sky blue, the As and B flats in the blues."
+    alt="David's D Kurd 18 (the handpan's screen reads “D Kurd 18 — David Lesage Signature”), twice side by side, with the ChromaKeys island above. Twelve notes on the shell and six bottom notes laid out as a star around it, outlined with dashes. On the left, ChromaKeys Off: eighteen metal-coloured notes. On the right, ChromaKeys On: each takes the colour of its name, the Ds orange, the Cs red, the Fs green, the Gs sky blue, the As and B flats in the blues."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"

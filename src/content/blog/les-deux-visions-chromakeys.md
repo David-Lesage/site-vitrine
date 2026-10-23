@@ -85,7 +85,7 @@ Sur un pan à dix-huit notes, l'écart est encore plus frappant.
     src="/images/blog-chromakeys-2026-14-off-on-18-notes-2026-10.webp"
     width="2158"
     height="1180"
-    alt="Le D Kurd 18 de David (l'écran du handpan indique « D Kurd 18 — David Lesage Signature »), deux fois côte à côte, avec l'îlot ChromaKeys au-dessus. Dix notes sur la coque et huit notes du dessous disposées en étoile autour, cerclées de pointillés. À gauche, ChromaKeys sur Off : dix-huit notes couleur métal. À droite, ChromaKeys sur On : chacune prend la couleur de son nom, les ré orange, les do rouges, les fa verts, les sol bleu ciel, les la et les si bémol dans les bleus."
+    alt="Le D Kurd 18 de David (l'écran du handpan indique « D Kurd 18 — David Lesage Signature »), deux fois côte à côte, avec l'îlot ChromaKeys au-dessus. Douze notes sur la coque et six notes du dessous disposées en étoile autour, cerclées de pointillés. À gauche, ChromaKeys sur Off : dix-huit notes couleur métal. À droite, ChromaKeys sur On : chacune prend la couleur de son nom, les ré orange, les do rouges, les fa verts, les sol bleu ciel, les la et les si bémol dans les bleus."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"

@@ -2,7 +2,8 @@
 title: "The Sound Atlas: travelling through the world's scales"
 description: "Handpan Constellation Studio's Atlas lets you roam handpan scales from around the world, hear them and see them in colour. A sonic journey."
 pubDate: 2026-07-06
-cover: "/images/blog-atlas-destinations-2026-vignette.webp"
+updatedDate: 2026-10-24
+cover: "/images/blog-atlas-destinations-2026-vignette-2026-10-en.webp"
 category: "gammes"
 tags: ["scales", "atlas"]
 lang: "en"
@@ -26,15 +27,15 @@ Each scale carries an emotional colour: bright, melancholic, mysterious, soothin
 
 <figure>
   <img
-    src="/images/blog-atlas-destinations-2026-09.webp"
-    width="1600"
-    height="1745"
-    alt="The « Découvrir d'autres gammes » panel open on the right of the application, dark theme, beside an acoustic D Minor / Kurd 10 handpan whose screen, right under the D3 ding, carries the scale name. At the top of the panel, the « Mes handpans » block: « D Minor / Kurd 10 » marked « tu joues dessus », the « POUR D Minor / Kurd 10 » bar with the ACOUSTIQUE badge, « 🎼 Mes morceaux (156) », « 🎡 Tester une autre tonalité », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » and « ⚡ Ajouter un handpan électronique »; then the collapsed sections « ✨ Ce que tu peux faire » and « 🎯 Compléter ». Below, « 🧭 Découvrir d'autres gammes » unfolded: a THÈME selector with four choices — Classique (active), 🌌 Planétarium, 🛂 Passeport, 🗞 Magazine — a « 🌍 Voyage » (active) / « 🎛 Structuré » switch, a search field, the heading « Où veux-tu voyager aujourd'hui ? » and six coloured cards, each with a name, a mood line and a count: Source Sereine (calm and meditation, 9 handpans), Grand Large (joy and open horizons, 7 handpans), Échappée Vive (playful and modern, 3 handpans), Clair-Obscur (bittersweet, 3 handpans), Routes du Désert (mystery and eastern warmth, 21 handpans), Terres de Brume (melancholy and introspection, 31 handpans). Bottom left, the chord slots F, Gm, Am, A#, C and the PROGRESSION DES ACCORDS arrow."
+    src="/images/blog-atlas-destinations-2026-10-en.webp"
+    width="1650"
+    height="1800"
+    alt="The Sound Atlas open in the “Explore” panel on the right of the app, Starry Night theme, next to a Neotone Mutant with coloured notes. At the top, the “My handpan's chords”, “Degrees &amp; emotions” and “Sound Atlas ›” buttons. In the panel: the “Sound Atlas” title and “Copy this tool's link”, a “Search for a scale… (e.g. ‘Kurd’, ‘D Kurd’)” field, then a carousel with its ‹ and › arrows: a “DESTINATION” card decorated with a cherry blossom, subtitled “ZEN • AIR | AKEBONO / KOKIN”. Below, “① SELECTION” with the tonality D and the “Choose the scale” menu, the line “Pick your scale to bring the handpan to life — type its name in the search above (“Kurd”, “Amara”…), or browse the destinations with the ‹ › arrows”, then “② LISTEN” and the “Music Demo” button. At the foot, “Play with your handpan — 157 playable songs ›”."
     data-lb="atlas"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The Atlas panel, whole. Six destinations, each with its mood in one line and the <strong>number of handpans that live there</strong> — from 3 in <em>Échappée Vive</em> to 31 in <em>Terres de Brume</em>. At the top, the four display themes: Classique, Planétarium, Passeport, Magazine. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The Sound Atlas, opened from <strong>Discover › Sound Atlas</strong>. The destinations scroll by one at a time in a carousel — here <em>Zen · Air</em>, with the Akebono and Kokin scales — and each one can be chosen, then heard with <strong>Music Demo</strong>. You can also search for a scale by name.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

@@ -2,8 +2,8 @@
 title: "Learn your chords step by step: the guided mode"
 description: "In Handpan Constellation Studio, your handpan becomes a guided surface: the app lights up the coloured note to play and walks you through, chord after chord, with sound and visual feedback."
 pubDate: 2026-08-11
-updatedDate: 2026-10-23
-cover: "/images/app-mode-guide-note-allumee-2026-09.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-mode-guide-note-allumee-2026-10-en.webp"
 category: "logique"
 tags: ["method", "chords", "learning"]
 lang: "en"
@@ -15,19 +15,19 @@ Learning a chord on the handpan means knowing which notes to play, in what order
 
 The guided mode works **whether your handpan is acoustic or electronic**: either way, the app lights up the real notes of your scale on screen, one at a time.
 
-> **Updated 23 October 2026.** Every chord now has its own **🎓** button, next to 👁 and ▶. It opens a screen just for that chord, *Apprendre cet accord* (learn this chord): the note to play, its number and the hand to use, the shape growing with each right note, then a "well played" and the next chord. You choose how to practise (simple, back-and-forth or descending) and who listens to you: the microphone or the screen. It also works with two handpans side by side. The screenshot below shows the September version.
-
 ## The real block when starting out with chords
 
 On paper, a chord is an abstraction: three or four notes you're supposed to "know". As a result, many handpan players stay stuck on melodies or ambient textures, never daring to **accompany** themselves or someone else. It's not about talent: theory simply arrives before the joy of playing.
 
 ## How the guided mode works
 
-The idea is simple and visual. You pick a chord, and the app **shows you exactly where to place your hands**:
+The idea is simple and visual. Every chord has its own **🎓** button, next to 👁 and ▶. It opens a screen just for that chord, **“Learn a chord”**, and the app **shows you exactly where to place your hands**:
 
-- The **coloured note** to play lights up on the virtual handpan.
+- The **coloured note** to play pulses on the pan, with its number and the hand to use (“Strike 1 of 7: D — right hand”).
 - You touch it, and **sound and visual feedback** confirms (or invites you to try again).
-- The next note lights up, and so on until the chord is complete.
+- The next note lights up, and so on until the chord is complete; then comes the next chord.
+
+You choose **your way of playing** the chord (simple, up and back, or descending) and **who checks your strike**: a click on screen, your Neotone over MIDI, or the microphone. It also works with two handpans side by side.
 
 <figure class="article-mp4">
   <video controls preload="none" playsinline poster="/videos/blog/demo-oeil.webp" width="1920" height="1080" aria-label="Video with sound: the eye on a chord card">
@@ -39,20 +39,19 @@ The idea is simple and visual. You pick a chord, and the app **shows you exactly
 
 <figure>
   <img
-    src="/images/app-mode-guide-note-allumee-2026-09.webp"
-    width="1600"
-    height="807"
-    alt="Logic Mode during guided learning, on a Neotone Mutant in D Major. Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, then the four menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ (✋ +LR) and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island outlined in cyan with its printer icon. In the centre, the handpan screen reads « Joue la note qui pulse ! ». Four notes are lit in red: the D2 ding marked with a small R, A3 marked L, F#3, and D4 marked R; every other note on the pan is dimmed to grey, each keeping its thin coloured rim. Along the bottom, the seven degree cards from I ÉQUILIBRE D to VII MYSTÈRE C#°."
+    src="/images/app-mode-guide-note-allumee-2026-10-en.webp"
+    width="2880"
+    height="1454"
+    alt="The “🎓 Learn a chord” screen on a Neotone Mutant, Starry Night theme. At the top, the title “Dm · Balance”, the notes D F A, and “Chord 1 of 7” followed by the seven pills Dm (active), Edim, F, Gm, Am, Bb, C; on the right, “Full view” and “Stop”. On the left, the pan: four notes lit red and numbered, 1 on the D2 ding, 2 on F3, 3 on A3, 4 on D4; the others are dark; below, “👆 Tap the pulsing note”. On the right, “The note to play” block: “Strike 1 of 7: D — right hand · it pulses on the pan”, the sequence of strikes 1 2 3 4 3 2 1, and the “Listen to the chord” and “Start again” buttons. Then “Who checks your strike?”: Click on screen (active), Neotone (MIDI), Microphone, with “After a successful chord: Keep going / Ask me / Anchor this chord”. At the bottom, “Your way of playing”: Simple, Up and back (active), Descending."
     data-lb="mode-guide"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Guided learning in progress: the prompt in the middle reads « <strong>Joue la note qui pulse !</strong> » — play the pulsing note. The chord's notes light up on the pan, each with its suggested hand — <em>L</em> for left, <em>R</em> for right. Notes outside the chord stay dark. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The <strong>🎓 Learn a chord</strong> screen, here on a Neotone Mutant. On the left, the notes of <em>Dm · Balance</em> lit and numbered on the pan; on the right, the note to play — “<strong>Strike 1 of 7: D</strong>”, right hand, it pulses on the pan — then who checks your strike (the screen, the Neotone over MIDI or the microphone) and your way of playing the chord.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-<!-- UPDATE 23/10/2026: this finding is outdated. The 🎓 "Learn this chord" screen exists (#487, #515) and the microphone listens to an acoustic (#514). Acoustic AND Neotone screenshots to produce in batch 2. -->
-<!-- 📷 TWIN SCREENSHOT: NO ACOUSTIC EQUIVALENT (checked 09/09/2026). In acoustic mode the « 🎓 APPRENTISSAGE INTERACTIF › 🎹 Accords » segment is present and does switch on, but the handpan screen stays on the scale name and no note lights up: the « Joue la note qui pulse ! » prompt never appears. This article's screen therefore does not exist on an acoustic pan — comment left in place, to be revisited once guided mode works there. -->
+<!-- 📷 24/10/2026: Neotone screenshot in place (🎓 “Learn a chord” screen). The acoustic twin screenshot is still to be produced: it is not in the 23/10 batch of screenshots. -->
 
 You move at **your own pace**, as many times as you like. It's not a timed exam: it's a patient guide that helps you memorise the chord **through colour and gesture**, not by rote.
 

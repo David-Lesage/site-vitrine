@@ -2,7 +2,8 @@
 title: "L'Atlas Sonore : voyager dans les gammes du monde"
 description: "L'Atlas de Handpan Constellation Studio te laisse parcourir les gammes de handpan du monde entier, les écouter et les visualiser en couleurs. Un voyage sonore."
 pubDate: 2026-07-06
-cover: "/images/blog-atlas-destinations-2026-vignette.webp"
+updatedDate: 2026-10-24
+cover: "/images/blog-atlas-destinations-2026-vignette-2026-10.webp"
 category: "gammes"
 tags: ["gammes", "atlas"]
 lang: "fr"
@@ -26,19 +27,19 @@ Chaque gamme porte une couleur émotionnelle : lumineuse, mélancolique, mystér
 
 <figure>
   <img
-    src="/images/blog-atlas-destinations-2026-09.webp"
-    width="1600"
-    height="1745"
-    alt="Le panneau « Découvrir d'autres gammes » ouvert à droite de l'application, thème sombre, à côté d'un handpan acoustique D Minor / Kurd 10 dont l'écran, juste sous le ding D3, porte le nom de la gamme. En haut du panneau, le bloc « Mes handpans » : « D Minor / Kurd 10 » marqué « tu joues dessus », la barre « POUR D Minor / Kurd 10 » avec le badge ACOUSTIQUE, « 🎼 Mes morceaux (156) », « 🎡 Tester une autre tonalité », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » et « ⚡ Ajouter un handpan électronique » ; puis les sections repliées « ✨ Ce que tu peux faire » et « 🎯 Compléter ». En dessous, « 🧭 Découvrir d'autres gammes » déplié : un sélecteur THÈME avec quatre choix — Classique (actif), 🌌 Planétarium, 🛂 Passeport, 🗞 Magazine — une bascule « 🌍 Voyage » (active) / « 🎛 Structuré », un champ de recherche, le titre « Où veux-tu voyager aujourd'hui ? » et six cartes colorées, chacune avec son nom, une phrase d'ambiance et un décompte : Source Sereine (« Calme, méditation, simplicité », 9 handpans), Grand Large (« Joie et horizons ouverts », 7 handpans), Échappée Vive (« Espiègle, moderne, entraînant », 3 handpans), Clair-Obscur (« Doux-amer, entre ombre et lumière », 3 handpans), Routes du Désert (« Mystère et chaleur d'Orient », 21 handpans), Terres de Brume (« Mélancolie et introspection », 31 handpans). En bas à gauche, les emplacements d'accords F, Gm, Am, A#, C et la flèche PROGRESSION DES ACCORDS."
+    src="/images/blog-atlas-destinations-2026-10.webp"
+    width="1650"
+    height="1800"
+    alt="L'Atlas Sonore ouvert dans le panneau « Explorer » à droite de l'application, thème Nuit étoilée, à côté d'un Neotone Mutant aux notes colorées. En haut, les boutons « Les accords de mon handpan », « Degrés &amp; émotions » et « Atlas sonore › ». Dans le panneau : le titre « Atlas Sonore » et « Copier le lien de cet outil », une recherche « Rechercher une gamme… (ex. « Kurd », « D Kurd ») », puis un carrousel avec ses flèches ‹ et › : une carte « DESTINATION » ornée d'une fleur de cerisier, sous-titrée « ZEN • AIR | AKEBONO / KOKIN ». Dessous, « ① SÉLECTION » avec la tonalité D et le menu « Choisir la gamme », la phrase « Choisis ta gamme pour faire sonner le handpan — tape son nom dans la recherche ci-dessus (« Kurd », « Amara »…), ou fais défiler les destinations avec les flèches ‹ › », puis « ② ÉCOUTE » et le bouton « Démo musicale ». En pied, « Jouer avec ton handpan › »."
     data-lb="atlas"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le panneau de l'Atlas, entier. Six destinations, chacune avec son ambiance en une phrase et le <strong>nombre de handpans qui l'habitent</strong> — de 3 pour <em>Échappée Vive</em> à 31 pour <em>Terres de Brume</em>. En haut, les quatre thèmes d'affichage : Classique, Planétarium, Passeport, Magazine.</figcaption>
+  <figcaption>L'Atlas Sonore, ouvert depuis <strong>Découvrir › Atlas sonore</strong>. Les destinations défilent une à une dans un carrousel — ici <em>Zen · Air</em>, avec les gammes Akebono et Kokin — et chacune se choisit, puis s'écoute avec <strong>Démo musicale</strong>. On peut aussi chercher une gamme par son nom.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-<!-- 📷 CAPTURE JUMELLE : PAS D'ÉQUIVALENT ÉLECTRONIQUE (vérifié le 09/09/2026). Sur un Neotone, l'Atlas n'est pas la section « 🧭 Découvrir d'autres gammes » rangée sous un instrument déjà choisi : c'est le panneau « Atlas Sonore » lui-même, qui SERT à choisir la gamme, et il présente les destinations en carrousel (❮ DESTINATION ZEN • AIR | AKEBONO / KOKIN ❯) au lieu de la grille des six cartes. L'écran de cette figure n'existe donc pas sur un pan électronique — commentaire laissé en place. -->
+<!-- 📷 CAPTURE (24/10/2026) : l'Atlas Sonore dans le panneau « Explorer », sur un Neotone Mutant (carrousel de destinations). La grille de six destinations de la version acoustique de septembre n'existe plus. Pas de capture acoustique jumelle de ce panneau dans le lot du 23/10. -->
 
 ### Écouter avant de choisir
 

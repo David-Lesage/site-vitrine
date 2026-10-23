@@ -2,8 +2,8 @@
 title: "“Reveal”: everything your handpan already knows how to play"
 description: "A D Kurd 10 gives you 6 chords and lets you accompany 156 pieces from the repertoire. One button shows you that, before you even think about a second instrument."
 pubDate: 2026-09-01
-updatedDate: 2026-10-23
-cover: "/images/blog-reveler-dkurd10-ciel.webp"
+updatedDate: 2026-10-24
+cover: "/images/blog-reveler-dkurd10-ciel-2026-10-en.webp"
 category: "acoustique"
 tags: ["acoustic", "reveal", "repertoire"]
 lang: "en"
@@ -19,11 +19,9 @@ One door, one button, and one question put to your instrument: *what do you alre
 
 ## Where it is, exactly
 
-> **Updated 23 October 2026.** The route has changed. The chord workshop now opens in a panel on the right, without hiding the pan, and ✨ Reveal also sits in the **▶ Play** tab, among what your pan allows. The next paragraph describes the September route.
+Load your scale in acoustic mode. Under the pan you have the **🎼 Chord workshop** bar — the one that says "all the chords you can play on your D Kurd 10". To the right of that bar: **✨ Reveal**, ↗ Enlarge, 🖨 Print. Unfolded, the bar opens the workshop in a panel on the right, without hiding the pan. And ✨ Reveal also sits in the **▶ Play** tab, among what your pan allows.
 
-Load your scale in acoustic mode. Under the pan you have the **🎼 Chord Workshop** bar — the same one that shows "every chord playable on your instrument". To the right of that bar, three buttons: **✨ Reveal**, ↗ Enlarge, 🖨 Print.
-
-It's the first one. One click, and the screen opens full frame.
+One click on ✨ Reveal, and the screen opens full frame.
 
 Until 31 August, this screen was shut away in the 🧪 Lab and reserved for the duo. Two things have changed: it's out of the Lab, and **it works with a single handpan**. That matters, because the person who most needs to know what their instrument allows is precisely the one who only has one.
 
@@ -36,21 +34,21 @@ It's also the instrument people go round in circles on. You play three motifs, y
 Here's what the screen answers, on this instrument:
 
 > **0 / 6 chords acquired**
-> **156** pieces from the repertoire that D Minor / Kurd 10 already lets you accompany.
+> **157** songs from the repertoire that D already lets you accompany.
 
-Six, and one hundred and fifty-six. Those are the two numbers that count, and they aren't of the same order.
+Six, and one hundred and fifty-seven. Those are the two numbers that count, and they aren't of the same order.
 
 <figure>
   <img
-    src="/images/blog-reveler-dkurd10-ciel.webp"
-    width="2000"
-    height="1000"
-    alt="Handpan Constellation Studio, the “Reveal your chords” screen, tab A · The revelation, D Minor / Kurd 10 scale. Top right, the “0 / 6 chords acquired” counter. In the centre, the CIRCLE OF FIFTHS wheel: six “?” dots packed tightly onto a single arc, on the A♯ – F – C side; all the rest of the circle (D, A, E, B, F♯, C♯, G♯, D♯) is dark. Under the circle: “Each star is a chord your handpan already knows how to play. They occupy one arc of the circle of fifths: that's the shape of your scale.” On the right, the bar “Your handpan's chords 0/6”, the yellow line “156 pieces from the repertoire that D Minor / Kurd 10 already lets you accompany”, and the prompt “Click a star. It rings, it names itself, it lights up.” At the bottom, the “And with a 2nd handpan?” insert."
+    src="/images/blog-reveler-dkurd10-ciel-2026-10-en.webp"
+    width="2880"
+    height="1440"
+    alt="Handpan Constellation Studio, the “Reveal your chords” screen, Starry Night theme, with a D Kurd 10 loaded (a “D” pill at the top, next to “Give feedback”). Top centre, three tabs: A · The reveal (active), B · The path, C · The map; on the right, the counter “0 / 6 chords acquired” and “Start over”. On the left, the CIRCLE OF FIFTHS: six “?” dots packed onto a single lit arc, on the A♯ – F – C side; the rest of the circle (D, A, E, B, F♯, C♯, G♯, D♯) is dark. On the right, the “Your handpan's chords 0/6” bar, the yellow line “157 songs from the repertoire that D already lets you accompany”, and the prompt “Click a star. It sounds, it gets its name, it lights up.”"
     data-lb="reveler-dkurd10-ciel"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>A D Kurd 10 in the <strong>✨ Reveal</strong> screen, <em>A · The revelation</em> tab: six chords, all packed onto <strong>a single arc</strong> of the circle of fifths. The rest of the circle is dark — that isn't a lack, it's the shape of the scale.</figcaption>
+  <figcaption>A D Kurd 10 in the <strong>✨ Reveal</strong> screen, tab <em>A · The reveal</em>: six chords, all packed onto <strong>a single arc</strong> of the circle of fifths. The rest of the circle is dark — that's not a lack, it's the shape of the scale. On the right, the repertoire count: <strong>157</strong> songs.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click it again for full size.</p>
 </figure>
 
@@ -87,7 +85,7 @@ And the key wheel is right there beside it: once you've understood that the terr
 
 The second number is the more surprising one, and it's the one to read honestly.
 
-The app's repertoire currently holds **197 pieces**. A D Kurd 10 on its own gives you **156** of them. Not 12, not 30: one hundred and fifty-six.
+When I did the count, in September, the app's repertoire held **197 pieces**, and a D Kurd 10 on its own gave you **156** of them (157 today, as the screen above shows). Not 12, not 30: over a hundred and fifty.
 
 But here's what the figure doesn't say on its own, and what I'd rather write down in black and white: of those 156, **148 are only playable by transposing**. Only **8** land as they are, in their original key.
 

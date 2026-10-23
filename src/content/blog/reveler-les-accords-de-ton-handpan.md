@@ -2,8 +2,8 @@
 title: "« Révéler » : tout ce que ton handpan sait déjà jouer"
 description: "Un D Kurd 10 donne 6 accords et permet d'accompagner 156 morceaux du répertoire. Un seul bouton te le montre, avant même de penser à un second instrument."
 pubDate: 2026-09-01
-updatedDate: 2026-10-23
-cover: "/images/blog-reveler-dkurd10-ciel.webp"
+updatedDate: 2026-10-24
+cover: "/images/blog-reveler-dkurd10-ciel-2026-10.webp"
 category: "acoustique"
 tags: ["acoustique", "révéler", "répertoire"]
 lang: "fr"
@@ -19,11 +19,9 @@ Une seule porte, un seul bouton, et une seule question posée à ton instrument 
 
 ## Où c'est, exactement
 
-> **Mise à jour du 23 octobre 2026.** Le chemin a changé. L'Atelier d'accords s'ouvre maintenant dans un panneau à droite, sans cacher le pan, et ✨ Révéler figure aussi dans l'onglet **▶ Jouer**, parmi ce que ton pan permet. Le paragraphe suivant décrit le chemin de septembre.
+Charge ta gamme en mode acoustique. Sous le pan, tu as la barre **🎼 Atelier d'accords** — celle qui annonce « tous les accords jouables sur ton D Kurd 10 ». À droite de cette barre : **✨ Révéler**, ↗ Agrandir, 🖨 Imprimer. Dépliée, la barre ouvre l'Atelier dans un panneau à droite, sans cacher le pan. Et ✨ Révéler figure aussi dans l'onglet **▶ Jouer**, parmi ce que ton pan permet.
 
-Charge ta gamme en mode acoustique. Sous le pan, tu as la barre **🎼 Atelier d'accords** — la même qui affiche « tous les accords jouables sur ton instrument ». À droite de cette barre, trois boutons : **✨ Révéler**, ↗ Agrandir, 🖨 Imprimer.
-
-C'est le premier. Un clic, et l'écran s'ouvre en plein cadre.
+Un clic sur ✨ Révéler, et l'écran s'ouvre en plein cadre.
 
 Jusqu'au 31 août, cet écran était enfermé dans le 🧪 Labo et réservé au duo. Deux choses ont changé : il est sorti du Labo, et **il fonctionne avec un seul handpan**. C'est important, parce que la personne qui a le plus besoin de savoir ce que son instrument permet, c'est justement celle qui n'en a qu'un.
 
@@ -36,21 +34,21 @@ C'est aussi l'instrument sur lequel on tourne en rond. On joue trois motifs, on 
 Voilà ce que l'écran répond, sur cet instrument :
 
 > **0 / 6 accords acquis**
-> **156** morceaux du répertoire que D Minor / Kurd 10 te permet déjà d'accompagner.
+> **157** morceaux du répertoire que D te permet déjà d'accompagner.
 
-Six et cent-cinquante-six. Ce sont les deux nombres qui comptent, et ils ne sont pas du même ordre.
+Six et cent-cinquante-sept. Ce sont les deux nombres qui comptent, et ils ne sont pas du même ordre.
 
 <figure>
   <img
-    src="/images/blog-reveler-dkurd10-ciel.webp"
-    width="2000"
-    height="1000"
-    alt="Handpan Constellation Studio, écran « Révéler tes accords », onglet A · La révélation, gamme D Minor / Kurd 10. En haut à droite, le compteur « 0 / 6 accords acquis ». Au centre, le cercle CYCLE DES QUINTES : six pastilles « ? » serrées sur un seul arc, du côté A♯ – F – C ; tout le reste du cercle (D, A, E, B, F♯, C♯, G♯, D♯) est éteint. Sous le cercle : « Chaque étoile est un accord que ton handpan sait déjà jouer. Elles occupent un arc du cycle des quintes : c'est la forme de ta gamme. » À droite, la barre « Les accords de ton handpan 0/6 », la ligne jaune « 156 morceaux du répertoire que D Minor / Kurd 10 te permet déjà d'accompagner », et l'invite « Clique une étoile. Elle sonne, elle se nomme, elle s'allume. » En bas, l'encart « Et avec un 2ᵉ handpan ? »."
+    src="/images/blog-reveler-dkurd10-ciel-2026-10.webp"
+    width="2880"
+    height="1440"
+    alt="Handpan Constellation Studio, écran « Révéler tes accords », thème Nuit étoilée, avec un D Kurd 10 chargé (pastille « D » en haut, à côté de « Donner mon avis »). En haut au centre, trois onglets : A · La révélation (actif), B · Le chemin, C · La carte ; à droite, le compteur « 0 / 6 accords acquis » et « Repartir de zéro ». À gauche, le cercle CYCLE DES QUINTES : six pastilles « ? » serrées sur un seul arc éclairé, du côté A♯ – F – C ; tout le reste du cercle (D, A, E, B, F♯, C♯, G♯, D♯) est éteint. À droite, la barre « Les accords de ton handpan 0/6 », la ligne jaune « 157 morceaux du répertoire que D te permet déjà d'accompagner », et l'invite « Clique une étoile. Elle sonne, elle se nomme, elle s'allume. »"
     data-lb="reveler-dkurd10-ciel"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Un D Kurd 10 dans l'écran <strong>✨ Révéler</strong>, onglet <em>A · La révélation</em> : six accords, tous serrés sur <strong>un seul arc</strong> du cycle des quintes. Le reste du cercle est éteint — ce n'est pas un manque, c'est la forme de la gamme.</figcaption>
+  <figcaption>Un D Kurd 10 dans l'écran <strong>✨ Révéler</strong>, onglet <em>A · La révélation</em> : six accords, tous serrés sur <strong>un seul arc</strong> du cycle des quintes. Le reste du cercle est éteint — ce n'est pas un manque, c'est la forme de la gamme. À droite, le compte du répertoire : <strong>157</strong> morceaux.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -87,7 +85,7 @@ Et la roue de tonalité est juste à côté : dès qu'on a compris que le territ
 
 Le second nombre est le plus surprenant, et c'est celui qu'il faut lire honnêtement.
 
-Le répertoire de l'application compte aujourd'hui **197 morceaux**. Un D Kurd 10 seul en permet **156**. Pas 12, pas 30 : cent cinquante-six.
+Quand j'ai fait le compte, en septembre, le répertoire de l'application comptait **197 morceaux**, et un D Kurd 10 seul en permettait **156** (157 aujourd'hui, comme le montre l'écran plus haut). Pas 12, pas 30 : plus de cent cinquante.
 
 Mais voilà ce que le chiffre ne dit pas tout seul, et que je préfère écrire noir sur blanc : sur ces 156, **148 ne sont jouables qu'en transposant**. Seulement **8** tombent tels quels dans leur tonalité d'origine.
 
