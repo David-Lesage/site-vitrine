@@ -2,7 +2,7 @@
 title: "Les Constellations : voir un accord comme une forme"
 description: "Que ton handpan soit acoustique ou électronique, un accord devient un dessin. Découvre les 3 façons de tracer une Constellation : Polygone, Ouvert et Mains."
 pubDate: 2026-07-02
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/blog-constellations-2026-couverture.webp"
 category: "methode"
 tags: ["méthode", "accords"]
@@ -79,10 +79,10 @@ Et les mêmes trois tracés sur un pan **acoustique**, un D Kurd 10. Sur ce pan,
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygone</span><span style="flex:1">Ouvert</span><span style="flex:1">Mains</span></div>
   <img
-    src="/images/blog-constellations-2026-trio-acoustique-v2.webp"
-    width="3712"
-    height="730"
-    alt="Trois captures côte à côte du même handpan acoustique D Minor / Kurd 10, l'œil ouvert sur l'accord I, Dm ; l'écran du handpan affiche « D Minor / Kurd 10 ». Au-dessus du pan, le menu Constellation est ouvert, le reste de l'interface est assombri. Quatre notes sont allumées en orange : le ding D3, D4, F4 et A4. À gauche, le style Polygone est actif (anneau cuivre) : le tracé relie D3, D4, F4, A4 et revient de A4 au ding ; ce trait de retour est entouré en cuivre. Au milieu, le style Ouvert est actif : les mêmes notes, mais le trait de A4 au ding a disparu, à l'endroit entouré. À droite, le style Mains est actif : le ding D3 est cerclé de rouge et marqué R ; D4, F4 et A4 sont cerclées de bleu, marquées L et reliées par un trait bleu. Les quatre notes sont entourées en cuivre."
+    src="/images/blog-constellations-2026-trio-acoustique-v2-2026-10.webp"
+    width="2936"
+    height="956"
+    alt="Trois pans côte à côte, le même handpan acoustique D Kurd 10, thème Nuit étoilée, l'œil ouvert sur l'accord Dm ; l'écran du handpan affiche « D Kurd 10 ». Quatre notes sont allumées en orange : le ding D3, D4, F4 et A4 ; les autres restent grises. À gauche, style Polygone : le tracé relie D3, D4, F4, A4 et revient de A4 au ding. Au milieu, style Ouvert : les mêmes notes, mais le trait de A4 au ding a disparu. À droite, style Mains : le ding D3 est cerclé de rouge et marqué R ; D4, F4 et A4 sont cerclées de bleu, marquées L et reliées par un trait bleu."
     data-lb="constellations"
     data-lb-wide
     loading="lazy"

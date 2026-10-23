@@ -2,7 +2,8 @@
 title: "Playing handpan by colours: the ChromaKeys method"
 description: "Learn handpan without music theory using ChromaKeys: every note becomes a colour, every chord a shape. David Lesage's visual method to progress fast."
 pubDate: 2026-06-15
-cover: "/images/app-chromakeys-on-2026-09.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-chromakeys-on-2026-10-en.webp"
 category: "methode"
 tags: ["method", "getting started"]
 lang: "en"
@@ -34,29 +35,29 @@ The seven degrees of a scale get seven stable colours. Whatever the key of your 
 
 <figure>
   <img
-    src="/images/app-chromakeys-on-2026-09.webp"
-    width="1600"
-    height="896"
-    alt="The Création tab on a Neotone Mutant electronic handpan, dark theme, ChromaKeys on. Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, a « La palette de création ChromaKeys » island also on On, then the four menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island outlined in cyan with its printer icon. Every note on the pan is painted in its own colour and ringed with a halo — D2 orange at the centre, C#4 and C#3 red, B3 magenta, A3 and A4 blue, F#3 and F#4 green, G3 and G4 sky blue, E2 and E3 yellow. Around the top of the pan, the chromatic wheel is unfolded: C, C#, D, D#, E, F, F#, G, G#, A, A#, B, each in its own colour, with the octave 2 to 5 arcs. On the left, a vertical column of six icons in a yellow frame — rainbow (active), keyboard, pencil, bin, undo, redo. Along the bottom, the seven chord slots: D, Em, F#m, G, A, Bm, C#°, each with its three notes written underneath. The handpan screen reads « Neotone Mutant »."
+    src="/images/app-chromakeys-on-2026-10-en.webp"
+    width="2912"
+    height="1630"
+    alt="The creation screen on a Neotone Mutant, Starry Night theme, with the Display menu open. At the top, the ChromaKeys island: ChromaKeys On, “The colour tells you…” set to “the note · chakras”, Shared notes On, “The ChromaKeys creation palette” On; to the right, the NOTATION, APPEARANCE Walnut, HANDS &amp; FINGERING and CONSTELLATION menus. In the centre, the pan: each note is painted its colour — the D3 ding orange, D4 and D5 orange, C4, C5 and C3 red, E4 and E5 yellow, F4, F5 and F3 green, G4, G5 and G3 sky blue, A3, A4 and A5 blue, Bb3 and Bb2 indigo. Around the top of the pan, the chromatic wheel: C, C#, D, D#, E, F, F#, G, G#, A, A#, B, each in its colour, with octave arcs 2 to 6. On the left, a column of drawing tools in a yellow frame. At the bottom, the coloured chord cards Dm, Edim, F, Gm, Am, Bb, each with its notes."
     data-lb="chromakeys"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>ChromaKeys on, palette open. Every pitch has its own colour, the same everywhere: a <em>C</em> is red, an <em>E</em> yellow, a <em>G</em> sky blue. The chromatic wheel above the pan shows all twelve semitones and their hues. (Screenshot of the French interface.)</figcaption>
+  <figcaption>ChromaKeys on, palette open. Every pitch has its own colour, the same everywhere: a <em>C</em> is red, an <em>E</em> yellow, a <em>G</em> sky blue. The chromatic wheel above the pan shows all twelve semitones and their hues.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
 <figure>
   <img
-    src="/images/app-creation-acoustique-2026-09.webp"
-    width="1600"
-    height="971"
-    alt="The Création tab on a D Minor / Kurd 10 acoustic handpan, dark theme. Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, then the four menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island outlined in cyan with its printer icon. In the centre, the pan with its D3 ding and its coloured notes D4, A#3, A3, F4, E4, C4, C5, A4, G4; the handpan screen reads « D Minor / Kurd 10 ». Around the top of the pan, the full chromatic wheel — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — each dot in its own colour, with the octave 2 to 5 arcs. On the left, a vertical column of six icons in a yellow frame: rainbow (active), keyboard, pencil, bin, undo, redo. On the right, the « Mes handpans » panel: « D Minor / Kurd 10 » marked « tu joues dessus », the « POUR D Minor / Kurd 10 » bar with the ACOUSTIQUE badge, « 🎼 Mes morceaux (156) », « 🎡 Tester une autre tonalité », « ＋ Ajouter un handpan », « 📤 Partager cette gamme » and « ⚡ Ajouter un handpan électronique »; below, the collapsed « ✨ Ce que tu peux faire » and « 🎯 Compléter » sections, then « 🧭 Découvrir d'autres gammes ». Along the bottom, the seven chord slots Dm, E°, F, Gm, Am, A#, C."
+    src="/images/app-creation-acoustique-2026-10-en.webp"
+    width="2880"
+    height="1748"
+    alt="The creation screen, starting from this handpan, on an acoustic D Kurd 10, Starry Night theme. On the left, the column of drawing tools in a yellow frame, then the instrument name and the Stop, Sound and 440.00 Hz buttons. In the centre, the pan with its D3 ding and its coloured notes D4, F4, A4, C5, G4, E4, C4, A3, Bb3; the handpan's screen reads “D Kurd 10”. Around the top of the pan, the full chromatic wheel — C, C#, D, D#, E, F, F#, G, G#, A, A#, B — each dot in its colour, with octave marks 2 to 5 in an arc. At the bottom, the seven basic chords of the scale: Dm, Edim, F, Gm, Am, Bb, C, each in the colour of its root note."
     data-lb="chromakeys-acoustique"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The same screen on an acoustic handpan.</figcaption>
+  <figcaption>The same screen on an acoustic handpan, the D Kurd 10: the same wheel of colours around the pan, and at the bottom the seven chords of the scale, each in the colour of its note.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

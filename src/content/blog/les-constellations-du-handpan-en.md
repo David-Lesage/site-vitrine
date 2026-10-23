@@ -2,7 +2,7 @@
 title: "Constellations: seeing a chord as a shape"
 description: "Whether your handpan is acoustic or electronic, a chord becomes a drawing. Discover the 3 ways to trace a Constellation: Polygon, Open and Hands."
 pubDate: 2026-07-02
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/blog-constellations-2026-couverture.webp"
 category: "methode"
 tags: ["method", "chords"]
@@ -79,10 +79,10 @@ And the same three traces on an **acoustic** pan, a D Kurd 10. On this pan, the 
 <figure>
   <div style="display:flex;gap:1rem;margin:0 0 .45rem;font-size:.82rem;font-weight:600;line-height:1.3;text-align:center"><span style="flex:1">Polygon</span><span style="flex:1">Open</span><span style="flex:1">Hands</span></div>
   <img
-    src="/images/blog-constellations-2026-trio-acoustique-v2.webp"
-    width="3712"
-    height="730"
-    alt="Three side-by-side captures of the same acoustic D Minor / Kurd 10 handpan, chord I Dm shown: ding D3, D4, F4, A4 lit. Left, Polygon: the trace closes from A4 back to the ding, circled in copper. Middle, Open: that closing line is gone. Right, Hands: the ding in red marked R, D4, F4 and A4 in blue marked L."
+    src="/images/blog-constellations-2026-trio-acoustique-v2-2026-10-en.webp"
+    width="2936"
+    height="956"
+    alt="Three pans side by side, the same acoustic D Kurd 10, Starry Night theme, eye open on the Dm chord; the handpan's screen reads “D Kurd 10”. Four notes are lit orange: the D3 ding, D4, F4 and A4; the others stay grey. On the left, Polygon style: the path joins D3, D4, F4, A4 and comes back from A4 to the ding. In the middle, Open style: the same notes, but the line from A4 to the ding has gone. On the right, Hands style: the D3 ding is circled in red and marked R; D4, F4 and A4 are circled in blue, marked L and joined by a blue line."
     data-lb="constellations"
     data-lb-wide
     loading="lazy"
