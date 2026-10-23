@@ -2,7 +2,7 @@
 title: "« Mes handpans » : une seule porte pour tes instruments"
 description: "Déclarer ton pan, en poser un second à côté, retrouver ton installation sur l'iPad : il y avait cinq chemins différents, il n'en reste qu'un. Voilà lequel, et ce qui a changé."
 pubDate: 2026-09-01
-updatedDate: 2026-10-24
+updatedDate: 2026-10-25
 cover: "/images/blog-mes-handpans-duo-2026-10.webp"
 category: "acoustique"
 tags: ["acoustique", "deux handpans", "mes handpans"]
@@ -104,11 +104,26 @@ Rien n'est jamais effacé : quand deux appareils ne sont pas d'accord, le plus r
 
 > ⚠️ **Un seul geste à connaître, et une seule fois.** À la toute première réconciliation entre tes appareils, **ouvre en dernier celui dont tu veux garder le placement**. Après ça, tu n'y penses plus.
 
-## Nommer un duo, créditer le fabricant
+## Renommer, créditer
 
-Deux détails qui comptent plus qu'ils n'en ont l'air.
+Trois détails qui comptent plus qu'ils n'en ont l'air.
 
-**✎ Nommer un duo.** Quand tu enregistres un duo (« Mon duo » › Mes duos › Enregistrer ce duo), tu peux lui donner un nom — « Scène », « Méditation » — et le changer ensuite avec le crayon **✎** de sa ligne dans **Mes duos**. Les cartes des instruments, elles, n'ont pas de crayon.
+**✎ Renommer un instrument.** Chaque carte de **🪘 Mes handpans** a son crayon **✎** : tu tapes le nom que tu veux, puis ✓ ou Entrée. Échap annule, et vider le champ rend à l'instrument son nom d'origine. Ce nom le suit partout : sur le bouton de l'instrument au-dessus du pan, dans le bandeau du duo et à la reprise de séance. Il est enregistré dans ton compte, comme le reste de tes handpans.
+
+<figure>
+  <img
+    src="/images/blog-mes-handpans-renommer-2026-10-25.webp"
+    width="440"
+    height="482"
+    alt="Une carte de l'écran « Mes handpans », thème Nuit étoilée : la pastille verte « Sur le pan », le dessin coloré du D Kurd 10 et un bouton panier en haut à droite. À la place du nom, un champ de saisie ouvert qui contient « Mon premier pan », suivi d'un bouton ✓ jaune. Dessous, « Yishama · 440 Hz · 10 notes », puis quatre boutons : ✓, duo, ✎ et corbeille."
+    data-lb="mes-handpans-renommer"
+    loading="lazy"
+  />
+  <figcaption>La carte du D Kurd 10, <strong>✎</strong> ouvert : « Mon premier pan » est tapé dans le champ, le <strong>✓</strong> jaune l'enregistre. Le fabricant et le diapason restent affichés dessous.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir.</p>
+</figure>
+
+**✎ Nommer un duo.** Quand tu enregistres un duo (« Mon duo » › Mes duos › Enregistrer ce duo), tu peux lui donner un nom — « Scène », « Méditation » — et le changer ensuite avec le crayon **✎** de sa ligne dans **Mes duos**.
 
 **Le crédit du fabricant** est rattaché à l'instrument qu'il décrit, et non plus à l'écran en général. « Made by Yishama Pantam — Yhonatan Ale-Yahav » suit la gamme jusque sur les partitions imprimées. Un handpan a un auteur ; c'est la moindre des choses qu'il reste écrit dessus.
 

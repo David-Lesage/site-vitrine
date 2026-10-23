@@ -2,7 +2,7 @@
 title: "“My handpans”: a single door to your instruments"
 description: "Declare your pan, set a second one beside it, find your setup again on the iPad: there used to be five different paths, now there's only one. Here's which one, and what has changed."
 pubDate: 2026-09-01
-updatedDate: 2026-10-24
+updatedDate: 2026-10-25
 cover: "/images/blog-mes-handpans-duo-2026-10-en.webp"
 category: "acoustique"
 tags: ["acoustic", "two handpans", "my handpans"]
@@ -104,11 +104,26 @@ Nothing is ever erased: when two devices disagree, the more recent one wins and 
 
 > ⚠️ **One gesture to know, and only once.** The very first time your devices reconcile, **open last the one whose placement you want to keep.** After that, you never think about it again.
 
-## Naming a pair, crediting the maker
+## Renaming, crediting
 
-Two details that count for more than they look.
+Three details that count for more than they look.
 
-**✎ Name a pair.** When you save a pair ("My pair" › My pairs › Save this pair), you can give it a name — "Stage", "Meditation" — and change it later with the **✎** pencil on its line in **My pairs**. The instrument cards, for their part, have no pencil.
+**✎ Rename an instrument.** Every card in **🪘 My handpans** has its **✎** pencil: type the name you want, then ✓ or Enter. Escape cancels, and emptying the field gives the instrument back its original name. That name follows it everywhere: on the instrument button above the pan, in the pair banner and when you resume a session. It is saved to your account, like the rest of your handpans.
+
+<figure>
+  <img
+    src="/images/blog-mes-handpans-renommer-2026-10-25-en.webp"
+    width="440"
+    height="482"
+    alt="A card from the “My handpans” screen, Starry Night theme: the green “On the pan” badge, the coloured drawing of the D Kurd 10 and a basket button at the top right. In place of the name, an open text field containing “My first pan”, followed by a yellow ✓ button. Below, “Yishama · 440 Hz · 10 notes”, then four buttons: ✓, pair, ✎ and bin."
+    data-lb="mes-handpans-renommer"
+    loading="lazy"
+  />
+  <figcaption>The D Kurd 10 card with its <strong>✎</strong> open: “My first pan” is typed in the field, and the yellow <strong>✓</strong> saves it. The maker and the tuning stay shown underneath.</figcaption>
+  <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it.</p>
+</figure>
+
+**✎ Name a pair.** When you save a pair ("My pair" › My pairs › Save this pair), you can give it a name — "Stage", "Meditation" — and change it later with the **✎** pencil on its line in **My pairs**.
 
 **The maker's credit** is attached to the instrument it describes, no longer to the screen in general. "Made by Yishama Pantam — Yhonatan Ale-Yahav" follows the scale all the way onto printed scores. A handpan has a maker; the least we can do is keep it written on it.
 
