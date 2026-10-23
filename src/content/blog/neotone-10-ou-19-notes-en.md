@@ -2,7 +2,7 @@
 title: "Neotone with 10 notes or 19 notes: which one should you choose?"
 description: "The 10-note Neotone¹ and the 19-note Neotone¹ Mutant don't serve the same project. Main instrument, voice, or a complement to your acoustic handpan: the cases where one or the other is the right choice."
 pubDate: 2026-09-22
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/neotone-10-vs-19-19-notes.svg"
 category: "methode"
 tags: ["electronic", "Neotone", "choosing"]
@@ -43,10 +43,10 @@ Since October 2026, though, the app plays **all 7 degrees on a Neotone¹**. Each
 
 <figure>
   <img
-    src="/images/blog-capo-2026-01-mutant-logique.webp"
-    width="1600"
-    height="1170"
-    alt="Logic mode on a 19-note Neotone Mutant, anchor note D. Four notes are lit up in red — D2 in the centre, D4 at the top, A3 on the left, F#3 at the bottom left — and a red line connects them. The handpan screen, the white frame placed below the ding, displays “I Balance D”. Below, the seven chord cards of the key: I Balance D, II Momentum Em, III Adventure F#m, IV Relaxation G, V Tension A, VI Nostalgia Bm, VII Mystery C#°, each in the colour of its degree."
+    src="/images/blog-capo-2026-01-mutant-logique-2026-10-en.webp"
+    width="2200"
+    height="1610"
+    alt="Degrees &amp; emotions on a 19-note Neotone Mutant · Walnut, Starry Night theme, anchor note D. Four notes are lit red and numbered — 1 on the D2 ding, 2 on F#3, 3 on A3, 4 on D4 — and a red path joins them. The handpan's screen, the white box under the ding, reads “I Balance D”. Below, the seven chord cards of the key: I BALANCE D, II MOMENTUM Em, III ADVENTURE F#m, IV RELAXATION G, V TENSION A, VI NOSTALGIA Bm, VII MYSTERY C#dim, each in the colour of its degree."
     data-lb="neotone-10-19-mutant"
     data-lb-wide
     loading="lazy"

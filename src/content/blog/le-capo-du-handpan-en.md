@@ -2,8 +2,8 @@
 title: "The handpan's capo: the same shape in every key"
 description: "On an electronic handpan in Logic mode, a degree's constellation keeps the same shape whatever the key. Same gestures, different pitch — like a capo on a guitar."
 pubDate: 2026-10-01
-updatedDate: 2026-10-23
-cover: "/images/blog-capo-2026-01-mutant-logique.webp"
+updatedDate: 2026-10-24
+cover: "/images/blog-capo-2026-01-mutant-logique-2026-10-en.webp"
 category: "methode"
 tags: ["method", "electronic", "keys"]
 lang: "en"
@@ -16,10 +16,10 @@ This article is about the **electronic handpan** — today, a 19-note Neotone Mu
 
 <figure>
   <img
-    src="/images/blog-capo-2026-01-mutant-logique.webp"
-    width="1600"
-    height="1170"
-    alt="Logic mode on a 19-note Neotone Mutant, anchor note D. Four notes are lit red — D2 at the centre, D4 at the top, A3 on the left, F#3 lower left — joined by a red path. The handpan screen, the small white panel sitting under the ding, reads « I Équilibre D ». Below, the seven chord cards of the key: I Équilibre D, II Élan Em, III Aventure F#m, IV Détente G, V Tension A, VI Nostalgie Bm, VII Mystère C#°, each in its degree colour. Only the first card's eye is switched on — that is what draws the constellation."
+    src="/images/blog-capo-2026-01-mutant-logique-2026-10-en.webp"
+    width="2200"
+    height="1610"
+    alt="Degrees &amp; emotions on a 19-note Neotone Mutant · Walnut, Starry Night theme, anchor note D. Four notes are lit red and numbered in playing order — 1 on the D2 ding, 2 on F#3 at the lower left, 3 on A3 on the left, 4 on D4 at the top — and a red path joins them. The handpan's screen, the white box under the ding, reads “I Balance D”. Below, the seven chord cards of the key: I BALANCE D, II MOMENTUM Em, III ADVENTURE F#m, IV RELAXATION G, V TENSION A, VI NOSTALGIA Bm, VII MYSTERY C#dim, each in the colour of its degree. The eye on the first card is on: it is the one drawing the constellation."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
@@ -60,23 +60,24 @@ On the electronic handpan, the bar is called the **anchor note**. You pick it on
   <figcaption>Screen demo, on a Neotone Mutant: in the panel <strong>« Dispositions &amp; Logique »</strong>, the anchor note changes. The whole layout follows: the chords are redrawn in the new key. The app is shown in French.</figcaption>
 </figure>
 
-Take the <abbr title="The drawing that links, on the pan, the notes of one chord.">constellation</abbr> of **scale degree I** — the one the app calls **Balance**. Choose the anchor note **C**, then **D**, then **A**, and look at the pan each time.
+Take the <abbr title="The drawing that links, on the pan, the notes of one chord.">constellation</abbr> of **scale degree I** — the one the app calls **Balance**. Choose the anchor note **D**, then **C**, then **A**, and look at the pan each time.
 
 <figure id="grille-trois-tonalites">
+  <div class="figure-labels" aria-hidden="true" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;text-align:center;font-size:0.9rem;font-weight:600;margin-bottom:0.4rem"><span>Anchored on D</span><span>Anchored on C</span><span>Anchored on A</span></div>
   <img
-    src="/images/blog-capo-2026-09-grille-3-tonalites-v2.webp"
-    width="2400"
-    height="1096"
-    alt="A grid of three columns, side by side, in the same frame. At the top of each column, the app screen slightly dimmed, except for the anchor wheel, left sharp: twelve coloured dots, the chosen one ticked and its name in the centre of the wheel — C, then D, then A. Below, the pan in Logic mode, Neotone Mutant, eye open on chord I Équilibre: four notes lit red, joined by the same path, circled by a copper ring. The circled positions are the same in all three columns; their names change: C2, E3, G3, C4 in C; D2, F#3, A3, D4 in D; A2, C#4, E4, A4 in A. Under each pan, the seven chord cards of the key."
+    src="/images/blog-capo-2026-09-grille-3-tonalites-v2-2026-10-en.webp"
+    width="3014"
+    height="982"
+    alt="Three pans side by side, in the same frame: the same Neotone Mutant, eye open on chord I Balance, with three anchor notes. In each pan four notes are lit red, numbered 1 to 4 and joined by the same path: the ding in the centre, two notes on the left and one at the top. Left, anchored on D: D2, F#3, A3, D4, and the handpan's screen reads “I Balance D”. Middle, anchored on C: C2, E3, G3, C4, “I Balance C”. Right, anchored on A: A2, C#4, E4, A4, “I Balance A”."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>From left to right: anchored on <strong>C</strong>, on <strong>D</strong>, on <strong>A</strong>. At the top, the anchor wheel, the only thing left in the light: the note in the centre changes. At the bottom, <abbr title="At least three notes played together, for example C, E, G.">chord</abbr> I: <strong>the circled drawing doesn't move</strong>, only the note names change.</figcaption>
+  <figcaption>From left to right: anchored on <strong>D</strong>, on <strong>C</strong>, on <strong>A</strong>. The handpan's screen, under the ding, names the <abbr title="At least three notes played together, for example C, E, G.">chord</abbr>: I Balance D, C, then A. <strong>The lit drawing doesn't move</strong>, only the note names change.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
-Look at the copper rings: they are the same positions, joined by the same path, in all three columns. What changes is the name written on them — C, E, G in C; D, F#, A in D; A, C#, E in A. The gestures stay, the key changes: exactly what a capo does.
+Look at the lit notes: they are the same positions, joined by the same path, in all three pans. What changes is the name written on them — D, F#, A in D; C, E, G in C; A, C#, E in A. The gestures stay, the key changes: exactly what a capo does.
 
 ### Why it holds
 
@@ -89,15 +90,15 @@ Put another way: the geometry is fixed on one side, the sounding content on the 
 <figure>
   <div class="figure-labels" aria-hidden="true" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;text-align:center;font-size:0.9rem;font-weight:600;margin-bottom:0.4rem"><span>Anchored on C</span><span>Anchored on A</span></div>
   <img
-    src="/images/blog-capo-2026-03-degre-V-cote-a-cote.webp"
-    width="3240"
-    height="1170"
-    alt="Two captures of the same screen, side by side and in the same frame, eye open on degree V. On the left, anchored on C: the notes G2, B2, D3 and G3 are lit sky blue, circled by a copper ring and joined by a blue path; the handpan screen reads « V Tension G ». On the right, anchored on A: the same four positions, also circled, read E3, G#3, B3 and E4, the blue path follows exactly the same route, and the handpan screen reads « V Tension E ». The rest of the screen is slightly dimmed."
+    src="/images/blog-capo-2026-03-degre-V-cote-a-cote-2026-10-en.webp"
+    width="2006"
+    height="982"
+    alt="Two pans side by side in the same frame, the same Neotone Mutant, eye open on degree V. On the left, anchored on C: the notes G2, B2, D3 and G3 are lit sky blue, numbered 1 to 4 and joined by a blue path; the handpan's screen reads “V Tension G”. On the right, anchored on A: the same four positions carry E3, G#3, B3 and E4, the blue path follows exactly the same route, and the handpan's screen reads “V Tension E”."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Degree <strong>V</strong>, anchored on <strong>C</strong> on the left, on <strong>A</strong> on the right: the four circled positions are the same, the blue path follows the same route, only the names change. It isn't special to the I: every degree keeps its shape.</figcaption>
+  <figcaption>Degree <strong>V</strong>, anchored on <strong>C</strong> on the left, on <strong>A</strong> on the right: the four lit notes sit in the same positions, the blue path follows the same route, only the names change. It isn't special to the I: every degree keeps its shape.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -107,15 +108,15 @@ And if note names get in your way, you can do without them. In the tool palette 
 
 <figure>
   <img
-    src="/images/blog-capo-2026-10-sans-noms-ordre-mains.webp"
-    width="1600"
-    height="1170"
-    alt="The pan in Logic mode, anchor note D, eye open on chord I. The note names are gone. The four notes lit red each carry a number in a white circle: 1 in the centre, 2 and 3 on the left, blue digits on a blue ring (left hand); 1 and 4, red digits (right hand). The handpan screen, under the ding, reads « I Équilibre ». At the bottom, the seven coloured chord cards keep their chord names: I Équilibre D, II Élan Em, III Aventure F#m, IV Détente G, V Tension A, VI Nostalgie Bm, VII Mystère C#°."
+    src="/images/blog-capo-2026-10-sans-noms-ordre-mains-2026-10-en.webp"
+    width="2200"
+    height="1610"
+    alt="Degrees &amp; emotions on the Neotone Mutant, anchor note D, Discovery level, eye open on chord I. The note names have gone from the pan. The four notes of the chord each carry a number in a white circle, joined by a path: 1 on the ding and 4 at the top, red digits (right hand); 2 and 3 on the left, blue digits (left hand). The handpan's screen, under the ding, reads “I Balance”. At the bottom, the seven coloured cards keep their chord name: I BALANCE D, II MOMENTUM Em, III ADVENTURE F#m, IV RELAXATION G, V TENSION A, VI NOSTALGIA Bm, VII MYSTERY C#dim."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The same chord I, without a single note name on the pan: the striking order 1·2·3·4, and the colour of the hand that plays. The cards at the bottom keep the chord's name. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The same chord I, without a single note name on the pan: the striking order 1·2·3·4, and the colour of the hand that plays (red digits for the right, blue for the left). The cards at the bottom keep the chord's name.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -174,15 +175,15 @@ It is not a capo. Your real acoustic pan hasn't moved by a semitone — and it c
 
 <figure>
   <img
-    src="/images/blog-capo-2026-08-roue-tonalite-v2.webp"
-    width="1600"
-    height="935"
-    alt="Acoustic mode with a D Minor / Kurd 10 loaded. On the left, the pan: the notes are coloured as pie slices — one slice per chord the note belongs to — and the handpan screen, centred under the D3 ding, reads « D Minor / Kurd 10 ». On the right, the card for the instrument being played, with the « Tester une autre tonalité » button. Bottom right, the open « Tester une autre tonalité » panel, circled by a copper ring, explains that you can hear your scale in another key, that it is useful for finding the one that suits your voice, and that it is only a preview: nothing is changed in « Mes handpans ». Twelve key buttons C to B follow; the D key, lit, is circled too. The rest of the screen is dimmed."
+    src="/images/blog-capo-2026-08-roue-tonalite-v2-2026-10-en.webp"
+    width="2880"
+    height="1684"
+    alt="Acoustic mode with a D Kurd 10 loaded, Starry Night theme. On the left, the pan: the notes are coloured as pie slices — one slice per chord the note belongs to — and the handpan's screen, under the D3 ding, reads “D Kurd 10”. At the bottom, the degree cards I to V. On the right, the “Voicings &amp; Logic” drawer, Key section: anchor note D, Sad mode, the reminder that on an acoustic handpan the notes are tuned into the steel, then the “Try a different key” button. Below it, the open “Try a different key” panel explains: “Listen to your scale in a different key — this is useful for finding the one that suits your voice. This is just a preview: nothing is changed in ‘My handpan’”, followed by the twelve keys C to B; the D key is lit orange."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>On the acoustic side, "Try a different key" lets you <strong>hear</strong> the scale elsewhere. It is a reversible preview, not a capo — the instrument itself has not moved. (Screenshot of the French interface.)</figcaption>
+  <figcaption>On the acoustic side, “Try a different key”, in the <em>Voicings &amp; Logic</em> drawer, lets you <strong>hear</strong> the scale elsewhere. It is a reversible preview, not a capo — the instrument itself has not moved.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

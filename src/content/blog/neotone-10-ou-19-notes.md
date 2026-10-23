@@ -2,7 +2,7 @@
 title: "Neotone 10 notes ou 19 notes : lequel choisir ?"
 description: "Le Neotone¹ à 10 notes et le Neotone¹ Mutant à 19 notes ne servent pas le même projet. Instrument principal, voix, ou complément de ton handpan acoustique : les cas où l'un ou l'autre est le bon choix."
 pubDate: 2026-09-22
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/neotone-10-vs-19-19-notes.svg"
 category: "methode"
 tags: ["électronique", "Neotone", "choisir"]
@@ -60,10 +60,10 @@ Depuis octobre 2026, l'app joue pourtant **les 7 degrés sur un Neotone¹**. Cha
 
 <figure>
   <img
-    src="/images/blog-capo-2026-01-mutant-logique.webp"
-    width="1600"
-    height="1170"
-    alt="Le mode Logique sur un Neotone Mutant à 19 notes, note d'ancrage D. Quatre notes sont allumées en rouge — D2 au centre, D4 en haut, A3 à gauche, F#3 en bas à gauche — et un tracé rouge les relie. L'écran du handpan, l'encadré blanc posé sous le ding, affiche « I Équilibre D ». En dessous, les sept cartes d'accord de la tonalité : I Équilibre D, II Élan Em, III Aventure F#m, IV Détente G, V Tension A, VI Nostalgie Bm, VII Mystère C#°, chacune dans la couleur de son degré."
+    src="/images/blog-capo-2026-01-mutant-logique-2026-10.webp"
+    width="2200"
+    height="1610"
+    alt="Degrés &amp; émotions sur un Neotone Mutant · Noyer à 19 notes, thème Nuit étoilée, note d'ancrage D. Quatre notes sont allumées en rouge et numérotées — 1 sur le ding D2, 2 sur F#3, 3 sur A3, 4 sur D4 — et un tracé rouge les relie. L'écran du handpan, l'encadré blanc posé sous le ding, affiche « I Équilibre D ». En dessous, les sept cartes d'accord de la tonalité : I ÉQUILIBRE D, II ÉLAN Em, III AVENTURE F#m, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm, VII MYSTÈRE C#dim, chacune dans la couleur de son degré."
     data-lb="neotone-10-19-mutant"
     data-lb-wide
     loading="lazy"

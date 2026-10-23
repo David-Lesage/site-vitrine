@@ -2,7 +2,8 @@
 title: "The three faces of minor: natural, harmonic, melodic"
 description: "Under Logic Mode's \"Sad\" button, three shades of minor. Two dots rise by a semitone, and the oriental or jazz colour appears."
 pubDate: 2026-09-12
-cover: "/images/app-triste-trois-mineurs-naturel-2026-09.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-triste-trois-mineurs-naturel-2026-10-en.webp"
 category: "logique"
 tags: ["harmony", "minor", "musician"]
 lang: "en"
@@ -26,15 +27,15 @@ This is the one everyone knows, and the one your handpan plays by default. Its d
 
 <figure>
   <img
-    src="/images/app-triste-trois-mineurs-naturel-2026-09.webp"
-    width="1600"
-    height="1392"
-    alt="Logic Mode in natural minor on a Neotone Mutant, dark theme. Along the top, the compact single-line tool strip: the ChromaKeys island (Off / On, set to On), « La couleur dit… la note · chakras », « Notes partagées » on On, then the four menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ and CONSTELLATION Ouvert, and on the right the EXPORTER PDF / PARTITION island outlined in cyan with its printer icon. The handpan screen, just below the D2 ding, reads « D Min. Nat. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII »; the pads include C4 at the top left and C3 at the bottom. The seven degree cards read I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. On the right, in the « Logique et Emotions » panel, the Triste button is active and its Nuances menu is unfolded: « 🌙 Triste profond — mineur naturel — le Triste actuel » (highlighted), « 🔥 Triste intense, couleur orientale — mineur harmonique · 7ᵉ montée d'un demi-ton — 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 6ᵉ et 7ᵉ montées d'un demi-ton — 4 pads changent »."
+    src="/images/app-triste-trois-mineurs-naturel-2026-10-en.webp"
+    width="2880"
+    height="2506"
+    alt="Degrees &amp; emotions in natural minor on a Neotone Mutant · Walnut, Starry Night theme, at Musician level. The eye on I BALANCE Dm is on: on the pan, D2, F3, A3 and D4 light up in red, and the handpan's screen reads “I Balance Dm”; the notes include C4 at the top left and C3 at the bottom. At the bottom, the cards I BALANCE Dm, II MOMENTUM E°, III ADVENTURE F, IV RELAXATION Gm, V TENSION Am. On the right, the “Voicings &amp; Logic” drawer, “Logic &amp; Emotions” block: “Complete, 7 degrees out of 7 — On your Neotone Mutant (19 notes), Logic is complete in every key”. Under Key, anchor note D, Sad mode on, and the list of its shades: “🌙 Deep sadness — natural minor — the current Sad” (highlighted), “🔥 Intense sadness, oriental colour — harmonic minor · 7th step up by a semitone — 2 pads change”, “🎷 Bright sadness, jazz colour — melodic minor · 6th and 7th half-step rises — 4 pads change”. Further down, “Chord voicings” (Deep, Bright, Wide) and “Journey of Sensations”."
     data-lb="trois-mineurs"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The <em>Nuances</em> menu open under the <strong>Triste</strong> (sad) button. The app states the cost of each shade itself: « 2 pads changent » for harmonic minor, « 4 pads changent » for melodic. Natural minor is active here: the pan carries C4 and C3. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The shades of <strong>Sad</strong>, unfolded in the <em>Voicings &amp; Logic</em> drawer. The app states the cost of each shade itself: “2 pads change” for harmonic minor, “4 pads change” for melodic. Natural minor is active here: the pan carries C4 and C3.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -46,15 +47,15 @@ On the pan, **only two dots** change note.
 
 <figure>
   <img
-    src="/images/app-triste-trois-mineurs-harmonique-2026-09.webp"
-    width="1600"
-    height="1392"
-    alt="The same screen, with the « 🔥 Triste intense, couleur orientale » entry highlighted in the Nuances menu. The handpan screen now reads « D Min. Harm. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». On the handpan, the pads that showed C4 and C3 now show C#4 and C#3; every other note is unchanged, as are the seven degree cards (from I ÉQUILIBRE Dm to VII MYSTÈRE C) and the overall layout."
+    src="/images/app-triste-trois-mineurs-harmonique-2026-10-en.webp"
+    width="2880"
+    height="2506"
+    alt="The same screen, with the “🔥 Intense sadness, oriental colour” entry highlighted in the list of shades. On the pan, the notes that read C4 and C3 now read C#4 and C#3; every other note is where it was, and the I Balance Dm chord stays lit on D2, F3, A3 and D4. In the cards at the bottom, III ADVENTURE becomes F+ and V TENSION becomes A (major)."
     data-lb="trois-mineurs"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The same view in harmonic minor. Only two pads changed name: <strong>C4 → C#4</strong> and <strong>C3 → C#3</strong>. The rest of the pan — and the chord shapes — is identical to the previous image.</figcaption>
+  <figcaption>The same view in harmonic minor. Only two notes have changed name: <strong>C4 → C#4</strong> and <strong>C3 → C#3</strong>. The lit chord and its shape on the pan are identical to the previous image; in the cards, the V becomes <em>A</em> major and the III becomes <em>F+</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -72,7 +73,7 @@ In other words, you relearn nothing. You play exactly the same gesture, and you 
 
 ## Where it lives, and for whom
 
-The shades live in a small menu that unfolds under the **Sad** button, at **Musician** level; at Discovery and Apprentice levels a ✨ badge simply signals they exist without cluttering the screen. Your choice is remembered and applies whenever you go back to Sad — in Happy it's simply ignored.
+The shades live in the **🎛 Voicings & Logic** drawer, just under the **Sad** button, at **Musician** level; at Discovery and Apprentice levels a ✨ badge simply signals they exist without cluttering the screen. Your choice is remembered and applies whenever you go back to Sad — in Happy it's simply ignored.
 
 One important, deliberate caveat: **it's for the electronic handpan only**. On an acoustic handpan the notes are physically hammered into steel; no app will raise a pad by a semitone. You need a [Neotone](/en/neotone) to hear the shade change under your hands. In acoustic mode the app keeps showing correct degrees in all four frames — major, natural minor, harmonic and melodic minor — but it does not raise any note: it describes what your instrument can do, without promising the impossible.
 

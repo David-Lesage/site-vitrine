@@ -2,8 +2,8 @@
 title: "Jouer avec les émotions : les 7 degrés colorés"
 description: "Le Mode Logique de Handpan Constellation Studio associe chaque degré à une couleur et une émotion. Construis une progression d'accords et raconte une histoire."
 pubDate: 2026-07-10
-updatedDate: 2026-10-23
-cover: "/images/app-logique-2026-09.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-logique-2026-10.webp"
 category: "methode"
 tags: ["méthode", "émotions"]
 lang: "fr"
@@ -41,29 +41,29 @@ Le Mode Logique rend ces rôles **visibles** en leur donnant une couleur stable,
 
 <figure>
   <img
-    src="/images/app-logique-2026-09.webp"
-    width="1600"
-    height="971"
-    alt="Le Mode Logique de Handpan Constellation Studio, thème sombre. Tout en haut, la bande d'outils compacte, sur une seule ligne : l'îlot ChromaKeys (Off / On, réglé sur On), « La couleur dit… » avec « la note · chakras » retenu face à « sa place dans la gamme · degrés », et « Notes partagées » sur On ; puis quatre menus déroulants affichant chacun son réglage courant — NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ, CONSTELLATION Ouvert ; à droite, l'îlot EXPORTER PDF / PARTITION, cerclé de cyan, avec son icône d'imprimante. Au centre, un handpan Neotone Mutant aux notes colorées ; l'écran du handpan, juste sous le ding D2, indique « D Majeur — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». En bas, sept cartouches colorés alignés : I ÉQUILIBRE D en rouge, II ÉLAN Em en orange, III AVENTURE F#m en jaune, IV DÉTENTE G en vert, V TENSION A en bleu, VI NOSTALGIE Bm en violet, VII MYSTÈRE C#° en rose, puis la flèche « PROGRESSION DES ACCORDS ». À droite, le bloc « Mes handpans » (Neotone Mutant · Noyer, 19 creux, badge ÉLECTRONIQUE, et en pied « ⚡ Ajouter un handpan électronique ») et, en dessous, le panneau « Logique et Emotions » : Ressenti émotionnel retenu, note d'ancrage D, mode Joyeux."
+    src="/images/app-logique-2026-10.webp"
+    width="2880"
+    height="1748"
+    alt="Handpan Constellation Studio en thème Nuit étoilée, onglet Découvrir › Degrés &amp; émotions, sur un Neotone Mutant · Noyer. En haut, la barre de l'app : Découvrir, Jouer, Chanter, Apprentissage, puis Signaler un bug, Affichage, Outils, Ma bibliothèque. Au centre, le pan aux notes colorées ; l'écran du handpan, sous le ding D2, indique « D Min. Nat. — Les 7 degrés dans l'ordre I-II-III-IV-V-VI-VII ». En bas, sept cartes alignées, chacune avec ses boutons œil, lecture et chapeau : I ÉQUILIBRE Dm en rouge, II ÉLAN Edim en orange, III AVENTURE F en jaune, IV DÉTENTE Gm en vert, V TENSION Am en bleu, VI NOSTALGIE Bb en violet, VII MYSTÈRE C en rose, chacune avec la puce « Profond ». Dessous, la flèche « PROGRESSION DES ACCORDS » et la barre « Atelier d'accords » (Tous mes accords, Ma tonalité, Révéler, Agrandir, Imprimer)."
     data-lb="logique-degres"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Les sept degrés, tels que l'application les affiche. Sur un handpan accordé en <strong>D Majeur</strong>, ils vont de <em>I ÉQUILIBRE D</em> à <em>VII MYSTÈRE C#°</em> — chaque cartouche porte son numéro, son émotion et l'accord correspondant.</figcaption>
+  <figcaption>Les sept degrés, tels que l'application les affiche. Sur ce Neotone Mutant réglé en <strong>D mineur naturel</strong>, ils vont de <em>I ÉQUILIBRE Dm</em> à <em>VII MYSTÈRE C</em> : chaque carte porte son numéro, son émotion et l'accord correspondant.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
 <figure>
   <img
-    src="/images/app-logique-degres-acoustique-2026-09.webp"
-    width="1600"
-    height="971"
-    alt="Le même écran sur un handpan acoustique D Minor / Kurd 10, thème sombre. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Au centre, le pan et l'écran du handpan, juste sous le ding D3, qui indique « D Minor / Kurd 10 ». En bas, les sept cartouches de degrés que donne cette gamme : I ÉQUILIBRE Dm, II ÉLAN E° (renversement 2), III AVENTURE F, IV DÉTENTE Gm (renversement 1), V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. À droite, le panneau « Logique et Emotions » : Ressenti émotionnel retenu, note d'ancrage D, mode Joyeux, et dans « Voyage des Sensations » la ligne « Les 7 degrés dans l'ordre » retenue."
+    src="/images/app-logique-degres-acoustique-2026-10.webp"
+    width="2880"
+    height="1748"
+    alt="Le même écran sur un handpan acoustique D Kurd 10, thème Nuit étoilée, avec le tiroir « Dispositions &amp; Logique » ouvert à droite. Au centre, le pan ; l'écran du handpan, sous le ding D3, indique « D Kurd 10 ». En bas, les cartes de degrés : I ÉQUILIBRE Dm, II ÉLAN Edim (renversement 2), III AVENTURE F, IV DÉTENTE Gm (renversement 1), V TENSION Am ; le tiroir passe par-dessus les cartes 6 et 7. Dans le tiroir, le bloc « Logique et Emotions » : « Complet, 7 degrés sur 7 — Sur ton D Kurd 10, Logique est complète en D mineur ; en G mineur il manque 3 degrés. » Puis la tonalité : note d'ancrage D, mode Triste retenu, « Joyeux · 3 notes à trouver », « Triste · ✓ complet », le rappel que sur un handpan acoustique les notes sont gravées, « En D, ta gamme joue ses 7 degrés (mineur naturel) » et le bouton « Tester une autre tonalité »."
     data-lb="logique-degres-acoustique"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le même écran, sur un <strong>handpan acoustique</strong> D Minor / Kurd 10. Les sept degrés gardent leur numéro, leur couleur et leur émotion : ce sont les accords qui changent, parce que le pan n'a pas les mêmes notes.</figcaption>
+  <figcaption>Le même écran, sur un <strong>handpan acoustique</strong> D Kurd 10, avec le tiroir <em>Dispositions &amp; Logique</em> ouvert (il recouvre les cartes 6 et 7). Les degrés gardent leur numéro, leur couleur et leur émotion. En D mineur, ce pan joue les sept degrés : l'app l'annonce, « Complet · 7 degrés sur 7 », et précise qu'en G mineur il en manquerait trois.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

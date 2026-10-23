@@ -2,8 +2,8 @@
 title: "Le capo du handpan : la même forme dans toutes les tonalités"
 description: "Sur un handpan électronique en mode Logique, la constellation d'un degré garde la même forme quelle que soit la tonalité. Mêmes gestes, autre hauteur — comme un capo sur une guitare."
 pubDate: 2026-10-01
-updatedDate: 2026-10-23
-cover: "/images/blog-capo-2026-01-mutant-logique.webp"
+updatedDate: 2026-10-24
+cover: "/images/blog-capo-2026-01-mutant-logique-2026-10.webp"
 category: "methode"
 tags: ["méthode", "électronique", "tonalités"]
 lang: "fr"
@@ -15,10 +15,10 @@ Cet article concerne le **handpan électronique** — aujourd'hui, un Neotone Mu
 
 <figure>
   <img
-    src="/images/blog-capo-2026-01-mutant-logique.webp"
-    width="1600"
-    height="1170"
-    alt="Le mode Logique sur un Neotone Mutant à 19 notes, note d'ancrage D. Quatre notes sont allumées en rouge — D2 au centre, D4 en haut, A3 à gauche, F#3 en bas à gauche — et un tracé rouge les relie. L'écran du handpan, l'encadré blanc posé sous le ding, affiche « I Équilibre D ». En dessous, les sept cartes d'accord de la tonalité : I Équilibre D, II Élan Em, III Aventure F#m, IV Détente G, V Tension A, VI Nostalgie Bm, VII Mystère C#°, chacune dans la couleur de son degré. L'œil de la première carte est le seul fermé, c'est lui qui trace la constellation."
+    src="/images/blog-capo-2026-01-mutant-logique-2026-10.webp"
+    width="2200"
+    height="1610"
+    alt="Degrés &amp; émotions sur un Neotone Mutant · Noyer à 19 notes, thème Nuit étoilée, note d'ancrage D. Quatre notes sont allumées en rouge et numérotées dans l'ordre de jeu — 1 sur le ding D2, 2 sur F#3 en bas à gauche, 3 sur A3 à gauche, 4 sur D4 en haut — et un tracé rouge les relie. L'écran du handpan, l'encadré blanc posé sous le ding, affiche « I Équilibre D ». En dessous, les sept cartes d'accord de la tonalité : I ÉQUILIBRE D, II ÉLAN Em, III AVENTURE F#m, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm, VII MYSTÈRE C#dim, chacune dans la couleur de son degré. L'œil de la première carte est activé : c'est lui qui trace la constellation."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
@@ -59,23 +59,24 @@ Sur le handpan électronique, la barrette s'appelle la **note d'ancrage**. Tu la
   <figcaption>Démo d'écran, sur un Neotone Mutant : dans le panneau <strong>Dispositions &amp; Logique</strong>, on change la note d'ancrage. Toute la disposition suit : les accords se redessinent dans la nouvelle tonalité.</figcaption>
 </figure>
 
-Prends la <abbr title="Le dessin qui relie, sur le pan, les notes d'un même accord.">constellation</abbr> du **degré I** — celui que l'app appelle **Équilibre**. Choisis la note d'ancrage **do**, puis **ré**, puis **la**, et regarde le pan à chaque fois.
+Prends la <abbr title="Le dessin qui relie, sur le pan, les notes d'un même accord.">constellation</abbr> du **degré I** — celui que l'app appelle **Équilibre**. Choisis la note d'ancrage **ré**, puis **do**, puis **la**, et regarde le pan à chaque fois.
 
 <figure id="grille-trois-tonalites">
+  <div class="figure-labels" aria-hidden="true" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;text-align:center;font-size:0.9rem;font-weight:600;margin-bottom:0.4rem"><span>Ancrage en ré (D)</span><span>Ancrage en do (C)</span><span>Ancrage en la (A)</span></div>
   <img
-    src="/images/blog-capo-2026-09-grille-3-tonalites-v2.webp"
-    width="2400"
-    height="1096"
-    alt="Une grille de trois colonnes, côte à côte, dans le même cadrage. En haut de chaque colonne, l'écran de l'app légèrement assombri, sauf la roue d'ancrage restée nette : douze pastilles colorées, la pastille choisie cochée et son nom au centre de la roue — C, puis D, puis A. En bas, le pan en mode Logique, Neotone Mutant, œil ouvert sur l'accord I Équilibre : quatre notes allumées en rouge, reliées par le même tracé, entourées d'un anneau cuivre. Les emplacements entourés sont les mêmes dans les trois colonnes ; leurs noms changent : C2, E3, G3, C4 en do ; D2, F#3, A3, D4 en ré ; A2, C#4, E4, A4 en la. Sous chaque pan, les sept cartes d'accord de la tonalité."
+    src="/images/blog-capo-2026-09-grille-3-tonalites-v2-2026-10.webp"
+    width="3014"
+    height="982"
+    alt="Trois pans côte à côte, dans le même cadrage : le même Neotone Mutant, œil ouvert sur l'accord I Équilibre, avec trois notes d'ancrage. Dans chaque pan, quatre notes sont allumées en rouge, numérotées 1 à 4 et reliées par le même tracé : le ding au centre, deux notes à gauche et une en haut. À gauche, ancrage D : D2, F#3, A3, D4, et l'écran du handpan dit « I Équilibre D ». Au milieu, ancrage C : C2, E3, G3, C4, « I Équilibre C ». À droite, ancrage A : A2, C#4, E4, A4, « I Équilibre A »."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>De gauche à droite : ancrage en <strong>do (C)</strong>, en <strong>ré (D)</strong>, en <strong>la (A)</strong>. En haut, la roue d'ancrage, seule laissée en lumière : la note au centre change. En bas, l'<abbr title="Au moins trois notes jouées ensemble, par exemple do, mi, sol.">accord</abbr> I : <strong>le dessin entouré ne bouge pas</strong>, seuls les noms des notes changent.</figcaption>
+  <figcaption>De gauche à droite : ancrage en <strong>ré (D)</strong>, en <strong>do (C)</strong>, en <strong>la (A)</strong>. L'écran du handpan, sous le ding, nomme l'<abbr title="Au moins trois notes jouées ensemble, par exemple do, mi, sol.">accord</abbr> : I Équilibre D, C, puis A. <strong>Le dessin allumé ne bouge pas</strong>, seuls les noms des notes changent.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
-Regarde les anneaux cuivre : ce sont les mêmes emplacements, reliés par le même tracé, dans les trois colonnes. Ce qui change, c'est le nom écrit dessus — do, mi, sol en do ; ré, fa#, la en ré ; la, do#, mi en la. Les gestes restent, la tonalité change : exactement ce que fait le capo.
+Regarde les notes allumées : ce sont les mêmes emplacements, reliés par le même tracé, dans les trois pans. Ce qui change, c'est le nom écrit dessus — ré, fa#, la en ré ; do, mi, sol en do ; la, do#, mi en la. Les gestes restent, la tonalité change : exactement ce que fait le capo.
 
 ### Pourquoi c'est vrai
 
@@ -88,15 +89,15 @@ Autrement dit : la géométrie est fixée d'un côté, le contenu sonore de l'au
 <figure>
   <div class="figure-labels" aria-hidden="true" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;text-align:center;font-size:0.9rem;font-weight:600;margin-bottom:0.4rem"><span>Ancrage en do (C)</span><span>Ancrage en la (A)</span></div>
   <img
-    src="/images/blog-capo-2026-03-degre-V-cote-a-cote.webp"
-    width="3240"
-    height="1170"
-    alt="Deux captures du même écran, côte à côte et au même cadrage, œil ouvert sur le degré V. À gauche, ancrage C : les notes G2, B2, D3 et G3 sont allumées en bleu ciel, entourées d'un anneau cuivre et reliées par un tracé bleu ; l'écran du handpan indique « V Tension G ». À droite, ancrage A : les quatre mêmes emplacements, entourés eux aussi, portent E3, G#3, B3 et E4, le tracé bleu suit exactement le même chemin, et l'écran du handpan indique « V Tension E ». Le reste de l'écran est légèrement assombri."
+    src="/images/blog-capo-2026-03-degre-V-cote-a-cote-2026-10.webp"
+    width="2006"
+    height="982"
+    alt="Deux pans côte à côte et au même cadrage, le même Neotone Mutant, œil ouvert sur le degré V. À gauche, ancrage C : les notes G2, B2, D3 et G3 sont allumées en bleu ciel, numérotées 1 à 4 et reliées par un tracé bleu ; l'écran du handpan indique « V Tension G ». À droite, ancrage A : les quatre mêmes emplacements portent E3, G#3, B3 et E4, le tracé bleu suit exactement le même chemin, et l'écran du handpan indique « V Tension E »."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le degré <strong>V</strong>, ancrage en <strong>do (C)</strong> à gauche, en <strong>la (A)</strong> à droite : les quatre emplacements entourés sont les mêmes, le tracé bleu suit le même chemin, seuls les noms changent. Ce n'est pas propre au I : chaque degré garde sa forme.</figcaption>
+  <figcaption>Le degré <strong>V</strong>, ancrage en <strong>do (C)</strong> à gauche, en <strong>la (A)</strong> à droite : les quatre notes allumées occupent les mêmes emplacements, le tracé bleu suit le même chemin, seuls les noms changent. Ce n'est pas propre au I : chaque degré garde sa forme.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -106,15 +107,15 @@ Et si le nom des notes te complique la vie, tu peux t'en passer. Dans la palette
 
 <figure>
   <img
-    src="/images/blog-capo-2026-10-sans-noms-ordre-mains.webp"
-    width="1600"
-    height="1170"
-    alt="Le pan en mode Logique, note d'ancrage ré, œil ouvert sur l'accord I. Les noms des notes ont disparu. Les quatre notes allumées en rouge portent chacune un numéro dans un rond blanc : 1 au centre, 2 et 3 à gauche, chiffres bleus sur anneau bleu (main gauche) ; 1 et 4, chiffres rouges (main droite). L'écran du handpan, sous le ding, affiche « I Équilibre ». En bas, les sept cartes d'accord colorées gardent leur nom d'accord : I Équilibre D, II Élan Em, III Aventure F#m, IV Détente G, V Tension A, VI Nostalgie Bm, VII Mystère C#°."
+    src="/images/blog-capo-2026-10-sans-noms-ordre-mains-2026-10.webp"
+    width="2200"
+    height="1610"
+    alt="Degrés &amp; émotions sur le Neotone Mutant, note d'ancrage ré, niveau Découverte, œil ouvert sur l'accord I. Les noms des notes ont disparu du pan. Les quatre notes de l'accord portent chacune un numéro dans un rond blanc, reliées par un tracé : 1 sur le ding et 4 en haut, chiffres rouges (main droite) ; 2 et 3 à gauche, chiffres bleus (main gauche). L'écran du handpan, sous le ding, affiche « I Équilibre ». En bas, les sept cartes colorées gardent leur nom d'accord : I ÉQUILIBRE D, II ÉLAN Em, III AVENTURE F#m, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm, VII MYSTÈRE C#dim."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le même accord I, sans aucun nom de note sur le pan : l'ordre de frappe 1·2·3·4, et la couleur de la main qui joue. Les cartes du bas, elles, gardent le nom de l'accord.</figcaption>
+  <figcaption>Le même accord I, sans aucun nom de note sur le pan : l'ordre de frappe 1·2·3·4, et la couleur de la main qui joue (chiffres rouges pour la droite, bleus pour la gauche). Les cartes du bas, elles, gardent le nom de l'accord.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -175,15 +176,15 @@ Ce n'est pas un capo. Ton vrai pan acoustique, lui, n'a pas bougé d'un demi-ton
 
 <figure>
   <img
-    src="/images/blog-capo-2026-08-roue-tonalite-v2.webp"
-    width="1600"
-    height="935"
-    alt="Le mode acoustique avec un D Minor / Kurd 10 chargé. À gauche, le pan : les notes sont colorées par camemberts — une part par accord auquel la note participe — et l'écran du handpan, centré sous le ding D3, affiche « D Minor / Kurd 10 ». À droite, la carte de l'instrument joué, avec le bouton « Tester une autre tonalité ». En bas à droite, le panneau ouvert « Tester une autre tonalité », entouré d'un anneau cuivre, explique : « Écoute ta gamme dans une autre tonalité — utile pour trouver celle qui va à ta voix. C'est un simple aperçu : rien n'est modifié dans Mes handpans », suivi des douze touches C à B ; la touche D, allumée, est entourée elle aussi. Le reste de l'écran est assombri."
+    src="/images/blog-capo-2026-08-roue-tonalite-v2-2026-10.webp"
+    width="2880"
+    height="1684"
+    alt="Le mode acoustique avec un D Kurd 10 chargé, thème Nuit étoilée. À gauche, le pan : les notes sont colorées par camemberts — une part par accord auquel la note participe — et l'écran du handpan, sous le ding D3, affiche « D Kurd 10 ». En bas, les cartes de degrés I à V. À droite, le tiroir « Dispositions &amp; Logique », section Tonalité : note d'ancrage D, mode Triste, le rappel que sur un handpan acoustique les notes sont gravées, puis le bouton « Tester une autre tonalité ». Sous lui, le panneau ouvert « Tester une autre tonalité » explique : « Écoute ta gamme dans une autre tonalité — utile pour trouver celle qui va à ta voix. C'est un simple aperçu : rien n'est modifié dans « Mes handpans » », suivi des douze touches C à B ; la touche D est allumée en orange."
     data-lb="capo"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Côté acoustique : « Tester une autre tonalité » fait <strong>écouter</strong> la gamme ailleurs. C'est un aperçu réversible, pas un capo — l'instrument, lui, n'a pas bougé.</figcaption>
+  <figcaption>Côté acoustique : « Tester une autre tonalité », dans le tiroir <em>Dispositions &amp; Logique</em>, fait <strong>écouter</strong> la gamme ailleurs. C'est un aperçu réversible, pas un capo — l'instrument, lui, n'a pas bougé.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

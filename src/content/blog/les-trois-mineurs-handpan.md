@@ -2,7 +2,8 @@
 title: "Les trois visages du mineur : naturel, harmonique, mélodique"
 description: "Sous le bouton « Triste » du Mode Logique, trois nuances de mineur. Deux pastilles qui montent d'un demi-ton, et la couleur orientale ou jazz apparaît."
 pubDate: 2026-09-12
-cover: "/images/app-triste-trois-mineurs-naturel-2026-09.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-triste-trois-mineurs-naturel-2026-10.webp"
 category: "logique"
 tags: ["harmonie", "mineur", "musicien"]
 lang: "fr"
@@ -26,15 +27,15 @@ C'est celui que tout le monde connaît, et celui que ton handpan joue par défau
 
 <figure>
   <img
-    src="/images/app-triste-trois-mineurs-naturel-2026-09.webp"
-    width="1600"
-    height="1392"
-    alt="Le Mode Logique en mineur naturel sur un Neotone Mutant, thème sombre. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. L'écran du handpan, juste sous le ding D2, indique « D Min. Nat. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII » ; les pastilles portent notamment C4 en haut à gauche et C3 en bas. Les sept cartouches de degrés affichent I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE A#, VII MYSTÈRE C. À droite, dans le panneau « Logique et Emotions », le bouton Triste est actif et son menu Nuances est déplié : « 🌙 Triste profond — mineur naturel — le Triste actuel » (surligné), « 🔥 Triste intense, couleur orientale — mineur harmonique · 7ᵉ montée d'un demi-ton — 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 6ᵉ et 7ᵉ montées d'un demi-ton — 4 pads changent »."
+    src="/images/app-triste-trois-mineurs-naturel-2026-10.webp"
+    width="2880"
+    height="2506"
+    alt="Degrés &amp; émotions en mineur naturel sur un Neotone Mutant · Noyer, thème Nuit étoilée, au niveau Musicien. L'œil de I ÉQUILIBRE Dm est allumé : sur le pan, D2, F3, A3 et D4 s'éclairent en rouge, et l'écran du handpan indique « I Équilibre Dm » ; les notes portent notamment C4 en haut à gauche et C3 en bas. En bas, les cartes I ÉQUILIBRE Dm, II ÉLAN E°, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am. À droite, le tiroir « Dispositions &amp; Logique », bloc « Logique et Emotions » : « Complet, 7 degrés sur 7 — Sur ton Neotone Mutant (19 notes), Logique est complète dans toutes les tonalités ». Sous Tonalité, note d'ancrage D, mode Triste actif, et la liste de ses nuances : « 🌙 Triste profond — mineur naturel — le Triste actuel » (surligné), « 🔥 Triste intense, couleur orientale — mineur harmonique · 7ᵉ montée d'un demi-ton — 2 pads changent », « 🎷 Triste lumineux, couleur jazz — mineur mélodique · 6ᵉ et 7ᵉ montées d'un demi-ton — 4 pads changent ». Plus bas, « Dispositions d'accord » (Profond, Brillant, Ample) et « Voyage des Sensations »."
     data-lb="trois-mineurs"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le menu <em>Nuances</em> déplié sous le bouton <strong>Triste</strong>. L'app y annonce elle-même le coût de chaque nuance : « 2 pads changent » pour le mineur harmonique, « 4 pads changent » pour le mélodique. Ici le mineur naturel est actif : le pan porte C4 et C3.</figcaption>
+  <figcaption>Les nuances de <strong>Triste</strong>, dépliées dans le tiroir <em>Dispositions &amp; Logique</em>. L'app y annonce elle-même le coût de chaque nuance : « 2 pads changent » pour le mineur harmonique, « 4 pads changent » pour le mélodique. Ici le mineur naturel est actif : le pan porte C4 et C3.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -46,15 +47,15 @@ Sur le pan, **deux pastilles seulement** changent de note.
 
 <figure>
   <img
-    src="/images/app-triste-trois-mineurs-harmonique-2026-09.webp"
-    width="1600"
-    height="1392"
-    alt="Le même écran, avec l'entrée « 🔥 Triste intense, couleur orientale » surlignée dans le menu Nuances. L'écran du handpan indique maintenant « D Min. Harm. — Les 7 degrés dans l'ordre I·II·III·IV·V·VI·VII ». Sur le handpan, les pastilles qui affichaient C4 et C3 affichent maintenant C#4 et C#3 ; toutes les autres notes sont inchangées, ainsi que les sept cartouches de degrés (de I ÉQUILIBRE Dm à VII MYSTÈRE C) et la disposition générale."
+    src="/images/app-triste-trois-mineurs-harmonique-2026-10.webp"
+    width="2880"
+    height="2506"
+    alt="Le même écran, avec l'entrée « 🔥 Triste intense, couleur orientale » surlignée dans la liste des nuances. Sur le pan, les notes qui affichaient C4 et C3 affichent maintenant C#4 et C#3 ; toutes les autres notes sont à leur place, et l'accord I Équilibre Dm reste allumé sur D2, F3, A3 et D4. Dans les cartes du bas, III AVENTURE devient F+ et V TENSION devient A (majeur)."
     data-lb="trois-mineurs"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>La même vue en mineur harmonique. Deux pastilles seulement ont changé de nom : <strong>C4 → C#4</strong> et <strong>C3 → C#3</strong>. Le reste du pan — et les formes d'accords — est identique à l'image précédente.</figcaption>
+  <figcaption>La même vue en mineur harmonique. Deux notes seulement ont changé de nom : <strong>C4 → C#4</strong> et <strong>C3 → C#3</strong>. L'accord allumé et sa forme sur le pan sont identiques à l'image précédente ; dans les cartes, le V devient <em>A</em> majeur et le III devient <em>F+</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -72,7 +73,7 @@ Autrement dit, tu ne réapprends rien. Tu joues exactement le même geste, et tu
 
 ## Où ça se trouve, et pour qui
 
-Les nuances vivent dans un petit menu déplié sous le bouton **Triste**, au niveau **Musicien** ; en Découverte et Apprenti, un badge ✨ signale simplement leur existence sans encombrer l'écran. Ton choix est mémorisé et s'applique dès que tu repasses en Triste — en Joyeux il est ignoré, tout simplement.
+Les nuances vivent dans le tiroir **🎛 Dispositions & Logique**, juste sous le bouton **Triste**, au niveau **Musicien** ; en Découverte et Apprenti, un badge ✨ signale simplement leur existence sans encombrer l'écran. Ton choix est mémorisé et s'applique dès que tu repasses en Triste — en Joyeux il est ignoré, tout simplement.
 
 Une réserve importante et assumée : **c'est réservé au handpan électronique**. Sur un handpan acoustique, les notes sont physiquement martelées dans l'acier ; aucune application ne fera monter un pad d'un demi-ton. Il faut un [Neotone](/neotone) pour entendre la nuance changer sous tes mains. En acoustique, l'app continue d'afficher les degrés justes dans les quatre cadres — majeur, mineur naturel, harmonique et mélodique — mais elle ne fait pas monter les notes : elle décrit ce que ton instrument sait faire, sans promettre l'impossible.
 
