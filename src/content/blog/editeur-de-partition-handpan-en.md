@@ -2,7 +2,7 @@
 title: "The score editor: play your songs on the handpan"
 description: "Song Mode shows lyrics with chord diagrams anchored above the words. Play Hallelujah or Let It Be on the handpan, no music theory needed."
 pubDate: 2026-08-15
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/blog-partition-hallelujah-2026.webp"
 category: "partitions"
 tags: ["score", "songs", "accompaniment"]

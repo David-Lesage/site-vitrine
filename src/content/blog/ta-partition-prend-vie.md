@@ -2,7 +2,7 @@
 title: "Ta partition prend vie : le lecteur, les répétitions, le pupitre"
 description: "La partition ne se contente plus d'être imprimée : elle se joue, s'illumine accord après accord, compte tes répétitions et s'affiche en plein écran."
 pubDate: 2026-09-20
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/blog-partition-prend-vie-couverture.webp"
 category: "partitions"
 tags: ["lecteur", "pupitre", "impression"]
@@ -27,15 +27,15 @@ Une barre **▶ / ⏸ / ⏹** joue les accords **dans l'ordre des paroles**. Le 
 
 <figure>
   <img
-    src="/images/app-partition-lecteur-en-marche.webp"
-    width="2000"
-    height="1770"
-    alt="Handpan Constellation Studio, Éditeur de Partition Visuelle en mode Chanson, thème sombre. En haut, la barre LECTURE : le bouton de lecture affiche ⏸ (le morceau joue), un bouton d'arrêt, une bascule 🥁 Batteur, une bascule de métronome, TEMPO 80, MÉTRIQUE 4/4, et l'ATTAQUE réglée sur Arpège parmi App, Plaqué, Arpège et Arpège ↑↓. En dessous, la ligne « Batteur — Pop 4/4 · 80 · au repos ». À gauche, le panneau MODE avec Chanson sélectionné et la Tonalité C. À droite, la feuille « LET IT BE — The Beatles », badge 4/4 sous le titre, section COUPLET 1 et bloc REFRAIN encadré, avec les diagrammes d'accords C, G, Am, F posés au-dessus des paroles et les badges ×4 et ×2 posés sur les accords C et G de la troisième ligne."
+    src="/images/app-partition-lecteur-en-marche-2026-10.webp"
+    width="2260"
+    height="2000"
+    alt="L'Éditeur de Partition Visuelle pendant la lecture de Let It Be, thème Nuit étoilée. En haut, le bouton de lecture est devenu un carré (arrêt), le tempo est à 80, l'attaque est réglée sur « App » (les autres choix : Plaqué, Arpège, Arpège ↑↓), puis le bouton « Enchaîner » et la ligne « Batteur Pop 4/4 · 80 · au repos ». En haut à droite, les boutons Pupitre, PDF et PNG. À gauche, la colonne des réglages : Mode, Tonalité, Mise en page, Style du handpan, Titre et contenu, Diagrammes, Légende, Mon morceau. Au-dessus de la feuille, un bandeau jaune : « Disposition Logique en D mineur : tous les accords du morceau sont complets. Cette gamme n'est pas celle de ton Neotone. Sur ton Neotone, choisis la gamme D mineur (disposition Logique). » Sur la feuille, le titre LET IT BE, The Beatles, la pastille 4/4, puis l'Intro : des diagrammes de handpan nommés Dm · Équilibre, Am · Tension, Bb · Nostalgie, Gm · Détente."
     data-lb="partition-lecteur"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>L'éditeur pendant la lecture : le bouton affiche <strong>⏸</strong>, l'attaque est réglée sur <em>Arpège</em>, le tempo sur 80 et la métrique sur 4/4. Les diagrammes sont posés au-dessus des paroles de <em>Let It Be</em>, avec leurs badges ×4 et ×2.</figcaption>
+  <figcaption>L'éditeur pendant la lecture : le bouton de lecture est devenu un carré d'arrêt, le tempo est à 80, l'attaque réglée sur <em>App</em> (à côté, <em>Plaqué</em>, <em>Arpège</em>, <em>Arpège ↑↓</em>), et le batteur attend. Le bandeau jaune dit seulement que ce morceau est posé en D mineur, une autre gamme que celle réglée sur le Neotone de la capture : l'app propose de la choisir pour jouer sur l'instrument, la lecture fonctionne dans tous les cas.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -81,10 +81,10 @@ Voilà le petit détail qui rend service tous les jours. Un bouton **🎼** et t
 
 <figure>
   <img
-    src="/images/app-partition-metrique-titre.webp"
-    width="1400"
-    height="299"
-    alt="En-tête de la feuille de partition : le titre LET IT BE en grandes capitales, l'auteur The Beatles en italique dessous, et sous les deux un badge ovale portant la mention 4/4."
+    src="/images/app-partition-metrique-titre-2026-10.webp"
+    width="2012"
+    height="430"
+    alt="Le haut d'une partition, thème Nuit étoilée : le titre LET IT BE en capitales, l'auteur The Beatles en italique, et en dessous une pastille arrondie « 4/4 »."
     data-lb="partition-metrique"
     data-lb-wide
     loading="lazy"
@@ -95,15 +95,15 @@ Voilà le petit détail qui rend service tous les jours. Un bouton **🎼** et t
 
 <figure>
   <img
-    src="/images/app-pupitre-plein-ecran-tablette.webp"
+    src="/images/app-pupitre-plein-ecran-tablette-2026-10.webp"
     width="1536"
     height="2048"
-    alt="Le Pupitre de Handpan Constellation Studio en plein écran, aux proportions d'un iPad tenu en portrait. La partition de LET IT BE occupe tout l'écran : titre, auteur, badge 4/4, section COUPLET 1 à gauche et bloc REFRAIN encadré à droite, diagrammes d'accords au-dessus des paroles, badges ×4, ×2 et ×3. Aucune barre d'outils n'est visible, et le pied de page indique « créé avec Handpan Constellation Studio by David Lesage »."
+    alt="Le Pupitre au format d'une tablette en portrait, thème Nuit étoilée. La partition de Let It Be occupe l'écran : titre, The Beatles, 4/4, l'Intro avec ses diagrammes (C · Équilibre, G · Tension, Am · Nostalgie, F · Détente), puis le Couplet 1 avec les diagrammes posés au-dessus des paroles « When I find myself in times of trouble / Mother Mary comes to me ». En bas, la barre du Pupitre : fermer, Lire (en jaune), M'entraîner, Apprendre la grille, Modifier, le zoom 100 %, puis Défiler, Boucle A-B, Transposer, Exporter et Chanter."
     data-lb="partition-pupitre"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le <strong>🎼 Pupitre</strong> en plein écran, aux proportions d'un iPad en portrait : plus aucune barre d'outils, seulement la partition. L'interface se masque d'elle-même au bout de quelques secondes.</figcaption>
+  <figcaption>Le <strong>🎼 Pupitre</strong> aux proportions d'un iPad en portrait : la partition prend tout l'écran, et une seule barre en bas regroupe ce qui sert en jouant — <em>Lire</em>, <em>M'entraîner</em>, <em>Apprendre la grille</em>, <em>Défiler</em>, <em>Boucle A-B</em>, <em>Transposer</em>, <em>Exporter</em>, <em>Chanter</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

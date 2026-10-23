@@ -2,7 +2,7 @@
 title: "Mets tes accords en boucle, et chante par-dessus"
 description: "La barre d'accompagnement joue un accord — ou tout un enchaînement — en boucle au tempo que tu veux. Et pour aller plus loin, un batteur t'accompagne."
 pubDate: 2026-09-01
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/app-tiroir-batteur.webp"
 category: "chant"
 tags: ["rythme", "boucle", "batteur"]
@@ -43,15 +43,15 @@ C'était le compte du 1er septembre. Depuis, le batteur a gagné sept rythmes ur
 
 <figure>
   <img
-    src="/images/app-tiroir-batteur.webp"
-    width="898"
-    height="396"
-    alt="Le tiroir 🥁 Batteur ouvert, thème sombre. En tête : « Batteur — Pop 4/4 · 80 · au repos ». En dessous, une liste déroulante affichant « Pop 4/4 », un bouton lecture, et un réglage « BPM − 80 + ». Deuxième rangée : un réglage de volume « 🔊 − 85% + » puis un sélecteur à trois positions « Sobre / Vivant / Généreux », Vivant étant sélectionné en violet. Dernière ligne : une case à cocher « décompte » et un bouton lecture."
+    src="/images/app-tiroir-batteur-2026-10.webp"
+    width="1366"
+    height="222"
+    alt="Le tiroir 🥁 Batteur ouvert sous la barre de lecture de l'éditeur, thème Nuit étoilée. En haut, à côté des attaques Plaqué, Arpège, Arpège ↑↓ et du bouton Enchaîner : « Batteur — Pop 4/4 · 80 · au repos ». Dans le tiroir, sur une seule ligne : une liste déroulante affichant « Pop 4/4 », un bouton lecture, un réglage de volume « 🔊 − 85% + », un menu « Doux », une case cochée « décompte » et un dernier bouton lecture."
     data-lb="batteur"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le tiroir <strong>🥁 Batteur</strong> ouvert. Le groove est choisi dans la liste (ici <em>Pop 4/4</em>), le tempo et le volume se règlent à côté, et la « vie » se choisit entre <strong>Sobre</strong>, <strong>Vivant</strong> et <strong>Généreux</strong> — Vivant est actif ici.</figcaption>
+  <figcaption>Le tiroir <strong>🥁 Batteur</strong> ouvert. Le groove se choisit dans la liste (ici <em>Pop 4/4</em>) ; à côté, le volume, le kit (ici <em>Doux</em>) et le décompte. Le tempo, lui, se règle dans la barre de lecture juste au-dessus.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

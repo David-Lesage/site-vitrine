@@ -2,7 +2,7 @@
 title: "L'éditeur de partition : joue tes chansons au handpan"
 description: "Le Mode Chanson affiche les paroles avec les diagrammes d'accords ancrés au-dessus des mots. Joue Hallelujah ou Let It Be au handpan, sans solfège."
 pubDate: 2026-08-15
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/blog-partition-hallelujah-2026.webp"
 category: "partitions"
 tags: ["partition", "chansons", "accompagnement"]
@@ -25,15 +25,15 @@ Ouvre *Hallelujah* en Mode Chanson. Au-dessus du mot où tombe le premier accord
 
 <figure>
   <img
-    src="/images/blog-partition-hallelujah-2026.webp"
-    width="2000"
-    height="1400"
-    alt="L'Éditeur de Partition Visuelle en mode Chanson, thème sombre. À gauche, le panneau MODE avec cinq choix — Instrument seul, Complet, Séquence d'accords, Tous les accords possibles, Chanson (sélectionné) — la Tonalité D, puis les blocs MISE EN PAGE (Éco-Encre, Portrait sélectionné ou Paysage, « Notes non jouées : Couleur / Vide »), STYLE, CONTENU, DIAGRAMMES, LÉGENDE, et MON COMPTE avec « ✍️ Nouvelle chanson » et « 💾 Enregistrer dans mon compte ». À droite, la feuille « HALLELUJAH / Leonard Cohen » avec un badge 6/8 sous le titre, une colonne INTRODUCTION et une colonne COUPLET 1, les diagrammes ronds D, Bm, G, A, F#m posés au-dessus des lignes de paroles. En haut, la barre LECTURE (TEMPO 80, MÉTRIQUE 6/8, ATTAQUE App) et les boutons Pupitre, Exporter PDF, PNG, Polygones. En pied de feuille : « créé avec Handpan Constellation Studio by David Lesage »."
+    src="/images/blog-partition-hallelujah-2026-2026-10.webp"
+    width="2880"
+    height="2016"
+    alt="L'Éditeur de Partition Visuelle en mode Chanson, thème Nuit étoilée. En haut, la barre de lecture : Tempo 80, l'attaque réglée sur App (Plaqué, Arpège, Arpège ↑↓), Enchaîner, et « Batteur Ballade 6/8 · 80 · au repos » ; à droite, Pupitre, PDF et PNG. À gauche, la colonne des réglages : Mode, Tonalité, Mise en page, Style du handpan, Titre et contenu, Diagrammes, Légende, Mon morceau. Au-dessus de la feuille, un bandeau jaune : « Disposition Logique en C majeur : tous les accords du morceau sont complets. Cette gamme n'est pas celle de ton Neotone. Sur ton Neotone, choisis la gamme C majeur (disposition Logique). » La feuille affiche « HALLELUJAH / Leonard Cohen » avec une pastille 6/8, une partie INTRODUCTION (C · Équilibre, Am · Nostalgie) et le COUPLET 1, où les diagrammes ronds C · Équilibre et Am · Nostalgie sont posés au-dessus des mots « I've » et « secret » de « I've heard there was a secret chord »."
     data-lb="editeur-partition"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le mode Chanson à l'écran. À gauche les réglages — mode, tonalité, mise en page, contenu des diagrammes ; à droite la feuille, où chaque diagramme est ancré au-dessus du mot où l'accord change.</figcaption>
+  <figcaption>Le mode Chanson à l'écran. À gauche la colonne des réglages — mode, tonalité, mise en page, diagrammes ; à droite la feuille, où chaque diagramme est ancré au-dessus du mot où l'accord change. Le bandeau jaune signale seulement que le morceau est posé en C majeur, une autre gamme que celle réglée sur le Neotone de la capture.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

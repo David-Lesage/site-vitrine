@@ -2,7 +2,7 @@
 title: "Loop your chords, and sing over them"
 description: "The accompaniment bar loops one chord — or a whole progression — at the tempo you choose. And when you want more, a drummer joins in."
 pubDate: 2026-09-01
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/app-tiroir-batteur.webp"
 category: "chant"
 tags: ["rhythm", "loop", "drummer"]
@@ -47,15 +47,15 @@ What belongs to the **Studio** version is **MIDI recording** — and there the d
 
 <figure>
   <img
-    src="/images/app-tiroir-batteur.webp"
-    width="898"
-    height="396"
-    alt="The 🥁 Batteur (drummer) drawer, open, dark theme. Header: « Batteur — Pop 4/4 · 80 · au repos ». Below, a dropdown showing « Pop 4/4 », a play button, and a « BPM − 80 + » control. Second row: a volume control « 🔊 − 85% + » then a three-position selector « Sobre / Vivant / Généreux », with Vivant selected in purple. Last line: a « décompte » (count-in) checkbox and a play button."
+    src="/images/app-tiroir-batteur-2026-10-en.webp"
+    width="1366"
+    height="222"
+    alt="The 🥁 Drummer drawer open under the editor's playback bar, Starry Night theme. At the top, next to the Block, Arpeggio, Arpeggio ↑↓ strikes and the Flow on button: “Drummer — Pop 4/4 · 80 · resting”. In the drawer, on a single line: a dropdown showing “Pop 4/4”, a play button, a volume control “🔊 − 85% +”, a “Soft” menu, a ticked “count-in” box and a last play button."
     data-lb="batteur"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The <strong>🥁 drummer</strong> drawer, open. The groove is picked from the list (here <em>Pop 4/4</em>), tempo and volume sit next to it, and the "liveliness" is chosen between <strong>Sobre</strong>, <strong>Vivant</strong> and <strong>Généreux</strong> — Vivant is active here. (Screenshot of the French interface.)</figcaption>
+  <figcaption>The <strong>🥁 drummer</strong> drawer, open. The groove is picked from the list (here <em>Pop 4/4</em>); next to it, the volume, the kit (here <em>Soft</em>) and the count-in. The tempo is set in the playback bar just above.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 

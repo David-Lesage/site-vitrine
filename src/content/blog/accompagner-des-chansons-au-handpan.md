@@ -2,8 +2,8 @@
 title: "Accompagner des chansons au handpan, comme une guitare"
 description: "Le Mode Logique fait passer le handpan d'un instrument de nappes méditatives à un vrai instrument d'accompagnement de chansons, sans solfège."
 pubDate: 2026-07-18
-updatedDate: 2026-10-23
-cover: "/images/app-logique-progression-2026-09.webp"
+updatedDate: 2026-10-24
+cover: "/images/app-logique-progression-2026-10.webp"
 category: "logique"
 tags: ["méthode", "accompagnement"]
 lang: "fr"
@@ -37,29 +37,29 @@ D'un coup, ta poignée de notes n'est plus une contrainte : c'est une palette d'
 
 <figure>
   <img
-    src="/images/app-logique-progression-2026-09.webp"
-    width="1600"
-    height="971"
-    alt="En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… » avec « la note · chakras » retenu, « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Noyer, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Le Mode Logique avec une progression déjà posée sur un Neotone Mutant. L'écran du handpan, juste sous le ding D2, indique « D Majeur — Pop Complète — I·II·IV·V·VI ». En bas, cinq cartouches remplis à la suite : I ÉQUILIBRE D, II ÉLAN Em, IV DÉTENTE G, V TENSION A, VI NOSTALGIE Bm ; les emplacements Accord 6 et Accord 7 restent gris et portent la mention « Aucun ». À droite, le bloc « Mes handpans » (Neotone Mutant · Noyer) et le panneau « Logique et Emotions » avec Ressenti émotionnel retenu, la note d'ancrage D et le mode Joyeux."
+    src="/images/app-logique-progression-2026-10.webp"
+    width="2880"
+    height="1748"
+    alt="Handpan Constellation Studio en thème Nuit étoilée, Découvrir › Degrés &amp; émotions, sur un Neotone Mutant · Noyer. L'œil de la première carte, I ÉQUILIBRE Dm, est allumé : sur le pan, les quatre notes de l'accord s'éclairent en rouge et sont numérotées dans l'ordre de jeu, 1 sur le ding D2, 2 sur F3, 3 sur A3, 4 sur D4, reliées par un trait ; les autres notes restent sombres. L'écran du handpan, sous le ding, indique « I Équilibre Dm ». En bas, les sept cartes : I ÉQUILIBRE Dm, II ÉLAN Edim, III AVENTURE F, IV DÉTENTE Gm, V TENSION Am, VI NOSTALGIE Bb, VII MYSTÈRE C, puis la flèche « PROGRESSION DES ACCORDS » et la barre « Atelier d'accords »."
     data-lb="logique-progression"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Une progression posée dans les emplacements du bas : <em>I ÉQUILIBRE D</em>, <em>II ÉLAN Em</em>, <em>IV DÉTENTE G</em>, <em>V TENSION A</em>, <em>VI NOSTALGIE Bm</em>. Les deux derniers emplacements sont restés vides — la suite s'appelle ici « Pop Complète ».</figcaption>
+  <figcaption>Un degré, un accord entier. L'œil de <em>I ÉQUILIBRE Dm</em> est allumé : sur le Neotone Mutant, les quatre notes de l'accord s'éclairent et sont numérotées dans l'ordre où les jouer (1 sur le ding D2, puis F3, A3, D4). Les six autres cartes attendent leur tour.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
 <figure>
   <img
-    src="/images/app-logique-progression-acoustique-2026-09.webp"
-    width="1600"
-    height="971"
-    alt="La même progression posée sur un handpan acoustique D Minor / Kurd 10, thème sombre. En haut, la bande d'outils compacte sur une seule ligne : l'îlot ChromaKeys (Off / On, sur On), « La couleur dit… la note · chakras », « Notes partagées » sur On, puis les quatre menus NOTATION ABC, APPARENCE Handpan Acoustique, MAINS &amp; DOIGTÉ et CONSTELLATION Ouvert, et à droite l'îlot EXPORTER PDF / PARTITION cerclé de cyan avec son icône d'imprimante. Au centre, le pan et l'écran du handpan, juste sous le ding D3, qui indique « D Minor / Kurd 10 ». En bas, cinq cartouches remplis à la suite : I ÉQUILIBRE Dm, II ÉLAN E° (renversement 2), IV DÉTENTE Gm (renversement 1), V TENSION Am, VI NOSTALGIE A# ; les emplacements Accord 6 et Accord 7 restent gris et portent la mention « Aucun ». À droite, le panneau « Logique et Emotions » avec la note d'ancrage D, le mode Joyeux et, dans « Voyage des Sensations », la ligne « Pop Complète : I ➔ II ➔ IV ➔ V ➔ VI » retenue."
+    src="/images/app-logique-progression-acoustique-2026-10.webp"
+    width="2880"
+    height="1748"
+    alt="Le même écran sur un handpan acoustique D Kurd 10, thème Nuit étoilée. L'œil de I ÉQUILIBRE Dm est allumé : les notes de l'accord s'éclairent en rouge, numérotées 1 sur le ding D3, 2 sur D4, 3 sur F4, 4 sur A4, reliées par un trait ; l'écran du handpan indique « D Kurd 10 ». À gauche, sous le nom de l'instrument, les boutons Stop, Son, 440,00 Hz et Compléter. En bas, les sept cartes : I ÉQUILIBRE Dm, II ÉLAN Edim (renversement 2), III AVENTURE F, IV DÉTENTE Gm (renversement 1), V TENSION Am, VI NOSTALGIE Bb, VII MYSTÈRE C."
     data-lb="logique-progression-acoustique"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>La même progression, sur un <strong>handpan acoustique</strong>. Pop Complète reste Pop Complète : seuls les accords changent de nom, parce que le pan n'a pas les mêmes notes.</figcaption>
+  <figcaption>Le même geste sur un <strong>handpan acoustique</strong> D Kurd 10. En D mineur, les sept degrés portent les mêmes accords que sur le Mutant ; ce sont les notes allumées qui changent, parce que le pan n'a pas la même disposition : ici D3, D4, F4 et A4.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 
@@ -75,15 +75,15 @@ C'est là que ça devient magique : le Mode Logique est **idéal pour accompagne
 
 <figure>
   <img
-    src="/images/blog-partition-hallelujah-2026.webp"
-    width="2000"
-    height="1400"
-    alt="L'Éditeur de Partition Visuelle en mode Chanson, thème sombre. La feuille affiche « HALLELUJAH / Leonard Cohen » avec un badge 6/8 sous le titre, une colonne INTRODUCTION à gauche et une colonne COUPLET 1 à droite. Au-dessus de chaque ligne de paroles, des diagrammes ronds de handpan portent le nom de l'accord : D, Bm, G, A, F#m. En haut, la barre LECTURE avec TEMPO 80, MÉTRIQUE 6/8 et l'attaque réglée sur App. En pied de feuille : « créé avec Handpan Constellation Studio by David Lesage »."
+    src="/images/blog-partition-hallelujah-2026-2026-10.webp"
+    width="2880"
+    height="2016"
+    alt="L'Éditeur de Partition Visuelle en mode Chanson, thème Nuit étoilée. La feuille affiche « HALLELUJAH / Leonard Cohen » avec une pastille 6/8, une partie INTRODUCTION et le COUPLET 1 : au-dessus des paroles « I've heard there was a secret chord », des diagrammes ronds de handpan portent le nom de l'accord et son degré, C · Équilibre et Am · Nostalgie. En haut, la barre de lecture avec Tempo 80, l'attaque réglée sur App et le Batteur « Ballade 6/8 ». Au-dessus de la feuille, un bandeau jaune : « Disposition Logique en C majeur : tous les accords du morceau sont complets. Cette gamme n'est pas celle de ton Neotone. Sur ton Neotone, choisis la gamme C majeur (disposition Logique). » En pied de feuille : « créé avec Handpan Constellation Studio by David Lesage »."
     data-lb="chanson-hallelujah"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>Le mode Chanson : les diagrammes d'accords sont ancrés au-dessus des mots. Ici <em>Hallelujah</em> en 6/8, tonalité D — chaque rond montre où poser les mains sur le pan pour l'accord D, Bm, G, A ou F#m.</figcaption>
+  <figcaption>Le mode Chanson : les diagrammes d'accords sont ancrés au-dessus des mots. Ici <em>Hallelujah</em> en 6/8, tonalité C — chaque rond montre où poser les mains sur le pan pour l'accord, avec son degré : <em>C · Équilibre</em>, <em>Am · Nostalgie</em>. Le bandeau jaune dit seulement que cette tonalité n'est pas la gamme réglée sur le Neotone de la capture.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Clique sur l'image pour l'ouvrir, puis à nouveau dessus pour la taille réelle.</p>
 </figure>
 

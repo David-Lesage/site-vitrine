@@ -2,7 +2,7 @@
 title: "Your score comes alive: the player, the repeats, the music stand"
 description: "The score no longer just gets printed: it plays, lights up chord after chord, counts your repeats and goes full screen."
 pubDate: 2026-09-20
-updatedDate: 2026-10-23
+updatedDate: 2026-10-24
 cover: "/images/blog-partition-prend-vie-couverture.webp"
 category: "partitions"
 tags: ["player", "music stand", "printing"]
@@ -27,15 +27,15 @@ A **▶ / ⏸ / ⏹** bar plays the chords **in the order of the lyrics**. The c
 
 <figure>
   <img
-    src="/images/app-partition-lecteur-en-marche.webp"
-    width="2000"
-    height="1770"
-    alt="Handpan Constellation Studio, Visual Score Editor in Song mode, dark theme. The PLAYBACK bar at the top shows a ⏸ button (the piece is playing), a stop button, a 🥁 drummer toggle, a metronome toggle, TEMPO 80, MÉTRIQUE 4/4, and the attack set to Arpège among App, Plaqué, Arpège and Arpège ↑↓. Below it, the line « Batteur — Pop 4/4 · 80 · au repos ». On the left, the MODE panel with Chanson selected and key C. On the right, the sheet « LET IT BE — The Beatles » with a 4/4 badge under the title, a COUPLET 1 section and a boxed REFRAIN block, chord diagrams C, G, Am and F placed above the lyrics, and ×4 and ×2 badges on the C and G chords of the third line."
+    src="/images/app-partition-lecteur-en-marche-2026-10-en.webp"
+    width="2260"
+    height="2000"
+    alt="The Visual Score Editor while Let It Be plays, Starry Night theme. At the top, the play button has become a square (stop), tempo 80, the strike set to “App” (the other choices: Block, Arpeggio, Arpeggio ↑↓), then the “Flow on” button and the line “Drummer Pop 4/4 · 80 · resting”. Top right, the Music stand, PDF and PNG buttons. On the left, the settings column: Mode, Key, Layout, Handpan style, Title and content, Diagrams, Legend, My song. Above the sheet, a yellow banner: “Logic layout in D minor: all the song's chords are complete. This scale is not the one on your Neotone. On your Neotone, choose the D minor scale (Logic layout).” On the sheet, the title LET IT BE, The Beatles, the 4/4 pill, then the Intro: handpan diagrams named Dm · Balance, Am · Tension, Bb · Nostalgia, Gm · Ease."
     data-lb="partition-lecteur"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The editor during playback: the button shows <strong>⏸</strong>, the attack is set to <em>Arpège</em>, tempo 80, time signature 4/4. The diagrams sit above the lyrics of <em>Let It Be</em>, with their ×4 and ×2 badges. (The interface is shown in French.)</figcaption>
+  <figcaption>The editor during playback: the play button has become a stop square, tempo 80, the strike set to <em>App</em> (next to it, <em>Block</em>, <em>Arpeggio</em>, <em>Arpeggio ↑↓</em>), and the drummer is waiting. The yellow banner only says that this song is laid out in D minor, a different scale from the one set on the Neotone in the screenshot: the app suggests choosing it to play on the instrument; playback works either way.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
@@ -81,10 +81,10 @@ Here's the little detail that helps every single day. One **🎼** button and yo
 
 <figure>
   <img
-    src="/images/app-partition-metrique-titre.webp"
-    width="1400"
-    height="299"
-    alt="Header of the score sheet: the title LET IT BE in large capitals, the author The Beatles in italics below, and under both an oval badge reading 4/4."
+    src="/images/app-partition-metrique-titre-2026-10-en.webp"
+    width="2012"
+    height="430"
+    alt="The top of a score, Starry Night theme: the title LET IT BE in capitals, the author The Beatles in italics, and below it a rounded “4/4” pill."
     data-lb="partition-metrique"
     data-lb-wide
     loading="lazy"
@@ -95,15 +95,15 @@ Here's the little detail that helps every single day. One **🎼** button and yo
 
 <figure>
   <img
-    src="/images/app-pupitre-plein-ecran-tablette.webp"
+    src="/images/app-pupitre-plein-ecran-tablette-2026-10-en.webp"
     width="1536"
     height="2048"
-    alt="Handpan Constellation Studio's music stand in full screen, at the proportions of an iPad held in portrait. The LET IT BE score fills the screen: title, author, 4/4 badge, a COUPLET 1 section on the left and a boxed REFRAIN block on the right, chord diagrams above the lyrics, ×4, ×2 and ×3 badges. No toolbar is visible, and the footer reads « créé avec Handpan Constellation Studio by David Lesage »."
+    alt="The music stand at tablet-portrait size, Starry Night theme. The Let It Be score fills the screen: title, The Beatles, 4/4, the Intro with its diagrams (Dm · Balance, Am · Tension, Bb · Nostalgia, Gm · Ease), then the first verse with the diagrams above the lyrics “When I find myself in times of trouble / Mother Mary comes to me”. At the bottom, the music stand bar: close, Play (in yellow), Practise, Learn the chords, Edit, the 100% zoom, then Scroll, A-B loop, Transpose, Export and Sing."
     data-lb="partition-pupitre"
     data-lb-wide
     loading="lazy"
   />
-  <figcaption>The <strong>🎼 music stand</strong> in full screen, at iPad-portrait proportions: no toolbar left, only the score. The interface hides itself after a few seconds.</figcaption>
+  <figcaption>The <strong>🎼 music stand</strong> at iPad-portrait proportions: the score fills the screen, and a single bar at the bottom gathers what you need while playing — <em>Play</em>, <em>Practise</em>, <em>Learn the chords</em>, <em>Scroll</em>, <em>A-B loop</em>, <em>Transpose</em>, <em>Export</em>, <em>Sing</em>.</figcaption>
   <p class="figure-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>Click the image to open it, then click again for full size.</p>
 </figure>
 
