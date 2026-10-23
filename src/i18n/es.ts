@@ -797,7 +797,7 @@ export const es: Dict = {
         "Rellenas este formulario (con la fecha de recogida deseada).",
         "Reviso tu solicitud y se la transmito a Neotone (Soundventure, en Budapest) con el número de serie de tu instrumento. Vas en copia.",
         "Neotone te envía la factura y un enlace de pago con tarjeta, solo entre semana (salvo festivos húngaros). Llega desde szamlazz.hu: revisa tu carpeta de spam.",
-        "Pagas <strong>antes</strong> de venir. El día acordado te entrego tu Neotone ya pagado, en el showroom (París 20). Puedes pedirme el justificante de pago."
+        "Pagas <strong>antes</strong> de venir. El día acordado te entrego tu Neotone ya pagado, en el showroom (París 20). Podré pedirte tu justificante de pago."
       ],
       "showroomWeekend": "<strong>¿Vienes un fin de semana?</strong> Neotone solo factura entre semana: envía tu solicitud varios días laborables antes, para que tu Neotone esté pagado antes de venir. No se puede pagar en el showroom.",
       "pickupTitle": "Recogida en París",
