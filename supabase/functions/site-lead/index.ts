@@ -180,7 +180,20 @@
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
-import { htmlPart, mailSubject } from '../_shared/mail.ts';
+import { htmlPart, mailSubject, textPart } from '../_shared/mail.ts';
+import {
+    NEOTONE_ORDERS_EMAIL,
+    NEOTONE_STOCK_REQUEST_EMAIL_ENABLED,
+    NEOTONE_STOCK_SOURCE,
+    canWriteToNeotone,
+    neotoneStockMail,
+    partnerOutcomeFr,
+    recentPartnerMail,
+    stockPairLabelFr,
+    stockRequestClientHtml,
+    stockRequestClientSubject,
+    type PartnerMailOutcome,
+} from './neotone-stock-request.ts';
 import { canSignSlotTokens, signSlotToken } from '../_shared/lesson-token.ts';
 import {
     FALLBACK_PRICE_GRID,
@@ -204,7 +217,9 @@ const JSON_HEADERS = { 'Content-Type': 'application/json' };
 // de réception à la personne + notification à David. Sans ça, ils tomberaient
 // dans la branche « liste d'attente » et enverraient un « tu es sur la liste »
 // à quelqu'un qui vient simplement de poser une question.
-const BOOKING_SOURCES = ['showroom-visit', 'private-session', 'showcase-booking', 'showcase-waitlist', 'neotone-discount', 'contact', 'gonilele-order'];
+// `neotone-stock-request` (25/10/2026) : « Faire la demande » du calculateur
+// pour un Neotone absent du showroom — voir ./neotone-stock-request.ts.
+const BOOKING_SOURCES = ['showroom-visit', 'private-session', 'showcase-booking', 'showcase-waitlist', 'neotone-discount', 'contact', 'gonilele-order', 'neotone-stock-request'];
 
 // RÉSERVATION D'UNE PLACE À UN SHOWCASE — la seule source émise par le bouton
 // « Réserver ma place » de /showroom#agenda (ShowroomPage.astro). C'est la SEULE
@@ -352,6 +367,7 @@ const SOURCE_LABELS: Record<string, { fr: string; en: string }> = {
     showcase: { fr: 'Groupe rencontres', en: 'Gathering group' },
     contact: { fr: 'Message via le formulaire de contact', en: 'Message via the contact form' },
     'gonilele-order': { fr: 'Commande d’une harpe Gonilélé', en: 'Gonilélé harp order' },
+    'neotone-stock-request': { fr: 'Neotone pas au showroom : demande de délais', en: 'Neotone not at the showroom: lead-time request' },
 };
 
 /** Libellés lisibles des réponses du formulaire, pour la notification à David. */
@@ -1404,6 +1420,8 @@ Deno.serve(async (req) => {
         // les emails : `personalMessage` = ce que la personne a écrit, et rien
         // d'autre. La colonne `message` garde, elle, le texte reçu tel quel.
         const isNeotone = source === 'neotone-discount';
+        // Demande pour un Neotone absent du showroom (25/10/2026).
+        const isStockRequest = source === NEOTONE_STOCK_SOURCE;
         const { personal: personalMessage, legacy: legacyBilling } = isNeotone
             ? splitLegacyBilling(message)
             : { personal: message, legacy: null };
@@ -1414,7 +1432,8 @@ Deno.serve(async (req) => {
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
         // Téléphone obligatoire UNIQUEMENT pour le formulaire de contact : les
         // autres motifs (réservations, bêta, fabricants…) gardent leurs règles.
-        if (source === 'contact' && !isValidPhone(phone ?? '')) return json({ error: 'invalid_phone' }, 400);
+        // 25/10/2026 : aussi pour `neotone-stock-request` (David rappelle avec les délais).
+        if ((source === 'contact' || isStockRequest) && !isValidPhone(phone ?? '')) return json({ error: 'invalid_phone' }, 400);
 
         const isBooking = BOOKING_SOURCES.includes(source);
         // Réservation d'une place à un showcase → confirmation IMMÉDIATE.
@@ -1455,8 +1474,8 @@ Deno.serve(async (req) => {
             // (lus par l'app : « Neotone → Sheet », « Demander le code »).
             // ⚠️ Colonnes créées par specs/migration-0188-site-leads-neotone-achat.sql :
             // ne JAMAIS déployer cette version avant que la migration soit appliquée.
-            neotone_purchase_mode: isNeotone ? purchaseMode : null,
-            neotone_wood: isNeotone ? neotoneWood : null,
+            neotone_purchase_mode: isNeotone || isStockRequest ? purchaseMode : null,
+            neotone_wood: isNeotone || isStockRequest ? neotoneWood : null,
             billing: billing ?? null,
             country,
             social_account: socialAccount,
@@ -1597,14 +1616,18 @@ Deno.serve(async (req) => {
                     attendanceToken = (tok?.attendance_token as string | undefined) ?? null;
                 }
                 const showcaseHours = showcaseHoursFor(eventDate);
-                const subject = isShowcaseBooking
+                const subject = isStockRequest
+                    ? stockRequestClientSubject(lang)
+                    : isShowcaseBooking
                     ? showcaseConfirmationSubject(eventDate, lang)
                     : isShowcaseWaitlist
                         ? showcaseDatesSubject(upcomingEvents.length, lang)
                         : isBooking
                             ? (lang === 'en' ? 'David Lesage — your request is received ✨' : 'David Lesage — ta demande est bien reçue ✨')
                             : (lang === 'en' ? 'Handpan Studio — you are on the list ✨' : 'Handpan Studio — tu es sur la liste ✨');
-                const html = isShowcaseBooking
+                const html = isStockRequest
+                    ? stockRequestClientHtml({ firstName, lang, model: neotoneModel, wood: neotoneWood, message: personalMessage, site: SITE })
+                    : isShowcaseBooking
                     ? showcaseConfirmationHtml({
                         firstName,
                         lang,
@@ -1644,6 +1667,54 @@ Deno.serve(async (req) => {
                 console.error('site-lead mail error:', mailErr);
             } finally {
                 try { await client.close(); } catch { /* ignore */ }
+            }
+
+            // --- Mail à NEOTONE, de la part de David (25/10/2026) ---------------
+            // Uniquement pour `neotone-stock-request`, derrière l'interrupteur
+            // (livré à false) et la limite d'un mail par modèle + bois / 48 h.
+            // Aucune donnée personnelle du client : seuls le modèle et le bois
+            // sont passés à `neotoneStockMail`. Jamais bloquant.
+            let partnerOutcome: PartnerMailOutcome | null = null;
+            if (isStockRequest) {
+                try {
+                    if (!NEOTONE_STOCK_REQUEST_EMAIL_ENABLED) partnerOutcome = { sent: false, reason: 'disabled' };
+                    else if (!canWriteToNeotone(neotoneModel, neotoneWood)) partnerOutcome = { sent: false, reason: 'imprecise' };
+                    else {
+                        const now = new Date();
+                        const recent = await recentPartnerMail(admin, neotoneModel!, neotoneWood!, now);
+                        if (!recent.ok) partnerOutcome = { sent: false, reason: 'unknown_window', detail: recent.error };
+                        else if (recent.lastAt) {
+                            const when = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'short', timeStyle: 'short', timeZone: SITE_TIME_ZONE }).format(new Date(recent.lastAt));
+                            partnerOutcome = { sent: false, reason: 'recent', detail: when };
+                        } else {
+                            const mail = neotoneStockMail(neotoneModel!, neotoneWood!);
+                            const partnerClient = new SMTPClient({
+                                connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } },
+                            });
+                            try {
+                                await partnerClient.send({
+                                    from,
+                                    to: NEOTONE_ORDERS_EMAIL,
+                                    cc: ADMIN_EMAIL,
+                                    replyTo: ADMIN_EMAIL,
+                                    subject: mailSubject(mail.subject),
+                                    mimeContent: [textPart(mail.text), htmlPart(mail.html)],
+                                });
+                            } finally {
+                                try { await partnerClient.close(); } catch { /* ignore */ }
+                            }
+                            partnerOutcome = { sent: true, at: now.toISOString() };
+                            // Trace pour la limite de 48 h (colonne de la migration
+                            // neotone_partner_mail_at). Un échec ici est seulement journalisé.
+                            const { error: markErr } = await admin.from('site_leads')
+                                .update({ neotone_partner_mail_at: now.toISOString() }).eq('id', leadId);
+                            if (markErr) console.error('site-lead partner mark error:', markErr);
+                        }
+                    }
+                } catch (partnerErr) {
+                    console.error('site-lead partner mail error:', partnerErr);
+                    partnerOutcome = { sent: false, reason: 'error', detail: partnerErr instanceof Error ? partnerErr.message.slice(0, 120) : 'inconnue' };
+                }
             }
 
             // Notification à David — UNIQUEMENT pour ce qui attend une réponse de sa part :
@@ -1702,6 +1773,9 @@ Deno.serve(async (req) => {
                             'Gammes / tarifs': makerPricing,
                             Motivation: motivation,
                             'Modèle visé': neotoneModel ? PROFILE_LABELS[neotoneModel] ?? neotoneModel : null,
+                            // Demande « pas au showroom » : le couple demandé, et le sort du mail à Neotone.
+                            'Pas au showroom': isStockRequest ? stockPairLabelFr(neotoneModel, neotoneWood) : null,
+                            'Mail à Neotone': isStockRequest && partnerOutcome ? partnerOutcomeFr(partnerOutcome) : null,
                             Bois: neotoneWood ? NEOTONE_WOOD_LABELS[neotoneWood] : null,
                             'Mode d’achat': purchaseMode ? PURCHASE_MODE_LABELS[purchaseMode] : null,
                             // Showroom : rien n'est livré, ce pays est celui choisi dans
