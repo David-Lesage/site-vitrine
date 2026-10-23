@@ -78,10 +78,7 @@ Next to the form, a box is titled **"👁 Here is exactly what others will see"*
 
 Switching off your detailed card and saving is enough: **it disappears from the map**, and you're a simple star again (first name, initial, country). The "🗑 Remove everything" button permanently erases the card's information; your account, your pieces and your handpans are untouched.
 
-<!-- C1 EN ATTENTE DE DAVID : phrase proposée par la relecture, à ajouter ici après sa décision (« je la retire » l'engage personnellement).
-FR : Ton étoile simple, elle, ne s'éteint pas d'une case : elle vient avec les conditions d'utilisation. Si tu ne veux pas y être, écris-moi à contact@lesagedavid.fr et je la retire de la carte. Supprimer ton compte la retire aussi.
-EN : Your simple star, though, can't be switched off with a box: it comes with the terms of use. If you'd rather not be on the map, write to me at contact@lesagedavid.fr and I'll remove it. Deleting your account removes it too.
--->
+Your simple star, though, can't be switched off with a box, and that's deliberate: "a user is a star". Every user of the app is on the map, with the minimum: the first name, the initial of the last name and the country from their account. Everything else (your full last name, your city, your lessons, your social links, your website, your instruments) is yours to make public, or not. The terms of use (§ 6 bis) set out this principle, and explain the cases in which a star can be removed.
 
 ## The app doesn't know where you are
 

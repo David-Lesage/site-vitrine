@@ -78,10 +78,7 @@ Si tu donnes des cours, la case « 🎓 Je donne des cours » donne à ton étoi
 
 Éteindre ta fiche détaillée et enregistrer suffit : **elle disparaît de la carte**, et tu redeviens une étoile simple (prénom, initiale, pays). Le bouton « 🗑 Tout retirer » efface pour de bon les informations de la fiche ; ton compte, tes morceaux et tes handpans ne sont pas touchés.
 
-<!-- C1 EN ATTENTE DE DAVID : phrase proposée par la relecture, à ajouter ici après sa décision (« je la retire » l'engage personnellement).
-FR : Ton étoile simple, elle, ne s'éteint pas d'une case : elle vient avec les conditions d'utilisation. Si tu ne veux pas y être, écris-moi à contact@lesagedavid.fr et je la retire de la carte. Supprimer ton compte la retire aussi.
-EN : Your simple star, though, can't be switched off with a box: it comes with the terms of use. If you'd rather not be on the map, write to me at contact@lesagedavid.fr and I'll remove it. Deleting your account removes it too.
--->
+Ton étoile simple, elle, ne s'éteint pas d'une case, et c'est voulu : « un utilisateur est une étoile ». Tous les utilisateurs de l'app sont sur la carte, avec le minimum : le prénom, l'initiale du nom et le pays de leur compte. Tout le reste (ton nom en entier, ta ville, tes cours, tes réseaux, ton site, tes instruments), c'est toi qui choisis de le rendre public, ou non. Les conditions d'utilisation (§ 6 bis) posent ce principe, et précisent les cas où une étoile peut être retirée.
 
 ## L'application ne sait pas où tu es
 
