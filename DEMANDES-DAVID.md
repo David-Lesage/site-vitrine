@@ -214,3 +214,4 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 | 24/10 | « il n'existe pas de handpan Muling, ce sont des micros, oui ce sont les HMP-2 » | ✅ article renommé « Micro Muling HMP-2 » (APP, actif, 3) |
 | 24/10 | « C'est Muling et Hisong qui encaissent le paiement toujours » | ✅ en prod 24/10 (0e00cc5) |
 | 24/10 | « Sur mon blog crée des articles sur tous les accessoires que je vends et crée une rubrique Accessoires et micros Handpan » | ⏳ rubrique construite (45811e9, non déployée : HEAD bloqué par la migration 3 cas) ; plan audits/PLAN-ARTICLES-ACCESSOIRES-2026-10-24.md ; articles à écrire (Muling d'abord) |
+| 24/10 | « oui fais Muling, Hisong, Atlas, Forbrain ; la housse de calebasse j en ai plein à vendre, il faut que je les écoule, donc oui il y a tout un storytelling là-dessus car c est moi qui ai conçu la housse » | ⏳ 5 articles en rédaction |
