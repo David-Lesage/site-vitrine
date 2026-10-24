@@ -63,9 +63,9 @@ const PROOF_BUCKET = 'hisong-proofs';
 const MAX_BYTES = 6 * 1024 * 1024;
 const ALLOWED_TYPES: Record<string, string> = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'application/pdf': 'pdf' };
 const COPY: Record<string, { subject: string; title: string; p1: string; pay: string; sign: string; amount: string }> = {
-    fr: { subject: 'David Lesage — ton micro Hisong', title: 'Merci pour ton achat ✨', p1: 'Ton achat au showroom est bien enregistré. Je te remets le micro en main propre. Voici le récapitulatif, à garder.', pay: 'Lien de paiement (si ce n’est pas déjà fait) :', sign: 'Merci,<br />David Lesage', amount: 'Montant' },
-    en: { subject: 'David Lesage — your Hisong mic', title: 'Thanks for your purchase ✨', p1: 'Your showroom purchase is recorded. I’m handing you the mic in person. Here is the summary, for your records.', pay: 'Payment link (if not done yet):', sign: 'Thank you,<br />David Lesage', amount: 'Amount' },
-    es: { subject: 'David Lesage — tu micrófono Hisong', title: 'Gracias por tu compra ✨', p1: 'Tu compra en el showroom está registrada. Te entrego el micrófono en mano. Aquí tienes el resumen, para guardarlo.', pay: 'Enlace de pago (si aún no lo has hecho):', sign: 'Gracias,<br />David Lesage', amount: 'Importe' },
+    fr: { subject: 'David Lesage — ton micro Hisong', title: 'Merci pour ton achat ✨', p1: 'Ton achat au showroom est bien enregistré. Je te remets le micro en main propre. Voici le récapitulatif, à garder.', pay: 'Lien de paiement (si ce n’est pas déjà fait) — sur la page de paiement, saisis toi-même le montant : <strong>342,91 €</strong>', sign: 'Merci,<br />David Lesage', amount: 'Montant' },
+    en: { subject: 'David Lesage — your Hisong mic', title: 'Thanks for your purchase ✨', p1: 'Your showroom purchase is recorded. I’m handing you the mic in person. Here is the summary, for your records.', pay: 'Payment link (if not done yet) — on the payment page, enter the amount yourself: <strong>€342.91</strong>', sign: 'Thank you,<br />David Lesage', amount: 'Amount' },
+    es: { subject: 'David Lesage — tu micrófono Hisong', title: 'Gracias por tu compra ✨', p1: 'Tu compra en el showroom está registrada. Te entrego el micrófono en mano. Aquí tienes el resumen, para guardarlo.', pay: 'Enlace de pago (si aún no lo has hecho) — en la página de pago, introduce tú mismo el importe: <strong>342,91 €</strong>', sign: 'Gracias,<br />David Lesage', amount: 'Importe' },
 };
 
 Deno.serve(async (req) => {
