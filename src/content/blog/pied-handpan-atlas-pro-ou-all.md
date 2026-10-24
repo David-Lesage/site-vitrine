@@ -20,7 +20,7 @@ Voici comment je le raconte sur la page des pieds :
 
 > « Depuis que je joue du handpan, j'ai toujours joué debout. D'abord parce que je suis chanteur, et que c'est pour moi la meilleure position pour chanter librement. »
 
-Sur scène, j'ai deux handpans, une pédale de kick au pied et d'autres instruments autour de moi. Tout tient debout, tout est à portée de main.
+Sur scène, j'ai plusieurs handpans, une pédale de kick électronique au pied et d'autres instruments autour de moi. Tout est debout, tout est à portée de main.
 
 ![David Lesage debout sur scène derrière ses handpans montés sur pieds, entouré de ses autres instruments](/images/david-scene-debout-1.webp)
 
@@ -54,7 +54,7 @@ Atlas annonce aussi un support conçu pour **tous les handpans**, testé avec de
 | Hauteur | 51 à 109 cm | 50 à 96 cm |
 | Poids | 1,8 kg | non communiqué par Atlas |
 | Positions annoncées | assis, debout | sur les genoux, assis, debout |
-| Tête Atlas Body (jeu assis sans pieds) | non incluse | incluse |
+| Tête Atlas Body (jeu assis sans pieds) | non incluse (adaptable, à acheter en plus) | incluse |
 | Transport | sac inclus | sac vendu à part |
 | Prix public | 250 € | 270 € |
 | Avec mon code DAVID-ATLAS | **225 €** | **243 €** |
@@ -62,9 +62,11 @@ Atlas annonce aussi un support conçu pour **tous les handpans**, testé avec de
 *Chiffres relevés sur les fiches officielles d'Atlas ; prix publics relevés le 20 octobre 2026. Le prix qui fait foi est celui affiché chez Atlas. Frais de port en plus (environ 12 € en Europe selon Atlas).*
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start">
-<figure style="margin:0"><img src="/images/prod-atlas-pro-8-carre.webp" alt="Deux Atlas Pro en aluminium côte à côte : l'un déployé avec un handpan posé dessus, l'autre replié au plus bas" width="1170" height="1170" loading="lazy" /><figcaption><strong>Atlas Pro</strong> — le même pied déployé (handpan dessus) et replié. Remarque l'écart entre ses deux hauteurs.</figcaption></figure>
-<figure style="margin:0"><img src="/images/prod-atlas-all-1.webp" alt="Un musicien joue debout sur un handpan posé sur un Atlas All à jambes en bois" width="1120" height="1400" loading="lazy" /><figcaption><strong>Atlas All</strong> — la version bois, ici avec ses rallonges, pour jouer debout.</figcaption></figure>
+<figure style="margin:0"><img src="/images/prod-atlas-pro-8-carre.webp" alt="Deux Atlas Pro en aluminium côte à côte : l'un déployé avec un handpan posé dessus, l'autre replié au plus bas" width="1170" height="1170" loading="lazy" /><figcaption><strong>Atlas Pro</strong> — déployé et replié.</figcaption></figure>
+<figure style="margin:0"><img src="/images/prod-atlas-all-1.webp" alt="Un musicien joue debout sur un handpan posé sur un Atlas All à jambes en bois" width="1120" height="1400" loading="lazy" /><figcaption><strong>Atlas All</strong> — version bois, debout.</figcaption></figure>
 </div>
+
+À gauche, le même Atlas Pro déployé (handpan dessus) et replié : remarque l'écart entre ses deux hauteurs. À droite, l'Atlas All avec ses rallonges, pour jouer debout.
 
 ### L'Atlas Pro, celui que je préfère
 
@@ -76,6 +78,8 @@ Et à l'écrit, le 6 septembre 2026 :
 
 > « Le Pro a un défaut : la tête en bois n'est pas proposée, ni en option ni avec, et c'est son seul défaut, mais il faut le noter. Mais je préfère quand même le Pro. »
 
+Précision : c'est adaptable. La tête en bois se monte sur un pied Pro, mais aujourd'hui il faut acheter les deux.
+
 ### L'Atlas All, celui qui joue aussi assis
 
 L'Atlas All est **modulaire** : sa tête en bois, l'**Atlas Body**, se coince entre les jambes pour jouer assis. On lui ajoute ensuite les pieds, puis les rallonges, pour jouer debout.
@@ -84,7 +88,9 @@ L'Atlas All est **modulaire** : sa tête en bois, l'**Atlas Body**, se coince en
 
 *La tête Atlas Body seule : le handpan ne repose pas sur les cuisses, il est tenu entre les genoux. C'est elle qui est incluse avec l'Atlas All.*
 
-Mon avis sur ce modèle, dans la même phrase du 6 septembre : on peut utiliser la tête seule pour jouer assis, « mais plus longue à monter, plus volumineuse à transporter et moins réglable ».
+Mon avis sur ce modèle, dans la suite du même message du 6 septembre :
+
+> « Du coup on ne peut pas utiliser la tête seule pour jouer assis, alors que la version bois oui, mais plus longue à monter, plus volumineuse à transporter et moins réglable. »
 
 ## Comment choisir
 
@@ -97,7 +103,7 @@ Le mieux reste de **venir les essayer** : les deux modèles sont au [showroom](/
 
 Mon code **DAVID-ATLAS** donne **−10 % sur tous les produits Atlas**, Atlas Body compris. Il se saisit au moment du paiement, sur le site d'Atlas.
 
-Je suis affilié à Atlas : quand une commande passe par ce code, **je touche une commission**. Ça ne t'ajoute rien à payer.
+Ce code, c'est **mon lien d'ambassadeur** chez Atlas : ça ne t'ajoute rien à payer.
 
 Toutes les photos, les caractéristiques détaillées et les liens d'achat sont sur ma page [Pieds Atlas](/pieds-atlas/). Le reste de mon matériel est dans la [boutique](/boutique/), et pour jouer sans prise de courant, voir mon [setup nomade Neotone + Bose S1 Pro+](/blog/setup-nomade-neotone-bose-s1/).
 

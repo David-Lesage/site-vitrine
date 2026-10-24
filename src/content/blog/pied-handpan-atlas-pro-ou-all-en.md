@@ -1,6 +1,6 @@
 ---
 title: "Which handpan stand? Atlas Pro vs Atlas All"
-description: "Handpan stand or support: the aluminium Atlas Pro or the wooden Atlas All. Heights, playing positions, public, prices and my DAVID-ATLAS partner code (10% off)."
+description: "Handpan stand or support: the aluminium Atlas Pro or the wooden Atlas All. Heights, playing positions, public prices and my DAVID-ATLAS partner code (10% off)."
 pubDate: 2026-10-24
 cover: "/images/prod-atlas-all-1.webp"
 category: "accessoires"
@@ -20,7 +20,7 @@ Here is how I put it on my stands page:
 
 > "Ever since I started playing handpan, I have always played standing. First because I am a singer, and for me it is the best position to sing freely."
 
-On stage I have two handpans, a kick pedal under my foot and other instruments around me. Everything stands, everything is within reach.
+On stage I have several handpans, an electronic kick pedal under my foot and other instruments around me. Everything stands, everything is within reach.
 
 ![David Lesage standing on stage behind his handpans on stands, surrounded by his other instruments](/images/david-scene-debout-1.webp)
 
@@ -54,7 +54,7 @@ Atlas also says the support is designed for **all handpans**, tested with many m
 | Height | 51 to 109 cm | 50 to 96 cm |
 | Weight | 1.8 kg | not stated by Atlas |
 | Stated positions | seated, standing | on the lap, seated, standing |
-| Atlas Body head (seated play without legs) | not included | included |
+| Atlas Body head (seated play without legs) | not included (adaptable, bought separately) | included |
 | Transport | bag included | bag sold separately |
 | Public price | €250 | €270 |
 | With my DAVID-ATLAS code | **€225** | **€243** |
@@ -62,9 +62,11 @@ Atlas also says the support is designed for **all handpans**, tested with many m
 *Figures from Atlas's official product pages; public prices read on 20 October 2026. The price shown on Atlas's site is the one that counts. Shipping extra (about €12 in Europe according to Atlas).*
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start">
-<figure style="margin:0"><img src="/images/prod-atlas-pro-8-carre.webp" alt="Two aluminium Atlas Pro stands side by side: one extended with a handpan on top, the other folded to its lowest" width="1170" height="1170" loading="lazy" /><figcaption><strong>Atlas Pro</strong>: the same stand extended (handpan on top) and folded. Notice the gap between its two heights.</figcaption></figure>
-<figure style="margin:0"><img src="/images/prod-atlas-all-1.webp" alt="A musician plays standing on a handpan resting on a wooden-legged Atlas All" width="1120" height="1400" loading="lazy" /><figcaption><strong>Atlas All</strong>: the wooden version, here with its extensions, for standing play.</figcaption></figure>
+<figure style="margin:0"><img src="/images/prod-atlas-pro-8-carre.webp" alt="Two aluminium Atlas Pro stands side by side: one extended with a handpan on top, the other folded to its lowest" width="1170" height="1170" loading="lazy" /><figcaption><strong>Atlas Pro</strong>: extended and folded.</figcaption></figure>
+<figure style="margin:0"><img src="/images/prod-atlas-all-1.webp" alt="A musician plays standing on a handpan resting on a wooden-legged Atlas All" width="1120" height="1400" loading="lazy" /><figcaption><strong>Atlas All</strong>: wooden version, standing.</figcaption></figure>
 </div>
+
+On the left, the same Atlas Pro extended (handpan on top) and folded: notice the gap between its two heights. On the right, the Atlas All with its extensions, for standing play.
 
 ### The Atlas Pro, my favourite
 
@@ -76,6 +78,8 @@ And in writing, on 6 September 2026:
 
 > "The Pro has one flaw: the wooden head is not offered, neither as an option nor included, and that is its only flaw, but it is worth noting. Still, I prefer the Pro."
 
+To be precise: it can be adapted. The wooden head fits on a Pro stand, but today you have to buy both.
+
 ### The Atlas All, the one that also plays seated
 
 The Atlas All is **modular**: its wooden head, the **Atlas Body**, fits between your knees for seated play. You then add the legs, then the extensions, to play standing.
@@ -84,7 +88,9 @@ The Atlas All is **modular**: its wooden head, the **Atlas Body**, fits between 
 
 *The Atlas Body head on its own: the handpan does not rest on the thighs, it is held between the knees. It comes included with the Atlas All.*
 
-My view of this model, in the same note of 6 September: you can use the head alone to play seated, "but it takes longer to set up, is bulkier to carry and less adjustable."
+My view of this model, in the rest of the same note of 6 September:
+
+> "So you cannot use the head alone to play seated, whereas the wooden version can, but it takes longer to set up, is bulkier to carry and less adjustable."
 
 ## How to choose
 
@@ -97,7 +103,7 @@ Best of all, **come and try them**: both models are at the [showroom](/en/showro
 
 My code **DAVID-ATLAS** gives **10% off all Atlas products**, Atlas Body included. Enter it at checkout on Atlas's website.
 
-I am an Atlas affiliate: when an order uses this code, **I earn a commission**. It costs you nothing extra.
+This code is **my ambassador link** with Atlas: it costs you nothing extra.
 
 All photos, detailed specs and purchase links are on my [Atlas stands](/en/handpan-stands/) page. The rest of my gear is in the [shop](/en/boutique/), and for playing without a power socket, see my [nomad setup Neotone + Bose S1 Pro+](/en/blog/setup-nomade-neotone-bose-s1/).
 

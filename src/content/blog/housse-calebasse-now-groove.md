@@ -1,6 +1,6 @@
 ---
 title: "Housse de calebasse Now Groove : le sac à dos que j'ai conçu"
-description: "Une housse-sac à dos pensée pour la calebasse : tapis intégré, sangles détachables, poche pour les œufs et la méthode, intérieur velours. Édition faite main."
+description: "Une housse-sac à dos pour la calebasse : tapis intégré, sangles détachables, poche pour les œufs et la méthode, intérieur velours. Rare, faite main."
 pubDate: 2026-10-24
 cover: "/images/prod-housse-1.jpg"
 category: "accessoires"
@@ -18,7 +18,7 @@ Je joue de la calebasse comme instrument de percussion depuis 2012. C'est un ins
 
 ## D'où vient la calebasse Now Groove
 
-À la calebasse, il me manquait la caisse claire et le charley. J'ai résolu le manque avec des **œufs en plastique** : un bricolage qui est devenu une façon de jouer, puis une façon d'enseigner.
+À la calebasse, il me manquait la caisse claire et le <abbr title="Cymbale double actionnée au pied, qui marque le tempo dans une batterie.">charley</abbr>. J'ai résolu le manque avec des **œufs en plastique** : un bricolage qui est devenu une façon de jouer, puis une façon d'enseigner.
 
 C'est devenu **[Now Groove](/cours/)** en 2021 : une méthode de rythme par appels-réponses et émoticônes visuelles. Le kit de jeu tient en trois éléments : la calebasse, son **tapis**, et ses shakers en forme d'œuf.
 
@@ -26,7 +26,11 @@ C'est devenu **[Now Groove](/cours/)** en 2021 : une méthode de rythme par appe
 
 *Le kit de jeu : la calebasse posée à l'envers sur son tapis, et les deux œufs qui font la caisse claire et le charley. Remarque le logo Now Groove gravé sur la calebasse.*
 
-<!-- QUESTION POUR DAVID : quel problème concret t'a poussé à concevoir la housse (calebasse fragile, tapis encombrant, œufs qui se perdent…) ? Ce paragraphe attend tes mots. -->
+## Une calebasse rare, une housse pour elle
+
+Les calebasses du kit Now Groove sont **rares** : une calebasse de 46 cm de diamètre ou plus, avec un bord épais de 1,5 à 2 cm, est très difficile à trouver, notamment en Europe. Elles viennent d'Afrique de l'Ouest (Niger, Burkina Faso, Mali). Chacune est retravaillée à la main par Kamou, de Djoliba Percussion à Toulouse, qui affine le bord pour qu'elle épouse son tapis.
+
+La housse transporte cet ensemble en un seul sac : la calebasse, le tapis, les œufs. Je l'ai **entièrement pensée et dessinée**, avec le soutien de mes partenaires de Djoliba à Toulouse, et notamment de Yu-Tin.
 
 ## Ce que la housse fait
 
@@ -34,8 +38,8 @@ La housse est un **sac à dos** que j'ai pensé et dessiné moi-même. Voici ce 
 
 - **Fonction tapis intégrée** : le tapis de jeu fait partie de la housse.
 - **Sangles détachables** : on la porte sur le dos, ou on retire les sangles.
-- **Poche de rangement** pour les œufs, les accessoires et la méthode.
-- **Intérieur velours.**
+- **Poche de rangement**, fermée par un scratch, pour les œufs, les accessoires et la méthode au format papier.
+- **Intérieur velours** sur la partie tapis.
 
 ![La housse Now Groove vue de face : un sac rond et rembourré marron, avec un médaillon brodé « Now Groove by David Lesage » sur le dessus et des bretelles de sac à dos sur les côtés](/images/prod-housse-1.jpg)
 
@@ -56,17 +60,13 @@ La housse est un **sac à dos** que j'ai pensé et dessiné moi-même. Voici ce 
 
 ![L'intérieur velours de la housse, couleur cognac, bordé d'un galon brun](/images/prod-housse-4.jpg)
 
-*L'intérieur : un velours doux, couleur cognac, bordé d'un galon.*
-
-<!-- QUESTION POUR DAVID : le velours visible ici, est-ce la face « tapis » sur laquelle on pose la calebasse pour jouer ? Comment passe-t-on de la housse au tapis (on ouvre la fermeture et on la déplie à plat ?) -->
+*L'intérieur : un velours doux, couleur cognac, bordé d'un galon. C'est la partie « tapis », celle qui accueille la calebasse.*
 
 <!-- PHOTO À VENIR : la housse ouverte, à plat, utilisée comme tapis avec la calebasse posée dessus. -->
 
-## Une édition faite main, en série limitée
+## Rare et unique : faite main, en petite série
 
-La housse est une **édition spéciale fabriquée à la main**, en **série ultra limitée**. Elle est vendue **99 €** sur la boutique HelloAsso de Résonances Productions, l'association qui porte mes cours et mes ateliers.
-
-<!-- QUESTION POUR DAVID : qui l'a fabriquée, où, en quelles matières exactes, et en combien d'exemplaires ? La livraison est-elle incluse dans les 99 € ? -->
+Chaque housse est **fabriquée à la main**, en **petite série** : il n'en existe que quelques exemplaires. Elle est vendue **99 €** sur la boutique HelloAsso de Résonances Productions, l'association qui porte mes cours et mes ateliers.
 
 Tu peux aussi voir la housse, la calebasse et sa méthode dans [ma boutique](/boutique/), rubrique « Mes créations ».
 

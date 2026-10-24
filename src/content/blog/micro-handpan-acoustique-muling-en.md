@@ -13,9 +13,9 @@ draft: false
 
 **This article is about the acoustic handpan**: it covers miking an instrument that has no jack output. An electronic handpan such as the [Neotone](/en/neotone/) plugs in directly, no microphone needed.
 
-Amplifying an acoustic handpan is a real challenge. General-purpose mics capture the **overtones** poorly, and **feedback** creeps in as soon as you turn up the volume.
+Amplifying an acoustic handpan is a real challenge. General-purpose mics capture the **<abbr title="The higher sounds that vibrate along with the played note and give the handpan its colour.">overtones</abbr>** poorly, and **feedback** creeps in as soon as you turn up the volume.
 
-The Muling set is designed for this specific instrument. I tested it in depth, and that's what convinced me to represent it. Here is how it works and how to set it up.
+The Muling set is designed for this specific instrument. I tested it in depth. Here is how it works and how to set it up.
 
 <!-- PHOTO À VENIR : David en concert avec le set Muling posé sur son handpan acoustique -->
 
@@ -40,7 +40,7 @@ The result: outside noise and other instruments barely get through. You can turn
 ## What's in the box
 
 ![The Muling set laid out: manual, HMP-2 preamp, screwdriver, jack cables, pads, two pouches and the hard case](/images/muling-boite-complet.webp)
-*The whole set at a glance: the preamp in the middle, the two pickups at the end of their cables, the hard case on the right.*
+*The whole set at a glance: the manual on the left, the preamp and its cables in the middle, the pouches and the hard case on the right.*
 
 - **2 magnetic contact pickups** (active mics)
 - **1 two-channel HMP-2 preamp**
@@ -83,7 +83,7 @@ These are the manufacturer's warnings, not mere tips:
 
 ## Price and ordering
 
-The manufacturer's price is **€258**. Ordering through me with the code **David-Lesage-5** gives you **5% off**, i.e. **€246.50**. Shipping and any customs fees are extra.
+The manufacturer's price is **€258**. Ordering through me with the code **David-Lesage-5** gives you **5% off**: the set comes down to **€245**. Shipping and any customs fees are extra.
 
 The manufacturer doesn't offer online payment for France yet, so I put you in touch directly. **Either way, you pay Muling**, by SEPA bank transfer in euros. Two ways to get your mic:
 

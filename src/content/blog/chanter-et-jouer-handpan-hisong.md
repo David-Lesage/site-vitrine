@@ -24,8 +24,8 @@ Tu veux **chanter en jouant**, te faire entendre de tes élèves ou enregistrer 
 Tout tient dans **un seul étui** :
 
 - un **micro double mode** ;
-- des **retours sans fil** : deux écouteurs, pour t'entendre pendant que tu joues ;
-- une **interface audio** ;
+- des **<abbr title="Les écouteurs dans lesquels tu t'entends jouer et chanter.">retours</abbr> sans fil** : deux écouteurs, pour t'entendre pendant que tu joues ;
+- une **<abbr title="Le boîtier qui fait passer le son du micro vers un téléphone ou un ordinateur.">interface audio</abbr>** ;
 - un **récepteur sans fil pour téléphone** (le RX Mini) ;
 - un **support magnétique** ;
 - un **étui de transport**.
@@ -35,13 +35,13 @@ Tout tient dans **un seul étui** :
   <figcaption>Le visuel du fabricant : remarque que le micro et les écouteurs se rangent dans le même étui, et le petit récepteur à côté.</figcaption>
 </figure>
 
-**Pour jouer en live**, il te faut en plus le **RX Plus** (le pack « Universal ») : c'est lui qui envoie le son vers la sono, la table de mixage ou une caméra.
+**Pour jouer en live**, il te faut en plus le **RX Plus** (le pack « Universal ») : c'est lui qui envoie le son vers la <abbr title="Le système d'enceintes qui diffuse le son au public.">sono</abbr>, la <abbr title="L'appareil qui reçoit plusieurs sons (micros, instruments) et règle leur volume avant la sono.">table de mixage</abbr> ou une caméra.
 
 ## Un même micro, plusieurs usages
 
 ### Voix + handpan
 
-C'est l'usage qui m'a fait l'adopter : **chanter en jouant**. Le micro capte ta voix et ton handpan acoustique ensemble, et tu entends le résultat dans les écouteurs sans fil.
+**Chanter en jouant.** Le micro capte ta voix et ton handpan acoustique ensemble, et tu entends le résultat dans les écouteurs sans fil.
 
 ### Sur scène
 
@@ -75,7 +75,7 @@ Micro, retours et interface audio réunis : un **studio portatif** pour capter t
 
 ## Pas seulement pour le handpan
 
-Le micro n'est pas réservé au handpan : ici, le même studio posé avec un **gonilele**.
+Le micro n'est pas réservé au handpan : ici, le même studio posé avec un [**gonilele**](/gonilele/).
 
 <figure>
   <img src="/images/showroom-gonilele-micro-hisong.webp" alt="Un gonilele en bois clair posé sur un tapis, avec la boîte du Hisong AirStudio S1, le micro sur son support, les écouteurs et le récepteur fixé par une pince" width="1000" height="1778" loading="lazy" />
@@ -107,15 +107,15 @@ Le [Neotone](/neotone/) se branche directement en jack, sans micro. Le Hisong ga
 | Avec le RX Plus (Universal Pack, +90 €) | 360,95 € |
 | S1 + RX Plus avec mon code (−5 %) | 342,91 €, livraison offerte |
 
-**Mon conseil** : si tu veux jouer en live, prends directement le RX Plus.
+**Mon conseil** : si tu veux jouer en live, prends directement le RX Plus. Au showroom, je ne vends que le micro avec le RX Plus, pas le micro seul.
 
 L'achat se fait **directement chez Hisong**, sur hisong.io : c'est toujours Hisong que tu paies. En passant par [ma page Hisong](/micro-hisong/), le code **DAVID-LESAGE-SAVE-5** (−5 %) devrait s'appliquer tout seul ; sinon, saisis-le à la main au paiement.
 
-Pour être clair : c'est un **lien d'affiliation**, je touche une commission sur la vente. Ça ne change rien à ton prix, au contraire : le code te fait gagner 5 %.
+Pour être clair : c'est **mon lien d'ambassadeur**. Ça ne change rien à ton prix, au contraire : le code te fait gagner 5 %.
 
 <figure>
   <img src="/images/showroom-yishama-micros-hisong.webp" alt="Vu d'en haut, un handpan acoustique entouré de quatre boîtes Hisong AirStudio S1, avec le micro sur son support, et les écouteurs et le récepteur posés sur le handpan" width="1000" height="1778" loading="lazy" />
-  <figcaption>Plusieurs studios Hisong au showroom, autour d'un handpan Yishama : tu peux venir l'essayer avant d'acheter.</figcaption>
+  <figcaption>Plusieurs studios Hisong au showroom, autour d'un handpan acoustique : tu peux venir l'essayer avant d'acheter.</figcaption>
 </figure>
 
 Tu préfères l'entendre avant ? Viens l'essayer au [showroom à Paris](/showroom/), ou retrouve-le dans [la boutique](/boutique/).

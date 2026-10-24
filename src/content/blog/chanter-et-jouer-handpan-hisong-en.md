@@ -24,8 +24,8 @@ Want to **sing while you play**, be heard by your students or record outdoors, w
 Everything fits in **a single case**:
 
 - a **dual-mode microphone**;
-- **wireless in-ear monitoring**: two earbuds, to hear yourself while you play;
-- an **audio interface**;
+- **wireless <abbr title="Earbuds in which you hear yourself play and sing.">in-ear monitoring</abbr>**: two earbuds, to hear yourself while you play;
+- an **<abbr title="The box that sends the mic sound to a phone or a computer.">audio interface</abbr>**;
 - a **wireless receiver for your phone** (the RX Mini);
 - a **magnetic stand**;
 - a **carrying case**.
@@ -35,13 +35,13 @@ Everything fits in **a single case**:
   <figcaption>The manufacturer's visual: notice that the mic and the earbuds share the same case, with the small receiver next to them.</figcaption>
 </figure>
 
-**To play live**, you also need the **RX Plus** (the "Universal" pack): it sends the sound to the PA, the mixing desk or a camera.
+**To play live**, you also need the **RX Plus** (the "Universal" pack): it sends the sound to the <abbr title="The speaker system that plays the sound to the audience.">PA</abbr>, the <abbr title="The device that takes several sounds (mics, instruments) and sets their volume before the PA.">mixing desk</abbr> or a camera.
 
 ## One mic, several uses
 
 ### Voice + handpan
 
-This is why I adopted it: **singing while playing**. The mic picks up your voice and your acoustic handpan together, and you hear the result in the wireless earbuds.
+**Singing while playing.** The mic picks up your voice and your acoustic handpan together, and you hear the result in the wireless earbuds.
 
 ### On stage
 
@@ -75,7 +75,7 @@ Mic, monitoring and audio interface in one: a **portable studio** to capture you
 
 ## Not just for the handpan
 
-The mic isn't limited to the handpan: here, the same studio next to a **gonilele**.
+The mic isn't limited to the handpan: here, the same studio next to a [**gonilele**](/en/gonilele/).
 
 <figure>
   <img src="/images/showroom-gonilele-micro-hisong.webp" alt="A light-wood gonilele on a rug, with the Hisong AirStudio S1 box, the mic on its stand, the earbuds and the receiver held by a clip" width="1000" height="1778" loading="lazy" />
@@ -107,15 +107,15 @@ The [Neotone](/en/neotone/) plugs straight in with a jack, no mic needed. The Hi
 | With the RX Plus (Universal Pack, +€90) | €360.95 |
 | S1 + RX Plus with my code (−5%) | €342.91, free shipping |
 
-**My advice**: if you want to play live, get the RX Plus straight away.
+**My advice**: if you want to play live, get the RX Plus straight away. At the showroom, I only sell the mic with the RX Plus, not the mic alone.
 
 You buy **directly from Hisong**, on hisong.io: you always pay Hisong. Through [my Hisong page](/en/micro-hisong/), the code **DAVID-LESAGE-SAVE-5** (−5%) should apply on its own; otherwise, enter it by hand at checkout.
 
-To be clear: this is an **affiliate link**, I earn a commission on the sale. It doesn't change your price, quite the opposite: the code saves you 5%.
+To be clear: this is **my ambassador link**. It doesn't change your price, quite the opposite: the code saves you 5%.
 
 <figure>
   <img src="/images/showroom-yishama-micros-hisong.webp" alt="Top view of an acoustic handpan surrounded by four Hisong AirStudio S1 boxes, with the mic on its stand, and the earbuds and receiver resting on the handpan" width="1000" height="1778" loading="lazy" />
-  <figcaption>Several Hisong studios at the showroom, around a Yishama handpan: you can come and try it before buying.</figcaption>
+  <figcaption>Several Hisong studios at the showroom, around an acoustic handpan: you can come and try it before buying.</figcaption>
 </figure>
 
 Prefer to hear it first? Come and try it at the [Paris showroom](/en/showroom/), or find it in [the shop](/en/boutique/).
