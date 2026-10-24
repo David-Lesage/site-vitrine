@@ -3,7 +3,7 @@ title: "De 2 à 24 tonalités : compléter son handpan acoustique avec un Neoton
 description: "Tu as un D Kurd 10 et tu tournes en rond. Posé à côté, un Neotone y ajoute exactement les notes qui manquent : 2 tonalités complètes deviennent 24, et tu peux enfin t'accompagner en chantant."
 pubDate: 2026-08-31
 updatedDate: 2026-10-23
-cover: "/images/showroom-instruments.webp"
+cover: "/images/blog-handpan-acoustique-et-neotone-cote-a-cote.webp"
 category: "neotone"
 tags: ["compléter", "neotone", "tonalités"]
 lang: "fr"
