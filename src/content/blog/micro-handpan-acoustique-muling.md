@@ -2,7 +2,8 @@
 title: "Micro pour handpan acoustique : mon set Muling MP1 + HMP-2"
 description: "Sonoriser un handpan acoustique sans Larsen : le set Muling, deux capsules aimantées et un préampli HMP-2. Contenu, installation, alimentation et commande."
 pubDate: 2026-10-24
-cover: "/images/muling-sur-handpan.webp"
+cover: "/images/blog/muling/muling-hmp2-handpan-tapis.webp"
+shop: "muling"
 category: "accessoires"
 tags: ["micro", "matériel", "son", "acoustique"]
 lang: "fr"
@@ -17,17 +18,6 @@ Sonoriser un handpan acoustique est un vrai défi. Les micros généralistes cap
 
 Le set Muling est pensé pour cet instrument précis. Je l'ai testé en profondeur. Voici comment il fonctionne et comment l'installer.
 
-<!-- PHOTO À VENIR : David en concert avec le set Muling posé sur son handpan acoustique -->
-
-## Mon test complet en vidéo
-
-<figure class="article-video">
-  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="ENArz99dyTQ" aria-label="Lire la vidéo : mon test complet du micro Muling">
-    <img src="https://i.ytimg.com/vi/ENArz99dyTQ/hqdefault.jpg" alt="Mon test complet du micro Muling pour handpan acoustique" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
-    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
-  </button>
-  <figcaption>Installation, son obtenu, comparaisons et cas d'usage : tout est dans cette vidéo.</figcaption>
-</figure>
 
 ## Pourquoi pas de Larsen
 
@@ -81,17 +71,29 @@ Ce sont les avertissements du fabricant, pas de simples conseils :
 - Une **inversion de polarité** de l'adaptateur secteur détruit l'appareil de façon irréversible.
 - Les capsules fonctionnent **exclusivement avec le préampli Muling** : c'est un système complet, pas une capsule à intégrer à un montage existant.
 
-## Prix et commande
+## Pas seulement le handpan
 
-Le prix fabricant est de **258 €**. En passant par moi, avec le code **David-Lesage-5**, tu as **5 % de réduction** : le set passe à **245 €**. Frais de port et éventuels frais de douane en supplément.
+La capsule est un **micro de surface très sensible** : elle capte n'importe quel instrument acoustique qui vibre, pas seulement le handpan. **Guitare, goni, harpe** : ça marche aussi.
 
-Le fabricant n'a pas encore de paiement en ligne pour la France : je te mets en relation directement. **Dans tous les cas, tu paies Muling**, par virement SEPA en euros. Deux façons de récupérer ton micro :
+Sur le bois, l'aimant ne tient pas. Tu fixes alors la capsule avec de la **<abbr title="Une pâte qui colle la capsule à l'instrument et transmet ses vibrations.">pâte de conduction</abbr>** ou de la **pâte à fixe**.
 
-- **En ligne** : Muling t'expédie le micro à ton adresse.
-- **En direct au [showroom](/showroom/)** : je te remets le micro en main propre. Même prix, même virement à Muling.
+**Comparé à un micro AKG C411**, autre micro de contact connu : **pas de bruit résiduel**, et **pas besoin d'alimentation fantôme** (le 48 V que fournit une table de mixage), parce que le préampli HMP-2 alimente lui-même la capsule.
 
-Tout se passe sur [la page du micro Muling](/micro-muling/) : photos, schéma des commandes, manuel et formulaire de commande. Tu trouveras aussi le set dans [la boutique](/boutique/).
+## Mon setup nomade avec la Bose S1 Pro+
+
+Le préampli sort sur un seul câble jack 6,35 mm. Il se branche donc directement sur une enceinte autonome comme la **Bose S1 Pro+**, celle de [mon setup nomade](/blog/setup-nomade-neotone-bose-s1/). Pas de table de mixage à transporter.
 
 ## Et si tu joues sur un handpan électronique ?
 
-Le Neotone n'a pas besoin de micro : il se branche directement en jack. Pour un setup sonorisé autour de lui, lis [mon setup nomade Neotone + Bose S1 Pro+](/blog/setup-nomade-neotone-bose-s1/).
+Le Neotone n'a pas besoin de micro : il se branche directement en jack, sur la même enceinte. Tout est dans [mon setup nomade Neotone + Bose S1 Pro+](/blog/setup-nomade-neotone-bose-s1/).
+
+## Commander ou réserver ton micro
+
+Le prix fabricant est de **258 €**. Avec mon code **David-Lesage-5**, tu as **5 % de réduction** : le set passe à **245 €**. Aucun frais de port n'est ajouté au prix ; pour d'éventuels frais de douane, c'est **à confirmer**.
+
+**Tu paies toujours Muling**, par virement SEPA. Deux façons de récupérer ton micro :
+
+- **En ligne** : Muling t'expédie le micro à ton adresse.
+- **Au [showroom](/showroom/) à Paris** : tu réserves ton micro, ta preuve de virement vaut réservation, puis tu me proposes une date de retrait (un showcase ou la date de ton choix).
+
+Commande, réservation et nombre de micros disponibles au showroom en temps réel : tout se passe sur [la page du micro Muling](/micro-muling/).

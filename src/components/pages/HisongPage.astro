@@ -15,6 +15,8 @@ import YouTube from '@/components/YouTube.astro'
 import { Icon } from 'astro-icon/components'
 import { getDict } from '@/i18n/dict'
 import HisongDirectForm from '@/components/HisongDirectForm.astro'
+import ShowroomStock from '@/components/ShowroomStock.astro'
+import ShowroomPickup from '@/components/ShowroomPickup.astro'
 import { localizePath, numberLocale } from '@/i18n/utils'
 import { breadcrumbLdJson, videoLdJson } from '@/lib/ldJson'
 import { site } from '@/data/site'
@@ -104,8 +106,9 @@ const ld = [
           </p>
           <div class="mt-6 flex flex-wrap gap-3">
             <Button href={hisongAffiliateUrl} variant="primary" external class={focusRing}>{h.ctaBuy}<Icon name="lucide:external-link" class="h-4 w-4" /></Button>
-            <Button href="#videos" variant="light" class={focusRing}>{h.ctaVideos}</Button>
+            <Button href="#achat" variant="light" class={focusRing}>{lang === 'en' ? '🤝 Buy at the showroom' : lang === 'es' ? '🤝 Comprar en el showroom' : '🤝 Acheter au showroom'}</Button>
           </div>
+          <div class="mt-5"><ShowroomStock item="hisong" lang={lang} class="text-gold" /></div>
         </div>
         <div class="min-w-0 rounded-card shadow-md">
           <Carousel id="hisong-photos" slides={hisongPhotos.map((src) => ({ src }))} alt={h.carouselAlt} />
@@ -277,13 +280,13 @@ const ld = [
           <p class="text-sm font-700 text-rust">{h.adviceTitle}</p>
           <p class="mt-1 text-sm text-ink-soft/90">{h.adviceText}</p>
         </div>
-        <div class="mt-6 flex flex-wrap gap-3">
+        {/* Deux chemins côte à côte (David 24/10) : en ligne (livraison, chez Hisong) ou au showroom (réservation + retrait). */}
+        <div class="mt-6 flex flex-wrap items-center gap-3">
           <Button href={hisongAffiliateUrl} variant="primary" external class={focusRing}>{h.ctaBuy}<Icon name="lucide:external-link" class="h-4 w-4" /></Button>
-          <Button href={L('/showroom')} variant="ghost" class={focusRing}>{h.ctaShowroom}</Button>
+          <HisongDirectForm lang={lang} />
         </div>
+        <div class="mt-4"><ShowroomStock item="hisong" lang={lang} /></div>
         <p class="mt-4 text-xs text-ink-soft/70">{h.buyNote}</p>
-        {/* Vente en direct au showroom (25/10/2026) → affiliate_sales.purchase_channel='showroom'. */}
-        <div class="mt-5 border-t border-ink/10 pt-5"><HisongDirectForm lang={lang} /></div>
       </div>
     </div>
   </Section>
@@ -297,6 +300,7 @@ const ld = [
   </Section>
 
   <Lightbox />
+  <ShowroomPickup lang={lang} />
 </Layout>
 
 <script>

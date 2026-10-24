@@ -1,0 +1,112 @@
+---
+// Proposer une date + un horaire de retrait au showroom (24/10/2026, David :
+// « payer en ligne pour réserver + capture ; puis proposer date+horaire de
+// retrait (showcase ou sa date) »). Commun aux micros Muling et Hisong.
+//
+// S'ouvre tout seul quand un formulaire de vente showroom réussit : il émet
+// `window.dispatchEvent(new CustomEvent('showroom-sold', { detail: { saleId, email } }))`.
+// → /api/showroom-pickup → EF `showroom-reservation` (ajoute une ligne
+// « Retrait proposé : … » à affiliate_sales.admin_note). Aucun mail envoyé.
+// Dates de showcase : agenda public « Le Nid » recopié dans site.ts (upcomingShowcases).
+import { upcomingShowcases } from '@/lib/agenda'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const shows = upcomingShowcases(lang).slice(0, 6)
+const COPY = {
+  fr: { title: 'Quand viens-tu chercher ton micro ?', intro: 'Ta réservation est faite. Propose-moi un moment pour le retrait au showroom, à Paris : je te confirme par email.', show: 'Pendant un showcase', own: 'À une autre date', date: 'Date', time: 'Horaire', note: 'Un mot (facultatif)', submit: 'Proposer ce moment', sending: 'Envoi…', later: 'Je choisirai plus tard par email', error: 'L’envoi a échoué. Réessaie, ou écris-moi à contact@lesagedavid.fr.', thanks: 'Merci, c’est noté ✨ Je te confirme le rendez-vous par email.', close: 'Fermer', none: 'Aucun showcase annoncé pour l’instant : propose ta date.' },
+  en: { title: 'When will you pick up your mic?', intro: 'Your reservation is done. Suggest a time to collect it at the showroom in Paris: I’ll confirm by email.', show: 'During a showcase', own: 'On another date', date: 'Date', time: 'Time', note: 'A note (optional)', submit: 'Suggest this time', sending: 'Sending…', later: 'I’ll choose later by email', error: 'Sending failed. Try again, or write to contact@lesagedavid.fr.', thanks: 'Thanks, noted ✨ I’ll confirm the appointment by email.', close: 'Close', none: 'No showcase announced yet: suggest your own date.' },
+  es: { title: '¿Cuándo vienes a recoger tu micrófono?', intro: 'Tu reserva está hecha. Propónme un momento para recogerlo en el showroom, en París: te lo confirmo por correo.', show: 'Durante un showcase', own: 'En otra fecha', date: 'Fecha', time: 'Hora', note: 'Un comentario (opcional)', submit: 'Proponer este momento', sending: 'Enviando…', later: 'Elegiré más tarde por correo', error: 'El envío ha fallado. Inténtalo de nuevo o escríbeme a contact@lesagedavid.fr.', thanks: 'Gracias, anotado ✨ Te confirmo la cita por correo.', close: 'Cerrar', none: 'Aún no hay showcase anunciado: propón tu fecha.' },
+}
+const c = COPY[(lang in COPY ? lang : 'en') as keyof typeof COPY]
+const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none'
+---
+<div id="showroom-pickup-modal" class="fixed inset-0 z-[110] hidden items-start justify-center overflow-y-auto bg-ink/80 p-4 py-10 backdrop-blur-sm" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="sp-title">
+  <div class="relative w-full max-w-lg rounded-card bg-cream p-6 shadow-2xl md:p-8">
+    <button class="sp-close absolute right-3 top-3 grid h-11 w-11 place-items-center rounded-full text-2xl leading-none text-ink-soft hover:bg-ink/5" type="button" aria-label={c.close}>×</button>
+    <div data-sp-step="form">
+      <h2 id="sp-title" class="pr-10 font-display text-2xl font-700">{c.title}</h2>
+      <p class="mt-2 text-sm text-ink-soft/85">{c.intro}</p>
+      <form id="showroom-pickup-form" class="mt-5 grid gap-3" novalidate>
+        <fieldset class="grid gap-2">
+          <legend class="mb-1 text-sm font-600">{c.show}</legend>
+          {shows.length ? shows.map((s) => (
+            <label class="flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border border-ink/15 p-3 has-[:checked]:border-copper has-[:checked]:bg-copper/10">
+              <input type="radio" name="slot" value={`showcase|${s.iso}|${s.start}`} class="h-5 w-5 shrink-0 accent-rust" />
+              <span class="text-sm"><span class="font-700 first-letter:uppercase">{s.long}</span> · {s.start}–{s.end}</span>
+            </label>
+          )) : <p class="text-sm text-ink-soft/75">{c.none}</p>}
+        </fieldset>
+        <label class="flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border border-ink/15 p-3 has-[:checked]:border-copper has-[:checked]:bg-copper/10">
+          <input type="radio" name="slot" value="custom" checked={!shows.length} class="h-5 w-5 shrink-0 accent-rust" />
+          <span class="text-sm font-700">{c.own}</span>
+        </label>
+        <div data-sp-custom class="grid gap-3 sm:grid-cols-2">
+          <label class="block"><span class="text-sm font-600">{c.date}</span><input type="date" name="date" class={input} /></label>
+          <label class="block"><span class="text-sm font-600">{c.time}</span><input type="time" name="time" step="900" class={input} /></label>
+        </div>
+        <label class="block"><span class="text-sm font-600">{c.note}</span><textarea name="note" rows="2" maxlength="500" class={input}></textarea></label>
+        <button type="submit" data-sending={c.sending} class="mt-1 min-h-11 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{c.submit}</button>
+        <button type="button" class="sp-close min-h-11 text-sm font-600 text-ink-soft underline">{c.later}</button>
+        <p data-sp-error class="hidden text-sm font-600 text-rust">{c.error}</p>
+      </form>
+    </div>
+    <div data-sp-step="thanks" class="hidden py-6 text-center">
+      <p class="font-display text-xl font-700 text-ink">{c.thanks}</p>
+      <button type="button" class="sp-close mt-6 min-h-11 rounded-full bg-rust px-6 py-3 font-700 text-cream hover:bg-copper">{c.close}</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('showroom-pickup-modal')
+  const form = document.getElementById('showroom-pickup-form') as HTMLFormElement | null
+  let sale: { saleId: string; email: string } | null = null
+  const step = (s: string) => modal?.querySelectorAll('[data-sp-step]').forEach((el) => el.classList.toggle('hidden', el.getAttribute('data-sp-step') !== s))
+  const dateIn = form?.querySelector('input[name="date"]') as HTMLInputElement | null
+  if (dateIn) dateIn.min = new Date().toISOString().slice(0, 10)
+  function syncCustom() {
+    const v = (form?.querySelector('input[name="slot"]:checked') as HTMLInputElement | null)?.value
+    const custom = v === 'custom'
+    modal?.querySelector('[data-sp-custom]')?.classList.toggle('hidden', !custom)
+    if (dateIn) dateIn.required = custom
+  }
+  function close() {
+    if (!modal) return
+    modal.classList.add('hidden'); modal.classList.remove('flex'); modal.setAttribute('aria-hidden', 'true')
+    document.body.style.overflow = ''
+  }
+  window.addEventListener('showroom-sold', (e) => {
+    const d = (e as CustomEvent).detail || {}
+    if (!modal || !d.saleId || !d.email) return
+    sale = { saleId: String(d.saleId), email: String(d.email) }
+    form?.reset(); syncCustom(); step('form')
+    modal.classList.remove('hidden'); modal.classList.add('flex'); modal.setAttribute('aria-hidden', 'false')
+    document.body.style.overflow = 'hidden'
+    ;(modal.querySelector('input[name="slot"]') as HTMLInputElement | null)?.focus()
+  })
+  form?.addEventListener('change', syncCustom)
+  modal?.querySelectorAll('.sp-close').forEach((b) => b.addEventListener('click', close))
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) close() })
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    if (!sale) return
+    const slot = (form.querySelector('input[name="slot"]:checked') as HTMLInputElement | null)?.value || ''
+    if (!slot) { (form.querySelector('input[name="slot"]') as HTMLInputElement | null)?.focus(); return }
+    if (!form.reportValidity()) return
+    const fd = new FormData(form)
+    const [kind, sDate, sTime] = slot.split('|')
+    const pickup = kind === 'showcase'
+      ? { kind: 'showcase', date: sDate, time: sTime, note: String(fd.get('note') || '') }
+      : { kind: 'custom', date: String(fd.get('date') || ''), time: String(fd.get('time') || ''), note: String(fd.get('note') || '') }
+    const err = modal?.querySelector('[data-sp-error]'); err?.classList.add('hidden')
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement
+    const label = btn.textContent; btn.disabled = true; btn.textContent = btn.dataset.sending || label
+    try {
+      const r = await fetch('/api/showroom-pickup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...sale, pickup }) })
+      if (!r.ok) throw new Error('failed')
+      step('thanks')
+    } catch { err?.classList.remove('hidden') } finally { btn.disabled = false; btn.textContent = label }
+  })
+</script>

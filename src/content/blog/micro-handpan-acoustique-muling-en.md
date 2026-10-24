@@ -2,7 +2,8 @@
 title: "Handpan microphone: my Muling MP1 + HMP-2 set"
 description: "Amplifying an acoustic handpan without feedback: the Muling set, two magnetic pickups and an HMP-2 preamp. Contents, setup, power options and ordering."
 pubDate: 2026-10-24
-cover: "/images/muling-sur-handpan.webp"
+cover: "/images/blog/muling/muling-hmp2-handpan-tapis.webp"
+shop: "muling"
 category: "accessoires"
 tags: ["microphone", "gear", "sound", "acoustic"]
 lang: "en"
@@ -17,17 +18,6 @@ Amplifying an acoustic handpan is a real challenge. General-purpose mics capture
 
 The Muling set is designed for this specific instrument. I tested it in depth. Here is how it works and how to set it up.
 
-<!-- PHOTO À VENIR : David en concert avec le set Muling posé sur son handpan acoustique -->
-
-## My full test on video
-
-<figure class="article-video">
-  <button type="button" class="yt-lite group relative block aspect-video w-full overflow-hidden rounded-card border border-ink/10 bg-ink shadow-sm" data-yt-id="ENArz99dyTQ" aria-label="Play the video: my full test of the Muling microphone">
-    <img src="https://i.ytimg.com/vi/ENArz99dyTQ/hqdefault.jpg" alt="My full test of the Muling microphone for acoustic handpan" width="480" height="360" loading="lazy" style="height:100%;border:0;border-radius:0;box-shadow:none" class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
-    <span class="pointer-events-none absolute inset-0 grid place-items-center bg-ink/10 transition group-hover:bg-ink/0"><span class="flex h-16 w-16 items-center justify-center rounded-full bg-rust/90 shadow-lg transition group-hover:scale-110 group-hover:bg-rust"><svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-cream" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span></span>
-  </button>
-  <figcaption>Setup, resulting sound, comparisons and use cases: it's all in this video.</figcaption>
-</figure>
 
 ## Why there's no feedback
 
@@ -81,17 +71,29 @@ These are the manufacturer's warnings, not mere tips:
 - **Reversed polarity** on the mains adapter destroys the unit permanently.
 - The pickups work **only with the Muling preamp**: it's a complete system, not a pickup to add to an existing rig.
 
-## Price and ordering
+## Not just the handpan
 
-The manufacturer's price is **€258**. Ordering through me with the code **David-Lesage-5** gives you **5% off**: the set comes down to **€245**. Shipping and any customs fees are extra.
+The pickup is a **very sensitive surface microphone**: it captures any acoustic instrument that vibrates, not only the handpan. **Guitar, ngoni, harp**: it works too.
 
-The manufacturer doesn't offer online payment for France yet, so I put you in touch directly. **Either way, you pay Muling**, by SEPA bank transfer in euros. Two ways to get your mic:
+On wood, the magnet won't hold. You then attach the pickup with **<abbr title="A paste that sticks the pickup to the instrument and carries its vibrations.">contact paste</abbr>** or **mounting putty**.
 
-- **Online**: Muling ships the mic to your address.
-- **In person at the [showroom](/en/showroom/)**: I hand you the mic. Same price, same transfer to Muling.
+**Compared with an AKG C411**, another well-known contact mic: **no residual noise**, and **no phantom power needed** (the 48 V a mixing desk supplies), because the HMP-2 preamp powers the pickup itself.
 
-Everything happens on [the Muling microphone page](/en/micro-muling/): photos, control diagram, manual and order form. You'll also find the set in [the shop](/en/boutique/).
+## My mobile setup with the Bose S1 Pro+
+
+The preamp outputs on a single 6.35 mm jack cable. So it plugs straight into a standalone speaker like the **Bose S1 Pro+**, the one in [my mobile setup](/en/blog/setup-nomade-neotone-bose-s1/). No mixing desk to carry.
 
 ## What if you play an electronic handpan?
 
-The Neotone needs no microphone: it plugs straight in with a jack. For an amplified setup built around it, read [my nomad setup, Neotone + Bose S1 Pro+](/en/blog/setup-nomade-neotone-bose-s1/).
+The Neotone doesn't need a microphone: it plugs straight in by jack, into the same speaker. It's all in [my Neotone + Bose S1 Pro+ mobile setup](/en/blog/setup-nomade-neotone-bose-s1/).
+
+## Order or reserve your mic
+
+The maker's price is **€258**. With my code **David-Lesage-5**, you get **5% off**: the set comes to **€245**. No shipping fee is added to the price; possible customs fees are **to be confirmed**.
+
+**You always pay Muling**, by SEPA transfer. Two ways to get your mic:
+
+- **Online**: Muling ships the mic to your address.
+- **At the [showroom](/en/showroom/) in Paris**: you reserve your mic, your proof of transfer is your reservation, then you suggest a pick-up date (a showcase or a date of your choice).
+
+Ordering, reservation and the live number of mics available at the showroom: it all happens on [the Muling mic page](/en/micro-muling/).

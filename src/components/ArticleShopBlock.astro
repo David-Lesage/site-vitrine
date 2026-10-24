@@ -1,0 +1,130 @@
+---
+// Bloc « Prix et achat » des articles accessoires (24/10/2026, David : « reprendre
+// les éléments déjà validés des pages produits de la boutique (boutons copier le
+// code promo) »). Affiché par blog/[slug].astro juste après le texte quand
+// l'article déclare `shop:` dans son frontmatter.
+// Règle : l'article NE GÈRE PAS la vente. Disponibilité au showroom, paiement et
+// réservation vivent sur la page de vente de chaque produit ; ici : prix, code,
+// bouton acheter en ligne, et un bouton clair vers la page de vente.
+// Aucun stock recopié ici (il est lu en temps réel sur la page de vente).
+import PromoCodeCopy from '@/components/PromoCodeCopy.astro'
+import { mulingPriceEur, mulingDiscountedPriceEur, mulingDiscountCode, mulingDiscountPct } from '@/data/muling'
+import { hisongAffiliateUrl, hisongDiscountCode, hisongDiscountPct, hisongPrices } from '@/i18n/hisong'
+import { atlasBuyUrl, atlasPrices, atlasWithCode, ATLAS_DISCOUNT_CODE, ATLAS_DISCOUNT_PCT } from '@/data/atlas'
+import { housseNowGroove } from '@/data/housse'
+import { localizePath, numberLocale } from '@/i18n/utils'
+import type { Lang } from '@/i18n/config'
+
+interface Props { product: 'muling' | 'hisong' | 'atlas' | 'housse'; lang: Lang }
+const { product, lang } = Astro.props
+const en = lang === 'en'
+const eur = (n: number) => new Intl.NumberFormat(numberLocale(lang), { style: 'currency', currency: 'EUR', minimumFractionDigits: Number.isInteger(n) ? 0 : 2 }).format(n)
+const L = (p: string) => localizePath(p, lang)
+const copy = en ? { copy: 'Copy code', copied: 'Copied!' } : { copy: 'Copier le code', copied: 'Copié !' }
+const T = en
+  ? { title: 'Price and purchase', code: 'My discount code', atlasNote: 'Public prices read on the Atlas website; the price that counts is the one shown by Atlas when you order — shipping is extra.' }
+  : { title: 'Prix et achat', code: 'Mon code de réduction', atlasNote: 'Prix publics relevés sur le site d’Atlas ; le prix qui fait foi reste celui affiché chez Atlas au moment de ta commande — frais de port en plus.' }
+const btnMain = 'inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-rust px-6 py-3 text-center font-700 text-cream no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-copper focus-visible:bg-copper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper'
+const btnAlt = 'inline-flex min-h-11 items-center justify-center gap-2 rounded-full border-2 border-copper/50 px-6 py-3 text-center font-700 text-copper no-underline transition hover:bg-copper hover:text-cream focus-visible:bg-copper focus-visible:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper'
+const row = 'flex flex-wrap items-baseline justify-between gap-3'
+const atlasPro = atlasWithCode(atlasPrices.pro)
+const atlasAll = atlasWithCode(atlasPrices.all)
+const H = housseNowGroove
+---
+<section data-article-shop class="mt-12 rounded-card border border-copper/30 bg-copper/5 p-6 md:p-8">
+  <h2 class="font-display text-2xl font-700 text-ink">{T.title}</h2>
+
+  {product === 'muling' && (
+    <>
+      <div class="mt-5 space-y-3">
+        <div class={row}><span class="font-600 text-ink-soft">{en ? 'Maker’s price' : 'Prix fabricant'}</span><span class="font-display text-xl font-700 text-ink-soft/60 line-through">{eur(mulingPriceEur)}</span></div>
+        <div class={`${row} border-t border-copper/20 pt-3`}><span class="font-700 text-rust">{en ? `Through me (−${mulingDiscountPct}%)` : `En passant par moi (−${mulingDiscountPct} %)`}</span><span class="font-display text-3xl font-700 text-ink">{eur(mulingDiscountedPriceEur)}</span></div>
+      </div>
+      <PromoCodeCopy code={mulingDiscountCode} copyLabel={copy.copy} copiedLabel={copy.copied} class="mt-5" />
+      <p class="mt-4 text-sm text-ink-soft/85">{en
+        ? 'You always pay Muling, by SEPA transfer. Order online with delivery, or reserve your mic and pick it up at my showroom in Paris: everything happens on the sales page, with live availability.'
+        : 'Tu paies toujours Muling, par virement SEPA. Commande en ligne avec livraison, ou réserve ton micro et viens le chercher à mon showroom à Paris : tout se passe sur la page de vente, avec la disponibilité en temps réel.'}</p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href={L('/micro-muling') + '#commande'} class={btnMain}>{en ? 'Order or reserve my mic →' : 'Commander ou réserver mon micro →'}</a>
+      </div>
+    </>
+  )}
+
+  {product === 'hisong' && (
+    <>
+      <div class="mt-5 space-y-3">
+        <div class={row}><span class="font-600 text-ink-soft">{en ? 'AirStudio S1 mic (Standard Pack)' : 'Micro AirStudio S1 (Standard Pack)'}</span><span class="font-display text-xl font-700 text-ink">{eur(hisongPrices.s1)}</span></div>
+        <div class={`${row} border-t border-copper/20 pt-3`}><span class="font-600 text-ink-soft">{en ? 'With the RX Plus (Universal Pack)' : 'Avec le RX Plus (Universal Pack)'}</span><span class="font-display text-xl font-700 text-ink">{eur(hisongPrices.s1RxPlus)}</span></div>
+        <div class={`${row} border-t border-copper/20 pt-3`}><span class="font-700 text-rust">{en ? `S1 + RX Plus with my code (−${hisongDiscountPct}%)` : `S1 + RX Plus avec mon code (−${hisongDiscountPct} %)`}</span><span class="text-right"><span class="font-display text-3xl font-700 text-ink">{eur(hisongPrices.s1RxPlusWithCode)}</span><span class="block text-xs font-600 text-rust">{en ? 'free delivery' : 'livraison offerte'}</span></span></div>
+      </div>
+      <p class="mt-2 text-xs text-ink-soft/70">{en ? 'Prices incl. VAT, delivery in France.' : 'Prix TTC, livraison en France.'}</p>
+      <PromoCodeCopy code={hisongDiscountCode} copyLabel={copy.copy} copiedLabel={copy.copied} class="mt-5" />
+      <p class="mt-4 text-sm text-ink-soft/85">{en
+        ? 'Online, Hisong delivers to you. At the showroom in Paris, I only sell the mic with the RX Plus: you pay online to reserve, then pick it up. Availability and reservation are on the sales page.'
+        : 'En ligne, Hisong te livre. Au showroom à Paris, je ne vends que le micro avec le RX Plus : tu paies en ligne pour réserver, puis tu viens le chercher. La disponibilité et la réservation sont sur la page de vente.'}</p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href={hisongAffiliateUrl} target="_blank" rel="noopener" class={btnMain}>{en ? 'Buy online on hisong.io ↗' : 'Acheter en ligne sur hisong.io ↗'}</a>
+        <a href={L('/micro-hisong') + '#achat'} class={btnAlt}>{en ? '🤝 Buy at the showroom →' : '🤝 Acheter au showroom →'}</a>
+      </div>
+    </>
+  )}
+
+  {product === 'atlas' && (
+    <>
+      <div class="mt-5 space-y-3">
+        <div class={row}><span class="font-600 text-ink-soft">Atlas Pro</span><span class="text-right"><span class="font-display text-xl font-700 text-ink">{eur(atlasPro.now)}</span><span class="block text-xs text-ink-soft/70">{en ? `instead of ${eur(atlasPrices.pro)} with the code` : `au lieu de ${eur(atlasPrices.pro)} avec le code`}</span></span></div>
+        <div class={`${row} border-t border-copper/20 pt-3`}><span class="font-600 text-ink-soft">Atlas All</span><span class="text-right"><span class="font-display text-xl font-700 text-ink">{eur(atlasAll.now)}</span><span class="block text-xs text-ink-soft/70">{en ? `instead of ${eur(atlasPrices.all)} with the code` : `au lieu de ${eur(atlasPrices.all)} avec le code`}</span></span></div>
+      </div>
+      <PromoCodeCopy code={ATLAS_DISCOUNT_CODE} copyLabel={copy.copy} copiedLabel={copy.copied} class="mt-5"
+        buyHref={atlasBuyUrl(lang)}
+        buyLabel={en ? `Buy my Atlas stand (−${ATLAS_DISCOUNT_PCT}%) →` : `Acheter mon pied Atlas (−${ATLAS_DISCOUNT_PCT} %) →`}
+        buyHint={en ? 'The button copies the code, then opens the Atlas website in a new tab.' : 'Le bouton copie le code, puis ouvre le site d’Atlas dans un nouvel onglet.'}
+        buyCopied={en ? `Code ${ATLAS_DISCOUNT_CODE} copied ✓ — paste it at checkout on the Atlas website.` : `Code ${ATLAS_DISCOUNT_CODE} copié ✓ — colle-le au moment du paiement chez Atlas.`} />
+      <p class="mt-3 text-xs text-ink-soft/70">{T.atlasNote}</p>
+      <div class="mt-4"><a href={L('/pieds-atlas')} class={btnAlt}>{en ? 'All the Atlas details →' : 'Tous les détails des pieds Atlas →'}</a></div>
+    </>
+  )}
+
+  {product === 'housse' && (
+    <>
+      <div class="mt-5 space-y-3">
+        <div class={row}><span class="font-600 text-ink-soft">{en ? 'Now Groove calabash case / mat' : 'Housse / tapis de calebasse Now Groove'}</span><span class="font-display text-3xl font-700 text-ink">{eur(H.price)}</span></div>
+      </div>
+      <p class="mt-3 text-sm text-ink-soft/85">{en ? H.shippingNote.en : H.shippingNote.fr}</p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href={L('/housse-calebasse')} class={btnMain}>{en ? 'See the case and order →' : 'Voir la housse et commander →'}</a>
+      </div>
+    </>
+  )}
+</section>
+
+<script>
+  // Copier le code (classe `shop-copy-code`, contrat de PromoCodeCopy.astro) et
+  // bouton « Acheter » qui copie le code au même clic (`promo-buy`).
+  function copySync(text: string) {
+    const ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', '')
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none'
+    document.body.appendChild(ta); ta.select(); let ok = false
+    try { ok = document.execCommand('copy') } catch { ok = false }
+    ta.remove(); return ok
+  }
+  document.querySelectorAll<HTMLElement>('[data-article-shop] .shop-copy-code').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const code = btn.dataset.code || ''
+      try { await navigator.clipboard.writeText(code) } catch { if (!copySync(code)) return }
+      const label = btn.dataset.copyLabel || ''
+      btn.textContent = btn.dataset.copiedLabel || ''
+      window.setTimeout(() => { btn.textContent = label }, 1800)
+    })
+  })
+  document.querySelectorAll<HTMLAnchorElement>('[data-article-shop] a.promo-buy').forEach((link) => {
+    link.addEventListener('click', () => {
+      const code = link.dataset.code || ''
+      const status = link.parentElement?.querySelector('.promo-buy-status')
+      const announce = () => { if (status && link.dataset.copied) status.textContent = link.dataset.copied }
+      if (copySync(code)) announce()
+      link.focus({ preventScroll: true })
+      navigator.clipboard?.writeText?.(code).then(announce).catch(() => {})
+    })
+  })
+</script>

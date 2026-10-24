@@ -7,6 +7,7 @@ category: "accessoires"
 tags: ["gear", "stand", "atlas", "stage"]
 lang: "en"
 permalink: "pied-handpan-atlas-pro-ou-all"
+shop: "atlas"
 draft: false
 ---
 
@@ -78,7 +79,7 @@ And in writing, on 6 September 2026:
 
 > "The Pro has one flaw: the wooden head is not offered, neither as an option nor included, and that is its only flaw, but it is worth noting. Still, I prefer the Pro."
 
-To be precise: it can be adapted. The wooden head fits on a Pro stand, but today you have to buy both.
+To be precise: the Atlas All head has **two parts**, a **wooden** part and a **plastic** part. The plastic top is **the same head as on the Pro stand** (the tripod and its small head). As I put it: “so the wooden part isn't needed on the Pro stand”. It's only for seated play.
 
 ### The Atlas All, the one that also plays seated
 
@@ -101,10 +102,8 @@ Best of all, **come and try them**: both models are at the [showroom](/en/showro
 
 ## My Atlas code
 
-My code **DAVID-ATLAS** gives **10% off all Atlas products**, Atlas Body included. Enter it at checkout on Atlas's website.
+My code **DAVID-ATLAS** gives **10% off all Atlas products**, Atlas Body included. You enter it at checkout on the Atlas website: the button below copies it for you.
 
-This code is **my ambassador link** with Atlas: it costs you nothing extra.
-
-All photos, detailed specs and purchase links are on my [Atlas stands](/en/handpan-stands/) page. The rest of my gear is in the [shop](/en/boutique/), and for playing without a power socket, see my [nomad setup Neotone + Bose S1 Pro+](/en/blog/setup-nomade-neotone-bose-s1/).
+All the photos and detailed specs are on my [Atlas stands](/en/handpan-stands/) page. The rest of my gear is in the [shop](/en/boutique/), and for playing without a power socket, see my [Neotone + Bose S1 Pro+ mobile setup](/en/blog/setup-nomade-neotone-bose-s1/).
 
 <!-- PHOTO TO COME: David playing standing on an Atlas stand (ideally the Pro), at a showcase or the showroom, full-length shot showing the height. -->

@@ -7,17 +7,13 @@ category: "accessoires"
 tags: ["microphone", "gear", "voice", "sound"]
 lang: "en"
 permalink: "chanter-et-jouer-handpan-hisong"
+shop: "hisong"
 draft: false
 ---
 
 **This article is mainly about the acoustic handpan**, and about your voice. An electronic handpan like the [Neotone](/en/neotone/) plugs in with a jack, no mic needed: for it, the Hisong is only useful for your voice (see the dedicated section below).
 
 Want to **sing while you play**, be heard by your students or record outdoors, with no cable between your handpan and the speaker? The **Hisong AirStudio S1** is an all-in-one wireless mobile studio. I use it myself: here is what's inside, what it's for, and how to buy it.
-
-<figure>
-  <img src="/images/prod-hisong-7.jpg" alt="An acoustic handpan on a rug, with the Hisong mic on its stand, the earbuds, the receiver and a tablet open on the Hisong app in front of it" width="731" height="1300" loading="lazy" />
-  <figcaption>The whole studio fits on the rug next to the handpan: the mic on its stand, the two earbuds, the small receiver, and the tablet open on the Hisong app settings.</figcaption>
-</figure>
 
 ## What's in the studio
 
@@ -75,12 +71,39 @@ Mic, monitoring and audio interface in one: a **portable studio** to capture you
 
 ## Not just for the handpan
 
-The mic isn't limited to the handpan: here, the same studio next to a [**gonilele**](/en/gonilele/).
+The mic isn't limited to the handpan or to singing. It captures **any acoustic instrument** (a [**gonilele**](/en/gonilele/), an ngoni, a guitar) and also the **speaking voice**: a lesson, a talk, a video.
+
+Here, the same studio next to a gonilele.
 
 <figure>
   <img src="/images/showroom-gonilele-micro-hisong.webp" alt="A light-wood gonilele on a rug, with the Hisong AirStudio S1 box, the mic on its stand, the earbuds and the receiver held by a clip" width="1000" height="1778" loading="lazy" />
   <figcaption>The same studio on a string instrument: look at the receiver clipped onto the gonilele, and the earbuds resting on its body.</figcaption>
 </figure>
+
+## The RX Plus: what it's for, how to connect it
+
+<figure>
+  <img src="/images/hisong-rx-plus.webp" alt="Hisong's RX Plus receiver: a small black box with a USB-C plug on top, volume buttons and a row of LEDs" width="900" height="900" loading="lazy" />
+  <figcaption>The RX Plus (photo: Hisong). Notice the USB-C plug sticking out, the two volume buttons and the row of LEDs showing the level.</figcaption>
+</figure>
+
+The RX Plus is a **wireless receiver** for the AirStudio S1 mic. It receives the mic's sound and sends it to your gear. It only works with an AirStudio S1 mic.
+
+**Its three outputs** (according to Hisong's product page):
+
+- **3.5 mm jack on the side**, for a **camera** (DSLR, mirrorless).
+- **3.5 mm jack on top**, line / headphone output, for an **active speaker, a mixing desk or a PA**: that's the live one.
+- **USB-C underneath**, digital output to a **phone, tablet or computer**, to record or stream.
+
+Two **volume buttons** set the output level right on the box, without the app. It charges over USB-C.
+
+**How to use it, the first time**: pair it with the mic in the **HISONG Link** app.
+
+1. In the app: Settings → Device → pair the RX Plus.
+2. On the RX Plus, hold both volume buttons until the LEDs flash red and green.
+3. Confirm in the app.
+
+Source: [the RX Plus page on hisong.io](https://hisong.io/products/rx-plusaccessories).
 
 ## Hisong or Muling: which one for your handpan?
 
@@ -93,29 +116,24 @@ The two mics don't do the same job. They complement each other.
 
 If you don't sing and mainly want to amplify your acoustic handpan in a noisy room, look at the [Muling microphone](/en/micro-muling/). If you want **your voice and your handpan together**, wireless, go for the Hisong.
 
-Just starting out? Your phone's or computer's mic is enough, in a quiet room.
-
 ## What if you play a Neotone?
 
 The [Neotone](/en/neotone/) plugs straight in with a jack, no mic needed. The Hisong is still worth it **for your voice**: in [my nomad setup](/en/blog/setup-nomade-neotone-bose-s1/), it plugs into the Bose S1 Pro+ and turns the whole thing into a mobile mini-studio.
 
-## Prices and purchase
+## Buy your mic
 
-| Pack | Price incl. VAT, shipping to France |
-|---|---|
-| AirStudio S1 mic (Standard Pack) | €270.95 |
-| With the RX Plus (Universal Pack, +€90) | €360.95 |
-| S1 + RX Plus with my code (−5%) | €342.91, free shipping |
+Here's my **ambassador link**: it gives you **5% off** (code **DAVID-LESAGE-SAVE-5**).
 
-**My advice**: if you want to play live, get the RX Plus straight away. At the showroom, I only sell the mic with the RX Plus, not the mic alone.
+**My advice**: if you want to play live, get the RX Plus straight away.
 
-You buy **directly from Hisong**, on hisong.io: you always pay Hisong. Through [my Hisong page](/en/micro-hisong/), the code **DAVID-LESAGE-SAVE-5** (−5%) should apply on its own; otherwise, enter it by hand at checkout.
+Two ways to buy:
 
-To be clear: this is **my ambassador link**. It doesn't change your price, quite the opposite: the code saves you 5%.
+- **Online**: you buy on hisong.io, Hisong delivers.
+- **At the [showroom](/en/showroom/) in Paris**: I only sell the mic with the RX Plus. You pay online to reserve, upload the screenshot of your payment, then suggest a pick-up date and time (a showcase or a date of your choice).
 
 <figure>
   <img src="/images/showroom-yishama-micros-hisong.webp" alt="Top view of an acoustic handpan surrounded by four Hisong AirStudio S1 boxes, with the mic on its stand, and the earbuds and receiver resting on the handpan" width="1000" height="1778" loading="lazy" />
   <figcaption>Several Hisong studios at the showroom, around an acoustic handpan: you can come and try it before buying.</figcaption>
 </figure>
 
-Prefer to hear it first? Come and try it at the [Paris showroom](/en/showroom/), or find it in [the shop](/en/boutique/).
+Live showroom availability and reservation: it all happens on [my Hisong page](/en/micro-hisong/).
