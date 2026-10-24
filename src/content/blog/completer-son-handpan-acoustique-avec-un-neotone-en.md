@@ -3,7 +3,7 @@ title: "From 2 to 24 keys: completing your acoustic handpan with a Neotone"
 description: "You have a D Kurd 10 and you're going round in circles. Set beside it, a Neotone adds exactly the notes that are missing: 2 complete keys become 24, and you can finally accompany yourself while singing."
 pubDate: 2026-08-31
 updatedDate: 2026-10-23
-cover: "/images/showroom-instruments.webp"
+cover: "/images/blog-handpan-acoustique-et-neotone-cote-a-cote.webp"
 category: "neotone"
 tags: ["complete", "neotone", "keys"]
 lang: "en"
