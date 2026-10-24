@@ -48,6 +48,12 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 24/10/2026 (33ᵉ passe) — REPRENDRE ICI
+- ✅ **EN PROD 24/10 ~13h50** : rubrique Accessoires (45811e9) + 5 articles accessoires FR+EN (Muling, Hisong, Atlas, Forbrain, housse) corrigés (3a5b766) + fiches (1d7c481 : Muling 245 €, Hisong showroom = micro + RX Plus seul, « lien d'ambassadeur », housse « rare, faite main, petite série »). Déployé depuis worktree 7cab22e + a6b63b9 + 0e00cc5 + cherry-picks (HEAD toujours NON déployable : Neotone 3 cas). Relecteur Opus distinct passé.
+- 🔒 **EF `muling-order`** : constante passée à 245 dans le dépôt, PAS redéployée → la prod encaisse/écrit encore 246,50 € tant qu'elle n'est pas redéployée (feu vert David).
+- ⚠️ 245 vs 145 : David a écrit « 145 € », appliqué 245 € (faute de frappe probable) — à confirmer.
+- Restent ouverts : fiche Yishama dit encore « commission » (dict.ts:694) ; /pieds-atlas cite Marco Agri (message privé du 20/08) ; Forbrain 269 € = offre du moment à revérifier ; ES des articles inexistant (FR/EN seulement) ; ES fiche housse retraduite à la main (ancienne trad parlait d'« escalada »).
+
 ## 🧭 ÉTAT ACTUEL — 20/10/2026 (32ᵉ passe, session LOCALE « site-vitrine ») — REPRENDRE ICI
 
 - **Passation 20/10** : cette session a la main sur tout le site ; message envoyé à « Handpan StudioV4 — reprise projet »
