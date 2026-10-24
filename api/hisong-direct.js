@@ -2,6 +2,7 @@
 // micro Hisong). Même motif que muling-order.js : serveur à serveur, filtre par
 // liste EXPLICITE (tout champ non listé ici est perdu).
 // Aucune dépendance npm.
+// ⚠️ Corps Vercel limité à 4,5 Mo : le formulaire borne le fichier à 3 Mo (base64 ≈ ×1,37).
 
 const SUPABASE_URL = 'https://zqcuhnjjrgmybftppkcl.supabase.co'
 const ANON = 'sb_publishable_turahpl0xi-qKN6jmG3yBg_tqpVZbtx'
@@ -35,6 +36,9 @@ export default async function handler(req, res) {
         termsAccepted: body.termsAccepted === true,
         newsOptIn: body.newsOptIn === true,
         lang: body.lang || 'fr',
+        // v2 : preuve de paiement (capture du paiement Stripe), facultative.
+        fileBase64: body.fileBase64,
+        fileType: body.fileType,
       }),
     })
     const data = await r.json().catch(() => ({}))

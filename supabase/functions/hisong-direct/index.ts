@@ -18,6 +18,15 @@
 //
 // Appelée par /api/hisong-direct.js (Vercel), serveur à serveur, protégée par
 // SITE_LEAD_TOKEN. verify_jwt = false. v1 (25/10/2026), non déployée.
+// v2 (24/10/2026, non déployée) : David — « que les preuves de paiement soient
+//      récupérées directement via un formulaire dédié "vente présentiel" ».
+//      Le client paie via le lien Stripe offline (342,91 €) puis dépose sa
+//      capture DANS LE MÊME envoi : upload dans le bucket privé `hisong-proofs`
+//      (chemin `<affiliate_sales.id>/<ts>.<ext>`, même règles que muling-proofs)
+//      + payment_proof_path / payment_claimed_at / fulfillment_status
+//      ='payment_claimed'. Sans fichier : comportement v1 inchangé.
+//      Mail à Cathy (Hisong) préparé derrière HISONG_PARTNER_EMAIL_ENABLED
+//      (désactivé par défaut ; adresse dans HISONG_PARTNER_EMAIL).
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -47,11 +56,16 @@ const shell = (inner: string) => `<!doctype html><html><head><meta charset="utf-
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:14px;border:1px solid #e5e7eb;">
 <tr><td style="padding:26px 28px;">${inner}</td></tr></table></td></tr></table></body></html>`;
 
-const PAY_URL = 'https://hisong.io/DAVID-LESAGE-SAVE-5';
+// Lien de paiement Stripe « vente présentiel » (342,91 €) — doit rester égal à
+// `hisongShowroomPayUrl` dans src/i18n/hisong.ts.
+const PAY_URL = 'https://buy.stripe.com/8x2eVe6AieJB8nmeTteZ203';
+const PROOF_BUCKET = 'hisong-proofs';
+const MAX_BYTES = 6 * 1024 * 1024;
+const ALLOWED_TYPES: Record<string, string> = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'application/pdf': 'pdf' };
 const COPY: Record<string, { subject: string; title: string; p1: string; pay: string; sign: string; amount: string }> = {
-    fr: { subject: 'David Lesage — ton micro Hisong', title: 'Merci pour ton achat ✨', p1: 'Ton achat au showroom est bien enregistré. Je te remets le micro en main propre. Voici le récapitulatif, à garder.', pay: 'Le paiement se fait auprès de Hisong, pas auprès de moi : comme pour un achat en ligne, tu paies sur la boutique hisong.io avec mon lien (code −5 % inclus). C’est Hisong qui encaisse et qui émet la facture.', sign: 'Merci,<br />David Lesage', amount: 'Montant' },
-    en: { subject: 'David Lesage — your Hisong mic', title: 'Thanks for your purchase ✨', p1: 'Your showroom purchase is recorded. I’m handing you the mic in person. Here is the summary, for your records.', pay: 'You pay Hisong, not me: just like an online purchase, you pay on the hisong.io shop through my link (−5% code included). Hisong takes the payment and issues the invoice.', sign: 'Thank you,<br />David Lesage', amount: 'Amount' },
-    es: { subject: 'David Lesage — tu micrófono Hisong', title: 'Gracias por tu compra ✨', p1: 'Tu compra en el showroom está registrada. Te entrego el micrófono en mano. Aquí tienes el resumen, para guardarlo.', pay: 'El pago se hace a Hisong, no a mí: como en una compra en línea, pagas en la tienda hisong.io con mi enlace (código −5% incluido). Hisong cobra y emite la factura.', sign: 'Gracias,<br />David Lesage', amount: 'Importe' },
+    fr: { subject: 'David Lesage — ton micro Hisong', title: 'Merci pour ton achat ✨', p1: 'Ton achat au showroom est bien enregistré. Je te remets le micro en main propre. Voici le récapitulatif, à garder.', pay: 'Lien de paiement (si ce n’est pas déjà fait) :', sign: 'Merci,<br />David Lesage', amount: 'Montant' },
+    en: { subject: 'David Lesage — your Hisong mic', title: 'Thanks for your purchase ✨', p1: 'Your showroom purchase is recorded. I’m handing you the mic in person. Here is the summary, for your records.', pay: 'Payment link (if not done yet):', sign: 'Thank you,<br />David Lesage', amount: 'Amount' },
+    es: { subject: 'David Lesage — tu micrófono Hisong', title: 'Gracias por tu compra ✨', p1: 'Tu compra en el showroom está registrada. Te entrego el micrófono en mano. Aquí tienes el resumen, para guardarlo.', pay: 'Enlace de pago (si aún no lo has hecho):', sign: 'Gracias,<br />David Lesage', amount: 'Importe' },
 };
 
 Deno.serve(async (req) => {
@@ -75,6 +89,13 @@ Deno.serve(async (req) => {
         const termsAccepted = body.termsAccepted === true;
         const newsOptIn = body.newsOptIn === true;
         const now = new Date().toISOString();
+        const fileBase64 = String(body.fileBase64 ?? '');
+        const fileType = String(body.fileType ?? '');
+        const ext = ALLOWED_TYPES[fileType];
+        if (fileBase64 && !ext) return json({ error: 'invalid_file_type' }, 400);
+        if (fileBase64.length > MAX_BYTES * 1.4) return json({ error: 'file_too_large' }, 400);
+        const bytes = fileBase64 ? Uint8Array.from(atob(fileBase64), (ch) => ch.charCodeAt(0)) : null;
+        if (bytes && bytes.byteLength > MAX_BYTES) return json({ error: 'file_too_large' }, 400);
 
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
         if (!firstName && !lastName) return json({ error: 'missing_name' }, 400);
@@ -105,6 +126,21 @@ Deno.serve(async (req) => {
         if (error) throw error;
         const saleId = ins!.id as string;
 
+        // Preuve de paiement : une panne d'upload ne perd pas la vente (déjà
+        // écrite) — on le signale (proofSaved=false) et David voit la ligne 'new'.
+        let proofPath: string | null = null;
+        if (bytes && ext) {
+            const path = `${saleId}/${Date.now()}.${ext}`;
+            const { error: upErr } = await admin.storage.from(PROOF_BUCKET).upload(path, bytes, { contentType: fileType, upsert: false });
+            if (upErr) console.error('hisong-direct upload error:', upErr);
+            else {
+                const { error: updErr } = await admin.from('affiliate_sales').update({
+                    payment_proof_path: path, payment_claimed_at: new Date().toISOString(), fulfillment_status: 'payment_claimed',
+                }).eq('id', saleId);
+                if (updErr) console.error('hisong-direct update error:', updErr); else proofPath = path;
+            }
+        }
+
         let emailSent = false;
         const host = Deno.env.get('SMTP_HOST') ?? '';
         const user = Deno.env.get('SMTP_USER') ?? '';
@@ -127,7 +163,25 @@ Deno.serve(async (req) => {
             } catch (e) { console.error('hisong-direct mail error:', e); }
             finally { try { await c.close(); } catch { /* ignore */ } }
         }
-        return json({ ok: true, saleId, emailSent, saleMode: 'showroom', amount: total, currency: 'EUR' });
+        // Notification à Cathy (Hisong) — DÉSACTIVÉE par défaut. Ne part que si
+        // HISONG_PARTNER_EMAIL_ENABLED === 'true' ET HISONG_PARTNER_EMAIL posée.
+        let partnerEmailSent = false;
+        const partnerTo = Deno.env.get('HISONG_PARTNER_EMAIL') ?? '';
+        if (Deno.env.get('HISONG_PARTNER_EMAIL_ENABLED') === 'true' && partnerTo && host && user && pass && from) {
+            const c2 = new SMTPClient({ connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } } });
+            try {
+                await c2.send({ from, to: partnerTo, cc: ADMIN_EMAIL, replyTo: ADMIN_EMAIL,
+                    subject: mailSubject(`Showroom sale — AirStudio S1 + RX Plus x${quantity}`),
+                    mimeContent: [htmlPart(shell(`<div style="font-size:19px;font-weight:700;color:#111827;">New showroom sale (David Lesage)</div>
+                      <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;margin-top:14px;">
+                      ${row('Product', esc(pack.label))}${row('Quantity', String(quantity))}${row('Amount', `${total.toFixed(2)} EUR`)}
+                      ${row('Customer', esc(`${firstName} ${lastName}`.trim()))}${row('Email', esc(email))}
+                      ${row('Proof of payment', proofPath ? 'received (stored, available on request)' : 'not provided')}${row('Ref', esc(saleId))}</table>`))] });
+                partnerEmailSent = true;
+            } catch (e) { console.error('hisong-direct partner mail error:', e); }
+            finally { try { await c2.close(); } catch { /* ignore */ } }
+        }
+        return json({ ok: true, saleId, emailSent, partnerEmailSent, proofSaved: !!proofPath, saleMode: 'showroom', amount: total, currency: 'EUR' });
     } catch (err) {
         console.error('hisong-direct error:', err);
         return json({ error: err instanceof Error ? err.message : 'server_error' }, 500);

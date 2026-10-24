@@ -23,6 +23,9 @@ import type { Lang } from './config'
 // 🎟️ Le code est EXACTEMENT celui contenu dans l'URL d'affiliation, comme sur
 // la fiche boutique (src/data/shop.ts, `micro-hisong`). Changer les deux ensemble.
 export const hisongAffiliateUrl = 'https://hisong.io/DAVID-LESAGE-SAVE-5'
+// Vente présentiel (showroom) : lien de paiement Stripe offline, 342,91 €.
+// ⚠️ Dupliqué dans supabase/functions/hisong-direct (PAY_URL).
+export const hisongShowroomPayUrl = 'https://buy.stripe.com/8x2eVe6AieJB8nmeTteZ203'
 export const hisongDiscountCode = 'DAVID-LESAGE-SAVE-5'
 export const hisongDiscountPct = 5
 
