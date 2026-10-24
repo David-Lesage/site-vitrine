@@ -238,3 +238,5 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 - ✅ fait (24/10, en prod, ArticleShopBlock) Articles : reprendre les éléments déjà validés des pages produits de la boutique (boutons copier le code promo)
 - ✅ fait (24/10, en prod /housse-calebasse/ FR/EN/ES ; port « + livraison (22 €) » ambigu, à confirmer) Boutique : page dédiée housse de calebasse (photos + texte HelloAsso), frais de port, retrait à Paris au showroom
 - 🔒 action de David sur HelloAsso (hors site) HelloAsso : option « rupture de stock » plutôt que désactiver (kits calebasse)
+- ✅ fait (24/10) « juste avant de cliquer sur le lien il faut qu'il soit indiquer a la personne le montant qu'elle doit mettre elle meme manuellement » — encadré + copier (FR/EN/ES) + mail récap, en prod
+- ✅ fait (24/10) « change la photo de l'article par une photo ou on voit un handpan acoustique et un neotone a coté » — couverture + og de completer-son-handpan (FR/EN), en prod

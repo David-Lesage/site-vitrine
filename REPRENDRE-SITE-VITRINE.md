@@ -48,6 +48,10 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 24/10/2026 (35ᵉ passe) — REPRENDRE ICI
+- ✅ **EN PROD** (dpl_GnjiSGzHYMsfkuuHRGEgaXLZxnwc) : encadré « saisis toi-même le montant : 342,91 € » + bouton copier avant le lien Stripe Hisong (FR/EN/ES, ead8f37) ; photo de couverture/og de l'article compléter-son-handpan = `public/images/blog-handpan-acoustique-et-neotone-cote-a-cote.webp` (photo-david-1 de la page de vente app, dbe9c17). EF `hisong-direct` redéployée (mail récap : même consigne), vérifiée download+diff.
+- Worktree = liste de la 34ᵉ passe + dbe9c17 + ead8f37. ⚠️ Prochain déploiement : repartir de CETTE liste (conflits .md : prendre --theirs).
+
 ## 🧭 ÉTAT ACTUEL — 24/10/2026 ~15h (34ᵉ passe) — REPRENDRE ICI
 - ✅ **EN PROD 24/10 ~15h** (deploy dpl_81JAb9CjVDU7cxFJ7UHFibkqLD1y) : retours « 2e passe » des articles accessoires (commit 3a6469e) + vente présentiel Hisong (300c2bc). Worktree = 7cab22e + a6b63b9 + 0e00cc5 + 45811e9 + 82b5f81 + bcc5c94 + 34873e8 + c8856dd + 6a2e7fb + 3a5b766 + 1d7c481 + 300c2bc + 3a6469e. ⚠️ Prochain déploiement : repartir de CETTE liste (HEAD toujours non déployable, Neotone 3 cas).
 - **Réservation showroom (Muling + Hisong)** : EF **`showroom-reservation`** (nouvelle, déployée, vérifiée download+diff) — GET `?action=stock` lit `stock_levels` (item_key muling-handpan / hisong-micro, qty_on_hand) ; POST `pickup` ajoute « Retrait proposé : … » à `affiliate_sales.admin_note` (jeton SITE_LEAD_TOKEN, email = celui de la vente, purchase_channel showroom). Relais `api/showroom-stock.js` (cache 60 s, vérifié en prod : muling 3, hisong 4) et `api/showroom-pickup.js`. Composants `ShowroomStock.astro` (badge temps réel, boutons désactivés à 0) et `ShowroomPickup.astro` (modale ouverte par l'événement `showroom-sold` après la preuve de paiement ; showcases = `upcomingShowcases`). Aucun SQL nécessaire. Flux pickup NON testé de bout en bout (aucun POST en prod).
