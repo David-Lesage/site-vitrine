@@ -73,7 +73,7 @@ const DISCOUNT_PCT = 5;
 const DISCOUNT_CODE = 'David-Lesage-5';
 // Valeur LITTÉRALE donnée par David (258 × 0,95 = 245,10 €, pas 246,50 € —
 // écart assumé, voir le commentaire dans src/data/muling.ts).
-const DISCOUNTED_PRICE_EUR = 245; // arrondi demandé par David le 24/10/2026 (NON redéployé)
+const DISCOUNTED_PRICE_EUR = 245; // arrondi demandé par David le 24/10/2026
 const COMMISSION_PER_UNIT_EUR = 100; // accord de principe du 22/07/2026 avec Muling (en USD à l'origine, non re-négocié en EUR)
 // CONDITIONS GÉNÉRALES — ⚠️ DOIT rester STRICTEMENT ÉGALE à TERMS_VERSION dans
 // supabase/functions/site-lead/index.ts (et à `terms.version` de src/i18n/dict.ts) :
