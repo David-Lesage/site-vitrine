@@ -88,6 +88,10 @@ VI Nostalgie · VII Mystère. Voyelles en Chanter & Jouer : OU · O (beau) · O 
   Mieux encore : **laisser l'interface parler** — ex. une capture de la roue de tonalité au-dessus de chaque
   dessin dit « la tonalité a changé » sans un seul mot à traduire (10/09).
 
+## 5b. Articles produits (David, 24/10)
+
+- Un article sur un produit vendu (Muling, Hisong, Atlas, housse…) **ne gère pas la vente** : il affiche le bloc « Prix et achat » (frontmatter `shop:` → `ArticleShopBlock.astro`, mêmes éléments que les fiches boutique : prix, bouton copier le code, bouton acheter) et renvoie vers **la page de vente** avec un bouton clair. Disponibilité, paiement et réservation vivent sur la page de vente. Jamais de stock recopié dans un article. Vaut pour tous les futurs articles Muling.
+
 ## 6. Langues
 
 Écrire le français. L'anglais est obligatoire mais produit par la session « Traduction » (09/09) : ne pas

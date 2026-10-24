@@ -222,3 +222,19 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 | 24/10 | Hisong : « Je ne vend que le modele micro + RX Plus au showroom […] pas le micro seul » | ✅ en prod 24/10 (formulaire + API + « kit Master » → RX Plus) |
 | 24/10 | Atlas : « on peut adapter la tete en bois sur un pied pro … on est obligé d'acheter les 2 actuellement » | ✅ en prod 24/10 (article, Marco non nommé) ; page /pieds-atlas cite encore Marco (message du 20/08) |
 | 24/10 | Housse : « met en avant le coté rare et unique . oui fait main petite série » | ✅ en prod 24/10 (storytelling depuis HelloAsso, fiche FR/EN/ES) |
+## 24/10 — retours articles accessoires (2e passe)
+- ✅ fait (24/10, en prod) Atlas : tête = partie bois + partie plastique ; le haut plastique = même tête que le pied Pro (trépied + petite tête) → « la partie bois n'est donc pas necessaire au pied pro »
+- ✅ fait (24/10, en prod) Muling article : lien avec Bose S1 Pro+ (setup nomade de David) ; retirer la vidéo en double ; vérifier frais de port (sans doute aucun) ; douane reste à confirmer
+- ✅ fait (24/10, en prod ; stock temps réel via EF showroom-reservation, date de retrait → admin_note) Muling : lien/bouton vers le formulaire ; réservation à Paris avec nombre dispo en temps réel (inventaire, comme Neotone) ; preuve de virement = réservation effective ; proposer date de retrait (showcase ou date par email) — formulaire + page de vente + article (+ tous futurs articles Muling : renvoyer vers la page de vente)
+- ✅ fait (24/10, en prod, image de couverture) Muling : 1re photo de l'article = photo jointe (HMP-2 sous le handpan)
+- ✅ fait (24/10, en prod) Muling : marche sur tout instrument acoustique (guitare, goni, harpe) avec pâte de conduction / pâte à fixe ; micro de surface très sensible ; vs AKG C411 : pas de bruit résiduel, pas de phantom grâce au préampli
+- ✅ fait (24/10, en prod) Hisong : supprimer « Et pour débuter ? Le micro de ton téléphone… » (n'a pas de sens)
+- ✅ fait (24/10, en prod) Hisong : ton simple « voici mon lien ambassadeur qui te fait 5% de remise »
+- ✅ fait (24/10, en prod ; quantité bloquée à 1) Hisong : boutons acheter en ligne / acheter au showroom ; stock showroom en temps réel ; payer en ligne pour réserver + capture ; puis proposer date+horaire de retrait (showcase ou sa date)
+- 🔒 bloqué sur la photo (introuvable dans public/ et ~/CLAUDE) Hisong : 1re photo = David qui chante micro en main, showroom en arrière-plan
+- ✅ fait (24/10, en prod) Hisong : pas que voix/handpan : tout instrument acoustique (ngoni, guitare), voix parlée
+- ✅ fait (24/10, en prod, photo + fiche hisong.io citées) Hisong : photo + explications RX Plus (à quoi il sert, connectique, mode d'emploi)
+- ✅ fait (24/10, en prod) Atlas : retirer « ça ne t'ajoute rien à payer » ; bouton « acheter mon pied Atlas » vers le site avec coupon + copier le code
+- ✅ fait (24/10, en prod, ArticleShopBlock) Articles : reprendre les éléments déjà validés des pages produits de la boutique (boutons copier le code promo)
+- ✅ fait (24/10, en prod /housse-calebasse/ FR/EN/ES ; port « + livraison (22 €) » ambigu, à confirmer) Boutique : page dédiée housse de calebasse (photos + texte HelloAsso), frais de port, retrait à Paris au showroom
+- 🔒 action de David sur HelloAsso (hors site) HelloAsso : option « rupture de stock » plutôt que désactiver (kits calebasse)
