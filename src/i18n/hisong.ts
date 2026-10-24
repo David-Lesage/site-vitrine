@@ -153,7 +153,7 @@ const fr = {
   compareCols: { integre: 'Micro intégré (téléphone, ordinateur)', muling: 'Muling MP1', hisong: 'Hisong AirStudio S1' },
   compareRows: [
     { h: 'Ce qu’il capte', integre: 'Toute la pièce', muling: 'La coque (contact)', hisong: 'L’air autour, sans fil' },
-    { h: 'Pour', integre: 'Commencer, pièce calme', muling: 'Handpan acoustique, scène, pièce bruyante', hisong: 'Voix + handpan, live (kit Master)' },
+    { h: 'Pour', integre: 'Commencer, pièce calme', muling: 'Handpan acoustique, scène, pièce bruyante', hisong: 'Voix + handpan, live (avec le RX Plus)' },
     { h: 'Mesuré avec l’app', integre: 'Test en cours', muling: 'Test en cours', hisong: 'Test en cours' },
   ],
   compareNote:
@@ -250,7 +250,7 @@ const en: HisongCopy = {
   compareCols: { integre: 'Built-in mic (phone, computer)', muling: 'Muling MP1', hisong: 'Hisong AirStudio S1' },
   compareRows: [
     { h: 'What it picks up', integre: 'The whole room', muling: 'The shell (contact)', hisong: 'The air around, wireless' },
-    { h: 'For', integre: 'Getting started, quiet room', muling: 'Acoustic handpan, stage, noisy room', hisong: 'Voice + handpan, live (Master kit)' },
+    { h: 'For', integre: 'Getting started, quiet room', muling: 'Acoustic handpan, stage, noisy room', hisong: 'Voice + handpan, live (with the RX Plus)' },
     { h: 'Measured with the app', integre: 'Test in progress', muling: 'Test in progress', hisong: 'Test in progress' },
   ],
   compareNote:
@@ -345,7 +345,7 @@ const es: HisongCopy = {
   compareCols: { integre: 'Micrófono incorporado (teléfono, ordenador)', muling: 'Muling MP1', hisong: 'Hisong AirStudio S1' },
   compareRows: [
     { h: 'Lo que capta', integre: 'Toda la habitación', muling: 'El cuerpo (contacto)', hisong: 'El aire de alrededor, inalámbrico' },
-    { h: 'Para', integre: 'Para empezar, sala tranquila', muling: 'Handpan acústico, escenario, sala ruidosa', hisong: 'Voz + handpan, en directo (kit Master)' },
+    { h: 'Para', integre: 'Para empezar, sala tranquila', muling: 'Handpan acústico, escenario, sala ruidosa', hisong: 'Voz + handpan, en directo (con el RX Plus)' },
     { h: 'Medido con la aplicación', integre: 'Prueba en curso', muling: 'Prueba en curso', hisong: 'Prueba en curso' },
   ],
   compareNote:

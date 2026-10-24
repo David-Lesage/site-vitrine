@@ -61,14 +61,13 @@ export const mulingVideoId = 'ENArz99dyTQ'
 // Prix en euros fixe (David, 08/08/2026) — remplace l'ancien affichage en
 // dollars. Cohérent avec le compte bancaire de Muling, qui n'accepte QUE des
 // virements SEPA en euros (cf. mulingBankDetails ci-dessous).
-// ⚠️ mulingDiscountedPriceEur est une valeur LITTÉRALE donnée par David
-// (246,50 €), pas calculée : 258 × 0,95 = 245,10 €, soit 1,40 € d'écart avec
-// le prix qu'il a demandé. Il l'a peut-être établi autrement (conversion USD
-// distincte, arrondi commercial…) — à confirmer avec lui si ça compte.
+// Prix avec code arrondi à 245 € (David, 24/10/2026 : « Arrondi le prix du micro
+// muling a 145€ partout » — 145 lu comme une faute de frappe pour 245 : 258 × 0,95
+// = 245,10 €). Remplace l'ancienne valeur littérale 246,50 €.
 export const mulingPriceEur = 258
 export const mulingDiscountCode = 'David-Lesage-5'
 export const mulingDiscountPct = 5
-export const mulingDiscountedPriceEur = 246.50
+export const mulingDiscountedPriceEur = 245
 
 // Liens officiels Muling (§ 6 du brief initial).
 // ⚠️ mulingsound.com est servi en HTTP et son certificat TLS ne correspond pas au
