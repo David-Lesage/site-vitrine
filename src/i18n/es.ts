@@ -660,7 +660,7 @@ export const es: Dict = {
         "description": "Kit completo: calabaza de 45-50 cm (poco común en Europa), acabada a mano por Kamou (Djoliba Percussion) y grabada con láser con el logotipo de Now Groove, con tapete y maracas. Una batería orgánica con un sonido natural."
       },
       "housse": {
-        "name": "Ahora, la versión de calabaza de Groove es de David Lesage",
+        "name": "Funda de calabaza Now Groove de David Lesage",
         "description": "Funda mochila de alta gama ideada y diseñada por David Lesage: función de alfombrilla integrada, correas desmontables, bolsillo de almacenamiento (huevos, accesorios y método), interior de terciopelo. ✋ Rara y única: hecha a mano, en pequeña serie."
       },
       "coeur-de-son": {
@@ -930,7 +930,7 @@ export const es: Dict = {
     ],
     "priceTitle": "Precio y pedidos",
     "priceLabel": "Precio del fabricante",
-    "priceNote": "Los gastos de envío y cualquier tasa aduanera aplicable son adicionales.",
+    "priceNote": "No se añade ningún gasto de envío al precio. Posibles tasas aduaneras: por confirmar.",
     "priceDiscountLabel": "Al pasar por mí",
     "priceDiscountNote": "Código {code} — {pct}% de descuento sobre el precio del fabricante, reservado para pedidos realizados a través de este formulario.",
     "orderTitle": "Pide mi micrófono",

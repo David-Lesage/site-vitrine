@@ -7,6 +7,7 @@ category: "accessoires"
 tags: ["calabash", "now groove", "gear"]
 lang: "en"
 permalink: "housse-calebasse-now-groove"
+shop: "housse"
 draft: false
 ---
 
@@ -68,6 +69,6 @@ The cover is a **backpack** I conceived and designed myself. It brings together:
 
 Each cover is **made by hand**, in a **small run**: only a few exist. It sells for **€99** on the HelloAsso shop of Résonances Productions, the association behind my lessons and workshops.
 
-You can also find the cover, the calabash and its method in [my shop](/en/boutique/), under "My creations".
+All the photos, delivery and **pick-up in Paris at the showroom** are on [the cover's page](/en/housse-calebasse/). The calabash and its method are in [my shop](/en/boutique/), under "My creations".
 
-**[Order the cover on HelloAsso](https://www.helloasso.com/associations/resonances-productions/boutiques/pres-vente-housse-calebasse-now-groove-by-david-lesage)** · [The calabash kit and the Now Groove method](https://www.helloasso.com/associations/resonances-productions/boutiques/formation-de-rythme-now-groove-david-lesage) · [My calabash rhythm lessons](/en/cours/)
+**[See the cover and order](/en/housse-calebasse/)** · [The calabash kit and the Now Groove method](https://www.helloasso.com/associations/resonances-productions/boutiques/formation-de-rythme-now-groove-david-lesage) · [My calabash rhythm lessons](/en/cours/)

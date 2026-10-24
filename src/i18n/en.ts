@@ -1005,7 +1005,7 @@ export const en: Dict = {
     priceTitle: 'Price and ordering',
     priceLabel: 'Maker’s price',
     priceNote:
-      'Shipping and any customs fees on top.',
+      'No shipping fee is added to the price. Possible customs fees: to be confirmed.',
     priceDiscountLabel: 'Ordering through me',
     priceDiscountNote: 'Code {code} — {pct}% off the maker’s price, reserved for orders placed through this form.',
     orderTitle: 'Order my mic',

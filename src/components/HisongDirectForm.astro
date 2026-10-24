@@ -24,15 +24,15 @@ const { lang } = Astro.props
 const bk = getDict(lang).booking
 const eur = (n: number) => new Intl.NumberFormat(numberLocale(lang), { style: 'currency', currency: 'EUR' }).format(n)
 const COPY = {
-  fr: { open: '🤝 Je suis au showroom : achat en direct', title: 'Achat en direct au showroom', intro: 'Tu es au showroom avec moi : je te remets le micro en main propre. 1) Paie avec le lien de paiement ci-dessous. 2) Joins la capture d’écran de ton paiement et tes coordonnées : la vente est enregistrée.', pay: '① Payer maintenant (342,91 €)', payNote: 'Paiement sécurisé par carte, puis reviens ici avec ta capture.', proof: '② Capture de ton paiement', proofNote: 'Image ou PDF, 3 Mo maximum.', proofTooBig: 'Fichier trop lourd (3 Mo maximum).', s1Note: 'prix public ; le code −5 % s’applique au paiement chez Hisong', codeNote: 'avec le code', pack: 'Modèle', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'Au showroom, je ne vends que le micro avec le module RX Plus, pas le micro seul.', qty: 'Quantité', submit: 'Enregistrer la vente', sending: 'Envoi…', error: 'L’envoi a échoué. Réessaie, ou dis-le-moi directement.', thanksTitle: 'Merci, c’est enregistré ✨', thanksText: 'Ta vente et ta preuve de paiement sont enregistrées. Tu vas recevoir un récapitulatif par email ; ton micro t’est remis en main propre.', total: 'Total' },
-  en: { open: '🤝 I’m at the showroom: buy in person', title: 'In-person purchase at the showroom', intro: 'You’re at the showroom with me: I hand you the mic in person. 1) Pay with the payment link below. 2) Attach the screenshot of your payment and your details: the sale is recorded.', pay: '① Pay now (€342.91)', payNote: 'Secure card payment, then come back here with your screenshot.', proof: '② Screenshot of your payment', proofNote: 'Image or PDF, 3 MB max.', proofTooBig: 'File too large (3 MB max).', s1Note: 'public price; the −5% code applies at checkout on Hisong', codeNote: 'with the code', pack: 'Model', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'At the showroom, I only sell the mic with the RX Plus module, not the mic alone.', qty: 'Quantity', submit: 'Record the sale', sending: 'Sending…', error: 'Sending failed. Try again, or tell me directly.', thanksTitle: 'Thanks, it’s recorded ✨', thanksText: 'Your sale and proof of payment are recorded. You’ll receive a summary by email; your mic is handed to you in person.', total: 'Total' },
-  es: { open: '🤝 Estoy en el showroom: compra directa', title: 'Compra directa en el showroom', intro: 'Estás conmigo en el showroom: te entrego el micrófono en mano. 1) Paga con el enlace de pago de abajo. 2) Adjunta la captura de tu pago y tus datos: la venta queda registrada.', pay: '① Pagar ahora (342,91 €)', payNote: 'Pago seguro con tarjeta; luego vuelve aquí con tu captura.', proof: '② Captura de tu pago', proofNote: 'Imagen o PDF, 3 MB máximo.', proofTooBig: 'Archivo demasiado grande (3 MB máximo).', s1Note: 'precio público; el código −5% se aplica al pagar en Hisong', codeNote: 'con el código', pack: 'Modelo', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'En el showroom solo vendo el micrófono con el módulo RX Plus, no el micrófono solo.', qty: 'Cantidad', submit: 'Registrar la venta', sending: 'Enviando…', error: 'El envío ha fallado. Inténtalo de nuevo o dímelo directamente.', thanksTitle: 'Gracias, está registrado ✨', thanksText: 'Tu venta y tu prueba de pago están registradas. Recibirás un resumen por correo; tu micrófono se te entrega en mano.', total: 'Total' },
+  fr: { open: '🤝 Acheter au showroom (Paris)', title: 'Réserver mon micro au showroom', intro: 'Je te remets le micro en main propre au showroom, à Paris. 1) Paie en ligne avec le lien ci-dessous. 2) Joins la capture d’écran de ton paiement : ta réservation est faite. 3) Propose-moi une date et un horaire de retrait.', pay: '① Payer maintenant (342,91 €)', payNote: 'Paiement sécurisé par carte, puis reviens ici avec ta capture.', proof: '② Capture de ton paiement', proofNote: 'Image ou PDF, 3 Mo maximum.', proofTooBig: 'Fichier trop lourd (3 Mo maximum).', s1Note: 'prix public ; le code −5 % s’applique au paiement chez Hisong', codeNote: 'avec le code', pack: 'Modèle', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'Au showroom, je ne vends que le micro avec le module RX Plus, pas le micro seul.', qty: 'Quantité', submit: 'Réserver mon micro', sending: 'Envoi…', error: 'L’envoi a échoué. Réessaie, ou dis-le-moi directement.', thanksTitle: 'Merci, ton micro est réservé ✨', thanksText: 'Ta preuve de paiement est enregistrée. Tu vas recevoir un récapitulatif par email ; ton micro t’attend au showroom.', total: 'Total' },
+  en: { open: '🤝 Buy at the showroom (Paris)', title: 'Reserve my mic at the showroom', intro: 'I hand you the mic in person at the showroom in Paris. 1) Pay online with the link below. 2) Attach the screenshot of your payment: your reservation is made. 3) Suggest a pick-up date and time.', pay: '① Pay now (€342.91)', payNote: 'Secure card payment, then come back here with your screenshot.', proof: '② Screenshot of your payment', proofNote: 'Image or PDF, 3 MB max.', proofTooBig: 'File too large (3 MB max).', s1Note: 'public price; the −5% code applies at checkout on Hisong', codeNote: 'with the code', pack: 'Model', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'At the showroom, I only sell the mic with the RX Plus module, not the mic alone.', qty: 'Quantity', submit: 'Reserve my mic', sending: 'Sending…', error: 'Sending failed. Try again, or tell me directly.', thanksTitle: 'Thanks, your mic is reserved ✨', thanksText: 'Your proof of payment is recorded. You’ll receive a summary by email; your mic is waiting for you at the showroom.', total: 'Total' },
+  es: { open: '🤝 Comprar en el showroom (París)', title: 'Reservar mi micrófono en el showroom', intro: 'Te entrego el micrófono en mano en el showroom, en París. 1) Paga en línea con el enlace de abajo. 2) Adjunta la captura de tu pago: tu reserva está hecha. 3) Propónme una fecha y una hora de recogida.', pay: '① Pagar ahora (342,91 €)', payNote: 'Pago seguro con tarjeta; luego vuelve aquí con tu captura.', proof: '② Captura de tu pago', proofNote: 'Imagen o PDF, 3 MB máximo.', proofTooBig: 'Archivo demasiado grande (3 MB máximo).', s1Note: 'precio público; el código −5% se aplica al pagar en Hisong', codeNote: 'con el código', pack: 'Modelo', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'En el showroom solo vendo el micrófono con el módulo RX Plus, no el micrófono solo.', qty: 'Cantidad', submit: 'Reservar mi micrófono', sending: 'Enviando…', error: 'El envío ha fallado. Inténtalo de nuevo o dímelo directamente.', thanksTitle: 'Gracias, tu micrófono está reservado ✨', thanksText: 'Tu prueba de pago está registrada. Recibirás un resumen por correo; tu micrófono te espera en el showroom.', total: 'Total' },
 }
 const c = COPY[(lang in COPY ? lang : 'en') as keyof typeof COPY]
 const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none'
 ---
 
-<button type="button" data-open-hisong-direct class="inline-flex min-h-11 items-center rounded-full border border-copper/40 px-5 py-2.5 text-left text-sm font-700 text-copper transition-colors hover:bg-copper hover:text-cream">{c.open}</button>
+<button type="button" data-open-hisong-direct data-showroom-buy="hisong" class="inline-flex min-h-11 items-center rounded-full border border-copper/40 px-5 py-2.5 text-left text-sm font-700 text-copper transition-colors hover:bg-copper hover:text-cream">{c.open}</button>
 
 <div id="hisong-direct-modal" class="fixed inset-0 z-[100] hidden items-start justify-center overflow-y-auto bg-ink/80 p-4 py-10 backdrop-blur-sm" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="hd-title">
   <div class="relative w-full max-w-lg rounded-card bg-cream p-6 shadow-2xl md:p-8">
@@ -59,7 +59,8 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
           <label class="block"><span class="text-sm font-600">{bk.email}</span><input type="email" name="email" autocomplete="email" required class={input} /></label>
           <label class="block"><span class="text-sm font-600">{bk.phonePlain}</span><input type="tel" name="phone" autocomplete="tel" class={input} /></label>
         </div>
-        <label class="block"><span class="text-sm font-600">{c.qty}</span><input type="number" name="quantity" min="1" max="10" value="1" required class={input} /></label>
+        {/* Quantité bloquée à 1 : le lien Stripe est à montant fixe (342,91 €). */}
+        <input type="hidden" name="quantity" value="1" />
         <label class="block"><span class="text-sm font-600">{bk.message}</span><textarea name="message" rows="2" class={input}></textarea></label>
         <p class="rounded-lg bg-gold/10 px-3 py-2 text-sm font-700">{c.total} : <span data-hd-total>{eur(hisongPrices.s1RxPlusWithCode)}</span></p>
         <label class="block"><span class="text-sm font-600">{c.proof}</span><input type="file" name="proof" accept="image/png,image/jpeg,image/webp,application/pdf" required class={input} /><span class="block text-xs text-ink-soft/75">{c.proofNote}</span></label>
@@ -86,7 +87,7 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
   const step = (s: string) => modal?.querySelectorAll('[data-hd-step]').forEach((el) => el.classList.toggle('hidden', el.getAttribute('data-hd-step') !== s))
   function total() {
     const p = Number((form?.querySelector('input[name="pack"]') as HTMLInputElement | null)?.dataset.price || 0)
-    const q = Math.max(1, Math.min(10, Number((form?.querySelector('input[name="quantity"]') as HTMLInputElement | null)?.value) || 1))
+    const q = 1
     const el = modal?.querySelector('[data-hd-total]'); if (el) el.textContent = fmt.format(Math.round(p * q * 100) / 100)
   }
   function open() {
@@ -129,14 +130,17 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           firstName: get('firstName'), lastName: get('lastName'), email: get('email'), phone: get('phone'),
-          pack: get('pack'), quantity: Number(get('quantity')) || 1, message: get('message'),
+          pack: get('pack'), quantity: 1, message: get('message'),
           termsAccepted: d.get('termsAccepted') !== null, newsOptIn: d.get('newsOptIn') !== null,
           lang: document.documentElement.lang || 'fr',
           fileBase64, fileType: file?.type || '',
         }),
       })
       if (!r.ok) throw new Error('failed')
+      const res = await r.json().catch(() => ({}))
       step('thanks')
+      // Étape 3 : proposer la date de retrait (ShowroomPickup.astro).
+      if (res.saleId) setTimeout(() => { close(); window.dispatchEvent(new CustomEvent('showroom-sold', { detail: { saleId: res.saleId, email: get('email').toLowerCase() } })) }, 1200)
     } catch { err?.classList.remove('hidden') } finally { btn.disabled = false; btn.textContent = label }
   })
 </script>

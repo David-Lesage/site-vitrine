@@ -9,6 +9,7 @@ import YouTube from '@/components/YouTube.astro'
 //    articles — sans image marquée `data-lb`, elle reste invisible et inerte
 //    (le <div id="lightbox"> est masqué par défaut). Ajout strictement additif.
 import Lightbox from '@/components/Lightbox.astro'
+import ArticleShopBlock from '@/components/ArticleShopBlock.astro'
 import { localizePath } from '@/i18n/utils'
 import { articleLdJson, breadcrumbLdJson, videoLdJson } from '@/lib/ldJson'
 import { categoryLabel } from '@/lib/blogCategories'
@@ -89,6 +90,8 @@ if (d.youtubeId) ldJSON.push(...videoLdJson([{ id: d.youtubeId, name: d.title, d
     <div class="prose-blog mt-10">
       <Content />
     </div>
+
+    {d.shop && <ArticleShopBlock product={d.shop} lang="fr" />}
 
     <script>
       // Façades vidéo (.yt-lite) écrites directement dans un article (11/09/2026).

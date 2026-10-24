@@ -1,0 +1,43 @@
+---
+// Nombre de micros disponibles au showroom, EN TEMPS RÉEL (24/10/2026).
+// Rempli côté client depuis /api/showroom-stock (inventaire de l'app, vue
+// stock_levels, via l'EF showroom-reservation). Rien n'est figé au build :
+// tant que la réponse n'est pas arrivée, le badge reste masqué ; en cas de
+// panne, il reste masqué (on n'invente pas de stock).
+// Les boutons `[data-showroom-buy="<item>"]` sont désactivés si le stock vaut 0.
+import type { Lang } from '@/i18n/config'
+interface Props { item: 'muling' | 'hisong'; lang: Lang; class?: string }
+const { item, lang, class: cls = '' } = Astro.props
+const COPY = {
+  fr: { one: '1 micro disponible au showroom (Paris)', many: '{n} micros disponibles au showroom (Paris)', zero: 'Plus de micro au showroom pour l’instant : commande en ligne avec livraison' },
+  en: { one: '1 mic available at the showroom (Paris)', many: '{n} mics available at the showroom (Paris)', zero: 'No mic left at the showroom right now: order online with delivery' },
+  es: { one: '1 micrófono disponible en el showroom (París)', many: '{n} micrófonos disponibles en el showroom (París)', zero: 'No quedan micrófonos en el showroom por ahora: pide en línea con envío' },
+}
+const c = COPY[(lang in COPY ? lang : 'en') as keyof typeof COPY]
+---
+<p data-showroom-stock={item} data-one={c.one} data-many={c.many} data-zero={c.zero} class={`hidden items-center gap-2 rounded-full bg-gold/15 px-4 py-1.5 text-sm font-700 ${cls}`} aria-live="polite">
+  <span class="h-2.5 w-2.5 shrink-0 rounded-full" data-dot></span><span data-label></span>
+</p>
+<script>
+  // Une seule requête par page, partagée par tous les badges.
+  const w = window as unknown as { __showroomStock?: Promise<Record<string, number> | null> }
+  w.__showroomStock ??= fetch('/api/showroom-stock').then((r) => (r.ok ? r.json() : null)).catch(() => null)
+  w.__showroomStock.then((data) => {
+    if (!data) return
+    document.querySelectorAll<HTMLElement>('[data-showroom-stock]').forEach((el) => {
+      const n = Number(data[el.dataset.showroomStock || ''])
+      if (!Number.isFinite(n)) return
+      const label = el.querySelector('[data-label]'); const dot = el.querySelector('[data-dot]')
+      if (label) label.textContent = n <= 0 ? el.dataset.zero || '' : n === 1 ? el.dataset.one || '' : (el.dataset.many || '').replace('{n}', String(n))
+      dot?.classList.add(n > 0 ? 'bg-green-600' : 'bg-rust')
+      el.classList.remove('hidden'); el.classList.add('inline-flex')
+    })
+    // Stock à 0 : boutons/radios « showroom » désactivés (un lien <a> devient inerte).
+    document.querySelectorAll<HTMLElement>('[data-showroom-buy]').forEach((b) => {
+      const n = Number(data[b.dataset.showroomBuy || ''])
+      if (!(Number.isFinite(n) && n <= 0)) return
+      if ('disabled' in b) (b as HTMLButtonElement).disabled = true
+      b.setAttribute('aria-disabled', 'true'); b.classList.add('opacity-50', 'pointer-events-none')
+    })
+  })
+</script>

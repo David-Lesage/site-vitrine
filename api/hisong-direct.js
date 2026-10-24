@@ -31,7 +31,7 @@ export default async function handler(req, res) {
         phone: body.phone,
         // David 24/10/2026 : au showroom, seulement micro + RX Plus (pas de micro seul).
         pack: 's1RxPlus',
-        quantity: body.quantity,
+        quantity: 1, // lien Stripe à montant fixe : 1 micro par réservation
         message: body.message,
         termsAccepted: body.termsAccepted === true,
         newsOptIn: body.newsOptIn === true,

@@ -23,6 +23,8 @@ const blog = defineCollection({
     // encore (passe 2) : `/es/blog` renvoie donc vers les articles français.
     lang: z.enum(['fr', 'en', 'es']),
     youtubeId: z.string().optional(),
+    // Bloc « Prix et achat » repris des fiches boutique (ArticleShopBlock), affiché après le texte.
+    shop: z.enum(['muling', 'hisong', 'atlas', 'housse']).optional(),
     draft: z.boolean().default(false),
   }),
 })

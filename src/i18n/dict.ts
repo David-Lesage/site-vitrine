@@ -1182,7 +1182,7 @@ const fr = {
     priceTitle: 'Prix et commande',
     priceLabel: 'Prix fabricant',
     priceNote:
-      'Frais de port et éventuels frais de douane en supplément.',
+      'Aucun frais de port n’est ajouté au prix. Pour d’éventuels frais de douane : à confirmer.',
     priceDiscountLabel: 'En passant par moi',
     priceDiscountNote: 'Code {code} — {pct} % de réduction sur le prix fabricant, réservé aux commandes passées via ce formulaire.',
     orderTitle: 'Commander mon micro',

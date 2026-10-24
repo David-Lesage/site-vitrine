@@ -85,7 +85,9 @@ Deno.serve(async (req) => {
         const packKey = String(body.pack ?? 's1') in PACKS ? String(body.pack ?? 's1') : 's1';
         const pack = PACKS[packKey];
         const rawQty = Number(body.quantity);
-        const quantity = Number.isFinite(rawQty) && rawQty > 0 ? Math.min(Math.round(rawQty), 10) : 1;
+        // 24/10/2026 : lien Stripe à montant fixe (342,91 €) → toujours 1 micro par vente.
+        void rawQty;
+        const quantity = 1;
         const termsAccepted = body.termsAccepted === true;
         const newsOptIn = body.newsOptIn === true;
         const now = new Date().toISOString();

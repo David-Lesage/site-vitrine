@@ -1,0 +1,188 @@
+---
+// Page boutique dédiée : housse de calebasse Now Groove (24/10/2026, David :
+// « page dédiée housse de calebasse (photos + texte HelloAsso), frais de port,
+// retrait à Paris au showroom »). Textes et photos repris de la boutique
+// HelloAsso (voir src/data/housse.ts). L'achat reste sur HelloAsso.
+import Layout from '@/layouts/Layout.astro'
+import Section from '@/components/Section.astro'
+import SectionHeading from '@/components/SectionHeading.astro'
+import Button from '@/components/Button.astro'
+import Carousel from '@/components/Carousel.astro'
+import Lightbox from '@/components/Lightbox.astro'
+import { Icon } from 'astro-icon/components'
+import { housseNowGroove as H, housseHelloAssoUrl } from '@/data/housse'
+import { localizePath } from '@/i18n/utils'
+import { breadcrumbLdJson } from '@/lib/ldJson'
+import type { Lang } from '@/i18n/config'
+
+interface Props { lang: Lang }
+const { lang } = Astro.props
+const L = (p: string) => localizePath(p, lang)
+const COPY = {
+  fr: {
+    title: 'Housse de calebasse Now Groove — faite main | David Lesage',
+    description: 'La housse sac à dos Now Groove pour calebasse, pensée et dessinée par David Lesage : tapis intégré, sangles détachables, pochette de rangement, intérieur velours. Petite série faite main, 99 €.',
+    back: '← Retour à la boutique', eyebrow: 'Mes créations · Now Groove', h1: 'La housse de calebasse Now Groove',
+    lead: 'Une housse sac à dos entièrement pensée et dessinée par mes soins, avec le soutien de mes partenaires de Djoliba à Toulouse, et notamment Yu-Tin.',
+    rare: 'Rare et unique : faite main, en petite série.',
+    cta: 'Commander sur HelloAsso', ctaNote: 'Paiement sécurisé chez HelloAsso, pour Résonances Productions.',
+    featTitle: 'Une housse sac à dos, et un tapis',
+    feats: [
+      { i: 'lucide:layout-panel-top', t: 'Fonction tapis intégrée', d: 'La housse s’ouvre et devient le tapis sur lequel tu poses ta calebasse.' },
+      { i: 'lucide:unlink', t: 'Sangles détachables', d: 'Sac à dos pour le trajet, sangles retirées pour jouer.' },
+      { i: 'lucide:package', t: 'Poche de rangement détachable', d: 'Pour les œufs, les accessoires et la méthode au format papier.' },
+      { i: 'lucide:sparkles', t: 'Intérieur velours', d: 'Sur la partie tapis, là où repose l’instrument.' },
+    ],
+    galTitle: 'Dans le détail',
+    caps: { handle: 'La poignée', velvet: 'L’intérieur « velours », sur la partie tapis', pouchClosed: 'La pochette de rangement, scratchée', pouchOpen: 'La pochette de rangement, déscratchée', kit: 'Le kit d’accessoires du joueur de calebasse, qui tient dans la pochette', detached: 'La housse totalement détachée' },
+    completeCap: 'Le contenu complet : calebasse, accessoires et housse.',
+    getTitle: 'Livraison ou retrait à Paris',
+    getText: 'Sur HelloAsso, deux options affichées à 99 € :',
+    opt1: 'Housse / tapis + livraison', opt1d: 'L’option indique « + livraison (22 €) ».',
+    opt2: 'Housse / tapis — retrait à Paris', opt2d: 'Tu viens la chercher au showroom.',
+    showroom: 'Voir le showroom',
+    articleTitle: 'L’histoire de cette housse', articleCta: 'Lire l’article',
+  },
+  en: {
+    title: 'Now Groove calabash case — handmade | David Lesage',
+    description: 'The Now Groove backpack case for calabash, designed by David Lesage: built-in mat, detachable straps, storage pouch, velvet lining. Handmade small run, €99.',
+    back: '← Back to the shop', eyebrow: 'My creations · Now Groove', h1: 'The Now Groove calabash case',
+    lead: 'A backpack case entirely conceived and designed by me, with the support of my partners at Djoliba in Toulouse, especially Yu-Tin.',
+    rare: 'Rare and unique: handmade, in a small run.',
+    cta: 'Order on HelloAsso', ctaNote: 'Secure payment on HelloAsso, for Résonances Productions.',
+    featTitle: 'A backpack case, and a mat',
+    feats: [
+      { i: 'lucide:layout-panel-top', t: 'Built-in mat', d: 'The case opens up and becomes the mat your calabash rests on.' },
+      { i: 'lucide:unlink', t: 'Detachable straps', d: 'A backpack on the way, straps off to play.' },
+      { i: 'lucide:package', t: 'Detachable storage pouch', d: 'For the eggs, the accessories and the paper method.' },
+      { i: 'lucide:sparkles', t: 'Velvet lining', d: 'On the mat part, where the instrument rests.' },
+    ],
+    galTitle: 'In detail',
+    caps: { handle: 'The handle', velvet: 'The “velvet” lining, on the mat part', pouchClosed: 'The storage pouch, closed', pouchOpen: 'The storage pouch, open', kit: 'The calabash player’s accessory kit, which fits in the pouch', detached: 'The case fully detached' },
+    completeCap: 'The full set: calabash, accessories and case.',
+    getTitle: 'Delivery or pick-up in Paris',
+    getText: 'On HelloAsso, two options shown at €99:',
+    opt1: 'Case / mat + delivery', opt1d: 'The option reads “+ delivery (€22)”.',
+    opt2: 'Case / mat — pick-up in Paris', opt2d: 'You collect it at the showroom.',
+    showroom: 'See the showroom',
+    articleTitle: 'The story of this case', articleCta: 'Read the article',
+  },
+  es: {
+    title: 'Funda de calabaza Now Groove — hecha a mano | David Lesage',
+    description: 'La funda mochila Now Groove para calabaza, ideada por David Lesage: alfombrilla integrada, correas desmontables, bolsillo de almacenamiento, interior de terciopelo. Pequeña serie hecha a mano, 99 €.',
+    back: '← Volver a la tienda', eyebrow: 'Mis creaciones · Now Groove', h1: 'La funda de calabaza Now Groove',
+    lead: 'Una funda mochila ideada y diseñada por mí, con el apoyo de mis socios de Djoliba en Toulouse, en especial Yu-Tin.',
+    rare: 'Rara y única: hecha a mano, en pequeña serie.',
+    cta: 'Pedir en HelloAsso', ctaNote: 'Pago seguro en HelloAsso, para Résonances Productions.',
+    featTitle: 'Una funda mochila, y una alfombrilla',
+    feats: [
+      { i: 'lucide:layout-panel-top', t: 'Alfombrilla integrada', d: 'La funda se abre y se convierte en la alfombrilla donde apoyas tu calabaza.' },
+      { i: 'lucide:unlink', t: 'Correas desmontables', d: 'Mochila para el trayecto, sin correas para tocar.' },
+      { i: 'lucide:package', t: 'Bolsillo de almacenamiento desmontable', d: 'Para los huevos, los accesorios y el método en papel.' },
+      { i: 'lucide:sparkles', t: 'Interior de terciopelo', d: 'En la parte de la alfombrilla, donde descansa el instrumento.' },
+    ],
+    galTitle: 'En detalle',
+    caps: { handle: 'El asa', velvet: 'El interior de «terciopelo», en la parte de la alfombrilla', pouchClosed: 'El bolsillo de almacenamiento, cerrado', pouchOpen: 'El bolsillo de almacenamiento, abierto', kit: 'El kit de accesorios del calabacero, que cabe en el bolsillo', detached: 'La funda totalmente desmontada' },
+    completeCap: 'El conjunto completo: calabaza, accesorios y funda.',
+    getTitle: 'Envío o recogida en París',
+    getText: 'En HelloAsso, dos opciones a 99 €:',
+    opt1: 'Funda / alfombrilla + envío', opt1d: 'La opción indica «+ envío (22 €)».',
+    opt2: 'Funda / alfombrilla — recogida en París', opt2d: 'La recoges en el showroom.',
+    showroom: 'Ver el showroom',
+    articleTitle: 'La historia de esta funda', articleCta: 'Leer el artículo',
+  },
+}
+const c = COPY[(lang in COPY ? lang : 'en') as keyof typeof COPY]
+const articleHref = lang === 'en' ? '/en/blog/housse-calebasse-now-groove/' : '/blog/housse-calebasse-now-groove/'
+const ld = [breadcrumbLdJson([
+  { name: lang === 'fr' ? 'Accueil' : lang === 'es' ? 'Inicio' : 'Home', url: L('/') },
+  { name: lang === 'fr' ? 'Boutique' : lang === 'es' ? 'Tienda' : 'Shop', url: L('/boutique') },
+  { name: c.h1, url: L('/housse-calebasse') },
+])]
+---
+<Layout title={c.title} description={c.description} image="/images/housse-now-groove/portee-dos.webp" ldJSON={ld}>
+  <section class="relative overflow-hidden bg-ink text-cream">
+    <div class="chroma-bar absolute inset-x-0 top-0 h-1"></div>
+    <div class="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-24">
+      <a href={L('/boutique') + '#housse'} class="inline-flex min-h-11 items-center text-sm font-600 text-cream/70 hover:text-gold">{c.back}</a>
+      <div class="mt-4 grid items-center gap-10 lg:grid-cols-2">
+        <div class="min-w-0">
+          <p class="text-xs font-700 uppercase tracking-[0.2em] text-gold">{c.eyebrow}</p>
+          <h1 class="mt-4 font-display text-4xl font-700 leading-tight md:text-5xl">{c.h1}</h1>
+          <p class="mt-5 text-lg text-cream/85">{c.lead}</p>
+          <p class="mt-4 inline-flex items-center gap-2 rounded-full bg-gold/20 px-4 py-1.5 text-sm font-700 text-gold"><Icon name="lucide:hand" class="h-4 w-4" />{c.rare}</p>
+          <p class="mt-6 font-display text-4xl font-700">99 €</p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <Button href={housseHelloAssoUrl} variant="primary" external>{c.cta} <Icon name="lucide:external-link" class="h-4 w-4" /></Button>
+            <Button href="#retrait" variant="light">{c.getTitle}</Button>
+          </div>
+          <p class="mt-3 text-xs text-cream/60">{c.ctaNote}</p>
+        </div>
+        <div class="min-w-0 rounded-card bg-cream p-3 shadow-md">
+          <Carousel id="housse-hero" slides={H.photos.hero.map((src) => ({ src }))} alt={c.h1} eager />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Section>
+    <SectionHeading title={c.featTitle} />
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {c.feats.map((f) => (
+        <div class="rounded-card border border-ink/10 bg-cream p-6">
+          <Icon name={f.i} class="h-8 w-8 text-copper" />
+          <h3 class="mt-3 font-display text-lg font-700">{f.t}</h3>
+          <p class="mt-2 text-sm text-ink-soft/85">{f.d}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section tone="cream-deep">
+    <SectionHeading title={c.galTitle} />
+    <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
+      {H.photos.details.map((p) => (
+        <figure class="overflow-hidden rounded-card border border-ink/10 bg-cream">
+          <img src={p.src} width={p.w} height={p.h} alt={c.caps[p.key]} data-lb class="aspect-square w-full cursor-zoom-in object-cover" loading="lazy" />
+          <figcaption class="p-3 text-sm text-ink-soft/85">{c.caps[p.key]}</figcaption>
+        </figure>
+      ))}
+    </div>
+    <figure class="mx-auto mt-8 max-w-4xl overflow-hidden rounded-card border border-ink/10 bg-cream">
+      <img src={H.photos.complete.src} width={H.photos.complete.w} height={H.photos.complete.h} alt={c.completeCap} data-lb data-lb-wide class="w-full cursor-zoom-in" loading="lazy" />
+      <figcaption class="p-4 text-sm text-ink-soft/85">{c.completeCap}</figcaption>
+    </figure>
+  </Section>
+
+  <Section id="retrait">
+    <SectionHeading title={c.getTitle} intro={c.getText} />
+    <div class="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-2">
+      <div class="rounded-card border border-copper/30 bg-copper/5 p-6">
+        <Icon name="lucide:truck" class="h-7 w-7 text-copper" />
+        <h3 class="mt-2 font-display text-lg font-700">{c.opt1}</h3>
+        <p class="mt-1 text-sm text-ink-soft/85">{c.opt1d}</p>
+        <p class="mt-3 font-display text-2xl font-700">99 €</p>
+      </div>
+      <div class="rounded-card border border-copper/30 bg-copper/5 p-6">
+        <Icon name="lucide:map-pin" class="h-7 w-7 text-copper" />
+        <h3 class="mt-2 font-display text-lg font-700">{c.opt2}</h3>
+        <p class="mt-1 text-sm text-ink-soft/85">{c.opt2d}</p>
+        <p class="mt-3 font-display text-2xl font-700">99 €</p>
+      </div>
+    </div>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <Button href={housseHelloAssoUrl} variant="primary" external>{c.cta} <Icon name="lucide:external-link" class="h-4 w-4" /></Button>
+      <Button href={L('/showroom')} variant="ghost">{c.showroom}</Button>
+    </div>
+  </Section>
+
+  {lang !== 'es' && (
+    <Section tone="ink">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-display text-2xl font-700 text-cream">{c.articleTitle}</h2>
+        <div class="mt-6"><Button href={articleHref} variant="light">{c.articleCta}</Button></div>
+      </div>
+    </Section>
+  )}
+  <Lightbox />
+</Layout>

@@ -7,6 +7,7 @@ category: "accessoires"
 tags: ["calebasse", "now groove", "matériel"]
 lang: "fr"
 permalink: "housse-calebasse-now-groove"
+shop: "housse"
 draft: false
 ---
 
@@ -68,6 +69,6 @@ La housse est un **sac à dos** que j'ai pensé et dessiné moi-même. Voici ce 
 
 Chaque housse est **fabriquée à la main**, en **petite série** : il n'en existe que quelques exemplaires. Elle est vendue **99 €** sur la boutique HelloAsso de Résonances Productions, l'association qui porte mes cours et mes ateliers.
 
-Tu peux aussi voir la housse, la calebasse et sa méthode dans [ma boutique](/boutique/), rubrique « Mes créations ».
+Toutes les photos, la livraison et le **retrait possible à Paris, au showroom** sont sur [la page de la housse](/housse-calebasse/). La calebasse et sa méthode sont dans [ma boutique](/boutique/), rubrique « Mes créations ».
 
-**[Commander la housse sur HelloAsso](https://www.helloasso.com/associations/resonances-productions/boutiques/pres-vente-housse-calebasse-now-groove-by-david-lesage)** · [Le kit calebasse et la méthode Now Groove](https://www.helloasso.com/associations/resonances-productions/boutiques/formation-de-rythme-now-groove-david-lesage) · [Mes cours de rythme à la calebasse](/cours/)
+**[Voir la housse et commander](/housse-calebasse/)** · [Le kit calebasse et la méthode Now Groove](https://www.helloasso.com/associations/resonances-productions/boutiques/formation-de-rythme-now-groove-david-lesage) · [Mes cours de rythme à la calebasse](/cours/)

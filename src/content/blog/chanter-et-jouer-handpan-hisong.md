@@ -7,17 +7,13 @@ category: "accessoires"
 tags: ["micro", "matériel", "voix", "son"]
 lang: "fr"
 permalink: "chanter-et-jouer-handpan-hisong"
+shop: "hisong"
 draft: false
 ---
 
 **Cet article parle surtout du handpan acoustique**, et de la voix. Un handpan électronique comme le [Neotone](/neotone/) se branche en jack, sans micro : pour lui, le Hisong ne sert qu'à la voix (voir la section dédiée plus bas).
 
 Tu veux **chanter en jouant**, te faire entendre de tes élèves ou enregistrer dehors, sans câble entre ton handpan et l'enceinte ? Le **Hisong AirStudio S1** est un studio mobile tout-en-un, sans fil. Je l'utilise moi-même : voici ce qu'il contient, à quoi il sert, et comment l'acheter.
-
-<figure>
-  <img src="/images/prod-hisong-7.jpg" alt="Un handpan acoustique posé sur un tapis, devant lui le micro Hisong sur son support, les écouteurs, le récepteur et une tablette ouverte sur l'application Hisong" width="731" height="1300" loading="lazy" />
-  <figcaption>Tout le studio tient sur le tapis, à côté du handpan : le micro sur son support, les deux écouteurs, le petit récepteur, et la tablette ouverte sur les réglages de l'application Hisong.</figcaption>
-</figure>
 
 ## Ce qu'il y a dans le studio
 
@@ -75,12 +71,39 @@ Micro, retours et interface audio réunis : un **studio portatif** pour capter t
 
 ## Pas seulement pour le handpan
 
-Le micro n'est pas réservé au handpan : ici, le même studio posé avec un [**gonilele**](/gonilele/).
+Le micro n'est pas réservé au handpan ni à la voix chantée. Il capte **tout instrument acoustique** (un [**gonilele**](/gonilele/), un ngoni, une guitare) et aussi la **voix parlée** : un cours, une présentation, une vidéo.
+
+Ici, le même studio posé avec un gonilele.
 
 <figure>
   <img src="/images/showroom-gonilele-micro-hisong.webp" alt="Un gonilele en bois clair posé sur un tapis, avec la boîte du Hisong AirStudio S1, le micro sur son support, les écouteurs et le récepteur fixé par une pince" width="1000" height="1778" loading="lazy" />
   <figcaption>Le même studio sur un instrument à cordes : regarde le récepteur fixé par une pince sur le gonilele, et les écouteurs posés sur la caisse.</figcaption>
 </figure>
+
+## Le RX Plus : à quoi il sert, comment le brancher
+
+<figure>
+  <img src="/images/hisong-rx-plus.webp" alt="Le récepteur RX Plus de Hisong : un petit boîtier noir avec une prise USB-C sur le dessus, des boutons de volume et une rangée de voyants" width="900" height="900" loading="lazy" />
+  <figcaption>Le RX Plus (photo Hisong). Remarque la prise USB-C qui dépasse, les deux boutons de volume et la rangée de voyants qui montre le niveau.</figcaption>
+</figure>
+
+Le RX Plus est un **récepteur sans fil** pour le micro AirStudio S1. Il reçoit le son du micro et l'envoie vers ton matériel. Il ne fonctionne qu'avec un micro AirStudio S1.
+
+**Ses trois sorties** (d'après la fiche de Hisong) :
+
+- **Jack 3,5 mm sur le côté**, pour une **caméra** (appareil photo, hybride).
+- **Jack 3,5 mm sur le dessus**, sortie ligne / casque, pour une **enceinte active, une table de mixage ou une sono** : c'est celle du live.
+- **USB-C en dessous**, sortie numérique vers un **téléphone, une tablette ou un ordinateur**, pour enregistrer ou diffuser en direct.
+
+Deux **boutons de volume** règlent le niveau de sortie directement sur le boîtier, sans passer par l'application. Il se recharge en USB-C.
+
+**Mode d'emploi, la première fois** : il faut l'associer au micro dans l'application **HISONG Link**.
+
+1. Dans l'application : Réglages → Appareil → associer le RX Plus.
+2. Sur le RX Plus, maintiens les deux boutons de volume enfoncés jusqu'à ce que les voyants clignotent rouge et vert.
+3. Confirme dans l'application.
+
+Source : [la fiche du RX Plus sur hisong.io](https://hisong.io/products/rx-plusaccessories).
 
 ## Hisong ou Muling : lequel pour ton handpan ?
 
@@ -93,29 +116,24 @@ Les deux micros ne font pas le même travail. Ils se complètent.
 
 Si tu ne chantes pas et que tu veux surtout sonoriser ton handpan acoustique dans une pièce bruyante, regarde le [micro Muling](/micro-muling/). Si tu veux **ta voix et ton handpan ensemble**, sans fil, c'est le Hisong.
 
-Et pour débuter ? Le micro de ton téléphone ou de ton ordinateur suffit, dans une pièce calme.
-
 ## Et si tu joues sur un Neotone ?
 
 Le [Neotone](/neotone/) se branche directement en jack, sans micro. Le Hisong garde tout son intérêt **pour la voix** : dans [mon setup nomade](/blog/setup-nomade-neotone-bose-s1/), il se branche sur la Bose S1 Pro+ et transforme l'ensemble en mini-studio mobile.
 
-## Prix et achat
+## Acheter ton micro
 
-| Pack | Prix TTC, livraison en France |
-|---|---|
-| Micro AirStudio S1 (Standard Pack) | 270,95 € |
-| Avec le RX Plus (Universal Pack, +90 €) | 360,95 € |
-| S1 + RX Plus avec mon code (−5 %) | 342,91 €, livraison offerte |
+Voici mon **lien ambassadeur** : il te fait **5 % de remise** (code **DAVID-LESAGE-SAVE-5**).
 
-**Mon conseil** : si tu veux jouer en live, prends directement le RX Plus. Au showroom, je ne vends que le micro avec le RX Plus, pas le micro seul.
+**Mon conseil** : si tu veux jouer en live, prends directement le RX Plus.
 
-L'achat se fait **directement chez Hisong**, sur hisong.io : c'est toujours Hisong que tu paies. En passant par [ma page Hisong](/micro-hisong/), le code **DAVID-LESAGE-SAVE-5** (−5 %) devrait s'appliquer tout seul ; sinon, saisis-le à la main au paiement.
+Deux façons d'acheter :
 
-Pour être clair : c'est **mon lien d'ambassadeur**. Ça ne change rien à ton prix, au contraire : le code te fait gagner 5 %.
+- **En ligne** : tu achètes sur hisong.io, Hisong te livre.
+- **Au [showroom](/showroom/) à Paris** : je ne vends que le micro avec le RX Plus. Tu paies en ligne pour réserver, tu déposes la capture de ton paiement, puis tu me proposes une date et un horaire de retrait (un showcase ou la date de ton choix).
 
 <figure>
   <img src="/images/showroom-yishama-micros-hisong.webp" alt="Vu d'en haut, un handpan acoustique entouré de quatre boîtes Hisong AirStudio S1, avec le micro sur son support, et les écouteurs et le récepteur posés sur le handpan" width="1000" height="1778" loading="lazy" />
   <figcaption>Plusieurs studios Hisong au showroom, autour d'un handpan acoustique : tu peux venir l'essayer avant d'acheter.</figcaption>
 </figure>
 
-Tu préfères l'entendre avant ? Viens l'essayer au [showroom à Paris](/showroom/), ou retrouve-le dans [la boutique](/boutique/).
+Disponibilité au showroom en temps réel et réservation : tout se passe sur [ma page Hisong](/micro-hisong/).

@@ -177,7 +177,7 @@ const fr = {
   adviceTitle: 'Mon conseil',
   adviceText:
     'Si tu veux utiliser le micro pour jouer en live, prends le RX Plus (Universal Pack) : c’est lui qui sort le son vers la sono, la table de mixage ou une caméra.',
-  buyNote: 'L’achat se fait directement sur hisong.io. Démonstrations et achat en direct à mes rencontres à Paris.',
+  buyNote: 'En ligne : tu achètes sur hisong.io et Hisong te livre. Au showroom à Paris : micro + RX Plus uniquement ; tu paies en ligne pour réserver, puis tu viens le chercher.',
   ctaShowroom: 'L’essayer au showroom',
 
   relatedTitle: 'Et si tu joues sur un Neotone ?',
@@ -274,7 +274,7 @@ const en: HisongCopy = {
   adviceTitle: 'My advice',
   adviceText:
     'If you want to use the mic to play live, get the RX Plus (Universal Pack): it sends the sound to the PA, the mixing desk or a camera.',
-  buyNote: 'You buy directly on hisong.io. Live demos and on-the-spot purchase at my Paris gatherings.',
+  buyNote: 'Online: you buy on hisong.io and Hisong delivers. At the showroom in Paris: mic + RX Plus only; you pay online to reserve, then come and pick it up.',
   ctaShowroom: 'Try it at the showroom',
 
   relatedTitle: 'What if you play a Neotone?',
@@ -369,7 +369,7 @@ const es: HisongCopy = {
   adviceTitle: 'Mi consejo',
   adviceText:
     'Si quieres usar el micrófono para tocar en directo, elige el RX Plus (Universal Pack): es el que envía el sonido al equipo de sonido, a la mesa de mezclas o a una cámara.',
-  buyNote: 'La compra se hace directamente en hisong.io. Demostraciones y venta directa en mis encuentros en París.',
+  buyNote: 'En línea: compras en hisong.io y Hisong te lo envía. En el showroom de París: solo micrófono + RX Plus; pagas en línea para reservar y luego vienes a recogerlo.',
   ctaShowroom: 'Probarlo en el showroom',
 
   relatedTitle: '¿Y si tocas un Neotone?',

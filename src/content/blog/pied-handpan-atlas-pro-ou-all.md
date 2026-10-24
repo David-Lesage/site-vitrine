@@ -7,6 +7,7 @@ category: "accessoires"
 tags: ["matériel", "pied", "atlas", "scène"]
 lang: "fr"
 permalink: "pied-handpan-atlas-pro-ou-all"
+shop: "atlas"
 draft: false
 ---
 
@@ -78,7 +79,7 @@ Et à l'écrit, le 6 septembre 2026 :
 
 > « Le Pro a un défaut : la tête en bois n'est pas proposée, ni en option ni avec, et c'est son seul défaut, mais il faut le noter. Mais je préfère quand même le Pro. »
 
-Précision : c'est adaptable. La tête en bois se monte sur un pied Pro, mais aujourd'hui il faut acheter les deux.
+Précision : la tête de l'Atlas All a **deux parties**, une partie en **bois** et une partie en **plastique**. Le haut en plastique est **la même tête que celle du pied Pro** (le trépied et sa petite tête). Comme je le résume : « la partie bois n'est donc pas nécessaire au pied pro ». Elle ne sert qu'à jouer assis.
 
 ### L'Atlas All, celui qui joue aussi assis
 
@@ -101,10 +102,8 @@ Le mieux reste de **venir les essayer** : les deux modèles sont au [showroom](/
 
 ## Mon code chez Atlas
 
-Mon code **DAVID-ATLAS** donne **−10 % sur tous les produits Atlas**, Atlas Body compris. Il se saisit au moment du paiement, sur le site d'Atlas.
+Mon code **DAVID-ATLAS** donne **−10 % sur tous les produits Atlas**, Atlas Body compris. Il se saisit au moment du paiement, sur le site d'Atlas : le bouton ci-dessous le copie pour toi.
 
-Ce code, c'est **mon lien d'ambassadeur** chez Atlas : ça ne t'ajoute rien à payer.
-
-Toutes les photos, les caractéristiques détaillées et les liens d'achat sont sur ma page [Pieds Atlas](/pieds-atlas/). Le reste de mon matériel est dans la [boutique](/boutique/), et pour jouer sans prise de courant, voir mon [setup nomade Neotone + Bose S1 Pro+](/blog/setup-nomade-neotone-bose-s1/).
+Toutes les photos et les caractéristiques détaillées sont sur ma page [Pieds Atlas](/pieds-atlas/). Le reste de mon matériel est dans la [boutique](/boutique/), et pour jouer sans prise de courant, voir mon [setup nomade Neotone + Bose S1 Pro+](/blog/setup-nomade-neotone-bose-s1/).
 
 <!-- PHOTO À VENIR : David jouant debout sur un pied Atlas (Pro de préférence), en showcase ou au showroom, cadrage plein pied pour montrer la hauteur. -->

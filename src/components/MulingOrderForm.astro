@@ -45,9 +45,9 @@ const MULING_EMAIL = '85846599@qq.com'
 // VENTE EN DIRECT (25/10/2026) — textes du choix « livraison / showroom ».
 // Locaux au composant (FR/EN/ES) : ils ne servent qu'ici.
 const saleCopy = {
-  fr: { legend: 'Comment récupères-tu ton micro ?', online: '🚚 Livraison (achat en ligne)', onlineHint: 'Muling t’expédie le micro à ton adresse.', showroom: '🤝 Remise en main propre au showroom (vente en direct)', showroomHint: 'Je te remets le micro sur place : pas d’adresse de livraison. Même prix, même virement à Muling.', thanks: 'Ta preuve de virement est bien reçue et transmise à Muling. Tu vas recevoir un email de confirmation à garder comme preuve — ton micro t’est remis en main propre, rien ne sera expédié.' },
-  en: { legend: 'How do you get your mic?', online: '🚚 Delivery (online purchase)', onlineHint: 'Muling ships the mic to your address.', showroom: '🤝 Hand-over at the showroom (in-person sale)', showroomHint: 'I hand you the mic on site: no shipping address needed. Same price, same transfer to Muling.', thanks: 'Your proof of payment has been received and sent to Muling. You’ll get a confirmation email to keep as proof — your mic is handed to you in person, nothing will be shipped.' },
-  es: { legend: '¿Cómo recibes tu micrófono?', online: '🚚 Envío (compra en línea)', onlineHint: 'Muling te envía el micrófono a tu dirección.', showroom: '🤝 Entrega en mano en el showroom (venta directa)', showroomHint: 'Te entrego el micrófono allí mismo: sin dirección de envío. Mismo precio, misma transferencia a Muling.', thanks: 'Hemos recibido tu comprobante de pago y lo hemos enviado a Muling. Recibirás un correo de confirmación para guardar como comprobante: tu micrófono se te entrega en mano, no se enviará nada.' },
+  fr: { legend: 'Comment récupères-tu ton micro ?', online: '🚚 Livraison (achat en ligne)', onlineHint: 'Muling t’expédie le micro à ton adresse.', showroom: '🤝 Retrait au showroom à Paris (réservation)', showroomHint: 'Même prix, même virement à Muling. Ta preuve de virement = ta réservation ; ensuite tu me proposes une date de retrait.', thanks: 'Ta preuve de virement est bien reçue : ton micro est réservé au showroom. Tu vas recevoir un email de confirmation à garder comme preuve. Rien ne sera expédié.' },
+  en: { legend: 'How do you get your mic?', online: '🚚 Delivery (online purchase)', onlineHint: 'Muling ships the mic to your address.', showroom: '🤝 Pick-up at the showroom in Paris (reservation)', showroomHint: 'Same price, same transfer to Muling. Your proof of transfer = your reservation; then you suggest a pick-up date.', thanks: 'Your proof of transfer has been received: your mic is reserved at the showroom. You’ll get a confirmation email to keep as proof. Nothing will be shipped.' },
+  es: { legend: '¿Cómo recibes tu micrófono?', online: '🚚 Envío (compra en línea)', onlineHint: 'Muling te envía el micrófono a tu dirección.', showroom: '🤝 Recogida en el showroom de París (reserva)', showroomHint: 'Mismo precio, misma transferencia a Muling. Tu comprobante de transferencia = tu reserva; después me propones una fecha de recogida.', thanks: 'Hemos recibido tu comprobante de transferencia: tu micrófono está reservado en el showroom. Recibirás un correo de confirmación para guardarlo como comprobante. No se enviará nada.' },
 }
 const sc = saleCopy[(lang in saleCopy ? lang : 'en') as keyof typeof saleCopy]
 const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(mulingDiscountedPriceEur))
@@ -72,7 +72,7 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
             <span class="min-w-0"><span class="block text-sm font-700">{sc.online}</span><span class="block text-xs text-ink-soft/75">{sc.onlineHint}</span></span>
           </label>
           <label class="flex min-h-11 cursor-pointer items-start gap-3 rounded-xl border border-ink/15 bg-cream-deep/30 p-3 has-[:checked]:border-copper has-[:checked]:bg-copper/10">
-            <input type="radio" name="saleMode" value="showroom" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+            <input type="radio" name="saleMode" value="showroom" data-showroom-buy="muling" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
             <span class="min-w-0"><span class="block text-sm font-700">{sc.showroom}</span><span class="block text-xs text-ink-soft/75">{sc.showroomHint}</span></span>
           </label>
         </fieldset>
@@ -244,9 +244,13 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
     document.body.style.overflow = 'hidden'
   }
 
-  function open() {
+  function open(preset?: string) {
     if (!modal) return
     orderForm?.reset()
+    if (preset === 'showroom') {
+      const rs = orderForm?.querySelector('input[name="saleMode"][value="showroom"]') as HTMLInputElement | null
+      if (rs && !rs.disabled) rs.checked = true
+    }
     claimForm?.reset()
     currentSaleId = null
     currentEmail = ''
@@ -281,7 +285,7 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
     if (lastFocused?.focus) lastFocused.focus()
   }
 
-  document.querySelectorAll('[data-open-muling-order]').forEach((el) => el.addEventListener('click', (e) => { e.preventDefault(); open() }))
+  document.querySelectorAll('[data-open-muling-order]').forEach((el) => el.addEventListener('click', (e) => { e.preventDefault(); open((el as HTMLElement).dataset.openMulingOrder) }))
 
   // Lien reprenable : /micro-muling?commande=<uuid> (et /en/micro-muling?…).
   // `order` est accepté en alias pour un lien rédigé en anglais. Un identifiant
@@ -463,6 +467,11 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
       }
       if (!r.ok) throw new Error('failed')
       showStep('thanks')
+      // Retrait au showroom : étape suivante = proposer une date (ShowroomPickup.astro).
+      if (saleMode === 'showroom' && currentSaleId) {
+        const detail = { saleId: currentSaleId, email: currentEmail.toLowerCase() }
+        setTimeout(() => { close(); window.dispatchEvent(new CustomEvent('showroom-sold', { detail })) }, 1500)
+      }
     } catch {
       errEl.textContent = errEl.dataset.errorText || 'Le dépôt a échoué.'
       errEl.classList.remove('hidden')
