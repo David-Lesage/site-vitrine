@@ -661,7 +661,7 @@ export const es: Dict = {
       },
       "housse": {
         "name": "Ahora, la versión de calabaza de Groove es de David Lesage",
-        "description": "Funda para mochila de escala de alto rendimiento diseñada por David Lesage: función de esterilla integrada, correas desmontables, bolsillo de almacenamiento (para huevos, accesorios y material de escalada), interior de terciopelo. ✋ Edición especial hecha a mano, en una serie ultralimitada."
+        "description": "Funda mochila de alta gama ideada y diseñada por David Lesage: función de alfombrilla integrada, correas desmontables, bolsillo de almacenamiento (huevos, accesorios y método), interior de terciopelo. ✋ Rara y única: hecha a mano, en pequeña serie."
       },
       "coeur-de-son": {
         "name": "Tambor de lona · Cœur de Son",
@@ -677,7 +677,7 @@ export const es: Dict = {
       },
       "micro-muling": {
         "name": "Micrófono Muling MP1 + preamplificador HMP-2",
-        "description": "El MP1 es un micrófono de condensador de contacto diseñado para handpans acústicos. Incluye el preamplificador HMP-2, que admite hasta dos micrófonos MP1, para una grabación estéreo nítida y precisa sin retroalimentación. Ideal para actuaciones en directo y grabaciones. (Contrato en trámite con el fabricante: contácteme para recibir actualizaciones)."
+        "description": "El MP1 es un micrófono de condensador de contacto diseñado para handpans acústicos. Incluye el preamplificador HMP-2, que admite hasta dos micrófonos MP1, para una grabación estéreo nítida y precisa sin retroalimentación. Ideal para actuaciones en directo y grabaciones."
       },
       "atlas": {
         "name": "Soportes Atlas Handpan: profesionales y todos",
@@ -1360,7 +1360,7 @@ export const es: Dict = {
     "showroomPhotoCaption": "La sala de exposición preparada antes de una reunión: mis dos handpans acústicos Yishama y mis dos handpans electrónicos {neotone}, cada uno en su propio soporte; cuatro instrumentos, cuatro soportes diferentes. Los dos handpans Atlas se unieron después, y ahí es donde se pueden probar.",
     "promoTitle": "Mi código en Atlas",
     "promoText": "Aquí está mi código: −{pct} % en todos los productos Atlas, Atlas Body incluido. Se introduce al pagar en la web de Atlas, tanto si haces el pedido en línea como si vienes antes a probarlos a la sala de exposición.",
-    "promoDisclosure": "Soy afiliado de Atlas: cuando se realiza un pedido utilizando este código, recibo una comisión. Esto no añade nada a tu factura ni modifica nada de lo que he escrito anteriormente.",
+    "promoDisclosure": "Este código es mi enlace de embajador con Atlas: no añade nada a tu factura ni modifica nada de lo que he escrito anteriormente.",
     "alt": {
       "showroomYishama": "David Lesage en la sala de exposiciones de Nid en París: detrás de él, dos handpans acústicos de acero Yishama, cada uno montado sobre su trípode negro sobre una alfombra trenzada, en una gran sala blanca con arcos iluminados y suelo de parqué claro.",
       "showroomInstruments": "El espacio de exposición de David Lesage preparado antes de una reunión: dos handpans electrónicos Neotone con coronas luminosas montados sobre trípodes negros cerca de un kit de percusión electrónica, y dos handpans acústicos de acero Yishama, uno sobre un trípode de madera y el otro sobre un soporte de metal; una semiesfera de calabaza colocada sobre una alfombra roja en primer plano, un antiguo suelo de parqué, guirnaldas de luces y una roseta en la pared.",

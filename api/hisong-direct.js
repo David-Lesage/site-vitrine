@@ -28,7 +28,8 @@ export default async function handler(req, res) {
         firstName: body.firstName,
         lastName: body.lastName,
         phone: body.phone,
-        pack: body.pack,
+        // David 24/10/2026 : au showroom, seulement micro + RX Plus (pas de micro seul).
+        pack: 's1RxPlus',
         quantity: body.quantity,
         message: body.message,
         termsAccepted: body.termsAccepted === true,

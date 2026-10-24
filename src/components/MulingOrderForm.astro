@@ -32,7 +32,7 @@ const d = getDict(lang)
 // à la commande Muling (muling) — les deux vivent dans des objets i18n distincts.
 const bk = d.booking
 const mu = d.muling
-const fmtEur = (n: number) => n.toLocaleString(numberLocale(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+const fmtEur = (n: number) => n.toLocaleString(numberLocale(lang), { minimumFractionDigits: 0, maximumFractionDigits: 2 })
 const priceLine = mu.mulingOrderPriceLine
   .replace('{base}', String(mulingPriceEur))
   .replace('{pct}', String(mulingDiscountPct))

@@ -405,6 +405,12 @@ export const atlasAllCover = atlasAllPhotos[0]
 //                   la promotion du 20/08/2026), pour qui
 //                   ne veut que le jeu sur les genoux, ou veut compléter plus tard.
 //   · ATLAS PRO   → ❌ **NON INCLUSE — CONFIRMÉ PAR LE FABRICANT.**
+//                   ⚠️ SOURCE PRIVÉE : message DIRECT de Marco Agri à David (20/08/2026),
+//                   PAS une page web → ne jamais la présenter comme source publique.
+//                   Formulation publique validée par David (24/10/2026) : « adaptable :
+//                   la tête en bois se monte sur un pied Pro, mais aujourd'hui il faut
+//                   acheter les deux » (ses mots : « oui on peut adapter la tete en bois
+//                   sur un pied pro … on est obligé d'acheter les 2 actuellement »).
 //                   Marco Agri, créateur d'Atlas, à David le 20/08/2026 :
 //                   « but atlas pro doesn't come with the wood part. »
 //                   L'acheteur d'un Pro qui veut jouer assis doit commander

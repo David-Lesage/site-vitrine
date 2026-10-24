@@ -6,8 +6,9 @@
 // 24/10/2026 (David) : « C'est Muling et Hisong qui encaissent le paiement
 // toujours ». Même au showroom, le client PAIE HISONG sur hisong.io via le lien
 // avec code ; David ne reçoit aucun argent, il remet le micro (stock en dépôt).
-// Prix : S1 + RX Plus = 342,91 € avec le code (relevé du dépôt) ; S1 seul :
-// aucun prix avec code relevé → prix public 270,95 €, le code s'applique chez Hisong.
+// Prix : S1 + RX Plus = 342,91 € avec le code (relevé du dépôt).
+// 24/10/2026 (David) : « Je ne vend que le modele micro + RX Plus au showroom pour le
+// moment. Je ne vend pas le micro seul sans ce module. » → plus d'option S1 seul.
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
 import { getDict } from '@/i18n/dict'
@@ -20,9 +21,9 @@ const { lang } = Astro.props
 const bk = getDict(lang).booking
 const eur = (n: number) => new Intl.NumberFormat(numberLocale(lang), { style: 'currency', currency: 'EUR' }).format(n)
 const COPY = {
-  fr: { open: '🤝 Je suis au showroom : achat en direct', title: 'Achat en direct au showroom', intro: 'Tu es au showroom avec moi : je te remets le micro en main propre. Le paiement ne se fait pas auprès de moi : tu paies Hisong directement, comme pour un achat en ligne, sur hisong.io avec mon lien (code −5 % inclus). Laisse tes coordonnées pour que la vente soit enregistrée.', pay: 'Payer chez Hisong (hisong.io)', payNote: 'Je ne reçois aucun argent : c’est Hisong qui encaisse et qui émet la facture.', s1Note: 'prix public ; le code −5 % s’applique au paiement chez Hisong', codeNote: 'avec le code', pack: 'Modèle', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', qty: 'Quantité', submit: 'Enregistrer la vente', sending: 'Envoi…', error: 'L’envoi a échoué. Réessaie, ou dis-le-moi directement.', thanksTitle: 'Merci, c’est enregistré ✨', thanksText: 'Tu vas recevoir un récapitulatif par email. Le paiement se fait chez Hisong, sur hisong.io avec mon lien ; ton micro t’est remis en main propre.', total: 'Total' },
-  en: { open: '🤝 I’m at the showroom: buy in person', title: 'In-person purchase at the showroom', intro: 'You’re at the showroom with me: I hand you the mic in person. You don’t pay me: you pay Hisong directly, just like an online purchase, on hisong.io through my link (−5% code included). Leave your details so the sale is recorded.', pay: 'Pay Hisong (hisong.io)', payNote: 'I receive no money: Hisong takes the payment and issues the invoice.', s1Note: 'public price; the −5% code applies at checkout on Hisong', codeNote: 'with the code', pack: 'Model', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', qty: 'Quantity', submit: 'Record the sale', sending: 'Sending…', error: 'Sending failed. Try again, or tell me directly.', thanksTitle: 'Thanks, it’s recorded ✨', thanksText: 'You’ll receive a summary by email. Payment is made to Hisong, on hisong.io through my link; your mic is handed to you in person.', total: 'Total' },
-  es: { open: '🤝 Estoy en el showroom: compra directa', title: 'Compra directa en el showroom', intro: 'Estás conmigo en el showroom: te entrego el micrófono en mano. No me pagas a mí: pagas directamente a Hisong, como en una compra en línea, en hisong.io con mi enlace (código −5% incluido). Deja tus datos para que la venta quede registrada.', pay: 'Pagar a Hisong (hisong.io)', payNote: 'Yo no recibo dinero: Hisong cobra y emite la factura.', s1Note: 'precio público; el código −5% se aplica al pagar en Hisong', codeNote: 'con el código', pack: 'Modelo', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', qty: 'Cantidad', submit: 'Registrar la venta', sending: 'Enviando…', error: 'El envío ha fallado. Inténtalo de nuevo o dímelo directamente.', thanksTitle: 'Gracias, está registrado ✨', thanksText: 'Recibirás un resumen por correo. El pago se hace a Hisong, en hisong.io con mi enlace; tu micrófono se te entrega en mano.', total: 'Total' },
+  fr: { open: '🤝 Je suis au showroom : achat en direct', title: 'Achat en direct au showroom', intro: 'Tu es au showroom avec moi : je te remets le micro en main propre. Le paiement ne se fait pas auprès de moi : tu paies Hisong directement, comme pour un achat en ligne, sur hisong.io avec mon lien (code −5 % inclus). Laisse tes coordonnées pour que la vente soit enregistrée.', pay: 'Payer chez Hisong (hisong.io)', payNote: 'Je ne reçois aucun argent : c’est Hisong qui encaisse et qui émet la facture.', s1Note: 'prix public ; le code −5 % s’applique au paiement chez Hisong', codeNote: 'avec le code', pack: 'Modèle', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'Au showroom, je ne vends que le micro avec le module RX Plus, pas le micro seul.', qty: 'Quantité', submit: 'Enregistrer la vente', sending: 'Envoi…', error: 'L’envoi a échoué. Réessaie, ou dis-le-moi directement.', thanksTitle: 'Merci, c’est enregistré ✨', thanksText: 'Tu vas recevoir un récapitulatif par email. Le paiement se fait chez Hisong, sur hisong.io avec mon lien ; ton micro t’est remis en main propre.', total: 'Total' },
+  en: { open: '🤝 I’m at the showroom: buy in person', title: 'In-person purchase at the showroom', intro: 'You’re at the showroom with me: I hand you the mic in person. You don’t pay me: you pay Hisong directly, just like an online purchase, on hisong.io through my link (−5% code included). Leave your details so the sale is recorded.', pay: 'Pay Hisong (hisong.io)', payNote: 'I receive no money: Hisong takes the payment and issues the invoice.', s1Note: 'public price; the −5% code applies at checkout on Hisong', codeNote: 'with the code', pack: 'Model', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'At the showroom, I only sell the mic with the RX Plus module, not the mic alone.', qty: 'Quantity', submit: 'Record the sale', sending: 'Sending…', error: 'Sending failed. Try again, or tell me directly.', thanksTitle: 'Thanks, it’s recorded ✨', thanksText: 'You’ll receive a summary by email. Payment is made to Hisong, on hisong.io through my link; your mic is handed to you in person.', total: 'Total' },
+  es: { open: '🤝 Estoy en el showroom: compra directa', title: 'Compra directa en el showroom', intro: 'Estás conmigo en el showroom: te entrego el micrófono en mano. No me pagas a mí: pagas directamente a Hisong, como en una compra en línea, en hisong.io con mi enlace (código −5% incluido). Deja tus datos para que la venta quede registrada.', pay: 'Pagar a Hisong (hisong.io)', payNote: 'Yo no recibo dinero: Hisong cobra y emite la factura.', s1Note: 'precio público; el código −5% se aplica al pagar en Hisong', codeNote: 'con el código', pack: 'Modelo', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'En el showroom solo vendo el micrófono con el módulo RX Plus, no el micrófono solo.', qty: 'Cantidad', submit: 'Registrar la venta', sending: 'Enviando…', error: 'El envío ha fallado. Inténtalo de nuevo o dímelo directamente.', thanksTitle: 'Gracias, está registrado ✨', thanksText: 'Recibirás un resumen por correo. El pago se hace a Hisong, en hisong.io con mi enlace; tu micrófono se te entrega en mano.', total: 'Total' },
 }
 const c = COPY[(lang in COPY ? lang : 'en') as keyof typeof COPY]
 const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none'
@@ -37,17 +38,15 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
       <h2 id="hd-title" class="pr-10 font-display text-2xl font-700">{c.title}</h2>
       <p class="mt-2 text-sm text-ink-soft/85">{c.intro}</p>
       <form id="hisong-direct-form" class="mt-5 grid gap-3" novalidate>
-        <fieldset class="grid gap-2">
-          <legend class="mb-1 text-sm font-600">{c.pack}</legend>
-          <label class="flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-xl border border-ink/15 bg-cream-deep/30 p-3 has-[:checked]:border-copper has-[:checked]:bg-copper/10">
-            <span class="flex items-center gap-3"><input type="radio" name="pack" value="s1" data-price={hisongPrices.s1} checked class="h-5 w-5 shrink-0 accent-rust" /><span class="text-sm font-700">{c.s1}</span></span>
-            <span class="text-right text-sm font-700">{eur(hisongPrices.s1)}<span class="block text-xs font-400 text-ink-soft/75">{c.s1Note}</span></span>
-          </label>
-          <label class="flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-xl border border-ink/15 bg-cream-deep/30 p-3 has-[:checked]:border-copper has-[:checked]:bg-copper/10">
-            <span class="flex items-center gap-3"><input type="radio" name="pack" value="s1RxPlus" data-price={hisongPrices.s1RxPlusWithCode} class="h-5 w-5 shrink-0 accent-rust" /><span class="text-sm font-700">{c.rx}</span></span>
+        <div class="grid gap-2">
+          <p class="mb-1 text-sm font-600">{c.pack}</p>
+          <input type="hidden" name="pack" value="s1RxPlus" data-price={hisongPrices.s1RxPlusWithCode} />
+          <div class="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-copper bg-copper/10 p-3">
+            <span class="text-sm font-700">{c.rx}</span>
             <span class="text-right text-sm font-700">{eur(hisongPrices.s1RxPlusWithCode)}<span class="block text-xs font-400 text-ink-soft/75">{c.codeNote} {hisongDiscountCode}</span></span>
-          </label>
-        </fieldset>
+          </div>
+          <p class="text-xs text-ink-soft/75">{c.onlyRx}</p>
+        </div>
         <div class="grid gap-3 sm:grid-cols-2">
           <label class="block"><span class="text-sm font-600">{bk.first}</span><input type="text" name="firstName" autocomplete="given-name" required class={input} /></label>
           <label class="block"><span class="text-sm font-600">{bk.last}</span><input type="text" name="lastName" autocomplete="family-name" required class={input} /></label>
@@ -58,7 +57,7 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
         </div>
         <label class="block"><span class="text-sm font-600">{c.qty}</span><input type="number" name="quantity" min="1" max="10" value="1" required class={input} /></label>
         <label class="block"><span class="text-sm font-600">{bk.message}</span><textarea name="message" rows="2" class={input}></textarea></label>
-        <p class="rounded-lg bg-gold/10 px-3 py-2 text-sm font-700">{c.total} : <span data-hd-total>{eur(hisongPrices.s1)}</span></p>
+        <p class="rounded-lg bg-gold/10 px-3 py-2 text-sm font-700">{c.total} : <span data-hd-total>{eur(hisongPrices.s1RxPlusWithCode)}</span></p>
         <p class="text-sm"><a href={hisongAffiliateUrl} target="_blank" rel="noopener" class="font-700 text-copper underline">{c.pay} ↗</a><span class="block text-xs text-ink-soft/75">{c.payNote}</span></p>
         <TermsCheckbox lang={lang} />
         <NewsCheckbox lang={lang} />
@@ -82,7 +81,7 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
   const fmt = new Intl.NumberFormat(document.documentElement.lang || 'fr', { style: 'currency', currency: 'EUR' })
   const step = (s: string) => modal?.querySelectorAll('[data-hd-step]').forEach((el) => el.classList.toggle('hidden', el.getAttribute('data-hd-step') !== s))
   function total() {
-    const p = Number((form?.querySelector('input[name="pack"]:checked') as HTMLInputElement | null)?.dataset.price || 0)
+    const p = Number((form?.querySelector('input[name="pack"]') as HTMLInputElement | null)?.dataset.price || 0)
     const q = Math.max(1, Math.min(10, Number((form?.querySelector('input[name="quantity"]') as HTMLInputElement | null)?.value) || 1))
     const el = modal?.querySelector('[data-hd-total]'); if (el) el.textContent = fmt.format(Math.round(p * q * 100) / 100)
   }
