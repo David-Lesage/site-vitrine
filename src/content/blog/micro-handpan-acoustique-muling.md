@@ -13,9 +13,9 @@ draft: false
 
 **Cet article concerne le handpan acoustique** : il parle de capter au micro un instrument qui n'a pas de sortie jack. Un handpan électronique comme le [Neotone](/neotone/) se branche directement, sans micro.
 
-Sonoriser un handpan acoustique est un vrai défi. Les micros généralistes captent mal les **harmoniques**, et le **Larsen** guette dès qu'on monte le volume.
+Sonoriser un handpan acoustique est un vrai défi. Les micros généralistes captent mal les **<abbr title="Les sons plus aigus qui vibrent en même temps que la note jouée et font la couleur du handpan.">harmoniques</abbr>**, et le **Larsen** guette dès qu'on monte le volume.
 
-Le set Muling est pensé pour cet instrument précis. Je l'ai testé en profondeur, et c'est ce qui m'a convaincu de le représenter. Voici comment il fonctionne et comment l'installer.
+Le set Muling est pensé pour cet instrument précis. Je l'ai testé en profondeur. Voici comment il fonctionne et comment l'installer.
 
 <!-- PHOTO À VENIR : David en concert avec le set Muling posé sur son handpan acoustique -->
 
@@ -40,7 +40,7 @@ Résultat : les bruits extérieurs et les autres instruments ne passent quasimen
 ## Ce qu'il y a dans la boîte
 
 ![Le contenu du set Muling étalé : manuel, préampli HMP-2, tournevis, câbles jack, pastilles, deux pochettes et l'étui rigide](/images/muling-boite-complet.webp)
-*Tout le set d'un coup d'œil : le préampli au centre, les deux capsules au bout de leurs câbles, l'étui rigide à droite.*
+*Tout le set d'un coup d'œil : le manuel à gauche, le préampli et ses câbles au centre, les pochettes et l'étui rigide à droite.*
 
 - **2 capsules de contact aimantées** (micros actifs)
 - **1 préampli HMP-2** deux canaux
@@ -83,7 +83,7 @@ Ce sont les avertissements du fabricant, pas de simples conseils :
 
 ## Prix et commande
 
-Le prix fabricant est de **258 €**. En passant par moi, avec le code **David-Lesage-5**, tu as **5 % de réduction**, soit **246,50 €**. Frais de port et éventuels frais de douane en supplément.
+Le prix fabricant est de **258 €**. En passant par moi, avec le code **David-Lesage-5**, tu as **5 % de réduction** : le set passe à **245 €**. Frais de port et éventuels frais de douane en supplément.
 
 Le fabricant n'a pas encore de paiement en ligne pour la France : je te mets en relation directement. **Dans tous les cas, tu paies Muling**, par virement SEPA en euros. Deux façons de récupérer ton micro :
 

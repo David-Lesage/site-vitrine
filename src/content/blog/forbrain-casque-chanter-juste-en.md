@@ -18,7 +18,7 @@ This applies to **every handpan**, acoustic or electronic: the headset doesn't p
 
 ![Black and blue Forbrain headset: a band goes behind the neck, two pads sit in front of the ears, a boom mic comes out of the left unit](/images/prod-forbrain-1.webp)
 
-*The Forbrain: notice the two pads that sit **in front of** the ears, not inside them, and the boom mic near the mouth.*
+*The Forbrain: a band that goes behind the neck, two bone-conduction pads (they sit in front of the ears, not inside them) and a boom mic.*
 
 It's a **<abbr title="sound travels through the bones of the face instead of through the air to the eardrum">bone-conduction</abbr>** headset with a microphone. You speak or sing, and your voice comes straight back to you through the bones in front of your ears.
 
@@ -50,7 +50,7 @@ Two different uses. Headphones plugged into an electronic handpan let you hear *
 
 Checked on the official shop on 20/10/2026: **€269 instead of €299** (current offer; prices may change).
 
-My link is an **affiliate link**: if you use it, I earn a commission, at no extra cost to you. Through this link, the **−10%** applies by itself; otherwise, enter my code **3A9907007** in the cart.
+This is **my ambassador link**: it costs you nothing extra. Through this link, the **−10%** applies by itself; otherwise, enter my code **3A9907007** in the cart.
 
 [See the Forbrain headset →](https://shop.soundforlife.com/?affiliate=3A9907007)
 

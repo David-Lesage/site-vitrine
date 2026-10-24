@@ -18,7 +18,7 @@ Ce sujet vaut pour **tous les handpans**, acoustiques comme électroniques : le 
 
 ![Casque Forbrain noir et bleu : un arceau passe derrière la nuque, deux pastilles se posent devant les oreilles, un micro sur tige part du boîtier de gauche](/images/prod-forbrain-1.webp)
 
-*Le Forbrain : remarque les deux pastilles qui se posent **devant** les oreilles, pas dedans, et le micro sur tige près de la bouche.*
+*Le Forbrain : un arceau qui passe derrière la nuque, deux pastilles de conduction osseuse (elles se posent devant les oreilles, pas dedans) et un micro sur tige.*
 
 C'est un casque à **<abbr title="le son passe par les os du visage au lieu de passer par l'air jusqu'au tympan">conduction osseuse</abbr>** avec micro. Tu parles ou tu chantes, et ta voix te revient aussitôt, par les os, devant les oreilles.
 
@@ -50,7 +50,7 @@ Ce sont deux usages différents. Le casque branché sur un handpan électronique
 
 Relevé sur la boutique officielle le 20/10/2026 : **269 € au lieu de 299 €** (offre du moment ; les prix peuvent changer).
 
-Mon lien est un **lien d'affiliation** : si tu passes par lui, je touche une commission, sans surcoût pour toi. Via ce lien, **−10 %** s'appliquent tout seuls ; sinon, saisis mon code **3A9907007** dans le panier.
+C'est **mon lien d'ambassadeur** : il ne te coûte rien de plus. Via ce lien, **−10 %** s'appliquent tout seuls ; sinon, saisis mon code **3A9907007** dans le panier.
 
 [Voir le casque Forbrain →](https://shop.soundforlife.com/?affiliate=3A9907007)
 
