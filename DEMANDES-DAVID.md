@@ -243,3 +243,7 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 
 - « pour l'achat d'un micro hisong au showroom je veux arrondir le prix a 340€ » — ✅ fait (25/10, prod dpl_BVtUMw7euY5EYVjUL3xyhDRMCH1Z, curl vérifié)
 - « le montant doit pouvoir etre variable et inscrit dans le formulaire si je fais ce choix mais le prix de base c'est 340€ » — ✅ fait (25/10, champ Montant payé, plafond 340)
+- ✅ fait (25/10, en prod) Hisong showroom : « non pas de petite phrase "si David ta faits une remise" » → phrase supprimée
+- ✅ fait (25/10, en prod) Hisong showroom : « le client doit réinscrire le montant qu'il a mis sur le lien de paiement stripe » → champ vide obligatoire étape 2 (1–340 €)
+- ✅ fait (25/10, en prod) Hisong showroom : montant < 340 € → « on saura nous en tant qu'admin dans le suivi ainsi qu'hisong » → admin_note « Remise exceptionnelle : … » + ligne dans le mail Hisong
+- ✅ fait (25/10, en prod) Hisong RX Plus : « Ce n'est pas seulement pour jouer en live » → liste des usages (live, casques filaires, jusqu'à 3 personnes, vidéo caméra/DSLR, son en USB-C)
