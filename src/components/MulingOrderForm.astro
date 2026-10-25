@@ -49,6 +49,14 @@ const saleCopy = {
   en: { legend: 'How do you get your mic?', online: '🚚 Delivery (online purchase)', onlineHint: 'Muling ships the mic to your address.', showroom: '🤝 Pick-up at the showroom in Paris (reservation)', showroomHint: 'Same price, same transfer to Muling. Your proof of transfer = your reservation; then you suggest a pick-up date.', thanks: 'Your proof of transfer has been received: your mic is reserved at the showroom. You’ll get a confirmation email to keep as proof. Nothing will be shipped.' },
   es: { legend: '¿Cómo recibes tu micrófono?', online: '🚚 Envío (compra en línea)', onlineHint: 'Muling te envía el micrófono a tu dirección.', showroom: '🤝 Recogida en el showroom de París (reserva)', showroomHint: 'Mismo precio, misma transferencia a Muling. Tu comprobante de transferencia = tu reserva; después me propones una fecha de recogida.', thanks: 'Hemos recibido tu comprobante de transferencia: tu micrófono está reservado en el showroom. Recibirás un correo de confirmación para guardarlo como comprobante. No se enviará nada.' },
 }
+// PAYÉ SUR PLACE (25/10/2026) — comme HisongDirectForm : virement déjà fait à
+// Muling, capture + montant viré dans le même envoi.
+const paidCopy = {
+  fr: { toggle: 'J’ai déjà fait le virement à Muling (paiement sur place)', hint: 'Joins la capture de ton virement : ta commande est enregistrée et payée en un seul envoi, la preuve est transmise à Muling.', amount: 'Montant viré (€)', proof: 'Capture de ton virement', proofNote: 'Image ou PDF, 3 Mo maximum.', tooBig: 'Fichier trop lourd (3 Mo maximum).', bank: 'Bénéficiaire : HuiZhou Muling Musical Instruments Co Ltd — IBAN DE17 2022 0800 0047 4167 62' },
+  en: { toggle: 'I’ve already made the transfer to Muling (paying on site)', hint: 'Attach the screenshot of your transfer: your order is recorded and paid in one go, and the proof is sent to Muling.', amount: 'Amount transferred (€)', proof: 'Screenshot of your transfer', proofNote: 'Image or PDF, 3 MB max.', tooBig: 'File too large (3 MB max).', bank: 'Beneficiary: HuiZhou Muling Musical Instruments Co Ltd — IBAN DE17 2022 0800 0047 4167 62' },
+  es: { toggle: 'Ya hice la transferencia a Muling (pago en el sitio)', hint: 'Adjunta la captura de tu transferencia: tu pedido queda registrado y pagado en un solo envío, y el comprobante se envía a Muling.', amount: 'Importe transferido (€)', proof: 'Captura de tu transferencia', proofNote: 'Imagen o PDF, 3 MB máximo.', tooBig: 'Archivo demasiado grande (3 MB máximo).', bank: 'Beneficiario: HuiZhou Muling Musical Instruments Co Ltd — IBAN DE17 2022 0800 0047 4167 62' },
+}
+const pc = paidCopy[(lang in paidCopy ? lang : 'en') as keyof typeof paidCopy]
 const sc = saleCopy[(lang in saleCopy ? lang : 'en') as keyof typeof saleCopy]
 const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(mulingDiscountedPriceEur))
 ---
@@ -76,6 +84,21 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
             <span class="min-w-0"><span class="block text-sm font-700">{sc.showroom}</span><span class="block text-xs text-ink-soft/75">{sc.showroomHint}</span></span>
           </label>
         </fieldset>
+        <div data-mo-paid-box class="hidden grid gap-3 rounded-xl border-2 border-copper/40 bg-copper/5 p-3">
+          <label class="flex min-h-11 cursor-pointer items-start gap-3">
+            <input type="checkbox" name="paidOnSite" class="mt-0.5 h-5 w-5 shrink-0 accent-rust" />
+            <span class="min-w-0"><span class="block text-sm font-700">{pc.toggle}</span><span class="block text-xs text-ink-soft/75">{pc.hint}</span></span>
+          </label>
+          <div data-mo-paid-fields class="hidden grid gap-3">
+            <p class="text-xs text-ink-soft/75">{pc.bank}</p>
+            <label class="block"><span class="text-sm font-600">{pc.amount}</span>
+              <input type="number" name="amountPaid" inputmode="decimal" min="1" max="5000" step="0.01" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
+            <label class="block"><span class="text-sm font-600">{pc.proof}</span>
+              <input type="file" name="paidProof" accept="image/png,image/jpeg,image/webp,application/pdf" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 text-sm focus:border-copper focus:outline-none" />
+              <span class="block text-xs text-ink-soft/75">{pc.proofNote}</span></label>
+            <p data-mo-paid-toobig class="hidden text-sm font-600 text-rust">{pc.tooBig}</p>
+          </div>
+        </div>
         <div class="grid gap-3 sm:grid-cols-2">
           <label class="block"><span class="text-sm font-600">{bk.first}</span>
             <input type="text" name="firstName" autocomplete="given-name" required class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
@@ -231,10 +254,22 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
     const box = modal?.querySelector('[data-mo-shipping]')
     box?.classList.toggle('hidden', saleMode === 'showroom')
     box?.querySelectorAll<HTMLInputElement>('input[name="country"],input[name="address"],input[name="city"],input[name="postalCode"]').forEach((i) => { i.required = saleMode === 'online' })
+    applyPaid()
     modal?.querySelector('[data-mo-thanks-online]')?.classList.toggle('hidden', saleMode === 'showroom')
     modal?.querySelector('[data-mo-thanks-showroom]')?.classList.toggle('hidden', saleMode !== 'showroom')
   }
   orderForm?.querySelectorAll('input[name="saleMode"]').forEach((r) => r.addEventListener('change', applySaleMode))
+  // Payé sur place (25/10/2026) : visible en showroom seulement ; coché → montant + capture obligatoires.
+  function isPaidOnSite() {
+    return saleMode === 'showroom' && !!(orderForm?.querySelector('input[name="paidOnSite"]') as HTMLInputElement | null)?.checked
+  }
+  function applyPaid() {
+    modal?.querySelector('[data-mo-paid-box]')?.classList.toggle('hidden', saleMode !== 'showroom')
+    const on = isPaidOnSite()
+    modal?.querySelector('[data-mo-paid-fields]')?.classList.toggle('hidden', !on)
+    orderForm?.querySelectorAll<HTMLInputElement>('input[name="amountPaid"],input[name="paidProof"]').forEach((i) => { i.required = on })
+  }
+  orderForm?.querySelector('input[name="paidOnSite"]')?.addEventListener('change', applyPaid)
 
   function show() {
     if (!modal) return
@@ -364,6 +399,14 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
     const orderErr = modal?.querySelector('[data-mo-order-error]')
     consentErr?.classList.add('hidden'); orderErr?.classList.add('hidden')
     if (data.get('consent') !== 'on') { consentErr?.classList.remove('hidden'); return }
+    const paid = isPaidOnSite()
+    const paidFile = paid ? (data.get('paidProof') as File | null) : null
+    const tooBig = modal?.querySelector('[data-mo-paid-toobig]'); tooBig?.classList.add('hidden')
+    // Corps Vercel ≤ 4,5 Mo : 3 Mo de fichier ≈ 4,1 Mo en base64.
+    if (paidFile && paidFile.size > 3 * 1024 * 1024) { tooBig?.classList.remove('hidden'); return }
+    const paidBase64 = paidFile && paidFile.size ? await new Promise<string>((ok, ko) => {
+      const fr = new FileReader(); fr.onload = () => ok(String(fr.result).split(',')[1] || ''); fr.onerror = ko; fr.readAsDataURL(paidFile)
+    }) : ''
 
     const btn = orderForm.querySelector('button[type="submit"]') as HTMLButtonElement
     const label = btn.textContent
@@ -379,6 +422,7 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
           ...(saleMode === 'online' ? { country: get('country'), address: get('address'), city: get('city'), postalCode: get('postalCode') } : {}), message: get('message'),
           deliveryNote: saleMode === 'online' ? get('deliveryNote') : '', consent: true,
           saleMode,
+          ...(paid ? { fileBase64: paidBase64, fileType: paidFile?.type || '', amountPaid: Number(get('amountPaid')) } : {}),
           // Conditions générales du site — distinctes du consentement de
           // transmission à Muling ci-dessus (`consent`). Case obligatoire,
           // bloquée en amont par `reportValidity()`.
@@ -395,7 +439,12 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
       const amount = json.amount ?? '—'
       modal?.querySelectorAll('[data-mo-amount]').forEach((el) => { el.textContent = `${amount} €` })
       modal?.querySelectorAll('[data-mo-ref]').forEach((el) => { el.textContent = json.ref || '—' })
-      showStep('pay')
+      if (paid && json.proofSaved) {
+        // Payé sur place : pas d'étape virement → merci puis modale de retrait (ShowroomPickup.astro).
+        showStep('thanks')
+        const detail = { saleId: currentSaleId, email: currentEmail.toLowerCase() }
+        setTimeout(() => { close(); window.dispatchEvent(new CustomEvent('showroom-sold', { detail })) }, 1500)
+      } else showStep('pay')
     } catch {
       orderErr?.classList.remove('hidden')
     } finally {

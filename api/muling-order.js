@@ -48,6 +48,10 @@ export default async function handler(req, res) {
         // liste explicite : sans cette ligne, toute vente directe serait « online ».
         saleMode: body.saleMode === 'showroom' ? 'showroom' : 'online',
         consent: true,
+        // 25/10/2026 (v6) : payé sur place — capture + montant viré (showroom).
+        fileBase64: body.saleMode === 'showroom' ? body.fileBase64 : undefined,
+        fileType: body.fileType,
+        amountPaid: body.amountPaid,
         // Conditions générales du site — DISTINCT de `consent` ci-dessus, qui est
         // l'accord de transmission des coordonnées à Muling (tiers, Chine).
         termsAccepted: body.termsAccepted === true,
