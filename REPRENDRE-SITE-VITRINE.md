@@ -48,6 +48,10 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 25/10/2026 (36ᵉ passe) — REPRENDRE ICI
+- ✅ **EN PROD** (dpl_BVtUMw7euY5EYVjUL3xyhDRMCH1Z, commit 3d3439b) : vente showroom Hisong = prix de base **340 €** (constante `hisongShowroomPrice`, distincte de `s1RxPlusWithCode` 342,91 € qui reste le prix en ligne avec code) + champ **« Montant payé »** prérempli 340, modifiable (remise décidée par David), plafond 340 / > 0, validé formulaire + relais `api/hisong-direct.js` + EF ; encadré « saisis toi-même le montant » + bouton copier suivent le champ ; `affiliate_sales.price_original_eur` = 340, `price_discounted_eur` = montant saisi ; mail client avec le montant saisi. EF `hisong-direct` v4 déployée (download+diff identique, verify_jwt false). Aucun POST prod.
+- Worktree = liste 35ᵉ passe + 3d3439b. ⚠️ Prochain déploiement : repartir de CETTE liste.
+
 ## 🧭 ÉTAT ACTUEL — 24/10/2026 (35ᵉ passe) — REPRENDRE ICI
 - ✅ **EN PROD** (dpl_GnjiSGzHYMsfkuuHRGEgaXLZxnwc) : encadré « saisis toi-même le montant : 342,91 € » + bouton copier avant le lien Stripe Hisong (FR/EN/ES, ead8f37) ; photo de couverture/og de l'article compléter-son-handpan = `public/images/blog-handpan-acoustique-et-neotone-cote-a-cote.webp` (photo-david-1 de la page de vente app, dbe9c17). EF `hisong-direct` redéployée (mail récap : même consigne), vérifiée download+diff.
 - Worktree = liste de la 34ᵉ passe + dbe9c17 + ead8f37. ⚠️ Prochain déploiement : repartir de CETTE liste (conflits .md : prendre --theirs).

@@ -240,3 +240,6 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 - 🔒 action de David sur HelloAsso (hors site) HelloAsso : option « rupture de stock » plutôt que désactiver (kits calebasse)
 - ✅ fait (24/10) « juste avant de cliquer sur le lien il faut qu'il soit indiquer a la personne le montant qu'elle doit mettre elle meme manuellement » — encadré + copier (FR/EN/ES) + mail récap, en prod
 - ✅ fait (24/10) « change la photo de l'article par une photo ou on voit un handpan acoustique et un neotone a coté » — couverture + og de completer-son-handpan (FR/EN), en prod
+
+- « pour l'achat d'un micro hisong au showroom je veux arrondir le prix a 340€ » — ✅ fait (25/10, prod dpl_BVtUMw7euY5EYVjUL3xyhDRMCH1Z, curl vérifié)
+- « le montant doit pouvoir etre variable et inscrit dans le formulaire si je fais ce choix mais le prix de base c'est 340€ » — ✅ fait (25/10, champ Montant payé, plafond 340)
