@@ -4577,3 +4577,5 @@ formulaire de facturation en cours · bois disponibles dans le calculateur à fa
 État vérifié : site-vitrine à jour (0/0 avec origin), aucune modification depuis le 22/09 soir. `sale-intake` déployée côté app mais NON branchée
 (drapeau à false). `stock_pieces_public` encore vide. Les deux blocages réels sont chez David : feu vert stock/vente 975 à la session APP du 18
 Septembre, et décisions en attente listées ci-dessus.
+
+- ⚠️ 25/10 : le préfixe admin_note « Remise exceptionnelle » (hisong-direct) est lu par le badge de l'app (avec price_discounted < price_original) — NE PAS le changer.
