@@ -139,7 +139,7 @@ const ld = [
           <li class="flex gap-3 rounded-card border border-ink/10 bg-cream-deep/40 p-4 text-ink-soft/90"><Icon name="lucide:check" class="mt-0.5 h-5 w-5 shrink-0 text-copper" />{it}</li>
         ))}
       </ul>
-      <p class="mt-6 rounded-lg border border-copper/25 bg-copper/5 p-4 text-sm text-ink-soft/90">{h.boxNote}</p>
+      <div class="mt-6 rounded-lg border border-copper/25 bg-copper/5 p-4 text-sm text-ink-soft/90"><p>{h.boxNote}</p><ul class="mt-2 list-disc space-y-1 pl-5">{h.rxUses.map((u) => <li>{u}</li>)}</ul></div>
     </div>
   </Section>
 
@@ -278,7 +278,7 @@ const ld = [
         <p class="mt-3 text-sm text-ink-soft/85">{h.codeText}</p>
         <div class="mt-6 rounded-lg border border-rust/20 bg-rust/5 p-4">
           <p class="text-sm font-700 text-rust">{h.adviceTitle}</p>
-          <p class="mt-1 text-sm text-ink-soft/90">{h.adviceText}</p>
+          <div class="mt-1 text-sm text-ink-soft/90"><p>{h.adviceText}</p><ul class="mt-2 list-disc space-y-1 pl-5">{h.rxUses.map((u) => <li>{u}</li>)}</ul></div>
         </div>
         {/* Deux chemins côte à côte (David 24/10) : en ligne (livraison, chez Hisong) ou au showroom (réservation + retrait). */}
         <div class="mt-6 flex flex-wrap items-center gap-3">

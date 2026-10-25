@@ -124,7 +124,12 @@ The [Neotone](/en/neotone/) plugs straight in with a jack, no mic needed. The Hi
 
 Here's my **ambassador link**: it gives you **5% off** (code **DAVID-LESAGE-SAVE-5**).
 
-**My advice**: if you want to play live, get the RX Plus straight away.
+**My advice**: get the RX Plus straight away. It isn’t only for playing live, it lets you:
+
+- play live (mixing desk, looper, portable speaker);
+- use your own headphones or earphones;
+- use up to 3 headphones or earphones at the same time;
+- make videos with a camera or a DSLR.
 
 Two ways to buy:
 

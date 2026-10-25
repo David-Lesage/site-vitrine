@@ -123,7 +123,8 @@ const fr = {
     'Un étui de transport',
   ],
   boxNote:
-    'Pour jouer en live, il te faut le RX Plus (Universal Pack) : c’est lui qui sort le son vers la sono, la table de mixage ou une caméra.',
+    'Le RX Plus (Universal Pack) ne sert pas qu’au live. Il te permet de :',
+  rxUses: ['Jouer en live (table de mixage, looper, enceinte portative)', 'Utiliser ton propre casque ou ta propre oreillette', 'Utiliser jusqu’à 3 casques ou oreillettes en même temps', 'Faire des vidéos avec une caméra ou un appareil photo DSLR'],
 
   contextsEyebrow: 'Dans quels contextes',
   contextsTitle: 'Un même micro, plusieurs usages',
@@ -179,7 +180,7 @@ const fr = {
   codeCopied: 'Copié !',
   adviceTitle: 'Mon conseil',
   adviceText:
-    'Si tu veux utiliser le micro pour jouer en live, prends le RX Plus (Universal Pack) : c’est lui qui sort le son vers la sono, la table de mixage ou une caméra.',
+    'Prends le RX Plus (Universal Pack) : ce n’est pas seulement pour jouer en live. Il te permet de :',
   buyNote: 'En ligne : tu achètes sur hisong.io et Hisong te livre. Au showroom à Paris : micro + RX Plus uniquement ; tu paies en ligne pour réserver, puis tu viens le chercher.',
   ctaShowroom: 'L’essayer au showroom',
 
@@ -220,7 +221,8 @@ const en: HisongCopy = {
     'A carrying case',
   ],
   boxNote:
-    'To play live, you need the RX Plus (Universal Pack): it sends the sound to the PA, the mixing desk or a camera.',
+    'The RX Plus (Universal Pack) isn’t only for playing live. It lets you:',
+  rxUses: ['Play live (mixing desk, looper, portable speaker)', 'Use your own headphones or earphones', 'Use up to 3 headphones or earphones at the same time', 'Make videos with a camera or a DSLR'],
 
   contextsEyebrow: 'Where to use it',
   contextsTitle: 'One mic, several uses',
@@ -276,7 +278,7 @@ const en: HisongCopy = {
   codeCopied: 'Copied!',
   adviceTitle: 'My advice',
   adviceText:
-    'If you want to use the mic to play live, get the RX Plus (Universal Pack): it sends the sound to the PA, the mixing desk or a camera.',
+    'Get the RX Plus (Universal Pack): it isn’t only for playing live. It lets you:',
   buyNote: 'Online: you buy on hisong.io and Hisong delivers. At the showroom in Paris: mic + RX Plus only; you pay online to reserve, then come and pick it up.',
   ctaShowroom: 'Try it at the showroom',
 
@@ -315,7 +317,8 @@ const es: HisongCopy = {
     'Un estuche de transporte',
   ],
   boxNote:
-    'Para tocar en directo necesitas el RX Plus (Universal Pack): es el que envía el sonido al equipo de sonido, a la mesa de mezclas o a una cámara.',
+    'El RX Plus (Universal Pack) no sirve solo para tocar en directo. Te permite:',
+  rxUses: ['Tocar en directo (mesa de mezclas, looper, altavoz portátil)', 'Usar tus propios auriculares o tu propio auricular intraural', 'Usar hasta 3 auriculares a la vez', 'Grabar vídeos con una cámara o una réflex (DSLR)'],
 
   contextsEyebrow: 'En qué contextos',
   contextsTitle: 'Un mismo micrófono, varios usos',
@@ -371,7 +374,7 @@ const es: HisongCopy = {
   codeCopied: '¡Copiado!',
   adviceTitle: 'Mi consejo',
   adviceText:
-    'Si quieres usar el micrófono para tocar en directo, elige el RX Plus (Universal Pack): es el que envía el sonido al equipo de sonido, a la mesa de mezclas o a una cámara.',
+    'Elige el RX Plus (Universal Pack): no es solo para tocar en directo. Te permite:',
   buyNote: 'En línea: compras en hisong.io y Hisong te lo envía. En el showroom de París: solo micrófono + RX Plus; pagas en línea para reservar y luego vienes a recogerlo.',
   ctaShowroom: 'Probarlo en el showroom',
 
