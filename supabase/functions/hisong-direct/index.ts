@@ -20,7 +20,7 @@
 // SITE_LEAD_TOKEN. verify_jwt = false. v1 (25/10/2026), non déployée.
 // v2 (24/10/2026, non déployée) : David — « que les preuves de paiement soient
 //      récupérées directement via un formulaire dédié "vente présentiel" ».
-//      Le client paie via le lien Stripe offline (342,91 €) puis dépose sa
+//      Le client paie via le lien Stripe offline (340 €) puis dépose sa
 //      capture DANS LE MÊME envoi : upload dans le bucket privé `hisong-proofs`
 //      (chemin `<affiliate_sales.id>/<ts>.<ext>`, même règles que muling-proofs)
 //      + payment_proof_path / payment_claimed_at / fulfillment_status
@@ -38,10 +38,10 @@ const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 // ⚠️ Dupliqué depuis src/i18n/hisong.ts (`hisongPrices`) — les DEUX changent
 // ensemble. Prix que le client paie chez Hisong : S1 + RX Plus AVEC le code
-// (342,91 €) ; S1 seul = prix public (aucun prix avec code relevé).
+// (340 €) ; S1 seul = prix public (aucun prix avec code relevé).
 const PACKS: Record<string, { label: string; price: number }> = {
     s1: { label: 'AirStudio S1 (Standard Pack)', price: 270.95 },
-    s1RxPlus: { label: 'AirStudio S1 + RX Plus (Universal Pack)', price: 342.91 },
+    s1RxPlus: { label: 'AirStudio S1 + RX Plus (Universal Pack)', price: 340 },
 };
 // ⚠️ Doit rester égale à TERMS_VERSION de site-lead et muling-order.
 const TERMS_VERSION = '2026-08-19';
@@ -56,16 +56,16 @@ const shell = (inner: string) => `<!doctype html><html><head><meta charset="utf-
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:14px;border:1px solid #e5e7eb;">
 <tr><td style="padding:26px 28px;">${inner}</td></tr></table></td></tr></table></body></html>`;
 
-// Lien de paiement Stripe « vente présentiel » (342,91 €) — doit rester égal à
+// Lien de paiement Stripe « vente présentiel » (340 €) — doit rester égal à
 // `hisongShowroomPayUrl` dans src/i18n/hisong.ts.
 const PAY_URL = 'https://buy.stripe.com/8x2eVe6AieJB8nmeTteZ203';
 const PROOF_BUCKET = 'hisong-proofs';
 const MAX_BYTES = 6 * 1024 * 1024;
 const ALLOWED_TYPES: Record<string, string> = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'application/pdf': 'pdf' };
 const COPY: Record<string, { subject: string; title: string; p1: string; pay: string; sign: string; amount: string }> = {
-    fr: { subject: 'David Lesage — ton micro Hisong', title: 'Merci pour ton achat ✨', p1: 'Ton achat au showroom est bien enregistré. Je te remets le micro en main propre. Voici le récapitulatif, à garder.', pay: 'Lien de paiement (si ce n’est pas déjà fait) — sur la page de paiement, saisis toi-même le montant : <strong>342,91 €</strong>', sign: 'Merci,<br />David Lesage', amount: 'Montant' },
-    en: { subject: 'David Lesage — your Hisong mic', title: 'Thanks for your purchase ✨', p1: 'Your showroom purchase is recorded. I’m handing you the mic in person. Here is the summary, for your records.', pay: 'Payment link (if not done yet) — on the payment page, enter the amount yourself: <strong>€342.91</strong>', sign: 'Thank you,<br />David Lesage', amount: 'Amount' },
-    es: { subject: 'David Lesage — tu micrófono Hisong', title: 'Gracias por tu compra ✨', p1: 'Tu compra en el showroom está registrada. Te entrego el micrófono en mano. Aquí tienes el resumen, para guardarlo.', pay: 'Enlace de pago (si aún no lo has hecho) — en la página de pago, introduce tú mismo el importe: <strong>342,91 €</strong>', sign: 'Gracias,<br />David Lesage', amount: 'Importe' },
+    fr: { subject: 'David Lesage — ton micro Hisong', title: 'Merci pour ton achat ✨', p1: 'Ton achat au showroom est bien enregistré. Je te remets le micro en main propre. Voici le récapitulatif, à garder.', pay: 'Lien de paiement (si ce n’est pas déjà fait) — sur la page de paiement, saisis toi-même le montant : <strong>{amount}</strong>', sign: 'Merci,<br />David Lesage', amount: 'Montant' },
+    en: { subject: 'David Lesage — your Hisong mic', title: 'Thanks for your purchase ✨', p1: 'Your showroom purchase is recorded. I’m handing you the mic in person. Here is the summary, for your records.', pay: 'Payment link (if not done yet) — on the payment page, enter the amount yourself: <strong>{amount}</strong>', sign: 'Thank you,<br />David Lesage', amount: 'Amount' },
+    es: { subject: 'David Lesage — tu micrófono Hisong', title: 'Gracias por tu compra ✨', p1: 'Tu compra en el showroom está registrada. Te entrego el micrófono en mano. Aquí tienes el resumen, para guardarlo.', pay: 'Enlace de pago (si aún no lo has hecho) — en la página de pago, introduce tú mismo el importe: <strong>{amount}</strong>', sign: 'Gracias,<br />David Lesage', amount: 'Importe' },
 };
 
 Deno.serve(async (req) => {
@@ -85,7 +85,7 @@ Deno.serve(async (req) => {
         const packKey = String(body.pack ?? 's1') in PACKS ? String(body.pack ?? 's1') : 's1';
         const pack = PACKS[packKey];
         const rawQty = Number(body.quantity);
-        // 24/10/2026 : lien Stripe à montant fixe (342,91 €) → toujours 1 micro par vente.
+        // 24/10/2026 : lien Stripe à montant fixe (340 €) → toujours 1 micro par vente.
         void rawQty;
         const quantity = 1;
         const termsAccepted = body.termsAccepted === true;
@@ -102,7 +102,12 @@ Deno.serve(async (req) => {
         if (!EMAIL_RE.test(email)) return json({ error: 'invalid_email' }, 400);
         if (!firstName && !lastName) return json({ error: 'missing_name' }, 400);
 
-        const total = Math.round(pack.price * quantity * 100) / 100;
+        // David 25/10/2026 : montant variable au showroom (remise décidée par David),
+        // base = plafond = pack.price (340 €). Refus au-delà ou ≤ 0.
+        const basePrice = Math.round(pack.price * quantity * 100) / 100;
+        const amountIn = body.amount === undefined || body.amount === null || body.amount === '' ? basePrice : Math.round(Number(body.amount) * 100) / 100;
+        if (!Number.isFinite(amountIn) || amountIn <= 0 || amountIn > basePrice) return json({ error: 'invalid_amount' }, 400);
+        const total = amountIn;
         const admin = createClient(Deno.env.get('SUPABASE_URL') ?? '', Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '',
             { auth: { persistSession: false, autoRefreshToken: false } });
 
@@ -113,7 +118,7 @@ Deno.serve(async (req) => {
             customer_name: `${firstName} ${lastName}`.trim() || null,
             email, phone,
             quantity,
-            price_original_eur: total,
+            price_original_eur: basePrice,
             price_discounted_eur: total,
             currency: 'EUR',
             lang,
@@ -159,7 +164,7 @@ Deno.serve(async (req) => {
                 await c.send({ from, to: email, cc: ADMIN_EMAIL, replyTo: ADMIN_EMAIL, subject: mailSubject(t.subject), mimeContent: [htmlPart(shell(
                     `<div style="font-size:21px;font-weight:700;color:#111827;">${t.title}</div>
                      <p style="margin:12px 0 0;color:#374151;font-size:15px;line-height:1.6;">${t.p1}</p>${recap}
-                     <p style="margin:14px 0 0;color:#374151;font-size:15px;line-height:1.6;">${t.pay}<br /><a href="${PAY_URL}" style="color:#b45309;font-weight:700;">${PAY_URL}</a></p>
+                     <p style="margin:14px 0 0;color:#374151;font-size:15px;line-height:1.6;">${t.pay.replace('{amount}', lang === 'en' ? `€${total % 1 ? total.toFixed(2) : total}` : `${total % 1 ? total.toFixed(2).replace('.', ',') : total} €`)}<br /><a href="${PAY_URL}" style="color:#b45309;font-weight:700;">${PAY_URL}</a></p>
                      <p style="margin:16px 0 0;color:#9ca3af;font-size:12px;">${t.sign}</p>`))] });
                 emailSent = true;
             } catch (e) { console.error('hisong-direct mail error:', e); }

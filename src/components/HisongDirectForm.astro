@@ -9,24 +9,24 @@
 // 24/10/2026 (v2, demande David) : paiement via le lien Stripe offline puis dépôt de la
 // capture de paiement dans ce formulaire → bucket privé hisong-proofs, fulfillment_status
 // 'payment_claimed'. Le texte « tu paies Hisong sur hisong.io » est remplacé.
-// Prix : S1 + RX Plus = 342,91 € avec le code (relevé du dépôt).
+// Prix : S1 + RX Plus = 340 € avec le code (relevé du dépôt).
 // 24/10/2026 (David) : « Je ne vend que le modele micro + RX Plus au showroom pour le
 // moment. Je ne vend pas le micro seul sans ce module. » → plus d'option S1 seul.
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
 import { getDict } from '@/i18n/dict'
-import { hisongPrices, hisongShowroomPayUrl, hisongDiscountCode } from '@/i18n/hisong'
+import { hisongPrices, hisongShowroomPrice, hisongShowroomPayUrl, hisongDiscountCode } from '@/i18n/hisong'
 import { numberLocale } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
 const { lang } = Astro.props
 const bk = getDict(lang).booking
-const eur = (n: number) => new Intl.NumberFormat(numberLocale(lang), { style: 'currency', currency: 'EUR' }).format(n)
+const eur = (n: number) => new Intl.NumberFormat(numberLocale(lang), { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(n)
 const COPY = {
-  fr: { open: '🤝 Acheter au showroom (Paris)', title: 'Réserver mon micro au showroom', intro: 'Je te remets le micro en main propre au showroom, à Paris. 1) Paie en ligne avec le lien ci-dessous. 2) Joins la capture d’écran de ton paiement : ta réservation est faite. 3) Propose-moi une date et un horaire de retrait.', pay: '① Payer maintenant (342,91 €)', amountTitle: 'Important : sur la page de paiement, saisis toi-même le montant', copy: 'Copier le montant', copied: 'Copié ✓', payNote: 'Paiement sécurisé par carte, puis reviens ici avec ta capture.', proof: '② Capture de ton paiement', proofNote: 'Image ou PDF, 3 Mo maximum.', proofTooBig: 'Fichier trop lourd (3 Mo maximum).', s1Note: 'prix public ; le code −5 % s’applique au paiement chez Hisong', codeNote: 'avec le code', pack: 'Modèle', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'Au showroom, je ne vends que le micro avec le module RX Plus, pas le micro seul.', qty: 'Quantité', submit: 'Réserver mon micro', sending: 'Envoi…', error: 'L’envoi a échoué. Réessaie, ou dis-le-moi directement.', thanksTitle: 'Merci, ton micro est réservé ✨', thanksText: 'Ta preuve de paiement est enregistrée. Tu vas recevoir un récapitulatif par email ; ton micro t’attend au showroom.', total: 'Total' },
-  en: { open: '🤝 Buy at the showroom (Paris)', title: 'Reserve my mic at the showroom', intro: 'I hand you the mic in person at the showroom in Paris. 1) Pay online with the link below. 2) Attach the screenshot of your payment: your reservation is made. 3) Suggest a pick-up date and time.', pay: '① Pay now (€342.91)', amountTitle: 'Important: on the payment page, enter the amount yourself', copy: 'Copy the amount', copied: 'Copied ✓', payNote: 'Secure card payment, then come back here with your screenshot.', proof: '② Screenshot of your payment', proofNote: 'Image or PDF, 3 MB max.', proofTooBig: 'File too large (3 MB max).', s1Note: 'public price; the −5% code applies at checkout on Hisong', codeNote: 'with the code', pack: 'Model', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'At the showroom, I only sell the mic with the RX Plus module, not the mic alone.', qty: 'Quantity', submit: 'Reserve my mic', sending: 'Sending…', error: 'Sending failed. Try again, or tell me directly.', thanksTitle: 'Thanks, your mic is reserved ✨', thanksText: 'Your proof of payment is recorded. You’ll receive a summary by email; your mic is waiting for you at the showroom.', total: 'Total' },
-  es: { open: '🤝 Comprar en el showroom (París)', title: 'Reservar mi micrófono en el showroom', intro: 'Te entrego el micrófono en mano en el showroom, en París. 1) Paga en línea con el enlace de abajo. 2) Adjunta la captura de tu pago: tu reserva está hecha. 3) Propónme una fecha y una hora de recogida.', pay: '① Pagar ahora (342,91 €)', amountTitle: 'Importante: en la página de pago, introduce tú mismo el importe', copy: 'Copiar el importe', copied: 'Copiado ✓', payNote: 'Pago seguro con tarjeta; luego vuelve aquí con tu captura.', proof: '② Captura de tu pago', proofNote: 'Imagen o PDF, 3 MB máximo.', proofTooBig: 'Archivo demasiado grande (3 MB máximo).', s1Note: 'precio público; el código −5% se aplica al pagar en Hisong', codeNote: 'con el código', pack: 'Modelo', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'En el showroom solo vendo el micrófono con el módulo RX Plus, no el micrófono solo.', qty: 'Cantidad', submit: 'Reservar mi micrófono', sending: 'Enviando…', error: 'El envío ha fallado. Inténtalo de nuevo o dímelo directamente.', thanksTitle: 'Gracias, tu micrófono está reservado ✨', thanksText: 'Tu prueba de pago está registrada. Recibirás un resumen por correo; tu micrófono te espera en el showroom.', total: 'Total' },
+  fr: { amountLabel: 'Montant payé (€)', amountHelp: 'Prix de base 340 €. Si David t’a fait une remise, indique le montant convenu.', amountMax: 'Le montant doit être compris entre 1 et 340 €.', open: '🤝 Acheter au showroom (Paris)', title: 'Réserver mon micro au showroom', intro: 'Je te remets le micro en main propre au showroom, à Paris. 1) Paie en ligne avec le lien ci-dessous. 2) Joins la capture d’écran de ton paiement : ta réservation est faite. 3) Propose-moi une date et un horaire de retrait.', pay: '① Payer maintenant (340 €)', amountTitle: 'Important : sur la page de paiement, saisis toi-même le montant', copy: 'Copier le montant', copied: 'Copié ✓', payNote: 'Paiement sécurisé par carte, puis reviens ici avec ta capture.', proof: '② Capture de ton paiement', proofNote: 'Image ou PDF, 3 Mo maximum.', proofTooBig: 'Fichier trop lourd (3 Mo maximum).', s1Note: 'prix public ; le code −5 % s’applique au paiement chez Hisong', codeNote: 'avec le code', pack: 'Modèle', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'Au showroom, je ne vends que le micro avec le module RX Plus, pas le micro seul.', qty: 'Quantité', submit: 'Réserver mon micro', sending: 'Envoi…', error: 'L’envoi a échoué. Réessaie, ou dis-le-moi directement.', thanksTitle: 'Merci, ton micro est réservé ✨', thanksText: 'Ta preuve de paiement est enregistrée. Tu vas recevoir un récapitulatif par email ; ton micro t’attend au showroom.', total: 'Total' },
+  en: { amountLabel: 'Amount paid (€)', amountHelp: 'Base price €340. If David gave you a discount, enter the agreed amount.', amountMax: 'The amount must be between €1 and €340.', open: '🤝 Buy at the showroom (Paris)', title: 'Reserve my mic at the showroom', intro: 'I hand you the mic in person at the showroom in Paris. 1) Pay online with the link below. 2) Attach the screenshot of your payment: your reservation is made. 3) Suggest a pick-up date and time.', pay: '① Pay now (€340)', amountTitle: 'Important: on the payment page, enter the amount yourself', copy: 'Copy the amount', copied: 'Copied ✓', payNote: 'Secure card payment, then come back here with your screenshot.', proof: '② Screenshot of your payment', proofNote: 'Image or PDF, 3 MB max.', proofTooBig: 'File too large (3 MB max).', s1Note: 'public price; the −5% code applies at checkout on Hisong', codeNote: 'with the code', pack: 'Model', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'At the showroom, I only sell the mic with the RX Plus module, not the mic alone.', qty: 'Quantity', submit: 'Reserve my mic', sending: 'Sending…', error: 'Sending failed. Try again, or tell me directly.', thanksTitle: 'Thanks, your mic is reserved ✨', thanksText: 'Your proof of payment is recorded. You’ll receive a summary by email; your mic is waiting for you at the showroom.', total: 'Total' },
+  es: { amountLabel: 'Importe pagado (€)', amountHelp: 'Precio base 340 €. Si David te hizo un descuento, indica el importe acordado.', amountMax: 'El importe debe estar entre 1 y 340 €.', open: '🤝 Comprar en el showroom (París)', title: 'Reservar mi micrófono en el showroom', intro: 'Te entrego el micrófono en mano en el showroom, en París. 1) Paga en línea con el enlace de abajo. 2) Adjunta la captura de tu pago: tu reserva está hecha. 3) Propónme una fecha y una hora de recogida.', pay: '① Pagar ahora (340 €)', amountTitle: 'Importante: en la página de pago, introduce tú mismo el importe', copy: 'Copiar el importe', copied: 'Copiado ✓', payNote: 'Pago seguro con tarjeta; luego vuelve aquí con tu captura.', proof: '② Captura de tu pago', proofNote: 'Imagen o PDF, 3 MB máximo.', proofTooBig: 'Archivo demasiado grande (3 MB máximo).', s1Note: 'precio público; el código −5% se aplica al pagar en Hisong', codeNote: 'con el código', pack: 'Modelo', s1: 'AirStudio S1', rx: 'AirStudio S1 + RX Plus', onlyRx: 'En el showroom solo vendo el micrófono con el módulo RX Plus, no el micrófono solo.', qty: 'Cantidad', submit: 'Reservar mi micrófono', sending: 'Enviando…', error: 'El envío ha fallado. Inténtalo de nuevo o dímelo directamente.', thanksTitle: 'Gracias, tu micrófono está reservado ✨', thanksText: 'Tu prueba de pago está registrada. Recibirás un resumen por correo; tu micrófono te espera en el showroom.', total: 'Total' },
 }
 const c = COPY[(lang in COPY ? lang : 'en') as keyof typeof COPY]
 const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none'
@@ -43,16 +43,17 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
       <form id="hisong-direct-form" class="mt-5 grid gap-3" novalidate>
         <div class="grid gap-2">
           <p class="mb-1 text-sm font-600">{c.pack}</p>
-          <input type="hidden" name="pack" value="s1RxPlus" data-price={hisongPrices.s1RxPlusWithCode} />
+          <input type="hidden" name="pack" value="s1RxPlus" data-price={hisongShowroomPrice} />
           <div class="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-copper bg-copper/10 p-3">
             <span class="text-sm font-700">{c.rx}</span>
-            <span class="text-right text-sm font-700">{eur(hisongPrices.s1RxPlusWithCode)}<span class="block text-xs font-400 text-ink-soft/75">{c.codeNote} {hisongDiscountCode}</span></span>
+            <span class="text-right text-sm font-700">{eur(hisongShowroomPrice)}</span>
           </div>
           <p class="text-xs text-ink-soft/75">{c.onlyRx}</p>
         </div>
+        <label class="block"><span class="text-sm font-600">{c.amountLabel}</span><input type="number" name="amount" inputmode="decimal" min="1" max={hisongShowroomPrice} step="0.01" value={hisongShowroomPrice} required data-max-msg={c.amountMax} class={input} /><span class="block text-xs text-ink-soft/75">{c.amountHelp}</span></label>
         <div class="rounded-xl border-2 border-rust bg-rust/10 p-4" data-hd-amount-box>
           <p class="text-sm font-700 text-rust">⚠️ {c.amountTitle} :</p>
-          <p class="mt-1 flex flex-wrap items-center gap-3"><span class="font-display text-3xl font-700" data-hd-amount>{eur(hisongPrices.s1RxPlusWithCode)}</span><button type="button" data-hd-copy data-value={hisongPrices.s1RxPlusWithCode.toFixed(2).replace('.', lang === 'en' ? '.' : ',')} data-copied={c.copied} class="min-h-11 rounded-full border border-rust/50 px-4 py-2 text-sm font-700 text-rust hover:bg-rust hover:text-cream">{c.copy}</button></p>
+          <p class="mt-1 flex flex-wrap items-center gap-3"><span class="font-display text-3xl font-700" data-hd-amount>{eur(hisongShowroomPrice)}</span><button type="button" data-hd-copy data-value={String(hisongShowroomPrice)} data-copied={c.copied} class="min-h-11 rounded-full border border-rust/50 px-4 py-2 text-sm font-700 text-rust hover:bg-rust hover:text-cream">{c.copy}</button></p>
         </div>
         <p class="text-sm"><a href={hisongShowroomPayUrl} target="_blank" rel="noopener" class="inline-flex min-h-11 items-center rounded-full bg-copper px-5 py-2.5 font-700 text-cream hover:bg-rust">{c.pay} ↗</a><span class="mt-1 block text-xs text-ink-soft/75">{c.payNote}</span></p>
         <div class="grid gap-3 sm:grid-cols-2">
@@ -63,10 +64,10 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
           <label class="block"><span class="text-sm font-600">{bk.email}</span><input type="email" name="email" autocomplete="email" required class={input} /></label>
           <label class="block"><span class="text-sm font-600">{bk.phonePlain}</span><input type="tel" name="phone" autocomplete="tel" class={input} /></label>
         </div>
-        {/* Quantité bloquée à 1 : le lien Stripe est à montant fixe (342,91 €). */}
+        {/* Quantité bloquée à 1 : 1 micro par vente ; montant saisi (base 340 €). */}
         <input type="hidden" name="quantity" value="1" />
         <label class="block"><span class="text-sm font-600">{bk.message}</span><textarea name="message" rows="2" class={input}></textarea></label>
-        <p class="rounded-lg bg-gold/10 px-3 py-2 text-sm font-700">{c.total} : <span data-hd-total>{eur(hisongPrices.s1RxPlusWithCode)}</span></p>
+        <p class="rounded-lg bg-gold/10 px-3 py-2 text-sm font-700">{c.total} : <span data-hd-total>{eur(hisongShowroomPrice)}</span></p>
         <label class="block"><span class="text-sm font-600">{c.proof}</span><input type="file" name="proof" accept="image/png,image/jpeg,image/webp,application/pdf" required class={input} /><span class="block text-xs text-ink-soft/75">{c.proofNote}</span></label>
         <TermsCheckbox lang={lang} />
         <NewsCheckbox lang={lang} />
@@ -91,12 +92,24 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
     const b = e.currentTarget as HTMLButtonElement; const prev = b.textContent
     try { await navigator.clipboard.writeText(b.dataset.value || ''); b.textContent = b.dataset.copied || '✓'; setTimeout(() => { b.textContent = prev }, 2000) } catch {}
   })
-  const fmt = new Intl.NumberFormat(document.documentElement.lang || 'fr', { style: 'currency', currency: 'EUR' })
+  const fmt = new Intl.NumberFormat(document.documentElement.lang || 'fr', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 2 })
   const step = (s: string) => modal?.querySelectorAll('[data-hd-step]').forEach((el) => el.classList.toggle('hidden', el.getAttribute('data-hd-step') !== s))
+  // Montant variable (David 25/10/2026) : base 340 €, remise possible, jamais au-delà.
+  function amountValue() {
+    const inp = form?.querySelector('input[name="amount"]') as HTMLInputElement | null
+    const max = Number((form?.querySelector('input[name="pack"]') as HTMLInputElement | null)?.dataset.price || 0)
+    const v = Math.round(Number(String(inp?.value || '').replace(',', '.')) * 100) / 100
+    const ok = Number.isFinite(v) && v > 0 && v <= max
+    inp?.setCustomValidity(ok ? '' : inp.dataset.maxMsg || 'invalid')
+    return ok ? v : max
+  }
   function total() {
-    const p = Number((form?.querySelector('input[name="pack"]') as HTMLInputElement | null)?.dataset.price || 0)
-    const q = 1
-    const el = modal?.querySelector('[data-hd-total]'); if (el) el.textContent = fmt.format(Math.round(p * q * 100) / 100)
+    const v = amountValue()
+    const txt = fmt.format(v)
+    const el = modal?.querySelector('[data-hd-total]'); if (el) el.textContent = txt
+    const a = modal?.querySelector('[data-hd-amount]'); if (a) a.textContent = txt
+    const b = modal?.querySelector('[data-hd-copy]') as HTMLElement | null
+    if (b) b.dataset.value = (Number.isInteger(v) ? String(v) : v.toFixed(2)).replace('.', document.documentElement.lang === 'en' ? '.' : ',')
   }
   function open() {
     if (!modal) return
@@ -119,6 +132,7 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
   form?.addEventListener('input', total)
   form?.addEventListener('submit', async (e) => {
     e.preventDefault()
+    amountValue()
     if (!form.reportValidity()) return
     const d = new FormData(form)
     const get = (k: string) => String(d.get(k) || '').trim()
@@ -138,7 +152,7 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           firstName: get('firstName'), lastName: get('lastName'), email: get('email'), phone: get('phone'),
-          pack: get('pack'), quantity: 1, message: get('message'),
+          pack: get('pack'), quantity: 1, amount: amountValue(), message: get('message'),
           termsAccepted: d.get('termsAccepted') !== null, newsOptIn: d.get('newsOptIn') !== null,
           lang: document.documentElement.lang || 'fr',
           fileBase64, fileType: file?.type || '',
