@@ -124,7 +124,12 @@ Le [Neotone](/neotone/) se branche directement en jack, sans micro. Le Hisong ga
 
 Voici mon **lien ambassadeur** : il te fait **5 % de remise** (code **DAVID-LESAGE-SAVE-5**).
 
-**Mon conseil** : si tu veux jouer en live, prends directement le RX Plus.
+**Mon conseil** : prends directement le RX Plus. Ce n’est pas seulement pour jouer en live, il te permet de :
+
+- jouer en live (table de mixage, looper, enceinte portative) ;
+- utiliser ton propre casque ou ta propre oreillette ;
+- utiliser jusqu’à 3 casques ou oreillettes en même temps ;
+- faire des vidéos avec une caméra ou un appareil photo DSLR.
 
 Deux façons d'acheter :
 
