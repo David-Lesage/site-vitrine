@@ -95,6 +95,8 @@ The RX Plus is a **wireless receiver** for the AirStudio S1 mic. It receives the
 - **3.5 mm jack on top**, line / headphone output, for an **active speaker, a mixing desk or a PA**: that's the live one.
 - **USB-C underneath**, digital output to a **phone, tablet or computer**, to record or stream.
 
+Each of the two mini-jacks also takes **wired headphones or a pair of wired earphones**: with the wireless earbuds that come with the mic, **up to 3 people** can listen at the same time.
+
 Two **volume buttons** set the output level right on the box, without the app. It charges over USB-C.
 
 **How to use it, the first time**: pair it with the mic in the **HISONG Link** app.
@@ -127,8 +129,9 @@ Here's my **ambassador link**: it gives you **5% off** (code **DAVID-LESAGE-SAVE
 **My advice**: get the RX Plus straight away. It isn’t only for playing live, it lets you:
 
 - play live (mixing desk, looper, portable speaker);
-- use your own headphones or earphones;
-- use up to 3 headphones or earphones at the same time;
+- plug in your own wired headphones or earphones: its 2 mini-jack outputs take 2 headphones or 2 pairs of earphones;
+- let up to 3 people listen at the same time (those 2 outputs + the wireless earbuds that come with the mic);
+- get the mic's sound over USB-C (computer, phone);
 - make videos with a camera or a DSLR.
 
 Two ways to buy:

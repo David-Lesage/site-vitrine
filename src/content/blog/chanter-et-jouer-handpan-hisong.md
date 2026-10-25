@@ -95,6 +95,8 @@ Le RX Plus est un **récepteur sans fil** pour le micro AirStudio S1. Il reçoit
 - **Jack 3,5 mm sur le dessus**, sortie ligne / casque, pour une **enceinte active, une table de mixage ou une sono** : c'est celle du live.
 - **USB-C en dessous**, sortie numérique vers un **téléphone, une tablette ou un ordinateur**, pour enregistrer ou diffuser en direct.
 
+Les deux mini-jacks acceptent aussi un **casque ou une paire d'oreillettes filaires** chacun : avec les écouteurs sans fil fournis avec le micro, **jusqu'à 3 personnes** peuvent écouter en même temps.
+
 Deux **boutons de volume** règlent le niveau de sortie directement sur le boîtier, sans passer par l'application. Il se recharge en USB-C.
 
 **Mode d'emploi, la première fois** : il faut l'associer au micro dans l'application **HISONG Link**.
@@ -127,8 +129,9 @@ Voici mon **lien ambassadeur** : il te fait **5 % de remise** (code **DAVID-LESA
 **Mon conseil** : prends directement le RX Plus. Ce n’est pas seulement pour jouer en live, il te permet de :
 
 - jouer en live (table de mixage, looper, enceinte portative) ;
-- utiliser ton propre casque ou ta propre oreillette ;
-- utiliser jusqu’à 3 casques ou oreillettes en même temps ;
+- brancher ton propre casque ou tes oreillettes filaires : ses 2 sorties mini-jack acceptent 2 casques ou 2 paires d’oreillettes ;
+- faire écouter jusqu’à 3 personnes en même temps (ces 2 sorties + les écouteurs sans fil fournis avec le micro) ;
+- récupérer le son du micro en USB-C (ordinateur, téléphone) ;
 - faire des vidéos avec une caméra ou un appareil photo DSLR.
 
 Deux façons d'acheter :
