@@ -105,9 +105,15 @@ Deno.serve(async (req) => {
         // David 25/10/2026 : montant variable au showroom (remise décidée par David),
         // base = plafond = pack.price (340 €). Refus au-delà ou ≤ 0.
         const basePrice = Math.round(pack.price * quantity * 100) / 100;
-        const amountIn = body.amount === undefined || body.amount === null || body.amount === '' ? basePrice : Math.round(Number(body.amount) * 100) / 100;
-        if (!Number.isFinite(amountIn) || amountIn <= 0 || amountIn > basePrice) return json({ error: 'invalid_amount' }, 400);
+        // 25/10/2026 (2) : montant OBLIGATOIRE, réinscrit par le client (celui saisi sur Stripe).
+        const amountIn = body.amount === undefined || body.amount === null || body.amount === '' ? NaN : Math.round(Number(body.amount) * 100) / 100;
+        if (!Number.isFinite(amountIn) || amountIn < 1 || amountIn > basePrice) return json({ error: 'invalid_amount' }, 400);
         const total = amountIn;
+        // Remise exceptionnelle (David) : montant < 340 € → marquage exploitable par les
+        // suivis admin et Hisong : 1re ligne de admin_note commençant par « Remise exceptionnelle ».
+        const exceptional = total < basePrice;
+        const fmtEur = (n: number) => `${n % 1 ? n.toFixed(2).replace('.', ',') : n} €`;
+        const exceptionalNote = exceptional ? `Remise exceptionnelle : payé ${fmtEur(total)} au lieu de ${fmtEur(basePrice)}` : '';
         const admin = createClient(Deno.env.get('SUPABASE_URL') ?? '', Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '',
             { auth: { persistSession: false, autoRefreshToken: false } });
 
@@ -128,7 +134,7 @@ Deno.serve(async (req) => {
             terms_version: termsAccepted ? TERMS_VERSION : null,
             news_opt_in: newsOptIn,
             news_opt_in_at: newsOptIn ? now : null,
-            admin_note: [`Pack : ${pack.label}`, message].filter(Boolean).join('\n'),
+            admin_note: [exceptionalNote, `Pack : ${pack.label}`, message].filter(Boolean).join('\n'),
         }).select('id').single();
         if (error) throw error;
         const saleId = ins!.id as string;
@@ -181,7 +187,7 @@ Deno.serve(async (req) => {
                     subject: mailSubject(`Showroom sale — AirStudio S1 + RX Plus x${quantity}`),
                     mimeContent: [htmlPart(shell(`<div style="font-size:19px;font-weight:700;color:#111827;">New showroom sale (David Lesage)</div>
                       <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;margin-top:14px;">
-                      ${row('Product', esc(pack.label))}${row('Quantity', String(quantity))}${row('Amount', `${total.toFixed(2)} EUR`)}
+                      ${row('Product', esc(pack.label))}${row('Quantity', String(quantity))}${row('Amount', `${total.toFixed(2)} EUR`)}${exceptional ? row('Exceptional discount', esc(`granted by David: paid ${total.toFixed(2)} EUR instead of ${basePrice.toFixed(2)} EUR`)) : ''}
                       ${row('Customer', esc(`${firstName} ${lastName}`.trim()))}${row('Email', esc(email))}
                       ${row('Proof of payment', proofPath ? 'received (stored, available on request)' : 'not provided')}${row('Ref', esc(saleId))}</table>`))] });
                 partnerEmailSent = true;
