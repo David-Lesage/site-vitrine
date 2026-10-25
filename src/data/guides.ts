@@ -124,7 +124,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Ma méthode repose sur trois repères concrets, qui remplacent les portées et les notes noires. D’abord la <strong>couleur</strong> : chaque degré de la gamme reçoit une couleur (les ChromaKeys), si bien que jouer une mélodie revient à suivre une suite de couleurs. Ensuite la <strong>forme</strong> : chaque accord dessine une géométrie sur l’instrument (les Constellations), une tablature visuelle bien plus parlante qu’une grille d’accords. Enfin l’<strong>émotion</strong> : chaque degré porte une couleur affective (élan, détente, nostalgie…), pour que tu joues ce que tu ressens.',
+            html: 'Ma méthode repose sur trois repères concrets, qui remplacent les portées et les notes noires. D’abord la <strong>couleur</strong> : chaque note reçoit sa couleur (les ChromaKeys), si bien que jouer une mélodie revient à suivre une suite de couleurs. Ensuite la <strong>forme</strong> : chaque accord dessine une géométrie sur l’instrument (les Constellations), une tablature visuelle bien plus parlante qu’une grille d’accords. Enfin l’<strong>émotion</strong> : chaque degré porte une couleur affective (élan, détente, nostalgie…), pour que tu joues ce que tu ressens.',
           },
           {
             kind: 'ul',
@@ -516,7 +516,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'My method rests on three concrete cues that replace staves and black notes. First, <strong>colour</strong>: each degree of the scale gets a colour (ChromaKeys), so playing a melody becomes following a sequence of colours. Then <strong>shape</strong>: each chord draws a geometry on the instrument (Constellations), a visual tablature far clearer than a chord chart. Finally, <strong>emotion</strong>: each degree carries an emotional colour (momentum, calm, nostalgia…), so you play what you feel.',
+            html: 'My method rests on three concrete cues that replace staves and black notes. First, <strong>colour</strong>: each note gets its own colour (ChromaKeys), so playing a melody becomes following a sequence of colours. Then <strong>shape</strong>: each chord draws a geometry on the instrument (Constellations), a visual tablature far clearer than a chord chart. Finally, <strong>emotion</strong>: each degree carries an emotional colour (momentum, calm, nostalgia…), so you play what you feel.',
           },
           {
             kind: 'ul',
