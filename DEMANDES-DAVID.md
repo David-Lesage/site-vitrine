@@ -247,3 +247,4 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 - ✅ fait (25/10, en prod) Hisong showroom : « le client doit réinscrire le montant qu'il a mis sur le lien de paiement stripe » → champ vide obligatoire étape 2 (1–340 €)
 - ✅ fait (25/10, en prod) Hisong showroom : montant < 340 € → « on saura nous en tant qu'admin dans le suivi ainsi qu'hisong » → admin_note « Remise exceptionnelle : … » + ligne dans le mail Hisong
 - ✅ fait (25/10, en prod) Hisong RX Plus : « Ce n'est pas seulement pour jouer en live » → liste des usages (live, casques filaires, jusqu'à 3 personnes, vidéo caméra/DSLR, son en USB-C)
+- ✅ fait (25/10/2026) « il faut considerer l'option que la personne est déja sur place au showcase ou avec David … la case est obligatoire » — option sur place + lieu obligatoire, en prod (2c07635)
