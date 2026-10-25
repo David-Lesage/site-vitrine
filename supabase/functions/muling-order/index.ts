@@ -46,6 +46,14 @@
 //      toujours l'email, avec la mention « ne pas expédier ». C'est l'app qui
 //      crée le mouvement d'inventaire `sale_direct` à partir de purchase_channel :
 //      cette fonction ne touche JAMAIS à stock_movements.
+// v6 (25/10/2026) : PAYÉ SUR PLACE (comme hisong-direct). En `showroom`, si le
+//      client a DÉJÀ viré à Muling, il joint sa capture (image/PDF) + le montant
+//      viré (obligatoire, peut différer de 245 €) DANS LE MÊME envoi : upload dans
+//      le bucket privé `muling-proofs` (<id>/<ts>.<ext>), payment_proof_path /
+//      payment_claimed_at / fulfillment_status='payment_claimed', et la preuve
+//      part en PIÈCE JOINTE du mail à Muling (mêmes drapeaux « DO NOT SHIP »).
+//      Écart de montant → ligne AJOUTÉE à admin_note. sale_place laissé vide
+//      (le lieu vient de la modale de retrait). Sans fichier : v5 inchangée.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -80,6 +88,10 @@ const COMMISSION_PER_UNIT_EUR = 100; // accord de principe du 22/07/2026 avec Mu
 // deux valeurs différentes rendraient impossible de savoir quel texte une
 // personne a réellement accepté selon le formulaire qu'elle a rempli.
 const TERMS_VERSION = '2026-08-19';
+
+const PROOF_BUCKET = 'muling-proofs';
+const MAX_BYTES = 6 * 1024 * 1024;
+const ALLOWED_TYPES: Record<string, string> = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'application/pdf': 'pdf' };
 
 const BANK = {
     beneficiary: 'HuiZhou Muling Musical Instruments Co Ltd',
@@ -222,6 +234,18 @@ Deno.serve(async (req) => {
         const purchaseChannel = body.saleMode === 'showroom' ? 'showroom' : 'online';
         const isShowroom = purchaseChannel === 'showroom';
 
+        // v6 : payé sur place — capture + montant viré, en showroom seulement.
+        const fileBase64 = isShowroom ? String(body.fileBase64 ?? '') : '';
+        const fileType = String(body.fileType ?? '');
+        const ext = ALLOWED_TYPES[fileType];
+        const paidOnSite = !!fileBase64;
+        if (paidOnSite && !ext) return json({ error: 'invalid_file_type' }, 400);
+        if (fileBase64.length > MAX_BYTES * 1.4) return json({ error: 'file_too_large' }, 400);
+        const proofBytes = paidOnSite ? Uint8Array.from(atob(fileBase64), (ch) => ch.charCodeAt(0)) : null;
+        if (proofBytes && proofBytes.byteLength > MAX_BYTES) return json({ error: 'file_too_large' }, 400);
+        const amountPaid = paidOnSite ? Math.round(Number(body.amountPaid) * 100) / 100 : NaN;
+        if (paidOnSite && (!Number.isFinite(amountPaid) || amountPaid < 1 || amountPaid > 5000)) return json({ error: 'invalid_amount' }, 400);
+
         const rawQty = Number(body.quantity);
         const quantity = Number.isFinite(rawQty) && rawQty > 0 ? Math.min(Math.round(rawQty), 20) : 1;
 
@@ -243,6 +267,11 @@ Deno.serve(async (req) => {
         const priceOriginal = PRICE_EUR * quantity;
         const priceDiscounted = DISCOUNTED_PRICE_EUR * quantity;
         const commission = COMMISSION_PER_UNIT_EUR * quantity;
+        const fmtEur = (n: number) => `${n % 1 ? n.toFixed(2).replace('.', ',') : n} €`;
+        const diff = paidOnSite ? Math.round((amountPaid - priceDiscounted) * 100) / 100 : 0;
+        const paidNote = paidOnSite
+            ? `Payé sur place : virement de ${fmtEur(amountPaid)} à Muling` + (diff !== 0 ? ` — écart ${diff > 0 ? '+' : '−'}${fmtEur(Math.abs(diff))} par rapport au prix ${fmtEur(priceDiscounted)}` : '')
+            : '';
 
         const { data: ins, error } = await admin.from('affiliate_sales').insert({
             partner: 'muling',
@@ -266,7 +295,7 @@ Deno.serve(async (req) => {
             terms_version: termsAccepted ? TERMS_VERSION : null,
             news_opt_in: newsOptIn,
             news_opt_in_at: newsOptIn ? new Date().toISOString() : null,
-            admin_note: message,
+            admin_note: [message, paidNote].filter(Boolean).join('\n') || null,
             delivery_note: isShowroom ? null : deliveryNote,
         }).select('id').single();
         if (error) throw error;
@@ -281,6 +310,20 @@ Deno.serve(async (req) => {
         // bug du trigger le 08/08/2026 (order_ref resté null en base).
         if (refErr) console.error('muling-order: échec écriture order_ref:', refErr);
 
+        // v6 : preuve de virement. Une panne d'upload ne perd pas la vente.
+        let proofPath: string | null = null;
+        if (proofBytes && ext) {
+            const path = `${saleId}/${Date.now()}.${ext}`;
+            const { error: upErr } = await admin.storage.from(PROOF_BUCKET).upload(path, proofBytes, { contentType: fileType, upsert: false });
+            if (upErr) console.error('muling-order upload error:', upErr);
+            else {
+                const { error: updErr } = await admin.from('affiliate_sales').update({
+                    payment_proof_path: path, payment_claimed_at: new Date().toISOString(), fulfillment_status: 'payment_claimed',
+                }).eq('id', saleId);
+                if (updErr) console.error('muling-order update error:', updErr); else proofPath = path;
+            }
+        }
+
         let emailSent = false;
         const host = Deno.env.get('SMTP_HOST') ?? '';
         const user = Deno.env.get('SMTP_USER') ?? '';
@@ -289,9 +332,12 @@ Deno.serve(async (req) => {
         const port = Number(Deno.env.get('SMTP_PORT') ?? '465');
 
         if (host && user && pass && from) {
-            const send = async (to: string, cc: string | string[] | undefined, replyTo: string | undefined, subject: string, html: string) => {
+            const send = async (to: string, cc: string | string[] | undefined, replyTo: string | undefined, subject: string, html: string, withProof = false) => {
                 const c = new SMTPClient({ connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } } });
-                try { await c.send({ from, to, cc, replyTo, subject: mailSubject(subject), mimeContent: [htmlPart(html)] }); return true; }
+                const attachments = withProof && proofPath && proofBytes && ext
+                    ? [{ filename: `proof-of-payment-${ref}.${ext}`, content: fileBase64, encoding: 'base64' as const, contentType: fileType }]
+                    : undefined;
+                try { await c.send({ from, to, cc, replyTo, subject: mailSubject(subject), mimeContent: [htmlPart(html)], ...(attachments ? { attachments } : {}) }); return true; }
                 catch (e) { console.error('muling-order mail error:', e); return false; }
                 finally { try { await c.close(); } catch { /* ignore */ } }
             };
@@ -309,10 +355,11 @@ Deno.serve(async (req) => {
                 Country: isShowroom ? null : country, Address: isShowroom ? null : `${address}, ${postalCode} ${city}`,
                 'Delivery note': isShowroom ? null : deliveryNote,
                 'Amount (EUR)': priceDiscounted, Reference: ref,
-            }));
+                'Paid on site': proofPath ? `YES — customer transferred ${amountPaid.toFixed(2)} EUR to Muling; proof of payment ATTACHED to this email` : null,
+            }), true);
         }
 
-        return json({ ok: true, saleId, ref, emailSent, saleMode: purchaseChannel, amount: priceDiscounted, currency: 'EUR' });
+        return json({ ok: true, saleId, ref, emailSent, saleMode: purchaseChannel, proofSaved: !!proofPath, amount: priceDiscounted, currency: 'EUR' });
     } catch (err) {
         console.error('muling-order error:', err);
         return json({ error: err instanceof Error ? err.message : 'server_error' }, 500);

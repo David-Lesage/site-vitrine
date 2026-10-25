@@ -71,12 +71,19 @@ Deno.serve(async (req) => {
         const note = String(p.note ?? '').trim().slice(0, 500);
         if (!UUID_RE.test(saleId) || !email) return json({ error: 'missing_fields' }, 400);
         let onsiteLine = '';
+        // v3 (25/10/2026) : colonne `sale_place` (migr. 0266/0267 côté app) — lieu de
+        // vente structuré ; la ligne admin_note reste écrite (lue en repli).
+        // Jamais inventory_ref ni cancelled_*. ordered_on = date du jour (Paris) si vide.
+        let salePlace: string | null = null;
+        let todayIso = '';
         if (kind === 'onsite') {
             const place = p.place === 'showcase-paris' ? 'showcase-paris' : p.place === 'other' ? 'other' : '';
             const placeText = String(p.placeText ?? '').replace(/\s+/g, ' ').trim();
             if (!place) return json({ error: 'missing_place' }, 400);
             if (place === 'other' && (placeText.length < 2 || placeText.length > 120)) return json({ error: 'invalid_place' }, 400);
             const today = new Intl.DateTimeFormat('fr-FR', { timeZone: 'Europe/Paris', day: '2-digit', month: '2-digit', year: 'numeric' }).format(new Date());
+            salePlace = place === 'other' ? placeText : 'Showcase Paris';
+            todayIso = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Paris' }).format(new Date());
             onsiteLine = `Retrait : sur place — Lieu de la vente : ${place === 'other' ? placeText : 'Showcase Paris'} (${today})${note ? ' — ' + note : ''}`;
         }
         if (kind !== 'onsite' && !DATE_RE.test(date)) return json({ error: 'invalid_date' }, 400);
@@ -84,14 +91,18 @@ Deno.serve(async (req) => {
 
         const db = admin();
         const { data: sale, error } = await db.from('affiliate_sales')
-            .select('id, email, partner, purchase_channel, admin_note').eq('id', saleId).is('deleted_at', null).maybeSingle();
+            .select('id, email, partner, purchase_channel, admin_note, ordered_on').eq('id', saleId).is('deleted_at', null).maybeSingle();
         if (error) throw error;
         if (!sale || String(sale.email ?? '').toLowerCase() !== email) return json({ error: 'not_found' }, 404);
         if (sale.purchase_channel !== 'showroom' || !['muling', 'hisong'].includes(String(sale.partner))) return json({ error: 'not_showroom' }, 400);
 
         const line = onsiteLine || `Retrait proposé (${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC) : ${kind === 'showcase' ? 'showcase du' : 'date choisie'} ${date}${time ? ' à ' + time : ''}${note ? ' — ' + note : ''}`;
         const admin_note = [sale.admin_note, line].filter(Boolean).join('\n');
-        const { error: updErr } = await db.from('affiliate_sales').update({ admin_note }).eq('id', saleId);
+        const { error: updErr } = await db.from('affiliate_sales').update({
+            admin_note,
+            ...(salePlace ? { sale_place: salePlace } : {}),
+            ...(salePlace && !sale.ordered_on ? { ordered_on: todayIso } : {}),
+        }).eq('id', saleId);
         if (updErr) throw updErr;
         return json({ ok: true });
     } catch (err) {
