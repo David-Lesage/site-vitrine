@@ -53,7 +53,7 @@ export const esGuides: GuidesByLang = {
         "blocks": [
           {
             "kind": "p",
-            "html": "Mi método se basa en tres puntos de referencia concretos que sustituyen a los pentagramas y las teclas negras. Primero, <strong>el color</strong>: a cada grado de la escala se le asigna un color (las ChromaKeys), de modo que tocar una melodía se convierte en seguir una secuencia de colores. Segundo, <strong>la forma</strong>: cada acorde dibuja una geometría en el instrumento (las Constelaciones), una tablatura visual mucho más expresiva que un diagrama de acordes. Finalmente, <strong>la emoción</strong>: cada grado conlleva un color emocional (impulso, relajación, nostalgia…), para que puedas tocar lo que sientes."
+            "html": "Mi método se basa en tres puntos de referencia concretos que sustituyen a los pentagramas y las teclas negras. Primero, <strong>el color</strong>: cada nota recibe su propio color (las ChromaKeys), de modo que tocar una melodía se convierte en seguir una secuencia de colores. Segundo, <strong>la forma</strong>: cada acorde dibuja una geometría en el instrumento (las Constelaciones), una tablatura visual mucho más expresiva que un diagrama de acordes. Finalmente, <strong>la emoción</strong>: cada grado conlleva un color emocional (impulso, relajación, nostalgia…), para que puedas tocar lo que sientes."
           },
           {
             "kind": "ul",

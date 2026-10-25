@@ -1520,7 +1520,7 @@ export const es: Dict = {
     "problem2Text": "El Neotone cambia de escala sin cesar, lo cual es una ventaja, pero también una trampa: las notas bajo tus dedos nunca son las mismas dos veces. No hay un punto fijo: el cerebro se satura, como si tuvieras que reaprender a tocar el instrumento con cada escala.",
     "chromaEyebrow": "Colores y geometría",
     "chromaTitle": "¿Y si hiciéramos visible lo invisible?",
-    "chromaIntro": "En lugar de mostrar los nombres de las notas —que cambian constantemente—, la aplicación muestra la <strong>estructura</strong> de la música. A cada uno de los siete grados se le asigna un color fijo, del rojo al morado: este es el sistema ChromaKeys. Y cada acorde está representado por una figura geométrica luminosa.",
+    "chromaIntro": "En lugar de mostrar los nombres de las notas —que cambian constantemente—, la aplicación muestra la <strong>estructura</strong> de la música. A cada uno de los siete grados se le asigna un color y una emoción. Las ChromaKeys dan el suyo a cada nota. Y cada acorde está representado por una figura geométrica luminosa.",
     "chromaPunch": "Lo que era invisible se vuelve visible.",
     "constelEyebrow": "El lenguaje de las constelaciones",
     "constelTitle": "La nueva tablatura visual para handpan",

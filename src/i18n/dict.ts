@@ -2099,7 +2099,7 @@ const fr = {
     chromaEyebrow: 'Couleurs & géométrie',
     chromaTitle: 'Et si on rendait l’invisible visible ?',
     chromaIntro:
-      'Plutôt que les noms de notes — qui changent en permanence — l’application montre la <strong>structure</strong> de la musique. Les 7 degrés reçoivent chacun une couleur fixe, du rouge au violet : c’est le système ChromaKeys. Et chaque accord dessine une forme géométrique lumineuse.',
+      'Plutôt que les noms de notes — qui changent en permanence — l’application montre la <strong>structure</strong> de la musique. Les sept degrés reçoivent chacun une couleur et une émotion. Les ChromaKeys donnent la sienne à chaque note. Et chaque accord dessine une forme géométrique lumineuse.',
     chromaPunch: 'Ce qui était invisible devient visible.',
     constelEyebrow: 'Le langage des Constellations',
     constelTitle: 'La nouvelle tablature visuelle du handpan',

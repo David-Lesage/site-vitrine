@@ -1742,7 +1742,7 @@ export const en: Dict = {
     chromaEyebrow: 'Colours & geometry',
     chromaTitle: 'What if we made the invisible visible?',
     chromaIntro:
-      'Instead of note names — which change constantly — the app shows the <strong>structure</strong> of music. The 7 degrees each receive a fixed colour, from red to violet: this is the ChromaKeys system. And every chord draws a glowing geometric shape.',
+      'Instead of note names — which change constantly — the app shows the <strong>structure</strong> of music. The seven degrees each receive a colour and an emotion. ChromaKeys give each note its own. And every chord draws a glowing geometric shape.',
     chromaPunch: 'What was invisible becomes visible.',
     constelEyebrow: 'The language of Constellations',
     constelTitle: 'The handpan’s new visual tablature',
