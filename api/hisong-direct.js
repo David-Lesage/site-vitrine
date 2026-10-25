@@ -19,6 +19,12 @@ export default async function handler(req, res) {
       res.status(400).json({ error: 'invalid_email' })
       return
     }
+    // David 25/10/2026 : montant variable au showroom (remise), base et plafond 340 €.
+    const amount = Math.round(Number(body.amount) * 100) / 100
+    if (!Number.isFinite(amount) || amount <= 0 || amount > 340) {
+      res.status(400).json({ error: 'invalid_amount' })
+      return
+    }
     const headers = { apikey: ANON, Authorization: `Bearer ${ANON}`, 'Content-Type': 'application/json' }
     if (process.env.SITE_LEAD_TOKEN) headers['x-site-token'] = process.env.SITE_LEAD_TOKEN
     const r = await fetch(`${SUPABASE_URL}/functions/v1/hisong-direct`, {
@@ -31,7 +37,8 @@ export default async function handler(req, res) {
         phone: body.phone,
         // David 24/10/2026 : au showroom, seulement micro + RX Plus (pas de micro seul).
         pack: 's1RxPlus',
-        quantity: 1, // lien Stripe à montant fixe : 1 micro par réservation
+        quantity: 1, // 1 micro par réservation
+        amount,
         message: body.message,
         termsAccepted: body.termsAccepted === true,
         newsOptIn: body.newsOptIn === true,
