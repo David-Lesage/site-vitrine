@@ -19,9 +19,9 @@ export default async function handler(req, res) {
       res.status(400).json({ error: 'invalid_email' })
       return
     }
-    // David 25/10/2026 : montant variable au showroom (remise), base et plafond 340 €.
+    // David 25/10/2026 : montant OBLIGATOIRE réinscrit par le client (celui payé sur Stripe), 1–340 €.
     const amount = Math.round(Number(body.amount) * 100) / 100
-    if (!Number.isFinite(amount) || amount <= 0 || amount > 340) {
+    if (!Number.isFinite(amount) || amount < 1 || amount > 340) {
       res.status(400).json({ error: 'invalid_amount' })
       return
     }
