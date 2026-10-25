@@ -124,7 +124,7 @@ const fr = {
   ],
   boxNote:
     'Le RX Plus (Universal Pack) ne sert pas qu’au live. Il te permet de :',
-  rxUses: ['Jouer en live (table de mixage, looper, enceinte portative)', 'Utiliser ton propre casque ou ta propre oreillette', 'Utiliser jusqu’à 3 casques ou oreillettes en même temps', 'Faire des vidéos avec une caméra ou un appareil photo DSLR'],
+  rxUses: ['Jouer en live (table de mixage, looper, enceinte portative)', 'Brancher ton propre casque ou tes oreillettes filaires : 2 sorties mini-jack, donc 2 casques ou 2 paires d’oreillettes', 'Faire écouter jusqu’à 3 personnes en même temps (ces 2 sorties + les écouteurs sans fil fournis avec le micro)', 'Récupérer le son du micro en USB-C (ordinateur, téléphone)', 'Faire des vidéos avec une caméra ou un appareil photo DSLR'],
 
   contextsEyebrow: 'Dans quels contextes',
   contextsTitle: 'Un même micro, plusieurs usages',
@@ -222,7 +222,7 @@ const en: HisongCopy = {
   ],
   boxNote:
     'The RX Plus (Universal Pack) isn’t only for playing live. It lets you:',
-  rxUses: ['Play live (mixing desk, looper, portable speaker)', 'Use your own headphones or earphones', 'Use up to 3 headphones or earphones at the same time', 'Make videos with a camera or a DSLR'],
+  rxUses: ['Play live (mixing desk, looper, portable speaker)', 'Plug in your own wired headphones or earphones: 2 mini-jack outputs, so 2 headphones or 2 pairs of earphones', 'Let up to 3 people listen at the same time (those 2 outputs + the wireless earbuds that come with the mic)', 'Get the mic’s sound over USB-C (computer, phone)', 'Make videos with a camera or a DSLR'],
 
   contextsEyebrow: 'Where to use it',
   contextsTitle: 'One mic, several uses',
@@ -318,7 +318,7 @@ const es: HisongCopy = {
   ],
   boxNote:
     'El RX Plus (Universal Pack) no sirve solo para tocar en directo. Te permite:',
-  rxUses: ['Tocar en directo (mesa de mezclas, looper, altavoz portátil)', 'Usar tus propios auriculares o tu propio auricular intraural', 'Usar hasta 3 auriculares a la vez', 'Grabar vídeos con una cámara o una réflex (DSLR)'],
+  rxUses: ['Tocar en directo (mesa de mezclas, looper, altavoz portátil)', 'Conectar tus propios auriculares con cable: 2 salidas mini-jack, es decir 2 cascos o 2 pares de auriculares', 'Que hasta 3 personas escuchen a la vez (esas 2 salidas + los auriculares inalámbricos incluidos con el micrófono)', 'Recuperar el sonido del micrófono por USB-C (ordenador, teléfono)', 'Grabar vídeos con una cámara o una réflex (DSLR)'],
 
   contextsEyebrow: 'En qué contextos',
   contextsTitle: 'Un mismo micrófono, varios usos',
