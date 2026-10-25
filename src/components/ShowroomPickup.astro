@@ -15,9 +15,9 @@ interface Props { lang: Lang }
 const { lang } = Astro.props
 const shows = upcomingShowcases(lang).slice(0, 6)
 const COPY = {
-  fr: { title: 'Quand viens-tu chercher ton micro ?', intro: 'Ta réservation est faite. Propose-moi un moment pour le retrait au showroom, à Paris : je te confirme par email.', show: 'Pendant un showcase', own: 'À une autre date', date: 'Date', time: 'Horaire', note: 'Un mot (facultatif)', submit: 'Proposer ce moment', sending: 'Envoi…', later: 'Je choisirai plus tard par email', error: 'L’envoi a échoué. Réessaie, ou écris-moi à contact@lesagedavid.fr.', thanks: 'Merci, c’est noté ✨ Je te confirme le rendez-vous par email.', close: 'Fermer', none: 'Aucun showcase annoncé pour l’instant : propose ta date.' },
-  en: { title: 'When will you pick up your mic?', intro: 'Your reservation is done. Suggest a time to collect it at the showroom in Paris: I’ll confirm by email.', show: 'During a showcase', own: 'On another date', date: 'Date', time: 'Time', note: 'A note (optional)', submit: 'Suggest this time', sending: 'Sending…', later: 'I’ll choose later by email', error: 'Sending failed. Try again, or write to contact@lesagedavid.fr.', thanks: 'Thanks, noted ✨ I’ll confirm the appointment by email.', close: 'Close', none: 'No showcase announced yet: suggest your own date.' },
-  es: { title: '¿Cuándo vienes a recoger tu micrófono?', intro: 'Tu reserva está hecha. Propónme un momento para recogerlo en el showroom, en París: te lo confirmo por correo.', show: 'Durante un showcase', own: 'En otra fecha', date: 'Fecha', time: 'Hora', note: 'Un comentario (opcional)', submit: 'Proponer este momento', sending: 'Enviando…', later: 'Elegiré más tarde por correo', error: 'El envío ha fallado. Inténtalo de nuevo o escríbeme a contact@lesagedavid.fr.', thanks: 'Gracias, anotado ✨ Te confirmo la cita por correo.', close: 'Cerrar', none: 'Aún no hay showcase anunciado: propón tu fecha.' },
+  fr: { onsite: 'Je suis déjà sur place avec David — je repars avec mon micro', where: 'Où es-tu ?', wShow: 'Au showcase à Paris', wOther: 'Autre lieu', wText: 'Précise l’endroit (ex. festival, ville)', title: 'Quand viens-tu chercher ton micro ?', intro: 'Ta réservation est faite. Propose-moi un moment pour le retrait au showroom, à Paris : je te confirme par email.', show: 'Pendant un showcase', own: 'À une autre date', date: 'Date', time: 'Horaire', note: 'Un mot (facultatif)', submit: 'Proposer ce moment', sending: 'Envoi…', later: 'Je choisirai plus tard par email', error: 'L’envoi a échoué. Réessaie, ou écris-moi à contact@lesagedavid.fr.', thanks: 'Merci, c’est noté ✨ Je te confirme le rendez-vous par email.', close: 'Fermer', none: 'Aucun showcase annoncé pour l’instant : propose ta date.' },
+  en: { onsite: 'I’m already there with David — I’m leaving with my mic', where: 'Where are you?', wShow: 'At the showcase in Paris', wOther: 'Another place', wText: 'Tell me where (e.g. festival, city)', title: 'When will you pick up your mic?', intro: 'Your reservation is done. Suggest a time to collect it at the showroom in Paris: I’ll confirm by email.', show: 'During a showcase', own: 'On another date', date: 'Date', time: 'Time', note: 'A note (optional)', submit: 'Suggest this time', sending: 'Sending…', later: 'I’ll choose later by email', error: 'Sending failed. Try again, or write to contact@lesagedavid.fr.', thanks: 'Thanks, noted ✨ I’ll confirm the appointment by email.', close: 'Close', none: 'No showcase announced yet: suggest your own date.' },
+  es: { onsite: 'Ya estoy allí con David — me llevo mi micrófono', where: '¿Dónde estás?', wShow: 'En el showcase de París', wOther: 'Otro lugar', wText: 'Indica el lugar (p. ej. festival, ciudad)', title: '¿Cuándo vienes a recoger tu micrófono?', intro: 'Tu reserva está hecha. Propónme un momento para recogerlo en el showroom, en París: te lo confirmo por correo.', show: 'Durante un showcase', own: 'En otra fecha', date: 'Fecha', time: 'Hora', note: 'Un comentario (opcional)', submit: 'Proponer este momento', sending: 'Enviando…', later: 'Elegiré más tarde por correo', error: 'El envío ha fallado. Inténtalo de nuevo o escríbeme a contact@lesagedavid.fr.', thanks: 'Gracias, anotado ✨ Te confirmo la cita por correo.', close: 'Cerrar', none: 'Aún no hay showcase anunciado: propón tu fecha.' },
 }
 const c = COPY[(lang in COPY ? lang : 'en') as keyof typeof COPY]
 const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none'
@@ -29,6 +29,16 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
       <h2 id="sp-title" class="pr-10 font-display text-2xl font-700">{c.title}</h2>
       <p class="mt-2 text-sm text-ink-soft/85">{c.intro}</p>
       <form id="showroom-pickup-form" class="mt-5 grid gap-3" novalidate>
+        <label class="flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border border-ink/15 p-3 has-[:checked]:border-copper has-[:checked]:bg-copper/10">
+          <input type="radio" name="slot" value="onsite" class="h-5 w-5 shrink-0 accent-rust" />
+          <span class="text-sm font-700">{c.onsite}</span>
+        </label>
+        <fieldset data-sp-onsite class="hidden space-y-1 rounded-xl border border-copper/30 bg-copper/5 p-3">
+          <legend class="px-1 text-sm font-600">{c.where}</legend>
+          <label class="flex min-h-11 cursor-pointer items-center gap-3"><input type="radio" name="place" value="showcase-paris" class="h-5 w-5 shrink-0 accent-rust" /><span class="text-sm">{c.wShow}</span></label>
+          <label class="flex min-h-11 cursor-pointer items-center gap-3"><input type="radio" name="place" value="other" class="h-5 w-5 shrink-0 accent-rust" /><span class="text-sm">{c.wOther}</span></label>
+          <label data-sp-other class="hidden"><span class="text-sm font-600">{c.wText}</span><input type="text" name="placeText" minlength="2" maxlength="120" class={input} /></label>
+        </fieldset>
         <fieldset class="grid gap-2">
           <legend class="mb-1 text-sm font-600">{c.show}</legend>
           {shows.length ? shows.map((s) => (
@@ -71,6 +81,13 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
     const custom = v === 'custom'
     modal?.querySelector('[data-sp-custom]')?.classList.toggle('hidden', !custom)
     if (dateIn) dateIn.required = custom
+    const onsite = v === 'onsite'
+    const placeV = (form?.querySelector('input[name="place"]:checked') as HTMLInputElement | null)?.value
+    modal?.querySelector('[data-sp-onsite]')?.classList.toggle('hidden', !onsite)
+    modal?.querySelector('[data-sp-other]')?.classList.toggle('hidden', !(onsite && placeV === 'other'))
+    form?.querySelectorAll<HTMLInputElement>('input[name="place"]').forEach((r) => { r.required = onsite })
+    const pt = form?.querySelector('input[name="placeText"]') as HTMLInputElement | null
+    if (pt) pt.required = onsite && placeV === 'other'
   }
   function close() {
     if (!modal) return
@@ -97,7 +114,12 @@ const input = 'mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4
     if (!form.reportValidity()) return
     const fd = new FormData(form)
     const [kind, sDate, sTime] = slot.split('|')
-    const pickup = kind === 'showcase'
+    if (kind === 'onsite' && fd.get('place') === 'other' && String(fd.get('placeText') || '').trim().length < 2) {
+      const pt = form.querySelector('input[name="placeText"]') as HTMLInputElement; pt.value = ''; pt.reportValidity(); return
+    }
+    const pickup = kind === 'onsite'
+      ? { kind: 'onsite', place: String(fd.get('place') || ''), placeText: String(fd.get('placeText') || '').trim(), note: String(fd.get('note') || '') }
+      : kind === 'showcase'
       ? { kind: 'showcase', date: sDate, time: sTime, note: String(fd.get('note') || '') }
       : { kind: 'custom', date: String(fd.get('date') || ''), time: String(fd.get('time') || ''), note: String(fd.get('note') || '') }
     const err = modal?.querySelector('[data-sp-error]'); err?.classList.add('hidden')

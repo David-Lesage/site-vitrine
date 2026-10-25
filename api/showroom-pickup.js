@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       method: 'POST', headers,
       body: JSON.stringify({
         action: 'pickup', saleId: String(body.saleId || ''), email: String(body.email || ''),
-        pickup: { kind: p.kind === 'showcase' ? 'showcase' : 'custom', date: String(p.date || ''), time: String(p.time || ''), note: String(p.note || '').slice(0, 500) },
+        pickup: { kind: p.kind === 'showcase' ? 'showcase' : p.kind === 'onsite' ? 'onsite' : 'custom', date: String(p.date || ''), time: String(p.time || ''), note: String(p.note || '').slice(0, 500), place: p.place === 'showcase-paris' || p.place === 'other' ? p.place : '', placeText: String(p.placeText || '').slice(0, 120) },
       }),
     })
     const data = await r.json().catch(() => ({}))
