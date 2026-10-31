@@ -323,6 +323,13 @@ details p{color:var(--creme2);margin-top:12px}
 .m-bientot{border-style:dashed}
 .btn.ghost{background:transparent;color:var(--creme);border:1px solid rgba(244,235,217,.35)}
 .m-note{color:var(--creme2);font-size:14px;margin-top:20px}
+.site-menu{position:relative;z-index:20;display:flex;align-items:center;gap:24px;padding:12px 24px;background:#0b0d17;border-bottom:1px solid rgba(244,235,217,.12);font:600 14px var(--sans)}
+.site-menu a{color:var(--creme2);text-decoration:none;white-space:nowrap}
+.site-menu a:hover,.site-menu a[aria-current]{color:var(--or)}
+.site-menu .site-nom{font:700 18px var(--serif);color:var(--creme)}
+.site-menu nav{display:flex;gap:18px;overflow-x:auto;min-width:0;scrollbar-width:none}
+.site-menu nav::-webkit-scrollbar{display:none}
+@media(max-width:860px){.site-menu{flex-direction:column;align-items:flex-start;gap:6px;padding:10px 16px}.site-menu nav{width:100%}}
 .m-choix .carte{display:flex;flex-direction:column;text-align:left}
 .m-choix .carte .promesse{flex:none;min-height:0;margin-bottom:14px}
 .m-choix .m-fonctions{flex:1 0 auto;margin:0 0 18px}
@@ -664,6 +671,7 @@ main>section[hidden]{display:none!important}
 </head>
 <body>
 <canvas id="ciel"></canvas>
+<header class="site-menu"><a class="site-nom" href="/">David Lesage</a><nav aria-label="Menu du site"><a href="/">Accueil</a><a href="/neotone/">Le Neotone</a><a href="/yishama/">Yishama</a><a href="/boutique/">Boutique</a><a href="/cours/">Cours</a><a href="/handpan-app/" aria-current="page">Handpan Constellation Studio</a><a href="/blog/">Blog</a><a href="/showroom/">Showroom</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a></nav></header>
 <main>
 
 <!-- 0. Ouverture : l’animation B4 « Étoile » de David -->
@@ -1001,7 +1009,7 @@ main>section[hidden]{display:none!important}
 
 </main>
 
-<nav class="pied-legal" aria-label="Liens du site"><a href="https://play.handpanstudio.app/">Se connecter</a><a href="/mentions-legales/">Mentions légales</a><a href="/conditions-generales/">Conditions générales</a><a href="/politique-de-confidentialite/">Confidentialité</a><a href="/contact/">Contact</a></nav>
+<nav class="pied-legal" aria-label="Liens du site"><a href="/">Accueil</a><a href="/neotone/">Le Neotone</a><a href="/yishama/">Yishama</a><a href="/boutique/">Boutique</a><a href="/cours/">Cours</a><a href="/blog/">Blog</a><a href="/showroom/">Showroom</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="https://play.handpanstudio.app/">Se connecter</a><a href="/mentions-legales/">Mentions légales</a><a href="/conditions-generales/">Conditions générales</a><a href="/politique-de-confidentialite/">Confidentialité</a><a href="/contact/">Contact</a></nav>
 
 <div class="barre-appel" aria-hidden="true"><span>Gratuit, sans carte bancaire</span><a class="btn" href="#inscription" data-modale="inscr" data-palier="g" tabindex="-1">Découvrir mon handpan</a></div>
 
