@@ -46,6 +46,7 @@ export default defineConfig({
   integrations: [
     icon(),
     sitemap({
+      customPages: ['https://www.lesagedavid.fr/handpan-app/'],
       // Page personnelle (lien avec jeton) : jamais dans le sitemap.
       filter: (page) => !page.includes('/showcase/ma-venue') && !page.includes('/neotone-suivi'),
       i18n: {

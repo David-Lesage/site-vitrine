@@ -1,0 +1,193 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ouverture B4, Étoile (David Lesage)</title>
+<style>
+html,body{margin:0;height:100%;background:#04060b;color:#e6ecf5;font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;overflow:hidden}
+svg{position:fixed;inset:0;width:100%;height:100%}
+.ln{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.kw{font-size:12px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;fill:#eef2f9}
+.sub{font-size:10px;letter-spacing:.22em;text-transform:uppercase;fill:#6f7d95;text-anchor:middle}
+.nm{font-weight:200;letter-spacing:.34em;fill:#f4f7fc;text-anchor:middle}
+.wl{font-size:9px;font-weight:500;letter-spacing:.06em;fill:#dfe6f2;text-anchor:middle}
+.wm{font-size:7px;font-weight:500;fill:#aeb9cc;text-anchor:middle}
+</style><script>/* HPI — langue + notation (autonome, copié dans chaque variante)
+ ?lang=fr|en|es|de|it|hu|zh (sinon langue du navigateur, sinon en) · ?notation=solfege|lettres
+ (défaut : fr/es/it = Do Ré Mi ; en/de/hu/zh = C D E — allemand : H = Si, B = Si♭).
+ Les 9 mots et 6 sous-titres reprennent le dictionnaire du bloc #hps-boot-anim de l'app. */
+(function(){
+var LG=['fr','en','es','de','it','hu','zh'],O=['en','es','de','it','hu','zh'];
+// clé = texte français ; valeurs dans l'ordre en, es, de, it, hu, zh
+var D={
+'Découvrir':['Discover','Descubrir','Entdecken','Scoprire','Felfedezés','发现'],
+'Jouer':['Play','Tocar','Spielen','Suonare','Játék','演奏'],
+'Créer':['Create','Crear','Erschaffen','Creare','Alkotás','创作'],
+'Apprendre':['Learn','Aprender','Lernen','Imparare','Tanulás','学习'],
+'Chanter':['Sing','Cantar','Singen','Cantare','Ének','歌唱'],
+'Voyager':['Travel','Viajar','Reisen','Viaggiare','Utazás','旅行'],
+'S’accorder':['Tune','Afinar','Stimmen','Accordare','Hangolás','调音'],
+'Enregistrer':['Record','Grabar','Aufnehmen','Registrare','Felvétel','录音'],
+'Partager':['Share','Compartir','Teilen','Condividere','Megosztás','分享'],
+'Les étoiles s’allument…':['The stars light up…','Las estrellas se encienden…','Die Sterne leuchten auf…','Le stelle si accendono…','Kigyúlnak a csillagok…','群星亮起…'],
+'Les accords prennent forme…':['Chords take shape…','Los acordes toman forma…','Akkorde nehmen Gestalt an…','Gli accordi prendono forma…','Az akkordok formát öltenek…','和弦渐渐成形…'],
+'Ton handpan apparaît…':['Your handpan appears…','Aparece tu handpan…','Dein Handpan erscheint…','Appare il tuo handpan…','Megjelenik a handpanod…','你的手碟出现了…'],
+'L’étoile s’allume…':['The star ignites…','La estrella se enciende…','Der Stern erstrahlt…','La stella si accende…','Felragyog a csillag…','星辰点亮…'],
+'Toutes les tonalités…':['Every key…','Todas las tonalidades…','Alle Tonarten…','Tutte le tonalità…','Minden hangnem…','所有调性…'],
+'Ton univers rayonne…':['Your universe shines…','Tu universo brilla…','Dein Universum strahlt…','Il tuo universo risplende…','Ragyog az univerzumod…','你的宇宙在闪耀…'],
+'Accordage des notes…':['Tuning the notes…','Afinando las notas…','Die Noten werden gestimmt…','Accordatura delle note…','A hangok hangolása…','正在调音…'],
+'Constellations d’accords…':['Chord constellations…','Constelaciones de acordes…','Akkord-Sternbilder…','Costellazioni di accordi…','Akkordcsillagképek…','和弦星座…'],
+'Ton studio s’ouvre…':['Opening your studio…','Tu estudio se abre…','Dein Studio öffnet sich…','Il tuo studio si apre…','Megnyílik a stúdiód…','你的工作室正在开启…'],
+'Atlas des gammes…':['Scale atlas…','Atlas de escalas…','Skalen-Atlas…','Atlante delle scale…','Skálaatlasz…','音阶图集…'],
+'Les étoiles s’alignent…':['The stars align…','Las estrellas se alinean…','Die Sterne richten sich aus…','Le stelle si allineano…','Sorba állnak a csillagok…','群星连成一线…'],
+'Ton écosystème se charge…':['Your ecosystem is loading…','Tu ecosistema se está cargando…','Dein Ökosystem wird geladen…','Il tuo ecosistema si sta caricando…','Betöltődik az ökoszisztémád…','正在加载你的生态系统…'],
+'Les notes s’accordent…':['The notes tune up…','Las notas se afinan…','Die Noten stimmen sich ein…','Le note si accordano…','A hangok összehangolódnak…','音符正在调和…'],
+'La géométrie prend forme…':['Geometry takes shape…','La geometría toma forma…','Die Geometrie nimmt Gestalt an…','La geometria prende forma…','Formát ölt a geometria…','几何渐渐成形…'],
+'Ton univers se charge…':['Your universe is loading…','Tu universo se está cargando…','Dein Universum wird geladen…','Il tuo universo si sta caricando…','Betöltődik az univerzumod…','正在加载你的宇宙…'],
+'Les tonalités s’enchaînent…':['The keys follow one another…','Las tonalidades se encadenan…','Die Tonarten reihen sich aneinander…','Le tonalità si susseguono…','A hangnemek egymásba fűződnek…','调性接连而来…'],
+'Le cycle des quintes se referme…':['The circle of fifths closes…','El círculo de quintas se cierra…','Der Quintenzirkel schließt sich…','Il circolo delle quinte si chiude…','Bezárul a kvintkör…','五度圈闭合…'],
+'Un handpan apparaît…':['A handpan appears…','Aparece un handpan…','Ein Handpan erscheint…','Appare un handpan…','Megjelenik egy handpan…','一只手碟出现了…'],
+'Chaque étoile trouve sa note…':['Each star finds its note…','Cada estrella encuentra su nota…','Jeder Stern findet seinen Ton…','Ogni stella trova la sua nota…','Minden csillag megtalálja a hangját…','每颗星找到自己的音…'],
+'Du ding naît une étoile…':['A star is born from the ding…','Del ding nace una estrella…','Aus dem Ding wird ein Stern geboren…','Dal ding nasce una stella…','A dingből csillag születik…','从中心音诞生一颗星…'],
+'La lumière monte du ding…':['Light rises from the ding…','La luz sube desde el ding…','Licht steigt aus dem Ding auf…','La luce sale dal ding…','Fény száll fel a dingből…','光从中心音升起…'],
+'L’onde se répand…':['The wave spreads…','La onda se expande…','Die Welle breitet sich aus…','L’onda si propaga…','Szétterjed a hullám…','波动扩散开来…'],
+'Ton univers bat…':['Your universe beats…','Tu universo late…','Dein Universum schlägt…','Il tuo universo batte…','Dobog az univerzumod…','你的宇宙在跳动…'],
+'Chargement':['Loading','Cargando','Wird geladen','Caricamento','Betöltés','加载中'],
+'Chargement de {n}':['Loading {n}','Cargando {n}','{n} wird geladen','Caricamento di {n}','{n} betöltése','正在加载 {n}']};
+// nom de l'app : identique dans toutes les langues tant qu'il n'est pas tranché ;
+// pour le traduire : NAME.es=['…','…'] (2 lignes : nom, puis « STUDIO »)
+var NAME={};
+var DEF={lang:'',notation:''};// réglage figé au téléchargement depuis index.html (sinon vide)
+var q=new URLSearchParams(location.search),lang=(q.get('lang')||DEF.lang||'').slice(0,2).toLowerCase();
+if(LG.indexOf(lang)<0){lang=null;var nl=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];
+ for(var i=0;i<nl.length;i++){var c=String(nl[i]).slice(0,2).toLowerCase();if(LG.indexOf(c)>=0){lang=c;break}}}
+lang=lang||'en';
+var nt=q.get('notation')||DEF.notation,sol=nt==='solfege'?true:nt==='lettres'?false:(lang==='fr'||lang==='es'||lang==='it');
+var SY=lang==='fr'?['Do','Ré','Mi','Fa','Sol','La','Si']:lang==='en'?['Do','Re','Mi','Fa','Sol','La','Ti']:['Do','Re','Mi','Fa','Sol','La','Si'];
+// « C », « F♯ », « B♭m », « A♯° »… → selon la notation ; mineur = « m » (solfège : « Ré m », lettres : « Dm »)
+function note(s){var m=/^([A-G])([♯♭#b]?)(.*)$/.exec(s);if(!m)return s;var L=m[1],a=m[2],r=m[3];
+ if(sol)return SY['CDEFGAB'.indexOf(L)]+a+(r==='m'?' m':r);
+ if(lang==='de'&&L==='B'){if(a==='♭'||a==='b')return 'B'+r;if(!a)return 'H'+r}
+ return L+a+r}
+function t(fr){var k=String(fr).replace(/'/g,'’'),i=O.indexOf(lang);if(i<0)return fr;var v=D[k];return v&&v[i]||fr}
+function name(def){return NAME[lang]||def}
+function apply(){document.documentElement.lang=lang;
+ document.querySelectorAll('[data-i18n]').forEach(function(e){e.textContent=t(e.getAttribute('data-i18n')||e.textContent)});
+ document.querySelectorAll('[aria-label]').forEach(function(e){var v=e.getAttribute('aria-label'),m=/^Chargement de (.+)$/.exec(v);
+  e.setAttribute('aria-label',m?(lang==='fr'?v:t('Chargement de {n}').replace('{n}',m[1])):t(v))})}
+window.HPI={lang:lang,solfege:sol,t:t,note:note,name:name,apply:apply};
+document.documentElement.lang=lang;
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);else apply();
+})();</script></head><body>
+<svg id="s" viewBox="-400 -330 800 660" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Chargement de Handpan Constellation Studio"></svg>
+<script>
+const s=document.getElementById('s'),NS='http://www.w3.org/2000/svg',el=(t,a,p=s)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.append(e);return e};
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches,qt=new URLSearchParams(location.search).get('t');
+// aléa déterministe : mêmes images à chaque chargement / capture
+const rnd=(a=>()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296})(2026);
+// ChromaKeys (variables de l'app) ; La éclairci pour la lisibilité sur ciel sombre
+const K=[['C','#DC2626'],['Cs','#EF4444'],['D','#EA580C'],['Ds','#F97316'],['E','#EAB308'],['F','#16A34A'],['Fs','#22C55E'],['G','#0EA5E9'],['Gs','#6BCFFA'],['A','#3B39FF'],['As','#5050FF'],['B','#EB00FF']];
+const col=n=>K.find(k=>k[0]===n)[1],pol=(a,r)=>[Math.sin(a)*r,-Math.cos(a)*r],GOLD='#d9b45a';
+const cl=(x,a,b)=>Math.min(1,Math.max(0,(x-a)/(b-a))),lerp=(a,b,k)=>a+(b-a)*k;
+const io=t=>t<.5?4*t*t*t:1-(-2*t+2)**3/2,oc=t=>1-(1-t)**3,ob=t=>1+2.70158*(t-1)**3+1.70158*(t-1)**2,f1=v=>(+v).toFixed(1),f3=v=>(+v).toFixed(3);
+// ---- defs : flous, halos, nébuleuses, dégradés des rayons
+const defs=el('defs',{});
+[['g',1.4],['g2',4],['g3',10],['g4',2.2]].forEach(([id,sd])=>{const f=el('filter',{id,x:'-3',y:'-3',width:'7',height:'7'},defs);el('feGaussianBlur',{stdDeviation:sd},f)});
+const rg=(id,st)=>{const g=el('radialGradient',{id},defs);st.forEach(([o,c,a])=>el('stop',{offset:o,'stop-color':c,'stop-opacity':a},g))};
+rg('sky',[[0,'#0d182c',1],[.55,'#070d19',1],[1,'#04060b',1]]);rg('neb',[[0,'#2a2e7a',.28],[.6,'#121a3a',.08],[1,'#04060b',0]]);
+rg('halo',[[0,'#ffffff',.95],[.1,'#fff3dd',.62],[.3,'#c3caff',.28],[.6,'#6b7ae0',.1],[1,'#04060b',0]]);rg('core',[[0,'#ffffff',1],[.5,'#fff4dc',.9],[1,'#ffffff',0]]);
+rg('pan',[[0,'#1a2742',.9],[.75,'#0f1a2f',.7],[1,'#0b1424',.4]]);
+K.forEach(([n,c])=>{const g=el('linearGradient',{id:'r'+n,x1:0,y1:1,x2:0,y2:0},defs);el('stop',{offset:0,'stop-color':c,'stop-opacity':.95},g);el('stop',{offset:.45,'stop-color':c,'stop-opacity':.45},g);el('stop',{offset:1,'stop-color':c,'stop-opacity':0},g)});
+// ---- ciel : fond, deux nébuleuses, trois plans d'étoiles (parallaxe)
+el('rect',{x:-600,y:-500,width:1200,height:1000,fill:'url(#sky)'});
+const nebs=[el('ellipse',{cx:-120,cy:-80,rx:330,ry:210,fill:'url(#neb)'}),el('ellipse',{cx:160,cy:70,rx:280,ry:190,fill:'url(#neb)',opacity:.6})];
+const layers=[[150,.2,.5,.2,.45,1],[80,.45,1.05,.35,.6,2.2],[26,1,1.7,.5,.75,4]].map(([n,r0,r1,o0,o1,px])=>{const g=el('g',{});
+ const st=[...Array(n)].map(()=>{const c=el('circle',{cx:f1((rnd()-.5)*880),cy:f1((rnd()-.5)*740),r:f1(r0+rnd()*(r1-r0)),fill:rnd()<.12?'#ffe9c4':rnd()<.5?'#cfd8ea':'#ffffff'},g);return[c,o0+rnd()*(o1-o0),rnd()*6.28,.6+rnd()*1.6,.12+rnd()*.25]});return{g,st,px}});
+// ---- scène centrale (légèrement remontée : le nom s'inscrit sous l'étoile, dans son halo)
+const CY=-30,SC=el('g',{transform:`translate(0,${CY})`});
+// handpan vu de dessus : coque, ding, couronne de champs de notes
+const H=[[0,120,'A'],[-78,96,'As'],[78,96,'C'],[-118,28,'D'],[118,28,'E'],[-98,-70,'F'],[98,-70,'G'],[0,-118,'A']].map(([x,y,n])=>[x*.88,y*.88,n]);
+const role={D:[0,0],A:H[0],As:H[1],C:H[2],E:H[4],F:H[5],G:H[6]};
+const hp=el('g',{opacity:0},SC);
+el('circle',{r:160,fill:'#000',filter:'url(#g3)',opacity:.5},hp);el('circle',{r:150,fill:'url(#pan)',stroke:'#c9d4e6','stroke-width':1},hp);
+el('circle',{r:144,fill:'none',stroke:'#c9d4e6','stroke-width':.4,'stroke-opacity':.45},hp);el('circle',{r:42,fill:'none',stroke:'#c9d4e6','stroke-width':.35,'stroke-opacity':.3},hp);
+[...H.map(([x,y,n])=>[x,y,n,15]),[0,0,'D',27]].forEach(([x,y,n,r])=>el('ellipse',{cx:x,cy:y,rx:r,ry:r===27?r:r*.86,fill:col(n),'fill-opacity':.06,stroke:col(n),'stroke-width':.8,'stroke-opacity':.85,transform:`rotate(${(Math.atan2(y,x)*57.3+90).toFixed(1)} ${x} ${y})`},hp));
+const extra=[H[3],H[7]].map(([x,y,n])=>{const g=el('g',{opacity:0},hp);el('circle',{cx:x,cy:y,r:9,fill:col(n),filter:'url(#g2)',opacity:.55},g);el('circle',{cx:x,cy:y,r:3,fill:col(n)},g);return g});
+// l'étoile : halo, 24 rayons (12 ChromaKeys longs + 12 fins), cœur, particules
+const star=el('g',{opacity:0},SC),halo=el('circle',{r:230,fill:'url(#halo)',opacity:0},star),rays=el('g',{},star);
+const RY=K.map(([n,c],k)=>{const g=el('g',{transform:`rotate(${k*30})`},rays),p=el('polygon',{fill:'url(#r'+n+')',points:'0 0'},g);return{p,k,L:168+(k%3)*18}});
+const RF=K.map(([n,c],k)=>{const g=el('g',{transform:`rotate(${k*30+15})`},rays),p=el('line',{x1:0,y1:0,x2:0,y2:0,stroke:'#fff','stroke-width':.5,'stroke-linecap':'round'},g);return{p,k,L:92+(k%2)*22}});
+const coreG=el('circle',{r:26,fill:'url(#core)',opacity:0},star),core=el('circle',{r:7,fill:'#fff',filter:'url(#g)',opacity:0},star);
+const PT=[...Array(46)].map(()=>{const c=el('circle',{r:f1(.5+rnd()*.9),fill:rnd()<.5?'#fff':K[rnd()*12|0][1],opacity:0},star);return{c,a:rnd()*6.283,v:22+rnd()*26,ph:rnd()*7,sw:(rnd()-.5)*.3}});
+// ---- le cycle des quintes complet (roue « Choisis ta tonalité ») : 12 majeures en couronne (ChromaKeys),
+// relatives mineures en couronne intérieure, diminués au centre, réseau de traits fins dorés
+const R1=118,R2=74,R3=36,pc=k=>(7*k)%12,MJ=['C','G','D','A','E','B','F♯','D♭','A♭','E♭','B♭','F'].map(HPI.note),MN=['Am','Em','Bm','F♯m','C♯m','G♯m','D♯m','B♭m','Fm','Cm','Gm','Dm'].map(HPI.note),DM=['B°','F♯°','C♯°','G♯°','D♯°','A♯°','F°','C°','G°','D°','A°','E°'].map(HPI.note);
+const P1=MJ.map((_,k)=>pol(k*Math.PI/6,R1)),P2=MJ.map((_,k)=>pol(k*Math.PI/6,R2)),P3=MJ.map((_,k)=>pol(k*Math.PI/6,R3));
+const wheel=el('g',{opacity:0},SC),net=el('g',{class:'ln',stroke:GOLD},wheel);
+const mk=(d,c,w,p=s)=>el('path',{d,class:'ln',stroke:c,'stroke-width':w,pathLength:1,'stroke-dasharray':1,'stroke-dashoffset':1},p);
+const circ=r=>`M0 ${-r}A${r} ${r} 0 1 1 0 ${r}A${r} ${r} 0 1 1 0 ${-r}`,pts=(P,step)=>'M'+[...Array(13)].map((_,j)=>P[(j*step)%12].map(f1).join(' ')).join('L');
+const NET=[[circ(R1),.7,0],[pts(P1,7),.55,.1],[MJ.map((_,k)=>`M${P1[k].map(f1).join(' ')}L${P2[k].map(f1).join(' ')}`).join(''),.4,.25],[circ(R2),.45,.3],[pts(P2,5),.35,.4],[circ(R3),.35,.5],[MJ.map((_,k)=>`M${P2[k].map(f1).join(' ')}L${P3[(k+3)%12].map(f1).join(' ')}`).join(''),.25,.55]].map(([d,w,dl])=>({p:mk(d,GOLD,w,net),dl}));
+const node=(P,k,c,r,lbl,cls,dy)=>{const g=el('g',{opacity:0,transform:`translate(${P[k].map(f1).join(',')})`},wheel);el('circle',{r:r+4,fill:c,filter:'url(#g4)',opacity:.35},g);el('circle',{r,fill:'#070c16',stroke:c,'stroke-width':r>6?.9:.6},g);
+ if(lbl){const t=el('text',{class:cls,y:dy},g);t.textContent=lbl}return g};
+const ND1=MJ.map((n,k)=>node(P1,k,K[pc(k)][1],11,n,'wl',3.2)),ND2=MN.map((n,k)=>node(P2,k,K[(pc(k)+9)%12][1],8,n,'wm',2.4)),ND3=DM.map((n,k)=>node(P3,k,K[(pc(k)+11)%12][1],2.2,null));
+// ---- 12 notes-étoiles : positions dispersées (composition fixe), puis handpan, puis cœur de l'étoile
+const S0={D:[-70,-193],E:[139,-177],F:[200,-7],G:[138,165],A:[-33,187],As:[-196,100],C:[-184,-90],Cs:[-296,-176],Ds:[296,-206],Fs:[306,106],Gs:[-326,-10],B:[46,-96]};
+const notes=el('g',{},SC);
+const N=K.map(([n,c],k)=>{const g=el('g',{opacity:0},notes),h=el('circle',{r:11,fill:c,filter:'url(#g2)',opacity:.7},g),d=el('circle',{r:3,fill:c},g),w=el('circle',{r:1.3,fill:'#fff',opacity:.9},g);
+ const sp=el('path',{d:'M-14 0H14M0 -14V14',class:'ln',stroke:'#fff','stroke-width':.6,opacity:0},g);return{n,c,k,g,h,d,w,sp,s0:S0[n],t:role[n]||null,a:k*Math.PI/6}});
+const setXY=(o,x,y)=>[o.h,o.d,o.w].forEach(e=>{e.setAttribute('cx',f1(x));e.setAttribute('cy',f1(y))});
+// constellations d'accords de D Kurd (tracé progressif, couleur de la fondamentale)
+const cons=el('g',{},SC);
+const CH=[['D',['D','F','A']],['F',['F','A','C']],['G',['G','As','D']],['A',['A','C','E']]].map(([r,ns],k)=>({p:mk('',col(r),.75,cons),ix:ns.map(n=>N.find(o=>o.n===n)),a:1.2+k*.34}));
+// ---- le nom, dans le rayonnement ; l'anneau des 9 mots de l'écosystème ; le sous-titre
+const name=el('g',{opacity:0});
+const nm=(y,fs,txt)=>{const sh=el('text',{class:'nm',y,'font-size':fs,filter:'url(#g2)',fill:'#fff6e6',opacity:.9},name);sh.textContent=txt;const t=el('text',{class:'nm',y,'font-size':fs},name);t.textContent=txt;return[t,sh]};
+const _N=HPI.name(['HANDPAN CONSTELLATION','STUDIO']),NM=[nm(140,16,_N[0]),nm(161,10.5,_N[1])];
+const W=['Découvrir','Jouer','Créer','Apprendre','Chanter','Voyager','S’accorder','Enregistrer','Partager'].map(HPI.t);
+const orbit=el('ellipse',{cx:0,cy:-14,rx:270,ry:220,fill:'none',stroke:'#7f93b3','stroke-width':.5,'stroke-dasharray':'1 7',opacity:0});
+const WD=W.map((w,i)=>{const a=i*Math.PI*2/W.length,x=Math.sin(a)*286,y=-14-Math.cos(a)*236,g=el('g',{opacity:0,transform:`translate(${f1(x)},${f1(y+8)})`});
+ const t=el('text',{class:'kw',y:4,'text-anchor':Math.sin(a)>.35?'start':Math.sin(a)<-.35?'end':'middle'},g);t.textContent=w;return{g,x,y,i}});
+const sub=el('text',{class:'sub',y:300,opacity:0});const L=['Les étoiles s\'allument…','Les accords prennent forme…','Ton handpan apparaît…','L\'étoile s\'allume…','Toutes les tonalités…','Ton univers rayonne…'].map(HPI.t);
+// ---- orchestration
+const T0=performance.now();
+function frame(now){const t=rm?99:qt!=null?+qt:(now-T0)/1000,lp=Math.max(0,t-8.4),br=Math.sin(lp*1.15);
+ const sky=cl(t,0,1.4);nebs.forEach((e,i)=>e.setAttribute('opacity',f3(sky*(i?.6:1)*(.85+.15*Math.sin(lp*.4+i)))));
+ layers.forEach((l,i)=>{l.g.setAttribute('transform',`translate(${f1(Math.sin(t*.09+i)*l.px)},${f1(Math.cos(t*.07+i)*l.px*.6)})`);
+  l.st.forEach(([c,o,ph,w,am])=>c.setAttribute('opacity',f3(sky*(o+am*Math.sin(t*w+ph)))))});
+ sub.setAttribute('opacity',f3(cl(t,.9,2)*(.75+.25*br)));
+ // notes : allumage, convergence vers le handpan, puis vers le cœur de l'étoile
+ const conv=io(cl(t,3,4)),toC=io(cl(t,4.3,5));
+ N.forEach(o=>{const pop=cl(t,.3+o.k*.12,.9+o.k*.12),sc=ob(pop);let[x,y]=o.s0,op=pop;
+  if(o.t){x=lerp(x,o.t[0],conv);y=lerp(y,o.t[1],conv)}else op*=1-cl(t,3.1,3.8);
+  x*=1-toC;y*=1-toC;if(!o.t)op=Math.max(op,cl(t,4.4,4.7));
+  setXY(o,x,y);o.g.setAttribute('transform',`translate(${f1(x)},${f1(y)}) scale(${f3(Math.max(.01,sc)*(1-.5*toC))}) translate(${f1(-x)},${f1(-y)})`);
+  o.h.setAttribute('opacity',f3(.7*(1-.2*Math.sin(t*1.7+o.k))));o.sp.setAttribute('transform',`translate(${f1(x)},${f1(y)}) rotate(${f1(45*pop)})`);
+  o.sp.setAttribute('opacity',f3(Math.sin(Math.PI*pop)*.8*(1-conv)));o.g.setAttribute('opacity',f3(op*(1-cl(t,4.7,5))))});
+ CH.forEach(c=>{c.p.setAttribute('d','M'+c.ix.map(o=>f1(o.d.getAttribute('cx'))+' '+f1(o.d.getAttribute('cy'))).join('L')+'Z');
+  c.p.setAttribute('stroke-dashoffset',f3(1-io(cl(t,c.a,c.a+.9))));const f=cl(t,c.a+1,c.a+1.7);
+  c.p.setAttribute('stroke-width',f3(.9-.4*f));c.p.setAttribute('stroke-opacity',f3(1-.35*f))});
+ cons.setAttribute('opacity',f3(1-cl(t,4.2,4.7)));
+ // handpan : apparaît sous les constellations réunies, puis se résorbe dans l'étoile
+ const hpo=cl(t,3.3,4)*(1-cl(t,4.4,4.9)),hps=lerp(.94,1,oc(cl(t,3.3,4.3)))*(1-.8*io(cl(t,4.3,5.1)));
+ hp.setAttribute('opacity',f3(hpo));hp.setAttribute('transform',`scale(${f3(hps)})`);extra.forEach((g,i)=>g.setAttribute('opacity',f3(cl(t,3.6+i*.15,4+i*.15))));
+ // l'étoile s'allume
+ const se=cl(t,4.4,4.9);star.setAttribute('opacity',f3(se));const pulse=1+.03*br;
+ star.setAttribute('transform',`scale(${f3(pulse)})`);rays.setAttribute('transform',`rotate(${f1(lp*1.6)})`);
+ const wd=io(cl(t,5.1,6.3)),rayDim=1-.45*wd;
+ RY.forEach(r=>{const e=oc(cl(t,4.6+r.k*.04,5.6+r.k*.04)),Lr=r.L*e*(1+.07*Math.sin(lp*1.4+r.k*.9));r.p.setAttribute('points',`-3 0 0 ${f1(-Lr)} 3 0`);r.p.setAttribute('opacity',f3(rayDim))});
+ RF.forEach(r=>{const e=oc(cl(t,4.8+r.k*.04,5.7+r.k*.04)),Lr=r.L*e*(1+.1*Math.sin(lp*1.9+r.k));r.p.setAttribute('y2',f1(-Lr));r.p.setAttribute('stroke-opacity',f3(.55*e*rayDim))});
+ halo.setAttribute('opacity',f3(oc(cl(t,4.7,6.1))*(.8+.12*br)));halo.setAttribute('r',f1(230+12*br));
+ coreG.setAttribute('opacity',f3(oc(cl(t,4.55,5.2))*(.85+.15*br)*(1-.55*wd)));core.setAttribute('opacity',f3(oc(cl(t,4.5,5))*(1-.4*wd)));core.setAttribute('r',f1(7+1.2*br));
+ PT.forEach(p=>{const u=((t-5.1)+p.ph)%6,r=16+u*p.v,aa=p.a+u*p.sw,op=cl(t,5.1,5.9)*Math.sin(Math.PI*u/6)*.9;p.c.setAttribute('cx',f1(Math.sin(aa)*r));p.c.setAttribute('cy',f1(-Math.cos(aa)*r));p.c.setAttribute('opacity',f3(Math.max(0,op)))});
+ // le cycle des quintes complet se déploie depuis l'étoile
+ wheel.setAttribute('opacity',f3(cl(t,5.1,5.6)));wheel.setAttribute('transform',`scale(${f3(lerp(.08,1,wd)*(1+.012*br))}) rotate(${f1(-30*(1-wd))})`);
+ NET.forEach(n=>n.p.setAttribute('stroke-dashoffset',f3(1-io(cl(t,5.2+n.dl*1.2,6.1+n.dl*1.2)))));
+ net.setAttribute('opacity',f3(.75+.12*br));
+ ND1.forEach((g,k)=>g.setAttribute('opacity',f3(cl(t,5.6+k*.05,6+k*.05))));ND2.forEach((g,k)=>g.setAttribute('opacity',f3(cl(t,5.9+k*.04,6.3+k*.04))));ND3.forEach((g,k)=>g.setAttribute('opacity',f3(cl(t,6.2+k*.03,6.5+k*.03))));
+ // le nom apparaît dans le rayonnement
+ const ne=oc(cl(t,6.3,7.3));name.setAttribute('opacity',f3(ne));
+ NM.forEach(([tx,sh],i)=>{tx.setAttribute('letter-spacing',f3(.34+.5*(1-ne))+'em');sh.setAttribute('letter-spacing',f3(.34+.5*(1-ne))+'em');sh.setAttribute('opacity',f3(.9*Math.sin(Math.PI*Math.min(1,ne))*.9+.25*ne*(1+.3*br)))});
+ // les 9 mots de l'écosystème, un à un, puis restent
+ orbit.setAttribute('opacity',f3(.3*cl(t,6.6,7.4)));
+ WD.forEach(w=>{const e=oc(cl(t,6.7+w.i*.24,7.3+w.i*.24));w.g.setAttribute('opacity',f3(e*(.9+.1*Math.sin(lp*1.3-w.i*.7))));w.g.setAttribute('transform',`translate(${f1(w.x)},${f1(w.y+8-8*e)})`)});
+ sub.textContent=L[t<1.2?0:t<3.1?1:t<4.4?2:t<5.2?3:t<6.5?4:5];
+ if(!rm&&qt==null)requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+</script></body></html>
