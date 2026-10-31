@@ -48,6 +48,10 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 31/10/2026 (40ᵉ passe, faite depuis la session APP) — REPRENDRE ICI
+- ✅ **EN PROD** : page de vente V3.1 de Yannick à /handpan-app/ (FR seulement), fichier statique `public/handpan-app/`, `src/pages/handpan-app.astro` retiré. /en et /es gardent l'ancienne page. Tableau des formules retiré de la fenêtre. Formulaire : compte Supabase + consentement depuis la page, puis app connectée (`?formule=light|studio&rythme=an` ouvre l'écran des offres).
+- Worktree = liste 39ᵉ passe + fa19ead (commit de la page). ⚠️ Prochain déploiement : repartir de CETTE liste. Si LEGAL_VERSION change côté app, l'app redemande le consentement : mettre à jour VERSION_CGU dans la page.
+
 ## 🧭 ÉTAT ACTUEL — 25/10/2026 (39ᵉ passe) — REPRENDRE ICI
 - ✅ **EN PROD** (dpl_5HoeNcBrP1Gkak57SnAd8RKPHWaa) : formulaire Muling, mode showroom → case « J'ai déjà fait le virement à Muling (paiement sur place) » → montant viré (obligatoire) + capture (image/PDF ≤ 3 Mo, limite corps Vercel 4,5 Mo) dans le même envoi ; EF `muling-order` v6 (download+diff = prod avant) : upload `muling-proofs/<id>/<ts>.<ext>`, payment_proof_path/payment_claimed_at/fulfillment_status='payment_claimed', purchase_channel='showroom', ligne admin_note « Payé sur place : virement de X € à Muling — écart ±Y € par rapport au prix 245 € » ; preuve en PIÈCE JOINTE du mail Muling (drapeau « DO NOT SHIP » conservé + ligne « Paid on site ») ; puis merci → modale ShowroomPickup. sale_place vide à la création. FR/EN/ES. Commit 0f0f39b.
 - ✅ EF `showroom-reservation` v3 : « déjà sur place » remplit `sale_place` (« Showcase Paris » ou texte) + `ordered_on` (jour Paris) si vide ; ligne admin_note conservée. Jamais inventory_ref/cancelled_*. ⚠️ hisong-direct / muling-order ne remplissent pas ordered_on à la création.
