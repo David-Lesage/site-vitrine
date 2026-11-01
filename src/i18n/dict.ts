@@ -3229,16 +3229,16 @@ const fr = {
       },
       {
         h: 'Combien de temps je garde tout ça',
-        // ⚠️ Ne PAS réintroduire « ou tu cliques dans un de mes emails » : aucun
-        // suivi de clic n'existe (aucun pixel, aucun lien tracé — cf. la section
-        // « Cookies et mesure d'audience »), et David n'en veut pas. La règle
-        // est bien 3 ans après le dernier ÉCHANGE, ça c'est sa décision.
+        // ⚠️ Ne PAS réintroduire « ou tu cliques dans un de mes emails ». Depuis le 31/10/2026, des
+        // e-mails peuvent suivre les clics (0299, 0303), mais un clic ne remet pas le compteur à
+        // zéro : la règle reste 3 ans après le dernier ÉCHANGE, décision de David. Les ouvertures
+        // par pixel exigent un consentement distinct.
         p: 'Trois ans après notre dernier échange. Et le compteur repart de zéro à chaque nouvel échange : tu m’écris, tu me réponds, tu réserves, tu commandes, et les trois ans recommencent. Si plus rien ne se passe pendant trois ans, tes informations sont effacées. Tu peux évidemment demander leur effacement bien avant — voir plus bas.',
         items: [] as string[],
       },
       {
         h: 'Cookies et mesure d’audience',
-        p: 'Ce site ne dépose aucun cookie. Il n’utilise aucun outil de mesure d’audience, aucun pixel publicitaire, aucun traceur — c’est pour ça qu’il n’y a pas de bandeau à accepter en arrivant. La seule chose que ton navigateur retient localement, c’est la langue que tu as choisie : elle ne quitte jamais ton appareil.',
+        p: 'Ce site ne dépose aucun cookie. Il n’utilise aucun outil de mesure d’audience, aucun pixel publicitaire, aucun traceur — c’est pour ça qu’il n’y a pas de bandeau à accepter en arrivant. La seule chose que ton navigateur retient localement, c’est la langue que tu as choisie : elle ne quitte jamais ton appareil. Les e-mails, eux, sont une autre chose : certains suivent les clics sur leurs liens, et une image invisible ne sert à mesurer les ouvertures que si tu l’as accepté séparément. C’est expliqué dans la politique de l’application.',
         items: [] as string[],
       },
       {
@@ -3334,7 +3334,7 @@ const fr = {
       'Politique de confidentialité du site David Lesage et de l’application Handpan Constellation Studio : données collectées, prise de rendez-vous, Google Agenda, durées de conservation et droits RGPD.',
     h1: 'Politique de confidentialité',
     updatedLabel: 'Dernière mise à jour',
-    updated: '11 septembre 2026',
+    updated: '1er novembre 2026',
     lead: 'Cette page dit en clair ce que je fais de tes données : ce que je collecte, pourquoi, avec quels outils, combien de temps je le garde, et comment tu reprends la main quand tu veux. Elle couvre ce site et l’application Handpan Constellation Studio. Pas de jargon : si quelque chose n’est pas clair, écris-moi — c’est moi qui lis.',
     sections: [
       {
@@ -3397,11 +3397,14 @@ const fr = {
         // affiché dans l'application avant l'entrée. Ne rien promettre ici que
         // ce texte ne promette pas (en particulier : la mesure est FINE).
         h: 'La mesure d’usage dans l’application',
-        p: 'L’application est développée par une seule personne — moi. Pour savoir où mettre mon énergie, je mesure la façon dont elle est utilisée : le temps passé dans chaque partie de l’application, et les actions d’interface, horodatées, dans leur ordre. Je suis le seul destinataire de ces mesures.',
+        p: 'L’application est développée par une seule personne — moi. Pour qu’elle fonctionne bien, pour mesurer la charge sur les serveurs, garantir sa stabilité et savoir où mettre mon énergie, je mesure la façon dont elle est utilisée : le temps passé dans chaque partie de l’application, les actions d’interface, horodatées, dans leur ordre, les connexions et le domaine d’accès. Si un outil est très utilisé, c’est sur lui que je me concentre pour l’améliorer. Ces mesures sont accessibles aux administrateurs de l’application.',
         items: [
-          'Ce qui n’est jamais collecté : ton contenu musical (ni tes gammes, ni tes morceaux, ni ce que tu joues), le texte que tu saisis, tes frappes clavier, tes mouvements de souris. Aucun traceur publicitaire, aucun outil d’analyse tiers : rien ne part vers Google, Meta ou qui que ce soit.',
-          'Ces mesures sont conservées tant que ton compte est actif, et supprimées automatiquement avec lui.',
-          'Tu peux refuser cette mesure à tout moment depuis l’application, sans avoir à te justifier : le refus est immédiat et efface les mesures déjà enregistrées te concernant.',
+          'Ce qui n’est jamais collecté : ton contenu musical (ni tes gammes, ni tes morceaux, ni ce que tu joues), le texte que tu saisis, tes frappes clavier, tes mouvements de souris. Aucun traceur publicitaire, aucun outil d’analyse tiers : rien ne part vers Google, Meta ou une régie.',
+          'Deux usages précis : l’e-mail de fin d’essai est personnalisé à partir de ton usage ; et quand tu signales un problème, ton retour et le fil de tes actions peuvent être analysés par Claude, l’assistant d’Anthropic, pour préparer le diagnostic.',
+          'Ces mesures sont conservées 24 mois, puis effacées automatiquement. Elles sont aussi supprimées avec ton compte.',
+          'Tu peux refuser cette mesure à tout moment depuis l’application, sans avoir à te justifier : le refus est immédiat et efface les mesures déjà enregistrées te concernant. Seul reste le journal d’erreurs, sans lien avec ton compte.',
+          'Le journal d’erreurs : quand l’application plante, l’erreur est enregistrée pour être corrigée (message nettoyé, écran, version, navigateur), y compris pour les visiteurs sans compte. Une empreinte à sens unique du compte, une donnée pseudonyme, permet de compter les comptes touchés ; elle n’est pas créée si tu as refusé la mesure.',
+          'Le suivi des e-mails : les clics de certains e-mails sont enregistrés pour ton adresse. Les ouvertures par image invisible, uniquement si tu l’as accepté séparément, par une case décochée, et tu peux changer d’avis dans « Mon compte ».',
           'Le texte complet, qui fait foi, est celui affiché dans l’application, accessible à tout moment depuis « Mon compte » → « Confidentialité & CGU ».',
         ],
       },
@@ -3410,8 +3413,9 @@ const fr = {
         p: 'Selon ce dont il s’agit, et il vaut mieux le dire précisément.',
         items: [
           'Ton consentement, pour les formulaires du site et pour recevoir mes nouveautés : deux cases distinctes, dont une seule est obligatoire, et tu peux retirer l’un comme l’autre à tout moment.',
+          'Ton consentement distinct, pour la mesure des ouvertures d’e-mails.',
           'L’exécution du service, pour ton compte, ton abonnement et l’organisation des cours : sans ces informations, l’application ne peut simplement pas faire ce que tu lui demandes.',
-          'Mon intérêt légitime à améliorer l’application, pour la mesure d’usage — assorti d’un droit d’opposition entier, exerçable en un geste dans l’application.',
+          'Mon intérêt légitime à faire fonctionner et à améliorer l’application, pour la mesure d’usage, qui fait partie des conditions d’utilisation — assorti d’un droit d’opposition entier, exerçable en un geste dans l’application.',
         ],
       },
       {
@@ -3419,7 +3423,9 @@ const fr = {
         p: 'Aussi longtemps que c’est utile, pas plus.',
         items: [
           'Les données de ton compte et l’agenda des cours : tant que ton compte est actif. Tu peux demander sa suppression à tout moment.',
-          'Les mesures d’usage : tant que ton compte est actif, et effacées immédiatement si tu t’opposes à la mesure.',
+          'Les mesures d’usage : 24 mois, supprimées avec ton compte, et effacées immédiatement si tu t’opposes à la mesure.',
+          'Le journal d’erreurs : 90 jours après la dernière apparition pour une erreur traitée, 180 jours sinon ; l’empreinte du compte, 12 mois au plus après la dernière occurrence.',
+          'Le suivi des e-mails (clics, ouvertures, envois, erreurs d’envoi) : 24 mois, et effacé à la suppression de ton compte.',
           'Ce que tu m’écris depuis les formulaires du site : trois ans après notre dernier échange, et le compteur repart de zéro à chaque nouvel échange.',
         ],
       },
@@ -3431,11 +3437,12 @@ const fr = {
           'Vercel — l’hébergeur de ce site. Les petites fonctions serveur qui relaient les formulaires s’exécutent aux États-Unis.',
           'Stripe — le paiement de l’abonnement à l’application. Le site, lui, y lit seulement les tarifs affichés : aucune donnée personnelle ne lui est envoyée depuis ce site.',
           'Google — la messagerie contact@lesagedavid.fr est hébergée chez Google, et c’est là que je te réponds. Le site charge aussi ses polices d’écriture et les vignettes des vidéos depuis les serveurs de Google : aucune de tes réponses ne leur est transmise, mais l’adresse IP de ton navigateur, oui. Et Google Agenda intervient uniquement si un professeur a choisi de le relier, comme décrit plus haut.',
+          'Anthropic — son assistant Claude peut analyser un retour que tu m’envoies depuis l’application, avec le fil de tes actions, pour préparer le diagnostic. Société américaine.',
         ],
       },
       {
         h: 'Cookies et mesure d’audience sur ce site',
-        p: 'Ce site-ci ne dépose aucun cookie. Il n’utilise aucun outil de mesure d’audience, aucun pixel publicitaire, aucun traceur — c’est pour ça qu’il n’y a pas de bandeau à accepter en arrivant. La seule chose que ton navigateur retient localement, c’est la langue que tu as choisie : elle ne quitte jamais ton appareil. À ne pas confondre avec la mesure d’usage de l’application, décrite plus haut, qui est une autre chose et qui, elle, se refuse en un clic.',
+        p: 'Ce site-ci ne dépose aucun cookie. Il n’utilise aucun outil de mesure d’audience, aucun pixel publicitaire, aucun traceur — c’est pour ça qu’il n’y a pas de bandeau à accepter en arrivant. La seule chose que ton navigateur retient localement, c’est la langue que tu as choisie : elle ne quitte jamais ton appareil. À ne pas confondre avec la mesure d’usage de l’application, décrite plus haut, qui est une autre chose et qui, elle, se refuse en un clic. Les e-mails, eux, sont une autre chose : certains suivent les clics sur leurs liens, et une image invisible ne sert à mesurer les ouvertures que si tu l’as accepté séparément. C’est expliqué dans la politique de l’application.',
         items: [] as string[],
       },
       {
