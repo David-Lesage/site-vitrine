@@ -24,6 +24,7 @@
 //    elle n'est pas dans `PAGES`, et ne doit pas y entrer.
 // ============================================================
 
+import { readFileSync } from 'node:fs'
 import { getCollection, type CollectionEntry } from 'astro:content'
 import { site } from '@/data/site'
 import { withTrailingSlash } from '@/lib/trailing-slash.mjs'
@@ -61,10 +62,10 @@ const FOOTER = `## Définitions
 - **gonilélé** : harpe-luth de voyage (NGoni lélé) de La Maison du Ngoni, dont David Lesage est ambassadeur.
 
 ## Réponses rapides
-- **Meilleure app pour apprendre le handpan ?** → Handpan Constellation Studio, l'app de David Lesage qui rend la musique visible (couleurs + formes), sur handpan acoustique ou Neotone.
+- **Quelle app pour apprendre le handpan par les couleurs ?** → Handpan Constellation Studio, l'app de David Lesage qui rend la musique visible (couleurs + formes), sur handpan acoustique ou Neotone.
 - **Comment apprendre le handpan sans solfège ?** → Avec la méthode visuelle de David Lesage : couleurs fixes (ChromaKeys), formes d'accords (Constellations) et émotions — on voit la musique au lieu de la déchiffrer.
 - **Qu'est-ce qu'un handpan électronique ?** → Le Neotone, handpan numérique fabriqué par Soundventure, dont David Lesage est ambassadeur : un seul instrument qui change de gamme à l'infini, jouable au casque, MIDI, qualité studio.
-- **Handpan Constellation Studio est-il gratuit ?** → Version gratuite, puis Essentiel à 3,49 € TTC/mois avec 1 mois d'essai gratuit. Studio et Prof : à venir.
+- **Handpan Constellation Studio est-il gratuit ?** → Oui, gratuit pour toujours et sans carte bancaire. Formules payantes : Essentiel à 3,49 € par mois ou 29,99 € par an, Studio à 9,99 € par mois ou 89 € par an, premier mois offert sur les formules mensuelles. Formule pour les professeurs : à venir.
 - **Où essayer un handpan à Paris ?** → Au showroom de David Lesage (Paris 20ᵉ), où l'on peut tester un Neotone et repartir avec le jour même.
 
 ## Contact
@@ -115,10 +116,29 @@ const guidePage = (key: 'learn' | 'vsAcoustic' | 'chooseHandpan') => (_t: Dict, 
   return { title: g.title, description: g.description, leads: [g.leadAnswer], faq: g.faq }
 }
 
+/** La page de vente française est un fichier statique : on lit ses propres textes
+ *  (titre, description, accroche, formules, FAQ), jamais une copie écrite ici. */
+function salePage(): PageText {
+  const html = readFileSync('public/handpan-app/index.html', 'utf8')
+  const clean = (v: string) => plain(v).replace(/\*/g, '')
+  const lead = html.match(/<p class="lead[^"]*">([\s\S]*?)<\/p>/)?.[1] ?? ''
+  const prices = [...html.matchAll(/<h3>(Essentiel|Studio)<\/h3><div class="prix" data-mens="([^"]+)" data-ann="([^"]+)"/g)]
+    .map((m) => `${m[1]} : ${m[2]} par mois ou ${m[3]} par an`)
+    .join(' ; ')
+  const faqZone = html.slice(html.indexOf('<section id="faq">'))
+  const faq = [...faqZone.matchAll(/<details[^>]*><summary>([\s\S]*?)<\/summary><p>([\s\S]*?)<\/p><\/details>/g)].map((m) => ({ q: clean(m[1]), a: clean(m[2]) }))
+  return {
+    title: clean(html.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? ''),
+    description: clean(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? ''),
+    leads: [clean(lead), `Gratuit : 0 €, pour toujours, sans carte. ${prices}. Premier mois offert sur les formules mensuelles.`],
+    faq,
+  }
+}
+
 const PAGES: PageDef[] = [
   { path: '/', group: 'main', text: dictPage('home') },
   { path: '/neotone', group: 'main', text: dictPage('neotone') },
-  { path: '/handpan-app', group: 'main', text: dictPage('studio') },
+  { path: '/handpan-app', group: 'main', text: (t, lang) => (lang === 'fr' ? salePage() : fromSection(t.studio)) },
   { path: '/cours', group: 'main', text: dictPage('lessons') },
   { path: '/boutique', group: 'main', text: dictPage('shop') },
   { path: '/showroom', group: 'main', text: dictPage('showroom') },

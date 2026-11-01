@@ -211,7 +211,7 @@ export const en: Dict = {
     proofCtaYishama: 'See the full Yishama playlist',
   },
   neotone: {
-    title: 'Neotone — electronic & digital handpan | David Lesage',
+    title: 'Neotone digital handpan: price and trial in Paris | David Lesage',
     description:
       'The Neotone, with David Lesage: −5% online (−7% at the showroom), 6-year warranty, a price calculator by country and human support from trial to unboxing.',
     heroEyebrow: 'The gear · Digital handpan',
