@@ -7,6 +7,8 @@ import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
 import { site, SITE_LEAD_KNOWS_CONTACT_SOURCES } from '@/data/site'
 import { getDict } from '@/i18n/dict'
+import { localizePath } from '@/i18n/utils'
+import { breadcrumbLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -23,7 +25,7 @@ const coords = [
 ]
 ---
 
-<Layout title={ct.title} description={ct.description}>
+<Layout title={ct.title} description={ct.description} ldJSON={breadcrumbLdJson([{ name: t.common.nav.home, url: localizePath('/', lang) }, { name: t.common.nav.contact, url: localizePath('/contact', lang) }])}>
   <Section tone="ink" class="!py-16">
     <SectionHeading level={1} tone="light" eyebrow={ct.eyebrow} title={ct.title2} intro={ct.intro} />
   </Section>
