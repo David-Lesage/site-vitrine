@@ -67,7 +67,7 @@ const duoMeta = [
   <section class="relative overflow-hidden bg-ink text-cream">
     <!-- Photo de David + handpan, pleinement visible à droite -->
     <div class="absolute inset-0">
-      <img src="/images/hero-david.webp" width="2400" height="1351" alt="" class="h-full w-full object-cover object-[75%_center]" loading="eager" fetchpriority="high" />
+      <img src="/images/hero-david.webp" srcset="/images/hero-david-800.webp 800w, /images/hero-david-1200.webp 1200w, /images/hero-david.webp 2400w" sizes="100vw" width="2400" height="1351" alt="" class="h-full w-full object-cover object-[75%_center]" loading="eager" fetchpriority="high" />
       {/* Dégradé horizontal : zone opaque à gauche (texte lisible), image révélée
           à droite. 🚨 `veil-hero-x` (global.css) et non `bg-gradient-to-r` : le
           dégradé Tailwind v4 disparaît en silence sur les moteurs qui ignorent
