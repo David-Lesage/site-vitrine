@@ -3438,6 +3438,7 @@ const fr = {
           'Stripe — le paiement de l’abonnement à l’application. Le site, lui, y lit seulement les tarifs affichés : aucune donnée personnelle ne lui est envoyée depuis ce site.',
           'Google — la messagerie contact@lesagedavid.fr est hébergée chez Google, et c’est là que je te réponds. Le site charge aussi ses polices d’écriture et les vignettes des vidéos depuis les serveurs de Google : aucune de tes réponses ne leur est transmise, mais l’adresse IP de ton navigateur, oui. Et Google Agenda intervient uniquement si un professeur a choisi de le relier, comme décrit plus haut.',
           'Anthropic — son assistant Claude peut analyser un retour que tu m’envoies depuis l’application, avec le fil de tes actions, pour préparer le diagnostic. Société américaine.',
+          'DeepL (société allemande) et, en relais, Google Translate — ils traduisent, à la demande d’un administrateur, le texte d’un retour que tu m’envoies, et le texte des e-mails que je t’écris dans ta langue, y compris un passage qui t’est personnel.',
         ],
       },
       {
