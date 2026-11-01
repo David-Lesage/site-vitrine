@@ -3231,14 +3231,13 @@ const fr = {
         h: 'Combien de temps je garde tout ça',
         // ⚠️ Ne PAS réintroduire « ou tu cliques dans un de mes emails ». Depuis le 31/10/2026, des
         // e-mails peuvent suivre les clics (0299, 0303), mais un clic ne remet pas le compteur à
-        // zéro : la règle reste 3 ans après le dernier ÉCHANGE, décision de David. Les ouvertures
-        // par pixel exigent un consentement distinct.
+        // zéro : la règle reste 3 ans après le dernier ÉCHANGE, décision de David.
         p: 'Trois ans après notre dernier échange. Et le compteur repart de zéro à chaque nouvel échange : tu m’écris, tu me réponds, tu réserves, tu commandes, et les trois ans recommencent. Si plus rien ne se passe pendant trois ans, tes informations sont effacées. Tu peux évidemment demander leur effacement bien avant — voir plus bas.',
         items: [] as string[],
       },
       {
         h: 'Cookies et mesure d’audience',
-        p: 'Ce site ne dépose aucun cookie. Il n’utilise aucun outil de mesure d’audience, aucun pixel publicitaire, aucun traceur — c’est pour ça qu’il n’y a pas de bandeau à accepter en arrivant. La seule chose que ton navigateur retient localement, c’est la langue que tu as choisie : elle ne quitte jamais ton appareil. Les e-mails, eux, sont une autre chose : certains suivent les clics sur leurs liens, et une image invisible ne sert à mesurer les ouvertures que si tu l’as accepté séparément. C’est expliqué dans la politique de l’application.',
+        p: 'Ce site ne dépose aucun cookie. Il n’utilise aucun outil de mesure d’audience, aucun pixel publicitaire, aucun traceur — c’est pour ça qu’il n’y a pas de bandeau à accepter en arrivant. La seule chose que ton navigateur retient localement, c’est la langue que tu as choisie : elle ne quitte jamais ton appareil. Les e-mails, eux, sont une autre chose : leur ouverture et les clics sur leurs liens sont mesurés, par une image invisible et par des liens suivis. Cela fait partie des conditions d’utilisation de l’application, et c’est expliqué dans sa politique.',
         items: [] as string[],
       },
       {
@@ -3404,7 +3403,7 @@ const fr = {
           'Ces mesures sont conservées 24 mois, puis effacées automatiquement. Elles sont aussi supprimées avec ton compte.',
           'Tu peux refuser cette mesure à tout moment depuis l’application, sans avoir à te justifier : le refus est immédiat et efface les mesures déjà enregistrées te concernant. Seul reste le journal d’erreurs, sans lien avec ton compte.',
           'Le journal d’erreurs : quand l’application plante, l’erreur est enregistrée pour être corrigée (message nettoyé, écran, version, navigateur), y compris pour les visiteurs sans compte. Une empreinte à sens unique du compte, une donnée pseudonyme, permet de compter les comptes touchés ; elle n’est pas créée si tu as refusé la mesure.',
-          'Le suivi des e-mails : les clics de certains e-mails sont enregistrés pour ton adresse. Les ouvertures par image invisible, uniquement si tu l’as accepté séparément, par une case décochée, et tu peux changer d’avis dans « Mon compte ».',
+          'Le suivi des e-mails : l’ouverture et les clics sont mesurés pour ton adresse, par une image invisible et par des liens suivis, dans les campagnes et certains e-mails automatiques, y compris sans compte. Cela fait partie des conditions d’utilisation de l’application. Tu peux te désabonner des e-mails qui ne sont pas indispensables ; il n’existe pas de réglage séparé pour désactiver cette mesure.',
           'Le texte complet, qui fait foi, est celui affiché dans l’application, accessible à tout moment depuis « Mon compte » → « Confidentialité & CGU ».',
         ],
       },
@@ -3413,7 +3412,7 @@ const fr = {
         p: 'Selon ce dont il s’agit, et il vaut mieux le dire précisément.',
         items: [
           'Ton consentement, pour les formulaires du site et pour recevoir mes nouveautés : deux cases distinctes, dont une seule est obligatoire, et tu peux retirer l’un comme l’autre à tout moment.',
-          'Ton consentement distinct, pour la mesure des ouvertures d’e-mails.',
+          'Les conditions d’utilisation de l’application, dont fait partie la mesure de l’ouverture et des clics des e-mails.',
           'L’exécution du service, pour ton compte, ton abonnement et l’organisation des cours : sans ces informations, l’application ne peut simplement pas faire ce que tu lui demandes.',
           'Mon intérêt légitime à faire fonctionner et à améliorer l’application, pour la mesure d’usage, qui fait partie des conditions d’utilisation — assorti d’un droit d’opposition entier, exerçable en un geste dans l’application.',
         ],
@@ -3443,7 +3442,7 @@ const fr = {
       },
       {
         h: 'Cookies et mesure d’audience sur ce site',
-        p: 'Ce site-ci ne dépose aucun cookie. Il n’utilise aucun outil de mesure d’audience, aucun pixel publicitaire, aucun traceur — c’est pour ça qu’il n’y a pas de bandeau à accepter en arrivant. La seule chose que ton navigateur retient localement, c’est la langue que tu as choisie : elle ne quitte jamais ton appareil. À ne pas confondre avec la mesure d’usage de l’application, décrite plus haut, qui est une autre chose et qui, elle, se refuse en un clic. Les e-mails, eux, sont une autre chose : certains suivent les clics sur leurs liens, et une image invisible ne sert à mesurer les ouvertures que si tu l’as accepté séparément. C’est expliqué dans la politique de l’application.',
+        p: 'Ce site-ci ne dépose aucun cookie. Il n’utilise aucun outil de mesure d’audience, aucun pixel publicitaire, aucun traceur — c’est pour ça qu’il n’y a pas de bandeau à accepter en arrivant. La seule chose que ton navigateur retient localement, c’est la langue que tu as choisie : elle ne quitte jamais ton appareil. À ne pas confondre avec la mesure d’usage de l’application, décrite plus haut, qui est une autre chose et qui, elle, se refuse en un clic. Les e-mails, eux, sont une autre chose : leur ouverture et les clics sur leurs liens sont mesurés, par une image invisible et par des liens suivis. Cela fait partie des conditions d’utilisation de l’application, et c’est expliqué dans sa politique.',
         items: [] as string[],
       },
       {
