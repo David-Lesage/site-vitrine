@@ -323,7 +323,9 @@ export function productLdJson(p: {
   description: string
   pageUrl: string
   images: string[]
-  offers: { name: string; price: number; inStock?: boolean; url?: string }[]
+  offers: { name: string; price: number; inStock?: boolean; madeToOrder?: boolean; url?: string }[]
+  // Politique de retour : uniquement si elle est écrite sur la page (Atlas).
+  returnDays?: number
   brand?: string
   vatIncluded?: boolean
   seller?: { name: string; url?: string }
@@ -353,7 +355,16 @@ export function productLdJson(p: {
         priceCurrency: 'EUR',
         valueAddedTaxIncluded: p.vatIncluded ?? false,
       },
-      ...(o.inStock ? { availability: 'https://schema.org/InStock' } : {}),
+      ...(o.inStock ? { availability: 'https://schema.org/InStock' } : o.madeToOrder ? { availability: 'https://schema.org/MadeToOrder' } : {}),
+      ...(p.returnDays ? {
+        hasMerchantReturnPolicy: {
+          '@type': 'MerchantReturnPolicy',
+          returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+          merchantReturnDays: p.returnDays,
+          returnFees: 'https://schema.org/FreeReturn',
+          returnMethod: 'https://schema.org/ReturnByMail',
+        },
+      } : {}),
       seller,
     })),
   }

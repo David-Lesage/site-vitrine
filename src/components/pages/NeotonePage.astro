@@ -117,6 +117,8 @@ const ld = [
         price,
         // « En stock » seulement pour un bois que le stock lu au build dit disponible.
         inStock: modelStockSummary(stockLines, m.id).available.includes(wood),
+        // « Sur commande » affiché sur la page, seulement si le stock a bien été lu au build.
+        madeToOrder: stockLines.length > 0 && !modelStockSummary(stockLines, m.id).available.includes(wood),
       })),
     }),
   ),
