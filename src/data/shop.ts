@@ -61,7 +61,7 @@ export const categorySubs: Record<string, readonly string[]> = {
 
 export const products: Product[] = [
   // Application Handpan Constellation Studio — produit phare digital
-  { id: 'handpan-studio', price: 0, image: '/images/app-logique.webp', imgW: 1100, imgH: 1327, url: '/handpan-app', category: 'app', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'app', priceLabel: 'Version gratuite ou Essentiel à 3,49 € TTC/mois (1 mois d’essai)', images: ['/images/app-logique.webp', '/images/app-atlas.webp', '/images/app-creation.webp', '/images/app-midi-mapping-2026.webp', '/images/constel-polygone.webp'] },
+  { id: 'handpan-studio', price: 0, image: '/images/app-logique.webp', imgW: 1100, imgH: 1327, url: '/handpan-app', category: 'app', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'app', priceLabel: 'Gratuit · Essentiel 3,49 € TTC/mois · Studio 9,99 € TTC/mois', priceLabelI18n: { en: 'Free · Essential €3.49 incl. VAT/month · Studio €9.99 incl. VAT/month', es: 'Gratis · Esencial 3,49 € IVA incl./mes · Studio 9,99 € IVA incl./mes' }, images: ['/images/app-logique.webp', '/images/app-atlas.webp', '/images/app-creation.webp', '/images/app-midi-mapping-2026.webp', '/images/constel-polygone.webp'] },
   { id: 'neotone-one', price: 1990, image: '/images/neotone1-1.jpg', imgW: 670, imgH: 653, url: '/neotone', category: 'handpans', sub: 'electronique', active: true, mode: 'quote', images: modelCarousels.one.map((s) => s.src) },
   { id: 'neotone-mutant', price: 3150, image: '/images/mutant-0.jpg', imgW: 670, imgH: 614, url: '/neotone', category: 'handpans', sub: 'electronique', active: true, mode: 'quote', images: modelCarousels.mutant.map((s) => s.src) },
   // ⚖️ Yishama vit dans la catégorie « handpans », sous-catégorie ACOUSTIQUE, à

@@ -175,7 +175,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Pour appliquer la méthode, j’ai créé <a href="/handpan-app">Handpan Constellation Studio</a>, l’application qui rend la musique visible. Elle affiche tes notes en couleurs, dessine les accords en formes, propose un atlas de gammes du monde et te laisse créer les tiennes. La version <strong>Découverte est gratuite</strong> en mode acoustique ; la formule <strong>Essentiel (3,49 € TTC/mois, 1 mois d’essai gratuit)</strong> va plus loin ; les formules Studio et Prof sont à venir. C’est le compagnon idéal pour s’exercer, seul, à son rythme.',
+            html: 'Pour appliquer la méthode, j’ai créé <a href="/handpan-app">Handpan Constellation Studio</a>, l’application qui rend la musique visible. Elle affiche tes notes en couleurs, dessine les accords en formes, propose un atlas de gammes du monde et te laisse créer les tiennes. La version <strong>Gratuite</strong> le reste pour toujours ; les formules <strong>Essentiel (3,49 € TTC/mois)</strong> et <strong>Studio (9,99 € TTC/mois)</strong> vont plus loin, avec 1 mois d’essai gratuit. C’est le compagnon idéal pour s’exercer, seul, à son rythme.',
           },
         ],
       },
@@ -412,7 +412,7 @@ const fr: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Rien ne remplace le fait de poser les mains sur l’instrument. À Paris, mon <a href="/showroom">showroom</a> est le seul endroit au monde où tu peux tester un Neotone et repartir avec le jour même, sans délai de fabrication et au meilleur prix. Tu y compares les gammes, tu sens la réponse sous les doigts, et je te guide selon ton niveau et tes envies.',
+            html: 'Rien ne remplace le fait de poser les mains sur l’instrument. À Paris, mon <a href="/showroom">showroom</a> est le seul endroit au monde, en dehors de chez les fabricants à Budapest, où tu peux tester un Neotone et repartir avec le jour même, sans délai de fabrication et au meilleur prix. Tu y compares les gammes, tu sens la réponse sous les doigts, et je te guide selon ton niveau et tes envies.',
           },
         ],
       },
@@ -567,7 +567,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'To apply the method, I built <a href="/handpan-app">Handpan Constellation Studio</a>, the app that makes music visible. It shows your notes in colours, draws chords as shapes, offers an atlas of world scales and lets you create your own. The <strong>Discovery version is free</strong> in acoustic mode; the <strong>Essential plan (€3.49 incl. VAT/month, 1-month free trial)</strong> goes further; the Studio and Teacher plans are coming. It’s the ideal companion to practise on your own, at your own pace.',
+            html: 'To apply the method, I built <a href="/handpan-app">Handpan Constellation Studio</a>, the app that makes music visible. It shows your notes in colours, draws chords as shapes, offers an atlas of world scales and lets you create your own. The <strong>Free plan</strong> stays free forever; the <strong>Essential (€3.49 incl. VAT/month)</strong> and <strong>Studio (€9.99 incl. VAT/month)</strong> plans go further, with a 1-month free trial. It’s the ideal companion to practise on your own, at your own pace.',
           },
         ],
       },
@@ -798,7 +798,7 @@ const en: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Nothing replaces putting your hands on the instrument. In Paris, my <a href="/showroom">showroom</a> is the only place in the world where you can test a Neotone and walk away with it the same day, with no manufacturing wait and at the best price. There you compare scales, feel the response under your fingers, and I guide you according to your level and taste.',
+            html: 'Nothing replaces putting your hands on the instrument. In Paris, my <a href="/showroom">showroom</a> is the only place in the world, apart from the makers in Budapest, where you can test a Neotone and walk away with it the same day, with no manufacturing wait and at the best price. There you compare scales, feel the response under your fingers, and I guide you according to your level and taste.',
           },
         ],
       },

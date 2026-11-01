@@ -48,6 +48,15 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 01/11/2026 (41ᵉ passe) — REPRENDRE ICI
+- **Branche unique = `main`** : `seo-ia` et `vente-v3-1` fusionnées (d1503f6). On publie depuis main : plus de liste de cherry-picks.
+- **Retenu hors du site : achat Neotone en 3 cas** (attend la migration 0189 et les secrets de David). Dans main ces fichiers sont à la version en production : `api/subscribe.js`, `BookingForm.astro`, `Calculator.astro`, `dict/en/es.ts` (textes d'achat), `site-lead`. Version complète : tag `retenu-achat-neotone-3-cas-2026-11-01`, à reporter à l'ouverture. EF `neotone-purchase-action` : source présente, à ne déployer qu'à ce moment.
+- `/neotone-suivi` publiée mais privée : noindex (meta + en-tête), hors sitemap, sans lien, inerte sans jeton.
+- **Prix** /en et /es : Gratuit, Essentiel 3,49/29,99, Studio 9,99/89 (Stripe vérifié 01/11, `APP_PLANS` dans `src/lib/prices.ts`). Prof non affiché. `site.appPublicAccess` = true : si l'app referme, repasser à false et republier.
+- **Showroom** : formulation « en dehors de chez les fabricants à Budapest », partout.
+- **Atlas, en attente de David** : 215/230 € sont les prix promo terminés d'août ; Atlas affiche 250/270 € (01/11) et le code DAVID-ATLAS donne 225/243 € (panier du 21/10). Rien changé.
+- **Vidéos** : inventaire `specs/INVENTAIRE-YOUTUBE-2026-11-01.md`. Ajouts : /apprendre-le-handpan, /handpan-electronique-vs-acoustique, /showroom, /a-propos ; VideoObject sur /neotone. `videoLdJson` n'émet plus sans `uploadDate`. Search Console : 18 « uploadDate manquant », validation à lancer.
+
 ## 🧭 ÉTAT ACTUEL — 31/10/2026 (40ᵉ passe, faite depuis la session APP) — REPRENDRE ICI
 - ✅ **EN PROD** : page de vente V3.1 de Yannick à /handpan-app/ (FR seulement), fichier statique `public/handpan-app/`, `src/pages/handpan-app.astro` retiré. /en et /es gardent l'ancienne page. Tableau des formules retiré de la fenêtre. Formulaire : compte Supabase + consentement depuis la page, puis app connectée (`?formule=light|studio&rythme=an` ouvre l'écran des offres).
 - Worktree = liste 39ᵉ passe + fa19ead (page) + ec78d61 (image de partage) + df43142 (annuel en avant) + c32eb83 (détail des fonctions) + 1caa92e (menu du site). ⚠️ Prochain déploiement : repartir de CETTE liste. Si LEGAL_VERSION change côté app, l'app redemande le consentement : mettre à jour VERSION_CGU dans la page.

@@ -15,7 +15,7 @@ import { site } from '@/data/site'
 import { getDict, fr } from '@/i18n/dict'
 import { fetchStockAtBuild, renderStockHtml, renderModelStock, modelStockSummary, type StockLabels, type ModelStockLabels, type StockPillLabels } from '@/lib/stock'
 import { localizePath, numberLocale } from '@/i18n/utils'
-import { faqLdJson, productLdJson, breadcrumbLdJson, localBusinessLdJson } from '@/lib/ldJson'
+import { faqLdJson, productLdJson, breadcrumbLdJson, localBusinessLdJson, videoLdJson } from '@/lib/ldJson'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -39,19 +39,7 @@ const modelLabels: Record<string, string> = { one: 'Neotone¹', mutant: 'Neotone
 //    l'annoncent explicitement (clé `procShowroomVideoAudio`). Ne pas retirer
 //    cette mention : des emails partent vers des anglophones.
 //
-// 🚫 PAS DE DONNÉES STRUCTURÉES POUR CETTE VIDÉO — deux raisons :
-//    1. `videoObjectsLocal()` (src/lib/ldJson.ts) résout `contentUrl` contre
-//       notre domaine et nous déclare éditeur du fichier : faux ici, la vidéo
-//       est hébergée par YouTube. Le bon helper serait `videoLdJson()` (il émet
-//       bien l'URL youtube.com + l'embed), et David EST l'éditeur — mais…
-//    2. …la vidéo est **non répertoriée** sur YouTube (`isUnlisted: true`,
-//       vérifié le 20/08/2026) : la déclarer à Google n'apporte rien tant
-//       qu'elle n'est pas publique, et il manquerait `uploadDate`, que
-//       `videoLdJson()` n'émet pas.
-//    ➜ Le jour où David la passe en publique : ajouter
-//       `videoLdJson([{ id: showroomTourVideoId, name: n.procShowroomVideoTitle,
-//       description: n.procShowroomVideoText }])` au tableau `ld` ci-dessous.
-//       Date de mise en ligne relevée sur YouTube : 2026-03-02. Durée : 2 min 35.
+// Vidéo publique sur la chaîne depuis le 20/08/2026 (relevé du 01/11/2026) : VideoObject émis dans `ld`.
 const showroomTourVideoId = 'Vlzo3KbpPjw'
 
 // ── 📦 Stock physique des Neotone (voir le bloc dans la section #calculateur).
@@ -113,6 +101,7 @@ const neoGlyph = `<svg viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/
 // langue de la page ; FAQ ; fil d'Ariane ; le showroom (MusicStore, même @id
 // que sur /showroom/). Aucun avis ni note : on n'en a pas de réels.
 const ld = [
+  ...videoLdJson([{ id: showroomTourVideoId, name: n.procShowroomVideoTitle, description: n.procShowroomVideoText }]),
   breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: 'Neotone', url: L('/neotone') }]),
   faqLdJson(d.faq),
   ...models.map((m) =>

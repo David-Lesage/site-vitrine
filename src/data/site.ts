@@ -43,11 +43,13 @@ export const site = {
   // (clé `app_public_access`), pilotée par le back-office de l'app : le site la
   // lit côté client au chargement (voir `src/lib/appAccess.ts` +
   // `src/components/AppAccessSync.astro`) — un seul interrupteur pour les deux.
-  // Cette valeur sert quand la lecture échoue (réseau / CORS). La garder à
-  // `false` : ainsi une panne ne peut jamais « ouvrir » le site par accident.
+  // Cette valeur sert quand la lecture échoue (réseau / CORS) et donne le HTML lu par les
+  // moteurs. `true` depuis le 01/11/2026 : l'app est ouverte (app_public_access = true,
+  // 31/10/2026). Si l'app refermait, repasser à `false` et republier : l'encadré
+  // de liste d'attente de /en et /es/handpan-app n'est rendu qu'à `false`.
   // false = bêta fermée : les boutons qui menaient à l'app renvoient vers
   // l'encadré d'explication + liste d'attente (#acces, en bas de page).
-  appPublicAccess: false,
+  appPublicAccess: true,
   email: 'contact@lesagedavid.fr',
   phone: '+33 6 10 73 31 52',
   phoneHref: '+33610733152',

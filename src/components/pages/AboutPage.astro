@@ -17,7 +17,8 @@ import { Icon } from 'astro-icon/components'
 import { site, SITE_LEAD_KNOWS_CONTACT_SOURCES } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
-import { personLdJson } from '@/lib/ldJson'
+import { personLdJson, videoLdJson } from '@/lib/ldJson'
+import YouTube from '@/components/YouTube.astro'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
@@ -39,9 +40,10 @@ const bookingAttrs = SITE_LEAD_KNOWS_CONTACT_SOURCES
 
 const pillarIcons = ['lucide:eye', 'lucide:heart-handshake', 'lucide:award']
 const todayIcons = ['lucide:music', 'lucide:graduation-cap', 'lucide:wrench', 'lucide:link']
+const concertTitle = 'L’Alliance du Phoenix — Humano, live (Alet-les-Bains)'
 ---
 
-<Layout title={a.title} description={a.description} image="/images/og-david.jpg" ldJSON={personLdJson()}>
+<Layout title={a.title} description={a.description} image="/images/og-david.jpg" ldJSON={[personLdJson(), ...videoLdJson([{ id: 'Y5D0_iiVflg', name: concertTitle }])]}>
   {/* ───────────── HERO ───────────── */}
   <Section tone="ink" class="!py-20">
     <div class="grid items-center gap-10 lg:grid-cols-2">
@@ -148,6 +150,10 @@ const todayIcons = ['lucide:music', 'lucide:graduation-cap', 'lucide:wrench', 'l
   {/* ───────────── REPÈRES ───────────── */}
   <Section>
     <SectionHeading eyebrow={a.proofsEyebrow} title={a.proofsTitle} intro={a.proofsIntro} />
+    <figure class="mx-auto mt-10 max-w-3xl">
+      <YouTube id="Y5D0_iiVflg" title={concertTitle} />
+      <figcaption class="mt-2 text-center text-sm text-ink-soft/70">{concertTitle}</figcaption>
+    </figure>
     <div class="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-3">
       {a.proofs.map((c) => (
         <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-cream-deep/50 px-4 py-2 font-600">

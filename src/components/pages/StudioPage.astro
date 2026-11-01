@@ -11,7 +11,7 @@ import { Icon } from 'astro-icon/components'
 import YouTube from '@/components/YouTube.astro'
 import Lightbox from '@/components/Lightbox.astro'
 import { chromaKeys, studioVideos, appSeries } from '@/data/site'
-import { appCta } from '@/lib/appAccess'
+import { appCta, appOpenAtBuild } from '@/lib/appAccess'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
 import { softwareAppLdJson, breadcrumbLdJson, faqLdJson, videoObjectsLocal } from '@/lib/ldJson'
@@ -74,7 +74,7 @@ const ld = [
       </ul>
       <p class="mx-auto mt-6 max-w-2xl text-lg text-cream/80">{st.heroLead}</p>
       <div class="mt-9"><Button {...heroCta.attrs} variant="primary">{heroCta.label}</Button></div>
-      <p data-when="closed" class="mx-auto mt-4 max-w-xl text-sm text-cream/60">{t.common.beta.badge} · {t.common.beta.title}</p>
+      {!appOpenAtBuild && <p data-when="closed" class="mx-auto mt-4 max-w-xl text-sm text-cream/60">{t.common.beta.badge} · {t.common.beta.title}</p>}
     </div>
   </section>
 
@@ -322,9 +322,11 @@ const ld = [
 
   {/* Bêta fermée : encadré d'explication + liste d'attente, en bas de page.
       L'ancre #acces (cible de tous les boutons) vit dans BetaNotice. */}
-  <Section data-when="closed">
-    <BetaNotice lang={lang} />
-  </Section>
+  {!appOpenAtBuild && (
+    <Section data-when="closed">
+      <BetaNotice lang={lang} />
+    </Section>
+  )}
 
   {/* Les deux photos du duo (data-lb="app-deux-mondes") s'ouvrent en plein écran. */}
   <Lightbox labels={{ close: st.lightbox.close, prev: st.lightbox.prev, next: st.lightbox.next, zoom: st.lightbox.zoom }} />

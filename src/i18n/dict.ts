@@ -150,8 +150,7 @@ const fr = {
   },
   home: {
     title: 'Apprendre le handpan autrement — David Lesage',
-    description:
-      'Le handpan acoustique Yishama, le handpan électronique Neotone et ma méthode par les couleurs : apprends le handpan autrement, avec Handpan Constellation Studio. Viens les essayer à Paris.',
+    description: 'Handpan acoustique Yishama, handpan électronique Neotone et méthode par les couleurs : apprends le handpan autrement avec Handpan Constellation Studio.',
     heroEyebrow: 'Musicien · Pédagogue · Inventeur',
     heroTitleA: 'Je rends la musique',
     heroTitleHighlight: 'visible',
@@ -216,7 +215,7 @@ const fr = {
     whyP2: 'Au Conservatoire, j’en suis ressorti avec un prix de batterie mention très bien… mais découragé par une pédagogie de l’harmonie qui ne me parlait pas. Alors j’ai créé l’outil qui m’a manqué : une approche visuelle de la musique.',
     whyCta: 'Lire mon histoire',
     showroomBadge: '★ Première mondiale',
-    showroomTitle: 'Le seul endroit au monde pour tester et repartir avec ton Neotone',
+    showroomTitle: 'Le seul endroit au monde, en dehors de chez les fabricants à Budapest, pour tester et repartir avec ton Neotone',
     showroomText: 'À Paris 20ᵉ, viens essayer les instruments, rencontrer la communauté, et repars le jour même avec ton handpan — sans aucun délai de fabrication, au meilleur prix du marché (−7 %).',
     showroomArgs: ['7 % de remise — le meilleur prix (contre 5 % en ligne)', 'Aucun délai de fabrication ni d’attente', 'Stock ultra limité — quelques instruments disponibles'],
     showroomCta1: 'Réserver ma venue au showroom',
@@ -244,9 +243,8 @@ const fr = {
     proofCtaYishama: 'Voir toute la playlist Yishama',
   },
   neotone: {
-    title: 'Neotone — handpan électronique & numérique | David Lesage',
-    description:
-      'Le Neotone, accompagné par David Lesage : −5 % en ligne (−7 % au showroom), garantie 6 ans, calculateur de prix par pays et accompagnement humain de l’essai au déballage.',
+    title: 'Neotone : handpan électronique, prix et essai à Paris | David Lesage',
+    description: 'Le Neotone, handpan électronique accompagné par David Lesage : −5 % en ligne, −7 % au showroom, garantie 6 ans, calculateur de prix par pays.',
     heroEyebrow: 'Le matériel · Handpan numérique',
     heroTitle: 'Le Neotone, le meilleur handpan électronique au monde',
     heroLead:
@@ -855,7 +853,7 @@ const fr = {
     handpanNote: 'La seule différence réelle : le <strong>Neotone</strong> (fabriqué par Soundventure) se commande via mon calculateur, avec code de remise nominatif et garantie 6 ans. Pour <strong>Yishama</strong>, je suis ambassadeur et affilié — la commande se fait sur leur site, mon lien te suit. Deux façons d’acheter, une seule exigence de qualité.',
     handpanBridge: 'Le trait d’union entre les deux : Handpan Constellation Studio →',
     products: {
-      'handpan-studio': { name: 'Handpan Constellation Studio · l’application', description: 'Mon application pédagogique, sur handpan acoustique comme sur Neotone : couleurs, géométrie et émotions rendent la musique visible. Découverte gratuite en mode acoustique, puis Essentiel à 3,49 € TTC/mois, avec 1 mois d’essai gratuit.' },
+      'handpan-studio': { name: 'Handpan Constellation Studio · l’application', description: 'Mon application pédagogique, sur handpan acoustique comme sur Neotone : couleurs, géométrie et émotions rendent la musique visible. Gratuit pour toujours, Essentiel à 3,49 € TTC/mois et Studio à 9,99 € TTC/mois, avec 1 mois d’essai gratuit.' },
       'neotone-one': { name: 'Neotone¹', description: 'Handpan numérique 10 notes, toutes les gammes, qualité studio. Achat accompagné : code de remise nominatif + garantie 6 ans.' },
       'neotone-mutant': { name: 'Neotone¹ Mutant', description: 'Handpan numérique 19 notes avec écran LCD, l’expression maximale. Achat accompagné : code de remise + garantie 6 ans.' },
       'yishama': { name: 'Handpan Yishama d’exception', description: 'L’un des meilleurs fabricants de handpan au monde (Israël / Hongrie). Facture artisanale, instruments jusqu’à 19 notes aux basses profondes et aigus brillants. Je le représente avec fierté en tant qu’ambassadeur.' },
@@ -1141,8 +1139,7 @@ const fr = {
   },
   muling: {
     title: 'Micro Muling pour handpan acoustique | David Lesage',
-    description:
-      'Le micro Muling pour handpan acoustique, testé et présenté par David Lesage : captation claire et précise, sans Larsen. Vidéo de test complet, photos et commande.',
+    description: 'Le micro Muling pour handpan acoustique, testé par David Lesage : captation claire et précise, sans Larsen. Vidéo de test complet et photos.',
     back: '← Retour à la boutique',
     eyebrow: 'Micro pour handpan acoustique',
     heroTitle: 'Le micro Muling',
@@ -1980,8 +1977,7 @@ const fr = {
   },
   lessons: {
     title: 'Cours de handpan à Paris & en ligne | David Lesage',
-    description:
-      'Now Music Academy : apprends le handpan, le rythme à la calebasse (Now Groove) et la harpe gonilélé — par les couleurs, les formes et les émotions. Visio dans le monde entier ou présentiel à Paris, et ateliers de groupe.',
+    description: 'Now Music Academy : apprends le handpan, le rythme à la calebasse et la harpe gonilélé par les couleurs, les formes et les émotions.',
     heroEyebrow: 'Now Music Academy',
     heroTitle: 'Apprendre par une approche holistique de la musique',
     heroLead: 'Handpan, rythme à la calebasse et harpe gonilélé — par les couleurs, les formes et les émotions. En visio partout dans le monde, ou en présentiel à Paris.',
@@ -2181,10 +2177,16 @@ const fr = {
       { t: 'Une communauté, pas un catalogue', d: 'Tu rejoins un mouvement : rendre la musique visible et accessible. Ensemble, on construit l’outil que nous aurions tous rêvé d’avoir, enfant.' },
     ],
     priceEyebrow: 'Tarifs',
-    priceTitle: 'Gratuit, Essentiel… et bientôt plus',
+    priceTitle: 'Gratuit, Essentiel, Studio',
     priceIntro:
-      'Commence gratuitement. Passe à l’Essentiel pour aller plus loin, avec un mois d’essai offert. Les formules Studio et Prof arrivent.',
+      'Commence gratuitement, pour toujours et sans carte. Passe à Essentiel ou à Studio quand tu veux aller plus loin : le premier mois est offert sur les formules au mois.',
     priceCta: 'Je passe à l’Essentiel',
+    priceStudioCta: 'Je passe à Studio',
+    pricePerYear: '/ an',
+    priceOrYear: 'Ou à l’année : {price} ({saving}), en une fois, sans mois d’essai',
+    priceFreeForever: 'pour toujours, sans carte',
+    priceStudioPromise: 'Un studio autour de tes instruments : ta justesse, le casque, deux handpans, la scène, le MIDI et le Neotone.',
+    priceEssentialPromise: 'Ce que tu joues vraiment : transposer, jouer hors ligne, boucler un passage, exporter tes partitions.',
     priceFreeCta: 'Commencer gratuitement',
     pricePerMonth: '/ mois',
     priceTtc: 'TTC',
@@ -2256,9 +2258,8 @@ const fr = {
   //    Seul le TEXTE LU PAR UN HUMAIN a changé.
   // ══════════════════════════════════════════════════════════════════════════
   showroom: {
-    title: 'Où essayer un handpan à Paris — acoustique et électronique, gratuit | David Lesage',
-    description:
-      'Où essayer un handpan à Paris, acoustique et électronique le même jour : le handpan électronique Neotone, mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : rencontres gratuites, démonstrations privées et cours.',
+    title: 'Essayer un handpan à Paris : acoustique et électronique | David Lesage',
+    description: 'Où essayer un handpan à Paris, acoustique et électronique le même jour : le Neotone, mes handpans Yishama et la harpe Gonilélé, à Paris 20ᵉ.',
     heroEyebrow: 'Showroom David Lesage · Le Nid, Paris 20ᵉ',
     // 🔎 06/09/2026 — LE <h1> DIT ENFIN CE QU'ON VIENT Y FAIRE.
     // Il disait « Showroom David Lesage » : un nom de marque que personne ne
@@ -2875,8 +2876,7 @@ const fr = {
   // ============================================================
   about: {
     title: 'À propos — David Lesage, musicien, pédagogue et inventeur',
-    description:
-      'Batteur de formation devenu joueur de handpan et chanteur : le Conservatoire, The Voice, Naxos et la scène internationale du handpan, deux instruments sur mesure sans mode d’emploi — et les outils que j’ai fini par construire.',
+    description: 'David Lesage, batteur de formation devenu joueur de handpan et chanteur : le Conservatoire, The Voice, Naxos et la scène internationale du handpan.',
     heroEyebrow: 'À propos',
     heroTitle: 'Batteur de formation, joueur de handpan, chanteur — et constructeur d’outils',
     heroLead:

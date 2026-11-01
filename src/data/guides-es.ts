@@ -104,7 +104,7 @@ export const esGuides: GuidesByLang = {
         "blocks": [
           {
             "kind": "p",
-            "html": "Para implementar este método, creé <a href=\"/handpan-app\">Handpan Constellation Studio</a>, la aplicación que hace que la música sea visual. Muestra las notas en color, dibuja acordes con formas, ofrece un mapa mundial de escalas y te permite crear las tuyas propias. La <strong>versión Discovery es gratuita</strong> en modo acústico; la <strong>versión Esencial (3,49 € IVA incl./mes, 1 mes de prueba gratuito)</strong> va más allá; los planes Studio y Profesor llegarán pronto. Es la compañera ideal para practicar a solas, a tu propio ritmo."
+            "html": "Para implementar este método, creé <a href=\"/handpan-app\">Handpan Constellation Studio</a>, la aplicación que hace que la música sea visual. Muestra las notas en color, dibuja acordes con formas, ofrece un mapa mundial de escalas y te permite crear las tuyas propias. El <strong>plan Gratis</strong> lo es para siempre; los planes <strong>Esencial (3,49 € IVA incl./mes)</strong> y <strong>Studio (9,99 € IVA incl./mes)</strong> van más allá, con 1 mes de prueba gratuito. Es la compañera ideal para practicar a solas, a tu propio ritmo."
           }
         ]
       },
@@ -395,7 +395,7 @@ export const esGuides: GuidesByLang = {
         "blocks": [
           {
             "kind": "p",
-            "html": "Nada se compara con la experiencia de tener el instrumento en tus manos. En París, mi <a href=\"/showroom\">sala de exposición</a> es el único lugar del mundo donde puedes probar un Neotone y llevártelo el mismo día, sin demoras de fabricación y al mejor precio. Podrás comparar escalas, sentir la respuesta bajo tus dedos y te guiaré según tu nivel y preferencias."
+            "html": "Nada se compara con la experiencia de tener el instrumento en tus manos. En París, mi <a href=\"/showroom\">sala de exposición</a> es el único lugar del mundo, aparte de los fabricantes en Budapest, donde puedes probar un Neotone y llevártelo el mismo día, sin demoras de fabricación y al mejor precio. Podrás comparar escalas, sentir la respuesta bajo tus dedos y te guiaré según tu nivel y preferencias."
           }
         ]
       },

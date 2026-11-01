@@ -17,8 +17,12 @@ export const SUPABASE_URL = 'https://zqcuhnjjrgmybftppkcl.supabase.co'
 export const SUPABASE_ANON_KEY = 'sb_publishable_turahpl0xi-qKN6jmG3yBg_tqpVZbtx'
 export const GET_PRICES_URL = `${SUPABASE_URL}/functions/v1/get-prices`
 
-// Décision David 14/10/2026 : seule la formule Essentiel a un prix (3,49 € TTC / mois,
-// 1 mois d'essai). Studio et Prof : « À venir », quelle que soit la réponse de Stripe.
+// Formules vendues (relevé Stripe du 01/11/2026, lookup_keys essentiel_* et studio_*).
+// Prof : pas de prix tant que la formule n'est pas ouverte.
+export const APP_PLANS = {
+  essential: { month: 3.49, year: 29.99, yearSaving: 28 },
+  studio: { month: 9.99, year: 89, yearSaving: 26 },
+} as const
 export type PlanId = 'essential'
 export interface PriceInfo {
   amount: number | null

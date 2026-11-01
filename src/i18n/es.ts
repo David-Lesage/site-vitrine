@@ -217,7 +217,7 @@ export const es: Dict = {
     "whyP2": "En el Conservatorio, me gradué con honores en batería, obteniendo un premio... pero me desanimó un método de enseñanza de armonía que no me convencía. Así que creé la herramienta que me faltaba: un enfoque visual de la música.",
     "whyCta": "Lee mi historia",
     "showroomBadge": "★ Estreno mundial",
-    "showroomTitle": "El único lugar del mundo donde puedes probar tu Neotone y llevarte contigo.",
+    "showroomTitle": "El único lugar del mundo, aparte de los fabricantes en Budapest, donde puedes probar tu Neotone y llevártelo contigo.",
     "showroomText": "En París 20, ven a probar los instrumentos, conoce a la comunidad y llévate tu handpan el mismo día, sin demoras en la fabricación y al mejor precio del mercado (−7%).",
     "showroomArgs": [
       "7% de descuento: el mejor precio (en comparación con el 5% online).",
@@ -637,7 +637,7 @@ export const es: Dict = {
     "products": {
       "handpan-studio": {
         "name": "Handpan Constellation Studio · la aplicación",
-        "description": "Mi aplicación educativa, tanto para handpan acústico como para Neotone: colores, geometría y emociones que hacen que la música sea visible. Prueba gratuita en modo acústico, luego Esencial a 3,49 € IVA incl./mes, con 1 mes de prueba gratuito. Studio y Profesor: próximamente."
+        "description": "Mi aplicación educativa, tanto para handpan acústico como para Neotone: colores, geometría y emociones que hacen que la música sea visible. Gratis para siempre, Esencial a 3,49 € IVA incl./mes y Studio a 9,99 € IVA incl./mes, con 1 mes de prueba gratuito."
       },
       "neotone-one": {
         "name": "Neotone¹",
@@ -1608,9 +1608,15 @@ export const es: Dict = {
       }
     ],
     "priceEyebrow": "Precios",
-    "priceTitle": "Gratis, Esencial… y pronto más",
-    "priceIntro": "Empieza gratis. Pasa a Esencial para ir más lejos, con un mes de prueba gratuito. Los planes Studio y Profesor están en camino.",
+    "priceTitle": "Gratis, Esencial, Studio",
+    "priceIntro": "Empieza gratis: para siempre y sin tarjeta. Pasa a Esencial o a Studio cuando quieras ir más lejos: el primer mes es gratis en los planes mensuales.",
     "priceCta": "Paso a Esencial",
+    "priceStudioCta": "Paso a Studio",
+    "pricePerYear": "/ año",
+    "priceOrYear": "O al año: {price} ({saving}), en un solo pago, sin mes de prueba",
+    "priceFreeForever": "para siempre, sin tarjeta",
+    "priceStudioPromise": "Un estudio alrededor de tus instrumentos: tu afinación, los auriculares, dos handpans, el escenario, el MIDI y el Neotone.",
+    "priceEssentialPromise": "Lo que de verdad tocas: transponer, tocar sin conexión, repetir un pasaje, exportar tus partituras.",
     "priceFreeCta": "Comienza gratis",
     "pricePerMonth": "/ mes",
     "priceTtc": "IVA incl.",

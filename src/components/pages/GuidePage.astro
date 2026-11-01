@@ -6,7 +6,8 @@ import Button from '@/components/Button.astro'
 import { Icon } from 'astro-icon/components'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
-import { articleLdJson, breadcrumbLdJson, faqLdJson } from '@/lib/ldJson'
+import { articleLdJson, breadcrumbLdJson, faqLdJson, videoLdJson } from '@/lib/ldJson'
+import YouTube from '@/components/YouTube.astro'
 import type { Lang } from '@/i18n/config'
 import { getGuide } from '@/data/guides'
 import { getCollection } from 'astro:content'
@@ -52,6 +53,29 @@ const guideImages: Partial<Record<Props['guideKey'], string>> = {
 }
 const ogImage = guideImages[guideKey] ?? '/images/og-accueil.jpg'
 
+// Vidéo du sujet de la page, sous l'introduction (vidéos en français).
+const guideVideos: Partial<Record<Props['guideKey'], { id: string; title: Record<Lang, string>; note: Record<Lang, string> }>> = {
+  learn: {
+    id: 'QV4Xe7zp4nM',
+    title: {
+      fr: 'Un nouveau langage visuel pour apprendre le handpan : couleurs, géométrie et émotions',
+      en: 'A new visual language for learning the handpan: colours, geometry and emotions',
+      es: 'Un nuevo lenguaje visual para aprender handpan: colores, geometría y emociones',
+    } as Record<Lang, string>,
+    note: { fr: '', en: 'Video in French.', es: 'Vídeo en francés.' } as Record<Lang, string>,
+  },
+  vsAcoustic: {
+    id: 'v87I0csinRY',
+    title: {
+      fr: 'Pourquoi choisir un handpan électronique ?',
+      en: 'Why choose an electronic handpan?',
+      es: '¿Por qué elegir un handpan electrónico?',
+    } as Record<Lang, string>,
+    note: { fr: '', en: 'Video in French.', es: 'Vídeo en francés.' } as Record<Lang, string>,
+  },
+}
+const guideVideo = guideVideos[guideKey]
+
 const ld = [
   articleLdJson({
     title: g.title,
@@ -66,6 +90,7 @@ const ld = [
     { name: g.breadcrumbLabel, url: L('/' + g.slug) },
   ]),
   faqLdJson(g.faq),
+  ...(guideVideo ? videoLdJson([{ id: guideVideo.id, name: guideVideo.title[lang], description: g.description }]) : []),
 ]
 ---
 
@@ -91,6 +116,12 @@ const ld = [
 
   <!-- Corps -->
   <Section width="narrow">
+    {guideVideo && (
+      <figure class="mb-14">
+        <YouTube id={guideVideo.id} title={guideVideo.title[lang]} />
+        <figcaption class="mt-3 text-center text-sm text-ink-soft/70">{guideVideo.title[lang]}{guideVideo.note[lang] && ` · ${guideVideo.note[lang]}`}</figcaption>
+      </figure>
+    )}
     <div class="space-y-14">
       {g.sections.map((s) => (
         <article id={s.id} class="scroll-mt-24">

@@ -9,13 +9,18 @@ const home = `${site.url}/`
 // contiennent pas l'entité Person (seul l'accueil la décrit).
 const davidRef = { '@type': 'Person', '@id': `${site.url}/#david-lesage`, name: 'David Lesage', url: home }
 
-// `uploadDate` est obligatoire pour que Google accepte un VideoObject.
+// `uploadDate` est obligatoire pour que Google accepte un VideoObject : videoLdJson()
+// n'émet rien pour une vidéo absente de cette table.
 // YouTube : date de mise en ligne lue sur la page de la vidéo (01/11/2026).
 const YOUTUBE_UPLOAD_DATES: Record<string, string> = {
   B_7ZvlpHUsE: '2026-04-23T01:23:17-07:00',
   ENArz99dyTQ: '2026-08-13T01:00:25-07:00',
   KNQc6jCs0VE: '2025-03-15T06:55:51-07:00',
   Zp_zaqsRBCg: '2023-07-14T11:23:02-07:00',
+  QV4Xe7zp4nM: '2026-09-14T07:35:04-07:00',
+  Vlzo3KbpPjw: '2026-08-20T14:18:41-07:00',
+  g1aVoTcHacU: '2026-08-17T10:53:32-07:00',
+  Y5D0_iiVflg: '2025-10-01T09:00:06-07:00',
   rx8ZZcL7Nog: '2026-05-09T00:00:46-07:00',
   v87I0csinRY: '2025-12-08T09:59:11-08:00',
   zWqXGlHb2wI: '2025-02-19T04:08:38-08:00',
@@ -121,12 +126,14 @@ export function softwareAppLdJson() {
       'Mode acoustique',
       'Connexion MIDI au Neotone',
     ],
-    // Ces données ne servent qu'à /en/ et /es/handpan-app/ : seules les offres affichées
-    // sur ces pages figurent ici. Studio y est encore en liste d'attente, alors qu'il est
-    // vendu sur la page française (9,99 €). À compléter quand ces pages seront alignées.
+    // Ces données ne servent qu'à /en/ et /es/handpan-app/ : mêmes offres que PricingTable
+    // et que la page française. Prix Stripe relevés le 01/11/2026.
     offers: [
       { '@type': 'Offer', name: 'Free', price: 0, priceCurrency: 'EUR' },
-      { '@type': 'Offer', name: 'Essential', price: 3.49, priceCurrency: 'EUR' },
+      { '@type': 'Offer', name: 'Essential (monthly)', price: 3.49, priceCurrency: 'EUR' },
+      { '@type': 'Offer', name: 'Essential (yearly)', price: 29.99, priceCurrency: 'EUR' },
+      { '@type': 'Offer', name: 'Studio (monthly)', price: 9.99, priceCurrency: 'EUR' },
+      { '@type': 'Offer', name: 'Studio (yearly)', price: 89, priceCurrency: 'EUR' },
     ],
   }
 }
@@ -180,7 +187,7 @@ export function courseLdJson(p: { name: string; description: string; url: string
 
 // Vidéos YouTube mises en avant (VideoObject → Google + IA)
 export function videoLdJson(videos: { id: string; name: string; description?: string }[]) {
-  return videos.map((v) => ({
+  return videos.filter((v) => YOUTUBE_UPLOAD_DATES[v.id]).map((v) => ({
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
     name: v.name,
@@ -188,7 +195,7 @@ export function videoLdJson(videos: { id: string; name: string; description?: st
     thumbnailUrl: [`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`],
     contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
     embedUrl: `https://www.youtube.com/embed/${v.id}`,
-    ...(YOUTUBE_UPLOAD_DATES[v.id] ? { uploadDate: YOUTUBE_UPLOAD_DATES[v.id] } : {}),
+    uploadDate: YOUTUBE_UPLOAD_DATES[v.id],
     publisher: davidRef,
   }))
 }
@@ -230,7 +237,7 @@ export function localBusinessLdJson() {
     '@type': 'MusicStore',
     '@id': showroomId,
     name: 'Showroom David Lesage',
-    description: "Le seul endroit au monde pour tester et repartir avec un Neotone le jour même. Rencontres, démonstrations privées et cours à Paris 20ᵉ.",
+    description: "Le seul endroit au monde, en dehors de chez les fabricants à Budapest, pour tester et repartir avec un Neotone le jour même. Rencontres, démonstrations privées et cours à Paris 20ᵉ.",
     image: new URL('/images/localisation-showroom-poster.webp', site.url).toString(),
     url: pageUrl('/showroom'),
     telephone: site.phone,

@@ -7,7 +7,8 @@ import { Icon } from 'astro-icon/components'
 import { site } from '@/data/site'
 import { getDict } from '@/i18n/dict'
 import { localizePath } from '@/i18n/utils'
-import { localBusinessLdJson, breadcrumbLdJson } from '@/lib/ldJson'
+import { localBusinessLdJson, breadcrumbLdJson, videoLdJson } from '@/lib/ldJson'
+import YouTube from '@/components/YouTube.astro'
 import { upcomingShowcases } from '@/lib/agenda'
 import { priceForKind, priceGrid } from '@/lib/sessions'
 import { getCoursePrices } from '@/lib/helloassoCatalogue'
@@ -299,7 +300,12 @@ const nextBookAttrs = next
 //   dictionnaires — aucune clé supprimée.
 const privateAttrs = { 'data-booking': 'private-session', 'data-title': bk.privateTitle, 'data-intro': bk.privateIntro }
 
-const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: sh.heroTitle, url: L('/showroom') }])]
+// Vidéos de David (en français) : la visite du lieu et l'invitation aux rencontres mensuelles.
+const lieuVideos = [
+  { id: 'Vlzo3KbpPjw', title: { fr: 'Bienvenue au Nid, mon showroom à Paris 20ᵉ', en: 'Welcome to Le Nid, my showroom in Paris 20th (in French)', es: 'Bienvenido a Le Nid, mi showroom en París 20 (en francés)' } as Record<Lang, string> },
+  { id: 'g1aVoTcHacU', title: { fr: 'Tous les mois à Paris : découvrir les instruments et les micros', en: 'Every month in Paris: discover the instruments and microphones (in French)', es: 'Cada mes en París: descubre los instrumentos y los micrófonos (en francés)' } as Record<Lang, string> },
+]
+const ld = [localBusinessLdJson(), breadcrumbLdJson([{ name: t.common.nav.home, url: L('/') }, { name: sh.heroTitle, url: L('/showroom') }]), ...videoLdJson(lieuVideos.map((v) => ({ id: v.id, name: v.title[lang], description: sh.description })))]
 
 // 📷 CARROUSEL « En images » — la liste des photos vit dans `src/data/showroom.ts`
 // (mode d'emploi complet en haut de ce fichier : ajouter une photo = 3 étapes).
@@ -758,6 +764,14 @@ const alsoSlides = showroomAlsoGallery.map((p) => ({
       n'appliquer AUCUN filtre de netteté sur ces images. */}
   <Section id="le-lieu">
     <SectionHeading eyebrow={sh.lieuEyebrow} title={sh.lieuTitle} intro={sh.lieuIntro} />
+    <div class="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
+      {lieuVideos.map((v) => (
+        <figure>
+          <YouTube id={v.id} title={v.title[lang]} />
+          <figcaption class="mt-2 text-center text-sm text-ink-soft/70">{v.title[lang]}</figcaption>
+        </figure>
+      ))}
+    </div>
     {/* DEUX PHOTOS, PAS UNE (20/08/2026) : la vue d'ensemble prouve que
         l'événement EXISTE (du monde, un cercle, des instruments) ; la grande pièce vide
         répond à la question que personne ne pose à voix haute — « je débarque
