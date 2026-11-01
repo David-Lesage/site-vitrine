@@ -128,6 +128,10 @@ const staticRoutes: Set<string> = new Set(
       return r === '' ? '/' : r
     }),
 )
+// La page de vente française est un fichier statique (public/handpan-app/index.html),
+// invisible du glob ci-dessus : sans ça, /en/ et /es/handpan-app/ ne la déclaraient
+// pas en hreflang (non réciproque) et le sélecteur de langue renvoyait à l'accueil.
+staticRoutes.add('/handpan-app')
 
 // La collection n'est lue qu'une fois pour tout le build.
 let blogIndex: Promise<Set<string>> | null = null

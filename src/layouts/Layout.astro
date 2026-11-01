@@ -48,6 +48,11 @@ const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
       // — les francophones restent sur la version française (par défaut).
       ;(function () {
         try {
+          // ⚠️ Jamais pour un moteur (01/11/2026). Le moteur de rendu de Googlebot
+          // annonce en-US : chaque page française partait vers /en/…, et la Search
+          // Console classait /neotone/, /contact/, etc. en « Page avec redirection »,
+          // canonique déclarée = /en/… (constaté à l'inspection d'URL).
+          if (/bot|crawl|spider|slurp|google-|lighthouse|facebookexternalhit|headlesschrome/i.test(navigator.userAgent)) return
           if (localStorage.getItem('pref-lang')) return
           if (sessionStorage.getItem('lang-auto')) return
           var path = location.pathname
