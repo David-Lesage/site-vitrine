@@ -790,35 +790,17 @@ export const es: Dict = {
     "discountNext3": "Neotone se encarga entonces de todo el proceso: pedido, pago y entrega. Sigo disponible si me necesitas.",
     "purchase": {
       "showroomTitle": "Comprar un Neotone en el showroom (−7 %)",
-      "showroomIntro": "Te llevas tu instrumento en el showroom (París 20). En el showroom no se puede pagar: Neotone te envía la factura y el enlace de pago en días laborables, normalmente en el mismo día. Pagar el día de tu visita es posible, pero para estar seguro de llevarte tu Neotone, envía tu solicitud unos días laborables antes.",
+      "showroomIntro": "Te llevas tu instrumento en el showroom (París 20). Reviso tu solicitud y se la transmito a Neotone, que te envía la factura y un enlace de pago con tarjeta, de lunes a viernes.",
       "showroomButton": "Comprar en el showroom (−7 %)",
       "showroomHowTitle": "Cómo es la compra en el showroom",
       "showroomHow": [
-        "Rellenas este formulario (con la fecha de recogida deseada).",
-        "Reviso tu solicitud y se la transmito a Neotone (Soundventure, en Budapest) con el número de serie de tu instrumento. Vas en copia.",
-        "Neotone te envía la factura y un enlace de pago con tarjeta en días laborables (salvo festivos húngaros), normalmente en el mismo día. Llega desde szamlazz.hu: revisa tu carpeta de spam.",
-        "Pagas en cuanto recibes el enlace o, como muy tarde, el día de tu visita si es laborable. Te entrego tu Neotone una vez pagado, en el showroom (París 20). Podré pedirte tu justificante de pago."
+        "Rellenas este formulario.",
+        "Reviso tu solicitud y se la transmito a Neotone (Soundventure, en Budapest). Vas en copia.",
+        "Neotone te envía la factura y un enlace de pago con tarjeta, de lunes a viernes de 9 h a 17 h (hora de París, la misma que en Budapest), en un plazo de 24 h (días laborables).",
+        "Pagas y el instrumento es tuyo: te lo llevas en el showroom (París 20).",
+        "Si pagas antes de venir, envíame el justificante de pago o de transferencia a <a href=\"mailto:contact@lesagedavid.fr\">contact@lesagedavid.fr</a>: te entrego tu Neotone al presentar este justificante."
       ],
-      "showroomWeekend": "<strong>¿Vienes un fin de semana?</strong> Neotone no trabaja los fines de semana: el enlace de pago tiene que haber llegado, y estar pagado, antes de venir. Envía tu solicitud unos días laborables antes. En el showroom no se puede pagar.",
-      "pickupTitle": "Recogida en París",
-      "pickupLabel": "Fecha deseada de recogida en el showroom",
-      "pickupHint": "Idealmente unos días laborables después de hoy: el tiempo de que Neotone te envíe el enlace y de que pagues con calma.",
-      "payFirstTitle": "Cómo se paga",
-      "payFirst": [
-        "Neotone (Soundventure, Budapest) envía la factura y el enlace de pago con tarjeta <strong>en días laborables</strong> (de lunes a viernes, salvo festivos húngaros), normalmente en el mismo día.",
-        "<strong>No hay forma de pagar en el showroom</strong>, y solo puedo entregarte tu Neotone una vez pagado.",
-        "Pagar el día de tu visita es posible en un día laborable, si el enlace llega a tiempo, pero nada lo garantiza. Para estar seguro de llevarte tu instrumento (imprescindible en fin de semana), envía tu solicitud <strong>unos días laborables antes</strong> y paga en cuanto recibas el enlace o, como muy tarde, el día de tu visita.",
-        "El enlace de pago llega desde szamlazz.hu: <strong>revisa tu carpeta de spam</strong>."
-      ],
-      "vatNone": "No tengo número de IVA intracomunitario",
-      "vatMissing": "Indica tu número de IVA intracomunitario, o marca «No tengo».",
-      "stockHowTitle": "Cómo funciona tu solicitud",
-      "stockHow": [
-        "Rellenas este formulario (con la fecha de recogida deseada).",
-        "Si está en camino, te propongo la fecha de llegada al showroom. Si hay que fabricarlo, pido el plazo a Neotone y luego te propongo una fecha.",
-        "Confirmas esa fecha con un clic, desde mi correo.",
-        "Neotone te envía la factura y el enlace de pago (szamlazz.hu, revisa tu spam). Pagas en cuanto lo recibes o, como muy tarde, el día de tu visita si es laborable, y te entrego tu Neotone una vez pagado."
-      ],
+      "showroomWeekend": "<strong>¿Vienes al showroom un fin de semana?</strong> Rellena este formulario antes del viernes: el enlace de pago estará listo, podrás pagar allí mismo y llevarte tu instrumento.",
       "onlineTitle": "Compra online: solicitud de código de descuento (−5 %)",
       "onlineIntro": "Un código de descuento personal que solicito para ti a Neotone: −5 % en tu pedido online, entregado en tu casa.",
       "onlineButton": "Compra online: obtener mi código (−5 %)",
@@ -2847,7 +2829,7 @@ export const es: Dict = {
       "stockTagOut": "Por encargo",
       "stockRequestButton": "Hacer la solicitud",
       "stockRequestTitle": "Solicitud de un Neotone que aún no está en el showroom",
-      "stockRequestIntro": "El formulario completo: te propongo una fecha de llegada al showroom (o pido el plazo a Neotone si hay que fabricarlo), la confirmas con un clic y pagas antes de venir.",
+      "stockRequestIntro": "Déjame tus datos: pediré a Neotone el plazo de fabricación y de entrega hasta París para este modelo y esta madera, y volveré a contactarte con su respuesta.",
       "discountLabel": "Presentación del embajador",
       "vat": "TINA",
       "finalTTC": "Precio final con IVA incluido a pagar",

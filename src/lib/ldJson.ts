@@ -121,14 +121,13 @@ export function softwareAppLdJson() {
       'Mode acoustique',
       'Connexion MIDI au Neotone',
     ],
-    offers: {
-      '@type': 'AggregateOffer',
-      priceCurrency: 'EUR',
-      lowPrice: '0',
-      highPrice: '3.49',
-      offerCount: '2',
-      description: 'Version gratuite, ou Essentiel à 3,49 € TTC/mois avec 1 mois d’essai gratuit. Studio et Prof : à venir.',
-    },
+    // Ces données ne servent qu'à /en/ et /es/handpan-app/ : seules les offres affichées
+    // sur ces pages figurent ici. Studio y est encore en liste d'attente, alors qu'il est
+    // vendu sur la page française (9,99 €). À compléter quand ces pages seront alignées.
+    offers: [
+      { '@type': 'Offer', name: 'Free', price: 0, priceCurrency: 'EUR' },
+      { '@type': 'Offer', name: 'Essential', price: 3.49, priceCurrency: 'EUR' },
+    ],
   }
 }
 
@@ -150,6 +149,19 @@ export function courseLdJson(p: { name: string; description: string; url: string
       url: home,
     },
     about: ['Handpan', 'Handpan électronique Neotone', 'Rythme', 'Pédagogie musicale visuelle'],
+    // En visio ou à Paris, comme l'annonce la page Cours.
+    hasCourseInstance: [
+      { '@type': 'CourseInstance', courseMode: 'online' },
+      {
+        '@type': 'CourseInstance',
+        courseMode: 'onsite',
+        location: {
+          '@type': 'Place',
+          name: 'Showroom David Lesage',
+          address: { '@type': 'PostalAddress', streetAddress: '29 rue des Orteaux', postalCode: '75020', addressLocality: 'Paris', addressCountry: 'FR' },
+        },
+      },
+    ],
     ...(p.offers?.length
       ? {
           offers: p.offers.map((o) => ({

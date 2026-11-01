@@ -7,7 +7,8 @@
   "headers": [
     { "source": "/api/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
     { "source": "/prototypes/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
-    { "source": "/handpan-app/ouverture-b4.html", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] }
+    { "source": "/handpan-app/ouverture-b4.html", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
+    { "source": "/neotone-suivi(/?)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] }
   ],
   "redirects": [
     {

@@ -1,0 +1,68 @@
+diff --git a/src/i18n/dict.ts b/src/i18n/dict.ts
+index 4916382..d3be738 100644
+--- a/src/i18n/dict.ts
++++ b/src/i18n/dict.ts
+@@ -150,8 +150,7 @@ const fr = {
+   },
+   home: {
+     title: 'Apprendre le handpan autrement — David Lesage',
+-    description:
+-      'Le handpan acoustique Yishama, le handpan électronique Neotone et ma méthode par les couleurs : apprends le handpan autrement, avec Handpan Constellation Studio. Viens les essayer à Paris.',
++    description: 'Handpan acoustique Yishama, handpan électronique Neotone et méthode par les couleurs : apprends le handpan autrement avec Handpan Constellation Studio.',
+     heroEyebrow: 'Musicien · Pédagogue · Inventeur',
+     heroTitleA: 'Je rends la musique',
+     heroTitleHighlight: 'visible',
+@@ -244,9 +243,8 @@ const fr = {
+     proofCtaYishama: 'Voir toute la playlist Yishama',
+   },
+   neotone: {
+-    title: 'Neotone — handpan électronique & numérique | David Lesage',
+-    description:
+-      'Le Neotone, accompagné par David Lesage : −5 % en ligne (−7 % au showroom), garantie 6 ans, calculateur de prix par pays et accompagnement humain de l’essai au déballage.',
++    title: 'Neotone : handpan électronique, prix et essai à Paris | David Lesage',
++    description: 'Le Neotone, handpan électronique accompagné par David Lesage : −5 % en ligne, −7 % au showroom, garantie 6 ans, calculateur de prix par pays.',
+     heroEyebrow: 'Le matériel · Handpan numérique',
+     heroTitle: 'Le Neotone, le meilleur handpan électronique au monde',
+     heroLead:
+@@ -1141,8 +1139,7 @@ const fr = {
+   },
+   muling: {
+     title: 'Micro Muling pour handpan acoustique | David Lesage',
+-    description:
+-      'Le micro Muling pour handpan acoustique, testé et présenté par David Lesage : captation claire et précise, sans Larsen. Vidéo de test complet, photos et commande.',
++    description: 'Le micro Muling pour handpan acoustique, testé par David Lesage : captation claire et précise, sans Larsen. Vidéo de test complet et photos.',
+     back: '← Retour à la boutique',
+     eyebrow: 'Micro pour handpan acoustique',
+     heroTitle: 'Le micro Muling',
+@@ -1980,8 +1977,7 @@ const fr = {
+   },
+   lessons: {
+     title: 'Cours de handpan à Paris & en ligne | David Lesage',
+-    description:
+-      'Now Music Academy : apprends le handpan, le rythme à la calebasse (Now Groove) et la harpe gonilélé — par les couleurs, les formes et les émotions. Visio dans le monde entier ou présentiel à Paris, et ateliers de groupe.',
++    description: 'Now Music Academy : apprends le handpan, le rythme à la calebasse et la harpe gonilélé par les couleurs, les formes et les émotions.',
+     heroEyebrow: 'Now Music Academy',
+     heroTitle: 'Apprendre par une approche holistique de la musique',
+     heroLead: 'Handpan, rythme à la calebasse et harpe gonilélé — par les couleurs, les formes et les émotions. En visio partout dans le monde, ou en présentiel à Paris.',
+@@ -2256,9 +2252,8 @@ const fr = {
+   //    Seul le TEXTE LU PAR UN HUMAIN a changé.
+   // ══════════════════════════════════════════════════════════════════════════
+   showroom: {
+-    title: 'Où essayer un handpan à Paris — acoustique et électronique, gratuit | David Lesage',
+-    description:
+-      'Où essayer un handpan à Paris, acoustique et électronique le même jour : le handpan électronique Neotone, mes handpans acoustiques Yishama, la harpe africaine Gonilélé, la calebasse et les micros pour handpan. Showroom David Lesage, 29 rue des Orteaux, Paris 20ᵉ : rencontres gratuites, démonstrations privées et cours.',
++    title: 'Essayer un handpan à Paris : acoustique et électronique | David Lesage',
++    description: 'Où essayer un handpan à Paris, acoustique et électronique le même jour : le Neotone, mes handpans Yishama et la harpe Gonilélé, à Paris 20ᵉ.',
+     heroEyebrow: 'Showroom David Lesage · Le Nid, Paris 20ᵉ',
+     // 🔎 06/09/2026 — LE <h1> DIT ENFIN CE QU'ON VIENT Y FAIRE.
+     // Il disait « Showroom David Lesage » : un nom de marque que personne ne
+@@ -2875,8 +2870,7 @@ const fr = {
+   // ============================================================
+   about: {
+     title: 'À propos — David Lesage, musicien, pédagogue et inventeur',
+-    description:
+-      'Batteur de formation devenu joueur de handpan et chanteur : le Conservatoire, The Voice, Naxos et la scène internationale du handpan, deux instruments sur mesure sans mode d’emploi — et les outils que j’ai fini par construire.',
++    description: 'David Lesage, batteur de formation devenu joueur de handpan et chanteur : le Conservatoire, The Voice, Naxos et la scène internationale du handpan.',
+     heroEyebrow: 'À propos',
+     heroTitle: 'Batteur de formation, joueur de handpan, chanteur — et constructeur d’outils',
+     heroLead:

@@ -48,7 +48,7 @@ const ldJSON: unknown[] = [
 if (d.youtubeId) ldJSON.push(...videoLdJson([{ id: d.youtubeId, name: d.title, description: d.description }]))
 ---
 
-<Layout title={`${d.title} · David Lesage`} description={d.description} image={d.cover} ogType="article" ldJSON={ldJSON}>
+<Layout title={d.title.length + 16 > 60 ? d.title : `${d.title} · David Lesage`} description={d.description} image={d.cover} ogType="article" ldJSON={ldJSON}>
   <Section width="narrow">
     <nav aria-label="Breadcrumb" class="text-sm text-ink-soft/70">
       <a href={localizePath('/', 'en')} class="hover:text-rust">Home</a>
