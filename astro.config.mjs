@@ -3,9 +3,25 @@ import sitemap from '@astrojs/sitemap'
 import icon from 'astro-icon'
 import tailwindcss from '@tailwindcss/vite'
 import { rehypeTrailingSlash } from './src/lib/trailing-slash.mjs'
+import { readdirSync, readFileSync } from 'node:fs'
 
 // Domaine de production (à ajuster lors du déploiement réel)
 const SITE = process.env.SITE_URL || 'https://www.lesagedavid.fr'
+
+/* 🗺 DATES DES ARTICLES POUR LE SITEMAP (01/11/2026) : updatedDate, sinon pubDate,
+   lues dans le frontmatter. Les autres pages n'ont pas de date fiable : aucune. */
+const articleDates = new Map()
+for (const f of readdirSync('./src/content/blog')) {
+  if (!f.endsWith('.md')) continue
+  const fm = readFileSync(`./src/content/blog/${f}`, 'utf8').split('---')[1] ?? ''
+  const read = (k) => fm.match(new RegExp(`^${k}:\\s*"?([0-9]{4}-[0-9]{2}-[0-9]{2})`, 'm'))?.[1]
+  const lang = fm.match(/^lang:\s*"?(\w+)/m)?.[1]
+  const slug = fm.match(/^permalink:\s*"?([^"\n]+)/m)?.[1]?.trim()
+  const date = read('updatedDate') ?? read('pubDate')
+  if (slug && date && /^draft:\s*true/m.test(fm) === false) {
+    articleDates.set(`/${lang === 'fr' ? '' : `${lang}/`}blog/${slug}/`, date)
+  }
+}
 
 /* 💬 COMMENTAIRES HTML DES ARTICLES — retirés du HTML produit (27/08/2026)
    Un article peut contenir des <!-- notes de chantier --> : elles servent à
@@ -49,9 +65,12 @@ export default defineConfig({
       customPages: ['https://www.lesagedavid.fr/handpan-app/'],
       // Page personnelle (lien avec jeton) : jamais dans le sitemap.
       filter: (page) => !page.includes('/showcase/ma-venue'),
-      i18n: {
-        defaultLocale: 'fr',
-        locales: { fr: 'fr-FR', en: 'en-US' },
+      // Pas d'option `i18n` ici (01/11/2026) : elle déduisait des alternates fr-FR/en-US
+      // par le chemin, sans /es/ ni /zh/ ni slugs traduits, en contradiction avec les
+      // hreflang du HTML (src/components/SEO.astro), qui restent la seule source.
+      serialize(item) {
+        const date = articleDates.get(new URL(item.url).pathname)
+        return date ? { ...item, lastmod: date } : item
       },
     }),
   ],

@@ -4,6 +4,11 @@
   "installCommand": "bun install",
   "buildCommand": "bun run build",
   "outputDirectory": "dist",
+  "headers": [
+    { "source": "/api/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
+    { "source": "/prototypes/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
+    { "source": "/handpan-app/ouverture-b4.html", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] }
+  ],
   "redirects": [
     {
       "source": "/(.*)",
