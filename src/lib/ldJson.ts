@@ -5,6 +5,23 @@ import { withTrailingSlash } from '@/lib/trailing-slash.mjs'
 // (« / » final, 20/10/2026) — la même que <link rel="canonical"> et le sitemap.
 const pageUrl = (path: string) => new URL(withTrailingSlash(path), site.url).toString()
 const home = `${site.url}/`
+// Référence complète à David : un `@id` seul ne dit rien sur les pages qui ne
+// contiennent pas l'entité Person (seul l'accueil la décrit).
+const davidRef = { '@type': 'Person', '@id': `${site.url}/#david-lesage`, name: 'David Lesage', url: home }
+
+// `uploadDate` est obligatoire pour que Google accepte un VideoObject.
+// YouTube : date de mise en ligne lue sur la page de la vidéo (01/11/2026).
+const YOUTUBE_UPLOAD_DATES: Record<string, string> = {
+  B_7ZvlpHUsE: '2026-04-23T01:23:17-07:00',
+  ENArz99dyTQ: '2026-08-13T01:00:25-07:00',
+  KNQc6jCs0VE: '2025-03-15T06:55:51-07:00',
+  Zp_zaqsRBCg: '2023-07-14T11:23:02-07:00',
+  rx8ZZcL7Nog: '2026-05-09T00:00:46-07:00',
+  v87I0csinRY: '2025-12-08T09:59:11-08:00',
+  zWqXGlHb2wI: '2025-02-19T04:08:38-08:00',
+}
+// Vidéos de l'app (public/images/sa-*.mp4) : date d'ajout au dépôt (git log).
+const localUploadDate = (src: string) => (/\/images\/sa-[^/]+\.mp4$/.test(src) ? '2026-06-18' : undefined)
 
 // Données structurées Schema.org — David Lesage = entité Person (E-E-A-T)
 export function personLdJson() {
@@ -66,7 +83,7 @@ export function websiteLdJson() {
     url: home,
     description: site.positioning,
     inLanguage: ['fr', 'en'],
-    publisher: { '@id': `${site.url}/#david-lesage` },
+    publisher: davidRef,
   }
 }
 
@@ -94,8 +111,8 @@ export function softwareAppLdJson() {
       // handpan acoustique s'était cru exclu par le discours du site.
       'Application web d’apprentissage du handpan qui rend la musique visible : chaque note a une couleur (ChromaKeys) et chaque accord dessine une forme (Constellation). Fonctionne sur n’importe quel handpan acoustique comme sur le handpan électronique Neotone.',
     inLanguage: ['fr', 'en'],
-    author: { '@id': `${site.url}/#david-lesage` },
-    creator: { '@id': `${site.url}/#david-lesage` },
+    author: davidRef,
+    creator: davidRef,
     featureList: [
       'Notes en couleurs (ChromaKeys)',
       'Constellations d’accords (tablature visuelle)',
@@ -159,7 +176,8 @@ export function videoLdJson(videos: { id: string; name: string; description?: st
     thumbnailUrl: [`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`],
     contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
     embedUrl: `https://www.youtube.com/embed/${v.id}`,
-    publisher: { '@id': `${site.url}/#david-lesage` },
+    ...(YOUTUBE_UPLOAD_DATES[v.id] ? { uploadDate: YOUTUBE_UPLOAD_DATES[v.id] } : {}),
+    publisher: davidRef,
   }))
 }
 
@@ -172,7 +190,8 @@ export function videoObjectsLocal(videos: { name: string; description: string; t
     description: v.description || v.name,
     thumbnailUrl: [new URL(v.thumbnail, site.url).toString()],
     contentUrl: new URL(v.contentUrl, site.url).toString(),
-    publisher: { '@id': `${site.url}/#david-lesage` },
+    ...(localUploadDate(v.contentUrl) ? { uploadDate: localUploadDate(v.contentUrl) } : {}),
+    publisher: davidRef,
   }))
 }
 
