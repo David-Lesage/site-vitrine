@@ -9,9 +9,9 @@
 //   cancel    {t, confirm:true}  → l'ouverture du lien ne fait rien, seule cette requête annule.
 // Opérations admin, avec le JWT de l'appelant (`is_site_admin()`) :
 //   admin_preview {saleId}       → sujet + HTML avec de faux liens : aucun jeton créé.
-//   admin_send    {saleId}       → crée le lien (révoque le précédent) et envoie.
+//   admin_send    {saleId}       → crée un lien de plus (les précédents restent valables) et envoie.
 //
-// Le jeton n'est jamais journalisé ni stocké en clair (voir migration 0307).
+// Le jeton n'est jamais journalisé ni stocké en clair (voir migration 0308).
 // =============================================================================
 
 import { deposerPreuve } from '../_shared/muling-depot.ts';
@@ -20,7 +20,7 @@ import {
     composerConfirmationAnnulation, composerMailClient, type LangueMail, urlPage, type VarianteMail,
 } from '../_shared/muling-email-modele.ts';
 import {
-    ADMIN_EMAIL, composeMulingMail, MULING_EMAIL, MULING_SALE_COLS, type MulingSale, sendMail,
+    ADMIN_EMAIL, composeMulingMail, MULING_SALE_COLS, type MulingSale, routageMuling, sendMail,
     sendMulingOrderMail, type SmtpEnv,
 } from '../_shared/muling-mail.ts';
 import {
@@ -47,10 +47,10 @@ export interface Deps {
 const prenomDe = (s: MulingSale) => String(s.customer_name ?? '').trim().split(/\s+/)[0] ?? '';
 const montantDe = (s: MulingSale) => s.price_discounted_eur ?? '';
 
-/** Crée un lien neuf (le précédent est révoqué) et renvoie les données du mail. */
+/** Crée un lien de plus (les précédents restent valables) et renvoie les données du mail. */
 async function nouveauLien(deps: Deps, s: MulingSale, langue: LangueMail): Promise<{ urlDepot: string; urlAnnuler: string }> {
     const jeton = genererJeton();
-    const { error } = await deps.admin.rpc('muling_lien_renouveler', {
+    const { error } = await deps.admin.rpc('muling_lien_creer', {
         p_sale_id: s.id, p_hash: await hacher(jeton), p_jours: LIEN_DUREE_JOURS,
     });
     if (error) throw error;
@@ -211,8 +211,7 @@ async function notifierAnnulation(deps: Deps, s: MulingSale | null, preuveTransm
     if (preuveTransmise) {
         const base = composeMulingMail(s, null, true);
         await envoyer(deps.env, {
-            to: MULING_EMAIL, cc: ADMIN_EMAIL,
-            subject: `ORDER CANCELLED by the customer — ${ref}. DO NOT SHIP`,
+            ...routageMuling(s.email, `ORDER CANCELLED by the customer — ${ref}. DO NOT SHIP`),
             text: `The customer cancelled this order after sending a proof of payment. DO NOT SHIP. We will get back to you about any refund.\n\n${base.text}`,
         });
     }

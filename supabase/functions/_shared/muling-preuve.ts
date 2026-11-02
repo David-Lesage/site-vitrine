@@ -81,7 +81,7 @@ export function estAnnulee(s: EtatCommande): boolean {
     return !!s.cancelled_at || s.fulfillment_status === 'cancelled' || s.status === 'no_sale';
 }
 
-/** Commande ouverte sans preuve : la seule qui reçoit un lien ou se reconnaît sur le formulaire. Même règle que `commande_muling_blocage` (0306). */
+/** Commande ouverte sans preuve : la seule qui reçoit un lien ou se reconnaît sur le formulaire. Même règle que `commande_muling_blocage` (0307). */
 export function ouverteSansPreuve(s: EtatCommande): boolean {
     return s.partner === 'muling'
         && !!String(s.order_ref ?? '').trim()

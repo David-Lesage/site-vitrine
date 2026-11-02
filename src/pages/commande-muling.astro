@@ -39,6 +39,7 @@
     <p class="brand">David Lesage · Muling</p>
     <div id="app" aria-live="polite"><p>…</p></div>
   </main>
+  <script is:inline src="/muling-preparer-fichier.js"></script>
   <script is:inline>
   (function () {
     var q = new URLSearchParams(location.search)
@@ -52,39 +53,39 @@
     var T = {
       fr: {
         title: 'Déposer ma preuve de virement', ref: 'Référence', amount: 'Montant de la commande',
-        file: 'Preuve de virement', fileNote: 'Capture d’écran ou PDF (PNG, JPEG ou PDF), 3 Mo maximum.',
+        file: 'Preuve de virement', fileNote: 'Photo, capture d’écran ou PDF. Une photo lourde est réduite automatiquement ; un PDF ne doit pas dépasser 3 Mo.',
         send: 'Envoyer ma preuve', sending: 'Envoi…', toCancel: 'Annuler ma commande',
         doneT: 'Ta preuve est bien reçue', done: 'Elle est transmise à Muling avec les informations de ta commande. Un e-mail de confirmation arrive : garde-le. Muling vérifie le virement avant toute expédition.',
         doneShowroom: 'Elle est transmise à Muling. Un e-mail de confirmation arrive : garde-le. Ton micro t’attend au showroom, rien ne sera expédié. Réponds à cet e-mail pour proposer une date de retrait.',
         cancelT: 'Annuler ma commande ?', cancelText: 'Cette action annule définitivement la commande. Rien n’est annulé tant que tu n’as pas confirmé ci-dessous.', cancelYes: 'Oui, annuler ma commande', cancelNo: 'Non, garder ma commande',
         cancelledT: 'Ta commande est annulée', cancelled: 'C’est fait. Un e-mail de confirmation arrive.',
-        badT: 'Ce lien n’est plus valable', bad: 'Il a expiré, ou il a déjà servi, ou un lien plus récent l’a remplacé. Indique l’e-mail de ta commande : si elle attend encore ta preuve, tu recevras un nouveau lien.',
+        badT: 'Ce lien n’est plus valable', bad: 'Il a expiré, ou il a déjà servi. Indique l’e-mail de ta commande : si elle attend encore ta preuve, tu recevras un nouveau lien.',
         email: 'Adresse e-mail de la commande', newLink: 'Recevoir un nouveau lien', linkSent: 'Si une commande attend une preuve sur cette adresse, un nouveau lien vient de partir. Regarde ta boîte e-mail.',
-        eMissing: 'Choisis un fichier.', eType: 'Format non accepté : PNG, JPEG ou PDF seulement.', eBig: 'Fichier trop lourd : 3 Mo maximum.', eMany: 'Trop de tentatives. Réessaie dans une heure.', eLocked: 'Cette commande ne peut plus être modifiée ici. Écris à contact@lesagedavid.fr.', eGen: 'Une erreur est survenue. Réessaie dans quelques minutes.', eEmail: 'Indique une adresse e-mail valide.',
+        eMissing: 'Choisis un fichier.', eType: 'Format non lu : envoie une photo, une capture d’écran ou un PDF.', eBig: 'Fichier trop lourd : 3 Mo maximum pour un PDF.', eMany: 'Trop de tentatives. Réessaie dans une heure.', eLocked: 'Cette commande ne peut plus être modifiée ici. Écris à contact@lesagedavid.fr.', eGen: 'Une erreur est survenue. Réessaie dans quelques minutes.', eEmail: 'Indique une adresse e-mail valide.',
       },
       en: {
         title: 'Upload my proof of transfer', ref: 'Reference', amount: 'Order amount',
-        file: 'Proof of transfer', fileNote: 'Screenshot or PDF (PNG, JPEG or PDF), 3 MB max.',
+        file: 'Proof of transfer', fileNote: 'Photo, screenshot or PDF. A large photo is reduced automatically; a PDF must not exceed 3 MB.',
         send: 'Send my proof', sending: 'Sending…', toCancel: 'Cancel my order',
         doneT: 'Your proof has been received', done: 'It has been sent to Muling with your order details. A confirmation email is on its way: keep it. Muling checks the transfer before shipping anything.',
         doneShowroom: 'It has been sent to Muling. A confirmation email is on its way: keep it. Your mic is waiting at the showroom, nothing will be shipped. Reply to that email to suggest a pick-up date.',
         cancelT: 'Cancel my order?', cancelText: 'This permanently cancels the order. Nothing is cancelled until you confirm below.', cancelYes: 'Yes, cancel my order', cancelNo: 'No, keep my order',
         cancelledT: 'Your order is cancelled', cancelled: 'Done. A confirmation email is on its way.',
-        badT: 'This link is no longer valid', bad: 'It has expired, already been used, or been replaced by a newer link. Enter your order’s email: if it is still waiting for your proof, you’ll get a new link.',
+        badT: 'This link is no longer valid', bad: 'It has expired or already been used. Enter your order’s email: if it is still waiting for your proof, you’ll get a new link.',
         email: 'Order email address', newLink: 'Get a new link', linkSent: 'If an order is waiting for a proof at this address, a new link has just been sent. Check your inbox.',
-        eMissing: 'Choose a file.', eType: 'Format not accepted: PNG, JPEG or PDF only.', eBig: 'File too large: 3 MB max.', eMany: 'Too many attempts. Try again in an hour.', eLocked: 'This order can no longer be changed here. Please write to contact@lesagedavid.fr.', eGen: 'Something went wrong. Try again in a few minutes.', eEmail: 'Enter a valid email address.',
+        eMissing: 'Choose a file.', eType: 'Format not readable: send a photo, a screenshot or a PDF.', eBig: 'File too large: 3 MB max for a PDF.', eMany: 'Too many attempts. Try again in an hour.', eLocked: 'This order can no longer be changed here. Please write to contact@lesagedavid.fr.', eGen: 'Something went wrong. Try again in a few minutes.', eEmail: 'Enter a valid email address.',
       },
       es: {
         title: 'Subir mi comprobante de transferencia', ref: 'Referencia', amount: 'Importe del pedido',
-        file: 'Comprobante de transferencia', fileNote: 'Captura de pantalla o PDF (PNG, JPEG o PDF), 3 MB máximo.',
+        file: 'Comprobante de transferencia', fileNote: 'Foto, captura de pantalla o PDF. Una foto pesada se reduce automáticamente; un PDF no debe superar 3 MB.',
         send: 'Enviar mi comprobante', sending: 'Enviando…', toCancel: 'Cancelar mi pedido',
         doneT: 'Hemos recibido tu comprobante', done: 'Se ha enviado a Muling con los datos de tu pedido. Te llegará un correo de confirmación: guárdalo. Muling comprueba la transferencia antes de cualquier envío.',
         doneShowroom: 'Se ha enviado a Muling. Te llegará un correo de confirmación: guárdalo. Tu micrófono te espera en el showroom, no se enviará nada. Responde a ese correo para proponer una fecha de recogida.',
         cancelT: '¿Cancelar mi pedido?', cancelText: 'Esta acción cancela el pedido definitivamente. No se cancela nada hasta que confirmes abajo.', cancelYes: 'Sí, cancelar mi pedido', cancelNo: 'No, conservar mi pedido',
         cancelledT: 'Tu pedido está cancelado', cancelled: 'Listo. Te llegará un correo de confirmación.',
-        badT: 'Este enlace ya no es válido', bad: 'Ha caducado, ya se ha usado o lo ha sustituido otro más reciente. Indica el correo de tu pedido: si aún espera tu comprobante, recibirás un enlace nuevo.',
+        badT: 'Este enlace ya no es válido', bad: 'Ha caducado o ya se ha usado. Indica el correo de tu pedido: si aún espera tu comprobante, recibirás un enlace nuevo.',
         email: 'Correo del pedido', newLink: 'Recibir un enlace nuevo', linkSent: 'Si hay un pedido a la espera de comprobante en esta dirección, acaba de salir un enlace nuevo. Revisa tu correo.',
-        eMissing: 'Elige un archivo.', eType: 'Formato no aceptado: solo PNG, JPEG o PDF.', eBig: 'Archivo demasiado grande: 3 MB máximo.', eMany: 'Demasiados intentos. Inténtalo dentro de una hora.', eLocked: 'Este pedido ya no se puede modificar aquí. Escribe a contact@lesagedavid.fr.', eGen: 'Se ha producido un error. Inténtalo de nuevo en unos minutos.', eEmail: 'Indica un correo válido.',
+        eMissing: 'Elige un archivo.', eType: 'Formato no legible: envía una foto, una captura o un PDF.', eBig: 'Archivo demasiado grande: 3 MB máximo.', eMany: 'Demasiados intentos. Inténtalo dentro de una hora.', eLocked: 'Este pedido ya no se puede modificar aquí. Escribe a contact@lesagedavid.fr.', eGen: 'Se ha producido un error. Inténtalo de nuevo en unos minutos.', eEmail: 'Indica un correo válido.',
       },
     }
     var t = T[lang]
@@ -152,18 +153,24 @@
 
     function ecranDepot() {
       var err = el('p', { class: 'err', hidden: 'hidden' })
-      var file = el('input', { type: 'file', id: 'f', accept: 'image/png,image/jpeg,application/pdf' })
+      var file = el('input', { type: 'file', id: 'f', accept: 'image/*,application/pdf' })
       var btn = el('button', { type: 'submit', text: t.send })
       function dire(m) { err.textContent = m; err.hidden = false }
       show([el('h1', { text: t.title }), el('form', { class: 'card', novalidate: 'novalidate', onsubmit: function (e) {
         e.preventDefault(); err.hidden = true
         var f = file.files && file.files[0]
         if (!f) return dire(t.eMissing)
-        if (['image/png', 'image/jpeg', 'application/pdf'].indexOf(f.type) < 0) return dire(t.eType)
-        if (f.size > MAX) return dire(t.eBig)
+        if (f.type !== 'application/pdf' && f.type.indexOf('image/') !== 0) return dire(t.eType)
+        if (f.type === 'application/pdf' && f.size > MAX) return dire(t.eBig)
         btn.disabled = true; btn.textContent = t.sending
+        function rendre(m) { dire(m); btn.disabled = false; btn.textContent = t.send }
+        // Le serveur reste seul juge du type réel (signature PDF, PNG, JPEG) et du poids.
+        window.mulingPreparerFichier(f, MAX).then(function (pret) { envoyer(pret) }).catch(function (e) {
+          rendre(e && e.message === 'trop_lourd' ? t.eBig : t.eType)
+        })
+        function envoyer(pret) {
         var rd = new FileReader()
-        rd.onerror = function () { dire(t.eGen); btn.disabled = false; btn.textContent = t.send }
+        rd.onerror = function () { rendre(t.eGen) }
         rd.onload = function () {
           post({ op: 'deposit', t: token, fileBase64: String(rd.result).split(',')[1] || '', lang: lang }).then(function (r) {
             if (r.ok) return ecranMessage(t.doneT, order.showroom ? t.doneShowroom : t.done)
@@ -171,7 +178,8 @@
             dire(message(r)); btn.disabled = false; btn.textContent = t.send
           }).catch(function () { dire(t.eGen); btn.disabled = false; btn.textContent = t.send })
         }
-        rd.readAsDataURL(f)
+        rd.readAsDataURL(pret)
+        }
       } }, [recap(), el('label', { for: 'f', text: t.file }), file, el('p', { class: 'note', text: t.fileNote }),
         btn, err,
         el('button', { type: 'button', class: 'sec', text: t.toCancel, onclick: ecranAnnuler })])])

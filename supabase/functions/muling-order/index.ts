@@ -65,11 +65,11 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
 import { htmlPart, mailSubject, textPart } from '../_shared/mail.ts';
 import { lireBanque } from '../_shared/muling-banque.ts';
+import { estCommandeTest, routageMuling } from '../_shared/muling-mail.ts';
 import { composerMailClient, urlAncienLien, urlPage } from '../_shared/muling-email-modele.ts';
 import { genererJeton, hacher, langueMail, LIEN_DUREE_JOURS, lirePreuve } from '../_shared/muling-preuve.ts';
 
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
-const MULING_EMAIL = '85846599@qq.com';
 const DASHBOARD_URL = 'https://play.handpanstudio.app/';
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -279,7 +279,7 @@ Deno.serve(async (req) => {
             let urlAnnuler: string | null = null;
             if (!proofPath) {
                 const jeton = genererJeton();
-                const { error: lienErr } = await admin.rpc('muling_lien_renouveler', {
+                const { error: lienErr } = await admin.rpc('muling_lien_creer', {
                     p_sale_id: saleId, p_hash: await hacher(jeton), p_jours: LIEN_DUREE_JOURS,
                 });
                 if (lienErr) console.error('muling-order lien:', lienErr.message);
@@ -303,11 +303,12 @@ Deno.serve(async (req) => {
             };
             if (proofPath) {
                 // Payé sur place : la preuve est là, Muling reçoit la commande, David en copie.
-                await send(MULING_EMAIL, ADMIN_EMAIL, ADMIN_EMAIL, `Showroom sale — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(), mulingHtml(detailsCommande), true);
+                const dest = routageMuling(email, `Showroom sale — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim());
+                await send(dest.to, dest.cc, ADMIN_EMAIL, dest.subject, mulingHtml(detailsCommande), true);
             } else {
                 // Sans preuve : David seul. Muling recevra tout avec la preuve (`_shared/muling-depot.ts`).
                 await send(ADMIN_EMAIL, undefined, email,
-                    `Nouvelle commande Muling sans preuve — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(),
+                    `${estCommandeTest(email) ? '[TEST] ' : ''}Nouvelle commande Muling sans preuve — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(),
                     mulingHtml({ ...detailsCommande, 'Muling notified': 'Not yet — only once the proof of payment is uploaded', 'IBAN settings': banque ? null : 'EMPTY: the customer email has no bank details' }));
             }
         }

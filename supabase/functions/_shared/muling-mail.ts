@@ -19,6 +19,21 @@ export const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 export const MULING_EMAIL = '85846599@qq.com';
 export const DASHBOARD_URL = 'https://play.handpanstudio.app/';
 
+/**
+ * Mode essai : une commande passée avec l'adresse admin ne déclenche aucun e-mail à Muling.
+ * Le mail qui lui était destiné va à David seul, objet préfixé [TEST].
+ */
+export function estCommandeTest(emailClient: unknown): boolean {
+    return String(emailClient ?? '').trim().toLowerCase() === ADMIN_EMAIL;
+}
+
+/** Destinataires et objet de TOUT mail destiné à Muling. Aucun envoi à Muling hors de cette fonction. */
+export function routageMuling(emailClient: unknown, sujet: string): { to: string; cc?: string; subject: string } {
+    return estCommandeTest(emailClient)
+        ? { to: ADMIN_EMAIL, subject: `[TEST] ${sujet}` }
+        : { to: MULING_EMAIL, cc: ADMIN_EMAIL, subject: sujet };
+}
+
 /** Colonnes à lire dans `affiliate_sales` pour composer le mail. */
 export const MULING_SALE_COLS =
     'id, email, phone, customer_name, quantity, price_discounted_eur, order_ref, '
@@ -196,13 +211,11 @@ export async function sendMail(
 
 /** Compose + envoie le mail à Muling (David en copie), preuve de virement jointe. */
 export async function sendMulingOrderMail(
-    env: SmtpEnv, sale: MulingSale, proof: ProofFile | null, resend: boolean,
+    env: SmtpEnv, sale: MulingSale, proof: ProofFile | null, resend: boolean, envoyer: typeof sendMail = sendMail,
 ): Promise<boolean> {
     const mail = composeMulingMail(sale, proof, resend);
-    return await sendMail(env, {
-        to: MULING_EMAIL,
-        cc: ADMIN_EMAIL,
-        subject: mail.subject,
+    return await envoyer(env, {
+        ...routageMuling(sale.email, mail.subject),
         text: mail.text,
         attachment: proof && mail.attachmentName
             ? { filename: mail.attachmentName, bytes: proof.bytes, contentType: MIME_BY_EXT[proof.ext] ?? 'application/octet-stream' }

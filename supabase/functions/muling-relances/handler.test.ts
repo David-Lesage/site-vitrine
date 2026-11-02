@@ -118,7 +118,7 @@ function monter(commandes: CommandeRelance[], o: { actif?: boolean; mailOk?: boo
                 data = gardes;
             } else if (nom === 'muling_relance_marquer') {
                 for (const l of journal) if (l.lot === a.p_lot && l.statut === 'reserve') l.statut = a.p_envoye ? 'envoye' : 'echec';
-            } else if (nom === 'muling_lien_renouveler') {
+            } else if (nom === 'muling_lien_creer') {
                 if (etat.lienKo) return Promise.resolve({ data: null, error: { message: 'x' } });
                 liens.push(a.p_sale_id as string);
             }

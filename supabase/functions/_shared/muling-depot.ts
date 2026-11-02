@@ -1,6 +1,6 @@
 // =============================================================================
 // Dépôt d'une preuve de virement, un seul chemin : `muling-claim-payment` (ancien lien) et
-// `muling-proof-link` (lien personnel). Écrit le fichier, enregistre atomiquement (RPC 0307),
+// `muling-proof-link` (lien personnel). Écrit le fichier, enregistre atomiquement (RPC 0308),
 // puis prévient Muling (preuve jointe, David en copie) et confirme au client.
 //
 // Commande fusionnée : le mail à Muling porte la référence de la commande CONSERVÉE, jamais celle
@@ -56,7 +56,7 @@ export async function deposerPreuve(
         };
     }
 
-    // Relecture : la commande à annoncer et, si fusion, l'état après le déclencheur de 0306.
+    // Relecture : la commande à annoncer et, si fusion, l'état après le déclencheur de 0307.
     const cibleId = sale.merged_into_id ?? sale.id;
     const { data: ligne, error: luErr } = await admin.from('affiliate_sales').select(MULING_SALE_COLS).eq('id', cibleId).maybeSingle();
     if (luErr) console.error('muling depot relecture:', luErr);

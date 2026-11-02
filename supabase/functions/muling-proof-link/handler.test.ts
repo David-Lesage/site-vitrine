@@ -37,8 +37,7 @@ function fausseBase(lignes: Ligne[], banque: Ligne | null) {
                 const n = (tentatives.get(a.p_cle as string) ?? 0) + 1;
                 tentatives.set(a.p_cle as string, n);
                 data = n <= (a.p_max as number);
-            } else if (nom === 'muling_lien_renouveler') {
-                for (const [h, id] of liens) if (id === a.p_sale_id) liens.delete(h);
+            } else if (nom === 'muling_lien_creer') {
                 liens.set(a.p_hash as string, a.p_sale_id as string);
             } else if (nom === 'muling_lien_resoudre') {
                 data = liens.get(a.p_hash as string) ?? null;
@@ -230,4 +229,25 @@ Deno.test('admin : JWT obligatoire, aperçu sans jeton, envoi avec jeton, banque
     const vide = monter([commande()], { admin: true, banque: null });
     assertEquals((await vide.appel({ op: 'admin_send', saleId: id })).data, { error: 'banque_vide' });
     assertEquals((await monter([commande({ payment_proof_path: 'p' })], { admin: true }).appel({ op: 'admin_preview', saleId: id })).data, { error: 'commande_indisponible' });
+});
+
+Deno.test('lien stable : un renvoi laisse le premier lien valable, le dépôt les révoque tous', async () => {
+    const m = monter([commande()]);
+    await m.appel({ op: 'resume', email: 'client@test.invalid' });
+    await m.appel({ op: 'resume', email: 'client@test.invalid' });
+    const premier = jetonDe(m.mails[0].html!);
+    const second = jetonDe(m.mails[1].html!);
+    assert(premier !== second);
+    assertEquals((await m.appel({ op: 'view', t: premier })).status, 200);
+    assertEquals((await m.appel({ op: 'view', t: second })).status, 200);
+    assertEquals((await m.appel({ op: 'deposit', t: premier, fileBase64: PDF64 })).status, 200);
+    assertEquals((await m.appel({ op: 'view', t: second })).status, 404);
+});
+
+Deno.test('mode essai : annulation après preuve, rien pour Muling, David seul avec [TEST]', async () => {
+    const m = monter([commande({ email: 'Contact@LesageDavid.fr', payment_proof_path: 'p' })], { admin: true });
+    m.db.liens.set(await hacher('j'.repeat(43)), '11111111-1111-4111-8111-111111111111');
+    assertEquals((await m.appel({ op: 'cancel', t: 'j'.repeat(43), confirm: true })).status, 200);
+    assertEquals(m.mails.filter((x) => x.to === '85846599@qq.com').length, 0);
+    assert(m.mails.some((x) => x.to === 'contact@lesagedavid.fr' && x.subject.startsWith('[TEST] ORDER CANCELLED')));
 });

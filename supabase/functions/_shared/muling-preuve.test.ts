@@ -4,7 +4,7 @@ import {
     ouverteSansPreuve, typeReel,
 } from './muling-preuve.ts';
 import { composerMailClient } from './muling-email-modele.ts';
-import { composeMulingMail } from './muling-mail.ts';
+import { composeMulingMail, estCommandeTest, type MulingSale, routageMuling, sendMulingOrderMail } from './muling-mail.ts';
 
 const b64 = (o: number[] | Uint8Array) => btoa(String.fromCharCode(...o));
 const PDF = [0x25, 0x50, 0x44, 0x46, 0x2d, 0x31];
@@ -90,4 +90,29 @@ Deno.test('mail à Muling : mention showroom désormais portée par le mail de p
     const s = { id: 'i', email: 'a@b.fr', phone: '0', customer_name: 'A', quantity: 1, price_discounted_eur: 245, order_ref: 'R', shipping_address: null, shipping_city: null, shipping_postal_code: null, shipping_country: null, delivery_note: null, payment_proof_path: 'p', payment_claimed_at: 'x' };
     assert(composeMulingMail({ ...s, purchase_channel: 'showroom' }, null, false).text.includes('DO NOT SHIP'));
     assertFalse(composeMulingMail({ ...s, purchase_channel: 'online' }, null, false).text.includes('DO NOT SHIP'));
+});
+
+Deno.test('mode essai : l’adresse admin ne vise jamais Muling', () => {
+    assert(estCommandeTest(' CONTACT@lesagedavid.fr '));
+    assertFalse(estCommandeTest('contact@lesagedavid.fr.exemple.com'));
+    assertEquals(routageMuling('contact@lesagedavid.fr', 'S'), { to: 'contact@lesagedavid.fr', subject: '[TEST] S' });
+    assertEquals(routageMuling('client@test.invalid', 'S'), { to: '85846599@qq.com', cc: 'contact@lesagedavid.fr', subject: 'S' });
+});
+
+Deno.test('mode essai : dépôt et renvoi passent par le routage', async () => {
+    const vus: { to: string; cc?: string; subject: string }[] = [];
+    const envoi = (_e: unknown, m: { to: string; cc?: string; subject: string }) => { vus.push(m); return Promise.resolve(true); };
+    const env = { host: 'h', user: 'u', pass: 'p', from: 'f', port: 465 };
+    const s = { id: 'i', email: 'contact@lesagedavid.fr', order_ref: 'R', price_discounted_eur: 245 } as unknown as MulingSale;
+    // deno-lint-ignore no-explicit-any
+    for (const renvoi of [false, true]) await sendMulingOrderMail(env, s, null, renvoi, envoi as any);
+    assertEquals(vus.map((v) => v.to), ['contact@lesagedavid.fr', 'contact@lesagedavid.fr']);
+    assert(vus.every((v) => v.subject.startsWith('[TEST] ') && !v.cc));
+});
+
+Deno.test('aucun envoi direct à Muling hors du routage', async () => {
+    for (const f of ['../muling-order/index.ts', '../muling-proof-link/handler.ts', '../muling-relances/handler.ts', '../muling-resend-order/index.ts', '../muling-claim-payment/index.ts', './muling-depot.ts']) {
+        const src = await Deno.readTextFile(new URL(f, import.meta.url));
+        assertFalse(/MULING_EMAIL|85846599/.test(src), f);
+    }
 });

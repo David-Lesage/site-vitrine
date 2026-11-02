@@ -24,7 +24,7 @@
 // v5 (02/11/2026) : dépôt factorisé dans `_shared/muling-depot.ts`, partagé avec le lien
 //      personnel `muling-proof-link`. Contenu du fichier vérifié (signature PDF, PNG, JPEG),
 //      3 Mo maximum. Commande annulée : 409 `order_cancelled`. Corbeille : 404. Commande
-//      fusionnée : le déclencheur de 0306 remonte la preuve et Muling reçoit la référence de la
+//      fusionnée : le déclencheur de 0307 remonte la preuve et Muling reçoit la référence de la
 //      commande conservée. L'ancien lien `?commande=<id>` continue de fonctionner.
 // v3 (09/08/2026) : corps envoyé en base64 via `textPart()` — même lib, SECOND
 //      bug indépendant : `quotedPrintableEncode()` échappe `=` en `=3d`

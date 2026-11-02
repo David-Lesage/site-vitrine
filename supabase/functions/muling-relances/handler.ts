@@ -1,12 +1,12 @@
 // =============================================================================
-// Edge Function : muling-relances (logique, testée par handler.test.ts). Règles : migration 0308
+// Edge Function : muling-relances (logique, testée par handler.test.ts). Règles : migration 0309
 // du dépôt de l'app, calcul : _shared/muling-relances.ts.
 //
 // Portes : le planificateur (`x-reminders-secret`), envoi réel seulement interrupteur allumé et
 // sans `dry_run` ; un admin connecté, toujours en `dry_run`. Le `dry_run` n'écrit rien, ne crée
 // aucun lien, n'envoie rien, et sa réponse ne cite que des références.
-// Chaque relance crée un lien neuf, ce qui invalide celui de l'e-mail précédent (règle de 0307 :
-// un seul lien valide par commande). La page propose alors de redemander le lien.
+// Chaque relance crée un lien de plus : ceux des e-mails précédents restent valables jusqu'à leurs
+// 30 jours (0308). Le dépôt, l'annulation, la fusion ou la corbeille les révoquent tous.
 // =============================================================================
 
 import { lireBanque } from '../_shared/muling-banque.ts';
@@ -40,7 +40,7 @@ const prenomDe = (c: CommandeRelance) => String(c.customer_name ?? '').trim().sp
 
 async function lienNeuf(deps: Deps, c: CommandeRelance, langue: 'fr' | 'en' | 'es') {
     const jeton = genererJeton();
-    const { error } = await deps.admin.rpc('muling_lien_renouveler', {
+    const { error } = await deps.admin.rpc('muling_lien_creer', {
         p_sale_id: c.id, p_hash: await hacher(jeton), p_jours: LIEN_DUREE_JOURS,
     });
     if (error) throw new Error('lien_impossible');
