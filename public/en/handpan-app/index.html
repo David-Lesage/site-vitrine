@@ -12,7 +12,7 @@
 <link rel="alternate" hreflang="x-default" href="https://www.lesagedavid.fr/handpan-app/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Handpan Constellation Studio","alternateName":["Handpan Compagnon","Handpan Companion","Handpan Studio","Neotone Studio"],"applicationCategory":"MultimediaApplication","applicationSubCategory":"Music education","operatingSystem":"Web (browser)","url":"https://play.handpanstudio.app","inLanguage":"en","description":"Play the handpan without reading music: every note has its colour, every chord its shape. Free forever, on any acoustic handpan and on the Neotone.","author":{"@type":"Person","@id":"https://www.lesagedavid.fr/#david-lesage","name":"David Lesage","url":"https://www.lesagedavid.fr/en/"},"offers":[{"@type":"Offer","name":"Free","price":0,"priceCurrency":"EUR"},{"@type":"Offer","name":"Essential (monthly)","price":3.49,"priceCurrency":"EUR"},{"@type":"Offer","name":"Essential (yearly)","price":29.99,"priceCurrency":"EUR"},{"@type":"Offer","name":"Studio (monthly)","price":9.99,"priceCurrency":"EUR"},{"@type":"Offer","name":"Studio (yearly)","price":89,"priceCurrency":"EUR"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.lesagedavid.fr/en/"},{"@type":"ListItem","position":2,"name":"Handpan Constellation Studio","item":"https://www.lesagedavid.fr/en/handpan-app/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a digital pan?","acceptedAnswer":{"@type":"Answer","text":"No. The app is designed first and foremost for your acoustic handpan, whatever it is. If you have a digital pan, you can connect that too."}},{"@type":"Question","name":"What’s really free?","acceptedAnswer":{"@type":"Answer","text":"Everything you need to get to know your instrument and play: your scale, your chords, the repertoire, singing to find your voice, playing technique, and saving what you create."}},{"@type":"Question","name":"What if I don’t know my scale?","acceptedAnswer":{"@type":"Answer","text":"Play it into the mic and the app finds it."}},{"@type":"Question","name":"I’ve never studied music theory. Is it for me?","acceptedAnswer":{"@type":"Answer","text":"Yes. You start with colours and emotions. Note names and theory come when you ask for them."}},{"@type":"Question","name":"Will I be asked for my credit card?","acceptedAnswer":{"@type":"Answer","text":"No. The free account doesn’t ask for a card, and it stays free with no time limit. You’ll only be asked for your card the day you choose a paid plan. And Essential starts with a 30-day trial."}},{"@type":"Question","name":"How do I start?","acceptedAnswer":{"@type":"Answer","text":"You sign up, put your handpan in front of you and let the app hear it. It takes care of the rest."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which device?","acceptedAnswer":{"@type":"Answer","text":"On a computer or tablet, in your browser. On a phone, the screen is too small to see your handpan and its chords properly. On iPhone and iPad, Apple prevents browsers from receiving an instrument plugged in over USB: to connect a digital pan, open the app in Web MIDI Browser, free on the App Store."}},{"@type":"Question","name":"Do I need a digital pan?","acceptedAnswer":{"@type":"Answer","text":"No. The app is designed first and foremost for your acoustic handpan, whatever it is. If you have a digital pan, you can connect that too."}},{"@type":"Question","name":"What’s really free?","acceptedAnswer":{"@type":"Answer","text":"Everything you need to get to know your instrument and play: your scale, your chords, the repertoire, singing to find your voice, playing technique, and saving what you create."}},{"@type":"Question","name":"What if I don’t know my scale?","acceptedAnswer":{"@type":"Answer","text":"Play it into the mic and the app finds it."}},{"@type":"Question","name":"I’ve never studied music theory. Is it for me?","acceptedAnswer":{"@type":"Answer","text":"Yes. You start with colours and emotions. Note names and theory come when you ask for them."}},{"@type":"Question","name":"Will I be asked for my credit card?","acceptedAnswer":{"@type":"Answer","text":"No. The free account doesn’t ask for a card, and it stays free with no time limit. You’ll only be asked for your card the day you choose a paid plan."}},{"@type":"Question","name":"What if one day I want to go further?","acceptedAnswer":{"@type":"Answer","text":"Two plans are waiting for you in the app. Essential, €3.49 a month: it transposes a song that doesn’t fit your scale, and you play along to grooves from the catalogue, with a drummer. Studio, €9.99 a month: singing exercises. First month free on monthly plans, and you can change plan whenever you like."}},{"@type":"Question","name":"How do I start?","acceptedAnswer":{"@type":"Answer","text":"You sign up, put your handpan in front of you and let the app hear it. It takes care of the rest."}}]}</script>
 <link rel="icon" href="/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
@@ -25,8 +25,21 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.lesagedavid.fr/images/og-handpan-app.jpg">
 <meta property="og:url" content="https://www.lesagedavid.fr/en/handpan-app/">
+<script>
+;(function(){try{
+ if(/bot|crawl|spider|slurp|google-|lighthouse|facebookexternalhit|headlesschrome/i.test(navigator.userAgent))return;
+ if(localStorage.getItem('pref-lang')||sessionStorage.getItem('lang-auto'))return;
+ var nav=navigator.languages&&navigator.languages.length?navigator.languages[0]:navigator.language;
+ var code=(nav||'').toLowerCase();if(!code||code.indexOf('fr')===0)return;
+ sessionStorage.setItem('lang-auto','1');location.replace((code.indexOf('es')===0?'/es':'/en')+'/handpan-app/'+location.search+location.hash)
+}catch(e){}})()
+</script>
 <link rel="stylesheet" href="/fonts/fonts.css">
-<noscript><style>.rv,.scene.anim .rv{opacity:1!important;transform:none!important}</style></noscript>
+<noscript><style>.rv,.scene.anim .rv{opacity:1!important;transform:none!important}
+/* V4.1 (02/11/2026) */
+.appel-v4{margin-top:26px}.appel-v4 .rassure{margin-top:12px}
+.barre-appel{max-width:calc(100vw - 32px)}.barre-appel .btn{white-space:nowrap}
+</style></noscript>
 <style>
 :root{
   --nuit:#0b0d17; --nuit2:#12152a; --nuit3:#1a1e38;
@@ -670,21 +683,23 @@ main>section[hidden]{display:none!important}
 <header class="site-menu"><a class="site-nom" href="/en/">David Lesage</a><nav aria-label="Site menu"><a href="/en/">Home</a><a href="/en/neotone/">The Neotone</a><a href="/en/yishama/">Yishama</a><a href="/en/boutique/">Shop</a><a href="/en/cours/">Lessons</a><a href="/en/handpan-app/" aria-current="page">Handpan Constellation Studio</a><a href="/en/blog/">Blog</a><a href="/en/showroom/">Showroom</a><a href="/en/a-propos/">About</a><a href="/en/contact/">Contact</a></nav></header>
 <main>
 
-<section id="ouverture" class="scene">
+
+<section id="ouverture" class="scene" hidden>
   <iframe src="/handpan-app/ouverture-b4.html?lang=en" title="Handpan Constellation Studio: the stars become chords, then a handpan" tabindex="-1" aria-hidden="true"></iframe>
   <a class="passer" href="#hero">Skip the intro</a>
   <div class="defile">Scroll</div>
 </section>
 
+
 <section id="hero" class="scene anim">
   <div class="w">
     <div>
-      <p class="sur rv">Handpan Constellation Studio · music you can see</p>
-      <h1 class="rv d1">Your handpan knows things you <em>don’t know yet.</em></h1>
-      <p class="lead rv d2">Play it a few notes: the app recognises its scale and lights up its chords. Tonight, you play a song and sing along. In the days that follow, you practise with it.</p>
+      <p class="sur rv">Handpan Constellation Studio · the app for handpan players</p>
+      <h1 class="rv d1">Tonight, play a song <em>on your handpan.</em></h1>
+      <p class="lead rv d2">You play a few notes into the mic: the app recognises your scale and shows you its chords in colour. Then the songs your handpan can play, with the lyrics in front of you.</p>
       <div class="rv d3">
-        <a class="btn" href="#inscription" data-modale="inscr" data-palier="g">Discover my handpan for free</a>
-        <p class="rassure sans-carte">Free forever, no credit card.</p>
+        <a class="btn" href="#inscription" data-modale="inscr" data-palier="g">Create my free account</a>
+        <p class="rassure sans-carte">Free forever, no credit card. On a computer or tablet, in your browser.</p>
         <p class="rassure">74 known shells, 541 makers listed: <b>your handpan is probably already in there.</b></p>
       </div>
       <figure class="hero-app rv d3"><img fetchpriority="high" src="/handpan-app/img/c28/hero-dkurd18.webp" alt="A D Kurd 18 in the app: the handpan at the top, its seven chords in colour below, the first one lit up as a constellation." width="1600" height="1017"><figcaption>Your D Kurd in the app: its 7 chords, with the first one lit up as a constellation.</figcaption></figure>
@@ -692,21 +707,23 @@ main>section[hidden]{display:none!important}
   </div>
 </section>
 
+
 <section id="manifeste" class="scene anim">
   <div class="w">
     <p class="rv" data-a="g">The piano has sheet music.</p>
     <p class="rv" data-a="d">The guitar has tablature.</p>
     <p class="rv" data-a="g">The handpan had numbers and letters.</p>
-    <p class="fort rv" data-a="z">What it lacked was a way to <em>see the music</em>: seven colours, and chords that draw themselves like constellations.</p>
+    <p class="fort rv" data-a="z">Now it has <em>seven colours</em>, and chords that draw themselves like constellations.</p>
   </div>
 </section>
+
 
 <section id="gestes">
   <div class="g-pin">
     <div class="g-scene">
       <div class="g-tete"><p class="sur">Three steps</p><h2>From your instrument to your first song.</h2></div>
       <div class="g-legendes">
-        <div class="etape on" data-e="0"><span class="num">1</span><div><h3>Let it hear your handpan.</h3><p>Don’t know the name of your scale? It doesn’t matter. You play a few notes into the mic, the app recognises it and finds your instrument.</p></div></div>
+        <div class="etape on" data-e="0"><span class="num">1</span><div><h3>Play a few notes into the mic.</h3><p>Don’t know the name of your scale? It doesn’t matter: the app listens to it, recognises it and finds your instrument.</p></div></div>
         <div class="etape" data-e="1"><span class="num">2</span><div><h3>Watch it light up.</h3><p>Each degree takes its colour, each chord draws its figure: the seven chords your handpan can play, and the emotion of each one.</p></div></div>
         <div class="etape" data-e="2"><span class="num">3</span><div><h3>Play tonight.</h3><p>The songs in the catalogue your handpan can play are already there. Got another one in mind? Paste its chords and lyrics, or drop in the file: the app shows it to you on YOUR handpan.</p></div></div>
       </div>
@@ -732,6 +749,7 @@ main>section[hidden]{display:none!important}
   </div>
 </section>
 
+
 <section id="chanson">
   <div class="w">
     <div class="tab rv" data-a="g"><img src="/handpan-app/img/v2/the-scientist-tablature.webp" alt="The Scientist by Coldplay in the app, on a D Kurd 10: above the lyrics, each chord drawn on the handpan, in the colour of its degree." loading="lazy"></div>
@@ -741,9 +759,11 @@ main>section[hidden]{display:none!important}
       <p class="rv" data-a="d">Like a guitar chord chart, except you don’t read chord names: you follow shapes and colours. Red comes back: that’s home. Blue is the tension that calls for the return.</p>
       <p class="rv" data-a="d">The lyrics in front of you, the chords above them, on your scale: you play, and you sing. Tonight.</p>
       <p class="rv" data-a="d">On a D Kurd 18, 157 songs in the catalogue can already be played as they are.</p>
+      <div class="rv appel-v4" data-a="d"><a class="btn" href="#inscription" data-modale="inscr" data-palier="g">Create my account and see my songs</a><p class="rassure">Free forever, no credit card.</p></div>
     </div>
   </div>
 </section>
+
 
 <section id="chanter">
   <div class="w">
@@ -751,7 +771,7 @@ main>section[hidden]{display:none!important}
       <div class="rv" data-a="g">
         <p class="sur">Sing</p>
         <h2 class="ch-titre">An app created by a singer who accompanies himself on the handpan.</h2>
-        <p class="lead">The handpan can carry a voice, just like the guitar or the piano. Start with yours: you sing a few notes, the app finds your vocal range and tells you which handpan suits it.</p>
+        <p class="lead">The handpan can carry a voice, just like the guitar or the piano. Start with yours.</p>
         <div class="voix-promesses"><span>Your vocal range, measured</span><span>The handpan made for your voice</span><span>A guide note and a drone</span></div>
       </div>
       <figure class="ch-photo rv" data-a="d" style="margin:0"><img src="/handpan-app/img/v2/chante-en-jouant-shape-2.webp" alt="David Lesage sings Shape of My Heart, accompanying himself on the handpan." loading="lazy"><figcaption>David Lesage sings <i>Shape of My Heart</i>, accompanying himself.</figcaption></figure>
@@ -769,20 +789,22 @@ main>section[hidden]{display:none!important}
   </div>
 </section>
 
+
 <section id="entrainer">
   <div class="w">
     <p class="sur rv">Practise</p>
     <h2 class="rv">Every day, the app plays with you.</h2>
-    <p class="lead rv">Knowing your handpan is the beginning. Making it sing takes practice. Everything you need to get going is in the free account.</p>
+    <p class="lead rv">Everything you need to practise is in the free account.</p>
     <div class="cartes">
       <article class="rv" data-a="g"><b>Your technique</b><p>Guided lessons. The app listens through the mic while you play.</p></article>
-      <article class="rv"><b>Your chords</b><p>The conveyor belt scrolls through the progressions at your own pace, with no set tempo.</p></article>
-      <article class="rv"><b>Your rhythm</b><p>A metronome or a drummer. The app tells you if you’re ahead or behind.</p></article>
+      <article class="rv"><b>Your chords</b><p>The conveyor belt scrolls through the progressions at your own pace.</p></article>
+      <article class="rv"><b>Your rhythm</b><p>A metronome, and the app tells you if you’re ahead or behind.</p></article>
       <article class="rv" data-a="d"><b>Your ritual</b><p>A practice time of your own, and your progress, day after day.</p></article>
     </div>
     <figure class="capture rv"><img src="/handpan-app/img/c28/entrainer-rituel-technique.webp" alt="In the app: My practice ritual, the playing technique lessons, and your progress." loading="lazy" width="1400" height="382"><figcaption>Your practice ritual, the technique lessons, your progress.</figcaption></figure>
   </div>
 </section>
+
 
 <section id="couleurs">
   <div class="w" data-mode="degre" data-nom="en">
@@ -792,12 +814,12 @@ main>section[hidden]{display:none!important}
       <p class="lead rv">Rather than note names, the app shows you the structure of the music: colours and shapes.</p>
     </div>
     <div class="onglets rv" role="tablist" aria-label="The app’s language">
-      <button type="button" role="tab" aria-selected="false" data-o="0">Colours</button>
-      <button type="button" role="tab" aria-selected="true" data-o="1">Constellations</button>
+      <button type="button" role="tab" aria-selected="true" data-o="0">Colours</button>
+      <button type="button" role="tab" aria-selected="false" data-o="1">Constellations</button>
       <button type="button" role="tab" aria-selected="false" data-o="2">Emotion or theory</button>
       <button type="button" role="tab" aria-selected="false" data-o="3">Your level</button>
     </div>
-    <div class="panneau-l" data-o="0" role="tabpanel">
+    <div class="panneau-l on" data-o="0" role="tabpanel">
     <div class="coul-haut">
       <div>
         <h3 class="rv">Seven colours, and you choose what they say.</h3>
@@ -827,13 +849,12 @@ main>section[hidden]{display:none!important}
     </div>
     <div class="palettes rv">
       <div class="vue vue-degre"><div class="rang" id="rang-degres"></div>
-        <p class="legende">All the notes of the chord take the colour of its degree, and the first degree is always red: in G major it’s the G chord, in C major the C chord. The shape of the chord stays the same from one key to another: <b>it’s the guitar’s capo.</b></p></div>
+        <p class="legende">The first degree is always red, whatever the key, and the shape of the chord stays the same: <b>it’s the guitar’s capo.</b></p></div>
       <div class="vue vue-note"><div class="rang" id="rang-chroma"></div>
         <p class="legende">Each note keeps the colour of its chakra, whatever the scale: <span data-n="Do">Do</span> is always red, <span data-n="Sol">Sol</span> sky blue. A chord then becomes a blend, one colour per note.</p></div>
     </div>
-    <p class="histoire-deg rv">Playing a progression is telling a story: leaving home, setting off on an adventure, going through tension, then coming back.</p>
     </div>
-    <div class="panneau-l on" data-o="1" role="tabpanel" id="langage">
+    <div class="panneau-l" data-o="1" role="tabpanel" id="langage">
     <div class="bloc-video">
       <div class="media rv" data-a="g"><video src="/handpan-app/img/v/trois-constellations.mp4" poster="/handpan-app/img/v/trois-constellations.webp" muted loop playsinline preload="none" data-auto aria-label="A chord drawn in three ways"></video></div>
       <div>
@@ -880,11 +901,12 @@ main>section[hidden]{display:none!important}
   </div>
 </section>
 
+
 <section id="marina">
   <div class="w">
     <p class="sur rv">What a student says</p>
-    <blockquote class="grande rv" data-a="z">The more I use it, the more I realise how well it lives up to its name. It truly opens up a whole field of possibilities for us!</blockquote>
-    <p class="extrait rv">“Having already used another app, I can say this one is by far my favourite, it’s so complete! […] Everything you need to learn, experiment and progress on your own!”</p>
+    <blockquote class="grande rv" data-a="z">The interactive tools let you display your own handpan on screen, get immediate feedback on the notes you play […]</blockquote>
+    <p class="extrait rv">“Having already used another app, I can say this one is by far my favourite, it’s so complete!”</p>
     <details class="tout rv"><summary>Read her full message</summary>
     <div class="entier">
       <p>“I took my first steps on the handpan with David and today I’m continuing to learn with Constellations. Having already used another app, I can say this one is by far my favourite, it’s so complete!</p>
@@ -896,9 +918,11 @@ main>section[hidden]{display:none!important}
     </div>
     </details>
     <p class="qui rv"><b>Marina Fortuna</b> · David’s student, electronic handpan · translated from French</p>
-    <div class="relance rv"><a class="btn" href="#inscription" data-modale="inscr" data-palier="g">Discover my handpan for free</a></div>
+    <div class="relance rv"><a class="btn" href="#inscription" data-modale="inscr" data-palier="g">Create my free account</a></div>
   </div>
 </section>
+
+
 
 <section id="difference">
   <div class="w">
@@ -913,6 +937,7 @@ main>section[hidden]{display:none!important}
   </div>
 </section>
 
+
 <section id="gratuit">
   <div class="w">
     <p class="sur rv">Free, forever</p>
@@ -923,16 +948,16 @@ main>section[hidden]{display:none!important}
       <li>Find your voice: your vocal range, a guide note, a drone</li><li>Practise: technique, chords, rhythm, your ritual</li>
       <li>Everything you create is saved</li><li>Know which handpan to choose next</li>
     </ul>
-    <a class="btn rv" href="#inscription" data-modale="inscr" data-palier="g">Discover my handpan for free</a>
-    <p class="ensuite rv">The day a song doesn’t fit your scale, <b>Essential</b> transposes it. The day you want singing exercises, that’s <b>Studio</b>. Both are waiting for you in the app.</p>
+    <a class="btn rv" href="#inscription" data-modale="inscr" data-palier="g">Create my free account</a>
   </div>
 </section>
+
 
 <section id="mouvement">
   <div class="w">
     <p class="sur rv">The movement</p>
     <h2 class="rv d1">You’re not downloading an app.<br>You’re joining a constellation.</h2>
-    <div class="chiffres">
+    <div class="chiffres" hidden>
       <div class="chiffre rv" data-a="g"><strong data-compte="541">541</strong><span>handpan makers listed on the map</span></div>
       <div class="chiffre rv d1"><strong data-compte="7">7</strong><span>languages, and a glossary players write together</span></div>
       <div class="chiffre rv" data-a="d"><strong>1</strong><span>star in your name, on the players’ map</span></div>
@@ -942,10 +967,9 @@ main>section[hidden]{display:none!important}
       <div class="socle rv d1"><b>Your feedback shapes the app</b><p>From within the app, you send your ideas in one click. Every message is read and guides what comes next.</p></div>
       <div class="socle rv" data-a="d"><b>A community, not a catalogue</b><p>Together, we’re building the tool we’d all have dreamed of having as children.</p></div>
     </div>
-    <div class="media rv" data-a="z"><img src="/handpan-app/img/v2/constellation-joueurs-carte-sans-encart.webp" alt="The constellation of players: each registered player appears with their first name and the initial of their surname, along with handpan makers by country." loading="lazy"></div>
-    <p class="rv" style="margin-top:12px;color:var(--creme2);font-size:13px;text-align:center">Demonstration map, fictitious names.</p>
   </div>
 </section>
+
 
 <section id="david">
   <div class="w">
@@ -954,20 +978,23 @@ main>section[hidden]{display:none!important}
       <p class="sur rv">Why this app</p>
       <h2 class="rv" data-a="d">“The tool I wish I’d been taught with as a child”</h2>
       <div class="rv" data-a="d" style="margin-top:26px">
-        <p class="histoire">I started the drums at the age of 4, and music theory cut me off from my desire to play: I learned by ear. At 12, at the piano, I realised my memory wasn’t made for decoding abstract notes: it’s visual, motor and spatial. With the handpan, I hit the same wall: three handpans made in 2018 to form a “handpan piano”, two custom Yishamas in 2021, two spaceships with no pilot’s manual, then the Neotone, the first electronic handpan, for which I became a beta tester and then an ambassador, where the notes change place with every scale. From those drawings came the interactive tool I wish I’d been given: revealing the complexity of music theory through a direct visual and auditory experience, in languages a child can understand.</p></div>
+        <p class="histoire">I started the drums at the age of 4, and music theory cut me off from my desire to play: I learned by ear. At 12, at the piano, I realised my memory wasn’t made for decoding abstract notes: it’s visual, motor and spatial. With the handpan, I hit the same wall: spaceships with no pilot’s manual. So I drew. From those drawings came the tool I wish I’d been given: music theory made visible, in languages a child can understand.</p></div>
     </div>
   </div>
 </section>
+
 
 <section id="faq">
   <div class="w" style="max-width:820px">
     <p class="sur rv">Questions</p>
     <h2 class="rv d1" style="margin-bottom:30px">What people ask me.</h2>
+    <details class="rv"><summary>Which device?</summary><p>On a computer or tablet, in your browser. On a phone, the screen is too small to see your handpan and its chords properly. On iPhone and iPad, Apple prevents browsers from receiving an instrument plugged in over USB: to connect a digital pan, open the app in Web MIDI Browser, free on the App Store.</p></details>
     <details class="rv"><summary>Do I need a digital pan?</summary><p>No. The app is designed first and foremost for your acoustic handpan, whatever it is. If you have a digital pan, you can connect that too.</p></details>
     <details class="rv"><summary>What’s really free?</summary><p>Everything you need to get to know your instrument and play: your scale, your chords, the repertoire, singing to find your voice, playing technique, and saving what you create.</p></details>
     <details class="rv"><summary>What if I don’t know my scale?</summary><p>Play it into the mic and the app finds it.</p></details>
     <details class="rv"><summary>I’ve never studied music theory. Is it for me?</summary><p>Yes. You start with colours and emotions. Note names and theory come when you ask for them.</p></details>
-    <details class="rv"><summary>Will I be asked for my credit card?</summary><p>No. The free account doesn’t ask for a card, and it stays free with no time limit. You’ll only be asked for your card the day you choose a paid plan. And Essential starts with a 30-day trial.</p></details>
+    <details class="rv"><summary>Will I be asked for my credit card?</summary><p>No. The free account doesn’t ask for a card, and it stays free with no time limit. You’ll only be asked for your card the day you choose a paid plan.</p></details>
+    <details class="rv"><summary>What if one day I want to go further?</summary><p>Two plans are waiting for you in the app. <b>Essential</b>, €3.49 a month: it transposes a song that doesn’t fit your scale, and you play along to grooves from the catalogue, with a drummer. <b>Studio</b>, €9.99 a month: singing exercises. First month free on monthly plans, and you can change plan whenever you like.</p></details>
     <details class="rv"><summary>How do I start?</summary><p>You sign up, put your handpan in front of you and let the app hear it. It takes care of the rest.</p></details>
   </div>
 </section>
@@ -975,8 +1002,8 @@ main>section[hidden]{display:none!important}
 <section id="fin">
   <div class="w">
     <h2 class="rv">Your handpan is waiting for you.<br>It has things to show you.</h2>
-    <a class="btn rv" data-a="z" href="#inscription" data-modale="inscr" data-palier="g">Discover my handpan for free</a>
-    <p class="rv" style="margin-top:18px;color:var(--creme2);font-size:14px">Free, no commitment.</p>
+    <a class="btn rv" data-a="z" href="#inscription" data-modale="inscr" data-palier="g">Create my free account</a>
+    <p class="rv" style="margin-top:18px;color:var(--creme2);font-size:14px">Free forever, no credit card.</p>
   </div>
 </section>
 
@@ -991,7 +1018,7 @@ main>section[hidden]{display:none!important}
 
 <nav class="pied-legal" aria-label="Site links"><a href="/en/">Home</a><a href="/en/neotone/">The Neotone</a><a href="/en/yishama/">Yishama</a><a href="/en/boutique/">Shop</a><a href="/en/cours/">Lessons</a><a href="/en/blog/">Blog</a><a href="/en/showroom/">Showroom</a><a href="/en/a-propos/">About</a><a href="/en/contact/">Contact</a><a href="https://play.handpanstudio.app/">Log in</a><a href="/en/mentions-legales/">Legal notice</a><a href="/en/conditions-generales/">Terms &amp; conditions</a><a href="/en/politique-de-confidentialite/">Privacy</a><a href="/en/contact/">Contact</a><span class="pied-langues"><a href="/handpan-app/" hreflang="fr" lang="fr" data-lang-pick="fr">Français</a> · <a href="/en/handpan-app/" hreflang="en" lang="en" data-lang-pick="en" aria-current="true">English</a> · <a href="/es/handpan-app/" hreflang="es" lang="es" data-lang-pick="es">Español</a></span></nav>
 
-<div class="barre-appel" aria-hidden="true"><span>Free, no credit card</span><a class="btn" href="#inscription" data-modale="inscr" data-palier="g" tabindex="-1">Discover my handpan</a></div>
+<div class="barre-appel" aria-hidden="true"><span>Free, no credit card</span><a class="btn" href="#inscription" data-modale="inscr" data-palier="g" tabindex="-1">Create my account</a></div>
 
 <div id="modale" class="modale" hidden role="dialog" aria-modal="true" aria-labelledby="modale-titre">
   <div class="modale-fond" data-ferme></div>
@@ -1237,7 +1264,6 @@ if(!reduit){addEventListener('scroll',demande,{passive:true});addEventListener('
 document.querySelectorAll('.periode button').forEach(b=>b.addEventListener('click',()=>{const a=b.dataset.m==='a';
  document.querySelectorAll('.essai').forEach(p=>p.textContent=a?p.dataset.ann:p.dataset.mens)}));
 document.querySelector('.periode button[data-m="a"]').click();
-document.querySelector('#couleurs button[data-nom="en"]').click();
 /* un choix de langue explicite est mémorisé, comme dans le reste du site */
 document.querySelectorAll('[data-lang-pick]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('pref-lang',a.dataset.langPick)}catch(e){}}));
 </script>
