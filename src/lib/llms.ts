@@ -116,21 +116,28 @@ const guidePage = (key: 'learn' | 'vsAcoustic' | 'chooseHandpan') => (_t: Dict, 
   return { title: g.title, description: g.description, leads: [g.leadAnswer], faq: g.faq }
 }
 
-/** La page de vente française est un fichier statique : on lit ses propres textes
+/** La page de vente est un fichier statique dans chaque langue : on lit ses propres textes
  *  (titre, description, accroche, formules, FAQ), jamais une copie écrite ici. */
-function salePage(): PageText {
-  const html = readFileSync('public/handpan-app/index.html', 'utf8')
+const SALE_PAGE = {
+  fr: { file: 'public/handpan-app/index.html', plans: 'Essentiel|Studio', price: (n: string, m: string, y: string) => `${n} : ${m} par mois ou ${y} par an`, free: 'Gratuit : 0 €, pour toujours, sans carte.', month: 'Premier mois offert sur les formules mensuelles.' },
+  en: { file: 'public/en/handpan-app/index.html', plans: 'Essential|Studio', price: (n: string, m: string, y: string) => `${n}: ${m} a month or ${y} a year`, free: 'Free: €0, forever, no card.', month: 'First month free on monthly plans.' },
+  es: { file: 'public/es/handpan-app/index.html', plans: 'Esencial|Studio', price: (n: string, m: string, y: string) => `${n}: ${m} al mes o ${y} al año`, free: 'Gratis: 0 €, para siempre, sin tarjeta.', month: 'Primer mes gratis en las fórmulas mensuales.' },
+}
+
+function salePage(lang: LlmsLang): PageText {
+  const page = SALE_PAGE[lang as keyof typeof SALE_PAGE] ?? SALE_PAGE.en
+  const html = readFileSync(page.file, 'utf8')
   const clean = (v: string) => plain(v).replace(/\*/g, '')
   const lead = html.match(/<p class="lead[^"]*">([\s\S]*?)<\/p>/)?.[1] ?? ''
-  const prices = [...html.matchAll(/<h3>(Essentiel|Studio)<\/h3><div class="prix" data-mens="([^"]+)" data-ann="([^"]+)"/g)]
-    .map((m) => `${m[1]} : ${m[2]} par mois ou ${m[3]} par an`)
+  const prices = [...html.matchAll(new RegExp(`<h3>(${page.plans})<\\/h3><div class="prix" data-mens="([^"]+)" data-ann="([^"]+)"`, 'g'))]
+    .map((m) => page.price(m[1], m[2], m[3]))
     .join(' ; ')
   const faqZone = html.slice(html.indexOf('<section id="faq">'))
   const faq = [...faqZone.matchAll(/<details[^>]*><summary>([\s\S]*?)<\/summary><p>([\s\S]*?)<\/p><\/details>/g)].map((m) => ({ q: clean(m[1]), a: clean(m[2]) }))
   return {
     title: clean(html.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? ''),
-    description: clean(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? ''),
-    leads: [clean(lead), `Gratuit : 0 €, pour toujours, sans carte. ${prices}. Premier mois offert sur les formules mensuelles.`],
+    description: `${clean(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? '')} Español: https://www.lesagedavid.fr/es/handpan-app/`,
+    leads: [clean(lead), `${page.free} ${prices}. ${page.month}`],
     faq,
   }
 }
@@ -138,7 +145,7 @@ function salePage(): PageText {
 const PAGES: PageDef[] = [
   { path: '/', group: 'main', text: dictPage('home') },
   { path: '/neotone', group: 'main', text: dictPage('neotone') },
-  { path: '/handpan-app', group: 'main', text: (t, lang) => (lang === 'fr' ? salePage() : fromSection(t.studio)) },
+  { path: '/handpan-app', group: 'main', text: (_t, lang) => salePage(lang) },
   { path: '/cours', group: 'main', text: dictPage('lessons') },
   { path: '/boutique', group: 'main', text: dictPage('shop') },
   { path: '/showroom', group: 'main', text: dictPage('showroom') },

@@ -31,7 +31,7 @@
  if(localStorage.getItem('pref-lang')||sessionStorage.getItem('lang-auto'))return;
  var nav=navigator.languages&&navigator.languages.length?navigator.languages[0]:navigator.language;
  var code=(nav||'').toLowerCase();if(!code||code.indexOf('fr')===0)return;
- sessionStorage.setItem('lang-auto','1');location.replace('/en/handpan-app/'+location.search+location.hash)
+ sessionStorage.setItem('lang-auto','1');location.replace((code.indexOf('es')===0?'/es':'/en')+'/handpan-app/'+location.search+location.hash)
 }catch(e){}})()
 </script>
 <link rel="stylesheet" href="/fonts/fonts.css">
@@ -946,7 +946,7 @@ main>section[hidden]{display:none!important}
       <li>Tout ce que tu crées est sauvegardé</li><li>Savoir quel handpan choisir ensuite</li>
     </ul>
     <a class="btn rv" href="#inscription" data-modale="inscr" data-palier="g">Découvrir mon handpan gratuitement</a>
-    <p class="ensuite rv">Le jour où une chanson ne tombe pas sur ta gamme, <b>Essentiel</b> la transpose. Le jour où tu veux être guidé en chantant, c’est <b>Studio</b>. Les deux t’attendent dans l’app.</p>
+    <p class="ensuite rv">Le jour où une chanson ne tombe pas sur ta gamme, <b>Essentiel</b> la transpose. Le jour où tu veux des exercices de chant, c’est <b>Studio</b>. Les deux t’attendent dans l’app.</p>
   </div>
 </section>
 
@@ -1014,7 +1014,7 @@ main>section[hidden]{display:none!important}
 
 </main>
 
-<nav class="pied-legal" aria-label="Liens du site"><a href="/">Accueil</a><a href="/neotone/">Le Neotone</a><a href="/yishama/">Yishama</a><a href="/boutique/">Boutique</a><a href="/cours/">Cours</a><a href="/blog/">Blog</a><a href="/showroom/">Showroom</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="https://play.handpanstudio.app/">Se connecter</a><a href="/mentions-legales/">Mentions légales</a><a href="/conditions-generales/">Conditions générales</a><a href="/politique-de-confidentialite/">Confidentialité</a><a href="/contact/">Contact</a></nav>
+<nav class="pied-legal" aria-label="Liens du site"><a href="/">Accueil</a><a href="/neotone/">Le Neotone</a><a href="/yishama/">Yishama</a><a href="/boutique/">Boutique</a><a href="/cours/">Cours</a><a href="/blog/">Blog</a><a href="/showroom/">Showroom</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="https://play.handpanstudio.app/">Se connecter</a><a href="/mentions-legales/">Mentions légales</a><a href="/conditions-generales/">Conditions générales</a><a href="/politique-de-confidentialite/">Confidentialité</a><a href="/contact/">Contact</a><span class="pied-langues"><a href="/handpan-app/" hreflang="fr" lang="fr" data-lang-pick="fr" aria-current="true">Français</a> · <a href="/en/handpan-app/" hreflang="en" lang="en" data-lang-pick="en">English</a> · <a href="/es/handpan-app/" hreflang="es" lang="es" data-lang-pick="es">Español</a></span></nav>
 
 <div class="barre-appel" aria-hidden="true"><span>Gratuit, sans carte bancaire</span><a class="btn" href="#inscription" data-modale="inscr" data-palier="g" tabindex="-1">Découvrir mon handpan</a></div>
 
@@ -1027,11 +1027,11 @@ main>section[hidden]{display:none!important}
         <div class="periode"><button data-m="a" class="on">Annuel <span class="m-pastille">jusqu’à −28 %</span></button><button data-m="m">Mensuel</button></div>
         <div class="m-paliers">
           <article class="carte" style="--c:var(--g)"><h3>Gratuit</h3><div class="prix">0 €</div><div class="sous">pour toujours, sans carte</div>
-            <p class="promesse">Ce que ton handpan sait faire.</p><ul class="m-fonctions"><li>Reconnaître ta gamme au micro</li><li>Tous les accords de ton instrument, en couleurs et en constellations</li><li>Les chansons que ton handpan peut jouer ce soir</li><li>Coller les accords et les paroles d’une chanson : l’app te la montre sur ton handpan</li><li>Trouver ta voix : ta tessiture, une note guide, un bourdon</li><li>T’entraîner : technique, accords, rythme, ton rituel</li><li>Tout ce que tu crées est sauvegardé</li><li>Savoir quel handpan choisir ensuite</li></ul><button class="btn" data-choix="g">Choisir ce palier</button></article>
+            <p class="promesse">Ce que ton handpan sait faire.</p><ul class="m-fonctions"><li>Reconnaître ta gamme au micro</li><li>Tous les accords de ton instrument, en couleurs et en constellations</li><li>Les chansons que ton handpan peut jouer ce soir</li><li>Coller les accords et les paroles d’une chanson : l’app te la montre sur ton handpan</li><li>Trouver ta voix : ta tessiture, une note guide, un bourdon</li><li>T’entraîner : technique, accords, rythme, ton rituel</li><li>Tout ce que tu crées est sauvegardé</li><li>Savoir quel handpan choisir ensuite</li><li>Brancher ton Neotone en MIDI par USB</li></ul><button class="btn" data-choix="g">Choisir ce palier</button></article>
           <article class="carte" style="--c:var(--e)"><h3>Essentiel</h3><div class="prix" data-mens="3,49 €" data-ann="29,99 €">3,49 € <small>/ mois</small></div><div class="sous" data-mens="premier mois offert" data-ann="soit 2,50 € par mois, 11,89 € économisés">premier mois offert</div>
             <p class="promesse">Ce que tu joues vraiment.</p><ul class="m-fonctions"><li class="her">Tout le Gratuit</li><li>Transposer tes morceaux</li><li>Jouer hors ligne</li><li>Faire défiler la partition au tempo</li><li>Boucler un passage pour le travailler</li><li>Exporter tes partitions en PDF et en image</li><li>Écouter ta gamme dans une autre tonalité</li><li>Voir et écouter ta gamme ailleurs</li><li>Écrire tes mélodies</li><li>Jouer avec un batteur</li><li>T’entraîner avec la pluie de notes</li><li>Imprimer ton jeu de cartes d’accords</li><li>Jouer aux cartes d’accords</li></ul><button class="btn" data-choix="e">Choisir ce palier</button><p class="m-alt m-si-a">Ou au mois : 3,49 €, premier mois offert</p><p class="m-alt m-si-m">Ou à l’année : 29,99 € (−28 %), en une fois, sans mois d’essai</p></article>
           <article class="carte" style="--c:var(--s)"><h3>Studio</h3><div class="prix" data-mens="9,99 €" data-ann="89 €">9,99 € <small>/ mois</small></div><div class="sous" data-mens="premier mois offert" data-ann="soit 7,42 € par mois, 30,88 € économisés">premier mois offert</div>
-            <p class="promesse">Un studio autour de tes instruments.</p><ul class="m-fonctions"><li class="her">Tout Essentiel</li><li>Travailler ta justesse</li><li>T’entendre dans le casque</li><li>Jouer avec deux handpans</li><li>Jouer sur plusieurs handpans autour de toi</li><li>Jouer la Logique sur ton handpan électronique</li><li>Relier l’app à ton Neotone avec Neotone Connexion</li><li>Monter sur scène avec tes sets</li><li>Révéler les accords de ton duo</li><li>Exporter en MIDI et en MusicXML</li><li>Brancher ton instrument en MIDI</li><li>Garder tes compositions privées</li><li>Utiliser l’app sur plusieurs appareils en même temps</li></ul><button class="btn" data-choix="s">Choisir ce palier</button><p class="m-alt m-si-a">Ou au mois : 9,99 €, premier mois offert</p><p class="m-alt m-si-m">Ou à l’année : 89 € (−26 %), en une fois, sans mois d’essai</p></article>
+            <p class="promesse">Un studio autour de tes instruments.</p><ul class="m-fonctions"><li class="her">Tout Essentiel</li><li>Travailler ta justesse avec les exercices de chant</li><li>T’entendre dans le casque</li><li>Jouer avec deux handpans</li><li>Jouer sur plusieurs handpans autour de toi</li><li>Jouer la Logique sur ton handpan électronique</li><li>Neotone Connexion : la synchro des gammes, la gestion des enregistrements et Neotone Drums</li><li>Monter sur scène avec tes sets</li><li>Révéler les accords de ton duo</li><li>Exporter en MIDI et en MusicXML</li><li>Garder tes compositions privées</li><li>Utiliser l’app sur plusieurs appareils en même temps</li></ul><button class="btn" data-choix="s">Choisir ce palier</button><p class="m-alt m-si-a">Ou au mois : 9,99 €, premier mois offert</p><p class="m-alt m-si-m">Ou à l’année : 89 € (−26 %), en une fois, sans mois d’essai</p></article>
           <article class="carte m-bientot" style="--c:var(--creme2)"><h3>Transmettre</h3><div class="prix">À venir</div><div class="sous">pour les professeurs</div>
             <p class="promesse">Tes élèves, tes cours, leurs devoirs.</p><ul class="m-fonctions"><li>Suivre tes élèves</li><li>Donner des cours individuels et collectifs</li><li>Tenir l’agenda de tes cours</li><li>Enregistrer tes cours</li><li>Donner des devoirs à tes élèves</li><li>Créer et partager tes cours</li><li>Publier ta fiche de professeur</li></ul><button class="btn ghost" data-choix="t">Être prévenu·e</button></article>
         </div>
@@ -1262,6 +1262,8 @@ if(!reduit){addEventListener('scroll',demande,{passive:true});addEventListener('
 document.querySelectorAll('.periode button').forEach(b=>b.addEventListener('click',()=>{const a=b.dataset.m==='a';
  document.querySelectorAll('.essai').forEach(p=>p.textContent=a?p.dataset.ann:p.dataset.mens)}));
 document.querySelector('.periode button[data-m="a"]').click();
+/* un choix de langue explicite est mémorisé, comme dans le reste du site */
+document.querySelectorAll('[data-lang-pick]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('pref-lang',a.dataset.langPick)}catch(e){}}));
 </script>
 </body>
 </html>

@@ -48,6 +48,12 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🧭 ÉTAT ACTUEL — 02/11/2026 (42ᵉ passe) — REPRENDRE ICI
+- **Page de vente v3.1 en EN et ES** : `public/en|es/handpan-app/index.html` sont GÉNÉRÉES par `node scripts/generer-vente-langues.mjs` depuis la page française (table FR/EN/ES dans le script, il s'arrête si un texte français a changé). Toute retouche FR : relancer le script. Médias partagés dans `/handpan-app/img/`. `StudioPage.astro` n'est plus routée (dictionnaires conservés).
+- **Archive privée** de l'ancienne page : `/archive-vente/fr|en|es/` (fichiers figés dans `public/archive-vente/`, FR = build de f631a32, EN/ES = build de c06c9ef, 28 Mo de médias copiés). noindex/nofollow balise + en-tête, hors sitemap et llms, sans lien, réseau et formulaires neutralisés. Ne pas la régénérer.
+- Corrections FR sur les faits de David : MIDI par USB gratuit, payant = synchro des gammes, enregistrements, Neotone Drums ; exercices de chant payants, passeport vocal et « Je vois ma voix » gratuits. ⚠️ `auth/capabilities.ts` de l'app liste encore `cap.midi` en Studio seul : à vérifier côté app.
+- Pied de page de la vente : liens FR/EN/ES qui mémorisent `pref-lang` ; navigateur hispanophone redirigé vers /es/. `tableau-paliers.html` n'est pas sur le site (retiré le 31/10), non traduit.
+
 ## 🧭 ÉTAT ACTUEL — 01/11/2026 (41ᵉ passe) — REPRENDRE ICI
 - **Branche unique = `main`** : `seo-ia` et `vente-v3-1` fusionnées (d1503f6). On publie depuis main : plus de liste de cherry-picks.
 - **Retenu hors du site : achat Neotone en 3 cas** (attend la migration 0189 et les secrets de David). Dans main ces fichiers sont à la version en production : `api/subscribe.js`, `BookingForm.astro`, `Calculator.astro`, `dict/en/es.ts` (textes d'achat), `site-lead`. Version complète : tag `retenu-achat-neotone-3-cas-2026-11-01`, à reporter à l'ouverture. EF `neotone-purchase-action` : source présente, à ne déployer qu'à ce moment.

@@ -8,6 +8,7 @@
     { "source": "/api/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
     { "source": "/prototypes/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
     { "source": "/handpan-app/ouverture-b4.html", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
+    { "source": "/archive-vente/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Content-Security-Policy", "value": "connect-src 'none'; form-action 'none'" }] },
     { "source": "/neotone-suivi(/?)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] },
     { "source": "/commande-muling(/?)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Referrer-Policy", "value": "no-referrer" }] }
   ],
