@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 
     const data = await r.json().catch(() => ({}))
     if (!r.ok) {
-      const passThrough = [400, 404].includes(r.status)
+      const passThrough = [400, 404, 409].includes(r.status)
       res.status(passThrough ? r.status : 502).json({ error: data.error || 'upstream' })
       return
     }

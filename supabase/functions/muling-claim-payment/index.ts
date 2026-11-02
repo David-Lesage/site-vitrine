@@ -21,21 +21,22 @@
 //      la ligne `Phone:` est toujours présente (mention explicite si absente),
 //      les infos livreur suivent. Incident RASMUS DAHLVIK : Muling a dû redemander
 //      le téléphone.
+// v5 (02/11/2026) : dépôt factorisé dans `_shared/muling-depot.ts`, partagé avec le lien
+//      personnel `muling-proof-link`. Contenu du fichier vérifié (signature PDF, PNG, JPEG),
+//      3 Mo maximum. Commande annulée : 409 `order_cancelled`. Corbeille : 404. Commande
+//      fusionnée : le déclencheur de 0306 remonte la preuve et Muling reçoit la référence de la
+//      commande conservée. L'ancien lien `?commande=<id>` continue de fonctionner.
 // v3 (09/08/2026) : corps envoyé en base64 via `textPart()` — même lib, SECOND
 //      bug indépendant : `quotedPrintableEncode()` échappe `=` en `=3d`
 //      MINUSCULE, interdit par la RFC 2045 §6.7. Cf. _shared/mail.ts.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
-import {
-    MULING_SALE_COLS, sendMail, sendMulingOrderMail, smtpEnv, type MulingSale,
-} from '../_shared/muling-mail.ts';
+import { deposerPreuve } from '../_shared/muling-depot.ts';
+import { MULING_SALE_COLS, smtpEnv, type MulingSale } from '../_shared/muling-mail.ts';
+import { lireMontantDeclare, lirePreuve } from '../_shared/muling-preuve.ts';
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
-const MAX_BYTES = 6 * 1024 * 1024; // ~5 Mo de fichier réel une fois décodé
-const ALLOWED_TYPES: Record<string, string> = {
-    'image/png': 'png', 'image/jpeg': 'jpg', 'application/pdf': 'pdf',
-};
 
 function json(body: unknown, status = 200): Response {
     return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
@@ -52,15 +53,9 @@ Deno.serve(async (req) => {
         const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
         const saleId = String(body.saleId ?? '').trim();
         const email = String(body.email ?? '').trim().toLowerCase();
-        const fileBase64 = String(body.fileBase64 ?? '');
-        const fileType = String(body.fileType ?? '');
-        const lang = String(body.lang ?? 'fr').trim().slice(0, 5);
-
         if (!saleId || !email) return json({ error: 'missing_fields' }, 400);
-        const ext = ALLOWED_TYPES[fileType];
-        if (!fileBase64 || !ext) return json({ error: 'invalid_file_type' }, 400);
-        // Base64 gonfle la taille d'environ 4/3 : on borne AVANT décodage.
-        if (fileBase64.length > MAX_BYTES * 1.4) return json({ error: 'file_too_large' }, 400);
+        const lu = lirePreuve(body.fileBase64);
+        if (!lu.ok) return json({ error: lu.error === 'missing_file' ? 'invalid_file_type' : lu.error }, 400);
 
         const admin = createClient(
             Deno.env.get('SUPABASE_URL') ?? '',
@@ -80,77 +75,10 @@ Deno.serve(async (req) => {
             return json({ error: 'not_found' }, 404);
         }
 
-        const bytes = Uint8Array.from(atob(fileBase64), (c) => c.charCodeAt(0));
-        if (bytes.byteLength > MAX_BYTES) return json({ error: 'file_too_large' }, 400);
-
-        const path = `${saleId}/${Date.now()}.${ext}`;
-        const { error: upErr } = await admin.storage.from('muling-proofs').upload(path, bytes, {
-            contentType: fileType, upsert: false,
+        const depot = await deposerPreuve({ admin, env: smtpEnv() }, sale, lu.fichier, {
+            langue: body.lang, montantDeclare: lireMontantDeclare(body.amountPaid), exigerSansPreuve: false,
         });
-        if (upErr) throw upErr;
-
-        const { error: updErr } = await admin.from('affiliate_sales').update({
-            payment_proof_path: path,
-            payment_claimed_at: new Date().toISOString(),
-            fulfillment_status: 'payment_claimed',
-        }).eq('id', saleId);
-        if (updErr) throw updErr;
-
-        // Notifications. Le mail à Muling porte la preuve en PIÈCE JOINTE (les
-        // octets sont déjà là : on ne relit pas le bucket). Une panne de mail ne
-        // défait pas le dépôt — la preuve est enregistrée et reste dans le dashboard.
-        const env = smtpEnv();
-        if (env) {
-            const name = sale.customer_name ?? email;
-            const ref = sale.order_ref ?? saleId;
-
-            // Un seul email à Muling, David en copie.
-            await sendMulingOrderMail(
-                env,
-                { ...sale, payment_proof_path: path },
-                { bytes, ext },
-                false,
-            );
-
-            // Confirmation au CLIENT — preuve écrite pour lui que son dépôt a
-            // bien été reçu et transmis (David, 08/08/2026 : « qu'elle ait
-            // aussi une preuve »). Pas de cc ici, c'est un email personnel.
-            const fr = lang === 'fr';
-            await sendMail(env, {
-                to: email,
-                subject: fr ? `Ta preuve de virement est bien reçue — réf. ${ref}` : `Your proof of payment was received — ref. ${ref}`,
-                text: (fr ? [
-                    `Bonjour ${name},`,
-                    '',
-                    'C’est confirmé : ta preuve de virement a bien été reçue et transmise à Muling, avec toutes les infos de ta commande.',
-                    '',
-                    `Quantité : ${sale.quantity}x HMP-2`,
-                    `Montant : ${sale.price_discounted_eur} EUR`,
-                    `Référence : ${ref}`,
-                    '',
-                    'Muling va vérifier la réception du virement et te recontacter directement pour la suite (expédition et suivi de commande).',
-                    'Garde cet email comme preuve de ta démarche.',
-                    '',
-                    'Merci,',
-                    'David Lesage',
-                ] : [
-                    `Hi ${name},`,
-                    '',
-                    'Confirmed: your proof of payment has been received and sent to Muling, along with your full order details.',
-                    '',
-                    `Quantity: ${sale.quantity}x HMP-2`,
-                    `Amount: ${sale.price_discounted_eur} EUR`,
-                    `Reference: ${ref}`,
-                    '',
-                    'Muling will check the transfer and get in touch with you directly for the next steps (shipping and tracking).',
-                    'Keep this email as proof of your submission.',
-                    '',
-                    'Thank you,',
-                    'David Lesage',
-                ]).join('\n'),
-            });
-        }
-
+        if (!depot.ok) return json({ error: depot.error }, depot.error === 'not_found' ? 404 : 409);
         return json({ ok: true });
     } catch (err) {
         console.error('muling-claim-payment error:', err);

@@ -13,7 +13,7 @@
 // =============================================================================
 
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
-import { mailSubject, textPart } from './mail.ts';
+import { htmlPart, mailSubject, textPart } from './mail.ts';
 
 export const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 export const MULING_EMAIL = '85846599@qq.com';
@@ -23,7 +23,9 @@ export const DASHBOARD_URL = 'https://play.handpanstudio.app/';
 export const MULING_SALE_COLS =
     'id, email, phone, customer_name, quantity, price_discounted_eur, order_ref, '
     + 'shipping_address, shipping_city, shipping_postal_code, shipping_country, delivery_note, '
-    + 'payment_proof_path, payment_claimed_at';
+    + 'payment_proof_path, payment_claimed_at, partner, lang, purchase_channel, status, fulfillment_status, '
+    + 'deleted_at, merged_into_id, cancelled_at, shipped_at, partner_shipping_started_at, invoiced_at, '
+    + 'invoice_ref, facture_partenaire_id, commission_paid_on';
 
 export interface MulingSale {
     id: string;
@@ -40,6 +42,20 @@ export interface MulingSale {
     delivery_note: string | null;
     payment_proof_path: string | null;
     payment_claimed_at: string | null;
+    partner?: string | null;
+    lang?: string | null;
+    purchase_channel?: string | null;
+    status?: string | null;
+    fulfillment_status?: string | null;
+    deleted_at?: string | null;
+    merged_into_id?: string | null;
+    cancelled_at?: string | null;
+    shipped_at?: string | null;
+    partner_shipping_started_at?: string | null;
+    invoiced_at?: string | null;
+    invoice_ref?: string | null;
+    facture_partenaire_id?: string | null;
+    commission_paid_on?: string | null;
 }
 
 export interface ProofFile {
@@ -91,13 +107,16 @@ export async function downloadProof(admin: any, path: string | null): Promise<Pr
 export interface MulingMail { subject: string; text: string; attachmentName: string | null }
 
 /** Compose le texte du mail à Muling (anglais — Muling ne lit pas le français). */
-export function composeMulingMail(sale: MulingSale, proof: ProofFile | null, resend: boolean): MulingMail {
+export function composeMulingMail(
+    sale: MulingSale, proof: ProofFile | null, resend: boolean, montantDeclare: number | null = null,
+): MulingMail {
     const name = sale.customer_name || sale.email || 'Customer';
     const ref = sale.order_ref ?? sale.id;
     const addr = [sale.shipping_address, sale.shipping_postal_code, sale.shipping_city, sale.shipping_country]
         .filter(Boolean).join(', ');
     const phone = String(sale.phone ?? '').trim();
     const attachmentName = proof ? `proof-of-payment-${ref}.${proof.ext}` : null;
+    const showroom = sale.purchase_channel === 'showroom';
 
     const text = [
         resend
@@ -109,10 +128,14 @@ export function composeMulingMail(sale: MulingSale, proof: ProofFile | null, res
         phone
             ? `Phone: ${phone}`
             : 'Phone: NOT PROVIDED by the customer — we are asking them for it and will send it to you as soon as we have it.',
+        // Depuis l'étape 3, ce mail est le PREMIER que Muling reçoit : la mention de la vente
+        // showroom, autrefois dans le mail de commande, doit donc y figurer.
+        showroom ? 'Sale mode: SHOWROOM — handed over in person by David from consigned stock. DO NOT SHIP.' : null,
         `Quantity: ${sale.quantity ?? 1}x HMP-2`,
         `Amount: ${sale.price_discounted_eur} EUR`,
+        montantDeclare !== null ? `Amount declared by the customer (to be verified): ${montantDeclare} EUR` : null,
         `Reference: ${ref}`,
-        addr ? `Shipping address: ${addr}` : 'Shipping address: —',
+        showroom ? null : (addr ? `Shipping address: ${addr}` : 'Shipping address: —'),
         sale.delivery_note ? `Delivery notes: ${sale.delivery_note}` : null,
         '',
         attachmentName
@@ -135,7 +158,7 @@ export function composeMulingMail(sale: MulingSale, proof: ProofFile | null, res
 export async function sendMail(
     env: SmtpEnv,
     msg: {
-        to: string; cc?: string; subject: string; text: string;
+        to: string; cc?: string; replyTo?: string; subject: string; text: string; html?: string;
         attachment?: { filename: string; bytes: Uint8Array; contentType: string } | null;
     },
 ): Promise<boolean> {
@@ -148,9 +171,10 @@ export async function sendMail(
             from: env.from,
             to: msg.to,
             cc: msg.cc,
+            replyTo: msg.replyTo,
             subject: mailSubject(msg.subject),
             // ⚠️ Corps via `textPart()` (base64) — parade denomailer 1.6.0, cf. mail.ts.
-            mimeContent: [textPart(msg.text)],
+            mimeContent: msg.html ? [textPart(msg.text), htmlPart(msg.html)] : [textPart(msg.text)],
             ...(msg.attachment
                 ? {
                     attachments: [{
@@ -173,9 +197,9 @@ export async function sendMail(
 
 /** Compose + envoie le mail à Muling (David en copie), preuve de virement jointe. */
 export async function sendMulingOrderMail(
-    env: SmtpEnv, sale: MulingSale, proof: ProofFile | null, resend: boolean,
+    env: SmtpEnv, sale: MulingSale, proof: ProofFile | null, resend: boolean, montantDeclare: number | null = null,
 ): Promise<boolean> {
-    const mail = composeMulingMail(sale, proof, resend);
+    const mail = composeMulingMail(sale, proof, resend, montantDeclare);
     return await sendMail(env, {
         to: MULING_EMAIL,
         cc: ADMIN_EMAIL,

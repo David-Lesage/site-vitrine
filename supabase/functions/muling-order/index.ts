@@ -6,8 +6,7 @@
 // de livraison, quantité et prix fixe en euros.
 //
 // Distincte de site-lead pour ne pas alourdir une fonction déjà volumineuse
-// avec un modèle de données et des destinataires d'email différents (Muling
-// reçoit un email à CHAQUE commande, ce qu'aucune autre source ne fait).
+// avec un modèle de données et des destinataires d'email différents.
 //
 // Appelée par /api/muling-order.js (Vercel) — SERVEUR À SERVEUR, protégée
 // par SITE_LEAD_TOKEN (même secret que site-lead).
@@ -54,22 +53,24 @@
 //      part en PIÈCE JOINTE du mail à Muling (mêmes drapeaux « DO NOT SHIP »).
 //      Écart de montant → ligne AJOUTÉE à admin_note. sale_place laissé vide
 //      (le lieu vient de la modale de retrait). Sans fichier : v5 inchangée.
+// v7 (02/11/2026) : MULING N'EST PLUS PRÉVENU À LA COMMANDE, seulement quand la preuve arrive
+//      (décision de David). David reste prévenu. Le chemin « payé sur place » garde son envoi,
+//      preuve jointe. Mail client issu du modèle partagé `_shared/muling-email-modele.ts`, avec
+//      vrais boutons et lien personnel ; IBAN lu dans `muling_bank_settings`. Sans jeton (migration
+//      absente, par exemple), repli sur l'ancien lien `?commande=<id>`. Preuve : contenu vérifié
+//      (PDF, PNG, JPEG, 3 Mo), un WebP n'est donc plus accepté.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
-import { htmlPart, mailSubject } from '../_shared/mail.ts';
+import { htmlPart, mailSubject, textPart } from '../_shared/mail.ts';
+import { lireBanque } from '../_shared/muling-banque.ts';
+import { composerMailClient, urlAncienLien, urlPage } from '../_shared/muling-email-modele.ts';
+import { genererJeton, hacher, langueMail, LIEN_DUREE_JOURS, lirePreuve } from '../_shared/muling-preuve.ts';
 
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 const MULING_EMAIL = '85846599@qq.com';
 const DASHBOARD_URL = 'https://play.handpanstudio.app/';
-const SITE_URL = 'https://www.lesagedavid.fr';
-// Lien REPRENABLE vers l'écran « je signale mon virement » (v4, 17/08/2026).
-// Il rouvre l'étape 2 du formulaire à tout moment, dans n'importe quel
-// navigateur, sans session. Le lien seul ne déclenche RIEN : la personne doit
-// saisir l'email de la commande, que `muling-claim-payment` compare.
-const claimUrl = (lang: string, saleId: string) =>
-    `${SITE_URL}${lang === 'fr' ? '' : '/en'}/micro-muling?commande=${saleId}`;
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -90,16 +91,6 @@ const COMMISSION_PER_UNIT_EUR = 100; // accord de principe du 22/07/2026 avec Mu
 const TERMS_VERSION = '2026-08-19';
 
 const PROOF_BUCKET = 'muling-proofs';
-const MAX_BYTES = 6 * 1024 * 1024;
-const ALLOWED_TYPES: Record<string, string> = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'application/pdf': 'pdf' };
-
-const BANK = {
-    beneficiary: 'HuiZhou Muling Musical Instruments Co Ltd',
-    iban: 'DE17 2022 0800 0047 4167 62',
-    bic: 'SXPYDEHH',
-    bank: 'Banking Circle S.A. — succursale allemande',
-};
-
 function json(body: unknown, status = 200): Response {
     return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
 }
@@ -121,64 +112,6 @@ ${inner}
 }
 const row = (k: string, v: string) =>
     `<tr><td style="padding:4px 0;color:#6b7280;font-size:13px;width:130px;vertical-align:top;">${k}</td><td style="padding:4px 0;color:#111827;font-size:14px;">${v}</td></tr>`;
-
-function clientEmailHtml(lang: string, firstName: string, ref: string, total: number, quantity: number, saleId: string, isShowroom = false): string {
-    const en = lang !== 'fr';
-    const hi = firstName ? `${en ? 'Hi' : 'Bonjour'} ${esc(firstName)},` : (en ? 'Hi,' : 'Bonjour,');
-    const t = en ? {
-        title: 'Your order is on its way ✨',
-        p1: 'Thanks for your order — I’ve passed it on to Muling. Here are your payment details, for your records (you’ll also find them on the confirmation screen).',
-        pay: 'Payment details',
-        p2: 'Payment in euros, SEPA transfer only — this account does not accept international/SWIFT wires.',
-        // 🐞 v4 : ce paragraphe renvoyait vers « l'écran de confirmation », qui
-        // n'existait que dans l'onglet ouvert au moment de la commande. Fermer
-        // l'onglet = plus aucun moyen de signaler son virement. D'où le lien.
-        p3: 'Once you’ve paid, come back to this screen to let me know and upload your proof of payment — I’ll follow up with Muling for shipping. Keep this email: the link works at any time.',
-        cta: 'I’ve made the transfer',
-        p4: 'You’ll be asked for the email address of this order — it’s what identifies it.',
-        sign: 'Thank you,<br />David Lesage',
-    } : {
-        title: 'Ta commande est en route ✨',
-        p1: 'Merci pour ta commande — je l’ai transmise à Muling. Voici tes informations de paiement, pour archive (tu les retrouves aussi sur l’écran de confirmation).',
-        pay: 'Coordonnées de paiement',
-        p2: 'Paiement en euros, par virement SEPA uniquement — ce compte n’accepte pas les virements internationaux/SWIFT.',
-        p3: 'Une fois le virement fait, reviens sur cet écran pour me le signaler et déposer ta preuve de virement — je fais le lien avec Muling pour l’expédition. Garde cet email : le lien fonctionne à tout moment.',
-        cta: 'J’ai effectué le virement',
-        p4: 'On te redemandera l’adresse email de cette commande — c’est elle qui l’identifie.',
-        sign: 'Merci,<br />David Lesage',
-    };
-    if (isShowroom) {
-        // v5 : remise en main propre — rien n'est expédié par Muling.
-        t.p1 = en
-            ? 'Thanks for your purchase at the showroom — I’m handing you the mic in person, nothing will be shipped. Here are the payment details, for your records.'
-            : 'Merci pour ton achat au showroom — je te remets le micro en main propre, rien ne sera expédié. Voici les informations de paiement, pour archive.';
-    }
-    const link = claimUrl(lang, saleId);
-    return shell(`
-        <tr><td style="padding:28px 28px 4px;">
-          <div style="font-size:21px;font-weight:700;color:#111827;">${t.title}</div>
-          <p style="margin:14px 0 0;color:#374151;font-size:15px;line-height:1.6;">${hi}</p>
-          <p style="margin:12px 0 0;color:#374151;font-size:15px;line-height:1.6;">${t.p1}</p>
-        </td></tr>
-        <tr><td style="padding:22px 28px 4px;border-top:1px solid #f0f1f3;">
-          <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.pay}</h2>
-          <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
-            ${row('Beneficiary', esc(BANK.beneficiary))}
-            ${row('IBAN', esc(BANK.iban))}
-            ${row('BIC', esc(BANK.bic))}
-            ${row(en ? 'Amount' : 'Montant', `${total} EUR`)}
-            ${row(en ? 'Reference' : 'Référence', esc(ref))}
-          </table>
-          <p style="margin:12px 0 0;color:#6b7280;font-size:12px;">${t.p2}</p>
-        </td></tr>
-        <tr><td style="padding:20px 28px 28px;border-top:1px solid #f0f1f3;">
-          <p style="margin:0;color:#374151;font-size:14px;line-height:1.6;">${t.p3}</p>
-          <p style="margin:18px 0 0;"><a href="${link}" style="display:inline-block;background:#b4462a;color:#ffffff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 26px;border-radius:999px;">${t.cta}</a></p>
-          <p style="margin:10px 0 0;color:#6b7280;font-size:12px;line-height:1.5;">${t.p4}<br /><span style="word-break:break-all;">${esc(link)}</span></p>
-          <p style="margin:16px 0 0;color:#9ca3af;font-size:12px;">${t.sign}</p>
-        </td></tr>
-`);
-}
 
 function mulingHtml(f: Record<string, string | number | null>): string {
     return shell(`
@@ -236,13 +169,10 @@ Deno.serve(async (req) => {
 
         // v6 : payé sur place — capture + montant viré, en showroom seulement.
         const fileBase64 = isShowroom ? String(body.fileBase64 ?? '') : '';
-        const fileType = String(body.fileType ?? '');
-        const ext = ALLOWED_TYPES[fileType];
         const paidOnSite = !!fileBase64;
-        if (paidOnSite && !ext) return json({ error: 'invalid_file_type' }, 400);
-        if (fileBase64.length > MAX_BYTES * 1.4) return json({ error: 'file_too_large' }, 400);
-        const proofBytes = paidOnSite ? Uint8Array.from(atob(fileBase64), (ch) => ch.charCodeAt(0)) : null;
-        if (proofBytes && proofBytes.byteLength > MAX_BYTES) return json({ error: 'file_too_large' }, 400);
+        const lu = paidOnSite ? lirePreuve(fileBase64) : null;
+        if (lu && !lu.ok) return json({ error: lu.error }, 400);
+        const preuve = lu?.ok ? lu.fichier : null;
         const amountPaid = paidOnSite ? Math.round(Number(body.amountPaid) * 100) / 100 : NaN;
         if (paidOnSite && (!Number.isFinite(amountPaid) || amountPaid < 1 || amountPaid > 5000)) return json({ error: 'invalid_amount' }, 400);
 
@@ -312,9 +242,9 @@ Deno.serve(async (req) => {
 
         // v6 : preuve de virement. Une panne d'upload ne perd pas la vente.
         let proofPath: string | null = null;
-        if (proofBytes && ext) {
-            const path = `${saleId}/${Date.now()}.${ext}`;
-            const { error: upErr } = await admin.storage.from(PROOF_BUCKET).upload(path, proofBytes, { contentType: fileType, upsert: false });
+        if (preuve) {
+            const path = `${saleId}/${Date.now()}.${preuve.ext}`;
+            const { error: upErr } = await admin.storage.from(PROOF_BUCKET).upload(path, preuve.bytes, { contentType: preuve.mime, upsert: false });
             if (upErr) console.error('muling-order upload error:', upErr);
             else {
                 const { error: updErr } = await admin.from('affiliate_sales').update({
@@ -332,23 +262,37 @@ Deno.serve(async (req) => {
         const port = Number(Deno.env.get('SMTP_PORT') ?? '465');
 
         if (host && user && pass && from) {
-            const send = async (to: string, cc: string | string[] | undefined, replyTo: string | undefined, subject: string, html: string, withProof = false) => {
+            const send = async (to: string, cc: string | string[] | undefined, replyTo: string | undefined, subject: string, html: string, withProof = false, text?: string) => {
                 const c = new SMTPClient({ connection: { hostname: host, port, tls: port === 465, auth: { username: user, password: pass } } });
-                const attachments = withProof && proofPath && proofBytes && ext
-                    ? [{ filename: `proof-of-payment-${ref}.${ext}`, content: fileBase64, encoding: 'base64' as const, contentType: fileType }]
+                const attachments = withProof && proofPath && preuve
+                    ? [{ filename: `proof-of-payment-${ref}.${preuve.ext}`, content: fileBase64, encoding: 'base64' as const, contentType: preuve.mime }]
                     : undefined;
-                try { await c.send({ from, to, cc, replyTo, subject: mailSubject(subject), mimeContent: [htmlPart(html)], ...(attachments ? { attachments } : {}) }); return true; }
+                try { await c.send({ from, to, cc, replyTo, subject: mailSubject(subject), mimeContent: text ? [textPart(text), htmlPart(html)] : [htmlPart(html)], ...(attachments ? { attachments } : {}) }); return true; }
                 catch (e) { console.error('muling-order mail error:', e); return false; }
                 finally { try { await c.close(); } catch { /* ignore */ } }
             };
 
-            emailSent = await send(email, undefined, ADMIN_EMAIL,
-                lang === 'fr' ? 'David Lesage — ta commande Muling' : 'David Lesage — your Muling order',
-                clientEmailHtml(lang, firstName, ref, priceDiscounted, quantity, saleId, isShowroom));
+            // Le lien personnel, ou l'ancien lien si le jeton n'a pas pu être créé :
+            // la commande et son e-mail ne dépendent pas de cette table.
+            const langue = langueMail(lang);
+            let urlDepot = urlAncienLien(saleId, langue);
+            let urlAnnuler: string | null = null;
+            if (!proofPath) {
+                const jeton = genererJeton();
+                const { error: lienErr } = await admin.rpc('muling_lien_renouveler', {
+                    p_sale_id: saleId, p_hash: await hacher(jeton), p_jours: LIEN_DUREE_JOURS,
+                });
+                if (lienErr) console.error('muling-order lien:', lienErr.message);
+                else { urlDepot = urlPage(jeton, langue); urlAnnuler = urlPage(jeton, langue, true); }
+            }
+            const banque = await lireBanque(admin);
+            const mail = composerMailClient({
+                langue, variante: 'commande', prenom: firstName, reference: ref, quantite: quantity,
+                montant: priceDiscounted, showroom: isShowroom, banque, urlDepot, urlAnnuler,
+            });
+            emailSent = await send(email, undefined, ADMIN_EMAIL, mail.subject, mail.html, false, mail.text);
 
-            // Un seul email à Muling, David en copie — toutes les infos de la
-            // commande + lien de connexion au dashboard (David, 08/08/2026).
-            await send(MULING_EMAIL, ADMIN_EMAIL, ADMIN_EMAIL, `${isShowroom ? 'Showroom sale' : 'New order'} — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(), mulingHtml({
+            const detailsCommande = {
                 Name: `${firstName} ${lastName}`.trim() || null, Email: email, Phone: phone,
                 Quantity: quantity,
                 'Sale mode': isShowroom ? 'SHOWROOM — handed over in person by David from consigned stock. DO NOT SHIP.' : 'Online — please ship',
@@ -356,7 +300,16 @@ Deno.serve(async (req) => {
                 'Delivery note': isShowroom ? null : deliveryNote,
                 'Amount (EUR)': priceDiscounted, Reference: ref,
                 'Paid on site': proofPath ? `YES — customer transferred ${amountPaid.toFixed(2)} EUR to Muling; proof of payment ATTACHED to this email` : null,
-            }), true);
+            };
+            if (proofPath) {
+                // Payé sur place : la preuve est là, Muling reçoit la commande, David en copie.
+                await send(MULING_EMAIL, ADMIN_EMAIL, ADMIN_EMAIL, `Showroom sale — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(), mulingHtml(detailsCommande), true);
+            } else {
+                // Sans preuve : David seul. Muling recevra tout avec la preuve (`_shared/muling-depot.ts`).
+                await send(ADMIN_EMAIL, undefined, email,
+                    `Nouvelle commande Muling sans preuve — ${firstName} ${lastName} (${quantity}x HMP-2)`.trim(),
+                    mulingHtml({ ...detailsCommande, 'Muling notified': 'Not yet — only once the proof of payment is uploaded', 'IBAN settings': banque ? null : 'EMPTY: the customer email has no bank details' }));
+            }
         }
 
         return json({ ok: true, saleId, ref, emailSent, saleMode: purchaseChannel, proofSaved: !!proofPath, amount: priceDiscounted, currency: 'EUR' });

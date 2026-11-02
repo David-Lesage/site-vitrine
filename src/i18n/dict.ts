@@ -1197,17 +1197,17 @@ const fr = {
     mulingCopiedLine: 'Copié !',
     mulingDownloadPdf: '⬇️ Télécharger ces informations en PDF',
     mulingBankSepaOnly: '⚠️ Ce compte n’accepte que les virements SEPA en euros — pas de virement SWIFT / international.',
-    mulingBankNotified: 'Muling a été prévenu de ta commande à son adresse officielle ({email}), avec toutes les informations — c’est eux qui assurent l’envoi et le suivi.',
+    mulingBankNotified: 'Ta commande sera validée et transmise à Muling ({email}) dès que ta preuve de virement sera déposée — c’est eux qui assurent ensuite l’envoi et le suivi.',
     mulingBankNext: 'Une fois le virement fait, garde une preuve de paiement (capture d’écran ou PDF) et dépose-la ici. Muling va te recontacter pour confirmer sa réception et te transmettre les informations concernant le suivi d’envoi.',
     // Dépôt de preuve + étape finale
     mulingProofLabel: 'Dépose ta preuve de virement',
-    mulingProofHint: 'Capture d’écran ou PDF de ton virement (5 Mo maximum).',
+    mulingProofHint: 'Capture d’écran ou PDF de ton virement (3 Mo maximum).',
     mulingProofButton: 'J’ai effectué le virement',
     mulingProofSending: 'Envoi…',
     mulingProofError: 'Le dépôt a échoué — réessaie, ou écris-moi directement à contact@lesagedavid.fr.',
     mulingProofMissing: 'Dépose une preuve de virement (image ou PDF) avant de continuer.',
     mulingProofInvalidType: 'Format non accepté — dépose une image (JPG, PNG) ou un PDF.',
-    mulingProofTooLarge: 'Le fichier dépasse 5 Mo — réduis-le et réessaie.',
+    mulingProofTooLarge: 'Le fichier dépasse 3 Mo — réduis-le et réessaie.',
     // RETOUR PAR LIEN (17/08/2026) — l'écran de confirmation n'existait qu'une
     // fois, juste après l'envoi du formulaire : qui fermait l'onglet n'avait
     // plus AUCUN moyen de signaler son virement. Ces textes servent quand la

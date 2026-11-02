@@ -64,7 +64,7 @@ export default defineConfig({
     sitemap({
       customPages: ['https://www.lesagedavid.fr/handpan-app/'],
       // Page personnelle (lien avec jeton) : jamais dans le sitemap.
-      filter: (page) => !page.includes('/showcase/ma-venue') && !page.includes('/neotone-suivi'),
+      filter: (page) => !page.includes('/showcase/ma-venue') && !page.includes('/neotone-suivi') && !page.includes('/commande-muling'),
       // Pas d'option `i18n` ici (01/11/2026) : elle déduisait des alternates fr-FR/en-US
       // par le chemin, sans /es/ ni /zh/ ni slugs traduits, en contradiction avec les
       // hreflang du HTML (src/components/SEO.astro), qui restent la seule source.

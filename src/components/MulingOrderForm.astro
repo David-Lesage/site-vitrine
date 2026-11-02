@@ -56,6 +56,14 @@ const paidCopy = {
   en: { toggle: 'I’ve already made the transfer to Muling (paying on site)', hint: 'Attach the screenshot of your transfer: your order is recorded and paid in one go, and the proof is sent to Muling.', amount: 'Amount transferred (€)', proof: 'Screenshot of your transfer', proofNote: 'Image or PDF, 3 MB max.', tooBig: 'File too large (3 MB max).', bank: 'Beneficiary: HuiZhou Muling Musical Instruments Co Ltd — IBAN DE17 2022 0800 0047 4167 62' },
   es: { toggle: 'Ya hice la transferencia a Muling (pago en el sitio)', hint: 'Adjunta la captura de tu transferencia: tu pedido queda registrado y pagado en un solo envío, y el comprobante se envía a Muling.', amount: 'Importe transferido (€)', proof: 'Captura de tu transferencia', proofNote: 'Imagen o PDF, 3 MB máximo.', tooBig: 'Archivo demasiado grande (3 MB máximo).', bank: 'Beneficiario: HuiZhou Muling Musical Instruments Co Ltd — IBAN DE17 2022 0800 0047 4167 62' },
 }
+// RECONNAISSANCE (02/11/2026) : commande ouverte sans preuve sur cet e-mail. Aucun détail à
+// l'écran ; « Reprendre » envoie le lien par e-mail uniquement.
+const recoCopy = {
+  fr: { title: 'Tu as déjà une commande en attente', text: 'Cette adresse e-mail a une commande en attente de preuve de virement. Que veux-tu faire ?', resume: 'Reprendre ma commande', fresh: 'En passer une nouvelle', sent: 'C’est envoyé : regarde ta boîte e-mail, le lien pour reprendre ta commande s’y trouve.', error: 'L’envoi n’a pas abouti. Réessaie dans quelques minutes.', cancelled: 'Cette commande a été annulée : tu ne peux plus y déposer de preuve.' },
+  en: { title: 'You already have a pending order', text: 'This email address has an order waiting for a proof of transfer. What would you like to do?', resume: 'Resume my order', fresh: 'Place a new one', sent: 'Sent: check your inbox for the link to resume your order.', error: 'Sending failed. Please try again in a few minutes.', cancelled: 'This order was cancelled: you can no longer upload a proof for it.' },
+  es: { title: 'Ya tienes un pedido pendiente', text: 'Esta dirección de correo tiene un pedido a la espera del comprobante de transferencia. ¿Qué quieres hacer?', resume: 'Retomar mi pedido', fresh: 'Hacer uno nuevo', sent: 'Enviado: revisa tu correo, ahí encontrarás el enlace para retomar tu pedido.', error: 'El envío ha fallado. Inténtalo de nuevo en unos minutos.', cancelled: 'Este pedido se ha cancelado: ya no puedes subir un comprobante.' },
+}
+const rc = recoCopy[(lang in recoCopy ? lang : 'en') as keyof typeof recoCopy]
 const pc = paidCopy[(lang in paidCopy ? lang : 'en') as keyof typeof paidCopy]
 const sc = saleCopy[(lang in saleCopy ? lang : 'en') as keyof typeof saleCopy]
 const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(mulingDiscountedPriceEur))
@@ -94,7 +102,7 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
             <label class="block"><span class="text-sm font-600">{pc.amount}</span>
               <input type="number" name="amountPaid" inputmode="decimal" min="1" max="5000" step="0.01" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 focus:border-copper focus:outline-none" /></label>
             <label class="block"><span class="text-sm font-600">{pc.proof}</span>
-              <input type="file" name="paidProof" accept="image/png,image/jpeg,image/webp,application/pdf" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 text-sm focus:border-copper focus:outline-none" />
+              <input type="file" name="paidProof" accept="image/png,image/jpeg,application/pdf" class="mt-1 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 text-sm focus:border-copper focus:outline-none" />
               <span class="block text-xs text-ink-soft/75">{pc.proofNote}</span></label>
             <p data-mo-paid-toobig class="hidden text-sm font-600 text-rust">{pc.tooBig}</p>
           </div>
@@ -157,6 +165,18 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
       </form>
     </div>
 
+    <!-- Reconnaissance : commande ouverte sans preuve sur cet e-mail -->
+    <div data-mo-step="recognize" class="hidden">
+      <h2 class="pr-8 font-display text-2xl font-700">{rc.title}</h2>
+      <p class="mt-3 text-ink-soft/85">{rc.text}</p>
+      <div class="mt-5 grid gap-3">
+        <button type="button" data-mo-reco-resume class="rounded-full bg-rust px-6 py-3.5 font-700 text-cream hover:bg-copper disabled:opacity-60">{rc.resume}</button>
+        <button type="button" data-mo-reco-new class="rounded-full border border-ink/25 px-6 py-3.5 font-700 text-ink hover:bg-ink/5">{rc.fresh}</button>
+      </div>
+      <p data-mo-reco-sent class="mt-4 hidden rounded-lg bg-copper/5 p-3 text-sm font-600">{rc.sent}</p>
+      <p data-mo-reco-error class="mt-4 hidden text-sm font-600 text-rust">{rc.error}</p>
+    </div>
+
     <!-- Étape 2 : paiement + preuve -->
     <div data-mo-step="pay" class="hidden">
       <h2 class="pr-8 font-display text-2xl font-700">{mu.mulingBankTitle}</h2>
@@ -200,7 +220,7 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
           <input type="file" name="proof" accept="image/png,image/jpeg,application/pdf" required class="mt-2 w-full rounded-xl border border-ink/20 bg-cream-deep/30 px-4 py-3 text-sm focus:border-copper focus:outline-none" />
         </label>
         <button type="submit" data-sending={mu.mulingProofSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{mu.mulingProofButton}</button>
-        <p data-mo-proof-error data-missing={mu.mulingProofMissing} data-invalid-type={mu.mulingProofInvalidType} data-too-large={mu.mulingProofTooLarge} data-error-text={mu.mulingProofError} data-email-missing={mu.mulingResumeEmailMissing} data-email-mismatch={mu.mulingResumeMismatch} class="hidden text-sm font-600 text-rust"></p>
+        <p data-mo-proof-error data-missing={mu.mulingProofMissing} data-invalid-type={mu.mulingProofInvalidType} data-too-large={mu.mulingProofTooLarge} data-error-text={mu.mulingProofError} data-email-missing={mu.mulingResumeEmailMissing} data-email-mismatch={mu.mulingResumeMismatch} data-cancelled={rc.cancelled} class="hidden text-sm font-600 text-rust"></p>
       </form>
     </div>
 
@@ -218,7 +238,7 @@ const resumeAmountNote = mu.mulingResumeAmountNote.replace('{unit}', fmtEur(muli
   const modal = document.getElementById('muling-modal')
   const orderForm = document.getElementById('muling-order-form') as HTMLFormElement | null
   const claimForm = document.getElementById('muling-claim-form') as HTMLFormElement | null
-  const steps = { order: 'order', pay: 'pay', thanks: 'thanks' } as const
+  const steps = { order: 'order', recognize: 'recognize', pay: 'pay', thanks: 'thanks' } as const
   let currentSaleId: string | null = null
   let currentEmail = ''
   let lastFocused: HTMLElement | null = null
@@ -390,6 +410,33 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
     window.setTimeout(() => win.print(), 300)
   })
 
+  let skipRecognize = false
+  let recognizedEmail = ''
+  modal?.querySelector('[data-mo-reco-new]')?.addEventListener('click', () => {
+    skipRecognize = true
+    showStep('order')
+    orderForm?.requestSubmit()
+  })
+  modal?.querySelector<HTMLButtonElement>('[data-mo-reco-resume]')?.addEventListener('click', async (e) => {
+    const b = e.currentTarget as HTMLButtonElement
+    const sent = modal?.querySelector('[data-mo-reco-sent]')
+    const err = modal?.querySelector('[data-mo-reco-error]')
+    sent?.classList.add('hidden'); err?.classList.add('hidden')
+    b.disabled = true
+    try {
+      const r = await fetch('/api/muling-proof-link', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ op: 'resume', email: recognizedEmail, lang: document.documentElement.lang || 'fr' }),
+      })
+      if (!r.ok) throw new Error('failed')
+      sent?.classList.remove('hidden')
+    } catch {
+      err?.classList.remove('hidden')
+    } finally {
+      b.disabled = false
+    }
+  })
+
   orderForm?.addEventListener('submit', async (e) => {
     e.preventDefault()
     if (!orderForm.reportValidity()) return
@@ -400,6 +447,21 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
     consentErr?.classList.add('hidden'); orderErr?.classList.add('hidden')
     if (data.get('consent') !== 'on') { consentErr?.classList.remove('hidden'); return }
     const paid = isPaidOnSite()
+    // Reconnaissance : une panne ici ne bloque jamais la commande.
+    if (!paid && !skipRecognize) {
+      const open = await fetch('/api/muling-proof-link', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ op: 'recognize', email: get('email') }),
+      }).then((r) => r.ok ? r.json() : null).catch(() => null)
+      if (open?.open) {
+        recognizedEmail = get('email')
+        modal?.querySelector('[data-mo-reco-sent]')?.classList.add('hidden')
+        modal?.querySelector('[data-mo-reco-error]')?.classList.add('hidden')
+        showStep('recognize')
+        return
+      }
+    }
+    skipRecognize = false
     const paidFile = paid ? (data.get('paidProof') as File | null) : null
     const tooBig = modal?.querySelector('[data-mo-paid-toobig]'); tooBig?.classList.add('hidden')
     // Corps Vercel ≤ 4,5 Mo : 3 Mo de fichier ≈ 4,1 Mo en base64.
@@ -486,7 +548,7 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
       errEl.textContent = errEl.dataset.invalidType || 'Format non accepté.'
       errEl.classList.remove('hidden'); return
     }
-    if (file.size > 5 * 1024 * 1024) {
+    if (file.size > 3 * 1024 * 1024) {
       errEl.textContent = errEl.dataset.tooLarge || 'Fichier trop volumineux.'
       errEl.classList.remove('hidden'); return
     }
@@ -511,6 +573,11 @@ h2{font-size:13px;margin:28px 0 8px;color:#333;border-top:1px solid #ddd;padding
       // la personne croit à une panne et abandonne.
       if (r.status === 404) {
         errEl.textContent = errEl.dataset.emailMismatch || 'Cet email ne correspond pas à cette commande.'
+        errEl.classList.remove('hidden')
+        return
+      }
+      if (r.status === 409) {
+        errEl.textContent = errEl.dataset.cancelled || errEl.dataset.errorText || ''
         errEl.classList.remove('hidden')
         return
       }
