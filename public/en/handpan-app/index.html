@@ -358,7 +358,13 @@ details p{color:var(--creme2);margin-top:12px}
 .m-compte .m-cgu a,.m-compte .m-erreur a,.m-connexion a,.pied-legal a{color:var(--or)}
 .m-compte .m-erreur{color:#ff9d8a;font-size:14px;margin:0 0 12px}
 .m-compte .m-erreur:empty{display:none}
-.m-connexion{text-align:center;font-size:13px;margin-top:14px;color:var(--creme2)}
+.m-connexion{text-align:center;font-size:15px;margin-top:18px;color:var(--creme)}
+.btn-connexion{display:inline-block;padding:10px 20px;border:2px solid var(--or);border-radius:999px;color:var(--or)!important;font:700 15px var(--sans);text-decoration:none;white-space:nowrap;background:transparent}
+.btn-connexion:hover{background:var(--or);color:#0b0d17!important}
+.m-connexion .btn-connexion{display:block;margin-top:8px}
+.site-menu .btn-connexion{margin-left:auto;flex:none}
+.modale header .btn-connexion{margin-left:auto;margin-right:12px;padding:8px 16px;font-size:14px}
+@media(max-width:860px){.site-menu .btn-connexion{margin-left:0}}
 .pied-legal{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;padding:28px 16px 96px;font:13px var(--sans);color:var(--creme2)}
 .m-compte .btn{width:100%;justify-content:center;margin-top:6px}
 .m-compte .aval{font-size:12px;margin-top:12px;color:var(--creme2)}
@@ -680,7 +686,7 @@ main>section[hidden]{display:none!important}
 </head>
 <body>
 <canvas id="ciel"></canvas>
-<header class="site-menu"><a class="site-nom" href="/en/">David Lesage</a><nav aria-label="Site menu"><a href="/en/">Home</a><a href="/en/neotone/">The Neotone</a><a href="/en/yishama/">Yishama</a><a href="/en/boutique/">Shop</a><a href="/en/cours/">Lessons</a><a href="/en/handpan-app/" aria-current="page">Handpan Constellation Studio</a><a href="/en/blog/">Blog</a><a href="/en/showroom/">Showroom</a><a href="/en/a-propos/">About</a><a href="/en/contact/">Contact</a></nav></header>
+<header class="site-menu"><a class="site-nom" href="/en/">David Lesage</a><nav aria-label="Site menu"><a href="/en/">Home</a><a href="/en/neotone/">The Neotone</a><a href="/en/yishama/">Yishama</a><a href="/en/boutique/">Shop</a><a href="/en/cours/">Lessons</a><a href="/en/handpan-app/" aria-current="page">Handpan Constellation Studio</a><a href="/en/blog/">Blog</a><a href="/en/showroom/">Showroom</a><a href="/en/a-propos/">About</a><a href="/en/contact/">Contact</a></nav><a class="btn-connexion" href="https://play.handpanstudio.app/">Log in</a></header>
 <main>
 
 
@@ -1023,7 +1029,7 @@ main>section[hidden]{display:none!important}
 <div id="modale" class="modale" hidden role="dialog" aria-modal="true" aria-labelledby="modale-titre">
   <div class="modale-fond" data-ferme></div>
   <div class="modale-boite">
-    <header><h2 id="modale-titre">Choose your plan</h2><button class="fermer" data-ferme aria-label="Close">×</button></header>
+    <header><h2 id="modale-titre">Choose your plan</h2><a class="btn-connexion" href="https://play.handpanstudio.app/">Log in</a><button class="fermer" data-ferme aria-label="Close">×</button></header>
     <div class="modale-corps">
       <div class="m-choix">
         <div class="periode"><button data-m="a" class="on">Yearly <span class="m-pastille">up to −28%</span></button><button data-m="m">Monthly</button></div>
@@ -1052,7 +1058,7 @@ main>section[hidden]{display:none!important}
             <p class="aval m-aval"></p>
             <p class="m-erreur" role="alert"></p>
             <button class="btn" type="submit"></button>
-            <p class="m-connexion">Already have an account? <a href="https://play.handpanstudio.app/">Log in</a></p>
+            <p class="m-connexion">Already have an account? <a class="btn-connexion" href="https://play.handpanstudio.app/">Log in</a></p>
           </form>
         </div>
         <div class="merci" hidden><strong>Welcome!</strong><p></p></div>
