@@ -1,0 +1,30 @@
+{
+ "rows": {
+  "N013": {
+   "niveau": "doute",
+   "constat": "« chaos cognitif » rendu par cognitive chaos, tournure que le lecteur britannique n'emploie pas ; PRECISIONS demande le terme que le lecteur emploierait. Le terme courant est cognitive overload, qui impose de reprendre « la tête sature » pour éviter la répétition. Choix signalé par le rédacteur, à trancher par Yannick car c'est son mot. Même décision en N136.",
+   "proposal": ">I did. On a Neotone, you change scale and the path has gone: your hand searches, your head can’t keep up. That’s cognitive overload. So you go back to the scales you know, and the instrument that could play anything ends up playing only a small part of it.<"
+  },
+  "N136": {
+   "niveau": "doute",
+   "constat": "Même choix que N013, à aligner sur la décision prise.",
+   "proposal": "Your Neotone can play every scale, and every change of scale creates cognitive overload. Handpan Constellation Studio puts a visual memory on every scale: Logic mode, Neotone Connection and the Sound Atlas."
+  },
+  "N032": {
+   "niveau": "doute",
+   "constat": "« orientale » rendu par oriental. L'app dit Eastern pour la même couleur (« Même ding, couleur orientale » = « Same ding, Eastern colour »). Écart de nom avec l'app, et le mot oriental est daté en anglais britannique.",
+   "proposal": ">Sadness in shades: deep, Eastern, jazz<"
+  },
+  "N072": {
+   "niveau": "doute",
+   "constat": "Conflit entre sources, pas erreur du rédacteur : LEXIQUE §4 (l.85) et CONSIGNE classent Atlas Sonore en nom qui ne se traduit pas, mais translations.ts affiche Sound Atlas en anglais (atlas, dest.ou.atlas_sonore, intent.decouvrir.primary) et CONSIGNE dit de garder l'app en cas d'écart. Sound Atlas retenu, à confirmer ; le lexique reste à corriger. Vaut aussi pour N068, N069, N070, N101, N136.",
+   "proposal": ">The Sound Atlas<"
+  },
+  "N084": {
+   "niveau": "doute",
+   "constat": "« joker » rendu par wild card, alors que la fonction de duo s'affiche Joker dans l'app en anglais (multipan.neo_mode_joker = Joker, multipan.joker_titre = Neotone joker). Le lecteur ne retrouvera pas le mot à l'écran.",
+   "proposal": ">The app writes to the Neotone the scale your acoustic is missing. It becomes its joker.<"
+  }
+ },
+ "script": "137 lignes FR et EN, mêmes clés. Nombres, balises, délimiteurs > <, attributs alt/aria-label, symboles ①②③④¹ : 0 écart. Tiret cadratin : 0. Apostrophe droite : 0. Américanismes et termes proscrits cherchés (color, recogniz, credit, on your scale, palier, tier) : 0. Noms vérifiés dans translations.ts, conformes : Neotone Connection (mn.titre), Logic mode, Music demo et non Musical demo (ac.atlas_magazine.demo_musicale ; atlas.preview_melody écrit Music Demo), onglets Status et non State (mn.onglet.etat), Memories, Scales, Recordings, hybrid duo (onb.dep.duo_desc), Key wheel, Open constellation (cards.mode.constellation.t), concert pitch, chord chart, régions Africa et Islands, noms Planetarium. N045/N036/N042 Closed et N038 tracé des mains : absents de translations.ts, donc pas d'écart mesurable. N067 : note du rédacteur levée, mn.rec.midi = Play a MIDI file, le Neotone joue bien un fichier, la ligne est fidèle. N051 : FR et EN disent le bouton Sync, l'app affiche Sync everything (passerelle.sync.bouton) ; non vérifié contre l'image. Prix, carte, mois offert, gratuit (N005, N097, N104, N116, N129, N133, N134, N137) : fidèles."
+}

@@ -546,5 +546,21 @@
  "N137": {
   "section": "fenetre",
   "fr": "Continuer : enregistrer ma carte"
+ },
+ "N138": {
+  "section": "neo-part",
+  "fr": ">« Les notes sous tes doigts ne sont jamais les mêmes deux fois. »<"
+ },
+ "N139": {
+  "section": "neo-part",
+  "fr": ">les gammes que tu connais déjà<"
+ },
+ "N140": {
+  "section": "neo-part",
+  "fr": ">tout l’instrument, lisible<"
+ },
+ "N141": {
+  "section": "fenetre",
+  "fr": ">pour toujours, sans carte<"
  }
 }
