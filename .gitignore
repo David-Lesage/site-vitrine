@@ -20,3 +20,10 @@ scripts/.cache-traduction-es.json
 .env.local
 scripts/.cache-traduction-en.json
 Icon[]
+
+# Publication en une action (scripts/publier.sh fait git add -A) : jamais de clés ni de notes
+.env*
+!.env.example
+supabase/.temp/
+MESSAGE-SESSION-*.md
+audits/RECONCILIATION-HISONG-2026-10-25.md
