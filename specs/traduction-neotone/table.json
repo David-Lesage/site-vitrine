@@ -1,0 +1,550 @@
+{
+ "N001": {
+  "section": "hero",
+  "fr": "alt=\"Une main joue sur un Neotone en bois ; sur l’ordinateur posé devant, Handpan Constellation Studio affiche l’instrument et la note jouée.\""
+ },
+ "N002": {
+  "section": "hero",
+  "fr": ">Handpan Constellation Studio · pour le Neotone¹ et le Neotone Mutant<"
+ },
+ "N003": {
+  "section": "hero",
+  "fr": ">Ton Neotone peut tout jouer. <em>Maintenant, tu le vois.</em><"
+ },
+ "N004": {
+  "section": "hero",
+  "fr": ">Mais pouvoir tout jouer, c’est n’avoir aucun repère : à chaque gamme, les notes changent de place. L’app pose sur ton Neotone sept couleurs qui, elles, ne bougent jamais.<"
+ },
+ "N005": {
+  "section": "hero",
+  "fr": ">9,99 € par mois, premier mois offert. Ta carte est demandée à l’inscription, rien n’est prélevé si tu arrêtes avant la fin du mois.<"
+ },
+ "N006": {
+  "section": "hero",
+  "fr": ">Sur ordinateur ou tablette, dans ton navigateur. Ouverte aussi à tout instrument MIDI.<"
+ },
+ "N007": {
+  "section": "hero",
+  "fr": ">Voir tout mon Neotone<"
+ },
+ "N008": {
+  "section": "hero",
+  "fr": ">Ou connecte ton Neotone avec un compte gratuit<"
+ },
+ "N009": {
+  "section": "neo-part",
+  "fr": "alt=\"Dans l’app, un Neotone Mutant en mode Logique : les mains jouent l’accord, les sept degrés en couleurs en dessous.\""
+ },
+ "N010": {
+  "section": "neo-part",
+  "fr": "aria-label=\"Ce que tu joues de ton Neotone, sans repère et avec l’app\""
+ },
+ "N011": {
+  "section": "neo-part",
+  "fr": ">Combien de gammes joues-tu vraiment ?<"
+ },
+ "N012": {
+  "section": "neo-part",
+  "fr": ">Quand les notes changent de place, n’es-tu pas perdu ?<"
+ },
+ "N013": {
+  "section": "neo-part",
+  "fr": ">Moi, je l’étais. Sur un Neotone, tu changes de gamme et le chemin n’est plus là : la main cherche, la tête sature. C’est le chaos cognitif. Alors on revient aux gammes qu’on connaît, et l’instrument qui pouvait tout jouer n’en joue qu’une petite part.<"
+ },
+ "N014": {
+  "section": "neo-part",
+  "fr": ">L’accord se joue : les mains montrent le geste.<"
+ },
+ "N015": {
+  "section": "neo-part",
+  "fr": ">Premier mois offert. Relier ton Neotone reste gratuit.<"
+ },
+ "N016": {
+  "section": "neo-part",
+  "fr": ">Sans repère<"
+ },
+ "N017": {
+  "section": "neo-part",
+  "fr": ">Avec l’app<"
+ },
+ "N018": {
+  "section": "neo-part",
+  "fr": ">Voir mon Neotone en couleurs<"
+ },
+ "N019": {
+  "section": "neo-repere",
+  "fr": "alt=\"La roue des douze tonalités dans l’app, Ré au centre.\""
+ },
+ "N020": {
+  "section": "neo-repere",
+  "fr": "aria-label=\"Le mode Logique sur un Neotone Mutant\""
+ },
+ "N021": {
+  "section": "neo-repere",
+  "fr": "alt=\"Le mode Logique sur un Neotone Mutant : la rangée des sept degrés, chacun dans sa couleur, Équilibre, Élan, Aventure, Détente, Tension, Nostalgie, Mystère.\""
+ },
+ "N022": {
+  "section": "neo-repere",
+  "fr": ">Ce que je te propose<"
+ },
+ "N023": {
+  "section": "neo-repere",
+  "fr": ">Le mode Logique<"
+ },
+ "N024": {
+  "section": "neo-repere",
+  "fr": ">Une logique de jeu pour les gammes majeures et mineures.<"
+ },
+ "N025": {
+  "section": "neo-repere",
+  "fr": ">Tu n’as plus rien à réapprendre quand tu changes de tonalité.<"
+ },
+ "N026": {
+  "section": "neo-repere",
+  "fr": ">Comme un capodastre à la guitare : quelle que soit la tonalité que tu choisis, tes positions restent les mêmes.<"
+ },
+ "N027": {
+  "section": "neo-repere",
+  "fr": ">Tu choisis ta tonalité sur la roue, le mode Logique la pose sur ton Neotone, en majeur ou en mineur. Tes accords restent sous les mêmes doigts.<"
+ },
+ "N028": {
+  "section": "neo-repere",
+  "fr": ">La roue des tonalités.<"
+ },
+ "N029": {
+  "section": "neo-repere",
+  "fr": ">Change de tonalité. Les couleurs restent à leur place.<"
+ },
+ "N030": {
+  "section": "neo-repere",
+  "fr": ">Un accord garde sa forme et sa couleur : tu le reconnais d’un coup d’œil, ta main le retrouve.<"
+ },
+ "N031": {
+  "section": "neo-repere",
+  "fr": ">Une note d’ancrage pour ne jamais perdre la maison<"
+ },
+ "N032": {
+  "section": "neo-repere",
+  "fr": ">La tristesse en nuances : profonde, orientale, jazz<"
+ },
+ "N033": {
+  "section": "neo-repere",
+  "fr": ">Les enrichissements +7, +9, +11 posés sur l’instrument<"
+ },
+ "N034": {
+  "section": "neo-repere",
+  "fr": ">Équilibre, Élan, Aventure, Détente, Tension, Nostalgie, Mystère.<"
+ },
+ "N035": {
+  "section": "neo-repere",
+  "fr": ">Essayer le mode Logique<"
+ },
+ "N036": {
+  "section": "neo-constellations",
+  "fr": "alt=\"L’accord V Tension (La mineur) en constellation fermée sur un Neotone\""
+ },
+ "N037": {
+  "section": "neo-constellations",
+  "fr": "alt=\"Le même accord en constellation ouverte, Neotone\""
+ },
+ "N038": {
+  "section": "neo-constellations",
+  "fr": "alt=\"Le même accord en tracé des mains, Neotone\""
+ },
+ "N039": {
+  "section": "neo-constellations",
+  "fr": ">Mémoriser les accords<"
+ },
+ "N040": {
+  "section": "neo-constellations",
+  "fr": ">Les différents types de constellation.<"
+ },
+ "N041": {
+  "section": "neo-constellations",
+  "fr": ">Chaque accord se dessine en constellation : tu vois la forme, puis le chemin, puis les mains.<"
+ },
+ "N042": {
+  "section": "neo-constellations",
+  "fr": "><b>Fermée</b>La forme de l’accord, d’un coup d’œil.<"
+ },
+ "N043": {
+  "section": "neo-constellations",
+  "fr": "><b>Ouverte</b>Le chemin des notes, pour voir le déplacement.<"
+ },
+ "N044": {
+  "section": "neo-constellations",
+  "fr": "><b>Mains</b>Quelle main, quelle note : tu lis ton jeu.<"
+ },
+ "N045": {
+  "section": "neo-constellations",
+  "fr": ">Fermée<"
+ },
+ "N046": {
+  "section": "neo-constellations",
+  "fr": ">Ouverte<"
+ },
+ "N047": {
+  "section": "neo-constellations",
+  "fr": ">Mains<"
+ },
+ "N048": {
+  "section": "neo-lien",
+  "fr": "aria-label=\"Neotone Connexion, onglet par onglet\""
+ },
+ "N049": {
+  "section": "neo-lien",
+  "fr": "alt=\"L’onglet État : le handpan affiché, la dernière gamme connue, le wifi, l’USB et le diapason.\""
+ },
+ "N050": {
+  "section": "neo-lien",
+  "fr": "alt=\"Une gamme glissée sur le dessin du handpan remplace la mémoire 17.\""
+ },
+ "N051": {
+  "section": "neo-lien",
+  "fr": "alt=\"L’onglet Gammes : l’app à gauche, l’instrument à droite, le bouton Synchroniser dans les deux sens.\""
+ },
+ "N052": {
+  "section": "neo-lien",
+  "fr": "alt=\"Deux gammes identiques côte à côte, le choix de celle à garder et de son nom.\""
+ },
+ "N053": {
+  "section": "neo-lien",
+  "fr": "alt=\"L’onglet Enregistrements : les dossiers, la liste des prises, écouter, télécharger, ranger.\""
+ },
+ "N054": {
+  "section": "neo-lien",
+  "fr": ">L’app et ton Neotone<"
+ },
+ "N055": {
+  "section": "neo-lien",
+  "fr": ">Neotone Connexion<"
+ },
+ "N056": {
+  "section": "neo-lien",
+  "fr": ">Ton Neotone et l’app, synchronisés en temps réel.<"
+ },
+ "N057": {
+  "section": "neo-lien",
+  "fr": ">Tu prépares tes gammes dans l’app, elles partent sur ton Neotone. Et tu vois toujours ce qui est chargé.<"
+ },
+ "N058": {
+  "section": "neo-lien",
+  "fr": ">① État<i></i><"
+ },
+ "N059": {
+  "section": "neo-lien",
+  "fr": ">② Mémoires (Quick Load)<i></i><"
+ },
+ "N060": {
+  "section": "neo-lien",
+  "fr": ">③ Gammes<i></i><"
+ },
+ "N061": {
+  "section": "neo-lien",
+  "fr": ">③ Gammes · doublons<i></i><"
+ },
+ "N062": {
+  "section": "neo-lien",
+  "fr": ">④ Enregistrements<i></i><"
+ },
+ "N063": {
+  "section": "neo-lien",
+  "fr": ">La gamme chargée sur ton Neotone, son diapason, la connexion : tu sais où tu en es avant de jouer.<"
+ },
+ "N064": {
+  "section": "neo-lien",
+  "fr": ">Quick Load visuel : tu attrapes une gamme, tu la déposes sur une zone de ton handpan. Cliquer, déposer. Prépare un Quick Load pour le concert, un pour le cours, et passe de l’un à l’autre d’un geste.<"
+ },
+ "N065": {
+  "section": "neo-lien",
+  "fr": ">Tes gammes dans l’app et sur ton compte Neotone, synchronisées dans les deux sens. Ce qui manque d’un côté part de l’autre.<"
+ },
+ "N066": {
+  "section": "neo-lien",
+  "fr": ">Mêmes notes, mêmes octaves, même diapason : l’app retrouve les copies. Tu choisis celle à garder, les autres fusionnent dedans.<"
+ },
+ "N067": {
+  "section": "neo-lien",
+  "fr": ">Ce que ton Neotone a enregistré : écouter, télécharger, ranger en dossiers. Et un fichier MIDI joué par ton Neotone.<"
+ },
+ "N068": {
+  "section": "neo-creer",
+  "fr": "alt=\"L’Atlas sonore, région Afrique : choix de la tonalité et de la gamme, Pygmy, Low Pygmy, Ashakiran, Saladin, Integral, Equinox, et le bouton Démo musicale.\""
+ },
+ "N069": {
+  "section": "neo-creer",
+  "fr": "alt=\"L’Atlas sonore, région Îles : Sabye, Jibuk, Lydian, Mixolydian, Paradise, Voyager.\""
+ },
+ "N070": {
+  "section": "neo-creer",
+  "fr": "alt=\"L’Atlas sonore en thème Planétarium : les gammes du monde dessinées en constellations, Source sereine, Grand large, Échappée vive, Clair-obscur, Routes du désert, Terres de brume.\""
+ },
+ "N071": {
+  "section": "neo-creer",
+  "fr": ">Découvrir des gammes<"
+ },
+ "N072": {
+  "section": "neo-creer",
+  "fr": ">L’Atlas sonore<"
+ },
+ "N073": {
+  "section": "neo-creer",
+  "fr": ">Ne cherche plus des gammes. Voyage.<"
+ },
+ "N074": {
+  "section": "neo-creer",
+  "fr": ">Choisis une région du monde, écoute la démo d’une gamme, et joue-la dans ta tonalité.<"
+ },
+ "N075": {
+  "section": "neo-creer",
+  "fr": ">La découverte est gratuite. Avec Neotone Connexion, dans Studio, chaque gamme rencontrée part sur ton Neotone.<"
+ },
+ "N076": {
+  "section": "neo-creer",
+  "fr": ">Afrique : la tonalité, la gamme, la démo.<"
+ },
+ "N077": {
+  "section": "neo-creer",
+  "fr": ">Les îles : Sabye, Jibuk, Paradise…<"
+ },
+ "N078": {
+  "section": "neo-creer",
+  "fr": ">Le même atlas, en planétarium.<"
+ },
+ "N079": {
+  "section": "neo-plusieurs",
+  "fr": "aria-label=\"Les duos de handpans dans l’app\""
+ },
+ "N080": {
+  "section": "neo-plusieurs",
+  "fr": ">Plusieurs Neotone<"
+ },
+ "N081": {
+  "section": "neo-plusieurs",
+  "fr": ">Tous tes Neotone dans un seul compte.<"
+ },
+ "N082": {
+  "section": "neo-plusieurs",
+  "fr": ">Chacun avec ses gammes. Et deux instruments ensemble jouent des accords qu’aucun des deux ne joue seul.<"
+ },
+ "N083": {
+  "section": "neo-plusieurs",
+  "fr": ">Aux mêmes emplacements, au demi-ton ou à la tierce. Tes mémoires de duo enregistrées.<"
+ },
+ "N084": {
+  "section": "neo-plusieurs",
+  "fr": ">L’app écrit sur le Neotone la gamme qui manque à l’acoustique. Il devient son joker.<"
+ },
+ "N085": {
+  "section": "neo-plusieurs",
+  "fr": ">L’app calcule le placement, le doigté et les arpèges.<"
+ },
+ "N086": {
+  "section": "neo-plusieurs",
+  "fr": ">Deux Neotone<"
+ },
+ "N087": {
+  "section": "neo-plusieurs",
+  "fr": ">Ton acoustique et ton Neotone<"
+ },
+ "N088": {
+  "section": "neo-plusieurs",
+  "fr": ">Plusieurs handpans autour de toi<"
+ },
+ "N089": {
+  "section": "david",
+  "fr": "alt=\"Portrait de David Lesage.\""
+ },
+ "N090": {
+  "section": "david",
+  "fr": ">Pourquoi cette app<"
+ },
+ "N091": {
+  "section": "david",
+  "fr": ">Pensée par un joueur de Neotone.<"
+ },
+ "N092": {
+  "section": "david",
+  "fr": ">David Lesage a été bêta-testeur du Neotone, puis son ambassadeur. Il a buté sur le même mur que toi : des notes qui changent de place à chaque gamme. L’app est née des dessins qu’il faisait pour s’y retrouver.<"
+ },
+ "N093": {
+  "section": "david",
+  "fr": ">Conçue pour le Neotone¹ et le Neotone Mutant, et ouverte à tout instrument MIDI.<"
+ },
+ "N094": {
+  "section": "neo-formules",
+  "fr": ">Gratuit, puis Studio<"
+ },
+ "N095": {
+  "section": "neo-formules",
+  "fr": ">Commencer est gratuit. Studio, c’est tout ton Neotone.<"
+ },
+ "N096": {
+  "section": "neo-formules",
+  "fr": ">Gratuit<"
+ },
+ "N097": {
+  "section": "neo-formules",
+  "fr": ">0 € <small>pour toujours, sans carte</small><"
+ },
+ "N098": {
+  "section": "neo-formules",
+  "fr": ">Relier ton Neotone en USB ou en MIDI, et voir chaque note jouée à l’écran<"
+ },
+ "N099": {
+  "section": "neo-formules",
+  "fr": ">Apprendre tes gammes, avec des exercices validés à l’instant où tu joues<"
+ },
+ "N100": {
+  "section": "neo-formules",
+  "fr": ">La grille d’accords, tes morceaux importés, le son enregistré sur un vrai Neotone<"
+ },
+ "N101": {
+  "section": "neo-formules",
+  "fr": ">L’Atlas sonore : les gammes du monde, leur démo, et tu les joues tout de suite<"
+ },
+ "N102": {
+  "section": "neo-formules",
+  "fr": ">Le gratuit de l’app : accords, chansons, voix, entraînement<"
+ },
+ "N103": {
+  "section": "neo-formules",
+  "fr": ">Studio<"
+ },
+ "N104": {
+  "section": "neo-formules",
+  "fr": ">9,99 € <small>par mois, premier mois offert</small><"
+ },
+ "N105": {
+  "section": "neo-formules",
+  "fr": ">Tout le gratuit, et :<"
+ },
+ "N106": {
+  "section": "neo-formules",
+  "fr": ">Tu changes de tonalité sur la roue, tes accords restent sous les mêmes doigts<"
+ },
+ "N107": {
+  "section": "neo-formules",
+  "fr": ">Chaque accord garde sa forme et sa couleur, en majeur comme en mineur<"
+ },
+ "N108": {
+  "section": "neo-formules",
+  "fr": ">La gamme chargée, son diapason, la connexion : tu sais où tu en es avant de jouer<"
+ },
+ "N109": {
+  "section": "neo-formules",
+  "fr": ">Le Quick Load visuel : tu attrapes une gamme, tu la déposes sur ton handpan<"
+ },
+ "N110": {
+  "section": "neo-formules",
+  "fr": ">Tes gammes synchronisées dans les deux sens, les doublons retrouvés<"
+ },
+ "N111": {
+  "section": "neo-formules",
+  "fr": ">Ce que ton Neotone a enregistré : écouter, télécharger, ranger en dossiers<"
+ },
+ "N112": {
+  "section": "neo-formules",
+  "fr": ">Ton jeu, tes instruments<"
+ },
+ "N113": {
+  "section": "neo-formules",
+  "fr": ">Ton jeu enregistré, écrit en MIDI<"
+ },
+ "N114": {
+  "section": "neo-formules",
+  "fr": ">Tous tes Neotone dans un seul compte, et les duos<"
+ },
+ "N115": {
+  "section": "neo-formules",
+  "fr": ">Ton acoustique et ton Neotone ensemble : l’app écrit la gamme qui manque<"
+ },
+ "N116": {
+  "section": "neo-formules",
+  "fr": ">Ta carte est demandée à l’inscription, rien n’est prélevé si tu arrêtes avant la fin du mois offert.<"
+ },
+ "N117": {
+  "section": "neo-formules",
+  "fr": ">Relier mon Neotone gratuitement<"
+ },
+ "N118": {
+  "section": "faq",
+  "fr": ">Questions<"
+ },
+ "N119": {
+  "section": "faq",
+  "fr": ">Ce qu’on me demande.<"
+ },
+ "N120": {
+  "section": "faq",
+  "fr": ">Quels Neotone ?<"
+ },
+ "N121": {
+  "section": "faq",
+  "fr": ">Le Neotone¹ et le Neotone Mutant. Et tout instrument MIDI.<"
+ },
+ "N122": {
+  "section": "faq",
+  "fr": ">Faut-il Studio pour relier mon Neotone ?<"
+ },
+ "N123": {
+  "section": "faq",
+  "fr": ">Non. Le relier en USB ou en MIDI est gratuit, avec ton jeu en temps réel et les exercices pour apprendre tes gammes. Studio ouvre Neotone Connexion, le mode Logique et les duos.<"
+ },
+ "N124": {
+  "section": "faq",
+  "fr": ">Sur quel appareil ?<"
+ },
+ "N125": {
+  "section": "faq",
+  "fr": ">Sur ordinateur ou tablette, dans ton navigateur. Sur un téléphone, l’écran est trop petit pour bien voir ton handpan et ses accords. Sur iPhone et iPad, Apple empêche les navigateurs de recevoir un instrument branché en USB : pour relier un pan numérique, ouvre l’app dans Web MIDI Browser, gratuit sur l’App Store.<"
+ },
+ "N126": {
+  "section": "faq",
+  "fr": ">J’ai aussi un handpan acoustique.<"
+ },
+ "N127": {
+  "section": "faq",
+  "fr": ">L’app les voit ensemble : c’est le duo hybride, dans Studio. Et ton acoustique a tout le gratuit de l’app.<"
+ },
+ "N128": {
+  "section": "faq",
+  "fr": ">Et si j’arrête ?<"
+ },
+ "N129": {
+  "section": "faq",
+  "fr": ">Ta carte est demandée à l’inscription, mais rien n’est prélevé avant la fin du mois offert. Ensuite, tu arrêtes quand tu veux, pour le mois suivant.<"
+ },
+ "N130": {
+  "section": "faq",
+  "fr": ">Je n’ai jamais fait de solfège.<"
+ },
+ "N131": {
+  "section": "faq",
+  "fr": ">Tu commences par les couleurs et les émotions. La théorie vient quand tu la demandes.<"
+ },
+ "N132": {
+  "section": "fin",
+  "fr": ">Ton Neotone sait tout jouer.<br>Il est temps de le voir.<"
+ },
+ "N133": {
+  "section": "fin",
+  "fr": ">9,99 € par mois, premier mois offert. Relier ton Neotone reste gratuit.<"
+ },
+ "N134": {
+  "section": "barre",
+  "fr": ">Studio · 9,99 €/mois, 1er mois offert<"
+ },
+ "N135": {
+  "section": "balises",
+  "fr": "Handpan Constellation Studio pour Neotone : un repère sur chaque gamme"
+ },
+ "N136": {
+  "section": "balises",
+  "fr": "Ton Neotone peut jouer toutes les gammes, et chaque changement de gamme crée un chaos cognitif. Handpan Constellation Studio pose une mémoire visuelle sur chaque gamme : le mode Logique, Neotone Connexion et l’Atlas sonore."
+ },
+ "N137": {
+  "section": "fenetre",
+  "fr": "Continuer : enregistrer ma carte"
+ }
+}
