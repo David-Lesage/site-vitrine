@@ -1,6 +1,6 @@
 import { assert, assertEquals, assertFalse, assertMatch } from 'https://deno.land/std@0.224.0/assert/mod.ts';
 import {
-    estAnnulee, genererJeton, hacher, JETON_RE, langueMail, lireMontantDeclare, lirePreuve, MAX_PROOF_BYTES,
+    estAnnulee, genererJeton, hacher, JETON_RE, langueMail, lirePreuve, MAX_PROOF_BYTES,
     ouverteSansPreuve, typeReel,
 } from './muling-preuve.ts';
 import { composerMailClient } from './muling-email-modele.ts';
@@ -56,7 +56,6 @@ Deno.test('commande ouverte sans preuve', () => {
 
 Deno.test('langue et montant déclaratif', () => {
     assertEquals([langueMail('fr-FR'), langueMail('es'), langueMail('zh'), langueMail(null)], ['fr', 'es', 'en', 'en']);
-    assertEquals([lireMontantDeclare('245.5'), lireMontantDeclare(''), lireMontantDeclare('abc'), lireMontantDeclare(0)], [245.5, null, null, null]);
 });
 
 const donnees = {
@@ -91,5 +90,4 @@ Deno.test('mail à Muling : mention showroom désormais portée par le mail de p
     const s = { id: 'i', email: 'a@b.fr', phone: '0', customer_name: 'A', quantity: 1, price_discounted_eur: 245, order_ref: 'R', shipping_address: null, shipping_city: null, shipping_postal_code: null, shipping_country: null, delivery_note: null, payment_proof_path: 'p', payment_claimed_at: 'x' };
     assert(composeMulingMail({ ...s, purchase_channel: 'showroom' }, null, false).text.includes('DO NOT SHIP'));
     assertFalse(composeMulingMail({ ...s, purchase_channel: 'online' }, null, false).text.includes('DO NOT SHIP'));
-    assert(composeMulingMail(s, null, false, 200).text.includes('to be verified'));
 });

@@ -27,6 +27,16 @@ export interface DonneesMail {
     urlDepot: string;
     /** null : lien de secours sans jeton, pas de bouton d'annulation. */
     urlAnnuler: string | null;
+    /** Relance : les autres commandes ouvertes du même client, dans le même e-mail. */
+    autres?: AutreCommande[];
+}
+
+export interface AutreCommande {
+    reference: string;
+    quantite: number;
+    montant: number | string;
+    urlDepot: string;
+    urlAnnuler: string;
 }
 
 export const SITE_URL = 'https://www.lesagedavid.fr';
@@ -61,6 +71,7 @@ const TEXTES = {
         depot: 'Déposer ma preuve de virement', annuler: 'Annuler ma commande',
         annulerNote: 'Tu as changé d’avis ? Rien ne sera annulé sans confirmation de ta part sur la page.',
         expire: 'Ce lien personnel reste valable 30 jours. Ne le transfère pas.',
+        autresTitre: 'Tu as aussi cette commande en attente :', autresTitres: 'Tu as aussi ces commandes en attente :',
         signature: 'Merci,', texteDepot: 'Déposer ma preuve de virement :', texteAnnuler: 'Annuler ma commande :',
     },
     en: {
@@ -82,6 +93,7 @@ const TEXTES = {
         depot: 'Upload my proof of transfer', annuler: 'Cancel my order',
         annulerNote: 'Changed your mind? Nothing is cancelled until you confirm on the page.',
         expire: 'This personal link stays valid for 30 days. Please don’t forward it.',
+        autresTitre: 'You also have this order waiting:', autresTitres: 'You also have these orders waiting:',
         signature: 'Thank you,', texteDepot: 'Upload my proof of transfer:', texteAnnuler: 'Cancel my order:',
     },
     es: {
@@ -103,6 +115,7 @@ const TEXTES = {
         depot: 'Subir mi comprobante de transferencia', annuler: 'Cancelar mi pedido',
         annulerNote: '¿Has cambiado de idea? No se cancelará nada sin tu confirmación en la página.',
         expire: 'Este enlace personal es válido durante 30 días. No lo reenvíes.',
+        autresTitre: 'También tienes este pedido pendiente:', autresTitres: 'También tienes estos pedidos pendientes:',
         signature: 'Gracias,', texteDepot: 'Subir mi comprobante de transferencia:', texteAnnuler: 'Cancelar mi pedido:',
     },
 } as const;
@@ -134,6 +147,16 @@ export function composerMailClient(d: DonneesMail): { subject: string; html: str
         b.bic ? ['BIC', b.bic] : null,
         b.bank ? [T.banque, b.bank] : null,
     ].filter(Boolean) as string[][] : [];
+
+    const autres = d.autres ?? [];
+    const titreAutres = autres.length > 1 ? T.autresTitres : T.autresTitre;
+    const blocAutres = autres.length ? `<tr><td style="padding:0 28px 24px;">
+  <h2 style="margin:0 0 10px;font-size:16px;color:#111827;">${esc(titreAutres)}</h2>
+  ${autres.map((a) => `<table role="presentation" cellpadding="0" cellspacing="0" style="margin-bottom:6px;">
+    ${ligne(T.reference, a.reference, true)}${ligne(T.quantite, `${a.quantite} x Muling HMP-2`)}${ligne(T.montant, montantTexte(a.montant), true)}
+  </table>${bouton(a.urlDepot, T.depot, true)}
+  <p style="margin:8px 0 18px;font-size:12px;"><a href="${esc(a.urlAnnuler)}" style="color:#7a3a26;">${esc(T.annuler)}</a></p>`).join('')}
+</td></tr>` : '';
 
     const html = `<!doctype html><html lang="${d.langue}"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /></head>
 <body style="margin:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
@@ -167,6 +190,7 @@ export function composerMailClient(d: DonneesMail): { subject: string; html: str
   <p style="margin:4px 0 0;color:#6b7280;font-size:12px;line-height:1.5;">${esc(T.expire)}</p>` : ''}
   <p style="margin:18px 0 0;color:#374151;font-size:14px;">${esc(T.signature)}<br />David Lesage</p>
 </td></tr>
+${blocAutres}
 </table></td></tr></table></body></html>`;
 
     const text = [
@@ -177,6 +201,11 @@ export function composerMailClient(d: DonneesMail): { subject: string; html: str
         ...(b ? [...lignesBanque.map(([k, v]) => `${k} : ${v}`), T.sepa] : [T.attente]), '',
         T.texteDepot, d.urlDepot,
         ...(d.urlAnnuler ? ['', T.texteAnnuler, d.urlAnnuler, '', T.expire] : []),
+        ...(autres.length ? ['', titreAutres] : []),
+        ...autres.flatMap((a) => [
+            '', `${T.reference} : ${a.reference}`, `${T.quantite} : ${a.quantite} x Muling HMP-2`, `${T.montant} : ${montantTexte(a.montant)}`,
+            T.texteDepot, a.urlDepot, T.texteAnnuler, a.urlAnnuler,
+        ]),
         '', T.signature, 'David Lesage',
     ].filter((l) => l !== null).join('\n');
 

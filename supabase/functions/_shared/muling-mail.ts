@@ -108,7 +108,7 @@ export interface MulingMail { subject: string; text: string; attachmentName: str
 
 /** Compose le texte du mail à Muling (anglais — Muling ne lit pas le français). */
 export function composeMulingMail(
-    sale: MulingSale, proof: ProofFile | null, resend: boolean, montantDeclare: number | null = null,
+    sale: MulingSale, proof: ProofFile | null, resend: boolean,
 ): MulingMail {
     const name = sale.customer_name || sale.email || 'Customer';
     const ref = sale.order_ref ?? sale.id;
@@ -133,7 +133,6 @@ export function composeMulingMail(
         showroom ? 'Sale mode: SHOWROOM — handed over in person by David from consigned stock. DO NOT SHIP.' : null,
         `Quantity: ${sale.quantity ?? 1}x HMP-2`,
         `Amount: ${sale.price_discounted_eur} EUR`,
-        montantDeclare !== null ? `Amount declared by the customer (to be verified): ${montantDeclare} EUR` : null,
         `Reference: ${ref}`,
         showroom ? null : (addr ? `Shipping address: ${addr}` : 'Shipping address: —'),
         sale.delivery_note ? `Delivery notes: ${sale.delivery_note}` : null,
@@ -197,9 +196,9 @@ export async function sendMail(
 
 /** Compose + envoie le mail à Muling (David en copie), preuve de virement jointe. */
 export async function sendMulingOrderMail(
-    env: SmtpEnv, sale: MulingSale, proof: ProofFile | null, resend: boolean, montantDeclare: number | null = null,
+    env: SmtpEnv, sale: MulingSale, proof: ProofFile | null, resend: boolean,
 ): Promise<boolean> {
-    const mail = composeMulingMail(sale, proof, resend, montantDeclare);
+    const mail = composeMulingMail(sale, proof, resend);
     return await sendMail(env, {
         to: MULING_EMAIL,
         cc: ADMIN_EMAIL,

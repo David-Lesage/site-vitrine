@@ -34,7 +34,7 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import { deposerPreuve } from '../_shared/muling-depot.ts';
 import { MULING_SALE_COLS, smtpEnv, type MulingSale } from '../_shared/muling-mail.ts';
-import { lireMontantDeclare, lirePreuve } from '../_shared/muling-preuve.ts';
+import { lirePreuve } from '../_shared/muling-preuve.ts';
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
@@ -76,7 +76,7 @@ Deno.serve(async (req) => {
         }
 
         const depot = await deposerPreuve({ admin, env: smtpEnv() }, sale, lu.fichier, {
-            langue: body.lang, montantDeclare: lireMontantDeclare(body.amountPaid), exigerSansPreuve: false,
+            langue: body.lang, exigerSansPreuve: false,
         });
         if (!depot.ok) return json({ error: depot.error }, depot.error === 'not_found' ? 404 : 409);
         return json({ ok: true });

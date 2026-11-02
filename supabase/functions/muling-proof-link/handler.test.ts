@@ -178,7 +178,7 @@ Deno.test('déposer : Muling reçoit la preuve, le client sa confirmation, le li
     const m = await avecLien();
     assertEquals((await m.appel({ op: 'deposit', t: m.jeton, fileBase64: btoa('<html>') })).status, 400);
     assertEquals(m.muling.length, 0);
-    assertEquals((await m.appel({ op: 'deposit', t: m.jeton, fileBase64: PDF64, amountPaid: '245' })).status, 200);
+    assertEquals((await m.appel({ op: 'deposit', t: m.jeton, fileBase64: PDF64 })).status, 200);
     assertEquals(m.muling[0].ref, 'R-1');
     assert(m.mails.some((x) => x.to === 'client@test.invalid'));
     assertEquals((await m.appel({ op: 'view', t: m.jeton })).status, 404);

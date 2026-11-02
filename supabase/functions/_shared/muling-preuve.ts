@@ -98,10 +98,3 @@ export function langueMail(l: unknown): 'fr' | 'en' | 'es' {
     const c = String(l ?? '').trim().slice(0, 2).toLowerCase();
     return c === 'fr' || c === 'es' ? c : 'en';
 }
-
-/** Montant déclaré par le client : validé ensuite par David ou Muling, jamais par ce code. */
-export function lireMontantDeclare(v: unknown): number | null {
-    if (v === null || v === undefined || v === '') return null;
-    const n = Math.round(Number(v) * 100) / 100;
-    return Number.isFinite(n) && n >= 1 && n <= 50000 ? n : null;
-}

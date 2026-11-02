@@ -31,7 +31,6 @@ export default async function handler(req, res) {
         t: body.t,
         lang: body.lang,
         fileBase64: body.fileBase64,
-        amountPaid: body.amountPaid,
         confirm: body.confirm === true,
       }),
     })

@@ -52,7 +52,7 @@
     var T = {
       fr: {
         title: 'Déposer ma preuve de virement', ref: 'Référence', amount: 'Montant de la commande',
-        file: 'Preuve de virement', fileNote: 'Capture d’écran ou PDF (PNG, JPEG ou PDF), 3 Mo maximum.', paid: 'Montant que tu as viré (€)', paidNote: 'Déclaratif : David ou Muling le vérifient à réception du virement.',
+        file: 'Preuve de virement', fileNote: 'Capture d’écran ou PDF (PNG, JPEG ou PDF), 3 Mo maximum.',
         send: 'Envoyer ma preuve', sending: 'Envoi…', toCancel: 'Annuler ma commande',
         doneT: 'Ta preuve est bien reçue', done: 'Elle est transmise à Muling avec les informations de ta commande. Un e-mail de confirmation arrive : garde-le. Muling vérifie le virement avant toute expédition.',
         doneShowroom: 'Elle est transmise à Muling. Un e-mail de confirmation arrive : garde-le. Ton micro t’attend au showroom, rien ne sera expédié. Réponds à cet e-mail pour proposer une date de retrait.',
@@ -64,7 +64,7 @@
       },
       en: {
         title: 'Upload my proof of transfer', ref: 'Reference', amount: 'Order amount',
-        file: 'Proof of transfer', fileNote: 'Screenshot or PDF (PNG, JPEG or PDF), 3 MB max.', paid: 'Amount you transferred (€)', paidNote: 'Self-declared: David or Muling check it when the transfer arrives.',
+        file: 'Proof of transfer', fileNote: 'Screenshot or PDF (PNG, JPEG or PDF), 3 MB max.',
         send: 'Send my proof', sending: 'Sending…', toCancel: 'Cancel my order',
         doneT: 'Your proof has been received', done: 'It has been sent to Muling with your order details. A confirmation email is on its way: keep it. Muling checks the transfer before shipping anything.',
         doneShowroom: 'It has been sent to Muling. A confirmation email is on its way: keep it. Your mic is waiting at the showroom, nothing will be shipped. Reply to that email to suggest a pick-up date.',
@@ -76,7 +76,7 @@
       },
       es: {
         title: 'Subir mi comprobante de transferencia', ref: 'Referencia', amount: 'Importe del pedido',
-        file: 'Comprobante de transferencia', fileNote: 'Captura de pantalla o PDF (PNG, JPEG o PDF), 3 MB máximo.', paid: 'Importe que has transferido (€)', paidNote: 'Declarativo: David o Muling lo comprueban al recibir la transferencia.',
+        file: 'Comprobante de transferencia', fileNote: 'Captura de pantalla o PDF (PNG, JPEG o PDF), 3 MB máximo.',
         send: 'Enviar mi comprobante', sending: 'Enviando…', toCancel: 'Cancelar mi pedido',
         doneT: 'Hemos recibido tu comprobante', done: 'Se ha enviado a Muling con los datos de tu pedido. Te llegará un correo de confirmación: guárdalo. Muling comprueba la transferencia antes de cualquier envío.',
         doneShowroom: 'Se ha enviado a Muling. Te llegará un correo de confirmación: guárdalo. Tu micrófono te espera en el showroom, no se enviará nada. Responde a ese correo para proponer una fecha de recogida.',
@@ -153,7 +153,6 @@
     function ecranDepot() {
       var err = el('p', { class: 'err', hidden: 'hidden' })
       var file = el('input', { type: 'file', id: 'f', accept: 'image/png,image/jpeg,application/pdf' })
-      var paid = el('input', { type: 'number', id: 'm', inputmode: 'decimal', min: '1', step: '0.01', value: String(order.amount) })
       var btn = el('button', { type: 'submit', text: t.send })
       function dire(m) { err.textContent = m; err.hidden = false }
       show([el('h1', { text: t.title }), el('form', { class: 'card', novalidate: 'novalidate', onsubmit: function (e) {
@@ -166,7 +165,7 @@
         var rd = new FileReader()
         rd.onerror = function () { dire(t.eGen); btn.disabled = false; btn.textContent = t.send }
         rd.onload = function () {
-          post({ op: 'deposit', t: token, fileBase64: String(rd.result).split(',')[1] || '', amountPaid: paid.value, lang: lang }).then(function (r) {
+          post({ op: 'deposit', t: token, fileBase64: String(rd.result).split(',')[1] || '', lang: lang }).then(function (r) {
             if (r.ok) return ecranMessage(t.doneT, order.showroom ? t.doneShowroom : t.done)
             if (r.status === 404) return ecranInvalide()
             dire(message(r)); btn.disabled = false; btn.textContent = t.send
@@ -174,7 +173,7 @@
         }
         rd.readAsDataURL(f)
       } }, [recap(), el('label', { for: 'f', text: t.file }), file, el('p', { class: 'note', text: t.fileNote }),
-        el('label', { for: 'm', text: t.paid }), paid, el('p', { class: 'note', text: t.paidNote }), btn, err,
+        btn, err,
         el('button', { type: 'button', class: 'sec', text: t.toCancel, onclick: ecranAnnuler })])])
     }
 

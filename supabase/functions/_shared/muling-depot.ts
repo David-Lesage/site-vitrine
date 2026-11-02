@@ -31,12 +31,11 @@ export interface DepotDeps {
 
 export async function deposerPreuve(
     deps: DepotDeps, sale: MulingSale, fichier: FichierPreuve,
-    opts: { langue?: unknown; montantDeclare?: number | null; exigerSansPreuve: boolean },
+    opts: { langue?: unknown; exigerSansPreuve: boolean },
 ): Promise<ResultatDepot> {
     const { admin, env } = deps;
     const envoyerMail = deps.envoyerMail ?? sendMail;
     const envoyerMuling = deps.envoyerMuling ?? sendMulingOrderMail;
-    const montant = opts.montantDeclare ?? null;
 
     const path = `${sale.id}/${Date.now()}.${fichier.ext}`;
     const { error: upErr } = await admin.storage.from(BUCKET_PREUVES).upload(path, fichier.bytes, {
@@ -44,9 +43,8 @@ export async function deposerPreuve(
     });
     if (upErr) throw upErr;
 
-    const note = montant !== null ? `Montant déclaré par le client : ${montant} EUR (à vérifier)` : null;
     const { data: resultat, error: rpcErr } = await admin.rpc('muling_preuve_enregistrer', {
-        p_sale_id: sale.id, p_path: path, p_exiger_sans_preuve: opts.exigerSansPreuve, p_note: note,
+        p_sale_id: sale.id, p_path: path, p_exiger_sans_preuve: opts.exigerSansPreuve,
     });
     if (rpcErr || resultat !== 'ok') {
         // Rien n'a été enregistré : pas de fichier orphelin.
@@ -70,7 +68,7 @@ export async function deposerPreuve(
     const ref = cible.order_ref ?? cible.id;
     let transmis = false;
     if (preuveRemontee) {
-        transmis = await envoyerMuling(env, { ...cible, payment_proof_path: path }, preuve, false, montant);
+        transmis = await envoyerMuling(env, { ...cible, payment_proof_path: path }, preuve, false);
     } else {
         await envoyerMail(env, {
             to: ADMIN_EMAIL,

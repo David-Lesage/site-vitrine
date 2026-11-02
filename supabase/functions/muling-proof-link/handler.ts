@@ -5,7 +5,7 @@
 //   recognize {email}            → {open}. Rien d'autre : ni nom, ni montant, ni référence.
 //   resume    {email, lang}      → {ok}. Envoie le lien par e-mail s'il y a lieu ; même réponse sinon.
 //   view      {t}                → référence et montant, le strict nécessaire à la page.
-//   deposit   {t, fileBase64, amountPaid?, lang}
+//   deposit   {t, fileBase64, lang}
 //   cancel    {t, confirm:true}  → l'ouverture du lien ne fait rien, seule cette requête annule.
 // Opérations admin, avec le JWT de l'appelant (`is_site_admin()`) :
 //   admin_preview {saleId}       → sujet + HTML avec de faux liens : aucun jeton créé.
@@ -24,7 +24,7 @@ import {
     sendMulingOrderMail, type SmtpEnv,
 } from '../_shared/muling-mail.ts';
 import {
-    genererJeton, hacher, JETON_RE, langueMail, LIEN_DUREE_JOURS, lireMontantDeclare, lirePreuve,
+    genererJeton, hacher, JETON_RE, langueMail, LIEN_DUREE_JOURS, lirePreuve,
     ouverteSansPreuve,
 } from '../_shared/muling-preuve.ts';
 
@@ -192,7 +192,7 @@ export async function traiter(req: Request, deps: Deps): Promise<Response> {
     const depot = await deposerPreuve(
         { admin: deps.admin, env: deps.env, envoyerMail: deps.envoyerMail, envoyerMuling: deps.envoyerMuling },
         s, lu.fichier,
-        { langue: body.lang, montantDeclare: lireMontantDeclare(body.amountPaid), exigerSansPreuve: true },
+        { langue: body.lang, exigerSansPreuve: true },
     );
     if (!depot.ok) return rep({ error: depot.error }, depot.error === 'not_found' ? 404 : 409);
     return rep({ ok: true });
