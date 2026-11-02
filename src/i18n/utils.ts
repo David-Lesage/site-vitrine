@@ -132,6 +132,9 @@ const staticRoutes: Set<string> = new Set(
 // invisible du glob ci-dessus : sans ça, /en/ et /es/handpan-app/ ne la déclaraient
 // pas en hreflang (non réciproque) et le sélecteur de langue renvoyait à l'accueil.
 staticRoutes.add('/handpan-app')
+// Pages de vente anglaise et espagnole : fichiers statiques aussi (scripts/generer-vente-langues.mjs).
+staticRoutes.add('/en/handpan-app')
+staticRoutes.add('/es/handpan-app')
 
 // La collection n'est lue qu'une fois pour tout le build.
 let blogIndex: Promise<Set<string>> | null = null

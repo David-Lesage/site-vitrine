@@ -62,7 +62,8 @@ export default defineConfig({
   integrations: [
     icon(),
     sitemap({
-      customPages: ['https://www.lesagedavid.fr/handpan-app/'],
+      // Pages de vente statiques (public/) : l'archive /archive-vente/ n'y figure pas, volontairement.
+      customPages: ['https://www.lesagedavid.fr/handpan-app/', 'https://www.lesagedavid.fr/en/handpan-app/', 'https://www.lesagedavid.fr/es/handpan-app/'],
       // Page personnelle (lien avec jeton) : jamais dans le sitemap.
       filter: (page) => !page.includes('/showcase/ma-venue') && !page.includes('/neotone-suivi'),
       // Pas d'option `i18n` ici (01/11/2026) : elle déduisait des alternates fr-FR/en-US
