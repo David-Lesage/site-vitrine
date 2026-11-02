@@ -127,6 +127,13 @@ const ld = [
 ---
 
 <Layout title={n.title} description={n.description} image="/images/og-le-neotone.jpg" ldJSON={ld}>
+  {/* Bandeau d'annonce de la page de vente de l'app. Texte de Yannick, 02/11/2026. */}
+  <a href={L('/handpan-app/neotone')} class="block bg-gold text-ink">
+    <span class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-5 py-3 text-center">
+      <span class="rounded-full bg-ink px-3 py-1 text-xs font-700 uppercase tracking-[0.12em] text-cream">{n.bandeauBadge}</span>
+      <span class="font-700 underline underline-offset-4">{n.bandeauTexte} →</span>
+    </span>
+  </a>
   <Section tone="ink" class="!py-20">
     <div class="grid items-center gap-10 lg:grid-cols-2">
       <div>
@@ -260,6 +267,16 @@ const ld = [
 
   <Section tone="cream-deep" id="calculateur">
     <SectionHeading eyebrow={n.calcEyebrow} title={n.calcTitle} intro={n.calcIntro} />
+    {/* Offre : un an de Studio offert aux acheteurs via David (app/auth/acheteur-neotone.ts). Décision de Yannick, 02/11/2026. */}
+    <div class="mx-auto mt-10 max-w-4xl rounded-card border-2 border-gold bg-ink p-6 text-cream shadow-md md:p-8">
+      <span class="inline-block rounded-full bg-gold px-3 py-1 text-xs font-700 uppercase tracking-[0.12em] text-ink">{n.offreBadge}</span>
+      <h3 class="mt-3 font-display text-2xl font-700 leading-snug md:text-3xl">{n.offreTitre}</h3>
+      <p class="mt-3 text-cream/80">{n.offreTexte}</p>
+      <ul class="mt-5 space-y-2 text-cream/90">
+        {n.offreListe.map((x: string) => <li class="flex gap-2"><Icon name="lucide:check" class="mt-1 h-4 w-4 shrink-0 text-gold" /> <span set:html={x} /></li>)}
+      </ul>
+      <a href={L('/handpan-app/neotone')} class="mt-5 inline-block font-700 text-gold underline underline-offset-4">{n.offreCta} →</a>
+    </div>
     <div class="mt-10"><Calculator lang={lang} stock={stockLines} /></div>
     <p class="mx-auto mt-6 max-w-3xl text-center text-xs text-ink-soft/70">{n.calcDisclaimer}</p>
 

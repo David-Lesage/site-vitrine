@@ -252,6 +252,13 @@ export const en: Dict = {
     calcEyebrow: 'Price calculator',
     calcTitle: 'How much will my Neotone really cost me?',
     calcIntro: 'Choose your purchase mode, model, wood and country — the calculator applies the right discount and 2026 VAT.',
+    offreBadge: "Free",
+    offreTitre: "One year of the app free with every Neotone you buy through me",
+    offreTexte: "The Studio plan of Handpan Constellation, worth €89, online or at the showroom. Your year starts the first time you log in, once your purchase is registered.",
+    offreListe: ["<b>Logic mode.</b> Change key and your chords stay under the same fingers.", "<b>Neotone Connection.</b> Prepare your scales in the app and they go to your Neotone.", "<b>Duos.</b> Two instruments together play chords neither can play alone."],
+    offreCta: "Discover the app",
+    bandeauBadge: "New",
+    bandeauTexte: "Discover the app for Neotone",
     calcDisclaimer:
       'Listed public prices already include worldwide shipping. Standard 2026 VAT rates. Outside the EU: no EU VAT applied, but local customs fees may be added on delivery, at your expense.',
     // ── Physical stock (David's Google Sheet, via src/lib/stockSource.js) ──
