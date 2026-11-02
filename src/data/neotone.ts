@@ -75,7 +75,7 @@ export const woodDetails: Record<WoodKey, { imgTop: string; imgBottom: string }>
 
 // Icônes des cartes specs / inclus (ordre = dict.data.specs / dict.data.included)
 export const specIcons = ['lucide:music', 'lucide:circle-dot', 'lucide:battery-charging', 'lucide:cable', 'lucide:settings', 'lucide:ruler']
-export const includedIcons = ['lucide:briefcase', 'lucide:globe', 'lucide:shield-check', 'lucide:plug']
+export const includedIcons = ['lucide:briefcase', 'lucide:globe', 'lucide:shield-check', 'lucide:plug', 'lucide:sparkles']
 export const extrasIcons = ['lucide:headphones', 'lucide:cable', 'lucide:speaker', 'lucide:usb']
 
 export interface Country {

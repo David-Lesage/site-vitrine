@@ -289,7 +289,7 @@ const fr = {
     offreListe: ["<b>Le mode Logique.</b> Tu changes de tonalité, tes accords restent sous les mêmes doigts.", "<b>Neotone Connexion.</b> Tu prépares tes gammes dans l’app, elles partent sur ton Neotone.", "<b>Les duos.</b> Deux instruments ensemble jouent des accords qu’aucun des deux ne joue seul."],
     offreCta: "Découvrir l’application",
     bandeauBadge: "Nouveau",
-    bandeauTexte: "Découvre l’app pour Neotone",
+    bandeauTexte: "Ton Neotone peut tout jouer. Maintenant, tu le vois. Découvre l’app",
     calcDisclaimer:
       'Les prix publics affichés incluent déjà l’envoi mondial. Taux de TVA standards 2026. Hors UE : aucune TVA UE appliquée, mais des frais de douane locaux peuvent s’ajouter à la livraison, à ta charge.',
     // ── Stock physique (Google Sheet de David, via src/lib/stockSource.js) ──
@@ -3625,6 +3625,7 @@ const fr = {
       { title: 'Livraison mondiale', text: 'Frais d’envoi compris dans le prix, partout dans le monde.' },
       { title: 'Garantie 6 ans', text: 'Réparation + transport inclus.' },
       { title: 'Chargeur secteur fourni', text: 'Chargeur 12 V standard livré (prise selon le pays de livraison).' },
+      { title: '1 an de licence Studio', text: 'Pour l’app Handpan Constellation Studio : 89 € offerts.' },
     ],
     extras: [
       { title: 'Un casque ou des oreillettes', text: 'Pour jouer en silence, la nuit ou en appartement. Idéalement un casque avec prise jack 6,35 mm (ou un adaptateur).' },

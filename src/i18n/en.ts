@@ -258,7 +258,7 @@ export const en: Dict = {
     offreListe: ["<b>Logic mode.</b> Change key and your chords stay under the same fingers.", "<b>Neotone Connection.</b> Prepare your scales in the app and they go to your Neotone.", "<b>Duos.</b> Two instruments together play chords neither can play alone."],
     offreCta: "Discover the app",
     bandeauBadge: "New",
-    bandeauTexte: "Discover the app for Neotone",
+    bandeauTexte: "Your Neotone can play anything. Now you can see it. Discover the app",
     calcDisclaimer:
       'Listed public prices already include worldwide shipping. Standard 2026 VAT rates. Outside the EU: no EU VAT applied, but local customs fees may be added on delivery, at your expense.',
     // ── Physical stock (David's Google Sheet, via src/lib/stockSource.js) ──
@@ -2915,6 +2915,7 @@ export const en: Dict = {
       { title: 'Worldwide shipping', text: 'Shipping included in the price, anywhere in the world.' },
       { title: '6-year warranty', text: 'Repair + transport included.' },
       { title: 'Power charger included', text: 'Standard 12 V charger included (plug according to delivery country).' },
+      { title: '1-year Studio licence', text: 'For the Handpan Constellation Studio app: worth €89.' },
     ],
     extras: [
       { title: 'Headphones or earbuds', text: 'To play silently, at night or in a flat. Ideally headphones with a 6.35 mm jack (or an adapter).' },
