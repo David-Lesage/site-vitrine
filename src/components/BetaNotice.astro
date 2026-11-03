@@ -8,6 +8,8 @@ import { Icon } from 'astro-icon/components'
 import { getDict } from '@/i18n/dict'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
+import AntiDemarchage from '@/components/AntiDemarchage.astro'
+import ExerciceHumain from '@/components/ExerciceHumain.astro'
 import { site } from '@/data/site'
 import { BETA_DOOR_ENDPOINT, APP_CONFIG_KEY } from '@/lib/appAccess'
 import { localizePath } from '@/i18n/utils'
@@ -264,6 +266,10 @@ const b = getDict(lang).common.beta
           intéresse la personne (cf. le commentaire à côté). */}
       <NewsCheckbox lang={lang} />
 
+      {/* Anti-démarchage (03/11/2026) : petit exercice musical + mention + pot de miel. */}
+      <ExerciceHumain lang={lang} />
+      <AntiDemarchage lang={lang} />
+
       <button type="submit" data-sending={b.formSending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{b.formSubmit}</button>
       <p data-beta-error class="hidden text-sm font-600 text-rust">{b.formError}</p>
       <p class="text-xs text-ink-soft/70">{b.formPrivacy}</p>
@@ -375,7 +381,10 @@ const b = getDict(lang).common.beta
 </script>
 
 <script>
+  import { lireDefi } from '@/lib/antispamConfig'
   const form = document.getElementById('beta-form') as HTMLFormElement | null
+  // Pièges anti-robot (03/11/2026) : heure d'affichage du formulaire.
+  const startedAt = Date.now()
 
   // ---- Sous-questions conditionnelles ---------------------------------
   // Une sous-question masquée ne doit JAMAIS rester `required` (le navigateur
@@ -468,6 +477,10 @@ const b = getDict(lang).common.beta
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          // Pièges anti-robot + petit exercice, jugés par le relais (api/subscribe.js).
+          website: get('website'),
+          startedAt,
+          defi: lireDefi(data),
           firstName: get('firstName'),
           lastName: get('lastName'),
           email: get('email'),

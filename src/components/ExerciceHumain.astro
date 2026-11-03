@@ -1,0 +1,295 @@
+---
+// 🎶 « PETIT EXERCICE » À LA PLACE D'UN CAPTCHA (03/11/2026, validé par David).
+//
+// Ses mots : « Je vérifie que tu es un humain… et que tu aimes la musique 🎶 ».
+// Un handpan dessiné PAR L'APP (export de `createMiniHandpanSvg`, voir
+// scripts/defi-handpan/exporter.mjs — aucun dessin maison), un accord tiré au
+// hasard PAR LE SERVEUR (`defi_formulaire_creer`, migration 0321 de l'app), ses
+// notes numérotées 1·2·3(·4) aux couleurs ChromaKeys. On les touche dans l'ordre :
+// chaque note sonne (échantillons de l'app, synthèse douce en secours) et
+// s'allume ; à la fin l'accord sonne. Erreur = la note vibre, on recommence.
+//
+// Accessibilité : numéros toujours visibles (les couleurs ne sont pas
+// nécessaires), son facultatif, jouable au clavier (Tab + Entrée/Espace) et au
+// doigt ; « Je n'y arrive pas » → une addition, vérifiée par le serveur aussi.
+//
+// Le formulaire parent envoie `defiId`, `defiNotes`, `defiSecours` (champs cachés
+// ci-dessous) ; le relais `api/subscribe.js` fait vérifier par la base (usage
+// unique). Obligatoire ou non : `EXERCICE_OBLIGATOIRE` (src/lib/antispamConfig.ts).
+import type { Lang } from '@/i18n/config'
+import { antiDemarchage } from '@/i18n/antiDemarchage'
+import { EXERCICE_OBLIGATOIRE } from '@/lib/antispamConfig'
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from '@/lib/prices'
+import defi from '@/data/defiHandpan.json'
+
+interface Props { lang: Lang; class?: string }
+const { lang, class: cls = '' } = Astro.props
+const t = (antiDemarchage[lang] ?? antiDemarchage.fr).exercice
+// Dégradé « Neotone » de l'app (index.html de l'app, #grad-neotone), avec un id
+// propre pour ne rien partager avec la page.
+const svg = defi.svg.replace(
+  'class="handpan-body"',
+  'class="handpan-body" fill="url(#defi-grad-neotone)"',
+).replace(
+  /^<svg([^>]*)>/,
+  '<svg$1 role="group" focusable="false"><defs><radialGradient id="defi-grad-neotone"><stop offset="0%" stop-color="#E4D5B7" /><stop offset="70%" stop-color="#C1A98A" /><stop offset="100%" stop-color="#8B745B" /></radialGradient></defs>',
+)
+---
+<div
+  class={`exercice-humain rounded-xl border border-ink/15 bg-cream p-4 ${cls}`}
+  data-exercice
+  data-obligatoire={EXERCICE_OBLIGATOIRE ? '1' : ''}
+  data-rpc={`${SUPABASE_URL}/rest/v1/rpc/defi_formulaire_creer`}
+  data-cle={SUPABASE_ANON_KEY}
+  data-textes={JSON.stringify(t)}
+>
+  <p class="text-sm font-600 text-ink">{t.intro}</p>
+  <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
+    <p class="text-sm text-ink-soft/85" data-ex-consigne aria-live="polite"></p>
+    <button type="button" data-ex-son class="rounded-full border border-ink/15 px-3 py-1 text-xs font-600 hover:bg-ink/5" aria-pressed="true">{t.son}</button>
+  </div>
+  <div class="ex-pan mx-auto mt-2" data-ex-pan set:html={svg}></div>
+  <p class="mt-2 min-h-[1.25rem] text-center text-sm font-700" data-ex-statut role="status" aria-live="polite"></p>
+  <div class="mt-1 text-center">
+    <button type="button" data-ex-secours-lien class="text-xs text-ink-soft/80 underline underline-offset-2 hover:text-ink">{t.secoursLien}</button>
+  </div>
+  <div data-ex-secours class="mt-2 hidden">
+    <label class="block text-sm"><span data-ex-question></span>
+      <span class="mt-1 flex gap-2">
+        <input type="number" inputmode="numeric" data-ex-reponse class="w-24 rounded-lg border border-ink/20 bg-cream px-3 py-2" />
+        <button type="button" data-ex-valider class="rounded-full bg-ink px-4 py-2 text-sm font-700 text-cream">{t.valider}</button>
+      </span>
+    </label>
+  </div>
+  <input type="hidden" name="defiId" value="" />
+  <input type="hidden" name="defiNotes" value="" />
+  <input type="hidden" name="defiSecours" value="" />
+</div>
+
+<style is:global>
+  /* Règles du pan reprises de l'app (handpan.css, .mini-handpan-svg) + ChromaKeys
+     (variables.css de l'app, source de vérité), limitées à l'exercice. */
+  .exercice-humain {
+    --chakra-c: #DC2626; --chakra-cs: #EF4444; --chakra-d: #EA580C; --chakra-ds: #F97316;
+    --chakra-e: #EAB308; --chakra-f: #16A34A; --chakra-fs: #22C55E; --chakra-g: #0EA5E9;
+    --chakra-gs: #6BCFFA; --chakra-a: #0806FF; --chakra-as: #5050FF; --chakra-b: #EB00FF;
+    --gold-color: #FFD700;
+  }
+  .exercice-humain .ex-pan { max-width: 300px; }
+  .exercice-humain .ex-cible { fill: transparent; stroke: none; pointer-events: all; }
+  .exercice-humain .ex-pan svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .exercice-humain .handpan-body { stroke: #FFFFFF; stroke-width: 5px; }
+  .exercice-humain .note-hand-outline, .exercice-humain .note-hand-separator { fill: none; stroke: none; }
+  .exercice-humain .note-circle-base { stroke: var(--gold-color); stroke-width: 2px; }
+  .exercice-humain .note-group.ghost-note .note-circle-base { fill: rgba(0,0,0,0.1); stroke: rgba(255,255,255,0.45); }
+  .exercice-humain .note-group.active-note .note-circle-base { fill: var(--note-fill-color, white); stroke: white; stroke-width: 5px; fill-opacity: .55; transition: fill-opacity .15s, stroke-width .15s; }
+  .exercice-humain .note-group.active-note.joue .note-circle-base { fill-opacity: 1; stroke-width: 9px; filter: drop-shadow(0 0 14px var(--note-fill-color)); }
+  .exercice-humain .note-group { cursor: pointer; outline: none; }
+  .exercice-humain .note-group:focus-visible .note-circle-base { stroke: #111827; stroke-width: 10px; stroke-dasharray: 14 8; }
+  .exercice-humain .ex-num-rond { fill: #FFFFFF; stroke: rgba(0,0,0,.25); stroke-width: 2px; pointer-events: none; }
+  .exercice-humain .ex-num { font: 800 44px system-ui, sans-serif; fill: #111827; pointer-events: none; }
+  .exercice-humain .note-group.vibre { animation: ex-vibre .35s linear; transform-box: fill-box; transform-origin: center; }
+  @keyframes ex-vibre { 0%,100% { transform: translateX(0) } 20% { transform: translateX(-10px) } 40% { transform: translateX(10px) } 60% { transform: translateX(-7px) } 80% { transform: translateX(7px) } }
+  @media (prefers-reduced-motion: reduce) { .exercice-humain .note-group.vibre { animation: none; } }
+</style>
+
+<script>
+  // Un même script pour toutes les instances de la page.
+  const SONS = 'https://play.handpanstudio.app/assets/sounds/'
+  const CLASSES: Record<string, string> = { C: 'c', 'C#': 'cs', D: 'd', 'D#': 'ds', E: 'e', F: 'f', 'F#': 'fs', G: 'g', 'G#': 'gs', A: 'a', 'A#': 'as', B: 'b' }
+  const NS = 'http://www.w3.org/2000/svg'
+  let ctx: AudioContext | null = null
+  const tampons = new Map<string, Promise<AudioBuffer | null>>()
+
+  const freq = (note: string) => {
+    const m = note.match(/^([A-G]#?)(-?\d)$/)
+    if (!m) return 440
+    const idx = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'].indexOf(m[1])
+    return 440 * Math.pow(2, (idx + (Number(m[2]) + 1) * 12 - 69) / 12)
+  }
+  function audio(): AudioContext | null {
+    try { ctx = ctx || new (window.AudioContext || (window as any).webkitAudioContext)() } catch { ctx = null }
+    if (ctx && ctx.state === 'suspended') ctx.resume().catch(() => {})
+    return ctx
+  }
+  function tampon(note: string): Promise<AudioBuffer | null> {
+    if (!tampons.has(note)) {
+      const c = audio()
+      tampons.set(note, !c ? Promise.resolve(null) : fetch(SONS + note.replace('#', 's') + '.mp3')
+        .then((r) => (r.ok ? r.arrayBuffer() : Promise.reject()))
+        .then((b) => c.decodeAudioData(b))
+        .catch(() => null))
+    }
+    return tampons.get(note)!
+  }
+  // Synthèse douce de secours : fondamentale + octave + quinte, extinction lente.
+  function synth(c: AudioContext, note: string, quand: number) {
+    const f = freq(note)
+    const g = c.createGain()
+    g.gain.setValueAtTime(0.0001, quand)
+    g.gain.exponentialRampToValueAtTime(0.25, quand + 0.01)
+    g.gain.exponentialRampToValueAtTime(0.0001, quand + 2.2)
+    g.connect(c.destination)
+    for (const [mult, vol] of [[1, 1], [2, 0.35], [3, 0.12]]) {
+      const o = c.createOscillator(); const v = c.createGain()
+      o.type = 'sine'; o.frequency.value = f * mult; v.gain.value = vol
+      o.connect(v).connect(g); o.start(quand); o.stop(quand + 2.3)
+    }
+  }
+  async function jouer(notes: string[], son: boolean) {
+    if (!son) return
+    const c = audio(); if (!c) return
+    const bufs = await Promise.all(notes.map(tampon))
+    const t0 = c.currentTime + 0.01
+    notes.forEach((n, i) => {
+      const b = bufs[i]
+      if (b) { const s = c.createBufferSource(); const g = c.createGain(); g.gain.value = notes.length > 1 ? 0.6 : 0.9; s.buffer = b; s.connect(g).connect(c.destination); s.start(t0) }
+      else synth(c, n, t0)
+    })
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-exercice]').forEach((box) => {
+    const T = JSON.parse(box.dataset.textes || '{}') as Record<string, string>
+    const form = box.closest('form')
+    const pan = box.querySelector<HTMLElement>('[data-ex-pan]')!
+    const consigne = box.querySelector<HTMLElement>('[data-ex-consigne]')!
+    const statut = box.querySelector<HTMLElement>('[data-ex-statut]')!
+    const btnSon = box.querySelector<HTMLButtonElement>('[data-ex-son]')!
+    const secours = box.querySelector<HTMLElement>('[data-ex-secours]')!
+    const champ = (n: string) => box.querySelector<HTMLInputElement>(`input[name="${n}"]`)!
+    const obligatoire = box.dataset.obligatoire === '1'
+    let son = true
+    let attendu: string[] = []
+    let rang = 0
+    let reussi = false
+    let indisponible = false
+    let a = 0, b = 0
+
+    btnSon.addEventListener('click', () => {
+      son = !son
+      btnSon.textContent = son ? T.son : T.sonCoupe
+      btnSon.setAttribute('aria-pressed', String(son))
+    })
+
+    const groupe = (note: string) => pan.querySelector<SVGGElement>(`.note-group[data-note="${CSS.escape(note)}"]`)
+    function marquerReussi(message: string) {
+      reussi = true
+      statut.textContent = message
+      statut.style.color = '#15803d'
+      form?.dispatchEvent(new CustomEvent('exercice-reussi'))
+    }
+    function erreur(g: SVGGElement | null) {
+      rang = 0
+      pan.querySelectorAll('.note-group.joue').forEach((x) => x.classList.remove('joue'))
+      champ('defiNotes').value = ''
+      if (g) { g.classList.remove('vibre'); void (g as any).getBBox?.(); g.classList.add('vibre'); setTimeout(() => g.classList.remove('vibre'), 400) }
+      statut.textContent = T.erreur
+      statut.style.color = '#b4462a'
+    }
+    function toucher(note: string) {
+      if (reussi || !attendu.length) return
+      const g = groupe(note)
+      if (note !== attendu[rang]) { erreur(g); return }
+      g?.classList.add('joue')
+      jouer([note], son)
+      rang++
+      champ('defiNotes').value = attendu.slice(0, rang).join(',')
+      statut.textContent = ''
+      if (rang === attendu.length) {
+        setTimeout(() => jouer(attendu, son), 450)
+        marquerReussi(T.bravo)
+      }
+    }
+
+    function dessiner(notes: string[]) {
+      attendu = notes
+      consigne.textContent = T.consigne.replace('{ordre}', notes.map((_, i) => i + 1).join(', '))
+      pan.querySelectorAll<SVGGElement>('.note-group').forEach((g) => {
+        const note = g.dataset.note || ''
+        g.addEventListener('pointerdown', (e) => { e.preventDefault(); toucher(note) })
+      })
+      notes.forEach((note, i) => {
+        const g = groupe(note); if (!g) return
+        const cls = CLASSES[note.replace(/-?\d+$/, '')] || 'c'
+        g.classList.remove('ghost-note'); g.classList.add('active-note')
+        g.style.setProperty('--note-fill-color', `var(--chakra-${cls})`)
+        g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button')
+        g.setAttribute('aria-label', T.note.replace('{n}', String(i + 1)))
+        g.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toucher(note) }
+        })
+        const c = g.querySelector('.note-circle-base')
+        const cx = Number(c?.getAttribute('cx')), cy = Number(c?.getAttribute('cy')), r = Number(c?.getAttribute('r'))
+        // Zone de toucher élargie (au doigt, les petites notes du pan font moins de
+        // 10 px) : un disque transparent sous la note, au moins 70 unités de rayon.
+        const cible = document.createElementNS(NS, 'circle')
+        cible.setAttribute('cx', String(cx)); cible.setAttribute('cy', String(cy)); cible.setAttribute('r', String(Math.max(r, 70)))
+        cible.setAttribute('class', 'ex-cible')
+        g.insertBefore(cible, g.firstChild)
+        const rond = document.createElementNS(NS, 'circle')
+        rond.setAttribute('cx', String(cx)); rond.setAttribute('cy', String(cy)); rond.setAttribute('r', String(Math.max(26, r * 0.42)))
+        rond.setAttribute('class', 'ex-num-rond')
+        const txt = document.createElementNS(NS, 'text')
+        txt.setAttribute('x', String(cx)); txt.setAttribute('y', String(cy))
+        txt.setAttribute('text-anchor', 'middle'); txt.setAttribute('dominant-baseline', 'central')
+        txt.setAttribute('class', 'ex-num'); txt.textContent = String(i + 1)
+        g.append(rond, txt)
+      })
+    }
+
+    function rendreIndisponible() {
+      indisponible = true
+      consigne.textContent = ''
+      statut.textContent = T.indisponible
+      statut.style.color = ''
+      box.querySelector<HTMLElement>('[data-ex-secours-lien]')!.classList.add('hidden')
+    }
+
+    // Le défi n'est demandé au serveur que lorsque l'exercice devient VISIBLE
+    // (une modale fermée n'en crée pas : pas de ligne en base à chaque page vue).
+    const charger = () => fetch(box.dataset.rpc || '', {
+      method: 'POST',
+      headers: { apikey: box.dataset.cle || '', Authorization: `Bearer ${box.dataset.cle}`, 'Content-Type': 'application/json' },
+      body: '{}',
+    })
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((d: { id: string; notes: string[]; a: number; b: number }) => {
+        if (!d?.id || !Array.isArray(d.notes)) throw new Error()
+        champ('defiId').value = d.id
+        a = d.a; b = d.b
+        box.querySelector<HTMLElement>('[data-ex-question]')!.textContent = T.secoursQuestion.replace('{a}', String(a)).replace('{b}', String(b))
+        dessiner(d.notes)
+      })
+      .catch(rendreIndisponible)
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entrees) => {
+        if (entrees.some((x) => x.isIntersecting)) { io.disconnect(); charger() }
+      })
+      io.observe(box)
+    } else charger()
+
+    box.querySelector('[data-ex-secours-lien]')?.addEventListener('click', () => {
+      secours.classList.remove('hidden')
+      box.querySelector<HTMLInputElement>('[data-ex-reponse]')?.focus()
+    })
+    const valider = () => {
+      const v = Number(box.querySelector<HTMLInputElement>('[data-ex-reponse]')?.value)
+      if (v === a + b) { champ('defiSecours').value = String(v); secours.classList.add('hidden'); marquerReussi(T.secoursOk) }
+      else { statut.textContent = T.secoursFaux; statut.style.color = '#b4462a' }
+    }
+    box.querySelector('[data-ex-valider]')?.addEventListener('click', valider)
+    box.querySelector('[data-ex-reponse]')?.addEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Enter') { e.preventDefault(); valider() }
+    })
+
+    // Mode obligatoire : l'envoi attend la réussite (écouteur en capture, donc
+    // AVANT le gestionnaire d'envoi du formulaire). Exercice indisponible = on
+    // ne bloque jamais.
+    form?.addEventListener('submit', (e) => {
+      if (!obligatoire || reussi || indisponible) return
+      e.preventDefault(); e.stopImmediatePropagation()
+      statut.textContent = T.requis; statut.style.color = '#b4462a'
+      box.scrollIntoView({ block: 'center', behavior: 'smooth' })
+    }, true)
+  })
+</script>

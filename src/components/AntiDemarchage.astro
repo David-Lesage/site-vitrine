@@ -1,0 +1,25 @@
+---
+// ANTI-DÉMARCHAGE (03/11/2026) — à poser dans un <form>, juste avant le bouton d'envoi.
+//
+// Demande de David : « préciser dans le formulaire que ce formulaire n'est pas
+// destiné au démarchage ». Trois choses, sans CAPTCHA ni service tiers :
+//   1. la mention visible (réservé aux cours, à l'app, aux instruments) ;
+//   2. un champ « pot de miel » `website`, hors écran, masqué aux lecteurs
+//      d'écran (aria-hidden) et sorti du parcours clavier (tabindex -1) : un
+//      humain ne le voit jamais, un robot le remplit ;
+//   3. un horodatage d'ouverture `data-started-at` posé par le script du
+//      formulaire : le relais `api/subscribe.js` juge « certain » un envoi
+//      rempli en moins de 4 secondes.
+// L'avertissement « ton message ressemble à une proposition commerciale »
+// (formulaire de contact) vit dans ContactPage.astro, avec `src/lib/demarchage.js`.
+import type { Lang } from '@/i18n/config'
+import { antiDemarchage } from '@/i18n/antiDemarchage'
+
+interface Props { lang: Lang; class?: string }
+const { lang, class: cls = '' } = Astro.props
+const t = antiDemarchage[lang] ?? antiDemarchage.fr
+---
+<p class={`text-xs leading-relaxed text-ink-soft/75 ${cls}`} data-anti-demarchage>{t.mention}</p>
+<div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+  <label>{t.pieges}<input type="text" name="website" tabindex="-1" autocomplete="off" value="" /></label>
+</div>

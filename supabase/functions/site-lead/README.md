@@ -110,3 +110,17 @@ curl -s -X POST https://lesagedavid.fr/api/subscribe -H 'Content-Type: applicati
 ```
 
 puis vérifier en SQL que les colonnes sont bien remplies, et supprimer la ligne de test.
+
+## Anti-démarchage (03/11/2026, v54 — feu vert de David)
+
+- **Contenu** : jugé par la BASE à l'écriture (déclencheur `site_leads_juger_demarchage`,
+  migrations 0320/0321 du dépôt de l'app ; règles = `src/lib/demarchage.js`, fonction SQL
+  générée par `scripts/generer-sql-demarchage.mjs`, parité : `node scripts/test-demarchage.mjs --sql`).
+  La fonction relit `spam_statut` après l'upsert.
+- **Robots** (`spamCertain`, posé par `api/subscribe.js` : pot de miel, envoi < 4 s, petit
+  exercice musical non réussi) et **liste de blocage** (`demarcheurs_bloques`) → `certain` :
+  ligne enregistrée, AUCUN e-mail.
+- **Notification à David** : From `"Prénom Nom (via le site)" <formulaire@lesagedavid.fr>`,
+  Reply-To = visiteur ; vers `contact+site@lesagedavid.fr`, ou `contact+demarchage@lesagedavid.fr`
+  avec l'objet `[Site] [⚠️ Démarchage probable] …` et les raisons en tête du tableau.
+- Test local sans réseau : `deno test --no-check --allow-env --allow-read --import-map=test-local/import_map.json test-local/antispam.test.ts`

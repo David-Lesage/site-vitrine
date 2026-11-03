@@ -11,6 +11,8 @@ import { countries } from '@/data/neotone'
 import { saleIntakeClientConfig } from '@/lib/saleIntake'
 import TermsCheckbox from '@/components/TermsCheckbox.astro'
 import NewsCheckbox from '@/components/NewsCheckbox.astro'
+import AntiDemarchage from '@/components/AntiDemarchage.astro'
+import ExerciceHumain from '@/components/ExerciceHumain.astro'
 import { durationLabel, sessionPriceLabel, priceGrid } from '@/lib/sessions'
 import { getCoursePrices } from '@/lib/helloassoCatalogue'
 import { sessionTypes, demoInstruments, showcaseInterests } from '@/data/site'
@@ -582,6 +584,10 @@ const saleIntake = saleIntakeClientConfig()
           ne bloque jamais l'envoi. */}
       <NewsCheckbox lang={lang} />
 
+      {/* Anti-démarchage (03/11/2026) : petit exercice musical + mention + pot de miel. */}
+      <ExerciceHumain lang={lang} />
+      <AntiDemarchage lang={lang} />
+
       <button type="submit" data-sending={bk.sending} class="mt-1 rounded-full bg-rust px-6 py-3.5 font-700 text-cream shadow-sm transition-colors hover:bg-copper disabled:opacity-60">{bk.submit}</button>
       <p data-bk-error class="hidden text-sm font-600 text-rust">{bk.error}</p>
       <p class="text-xs text-ink-soft/70">{bk.privacy}</p>
@@ -604,6 +610,7 @@ const saleIntake = saleIntakeClientConfig()
 </div>
 
 <script>
+  import { lireDefi } from '@/lib/antispamConfig'
   const modal = document.getElementById('booking-modal')
   const form = document.getElementById('booking-form') as HTMLFormElement | null
   const success = modal?.querySelector('[data-bk-success]') as HTMLElement
@@ -833,8 +840,13 @@ const saleIntake = saleIntakeClientConfig()
   // « Visio » retire la question des instruments, « présentiel » la ramène.
   modal?.querySelectorAll('input[name="sessionFormat"]').forEach((r) => r.addEventListener('change', syncSessionBlocks))
 
+  // Pièges anti-robot (03/11/2026) : heure d'ouverture de la modale, envoyée
+  // au relais qui juge « robot certain » un envoi en moins de 4 secondes.
+  let startedAt = 0
+
   function open(trigger: HTMLElement) {
     if (!modal || !form) return
+    startedAt = Date.now()
     lastFocused = document.activeElement as HTMLElement
     const source = trigger.getAttribute('data-booking') || 'showroom-visit'
     ;(form.elements.namedItem('source') as HTMLInputElement).value = source
@@ -1184,6 +1196,10 @@ const saleIntake = saleIntakeClientConfig()
           // Montants du calculateur (21/10/2026), tels qu'affichés dans « Ton
           // choix ». `site-lead` les borne et les met en page, sans recalcul.
           neotonePrice: source === 'neotone-discount' ? calcPrice : null,
+          // Pièges anti-robot, jugés par le relais (api/subscribe.js).
+          website: get('website'),
+          startedAt: startedAt || null,
+          defi: lireDefi(data),
           socialAccount: get('socialAccount') || null,
           discoveryChannel: get('discoveryChannel') || null,
           playingSince: get('playingSince') || null,

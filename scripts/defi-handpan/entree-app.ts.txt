@@ -1,0 +1,25 @@
+import { appState } from './state';
+import { notesLogiqueMutant } from './logic-optimized';
+import { createLayoutPositions, generateNoteNumberMap, getGeometricChordSequence } from './layout';
+import { SCALE_INTERVALS_NATURAL_MINOR } from './constants';
+import { createMiniHandpanSvg } from './partition-renderer';
+import { writeFileSync } from 'node:fs';
+
+appState.appMode = 'neotone';
+appState.isMirrorMode = false; (appState as any).currentMode = 'library';
+appState.currentHandpanModel = 'mutant';
+const layout = createLayoutPositions('mutant');
+appState.handpanLayout = layout;
+generateNoteNumberMap();
+const v2l = new Map<number, number>();
+appState.noteDisplayNumberMap.forEach((v, idx) => v2l.set(v, idx));
+const notes = notesLogiqueMutant('D', SCALE_INTERVALS_NATURAL_MINOR, v2l, layout)!;
+notes.forEach((note, i) => { layout[i].note = note; layout[i].name = note.replace(/[-0-9]/g, ''); });
+const accords = [['D','Mineur'],['F','Majeur'],['G','Mineur'],['A','Mineur'],['C','Majeur'],['A#','Majeur'],['D','Mineur7'],['F','Majeur7']];
+const out: any[] = [];
+for (const [root, type] of accords) {
+  const seq = getGeometricChordSequence(root, type, layout, -1);
+  const svg = createMiniHandpanSvg({ root, type, index: -1 }, false, false, true, true, false);
+  out.push({ root, type, ordre: seq.main.map(n => n.note), svg });
+}
+writeFileSync(process.env.SORTIE!, JSON.stringify({ layout: layout.map(n => ({ note: n.note, cx: n.cx, cy: n.cy, r: n.r, isDing: !!n.isDing })), accords: out }, null, 1)); process.exit(0);

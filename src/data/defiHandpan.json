@@ -1,0 +1,175 @@
+{
+ "source": "Export de createMiniHandpanSvg (app Handpan Studio, partition-renderer.ts) — pan Neotone Mutant, Ré mineur. Régénérer : node scripts/defi-handpan/exporter.mjs <app>",
+ "notes": [
+  {
+   "note": "D2",
+   "cx": 500,
+   "cy": 485,
+   "r": 100
+  },
+  {
+   "note": "F3",
+   "cx": 240.2,
+   "cy": 650,
+   "r": 65
+  },
+  {
+   "note": "A#2",
+   "cx": 326.8,
+   "cy": 600,
+   "r": 32
+  },
+  {
+   "note": "C3",
+   "cx": 397.4,
+   "cy": 781.9,
+   "r": 65
+  },
+  {
+   "note": "A2",
+   "cx": 431.6,
+   "cy": 687.9,
+   "r": 32
+  },
+  {
+   "note": "A3",
+   "cx": 204.6,
+   "cy": 447.9,
+   "r": 65
+  },
+  {
+   "note": "E4",
+   "cx": 303,
+   "cy": 465.3,
+   "r": 32
+  },
+  {
+   "note": "E2",
+   "cx": 602.6,
+   "cy": 781.9,
+   "r": 65
+  },
+  {
+   "note": "G2",
+   "cx": 568.4,
+   "cy": 687.9,
+   "r": 32
+  },
+  {
+   "note": "C4",
+   "cx": 307.2,
+   "cy": 270.2,
+   "r": 65
+  },
+  {
+   "note": "G4",
+   "cx": 371.4,
+   "cy": 346.8,
+   "r": 32
+  },
+  {
+   "note": "E3",
+   "cx": 759.8,
+   "cy": 650,
+   "r": 65
+  },
+  {
+   "note": "F2",
+   "cx": 673.2,
+   "cy": 600,
+   "r": 32
+  },
+  {
+   "note": "D4",
+   "cx": 500,
+   "cy": 200,
+   "r": 65
+  },
+  {
+   "note": "D3",
+   "cx": 500,
+   "cy": 300,
+   "r": 32
+  },
+  {
+   "note": "G3",
+   "cx": 795.4,
+   "cy": 447.9,
+   "r": 65
+  },
+  {
+   "note": "F4",
+   "cx": 697,
+   "cy": 465.3,
+   "r": 32
+  },
+  {
+   "note": "A#3",
+   "cx": 692.8,
+   "cy": 270.2,
+   "r": 65
+  },
+  {
+   "note": "A4",
+   "cx": 628.6,
+   "cy": 346.8,
+   "r": 32
+  }
+ ],
+ "accords": [
+  {
+   "accord": "Dm",
+   "notes": [
+    "D2",
+    "F3",
+    "A3",
+    "D4"
+   ]
+  },
+  {
+   "accord": "F",
+   "notes": [
+    "F2",
+    "A3",
+    "C4",
+    "F4"
+   ]
+  },
+  {
+   "accord": "Gm",
+   "notes": [
+    "G2",
+    "A#3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "accord": "Am",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "accord": "C",
+   "notes": [
+    "C3",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "accord": "Bb",
+   "notes": [
+    "A#2",
+    "D3",
+    "F3",
+    "A#3"
+   ]
+  }
+ ],
+ "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"40 40 920 920\" class=\"mini-handpan-svg  show-texture outline-gold material-neotone\"><circle cx=\"500\" cy=\"500\" r=\"400\" class=\"handpan-body\"  /><g class=\"note-group ghost-note\" data-note=\"D2\"><circle cx=\"500\" cy=\"485\" r=\"100\" class=\"note-hand-outline\" /><circle cx=\"500\" cy=\"485\" r=\"100\" class=\"note-hand-separator\" /><circle cx=\"500\" cy=\"485\" r=\"100\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"F3\"><circle cx=\"240.19237886466846\" cy=\"650.0000000000001\" r=\"65\" class=\"note-hand-outline\" /><circle cx=\"240.19237886466846\" cy=\"650.0000000000001\" r=\"65\" class=\"note-hand-separator\" /><circle cx=\"240.19237886466846\" cy=\"650.0000000000001\" r=\"65\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"A#2\"><circle cx=\"326.7949192431123\" cy=\"600.0000000000001\" r=\"32\" class=\"note-hand-outline\" /><circle cx=\"326.7949192431123\" cy=\"600.0000000000001\" r=\"32\" class=\"note-hand-separator\" /><circle cx=\"326.7949192431123\" cy=\"600.0000000000001\" r=\"32\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"C3\"><circle cx=\"397.3939570022994\" cy=\"781.9077862357725\" r=\"65\" class=\"note-hand-outline\" /><circle cx=\"397.3939570022994\" cy=\"781.9077862357725\" r=\"65\" class=\"note-hand-separator\" /><circle cx=\"397.3939570022994\" cy=\"781.9077862357725\" r=\"65\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"A2\"><circle cx=\"431.59597133486625\" cy=\"687.9385241571817\" r=\"32\" class=\"note-hand-outline\" /><circle cx=\"431.59597133486625\" cy=\"687.9385241571817\" r=\"32\" class=\"note-hand-separator\" /><circle cx=\"431.59597133486625\" cy=\"687.9385241571817\" r=\"32\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"A3\"><circle cx=\"204.55767409633756\" cy=\"447.905546699921\" r=\"65\" class=\"note-hand-outline\" /><circle cx=\"204.55767409633756\" cy=\"447.905546699921\" r=\"65\" class=\"note-hand-separator\" /><circle cx=\"204.55767409633756\" cy=\"447.905546699921\" r=\"65\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"E4\"><circle cx=\"303.03844939755834\" cy=\"465.270364466614\" r=\"32\" class=\"note-hand-outline\" /><circle cx=\"303.03844939755834\" cy=\"465.270364466614\" r=\"32\" class=\"note-hand-separator\" /><circle cx=\"303.03844939755834\" cy=\"465.270364466614\" r=\"32\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"E2\"><circle cx=\"602.6060429977007\" cy=\"781.9077862357725\" r=\"65\" class=\"note-hand-outline\" /><circle cx=\"602.6060429977007\" cy=\"781.9077862357725\" r=\"65\" class=\"note-hand-separator\" /><circle cx=\"602.6060429977007\" cy=\"781.9077862357725\" r=\"65\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"G2\"><circle cx=\"568.4040286651338\" cy=\"687.9385241571816\" r=\"32\" class=\"note-hand-outline\" /><circle cx=\"568.4040286651338\" cy=\"687.9385241571816\" r=\"32\" class=\"note-hand-separator\" /><circle cx=\"568.4040286651338\" cy=\"687.9385241571816\" r=\"32\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"C4\"><circle cx=\"307.16371709403813\" cy=\"270.1866670643066\" r=\"65\" class=\"note-hand-outline\" /><circle cx=\"307.16371709403813\" cy=\"270.1866670643066\" r=\"65\" class=\"note-hand-separator\" /><circle cx=\"307.16371709403813\" cy=\"270.1866670643066\" r=\"65\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"G4\"><circle cx=\"371.4424780626921\" cy=\"346.7911113762044\" r=\"32\" class=\"note-hand-outline\" /><circle cx=\"371.4424780626921\" cy=\"346.7911113762044\" r=\"32\" class=\"note-hand-separator\" /><circle cx=\"371.4424780626921\" cy=\"346.7911113762044\" r=\"32\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"E3\"><circle cx=\"759.8076211353316\" cy=\"650\" r=\"65\" class=\"note-hand-outline\" /><circle cx=\"759.8076211353316\" cy=\"650\" r=\"65\" class=\"note-hand-separator\" /><circle cx=\"759.8076211353316\" cy=\"650\" r=\"65\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"F2\"><circle cx=\"673.2050807568878\" cy=\"600\" r=\"32\" class=\"note-hand-outline\" /><circle cx=\"673.2050807568878\" cy=\"600\" r=\"32\" class=\"note-hand-separator\" /><circle cx=\"673.2050807568878\" cy=\"600\" r=\"32\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"D4\"><circle cx=\"500\" cy=\"200\" r=\"65\" class=\"note-hand-outline\" /><circle cx=\"500\" cy=\"200\" r=\"65\" class=\"note-hand-separator\" /><circle cx=\"500\" cy=\"200\" r=\"65\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"D3\"><circle cx=\"500\" cy=\"300\" r=\"32\" class=\"note-hand-outline\" /><circle cx=\"500\" cy=\"300\" r=\"32\" class=\"note-hand-separator\" /><circle cx=\"500\" cy=\"300\" r=\"32\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"G3\"><circle cx=\"795.4423259036623\" cy=\"447.9055466999209\" r=\"65\" class=\"note-hand-outline\" /><circle cx=\"795.4423259036623\" cy=\"447.9055466999209\" r=\"65\" class=\"note-hand-separator\" /><circle cx=\"795.4423259036623\" cy=\"447.9055466999209\" r=\"65\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"F4\"><circle cx=\"696.9615506024415\" cy=\"465.27036446661396\" r=\"32\" class=\"note-hand-outline\" /><circle cx=\"696.9615506024415\" cy=\"465.27036446661396\" r=\"32\" class=\"note-hand-separator\" /><circle cx=\"696.9615506024415\" cy=\"465.27036446661396\" r=\"32\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"A#3\"><circle cx=\"692.8362829059618\" cy=\"270.18666706430656\" r=\"65\" class=\"note-hand-outline\" /><circle cx=\"692.8362829059618\" cy=\"270.18666706430656\" r=\"65\" class=\"note-hand-separator\" /><circle cx=\"692.8362829059618\" cy=\"270.18666706430656\" r=\"65\" class=\"note-circle-base\" /></g><g class=\"note-group ghost-note\" data-note=\"A4\"><circle cx=\"628.5575219373079\" cy=\"346.7911113762044\" r=\"32\" class=\"note-hand-outline\" /><circle cx=\"628.5575219373079\" cy=\"346.7911113762044\" r=\"32\" class=\"note-hand-separator\" /><circle cx=\"628.5575219373079\" cy=\"346.7911113762044\" r=\"32\" class=\"note-circle-base\" /></g></svg>"
+}

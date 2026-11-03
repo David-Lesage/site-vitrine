@@ -8,6 +8,54 @@
 const SUPABASE_URL = 'https://zqcuhnjjrgmybftppkcl.supabase.co'
 const ANON = 'sb_publishable_turahpl0xi-qKN6jmG3yBg_tqpVZbtx'
 
+// PIÈGES ANTI-ROBOT (03/11/2026) — demande de David : trier le démarchage.
+// Deux signaux « certains », invisibles pour un humain :
+//   · le champ pot de miel `website` (hors écran, aria-hidden) est rempli ;
+//   · le formulaire est envoyé moins de 4 s après son ouverture (`startedAt`,
+//     posé par le navigateur ; absent d'une page en cache = pas de jugement).
+// Le CONTENU (liens, vocabulaire de prospection…) est jugé ailleurs : par la
+// base à l'écriture (migration 0320), et par le navigateur pour avertir.
+const DUREE_MIN_MS = 4000
+// Tant que l'Edge Function `site-lead` ne sait pas enregistrer un envoi
+// « certain » SANS envoyer d'e-mail (version préparée, déploiement soumis au
+// feu vert de David), le relais ne le transmet PAS : il répond « ok » au robot
+// (aucun signal pour lui) et le journalise. Passer à true le jour où la
+// nouvelle `site-lead` est déployée : l'envoi sera alors enregistré, marqué
+// `spam_statut = 'certain'`, et ne déclenchera aucun e-mail.
+// ⚠️ Même jour, même geste : EXERCICE_OBLIGATOIRE = true dans src/lib/antispamConfig.ts.
+// 03/11/2026 : site-lead v54 déployée (feu vert de David) → activé.
+const SITE_LEAD_SAIT_TRIER = true
+
+// PETIT EXERCICE MUSICAL (03/11/2026) — c'est la BASE qui a tiré l'accord ; on lui
+// fait vérifier l'ordre joué (ou l'addition de secours). Usage unique.
+// Renvoie 'reussi' | 'reussi_secours' | 'echoue' | 'expire' | 'deja_utilise' | 'inconnu'
+// | 'absent' (aucun défi envoyé) | 'injoignable' (base muette : on ne pénalise pas).
+async function verifierDefi(defi) {
+  if (!defi || typeof defi !== 'object' || !/^[0-9a-f-]{36}$/i.test(String(defi.id || ''))) return 'absent'
+  const notes = Array.isArray(defi.notes) ? defi.notes.map((n) => String(n).slice(0, 4)).slice(0, 8) : []
+  const secours = Number.isFinite(Number(defi.secours)) && defi.secours !== null ? Math.trunc(Number(defi.secours)) : null
+  try {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/rpc/defi_formulaire_verifier`, {
+      method: 'POST',
+      headers: { apikey: ANON, Authorization: `Bearer ${ANON}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ p_id: defi.id, p_notes: notes.length ? notes : null, p_secours: secours }),
+    })
+    if (!r.ok) return 'injoignable'
+    const v = await r.json()
+    return typeof v === 'string' ? v : 'injoignable'
+  } catch { return 'injoignable' }
+}
+
+export function piegesAntiRobot(body, now = Date.now()) {
+  const raisons = []
+  if (String(body.website || '').trim() !== '') raisons.push('champ invisible rempli (pot de miel)')
+  const started = Number(body.startedAt)
+  if (Number.isFinite(started) && started > 0 && now - started >= 0 && now - started < DUREE_MIN_MS) {
+    raisons.push(`envoyé ${((now - started) / 1000).toFixed(1)} s après l'ouverture du formulaire`)
+  }
+  return raisons
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'method_not_allowed' })
@@ -32,6 +80,20 @@ export default async function handler(req, res) {
         res.status(400).json({ error: 'invalid_phone' })
         return
       }
+    }
+
+    const pieges = piegesAntiRobot(body)
+    const exercice = await verifierDefi(body.defi)
+    // Exercice raté ou absent = « certain »… seulement une fois site-lead capable
+    // d'enregistrer sans e-mail (sinon : affiché, transmis, jamais bloquant).
+    if (SITE_LEAD_SAIT_TRIER && !['reussi', 'reussi_secours', 'injoignable'].includes(exercice)) {
+      pieges.push(`petit exercice musical non réussi (${exercice})`)
+    }
+    if (pieges.length && !SITE_LEAD_SAIT_TRIER) {
+      // Aucune donnée personnelle dans le journal : la source et les raisons seules.
+      console.warn('subscribe: robot probable écarté', body.source || '', pieges.join(' ; '))
+      res.status(200).json({ ok: true, emailSent: false })
+      return
     }
 
     const headers = {
@@ -132,6 +194,11 @@ export default async function handler(req, res) {
         // Relayé même à false — un refus est une réponse, pas une absence.
         newsOptIn: body.newsOptIn === true,
         preferredSlots: body.preferredSlots,
+        // Pièges anti-robot (03/11/2026) : relayés seulement quand site-lead sait trier.
+        spamCertain: pieges.length ? pieges : undefined,
+        // La personne a vu l'avertissement « démarchage » et a envoyé quand même.
+        avertiDemarchage: body.avertiDemarchage === true ? true : undefined,
+        exercice,
         source: body.source || 'beta-waitlist',
         lang: body.lang || 'fr',
         page: body.page,
