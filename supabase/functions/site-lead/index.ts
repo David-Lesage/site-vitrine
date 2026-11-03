@@ -208,6 +208,35 @@ import {
 
 const SITE = 'https://lesagedavid.fr';
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
+// TRI EN DEUX ADRESSES (03/11/2026, validé par David) — la notification « une
+// demande est arrivée » part avec le nom d'expéditeur « Formulaire du site »
+// (adresse d'envoi inchangée : SMTP_FROM) vers une sous-adresse de la boîte
+// Google Workspace de David, que ses filtres Gmail peuvent ranger :
+//   vraie demande       → contact+site@…
+//   démarchage probable → contact+demarchage@…  (objet « [⚠️ Démarchage probable] »)
+//   robot certain       → aucun e-mail.
+// Surchargeables par les secrets FORM_NOTIFY_TO / FORM_NOTIFY_TO_DEMARCHAGE.
+const FORM_NOTIFY_TO = Deno.env.get('FORM_NOTIFY_TO') ?? 'contact+site@lesagedavid.fr';
+const FORM_NOTIFY_TO_DEMARCHAGE = Deno.env.get('FORM_NOTIFY_TO_DEMARCHAGE') ?? 'contact+demarchage@lesagedavid.fr';
+const FORM_SENDER_NAME = 'Formulaire du site';
+/** « Formulaire du site » <adresse de SMTP_FROM> — le nom change, jamais l'adresse autorisée. */
+function expediteurFormulaire(from: string): string {
+    const m = from.match(/<([^>]+)>/);
+    return `"${FORM_SENDER_NAME}" <${(m ? m[1] : from).trim()}>`;
+}
+function prefixeDemarchage(probable: unknown, objet: string): string {
+    return probable ? `[Site] [⚠️ Démarchage probable] ${objet.replace(/^\[Site\]\s*/, '')}` : objet;
+}
+const EXERCICE_LABELS: Record<string, string> = {
+    reussi: 'réussi ✓',
+    reussi_secours: 'réussi par la question de secours ✓',
+    echoue: '⚠️ raté',
+    expire: '⚠️ expiré',
+    deja_utilise: '⚠️ défi déjà utilisé',
+    inconnu: '⚠️ défi inconnu',
+    absent: '⚠️ pas fait (page ancienne ou robot)',
+    injoignable: 'non vérifié (base injoignable)',
+};
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
 // Sources qui correspondent à une DEMANDE DE RÉSERVATION (David doit répondre).
@@ -1288,6 +1317,8 @@ Deno.serve(async (req) => {
             ? body.spamCertain.map((r: unknown) => String(r ?? '').trim().slice(0, 120)).filter(Boolean).slice(0, 3)
             : [];
         const avertiDemarchage = body.avertiDemarchage === true;
+        // Résultat du « petit exercice » vérifié par le relais (03/11/2026).
+        const exercice = typeof body.exercice === 'string' && EXERCICE_LABELS[body.exercice] ? body.exercice : null;
         const rawPeople = Number(body.peopleCount);
         const peopleCount = Number.isFinite(rawPeople) && rawPeople > 0 ? Math.min(Math.round(rawPeople), 50) : null;
         const rawDate = String(body.eventDate ?? '').trim();
@@ -1547,6 +1578,11 @@ Deno.serve(async (req) => {
         if (leadId) {
             const { data: verdict } = await admin
                 .from('site_leads').select('spam_statut, spam_score, spam_raisons').eq('id', leadId).maybeSingle();
+            // Adresse ou domaine sur la liste de blocage (migration 0321) : la base a
+            // classé la demande « certain » → enregistrée, et rien d'autre.
+            if (verdict?.spam_statut === 'certain') {
+                return json({ ok: true, emailSent: false, booking: false, showcase: false });
+            }
             if (verdict?.spam_statut === 'probable') {
                 spamProbable = {
                     score: Number(verdict.spam_score ?? 0),
@@ -1771,18 +1807,19 @@ Deno.serve(async (req) => {
                 });
                 try {
                     await notifier.send({
-                        from,
-                        to: ADMIN_EMAIL,
+                        from: expediteurFormulaire(from),
+                        to: spamProbable ? FORM_NOTIFY_TO_DEMARCHAGE : FORM_NOTIFY_TO,
                         replyTo: email,
                         // Un fabricant passe devant : c'est la demande la plus rare et la
                         // plus stratégique. Son pays figure dans l'objet pour situer d'un
                         // coup d'œil (le catalogue se choisit d'abord sur la localisation).
-                        subject: mailSubject((
-                            (spamProbable ? '[⚠️ Démarchage probable] ' : '') +
+                        // Démarchage : « [Site] [⚠️ Démarchage probable] … » — le premier mot reste
+                        // ASCII, sinon mailSubject() replierait tout l'objet sans accents ni emoji.
+                        subject: mailSubject(prefixeDemarchage(spamProbable, (
                             (isBooking ? `[Site] ${sourceLabel(source, 'fr', purchaseMode)} — ${firstName} ${lastName}`
                             : isMaker ? `[Fabricant] ${firstName} ${lastName}${makerCountry ? ` — ${makerCountry}` : ''}`
                             : `[Bêta] Candidature — ${firstName} ${lastName}`)
-                        ).trim()),
+                        ).trim())),
                         mimeContent: [htmlPart(adminNotifyHtml({
                             // En TÊTE du tableau : pourquoi ce message ressemble à du démarchage.
                             '⚠️ Démarchage probable': spamProbable
@@ -1791,6 +1828,7 @@ Deno.serve(async (req) => {
                             'Avertissement vu': spamProbable && avertiDemarchage
                                 ? 'oui — la personne a été prévenue que le formulaire n’est pas fait pour ça, et a envoyé quand même'
                                 : null,
+                            'Petit exercice': exercice ? EXERCICE_LABELS[exercice] : null,
                             Motif: isBooking
                                 ? sourceLabel(source, 'fr', purchaseMode)
                                 : [
