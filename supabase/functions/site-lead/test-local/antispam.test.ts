@@ -17,12 +17,13 @@ const assert = (c: unknown, m: string) => { if (!c) throw new Error(m); };
 // deno-lint-ignore no-explicit-any
 const corps = (m: any) => (m.mimeContent as { content: string }[]).map((p) => new TextDecoder().decode(Uint8Array.from(atob(p.content.replace(/\s+/g, '')), (c) => c.charCodeAt(0)))).join('');
 
-Deno.test('vraie demande → accusé + notification vers contact+site, expéditeur « Formulaire du site »', async () => {
+Deno.test('vraie demande → accusé + notification vers contact+site, expéditeur « <visiteur> (via le site) » <formulaire@>', async () => {
   const r = await envoyer({ exercice: 'reussi' }, 'non');
   assert(r.status === 200, 'statut');
   const n = r.mails.find((m) => m.replyTo);
   assert(n && n.to === 'contact+site@lesagedavid.fr', 'destinataire ' + n?.to);
-  assert(n.from === '"Formulaire du site" <envoi@exemple.invalid>', 'expéditeur ' + n.from);
+  assert(n.from === '"Test Local (via le site)" <formulaire@lesagedavid.fr>', 'expéditeur ' + n.from);
+  assert(n.replyTo === 'visiteur@exemple.invalid', 'reply-to');
   assert(!String(n.subject).includes('Démarchage'), 'objet');
   assert(corps(n).includes('réussi ✓'), 'ligne exercice');
 });

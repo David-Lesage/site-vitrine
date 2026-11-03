@@ -209,20 +209,26 @@ import {
 const SITE = 'https://lesagedavid.fr';
 const ADMIN_EMAIL = 'contact@lesagedavid.fr';
 // TRI EN DEUX ADRESSES (03/11/2026, validé par David) — la notification « une
-// demande est arrivée » part avec le nom d'expéditeur « Formulaire du site »
-// (adresse d'envoi inchangée : SMTP_FROM) vers une sous-adresse de la boîte
-// Google Workspace de David, que ses filtres Gmail peuvent ranger :
+// demande est arrivée » part DE formulaire@lesagedavid.fr, avec pour nom affiché
+// celui du visiteur (« Hannah Melotto (via le site) »), Reply-To = le visiteur.
+// JAMAIS l'adresse du visiteur en From (usurpation : échec SPF/DMARC). L'envoi
+// passe par le SMTP Google Workspace de contact@ : si formulaire@ n'y est pas
+// déclaré comme alias « Envoyer en tant que », Gmail remet contact@ en From
+// (le nom affiché reste) — rien ne se perd. Vers une sous-adresse que les
+// filtres Gmail de David peuvent ranger :
 //   vraie demande       → contact+site@…
 //   démarchage probable → contact+demarchage@…  (objet « [⚠️ Démarchage probable] »)
 //   robot certain       → aucun e-mail.
 // Surchargeables par les secrets FORM_NOTIFY_TO / FORM_NOTIFY_TO_DEMARCHAGE.
 const FORM_NOTIFY_TO = Deno.env.get('FORM_NOTIFY_TO') ?? 'contact+site@lesagedavid.fr';
 const FORM_NOTIFY_TO_DEMARCHAGE = Deno.env.get('FORM_NOTIFY_TO_DEMARCHAGE') ?? 'contact+demarchage@lesagedavid.fr';
-const FORM_SENDER_NAME = 'Formulaire du site';
-/** « Formulaire du site » <adresse de SMTP_FROM> — le nom change, jamais l'adresse autorisée. */
-function expediteurFormulaire(from: string): string {
-    const m = from.match(/<([^>]+)>/);
-    return `"${FORM_SENDER_NAME}" <${(m ? m[1] : from).trim()}>`;
+const FORM_SENDER_ADDRESS = Deno.env.get('FORM_SENDER_ADDRESS') ?? 'formulaire@lesagedavid.fr';
+/** « Prénom Nom (via le site) » <formulaire@…>. Nom replié en ASCII : un en-tête
+ *  accentué déclencherait le bug d'en-tête de denomailer (cf. _shared/mail.ts). */
+function expediteurFormulaire(prenom: string, nom: string): string {
+    const affiche = `${prenom} ${nom}`.normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^A-Za-z0-9 .'-]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 60);
+    return `"${affiche ? `${affiche} (via le site)` : 'Formulaire du site'}" <${FORM_SENDER_ADDRESS}>`;
 }
 function prefixeDemarchage(probable: unknown, objet: string): string {
     return probable ? `[Site] [⚠️ Démarchage probable] ${objet.replace(/^\[Site\]\s*/, '')}` : objet;
@@ -1807,7 +1813,7 @@ Deno.serve(async (req) => {
                 });
                 try {
                     await notifier.send({
-                        from: expediteurFormulaire(from),
+                        from: expediteurFormulaire(firstName, lastName),
                         to: spamProbable ? FORM_NOTIFY_TO_DEMARCHAGE : FORM_NOTIFY_TO,
                         replyTo: email,
                         // Un fabricant passe devant : c'est la demande la plus rare et la
