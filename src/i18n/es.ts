@@ -2379,16 +2379,16 @@ export const es: Dict = {
   // ⚠️ L'URL du scope Google est citée LITTÉRALEMENT et ne doit jamais être traduite.
   "privacy": {
     "title": "Política de privacidad — David Lesage",
-    "description": "Política de privacidad del sitio de David Lesage y de la aplicación Handpan Constellation Studio: datos recogidos, reserva de clases, Google Calendar, plazos de conservación y derechos RGPD.",
+    "description": "Política de privacidad del sitio de David Lesage y de la aplicación Handpan Constellation Studio: datos recogidos, mapa de los jugadores, inicio de sesión con Google, reserva de clases, Google Calendar, plazos de conservación y derechos RGPD.",
     "h1": "Política de privacidad",
     "updatedLabel": "Última actualización",
-    "updated": "11 de septiembre de 2026",
-    "lead": "Esta página dice claramente qué hago con tus datos: qué recojo, por qué, con qué herramientas, cuánto tiempo los conservo y cómo recuperas el control cuando quieras. Cubre este sitio y la aplicación Handpan Constellation Studio. Sin jerga: si algo no queda claro, escríbeme — soy yo quien lee.",
+    "updated": "3 de noviembre de 2026",
+    "lead": "Esta página dice claramente qué hago con tus datos: qué recojo, por qué, con qué herramientas, cuánto tiempo los conservo y cómo recuperas el control cuando quieras. Cubre este sitio y la aplicación Handpan Constellation Studio, incluido el mapa de los jugadores. Sin jerga: si algo no queda claro, escríbeme — soy yo quien lee.",
     "sections": [
       {
         "h": "Quién es responsable de tus datos",
         "p": "David Lesage — músico, pedagogo e inventor, editor de este sitio y de la aplicación Handpan Constellation Studio. Sala de exposición: 29 rue des Orteaux, 75020 París, Francia. Correo: contact@lesagedavid.fr · Teléfono: +33 6 10 73 31 52. No hay ningún departamento de marketing detrás de todo esto: soy yo quien decide qué se recoge, quien lo lee y quien te responde.",
-        "items": []
+        "items": [] as string[]
       },
       {
         "h": "Qué cubre esta página",
@@ -2396,17 +2396,48 @@ export const es: Dict = {
         "items": [
           "El sitio lesagedavid.fr: lo que escribes en los formularios (reserva, contacto, lista de espera, pedido de un micrófono). El detalle formulario por formulario está en la página de Términos y condiciones generales, y sigue siendo válido.",
           "El formulario de contacto también pide tu número de teléfono: sirve únicamente para volver a contactarte. Se conserva el mismo tiempo que tu correo electrónico y se basa en la misma base legal (tu consentimiento).",
-          "La aplicación Handpan Constellation Studio: tu cuenta, tu suscripción y — si enseñas o eres alumno/a — la agenda de las clases."
+          "La aplicación Handpan Constellation Studio: tu cuenta, tu suscripción, tu lugar en el mapa de los jugadores y — si enseñas o eres alumno/a — la agenda de las clases."
         ]
       },
       {
         "h": "Qué recojo en la aplicación, y por qué",
-        "p": "Al crear tu cuenta: tu dirección de correo electrónico, tu apellido y tu nombre, y un número de teléfono si decides indicarlo — este último es opcional.",
+        "p": "Al crear tu cuenta: tu dirección de correo electrónico, tu apellido y tu nombre, y un número de teléfono si decides indicarlo — este último es opcional. Si creas tu cuenta a través de Google, es Google quien transmite esta información, junto con tu foto de perfil (ver más abajo).",
         "items": [
           "Crear y proteger tu cuenta, y darte acceso a la aplicación.",
           "Gestionar tu suscripción.",
           "Ponerme en contacto contigo respecto a tu cuenta.",
-          "Datos anonimizados, es decir, que no permiten remontarse hasta ti, pueden servir para comprender mejor las necesidades de quienes tocan el handpan y para mejorar la aplicación."
+          "Colocar tu estrella en el mapa de los jugadores (ver más abajo).",
+          "Solo síntesis globales — totales en los que ninguna cuenta es identificable — pueden servir para análisis de mercado, para comprender mejor las necesidades de quienes tocan el handpan y mejorar la aplicación."
+        ]
+      },
+      {
+        "h": "Si inicias sesión con Google: tu apellido, tu nombre y tu foto",
+        "p": "Si creas tu cuenta o inicias sesión con Google, Google transmite a la aplicación tu dirección de correo electrónico, tu apellido, tu nombre y la dirección de tu foto de perfil de Google. El correo pasa a ser el de tu cuenta; el apellido y el nombre la completan.",
+        "items": [
+          "La primera vez que abres la aplicación, si aún no tienes foto de perfil, tu foto de Google se descarga una sola vez, se recorta y se guarda como foto de perfil en el espacio de almacenamiento privado de la aplicación. No se publica: solo aparece en el mapa de los jugadores si marcas «Mostrar mi foto en mi ficha».",
+          "Una foto que hayas elegido nunca se sustituye. Puedes cambiar o eliminar la tuya en cualquier momento desde «Mi perfil», y una foto eliminada no se vuelve a importar.",
+          "En el espacio del profesor, mientras un alumno conectado con Google no tenga foto en la aplicación, su ficha puede mostrar su foto de Google, cargada desde los servidores de Google."
+        ]
+      },
+      {
+        "h": "El mapa de los jugadores (la constelación)",
+        "p": "La aplicación muestra un mapa de la constelación de los jugadores. Solo lo ven las personas conectadas a una cuenta. Hay dos niveles: tu estrella por defecto y tu ficha detallada, que solo publicas si quieres.",
+        "items": [
+          "Tu estrella por defecto. Tal como prevén las condiciones de uso de la aplicación (§ 6 bis), las demás personas conectadas ven tu nombre, la inicial de tu apellido (o tu apellido completo si lo eliges en «Mi perfil público», y puedes volver a la inicial en cualquier momento) y tu país; la estrella se coloca en el centro del país. Nunca muestra tu dirección, tu ciudad ni tu correo. El país procede de tu perfil o de la pregunta formulada a la llegada; sin país conocido, no se te coloca en el mapa. Tu cuenta también cuenta como una en el contador anónimo «Músicos» de tu país (un país con menos de 3 personas no se nombra en él).",
+          "Tu ficha detallada, si la publicas. Es opcional y solo muestra lo que tú mismo escribes o marcas: tus roles (jugador, profesor, fabricante, acumulables), un correo de contacto solo si marcas la casilla prevista — nunca se copia de tu cuenta sin tu clic —, y tu lugar con la precisión que elijas: el país, la ciudad, una zona que describes (su punto se redondea a unos 11 km) o una dirección precisa y su punto exacto, tras una advertencia.",
+          "Una dirección publicada es visible para todas las personas conectadas, que pueden anotarla o copiarla: evita tu domicilio, prefiere una zona o la dirección de un lugar donde das clase.",
+          "Tu foto de perfil, solo si marcas «Mostrar mi foto en mi ficha» — la casilla no está marcada al principio. Tu foto pasa entonces a ser legible por las personas conectadas, en tu ficha y en tu punto del mapa. Mostrarla da a conocer a las personas conectadas el identificador técnico de tu cuenta, que no da acceso a ninguno de tus datos.",
+          "Recuperas el control cuando quieras, desde tu ficha: cada una de estas opciones se retira en cualquier momento. La retirada del correo y de la posición es inmediata. Desmarcar la casilla de la foto, desactivar tu ficha o eliminar tu foto cierra el acceso a tu foto; un enlace ya abierto caduca como máximo al cabo de una hora.",
+          "Puedo retirar una estrella (moderación), en particular a petición escrita a contact@lesagedavid.fr."
+        ]
+      },
+      {
+        "h": "El mapa y la búsqueda de direcciones: quién ve qué",
+        "p": "Dos servicios externos intervienen cuando usas el mapa, y lo que reciben es limitado.",
+        "items": [
+          "El fondo del mapa: cuando se abre un mapa, tu navegador lo pide a OpenFreeMap (Hyperknot Software Kft., Hungría), que pasa por la red de distribución Cloudflare. Recibe tu dirección IP y la zona mostrada, sin cuenta ni cookie; tu dirección escrita y tu punto no se le envían. Según su política de privacidad, sus registros de acceso no contienen direcciones IP, sus registros de errores pueden contener la dirección IP y la URL solicitada, y estos registros se borran al cabo de 7 días (30 días como máximo en caso de incidente de seguridad).",
+          "La búsqueda de direcciones: cuando haces clic en «Encontrar en el mapa», y solo entonces, el texto de la dirección introducida se envía a la Géoplateforme del IGN (Instituto nacional de la información geográfica y forestal, Francia) para una dirección en Francia, o a Photon, servicio de komoot (Alemania), en el resto del mundo — con, para Photon, el idioma de la pantalla, y tu dirección IP, como en cualquier petición. Eliges entre las propuestas, y el marcador sigue pudiendo desplazarse.",
+          "Ni tu nombre, ni tu correo, ni la posición de tu dispositivo se les transmiten: la geolocalización del navegador nunca se utiliza. Un punto solo existe si lo colocas tú mismo."
         ]
       },
       {
@@ -2430,11 +2461,14 @@ export const es: Dict = {
       },
       {
         "h": "La medición de uso en la aplicación",
-        "p": "La aplicación la desarrolla una sola persona — yo. Para saber dónde poner mi energía, mido cómo se utiliza: el tiempo dedicado a cada parte de la aplicación y las acciones de interfaz, con marca de tiempo y en su orden. Soy el único destinatario de estas mediciones.",
+        "p": "La aplicación la desarrolla una sola persona — yo. Para que funcione bien, para medir la carga de los servidores, garantizar su estabilidad y saber dónde poner mi energía, mido cómo se utiliza: el tiempo dedicado a cada parte de la aplicación, las acciones de interfaz, con marca de tiempo y en su orden, las conexiones y el dominio de acceso. Si una herramienta se usa mucho, es en ella en la que me concentro para mejorarla. Estas mediciones son accesibles para los administradores de la aplicación.",
         "items": [
-          "Lo que nunca se recoge: tu contenido musical (ni tus escalas, ni tus piezas, ni lo que tocas), el texto que escribes, tus pulsaciones de teclado, los movimientos de tu ratón. Ningún rastreador publicitario, ninguna herramienta de análisis de terceros: nada se envía a Google, Meta ni a nadie más.",
-          "Estas mediciones se conservan mientras tu cuenta esté activa y se eliminan automáticamente con ella.",
-          "Puedes rechazar esta medición en cualquier momento desde la aplicación, sin tener que justificarte: el rechazo es inmediato y borra las mediciones ya registradas sobre ti.",
+          "Lo que nunca se recoge: tu contenido musical (ni tus escalas, ni tus piezas, ni lo que tocas), el texto que escribes, tus pulsaciones de teclado, los movimientos de tu ratón. Ningún rastreador publicitario, ninguna herramienta de análisis de terceros: nada se envía a Google, Meta ni a ninguna agencia publicitaria.",
+          "Dos usos concretos: el correo de fin de prueba se personaliza a partir de tu uso; y cuando señalas un problema, tu comentario y el hilo de tus acciones pueden ser analizados por Claude, el asistente de Anthropic, para preparar el diagnóstico.",
+          "Estas mediciones se conservan 24 meses y después se borran automáticamente. También se eliminan con tu cuenta.",
+          "Puedes rechazar esta medición en cualquier momento desde la aplicación, sin tener que justificarte: el rechazo es inmediato y borra las mediciones ya registradas sobre ti. Solo queda el registro de errores, sin vínculo con tu cuenta.",
+          "El registro de errores: cuando la aplicación falla, el error se registra para corregirlo (mensaje depurado, pantalla, versión, navegador), incluso para los visitantes sin cuenta. Una huella unidireccional de la cuenta, un dato seudónimo, permite contar las cuentas afectadas; no se crea si has rechazado la medición.",
+          "El seguimiento de los correos: la apertura y los clics se miden para tu dirección, mediante una imagen invisible y enlaces rastreados, en las campañas y en algunos correos automáticos, incluso sin cuenta. Forma parte de las condiciones de uso de la aplicación. Puedes darte de baja de los correos que no son indispensables; no existe un ajuste separado para desactivar esta medición.",
           "El texto completo, que es el que prevalece, es el que se muestra en la aplicación, accesible en todo momento desde «Mi cuenta» → «Privacidad y condiciones»."
         ]
       },
@@ -2443,8 +2477,11 @@ export const es: Dict = {
         "p": "Según de qué se trate, y conviene decirlo con precisión.",
         "items": [
           "Tu consentimiento, para los formularios del sitio y para recibir mis novedades: dos casillas distintas, de las cuales solo una es obligatoria, y puedes retirar cualquiera de ellas en cualquier momento.",
+          "Las condiciones de uso de la aplicación, de las que forma parte la medición de la apertura y de los clics de los correos.",
           "La ejecución del servicio, para tu cuenta, tu suscripción y la organización de las clases: sin esta información, la aplicación simplemente no puede hacer lo que le pides.",
-          "Mi interés legítimo en mejorar la aplicación, para la medición de uso — acompañado de un derecho de oposición íntegro, ejercitable con un solo gesto dentro de la aplicación."
+          "La ejecución de las condiciones de uso que has aceptado, para tu estrella por defecto en el mapa de los jugadores (nombre, inicial del apellido, país).",
+          "Tu consentimiento, para tu ficha detallada en el mapa y para mostrar tu foto: nada aparece en ella sin tu clic, y lo retiras en cualquier momento desde tu ficha.",
+          "Mi interés legítimo en hacer funcionar y mejorar la aplicación, para la medición de uso, que forma parte de las condiciones de uso — acompañado de un derecho de oposición íntegro, ejercitable con un solo gesto dentro de la aplicación."
         ]
       },
       {
@@ -2452,7 +2489,10 @@ export const es: Dict = {
         "p": "Mientras sea útil, no más.",
         "items": [
           "Los datos de tu cuenta y la agenda de las clases: mientras tu cuenta esté activa. Puedes pedir su supresión en cualquier momento.",
-          "Las mediciones de uso: mientras tu cuenta esté activa, y borradas de inmediato si te opones a la medición.",
+          "Tu lugar en el mapa de los jugadores, tu ficha y tu foto de perfil: mientras exista tu cuenta. Cada elemento de tu ficha se retira en cualquier momento; la retirada del correo y de la posición es inmediata, y el acceso a tu foto se cierra como máximo una hora después.",
+          "Las mediciones de uso: 24 meses, eliminadas con tu cuenta, y borradas de inmediato si te opones a la medición.",
+          "El registro de errores: 90 días después de la última aparición para un error resuelto, 180 días en caso contrario; la huella de la cuenta, 12 meses como máximo después de la última aparición.",
+          "El seguimiento de los correos (clics, aperturas, envíos, errores de envío): 24 meses, y se borra al eliminar tu cuenta.",
           "Lo que me escribes desde los formularios del sitio: tres años después de nuestro último intercambio, y el contador vuelve a cero con cada nuevo intercambio."
         ]
       },
@@ -2463,13 +2503,17 @@ export const es: Dict = {
           "Supabase — la base de datos donde se registran las cuentas, la agenda de las clases y las respuestas de los formularios, así como el espacio de almacenamiento de los archivos enviados. El proyecto está alojado en Irlanda, en la Unión Europea.",
           "Vercel — el alojamiento de este sitio. Las pequeñas funciones de servidor que retransmiten los formularios se ejecutan en Estados Unidos.",
           "Stripe — el pago de la suscripción a la aplicación. El sitio, por su parte, solo lee allí las tarifas mostradas: no se le envía ningún dato personal desde este sitio.",
-          "Google — el buzón contact@lesagedavid.fr está alojado en Google, y es ahí donde te respondo. El sitio también carga sus tipografías y las miniaturas de los vídeos desde servidores de Google: ninguna de tus respuestas se les transmite, pero la dirección IP de tu navegador sí. Y Google Calendar interviene únicamente si un profesor ha decidido vincularlo, tal como se describe más arriba."
+          "Google — el buzón contact@lesagedavid.fr está alojado en Google, y es ahí donde te respondo. El sitio también carga sus tipografías y las miniaturas de los vídeos desde servidores de Google: ninguna de tus respuestas se les transmite, pero la dirección IP de tu navegador sí. Y Google Calendar interviene únicamente si un profesor ha decidido vincularlo, tal como se describe más arriba. Si eliges iniciar sesión con Google, Google transmite a la aplicación tu correo, tu apellido, tu nombre y la dirección de tu foto de perfil. Las grabaciones de audio de las clases y los memos pueden conservarse en un espacio de almacenamiento privado en Google (Google Drive), no público.",
+          "Anthropic — su asistente Claude puede analizar un comentario que me envíes desde la aplicación, con el hilo de tus acciones, para preparar el diagnóstico. Empresa estadounidense.",
+          "DeepL (empresa alemana) y, como relevo, Google Translate — traducen, a petición de un administrador, el texto de un comentario que me envíes y el texto de los correos que te escribo en tu idioma, incluido un pasaje que te es personal.",
+          "OpenFreeMap (Hyperknot Software Kft., Hungría), a través de la red Cloudflare — el fondo del mapa de los jugadores. La Géoplateforme del IGN (Francia) y Photon, servicio de komoot (Alemania) — la búsqueda de direcciones, solo cuando haces clic. Lo que reciben se detalla más arriba.",
+          "Supabase Inc., Vercel Inc., Google LLC, Anthropic PBC y Cloudflare Inc. son empresas estadounidenses: algunos datos pueden, por tanto, tratarse fuera de la Unión Europea. Estas transferencias están enmarcadas por las garantías previstas por el RGPD, establecidas por estos proveedores."
         ]
       },
       {
         "h": "Cookies y medición de audiencia en este sitio",
-        "p": "Este sitio no deposita ninguna cookie. No utiliza ninguna herramienta de medición de audiencia, ningún píxel publicitario, ningún rastreador — por eso no hay ningún banner que aceptar al llegar. Lo único que tu navegador recuerda localmente es el idioma que has elegido: nunca sale de tu dispositivo. No hay que confundirlo con la medición de uso de la aplicación, descrita más arriba, que es otra cosa y que se rechaza con un clic.",
-        "items": []
+        "p": "Este sitio no deposita ninguna cookie. No utiliza ninguna herramienta de medición de audiencia, ningún píxel publicitario, ningún rastreador — por eso no hay ningún banner que aceptar al llegar. Lo único que tu navegador recuerda localmente es el idioma que has elegido: nunca sale de tu dispositivo. No hay que confundirlo con la medición de uso de la aplicación, descrita más arriba, que es otra cosa y que se rechaza con un clic. Los correos son otra cosa: su apertura y los clics en sus enlaces se miden, mediante una imagen invisible y enlaces rastreados. Forma parte de las condiciones de uso de la aplicación, y se explica en su política.",
+        "items": [] as string[]
       },
       {
         "h": "Tus derechos, y cómo ejercerlos",
@@ -2487,14 +2531,14 @@ export const es: Dict = {
       },
       {
         "h": "Seguridad",
-        "p": "El sitio y la aplicación se sirven en HTTPS de extremo a extremo. A la base de datos solo se accede con credenciales dedicadas, y sus reglas de acceso se aplican en la propia base — eso es lo que garantiza que una clase solo pueda ser leída por el profesor y el alumno correspondientes. El token que autoriza el acceso a Google Calendar se guarda en una tabla estrictamente inaccesible desde un navegador y nunca se devuelve al cliente. En este sitio no se introduce ni se conserva ningún dato bancario: los pagos pasan por Stripe.",
-        "items": []
+        "p": "El sitio y la aplicación se sirven en HTTPS de extremo a extremo. A la base de datos solo se accede con credenciales dedicadas, y sus reglas de acceso se aplican en la propia base — eso es lo que garantiza que una clase solo pueda ser leída por el profesor y el alumno correspondientes. El token que autoriza el acceso a Google Calendar se guarda en una tabla estrictamente inaccesible desde un navegador y nunca se devuelve al cliente. Tu foto de perfil se guarda en un espacio de almacenamiento privado: solo pasa a ser legible por las personas conectadas si has marcado «Mostrar mi foto en mi ficha». En este sitio no se introduce ni se conserva ningún dato bancario: los pagos pasan por Stripe.",
+        "items": [] as string[]
       },
       {
         "h": "Si esta página cambia",
         "p": "Lleva arriba una fecha de última actualización. Cuando el texto cambia, esa fecha cambia con él. Para la aplicación, un número de versión acompaña al documento mostrado antes de entrar: es lo que permite saber exactamente qué texto tenías delante el día en que lo aceptaste.",
-        "items": []
-      }
+        "items": [] as string[]
+      },
     ],
     "contactTitle": "¿Alguna pregunta sobre esta página?",
     "contactText": "Escríbeme a contact@lesagedavid.fr. Respondo personalmente, y prefiero con mucho una pregunta hecha demasiado pronto a una duda guardada para uno mismo.",

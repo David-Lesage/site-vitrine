@@ -3337,11 +3337,11 @@ const fr = {
   privacy: {
     title: 'Politique de confidentialité — David Lesage',
     description:
-      'Politique de confidentialité du site David Lesage et de l’application Handpan Constellation Studio : données collectées, prise de rendez-vous, Google Agenda, durées de conservation et droits RGPD.',
+      'Politique de confidentialité du site David Lesage et de l’application Handpan Constellation Studio : données collectées, carte des joueurs, connexion avec Google, prise de rendez-vous, Google Agenda, durées de conservation et droits RGPD.',
     h1: 'Politique de confidentialité',
     updatedLabel: 'Dernière mise à jour',
-    updated: '1er novembre 2026',
-    lead: 'Cette page dit en clair ce que je fais de tes données : ce que je collecte, pourquoi, avec quels outils, combien de temps je le garde, et comment tu reprends la main quand tu veux. Elle couvre ce site et l’application Handpan Constellation Studio. Pas de jargon : si quelque chose n’est pas clair, écris-moi — c’est moi qui lis.',
+    updated: '3 novembre 2026',
+    lead: 'Cette page dit en clair ce que je fais de tes données : ce que je collecte, pourquoi, avec quels outils, combien de temps je le garde, et comment tu reprends la main quand tu veux. Elle couvre ce site et l’application Handpan Constellation Studio, y compris la carte des joueurs. Pas de jargon : si quelque chose n’est pas clair, écris-moi — c’est moi qui lis.',
     sections: [
       {
         h: 'Qui est responsable de tes données',
@@ -3355,17 +3355,65 @@ const fr = {
           'Le site lesagedavid.fr : ce que tu écris dans les formulaires (réservation, contact, liste d’attente, commande d’un micro). Le détail formulaire par formulaire est sur la page Conditions générales, et il reste vrai.',
           // Ajout 11/09/2026 : le formulaire de contact demande désormais un téléphone (obligatoire).
           'Le formulaire de contact demande aussi ton numéro de téléphone : il sert uniquement à te recontacter. Il est conservé aussi longtemps que ton email et repose sur la même base légale (ton consentement).',
-          'L’application Handpan Constellation Studio : ton compte, ton abonnement, et — si tu enseignes ou si tu es élève — l’agenda des cours.',
+          'L’application Handpan Constellation Studio : ton compte, ton abonnement, ta place sur la carte des joueurs, et — si tu enseignes ou si tu es élève — l’agenda des cours.',
         ],
       },
       {
         h: 'Ce que je collecte dans l’application, et pourquoi',
-        p: 'À la création de ton compte : ton adresse email, ton nom et ton prénom, ainsi qu’un numéro de téléphone si tu choisis de le renseigner — ce dernier est facultatif.',
+        p: 'À la création de ton compte : ton adresse email, ton nom et ton prénom, ainsi qu’un numéro de téléphone si tu choisis de le renseigner — ce dernier est facultatif. Si tu passes par Google pour créer ton compte, c’est Google qui transmet ces informations, avec ta photo de profil (voir plus bas).',
         items: [
           'Créer et sécuriser ton compte, et te donner accès à l’application.',
           'Gérer ton abonnement.',
           'Te contacter au sujet de ton compte.',
-          'Des données anonymisées, c’est-à-dire qui ne permettent pas de remonter jusqu’à toi, peuvent servir à mieux comprendre les besoins des joueuses et joueurs de handpan et à améliorer l’application.',
+          'Placer ton étoile sur la carte des joueurs (voir plus bas).',
+          // Corrigé le 03/11/2026 : « anonymisées » était faux, l'app l'a corrigé dès la v6
+          // (PRIVACY_FR § 3 et § 7 : seules des synthèses globales, sans compte identifiable).
+          'Seules des synthèses globales — des totaux, dans lesquels aucun compte n’est identifiable — peuvent servir à des analyses de marché, pour mieux comprendre les besoins des joueuses et joueurs de handpan et améliorer l’application.',
+        ],
+      },
+      {
+        // ── AJOUT 03/11/2026 — aligné sur PRIVACY_FR § 2 « Connexion avec Google »
+        // (auth/legal-text.ts, révision 2026-11-03, journal n° 998). Code vérifié :
+        // auth/photo-google.ts (avatar_url / picture, copie UNE fois dans le bucket privé
+        // `avatars` seulement si aucune photo n'est posée) et auth/gate.ts (rangerNomGoogle,
+        // rangerPhotoGoogle à l'ouverture).
+        h: 'Si tu te connectes avec Google : ton nom, ton prénom et ta photo',
+        p: 'Si tu crées ton compte ou si tu te connectes avec Google, Google transmet à l’application ton adresse email, ton nom, ton prénom et l’adresse de ta photo de profil Google. L’email devient celui de ton compte ; le nom et le prénom le remplissent.',
+        items: [
+          'À la première ouverture de l’application, si tu n’as pas encore de photo de profil, ta photo Google est téléchargée une seule fois, recadrée et enregistrée comme photo de profil dans l’espace de stockage privé de l’application. Elle n’est pas publiée : elle n’apparaît sur la carte des joueurs que si tu coches « Montrer ma photo sur ma fiche ».',
+          'Une photo que tu as choisie n’est jamais remplacée. Tu peux changer ou supprimer la tienne à tout moment depuis « Mon profil », et une photo supprimée n’est pas réimportée.',
+          'Dans l’espace prof, tant qu’un élève connecté avec Google n’a pas de photo dans l’application, sa fiche peut afficher sa photo Google, chargée depuis les serveurs de Google.',
+        ],
+      },
+      {
+        // ── AJOUT 03/11/2026 — aligné sur CGU § 6 bis et PRIVACY_FR § 2 « La carte des
+        // joueurs » / « Votre fiche détaillée ». Code : community/completer-fiche.ts
+        // (case photo non cochée par défaut), migration 0317_photo_sur_la_fiche.sql
+        // (false par défaut). Base de l'étoile par défaut = exécution des CGU (c'est ce
+        // que dit l'app), base de la fiche et de la photo = consentement.
+        h: 'La carte des joueurs (la constellation)',
+        p: 'L’application montre une carte de la constellation des joueurs. Elle n’est visible que des personnes connectées à un compte. Il y a deux niveaux : ton étoile par défaut, et ta fiche détaillée, que tu publies seulement si tu le veux.',
+        items: [
+          'Ton étoile par défaut. Comme le prévoient les conditions d’utilisation de l’application (§ 6 bis), les autres personnes connectées voient ton prénom, l’initiale de ton nom (ou ton nom en entier si tu le choisis dans « Mon profil public », et tu peux revenir à l’initiale à tout moment) et ton pays ; l’étoile est posée au centre du pays. Elle ne montre jamais ton adresse, ta ville ni ton email. Le pays vient de ton profil ou de la question posée à l’accueil ; sans pays connu, tu n’es pas placé sur la carte. Ton compte compte aussi pour un dans le compteur anonyme « Musiciens » de ton pays (un pays de moins de 3 personnes n’y est pas nommé).',
+          'Ta fiche détaillée, si tu la publies. Elle est facultative et ne montre que ce que tu y écris ou coches toi-même : tes rôles (joueur, enseignant, fabricant, cumulables), un email de contact seulement si tu coches la case prévue — il n’est jamais recopié de ton compte sans ton clic —, et ton lieu à la précision que tu choisis : le pays, la ville, une zone que tu décris (son point est arrondi à environ 11 km), ou une adresse précise et son point exact, après un avertissement.',
+          'Une adresse publiée est visible de toutes les personnes connectées, qui peuvent la noter ou la recopier : évite ton domicile, préfère une zone ou l’adresse d’un lieu de cours.',
+          'Ta photo de profil, seulement si tu coches « Montrer ma photo sur ma fiche » — la case n’est pas cochée au départ. Ta photo devient alors lisible par les personnes connectées, sur ta fiche et sur ton point de la carte. L’afficher fait connaître aux personnes connectées l’identifiant technique de ton compte, qui ne donne accès à aucune de tes données.',
+          'Tu reprends la main quand tu veux, depuis ta fiche : chacun de ces choix se retire à tout moment. Le retrait de l’email et de la position est immédiat. Décocher la case de la photo, éteindre ta fiche ou supprimer ta photo referme l’accès à ta photo ; un lien déjà ouvert expire au plus tard au bout d’une heure.',
+          'Je peux retirer une étoile (modération), notamment sur demande écrite à contact@lesagedavid.fr.',
+        ],
+      },
+      {
+        // ── AJOUT 03/11/2026 — PRIVACY_FR § 2 « La carte et la recherche d'adresse ».
+        // Code vérifié : community/geocodage.ts → https://data.geopf.fr/geocodage/search
+        // (q, limit) pour la France, https://photon.komoot.io/api/ (q, limit, lang si
+        // fr/en/de) ailleurs, fetch credentials:'omit'. navigator.geolocation n'est
+        // appelé nulle part (community/carte-gl.ts, player-profile.ts).
+        h: 'La carte et la recherche d’adresse : qui voit passer quoi',
+        p: 'Deux services extérieurs interviennent quand tu utilises la carte, et ce qu’ils reçoivent est limité.',
+        items: [
+          'Le fond de carte : quand une carte s’ouvre, ton navigateur le demande à OpenFreeMap (Hyperknot Software Kft., Hongrie), qui passe par le réseau de diffusion Cloudflare. Il reçoit ton adresse IP et la zone affichée, sans compte ni cookie ; ton adresse écrite et ton point ne lui sont pas envoyés. Selon sa politique de confidentialité, ses journaux d’accès ne contiennent pas d’adresse IP, ses journaux d’erreur peuvent contenir l’adresse IP et l’adresse demandée, et ces journaux sont effacés au bout de 7 jours (30 jours au plus en cas d’incident de sécurité).',
+          'La recherche d’adresse : quand tu cliques sur « Trouver sur la carte », et seulement alors, le texte de l’adresse saisie est envoyé à la Géoplateforme de l’IGN (Institut national de l’information géographique et forestière, France) pour une adresse en France, ou à Photon, service de komoot (Allemagne), ailleurs — avec, pour Photon, la langue de l’écran, et ton adresse IP, comme pour toute requête. Tu choisis parmi les propositions, et le repère reste déplaçable.',
+          'Ni ton nom, ni ton email, ni la position de ton appareil ne leur sont transmis : la géolocalisation du navigateur n’est jamais appelée. Un point n’existe que si tu le poses toi-même.',
         ],
       },
       {
@@ -3421,6 +3469,8 @@ const fr = {
           'Ton consentement, pour les formulaires du site et pour recevoir mes nouveautés : deux cases distinctes, dont une seule est obligatoire, et tu peux retirer l’un comme l’autre à tout moment.',
           'Les conditions d’utilisation de l’application, dont fait partie la mesure de l’ouverture et des clics des e-mails.',
           'L’exécution du service, pour ton compte, ton abonnement et l’organisation des cours : sans ces informations, l’application ne peut simplement pas faire ce que tu lui demandes.',
+          'L’exécution des conditions d’utilisation que tu as acceptées, pour ton étoile par défaut sur la carte des joueurs (prénom, initiale du nom, pays).',
+          'Ton consentement, pour ta fiche détaillée sur la carte et pour l’affichage de ta photo : rien n’y apparaît sans ton clic, et tu le retires à tout moment depuis ta fiche.',
           'Mon intérêt légitime à faire fonctionner et à améliorer l’application, pour la mesure d’usage, qui fait partie des conditions d’utilisation — assorti d’un droit d’opposition entier, exerçable en un geste dans l’application.',
         ],
       },
@@ -3429,6 +3479,7 @@ const fr = {
         p: 'Aussi longtemps que c’est utile, pas plus.',
         items: [
           'Les données de ton compte et l’agenda des cours : tant que ton compte est actif. Tu peux demander sa suppression à tout moment.',
+          'Ta place sur la carte des joueurs, ta fiche et ta photo de profil : tant que ton compte existe. Chaque élément de ta fiche se retire à tout moment ; le retrait de l’email et de la position est immédiat, et l’accès à ta photo se referme au plus tard une heure après.',
           'Les mesures d’usage : 24 mois, supprimées avec ton compte, et effacées immédiatement si tu t’opposes à la mesure.',
           'Le journal d’erreurs : 90 jours après la dernière apparition pour une erreur traitée, 180 jours sinon ; l’empreinte du compte, 12 mois au plus après la dernière occurrence.',
           'Le suivi des e-mails (clics, ouvertures, envois, erreurs d’envoi) : 24 mois, et effacé à la suppression de ton compte.',
@@ -3442,9 +3493,11 @@ const fr = {
           'Supabase — la base de données où sont enregistrés les comptes, l’agenda des cours et les réponses aux formulaires, ainsi que l’espace de stockage des fichiers déposés. Le projet est hébergé en Irlande, dans l’Union européenne.',
           'Vercel — l’hébergeur de ce site. Les petites fonctions serveur qui relaient les formulaires s’exécutent aux États-Unis.',
           'Stripe — le paiement de l’abonnement à l’application. Le site, lui, y lit seulement les tarifs affichés : aucune donnée personnelle ne lui est envoyée depuis ce site.',
-          'Google — la messagerie contact@lesagedavid.fr est hébergée chez Google, et c’est là que je te réponds. Le site charge aussi ses polices d’écriture et les vignettes des vidéos depuis les serveurs de Google : aucune de tes réponses ne leur est transmise, mais l’adresse IP de ton navigateur, oui. Et Google Agenda intervient uniquement si un professeur a choisi de le relier, comme décrit plus haut.',
+          'Google — la messagerie contact@lesagedavid.fr est hébergée chez Google, et c’est là que je te réponds. Le site charge aussi ses polices d’écriture et les vignettes des vidéos depuis les serveurs de Google : aucune de tes réponses ne leur est transmise, mais l’adresse IP de ton navigateur, oui. Et Google Agenda intervient uniquement si un professeur a choisi de le relier, comme décrit plus haut. Si tu choisis la connexion avec Google, Google transmet à l’application ton email, ton nom, ton prénom et l’adresse de ta photo de profil. Les enregistrements audio des cours et les mémos peuvent être conservés dans un espace de stockage privé chez Google (Google Drive), non public.',
           'Anthropic — son assistant Claude peut analyser un retour que tu m’envoies depuis l’application, avec le fil de tes actions, pour préparer le diagnostic. Société américaine.',
           'DeepL (société allemande) et, en relais, Google Translate — ils traduisent, à la demande d’un administrateur, le texte d’un retour que tu m’envoies, et le texte des e-mails que je t’écris dans ta langue, y compris un passage qui t’est personnel.',
+          'OpenFreeMap (Hyperknot Software Kft., Hongrie), via le réseau Cloudflare — le fond de la carte des joueurs. La Géoplateforme de l’IGN (France) et Photon, service de komoot (Allemagne) — la recherche d’adresse, seulement sur ton clic. Ce qu’ils reçoivent est détaillé plus haut.',
+          'Supabase Inc., Vercel Inc., Google LLC, Anthropic PBC et Cloudflare Inc. sont des sociétés américaines : certaines données peuvent donc être traitées hors de l’Union européenne. Ces transferts sont encadrés par les garanties prévues par le RGPD, mises en place par ces prestataires.',
         ],
       },
       {
@@ -3468,7 +3521,7 @@ const fr = {
       },
       {
         h: 'Sécurité',
-        p: 'Le site et l’application sont servis en HTTPS de bout en bout. La base de données n’est accessible qu’avec des identifiants dédiés, et ses règles d’accès sont posées au niveau de la base elle-même — c’est ce qui garantit qu’une séance de cours n’est lisible que par le professeur et l’élève concernés. Le jeton qui autorise l’accès à Google Agenda est conservé dans une table strictement inaccessible depuis un navigateur, et il n’est jamais renvoyé au client. Aucune donnée bancaire n’est saisie ni conservée sur ce site : les paiements passent par Stripe.',
+        p: 'Le site et l’application sont servis en HTTPS de bout en bout. La base de données n’est accessible qu’avec des identifiants dédiés, et ses règles d’accès sont posées au niveau de la base elle-même — c’est ce qui garantit qu’une séance de cours n’est lisible que par le professeur et l’élève concernés. Le jeton qui autorise l’accès à Google Agenda est conservé dans une table strictement inaccessible depuis un navigateur, et il n’est jamais renvoyé au client. Ta photo de profil est rangée dans un espace de stockage privé : elle ne devient lisible par les personnes connectées que si tu as coché « Montrer ma photo sur ma fiche ». Aucune donnée bancaire n’est saisie ni conservée sur ce site : les paiements passent par Stripe.',
         items: [] as string[],
       },
       {

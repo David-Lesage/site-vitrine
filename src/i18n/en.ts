@@ -2654,121 +2654,165 @@ export const en: Dict = {
   privacy: {
     title: 'Privacy Policy — David Lesage',
     description:
-      'Privacy policy for the David Lesage site and the Handpan Constellation Studio app: what is collected, lesson bookings, Google Calendar, retention periods and GDPR rights.',
+      "Privacy policy for the David Lesage site and the Handpan Constellation Studio app: what is collected, the players’ map, signing in with Google, lesson bookings, Google Calendar, retention periods and GDPR rights.",
     h1: 'Privacy Policy',
     updatedLabel: 'Last updated',
-    updated: '11 September 2026',
-    lead: 'This page says plainly what I do with your data: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. It covers this site and the Handpan Constellation Studio application. No jargon: if something isn’t clear, write to me — I’m the one who reads.',
+    updated: "3 November 2026",
+    lead: "This page says plainly what I do with your data: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. It covers this site and the Handpan Constellation Studio application, including the players’ map. No jargon: if something isn’t clear, write to me — I’m the one who reads.",
     sections: [
       {
-        h: 'Who is responsible for your data',
-        p: 'David Lesage — musician, teacher and inventor, publisher of this site and of the Handpan Constellation Studio application. Showroom: 29 rue des Orteaux, 75020 Paris, France. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52. There is no marketing department behind any of this: I decide what is collected, I read it, and I answer you.',
-        items: [] as string[],
+        "h": "Who is responsible for your data",
+        "p": "David Lesage — musician, teacher and inventor, publisher of this site and of the Handpan Constellation Studio application. Showroom: 29 rue des Orteaux, 75020 Paris, France. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52. There is no marketing department behind any of this: I decide what is collected, I read it, and I answer you.",
+        "items": [] as string[]
       },
       {
-        h: 'What this page covers',
-        p: 'Two places, two different uses, and they are worth telling apart.',
-        items: [
-          'The lesagedavid.fr site: what you write in the forms (booking, contact, waiting list, microphone order). The form-by-form detail is on the Terms & conditions page, and it still holds.',
-          'The contact form also asks for your phone number: it is used only to get back to you. It is kept as long as your email and rests on the same legal basis (your consent).',
-          'The Handpan Constellation Studio application: your account, your subscription, and — if you teach or are a student — the lesson calendar.',
-        ],
+        "h": "What this page covers",
+        "p": "Two places, two different uses, and they are worth telling apart.",
+        "items": [
+          "The lesagedavid.fr site: what you write in the forms (booking, contact, waiting list, microphone order). The form-by-form detail is on the Terms & conditions page, and it still holds.",
+          "The contact form also asks for your phone number: it is used only to get back to you. It is kept as long as your email and rests on the same legal basis (your consent).",
+          "The Handpan Constellation Studio application: your account, your subscription, your place on the players’ map, and — if you teach or are a student — the lesson calendar."
+        ]
       },
       {
-        h: 'What I collect in the application, and why',
-        p: 'When you create your account: your email address, your last name and your first name, plus a phone number if you choose to provide one — that last one is optional.',
-        items: [
-          'Create and secure your account, and give you access to the application.',
-          'Manage your subscription.',
-          'Contact you about your account.',
-          'Anonymised data — data that cannot be traced back to you — may also be used to better understand the needs of handpan players and to improve the application.',
-        ],
+        "h": "What I collect in the application, and why",
+        "p": "When you create your account: your email address, your last name and your first name, plus a phone number if you choose to provide one — that last one is optional. If you create your account through Google, it is Google that passes this information on, together with your profile photo (see below).",
+        "items": [
+          "Create and secure your account, and give you access to the application.",
+          "Manage your subscription.",
+          "Contact you about your account.",
+          "Place your star on the players’ map (see below).",
+          "Only overall summaries — totals in which no account can be identified — may be used for market analyses, to better understand the needs of handpan players and to improve the application."
+        ]
       },
       {
-        h: 'Booking a lesson: it concerns only the teacher and the student',
-        p: 'When a lesson is booked in the application, the details of that session concern two people only: the teacher and the student of that lesson. Nobody else has access — not other teachers, not other students, not anyone outside.',
-        items: [
-          'A session’s details are: the student’s name and email, their phone number if given, the date and time, the duration, the place or the video-call link, the type of session and the notes attached to the lesson.',
-          'Technically, access is locked at the database level itself: a session can only be read by the teacher who created it and by the student concerned. Plus the application’s administrator, that is to say me, David Lesage — I would rather say so than leave it unsaid.',
-          'This information is used to organise the lesson, and for nothing else. It is never sold, passed on or shared for commercial purposes.',
-        ],
+        "h": "If you sign in with Google: your name, first name and photo",
+        "p": "If you create your account or sign in with Google, Google sends the application your email address, your last name, your first name and the address of your Google profile photo. The email becomes your account email; the names fill in your account.",
+        "items": [
+          "The first time you open the application, if you do not have a profile photo yet, your Google photo is downloaded once, cropped and stored as your profile photo in the application’s private storage. It is not published: it only appears on the players’ map if you tick “Show my photo on my card”.",
+          "A photo you chose is never replaced. You can change or delete yours at any time from “My profile”, and a deleted photo is not imported again.",
+          "In the teacher space, as long as a student signed in with Google has no photo in the application, their card may show their Google photo, loaded from Google’s servers."
+        ]
       },
       {
-        h: 'If the teacher links their Google Calendar',
-        p: 'Linking a calendar is the teacher’s choice, and only a choice: the application works perfectly well without it. Until they do, no data travels to Google.',
-        items: [
-          'When they do, the event is created in THEIR own calendar, and the student is invited to it — meaning they receive the invitation and see the event on their side. Nothing is written into the student’s calendar without their own agreement.',
-          'The permission requested from Google is exactly this one: https://www.googleapis.com/auth/calendar.events — it allows lesson events to be created, updated and deleted, and nothing else. The application does not read the rest of the calendar, does not browse it, and does not access any other Google service.',
-          'No calendar data is used for any other purpose. It is never passed on, sold or shared with any third party whatsoever.',
-          'The teacher can unlink their calendar at any time, from within the application. The link is then deleted and the application immediately stops writing to Google Calendar; lessons remain in the application but no longer sync to it. Events already created belong to their Google calendar: they stay there, and it is up to them to delete them if they wish.',
-        ],
+        "h": "The players’ map (the constellation)",
+        "p": "The application shows a constellation map of players. It is visible only to people signed in to an account. There are two levels: your default star, and your detailed card, which you publish only if you want to.",
+        "items": [
+          "Your default star. As provided by the application’s terms of use (§ 6 bis), other signed-in people see your first name, the initial of your last name (or your full last name if you choose so in “My public profile”, and you can go back to the initial at any time) and your country; the star is placed at the centre of the country. It never shows your address, your city or your email. The country comes from your profile or from the question asked on arrival; with no known country, you are not placed on the map. Your account also counts as one in the anonymous “Musicians” count for your country (a country with fewer than 3 people is not named there).",
+          "Your detailed card, if you publish it. It is optional and only shows what you write or tick yourself: your roles (player, teacher, maker, which can be combined), a contact email only if you tick the box provided — it is never copied from your account without your click —, and your location at the precision you choose: the country, the city, an area you describe (its point is rounded to about 11 km), or an exact address and its exact point, after a warning.",
+          "A published address is visible to all signed-in people, who can note it down or copy it: avoid your home, prefer an area or the address of a place where you teach.",
+          "Your profile photo, only if you tick “Show my photo on my card” — the box is not ticked to begin with. Your photo then becomes readable by signed-in people, on your card and on your point on the map. Showing it lets signed-in people know your account’s technical identifier, which gives access to none of your data.",
+          "You take back control whenever you want, from your card: each of these choices can be withdrawn at any time. Removing the email and the location is immediate. Unticking the photo box, switching off your card or deleting your photo closes access to your photo; a link already opened expires within one hour at most.",
+          "I can remove a star (moderation), in particular on written request to contact@lesagedavid.fr."
+        ]
       },
       {
-        h: 'Usage measurement in the application',
-        p: 'The application is developed by one person — me. To know where to put my energy, I measure how it is used: the time spent in each part of the application, and interface actions, timestamped, in their order. I am the only recipient of these measurements.',
-        items: [
-          'What is never collected: your musical content (not your scales, not your pieces, not what you play), the text you type, your keystrokes, your mouse movements. No advertising trackers, no third-party analytics: nothing goes to Google, Meta or anyone else.',
-          'These measurements are kept for as long as your account is active, and are deleted automatically along with it.',
-          'You can opt out of this measurement at any time from within the application, with no explanation needed: opting out is immediate and erases the measurements already recorded about you.',
-          'The full text, which is the one that prevails, is the one shown in the application, available at any time from “My account” → “Privacy & Terms”.',
-        ],
+        "h": "The map and address search: who sees what",
+        "p": "Two outside services are involved when you use the map, and what they receive is limited.",
+        "items": [
+          "The map background: when a map opens, your browser requests it from OpenFreeMap (Hyperknot Software Kft., Hungary), which uses the Cloudflare delivery network. It receives your IP address and the area shown, with no account and no cookie; your written address and your point are not sent to it. According to its privacy policy, its access logs contain no IP address, its error logs may contain the IP address and the requested URL, and these logs are deleted after 7 days (30 days at most in the event of a security incident).",
+          "Address search: when you click “Find on the map”, and only then, the text of the address you typed is sent to the IGN Géoplateforme (the French National Institute of Geographic and Forest Information) for an address in France, or to Photon, a komoot service (Germany), elsewhere — with, for Photon, the language of the screen, and your IP address, as for any request. You choose among the suggestions, and the marker can still be moved.",
+          "Neither your name, nor your email, nor your device’s location is sent to them: the browser’s geolocation is never used. A point only exists if you place it yourself."
+        ]
       },
       {
-        h: 'On what legal basis',
-        p: 'It depends on what is at stake, and it is better said precisely.',
-        items: [
-          'Your consent, for the site forms and for receiving my news: two separate checkboxes, only one of which is mandatory, and you can withdraw either at any time.',
-          'Performance of the service, for your account, your subscription and organising lessons: without this information, the application simply cannot do what you are asking of it.',
-          'My legitimate interest in improving the application, for usage measurement — together with a full right to object, exercisable in one gesture inside the application.',
-        ],
+        "h": "Booking a lesson: it concerns only the teacher and the student",
+        "p": "When a lesson is booked in the application, the details of that session concern two people only: the teacher and the student of that lesson. Nobody else has access — not other teachers, not other students, not anyone outside.",
+        "items": [
+          "A session’s details are: the student’s name and email, their phone number if given, the date and time, the duration, the place or the video-call link, the type of session and the notes attached to the lesson.",
+          "Technically, access is locked at the database level itself: a session can only be read by the teacher who created it and by the student concerned. Plus the application’s administrator, that is to say me, David Lesage — I would rather say so than leave it unsaid.",
+          "This information is used to organise the lesson, and for nothing else. It is never sold, passed on or shared for commercial purposes."
+        ]
       },
       {
-        h: 'How long I keep all this',
-        p: 'For as long as it is useful, no longer.',
-        items: [
-          'Your account data and the lesson calendar: for as long as your account is active. You can ask for it to be deleted at any time.',
-          'Usage measurements: for as long as your account is active, and erased immediately if you object to the measurement.',
-          'What you write to me through the site forms: three years after our last exchange, and the clock resets with every new exchange.',
-        ],
+        "h": "If the teacher links their Google Calendar",
+        "p": "Linking a calendar is the teacher’s choice, and only a choice: the application works perfectly well without it. Until they do, no data travels to Google.",
+        "items": [
+          "When they do, the event is created in THEIR own calendar, and the student is invited to it — meaning they receive the invitation and see the event on their side. Nothing is written into the student’s calendar without their own agreement.",
+          "The permission requested from Google is exactly this one: https://www.googleapis.com/auth/calendar.events — it allows lesson events to be created, updated and deleted, and nothing else. The application does not read the rest of the calendar, does not browse it, and does not access any other Google service.",
+          "No calendar data is used for any other purpose. It is never passed on, sold or shared with any third party whatsoever.",
+          "The teacher can unlink their calendar at any time, from within the application. The link is then deleted and the application immediately stops writing to Google Calendar; lessons remain in the application but no longer sync to it. Events already created belong to their Google calendar: they stay there, and it is up to them to delete them if they wish."
+        ]
       },
       {
-        h: 'The providers that see your data',
-        p: 'I neither sell nor rent any data, to anyone, ever. Here is the list of services that are genuinely involved.',
-        items: [
-          'Supabase — the database where accounts, the lesson calendar and form replies are stored, along with the storage space for uploaded files. The project is hosted in Ireland, within the European Union.',
-          'Vercel — the host of this site. The small server functions that relay the forms run in the United States.',
-          'Stripe — payment of the application subscription. The site itself only reads the displayed prices there: no personal data is sent to it from this site.',
-          'Google — the contact@lesagedavid.fr mailbox is hosted by Google, and that is where I answer you. The site also loads its fonts and video thumbnails from Google servers: none of your replies is passed on to them, but your browser’s IP address is. And Google Calendar is involved only if a teacher has chosen to link it, as described above.',
-        ],
+        "h": "Usage measurement in the application",
+        "p": "The application is developed by one person — me. To keep it working well, to measure the load on the servers, to guarantee its stability and to know where to put my energy, I measure how it is used: the time spent in each part of the application, interface actions, timestamped, in their order, sign-ins and the access domain. If a tool is heavily used, that is the one I focus on improving. These measurements are accessible to the application’s administrators.",
+        "items": [
+          "What is never collected: your musical content (not your scales, not your pieces, not what you play), the text you type, your keystrokes, your mouse movements. No advertising trackers, no third-party analytics: nothing goes to Google, Meta or an ad network.",
+          "Two specific uses: the end-of-trial email is personalised based on your usage; and when you report a problem, your feedback and the trail of your actions may be analysed by Claude, Anthropic’s assistant, to prepare the diagnosis.",
+          "These measurements are kept for 24 months, then erased automatically. They are also deleted along with your account.",
+          "You can opt out of this measurement at any time from within the application, with no explanation needed: opting out is immediate and erases the measurements already recorded about you. Only the error log remains, with no link to your account.",
+          "The error log: when the application crashes, the error is recorded so it can be fixed (cleaned-up message, screen, version, browser), including for visitors without an account. A one-way fingerprint of the account, pseudonymous data, makes it possible to count the accounts affected; it is not created if you have opted out of the measurement.",
+          "Email tracking: opens and clicks are measured for your address, through an invisible image and tracked links, in campaigns and some automatic emails, including without an account. This is part of the application’s conditions of use. You can unsubscribe from emails that are not essential; there is no separate setting to turn this measurement off.",
+          "The full text, which is the one that prevails, is the one shown in the application, available at any time from “My account” → “Privacy & Terms”."
+        ]
       },
       {
-        h: 'Cookies and analytics on this site',
-        p: 'This site sets no cookies. It uses no analytics tool, no advertising pixel, no tracker — which is why there is no banner to accept on arrival. The only thing your browser remembers locally is the language you chose: it never leaves your device. Not to be confused with the application’s usage measurement described above, which is a different thing and can be turned off in one click.',
-        items: [] as string[],
+        "h": "On what legal basis",
+        "p": "It depends on what is at stake, and it is better said precisely.",
+        "items": [
+          "Your consent, for the site forms and for receiving my news: two separate checkboxes, only one of which is mandatory, and you can withdraw either at any time.",
+          "The application’s conditions of use, which include measuring opens and clicks in emails.",
+          "Performance of the service, for your account, your subscription and organising lessons: without this information, the application simply cannot do what you are asking of it.",
+          "Performance of the terms of use you accepted, for your default star on the players’ map (first name, initial of your last name, country).",
+          "Your consent, for your detailed card on the map and for showing your photo: nothing appears there without your click, and you withdraw it at any time from your card.",
+          "My legitimate interest in running and improving the application, for usage measurement, which is part of the conditions of use — together with a full right to object, exercisable in one gesture inside the application."
+        ]
       },
       {
-        h: 'Your rights, and how to exercise them',
-        p: 'One gesture is enough: write to contact@lesagedavid.fr. No form to fill in, no proof to provide unless I have serious doubt about your identity. I answer personally, within one month at most.',
-        items: [
-          'Access — know exactly what I hold about you; I can send you a copy.',
-          'Rectification — correct information that is wrong or out of date.',
-          'Erasure — delete everything, including your account.',
-          'Objection — refuse a use, in particular usage measurement and news emails.',
-          'Portability — get back what you gave me, in a file you can reuse elsewhere.',
-          'Restriction — ask for your information to be set aside while we settle a disagreement.',
-          'Withdrawal of consent — at any time, with no explanation needed.',
-          'And if you disagree with me: you can lodge a complaint with the CNIL, the French data protection authority — CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, www.cnil.fr. But write to me first if you like: it’s faster.',
-        ],
+        "h": "How long I keep all this",
+        "p": "For as long as it is useful, no longer.",
+        "items": [
+          "Your account data and the lesson calendar: for as long as your account is active. You can ask for it to be deleted at any time.",
+          "Your place on the players’ map, your card and your profile photo: for as long as your account exists. Each item on your card can be withdrawn at any time; removing the email and the location is immediate, and access to your photo closes within one hour at most.",
+          "Usage measurements: 24 months, deleted along with your account, and erased immediately if you object to the measurement.",
+          "The error log: 90 days after the last occurrence for an error that has been dealt with, 180 days otherwise; the account fingerprint, 12 months at most after the last occurrence.",
+          "Email tracking (clicks, opens, sends, sending errors): 24 months, and erased when your account is deleted.",
+          "What you write to me through the site forms: three years after our last exchange, and the clock resets with every new exchange."
+        ]
       },
       {
-        h: 'Security',
-        p: 'The site and the application are served over HTTPS end to end. The database can only be reached with dedicated credentials, and its access rules are enforced by the database itself — that is what guarantees a lesson can only be read by the teacher and the student concerned. The token authorising access to Google Calendar is kept in a table strictly unreachable from a browser, and is never sent back to the client. No banking details are entered or stored on this site: payments go through Stripe.',
-        items: [] as string[],
+        "h": "The providers that see your data",
+        "p": "I neither sell nor rent any data, to anyone, ever. Here is the list of services that are genuinely involved.",
+        "items": [
+          "Supabase — the database where accounts, the lesson calendar and form replies are stored, along with the storage space for uploaded files. The project is hosted in Ireland, within the European Union.",
+          "Vercel — the host of this site. The small server functions that relay the forms run in the United States.",
+          "Stripe — payment of the application subscription. The site itself only reads the displayed prices there: no personal data is sent to it from this site.",
+          "Google — the contact@lesagedavid.fr mailbox is hosted by Google, and that is where I answer you. The site also loads its fonts and video thumbnails from Google servers: none of your replies is passed on to them, but your browser’s IP address is. And Google Calendar is involved only if a teacher has chosen to link it, as described above. If you choose to sign in with Google, Google sends the application your email, your last name, your first name and the address of your profile photo. Audio recordings of lessons and memos may be kept in private, non-public storage at Google (Google Drive).",
+          "Anthropic — its assistant Claude may analyse feedback you send me from the application, together with the trail of your actions, to prepare the diagnosis. A US company.",
+          "DeepL (a German company) and, as a fallback, Google Translate — at an administrator’s request, they translate the text of feedback you send me, and the text of the emails I write to you in your language, including a passage that is personal to you.",
+          "OpenFreeMap (Hyperknot Software Kft., Hungary), via the Cloudflare network — the background of the players’ map. The IGN Géoplateforme (France) and Photon, a komoot service (Germany) — address search, only on your click. What they receive is detailed above.",
+          "Supabase Inc., Vercel Inc., Google LLC, Anthropic PBC and Cloudflare Inc. are US companies: some data may therefore be processed outside the European Union. These transfers are covered by the safeguards provided for by the GDPR, put in place by these providers."
+        ]
       },
       {
-        h: 'If this page changes',
-        p: 'It carries a last-updated date, at the top. When the text changes, that date changes with it. For the application, a version number accompanies the document shown before you enter: that is what makes it possible to know exactly which text you had in front of you on the day you accepted it.',
-        items: [] as string[],
+        "h": "Cookies and analytics on this site",
+        "p": "This site sets no cookies. It uses no analytics tool, no advertising pixel, no tracker — which is why there is no banner to accept on arrival. The only thing your browser remembers locally is the language you chose: it never leaves your device. Not to be confused with the application’s usage measurement described above, which is a different thing and can be turned off in one click. Emails are another matter: their opening and clicks on their links are measured, through an invisible image and tracked links. This is part of the application’s conditions of use, and it is explained in its policy.",
+        "items": [] as string[]
+      },
+      {
+        "h": "Your rights, and how to exercise them",
+        "p": "One gesture is enough: write to contact@lesagedavid.fr. No form to fill in, no proof to provide unless I have serious doubt about your identity. I answer personally, within one month at most.",
+        "items": [
+          "Access — know exactly what I hold about you; I can send you a copy.",
+          "Rectification — correct information that is wrong or out of date.",
+          "Erasure — delete everything, including your account.",
+          "Objection — refuse a use, in particular usage measurement and news emails.",
+          "Portability — get back what you gave me, in a file you can reuse elsewhere.",
+          "Restriction — ask for your information to be set aside while we settle a disagreement.",
+          "Withdrawal of consent — at any time, with no explanation needed.",
+          "And if you disagree with me: you can lodge a complaint with the CNIL, the French data protection authority — CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, www.cnil.fr. But write to me first if you like: it’s faster."
+        ]
+      },
+      {
+        "h": "Security",
+        "p": "The site and the application are served over HTTPS end to end. The database can only be reached with dedicated credentials, and its access rules are enforced by the database itself — that is what guarantees a lesson can only be read by the teacher and the student concerned. The token authorising access to Google Calendar is kept in a table strictly unreachable from a browser, and is never sent back to the client. Your profile photo is kept in private storage: it only becomes readable by signed-in people if you have ticked “Show my photo on my card”. No banking details are entered or stored on this site: payments go through Stripe.",
+        "items": [] as string[]
+      },
+      {
+        "h": "If this page changes",
+        "p": "It carries a last-updated date, at the top. When the text changes, that date changes with it. For the application, a version number accompanies the document shown before you enter: that is what makes it possible to know exactly which text you had in front of you on the day you accepted it.",
+        "items": [] as string[]
       },
     ],
     contactTitle: 'A question about this page?',
