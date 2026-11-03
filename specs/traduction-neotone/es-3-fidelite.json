@@ -1,0 +1,45 @@
+{
+ "rows": {
+  "N068": {
+   "niveau": "doute",
+   "constat": "Nom d'écran : les libellés affichés de l'app écrivent « Atlas sonoro » (titre du panneau v2.panneau.atlas_titre, vue v3.decouvrir.vue_atlas, bouton comprendre.visite.btn_atlas) ; « Atlas Sonoro » n'apparaît que dans 8 lignes de prose contre 15, et le français de la page écrit aussi « Atlas sonore ». Casse seule, sens intact. À harmoniser sur les six lignes.",
+   "proposal": "alt=\"El Atlas sonoro, región África: elección de la tonalidad y de la escala, Pygmy, Low Pygmy, Ashakiran, Saladin, Integral, Equinox, y el botón Demostración musical.\""
+  },
+  "N069": {
+   "niveau": "doute",
+   "constat": "Nom d'écran : les libellés affichés de l'app écrivent « Atlas sonoro » (titre du panneau v2.panneau.atlas_titre, vue v3.decouvrir.vue_atlas, bouton comprendre.visite.btn_atlas) ; « Atlas Sonoro » n'apparaît que dans 8 lignes de prose contre 15, et le français de la page écrit aussi « Atlas sonore ». Casse seule, sens intact. À harmoniser sur les six lignes.",
+   "proposal": "alt=\"El Atlas sonoro, región Islas: Sabye, Jibuk, Lydian, Mixolydian, Paradise, Voyager.\""
+  },
+  "N070": {
+   "niveau": "doute",
+   "constat": "Nom d'écran : les libellés affichés de l'app écrivent « Atlas sonoro » (titre du panneau v2.panneau.atlas_titre, vue v3.decouvrir.vue_atlas, bouton comprendre.visite.btn_atlas) ; « Atlas Sonoro » n'apparaît que dans 8 lignes de prose contre 15, et le français de la page écrit aussi « Atlas sonore ». Casse seule, sens intact. À harmoniser sur les six lignes.",
+   "proposal": "alt=\"El Atlas sonoro con el tema Planetario: las escalas del mundo dibujadas como constelaciones, Fuente Serena, En alta mar, Fuga a toda velocidad, Claro-oscuro, Rutas del desierto, Tierras de la Niebla.\""
+  },
+  "N072": {
+   "niveau": "doute",
+   "constat": "Nom d'écran : les libellés affichés de l'app écrivent « Atlas sonoro » (titre du panneau v2.panneau.atlas_titre, vue v3.decouvrir.vue_atlas, bouton comprendre.visite.btn_atlas) ; « Atlas Sonoro » n'apparaît que dans 8 lignes de prose contre 15, et le français de la page écrit aussi « Atlas sonore ». Casse seule, sens intact. À harmoniser sur les six lignes.",
+   "proposal": ">El Atlas sonoro<"
+  },
+  "N101": {
+   "niveau": "doute",
+   "constat": "Nom d'écran : les libellés affichés de l'app écrivent « Atlas sonoro » (titre du panneau v2.panneau.atlas_titre, vue v3.decouvrir.vue_atlas, bouton comprendre.visite.btn_atlas) ; « Atlas Sonoro » n'apparaît que dans 8 lignes de prose contre 15, et le français de la page écrit aussi « Atlas sonore ». Casse seule, sens intact. À harmoniser sur les six lignes.",
+   "proposal": ">El Atlas sonoro: las escalas del mundo, su demo, y las tocas al momento<"
+  },
+  "N136": {
+   "niveau": "doute",
+   "constat": "Nom d'écran : les libellés affichés de l'app écrivent « Atlas sonoro » (titre du panneau v2.panneau.atlas_titre, vue v3.decouvrir.vue_atlas, bouton comprendre.visite.btn_atlas) ; « Atlas Sonoro » n'apparaît que dans 8 lignes de prose contre 15, et le français de la page écrit aussi « Atlas sonore ». Casse seule, sens intact. À harmoniser sur les six lignes.",
+   "proposal": "Tu Neotone puede tocar todas las escalas, y cada cambio de escala crea un caos cognitivo. Handpan Constellation Studio pone una memoria visual en cada escala: el modo Lógico, Conexión Neotone y el Atlas sonoro."
+  },
+  "N083": {
+   "niveau": "doute",
+   "constat": "Sens confirmé par l'app (nduop.par.desc_demiton, desc_tierce_*) : même gamme aux mêmes emplacements, le Neotone¹ un demi-ton ou une tierce plus haut. La note « à confirmer » du rédacteur est levée. Mais l'écran de ces duos dit « a medio tono » et « a la tercera » (nduop.par.titre_demiton, titre_tierce), la page dit « a un semitono o a una tercera ». Ailleurs l'app écrit « semitono » : à trancher, l'écran de la fonction incline vers sa forme.",
+   "proposal": ">En las mismas posiciones, a medio tono o a la tercera. Tus memorias de dúo guardadas.<"
+  },
+  "N066": {
+   "niveau": "doute",
+   "constat": "« les autres fusionnent dedans » : « se unen a ella » ne dit pas nettement que les copies disparaissent dans celle qu'on garde. L'écran des doublons parle de fusion (l. 53397 et 53405 : « Comprueba antes de fusionar »).",
+   "proposal": ">Mismas notas, mismas octavas, mismo diapasón: la app encuentra las copias. Eliges cuál conservar y las demás se fusionan en ella.<"
+  }
+ },
+ "script": "Contrôle par script sur 137 lignes, clés identiques à table.json : nombres, balises, attributs alt/aria-label, signes ①②③④ ¹ € %, noms protégés (Neotone, Studio, Quick Load, MIDI, USB, Mutant, Handpan Constellation Studio, Web MIDI Browser, Apple, iPhone, iPad, App Store) : conformes. Tiret cadratin : 0. usted, vos, /a : 0. Délimiteurs > < : conformes, N135 et N137 n'en ont pas, pas plus que le français. Vérifiés dans la colonne es: de translations.ts, sans écart : Conexión Neotone (titre et entrée de menu), onglets Estado, Memorias, Memorias (Quick Load), Escalas, Grabaciones, Sincronizar en ambos sentidos, Demostración musical, dúo híbrido, Planetario, sept émotions, nota de anclaje, enriquecimiento, tabla de acordes (lexique §8), cejilla, comodín, handpan digital pour pan numérique, 1 mes gratis. Modo Lógico ou Lógica : l'app a les deux (29 et 32 lignes) ; les titres d'outil et d'aide disent « El modo Lógico », les boutons « Ir al modo Lógica ». Lógico maintenu, pas de constat sur la page, l'incohérence est à corriger dans l'app. N067 : la note floue est levée par l'app (l. 52909, le fichier MIDI est rejoué par le Neotone et enregistré) ; « tocado por tu Neotone » est juste. N070 : Fuga a toda velocidad et Tierras de la Niebla sont bien les libellés de ac.contree.*, l'aide de l'app dit aussi Escapada Viva et Tierras de Bruma (l. 54983), à harmoniser dans l'app. Constellation fermée (N036, N042, N045) : pas de libellé exact dans l'app, qui affiche « Polígono cerrado » là où le français de l'app dit « Polygone fermé » ; « Cerrada » suit le français de la page."
+}

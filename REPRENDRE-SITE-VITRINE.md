@@ -48,6 +48,10 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Groupes** : French handpan connection (11,7 k) = priorité ; Handpan Paris ; Handpan Paris et IdF. **Jamais** vente/échange,
   GRIASDI écarté. Cadence David : 1×/mois, ~15 j avant.
 
+## 🚀 PUBLICATION EN UNE ACTION — 02/11/2026 (consigne de Yannick)
+- **Publier le site : `zsh scripts/publier.sh "ce qui change"`** (depuis `main`) : contrôle GitHub, commit de TOUT le dossier, push, puis Vercel. S'il s'arrête sur « GitHub a des commits » : Yannick a publié, `git pull` puis relancer. Testé sur un dépôt factice, jamais lancé en vrai.
+- `.gitignore` : `.env*` (sauf `.env.example`), `supabase/.temp/`, `MESSAGE-SESSION-*.md`, la réconciliation Hisong. Les fichiers Icon sont sortis de git (commit 9d6cefc).
+
 ## 🧭 ÉTAT ACTUEL — 02/11/2026 (42ᵉ passe) — REPRENDRE ICI
 - **Page de vente v3.1 en EN et ES** : `public/en|es/handpan-app/index.html` sont GÉNÉRÉES par `node scripts/generer-vente-langues.mjs` depuis la page française (table FR/EN/ES dans le script, il s'arrête si un texte français a changé). Toute retouche FR : relancer le script. Médias partagés dans `/handpan-app/img/`. `StudioPage.astro` n'est plus routée (dictionnaires conservés).
 - **Archive privée** de l'ancienne page : `/archive-vente/fr|en|es/` (fichiers figés dans `public/archive-vente/`, FR = build de f631a32, EN/ES = build de c06c9ef, 28 Mo de médias copiés). noindex/nofollow balise + en-tête, hors sitemap et llms, sans lien, réseau et formulaires neutralisés. Ne pas la régénérer.

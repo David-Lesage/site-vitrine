@@ -295,6 +295,13 @@ export const es: Dict = {
     "calcEyebrow": "Calculadora de precios",
     "calcTitle": "¿Cuánto me costará realmente mi Neotone?",
     "calcIntro": "Elige tu método de compra, tu modelo, tu tipo de madera y tu país: la calculadora aplicará el descuento y el IVA correctos para 2026.",
+    "offreBadge": "Regalo",
+    "offreTitre": "Un año de la app de regalo con cada Neotone que compres a través de mí",
+    "offreTexte": "El plan Studio de Handpan Constellation, 89 € de regalo, en línea o en el showroom. El año empieza la primera vez que te conectes, una vez registrada tu compra.",
+    "offreListe": ["<b>El modo Lógico.</b> Cambias de tonalidad y tus acordes siguen bajo los mismos dedos.", "<b>Conexión Neotone.</b> Preparas tus escalas en la app y llegan a tu Neotone.", "<b>Los dúos.</b> Dos instrumentos juntos tocan acordes que ninguno de los dos toca por sí solo."],
+    "offreCta": "Descubrir la app",
+    "bandeauBadge": "Nuevo",
+    "bandeauTexte": "Tu Neotone puede tocarlo todo. Ahora lo ves. Descubre la app",
     "calcDisclaimer": "Los precios mostrados incluyen el envío a todo el mundo. Se aplican los tipos de IVA estándar de 2026. Fuera de la UE: no se aplica el IVA de la UE, pero pueden añadirse tasas aduaneras locales al envío, a su cargo.",
     "stockPillIn": "En stock en París",
     "stockPillSoon": "Llega pronto",
@@ -330,7 +337,7 @@ export const es: Dict = {
     "extrasIntro": "El Neotone está completo, pero para escucharlo y aprovechar todo su potencial, planifique la instalación de este pequeño equipo según sus necesidades.",
     "extrasSpeakerCta": "Lee: Colócate correctamente en el sonido.",
     "extrasHeadphonesCta": "Lee: ¿Qué casco elegir?",
-    "bridgeEyebrow": "Tono Neotone + el método visual",
+    "bridgeEyebrow": "Tu Neotone + el método visual",
     "bridgeTitle": "Aprende a través de los colores y las formas.",
     "bridgeText": "Con Handpan Constellation Studio, aprenderás a través de colores y formas, tanto en tu Neotone como en un handpan acústico.",
     "bridgeCta": "Descubre el método",
@@ -2784,6 +2791,10 @@ export const es: Dict = {
       {
         "title": "Adaptador de corriente incluido",
         "text": "Se incluye un cargador estándar de 12 V (el enchufe corresponde al país de entrega)."
+      },
+      {
+        "title": "1 año de licencia Studio",
+        "text": "Para la app Handpan Constellation Studio: 89 € de regalo."
       }
     ],
     "extras": [

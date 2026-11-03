@@ -296,7 +296,7 @@ const T = [
   ['<label>E-mail<input', '<label>Email<input', '<label>Correo electrónico<input'],
   ['<label class="m-mdp">Mot de passe<input', '<label class="m-mdp">Password<input', '<label class="m-mdp">Contraseña<input'],
   ["J’accepte les <a href=\"/conditions-generales/\" target=\"_blank\" rel=\"noopener\">Conditions Générales d’Utilisation</a> et la <a href=\"/politique-de-confidentialite/\" target=\"_blank\" rel=\"noopener\">politique de confidentialité</a>.", "I accept the <a href=\"/en/conditions-generales/\" target=\"_blank\" rel=\"noopener\">terms and conditions</a> and the <a href=\"/en/politique-de-confidentialite/\" target=\"_blank\" rel=\"noopener\">privacy policy</a>.", "Acepto las <a href=\"/es/conditions-generales/\" target=\"_blank\" rel=\"noopener\">Condiciones Generales de Uso</a> y la <a href=\"/es/politique-de-confidentialite/\" target=\"_blank\" rel=\"noopener\">política de privacidad</a>."],
-  ["Déjà un compte ? <a href=\"https://play.handpanstudio.app/\">Se connecter</a>", "Already have an account? <a href=\"https://play.handpanstudio.app/\">Sign in</a>", "¿Ya tienes cuenta? <a href=\"https://play.handpanstudio.app/\">Iniciar sesión</a>"],
+  ['Déjà un compte ? <a class="btn-connexion"', 'Already have an account? <a class="btn-connexion"', '¿Ya tienes cuenta? <a class="btn-connexion"'],
   ["<strong>Bienvenue !</strong>", "<strong>Welcome!</strong>", "<strong>¡Te damos la bienvenida!</strong>"],
 
   // ===== Scripts
