@@ -1279,6 +1279,15 @@ Deno.serve(async (req) => {
         // 20 000 caractères : côté visiteur c'est « sans limite », côté serveur ça
         // reste borné pour ne pas laisser passer n'importe quoi.
         const message = String(body.message ?? '').trim().slice(0, 20000) || null;
+        // ANTI-DÉMARCHAGE (03/11/2026) — voir la migration 0320 du dépôt de l'app.
+        // `spamCertain` : raisons des pièges anti-robot (pot de miel, envoi trop
+        // rapide), posées par le relais `api/subscribe.js`. Bornées : au plus 3
+        // raisons de 120 caractères. Le CONTENU est jugé par la base elle-même
+        // (déclencheur `site_leads_juger_demarchage`), on relit son verdict après l'écriture.
+        const spamCertain: string[] = Array.isArray(body.spamCertain)
+            ? body.spamCertain.map((r: unknown) => String(r ?? '').trim().slice(0, 120)).filter(Boolean).slice(0, 3)
+            : [];
+        const avertiDemarchage = body.avertiDemarchage === true;
         const rawPeople = Number(body.peopleCount);
         const peopleCount = Number.isFinite(rawPeople) && rawPeople > 0 ? Math.min(Math.round(rawPeople), 50) : null;
         const rawDate = String(body.eventDate ?? '').trim();
@@ -1513,7 +1522,38 @@ Deno.serve(async (req) => {
             return ins?.id as string;
         }
 
+        // ROBOT CERTAIN : enregistré pour le tri, mais RIEN d'autre — aucun
+        // e-mail, aucun cours proposé, pas de groupe showcase. Et jamais par-dessus
+        // une demande existante : un robot qui réutilise l'adresse de quelqu'un ne
+        // doit pas écraser son vrai message.
+        if (spamCertain.length) {
+            const { data: existing } = await admin
+                .from('site_leads').select('id').eq('email', email).eq('source', source).maybeSingle();
+            if (!existing?.id) {
+                const { error: spamErr } = await admin.from('site_leads').insert({
+                    email, source, ...profile,
+                    spam_statut: 'certain', spam_score: 10, spam_raisons: spamCertain,
+                });
+                if (spamErr) console.error('site-lead spam insert error:', spamErr.message);
+            }
+            return json({ ok: true, emailSent: false, booking: false, showcase: false });
+        }
+
         const leadId = await upsert(source);
+
+        // Verdict de la base sur le contenu (déclencheur, migration 0320). Jamais
+        // bloquant : sans verdict lisible, l'e-mail part comme avant.
+        let spamProbable: { score: number; raisons: string[] } | null = null;
+        if (leadId) {
+            const { data: verdict } = await admin
+                .from('site_leads').select('spam_statut, spam_score, spam_raisons').eq('id', leadId).maybeSingle();
+            if (verdict?.spam_statut === 'probable') {
+                spamProbable = {
+                    score: Number(verdict.spam_score ?? 0),
+                    raisons: Array.isArray(verdict.spam_raisons) ? verdict.spam_raisons.map(String) : [],
+                };
+            }
+        }
         // Case cochée -> groupe showcase ciblable séparément.
         if (wantsShowcase) await upsert('showcase');
 
@@ -1738,11 +1778,19 @@ Deno.serve(async (req) => {
                         // plus stratégique. Son pays figure dans l'objet pour situer d'un
                         // coup d'œil (le catalogue se choisit d'abord sur la localisation).
                         subject: mailSubject((
-                            isBooking ? `[Site] ${sourceLabel(source, 'fr', purchaseMode)} — ${firstName} ${lastName}`
+                            (spamProbable ? '[⚠️ Démarchage probable] ' : '') +
+                            (isBooking ? `[Site] ${sourceLabel(source, 'fr', purchaseMode)} — ${firstName} ${lastName}`
                             : isMaker ? `[Fabricant] ${firstName} ${lastName}${makerCountry ? ` — ${makerCountry}` : ''}`
-                            : `[Bêta] Candidature — ${firstName} ${lastName}`
+                            : `[Bêta] Candidature — ${firstName} ${lastName}`)
                         ).trim()),
                         mimeContent: [htmlPart(adminNotifyHtml({
+                            // En TÊTE du tableau : pourquoi ce message ressemble à du démarchage.
+                            '⚠️ Démarchage probable': spamProbable
+                                ? `score ${spamProbable.score} — ${spamProbable.raisons.join(' ; ') || 'règles de contenu'}`
+                                : null,
+                            'Avertissement vu': spamProbable && avertiDemarchage
+                                ? 'oui — la personne a été prévenue que le formulaire n’est pas fait pour ça, et a envoyé quand même'
+                                : null,
                             Motif: isBooking
                                 ? sourceLabel(source, 'fr', purchaseMode)
                                 : [
