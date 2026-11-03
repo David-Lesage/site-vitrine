@@ -3380,7 +3380,7 @@ const fr = {
         h: 'Si tu te connectes avec Google : ton nom, ton prénom et ta photo',
         p: 'Si tu crées ton compte ou si tu te connectes avec Google, Google transmet à l’application ton adresse email, ton nom, ton prénom et l’adresse de ta photo de profil Google. L’email devient celui de ton compte ; le nom et le prénom le remplissent.',
         items: [
-          'À la première ouverture de l’application, si tu n’as pas encore de photo de profil, ta photo Google est téléchargée une seule fois, recadrée et enregistrée comme photo de profil dans l’espace de stockage privé de l’application. Elle n’est pas publiée : elle n’apparaît sur la carte des joueurs que si tu coches « Montrer ma photo sur ma fiche ».',
+          'À la première ouverture de l’application, si tu n’as pas encore de photo de profil, ta photo Google est téléchargée une seule fois, recadrée et enregistrée comme photo de profil dans l’espace de stockage privé de l’application. Elle n’est pas publiée : elle n’apparaît sur la carte des joueurs que si tu publies une fiche détaillée avec la case « Montrer ma photo sur ma fiche » cochée (elle l’est par défaut, et tu peux la décocher).',
           'Une photo que tu as choisie n’est jamais remplacée. Tu peux changer ou supprimer la tienne à tout moment depuis « Mon profil », et une photo supprimée n’est pas réimportée.',
           'Dans l’espace prof, tant qu’un élève connecté avec Google n’a pas de photo dans l’application, sa fiche peut afficher sa photo Google, chargée depuis les serveurs de Google.',
         ],
@@ -3388,7 +3388,7 @@ const fr = {
       {
         // ── AJOUT 03/11/2026 — aligné sur CGU § 6 bis et PRIVACY_FR § 2 « La carte des
         // joueurs » / « Votre fiche détaillée ». Code : community/completer-fiche.ts
-        // (case photo non cochée par défaut), migration 0317_photo_sur_la_fiche.sql
+        // (case photo COCHÉE par défaut pour une fiche nouvelle depuis le n° 1003), migration 0317_photo_sur_la_fiche.sql
         // (false par défaut). Base de l'étoile par défaut = exécution des CGU (c'est ce
         // que dit l'app), base de la fiche et de la photo = consentement.
         h: 'La carte des joueurs (la constellation)',
@@ -3397,7 +3397,7 @@ const fr = {
           'Ton étoile par défaut. Comme le prévoient les conditions d’utilisation de l’application (§ 6 bis), les autres personnes connectées voient ton prénom, l’initiale de ton nom (ou ton nom en entier si tu le choisis dans « Mon profil public », et tu peux revenir à l’initiale à tout moment) et ton pays ; l’étoile est posée au centre du pays. Elle ne montre jamais ton adresse, ta ville ni ton email. Le pays vient de ton profil ou de la question posée à l’accueil ; sans pays connu, tu n’es pas placé sur la carte. Ton compte compte aussi pour un dans le compteur anonyme « Musiciens » de ton pays (un pays de moins de 3 personnes n’y est pas nommé).',
           'Ta fiche détaillée, si tu la publies. Elle est facultative et ne montre que ce que tu y écris ou coches toi-même : tes rôles (joueur, enseignant, fabricant, cumulables), un email de contact seulement si tu coches la case prévue — il n’est jamais recopié de ton compte sans ton clic —, et ton lieu à la précision que tu choisis : le pays, la ville, une zone que tu décris (son point est arrondi à environ 11 km), ou une adresse précise et son point exact, après un avertissement.',
           'Une adresse publiée est visible de toutes les personnes connectées, qui peuvent la noter ou la recopier : évite ton domicile, préfère une zone ou l’adresse d’un lieu de cours.',
-          'Ta photo de profil, seulement si tu coches « Montrer ma photo sur ma fiche » — la case n’est pas cochée au départ. Ta photo devient alors lisible par les personnes connectées, sur ta fiche et sur ton point de la carte. L’afficher fait connaître aux personnes connectées l’identifiant technique de ton compte, qui ne donne accès à aucune de tes données.',
+          'Ta photo de profil. Lorsque tu crées ta fiche détaillée, la case « Montrer ma photo sur ma fiche » est cochée par défaut : si tu as une photo de profil, elle apparaît alors sur ta fiche et sur ton point de la carte des joueurs, visibles des personnes connectées. Tu peux la décocher avant de publier, ou à tout moment ensuite ; ta photo est alors retirée immédiatement et remplacée par ton étoile. Si ta fiche existait déjà, ton choix précédent est conservé. L’afficher fait connaître aux personnes connectées l’identifiant technique de ton compte, qui ne donne accès à aucune de tes données.',
           'Tu reprends la main quand tu veux, depuis ta fiche : chacun de ces choix se retire à tout moment. Le retrait de l’email et de la position est immédiat. Décocher la case de la photo, éteindre ta fiche ou supprimer ta photo referme l’accès à ta photo ; un lien déjà ouvert expire au plus tard au bout d’une heure.',
           'Je peux retirer une étoile (modération), notamment sur demande écrite à contact@lesagedavid.fr.',
         ],
