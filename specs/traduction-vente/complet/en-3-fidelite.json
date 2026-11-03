@@ -1,0 +1,89 @@
+{
+  "verdict": "The draft is faithful on promises, prices, numbers, Marina's testimonial and David's paragraph, and a scripted comparison of tags and numbers on all rows, plus the code skeleton of the JS rows, found no difference. Two rows must change (L131, L258) and four term decisions remain open (repertoire, the word for tracé, Emotional Feeling, enrichments).",
+  "rows": {
+    "L131": {
+      "level": "error",
+      "problem": "The alt renames the notes: French Si and Ré become Ti and Re. The chart this alt describes uses the French note names, which stay untranslated, so the alt no longer matches what is shown. L132 carries the C D E version.",
+      "evidence": "source L126 'Do Ré Mi' and L305-L306 ['Ré',...], ['Si',...] are not in ids.txt, so they stay as they are. LEXIQUE section 4: note names are handled by the notation setting, not by translation.",
+      "proposal": "The same chord, each note in the colour of its chakra: Sol sky blue, Si violet, Ré orange."
+    },
+    "L258": {
+      "level": "error",
+      "problem": "'elsewhere' reads as another place or device. In the app, 'ailleurs' for a scale means another key. The match between this page line and the app feature is a strong inference, not an identical string: 'ailleurs' appears in no offer line. The result sits close to L257, which is what the source already does.",
+      "evidence": "translations.ts L47455 v2.outils.transposer_gamme.desc 'Voir et écouter une gamme dans une autre tonalité' => 'See and hear a scale in another key.'; L47454 name 'Transpose a scale'; L47440 v2.outils.tonalite.desc 'ta gamme jouée comme si elle était ailleurs' => 'your scale played as if it were in another key'.",
+      "proposal": "<li>See and hear your scale in another key</li>"
+    },
+    "L226": {
+      "level": "doubt",
+      "problem": "Lexicon and consigne say library; the app mostly says repertoire, including in its navigation, and also uses songbook. The consigne gives two rules that conflict here (lexicon first, app first for screen names). 'The library' also sits close to the separate 'My library'. Decision needed; my reading favours repertoire.",
+      "evidence": "93 parsed entries with French répertoire: 53 repertoire, 22 library (1 entry has both), the rest mainly songbook or other. Repertoire: L59761 navr.e.repertoire, L4113 logic.library_all, L35515 header.repertoire_title. Library: L11412 lib.music_library.le_repertoire, L33262 guide.section.le_repertoire. Songbook: L58014 rac.repertoire, L47679 v2.offres.f.repertoire. Separate item: L59757 'Ma bibliothèque' => 'My library'.",
+      "proposal": "Everything you need to get to know your instrument and play: your scale, your chords, the repertoire, singing to find your voice, playing technique, and saving what you create."
+    },
+    "L149": {
+      "level": "doubt",
+      "problem": "The app's usual English for tracé is path, here rendered as line. Same decision as L150 to L154.",
+      "evidence": "translations.ts L10831 'Le tracé de l'accord' => 'The chord path'; L8566 'Chord path'; L446 'Path Style'. Line also exists: L7733 'Style de tracé' => 'Line style', L7751 'Open-line path'.",
+      "proposal": "<b>Open</b>A path that follows the route of the notes, so you can see a hand move."
+    },
+    "L150": {
+      "level": "doubt",
+      "problem": "'hand line' does not occur in the app. The setting is called Hands, and its tracé is described as a path per hand.",
+      "evidence": "translations.ts L473 visual.path.hands 'Mains' => 'Hands'; L7760 'Tracé séparé par main' => 'Separate path for each hand'; L8854 'Separate paths for each hand'; L10376 'two paths, one per' hand.",
+      "proposal": "The same chord with one path per hand, acoustic handpan"
+    },
+    "L151": {
+      "level": "doubt",
+      "problem": "Same as L150.",
+      "evidence": "See L150.",
+      "proposal": "The same chord with one path per hand, digital pan"
+    },
+    "L152": {
+      "level": "doubt",
+      "problem": "Same decision: tracé as line, while the app's Hands setting uses path.",
+      "evidence": "translations.ts L473, L7760, L10376.",
+      "proposal": "<b>Hands</b>The path made for the movement. Which hand, which note: you read your playing straight off."
+    },
+    "L153": {
+      "level": "doubt",
+      "problem": "'drawings' for tracés: the app does not use this noun for the three styles.",
+      "evidence": "translations.ts L446 'Path Style', L8800 'tracés' => 'lines', L8854 'paths'. No 'drawings' in the tracé entries returned by the search (first 25 of 71 read).",
+      "proposal": "The same chord with all three paths, on an acoustic D Kurd 18 handpan."
+    },
+    "L154": {
+      "level": "doubt",
+      "problem": "Same as L153.",
+      "evidence": "See L153.",
+      "proposal": "The same chord, V Tension, with all three paths, on a Neotone."
+    },
+    "L156": {
+      "level": "doubt",
+      "problem": "The caption names a panel option, and the option in Logic mode reads Emotional Feeling. Other app text varies, so the choice needs confirming against the screenshot.",
+      "evidence": "translations.ts L1255 logic.emotion '❤️ Ressenti émotionnel' => '❤️ Emotional Feeling'; L7967 'Emotional feeling vocabulary'. Variants: L37921 'Emotional Feel', L26477 'Emotional response', L30537 'Emotional Experience'.",
+      "proposal": "<figcaption>Emotional feeling</figcaption>"
+    },
+    "L168": {
+      "level": "doubt",
+      "problem": "The app's usual word for enrichissements is enrichments. Extensions also exists in the app and is the normal musical word. Decide which one the page uses.",
+      "evidence": "translations.ts L35583 chord.enrich.some_tip 'Enrichissements possibles' => 'Enrichments available:'; 10 entries pair enrichissement with enrich-. Extension: L37054 g4.hc.extensions, L54825 ac.disp.ext.aide.",
+      "proposal": "<b>Musician</b><p>Everything unlocked: all 7 chords, the +7, +9 enrichments…</p>"
+    }
+  },
+  "terms_checked": {
+    "repertoire": "French répertoire, 93 parsed entries: repertoire 53, library 22 (1 entry has both). Navigation says The repertoire (L59761); offers say songbook (L47679). Open decision, see L226.",
+    "morceau_L252": "Draft 'songs' is right. L47683 v2.offres.f.transposer 'Transposer tes morceaux' => 'Transpose your songs'; L47370 'Transpose a song'. 'Transpose the piece' exists at L43911 and L14348 but not in the offer line. No change.",
+    "note_rain_L261": "Draft 'Note rain' is right. L47693 v2.offres.f.pluie, L41637 ws.view_rain, L13804: 'Note rain'. Exact-case count: Note rain 35, Note Rain 21 (e.g. L46011), so the app is not uniform, but the offer line and screen labels use lower-case r. The consigne's 'Note Rain' does not match them.",
+    "sign_in_L35_L299_L319": "Draft 'Sign in' is right. The login button is outside translations.ts: app/auth/portal-i18n.ts:309 'Se connecter' => 'Sign in', and :263 'Connexion' => 'Sign in' (one targeted Grep beyond the allowed file, to answer this question). Also translations.ts L59498 'Me connecter' => 'Sign in'. Case-sensitive count: Sign in/sign in 34, Log in/log in 3.",
+    "tapis_roulant_L103": "Draft 'conveyor belt' is right. L49677 v2.tapis.titre, L59479 tab name, L53839, L59433: Conveyor belt. Treadmill appears once only, in a help line (L9196).",
+    "trace_L150_L153": "Setting names: L455 Polygon, L464 Open, L473 Hands. Tracé is usually path (L446, L8566, L10831), sometimes line (L7733, L8800). 'hand line' is absent. A separate use of 'hand paths' (L39110) is an admin tool and does not settle it. See rows L149 to L154.",
+    "journey_of_sensations_L155_L161": "Confirmed, contrary to the draft's note. L1385 logic.subtitle and L4448: 'Journey of Sensations'; L48239 'Journey of sensations'; L35504 lower-case 'a journey of sensations'. The difference is casing only, and the lower case in running text at L161 is attested.",
+    "degree_progression_L157_L162": "Confirmed. L1394 logic.progression_title 'Enchainement des degrés' => 'Degree Progression'; L1228 same. Casing only; no row.",
+    "logic_labels_L155_L157": "Confirmed: L1893 Joyful; L37451 Deep sadness; L37456 Intense sadness; L37461 Bright sadness; L1412 and L37466 Natural minor; L37471 and L37476 Harmonic and Melodic minor; L1246 Music Theory.",
+    "ailleurs_L258": "Plain meaning: in another key, see row L258. Inferred from L47455 and L47440; 'ailleurs' is not in an offer line. Worth one confirmation from David.",
+    "partition_score_L254_L256": "Draft 'score' follows the lexicon and the app majority (213 entries with score, 55 with sheet; some may overlap). The offer lines themselves say sheet (L47686, L51229). No row: lexicon and majority agree; noted because a reader may see 'sheet' on the app's offers screen.",
+    "other_app_names": "Confirmed: L45826 Voice passport; L49755 I see my voice; L43274 Help me find my voice; L41178 My practice ritual; L47694 and L47695 chord cards; L47704 Reveal the chords of your duo; L48801 and L54287 Neotone Connection; L43 Glossary. Other offer lines L253, L255, L257, L259, L260, L270, L271, L272, L273, L275, L277, L278 and L284 to L290 match or closely follow v2.offres.f.*.",
+    "surname_L295_L326": "App says 'Last name' (L3449); 'Surname' is normal British usage on a form. Not a meaning problem, no row.",
+    "L133_added_G": "Draft adds (G) to the caption. The fact is correct and the same form exists in source L130. No row, flagged by the drafter.",
+    "marina_david": "L171 to L181 and L216 to L218 read line by line: nothing added or lost, and L181 states 'translated from French'.",
+    "mechanical": "All ids present in draft and source. Tags and numbers compared by script with the /en/ prefix applied: no difference. JS rows: code skeleton identical. No U+2014. American spelling scan: only the noun 'practice' and 'practice ritual' were flagged, both correct."
+  }
+}

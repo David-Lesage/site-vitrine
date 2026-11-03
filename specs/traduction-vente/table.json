@@ -1,0 +1,1724 @@
+{
+ "L18": {
+  "section": "Balises",
+  "fr": "Handpan Constellation Studio : ton handpan, gratuit pour toujours",
+  "en": "Handpan Constellation Studio: the handpan app, free forever",
+  "es": "Handpan Constellation Studio: la app de handpan gratis para siempre"
+ },
+ "L19": {
+  "section": "Balises",
+  "fr": "Joue du handpan sans solfège : chaque note a sa couleur, chaque accord sa forme. Gratuit pour toujours, sur tout handpan acoustique comme sur le Neotone.",
+  "en": "Play the handpan without reading music: every note has its own colour, every chord its own shape. Free forever, on any acoustic handpan and on the Neotone.",
+  "es": "Toca el handpan sin solfeo: cada nota tiene su color, cada acorde su forma. La app es gratis para siempre, en cualquier handpan acústico y en el Neotone."
+ },
+ "L20": {
+  "section": "Balises",
+  "fr": "La constellation des accords de Handpan Constellation Studio",
+  "en": "The chord constellation of Handpan Constellation Studio",
+  "es": "La constelación de acordes de Handpan Constellation Studio"
+ },
+ "L23": {
+  "section": "Menu et pied de page",
+  "fr": "aria-label=\"Menu du site\"",
+  "en": "aria-label=\"Site menu\"",
+  "es": "aria-label=\"Menú del sitio\""
+ },
+ "L24": {
+  "section": "Menu et pied de page",
+  "fr": "aria-label=\"Liens du site\"",
+  "en": "aria-label=\"Site links\"",
+  "es": "aria-label=\"Enlaces del sitio\""
+ },
+ "L25": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/\">Accueil</a>",
+  "en": "href=\"/en/\">Home</a>",
+  "es": "href=\"/es/\">Inicio</a>"
+ },
+ "L26": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/neotone/\">Le Neotone</a>",
+  "en": "href=\"/en/neotone/\">The Neotone</a>",
+  "es": "href=\"/es/neotone/\">El Neotone</a>"
+ },
+ "L27": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/yishama/\">",
+  "en": "href=\"/en/yishama/\">",
+  "es": "href=\"/es/yishama/\">"
+ },
+ "L28": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/boutique/\">Boutique</a>",
+  "en": "href=\"/en/boutique/\">Shop</a>",
+  "es": "href=\"/es/boutique/\">Tienda</a>"
+ },
+ "L29": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/cours/\">Cours</a>",
+  "en": "href=\"/en/cours/\">Lessons</a>",
+  "es": "href=\"/es/cours/\">Cursos</a>"
+ },
+ "L30": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/blog/\">",
+  "en": "href=\"/en/blog/\">",
+  "es": "href=\"/es/blog/\">"
+ },
+ "L31": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/showroom/\">Showroom</a>",
+  "en": "href=\"/en/showroom/\">Showroom</a>",
+  "es": "href=\"/es/showroom/\">Showroom</a>"
+ },
+ "L32": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/a-propos/\">À propos</a>",
+  "en": "href=\"/en/a-propos/\">About</a>",
+  "es": "href=\"/es/a-propos/\">Acerca de</a>"
+ },
+ "L33": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/contact/\">Contact</a>",
+  "en": "href=\"/en/contact/\">Contact</a>",
+  "es": "href=\"/es/contact/\">Contacto</a>"
+ },
+ "L34": {
+  "section": "Menu et pied de page",
+  "fr": "class=\"site-nom\" href=\"/\"",
+  "en": "class=\"site-nom\" href=\"/en/\"",
+  "es": "class=\"site-nom\" href=\"/es/\""
+ },
+ "L35": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"https://play.handpanstudio.app/\">Se connecter</a>",
+  "en": "href=\"https://play.handpanstudio.app/\">Sign in</a>",
+  "es": "href=\"https://play.handpanstudio.app/\">Iniciar sesión</a>"
+ },
+ "L36": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/mentions-legales/\">Mentions légales</a>",
+  "en": "href=\"/en/mentions-legales/\">Legal notice</a>",
+  "es": "href=\"/es/mentions-legales/\">Aviso legal</a>"
+ },
+ "L37": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/conditions-generales/\">Conditions générales</a>",
+  "en": "href=\"/en/conditions-generales/\">Terms and conditions</a>",
+  "es": "href=\"/es/conditions-generales/\">Condiciones generales</a>"
+ },
+ "L38": {
+  "section": "Menu et pied de page",
+  "fr": "href=\"/politique-de-confidentialite/\">Confidentialité</a>",
+  "en": "href=\"/en/politique-de-confidentialite/\">Privacy</a>",
+  "es": "href=\"/es/politique-de-confidentialite/\">Privacidad</a>"
+ },
+ "L41": {
+  "section": "Ouverture et héros",
+  "fr": "title=\"Handpan Constellation Studio : les étoiles deviennent des accords, puis un handpan\"",
+  "en": "title=\"Handpan Constellation Studio: the stars become chords, then a handpan\"",
+  "es": "title=\"Handpan Constellation Studio: las estrellas se convierten en acordes, y luego en un handpan\""
+ },
+ "L42": {
+  "section": "Ouverture et héros",
+  "fr": "Passer l’intro",
+  "en": "Skip intro",
+  "es": "Saltar la intro"
+ },
+ "L43": {
+  "section": "Ouverture et héros",
+  "fr": "<div class=\"defile\">Défile</div>",
+  "en": "<div class=\"defile\">Scroll</div>",
+  "es": "<div class=\"defile\">Desliza</div>"
+ },
+ "L44": {
+  "section": "Ouverture et héros",
+  "fr": "Handpan Constellation Studio · l’app des joueurs de handpan",
+  "en": "Handpan Constellation Studio · the app for handpan players",
+  "es": "Handpan Constellation Studio · la app de quienes tocan el handpan"
+ },
+ "L45": {
+  "section": "Ouverture et héros",
+  "fr": "Ce soir, joue une chanson <em>sur ton handpan.</em>",
+  "en": "Play a song tonight, <em>on your handpan.</em>",
+  "es": "Esta noche, toca una canción <em>en tu handpan.</em>"
+ },
+ "L46": {
+  "section": "Ouverture et héros",
+  "fr": "Tu joues quelques notes au micro : l’app reconnaît ta gamme et te montre ses accords en couleurs. Puis les chansons que ton handpan peut jouer, les paroles sous les yeux.",
+  "en": "Play a few notes into the mic and the app recognises your scale and shows you its chords in colour. Then come the songs your handpan can play, with the lyrics in front of you.",
+  "es": "Tocas unas notas frente al micro: la app reconoce tu escala y te muestra sus acordes de colores. Y luego, las canciones que puedes tocar en tu handpan, con la letra delante."
+ },
+ "L47": {
+  "section": "Ouverture et héros",
+  "fr": "Créer mon compte gratuit",
+  "en": "Create my free account",
+  "es": "Crear mi cuenta gratuita"
+ },
+ "L48": {
+  "section": "Ouverture et héros",
+  "fr": "Gratuit pour toujours, sans carte bancaire.",
+  "en": "Free forever, no card needed.",
+  "es": "Gratis para siempre, sin tarjeta."
+ },
+ "L49": {
+  "section": "Ouverture et héros",
+  "fr": "74 coques connues, 541 ateliers recensés : <b>ton handpan est sans doute déjà dedans.</b>",
+  "en": "74 handpan models and 541 makers on record: <b>yours is probably already in there.</b>",
+  "es": "74 modelos de handpan conocidos, 541 talleres registrados: <b>lo más probable es que tu handpan ya esté aquí.</b>"
+ },
+ "L50": {
+  "section": "Ouverture et héros",
+  "fr": "Un D Kurd 18 dans l’app : le handpan en haut, ses sept accords en couleurs en dessous, le premier allumé en constellation.",
+  "en": "A D Kurd 18 in the app: the handpan at the top, its seven chords in colour below, the first lit up as a constellation.",
+  "es": "Un D Kurd 18 en la app: el handpan arriba, sus siete acordes en colores debajo, el primero iluminado en forma de constelación."
+ },
+ "L51": {
+  "section": "Ouverture et héros",
+  "fr": "Ton D Kurd dans l’app : ses 7 accords, et le premier allumé en constellation.",
+  "en": "Your D Kurd in the app: its 7 chords, with the first lit up as a constellation.",
+  "es": "Tu D Kurd en la app: sus 7 acordes, y el primero iluminado en forma de constelación."
+ },
+ "L54": {
+  "section": "Manifeste",
+  "fr": "Le piano a la partition.",
+  "en": "The piano has sheet music.",
+  "es": "El piano tiene la partitura."
+ },
+ "L55": {
+  "section": "Manifeste",
+  "fr": "La guitare a la tablature.",
+  "en": "The guitar has tab.",
+  "es": "La guitarra tiene la tablatura."
+ },
+ "L56": {
+  "section": "Manifeste",
+  "fr": "Le handpan avait des chiffres et des lettres.",
+  "en": "The handpan had numbers and letters.",
+  "es": "El handpan tenía números y letras."
+ },
+ "L57": {
+  "section": "Manifeste",
+  "fr": "Désormais, il a <em>sept couleurs</em>, et des accords qui se dessinent comme des constellations.",
+  "en": "Now it has <em>seven colours</em>, and chords that take shape like constellations.",
+  "es": "Ahora tiene <em>siete colores</em>, y acordes que se dibujan como constelaciones."
+ },
+ "L60": {
+  "section": "Trois gestes",
+  "fr": "<p class=\"sur\">Trois gestes</p><h2>De ton instrument à ta première chanson.</h2>",
+  "en": "<p class=\"sur\">Three steps</p><h2>From your instrument to your first song.</h2>",
+  "es": "<p class=\"sur\">Tres pasos</p><h2>De tu instrumento a tu primera canción.</h2>"
+ },
+ "L61": {
+  "section": "Trois gestes",
+  "fr": "Joue quelques notes au micro.",
+  "en": "Play a few notes into the mic.",
+  "es": "Toca unas notas frente al micro."
+ },
+ "L62": {
+  "section": "Trois gestes",
+  "fr": "Tu ne connais pas le nom de ta gamme ? Aucune importance : l’app l’écoute, la reconnaît et retrouve ton instrument.",
+  "en": "Don’t know what your scale is called? It doesn’t matter. The app listens, recognises it and finds your instrument.",
+  "es": "¿No sabes cómo se llama tu escala? No importa: la app la escucha, la reconoce y encuentra tu instrumento."
+ },
+ "L63": {
+  "section": "Trois gestes",
+  "fr": "Regarde-le s’allumer.",
+  "en": "Watch it light up.",
+  "es": "Mira cómo se ilumina."
+ },
+ "L64": {
+  "section": "Trois gestes",
+  "fr": "Chaque degré prend sa couleur, chaque accord dessine sa figure : les sept accords que ton handpan sait jouer, et l’émotion de chacun.",
+  "en": "Each degree of the scale gets its own colour and each chord its own shape: the seven chords your handpan can play, and the emotion each one carries.",
+  "es": "Cada grado se ilumina con su color, cada acorde dibuja su figura: los siete acordes de tu handpan y la emoción de cada uno."
+ },
+ "L65": {
+  "section": "Trois gestes",
+  "fr": "Joue ce soir.",
+  "en": "Play tonight.",
+  "es": "Toca esta noche."
+ },
+ "L66": {
+  "section": "Trois gestes",
+  "fr": "Les chansons du catalogue que ton handpan peut jouer sont déjà là. Tu en as une autre en tête ? Colle ses accords et ses paroles, ou dépose le fichier : l’app te la montre sur TON handpan.",
+  "en": "The catalogue songs your handpan can play are already there. Got another in mind? Paste its chords and lyrics, or drop in the file, and the app shows it on your own handpan.",
+  "es": "Las canciones del catálogo que puedes tocar en tu handpan ya están aquí. ¿Tienes otra en la cabeza? Pega sus acordes y su letra, o sube el archivo: la app te la muestra en tu propio handpan."
+ },
+ "L67": {
+  "section": "Trois gestes",
+  "fr": "L’app écoute le handpan au micro et reconnaît sa gamme",
+  "en": "The app listens to the handpan through the mic and recognises its scale",
+  "es": "La app escucha el handpan por el micro y reconoce su escala"
+ },
+ "L68": {
+  "section": "Trois gestes",
+  "fr": "Le mode Logique : chaque degré s’allume dans sa couleur",
+  "en": "Logic mode: each degree lights up in its colour",
+  "es": "El modo Lógico: cada grado se enciende en su color"
+ },
+ "L69": {
+  "section": "Trois gestes",
+  "fr": "On colle les accords et les paroles de The Scientist : l’app montre la chanson sur un D Kurd 10",
+  "en": "The chords and lyrics of The Scientist are pasted in, and the app shows the song on a D Kurd 10",
+  "es": "Se pegan los acordes y la letra de The Scientist: la app muestra la canción en un D Kurd 10"
+ },
+ "L70": {
+  "section": "Trois gestes",
+  "fr": "Tout ça, <span>c’est gratuit.</span>",
+  "en": "All of this <span>is free.</span>",
+  "es": "Todo esto <span>es gratis.</span>"
+ },
+ "L71": {
+  "section": "Trois gestes",
+  "fr": "Sans carte bancaire, sans limite de temps, sur ton propre handpan.",
+  "en": "No card, no time limit, on your own handpan.",
+  "es": "Sin tarjeta, sin límite de tiempo, en tu propio handpan."
+ },
+ "L72": {
+  "section": "Trois gestes",
+  "fr": "Je commence maintenant",
+  "en": "Start now",
+  "es": "Empezar ahora"
+ },
+ "L73": {
+  "section": "Trois gestes",
+  "fr": "Ou je continue : voir une chanson ↓",
+  "en": "Or read on: see a song in the app ↓",
+  "es": "O sigue bajando: ver una canción ↓"
+ },
+ "L76": {
+  "section": "Une chanson",
+  "fr": "The Scientist de Coldplay dans l’app, sur un D Kurd 10 : au-dessus des paroles, chaque accord dessiné sur le handpan, dans la couleur de son degré.",
+  "en": "The Scientist by Coldplay in the app, on a D Kurd 10: above the lyrics, each chord drawn on the handpan, in the colour of its degree.",
+  "es": "The Scientist de Coldplay en la app, en un D Kurd 10: encima de la letra, cada acorde dibujado sobre el handpan, en el color de su grado."
+ },
+ "L77": {
+  "section": "Une chanson",
+  "fr": "Une chanson, pour de vrai",
+  "en": "See it on a real song",
+  "es": "Una canción de verdad"
+ },
+ "L78": {
+  "section": "Une chanson",
+  "fr": "Les accords au-dessus des paroles, dessinés sur ton handpan.",
+  "en": "The chords above the lyrics, drawn on your handpan.",
+  "es": "Los acordes encima de la letra, dibujados sobre tu handpan."
+ },
+ "L79": {
+  "section": "Une chanson",
+  "fr": "Comme une grille de guitare, sauf que tu ne lis pas de noms d’accords : tu suis des formes et des couleurs. Le rouge revient, c’est la maison. Le bleu, c’est la tension qui appelle le retour.",
+  "en": "Like a guitar chord chart, except you’re not reading chord names: you follow shapes and colours. When red comes round again, you’re home. Blue is the tension that pulls you back.",
+  "es": "Como el cifrado de una canción de guitarra, solo que no lees nombres de acordes: sigues formas y colores. Cuando vuelve el rojo, estás en casa. El azul es la tensión que pide volver."
+ },
+ "L80": {
+  "section": "Une chanson",
+  "fr": "Les paroles devant toi, les accords au-dessus, sur ta gamme : tu joues, et tu chantes. Ce soir.",
+  "en": "The lyrics in front of you, the chords above them, all in your scale: you play and you sing. Tonight.",
+  "es": "La letra delante, los acordes encima, en tu escala: tocas y cantas. Esta noche."
+ },
+ "L81": {
+  "section": "Une chanson",
+  "fr": "Sur un D Kurd 18, 157 chansons du catalogue se jouent déjà telles quelles.",
+  "en": "On a D Kurd 18, 157 songs in the catalogue can be played just as they are.",
+  "es": "En un D Kurd 18, 157 canciones del catálogo ya se pueden tocar tal cual."
+ },
+ "L84": {
+  "section": "Chanter",
+  "fr": "<p class=\"sur\">Chanter</p>",
+  "en": "<p class=\"sur\">Sing</p>",
+  "es": "<p class=\"sur\">Cantar</p>"
+ },
+ "L85": {
+  "section": "Chanter",
+  "fr": "Une app créée par un chanteur qui s’accompagne au handpan.",
+  "en": "An app created by a singer who accompanies himself on the handpan.",
+  "es": "Una app creada por un cantante que se acompaña con el handpan."
+ },
+ "L86": {
+  "section": "Chanter",
+  "fr": "Le handpan peut porter une voix, comme la guitare ou le piano. Commence par la tienne.",
+  "en": "A handpan can carry a voice, just as a guitar or a piano can. Start with your voice.",
+  "es": "El handpan puede sostener una voz, como la guitarra o el piano. Empieza por la tuya."
+ },
+ "L87": {
+  "section": "Chanter",
+  "fr": "<span>Ta tessiture, mesurée</span><span>Le handpan fait pour ta voix</span><span>Une note guide et un bourdon</span>",
+  "en": "<span>Your vocal range, measured</span><span>The handpan made for your voice</span><span>A guide note and a drone</span>",
+  "es": "<span>Tu tesitura, medida</span><span>El handpan hecho para tu voz</span><span>Una nota guía y un bordón</span>"
+ },
+ "L88": {
+  "section": "Chanter",
+  "fr": "David Lesage chante Shape of My Heart en s’accompagnant au handpan.",
+  "en": "David Lesage singing Shape of My Heart, accompanying himself on the handpan.",
+  "es": "David Lesage canta Shape of My Heart acompañándose con el handpan."
+ },
+ "L89": {
+  "section": "Chanter",
+  "fr": "David Lesage chante <i>Shape of My Heart</i> en s’accompagnant.",
+  "en": "David Lesage sings <i>Shape of My Heart</i>, accompanying himself.",
+  "es": "David Lesage canta <i>Shape of My Heart</i> acompañándose."
+ },
+ "L90": {
+  "section": "Chanter",
+  "fr": "Le passeport vocal de David : sa voix va de F2 à C6, sa note la plus grave, sa note de confort et sa note la plus haute, et sa zone de confort, de E3 à C5, sur le clavier des couleurs.",
+  "en": "David’s voice passport: his range runs from F2 to C6. His lowest, comfort and highest notes, and his comfort zone from E3 to C5, are shown on the colour keyboard.",
+  "es": "El pasaporte vocal de David: su voz va de F2 a C6, su nota más grave, su nota de confort y su nota más aguda, y su zona de confort, de E3 a C5, en el teclado de colores."
+ },
+ "L91": {
+  "section": "Chanter",
+  "fr": "Le passeport vocal",
+  "en": "The voice passport",
+  "es": "El pasaporte vocal"
+ },
+ "L92": {
+  "section": "Chanter",
+  "fr": "Quel handpan est fait pour ta voix ?",
+  "en": "Which handpan is made for your voice?",
+  "es": "¿Qué handpan está hecho para tu voz?"
+ },
+ "L93": {
+  "section": "Chanter",
+  "fr": "Tu chantes quelques notes, l’app trouve les limites de ta voix, ta zone de confort, et la tonalité de handpan qui lui va.",
+  "en": "Sing a few notes and the app finds the limits of your voice, your comfort zone, and the handpan key that suits it.",
+  "es": "Cantas unas notas y la app encuentra los límites de tu voz, tu zona de confort y la tonalidad de handpan que le va bien."
+ },
+ "L94": {
+  "section": "Chanter",
+  "fr": "Un passeport par personne : toute la famille peut avoir le sien, et un professeur en crée pour ses élèves.",
+  "en": "One passport per person: the whole family can have their own, and a teacher can create them for their students.",
+  "es": "Un pasaporte por persona: toda la familia puede tener el suyo, y quien da clases puede crearlos para sus alumnos."
+ },
+ "L95": {
+  "section": "Chanter",
+  "fr": "Dans l’app, l’écran Chanter : « Je vois ma voix » et « Aide-moi à trouver ma voix ».",
+  "en": "In the app, the Sing screen: “I see my voice” and “Help me find my voice”.",
+  "es": "En la app, la pantalla Cantar: «Veo mi voz» y «Ayúdame a encontrar mi voz»."
+ },
+ "L96": {
+  "section": "Chanter",
+  "fr": "Voir ta voix d’abord, puis la trouver.",
+  "en": "See your voice first, then find it.",
+  "es": "Primero ver tu voz, luego encontrarla."
+ },
+ "L99": {
+  "section": "S'entraîner",
+  "fr": "<p class=\"sur rv\">S’entraîner</p>",
+  "en": "<p class=\"sur rv\">Practise</p>",
+  "es": "<p class=\"sur rv\">Practicar</p>"
+ },
+ "L100": {
+  "section": "S'entraîner",
+  "fr": "Chaque jour, l’app joue avec toi.",
+  "en": "The app plays along with you, every day.",
+  "es": "Cada día, la app toca contigo."
+ },
+ "L101": {
+  "section": "S'entraîner",
+  "fr": "Tout ce qu’il faut pour pratiquer est dans le compte gratuit.",
+  "en": "Everything you need to practise is in the free account.",
+  "es": "Todo lo que necesitas para practicar está en la cuenta gratuita."
+ },
+ "L102": {
+  "section": "S'entraîner",
+  "fr": "<b>Ta technique</b><p>Des leçons guidées. L’app t’écoute au micro pendant que tu joues.</p>",
+  "en": "<b>Your technique</b><p>Guided lessons. The app listens through the mic while you play.</p>",
+  "es": "<b>Tu técnica</b><p>Lecciones guiadas. La app te escucha por el micro mientras tocas.</p>"
+ },
+ "L103": {
+  "section": "S'entraîner",
+  "fr": "<b>Tes accords</b><p>Le tapis roulant fait défiler les enchaînements, à ton rythme.</p>",
+  "en": "<b>Your chords</b><p>A conveyor belt carries the chord progressions past you, at your pace.</p>",
+  "es": "<b>Tus acordes</b><p>Las progresiones de acordes desfilan en una cinta, a tu ritmo.</p>"
+ },
+ "L104": {
+  "section": "S'entraîner",
+  "fr": "<b>Ton rythme</b><p>Un métronome, et l’app te dit si tu es en avance ou en retard.</p>",
+  "en": "<b>Your rhythm</b><p>A metronome, and the app tells you if you’re ahead of the beat or behind it.</p>",
+  "es": "<b>Tu ritmo</b><p>Un metrónomo, y la app te dice si te adelantas o te retrasas.</p>"
+ },
+ "L105": {
+  "section": "S'entraîner",
+  "fr": "<b>Ton rituel</b><p>Un moment de pratique à toi, et ta progression, jour après jour.</p>",
+  "en": "<b>Your ritual</b><p>Your own practice time, and your progress, day by day.</p>",
+  "es": "<b>Tu ritual</b><p>Un momento de práctica solo para ti, y tu progreso, día a día.</p>"
+ },
+ "L106": {
+  "section": "S'entraîner",
+  "fr": "Dans l’app : Mon rituel de pratique, les leçons de technique de jeu, et ta progression.",
+  "en": "In the app: My practice ritual, the playing technique lessons, and your progress.",
+  "es": "En la app: Mi ritual de práctica, las lecciones de técnica de interpretación y tu progreso."
+ },
+ "L107": {
+  "section": "S'entraîner",
+  "fr": "Ton rituel de pratique, les leçons de technique, ta progression.",
+  "en": "Your practice ritual, the technique lessons, your progress.",
+  "es": "Tu ritual de práctica, las lecciones de técnica, tu progreso."
+ },
+ "L110": {
+  "section": "Le langage",
+  "fr": "<p class=\"sur rv\">Le langage</p>",
+  "en": "<p class=\"sur rv\">The language</p>",
+  "es": "<p class=\"sur rv\">El lenguaje</p>"
+ },
+ "L111": {
+  "section": "Le langage",
+  "fr": "Lire la musique sans la déchiffrer.",
+  "en": "Read music without decoding it.",
+  "es": "Leer la música sin descifrarla."
+ },
+ "L112": {
+  "section": "Le langage",
+  "fr": "Plutôt que des noms de notes, l’app te montre la structure de la musique : des couleurs, et des formes.",
+  "en": "Instead of note names, the app shows you the structure of the music: colours and shapes.",
+  "es": "En lugar de nombres de notas, la app te muestra la estructura de la música: colores y formas."
+ },
+ "L113": {
+  "section": "Le langage",
+  "fr": "aria-label=\"Le langage de l’app\"",
+  "en": "aria-label=\"The app’s language\"",
+  "es": "aria-label=\"El lenguaje de la app\""
+ },
+ "L114": {
+  "section": "Le langage",
+  "fr": "data-o=\"0\">Les couleurs</button>",
+  "en": "data-o=\"0\">Colours</button>",
+  "es": "data-o=\"0\">Los colores</button>"
+ },
+ "L115": {
+  "section": "Le langage",
+  "fr": "data-o=\"1\">Les constellations</button>",
+  "en": "data-o=\"1\">Constellations</button>",
+  "es": "data-o=\"1\">Las constelaciones</button>"
+ },
+ "L116": {
+  "section": "Le langage",
+  "fr": "data-o=\"2\">Émotion ou théorie</button>",
+  "en": "data-o=\"2\">Emotion or theory</button>",
+  "es": "data-o=\"2\">Emoción o teoría</button>"
+ },
+ "L117": {
+  "section": "Le langage",
+  "fr": "data-o=\"3\">Ton niveau</button>",
+  "en": "data-o=\"3\">Your level</button>",
+  "es": "data-o=\"3\">Tu nivel</button>"
+ },
+ "L118": {
+  "section": "Le langage",
+  "fr": "Sept couleurs, et c’est toi qui choisis ce qu’elles disent.",
+  "en": "Seven colours, and you choose what they say.",
+  "es": "Siete colores, y tú eliges lo que dicen."
+ },
+ "L119": {
+  "section": "Le langage",
+  "fr": "Les ChromaKeys, le piano de couleurs de l’app, colorent ton handpan. La couleur dit la note elle-même, ou sa place dans la gamme.",
+  "en": "ChromaKeys, the app’s colour piano, paints your handpan. The colour tells you either the note itself or its place in the scale.",
+  "es": "Los ChromaKeys, el piano de colores de la app, colorean tu handpan. El color indica la nota en sí, o su lugar en la escala."
+ },
+ "L120": {
+  "section": "Le langage",
+  "fr": "La couleur dit…",
+  "en": "The colour says…",
+  "es": "El color indica…"
+ },
+ "L121": {
+  "section": "Le langage",
+  "fr": "aria-label=\"Ce que dit la couleur\"",
+  "en": "aria-label=\"What the colour says\"",
+  "es": "aria-label=\"Lo que indica el color\""
+ },
+ "L122": {
+  "section": "Le langage",
+  "fr": ">la note<small>chakras</small>",
+  "en": ">the note<small>chakras</small>",
+  "es": ">la nota<small>chakras</small>"
+ },
+ "L123": {
+  "section": "Le langage",
+  "fr": ">sa place dans la gamme<small>degrés</small>",
+  "en": ">its place in the scale<small>degrees</small>",
+  "es": ">su lugar en la escala<small>grados</small>"
+ },
+ "L124": {
+  "section": "Le langage",
+  "fr": "Les notes s’écrivent…",
+  "en": "Notes are written…",
+  "es": "Las notas se escriben…"
+ },
+ "L125": {
+  "section": "Le langage",
+  "fr": "aria-label=\"Noms des notes\"",
+  "en": "aria-label=\"Note names\"",
+  "es": "aria-label=\"Nombres de las notas\""
+ },
+ "L126": {
+  "section": "Le langage",
+  "fr": "data-nom=\"fr\" aria-pressed=\"true\">Do Ré Mi</button>",
+  "en": "data-nom=\"fr\" aria-pressed=\"false\">Do Re Mi</button>",
+  "es": "data-nom=\"fr\" aria-pressed=\"true\">Do Re Mi</button>"
+ },
+ "L127": {
+  "section": "Le langage",
+  "fr": "data-nom=\"en\" aria-pressed=\"false\">C D E</button>",
+  "en": "data-nom=\"en\" aria-pressed=\"true\">C D E</button>",
+  "es": "data-nom=\"en\" aria-pressed=\"false\">C D E</button>"
+ },
+ "L128": {
+  "section": "Le langage",
+  "fr": "<div class=\"w\" data-mode=\"degre\" data-nom=\"fr\">",
+  "en": "<div class=\"w\" data-mode=\"degre\" data-nom=\"en\">",
+  "es": "<div class=\"w\" data-mode=\"degre\" data-nom=\"fr\">"
+ },
+ "L129": {
+  "section": "Le langage",
+  "fr": "L’accord I Équilibre en Sol majeur : ses trois notes en rouge, la couleur du premier degré.",
+  "en": "Chord I Balance in Sol major: its three notes in red, the colour of the first degree.",
+  "es": "El acorde I (Equilibrio) en Sol mayor: sus tres notas en rojo, el color del primer grado."
+ },
+ "L130": {
+  "section": "Le langage",
+  "fr": "L’accord I Équilibre en Sol majeur (G) : ses trois notes en rouge, la couleur du premier degré.",
+  "en": "Chord I Balance in G major: its three notes in red, the colour of the first degree.",
+  "es": "El acorde I (Equilibrio) en Sol mayor (G): sus tres notas en rojo, el color del primer grado."
+ },
+ "L131": {
+  "section": "Le langage",
+  "fr": "Le même accord, chaque note dans la couleur de son chakra : Sol bleu ciel, Si violet, Ré orange.",
+  "en": "The same chord, each note in the colour of its chakra: Sol sky blue, Ti violet, Re orange.",
+  "es": "El mismo acorde, cada nota en el color de su chakra: Sol azul cielo, Si violeta, Re naranja."
+ },
+ "L132": {
+  "section": "Le langage",
+  "fr": "Le même accord, chaque note dans la couleur de son chakra : G bleu ciel, B violet, D orange.",
+  "en": "The same chord, each note in the colour of its chakra: G sky blue, B violet, D orange.",
+  "es": "El mismo acorde, cada nota en el color de su chakra: G azul cielo, B violeta, D naranja."
+ },
+ "L133": {
+  "section": "Le langage",
+  "fr": "Le même accord, I Équilibre en Sol majeur, dans l’app.",
+  "en": "The same chord in the app: chord I (Balance) in G major.",
+  "es": "El mismo acorde, el I (Equilibrio) en Sol mayor, en la app."
+ },
+ "L134": {
+  "section": "Le langage",
+  "fr": "Le premier degré est toujours rouge, quelle que soit la tonalité, et la forme de l’accord ne bouge pas : <b>c’est le capodastre de la guitare.</b>",
+  "en": "The first degree is always red, whatever the key, and the chord’s shape doesn’t move: <b>it’s like a capo on a guitar.</b>",
+  "es": "El primer grado siempre es rojo, sea cual sea la tonalidad, y la forma del acorde no se mueve: <b>es como la cejilla (el capo) en la guitarra.</b>"
+ },
+ "L135": {
+  "section": "Le langage",
+  "fr": "Chaque note garde la couleur de son chakra, quelle que soit la gamme : <span data-n=\"Do\">Do</span> est toujours rouge, <span data-n=\"Sol\">Sol</span> bleu ciel. Un accord devient alors un mélange, une couleur par note.",
+  "en": "Each note keeps its chakra colour, whatever the scale: <span data-n=\"Do\">Do</span> is always red, <span data-n=\"Sol\">Sol</span> sky blue. A chord then becomes a mix of colours, one per note.",
+  "es": "Cada nota conserva el color de su chakra, sea cual sea la escala: <span data-n=\"Do\">Do</span> siempre es rojo, <span data-n=\"Sol\">Sol</span> azul cielo. Así, un acorde se vuelve una mezcla, un color por nota."
+ },
+ "L136": {
+  "section": "Le langage",
+  "fr": "aria-label=\"Un accord dessiné de trois façons\"",
+  "en": "aria-label=\"One chord drawn three ways\"",
+  "es": "aria-label=\"Un acorde dibujado de tres maneras\""
+ },
+ "L137": {
+  "section": "Le langage",
+  "fr": "Le langage des constellations",
+  "en": "The language of constellations",
+  "es": "El lenguaje de las constelaciones"
+ },
+ "L138": {
+  "section": "Le langage",
+  "fr": "La nouvelle tablature visuelle du handpan.",
+  "en": "The handpan’s new visual tablature.",
+  "es": "La nueva tablatura visual del handpan."
+ },
+ "L139": {
+  "section": "Le langage",
+  "fr": "Au-delà des couleurs, l’app relie les notes d’un accord : elle dessine une figure lumineuse, une constellation d’accord. Trois façons de la tracer.",
+  "en": "On top of the colours, the app joins up the notes of a chord and draws a glowing figure, a chord constellation. There are three ways to trace it.",
+  "es": "Más allá de los colores, la app une las notas de un acorde y dibuja una figura luminosa, una constelación de acorde. Hay tres maneras de trazarla."
+ },
+ "L140": {
+  "section": "Le langage",
+  "fr": "<span>Ton handpan…</span>",
+  "en": "<span>Your handpan…</span>",
+  "es": "<span>Tu handpan…</span>"
+ },
+ "L141": {
+  "section": "Le langage",
+  "fr": "aria-label=\"Type de handpan\"",
+  "en": "aria-label=\"Handpan type\"",
+  "es": "aria-label=\"Tipo de handpan\""
+ },
+ "L142": {
+  "section": "Le langage",
+  "fr": "aria-pressed=\"true\">acoustique</button>",
+  "en": "aria-pressed=\"true\">acoustic</button>",
+  "es": "aria-pressed=\"true\">acústico</button>"
+ },
+ "L143": {
+  "section": "Le langage",
+  "fr": "aria-pressed=\"false\">numérique</button>",
+  "en": "aria-pressed=\"false\">digital</button>",
+  "es": "aria-pressed=\"false\">digital</button>"
+ },
+ "L144": {
+  "section": "Le langage",
+  "fr": "Un accord en constellation fermée sur un handpan acoustique D Kurd 18",
+  "en": "A chord as a closed constellation on an acoustic D Kurd 18 handpan",
+  "es": "Un acorde en constelación cerrada en un handpan acústico D Kurd 18"
+ },
+ "L145": {
+  "section": "Le langage",
+  "fr": "L’accord V Tension (La mineur) en constellation fermée sur un pan numérique",
+  "en": "Chord V Tension (A minor) as a closed constellation on a digital pan",
+  "es": "El acorde V Tensión (La menor) en constelación cerrada en un handpan digital"
+ },
+ "L146": {
+  "section": "Le langage",
+  "fr": "<b>Fermée</b>La forme d’un accord, toutes ses notes reliées. Tu le reconnais d’un coup d’œil, à sa forme.",
+  "en": "<b>Closed</b>A chord as a shape, all its notes joined. You recognise it at a glance.",
+  "es": "<b>Cerrada</b>La forma de un acorde, con todas sus notas unidas. Lo reconoces de un vistazo, por su forma."
+ },
+ "L147": {
+  "section": "Le langage",
+  "fr": "Le même accord en constellation ouverte, handpan acoustique",
+  "en": "The same chord as an open constellation, acoustic handpan",
+  "es": "El mismo acorde en constelación abierta, handpan acústico"
+ },
+ "L148": {
+  "section": "Le langage",
+  "fr": "Le même accord en constellation ouverte, pan numérique",
+  "en": "The same chord as an open constellation, digital pan",
+  "es": "El mismo acorde en constelación abierta, handpan digital"
+ },
+ "L149": {
+  "section": "Le langage",
+  "fr": "<b>Ouverte</b>Un tracé qui suit le chemin des notes, pour voir un déplacement de main.",
+  "en": "<b>Open</b>A path that follows the notes, so you can see how the hand travels.",
+  "es": "<b>Abierta</b>Un trazado que sigue el camino de las notas, para ver el movimiento de la mano."
+ },
+ "L150": {
+  "section": "Le langage",
+  "fr": "Le même accord en tracé des mains, handpan acoustique",
+  "en": "The same chord with one path per hand, acoustic handpan",
+  "es": "El mismo acorde en trazado de manos, handpan acústico"
+ },
+ "L151": {
+  "section": "Le langage",
+  "fr": "Le même accord en tracé des mains, pan numérique",
+  "en": "The same chord with one path per hand, digital pan",
+  "es": "El mismo acorde en trazado de manos, handpan digital"
+ },
+ "L152": {
+  "section": "Le langage",
+  "fr": "<b>Mains</b>Le tracé pensé pour le geste. Quelle main, quelle note : tu lis directement ton jeu.",
+  "en": "<b>Hands</b>The path made for the movement. Which hand, which note: you can read what to play straight off it.",
+  "es": "<b>Manos</b>El trazado pensado para las manos. Qué mano, qué nota: lees directamente cómo tocar."
+ },
+ "L153": {
+  "section": "Le langage",
+  "fr": "Le même accord dans les trois tracés, sur un handpan acoustique D Kurd 18.",
+  "en": "The same chord with all three paths, on an acoustic D Kurd 18 handpan.",
+  "es": "El mismo acorde en los tres trazados, en un handpan acústico D Kurd 18."
+ },
+ "L154": {
+  "section": "Le langage",
+  "fr": "Le même accord, V Tension, dans les trois tracés, sur un Neotone.",
+  "en": "The same chord, V Tension, with all three paths, on a Neotone.",
+  "es": "El mismo acorde, V Tensión, en los tres trazados, en un Neotone."
+ },
+ "L155": {
+  "section": "Le langage",
+  "fr": "Le mode Logique en langage émotionnel : Joyeux, Triste profond, Triste intense, Triste lumineux, Voyage des sensations.",
+  "en": "Logic mode in emotional language: Joyful, Deep sadness, Intense sadness, Bright sadness, Journey of sensations.",
+  "es": "El modo Lógico en lenguaje emocional: Alegre, Tristeza profunda, Tristeza intensa, Tristeza luminosa, Viaje de las sensaciones."
+ },
+ "L156": {
+  "section": "Le langage",
+  "fr": "<figcaption>Ressenti émotionnel</figcaption>",
+  "en": "<figcaption>Feeling</figcaption>",
+  "es": "<figcaption>Sensación emocional</figcaption>"
+ },
+ "L157": {
+  "section": "Le langage",
+  "fr": "Le même panneau en théorie musicale : Majeur, Mineur naturel, harmonique, mélodique, Enchaînement des degrés.",
+  "en": "The same panel in music theory: Major, Natural minor, harmonic, melodic, Degree progression.",
+  "es": "El mismo panel en teoría musical: Mayor, Menor natural, armónica, melódica, Secuencia de grados."
+ },
+ "L158": {
+  "section": "Le langage",
+  "fr": "<figcaption>Théorie musicale</figcaption>",
+  "en": "<figcaption>Music theory</figcaption>",
+  "es": "<figcaption>Teoría musical</figcaption>"
+ },
+ "L159": {
+  "section": "Le langage",
+  "fr": "<p class=\"sur rv\">Le mode Logique</p>",
+  "en": "<p class=\"sur rv\">Logic mode</p>",
+  "es": "<p class=\"sur rv\">El modo Lógico</p>"
+ },
+ "L160": {
+  "section": "Le langage",
+  "fr": "Deux langages pour la même musique.",
+  "en": "Two languages for the same music.",
+  "es": "Dos lenguajes para la misma música."
+ },
+ "L161": {
+  "section": "Le langage",
+  "fr": "En ressenti, une gamme est joyeuse ou triste, et sa tristesse peut être profonde, orientale ou jazz. Tu composes un voyage de sensations.",
+  "en": "By feel, a scale is joyful or sad, and its sadness can be deep, Eastern or jazzy. You compose a journey of sensations.",
+  "es": "Si partes de la sensación, una escala es alegre o triste, y su tristeza puede ser profunda, oriental o de jazz. Compones un viaje de sensaciones."
+ },
+ "L162": {
+  "section": "Le langage",
+  "fr": "En théorie, les mêmes réglages reprennent leurs noms : majeur, mineur naturel, harmonique, mélodique, enchaînement des degrés.",
+  "en": "In music theory, the same settings go by their proper names: major, natural minor, harmonic, melodic, degree progression.",
+  "es": "Si partes de la teoría, los mismos ajustes recuperan sus nombres: mayor, menor natural, armónica, melódica, secuencia de grados."
+ },
+ "L163": {
+  "section": "Le langage",
+  "fr": "Tu entres par l’émotion. Le jour où tu veux le solfège, il est là, au même endroit.",
+  "en": "You start with emotion. When you want music theory, it’s there, in the same place.",
+  "es": "Entras por la emoción. El día que quieras el solfeo, está ahí, en el mismo lugar."
+ },
+ "L164": {
+  "section": "Le langage",
+  "fr": "Tu commences sans solfège. Les noms viennent quand tu les demandes.",
+  "en": "You start with no theory. The names come when you ask for them.",
+  "es": "Empiezas sin solfeo. Los nombres llegan cuando los pides."
+ },
+ "L165": {
+  "section": "Le langage",
+  "fr": "aria-label=\"Le même accord affiché aux trois niveaux\"",
+  "en": "aria-label=\"The same chord shown at all three levels\"",
+  "es": "aria-label=\"El mismo acorde mostrado en los tres niveles\""
+ },
+ "L166": {
+  "section": "Le langage",
+  "fr": "<b>Découverte</b><p>Les couleurs et les numéros, sans solfège.</p>",
+  "en": "<b>Discovery</b><p>Colours and numbers, no theory.</p>",
+  "es": "<b>Descubrimiento</b><p>Los colores y los números, sin solfeo.</p>"
+ },
+ "L167": {
+  "section": "Le langage",
+  "fr": "<b>Apprenti</b><p>Les noms des notes et des accords.</p>",
+  "en": "<b>Apprentice</b><p>The names of notes and chords.</p>",
+  "es": "<b>Aprendiz</b><p>Los nombres de las notas y de los acordes.</p>"
+ },
+ "L168": {
+  "section": "Le langage",
+  "fr": "<b>Musicien</b><p>Tout débloqué : les 7 accords, les enrichissements +7, +9…</p>",
+  "en": "<b>Musician</b><p>Everything unlocked: all 7 chords, the 7th and 9th extensions…</p>",
+  "es": "<b>Músico</b><p>Todo desbloqueado: los 7 acordes, las extensiones +7, +9…</p>"
+ },
+ "L171": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "Ce qu’en dit une élève",
+  "en": "What a student says",
+  "es": "Lo que dice una alumna"
+ },
+ "L172": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "Les outils interactifs permettent d’afficher son propre handpan à l’écran, de recevoir un retour immédiat sur les notes jouées […]</blockquote>",
+  "en": "The interactive tools let you display your own handpan on screen, get immediate feedback on the notes you play […]</blockquote>",
+  "es": "Las herramientas interactivas permiten mostrar el propio handpan en pantalla, recibir una respuesta inmediata sobre las notas tocadas […]</blockquote>"
+ },
+ "L173": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "« Ayant déjà utilisé une autre application, je peux dire que celle-ci est de loin ma préférée tant elle est complète ! »",
+  "en": "“Having already used another app, I can say that this one is by far my favourite, because it is so complete!”",
+  "es": "«Como ya he usado otra aplicación, puedo decir que esta es, con diferencia, mi preferida, ¡de lo completa que es!»"
+ },
+ "L174": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "Lire tout son message",
+  "en": "Read her full message",
+  "es": "Leer todo su mensaje"
+ },
+ "L175": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "« J’ai fait mes premiers pas au handpan avec David et je poursuis aujourd’hui mon apprentissage avec Constellations. Ayant déjà utilisé une autre application, je peux dire que celle-ci est de loin ma préférée tant elle est complète !",
+  "en": "“I took my first steps on the handpan with David and today I’m continuing my learning with Constellations. Having already used another app, I can say that this one is by far my favourite, because it is so complete!",
+  "es": "«Di mis primeros pasos con el handpan con David y hoy sigo aprendiendo con Constellations. Como ya he usado otra aplicación, puedo decir que esta es, con diferencia, mi preferida, ¡de lo completa que es!"
+ },
+ "L176": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "<p>Plus je l’utilise, plus je réalise à quel point elle porte bien son nom. Elle nous ouvre véritablement le champ de tous les possibles !</p>",
+  "en": "<p>The more I use it, the more I realise how well it lives up to its name. It truly opens up a world of possibilities!</p>",
+  "es": "<p>Cuanto más la uso, más me doy cuenta de lo mucho que hace honor a su nombre. ¡De verdad nos abre un sinfín de posibilidades!</p>"
+ },
+ "L177": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "Ce que j’apprécie particulièrement, c’est qu’elle va bien au-delà des cours en ligne. Les outils interactifs permettent d’afficher son propre handpan à l’écran, de recevoir un retour immédiat sur les notes jouées, de choisir un tempo ou encore de jouer avec un accompagnement à la batterie. On explore également le rythme, le chant, l’expression des émotions et une multitude de gammes. De quoi apprendre, expérimenter et progresser en autonomie !",
+  "en": "What I particularly appreciate is that it goes well beyond online lessons. The interactive tools let you display your own handpan on screen, get immediate feedback on the notes you play, choose a tempo or play along with a drum accompaniment. You also explore rhythm, singing, the expression of emotions and a multitude of scales. Everything you need to learn, experiment and progress on your own!",
+  "es": "Lo que más valoro es que va mucho más allá de las clases en línea. Las herramientas interactivas permiten mostrar el propio handpan en pantalla, recibir una respuesta inmediata sobre las notas tocadas, elegir un tempo o tocar con un acompañamiento de batería. También se exploran el ritmo, el canto, la expresión de las emociones y una multitud de escalas. ¡Lo necesario para aprender, experimentar y progresar con autonomía!"
+ },
+ "L178": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "La plateforme évolue aussi régulièrement grâce aux idées et aux besoins de ses utilisateurs, et chaque amélioration profite à tous.",
+  "en": "The platform also evolves regularly thanks to the ideas and needs of its users, and every improvement benefits everyone.",
+  "es": "La plataforma también evoluciona con regularidad gracias a las ideas y las necesidades de quienes la usan, y cada mejora beneficia a todos."
+ },
+ "L179": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "Et puis, il y a David ! Un professeur passionné, bienveillant et à l’écoute, qui sait adapter son enseignement à chacun. Il m’a notamment proposé différentes approches pour travailler mes difficultés avec le rythme et m’a accompagnée dans l’utilisation de mon handpan électronique avec l’application.",
+  "en": "And then there’s David! A passionate, kind teacher who listens, and who knows how to adapt his teaching to each person. In particular, he offered me different approaches to work on my difficulties with rhythm and supported me in using my electronic handpan with the app.",
+  "es": "¡Y además está David! Un profesor apasionado, amable y que sabe escuchar, capaz de adaptar su enseñanza a cada persona. En particular, me propuso distintos enfoques para trabajar mis dificultades con el ritmo y me acompañó en el uso de mi handpan electrónico con la aplicación."
+ },
+ "L180": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "Une plateforme que je recommande sans hésitation, aussi bien aux débutants qu’aux musiciens confirmés et professionnels souhaitant enrichir leur pratique et explorer de nouvelles possibilités musicales ! »",
+  "en": "A platform I recommend without hesitation, both to beginners and to experienced and professional musicians who want to enrich their practice and explore new musical possibilities!”",
+  "es": "Una plataforma que recomiendo sin dudarlo, ¡tanto a principiantes como a músicos con experiencia y profesionales que quieran enriquecer su práctica y explorar nuevas posibilidades musicales!»"
+ },
+ "L181": {
+  "section": "Témoignage de Marina Fortuna : traduit fidèlement, et signalé comme traduit",
+  "fr": "<b>Marina Fortuna</b> · élève de David, handpan électronique",
+  "en": "<b>Marina Fortuna</b> · David’s student, electronic handpan · translated from French",
+  "es": "<b>Marina Fortuna</b> · alumna de David, handpan electrónico · traducido del francés"
+ },
+ "L184": {
+  "section": "Pourquoi pas autre chose",
+  "fr": "Pourquoi pas autre chose ?",
+  "en": "Why this, and not something else?",
+  "es": "¿Por qué esto y no otra cosa?"
+ },
+ "L185": {
+  "section": "Pourquoi pas autre chose",
+  "fr": "Une étoile seule, on la trouve ailleurs.<br>La constellation, non.",
+  "en": "You can find a single star elsewhere.<br>Not the constellation.",
+  "es": "Una estrella sola la encuentras en cualquier parte.<br>La constelación, no."
+ },
+ "L186": {
+  "section": "Pourquoi pas autre chose",
+  "fr": "<b>Une vidéo</b><p>te montre quelqu’un jouer sur son handpan. <em>L’app part du tien.</em></p>",
+  "en": "<b>A video</b><p>shows you someone playing their handpan. <em>The app starts with yours.</em></p>",
+  "es": "<b>Un vídeo</b><p>te muestra a alguien tocando su handpan. <em>La app parte del tuyo.</em></p>"
+ },
+ "L187": {
+  "section": "Pourquoi pas autre chose",
+  "fr": "<b>Une tablature</b><p>est écrite pour une gamme. <em>L’app te montre ce que la tienne peut jouer.</em></p>",
+  "en": "<b>A tab</b><p>is written for one scale. <em>The app shows you what yours can play.</em></p>",
+  "es": "<b>Una tablatura</b><p>está escrita para una escala. <em>La app te muestra lo que puedes tocar en la tuya.</em></p>"
+ },
+ "L188": {
+  "section": "Pourquoi pas autre chose",
+  "fr": "<b>Un professeur</b><p>te guide une heure par semaine. <em>L’app t’accompagne les autres jours, sur ton instrument.</em></p>",
+  "en": "<b>A teacher</b><p>guides you for an hour a week. <em>The app is with you the other days, on your instrument.</em></p>",
+  "es": "<b>Un profesor</b><p>te guía una hora a la semana. <em>La app te acompaña los demás días, en tu instrumento.</em></p>"
+ },
+ "L189": {
+  "section": "Pourquoi pas autre chose",
+  "fr": "<b>Une autre app</b><p>accorde, bat la mesure ou fait chanter juste. <em>Ici, tout est relié autour d’un seul instrument, le tien.</em></p>",
+  "en": "<b>Another app</b><p>tunes, keeps time or helps you sing in tune. <em>Here, everything connects around one instrument, yours.</em></p>",
+  "es": "<b>Otra app</b><p>sirve de afinador, marca el compás o te ayuda a cantar afinado. <em>Aquí todo gira en torno a un solo instrumento, el tuyo.</em></p>"
+ },
+ "L192": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "Gratuit, pour toujours",
+  "en": "Free, forever",
+  "es": "Gratis, para siempre"
+ },
+ "L193": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "Tout ça, sans carte bancaire.",
+  "en": "All of this, no card needed.",
+  "es": "Todo esto, sin tarjeta."
+ },
+ "L194": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "<li>Reconnaître ta gamme au micro</li>",
+  "en": "<li>Recognise your scale through the mic</li>",
+  "es": "<li>Reconocer tu escala por el micro</li>"
+ },
+ "L195": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "<li>Tous les accords de ton instrument, en couleurs et en constellations</li>",
+  "en": "<li>All your instrument’s chords, in colours and constellations</li>",
+  "es": "<li>Todos los acordes de tu instrumento, por colores y en constelaciones</li>"
+ },
+ "L196": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "<li>Les chansons que ton handpan peut jouer ce soir</li>",
+  "en": "<li>The songs your handpan can play tonight</li>",
+  "es": "<li>Las canciones que puedes tocar esta noche en tu handpan</li>"
+ },
+ "L197": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "<li>Coller les accords et les paroles d’une chanson : l’app te la montre sur ton handpan</li>",
+  "en": "<li>Paste a song’s chords and lyrics, and the app shows it on your handpan</li>",
+  "es": "<li>Pegar los acordes y la letra de una canción: la app te la muestra en tu handpan</li>"
+ },
+ "L198": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "<li>Trouver ta voix : ta tessiture, une note guide, un bourdon</li>",
+  "en": "<li>Find your voice: your vocal range, a guide note, a drone</li>",
+  "es": "<li>Encontrar tu voz: tu tesitura, una nota guía, un bordón</li>"
+ },
+ "L199": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "<li>T’entraîner : technique, accords, rythme, ton rituel</li>",
+  "en": "<li>Practise: technique, chords, rhythm, your ritual</li>",
+  "es": "<li>Practicar: técnica, acordes, ritmo, tu ritual</li>"
+ },
+ "L200": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "<li>Tout ce que tu crées est sauvegardé</li>",
+  "en": "<li>Everything you create is saved</li>",
+  "es": "<li>Todo lo que creas queda guardado</li>"
+ },
+ "L201": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "<li>Savoir quel handpan choisir ensuite</li>",
+  "en": "<li>Find out which handpan to choose next</li>",
+  "es": "<li>Saber qué handpan elegir después</li>"
+ },
+ "L202": {
+  "section": "Le gratuit (liste commune à la section et à la fenêtre)",
+  "fr": "<li>Brancher ton Neotone en MIDI par USB</li>",
+  "en": "<li>Connect your Neotone by USB MIDI</li>",
+  "es": "<li>Conectar tu Neotone por USB (MIDI)</li>"
+ },
+ "L205": {
+  "section": "Le mouvement",
+  "fr": "<p class=\"sur rv\">Le mouvement</p>",
+  "en": "<p class=\"sur rv\">The movement</p>",
+  "es": "<p class=\"sur rv\">El movimiento</p>"
+ },
+ "L206": {
+  "section": "Le mouvement",
+  "fr": "Tu ne télécharges pas une app.<br>Tu rejoins une constellation.",
+  "en": "You don’t just get an app.<br>You join a constellation.",
+  "es": "No te descargas una app.<br>Te unes a una constelación."
+ },
+ "L207": {
+  "section": "Le mouvement",
+  "fr": "ateliers de fabrication recensés sur la carte",
+  "en": "makers listed on the map",
+  "es": "talleres de fabricación registrados en el mapa"
+ },
+ "L208": {
+  "section": "Le mouvement",
+  "fr": "langues, et un lexique que les joueurs écrivent ensemble",
+  "en": "languages, and a glossary the players write together",
+  "es": "idiomas, y un léxico escrito por quienes tocan"
+ },
+ "L209": {
+  "section": "Le mouvement",
+  "fr": "étoile à ton nom, sur la carte des joueurs",
+  "en": "star in your name, on the players’ map",
+  "es": "estrella con tu nombre, en el mapa de intérpretes"
+ },
+ "L210": {
+  "section": "Le mouvement",
+  "fr": "<b>En évolution permanente</b><p>De nouvelles fonctions, gammes et modes arrivent régulièrement, et ils sont inclus. L’app d’aujourd’hui sera plus riche demain.</p>",
+  "en": "<b>Always evolving</b><p>New features, scales and modes arrive regularly, and they’re included. The app you see today will do more tomorrow.</p>",
+  "es": "<b>En evolución constante</b><p>Llegan con regularidad nuevas funciones, escalas y modos, y están incluidos. La app de hoy será más rica mañana.</p>"
+ },
+ "L211": {
+  "section": "Le mouvement",
+  "fr": "<b>Ton retour façonne l’app</b><p>Depuis l’application, tu envoies tes idées en un clic. Chaque message est lu et oriente la suite.</p>",
+  "en": "<b>Your feedback shapes the app</b><p>From inside the app, you send your ideas in one click. Every message is read and helps decide what comes next.</p>",
+  "es": "<b>Tu opinión da forma a la app</b><p>Desde la app, envías tus ideas con un clic. Cada mensaje se lee y orienta lo que viene.</p>"
+ },
+ "L212": {
+  "section": "Le mouvement",
+  "fr": "<b>Une communauté, pas un catalogue</b><p>Ensemble, on construit l’outil qu’on aurait tous rêvé d’avoir, enfant.</p>",
+  "en": "<b>A community, not a catalogue</b><p>Together, we’re building the tool we all wish we’d had as children.</p>",
+  "es": "<b>Una comunidad, no un catálogo</b><p>Juntos construimos la herramienta con la que todos habríamos soñado de niños.</p>"
+ },
+ "L215": {
+  "section": "David",
+  "fr": "alt=\"Portrait de David Lesage.\"",
+  "en": "alt=\"Portrait of David Lesage.\"",
+  "es": "alt=\"Retrato de David Lesage.\""
+ },
+ "L216": {
+  "section": "David",
+  "fr": "Pourquoi cette app",
+  "en": "Why this app",
+  "es": "Por qué esta app"
+ },
+ "L217": {
+  "section": "David",
+  "fr": "« L’outil que j’aurais rêvé qu’on m’enseigne, enfant »",
+  "en": "“The tool I wish I’d been given as a child”",
+  "es": "«La herramienta con la que de niño habría soñado»"
+ },
+ "L218": {
+  "section": "David",
+  "fr": "J’ai commencé la batterie à 4 ans, et le solfège m’a coupé de mon envie de jouer : j’ai appris à l’oreille. À 12 ans, au piano, j’ai compris que ma mémoire n’était pas faite pour décoder des notes abstraites : elle est visuo-motrice et spatiale. Avec le handpan, j’ai retrouvé le même mur : des vaisseaux spatiaux sans notice de pilotage. Alors j’ai dessiné. De ces dessins est né l’outil que j’aurais rêvé qu’on me donne : la théorie musicale rendue visible, dans des langages qu’un enfant peut comprendre.",
+  "en": "I started the drums at 4, and music theory put me off playing, so I learned by ear. At 12, at the piano, I realised my memory wasn’t built to decode abstract notes: it’s visual-motor and spatial. With the handpan I hit the same wall: spaceships with no pilot’s manual. So I drew. From those drawings came the tool I wish I’d been given: music theory made visible, in languages a child can understand.",
+  "es": "Empecé con la batería a los 4 años, y el solfeo me quitó las ganas de tocar, así que aprendí de oído. A los 12 años, al piano, entendí que mi memoria no estaba hecha para descifrar notas abstractas: es visomotora y espacial. Con el handpan me encontré con el mismo muro: naves espaciales sin manual de pilotaje. Entonces dibujé. De esos dibujos nació la herramienta con la que habría soñado: la teoría musical hecha visible, en lenguajes que un niño puede entender."
+ },
+ "L221": {
+  "section": "FAQ",
+  "fr": "<p class=\"sur rv\">Questions</p>",
+  "en": "<p class=\"sur rv\">Questions</p>",
+  "es": "<p class=\"sur rv\">Preguntas</p>"
+ },
+ "L222": {
+  "section": "FAQ",
+  "fr": "Ce qu’on me demande.",
+  "en": "What people ask me.",
+  "es": "Lo que me suelen preguntar."
+ },
+ "L223": {
+  "section": "FAQ",
+  "fr": "Faut-il un pan numérique ?",
+  "en": "Do I need a digital pan?",
+  "es": "¿Hace falta un handpan digital?"
+ },
+ "L224": {
+  "section": "FAQ",
+  "fr": "Non. L’app est pensée d’abord pour ton handpan acoustique, quel qu’il soit. Si tu as un pan numérique, tu peux aussi le relier.",
+  "en": "No. The app is designed first for your acoustic handpan, whatever it is. If you have a digital pan, you can connect that too.",
+  "es": "No. La app está pensada ante todo para tu handpan acústico, sea cual sea. Si tienes un handpan digital, también puedes conectarlo."
+ },
+ "L225": {
+  "section": "FAQ",
+  "fr": "Qu’est-ce qui est vraiment gratuit ?",
+  "en": "What’s actually free?",
+  "es": "¿Qué es gratis de verdad?"
+ },
+ "L226": {
+  "section": "FAQ",
+  "fr": "Tout ce qui sert à connaître ton instrument et à jouer : ta gamme, tes accords, le répertoire, le chant pour trouver ta voix, la technique de jeu, la sauvegarde de ce que tu crées.",
+  "en": "Everything you need to get to know your instrument and play: your scale, your chords, the repertoire, singing to find your voice, playing technique, and saving what you create.",
+  "es": "Todo lo que sirve para conocer tu instrumento y tocar: tu escala, tus acordes, el repertorio, el canto para encontrar tu voz, la técnica de interpretación y guardar lo que creas."
+ },
+ "L227": {
+  "section": "FAQ",
+  "fr": "Et si je ne connais pas ma gamme ?",
+  "en": "What if I don’t know my scale?",
+  "es": "¿Y si no conozco mi escala?"
+ },
+ "L228": {
+  "section": "FAQ",
+  "fr": "Tu la fais écouter au micro, l’app la retrouve.",
+  "en": "Play it into the mic and the app finds it.",
+  "es": "Toca unas notas frente al micro: la app la encuentra."
+ },
+ "L229": {
+  "section": "FAQ",
+  "fr": "Je n’ai jamais fait de solfège. C’est pour moi ?",
+  "en": "I’ve never learned to read music. Is it for me?",
+  "es": "Nunca he estudiado solfeo. ¿Es para mí?"
+ },
+ "L230": {
+  "section": "FAQ",
+  "fr": "Oui. Tu commences par les couleurs et les émotions. Les noms des notes et la théorie viennent quand tu les demandes.",
+  "en": "Yes. You start with colours and emotions. Note names and theory come when you ask for them.",
+  "es": "Sí. Empiezas por los colores y las emociones. Los nombres de las notas y la teoría llegan cuando los pides."
+ },
+ "L231": {
+  "section": "FAQ",
+  "fr": "On va me demander ma carte bancaire ?",
+  "en": "Will I be asked for my card details?",
+  "es": "¿Me van a pedir la tarjeta?"
+ },
+ "L232": {
+  "section": "FAQ",
+  "fr": "Non. Le compte gratuit ne demande aucune carte, et il reste gratuit sans limite de temps. Ta carte ne te sera demandée que le jour où tu choisis une formule payante.",
+  "en": "No. The free account doesn’t ask for a card, and it stays free with no time limit. You’ll only be asked for your card details when you choose a paid plan.",
+  "es": "No. La cuenta gratuita no pide ninguna tarjeta y sigue siendo gratis sin límite de tiempo. Solo te pediremos la tarjeta el día que elijas un plan de pago."
+ },
+ "L233": {
+  "section": "FAQ",
+  "fr": "Comment je commence ?",
+  "en": "How do I start?",
+  "es": "¿Cómo empiezo?"
+ },
+ "L234": {
+  "section": "FAQ",
+  "fr": "Tu t’inscris, tu poses ton handpan devant toi et tu le fais écouter à l’app. Elle s’occupe du reste.",
+  "en": "Sign up, put your handpan in front of you and let the app listen to it. It takes care of the rest.",
+  "es": "Te registras, pones tu handpan delante y dejas que la app lo escuche. Del resto se encarga ella."
+ },
+ "L237": {
+  "section": "Fin et barre d'appel",
+  "fr": "Ton handpan t’attend.<br>Il a des choses à te montrer.",
+  "en": "Your handpan is waiting.<br>It has things to show you.",
+  "es": "Tu handpan te espera.<br>Tiene cosas que enseñarte."
+ },
+ "L238": {
+  "section": "Fin et barre d'appel",
+  "fr": "<span>Gratuit, sans carte bancaire</span>",
+  "en": "<span>Free, no card needed</span>",
+  "es": "<span>Gratis, sin tarjeta</span>"
+ },
+ "L239": {
+  "section": "Fin et barre d'appel",
+  "fr": "tabindex=\"-1\">Créer mon compte</a>",
+  "en": "tabindex=\"-1\">Create my account</a>",
+  "es": "tabindex=\"-1\">Crear mi cuenta</a>"
+ },
+ "L242": {
+  "section": "Fenêtre des formules",
+  "fr": "Choisis ta formule",
+  "en": "Choose your plan",
+  "es": "Elige tu plan"
+ },
+ "L243": {
+  "section": "Fenêtre des formules",
+  "fr": "aria-label=\"Fermer\"",
+  "en": "aria-label=\"Close\"",
+  "es": "aria-label=\"Cerrar\""
+ },
+ "L244": {
+  "section": "Fenêtre des formules",
+  "fr": ">Annuel <span class=\"m-pastille\">jusqu’à −28 %</span>",
+  "en": ">Annual <span class=\"m-pastille\">save up to 28%</span>",
+  "es": ">Anual <span class=\"m-pastille\">ahorra hasta un 28 %</span>"
+ },
+ "L245": {
+  "section": "Fenêtre des formules",
+  "fr": "data-m=\"m\">Mensuel</button>",
+  "en": "data-m=\"m\">Monthly</button>",
+  "es": "data-m=\"m\">Mensual</button>"
+ },
+ "L246": {
+  "section": "Fenêtre des formules",
+  "fr": "<h3>Gratuit</h3><div class=\"prix\">0 €</div><div class=\"sous\">pour toujours, sans carte</div>",
+  "en": "<h3>Free</h3><div class=\"prix\">€0</div><div class=\"sous\">forever, no card</div>",
+  "es": "<h3>Gratis</h3><div class=\"prix\">0 €</div><div class=\"sous\">para siempre, sin tarjeta</div>"
+ },
+ "L247": {
+  "section": "Fenêtre des formules",
+  "fr": "Ce que ton handpan sait faire.",
+  "en": "What your handpan can do.",
+  "es": "Lo que tu handpan sabe hacer."
+ },
+ "L248": {
+  "section": "Fenêtre des formules",
+  "fr": "Choisir ce palier",
+  "en": "Choose this plan",
+  "es": "Elegir este plan"
+ },
+ "L249": {
+  "section": "Fenêtre des formules",
+  "fr": "<h3>Essentiel</h3><div class=\"prix\" data-mens=\"3,49 €\" data-ann=\"29,99 €\">3,49 € <small>/ mois</small></div><div class=\"sous\" data-mens=\"premier mois offert\" data-ann=\"soit 2,50 € par mois, 11,89 € économisés\">premier mois offert</div>",
+  "en": "<h3>Essential</h3><div class=\"prix\" data-mens=\"€3.49\" data-ann=\"€29.99\">€3.49 <small>/ month</small></div><div class=\"sous\" data-mens=\"first month free\" data-ann=\"that’s €2.50 a month, saving €11.89\">first month free</div>",
+  "es": "<h3>Esencial</h3><div class=\"prix\" data-mens=\"3,49 €\" data-ann=\"29,99 €\">3,49 € <small>/ mes</small></div><div class=\"sous\" data-mens=\"primer mes gratis\" data-ann=\"es decir, 2,50 € al mes, 11,89 € de ahorro\">primer mes gratis</div>"
+ },
+ "L250": {
+  "section": "Fenêtre des formules",
+  "fr": "Ce que tu joues vraiment.",
+  "en": "What you actually play.",
+  "es": "Lo que tú tocas de verdad."
+ },
+ "L251": {
+  "section": "Fenêtre des formules",
+  "fr": "<li class=\"her\">Tout le Gratuit</li>",
+  "en": "<li class=\"her\">Everything in Free</li>",
+  "es": "<li class=\"her\">Todo lo de Gratis</li>"
+ },
+ "L252": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Transposer tes morceaux</li>",
+  "en": "<li>Transpose your songs</li>",
+  "es": "<li>Transponer tus canciones</li>"
+ },
+ "L253": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Jouer hors ligne</li>",
+  "en": "<li>Play offline</li>",
+  "es": "<li>Tocar sin conexión</li>"
+ },
+ "L254": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Faire défiler la partition au tempo</li>",
+  "en": "<li>Scroll the score in time with the music</li>",
+  "es": "<li>Desplazar la partitura al tempo</li>"
+ },
+ "L255": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Boucler un passage pour le travailler</li>",
+  "en": "<li>Loop a passage to practise it</li>",
+  "es": "<li>Repetir un pasaje en bucle para trabajarlo</li>"
+ },
+ "L256": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Exporter tes partitions en PDF et en image</li>",
+  "en": "<li>Export your scores as PDFs or images</li>",
+  "es": "<li>Exportar tus partituras en PDF y en imagen</li>"
+ },
+ "L257": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Écouter ta gamme dans une autre tonalité</li>",
+  "en": "<li>Hear your scale in another key</li>",
+  "es": "<li>Escuchar tu escala en otra tonalidad</li>"
+ },
+ "L258": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Voir et écouter ta gamme ailleurs</li>",
+  "en": "<li>See and hear your scale transposed</li>",
+  "es": "<li>Ver y escuchar tu escala transpuesta</li>"
+ },
+ "L259": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Écrire tes mélodies</li>",
+  "en": "<li>Write your melodies</li>",
+  "es": "<li>Escribir tus melodías</li>"
+ },
+ "L260": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Jouer avec un batteur</li>",
+  "en": "<li>Play with a drummer</li>",
+  "es": "<li>Tocar con un baterista</li>"
+ },
+ "L261": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>T’entraîner avec la pluie de notes</li>",
+  "en": "<li>Practise with Note rain</li>",
+  "es": "<li>Practicar con la Lluvia de notas</li>"
+ },
+ "L262": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Imprimer ton jeu de cartes d’accords</li>",
+  "en": "<li>Print your chord card deck</li>",
+  "es": "<li>Imprimir tu baraja de cartas de acordes</li>"
+ },
+ "L263": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Jouer aux cartes d’accords</li>",
+  "en": "<li>Play the chord card game</li>",
+  "es": "<li>Jugar a las cartas de acordes</li>"
+ },
+ "L264": {
+  "section": "Fenêtre des formules",
+  "fr": "Ou au mois : 3,49 €, premier mois offert",
+  "en": "Or by the month: €3.49, first month free",
+  "es": "O al mes: 3,49 €, primer mes gratis"
+ },
+ "L265": {
+  "section": "Fenêtre des formules",
+  "fr": "Ou à l’année : 29,99 € (−28 %), en une fois, sans mois d’essai",
+  "en": "Or by the year: €29.99 (save 28%), paid in one go, no free month",
+  "es": "O al año: 29,99 € (ahorra un 28 %), en un solo pago anual, sin mes gratis"
+ },
+ "L266": {
+  "section": "Fenêtre des formules",
+  "fr": "<div class=\"prix\" data-mens=\"9,99 €\" data-ann=\"89 €\">9,99 € <small>/ mois</small></div><div class=\"sous\" data-mens=\"premier mois offert\" data-ann=\"soit 7,42 € par mois, 30,88 € économisés\">premier mois offert</div>",
+  "en": "<div class=\"prix\" data-mens=\"€9.99\" data-ann=\"€89\">€9.99 <small>/ month</small></div><div class=\"sous\" data-mens=\"first month free\" data-ann=\"that’s €7.42 a month, saving €30.88\">first month free</div>",
+  "es": "<div class=\"prix\" data-mens=\"9,99 €\" data-ann=\"89 €\">9,99 € <small>/ mes</small></div><div class=\"sous\" data-mens=\"primer mes gratis\" data-ann=\"es decir, 7,42 € al mes, 30,88 € de ahorro\">primer mes gratis</div>"
+ },
+ "L267": {
+  "section": "Fenêtre des formules",
+  "fr": "Un studio autour de tes instruments.",
+  "en": "A studio built around your instruments.",
+  "es": "Un estudio en torno a tus instrumentos."
+ },
+ "L268": {
+  "section": "Fenêtre des formules",
+  "fr": "<li class=\"her\">Tout Essentiel</li>",
+  "en": "<li class=\"her\">Everything in Essential</li>",
+  "es": "<li class=\"her\">Todo lo de Esencial</li>"
+ },
+ "L269": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Travailler ta justesse avec les exercices de chant</li>",
+  "en": "<li>Work on your pitch with the singing exercises</li>",
+  "es": "<li>Trabajar tu afinación con los ejercicios de canto</li>"
+ },
+ "L270": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>T’entendre dans le casque</li>",
+  "en": "<li>Hear yourself in your headphones</li>",
+  "es": "<li>Escucharte a través de los auriculares</li>"
+ },
+ "L271": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Jouer avec deux handpans</li>",
+  "en": "<li>Play with two handpans</li>",
+  "es": "<li>Tocar con dos handpans</li>"
+ },
+ "L272": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Jouer sur plusieurs handpans autour de toi</li>",
+  "en": "<li>Play on several handpans around you</li>",
+  "es": "<li>Tocar varios handpans a tu alrededor</li>"
+ },
+ "L273": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Jouer la Logique sur ton handpan électronique</li>",
+  "en": "<li>Play Logic mode on your digital pan</li>",
+  "es": "<li>Tocar en modo Lógico en tu handpan digital</li>"
+ },
+ "L274": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Neotone Connexion : la synchro des gammes, la gestion des enregistrements et Neotone Drums</li>",
+  "en": "<li>Neotone Connection: scale sync, recording management and Neotone Drums</li>",
+  "es": "<li>Conexión Neotone: la sincronización de escalas, la gestión de grabaciones y Neotone Drums</li>"
+ },
+ "L275": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Monter sur scène avec tes sets</li>",
+  "en": "<li>Go on stage with your sets</li>",
+  "es": "<li>Subir al escenario con tus sets</li>"
+ },
+ "L276": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Révéler les accords de ton duo</li>",
+  "en": "<li>Reveal the chords of your duo</li>",
+  "es": "<li>Revelar los acordes de tu dúo</li>"
+ },
+ "L277": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Exporter en MIDI et en MusicXML</li>",
+  "en": "<li>Export to MIDI and MusicXML</li>",
+  "es": "<li>Exportar en MIDI y en MusicXML</li>"
+ },
+ "L278": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Garder tes compositions privées</li>",
+  "en": "<li>Keep your compositions private</li>",
+  "es": "<li>Mantener privadas tus composiciones</li>"
+ },
+ "L279": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Utiliser l’app sur plusieurs appareils en même temps</li>",
+  "en": "<li>Use the app on several devices at once</li>",
+  "es": "<li>Usar la app en varios dispositivos a la vez</li>"
+ },
+ "L280": {
+  "section": "Fenêtre des formules",
+  "fr": "Ou au mois : 9,99 €, premier mois offert",
+  "en": "Or by the month: €9.99, first month free",
+  "es": "O al mes: 9,99 €, primer mes gratis"
+ },
+ "L281": {
+  "section": "Fenêtre des formules",
+  "fr": "Ou à l’année : 89 € (−26 %), en une fois, sans mois d’essai",
+  "en": "Or by the year: €89 (save 26%), paid in one go, no free month",
+  "es": "O al año: 89 € (ahorra un 26 %), en un solo pago anual, sin mes gratis"
+ },
+ "L282": {
+  "section": "Fenêtre des formules",
+  "fr": "<h3>Transmettre</h3><div class=\"prix\">À venir</div><div class=\"sous\">pour les professeurs</div>",
+  "en": "<h3>Teach</h3><div class=\"prix\">Coming soon</div><div class=\"sous\">for teachers</div>",
+  "es": "<h3>Enseñar</h3><div class=\"prix\">Próximamente</div><div class=\"sous\">para profesores</div>"
+ },
+ "L283": {
+  "section": "Fenêtre des formules",
+  "fr": "Tes élèves, tes cours, leurs devoirs.",
+  "en": "Your students, your lessons, their homework.",
+  "es": "Tus alumnos, tus clases, sus tareas."
+ },
+ "L284": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Suivre tes élèves</li>",
+  "en": "<li>Keep track of your students</li>",
+  "es": "<li>Hacer el seguimiento de tus alumnos</li>"
+ },
+ "L285": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Donner des cours individuels et collectifs</li>",
+  "en": "<li>Give one-to-one and group lessons</li>",
+  "es": "<li>Dar clases individuales y en grupo</li>"
+ },
+ "L286": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Tenir l’agenda de tes cours</li>",
+  "en": "<li>Manage your lesson calendar</li>",
+  "es": "<li>Llevar la agenda de tus clases</li>"
+ },
+ "L287": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Enregistrer tes cours</li>",
+  "en": "<li>Record your lessons</li>",
+  "es": "<li>Grabar tus clases</li>"
+ },
+ "L288": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Donner des devoirs à tes élèves</li>",
+  "en": "<li>Set homework for your students</li>",
+  "es": "<li>Asignar tareas a tus alumnos</li>"
+ },
+ "L289": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Créer et partager tes cours</li>",
+  "en": "<li>Create and share your lessons</li>",
+  "es": "<li>Crear y compartir tus cursos</li>"
+ },
+ "L290": {
+  "section": "Fenêtre des formules",
+  "fr": "<li>Publier ta fiche de professeur</li>",
+  "en": "<li>Publish your teacher profile</li>",
+  "es": "<li>Publicar tu perfil de profesor</li>"
+ },
+ "L291": {
+  "section": "Fenêtre des formules",
+  "fr": "Être prévenu·e",
+  "en": "Notify me",
+  "es": "Avísame"
+ },
+ "L292": {
+  "section": "Fenêtre des formules",
+  "fr": "Premier mois offert sur les formules mensuelles. Gratuit : aucune carte. Les abonnements, mensuels comme annuels, se renouvellent par tacite reconduction. Tu changes de formule quand tu veux, dans l’app.",
+  "en": "First month free on monthly plans. Free plan: no card. Subscriptions, monthly and yearly, renew automatically. Change plan whenever you like, in the app.",
+  "es": "Primer mes gratis en los planes mensuales. Gratis: sin tarjeta. Las suscripciones, tanto mensuales como anuales, se renuevan automáticamente. Cambias de plan cuando quieras, en la app."
+ },
+ "L293": {
+  "section": "Fenêtre des formules",
+  "fr": "← Changer de formule",
+  "en": "← Change plan",
+  "es": "← Cambiar de plan"
+ },
+ "L294": {
+  "section": "Fenêtre des formules",
+  "fr": "<label>Prénom<input",
+  "en": "<label>First name<input",
+  "es": "<label>Nombre<input"
+ },
+ "L295": {
+  "section": "Fenêtre des formules",
+  "fr": "<label class=\"m-nom\">Nom<input",
+  "en": "<label class=\"m-nom\">Surname<input",
+  "es": "<label class=\"m-nom\">Apellidos<input"
+ },
+ "L296": {
+  "section": "Fenêtre des formules",
+  "fr": "<label>E-mail<input",
+  "en": "<label>Email<input",
+  "es": "<label>Correo electrónico<input"
+ },
+ "L297": {
+  "section": "Fenêtre des formules",
+  "fr": "<label class=\"m-mdp\">Mot de passe<input",
+  "en": "<label class=\"m-mdp\">Password<input",
+  "es": "<label class=\"m-mdp\">Contraseña<input"
+ },
+ "L298": {
+  "section": "Fenêtre des formules",
+  "fr": "J’accepte les <a href=\"/conditions-generales/\" target=\"_blank\" rel=\"noopener\">Conditions Générales d’Utilisation</a> et la <a href=\"/politique-de-confidentialite/\" target=\"_blank\" rel=\"noopener\">politique de confidentialité</a>.",
+  "en": "I accept the <a href=\"/en/conditions-generales/\" target=\"_blank\" rel=\"noopener\">terms and conditions</a> and the <a href=\"/en/politique-de-confidentialite/\" target=\"_blank\" rel=\"noopener\">privacy policy</a>.",
+  "es": "Acepto las <a href=\"/es/conditions-generales/\" target=\"_blank\" rel=\"noopener\">Condiciones Generales de Uso</a> y la <a href=\"/es/politique-de-confidentialite/\" target=\"_blank\" rel=\"noopener\">política de privacidad</a>."
+ },
+ "L299": {
+  "section": "Fenêtre des formules",
+  "fr": "Déjà un compte ? <a href=\"https://play.handpanstudio.app/\">Se connecter</a>",
+  "en": "Already have an account? <a href=\"https://play.handpanstudio.app/\">Sign in</a>",
+  "es": "¿Ya tienes cuenta? <a href=\"https://play.handpanstudio.app/\">Iniciar sesión</a>"
+ },
+ "L300": {
+  "section": "Fenêtre des formules",
+  "fr": "<strong>Bienvenue !</strong>",
+  "en": "<strong>Welcome!</strong>",
+  "es": "<strong>¡Te damos la bienvenida!</strong>"
+ },
+ "L303": {
+  "section": "Scripts",
+  "fr": "#marina .grande:before{content:\"« \"}#marina .grande:after{content:\" »\"}",
+  "en": "#marina .grande:before{content:\"“\"}#marina .grande:after{content:\"”\"}",
+  "es": "#marina .grande:before{content:\"«\"}#marina .grande:after{content:\"»\"}"
+ },
+ "L304": {
+  "section": "Scripts",
+  "fr": "['I','Équilibre','#EF4444'],['II','Élan','#F97316'],['III','Aventure','#EAB308'],['IV','Détente','#22C55E'],['V','Tension','#38BDF8'],['VI','Nostalgie','#5050FF'],['VII','Mystère','#EB00FF']",
+  "en": "['I','Balance','#EF4444'],['II','Momentum','#F97316'],['III','Adventure','#EAB308'],['IV','Relaxation','#22C55E'],['V','Tension','#38BDF8'],['VI','Nostalgia','#5050FF'],['VII','Mystery','#EB00FF']",
+  "es": "['I','Equilibrio','#EF4444'],['II','Impulso','#F97316'],['III','Aventura','#EAB308'],['IV','Relajación','#22C55E'],['V','Tensión','#38BDF8'],['VI','Nostalgia','#5050FF'],['VII','Misterio','#EB00FF']"
+ },
+ "L305": {
+  "section": "Scripts",
+  "fr": "['Ré','#EA580C'],['Ré#','#F97316']",
+  "en": "['Re','#EA580C'],['Re#','#F97316']",
+  "es": "['Re','#EA580C'],['Re#','#F97316']"
+ },
+ "L306": {
+  "section": "Scripts",
+  "fr": "['Si','#EB00FF']",
+  "en": "['Ti','#EB00FF']",
+  "es": "['Si','#EB00FF']"
+ },
+ "L307": {
+  "section": "Scripts",
+  "fr": "'Ré':'D','Ré#':'D#'",
+  "en": "'Re':'D','Re#':'D#'",
+  "es": "'Re':'D','Re#':'D#'"
+ },
+ "L308": {
+  "section": "Scripts",
+  "fr": "'La#':'A#','Si':'B'}",
+  "en": "'La#':'A#','Ti':'B'}",
+  "es": "'La#':'A#','Si':'B'}"
+ },
+ "L309": {
+  "section": "Scripts",
+  "fr": "<small>/ ${a?'an':'mois'}</small>",
+  "en": "<small>/ ${a?'year':'month'}</small>",
+  "es": "<small>/ ${a?'año':'mes'}</small>"
+ },
+ "L310": {
+  "section": "Scripts",
+  "fr": "NOM={g:'Gratuit',e:'Essentiel',s:'Studio',t:'Transmettre'},PRIX={e:['3,49 € par mois','29,99 € par an'],s:['9,99 € par mois','89 € par an']}",
+  "en": "NOM={g:'Free',e:'Essential',s:'Studio',t:'Teach'},PRIX={e:['€3.49 a month','€29.99 a year'],s:['€9.99 a month','€89 a year']}",
+  "es": "NOM={g:'Gratis',e:'Esencial',s:'Studio',t:'Enseñar'},PRIX={e:['3,49 € al mes','29,99 € al año'],s:['9,99 € al mes','89 € al año']}"
+ },
+ "L311": {
+  "section": "Scripts",
+  "fr": "recap.innerHTML='Transmettre<small>La formule des professeurs arrive bientôt. On te prévient à l’ouverture.</small>'",
+  "en": "recap.innerHTML='Teach<small>The plan for teachers is coming soon. We’ll let you know when it opens.</small>'",
+  "es": "recap.innerHTML='Enseñar<small>El plan para profesores llega pronto. Te avisamos cuando abra.</small>'"
+ },
+ "L312": {
+  "section": "Scripts",
+  "fr": "envoi.textContent='Me prévenir'",
+  "en": "envoi.textContent='Notify me'",
+  "es": "envoi.textContent='Avísame'"
+ },
+ "L313": {
+  "section": "Scripts",
+  "fr": "recap.innerHTML='Gratuit<small>Pour toujours, sans carte bancaire.</small>'",
+  "en": "recap.innerHTML='Free<small>Forever, no card needed.</small>'",
+  "es": "recap.innerHTML='Gratis<small>Para siempre, sin tarjeta.</small>'"
+ },
+ "L314": {
+  "section": "Scripts",
+  "fr": "aval.textContent='Ton instrument, tu le déclares ensuite, dans l’app.'",
+  "en": "aval.textContent='You can add your instrument afterwards, in the app.'",
+  "es": "aval.textContent='Tu instrumento lo indicas después, en la app.'"
+ },
+ "L315": {
+  "section": "Scripts",
+  "fr": "envoi.textContent='Créer mon compte'",
+  "en": "envoi.textContent='Create my account'",
+  "es": "envoi.textContent='Crear mi cuenta'"
+ },
+ "L316": {
+  "section": "Scripts",
+  "fr": "${an?'':', premier mois offert'}",
+  "en": "${an?'':', first month free'}",
+  "es": "${an?'':', primer mes gratis'}"
+ },
+ "L317": {
+  "section": "Scripts",
+  "fr": "an?'Ta carte est demandée à l’étape suivante.':'Ta carte est enregistrée à l’étape suivante. Rien n’est prélevé pendant le mois offert ; tu arrêtes quand tu veux.'",
+  "en": "an?'We’ll ask for your card details at the next step.':'You add your card details at the next step. Nothing is charged during the free month, and you can cancel whenever you like.'",
+  "es": "an?'Tu tarjeta se pide en el paso siguiente.':'Tu tarjeta se registra en el paso siguiente. No se cobra nada durante el mes gratis y puedes cancelar cuando quieras.'"
+ },
+ "L318": {
+  "section": "Scripts",
+  "fr": "envoi.textContent='Continuer vers le paiement'",
+  "en": "envoi.textContent='Continue to payment'",
+  "es": "envoi.textContent='Continuar al pago'"
+ },
+ "L319": {
+  "section": "Scripts",
+  "fr": "const lien='<a href=\"'+APP+'\">Se connecter</a>'",
+  "en": "const lien='<a href=\"'+APP+'\">Sign in</a>'",
+  "es": "const lien='<a href=\"'+APP+'\">Iniciar sesión</a>'"
+ },
+ "L320": {
+  "section": "Scripts",
+  "fr": "'Un compte existe déjà avec cet email. '",
+  "en": "'An account already exists with this email. '",
+  "es": "'Ya existe una cuenta con este correo. '"
+ },
+ "L321": {
+  "section": "Scripts",
+  "fr": "'Mot de passe trop court (6 caractères minimum).'",
+  "en": "'Password too short (6 characters minimum).'",
+  "es": "'Contraseña demasiado corta (6 caracteres como mínimo).'"
+ },
+ "L322": {
+  "section": "Scripts",
+  "fr": "'Cette adresse e-mail n’est pas valide.'",
+  "en": "'This email address isn’t valid.'",
+  "es": "'Esta dirección de correo no es válida.'"
+ },
+ "L323": {
+  "section": "Scripts",
+  "fr": "'Trop de tentatives. Réessaie dans un instant.'",
+  "en": "'Too many attempts. Try again in a moment.'",
+  "es": "'Demasiados intentos. Vuelve a intentarlo en un momento.'"
+ },
+ "L324": {
+  "section": "Scripts",
+  "fr": "'Ce nom est réservé. Choisis-en un autre.'",
+  "en": "'This name is reserved. Choose another.'",
+  "es": "'Este nombre está reservado. Elige otro.'"
+ },
+ "L325": {
+  "section": "Scripts",
+  "fr": "'Une erreur est survenue. Réessaie.'",
+  "en": "'Something went wrong. Try again.'",
+  "es": "'Se ha producido un error. Vuelve a intentarlo.'"
+ },
+ "L326": {
+  "section": "Scripts",
+  "fr": "c==='t'?'Indique ton prénom.':'Indique ton prénom et ton nom.'",
+  "en": "c==='t'?'Enter your first name.':'Enter your first name and surname.'",
+  "es": "c==='t'?'Indica tu nombre.':'Indica tu nombre y tus apellidos.'"
+ },
+ "L327": {
+  "section": "Scripts",
+  "fr": "'Coche la case pour accepter les conditions et la politique de confidentialité.'",
+  "en": "'Tick the box to accept the terms and the privacy policy.'",
+  "es": "'Marca la casilla para aceptar las condiciones y la política de privacidad.'"
+ },
+ "L328": {
+  "section": "Scripts",
+  "fr": "envoi.textContent='Un instant…'",
+  "en": "envoi.textContent='One moment…'",
+  "es": "envoi.textContent='Un momento…'"
+ },
+ "L329": {
+  "section": "Scripts",
+  "fr": "source:'transmettre',lang:'fr',page:'/handpan-app/'",
+  "en": "source:'transmettre',lang:'en',page:'/en/handpan-app/'",
+  "es": "source:'transmettre',lang:'es',page:'/es/handpan-app/'"
+ },
+ "L330": {
+  "section": "Scripts",
+  "fr": "'On te prévient à l’ouverture.'",
+  "en": "'We’ll let you know when it opens.'",
+  "es": "'Te avisamos cuando abra.'"
+ },
+ "L331": {
+  "section": "Scripts",
+  "fr": "'Scènes d’ouverture'",
+  "en": "'Opening scenes'",
+  "es": "'Escenas de apertura'"
+ },
+ "L332": {
+  "section": "Scripts",
+  "fr": "'Scène '+(i+1)",
+  "en": "'Scene '+(i+1)",
+  "es": "'Escena '+(i+1)"
+ },
+ "L334": {
+  "section": "V4.1 (02/11/2026)",
+  "fr": "Sur ordinateur ou tablette, dans ton navigateur. Sur un téléphone, l’écran est trop petit pour bien voir ton handpan et ses accords. Sur iPhone et iPad, Apple empêche les navigateurs de recevoir un instrument branché en USB : pour relier un pan numérique, ouvre l’app dans Web MIDI Browser, gratuit sur l’App Store.",
+  "en": "A computer or tablet, in your browser. A phone screen is too small to show your handpan and its chords properly. On iPhone and iPad, Apple doesn’t let browsers pick up an instrument connected by USB: to connect a digital pan, open the app in Web MIDI Browser, free on the App Store.",
+  "es": "En ordenador o tableta, en tu navegador. En un teléfono, la pantalla es demasiado pequeña para ver bien tu handpan y sus acordes. En iPhone y iPad, Apple impide que los navegadores reciban la señal de un instrumento conectado por USB: para conectar un handpan digital, abre la app en Web MIDI Browser, gratis en la App Store."
+ },
+ "L335": {
+  "section": "V4.1 (02/11/2026)",
+  "fr": "Sur ordinateur ou tablette, dans ton navigateur.",
+  "en": "On a computer or tablet, in your browser.",
+  "es": "En ordenador o tableta, en tu navegador."
+ },
+ "L336": {
+  "section": "V4.1 (02/11/2026)",
+  "fr": "Sur quel appareil ?",
+  "en": "Which device do I need?",
+  "es": "¿En qué dispositivo?"
+ },
+ "L337": {
+  "section": "V4.1 (02/11/2026)",
+  "fr": "Deux formules t’attendent dans l’app. <b>Essentiel</b>, 3,49 € par mois : il transpose une chanson qui ne tombe pas sur ta gamme, et tu joues sur les grooves du catalogue, avec un batteur. <b>Studio</b>, 9,99 € par mois : des exercices de chant. Premier mois offert sur les formules mensuelles, et tu changes de formule quand tu veux.",
+  "en": "There are two paid plans in the app. <b>Essential</b>, €3.49 a month, transposes a song that doesn’t fit your scale and lets you play along to the catalogue’s grooves, with a drummer. <b>Studio</b>, €9.99 a month, adds singing exercises. First month free on monthly plans, and you can change plan whenever you like.",
+  "es": "Dos planes te esperan en la app. <b>Esencial</b>, 3,49 € al mes: transpones una canción que no encaja en tu escala, y tocas sobre los grooves del catálogo, con un baterista. <b>Studio</b>, 9,99 € al mes: todo lo de Esencial, más ejercicios de canto. Primer mes gratis en los planes mensuales, y cambias de plan cuando quieras."
+ },
+ "L338": {
+  "section": "V4.1 (02/11/2026)",
+  "fr": "Et si un jour je veux aller plus loin ?",
+  "en": "What if I want to go further one day?",
+  "es": "¿Y si un día quiero ir más lejos?"
+ },
+ "L339": {
+  "section": "V4.1 (02/11/2026)",
+  "fr": "Créer mon compte et voir mes chansons",
+  "en": "Create my account and see my songs",
+  "es": "Crear mi cuenta y ver mis canciones"
+ }
+}

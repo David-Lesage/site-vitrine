@@ -1,0 +1,225 @@
+{
+  "verdict": "Mostly reads as competent British English, and the hero, the FAQ and the 'why not something else' block make me want to try it; the free tier without a card is the strongest argument. What gives the translation away is a scatter of Gallicisms ('the day you want', 'In theory', 'Follow your students', 'on record') and, more damagingly, plan features so vague that I cannot tell what I would be paying for ('elsewhere', 'Reveal the chords of your duo'). Musically, '+7, +9' and the mismatch between the sadness labels in L155 and L161 would make a player distrust the page, and 'chakra' arrives unexplained, which some readers will find off-putting.",
+  "rows": {
+    "L64": {
+      "severity": "medium",
+      "problem": "'Takes its colour' and 'draws its shape' sound translated, and 'degree' is unexplained for a by-ear player at the first point it appears.",
+      "proposal": "Each degree of the scale gets its own colour and each chord its own shape: the seven chords your handpan can play, and the emotion each one carries."
+    },
+    "L66": {
+      "severity": "medium",
+      "problem": "Capitalised YOUR is shouty ad-speak, and 'The songs in the catalogue that your handpan can play are already there' is a heavy opening.",
+      "proposal": "The catalogue songs your handpan can play are already waiting. Got another in mind? Paste its chords and lyrics, or drop in the file, and the app shows it on your own handpan."
+    },
+    "L86": {
+      "severity": "low",
+      "problem": "'Start with yours' could briefly refer to the handpan rather than the voice.",
+      "proposal": "A handpan can carry a voice, just as a guitar or a piano can. Start with your own."
+    },
+    "L90": {
+      "severity": "low",
+      "problem": "Image description: the sentence loses its way after the second 'with' and repeats 'his' five times.",
+      "proposal": "David’s voice passport: his range runs from F2 to C6. His lowest, comfort and highest notes, and his comfort zone from E3 to C5, are shown on the colour keyboard."
+    },
+    "L100": {
+      "severity": "medium",
+      "problem": "'Plays with you' can read as toying with you; a musician says 'plays along'. The fronted 'Every day' also sounds translated.",
+      "proposal": "The app plays along with you, every day."
+    },
+    "L103": {
+      "severity": "medium",
+      "problem": "'The conveyor belt' is presented as already known, but this is its first mention, and 'scrolls through' does not picture it.",
+      "proposal": "<b>Your chords</b><p>A conveyor belt carries the chord progressions past you, at your pace.</p>"
+    },
+    "L104": {
+      "severity": "medium",
+      "problem": "'Ahead or behind' is incomplete: ahead of what? Musicians say ahead of the beat.",
+      "proposal": "<b>Your rhythm</b><p>A metronome, and the app tells you if you’re ahead of the beat or behind it.</p>"
+    },
+    "L105": {
+      "severity": "medium",
+      "problem": "'A practice time of your own' is vague. I am guessing it means a regular practice slot you set yourself; please check. 'Day after day' sounds like a slog; 'day by day' is about progress.",
+      "proposal": "<b>Your ritual</b><p>Your own regular practice time, and your progress, day by day.</p>"
+    },
+    "L119": {
+      "severity": "medium",
+      "problem": "Number clash: 'ChromaKeys, the app’s colour piano, colour' mixes plural and singular. A product name takes a singular verb here. 'Colour piano ... colour' also repeats.",
+      "proposal": "ChromaKeys, the app’s colour piano, paints your handpan. The colour tells you either the note itself or its place in the scale."
+    },
+    "L135": {
+      "severity": "low",
+      "problem": "'The colour of its chakra' introduces chakras as if the reader already knew each note has one, and nothing on the page explains it. A tighter wording helps a little; an explanation would need a decision from you, as I will not invent one.",
+      "proposal": "Each note keeps its chakra colour, whatever the scale: <span data-n=\"Do\">Do</span> is always red, <span data-n=\"Sol\">Sol</span> sky blue. A chord then becomes a blend, one colour per note."
+    },
+    "L139": {
+      "severity": "low",
+      "problem": "'Beyond the colours' sounds translated; a native writer would say 'on top of'.",
+      "proposal": "On top of the colours, the app joins up the notes of a chord and draws a glowing figure, a chord constellation. There are three ways to trace it."
+    },
+    "L145": {
+      "severity": "medium",
+      "problem": "'La minor' in text with no note-name toggle: an English reader says A minor, and L130 has a letter-name version. Inconsistent, unless this row also has a toggled twin I cannot see.",
+      "proposal": "Chord V Tension (A minor) as a closed constellation on a digital pan"
+    },
+    "L146": {
+      "severity": "low",
+      "problem": "'Shape' twice in two short sentences, and 'You know it' for 'you recognise it' sounds translated.",
+      "proposal": "<b>Closed</b>A chord as a shape, all its notes joined. You recognise it at a glance."
+    },
+    "L149": {
+      "severity": "medium",
+      "problem": "'So you can see a hand move' is odd: whose hand? I take it to mean the path the hand takes.",
+      "proposal": "<b>Open</b>A line that follows the path of the notes, so you can see how the hand travels."
+    },
+    "L152": {
+      "severity": "low",
+      "problem": "'The line made for the movement' and the unfinished 'straight off' feel translated.",
+      "proposal": "<b>Hands</b>A line drawn for the movement itself. Which hand, which note: you can read your playing straight off it."
+    },
+    "L161": {
+      "severity": "high",
+      "problem": "Inconsistent with L155, whose labels are Deep, Intense and Bright sadness, whereas this says deep, oriental or jazz. 'Oriental' is also a dated word that some British readers will wince at. My proposal uses the L155 labels on the assumption that they are the app's; please check, as this touches a fact.",
+      "proposal": "By feel, a scale is happy or sad, and its sadness can be deep, intense or bright. You compose a journey of sensations."
+    },
+    "L162": {
+      "severity": "high",
+      "problem": "'In theory' is an idiom meaning 'supposedly', so it misleads on first reading. 'Go back to their names' is not English.",
+      "proposal": "In music theory, the same settings go by their proper names: major, natural minor, harmonic, melodic, degree progression."
+    },
+    "L163": {
+      "severity": "medium",
+      "problem": "'You come in through emotion' and 'The day you want' are Gallicisms.",
+      "proposal": "You start with emotion. When you want music theory, it’s there, in the same place."
+    },
+    "L168": {
+      "severity": "high",
+      "problem": "Confusing notation: to a musician '+' signals an augmented chord or sharpened note, so '+9' reads as a sharp nine. I am guessing 7th and 9th extensions are meant; please check against the app.",
+      "proposal": "<b>Musician</b><p>Everything unlocked: all 7 chords, the 7th and 9th extensions…</p>"
+    },
+    "L177": {
+      "severity": "low",
+      "problem": "Real grammar slip in the last sentence only: 'experiment' needs 'with' before a shared object. Rest untouched.",
+      "proposal": "What I particularly appreciate is that it goes well beyond online lessons. The interactive tools let you display your own handpan on screen, get immediate feedback on the notes you play, choose a tempo or play along with a drum accompaniment. You also explore rhythm, singing, the expression of emotions and a multitude of scales. Plenty to learn, experiment with and progress on, on your own!"
+    },
+    "L186": {
+      "severity": "low",
+      "problem": "'Starts from' is a Gallicism here; 'starts with' is what we say.",
+      "proposal": "<b>A video</b><p>shows you someone playing their handpan. <em>The app starts with yours.</em></p>"
+    },
+    "L201": {
+      "severity": "low",
+      "problem": "'Know' as an imperative feature line is stiff.",
+      "proposal": "<li>Find out which handpan to choose next</li>"
+    },
+    "L202": {
+      "severity": "low",
+      "problem": "'Over MIDI by USB' stacks two prepositions; players say USB MIDI.",
+      "proposal": "<li>Connect your Neotone by USB MIDI</li>"
+    },
+    "L206": {
+      "severity": "medium",
+      "problem": "'You’re not X, you’re Y' is a stock ad formula, and 'downloading' contradicts L335: the app runs in the browser, so nobody downloads anything.",
+      "proposal": "You don’t just get an app.<br>You join a constellation."
+    },
+    "L207": {
+      "severity": "medium",
+      "problem": "'On record' is unclear after the number. I am guessing it means makers listed in the app and placed on a map.",
+      "proposal": "makers listed, and on the map"
+    },
+    "L210": {
+      "severity": "medium",
+      "problem": "'Today’s app will be richer tomorrow' is translated rhythm, and 'richer' is vague.",
+      "proposal": "<b>Always evolving</b><p>New features, scales and modes arrive regularly, and they’re included. The app you see today will do more tomorrow.</p>"
+    },
+    "L211": {
+      "severity": "low",
+      "problem": "'Steers what comes next' is slightly managerial.",
+      "proposal": "<b>Your feedback shapes the app</b><p>From inside the app, you send your ideas in one click. Every message is read and helps decide what comes next.</p>"
+    },
+    "L212": {
+      "severity": "medium",
+      "problem": "A second 'not X' slogan close to L206, and it collides with L66, where the app proudly has a catalogue. 'We’d all have dreamed of having' is also clumsy.",
+      "proposal": "<b>Built with its community</b><p>Together, we’re building the tool we’d all have loved to have as children.</p>"
+    },
+    "L217": {
+      "severity": "high",
+      "problem": "Real English error: you are not 'taught' a tool. L218 already has the right wording, 'the tool I wish I’d been given'.",
+      "proposal": "“The tool I wish I’d been given as a child”"
+    },
+    "L218": {
+      "severity": "medium",
+      "problem": "One real idiom error, otherwise left alone: 'cut me off from wanting to play' should be 'put me off playing'.",
+      "proposal": "I started the drums at 4, and music theory put me off playing, so I learned by ear. At 12, at the piano, I realised my memory wasn’t built to decode abstract notes: it’s visual-motor and spatial. With the handpan I hit the same wall: spaceships with no pilot’s manual. So I drew. From those drawings came the tool I wish I’d been given: music theory made visible, in languages a child can understand."
+    },
+    "L226": {
+      "severity": "low",
+      "problem": "'The library' here, 'the catalogue' at L66: pick one, unless they are distinct features.",
+      "proposal": "Everything you need to get to know your instrument and play: your scale, your chords, the catalogue, singing to find your voice, playing technique, and saving what you create."
+    },
+    "L232": {
+      "severity": "medium",
+      "problem": "'The day you choose' is a Gallicism, and the second half of the sentence is slightly formal.",
+      "proposal": "No. The free account doesn’t ask for a card, and it stays free with no time limit. You’ll only be asked for your card when you choose a paid plan."
+    },
+    "L258": {
+      "severity": "high",
+      "problem": "'Elsewhere' tells me nothing, on a list I am deciding whether to pay for. I am guessing it means on other instruments or layouts; please check and replace with what it really does.",
+      "proposal": "<li>See and hear your scale on other instruments</li>"
+    },
+    "L260": {
+      "severity": "medium",
+      "problem": "Suggests a real drummer. Marina’s L177 mentions a drum accompaniment, so I am guessing that is what it is; please check.",
+      "proposal": "<li>Play along with a drum accompaniment</li>"
+    },
+    "L271": {
+      "severity": "low",
+      "problem": "Sits oddly next to L272, and I cannot tell how they differ. I am guessing that this one is two handpans played at once.",
+      "proposal": "<li>Play two handpans at once</li>"
+    },
+    "L272": {
+      "severity": "medium",
+      "problem": "'On several handpans around you' is unclear; it might mean a set-up around the player. That is my guess; please check.",
+      "proposal": "<li>Play several handpans set up around you</li>"
+    },
+    "L273": {
+      "severity": "medium",
+      "problem": "'Logic' for the named Logic mode, and 'electronic handpan' where the page’s term is 'digital pan' (L143, L223, L334). Marina’s own wording at L179 and L181 is a separate matter.",
+      "proposal": "<li>Play Logic mode on your digital pan</li>"
+    },
+    "L276": {
+      "severity": "high",
+      "problem": "'Reveal the chords of your duo' is opaque. I am guessing it shows the chords two handpans can play together; please check.",
+      "proposal": "<li>See the chords your duo can play</li>"
+    },
+    "L284": {
+      "severity": "medium",
+      "problem": "Gallicism from 'suivre': 'Follow' reads as social media.",
+      "proposal": "<li>Track your students’ progress</li>"
+    },
+    "L286": {
+      "severity": "low",
+      "problem": "'Keep your calendar' is not quite idiomatic.",
+      "proposal": "<li>Manage your lesson calendar</li>"
+    },
+    "L298": {
+      "severity": "medium",
+      "problem": "'Terms of Use' here against 'Terms and conditions' at L37 for the same link. Inconsistency on a legal line undermines trust.",
+      "proposal": "I accept the <a href=\"/en/conditions-generales/\" target=\"_blank\" rel=\"noopener\">Terms and conditions</a> and the <a href=\"/en/politique-de-confidentialite/\" target=\"_blank\" rel=\"noopener\">privacy policy</a>."
+    },
+    "L317": {
+      "severity": "medium",
+      "problem": "'Your card is saved' sounds as if it has already happened, 'Nothing is taken' is awkward, and 'stop' is not the word for a subscription. On a payment line, plain words earn trust.",
+      "proposal": "an?'We’ll ask for your card at the next step.':'You add your card at the next step. Nothing is charged during the free month, and you can cancel whenever you like.'"
+    },
+    "L334": {
+      "severity": "medium",
+      "problem": "'Too small to see' has the screen doing the seeing, and 'stops browsers receiving an instrument' is not how anyone describes this.",
+      "proposal": "On a computer or tablet, in your browser. A phone screen is too small to show your handpan and its chords properly. On iPhone and iPad, Apple doesn’t let browsers pick up an instrument connected by USB: to connect a digital pan, open the app in Web MIDI Browser, free on the App Store."
+    },
+    "L336": {
+      "severity": "low",
+      "problem": "Clipped next to the full-sentence questions in the FAQ, if it sits there; I cannot tell from the fragment alone.",
+      "proposal": "Which device do I need?"
+    }
+  }
+}

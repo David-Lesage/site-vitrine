@@ -1,0 +1,20 @@
+{
+  "verdict": "All 45 rows keep the meaning and scope of the French; no error found, and a script comparison found tags, numbers and the minus signs identical to the source. One doubt remains, on the word for palier in L248.",
+  "rows": {
+    "L248": {
+      "level": "doubt",
+      "problem": "The French says palier, the draft says plan. The French page uses both formule (L242, L292, L337) and palier (L248), while the draft merges them into plan. The app is itself mixed, so this needs a decision. Keeping plan gives one word across the modal, which matches L242 directly above; tier matches the closest app button.",
+      "evidence": "translations.ts l.38534: fr \"Choisir mon palier\", en \"Choose my tier\"; l.160 and l.38609: Palier = Tier. But l.38579: fr \"choisir un palier\", en \"choose a plan\"; l.52202: Formule = Plan.",
+      "proposal": "Choose this tier"
+    }
+  },
+  "terms_checked": {
+    "formule": "Confirmed: plan. translations.ts l.52202 (cg.sv_formule: Formule = Plan), l.52818 (Par formule = By plan), l.52822 (Aucune formule = No plan).",
+    "ateliers": "Makers confirmed as the counted label, with a nuance: l.42956 \"{n} fabricants\" = \"{n} makers\" and l.5894 onb.carte.legende = handpan makers, but the French word there is fabricants. Where the app says ateliers literally, it renders workshops (l.42952 \"{n} ateliers\" = \"{n} workshops\", l.43592). L49 is not wrong: makers matches the app's visible counter, and bare workshops could read as a class (l.5931 uses Workshop for a lesson).",
+    "palier": "Mixed in the app: mostly tier (l.160, l.38534, l.38609), once plan (l.38579). See L248.",
+    "grille d'accords": "Confirmed: chord chart. Lexicon section 8 and translations.ts l.37980.",
+    "coque": "Confirmed: shell. Lexicon section 2 and translations.ts l.43504.",
+    "batteur": "Confirmed: drummer. translations.ts l.4647.",
+    "Essential, Free": "Confirmed by translations.ts l.38605 (Gratuit, Essentiel, Studio, Transmettre = Free, Essential, Studio, Teach)."
+  }
+}

@@ -1,0 +1,47 @@
+# English draft (pilot rows, in page order)
+
+- **L18** : `Handpan Constellation Studio: your handpan, free forever`
+- **L19** : `Play handpan without reading music: every note has its colour, every chord its shape. Free forever, on any acoustic handpan and on the Neotone.`
+- **L41** : `title="Handpan Constellation Studio: the stars become chords, then a handpan"`
+- **L42** : `Skip intro`
+- **L43** : `<div class="defile">Scroll</div>`
+- **L44** : `Handpan Constellation Studio · the app for handpan players`
+- **L45** : `Tonight, play a song <em>on your handpan.</em>`
+- **L46** : `Play a few notes into the mic: the app recognises your scale and shows you its chords in colour. Then the songs your handpan can play, with the lyrics in front of you.`
+- **L47** : `Create my free account`
+- **L48** : `Free forever, no card needed.`
+- **L49** : `74 known shells, 541 makers on record: <b>your handpan is probably already in there.</b>`
+- **L50** : `A D Kurd 18 in the app: the handpan at the top, its seven chords in colour below, the first lit up as a constellation.`
+- **L51** : `Your D Kurd in the app: its 7 chords, with the first lit up as a constellation.`
+- **L70** : `All of this <span>is free.</span>`
+- **L71** : `No card, no time limit, on your own handpan.`
+- **L72** : `I’ll start now`
+- **L73** : `Or I’ll read on: see a song ↓`
+- **L76** : `The Scientist by Coldplay in the app, on a D Kurd 10: above the lyrics, each chord drawn on the handpan, in the colour of its degree.`
+- **L77** : `One song, for real`
+- **L78** : `The chords above the lyrics, drawn on your handpan.`
+- **L79** : `Like a guitar chord chart, except you’re not reading chord names: you follow shapes and colours. Red comes back, that’s home. Blue is the tension that calls you back.`
+- **L80** : `The lyrics in front of you, the chords above them, on your scale: you play, and you sing. Tonight.`
+- **L81** : `On a D Kurd 18, 157 songs in the catalogue already play just as they are.`
+- **L238** : `<span>Free, no card needed</span>`
+- **L242** : `Choose your plan`
+- **L243** : `aria-label="Close"`
+- **L244** : `>Annual <span class="m-pastille">up to −28%</span>`
+- **L245** : `data-m="m">Monthly</button>`
+- **L246** : `<h3>Free</h3><div class="prix">€0</div><div class="sous">forever, no card</div>`
+- **L247** : `What your handpan can do.`
+- **L248** : `Choose this plan`
+- **L249** : `<h3>Essential</h3><div class="prix" data-mens="€3.49" data-ann="€29.99">€3.49 <small>/ month</small></div><div class="sous" data-mens="first month free" data-ann="that’s €2.50 a month, saving €11.89">first month free</div>`
+- **L250** : `What you really play.`
+- **L251** : `<li class="her">Everything in Free</li>`
+- **L264** : `Or by the month: €3.49, first month free`
+- **L265** : `Or by the year: €29.99 (−28%), one payment, no trial month`
+- **L266** : `<div class="prix" data-mens="€9.99" data-ann="€89">€9.99 <small>/ month</small></div><div class="sous" data-mens="first month free" data-ann="that’s €7.42 a month, saving €30.88">first month free</div>`
+- **L267** : `A studio built around your instruments.`
+- **L268** : `<li class="her">Everything in Essential</li>`
+- **L280** : `Or by the month: €9.99, first month free`
+- **L281** : `Or by the year: €89 (−26%), one payment, no trial month`
+- **L292** : `First month free on monthly plans. Free plan: no card. Change plan whenever you like, in the app.`
+- **L337** : `Two plans are waiting for you in the app. <b>Essential</b>, €3.49 a month: it transposes a song that doesn’t sit on your scale, and you play over the catalogue’s grooves, with a drummer. <b>Studio</b>, €9.99 a month: singing exercises. First month free on monthly plans, and you can change plan whenever you like.`
+- **L338** : `And if I want to go further one day?`
+- **L339** : `Create my account and see my songs`

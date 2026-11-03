@@ -1,0 +1,100 @@
+{
+  "verdict": "Clear, warm and nearly native: the short, concrete promise (play a few notes, see your chords, sing a song tonight) makes me want to try it, and the free-with-no-card offer is believable. What gives it away is a handful of translated-sounding spots: first-person buttons, 'on your scale', cryptic plan taglines and colon-heavy fragments. Two things could actually lose a customer: '74 known shells' means little to a player, and 'one payment' leaves me unsure whether the annual plan renews.",
+  "rows": {
+    "L19": {
+      "severity": "low",
+      "problem": "'Play handpan' drops the article, which reads slightly foreign, and 'its colour... its shape' needs 'own' to sound natural. 'on any acoustic handpan and on the Neotone' is stiff.",
+      "proposal": "Play the handpan without reading music: every note has its own colour, every chord its own shape. Free forever, on any acoustic handpan or on the Neotone."
+    },
+    "L41": {
+      "severity": "low",
+      "problem": "Cryptic out of context: 'the stars become chords, then a handpan' has no subject a reader can picture.",
+      "proposal": "title=\"Handpan Constellation Studio: a sky of stars becomes chords, then a handpan\""
+    },
+    "L45": {
+      "severity": "low",
+      "problem": "Fronting 'Tonight' before an imperative has a translated rhythm. Moving it keeps the emphasis on the handpan.",
+      "proposal": "Play a song tonight <em>on your handpan.</em>"
+    },
+    "L46": {
+      "severity": "medium",
+      "problem": "The colon is doing the work of 'and', and 'Then the songs your handpan can play' is a fragment with no verb. It reads like a note rather than a sentence.",
+      "proposal": "Play a few notes into the mic and the app recognises your scale and shows you its chords in colour. Then come the songs your handpan can play, with the lyrics in front of you."
+    },
+    "L49": {
+      "severity": "high",
+      "problem": "'74 known shells' is confusing. To a player a shell is the physical steel body, so I cannot tell what is being counted, and this is the line meant to reassure me my instrument is covered. 'Models' is my reading: confirm that it is what the figure counts.",
+      "proposal": "74 handpan models and 541 makers on record: <b>yours is probably already in there.</b>"
+    },
+    "L71": {
+      "severity": "low",
+      "problem": "'on your own handpan' is tacked on after a list of things that are absent, so the list stops making sense.",
+      "proposal": "No card, no time limit, and you play on your own handpan."
+    },
+    "L72": {
+      "severity": "medium",
+      "problem": "A first-person future as a button is not English web usage and sounds like a character speaking. It is also weak as a call to action.",
+      "proposal": "Start now"
+    },
+    "L73": {
+      "severity": "medium",
+      "problem": "Same first-person problem as the button beside it, and 'see a song' is odd: you hear or play a song.",
+      "proposal": "Or read on: see a song in the app ↓"
+    },
+    "L77": {
+      "severity": "medium",
+      "problem": "'One song, for real' is not idiomatic as a heading and its 'for real' sounds American and casual.",
+      "proposal": "See it on a real song"
+    },
+    "L79": {
+      "severity": "medium",
+      "problem": "'Red comes back, that's home' is a comma splice with a translated rhythm, and 'comes back' then 'calls you back' muddles who is returning. As a player I do follow the home-and-tension idea, so it is worth getting right.",
+      "proposal": "Like a guitar chord chart, except you’re not reading chord names: you follow shapes and colours. When red comes round again, you’re home. Blue is the tension that pulls you back there."
+    },
+    "L80": {
+      "severity": "medium",
+      "problem": "'on your scale' is not the idiom: chords and songs are in a scale. 'you play, and you sing' has a needless comma.",
+      "proposal": "The lyrics in front of you, the chords above them, all in your scale: you play and you sing. Tonight."
+    },
+    "L81": {
+      "severity": "medium",
+      "problem": "'already play just as they are' makes the songs the ones playing and is unclear. The claim is strong and deserves a plain sentence.",
+      "proposal": "On a D Kurd 18, 157 songs in the catalogue can be played just as they are."
+    },
+    "L244": {
+      "severity": "low",
+      "problem": "'up to −28%' is shop-window shorthand and the minus sign reads as foreign retail style. 'Save' is what a British page would say.",
+      "proposal": ">Annual <span class=\"m-pastille\">save up to 28%</span>"
+    },
+    "L247": {
+      "severity": "medium",
+      "problem": "As a plan tagline this is a bare noun clause and I cannot tell what I am being offered. It also pairs badly with the Essential line.",
+      "proposal": "Discover what your handpan can do."
+    },
+    "L250": {
+      "severity": "medium",
+      "problem": "'What you really play' is cryptic and sounds translated. It does not tell me why I would pay.",
+      "proposal": "The songs you really want to play."
+    },
+    "L265": {
+      "severity": "high",
+      "problem": "'one payment' is ambiguous: I cannot tell whether it is one payment a year or a one-off that never renews, and on a pricing page that creates distrust. 'no trial month' also uses a different term from 'first month free' elsewhere. '(−28%)' is retail shorthand. The proposal keeps the wording neutral on renewal: state explicitly whether it renews if that can be confirmed.",
+      "proposal": "Or by the year: €29.99 (save 28%), paid in one go, no free month"
+    },
+    "L281": {
+      "severity": "high",
+      "problem": "Same as the Essential line: 'one payment' leaves renewal unclear, 'no trial month' does not match 'first month free', and '(−26%)' is retail shorthand.",
+      "proposal": "Or by the year: €89 (save 26%), paid in one go, no free month"
+    },
+    "L337": {
+      "severity": "medium",
+      "problem": "'Two plans are waiting for you' is ad-speak, 'doesn't sit on your scale' is not idiomatic, and the colon before 'it transposes' sounds translated. 'Studio... singing exercises' is so bare that €9.99 looks poor value, and nothing says it comes on top of Essential.",
+      "proposal": "There are two paid plans in the app. <b>Essential</b>, €3.49 a month, transposes a song that doesn’t fit your scale and lets you play along to the catalogue’s grooves, with a drummer. <b>Studio</b>, €9.99 a month, adds singing exercises. First month free on monthly plans, and you can change plan whenever you like."
+    },
+    "L338": {
+      "severity": "low",
+      "problem": "Understandable, but 'And if I want... one day?' has a French-sounding shape. 'What if' is the natural opening.",
+      "proposal": "What if I want to go further one day?"
+    }
+  }
+}

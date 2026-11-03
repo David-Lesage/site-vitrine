@@ -1,0 +1,255 @@
+{
+  "verdict": "Le texte se lit bien, le rythme est vivant et l'offre donne envie d'essayer ; on sent la traduction par endroits seulement, surtout dans les tournures « ante el micro », « Tres gestos », « enriquecimientos » et « soñar que ». Ce qui fait le plus douter à la lecture, ce sont quelques lignes d'offre obscures (L258, L272, L273, L276) et la phrase de résiliation « lo dejas » (L317), à un moment où l'on donne sa carte. Quelques mots d'Espagne (deberes, ordenador) passent moins bien en Amérique latine.",
+  "rows": {
+    "L46": {
+      "severity": "medium",
+      "problem": "« ante el micro » est littéraire, personne ne parle ainsi. « las canciones que tu handpan puede tocar » : l'instrument devient le sujet qui joue, tournure traduite qui revient en L66 et L196.",
+      "proposal": "Tocas unas notas frente al micro: la app reconoce tu escala y te muestra sus acordes en colores. Y luego, las canciones que puedes tocar en tu handpan, con la letra delante."
+    },
+    "L50": {
+      "severity": "low",
+      "problem": "Texte alternatif : « encendido en constelación » n'est pas une tournure espagnole.",
+      "proposal": "Un D Kurd 18 en la app: el handpan arriba, sus siete acordes en colores debajo, el primero iluminado en forma de constelación."
+    },
+    "L51": {
+      "severity": "medium",
+      "problem": "Même calque, visible cette fois : « encendido en constelación » ne se comprend qu'à moitié.",
+      "proposal": "Tu D Kurd en la app: sus 7 acordes, y el primero iluminado en forma de constelación."
+    },
+    "L60": {
+      "severity": "high",
+      "problem": "Gallicisme : « gestos » ne désigne pas des étapes en espagnol. Un natif écrit « pasos ».",
+      "proposal": "<p class=\"sur\">Tres pasos</p><h2>De tu instrumento a tu primera canción.</h2>"
+    },
+    "L61": {
+      "severity": "medium",
+      "problem": "« ante el micro » : même registre littéraire qu'en L46.",
+      "proposal": "Toca unas notas frente al micro."
+    },
+    "L63": {
+      "severity": "medium",
+      "problem": "« Míralo encenderse » sonne traduit, et le pronom n'a pas d'antécédent clair.",
+      "proposal": "Mira cómo se ilumina."
+    },
+    "L64": {
+      "severity": "medium",
+      "problem": "« toma su color » et « que tu handpan sabe tocar » sont des calques. Remarque : « grado » arrive sans explication sur une page qui promet « sin solfeo ».",
+      "proposal": "Cada grado se ilumina con su color, cada acorde dibuja su figura: los siete acordes de tu handpan y la emoción de cada uno."
+    },
+    "L66": {
+      "severity": "medium",
+      "problem": "Même sujet « tu handpan puede tocar ». Les capitales de « TU » font publicité criarde.",
+      "proposal": "Las canciones del catálogo que puedes tocar en tu handpan ya están aquí. ¿Tienes otra en la cabeza? Pega sus acordes y su letra, o sube el archivo: la app te la muestra en tu propio handpan."
+    },
+    "L73": {
+      "severity": "medium",
+      "problem": "« O seguir: » est télégraphique et ne se comprend pas d'emblée, à côté d'un impératif.",
+      "proposal": "O sigue bajando: ver una canción ↓"
+    },
+    "L79": {
+      "severity": "medium",
+      "problem": "« tabla de acordes » évoque un tableau de doigtés, alors que le texte décrit des accords au-dessus des paroles. Le mot courant chez les guitaristes est « cifrado ».",
+      "proposal": "Como el cifrado de una canción de guitarra, solo que no lees nombres de acordes: sigues formas y colores. Cuando vuelve el rojo, estás en casa. El azul es la tensión que pide volver."
+    },
+    "L87": {
+      "severity": "low",
+      "problem": "« bordón » seul évoque d'abord les cordes graves de la guitarre. Je suppose qu'il s'agit d'une note tenue en continu.",
+      "proposal": "<span>Tu tesitura, medida</span><span>El handpan hecho para tu voz</span><span>Una nota guía y un bordón continuo</span>"
+    },
+    "L103": {
+      "severity": "medium",
+      "problem": "« La cinta » n'a pas de référent : on ne sait pas de quoi il s'agit. Je suppose une bande qui défile à l'écran.",
+      "proposal": "<b>Tus acordes</b><p>Las progresiones pasan en una cinta, a tu ritmo.</p>"
+    },
+    "L105": {
+      "severity": "medium",
+      "problem": "« Un momento de práctica tuyo » : le « tuyo » placé ainsi n'est pas naturel.",
+      "proposal": "<b>Tu ritual</b><p>Un momento de práctica solo para ti, y tu progreso, día a día.</p>"
+    },
+    "L134": {
+      "severity": "medium",
+      "problem": "« es la cejilla » est une métaphore trop abrupte. « Cejilla » désigne le barré comme le capo, et en Amérique latine on dit souvent « capo » ; je suppose que le capo est visé, à vérifier.",
+      "proposal": "El primer grado siempre es rojo, sea cual sea la tonalidad, y la forma del acorde no se mueve: <b>es como la cejilla (el capo) en la guitarra.</b>"
+    },
+    "L149": {
+      "severity": "low",
+      "problem": "« un movimiento de la mano » : l'article défini est plus naturel.",
+      "proposal": "<b>Abierta</b>Un trazado que sigue el camino de las notas, para ver el movimiento de la mano."
+    },
+    "L161": {
+      "severity": "medium",
+      "problem": "« Desde la sensación » est un calque. « jazz » employé comme adjectif après « oriental » boite un peu.",
+      "proposal": "Si partes de la sensación, una escala es alegre o triste, y su tristeza puede ser profunda, oriental o de jazz. Compones un viaje de sensaciones."
+    },
+    "L162": {
+      "severity": "medium",
+      "problem": "Même calque « Desde la teoría », à garder parallèle à L161.",
+      "proposal": "Si partes de la teoría, los mismos ajustes recuperan sus nombres: mayor, menor natural, armónica, melódica, progresión de grados."
+    },
+    "L163": {
+      "severity": "low",
+      "problem": "« sitio » reste compris, mais « lugar » est plus neutre pour l'Amérique latine.",
+      "proposal": "Entras por la emoción. El día que quieras el solfeo, está ahí, en el mismo lugar."
+    },
+    "L168": {
+      "severity": "high",
+      "problem": "Gallicisme et terme musical faux : « enriquecimientos » ne se dit pas. Le mot des musiciens est « extensiones ».",
+      "proposal": "<b>Músico</b><p>Todo desbloqueado: los 7 acordes, las extensiones +7, +9…</p>"
+    },
+    "L187": {
+      "severity": "medium",
+      "problem": "« lo que puede tocar la tuya » : une gamme ne joue pas. Même tournure qu'en L46.",
+      "proposal": "<b>Una tablatura</b><p>está escrita para una escala. <em>La app te muestra lo que puedes tocar en la tuya.</em></p>"
+    },
+    "L189": {
+      "severity": "medium",
+      "problem": "« conectado en torno a » sonne traduit : on relie entre eux ou on tourne autour, pas les deux.",
+      "proposal": "<b>Otra app</b><p>afina, marca el compás o te ayuda a cantar afinado. <em>Aquí todo gira en torno a un solo instrumento, el tuyo.</em></p>"
+    },
+    "L196": {
+      "severity": "medium",
+      "problem": "Même sujet « tu handpan puede tocar » qu'en L46.",
+      "proposal": "<li>Las canciones que puedes tocar esta noche en tu handpan</li>"
+    },
+    "L198": {
+      "severity": "low",
+      "problem": "Aligner sur L87 si « bordón continuo » est retenu.",
+      "proposal": "<li>Encontrar tu voz: tu tesitura, una nota guía, un bordón continuo</li>"
+    },
+    "L201": {
+      "severity": "medium",
+      "problem": "« después » reste vague. Je suppose qu'il s'agit du prochain handpan à acheter, à confirmer.",
+      "proposal": "<li>Saber qué handpan elegir como próximo instrumento</li>"
+    },
+    "L202": {
+      "severity": "low",
+      "problem": "« en MIDI por USB » est une tournure lourde.",
+      "proposal": "<li>Conectar tu Neotone por USB (MIDI)</li>"
+    },
+    "L208": {
+      "severity": "medium",
+      "problem": "« entre todos quienes tocan » est bancal : « entre todos » et « quienes » ne se combinent pas ainsi.",
+      "proposal": "idiomas, y un léxico escrito por quienes tocan"
+    },
+    "L210": {
+      "severity": "low",
+      "problem": "« y están incluidos » : on ne sait pas dans quoi. Je suppose « dans ton forfait », à confirmer ; sinon garder le texte actuel.",
+      "proposal": "<b>En evolución constante</b><p>Llegan con regularidad nuevas funciones, escalas y modos, incluidos en tu plan. La app de hoy será más rica mañana.</p>"
+    },
+    "L211": {
+      "severity": "low",
+      "problem": "« aplicación » alors que la page dit « app » partout ailleurs (hors témoignage).",
+      "proposal": "<b>Tu opinión da forma a la app</b><p>Desde la app, envías tus ideas con un clic. Cada mensaje se lee y orienta lo que viene.</p>"
+    },
+    "L212": {
+      "severity": "medium",
+      "problem": "Régime fautif : on dit « soñar con algo », pas « soñar tener » dans ce sens.",
+      "proposal": "<b>Una comunidad, no un catálogo</b><p>Juntos construimos la herramienta con la que todos habríamos soñado de niños.</p>"
+    },
+    "L217": {
+      "severity": "high",
+      "problem": "Vraie faute, même dans des propos signés : « soñar que » veut dire voir en rêve. Il faut « soñar con ». Et c'est un titre.",
+      "proposal": "«La herramienta con la que de niño habría soñado»"
+    },
+    "L218": {
+      "severity": "medium",
+      "problem": "Même faute en fin de paragraphe (« habría soñado que me dieran »). Seule cette tournure est corrigée, le reste est intact.",
+      "proposal": "Empecé con la batería a los 4 años, y el solfeo me quitó las ganas de tocar, así que aprendí de oído. A los 12 años, al piano, entendí que mi memoria no estaba hecha para descifrar notas abstractas: es visomotora y espacial. Con el handpan me encontré con el mismo muro: naves espaciales sin manual de pilotaje. Entonces dibujé. De esos dibujos nació la herramienta con la que habría soñado: la teoría musical hecha visible, en lenguajes que un niño puede entender."
+    },
+    "L222": {
+      "severity": "low",
+      "problem": "« Lo que me preguntan. » sonne un peu sec ; l'habitude se dit avec « suelen ».",
+      "proposal": "Lo que me suelen preguntar."
+    },
+    "L234": {
+      "severity": "medium",
+      "problem": "« Ella se encarga » : gallicisme, l'espagnol n'emploie pas ce pronom pour une chose. « haces que » est lourd.",
+      "proposal": "Te registras, pones tu handpan delante y dejas que la app lo escuche. Del resto se encarga ella."
+    },
+    "L250": {
+      "severity": "low",
+      "problem": "Le sens n'est pas immédiat. Je suppose une opposition avec L247 (ce que ton handpan peut faire / ce que toi, tu joues) ; le « tú » la rend lisible.",
+      "proposal": "Lo que tú tocas de verdad."
+    },
+    "L252": {
+      "severity": "low",
+      "problem": "« temas » alors que la page dit « canciones » partout.",
+      "proposal": "<li>Transponer tus canciones</li>"
+    },
+    "L254": {
+      "severity": "low",
+      "problem": "« al tempo » : l'expression musicale est « a tempo ».",
+      "proposal": "<li>Hacer avanzar la partitura a tempo</li>"
+    },
+    "L258": {
+      "severity": "medium",
+      "problem": "Paraît doublonner L257 : un client se demande quelle est la différence, et une liste avec un doublon inspire moins confiance. Je ne sais pas ce qui les distingue, donc pas de correction de ma part, texte inchangé : à trancher par quelqu'un qui connaît le produit.",
+      "proposal": "<li>Ver y escuchar tu escala transpuesta</li>"
+    },
+    "L260": {
+      "severity": "low",
+      "problem": "On peut croire à un vrai batteur. Je suppose qu'il est virtuel, d'après les « grooves del catálogo » de L337, à confirmer.",
+      "proposal": "<li>Tocar con un baterista virtual</li>"
+    },
+    "L265": {
+      "severity": "low",
+      "problem": "« en un pago anual » : le « solo » manque pour que l'expression soit naturelle.",
+      "proposal": "O al año: 29,99 € (ahorra 28 %), en un solo pago anual, sin mes de prueba"
+    },
+    "L270": {
+      "severity": "low",
+      "problem": "On s'entend « por » les écouteurs, pas « en ». « Audífonos » serait le mot courant dans une partie de l'Amérique latine, mais « auriculares » y reste compris.",
+      "proposal": "<li>Oírte por los auriculares</li>"
+    },
+    "L272": {
+      "severity": "medium",
+      "problem": "Formule obscure. Je suppose plusieurs instruments disposés autour du joueur, à confirmer.",
+      "proposal": "<li>Tocar varios handpans colocados a tu alrededor</li>"
+    },
+    "L273": {
+      "severity": "medium",
+      "problem": "« la Lógica » ne dit rien, et la page parle ailleurs du « modo Lógico ». Je suppose que c'est la même chose, à confirmer.",
+      "proposal": "<li>Tocar el modo Lógico en tu handpan digital</li>"
+    },
+    "L276": {
+      "severity": "medium",
+      "problem": "« Revelar » est incompréhensible ici : révéler à qui ? Je devine qu'on affiche les accords de ce que joue le duo, sans certitude. Proposition à valider par quelqu'un qui connaît la fonction.",
+      "proposal": "<li>Mostrar los acordes de tu dúo</li>"
+    },
+    "L281": {
+      "severity": "low",
+      "problem": "Même remarque qu'en L265.",
+      "proposal": "O al año: 89 € (ahorra 26 %), en un solo pago anual, sin mes de prueba"
+    },
+    "L283": {
+      "severity": "medium",
+      "problem": "« deberes » est très espagnol. « tareas » se comprend des deux côtés de l'Atlantique.",
+      "proposal": "Tus alumnos, tus clases, sus tareas."
+    },
+    "L288": {
+      "severity": "medium",
+      "problem": "Même mot que L283, à aligner.",
+      "proposal": "<li>Asignar tareas a tus alumnos</li>"
+    },
+    "L312": {
+      "severity": "low",
+      "problem": "Le bouton dit « Avísame » en L291 et « Avisarme » ici.",
+      "proposal": "envoi.textContent='Avísame'"
+    },
+    "L317": {
+      "severity": "high",
+      "problem": "« lo dejas cuando quieras » est ambigu au moment de donner sa carte. Un client veut lire clairement qu'il peut résilier. Le sens de résiliation est ma lecture de la phrase.",
+      "proposal": "an?'Tu tarjeta se pide en el paso siguiente.':'Tu tarjeta se registra en el paso siguiente. No se cobra nada durante el mes gratis y puedes cancelar cuando quieras.'"
+    },
+    "L334": {
+      "severity": "low",
+      "problem": "« ordenador » se dit « computadora » dans la plupart de l'Amérique latine. « reciban un instrumento » est imprécis : un navigateur reçoit un signal.",
+      "proposal": "En ordenador (computadora) o tableta, en tu navegador. En un teléfono, la pantalla es demasiado pequeña para ver bien tu handpan y sus acordes. En iPhone y iPad, Apple impide que los navegadores reciban la señal de un instrumento conectado por USB: para conectar un handpan digital, abre la app en Web MIDI Browser, gratis en la App Store."
+    },
+    "L335": {
+      "severity": "low",
+      "problem": "Même remarque qu'en L334.",
+      "proposal": "En ordenador (computadora) o tableta, en tu navegador."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "verdict": "Traduction fidèle : aucun prix, chiffre, balise ou code altéré sur les 280 lignes (contrôle mécanique), aucune promesse ajoutée, témoignage de Marina et texte de David sans contresens. Restent 3 erreurs de nom de fonction par rapport à l'app (L90, L273, L290) et 8 points à trancher, dont deux nuances dans le témoignage de Marina.",
+  "rows": {
+    "L90": {
+      "level": "error",
+      "problem": "« sa note de confort » est un libellé du passeport vocal, et l'app le traduit « nota de confort », pas « nota cómoda ». La consigne dit de garder l'app.",
+      "evidence": "translations.ts l.50501 voix.pp.cyma_confort : « mi nota de confort » ; l.50484 guide.chanter.passeport_signe : « tu nota de confort ».",
+      "proposal": "su nota de confort"
+    },
+    "L273": {
+      "level": "error",
+      "problem": "« Tocar la Lógica » calque le français et ne correspond pas au libellé de l'app, qui nomme le mode. La phrase ne dit plus clairement qu'on joue le mode Logique sur l'instrument. « digital » reste, conformément à la règle du terme unique de la consigne, alors que l'app écrit ici « electrónico ». « Lógico » à suivre si L159 est confirmé.",
+      "evidence": "translations.ts l.47702 v2.offres.f.neotone : « Tocar en modo Lógica en tu handpan electrónico ».",
+      "proposal": "<li>Tocar en modo Lógico en tu handpan digital</li>"
+    },
+    "L290": {
+      "level": "error",
+      "problem": "L'écran de l'app s'appelle « perfil de profesor » : le lecteur ne retrouvera pas « ficha ».",
+      "evidence": "translations.ts l.47710 v2.offres.f.fiche_prof : « Publicar tu perfil de profesor » ; l.41227 apt.prof.fiche : « Mi perfil de profesor ».",
+      "proposal": "<li>Publicar tu perfil de profesor</li>"
+    },
+    "L159": {
+      "level": "doubt",
+      "problem": "L'app est elle-même partagée, à décider pour toute la page (L68, L155, L159, L273). « Lógico » est majoritaire et c'est le nom affiché de l'outil ; mais le menu dit « Lógica » seul et la liste des offres « modo Lógica ». Garder « Lógico » est défendable, à condition d'unifier l'app ensuite.",
+      "evidence": "Lignes de valeurs es, casse ignorée : modo Lógico 40, modo Lógica 34. Lógico : l.47424 et l.47427 v2.outils.logique_*.nom « El modo Lógico », l.5517, l.58943. Lógica : l.261 nav.logic « Lógica », l.48223 v2.panneau.mode_logique « Lógica », l.4003 « Abrir el modo Lógica », l.47702, l.58382 « Modo Lógica ».",
+      "proposal": "<p class=\"sur rv\">El modo Lógico</p>"
+    },
+    "L157": {
+      "level": "doubt",
+      "problem": "Le libellé français du panneau, « Enchaînement des degrés », est traduit « Secuencia de grados » dans l'app, alors que le lexique §9 fixe enchaînement = progresión et qu'un autre libellé dit « Progresión de los grados ». La page suit le lexique, l'écran peut dire autre chose. Lequel des deux libellés le panneau affiche : non confirmé, le code est hors périmètre.",
+      "evidence": "translations.ts l.1398 logic.progression_title (Enchainement des degrés) : « Secuencia de grados » ; l.4110 logic.preset.placeholder : « Elige una secuencia de grados » ; l.1232 logic.progression (Progression des Degrés) : « Progresión de los grados ».",
+      "proposal": "Secuencia de grados"
+    },
+    "L162": {
+      "level": "doubt",
+      "problem": "Même décision que L157 : les deux lignes doivent rester identiques.",
+      "evidence": "Voir L157.",
+      "proposal": "secuencia de grados"
+    },
+    "L177": {
+      "level": "doubt",
+      "problem": "Témoignage de Marina : « De quoi apprendre… » est rendu par « Todo lo necesario », et « Todo » renforce ce qu'elle dit.",
+      "evidence": "FR L177 : « De quoi apprendre, expérimenter et progresser en autonomie ! »",
+      "proposal": "¡Lo necesario para aprender, experimentar y progresar con autonomía!"
+    },
+    "L179": {
+      "level": "doubt",
+      "problem": "Témoignage de Marina : « bienveillant » devient « atento », qui veut dire attentif et double « à l'écoute » ; la bienveillance est perdue.",
+      "evidence": "FR L179 : « Un professeur passionné, bienveillant et à l'écoute ».",
+      "proposal": "Un profesor apasionado, amable y que sabe escuchar"
+    },
+    "L254": {
+      "level": "doubt",
+      "problem": "Le sens est juste, mais la ligne d'offre existe mot pour mot dans l'app sous une autre forme.",
+      "evidence": "translations.ts l.47686 v2.offres.f.pupitre : « Desplazar la partitura al tempo ».",
+      "proposal": "<li>Desplazar la partitura al tempo</li>"
+    },
+    "L270": {
+      "level": "doubt",
+      "problem": "Le sens est juste, mais l'app emploie « escuchar » pour cette fonction, pas « oír ».",
+      "evidence": "translations.ts l.47700 v2.offres.f.casque : « Escucharte a través de los auriculares » ; l.45815 chanter.note : « Escucharme en los auriculares ».",
+      "proposal": "<li>Escucharte a través de los auriculares</li>"
+    },
+    "L285": {
+      "level": "doubt",
+      "problem": "Le sens est juste, mais la ligne d'offre de l'app dit « en grupo ».",
+      "evidence": "translations.ts l.59024 v2.offres.f.cours_individuels : « Dar clases individuales y en grupo ».",
+      "proposal": "<li>Dar clases individuales y en grupo</li>"
+    }
+  },
+  "terms_checked": {
+    "modo Lógico / Lógica (L68, L159)": "App partagée : 40 lignes Lógico, 34 Lógica, casse ignorée (la note du rédacteur disait 29 et 26, sens identique). L'étiquette principale du menu est « Lógica » seul (l.261, l.48223) ; le nom de l'outil est « El modo Lógico » (l.47424, l.47427). Voir la ligne L159.",
+    "talleres / fabricantes (L49, L207)": "Confirmé, pas de problème. L'app emploie les deux sur la carte : « {n} talleres » (l.42952), « talleres, no personas » (l.43592), et « fabricantes » pour l'annuaire (l.42951, l.42956). « Ateliers » = talleres : L49 et L207 sont justes.",
+    "intérpretes / jugadores (L209)": "« intérpretes » confirmé : lexique §9 (joueur = intérprete), l.40497 « La constelación de intérpretes », l.40505 com.map.leg_player « Intérprete », l.42947 « mapa de intérpretes ». « jugadores » subsiste dans l'app (l.43628, l.43677, l.5894), à corriger côté app. La note du rédacteur parle de « la » légende de la carte : c'est celle de l'accueil (l.5894), celle de la carte dit bien Intérprete.",
+    "nota guía (L87, L198)": "Non confirmé. Absent de l'app, y compris en français (0 « note guide »). L'app dit « Voz guía y nota de entonación » (l.4230, FR « Voix guide & note tenue »), « Nota de asistencia » (l.4624), « nota sostenida » (l.5351). Traduction fidèle du français de la page, gardée.",
+    "bordón (L87, L198)": "Non confirmé comme nom de fonction : une seule occurrence, au sens figuré (l.43201 « los bordones más bonitos », FR « bourdons »). Traduction juste du mot français.",
+    "progresión de grados (L157, L162)": "Forme présente dans l'app (l.1232, l.39122) et conforme au lexique §9, mais le libellé exact « Enchaînement des degrés » y est « Secuencia de grados » (l.1398). Voir L157.",
+    "constelación cerrada / abierta (L144 à L149)": "« Constelación abierta » confirmé (l.42874). « constelación cerrada » absent de l'app : non confirmé, mais « polígono cerrado » (l.7745, l.8839) va dans ce sens. Le sélecteur de l'app dit Polígono / Abierto / Manos (l.459, l.468, l.477), et le français de la page diffère déjà de la même façon : pas une erreur de traduction.",
+    "trazado de manos (L150, L151)": "« Estilo de trazado » (l.450, l.7736) et « Manos » (l.477) confirmés. La locution entière est absente. Attention, l'app contient un contresens à ne pas suivre : l.7763 « Dibujo hecho a mano por separado », l.8857 « Trazados separados a mano ».",
+    "en un pago anual (L265, L281)": "Clair et exact : le paiement est annuel, et L292 dit le renouvellement automatique. L'app dit « pagados de una vez, sin mes de prueba, renovado cada año » (l.51223) et « se paga de una vez » (l.54291). L'expression n'y figure pas (0 occurrence) mais n'est pas un nom de fonction, et elle évite le faux achat unique. Aucun changement.",
+    "paliers et formules": "Confirmés : Gratis (l.44394), Esencial (l.44396, deux restes « Essentiel » l.52789 et l.58999 dans l'app), Enseñar (l.44402), Descubrimiento (l.3748), Aprendiz (l.3750), Músico (l.37549). plan : lexique §9.",
+    "émotions (L304)": "Vérifiés : Equilibrio (l.44184), Impulso (l.44185), Relajación (l.44187). Tensión, Aventura, Nostalgia, Misterio : non recherchés un par un, traduction directe sans piège.",
+    "autres noms vérifiés sans écart": "Sensación emocional (l.1259), Teoría musical (l.1250), Alegre (l.1295), Tristeza profunda / intensa / luminosa (l.37454 à l.37464), Viaje de las sensaciones (l.1389), Veo mi voz (l.49755), Ayúdame a encontrar mi voz (l.43274), Mi ritual de práctica (l.41178), Técnica de interpretación (l.44524), cinta transportadora (l.53839), Enriquecimientos (l.35583), Conexión Neotone (l.48815), handpan digital (l.50265), Lluvia de notas (l.47693), baraja de cartas de acordes (l.47694). L252, L253, L255, L257, L259, L260, L262, L263, L269, L271, L272, L275, L276, L279, L286, L287, L288, L289 reprennent v2.offres.f.* au mot près ou sans écart de sens.",
+    "contrôle mécanique": "280 lignes sur 280 présentes. Balises, nombres et ponctuation JavaScript comparés au français : identiques, hors textes data-mens et data-ann traduits et une virgule de texte en L314. Aucun tiret cadratin, aucun vos ni usted. Hypothèse non vérifiée : les routes /es/ existent.",
+    "lignes gardées, non confirmé (hors ids.txt)": "Non jugées, table.json et scripts/ étant interdits : L126, L305 à L307 contiennent « Ré » ; L329 contient lang:'fr' dans l'envoi de la liste d'attente Transmettre. À vérifier sur le rendu espagnol : le bouton affiche-t-il « Re », et un inscrit espagnol est-il enregistré en fr ?"
+  }
+}
