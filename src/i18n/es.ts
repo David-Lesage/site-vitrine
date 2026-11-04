@@ -673,7 +673,7 @@ export const es: Dict = {
       },
       "calebasse": {
         "name": "Kit de calabaza Signature David Lesage",
-        "description": "Kit completo: calabaza de 45-50 cm (poco común en Europa), acabada a mano por Kamou (Djoliba Percussion) y grabada con láser con el logotipo de Now Groove, con tapete y maracas. Una batería orgánica con un sonido natural."
+        "description": "Kit completo: calabaza (percusión africana) de 45-50 cm (poco común en Europa), acabada a mano por Kamou (Djoliba Percussion) y grabada con láser con el logotipo de Now Groove, con tapete y maracas. Una batería orgánica con un sonido natural."
       },
       "housse": {
         "name": "Funda de calabaza Now Groove de David Lesage",
@@ -784,7 +784,7 @@ export const es: Dict = {
       "lesson": "Tomar una clase con David"
     },
     "discountTitle": "Obtener mi código de descuento Neotone",
-    "discountIntro": "Un código a tu nombre que pido para ti a Neotone: −5 % online, −7 % si vienes a probarlo al showroom. Respuesta personal en un plazo de 24 a 48 h.",
+    "discountIntro": "Un código a tu nombre que pido para ti a Neotone: −5 % en línea, −7 % si vienes a probarlo al showroom. Respuesta personal en un plazo de 24 a 48 h.",
     "discountModel": "¿Qué modelo te interesa?",
     "discountModelChoose": "Elegir…",
     "discountModelNames": {
@@ -817,9 +817,9 @@ export const es: Dict = {
         "Si pagas antes de venir, envíame el comprobante de pago o de transferencia a <a href=\"mailto:contact@lesagedavid.fr\">contact@lesagedavid.fr</a>: te entrego tu Neotone al presentar este comprobante."
       ],
       "showroomWeekend": "<strong>¿Vienes al showroom un fin de semana?</strong> Completa este formulario antes del viernes: el enlace de pago estará listo, podrás pagar allí mismo y llevarte tu instrumento.",
-      "onlineTitle": "Compra online: solicitud de código de descuento (−5 %)",
-      "onlineIntro": "Un código de descuento personal que solicito para ti a Neotone: −5 % en tu pedido online, entregado en tu casa.",
-      "onlineButton": "Compra online: obtener mi código (−5 %)",
+      "onlineTitle": "Compra en línea: solicitud de código de descuento (−5 %)",
+      "onlineIntro": "Un código de descuento personal que solicito para ti a Neotone: −5 % en tu pedido en línea, entregado en tu casa.",
+      "onlineButton": "Compra en línea: obtener mi código (−5 %)",
       "onlineHowTitle": "Cómo recibes tu código de descuento",
       "onlineHow": [
         "Leo tu solicitud personalmente; respondo a todo el mundo.",
@@ -1068,7 +1068,7 @@ export const es: Dict = {
       },
       {
         "t": "Control SHAPE",
-        "d": "La perilla grande esculpe el sonido: en 0 conservas el timbre original; al girarla en sentido horario acentúas los graves y los agudos y reduces los medios, perfecto para destacar en una mezcla cargada."
+        "d": "El mando grande esculpe el sonido: en 0 conservas el timbre original; al girarlo en sentido horario acentúas los graves y los agudos y reduces los medios, perfecto para destacar en una mezcla cargada."
       },
       {
         "t": "Salida de mezcla con jack de 6,35 mm",
@@ -1510,9 +1510,9 @@ export const es: Dict = {
         "text": "Sesiones en grupos reducidos (ritmo con calabaza, handpan…), en un ambiente cálido. Formato y lugar a pedido."
       }
     ],
-    "footnote": "Precio libre a partir del monto indicado. Las clases se reservan por correo electrónico. Las clases presenciales en París son un puente natural hacia el showroom y los encuentros.",
+    "footnote": "Precio libre a partir del importe indicado. Las clases se reservan por correo electrónico. Las clases presenciales en París son un puente natural hacia el showroom y los encuentros.",
     "packageTitle": "Paquete de 4 clases en 2 meses",
-    "packageText": "4 clases de 1 hora: desde {pack60} € ({packLesson60} € por clase) · 4 clases de 1,5 horas: desde {pack90} € ({packLesson90} € por clase). Precio libre a partir de estos montos; las 4 clases se usan en un plazo de 2 meses.",
+    "packageText": "4 clases de 1 hora: desde {pack60} € ({packLesson60} € por clase) · 4 clases de 1,5 horas: desde {pack90} € ({packLesson90} € por clase). Precio libre a partir de estos importes; las 4 clases se usan en un plazo de 2 meses.",
     "packageCta": "Pagar en HelloAsso",
     "faqEyebrow": "Preguntas frecuentes",
     "faqTitle": "Preguntas frecuentes sobre las clases",
@@ -1945,7 +1945,7 @@ export const es: Dict = {
     "program": [
       {
         "t": "Neotone en vivo",
-        "d": "Toco delante de ti: primero el sonido en bruto, luego con efectos (octavador, reverberación, looper) y cantando; la interfaz se proyecta en la pantalla."
+        "d": "Toco delante de ustedes: primero el sonido en bruto, luego con efectos (octavador, reverberación, looper) y cantando; la interfaz se proyecta en la pantalla."
       },
       {
         "t": "Handpan Constellation Studio, la aplicación que hace visible la música",
@@ -1960,17 +1960,17 @@ export const es: Dict = {
         "d": "El arpa africana Gonilélé y la calabaza también salen: las toco, explico cómo acercarse a ellas, y si viniste por ellas, estás justo en el lugar indicado."
       },
       {
-        "t": "Tus preguntas",
+        "t": "Sus preguntas",
         "d": "Un espacio de intercambio abierto: respondo a todos, desde el principiante curioso hasta el músico experimentado."
       },
       {
-        "t": "Tu turno de tocar",
-        "d": "Prueba los dos Neotone (uno con altavoz, el otro con auriculares) y mis dos handpans acústicos Yishama. Tómate el tiempo de sentir cada instrumento. El Gonilélé y la calabaza también están ahí: tómalos en tus manos."
+        "t": "Su turno de tocar",
+        "d": "Prueben los dos Neotone (uno con altavoz, el otro con auriculares) y mis dos handpans acústicos Yishama. Tómense el tiempo de sentir cada instrumento. El Gonilélé y la calabaza también están ahí: tómenlos en sus manos."
       }
     ],
     "programBonusTitle": "Y a veces, va más allá",
     "programBonus": "Según el público interesado, la sesión puede abrirse más: una demostración del Gonilélé en situación real (con los efectos y el pedal de octavador, en un sistema de sonido Bose profesional, en condiciones de concierto), la calabaza e incluso el tambor chamánico «El Alma del Tambor». No es sistemático: depende de las personas presentes ese día y de lo que les interese. Cuéntame qué te atrae y lo tendré en cuenta.",
-    "programNote": "Los niños son bienvenidos, bajo la responsabilidad de sus padres. La parte de demostración, charla y preguntas puede resultar un poco larga para los más pequeños: si hace falta, prevé una actividad tranquila o el relevo de otro adulto.",
+    "programNote": "Los niños son bienvenidos, bajo la responsabilidad de sus padres. La parte de demostración, charla y preguntas puede resultar un poco larga para los más pequeños: si hace falta, prevean una actividad tranquila o el relevo de otro adulto.",
     "booking": "Las citas se reservan solo a través del formulario: lo completas, tu solicitud me llega y te respondo personalmente.",
     "bookVisitCta": "Reservar mi turno en el showroom (de pago)",
     "bookPrivateCta": "Reservar una cita individual",
@@ -2095,7 +2095,7 @@ export const es: Dict = {
     "linkApp": "Descubrir Handpan Constellation Studio",
     "todayEyebrow": "Hoy · París 20",
     "todayTitle": "Músico, profesor y creador de herramientas",
-    "todayIntro": "Soy intermitente del espectáculo y vivo en París. Le Nid, en el número 29 de la rue des Orteaux, en el distrito 20, es el lugar que llevo adelante con Iris Chasles, abierto el 13 de marzo de 2026: un lugar a escala humana, en el este de París, donde recibimos a grupos pequeños. Allí se cruzan cinco propuestas (conciertos, taller de ritmo con calabaza, clases individuales, taller de yoga y acompañamiento psicocorporal), a las que se suman las presentaciones de instrumentos, gratuitas y con inscripción. Puedes tocar, probar, escuchar y llevarte tu Neotone el mismo día. Mis dos Yishama también están allí, no a la venta, solo para que se toquen. El programa completo lo publica la asociación Résonances Productions.",
+    "todayIntro": "Soy intermitente del espectáculo (Francia) y vivo en París. Le Nid, en el número 29 de la rue des Orteaux, en el distrito 20, es el lugar que llevo adelante con Iris Chasles, abierto el 13 de marzo de 2026: un lugar a escala humana, en el este de París, donde recibimos a grupos pequeños. Allí se cruzan cinco propuestas (conciertos, taller de ritmo con calabaza, clases individuales, taller de yoga y acompañamiento psicocorporal), a las que se suman las presentaciones de instrumentos, gratuitas y con inscripción. Puedes tocar, probar, escuchar y llevarte tu Neotone el mismo día. Mis dos Yishama también están allí, no a la venta, solo para que se toquen. El programa completo lo publica la asociación Résonances Productions.",
     "today": [
       {
         "t": "Toco",
@@ -2924,7 +2924,7 @@ export const es: Dict = {
       "savingsB2B": "No pagas",
       "savingsB2BNote": "Es decir, {discountRate} de descuento + {vatRate} de IVA sobre el precio base: la diferencia con el precio de catálogo con IVA ({catalog}). Solo el descuento de {discount} es una ganancia real: el IVA no lo adelantas (inversión del sujeto pasivo), y de todos modos lo recuperarías.",
       "getCode": "Obtener mi código de descuento",
-      "modeOnlineShort": "Compra online, código de descuento (−5 %)",
+      "modeOnlineShort": "Compra en línea, código de descuento (−5 %)",
       "modeShowroomShort": "Compra en el showroom (−7 %)",
       "stockStateIn": "Disponible en el showroom",
       "stockStateInSub": "Puedes venir a probarlo a París (distrito 20) y llevártelo.",
