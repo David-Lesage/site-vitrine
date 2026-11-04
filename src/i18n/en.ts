@@ -16,15 +16,15 @@ export const en: Dict = {
       contact: 'Contact',
     },
     brandSub: 'Visible music',
-    tagline: 'Making music visible and accessible — through colours, geometry and emotions.',
-    headerCta: 'Come try it in Paris',
+    tagline: 'Making music visible and accessible, through colours, geometry and emotions.',
+    headerCta: 'Come and try it in Paris',
     footer: {
       resources: 'Resources',
       navigation: 'Navigation',
       contact: 'Contact',
       learnHandpan: 'Learn the handpan',
       electricVsAcoustic: 'Electronic vs acoustic',
-      chooseHandpan: 'Which handpan to choose',
+      chooseHandpan: 'Choosing a handpan',
       newsletter: 'Newsletter',
       faq: 'FAQ',
       legal: 'Legal notice',
@@ -48,18 +48,18 @@ export const en: Dict = {
     news: {
       check: 'I’d like to hear about upcoming dates and what’s new',
       optional: 'optional',
-      hint: 'New gathering dates, the app opening up, new instruments. I write rarely, and you unsubscribe in one click. If you leave it unticked, I only write to you about your request.',
+      hint: 'New gathering dates, the app’s opening, new instruments. I write rarely, and you can unsubscribe in one click. If you leave the box unticked, I’ll only write to you about your request.',
     },
-    credentials: ['Conservatory award', 'The Voice · Season 11', 'Neotone · Yishama · Maison du Ngoni ambassador', 'Showroom Paris 20th'],
+    credentials: ['Conservatoire prize', 'The Voice · Season 11', 'Neotone · Yishama · Maison du Ngoni ambassador', 'Paris showroom (20th arrondissement)'],
     beta: {
       badge: 'Limited access',
       title: 'The app is not open to the public yet',
-      text: 'Handpan Constellation Studio is currently used by a small group of beta testers, while we fine-tune the experience. They get free access, in exchange for their feedback.',
-      wish: 'Would you like to become a beta tester? Tick the box in the form and tell me in a few words why the app interests you and how you plan to use it — I read and answer personally.',
+      text: 'Handpan Constellation Studio is currently being used by a small group of beta testers while I fine-tune the experience. They get free access in exchange for their feedback.',
+      wish: 'Would you like to become a beta tester? Tick the box in the form and tell me in a few words why the app interests you and how you plan to use it. I read and reply to every message myself.',
       more: 'Access to the app',
       ctaWaitlist: 'Join the waiting list',
       priceClosedNote:
-        'These prices are indicative: they will be the ones at public launch. The whole app — including the free plan — isn’t open yet: no plan is accessible today. It is used by a small group of beta testers, who get free access in exchange for their feedback. The waiting list is the only way in for now, whichever plan you may want at launch. Would you like to be one of the beta testers? Tell me below why the app interests you — I read and answer personally.',
+        'These prices are indicative: they’re the ones that will apply at public launch. The whole app (free plan included) isn’t open yet, so no plan is available today. It’s being used by a small group of beta testers, who get free access in exchange for their feedback. For now, the waiting list is the only way in, whichever plan you’ll want at launch. Would you like to be one of the beta testers? Tell me below why the app interests you. I read and reply to every message myself.',
       formTitle: 'Get notified when it opens',
       formFirst: 'First name',
       formLast: 'Last name',
@@ -73,13 +73,13 @@ export const en: Dict = {
       formHandpanTypeElectronic: 'Electronic',
       formHandpanTypeBoth: 'Both',
       formUsage: 'What will you use Handpan Constellation Studio for?',
-      formUsageHint: 'Tick everything that applies. What you declare here decides your access — if several boxes apply, the most committing one counts.',
-      formUsagePersonal: 'For myself — learning, playing, composing',
+      formUsageHint: 'Tick everything that applies. What you declare here decides your access: if several boxes apply, the one that commits you most is the one that counts.',
+      formUsagePersonal: 'For myself: learning, playing, composing',
       formUsagePersonalDeal: 'Free. Your creations stay yours; exports carry a watermark.',
-      formUsageTeacher: 'For teaching — I use it as a tool in lessons I charge for',
-      formUsageTeacherDeal: 'Teacher Licence: student space, exercises, scores, watermark-free exports. Being built — the first teachers are shaping it with me.',
-      formUsageMaker: 'For making — I design and tune handpans',
-      formUsageMakerDeal: 'You’re a maker. Tell me what you can build and you join the app’s maker directory: people pick you right as they design the handpan of their dreams, based on where you are and what you can produce. I bring you clients, I take a percentage, and you give them an introduction price. I only work with makers who are genuine and do quality work.',
+      formUsageTeacher: 'For teaching: I use it as a tool in lessons I charge for',
+      formUsageTeacherDeal: 'Teacher Licence: student space, exercises, scores, watermark-free exports. It’s still being built, and the first teachers are shaping it with me.',
+      formUsageMaker: 'For making: I design and tune handpans',
+      formUsageMakerDeal: 'You’re a maker. Tell me what you can build and you join the app’s maker directory: people pick you right as they design the handpan of their dreams, based on where you are and what you can produce. I bring you clients, I take a percentage, and you give them a referral price. I only work with makers who share my values and do quality work.',
       formUsageOther: 'Something else / not sure yet',
       formUsageBoth: 'Both',
       formStudentCount: 'How many students do you currently teach?',
@@ -89,9 +89,9 @@ export const en: Dict = {
       formStudentCount20: 'More than 20',
       formMakerLegend: 'Your maker profile',
       formMakerHint: 'This is what puts you in the directory, in front of the right people.',
-      formMakerCountry: 'Where do you build?',
+      formMakerCountry: 'Where’s your workshop?',
       formMakerCountryPlaceholder: 'Country, city',
-      formMakerNotes: 'Up to how many notes per instrument?',
+      formMakerNotes: 'How many notes per instrument, at most?',
       formMakerNotes9: '9 or fewer',
       formMakerNotes10: '10 to 13',
       formMakerNotes14: '14 to 17',
@@ -103,50 +103,50 @@ export const en: Dict = {
       formMakerMetalEmber: 'Ember steel',
       formMakerMetalOther: 'Other',
       formMakerPricing: 'Your favourite scales, your prices, your lead times',
-      formMakerPricingPlaceholder: 'E.g. D Kurd 9 notes, €1,400 — 3 months lead time.',
-      formPledgeTitle: 'Are we clear?',
-      formPledgeText: 'I build this tool on my own. What you declare here decides your access — it isn’t a check, it’s an agreement. If your use changes (you start teaching with it, say), tell me: we adjust, simply.',
-      formPledgeCheck: 'I commit to the honesty of what I’ve declared.',
-      formRolesRequired: 'Tick at least one box — that’s the heart of the request.',
+      formMakerPricingPlaceholder: 'E.g. D Kurd, 9 notes, €1,400, 3-month lead time.',
+      formPledgeTitle: 'Are we on the same page?',
+      formPledgeText: 'I’m building this tool on my own. What you declare here decides your access: it’s not a check, it’s an agreement. If the way you use it changes (say you start teaching with it), just tell me and we’ll adjust.',
+      formPledgeCheck: 'I pledge that what I’ve declared is honest.',
+      formRolesRequired: 'Tick at least one box: that’s the heart of the request.',
       // THE DOOR — same wording as the app's entry screen (auth/portal-i18n.ts,
       // keys `beta.invitedTitle` · `invitedText` · `invitedBtn` · `notMe`).
       invitedTitle: 'You are on the invite list ✨',
       invitedText:
         'This address has been invited to join the beta. All that is left is to choose a password and come in.',
       invitedBtn: 'Create my password and come in',
-      invitedNotMe: 'That’s not me — join the waiting list',
+      invitedNotMe: 'Not me? Join the waiting list',
       formShowcase: 'I’d like to hear about the next free gatherings in Paris',
-      formBeta: 'I’d like to become a beta tester — early, free access to the app, in exchange for my regular feedback.',
+      formBeta: 'I’d like to become a beta tester: early, free access to the app, in exchange for my regular feedback.',
       formMotivation: 'Why does the app interest you? (optional)',
       formMotivationBeta: 'Why would you like to become a beta tester?',
       formMotivationHint: 'Tell me in a few words why it interests you and how you plan to use it: your answer counts as an application to join the beta testers. I read everything, personally.',
       formMotivationPlaceholder: 'What I’m looking for, how I play, what I’d love to do with it…',
-      formSubmit: 'I want access to the app as soon as it opens',
+      formSubmit: 'I want access to the app as soon as it opens to the public',
       formSending: 'Saving…',
-      formError: 'We couldn’t save your sign-up. Please try again, or write to me directly.',
-      formPrivacy: 'Your email is only used to notify you when the app opens. No spam, unsubscribe anytime.',
+      formError: 'Your sign-up couldn’t be saved. Please try again, or write to me directly.',
+      formPrivacy: 'Your email is only used to notify you when the app opens. No spam, unsubscribe at any time.',
     },
-    emotions: ['Balance', 'Momentum', 'Adventure', 'Calm', 'Tension', 'Nostalgia', 'Mystery'],
+    emotions: ['Balance', 'Momentum', 'Adventure', 'Relaxation', 'Tension', 'Nostalgia', 'Mystery'],
   },
   home: {
-    title: 'Learn the Handpan Visually — David Lesage',
+    title: 'Learn the Handpan Differently – David Lesage',
     description:
-      'The Yishama acoustic handpan, the Neotone electronic handpan and my colour-based method: learn the handpan differently, with Handpan Constellation Studio. Come try them in Paris.',
+      'The Yishama acoustic handpan, the Neotone electronic handpan and a colour-based method: learn the handpan differently with Handpan Constellation Studio.',
     heroEyebrow: 'Musician · Teacher · Inventor',
     heroTitleA: 'I make music',
     heroTitleHighlight: 'visible',
     heroTitleB: 'and accessible to everyone',
-    heroLead: 'Through colours, geometry and emotions. From the curious child to the seasoned musician — I guide you personally.',
-    ctaShowroom: 'Come try it in Paris',
+    heroLead: 'Through colours, geometry and emotions. From the curious child to the seasoned musician, I guide you personally.',
+    ctaShowroom: 'Come and try it in Paris',
     ctaMethod: 'Discover my learning app',
     universHeading: 'The gear, the lessons and the app',
     universEyebrow: 'One vision, several paths',
     universIntro: 'It all starts from a single idea: make music understandable, memorable and playable by everyone.',
     univers: [
-      { sub: 'Acoustic & electronic', title: 'Instruments & microphones', text: 'A Yishama acoustic handpan, a Neotone electronic handpan, microphones — two worlds I stand behind equally.', cta: 'See both worlds' },
+      { sub: 'Acoustic & electronic', title: 'Instruments & microphones', text: 'A Yishama acoustic handpan, a Neotone electronic handpan, microphones: two worlds I stand behind equally.', cta: 'See both worlds' },
       { sub: 'Online & in person', title: 'The lessons', text: 'Learn the handpan differently: through colours, shapes and emotions. Anywhere in the world, or in Paris.', cta: 'See the lessons' },
       // ⚖️ 22/08/2026 — see dict.ts: the card never said which instrument.
-      { sub: 'Acoustic & Neotone', title: 'Handpan Constellation Studio', text: 'The app that makes music visible on your acoustic handpan as much as on the Neotone — colours, geometry and emotions.', cta: 'Discover the app' },
+      { sub: 'Acoustic & Neotone', title: 'Handpan Constellation Studio', text: 'The app that makes music visible on your acoustic handpan just as on the Neotone: colours, geometry and emotions.', cta: 'Discover the app' },
     ],
 
     // « Le monde du ET » — see the French dictionary for the editorial rule.
@@ -155,12 +155,12 @@ export const en: Dict = {
     duoTitleA: 'Acoustic',
     duoTitleAnd: 'and',
     duoTitleB: 'electronic',
-    duoIntro: 'Not competition: completion. Two worlds that coexist — I play both, and neither replaces the other.',
+    duoIntro: 'Not competition: completion. Two worlds that coexist. I play both, and neither replaces the other.',
     duo: [
       {
         sub: 'Acoustic handpan · Yishama',
         title: 'Metal that breathes',
-        text: 'Two 18-note instruments tuned to 432 Hz, designed with Yonathan so I could sing and accompany myself. The sound comes straight out of the steel — nothing between it and you.',
+        text: 'Two 18-note instruments tuned to 432 Hz, designed with Yonathan so I could sing and accompany myself. The sound comes straight out of the steel, with nothing between it and you.',
         points: ['The timbre and overtones of hammered steel', 'No cable, no battery: it plays anywhere, instantly', 'I am a Yishama ambassador and affiliate'],
         cta: 'My story with Yishama',
         alt: 'David Lesage holding one of his Yishama acoustic handpans',
@@ -176,27 +176,27 @@ export const en: Dict = {
     ],
     duoBridgeEyebrow: 'The bridge',
     duoBridgeTitle: 'My app speaks both languages',
-    duoBridgeText: 'Handpan Constellation Studio has an acoustic mode and an electronic mode. When your acoustic scale is no longer enough, the “🎯 Complete” feature tells you exactly which notes you are missing — and what a second acoustic handpan, or a Neotone, would bring. Your two handpans then appear side by side, each chord resolving on the pan that holds it. Completion, not competition.',
+    duoBridgeText: 'Handpan Constellation Studio has an acoustic mode and an electronic mode. When your acoustic scale is no longer enough, the “🎯 Complete” feature tells you exactly which notes you’re missing, and what a second acoustic handpan, or a Neotone, would bring. Your two handpans then appear side by side, each chord resolving on the pan that holds it. Completion, not competition.',
     duoBridgeCta: 'Discover Handpan Constellation Studio',
 
     whyEyebrow: 'Why me',
     whyTitle: 'The tool I wish I’d been taught as a child',
-    whyP1: 'I started drums at age 4. From the very first lesson, sheet music was forced on me — a language disconnected from my desire to play. I quit everything to learn by ear, self-taught.',
-    whyP2: 'At the Conservatory I left with a drums award, highest honours… yet discouraged by a theory of harmony that didn’t speak to me. So I built the tool I was missing: a visual approach to music.',
+    whyP1: 'I started playing the drums at 4. From the very first lesson, I was made to learn music theory and notation: a language disconnected from my desire to play. I gave it all up to learn by ear, teaching myself.',
+    whyP2: 'I came away from the Conservatoire with first prize in drums, with highest honours… but discouraged by a way of teaching harmony that didn’t speak to me. So I built the tool I’d been missing: a visual approach to music.',
     whyCta: 'Read my story',
     showroomBadge: '★ World first',
     showroomTitle: 'The only place in the world, apart from the makers in Budapest, to test and walk away with your Neotone',
-    showroomText: 'In Paris (20th), come try the instruments, meet the community, and walk away the same day with your handpan — with no manufacturing wait, at the best price on the market (−7%).',
-    showroomArgs: ['7% discount — the best price (vs. 5% online)', 'No manufacturing delay, no waiting', 'Very limited stock — only a few instruments available'],
+    showroomText: 'In Paris (20th arrondissement), come and try the instruments, meet the community and leave the same day with your handpan: no manufacturing wait, at the best price on the market (−7%).',
+    showroomArgs: ['7% discount: the best price (compared with 5% online)', 'No manufacturing delay, no waiting', 'Very limited stock: only a few instruments available'],
     showroomCta1: 'Book my showroom visit',
     showroomCta2: 'See the next gathering',
     showroomDatesTitle: 'Next free gatherings',
     showroomDatesNote: 'Free entry · booking recommended',
-    showroomDatesEmpty: 'Next dates in preparation — write to me to be the first to know.',
-    showroomDatesAll: 'See the full agenda',
+    showroomDatesEmpty: 'Next dates coming soon. Write to me to be the first to know.',
+    showroomDatesAll: 'See all dates',
     communityEyebrow: 'The community',
     communityTitle: 'Join the visible-music movement',
-    communityIntro: 'Be notified about upcoming gatherings in Paris and the release of Handpan Constellation Studio. No spam — just the essentials.',
+    communityIntro: 'Be the first to hear about upcoming gatherings in Paris and the release of Handpan Constellation Studio. No spam, just the essentials.',
     communityPlaceholder: 'your@email.com',
     communityButton: 'Keep me posted about the next gatherings',
     // 🚨 FIXED on 18/08/2026 — the previous sentence (“Your mail app opens…”)
@@ -205,19 +205,19 @@ export const en: Dict = {
     communityNote: 'A short form opens: leave your name and email, and you get the next dates by email straight away.',
     proofEyebrow: 'Sound first',
     proofTitle: 'See and hear the instruments come alive',
-    proofIntro: 'I play, I demonstrate, I teach — acoustic and electronic, on video. Both full playlists are right below.',
-    proofVideos: ['Musical performance on the Neotone', 'Shape of My Heart — on my two Yishamas', 'Create your scale — tutorial'],
+    proofIntro: 'I play, I demonstrate, I teach: acoustic and electronic, on video. Both full playlists are just below.',
+    proofVideos: ['Musical performance on the Neotone', 'Shape of My Heart – on my two Yishamas', 'Create your scale (tutorial)'],
     proofCta: 'See the full Neotone playlist',
     proofCtaYishama: 'See the full Yishama playlist',
   },
   neotone: {
     title: 'Neotone digital handpan: price and trial in Paris | David Lesage',
     description:
-      'The Neotone, with David Lesage: −5% online (−7% at the showroom), 6-year warranty, a price calculator by country and human support from trial to unboxing.',
+      'The Neotone electronic handpan, with David Lesage’s support: −5% online, −7% at the showroom, 6-year warranty and a price calculator by country.',
     heroEyebrow: 'The gear · Digital handpan',
     heroTitle: 'The Neotone, the world’s best electronic handpan',
     heroLead:
-      'Through me, official Neotone ambassador, you get <strong class="text-cream">−5% online</strong> (or <strong class="text-cream">−7% at the showroom</strong>), the <strong class="text-cream">6-year warranty</strong> and personal support — from the trial to unboxing.',
+      'Buy through me, an official Neotone ambassador, and you get <strong class="text-cream">−5% online</strong> (or <strong class="text-cream">−7% at the showroom</strong>), the <strong class="text-cream">6-year warranty</strong> and personal support, from the trial to unboxing.',
     ctaCalc: 'Calculate my price',
     ctaShowroom: 'Book my showroom visit',
     modelsEyebrow: 'The two models',
@@ -226,32 +226,32 @@ export const en: Dict = {
     fromPrice: 'From',
     woodsEyebrow: 'Premium woods',
     woodsTitle: 'Five woods, five characters',
-    woodsIntro: 'Ash and oak are included in the base price. Three other noble woods are available as an option — each with its own hue and character.',
+    woodsIntro: 'Ash and oak are included in the base price. Three other fine woods are available as options, each with its own colour and character.',
     woodCardCta: 'See details',
-    woodModalEyebrow: 'Wood essence',
+    woodModalEyebrow: 'Wood type',
     woodModalViewTop: 'Top view',
     woodModalViewBottom: 'Underside view',
-    techEyebrow: 'Under the hood',
+    techEyebrow: 'Under the shell',
     techTitle: 'Precision technology, assembled by hand',
     techText:
-      'Every Neotone¹ is designed and assembled by hand in Budapest. Under the noble wood, millimetric sensors simultaneously detect strike, pressure and position to faithfully reproduce the dynamics of an acoustic handpan. Professional audio electronics — 24-bit / 384 kHz DAC, 5 ms latency, 112 dB signal-to-noise ratio — make it a digital instrument without compromise.',
+      'Every Neotone¹ is designed and hand-assembled in Budapest. Beneath the fine wood, millimetre-precise sensors detect strike, pressure and position at the same time, faithfully reproducing the dynamics of an acoustic handpan. Professional audio electronics (24-bit / 384 kHz DAC, 5 ms latency, 112 dB signal-to-noise ratio) make it a digital instrument without compromise.',
     specsTitle: 'Official technical specifications',
     stageEyebrow: 'Stage & Studio',
     stageTitle: 'The reference digital handpan',
     stageIntro: 'One handpan, endless possibilities: the Neotone lifts the constraints of the acoustic instrument and opens a whole new playground.',
     stage: [
-      { t: 'No more sound-system headaches', d: 'No more feedback or trouble hearing yourself. A single jack cable, a soundcheck done in seconds — and you can loop your playing and plug in your effects pedals.' },
+      { t: 'No more sound-system headaches', d: 'No more feedback or trouble hearing yourself. A single jack cable, a soundcheck done in seconds, and you can loop your playing and plug in your effects pedals.' },
       { t: 'A studio inside the instrument', d: 'Built-in recorder: hold the ding to start a recording. The sound is captured at the source, in studio quality, even in a noisy environment.' },
-      { t: 'Your bubble, on headphones', d: 'Plug in headphones and play without disturbing anyone — at night, in an apartment, on tour. Exceptional sound purity.' },
+      { t: 'Your bubble, on headphones', d: 'Plug in headphones and play without disturbing anyone: at night, in a flat, on tour. Exceptional sound purity.' },
     ],
     compEyebrow: 'Acoustic vs Neotone',
-    compTitle: 'The acoustic handpan has limits —<br><span class="text-copper">the Neotone lifts them</span>',
-    compIntro: 'What electronics change, concretely.',
+    compTitle: 'The acoustic handpan has its limits:<br><span class="text-copper">the Neotone lifts them</span>',
+    compIntro: 'What electronics actually change.',
     compLegendAco: 'Acoustic handpan',
     compLegendNeo: 'Electronic Neotone',
     calcEyebrow: 'Price calculator',
     calcTitle: 'How much will my Neotone really cost me?',
-    calcIntro: 'Choose your purchase mode, model, wood and country — the calculator applies the right discount and 2026 VAT.',
+    calcIntro: 'Choose how you buy, your model, your wood and your country: the calculator applies the right discount and 2026 VAT.',
     offreBadge: "Free",
     offreTitre: "One year of the app free with every Neotone you buy through me",
     offreTexte: "The Studio plan of Handpan Constellation, worth €89, online or at the showroom. Your year starts the first time you log in, once your purchase is registered.",
@@ -260,7 +260,7 @@ export const en: Dict = {
     bandeauBadge: "New",
     bandeauTexte: "Your Neotone can play anything. Now you can see it. Discover the app",
     calcDisclaimer:
-      'Listed public prices already include worldwide shipping. Standard 2026 VAT rates. Outside the EU: no EU VAT applied, but local customs fees may be added on delivery, at your expense.',
+      'The public prices shown already include worldwide shipping. Standard 2026 VAT rates. Outside the EU: no EU VAT is applied, but local customs duties may be charged on delivery, payable by you.',
     // ── Physical stock (David's Google Sheet, via src/lib/stockSource.js) ──
     stockTitle: 'What is available right now',
     stockAvailTitle: 'Available right away',
@@ -268,7 +268,7 @@ export const en: Dict = {
     stockArrivalPrefix: 'expected',
     stockArrivalPeriod: 'expected at the showroom: {period}',
     stockNote:
-      'These instruments are at my place in Paris: you can come and try them before you decide. Stock moves, and the order is then placed with Neotone.',
+      'These instruments are at my place in Paris: you can come and try them before you decide. Stock changes, and the order is then placed with Neotone.',
     stockNoteLink: 'See the showroom',
     // Model cards: per-model stock (plain English, to be reviewed by the EN pass).
     stockModelBadge: 'In stock',
@@ -284,24 +284,24 @@ export const en: Dict = {
     stockPillSoonDate: 'Arriving {period}',
     stockPillSoonMonth: 'Arriving in {period}',
     stockPillOrder: 'Made to order',
-    stockOnlineAlsoIn: 'This one is also at the showroom in Paris: you can come and try it and leave with it (−7%).',
+    stockOnlineAlsoIn: 'This one is also at the showroom in Paris: you can come and try it, then take it home with you (−7%).',
     stockOnlineSwitch: 'Switch to buying at the showroom',
     whyEyebrow: "Two models",
     whyTitle: "Why choose a 10-note or a 19-note?",
-    whyP: ["The <strong>Neotone¹ (10 notes)</strong> is great for <strong>discovering</strong> the handpan, <strong>meditating</strong> and <strong>improvising</strong> within a scale.", "The <strong>Neotone¹ Mutant (19 notes)</strong> is made to become your <strong>main instrument</strong>, or to <strong>accompany your voice</strong> on well-known songs.", "It lets you play every <abbr title=\"At least three notes played together, for example C, E, G.\">chord</abbr> (<abbr title=\"The position of a chord within a key, numbered I to VII.\">degree</abbr>) of the major and minor <abbr title=\"The reference scale of a song, for example C major or A minor.\">keys</abbr> on a single scale: I Balance, II Momentum, III Adventure, IV Calm, V Tension, VI Nostalgia, VII Mystery."],
-    whyLinkIntro: "To go further:",
+    whyP: ["The <strong>Neotone¹ (10 notes)</strong> is great for <strong>discovering</strong> the handpan, <strong>meditating</strong> and <strong>improvising</strong> within a scale.", "The <strong>Neotone¹ Mutant (19 notes)</strong> is made to become your <strong>main instrument</strong>, or to <strong>accompany your voice</strong> on well-known songs.", "It lets you play every <abbr title=\"At least three notes played together, for example C, E, G.\">chord</abbr> (<abbr title=\"The position of a chord within a key, numbered I to VII.\">degree</abbr>) of the major and minor <abbr title=\"The reference scale of a song, for example C major or A minor.\">keys</abbr> on a single scale: I Balance, II Momentum, III Adventure, IV Relaxation, V Tension, VI Nostalgia, VII Mystery."],
+    whyLinkIntro: "Further reading:",
     whyLinkCapo: "The handpan’s capo: the same shape in every key",
-    whyCap10: "Neotone¹ — 10 notes",
-    whyCap19: "Neotone¹ Mutant — 19 notes",
+    whyCap10: "Neotone¹ (10 notes)",
+    whyCap19: "Neotone¹ Mutant (19 notes)",
     whySchema: "Simplified diagram, seen from above: each dot is a note.",
     whyAlt10: "Diagram of a handpan seen from above with 10 notes: the ding in the centre and 9 notes around it.",
     whyAlt19: "Diagram of a handpan seen from above with 19 notes: the ding in the centre, 9 large notes in a ring and 9 small notes just inside it.",
-    procEyebrow: 'Purchase procedure',
+    procEyebrow: 'How to buy',
     procTitle: 'From your first question to delivery',
     procIntro: 'A simple, transparent journey, with support from start to finish. Two ways to walk away with your Neotone:',
-    procHighlight: 'By coming to the showroom in Paris, you walk away with your instrument the same day — with no manufacturing wait at all.',
-    procOnlineTitle: 'Online — worldwide delivery',
-    procShowroomTitle: 'In person — Paris (20th)',
+    procHighlight: 'Come to the showroom in Paris and you leave with your instrument the same day, with no wait for manufacturing.',
+    procOnlineTitle: 'Online: worldwide delivery',
+    procShowroomTitle: 'In person: Paris (20th arrondissement)',
     // 🎬 Showroom tour video (YouTube id lives in NeotonePage.astro).
     // ⚠️ The original audio is French; an English track exists on the same video.
     // Say so explicitly — YouTube does not always switch to it on its own.
@@ -311,21 +311,21 @@ export const en: Dict = {
       'Before you travel, you can already see where you’re heading: I take you around my showroom in Paris, with the Neotone at the centre of it.',
     procShowroomVideoAudio:
       'It’s filmed in French, but there’s an English audio track: pick it in the player settings (⚙), under “Audio track”.',
-    inclEyebrow: 'All included in the price',
+    inclEyebrow: 'Everything included in the price',
     inclTitle: 'What you receive',
-    extrasEyebrow: 'To budget on top',
+    extrasEyebrow: 'Extras to budget for',
     extrasTitle: 'What you’ll need to buy on top',
-    extrasIntro: 'The Neotone is complete, but to hear it and get the most out of it, plan for this small extra gear depending on your use.',
+    extrasIntro: 'The Neotone is complete, but to hear it and get the most out of it, you’ll need a few small extras, depending on how you use it.',
     extrasSpeakerCta: 'Read: getting the sound right around you',
     extrasHeadphonesCta: 'Read: which headphones to choose',
     bridgeEyebrow: 'Your Neotone + the visual method',
     bridgeTitle: 'Learn through colours and shapes',
-    bridgeText: 'With Handpan Constellation Studio, you learn through colours and shapes — on your Neotone just as on an acoustic handpan.',
+    bridgeText: 'With Handpan Constellation Studio, you learn through colours and shapes, on your Neotone just as on an acoustic handpan.',
     bridgeCta: 'Discover the method',
     trustEyebrow: 'A token of trust',
     trustTitle: 'I personally know the people who make your Neotone',
-    trustP1: 'I’ve travelled several times to the workshops in Hungary. I personally know Csaba and Norbert — the two friends behind the Neotone — as well as the whole team: Gergely, Dániel and the craftsmen at MAG Instruments, and Yonathan from Yishama.',
-    trustP2: 'I’ve been an official beta tester for the brand since 2021. Since the very first Neotone¹, I’ve reported and helped fix thousands of bugs and suggested countless improvements. Buying through me isn’t just buying from a reseller: it’s buying from someone who lives the instrument from the inside and helps it evolve.',
+    trustP1: 'I’ve travelled several times to the workshops in Hungary. I personally know Csaba and Norbert (the two friends behind the Neotone) as well as the whole team: Gergely, Dániel and the craftsmen at MAG Instruments, and Yonathan from Yishama.',
+    trustP2: 'I’ve been an official beta tester for the brand since 2021. Since the very first Neotone¹, I’ve reported thousands of bugs and had them fixed, and suggested countless improvements. Buy through me and you’re not dealing with just a reseller: you have someone who knows the instrument from the inside and helps it evolve.',
     trustCaption1: 'A testing and debugging session with the team, at the workshop.',
     trustYishamaLink: 'My story with Yonathan and my two Yishama handpans',
     trustCaption2: 'With the Neotone team during one of my visits to Hungary.',
@@ -334,59 +334,59 @@ export const en: Dict = {
     faqOutro: 'Any other questions? Write to me at',
   },
   yishama: {
-    title: 'My Yishama handpans — two instruments for one voice | David Lesage',
+    title: 'My Yishama handpans: two instruments for one voice | David Lesage',
     description:
-      'The story of how I met Yonathan and Yishama: two acoustic 18-note handpans tuned to 432 Hz, custom-designed to accompany my voice — and what they ended up producing.',
+      'The story of how I met Yonathan and Yishama: two acoustic 18-note handpans tuned to 432 Hz, custom-designed to accompany my voice, and what they ended up producing.',
     heroEyebrow: 'My acoustic instruments',
-    heroTitle: 'Yishama — two handpans born of a chance meeting',
+    heroTitle: 'Yishama: two handpans born of a chance meeting',
     heroLead:
-      'Two 18-note instruments, tuned to <strong class="text-cream">432 Hz</strong>, designed with <strong class="text-cream">Yonathan</strong> for one reason only: so that I could sing and accompany myself. Here is their story — and what they taught me.',
+      'Two 18-note instruments, tuned to <strong class="text-cream">432 Hz</strong>, designed with <strong class="text-cream">Yonathan</strong> for one reason only: so that I could sing and accompany myself. Here is their story, and what they taught me.',
     heroCtaVideo: 'Listen to Shape of My Heart',
     heroCtaStory: 'Read the story',
-    heroImgAlt: 'David Lesage holding one of his two Yishama handpans, bottom notes visible',
+    heroImgAlt: 'David Lesage holding one of his two Yishama handpans, with the notes on its underside visible',
 
     metEyebrow: 'Naxos, Greece · 2022',
     metTitle: 'A man met by chance, the day after a concert',
     metP1:
-      'I had played a handpan-and-voice concert the evening before. The next day I ran into a man at the festival’s outdoor bar. I had no idea who he was. Someone explained: one of the finest handpan makers in the world.',
+      'I had played a handpan-and-voice concert the evening before. The next day I ran into a man at the festival’s outdoor bar. I had no idea who he was. Someone told me he was one of the finest handpan makers in the world.',
     metP2:
-      'I told him about the dream I had been carrying for years: “a handpan piano”. To sing, to play covers, to accompany my own voice — without going round in circles inside a single mode.',
+      'I told him about the dream I had been carrying for years: “a handpan piano”. To sing, to play covers, to accompany my own voice, without going round in circles inside a single mode.',
     metP3:
       'He listened for a long time, calmly. He did not try to sell me anything. He even told me that, given how percussive my playing is, he was not sure his instruments would suit me.',
     metP4:
-      'That day, on that small island, I discovered the international handpan world: instruments with notes on top and underneath, deep basses, a level of craft I had not even suspected existed.',
+      'That day, on that small island, I discovered the international handpan world: instruments with notes on top and underneath, deep bass notes, a level of craft I had not even suspected existed.',
     metQuote:
       'When I met Yonathan, the CEO of Yishama, and Andréa his wife, I immediately felt the delicacy and the depth of the person in front of me.',
     metQuoteSource: 'What I wrote at the time, on my old website',
     metPhotoAlt: 'David Lesage with Yonathan and Andréa of Yishama',
-    metPhotoCaption: 'With Yonathan and Andréa — the beginning of a long story.',
+    metPhotoCaption: 'With Yonathan and Andréa: the beginning of a long story.',
 
     roomEyebrow: 'HUG Festival, Hungary',
     roomTitle: 'He came up to my room with a pencil',
     roomP1:
       'A few months later, at the HUG festival in Hungary, Yonathan came up to my room with Andréa. He started asking me questions. And drawing.',
     roomP2:
-      'I understood very little of it — I have no engineering background. I only knew what I wanted to <em>hear</em>. He translated that into dimples, thicknesses, octaves. Only one technical thing mattered to me: as many domed notes as possible underneath, like little dings — they speak far more easily than dimpled ones.',
+      'I understood very little of it: I have no engineering background. I only knew what I wanted to <em>hear</em>. He translated that into dimples, thicknesses, octaves. Only one technical thing mattered to me: as many domed notes as possible underneath, like dings. They speak far more easily than dimpled ones.',
     roomP3:
-      'For everything else, I handed him my complete trust. That is when he decided to make me an ambassador for his brand. But before that, he had taken a genuine, sincere interest in me. Then he welcomed me into his home in Budapest before I caught my flight.',
+      'For everything else, I put my complete trust in him. That is when he decided to make me an ambassador for his brand. But before that, he had taken a genuine, sincere interest in me. Then he welcomed me into his home in Budapest before I caught my flight.',
     roomAside:
       'Months earlier he had already sent me the link to their <em>Virtual Pantam</em>: “build the instrument you dream of in the app, then send me the link to what you designed”. We passed those links back and forth for weeks.',
 
-    whyEyebrow: 'The reason it exists',
-    whyTitle: 'Why two handpans — and why these two',
+    whyEyebrow: 'Why they exist',
+    whyTitle: 'Why two handpans, and why these two',
     whyIntro: 'They are not two instruments side by side. They are one system in two pieces, built around a voice.',
     whyP1:
-      'The handpan is a beautiful, stubborn instrument. A scale is a choice — and therefore a renunciation. Nine or ten notes, and there will always be that <strong>one</strong> missing note that would make the chord you dream of playable.',
+      'The handpan is a beautiful, stubborn instrument. A scale is a choice, and therefore a sacrifice. Nine or ten notes, and there will always be that <strong>one</strong> missing note that would make the chord you dream of playable.',
     whyP2:
-      'For a singer it is worse. Accompanying a voice needs <strong>root basses</strong>: without them you play inversions, and the voice loses the ground under its feet. I wanted to rest my singing on the lowest note of each chord, then climb the arpeggio — D3-F♯3-A3 sitting on a D2, B♭2-D3-F3-B♭3.',
+      'For a singer it is worse. Accompanying a voice needs <strong>root notes in the bass</strong>: without them you play inversions, and the voice has nothing to stand on. I wanted to rest my singing on the lowest note of each chord, then climb the arpeggio, D3-F♯3-A3 over a D2, B♭2-D3-F3-B♭3.',
     whyP3:
       'My request fitted into one sentence: two instruments that, together, give me every sharp and every flat. So I could sing in any key, with the root of every chord down in the bass.',
     whyQuote:
       'My dream is to be able to sing and accompany myself easily on the handpan in every key, across the widest possible range, without being limited by missing notes.',
-    whyQuoteSource: 'Letter of intent — 22 November 2022',
+    whyQuoteSource: 'Letter of intent, 22 November 2022',
     why432Title: 'And why 432 Hz',
     why432Text:
-      'I am fascinated by the effect of vibration on water and on the body — cymatics. That is why I asked Yonathan for a tuning based on A = 432 Hz. He replied that it was possible, but that he had to be certain <em>before</em> starting to tune: on a handpan, that choice cannot be undone.',
+      'I am fascinated by the effect of vibration on water and on the body: cymatics. That is why I asked Yonathan for a tuning based on A = 432 Hz. He replied that it was possible, but that he had to be certain <em>before</em> starting to tune: on a handpan, that choice cannot be undone.',
 
     // ═══════════════════════════════════════════════════════════════════
     // 📦 THE DELIVERY — MAY 2023 (section added 27/08/2026)
@@ -421,10 +421,10 @@ export const en: Dict = {
     recEyebrow: 'May 2023',
     recTitle: 'The day they arrived',
     recIntro:
-      'I have no careful picture of that moment. I have the ones I took on my phone, in the order it happened: the van, the crate, the case, the instrument — then the letter, and the next day.',
+      'I have no polished pictures of that moment. I have the ones I took on my phone, in the order it happened: the van, the crate, the case, the instrument, then the letter, and the next day.',
 
     recCaption1:
-      'May 2023, at dusk. The van is still outside the house and the two crates are already in. The photo is blurred and dark: I am keeping it exactly as it is — that was the face I had.',
+      'May 2023, at dusk. The van is still outside the house and the two crates are already in. The photo is blurred and dark: I am keeping it exactly as it is. That was the look on my face.',
     recCaption2:
       'Under the cardboard and the polystyrene packing, a plywood crate closed with screws. On the lid, an envelope sealed with red wax. Through the gap you can already make out the red trim of the case.',
     recCaption3:
@@ -434,7 +434,7 @@ export const en: Dict = {
 
     recPapersLead: 'Inside the crate there were papers too.',
     recCaption5:
-      'The same envelope as in the crate photo, this time opened — the wax seal beside the certificate.',
+      'The same envelope as in the crate photo, this time opened: the wax seal beside the certificate.',
     recCaption6:
       'The certificate for the E 18, signed by hand by Yhonatan Ale-Yahav: the scale, the steel, the eighteen notes, the dimensions, the weight, the identification number. Yishama calls it “E Major 18”; on this page, E 18 is my own working label.',
     recCaption7: 'The back of the certificate: the Yishama logo, on the same textured paper.',
@@ -463,14 +463,14 @@ export const en: Dict = {
     recAlt6:
       'The Yishama certificate of authenticity, full page. It reads: Certificate of Authenticity, Owner David Lesage, Year 2023, Scale E Major 18, Steel Type Stainless Steel, Notes (A B C♯ D♯) E / (F♯) G♯ B C♯ D♯ E F♯ G♯ A B C♯ D♯ E, Dimensions 53 × 53 × 28 cm, Weight 4.4 kg, the line “designed and produced at YISHAMA Workshop, Isfiya / ISRAËL”, the handwritten signature of Yhonatan Ale-Yahav and identification number 483.',
     recAlt7:
-      'The back of the certificate: the Yishama logo — a golden flourish — above the word YISHAMA in capitals, on textured paper, with the address WWW.YISHAMA.COM at the foot of the page.',
+      'The back of the certificate: the Yishama logo (a golden flourish) above the word YISHAMA in capitals, on textured paper, with the address WWW.YISHAMA.COM at the foot of the page.',
     recAlt8:
       'David Lesage smiling, head tilted, in full daylight. In front of him, his two Yishama handpans in dark grey metal, each on its stand; behind, a tablet on an articulated arm, the frame of an open upright piano showing its strings and action, a painting of an orange Flower of Life, electronic pads and a pedalboard.',
 
     insEyebrow: 'The two instruments',
     insTitle: 'Eighteen notes each, delivered in May 2023',
     insIntro:
-      'They arrived in secured wooden crates, travel cases included — almost exactly on my birthday.',
+      'They arrived in secure wooden crates, travel cases included, almost exactly on my birthday.',
     insDing: 'Ding',
     insTop: 'Top',
     insBottom: 'Bottom',
@@ -515,9 +515,9 @@ export const en: Dict = {
     //  · “Yhonatan Ale-Yahav” = the full official name of Yishama's founder/CEO;
     //    this is the form that carries the credit, and only this one.
     insCredit:
-      'Made by Yishama — designed by <strong>Yhonatan Ale-Yahav</strong>. These two scales are in no catalogue: they were made to measure.',
+      'Made by Yishama, designed by <strong>Yhonatan Ale-Yahav</strong>. These two scales aren’t in any catalogue: they were custom-made.',
     insCreditBrief:
-      'The brief was mine, and it was a singer’s brief: to accompany myself on handpan the way a guitarist or a pianist would. So: every chord, in every key, with the root of each chord available as a bass note — and a ding. I had no idea how that could be possible. Yonathan’s intelligence is what made it happen.',
+      'The brief was mine, and it was a singer’s brief: to accompany myself on handpan the way a guitarist or a pianist would. So: every chord, in every key, with the root of each chord available as a bass note, and a ding. I had no idea how that could be possible. Yonathan’s intelligence is what made it happen.',
     insFootnote:
       'These are one-off pieces: the names are my own working labels, not Yishama catalogue models. Each instrument on its own gives all seven degrees of its scale, with the root available in the bass.',
 
@@ -533,15 +533,15 @@ export const en: Dict = {
     // Until then, neither the caption nor the alt may suggest the credit is
     // visible on screen — it is not.
     insAppAlt:
-      'Screenshot of Handpan Constellation Studio, Logic tab, my two Yishama handpans drawn side by side, every note shown as a coloured pad — the E 18 on the left (ding E3), the D Kurd 18 on the right (ding D3), bottom notes included. The banner at the top reads 6 chords with the E 18, 6 with the D Kurd 18 and 24 with both together. Below, the seven degrees of the union (French interface): I Équilibre E, II Élan F♯m, III Aventure G♯m, IV Détente A, V Tension B, VI Nostalgie C♯m, VII Mystère D♯°.',
+      'Screenshot of Handpan Constellation Studio, Logic tab: my two Yishama handpans drawn side by side, every note shown as a coloured dot, with the E 18 on the left (ding E3) and the D Kurd 18 on the right (ding D3), bottom notes included. The banner at the top reads 6 chords with the E 18, 6 with the D Kurd 18 and 24 with both together. Below, the seven degrees of the union (French interface): I Équilibre E, II Élan F♯m, III Aventure G♯m, IV Détente A, V Tension B, VI Nostalgie C♯m, VII Mystère D♯°.',
     insAppCaption:
-      'My two scales brought together in my own app: six chords with one, six with the other — and twenty-four once they play together. That number is what says Yonathan did not build me two instruments, but one system.',
+      'My two scales brought together in my app: six chords with one, six with the other, and twenty-four once they play together. That number is what shows Yonathan didn’t build me two instruments, but a system.',
     // ⚠️ Help line kept SEPARATE from the caption, not folded into it: the
     // caption is David's voice, not a set of instructions. It is needed — this
     // is a 2000 px interface screenshot: even at full desktop width the note
     // names on the two shells cannot be read without enlarging, and on a phone
     // the image is only ~340 px wide.
-    insAppZoomHint: 'Dense screen: open the screenshot, then click it again for full size — that is where the note names become readable.',
+    insAppZoomHint: 'Dense screen: open the screenshot, then click it again for full size. That’s where the note names become readable.',
     // Lightbox labels: images open full screen.
     // ⚠️ `prev` / `next` added 27/08/2026: the page now carries a group of
     // EIGHT photographs (`yishama-reception`), so the ‹ › arrows are really
@@ -552,29 +552,29 @@ export const en: Dict = {
     pairEyebrow: 'Together',
     pairTitle: 'A chromatic handpan, in two pieces',
     pairIntro:
-      'Separately, each covers its own scale. Together, their 36 notes cover all twelve semitones — without exception.',
+      'Separately, each covers its own scale. Together, their 36 notes cover all twelve semitones, without exception.',
     pairP1:
       'All 24 major and minor chords become playable, and <strong>every one of them has its root down in the bass</strong>. Which is exactly what I had asked for: never again being forced into an inversion for want of a bass note.',
     pairP2:
-      'Yonathan built, without either of us ever calling it that, a chromatic handpan in two pieces. He designed them as one system: he removed a note from the first because I already had it on the second — to free up room for another.',
+      'Yonathan built, without either of us ever calling it that, a chromatic handpan in two pieces. He designed them as one system, too: he removed a note from the first because I already had it on the second, to free up room for another.',
     pairHonest:
       'One honest caveat: this describes the <em>availability of the notes</em>, not yet the fluidity of the gesture. Moving from one pan to the other mid-chord is still gymnastics. That is precisely the problem that ended up producing my app.',
-    pairFactLabels: { notes: 'notes in total', keys: 'keys', chords: 'major & minor chords', tuning: 'tuning' },
+    pairFactLabels: { notes: 'notes in total', keys: 'keys', chords: 'major & minor chords', tuning: 'reference pitch' },
     pairPhotoAlt: 'David Lesage playing his two Yishama handpans side by side',
-    pairPhotoCaption: 'The two instruments side by side — still from the Shape of My Heart cover.',
+    pairPhotoCaption: 'The two instruments side by side: a still from the Shape of My Heart cover.',
 
     metalEyebrow: 'The metal',
     metalTitle: 'Three steels, three voices',
     metalIntro:
-      'At Yishama the metal is not a finishing detail: it is the first choice, the one that decides timbre, sustain and upkeep. Three families are offered — click for the detail.',
-    metalCardCta: 'See the detail',
+      'At Yishama the metal is not a finishing detail: it is the first choice, the one that decides timbre, sustain and upkeep. Three families are on offer. Click for details.',
+    metalCardCta: 'See details',
     metalPhotoCredit: '© Yishama',
     metalPhotoAlts: {
       nitrure:
-        'Yishama A Minor 17 handpan seen from above on a black background: blue-grey mottled surface with bronze glints, the ding at the centre and about fifteen note fields around it.',
-      inox: 'Yishama G2 Hijaz 18 handpan seen from above on a black background: satin bronze-brown surface, the ding at the centre and about a dozen visible note fields.',
+        'Yishama A Minor 17 handpan seen from above on a black background: blue-grey mottled surface with bronze glints, the ding at the centre and about fifteen notes around it.',
+      inox: 'Yishama G2 Hijaz 18 handpan seen from above on a black background: satin bronze-brown surface, the ding at the centre and about a dozen visible notes.',
       ember:
-        'Yishama F2 Astronaut handpan seen from above on a black background: bright golden surface, the ding at the centre and about a dozen visible note fields.',
+        'Yishama F2 Astronaut handpan seen from above on a black background: bright golden surface, the ding at the centre and about a dozen visible notes.',
     },
     metalOption:
       'On Yishama’s site the steel is picked when you order, as an option on the instrument. On the models above the selector offers stainless or Ember Steel; nitrided is not listed there.',
@@ -595,24 +595,24 @@ export const en: Dict = {
     makerP1:
       '“Yishama” comes from the Hebrew (יִשָּׁמַע) and means <em>to be heard</em>. Their stated intention: to create a sound sculpture that offers the individual a unique experience of self-exploration through sound, beat and harmony. Their motto fits on one line: “At Yishama, we strive for quality and passion.”',
     makerP2:
-      'Yonathan and his team build instruments with very deep basses and sparkling highs. When I heard Kabeção, Nadishana, David Kuckhermann, Alexandre Lora and Flavio Salvaje play on them, I understood that these were the instruments I wanted to work with.',
+      'Yonathan and his team build instruments with very deep bass and sparkling highs. When I heard Kabeção, Nadishana, David Kuckhermann, Alexandre Lora or Flavio Salvaje play them, I knew these were the instruments I wanted to work with.',
     makerFactsTitle: 'What they say themselves',
     makerFacts: [
       { t: 'Every instrument is signed', d: 'Since 2021, a laser engraving inside gives the serial number, the scale name and the material with its thickness.' },
-      { t: 'The format', d: 'Around 55 cm across the outer rim, 28 cm from the port to the top of the ding, and 4.4 kg on most models.' },
-      { t: 'The first retuning is free', d: 'With proper playing technique a Yishama stays in tune for years. The first retuning is free of charge — only shipping is at your expense.' },
-      { t: 'Every piece is unique', d: 'No waiting time announced in advance: the work is handmade and made to measure. They do occasionally keep instruments available immediately.' },
+      { t: 'The format', d: 'Around 55 cm across the outer rim, 28 cm from the base to the top of the ding, and 4.4 kg on most models.' },
+      { t: 'The first retuning is free', d: 'With proper playing technique a Yishama stays in tune for years. The first retuning is free of charge: you only pay for shipping.' },
+      { t: 'Every piece is unique', d: 'No lead time is given in advance: each instrument is handmade and custom. They sometimes keep a few instruments available straight away.' },
     ],
     makerCta: 'Discover Yishama handpans',
     makerDisclosure:
-      'Full disclosure: I am a Yishama ambassador and affiliate. If you go through my link I earn a commission — it changes nothing about your price. I only represent makers whose work I genuinely love.',
+      'Full disclosure: I am a Yishama ambassador and affiliate. If you go through my link, I earn a commission; it changes nothing about your price. I only represent makers whose work I genuinely love.',
 
     videosEyebrow: 'In music',
     videosTitle: 'What I recorded with them',
     videosIntro:
       'A Sting cover, a prayer, a Hungarian folk song, some French rap. All played on the two Yishamas, at 432 Hz.',
     videosFeaturedLabel: 'The video that moved Yonathan',
-    videosFeaturedTitle: 'Shape of My Heart — Sting',
+    videosFeaturedTitle: 'Shape of My Heart – Sting',
     videosFeaturedText:
       'When I sent it to him he replied: “wow wow wow very very beautiful! […] your voice is incredible, touch my heart very much! I would love to share this with our Yishama audience.”',
     videosPlaylistCta: 'See the whole Yishama playlist',
@@ -622,13 +622,13 @@ export const en: Dict = {
     // ⚠️ Sensitive passage (11/08/2026) — see the French dictionary for the
     // reasoning: the cause is the nature of a young, still-evolving, mostly
     // modal instrument, never a maker's omission.
-    bridgeTitle: 'Nobody could have handed me the method — it did not exist',
+    bridgeTitle: 'Nobody could have handed me the method: it didn’t exist',
     bridgeP1:
-      'I was happy and completely lost. Two magnificent, very complex instruments, delivered with no manual. As if I had been handed two spaceships — except the flight manual was written nowhere, for nobody.',
+      'I was happy and completely lost. Two magnificent, very complex instruments, delivered with no manual. As if I had been handed two spaceships, except the flight manual hadn’t been written anywhere, for anyone.',
     bridgeP1b:
-      'The handpan is a <strong>21st-century</strong> instrument, still evolving fast: it has neither the centuries of piano teaching behind it, nor those of the guitar. And it cannot even have <em>one</em> method — there are as many handpans as there are scales, note layouts and note counts. What holds true on one instrument no longer holds on the next. That is nobody’s oversight: it is the youth of a living instrument.',
+      'The handpan is a <strong>21st-century</strong> instrument, still evolving fast: it has neither the centuries of piano teaching behind it, nor those of the guitar. And it cannot even have <em>one</em> method: there are as many handpans as there are scales, note layouts and note counts. What holds true on one instrument no longer holds on the next. That is nobody’s oversight: it is the youth of a living instrument.',
     bridgeP1c:
-      'On top of that comes the very thing that makes it magical: the handpan is most often a <strong>modal</strong> instrument. That is a strength, and a wonderful way in — especially if you have never played music, you get a beautiful result almost straight away, with no theory. But you also go round in circles very fast. And the moment you are a professional musician expecting chromatic freedom, or you want to sing real songs over it — my case — it becomes very complex, very quickly. I came from drums, a purely rhythmic instrument: I had no grounding in harmony to fall back on.',
+      'On top of that comes the very thing that makes it magical: the handpan is most often a <strong>modal</strong> instrument. That is a strength, and a wonderful way in. Especially if you have never played music, you get a beautiful result almost straight away, with no theory. But you also go round in circles very fast. And the moment you are a professional musician expecting chromatic freedom, or you want to sing real songs over it (my case), it becomes very complex, very quickly. I came from drums, a purely rhythmic instrument: I had no grounding in harmony to fall back on.',
     bridgeP2:
       'In August 2023 I started a document to work out, at last, how to build my chords across the two pans. Coloured cards, one colour per note. <strong>That document became Handpan Constellation Studio.</strong>',
     // 📄 PAGE 4 OF THE AUGUST 2023 DOCUMENT (added 27/08/2026) — see the long
@@ -653,80 +653,80 @@ export const en: Dict = {
     // whatever the octave”, which is exact — never “the same colours as
     // today”, which would be false.
     bridgeDocAlt:
-      'A page from a document made by hand in August 2023, titled “Complete handpan Maping of placment of notes on the handpans by type of note” / “Cartographie complète du placement des notes sur les handpan par type de notes” (original spelling). On the left, the shell of the E 18 on an ochre background, its ding E3 at the centre and all its notes around it as coloured pads; on the right, the shell of the D Kurd 18 on a cream background, its ding D3 at the centre, its notes laid out the same way, the bottom notes included. Below, a four-octave chromatic grid from C2 to B5: the cells for the notes actually owned are filled in with colour, the rest left pale. Each note name has its own colour, the same in every octave: C red, D orange, E yellow, F green, G cyan, A blue, B magenta. On the right, a small “Reminder / Rappel” table gives the French note names: C = Do, D = Ré, E = Mi…',
+      'A page from a document made by hand in August 2023, titled “Complete handpan Maping of placment of notes on the handpans by type of note” / “Cartographie complète du placement des notes sur les handpan par type de notes” (original spelling). On the left, the shell of the E 18 on an ochre background, its ding E3 at the centre and all its notes around it as coloured dots; on the right, the shell of the D Kurd 18 on a cream background, its ding D3 at the centre, its notes laid out the same way, the bottom notes included. Below, a four-octave chromatic grid from C2 to B5: the cells for the notes actually owned are filled in with colour, the rest left pale. Each note name has its own colour, the same in every octave: C red, D orange, E yellow, F green, G cyan, A blue, B magenta. On the right, a small “Reminder / Rappel” table gives the French note names: C = Do, D = Ré, E = Mi…',
     bridgeDocCaption:
-      'August 2023, page 4 out of 21 in that document: my two pans drawn by hand with every one of their notes, and underneath the four octaves where I coloured in the ones I actually owned. One colour per note, whatever the octave — that is already the ChromaKeys rule of the app, three years before it. I never finished it: I stopped along the way because it was too complex for me to take in, my level of music theory was too weak to understand and model all of it properly.',
+      'August 2023, page 4 of the 21 in that document: my two pans drawn by hand with every one of their notes, and underneath the four octaves where I coloured in the ones I actually owned. One colour per note, whatever the octave: that is already the rule behind the app’s ChromaKeys, three years before the app existed. I never finished it: I stopped along the way because it was too complex for me to grasp, and my level of music theory was too low to understand and model it all properly.',
     // ⚠️ Help line kept separate from the caption, as with the app screenshot
     // in section 4: the caption is David's voice, not a set of instructions.
     // It is needed — this is the densest image on the site (a 48-cell grid plus
     // some thirty pads) and it is only ~343 px wide on a phone.
     bridgeDocZoomHint:
-      'Dense image: open it, then click it again for full size — that is where the note names and the grid become readable.',
+      'Dense image: open it, then click it again to see it full size. That is where the note names and the grid become readable.',
 
     bridgeP3:
-      'The strangest part is that the original question came from him. Back in August 2022, Yonathan wrote to me about the “chromatic, singer-composer” instrument: “try to play some songs in the app on that scale, so we understand which notes you’re missing — and we can find a way to add them.” Three years later, the app answers that question, for everyone.',
+      'The strangest part is that the original question came from him. Back in August 2022, Yonathan wrote to me about the “chromatic, singer-composer” instrument: “try to play some songs in the app on that scale, so we understand which notes you’re missing, and we can find a way to add them.” Three years later, the app answers that question, for everyone.',
     bridgeAppTitle: 'What the app does today for an acoustic handpan',
     bridgeAppIntro: 'Everything below is free, and needs no electronic instrument.',
     bridgeApp: [
-      { t: 'Your scale, in colour', d: 'You pick your instrument: the app draws your shell with your real notes, each dressed in its colour. The screen becomes a mirror of your pan.' },
-      { t: '440 / 432 Hz tuning', d: 'One setting tunes the app to your handpan — so that what you hear on screen rings true against what you have in your hands.' },
-      { t: '🎯 Complete your scale', d: 'The app compares your real notes with what the chords require, and tells you exactly which ones are missing — then which second handpan would supply them, and how many songs that would unlock.' },
-      { t: 'Your 2 handpans side by side', d: 'As soon as a second pan is there, both shells appear side by side and each chord is drawn on the pan that holds it, with playing order and hands. Exactly my gymnastics problem — solved on screen.' },
+      { t: 'Your scale, in colour', d: 'You pick your instrument: the app draws your shell with your real notes, each one in its own colour. The screen becomes a mirror of your pan.' },
+      { t: '440 / 432 Hz reference pitch', d: 'One setting tunes the app to your handpan, so that what you hear on screen is in tune with what you have in your hands.' },
+      { t: '🎯 Complete your scale', d: 'The app compares your real notes with what the chords require, and tells you exactly which ones are missing, then which second handpan would supply them, and how many songs that would unlock.' },
+      { t: 'Your 2 handpans side by side', d: 'As soon as a second pan is there, both shells appear side by side and each chord is drawn on the pan that holds it, with the playing order and the hands. Exactly my gymnastics problem, solved on screen.' },
     ],
     // 🖋️ The app badge carries MY name — the sentence has to say who designed
     // them. See the “AUTHORSHIP CREDIT” note above (key `insCredit`). Short
     // version of the same two-halves split: the brief is David's, the making is
     // Yhonatan's. It may stay short, but it must not contradict the long one.
     bridgeSignature:
-      'My two custom scales are in the app, badged “✨ David Lesage Signature”. The badge carries my name: the brief was mine, but the scales are <strong>Made by Yishama — designed by Yhonatan Ale-Yahav</strong>. You can load them, listen to them and see what they allow, even without having them under your hands.',
+      'My two custom scales are in the app, badged “✨ David Lesage Signature”. The badge carries my name: the brief was mine, but the scales are <strong>Made by Yishama, designed by Yhonatan Ale-Yahav</strong>. You can load them, listen to them and see what they allow, even without having them under your hands.',
     bridgeHonest:
-      'To be honest about it: the app does not listen to you. It does not guess your scale through the microphone — you choose it, or you build your shell note by note. From there, it reasons about your real notes.',
+      'To be honest about it: the app does not listen to you. It does not guess your scale through the microphone: you choose it, or you build your shell note by note. From there, it reasons from your real notes.',
     bridgeCta: 'Discover Handpan Constellation Studio',
     bridgeCtaBlog: 'Read: using the app on your acoustic handpan',
 
     endEyebrow: 'And now',
     endTitle: 'Making the handpan a real accompaniment instrument',
     endText:
-      'My dream has not changed: to raise the handpan to the rank of the guitar or the piano for accompanying a voice. These two instruments showed me it was possible — and forced me to invent the method that was missing. That is the road I am still on, without setting acoustic and electronic against each other.',
+      'My dream has not changed: to raise the handpan to the level of the guitar or the piano as an instrument for accompanying a voice. These two instruments showed me it was possible, and forced me to invent the method that was missing. That is the road I am still on, without setting acoustic and electronic against each other.',
     endCtaShowroom: 'Come and hear them at the showroom',
     endCtaYishama: 'Discover Yishama',
   },
   shop: {
-    title: 'Handpan Shop — Neotone, mics & accessories',
+    title: 'Handpan shop: Neotone, mics & accessories',
     description:
       'A selection of exceptional instruments and accessories, tested and chosen by David Lesage: Neotone digital handpans and Hisong microphones.',
     eyebrow: 'Shop',
-    title2: 'Ambassador of exceptional instruments & microphones',
+    title2: 'Ambassador for exceptional instruments and microphones',
     intro: 'Quality and refinement matter deeply to me.',
-    ambassadorText: 'I work with makers of exceptional instruments and microphones, and I’m proud to present and represent their quality. Through me, you can get discount codes as well as demos and hands-on tests at my gatherings in Paris (20th).',
-    keyNotice: 'Online payment disabled: set PUBLIC_SNIPCART_KEY in .env to enable the cart.',
+    ambassadorText: 'I work with makers of exceptional instruments and microphones, and I’m proud to showcase and represent their quality. Through me, you can get discount codes, as well as demos and the chance to try things out at my gatherings in Paris (20th arrondissement).',
+    keyNotice: 'Online payment disabled: set PUBLIC_SNIPCART_KEY in .env to enable the basket.',
     from: 'from ',
     soon: 'Soon',
     soonLong: 'Coming soon',
-    addCart: 'Add to cart',
+    addCart: 'Add to basket',
     orderEmail: 'Order by email',
     creationsBadge: 'David Lesage signature',
     calcOrder: 'Calculate my price & order',
     linkTags: { helloasso: 'On HelloAsso', streaming: 'Streaming', hisong: '−5% Hisong', yishama: 'Yishama ambassador', nowgroove: 'Now Groove', ondemand: 'On request', maisongoni: 'La Maison du Ngoni', tambour: 'Code David-Tambour', spotify: 'On Spotify', limited: 'Limited edition', app: 'App', muling: '−5% through me', onesec: 'I actually use it', oko: '−10% with my code', structured: 'I actually use it', atlas: 'Atlas partner', atlasCode: '−10% with my code', coeurdeson: '−10% with my code', forbrain: '−10% with my code' },
-    linkCtas: { buy: 'See offer →', listen: 'Listen →', discover: 'Discover →', order: 'Order →', interested: 'I’m interested →' },
+    linkCtas: { buy: 'See offer →', listen: 'Listen →', discover: 'Discover →', order: 'Order →', interested: 'I’m interested in this mic →' },
     copyCode: 'Copy code',
     codeCopied: 'Copied!',
     photoBy: 'Photo:',
     priceNotes: {
       hisong:
-        '<strong>Prices, simply</strong> (shipping to France, VAT included: nothing is added at checkout):<br>— <strong>AirStudio S1</strong> mic (Standard Pack): <strong>€270.95</strong><br>— with the <strong>RX Plus</strong> (Universal Pack, +€90): <strong>€360.95</strong><br><br><strong>With my code DAVID-LESAGE-SAVE-5 (−5%)</strong>, the S1 + RX Plus comes to <strong>€342.91</strong>, <strong>free shipping</strong>.<br><br><strong>My code:</strong> if you go through my link it should apply on its own. If you don’t see it at checkout, enter it by hand — the button just below copies it.',
+        '<strong>Prices, simply</strong> (shipping to France, VAT included: no VAT is added at checkout):<br>– <strong>AirStudio S1</strong> mic (Standard Pack): <strong>€270.95</strong><br>– with the <strong>RX Plus</strong> (Universal Pack, +€90): <strong>€360.95</strong><br><br><strong>With my code DAVID-LESAGE-SAVE-5 (−5%)</strong>, the S1 + RX Plus comes to <strong>€342.91</strong>, <strong>free shipping</strong>.<br><br><strong>My code:</strong> if you go through my link, it should apply on its own. If you don’t see it at checkout, enter it by hand: the button just below copies it.',
     },
     watchDemo: 'Watch my demo video',
     adviceTitle: 'Need advice before buying?',
-    adviceText: 'I answer personally. Tell me your project, I’ll help you choose the right instrument.',
+    adviceText: 'I answer personally. Tell me about your project and I’ll help you choose the right instrument.',
     adviceCta: 'Get my advice',
     categories: {
-      handpans: { label: 'Handpan', blurb: 'Two worlds that complete each other.' },
-      app: { label: 'App', blurb: 'Handpan Constellation Studio — the teaching app that makes music visible.' },
+      handpans: { label: 'Handpan', blurb: 'Two worlds that complement each other.' },
+      app: { label: 'App', blurb: 'Handpan Constellation Studio: the teaching app that makes music visible.' },
       creations: { label: 'My creations · Now Groove', blurb: 'Created by me: my Now Groove rhythm method, the signature calabash and its handmade cover.' },
       instruments: { label: 'Exceptional instruments', blurb: 'I work with outstanding makers whose quality I’m proud to represent. Through me, enjoy discount coupons and demos at my gatherings.' },
       // Accessories (20/08/2026) — new category created for the Atlas stands.
-      micros: { label: 'Microphones', blurb: 'Pickup for acoustic handpan, voice and gong.' },
+      micros: { label: 'Microphones', blurb: 'Sound capture for acoustic handpan, voice and gong.' },
       accessoires: { label: 'Accessories', blurb: 'What holds the instrument up, and what carries it. Tried at the showroom before it lands here.' },
       musique: { label: 'Music', blurb: 'My albums and covers, to stream on every platform.' },
       formations: { label: 'Lessons & workshops', blurb: 'Learn with me through private lessons and workshops, in person or online.' },
@@ -737,31 +737,31 @@ export const en: Dict = {
       electronique: { label: 'Electronic', blurb: 'Every scale, headphones, the stage.', more: 'All about the Neotone →' },
     },
     subNavLabel: 'Two worlds:',
-    handpanNote: 'The one real difference: the <strong>Neotone</strong> (built by Soundventure) is ordered through my calculator, with a personal discount code and a 6-year warranty. For <strong>Yishama</strong>, I am an ambassador and affiliate — you order on their site and my link follows you. Two ways to buy, one standard of quality.',
+    handpanNote: 'The one real difference: the <strong>Neotone</strong> (built by Soundventure) is ordered through my calculator, with a personal discount code and a 6-year warranty. For <strong>Yishama</strong>, I am an ambassador and affiliate: you order on their site, through my link. Two ways to buy, one standard of quality.',
     handpanBridge: 'What links the two: Handpan Constellation Studio →',
     products: {
-      'handpan-studio': { name: 'Handpan Constellation Studio · the app', description: 'My teaching app, on acoustic handpan as much as on the Neotone: colours, geometry and emotions make music visible. Free forever, Essential at €3.49 incl. VAT/month and Studio at €9.99 incl. VAT/month, with a 1-month free trial.' },
-      'neotone-one': { name: 'Neotone¹', description: 'Digital handpan, 10 notes, all the scales, studio quality. Supported purchase: personal discount code + 6-year warranty.' },
-      'neotone-mutant': { name: 'Neotone¹ Mutant', description: 'Digital handpan, 19 notes with LCD screen, maximum expression. Supported purchase: discount code + 6-year warranty.' },
-      'yishama': { name: 'Yishama exceptional handpan', description: 'One of the best handpan makers in the world (Israel / Hungary). Artisan craftsmanship, instruments up to 19 notes with deep basses and bright highs. I proudly represent them as an ambassador.' },
-      'gonilele': { name: 'Gonilélé harp · La Maison du Ngoni', description: 'A travel harp-lute created by Joris Feuillâtre. I’m an ambassador of La Maison du Ngoni. 10 strings (€440) or 12 strings with built-in pickup (€520). Photos, videos, unboxing and ordering on the dedicated page.' },
-      'calebasse': { name: 'David Lesage Signature Calabash Kit', description: 'Complete kit: a calabash 45 to 50 cm (rare in Europe), hand-finished by Kamou (Djoliba Percussion) and laser-engraved with the Now Groove logo, with its mat and shakers. An organic drum with a natural sound.' },
-      'housse': { name: 'Now Groove calabash cover by David Lesage', description: 'A premium backpack cover designed by David Lesage: integrated mat function, detachable straps, storage pocket (eggs, accessories & method), velvet lining. ✋ Rare and unique: handmade, in a small run.' },
-      'coeur-de-son': { name: 'Canvas drum · Cœur de Son', description: 'The drum made by Florel Viardot at the Cœur de Son workshop in Thaon-les-Vosges (France): a <strong>waterproof canvas</strong>, with no animal material, stretched over a wooden shell and <strong>tuned with air</strong>. An inner tube, inflated with a pump, sets the tension, from deep lows up to the low mids; humidity doesn’t slacken it, so you can play outdoors. Every drum is a one-off with its own name, and the pattern can be hand-painted by Sandrine, on quote. About 3 weeks to make. Five sizes, from 40 cm (€260) to 65 cm (€380); there is also a standing version (65 cm, €520).<br><br>I play one myself, “Géode de feu”, and you can try it at the showroom (demo only: you order from Florel). If you prefer hide, the skin drum by L’Âme du Tambour is right next to it: two materials, two sounds. <strong>−10% with my code</strong>, to enter at checkout.' },
-      'tambour': { name: 'Shamanic frame drum · L’Âme du Tambour', description: 'A handcrafted frame drum by Julien (L’Âme du Tambour) — an aligned, passionate and honest maker. Enjoy −5% with the code David-Tambour.' },
-      'micro-hisong': { name: 'Hisong AirStudio S1 microphone', description: 'The first all-in-one mobile studio: dual-mode mic, wireless in-ear monitoring, audio interface, wireless receiver for your phone (RX Mini), magnetic stand and case. Perfect for voice, acoustic handpan and gonilélé — a true portable studio.<br><br><strong>Prices (VAT included, shipping to France):</strong> the S1 alone <strong>€270.95</strong>; with the <strong>RX Plus</strong> (+€90) <strong>€360.95</strong>, i.e. <strong>€342.91</strong> with my −5% code and free shipping.<br><br><strong>My advice:</strong> if you want to use the mic to <strong>play live</strong>, you need the <strong>RX Plus</strong> (Universal Pack): it sends the sound to the PA, the mixing desk or a camera.<br><br>Live demos and on-the-spot purchase at my Paris gatherings.' },
-      'micro-muling': { name: 'Muling MP1 microphone + HMP-2 preamp', description: 'The MP1 is a contact-condenser microphone made for the acoustic handpan. It comes with the HMP-2 preamp, which hosts up to two MP1 mics — for a clear, precise stereo capture with no feedback. Perfect for stage and recording.' },
-      'atlas': { name: 'Atlas handpan stands — Pro & All', description: 'The magnetic tripods from the Italian maker Atlas. The handpan rests on a floating disc with eight covered magnets, with nothing screwed or strapped on. Two models: the <strong>Atlas Pro</strong> in aluminium, telescopic, 1.8 kg, carrying bag included (€250); the <strong>Atlas All</strong> in wood, whose head is held between your legs to play seated, before taking legs and extensions to play standing (€270). I am a partner of the brand — both are at the showroom, ready to try.' },
-      'phoenix-opus1': { name: 'The Phoenix Alliance — Opus I', description: 'My original album, first opus — a journey blending handpan, voice and organic textures. Stream it on Spotify and every platform.' },
-      'phoenix-opus2': { name: 'The Phoenix Alliance — Opus II', description: 'The second opus — the journey continues. Stream it on Spotify and every platform.' },
-      'cover': { name: 'Covers — David Lesage', description: 'My covers reimagined on handpan and voice (Shape of My Heart, Imagine, Ave Maria…). Listen on Spotify.' },
-      'now-groove': { name: 'Now Groove — rhythm method', description: 'My course to learn rhythm differently, through visual emoticons. For everyone, from beginner to seasoned musician.' },
-      'cours-prives': { name: 'Private lessons & workshops', description: 'One-to-one lessons and workshops with me — handpan, rhythm and voice. In person in Paris or online.' },
-      'streaming': { name: 'My music on streaming', description: 'Find my compositions and covers on Spotify, Apple Music, Deezer and all platforms.' },
-      'onesec': { name: 'one sec — take back control of your screen time', description: 'The app that genuinely helps me not get lost in the scroll. Before you open a grabby app (social media…), one sec adds a short pause — the length of a breath — and the compulsive urge fades. It’s simple, and for me it’s one of the very few things that actually worked. A science-backed approach (studies with the Max Planck Institute). Free for the essentials; get −30% off Premium through my link.' },
-      'oko': { name: 'ÖKO filtering bottle', description: 'The bottle I take everywhere, all the time, as a musician on the road — water is the single most important thing there is. Instant filtration with no wait and no electricity, tested by an independent COFRAC-accredited lab against 200+ contaminants. I’m glad to represent a product that’s perfect for every traveller. Enjoy −10% with my code.' },
-      'forbrain': { name: 'Forbrain headset · voice training', description: 'A <strong>bone-conduction</strong> headset with a microphone, to hear your own voice live — singing, voice + handpan. You speak or sing, and your voice comes straight back to you through the bones in front of your ears, run through a <strong>dynamic filter</strong> that lifts the highs and softens the lows. You hear yourself differently, more clearly. I’ve tested it: the experience is striking. It isn’t a stage mic, it’s a training tool, a few minutes a day reading aloud or singing, to work on your voice, diction, pitch and focus. Standalone, no screen, no app. I don’t expect anything medical from it: I recommend it for voice work. Through my link, the <strong>−10%</strong> applies by itself; otherwise, enter my code in the cart.' },
-      'structured': { name: 'Structured — daily planner', description: 'The app I use to organise my days as a musician-entrepreneur, between concerts, workshops and project development. A clear visual timeline instead of a to-do list that keeps piling up. No affiliate program with them yet — I just share it because I genuinely use it.' },
+      'handpan-studio': { name: 'Handpan Constellation Studio · the app', description: 'My teaching app, for acoustic handpan and Neotone alike: colours, geometry and emotions make music visible. Free forever, Essential at €3.49 incl. VAT/month and Studio at €9.99 incl. VAT/month, with a 1-month free trial.' },
+      'neotone-one': { name: 'Neotone¹', description: 'Digital handpan with 10 notes, every scale, studio quality. Guided purchase: personal discount code + 6-year warranty.' },
+      'neotone-mutant': { name: 'Neotone¹ Mutant', description: 'Digital handpan with 19 notes and an LCD screen, for maximum expression. Guided purchase: discount code + 6-year warranty.' },
+      'yishama': { name: 'Exceptional Yishama handpan', description: 'One of the best handpan makers in the world (Israel / Hungary). Artisan craftsmanship, instruments with up to 19 notes, deep bass and bright highs. I proudly represent them as an ambassador.' },
+      'gonilele': { name: 'Gonilélé harp · La Maison du Ngoni', description: 'A travel harp-lute created by Joris Feuillâtre. I’m an ambassador for La Maison du Ngoni. 10 strings (€440) or 12 strings with built-in pickup (€520). Photos, videos, unboxing and ordering on the dedicated page.' },
+      'calebasse': { name: 'David Lesage Signature Calabash Kit', description: 'Complete kit: a 45 to 50 cm calabash (rare in Europe), hand-finished by Kamou (Djoliba Percussion) and laser-engraved with the Now Groove logo, with its mat and shakers. An organic drum kit with a natural sound.' },
+      'housse': { name: 'Now Groove calabash cover by David Lesage', description: 'A premium backpack cover, conceived and designed by David Lesage: built-in mat function, detachable straps, storage pocket (egg shakers, accessories & method), velvet lining. ✋ Rare and unique: handmade, in small batches.' },
+      'coeur-de-son': { name: 'Canvas drum · Cœur de Son', description: 'The drum made by Florel Viardot at the Cœur de Son workshop in Thaon-les-Vosges (France): a <strong>waterproof canvas</strong>, with no animal material, stretched over a wooden shell and <strong>tuned with air</strong>. An inner tube, inflated with a pump, sets the tension, from deep lows up to the mids; humidity doesn’t slacken it, so you can play outdoors. Every drum is a one-off with its own name, and the pattern can be hand-painted by Sandrine (quote on request). About 3 weeks to make. Five sizes, from 40 cm (€260) to 65 cm (€380); there is also a standing version (65 cm, €520).<br><br>I play one myself, “Géode de feu”, and you can try it at the showroom (demo only: you order from Florel). If you prefer hide, the skin drum by L’Âme du Tambour is right next to it: two materials, two sounds. <strong>−10% with my code</strong>, to enter at checkout.' },
+      'tambour': { name: 'Shamanic frame drum · L’Âme du Tambour', description: 'A handcrafted frame drum by Julien (L’Âme du Tambour), an aligned, passionate maker of real integrity. Enjoy −5% with the code David-Tambour.' },
+      'micro-hisong': { name: 'Hisong AirStudio S1 microphone', description: 'The first all-in-one mobile studio: dual-mode mic, wireless monitoring, audio interface, wireless receiver for your phone (RX Mini), magnetic mount and case. Perfect for voice, acoustic handpan and gonilélé: a true portable studio.<br><br><strong>Prices (VAT included, shipping to France):</strong> the S1 alone <strong>€270.95</strong>; with the <strong>RX Plus</strong> (+€90) <strong>€360.95</strong>, i.e. <strong>€342.91</strong> with my −5% code and free shipping.<br><br><strong>My advice:</strong> if you want to use the mic to <strong>play live</strong>, you need the <strong>RX Plus</strong> (Universal Pack): it sends the sound to the PA, the mixing desk or a camera.<br><br>Demos, and you can buy it on the spot, at my gatherings in Paris.' },
+      'micro-muling': { name: 'Muling MP1 microphone + HMP-2 preamp', description: 'The MP1 is a contact-condenser microphone made for the acoustic handpan. It comes with the HMP-2 preamp, which takes up to two MP1 mics, for clear, precise stereo capture with no feedback. Perfect for the stage and for recording.' },
+      'atlas': { name: 'Atlas handpan stands · Pro & All', description: 'The magnetic tripods from the Italian maker Atlas. The handpan rests on a floating disc with eight protected magnets, with no screws or straps. Two models: the <strong>Atlas Pro</strong> in aluminium, telescopic, 1.8 kg, carrying bag included (€250); the <strong>Atlas All</strong> in wood, whose head wedges between your legs for playing seated, then takes feet and extensions for playing standing (€270). I’m a partner of the brand: both are at the showroom, ready to try.' },
+      'phoenix-opus1': { name: 'The Phoenix Alliance · Opus I', description: 'My original album, the first opus: a journey through handpan, voice and organic textures. Stream it on Spotify and every platform.' },
+      'phoenix-opus2': { name: 'The Phoenix Alliance · Opus II', description: 'The second opus: the musical journey continues. Stream it on Spotify and every platform.' },
+      'cover': { name: 'Covers · David Lesage', description: 'My covers reimagined on handpan and voice (Shape of My Heart, Imagine, Ave Maria…). Listen on Spotify.' },
+      'now-groove': { name: 'Now Groove · rhythm method', description: 'My course to learn rhythm differently, through visual emoticons. For everyone, from beginner to seasoned musician.' },
+      'cours-prives': { name: 'Private lessons & workshops', description: 'Private lessons and workshops with me: handpan, rhythm and voice. In person in Paris or online.' },
+      'streaming': { name: 'Stream my music', description: 'Find my compositions and covers on Spotify, Apple Music, Deezer and all platforms.' },
+      'onesec': { name: 'one sec: take back control of your screen time', description: 'The app that genuinely helps me not get lost in the scroll. Before you open an app that hooks you (social media…), one sec adds a short pause, the length of a breath, and the compulsive urge fades. It’s simple, and for me it’s one of the very few things that has actually worked. A science-backed approach (studies with the Max Planck Institute). Free for the essentials; get 30% off Premium through my link.' },
+      'oko': { name: 'ÖKO filtering bottle', description: 'The bottle I take everywhere, all the time, as a musician on the road: water is the single most important thing there is. Instant filtration with no wait and no electricity, tested by an independent COFRAC-accredited lab against more than 200 contaminants. I’m glad to represent a product that’s perfect for every traveller. Enjoy −10% with my code.' },
+      'forbrain': { name: 'Forbrain headset · voice training', description: 'A <strong>bone-conduction</strong> headset with a microphone, to hear your own voice live, for singing or voice + handpan. You speak or sing, and your voice comes straight back to you through the bones, just in front of your ears, run through a <strong>dynamic filter</strong> that lifts the highs and softens the lows. You hear yourself differently, more clearly. I’ve tested it: the experience is striking. It isn’t a stage mic, it’s a training tool, a few minutes a day reading aloud or singing, to work on your voice, diction, pitch and focus. Standalone, no screen, no app. I don’t expect anything medical from it: I recommend it for voice work. Through my link, the <strong>−10%</strong> applies by itself; otherwise, enter my code in the basket.' },
+      'structured': { name: 'Structured · daily planner', description: 'The app I use to organise my days as a musician-entrepreneur, between concerts, workshops and project development. A clear visual timeline instead of a to-do list that keeps piling up. No affiliate programme with them yet; I just share it because I genuinely use it.' },
     },
   },
   booking: {
@@ -776,33 +776,33 @@ export const en: Dict = {
     messagePlaceholder: 'What interests you, your availability, your level…',
     submit: 'Send my request',
     sending: 'Sending…',
-    error: 'We couldn’t send your request. Please try again, or write to me at contact@lesagedavid.fr.',
-    privacy: 'Your details are only used to reply and keep you posted. No spam.',
+    error: 'Your request couldn’t be sent. Try again, or write to me directly at contact@lesagedavid.fr.',
+    privacy: 'I only use your details to reply to you and keep you posted. No spam.',
     successTitle: 'Sent ✨',
     successText: 'You’ll receive a confirmation email. I’ll reply personally, very soon.',
     successClose: 'Close',
     close: 'Close',
     visitTitle: 'Book my showroom slot (paid)',
-    visitIntro: 'Paris 20th, by appointment. This is a paid one-to-one slot — one single price, whatever you’re coming for. Tell me when you’re available and I’ll suggest a slot.',
-    privateTitle: 'Book an individual appointment',
-    privateIntro: 'One-to-one time, at the Paris 20th showroom or online: discover an instrument, get started with the one you’ve just bought, or move your playing forward — whatever your level.',
+    visitIntro: 'Paris (20th arrondissement), by appointment. This is a paid one-to-one time slot: one single price, whatever you’re coming for. Tell me when you’re available and I’ll suggest a slot.',
+    privateTitle: 'Book a one-to-one appointment',
+    privateIntro: 'One-to-one time, at the Paris showroom (20th arrondissement) or online: discover an instrument, get started with the one you’ve just bought, or move your playing forward, whatever your level.',
     // ── Reasons wired to THIS SAME form from other pages (16/08/2026).
     // They replace old `mailto:` links (a 19/07/2026 stop-gap) that opened the
     // visitor's mail client: the request then only existed in David's inbox and
     // left NO trace in the database. Real prospects were lost that way.
     newsTitle: 'Get notified about the next gatherings',
-    newsIntro: 'Leave me your email: I’ll let you know as soon as the dates of the next free gatherings in Paris are set. No spam — unsubscribe whenever you like.',
+    newsIntro: 'Leave me your email: I’ll let you know as soon as the dates of the next free gatherings in Paris are set. No spam, and you can unsubscribe whenever you like.',
     contactTitle: 'Write to me',
-    contactIntro: 'Tell me what brings you here — I read and answer every message personally.',
+    contactIntro: 'Tell me what brings you here: I read and answer every message personally.',
     goniTitle: 'Order a Gonilélé harp',
     goniIntro: 'Tell me which version you’re interested in and your options: I’ll reply personally with the summary and the details.',
-    goniPrefill: 'Version (10 strings / 12 strings + pickup):\nCover (+€40) / Tuner (+€10):\nPickup in Paris or shipping (+€25):',
+    goniPrefill: 'Version (10 strings / 12 strings + pickup):\nGig bag (+€40) / Tuner (+€10):\nCollection in Paris or shipping (+€25):',
     collabPrefill: 'My project in a few lines:',
     vipTitle: 'An appointment just for you',
-    vipScope: 'You decide what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply get one-to-one guidance — whether you’re a complete beginner, still working out what suits you, or want to dig into one specific thing. Whether you take 1h or 1h30, just tell me what you’re coming for: I’ll have everything ready.',
+    vipScope: 'You decide what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply get one-to-one guidance, whether you’re a complete beginner, still working out what suits you, or want to dig into one specific thing. Whether you take 1h or 1h30, just tell me what you’re coming for: I’ll have everything ready.',
     vipPriceLabel: 'Price',
-    vipPriceNote: 'Onboarding or demo. For a lesson: {lessonGrid} (4-lesson package over 2 months available).',
-    vipPolicyShort: 'Cancelling less than 24 h beforehand: the payment stays with me — that slot was held for you — but the appointment can be rescheduled within 3 months.',
+    vipPriceNote: 'Getting started or demo. For a lesson: {lessonGrid} (4-lesson package over 2 months available).',
+    vipPolicyShort: 'Cancelling less than 24 h beforehand: the payment stays with me (that time slot was held for you), but the appointment can be rescheduled within 3 months.',
     sessionType: 'Which appointment would you like?',
     sessionTypeChoose: 'Choose…',
     // ⚠️ TWO REASONS ONLY (18/08/2026) — see the comment in dict.ts. The
@@ -818,9 +818,9 @@ export const en: Dict = {
     calcRecapEdit: 'Change',
     discountModelChoose: 'Choose…',
     discountModelNames: {
-      one: 'Neotone¹ — 10 notes',
-      mutant: 'Neotone¹ Mutant — 19 notes',
-      undecided: 'I don’t know yet — help me choose',
+      one: 'Neotone¹ (10 notes)',
+      mutant: 'Neotone¹ Mutant (19 notes)',
+      undecided: 'I don’t know yet, help me choose',
     },
     discountCountry: 'Delivery country',
     discountCountryPlaceholder: 'France, Belgium, Switzerland…',
@@ -828,7 +828,7 @@ export const en: Dict = {
     // Billing (21-22/09/2026) — see the French dictionary for the reasoning.
     billing: {
       title: 'Billing',
-      intro: 'Neotone issues the invoice: these details are essential to them, and they are used for nothing else.',
+      intro: 'Neotone issues the invoice: it needs these details, and they’re used for nothing else.',
       kindLabel: 'You are buying…',
       kindPrivate: 'As a private individual',
       kindCompany: 'On behalf of a company',
@@ -846,7 +846,7 @@ export const en: Dict = {
       vatPlaceholder: 'FR12345678901',
       siret: 'SIRET',
       siretPlaceholder: '123 456 789 00010',
-      vatSiretHint: 'Optional — a valid VAT number lets Neotone invoice you without VAT (you declare and recover it in your own country); the SIRET identifies the company on a French invoice.',
+      vatSiretHint: 'Optional: a valid VAT number lets Neotone invoice you excluding VAT (you recover the VAT in your own country); the SIRET identifies the company on the French invoice.',
       shippingTitle: 'Delivery',
       shippingSame: 'Deliver to the billing address',
       shippingName: 'Recipient name',
@@ -855,30 +855,30 @@ export const en: Dict = {
       shippingCity: 'City',
       shippingCountry: 'Delivery country',
       orderRef: 'Your request reference: {ref}',
-      unavailable: 'No instrument is available for this choice right now. Your request is safely recorded: I will reply personally with the real lead times.',
+      unavailable: 'Nothing is in stock for this choice right now. Your request has been recorded: I’ll reply personally with the actual lead times.',
     },
     phonePlain: 'Phone',
     // Showcase only (24/08/2026) — see the French dictionary for the reasoning.
     phoneWhyShowcase: 'Required for a gathering: it’s a fixed date, and if anything comes up at the last minute on either side, I need to be able to reach you straight away.',
     socialLabel: 'Your social media account',
-    socialHint: 'Instagram preferred — otherwise Facebook, YouTube or your own website.',
+    socialHint: 'Instagram preferred; otherwise Facebook, YouTube or your own website.',
     socialPlaceholder: '@yourhandle or a link',
     discountNextTitle: 'What happens next',
-    discountNext1: 'I read your message personally — I reply to everyone.',
+    discountNext1: 'I read your message personally, and I reply to everyone.',
     discountNext2: 'Within 24 h of me reading it, <strong>Neotone contacts you directly</strong> and sends you your discount code.',
-    discountNext3: 'From there Neotone takes over: order, payment, delivery. I stay available if you need me.',
+    discountNext3: 'From there Neotone takes over: order, payment, delivery. I’m still here if you need me.',
     // Two Neotone paths (21/10/2026) — see the French dictionary.
     purchase: {
       showroomTitle: 'Buy a Neotone at the showroom (−7%)',
-      showroomIntro: 'You leave with your instrument, at the showroom (Paris 20th). I check your request and pass it on to Neotone, who sends you the invoice and a card payment link, Monday to Friday.',
+      showroomIntro: 'You leave the showroom (Paris, 20th arrondissement) with your instrument. I check your request and pass it on to Neotone, who sends you the invoice and a card payment link, Monday to Friday.',
       showroomButton: 'Buy at the showroom (−7%)',
-      showroomHowTitle: 'How the purchase at the showroom works',
+      showroomHowTitle: 'How buying at the showroom works',
       showroomHow: [
         'You fill in this form.',
         'I check your request and pass it on to Neotone (Soundventure, in Budapest). You are copied in.',
         'Neotone sends you the invoice and a card payment link, Monday to Friday, 9 am to 5 pm (Paris time, the same as Budapest), within 24 hours (working days).',
-        'You pay, and the instrument is yours: you leave with it, at the showroom (Paris 20th).',
-        'If you pay before coming, send me the proof of payment or bank transfer at <a href="mailto:contact@lesagedavid.fr">contact@lesagedavid.fr</a>: I hand you your Neotone on presentation of this proof.',
+        'You pay, and the instrument is yours: you take it away with you from the showroom (Paris, 20th arrondissement).',
+        'If you pay before coming, send the proof of payment or bank transfer to <a href="mailto:contact@lesagedavid.fr">contact@lesagedavid.fr</a>: I’ll hand over your Neotone when you show me this proof.',
       ],
       showroomWeekend: '<strong>Coming to the showroom at the weekend?</strong> Fill in this form before Friday: the payment link will be ready, so you can pay on the spot and leave with your instrument.',
       onlineTitle: 'Online purchase: discount code request (−5%)',
@@ -886,16 +886,16 @@ export const en: Dict = {
       onlineButton: 'Online purchase: get my code (−5%)',
       onlineHowTitle: 'How you get your discount code',
       onlineHow: [
-        'I read your request personally — I reply to everyone.',
+        'I read your request personally, and I reply to everyone.',
         'I request a personal discount code for you from Neotone: <strong>Neotone contacts you directly</strong> and sends it to you.',
-        'From there Neotone takes over: order, payment, delivery. I stay available if you need me.',
+        'From there Neotone takes over: order, payment, delivery. I’m still here if you need me.',
       ],
       priceVatNotCharged: '{country} VAT {rate} not charged',
       priceHtNote: 'Excluding VAT: the VAT ({rate}) is not charged (reverse charge), subject to a valid VAT number.',
       priceHtNeedVat: 'Enter your intra-EU VAT number in the billing details below.',
-      priceOnlineNote: 'Payment is made on the Neotone shop, with your discount code.',
+      priceOnlineNote: 'You pay in the Neotone online shop, using your discount code.',
     },
-    discoveryLabel: 'How did you find me as a Neotone ambassador?',
+    discoveryLabel: 'How did you hear about me as a Neotone ambassador?',
     discoveryChoose: 'Choose…',
     discoveryNames: {
       youtube: 'YouTube',
@@ -908,7 +908,7 @@ export const en: Dict = {
       other: 'Some other way',
     },
     curiousTitle: 'Two questions, just out of curiosity',
-    curiousHint: 'No obligation to answer — it’s just to get to know you.',
+    curiousHint: 'No obligation to answer: it’s just to get to know you.',
     playingSinceLabel: 'How long have you and the handpan been together?',
     playingSinceChoose: 'Choose…',
     playingSinceNames: {
@@ -920,28 +920,28 @@ export const en: Dict = {
     dreamLabel: 'What you dream of playing',
     dreamPlaceholder: 'A piece, a mood, a project…',
     freeMessageLabel: 'Your message',
-    freeMessageHint: 'Take all the space you want — I read everything.',
+    freeMessageHint: 'Take all the space you need: I read everything.',
     // Suffix of the 1h30 option in the DURATION menu (no longer the reason menu).
-    sessionTypeRecommended: '★ recommended at the start',
-    sessionTypeHint: 'Just received your instrument — Neotone, acoustic handpan, microphone — and feeling a bit lost? That’s a lesson: pick “Take a lesson with David”, we set everything up together and walk through the controls — without committing to anything long-term.',
+    sessionTypeRecommended: '★ recommended when you’re starting out',
+    sessionTypeHint: 'Just received your instrument (Neotone, acoustic handpan, microphone) and feeling a bit lost? That’s a lesson: pick “Take a lesson with David”, we start together, set everything up and get you in control of it, without committing to anything long-term.',
     // ── DURATION (18/08/2026, David’s words): “1h or 1h30. For getting started
     // the recommended length is 1h30”, “I give you all the keys to be
     // autonomous”. Durations and prices come from `sessionTypes` (src/data/site.ts).
     durationLabel: 'How long would you like us to take?',
-    durationHint: 'For getting started with an instrument, the recommended length is 1h30: I give you all the keys to be autonomous.',
+    durationHint: 'For getting started with an instrument, the recommended length is 1h30: I’ll give you everything you need to carry on on your own.',
     slotsTitle: 'Your availability',
-    slotsHint: 'Suggest up to 3 slots that suit you — I’ll confirm the one I keep.',
+    slotsHint: 'Suggest up to 3 time slots that suit you, and I’ll confirm the one I choose.',
     slotLabel: 'Slot {n}',
     slotDate: 'Date',
     slotTime: 'Time',
-    slotsRequired: 'Please give me at least one slot (date and time) that would work for you.',
+    slotsRequired: 'Please give me at least one time slot (date and time) that would work for you.',
     termsTitle: 'How it works',
-    terms1: 'You suggest your slots. I reply personally to confirm the one I keep.',
-    terms2: 'I send you the payment link in my reply: payment is what reserves your slot and commits us both.',
-    terms3: 'Something came up? Up to 24 h beforehand we move your appointment, no problem at all — just drop me a line.',
-    terms4: 'Less than 24 h beforehand, the payment stays with me: I had set that slot aside just for you, and I can no longer offer it to anyone else. But you don’t lose your appointment — we reschedule it for another date, within 3 months. We all have things come up, that’s life: it’s simply about the value of the commitment we make to each other.',
+    terms1: 'You suggest your time slots. I reply personally to confirm the one I choose.',
+    terms2: 'I send you the payment link in my reply: payment is what reserves your time slot and commits us both.',
+    terms3: 'Something come up? Up to 24 h beforehand, we move your appointment, no problem at all: just write to me, that’s all.',
+    terms4: 'Less than 24 h beforehand, the payment stays with me: I had set that time slot aside just for you, and I can no longer offer it to anyone else. But you don’t lose your appointment: we reschedule it for another date, within 3 months. Things come up for all of us, that’s life: it’s simply the value of the commitment we make to each other.',
     instrumentsLabel: 'Which instruments would you like to discover?',
-    instrumentsHint: 'Tick what interests you — I’ll have them ready for your visit.',
+    instrumentsHint: 'Tick what interests you: I’ll have them ready for your visit.',
     instrumentNames: {
       neotone: 'Neotone (electronic handpan)',
       calebasse: 'Calabash',
@@ -950,15 +950,15 @@ export const en: Dict = {
       'mic-muling': 'Muling microphone',
     },
     formatLabel: 'In person or online?',
-    formatInPerson: 'In person — Paris 20th showroom',
+    formatInPerson: 'In person: Paris showroom (20th arrondissement)',
     formatRemote: 'Online',
     showcaseTitle: 'Reserve my spot at the gathering',
-    showcaseIntro: 'Free public gathering at the Paris 20th showroom. Booking recommended — seats are limited.',
+    showcaseIntro: 'Free public gathering at the Paris showroom (20th arrondissement). Booking recommended, as places are limited.',
     // Showcase only — "which instrument(s) are you coming for?" (see dict.ts).
     // Optional on purpose. No "Other" option and no free-text field: the
     // existing message box already covers it (David, 17/08/2026).
     showcaseInterestsLabel: 'Which instrument(s) are you coming for?',
-    showcaseInterestsHint: 'Tick everything you’re interested in — I’ll have them ready for the session. Something specific? Tell me in your message below.',
+    showcaseInterestsHint: 'Tick everything you’re interested in: I’ll have them ready for the session. Something specific? Tell me in your message below.',
     showcaseInterestNames: {
       all: 'All of them',
       handpan: 'Handpan',
@@ -971,12 +971,12 @@ export const en: Dict = {
   muling: {
     title: 'Muling microphone for acoustic handpan | David Lesage',
     description:
-      'The Muling microphone for acoustic handpan, tested and presented by David Lesage: clear, precise capture with no feedback. Full video review, photos and ordering.',
+      'The Muling microphone for acoustic handpan, tested by David Lesage: clear, precise capture with no feedback. Full video review and photos.',
     back: '← Back to the shop',
     eyebrow: 'Microphone for acoustic handpan',
     heroTitle: 'The Muling microphone',
     heroLead:
-      'A microphone designed specifically for the acoustic handpan: clear, precise and faithful capture, with no feedback — on stage as in recording. I tested it thoroughly, here is my full review.',
+      'A microphone designed specifically for the acoustic handpan: clear, precise, faithful capture with no feedback, on stage and when recording. I’ve tested it thoroughly, and here is my full review.',
     ctaInterested: 'I’m interested in this mic',
     ctaVideo: 'Watch my full review',
     videoTitle: 'My full video review',
@@ -985,37 +985,37 @@ export const en: Dict = {
     photosIntro: 'My own photos of the microphone and how it mounts on the instrument.',
     whyTitle: 'Why I recommend it',
     whyText:
-      'Amplifying an acoustic handpan is a real challenge: general-purpose mics capture the harmonics poorly, and feedback lurks as soon as you turn up. The Muling is built for this specific instrument — it captures the sound at the source, keeps the richness of the harmonics and lets you push the level with no howl. That’s what convinced me to represent it.',
+      'Amplifying an acoustic handpan is a real challenge: general-purpose mics capture the harmonics poorly, and feedback lurks as soon as you turn up. The Muling is made for this particular instrument: it picks up the sound at the source, keeps the richness of the harmonics and lets you push the level without it howling. That’s what convinced me to represent it.',
     whyPoints: [
-      { t: 'Built for handpan', d: 'A contact microphone designed for the handpan’s shell and harmonics, not a general-purpose mic repurposed.' },
-      { t: 'No feedback', d: 'Capture happens in contact with the instrument: you raise the volume on stage without fearing howl.' },
-      { t: 'Stage and studio', d: 'Faithful enough for recording, sturdy and practical enough for live.' },
+      { t: 'Built for handpan', d: 'A contact microphone designed for the handpan’s shell and harmonics, not a repurposed general-purpose mic.' },
+      { t: 'No feedback', d: 'Capture happens in contact with the instrument: you can turn up the volume on stage without worrying about feedback.' },
+      { t: 'Stage and studio', d: 'Faithful enough for recording, sturdy and practical enough for playing live.' },
     ],
     priceTitle: 'Price and ordering',
     priceLabel: 'Maker’s price',
     priceNote:
       'No shipping fee is added to the price. Possible customs fees: to be confirmed.',
     priceDiscountLabel: 'Ordering through me',
-    priceDiscountNote: 'Code {code} — {pct}% off the maker’s price, reserved for orders placed through this form.',
+    priceDiscountNote: 'Code {code}: {pct}% off the maker’s price, for orders placed through this form only.',
     orderTitle: 'Order my mic',
     orderText:
-      'The maker doesn’t offer online payment for France yet: I put you in touch directly. Fill in the form and you get Muling’s payment details right away — they then take over directly until your mic arrives.',
+      'The maker doesn’t offer online payment for France yet, so I put you in touch directly. Fill in the form and you’ll get Muling’s payment details straight away; Muling then takes it from there until your mic arrives.',
     ctaContact: 'Order my mic',
     mulingOrderTitle: 'Order the Muling mic',
-    mulingOrderIntro: 'Code {code} applied — {pct}% off the maker’s price. Here are the payment details; Muling then takes over directly with you for the rest.',
-    mulingOrderPriceLine: 'Maker’s price {base} € − {pct}% = {final} €',
+    mulingOrderIntro: 'Code {code} applied: {pct}% off the maker’s price. Here are the payment details; from then on, Muling deals with you directly.',
+    mulingOrderPriceLine: 'Maker’s price €{base} − {pct}% = €{final}',
     mulingQuantity: 'How many mics?',
     mulingDeliveryNote: 'Special delivery instructions',
-    mulingDeliveryNoteHint: 'Building access code, floor, drop-off notes… (optional)',
-    mulingDeliveryNotePlaceholder: 'E.g.: gate code 1234B, 3rd floor no elevator…',
+    mulingDeliveryNoteHint: 'Building access code, floor, drop-off instructions… (optional)',
+    mulingDeliveryNotePlaceholder: 'E.g. gate code 1234B, 3rd floor, no lift…',
     mulingCountry: 'Delivery country',
     mulingAddress: 'Address',
     mulingCity: 'City',
     mulingPostalCode: 'Postal code',
-    mulingConsent: 'I agree that my details be shared with Muling Musical Instruments Co., Ltd. (China) and Résonances Productions to process my order.',
-    mulingConsentRequired: 'Sharing your details with Muling is needed to process the order — tick the box to continue.',
+    mulingConsent: 'I agree to my details being shared with Muling Musical Instruments Co., Ltd. (China) and Résonances Productions to process my order.',
+    mulingConsentRequired: 'Sharing your details with Muling is needed to process the order: tick the box to continue.',
     mulingBankTitle: 'To pay for your order',
-    mulingBankIntro: 'Wire the exact amount to Muling, with your reference in the transfer note. Payment in euros, SEPA transfer only.',
+    mulingBankIntro: 'Transfer the exact amount to Muling, quoting your reference. Payment is in euros, by SEPA transfer only.',
     mulingBankBeneficiary: 'Beneficiary',
     mulingBankIban: 'IBAN',
     mulingBankBic: 'BIC',
@@ -1026,42 +1026,42 @@ export const en: Dict = {
     mulingCopyLine: 'Copy',
     mulingCopiedLine: 'Copied!',
     mulingDownloadPdf: '⬇️ Download these details as PDF',
-    mulingBankSepaOnly: '⚠️ This account only accepts SEPA transfers in euros — no SWIFT / international wire.',
-    mulingBankNotified: 'Your order will be confirmed and sent to Muling ({email}) as soon as your proof of transfer is uploaded — they then handle shipping and tracking.',
+    mulingBankSepaOnly: '⚠️ This account only accepts SEPA transfers in euros (no SWIFT or international transfers).',
+    mulingBankNotified: 'Your order will be confirmed and sent to Muling ({email}) as soon as your proof of transfer is uploaded. Muling then handles shipping and tracking.',
     mulingBankNext: 'Once you’ve paid, keep proof of payment (screenshot or PDF) and upload it here. Muling will get back to you to confirm receipt and send you the shipping and tracking details.',
     mulingProofLabel: 'Upload your proof of payment',
     mulingProofHint: 'Screenshot or PDF of your transfer (3 MB max).',
     mulingProofButton: 'I’ve made the transfer',
     mulingProofSending: 'Sending…',
-    mulingProofError: 'The upload failed — try again, or write to me directly at contact@lesagedavid.fr.',
+    mulingProofError: 'The upload failed. Try again, or write to me directly at contact@lesagedavid.fr.',
     mulingProofMissing: 'Upload proof of your transfer (image or PDF) before continuing.',
-    mulingProofInvalidType: 'Format not accepted — upload an image (JPG, PNG) or a PDF.',
-    mulingProofTooLarge: 'The file is over 3 MB — reduce it and try again.',
+    mulingProofInvalidType: 'Format not accepted: upload an image (JPG, PNG) or a PDF.',
+    mulingProofTooLarge: 'The file is over 3 MB: make it smaller and try again.',
     // Coming back from the email link (?commande=<id>) — see dict.ts for the
     // full rationale. Nothing personal is shown here: only the reference,
     // derived from the id already present in the URL.
     mulingResumeIntro: 'You’re back to report the transfer for order {ref}. Confirm the email address you used when ordering, then upload your proof of payment.',
     mulingResumeEmailLabel: 'Email used when ordering',
-    mulingResumeEmailHint: 'It is what identifies your order — no personal information is shown on this page until it has been verified.',
+    mulingResumeEmailHint: 'This is what identifies your order: no personal information is shown on this page until it has been verified.',
     mulingResumeEmailMissing: 'Enter the email address you used when ordering.',
-    mulingResumeAmountNote: 'The exact amount of your order is in your confirmation email ({unit} € per mic).',
+    mulingResumeAmountNote: 'The exact amount of your order is in your confirmation email (€{unit} per mic).',
     mulingResumeMismatch: 'This email address does not match this order. Use exactly the one you gave when ordering, or write to me at contact@lesagedavid.fr.',
     mulingThankYouTitle: 'Thank you, all noted ✨',
-    mulingThankYouText: 'Your proof of payment has been received and sent to Muling with all your order details. You’ll get a confirmation email at this address to keep as proof — Muling will contact you directly for shipping and tracking.',
+    mulingThankYouText: 'Your proof of payment has been received and sent to Muling with all your order details. You’ll get a confirmation email at this address to keep as proof. Muling will contact you directly about shipping and tracking.',
     mulingOrderSending: 'Sending…',
     mulingOrderSubmit: 'Send my order',
-    mulingOrderError: 'The order failed to send — try again, or write to me directly at contact@lesagedavid.fr.',
+    mulingOrderError: 'The order failed to send. Try again, or write to me directly at contact@lesagedavid.fr.',
     specsTitle: 'The MP-1 capsule in detail',
     specsIntro: 'The technical characteristics of the MP-1 contact capsule, as observed in real-world testing.',
     specs: [
       { t: 'Boundary condenser microphone', d: 'This isn’t an ambient mic: the capsule picks up vibrations in direct contact with the shell. That’s what gives a faithful sound even in a noisy venue.' },
       { t: 'Magnetic mount', d: 'The capsule attaches and detaches magnetically: instant setup, perfectly secure hold on the instrument.' },
-      { t: 'Tiny', d: 'The size of a fingertip — you forget it’s there, visually and while playing.' },
+      { t: 'Tiny', d: 'The size of a fingertip: you forget it’s there, both to look at and while playing.' },
       { t: 'ABS housing with metal hardware', d: 'An ABS body reinforced with metal parts: light on the instrument, yet sturdy on the road.' },
-      { t: 'Output impedance: 600 Ω', d: 'A standard impedance, perfectly matched to the HMP-2 preamp and to classic line inputs.' },
-      { t: 'Very high isolation', d: 'Capture happens by contact: outside noise and other instruments barely get through — invaluable in a jam and on stage.' },
+      { t: 'Output impedance: 600 Ω', d: 'A standard impedance, perfectly matched to the HMP-2 preamp and to ordinary line inputs.' },
+      { t: 'Very high isolation', d: 'Capture happens by contact: outside noise and other instruments barely get through, which is invaluable in a jam or on stage.' },
     ],
-    specsCaution: '⚠️ Worth knowing before you buy: the capsules are designed exclusively to work with the Muling preamp. They are not compatible with other brands’ gear — this is a complete system, not a capsule to add to an existing setup.',
+    specsCaution: '⚠️ Worth knowing before you buy: the capsules are designed exclusively to work with the Muling preamp. They are not compatible with other brands’ gear: this is a complete system, not a capsule to add to an existing setup.',
     specsSource: 'Technical characteristics provided by the maker, cross-checked with my own use.',
     boxTitle: 'What the set contains',
     boxIntro: 'The HMP-2 set is complete: two capsules and the preamp, ready to play on one or two handpans.',
@@ -1073,7 +1073,7 @@ export const en: Dict = {
       '2 fabric storage pouches',
       '1 screwdriver to open the preamp (battery access)',
       '4 adhesive mounting pads',
-      'Cable clips (wire clips)',
+      'Cable clips',
       'The maker’s manual',
     ],
     boxNote: 'One set covers two handpans: one capsule per instrument, both mixed in the preamp. On a single handpan, you can fit both capsules for a more balanced capture.',
@@ -1081,13 +1081,13 @@ export const en: Dict = {
     preampIntro: 'The heart of the system: a two-channel preamp designed specifically for handpan, with built-in tone shaping.',
     preampFeatures: [
       { t: 'Two independent channels', d: 'CH1 and CH2 each have their own volume: you balance your two capsules (or two handpans) precisely before the output.' },
-      { t: 'SHAPE control', d: 'The big knob sculpts the sound: at 0 you keep the original tone; turning clockwise boosts lows and highs while reducing mids — perfect to cut through a busy mix.' },
+      { t: 'SHAPE control', d: 'The big knob shapes the sound: at 0 you keep the original tone; turning it clockwise boosts the lows and highs while pulling back the mids, ideal for cutting through a busy mix.' },
       { t: 'Mixed 6.35 mm jack output', d: 'A single cable runs to your speaker, mixer or audio interface.' },
       { t: 'CH2 switch', d: 'Channel 2 accepts an active capsule (switch ON) or a passive H1-type pickup (OFF). Channel 1 is reserved for active capsules.' },
       { t: 'Power indicator', d: 'An LED confirms at a glance that the preamp is powered.' },
-      { t: 'Metal chassis', d: 'A compact, sturdy enclosure the size of an effects pedal — it takes stage and road abuse.' },
+      { t: 'Metal chassis', d: 'A compact, sturdy enclosure the size of an effects pedal: it can take the stage and the road.' },
       { t: 'About 20 h of battery life', d: 'With a simple 9 V battery you get around twenty hours of playing: enough for several gigs without a second thought.' },
-      { t: 'Impedances: 1 MΩ in, 600 Ω out', d: 'A high-impedance input that preserves the full richness of the capsules’ signal, and a standard output that plugs in anywhere — speaker, mixer or audio interface.' },
+      { t: 'Impedances: 1 MΩ in, 600 Ω out', d: 'A high-impedance input that preserves the full richness of the capsules’ signal, and a standard output that plugs in anywhere: speaker, mixer or audio interface.' },
     ],
     preampWarnTitle: 'Two important precautions',
     preampWarns: [
@@ -1109,7 +1109,7 @@ export const en: Dict = {
     makerBlocks: [
       {
         t: 'Mò Cè (莫测), the designer',
-        d: 'A guitarist since the 1980s and a guitar teacher in the 1990s, Mò Cè moved into pickup design in 1999. He first worked as a designer for a Korean manufacturer, then for LSM, before founding his own brand. The maker claims three firsts: the first pickup with a built-in screen, the first pickup combining piezo and microphone, and the OPUS series, produced according to him at more than 80,000 sets a year between 2001 and 2010.',
+        d: 'A guitarist since the 1980s and a guitar teacher in the 1990s, Mò Cè moved into pickup design in 1999. He first worked as a designer for a Korean manufacturer, then for LSM, before founding his own brand. The maker claims three firsts: the first pickup with a built-in screen, the first pickup combining a piezo and a microphone, and the OPUS series, which he says was produced at more than 80,000 sets a year between 2001 and 2010.',
       },
       {
         t: 'The logo',
@@ -1117,87 +1117,87 @@ export const en: Dict = {
       },
       {
         t: 'The range',
-        d: 'Muling develops three product families for string instruments, alongside a range dedicated to the handpan — including the HMP-2 set shown on this page — and custom signature pickups.',
+        d: 'Muling develops three product families for string instruments, plus a range dedicated to the handpan (including the HMP-2 set shown on this page) and custom signature pickups.',
       },
     ],
     makerLinksTitle: 'Follow Muling',
     makerZhNote: 'site in Chinese',
     powerTitle: 'Power: battery or mains',
-    powerIntro: 'The preamp runs two ways — pick the one that fits your context.',
+    powerIntro: 'The preamp can be powered two ways, so choose whichever suits the situation.',
     powerBattery: {
-      t: 'On a 9 V battery — total autonomy',
-      d: 'A 9 V battery (6F22 type) sits inside the enclosure. Just open the base with the included screwdriver. This is the nomad solution par excellence: no power cable, you play anywhere. I personally use a rechargeable battery, cheaper and greener. Remember to remove it if you won’t use the preamp for a long time.',
+      t: 'On a 9 V battery: complete independence',
+      d: 'A 9 V battery (6F22 type) fits inside the enclosure. Just open the base with the screwdriver provided. It’s the ultimate go-anywhere option: no power cable, so you can play anywhere. I use a rechargeable battery myself, which is cheaper and greener. Remember to take it out if you won’t be using the preamp for a long time.',
     },
     powerMains: {
-      t: 'On mains — for long sessions',
-      d: 'The preamp also takes a 9 V 300 mA mains adapter, on a 5.5 × 2.1 mm DC socket with centre-negative polarity. Ideal in the studio, in rehearsal or for a long concert where you don’t want to depend on a battery.',
+      t: 'On mains power: for long sessions',
+      d: 'The preamp also accepts a 9 V, 300 mA mains adapter through a 5.5 × 2.1 mm centre-negative DC socket. Ideal in the studio, at rehearsals or for a long concert where you don’t want to depend on a battery.',
     },
-    powerWarning: '⚠️ Important: the mains adapter is not included with the set. You need to buy it separately — check the specs carefully (9 V, 300 mA minimum, centre-negative polarity) so you don’t damage the preamp.',
+    powerWarning: '⚠️ Important: the mains adapter is not included with the set. You’ll need to buy it separately, so check the specs carefully (9 V, 300 mA minimum, centre-negative polarity) to avoid damaging the preamp.',
     manualTitle: 'The maker’s manual',
-    manualIntro: 'Both pages of the included manual, with the recommended capsule placement positions and the technical specifications.',
+    manualIntro: 'Both pages of the manual supplied with the set, with the recommended placement of the capsules and the technical specifications.',
     relatedTitle: 'What if you play an electronic handpan?',
     relatedText:
-      'The Neotone needs no microphone: it plugs straight in with a jack. If you’re hesitating between acoustic and electronic, my comparison will help you choose.',
+      'The Neotone doesn’t need a pickup: it plugs straight in with a jack cable. If you’re torn between acoustic and electronic, my comparison will help you choose.',
     relatedCta: 'Discover the Neotone',
   },
   gonilele: {
-    title: 'Gonilélé travel harp — La Maison du Ngoni | David Lesage',
+    title: 'Gonilélé travel harp – La Maison du Ngoni | David Lesage',
     description:
       'The Gonilélé (NGoni lélé) travel harp-lute by La Maison du Ngoni, presented by David Lesage, ambassador. Photos, videos, unboxing, pricing and ordering.',
     back: '← Back to the shop',
     eyebrow: 'Ambassador · La Maison du Ngoni',
     heroTitle: 'The Gonilélé Harp',
     heroLead:
-      'A travel harp-lute with a bewitching soul, handcrafted by Joris Feuillâtre. I’m proud to be its ambassador — discover the instrument, hear it, and take yours home.',
+      'A travel harp-lute with a bewitching soul, handcrafted by Joris Feuillâtre. I’m proud to be its ambassador: discover the instrument, hear it, and take yours home.',
     ctaOrder: 'Order my Gonilélé',
     ctaVideos: 'Watch the videos',
     ctaLesson: 'Book a lesson',
     whatTitle: 'What is the Gonilélé?',
     whatText:
-      'The Gonilélé (or NGoni lélé) is a West African harp-lute, reimagined as a travel version by Joris Feuillâtre of La Maison du Ngoni. A calabash body, a noble-wood neck, strings tuned to a pentatonic scale: it embodies the union of masculine and feminine, connected to the divine. An intuitive, meditative and deep instrument, for beginners and seasoned musicians alike.',
+      'The Gonilélé (or NGoni lélé) is a West African harp-lute, reimagined for travel by Joris Feuillâtre of La Maison du Ngoni. A calabash body, a fine hardwood neck, strings tuned to a pentatonic scale: it embodies the union of masculine and feminine, connected to the divine. An intuitive, meditative and deep instrument, accessible to beginners and experienced musicians alike.',
     ambassadorTitle: 'Ambassador of La Maison du Ngoni',
     ambassadorText:
-      'I’ve worked with Joris Feuillâtre since 2023. The Gonilélé has accompanied me through major moments of my life — so it’s only natural that I now represent La Maison du Ngoni and pass this instrument on around me.',
+      'I’ve worked with Joris Feuillâtre since 2023. The Gonilélé has been with me through key moments of my life, so it’s only natural that I now represent La Maison du Ngoni and share this instrument with the people around me.',
     photosTitle: 'The instrument in pictures',
     unboxingTitle: 'Discovery & unboxing',
     unboxingText: 'I walk you through the Gonilélé in detail, from unboxing to first notes.',
     videosTitle: 'The Gonilélé played & presented',
-    videosIntro: 'A selection of videos where I play and present the instrument — click to open on YouTube.',
+    videosIntro: 'A selection of videos where I play and present the instrument. Click to open on YouTube.',
     videoTitles: {
-      extrait: 'Excerpt — the Gonilélé presented',
-      uneAme: '“Une âme” — learning the Gonilélé',
-      rappelle: '“Rappelle-moi la beauté” — on the Gonilélé',
-      kothbiro: '“Kothbiro” — on the Gonilélé (432 Hz)',
+      extrait: 'Excerpt – introducing the Gonilélé',
+      uneAme: '“Une âme” – learning the Gonilélé',
+      rappelle: '“Rappelle-moi la beauté” – on the Gonilélé',
+      kothbiro: '“Kothbiro” – on the Gonilélé (432 Hz)',
       sonoriser: 'Easily mic your Gonilélé',
       amplifier: 'Amplify your Gonilélé',
     },
-    tuningTitle: 'A tuning chart included',
+    tuningTitle: 'Tuning chart included',
     tuningText:
-      'Every instrument comes with a tuning chart (pentatonic scale, 432 Hz) to help you tune your 10 or 12 strings easily. The full file is shared only with those who purchase the instrument.',
+      'Every instrument comes with a tuning chart (pentatonic scale, 432 Hz reference pitch) to help you tune your 10 or 12 strings easily. The full file is shared only with those who buy the instrument.',
     pricesTitle: 'Pricing',
     priceRows: {
-      cordes10: '10 strings — no pickup',
-      cordes12: '12 strings — built-in pickup',
-      housse: 'Cover (required for shipping)',
+      cordes10: '10 strings – no pickup',
+      cordes12: '12 strings – built-in pickup',
+      housse: 'Gig bag (required for shipping)',
       accordeur: 'Tuner',
       envoi: 'Shipping (France)',
     },
-    priceOption: 'option',
-    orderTitle: 'Order & pickup',
+    priceOption: 'optional',
+    orderTitle: 'Order & collection',
     orderText:
-      'To order, write or call me. Pickup in Paris 20th, or shipping within France (€25, cover required for shipping).',
+      'To order, write to me or call me. Collection in person in Paris (20th arrondissement), or shipping within France (€25, gig bag required for shipping).',
     contactPhone: 'Phone',
     contactEmail: 'Email',
-    contactPickup: 'Pickup',
-    contactShipping: 'Shipping available — France · €25',
+    contactPickup: 'Collection',
+    contactShipping: 'Shipping available – France · €25',
     paymentTitle: 'Payment',
     paymentText:
-      'Payment is made to the account of the association Résonances Productions.',
+      'Payment goes to the bank account of the Résonances Productions association.',
     paymentIban: 'IBAN',
     paymentBic: 'BIC',
     coursesTitle: 'Want to learn with me?',
     coursesText:
-      'I give private Gonilélé lessons (and more) online or in person in Paris, pay-what-you-want above a minimum: from €{lesson60}/h or from €{lesson90}/1h30 (4-lesson package over 2 months: from €{packLesson60}/h or €{packLesson90}/1h30).',
+      'I give private Gonilélé lessons (and more), online or in person in Paris, pay-what-you-want above a minimum: from €{lesson60} per hour or €{lesson90} per 90 minutes (package of 4 lessons over 2 months: from €{packLesson60} per hour or €{packLesson90} per 90 minutes).',
     coursesCta: 'Book a lesson',
   },
   // ============================================================
@@ -1208,17 +1208,17 @@ export const en: Dict = {
   // never makes one, and one of their own customer reviews denies it).
   // ============================================================
   atlas: {
-    title: 'Atlas handpan stands — Atlas Pro & Atlas All | David Lesage',
+    title: 'Atlas handpan stands: Atlas Pro & Atlas All | David Lesage',
     description:
       'The Atlas magnetic handpan stands, made in Italy: Atlas Pro in aluminium (€250) and Atlas All in wood (€270), 10% off with the code DAVID-ATLAS. Specifications, photos, and a chance to try them in Paris with David Lesage, a partner of the brand.',
     back: '← Back to the shop',
     eyebrow: 'Partner · Atlas Handpan',
-    heroProCaption: 'Aluminium — the same stand, extended and folded',
-    heroAllCaption: 'Wood — without then with its extensions',
+    heroProCaption: 'Aluminium: the same stand, extended and folded',
+    heroAllCaption: 'Wood: without, then with, its extensions',
     heightCm: '{n} cm',
     heroTitle: 'The Atlas stands',
     heroLead:
-      'Atlas builds handpan tripods in Italy. The instrument is neither screwed down nor strapped in: it rests on a floating disc held by magnets. I am a partner of the brand, and both models are now at the showroom — the Atlas Pro and the Atlas All.',
+      'Atlas builds handpan tripods in Italy. The instrument is neither screwed down nor strapped in: it rests on a floating disc held by magnets. I am a partner of the brand, and both models are at the showroom: the Atlas Pro and the Atlas All.',
     ctaModels: 'See both models',
     // 🎯 THE PRIMARY ACTION OF THE WHOLE PAGE (20/08/2026, David's call).
     //    Before: the main buttons sent people to Atlas's product pages.
@@ -1227,15 +1227,15 @@ export const en: Dict = {
     ctaTry: 'Come and try them at the showroom',
     ctaTryModel: 'Try this one at the showroom',
     heroTryNote:
-      'Both models are at the showroom, in Paris 20ᵉ, alongside the handpans. You put an instrument on one, set the height, play — and you know.',
+      'Both models are at the showroom, in Paris (20th arrondissement), alongside the handpans. You put an instrument on one, set the height, play, and you know.',
 
     whyTitle: 'What Atlas does differently',
     whyText:
-      'What sets Atlas apart is the mount. The instrument is neither screwed down nor strapped in: it rests on a floating disc held by eight scratch-resistant magnets. At the showroom my handpans are already on tripods — that is what lets me pass them from hand to hand without setting them down every time.',
+      'What sets Atlas apart is the mount. The instrument is neither screwed down nor strapped in: it rests on a floating disc held by eight scratch-resistant magnets. At the showroom my handpans are already on tripods, and that is what lets me pass them from hand to hand without setting them down every time.',
     whyPoints: [
       {
         t: 'On your lap, seated, standing',
-        d: 'Atlas advertises three playing positions for its wooden range: the instrument on your lap, seated on a chair, or standing. The Atlas Pro is advertised for two — seated and standing.',
+        d: 'Atlas advertises three playing positions for its wooden range: the instrument on your lap, seated on a chair, or standing. The Atlas Pro, for its part, is advertised for two: seated and standing.',
       },
       {
         t: 'A magnetic mount',
@@ -1260,12 +1260,12 @@ export const en: Dict = {
         d: 'Atlas states that the stand is designed for every handpan and tested with many makers, and that the magnets work with nitrided steel, stainless steel and Ember Steel.',
       },
       {
-        t: 'It will not tip, and you can correct the ground',
-        d: 'Atlas lists an anti-tip safety pin, a removable rubber centring collar, and legs adjustable by screwing — enough to make up for a floor that is not flat.',
+        t: 'It won’t tip over, and it copes with uneven floors',
+        d: 'Atlas lists an anti-tip safety pin, a removable rubber centring collar, and screw-adjustable feet: enough to level out a floor that is not flat.',
       },
       {
         t: 'Fourteen days to change your mind',
-        d: 'Atlas states free returns within fourteen days, with the return label supplied in the box. And if you can make it to the showroom, you will have decided before you even order.',
+        d: 'Atlas advertises free returns within fourteen days, with the return label supplied in the box. And if you can make it to the showroom, you will have decided before you even order.',
       },
     ],
 
@@ -1295,14 +1295,14 @@ export const en: Dict = {
     storyEyebrow: 'My own experience',
     storyTitle: 'Why I play standing up',
     storyIntro:
-      'Ever since I started playing the handpan, I have played standing. First because I am a singer, and for me that is the best position to sing freely. Then because I am a multi-instrumentalist: I have an electronic kick pedal at my foot and several instruments around me. And because it is by far the most balancing posture for the body. A handpan stand is not an accessory in my line of work: it is what makes my way of playing possible.',
-    storyVoiceTitle: 'Two handpans, a kick pedal, an N’Goni, a calabash — and I sing',
+      'Ever since I started playing the handpan, I have always played standing up. First because I am a singer, and for me it is the best position to sing freely. Then because I am a multi-instrumentalist: I have an electronic kick pedal under my foot and several instruments around me. And because it is, by far, the most balanced posture for the body. So a handpan stand is not an accessory in my line of work: it is what makes my way of playing possible.',
+    storyVoiceTitle: 'Two handpans, a kick pedal, an N’Goni, a calabash – and I sing',
     storyVoiceText:
-      'That is the setup I take on stage, and the one I used for my blind audition on The Voice. Everything stands, everything is within reach, and none of it holds together if the instruments are not at the right height. It is very concrete: a few centimetres too high and my singing goes off, a few too low and I can no longer reach my bass notes.',
+      'That is the setup I take on stage, and the one I used for my blind audition on The Voice. Everything is played standing, everything is within reach, and none of it works if the instruments are not at the right height. It is very concrete: a few centimetres too high and I can no longer sing in tune, a few too low and I can no longer reach my bass notes.',
     storyVoiceCta: 'See my background',
     storyStandsTitle: 'The stands I wore out before Atlas',
     storyStandsIntro:
-      'I have tried several, and I ended up wearing them out for good. I am talking about MY units and MY use — the stage, the travelling, several dozen dates a year:',
+      'I have tried several, and I ended up wearing them out for good. I am talking here about MY units and MY use (the stage, the travelling, several dozen dates a year):',
     storyStands: [
       {
         t: 'Jacomina Kistemaker',
@@ -1310,11 +1310,11 @@ export const en: Dict = {
       },
       {
         t: 'Meinl',
-        d: 'Mine is solid, genuinely so. But it is too heavy for me to carry around: when I leave to play, that is the criterion that decides everything.',
+        d: 'Mine is solid, genuinely so. But it is too heavy for me to carry around: when I travel to play, that is the criterion that decides everything.',
       },
       {
         t: 'S Pan',
-        d: 'It has been my choice until today, and it has real qualities: light, easy to carry. On mine, it was the sliding systems and the 3D-printed parts that eventually gave up — one of them broke over time. I also wondered whether the suction-cup principle absorbed part of the vibration: that is a question I ask myself, not a measurement I made.',
+        d: 'It has been my choice until today, and it has real qualities: light, easy to carry. On mine, it was the sliding mechanisms and the 3D-printed parts that eventually gave out; one of them broke over time. I also wondered whether the suction-cup principle absorbed part of the vibration: that is a question I ask myself, not a measurement I made.',
       },
     ],
     // ── THE THREE STEPS OF THE STORY (20/08/2026) ───────────────────────────
@@ -1325,9 +1325,9 @@ export const en: Dict = {
     tryEyebrow: 'What happens next',
     storyConclusionTitle: 'Why Atlas, now',
     storyConclusion:
-      'Given everything I have tried, this is the first design that answers every single problem I have run into: a magnetic mount instead of a suction cup, an Atlas Pro made entirely of aluminium — telescopic legs included — and 1.8 kg that go away in their bag. I am convinced. Both stands arrived on 26 August 2026, and I have tried them.',
+      'Given everything I have tried, this is the first design that answers every single problem I have run into: a magnetic mount instead of a suction cup, an Atlas Pro made entirely of aluminium (telescopic legs included), and 1.8 kg that pack away into their bag. I am convinced. Both stands arrived on 26 August 2026, and I have tried them.',
     storyBridge:
-      'And there is an irony I rather like: the same stand opens up the posture opposite to mine. Its head lets you play seated, without resting the instrument on your legs — a posture I have never practised.',
+      'And there is an irony I rather like: the same stand opens up the posture opposite to mine. Its head lets you play seated without resting the instrument on your legs, a posture I have never practised.',
     storyBridgeCta: 'The head of the stand',
     // 🖼️ Visible captions for the photos in the #debout section (not alt text).
     // 🚨 storyFestivalCaption never names the brand of the old stands.
@@ -1339,17 +1339,17 @@ export const en: Dict = {
     //    here and not in #probleme or #solution. No stand brand is ever named,
     //    and nothing suggests the Atlas stands are in the picture.
     storyShowroomCaption:
-      'Same thing at the showroom: my two Yishama acoustic handpans stay mounted on their stands, at playing height, ready to be played. A handpan stand isn’t an accessory you get out for concerts — it’s what the instrument lives on.',
+      'Same thing at the showroom: my two Yishama acoustic handpans stay mounted on their stands, at playing height, ready to be played. A handpan stand isn’t an accessory you bring out for concerts: it’s what the instrument lives on.',
     storyPlateauCaption:
-      'My stage set up, before a concert in a hall in Switzerland. A handpan stand never lives on its own: it holds in the middle of everything else, and it is the thing that sets the height for all of it.',
+      'My rig set up before a concert in a hall in Switzerland. A handpan stand never lives on its own: it stands in the middle of everything else, and it sets the height for all of it.',
     storyFestivalCaption:
-      'Everness Festival, Hungary: standing behind my two {yishama} acoustic handpans — on the stands I was using then.',
+      'Everness Festival, Hungary: standing behind my two {yishama} acoustic handpans, on the stands I was using then.',
     storyStandsPhotoCaption:
       'My stage setup close up: three instruments, three different stands, and just as many heights to set before playing.',
 
     partnerTitle: 'Why I am talking about them now',
     partnerText:
-      'The partnership with Atlas has just been confirmed: I am now an affiliate of the brand, and they sent me two demonstration stands for my gatherings. As long as nothing was signed I preferred not to announce anything here — now it is done, so I am saying it.',
+      'The partnership with Atlas has just been confirmed: I am now an affiliate of the brand, and they sent me two demonstration stands for my gatherings. As long as nothing was signed, I preferred not to announce anything here. Now it is done, so I am talking about it.',
 
     // ── 🗑️ REMOVED FROM THE PAGE ON 20/08/2026 — DAVID'S EXPLICIT DECISION ──
     //    These two keys are NO LONGER DISPLAYED: the "What I will check in
@@ -1369,7 +1369,7 @@ export const en: Dict = {
     //    tried them and filmed them, nothing more.
     testTitle: 'What I will check in front of you',
     testText:
-      'They arrive in a few days. What I claim on this page, I claim knowingly: I have worn out four different stands on stage, and I know exactly what I am looking for. What I do not have yet is the field test — so as soon as the two stands are at the showroom, I will film my own demonstration, put it here, and tell you how it goes.',
+      'They arrive in a few days. What I claim on this page, I claim knowingly: I have worn out four different stands on stage, and I know exactly what I am looking for. What I do not have yet is the field test. So as soon as the two stands are at the showroom, I will film my own demonstration, put it here, and tell you how it goes.',
     // 🎬 The video exists since 01/09/2026 (`atlasDemoVideoId`) and is shown at
     //    the TOP of the page, right after the hero. No "coming soon" frame left.
     // 🚨 This is NOT the YouTube title copied over: the official title is full of
@@ -1379,7 +1379,7 @@ export const en: Dict = {
     // 🚨 `videoNote` describes neither the content nor any promise: only where the
     //    video comes from. Never put a dated promise or a usage verdict back here.
     videoSectionTitle: 'The video demonstration',
-    videoTitle: 'Why play the handpan standing up — my video, with Atlas',
+    videoTitle: 'Why play the handpan standing up: my video, with Atlas',
     // ⚠️ Key KEPT but no longer displayed (the "coming soon" frame is gone).
     videoSoon: 'Coming soon',
     videoNote: 'My own video, published on my YouTube channel.',
@@ -1387,12 +1387,12 @@ export const en: Dict = {
     //    06/09/2026. FR is the verbatim; this is a faithful translation, and
     //    the page labels it as one in `videoDavidSource`.
     videoDavidQuote:
-      'I have invested in every handpan stand, or almost every handpan stand, and I am going to explain to you why today I take my stand with Atlas.',
+      'I’ve invested in all the handpan stands, or almost all of them, and I’m going to explain why, today, I take my stand with Atlas.',
     videoDavidSource: 'David Lesage, in his YouTube video (translated from French)',
 
     modelsTitle: 'Two models',
     modelsIntro:
-      'Both do the same job — holding the handpan on a floating magnetic disc. They do not do it with the same materials, nor over the same height range. Here is what the maker states, with nothing added.',
+      'Both do the same job: holding the handpan on a floating magnetic disc. They do not do it with the same materials, nor over the same height range. Here is what the maker states, with nothing added.',
     // 🅓 David on the Pro model — source: transcript of the YouTube video,
     //    06/09/2026. A DESCRIPTION of the Pro, not a preference: the lead-in
     //    says so, and the two columns stay of equal weight.
@@ -1402,7 +1402,7 @@ export const en: Dict = {
     modelsDavidSource: 'David Lesage, in his YouTube video (translated from French)',
     modelsDavidTodayLead: 'And today, in writing:',
     modelsDavidTodayQuote:
-      'The Pro has one flaw: the wooden head is not offered, neither as an option nor included, and that is its only flaw, but it has to be said. Still, I prefer the Pro. So you cannot use the head on its own to play seated, whereas the wooden version lets you — but it takes longer to set up, is bulkier to carry and less adjustable.',
+      'The Pro has one flaw: the wooden head is not offered, neither as an option nor included, and that is its only flaw, but it has to be said. Still, I prefer the Pro. So you cannot use the head on its own to play seated, whereas with the wooden version you can, but it takes longer to set up, is bulkier to carry and is less adjustable.',
     modelsDavidTodaySource: 'David Lesage, 6 September 2026 (translated from French)',
     specs: {
       price: 'Listed price',
@@ -1417,7 +1417,7 @@ export const en: Dict = {
     },
     heightValue: '{min} cm to {max} cm',
     weightValue: '{w} kg',
-    priceNote: 'Public prices (VAT included) read on Atlas’s website on {date}. The price that counts is the one shown by Atlas when you order — shipping is extra.',
+    priceNote: 'Public prices (VAT included) taken from Atlas’s website on {date}. The price that applies is the one shown by Atlas when you order, with shipping on top.',
     priceRegular: 'usual price',
     // 🎟️ The code, made visible (20/10/2026). {pct}/{code}/{pro}/{all} are
     // filled in by the page from src/data/atlas.ts. No discounted price is
@@ -1428,7 +1428,7 @@ export const en: Dict = {
     heroCodePrices: 'With the code: {pro} · {all}',
     buyCta: 'Buy from Atlas with −{pct}% →',
     buyHint: 'The button copies the code, then opens the Atlas website in a new tab.',
-    buyCopied: 'Code {code} copied ✓ — paste it at checkout on the Atlas website.',
+    buyCopied: 'Code {code} copied ✓ Paste it at checkout on the Atlas website.',
     savingLine: '{name}: {was} → {now} with the code ({save})',
     heroCodeText: 'Valid on all Atlas products, Atlas Body included. Enter it at checkout, on the Atlas website.',
     codeReminder: 'At checkout on the Atlas website, enter my code {code}: −{pct}%.',
@@ -1437,22 +1437,22 @@ export const en: Dict = {
       name: 'Atlas Pro',
       tagline: 'Aluminium, telescopic, bag included',
       text:
-        'The aluminium model. Its three telescopic legs adjust continuously and independently of one another, a quick-opening system lets you set it up and fold it away in a few seconds, and the structure closes in on itself for transport. Atlas states 1.8 kg, and the Atlas Bag is included.',
+        'The aluminium model. Its three telescopic legs adjust continuously and independently of one another, a quick-release system lets you set it up and fold it away in a few seconds, and the frame folds in on itself for transport. Atlas states 1.8 kg, and the Atlas Bag is included.',
       material: 'Lightweight aluminium, telescopic legs',
       mount: 'Floating disc, 8 scratch-resistant magnets',
       positions: 'Seated or standing, continuous adjustment',
-      bag: 'Atlas Bag carrying bag included',
+      bag: 'Atlas Bag carry case included',
       body: 'Wooden part not included',
     },
     all: {
       name: 'Atlas All',
       tagline: 'Wood, modular with extensions',
       text:
-        'The wooden model. Its main body is 3D-printed and sits on a wooden base fitted with an anti-tip pin. The legs are 41 cm long and extend by 10 cm; screwing on the three 41 cm extensions takes it from the seated position to the standing one.',
+        'The wooden model. Its main body is 3D-printed and sits on a wooden base fitted with an anti-tip spike. The legs are 41 cm long and extend by 10 cm; screwing on the three 41 cm extensions takes it from the seated position to the standing one.',
       material: '3D-printed body; wooden base, extensions and legs',
       mount: 'Floating disc, 8 scratch-resistant magnets',
       positions: 'On your lap, seated (without extensions) or standing (with extensions)',
-      body: 'Included — it is the core module of the range',
+      body: 'Included: it’s the core piece of the range',
       // 🚧 No “Weight” or “Carrying” row for the Atlas All: Atlas gives neither
       //    its weight, nor the wood species, nor whether a bag exists for it.
     },
@@ -1466,9 +1466,9 @@ export const en: Dict = {
     // 🚨 The Body is INCLUDED in the Atlas All, and Atlas claims NOTHING of the
     //    sort for the Atlas Pro. See `ATLAS_BODY_STATUS` in src/data/atlas.ts.
     headEyebrow: 'The head of the stand',
-    headTitle: 'A stand — but not only a stand',
+    headTitle: 'A stand, but not just a stand',
     headIntro:
-      'The upper part of the support, the one Atlas calls the Atlas Body, is not just a piece to screw legs onto. Held between your thighs, it carries the handpan above you while you play seated on a chair or a sofa — no legs, no tripod, and without resting the instrument on your lap.',
+      'The upper part of the support, the one Atlas calls the Atlas Body, is not just a piece to screw legs onto. Held between your thighs, it carries the handpan above you while you play seated on a chair or a sofa, with no legs, no tripod, and without resting the instrument on your lap.',
     headPoints: [
       {
         t: 'The instrument no longer rests on you',
@@ -1476,7 +1476,7 @@ export const en: Dict = {
       },
       {
         t: 'The bottom notes stay reachable',
-        d: 'The instrument is lifted off your body. Atlas emphasises that nothing gets in the way when you reach for the notes — which matters most if your handpan has bottom notes.',
+        d: 'The instrument is lifted off your body. Atlas points out that nothing gets in the way when you reach for the notes, which matters most if your handpan has bottom notes.',
       },
       {
         t: 'An open, hollow head',
@@ -1491,7 +1491,7 @@ export const en: Dict = {
     //    The SEPARATION OF VOICES does not move: Atlas talks about the sound,
     //    not David, and he announces that he will settle it himself.
     headAcousticNote:
-      'Those are their words, not mine: when it comes to sound, I do not repeat anyone’s claim before hearing it myself. What I say about it is in my video — here it is.',
+      'Those are their words, not mine: when it comes to sound, I don’t repeat anyone’s claim before hearing it myself. What I say about it is in my video. Here it is.',
     // 🅓 David on the sound — source: transcript of the YouTube video,
     //    06/09/2026. TWO sentences side by side, in this order, nothing added
     //    between them: the first is about his OLD suction-cup stand, the second
@@ -1499,29 +1499,29 @@ export const en: Dict = {
     //    Atlas: never add one.
     headAcousticDavidLead: 'On his old suction-cup stand, then on the Atlas head:',
     headAcousticDavidQuote1:
-      'This suction system has one flaw: it absorbs the vibrations of the handpan, and that is not great, because it means we are going to lose the sound of the pan — part of the sound, at least.',
+      'This suction system has one flaw: it absorbs the vibrations of the handpan, and that’s not great, because it means we’re going to lose the sound of the pan, or part of the sound, at least.',
     headAcousticDavidQuote2:
       'The fact that it has holes is really important, because it means that the sound of the handpan is going to be able to escape.',
     headAcousticDavidSource: 'David Lesage, in his YouTube video (translated from French)',
-    headIncludedTitle: 'Included, or bought on top?',
+    headIncludedTitle: 'Included, or bought separately?',
     headIncluded: [
       {
-        t: 'Atlas All — included',
-        d: 'The wooden range is modular: the head is the core part, you screw the legs onto it to get the Atlas Short, then the extensions for the Atlas All. Buying the Atlas All does give you all three positions.',
+        t: 'Atlas All: included',
+        d: 'The wooden range is modular: the head is the core piece; you screw the legs onto it to get the Atlas Short, then the extensions to get the Atlas All. Buying the Atlas All does give you all three positions.',
       },
       {
-        t: 'Atlas Pro — the wooden part is not included',
-        d: 'Marco Agri, the creator of Atlas, confirmed it to me directly: “atlas pro doesn’t come with the wood part”. The Pro adjusts from the seated to the standing position, but it does not carry the wooden head, the one used for playing on your lap. Better to know before ordering than when opening the box.',
+        t: 'Atlas Pro: the wooden part is not included',
+        d: 'Marco Agri, the creator of Atlas, confirmed it to me directly: “atlas pro doesn’t come with the wood part”. The Pro adjusts from the seated to the standing position, but it doesn’t come with the wooden head, the one used for playing on your lap. Better to find out before ordering than when you open the box.',
       },
       {
-        t: 'Atlas Body — the head on its own',
-        d: 'Atlas also lists it separately (€165). It is what you look at if you only want lap playing, or if you want to grow a wooden set: the legs + extensions kit (€105) turns it into an Atlas Short, then an Atlas All.',
+        t: 'Atlas Body: the head on its own',
+        d: 'Atlas also sells it separately (€165). It’s the one to look at if you only want to play on your lap, or if you want to build up from the wooden range: the legs + extensions kit (€105) turns it into an Atlas Short, then an Atlas All.',
       },
     ],
     headCompatTitle: 'All the parts are fully compatible',
     headCompatText:
-      'That is the other thing Marco Agri confirmed to me: “all parts are fully compatible with the others”. The most useful consequence: if you already own an Atlas All or an Atlas Short, you already have the wooden part — it fits straight onto an Atlas Pro, nothing is wasted. And if you are starting from scratch and want all three positions from the outset, the Atlas All is what gives them today.',
-    headCompatSource: 'Marco Agri, creator of Atlas — message of 20 August 2026',
+      'That is the other thing Marco Agri confirmed to me: “all parts are fully compatible with the others”. The most useful consequence: if you already own an Atlas All or an Atlas Short, you already have the wooden part, and it fits straight onto an Atlas Pro, so nothing is wasted. And if you are starting from scratch and want all three positions from the outset, the Atlas All is what gives them today.',
+    headCompatSource: 'Marco Agri, creator of Atlas, message of 20 August 2026',
 
     buyTitle: 'Where to order them',
     buyText:
@@ -1531,15 +1531,15 @@ export const en: Dict = {
 
     showroomTitle: 'Try them before you buy',
     showroomText:
-      'Both stands are at the showroom in Paris 20th, alongside the handpans. You can put an instrument on one, set the height, play standing, and see which of the two suits you — without buying anything.',
+      'Both stands are at the showroom in Paris (20th arrondissement), alongside the handpans. You can put an instrument on one, set the height, play standing, and see which of the two suits you, without buying anything.',
     // The three reasons to come, one line each. They must stay FACTS you can
     // check on the spot, never sales promises.
     showroomPoints: [
       'Both models side by side, not two photographs',
       'A handpan on top: you set the height yourself, seated then standing',
-      'Without buying anything — you leave with your own opinion, not a box',
+      'Without buying anything: you leave with your own opinion, not a box',
     ],
-    showroomAgendaCta: 'See the next dates',
+    showroomAgendaCta: 'See upcoming dates',
 
     // ── 📷 CAPTION OF THE SHOWROOM PHOTO (added 20/08/2026) ─────────────────
     // 🔗 {neotone} becomes a link to /en/neotone (replaced by `mesh()` in
@@ -1551,7 +1551,7 @@ export const en: Dict = {
     //    fact, not a description of the image. Do not go further: never
     //    describe Atlas stands nobody can see. No stand brand is named in it.
     showroomPhotoCaption:
-      'The showroom set up before a gathering: my two Yishama acoustic handpans and my two {neotone} electronic handpans, each on its own stand — four instruments, four different stands. The two Atlas stands have since taken their place there, and that is where you will be able to try them.',
+      'The showroom set up before a gathering: my two Yishama acoustic handpans and my two {neotone} electronic handpans, each on its own stand. Four instruments, four different stands. The two Atlas stands have since taken their place there, and that is where you will be able to try them.',
 
     // ── 🎟️ THE DISCOUNT CODE — ACTIVE SINCE 11/09/2026 ─────────────────────
     // ✅ Confirmed by Atlas by email (11/09/2026): DAVID-ATLAS, −10% on all
@@ -1559,7 +1559,7 @@ export const en: Dict = {
     //    quantified. The block is still driven by `ATLAS_PROMO_ACTIVE`.
     promoTitle: 'My code at Atlas',
     promoText:
-      'Here is my code: −{pct}% on all Atlas products, Atlas Body included. Enter it at checkout on the Atlas website — whether you order online or after coming to try them at the showroom.',
+      'Here is my code: −{pct}% on all Atlas products, Atlas Body included. Enter it at checkout on the Atlas website, whether you order online or after coming to try them at the showroom.',
     promoDisclosure:
       'This code is my ambassador link with Atlas: it adds nothing to what you pay, and it changes nothing about what I wrote above.',
 
@@ -1593,7 +1593,7 @@ export const en: Dict = {
       allHeightLow:
         'The Atlas All tripod in light wood without its extensions, on a white background: the three short legs screwed under the black head, in the low position.',
       allHeightHigh:
-        'The same Atlas All tripod fitted with its extensions, on a white background: the legs are twice as long, in the high position.',
+        'The same light-wood Atlas All tripod fitted with its extensions, on a white background: the legs are twice as long, in the high position.',
       proTwoHeights:
         'Two Atlas Pro tripods side by side on a grey background: the left one extended to its high position carrying a steel handpan, the right one set low with its legs drawn in.',
       bodySeated:
@@ -1629,7 +1629,7 @@ export const en: Dict = {
       allScrew:
         'Two hands screwing a wooden Atlas All extension onto a leg, with the metal threaded insert visible.',
       allWood:
-        'The wooden parts of the Atlas All laid flat: the legs and the extensions with their black feet.',
+        'The wooden parts of the Atlas All laid flat: the legs and the extensions with their black end caps.',
     },
     // 🚧 KEY KEPT, NO LONGER DISPLAYED (20/08/2026). The “two heights” photo has
     //    moved INTO the Atlas Pro carousel (David: “put that photo in the
@@ -1647,38 +1647,38 @@ export const en: Dict = {
   lessons: {
     title: 'Handpan Lessons in Paris & Online | David Lesage',
     description:
-      'Now Music Academy: learn the handpan, calabash rhythm (Now Groove) and the gonilélé harp — through colours, shapes and emotions. Online worldwide or in person in Paris, plus group workshops.',
+      'Now Music Academy: learn the handpan, calabash rhythm and the gonilélé harp through colours, shapes and emotions.',
     heroEyebrow: 'Now Music Academy',
     heroTitle: 'Learning through a holistic approach to music',
-    heroLead: 'Handpan, calabash rhythm and gonilélé harp — through colours, shapes and emotions. Online anywhere in the world, or in person in Paris.',
+    heroLead: 'Handpan, calabash rhythm and gonilélé harp, through colours, shapes and emotions. Online anywhere in the world, or in person in Paris.',
     ctaBook: 'Book a lesson',
     ctaWorkshop: 'See the workshops',
     universesEyebrow: 'Three worlds',
     universesTitle: 'What you can learn with me',
     universes: [
-      { t: 'Handpan', d: 'The visual method: colours, constellations and emotions make harmony clear and memorable — on acoustic handpan and on Neotone.', cta: 'Discover the app' },
-      { t: 'Rhythm & Calabash', d: 'My Now Groove method: learn rhythm through visual emoticons, on the calabash. Playful, accessible to all and deep.', cta: 'The Now Groove method' },
-      { t: 'Gonilélé harp', d: 'Discover the travel harp-lute: tuning, intuitive and meditative playing. Taught by me, ambassador of La Maison du Ngoni.', cta: 'Discover the Gonilélé' },
+      { t: 'Handpan', d: 'The visual method: colours, constellations and emotions make harmony clear and memorable, on acoustic handpan and Neotone alike.', cta: 'Discover the app' },
+      { t: 'Rhythm & Calabash', d: 'My Now Groove method: learn rhythm on the calabash through visual emoticons. Playful, accessible to everyone and full of depth.', cta: 'The Now Groove method' },
+      { t: 'Gonilélé harp', d: 'Discover the travel harp-lute: tuning, and an intuitive, meditative way of playing. I teach it as an ambassador for La Maison du Ngoni.', cta: 'Discover the Gonilélé' },
     ],
     workshopsEyebrow: 'Group workshops',
-    workshopsTitle: 'Calendar of rhythm workshops · calabash',
+    workshopsTitle: 'Rhythm workshop calendar · calabash',
     workshopsIntro: 'In-person Now Groove rhythm workshops on the calabash, in a friendly and joyful atmosphere.',
-    workshopsEmpty: 'Upcoming dates in preparation — write to me to be notified first.',
+    workshopsEmpty: 'Next dates in preparation: write to me to be the first to know.',
     workshopsCta: 'See all the dates',
     workshopsContact: 'Questions & sign-ups:',
     promiseEyebrow: 'My teaching promise',
     promiseTitle: 'The visual method, in lessons',
-    promiseIntro: 'I use Handpan Constellation Studio in lessons: colours, chord constellations and emotions make harmony clear and memorable — whatever your level, from curious child to seasoned musician.',
+    promiseIntro: 'I use Handpan Constellation Studio in lessons: colours, chord constellations and emotions make harmony clear and memorable, whatever your level, from curious child to seasoned musician.',
     pillars: [
       { t: 'Understand', d: 'See the structure of music instead of enduring it: each chord becomes a shape and a colour.' },
-      { t: 'Memorise', d: 'You remember through shape and emotion, not by rote. The bearings stay stable from one scale to the next.' },
-      { t: 'Play & accompany', d: 'The handpan becomes a true accompaniment instrument — sing over the songs you love.' },
+      { t: 'Memorise', d: 'You remember through shape and emotion, not by rote. Your reference points stay the same from one scale to the next.' },
+      { t: 'Play & accompany yourself', d: 'The handpan becomes a true accompaniment instrument: sing over the songs you love.' },
     ],
     // 📷 27/08/2026 — the photo that proves `promiseIntro`. See the long note
     //    in dict.ts (FR). A real lesson: a STUDENT's hand (not David's), the
     //    app open in front of them in Logic mode. "Logic mode" is the app's own
     //    mode name (studio.modes[0]), not Logic Pro.
-    methodPhotoAlt: 'During a lesson: a student’s hand playing a wooden Neotone, with the laptop right beside showing Handpan Constellation Studio in Logic mode — the circle of degrees in colour, one degree’s explanation bubble open on screen.',
+    methodPhotoAlt: 'During a lesson: a student’s hand playing a wooden Neotone, with the laptop right beside it showing Handpan Constellation Studio in Logic mode, the circle of degrees in colour, one degree’s explanation bubble open on screen.',
     methodPhotoCaption: 'In a lesson, I keep Logic mode open in front of the student: one degree at a time, explained on screen while they play.',
     // Lightbox labels: the lesson photo opens full screen.
     lightbox: { close: 'Close', zoom: 'Enlarge photo' },
@@ -1687,7 +1687,7 @@ export const en: Dict = {
     formulas: [
       { title: 'Private lesson · 1h', price: 'from €{lesson60}', text: 'Online or in person in Paris. Handpan, calabash rhythm or gonilélé: we work on what moves you.' },
       { title: 'Private lesson · 1h30', price: 'from €{lesson90}', text: 'The ideal format to go further: harmony, rhythm, accompaniment, stage and studio tips.' },
-      { title: 'Group workshop', price: 'On request', text: 'Group sessions in a small setting (calabash rhythm, handpan…), in a friendly atmosphere. Format and venue on request.' },
+      { title: 'Group workshop', price: 'On request', text: 'Small-group sessions (calabash rhythm, handpan…) in a friendly atmosphere. Format and venue on request.' },
     ],
     footnote: 'Pay what you want, from the amount shown. Booking by email. In-person lessons in Paris are a natural bridge to the showroom and gatherings.',
     packageTitle: '4-lesson package over 2 months',
@@ -1696,7 +1696,7 @@ export const en: Dict = {
     faqEyebrow: 'FAQ',
     faqTitle: 'Frequently asked questions about the lessons',
     faq: [
-      { q: 'Can you learn handpan without reading music?', a: 'Yes, that is the whole point of the method. The visual approach — the colours of the notes and the shapes of the chords — replaces music theory to help you progress fast.' },
+      { q: 'Can you learn handpan without reading music or learning theory?', a: 'Yes, that is the whole point of the method. The visual approach (the colours of the notes and the shapes of the chords) replaces music theory and notation to help you progress fast.' },
       { q: 'How much does a handpan lesson cost?', a: 'Lessons are pay-what-you-want above a minimum: from €{lesson60} for 1 hour, from €{lesson90} for 1.5 hours, online or in person in Paris. With the 4-lesson package (to be used within 2 months), it is from €{pack60} (1h) or from €{pack90} (1h30), that is from €{packLesson60} or €{packLesson90} per lesson. Group workshops are available on request.' },
       { q: 'Do online handpan lessons actually work?', a: 'Yes, lessons are given online anywhere in the world, using the same visual method as in person. All you need is your instrument and a connection.' },
     ],
@@ -1707,49 +1707,49 @@ export const en: Dict = {
     // "an accessory of the Neotone". Acoustic is now in the SEO title, the
     // description, the hero badges and the second section — without demoting
     // the Neotone, which stays the flagship of the ecosystem.
-    title: 'Handpan Constellation Studio — acoustic handpan & Neotone',
+    title: 'Handpan Constellation Studio – acoustic handpan & Neotone',
     description:
-      'On any acoustic handpan — and on the Neotone. Learn through colours (ChromaKeys), chord Constellations and emotions, with no music theory.',
-    heroEyebrow: 'The app — an original project by David Lesage',
+      'On any acoustic handpan, and on the Neotone. Learn through colours (ChromaKeys), chord Constellations and emotions, without reading music or learning theory.',
+    heroEyebrow: 'The app: an original project by David Lesage',
     heroTitleA: 'Handpan Constellation Studio',
     heroTitleB: 'Music becomes visible',
     // ⚠️ 27/08/2026 — "first" removed here too: same hierarchy problem as the section title.
     //    Acoustic is still NAMED FIRST in the sentence (the 22/08 gain), but "as much as" puts
     //    both instruments on the same level.
-    heroLead: 'On any handpan: your acoustic handpan as much as the electronic Neotone. A visual approach to music — through colours, emotions and geometry — to understand, memorise and play.',
+    heroLead: 'On any handpan: your acoustic handpan as much as the electronic Neotone. A visual approach to music, through colours, emotions and geometry, to understand, memorise and play.',
     // Badges shown right under the title, before the lead: "which instrument
     // does this work on?" is answered without reading a sentence.
     heroBadges: ['Any acoustic handpan', 'Neotone electronic handpan'],
     ctaWait: 'Join the waiting list',
     ctaOpen: 'Open the app',
-    problemEyebrow: 'The observation',
+    problemEyebrow: 'The problem',
     problemTitle: 'The handpan has no visual notation',
     problem1Title: 'No notation shows the instrument',
-    problem1Text: 'It’s a magnificent instrument — but how do you write it down? You learn by ear, by imitation, and past the first melodies you replay the same patterns: the instrument becomes a comfort zone you never leave.',
+    problem1Text: 'It’s a magnificent instrument, but how do you write it down? You learn by ear, by imitation, and once you’re past the first melodies you keep replaying the same patterns: the instrument becomes a comfort zone you never get out of.',
     problem2Title: 'On an electronic handpan, your bearings fade',
-    problem2Text: 'The Neotone can switch scales endlessly — a strength, but a trap: the notes under your fingers are never the same twice. No fixed point — your brain overloads, as if you had to relearn the instrument with every scale.',
+    problem2Text: 'The Neotone can switch scales endlessly: a strength, but a trap, because the notes under your fingers are never the same twice. With no fixed point, your brain overloads, as if you had to relearn the instrument with every scale.',
     chromaEyebrow: 'Colours & geometry',
     chromaTitle: 'What if we made the invisible visible?',
     chromaIntro:
-      'Instead of note names — which change constantly — the app shows the <strong>structure</strong> of music. The seven degrees each receive a colour and an emotion. ChromaKeys give each note its own. And every chord draws a glowing geometric shape.',
+      'Instead of note names, which change constantly, the app shows the <strong>structure</strong> of music. The seven degrees are each given a colour and an emotion. ChromaKeys give each note its own. And every chord draws a glowing geometric shape.',
     chromaPunch: 'What was invisible becomes visible.',
     constelEyebrow: 'The language of Constellations',
     constelTitle: 'The handpan’s new visual tablature',
-    constelIntro: 'Beyond the ChromaKeys colours, the app links the notes of a chord: it draws a glowing figure — a <strong>chord constellation</strong>. Three ways to trace it.',
+    constelIntro: 'Beyond the ChromaKeys colours, the app links the notes of a chord: it draws a glowing figure, a <strong>chord constellation</strong>. There are three ways to draw it.',
     constellations: [
       { t: 'Polygon', d: 'The closed shape of a chord: all its notes linked. You recognise the chord at a glance, by its shape.' },
-      { t: 'Open', d: 'An open trace that follows the path of the notes — ideal for visualising a hand movement.' },
-      { t: 'Hands', d: 'The trace designed for the gesture: which hand, which note. You read your playing directly.' },
+      { t: 'Open', d: 'An open line that follows the path of the notes: ideal for visualising a hand movement.' },
+      { t: 'Hands', d: 'A line designed around the gesture: which hand, which note. You read your playing straight from it.' },
     ],
     degEyebrow: 'Degrees & emotions',
     degTitle: 'Each degree becomes an emotion',
-    degIntro: 'Playing a progression means telling a story: leaving home, setting off on an adventure, crossing a moment of tension, then coming back. You no longer memorise abstract rules — you feel, and you see.',
+    degIntro: 'Playing a progression means telling a story: leaving home, setting off on an adventure, crossing a moment of tension, then coming back. You no longer memorise abstract rules: you feel, and you see.',
     modesEyebrow: 'The app, in four modes',
     modesTitle: 'The perfect companion for your instrument',
     modesIntro: 'The whole method fits into a single web app.',
     modes: [
       { t: 'Logic', d: 'The heart of the app. Play the 7 chords of any scale, build your progressions, follow the chords of the songs you love.' },
-      { t: 'Sound Atlas', d: 'Explore scales from all over the world — Japan, the Orient, Africa, Celtic music… Listen to them, learn them, travel.' },
+      { t: 'Sound Atlas', d: 'Explore scales from all over the world: Japan, the Middle East, Africa, Celtic music… Listen to them, learn them, travel.' },
       { t: 'Create', d: 'Compose your own custom scales, note by note and colour by colour, then keep them in your library.' },
       { t: 'MIDI Connect', d: 'The bridge between your Neotone and the app: your real playing appears live on the virtual handpan, and the app guides you through your chords and scales.' },
     ],
@@ -1763,18 +1763,18 @@ export const en: Dict = {
     //    3. ✅ CURRENT (27/08): both worlds on strictly equal footing, naming what the app
     //       reveals in each. The word "acoustic" must stay in this title.
     versionAcoTitle: 'Built for your acoustic handpan <span class="text-copper">and</span> for the Neotone',
-    versionAcoText: 'The app is exclusive to neither one nor the other: it is designed and built for both. But it doesn’t allow the same things on each — and that is exactly what makes both of them interesting. On an acoustic handpan, the frame is already there: the app makes it visible. On the Neotone, everything becomes possible: the app provides the frame. One app, two ways of revealing.',
+    versionAcoText: 'The app isn’t tied to one or the other: it is designed and built for both. But it doesn’t do the same things on each, and that is exactly what makes both of them interesting. On an acoustic handpan, the frame is already there: the app makes it visible. On the Neotone, everything becomes possible: the app sets the frame. One app, two ways of revealing.',
     // 🗣️ PULL QUOTE — David's own words. Both sentences form the quotation: the first
     //    names the difference, the second resolves it without taking sides.
-    duoQuote1: 'Electronics offers everything and reveals nothing; an acoustic imposes a frame — and a frame is something you explore.',
+    duoQuote1: 'The electronic instrument offers everything and reveals nothing; the acoustic one imposes a frame, and a frame is something you explore.',
     duoQuote2: 'A frame you understand makes you freer than an infinite space where you lose yourself.',
     duoQuoteSource: 'David Lesage',
     duoAcoTitle: 'On an acoustic handpan',
-    duoAcoText: 'Your instrument has its notes, its scale, its outlines: the frame is already there. The app makes it visible, and what looked like a constraint becomes ground to explore. The acoustic mode is free: you don’t need a Neotone to get started.',
+    duoAcoText: 'Your instrument has its notes, its scale, its outlines: the frame is already there. The app makes it visible, and what looked like a constraint becomes territory to explore. The acoustic mode is free: you don’t need a Neotone to get started.',
     versionAcoBullets: [
       'Your scale appears in colour on a photo of your handpan.',
       'Learn new chords and progressions, guided step by step.',
-      'Explore an atlas of scales by emotion — and imagine your own, custom-made.',
+      'Explore an atlas of scales by emotion, and imagine your own, custom-made.',
     ],
     versionAcoCaption: 'Acoustic mode: Handpan Constellation Studio’s visual approach, on your own handpan.',
     // 📷 THE TWO PHOTOS — THE PICTURE OF "AND". Same framing, same dimensions
@@ -1788,11 +1788,11 @@ export const en: Dict = {
     versionAcoCta: 'Open the app',
     versionAcoYishamaLink: 'Where this approach came from: my two Yishama handpans',
     versionNeoTitle: 'On the Neotone',
-    versionNeoText: 'Every scale in a single instrument: everything becomes possible. That is exactly where a frame becomes necessary — otherwise you get lost in the infinite. The app provides the frame the instrument no longer sets.',
+    versionNeoText: 'Every scale in a single instrument: everything becomes possible. That is exactly where a frame becomes necessary, otherwise you get lost in the infinite. The app sets the frame the instrument itself no longer sets.',
     versionNeoBullets: [
       'Link your Neotone to the app via MIDI: your playing appears live on the virtual handpan.',
       'Change scale as often as you like: the colours of the 7 degrees never move.',
-      'The app guides you through your chords and scales — on the one you have just loaded.',
+      'The app guides you through your chords and scales, on whichever scale you’ve just loaded.',
     ],
     versionNeoCta: 'Discover the Neotone',
     // Lightbox labels: both photos of the pair open full screen.
@@ -1801,27 +1801,27 @@ export const en: Dict = {
     seriesTitle: 'Discover the app on video',
     seriesIntro: 'A series of short videos, one feature at a time. Here is the first one.',
     seriesEyebrow: 'The video series',
-    storyEyebrow: 'The story — by David Lesage',
+    storyEyebrow: 'The story, by David Lesage',
     storyTitle: 'The tool I wish I’d been taught as a child',
     storyP1: 'When I discovered the handpan, I hit the wall of my childhood again: no method, and the difficulty of visually organising the paths of notes. Then, with the Neotone, a new difficulty: the notes change place with every scale.',
-    storyP2: 'So I built the tool I wish I’d been given: a visual approach to harmony, through colours, shapes and emotions — to understand, memorise, and finally sing while accompanying myself on the handpan.',
-    storyP3: 'It’s the logical follow-up to <strong>Now Groove</strong>, my rhythm method (2021) that makes rhythm accessible through visual emoticons. Handpan Constellation Studio does the same for harmony: a tool designed by a musician, to raise the handpan to the rank of an accompaniment instrument — like the guitar or the piano.',
+    storyP2: 'So I built the tool I wish I’d been given: a visual approach to harmony, through colours, shapes and emotions, to understand, memorise, and finally sing while accompanying myself on the handpan.',
+    storyP3: 'It’s the logical follow-up to <strong>Now Groove</strong>, my 2021 rhythm method, which makes rhythm accessible through visual emoticons. Handpan Constellation Studio does the same for harmony: a tool designed by a musician, to make the handpan a true accompaniment instrument, like the guitar or the piano.',
     waitTitle: 'The app is available',
-    waitText: 'Create your free account (first name, last name, email) to get started, right in your browser. By continuing, you accept the Terms and the privacy policy. Choosing your plan and secure payment happen inside the app.',
+    waitText: 'Create your free account (first name, last name, email) to get started, right in your browser. By continuing, you accept the Terms of Use and the privacy policy. You choose your plan and pay securely inside the app.',
     waitButton: 'Open the app',
     contribEyebrow: 'A living community',
-    contribTitle: 'You’re not downloading an app — you’re joining a living project',
+    contribTitle: 'You’re not downloading an app: you’re joining a living project',
     contribIntro:
-      'Handpan Constellation Studio evolves constantly, shaped by the people who use it. Your feedback, sent in one click from the app, is read and directly shapes what comes next.',
+      'Handpan Constellation Studio evolves constantly, fed by the people who use it. Your feedback, sent in one click from the app, is read and directly guides what comes next.',
     contribCards: [
-      { t: 'Constantly evolving', d: 'New features, scales and modes ship regularly, and they’re included. The app you use today will be even richer tomorrow.' },
+      { t: 'Constantly evolving', d: 'New features, scales and modes arrive regularly, and they’re included. The app you use today will be even richer tomorrow.' },
       { t: 'Your feedback shapes the app', d: 'Straight from the app, you send your ideas and feedback in one click. Every message is read and steers the next updates.' },
       { t: 'A community, not a catalogue', d: 'You join a movement: making music visible and accessible. Together we build the tool we all wish we’d had as children.' },
     ],
     priceEyebrow: 'Pricing',
     priceTitle: 'Free, Essential, Studio',
     priceIntro:
-      'Start for free: free forever, no card needed. Move to Essential or Studio whenever you want to go further: the first month is free on monthly plans.',
+      'Start for free, forever, with no card needed. Move to Essential or Studio whenever you want to go further: the first month is free on monthly plans.',
     priceCta: 'Go Essential',
     priceStudioCta: 'Go Studio',
     pricePerYear: '/ year',
@@ -1833,7 +1833,7 @@ export const en: Dict = {
     pricePerMonth: '/ month',
     priceTtc: 'incl. VAT',
     priceTrial: '1-month free trial',
-    priceComing: 'Coming',
+    priceComing: 'Coming soon',
     priceFree: {
       name: 'Free',
       price: '',
@@ -1847,7 +1847,7 @@ export const en: Dict = {
     priceNote: 'Prices include VAT. The subscription is taken out and managed inside the app.',
     videosEyebrow: 'The app in motion',
     videosTitle: 'See Handpan Constellation Studio in action',
-    videosIntro: 'Twelve video demos of the app — tap a thumbnail to play it full screen.',
+    videosIntro: 'Twelve video demos of the app: tap a thumbnail to play it full screen.',
     videos: [
       { t: 'Choose the key', d: 'Set an anchor note (here C) and the 7 coloured degrees appear.' },
       { t: 'Hear the scale', d: 'The app plays the scale note by note on the handpan.' },
@@ -1860,16 +1860,16 @@ export const en: Dict = {
       { t: 'Play the chords', d: 'Hit play: each degree lights up in turn and its chord blooms.' },
       { t: 'Interactive learning', d: 'The handpan becomes a guided surface: touch a coloured note.' },
       { t: 'Sound Atlas', d: 'Browse a library of scales from around the world.' },
-      { t: 'Creation', d: 'Compose your own scale on the chromatic wheel.' },
+      { t: 'Creation', d: 'Build your own scale on the chromatic wheel.' },
     ],
     faqEyebrow: 'FAQ',
     faqTitle: 'The questions people ask me about Handpan Constellation Studio',
     faq: [
       { q: 'Do I need a Neotone to use Handpan Constellation Studio?', a: 'No. Handpan Constellation Studio works on any acoustic handpan, in the free acoustic mode, just as it does on the electronic Neotone handpan. You do not need the electronic instrument to get started.' },
-      { q: 'Does Handpan Constellation Studio work on an acoustic handpan?', a: 'Yes, the acoustic mode is free. You visualise your scale in colours and learn your chords directly on your own acoustic instrument.' },
-      { q: 'What are ChromaKeys?', a: 'They are the method’s colour system: each note is given a fixed colour. This lets you see the structure of the music at a glance, with no music theory required.' },
+      { q: 'Does Handpan Constellation Studio work on an acoustic handpan?', a: 'Yes, the acoustic mode is free. You visualise your scale in colour and learn your chords directly on your own acoustic instrument.' },
+      { q: 'What are ChromaKeys?', a: 'They are the method’s colour system: each note is given a fixed colour. This lets you see the structure of the music at a glance, without reading music or learning theory.' },
       { q: 'What is a chord Constellation?', a: 'It is the method’s visual tablature: each chord draws a geometric shape connecting its notes. You recognise and memorise your chords by their shape.' },
-      { q: 'Is Handpan Constellation Studio free?', a: 'Handpan Constellation Studio bundles a lot of features, and it’s your use that decides what’s free and what isn’t. Learning the handpan on your own, on your own acoustic instrument, is free: seeing your scale in colour, recognising your chords, playing, creating and exporting your scores. What goes beyond your personal practice is paid: the electronic Neotone/MIDI mode, advanced creation, cloud saving. And if you use it as a working tool in lessons you charge for, that’s a Teacher Licence — with the student space, the exercises and watermark-free scores that come with it. Up-to-date prices are just below.' },
+      { q: 'Is Handpan Constellation Studio free?', a: 'Handpan Constellation Studio bundles a lot of features, and it’s your use that decides what’s free and what isn’t. Learning the handpan on your own, on your own acoustic instrument, is free: seeing your scale in colour, recognising your chords, playing, creating and exporting your scores. What goes beyond your personal practice is paid: the electronic Neotone/MIDI mode, advanced creation, cloud saving. And if you use it as a working tool in lessons you charge for, that’s a Teacher Licence, with the student space, the exercises and watermark-free scores that come with it. Up-to-date prices are just below.' },
     ],
   },
   // ══════════════════════════════════════════════════════════════════════════
@@ -1897,18 +1897,18 @@ export const en: Dict = {
   //    URL slugs all stay as they are. Only human-read TEXT changed.
   // ══════════════════════════════════════════════════════════════════════════
   showroom: {
-    title: 'Where to try a handpan in Paris — acoustic and electronic, free | David Lesage',
+    title: 'Try a handpan in Paris: acoustic and electronic | David Lesage',
     description:
-      'Where to try a handpan in Paris, acoustic and electronic on the same day: the Neotone electronic handpan, my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. David Lesage Showroom, 29 rue des Orteaux, Paris 20th: free gatherings, private demonstrations and lessons.',
-    heroEyebrow: 'David Lesage Showroom · Le Nid, Paris 20th',
+      'Where to try a handpan in Paris, acoustic and electronic on the same day: the Neotone, my Yishama handpans and the Gonilélé harp, in Paris (20th arrondissement).',
+    heroEyebrow: 'David Lesage Showroom · Le Nid, Paris (20th arrondissement)',
     // 🔎 06/09/2026 — see dict.ts: the <h1> said "David Lesage Showroom", a
     // brand name nobody searches for. The brand moves into the eyebrow (it is
     // not lost) and the title says what you actually come here to do.
-    heroTitle: 'Try a handpan in Paris — acoustic and electronic, the same day',
+    heroTitle: 'Try a handpan in Paris: acoustic and electronic, on the same day',
     // 🚨 See dict.ts: opened up on 18/08/2026 at David's explicit request. The
     // Neotone stays the headline act — we WIDEN, we do not replace it with a
     // flat list where everything weighs the same.
-    heroLead: 'A free gathering, fifteen of us, and everything I play brought out for you: the Neotone as the headline act, my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. You hear them, you play them, the same day.',
+    heroLead: 'A free gathering, around fifteen people, and everything I play brought out for you: the Neotone as the headline act, my Yishama acoustic handpans, the Gonilélé African harp, the calabash and the handpan microphones. You hear them, you play them, on the same day.',
 
     // ══════════════════════════════════════════════════════════════════════
     // 🅓 THE PROMISE — THE FOUR ENCOUNTERS (06/09/2026)
@@ -1920,42 +1920,42 @@ export const en: Dict = {
     // instruments, with the others, with themselves."
     // ⛔ Those four encounters are the STRUCTURE of this block, in HIS order.
     //    "with themselves" stays last and never turns into a sales argument.
-    promiseEyebrow: 'What you come here for',
-    promiseTitle: 'A rare experience, all in one single place',
-    promiseLead: 'Trying a Neotone for free, and with it other rare instruments and their accessories: that is unique, all in one single place. But what is precious is the experience of the encounter — with me, with the instruments, with the others, with yourself.',
+    promiseEyebrow: 'What you come to experience',
+    promiseTitle: 'A rare experience, all in one place',
+    promiseLead: 'Trying a Neotone for free, and with it other rare instruments and their accessories, all in one place: that’s unique. But what’s precious is the experience of the encounter: with me, with the instruments, with the others, with yourself.',
     promise: [
       {
         t: 'With me',
-        d: 'You ask your questions and you get the answers live, out loud. Not a product sheet: someone in front of you who plays these instruments every day, and who answers everyone, from the curious beginner to the seasoned musician.',
+        d: 'You ask your questions and get the answers there and then, in person. Not a product sheet: someone in front of you who plays these instruments every day, and who answers everyone, from the curious beginner to the seasoned musician.',
       },
       {
         t: 'With the instruments',
-        d: 'You live your own experience of the instrument: you are the one playing. The Neotone, my acoustic handpans, the Gonilélé harp, the calabash, the microphones — rare instruments you will find gathered nowhere else, and that you can pick up without buying anything.',
+        d: 'You have your own experience of the instrument: you’re the one playing. The Neotone, my acoustic handpans, the Gonilélé harp, the calabash, the microphones: rare instruments you won’t find gathered in one place anywhere else, and that you can pick up without having to buy anything.',
       },
       {
         t: 'With the others',
-        d: 'You meet other enthusiasts. Fifteen of us, no more: that is what makes people actually talk to each other, and what creates a bond — the conversations carry on long after the end.',
+        d: 'You meet other enthusiasts. There are around fifteen of us, no more: that’s what makes people really talk to each other and form real bonds. The conversations carry on long after the end.',
       },
       {
         t: 'With yourself',
         d: 'The hardest one to describe, and the only one nobody can live for you: what it does to you to put your hands on these instruments and hear yourself play them.',
       },
     ],
-    promiseNote: 'You will also discover Handpan Constellation Studio, the app I created to make music visible. And it is free: the public gathering costs nothing — you just need to book your place.',
+    promiseNote: 'You’ll also discover Handpan Constellation Studio, the app I created to make music visible. And it’s free: the public gathering costs nothing, you just need to book your place.',
 
     // 🤝 COMING TOGETHER (06/09/2026) — see dict.ts. Deliberately sober: no
     //    share banner, no social icons. Native share, clipboard fallback.
-    shareTitle: 'It is better lived together',
-    shareText: 'You can come with someone — it is often better that way: you leave with somebody to talk it over with. Just send them this page, and let each of you book a place (one booking per person, so I know how many we will be).',
+    shareTitle: 'It’s better shared',
+    shareText: 'You can bring someone along. It’s often better that way: you leave with somebody to talk it over with. Just send them this page, and each of you book your own place (one booking per person, so I know how many of us there will be).',
     shareCta: 'Send this page to someone',
-    shareCopied: 'Link copied — just paste it',
+    shareCopied: 'Link copied: now just paste it',
 
     // See dict.ts: this CTA is the OPTION, shown BELOW the next free showcase.
-    ctaBook: 'Book a private one-to-one slot (paid)',
+    ctaBook: 'Book a private one-to-one time slot (paid)',
     // "just sign up" played the booking down: it is required.
     // 🔁 06/09/2026 — the cap is turned around: see dict.ts. "Limited places"
     //    read as a caveat; the number is David's own ("fifteen of us, no more").
-    ctaBookNote: 'Paid one-to-one slot: {grid}. Public gatherings, on the other hand, are free — fifteen of us, no more, so that everyone gets time to play · booking required.',
+    ctaBookNote: 'Paid one-to-one time slot: {grid}. Public gatherings, on the other hand, are free: around fifteen people, no more, so that everyone gets time to play · booking required.',
     // ⓘ No longer rendered since 17/08/2026 — see dict.ts.
     ctaNext: 'See the next gathering',
     exclBadge: '★ World first',
@@ -1966,8 +1966,8 @@ export const en: Dict = {
     //    workshop in Budapest."
     //    ⛔ The claim is NOT removed nor weakened beyond that reservation: it
     //    remains a world exclusivity, simply an accurate one.
-    exclText: 'I’ll own this claim: as far as I know, after the manufacturing workshop in Budapest, Le Nid is the first place in the world where these instruments can be tried AND bought directly, on site. In practice, that means you can buy your Neotone¹ right here and take it home immediately — with no manufacturing wait. My Yishama handpans are not for sale: they are my personal instruments, there to be heard and played.',
-    exclArgs: ['7% discount — the best price on the market (vs. 5% online)', 'No manufacturing delay, no waiting', 'Very limited stock — only a few instruments available'],
+    exclText: 'I’ll own this claim: as far as I know, after the manufacturing workshop in Budapest, Le Nid is the first place in the world where these instruments can be tried AND bought directly, on site. In practice, that means you can buy your Neotone¹ right here and take it home immediately, with no manufacturing wait. My Yishama handpans are not for sale: they are my personal instruments, there to be heard and played.',
+    exclArgs: ['7% discount: the best price on the market (vs. 5% online)', 'No manufacturing delay, no waiting', 'Very limited stock: only a few instruments available'],
     // 🇫🇷 PENDING CLAIM — WRITTEN, PLACED, NOT PUBLISHED.
     // Only rendered when `FRANCE_EXCLUSIVITY_ACTIVE` is `true`
     // (src/data/showroom.ts) — today `false`. Full rationale, and the warning
@@ -2001,27 +2001,27 @@ export const en: Dict = {
     // ✂️ "On site · " dropped (21/08/2026): it is now the eyebrow of the PARENT
     //    section (`onsiteEyebrow`), so repeating it in each of its three
     //    chapters wrote it three times in the same screen.
-    duoEyebrow: 'Both handpan worlds',
+    duoEyebrow: 'The two worlds of the handpan',
     // 🚨 “the same AFTERNOON” → “the same DAY” on 21/08/2026 — see dict.ts.
     duoTitle: 'Acoustic and electronic handpan, the same day',
-    duoIntro: 'The showroom is not here to make you pick a side. Both worlds live next to each other: you hear them, you play them, you feel the difference in your hands. Not competition — completion.',
+    duoIntro: 'The showroom is not here to make you pick a side. Both worlds live side by side here: you hear them, you play them, you feel the difference in your hands. Not competition: completion.',
     duo: [
       {
         sub: 'Acoustic · Yishama',
         title: 'My two Yishama handpans',
-        text: 'My personal instruments are here. You play them, you compare them, and you hear what hammered steel does in a room — unamplified first, then miked.',
+        text: 'My personal instruments are here. You play them, you compare them, and you hear what hammered steel does in a room, unamplified first, then miked.',
         points: ['Two 18-note instruments, tuned to 432 Hz', 'Miked with the Hisong and Muling microphones'],
         cta: 'My story with Yishama',
       },
       {
         sub: 'Electronic · Neotone',
-        title: 'Both Neotone',
-        text: 'One on a speaker, one on headphones. You move from one scale to the next, try the effects and the recorder — for as long as you need.',
+        title: 'The two Neotones',
+        text: 'One on a speaker, one on headphones. You move from one scale to the next, try the effects and the recorder, for as long as you need.',
         points: ['Every scale in a single instrument', 'One on a speaker, one on headphones, effects included'],
         cta: 'Discover the Neotone',
       },
     ],
-    duoNote: 'To be clear: only the Neotone is in stock here — it is the only one you can take home the same day. The Yishamas are my personal instruments: they are here to be heard and played, and if you want your own, I point you to the workshop (I am an ambassador and affiliate).',
+    duoNote: 'To be clear: only the Neotone is in stock here, so it’s the only one you can take home the same day. The Yishamas are my personal instruments: they are here to be heard and played, and if you want your own, I’ll point you to the workshop (I’m an ambassador and an affiliate).',
 
     // ── AND NOT ONLY THE HANDPAN (18/08/2026) ──────────────────────────────
     // Facts sourced strictly from elsewhere on the site — see dict.ts for the
@@ -2030,16 +2030,16 @@ export const en: Dict = {
     // ✂️ "On site · " dropped, same reason as `duoEyebrow` above.
     alsoEyebrow: 'And not only the handpan',
     alsoTitle: 'Everything else I play is here too',
-    alsoIntro: 'The Neotone is the headline act of the gathering — but you don’t have to come for it. These instruments are out on the floor too, and you can pick them up just like the handpans.',
+    alsoIntro: 'The Neotone is the headline act of the gathering, but you don’t have to come for it. These instruments are out on the floor too, and you can pick them up just like the handpans.',
     also: [
       {
         title: 'The Gonilélé harp',
-        text: 'The West African harp-lute from La Maison du Ngoni, in its travel version: a calabash body, a noble-wood neck, strings tuned to a pentatonic scale. Intuitive and meditative — you can approach it knowing nothing at all.',
+        text: 'The West African harp-lute from La Maison du Ngoni, in its travel version: a calabash body, a fine hardwood neck, strings tuned to a pentatonic scale. Intuitive and meditative: you can pick it up knowing nothing at all.',
         cta: 'Discover the Gonilélé',
       },
       {
         title: 'The calabash',
-        text: 'I have played the calabash as a percussion instrument since 2012. It is also the heart of my Now Groove rhythm method: an organic drum kit with a natural sound, with its mat and its shakers.',
+        text: 'I have played the calabash as a percussion instrument since 2012. It is also the heart of my Now Groove rhythm method: an organic drum kit with a natural sound, complete with its mat and shakers.',
         cta: 'See the calabash kit',
       },
       {
@@ -2066,7 +2066,7 @@ export const en: Dict = {
     //   Julien, the code is David-Tambour. No workshop, no town, no seniority.
     tambourEyebrow: 'Partner · L’Âme du Tambour',
     tambourTitle: 'The shamanic frame drum',
-    tambourText: 'The handcrafted frame drums of Julien — “l’Âme du Tambour”, an aligned, passionate and honest maker. The drum is not out at every session: it comes out depending on who is there and what interests them. Tell me it draws you when you book, and I take it into account.',
+    tambourText: 'Julien’s handcrafted frame drums, from “l’Âme du Tambour”: an aligned, passionate and honest maker. The drum isn’t out at every session: it comes out depending on who’s there and what interests them. If it draws you, tell me when you book and I’ll take it into account.',
     tambourCta: 'See the drum in the shop',
 
     // ── 🎠 “The rest of what I play” carousel (20/08/2026) — see dict.ts.
@@ -2098,7 +2098,7 @@ export const en: Dict = {
     //    voiced yet. He said he tried them, not what he thinks of them.
     atlasEyebrow: 'New · Atlas partner',
     atlasTitle: 'And something to put your handpan on',
-    atlasIntro: 'Atlas builds handpan tripods in Italy: the instrument rests on a floating disc held by eight scratch-resistant magnets, with nothing screwed or strapped onto the metal. I have become a partner of the brand, and they sent me both models as demonstration stands. They are here alongside the handpans — you can set an instrument on one and adjust the height yourself.',
+    atlasIntro: 'Atlas builds handpan tripods in Italy: the instrument rests on a floating disc held by eight scratch-resistant magnets, with nothing screwed or strapped onto the metal. I have become a partner of the brand, and they sent me both models as demonstration stands. They’re here alongside the handpans: you can set an instrument on one and adjust the height yourself.',
     atlasModels: [
       {
         name: 'Atlas Pro',
@@ -2118,21 +2118,21 @@ export const en: Dict = {
     // 🚨 Fixed 21/08/2026 — see dict.ts: showcases can be held in the morning
     //    or the afternoon, so “evening” was simply wrong. No time of day in the
     //    page copy: the actual hour lives in the agenda, and nowhere else.
-    lieuTitle: 'What a gathering at Le Nid looks like (Paris 20th)',
-    lieuIntro: 'A workshop-flat in the 20th arrondissement: bare wood floors, fairy lights, and everyone sitting in a circle around the instruments. Fifteen of us, no more.',
+    lieuTitle: 'What a gathering at Le Nid in Paris (20th arrondissement) looks like',
+    lieuIntro: 'A workshop-flat in the 20th arrondissement: parquet floors, fairy lights, and everyone sitting in a circle around the instruments. Around fifteen of us, no more.',
     photoAlt: {
       // 🚧 Fallback photo — see dict.ts: the file is a VIDEO THUMBNAIL, the
       //    title “David Lesage Showroom” is burnt into the image and cannot be
       //    removed. It is therefore described in the alt text. Drop the last
       //    sentence once David supplies a clean photo.
       accueil:
-        'David Lesage, arms open, welcoming you from the middle of the showroom’s main room: old wooden floor, white walls under the roof beams, a wall rosette, a handpan on its tripod behind him, cushions and a low sofa at the far end. (The words “David Lesage Showroom” are burnt into the image.)',
+        'David Lesage, arms open, welcoming you from the middle of the showroom’s main room: old wooden floor, white walls under the roof beams, a wall rosette, a handpan on its tripod behind him, cushions and a low sofa at the far end. (The words “David Lesage Showroom” are overlaid on the image.)',
       vueEnsemble:
         'Wide view of a gathering at Le Nid: David Lesage sitting at the centre of the circle, handpans on stands behind him, the audience seated on the wooden floor, walls hung with fairy lights and a rosette above.',
       instruments:
         'The instruments set up at the showroom before the audience arrives: two Yishama acoustic handpans on tripods, two Neotone electronic handpans with their screen, a calabash resting on a red mat, all on an old wooden floor.',
       presentation:
-        'David Lesage, microphone in hand, introduces the showroom instruments: the Neotone and the Yishama handpans lined up behind him, under the wall rosette.',
+        'David Lesage, microphone in hand, introduces the showroom instruments: the Neotones and the Yishama handpans lined up behind him, under the wall rosette.',
       gonilele:
         'David Lesage holding the Gonilélé, the African calabash harp, showing the Hisong AirStudio S1 microphone used to amplify it.',
       // 📷 Added 20/08/2026 — see dict.ts: the SAME room as `vueEnsemble`, but
@@ -2146,19 +2146,19 @@ export const en: Dict = {
     //    TWICE on the same page. `vueEnsemble` is kept as a figure: it is the
     //    page's only proof that the event exists and draws people.
     photoCaption: {
-      vueEnsemble: 'A gathering at Le Nid — audience in a circle, instruments at the centre.',
+      vueEnsemble: 'A gathering at Le Nid: the audience in a circle, the instruments at the centre.',
       grandePiece: 'The same room in daylight, before everything is set up.',
       // 🗓️ 30/08/2026 (David): “complete it with all the other instruments and
       //    microphones”. This caption does NOT describe the photo (that is
       //    `photoAlt.instruments`, unchanged): since 21/08 it stands for the
       //    WHOLE section — hence the full inventory. Everything listed is
       //    really on site; add nothing that is not.
-      instruments: 'What waits for you on arrival: the Neotones, my Yishama handpans, the Gonilélé, the calabash, the microphones and the shamanic drum — all ready to be played.',
+      instruments: 'What’s waiting for you when you arrive: the Neotones, my Yishama handpans, the Gonilélé, the calabash, the microphones and the shamanic drum, all ready to be played.',
       // 🚨 Fixed 20/08/2026 (David): the previous line said “before you pick
       //    up the mallets”. A handpan is played WITH THE HANDS, and no
       //    mallets are used at the showcases. Do not reintroduce them.
       presentation: 'The introduction, before you put your hands on the instruments.',
-      gonilele: 'The Gonilélé, the African calabash harp — and the mic that amplifies it.',
+      gonilele: 'The Gonilélé, the African calabash harp, with the mic that amplifies it.',
     },
     // ── 🖼️ THE « In pictures » CAROUSEL — 21/08/2026 (evening). See dict.ts:
     // it is no longer a section of its own but the 4th chapter of "Everything
@@ -2170,7 +2170,7 @@ export const en: Dict = {
     galleryEyebrow: 'In pictures',
     galleryTitle: 'The instruments and the gear, up close',
     galleryIntro: 'Swipe with your finger, or click a photo to enlarge it.',
-    galleryAltFallback: 'Photo of the David Lesage showroom — Le Nid, Paris 20th.',
+    galleryAltFallback: 'Photo of the David Lesage showroom: Le Nid, Paris (20th arrondissement).',
     galleryAlt: {
       demoNeotone1:
         'David Lesage standing during a demonstration: he holds a Neotone electronic handpan facing the seated audience, in front of the wall of fairy lights.',
@@ -2198,11 +2198,11 @@ export const en: Dict = {
     //    `agendaMoreTitle` as its title, `agendaMoreText` as its intro, under
     //    the `individualEyebrow` eyebrow.
     eventsEyebrow: 'What you experience',
-    eventsTitle: 'Test, meet, walk away with',
+    eventsTitle: 'Try, meet, take one home',
     // Eyebrow of the bottom section — says what it really is: the PAID,
     // one-to-one, by-appointment slot. The only one on the whole page.
     individualEyebrow: 'One-to-one · by appointment',
-    eventsHighlight: 'Most asked for at the start',
+    eventsHighlight: 'Most requested since launch',
     // 🚨 THE 1st ENTRY IS NO LONGER RENDERED (21/08/2026) — key KEPT.
     //    The page renders `events.slice(1)`, i.e. the three PAID formats only.
     //    It described the free public showcase in the middle of three paid
@@ -2211,24 +2211,24 @@ export const en: Dict = {
     //    instruments. See the French dictionary for the full reasoning and for
     //    how to bring it back.
     events: [
-      { t: 'Neotone gathering & instrument discovery', d: 'The free public gathering at Le Nid: David Lesage presents the Neotone — then everything is there to be tried, Yishama acoustic handpans, Gonilélé African harp, calabash and handpan microphones.', price: 'Public · Free' },
+      { t: 'Neotone gathering & instrument discovery', d: 'The free public gathering at Le Nid: David Lesage presents the Neotone. Then everything is there to try: Yishama acoustic handpans, the Gonilélé African harp, the calabash and handpan microphones.', price: 'Public · Free' },
       { t: 'Getting started with your instrument', d: 'Just received your Neotone, your handpan or your microphone? We set everything up together and walk through the controls, step by step. In person or online.', price: '' },
-      { t: 'Discovering the instruments', d: 'A private session at the showroom to try in depth whatever interests you: Yishama acoustic handpans, Neotone, calabash, Gonilélé, Hisong and Muling microphones.', price: '' },
-      { t: 'Lesson or one-to-one guidance', d: 'With David Lesage, whatever your level: create your scales, play pieces and techniques, or simply get clear on what you’re looking for. In person or online.', price: '' },
+      { t: 'Instrument discovery', d: 'A private session at the showroom to try in depth whatever interests you: Yishama acoustic handpans, Neotone, calabash, Gonilélé, Hisong and Muling microphones.', price: '' },
+      { t: 'Private lesson or one-to-one coaching', d: 'With David Lesage, whatever your level: create your scales, work on pieces and techniques, or simply get clear on what you’re looking for. In person or online.', price: '' },
     ],
     programEyebrow: 'How it unfolds',
     programTitle: 'What happens in a session',
-    programIntro: 'Each session lasts about 2 hours: a time to listen, watch demos and talk — then the moment when you get to play.',
+    programIntro: 'Each session lasts about 2 hours: a time to listen, watch demos and talk, then the moment when it’s your turn to play.',
     // 🚫 See dict.ts: David's own words. Step 4 is an ADDITION (18/08/2026) and
     // the last step gained one sentence — nothing was rewritten. This run-through
     // must stay identical to the one in the confirmation email.
     program: [
-      { t: 'The Neotone, live', d: 'I play for you: the raw sound, then with effects (octaver, reverb, looper) and singing along — the interface projected on screen.' },
-      { t: 'Handpan Constellation Studio, the app that makes music visible', d: 'A live demo: the colours, the chord constellations, and how you learn by seeing music instead of decoding sheet music.' },
-      { t: 'Acoustic sound & microphones', d: 'My two Yishama acoustic handpans, miked with the Hisong and Muling microphones — to compare and hear the difference.' },
-      { t: 'The Gonilélé and the calabash', d: 'The Gonilélé African harp and the calabash are out on the floor too: I play them, I explain how you get started with them — and if that is what you came for, you are exactly in the right place.' },
+      { t: 'The Neotone, live', d: 'I play for you: the raw sound, then with effects (octaver, reverb, looper) and with my voice, with the interface projected on screen.' },
+      { t: 'Handpan Constellation Studio, the app that makes music visible', d: 'A live demo: the colours, the chord constellations, and how you learn by seeing music instead of deciphering scores.' },
+      { t: 'Acoustic sound & microphones', d: 'My two Yishama acoustic handpans, miked with the Hisong and Muling microphones, so you can compare and hear the difference.' },
+      { t: 'The Gonilélé and the calabash', d: 'The Gonilélé African harp and the calabash are out too: I play them and explain how to approach them. And if you came for them, you’re in exactly the right place.' },
       { t: 'Your questions', d: 'An open exchange: I answer everyone, from the curious beginner to the seasoned musician.' },
-      { t: 'Your turn to play', d: 'Try both Neotone — one on a speaker, one on headphones — and my two Yishama acoustic handpans. Take your time to feel each instrument. The Gonilélé and the calabash are there too: pick them up.' },
+      { t: 'Your turn to play', d: 'Try both Neotones (one through a speaker, the other on headphones) and my two Yishama acoustic handpans. Take your time to feel each instrument. The Gonilélé and the calabash are there too: pick them up.' },
     ],
     // ── DEMO IN A LIVE SETTING (18/08/2026, David’s words) — ⚠️ “DEPENDING ON
     // WHO IS INTERESTED”: this is NOT systematic and must never be promised as a
@@ -2238,7 +2238,7 @@ export const en: Dict = {
     // no number of available instruments is stated.
     // Must stay identical to the confirmation email (`showcase-email.ts`).
     programBonusTitle: 'And sometimes it goes further',
-    programBonus: 'Depending on who is there and what they are interested in, the session can open up further: a demo of the Gonilélé in a live setting — with the effects and the octaver pedal, on a professional Bose PA in concert conditions —, the calabash, and even the shamanic drum “l’Âme du tambour”. It is not systematic: it depends on the people there that day and on what interests them. Tell me what draws you, I take it into account.',
+    programBonus: 'Depending on who is there and what interests them, the session can open up further: a demo of the Gonilélé in a live setting (with the effects and the octaver pedal, on a professional Bose PA in concert conditions), the calabash, and even the shamanic drum “l’Âme du tambour”. It doesn’t happen every time: it depends on the people there that day and what they’re interested in. Tell me what draws you and I’ll take it into account.',
     programNote: 'Children welcome, under their parents’ responsibility. The demonstration, talk and Q&A part can feel a little long for younger ones, so consider bringing a quiet activity, or a second adult to take over if needed.',
     // 🚨 NO EMAIL ADDRESS SHOWN HERE ANY MORE (18/08/2026) — see dict.ts.
     booking: 'Appointments are booked through the form only: you fill it in, your request reaches me, and I reply personally.',
@@ -2250,14 +2250,14 @@ export const en: Dict = {
     // 🚨 See dict.ts: booking is MANDATORY (David, 17/08/2026). The showcase
     // stays FREE — it is the booking that becomes required, never the entry
     // that becomes paid. Do not reintroduce "free entry" / "booking recommended".
-    agendaIntro: 'Neotone presentation by David Lesage — and a chance to discover everything else played at Le Nid: Yishama acoustic handpans, Gonilélé African harp, calabash, handpan microphones. All of it there to be tried. Free — fifteen of us, no more, so that everyone gets time to play · booking required.',
+    agendaIntro: 'Neotone presentation by David Lesage, and a chance to discover everything else played at Le Nid: Yishama acoustic handpans, the Gonilélé African harp, the calabash, handpan microphones. You can try all of it on the spot. Free: about fifteen people, no more, so that everyone gets time to play · booking required.',
     agendaEmpty: 'Upcoming dates in preparation',
     agendaEmptyText: 'The next dates are being finalised. Leave me your email and you’ll be the first to know, before the public announcement.',
     agendaEmptyCta: 'Notify me of the next date',
     agendaNextLabel: 'Next free gathering',
     agendaCount: '{n} upcoming date',
     agendaCountPlural: '{n} upcoming dates',
-    agendaSeats: 'Free, booking required · fifteen of us, no more',
+    agendaSeats: 'Free, booking required · about fifteen people, no more',
     agendaCta: 'Get notified about upcoming gatherings',
     // 🚨 RENDERED ONCE ONLY SINCE 21/08/2026, ABOVE THE LIST.
     //    It used to be the <h3> of EACH of the five agenda rows: five rows,
@@ -2266,7 +2266,7 @@ export const en: Dict = {
     //    small text underneath. Now each row's heading IS its date, and this
     //    shared label is written once, with the address, above the list.
     //    🚫 Do not put it back inside the loop.
-    agendaEventTitle: 'Neotone gathering — and every instrument to try',
+    agendaEventTitle: 'Neotone gathering, and every instrument there to try',
     // ⓘ `agendaEventTag` is no longer rendered per row — key kept. Free-ness is
     //    already stated three times around the list (`agendaTitle`,
     //    `agendaIntro`, `agendaSeats`).
@@ -2276,60 +2276,60 @@ export const en: Dict = {
     // rules only existed in the confirmation email — someone still hesitating
     // never saw them. They now sit on the page, before booking.
     agendaRulesTitle: 'Good to know before you come',
-    agendaRuleTimeTitle: 'You choose the date — the start time is firm',
-    agendaRuleTime: 'The session starts on time, with a presentation. Arriving late means missing information, and the whole group has to be brought back up to speed. If you arrive early, you can wait downstairs in the courtyard — no problem at all.',
+    agendaRuleTimeTitle: 'You choose the date, not the start time',
+    agendaRuleTime: 'The session starts on time, with a presentation. Arriving late means missing information, and the whole group has to go back over it. If you arrive early, you can wait downstairs in the courtyard, no problem at all.',
     agendaRuleDurationTitle: 'Allow plenty of time',
-    agendaRuleDuration: 'The programme runs about 2h — in practice it usually stretches closer to 3h, because the conversations keep going well past the end.',
+    agendaRuleDuration: 'The programme runs about 2 hours; in practice it’s more like 3 hours, because the conversations carry on well afterwards.',
     agendaRuleShareTitle: 'Bring something to share, if you feel like it',
-    agendaRuleShare: 'A fruit juice, a cake, anything to pass around. Entirely optional, never a condition for coming — simply in a spirit of sharing, to make the moment warmer.',
+    agendaRuleShare: 'A fruit juice, a cake, anything to pass around. Entirely optional, never a condition for coming: it’s simply in a spirit of sharing, to make the moment warmer.',
     agendaBookCta: 'Reserve my spot',
-    agendaMoreTitle: 'Can’t make these dates — or would you rather have a moment just for you?',
+    agendaMoreTitle: 'Can’t make these dates, or would you rather have a moment just for you?',
     agendaMoreText: 'Book an individual appointment with me, at another time that suits you.',
     accessEyebrow: 'How to get there',
-    accessTitle: 'Coming to the showroom, Paris 20th',
+    accessTitle: 'Coming to the showroom, Paris (20th arrondissement)',
     accessMaps: 'View on Google Maps →',
     access: [
-      { icon: '🚌', t: 'Bus', d: 'Lines 26 and 64 — Orteaux stop, a 3-min walk (≈ 250 m). Line 76 — Bagnolet-Orteaux stop.' },
-      { icon: '🚇', t: 'Metro', d: 'Line 9 — Maraîchers (5-7 min) or Buzenval (10 min). Line 2 — Alexandre Dumas (10 min).' },
-      { icon: '🚊', t: 'Tram', d: 'Line T3b — Marie de Miribel stop (12 min walk).' },
+      { icon: '🚌', t: 'Bus', d: 'Lines 26 and 64: Orteaux stop, a 3-min walk (≈ 250 m). Line 76: Bagnolet-Orteaux stop.' },
+      { icon: '🚇', t: 'Metro', d: 'Line 9: Maraîchers (5–7 min) or Buzenval (10 min). Line 2: Alexandre Dumas (10 min).' },
+      { icon: '🚊', t: 'Tram', d: 'Line T3b: Marie de Miribel stop (12-min walk).' },
     ],
   },
   // ⚠️ Voir le commentaire de `about` dans dict.ts : personne réelle,
   // chaque fait est sourcé, et rien de privé n'entre ici.
   about: {
-    title: 'About — David Lesage, musician, teacher and inventor',
+    title: 'About David Lesage: musician, teacher and inventor',
     description:
-      'A trained drummer who became a handpan player and singer: the Conservatory, The Voice, Naxos and the international handpan scene, two custom instruments with no manual — and the tools I ended up building.',
+      'David Lesage, a trained drummer turned handpan player and singer: the Conservatoire, The Voice, Naxos and the international handpan scene.',
     heroEyebrow: 'About',
-    heroTitle: 'A trained drummer, handpan player, singer — and tool builder',
+    heroTitle: 'A trained drummer, handpan player, singer and tool builder',
     heroLead:
-      'I’m David Lesage: a trained drummer turned handpan player, singer, teacher — and tool builder. Here is my path, in order, with its dates.',
+      'I’m David Lesage: a trained drummer turned handpan player, singer, teacher and tool builder. Here is my path, in order, with the dates.',
     heroImgAlt: 'David Lesage, musician',
     heroCtaStory: 'Read the story',
     heroCtaToday: 'What I do today',
 
     storyEyebrow: 'My story',
-    storyTitle: 'From drums to handpan, by a long detour',
+    storyTitle: 'From drums to handpan, the long way round',
     storyIntro:
       'The steps, the encounters and the dates that lead to the instruments I play and the tools I build.',
 
     chapters: [
       {
         eyebrow: 'The beginning',
-        title: 'Drums at 4, then music theory',
+        title: 'Drums at 4, then music theory and notation',
         paras: [
-          'I started music at 4, on drums. From my very first lesson, reading sheet music was forced on me. I quit, and learned self-taught, by ear.',
-          'I came back to it through school, in this order: first four years at the Marciac jazz college — the jazz section attached to the festival, sponsored by Wynton Marsalis — where I discovered vocal improvisation; then the lycée, with a <strong>TMD baccalaureate — Technique de Musique et de Danse</strong> — obtained in 2012 at Lycée Saint-Sernin in Toulouse. It is the equivalent of a sport-study programme, but music/study — also called adapted timetables. Then four years at the Toulouse Conservatory, which I left in 2013 with a drums award, highest honours.',
-          'To “catch up”, I had 7.5 hours of music-theory class a week, across 4 different levels. I still can’t read music… that’s how disconnected the teaching was from sensation and from meaning, with an approach turned solely towards classical music.',
+          'I started music at 4, on drums. From my very first lesson, I was made to read scores. I gave it all up and taught myself, by ear.',
+          'I came back to it through school, in this order: first four years in the jazz programme at the Marciac secondary school (the jazz section attached to the festival, with Wynton Marsalis as its patron), where I discovered vocal improvisation; then the lycée, with a <strong>TMD baccalaureate (Technique de Musique et de Danse)</strong>, obtained in 2012 at Lycée Saint-Sernin in Toulouse. It’s the equivalent of a sports-study programme, but for music, with a timetable built around it. Then four years at the Toulouse Conservatoire, which I left in 2013 with first prize in drums, with highest honours.',
+          'To “catch up”, I had 7.5 hours of music theory and notation a week, across 4 different levels. I still can’t read music… that’s how cut off the teaching was from feeling and meaning, with an approach geared only to classical music.',
         ],
       },
       {
         eyebrow: 'The detours',
         title: 'Video, training, virtual reality',
         paras: [
-          'I started bands, learned video shooting and editing, joined Thierry Vanoffe’s team in 2017 as a trainer and video creator for the Numéricoach channel, then from 2020 worked on Aora Mana — one of the first virtual-reality platforms for initiatory journeys — as camera operator, director, 360° virtual-reality editor and drone pilot.',
-          'I sang in the blind auditions of The Voice on TF1, season 11, with an African song: <em>Koth Biro</em> — recorded on 21 December 2021, broadcast on 12 February 2022. After the show, I was invited for a solo concert in Côte d’Ivoire.',
-          'Working as a Google trainer, I realised how good I am at finding technical and technological solutions to people’s problems. But well before that, I was already handling the sound for the conferences of the Salon Santé Nature, in Flourens — the fair moved venue several times —, and their IT equipment. I have always helped people find tricks and solutions to their computer problems.',
+          'I formed bands, learned video shooting and editing, joined Thierry Vanoffe’s team in 2017 as a trainer and video creator for the Numéricoach channel, then from 2020 worked on Aora Mana (one of the first virtual-reality platforms for initiatory journeys) as camera operator, director, 360° virtual-reality editor and drone pilot.',
+          'I sang in the blind auditions of The Voice on TF1, season 11, with an African song, <em>Koth Biro</em>: recorded on 21 December 2021, broadcast on 12 February 2022. After the show, I was invited to give a solo concert in Côte d’Ivoire.',
+          'Working as a Google trainer, I realised how good I am at finding technical and technological solutions to people’s problems. But well before that, I was already handling the sound for the talks at the Salon Santé Nature, in Flourens (the fair has moved venue several times), and looking after its computers. I have always helped people find tips and fixes for their computer problems.',
         ],
       },
       {
@@ -2337,43 +2337,43 @@ export const en: Dict = {
         title: 'The calabash, Now Groove and the ngoni',
         paras: [
           'I have played the calabash, as a percussion instrument, since 2012.',
-          'On the calabash, I was missing the snare and the hi-hat. I solved it with plastic eggs — a workaround that became a way of playing, then a way of teaching.',
+          'On the calabash, I was missing the snare and the hi-hat. I solved that with plastic eggs: a workaround that became a way of playing, then a way of teaching.',
           'It became Now Groove (2021): a rhythm method built on call-and-response and visual emoticons, which holds up with fifty people in the same room.',
-          'In 2018, while I was devastated by a break-up, my therapist Fred Hervaud placed his own N’Goni in my hands: that is how I met the instrument. In 2023 my collaboration with Joris Feuillâtre began, around the gonilélé harp, which I pass on today as an ambassador of La Maison du Ngoni. My lessons and workshops run under Now Music Academy, carried by the Résonances Productions association.',
+          'In 2018, while I was devastated by a break-up, my therapist Fred Hervaud placed his own N’Goni in my hands: that is how I met the instrument. In 2023 my collaboration with Joris Feuillâtre began, around the gonilélé harp, which I now teach as an ambassador for La Maison du Ngoni. My lessons and workshops run under the Now Music Academy name, backed by the association Résonances Productions.',
         ],
       },
       {
         eyebrow: 'Singing',
         title: 'Marie-Christine Reculard and holistic singing',
         paras: [
-          'Marie-Christine Reculard is my singing teacher. She created <em>Le Chant Holistique</em> (holistic singing), which she describes on her site as “une méthode unique de chant thérapeutique et énergétique par la voix, les couleurs, les voyelles sacrées, les mantras, le yoga et les techniques de respirations” — a singing method working through the voice, colours, sacred vowels, mantras, yoga and breathing techniques. Her site: <a href="https://www.mariechristinereculard.com/" target="_blank" rel="noopener" class="underline">mariechristinereculard.com</a>.',
-          'Her method inspired me, notably for a “Sing &amp; Play” mode — singing while accompanying yourself on the handpan — that I am working on for Handpan Constellation Studio. It is still at lab stage: it is not available in the app today.',
+          'Marie-Christine Reculard is my singing teacher. She created <em>Le Chant Holistique</em> (holistic singing), which she describes on her site as “une méthode unique de chant thérapeutique et énergétique par la voix, les couleurs, les voyelles sacrées, les mantras, le yoga et les techniques de respirations” (a unique method of therapeutic and energetic singing through the voice, colours, sacred vowels, mantras, yoga and breathing techniques). Her site: <a href="https://www.mariechristinereculard.com/" target="_blank" rel="noopener" class="underline">mariechristinereculard.com</a>.',
+          'Her method inspired me, in particular for a “Sing &amp; Play” mode (singing while accompanying yourself on the handpan) that I’m working on for Handpan Constellation Studio. It’s still at the lab stage: it isn’t available in the app today.',
         ],
       },
       {
         eyebrow: 'Naxos, Greece · June 2022',
         title: 'The concert that took me into the handpan world',
         paras: [
-          'I play the HONA Festival, in Agia Anna. When I arrive I’m nobody: the stage is tiny, the sound system is bad, there’s no monitor. But I offer something people hadn’t seen — I sing, I play three handpans at once, and I handle percussion with both feet and hands.',
+          'I play the HONA Festival, in Agia Anna. When I arrive I’m nobody: the stage is tiny, the sound system is bad, there are no monitors. But I offer something people hadn’t seen: I sing, I play three handpans at once, and I play percussion with my feet and hands.',
           'The next day I run into a man at the festival’s outdoor bar. I don’t know who he is; I’m told he’s one of the best handpan makers in the world. It’s Yonathan, from Yishama. He listens to me at length, calmly, and doesn’t try to sell me his instruments.',
-          'That same summer, the very first beta Neotone is put in my hands. A month later I play the HUG festival in Hungary, stop by the workshop, and leave with a beta Neotone and a clear commitment: report the bugs and help the instrument evolve. I’ve done it ever since — thousands of reports later, I personally know Csaba, Norbert and the Soundventure team in Budapest.',
+          'That same summer, the very first beta Neotone is put in my hands. A month later I play the HUG festival in Hungary, stop by the workshop, and leave with a beta Neotone and a clear commitment: report the bugs and help the instrument evolve. I’ve done so ever since. Thousands of reports later, I personally know Csaba, Norbert and the Soundventure team in Budapest.',
         ],
       },
       {
         eyebrow: 'May 2023 → August 2023',
         title: 'Two magnificent instruments, and no manual',
         paras: [
-          'In May 2023 I receive the two handpans Yonathan designed for me: eighteen notes each, tuned to 432 Hz, built for one thing only — so I could sing while accompanying myself, in any key.',
+          'In May 2023 I received the two handpans Yonathan designed for me: eighteen notes each, tuned to 432 Hz, built for one thing only, so that I could sing while accompanying myself, in any key.',
           'There was no method. The handpan is a 21st-century instrument, still evolving, often modal, and there are almost as many note layouts as there are instruments.',
-          'In August 2023 I opened a document — just to be able to see which chords I could play on my own instruments. A few months later, Yonathan suggested I turn it into a little chord booklet, for myself. I made the booklet. It became an application.',
+          'In August 2023 I opened a document, just to be able to see which chords I could play on my own instruments. A few months later, Yonathan suggested I turn it into a little chord booklet, for myself. I made the booklet. It became an application.',
         ],
       },
     ],
 
-    quoteNaxos: 'At that moment, I had no idea I was walking into an extremely private circle of the international handpan world.',
-    quoteNaxosSource: 'How I tell that concert',
+    quoteNaxos: 'At that moment, I had no idea I was walking into an ultra-exclusive circle of the international handpan world.',
+    quoteNaxosSource: 'What I say about that concert',
     quoteShips: 'It was as if I had two spaceships, but didn’t know how to fly them.',
-    quoteShipsSource: 'My two Yishamas, the first months',
+    quoteShipsSource: 'My two Yishamas, in the first months',
 
     linkYishama: 'My story with Yonathan and my two Yishamas',
     linkApp: 'Discover Handpan Constellation Studio',
@@ -2381,87 +2381,87 @@ export const en: Dict = {
     todayEyebrow: 'Today · Paris 20th',
     todayTitle: 'Musician, teacher, and tool builder',
     todayIntro:
-      'I’m a French performing-arts freelancer, based in Paris. Le Nid, at 29 rue des Orteaux in the 20th, is the place I run with Iris Chasles, opened on 13 March 2026: a human-sized venue in eastern Paris, where we welcome people in small numbers. Five strands meet there — concerts, a calabash rhythm workshop, individual lessons, a yoga class and psycho-corporeal support — plus the instrument presentations, free and by registration. You can touch, try, listen, and walk away with your Neotone the same day. My two Yishamas are there too, not for sale, just to be played. The full programme is published by the Résonances Productions association.',
+      'I’m a French performing-arts freelancer, based in Paris. Le Nid, at 29 rue des Orteaux in the 20th arrondissement, is the place I run with Iris Chasles, opened on 13 March 2026: an intimate venue in eastern Paris, where we host small groups. Five strands meet there (concerts, a calabash rhythm workshop, private lessons, a yoga workshop and psycho-corporeal support), plus the instrument presentations, free and by registration. You can touch, try, listen, and walk away with your Neotone the same day. My two Yishamas are there too, not for sale, just to be played. The full programme is published by the association Résonances Productions.',
     today: [
-      { t: 'I play', d: 'Handpan, voice, calabash and ngoni on stage: 112 logged dates from 2009 to 2026, in 7 countries — including 21 at Jazz in Marciac, two editions of Sziget in Budapest, the Everness Festival in Hungary and a support slot for Amadou &amp; Mariam. Two recorded opuses under the title L’Alliance du Phoenix, and free gatherings at Le Nid almost every month.' },
+      { t: 'I play', d: 'Handpan, voice, calabash and ngoni on stage: 112 logged dates from 2009 to 2026, in 7 countries, including 21 at Jazz in Marciac, two editions of Sziget in Budapest, the Everness Festival in Hungary and an opening slot for Amadou &amp; Mariam. Two records made under the name L’Alliance du Phoenix, and free gatherings at Le Nid almost every month.' },
       { t: 'I teach', d: 'Now Music Academy: handpan, calabash rhythm and gonilélé harp, over video anywhere in the world or in person in Paris. I answer personally.' },
       { t: 'I build', d: 'Handpan Constellation Studio makes harmony visible through colours, shapes and emotions. Guso Facile does the same for the paperwork of freelance performers in France.' },
-      { t: 'I bridge', d: 'Neotone beta-tester (Soundventure, Budapest), Yishama ambassador and affiliate, La Maison du Ngoni ambassador.' },
+      { t: 'I build bridges', d: 'Neotone beta-tester (Soundventure, Budapest), Yishama ambassador and affiliate, La Maison du Ngoni ambassador.' },
     ],
 
-    milestonesEyebrow: 'Landmarks',
-    milestonesTitle: 'A few dated landmarks',
+    milestonesEyebrow: 'Milestones',
+    milestonesTitle: 'A few key dates',
     milestones: [
-      { y: '2012', t: 'TMD baccalaureate — Technique de Musique et de Danse, Lycée Saint-Sernin, Toulouse.' },
+      { y: '2012', t: 'TMD baccalaureate (Technique de Musique et de Danse), Lycée Saint-Sernin, Toulouse.' },
       { y: '2012', t: 'I take up the calabash, as a percussion instrument.' },
-      { y: '2013', t: 'Drums award, highest honours — Toulouse Conservatory.' },
-      { y: '2018', t: 'I discover the ngoni — my therapist Fred Hervaud’s own instrument.' },
-      { y: '2021', t: 'Now Groove — my visual rhythm method on the calabash.' },
+      { y: '2013', t: 'First prize in drums, with highest honours, Toulouse Conservatoire.' },
+      { y: '2018', t: 'I discover the ngoni: my therapist Fred Hervaud’s own instrument.' },
+      { y: '2021', t: 'Now Groove: my visual rhythm method on the calabash.' },
       { y: 'Feb. 2022', t: 'The Voice season 11 (TF1): blind audition recorded 21/12/2021, broadcast 12/02/2022. Then a solo concert in Côte d’Ivoire.' },
       { y: 'June 2022', t: 'HONA Festival, Naxos. Meeting Yonathan (Yishama), first beta Neotone in hand.' },
       { y: 'July 2022', t: 'HUG Festival, Hungary. I leave the workshop with a beta Neotone.' },
       { y: '2023', t: 'My collaboration with Joris Feuillâtre begins (gonilélé harp).' },
       { y: 'May 2023', t: 'I receive my two Yishama handpans: 18 notes each, 432 Hz.' },
       { y: 'Aug. 2023', t: 'The document that would become Handpan Constellation Studio.' },
-      { y: '13 March 2026', t: 'Le Nid opens, 29 rue des Orteaux, Paris 20th.' },
-      { y: 'Today', t: 'Le Nid, Paris 20th — lessons, try-outs and gatherings.' },
+      { y: '13 March 2026', t: 'Le Nid opens, 29 rue des Orteaux, Paris (20th arrondissement).' },
+      { y: 'Today', t: 'Le Nid, Paris (20th arrondissement): lessons, try-outs and gatherings.' },
     ],
 
     visionEyebrow: 'My teaching vision',
-    visionTitle: 'The handpan, a full-fledged accompaniment instrument',
+    visionTitle: 'The handpan, an accompaniment instrument in its own right',
     visionIntro:
       'With this approach, the handpan finally takes its place alongside the guitar and the piano. Thanks to the “4 Magic chords” (I-IV-V-VI), anyone can accompany the songs they love within minutes, while approaching theory as a game.',
     pillars: [
       { t: 'Visible', d: 'Colour, geometry and emotion replace jargon. You see music before naming it.' },
-      { t: 'Accessible', d: 'Warmth, simplicity, a personal tone. From the curious child to the seasoned musician — I answer personally.' },
-      { t: 'Checkable', d: 'Toulouse Conservatory, stage, years of Neotone beta-testing: dated landmarks anyone can verify.' },
+      { t: 'Accessible', d: 'Warmth, simplicity, a personal tone. From the curious child to the seasoned musician, I reply personally.' },
+      { t: 'Verifiable', d: 'Toulouse Conservatoire, the stage, long-term Neotone beta-testing: dated milestones anyone can check.' },
     ],
 
-    proofsEyebrow: 'My landmarks',
+    proofsEyebrow: 'My track record',
     proofsTitle: 'Credibility & background',
-    proofsIntro: 'Dated, checkable landmarks.',
+    proofsIntro: 'Dated, verifiable milestones.',
     proofs: [
-      'Drums award, highest honours · Toulouse Conservatory (2013)',
+      'First prize in drums, with highest honours · Toulouse Conservatoire (2013)',
       'Marciac jazz college · four years',
       'Five-octave vocal range',
       'The Voice season 11 · blind audition (TF1, 12/02/2022)',
-      '112 logged stage dates · 2009–2026, 7 countries',
+      '112 documented performances · 2009–2026, 7 countries',
       'French performing-arts freelancer',
       'Neotone beta-tester (Soundventure, Budapest)',
       'Yishama ambassador and affiliate',
       'La Maison du Ngoni ambassador',
-      'Le Nid · 29 rue des Orteaux, Paris 20th',
+      'Le Nid · 29 rue des Orteaux, Paris (20th arrondissement)',
       'Résonances Productions · French non-profit association',
       'L’Alliance du Phoenix · Opus I & II',
     ],
 
     collabEyebrow: 'Collaborations',
     collabTitle: 'Got a project? Let’s talk.',
-    collabIntro: 'Music education, handpan, my tools — or any other project, even beyond Neotone. Brands, organisers, media, collaborators: the door is open.',
+    collabIntro: 'Music education, handpan, my tools, or any other project, even beyond Neotone. Brands, organisers, media, collaborators: the door is open.',
     collabCta1: 'Let’s work together',
     collabCta2: 'Contact me',
   },
   contact: {
-    title: 'Contact — David Lesage, musician & teacher',
+    title: 'Contact – David Lesage, musician & teacher',
     description:
-      'I answer every message personally — a musician, not a customer-service desk. For your purchase, your lessons, the app or a collaboration: write to me.',
+      'I answer every message personally: I’m a musician, not a customer service department. Whether it’s about your purchase, your lessons, the app or a collaboration, write to me.',
     eyebrow: 'Contact',
     title2: 'A question? Let’s talk.',
-    intro: 'I answer every message personally — I’m not a customer-service desk, but a musician who plays the Neotone every day. To choose your model, your wood, or arrange your visit: write to me. Neotones are not for rent or loan: to try one, come to the showroom.',
-    coords: { email: 'Email — quick reply', phone: 'Phone', showroom: 'Showroom · by appointment' },
+    intro: 'I answer every message personally. I’m not a customer service department, I’m a musician who plays the Neotone every day. To choose your model or your wood, or to arrange your visit, write to me. Neotones can’t be rented or borrowed: to try one, come to the showroom.',
+    coords: { email: 'Email – quick reply', phone: 'Phone', showroom: 'Showroom · by appointment' },
     form: { name: 'Full name', email: 'Email', phone: 'Phone', phoneHelp: 'So I can call you back quickly.', phoneError: 'Please enter a valid phone number (8 to 15 digits, international prefix accepted: +33, +1…).', subject: 'Subject', message: 'Message', submit: 'Write to me', note: 'Or write to me directly at' },
     subjects: ['Buying a Neotone', 'Lessons', 'Handpan Constellation Studio', 'Collaboration', 'Press', 'Other'],
   },
   legal: {
-    title: 'Legal notice & terms — David Lesage',
+    title: 'Legal notice & terms – David Lesage',
     description:
-      'Legal notice and terms of the David Lesage website: publisher, hosting, intellectual property, prices and VAT. Showroom 29 rue des Orteaux, Paris 20th.',
-    h1: 'Legal notice of the David Lesage website',
+      'Legal notice and terms of the David Lesage website: publisher, hosting, intellectual property, prices and VAT. Showroom at 29 rue des Orteaux, Paris (20th arrondissement).',
+    h1: 'Legal notice for the David Lesage website',
     blocks: [
-      { h: 'Publisher', p: 'David Lesage — musician, teacher and inventor. Showroom: 29 rue des Orteaux, 75020 Paris. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52.' },
-      { h: 'Hosting', p: 'Static site generated with Astro, hosted by Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, United States — vercel.com. Domain name managed by OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.' },
+      { h: 'Publisher', p: 'David Lesage, musician, teacher and inventor. Showroom: 29 rue des Orteaux, 75020 Paris. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52.' },
+      { h: 'Hosting', p: 'Static site generated with Astro, hosted by Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, United States (vercel.com). Domain name managed by OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.' },
       { h: 'Intellectual property', p: 'The content, texts, photographs and videos on this site are the property of their respective authors. The Neotone product photographs and specifications come from the official Soundventure Ltd documentation. David Lesage is an independent Neotone ambassador.' },
-      { h: 'Prices & VAT', p: 'All displayed prices are indicative and may change without notice. The VAT rates applied by the calculator are the standard 2026 rates; customs fees outside the EU remain the buyer’s responsibility.' },
+      { h: 'Prices & VAT', p: 'All prices shown are indicative and may change without notice. The VAT rates applied by the calculator are the standard rates in force in 2026; customs duties outside the EU remain the buyer’s responsibility.' },
     ],
   },
   // ── TERMS & CONDITIONS (page /en/conditions-generales) ────────────────────
@@ -2470,7 +2470,7 @@ export const en: Dict = {
   // comment above the `terms` block in dict.ts. ⚠️ `version` must stay equal to
   // TERMS_VERSION in supabase/functions/site-lead/index.ts.
   terms: {
-    title: 'Terms & conditions — David Lesage',
+    title: 'Terms & conditions – David Lesage',
     description:
       'Terms and conditions of the David Lesage website: what the forms collect, why, with which tools, how long it is kept, and how to exercise your rights.',
     h1: 'Terms & conditions',
@@ -2478,13 +2478,13 @@ export const en: Dict = {
     version: '2026-08-19',
     updatedLabel: 'Last updated',
     updated: '19 August 2026',
-    lead: 'This page says plainly what happens when you fill in a form on this site: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. No jargon. If anything is unclear, write to me — I’m the one reading.',
+    lead: 'This page says plainly what happens when you fill in a form on this site: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. No jargon. If anything is unclear, write to me: I’m the one reading.',
     inProgress:
-      'This document accompanies an ecosystem still being built — the site, the app, the showroom and the partnerships with instrument makers are being set up step by step. It will therefore change as that setup progresses. The version in force is the one shown above, and that is the one you accept when you tick the box on a form.',
+      'This document comes with the setting-up of an ecosystem that is still under construction: the site, the app, the showroom and the partnerships with instrument makers are being put in place step by step. It will therefore change as that work progresses. The version in force is the one shown above, and that is the one you accept when you tick the box on a form.',
     sections: [
       {
         h: 'Who is responsible',
-        p: 'David Lesage — musician, teacher and inventor. Showroom: 29 rue des Orteaux, 75020 Paris. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52. There is no marketing department behind this site: I decide what gets collected, I read it, and I answer you myself.',
+        p: 'David Lesage: musician, teacher and inventor. Showroom: 29 rue des Orteaux, 75020 Paris. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52. There is no marketing department behind this site: I decide what gets collected, I read it, and I answer you myself.',
         items: [] as string[],
       },
       {
@@ -2499,14 +2499,14 @@ export const en: Dict = {
         // 🚨 The site's publisher REMAINS David Lesage, as a natural person
         // (see "Who is responsible" above and the Legal notice page).
         h: 'My role, and who receives the money',
-        p: 'Better said upfront, it avoids misunderstandings: this site presents instruments built by partners — Neotone, Yishama, the microphones, the Gonilélé harps. I act as a demonstrator, and I am not paid directly by those sales.',
+        p: 'Let me say it straight away, to avoid any misunderstanding: on this site I present instruments made by partners (Neotone, Yishama, the microphones, the Gonilélé harps). I act as a demonstrator, and I am not paid directly by those sales.',
         items: [
           'These are affiliate partnerships: they do generate a commission, and it is the association Résonances Productions (a French non-profit “association loi 1901”) that receives it, not me personally.',
-          'So that you know exactly who that is, here is its official identification: Résonances Productions, a French non-profit association under the 1901 law, registered with the sub-prefecture of Pamiers and published in the Journal officiel des associations (the French official gazette) on 28 October 2017 — RNA no. W092002501 (national register of associations), SIRET 919 514 075 00010 (French business identification number), APE code 9001Z (performing arts). Registered office: 2 impasse des Bleuets, 09600 Aigues-Vives, France. Correspondence address: 29 rue des Orteaux, 75020 Paris, France. Email: contact@resonancesproductions.org.',
-          'This identification says who receives that money, and nothing more: the publisher of this site is David Lesage, as a natural person — he is the one responsible for this page and for your data, as stated just above and on the Legal notice page.',
-          'It changes nothing in what I tell you about an instrument: I answer as a musician who plays these instruments every day, and I would rather tell you an instrument isn’t right for you than sell it to you.',
+          'So that you know exactly who that is, here is its official identification: Résonances Productions, a French non-profit association under the 1901 law, registered with the sub-prefecture of Pamiers and published in the Journal officiel des associations (the French official gazette) on 28 October 2017. RNA no. W092002501 (national register of associations), SIRET 919 514 075 00010 (French business identification number), APE code 9001Z (performing arts). Registered office: 2 impasse des Bleuets, 09600 Aigues-Vives, France. Correspondence address: 29 rue des Orteaux, 75020 Paris, France. Email: contact@resonancesproductions.org.',
+          'This identification says who receives that money, and nothing more: the publisher of this site is David Lesage, a natural person. He is the one responsible for this page and for your data, as stated just above and on the Legal notice page.',
+          'None of this changes what I tell you about an instrument: I answer as a musician who plays these instruments every day, and I would rather tell you an instrument isn’t right for you than sell it to you.',
           'No payment is taken on this site, nor by me. Purchases happen elsewhere: on the HelloAsso shop of Résonances Productions, inside the app for its subscription, or directly with the manufacturer for a Muling microphone.',
-          'App subscription (Essential plan, €3.49 incl. VAT per month): it starts with a free one-month trial, for which a bank card is saved at sign-up. Unless you stop before the trial ends, the subscription starts automatically and then renews every month by tacit renewal. Any month started is due and is not refunded; you can stop at any time, effective the following month.',
+          'App subscription (Essential plan, €3.49 incl. VAT per month): it starts with a free one-month trial, for which a bank card is saved at sign-up. Unless you stop before the trial ends, the subscription starts automatically and is then tacitly renewed each month. Any month that has started is payable and non-refundable; you can stop at any time, and stopping takes effect from the following month.',
         ],
       },
       {
@@ -2515,19 +2515,19 @@ export const en: Dict = {
         items: [
           'Booking (showroom visit, seat at a gathering, one-to-one appointment, Neotone discount code request): first name, last name, email, phone if you give it, number of people, target date, up to three time slots you propose, type and format of the session (in person or online), instruments you want to discover, Neotone model you have in mind, country, social media account, how you found me, how long you have been playing, what you would like to achieve, and your message.',
           'Contact: name, email, subject, message.',
-          'App waiting list: first name, last name, email, whether you already own a handpan and which kind, the role or roles you declare (for yourself, to teach, to build), your goal, your number of students and — if you build handpans — your country, the number of notes you produce, the metals you work with and how you set your prices. Plus your motivation, if you apply as a beta tester.',
+          'App waiting list: first name, last name, email, whether you already own a handpan and which one, the role or roles you declare (for yourself, to teach, to build), your goal, your number of students and, if you build handpans, your country, the number of notes you produce, the metals you work with and how you set your prices. Plus your motivation, if you apply as a beta tester.',
           'Muling microphone order: first name, last name, email, phone, quantity, full delivery address, instructions for the courier, message, and then the proof of payment you upload (image or PDF).',
-          'In every case, a few things are added automatically: the site language, the page your request came from, the date and time you accepted these terms along with their version number, and — if you ticked the second, optional box — the date you agreed to receive my news.',
+          'In every case, a few things are added automatically: the site language, the page your request came from, the date and time you accepted these terms along with their version number, and (if you ticked the second box, the optional one) the date you agreed to receive my news.',
         ],
       },
       {
         h: 'What I do with it',
         // ⚠️ The count announced here must follow the number of items below.
-        p: 'Three things, not one more.',
+        p: 'Three things, and nothing more.',
         items: [
           'Answer you. That is what every form exists for: I read and I reply personally.',
-          'Organise what you asked for: confirming a slot, preparing the instruments for your visit, passing an order along. A one-to-one appointment request also creates a proposed lesson in my schedule, inside the app.',
-          'Keep you posted about what’s new — but only if you ticked the second box on the form, the optional one, which is never pre-ticked: a new gathering date, the app opening up, a new instrument. If you leave it unticked, I only write to you about your request, and nothing else. If you tick it, I write rarely, and I target: depending on which door you came in through and what you said you were interested in, you don’t get the same thing as everyone else. You can stop it whenever you want, with no explanation needed.',
+          'Organise what you asked for: confirming a time slot, preparing the instruments for your visit, passing an order along. A one-to-one appointment request also creates a proposed lesson in my schedule, inside the app.',
+          'Keep you posted about what’s new (a new gathering date, the app opening up, a new instrument), but only if you ticked the second box on the form, the optional one, which is never pre-ticked. If you leave it unticked, I only write to you about your request, and nothing else. If you tick it, I write rarely, and what I send is targeted: depending on which door you came in through and what you said you were interested in, you don’t get the same thing as everyone else. You can stop it whenever you want, with no explanation needed.',
         ],
       },
       {
@@ -2542,21 +2542,21 @@ export const en: Dict = {
         p: 'I photograph and film what happens here: the gatherings, the appointments at the showroom, the instruments going from hand to hand. I publish some of it on this site and on my social media. What matters to me is not your face in particular: it is showing the general atmosphere of the place and of what is shared there, to make others want to come.',
         items: [
           'By default, I blur faces. That is what I do today: unless someone has told me they are fine with it, I do not publish them in a recognisable way.',
-          'You can tell me no, and you owe me no explanation: a word on the spot is enough, or an email to contact@lesagedavid.fr. Before as well as after publication — if a photo or a video is already online, I take it down or blur you.',
+          'You can tell me no, and you owe me no explanation: a word on the spot is enough, or an email to contact@lesagedavid.fr. That holds before as well as after publication: if a photo or a video is already online, I take it down or blur you.',
           'You can also tell me yes, if you are happy to appear with your face visible: say so on the spot or by email. That is what lets me publish real group pictures rather than blurred-out faces.',
           'Either way, you can change your mind whenever you want, in one direction or the other.',
         ],
       },
       {
         h: 'On what basis',
-        p: 'On your consent — and there are two boxes, because there are two different things. You can withdraw either one at any time: it does not undo what has already been done, but it stops everything from then on.',
+        p: 'On your consent. And there are two boxes, because there are two different things. You can withdraw either one at any time: it does not undo what has already been done, but it stops everything from then on.',
         items: [
-          'The “I accept the terms and conditions” box is mandatory: without it I cannot handle your request. The date you accepted is recorded together with the version number of this page — that is what makes it possible to know later exactly which text you had in front of you.',
-          'The “I’d like to hear about upcoming dates and what’s new” box is optional, and it is never pre-ticked. It conditions nothing: your form goes through exactly the same if you leave it empty. Accepting the terms is not agreeing to receive my news — that is why there are two boxes and not one.',
+          'The “I accept the terms and conditions” box is mandatory: without it I cannot handle your request. The date you accepted is recorded together with the version number of this page, so that it is possible to know later exactly which text you had in front of you.',
+          'The “I’d like to hear about upcoming dates and what’s new” box is optional, and it is never pre-ticked. Nothing depends on it: your form goes through exactly the same if you leave it empty. Accepting the terms is not agreeing to receive my news, which is why there are two boxes and not one.',
           // Image rights (19/08/2026): David's decision — NO extra buttons in
           // the form. So never write here that a consent is collected at
           // sign-up: it is not. Point to the dedicated section instead.
-          'Photos and videos taken on the premises go through no box on this form: the rule is blurring by default, and telling me is enough to object. The “Photos and videos taken on the premises” section describes it.',
+          'Photos and videos taken on the premises are not covered by any box on this form: the rule is blurring by default, and all you need to do to object is tell me. The “Photos and videos taken on the premises” section describes it.',
           'For a microphone order, your delivery details are also quite simply necessary for the parcel to be shipped.',
         ],
       },
@@ -2564,78 +2564,78 @@ export const en: Dict = {
         h: 'The tools your data passes through',
         p: 'I never sell or rent any data, to anyone. Here is the complete list of the services actually involved.',
         items: [
-          'Supabase — the database where your answers are stored, and the storage space for payment proofs. The project is hosted in Ireland, inside the European Union.',
-          'Vercel — the site’s host. The small server functions that relay the forms run in the United States.',
-          'The contact@lesagedavid.fr mailbox — that is where notifications arrive and where I reply to you. It is hosted by Google.',
-          'Google Fonts and YouTube thumbnails — the site loads its typefaces and the video thumbnails from Google’s servers. None of your answers are passed to them, but your browser’s IP address is.',
-          'YouTube — a video only loads if you click on it, and it goes through youtube-nocookie.com. As long as you don’t click, nothing leaves.',
-          'Muling Musical Instruments Co., Ltd. (China) — only if you order a microphone: the manufacturer ships it, so your order is emailed to it, at a Chinese address. That message contains your name, email, phone, the quantity ordered, your country, your full address, your delivery instructions, the amount and the order reference. A dedicated checkbox asks you explicitly before sending. The fact that the bank transfer goes to a German account changes nothing here: this information does travel to China.',
-          'OVH — the lesagedavid.fr domain name.',
-          'HelloAsso — some products, lessons and workshops are bought on the HelloAsso shop of Résonances Productions. By clicking, you leave this site: HelloAsso’s own policy then applies, and nothing you type over there goes through here.',
-          'Stripe — the site reads the app’s displayed prices there, and nothing else: no personal data is sent to it from this site. The subscription and its payment happen inside the app, on its own site.',
+          'Supabase: the database where your answers are stored, and the storage space for proofs of payment. The project is hosted in Ireland, inside the European Union.',
+          'Vercel: the site’s host. The small server functions that relay the forms run in the United States.',
+          'The contact@lesagedavid.fr mailbox: that is where notifications arrive and where I reply to you. It is hosted by Google.',
+          'Google Fonts and YouTube thumbnails: the site loads its typefaces and the video thumbnails from Google’s servers. None of your answers are passed to them, but your browser’s IP address is.',
+          'YouTube: a video only loads if you click on it, and it goes through youtube-nocookie.com. Until you click, nothing is sent.',
+          'Muling Musical Instruments Co., Ltd. (China): only if you order a microphone. The manufacturer ships it, so your order is emailed to it, at a Chinese address. That message contains your name, email, phone, the quantity ordered, your country, your full address, your delivery instructions, the amount and the order reference. A dedicated checkbox asks for your explicit agreement before anything is sent. The fact that the bank transfer goes to a German account changes nothing here: this information does travel to China.',
+          'OVH: the lesagedavid.fr domain name.',
+          'HelloAsso: some products, lessons and workshops are bought through the Résonances Productions shop on HelloAsso. When you click through, you leave this site: HelloAsso’s own policy then applies, and nothing you enter there passes through here.',
+          'Stripe: the site reads the app’s displayed prices from it, and nothing else. No personal data is sent to it from this site. The subscription and its payment are handled in the app, on its own site.',
         ],
       },
       {
         h: 'What leaves the European Union',
         p: 'Let’s be straight about it: part of the journey happens outside Europe. The database itself stays in Ireland.',
         items: [
-          'The server functions that relay the forms run in the United States, at Vercel.',
-          'My mailbox is hosted by Google, a US company — so are the emails we exchange.',
+          'The server functions that relay the forms run in the United States, on Vercel.',
+          'My mailbox is hosted by Google, a US company, so the emails we exchange are too.',
           'Typefaces and video thumbnails are loaded from Google servers.',
           // ⚠️ Verified in supabase/functions/muling-order/index.ts (MULING_EMAIL
           // = a QQ/Tencent address in China). The money and the data do NOT take
           // the same route — never imply nothing leaves Europe.
-          'For a microphone order only, your order travels to China by email, to the manufacturer: name, email, phone, quantity, country, full address, delivery instructions, amount and reference. It is what makes shipping possible. Don’t confuse this with the payment, which stays in Europe: these are two different routes.',
+          'For a microphone order only, your order travels to China by email, to the manufacturer: name, email, phone, quantity, country, full address, delivery instructions, amount and reference. The manufacturer needs it to send you the parcel. Don’t confuse this with the payment, which stays in Europe: these are two different routes.',
         ],
       },
       {
         h: 'How long I keep all this',
         // ⚠️ Do NOT bring back “or you click in one of my emails”: there is no
         // click tracking at all (see the cookies section), and David wants none.
-        p: 'Three years after our last exchange. And the clock resets to zero at every new exchange: you write to me, you reply to me, you book, you order, and the three years start again. If nothing happens for three years, your information is deleted. You can of course ask for it to be deleted long before that — see below.',
+        p: 'Three years after our last exchange. And the clock resets to zero with every new exchange: you write to me, you reply to me, you book, you order, and the three years start again. If nothing happens for three years, your information is deleted. You can of course ask for it to be deleted long before that (see below).',
         items: [] as string[],
       },
       {
         h: 'Cookies and analytics',
-        p: 'This site sets no cookies. It uses no analytics tool, no advertising pixel, no tracker — which is why there is no banner to accept when you arrive. The only thing your browser remembers locally is the language you chose: it never leaves your device.',
+        p: 'This site sets no cookies. It uses no analytics tool, no advertising pixel, no tracker, which is why there is no banner to accept when you arrive. The only thing your browser remembers locally is the language you chose: it never leaves your device. Emails are another matter: whether they are opened and which of their links are clicked is measured, through an invisible image and tracked links. This is part of the app’s terms of use, and it is explained in its policy.',
         items: [] as string[],
       },
       {
-        h: 'Your rights, and how to use them',
-        p: 'One move is enough: write to contact@lesagedavid.fr. No form to fill in, no proof to provide unless I have a serious doubt about your identity. I reply personally, within one month at most.',
+        h: 'Your rights, and how to exercise them',
+        p: 'It takes just one step: write to contact@lesagedavid.fr. No form to fill in, no supporting document to provide unless I have a serious doubt about your identity. I reply personally, within one month at most.',
         items: [
-          'Access — know exactly what I hold about you; I can send you a copy.',
-          'Rectification — correct anything wrong or out of date.',
-          'Erasure — delete everything.',
-          'Objection — refuse a use, in particular the news emails.',
-          'Portability — get back what you gave me, in a file you can reuse elsewhere.',
-          'Restriction — ask for your information to be set aside while we settle a disagreement.',
-          'Withdrawal of consent — at any time, with no explanation needed.',
+          'Access: know exactly what I hold about you; I can send you a copy.',
+          'Rectification: correct anything wrong or out of date.',
+          'Erasure: delete everything.',
+          'Objection: refuse a particular use, especially the news emails.',
+          'Portability: get back what you gave me, in a file you can reuse elsewhere.',
+          'Restriction: ask for your information to be set aside while we settle a disagreement.',
+          'Withdrawal of consent: at any time, without having to give a reason.',
         ],
       },
       {
         h: 'Stopping my emails',
-        p: 'Every news email contains an unsubscribe link: one click and it’s done. Otherwise, a single line to contact@lesagedavid.fr is enough — “stop” does the job perfectly, and you owe me no explanation. It cancels neither an appointment nor an order in progress: the messages needed to follow up your request keep coming.',
+        p: 'Every news email contains an unsubscribe link: one click and it’s done. Otherwise, a single line to contact@lesagedavid.fr is enough (“stop” will do just fine), and you owe me no explanation. It doesn’t cancel an appointment or an order in progress: the messages needed to follow up your request keep coming.',
         items: [] as string[],
       },
       {
         h: 'If you disagree with me',
-        p: 'You can lodge a complaint with the CNIL, the French data protection authority: CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 — www.cnil.fr. But write to me first if you like: it’s faster, and I’d rather sort things out directly.',
+        p: 'You can lodge a complaint with the CNIL, the French data protection authority: CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 (www.cnil.fr). But write to me first if you like: it’s faster, and I’d rather sort things out directly.',
         items: [] as string[],
       },
       {
         h: 'Security',
-        p: 'The site is served over HTTPS end to end. The database can only be reached with dedicated credentials, and its access rules mean only my administrator account can read the requests. Payment proofs uploaded with an order go into a private storage space, never a public one. No banking details are ever entered on this site: no payment is taken here.',
+        p: 'The site is served over HTTPS end to end. The database can only be reached with dedicated credentials, and its access rules mean only my administrator account can read the requests. Proofs of bank transfer uploaded with an order go into a private storage space, never a public one. No banking details are ever entered on this site: no payment is taken here.',
         items: [] as string[],
       },
       {
         h: 'Appointments, gatherings and orders',
-        p: 'No payment happens on this site. A one-to-one appointment is paid through the link I send you in my reply: payment is what reserves your slot and commits us both. Up to 24 h beforehand we move it with no problem at all; less than 24 h beforehand the payment stays with me, but you don’t lose your appointment — we reschedule it within 3 months. Gatherings are free, by reservation, with a limited number of seats. A Muling microphone order is paid by bank transfer, to an account located in Germany, directly to the manufacturer: you make the transfer yourself, and neither this site nor I take that payment. The manufacturer then handles shipping and tracking.',
+        p: 'No payment happens on this site. A one-to-one appointment is paid through the link I send you in my reply: payment is what reserves your time slot and commits us both. Up to 24 h beforehand, we can move it without any problem; with less than 24 h’ notice, the payment is non-refundable, but you don’t lose your appointment: we reschedule it within 3 months. Gatherings are free, by reservation, with a limited number of places. A Muling microphone order is paid by bank transfer, to an account located in Germany, directly to the manufacturer: you make the transfer yourself, on your own initiative, and neither this site nor I take that payment. The manufacturer then handles shipping and tracking.',
         items: [] as string[],
       },
       {
         h: 'The site’s content',
-        p: 'Texts, photographs and videos belong to their respective authors. The details — publisher, hosting, intellectual property, prices and VAT — are on the Legal notice page.',
+        p: 'Texts, photographs and videos belong to their respective authors. The details (publisher, hosting, intellectual property, prices and VAT) are on the Legal notice page.',
         items: [] as string[],
       },
       {
@@ -2652,17 +2652,17 @@ export const en: Dict = {
   // Privacy Policy — see the sourcing comment above the `privacy` block in
   // src/i18n/dict.ts. The Google OAuth scope string is quoted LITERALLY.
   privacy: {
-    title: 'Privacy Policy — David Lesage',
+    title: 'Privacy Policy – David Lesage',
     description:
       "Privacy policy for the David Lesage site and the Handpan Constellation Studio app: what is collected, the players’ map, signing in with Google, lesson bookings, Google Calendar, retention periods and GDPR rights.",
     h1: 'Privacy Policy',
     updatedLabel: 'Last updated',
     updated: "3 November 2026",
-    lead: "This page says plainly what I do with your data: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. It covers this site and the Handpan Constellation Studio application, including the players’ map. No jargon: if something isn’t clear, write to me — I’m the one who reads.",
+    lead: "This page says plainly what I do with your data: what I collect, why, with which tools, how long I keep it, and how you take back control whenever you want. It covers this site and the Handpan Constellation Studio application, including the players’ map. No jargon: if something isn’t clear, write to me. I read every message myself.",
     sections: [
       {
         "h": "Who is responsible for your data",
-        "p": "David Lesage — musician, teacher and inventor, publisher of this site and of the Handpan Constellation Studio application. Showroom: 29 rue des Orteaux, 75020 Paris, France. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52. There is no marketing department behind any of this: I decide what is collected, I read it, and I answer you.",
+        "p": "David Lesage: musician, teacher and inventor, publisher of this site and of the Handpan Constellation Studio application. Showroom: 29 rue des Orteaux, 75020 Paris, France. Email: contact@lesagedavid.fr · Phone: +33 6 10 73 31 52. There is no marketing department behind any of this: I decide what is collected, I read it, and I answer you.",
         "items": [] as string[]
       },
       {
@@ -2671,37 +2671,37 @@ export const en: Dict = {
         "items": [
           "The lesagedavid.fr site: what you write in the forms (booking, contact, waiting list, microphone order). The form-by-form detail is on the Terms & conditions page, and it still holds.",
           "The contact form also asks for your phone number: it is used only to get back to you. It is kept as long as your email and rests on the same legal basis (your consent).",
-          "The Handpan Constellation Studio application: your account, your subscription, your place on the players’ map, and — if you teach or are a student — the lesson calendar."
+          "The Handpan Constellation Studio application: your account, your subscription, your place on the players’ map and, if you teach or are a student, the lesson calendar."
         ]
       },
       {
         "h": "What I collect in the application, and why",
-        "p": "When you create your account: your email address, your last name and your first name, plus a phone number if you choose to provide one — that last one is optional. If you create your account through Google, it is Google that passes this information on, together with your profile photo (see below).",
+        "p": "When you create your account: your email address, your last name and your first name, plus a phone number if you choose to provide one (this is optional). If you create your account through Google, it is Google that passes this information on, together with your profile photo (see below).",
         "items": [
           "Create and secure your account, and give you access to the application.",
           "Manage your subscription.",
           "Contact you about your account.",
           "Place your star on the players’ map (see below).",
-          "Only overall summaries — totals in which no account can be identified — may be used for market analyses, to better understand the needs of handpan players and to improve the application."
+          "Only overall summaries (totals in which no account can be identified) may be used for market analysis, to better understand the needs of handpan players and to improve the application."
         ]
       },
       {
-        "h": "If you sign in with Google: your name, first name and photo",
-        "p": "If you create your account or sign in with Google, Google sends the application your email address, your last name, your first name and the address of your Google profile photo. The email becomes your account email; the names fill in your account.",
+        "h": "If you sign in with Google: your last name, first name and photo",
+        "p": "If you create your account or sign in with Google, Google sends the application your email address, your last name, your first name and the address of your Google profile photo. The email becomes your account email; your last name and first name are used to fill in your account.",
         "items": [
           "The first time you open the application, if you do not have a profile photo yet, your Google photo is downloaded once, cropped and stored as your profile photo in the application’s private storage. It is not published: it only appears on the players’ map if you publish a detailed card with the “Show my photo on my card” box ticked (it is ticked by default, and you can untick it).",
           "A photo you chose is never replaced. You can change or delete yours at any time from “My profile”, and a deleted photo is not imported again.",
-          "In the teacher space, as long as a student signed in with Google has no photo in the application, their card may show their Google photo, loaded from Google’s servers."
+          "In the Teaching space, as long as a student signed in with Google has no photo in the application, their card may show their Google photo, loaded from Google’s servers."
         ]
       },
       {
         "h": "The players’ map (the constellation)",
         "p": "The application shows a constellation map of players. It is visible only to people signed in to an account. There are two levels: your default star, and your detailed card, which you publish only if you want to.",
         "items": [
-          "Your default star. As provided by the application’s terms of use (§ 6 bis), other signed-in people see your first name, the initial of your last name (or your full last name if you choose so in “My public profile”, and you can go back to the initial at any time) and your country; the star is placed at the centre of the country. It never shows your address, your city or your email. The country comes from your profile or from the question asked on arrival; with no known country, you are not placed on the map. Your account also counts as one in the anonymous “Musicians” count for your country (a country with fewer than 3 people is not named there).",
-          "Your detailed card, if you publish it. It is optional and only shows what you write or tick yourself: your roles (player, teacher, maker, which can be combined), a contact email only if you tick the box provided — it is never copied from your account without your click —, and your location at the precision you choose: the country, the city, an area you describe (its point is rounded to about 11 km), or an exact address and its exact point, after a warning.",
-          "A published address is visible to all signed-in people, who can note it down or copy it: avoid your home, prefer an area or the address of a place where you teach.",
-          "Your profile photo. When you create your detailed card, the “Show my photo on my card” box is ticked by default: if you have a profile photo, it then appears on your card and on your point on the players’ map, visible to signed-in people. You can untick it before publishing, or at any time afterwards; your photo is then removed immediately and replaced by your star. If your card already existed, your previous choice is kept. Showing it lets signed-in people know your account’s technical identifier, which gives access to none of your data.",
+          "Your default star. As set out in the application’s terms of use (§ 6 bis), other signed-in people see your first name, the initial of your last name (or your full last name if you choose to in “My public profile”, and you can go back to the initial at any time) and your country; the star is placed at the centre of the country. It never shows your address, your city or your email. The country comes from your profile or from the question asked on arrival; with no known country, you are not placed on the map. Your account also counts as one in the anonymous “🎵 Musicians” count for your country (a country with fewer than 3 people is not named there).",
+          "Your detailed card, if you publish it. It is optional and only shows what you write or tick yourself: your roles (player, teacher, maker, which can be combined), a contact email only if you tick the box provided (it is never copied from your account unless you click), and your location at the precision you choose: the country, the city, an area you describe (its point is rounded to about 11 km), or an exact address and its exact point, after a warning.",
+          "A published address is visible to all signed-in people, who can note it down or copy it: avoid your home address, and choose an area or the address of a place where you teach instead.",
+          "Your profile photo. When you create your detailed card, the “Show my photo on my card” box is ticked by default: if you have a profile photo, it then appears on your card and on your point on the players’ map, visible to signed-in people. You can untick it before publishing, or at any time afterwards; your photo is then removed immediately and replaced by your star. If your card already existed, your previous choice is kept. Showing it reveals your account’s technical identifier to signed-in people; this identifier gives access to none of your data.",
           "You take back control whenever you want, from your card: each of these choices can be withdrawn at any time. Removing the email and the location is immediate. Unticking the photo box, switching off your card or deleting your photo closes access to your photo; a link already opened expires within one hour at most.",
           "I can remove a star (moderation), in particular on written request to contact@lesagedavid.fr."
         ]
@@ -2710,17 +2710,17 @@ export const en: Dict = {
         "h": "The map and address search: who sees what",
         "p": "Two outside services are involved when you use the map, and what they receive is limited.",
         "items": [
-          "The map background: when a map opens, your browser requests it from OpenFreeMap (Hyperknot Software Kft., Hungary), which uses the Cloudflare delivery network. It receives your IP address and the area shown, with no account and no cookie; your written address and your point are not sent to it. According to its privacy policy, its access logs contain no IP address, its error logs may contain the IP address and the requested URL, and these logs are deleted after 7 days (30 days at most in the event of a security incident).",
-          "Address search: when you click “Find on the map”, and only then, the text of the address you typed is sent to the IGN Géoplateforme (the French National Institute of Geographic and Forest Information) for an address in France, or to Photon, a komoot service (Germany), elsewhere — with, for Photon, the language of the screen, and your IP address, as for any request. You choose among the suggestions, and the marker can still be moved.",
+          "The base map: when a map opens, your browser requests it from OpenFreeMap (Hyperknot Software Kft., Hungary), which uses the Cloudflare content delivery network. It receives your IP address and the area shown, with no account and no cookie; your written address and your point are not sent to it. According to its privacy policy, its access logs contain no IP address, its error logs may contain the IP address and the requested URL, and these logs are deleted after 7 days (30 days at most in the event of a security incident).",
+          "Address search: when you click “Find on the map”, and only then, the text of the address you typed is sent to the IGN Géoplateforme (the French National Institute of Geographic and Forest Information) for an address in France, or to Photon, a komoot service (Germany), elsewhere. Along with it go the screen language, for Photon only, and your IP address, as with any request. You choose among the suggestions, and the marker can still be moved.",
           "Neither your name, nor your email, nor your device’s location is sent to them: the browser’s geolocation is never used. A point only exists if you place it yourself."
         ]
       },
       {
         "h": "Booking a lesson: it concerns only the teacher and the student",
-        "p": "When a lesson is booked in the application, the details of that session concern two people only: the teacher and the student of that lesson. Nobody else has access — not other teachers, not other students, not anyone outside.",
+        "p": "When a lesson is booked in the application, the details of that session concern two people only: the teacher and the student of that lesson. Nobody else has access: not other teachers, not other students, not anyone outside.",
         "items": [
           "A session’s details are: the student’s name and email, their phone number if given, the date and time, the duration, the place or the video-call link, the type of session and the notes attached to the lesson.",
-          "Technically, access is locked at the database level itself: a session can only be read by the teacher who created it and by the student concerned. Plus the application’s administrator, that is to say me, David Lesage — I would rather say so than leave it unsaid.",
+          "Technically, access is locked at the database level itself: a session can only be read by the teacher who created it and by the student concerned. The application’s administrator, that is, me, David Lesage, also has access. I would rather say so than leave it unsaid.",
           "This information is used to organise the lesson, and for nothing else. It is never sold, passed on or shared for commercial purposes."
         ]
       },
@@ -2728,42 +2728,42 @@ export const en: Dict = {
         "h": "If the teacher links their Google Calendar",
         "p": "Linking a calendar is the teacher’s choice, and only a choice: the application works perfectly well without it. Until they do, no data travels to Google.",
         "items": [
-          "When they do, the event is created in THEIR own calendar, and the student is invited to it — meaning they receive the invitation and see the event on their side. Nothing is written into the student’s calendar without their own agreement.",
-          "The permission requested from Google is exactly this one: https://www.googleapis.com/auth/calendar.events — it allows lesson events to be created, updated and deleted, and nothing else. The application does not read the rest of the calendar, does not browse it, and does not access any other Google service.",
+          "When they do, the event is created in the teacher’s OWN calendar, and the student is invited to it, which means the student receives the invitation and sees the event on their side. Nothing is written into the student’s calendar without the student’s own agreement.",
+          "The permission requested from Google is exactly this one: https://www.googleapis.com/auth/calendar.events. It allows lesson events to be created, updated and deleted, and nothing else. The application does not read the rest of the calendar, does not browse it, and does not access any other Google service.",
           "No calendar data is used for any other purpose. It is never passed on, sold or shared with any third party whatsoever.",
-          "The teacher can unlink their calendar at any time, from within the application. The link is then deleted and the application immediately stops writing to Google Calendar; lessons remain in the application but no longer sync to it. Events already created belong to their Google calendar: they stay there, and it is up to them to delete them if they wish."
+          "The teacher can unlink their calendar at any time, from within the application. The link is then deleted and the application immediately stops writing to Google Calendar; lessons remain in the application but no longer sync to it. Events already created, however, belong to the teacher’s Google calendar: they stay there, and it is up to the teacher to delete them if they wish."
         ]
       },
       {
         "h": "Usage measurement in the application",
-        "p": "The application is developed by one person — me. To keep it working well, to measure the load on the servers, to guarantee its stability and to know where to put my energy, I measure how it is used: the time spent in each part of the application, interface actions, timestamped, in their order, sign-ins and the access domain. If a tool is heavily used, that is the one I focus on improving. These measurements are accessible to the application’s administrators.",
+        "p": "The application is developed by one person: me. To keep it working well, to measure the load on the servers, to guarantee its stability and to know where to put my energy, I measure how it is used: the time spent in each part of the application, interface actions (timestamped, in order), sign-ins and the access domain. If a tool is heavily used, that is the one I focus on improving. These measurements are accessible to the application’s administrators.",
         "items": [
-          "What is never collected: your musical content (not your scales, not your pieces, not what you play), the text you type, your keystrokes, your mouse movements. No advertising trackers, no third-party analytics: nothing goes to Google, Meta or an ad network.",
+          "What is never collected: your musical content (not your scales, your songs or what you play), the text you type, your keystrokes, your mouse movements. No advertising trackers, no third-party analytics: nothing goes to Google, Meta or an ad network.",
           "Two specific uses: the end-of-trial email is personalised based on your usage; and when you report a problem, your feedback and the trail of your actions may be analysed by Claude, Anthropic’s assistant, to prepare the diagnosis.",
           "These measurements are kept for 24 months, then erased automatically. They are also deleted along with your account.",
           "You can opt out of this measurement at any time from within the application, with no explanation needed: opting out is immediate and erases the measurements already recorded about you. Only the error log remains, with no link to your account.",
           "The error log: when the application crashes, the error is recorded so it can be fixed (cleaned-up message, screen, version, browser), including for visitors without an account. A one-way fingerprint of the account, pseudonymous data, makes it possible to count the accounts affected; it is not created if you have opted out of the measurement.",
-          "Email tracking: opens and clicks are measured for your address, through an invisible image and tracked links, in campaigns and some automatic emails, including without an account. This is part of the application’s conditions of use. You can unsubscribe from emails that are not essential; there is no separate setting to turn this measurement off.",
-          "The full text, which is the one that prevails, is the one shown in the application, available at any time from “My account” → “Privacy & Terms”."
+          "Email tracking: opens and clicks are measured for your address, through an invisible image and tracked links, in campaigns and some automated emails, including without an account. This is part of the application’s terms of use. You can unsubscribe from emails that are not essential; there is no separate setting to turn this measurement off.",
+          "The full, authoritative text is the one shown in the application, available at any time from “My account” → “📄 Privacy & Terms”."
         ]
       },
       {
         "h": "On what legal basis",
-        "p": "It depends on what is at stake, and it is better said precisely.",
+        "p": "It depends on the case, and it is best to spell it out precisely.",
         "items": [
           "Your consent, for the site forms and for receiving my news: two separate checkboxes, only one of which is mandatory, and you can withdraw either at any time.",
-          "The application’s conditions of use, which include measuring opens and clicks in emails.",
+          "The application’s terms of use, which include measuring opens and clicks in emails.",
           "Performance of the service, for your account, your subscription and organising lessons: without this information, the application simply cannot do what you are asking of it.",
           "Performance of the terms of use you accepted, for your default star on the players’ map (first name, initial of your last name, country).",
           "Your consent, for your detailed card on the map and for showing your photo: nothing appears there without your click, and you withdraw it at any time from your card.",
-          "My legitimate interest in running and improving the application, for usage measurement, which is part of the conditions of use — together with a full right to object, exercisable in one gesture inside the application."
+          "My legitimate interest in running and improving the application, for usage measurement, which is part of the terms of use, together with a full right to object that you can exercise in a single action within the application."
         ]
       },
       {
         "h": "How long I keep all this",
         "p": "For as long as it is useful, no longer.",
         "items": [
-          "Your account data and the lesson calendar: for as long as your account is active. You can ask for it to be deleted at any time.",
+          "Your account data and the lesson calendar: for as long as your account is active. You can ask for your account to be deleted at any time.",
           "Your place on the players’ map, your card and your profile photo: for as long as your account exists. Each item on your card can be withdrawn at any time; removing the email and the location is immediate, and access to your photo closes within one hour at most.",
           "Usage measurements: 24 months, deleted along with your account, and erased immediately if you object to the measurement.",
           "The error log: 90 days after the last occurrence for an error that has been dealt with, 180 days otherwise; the account fingerprint, 12 months at most after the last occurrence.",
@@ -2775,43 +2775,43 @@ export const en: Dict = {
         "h": "The providers that see your data",
         "p": "I neither sell nor rent any data, to anyone, ever. Here is the list of services that are genuinely involved.",
         "items": [
-          "Supabase — the database where accounts, the lesson calendar and form replies are stored, along with the storage space for uploaded files. The project is hosted in Ireland, within the European Union.",
-          "Vercel — the host of this site. The small server functions that relay the forms run in the United States.",
-          "Stripe — payment of the application subscription. The site itself only reads the displayed prices there: no personal data is sent to it from this site.",
-          "Google — the contact@lesagedavid.fr mailbox is hosted by Google, and that is where I answer you. The site also loads its fonts and video thumbnails from Google servers: none of your replies is passed on to them, but your browser’s IP address is. And Google Calendar is involved only if a teacher has chosen to link it, as described above. If you choose to sign in with Google, Google sends the application your email, your last name, your first name and the address of your profile photo. Audio recordings of lessons and memos may be kept in private, non-public storage at Google (Google Drive).",
-          "Anthropic — its assistant Claude may analyse feedback you send me from the application, together with the trail of your actions, to prepare the diagnosis. A US company.",
-          "DeepL (a German company) and, as a fallback, Google Translate — at an administrator’s request, they translate the text of feedback you send me, and the text of the emails I write to you in your language, including a passage that is personal to you.",
-          "OpenFreeMap (Hyperknot Software Kft., Hungary), via the Cloudflare network — the background of the players’ map. The IGN Géoplateforme (France) and Photon, a komoot service (Germany) — address search, only on your click. What they receive is detailed above.",
+          "Supabase: the database where accounts, the lesson calendar and form replies are stored, along with the storage space for uploaded files. The project is hosted in Ireland, within the European Union.",
+          "Vercel: the host of this site. The small server functions that relay the forms run in the United States.",
+          "Stripe: payment for the application subscription. The site itself only reads from Stripe the prices it displays: no personal data is sent to it from this site.",
+          "Google: the contact@lesagedavid.fr mailbox is hosted by Google, and that is where I answer you. The site also loads its fonts and video thumbnails from Google servers: none of your replies is passed on to them, but your browser’s IP address is. And Google Calendar is involved only if a teacher has chosen to link it, as described above. If you choose to sign in with Google, Google sends the application your email, your last name, your first name and the address of your profile photo. Audio recordings of lessons and memos may be kept in private, non-public storage at Google (Google Drive).",
+          "Anthropic: its assistant Claude may analyse feedback you send me from the application, together with the trail of your actions, to prepare the diagnosis. A US company.",
+          "DeepL (a German company) and, as a fallback, Google Translate: at an administrator’s request, they translate the text of feedback you send me, and the text of the emails I write to you in your language, including a passage that is personal to you.",
+          "OpenFreeMap (Hyperknot Software Kft., Hungary), via the Cloudflare network: the base map of the players’ map. The IGN Géoplateforme (France) and Photon, a komoot service (Germany): address search, only when you click. What they receive is detailed above.",
           "Supabase Inc., Vercel Inc., Google LLC, Anthropic PBC and Cloudflare Inc. are US companies: some data may therefore be processed outside the European Union. These transfers are covered by the safeguards provided for by the GDPR, put in place by these providers."
         ]
       },
       {
         "h": "Cookies and analytics on this site",
-        "p": "This site sets no cookies. It uses no analytics tool, no advertising pixel, no tracker — which is why there is no banner to accept on arrival. The only thing your browser remembers locally is the language you chose: it never leaves your device. Not to be confused with the application’s usage measurement described above, which is a different thing and can be turned off in one click. Emails are another matter: their opening and clicks on their links are measured, through an invisible image and tracked links. This is part of the application’s conditions of use, and it is explained in its policy.",
+        "p": "This site sets no cookies. It uses no analytics tool, no advertising pixel and no tracker, which is why there is no banner to accept when you arrive. The only thing your browser remembers locally is the language you chose: it never leaves your device. Not to be confused with the application’s usage measurement described above, which is a different thing and can be turned off in one click. Emails are another matter: opens and clicks on their links are measured, through an invisible image and tracked links. This is part of the application’s terms of use, and it is explained in its privacy policy.",
         "items": [] as string[]
       },
       {
         "h": "Your rights, and how to exercise them",
-        "p": "One gesture is enough: write to contact@lesagedavid.fr. No form to fill in, no proof to provide unless I have serious doubt about your identity. I answer personally, within one month at most.",
+        "p": "It takes just one step: write to contact@lesagedavid.fr. No form to fill in, no proof to provide unless I have serious doubt about your identity. I reply to you personally, within one month at most.",
         "items": [
-          "Access — know exactly what I hold about you; I can send you a copy.",
-          "Rectification — correct information that is wrong or out of date.",
-          "Erasure — delete everything, including your account.",
-          "Objection — refuse a use, in particular usage measurement and news emails.",
-          "Portability — get back what you gave me, in a file you can reuse elsewhere.",
-          "Restriction — ask for your information to be set aside while we settle a disagreement.",
-          "Withdrawal of consent — at any time, with no explanation needed.",
-          "And if you disagree with me: you can lodge a complaint with the CNIL, the French data protection authority — CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, www.cnil.fr. But write to me first if you like: it’s faster."
+          "Access: knowing exactly what I hold about you; I can send you a copy.",
+          "Rectification: correct information that is wrong or out of date.",
+          "Erasure: delete everything, including your account.",
+          "Objection: say no to a particular use, especially usage measurement and emails about what’s new.",
+          "Portability: get back what you gave me, in a file you can reuse elsewhere.",
+          "Restriction: ask for your information to be set aside while we settle a disagreement.",
+          "Withdrawal of consent: at any time, with no need to give a reason.",
+          "And if you disagree with me: you can lodge a complaint with the CNIL, the French data protection authority (CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, www.cnil.fr). But write to me first if you like: it’s faster."
         ]
       },
       {
         "h": "Security",
-        "p": "The site and the application are served over HTTPS end to end. The database can only be reached with dedicated credentials, and its access rules are enforced by the database itself — that is what guarantees a lesson can only be read by the teacher and the student concerned. The token authorising access to Google Calendar is kept in a table strictly unreachable from a browser, and is never sent back to the client. Your profile photo is kept in private storage: it only becomes readable by signed-in people if you have ticked “Show my photo on my card”. No banking details are entered or stored on this site: payments go through Stripe.",
+        "p": "The site and the application are served over HTTPS end to end. The database can only be reached with dedicated credentials, and its access rules are enforced by the database itself. That is what guarantees a session can only be read by the teacher and the student concerned. The token authorising access to Google Calendar is kept in a table that cannot be reached from a browser at all, and it is never sent back to the client. Your profile photo is kept in private storage: it only becomes visible to signed-in users if you have ticked “Show my photo on my card”. No bank details are entered or stored on this site: payments go through Stripe.",
         "items": [] as string[]
       },
       {
         "h": "If this page changes",
-        "p": "It carries a last-updated date, at the top. When the text changes, that date changes with it. For the application, a version number accompanies the document shown before you enter: that is what makes it possible to know exactly which text you had in front of you on the day you accepted it.",
+        "p": "It carries a last-updated date, at the top. When the text changes, that date changes with it. For the application, the document shown before you go in carries a version number: that is what shows exactly which text you had in front of you on the day you accepted it.",
         "items": [] as string[]
       },
     ],
@@ -2832,15 +2832,15 @@ export const en: Dict = {
     woodEnNames: { frene: 'Ash', chene: 'Oak', acajou: 'Mahogany', cerisier: 'Cherry', noyer: 'Walnut' },
     woodDescriptions: {
       frene:
-        'A light wood with marked longitudinal grain and a fine texture. Ash is the standard wood of the Neotone¹ — lightweight, balanced resonance, clean aesthetic. Chosen by musicians who want a neutral, versatile instrument that doesn’t draw too much attention while playing.',
+        'A light-coloured wood with marked longitudinal grain and a fine texture. Ash is the standard wood of the Neotone¹: light weight, balanced resonance, clean looks. Chosen by musicians who want a neutral, versatile instrument that doesn’t draw the eye too much while they play.',
       chene:
-        'A sturdy wood with tighter grain than ash, in golden-honey tones. A noble character, visually warmer than ash. Included in the base price — the natural alternative for those who want a warmer look at no extra cost.',
+        'A sturdy wood with tighter grain than ash, in golden-honey tones. A noble character, visually warmer than ash. Included in the base price: the natural alternative for anyone who wants a warmer look at no extra cost.',
       acajou:
-        'A deep ochre-red wood, heavy and warm. Mahogany brings visual depth and vintage elegance — it instantly evokes classic, quality instruments. It develops a beautiful patina over the years.',
+        'A deep ochre-red wood, heavy and warm. Mahogany brings visual depth and vintage elegance: it instantly brings to mind fine classical instruments. It develops a beautiful patina over the years.',
       cerisier:
-        'A pinkish wood leaning toward orange, with fine, even grain. Cherry ages by gaining intensity, darkening slightly over time. A soft, distinctive character, between the lightness of oak and the depth of mahogany.',
+        'A pinkish wood leaning towards orange, with fine, even grain. Cherry deepens as it ages, darkening slightly over time. A soft, distinctive character, between the lightness of oak and the depth of mahogany.',
       noyer:
-        'A dark wood with deep chocolate nuances, sometimes marbled with lighter veins. Walnut is the most contrasted of the five, perfect for an unapologetically high-end look. Often requested for visual productions or stage setups where the instrument is in the spotlight.',
+        'A dark wood in deep chocolate tones, sometimes marbled with lighter veins. Walnut has the strongest contrast of the five, perfect for an unapologetically high-end look. Often requested for visual productions or stage setups where the instrument is in the spotlight.',
     },
     // ── Yishama steels (/yishama page). Taken from Yishama's own
     // article and catalogue. What Yishama does not say, we do not say.
@@ -2849,39 +2849,39 @@ export const en: Dict = {
     metalTags: { nitrure: 'Bright and powerful', inox: 'Warm, long sustain', ember: 'In the Yishama catalogue' },
     metalDescriptions: {
       nitrure:
-        'It starts with cold-rolled steel with a low carbon content — usually DC04 — sent to a specialist facility for nitriding. The process hardens the steel and creates a protective layer on its surface. This is the historic handpan steel.',
+        'It starts as low-carbon cold-rolled steel (usually DC04), sent to a specialist facility for nitriding. The process hardens the steel and creates a protective layer on its surface. This is the original handpan steel.',
       inox:
-        'Stainless steel does not rust. That is its first quality, but not the most interesting one: above all it gives a very different timbre, rounder, with a far longer tail of sound than nitrided.',
+        'Stainless steel does not rust. That is its first quality, but not the most interesting one: above all, it has a very different timbre, rounder, with a much longer tail than nitrided steel.',
       ember:
-        'A stainless steel developed specifically for the handpan, which Yishama offers in its catalogue alongside nitrided and standard stainless. Yishama does not compare it to the other two in their article: rather than summarise what they do not write, the best thing is to hear it — ask them for a sound sample, or come and listen at the showroom.',
+        'A stainless steel developed specifically for the handpan, which Yishama offer in their catalogue alongside nitrided and standard stainless steel. Yishama don’t compare it with the other two in their article: rather than summarise what they don’t write, the best thing is to hear it. Ask them for a sound sample, or come and listen at the showroom.',
     },
     metalSound: {
       nitrure:
-        'A more ceramic, almost clay-like sound. The high frequencies are amplified with great volume — Yishama write that it can be heard miles away.',
+        'A more ceramic, almost terracotta sound. The high frequencies come through with a lot of volume: Yishama write that it can be heard miles away.',
       inox:
-        'A very warm and soft tone, with an abundance of sustain, longer than on nitrided. The amplified frequencies sit rather at the lower end of the spectrum.',
+        'A very warm and soft tone, with an abundance of sustain, longer than on nitrided steel. The amplified frequencies sit more towards the lower end of the spectrum.',
       ember: 'Not detailed by Yishama in their material comparison.',
     },
     metalCare: {
       nitrure:
-        'Needs more care than stainless: regular cleaning and oiling. To be avoided at the beach, despite the nitriding layer.',
+        'Needs more care than stainless: regular cleaning and oiling. Best kept away from the beach, despite the nitrided layer.',
       inox:
-        'Rust-resistant: cleaning and oiling can be less frequent, though still recommended. On the other hand it is very sensitive to heat — in direct sunlight it can temporarily go out of tune.',
+        'Rust-resistant: cleaning and oiling can be less frequent, though still recommended. However, it is very sensitive to heat: in direct sunlight it can temporarily go out of tune.',
       ember: 'A stainless steel: the same general precautions as standard stainless.',
     },
     metalBest: {
       nitrure: 'Outdoors, busking, anything that has to carry far without amplification.',
-      inox: 'Indoors, concerts, the studio — rather than street playing.',
+      inox: 'Indoors, concerts, the studio, rather than street playing.',
       ember: 'Worth hearing before deciding.',
     },
     // EN titles of the Yishama videos (same order as `videos` in data/yishama.ts)
     yishamaVideos: [
       'The very first meeting with the instrument',
-      'What I love about my Yishama — the logic of the scale',
-      'Fallin’ — Alicia Keys cover',
-      'Copier-Coller — Bigflo & Oli cover',
+      'What I love about my Yishama: the logic of the scale',
+      'Fallin’ – Alicia Keys cover',
+      'Copier-Coller – Bigflo & Oli cover',
       'Ave Maria, jazz style',
-      'Rózsa — Hungarian traditional song',
+      'Rózsa – traditional Hungarian song',
     ],
     modelTaglines: { one: 'The essentials, no screen', mutant: 'Maximum expression, with LCD screen' },
     modelNotes: { one: '10 notes · no screen', mutant: '19 notes · LCD screen' },
@@ -2894,7 +2894,7 @@ export const en: Dict = {
         'Full MIDI control (in / out)',
         '1 pedal input (volume or expression)',
         'Mono audio output (1 jack) or stereo (2 jacks)',
-        'Li-Ion 7800 mAh battery — 8 h runtime',
+        'Li-Ion 7800 mAh battery, 8 h runtime',
         '1,300 samples per scale · 48 kHz / 32 bit',
       ],
       mutant: [
@@ -2906,66 +2906,66 @@ export const en: Dict = {
         'Full MIDI control (in / out)',
         '1 pedal input (volume or expression)',
         'Mono audio output (1 jack) or stereo (2 jacks)',
-        'Li-Ion 7800 mAh battery — 8 h runtime',
+        'Li-Ion 7800 mAh battery, 8 h runtime',
         '1,300 samples per scale · 48 kHz / 32 bit',
       ],
     },
     specs: [
-      { title: 'Studio audio quality', items: ['48 kHz / 32 bit · 24-bit / 384 kHz DAC', 'Signal-to-noise ratio: 112 dB', 'Audio latency: 5 ms', '1,300 studio samples per scale', 'Notes: 7 nuances × 10–15 velocities'] },
-      { title: '7 official scales included (+ unlimited via the app)', items: ['Official scales from MAG Instruments & Yishama handpans', 'E.g. B-Amara · C-Aegean · C# Pygmy · D-Kurd · F#2 Pygmy · G-Romanian Hijaz…', 'Create your own scales, with no limit', 'Scales shared freely by the community'] },
+      { title: 'Studio audio quality', items: ['48 kHz / 32 bit · 24-bit / 384 kHz DAC', 'Signal-to-noise ratio: 112 dB', 'Audio latency: 5 ms', '1,300 studio samples per scale', 'Notes: 7 dynamic levels × 10–15 velocities'] },
+      { title: '7 official scales included (+ unlimited via the app)', items: ['Official scales from MAG Instruments & Yishama handpans', 'E.g. B-Amara · C-Aegean · C# Pygmy · D-Kurd · F#2 Pygmy · G-Romanian Hijaz…', 'Create your own scales, with no limit', 'Free scales shared by the community'] },
       { title: '8-hour battery', items: ['Built-in Li-Ion 7.4 V · 7,800 mAh battery', '8 hours of continuous playing', 'Full charge: 4 hours', '12 V power adapter included'] },
       { title: 'Full MIDI in/out', items: ['MIDI controller (out) + MIDI sound module (in)', '6 body zones + 18 pads + Ding + Dome', 'MIDI notes assignable per zone', 'Compatible with MIDI standards'] },
       { title: 'Pro connectivity', items: ['Unbalanced line outputs (R/L)', 'Headphone output · MIDI in/out', '1 pedal input (volume or expression)', 'Mono (1 jack) or stereo (2 jacks)', 'WiFi · settings, scale creation'] },
       { title: 'Format, weight & sensors', items: ['47 cm diameter · 16 cm height', '3.5 kg (depending on wood)', 'Sensor precision: 0.5 cm', 'Sensitivity: 20 to 5,000 g', 'Detects strike, pressure and position'] },
     ],
     comparatif: [
-      { aco: 'To play 10 scales, you need 10 handpans: hard to transport, bulky to store, rising budget.', neo: 'A single Neotone opens up endless scales — one instrument to carry, store and pay for. And you even create your own scales.' },
-      { aco: 'Two players, two different scales: hard to play together or to share a scale.', neo: 'Everyone loads the same scale to play together — learning and sharing become simple, and you open up to the world to play with other instruments.' },
-      { aco: 'In a jam with percussion, a saxophone or a bass, the acoustic handpan is quickly drowned out.', neo: 'The volume is adjustable: you stay audible among the other instruments, on stage or in a jam.' },
-      { aco: 'Accompanying a singer is hard: a fixed acoustic scale adapts poorly to different voices.', neo: 'You accompany the voice in every range and play well-known songs like on a piano or guitar — the handpan finally steps out of its niche.' },
+      { aco: 'To play 10 scales, you need 10 handpans: hard to carry, bulky to store, and the budget keeps climbing.', neo: 'A single Neotone gives you endless scales: one instrument to carry, store and pay for. And you can even create your own custom scales.' },
+      { aco: 'Two players, two different scales: hard to play together or to share a scale.', neo: 'Everyone loads the same scale to play together: learning and sharing become simple, and you open yourself up to playing with other instruments.' },
+      { aco: 'In a jam with percussion, a saxophone or a bass, the acoustic handpan is quickly drowned out.', neo: 'The volume is adjustable: you can always be heard among the other instruments, on stage or in a jam.' },
+      { aco: 'Accompanying a singer is hard: a fixed acoustic scale adapts poorly to different voices.', neo: 'You accompany the voice in every range and play well-known songs as you would on piano or guitar: the handpan finally steps out of its niche.' },
       { aco: 'Fragile and sensitive: you can’t play in full sun, and the tuning drifts over time and with knocks.', neo: 'Always perfectly in tune, unaffected by heat. Choose 440 Hz or 432 Hz and transpose a scale to play in the right key with other instruments.' },
       { aco: 'Very few notes. The physics of metal limits everything: size, dissonance, available space.', neo: 'Electronics free up note placement: far more notes and scales possible on a single instrument.' },
-      { aco: 'Acoustic striking technique is demanding: it can be discouraging at first for some people, who give up for lack of immediate enjoyment.', neo: 'Adjustable-sensitivity sensors: a true sound from the first strike, the joy of playing right away.' },
-      { aco: 'Bringing out the harmonics requires rare precision on acoustic.', neo: 'On the Neotone, harmonics come out easily — and the acoustic effects remain.' },
+      { aco: 'Acoustic striking technique is demanding: it can be discouraging at first for some people, who give up for lack of immediate enjoyment.', neo: 'Adjustable-sensitivity sensors: a clean sound from the very first strike, and the joy of playing right away.' },
+      { aco: 'Bringing out the harmonics takes rare precision on an acoustic handpan.', neo: 'On the Neotone, harmonics come out easily, and the acoustic effects are still there.' },
       { aco: 'On the acoustic Mutant, the mutant-note zones are small and precise.', neo: 'The striking-zone size is adjustable (up to 30% of the note): enlarge it to start, reduce it for precision.' },
     ],
     faq: [
       { q: 'What warranty comes with the Neotone?', a: 'Every Neotone comes with a 6-year warranty, a semi-rigid case and a charger.' },
-      { q: 'Which company makes the Neotone?', a: 'The Neotone is made by Soundventure Ltd, in Budapest (Hungary). The instrument was born from the dream of two friends, Csaba and Norbert; the company was founded in 2021, with the support of MAG Instruments and Yishama Ltd. I’ve travelled to their workshops in Hungary several times: I personally know Csaba and Norbert as well as the whole team (Gergely, Dániel and the craftsmen at MAG Instruments, and Yonathan from Yishama). I’m also an official beta tester for the brand since 2021 — since the first Neotone¹, I’ve reported and helped fix thousands of bugs and suggested many improvements.' },
-      { q: 'Who is the Neotone for?', a: 'For everyone: playing a digital handpan requires no prerequisites. It quickly becomes essential for stage musicians (looping, plugging in pedals), for studio recording, for night players (headphone play) and for digital nomads. And for players already won over, it opens up the infinite field of scale creation.' },
+      { q: 'Which company makes the Neotone?', a: 'The Neotone is made by Soundventure Ltd, in Budapest (Hungary). The instrument was born from the dream of two friends, Csaba and Norbert; the company was founded in 2021, with the support of MAG Instruments and Yishama Ltd. I’ve travelled to their workshops in Hungary several times: I personally know Csaba and Norbert as well as the whole team (Gergely, Dániel and the craftsmen at MAG Instruments, and Yonathan from Yishama). I’ve also been an official beta tester for the brand since 2021. Since the first Neotone¹, I’ve reported and helped fix thousands of bugs and suggested many improvements.' },
+      { q: 'Who is the Neotone for?', a: 'For everyone: playing a digital handpan needs no prior experience. It quickly becomes essential for stage musicians (looping, plugging in pedals), for studio recording, for late-night players (playing on headphones) and for digital nomads. And for players already won over, it opens up the endless field of scale creation.' },
       { q: 'Does it feel the same as an acoustic handpan?', a: 'The experience differs from acoustic play: the sound doesn’t come directly from the instrument but from headphones or a speaker. Upsides: full immersion on headphones, adjustable volume, no more feedback on stage. Bose L1 systems are ideal; the Bose S1 Pro is an excellent portable option.' },
       { q: 'Is the Mutant identical to a real “mutant” handpan?', a: 'No. The extra notes are played via a distinct zone inside each tonefield, which requires soft, precise playing. You can enlarge this zone up to 30% of the note for more comfort.' },
-      { q: 'I’m a beginner — do you recommend the Neotone?', a: 'Both models are perfectly suited to beginners. Playing the Neotone is even easier than playing an acoustic handpan: sensor sensitivity is adjustable, so you get a true sound from the very first strike. The Mutant requires slightly more precise playing for its extra notes, but lets you go much further in harmony.' },
+      { q: 'I’m a beginner. Do you recommend the Neotone?', a: 'Both models are perfectly suited to beginners. Playing the Neotone is even easier than playing an acoustic handpan: sensor sensitivity is adjustable, so you get a clean, in-tune sound from the very first strike. The Mutant requires slightly more precise playing for its extra notes, but lets you go much further in harmony.' },
       { q: 'Do I need extra gear to produce sound?', a: 'The Neotone is a self-contained digital instrument with its own sound engine: it doesn’t need a computer to work. It has no built-in speakers, so you need to connect it to a speaker (for example the standalone Bose S1 Pro+) or play with headphones to hear the sound.' },
       { q: 'Can you apply effects to the Neotone’s sound?', a: 'As with an electric guitar, you can connect any external gear: effects pedals (Boss OC-3), loop stations (Roland RC-505 MKII), reverbs (Strymon Nightsky, Hologram Microcosm).' },
       { q: 'Can I rent or borrow a Neotone?', a: 'No. Neotones are not for rent, and I do not lend instruments or prototypes. To try one before buying, come to the showroom in Paris: you can play the models in stock for as long as you like.' },
-      { q: 'Is the Neotone portable and battery-powered?', a: 'Yes. About 8 hours of continuous playing. It ships with a charger, usable whether the instrument is playing or not.' },
+      { q: 'Is the Neotone portable and battery-powered?', a: 'Yes. About 8 hours of battery life in continuous play. It comes with a charger, which you can use whether or not you’re playing.' },
     ],
     procedure: [
       { title: 'Contact me to receive your discount code', text: 'Send an email with your first and last name, your delivery country, your email and your phone number.' },
       { title: 'Receive your unique discount code', text: 'You receive a personal discount code from Neotone (−5% online, −7% at the showroom).' },
       { title: 'Place your order with Neotone', text: 'Neotone gets back to you within two days with a personalised offer.' },
-      { title: 'Pay the €1,000 excl. VAT deposit', text: 'On confirmation, you pay a deposit of €1,000 excl. VAT. This triggers the hand-crafting of your instrument.' },
-      { title: 'Patience during manufacturing', text: 'The lead time varies between 2 and 5 months depending on the queue. You receive a personalised estimate.' },
+      { title: 'Pay the €1,000 deposit (excl. VAT)', text: 'On confirmation, you pay a deposit of €1,000 excl. VAT. This triggers the hand-crafting of your instrument.' },
+      { title: 'Be patient while it’s made', text: 'The lead time varies between 2 and 5 months depending on the queue. You receive a personalised estimate.' },
       { title: 'Pay the balance and receive your Neotone', text: 'As soon as your instrument is ready, you’re notified by email. You pay the balance and the instrument is shipped with its invoice, worldwide.' },
     ],
     procedureShowroom: [
-      { title: 'Book a session with me', text: 'Two options: come to one of my public gathering dates (one a month), or book an individual appointment just for you — 1h · €50 or 1h30 · €70.' },
-      { title: 'Try both models for real', text: 'On the spot, you take your time to test the Neotone¹ and the Mutant, compare the woods, and ask me anything.' },
-      { title: 'Walk away with your instrument the same day', text: 'You get the showroom discount (−7%) and walk away with your Neotone right away — no manufacturing wait.' },
+      { title: 'Book a session with me', text: 'Two options: come to one of my public meet-up dates (one a month), or book a one-to-one appointment just for you: 1 hour · €50 or 1 hour 30 · €70.' },
+      { title: 'Try both models for real', text: 'While you’re there, you take your time to try the Neotone¹ and the Mutant, compare the woods, and ask me all your questions.' },
+      { title: 'Walk away with your instrument the same day', text: 'You get the showroom discount (−7%) and leave straight away with your Neotone, with no wait for it to be made.' },
     ],
     included: [
-      { title: 'Carrying bag', text: 'Special black bag with shoulder strap and backpack straps · 520 × 220 mm.' },
+      { title: 'Carrying bag', text: 'Dedicated black bag with shoulder strap and backpack straps · 520 × 220 mm.' },
       { title: 'Worldwide shipping', text: 'Shipping included in the price, anywhere in the world.' },
       { title: '6-year warranty', text: 'Repair + transport included.' },
-      { title: 'Power charger included', text: 'Standard 12 V charger included (plug according to delivery country).' },
-      { title: '1-year Studio licence', text: 'For the Handpan Constellation Studio app: worth €89.' },
+      { title: 'Mains charger included', text: 'Standard 12 V charger supplied (plug to suit your delivery country).' },
+      { title: '1-year Studio licence', text: 'For the Handpan Constellation Studio app: €89 worth, free.' },
     ],
     extras: [
       { title: 'Headphones or earbuds', text: 'To play silently, at night or in a flat. Ideally headphones with a 6.35 mm jack (or an adapter).' },
-      { title: 'An angled jack cable', text: 'A mono (1 output) or stereo (2 outputs) jack cable to connect the Neotone to your speaker. Important: choose an angled connector on the instrument side — that’s what lets you rest the handpan on the floor without damaging the connector.' },
-      { title: 'A speaker', text: 'Essential to project the sound. My pick: the Bose S1 Pro+ (≈ €599), self-powered (8 h battery), superb in a jam or for small concerts — with more bass than the older S1 Pro, an optional wireless transmitter, and the Sub 1 subwoofer if you want real deep, warm bass.' },
-      { title: 'A MIDI → USB cable', text: 'A MIDI-to-USB cable (or USB-A to USB-C) if you want to drive music software (DAW: Logic Pro, Ableton Live…).' },
+      { title: 'An angled jack cable', text: 'A mono (1 output) or stereo (2 outputs) jack cable to connect the Neotone to your speaker. Important: choose an angled connector on the instrument side. That’s what lets you rest the handpan on the floor without damaging the socket.' },
+      { title: 'A speaker', text: 'Essential to project the sound. My pick: the Bose S1 Pro+ (≈ €599), battery-powered (8 h), superb in a jam or for small concerts. It has more bass than the older S1 Pro and an optional wireless transmitter, and you can add the Sub 1 subwoofer if you want real deep, warm bass.' },
+      { title: 'A MIDI → USB cable', text: 'A MIDI-to-USB cable (or USB-A to USB-C) if you want to control music software (DAW: Logic Pro, Ableton Live…).' },
     ],
     calc: {
       modeQuestion: 'How would you like to receive your Neotone?',
@@ -2976,7 +2976,7 @@ export const en: Dict = {
       modeOnlineShort: 'Online purchase, discount code (−5%)',
       modeShowroomShort: 'Showroom purchase (−7%)',
       stockStateIn: 'Available at the showroom',
-      stockStateInSub: 'You can come and try it in Paris (20th) and leave with it.',
+      stockStateInSub: 'You can come and try it in Paris (20th arrondissement) and take it home with you.',
       stockStateTransit: 'Arriving at the showroom: {period}',
       stockStateTransitSoon: 'Arriving at the showroom soon',
       stockStateTransitSub: 'The price below still applies. Send a request: I’ll keep you posted on its arrival and the lead times.',
@@ -2991,7 +2991,7 @@ export const en: Dict = {
       step1: '1 · Choose your model',
       step2: '2 · Choose your wood',
       step3: '3 · Your delivery country',
-      b2b: 'I have an intra-EU VAT number (B2B) — VAT is recoverable (reverse charge), you pay the price excl. VAT.',
+      b2b: 'I have an intra-EU VAT number (B2B): VAT is recoverable (reverse charge), so you pay the price excl. VAT.',
       recap: 'Summary',
       basePrice: 'Public price excl. VAT (shipping included)',
       subtotal: 'Subtotal excl. VAT',
@@ -3001,7 +3001,7 @@ export const en: Dict = {
       // a VAT-registered buyer would reclaim it anyway). Hence the separate label + note.
       savingsB2B: 'You don’t pay upfront',
       savingsB2BNote:
-        'That is {discountRate} discount + {vatRate} VAT on the base price — the gap with the catalogue price incl. VAT ({catalog}). Only the {discount} discount is a real gain: the VAT is simply never advanced (reverse charge), and you would reclaim it anyway.',
+        'That’s {discountRate} discount plus {vatRate} VAT on the base price, the difference from the catalogue price incl. VAT ({catalog}). Only the {discount} discount is a real saving: you don’t pay the VAT upfront (reverse charge), and you would reclaim it anyway.',
       getCode: 'Get my discount code',
       discountLabel: 'Ambassador discount',
       vat: 'VAT',
@@ -3011,7 +3011,7 @@ export const en: Dict = {
       finalB2B: 'Price to pay excl. VAT (reverse charge)',
       finalB2BNote: 'VAT recoverable · intra-EU VAT number required',
       finalExtUE: 'Price to pay excl. VAT · outside the EU',
-      finalExtUENote: 'No EU VAT · local customs fees at your expense',
+      finalExtUENote: 'No EU VAT · local customs duties at your expense',
       b2bNote: 'VAT reverse charge: you declare and recover the VAT in your country. A valid intra-EU VAT number is required.',
       vatStd: 'VAT',
       noVat: 'no EU VAT',
