@@ -2319,7 +2319,7 @@ export const en: Dict = {
         title: 'Drums at 4, then music theory and notation',
         paras: [
           'I started music at 4, on drums. From my very first lesson, I was made to read scores. I gave it all up and taught myself, by ear.',
-          'I came back to it through school, in this order: first four years in the jazz programme at the Marciac secondary school (the jazz section attached to the festival, with Wynton Marsalis as its patron), where I discovered vocal improvisation; then the lycée, with a <strong>TMD baccalaureate (Technique de Musique et de Danse)</strong>, obtained in 2012 at Lycée Saint-Sernin in Toulouse. It’s the equivalent of a sports-study programme, but for music, with a timetable built around it. Then four years at the Toulouse Conservatoire, which I left in 2013 with first prize in drums, with highest honours.',
+          'I came back to it through school, in this order: first four years at the Collège de jazz de Marciac (the jazz section attached to the festival, with Wynton Marsalis as its patron), where I discovered vocal improvisation; then the lycée, with a <strong>TMD baccalaureate (Technique de Musique et de Danse)</strong>, obtained in 2012 at Lycée Saint-Sernin in Toulouse. It’s the equivalent of a sports-study programme, but for music, with a timetable built around it. Then four years at the Toulouse Conservatoire, which I left in 2013 with first prize in drums, with highest honours.',
           'To “catch up”, I had 7.5 hours of music theory and notation a week, across 4 different levels. I still can’t read music… that’s how cut off the teaching was from feeling and meaning, with an approach geared only to classical music.',
         ],
       },
@@ -2422,7 +2422,7 @@ export const en: Dict = {
     proofsIntro: 'Dated, verifiable milestones.',
     proofs: [
       'First prize in drums, with highest honours · Toulouse Conservatoire (2013)',
-      'Marciac jazz college · four years',
+      'Collège de jazz de Marciac · four years',
       'Five-octave vocal range',
       'The Voice season 11 · blind audition (TF1, 12/02/2022)',
       '112 documented performances · 2009–2026, 7 countries',
@@ -2515,7 +2515,7 @@ export const en: Dict = {
         items: [
           'Booking (showroom visit, seat at a gathering, one-to-one appointment, Neotone discount code request): first name, last name, email, phone if you give it, number of people, target date, up to three time slots you propose, type and format of the session (in person or online), instruments you want to discover, Neotone model you have in mind, country, social media account, how you found me, how long you have been playing, what you would like to achieve, and your message.',
           'Contact: name, email, subject, message.',
-          'App waiting list: first name, last name, email, whether you already own a handpan and which one, the role or roles you declare (for yourself, to teach, to build), your goal, your number of students and, if you build handpans, your country, the number of notes you produce, the metals you work with and how you set your prices. Plus your motivation, if you apply as a beta tester.',
+          'App waiting list: first name, last name, email, whether you already own a handpan and which one, the role or roles you declare (for yourself, to teach, to build), your goal, your number of students and, if you build handpans, your country, the maximum number of notes per instrument you build, the metals you work with and how you set your prices. Plus your motivation, if you apply as a beta tester.',
           'Muling microphone order: first name, last name, email, phone, quantity, full delivery address, instructions for the courier, message, and then the proof of payment you upload (image or PDF).',
           'In every case, a few things are added automatically: the site language, the page your request came from, the date and time you accepted these terms along with their version number, and (if you ticked the second box, the optional one) the date you agreed to receive my news.',
         ],
