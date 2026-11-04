@@ -669,7 +669,7 @@ export const es: Dict = {
       },
       "gonilele": {
         "name": "Arpa Gonilélé · La Maison du Ngoni",
-        "description": "Arpa-laúd de viaje creada por Joris Feuillâtre. Soy embajador de La Maison du Ngoni. 10 cuerdas (440 €) o 12 cuerdas con micrófono integrado (520 €). Fotos, videos, unboxing y pedido en su página."
+        "description": "Arpa-laúd de viaje creada por Joris Feuillâtre. Soy embajador de La Maison du Ngoni. 10 cuerdas (440 €) o 12 cuerdas con pastilla integrada (520 €). Fotos, videos, unboxing y pedido en su página."
       },
       "calebasse": {
         "name": "Kit de calabaza Signature David Lesage",
@@ -1969,7 +1969,7 @@ export const es: Dict = {
       }
     ],
     "programBonusTitle": "Y a veces, va más allá",
-    "programBonus": "Según el público interesado, la sesión puede abrirse más: una demostración del Gonilélé en situación real (con los efectos y el pedal de octavador, en un sistema de sonido Bose profesional, en condiciones de concierto), la calabaza e incluso el tambor chamánico «El Alma del Tambor». No es sistemático: depende de las personas presentes ese día y de lo que les interese. Cuéntame qué te atrae y lo tendré en cuenta.",
+    "programBonus": "Según el público interesado, la sesión puede abrirse más: una demostración del Gonilélé en situación real (con los efectos y el pedal de octavador, en un sistema de sonido Bose profesional, en condiciones de concierto), la calabaza e incluso el tambor chamánico «L’Âme du Tambour». No es sistemático: depende de las personas presentes ese día y de lo que les interese. Cuéntame qué te atrae y lo tendré en cuenta.",
     "programNote": "Los niños son bienvenidos, bajo la responsabilidad de sus padres. La parte de demostración, charla y preguntas puede resultar un poco larga para los más pequeños: si hace falta, prevean una actividad tranquila o el relevo de otro adulto.",
     "booking": "Las citas se reservan solo a través del formulario: lo completas, tu solicitud me llega y te respondo personalmente.",
     "bookVisitCta": "Reservar mi turno en el showroom (de pago)",
@@ -2037,7 +2037,7 @@ export const es: Dict = {
         "title": "La batería a los 4 años, luego el solfeo",
         "paras": [
           "Empecé la música a los 4 años, con la batería. Desde mi primera clase, me impusieron la lectura de partituras. Lo dejé todo y aprendí de forma autodidacta, de oído.",
-          "Volví a ella por los estudios, en este orden: primero, cuatro años en el colegio de jazz de Marciac (la sección de jazz vinculada al festival, apadrinada por Wynton Marsalis), donde descubrí la improvisación vocal; luego el liceo, con un bachillerato <strong>TMD (Técnica de Música y Danza)</strong>, obtenido en 2012 en el liceo Saint-Sernin de Toulouse. Es el equivalente de un programa de deporte y estudios, pero de música y estudios; también se habla de horarios adaptados. Después, cuatro años en el Conservatorio de Toulouse, del que salí en 2013 con el primer premio de batería, con mención sobresaliente.",
+          "Volví a ella por los estudios, en este orden: primero, cuatro años en el Collège de jazz de Marciac (la sección de jazz vinculada al festival, apadrinada por Wynton Marsalis), donde descubrí la improvisación vocal; luego el liceo, con un bachillerato <strong>TMD (Técnica de Música y Danza)</strong>, obtenido en 2012 en el liceo Saint-Sernin de Toulouse. Es el equivalente de un programa de deporte y estudios, pero de música y estudios; también se habla de horarios adaptados. Después, cuatro años en el Conservatorio de Toulouse, del que salí en 2013 con el primer premio de batería, con mención sobresaliente.",
           "Para «ponerme al día», tenía 7 h 30 de clases de solfeo por semana, en 4 niveles diferentes. Todavía no sé leer música… de tan desconectada que estaba la pedagogía de la sensación y del sentido, con un enfoque orientado únicamente a la música clásica."
         ]
       },
@@ -2192,7 +2192,7 @@ export const es: Dict = {
     "proofsIntro": "Referencias fechadas y verificables.",
     "proofs": [
       "Primer premio de batería, con mención sobresaliente · Conservatorio de Toulouse (2013)",
-      "Escuela de jazz de Marciac · cuatro años",
+      "Collège de jazz de Marciac · cuatro años",
       "Extensión vocal de cinco octavas",
       "The Voice, temporada 11 · audición a ciegas (TF1, 12/02/2022)",
       "112 actuaciones registradas · 2009–2026, 7 países",
@@ -2298,7 +2298,7 @@ export const es: Dict = {
         "items": [
           "Reserva (visita al showroom, lugar en un encuentro, cita individual, solicitud de código de descuento Neotone): nombre, apellidos, correo electrónico, teléfono si lo das, número de personas, fecha deseada, hasta tres franjas horarias que propongas, tipo y formato de la sesión (presencial o por videollamada), instrumentos que quieres descubrir, modelo Neotone que te interesa, país, cuenta de red social, cómo me conociste, desde cuándo tocas, qué te gustaría lograr y tu mensaje.",
           "Contacto: nombre y apellidos, correo electrónico, asunto, mensaje.",
-          "Lista de espera de la aplicación: nombre, apellidos, correo electrónico, si ya tienes un handpan y cuál, el rol o los roles que declaras (para ti, para enseñar, para fabricar), tu objetivo, tu número de alumnos y, si fabricas handpans, tu país, el número de notas que produces, los metales que trabajas y cómo fijas tus precios. Además, tu motivación, si te postulas como probador beta.",
+          "Lista de espera de la aplicación: nombre, apellidos, correo electrónico, si ya tienes un handpan y cuál, el rol o los roles que declaras (para ti, para enseñar, para fabricar), tu objetivo, tu número de alumnos y, si fabricas handpans, tu país, hasta cuántas notas por instrumento fabricas, los metales que trabajas y cómo fijas tus precios. Además, tu motivación, si te postulas como probador beta.",
           "Pedido del micrófono Muling: nombre, apellidos, correo electrónico, teléfono, cantidad, dirección de entrega completa, instrucciones para el repartidor, mensaje y, después, el comprobante de transferencia que subes (imagen o PDF).",
           "En todos los casos se añaden automáticamente: el idioma del sitio, la página desde la que envías tu solicitud, la fecha y la hora en que aceptaste estas condiciones con su número de versión y, si marcaste la segunda casilla, la opcional, la fecha en que aceptaste recibir mis novedades."
         ]
