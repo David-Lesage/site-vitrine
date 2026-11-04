@@ -6,9 +6,8 @@
 // `activeLangs` + créer src/i18n/<lang>.ts pour les activer.
 //
 // L'espagnol a été activé pour Ismael Barredo, ambassadeur hispanophone, et
-// les premiers comptes `es` de l'app. Son dictionnaire (`es.ts`) est GÉNÉRÉ
-// depuis le français par `scripts/traduire-i18n-es.mjs` — cf. l'en-tête du
-// fichier avant d'y toucher.
+// les premiers comptes `es` de l'app. Son dictionnaire (`es.ts`) a été relu à
+// la main le 04/11/2026 (chantier 44) : il n'est plus généré.
 // ============================================================
 
 export type Lang = 'fr' | 'en' | 'es'

@@ -1,15 +1,7 @@
-// ⚠️ FICHIER GÉNÉRÉ — NE PAS ÉDITER À LA MAIN.
-//
-// Traduction espagnole produite depuis le FRANÇAIS de `src/data/guides.ts` par
-// `scripts/traduire-i18n-es.mjs` (Google Cloud Translation v2). La source de vérité reste
-// le français : pour corriger un texte, corriger le français puis relancer le
-// script — sinon la correction sera écrasée à la passe suivante.
-//
-// Les noms propres (Neotone, Yishama, Le Nid, noms de gammes…) et les marqueurs
-// de gabarit (`{link}`, `{n}`…) sont protégés pendant la traduction et
-// ressortent intacts. Une retouche PONCTUELLE et assumée reste possible : elle
-// doit alors être reportée dans le cache `scripts/.cache-traduction-es.json`,
-// sinon elle ne survivra pas.
+// Traduction espagnole des guides, produite par Google depuis le FRANÇAIS de
+// `src/data/guides.ts`, puis FIGÉE le 04/11/2026 : le générateur
+// (`scripts/traduire-i18n-es.mjs`) est retiré (chantier 44). Ce texte n'est pas
+// encore relu. Une correction se fait ici, à la main, comme dans `src/i18n/es.ts`.
 
 import type { GuidesByLang } from './guides'
 

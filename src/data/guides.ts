@@ -856,7 +856,7 @@ const en: GuidesByLang = {
   },
 }
 
-// ES généré depuis le FRANÇAIS par `scripts/traduire-i18n-es.mjs`.
+// ES : traduction Google figée le 04/11/2026 (générateur retiré, chantier 44), à relire.
 import { esGuides } from './guides-es'
 
 export const guides: Record<Lang, GuidesByLang> = { fr, en, es: esGuides }

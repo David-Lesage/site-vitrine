@@ -966,9 +966,9 @@ const fr = {
     // Ses mots : « dans tous les cas il faut récupérer les informations de
     // facturation ; si la personne a une société qui récupère la TVA, il faut
     // qu'elle mette toutes ces infos dans le formulaire. »
-    // ⚠️ Regroupées dans un SOUS-OBJET `billing` exprès : `es.ts` est GÉNÉRÉ
-    // depuis ce fichier et n'a pas encore ces clés — le composant fait un
-    // repli sur le français en une seule ligne (`{...fr.booking.billing}`).
+    // Regroupées dans un SOUS-OBJET `billing` : le composant garde un repli sur
+    // le français (`{...fr.booking.billing}`). Traduites en ES le 04/11/2026
+    // (chantier 44).
     billing: {
       title: 'Facturation',
       intro: 'Neotone établit la facture : ces informations lui sont indispensables, et elles ne servent qu’à ça.',
@@ -3750,8 +3750,8 @@ const fr = {
 export type Dict = typeof fr
 
 // EN et ES importés séparément pour garder ce fichier lisible.
-// ⚠️ `en.ts` est écrit à la main ; `es.ts` est GÉNÉRÉ depuis le français par
-// `scripts/traduire-i18n-es.mjs` — corriger le français, puis relancer.
+// `en.ts` et `es.ts` sont écrits et relus à la main (chantier 44, 04/11/2026) :
+// un texte français nouveau ou modifié se traduit dans chacun, valeur par valeur.
 import { en } from './en'
 import { es } from './es'
 
