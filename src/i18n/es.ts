@@ -1330,7 +1330,7 @@ export const es: Dict = {
     "all": {
       "name": "Atlas All",
       "tagline": "De madera, ampliable con extensiones",
-      "text": "El modelo de madera. Su cuerpo principal está impreso en 3D y descansa sobre una base de madera con una punta antivuelco. Las patas miden 41 cm y se alargan 10 cm; al atornillar las tres extensiones de 41 cm, se pasa de la posición sentada a la posición de pie.",
+      "text": "El modelo de madera. Su cuerpo principal está impreso en 3D y descansa sobre una base de madera con una punta antivuelco. Las patas miden 41 cm y cada una termina en un tornillo que ajusta el ángulo hasta 10 cm. Al atornillar una extensión de 41 cm en cada una de las tres patas, se pasa de la posición sentada a la posición de pie.",
       "material": "Cuerpo impreso en 3D; base, extensiones y patas de madera",
       "mount": "Disco flotante, 8 imanes antiarañazos",
       "positions": "Sobre las rodillas, sentado (sin extensiones) o de pie (con extensiones)",

@@ -1448,7 +1448,7 @@ export const en: Dict = {
       name: 'Atlas All',
       tagline: 'Wood, modular with extensions',
       text:
-        'The wooden model. Its main body is 3D-printed and sits on a wooden base fitted with an anti-tip spike. The legs are 41 cm long and extend by 10 cm; screwing on the three 41 cm extensions takes it from the seated position to the standing one.',
+        'The wooden model. Its main body is 3D-printed and sits on a wooden base fitted with an anti-tip spike. The legs are 41 cm long, each ending in a screw that adjusts the angle by up to 10 cm. Screwing a 41 cm extension onto each of the three legs takes it from the seated position to the standing one.',
       material: '3D-printed body; wooden base, extensions and legs',
       mount: 'Floating disc, 8 scratch-resistant magnets',
       positions: 'On your lap, seated (without extensions) or standing (with extensions)',

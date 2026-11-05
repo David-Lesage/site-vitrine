@@ -226,7 +226,7 @@ export const atlasSpecs = {
     magnets: 8,
     /** Rallonges ET pieds en bois : 41 cm chacun. */
     woodPartCm: 41,
-    /** Les pieds se rallongent de 10 cm pour ajuster la hauteur. */
+    /** Une vis au bout de chaque pied règle l'angle, jusqu'à 10 cm (David, 04/11/2026). */
     legExtraCm: 10,
   },
 } as const

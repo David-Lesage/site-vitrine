@@ -1726,7 +1726,7 @@ const fr = {
       name: 'Atlas All',
       tagline: 'Bois, modulable par rallonges',
       text:
-        'Le modèle en bois. Son corps principal est imprimé en 3D et repose sur une base en bois munie d’une pointe anti-basculement. Les pieds font 41 cm et se rallongent de 10 cm ; en vissant les trois rallonges de 41 cm, on passe de la position assise à la position debout.',
+        'Le modèle en bois. Son corps principal est imprimé en 3D et repose sur une base en bois munie d’une pointe anti-basculement. Les pieds font 41 cm et chacun se termine par une vis qui règle l’angle jusqu’à 10 cm. En vissant une rallonge de 41 cm sur chacun des trois pieds, on passe de la position assise à la position debout.',
       material: 'Corps imprimé en 3D ; base, rallonges et pieds en bois',
       mount: 'Disque flottant, 8 aimants anti-rayures',
       positions: 'Sur les genoux, assis (sans rallonges) ou debout (avec rallonges)',
