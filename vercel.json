@@ -181,6 +181,16 @@
       "statusCode": 301
     },
     {
+      "source": "/de/blog/:slug",
+      "destination": "/blog/:slug/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/blog/:slug/",
+      "destination": "/blog/:slug/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path((?!api(?:/|$))(?!_vercel(?:/|$))(?:[^/]+/)*[^/.]+)",
       "destination": "/:path/",
       "statusCode": 301

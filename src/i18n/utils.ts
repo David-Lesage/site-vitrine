@@ -49,6 +49,35 @@ const neutralSlugs: Record<string, string> = Object.entries(translatedSlugs).red
 // localizePath('/pieds-atlas#modeles', 'en') → '/en/handpan-stands/#modeles'
 export function localizePath(path: string, lang: Lang): string {
   const clean = path.startsWith('/') ? path : `/${path}`
+  const fb = fallbackLang(clean, lang)
+  return rawLocalizePath(clean, fb ?? lang)
+}
+
+// ============================================================
+// PAGES PAS ENCORE CONSTRUITES DANS UNE LANGUE (06/11/2026, chantier 44)
+// La page de vente de l'app est un fichier STATIQUE par langue
+// (public/<lang>/handpan-app/, généré par scripts/generer-vente-langues.mjs
+// et scripts/generer-neotone-langues.mjs). Il n'en existe pas d'allemande :
+// sans ce repli, chaque lien « l'app » d'une page /de/ menait à
+// /de/handpan-app/, une 404. On vise la version ANGLAISE à la place.
+// Le jour où public/de/handpan-app/ existe : retirer l'entrée ici, et ajouter
+// `staticRoutes.add('/de/handpan-app')` plus bas, comme pour l'espagnol.
+// N'affecte ni le sélecteur de langue ni les hreflang : `pageExistsForLang`
+// utilise `rawLocalizePath`, sans repli, et voit donc que la page manque.
+// ============================================================
+const linkFallbacks: Partial<Record<Lang, { prefix: string; lang: Lang }[]>> = {
+  de: [{ prefix: '/handpan-app', lang: 'en' }],
+}
+
+function fallbackLang(clean: string, lang: Lang): Lang | undefined {
+  const cut = clean.search(/[?#]/)
+  const base = (cut === -1 ? clean : clean.slice(0, cut)).replace(/(.)\/$/, '$1')
+  return linkFallbacks[lang]?.find((f) => base === f.prefix || base.startsWith(`${f.prefix}/`))?.lang
+}
+
+// localizePath sans repli de langue : le chemin tel qu'il serait servi en `lang`.
+function rawLocalizePath(path: string, lang: Lang): string {
+  const clean = path.startsWith('/') ? path : `/${path}`
   const cut = clean.search(/[?#]/)
   const base = cut === -1 ? clean : clean.slice(0, cut)
   const suffix = cut === -1 ? '' : clean.slice(cut)
@@ -90,6 +119,7 @@ const LOCALES: Record<Lang, string> = {
   fr: 'fr-FR',
   en: 'en-GB',
   es: 'es-ES',
+  de: 'de-DE',
 }
 
 export function numberLocale(lang: Lang): string {
@@ -152,7 +182,7 @@ export async function pageExistsForLang(neutralPath: string, lang: Lang): Promis
   const base = cut === -1 ? neutralPath : neutralPath.slice(0, cut)
   const article = base.match(/^\/blog\/(.+?)\/?$/)
   if (article) return (await blogKeys()).has(`${lang}:${article[1]}`)
-  const target = localizePath(base, lang).replace(/\/$/, '')
+  const target = rawLocalizePath(base, lang).replace(/\/$/, '')
   return staticRoutes.has(target === '' ? '/' : target)
 }
 

@@ -1,0 +1,9 @@
+---
+// Le slug reste `conditions-generales` en allemand : c'est la convention du site
+// (cf. /de/mentions-legales, /de/micro-muling, /de/a-propos) — les routes ne sont
+// pas traduites, seul le contenu l'est. `localizePath('/conditions-generales', 'de')`
+// utilisé par TermsCheckbox.astro produit exactement cette URL.
+import TermsPage from "@/components/pages/TermsPage.astro"
+---
+
+<TermsPage lang="de" />

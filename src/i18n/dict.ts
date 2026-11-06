@@ -3754,8 +3754,9 @@ export type Dict = typeof fr
 // un texte français nouveau ou modifié se traduit dans chacun, valeur par valeur.
 import { en } from './en'
 import { es } from './es'
+import { de } from './de'
 
-const dicts: Record<Lang, Dict> = { fr, en, es }
+const dicts: Record<Lang, Dict> = { fr, en, es, de }
 
 export function getDict(lang: Lang): Dict {
   return dicts[lang] ?? fr
