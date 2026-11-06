@@ -18,7 +18,7 @@ const plans = [
   { key: 'essential', cfg: APP_PLANS.essential, tier: t.priceTiers.essential, promise: t.priceEssentialPromise, cta: t.priceCta },
   { key: 'studio', cfg: APP_PLANS.studio, tier: t.priceTiers.studio, promise: t.priceStudioPromise, cta: t.priceStudioCta },
 ] as const
-const savingLabel = (pct: number) => `−${pct}${lang === 'fr' ? ' ' : ''}%`
+const savingLabel = (pct: number) => `−${pct}${lang === 'fr' || lang === 'de' ? ' ' : ''}%`
 // Bêta fermée : les prix restent affichés, mais les boutons mènent à l'encadré
 // #acces (liste d'attente / candidature bêta) au lieu d'ouvrir l'application.
 // Le script AppAccessSync peut rebasculer ces boutons en accès direct.

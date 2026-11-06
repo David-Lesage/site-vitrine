@@ -35,7 +35,7 @@ export interface Product {
   priceLabel?: string
   // version traduite de `priceLabel` (ex. « dès 260 € » → « from €260 »). Sans
   // elle, l'anglais et l'espagnol affichent le libellé français tel quel.
-  priceLabelI18n?: { en?: string; es?: string }
+  priceLabelI18n?: { en?: string; es?: string; de?: string }
   // crédit photo affiché en petit sur l'image (« Photo : Cœur de Son ») quand
   // la photo vient du fabricant et pas de David.
   photoCredit?: string
@@ -61,7 +61,7 @@ export const categorySubs: Record<string, readonly string[]> = {
 
 export const products: Product[] = [
   // Application Handpan Constellation Studio — produit phare digital
-  { id: 'handpan-studio', price: 0, image: '/images/app-logique.webp', imgW: 1100, imgH: 1327, url: '/handpan-app', category: 'app', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'app', priceLabel: 'Gratuit · Essentiel 3,49 € TTC/mois · Studio 9,99 € TTC/mois', priceLabelI18n: { en: 'Free · Essential €3.49 incl. VAT/month · Studio €9.99 incl. VAT/month', es: 'Gratis · Esencial 3,49 € IVA incl./mes · Studio 9,99 € IVA incl./mes' }, images: ['/images/app-logique.webp', '/images/app-atlas.webp', '/images/app-creation.webp', '/images/app-midi-mapping-2026.webp', '/images/constel-polygone.webp'] },
+  { id: 'handpan-studio', price: 0, image: '/images/app-logique.webp', imgW: 1100, imgH: 1327, url: '/handpan-app', category: 'app', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'app', priceLabel: 'Gratuit · Essentiel 3,49 € TTC/mois · Studio 9,99 € TTC/mois', priceLabelI18n: { en: 'Free · Essential €3.49 incl. VAT/month · Studio €9.99 incl. VAT/month', es: 'Gratis · Esencial 3,49 € IVA incl./mes · Studio 9,99 € IVA incl./mes', de: 'Kostenlos · Essenziell 3,49 € inkl. MwSt./Monat · Studio 9,99 € inkl. MwSt./Monat' }, images: ['/images/app-logique.webp', '/images/app-atlas.webp', '/images/app-creation.webp', '/images/app-midi-mapping-2026.webp', '/images/constel-polygone.webp'] },
   { id: 'neotone-one', price: 1990, image: '/images/neotone1-1.jpg', imgW: 670, imgH: 653, url: '/neotone', category: 'handpans', sub: 'electronique', active: true, mode: 'quote', images: modelCarousels.one.map((s) => s.src) },
   { id: 'neotone-mutant', price: 3150, image: '/images/mutant-0.jpg', imgW: 670, imgH: 614, url: '/neotone', category: 'handpans', sub: 'electronique', active: true, mode: 'quote', images: modelCarousels.mutant.map((s) => s.src) },
   // ⚖️ Yishama vit dans la catégorie « handpans », sous-catégorie ACOUSTIQUE, à
@@ -82,7 +82,7 @@ export const products: Product[] = [
   //    Dès qu'il existe une photo du « Géode de feu » de David, la mettre en premier.
   // 🚫 Rien sur la commission, et les bienfaits annoncés par la marque
   //    (chakras, ancrage) ne sont pas repris comme des promesses.
-  { id: 'coeur-de-son', price: 0, image: '/images/prod-coeur-de-son-1.webp', imgW: 900, imgH: 1200, url: 'https://www.coeurdeson.com/product-page/tambour-en-toile-%C3%A0-main', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'coeurdeson', priceLabel: 'dès 260 €', priceLabelI18n: { en: 'from €260', es: 'desde 260 €' }, discountCode: 'DAVID-COEUR-DE-SON', photoCredit: 'Cœur de Son' },
+  { id: 'coeur-de-son', price: 0, image: '/images/prod-coeur-de-son-1.webp', imgW: 900, imgH: 1200, url: 'https://www.coeurdeson.com/product-page/tambour-en-toile-%C3%A0-main', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'coeurdeson', priceLabel: 'dès 260 €', priceLabelI18n: { en: 'from €260', es: 'desde 260 €', de: 'ab 260 €' }, discountCode: 'DAVID-COEUR-DE-SON', photoCredit: 'Cœur de Son' },
   { id: 'tambour', price: 0, image: '/images/prod-tambour.jpg', imgW: 480, imgH: 360, url: 'https://www.facebook.com/profile.php?id=100075977844059', category: 'instruments', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'tambour' },
   // ── Mes créations Now Groove (David Lesage) : méthode + calebasse signature + housse ──
   { id: 'now-groove', price: 0, image: '/images/prod-nowgroove.webp', imgW: 1000, imgH: 1442, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/formation-de-rythme-now-groove-david-lesage', category: 'creations', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'helloasso' },
@@ -109,7 +109,7 @@ export const products: Product[] = [
   // 🎟️ Lien d'affiliation fourni par David ; le code 3A9907007 (−10 %) s'applique
   // seul via le lien, sinon il se saisit dans le panier. Rien sur la commission.
   // 🚫 Aucune promesse médicale ni thérapeutique (la marque en fait, pas nous).
-  { id: 'forbrain', price: 0, image: '/images/prod-forbrain-1.webp', imgW: 1000, imgH: 1000, url: 'https://shop.soundforlife.com/?affiliate=3A9907007', category: 'micros', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'forbrain', priceLabel: '269 € au lieu de 299 € (offre du moment)', priceLabelI18n: { en: '€269 instead of €299 (current offer)', es: '269 € en lugar de 299 € (oferta actual)' }, discountCode: '3A9907007' },
+  { id: 'forbrain', price: 0, image: '/images/prod-forbrain-1.webp', imgW: 1000, imgH: 1000, url: 'https://shop.soundforlife.com/?affiliate=3A9907007', category: 'micros', active: true, mode: 'link', linkLabel: 'discover', tagKey: 'forbrain', priceLabel: '269 € au lieu de 299 € (offre du moment)', priceLabelI18n: { en: '€269 instead of €299 (current offer)', es: '269 € en lugar de 299 € (oferta actual)', de: '269 € statt 299 € (aktuelles Angebot)' }, discountCode: '3A9907007' },
   // ── Accessoires — les pieds de handpan Atlas (fabricant italien).
   // 🤝 Partenariat d'affiliation validé le 20/08/2026 : avant cette date, la
   // marque était volontairement absente du site. Atlas envoie deux pieds de
@@ -148,7 +148,7 @@ export const products: Product[] = [
   // Cours & stages — 💶 prix libre à partir d'un minimum (20/10/2026) : les
   // jetons `{lesson60}` `{lesson90}` sont remplis avec les tarifs HelloAsso
   // (src/lib/sessions.ts → fillCoursePrices), repli sur site.ts.
-  { id: 'cours-prives', price: 0, image: '/images/prod-cours-stages.jpg', imgW: 371, imgH: 371, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/cours-prive-et-stages-avec-david-lesage', category: 'formations', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'helloasso', priceLabel: 'dès {lesson60} €/h · dès {lesson90} €/1h30', priceLabelI18n: { en: 'from €{lesson60}/h · from €{lesson90}/1h30', es: 'desde {lesson60} €/h · desde {lesson90} €/1h30' } },
+  { id: 'cours-prives', price: 0, image: '/images/prod-cours-stages.jpg', imgW: 371, imgH: 371, url: 'https://www.helloasso.com/associations/resonances-productions/boutiques/cours-prive-et-stages-avec-david-lesage', category: 'formations', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'helloasso', priceLabel: 'dès {lesson60} €/h · dès {lesson90} €/1h30', priceLabelI18n: { en: 'from €{lesson60}/h · from €{lesson90}/1h30', es: 'desde {lesson60} €/h · desde {lesson90} €/1h30', de: 'ab {lesson60} €/Std. · ab {lesson90} €/90 Min.' } },
   // Mes outils du quotidien — recommandation perso (lien d'affiliation)
   { id: 'onesec', price: 0, image: '/images/prod-onesec-1.webp', imgW: 1464, imgH: 1731, url: 'https://web.one-sec.app/store?deal=david30', category: 'outils', active: true, mode: 'link', linkLabel: 'buy', tagKey: 'onesec', priceLabel: 'Gratuit · −30 % sur Premium avec mon lien', images: ['/images/prod-onesec-1.webp', '/images/prod-onesec-2.webp', '/images/prod-onesec-3.webp'] },
   // Gourde filtrante ÖKO — recommandation perso (lien d'affiliation), musicien en déplacement

@@ -31,7 +31,7 @@ const isExternal = !(p.url.startsWith('/') || p.url.startsWith('mailto:'))
 const href = p.url.startsWith('/') ? L(p.url) : p.url
 // Jetons `{lesson60}`… (carte des cours, prix libre) remplis avec les tarifs.
 const prices = await getCoursePrices()
-const rawPrice = (lang === 'en' || lang === 'es' ? p.priceLabelI18n?.[lang] : undefined) ?? p.priceLabel
+const rawPrice = (lang === 'en' || lang === 'es' || lang === 'de' ? p.priceLabelI18n?.[lang] : undefined) ?? p.priceLabel
 const priceText = rawPrice ? fillCoursePrices(rawPrice, prices) : rawPrice
 ---
 

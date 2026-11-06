@@ -45,7 +45,7 @@
     var q = new URLSearchParams(location.search)
     var token = q.get('t') || ''
     var wantCancel = q.get('action') === 'annuler'
-    var lang = ['fr', 'en', 'es'].indexOf(q.get('l')) >= 0 ? q.get('l') : 'fr'
+    var lang = ['fr', 'en', 'es', 'de'].indexOf(q.get('l')) >= 0 ? q.get('l') : 'fr'
     // Test local seulement : ?api=http://localhost:… (ignoré en production).
     var api = (/^(localhost|127\.0\.0\.1)$/.test(location.hostname) && q.get('api')) || '/api/muling-proof-link'
     var MAX = 3 * 1024 * 1024
@@ -86,6 +86,18 @@
         badT: 'Este enlace ya no es válido', bad: 'Ha caducado o ya se ha usado. Indica el correo de tu pedido: si aún espera tu comprobante, recibirás un enlace nuevo.',
         email: 'Correo del pedido', newLink: 'Recibir un enlace nuevo', linkSent: 'Si hay un pedido a la espera de comprobante en esta dirección, acaba de salir un enlace nuevo. Revisa tu correo.',
         eMissing: 'Elige un archivo.', eType: 'Formato no legible: envía una foto, una captura o un PDF.', eBig: 'Archivo demasiado grande: 3 MB máximo.', eMany: 'Demasiados intentos. Inténtalo dentro de una hora.', eLocked: 'Este pedido ya no se puede modificar aquí. Escribe a contact@lesagedavid.fr.', eGen: 'Se ha producido un error. Inténtalo de nuevo en unos minutos.', eEmail: 'Indica un correo válido.',
+      },
+      de: {
+        title: 'Überweisungsnachweis hochladen', ref: 'Referenz', amount: 'Bestellbetrag',
+        file: 'Überweisungsnachweis', fileNote: 'Foto, Screenshot oder PDF. Ein großes Foto wird automatisch verkleinert; ein PDF darf höchstens 3 MB groß sein.',
+        send: 'Nachweis senden', sending: 'Wird gesendet …', toCancel: 'Bestellung stornieren',
+        doneT: 'Dein Nachweis ist angekommen', done: 'Er wurde mit den Angaben zu deiner Bestellung an Muling weitergeleitet. Du bekommst gleich eine Bestätigung per E-Mail: Bewahre sie auf. Muling prüft die Überweisung, bevor etwas verschickt wird.',
+        doneShowroom: 'Er wurde an Muling weitergeleitet. Du bekommst gleich eine Bestätigung per E-Mail: Bewahre sie auf. Dein Mikrofon wartet im Showroom auf dich, es wird nichts verschickt. Antworte auf diese E-Mail, um einen Abholtermin vorzuschlagen.',
+        cancelT: 'Bestellung stornieren?', cancelText: 'Damit wird die Bestellung endgültig storniert. Es wird nichts storniert, solange du es unten nicht bestätigst.', cancelYes: 'Ja, Bestellung stornieren', cancelNo: 'Nein, Bestellung behalten',
+        cancelledT: 'Deine Bestellung ist storniert', cancelled: 'Erledigt. Du bekommst gleich eine Bestätigung per E-Mail.',
+        badT: 'Dieser Link ist nicht mehr gültig', bad: 'Er ist abgelaufen oder wurde schon benutzt. Gib die E-Mail-Adresse deiner Bestellung ein: Wartet sie noch auf deinen Nachweis, bekommst du einen neuen Link.',
+        email: 'E-Mail-Adresse der Bestellung', newLink: 'Neuen Link anfordern', linkSent: 'Wenn zu dieser Adresse eine Bestellung auf einen Nachweis wartet, ist gerade ein neuer Link verschickt worden. Schau in dein Postfach.',
+        eMissing: 'Wähle eine Datei.', eType: 'Format nicht lesbar: Schick ein Foto, einen Screenshot oder ein PDF.', eBig: 'Datei zu groß: maximal 3 MB für ein PDF.', eMany: 'Zu viele Versuche. Versuch es in einer Stunde noch einmal.', eLocked: 'Diese Bestellung lässt sich hier nicht mehr ändern. Schreib an contact@lesagedavid.fr.', eGen: 'Es ist ein Fehler aufgetreten. Versuch es in ein paar Minuten noch einmal.', eEmail: 'Gib eine gültige E-Mail-Adresse ein.',
       },
     }
     var t = T[lang]

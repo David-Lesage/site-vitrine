@@ -14,6 +14,7 @@ export const housseNowGroove = {
     fr: 'Deux options sur HelloAsso, affichées à 99 € : avec livraison (l’option indique « + livraison 22 € ») ou retrait à Paris, au showroom.',
     en: 'Two options on HelloAsso, both shown at €99: with delivery (the option reads “+ delivery €22”) or pick-up in Paris, at the showroom.',
     es: 'Dos opciones en HelloAsso, ambas a 99 €: con envío (la opción indica «+ envío 22 €») o recogida en París, en el showroom.',
+    de: 'Zwei Optionen auf HelloAsso, beide mit 99 € angegeben: mit Lieferung (die Option trägt den Zusatz „+ Lieferung 22 €“) oder Abholung in Paris, im Showroom.',
   },
   photos: {
     hero: [P + 'face.webp', P + 'dos-bretelles.webp', P + 'portee-dos.webp', P + 'en-main.webp', P + 'portee-cote.webp'],

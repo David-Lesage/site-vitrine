@@ -81,12 +81,14 @@ const MONTH_NAMES = {
   fr: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+  de: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
 }
 // Abréviations pour les pastilles du calculateur (« Arrive le 9-13 nov. »), 25/10/2026.
 const MONTH_SHORT = {
   fr: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'],
   en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   es: ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sept.', 'oct.', 'nov.', 'dic.'],
+  de: ['Jan.', 'Feb.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'],
 }
 const MONTH_KEYS_EN = MONTH_NAMES.en.map((m) => m.toLowerCase())
 
@@ -255,9 +257,10 @@ export function arrivalEndIso(label, today) {
 /**
  * Forme canonique → texte affiché dans la langue de la page.
  *   « 9-13 november » → fr « 9-13 novembre » · en « 9-13 November » · es « 9-13 noviembre »
+ *   · de « 9.-13. November » (l'allemand met un point après le jour, 06/11/2026)
  * null si absente ou illisible : l'appelant affiche alors « bientôt ».
  * @param {string | null | undefined} label
- * @param {string} lang  'fr' | 'en' | 'es'
+ * @param {string} lang  'fr' | 'en' | 'es' | 'de'
  * @param {{ short?: boolean }} [opts]  short : mois abrégés (« 9-13 nov. »), pour les pastilles
  * @returns {string | null}
  */
@@ -266,10 +269,11 @@ export function formatArrivalLabel(label, lang, opts) {
   if (!parts) return null
   const table = opts && opts.short ? MONTH_SHORT : MONTH_NAMES
   const names = table[lang] ?? table.fr
-  const one = (p) => (p.d ? `${p.d} ${names[p.m - 1]}` : names[p.m - 1])
+  const day = (d) => (lang === 'de' ? `${d}.` : d)
+  const one = (p) => (p.d ? `${day(p.d)} ${names[p.m - 1]}` : names[p.m - 1])
   if (parts.length === 1) return one(parts[0])
   const [a, b] = parts
-  if (a.m === b.m && a.d && b.d) return `${a.d}-${b.d} ${names[b.m - 1]}`
+  if (a.m === b.m && a.d && b.d) return `${day(a.d)}-${day(b.d)} ${names[b.m - 1]}`
   return `${one(a)} – ${one(b)}`
 }
 

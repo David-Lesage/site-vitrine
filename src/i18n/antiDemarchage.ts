@@ -1,4 +1,4 @@
-// Textes anti-démarchage des formulaires (03/11/2026), FR / EN / ES.
+// Textes anti-démarchage des formulaires (03/11/2026), FR / EN / ES / DE (06/11/2026).
 // Hors de dict.ts exprès : es.ts est GÉNÉRÉ par traduction automatique, et ces
 // phrases-là doivent dire exactement ce que David a demandé, dans chaque langue.
 import type { Lang } from './config'
@@ -82,6 +82,29 @@ export const antiDemarchage: Record<Lang, {
       indisponible: "El ejercicio no se ha podido cargar: puedes enviar tu mensaje de todos modos.",
       requis: "Haz primero el pequeño ejercicio de arriba 🎶",
       note: "Nota {n}",
+    },
+  },
+  de: {
+    mention: 'Dieses Formular ist für Anfragen zu meinem Unterricht, zur App und zu den Instrumenten gedacht. Auf Verkaufsangebote (Dienstleistungen, SEO, Texte, unaufgeforderte Partnerschaften) antworte ich nicht.',
+    pieges: 'Lass dieses Feld leer',
+    avertissement: 'Deine Nachricht sieht nach einem Verkaufsangebot aus: Dafür ist dieses Formular nicht gedacht. Wenn es eine echte Anfrage ist, kannst du sie trotzdem senden.',
+    envoyerQuandMeme: 'Trotzdem senden',
+    modifier: 'Nachricht bearbeiten',
+    exercice: {
+      intro: "Ich prüfe, ob du ein Mensch bist … und ob du Musik magst 🎶 Eine kleine Übung aus meiner App:",
+      consigne: "Tippe die Töne in der Reihenfolge {ordre} an.",
+      bravo: "✓ Bravo, du bist wirklich ein musikalischer Mensch",
+      erreur: "Nicht ganz: Fang wieder bei Ton 1 an.",
+      secoursLien: "Ich schaffe es nicht",
+      secoursQuestion: "Kein Problem: Wie viel ist {a} + {b}?",
+      valider: "Bestätigen",
+      secoursOk: "✓ Danke, alles gut",
+      secoursFaux: "Das stimmt nicht, versuch es noch einmal.",
+      son: "🔊 Ton an",
+      sonCoupe: "🔇 Ton aus",
+      indisponible: "Die Übung konnte nicht geladen werden: Du kannst deine Nachricht trotzdem senden.",
+      requis: "Mach zuerst die kleine Übung direkt darüber 🎶",
+      note: "Ton {n}",
     },
   },
 }

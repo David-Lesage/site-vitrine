@@ -6,8 +6,8 @@
 // différents contextes ».
 //
 // Ce fichier contient TOUT ce qui est propre à la page : les données neutres
-// (vidéos, contextes, prix) ET les textes FR / EN / ES. Il est volontairement
-// séparé de dict.ts / en.ts / es.ts.
+// (vidéos, contextes, prix) ET les textes FR / EN / ES / DE. Il est volontairement
+// séparé de dict.ts / en.ts / es.ts / de.ts.
 //
 // ⚠️ FAITS PRODUIT : uniquement ceux déjà présents dans le dépôt
 //    (src/data/shop.ts, shop.priceNotes.hisong, shop.products['micro-hisong'],
@@ -52,7 +52,7 @@ export const hisongPhotos = [
 ]
 
 // 🎬 VIDÉOS — pour en ajouter une, il suffit d'ajouter une ligne ici :
-//    { id: '<identifiant YouTube>', title: { fr: '…', en: '…', es: '…' } }
+//    { id: '<identifiant YouTube>', title: { fr: '…', en: '…', es: '…', de: '…' } }
 //    La grille, les données structurées (VideoObject) et le bouton « Voir les
 //    vidéos » suivent tout seuls. Titres repris des titres YouTube de David.
 export const hisongVideos: { id: string; title: Record<Lang, string> }[] = [
@@ -62,6 +62,7 @@ export const hisongVideos: { id: string; title: Record<Lang, string> }[] = [
       fr: 'J’ai un studio dans un champ de colza',
       en: 'I’ve got a studio in a rapeseed field',
       es: 'Tengo un estudio en un campo de colza',
+      de: 'Ich habe ein Studio in einem Rapsfeld',
     },
   },
   {
@@ -70,6 +71,7 @@ export const hisongVideos: { id: string; title: Record<Lang, string> }[] = [
       fr: 'Un studio dans ma poche pour ma voix et mon handpan',
       en: 'A studio in my pocket for my voice and my handpan',
       es: 'Un estudio en el bolsillo para mi voz y mi handpan',
+      de: 'Ein Studio in der Tasche für meine Stimme und meinen Handpan',
     },
   },
 ]
@@ -384,4 +386,100 @@ const es: HisongCopy = {
   relatedCta: 'Descubrir el Neotone',
 }
 
-export const hisongText: Record<Lang, HisongCopy> = { fr, en, es }
+const de: HisongCopy = {
+  title: 'Mikrofon Hisong AirStudio S1 für Handpan und Stimme | David Lesage',
+  description:
+    'Das Hisong AirStudio S1, ein kabelloses mobiles Studio (Mikrofon, Monitoring, Audio-Interface) für Stimme und Handpan, vorgestellt von David Lesage. Videos, Preise und Code −5 %.',
+  back: '← Zurück zum Shop',
+  eyebrow: 'Mobiles Studio für Stimme und Handpan',
+  heroTitle: 'Das Mikrofon Hisong AirStudio S1',
+  heroLead:
+    'Ein kabelloses mobiles All-in-one-Studio: Mikrofon, Kopfhörer-Monitoring, Audio-Interface. Deine Stimme und dein akustischer Handpan, zu Hause wie live. Ich nutze es selbst – hier ist alles, was du vor dem Kauf wissen solltest.',
+  heroBadge: '−{pct} % mit meinem Code',
+  ctaBuy: 'Auf hisong.io kaufen',
+  ctaVideos: 'Videos ansehen',
+  carouselAlt: 'Mikrofon Hisong AirStudio S1',
+
+  videoEyebrow: 'Im Video',
+  videoTitle: 'Das Hisong im Einsatz',
+  videoIntro: 'Meine Videos mit dem AirStudio S1, mitten in der Natur wie zu Hause. Weitere folgen.',
+
+  boxTitle: 'Was im Studio steckt',
+  boxIntro: 'Alles, was du zum Singen, Spielen und Aufnehmen brauchst, in einem einzigen Etui.',
+  boxItems: [
+    'Ein Mikrofon mit zwei Modi',
+    'Kabelloses Monitoring (Ohrhörer)',
+    'Ein Audio-Interface',
+    'Ein kabelloser Empfänger fürs Handy (RX Mini)',
+    'Eine Magnethalterung',
+    'Ein Transportetui',
+  ],
+  boxNote:
+    'Der RX Plus (Universal Pack) ist nicht nur für die Bühne da. Mit ihm kannst du:',
+  rxUses: ['Live spielen (Mischpult, Looper, tragbarer Lautsprecher)', 'Deinen eigenen Kopfhörer oder kabelgebundene Ohrhörer anschließen: 2 Miniklinken-Ausgänge, also 2 Kopfhörer oder 2 Paar Ohrhörer', 'Bis zu 3 Personen gleichzeitig mithören lassen (diese 2 Ausgänge + die kabellosen Ohrhörer, die beim Mikrofon dabei sind)', 'Den Ton des Mikrofons über USB-C abnehmen (Computer, Handy)', 'Videos mit einer Kamera oder einer Spiegelreflexkamera drehen'],
+
+  contextsEyebrow: 'In welchen Situationen',
+  contextsTitle: 'Ein Mikrofon, viele Einsatzmöglichkeiten',
+  contextsIntro:
+    'Zu jedem Einsatz gibt es bald einen ausführlichen Artikel, mit meinen Einstellungen und Tipps. Die Links erscheinen hier, sobald die Artikel veröffentlicht sind.',
+  contexts: {
+    scene: {
+      t: 'Auf der Bühne',
+      d: 'Mit dem RX Plus (Universal Pack) geht der Ton an die PA oder ans Mischpult: deine Stimme und dein akustischer Handpan, kabellos, live.',
+    },
+    recording: {
+      t: 'Bei der Aufnahme',
+      d: 'Mikrofon, Monitoring und Audio-Interface in einem: ein tragbares Studio, um deinen Handpan und deine Stimme aufzunehmen, zu Hause oder draußen.',
+    },
+    lessons: {
+      t: 'Im Unterricht',
+      d: 'Von den Lernenden klar gehört werden, Stimme und Instrument, ohne Kabel zwischen Handpan und Lautsprecher.',
+    },
+    voice: {
+      t: 'Stimme + Handpan',
+      d: 'Singen und dabei spielen: Stimme und akustischer Handpan werden zusammen abgenommen, mit dem Monitoring in den kabellosen Ohrhörern.',
+    },
+  },
+  contextSoon: 'Artikel folgt',
+  contextRead: 'Artikel lesen',
+  relatedPostsTitle: 'Schon im Blog erschienen',
+  relatedPostLangNote: { en: '(Artikel auf Englisch)', fr: '(Artikel auf Französisch)' },
+
+  compareTitle: 'Welches Mikrofon für meinen Handpan?',
+  compareIntro:
+    'Das Mikrofon deines Handys oder Computers reicht für den Anfang. Dieses Equipment nutze ich selbst: Es hilft, wenn der Raum laut ist, auf der Bühne oder wenn du im Stehen spielst.',
+  compareSource: 'Derselbe Vergleich wie im Bildschirm „Empfohlenes Equipment“ der App Handpan Constellation Studio.',
+  compareCols: { integre: 'Eingebautes Mikrofon (Handy, Computer)', muling: 'Muling MP1', hisong: 'Hisong AirStudio S1' },
+  compareRows: [
+    { h: 'Was es aufnimmt', integre: 'Den ganzen Raum', muling: 'Den Korpus (Kontakt)', hisong: 'Die Luft rundherum, kabellos' },
+    { h: 'Wofür', integre: 'Für den Anfang, ruhiger Raum', muling: 'Akustischer Handpan, Bühne, lauter Raum', hisong: 'Stimme + Handpan, live (mit dem RX Plus)' },
+    { h: 'Mit der App gemessen', integre: 'Test läuft', muling: 'Test läuft', hisong: 'Test läuft' },
+  ],
+  compareNote:
+    'Was es nicht ändert: Zwei Schläge, die weniger als 0,4 s auseinanderliegen – die App erkennt den zweiten nicht, egal mit welchem Mikrofon. Das ist eine Grenze der App, nicht deines Equipments.',
+  compareMulingLink: 'Zur Seite des Muling-Mikrofons',
+
+  priceTitle: 'Preis und Kauf',
+  priceS1Label: 'Mikrofon AirStudio S1 (Standard Pack)',
+  priceRxLabel: 'Mit dem RX Plus (Universal Pack, +90 €)',
+  priceCodeLabel: 'S1 + RX Plus mit meinem Code (−{pct} %)',
+  priceCodeExtra: 'versandkostenfrei',
+  priceNote: 'Preise inkl. MwSt., Lieferung innerhalb Frankreichs: Beim Bezahlen kommt keine Steuer hinzu.',
+  codeTitle: 'Mein Rabattcode',
+  codeText:
+    'Über meinen Link sollte er automatisch angewendet werden. Wenn du ihn beim Bezahlen nicht siehst, gib ihn von Hand ein – die Schaltfläche kopiert ihn.',
+  copyCode: 'Code kopieren',
+  codeCopied: 'Kopiert!',
+  adviceTitle: 'Mein Tipp',
+  adviceText:
+    'Nimm den RX Plus (Universal Pack): Er ist nicht nur zum Live-Spielen da. Mit ihm kannst du:',
+  buyNote: 'Online: Du kaufst auf hisong.io, und Hisong liefert dir das Mikrofon. Im Showroom in Paris: nur Mikrofon + RX Plus; du bezahlst online, um zu reservieren, und holst es dann ab.',
+  ctaShowroom: 'Im Showroom ausprobieren',
+
+  relatedTitle: 'Und wenn du auf einem Neotone spielst?',
+  relatedText:
+    'Der Neotone wird direkt per Klinke angeschlossen, ohne Mikrofon. Für die Stimme bleibt das Hisong voll interessant: In meinem Setup für unterwegs hängt es an der Bose S1 Pro+ und macht das Ganze zu einem mobilen Mini-Studio.',
+  relatedCta: 'Den Neotone entdecken',
+}
+
+export const hisongText: Record<Lang, HisongCopy> = { fr, en, es, de }

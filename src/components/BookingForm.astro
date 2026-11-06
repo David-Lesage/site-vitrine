@@ -658,7 +658,7 @@ const saleIntake = saleIntakeClientConfig()
   }
 
   // Mêmes formats que le calculateur (fmtEUR / fmtVAT de Calculator.astro).
-  const priceLocale = document.documentElement.lang === 'en' ? 'en-GB' : 'fr-FR'
+  const priceLocale = document.documentElement.lang === 'en' ? 'en-GB' : document.documentElement.lang === 'de' ? 'de-DE' : 'fr-FR'
   const fmtEUR = (n: number) => new Intl.NumberFormat(priceLocale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n) + ' €'
   const fmtVAT = (v: number) => (v === Math.floor(v) ? v + ' %' : v.toString().replace('.', ',') + ' %')
 

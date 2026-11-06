@@ -51,12 +51,13 @@ export function durationLabel(minutes: number): string {
 
 /**
  * « 50 € » (prix fixe) ou, si `from`, « dès 60 € » / « from €60 » /
- * « desde 60 € » (prix libre à partir d'un minimum).
+ * « desde 60 € » / « ab 60 € » (prix libre à partir d'un minimum).
  */
 export function priceLabel(price: number, lang: Lang = 'fr', from = false): string {
   if (!from) return `${price} €`
   if (lang === 'en') return `from €${price}`
   if (lang === 'es') return `desde ${price} €`
+  if (lang === 'de') return `ab ${price} €`
   return `dès ${price} €`
 }
 

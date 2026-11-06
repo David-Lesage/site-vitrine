@@ -28,15 +28,15 @@ export const BLOG_CATEGORIES = [
 export type BlogCategory = (typeof BLOG_CATEGORIES)[number]
 
 const LABELS: Record<BlogCategory, Record<Lang, string>> = {
-  methode: { fr: 'Méthode & couleurs', en: 'Method & colours', es: 'Método y colores' },
-  logique: { fr: 'Mode Logique', en: 'Logic Mode', es: 'Modo Lógico' },
-  acoustique: { fr: 'Mode Acoustique', en: 'Acoustic Mode', es: 'Modo Acústico' },
-  gammes: { fr: 'Gammes & création', en: 'Scales & creation', es: 'Escalas y creación' },
-  partitions: { fr: 'Partitions & composition', en: 'Scores & composing', es: 'Partituras y composición' },
-  chant: { fr: 'Chanter & accompagner', en: 'Singing & accompaniment', es: 'Cantar y acompañar' },
-  neotone: { fr: 'Neotone & matériel', en: 'Neotone & gear', es: 'Neotone y equipo' },
-  accessoires: { fr: 'Accessoires et micros handpan', en: 'Handpan accessories & microphones', es: 'Accesorios y micrófonos de handpan' },
-  communaute: { fr: 'Communauté & bibliothèque', en: 'Community & library', es: 'Comunidad y biblioteca' },
+  methode: { fr: 'Méthode & couleurs', en: 'Method & colours', es: 'Método y colores', de: 'Methode & Farben' },
+  logique: { fr: 'Mode Logique', en: 'Logic Mode', es: 'Modo Lógico', de: 'Logik-Modus' },
+  acoustique: { fr: 'Mode Acoustique', en: 'Acoustic Mode', es: 'Modo Acústico', de: 'Akustikmodus' },
+  gammes: { fr: 'Gammes & création', en: 'Scales & creation', es: 'Escalas y creación', de: 'Tonleitern & Kreation' },
+  partitions: { fr: 'Partitions & composition', en: 'Scores & composing', es: 'Partituras y composición', de: 'Notenblätter & Komponieren' },
+  chant: { fr: 'Chanter & accompagner', en: 'Singing & accompaniment', es: 'Cantar y acompañar', de: 'Singen & Begleiten' },
+  neotone: { fr: 'Neotone & matériel', en: 'Neotone & gear', es: 'Neotone y equipo', de: 'Neotone & Ausrüstung' },
+  accessoires: { fr: 'Accessoires et micros handpan', en: 'Handpan accessories & microphones', es: 'Accesorios y micrófonos de handpan', de: 'Handpan-Zubehör und -Mikrofone' },
+  communaute: { fr: 'Communauté & bibliothèque', en: 'Community & library', es: 'Comunidad y biblioteca', de: 'Community & Bibliothek' },
 }
 
 /** Libellé affiché d'une catégorie dans la langue courante. */
@@ -46,7 +46,7 @@ export function categoryLabel(cat: BlogCategory, lang: Lang): string {
 
 /** Libellé du filtre « tout afficher ». */
 export function allLabel(lang: Lang): string {
-  return lang === 'en' ? 'All' : lang === 'es' ? 'Todo' : 'Tout'
+  return lang === 'en' ? 'All' : lang === 'es' ? 'Todo' : lang === 'de' ? 'Alle' : 'Tout'
 }
 
 /** Intitulé de la barre de filtres (aria-label). */
@@ -55,5 +55,7 @@ export function filterLabel(lang: Lang): string {
     ? 'Filter articles by topic'
     : lang === 'es'
       ? 'Filtrar los artículos por tema'
-      : 'Filtrer les articles par sujet'
+      : lang === 'de'
+        ? 'Artikel nach Thema filtern'
+        : 'Filtrer les articles par sujet'
 }

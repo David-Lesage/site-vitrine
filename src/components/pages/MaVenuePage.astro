@@ -6,7 +6,7 @@
 // Page PRIVÉE : noindex + exclue du sitemap (astro.config.mjs).
 // Tout passe par l'EF `showcase-attendance` : jamais d'email affiché, jamais de
 // suppression (le statut devient 'cancelled' ou 'rescheduled').
-// Textes locaux (fr/en/es) plutôt que dans dict.ts : es.ts est GÉNÉRÉ par script
+// Textes locaux (fr/en/es/de) plutôt que dans dict.ts : es.ts est GÉNÉRÉ par script
 // et une page privée à 3 phrases ne justifie pas une passe de traduction.
 // ============================================================================
 import Layout from '@/layouts/Layout.astro'
@@ -80,6 +80,26 @@ const T = {
     error: 'Uy, no ha funcionado. Inténtalo de nuevo en un momento o escribe a contact@lesagedavid.fr.',
     hi: (n: string) => (n ? `¡Hola ${n}!` : '¡Hola!'),
   },
+  de: {
+    title: 'Mein Besuch beim Treffen',
+    loading: 'Einen Moment …',
+    intro: 'Du bist angemeldet für das Treffen am',
+    hours: (a: string, b: string) => `von ${a} bis ${b} Uhr, im Showroom Le Nid.`,
+    cancel: 'Ich kann nicht mehr kommen',
+    change: 'Datum ändern',
+    confirmCancel: 'Bist du sicher? Ich gebe deinen Platz frei und sage David Bescheid.',
+    yesCancel: 'Ja, ich sage ab',
+    back: 'Zurück',
+    pick: 'Wähle dein neues Datum:',
+    noDates: 'Im Moment ist kein anderer Termin offen. Schau bald wieder in den Kalender!',
+    doneCancel: 'Notiert: Dein Besuch ist abgesagt. Danke, dass du Bescheid gesagt hast, so kann jemand anderes deinen Platz bekommen. Du bekommst gleich eine kurze Bestätigung per E-Mail.',
+    doneRe: (d: string) => `Notiert: Wir sehen uns am ${d}! Am Vortag bekommst du eine Erinnerung mit allen Infos zur Anfahrt.`,
+    already: 'Dein Besuch ist bereits abgesagt. Wenn du doch kommen möchtest, wähle ein Datum im Kalender:',
+    seeAgenda: 'Zum Kalender',
+    invalid: 'Dieser Link funktioniert nicht (mehr). Schreib mir an contact@lesagedavid.fr, und ich kümmere mich darum.',
+    error: 'Hoppla, das hat nicht geklappt. Versuch es gleich noch einmal oder schreib an contact@lesagedavid.fr.',
+    hi: (n: string) => (n ? `Hallo ${n}!` : 'Hallo!'),
+  },
 }
 const t = T[lang]
 // Les fonctions ne passent pas dans define:vars → on sérialise des gabarits.
@@ -91,10 +111,10 @@ const strings = {
   hiEmpty: t.hi(''),
 }
 const EF = 'https://zqcuhnjjrgmybftppkcl.supabase.co/functions/v1/showcase-attendance'
-const locale = lang === 'en' ? 'en-GB' : lang === 'es' ? 'es-ES' : 'fr-FR'
+const locale = lang === 'en' ? 'en-GB' : lang === 'es' ? 'es-ES' : lang === 'de' ? 'de-DE' : 'fr-FR'
 ---
 
-<Layout title={`${t.title} — David Lesage`} noindex>
+<Layout title={`${t.title}${lang === 'de' ? ' · ' : ' — '}David Lesage`} noindex>
   <section class="bg-cream">
     <div class="mx-auto max-w-xl px-4 py-14 sm:py-20">
       <h1 class="font-display text-3xl font-700 text-ink">{t.title}</h1>

@@ -68,7 +68,7 @@ const ld = [
           {/* Avantage -5% mis en avant dès le hero (David, 08/08/2026) */}
           <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-gold/20 px-4 py-1.5 text-sm font-700 text-gold">
             <Icon name="lucide:badge-percent" class="h-4 w-4" />
-            {(lang === 'zh' ? `通过我购买享 ${mulingDiscountPct}% 折扣` : baseLang === 'en' ? `${mulingDiscountPct}% off, ordering through me` : `−${mulingDiscountPct} % en passant par moi`)}
+            {(lang === 'zh' ? `通过我购买享 ${mulingDiscountPct}% 折扣` : baseLang === 'en' ? `${mulingDiscountPct}% off, ordering through me` : baseLang === 'de' ? `−${mulingDiscountPct} %, wenn du über mich bestellst` : `−${mulingDiscountPct} % en passant par moi`)}
           </p>
           <div class="mt-6 flex flex-wrap gap-3">
             <Button href="#commande" variant="primary" data-open-muling-order={lang !== 'zh' ? '' : undefined}>{m.ctaInterested}</Button>
@@ -263,7 +263,7 @@ const ld = [
         {lang !== 'zh' ? (
           <div class="mt-6 flex flex-wrap items-center gap-3">
             <Button href="#commande" variant="primary" data-open-muling-order="online">{m.ctaContact}</Button>
-            <Button href="#commande" variant="secondary" data-open-muling-order="showroom" data-showroom-buy="muling">{baseLang === 'en' ? '🤝 Reserve at the showroom (Paris)' : baseLang === 'es' ? '🤝 Reservar en el showroom (París)' : '🤝 Réserver au showroom (Paris)'}</Button>
+            <Button href="#commande" variant="secondary" data-open-muling-order="showroom" data-showroom-buy="muling">{baseLang === 'en' ? '🤝 Reserve at the showroom (Paris)' : baseLang === 'es' ? '🤝 Reservar en el showroom (París)' : baseLang === 'de' ? '🤝 Im Showroom reservieren (Paris)' : '🤝 Réserver au showroom (Paris)'}</Button>
           </div>
           <div class="mt-4"><ShowroomStock item="muling" lang={baseLang} /></div>
         ) : (

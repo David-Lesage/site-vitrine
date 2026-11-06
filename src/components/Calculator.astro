@@ -243,7 +243,7 @@ const calcData = {
     const DATA = JSON.parse(dataEl.textContent || '{}')
     const L = DATA.i18n
     const state = { model: 'mutant', wood: 'frene', country: 'FR', b2b: false, mode: 'showroom' }
-    const locale = document.documentElement.lang === 'en' ? 'en-GB' : 'fr-FR'
+    const locale = document.documentElement.lang === 'en' ? 'en-GB' : document.documentElement.lang === 'de' ? 'de-DE' : 'fr-FR'
 
     const fmtEUR = (n: number) => new Intl.NumberFormat(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n) + ' €'
     const fmtVAT = (v: number) => (v === Math.floor(v) ? v + ' %' : v.toString().replace('.', ',') + ' %')

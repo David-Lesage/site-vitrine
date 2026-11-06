@@ -91,12 +91,36 @@ const COPY = {
     showroom: 'Ver el showroom',
     articleTitle: 'La historia de esta funda', articleCta: 'Leer el artículo',
   },
+  de: {
+    title: 'Kalebassentasche Now Groove, handgefertigt | David Lesage',
+    description: 'Die Rucksacktasche Now Groove für die Kalebasse, entworfen von David Lesage: integrierte Matte, abnehmbare Gurte, Staufach, Innenfutter aus Samt. Kleinserie, von Hand gefertigt, 99 €.',
+    back: '← Zurück zum Shop', eyebrow: 'Meine Kreationen · Now Groove', h1: 'Die Kalebassentasche Now Groove',
+    lead: 'Eine Rucksacktasche, die ich ganz selbst entworfen und gezeichnet habe, mit der Unterstützung meiner Partner von Djoliba in Toulouse, allen voran Yu-Tin.',
+    rare: 'Selten und einzigartig: von Hand gefertigt, in Kleinserie.',
+    cta: 'Auf HelloAsso bestellen', ctaNote: 'Sichere Zahlung über HelloAsso, an Résonances Productions.',
+    featTitle: 'Eine Rucksacktasche und eine Matte',
+    feats: [
+      { i: 'lucide:layout-panel-top', t: 'Integrierte Mattenfunktion', d: 'Die Tasche lässt sich aufklappen und wird zur Matte, auf die du deine Kalebasse legst.' },
+      { i: 'lucide:unlink', t: 'Abnehmbare Gurte', d: 'Unterwegs ein Rucksack, zum Spielen nimmst du die Gurte ab.' },
+      { i: 'lucide:package', t: 'Abnehmbares Staufach', d: 'Für die Egg-Shaker, das Zubehör und die Methode in Papierform.' },
+      { i: 'lucide:sparkles', t: 'Innenfutter aus Samt', d: 'Auf dem Mattenteil, dort, wo das Instrument liegt.' },
+    ],
+    galTitle: 'Im Detail',
+    caps: { handle: 'Der Griff', velvet: 'Das Innenfutter aus „Samt“, auf dem Mattenteil', pouchClosed: 'Das Staufach, mit Klett verschlossen', pouchOpen: 'Das Staufach, geöffnet', kit: 'Das Zubehörset für Kalebassenspieler, das ins Staufach passt', detached: 'Die Tasche, ganz abgenommen' },
+    completeCap: 'Der komplette Inhalt: Kalebasse, Zubehör und Tasche.',
+    getTitle: 'Lieferung oder Abholung in Paris',
+    getText: 'Auf HelloAsso gibt es zwei Optionen, beide mit 99 € angegeben:',
+    opt1: 'Tasche / Matte + Lieferung', opt1d: 'Die Option trägt den Zusatz „+ Lieferung (22 €)“.',
+    opt2: 'Tasche / Matte, Abholung in Paris', opt2d: 'Du holst sie im Showroom ab.',
+    showroom: 'Zum Showroom',
+    articleTitle: 'Die Geschichte dieser Tasche', articleCta: 'Artikel lesen',
+  },
 }
 const c = COPY[(lang in COPY ? lang : 'en') as keyof typeof COPY]
 const articleHref = lang === 'en' ? '/en/blog/housse-calebasse-now-groove/' : '/blog/housse-calebasse-now-groove/'
 const ld = [breadcrumbLdJson([
-  { name: lang === 'fr' ? 'Accueil' : lang === 'es' ? 'Inicio' : 'Home', url: L('/') },
-  { name: lang === 'fr' ? 'Boutique' : lang === 'es' ? 'Tienda' : 'Shop', url: L('/boutique') },
+  { name: lang === 'fr' ? 'Accueil' : lang === 'es' ? 'Inicio' : lang === 'de' ? 'Start' : 'Home', url: L('/') },
+  { name: lang === 'fr' ? 'Boutique' : lang === 'es' ? 'Tienda' : lang === 'de' ? 'Shop' : 'Shop', url: L('/boutique') },
   { name: c.h1, url: L('/housse-calebasse') },
 ])]
 ---
@@ -176,7 +200,7 @@ const ld = [breadcrumbLdJson([
     </div>
   </Section>
 
-  {lang !== 'es' && (
+  {lang !== 'es' && lang !== 'de' && (
     <Section tone="ink">
       <div class="mx-auto max-w-3xl text-center">
         <h2 class="font-display text-2xl font-700 text-cream">{c.articleTitle}</h2>

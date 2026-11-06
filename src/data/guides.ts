@@ -858,8 +858,10 @@ const en: GuidesByLang = {
 
 // ES : traduction Google figée le 04/11/2026 (générateur retiré, chantier 44), à relire.
 import { esGuides } from './guides-es'
+// DE : traduction faite à la main depuis le français (06/11/2026, chantier 44), à relire.
+import { deGuides } from './guides-de'
 
-export const guides: Record<Lang, GuidesByLang> = { fr, en, es: esGuides }
+export const guides: Record<Lang, GuidesByLang> = { fr, en, es: esGuides, de: deGuides }
 
 export function getGuide(lang: Lang, key: GuideKey): Guide {
   return guides[lang][key]
