@@ -1,0 +1,558 @@
+{
+ "Y001": {
+  "section": "hero",
+  "fr": "alt=\"Yishama\""
+ },
+ "Y002": {
+  "section": "hero",
+  "fr": "alt=\"David Lesage assis entre ses deux handpans Yishama, sur fond noir.\""
+ },
+ "Y003": {
+  "section": "hero",
+  "fr": ">Handpan Constellation Studio · pour les duos Yishama<"
+ },
+ "Y004": {
+  "section": "hero",
+  "fr": ">Deux Yishama. <em>Un seul instrument.</em><"
+ },
+ "Y005": {
+  "section": "hero",
+  "fr": ">Tu as deux handpans, et tu les joues l’un après l’autre ? Pose-les côte à côte dans l’app : elle te montre les accords qui n’existent qu’à deux, et le chemin des mains d’une coque à l’autre.<"
+ },
+ "Y006": {
+  "section": "hero",
+  "fr": ">9,99 € par mois, premier mois offert. Ta carte est demandée à l’inscription, rien n’est prélevé si tu arrêtes avant la fin du mois.<"
+ },
+ "Y007": {
+  "section": "hero",
+  "fr": ">Sur ordinateur ou tablette, dans ton navigateur.<"
+ },
+ "Y008": {
+  "section": "hero",
+  "fr": ">Révéler mon duo<"
+ },
+ "Y009": {
+  "section": "hero",
+  "fr": ">Ou commence avec un seul handpan, gratuit et sans carte<"
+ },
+ "Y010": {
+  "section": "neo-part",
+  "fr": "alt=\"Le duo D Kurd 18 et E18 David Lesage Signature dans l’app : les deux coques côte à côte, chaque note colorée, et les mains posées sur la première.\""
+ },
+ "Y011": {
+  "section": "neo-part",
+  "fr": "aria-label=\"Les accords de mon D Kurd 18 seul, puis avec mon E18\""
+ },
+ "Y012": {
+  "section": "neo-part",
+  "fr": ">Combien d’accords joues-tu vraiment ?<"
+ },
+ "Y013": {
+  "section": "neo-part",
+  "fr": ">Deux handpans. Mais joués l’un après l’autre ?<"
+ },
+ "Y014": {
+  "section": "neo-part",
+  "fr": ">La plupart des joueurs qui ont deux handpans les jouent comme deux instruments séparés : celui-ci pour ce morceau, celui-là pour l’autre. Et il manque toujours la note qui rendrait jouable l’accord qu’on cherche. Souvent, elle est sur l’autre coque.<"
+ },
+ "Y015": {
+  "section": "neo-part",
+  "fr": ">Deux acoustiques côte à côte : l’app fait le compte.<"
+ },
+ "Y016": {
+  "section": "neo-part",
+  "fr": ">Premier mois offert. Commencer avec un seul handpan reste gratuit.<"
+ },
+ "Y017": {
+  "section": "neo-part",
+  "fr": ">Un seul<"
+ },
+ "Y018": {
+  "section": "neo-part",
+  "fr": ">Le duo<"
+ },
+ "Y019": {
+  "section": "neo-repere",
+  "fr": "alt=\"L’app avec le duo acoustique D Kurd 18 et E18 David Lesage Signature côte à côte : un accord allumé d’une coque à l’autre, numéroté dans l’ordre de jeu, et l’Étoile harmonique qui affiche 24 accords sur 24.\""
+ },
+ "Y020": {
+  "section": "neo-repere",
+  "fr": ">Mon duo, tel que l’app le voit<"
+ },
+ "Y021": {
+  "section": "neo-repere",
+  "fr": ">Un D Kurd 18 et un E18. Vingt-quatre accords.<"
+ },
+ "Y022": {
+  "section": "neo-repere",
+  "fr": ">Seul, chacun de mes deux Yishama joue 6 accords. Ensemble, ils en jouent 24, dont 12 qu’aucun des deux ne joue seul.<"
+ },
+ "Y023": {
+  "section": "neo-repere",
+  "fr": ">Mon duo dans l’app : l’accord s’allume sur les deux coques, l’Étoile harmonique compte 24 sur 24.<"
+ },
+ "Y024": {
+  "section": "neo-repere",
+  "fr": ">Les douze accords qui n’existent qu’à deux<"
+ },
+ "Y025": {
+  "section": "neo-repere",
+  "fr": ">accords, dont 12 qu’on ne joue qu’à deux<"
+ },
+ "Y026": {
+  "section": "neo-repere",
+  "fr": ">tonalités jouables, sur 24<"
+ },
+ "Y027": {
+  "section": "neo-repere",
+  "fr": ">morceaux, en plus des 157 de mon D Kurd<"
+ },
+ "Y028": {
+  "section": "neo-repere",
+  "fr": ">Cm<"
+ },
+ "Y029": {
+  "section": "neo-repere",
+  "fr": ">C#<"
+ },
+ "Y030": {
+  "section": "neo-repere",
+  "fr": ">D<"
+ },
+ "Y031": {
+  "section": "neo-repere",
+  "fr": ">D#<"
+ },
+ "Y032": {
+  "section": "neo-repere",
+  "fr": ">D#m<"
+ },
+ "Y033": {
+  "section": "neo-repere",
+  "fr": ">Em<"
+ },
+ "Y034": {
+  "section": "neo-repere",
+  "fr": ">Fm<"
+ },
+ "Y035": {
+  "section": "neo-repere",
+  "fr": ">F#<"
+ },
+ "Y036": {
+  "section": "neo-repere",
+  "fr": ">G<"
+ },
+ "Y037": {
+  "section": "neo-repere",
+  "fr": ">G#<"
+ },
+ "Y038": {
+  "section": "neo-repere",
+  "fr": ">Bbm<"
+ },
+ "Y039": {
+  "section": "neo-repere",
+  "fr": ">Bm<"
+ },
+ "Y040": {
+  "section": "neo-repere",
+  "fr": ">Révéler les accords de mon duo<"
+ },
+ "Y041": {
+  "section": "neo-constellations",
+  "fr": "alt=\"Un accord en constellation fermée sur un D Kurd 18\""
+ },
+ "Y042": {
+  "section": "neo-constellations",
+  "fr": "alt=\"Le même accord en constellation ouverte, D Kurd 18\""
+ },
+ "Y043": {
+  "section": "neo-constellations",
+  "fr": "alt=\"Le même accord en tracé des mains, D Kurd 18\""
+ },
+ "Y044": {
+  "section": "neo-constellations",
+  "fr": ">Mémoriser les accords<"
+ },
+ "Y045": {
+  "section": "neo-constellations",
+  "fr": ">Chaque accord se dessine en constellation.<"
+ },
+ "Y046": {
+  "section": "neo-constellations",
+  "fr": ">Tu vois la forme, puis le chemin, puis les mains. Dans le duo, le tracé traverse l’espace d’une coque à l’autre, et l’ordre de jeu suit.<"
+ },
+ "Y047": {
+  "section": "neo-constellations",
+  "fr": "><b>Fermée</b>La forme de l’accord, d’un coup d’œil.<"
+ },
+ "Y048": {
+  "section": "neo-constellations",
+  "fr": "><b>Ouverte</b>Le chemin des notes, pour voir le déplacement.<"
+ },
+ "Y049": {
+  "section": "neo-constellations",
+  "fr": "><b>Mains</b>Quelle main, quelle note : tu lis ton jeu.<"
+ },
+ "Y050": {
+  "section": "neo-constellations",
+  "fr": ">Fermée<"
+ },
+ "Y051": {
+  "section": "neo-constellations",
+  "fr": ">Ouverte<"
+ },
+ "Y052": {
+  "section": "neo-constellations",
+  "fr": ">Mains<"
+ },
+ "Y053": {
+  "section": "neo-lien",
+  "fr": "alt=\"Le panneau Mes handpans de l’app : le duo Yishama David Lesage Signature en place, D Kurd 18 en coque principale et E18 à côté, avec le bouton « Jouer le duo ».\""
+ },
+ "Y054": {
+  "section": "neo-lien",
+  "fr": ">Dans l’app<"
+ },
+ "Y055": {
+  "section": "neo-lien",
+  "fr": ">Mon duo<"
+ },
+ "Y056": {
+  "section": "neo-lien",
+  "fr": ">Pose tes deux Yishama. L’app fait le reste.<"
+ },
+ "Y057": {
+  "section": "neo-lien",
+  "fr": ">Deux emplacements, un bouton. Tes deux handpans s’affichent côte à côte, chacun avec ses propres notes.<"
+ },
+ "Y058": {
+  "section": "neo-lien",
+  "fr": ">Mon duo : deux emplacements, puis « Jouer le duo ».<"
+ },
+ "Y059": {
+  "section": "neo-lien",
+  "fr": "><b>Deux rangées d’accords.</b> D’abord les 7 accords de ta tonalité. Puis ceux que seuls tes deux handpans ensemble permettent, marqués « seulement à deux ».<"
+ },
+ "Y060": {
+  "section": "neo-lien",
+  "fr": "><b>Un clic sur l’œil.</b> L’accord s’allume sur les deux coques, numéroté dans l’ordre où tu le joues, un trait d’une coque à l’autre.<"
+ },
+ "Y061": {
+  "section": "neo-lien",
+  "fr": "><b>Ce que tu peux faire avec ces deux handpans.</b> Les accords nouveaux, les tonalités jouables, les morceaux que le duo ajoute.<"
+ },
+ "Y062": {
+  "section": "neo-lien",
+  "fr": "><b>L’Étoile harmonique.</b> Elle te montre où aller depuis l’accord que tu joues.<"
+ },
+ "Y063": {
+  "section": "neo-lien",
+  "fr": "><b>Tes duos te suivent.</b> Enregistrés sur ton compte, ils t’attendent sur ta tablette comme sur ton ordinateur.<"
+ },
+ "Y064": {
+  "section": "neo-lien",
+  "fr": ">Deux rangées d’accords.<"
+ },
+ "Y065": {
+  "section": "neo-lien",
+  "fr": ">Un clic sur l’œil.<"
+ },
+ "Y066": {
+  "section": "neo-lien",
+  "fr": ">Ce que tu peux faire avec ces deux handpans.<"
+ },
+ "Y067": {
+  "section": "neo-lien",
+  "fr": ">L’Étoile harmonique.<"
+ },
+ "Y068": {
+  "section": "neo-lien",
+  "fr": ">Tes duos te suivent.<"
+ },
+ "Y069": {
+  "section": "neo-lien",
+  "fr": ">Ouvrir mon duo<"
+ },
+ "Y070": {
+  "section": "neo-creer",
+  "fr": "aria-label=\"Compléter un D Kurd : les notes qui lui manquent, et le deuxième handpan qui le complète le mieux\""
+ },
+ "Y071": {
+  "section": "neo-creer",
+  "fr": ">Tu n’as qu’un Yishama ?<"
+ },
+ "Y072": {
+  "section": "neo-creer",
+  "fr": ">Entends ton deuxième avant de le commander.<"
+ },
+ "Y073": {
+  "section": "neo-creer",
+  "fr": ">L’app te dit quelles notes manquent à ton handpan, classe les gammes qui le complètent le mieux, et pose le handpan proposé à côté du tien, sans rien enregistrer.<"
+ },
+ "Y074": {
+  "section": "neo-creer",
+  "fr": ">Le coup de cœur choisit souvent une gamme trop proche de la première. L’app te montre ce que le second ajoute vraiment.<"
+ },
+ "Y075": {
+  "section": "neo-plusieurs",
+  "fr": ">Tous tes handpans<"
+ },
+ "Y076": {
+  "section": "neo-plusieurs",
+  "fr": ">Tous tes Yishama dans un seul compte.<"
+ },
+ "Y077": {
+  "section": "neo-plusieurs",
+  "fr": ">Chacun avec sa gamme et sa coque. Et quand ils jouent ensemble, l’app les voit comme un seul instrument.<"
+ },
+ "Y078": {
+  "section": "neo-plusieurs",
+  "fr": ">Les accords de chacun, et ceux qu’on ne joue qu’à deux, dessinés d’une coque à l’autre.<"
+ },
+ "Y079": {
+  "section": "neo-plusieurs",
+  "fr": ">L’app calcule le placement, le doigté et les arpèges.<"
+ },
+ "Y080": {
+  "section": "neo-plusieurs",
+  "fr": ">Tes sets prêts, l’affichage épuré pour jouer en public.<"
+ },
+ "Y081": {
+  "section": "neo-plusieurs",
+  "fr": ">Ton duo<"
+ },
+ "Y082": {
+  "section": "neo-plusieurs",
+  "fr": ">Plusieurs handpans autour de toi<"
+ },
+ "Y083": {
+  "section": "neo-plusieurs",
+  "fr": ">Sur scène<"
+ },
+ "Y084": {
+  "section": "david",
+  "fr": "alt=\"Emblème Yishama, David Lesage, artiste collaboration.\""
+ },
+ "Y085": {
+  "section": "david",
+  "fr": ">Pourquoi ce duo<"
+ },
+ "Y086": {
+  "section": "david",
+  "fr": ">Pensée par un chanteur qui joue deux Yishama.<"
+ },
+ "Y087": {
+  "section": "david",
+  "fr": ">David Lesage voulait chanter dans n’importe quelle tonalité, avec la note la plus grave de chaque accord sous la main. Yonathan, chez Yishama, a dessiné avec lui deux instruments de 18 notes qui, ensemble, lui donnent tous les dièses et tous les bémols.<"
+ },
+ "Y088": {
+  "section": "david",
+  "fr": ">Ils viennent d’être réaccordés. Ce duo est celui que tu vois sur cette page.<"
+ },
+ "Y089": {
+  "section": "yi-offre",
+  "fr": ">L’offre Yishama<"
+ },
+ "Y090": {
+  "section": "yi-offre",
+  "fr": ">Tu achètes un duo chez Yishama ? Un an de Studio t’est offert.<"
+ },
+ "Y091": {
+  "section": "yi-offre",
+  "fr": ">Tes deux instruments arrivent, et l’app est déjà prête à te montrer tout ce qu’ils savent faire ensemble.<"
+ },
+ "Y092": {
+  "section": "neo-formules",
+  "fr": ">Gratuit, puis Studio<"
+ },
+ "Y093": {
+  "section": "neo-formules",
+  "fr": ">Un handpan, c’est gratuit. Le duo, c’est Studio.<"
+ },
+ "Y094": {
+  "section": "neo-formules",
+  "fr": ">Gratuit<"
+ },
+ "Y095": {
+  "section": "neo-formules",
+  "fr": ">0 € <small>pour toujours, sans carte</small><"
+ },
+ "Y096": {
+  "section": "neo-formules",
+  "fr": ">Reconnaître ta gamme au micro<"
+ },
+ "Y097": {
+  "section": "neo-formules",
+  "fr": ">Tous les accords de ton instrument, en couleurs et en constellations<"
+ },
+ "Y098": {
+  "section": "neo-formules",
+  "fr": ">Les chansons que ton handpan peut jouer ce soir<"
+ },
+ "Y099": {
+  "section": "neo-formules",
+  "fr": ">Trouver ta voix, t’entraîner, sauvegarder ce que tu crées<"
+ },
+ "Y100": {
+  "section": "neo-formules",
+  "fr": ">Savoir quel handpan choisir ensuite<"
+ },
+ "Y101": {
+  "section": "neo-formules",
+  "fr": ">Studio<"
+ },
+ "Y102": {
+  "section": "neo-formules",
+  "fr": ">9,99 € <small>par mois, premier mois offert</small><"
+ },
+ "Y103": {
+  "section": "neo-formules",
+  "fr": ">Tout le gratuit, et :<"
+ },
+ "Y104": {
+  "section": "neo-formules",
+  "fr": ">Jouer avec deux handpans<"
+ },
+ "Y105": {
+  "section": "neo-formules",
+  "fr": ">Révéler les accords de ton duo<"
+ },
+ "Y106": {
+  "section": "neo-formules",
+  "fr": ">Jouer sur plusieurs handpans autour de toi<"
+ },
+ "Y107": {
+  "section": "neo-formules",
+  "fr": ">Ta voix, ta scène<"
+ },
+ "Y108": {
+  "section": "neo-formules",
+  "fr": ">Travailler ta justesse avec les exercices de chant<"
+ },
+ "Y109": {
+  "section": "neo-formules",
+  "fr": ">T’entendre dans le casque<"
+ },
+ "Y110": {
+  "section": "neo-formules",
+  "fr": ">Monter sur scène avec tes sets<"
+ },
+ "Y111": {
+  "section": "neo-formules",
+  "fr": ">Ton travail<"
+ },
+ "Y112": {
+  "section": "neo-formules",
+  "fr": ">Tout Essentiel : transposer, jouer hors ligne, la partition qui défile, boucler un passage, jouer avec un batteur<"
+ },
+ "Y113": {
+  "section": "neo-formules",
+  "fr": ">Exporter en MIDI et en MusicXML, garder tes compositions privées<"
+ },
+ "Y114": {
+  "section": "neo-formules",
+  "fr": ">L’app sur plusieurs appareils en même temps<"
+ },
+ "Y115": {
+  "section": "neo-formules",
+  "fr": ">Ou 89 € à l’année. Ta carte est demandée à l’inscription, rien n’est prélevé si tu arrêtes avant la fin du mois offert.<"
+ },
+ "Y116": {
+  "section": "neo-formules",
+  "fr": ">Commencer gratuitement<"
+ },
+ "Y117": {
+  "section": "faq",
+  "fr": ">Questions<"
+ },
+ "Y118": {
+  "section": "faq",
+  "fr": ">Ce qu’on me demande.<"
+ },
+ "Y119": {
+  "section": "faq",
+  "fr": ">Mon Yishama est-il dans l’app ?<"
+ },
+ "Y120": {
+  "section": "faq",
+  "fr": ">L’app connaît 74 coques et 541 ateliers. Et si tu ne connais pas le nom de ta gamme, tu la fais écouter au micro : l’app la retrouve.<"
+ },
+ "Y121": {
+  "section": "faq",
+  "fr": ">Faut-il Studio pour le duo ?<"
+ },
+ "Y122": {
+  "section": "faq",
+  "fr": ">Oui. Ton premier handpan a tout le gratuit de l’app. Jouer avec deux handpans et révéler les accords de ton duo, c’est Studio.<"
+ },
+ "Y123": {
+  "section": "faq",
+  "fr": ">Et si je n’ai qu’un Yishama ?<"
+ },
+ "Y124": {
+  "section": "faq",
+  "fr": ">Tout le gratuit est pour lui. Et l’app te dit quel second handpan le compléterait le mieux, avant que tu le commandes.<"
+ },
+ "Y125": {
+  "section": "faq",
+  "fr": ">Sur quel appareil ?<"
+ },
+ "Y126": {
+  "section": "faq",
+  "fr": ">Sur ordinateur ou tablette, dans ton navigateur. Tes duos te suivent de l’un à l’autre.<"
+ },
+ "Y127": {
+  "section": "faq",
+  "fr": ">Et si j’arrête ?<"
+ },
+ "Y128": {
+  "section": "faq",
+  "fr": ">Ta carte est demandée à l’inscription, mais rien n’est prélevé avant la fin du mois offert. Ensuite, tu arrêtes quand tu veux, pour le mois suivant.<"
+ },
+ "Y129": {
+  "section": "faq",
+  "fr": ">Je n’ai jamais fait de solfège.<"
+ },
+ "Y130": {
+  "section": "faq",
+  "fr": ">Tu commences par les couleurs et les émotions. La théorie vient quand tu la demandes.<"
+ },
+ "Y131": {
+  "section": "fin",
+  "fr": ">Tes deux Yishama<br>ont des choses à se dire.<"
+ },
+ "Y132": {
+  "section": "fin",
+  "fr": ">9,99 € par mois, premier mois offert. Commencer avec un seul handpan reste gratuit.<"
+ },
+ "Y133": {
+  "section": "barre",
+  "fr": ">Studio · 9,99 €/mois, 1er mois offert<"
+ },
+ "Y134": {
+  "section": "balises",
+  "fr": "Deux Yishama, un seul instrument | Handpan Constellation Studio"
+ },
+ "Y135": {
+  "section": "balises",
+  "fr": "Deux Yishama, un seul instrument : Handpan Constellation Studio révèle les accords qui n’existent qu’à deux, et le chemin des mains d’une coque à l’autre."
+ },
+ "Y136": {
+  "section": "fenetre",
+  "fr": "Continuer : enregistrer ma carte"
+ },
+ "Y137": {
+  "section": "citations",
+  "fr": ">« Une gamme, c’est un choix. Donc une renonciation. »<"
+ },
+ "Y138": {
+  "section": "petits",
+  "fr": ">6 accords avec mon D Kurd 18<"
+ },
+ "Y139": {
+  "section": "petits",
+  "fr": ">24 accords avec mon E18<"
+ }
+}
