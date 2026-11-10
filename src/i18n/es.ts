@@ -444,6 +444,9 @@ export const es: Dict = {
     "pairP1": "Los 24 acordes mayores y menores pasan a poder tocarse, y <strong>cada uno tiene su fundamental en el grave</strong>. Es decir, exactamente lo que había pedido: no verme obligado nunca más a tocar una inversión por falta de bajo.",
     "pairP2": "Yonathan construyó, sin que nadie lo llamara nunca así, un handpan cromático en dos piezas. De hecho, los pensó como un sistema: quitó una nota del primero porque yo ya la tenía en el segundo, para dejar lugar a otra.",
     "pairHonest": "Un matiz honesto: esto describe la <em>disponibilidad de las notas</em>, todavía no la fluidez del gesto. Pasar de un handpan al otro a mitad de un acorde sigue siendo una gimnasia. Fue justamente ese problema el que terminó dando origen a mi aplicación.",
+    "bandeauBadge": "Nuevo",
+    "bandeauTexte": "Tu Yishama toca más de lo que crees. Ahora lo ves. Descubre la app gratuita",
+    "pairAppCta": "Mira lo que la app muestra en tu handpan",
     "pairFactLabels": {
       "notes": "notas en total",
       "keys": "tonalidades",

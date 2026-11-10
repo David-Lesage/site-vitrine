@@ -444,6 +444,9 @@ export const de: Dict = {
     "pairP1": "Alle 24 Dur- und Mollakkorde werden spielbar, und <strong>jeder hat seinen Grundton im Bass</strong>. Also genau das, worum ich gebeten hatte: nie wieder eine Umkehrung spielen müssen, weil der Bass fehlt.",
     "pairP2": "Yonathan hat, ohne es je so zu nennen, einen chromatischen Handpan in zwei Teilen gebaut. Er hat die beiden übrigens als System gedacht: Beim ersten hat er einen Ton weggelassen, weil ich ihn schon auf dem zweiten hatte – um Platz für einen anderen zu schaffen.",
     "pairHonest": "Eine ehrliche Einschränkung: Das beschreibt die <em>Verfügbarkeit der Töne</em>, noch nicht den Fluss der Bewegung. Mitten im Akkord von einem Handpan zum anderen zu wechseln, bleibt eine Turnübung. Genau dieses Problem hat am Ende meine App hervorgebracht.",
+    "bandeauBadge": "Neu",
+    "bandeauTexte": "Dein Yishama spielt mehr, als du denkst. Jetzt siehst du es auch. Entdecke die kostenlose App",
+    "pairAppCta": "Sieh, was die App auf deinem Handpan zeigt",
     "pairFactLabels": {
       "notes": "Töne insgesamt",
       "keys": "Tonarten",

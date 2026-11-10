@@ -559,6 +559,9 @@ export const en: Dict = {
       'Yonathan built, without either of us ever calling it that, a chromatic handpan in two pieces. He designed them as one system, too: he removed a note from the first because I already had it on the second, to free up room for another.',
     pairHonest:
       'One honest caveat: this describes the <em>availability of the notes</em>, not yet the fluidity of the gesture. Moving from one pan to the other mid-chord is still gymnastics. That is precisely the problem that ended up producing my app.',
+    bandeauBadge: 'New',
+    bandeauTexte: 'Your Yishama plays more than you think. Now you can see it. Discover the free app',
+    pairAppCta: 'See what the app shows on your handpan',
     pairFactLabels: { notes: 'notes in total', keys: 'keys', chords: 'major & minor chords', tuning: 'reference pitch' },
     pairPhotoAlt: 'David Lesage playing his two Yishama handpans side by side',
     pairPhotoCaption: 'The two instruments side by side: a still from the Shape of My Heart cover.',

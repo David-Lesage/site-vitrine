@@ -388,7 +388,7 @@ const fr = {
     description:
       'L’histoire de ma rencontre avec Yonathan et Yishama : deux handpans acoustiques de 18 notes accordés en 432 Hz, conçus sur mesure pour accompagner ma voix — et ce qu’ils ont fini par produire.',
     heroEyebrow: 'Mes instruments acoustiques',
-    heroTitle: 'Yishama — deux handpans nés d’une rencontre',
+    heroTitle: 'Yishama : deux handpans nés d’une rencontre',
     heroLead:
       'Deux instruments de 18 notes, accordés en <strong class="text-cream">432 Hz</strong>, dessinés avec <strong class="text-cream">Yonathan</strong> pour une seule raison : que je puisse chanter en m’accompagnant. Voici leur histoire — et ce qu’ils m’ont appris.',
     heroCtaVideo: 'Écouter Shape of My Heart',
@@ -650,6 +650,9 @@ const fr = {
       'Yonathan a construit, sans qu’on le nomme jamais comme ça, un handpan chromatique en deux pièces. Il les a d’ailleurs pensés comme un système : il a retiré une note du premier parce que je l’avais déjà sur le second — pour libérer la place d’une autre.',
     pairHonest:
       'Une nuance honnête : ceci décrit la <em>disponibilité des notes</em>, pas encore la fluidité du geste. Passer d’un pan à l’autre en cours d’accord reste une gymnastique. C’est précisément ce problème-là qui a fini par produire mon application.',
+    bandeauBadge: 'Nouveau',
+    bandeauTexte: 'Ton Yishama joue plus que tu ne crois. Maintenant, tu le vois. Découvre l’app gratuite',
+    pairAppCta: 'Voir ce que l’app montre sur ton handpan',
     pairFactLabels: { notes: 'notes au total', keys: 'tonalités', chords: 'accords majeurs & mineurs', tuning: 'diapason' },
     pairPhotoAlt: 'David Lesage jouant ses deux handpans Yishama côte à côte',
     pairPhotoCaption: 'Les deux instruments côte à côte — image de la reprise de Shape of My Heart.',

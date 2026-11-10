@@ -52,6 +52,15 @@ const ld = [
 ---
 
 <Layout title={y.title} description={y.description} image="/images/og-yishama.jpg" ldJSON={ld}>
+  {/* Bandeau vers la page gratuite de l'app, sur le modèle de la page Neotone.
+      Chantier 62, décision de Yannick du 10/11/2026 : renvoi vers /handpan-app (gratuit). */}
+  <a href={L('/handpan-app')} class="block bg-gold text-ink">
+    <span class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-5 py-3 text-center">
+      <span class="rounded-full bg-ink px-3 py-1 text-xs font-700 uppercase tracking-[0.12em] text-cream">{y.bandeauBadge}</span>
+      <span class="font-700 underline underline-offset-4">{y.bandeauTexte} →</span>
+    </span>
+  </a>
+
   {/* ───────────── HERO ───────────── */}
   <Section tone="ink" class="!py-20">
     <div class="grid items-center gap-10 lg:grid-cols-2">
@@ -482,6 +491,7 @@ const ld = [
         <p set:html={y.pairP1}></p>
         <p>{y.pairP2}</p>
         <p class="rounded-card border border-cream/10 bg-cream/5 p-5 text-base text-cream/70" set:html={y.pairHonest}></p>
+        <a href={L('/handpan-app')} class="inline-block font-700 text-gold underline underline-offset-4">{y.pairAppCta} →</a>
       </div>
     </div>
   </Section>
