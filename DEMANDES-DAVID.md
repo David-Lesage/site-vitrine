@@ -251,3 +251,6 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 - ✅ fait (25/10) « il faut revoir le formulaire [Muling] pour qu'il serve aussi pour payer sur place en mettant sa preuve de virement comme pour hisong. met le en place » — en prod (case « déjà viré » en mode showroom).
 - 🔒 bloqué (25/10) « la preuve de virement à rattacher directement à l'inventaire et à envoyer à muling » (Clément) — aucune commande Muling de Clément en base ; 5d926c7b est sa vente Hisong. À soumettre via le nouveau formulaire.
 - ✅ fait (25/10) Correction Yannick ChromaKeys (degrés = couleur + émotion ; ChromaKeys = une couleur par note) — en prod.
+
+- ✅ fait (11/11) « utilise l'image de David Lesage Showroom pour l'image d'aperçus du lien https://www.lesagedavid.fr/en/showroom/ dans toutes les langues » — `public/images/og-showroom.jpg` (1200×630), og:image + twitter:image de /showroom en FR/EN/ES/DE
+- ⏳ en cours (11/11) « idéalement on devrait voir tout ce que je propose au showroom (handpan acoustique, electronique Fais moi une proposition » — 3 variantes A/B/C montrées à David, attente de son choix (A en ligne en attendant)
