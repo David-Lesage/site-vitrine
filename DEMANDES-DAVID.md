@@ -253,4 +253,5 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 - ✅ fait (25/10) Correction Yannick ChromaKeys (degrés = couleur + émotion ; ChromaKeys = une couleur par note) — en prod.
 
 - ✅ fait (11/11) « utilise l'image de David Lesage Showroom pour l'image d'aperçus du lien https://www.lesagedavid.fr/en/showroom/ dans toutes les langues » — `public/images/og-showroom.jpg` (1200×630), og:image + twitter:image de /showroom en FR/EN/ES/DE
-- ⏳ en cours (11/11) « idéalement on devrait voir tout ce que je propose au showroom (handpan acoustique, electronique Fais moi une proposition » — 3 variantes A/B/C montrées à David, attente de son choix (A en ligne en attendant)
+- ✅ fait (11/11) « idéalement on devrait voir tout ce que je propose au showroom (handpan acoustique, electronique Fais moi une proposition » — David a choisi la C2 : selfie avec tous les instruments, titre Century Gothic sur fond flouté, bandeau des 8 partenaires en bas ; en ligne
+- ✅ fait (11/11) « photo C tu peux mettre du flou derriere le texte pour le faire ressortir » · « peux tu mettre la meme police que la photo A » · « peux tu ajouter une ligne en dessous avec le nom de tous les partenaire » — intégrés à la C2

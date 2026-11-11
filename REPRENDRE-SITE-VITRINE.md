@@ -53,8 +53,8 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - `.gitignore` : `.env*` (sauf `.env.example`), `supabase/.temp/`, `MESSAGE-SESSION-*.md`, la réconciliation Hisong. Les fichiers Icon sont sortis de git (commit 9d6cefc).
 
 ## 🧭 ÉTAT ACTUEL — 11/11/2026 (44ᵉ passe, faite depuis la session APP) — APERÇU DE PARTAGE DU SHOWROOM
-- /showroom (FR/EN/ES/DE) : og:image = `/images/og-showroom.jpg` (1200×630, photo « David Lesage Showroom » bras ouverts, source `_medias-originaux-avec-titre/`, recadrée à 1216 px de large pour retirer la vignette de visio en bas à droite). Branché par `image=` sur le `<Layout>` de `ShowroomPage.astro`.
-- En attente de David : choix entre A (photo titrée seule, en ligne), B (photo titrée + bande de 4 vignettes : acoustique et Neotone, Neotone et sono, micros Hisong, démo) et C (selfie avec tous les instruments + titre). Une seule image pour toutes les langues (aucun texte à traduire). Remplacer `og-showroom.jpg` suffit.
+- /showroom (FR/EN/ES/DE) : og:image = `/images/og-showroom.jpg` (1200×630). Branché par `image=` sur le `<Layout>` de `ShowroomPage.astro`.
+- Choix de David (11/11) : variante C2 = `showroom-david-presentation.webp` recadrée, titre « David Lesage Showroom » en Century Gothic (police système `FontServices…/CenturyGothic.ttc`) sur zone floutée, bandeau clair en bas avec les 8 partenaires (Yishama / Neotone / Atlas / Muling / Hisong / La Maison du Ngoni / L’Âme du Tambour / Cœur de Son). Une image pour toutes les langues. Now Groove signalé à David comme oubli possible, sans réponse.
 
 ## 🧭 ÉTAT ACTUEL — 03/11/2026 (43ᵉ passe) — ANTI-DÉMARCHAGE DES FORMULAIRES
 - Formulaires contact, réservation (BookingForm) et bêta : mention « réservé aux cours, à l'app, aux instruments », pot de miel `website`, `startedAt` (< 4 s = robot), **petit exercice musical BLOQUANT** (`ExerciceHumain.astro`, pan exporté de l'app par `scripts/defi-handpan/exporter.mjs`, défi tiré/vérifié par la base, interrupteur `src/lib/antispamConfig.ts` + `SITE_LEAD_SAIT_TRIER` dans `api/subscribe.js`), avertissement « ressemble à une proposition commerciale » (contact, non bloquant).
