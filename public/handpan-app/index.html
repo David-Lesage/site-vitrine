@@ -25,14 +25,37 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.lesagedavid.fr/images/og-handpan-app-fr.jpg">
 <meta property="og:url" content="https://www.lesagedavid.fr/handpan-app/">
+<!-- Langue automatique (11/11/2026, même règle que l'app) : jamais pour les robots, une seule fois par visite
+     (sessionStorage lang-auto), un choix explicite (localStorage pref-lang, drapeau ou lien de langue) fait foi.
+     Sinon : pays de l'IP (/api/pays) → langue ; pays multilingue ou inconnu → langue du navigateur ; anglais par défaut.
+     Page masquée (html.lang-attente) le temps de la réponse, 700 ms au plus : en cas d'échec ou de délai, langue du
+     navigateur, et la page s'affiche toujours. Pas de page de vente allemande sur ce site : de → en.
+     Le générateur (scripts/generer-vente-langues.mjs) retire ce script des pages en/es par son début : ne pas le changer. -->
 <script>
 ;(function(){try{
  if(/bot|crawl|spider|slurp|google-|lighthouse|facebookexternalhit|headlesschrome/i.test(navigator.userAgent))return;
  if(localStorage.getItem('pref-lang')||sessionStorage.getItem('lang-auto'))return;
- var nav=navigator.languages&&navigator.languages.length?navigator.languages[0]:navigator.language;
- var code=(nav||'').toLowerCase();if(!code||code.indexOf('fr')===0)return;
- sessionStorage.setItem('lang-auto','1');location.replace((code.indexOf('es')===0?'/es':'/en')+'/handpan-app/'+location.search+location.hash)
-}catch(e){}})()
+ var d=document.documentElement,fini=false,attente,secours,P={},st=document.createElement('style');
+ 'FR MC'.split(' ').forEach(function(c){P[c]='fr'});
+ 'ES MX AR CO CL PE VE EC GT CU BO DO HN PY SV NI CR PA UY PR'.split(' ').forEach(function(c){P[c]='es'});
+ 'DE AT LI'.split(' ').forEach(function(c){P[c]='de'});
+ 'GB US IE AU NZ'.split(' ').forEach(function(c){P[c]='en'});
+ function montrer(){d.classList.remove('lang-attente')}
+ function navigateur(){var n=navigator.languages&&navigator.languages.length?navigator.languages[0]:navigator.language;
+  n=(n||'').toLowerCase();return !n||n.indexOf('fr')===0?'fr':n.indexOf('es')===0?'es':n.indexOf('de')===0?'de':'en'}
+ function aller(l){if(fini)return;fini=true;clearTimeout(attente);
+  try{sessionStorage.setItem('lang-auto','1')}catch(e){}
+  if(l==='de')l='en';
+  if(l==='fr'){montrer();return}
+  location.replace('/'+l+'/handpan-app/'+location.search+location.hash)}
+ st.textContent='html.lang-attente{visibility:hidden}';document.head.appendChild(st);d.classList.add('lang-attente');
+ secours=setTimeout(montrer,2500);
+ attente=setTimeout(function(){aller(navigateur())},700);
+ if(!window.fetch){aller(navigateur());return}
+ fetch('/api/pays',{cache:'no-store',credentials:'omit'}).then(function(r){return r.ok?r.json():null})
+  .then(function(j){aller((j&&P[String(j.pays||'').toUpperCase()])||navigateur())},function(){aller(navigateur())})
+  .catch(function(){aller(navigateur())})
+}catch(e){document.documentElement.classList.remove('lang-attente')}})()
 </script>
 <link rel="stylesheet" href="/fonts/fonts.css">
 <noscript><style>.rv,.scene.anim .rv{opacity:1!important;transform:none!important}
@@ -1024,7 +1047,7 @@ main>section[hidden]{display:none!important}
 
 </main>
 
-<nav class="pied-legal" aria-label="Liens du site"><a href="/">Accueil</a><a href="/neotone/">Le Neotone</a><a href="/yishama/">Yishama</a><a href="/boutique/">Boutique</a><a href="/cours/">Cours</a><a href="/blog/">Blog</a><a href="/showroom/">Showroom</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="https://play.handpanstudio.app/">Se connecter</a><a href="/mentions-legales/">Mentions légales</a><a href="/conditions-generales/">Conditions générales</a><a href="/politique-de-confidentialite/">Confidentialité</a><a href="/contact/">Contact</a><span class="pied-langues"><a href="/handpan-app/" hreflang="fr" lang="fr" data-lang-pick="fr" aria-current="true">Français</a> · <a href="/en/handpan-app/" hreflang="en" lang="en" data-lang-pick="en">English</a> · <a href="/es/handpan-app/" hreflang="es" lang="es" data-lang-pick="es">Español</a></span></nav>
+<nav class="pied-legal" aria-label="Liens du site"><a href="/">Accueil</a><a href="/neotone/">Le Neotone</a><a href="/yishama/">Yishama</a><a href="/boutique/">Boutique</a><a href="/cours/">Cours</a><a href="/blog/">Blog</a><a href="/showroom/">Showroom</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="https://play.handpanstudio.app/">Se connecter</a><a href="https://play.handpanstudio.app/presse/">Espace presse</a><a href="/mentions-legales/">Mentions légales</a><a href="/conditions-generales/">Conditions générales</a><a href="/politique-de-confidentialite/">Confidentialité</a><a href="/contact/">Contact</a><span class="pied-langues"><a href="/handpan-app/" hreflang="fr" lang="fr" data-lang-pick="fr" aria-current="true">Français</a> · <a href="/en/handpan-app/" hreflang="en" lang="en" data-lang-pick="en">English</a> · <a href="/es/handpan-app/" hreflang="es" lang="es" data-lang-pick="es">Español</a></span></nav>
 
 <div class="barre-appel" aria-hidden="true"><span>Gratuit, sans carte bancaire</span><a class="btn" href="#inscription" data-modale="inscr" data-palier="g" tabindex="-1">Créer mon compte</a></div>
 

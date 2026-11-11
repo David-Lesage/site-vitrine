@@ -17,7 +17,11 @@ const T = [
   // ===== Balises
   ["Handpan Constellation Studio : ton handpan, gratuit pour toujours", "Handpan Constellation Studio: the handpan app, free forever", "Handpan Constellation Studio: la app de handpan gratis para siempre"],
   ["Joue du handpan sans solfège : chaque note a sa couleur, chaque accord sa forme. Gratuit pour toujours, sur tout handpan acoustique comme sur le Neotone.", "Play the handpan without reading music: every note has its own colour, every chord its own shape. Free forever, on any acoustic handpan and on the Neotone.", "Toca el handpan sin solfeo: cada nota tiene su color, cada acorde su forma. La app es gratis para siempre, en cualquier handpan acústico y en el Neotone."],
-  ["La constellation des accords de Handpan Constellation Studio", "The chord constellation of Handpan Constellation Studio", "La constelación de acordes de Handpan Constellation Studio"],
+  // Aperçu de partage (chantier 59, 11/11/2026) : og:title, og:description, texte de l'image, image par langue.
+  ["<meta property=\"og:title\" content=\"Ce soir, joue une chanson sur ton handpan\">", "<meta property=\"og:title\" content=\"Play a song tonight, on your handpan\">", "<meta property=\"og:title\" content=\"Esta noche, toca una canción en tu handpan\">"],
+  ["<meta property=\"og:description\" content=\"Les accords posés sur les paroles, dessinés sur ton handpan. Sans solfège, sur handpan acoustique comme sur le Neotone. Tout ça, sans carte bancaire.\">", "<meta property=\"og:description\" content=\"The chords above the lyrics, drawn on your handpan. No music theory, on any acoustic handpan and on the Neotone. All of this, no card needed.\">", "<meta property=\"og:description\" content=\"Los acordes encima de la letra, dibujados sobre tu handpan. Sin solfeo, en cualquier handpan acústico y en el Neotone. Todo esto, sin tarjeta.\">"],
+  ["<meta property=\"og:image:alt\" content=\"David Lesage avec deux handpans acoustiques, et un Neotone joué devant Handpan Constellation Studio\">", "<meta property=\"og:image:alt\" content=\"David Lesage with two acoustic handpans, and a Neotone played in front of Handpan Constellation Studio\">", "<meta property=\"og:image:alt\" content=\"David Lesage con dos handpans acústicos, y un Neotone tocado delante de Handpan Constellation Studio\">"],
+  ["/images/og-handpan-app-fr.jpg", "/images/og-handpan-app-en.jpg", "/images/og-handpan-app-es.jpg"],
 
   // ===== Menu et pied de page
   ['aria-label="Menu du site"', 'aria-label="Site menu"', 'aria-label="Menú del sitio"'],
@@ -32,6 +36,8 @@ const T = [
   ['href="/a-propos/">À propos</a>', 'href="/en/a-propos/">About</a>', 'href="/es/a-propos/">Acerca de</a>'],
   ['href="/contact/">Contact</a>', 'href="/en/contact/">Contact</a>', 'href="/es/contact/">Contacto</a>'],
   ['class="site-nom" href="/"', 'class="site-nom" href="/en/"', 'class="site-nom" href="/es/"'],
+  // Espace presse (11/11/2026) : il vit sur l'app, une adresse par langue.
+  ['href="https://play.handpanstudio.app/presse/">Espace presse</a>', 'href="https://play.handpanstudio.app/en/press/">Press</a>', 'href="https://play.handpanstudio.app/es/prensa/">Prensa</a>'],
   ["href=\"https://play.handpanstudio.app/\">Se connecter</a>", "href=\"https://play.handpanstudio.app/\">Sign in</a>", "href=\"https://play.handpanstudio.app/\">Iniciar sesión</a>"],
   ['href="/mentions-legales/">Mentions légales</a>', 'href="/en/mentions-legales/">Legal notice</a>', 'href="/es/mentions-legales/">Aviso legal</a>'],
   ["href=\"/conditions-generales/\">Conditions générales</a>", "href=\"/en/conditions-generales/\">Terms and conditions</a>", "href=\"/es/conditions-generales/\">Condiciones generales</a>"],
