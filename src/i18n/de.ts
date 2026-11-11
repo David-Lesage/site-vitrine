@@ -35,6 +35,7 @@ export const de: Dict = {
       "legal": "Impressum",
       "terms": "AGB",
       "privacy": "Datenschutzerklärung",
+      "press": "Presse",
       "rights": "Unabhängiger Neotone-Botschafter · Alle Preise sind unverbindlich und können sich ohne Vorankündigung ändern."
     },
     "skip": "Zum Inhalt springen",

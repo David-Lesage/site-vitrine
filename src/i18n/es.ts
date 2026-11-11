@@ -35,6 +35,7 @@ export const es: Dict = {
       "legal": "Aviso legal",
       "terms": "Condiciones generales",
       "privacy": "Política de privacidad",
+      "press": "Prensa",
       "rights": "Embajador independiente Neotone · Todos los precios son orientativos y están sujetos a cambios sin previo aviso."
     },
     "skip": "Saltar al contenido",

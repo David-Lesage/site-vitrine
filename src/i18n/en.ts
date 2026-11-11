@@ -30,6 +30,7 @@ export const en: Dict = {
       legal: 'Legal notice',
       terms: 'Terms & conditions',
       privacy: 'Privacy Policy',
+      press: 'Press',
       rights: 'Independent Neotone ambassador · All prices are indicative and may change without notice.',
     },
     skip: 'Skip to content',

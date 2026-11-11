@@ -39,6 +39,8 @@ const fr = {
       // de consentement OAuth de l'application : l'URL doit être publique ET
       // atteignable depuis le pied de page de toutes les pages, dans chaque langue.
       privacy: 'Politique de confidentialité',
+      // Espace presse (11/11/2026) — vit sur l'app (play.handpanstudio.app/presse/).
+      press: 'Espace presse',
       rights: 'Ambassadeur indépendant Neotone · Tous les prix sont indicatifs et peuvent évoluer sans préavis.',
     },
     skip: 'Aller au contenu',

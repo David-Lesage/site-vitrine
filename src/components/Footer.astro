@@ -12,6 +12,17 @@ const t = getDict(lang)
 const year = new Date().getFullYear()
 const navLabel = (key: string) => (t.common.nav as Record<string, string>)[key]
 const footLabel = (key: string) => (t.common.footer as Record<string, string>)[key]
+// Espace presse (11/11/2026, demande de David) : il vit sur l'app, une adresse par langue.
+// Les pages partielles (/zh/…) reçoivent lang = 'fr' de getLang : on les replie sur l'anglais.
+const pressUrls: Record<string, string> = {
+  fr: 'https://play.handpanstudio.app/presse/',
+  en: 'https://play.handpanstudio.app/en/press/',
+  es: 'https://play.handpanstudio.app/es/prensa/',
+  de: 'https://play.handpanstudio.app/de/presse/',
+}
+const pressLang = Astro.url.pathname.startsWith('/zh/') ? 'en' : lang
+const pressUrl = pressUrls[pressLang] ?? pressUrls.en
+const pressLabel = (getDict(pressLang as Lang).common.footer as Record<string, string>).press
 ---
 
 <footer class="mt-24 border-t border-ink/10 bg-ink text-cream/90">
@@ -41,6 +52,7 @@ const footLabel = (key: string) => (t.common.footer as Record<string, string>)[k
         {footerNav.map((item) => (
           <li><a href={localizePath(item.href, lang)} class="text-cream/75 hover:text-cream">{footLabel(item.key)}</a></li>
         ))}
+        <li><a href={pressUrl} hreflang={pressLang} class="text-cream/75 hover:text-cream">{pressLabel}</a></li>
       </ul>
     </nav>
 
