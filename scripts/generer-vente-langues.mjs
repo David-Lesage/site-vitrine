@@ -373,6 +373,10 @@ for (const m of Object.values(META)) {
     .replace('<a href="/handpan-app/" aria-current="page">', `<a href="/${m.dir}/handpan-app/" aria-current="page">`)
     .replace(' aria-current="true">Français', '>Français')
     .replace(new RegExp(`(data-lang-pick="${m.lang}")>`), '$1 aria-current="true">')
+    // drapeaux du haut (11/11/2026) : le drapeau actif suit la langue de la page
+    .replace(/(data-lang-pick="fr" title="Français" aria-label="Français") aria-current="true"/, '$1')
+    .replace(new RegExp(`(data-lang-pick="${m.lang}" title="[^"]+" aria-label="[^"]+")>`), '$1 aria-current="true">')
+    .replace('class="drapeaux" role="navigation" aria-label="Langue"', `class="drapeaux" role="navigation" aria-label="${m.lang === 'es' ? 'Idioma' : 'Language'}"`)
     .replace(/<!--[\s\S]*?-->\n?/g, '')
     // Une page déjà localisée ne redirige jamais.
     .replace(/<script>\n;\(function\(\)\{try\{\n if\(\/bot[\s\S]*?<\/script>\n/, '')
