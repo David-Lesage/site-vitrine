@@ -48,7 +48,7 @@ Pour que la boucle tourne sans accroc, l'app peut te proposer un **doigté sugg�
 
 Sur ton handpan, **chaque degré garde la même forme**, en majeur comme en mineur. Mais en mineur, les 4 accords magiques ne tombent pas sur les mêmes degrés : ce qui est magique, c'est la relation entre les quatre accords, pas leurs numéros.
 
-En mode Triste, le Mode Logique pose donc les 4 accords magiques sur les degrés **<abbr title="Chiffre romain en minuscule : accord mineur ; en majuscule : accord majeur.">i, VI, III, VII</abbr>** : l'Équilibre, la Nostalgie, l'Aventure et le Mystère. En la mineur, ça donne Am, F, C, G, soit les quatre mêmes accords que do majeur, vus depuis l'accord mineur. En ré mineur, ça donne Dm, B♭, F, C : sur un D Kurd, les quatre sont là.
+En mode [Triste](/blog/les-trois-mineurs-handpan), dans le mineur naturel (sa nuance de départ), le Mode Logique pose donc les 4 accords magiques sur les degrés **<abbr title="Ici, la minuscule signale un accord mineur (i), la majuscule un accord majeur (VI, III, VII).">i, VI, III, VII</abbr>** : l'Équilibre, la Nostalgie, l'Aventure et le Mystère. En la mineur, ça donne Am, F, C, G, soit les quatre mêmes accords que do majeur, vus depuis l'accord mineur. En ré mineur, ça donne Dm, B♭, F, C : sur un D Kurd, les quatre sont là.
 
 ## À toi de jouer
 

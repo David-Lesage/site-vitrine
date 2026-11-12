@@ -48,7 +48,7 @@ To keep the loop running without a hitch, the app can offer a **suggested finger
 
 On your handpan, **each degree keeps the same shape**, in major as in minor. But in minor, the 4 magic chords don't fall on the same degrees: what is magic is the relationship between the four chords, not their numbers.
 
-So in Sad mode, Logic Mode places the 4 magic chords on degrees **<abbr title="Lower-case Roman numeral: minor chord; upper-case: major chord.">i, VI, III, VII</abbr>**: Balance, Nostalgia, Adventure and Mystery. In A minor, that gives Am, F, C, G, the same four chords as C major, seen from the minor chord. In D minor, it gives Dm, B♭, F, C: on a D Kurd, all four are there.
+So in [Sad mode](/en/blog/les-trois-mineurs-handpan), in natural minor (its starting shade), Logic Mode places the 4 magic chords on degrees **<abbr title="Here, lower case marks a minor chord (i), upper case a major chord (VI, III, VII).">i, VI, III, VII</abbr>**: Balance, Nostalgia, Adventure and Mystery. In A minor, that gives Am, F, C, G, the same four chords as C major, seen from the minor chord. In D minor, it gives Dm, B♭, F, C: on a D Kurd, all four are there.
 
 ## Your turn to play
 
