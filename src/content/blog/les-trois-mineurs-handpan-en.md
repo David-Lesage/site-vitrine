@@ -2,7 +2,7 @@
 title: "The three faces of minor: natural, harmonic, melodic"
 description: "Under Logic Mode's \"Sad\" button, three shades of minor. Two dots rise by a semitone, and the oriental or jazz colour appears."
 pubDate: 2026-09-12
-updatedDate: 2026-10-24
+updatedDate: 2026-11-12
 cover: "/images/app-triste-trois-mineurs-naturel-2026-10-en.webp"
 category: "logique"
 tags: ["harmony", "minor", "musician"]
@@ -29,6 +29,8 @@ This is the one everyone knows, and the one your handpan plays by default. Its d
 
 Raise **the seventh** by a semitone and everything shifts. The fifth degree becomes a true major dominant: it *pulls* towards the tonic instead of floating. Between the sixth and seventh degrees a wider interval opens up — that unmistakable oriental step.
 
+In Logic Mode, this shade has its own progression: **“The returning tension”**, i, iv, V, VI (in A minor: Am, Dm, E, F).
+
 On the pan, **only two dots** change note: **C3 and C4 become C#3 and C#4**. The app says so itself in the drawer: “2 pads change”.
 
 <figure class="minor-compare minor-compare--stack-sm" style="--rows:2">
@@ -54,6 +56,8 @@ On the pan, **only two dots** change note: **C3 and C4 become C#3 and C#4**. The
 ## 🎷 Melodic minor — the jazz colour
 
 Raise **the sixth and the seventh**, and you get the jazz musicians' scale. The fourth degree turns major, the ii-V-i becomes playable, and the melancholy takes on an elegant, almost smiling quality.
+
+It is not a scale for songs: it is a colour for melodies and improvisation. Logic Mode offers the full scale there, and **“The 4 stable chords”**, i, ii, IV, V (in A minor: Am, Bm, D, E).
 
 On the pan, **four dots** change note: the two from harmonic minor (**C#3** and **C#4**), plus **Bb2 → B2** and **Bb3 → B3**. “4 pads change”, says the drawer.
 

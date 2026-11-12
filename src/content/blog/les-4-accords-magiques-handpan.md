@@ -50,6 +50,8 @@ Sur ton handpan, **chaque degré garde la même forme**, en majeur comme en mine
 
 En mode [Triste](/blog/les-trois-mineurs-handpan), dans le mineur naturel (sa nuance de départ), le Mode Logique pose donc les 4 accords magiques sur les degrés **<abbr title="Ici, la minuscule signale un accord mineur (i), la majuscule un accord majeur (VI, III, VII).">i, VI, III, VII</abbr>** : l'Équilibre, la Nostalgie, l'Aventure et le Mystère. En la mineur, ça donne Am, F, C, G, soit les quatre mêmes accords que do majeur, vus depuis l'accord mineur. En ré mineur, ça donne Dm, B♭, F, C : sur un D Kurd, les quatre sont là.
 
+Dans les deux autres nuances du Triste, harmonique et mélodique, cette relation n'existe plus : le Mode Logique ne parle donc plus de 4 accords magiques, chaque nuance a son propre enchaînement (voir [les trois visages du mineur](/blog/les-trois-mineurs-handpan)).
+
 ## À toi de jouer
 
 Quatre couleurs, une boucle, et voilà de quoi accompagner une infinité de chansons — ou composer les tiennes. Si tu veux chanter par-dessus, pense à choisir une [disposition d'accord](/blog/layouts-vocaux-handpan) adaptée à ta voix et à transposer dans ta tonalité.

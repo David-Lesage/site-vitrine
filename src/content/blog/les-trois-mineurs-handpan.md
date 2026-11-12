@@ -2,7 +2,7 @@
 title: "Les trois visages du mineur : naturel, harmonique, mélodique"
 description: "Sous le bouton « Triste » du Mode Logique, trois nuances de mineur. Deux pastilles qui montent d'un demi-ton, et la couleur orientale ou jazz apparaît."
 pubDate: 2026-09-12
-updatedDate: 2026-10-24
+updatedDate: 2026-11-12
 cover: "/images/app-triste-trois-mineurs-naturel-2026-10.webp"
 category: "logique"
 tags: ["harmonie", "mineur", "musicien"]
@@ -29,6 +29,8 @@ C'est celui que tout le monde connaît, et celui que ton handpan joue par défau
 
 Fais monter **la septième** d'un demi-ton, et tout bascule. Le cinquième degré devient une vraie dominante majeure : il *tire* vers la tonique au lieu de flotter. Entre le sixième et le septième degré s'ouvre alors un intervalle plus large, ce fameux pas oriental qu'on reconnaît immédiatement.
 
+Dans le Mode Logique, cette nuance a son propre enchaînement : **« La tension qui revient »**, i, iv, V, VI (en la mineur : Am, Dm, E, F).
+
 Sur le pan, **deux pastilles seulement** changent de note : **C3 et C4 deviennent C#3 et C#4**. L'app l'annonce elle-même dans le tiroir : « 2 pads changent ».
 
 <figure class="minor-compare minor-compare--stack-sm" style="--rows:2">
@@ -54,6 +56,8 @@ Sur le pan, **deux pastilles seulement** changent de note : **C3 et C4 deviennen
 ## 🎷 Le mineur mélodique — la couleur jazz
 
 Fais monter **la sixte et la septième**, et tu obtiens la gamme des jazzmen. Le quatrième degré passe majeur, le ii-V-i devient jouable, et la mélancolie prend un côté élégant, presque souriant.
+
+Ce n'est pas une gamme de chansons : c'est une couleur pour les mélodies et l'improvisation. Le Mode Logique y propose la gamme complète et **« Les 4 accords stables »**, i, ii, IV, V (en la mineur : Am, Bm, D, E).
 
 Sur le pan, **quatre pastilles** changent de note : les deux de l'harmonique (**C#3** et **C#4**), plus **Bb2 → B2** et **Bb3 → B3**. « 4 pads changent », dit le tiroir.
 

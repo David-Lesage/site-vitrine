@@ -50,6 +50,8 @@ On your handpan, **each degree keeps the same shape**, in major as in minor. But
 
 So in [Sad mode](/en/blog/les-trois-mineurs-handpan), in natural minor (its starting shade), Logic Mode places the 4 magic chords on degrees **<abbr title="Here, lower case marks a minor chord (i), upper case a major chord (VI, III, VII).">i, VI, III, VII</abbr>**: Balance, Nostalgia, Adventure and Mystery. In A minor, that gives Am, F, C, G, the same four chords as C major, seen from the minor chord. In D minor, it gives Dm, B♭, F, C: on a D Kurd, all four are there.
 
+In the two other shades of Sad, harmonic and melodic, that relationship no longer exists: so Logic Mode no longer talks about the 4 magic chords there, and each shade has its own progression (see [the three faces of minor](/en/blog/les-trois-mineurs-handpan)).
+
 ## Your turn to play
 
 Four colours, one loop, and there you have enough to accompany endless songs — or compose your own. If you want to sing over them, remember to pick a [chord voicing](/en/blog/layouts-vocaux-handpan) suited to your voice and to transpose into your key.
