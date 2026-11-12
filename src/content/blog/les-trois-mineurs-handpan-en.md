@@ -11,7 +11,7 @@ permalink: "les-trois-mineurs-handpan"
 draft: false
 ---
 
-"Sad" (*Triste*), in [Handpan Constellation Studio's](/en/handpan-app) [Logic Mode](/en/blog/handpan-emotions-degres), is no longer a single colour. That button now hides **three shades of minor** — natural 🌙, harmonic 🔥, melodic 🎷 — and it only takes two or four notes rising by a semitone to move from one to the next. The chord shapes themselves don't budge.
+"Sad" (*Triste*), in [Handpan Constellation Studio's](/en/handpan-app) [Logic Mode](/en/blog/handpan-emotions-degres), is no longer a single colour. That button now hides **three shades of minor** — natural 🌙, harmonic 🔥, melodic 🎷 — and it only takes two or four notes rising by a semitone to move from one to the next. The <abbr title="At least three notes played together, for example C, E, G.">chord</abbr> shapes themselves don't budge.
 
 **This article is about the electronic handpan**: raising a note by a semitone requires pads. What the app keeps of it on the acoustic side is stated at the end of the article.
 
@@ -23,7 +23,7 @@ The difference comes down to almost nothing: depending on whether the sixth and 
 
 ## 🌙 Natural minor — the "deep sad"
 
-This is the one everyone knows, and the one your handpan plays by default. Its degrees are figured **i, ii°, III, iv, v, VI, VII**: the fifth degree is minor, which gives that gentleness that never quite concludes. It's the colour of drones, of contemplation, of the handpan as people imagine it.
+This is the one everyone knows, and the one your handpan plays by default. Its <abbr title="The position of a chord in the key, numbered from I to VII.">degrees</abbr> are figured **<abbr title="Lower case marks a minor chord (i), upper case a major chord (III), and ° a diminished chord (ii°).">i, ii°, III, iv, v, VI, VII</abbr>**: the fifth degree is minor, which gives that gentleness that never quite concludes. It's the colour of drones, of contemplation, of the handpan as people imagine it.
 
 ## 🔥 Harmonic minor — the oriental colour
 
@@ -57,7 +57,7 @@ On the pan, **only two dots** change note: **C3 and C4 become C#3 and C#4**. The
 
 Raise **the sixth and the seventh**, and you get the jazz musicians' scale. The fourth degree turns major, the ii-V-i becomes playable, and the melancholy takes on an elegant, almost smiling quality.
 
-It is not a scale for songs: it is a colour for melodies and improvisation. Logic Mode offers the full scale there, and **“The 4 stable chords”**, i, ii, IV, V (in A minor: Am, Bm, D, E).
+It is not a scale for songs: it is a colour for melodies and improvisation. Logic Mode offers **“The 4 stable chords”** there, i, ii, IV, V (in A minor: Am, Bm, D, E); for the rest, you play the full scale.
 
 On the pan, **four dots** change note: the two from harmonic minor (**C#3** and **C#4**), plus **Bb2 → B2** and **Bb3 → B3**. “4 pads change”, says the drawer.
 

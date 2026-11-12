@@ -11,7 +11,7 @@ permalink: "les-trois-mineurs-handpan"
 draft: false
 ---
 
-« Triste », dans le [Mode Logique](/blog/handpan-emotions-degres) de [Handpan Constellation Studio](/handpan-app), n'est plus une seule couleur. Sous ce bouton se cachent désormais **trois nuances de mineur** — naturel 🌙, harmonique 🔥, mélodique 🎷 — et il suffit de deux ou quatre notes qui montent d'un demi-ton pour passer de l'une à l'autre. Les formes d'accords, elles, ne bougent pas.
+« Triste », dans le [Mode Logique](/blog/handpan-emotions-degres) de [Handpan Constellation Studio](/handpan-app), n'est plus une seule couleur. Sous ce bouton se cachent désormais **trois nuances de mineur** — naturel 🌙, harmonique 🔥, mélodique 🎷 — et il suffit de deux ou quatre notes qui montent d'un demi-ton pour passer de l'une à l'autre. Les formes d'<abbr title="Au moins trois notes jouées ensemble, par exemple do, mi, sol.">accords</abbr>, elles, ne bougent pas.
 
 **Cet article concerne le handpan électronique** : faire monter une note d'un demi-ton suppose des pads. Ce que l'app en garde côté acoustique est dit en fin d'article.
 
@@ -23,7 +23,7 @@ La différence tient à presque rien : selon que la sixte et la septième de la 
 
 ## 🌙 Le mineur naturel — le « triste profond »
 
-C'est celui que tout le monde connaît, et celui que ton handpan joue par défaut. Ses degrés se chiffrent **i, ii°, III, iv, v, VI, VII** : le cinquième degré y est mineur, ce qui donne cette douceur qui ne conclut jamais tout à fait. C'est la couleur des nappes, de la contemplation, du handpan tel qu'on l'imagine.
+C'est celui que tout le monde connaît, et celui que ton handpan joue par défaut. Ses <abbr title="La place d'un accord dans la tonalité, numérotée de I à VII.">degrés</abbr> se chiffrent **<abbr title="La minuscule signale un accord mineur (i), la majuscule un accord majeur (III), le ° un accord diminué (ii°).">i, ii°, III, iv, v, VI, VII</abbr>** : le cinquième degré y est mineur, ce qui donne cette douceur qui ne conclut jamais tout à fait. C'est la couleur des nappes, de la contemplation, du handpan tel qu'on l'imagine.
 
 ## 🔥 Le mineur harmonique — la couleur orientale
 
@@ -57,7 +57,7 @@ Sur le pan, **deux pastilles seulement** changent de note : **C3 et C4 deviennen
 
 Fais monter **la sixte et la septième**, et tu obtiens la gamme des jazzmen. Le quatrième degré passe majeur, le ii-V-i devient jouable, et la mélancolie prend un côté élégant, presque souriant.
 
-Ce n'est pas une gamme de chansons : c'est une couleur pour les mélodies et l'improvisation. Le Mode Logique y propose la gamme complète et **« Les 4 accords stables »**, i, ii, IV, V (en la mineur : Am, Bm, D, E).
+Ce n'est pas une gamme de chansons : c'est une couleur pour les mélodies et l'improvisation. Le Mode Logique y propose **« Les 4 accords stables »**, i, ii, IV, V (en la mineur : Am, Bm, D, E) ; pour le reste, tu joues la gamme complète.
 
 Sur le pan, **quatre pastilles** changent de note : les deux de l'harmonique (**C#3** et **C#4**), plus **Bb2 → B2** et **Bb3 → B3**. « 4 pads changent », dit le tiroir.
 
