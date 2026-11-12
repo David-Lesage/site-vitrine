@@ -2,7 +2,7 @@
 title: "Playing with emotions: the 7 coloured degrees"
 description: "Handpan Constellation Studio's Logic Mode ties each degree to a colour and an emotion. Build a chord progression and tell a story."
 pubDate: 2026-07-10
-updatedDate: 2026-10-24
+updatedDate: 2026-11-12
 cover: "/images/app-logique-2026-10-en.webp"
 category: "methode"
 tags: ["method", "emotions"]
@@ -79,7 +79,7 @@ Logic Mode makes these roles **visible** by giving them a stable colour, followi
 
 ### Choosing by emotion
 
-Instead of asking "which chord comes next?", you ask "where do I want to go emotionally?". Want comfort? Return to degree I. Openness? Go through the V. Melancholy? The VI. Logic Mode lets you chain these degrees while seeing, in colour, the emotional trajectory you're drawing.
+Instead of asking "which chord comes next?", you ask "where do I want to go emotionally?". Want comfort? Return to degree I, Balance. Release? Go through the IV, Relaxation. Suspense? The V, Tension. Melancholy? The VI, Nostalgia. Logic Mode lets you chain these degrees while seeing, in colour, the emotional trajectory you're drawing.
 
 ### Telling a story
 

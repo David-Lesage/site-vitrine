@@ -2,7 +2,7 @@
 title: "The 4 magic chords on handpan"
 description: "A handful of chords behind thousands of songs. Discover the 4 magic chords and play them on handpan with Logic Mode."
 pubDate: 2026-07-26
-updatedDate: 2026-10-23
+updatedDate: 2026-11-12
 cover: "/images/blog-diagrammes-accords.webp"
 category: "logique"
 tags: ["chords", "accompaniment"]
@@ -25,10 +25,10 @@ You already know this sequence by heart, even without realising it: your ear has
 
 In Logic Mode, each degree carries a stable colour and emotion, as explained in [Playing with emotions: the 7 coloured degrees](/en/blog/handpan-emotions-degres). The four magic chords then become four colours to chain:
 
-- Degree **I** — the anchor, "home".
-- Degree **V** — momentum, the urge to go further.
-- Degree **VI** — the nostalgic, bittersweet tint.
-- Degree **IV** — openness, the wide space.
+- Degree **I**, Balance — the anchor, "home".
+- Degree **V**, Tension — the urge to go back home.
+- Degree **VI**, Nostalgia — the nostalgic, bittersweet tint.
+- Degree **IV**, Relaxation — openness, the wide space.
 
 ![Four chords shown as coloured mini-handpan diagrams](/images/blog-grille-accords-familles.webp)
 
@@ -43,6 +43,12 @@ The magic also lies in its flexibility. Start with the VI instead of the I, and 
 ### A fingering to chain smoothly
 
 To keep the loop running without a hitch, the app can offer a **suggested fingering** to move from one colour to the next cleanly. It's a help for the gesture, reliable mostly in electronic Logic Mode, never a rule: your hand stays free to improvise.
+
+## And in minor?
+
+On your handpan, **each degree keeps the same shape**, in major as in minor. But in minor, the 4 magic chords don't fall on the same degrees: what is magic is the relationship between the four chords, not their numbers.
+
+So in Sad mode, Logic Mode places the 4 magic chords on degrees **<abbr title="Lower-case Roman numeral: minor chord; upper-case: major chord.">i, VI, III, VII</abbr>**: Balance, Nostalgia, Adventure and Mystery. In A minor, that gives Am, F, C, G, the same four chords as C major, seen from the minor chord. In D minor, it gives Dm, B♭, F, C: on a D Kurd, all four are there.
 
 ## Your turn to play
 

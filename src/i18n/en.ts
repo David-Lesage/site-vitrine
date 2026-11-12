@@ -2414,7 +2414,7 @@ export const en: Dict = {
     visionEyebrow: 'My teaching vision',
     visionTitle: 'The handpan, an accompaniment instrument in its own right',
     visionIntro:
-      'With this approach, the handpan finally takes its place alongside the guitar and the piano. Thanks to the “4 Magic chords” (I-IV-V-VI), anyone can accompany the songs they love within minutes, while approaching theory as a game.',
+      'With this approach, the handpan finally takes its place alongside the guitar and the piano. Thanks to the “4 Magic chords” (I-IV-V-vi in major, i-VI-III-VII in minor), anyone can accompany the songs they love within minutes, while approaching theory as a game.',
     pillars: [
       { t: 'Visible', d: 'Colour, geometry and emotion replace jargon. You see music before naming it.' },
       { t: 'Accessible', d: 'Warmth, simplicity, a personal tone. From the curious child to the seasoned musician, I reply personally.' },

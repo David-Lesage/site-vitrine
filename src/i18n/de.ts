@@ -2176,7 +2176,7 @@ export const de: Dict = {
     ],
     "visionEyebrow": "Meine pädagogische Vision",
     "visionTitle": "Der Handpan: ein vollwertiges Instrument für die Begleitung",
-    "visionIntro": "Mit diesem Ansatz bekommt der Handpan endlich seinen Platz neben Gitarre und Klavier. Dank der „Magischen 4“ (I-IV-V-VI) kann jeder die Stücke, die er liebt, in wenigen Minuten begleiten und die Theorie dabei wie ein Spiel angehen.",
+    "visionIntro": "Mit diesem Ansatz bekommt der Handpan endlich seinen Platz neben Gitarre und Klavier. Dank der „Magischen 4“ (I-IV-V-vi in Dur, i-VI-III-VII in Moll) kann jeder die Stücke, die er liebt, in wenigen Minuten begleiten und die Theorie dabei wie ein Spiel angehen.",
     "pillars": [
       {
         "t": "Sichtbar",

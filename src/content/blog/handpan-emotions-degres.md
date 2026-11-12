@@ -2,7 +2,7 @@
 title: "Jouer avec les émotions : les 7 degrés colorés"
 description: "Le Mode Logique de Handpan Constellation Studio associe chaque degré à une couleur et une émotion. Construis une progression d'accords et raconte une histoire."
 pubDate: 2026-07-10
-updatedDate: 2026-10-24
+updatedDate: 2026-11-12
 cover: "/images/app-logique-2026-10.webp"
 category: "methode"
 tags: ["méthode", "émotions"]
@@ -87,7 +87,7 @@ Le Mode Logique rend ces rôles **visibles** en leur donnant une couleur stable,
 
 ### Choisir par l'émotion
 
-Au lieu de te demander « quel accord après celui-là ? », tu te demandes « où veux-je aller émotionnellement ? ». Tu veux du réconfort ? Reviens vers le degré I. De l'ouverture ? Passe par le V. De la mélancolie ? Le VI. Le Mode Logique te laisse enchaîner ces degrés en voyant, en couleurs, la trajectoire émotionnelle que tu dessines.
+Au lieu de te demander « quel accord après celui-là ? », tu te demandes « où veux-je aller émotionnellement ? ». Tu veux du réconfort ? Reviens vers le degré I, l'Équilibre. Du relâchement ? Passe par le IV, la Détente. De l'attente ? Le V, la Tension. De la mélancolie ? Le VI, la Nostalgie. Le Mode Logique te laisse enchaîner ces degrés en voyant, en couleurs, la trajectoire émotionnelle que tu dessines.
 
 ### Raconter une histoire
 

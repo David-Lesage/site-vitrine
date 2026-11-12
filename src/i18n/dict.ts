@@ -2999,7 +2999,7 @@ const fr = {
     visionEyebrow: 'Ma vision pédagogique',
     visionTitle: 'Le handpan, un instrument d’accompagnement à part entière',
     visionIntro:
-      'Avec cette approche, le handpan prend enfin sa place aux côtés de la guitare et du piano. Grâce aux « 4 Magiques » (I-IV-V-VI), n’importe qui peut accompagner les morceaux qu’il aime en quelques minutes, tout en abordant la théorie comme un jeu.',
+      'Avec cette approche, le handpan prend enfin sa place aux côtés de la guitare et du piano. Grâce aux « 4 Magiques » (I-IV-V-vi en majeur, i-VI-III-VII en mineur), n’importe qui peut accompagner les morceaux qu’il aime en quelques minutes, tout en abordant la théorie comme un jeu.',
     pillars: [
       { t: 'Visible', d: 'La couleur, la géométrie et l’émotion remplacent le jargon. On voit la musique avant de la nommer.' },
       { t: 'Accessible', d: 'Tutoiement, simplicité, chaleur. De l’enfant curieux au musicien confirmé — je réponds personnellement.' },

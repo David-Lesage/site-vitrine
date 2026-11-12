@@ -2,7 +2,7 @@
 title: "Les 4 accords magiques au handpan"
 description: "Une poignée d'accords derrière des milliers de chansons. Découvre les 4 accords magiques et joue-les au handpan avec le Mode Logique."
 pubDate: 2026-07-26
-updatedDate: 2026-10-23
+updatedDate: 2026-11-12
 cover: "/images/blog-diagrammes-accords.webp"
 category: "logique"
 tags: ["accords", "accompagnement"]
@@ -25,10 +25,10 @@ Tu connais déjà cette suite par cœur, même sans le savoir : ton oreille l'a 
 
 Dans le Mode Logique, chaque degré porte une couleur et une émotion stables, comme expliqué dans [Jouer avec les émotions : les 7 degrés colorés](/blog/handpan-emotions-degres). Les quatre accords magiques deviennent alors quatre couleurs à enchaîner :
 
-- Le degré **I** — le point d'ancrage, « chez soi ».
-- Le degré **V** — l'élan, l'envie d'aller plus loin.
-- Le degré **VI** — la teinte nostalgique, douce-amère.
-- Le degré **IV** — l'ouverture, le grand espace.
+- Le degré **I**, l'Équilibre — le point d'ancrage, « chez soi ».
+- Le degré **V**, la Tension — l'envie de rentrer à la maison.
+- Le degré **VI**, la Nostalgie — la teinte nostalgique, douce-amère.
+- Le degré **IV**, la Détente — l'ouverture, le grand espace.
 
 ![Quatre accords en diagrammes mini-handpan colorés](/images/blog-grille-accords-familles.webp)
 
@@ -43,6 +43,12 @@ La magie tient aussi à sa souplesse. Commence par le VI au lieu du I, et la mê
 ### Un doigté pour enchaîner en douceur
 
 Pour que la boucle tourne sans accroc, l'app peut te proposer un **doigté suggéré** afin de passer d'une couleur à l'autre proprement. C'est une aide au geste, fiable surtout en Mode Logique électronique, jamais une règle : ta main reste libre d'improviser.
+
+## Et en mineur ?
+
+Sur ton handpan, **chaque degré garde la même forme**, en majeur comme en mineur. Mais en mineur, les 4 accords magiques ne tombent pas sur les mêmes degrés : ce qui est magique, c'est la relation entre les quatre accords, pas leurs numéros.
+
+En mode Triste, le Mode Logique pose donc les 4 accords magiques sur les degrés **<abbr title="Chiffre romain en minuscule : accord mineur ; en majuscule : accord majeur.">i, VI, III, VII</abbr>** : l'Équilibre, la Nostalgie, l'Aventure et le Mystère. En la mineur, ça donne Am, F, C, G, soit les quatre mêmes accords que do majeur, vus depuis l'accord mineur. En ré mineur, ça donne Dm, B♭, F, C : sur un D Kurd, les quatre sont là.
 
 ## À toi de jouer
 

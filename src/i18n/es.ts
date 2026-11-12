@@ -2176,7 +2176,7 @@ export const es: Dict = {
     ],
     "visionEyebrow": "Mi visión pedagógica",
     "visionTitle": "El handpan, un instrumento de acompañamiento por derecho propio",
-    "visionIntro": "Con este enfoque, el handpan por fin ocupa su lugar junto a la guitarra y el piano. Gracias a los « 4 Mágicos » (I-IV-V-VI), cualquiera puede acompañar los temas que le gustan en pocos minutos, y abordar la teoría como un juego.",
+    "visionIntro": "Con este enfoque, el handpan por fin ocupa su lugar junto a la guitarra y el piano. Gracias a los « 4 Mágicos » (I-IV-V-vi en mayor, i-VI-III-VII en menor), cualquiera puede acompañar los temas que le gustan en pocos minutos, y abordar la teoría como un juego.",
     "pillars": [
       {
         "t": "Visible",
