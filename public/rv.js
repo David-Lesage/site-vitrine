@@ -4,6 +4,18 @@
    redirige aussitôt (choix de langue) n'est donc comptée qu'une fois, sur la page d'arrivée.
    Ne plus compter ses propres visites sur un navigateur : ouvrir une page avec ?releve=off (?releve=on pour rétablir). */
 ;(function () {
+  /* Origine de la PREMIÈRE arrivée de la visite (13/11/2026) : gardée le temps de l'onglet
+     (sessionStorage, ni cookie ni donnée personnelle), puis jointe à l'inscription par le formulaire
+     de /handpan-app/ ou /decouvrir/ même si la personne est arrivée par une autre page. */
+  try {
+    if (window.top === window.self && !sessionStorage.getItem('origine-visite')) {
+      var p = new URLSearchParams(location.search), o = { arrivee: location.pathname.slice(0, 200) }
+      ;['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) { var v = p.get(k); if (v) o[k] = v.slice(0, 80) })
+      var moi = location.hostname.replace(/^www\./, '')
+      if (document.referrer) { var h = new URL(document.referrer).hostname.replace(/^www\./, ''); if (h && h !== moi) o.provenance = h.slice(0, 120) }
+      sessionStorage.setItem('origine-visite', JSON.stringify(o))
+    }
+  } catch (e) {}
   try {
     var q = new URLSearchParams(location.search)
     var r = q.get('releve')
