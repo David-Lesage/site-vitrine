@@ -931,7 +931,13 @@ const fr = {
     vipScope: 'Tu choisis ce qu’on en fait : découvrir et essayer n’importe quel instrument de la boutique (Neotone, handpans acoustiques, Gonilélé, calebasse…), tester un micro pour handpan (Hisong, set Muling), ou simplement être accompagné·e en tête-à-tête — que tu débutes complètement, que tu cherches encore ce qui te correspond, ou que tu veuilles creuser un point précis. Que tu prennes 1h ou 1h30, dis-moi juste ce qui t’amène : je prépare tout pour toi.',
     vipPriceLabel: 'Tarif',
     // `{lessonGrid}` = tarif d'un COURS, calculé depuis site.ts (priceGrid('lesson')).
-    vipPriceNote: 'Prise en main ou démo. Pour un cours : {lessonGrid} (forfait 4 cours sur 2 mois possible).',
+    // 🔁 13/11/2026 (David) : ne JAMAIS mélanger démo privée (50/70) et cours de
+    //    musique (dès 60/75). L'ancienne note « Prise en main ou démo. Pour un
+    //    cours : … » posait deux prix sous un seul « Tarif » → confusion.
+    vipPriceNote: 'Ce tarif = démo privée et essai d’instruments. Les cours de musique ont leur propre tarif : {lessonGrid} (forfait 4 cours sur 2 mois possible).',
+    vipDemoLabel: 'Démo privée · essai d’instruments',
+    vipLessonLabel: 'Cours de musique',
+    vipLessonNote: 'Forfait 4 cours sur 2 mois possible.',
     vipPolicyShort: 'Annulation à moins de 24 h : le règlement reste acquis — ce créneau t’était réservé — mais le rendez-vous est reportable dans les 3 mois.',
     sessionType: 'Quel rendez-vous souhaites-tu ?',
     sessionTypeChoose: 'Choisis…',
@@ -2373,7 +2379,7 @@ const fr = {
     //    max » est écrit comme une QUALITÉ — c'est intime, c'est POUR ÇA qu'on
     //    vient. Le chiffre employé ici est celui de David lui-même
     //    (`lieuIntro` : « on est une quinzaine, pas plus »).
-    ctaBookNote: 'Créneau individuel payant : {grid}. Les rencontres publiques, elles, sont gratuites — une quinzaine de personnes, pas plus, pour que chacun ait le temps de jouer · réservation nécessaire.',
+    ctaBookNote: 'Démo privée (payante) : {grid}. Les rencontres publiques, elles, sont gratuites — une quinzaine de personnes, pas plus, pour que chacun ait le temps de jouer · réservation nécessaire.',
     // ⓘ Plus affichée depuis le 17/08/2026 : quand il n'y a plus de date, le hero
     // montre le bloc « prochaines dates en préparation » (agendaEmpty*) au lieu de
     // ce simple bouton. Clé conservée si David veut le remettre.

@@ -805,7 +805,10 @@ export const en: Dict = {
     vipTitle: 'An appointment just for you',
     vipScope: 'You decide what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply get one-to-one guidance, whether you’re a complete beginner, still working out what suits you, or want to dig into one specific thing. Whether you take 1h or 1h30, just tell me what you’re coming for: I’ll have everything ready.',
     vipPriceLabel: 'Price',
-    vipPriceNote: 'Getting started or demo. For a lesson: {lessonGrid} (4-lesson package over 2 months available).',
+    vipPriceNote: 'This price = private demo and instrument trial. Music lessons have their own price: {lessonGrid} (4-lesson package over 2 months available).',
+    vipDemoLabel: 'Private demo · instrument trial',
+    vipLessonLabel: 'Music lessons',
+    vipLessonNote: '4-lesson package over 2 months available.',
     vipPolicyShort: 'Cancelling less than 24 h beforehand: the payment stays with me (that time slot was held for you), but the appointment can be rescheduled within 3 months.',
     sessionType: 'Which appointment would you like?',
     sessionTypeChoose: 'Choose…',
@@ -1959,7 +1962,7 @@ export const en: Dict = {
     // "just sign up" played the booking down: it is required.
     // 🔁 06/09/2026 — the cap is turned around: see dict.ts. "Limited places"
     //    read as a caveat; the number is David's own ("fifteen of us, no more").
-    ctaBookNote: 'Paid one-to-one time slot: {grid}. Public gatherings, on the other hand, are free: around fifteen people, no more, so that everyone gets time to play · booking required.',
+    ctaBookNote: 'Private demo (paid): {grid}. Public gatherings, on the other hand, are free: around fifteen people, no more, so that everyone gets time to play · booking required.',
     // ⓘ No longer rendered since 17/08/2026 — see dict.ts.
     ctaNext: 'See the next gathering',
     exclBadge: '★ World first',
