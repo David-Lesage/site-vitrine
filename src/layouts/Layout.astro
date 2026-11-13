@@ -66,12 +66,14 @@ const snipcartKey = import.meta.env.PUBLIC_SNIPCART_KEY || ''
             code.indexOf('zh') === 0 && zhPages.indexOf(path.replace(/\/$/, '')) !== -1
               ? '/zh' + path.replace(/\/$/, '') + '/'
               : '/en' + (path === '/' ? '/' : path)
-          if (window.__hcsKeepQuery) target += location.search + location.hash
+          // 13/11/2026 : les liens UTM gardent leurs paramètres (sinon la visite perd sa source).
+          if (window.__hcsKeepQuery || /[?&]utm_/.test(location.search)) target += location.search + location.hash
           sessionStorage.setItem('lang-auto', '1')
           location.replace(target)
         } catch (e) {}
       })()
     </script>
+    <script is:inline src="/rv.js" defer></script>
     <link rel="stylesheet" href="/fonts/fonts.css" />
     {snipcartKey && <link rel="preconnect" href="https://app.snipcart.com" />}
     {snipcartKey && <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css" />}
