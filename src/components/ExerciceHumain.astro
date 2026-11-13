@@ -90,7 +90,21 @@ const svg = defi.svg.replace(
   .exercice-humain .ex-num { font: 800 44px system-ui, sans-serif; fill: #111827; pointer-events: none; }
   .exercice-humain .note-group.vibre { animation: ex-vibre .35s linear; transform-box: fill-box; transform-origin: center; }
   @keyframes ex-vibre { 0%,100% { transform: translateX(0) } 20% { transform: translateX(-10px) } 40% { transform: translateX(10px) } 60% { transform: translateX(-7px) } 80% { transform: translateX(7px) } }
-  @media (prefers-reduced-motion: reduce) { .exercice-humain .note-group.vibre { animation: none; } }
+  /* 🌌 Constellation (13/11/2026, demande de David) : à chaque bonne note, un trait la
+     relie à la précédente, comme le jeu interactif de l'app (path-renderer.ts,
+     `drawInteractiveGamePaths` : couleur de la 1re note, halo drop-shadow ; trait rond
+     de `.chord-path`, handpan.css). Calque posé APRÈS les notes et SOUS les pastilles. */
+  .exercice-humain .ex-constellation, .exercice-humain .ex-pastilles { pointer-events: none; }
+  .exercice-humain .ex-trait { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .exercice-humain .ex-trait-halo { stroke: var(--ex-trait-couleur, #fff); stroke-width: 22px; stroke-opacity: .85; filter: drop-shadow(0 0 12px var(--ex-trait-couleur, #fff)); }
+  .exercice-humain .ex-trait-coeur { stroke: #FFFFFF; stroke-width: 7px; stroke-opacity: .95; }
+  .exercice-humain .ex-trait.trace { animation: ex-trace .35s ease-out both; }
+  @keyframes ex-trace { from { stroke-dashoffset: var(--ex-long, 0); } to { stroke-dashoffset: 0; } }
+  .exercice-humain .ex-pastille.vibre { animation: ex-vibre .35s linear; transform-box: fill-box; transform-origin: center; }
+  @media (prefers-reduced-motion: reduce) {
+    .exercice-humain .note-group.vibre, .exercice-humain .ex-pastille.vibre { animation: none; }
+    .exercice-humain .ex-trait.trace { animation: none; stroke-dasharray: none !important; }
+  }
 </style>
 
 <script>
@@ -164,6 +178,10 @@ const svg = defi.svg.replace(
     let reussi = false
     let indisponible = false
     let a = 0, b = 0
+    let precedente: { x: number; y: number } | null = null
+    const centres = new Map<string, { x: number; y: number }>()
+    const pastilles = new Map<string, SVGGElement>()
+    let calqueTraits: SVGGElement | null = null
 
     btnSon.addEventListener('click', () => {
       son = !son
@@ -182,7 +200,13 @@ const svg = defi.svg.replace(
       rang = 0
       pan.querySelectorAll('.note-group.joue').forEach((x) => x.classList.remove('joue'))
       champ('defiNotes').value = ''
-      if (g) { g.classList.remove('vibre'); void (g as any).getBBox?.(); g.classList.add('vibre'); setTimeout(() => g.classList.remove('vibre'), 400) }
+      calqueTraits?.replaceChildren()
+      precedente = null
+      const p = g ? pastilles.get(g.dataset.note || '') : undefined
+      for (const el of [g, p]) {
+        if (!el) continue
+        el.classList.remove('vibre'); void (el as any).getBBox?.(); el.classList.add('vibre'); setTimeout(() => el.classList.remove('vibre'), 400)
+      }
       statut.textContent = T.erreur
       statut.style.color = '#b4462a'
     }
@@ -191,6 +215,7 @@ const svg = defi.svg.replace(
       const g = groupe(note)
       if (note !== attendu[rang]) { erreur(g); return }
       g?.classList.add('joue')
+      relier(note)
       jouer([note], son)
       rang++
       champ('defiNotes').value = attendu.slice(0, rang).join(',')
@@ -201,8 +226,37 @@ const svg = defi.svg.replace(
       }
     }
 
+    // Trace un trait lumineux de la note précédente vers celle-ci (halo coloré + cœur blanc).
+    function relier(note: string) {
+      const c = centres.get(note)
+      if (!c) return
+      if (precedente && calqueTraits) {
+        const long = Math.hypot(c.x - precedente.x, c.y - precedente.y)
+        for (const cls of ['ex-trait-halo', 'ex-trait-coeur']) {
+          const l = document.createElementNS(NS, 'line')
+          l.setAttribute('x1', String(precedente.x)); l.setAttribute('y1', String(precedente.y))
+          l.setAttribute('x2', String(c.x)); l.setAttribute('y2', String(c.y))
+          l.setAttribute('class', `ex-trait ${cls} trace`)
+          l.style.strokeDasharray = `${long} ${long}`
+          l.style.setProperty('--ex-long', String(long))
+          calqueTraits.append(l)
+        }
+      }
+      precedente = c
+    }
+
     function dessiner(notes: string[]) {
       attendu = notes
+      const svgEl = pan.querySelector('svg')!
+      calqueTraits = document.createElementNS(NS, 'g') as SVGGElement
+      calqueTraits.setAttribute('class', 'ex-constellation')
+      calqueTraits.setAttribute('aria-hidden', 'true')
+      const calquePastilles = document.createElementNS(NS, 'g') as SVGGElement
+      calquePastilles.setAttribute('class', 'ex-pastilles')
+      calquePastilles.setAttribute('aria-hidden', 'true')
+      svgEl.append(calqueTraits, calquePastilles)
+      const c1 = CLASSES[(notes[0] || '').replace(/-?\d+$/, '')] || 'c'
+      calqueTraits.style.setProperty('--ex-trait-couleur', `var(--chakra-${c1})`)
       consigne.textContent = T.consigne.replace('{ordre}', notes.map((_, i) => i + 1).join(', '))
       pan.querySelectorAll<SVGGElement>('.note-group').forEach((g) => {
         const note = g.dataset.note || ''
@@ -226,6 +280,10 @@ const svg = defi.svg.replace(
         cible.setAttribute('cx', String(cx)); cible.setAttribute('cy', String(cy)); cible.setAttribute('r', String(Math.max(r, 70)))
         cible.setAttribute('class', 'ex-cible')
         g.insertBefore(cible, g.firstChild)
+        centres.set(note, { x: cx, y: cy })
+        const pastille = document.createElementNS(NS, 'g') as SVGGElement
+        pastille.setAttribute('class', 'ex-pastille')
+        pastilles.set(note, pastille)
         const rond = document.createElementNS(NS, 'circle')
         rond.setAttribute('cx', String(cx)); rond.setAttribute('cy', String(cy)); rond.setAttribute('r', String(Math.max(26, r * 0.42)))
         rond.setAttribute('class', 'ex-num-rond')
@@ -233,7 +291,8 @@ const svg = defi.svg.replace(
         txt.setAttribute('x', String(cx)); txt.setAttribute('y', String(cy))
         txt.setAttribute('text-anchor', 'middle'); txt.setAttribute('dominant-baseline', 'central')
         txt.setAttribute('class', 'ex-num'); txt.textContent = String(i + 1)
-        g.append(rond, txt)
+        pastille.append(rond, txt)
+        calquePastilles.append(pastille)
       })
     }
 

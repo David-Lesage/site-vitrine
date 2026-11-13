@@ -1948,7 +1948,7 @@ export const de: Dict = {
     ],
     "programEyebrow": "Der Ablauf",
     "programTitle": "Das Programm einer Session",
-    "programIntro": "Jede Session dauert etwa 2 Stunden: Zuhören, Vorführung und Austausch – und dann der Moment, in dem du selbst spielst.",
+    "programIntro": "Jede Session dauert 2 Stunden: Zuhören, Vorführung und Austausch – und dann der Moment, in dem du selbst spielst.",
     "program": [
       {
         "t": "Der Neotone live",
@@ -1998,8 +1998,8 @@ export const de: Dict = {
     "agendaRulesTitle": "Gut zu wissen, bevor du kommst",
     "agendaRuleTimeTitle": "Den Tag wählst du, die Anfangszeit nicht",
     "agendaRuleTime": "Die Session beginnt pünktlich, mit einer Vorstellung. Kommst du zu spät, verpasst du Infos, und die ganze Gruppe muss noch einmal zurückgehen. Bist du früher da, kannst du unten im Hof warten, kein Problem.",
-    "agendaRuleDurationTitle": "Plane großzügig Zeit ein",
-    "agendaRuleDuration": "Das Programm dauert etwa 2 Stunden. In Wirklichkeit sind es eher 3, weil die Gespräche noch lange weitergehen.",
+    "agendaRuleDurationTitle": "Ein Treffen von 2 Stunden",
+    "agendaRuleDuration": "Das Programm dauert 2 Stunden: Zuhören, Vorführung, Austausch – und dann der Moment, in dem du selbst spielst.",
     "agendaRuleShareTitle": "Bring etwas zum Teilen mit, wenn du magst",
     "agendaRuleShare": "Einen Saft, einen Kuchen, etwas zum Herumreichen. Ganz freiwillig und nie eine Bedingung, um zu kommen: Es geht einfach ums Teilen, damit es ein geselliger Moment wird.",
     "agendaBookCta": "Platz reservieren",

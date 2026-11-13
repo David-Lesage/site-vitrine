@@ -72,8 +72,9 @@
 //   • « viens quand tu veux » voulait dire « à la DATE que tu veux » — sur
 //     l'HORAIRE il est ferme, et ça doit être clair. D'où le bloc en tête de la
 //     ponctualité : la date se choisit, l'heure de début non.
-//   • « 2h de showcase mais avec les discussions ça dure plutôt 3h » : la durée
-//     annoncée dit maintenant les deux, pour que les gens calent leur soirée.
+//   • durée : le 16/08 l'email disait « 2h, plutôt 3h avec les discussions ».
+//     RETIRÉ le 13/11/2026 à la demande de David (« officiellement ça dure 2H ») :
+//     l'email annonce 2h, et l'heure de fin = début + SHOWCASE_DURATION_MIN.
 //   • invitation à apporter un jus de fruit / un gâteau à partager —
 //     FACULTATIF, jamais une condition d'entrée, « dans un esprit de partage ».
 //
@@ -85,6 +86,9 @@
 // Depuis le 09/10/2026 la grille transmise est celle de la prise en main / démo
 // (`priceGrid('demo')`) ; le tarif d'un COURS (60/75) est écrit EN DUR dans
 // `upPriceNote` — à aligner à la main sur `sessionTypes` si un prix bouge.
+// 13/11/2026 (David : « Il ne faut pas mélanger les cours de musique et les rdv
+// privé de démo ») : la grille est présentée sous le libellé `upDemoLabel`
+// (démo privée), et les cours sont sur une ligne À PART (`upPriceNote`).
 // =============================================================================
 
 /** Repli si le site n'envoie pas sa grille. ⚠ Doit refléter `sessionTypes`. */
@@ -102,22 +106,39 @@ export const VENUE = {
 };
 
 /**
+ * ⏱ DURÉE OFFICIELLE d'une rencontre : 2h (David, 13/11/2026). L'heure de fin
+ * annoncée dans TOUS les emails = début + cette durée, quelle que soit l'heure de
+ * fin envoyée par le site (une page en cache pourrait encore envoyer « 19:00 »).
+ * Même constante côté site : `SHOWCASE_DURATION_MIN` (src/data/site.ts).
+ */
+export const SHOWCASE_DURATION_MIN = 120;
+
+/** « 16:00 » → « 18:00 ». Entrée invalide → renvoyée telle quelle. */
+export function officialEnd(start: string): string {
+    const m = /^(\d{1,2}):(\d{2})$/.exec(String(start).trim());
+    if (!m) return start;
+    const total = (Number(m[1]) * 60 + Number(m[2]) + SHOWCASE_DURATION_MIN) % (24 * 60);
+    return `${String(Math.floor(total / 60)).padStart(2, '0')}:${String(total % 60).padStart(2, '0')}`;
+}
+
+/**
  * HORAIRES PAR DATE — recopiés de `src/data/site.ts` (`agendaEvents`) du site
  * vitrine. Sert de repli : l'horaire réel est envoyé par le formulaire
  * (`eventStart` / `eventEnd`), lui-même issu de cette même source côté site.
  * Compléter quand de nouvelles dates sont ouvertes.
  */
 export const EVENT_HOURS: Record<string, { start: string; end: string }> = {
-    '2026-08-23': { start: '16:00', end: '19:00' },
-    '2026-09-19': { start: '16:00', end: '19:00' },
-    '2026-10-18': { start: '16:00', end: '19:00' },
-    '2026-11-14': { start: '16:00', end: '19:00' },
-    '2026-12-05': { start: '15:00', end: '18:00' },
+    '2026-08-23': { start: '16:00', end: '18:00' },
+    '2026-09-19': { start: '16:00', end: '18:00' },
+    '2026-10-18': { start: '16:00', end: '18:00' },
+    '2026-11-14': { start: '16:00', end: '18:00' },
+    '2026-12-05': { start: '15:00', end: '17:00' },
 };
-const FALLBACK_HOURS = { start: '16:00', end: '19:00' };
+const FALLBACK_HOURS = { start: '16:00', end: '18:00' };
 
 export function hoursFor(eventDate: string | null): { start: string; end: string } {
-    return (eventDate && EVENT_HOURS[eventDate]) || FALLBACK_HOURS;
+    const h = (eventDate && EVENT_HOURS[eventDate]) || FALLBACK_HOURS;
+    return { start: h.start, end: officialEnd(h.start) };
 }
 
 function esc(s: string): string {
@@ -214,7 +235,6 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         dateRow: 'Date',
         hoursRow: 'Times',
         peopleRow: 'People',
-        durationNote: 'The programme runs about <strong>2h</strong> — in practice it usually stretches closer to <strong>3h</strong>, because the conversations keep going. Plan your evening accordingly.',
         punctualTitle: 'The date is yours to choose — the start time is not',
         punctual0: 'You picked the date that suited you. The <strong>start time, though, is firm</strong>: we begin at {start} sharp.',
         punctual1: 'The session <strong>starts with a presentation</strong>. Someone arriving late is disruptive: they are missing information, and the whole group has to be brought back up to speed.',
@@ -222,7 +242,7 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         shareTitle: 'Bring something to share, if you feel like it',
         share: 'A fruit juice, a cake, anything to pass around — <strong>entirely optional</strong>, and never a condition for coming. It is simply in a spirit of sharing: it makes the moment warmer for everyone.',
         programTitle: 'What happens during a session',
-        programIntro: 'The programme runs about <strong>2h</strong> — and in practice we usually stay closer to <strong>3h</strong>, carried along by the conversations: a time for listening, for demonstration and for exchange — then the moment when it’s your turn to play.',
+        programIntro: 'The programme lasts <strong>2h</strong>: a time for listening, for demonstration and for exchange — then the moment when it’s your turn to play.',
         bonusTitle: 'And sometimes it goes further',
         bonus: 'Depending on who is there and what they are interested in, the session can open up further: a demo of the Gonilélé <strong>in a live setting</strong> — with the effects and the octaver pedal, on a <strong>professional Bose PA in concert conditions</strong> —, the calabash, and even the shamanic drum “l’Âme du tambour”. It is <strong>not systematic</strong>: it depends on the people there that evening and on what interests them. Tell me what draws you, I take it into account.',
         troubleTitle: 'If something comes up',
@@ -258,7 +278,8 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         up1: 'Book an individual appointment with me, at another time that suits you.',
         up2: 'You choose what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply be guided one-to-one — whether you are a complete beginner, still looking for what suits you, or want to dig into one specific point. Whether you take 1h or 1h30, just tell me what brings you: I prepare everything for you.',
         upPriceLabel: 'Price',
-        upPriceNote: 'Onboarding or demo. For a lesson (pay what you wish, with a minimum): 1h · from €60 — 1h30 · from €75 (4-lesson package over 2 months available).',
+        upDemoLabel: 'Private demo · instrument trial',
+        upPriceNote: '<strong>Music lessons</strong>: from €60 (1h) · from €75 (1h30), 4-lesson package over 2 months available.',
         upCancel: 'Cancellation less than 24 h beforehand: the payment stays with me — that slot was reserved for you — but the appointment can be rescheduled within 3 months.',
         upCta: 'Book an individual appointment',
         upDistinct: 'This is a <strong>separate, paid</strong> appointment. It changes nothing about the gathering you have just booked, which stays <strong>free</strong>.',
@@ -272,7 +293,6 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         dateRow: 'Date',
         hoursRow: 'Horaires',
         peopleRow: 'Personnes',
-        durationNote: 'Le programme dure environ <strong>2h</strong> — dans les faits, ça tourne plutôt autour de <strong>3h</strong>, parce que les discussions continuent. Prévois ta soirée en conséquence.',
         punctualTitle: 'La date, tu la choisis — l’heure de début, non',
         punctual0: 'Tu as choisi la date qui t’arrangeait. En revanche, <strong>l’horaire est ferme</strong> : on commence à {start}, à l’heure.',
         punctual1: 'La session <strong>commence par une présentation</strong>. Une personne qui arrive en retard perturbe : il leur manque des infos, il faut réajuster tout le groupe.',
@@ -280,7 +300,7 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         shareTitle: 'Apporte quelque chose à partager, si le cœur t’en dit',
         share: 'Un jus de fruit, un gâteau, quelque chose à faire passer — <strong>totalement facultatif</strong>, et jamais une condition pour venir. C’est simplement dans un esprit de partage : ça rend le moment plus convivial pour tout le monde.',
         programTitle: 'Au programme d’une session',
-        programIntro: 'Le programme dure environ <strong>2h</strong> — et en pratique on reste plutôt <strong>3h</strong>, portés par les échanges : un temps d’écoute, de démonstration et d’échange — puis le moment où c’est toi qui joues.',
+        programIntro: 'Le programme dure <strong>2h</strong> : un temps d’écoute, de démonstration et d’échange — puis le moment où c’est toi qui joues.',
         bonusTitle: 'Et parfois, ça va plus loin',
         bonus: 'Selon le public intéressé, la séance peut s’ouvrir davantage : une démo du Gonilélé <strong>en situation</strong> — avec les effets et la pédale d’octaver, sur <strong>sono Bose professionnelle en condition concert</strong> —, la calebasse, et même le tambour chamanique « l’Âme du tambour ». Ce n’est <strong>pas systématique</strong> : ça dépend des personnes présentes ce soir-là et de ce qui les intéresse. Dis-moi ce qui t’attire, j’en tiens compte.',
         troubleTitle: 'Si tu as un empêchement',
@@ -316,7 +336,8 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
         up1: 'Réserve un rendez-vous individuel avec moi, à un autre moment qui te convient.',
         up2: 'Tu choisis ce qu’on en fait : découvrir et essayer n’importe quel instrument de la boutique (Neotone, handpans acoustiques, Gonilélé, calebasse…), tester un micro pour handpan (Hisong, set Muling), ou simplement être accompagné·e en tête-à-tête — que tu débutes complètement, que tu cherches encore ce qui te correspond, ou que tu veuilles creuser un point précis. Que tu prennes 1h ou 1h30, dis-moi juste ce qui t’amène : je prépare tout pour toi.',
         upPriceLabel: 'Tarif',
-        upPriceNote: 'Prise en main ou démo. Pour un cours (prix libre à partir d’un minimum) : 1h · dès 60 € — 1h30 · dès 75 € (forfait 4 cours sur 2 mois possible).',
+        upDemoLabel: 'Démo privée · essai d’instruments',
+        upPriceNote: '<strong>Cours de musique</strong> : dès 60 € (1h) · dès 75 € (1h30), forfait 4 cours sur 2 mois possible.',
         upCancel: 'Annulation à moins de 24 h : le règlement reste acquis — ce créneau t’était réservé — mais le rendez-vous est reportable dans les 3 mois.',
         upCta: 'Réserver un rendez-vous individuel',
         upDistinct: 'C’est un rendez-vous <strong>séparé et payant</strong>. Ça ne change rien à la rencontre que tu viens de réserver, qui reste <strong>gratuite</strong>.',
@@ -351,10 +372,11 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
           <h2 style="margin:0 0 10px;font-size:17px;color:#111827;">${t.whenTitle}</h2>
           <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
             ${dateLabel ? row(t.dateRow, `<span style="text-transform:capitalize;">${esc(dateLabel)}</span>`) : ''}
-            ${row(t.hoursRow, `${en ? 'from' : 'de'} ${esc(o.startTime)} ${en ? 'to' : 'à'} ${esc(o.endTime)}`)}
+            ${row(t.hoursRow, `${en ? 'from' : 'de'} ${esc(o.startTime)} ${en ? 'to' : 'à'} ${esc(officialEnd(o.startTime))}`)}
             ${o.peopleCount && o.peopleCount > 1 ? row(t.peopleRow, String(o.peopleCount)) : ''}
           </table>
-          <p style="margin:10px 0 0;color:#6b7280;font-size:13px;line-height:1.6;">${t.durationNote}</p>
+          ${'' /* 13/11/2026 : `durationNote` (« 2h, plutôt 3h ») retiré — les horaires
+                 ci-dessus disent déjà 2h, et `programIntro` le redit plus bas. */}
         </td></tr>
 
         <tr><td style="padding:22px 28px 4px;border-top:1px solid #f0f1f3;">
@@ -417,8 +439,9 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
             <p style="margin:10px 0 0;color:#374151;font-size:14px;line-height:1.7;">${t.up2}</p>
             <div style="margin-top:14px;padding:12px 14px;background:#ffffff;border:1px solid #e7d9c6;border-radius:10px;">
               <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#6b7280;">${t.upPriceLabel}</div>
-              <div style="margin-top:4px;color:#b4462a;font-size:18px;font-weight:700;">${grid}</div>
-              <div style="margin-top:4px;color:#374151;font-size:13px;line-height:1.6;">${t.upPriceNote}</div>
+              <div style="margin-top:6px;color:#111827;font-size:14px;font-weight:700;">${t.upDemoLabel}</div>
+              <div style="margin-top:2px;color:#b4462a;font-size:18px;font-weight:700;">${grid}</div>
+              <div style="margin-top:10px;padding-top:10px;border-top:1px solid #f0e6d8;color:#374151;font-size:14px;line-height:1.6;">${t.upPriceNote}</div>
               <div style="margin-top:8px;color:#6b7280;font-size:13px;line-height:1.6;">${t.upCancel}</div>
             </div>
             <div style="margin-top:16px;">${btn(privateHref, t.upCta)}</div>
@@ -471,7 +494,7 @@ export function fallbackUpcoming(todayIso: string): UpcomingEvent[] {
     return Object.entries(EVENT_HOURS)
         .filter(([d]) => d >= todayIso)
         .sort((a, b) => a[0].localeCompare(b[0]))
-        .map(([date, h]) => ({ date, start: h.start, end: h.end }));
+        .map(([date, h]) => ({ date, start: h.start, end: officialEnd(h.start) }));
 }
 
 export function showcaseDatesSubject(count: number, lang: string): string {
@@ -503,7 +526,7 @@ export function showcaseDatesHtml(o: ShowcaseDatesOptions): string {
         where: 'Where',
         practicalTitle: 'Good to know before you come',
         timeRule: '<strong>You choose the date — the start time is firm.</strong> Each session opens with a presentation: arriving late means missing information, and the whole group has to be brought back up to speed. If you arrive early, you can wait downstairs in the courtyard.',
-        durationRule: 'The programme runs about <strong>2h</strong> — in practice it usually stretches closer to <strong>3h</strong>, because the conversations keep going. Plan your evening accordingly.',
+        durationRule: 'The programme lasts <strong>2h</strong>.',
         shareRule: 'If you feel like it, bring <strong>a fruit juice, a cake, something to pass around</strong>. Entirely optional, never a condition for coming — simply in a spirit of sharing.',
         whatTitle: 'What you will find there',
         what: 'The electronic <strong>Neotone</strong> handpan, <strong>Yishama</strong> acoustic handpans, the <strong>handpan microphones</strong>, the <strong>Gonilélé</strong> African harp, the <strong>calabash</strong> — and the <strong>Handpan Constellation Studio</strong> app, which makes music visible. You play, you listen, you ask anything.',
@@ -520,7 +543,7 @@ export function showcaseDatesHtml(o: ShowcaseDatesOptions): string {
         where: 'Où',
         practicalTitle: 'À savoir avant de venir',
         timeRule: '<strong>La date, tu la choisis — l’heure de début, non.</strong> Chaque session commence par une présentation : arriver en retard, c’est rater des infos et obliger tout le groupe à repartir en arrière. Si tu arrives en avance, tu peux attendre en bas dans la cour.',
-        durationRule: 'Le programme dure environ <strong>2h</strong> — dans les faits, ça tourne plutôt autour de <strong>3h</strong>, parce que les discussions continuent. Prévois ta soirée en conséquence.',
+        durationRule: 'Le programme dure <strong>2h</strong>.',
         shareRule: 'Si le cœur t’en dit, apporte <strong>un jus de fruit, un gâteau, quelque chose à partager</strong>. Totalement facultatif, jamais une condition pour venir — simplement dans un esprit de partage.',
         whatTitle: 'Ce que tu y trouveras',
         what: 'Le handpan électronique <strong>Neotone</strong>, les handpans acoustiques <strong>Yishama</strong>, les <strong>micros pour handpan</strong>, la harpe africaine <strong>Gonilélé</strong>, la <strong>calebasse</strong> — et l’application <strong>Handpan Constellation Studio</strong>, qui rend la musique visible. Tu joues, tu écoutes, tu poses toutes tes questions.',
@@ -540,7 +563,7 @@ export function showcaseDatesHtml(o: ShowcaseDatesOptions): string {
                 <tr>
                   <td style="padding:14px 16px;">
                     <div style="color:#111827;font-size:16px;font-weight:700;text-transform:capitalize;">${esc(label)}</div>
-                    <div style="margin-top:2px;color:#6b7280;font-size:14px;">${en ? 'from' : 'de'} ${esc(e.start)} ${en ? 'to' : 'à'} ${esc(e.end)}</div>
+                    <div style="margin-top:2px;color:#6b7280;font-size:14px;">${en ? 'from' : 'de'} ${esc(e.start)} ${en ? 'to' : 'à'} ${esc(officialEnd(e.start))}</div>
                     <div style="margin-top:12px;">${btn(href, t.bookCta)}</div>
                   </td>
                 </tr>

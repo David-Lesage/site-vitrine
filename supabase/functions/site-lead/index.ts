@@ -85,7 +85,8 @@
 //      date pour l'instant, je t'écris dès qu'il y en a une ». David reste
 //      notifié. L'email de confirmation dit par ailleurs désormais que l'HEURE
 //      DE DÉBUT est ferme (la date, elle, se choisit), annonce la durée réelle
-//      (~2h de programme, plutôt 3h avec les échanges) et invite — facultatif —
+//      (2h de programme — la mention « plutôt 3h » a été RETIRÉE le 13/11/2026)
+//      et invite — facultatif —
 //      à apporter quelque chose à partager.
 // v23 (16/08/2026) : CORRECTIF du repli de v22. Un champ `upcomingEvents` ABSENT
 //      et un tableau VIDE donnaient tous les deux `[]` : le repli sur EVENT_HOURS
@@ -176,6 +177,15 @@
 //        calculateur (jamais codé en dur).
 //      · Montants en base : pas de colonne (proposition à valider), ils ne
 //        vivent que dans les deux emails pour l'instant.
+// 13/11/2026 : DURÉE OFFICIELLE 2H + DÉMO ≠ COURS (demande de David).
+//      · « officiellement ça dure 2H » : l'heure de fin des rencontres est
+//        TOUJOURS début + SHOWCASE_DURATION_MIN (_shared/showcase-email.ts),
+//        quelle que soit la fin envoyée par le site (`eventEnd`, `upcomingEvents`)
+//        — une page en cache envoie encore « 19:00 ». La phrase « plutôt 3h »
+//        est retirée de tous les emails.
+//      · « Il ne faut pas mélanger les cours de musique et les rdv privé de
+//        démo » : `privPrice` et `upPriceNote` présentent la démo privée et les
+//        cours sur deux lignes distinctes.
 // =============================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
@@ -199,6 +209,7 @@ import {
     FALLBACK_PRICE_GRID,
     fallbackUpcoming,
     hoursFor as showcaseHoursFor,
+    officialEnd,
     showcaseConfirmationHtml,
     showcaseConfirmationSubject,
     showcaseDatesHtml,
@@ -808,7 +819,7 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
         ctaShow: 'See the next gatherings',
         h2priv: 'Rather have a moment just for you?',
         p4: 'I also offer <strong>individual appointments</strong>, at the Paris 20th showroom or online — and you decide what we do with it: discover and try any instrument from the shop (Neotone, acoustic handpans, Gonilélé, calabash…), test a handpan microphone (Hisong, Muling set), or simply get one-to-one guidance — whether you’re a complete beginner, still working out what suits you, or want to dig into one specific thing. Just tell me what you’re coming for.',
-        privPrice: 'Onboarding or demo: <strong>1h — €50</strong> · <strong>1h30 — €70</strong>.<br />Lesson (pay what you wish, with a minimum): <strong>1h — from €60</strong> · <strong>1h30 — from €75</strong> (4-lesson package over 2 months: from €200 / €280).',
+        privPrice: 'Private demo · instrument trial: <strong>1h — €50</strong> · <strong>1h30 — €70</strong>.<br />Music lessons: <strong>from €60</strong> (1h) · <strong>from €75</strong> (1h30), 4-lesson package over 2 months available.',
         ctaPriv: 'Book a VIP appointment with David',
         sign: 'See you soon,<br />David Lesage',
         foot: 'You are receiving this email because you signed up on lesagedavid.fr.',
@@ -824,7 +835,7 @@ function confirmationHtml(firstName: string, lang: string, wantsShowcase: boolea
         ctaShow: 'Voir les prochaines rencontres',
         h2priv: 'Envie d’un moment rien que pour toi ?',
         p4: 'Je propose aussi des <strong>rendez-vous individuels</strong>, au showroom de Paris 20ᵉ ou en visio — et c’est toi qui choisis ce qu’on en fait : découvrir et essayer n’importe quel instrument de la boutique (Neotone, handpans acoustiques, Gonilélé, calebasse…), tester un micro pour handpan (Hisong, set Muling), ou simplement être accompagné·e en tête-à-tête — que tu débutes complètement, que tu cherches encore ce qui te correspond, ou que tu veuilles creuser un point précis. Dis-moi juste ce qui t’amène.',
-        privPrice: 'Prise en main ou démo : <strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong>.<br />Cours (prix libre à partir d’un minimum) : <strong>1h — dès 60 €</strong> · <strong>1h30 — dès 75 €</strong> (forfait 4 cours sur 2 mois : dès 200 € / 280 €).',
+        privPrice: 'Démo privée · essai d’instruments : <strong>1h — 50 €</strong> · <strong>1h30 — 70 €</strong>.<br />Cours de musique : <strong>dès 60 €</strong> (1h) · <strong>dès 75 €</strong> (1h30), forfait 4 cours sur 2 mois possible.',
         ctaPriv: 'Réserver un RDV VIP avec David',
         sign: 'À très vite,<br />David Lesage',
         foot: 'Tu reçois cet email parce que tu t’es inscrit·e sur lesagedavid.fr.',
@@ -1338,7 +1349,9 @@ Deno.serve(async (req) => {
         const rawStart = String(body.eventStart ?? '').trim();
         const rawEnd = String(body.eventEnd ?? '').trim();
         const eventStart = TIME_RE.test(rawStart) ? rawStart : null;
-        const eventEnd = TIME_RE.test(rawEnd) ? rawEnd : null;
+        // Fin OFFICIELLE = début + 2h (13/11/2026) : la fin reçue n'est plus
+        // qu'un indice de validité, jamais affichée telle quelle.
+        const eventEnd = eventStart ? officialEnd(eventStart) : (TIME_RE.test(rawEnd) ? rawEnd : null);
 
         // DATES DE SHOWCASE À VENIR (v22) — pour l'email de la liste d'attente.
         // Envoyées par le site, calculées depuis `agendaEvents` (src/data/site.ts),
@@ -1362,6 +1375,7 @@ Deno.serve(async (req) => {
                 start: String(e.start ?? '').trim(),
                 end: String(e.end ?? '').trim(),
             }))
+            .map((e) => ({ ...e, end: TIME_RE.test(e.start) ? officialEnd(e.start) : e.end }))
             .filter((e) => /^\d{4}-\d{2}-\d{2}$/.test(e.date) && TIME_RE.test(e.start) && TIME_RE.test(e.end))
             .filter((e) => e.date >= todayIso)
             .sort((a, b) => a.date.localeCompare(b.date))

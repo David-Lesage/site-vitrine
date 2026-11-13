@@ -2225,7 +2225,7 @@ export const en: Dict = {
     ],
     programEyebrow: 'How it unfolds',
     programTitle: 'What happens in a session',
-    programIntro: 'Each session lasts about 2 hours: a time to listen, watch demos and talk, then the moment when it’s your turn to play.',
+    programIntro: 'Each session lasts 2 hours: a time to listen, watch demos and talk, then the moment when it’s your turn to play.',
     // 🚫 See dict.ts: David's own words. Step 4 is an ADDITION (18/08/2026) and
     // the last step gained one sentence — nothing was rewritten. This run-through
     // must stay identical to the one in the confirmation email.
@@ -2285,8 +2285,8 @@ export const en: Dict = {
     agendaRulesTitle: 'Good to know before you come',
     agendaRuleTimeTitle: 'You choose the date, not the start time',
     agendaRuleTime: 'The session starts on time, with a presentation. Arriving late means missing information, and the whole group has to go back over it. If you arrive early, you can wait downstairs in the courtyard, no problem at all.',
-    agendaRuleDurationTitle: 'Allow plenty of time',
-    agendaRuleDuration: 'The programme runs about 2 hours; in practice it’s more like 3 hours, because the conversations carry on well afterwards.',
+    agendaRuleDurationTitle: 'A 2-hour gathering',
+    agendaRuleDuration: 'The programme lasts 2 hours: listening, demonstration, conversation, then the moment when it’s your turn to play.',
     agendaRuleShareTitle: 'Bring something to share, if you feel like it',
     agendaRuleShare: 'A fruit juice, a cake, anything to pass around. Entirely optional, never a condition for coming: it’s simply in a spirit of sharing, to make the moment warmer.',
     agendaBookCta: 'Reserve my spot',

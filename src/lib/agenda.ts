@@ -9,7 +9,7 @@
 // Une page servie depuis un cache pourrait donc afficher une date dépassée —
 // d'où le filet côté client (`data-event-iso`, voir les <script> des pages).
 // ============================================================
-import { agendaEvents } from '@/data/site'
+import { agendaEvents, SHOWCASE_DURATION_MIN } from '@/data/site'
 import { numberLocale } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
 
@@ -35,6 +35,17 @@ export interface ShowcaseDate {
   note?: string
 }
 
+/**
+ * Heure de fin OFFICIELLE = début + SHOWCASE_DURATION_MIN (2h, décision David
+ * 13/11/2026). « 16:00 » → « 18:00 ». Le `end` brut de l'agenda Google est ignoré.
+ */
+export function officialEnd(start: string): string {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(start.trim())
+  if (!m) return start
+  const total = (Number(m[1]) * 60 + Number(m[2]) + SHOWCASE_DURATION_MIN) % (24 * 60)
+  return `${String(Math.floor(total / 60)).padStart(2, '0')}:${String(total % 60).padStart(2, '0')}`
+}
+
 /** Showcases À VENIR uniquement, du plus proche au plus lointain. */
 export function upcomingShowcases(lang: Lang): ShowcaseDate[] {
   const locale = numberLocale(lang)
@@ -55,7 +66,7 @@ export function upcomingShowcases(lang: Lang): ShowcaseDate[] {
         month: fmt(d, { month: 'short' }).replace('.', ''),
         short: fmt(d, { weekday: 'short', day: 'numeric', month: 'long' }).replace('.', ''),
         start: e.start,
-        end: e.end,
+        end: officialEnd(e.start),
         note: e.note,
       }
     })

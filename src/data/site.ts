@@ -139,6 +139,15 @@ export const footerNav = [
 //    ⚠️ Le texte est écrit TEL QUEL, dans les deux langues (ce champ n'est pas
 //       traduit) : n'y mettre qu'un mot ou deux, compréhensibles des deux côtés,
 //       ou prévoir `noteEn:` le jour où une date mérite deux formulations.
+// ⏱ DURÉE OFFICIELLE D'UNE RENCONTRE (13/11/2026, mots de David : « officiellement
+//    ça dure 2H »). L'heure de FIN affichée partout (agenda, carte « Prochaine
+//    rencontre », formulaire, email) = début + cette durée, calculée par
+//    `upcomingShowcases()` (src/lib/agenda.ts). Le champ `end` ci-dessous est la
+//    recopie de l'agenda Google (corrigé à 2h à la source le 13/11) : il n'est
+//    plus affiché, la constante sert de filet pour les dates futures.
+//    Même constante côté email : `SHOWCASE_DURATION_MIN` (_shared/showcase-email.ts).
+export const SHOWCASE_DURATION_MIN = 120
+
 export const agendaEvents: readonly {
   date: string
   start: string
@@ -148,8 +157,8 @@ export const agendaEvents: readonly {
   { date: '2026-08-23', start: '16:00', end: '19:00' },
   { date: '2026-09-19', start: '16:00', end: '19:00' },
   { date: '2026-10-18', start: '16:00', end: '19:00' },
-  { date: '2026-11-14', start: '16:00', end: '19:00' },
-  { date: '2026-12-05', start: '15:00', end: '18:00' },
+  { date: '2026-11-14', start: '16:00', end: '18:00' },
+  { date: '2026-12-05', start: '15:00', end: '17:00' },
 ]
 
 // Rendez-vous individuels au showroom — SOURCE DE VÉRITÉ DES TARIFS.

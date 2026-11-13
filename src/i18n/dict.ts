@@ -2733,7 +2733,7 @@ const fr = {
     ],
     programEyebrow: 'Le déroulé',
     programTitle: 'Au programme d’une session',
-    programIntro: 'Chaque session dure environ 2h : un temps d’écoute, de démonstration et d’échange — puis le moment où c’est toi qui joues.',
+    programIntro: 'Chaque session dure 2h : un temps d’écoute, de démonstration et d’échange — puis le moment où c’est toi qui joues.',
     // 🚫 TEXTES DE DAVID — NE PAS REFORMULER les étapes existantes. Le 18/08/2026
     // il a demandé de COMPLÉTER le déroulé avec le Gonilélé et la calebasse :
     // l'étape 4 est un AJOUT, et la dernière étape reçoit une phrase de plus.
@@ -2817,7 +2817,8 @@ const fr = {
     // qui hésite encore, lui, ne les voyait NULLE PART. Elles sont maintenant
     // sur la page, avant même de réserver. Mots de David : l'horaire est ferme
     // (« "viens quand tu veux" c'est pour dire "à la DATE que tu veux" »), la
-    // durée réelle tourne autour de 3h avec les discussions, et l'invitation à
+    // durée officielle est de 2h (13/11/2026 : la mention « plutôt 3h » a été
+    // retirée à la demande de David), et l'invitation à
     // apporter quelque chose reste FACULTATIVE — un esprit de partage, pas une
     // condition d'entrée.
     agendaRulesTitle: 'À savoir avant de venir',
@@ -2825,8 +2826,8 @@ const fr = {
     agendaRuleTime: 'La session commence à l’heure, par une présentation. Arriver en retard, c’est rater des infos et obliger tout le groupe à repartir en arrière. Si tu arrives en avance, tu peux attendre en bas dans la cour — aucun souci.',
     // 🚨 « ta soirée » → « ton temps » le 21/08/2026 : même correction que
     //    `lieuTitle`, un showcase n'est pas forcément le soir.
-    agendaRuleDurationTitle: 'Compte large sur ton temps',
-    agendaRuleDuration: 'Le programme dure environ 2h — dans les faits, ça tourne plutôt autour de 3h, parce que les discussions continuent bien après.',
+    agendaRuleDurationTitle: 'Une rencontre de 2h',
+    agendaRuleDuration: 'Le programme dure 2h : écoute, démonstration, échanges, puis le moment où c’est toi qui joues.',
     agendaRuleShareTitle: 'Apporte quelque chose à partager, si le cœur t’en dit',
     agendaRuleShare: 'Un jus de fruit, un gâteau, quelque chose à faire passer. Totalement facultatif, jamais une condition pour venir — c’est simplement dans un esprit de partage, pour que le moment soit convivial.',
     agendaBookCta: 'Réserver ma place',
