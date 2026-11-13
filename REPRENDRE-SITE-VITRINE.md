@@ -52,6 +52,14 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Publier le site : `zsh scripts/publier.sh "ce qui change"`** (depuis `main`) : contrôle GitHub, commit de TOUT le dossier, push, puis Vercel. S'il s'arrête sur « GitHub a des commits » : Yannick a publié, `git pull` puis relancer. Testé sur un dépôt factice, jamais lancé en vrai.
 - `.gitignore` : `.env*` (sauf `.env.example`), `supabase/.temp/`, `MESSAGE-SESSION-*.md`, la réconciliation Hisong. Les fichiers Icon sont sortis de git (commit 9d6cefc).
 
+## 🧭 ÉTAT ACTUEL — 13/11/2026 (45ᵉ passe, side-session « statistiques ») — STATISTIQUES DE VISITES + LIENS UTM
+- **En prod** : balise maison **`public/rv.js`** (chargée par `src/layouts/Layout.astro` + les pages statiques `public/**/handpan-app/**`). Envoie 1 fois par page, après 1,5 s (une redirection de langue n'est donc comptée qu'une fois) : page, langue, `utm_source/medium/campaign/content/term`, **domaine** d'origine (jamais l'adresse complète), mobile/tablette/ordinateur. **Aucun cookie, aucune IP, aucun identifiant** → pas de bandeau. Pas dans les iframes (`window.top`), pas pour les robots.
+- **Corrigé dans `Layout.astro`** : la redirection automatique de langue (navigateur non francophone → `/en/…`) **perdait les paramètres UTM** ; elle garde maintenant `location.search` dès qu'il contient `utm_`.
+- Côté serveur (dépôt de l'APP, propriétaire = session app) : table `visites_pages` (migration **0341**, RLS sans aucune règle, lecture via `admin_visites_pages(p_jours, p_site)` réservée `is_admin()`), EF **`releve-visite`** (verify_jwt false, sites autorisés en dur). Écran : console admin de l'app › Statistiques (en haut).
+- **Même fichier `rv.js`** dans le dépôt de l'app (`public/rv.js`, sur `/decouvrir/` ×4 langues) : toute retouche se fait **dans les deux**.
+- Ne pas compter ses propres visites : ouvrir une fois `https://www.lesagedavid.fr/?releve=off` (`?releve=on` pour rétablir), par navigateur.
+- Vérifié le 13/11 ~13h40 : visites de test `utm_source=test-claude` sur `/`, `/handpan-app/`, `/en/` reçues en base (lignes de test supprimées ensuite).
+
 ## 🧭 ÉTAT ACTUEL — 11/11/2026 (44ᵉ passe, faite depuis la session APP) — APERÇU DE PARTAGE DU SHOWROOM
 - /showroom (FR/EN/ES/DE) : og:image = `/images/og-showroom.jpg` (1200×630). Branché par `image=` sur le `<Layout>` de `ShowroomPage.astro`.
 - Choix de David (11/11) : variante C2 = `showroom-david-presentation.webp` recadrée, titre « David Lesage Showroom » en Century Gothic (police système `FontServices…/CenturyGothic.ttc`) sur zone floutée, bandeau clair en bas avec les 8 partenaires (Yishama / Neotone / Atlas / Muling / Hisong / La Maison du Ngoni / L’Âme du Tambour / Cœur de Son). Une image pour toutes les langues. Now Groove signalé à David comme oubli possible, sans réponse.
@@ -4623,3 +4631,6 @@ formulaire de facturation en cours · bois disponibles dans le calculateur à fa
 Septembre, et décisions en attente listées ci-dessus.
 
 - ⚠️ 25/10 : le préfixe admin_note « Remise exceptionnelle » (hisong-direct) est lu par le badge de l'app (avec price_discounted < price_original) — NE PAS le changer.
+
+### 13/11/2026 — 45ᵉ passe : statistiques de visites (side-session)
+Balise `public/rv.js` + correctif UTM de la redirection de langue (Layout.astro), publiés par `scripts/publier.sh` (commits du 13/11 13h36 et 17e421c). Table/EF/écran côté app (migration 0341, EF releve-visite, console admin › Statistiques).
