@@ -1162,6 +1162,8 @@ document.querySelectorAll('[data-compte]').forEach(x=>compteur.observe(x));
     m.querySelector('.merci p').textContent='Te avisamos cuando abra.';m.querySelector('.form-zone').hidden=true;m.querySelector('.merci').hidden=false;envoi.disabled=false;envoi.textContent=envoi.dataset.texte;return}
    const ref=new URLSearchParams(location.search).get('ref'),data={first_name:prenom,last_name:nomV};
    if(ref&&/^[A-Za-z0-9_-]{1,32}$/.test(ref)){data.ref_code=ref;data.ref_canal='lien'}
+    /* 13/11/2026 : origine de l'inscription (liens UTM du lancement), lue par admin_inscriptions_sources (0342) */
+    try{const u=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','utm_content'].forEach(k=>{const v=u.get(k);if(v)data[k]=v.slice(0,80)});if(document.referrer){const h=new URL(document.referrer).hostname.replace(/^www\./,'');if(h&&h!==location.hostname.replace(/^www\./,''))data.inscrit_provenance=h.slice(0,120)}data.inscrit_depuis=(location.hostname.replace(/^www\./,'')+location.pathname).slice(0,200)}catch(e){}
    const r=await fetch(SB+'/auth/v1/signup',{method:'POST',headers:{apikey:CLE,'Content-Type':'application/json'},body:JSON.stringify({email,password:pw,data})}),j=await r.json().catch(()=>null);
    if(!r.ok)return dire(messageServeur(j));
    if(!j||!j.access_token)return dire('Ya existe una cuenta con este correo. '+lien);
