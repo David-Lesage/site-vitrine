@@ -12,6 +12,7 @@
     if (localStorage.getItem('releve-off') === '1') return
   } catch (e) {}
   try {
+    if (window.top !== window.self) return // une page intégrée (animation d'ouverture…) ne compte pas
     if (/bot|crawl|spider|slurp|google-|lighthouse|facebookexternalhit|headless/i.test(navigator.userAgent)) return
     var envoye = false
     function envoyer() {
