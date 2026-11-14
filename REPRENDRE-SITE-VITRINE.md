@@ -52,6 +52,12 @@ avait déjà tout repris (17ᵉ soir + 18ᵉ passe ci-dessous) : **rien n'est pe
 - **Publier le site : `zsh scripts/publier.sh "ce qui change"`** (depuis `main`) : contrôle GitHub, commit de TOUT le dossier, push, puis Vercel. S'il s'arrête sur « GitHub a des commits » : Yannick a publié, `git pull` puis relancer. Testé sur un dépôt factice, jamais lancé en vrai.
 - `.gitignore` : `.env*` (sauf `.env.example`), `supabase/.temp/`, `MESSAGE-SESSION-*.md`, la réconciliation Hisong. Les fichiers Icon sont sortis de git (commit 9d6cefc).
 
+## 🧭 ÉTAT ACTUEL — 14/11/2026 (46ᵉ passe, side-session app « showcase annulation ») — ANNULATION → REPORT EN UN CLIC
+- **En prod** (main 65a3b07, `publier.sh`) + EF **showcase-attendance** et **showcase-reminder** redéployées (`--no-verify-jwt`).
+- Nouvel e-mail d'annulation (`_shared/showcase-cancel-offer.ts`, FR/EN/ES/DE ; COPIE IDENTIQUE dans le dépôt de l'app pour l'envoi depuis la console) : prochaines dates avec bouton « Je viens le … » → `/showcase/ma-venue?t=…&date=…` (présélection, 1 clic) + bloc rendez-vous individuel ; sans date → lien `?alerte=dates` (formulaire liste d'attente existant).
+- Les dates de report viennent de `app_public_config.showcase_agenda` (repli EVENT_HOURS). ⚠️ Une date ajoutée seulement dans `agendaEvents` serait réservable mais pas reportable : mettre aussi la clé à jour.
+- `site-lead` NON redéployée (son seul changement : bouton « Annuler ou reporter » plein dans `showcase-email.ts`).
+
 ## 🧭 ÉTAT ACTUEL — 13/11/2026 (45ᵉ passe, side-session « statistiques ») — STATISTIQUES DE VISITES + LIENS UTM
 - **En prod** : balise maison **`public/rv.js`** (chargée par `src/layouts/Layout.astro` + les pages statiques `public/**/handpan-app/**`). Envoie 1 fois par page, après 1,5 s (une redirection de langue n'est donc comptée qu'une fois) : page, langue, `utm_source/medium/campaign/content/term`, **domaine** d'origine (jamais l'adresse complète), mobile/tablette/ordinateur. **Aucun cookie, aucune IP, aucun identifiant** → pas de bandeau. Pas dans les iframes (`window.top`), pas pour les robots.
 - **Corrigé dans `Layout.astro`** : la redirection automatique de langue (navigateur non francophone → `/en/…`) **perdait les paramètres UTM** ; elle garde maintenant `location.search` dès qu'il contient `utm_`.
