@@ -1041,6 +1041,17 @@ const saleIntake = saleIntakeClientConfig()
     // Si la date n'existe plus sur la page (showcase passé, agenda modifié), on
     // ne laisse PAS la personne devant une ancre morte : on ouvre la liste
     // d'attente pour qu'elle soit prévenue des prochaines dates.
+    // LIEN PROFOND `?alerte=dates` (14/11/2026) — cible du bouton « Me prévenir
+    // de la prochaine date » de l'e-mail d'annulation quand aucune date n'est
+    // ouverte : ouvre directement le formulaire de liste d'attente existant.
+    if (params.get('alerte') === 'dates') {
+      const trigger = document.querySelector<HTMLElement>('[data-booking="showcase-waitlist"]')
+      if (trigger) {
+        document.getElementById('agenda')?.scrollIntoView()
+        open(trigger)
+      }
+    }
+
     const wanted = params.get('showcase')
     if (wanted) {
       document.getElementById('agenda')?.scrollIntoView()

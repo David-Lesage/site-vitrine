@@ -14,8 +14,11 @@
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
 import { htmlPart, mailSubject } from './mail.ts';
 import { EVENT_HOURS, VENUE, hoursFor } from './showcase-email.ts';
+import { type ShowcaseAgenda, agendaHours, futureDatesIn, loadShowcaseAgenda } from './showcase-cancel-offer.ts';
 
 export { EVENT_HOURS, hoursFor, VENUE };
+export { agendaHours, loadShowcaseAgenda };
+export type { ShowcaseAgenda };
 
 /** Même adresse que `confirm-showcase` (SUPER_ADMIN_EMAIL) et `site-lead` (ADMIN_EMAIL). */
 export const ADMIN_EMAIL = 'contact@lesagedavid.fr';
@@ -43,10 +46,14 @@ export function addDays(iso: string, n: number): string {
     return d.toISOString().slice(0, 10);
 }
 
-/** Showcases FUTURS connus (strictement après aujourd'hui, Paris). */
-export function futureShowcaseDates(): string[] {
-    const today = parisNow().date;
-    return Object.keys(EVENT_HOURS).filter((d) => d > today).sort();
+/**
+ * Showcases FUTURS connus (strictement après aujourd'hui, Paris).
+ * 14/11/2026 : `agenda` = agenda partagé lu par `loadShowcaseAgenda()`
+ * (app_public_config, clé 'showcase_agenda') ; sans argument → `EVENT_HOURS`
+ * (repli historique, gardé pour les appelants qui ne lisent pas la config).
+ */
+export function futureShowcaseDates(agenda: ShowcaseAgenda = EVENT_HOURS): string[] {
+    return futureDatesIn(agenda, parisNow().date);
 }
 
 export function esc(s: unknown): string {
@@ -161,9 +168,13 @@ const R = {
 export function reminderSubject(eventDate: string, lang: L): string {
     return R[lang].subject(longDate(eventDate, lang));
 }
-export function reminderHtml(o: { firstName: string; lang: L; eventDate: string; token: string }): string {
+export function reminderHtml(o: {
+    firstName: string; lang: L; eventDate: string; token: string;
+    /** Horaires lus dans l'agenda partagé (14/11/2026) ; à défaut `hoursFor` (EVENT_HOURS). */
+    hours?: { start: string; end: string };
+}): string {
     const t = R[o.lang];
-    const h = hoursFor(o.eventDate);
+    const h = o.hours ?? hoursFor(o.eventDate);
     const row = (k: string, v: string) =>
         `<tr><td style="padding:5px 0;color:#6b7280;font-size:13px;width:110px;">${k}</td><td style="padding:5px 0;color:#111827;font-size:15px;font-weight:600;">${v}</td></tr>`;
     return shell(o.lang, `
@@ -198,6 +209,10 @@ export function reminderHtml(o: { firstName: string; lang: L; eventDate: string;
 }
 
 // ---- Accusés (annulation / report) -------------------------------------------
+// 14/11/2026 : l'accusé d'ANNULATION envoyé par `showcase-attendance` est
+// désormais `cancelOfferMail()` (_shared/showcase-cancel-offer.ts : prochaines
+// dates en un clic + rendez-vous individuel). La branche 'cancel' ci-dessous
+// n'est plus appelée ; elle reste comme référence des mots du 21/09.
 const A = {
     fr: {
         cancelSubject: 'C’est noté : ta venue est annulée',

@@ -8,11 +8,23 @@
 // Règle de David : on ne SUPPRIME jamais une inscription, on change son statut.
 // Après chaque action : mail à David (ADMIN_EMAIL) + accusé à la personne.
 // dry_run:true → renvoie ce qui serait fait, sans écrire ni envoyer.
+//
+// 14/11/2026 (annulation → report ou rendez-vous privé, variante B) :
+//   • les dates viennent de l'agenda PARTAGÉ (app_public_config, clé
+//     'showcase_agenda'), repli EVENT_HOURS si la lecture échoue ;
+//   • l'accusé d'annulation = `cancelOfferMail()` : 1 à 3 prochaines dates, chacune
+//     avec « Je viens le … » → /showcase/ma-venue?t=…&date=… (la page présélectionne
+//     la date, la personne confirme d'un clic → action 'reschedule' ci-dessous) +
+//     le bloc rendez-vous individuel ; sans date future → lien liste d'attente ;
+//   • une inscription ANNULÉE peut être reportée (c'était déjà accepté) et même
+//     revenir à SA date d'origine si elle est encore à venir (annulation levée).
 // =============================================================================
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import {
-    ADMIN_EMAIL, SHOWCASE_SOURCES, ackMail, adminMail, futureShowcaseDates, hoursFor, langOf, sendMails,
+    ADMIN_EMAIL, SHOWCASE_SOURCES, ackMail, adminMail, agendaHours, futureShowcaseDates, langOf,
+    loadShowcaseAgenda, sendMails,
 } from '../_shared/showcase-attendance.ts';
+import { cancelLangOf, cancelOfferMail } from '../_shared/showcase-cancel-offer.ts';
 
 const ORIGINS = [
     'https://www.lesagedavid.fr', 'https://lesagedavid.fr', 'https://project-a5vpj.vercel.app',
@@ -31,7 +43,7 @@ const json = (req: Request, body: unknown, status = 200) =>
     new Response(JSON.stringify(body), { status, headers: { ...cors(req), 'Content-Type': 'application/json' } });
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-const COLS = 'id, email, first_name, last_name, event_date, status, lang, people_count, admin_note, source, cancelled_at';
+const COLS = 'id, email, first_name, last_name, event_date, status, lang, people_count, admin_note, source, cancelled_at, attendance_token';
 
 Deno.serve(async (req) => {
     if (req.method === 'OPTIONS') return new Response('ok', { headers: cors(req) });
@@ -48,12 +60,17 @@ Deno.serve(async (req) => {
         if (error) throw error;
         if (!lead || !lead.event_date) return json(req, { error: 'not_found' }, 404);
 
-        const upcoming = futureShowcaseDates().filter((d) => d !== lead.event_date)
-            .map((d) => ({ date: d, ...hoursFor(d) }));
+        const { agenda } = await loadShowcaseAgenda(admin);
+        const future = futureShowcaseDates(agenda);
+        const cancelled = lead.status === 'cancelled';
+        // Dates proposées : toutes les dates futures, sauf la sienne — SAUF si elle
+        // est annulée : elle peut alors revenir à sa date d'origine si elle est à venir.
+        const allowed = future.filter((d) => cancelled || d !== lead.event_date);
+        const upcoming = allowed.map((d) => ({ date: d, ...agendaHours(agenda, d) }));
         if (req.method === 'GET') {
             return json(req, {
                 ok: true, first_name: lead.first_name ?? '', event_date: lead.event_date, status: lead.status,
-                hours: hoursFor(lead.event_date), upcoming,
+                hours: agendaHours(agenda, lead.event_date), upcoming,
             });
         }
         if (req.method !== 'POST') return json(req, { error: 'method_not_allowed' }, 405);
@@ -76,21 +93,32 @@ Deno.serve(async (req) => {
             };
         } else if (action === 'reschedule') {
             newDate = String(body.new_date ?? '').trim();
-            // Revalidation SERVEUR : seule une date de showcase FUTURE connue est acceptée.
-            if (!futureShowcaseDates().includes(newDate) || newDate === oldDate) {
+            // Revalidation SERVEUR : seule une date de showcase FUTURE de l'agenda est
+            // acceptée ; la même date seulement pour lever une annulation.
+            if (!allowed.includes(newDate)) {
                 return json(req, { error: 'invalid_date', upcoming }, 400);
             }
+            const sameDate = newDate === oldDate;
             update = {
                 status: 'rescheduled', rescheduled_from: oldDate, rescheduled_at: nowIso, event_date: newDate,
                 reminder_sent_at: null, cancelled_at: null, attendance_changed_by: 'self',
-                admin_note: note(`Reporté par la personne : ${oldDate} → ${newDate} (statut précédent : ${lead.status ?? '—'}).`),
+                admin_note: note(sameDate
+                    ? `Annulation levée par la personne : elle revient au showcase du ${newDate} (statut précédent : ${lead.status ?? '—'}).`
+                    : `Reporté par la personne : ${oldDate} → ${newDate} (statut précédent : ${lead.status ?? '—'}).`),
             };
         } else {
             return json(req, { error: 'unknown_action' }, 400);
         }
 
         const kind = action === 'cancel' ? 'cancel' : 'reschedule';
-        const ack = ackMail({ kind, lang, firstName: lead.first_name ?? '', oldDate, newDate });
+        // Annulation → e-mail « prochaines dates + rendez-vous individuel » (14/11/2026).
+        const ack = kind === 'cancel'
+            ? cancelOfferMail({
+                lang: cancelLangOf(lead.lang), firstName: lead.first_name ?? '', oldDate,
+                token: lead.attendance_token as string | null,
+                upcoming: future.filter((d) => d !== oldDate).map((d) => ({ date: d, ...agendaHours(agenda, d) })),
+            })
+            : ackMail({ kind, lang, firstName: lead.first_name ?? '', oldDate, newDate });
         const adm = adminMail({
             kind, firstName: lead.first_name ?? '', lastName: lead.last_name ?? '', email: lead.email ?? '',
             oldDate, newDate, peopleCount: lead.people_count,

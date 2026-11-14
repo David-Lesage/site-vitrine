@@ -8,15 +8,23 @@
 // suppression (le statut devient 'cancelled' ou 'rescheduled').
 // Textes locaux (fr/en/es/de) plutôt que dans dict.ts : es.ts est GÉNÉRÉ par script
 // et une page privée à 3 phrases ne justifie pas une passe de traduction.
+//
+// 14/11/2026 — VARIANTE B (choix de David) : l'e-mail d'annulation propose
+// « Je viens le … » → `?t=<jeton>&date=AAAA-MM-JJ`. Si la date est valide et
+// proposée par le serveur, la page la PRÉSÉLECTIONNE et n'affiche qu'un bouton
+// « Confirmer ma venue le … » : un clic humain, jamais de report au simple
+// chargement (les antivirus de messagerie « cliquent » les liens).
+// Une venue ANNULÉE peut choisir une nouvelle date (avant : simple lien agenda).
+// Les dates proposées sont désormais CELLES DU SERVEUR (agenda partagé
+// `showcase_agenda`), plus l'agenda figé au build : la page ne peut plus proposer
+// une date que l'EF refuserait.
 // ============================================================================
 import Layout from '@/layouts/Layout.astro'
-import { upcomingShowcases } from '@/lib/agenda'
 import { localizePath } from '@/i18n/utils'
 import type { Lang } from '@/i18n/config'
 
 interface Props { lang: Lang }
 const { lang } = Astro.props
-const upcoming = upcomingShowcases(lang).map((s) => ({ iso: s.iso, long: s.long, start: s.start, end: s.end }))
 const agendaHref = localizePath('/showroom', lang) + '#agenda'
 
 const T = {
@@ -39,6 +47,9 @@ const T = {
     invalid: 'Ce lien ne fonctionne pas (ou plus). Écris-moi à contact@lesagedavid.fr et je m’en occupe.',
     error: 'Oups, ça n’a pas marché. Réessaie dans un instant, ou écris à contact@lesagedavid.fr.',
     hi: (n: string) => (n ? `Bonjour ${n} !` : 'Bonjour !'),
+    pickedIntro: 'Ta nouvelle date :',
+    confirmDate: (d: string) => `Confirmer ma venue le ${d}`,
+    cancelledPick: 'Ta venue est annulée. Si tu veux revenir, choisis une nouvelle date :',
   },
   en: {
     title: 'My showcase visit',
@@ -59,6 +70,9 @@ const T = {
     invalid: 'This link doesn’t work (anymore). Write to contact@lesagedavid.fr and I’ll sort it out.',
     error: 'Oops, that didn’t work. Try again in a moment, or write to contact@lesagedavid.fr.',
     hi: (n: string) => (n ? `Hi ${n}!` : 'Hi!'),
+    pickedIntro: 'Your new date:',
+    confirmDate: (d: string) => `Confirm my visit on ${d}`,
+    cancelledPick: 'Your visit is cancelled. If you’d like to come back, pick a new date:',
   },
   es: {
     title: 'Mi visita al showcase',
@@ -79,6 +93,9 @@ const T = {
     invalid: 'Este enlace no funciona (o ya no). Escríbeme a contact@lesagedavid.fr y me encargo.',
     error: 'Uy, no ha funcionado. Inténtalo de nuevo en un momento o escribe a contact@lesagedavid.fr.',
     hi: (n: string) => (n ? `¡Hola ${n}!` : '¡Hola!'),
+    pickedIntro: 'Tu nueva fecha:',
+    confirmDate: (d: string) => `Confirmar mi visita el ${d}`,
+    cancelledPick: 'Tu visita está cancelada. Si quieres volver, elige una nueva fecha:',
   },
   de: {
     title: 'Mein Besuch beim Treffen',
@@ -99,6 +116,9 @@ const T = {
     invalid: 'Dieser Link funktioniert nicht (mehr). Schreib mir an contact@lesagedavid.fr, und ich kümmere mich darum.',
     error: 'Hoppla, das hat nicht geklappt. Versuch es gleich noch einmal oder schreib an contact@lesagedavid.fr.',
     hi: (n: string) => (n ? `Hallo ${n}!` : 'Hallo!'),
+    pickedIntro: 'Dein neuer Termin:',
+    confirmDate: (d: string) => `Meinen Besuch am ${d} bestätigen`,
+    cancelledPick: 'Dein Besuch ist abgesagt. Wenn du doch kommen möchtest, wähle ein neues Datum:',
   },
 }
 const t = T[lang]
@@ -107,6 +127,7 @@ const strings = {
   ...t,
   hours: t.hours('{a}', '{b}'),
   doneRe: t.doneRe('{d}'),
+  confirmDate: t.confirmDate('{d}'),
   hi: t.hi('{n}'),
   hiEmpty: t.hi(''),
 }
@@ -138,11 +159,21 @@ const locale = lang === 'en' ? 'en-GB' : lang === 'es' ? 'es-ES' : lang === 'de'
           </div>
         </div>
 
+        <div data-s="picked" hidden>
+          <p class="font-600 text-ink" data-hi></p>
+          <p class="mt-2">{t.pickedIntro}</p>
+          <p class="mt-1"><strong class="text-ink first-letter:uppercase inline-block" data-picked-date></strong><br /><span data-picked-hours></span></p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <button type="button" data-act="confirm-picked" class="rounded-full bg-copper px-5 py-3 font-600 text-white hover:bg-rust" data-picked-btn></button>
+            <button type="button" data-go="change" class="rounded-full border border-ink-soft/30 px-5 py-3 font-600 text-ink hover:bg-cream-deep">{t.change}</button>
+          </div>
+        </div>
+
         <div data-s="change" hidden>
-          <p>{t.pick}</p>
+          <p data-pick>{t.pick}</p>
           <div class="mt-4 flex flex-col gap-2" data-dates></div>
           <p class="mt-4 hidden" data-nodates>{t.noDates}</p>
-          <button type="button" data-go="main" class="mt-5 rounded-full border border-ink-soft/30 px-5 py-3 font-600 text-ink">{t.back}</button>
+          <button type="button" data-go="main" data-back class="mt-5 rounded-full border border-ink-soft/30 px-5 py-3 font-600 text-ink">{t.back}</button>
         </div>
 
         <div data-s="done" hidden>
@@ -154,14 +185,21 @@ const locale = lang === 'en' ? 'en-GB' : lang === 'es' ? 'es-ES' : lang === 'de'
   </section>
 </Layout>
 
-<script define:vars={{ S: strings, EF, upcoming, locale }}>
+<script define:vars={{ S: strings, EF, locale }}>
   const root = document.getElementById('mv')
   const q = (s) => root.querySelector(s)
   const show = (name) => root.querySelectorAll('[data-s]').forEach((el) => { el.hidden = el.dataset.s !== name })
   const fmt = (iso) => new Intl.DateTimeFormat(locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso + 'T12:00:00'))
   const done = (msg, agenda) => { q('[data-msg]').textContent = msg; const a = q('[data-agenda]'); a.classList.toggle('hidden', !agenda); a.classList.toggle('inline-block', !!agenda); show('done') }
-  const token = new URLSearchParams(location.search).get('t') || ''
+  const fmtShort = (iso) => new Intl.DateTimeFormat(locale, { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date(iso + 'T12:00:00'))
+  const params = new URLSearchParams(location.search)
+  const token = params.get('t') || ''
+  // Variante B : date présélectionnée depuis l'e-mail d'annulation (`&date=AAAA-MM-JJ`).
+  const wantedRaw = params.get('date') || ''
+  const wanted = /^\d{4}-\d{2}-\d{2}$/.test(wantedRaw) ? wantedRaw : ''
   let lead = null
+  let home = 'main'
+  let picked = null
 
   async function call(body) {
     const r = await fetch(EF, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ t: token, ...body }) })
@@ -177,13 +215,18 @@ const locale = lang === 'en' ? 'en-GB' : lang === 'es' ? 'es-ES' : lang === 'de'
       const j = await r.json().catch(() => ({}))
       if (!r.ok || !j.ok) return done(r.status >= 500 ? S.error : S.invalid)
       lead = j
-      if (j.status === 'cancelled') return done(S.already, true)
-      q('[data-hi]').textContent = j.first_name ? S.hi.replace('{n}', j.first_name) : S.hiEmpty
+      const cancelled = j.status === 'cancelled'
+      // Dates proposées = CELLES DU SERVEUR (agenda partagé), donc forcément
+      // acceptées par l'action 'reschedule'. Une venue annulée peut aussi
+      // revenir à sa date d'origine si elle est encore à venir.
+      const list = (j.upcoming || [])
+        .filter((u) => u && /^\d{4}-\d{2}-\d{2}$/.test(u.date) && (cancelled || u.date !== j.event_date))
+        .map((u) => ({ iso: u.date, long: fmt(u.date), start: u.start, end: u.end }))
+      if (cancelled && !list.length) return done(S.already, true)
+      const hiText = j.first_name ? S.hi.replace('{n}', j.first_name) : S.hiEmpty
+      root.querySelectorAll('[data-hi]').forEach((el) => { el.textContent = hiText })
       q('[data-date]').textContent = fmt(j.event_date)
       q('[data-hours]').textContent = S.hours.replace('{a}', j.hours.start).replace('{b}', j.hours.end)
-      // Dates proposées = agenda du site ∩ dates validées par le serveur.
-      const serverDates = new Set((j.upcoming || []).map((u) => u.date))
-      const list = upcoming.filter((u) => serverDates.has(u.iso) && u.iso !== j.event_date)
       const box = q('[data-dates]')
       list.forEach((u) => {
         const b = document.createElement('button')
@@ -196,7 +239,20 @@ const locale = lang === 'en' ? 'en-GB' : lang === 'es' ? 'es-ES' : lang === 'de'
         box.appendChild(b)
       })
       q('[data-nodates]').classList.toggle('hidden', list.length > 0)
-      show('main')
+      if (cancelled) {
+        // Venue annulée : on part directement du choix d'une nouvelle date.
+        home = 'change'
+        q('[data-pick]').textContent = S.cancelledPick
+        q('[data-back]').hidden = true
+      }
+      picked = wanted ? list.find((u) => u.iso === wanted) || null : null
+      if (picked) {
+        q('[data-picked-date]').textContent = picked.long
+        q('[data-picked-hours]').textContent = S.hours.replace('{a}', picked.start).replace('{b}', picked.end)
+        q('[data-picked-btn]').textContent = S.confirmDate.replace('{d}', fmtShort(picked.iso))
+        return show('picked')
+      }
+      show(home)
     } catch { done(S.error) }
   }
 
@@ -206,8 +262,10 @@ const locale = lang === 'en' ? 'en-GB' : lang === 'es' ? 'es-ES' : lang === 'de'
   }
 
   root.addEventListener('click', (e) => {
-    const go = e.target.closest('[data-go]'); if (go) return show(go.dataset.go)
+    const go = e.target.closest('[data-go]'); if (go) return show(go.dataset.go === 'main' ? home : go.dataset.go)
     const a = e.target.closest('[data-act="cancel"]'); if (a) act({ action: 'cancel' }, () => done(S.doneCancel, true))
+    const p = e.target.closest('[data-act="confirm-picked"]')
+    if (p && picked) act({ action: 'reschedule', new_date: picked.iso }, () => done(S.doneRe.replace('{d}', picked.long)))
   })
   init()
 </script>

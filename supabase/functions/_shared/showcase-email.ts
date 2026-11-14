@@ -428,7 +428,9 @@ export function showcaseConfirmationHtml(o: ShowcaseEmailOptions): string {
           <p style="margin:8px 0 0;color:#374151;font-size:14px;line-height:1.7;">${t.trouble2}</p>
           <p style="margin:8px 0 0;color:#374151;font-size:14px;line-height:1.7;">${t.trouble3}</p>
           <div style="margin-top:14px;">${attendanceHref
-            ? btn(attendanceHref, t.attendanceCta, false)
+            // 14/11/2026 : bouton PLEIN (il était secondaire, peu visible) — c'est
+            // lui qui permet d'annuler ou reporter soi-même, en un clic.
+            ? btn(attendanceHref, t.attendanceCta, true)
             : btn(`${base}/showroom#agenda`, t.troubleCta, false)}</div>
         </td></tr>
 

@@ -11,7 +11,8 @@
 // =============================================================================
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
 import {
-    SHOWCASE_SOURCES, addDays, langOf, parisNow, reminderHtml, reminderSubject, sendMails,
+    SHOWCASE_SOURCES, addDays, agendaHours, langOf, loadShowcaseAgenda, parisNow, reminderHtml, reminderSubject,
+    sendMails,
 } from '../_shared/showcase-attendance.ts';
 
 const json = (body: unknown, status = 200) =>
@@ -46,6 +47,8 @@ Deno.serve(async (req) => {
             });
         }
 
+        // Horaires de la séance : agenda partagé (14/11/2026), repli EVENT_HOURS.
+        const hours = agendaHours((await loadShowcaseAgenda(admin)).agenda, target);
         const sent: string[] = [];
         const failed: { id: string; error: string }[] = [];
         for (const r of rows) {
@@ -54,7 +57,7 @@ Deno.serve(async (req) => {
                 await sendMails([{
                     to: r.email as string, replyTo: 'contact@lesagedavid.fr',
                     subject: reminderSubject(target, lang),
-                    html: reminderHtml({ firstName: r.first_name ?? '', lang, eventDate: target, token: r.attendance_token }),
+                    html: reminderHtml({ firstName: r.first_name ?? '', lang, eventDate: target, token: r.attendance_token, hours }),
                 }]);
                 await admin.from('site_leads').update({ reminder_sent_at: new Date().toISOString() }).eq('id', r.id);
                 sent.push(r.id);
