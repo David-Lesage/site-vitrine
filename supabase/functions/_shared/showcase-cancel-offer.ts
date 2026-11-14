@@ -137,6 +137,8 @@ export function venueDateUrl(token: string, lang: CancelLang, date?: string): st
 function esc(s: unknown): string {
     return String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!));
 }
+/** Majuscule initiale seulement (« Samedi 5 décembre », pas « Samedi 5 Décembre »). */
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const LOCALE: Record<CancelLang, string> = { fr: 'fr-FR', en: 'en-GB', es: 'es-ES', de: 'de-DE' };
 function fmtDate(iso: string, lang: CancelLang, withYear: boolean): string {
     try {
@@ -288,7 +290,7 @@ export function cancelOfferMail(o: CancelOfferOptions): { subject: string; html:
           <tr><td style="padding:6px 0;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#faf5ef;border:1px solid #e7d9c6;border-radius:12px;">
               <tr><td style="padding:14px 16px;">
-                <div style="color:#111827;font-size:16px;font-weight:700;text-transform:capitalize;">${esc(fmtDate(u.date, lang, true))}</div>
+                <div style="color:#111827;font-size:16px;font-weight:700;">${esc(cap(fmtDate(u.date, lang, true)))}</div>
                 <div style="margin-top:2px;color:#6b7280;font-size:14px;">${t.hours(u.start, u.end)}</div>
                 <div style="margin-top:12px;">${btn(href, t.come(fmtDate(u.date, lang, false)))}</div>
               </td></tr>
