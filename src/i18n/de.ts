@@ -29,7 +29,7 @@ export const de: Dict = {
       "contact": "Kontakt",
       "learnHandpan": "Handpan lernen",
       "electricVsAcoustic": "Elektronisch vs. akustisch",
-      "chooseHandpan": "Welchen Handpan wählen?",
+      "chooseHandpan": "Welche Handpan wählen?",
       "newsletter": "Newsletter",
       "faq": "FAQ",
       "legal": "Impressum",
@@ -68,7 +68,7 @@ export const de: Dict = {
       "formFirst": "Vorname",
       "formLast": "Nachname",
       "formEmail": "E-Mail",
-      "formHandpan": "Hast du schon einen Handpan?",
+      "formHandpan": "Hast du schon eine Handpan?",
       "formHandpanYes": "Ja",
       "formHandpanNo": "Nein",
       "formHandpanPlanning": "Ich habe vor, einen zu kaufen",
@@ -83,7 +83,7 @@ export const de: Dict = {
       "formUsageTeacher": "Zum Unterrichten: Ich nutze sie als Werkzeug in bezahltem Unterricht",
       "formUsageTeacherDeal": "Lizenz „Unterrichten“: Bereich für Schüler, Übungen, Notenblätter, Exporte ohne Wasserzeichen. Im Aufbau: Die ersten Lehrenden entwickeln sie mit mir.",
       "formUsageMaker": "Zum Bauen: Ich entwerfe und stimme Handpans",
-      "formUsageMakerDeal": "Du bist ein Erschaffer. Sag mir, was du herstellen kannst, und du kommst in den Herstellerkatalog der App: Die Leute wählen dich in dem Moment, in dem sie den Handpan ihrer Träume entwerfen, je nach deinem Standort und deinen Möglichkeiten. Ich bringe dir Kunden, nehme einen Prozentsatz, und du machst ihnen einen Vermittlungspreis. Ich arbeite nur mit Herstellern, die zu mir passen und gute Arbeit leisten.",
+      "formUsageMakerDeal": "Du bist ein Erschaffer. Sag mir, was du herstellen kannst, und du kommst in den Herstellerkatalog der App: Die Leute wählen dich in dem Moment, in dem sie die Handpan ihrer Träume entwerfen, je nach deinem Standort und deinen Möglichkeiten. Ich bringe dir Kunden, nehme einen Prozentsatz, und du machst ihnen einen Vermittlungspreis. Ich arbeite nur mit Herstellern, die zu mir passen und gute Arbeit leisten.",
       "formUsageOther": "Anderes / weiß ich noch nicht",
       "formUsageBoth": "Beides",
       "formStudentCount": "Wie viele Schüler betreust du gerade?",
@@ -139,7 +139,7 @@ export const de: Dict = {
   },
   "home": {
     "title": "Handpan anders lernen – David Lesage",
-    "description": "Akustischer Yishama-Handpan, elektronischer Neotone-Handpan und eine Methode mit Farben: Lerne Handpan anders mit Handpan Constellation Studio.",
+    "description": "Akustische Yishama-Handpan, elektronische Neotone-Handpan und eine Methode mit Farben: Lerne Handpan anders mit Handpan Constellation Studio.",
     "heroEyebrow": "Musiker · Pädagoge · Erfinder",
     "heroTitleA": "Ich mache Musik",
     "heroTitleHighlight": "sichtbar",
@@ -154,7 +154,7 @@ export const de: Dict = {
       {
         "sub": "Akustisch & elektronisch",
         "title": "Instrumente & Mikrofone",
-        "text": "Ein akustischer Yishama-Handpan, ein elektronischer Neotone-Handpan, Mikrofone – zwei Welten, in denen ich dich gleichermaßen begleite.",
+        "text": "Eine akustische Yishama-Handpan, eine elektronische Neotone-Handpan, Mikrofone – zwei Welten, in denen ich dich gleichermaßen begleite.",
         "cta": "Beide Welten ansehen"
       },
       {
@@ -166,7 +166,7 @@ export const de: Dict = {
       {
         "sub": "Akustisch & Neotone",
         "title": "Handpan Constellation Studio",
-        "text": "Die App, die Musik sichtbar macht, auf deinem akustischen Handpan wie auf dem Neotone: Farben, Geometrie und Emotionen.",
+        "text": "Die App, die Musik sichtbar macht, auf deiner akustischen Handpan wie auf dem Neotone: Farben, Geometrie und Emotionen.",
         "cta": "App entdecken"
       }
     ],
@@ -177,7 +177,7 @@ export const de: Dict = {
     "duoIntro": "Keine Konkurrenz, sondern Ergänzung. Zwei Welten, die nebeneinander bestehen – ich spiele beide, und keine ersetzt die andere.",
     "duo": [
       {
-        "sub": "Akustischer Handpan · Yishama",
+        "sub": "Akustische Handpan · Yishama",
         "title": "Metall, das atmet",
         "text": "Zwei Instrumente mit 18 Tönen, auf 432 Hz gestimmt und mit Yonathan so entworfen, dass ich mich beim Singen selbst begleiten kann. Der Klang kommt direkt aus dem Metall – nichts steht zwischen ihm und dir.",
         "points": [
@@ -186,12 +186,12 @@ export const de: Dict = {
           "Ich bin Botschafter und Affiliate-Partner von Yishama"
         ],
         "cta": "Meine Geschichte mit Yishama",
-        "alt": "David Lesage mit einem seiner akustischen Yishama-Handpans"
+        "alt": "David Lesage mit einer seiner akustischen Yishama-Handpans"
       },
       {
-        "sub": "Elektronischer Handpan · Neotone",
+        "sub": "Elektronische Handpan · Neotone",
         "title": "Die Klaviatur der Tonleitern",
-        "text": "Der elektronische Handpan von Soundventure, für den ich seit 2021 Betatester bin. Alle Tonleitern in einem einzigen Instrument, mit Kopfhörer wie auf der Bühne.",
+        "text": "Die elektronische Handpan von Soundventure, für die ich seit 2021 Betatester bin. Alle Tonleitern in einem einzigen Instrument, mit Kopfhörer wie auf der Bühne.",
         "points": [
           "Alle Tonleitern in einem einzigen Instrument",
           "Regelbare Lautstärke, Spielen mit Kopfhörer, eingebaute Aufnahmefunktion",
@@ -203,7 +203,7 @@ export const de: Dict = {
     ],
     "duoBridgeEyebrow": "Das Bindeglied",
     "duoBridgeTitle": "Meine App spricht beide Sprachen",
-    "duoBridgeText": "Handpan Constellation Studio hat einen akustischen und einen elektronischen Modus. Wenn deine akustische Tonleiter nicht mehr reicht, sagt dir die Funktion „🎯 Ergänzen“ genau, welche Töne dir fehlen – und was ein zweiter akustischer Handpan oder ein Neotone dazubringen würde. Deine beiden Handpans erscheinen dann nebeneinander, und jeder Akkord landet auf dem Handpan, der ihn spielen kann. Ergänzung statt Konkurrenz.",
+    "duoBridgeText": "Handpan Constellation Studio hat einen akustischen und einen elektronischen Modus. Wenn deine akustische Tonleiter nicht mehr reicht, sagt dir die Funktion „🎯 Ergänzen“ genau, welche Töne dir fehlen – und was eine zweite akustische Handpan oder ein Neotone dazubringen würde. Deine beiden Handpans erscheinen dann nebeneinander, und jeder Akkord landet auf der Handpan, die ihn spielen kann. Ergänzung statt Konkurrenz.",
     "duoBridgeCta": "Handpan Constellation Studio entdecken",
     "whyEyebrow": "Warum ich",
     "whyTitle": "Das Werkzeug, das ich mir als Kind im Unterricht gewünscht hätte",
@@ -212,7 +212,7 @@ export const de: Dict = {
     "whyCta": "Meine Geschichte lesen",
     "showroomBadge": "★ Weltpremiere",
     "showroomTitle": "Der einzige Ort der Welt außer bei den Herstellern in Budapest, an dem du deinen Neotone testen und gleich mitnehmen kannst",
-    "showroomText": "In Paris (20. Arrondissement): Probier die Instrumente aus, lern die Community kennen und nimm deinen Handpan noch am selben Tag mit – ganz ohne Wartezeit auf die Fertigung, zum besten Preis auf dem Markt (−7 %).",
+    "showroomText": "In Paris (20. Arrondissement): Probier die Instrumente aus, lern die Community kennen und nimm deine Handpan noch am selben Tag mit – ganz ohne Wartezeit auf die Fertigung, zum besten Preis auf dem Markt (−7 %).",
     "showroomArgs": [
       "7 % Rabatt – der beste Preis (gegenüber 5 % online)",
       "Keine Fertigungs- oder Wartezeit",
@@ -242,10 +242,10 @@ export const de: Dict = {
     "proofCtaYishama": "Ganze Yishama-Playlist ansehen"
   },
   "neotone": {
-    "title": "Neotone: elektronischer Handpan, Preise und Probespielen in Paris | David Lesage",
-    "description": "Der Neotone, elektronischer Handpan mit Begleitung durch David Lesage: −5 % online, −7 % im Showroom, 6 Jahre Garantie, Preisrechner nach Land.",
-    "heroEyebrow": "Ausrüstung · Digitaler Handpan",
-    "heroTitle": "Der Neotone, der beste elektronische Handpan der Welt",
+    "title": "Neotone: elektronische Handpan, Preise und Probespielen in Paris | David Lesage",
+    "description": "Der Neotone, elektronische Handpan mit Begleitung durch David Lesage: −5 % online, −7 % im Showroom, 6 Jahre Garantie, Preisrechner nach Land.",
+    "heroEyebrow": "Ausrüstung · Digitale Handpan",
+    "heroTitle": "Der Neotone, die beste elektronische Handpan der Welt",
     "heroLead": "Kaufst du über mich, den offiziellen Neotone-Botschafter, bekommst du <strong class=\"text-cream\">−5 % online</strong> (oder <strong class=\"text-cream\">−7 % im Showroom</strong>), <strong class=\"text-cream\">6 Jahre Garantie</strong> und eine persönliche Begleitung, vom Probespielen bis zum Auspacken.",
     "ctaCalc": "Preis berechnen",
     "ctaShowroom": "Besuch im Showroom buchen",
@@ -262,11 +262,11 @@ export const de: Dict = {
     "woodModalViewBottom": "Ansicht von unten",
     "techEyebrow": "Unter der Haube",
     "techTitle": "Präzisionstechnik, von Hand montiert",
-    "techText": "Jeder Neotone¹ wird in Budapest in Handarbeit entwickelt und gebaut. Unter dem Edelholz erfassen millimetergenaue Sensoren gleichzeitig Anschlag, Druck und Position und geben so die Dynamik eines akustischen Handpans originalgetreu wieder. Professionelle Audioelektronik (DAC 24 Bit / 384 kHz, Latenz 5 ms, Signal-Rausch-Abstand 112 dB) macht ihn zu einem digitalen Instrument ohne Kompromisse.",
+    "techText": "Jeder Neotone¹ wird in Budapest in Handarbeit entwickelt und gebaut. Unter dem Edelholz erfassen millimetergenaue Sensoren gleichzeitig Anschlag, Druck und Position und geben so die Dynamik einer akustischen Handpan originalgetreu wieder. Professionelle Audioelektronik (DAC 24 Bit / 384 kHz, Latenz 5 ms, Signal-Rausch-Abstand 112 dB) macht ihn zu einem digitalen Instrument ohne Kompromisse.",
     "specsTitle": "Offizielle technische Daten",
     "stageEyebrow": "Bühne & Studio",
-    "stageTitle": "Der digitale Handpan schlechthin",
-    "stageIntro": "Ein einziger Handpan, unendlich viele Möglichkeiten: Der Neotone hebt die Grenzen der Akustik auf und eröffnet ein ganz neues Spielfeld.",
+    "stageTitle": "Die digitale Handpan schlechthin",
+    "stageIntro": "Eine einzige Handpan, unendlich viele Möglichkeiten: Der Neotone hebt die Grenzen der Akustik auf und eröffnet ein ganz neues Spielfeld.",
     "stage": [
       {
         "t": "Nie wieder Ärger mit der Beschallung",
@@ -282,9 +282,9 @@ export const de: Dict = {
       }
     ],
     "compEyebrow": "Akustisch vs. Neotone",
-    "compTitle": "Der akustische Handpan hat seine Grenzen –<br><span class=\"text-copper\">der Neotone hebt sie auf</span>",
+    "compTitle": "Die akustische Handpan hat ihre Grenzen –<br><span class=\"text-copper\">der Neotone hebt sie auf</span>",
     "compIntro": "Was die Elektronik konkret verändert.",
-    "compLegendAco": "Akustischer Handpan",
+    "compLegendAco": "Akustische Handpan",
     "compLegendNeo": "Elektronischer Neotone",
     "calcEyebrow": "Preisrechner",
     "calcTitle": "Was kostet mich mein Neotone wirklich?",
@@ -306,14 +306,14 @@ export const de: Dict = {
     "stockOnlineSwitch": "Zum Kauf im Showroom wechseln",
     "whyEyebrow": "Zwei Modelle",
     "whyTitle": "Warum ein Instrument mit 10 oder mit 19 Tönen?",
-    "whyP": ["Der <strong>Neotone¹ (10 Töne)</strong> eignet sich sehr gut, um den Handpan zu <strong>entdecken</strong>, zu <strong>meditieren</strong> und in einer Tonleiter zu <strong>improvisieren</strong>.", "Der <strong>Neotone¹ Mutant (19 Töne)</strong> ist dafür gemacht, dein <strong>Hauptinstrument</strong> zu werden oder bei bekannten Liedern <strong>den Gesang zu begleiten</strong>.", "Mit ihm spielst du alle <abbr title=\"Mindestens drei Töne, die zusammen erklingen, zum Beispiel C, E, G.\">Akkorde</abbr> (<abbr title=\"Der Platz eines Akkords in einer Tonart, nummeriert von I bis VII.\">Stufen</abbr>) der <abbr title=\"Die Bezugstonleiter eines Stücks, zum Beispiel C-Dur oder a-Moll.\">Tonarten</abbr> in Dur und Moll auf ein und derselben Tonleiter: I Gleichgewicht, II Schwung, III Abenteuer, IV Entspannung, V Spannung, VI Nostalgie, VII Geheimnis."],
+    "whyP": ["Der <strong>Neotone¹ (10 Töne)</strong> eignet sich sehr gut, um die Handpan zu <strong>entdecken</strong>, zu <strong>meditieren</strong> und in einer Tonleiter zu <strong>improvisieren</strong>.", "Der <strong>Neotone¹ Mutant (19 Töne)</strong> ist dafür gemacht, dein <strong>Hauptinstrument</strong> zu werden oder bei bekannten Liedern <strong>den Gesang zu begleiten</strong>.", "Mit ihm spielst du alle <abbr title=\"Mindestens drei Töne, die zusammen erklingen, zum Beispiel C, E, G.\">Akkorde</abbr> (<abbr title=\"Der Platz eines Akkords in einer Tonart, nummeriert von I bis VII.\">Stufen</abbr>) der <abbr title=\"Die Bezugstonleiter eines Stücks, zum Beispiel C-Dur oder a-Moll.\">Tonarten</abbr> in Dur und Moll auf ein und derselben Tonleiter: I Gleichgewicht, II Schwung, III Abenteuer, IV Entspannung, V Spannung, VI Nostalgie, VII Geheimnis."],
     "whyLinkIntro": "Mehr dazu:",
-    "whyLinkCapo": "Der Kapodaster für den Handpan: dieselbe Form in allen Tonarten",
+    "whyLinkCapo": "Der Kapodaster für die Handpan: dieselbe Form in allen Tonarten",
     "whyCap10": "Neotone¹ – 10 Töne",
     "whyCap19": "Neotone¹ Mutant – 19 Töne",
     "whySchema": "Vereinfachte Darstellung, Ansicht von oben: Jeder Punkt ist ein Ton.",
-    "whyAlt10": "Darstellung eines Handpans von oben mit 10 Tönen: der Ding in der Mitte und 9 Töne ringsum.",
-    "whyAlt19": "Darstellung eines Handpans von oben mit 19 Tönen: der Ding in der Mitte, 9 große Töne im Kreis und 9 kleine Töne direkt innerhalb davon.",
+    "whyAlt10": "Darstellung einer Handpan von oben mit 10 Tönen: der Ding in der Mitte und 9 Töne ringsum.",
+    "whyAlt19": "Darstellung einer Handpan von oben mit 19 Tönen: der Ding in der Mitte, 9 große Töne im Kreis und 9 kleine Töne direkt innerhalb davon.",
     "procEyebrow": "Kaufablauf",
     "procTitle": "Von deiner ersten Frage bis zur Lieferung",
     "procIntro": "Ein einfacher, transparenter Ablauf, mit Begleitung von Anfang bis Ende. Zwei Wege zu deinem Neotone:",
@@ -333,7 +333,7 @@ export const de: Dict = {
     "extrasHeadphonesCta": "Lesen: Welcher Kopfhörer passt?",
     "bridgeEyebrow": "Dein Neotone + die visuelle Methode",
     "bridgeTitle": "Lerne mit Farben und Formen",
-    "bridgeText": "Mit Handpan Constellation Studio lernst du mit Farben und Formen, auf deinem Neotone genauso wie auf einem akustischen Handpan.",
+    "bridgeText": "Mit Handpan Constellation Studio lernst du mit Farben und Formen, auf deinem Neotone genauso wie auf einer akustischen Handpan.",
     "bridgeCta": "Methode entdecken",
     "trustEyebrow": "Vertrauensbeweis",
     "trustTitle": "Ich kenne die Menschen persönlich, die deinen Neotone bauen",
@@ -370,7 +370,7 @@ export const de: Dict = {
     "heroLead": "Zwei Instrumente mit je 18 Tönen, gestimmt auf <strong class=\"text-cream\">432 Hz</strong>, entworfen mit <strong class=\"text-cream\">Yonathan</strong> aus einem einzigen Grund: damit ich singen und mich dabei selbst begleiten kann. Hier ist ihre Geschichte – und was sie mich gelehrt haben.",
     "heroCtaVideo": "Shape of My Heart anhören",
     "heroCtaStory": "Geschichte lesen",
-    "heroImgAlt": "David Lesage hält einen seiner beiden Yishama-Handpans, die Töne auf der Unterseite sind zu sehen",
+    "heroImgAlt": "David Lesage hält eine seiner beiden Yishama-Handpans, die Töne auf der Unterseite sind zu sehen",
     "metEyebrow": "Naxos, Griechenland · 2022",
     "metTitle": "Ein Mann, dem ich zufällig begegnete, am Tag nach einem Konzert",
     "metP1": "Am Abend zuvor hatte ich ein Konzert mit Handpan und Gesang gegeben. Am nächsten Tag treffe ich an der Außenbar des Festivals einen Mann. Ich weiß nicht, wer er ist. Man erklärt mir, dass er einer der besten Handpan-Bauer der Welt ist.",
@@ -390,13 +390,13 @@ export const de: Dict = {
     "whyEyebrow": "Der Grund dahinter",
     "whyTitle": "Warum zwei Handpans – und warum genau diese",
     "whyIntro": "Das sind nicht zwei Instrumente nebeneinander. Es ist ein einziges System in zwei Teilen, gedacht für eine Stimme.",
-    "whyP1": "Der Handpan ist ein wunderschönes und eigensinniges Instrument. Eine Tonleiter ist eine Entscheidung – also ein Verzicht. Neun oder zehn Töne, und es wird immer <strong>der eine</strong> fehlen, mit dem der Akkord spielbar würde, von dem du träumst.",
+    "whyP1": "Die Handpan ist ein wunderschönes und eigensinniges Instrument. Eine Tonleiter ist eine Entscheidung – also ein Verzicht. Neun oder zehn Töne, und es wird immer <strong>der eine</strong> fehlen, mit dem der Akkord spielbar würde, von dem du träumst.",
     "whyP2": "Für einen Sänger ist es noch schlimmer. Eine Stimme zu begleiten braucht <strong>Grundtöne im Bass</strong>: Ohne sie spielt man Umkehrungen, und die Stimme hat keinen Boden mehr unter den Füßen. Ich wollte meinen Gesang auf den tiefsten Ton jedes Akkords setzen und dann das Arpeggio hinaufsteigen – D3-F♯3-A3 auf einem D2, B♭2-D3-F3-B♭3.",
     "whyP3": "Mein Wunsch passte in einen Satz: zwei Instrumente, die mir zusammen alle Kreuze und alle Bs geben. Damit ich in jeder Tonart singen kann, mit dem Grundton jedes Akkords im Bass.",
-    "whyQuote": "Mein Traum ist, mich beim Singen in allen Tonarten mühelos am Handpan zu begleiten, mit dem größtmöglichen Tonumfang, ohne durch fehlende Töne eingeschränkt zu sein.",
+    "whyQuote": "Mein Traum ist, mich beim Singen in allen Tonarten mühelos an der Handpan zu begleiten, mit dem größtmöglichen Tonumfang, ohne durch fehlende Töne eingeschränkt zu sein.",
     "whyQuoteSource": "Absichtserklärung, 22. November 2022",
     "why432Title": "Und warum 432 Hz",
-    "why432Text": "Mich fasziniert, wie Schwingung auf Wasser und auf den Körper wirkt – die Kymatik. Deshalb habe ich Yonathan um eine Stimmung auf Basis des Kammertons A = 432 Hz gebeten. Er antwortete, das sei möglich, aber er müsse sich dessen sicher sein, <em>bevor</em> er mit dem Stimmen beginnt: Bei einem Handpan lässt sich diese Entscheidung nicht rückgängig machen.",
+    "why432Text": "Mich fasziniert, wie Schwingung auf Wasser und auf den Körper wirkt – die Kymatik. Deshalb habe ich Yonathan um eine Stimmung auf Basis des Kammertons A = 432 Hz gebeten. Er antwortete, das sei möglich, aber er müsse sich dessen sicher sein, <em>bevor</em> er mit dem Stimmen beginnt: Bei einer Handpan lässt sich diese Entscheidung nicht rückgängig machen.",
     "recEyebrow": "Mai 2023",
     "recTitle": "Der Tag, an dem sie ankamen",
     "recIntro": "Ich habe keine schönen Aufnahmen von diesem Moment. Ich habe die, die ich mit meinem Handy gemacht habe, in der Reihenfolge, in der alles passiert ist: der Lieferwagen, die Kiste, die Tasche, das Instrument – dann der Brief, und der Tag danach.",
@@ -413,8 +413,8 @@ export const de: Dict = {
     "recZoomHint": "Klick auf ein Foto, um es groß zu öffnen, und blättere dann mit ‹ › durch alle acht. Das Zertifikat ist nur vergrößert lesbar.",
     "recAlt1": "Unscharfes Foto in der Dämmerung: David Lesage in Großaufnahme, mit weit offenem Mund und aufgerissenen Augen. Hinter ihm zwei große, gestapelte Versandkartons; auf dem unteren stehen das Logo und das Wort YISHAMA in großen Buchstaben, dazu die Versandetiketten. Im Hintergrund, hinter der Glastür, parkt der weiße Lieferwagen noch vor dem Haus.",
     "recAlt2": "Blick von oben in den geöffneten Karton: die weiße Styropor-Polsterung und darin eine helle Sperrholzkiste, an den Ecken mit sichtbaren Schrauben verschlossen. Auf dem Deckel, in einer Schutzhülle aus Plastik, ein Kraftpapier-Umschlag mit rotem Wachssiegel. Durch den Spalt unter dem Deckel sieht man die schwarze Tasche mit ihrem roten Rand.",
-    "recAlt3": "Die Hartschalentasche des Handpans von oben, auf hellem Parkett: mattschwarzer Camouflage-Stoff, eine große, erhaben gesteppte Spirale, in der Mitte ein rechteckiges Abzeichen mit dem Wort YISHAMA, roter Rand an der Seite und ein umlaufender Reißverschluss.",
-    "recAlt4": "Die geöffnete Tasche: darin der Handpan, dessen Metall ein warmes, goldenes und bronzefarbenes Licht zurückwirft. In der Mitte der Ding mit seinen konzentrischen Ringen; rundherum die Tonfelder, eingewölbt und gewölbt.",
+    "recAlt3": "Die Hartschalentasche der Handpan von oben, auf hellem Parkett: mattschwarzer Camouflage-Stoff, eine große, erhaben gesteppte Spirale, in der Mitte ein rechteckiges Abzeichen mit dem Wort YISHAMA, roter Rand an der Seite und ein umlaufender Reißverschluss.",
+    "recAlt4": "Die geöffnete Tasche: darin die Handpan, deren Metall ein warmes, goldenes und bronzefarbenes Licht zurückwirft. In der Mitte der Ding mit seinen konzentrischen Ringen; rundherum die Tonfelder, eingewölbt und gewölbt.",
     "recAlt5": "Auf einer Arbeitsplatte aus Holz: der Kraftpapier-Umschlag, jetzt geöffnet, mit seinem roten Wachssiegel und eingeprägtem Monogramm, neben dem Echtheitszertifikat auf strukturiertem Papier.",
     "recAlt6": "Das Echtheitszertifikat von Yishama, ganzseitig. Darauf steht: Certificate of Authenticity, Owner David Lesage, Year 2023, Scale E Major 18, Steel Type Stainless Steel, Notes (A B C♯ D♯) E / (F♯) G♯ B C♯ D♯ E F♯ G♯ A B C♯ D♯ E, Dimensions 53 × 53 × 28 cm, Weight 4,4 kg, der Vermerk „designed and produced at YISHAMA Workshop, Isfiya / Israel“, die handschriftliche Unterschrift von Yhonatan Ale-Yahav und die Identifikationsnummer 483.",
     "recAlt7": "Die Rückseite des Zertifikats: das Yishama-Logo, eine goldene Volute, über dem Wort YISHAMA in Großbuchstaben, auf strukturiertem Papier, unten auf der Seite die Adresse WWW.YISHAMA.COM.",
@@ -428,9 +428,9 @@ export const de: Dict = {
     "insNotes": "Töne",
     "insTuning": "Gestimmt auf 432 Hz",
     "insCredit": "Made by Yishama – entworfen von <strong>Yhonatan Ale-Yahav</strong>. Diese beiden Tonleitern stehen in keinem Katalog: Beide wurden maßgefertigt.",
-    "insCreditBrief": "Das Lastenheft stammt von mir, und es ist das eines Sängers: mich am Handpan begleiten können, wie es ein Gitarrist oder ein Pianist tun würde. Also alle Akkorde spielen können, in allen Tonarten, mit dem Grundton jedes Akkords als Basston – und mit einem Ding. Ich wusste nicht, wie das gehen sollte. Yonathans Scharfsinn hat es möglich gemacht.",
+    "insCreditBrief": "Das Lastenheft stammt von mir, und es ist das eines Sängers: mich an der Handpan begleiten können, wie es ein Gitarrist oder ein Pianist tun würde. Also alle Akkorde spielen können, in allen Tonarten, mit dem Grundton jedes Akkords als Basston – und mit einem Ding. Ich wusste nicht, wie das gehen sollte. Yonathans Scharfsinn hat es möglich gemacht.",
     "insFootnote": "Es sind Einzelstücke. Die Namen sind meine Arbeitstitel, keine Modelle aus dem Yishama-Katalog. Jedes Instrument liefert für sich allein die sieben Stufen seiner Tonleiter, mit dem Grundton im Bass.",
-    "insAppAlt": "Bildschirmfoto von Handpan Constellation Studio, Reiter Logik: meine beiden Yishama-Handpans nebeneinander gezeichnet, alle ihre Töne als farbige Punkte dargestellt – links der E 18 (Ding E3), rechts der D Kurd 18 (Ding D3), die Töne der Unterseite inbegriffen. Die Leiste oben zeigt 6 Akkorde mit dem E 18, 6 mit dem D Kurd 18 und 24 mit beiden zusammen. Darunter die sieben Stufen der beiden zusammen: I Gleichgewicht E, II Schwung F♯m, III Abenteuer G♯m, IV Entspannung A, V Spannung H, VI Nostalgie C♯m, VII Geheimnis D♯°.",
+    "insAppAlt": "Bildschirmfoto von Handpan Constellation Studio, Reiter Logik: meine beiden Yishama-Handpans nebeneinander gezeichnet, alle ihre Töne als farbige Punkte dargestellt – links die E 18 (Ding E3), rechts die D Kurd 18 (Ding D3), die Töne der Unterseite inbegriffen. Die Leiste oben zeigt 6 Akkorde mit der E 18, 6 mit der D Kurd 18 und 24 mit beiden zusammen. Darunter die sieben Stufen der beiden zusammen: I Gleichgewicht E, II Schwung F♯m, III Abenteuer G♯m, IV Entspannung A, V Spannung H, VI Nostalgie C♯m, VII Geheimnis D♯°.",
     "insAppCaption": "Meine beiden Tonleitern vereint in meiner App: sechs Akkorde mit der einen, sechs mit der anderen – und vierundzwanzig, wenn sie zusammen spielen. Genau diese Zahl zeigt, dass Yonathan mir nicht zwei Instrumente gebaut hat, sondern ein System.",
     "insAppZoomHint": "Dichtes Bild: öffne das Bildschirmfoto und klicke dann noch einmal darauf, um es in Originalgröße zu sehen – erst dann lassen sich die Notennamen lesen.",
     "lightbox": {
@@ -440,14 +440,14 @@ export const de: Dict = {
       "zoom": "Foto vergrößern"
     },
     "pairEyebrow": "Zusammen",
-    "pairTitle": "Ein chromatischer Handpan in zwei Teilen",
+    "pairTitle": "Eine chromatische Handpan in zwei Teilen",
     "pairIntro": "Jeder für sich deckt seine Tonleiter ab. Zusammen decken ihre 36 Töne alle zwölf Halbtöne ab – ohne Ausnahme.",
     "pairP1": "Alle 24 Dur- und Mollakkorde werden spielbar, und <strong>jeder hat seinen Grundton im Bass</strong>. Also genau das, worum ich gebeten hatte: nie wieder eine Umkehrung spielen müssen, weil der Bass fehlt.",
-    "pairP2": "Yonathan hat, ohne es je so zu nennen, einen chromatischen Handpan in zwei Teilen gebaut. Er hat die beiden übrigens als System gedacht: Beim ersten hat er einen Ton weggelassen, weil ich ihn schon auf dem zweiten hatte – um Platz für einen anderen zu schaffen.",
-    "pairHonest": "Eine ehrliche Einschränkung: Das beschreibt die <em>Verfügbarkeit der Töne</em>, noch nicht den Fluss der Bewegung. Mitten im Akkord von einem Handpan zum anderen zu wechseln, bleibt eine Turnübung. Genau dieses Problem hat am Ende meine App hervorgebracht.",
+    "pairP2": "Yonathan hat, ohne es je so zu nennen, eine chromatische Handpan in zwei Teilen gebaut. Er hat die beiden übrigens als System gedacht: Bei der ersten hat er einen Ton weggelassen, weil ich ihn schon auf der zweiten hatte – um Platz für einen anderen zu schaffen.",
+    "pairHonest": "Eine ehrliche Einschränkung: Das beschreibt die <em>Verfügbarkeit der Töne</em>, noch nicht den Fluss der Bewegung. Mitten im Akkord von einer Handpan zur anderen zu wechseln, bleibt eine Turnübung. Genau dieses Problem hat am Ende meine App hervorgebracht.",
     "bandeauBadge": "Neu",
     "bandeauTexte": "Dein Yishama spielt mehr, als du denkst. Jetzt siehst du es auch. Entdecke die kostenlose App",
-    "pairAppCta": "Sieh, was die App auf deinem Handpan zeigt",
+    "pairAppCta": "Sieh, was die App auf deiner Handpan zeigt",
     "pairFactLabels": {
       "notes": "Töne insgesamt",
       "keys": "Tonarten",
@@ -511,40 +511,40 @@ export const de: Dict = {
     "bridgeEyebrow": "Was diese beiden Handpans hervorgebracht haben",
     "bridgeTitle": "Die Methode konnte mir niemand geben – es gab sie nicht",
     "bridgeP1": "Ich war glücklich und völlig verloren. Zwei wunderschöne, sehr komplexe Instrumente, angekommen ohne Gebrauchsanleitung. Als hätte man mir zwei Raumschiffe anvertraut – nur dass das Flughandbuch nirgends geschrieben stand, für niemanden.",
-    "bridgeP1b": "Der Handpan ist ein Instrument des <strong>21. Jahrhunderts</strong>, noch mitten in seiner Entwicklung: Hinter ihm stehen weder die Jahrhunderte Klavierpädagogik noch die der Gitarre. Und er kann nicht einmal <em>eine</em> Methode haben – es gibt so viele Handpans wie Tonleitern, Layouts und Tonanzahlen. Was auf einem Instrument stimmt, stimmt auf dem daneben schon nicht mehr. Das hat niemand versäumt: Es ist die Jugend eines lebendigen Instruments.",
-    "bridgeP1c": "Dazu kommt, was seinen Zauber ausmacht: Der Handpan ist meistens ein <strong>modales</strong> Instrument. Das ist eine Stärke und ein wunderbarer Einstieg – gerade wenn man nie Musik gemacht hat, bekommt man fast sofort ein schönes Ergebnis, ohne Theorie. Aber man dreht sich auch sehr schnell im Kreis. Und sobald man Berufsmusiker ist, Chromatik erwartet oder echte Lieder dazu singen will – mein Fall –, wird es sehr komplex, und zwar sehr schnell. Ich kam vom Schlagzeug, einem rein rhythmischen Instrument: Ich hatte keinerlei Grundlagen in Harmonielehre, auf die ich mich stützen konnte.",
+    "bridgeP1b": "Die Handpan ist ein Instrument des <strong>21. Jahrhunderts</strong>, noch mitten in seiner Entwicklung: Hinter ihm stehen weder die Jahrhunderte Klavierpädagogik noch die der Gitarre. Und sie kann nicht einmal <em>eine</em> Methode haben – es gibt so viele Handpans wie Tonleitern, Layouts und Tonanzahlen. Was auf einem Instrument stimmt, stimmt auf dem daneben schon nicht mehr. Das hat niemand versäumt: Es ist die Jugend eines lebendigen Instruments.",
+    "bridgeP1c": "Dazu kommt, was ihren Zauber ausmacht: Die Handpan ist meistens ein <strong>modales</strong> Instrument. Das ist eine Stärke und ein wunderbarer Einstieg – gerade wenn man nie Musik gemacht hat, bekommt man fast sofort ein schönes Ergebnis, ohne Theorie. Aber man dreht sich auch sehr schnell im Kreis. Und sobald man Berufsmusiker ist, Chromatik erwartet oder echte Lieder dazu singen will – mein Fall –, wird es sehr komplex, und zwar sehr schnell. Ich kam vom Schlagzeug, einem rein rhythmischen Instrument: Ich hatte keinerlei Grundlagen in Harmonielehre, auf die ich mich stützen konnte.",
     "bridgeP2": "Im August 2023 habe ich ein Dokument angefangen, um endlich zu sehen, wie ich meine Akkorde auf meinen beiden Handpans zusammensetzen kann. Farbige Karten, eine Farbe pro Ton. <strong>Aus diesem Dokument wurde Handpan Constellation Studio.</strong>",
     "bridgeDocAlt": "Seite eines im August 2023 von Hand erstellten Dokuments mit dem Titel „Complete handpan Maping of placment of notes on the handpans by type of note“ / „Vollständige Übersicht über die Lage der Töne auf den Handpans, nach Notennamen geordnet“ (Originalschreibweise). Links der Korpus des E 18 auf ockerfarbenem Grund, sein Ding E3 in der Mitte und alle seine Töne ringsum als farbige Punkte; rechts der Korpus des D Kurd 18 auf cremefarbenem Grund, sein Ding D3 in der Mitte, seine Töne genauso angeordnet, die auf der Unterseite eingeschlossen. Unten ein chromatisches Raster über vier Oktaven, von C2 bis H5: Die Felder der tatsächlich vorhandenen Töne sind ausgemalt, die anderen bleiben blass. Jeder Notenname hat seine Farbe, in allen Oktaven dieselbe: C in Rot, D in Orange, E in Gelb, F in Grün, G in Cyan, A in Blau, H in Magenta. Rechts gibt eine kleine Tabelle „Reminder / Rappel“ die Entsprechung an: C = Do, D = Ré, E = Mi…",
     "bridgeDocCaption": "August 2023, Seite 4 von 21 dieses Dokuments: meine beiden Handpans von Hand gezeichnet, mit allen ihren Tönen, und darunter die vier Oktaven, in denen ich die Töne ausmalte, die ich wirklich besaß. Eine Farbe pro Notenname, egal in welcher Oktave – das ist schon die Regel der ChromaKeys in der App, drei Jahre bevor es sie gab. Fertig geworden bin ich nie: Ich habe unterwegs aufgehört, weil es für mich zu komplex war, um es zu erfassen. Meine Kenntnisse in Musiktheorie reichten nicht aus, um alles richtig zu verstehen und zu modellieren.",
     "bridgeDocZoomHint": "Dichtes Bild: Öffne es und klicke dann noch einmal darauf, um es in Originalgröße zu sehen – erst dann lassen sich die Notennamen und das Raster lesen.",
     "bridgeP3": "Das Verblüffendste ist, dass die Ausgangsfrage von ihm kam. Schon im August 2022 schrieb mir Yonathan über das Instrument „chromatisch, Sänger-Komponist“: „Versuch, in der App Stücke in dieser Tonleiter zu spielen, damit wir verstehen, welche Töne dir fehlen – und einen Weg finden, sie hinzuzufügen.“ Drei Jahre später beantwortet die App diese Frage, für alle.",
-    "bridgeAppTitle": "Was die App heute für einen akustischen Handpan tut",
+    "bridgeAppTitle": "Was die App heute für eine akustische Handpan tut",
     "bridgeAppIntro": "Alles Folgende ist kostenlos und braucht kein elektronisches Instrument.",
     "bridgeApp": [
       {
         "t": "Deine Tonleiter in Farbe",
-        "d": "Du wählst dein Instrument: Die App zeichnet deinen Korpus mit deinen tatsächlichen Tönen, jeder in seiner eigenen Farbe. Der Bildschirm wird zum Spiegel deines Handpans."
+        "d": "Du wählst dein Instrument: Die App zeichnet deinen Korpus mit deinen tatsächlichen Tönen, jeder in seiner eigenen Farbe. Der Bildschirm wird zum Spiegel deiner Handpan."
       },
       {
         "t": "Der Kammerton 440 / 432 Hz",
-        "d": "Eine Einstellung stimmt die App auf deinen Handpan ein – damit das, was du in der App hörst, sauber zu dem klingt, was du in den Händen hast."
+        "d": "Eine Einstellung stimmt die App auf deine Handpan ein – damit das, was du in der App hörst, sauber zu dem klingt, was du in den Händen hast."
       },
       {
         "t": "🎯 Deine Tonleiter ergänzen",
-        "d": "Die App vergleicht deine tatsächlichen Töne mit dem, was die Akkorde verlangen, und sagt dir genau, welche dir fehlen – dann, welcher zweite Handpan sie mitbringen würde und wie viele Stücke das freischalten würde."
+        "d": "Die App vergleicht deine tatsächlichen Töne mit dem, was die Akkorde verlangen, und sagt dir genau, welche dir fehlen – dann, welche zweite Handpan sie mitbringen würde und wie viele Stücke das freischalten würde."
       },
       {
         "t": "Deine 2 Handpans nebeneinander",
-        "d": "Sobald ein zweiter Handpan dazukommt, werden beide Korpusse nebeneinander angezeigt, und jeder Akkord wird auf dem Handpan eingezeichnet, der ihn trägt, mit Spielreihenfolge und Händen. Genau mein Gymnastik-Problem – auf dem Bildschirm gelöst."
+        "d": "Sobald eine zweite Handpan dazukommt, werden beide Korpusse nebeneinander angezeigt, und jeder Akkord wird auf der Handpan eingezeichnet, die ihn trägt, mit Spielreihenfolge und Händen. Genau mein Gymnastik-Problem – auf dem Bildschirm gelöst."
       }
     ],
     "bridgeSignature": "Meine beiden maßgeschneiderten Tonleitern sind in der App, mit dem Badge ✨ „Signature David Lesage“. Das Badge trägt meinen Namen: Das Lastenheft stammt von mir, aber die Tonleitern sind <strong>Made by Yishama – entworfen von Yhonatan Ale-Yahav</strong>. Du kannst sie laden, anhören und sehen, was sie ermöglichen, auch ohne sie unter den Händen zu haben.",
     "bridgeHonest": "Ehrlich gesagt: Die App hört dir nicht zu. Sie erkennt deine Tonleiter nicht über das Mikrofon – du wählst sie aus oder baust deinen Korpus Ton für Ton auf. Von da an rechnet sie mit deinen tatsächlichen Tönen.",
     "bridgeCta": "Handpan Constellation Studio entdecken",
-    "bridgeCtaBlog": "Lesen: die App mit deinem akustischen Handpan nutzen",
+    "bridgeCtaBlog": "Lesen: die App mit deiner akustischen Handpan nutzen",
     "endEyebrow": "Und jetzt",
-    "endTitle": "Den Handpan zu einem echten Begleitinstrument machen",
-    "endText": "Mein Traum hat sich nicht geändert: den Handpan auf Augenhöhe mit Gitarre oder Klavier zu bringen, um eine Stimme zu begleiten. Diese beiden Instrumente haben mir gezeigt, dass es möglich ist – und mich gezwungen, die fehlende Methode zu erfinden. Diesen Weg gehe ich weiter, ohne Akustik und Elektronik gegeneinander auszuspielen.",
+    "endTitle": "Die Handpan zu einem echten Begleitinstrument machen",
+    "endText": "Mein Traum hat sich nicht geändert: die Handpan auf Augenhöhe mit Gitarre oder Klavier zu bringen, um eine Stimme zu begleiten. Diese beiden Instrumente haben mir gezeigt, dass es möglich ist – und mich gezwungen, die fehlende Methode zu erfinden. Diesen Weg gehe ich weiter, ohne Akustik und Elektronik gegeneinander auszuspielen.",
     "endCtaShowroom": "Komm sie im Showroom hören",
     "endCtaYishama": "Yishama entdecken"
   },
@@ -620,7 +620,7 @@ export const de: Dict = {
       },
       "micros": {
         "label": "Mikrofone",
-        "blurb": "Tonabnahme für akustischen Handpan, Stimme und Gong."
+        "blurb": "Tonabnahme für akustische Handpan, Stimme und Gong."
       },
       "accessoires": {
         "label": "Zubehör",
@@ -657,18 +657,18 @@ export const de: Dict = {
     "products": {
       "handpan-studio": {
         "name": "Handpan Constellation Studio · die App",
-        "description": "Meine Lern-App, für den akustischen Handpan wie für den Neotone: Farben, Geometrie und Emotionen machen Musik sichtbar. Kostenlos für immer, Essenziell für 3,49 € inkl. MwSt./Monat und Studio für 9,99 € inkl. MwSt./Monat, mit 1 kostenlosen Testmonat."
+        "description": "Meine Lern-App, für die akustische Handpan wie für den Neotone: Farben, Geometrie und Emotionen machen Musik sichtbar. Kostenlos für immer, Essenziell für 3,49 € inkl. MwSt./Monat und Studio für 9,99 € inkl. MwSt./Monat, mit 1 kostenlosen Testmonat."
       },
       "neotone-one": {
         "name": "Neotone¹",
-        "description": "Digitaler Handpan mit 10 Tönen, alle Tonleitern, Studioqualität. Begleiteter Kauf: persönlicher Rabattcode + 6 Jahre Garantie."
+        "description": "Digitale Handpan mit 10 Tönen, alle Tonleitern, Studioqualität. Begleiteter Kauf: persönlicher Rabattcode + 6 Jahre Garantie."
       },
       "neotone-mutant": {
         "name": "Neotone¹ Mutant",
-        "description": "Digitaler Handpan mit 19 Tönen und LCD-Display, maximale Ausdruckskraft. Begleiteter Kauf: Rabattcode + 6 Jahre Garantie."
+        "description": "Digitale Handpan mit 19 Tönen und LCD-Display, maximale Ausdruckskraft. Begleiteter Kauf: Rabattcode + 6 Jahre Garantie."
       },
       "yishama": {
-        "name": "Außergewöhnlicher Yishama-Handpan",
+        "name": "Außergewöhnliche Yishama-Handpan",
         "description": "Einer der besten Handpan-Hersteller der Welt (Israel / Ungarn). Handwerkliche Fertigung, Instrumente mit bis zu 19 Tönen, tiefen Bässen und strahlenden Höhen. Ich vertrete ihn mit Stolz als Botschafter."
       },
       "gonilele": {
@@ -693,15 +693,15 @@ export const de: Dict = {
       },
       "micro-hisong": {
         "name": "Hisong-Mikrofon AirStudio S1",
-        "description": "Das erste mobile All-in-one-Studio: Mikrofon mit zwei Modi, kabelloses Kopfhörer-Monitoring, Audio-Interface, kabelloser Empfänger fürs Handy (RX Mini), Magnethalterung und Etui. Ideal für Stimme, akustischen Handpan und Gonilélé: ein echtes tragbares Studio.<br><br><strong>Preis (inkl. MwSt., Lieferung innerhalb Frankreichs):</strong> das S1 allein <strong>270,95 €</strong>; mit dem <strong>RX Plus</strong> (+90 €) <strong>360,95 €</strong>, also <strong>342,91 €</strong> mit meinem Code −5 % und versandkostenfrei.<br><br><strong>Mein Tipp:</strong> Wenn du das Mikrofon zum <strong>Live-Spielen</strong> nutzen willst, brauchst du den <strong>RX Plus</strong> (Universal Pack): Er schickt den Ton an die PA, das Mischpult oder eine Kamera.<br><br>Vorführungen und Direktkauf bei meinen Treffen in Paris."
+        "description": "Das erste mobile All-in-one-Studio: Mikrofon mit zwei Modi, kabelloses Kopfhörer-Monitoring, Audio-Interface, kabelloser Empfänger fürs Handy (RX Mini), Magnethalterung und Etui. Ideal für Stimme, akustische Handpan und Gonilélé: ein echtes tragbares Studio.<br><br><strong>Preis (inkl. MwSt., Lieferung innerhalb Frankreichs):</strong> das S1 allein <strong>270,95 €</strong>; mit dem <strong>RX Plus</strong> (+90 €) <strong>360,95 €</strong>, also <strong>342,91 €</strong> mit meinem Code −5 % und versandkostenfrei.<br><br><strong>Mein Tipp:</strong> Wenn du das Mikrofon zum <strong>Live-Spielen</strong> nutzen willst, brauchst du den <strong>RX Plus</strong> (Universal Pack): Er schickt den Ton an die PA, das Mischpult oder eine Kamera.<br><br>Vorführungen und Direktkauf bei meinen Treffen in Paris."
       },
       "micro-muling": {
         "name": "Muling-Mikrofon MP1 + Vorverstärker HMP-2",
-        "description": "Das MP1 ist ein Kontakt-Kondensatormikrofon, entwickelt für den akustischen Handpan. Geliefert mit dem Vorverstärker HMP-2, an den bis zu zwei MP1 passen: für eine klare, präzise Stereo-Abnahme ohne Rückkopplung. Ideal für Bühne und Aufnahme."
+        "description": "Das MP1 ist ein Kontakt-Kondensatormikrofon, entwickelt für die akustische Handpan. Geliefert mit dem Vorverstärker HMP-2, an den bis zu zwei MP1 passen: für eine klare, präzise Stereo-Abnahme ohne Rückkopplung. Ideal für Bühne und Aufnahme."
       },
       "atlas": {
         "name": "Handpan-Ständer Atlas: Pro & All",
-        "description": "Die magnetischen Dreibeinständer des italienischen Herstellers Atlas. Der Handpan liegt auf einer schwebenden Scheibe mit acht geschützten Magneten, ohne Schrauben oder Gurt. Zwei Modelle: der <strong>Atlas Pro</strong> aus Aluminium, teleskopierbar, 1,8 kg, mit Transporttasche (250 €); der <strong>Atlas All</strong> aus Holz, dessen Kopf du im Sitzen zwischen die Beine klemmst und der mit Beinen und Verlängerungen auch zum Spielen im Stehen taugt (270 €). Ich bin Partner der Marke: Beide stehen im Showroom, du kannst sie vor Ort ausprobieren."
+        "description": "Die magnetischen Dreibeinständer des italienischen Herstellers Atlas. Die Handpan liegt auf einer schwebenden Scheibe mit acht geschützten Magneten, ohne Schrauben oder Gurt. Zwei Modelle: der <strong>Atlas Pro</strong> aus Aluminium, teleskopierbar, 1,8 kg, mit Transporttasche (250 €); der <strong>Atlas All</strong> aus Holz, dessen Kopf du im Sitzen zwischen die Beine klemmst und der mit Beinen und Verlängerungen auch zum Spielen im Stehen taugt (270 €). Ich bin Partner der Marke: Beide stehen im Showroom, du kannst sie vor Ort ausprobieren."
       },
       "phoenix-opus1": {
         "name": "L’Alliance du Phoenix – Opus I",
@@ -852,7 +852,7 @@ export const de: Dict = {
     },
     "curiousTitle": "Zwei Fragen, nur aus Neugier",
     "curiousHint": "Du musst nicht antworten – es geht nur darum, dich kennenzulernen.",
-    "playingSinceLabel": "Der Handpan und du: Wie lange geht das schon?",
+    "playingSinceLabel": "Die Handpan und du: Wie lange geht das schon?",
     "playingSinceChoose": "Auswählen …",
     "playingSinceNames": {
       "none": "Ich spiele noch nicht",
@@ -865,7 +865,7 @@ export const de: Dict = {
     "freeMessageLabel": "Deine Nachricht",
     "freeMessageHint": "Schreib, so viel du willst – ich lese alles.",
     "sessionTypeRecommended": "★ empfohlen für den Einstieg",
-    "sessionTypeHint": "Du hast gerade dein Instrument bekommen – Neotone, akustischer Handpan, Mikrofon – und fühlst dich ein bisschen verloren? Das läuft als Unterricht: Wähl „Unterricht bei David nehmen“, wir starten gemeinsam, stellen alles ein und du lernst, alles selbst zu bedienen – ohne dich langfristig zu binden.",
+    "sessionTypeHint": "Du hast gerade dein Instrument bekommen – Neotone, akustische Handpan, Mikrofon – und fühlst dich ein bisschen verloren? Das läuft als Unterricht: Wähl „Unterricht bei David nehmen“, wir starten gemeinsam, stellen alles ein und du lernst, alles selbst zu bedienen – ohne dich langfristig zu binden.",
     "durationLabel": "Wie viel Zeit sollen wir uns nehmen?",
     "durationHint": "Für eine Einführung empfehle ich 1 Std. 30 Min.: Ich gebe dir alles mit, was du brauchst, um selbstständig zu spielen.",
     "slotsTitle": "Deine Wunschtermine",
@@ -882,7 +882,7 @@ export const de: Dict = {
     "instrumentsLabel": "Welche Instrumente möchtest du entdecken?",
     "instrumentsHint": "Kreuz an, was dich interessiert – ich bereite alles für deinen Besuch vor.",
     "instrumentNames": {
-      "neotone": "Neotone (elektronischer Handpan)",
+      "neotone": "Neotone (elektronische Handpan)",
       "calebasse": "Kalebasse",
       "gonilele": "Gonilélé (afrikanische Harfe)",
       "mic-hisong": "Hisong-Mikrofon",
@@ -939,12 +939,12 @@ export const de: Dict = {
     },
   },
   "muling": {
-    "title": "Muling-Mikrofon für akustischen Handpan | David Lesage",
-    "description": "Das Muling-Mikrofon für akustischen Handpan, getestet von David Lesage: klare, präzise Abnahme ohne Rückkopplung. Ausführliches Testvideo und Fotos.",
+    "title": "Muling-Mikrofon für akustische Handpan | David Lesage",
+    "description": "Das Muling-Mikrofon für akustische Handpan, getestet von David Lesage: klare, präzise Abnahme ohne Rückkopplung. Ausführliches Testvideo und Fotos.",
     "back": "← Zurück zum Shop",
-    "eyebrow": "Mikrofon für akustischen Handpan",
+    "eyebrow": "Mikrofon für akustische Handpan",
     "heroTitle": "Das Muling-Mikrofon",
-    "heroLead": "Ein Mikrofon, das eigens für den akustischen Handpan entwickelt wurde: eine klare, präzise und originalgetreue Abnahme ohne Rückkopplung, auf der Bühne wie bei der Aufnahme. Ich habe es ausgiebig getestet, hier ist mein ausführlicher Bericht.",
+    "heroLead": "Ein Mikrofon, das eigens für die akustische Handpan entwickelt wurde: eine klare, präzise und originalgetreue Abnahme ohne Rückkopplung, auf der Bühne wie bei der Aufnahme. Ich habe es ausgiebig getestet, hier ist mein ausführlicher Bericht.",
     "ctaInterested": "Dieses Mikro interessiert mich",
     "ctaVideo": "Meinen ausführlichen Test ansehen",
     "videoTitle": "Mein ausführlicher Test im Video",
@@ -952,11 +952,11 @@ export const de: Dict = {
     "photosTitle": "Das Mikrofon in Bildern",
     "photosIntro": "Meine eigenen Fotos vom Mikrofon und von seiner Montage am Instrument.",
     "whyTitle": "Warum ich es empfehle",
-    "whyText": "Einen akustischen Handpan zu verstärken ist eine echte Herausforderung: Allzweckmikrofone nehmen die Obertöne schlecht ab, und sobald man lauter dreht, droht Rückkopplung. Das Muling ist genau für dieses Instrument gedacht: Es nimmt den Klang direkt an der Quelle ab, bewahrt den Reichtum der Obertöne und lässt dich den Pegel hochziehen, ohne dass es pfeift. Das hat mich überzeugt, es zu vertreten.",
+    "whyText": "Eine akustische Handpan zu verstärken ist eine echte Herausforderung: Allzweckmikrofone nehmen die Obertöne schlecht ab, und sobald man lauter dreht, droht Rückkopplung. Das Muling ist genau für dieses Instrument gedacht: Es nimmt den Klang direkt an der Quelle ab, bewahrt den Reichtum der Obertöne und lässt dich den Pegel hochziehen, ohne dass es pfeift. Das hat mich überzeugt, es zu vertreten.",
     "whyPoints": [
       {
-        "t": "Für den Handpan entwickelt",
-        "d": "Ein Kontaktmikrofon, das für den Korpus und die Obertöne des Handpans gedacht ist, kein zweckentfremdetes Allzweckmikrofon."
+        "t": "Für die Handpan entwickelt",
+        "d": "Ein Kontaktmikrofon, das für den Korpus und die Obertöne der Handpan gedacht ist, kein zweckentfremdetes Allzweckmikrofon."
       },
       {
         "t": "Ohne Rückkopplung",
@@ -1053,7 +1053,7 @@ export const de: Dict = {
     "specsCaution": "⚠️ Gut zu wissen vor dem Kauf: Die Kapseln funktionieren ausschließlich mit dem Muling-Vorverstärker. Mit Geräten anderer Marken sind sie nicht kompatibel. Es ist ein Komplettsystem, keine Kapsel zum Einbau in ein bestehendes Setup.",
     "specsSource": "Technische Daten laut Hersteller, abgeglichen mit meinem eigenen Einsatz.",
     "boxTitle": "Was im Set enthalten ist",
-    "boxIntro": "Das HMP-2-Set ist komplett: zwei Kapseln und der Vorverstärker, startklar für einen oder zwei Handpans.",
+    "boxIntro": "Das HMP-2-Set ist komplett: zwei Kapseln und der Vorverstärker, startklar für eine oder zwei Handpans.",
     "boxItems": [
       "2 magnetische Kontaktkapseln (aktive Mikrofone)",
       "1 zweikanaliger Vorverstärker HMP-2",
@@ -1065,9 +1065,9 @@ export const de: Dict = {
       "Kabelclips (wire clips)",
       "Die Bedienungsanleitung des Herstellers"
     ],
-    "boxNote": "Ein Set reicht für zwei Handpans: eine Kapsel pro Instrument, beide im Vorverstärker gemischt. Bei nur einem Handpan kannst du beide Kapseln anbringen, für eine ausgewogenere Abnahme.",
+    "boxNote": "Ein Set reicht für zwei Handpans: eine Kapsel pro Instrument, beide im Vorverstärker gemischt. Bei nur einer Handpan kannst du beide Kapseln anbringen, für eine ausgewogenere Abnahme.",
     "preampTitle": "Der Vorverstärker HMP-2 im Detail",
-    "preampIntro": "Das Herzstück des Systems: ein zweikanaliger Vorverstärker, eigens für den Handpan entwickelt, mit eingebauter Klangregelung.",
+    "preampIntro": "Das Herzstück des Systems: ein zweikanaliger Vorverstärker, eigens für die Handpan entwickelt, mit eingebauter Klangregelung.",
     "preampFeatures": [
       {
         "t": "Zwei unabhängige Kanäle",
@@ -1129,7 +1129,7 @@ export const de: Dict = {
       },
       {
         "t": "Das Sortiment",
-        "d": "Muling entwickelt drei Produktfamilien für Saiteninstrumente. Dazu kommen eine eigene Produktlinie für den Handpan – darunter das hier vorgestellte Set HMP-2 – und individuell gefertigte Signature-Tonabnehmer."
+        "d": "Muling entwickelt drei Produktfamilien für Saiteninstrumente. Dazu kommen eine eigene Produktlinie für die Handpan – darunter das hier vorgestellte Set HMP-2 – und individuell gefertigte Signature-Tonabnehmer."
       }
     ],
     "makerLinksTitle": "Muling folgen",
@@ -1147,7 +1147,7 @@ export const de: Dict = {
     "powerWarning": "⚠️ Wichtig: Das Netzteil ist nicht im Set enthalten. Du musst es separat kaufen. Prüf die Daten genau (9 V, mindestens 300 mA, Minus innen), damit du den Vorverstärker nicht beschädigst.",
     "manualTitle": "Die Anleitung des Herstellers",
     "manualIntro": "Die beiden Seiten der mitgelieferten Anleitung, mit den empfohlenen Positionen für die Tonabnehmer und den technischen Daten.",
-    "relatedTitle": "Und wenn du auf einem elektronischen Handpan spielst?",
+    "relatedTitle": "Und wenn du auf einer elektronischen Handpan spielst?",
     "relatedText": "Der Neotone braucht kein Mikrofon: Er wird direkt per Klinke angeschlossen. Wenn du zwischen akustisch und elektronisch schwankst, hilft dir mein Vergleich bei der Wahl.",
     "relatedCta": "Den Neotone entdecken"
   },
@@ -1205,7 +1205,7 @@ export const de: Dict = {
   },
   "atlas": {
     "title": "Atlas-Handpan-Ständer – Atlas Pro & Atlas All | David Lesage",
-    "description": "Die magnetischen Dreibeinständer Atlas für den Handpan, hergestellt in Italien: Atlas Pro aus Aluminium (250 €) und Atlas All aus Holz (270 €), −10 % mit dem Code DAVID-ATLAS. Technische Daten, Fotos und Ausprobieren in Paris bei David Lesage, Partner der Marke.",
+    "description": "Die magnetischen Dreibeinständer Atlas für die Handpan, hergestellt in Italien: Atlas Pro aus Aluminium (250 €) und Atlas All aus Holz (270 €), −10 % mit dem Code DAVID-ATLAS. Technische Daten, Fotos und Ausprobieren in Paris bei David Lesage, Partner der Marke.",
     "back": "← Zurück zum Shop",
     "eyebrow": "Partner · Atlas Handpan",
     "heroProCaption": "Aluminium: derselbe Ständer, aufgeklappt und zusammengeklappt",
@@ -1226,7 +1226,7 @@ export const de: Dict = {
       },
       {
         "t": "Magnetische Halterung",
-        "d": "Der Handpan liegt auf einer schwebenden Scheibe mit acht Magneten. Laut Atlas sind sie geschützt und genau unter den Stellen angebracht, an denen das Instrument die Auflage berührt: Nichts klemmt, drückt oder reibt am Metall."
+        "d": "Die Handpan liegt auf einer schwebenden Scheibe mit acht Magneten. Laut Atlas sind sie geschützt und genau unter den Stellen angebracht, an denen das Instrument die Auflage berührt: Nichts klemmt, drückt oder reibt am Metall."
       },
       {
         "t": "Hergestellt in Italien",
@@ -1235,7 +1235,7 @@ export const de: Dict = {
     ],
     "solutionFacts": [
       {
-        "t": "Passt zu deinem Handpan",
+        "t": "Passt zu deiner Handpan",
         "d": "Laut Atlas ist die Auflage für alle Handpans entwickelt und mit vielen Herstellern getestet, und die Magnete funktionieren mit nitriertem Stahl, Edelstahl und Ember Steel."
       },
       {
@@ -1291,7 +1291,7 @@ export const de: Dict = {
     "videoDavidQuote": "Ich habe in alle oder fast alle Handpan-Ständer investiert, und ich erkläre dir, warum ich heute mit Atlas voll auf meine Kosten komme.",
     "videoDavidSource": "David Lesage in seinem YouTube-Video",
     "modelsTitle": "Zwei Modelle",
-    "modelsIntro": "Beide machen dieselbe Arbeit: den Handpan auf einer schwebenden Magnetscheibe halten. Sie tun es nicht mit denselben Materialien und nicht im selben Höhenbereich. Hier steht, was der Hersteller angibt, ohne etwas hinzuzufügen.",
+    "modelsIntro": "Beide machen dieselbe Arbeit: die Handpan auf einer schwebenden Magnetscheibe halten. Sie tun es nicht mit denselben Materialien und nicht im selben Höhenbereich. Hier steht, was der Hersteller angibt, ohne etwas hinzuzufügen.",
     "modelsDavidLead": "Über das Pro-Modell, in seinem Video:",
     "modelsDavidQuote": "Also, ich weiß nicht, was an ihm so viel professioneller ist, außer dass er aus Aluminium total stylisch ist und dass er sich dreimal schneller aufbauen lässt. Also ja, er ist viel professioneller und viel leichter, mit hochwertigen Materialien, die lange halten. Ultraschnell, viel schlanker, leicht zu transportieren und zu verstauen. Das Konzept ist genau dasselbe wie beim ersten.",
     "modelsDavidSource": "David Lesage in seinem YouTube-Video",
@@ -1345,15 +1345,15 @@ export const de: Dict = {
     },
     "headEyebrow": "Der Kopf des Ständers",
     "headTitle": "Ein Ständer – aber nicht nur ein Ständer",
-    "headIntro": "Der obere Teil des Ständers, den Atlas selbst Atlas Body nennt, ist nicht nur ein Stück, das man auf Beine schraubt. Zwischen die Oberschenkel geklemmt, hält er den Handpan über deinem Schoß, während du auf einem Stuhl oder Sofa sitzt und spielst – ohne Standbeine, ohne Dreibein und ohne das Instrument auf deine Beine zu legen.",
+    "headIntro": "Der obere Teil des Ständers, den Atlas selbst Atlas Body nennt, ist nicht nur ein Stück, das man auf Beine schraubt. Zwischen die Oberschenkel geklemmt, hält er die Handpan über deinem Schoß, während du auf einem Stuhl oder Sofa sitzt und spielst – ohne Standbeine, ohne Dreibein und ohne das Instrument auf deine Beine zu legen.",
     "headPoints": [
       {
         "t": "Das Instrument liegt nicht mehr auf dir",
-        "d": "Der Kopf trägt den Handpan, nicht deine Oberschenkel. Atlas nennt für seine Holzreihe drei Spielpositionen: auf den Knien, im Sitzen, im Stehen."
+        "d": "Der Kopf trägt die Handpan, nicht deine Oberschenkel. Atlas nennt für seine Holzreihe drei Spielpositionen: auf den Knien, im Sitzen, im Stehen."
       },
       {
         "t": "Die Töne auf der Unterseite bleiben erreichbar",
-        "d": "Das Instrument liegt nicht mehr an deinem Körper an. Atlas hebt hervor, dass man die Töne ungehindert erreicht – was vor allem zählt, wenn dein Handpan auch Töne auf der Unterseite hat."
+        "d": "Das Instrument liegt nicht mehr an deinem Körper an. Atlas hebt hervor, dass man die Töne ungehindert erreicht – was vor allem zählt, wenn deine Handpan auch Töne auf der Unterseite hat."
       },
       {
         "t": "Ein offener Kopf",
@@ -1364,8 +1364,8 @@ export const de: Dict = {
     "headAcousticText": "Atlas schreibt, sein Ständer sei „aus der Suche nach einem besseren Klang entstanden“, er „absorbiert keine Schwingungen und verstärkt die Resonanz“, und „seine hohle Form lässt den Klang ungehindert zirkulieren“. Über den Kopf allein heißt es, er verbessere die Kontrolle über das Instrument, „ohne die Schwingungen zu behindern“.",
     "headAcousticNote": "Das sind ihre Worte, nicht meine: Beim Klang übernehme ich keine Behauptung, ohne sie selbst gehört zu haben. Was ich dazu sage, steht in meinem Video – hier ist es.",
     "headAcousticDavidLead": "Über seinen alten Ständer mit Saugnäpfen, dann über den Atlas-Kopf:",
-    "headAcousticDavidQuote1": "Dieses Saugsystem hat einen Nachteil: Es schluckt die Schwingungen des Handpans, und das ist nicht so toll, weil man dadurch den Klang des Handpans verliert, jedenfalls einen Teil davon.",
-    "headAcousticDavidQuote2": "Dass er Löcher hat, na ja, das ist superwichtig, weil der Klang des Handpans dadurch entweichen kann.",
+    "headAcousticDavidQuote1": "Dieses Saugsystem hat einen Nachteil: Es schluckt die Schwingungen der Handpan, und das ist nicht so toll, weil man dadurch den Klang der Handpan verliert, jedenfalls einen Teil davon.",
+    "headAcousticDavidQuote2": "Dass er Löcher hat, na ja, das ist superwichtig, weil der Klang der Handpan dadurch entweichen kann.",
     "headAcousticDavidSource": "David Lesage in seinem YouTube-Video",
     "headIncludedTitle": "Inklusive oder extra zu kaufen?",
     "headIncluded": [
@@ -1392,26 +1392,26 @@ export const de: Dict = {
     "showroomText": "Beide Ständer stehen im Showroom in Paris (20. Arrondissement), neben den Handpans. Du kannst ein Instrument daraufsetzen, die Höhe einstellen, im Stehen spielen und herausfinden, welcher der beiden zu dir passt – ohne etwas zu kaufen.",
     "showroomPoints": [
       "Beide Modelle nebeneinander, nicht zwei Fotos",
-      "Ein Handpan liegt darauf: Du stellst die Höhe selbst ein, erst im Sitzen, dann im Stehen",
+      "Eine Handpan liegt darauf: Du stellst die Höhe selbst ein, erst im Sitzen, dann im Stehen",
       "Ohne etwas zu kaufen – du gehst mit deiner Meinung nach Hause, nicht mit einem Karton"
     ],
     "showroomAgendaCta": "Nächste Termine ansehen",
-    "showroomPhotoCaption": "Der Showroom, aufgebaut vor einem Treffen: meine zwei akustischen Handpans von Yishama und meine zwei elektronischen Handpans von {neotone}, jeder auf seinem eigenen Ständer – vier Instrumente, vier verschiedene Ständer. Die beiden Atlas haben dort inzwischen ihren Platz gefunden, und dort kannst du sie ausprobieren.",
+    "showroomPhotoCaption": "Der Showroom, aufgebaut vor einem Treffen: meine zwei akustischen Handpans von Yishama und meine zwei elektronischen Handpans von {neotone}, jede auf ihrem eigenen Ständer – vier Instrumente, vier verschiedene Ständer. Die beiden Atlas haben dort inzwischen ihren Platz gefunden, und dort kannst du sie ausprobieren.",
     "promoTitle": "Mein Code bei Atlas",
     "promoText": "Hier ist mein Code: −{pct} % auf alle Atlas-Produkte, auch auf den Atlas Body. Du gibst ihn beim Bezahlen auf der Website von Atlas ein – ob du online bestellst oder nachdem du sie im Showroom ausprobiert hast.",
     "promoDisclosure": "Dieser Code ist mein Botschafter-Link bei Atlas: Du zahlst dadurch keinen Cent mehr, und an dem, was ich dir weiter oben geschrieben habe, ändert er nichts.",
     "alt": {
-      "showroomYishama": "David Lesage im Showroom von Le Nid in Paris: hinter ihm zwei akustische Yishama-Handpans aus Stahl, jeder auf seinem schwarzen Dreibein auf einem geflochtenen Teppich, in einem großen weißen Raum mit beleuchteten Bögen und hellem Parkett.",
-      "showroomInstruments": "Der Showroom von David Lesage, aufgebaut vor einem Treffen: zwei elektronische Neotone-Handpans mit leuchtendem Ring auf schwarzen Dreibeinen neben einem elektronischen Percussion-Kit, und zwei akustische Yishama-Handpans aus Stahl, einer auf einem Holzdreibein, der andere auf einem Metallständer; im Vordergrund eine Kalebassen-Halbkugel auf einem roten Teppich, altes Parkett, Lichterketten und eine Rosette an der Wand.",
+      "showroomYishama": "David Lesage im Showroom von Le Nid in Paris: hinter ihm zwei akustische Yishama-Handpans aus Stahl, jede auf ihrem schwarzen Dreibein auf einem geflochtenen Teppich, in einem großen weißen Raum mit beleuchteten Bögen und hellem Parkett.",
+      "showroomInstruments": "Der Showroom von David Lesage, aufgebaut vor einem Treffen: zwei elektronische Neotone-Handpans mit leuchtendem Ring auf schwarzen Dreibeinen neben einem elektronischen Percussion-Kit, und zwei akustische Yishama-Handpans aus Stahl, eine auf einem Holzdreibein, die andere auf einem Metallständer; im Vordergrund eine Kalebassen-Halbkugel auf einem roten Teppich, altes Parkett, Lichterketten und eine Rosette an der Wand.",
       "stageStanding": "David Lesage steht im Scheinwerferlicht auf der Bühne hinter seinen zwei Handpans auf Ständern, umgeben von seinen Stativen, seinen Pedalen und einer Kalebasse auf dem roten Teppich.",
       "stageStands": "Nahaufnahme von David Lesages Bühnenaufbau: drei Handpans auf Ständern aus Holz und Metall in Handhöhe, ein Notenständer und ein Laptop, Kabel und Pedale am Boden.",
       "stageFestival": "David Lesage allein auf der Bühne des Everness Festival in Ungarn: Er steht barfuß hinter seinen zwei akustischen Handpans auf schwarzen Dreibeinen, unter grünen und roten Lichtstrahlen, vor einem großen bunten gewebten Tuch; vor ihm liegt eine Kalebassen-Halbkugel auf dem Boden.",
-      "stagePlateau": "Die Bühne von David Lesage, aufgebaut und noch leer vor einem Konzert, von seinem Platz aus gesehen: ein Handpan auf einem schwarzen Dreibein in der Mitte auf Perserteppichen, eine Kalebasse, eine Djembe, ein Kick-Pedal am Boden, ein Steuerpult, zwei aufgeklappte Laptops und ein Monitorlautsprecher, gegenüber ein großer Saal mit Parkett und weißen Säulen.",
+      "stagePlateau": "Die Bühne von David Lesage, aufgebaut und noch leer vor einem Konzert, von seinem Platz aus gesehen: eine Handpan auf einem schwarzen Dreibein in der Mitte auf Perserteppichen, eine Kalebasse, eine Djembe, ein Kick-Pedal am Boden, ein Steuerpult, zwei aufgeklappte Laptops und ein Monitorlautsprecher, gegenüber ein großer Saal mit Parkett und weißen Säulen.",
       "allHeightLow": "Der Ständer Atlas All aus hellem Holz ohne Verlängerungen, auf weißem Hintergrund: die drei kurzen Beine unter den schwarzen Kopf geschraubt, in niedriger Position.",
       "allHeightHigh": "Derselbe Ständer Atlas All aus hellem Holz mit seinen Verlängerungen, auf weißem Hintergrund: Die Beine sind doppelt so lang, in hoher Position.",
-      "proTwoHeights": "Zwei Ständer Atlas Pro nebeneinander auf grauem Hintergrund: Der linke ist in hoher Position ausgefahren und trägt einen Handpan aus Stahl, der rechte ist auf niedrige Position eingestellt, mit eng zusammengestellten Beinen.",
-      "bodySeated": "Eine Person sitzt auf einem Sofa und spielt einen Handpan, den der zwischen ihren Oberschenkeln eingeklemmte Atlas Body hält: Das Instrument berührt ihre Beine nicht.",
-      "bodySide": "Seitenansicht derselben Spielhaltung im Sitzen: Der Handpan ruht auf dem Kopfteil Atlas Body, der ihn über den Beinen der spielenden Person hält.",
+      "proTwoHeights": "Zwei Ständer Atlas Pro nebeneinander auf grauem Hintergrund: Der linke ist in hoher Position ausgefahren und trägt eine Handpan aus Stahl, der rechte ist auf niedrige Position eingestellt, mit eng zusammengestellten Beinen.",
+      "bodySeated": "Eine Person sitzt auf einem Sofa und spielt eine Handpan, die der zwischen ihren Oberschenkeln eingeklemmte Atlas Body hält: Das Instrument berührt ihre Beine nicht.",
+      "bodySide": "Seitenansicht derselben Spielhaltung im Sitzen: Die Handpan ruht auf dem Kopfteil Atlas Body, der sie über den Beinen der spielenden Person hält.",
       "bodyAlone": "Der Atlas Body allein vor grauem Hintergrund: der durchbrochene schwarze Ring, seine ringförmig angeordneten runden Magnete und sein Zentrierstab aus Holz, auf einem gedrechselten Holzsockel.",
       "proOpen": "Der Dreibeinständer Atlas Pro aufgeklappt vor weißem Hintergrund: ein durchbrochener schwarzer Ring aus Aluminium, durch den ein Zentrierstab aus hellem Holz führt, und drei gespreizte Beine.",
       "proHigh": "Der Dreibeinständer Atlas Pro in hoher Position, seine drei Teleskopbeine ganz ausgezogen.",
@@ -1420,7 +1420,7 @@ export const de: Dict = {
       "proClosed": "Der Atlas Pro zusammengeklappt: Die drei Beine liegen eng am Körper an, bereit zum Verstauen.",
       "proBag": "Der zusammengeklappte Atlas Pro neben seiner Transporttasche Atlas Bag aus schwarzem Stoff mit dem Atlas-Logo.",
       "proParts": "Der Atlas Pro in zwei Teile zerlegt: auf der einen Seite das magnetische Kopfteil, auf der anderen der Block mit den drei Teleskopbeinen.",
-      "allPlaying": "Ein Musiker spielt im Stehen auf einem Handpan, der in einem Wohnzimmer auf dem Dreibeinständer Atlas All steht: Die drei Beine aus hellem Holz sind in hoher Position ausgeklappt.",
+      "allPlaying": "Ein Musiker spielt im Stehen auf einer Handpan, die in einem Wohnzimmer auf dem Dreibeinständer Atlas All steht: Die drei Beine aus hellem Holz sind in hoher Position ausgeklappt.",
       "allHigh": "Der Dreibeinständer Atlas All mit seinen Verlängerungen montiert, in Stehposition: lange Beine aus hellem Holz und ein schwarzes Kopfteil.",
       "allLow": "Der Dreibeinständer Atlas All ohne seine Verlängerungen, in niedriger Position, der zum Spielen im Sitzen.",
       "allBody": "Der Hauptkörper des Atlas All: der durchbrochene schwarze Ring und sein Holzstab, auf dem gedrechselten Holzsockel.",
@@ -1428,7 +1428,7 @@ export const de: Dict = {
       "allScrew": "Zwei Hände schrauben eine Holzverlängerung des Atlas All auf ein Bein, der metallene Gewindeeinsatz ist zu sehen.",
       "allWood": "Die Holzteile des Atlas All flach ausgelegt: die Beine und die Verlängerungen mit ihren schwarzen Endkappen."
     },
-    "heightFigureCaption": "Derselbe Ständer, zweimal fotografiert: links ganz ausgefahren, mit einem Handpan darauf; rechts ganz eingefahren. Der gesamte Bereich von 51 → 109 cm auf einem einzigen Bild.",
+    "heightFigureCaption": "Derselbe Ständer, zweimal fotografiert: links ganz ausgefahren, mit einer Handpan darauf; rechts ganz eingefahren. Der gesamte Bereich von 51 → 109 cm auf einem einzigen Bild.",
     "photosPro": "Der Atlas Pro in Bildern",
     "photosAll": "Der Atlas All in Bildern",
     "carousel": {
@@ -1455,7 +1455,7 @@ export const de: Dict = {
     "universes": [
       {
         "t": "Handpan",
-        "d": "Die visuelle Methode: Farben, Konstellationen und Emotionen machen die Harmonik klar und leicht zu merken – auf dem akustischen Handpan genauso wie auf dem Neotone.",
+        "d": "Die visuelle Methode: Farben, Konstellationen und Emotionen machen die Harmonik klar und leicht zu merken – auf der akustischen Handpan genauso wie auf dem Neotone.",
         "cta": "App entdecken"
       },
       {
@@ -1489,7 +1489,7 @@ export const de: Dict = {
       },
       {
         "t": "Spielen & begleiten",
-        "d": "Der Handpan wird zu einem echten Instrument für die Begleitung – sing zu den Liedern, die du liebst."
+        "d": "Die Handpan wird zu einem echten Instrument für die Begleitung – sing zu den Liedern, die du liebst."
       }
     ],
     "methodPhotoAlt": "Im Unterricht: Die Hand eines Schülers spielt auf einem Neotone aus Holz, direkt daneben zeigt der Computer Handpan Constellation Studio im Logik-Modus – den farbigen Kreis der Stufen, auf dem Bildschirm ist die Erklärblase zu einer Stufe geöffnet.",
@@ -1533,36 +1533,36 @@ export const de: Dict = {
         "a": "Für den Unterricht gilt ein freier Preis ab einem Mindestbetrag: ab {lesson60} € für 1 Std., ab {lesson90} € für 1 Std. 30 Min., per Video oder vor Ort in Paris. Mit dem Paket aus 4 Stunden (innerhalb von 2 Monaten zu nutzen) sind es ab {pack60} € (1 Std.) oder ab {pack90} € (1 Std. 30 Min.), also ab {packLesson60} € bzw. {packLesson90} € pro Stunde. Gruppen-Workshops gibt es auf Anfrage."
       },
       {
-        "q": "Funktioniert Online-Unterricht beim Handpan?",
+        "q": "Funktioniert Online-Unterricht bei der Handpan?",
         "a": "Ja, der Unterricht läuft per Video überall auf der Welt, mit derselben visuellen Methode wie vor Ort. Du brauchst nur dein Instrument und eine Internetverbindung."
       }
     ]
   },
   "studio": {
-    "title": "Handpan Constellation Studio – akustischer Handpan & Neotone",
-    "description": "Auf jedem akustischen Handpan – und auf dem Neotone. Lerne über Farben (ChromaKeys), Akkord-Konstellationen und Emotionen, ohne Noten lesen oder Theorie lernen zu müssen.",
+    "title": "Handpan Constellation Studio – akustische Handpan & Neotone",
+    "description": "Auf jeder akustischen Handpan – und auf dem Neotone. Lerne über Farben (ChromaKeys), Akkord-Konstellationen und Emotionen, ohne Noten lesen oder Theorie lernen zu müssen.",
     "heroEyebrow": "Die App – ein eigenes Projekt von David Lesage",
     "heroTitleA": "Handpan Constellation Studio",
     "heroTitleB": "Musik wird sichtbar",
-    "heroLead": "Auf jedem Handpan: auf deinem akustischen Handpan ebenso wie auf dem elektronischen Neotone. Ein visueller Zugang zur Musik – über Farben, Emotionen und Geometrie –, um zu verstehen, dir etwas einzuprägen und zu spielen.",
+    "heroLead": "Auf jeder Handpan: auf deiner akustischen Handpan ebenso wie auf dem elektronischen Neotone. Ein visueller Zugang zur Musik – über Farben, Emotionen und Geometrie –, um zu verstehen, dir etwas einzuprägen und zu spielen.",
     "heroBadges": [
-      "Jeder akustische Handpan",
-      "Elektronischer Neotone-Handpan"
+      "Jede akustische Handpan",
+      "Elektronische Neotone-Handpan"
     ],
     "ctaWait": "Auf die Warteliste",
     "ctaOpen": "App öffnen",
     "problemEyebrow": "Der Befund",
-    "problemTitle": "Der Handpan hat keine visuelle Notation",
+    "problemTitle": "Die Handpan hat keine visuelle Notation",
     "problem1Title": "Keine Notation zeigt das Instrument",
     "problem1Text": "Es ist ein wunderschönes Instrument – aber wie schreibt man es auf? Man lernt nach Gehör, durch Nachahmen, und nach den ersten Melodien spielt man immer wieder dieselben Muster: Das Instrument wird zu einem Wohlfühlbereich, den man nicht mehr verlässt.",
-    "problem2Title": "Auf einem elektronischen Handpan verschwinden die Orientierungspunkte",
+    "problem2Title": "Auf einer elektronischen Handpan verschwinden die Orientierungspunkte",
     "problem2Text": "Der Neotone wechselt die Tonleiter ohne Ende – eine Stärke, aber auch eine Falle: Die Töne unter deinen Fingern sind nie zweimal dieselben. Kein fester Punkt – das Gehirn ist überfordert, als müsste man das Instrument mit jeder Tonleiter neu lernen.",
     "chromaEyebrow": "Farben & Geometrie",
     "chromaTitle": "Und wenn wir das Unsichtbare sichtbar machen?",
     "chromaIntro": "Statt der Notennamen – die sich ständig ändern – zeigt die App die <strong>Struktur</strong> der Musik. Die sieben Stufen bekommen jeweils eine Farbe und eine Emotion. Die ChromaKeys geben jedem Ton seine eigene Farbe. Und jeder Akkord zeichnet eine leuchtende geometrische Form.",
     "chromaPunch": "Was unsichtbar war, wird sichtbar.",
     "constelEyebrow": "Die Sprache der Konstellationen",
-    "constelTitle": "Die neue visuelle Tabulatur für den Handpan",
+    "constelTitle": "Die neue visuelle Tabulatur für die Handpan",
     "constelIntro": "Über die ChromaKeys-Farben hinaus verbindet die App die Töne eines Akkords: Sie zeichnet eine leuchtende Figur – eine <strong>Akkord-Konstellation</strong>. Drei Arten, sie zu zeichnen.",
     "constellations": [
       {
@@ -1599,33 +1599,33 @@ export const de: Dict = {
       },
       {
         "t": "MIDI Connect",
-        "d": "Die Brücke zwischen deinem Neotone und der App: Dein tatsächliches Spiel erscheint in Echtzeit auf dem virtuellen Handpan, und die App führt dich durch deine Akkorde und Tonleitern."
+        "d": "Die Brücke zwischen deinem Neotone und der App: Dein tatsächliches Spiel erscheint in Echtzeit auf der virtuellen Handpan, und die App führt dich durch deine Akkorde und Tonleitern."
       }
     ],
-    "versionAcoEyebrow": "Auf welchem Handpan funktioniert das?",
-    "versionAcoTitle": "Gedacht für deinen akustischen Handpan <span class=\"text-copper\">und</span> für den Neotone",
-    "versionAcoText": "Die App ist weder dem einen noch dem anderen vorbehalten: Sie ist für beide gedacht und entwickelt. Aber sie ermöglicht auf beiden nicht dasselbe – und genau das macht beide interessant. Auf einem akustischen Handpan ist der Rahmen schon da: Die App macht ihn sichtbar. Auf dem Neotone wird alles möglich: Die App setzt den Rahmen. Eine einzige App, zwei Arten, etwas sichtbar zu machen.",
+    "versionAcoEyebrow": "Auf welcher Handpan funktioniert das?",
+    "versionAcoTitle": "Gedacht für deine akustische Handpan <span class=\"text-copper\">und</span> für den Neotone",
+    "versionAcoText": "Die App ist weder dem einen noch dem anderen vorbehalten: Sie ist für beide gedacht und entwickelt. Aber sie ermöglicht auf beiden nicht dasselbe – und genau das macht beide interessant. Auf einer akustischen Handpan ist der Rahmen schon da: Die App macht ihn sichtbar. Auf dem Neotone wird alles möglich: Die App setzt den Rahmen. Eine einzige App, zwei Arten, etwas sichtbar zu machen.",
     "duoQuote1": "Die Elektronik bietet alles und enthüllt nichts; die Akustik gibt einen Rahmen vor – und einen Rahmen kann man erkunden.",
     "duoQuote2": "Ein Rahmen, den man versteht, macht freier als ein unendlicher Raum, in dem man sich verliert.",
     "duoQuoteSource": "David Lesage",
-    "duoAcoTitle": "Auf einem akustischen Handpan",
+    "duoAcoTitle": "Auf einer akustischen Handpan",
     "duoAcoText": "Dein Instrument hat seine Töne, seine Tonleiter, seine Grenzen: Der Rahmen ist schon da. Die App macht ihn sichtbar, und was wie eine Einschränkung aussah, wird zu einem Gelände, das du erkunden kannst. Der Akustikmodus ist kostenlos: Für den Einstieg brauchst du keinen Neotone.",
     "versionAcoBullets": [
-      "Deine Tonleiter erscheint in Farben auf dem Foto deines Handpans.",
+      "Deine Tonleiter erscheint in Farben auf dem Foto deiner Handpan.",
       "Lerne neue Akkorde und Akkordfolgen, Schritt für Schritt angeleitet.",
       "Erkunde einen Atlas der Tonleitern nach Emotion – und erfinde deine eigene, maßgeschneidert."
     ],
-    "versionAcoCaption": "Der Akustikmodus: der visuelle Ansatz von Handpan Constellation Studio, auf deinem eigenen Handpan.",
-    "versionAcoPhotoCaption": "Im Showroom: mein akustischer Yishama-Handpan auf seinem Ständer, die App darüber, seine Akkorde als Konstellationen.",
+    "versionAcoCaption": "Der Akustikmodus: der visuelle Ansatz von Handpan Constellation Studio, auf deiner eigenen Handpan.",
+    "versionAcoPhotoCaption": "Im Showroom: meine akustische Yishama-Handpan auf ihrem Ständer, die App darüber, ihre Akkorde als Konstellationen.",
     "versionNeoPhotoCaption": "Mein Neotone aus Holz, darüber das Tablet an einem Arm befestigt, das Notenblatt eines Stücks und seine Akkorde als Konstellationen.",
-    "duoPhotoAco": "Mein akustischer Yishama-Handpan und die App.",
+    "duoPhotoAco": "Meine akustische Yishama-Handpan und die App.",
     "duoPhotoNeo": "Mein Neotone und die App.",
     "versionAcoCta": "App öffnen",
     "versionAcoYishamaLink": "Woher dieser Ansatz kommt: meine zwei Yishama-Handpans",
     "versionNeoTitle": "Auf dem Neotone",
     "versionNeoText": "Alle Tonleitern in einem einzigen Instrument: Alles wird möglich. Genau hier wird ein Rahmen nötig – sonst verliert man sich im Unendlichen. Die App setzt den Rahmen, den das Instrument selbst nicht mehr setzt.",
     "versionNeoBullets": [
-      "Verbinde deinen Neotone per MIDI mit der App: Dein Spiel erscheint in Echtzeit auf dem virtuellen Handpan.",
+      "Verbinde deinen Neotone per MIDI mit der App: Dein Spiel erscheint in Echtzeit auf der virtuellen Handpan.",
       "Wechsle die Tonleiter, so oft du willst: Die Farben der 7 Stufen bleiben immer gleich.",
       "Die App führt dich durch deine Akkorde und Tonleitern – auf der, die du gerade geladen hast."
     ],
@@ -1641,9 +1641,9 @@ export const de: Dict = {
     "seriesEyebrow": "Die Videoreihe",
     "storyEyebrow": "Die Geschichte – von David Lesage",
     "storyTitle": "Das Werkzeug, mit dem ich als Kind gern gelernt hätte",
-    "storyP1": "Als ich den Handpan entdeckte, stand ich wieder vor der Mauer meiner Kindheit: keine Methode und die Schwierigkeit, die Wege der Töne visuell zu ordnen. Dann, mit dem Neotone, eine neue Schwierigkeit: Die Töne wechseln mit jeder Tonleiter ihren Platz.",
-    "storyP2": "Also habe ich das Werkzeug geschaffen, das ich mir gewünscht hätte: einen visuellen Zugang zur Harmonie, über Farben, Formen und Emotionen – um zu verstehen, mir etwas einzuprägen und endlich zu singen und mich dabei selbst auf dem Handpan zu begleiten.",
-    "storyP3": "Es ist die logische Fortsetzung von <strong>Now Groove</strong>, meiner Rhythmusmethode (2021), die den Rhythmus über visuelle Emoticons zugänglich macht. Handpan Constellation Studio macht dasselbe für die Harmonie: ein Werkzeug, von einem Musiker erdacht, um den Handpan zu einem Instrument der Begleitung zu machen – wie die Gitarre oder das Klavier.",
+    "storyP1": "Als ich die Handpan entdeckte, stand ich wieder vor der Mauer meiner Kindheit: keine Methode und die Schwierigkeit, die Wege der Töne visuell zu ordnen. Dann, mit dem Neotone, eine neue Schwierigkeit: Die Töne wechseln mit jeder Tonleiter ihren Platz.",
+    "storyP2": "Also habe ich das Werkzeug geschaffen, das ich mir gewünscht hätte: einen visuellen Zugang zur Harmonie, über Farben, Formen und Emotionen – um zu verstehen, mir etwas einzuprägen und endlich zu singen und mich dabei selbst auf der Handpan zu begleiten.",
+    "storyP3": "Es ist die logische Fortsetzung von <strong>Now Groove</strong>, meiner Rhythmusmethode (2021), die den Rhythmus über visuelle Emoticons zugänglich macht. Handpan Constellation Studio macht dasselbe für die Harmonie: ein Werkzeug, von einem Musiker erdacht, um die Handpan zu einem Instrument der Begleitung zu machen – wie die Gitarre oder das Klavier.",
     "waitTitle": "Die App ist verfügbar",
     "waitText": "Erstelle dein kostenloses Konto (Name, Vorname, E-Mail) und leg direkt in deinem Browser los. Wenn du fortfährst, akzeptierst du die AGB und die Datenschutzerklärung. Tarif wählen und sicher bezahlen kannst du direkt in der App.",
     "waitButton": "App öffnen",
@@ -1703,7 +1703,7 @@ export const de: Dict = {
       },
       {
         "t": "Tonleiter anhören",
-        "d": "Die App spielt die Tonleiter Ton für Ton auf dem Handpan ab."
+        "d": "Die App spielt die Tonleiter Ton für Ton auf der Handpan ab."
       },
       {
         "t": "Das Auge der Stufe",
@@ -1735,7 +1735,7 @@ export const de: Dict = {
       },
       {
         "t": "Interaktives Lernen",
-        "d": "Der Handpan wird zur geführten Spielfläche: Tippe auf einen farbigen Ton."
+        "d": "Die Handpan wird zur geführten Spielfläche: Tippe auf einen farbigen Ton."
       },
       {
         "t": "Klangatlas",
@@ -1751,10 +1751,10 @@ export const de: Dict = {
     "faq": [
       {
         "q": "Brauche ich einen Neotone, um Handpan Constellation Studio zu nutzen?",
-        "a": "Nein. Handpan Constellation Studio funktioniert mit jedem akustischen Handpan, im kostenlosen Akustikmodus, genauso wie mit dem elektronischen Handpan Neotone. Für den Anfang brauchst du das elektronische Instrument nicht."
+        "a": "Nein. Handpan Constellation Studio funktioniert mit jeder akustischen Handpan, im kostenlosen Akustikmodus, genauso wie mit der elektronischen Handpan Neotone. Für den Anfang brauchst du das elektronische Instrument nicht."
       },
       {
-        "q": "Funktioniert Handpan Constellation Studio mit einem akustischen Handpan?",
+        "q": "Funktioniert Handpan Constellation Studio mit einer akustischen Handpan?",
         "a": "Ja, der Akustikmodus ist kostenlos. Du siehst deine Tonleiter in Farben und lernst deine Akkorde direkt auf deinem eigenen akustischen Instrument."
       },
       {
@@ -1767,15 +1767,15 @@ export const de: Dict = {
       },
       {
         "q": "Ist Handpan Constellation Studio kostenlos?",
-        "a": "Handpan Constellation Studio bietet viele Funktionen, und deine Nutzung entscheidet, was kostenlos ist und was nicht. Den Handpan selbstständig auf deinem eigenen akustischen Instrument zu lernen, ist kostenlos: deine Tonleiter in Farben sehen, deine Akkorde erkennen, spielen, deine Notenblätter erstellen und exportieren. Kostenpflichtig wird, was über dein persönliches Üben hinausgeht: der Elektronikmodus Neotone/MIDI, die erweiterte Kreation, die Speicherung in der Cloud. Und wenn du die App als Arbeitswerkzeug in Unterricht nutzt, den du dir bezahlen lässt, ist es die Lizenz „Unterrichten“, mit dem Bereich für Schüler, den Übungen und den Notenblättern ohne Wasserzeichen, die dazugehören. Die aktuellen Preise stehen direkt darunter."
+        "a": "Handpan Constellation Studio bietet viele Funktionen, und deine Nutzung entscheidet, was kostenlos ist und was nicht. Die Handpan selbstständig auf deinem eigenen akustischen Instrument zu lernen, ist kostenlos: deine Tonleiter in Farben sehen, deine Akkorde erkennen, spielen, deine Notenblätter erstellen und exportieren. Kostenpflichtig wird, was über dein persönliches Üben hinausgeht: der Elektronikmodus Neotone/MIDI, die erweiterte Kreation, die Speicherung in der Cloud. Und wenn du die App als Arbeitswerkzeug in Unterricht nutzt, den du dir bezahlen lässt, ist es die Lizenz „Unterrichten“, mit dem Bereich für Schüler, den Übungen und den Notenblättern ohne Wasserzeichen, die dazugehören. Die aktuellen Preise stehen direkt darunter."
       }
     ]
   },
   "showroom": {
-    "title": "Einen Handpan in Paris ausprobieren: akustisch und elektronisch | David Lesage",
-    "description": "Wo du in Paris einen Handpan ausprobieren kannst, akustisch und elektronisch am selben Tag: den Neotone, meine Yishama-Handpans und die Gonilélé-Harfe, in Paris (20. Arrondissement).",
+    "title": "Eine Handpan in Paris ausprobieren: akustisch und elektronisch | David Lesage",
+    "description": "Wo du in Paris eine Handpan ausprobieren kannst, akustisch und elektronisch am selben Tag: den Neotone, meine Yishama-Handpans und die Gonilélé-Harfe, in Paris (20. Arrondissement).",
     "heroEyebrow": "Showroom David Lesage · Le Nid, Paris (20. Arrondissement)",
-    "heroTitle": "Einen Handpan in Paris ausprobieren – akustisch und elektronisch, am selben Tag",
+    "heroTitle": "Eine Handpan in Paris ausprobieren – akustisch und elektronisch, am selben Tag",
     "heroLead": "Ein kostenloses Treffen, etwa fünfzehn Leute, und alles, was ich spiele, für dich ausgepackt: der Neotone als Hauptattraktion, meine akustischen Yishama-Handpans, die afrikanische Gonilélé-Harfe, die Kalebasse und die Handpan-Mikrofone. Du hörst sie, du spielst sie, am selben Tag.",
     "promiseEyebrow": "Was du hier erlebst",
     "promiseTitle": "Ein seltenes Erlebnis, alles an einem einzigen Ort",
@@ -1817,8 +1817,8 @@ export const de: Dict = {
     "franceClaim": "Der einzige Ort in Frankreich, an dem man diese Instrumente direkt ausprobieren und kaufen kann.",
     "onsiteEyebrow": "Vor Ort",
     "onsiteTitle": "Alles, was du vor Ort ausprobieren kannst: akustische Handpans, Neotone, Mikrofone",
-    "duoEyebrow": "Die zwei Welten des Handpans",
-    "duoTitle": "Akustischer und elektronischer Handpan, am selben Tag",
+    "duoEyebrow": "Die zwei Welten der Handpan",
+    "duoTitle": "Akustische und elektronische Handpan, am selben Tag",
     "duoIntro": "Der Showroom ist nicht dazu da, dass du dich für eine Seite entscheidest. Beide Welten leben hier nebeneinander: Du hörst sie, du spielst sie, du spürst den Unterschied in deinen Händen. Kein Wettbewerb, sondern Ergänzung.",
     "duo": [
       {
@@ -1843,7 +1843,7 @@ export const de: Dict = {
       }
     ],
     "duoNote": "Um es klar zu sagen: Nur der Neotone ist hier auf Lager – er ist der Einzige, den du am selben Tag mitnehmen kannst. Die Yishama sind meine persönlichen Instrumente: Sie sind da, um gehört und gespielt zu werden, und wenn du deinen eigenen willst, verweise ich dich an die Werkstatt (ich bin Botschafter der Marke und Mitglied ihres Partnerprogramms).",
-    "alsoEyebrow": "Und nicht nur der Handpan",
+    "alsoEyebrow": "Und nicht nur die Handpan",
     "alsoTitle": "Alles andere, was ich spiele, ist auch da",
     "alsoIntro": "Der Neotone ist die Hauptattraktion des Treffens – aber du musst nicht seinetwegen kommen. Diese Instrumente sind ebenfalls ausgepackt, und du kannst sie genauso in die Hand nehmen wie die Handpans.",
     "also": [
@@ -1871,11 +1871,11 @@ export const de: Dict = {
     "alsoAlt": {
       "gonileleProduit": "Die Gonilélé-Harfe, an einen Baumstamm gelehnt: runder Klangkörper aus Kalebasse mit Fellbespannung, langer geschnitzter Hals aus hellem Holz und zehn Saiten, die zu den Stimmmechaniken gespannt sind.",
       "calebasse": "Das Kalebassen-Set von Now Groove: eine halbe Kalebasse, umgedreht auf eine große Fellmatte gelegt, mit zwei blauen eiförmigen Shakern.",
-      "hisong": "Ein akustischer Handpan auf einer Matte, neben dem Mikrofon Hisong AirStudio S1 auf seinem Sockel, seinen Ohrhörern und dem Tablet, das die Einstell-App des Mikrofons zeigt.",
-      "muling": "Die Unterseite eines akustischen Handpans mit dem Muling-Set: zwei rote Kontaktabnehmer, auf den Korpus geklebt und über ihre Kabel mit dem Vorverstärker HMP-2 verbunden, der auf dem Boden steht."
+      "hisong": "Eine akustische Handpan auf einer Matte, neben dem Mikrofon Hisong AirStudio S1 auf seinem Sockel, seinen Ohrhörern und dem Tablet, das die Einstell-App des Mikrofons zeigt.",
+      "muling": "Die Unterseite einer akustischen Handpan mit dem Muling-Set: zwei rote Kontaktabnehmer, auf den Korpus geklebt und über ihre Kabel mit dem Vorverstärker HMP-2 verbunden, der auf dem Boden steht."
     },
     "atlasEyebrow": "Neu · Atlas-Partner",
-    "atlasTitle": "Und etwas, worauf du deinen Handpan stellen kannst",
+    "atlasTitle": "Und etwas, worauf du deine Handpan stellen kannst",
     "atlasIntro": "Atlas stellt in Italien Handpan-Ständer her: Das Instrument liegt auf einer schwebenden Scheibe, die von acht kratzfesten Magneten gehalten wird, ohne Schrauben oder Gurte, die man am Metall festziehen muss. Ich bin Partner der Marke geworden, und sie hat mir ihre beiden Modelle zur Vorführung geschickt. Sie stehen bei den Handpans – du kannst ein Instrument darauflegen und die Höhe selbst einstellen.",
     "atlasModels": [
       {
@@ -1892,12 +1892,12 @@ export const de: Dict = {
     "lieuTitle": "So sieht ein Treffen in Le Nid aus – Paris (20. Arrondissement)",
     "lieuIntro": "Eine Atelierwohnung im 20. Arrondissement, Parkett, Lichterketten, und alle sitzen im Kreis um die Instrumente. Wir sind etwa fünfzehn, nicht mehr.",
     "photoAlt": {
-      "accueil": "David Lesage steht mitten im großen Raum des Showrooms und empfängt mit offenen Armen: altes Parkett, weiße Wände unter dem Dachgebälk, eine Rosette an der Wand, hinter ihm ein Handpan auf seinem Ständer, im Hintergrund Kissen und ein niedriges Sofa. (Der Titel „David Lesage Showroom“ ist ins Bild eingeblendet.)",
+      "accueil": "David Lesage steht mitten im großen Raum des Showrooms und empfängt mit offenen Armen: altes Parkett, weiße Wände unter dem Dachgebälk, eine Rosette an der Wand, hinter ihm eine Handpan auf ihrem Ständer, im Hintergrund Kissen und ein niedriges Sofa. (Der Titel „David Lesage Showroom“ ist ins Bild eingeblendet.)",
       "vueEnsemble": "Gesamtansicht eines Treffens in Le Nid: David Lesage sitzt in der Mitte des Kreises, hinter ihm Handpans auf Ständern, das Publikum sitzt direkt auf dem Parkett, an den Wänden Lichterketten und eine hängende Rosette.",
       "instruments": "Die im Showroom aufgebauten Instrumente, bevor das Publikum kommt: zwei akustische Yishama-Handpans auf Ständern, zwei elektronische Neotone-Handpans mit ihrem Display, eine Kalebasse auf einem roten Teppich, alles auf altem Parkett.",
       "presentation": "David Lesage stellt mit dem Mikrofon in der Hand die Instrumente des Showrooms vor: Hinter ihm stehen die Neotone-Modelle und die Yishama-Handpans aufgereiht, unter der Rosette an der Wand.",
       "gonilele": "David Lesage hält den Gonilélé, die afrikanische Kalebassenharfe, und zeigt das Mikrofon Hisong AirStudio S1, mit dem er ihn verstärkt.",
-      "grandePiece": "Der große Raum des Showrooms tagsüber, bevor das Publikum kommt: alter Parkettboden, ein niedriges Sofa und Kissen direkt auf dem Boden, hinten ein akustischer Handpan auf seinem Dreibeinständer, eine Gitarre an der Wand, Pflanzen und zusammengerollte Bodenmatten in einem Korb."
+      "grandePiece": "Der große Raum des Showrooms tagsüber, bevor das Publikum kommt: alter Parkettboden, ein niedriges Sofa und Kissen direkt auf dem Boden, hinten eine akustische Handpan auf ihrem Dreibeinständer, eine Gitarre an der Wand, Pflanzen und zusammengerollte Bodenmatten in einem Korb."
     },
     "photoCaption": {
       "vueEnsemble": "Ein Treffen im Le Nid: Das Publikum sitzt im Kreis, die Instrumente stehen in der Mitte.",
@@ -1911,13 +1911,13 @@ export const de: Dict = {
     "galleryIntro": "Wisch mit dem Finger oder klick auf ein Foto, um es zu vergrößern.",
     "galleryAltFallback": "Foto aus dem Showroom von David Lesage – Le Nid, Paris (20. Arrondissement).",
     "galleryAlt": {
-      "demoNeotone1": "David Lesage steht bei einer Vorführung: Er hält einen Neotone, einen elektronischen Handpan, dem sitzenden Publikum entgegen, im Hintergrund die Wand mit den Lichterketten.",
+      "demoNeotone1": "David Lesage steht bei einer Vorführung: Er hält einen Neotone, eine elektronische Handpan, dem sitzenden Publikum entgegen, im Hintergrund die Wand mit den Lichterketten.",
       "demoNeotone2": "Weitere Ansicht der Neotone-Vorführung: David Lesage steht in der Mitte des Raums, die Zuschauer sitzen im Kreis auf dem Parkett.",
       "gonileleMicro": "Der Gonilélé liegt flach, die Saiten nach oben, neben der Schachtel des Mikrofons Hisong AirStudio S1 und seiner Kapsel auf dem Sockel.",
-      "yishamaMicros": "Ein Yishama-Handpan von oben, zwei Mikrofonkapseln auf der Kuppel und ringsum vier Schachteln mit Mikrofonen Hisong AirStudio S1.",
-      "tabletteAccords": "Ein Tablet über einem Handpan: Die App Handpan Constellation Studio zeigt die sieben Akkorde der Tonleiter D Kurd 18 als farbige Konstellationen.",
-      "handpanTablette": "Ein Yishama-Handpan auf seinem Dreibeinständer, das Tablet an einem Arm direkt darüber: Die Konstellationen der Akkorde erscheinen genau über dem Instrument.",
-      "salonInstruments": "Die Sitzecke des Showrooms: ein akustischer Handpan auf dem Boden neben dem Couchtisch, ein elektronischer Neotone aus Holz mit seinem Kopfhörer auf den Kissen, ein großes orangefarbenes Sofa, ein Blumenstrauß und hinten die Wand mit den Lichterketten.",
+      "yishamaMicros": "Eine Yishama-Handpan von oben, zwei Mikrofonkapseln auf der Kuppel und ringsum vier Schachteln mit Mikrofonen Hisong AirStudio S1.",
+      "tabletteAccords": "Ein Tablet über einer Handpan: Die App Handpan Constellation Studio zeigt die sieben Akkorde der Tonleiter D Kurd 18 als farbige Konstellationen.",
+      "handpanTablette": "Eine Yishama-Handpan auf ihrem Dreibeinständer, das Tablet an einem Arm direkt darüber: Die Konstellationen der Akkorde erscheinen genau über dem Instrument.",
+      "salonInstruments": "Die Sitzecke des Showrooms: eine akustische Handpan auf dem Boden neben dem Couchtisch, ein elektronischer Neotone aus Holz mit seinem Kopfhörer auf den Kissen, ein großes orangefarbenes Sofa, ein Blumenstrauß und hinten die Wand mit den Lichterketten.",
       "sonoBose": "Ein elektronischer Neotone aus Holz auf seinem Dreibeinständer, neben der Beschallung des Showrooms: ein Säulensystem Bose L1 Model II und sein Mischpult T8S, das auf den Bassmodulen steht."
     },
     "eventsEyebrow": "Was man hier erlebt",
@@ -1932,7 +1932,7 @@ export const de: Dict = {
       },
       {
         "t": "Erste Schritte mit deinem Instrument",
-        "d": "Du hast gerade deinen Neotone, deinen Handpan oder dein Mikrofon bekommen? Wir stellen gemeinsam alles ein und gehen die Bedienung Schritt für Schritt durch. Vor Ort oder per Video.",
+        "d": "Du hast gerade deinen Neotone, deine Handpan oder dein Mikrofon bekommen? Wir stellen gemeinsam alles ein und gehen die Bedienung Schritt für Schritt durch. Vor Ort oder per Video.",
         "price": ""
       },
       {
@@ -2036,7 +2036,7 @@ export const de: Dict = {
     "heroCtaStory": "Geschichte lesen",
     "heroCtaToday": "Was ich heute mache",
     "storyEyebrow": "Meine Geschichte",
-    "storyTitle": "Vom Schlagzeug zum Handpan, auf einem langen Umweg",
+    "storyTitle": "Vom Schlagzeug zur Handpan, auf einem langen Umweg",
     "storyIntro": "Die Etappen, Begegnungen und Daten, die zu den Instrumenten führen, die ich spiele, und zu den Werkzeugen, die ich entwickle.",
     "chapters": [
       {
@@ -2072,7 +2072,7 @@ export const de: Dict = {
         "title": "Marie-Christine Reculard und der holistische Gesang",
         "paras": [
           "Marie-Christine Reculard ist meine Gesangslehrerin. Sie hat <em>Le Chant Holistique</em> entwickelt, das sie auf ihrer Website als „eine einzigartige Methode des therapeutischen und energetischen Gesangs durch die Stimme, die Farben, die heiligen Vokale, die Mantras, Yoga und Atemtechniken“ beschreibt. Ihre Website: <a href=\"https://www.mariechristinereculard.com/\" target=\"_blank\" rel=\"noopener\" class=\"underline\">mariechristinereculard.com</a>.",
-          "Ihre Methode hat mich inspiriert, vor allem für einen Modus „Singen & Spielen“ – singen und sich dabei auf dem Handpan begleiten –, an dem ich für Handpan Constellation Studio arbeite. Er ist noch im Laborstadium: In der App ist er heute noch nicht verfügbar."
+          "Ihre Methode hat mich inspiriert, vor allem für einen Modus „Singen & Spielen“ – singen und sich dabei auf der Handpan begleiten –, an dem ich für Handpan Constellation Studio arbeite. Er ist noch im Laborstadium: In der App ist er heute noch nicht verfügbar."
         ]
       },
       {
@@ -2089,7 +2089,7 @@ export const de: Dict = {
         "title": "Zwei wunderbare Instrumente und keine Gebrauchsanweisung",
         "paras": [
           "Im Mai 2023 bekomme ich die beiden Handpans, die Yonathan für mich entworfen hat: je achtzehn Töne, auf 432 Hz gestimmt, gedacht für eine einzige Sache – dass ich mich beim Singen selbst begleiten kann, in jeder beliebigen Tonart.",
-          "Es gab keine Methode. Der Handpan ist ein Instrument des 21. Jahrhunderts, noch mitten in der Entwicklung, oft modal, und es gibt fast so viele Layouts der Töne wie Instrumente.",
+          "Es gab keine Methode. Die Handpan ist ein Instrument des 21. Jahrhunderts, noch mitten in der Entwicklung, oft modal, und es gibt fast so viele Layouts der Töne wie Instrumente.",
           "Im August 2023 öffne ich ein Dokument – nur um zu sehen, welche Akkorde ich auf meinen eigenen Instrumenten spielen kann. Ein paar Monate später schlägt mir Yonathan vor, daraus ein kleines Akkordheft zu machen, für mich. Ich habe das Heft gemacht. Daraus wurde eine App."
         ]
       }
@@ -2178,8 +2178,8 @@ export const de: Dict = {
       }
     ],
     "visionEyebrow": "Meine pädagogische Vision",
-    "visionTitle": "Der Handpan: ein vollwertiges Instrument für die Begleitung",
-    "visionIntro": "Mit diesem Ansatz bekommt der Handpan endlich seinen Platz neben Gitarre und Klavier. Dank der „Magischen 4“ (I-IV-V-vi in Dur, i-VI-III-VII in Moll) kann jeder die Stücke, die er liebt, in wenigen Minuten begleiten und die Theorie dabei wie ein Spiel angehen.",
+    "visionTitle": "Die Handpan: ein vollwertiges Instrument für die Begleitung",
+    "visionIntro": "Mit diesem Ansatz bekommt die Handpan endlich ihren Platz neben Gitarre und Klavier. Dank der „Magischen 4“ (I-IV-V-vi in Dur, i-VI-III-VII in Moll) kann jeder die Stücke, die er liebt, in wenigen Minuten begleiten und die Theorie dabei wie ein Spiel angehen.",
     "pillars": [
       {
         "t": "Sichtbar",
@@ -2305,7 +2305,7 @@ export const de: Dict = {
         "items": [
           "Reservierung (Besuch im Showroom, Platz bei einem Treffen, Einzeltermin, Anfrage eines Neotone-Rabattcodes): Vorname, Name, E-Mail, Telefonnummer, falls du sie angibst, Anzahl der Personen, gewünschtes Datum, bis zu drei Zeitfenster, die du vorschlägst, Art und Format des Termins (vor Ort oder per Video), Instrumente, die du entdecken möchtest, das Neotone-Modell, das du in Betracht ziehst, Land, Social-Media-Konto, wie du auf mich aufmerksam geworden bist, seit wann du spielst, was du gern schaffen möchtest, und deine Nachricht.",
           "Kontakt: Name und Vorname, E-Mail, Betreff, Nachricht.",
-          "Warteliste der App: Vorname, Name, E-Mail, ob du schon einen Handpan hast und welchen, die Rolle oder Rollen, die du angibst (für dich, zum Unterrichten, zum Bauen), dein Ziel, die Zahl deiner Schüler und, falls du Handpans baust, dein Land, wie viele Töne du herstellst, die Metalle, die du verarbeitest, und wie du deine Preise festlegst. Dazu deine Motivation, falls du dich als Betatester bewirbst.",
+          "Warteliste der App: Vorname, Name, E-Mail, ob du schon eine Handpan hast und welche, die Rolle oder Rollen, die du angibst (für dich, zum Unterrichten, zum Bauen), dein Ziel, die Zahl deiner Schüler und, falls du Handpans baust, dein Land, wie viele Töne du herstellst, die Metalle, die du verarbeitest, und wie du deine Preise festlegst. Dazu deine Motivation, falls du dich als Betatester bewirbst.",
           "Bestellung des Muling-Mikrofons: Vorname, Name, E-Mail, Telefon, Menge, vollständige Lieferadresse, Hinweise für den Zusteller, Nachricht und dann der Überweisungsnachweis, den du hochlädst (Bild oder PDF).",
           "In allen Fällen kommen automatisch hinzu: die Sprache der Website, die Seite, von der deine Anfrage ausgeht, Datum und Uhrzeit, zu denen du diese Bedingungen mit ihrer Versionsnummer akzeptiert hast, und, falls du das zweite Kästchen angekreuzt hast (das optionale), das Datum, an dem du zugestimmt hast, meine Neuigkeiten zu erhalten."
         ]
@@ -2634,9 +2634,9 @@ export const de: Dict = {
       "ember": "Im Yishama-Katalog"
     },
     "metalDescriptions": {
-      "nitrure": "Ausgangsmaterial ist ein kaltgewalzter, kohlenstoffarmer Stahl, meist DC04, der in einer Spezialanlage nitriert wird. Das Verfahren härtet den Stahl und bildet an seiner Oberfläche eine Schutzschicht. Es ist der historische Stahl des Handpans.",
+      "nitrure": "Ausgangsmaterial ist ein kaltgewalzter, kohlenstoffarmer Stahl, meist DC04, der in einer Spezialanlage nitriert wird. Das Verfahren härtet den Stahl und bildet an seiner Oberfläche eine Schutzschicht. Es ist der historische Stahl der Handpan.",
       "inox": "Edelstahl rostet nicht. Das ist seine erste Stärke, aber nicht die interessanteste: Vor allem klingt er ganz anders, runder, mit einem viel längeren Ausklang als nitrierter Stahl.",
-      "ember": "Ein speziell für den Handpan entwickelter Edelstahl, den Yishama neben nitriertem Stahl und klassischem Edelstahl im Katalog führt. Yishama vergleicht ihn in seinem Artikel nicht mit den beiden anderen: Statt zusammenzufassen, was dort nicht steht, hörst du ihn dir am besten an – frag sie nach einer Hörprobe oder komm zum Anhören in den Showroom."
+      "ember": "Ein speziell für die Handpan entwickelter Edelstahl, den Yishama neben nitriertem Stahl und klassischem Edelstahl im Katalog führt. Yishama vergleicht ihn in seinem Artikel nicht mit den beiden anderen: Statt zusammenzufassen, was dort nicht steht, hörst du ihn dir am besten an – frag sie nach einer Hörprobe oder komm zum Anhören in den Showroom."
     },
     "metalSound": {
       "nitrure": "Ein eher keramischer Klang, fast wie Terrakotta. Die hohen Frequenzen werden mit viel Lautstärke verstärkt: Yishama schreibt, man höre ihn kilometerweit.",
@@ -2763,12 +2763,12 @@ export const de: Dict = {
         "neo": "Alle laden dieselbe Tonleiter, um zusammen zu spielen: Lernen und Teilen werden einfach, und dir steht die Welt offen, um mit anderen Instrumenten zu spielen."
       },
       {
-        "aco": "Bei einer Jam mit Percussion, Saxofon oder Bass geht der akustische Handpan schnell unter.",
+        "aco": "Bei einer Jam mit Percussion, Saxofon oder Bass geht die akustische Handpan schnell unter.",
         "neo": "Die Lautstärke lässt sich regeln: Du bleibst inmitten der anderen Instrumente immer hörbar, auf der Bühne wie bei der Jam."
       },
       {
         "aco": "Einen Sänger zu begleiten ist schwierig: Eine feste akustische Tonleiter passt schlecht zu unterschiedlichen Stimmen.",
-        "neo": "Du begleitest die Stimme in jeder Stimmlage und spielst bekannte Lieder wie am Klavier oder an der Gitarre: Der Handpan verlässt endlich seine Nische."
+        "neo": "Du begleitest die Stimme in jeder Stimmlage und spielst bekannte Lieder wie am Klavier oder an der Gitarre: Die Handpan verlässt endlich ihre Nische."
       },
       {
         "aco": "Zerbrechlich und empfindlich: In der prallen Sonne kann man nicht spielen, und die Stimmung verschiebt sich mit der Zeit und durch Stöße.",
@@ -2802,19 +2802,19 @@ export const de: Dict = {
       },
       {
         "q": "Für wen ist der Neotone gedacht?",
-        "a": "Für alle: Einen digitalen Handpan zu spielen setzt keine Vorkenntnisse voraus. Schnell unverzichtbar wird er für Bühnenmusiker (Schleifen aufnehmen, Pedale anschließen), für Studioaufnahmen, für alle, die nachts spielen (mit Kopfhörer), und für digitale Nomaden. Und wer schon überzeugt ist, dem öffnet er das unendliche Feld der Kreation eigener Tonleitern."
+        "a": "Für alle: Eine digitale Handpan zu spielen setzt keine Vorkenntnisse voraus. Schnell unverzichtbar wird sie für Bühnenmusiker (Schleifen aufnehmen, Pedale anschließen), für Studioaufnahmen, für alle, die nachts spielen (mit Kopfhörer), und für digitale Nomaden. Und wer schon überzeugt ist, dem öffnet sie das unendliche Feld der Kreation eigener Tonleitern."
       },
       {
-        "q": "Fühlt er sich genauso an wie ein akustischer Handpan?",
-        "a": "Das Spielgefühl ist ein anderes als beim akustischen Handpan: Der Klang kommt nicht direkt aus dem Instrument, sondern aus einem Kopfhörer oder einem Lautsprecher. Die Vorteile: völliges Eintauchen mit Kopfhörer, regelbare Lautstärke, keine Rückkopplung mehr auf der Bühne. Die Bose-L1-Systeme sind ideal; der Bose S1 Pro ist eine ausgezeichnete tragbare Lösung."
+        "q": "Fühlt er sich genauso an wie eine akustische Handpan?",
+        "a": "Das Spielgefühl ist ein anderes als bei der akustischen Handpan: Der Klang kommt nicht direkt aus dem Instrument, sondern aus einem Kopfhörer oder einem Lautsprecher. Die Vorteile: völliges Eintauchen mit Kopfhörer, regelbare Lautstärke, keine Rückkopplung mehr auf der Bühne. Die Bose-L1-Systeme sind ideal; der Bose S1 Pro ist eine ausgezeichnete tragbare Lösung."
       },
       {
-        "q": "Ist der Mutant dasselbe wie ein echter „Mutant“-Handpan?",
+        "q": "Ist der Mutant dasselbe wie eine echte „Mutant“-Handpan?",
         "a": "Nein. Die zusätzlichen Töne spielst du über einen eigenen Bereich im Inneren jedes Pads, das verlangt ein sanftes und präzises Spiel. Für mehr Komfort kannst du diesen Bereich auf bis zu 30 % des Pads vergrößern."
       },
       {
         "q": "Ich fange gerade an – empfiehlst du mir den Neotone?",
-        "a": "Beide Modelle eignen sich bestens für den Einstieg. Den Neotone zu spielen ist sogar leichter als einen akustischen Handpan: Die Empfindlichkeit der Sensoren ist einstellbar, und du bekommst vom ersten Anschlag an einen sauberen Ton. Der Mutant verlangt für seine zusätzlichen Töne ein etwas präziseres Spiel, lässt dich in der Harmonik aber viel weiter gehen."
+        "a": "Beide Modelle eignen sich bestens für den Einstieg. Den Neotone zu spielen ist sogar leichter als eine akustische Handpan: Die Empfindlichkeit der Sensoren ist einstellbar, und du bekommst vom ersten Anschlag an einen sauberen Ton. Der Mutant verlangt für seine zusätzlichen Töne ein etwas präziseres Spiel, lässt dich in der Harmonik aber viel weiter gehen."
       },
       {
         "q": "Brauche ich zusätzliches Zubehör, damit er klingt?",
@@ -2903,7 +2903,7 @@ export const de: Dict = {
       },
       {
         "title": "Ein Klinkenkabel mit Winkelstecker",
-        "text": "Ein Mono-Klinkenkabel (1 Ausgang) oder Stereo-Klinkenkabel (2 Ausgänge), um den Neotone mit deinem Lautsprecher zu verbinden. Wichtig: Nimm auf der Seite des Instruments einen Winkelstecker – nur so kannst du den Handpan auf den Boden legen, ohne die Buchse zu beschädigen."
+        "text": "Ein Mono-Klinkenkabel (1 Ausgang) oder Stereo-Klinkenkabel (2 Ausgänge), um den Neotone mit deinem Lautsprecher zu verbinden. Wichtig: Nimm auf der Seite des Instruments einen Winkelstecker – nur so kannst du die Handpan auf den Boden legen, ohne die Buchse zu beschädigen."
       },
       {
         "title": "Ein Lautsprecher",

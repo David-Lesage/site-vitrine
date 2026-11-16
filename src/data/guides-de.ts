@@ -27,11 +27,11 @@ export const deGuides: GuidesByLang = {
       {
         id: 'cest-quoi',
         icon: 'lucide:disc-3',
-        heading: 'Was ist ein Handpan?',
+        heading: 'Was ist eine Handpan?',
         blocks: [
           {
             kind: 'p',
-            html: 'Der Handpan ist ein melodisches Schlaginstrument aus Stahl in Form einer Untertasse. Auf seiner Oberseite ist ein zentraler Ton (der „Ding“) von mehreren Tönen umgeben, die aufeinander gestimmt und so gewählt sind, dass sie zusammen sauber klingen: Das nennt man eine <strong>Tonleiter</strong>. Du spielst ihn mit den Fingern und den Händen, ohne Schlägel. Das Ergebnis: Selbst ganz ohne Erfahrung klingt alles schön, was du spielst. Genau das macht den Handpan für den Einstieg so einladend.',
+            html: 'Die Handpan ist ein melodisches Schlaginstrument aus Stahl in Form einer Untertasse. Auf ihrer Oberseite ist ein zentraler Ton (der „Ding“) von mehreren Tönen umgeben, die aufeinander gestimmt und so gewählt sind, dass sie zusammen sauber klingen: Das nennt man eine <strong>Tonleiter</strong>. Du spielst sie mit den Fingern und den Händen, ohne Schlägel. Das Ergebnis: Selbst ganz ohne Erfahrung klingt alles schön, was du spielst. Genau das macht die Handpan für den Einstieg so einladend.',
           },
         ],
       },
@@ -42,7 +42,7 @@ export const deGuides: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Nein. Der Handpan eignet sich wunderbar zum Lernen nach Gehör. Die Töne sind bereits aufeinander gestimmt: Du kannst eigentlich nichts „falsch“ spielen. Ich selbst hatte siebeneinhalb Stunden Musiktheorie pro Woche, in vier verschiedenen Levels, um „meinen Rückstand aufzuholen“: Noten lesen kann ich bis heute nicht, und ich habe alles nach Gehör gelernt. Notenlesen und Musiktheorie können dich später interessieren, aus Neugier, aber sie sind nie eine Voraussetzung, um anzufangen.',
+            html: 'Nein. Die Handpan eignet sich wunderbar zum Lernen nach Gehör. Die Töne sind bereits aufeinander gestimmt: Du kannst eigentlich nichts „falsch“ spielen. Ich selbst hatte siebeneinhalb Stunden Musiktheorie pro Woche, in vier verschiedenen Levels, um „meinen Rückstand aufzuholen“: Noten lesen kann ich bis heute nicht, und ich habe alles nach Gehör gelernt. Notenlesen und Musiktheorie können dich später interessieren, aus Neugier, aber sie sind nie eine Voraussetzung, um anzufangen.',
           },
         ],
       },
@@ -82,7 +82,7 @@ export const deGuides: GuidesByLang = {
           },
           {
             kind: 'p',
-            html: 'Zehn Minuten am Tag bringen mehr als eine Stunde einmal pro Woche. Am Handpan kommst du durch Regelmäßigkeit voran, nicht durch die Dauer.',
+            html: 'Zehn Minuten am Tag bringen mehr als eine Stunde einmal pro Woche. An der Handpan kommst du durch Regelmäßigkeit voran, nicht durch die Dauer.',
           },
         ],
       },
@@ -93,7 +93,7 @@ export const deGuides: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Beide spielst du genau gleich, mit den Händen. Der akustische Handpan bietet eine Resonanz und einen körperlichen Kontakt, die sich nicht nachahmen lassen. Der <a href="/neotone">elektronische Handpan Neotone</a> dagegen lässt sich mit Kopfhörer spielen (ideal in der Wohnung, nachts) <em>oder</em> draußen mit einem Verstärker wie dem Bose S1: Er ist nicht nur ein Instrument für den Kopfhörer. Er wechselt außerdem mit einem Handgriff die Tonleiter und lässt sich an deinen Computer anschließen. Für Einsteiger räumt das elektronische Instrument zwei große Hürden aus dem Weg: die Lautstärke und das Budget für ein einziges Instrument, das auf eine einzige Tonleiter festgelegt ist. Ausführlich gehe ich dieser Wahl in meinem Leitfaden <a href="/handpan-electronique-vs-acoustique">elektronischer vs. akustischer Handpan</a> nach.',
+            html: 'Beide spielst du genau gleich, mit den Händen. Die akustische Handpan bietet eine Resonanz und einen körperlichen Kontakt, die sich nicht nachahmen lassen. Die <a href="/neotone">elektronische Handpan Neotone</a> dagegen lässt sich mit Kopfhörer spielen (ideal in der Wohnung, nachts) <em>oder</em> draußen mit einem Verstärker wie dem Bose S1: Sie ist nicht nur ein Instrument für den Kopfhörer. Sie wechselt außerdem mit einem Handgriff die Tonleiter und lässt sich an deinen Computer anschließen. Für Einsteiger räumt das elektronische Instrument zwei große Hürden aus dem Weg: die Lautstärke und das Budget für ein einziges Instrument, das auf eine einzige Tonleiter festgelegt ist. Ausführlich gehe ich dieser Wahl in meinem Leitfaden <a href="/handpan-electronique-vs-acoustique">elektronische vs. akustische Handpan</a> nach.',
           },
         ],
       },
@@ -124,7 +124,7 @@ export const deGuides: GuidesByLang = {
     related: [
       { href: '/handpan-app', label: 'Die App Handpan Constellation Studio entdecken' },
       { href: '/cours', label: 'Handpan-Unterricht nehmen' },
-      { href: '/neotone', label: 'Der elektronische Handpan Neotone' },
+      { href: '/neotone', label: 'Die elektronische Handpan Neotone' },
       { href: '/blog/handpan-par-les-couleurs', label: 'Artikel: Handpan mit Farben' },
       { href: '/blog/creer-sa-gamme-de-handpan', label: 'Artikel: die eigene Handpan-Tonleiter erstellen' },
     ],
@@ -143,8 +143,8 @@ export const deGuides: GuidesByLang = {
         a: 'Ja. Viele fangen allein an, nach Gehör, mit einem visuellen Werkzeug wie Handpan Constellation Studio. Eine Lehrkraft bleibt wertvoll, um Haltung, Bewegung und Rhythmus zu korrigieren und schneller voranzukommen, aber für den Anfang ist sie nicht unverzichtbar.',
       },
       {
-        q: 'Muss ich einen Handpan kaufen, um zu lernen?',
-        a: 'Ganz am Anfang nicht unbedingt: Mit der kostenlosen Version von Handpan Constellation Studio kannst du im Akustikmodus üben. Um wirklich mit deinen Händen zu spielen, wird ein akustischer Handpan oder ein elektronischer Neotone aber schnell unverzichtbar.',
+        q: 'Muss ich eine Handpan kaufen, um zu lernen?',
+        a: 'Ganz am Anfang nicht unbedingt: Mit der kostenlosen Version von Handpan Constellation Studio kannst du im Akustikmodus üben. Um wirklich mit deinen Händen zu spielen, wird eine akustische Handpan oder ein elektronischer Neotone aber schnell unverzichtbar.',
       },
     ],
     cta: {
@@ -162,16 +162,16 @@ export const deGuides: GuidesByLang = {
   // ----------------------------------------------------------
   vsAcoustic: {
     slug: 'handpan-electronique-vs-acoustique',
-    title: 'Elektronischer vs. akustischer Handpan: der Vergleich',
+    title: 'Elektronische vs. akustische Handpan: der Vergleich',
     description:
-      'Elektronischer oder akustischer Handpan? Klang, Spielen mit Kopfhörer, Tonleitern, Effekte, MIDI, Preis, Pflege: der komplette Vergleich für die richtige Wahl.',
+      'Elektronische oder akustische Handpan? Klang, Spielen mit Kopfhörer, Tonleitern, Effekte, MIDI, Preis, Pflege: der komplette Vergleich für die richtige Wahl.',
     keywords:
-      'elektronischer Handpan, akustischer Handpan, Neotone, elektronischer vs akustischer Handpan, Handpan Vergleich, Handpan Kopfhörer',
+      'elektronische Handpan, akustische Handpan, Neotone, elektronische vs akustische Handpan, Handpan Vergleich, Handpan Kopfhörer',
     breadcrumbLabel: 'Elektronisch vs. akustisch',
     eyebrow: 'Vergleich',
-    h1: 'Elektronischer vs. akustischer Handpan: Welchen wählen?',
+    h1: 'Elektronische vs. akustische Handpan: Welche wählen?',
     leadAnswer:
-      'Ein akustischer Handpan bietet eine organische Resonanz und einen einzigartigen körperlichen Kontakt, bleibt aber auf eine einzige Tonleiter festgelegt und klingt immer laut in den Raum. Ein elektronischer Handpan wie der Neotone lässt sich mit Kopfhörer oder verstärkt spielen (mit einem Verstärker wie dem Bose S1, auch draußen), wechselt sofort die Tonleiter, bringt Effekte mit und lässt sich per MIDI anschließen. Der Preis dafür: ein verstärkter statt eines natürlichen Klangs.',
+      'Eine akustische Handpan bietet eine organische Resonanz und einen einzigartigen körperlichen Kontakt, bleibt aber auf eine einzige Tonleiter festgelegt und klingt immer laut in den Raum. Eine elektronische Handpan wie der Neotone lässt sich mit Kopfhörer oder verstärkt spielen (mit einem Verstärker wie dem Bose S1, auch draußen), wechselt sofort die Tonleiter, bringt Effekte mit und lässt sich per MIDI anschließen. Der Preis dafür: ein verstärkter statt eines natürlichen Klangs.',
     sections: [
       {
         id: 'differences',
@@ -185,12 +185,12 @@ export const deGuides: GuidesByLang = {
           {
             kind: 'ul',
             items: [
-              'Klang: Der akustische Handpan schwingt in der Luft, reich und lebendig; der elektronische erzeugt ein Signal, das du über Kopfhörer, über einen Lautsprecher oder draußen über einen Verstärker hörst, mit perfekter Intonation.',
+              'Klang: Die akustische Handpan schwingt in der Luft, reich und lebendig; die elektronische erzeugt ein Signal, das du über Kopfhörer, über einen Lautsprecher oder draußen über einen Verstärker hörst, mit perfekter Intonation.',
               'Kopfhörer / nachts: Nur der elektronische lässt sich lautlos spielen, ein echter Vorteil in der Wohnung oder spät am Abend.',
               'Tonleitern: Der akustische ist auf eine Tonleiter festgelegt; der Neotone hat Dutzende an Bord und wechselt sie mit einem Handgriff.',
               'Effekte: Hall, Delay, andere Klänge … Der elektronische öffnet ein Klangfeld, das der akustische nicht kennt.',
               'MIDI: Der elektronische lässt sich an deinen Computer anschließen, um aufzunehmen, zu komponieren und andere Klänge zu steuern.',
-              'Preis: Ein guter akustischer Handpan und ein Neotone liegen in vergleichbaren Größenordnungen, aber der elektronische ersetzt allein mehrere Instrumente mit unterschiedlichen Tonleitern.',
+              'Preis: Eine gute akustische Handpan und ein Neotone liegen in vergleichbaren Größenordnungen, aber die elektronische ersetzt allein mehrere Instrumente mit unterschiedlichen Tonleitern.',
               'Pflege: Akustischer Stahl ist anfällig für Rost und Verstimmung; der elektronische verstimmt sich nie und rostet nicht.',
             ],
           },
@@ -203,7 +203,7 @@ export const deGuides: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Der <strong>akustische</strong> Handpan ist für dich gemacht, wenn du die körperliche Schwingung suchst, draußen oder im Kreis spielst und an einer bestimmten Tonleiter hängst, die du laut spielst. Der <strong>elektronische Handpan Neotone</strong> passt zu dir, wenn du in einer Wohnung lebst, oft mit Kopfhörer spielst, viele Tonleitern erkunden willst, ohne die Instrumente zu vervielfachen, deine Musik aufnimmst oder Effekte magst. Und draußen spielst du ihn ebenfalls, mit einem Verstärker wie dem Bose S1. Viele Spieler haben am Ende beide: Sie ergänzen sich, sie konkurrieren nicht.',
+            html: 'Die <strong>akustische</strong> Handpan ist für dich gemacht, wenn du die körperliche Schwingung suchst, draußen oder im Kreis spielst und an einer bestimmten Tonleiter hängst, die du laut spielst. Die <strong>elektronische Handpan Neotone</strong> passt zu dir, wenn du in einer Wohnung lebst, oft mit Kopfhörer spielst, viele Tonleitern erkunden willst, ohne die Instrumente zu vervielfachen, deine Musik aufnimmst oder Effekte magst. Und draußen spielst du sie ebenfalls, mit einem Verstärker wie dem Bose S1. Viele Spieler haben am Ende beide: Sie ergänzen sich, sie konkurrieren nicht.',
           },
         ],
       },
@@ -234,30 +234,30 @@ export const deGuides: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Einen „besten“ Handpan an sich gibt es nicht: Es gibt das Instrument, das zu deinem Leben passt. Wenn Stille, vielseitige Tonleitern und digitales Gestalten zählen, ist der <a href="/neotone">Neotone</a> unschlagbar. Wenn die akustische Schwingung und das gemeinsame Spielen an erster Stelle stehen, wird dich ein traditioneller Handpan glücklich machen. Und um beide Welten zu üben, ohne gleich etwas zu kaufen, bietet die App <a href="/handpan-app">Handpan Constellation Studio</a> einen kostenlosen Akustikmodus und einen Elektronikmodus. Ich habe auch einen eigenen Artikel dazu geschrieben: <a href="/blog/pourquoi-handpan-electronique">warum ich mich für den elektronischen Handpan entschieden habe</a>.',
+            html: 'Eine „beste“ Handpan an sich gibt es nicht: Es gibt das Instrument, das zu deinem Leben passt. Wenn Stille, vielseitige Tonleitern und digitales Gestalten zählen, ist der <a href="/neotone">Neotone</a> unschlagbar. Wenn die akustische Schwingung und das gemeinsame Spielen an erster Stelle stehen, wird dich eine traditionelle Handpan glücklich machen. Und um beide Welten zu üben, ohne gleich etwas zu kaufen, bietet die App <a href="/handpan-app">Handpan Constellation Studio</a> einen kostenlosen Akustikmodus und einen Elektronikmodus. Ich habe auch einen eigenen Artikel dazu geschrieben: <a href="/blog/pourquoi-handpan-electronique">warum ich mich für die elektronische Handpan entschieden habe</a>.',
           },
         ],
       },
     ],
     relatedHeading: 'Weiterlesen',
     related: [
-      { href: '/neotone', label: 'Den elektronischen Handpan Neotone entdecken' },
+      { href: '/neotone', label: 'Die elektronische Handpan Neotone entdecken' },
       { href: '/handpan-app', label: 'Die App Handpan Constellation Studio (akustisch + elektronisch)' },
-      { href: '/blog/pourquoi-handpan-electronique', label: 'Artikel: warum der elektronische Handpan' },
+      { href: '/blog/pourquoi-handpan-electronique', label: 'Artikel: warum die elektronische Handpan' },
     ],
     faqHeading: 'Häufige Fragen',
     faq: [
       {
-        q: 'Klingt ein elektronischer Handpan wie ein echter Handpan?',
-        a: 'Der Neotone gibt die Klangfarbe des Handpans originalgetreu wieder, dazu mit perfekter Intonation und mit Effekten. Das Spielgefühl ist identisch. Was sich ändert, ist die Resonanz eines akustischen Instruments in der Luft: Hier hörst du stattdessen über Kopfhörer, Lautsprecher oder Verstärker.',
+        q: 'Klingt eine elektronische Handpan wie eine echte Handpan?',
+        a: 'Der Neotone gibt die Klangfarbe der Handpan originalgetreu wieder, dazu mit perfekter Intonation und mit Effekten. Das Spielgefühl ist identisch. Was sich ändert, ist die Resonanz eines akustischen Instruments in der Luft: Hier hörst du stattdessen über Kopfhörer, Lautsprecher oder Verstärker.',
       },
       {
-        q: 'Kann ich einen elektronischen Handpan mit Kopfhörer spielen?',
+        q: 'Kann ich eine elektronische Handpan mit Kopfhörer spielen?',
         a: 'Ja, das ist einer seiner großen Vorteile. Der Neotone lässt sich vollständig mit Kopfhörer spielen, ohne jemanden zu stören: ideal in der Wohnung, nachts oder für saubere Aufnahmen. Er ist aber nicht nur ein Instrument für den Kopfhörer: Du kannst auch draußen spielen, mit einem Verstärker wie dem Bose S1.',
       },
       {
-        q: 'Kann ein elektronischer Handpan die Tonleiter wechseln?',
-        a: 'Ja. Während ein akustischer Handpan auf eine Tonleiter festgelegt ist, hat der Neotone Dutzende an Bord und wechselt sie sofort. Du kannst sogar deine eigenen in Handpan Constellation Studio erstellen.',
+        q: 'Kann eine elektronische Handpan die Tonleiter wechseln?',
+        a: 'Ja. Während eine akustische Handpan auf eine Tonleiter festgelegt ist, hat der Neotone Dutzende an Bord und wechselt sie sofort. Du kannst sogar deine eigenen in Handpan Constellation Studio erstellen.',
       },
       {
         q: 'Elektronisch oder akustisch: Welcher für den Einstieg?',
@@ -265,7 +265,7 @@ export const deGuides: GuidesByLang = {
       },
     ],
     cta: {
-      heading: 'Lust, den elektronischen Handpan auszuprobieren?',
+      heading: 'Lust, die elektronische Handpan auszuprobieren?',
       text: 'Entdecke den Neotone oder probier beide Modi in der App Handpan Constellation Studio aus.',
       primary: { href: '/neotone', label: 'Den Neotone entdecken' },
       secondary: { href: '/handpan-app#acces', label: 'Zugang zur App' },
@@ -279,16 +279,16 @@ export const deGuides: GuidesByLang = {
   // ----------------------------------------------------------
   chooseHandpan: {
     slug: 'quel-handpan-choisir',
-    title: 'Welchen Handpan wählen? Kaufberatung für Einsteiger',
+    title: 'Welche Handpan wählen? Kaufberatung für Einsteiger',
     description:
-      'Welchen Handpan wählen, wenn du anfängst: Zahl der Töne, empfohlene Tonleiter (D Kurd), akustisch oder elektronisch, Budget und Fehler, die du vermeiden solltest.',
+      'Welche Handpan wählen, wenn du anfängst: Zahl der Töne, empfohlene Tonleiter (D Kurd), akustisch oder elektronisch, Budget und Fehler, die du vermeiden solltest.',
     keywords:
-      'welchen Handpan wählen, Handpan kaufen, Handpan für Anfänger, Handpan Tonleiter D Kurd, Handpan Preis, Handpan Neotone',
-    breadcrumbLabel: 'Welchen Handpan wählen',
+      'welche Handpan wählen, Handpan kaufen, Handpan für Anfänger, Handpan Tonleiter D Kurd, Handpan Preis, Handpan Neotone',
+    breadcrumbLabel: 'Welche Handpan wählen',
     eyebrow: 'Kaufberatung',
-    h1: 'Welchen Handpan wählen, wenn du anfängst?',
+    h1: 'Welche Handpan wählen, wenn du anfängst?',
     leadAnswer:
-      'Ein ordentlicher Handpan kostet meiner Meinung nach um die 1500 €. Der D Kurd (d-Moll) bleibt die zugänglichste Tonleiter für ein erstes akustisches Instrument. Aber schnell kaufst du einen zweiten, weil du dich mit einer einzigen Tonleiter im Kreis drehst, und genau dann kann sich die Frage nach einem Neotone stellen. Probier vor dem Kauf, wenn du kannst, und nimm lieber ein gut gestimmtes Instrument als das billigste.',
+      'Eine ordentliche Handpan kostet meiner Meinung nach um die 1500 €. Der D Kurd (d-Moll) bleibt die zugänglichste Tonleiter für ein erstes akustisches Instrument. Aber schnell kaufst du eine zweite, weil du dich mit einer einzigen Tonleiter im Kreis drehst, und genau dann kann sich die Frage nach einem Neotone stellen. Probier vor dem Kauf, wenn du kannst, und nimm lieber ein gut gestimmtes Instrument als das billigste.',
     sections: [
       {
         id: 'nombre-notes',
@@ -297,7 +297,7 @@ export const deGuides: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Ein akustischer Handpan besteht aus einem Ding und den Tönen, die rundherum angeordnet sind: Die üblichen Modelle haben 8 bis 10 Töne, und manche fügen Töne auf der Unterseite des Korpus hinzu („Bottom Notes“). Auf der elektronischen Seite gibt es den <a href="/neotone">Neotone</a> mit 10 Tönen und den Mutant mit 19 Tönen.',
+            html: 'Eine akustische Handpan besteht aus einem Ding und den Tönen, die rundherum angeordnet sind: Die üblichen Modelle haben 8 bis 10 Töne, und manche fügen Töne auf der Unterseite des Korpus hinzu („Bottom Notes“). Auf der elektronischen Seite gibt es den <a href="/neotone">Neotone</a> mit 10 Tönen und den Mutant mit 19 Tönen.',
           },
         ],
       },
@@ -319,7 +319,7 @@ export const deGuides: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Die Schlüsselfrage, die ich in meinem Vergleich <a href="/handpan-electronique-vs-acoustique">elektronischer vs. akustischer Handpan</a> ausführlich behandle. Kurz gesagt: der akustische für die körperliche Schwingung und das Spielen draußen ohne Ausrüstung; der elektronische (Neotone) für Kopfhörer, viele Tonleitern, Effekte und Aufnahmen, und mit einem Verstärker wie dem Bose S1 auch für draußen. Wenn du in einer Wohnung lebst oder bei der Tonleiter noch zögerst, bewahrt dich der elektronische davor, dich zu vertun und neu zu kaufen.',
+            html: 'Die Schlüsselfrage, die ich in meinem Vergleich <a href="/handpan-electronique-vs-acoustique">elektronische vs. akustische Handpan</a> ausführlich behandle. Kurz gesagt: die akustische für die körperliche Schwingung und das Spielen draußen ohne Ausrüstung; die elektronische (Neotone) für Kopfhörer, viele Tonleitern, Effekte und Aufnahmen, und mit einem Verstärker wie dem Bose S1 auch für draußen. Wenn du in einer Wohnung lebst oder bei der Tonleiter noch zögerst, bewahrt dich die elektronische davor, dich zu vertun und neu zu kaufen.',
           },
         ],
       },
@@ -330,7 +330,7 @@ export const deGuides: GuidesByLang = {
         blocks: [
           {
             kind: 'p',
-            html: 'Ein ordentlicher Handpan kostet meiner Meinung nach um die <strong>1500 €</strong>. Sei vorsichtig bei sehr billigen Instrumenten: Unter einem gewissen Preis ist die Stimmung oft ungenau, und das Instrument klingt schief, der schlechteste Start, den es gibt. Denk aber auch an das, was danach kommt: Schnell kaufst du einen zweiten, weil du dich mit einer einzigen Tonleiter im Kreis drehst. Genau dann kann sich die Frage nach einem <a href="/neotone">Neotone</a> stellen. Alles hängt davon ab, was du suchst: Wenn du in allen Tonarten und Stimmlagen singen und dich dabei begleiten willst, ist er eindeutig am besten geeignet. Oder du lässt dir einen Handpan für deine Stimme individuell stimmen. Schau auch im <a href="/boutique">Shop</a> nach dem Zubehör (Tasche, Ständer), das dein Instrument schützt.',
+            html: 'Eine ordentliche Handpan kostet meiner Meinung nach um die <strong>1500 €</strong>. Sei vorsichtig bei sehr billigen Instrumenten: Unter einem gewissen Preis ist die Stimmung oft ungenau, und das Instrument klingt schief, der schlechteste Start, den es gibt. Denk aber auch an das, was danach kommt: Schnell kaufst du eine zweite, weil du dich mit einer einzigen Tonleiter im Kreis drehst. Genau dann kann sich die Frage nach einem <a href="/neotone">Neotone</a> stellen. Alles hängt davon ab, was du suchst: Wenn du in allen Tonarten und Stimmlagen singen und dich dabei begleiten willst, ist er eindeutig am besten geeignet. Oder du lässt dir eine Handpan für deine Stimme individuell stimmen. Schau auch im <a href="/boutique">Shop</a> nach dem Zubehör (Tasche, Ständer), das dein Instrument schützt.',
           },
         ],
       },
@@ -364,8 +364,8 @@ export const deGuides: GuidesByLang = {
     ],
     relatedHeading: 'Weiterlesen',
     related: [
-      { href: '/neotone', label: 'Der elektronische Handpan Neotone (10 & 19 Töne)' },
-      { href: '/showroom', label: 'Einen Handpan im Showroom in Paris ausprobieren' },
+      { href: '/neotone', label: 'Die elektronische Handpan Neotone (10 & 19 Töne)' },
+      { href: '/showroom', label: 'Eine Handpan im Showroom in Paris ausprobieren' },
       { href: '/boutique', label: 'Zubehör: Taschen, Ständer …' },
       { href: '/handpan-electronique-vs-acoustique', label: 'Vergleich elektronisch vs. akustisch' },
     ],
@@ -373,23 +373,23 @@ export const deGuides: GuidesByLang = {
     faq: [
       {
         q: 'Welche Handpan-Tonleiter für den Einstieg?',
-        a: 'Der D Kurd (d-Moll) ist die beste Wahl für einen ersten Handpan: vielseitig, warm, die meistgespielte Tonleiter und die mit den meisten Tutorials. Bei einem elektronischen Neotone bist du ohnehin nicht auf eine einzige Tonleiter festgelegt.',
+        a: 'Der D Kurd (d-Moll) ist die beste Wahl für eine erste Handpan: vielseitig, warm, die meistgespielte Tonleiter und die mit den meisten Tutorials. Bei einem elektronischen Neotone bist du ohnehin nicht auf eine einzige Tonleiter festgelegt.',
       },
       {
-        q: 'Wie viele Töne für einen ersten Handpan?',
+        q: 'Wie viele Töne für eine erste Handpan?',
         a: 'Übliche akustische Handpans haben 8 bis 10 Töne, manchmal mehr mit Tönen auf der Unterseite des Korpus. Die Zahl der Töne zählt weniger als die Tonleiter: Bei einem akustischen Instrument ist sie endgültig, und sie entscheidet, was du spielen kannst.',
       },
       {
-        q: 'Was kostet ein guter Handpan?',
-        a: 'Ein ordentlicher Handpan kostet meiner Meinung nach um die 1500 €. Sei vorsichtig bei sehr niedrigen Preisen: Unter einer gewissen Schwelle ist die Stimmung oft schlecht. Rechne auch damit, dass schnell ein zweites Instrument dazukommt, weil man sich mit einer einzigen Tonleiter im Kreis dreht. Genau dann kann sich die Frage nach einem Neotone stellen.',
+        q: 'Was kostet eine gute Handpan?',
+        a: 'Eine ordentliche Handpan kostet meiner Meinung nach um die 1500 €. Sei vorsichtig bei sehr niedrigen Preisen: Unter einer gewissen Schwelle ist die Stimmung oft schlecht. Rechne auch damit, dass schnell ein zweites Instrument dazukommt, weil man sich mit einer einzigen Tonleiter im Kreis dreht. Genau dann kann sich die Frage nach einem Neotone stellen.',
       },
       {
-        q: 'Wo kann ich einen Handpan vor dem Kauf ausprobieren?',
+        q: 'Wo kann ich eine Handpan vor dem Kauf ausprobieren?',
         a: 'In Paris kannst du in meinem Showroom die Instrumente testen, die Tonleitern vergleichen und deinen Neotone noch am selben Tag mitnehmen, ohne Fertigungszeit. Vor dem Kauf auszuprobieren bleibt der beste Weg, sich nicht zu vertun.',
       },
     ],
     cta: {
-      heading: 'Finde den Handpan, der zu dir passt',
+      heading: 'Finde die Handpan, die zu dir passt',
       text: 'Komm zum Ausprobieren nach Paris oder entdecke den Neotone und seine austauschbaren Tonleitern.',
       primary: { href: '/showroom', label: 'Meinen Besuch im Showroom buchen' },
       secondary: { href: '/neotone', label: 'Den Neotone entdecken' },
