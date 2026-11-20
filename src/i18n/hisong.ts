@@ -71,7 +71,7 @@ export const hisongVideos: { id: string; title: Record<Lang, string> }[] = [
       fr: 'Un studio dans ma poche pour ma voix et mon handpan',
       en: 'A studio in my pocket for my voice and my handpan',
       es: 'Un estudio en el bolsillo para mi voz y mi handpan',
-      de: 'Ein Studio in der Tasche für meine Stimme und meinen Handpan',
+      de: 'Ein Studio in der Tasche für meine Stimme und meine Handpan',
     },
   },
 ]
