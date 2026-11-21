@@ -1124,7 +1124,7 @@ document.querySelectorAll('[data-compte]').forEach(x=>compteur.observe(x));
    await consentir(j.access_token,j.user&&j.user.id);
    const an=m.querySelector('.periode button.on').dataset.m==='a',q=FORMULE[c]?'?formule='+FORMULE[c]+(an?'&rythme=an':''):'';
    const h=new URLSearchParams({access_token:j.access_token,refresh_token:j.refresh_token,expires_in:String(j.expires_in),expires_at:String(j.expires_at||''),token_type:'bearer'});
-   location.assign(APP+q+'#'+h)
+   location.assign(APP+q+(q?'&':'?')+'lang='+document.documentElement.lang+'#'+h)
   }catch(x){dire('Something went wrong. Try again.')}})})();
 
 /* défilement piloté : chaque élément suit le scroll, de gauche, de droite, ou en grandissant */
