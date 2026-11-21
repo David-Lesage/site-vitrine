@@ -265,5 +265,5 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 - ✅ fait (21/11) « peux tu proposer cette nouvelle langue avec un drapeau de langue chinoise ? » (page de vente /handpan-app/) — /zh/handpan-app/ en ligne, drapeau dans le sélecteur
 - ✅ fait (21/11) « il manque beaucoup de texte et d'image comparé aux autres langues » — JS cassé réparé, inversions ES/ZH corrigées (Marina, histoire de David, fenêtre d'abonnement) ; audit des 291 lignes + 4 pages identiques en structure
 - ✅ fait (21/11) « est ce que tu confirme tout le parcours utilisateur qui arrive sur la page de vente et qui veut se créer un compte sur l'app tout est bien en chinois ? » — page + fenêtre d'inscription + erreurs vérifiées en chinois ; CGU/menu/presse → pages anglaises (pas de version chinoise)
-- ⏳ (21/11) suite du même point : l'app ne reçoit pas la langue choisie sur le site → en chinois seulement si le navigateur est en chinois (correctif côté app à décider)
+- ✅ fait (21/11) « Oui, fais-le » (transmettre la langue choisie sur le site à l'app) — les 9 pages de vente ajoutent ?lang=xx après l'inscription (site bf55d8a) ; l'app l'enregistre comme choix de langue (app 8a449f637), les deux en ligne
 - ✅ fait (21/11) « il faudrait une image d'aperçus en chinoix, peux tu la generer ? » — og-handpan-app-zh.jpg, même photo que FR/EN/ES, en ligne
