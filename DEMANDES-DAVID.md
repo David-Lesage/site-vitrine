@@ -261,3 +261,9 @@ Statuts : `⏳ en cours` · `✅ fait (date)` · `🔒 bloqué sur X` · `🅨 �
 - ✅ fait (13/11) « Sur la page du showroom et dans le mail que les gens reçoivent change la durée du showcase […] officiellement ça dure 2H donc par exemple pour le 14 novembre c'est de 16H a 18H le 5 décembre de 15h a 17H » — agent : fin affichée = début + 2h (page + e-mail), l'agenda Google n'est pas modifié
 - ✅ fait (13/11) « j'avais mis une phrase ou je disais qu'en vérité ça durait plutot 3h dans le mail de confirmation. retire cette phrase » — même agent (+ séparation démo/cours dans l'e-mail)
 - ✅ fait (13/11) « Dans les formulaire de validation il faut que quand la personne clique sur les notes ça forme un constellation c'est a dire que des lignes doivent faire se relier les notes comme dans l'app. » — agent sur ExerciceHumain.astro
+
+- ✅ fait (21/11) « peux tu proposer cette nouvelle langue avec un drapeau de langue chinoise ? » (page de vente /handpan-app/) — /zh/handpan-app/ en ligne, drapeau dans le sélecteur
+- ✅ fait (21/11) « il manque beaucoup de texte et d'image comparé aux autres langues » — JS cassé réparé, inversions ES/ZH corrigées (Marina, histoire de David, fenêtre d'abonnement) ; audit des 291 lignes + 4 pages identiques en structure
+- ✅ fait (21/11) « est ce que tu confirme tout le parcours utilisateur qui arrive sur la page de vente et qui veut se créer un compte sur l'app tout est bien en chinois ? » — page + fenêtre d'inscription + erreurs vérifiées en chinois ; CGU/menu/presse → pages anglaises (pas de version chinoise)
+- ⏳ (21/11) suite du même point : l'app ne reçoit pas la langue choisie sur le site → en chinois seulement si le navigateur est en chinois (correctif côté app à décider)
+- ✅ fait (21/11) « il faudrait une image d'aperçus en chinoix, peux tu la generer ? » — og-handpan-app-zh.jpg, même photo que FR/EN/ES, en ligne
